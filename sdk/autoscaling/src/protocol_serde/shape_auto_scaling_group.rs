@@ -466,6 +466,16 @@ pub fn de_auto_scaling_group(
                 builder = builder.set_availability_zone_impairment_policy(var_37);
             }
             ,
+            s if s.matches("CapacityReservationSpecification") /* CapacityReservationSpecification com.amazonaws.autoscaling#AutoScalingGroup$CapacityReservationSpecification */ =>  {
+                let var_38 =
+                    Some(
+                        crate::protocol_serde::shape_capacity_reservation_specification::de_capacity_reservation_specification(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_capacity_reservation_specification(var_38);
+            }
+            ,
             _ => {}
         }
     }

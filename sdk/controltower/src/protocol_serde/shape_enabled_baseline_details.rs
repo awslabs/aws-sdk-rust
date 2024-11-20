@@ -42,6 +42,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "parentIdentifier" => {
+                            builder = builder.set_parent_identifier(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "statusSummary" => {
                             builder = builder.set_status_summary(
                                 crate::protocol_serde::shape_enablement_status_summary::de_enablement_status_summary(tokens)?,

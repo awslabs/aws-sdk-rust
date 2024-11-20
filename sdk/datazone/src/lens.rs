@@ -199,6 +199,16 @@ pub(crate) fn reflens_list_projects_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_rules_output_output_next_token(
+    input: &crate::operation::list_rules::ListRulesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_subscription_grants_output_output_next_token(
     input: &crate::operation::list_subscription_grants::ListSubscriptionGrantsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -457,6 +467,13 @@ pub(crate) fn lens_list_projects_output_output_items(
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_rules_output_output_items(
+    input: crate::operation::list_rules::ListRulesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RuleSummary>> {
+    let input = input.items;
     ::std::option::Option::Some(input)
 }
 

@@ -13,6 +13,8 @@ pub struct CreateSubscriptionRequestInput {
     pub request_reason: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>The metadata form included in the subscription request.</p>
+    pub metadata_forms: ::std::option::Option<::std::vec::Vec<crate::types::FormInput>>,
 }
 impl CreateSubscriptionRequestInput {
     /// <p>The ID of the Amazon DataZone domain in which the subscription request is created.</p>
@@ -39,6 +41,12 @@ impl CreateSubscriptionRequestInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
+    /// <p>The metadata form included in the subscription request.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metadata_forms.is_none()`.
+    pub fn metadata_forms(&self) -> &[crate::types::FormInput] {
+        self.metadata_forms.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for CreateSubscriptionRequestInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -48,6 +56,7 @@ impl ::std::fmt::Debug for CreateSubscriptionRequestInput {
         formatter.field("subscribed_listings", &self.subscribed_listings);
         formatter.field("request_reason", &"*** Sensitive Data Redacted ***");
         formatter.field("client_token", &self.client_token);
+        formatter.field("metadata_forms", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -67,6 +76,7 @@ pub struct CreateSubscriptionRequestInputBuilder {
     pub(crate) subscribed_listings: ::std::option::Option<::std::vec::Vec<crate::types::SubscribedListingInput>>,
     pub(crate) request_reason: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) metadata_forms: ::std::option::Option<::std::vec::Vec<crate::types::FormInput>>,
 }
 impl CreateSubscriptionRequestInputBuilder {
     /// <p>The ID of the Amazon DataZone domain in which the subscription request is created.</p>
@@ -153,6 +163,26 @@ impl CreateSubscriptionRequestInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
+    /// Appends an item to `metadata_forms`.
+    ///
+    /// To override the contents of this collection use [`set_metadata_forms`](Self::set_metadata_forms).
+    ///
+    /// <p>The metadata form included in the subscription request.</p>
+    pub fn metadata_forms(mut self, input: crate::types::FormInput) -> Self {
+        let mut v = self.metadata_forms.unwrap_or_default();
+        v.push(input);
+        self.metadata_forms = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The metadata form included in the subscription request.</p>
+    pub fn set_metadata_forms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FormInput>>) -> Self {
+        self.metadata_forms = input;
+        self
+    }
+    /// <p>The metadata form included in the subscription request.</p>
+    pub fn get_metadata_forms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FormInput>> {
+        &self.metadata_forms
+    }
     /// Consumes the builder and constructs a [`CreateSubscriptionRequestInput`](crate::operation::create_subscription_request::CreateSubscriptionRequestInput).
     pub fn build(
         self,
@@ -166,6 +196,7 @@ impl CreateSubscriptionRequestInputBuilder {
             subscribed_listings: self.subscribed_listings,
             request_reason: self.request_reason,
             client_token: self.client_token,
+            metadata_forms: self.metadata_forms,
         })
     }
 }
@@ -177,6 +208,7 @@ impl ::std::fmt::Debug for CreateSubscriptionRequestInputBuilder {
         formatter.field("subscribed_listings", &self.subscribed_listings);
         formatter.field("request_reason", &"*** Sensitive Data Redacted ***");
         formatter.field("client_token", &self.client_token);
+        formatter.field("metadata_forms", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

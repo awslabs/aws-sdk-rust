@@ -3,32 +3,44 @@ pub fn ser_list_rules_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_rules::ListRulesInput,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.lock_state {
-        object.key("LockState").string(var_1.as_str());
-    }
-    if let Some(var_2) = &input.max_results {
-        object.key("MaxResults").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
-        );
-    }
-    if let Some(var_3) = &input.next_token {
-        object.key("NextToken").string(var_3.as_str());
-    }
-    if let Some(var_4) = &input.resource_tags {
-        let mut array_5 = object.key("ResourceTags").start_array();
-        for item_6 in var_4 {
+    if let Some(var_1) = &input.exclude_resource_tags {
+        let mut array_2 = object.key("ExcludeResourceTags").start_array();
+        for item_3 in var_1 {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_resource_tag::ser_resource_tag(&mut object_7, item_6)?;
-                object_7.finish();
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_resource_tag::ser_resource_tag(&mut object_4, item_3)?;
+                object_4.finish();
             }
         }
-        array_5.finish();
+        array_2.finish();
     }
-    if let Some(var_8) = &input.resource_type {
-        object.key("ResourceType").string(var_8.as_str());
+    if let Some(var_5) = &input.lock_state {
+        object.key("LockState").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.max_results {
+        object.key("MaxResults").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
+        );
+    }
+    if let Some(var_7) = &input.next_token {
+        object.key("NextToken").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.resource_tags {
+        let mut array_9 = object.key("ResourceTags").start_array();
+        for item_10 in var_8 {
+            {
+                #[allow(unused_mut)]
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_resource_tag::ser_resource_tag(&mut object_11, item_10)?;
+                object_11.finish();
+            }
+        }
+        array_9.finish();
+    }
+    if let Some(var_12) = &input.resource_type {
+        object.key("ResourceType").string(var_12.as_str());
     }
     Ok(())
 }

@@ -22,7 +22,14 @@ impl crate::operation::create_rule::builders::CreateRuleInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateRule`.
 ///
-/// <p>Creates a Recycle Bin retention rule. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-rules.html#recycle-bin-create-rule"> Create Recycle Bin retention rules</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+/// <p>Creates a Recycle Bin retention rule. You can create two types of retention rules:</p>
+/// <ul>
+/// <li>
+/// <p><b>Tag-level retention rules</b> - These retention rules use resource tags to identify the resources to protect. For each retention rule, you specify one or more tag key and value pairs. Resources (of the specified type) that have at least one of these tag key and value pairs are automatically retained in the Recycle Bin upon deletion. Use this type of retention rule to protect specific resources in your account based on their tags.</p></li>
+/// <li>
+/// <p><b>Region-level retention rules</b> - These retention rules, by default, apply to all of the resources (of the specified type) in the Region, even if the resources are not tagged. However, you can specify exclusion tags to exclude resources that have specific tags. Use this type of retention rule to protect all resources of a specific type in a Region.</p></li>
+/// </ul>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/recycle-bin.html"> Create Recycle Bin retention rules</a> in the <i>Amazon EBS User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateRuleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -174,21 +181,21 @@ impl CreateRuleFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
     ///
-    /// <p>Specifies the resource tags to use to identify resources that are to be retained by a tag-level retention rule. For tag-level retention rules, only deleted resources, of the specified resource type, that have one or more of the specified tag key and value pairs are retained. If a resource is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule.</p>
+    /// <p>\[Tag-level retention rules only\] Specifies the resource tags to use to identify resources that are to be retained by a tag-level retention rule. For tag-level retention rules, only deleted resources, of the specified resource type, that have one or more of the specified tag key and value pairs are retained. If a resource is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule.</p>
     /// <p>You can add the same tag key and value pair to a maximum or five retention rules.</p>
     /// <p>To create a Region-level retention rule, omit this parameter. A Region-level retention rule does not have any resource tags specified. It retains all deleted resources of the specified resource type in the Region in which the rule is created, even if the resources are not tagged.</p>
     pub fn resource_tags(mut self, input: crate::types::ResourceTag) -> Self {
         self.inner = self.inner.resource_tags(input);
         self
     }
-    /// <p>Specifies the resource tags to use to identify resources that are to be retained by a tag-level retention rule. For tag-level retention rules, only deleted resources, of the specified resource type, that have one or more of the specified tag key and value pairs are retained. If a resource is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule.</p>
+    /// <p>\[Tag-level retention rules only\] Specifies the resource tags to use to identify resources that are to be retained by a tag-level retention rule. For tag-level retention rules, only deleted resources, of the specified resource type, that have one or more of the specified tag key and value pairs are retained. If a resource is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule.</p>
     /// <p>You can add the same tag key and value pair to a maximum or five retention rules.</p>
     /// <p>To create a Region-level retention rule, omit this parameter. A Region-level retention rule does not have any resource tags specified. It retains all deleted resources of the specified resource type in the Region in which the rule is created, even if the resources are not tagged.</p>
     pub fn set_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>) -> Self {
         self.inner = self.inner.set_resource_tags(input);
         self
     }
-    /// <p>Specifies the resource tags to use to identify resources that are to be retained by a tag-level retention rule. For tag-level retention rules, only deleted resources, of the specified resource type, that have one or more of the specified tag key and value pairs are retained. If a resource is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule.</p>
+    /// <p>\[Tag-level retention rules only\] Specifies the resource tags to use to identify resources that are to be retained by a tag-level retention rule. For tag-level retention rules, only deleted resources, of the specified resource type, that have one or more of the specified tag key and value pairs are retained. If a resource is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule.</p>
     /// <p>You can add the same tag key and value pair to a maximum or five retention rules.</p>
     /// <p>To create a Region-level retention rule, omit this parameter. A Region-level retention rule does not have any resource tags specified. It retains all deleted resources of the specified resource type in the Region in which the rule is created, even if the resources are not tagged.</p>
     pub fn get_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>> {
@@ -207,5 +214,27 @@ impl CreateRuleFluentBuilder {
     /// <p>Information about the retention rule lock configuration.</p>
     pub fn get_lock_configuration(&self) -> &::std::option::Option<crate::types::LockConfiguration> {
         self.inner.get_lock_configuration()
+    }
+    ///
+    /// Appends an item to `ExcludeResourceTags`.
+    ///
+    /// To override the contents of this collection use [`set_exclude_resource_tags`](Self::set_exclude_resource_tags).
+    ///
+    /// <p>\[Region-level retention rules only\] Specifies the exclusion tags to use to identify resources that are to be excluded, or ignored, by a Region-level retention rule. Resources that have any of these tags are not retained by the retention rule upon deletion.</p>
+    /// <p>You can't specify exclusion tags for tag-level retention rules.</p>
+    pub fn exclude_resource_tags(mut self, input: crate::types::ResourceTag) -> Self {
+        self.inner = self.inner.exclude_resource_tags(input);
+        self
+    }
+    /// <p>\[Region-level retention rules only\] Specifies the exclusion tags to use to identify resources that are to be excluded, or ignored, by a Region-level retention rule. Resources that have any of these tags are not retained by the retention rule upon deletion.</p>
+    /// <p>You can't specify exclusion tags for tag-level retention rules.</p>
+    pub fn set_exclude_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>) -> Self {
+        self.inner = self.inner.set_exclude_resource_tags(input);
+        self
+    }
+    /// <p>\[Region-level retention rules only\] Specifies the exclusion tags to use to identify resources that are to be excluded, or ignored, by a Region-level retention rule. Resources that have any of these tags are not retained by the retention rule upon deletion.</p>
+    /// <p>You can't specify exclusion tags for tag-level retention rules.</p>
+    pub fn get_exclude_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>> {
+        self.inner.get_exclude_resource_tags()
     }
 }

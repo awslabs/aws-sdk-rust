@@ -42,6 +42,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "promotionTier" => {
+                            builder = builder.set_promotion_tier(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         "currentDBInstanceClass" => {
                             builder = builder.set_current_db_instance_class(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -52,6 +59,13 @@ where
                         "currentStorageConfiguration" => {
                             builder = builder.set_current_storage_configuration(
                                 crate::protocol_serde::shape_db_storage_configuration::de_db_storage_configuration(tokens)?,
+                            );
+                        }
+                        "dbClusterIdentifier" => {
+                            builder = builder.set_db_cluster_identifier(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         "idle" => {
@@ -78,6 +92,16 @@ where
                         "instanceFindingReasonCodes" => {
                             builder = builder.set_instance_finding_reason_codes(
                                 crate::protocol_serde::shape_rds_instance_finding_reason_codes::de_rds_instance_finding_reason_codes(tokens)?,
+                            );
+                        }
+                        "currentInstancePerformanceRisk" => {
+                            builder = builder.set_current_instance_performance_risk(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::types::RdsCurrentInstancePerformanceRisk::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
                             );
                         }
                         "storageFindingReasonCodes" => {

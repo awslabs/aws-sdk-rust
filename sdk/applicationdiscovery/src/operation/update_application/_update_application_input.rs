@@ -9,6 +9,8 @@ pub struct UpdateApplicationInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>New description of the application to be updated.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>The new migration wave of the application that you want to update.</p>
+    pub wave: ::std::option::Option<::std::string::String>,
 }
 impl UpdateApplicationInput {
     /// <p>Configuration ID of the application to be updated.</p>
@@ -22,6 +24,10 @@ impl UpdateApplicationInput {
     /// <p>New description of the application to be updated.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
+    }
+    /// <p>The new migration wave of the application that you want to update.</p>
+    pub fn wave(&self) -> ::std::option::Option<&str> {
+        self.wave.as_deref()
     }
 }
 impl UpdateApplicationInput {
@@ -38,6 +44,7 @@ pub struct UpdateApplicationInputBuilder {
     pub(crate) configuration_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) wave: ::std::option::Option<::std::string::String>,
 }
 impl UpdateApplicationInputBuilder {
     /// <p>Configuration ID of the application to be updated.</p>
@@ -83,6 +90,20 @@ impl UpdateApplicationInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// <p>The new migration wave of the application that you want to update.</p>
+    pub fn wave(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.wave = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The new migration wave of the application that you want to update.</p>
+    pub fn set_wave(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.wave = input;
+        self
+    }
+    /// <p>The new migration wave of the application that you want to update.</p>
+    pub fn get_wave(&self) -> &::std::option::Option<::std::string::String> {
+        &self.wave
+    }
     /// Consumes the builder and constructs a [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
     pub fn build(
         self,
@@ -91,6 +112,7 @@ impl UpdateApplicationInputBuilder {
             configuration_id: self.configuration_id,
             name: self.name,
             description: self.description,
+            wave: self.wave,
         })
     }
 }

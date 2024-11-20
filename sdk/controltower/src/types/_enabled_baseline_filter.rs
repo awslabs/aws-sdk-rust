@@ -8,6 +8,8 @@ pub struct EnabledBaselineFilter {
     pub target_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Identifiers for the <code>Baseline</code> objects returned as part of the filter operation.</p>
     pub baseline_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>An optional filter that sets up a list of <code>parentIdentifiers</code> to filter the results of the <code>ListEnabledBaseline</code> output.</p>
+    pub parent_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl EnabledBaselineFilter {
     /// <p>Identifiers for the targets of the <code>Baseline</code> filter operation.</p>
@@ -21,6 +23,12 @@ impl EnabledBaselineFilter {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.baseline_identifiers.is_none()`.
     pub fn baseline_identifiers(&self) -> &[::std::string::String] {
         self.baseline_identifiers.as_deref().unwrap_or_default()
+    }
+    /// <p>An optional filter that sets up a list of <code>parentIdentifiers</code> to filter the results of the <code>ListEnabledBaseline</code> output.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parent_identifiers.is_none()`.
+    pub fn parent_identifiers(&self) -> &[::std::string::String] {
+        self.parent_identifiers.as_deref().unwrap_or_default()
     }
 }
 impl EnabledBaselineFilter {
@@ -36,6 +44,7 @@ impl EnabledBaselineFilter {
 pub struct EnabledBaselineFilterBuilder {
     pub(crate) target_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) baseline_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) parent_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl EnabledBaselineFilterBuilder {
     /// Appends an item to `target_identifiers`.
@@ -78,11 +87,32 @@ impl EnabledBaselineFilterBuilder {
     pub fn get_baseline_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.baseline_identifiers
     }
+    /// Appends an item to `parent_identifiers`.
+    ///
+    /// To override the contents of this collection use [`set_parent_identifiers`](Self::set_parent_identifiers).
+    ///
+    /// <p>An optional filter that sets up a list of <code>parentIdentifiers</code> to filter the results of the <code>ListEnabledBaseline</code> output.</p>
+    pub fn parent_identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.parent_identifiers.unwrap_or_default();
+        v.push(input.into());
+        self.parent_identifiers = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>An optional filter that sets up a list of <code>parentIdentifiers</code> to filter the results of the <code>ListEnabledBaseline</code> output.</p>
+    pub fn set_parent_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.parent_identifiers = input;
+        self
+    }
+    /// <p>An optional filter that sets up a list of <code>parentIdentifiers</code> to filter the results of the <code>ListEnabledBaseline</code> output.</p>
+    pub fn get_parent_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.parent_identifiers
+    }
     /// Consumes the builder and constructs a [`EnabledBaselineFilter`](crate::types::EnabledBaselineFilter).
     pub fn build(self) -> crate::types::EnabledBaselineFilter {
         crate::types::EnabledBaselineFilter {
             target_identifiers: self.target_identifiers,
             baseline_identifiers: self.baseline_identifiers,
+            parent_identifiers: self.parent_identifiers,
         }
     }
 }

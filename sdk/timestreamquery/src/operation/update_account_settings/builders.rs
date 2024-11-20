@@ -110,20 +110,20 @@ impl UpdateAccountSettingsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The maximum number of compute units the service will use at any point in time to serve your queries. To run queries, you must set a minimum capacity of 4 TCU. You can set the maximum number of TCU in multiples of 4, for example, 4, 8, 16, 32, and so on.</p>
-    /// <p>The maximum value supported for <code>MaxQueryTCU</code> is 1000. To request an increase to this soft limit, contact Amazon Web Services Support. For information about the default quota for maxQueryTCU, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.default">Default quotas</a>.</p>
+    /// <p>The maximum number of compute units the service will use at any point in time to serve your queries. To run queries, you must set a minimum capacity of 4 TCU. You can set the maximum number of TCU in multiples of 4, for example, 4, 8, 16, 32, and so on. The maximum value supported for <code>MaxQueryTCU</code> is 1000. To request an increase to this soft limit, contact Amazon Web Services Support. For information about the default quota for maxQueryTCU, see Default quotas. This configuration is applicable only for on-demand usage of Timestream Compute Units (TCUs).</p>
+    /// <p>The maximum value supported for <code>MaxQueryTCU</code> is 1000. To request an increase to this soft limit, contact Amazon Web Services Support. For information about the default quota for <code>maxQueryTCU</code>, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.default">Default quotas</a>.</p>
     pub fn max_query_tcu(mut self, input: i32) -> Self {
         self.inner = self.inner.max_query_tcu(input);
         self
     }
-    /// <p>The maximum number of compute units the service will use at any point in time to serve your queries. To run queries, you must set a minimum capacity of 4 TCU. You can set the maximum number of TCU in multiples of 4, for example, 4, 8, 16, 32, and so on.</p>
-    /// <p>The maximum value supported for <code>MaxQueryTCU</code> is 1000. To request an increase to this soft limit, contact Amazon Web Services Support. For information about the default quota for maxQueryTCU, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.default">Default quotas</a>.</p>
+    /// <p>The maximum number of compute units the service will use at any point in time to serve your queries. To run queries, you must set a minimum capacity of 4 TCU. You can set the maximum number of TCU in multiples of 4, for example, 4, 8, 16, 32, and so on. The maximum value supported for <code>MaxQueryTCU</code> is 1000. To request an increase to this soft limit, contact Amazon Web Services Support. For information about the default quota for maxQueryTCU, see Default quotas. This configuration is applicable only for on-demand usage of Timestream Compute Units (TCUs).</p>
+    /// <p>The maximum value supported for <code>MaxQueryTCU</code> is 1000. To request an increase to this soft limit, contact Amazon Web Services Support. For information about the default quota for <code>maxQueryTCU</code>, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.default">Default quotas</a>.</p>
     pub fn set_max_query_tcu(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_query_tcu(input);
         self
     }
-    /// <p>The maximum number of compute units the service will use at any point in time to serve your queries. To run queries, you must set a minimum capacity of 4 TCU. You can set the maximum number of TCU in multiples of 4, for example, 4, 8, 16, 32, and so on.</p>
-    /// <p>The maximum value supported for <code>MaxQueryTCU</code> is 1000. To request an increase to this soft limit, contact Amazon Web Services Support. For information about the default quota for maxQueryTCU, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.default">Default quotas</a>.</p>
+    /// <p>The maximum number of compute units the service will use at any point in time to serve your queries. To run queries, you must set a minimum capacity of 4 TCU. You can set the maximum number of TCU in multiples of 4, for example, 4, 8, 16, 32, and so on. The maximum value supported for <code>MaxQueryTCU</code> is 1000. To request an increase to this soft limit, contact Amazon Web Services Support. For information about the default quota for maxQueryTCU, see Default quotas. This configuration is applicable only for on-demand usage of Timestream Compute Units (TCUs).</p>
+    /// <p>The maximum value supported for <code>MaxQueryTCU</code> is 1000. To request an increase to this soft limit, contact Amazon Web Services Support. For information about the default quota for <code>maxQueryTCU</code>, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.default">Default quotas</a>.</p>
     pub fn get_max_query_tcu(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_query_tcu()
     }
@@ -146,5 +146,25 @@ impl UpdateAccountSettingsFluentBuilder {
     /// </note>
     pub fn get_query_pricing_model(&self) -> &::std::option::Option<crate::types::QueryPricingModel> {
         self.inner.get_query_pricing_model()
+    }
+    /// <p>Modifies the query compute settings configured in your account, including the query pricing model and provisioned Timestream Compute Units (TCUs) in your account.</p><note>
+    /// <p>This API is idempotent, meaning that making the same request multiple times will have the same effect as making the request once.</p>
+    /// </note>
+    pub fn query_compute(mut self, input: crate::types::QueryComputeRequest) -> Self {
+        self.inner = self.inner.query_compute(input);
+        self
+    }
+    /// <p>Modifies the query compute settings configured in your account, including the query pricing model and provisioned Timestream Compute Units (TCUs) in your account.</p><note>
+    /// <p>This API is idempotent, meaning that making the same request multiple times will have the same effect as making the request once.</p>
+    /// </note>
+    pub fn set_query_compute(mut self, input: ::std::option::Option<crate::types::QueryComputeRequest>) -> Self {
+        self.inner = self.inner.set_query_compute(input);
+        self
+    }
+    /// <p>Modifies the query compute settings configured in your account, including the query pricing model and provisioned Timestream Compute Units (TCUs) in your account.</p><note>
+    /// <p>This API is idempotent, meaning that making the same request multiple times will have the same effect as making the request once.</p>
+    /// </note>
+    pub fn get_query_compute(&self) -> &::std::option::Option<crate::types::QueryComputeRequest> {
+        self.inner.get_query_compute()
     }
 }

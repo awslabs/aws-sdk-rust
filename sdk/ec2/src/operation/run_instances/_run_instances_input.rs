@@ -82,7 +82,7 @@ pub struct RunInstancesInput {
     pub credit_specification: ::std::option::Option<crate::types::CreditSpecificationRequest>,
     /// <p>The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimize CPU options</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub cpu_options: ::std::option::Option<crate::types::CpuOptionsRequest>,
-    /// <p>Information about the Capacity Reservation targeting option. If you do not specify this parameter, the instance's Capacity Reservation preference defaults to <code>open</code>, which enables it to run in any open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone).</p>
+    /// <p>Information about the Capacity Reservation targeting option. If you do not specify this parameter, the instance's Capacity Reservation preference defaults to <code>open</code>, which enables it to run in any open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone, and tenancy).</p>
     pub capacity_reservation_specification: ::std::option::Option<crate::types::CapacityReservationSpecification>,
     /// <p>Indicates whether an instance is enabled for hibernation. This parameter is valid only if the instance meets the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation prerequisites</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your Amazon EC2 instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>You can't enable hibernation and Amazon Web Services Nitro Enclaves on the same instance.</p>
@@ -270,7 +270,7 @@ impl RunInstancesInput {
     pub fn cpu_options(&self) -> ::std::option::Option<&crate::types::CpuOptionsRequest> {
         self.cpu_options.as_ref()
     }
-    /// <p>Information about the Capacity Reservation targeting option. If you do not specify this parameter, the instance's Capacity Reservation preference defaults to <code>open</code>, which enables it to run in any open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone).</p>
+    /// <p>Information about the Capacity Reservation targeting option. If you do not specify this parameter, the instance's Capacity Reservation preference defaults to <code>open</code>, which enables it to run in any open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone, and tenancy).</p>
     pub fn capacity_reservation_specification(&self) -> ::std::option::Option<&crate::types::CapacityReservationSpecification> {
         self.capacity_reservation_specification.as_ref()
     }
@@ -931,17 +931,17 @@ impl RunInstancesInputBuilder {
     pub fn get_cpu_options(&self) -> &::std::option::Option<crate::types::CpuOptionsRequest> {
         &self.cpu_options
     }
-    /// <p>Information about the Capacity Reservation targeting option. If you do not specify this parameter, the instance's Capacity Reservation preference defaults to <code>open</code>, which enables it to run in any open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone).</p>
+    /// <p>Information about the Capacity Reservation targeting option. If you do not specify this parameter, the instance's Capacity Reservation preference defaults to <code>open</code>, which enables it to run in any open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone, and tenancy).</p>
     pub fn capacity_reservation_specification(mut self, input: crate::types::CapacityReservationSpecification) -> Self {
         self.capacity_reservation_specification = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about the Capacity Reservation targeting option. If you do not specify this parameter, the instance's Capacity Reservation preference defaults to <code>open</code>, which enables it to run in any open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone).</p>
+    /// <p>Information about the Capacity Reservation targeting option. If you do not specify this parameter, the instance's Capacity Reservation preference defaults to <code>open</code>, which enables it to run in any open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone, and tenancy).</p>
     pub fn set_capacity_reservation_specification(mut self, input: ::std::option::Option<crate::types::CapacityReservationSpecification>) -> Self {
         self.capacity_reservation_specification = input;
         self
     }
-    /// <p>Information about the Capacity Reservation targeting option. If you do not specify this parameter, the instance's Capacity Reservation preference defaults to <code>open</code>, which enables it to run in any open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone).</p>
+    /// <p>Information about the Capacity Reservation targeting option. If you do not specify this parameter, the instance's Capacity Reservation preference defaults to <code>open</code>, which enables it to run in any open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone, and tenancy).</p>
     pub fn get_capacity_reservation_specification(&self) -> &::std::option::Option<crate::types::CapacityReservationSpecification> {
         &self.capacity_reservation_specification
     }

@@ -3,20 +3,30 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAccountSettingsOutput {
-    /// <p>The maximum number of <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/tcu.html">Timestream compute units</a> (TCUs) the service will use at any point in time to serve your queries.</p>
+    /// <p>The maximum number of <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/tcu.html">Timestream compute units</a> (TCUs) the service will use at any point in time to serve your queries. To run queries, you must set a minimum capacity of 4 TCU. You can set the maximum number of TCU in multiples of 4, for example, 4, 8, 16, 32, and so on. This configuration is applicable only for on-demand usage of (TCUs).</p>
     pub max_query_tcu: ::std::option::Option<i32>,
-    /// <p>The pricing model for queries in your account.</p>
+    /// <p>The pricing model for queries in your account.</p><note>
+    /// <p>The <code>QueryPricingModel</code> parameter is used by several Timestream operations; however, the <code>UpdateAccountSettings</code> API operation doesn't recognize any values other than <code>COMPUTE_UNITS</code>.</p>
+    /// </note>
     pub query_pricing_model: ::std::option::Option<crate::types::QueryPricingModel>,
+    /// <p>An object that contains the usage settings for Timestream Compute Units (TCUs) in your account for the query workload.</p>
+    pub query_compute: ::std::option::Option<crate::types::QueryComputeResponse>,
     _request_id: Option<String>,
 }
 impl DescribeAccountSettingsOutput {
-    /// <p>The maximum number of <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/tcu.html">Timestream compute units</a> (TCUs) the service will use at any point in time to serve your queries.</p>
+    /// <p>The maximum number of <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/tcu.html">Timestream compute units</a> (TCUs) the service will use at any point in time to serve your queries. To run queries, you must set a minimum capacity of 4 TCU. You can set the maximum number of TCU in multiples of 4, for example, 4, 8, 16, 32, and so on. This configuration is applicable only for on-demand usage of (TCUs).</p>
     pub fn max_query_tcu(&self) -> ::std::option::Option<i32> {
         self.max_query_tcu
     }
-    /// <p>The pricing model for queries in your account.</p>
+    /// <p>The pricing model for queries in your account.</p><note>
+    /// <p>The <code>QueryPricingModel</code> parameter is used by several Timestream operations; however, the <code>UpdateAccountSettings</code> API operation doesn't recognize any values other than <code>COMPUTE_UNITS</code>.</p>
+    /// </note>
     pub fn query_pricing_model(&self) -> ::std::option::Option<&crate::types::QueryPricingModel> {
         self.query_pricing_model.as_ref()
+    }
+    /// <p>An object that contains the usage settings for Timestream Compute Units (TCUs) in your account for the query workload.</p>
+    pub fn query_compute(&self) -> ::std::option::Option<&crate::types::QueryComputeResponse> {
+        self.query_compute.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeAccountSettingsOutput {
@@ -37,36 +47,57 @@ impl DescribeAccountSettingsOutput {
 pub struct DescribeAccountSettingsOutputBuilder {
     pub(crate) max_query_tcu: ::std::option::Option<i32>,
     pub(crate) query_pricing_model: ::std::option::Option<crate::types::QueryPricingModel>,
+    pub(crate) query_compute: ::std::option::Option<crate::types::QueryComputeResponse>,
     _request_id: Option<String>,
 }
 impl DescribeAccountSettingsOutputBuilder {
-    /// <p>The maximum number of <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/tcu.html">Timestream compute units</a> (TCUs) the service will use at any point in time to serve your queries.</p>
+    /// <p>The maximum number of <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/tcu.html">Timestream compute units</a> (TCUs) the service will use at any point in time to serve your queries. To run queries, you must set a minimum capacity of 4 TCU. You can set the maximum number of TCU in multiples of 4, for example, 4, 8, 16, 32, and so on. This configuration is applicable only for on-demand usage of (TCUs).</p>
     pub fn max_query_tcu(mut self, input: i32) -> Self {
         self.max_query_tcu = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/tcu.html">Timestream compute units</a> (TCUs) the service will use at any point in time to serve your queries.</p>
+    /// <p>The maximum number of <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/tcu.html">Timestream compute units</a> (TCUs) the service will use at any point in time to serve your queries. To run queries, you must set a minimum capacity of 4 TCU. You can set the maximum number of TCU in multiples of 4, for example, 4, 8, 16, 32, and so on. This configuration is applicable only for on-demand usage of (TCUs).</p>
     pub fn set_max_query_tcu(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_query_tcu = input;
         self
     }
-    /// <p>The maximum number of <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/tcu.html">Timestream compute units</a> (TCUs) the service will use at any point in time to serve your queries.</p>
+    /// <p>The maximum number of <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/tcu.html">Timestream compute units</a> (TCUs) the service will use at any point in time to serve your queries. To run queries, you must set a minimum capacity of 4 TCU. You can set the maximum number of TCU in multiples of 4, for example, 4, 8, 16, 32, and so on. This configuration is applicable only for on-demand usage of (TCUs).</p>
     pub fn get_max_query_tcu(&self) -> &::std::option::Option<i32> {
         &self.max_query_tcu
     }
-    /// <p>The pricing model for queries in your account.</p>
+    /// <p>The pricing model for queries in your account.</p><note>
+    /// <p>The <code>QueryPricingModel</code> parameter is used by several Timestream operations; however, the <code>UpdateAccountSettings</code> API operation doesn't recognize any values other than <code>COMPUTE_UNITS</code>.</p>
+    /// </note>
     pub fn query_pricing_model(mut self, input: crate::types::QueryPricingModel) -> Self {
         self.query_pricing_model = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The pricing model for queries in your account.</p>
+    /// <p>The pricing model for queries in your account.</p><note>
+    /// <p>The <code>QueryPricingModel</code> parameter is used by several Timestream operations; however, the <code>UpdateAccountSettings</code> API operation doesn't recognize any values other than <code>COMPUTE_UNITS</code>.</p>
+    /// </note>
     pub fn set_query_pricing_model(mut self, input: ::std::option::Option<crate::types::QueryPricingModel>) -> Self {
         self.query_pricing_model = input;
         self
     }
-    /// <p>The pricing model for queries in your account.</p>
+    /// <p>The pricing model for queries in your account.</p><note>
+    /// <p>The <code>QueryPricingModel</code> parameter is used by several Timestream operations; however, the <code>UpdateAccountSettings</code> API operation doesn't recognize any values other than <code>COMPUTE_UNITS</code>.</p>
+    /// </note>
     pub fn get_query_pricing_model(&self) -> &::std::option::Option<crate::types::QueryPricingModel> {
         &self.query_pricing_model
+    }
+    /// <p>An object that contains the usage settings for Timestream Compute Units (TCUs) in your account for the query workload.</p>
+    pub fn query_compute(mut self, input: crate::types::QueryComputeResponse) -> Self {
+        self.query_compute = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that contains the usage settings for Timestream Compute Units (TCUs) in your account for the query workload.</p>
+    pub fn set_query_compute(mut self, input: ::std::option::Option<crate::types::QueryComputeResponse>) -> Self {
+        self.query_compute = input;
+        self
+    }
+    /// <p>An object that contains the usage settings for Timestream Compute Units (TCUs) in your account for the query workload.</p>
+    pub fn get_query_compute(&self) -> &::std::option::Option<crate::types::QueryComputeResponse> {
+        &self.query_compute
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -82,6 +113,7 @@ impl DescribeAccountSettingsOutputBuilder {
         crate::operation::describe_account_settings::DescribeAccountSettingsOutput {
             max_query_tcu: self.max_query_tcu,
             query_pricing_model: self.query_pricing_model,
+            query_compute: self.query_compute,
             _request_id: self._request_id,
         }
     }

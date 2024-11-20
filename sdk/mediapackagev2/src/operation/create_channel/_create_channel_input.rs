@@ -20,6 +20,10 @@ pub struct CreateChannelInput {
     pub input_type: ::std::option::Option<crate::types::InputType>,
     /// <p>Enter any descriptive text that helps you to identify the channel.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>The configuration for input switching based on the media quality confidence score (MQCS) as provided from AWS Elemental MediaLive. This setting is valid only when <code>InputType</code> is <code>CMAF</code>.</p>
+    pub input_switch_configuration: ::std::option::Option<crate::types::InputSwitchConfiguration>,
+    /// <p>The settings for what common media server data (CMSD) headers AWS Elemental MediaPackage includes in responses to the CDN. This setting is valid only when <code>InputType</code> is <code>CMAF</code>.</p>
+    pub output_header_configuration: ::std::option::Option<crate::types::OutputHeaderConfiguration>,
     /// <p>A comma-separated list of tag key:value pairs that you define. For example:</p>
     /// <p><code>"Key1": "Value1",</code></p>
     /// <p><code>"Key2": "Value2"</code></p>
@@ -53,6 +57,14 @@ impl CreateChannelInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
+    /// <p>The configuration for input switching based on the media quality confidence score (MQCS) as provided from AWS Elemental MediaLive. This setting is valid only when <code>InputType</code> is <code>CMAF</code>.</p>
+    pub fn input_switch_configuration(&self) -> ::std::option::Option<&crate::types::InputSwitchConfiguration> {
+        self.input_switch_configuration.as_ref()
+    }
+    /// <p>The settings for what common media server data (CMSD) headers AWS Elemental MediaPackage includes in responses to the CDN. This setting is valid only when <code>InputType</code> is <code>CMAF</code>.</p>
+    pub fn output_header_configuration(&self) -> ::std::option::Option<&crate::types::OutputHeaderConfiguration> {
+        self.output_header_configuration.as_ref()
+    }
     /// <p>A comma-separated list of tag key:value pairs that you define. For example:</p>
     /// <p><code>"Key1": "Value1",</code></p>
     /// <p><code>"Key2": "Value2"</code></p>
@@ -76,6 +88,8 @@ pub struct CreateChannelInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) input_type: ::std::option::Option<crate::types::InputType>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) input_switch_configuration: ::std::option::Option<crate::types::InputSwitchConfiguration>,
+    pub(crate) output_header_configuration: ::std::option::Option<crate::types::OutputHeaderConfiguration>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateChannelInputBuilder {
@@ -172,6 +186,34 @@ impl CreateChannelInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// <p>The configuration for input switching based on the media quality confidence score (MQCS) as provided from AWS Elemental MediaLive. This setting is valid only when <code>InputType</code> is <code>CMAF</code>.</p>
+    pub fn input_switch_configuration(mut self, input: crate::types::InputSwitchConfiguration) -> Self {
+        self.input_switch_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for input switching based on the media quality confidence score (MQCS) as provided from AWS Elemental MediaLive. This setting is valid only when <code>InputType</code> is <code>CMAF</code>.</p>
+    pub fn set_input_switch_configuration(mut self, input: ::std::option::Option<crate::types::InputSwitchConfiguration>) -> Self {
+        self.input_switch_configuration = input;
+        self
+    }
+    /// <p>The configuration for input switching based on the media quality confidence score (MQCS) as provided from AWS Elemental MediaLive. This setting is valid only when <code>InputType</code> is <code>CMAF</code>.</p>
+    pub fn get_input_switch_configuration(&self) -> &::std::option::Option<crate::types::InputSwitchConfiguration> {
+        &self.input_switch_configuration
+    }
+    /// <p>The settings for what common media server data (CMSD) headers AWS Elemental MediaPackage includes in responses to the CDN. This setting is valid only when <code>InputType</code> is <code>CMAF</code>.</p>
+    pub fn output_header_configuration(mut self, input: crate::types::OutputHeaderConfiguration) -> Self {
+        self.output_header_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The settings for what common media server data (CMSD) headers AWS Elemental MediaPackage includes in responses to the CDN. This setting is valid only when <code>InputType</code> is <code>CMAF</code>.</p>
+    pub fn set_output_header_configuration(mut self, input: ::std::option::Option<crate::types::OutputHeaderConfiguration>) -> Self {
+        self.output_header_configuration = input;
+        self
+    }
+    /// <p>The settings for what common media server data (CMSD) headers AWS Elemental MediaPackage includes in responses to the CDN. This setting is valid only when <code>InputType</code> is <code>CMAF</code>.</p>
+    pub fn get_output_header_configuration(&self) -> &::std::option::Option<crate::types::OutputHeaderConfiguration> {
+        &self.output_header_configuration
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -208,6 +250,8 @@ impl CreateChannelInputBuilder {
             client_token: self.client_token,
             input_type: self.input_type,
             description: self.description,
+            input_switch_configuration: self.input_switch_configuration,
+            output_header_configuration: self.output_header_configuration,
             tags: self.tags,
         })
     }

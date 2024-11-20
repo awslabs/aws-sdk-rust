@@ -156,4 +156,18 @@ impl ListEnabledBaselinesFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
+    /// <p>A value that can be set to include the child enabled baselines in responses. The default value is false.</p>
+    pub fn include_children(mut self, input: bool) -> Self {
+        self.inner = self.inner.include_children(input);
+        self
+    }
+    /// <p>A value that can be set to include the child enabled baselines in responses. The default value is false.</p>
+    pub fn set_include_children(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_include_children(input);
+        self
+    }
+    /// <p>A value that can be set to include the child enabled baselines in responses. The default value is false.</p>
+    pub fn get_include_children(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_children()
+    }
 }

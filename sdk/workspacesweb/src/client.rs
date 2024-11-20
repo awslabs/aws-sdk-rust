@@ -138,6 +138,8 @@ impl Client {
 
 mod associate_browser_settings;
 
+mod associate_data_protection_settings;
+
 mod associate_ip_access_settings;
 
 mod associate_network_settings;
@@ -149,6 +151,8 @@ mod associate_user_access_logging_settings;
 mod associate_user_settings;
 
 mod create_browser_settings;
+
+mod create_data_protection_settings;
 
 mod create_identity_provider;
 
@@ -193,6 +197,8 @@ pub mod customize;
 
 mod delete_browser_settings;
 
+mod delete_data_protection_settings;
+
 mod delete_identity_provider;
 
 mod delete_ip_access_settings;
@@ -209,6 +215,8 @@ mod delete_user_settings;
 
 mod disassociate_browser_settings;
 
+mod disassociate_data_protection_settings;
+
 mod disassociate_ip_access_settings;
 
 mod disassociate_network_settings;
@@ -222,6 +230,8 @@ mod disassociate_user_settings;
 mod expire_session;
 
 mod get_browser_settings;
+
+mod get_data_protection_settings;
 
 mod get_identity_provider;
 
@@ -244,6 +254,8 @@ mod get_user_access_logging_settings;
 mod get_user_settings;
 
 mod list_browser_settings;
+
+mod list_data_protection_settings;
 
 mod list_identity_providers;
 
@@ -270,6 +282,8 @@ mod tag_resource;
 mod untag_resource;
 
 mod update_browser_settings;
+
+mod update_data_protection_settings;
 
 mod update_identity_provider;
 

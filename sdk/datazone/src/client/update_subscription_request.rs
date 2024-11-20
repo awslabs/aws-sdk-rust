@@ -19,6 +19,8 @@ impl super::Client {
     ///   - [`subscribed_listings(Vec::<SubscribedListing>)`](crate::operation::update_subscription_request::UpdateSubscriptionRequestOutput::subscribed_listings): <p>The subscribed listings of the subscription request.</p>
     ///   - [`reviewer_id(Option<String>)`](crate::operation::update_subscription_request::UpdateSubscriptionRequestOutput::reviewer_id): <p>The identifier of the Amazon DataZone user who reviews the subscription request.</p>
     ///   - [`decision_comment(Option<String>)`](crate::operation::update_subscription_request::UpdateSubscriptionRequestOutput::decision_comment): <p>The decision comment of the <code>UpdateSubscriptionRequest</code> action.</p>
+    ///   - [`existing_subscription_id(Option<String>)`](crate::operation::update_subscription_request::UpdateSubscriptionRequestOutput::existing_subscription_id): <p>The ID of the existing subscription.</p>
+    ///   - [`metadata_forms(Option<Vec::<FormOutput>>)`](crate::operation::update_subscription_request::UpdateSubscriptionRequestOutput::metadata_forms): <p>Metadata forms included in the subscription request.</p>
     /// - On failure, responds with [`SdkError<UpdateSubscriptionRequestError>`](crate::operation::update_subscription_request::UpdateSubscriptionRequestError)
     pub fn update_subscription_request(&self) -> crate::operation::update_subscription_request::builders::UpdateSubscriptionRequestFluentBuilder {
         crate::operation::update_subscription_request::builders::UpdateSubscriptionRequestFluentBuilder::new(self.handle.clone())

@@ -14,9 +14,14 @@
 /// match rdsinstancefindingreasoncode {
 ///     RdsInstanceFindingReasonCode::CpuOverProvisioned => { /* ... */ },
 ///     RdsInstanceFindingReasonCode::CpuUnderProvisioned => { /* ... */ },
+///     RdsInstanceFindingReasonCode::DbClusterWriterUnderProvisioned => { /* ... */ },
 ///     RdsInstanceFindingReasonCode::EbsIopsOverProvisioned => { /* ... */ },
+///     RdsInstanceFindingReasonCode::EbsIopsUnderProvisioned => { /* ... */ },
 ///     RdsInstanceFindingReasonCode::EbsThroughputOverProvisioned => { /* ... */ },
 ///     RdsInstanceFindingReasonCode::EbsThroughputUnderProvisioned => { /* ... */ },
+///     RdsInstanceFindingReasonCode::InstanceStorageReadIopsUnderProvisioned => { /* ... */ },
+///     RdsInstanceFindingReasonCode::InstanceStorageWriteIopsUnderProvisioned => { /* ... */ },
+///     RdsInstanceFindingReasonCode::MemoryUnderProvisioned => { /* ... */ },
 ///     RdsInstanceFindingReasonCode::NetworkBandwidthOverProvisioned => { /* ... */ },
 ///     RdsInstanceFindingReasonCode::NetworkBandwidthUnderProvisioned => { /* ... */ },
 ///     RdsInstanceFindingReasonCode::NewEngineVersionAvailable => { /* ... */ },
@@ -53,11 +58,21 @@ pub enum RdsInstanceFindingReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     CpuUnderProvisioned,
     #[allow(missing_docs)] // documentation missing in model
+    DbClusterWriterUnderProvisioned,
+    #[allow(missing_docs)] // documentation missing in model
     EbsIopsOverProvisioned,
+    #[allow(missing_docs)] // documentation missing in model
+    EbsIopsUnderProvisioned,
     #[allow(missing_docs)] // documentation missing in model
     EbsThroughputOverProvisioned,
     #[allow(missing_docs)] // documentation missing in model
     EbsThroughputUnderProvisioned,
+    #[allow(missing_docs)] // documentation missing in model
+    InstanceStorageReadIopsUnderProvisioned,
+    #[allow(missing_docs)] // documentation missing in model
+    InstanceStorageWriteIopsUnderProvisioned,
+    #[allow(missing_docs)] // documentation missing in model
+    MemoryUnderProvisioned,
     #[allow(missing_docs)] // documentation missing in model
     NetworkBandwidthOverProvisioned,
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +90,14 @@ impl ::std::convert::From<&str> for RdsInstanceFindingReasonCode {
         match s {
             "CPUOverprovisioned" => RdsInstanceFindingReasonCode::CpuOverProvisioned,
             "CPUUnderprovisioned" => RdsInstanceFindingReasonCode::CpuUnderProvisioned,
+            "DBClusterWriterUnderprovisioned" => RdsInstanceFindingReasonCode::DbClusterWriterUnderProvisioned,
             "EBSIOPSOverprovisioned" => RdsInstanceFindingReasonCode::EbsIopsOverProvisioned,
+            "EBSIOPSUnderprovisioned" => RdsInstanceFindingReasonCode::EbsIopsUnderProvisioned,
             "EBSThroughputOverprovisioned" => RdsInstanceFindingReasonCode::EbsThroughputOverProvisioned,
             "EBSThroughputUnderprovisioned" => RdsInstanceFindingReasonCode::EbsThroughputUnderProvisioned,
+            "InstanceStorageReadIOPSUnderprovisioned" => RdsInstanceFindingReasonCode::InstanceStorageReadIopsUnderProvisioned,
+            "InstanceStorageWriteIOPSUnderprovisioned" => RdsInstanceFindingReasonCode::InstanceStorageWriteIopsUnderProvisioned,
+            "MemoryUnderprovisioned" => RdsInstanceFindingReasonCode::MemoryUnderProvisioned,
             "NetworkBandwidthOverprovisioned" => RdsInstanceFindingReasonCode::NetworkBandwidthOverProvisioned,
             "NetworkBandwidthUnderprovisioned" => RdsInstanceFindingReasonCode::NetworkBandwidthUnderProvisioned,
             "NewEngineVersionAvailable" => RdsInstanceFindingReasonCode::NewEngineVersionAvailable,
@@ -99,9 +119,14 @@ impl RdsInstanceFindingReasonCode {
         match self {
             RdsInstanceFindingReasonCode::CpuOverProvisioned => "CPUOverprovisioned",
             RdsInstanceFindingReasonCode::CpuUnderProvisioned => "CPUUnderprovisioned",
+            RdsInstanceFindingReasonCode::DbClusterWriterUnderProvisioned => "DBClusterWriterUnderprovisioned",
             RdsInstanceFindingReasonCode::EbsIopsOverProvisioned => "EBSIOPSOverprovisioned",
+            RdsInstanceFindingReasonCode::EbsIopsUnderProvisioned => "EBSIOPSUnderprovisioned",
             RdsInstanceFindingReasonCode::EbsThroughputOverProvisioned => "EBSThroughputOverprovisioned",
             RdsInstanceFindingReasonCode::EbsThroughputUnderProvisioned => "EBSThroughputUnderprovisioned",
+            RdsInstanceFindingReasonCode::InstanceStorageReadIopsUnderProvisioned => "InstanceStorageReadIOPSUnderprovisioned",
+            RdsInstanceFindingReasonCode::InstanceStorageWriteIopsUnderProvisioned => "InstanceStorageWriteIOPSUnderprovisioned",
+            RdsInstanceFindingReasonCode::MemoryUnderProvisioned => "MemoryUnderprovisioned",
             RdsInstanceFindingReasonCode::NetworkBandwidthOverProvisioned => "NetworkBandwidthOverprovisioned",
             RdsInstanceFindingReasonCode::NetworkBandwidthUnderProvisioned => "NetworkBandwidthUnderprovisioned",
             RdsInstanceFindingReasonCode::NewEngineVersionAvailable => "NewEngineVersionAvailable",
@@ -114,9 +139,14 @@ impl RdsInstanceFindingReasonCode {
         &[
             "CPUOverprovisioned",
             "CPUUnderprovisioned",
+            "DBClusterWriterUnderprovisioned",
             "EBSIOPSOverprovisioned",
+            "EBSIOPSUnderprovisioned",
             "EBSThroughputOverprovisioned",
             "EBSThroughputUnderprovisioned",
+            "InstanceStorageReadIOPSUnderprovisioned",
+            "InstanceStorageWriteIOPSUnderprovisioned",
+            "MemoryUnderprovisioned",
             "NetworkBandwidthOverprovisioned",
             "NetworkBandwidthUnderprovisioned",
             "NewEngineVersionAvailable",
@@ -146,9 +176,14 @@ impl ::std::fmt::Display for RdsInstanceFindingReasonCode {
         match self {
             RdsInstanceFindingReasonCode::CpuOverProvisioned => write!(f, "CPUOverprovisioned"),
             RdsInstanceFindingReasonCode::CpuUnderProvisioned => write!(f, "CPUUnderprovisioned"),
+            RdsInstanceFindingReasonCode::DbClusterWriterUnderProvisioned => write!(f, "DBClusterWriterUnderprovisioned"),
             RdsInstanceFindingReasonCode::EbsIopsOverProvisioned => write!(f, "EBSIOPSOverprovisioned"),
+            RdsInstanceFindingReasonCode::EbsIopsUnderProvisioned => write!(f, "EBSIOPSUnderprovisioned"),
             RdsInstanceFindingReasonCode::EbsThroughputOverProvisioned => write!(f, "EBSThroughputOverprovisioned"),
             RdsInstanceFindingReasonCode::EbsThroughputUnderProvisioned => write!(f, "EBSThroughputUnderprovisioned"),
+            RdsInstanceFindingReasonCode::InstanceStorageReadIopsUnderProvisioned => write!(f, "InstanceStorageReadIOPSUnderprovisioned"),
+            RdsInstanceFindingReasonCode::InstanceStorageWriteIopsUnderProvisioned => write!(f, "InstanceStorageWriteIOPSUnderprovisioned"),
+            RdsInstanceFindingReasonCode::MemoryUnderProvisioned => write!(f, "MemoryUnderprovisioned"),
             RdsInstanceFindingReasonCode::NetworkBandwidthOverProvisioned => write!(f, "NetworkBandwidthOverprovisioned"),
             RdsInstanceFindingReasonCode::NetworkBandwidthUnderProvisioned => write!(f, "NetworkBandwidthUnderprovisioned"),
             RdsInstanceFindingReasonCode::NewEngineVersionAvailable => write!(f, "NewEngineVersionAvailable"),

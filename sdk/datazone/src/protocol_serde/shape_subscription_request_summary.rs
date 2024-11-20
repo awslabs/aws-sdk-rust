@@ -90,6 +90,17 @@ where
                                     .transpose()?,
                             );
                         }
+                        "existingSubscriptionId" => {
+                            builder = builder.set_existing_subscription_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "metadataFormsSummary" => {
+                            builder = builder
+                                .set_metadata_forms_summary(crate::protocol_serde::shape_metadata_forms_summary::de_metadata_forms_summary(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

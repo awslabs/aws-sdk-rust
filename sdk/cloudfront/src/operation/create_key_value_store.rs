@@ -247,11 +247,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateKeyValu
 pub enum CreateKeyValueStoreError {
     /// <p>Access denied.</p>
     AccessDenied(crate::types::error::AccessDenied),
-    /// <p>The key value store entity already exists. You must provide a unique key value store entity.</p>
+    /// <p>The entity already exists. You must provide a unique entity.</p>
     EntityAlreadyExists(crate::types::error::EntityAlreadyExists),
-    /// <p>The key value store entity limit has been exceeded.</p>
+    /// <p>The entity limit has been exceeded.</p>
     EntityLimitExceeded(crate::types::error::EntityLimitExceeded),
-    /// <p>The key value store entity size limit was exceeded.</p>
+    /// <p>The entity size limit was exceeded.</p>
     EntitySizeLimitExceeded(crate::types::error::EntitySizeLimitExceeded),
     /// <p>An argument is invalid.</p>
     InvalidArgument(crate::types::error::InvalidArgument),

@@ -282,6 +282,8 @@ pub enum UpdateDistributionWithStagingConfigError {
     AccessDenied(crate::types::error::AccessDenied),
     /// <p>The CNAME specified is already defined for CloudFront.</p>
     CnameAlreadyExists(crate::types::error::CnameAlreadyExists),
+    /// <p>The entity was not found.</p>
+    EntityNotFound(crate::types::error::EntityNotFound),
     /// <p>The specified configuration for field-level encryption can't be associated with the specified cache behavior.</p>
     IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(crate::types::error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior),
     /// <p>The update contains modifications that are not allowed.</p>
@@ -437,6 +439,7 @@ impl UpdateDistributionWithStagingConfigError {
         match self {
             Self::AccessDenied(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::CnameAlreadyExists(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::EntityNotFound(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(e) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e)
             }
@@ -508,6 +511,10 @@ impl UpdateDistributionWithStagingConfigError {
     /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigError::CnameAlreadyExists`.
     pub fn is_cname_already_exists(&self) -> bool {
         matches!(self, Self::CnameAlreadyExists(_))
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigError::EntityNotFound`.
+    pub fn is_entity_not_found(&self) -> bool {
+        matches!(self, Self::EntityNotFound(_))
     }
     /// Returns `true` if the error kind is `UpdateDistributionWithStagingConfigError::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior`.
     pub fn is_illegal_field_level_encryption_config_association_with_cache_behavior(&self) -> bool {
@@ -751,6 +758,7 @@ impl ::std::error::Error for UpdateDistributionWithStagingConfigError {
         match self {
             Self::AccessDenied(_inner) => ::std::option::Option::Some(_inner),
             Self::CnameAlreadyExists(_inner) => ::std::option::Option::Some(_inner),
+            Self::EntityNotFound(_inner) => ::std::option::Option::Some(_inner),
             Self::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(_inner) => ::std::option::Option::Some(_inner),
             Self::IllegalUpdate(_inner) => ::std::option::Option::Some(_inner),
             Self::InconsistentQuantities(_inner) => ::std::option::Option::Some(_inner),
@@ -819,6 +827,7 @@ impl ::std::fmt::Display for UpdateDistributionWithStagingConfigError {
         match self {
             Self::AccessDenied(_inner) => _inner.fmt(f),
             Self::CnameAlreadyExists(_inner) => _inner.fmt(f),
+            Self::EntityNotFound(_inner) => _inner.fmt(f),
             Self::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(_inner) => _inner.fmt(f),
             Self::IllegalUpdate(_inner) => _inner.fmt(f),
             Self::InconsistentQuantities(_inner) => _inner.fmt(f),
@@ -901,6 +910,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateDistrib
         match self {
             Self::AccessDenied(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::CnameAlreadyExists(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::EntityNotFound(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }

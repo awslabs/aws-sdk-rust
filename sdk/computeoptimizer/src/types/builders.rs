@@ -19,6 +19,8 @@ pub use crate::types::_current_performance_risk_ratings::CurrentPerformanceRiskR
 
 pub use crate::types::_savings_opportunity::SavingsOpportunityBuilder;
 
+pub use crate::types::_idle_summary::IdleSummaryBuilder;
+
 pub use crate::types::_summary::SummaryBuilder;
 
 pub use crate::types::_reason_code_summary::ReasonCodeSummaryBuilder;
@@ -88,6 +90,22 @@ pub use crate::types::_lambda_function_memory_projected_metric::LambdaFunctionMe
 pub use crate::types::_lambda_function_utilization_metric::LambdaFunctionUtilizationMetricBuilder;
 
 pub use crate::types::_lambda_function_recommendation_filter::LambdaFunctionRecommendationFilterBuilder;
+
+pub use crate::types::_idle_recommendation_error::IdleRecommendationErrorBuilder;
+
+pub use crate::types::_idle_recommendation::IdleRecommendationBuilder;
+
+pub use crate::types::_idle_utilization_metric::IdleUtilizationMetricBuilder;
+
+pub use crate::types::_idle_savings_opportunity_after_discounts::IdleSavingsOpportunityAfterDiscountsBuilder;
+
+pub use crate::types::_idle_estimated_monthly_savings::IdleEstimatedMonthlySavingsBuilder;
+
+pub use crate::types::_idle_savings_opportunity::IdleSavingsOpportunityBuilder;
+
+pub use crate::types::_order_by::OrderByBuilder;
+
+pub use crate::types::_idle_recommendation_filter::IdleRecommendationFilterBuilder;
 
 pub use crate::types::_account_enrollment_status::AccountEnrollmentStatusBuilder;
 

@@ -253,9 +253,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteKeyValu
 pub enum DeleteKeyValueStoreError {
     /// <p>Access denied.</p>
     AccessDenied(crate::types::error::AccessDenied),
-    /// <p>The key value store entity cannot be deleted while it is in use.</p>
+    /// <p>The entity cannot be deleted while it is in use.</p>
     CannotDeleteEntityWhileInUse(crate::types::error::CannotDeleteEntityWhileInUse),
-    /// <p>The key value store entity was not found.</p>
+    /// <p>The entity was not found.</p>
     EntityNotFound(crate::types::error::EntityNotFound),
     /// <p>The <code>If-Match</code> version is missing or not valid.</p>
     InvalidIfMatchVersion(crate::types::error::InvalidIfMatchVersion),

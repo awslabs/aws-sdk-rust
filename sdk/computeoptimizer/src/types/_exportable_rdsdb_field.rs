@@ -15,12 +15,14 @@
 ///     ExportableRdsdbField::AccountId => { /* ... */ },
 ///     ExportableRdsdbField::CurrentDbInstanceClass => { /* ... */ },
 ///     ExportableRdsdbField::CurrentInstanceOnDemandHourlyPrice => { /* ... */ },
+///     ExportableRdsdbField::CurrentInstancePerformanceRisk => { /* ... */ },
 ///     ExportableRdsdbField::CurrentStorageConfigurationAllocatedStorage => { /* ... */ },
 ///     ExportableRdsdbField::CurrentStorageConfigurationIops => { /* ... */ },
 ///     ExportableRdsdbField::CurrentStorageConfigurationMaxAllocatedStorage => { /* ... */ },
 ///     ExportableRdsdbField::CurrentStorageConfigurationStorageThroughput => { /* ... */ },
 ///     ExportableRdsdbField::CurrentStorageConfigurationStorageType => { /* ... */ },
 ///     ExportableRdsdbField::CurrentStorageOnDemandMonthlyPrice => { /* ... */ },
+///     ExportableRdsdbField::DbClusterIdentifier => { /* ... */ },
 ///     ExportableRdsdbField::EffectiveRecommendationPreferencesCpuVendorArchitectures => { /* ... */ },
 ///     ExportableRdsdbField::EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics => { /* ... */ },
 ///     ExportableRdsdbField::EffectiveRecommendationPreferencesLookbackPeriod => { /* ... */ },
@@ -44,6 +46,7 @@
 ///     ExportableRdsdbField::LastRefreshTimestamp => { /* ... */ },
 ///     ExportableRdsdbField::LookbackPeriodInDays => { /* ... */ },
 ///     ExportableRdsdbField::MultiAzDbInstance => { /* ... */ },
+///     ExportableRdsdbField::PromotionTier => { /* ... */ },
 ///     ExportableRdsdbField::ResourceArn => { /* ... */ },
 ///     ExportableRdsdbField::StorageFinding => { /* ... */ },
 ///     ExportableRdsdbField::StorageFindingReasonCodes => { /* ... */ },
@@ -61,6 +64,10 @@
 ///     ExportableRdsdbField::StorageRecommendationOptionsStorageThroughput => { /* ... */ },
 ///     ExportableRdsdbField::StorageRecommendationOptionsStorageType => { /* ... */ },
 ///     ExportableRdsdbField::Tags => { /* ... */ },
+///     ExportableRdsdbField::UtilizationMetricsAuroraMemoryHealthStateMaximum => { /* ... */ },
+///     ExportableRdsdbField::UtilizationMetricsAuroraMemoryNumDeclinedSqlTotalMaximum => { /* ... */ },
+///     ExportableRdsdbField::UtilizationMetricsAuroraMemoryNumKillConnTotalMaximum => { /* ... */ },
+///     ExportableRdsdbField::UtilizationMetricsAuroraMemoryNumKillQueryTotalMaximum => { /* ... */ },
 ///     ExportableRdsdbField::UtilizationMetricsCpuMaximum => { /* ... */ },
 ///     ExportableRdsdbField::UtilizationMetricsDatabaseConnectionsMaximum => { /* ... */ },
 ///     ExportableRdsdbField::UtilizationMetricsEbsVolumeReadIopsMaximum => { /* ... */ },
@@ -71,6 +78,10 @@
 ///     ExportableRdsdbField::UtilizationMetricsMemoryMaximum => { /* ... */ },
 ///     ExportableRdsdbField::UtilizationMetricsNetworkReceiveThroughputMaximum => { /* ... */ },
 ///     ExportableRdsdbField::UtilizationMetricsNetworkTransmitThroughputMaximum => { /* ... */ },
+///     ExportableRdsdbField::UtilizationMetricsReadIopsEphemeralStorageMaximum => { /* ... */ },
+///     ExportableRdsdbField::UtilizationMetricsStorageNetworkReceiveThroughputMaximum => { /* ... */ },
+///     ExportableRdsdbField::UtilizationMetricsStorageNetworkTransmitThroughputMaximum => { /* ... */ },
+///     ExportableRdsdbField::UtilizationMetricsWriteIopsEphemeralStorageMaximum => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -105,6 +116,8 @@ pub enum ExportableRdsdbField {
     #[allow(missing_docs)] // documentation missing in model
     CurrentInstanceOnDemandHourlyPrice,
     #[allow(missing_docs)] // documentation missing in model
+    CurrentInstancePerformanceRisk,
+    #[allow(missing_docs)] // documentation missing in model
     CurrentStorageConfigurationAllocatedStorage,
     #[allow(missing_docs)] // documentation missing in model
     CurrentStorageConfigurationIops,
@@ -116,6 +129,8 @@ pub enum ExportableRdsdbField {
     CurrentStorageConfigurationStorageType,
     #[allow(missing_docs)] // documentation missing in model
     CurrentStorageOnDemandMonthlyPrice,
+    #[allow(missing_docs)] // documentation missing in model
+    DbClusterIdentifier,
     #[allow(missing_docs)] // documentation missing in model
     EffectiveRecommendationPreferencesCpuVendorArchitectures,
     #[allow(missing_docs)] // documentation missing in model
@@ -163,6 +178,8 @@ pub enum ExportableRdsdbField {
     #[allow(missing_docs)] // documentation missing in model
     MultiAzDbInstance,
     #[allow(missing_docs)] // documentation missing in model
+    PromotionTier,
+    #[allow(missing_docs)] // documentation missing in model
     ResourceArn,
     #[allow(missing_docs)] // documentation missing in model
     StorageFinding,
@@ -197,6 +214,14 @@ pub enum ExportableRdsdbField {
     #[allow(missing_docs)] // documentation missing in model
     Tags,
     #[allow(missing_docs)] // documentation missing in model
+    UtilizationMetricsAuroraMemoryHealthStateMaximum,
+    #[allow(missing_docs)] // documentation missing in model
+    UtilizationMetricsAuroraMemoryNumDeclinedSqlTotalMaximum,
+    #[allow(missing_docs)] // documentation missing in model
+    UtilizationMetricsAuroraMemoryNumKillConnTotalMaximum,
+    #[allow(missing_docs)] // documentation missing in model
+    UtilizationMetricsAuroraMemoryNumKillQueryTotalMaximum,
+    #[allow(missing_docs)] // documentation missing in model
     UtilizationMetricsCpuMaximum,
     #[allow(missing_docs)] // documentation missing in model
     UtilizationMetricsDatabaseConnectionsMaximum,
@@ -216,6 +241,14 @@ pub enum ExportableRdsdbField {
     UtilizationMetricsNetworkReceiveThroughputMaximum,
     #[allow(missing_docs)] // documentation missing in model
     UtilizationMetricsNetworkTransmitThroughputMaximum,
+    #[allow(missing_docs)] // documentation missing in model
+    UtilizationMetricsReadIopsEphemeralStorageMaximum,
+    #[allow(missing_docs)] // documentation missing in model
+    UtilizationMetricsStorageNetworkReceiveThroughputMaximum,
+    #[allow(missing_docs)] // documentation missing in model
+    UtilizationMetricsStorageNetworkTransmitThroughputMaximum,
+    #[allow(missing_docs)] // documentation missing in model
+    UtilizationMetricsWriteIopsEphemeralStorageMaximum,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -226,12 +259,14 @@ impl ::std::convert::From<&str> for ExportableRdsdbField {
             "AccountId" => ExportableRdsdbField::AccountId,
             "CurrentDBInstanceClass" => ExportableRdsdbField::CurrentDbInstanceClass,
             "CurrentInstanceOnDemandHourlyPrice" => ExportableRdsdbField::CurrentInstanceOnDemandHourlyPrice,
+            "CurrentInstancePerformanceRisk" => ExportableRdsdbField::CurrentInstancePerformanceRisk,
             "CurrentStorageConfigurationAllocatedStorage" => ExportableRdsdbField::CurrentStorageConfigurationAllocatedStorage,
             "CurrentStorageConfigurationIOPS" => ExportableRdsdbField::CurrentStorageConfigurationIops,
             "CurrentStorageConfigurationMaxAllocatedStorage" => ExportableRdsdbField::CurrentStorageConfigurationMaxAllocatedStorage,
             "CurrentStorageConfigurationStorageThroughput" => ExportableRdsdbField::CurrentStorageConfigurationStorageThroughput,
             "CurrentStorageConfigurationStorageType" => ExportableRdsdbField::CurrentStorageConfigurationStorageType,
             "CurrentStorageOnDemandMonthlyPrice" => ExportableRdsdbField::CurrentStorageOnDemandMonthlyPrice,
+            "DBClusterIdentifier" => ExportableRdsdbField::DbClusterIdentifier,
             "EffectiveRecommendationPreferencesCpuVendorArchitectures" => {
                 ExportableRdsdbField::EffectiveRecommendationPreferencesCpuVendorArchitectures
             }
@@ -277,6 +312,7 @@ impl ::std::convert::From<&str> for ExportableRdsdbField {
             "LastRefreshTimestamp" => ExportableRdsdbField::LastRefreshTimestamp,
             "LookbackPeriodInDays" => ExportableRdsdbField::LookbackPeriodInDays,
             "MultiAZDBInstance" => ExportableRdsdbField::MultiAzDbInstance,
+            "PromotionTier" => ExportableRdsdbField::PromotionTier,
             "ResourceArn" => ExportableRdsdbField::ResourceArn,
             "StorageFinding" => ExportableRdsdbField::StorageFinding,
             "StorageFindingReasonCodes" => ExportableRdsdbField::StorageFindingReasonCodes,
@@ -306,6 +342,12 @@ impl ::std::convert::From<&str> for ExportableRdsdbField {
             "StorageRecommendationOptionsStorageThroughput" => ExportableRdsdbField::StorageRecommendationOptionsStorageThroughput,
             "StorageRecommendationOptionsStorageType" => ExportableRdsdbField::StorageRecommendationOptionsStorageType,
             "Tags" => ExportableRdsdbField::Tags,
+            "UtilizationMetricsAuroraMemoryHealthStateMaximum" => ExportableRdsdbField::UtilizationMetricsAuroraMemoryHealthStateMaximum,
+            "UtilizationMetricsAuroraMemoryNumDeclinedSqlTotalMaximum" => {
+                ExportableRdsdbField::UtilizationMetricsAuroraMemoryNumDeclinedSqlTotalMaximum
+            }
+            "UtilizationMetricsAuroraMemoryNumKillConnTotalMaximum" => ExportableRdsdbField::UtilizationMetricsAuroraMemoryNumKillConnTotalMaximum,
+            "UtilizationMetricsAuroraMemoryNumKillQueryTotalMaximum" => ExportableRdsdbField::UtilizationMetricsAuroraMemoryNumKillQueryTotalMaximum,
             "UtilizationMetricsCpuMaximum" => ExportableRdsdbField::UtilizationMetricsCpuMaximum,
             "UtilizationMetricsDatabaseConnectionsMaximum" => ExportableRdsdbField::UtilizationMetricsDatabaseConnectionsMaximum,
             "UtilizationMetricsEBSVolumeReadIOPSMaximum" => ExportableRdsdbField::UtilizationMetricsEbsVolumeReadIopsMaximum,
@@ -318,6 +360,14 @@ impl ::std::convert::From<&str> for ExportableRdsdbField {
             "UtilizationMetricsMemoryMaximum" => ExportableRdsdbField::UtilizationMetricsMemoryMaximum,
             "UtilizationMetricsNetworkReceiveThroughputMaximum" => ExportableRdsdbField::UtilizationMetricsNetworkReceiveThroughputMaximum,
             "UtilizationMetricsNetworkTransmitThroughputMaximum" => ExportableRdsdbField::UtilizationMetricsNetworkTransmitThroughputMaximum,
+            "UtilizationMetricsReadIOPSEphemeralStorageMaximum" => ExportableRdsdbField::UtilizationMetricsReadIopsEphemeralStorageMaximum,
+            "UtilizationMetricsStorageNetworkReceiveThroughputMaximum" => {
+                ExportableRdsdbField::UtilizationMetricsStorageNetworkReceiveThroughputMaximum
+            }
+            "UtilizationMetricsStorageNetworkTransmitThroughputMaximum" => {
+                ExportableRdsdbField::UtilizationMetricsStorageNetworkTransmitThroughputMaximum
+            }
+            "UtilizationMetricsWriteIOPSEphemeralStorageMaximum" => ExportableRdsdbField::UtilizationMetricsWriteIopsEphemeralStorageMaximum,
             other => ExportableRdsdbField::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -336,12 +386,14 @@ impl ExportableRdsdbField {
             ExportableRdsdbField::AccountId => "AccountId",
             ExportableRdsdbField::CurrentDbInstanceClass => "CurrentDBInstanceClass",
             ExportableRdsdbField::CurrentInstanceOnDemandHourlyPrice => "CurrentInstanceOnDemandHourlyPrice",
+            ExportableRdsdbField::CurrentInstancePerformanceRisk => "CurrentInstancePerformanceRisk",
             ExportableRdsdbField::CurrentStorageConfigurationAllocatedStorage => "CurrentStorageConfigurationAllocatedStorage",
             ExportableRdsdbField::CurrentStorageConfigurationIops => "CurrentStorageConfigurationIOPS",
             ExportableRdsdbField::CurrentStorageConfigurationMaxAllocatedStorage => "CurrentStorageConfigurationMaxAllocatedStorage",
             ExportableRdsdbField::CurrentStorageConfigurationStorageThroughput => "CurrentStorageConfigurationStorageThroughput",
             ExportableRdsdbField::CurrentStorageConfigurationStorageType => "CurrentStorageConfigurationStorageType",
             ExportableRdsdbField::CurrentStorageOnDemandMonthlyPrice => "CurrentStorageOnDemandMonthlyPrice",
+            ExportableRdsdbField::DbClusterIdentifier => "DBClusterIdentifier",
             ExportableRdsdbField::EffectiveRecommendationPreferencesCpuVendorArchitectures => {
                 "EffectiveRecommendationPreferencesCpuVendorArchitectures"
             }
@@ -387,6 +439,7 @@ impl ExportableRdsdbField {
             ExportableRdsdbField::LastRefreshTimestamp => "LastRefreshTimestamp",
             ExportableRdsdbField::LookbackPeriodInDays => "LookbackPeriodInDays",
             ExportableRdsdbField::MultiAzDbInstance => "MultiAZDBInstance",
+            ExportableRdsdbField::PromotionTier => "PromotionTier",
             ExportableRdsdbField::ResourceArn => "ResourceArn",
             ExportableRdsdbField::StorageFinding => "StorageFinding",
             ExportableRdsdbField::StorageFindingReasonCodes => "StorageFindingReasonCodes",
@@ -416,6 +469,12 @@ impl ExportableRdsdbField {
             ExportableRdsdbField::StorageRecommendationOptionsStorageThroughput => "StorageRecommendationOptionsStorageThroughput",
             ExportableRdsdbField::StorageRecommendationOptionsStorageType => "StorageRecommendationOptionsStorageType",
             ExportableRdsdbField::Tags => "Tags",
+            ExportableRdsdbField::UtilizationMetricsAuroraMemoryHealthStateMaximum => "UtilizationMetricsAuroraMemoryHealthStateMaximum",
+            ExportableRdsdbField::UtilizationMetricsAuroraMemoryNumDeclinedSqlTotalMaximum => {
+                "UtilizationMetricsAuroraMemoryNumDeclinedSqlTotalMaximum"
+            }
+            ExportableRdsdbField::UtilizationMetricsAuroraMemoryNumKillConnTotalMaximum => "UtilizationMetricsAuroraMemoryNumKillConnTotalMaximum",
+            ExportableRdsdbField::UtilizationMetricsAuroraMemoryNumKillQueryTotalMaximum => "UtilizationMetricsAuroraMemoryNumKillQueryTotalMaximum",
             ExportableRdsdbField::UtilizationMetricsCpuMaximum => "UtilizationMetricsCpuMaximum",
             ExportableRdsdbField::UtilizationMetricsDatabaseConnectionsMaximum => "UtilizationMetricsDatabaseConnectionsMaximum",
             ExportableRdsdbField::UtilizationMetricsEbsVolumeReadIopsMaximum => "UtilizationMetricsEBSVolumeReadIOPSMaximum",
@@ -428,6 +487,14 @@ impl ExportableRdsdbField {
             ExportableRdsdbField::UtilizationMetricsMemoryMaximum => "UtilizationMetricsMemoryMaximum",
             ExportableRdsdbField::UtilizationMetricsNetworkReceiveThroughputMaximum => "UtilizationMetricsNetworkReceiveThroughputMaximum",
             ExportableRdsdbField::UtilizationMetricsNetworkTransmitThroughputMaximum => "UtilizationMetricsNetworkTransmitThroughputMaximum",
+            ExportableRdsdbField::UtilizationMetricsReadIopsEphemeralStorageMaximum => "UtilizationMetricsReadIOPSEphemeralStorageMaximum",
+            ExportableRdsdbField::UtilizationMetricsStorageNetworkReceiveThroughputMaximum => {
+                "UtilizationMetricsStorageNetworkReceiveThroughputMaximum"
+            }
+            ExportableRdsdbField::UtilizationMetricsStorageNetworkTransmitThroughputMaximum => {
+                "UtilizationMetricsStorageNetworkTransmitThroughputMaximum"
+            }
+            ExportableRdsdbField::UtilizationMetricsWriteIopsEphemeralStorageMaximum => "UtilizationMetricsWriteIOPSEphemeralStorageMaximum",
             ExportableRdsdbField::Unknown(value) => value.as_str(),
         }
     }
@@ -437,12 +504,14 @@ impl ExportableRdsdbField {
             "AccountId",
             "CurrentDBInstanceClass",
             "CurrentInstanceOnDemandHourlyPrice",
+            "CurrentInstancePerformanceRisk",
             "CurrentStorageConfigurationAllocatedStorage",
             "CurrentStorageConfigurationIOPS",
             "CurrentStorageConfigurationMaxAllocatedStorage",
             "CurrentStorageConfigurationStorageThroughput",
             "CurrentStorageConfigurationStorageType",
             "CurrentStorageOnDemandMonthlyPrice",
+            "DBClusterIdentifier",
             "EffectiveRecommendationPreferencesCpuVendorArchitectures",
             "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics",
             "EffectiveRecommendationPreferencesLookBackPeriod",
@@ -466,6 +535,7 @@ impl ExportableRdsdbField {
             "LastRefreshTimestamp",
             "LookbackPeriodInDays",
             "MultiAZDBInstance",
+            "PromotionTier",
             "ResourceArn",
             "StorageFinding",
             "StorageFindingReasonCodes",
@@ -483,6 +553,10 @@ impl ExportableRdsdbField {
             "StorageRecommendationOptionsStorageThroughput",
             "StorageRecommendationOptionsStorageType",
             "Tags",
+            "UtilizationMetricsAuroraMemoryHealthStateMaximum",
+            "UtilizationMetricsAuroraMemoryNumDeclinedSqlTotalMaximum",
+            "UtilizationMetricsAuroraMemoryNumKillConnTotalMaximum",
+            "UtilizationMetricsAuroraMemoryNumKillQueryTotalMaximum",
             "UtilizationMetricsCpuMaximum",
             "UtilizationMetricsDatabaseConnectionsMaximum",
             "UtilizationMetricsEBSVolumeReadIOPSMaximum",
@@ -493,6 +567,10 @@ impl ExportableRdsdbField {
             "UtilizationMetricsMemoryMaximum",
             "UtilizationMetricsNetworkReceiveThroughputMaximum",
             "UtilizationMetricsNetworkTransmitThroughputMaximum",
+            "UtilizationMetricsReadIOPSEphemeralStorageMaximum",
+            "UtilizationMetricsStorageNetworkReceiveThroughputMaximum",
+            "UtilizationMetricsStorageNetworkTransmitThroughputMaximum",
+            "UtilizationMetricsWriteIOPSEphemeralStorageMaximum",
         ]
     }
 }
@@ -519,12 +597,14 @@ impl ::std::fmt::Display for ExportableRdsdbField {
             ExportableRdsdbField::AccountId => write!(f, "AccountId"),
             ExportableRdsdbField::CurrentDbInstanceClass => write!(f, "CurrentDBInstanceClass"),
             ExportableRdsdbField::CurrentInstanceOnDemandHourlyPrice => write!(f, "CurrentInstanceOnDemandHourlyPrice"),
+            ExportableRdsdbField::CurrentInstancePerformanceRisk => write!(f, "CurrentInstancePerformanceRisk"),
             ExportableRdsdbField::CurrentStorageConfigurationAllocatedStorage => write!(f, "CurrentStorageConfigurationAllocatedStorage"),
             ExportableRdsdbField::CurrentStorageConfigurationIops => write!(f, "CurrentStorageConfigurationIOPS"),
             ExportableRdsdbField::CurrentStorageConfigurationMaxAllocatedStorage => write!(f, "CurrentStorageConfigurationMaxAllocatedStorage"),
             ExportableRdsdbField::CurrentStorageConfigurationStorageThroughput => write!(f, "CurrentStorageConfigurationStorageThroughput"),
             ExportableRdsdbField::CurrentStorageConfigurationStorageType => write!(f, "CurrentStorageConfigurationStorageType"),
             ExportableRdsdbField::CurrentStorageOnDemandMonthlyPrice => write!(f, "CurrentStorageOnDemandMonthlyPrice"),
+            ExportableRdsdbField::DbClusterIdentifier => write!(f, "DBClusterIdentifier"),
             ExportableRdsdbField::EffectiveRecommendationPreferencesCpuVendorArchitectures => {
                 write!(f, "EffectiveRecommendationPreferencesCpuVendorArchitectures")
             }
@@ -570,6 +650,7 @@ impl ::std::fmt::Display for ExportableRdsdbField {
             ExportableRdsdbField::LastRefreshTimestamp => write!(f, "LastRefreshTimestamp"),
             ExportableRdsdbField::LookbackPeriodInDays => write!(f, "LookbackPeriodInDays"),
             ExportableRdsdbField::MultiAzDbInstance => write!(f, "MultiAZDBInstance"),
+            ExportableRdsdbField::PromotionTier => write!(f, "PromotionTier"),
             ExportableRdsdbField::ResourceArn => write!(f, "ResourceArn"),
             ExportableRdsdbField::StorageFinding => write!(f, "StorageFinding"),
             ExportableRdsdbField::StorageFindingReasonCodes => write!(f, "StorageFindingReasonCodes"),
@@ -599,6 +680,16 @@ impl ::std::fmt::Display for ExportableRdsdbField {
             ExportableRdsdbField::StorageRecommendationOptionsStorageThroughput => write!(f, "StorageRecommendationOptionsStorageThroughput"),
             ExportableRdsdbField::StorageRecommendationOptionsStorageType => write!(f, "StorageRecommendationOptionsStorageType"),
             ExportableRdsdbField::Tags => write!(f, "Tags"),
+            ExportableRdsdbField::UtilizationMetricsAuroraMemoryHealthStateMaximum => write!(f, "UtilizationMetricsAuroraMemoryHealthStateMaximum"),
+            ExportableRdsdbField::UtilizationMetricsAuroraMemoryNumDeclinedSqlTotalMaximum => {
+                write!(f, "UtilizationMetricsAuroraMemoryNumDeclinedSqlTotalMaximum")
+            }
+            ExportableRdsdbField::UtilizationMetricsAuroraMemoryNumKillConnTotalMaximum => {
+                write!(f, "UtilizationMetricsAuroraMemoryNumKillConnTotalMaximum")
+            }
+            ExportableRdsdbField::UtilizationMetricsAuroraMemoryNumKillQueryTotalMaximum => {
+                write!(f, "UtilizationMetricsAuroraMemoryNumKillQueryTotalMaximum")
+            }
             ExportableRdsdbField::UtilizationMetricsCpuMaximum => write!(f, "UtilizationMetricsCpuMaximum"),
             ExportableRdsdbField::UtilizationMetricsDatabaseConnectionsMaximum => write!(f, "UtilizationMetricsDatabaseConnectionsMaximum"),
             ExportableRdsdbField::UtilizationMetricsEbsVolumeReadIopsMaximum => write!(f, "UtilizationMetricsEBSVolumeReadIOPSMaximum"),
@@ -612,6 +703,16 @@ impl ::std::fmt::Display for ExportableRdsdbField {
             ExportableRdsdbField::UtilizationMetricsNetworkReceiveThroughputMaximum => write!(f, "UtilizationMetricsNetworkReceiveThroughputMaximum"),
             ExportableRdsdbField::UtilizationMetricsNetworkTransmitThroughputMaximum => {
                 write!(f, "UtilizationMetricsNetworkTransmitThroughputMaximum")
+            }
+            ExportableRdsdbField::UtilizationMetricsReadIopsEphemeralStorageMaximum => write!(f, "UtilizationMetricsReadIOPSEphemeralStorageMaximum"),
+            ExportableRdsdbField::UtilizationMetricsStorageNetworkReceiveThroughputMaximum => {
+                write!(f, "UtilizationMetricsStorageNetworkReceiveThroughputMaximum")
+            }
+            ExportableRdsdbField::UtilizationMetricsStorageNetworkTransmitThroughputMaximum => {
+                write!(f, "UtilizationMetricsStorageNetworkTransmitThroughputMaximum")
+            }
+            ExportableRdsdbField::UtilizationMetricsWriteIopsEphemeralStorageMaximum => {
+                write!(f, "UtilizationMetricsWriteIOPSEphemeralStorageMaximum")
             }
             ExportableRdsdbField::Unknown(value) => write!(f, "{}", value),
         }

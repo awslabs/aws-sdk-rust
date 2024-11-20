@@ -137,6 +137,8 @@ pub use crate::types::_run_log_level::RunLogLevel;
 
 pub use crate::types::_run_status::RunStatus;
 
+pub use crate::types::_cache_behavior::CacheBehavior;
+
 pub use crate::types::_run_export::RunExport;
 
 pub use crate::types::_run_list_item::RunListItem;
@@ -146,6 +148,10 @@ pub use crate::types::_task_status::TaskStatus;
 pub use crate::types::_task_list_item::TaskListItem;
 
 pub use crate::types::_run_group_list_item::RunGroupListItem;
+
+pub use crate::types::_run_cache_status::RunCacheStatus;
+
+pub use crate::types::_run_cache_list_item::RunCacheListItem;
 
 pub use crate::types::_reference_import_job_status::ReferenceImportJobStatus;
 
@@ -238,6 +244,8 @@ mod _annotation_store_item;
 mod _annotation_store_version_item;
 
 mod _annotation_type;
+
+mod _cache_behavior;
 
 mod _complete_read_set_upload_part_list_item;
 
@@ -352,6 +360,10 @@ mod _reference_store_detail;
 mod _reference_store_filter;
 
 mod _resource_owner;
+
+mod _run_cache_list_item;
+
+mod _run_cache_status;
 
 mod _run_export;
 

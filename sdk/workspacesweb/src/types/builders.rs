@@ -41,6 +41,18 @@ pub use crate::types::_identity_provider::IdentityProviderBuilder;
 
 pub use crate::types::_identity_provider_summary::IdentityProviderSummaryBuilder;
 
+pub use crate::types::_data_protection_settings::DataProtectionSettingsBuilder;
+
+pub use crate::types::_inline_redaction_configuration::InlineRedactionConfigurationBuilder;
+
+pub use crate::types::_inline_redaction_pattern::InlineRedactionPatternBuilder;
+
+pub use crate::types::_redaction_place_holder::RedactionPlaceHolderBuilder;
+
+pub use crate::types::_custom_pattern::CustomPatternBuilder;
+
+pub use crate::types::_data_protection_settings_summary::DataProtectionSettingsSummaryBuilder;
+
 pub use crate::types::_browser_settings::BrowserSettingsBuilder;
 
 pub use crate::types::_browser_settings_summary::BrowserSettingsSummaryBuilder;

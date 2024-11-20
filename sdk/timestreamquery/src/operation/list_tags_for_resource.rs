@@ -256,11 +256,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListTagsForRe
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ListTagsForResourceError {
-    /// <p>The requested endpoint was not valid.</p>
+    /// <p>The requested endpoint is invalid.</p>
     InvalidEndpointException(crate::types::error::InvalidEndpointException),
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>The request was denied due to request throttling.</p>
+    /// <p>The request was throttled due to excessive requests.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>Invalid or malformed request.</p>
     ValidationException(crate::types::error::ValidationException),

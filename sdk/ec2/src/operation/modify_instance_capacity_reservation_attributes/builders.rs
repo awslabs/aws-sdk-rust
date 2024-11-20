@@ -22,7 +22,7 @@ impl crate::operation::modify_instance_capacity_reservation_attributes::builders
 }
 /// Fluent builder constructing a request to `ModifyInstanceCapacityReservationAttributes`.
 ///
-/// <p>Modifies the Capacity Reservation settings for a stopped instance. Use this action to configure an instance to target a specific Capacity Reservation, run in any <code>open</code> Capacity Reservation with matching attributes, or run On-Demand Instance capacity.</p>
+/// <p>Modifies the Capacity Reservation settings for a stopped instance. Use this action to configure an instance to target a specific Capacity Reservation, run in any <code>open</code> Capacity Reservation with matching attributes, run in On-Demand Instance capacity, or only run in a Capacity Reservation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyInstanceCapacityReservationAttributesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

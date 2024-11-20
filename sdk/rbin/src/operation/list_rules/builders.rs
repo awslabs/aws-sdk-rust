@@ -155,17 +155,17 @@ impl ListRulesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
     ///
-    /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
+    /// <p>\[Tag-level retention rules only\] Information about the resource tags used to identify resources that are retained by the retention rule.</p>
     pub fn resource_tags(mut self, input: crate::types::ResourceTag) -> Self {
         self.inner = self.inner.resource_tags(input);
         self
     }
-    /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
+    /// <p>\[Tag-level retention rules only\] Information about the resource tags used to identify resources that are retained by the retention rule.</p>
     pub fn set_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>) -> Self {
         self.inner = self.inner.set_resource_tags(input);
         self
     }
-    /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
+    /// <p>\[Tag-level retention rules only\] Information about the resource tags used to identify resources that are retained by the retention rule.</p>
     pub fn get_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>> {
         self.inner.get_resource_tags()
     }
@@ -182,5 +182,24 @@ impl ListRulesFluentBuilder {
     /// <p>The lock state of the retention rules to list. Only retention rules with the specified lock state are returned.</p>
     pub fn get_lock_state(&self) -> &::std::option::Option<crate::types::LockState> {
         self.inner.get_lock_state()
+    }
+    ///
+    /// Appends an item to `ExcludeResourceTags`.
+    ///
+    /// To override the contents of this collection use [`set_exclude_resource_tags`](Self::set_exclude_resource_tags).
+    ///
+    /// <p>\[Region-level retention rules only\] Information about the exclusion tags used to identify resources that are to be excluded, or ignored, by the retention rule.</p>
+    pub fn exclude_resource_tags(mut self, input: crate::types::ResourceTag) -> Self {
+        self.inner = self.inner.exclude_resource_tags(input);
+        self
+    }
+    /// <p>\[Region-level retention rules only\] Information about the exclusion tags used to identify resources that are to be excluded, or ignored, by the retention rule.</p>
+    pub fn set_exclude_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>) -> Self {
+        self.inner = self.inner.set_exclude_resource_tags(input);
+        self
+    }
+    /// <p>\[Region-level retention rules only\] Information about the exclusion tags used to identify resources that are to be excluded, or ignored, by the retention rule.</p>
+    pub fn get_exclude_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>> {
+        self.inner.get_exclude_resource_tags()
     }
 }

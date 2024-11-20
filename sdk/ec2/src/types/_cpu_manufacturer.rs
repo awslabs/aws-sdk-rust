@@ -14,6 +14,7 @@
 /// match cpumanufacturer {
 ///     CpuManufacturer::AmazonWebServices => { /* ... */ },
 ///     CpuManufacturer::Amd => { /* ... */ },
+///     CpuManufacturer::Apple => { /* ... */ },
 ///     CpuManufacturer::Intel => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -47,6 +48,8 @@ pub enum CpuManufacturer {
     #[allow(missing_docs)] // documentation missing in model
     Amd,
     #[allow(missing_docs)] // documentation missing in model
+    Apple,
+    #[allow(missing_docs)] // documentation missing in model
     Intel,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -57,6 +60,7 @@ impl ::std::convert::From<&str> for CpuManufacturer {
         match s {
             "amazon-web-services" => CpuManufacturer::AmazonWebServices,
             "amd" => CpuManufacturer::Amd,
+            "apple" => CpuManufacturer::Apple,
             "intel" => CpuManufacturer::Intel,
             other => CpuManufacturer::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -75,13 +79,14 @@ impl CpuManufacturer {
         match self {
             CpuManufacturer::AmazonWebServices => "amazon-web-services",
             CpuManufacturer::Amd => "amd",
+            CpuManufacturer::Apple => "apple",
             CpuManufacturer::Intel => "intel",
             CpuManufacturer::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["amazon-web-services", "amd", "intel"]
+        &["amazon-web-services", "amd", "apple", "intel"]
     }
 }
 impl ::std::convert::AsRef<str> for CpuManufacturer {
@@ -106,6 +111,7 @@ impl ::std::fmt::Display for CpuManufacturer {
         match self {
             CpuManufacturer::AmazonWebServices => write!(f, "amazon-web-services"),
             CpuManufacturer::Amd => write!(f, "amd"),
+            CpuManufacturer::Apple => write!(f, "apple"),
             CpuManufacturer::Intel => write!(f, "intel"),
             CpuManufacturer::Unknown(value) => write!(f, "{}", value),
         }

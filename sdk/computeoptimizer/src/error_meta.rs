@@ -396,6 +396,54 @@ impl From<crate::operation::export_ecs_service_recommendations::ExportECSService
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::export_idle_recommendations::ExportIdleRecommendationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::export_idle_recommendations::ExportIdleRecommendationsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::export_idle_recommendations::ExportIdleRecommendationsError> for Error {
+    fn from(err: crate::operation::export_idle_recommendations::ExportIdleRecommendationsError) -> Self {
+        match err {
+            crate::operation::export_idle_recommendations::ExportIdleRecommendationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::export_idle_recommendations::ExportIdleRecommendationsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::export_idle_recommendations::ExportIdleRecommendationsError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::export_idle_recommendations::ExportIdleRecommendationsError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::export_idle_recommendations::ExportIdleRecommendationsError::MissingAuthenticationToken(inner) => {
+                Error::MissingAuthenticationToken(inner)
+            }
+            crate::operation::export_idle_recommendations::ExportIdleRecommendationsError::OptInRequiredException(inner) => {
+                Error::OptInRequiredException(inner)
+            }
+            crate::operation::export_idle_recommendations::ExportIdleRecommendationsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::export_idle_recommendations::ExportIdleRecommendationsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::export_idle_recommendations::ExportIdleRecommendationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -999,6 +1047,51 @@ impl From<crate::operation::get_enrollment_statuses_for_organization::GetEnrollm
             crate::operation::get_enrollment_statuses_for_organization::GetEnrollmentStatusesForOrganizationError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_idle_recommendations::GetIdleRecommendationsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_idle_recommendations::GetIdleRecommendationsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_idle_recommendations::GetIdleRecommendationsError> for Error {
+    fn from(err: crate::operation::get_idle_recommendations::GetIdleRecommendationsError) -> Self {
+        match err {
+            crate::operation::get_idle_recommendations::GetIdleRecommendationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_idle_recommendations::GetIdleRecommendationsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_idle_recommendations::GetIdleRecommendationsError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::get_idle_recommendations::GetIdleRecommendationsError::MissingAuthenticationToken(inner) => {
+                Error::MissingAuthenticationToken(inner)
+            }
+            crate::operation::get_idle_recommendations::GetIdleRecommendationsError::OptInRequiredException(inner) => {
+                Error::OptInRequiredException(inner)
+            }
+            crate::operation::get_idle_recommendations::GetIdleRecommendationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_idle_recommendations::GetIdleRecommendationsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::get_idle_recommendations::GetIdleRecommendationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_idle_recommendations::GetIdleRecommendationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -5,7 +5,7 @@
 pub struct DeleteAccountLinkInvitationInput {
     /// <p>The identifier of the account link.</p>
     pub link_id: ::std::option::Option<::std::string::String>,
-    /// <p>A string of up to 64 ASCII characters that Amazon EFS uses to ensure idempotent creation.</p>
+    /// <p>A string of up to 64 ASCII characters that Amazon WorkSpaces uses to ensure idempotent creation.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAccountLinkInvitationInput {
@@ -13,7 +13,7 @@ impl DeleteAccountLinkInvitationInput {
     pub fn link_id(&self) -> ::std::option::Option<&str> {
         self.link_id.as_deref()
     }
-    /// <p>A string of up to 64 ASCII characters that Amazon EFS uses to ensure idempotent creation.</p>
+    /// <p>A string of up to 64 ASCII characters that Amazon WorkSpaces uses to ensure idempotent creation.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -48,17 +48,17 @@ impl DeleteAccountLinkInvitationInputBuilder {
     pub fn get_link_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.link_id
     }
-    /// <p>A string of up to 64 ASCII characters that Amazon EFS uses to ensure idempotent creation.</p>
+    /// <p>A string of up to 64 ASCII characters that Amazon WorkSpaces uses to ensure idempotent creation.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A string of up to 64 ASCII characters that Amazon EFS uses to ensure idempotent creation.</p>
+    /// <p>A string of up to 64 ASCII characters that Amazon WorkSpaces uses to ensure idempotent creation.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>A string of up to 64 ASCII characters that Amazon EFS uses to ensure idempotent creation.</p>
+    /// <p>A string of up to 64 ASCII characters that Amazon WorkSpaces uses to ensure idempotent creation.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }

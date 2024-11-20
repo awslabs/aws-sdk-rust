@@ -112,6 +112,56 @@ impl From<crate::operation::associate_browser_settings::AssociateBrowserSettings
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::associate_data_protection_settings::AssociateDataProtectionSettingsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::associate_data_protection_settings::AssociateDataProtectionSettingsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::associate_data_protection_settings::AssociateDataProtectionSettingsError> for Error {
+    fn from(err: crate::operation::associate_data_protection_settings::AssociateDataProtectionSettingsError) -> Self {
+        match err {
+            crate::operation::associate_data_protection_settings::AssociateDataProtectionSettingsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::associate_data_protection_settings::AssociateDataProtectionSettingsError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::associate_data_protection_settings::AssociateDataProtectionSettingsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::associate_data_protection_settings::AssociateDataProtectionSettingsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::associate_data_protection_settings::AssociateDataProtectionSettingsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::associate_data_protection_settings::AssociateDataProtectionSettingsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::associate_data_protection_settings::AssociateDataProtectionSettingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_ip_access_settings::AssociateIpAccessSettingsError, R>>
     for Error
 where
@@ -347,6 +397,55 @@ impl From<crate::operation::create_browser_settings::CreateBrowserSettingsError>
             crate::operation::create_browser_settings::CreateBrowserSettingsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_browser_settings::CreateBrowserSettingsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_browser_settings::CreateBrowserSettingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_data_protection_settings::CreateDataProtectionSettingsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_data_protection_settings::CreateDataProtectionSettingsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_data_protection_settings::CreateDataProtectionSettingsError> for Error {
+    fn from(err: crate::operation::create_data_protection_settings::CreateDataProtectionSettingsError) -> Self {
+        match err {
+            crate::operation::create_data_protection_settings::CreateDataProtectionSettingsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_data_protection_settings::CreateDataProtectionSettingsError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_data_protection_settings::CreateDataProtectionSettingsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_data_protection_settings::CreateDataProtectionSettingsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_data_protection_settings::CreateDataProtectionSettingsError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_data_protection_settings::CreateDataProtectionSettingsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_data_protection_settings::CreateDataProtectionSettingsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_data_protection_settings::CreateDataProtectionSettingsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -627,6 +726,49 @@ impl From<crate::operation::delete_browser_settings::DeleteBrowserSettingsError>
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_data_protection_settings::DeleteDataProtectionSettingsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_data_protection_settings::DeleteDataProtectionSettingsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_data_protection_settings::DeleteDataProtectionSettingsError> for Error {
+    fn from(err: crate::operation::delete_data_protection_settings::DeleteDataProtectionSettingsError) -> Self {
+        match err {
+            crate::operation::delete_data_protection_settings::DeleteDataProtectionSettingsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_data_protection_settings::DeleteDataProtectionSettingsError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_data_protection_settings::DeleteDataProtectionSettingsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_data_protection_settings::DeleteDataProtectionSettingsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_data_protection_settings::DeleteDataProtectionSettingsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_data_protection_settings::DeleteDataProtectionSettingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_identity_provider::DeleteIdentityProviderError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -888,6 +1030,58 @@ impl From<crate::operation::disassociate_browser_settings::DisassociateBrowserSe
                 Error::ValidationException(inner)
             }
             crate::operation::disassociate_browser_settings::DisassociateBrowserSettingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_data_protection_settings::DisassociateDataProtectionSettingsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_data_protection_settings::DisassociateDataProtectionSettingsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disassociate_data_protection_settings::DisassociateDataProtectionSettingsError> for Error {
+    fn from(err: crate::operation::disassociate_data_protection_settings::DisassociateDataProtectionSettingsError) -> Self {
+        match err {
+            crate::operation::disassociate_data_protection_settings::DisassociateDataProtectionSettingsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::disassociate_data_protection_settings::DisassociateDataProtectionSettingsError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::disassociate_data_protection_settings::DisassociateDataProtectionSettingsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::disassociate_data_protection_settings::DisassociateDataProtectionSettingsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::disassociate_data_protection_settings::DisassociateDataProtectionSettingsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::disassociate_data_protection_settings::DisassociateDataProtectionSettingsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::disassociate_data_protection_settings::DisassociateDataProtectionSettingsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -1157,6 +1351,45 @@ impl From<crate::operation::get_browser_settings::GetBrowserSettingsError> for E
             crate::operation::get_browser_settings::GetBrowserSettingsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_browser_settings::GetBrowserSettingsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_browser_settings::GetBrowserSettingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_data_protection_settings::GetDataProtectionSettingsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_data_protection_settings::GetDataProtectionSettingsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_data_protection_settings::GetDataProtectionSettingsError> for Error {
+    fn from(err: crate::operation::get_data_protection_settings::GetDataProtectionSettingsError) -> Self {
+        match err {
+            crate::operation::get_data_protection_settings::GetDataProtectionSettingsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_data_protection_settings::GetDataProtectionSettingsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_data_protection_settings::GetDataProtectionSettingsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_data_protection_settings::GetDataProtectionSettingsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_data_protection_settings::GetDataProtectionSettingsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_data_protection_settings::GetDataProtectionSettingsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1507,6 +1740,42 @@ impl From<crate::operation::list_browser_settings::ListBrowserSettingsError> for
             crate::operation::list_browser_settings::ListBrowserSettingsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_browser_settings::ListBrowserSettingsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_browser_settings::ListBrowserSettingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_data_protection_settings::ListDataProtectionSettingsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_data_protection_settings::ListDataProtectionSettingsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_data_protection_settings::ListDataProtectionSettingsError> for Error {
+    fn from(err: crate::operation::list_data_protection_settings::ListDataProtectionSettingsError) -> Self {
+        match err {
+            crate::operation::list_data_protection_settings::ListDataProtectionSettingsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_data_protection_settings::ListDataProtectionSettingsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_data_protection_settings::ListDataProtectionSettingsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_data_protection_settings::ListDataProtectionSettingsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_data_protection_settings::ListDataProtectionSettingsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1895,6 +2164,49 @@ impl From<crate::operation::update_browser_settings::UpdateBrowserSettingsError>
             crate::operation::update_browser_settings::UpdateBrowserSettingsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_browser_settings::UpdateBrowserSettingsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_browser_settings::UpdateBrowserSettingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_data_protection_settings::UpdateDataProtectionSettingsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_data_protection_settings::UpdateDataProtectionSettingsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_data_protection_settings::UpdateDataProtectionSettingsError> for Error {
+    fn from(err: crate::operation::update_data_protection_settings::UpdateDataProtectionSettingsError) -> Self {
+        match err {
+            crate::operation::update_data_protection_settings::UpdateDataProtectionSettingsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_data_protection_settings::UpdateDataProtectionSettingsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_data_protection_settings::UpdateDataProtectionSettingsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_data_protection_settings::UpdateDataProtectionSettingsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_data_protection_settings::UpdateDataProtectionSettingsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_data_protection_settings::UpdateDataProtectionSettingsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

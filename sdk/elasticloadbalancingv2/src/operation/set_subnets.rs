@@ -246,6 +246,8 @@ pub enum SetSubnetsError {
     AllocationIdNotFoundException(crate::types::error::AllocationIdNotFoundException),
     /// <p>The specified Availability Zone is not supported.</p>
     AvailabilityZoneNotSupportedException(crate::types::error::AvailabilityZoneNotSupportedException),
+    /// <p>There is a pending capacity reservation.</p>
+    CapacityReservationPendingException(crate::types::error::CapacityReservationPendingException),
     /// <p>The requested configuration is not valid.</p>
     InvalidConfigurationRequestException(crate::types::error::InvalidConfigurationRequestException),
     /// <p>The specified subnet is out of available addresses.</p>
@@ -289,6 +291,7 @@ impl SetSubnetsError {
         match self {
             Self::AllocationIdNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::AvailabilityZoneNotSupportedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::CapacityReservationPendingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidConfigurationRequestException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidSubnetException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::LoadBalancerNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -303,6 +306,10 @@ impl SetSubnetsError {
     /// Returns `true` if the error kind is `SetSubnetsError::AvailabilityZoneNotSupportedException`.
     pub fn is_availability_zone_not_supported_exception(&self) -> bool {
         matches!(self, Self::AvailabilityZoneNotSupportedException(_))
+    }
+    /// Returns `true` if the error kind is `SetSubnetsError::CapacityReservationPendingException`.
+    pub fn is_capacity_reservation_pending_exception(&self) -> bool {
+        matches!(self, Self::CapacityReservationPendingException(_))
     }
     /// Returns `true` if the error kind is `SetSubnetsError::InvalidConfigurationRequestException`.
     pub fn is_invalid_configuration_request_exception(&self) -> bool {
@@ -326,6 +333,7 @@ impl ::std::error::Error for SetSubnetsError {
         match self {
             Self::AllocationIdNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::AvailabilityZoneNotSupportedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::CapacityReservationPendingException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidConfigurationRequestException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidSubnetException(_inner) => ::std::option::Option::Some(_inner),
             Self::LoadBalancerNotFoundException(_inner) => ::std::option::Option::Some(_inner),
@@ -339,6 +347,7 @@ impl ::std::fmt::Display for SetSubnetsError {
         match self {
             Self::AllocationIdNotFoundException(_inner) => _inner.fmt(f),
             Self::AvailabilityZoneNotSupportedException(_inner) => _inner.fmt(f),
+            Self::CapacityReservationPendingException(_inner) => _inner.fmt(f),
             Self::InvalidConfigurationRequestException(_inner) => _inner.fmt(f),
             Self::InvalidSubnetException(_inner) => _inner.fmt(f),
             Self::LoadBalancerNotFoundException(_inner) => _inner.fmt(f),
@@ -366,6 +375,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for SetSubnetsErr
         match self {
             Self::AllocationIdNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::AvailabilityZoneNotSupportedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::CapacityReservationPendingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidConfigurationRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidSubnetException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::LoadBalancerNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

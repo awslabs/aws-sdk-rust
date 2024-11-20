@@ -27,6 +27,8 @@ pub(crate) mod shape_associate_alias;
 
 pub(crate) mod shape_copy_distribution;
 
+pub(crate) mod shape_create_anycast_ip_list;
+
 pub(crate) mod shape_create_cache_policy;
 
 pub fn rest_xml_unset_struct_payload() -> ::std::vec::Vec<u8> {
@@ -101,6 +103,10 @@ pub(crate) mod shape_create_streaming_distribution_with_tags;
 
 pub(crate) mod shape_create_streaming_distribution_with_tags_input;
 
+pub(crate) mod shape_create_vpc_origin;
+
+pub(crate) mod shape_delete_anycast_ip_list;
+
 pub(crate) mod shape_delete_cache_policy;
 
 pub(crate) mod shape_delete_cloud_front_origin_access_identity;
@@ -133,9 +139,13 @@ pub(crate) mod shape_delete_response_headers_policy;
 
 pub(crate) mod shape_delete_streaming_distribution;
 
+pub(crate) mod shape_delete_vpc_origin;
+
 pub(crate) mod shape_describe_function;
 
 pub(crate) mod shape_describe_key_value_store;
+
+pub(crate) mod shape_get_anycast_ip_list;
 
 pub(crate) mod shape_get_cache_policy;
 
@@ -193,6 +203,10 @@ pub(crate) mod shape_get_streaming_distribution;
 
 pub(crate) mod shape_get_streaming_distribution_config;
 
+pub(crate) mod shape_get_vpc_origin;
+
+pub(crate) mod shape_list_anycast_ip_lists;
+
 pub(crate) mod shape_list_cache_policies;
 
 pub(crate) mod shape_list_cloud_front_origin_access_identities;
@@ -203,6 +217,8 @@ pub(crate) mod shape_list_continuous_deployment_policies;
 
 pub(crate) mod shape_list_distributions;
 
+pub(crate) mod shape_list_distributions_by_anycast_ip_list_id;
+
 pub(crate) mod shape_list_distributions_by_cache_policy_id;
 
 pub(crate) mod shape_list_distributions_by_key_group;
@@ -212,6 +228,8 @@ pub(crate) mod shape_list_distributions_by_origin_request_policy_id;
 pub(crate) mod shape_list_distributions_by_realtime_log_config;
 
 pub(crate) mod shape_list_distributions_by_response_headers_policy_id;
+
+pub(crate) mod shape_list_distributions_by_vpc_origin_id;
 
 pub(crate) mod shape_list_distributions_by_web_acl_id;
 
@@ -240,6 +258,8 @@ pub(crate) mod shape_list_response_headers_policies;
 pub(crate) mod shape_list_streaming_distributions;
 
 pub(crate) mod shape_list_tags_for_resource;
+
+pub(crate) mod shape_list_vpc_origins;
 
 pub(crate) mod shape_publish_function;
 
@@ -309,6 +329,10 @@ pub(crate) mod shape_update_streaming_distribution;
 
 pub(crate) mod shape_update_streaming_distribution_input;
 
+pub(crate) mod shape_update_vpc_origin;
+
+pub(crate) mod shape_update_vpc_origin_input;
+
 pub(crate) mod shape_access_denied;
 
 pub(crate) mod shape_batch_too_large;
@@ -320,6 +344,8 @@ pub(crate) mod shape_cache_policy_in_use;
 pub(crate) mod shape_cannot_change_immutable_public_key_fields;
 
 pub(crate) mod shape_cannot_delete_entity_while_in_use;
+
+pub(crate) mod shape_cannot_update_entity_while_in_use;
 
 pub(crate) mod shape_cloud_front_origin_access_identity_already_exists;
 
@@ -334,6 +360,10 @@ pub(crate) mod shape_continuous_deployment_policy_in_use;
 pub(crate) mod shape_copy_distribution_input;
 
 pub(crate) mod shape_copy_distribution_output;
+
+pub(crate) mod shape_create_anycast_ip_list_input;
+
+pub(crate) mod shape_create_anycast_ip_list_output;
 
 pub(crate) mod shape_create_cache_policy_output;
 
@@ -377,7 +407,13 @@ pub(crate) mod shape_create_streaming_distribution_output;
 
 pub(crate) mod shape_create_streaming_distribution_with_tags_output;
 
+pub(crate) mod shape_create_vpc_origin_input;
+
+pub(crate) mod shape_create_vpc_origin_output;
+
 pub(crate) mod shape_delete_realtime_log_config_input;
+
+pub(crate) mod shape_delete_vpc_origin_output;
 
 pub(crate) mod shape_describe_function_output;
 
@@ -410,6 +446,8 @@ pub(crate) mod shape_function_already_exists;
 pub(crate) mod shape_function_in_use;
 
 pub(crate) mod shape_function_size_limit_exceeded;
+
+pub(crate) mod shape_get_anycast_ip_list_output;
 
 pub(crate) mod shape_get_cache_policy_config_output;
 
@@ -466,6 +504,8 @@ pub(crate) mod shape_get_response_headers_policy_output;
 pub(crate) mod shape_get_streaming_distribution_config_output;
 
 pub(crate) mod shape_get_streaming_distribution_output;
+
+pub(crate) mod shape_get_vpc_origin_output;
 
 pub(crate) mod shape_illegal_delete;
 
@@ -531,6 +571,8 @@ pub(crate) mod shape_invalid_web_acl_id;
 
 pub(crate) mod shape_key_group_already_exists;
 
+pub(crate) mod shape_list_anycast_ip_lists_output;
+
 pub(crate) mod shape_list_cache_policies_output;
 
 pub(crate) mod shape_list_cloud_front_origin_access_identities_output;
@@ -538,6 +580,8 @@ pub(crate) mod shape_list_cloud_front_origin_access_identities_output;
 pub(crate) mod shape_list_conflicting_aliases_output;
 
 pub(crate) mod shape_list_continuous_deployment_policies_output;
+
+pub(crate) mod shape_list_distributions_by_anycast_ip_list_id_output;
 
 pub(crate) mod shape_list_distributions_by_cache_policy_id_output;
 
@@ -550,6 +594,8 @@ pub(crate) mod shape_list_distributions_by_realtime_log_config_input;
 pub(crate) mod shape_list_distributions_by_realtime_log_config_output;
 
 pub(crate) mod shape_list_distributions_by_response_headers_policy_id_output;
+
+pub(crate) mod shape_list_distributions_by_vpc_origin_id_output;
 
 pub(crate) mod shape_list_distributions_by_web_acl_id_output;
 
@@ -580,6 +626,8 @@ pub(crate) mod shape_list_response_headers_policies_output;
 pub(crate) mod shape_list_streaming_distributions_output;
 
 pub(crate) mod shape_list_tags_for_resource_output;
+
+pub(crate) mod shape_list_vpc_origins_output;
 
 pub(crate) mod shape_missing_body;
 
@@ -807,6 +855,8 @@ pub(crate) mod shape_update_response_headers_policy_output;
 
 pub(crate) mod shape_update_streaming_distribution_output;
 
+pub(crate) mod shape_update_vpc_origin_output;
+
 pub(crate) mod shape_cache_policy_config;
 
 pub(crate) mod shape_cloud_front_origin_access_identity_config;
@@ -851,7 +901,13 @@ pub(crate) mod shape_tag_keys;
 
 pub(crate) mod shape_tags;
 
+pub(crate) mod shape_vpc_origin_endpoint_config;
+
 pub(crate) mod shape_aliases;
+
+pub(crate) mod shape_anycast_ip_list;
+
+pub(crate) mod shape_anycast_ip_list_collection;
 
 pub(crate) mod shape_cache_behaviors;
 
@@ -933,6 +989,8 @@ pub(crate) mod shape_origin_request_policy_list;
 
 pub(crate) mod shape_origin_request_policy_query_strings_config;
 
+pub(crate) mod shape_origin_ssl_protocols;
+
 pub(crate) mod shape_origins;
 
 pub(crate) mod shape_parameters_in_cache_key_and_forwarded_to_origin;
@@ -985,6 +1043,10 @@ pub(crate) mod shape_trusted_signers;
 
 pub(crate) mod shape_viewer_certificate;
 
+pub(crate) mod shape_vpc_origin;
+
+pub(crate) mod shape_vpc_origin_list;
+
 pub(crate) mod shape_active_trusted_key_groups;
 
 pub(crate) mod shape_active_trusted_signers;
@@ -992,6 +1054,10 @@ pub(crate) mod shape_active_trusted_signers;
 pub(crate) mod shape_alias_icp_recordals;
 
 pub(crate) mod shape_allowed_methods;
+
+pub(crate) mod shape_anycast_ip_list_summaries;
+
+pub(crate) mod shape_anycast_ips;
 
 pub(crate) mod shape_cache_behavior;
 
@@ -1040,6 +1106,8 @@ pub(crate) mod shape_function_metadata;
 pub(crate) mod shape_function_summary_list;
 
 pub(crate) mod shape_geo_restriction;
+
+pub(crate) mod shape_grpc_config;
 
 pub(crate) mod shape_headers;
 
@@ -1103,9 +1171,13 @@ pub(crate) mod shape_tag_list;
 
 pub(crate) mod shape_trusted_key_groups;
 
+pub(crate) mod shape_vpc_origin_summary_list;
+
 pub(crate) mod shape_alias_icp_recordal;
 
 pub(crate) mod shape_alias_list;
+
+pub(crate) mod shape_anycast_ip_list_summary;
 
 pub(crate) mod shape_aws_account_number_list;
 
@@ -1187,6 +1259,10 @@ pub(crate) mod shape_staging_distribution_dns_name_list;
 
 pub(crate) mod shape_streaming_distribution_summary;
 
+pub(crate) mod shape_vpc_origin_config;
+
+pub(crate) mod shape_vpc_origin_summary;
+
 pub(crate) mod shape_access_control_allow_headers_list;
 
 pub(crate) mod shape_access_control_allow_methods_list;
@@ -1217,8 +1293,6 @@ pub(crate) mod shape_origin_custom_header;
 
 pub(crate) mod shape_origin_group_member;
 
-pub(crate) mod shape_origin_ssl_protocols;
-
 pub(crate) mod shape_path_list;
 
 pub(crate) mod shape_query_arg_profile_list;
@@ -1226,6 +1300,8 @@ pub(crate) mod shape_query_arg_profile_list;
 pub(crate) mod shape_query_string_names_list;
 
 pub(crate) mod shape_signer;
+
+pub(crate) mod shape_ssl_protocols_list;
 
 pub(crate) mod shape_status_codes;
 
@@ -1242,7 +1318,5 @@ pub(crate) mod shape_key_pair_id_list;
 pub(crate) mod shape_origin_custom_headers_list;
 
 pub(crate) mod shape_origin_group_member_list;
-
-pub(crate) mod shape_ssl_protocols_list;
 
 pub(crate) mod shape_status_code_list;

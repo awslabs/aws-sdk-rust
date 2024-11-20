@@ -17,6 +17,10 @@ pub use crate::types::_s3_destination_config::S3DestinationConfigBuilder;
 
 pub use crate::types::_harvest_job::HarvestJobBuilder;
 
+pub use crate::types::_output_header_configuration::OutputHeaderConfigurationBuilder;
+
+pub use crate::types::_input_switch_configuration::InputSwitchConfigurationBuilder;
+
 pub use crate::types::_ingest_endpoint::IngestEndpointBuilder;
 
 pub use crate::types::_channel_list_configuration::ChannelListConfigurationBuilder;

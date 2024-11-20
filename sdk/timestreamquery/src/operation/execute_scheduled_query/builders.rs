@@ -23,7 +23,7 @@ impl crate::operation::execute_scheduled_query::builders::ExecuteScheduledQueryI
 /// Fluent builder constructing a request to `ExecuteScheduledQuery`.
 ///
 /// <p>You can use this API to run a scheduled query manually.</p>
-/// <p>If you enabled <code>QueryInsights</code>, this API also returns insights and metrics related to the query that you executed as part of an Amazon SNS notification. <code>QueryInsights</code> helps with performance tuning of your query.</p>
+/// <p>If you enabled <code>QueryInsights</code>, this API also returns insights and metrics related to the query that you executed as part of an Amazon SNS notification. <code>QueryInsights</code> helps with performance tuning of your query. For more information about <code>QueryInsights</code>, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/using-query-insights.html">Using query insights to optimize queries in Amazon Timestream</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ExecuteScheduledQueryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

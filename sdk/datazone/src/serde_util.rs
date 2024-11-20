@@ -500,6 +500,42 @@ pub(crate) fn create_project_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_rule_output_output_correct_errors(
+    mut builder: crate::operation::create_rule::builders::CreateRuleOutputBuilder,
+) -> crate::operation::create_rule::builders::CreateRuleOutputBuilder {
+    if builder.identifier.is_none() {
+        builder.identifier = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.rule_type.is_none() {
+        builder.rule_type = "no value was set".parse::<crate::types::RuleType>().ok()
+    }
+    if builder.target.is_none() {
+        builder.target = Some(crate::types::RuleTarget::Unknown)
+    }
+    if builder.action.is_none() {
+        builder.action = "no value was set".parse::<crate::types::RuleAction>().ok()
+    }
+    if builder.scope.is_none() {
+        builder.scope = {
+            let builder = crate::types::builders::RuleScopeBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.detail.is_none() {
+        builder.detail = Some(crate::types::RuleDetail::Unknown)
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.created_by.is_none() {
+        builder.created_by = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_subscription_grant_output_output_correct_errors(
     mut builder: crate::operation::create_subscription_grant::builders::CreateSubscriptionGrantOutputBuilder,
 ) -> crate::operation::create_subscription_grant::builders::CreateSubscriptionGrantOutputBuilder {
@@ -1073,6 +1109,51 @@ pub(crate) fn get_project_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_rule_output_output_correct_errors(
+    mut builder: crate::operation::get_rule::builders::GetRuleOutputBuilder,
+) -> crate::operation::get_rule::builders::GetRuleOutputBuilder {
+    if builder.identifier.is_none() {
+        builder.identifier = Some(Default::default())
+    }
+    if builder.revision.is_none() {
+        builder.revision = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.rule_type.is_none() {
+        builder.rule_type = "no value was set".parse::<crate::types::RuleType>().ok()
+    }
+    if builder.target.is_none() {
+        builder.target = Some(crate::types::RuleTarget::Unknown)
+    }
+    if builder.action.is_none() {
+        builder.action = "no value was set".parse::<crate::types::RuleAction>().ok()
+    }
+    if builder.scope.is_none() {
+        builder.scope = {
+            let builder = crate::types::builders::RuleScopeBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.detail.is_none() {
+        builder.detail = Some(crate::types::RuleDetail::Unknown)
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.created_by.is_none() {
+        builder.created_by = Some(Default::default())
+    }
+    if builder.last_updated_by.is_none() {
+        builder.last_updated_by = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_subscription_output_output_correct_errors(
     mut builder: crate::operation::get_subscription::builders::GetSubscriptionOutputBuilder,
 ) -> crate::operation::get_subscription::builders::GetSubscriptionOutputBuilder {
@@ -1327,6 +1408,15 @@ pub(crate) fn list_project_memberships_output_output_correct_errors(
 ) -> crate::operation::list_project_memberships::builders::ListProjectMembershipsOutputBuilder {
     if builder.members.is_none() {
         builder.members = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_rules_output_output_correct_errors(
+    mut builder: crate::operation::list_rules::builders::ListRulesOutputBuilder,
+) -> crate::operation::list_rules::builders::ListRulesOutputBuilder {
+    if builder.items.is_none() {
+        builder.items = Some(Default::default())
     }
     builder
 }
@@ -1691,6 +1781,51 @@ pub(crate) fn update_project_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_rule_output_output_correct_errors(
+    mut builder: crate::operation::update_rule::builders::UpdateRuleOutputBuilder,
+) -> crate::operation::update_rule::builders::UpdateRuleOutputBuilder {
+    if builder.identifier.is_none() {
+        builder.identifier = Some(Default::default())
+    }
+    if builder.revision.is_none() {
+        builder.revision = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.rule_type.is_none() {
+        builder.rule_type = "no value was set".parse::<crate::types::RuleType>().ok()
+    }
+    if builder.target.is_none() {
+        builder.target = Some(crate::types::RuleTarget::Unknown)
+    }
+    if builder.action.is_none() {
+        builder.action = "no value was set".parse::<crate::types::RuleAction>().ok()
+    }
+    if builder.scope.is_none() {
+        builder.scope = {
+            let builder = crate::types::builders::RuleScopeBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.detail.is_none() {
+        builder.detail = Some(crate::types::RuleDetail::Unknown)
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.created_by.is_none() {
+        builder.created_by = Some(Default::default())
+    }
+    if builder.last_updated_by.is_none() {
+        builder.last_updated_by = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn update_subscription_grant_status_output_output_correct_errors(
     mut builder: crate::operation::update_subscription_grant_status::builders::UpdateSubscriptionGrantStatusOutputBuilder,
 ) -> crate::operation::update_subscription_grant_status::builders::UpdateSubscriptionGrantStatusOutputBuilder {
@@ -1886,6 +2021,15 @@ pub(crate) fn asset_filter_summary_correct_errors(
     builder
 }
 
+pub(crate) fn asset_types_for_rule_correct_errors(
+    mut builder: crate::types::builders::AssetTypesForRuleBuilder,
+) -> crate::types::builders::AssetTypesForRuleBuilder {
+    if builder.selection_mode.is_none() {
+        builder.selection_mode = "no value was set".parse::<crate::types::RuleScopeSelectionMode>().ok()
+    }
+    builder
+}
+
 pub(crate) fn cloud_formation_properties_correct_errors(
     mut builder: crate::types::builders::CloudFormationPropertiesBuilder,
 ) -> crate::types::builders::CloudFormationPropertiesBuilder {
@@ -2041,6 +2185,15 @@ pub(crate) fn domain_unit_summary_correct_errors(
     }
     if builder.id.is_none() {
         builder.id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn domain_unit_target_correct_errors(
+    mut builder: crate::types::builders::DomainUnitTargetBuilder,
+) -> crate::types::builders::DomainUnitTargetBuilder {
+    if builder.domain_unit_id.is_none() {
+        builder.domain_unit_id = Some(Default::default())
     }
     builder
 }
@@ -2298,6 +2451,15 @@ pub(crate) fn project_summary_correct_errors(
     }
     if builder.created_by.is_none() {
         builder.created_by = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn projects_for_rule_correct_errors(
+    mut builder: crate::types::builders::ProjectsForRuleBuilder,
+) -> crate::types::builders::ProjectsForRuleBuilder {
+    if builder.selection_mode.is_none() {
+        builder.selection_mode = "no value was set".parse::<crate::types::RuleScopeSelectionMode>().ok()
     }
     builder
 }
@@ -2710,6 +2872,30 @@ pub(crate) fn domain_unit_policy_grant_principal_correct_errors(
 pub(crate) fn group_details_correct_errors(mut builder: crate::types::builders::GroupDetailsBuilder) -> crate::types::builders::GroupDetailsBuilder {
     if builder.group_id.is_none() {
         builder.group_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn metadata_form_reference_correct_errors(
+    mut builder: crate::types::builders::MetadataFormReferenceBuilder,
+) -> crate::types::builders::MetadataFormReferenceBuilder {
+    if builder.type_identifier.is_none() {
+        builder.type_identifier = Some(Default::default())
+    }
+    if builder.type_revision.is_none() {
+        builder.type_revision = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn metadata_form_summary_correct_errors(
+    mut builder: crate::types::builders::MetadataFormSummaryBuilder,
+) -> crate::types::builders::MetadataFormSummaryBuilder {
+    if builder.type_name.is_none() {
+        builder.type_name = Some(Default::default())
+    }
+    if builder.type_revision.is_none() {
+        builder.type_revision = Some(Default::default())
     }
     builder
 }

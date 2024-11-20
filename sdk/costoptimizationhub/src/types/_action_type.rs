@@ -12,6 +12,7 @@
 /// ```text
 /// # let actiontype = unimplemented!();
 /// match actiontype {
+///     ActionType::Delete => { /* ... */ },
 ///     ActionType::MigrateToGraviton => { /* ... */ },
 ///     ActionType::PurchaseReservedInstances => { /* ... */ },
 ///     ActionType::PurchaseSavingsPlans => { /* ... */ },
@@ -46,6 +47,8 @@
 )]
 pub enum ActionType {
     #[allow(missing_docs)] // documentation missing in model
+    Delete,
+    #[allow(missing_docs)] // documentation missing in model
     MigrateToGraviton,
     #[allow(missing_docs)] // documentation missing in model
     PurchaseReservedInstances,
@@ -64,6 +67,7 @@ pub enum ActionType {
 impl ::std::convert::From<&str> for ActionType {
     fn from(s: &str) -> Self {
         match s {
+            "Delete" => ActionType::Delete,
             "MigrateToGraviton" => ActionType::MigrateToGraviton,
             "PurchaseReservedInstances" => ActionType::PurchaseReservedInstances,
             "PurchaseSavingsPlans" => ActionType::PurchaseSavingsPlans,
@@ -85,6 +89,7 @@ impl ActionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ActionType::Delete => "Delete",
             ActionType::MigrateToGraviton => "MigrateToGraviton",
             ActionType::PurchaseReservedInstances => "PurchaseReservedInstances",
             ActionType::PurchaseSavingsPlans => "PurchaseSavingsPlans",
@@ -97,6 +102,7 @@ impl ActionType {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "Delete",
             "MigrateToGraviton",
             "PurchaseReservedInstances",
             "PurchaseSavingsPlans",
@@ -126,6 +132,7 @@ impl ActionType {
 impl ::std::fmt::Display for ActionType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ActionType::Delete => write!(f, "Delete"),
             ActionType::MigrateToGraviton => write!(f, "MigrateToGraviton"),
             ActionType::PurchaseReservedInstances => write!(f, "PurchaseReservedInstances"),
             ActionType::PurchaseSavingsPlans => write!(f, "PurchaseSavingsPlans"),

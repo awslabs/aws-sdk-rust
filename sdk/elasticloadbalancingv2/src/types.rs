@@ -85,6 +85,14 @@ pub use crate::types::_mutual_authentication_attributes::MutualAuthenticationAtt
 
 pub use crate::types::_trust_store_association_status_enum::TrustStoreAssociationStatusEnum;
 
+pub use crate::types::_zonal_capacity_reservation_state::ZonalCapacityReservationState;
+
+pub use crate::types::_capacity_reservation_status::CapacityReservationStatus;
+
+pub use crate::types::_capacity_reservation_state_enum::CapacityReservationStateEnum;
+
+pub use crate::types::_minimum_load_balancer_capacity::MinimumLoadBalancerCapacity;
+
 pub use crate::types::_describe_trust_store_revocation::DescribeTrustStoreRevocation;
 
 pub use crate::types::_revocation_type::RevocationType;
@@ -157,6 +165,10 @@ mod _authenticate_oidc_action_config;
 
 mod _availability_zone;
 
+mod _capacity_reservation_state_enum;
+
+mod _capacity_reservation_status;
+
 mod _certificate;
 
 mod _cipher;
@@ -202,6 +214,8 @@ mod _load_balancer_state_enum;
 mod _load_balancer_type_enum;
 
 mod _matcher;
+
+mod _minimum_load_balancer_capacity;
 
 mod _mitigation_in_effect_enum;
 
@@ -274,6 +288,8 @@ mod _trust_store_association_status_enum;
 mod _trust_store_revocation;
 
 mod _trust_store_status;
+
+mod _zonal_capacity_reservation_state;
 
 /// Builders
 pub mod builders;

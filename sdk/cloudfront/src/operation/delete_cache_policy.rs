@@ -255,7 +255,7 @@ pub enum DeleteCachePolicyError {
     AccessDenied(crate::types::error::AccessDenied),
     /// <p>Cannot delete the cache policy because it is attached to one or more cache behaviors.</p>
     CachePolicyInUse(crate::types::error::CachePolicyInUse),
-    /// <p>You cannot delete a managed policy.</p>
+    /// <p>Deletion is not allowed for this entity.</p>
     IllegalDelete(crate::types::error::IllegalDelete),
     /// <p>The <code>If-Match</code> version is missing or not valid.</p>
     InvalidIfMatchVersion(crate::types::error::InvalidIfMatchVersion),

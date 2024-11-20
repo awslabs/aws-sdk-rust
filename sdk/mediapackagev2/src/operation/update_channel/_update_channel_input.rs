@@ -11,6 +11,10 @@ pub struct UpdateChannelInput {
     pub e_tag: ::std::option::Option<::std::string::String>,
     /// <p>Any descriptive information that you want to add to the channel for future identification purposes.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>The configuration for input switching based on the media quality confidence score (MQCS) as provided from AWS Elemental MediaLive. This setting is valid only when <code>InputType</code> is <code>CMAF</code>.</p>
+    pub input_switch_configuration: ::std::option::Option<crate::types::InputSwitchConfiguration>,
+    /// <p>The settings for what common media server data (CMSD) headers AWS Elemental MediaPackage includes in responses to the CDN. This setting is valid only when <code>InputType</code> is <code>CMAF</code>.</p>
+    pub output_header_configuration: ::std::option::Option<crate::types::OutputHeaderConfiguration>,
 }
 impl UpdateChannelInput {
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
@@ -29,6 +33,14 @@ impl UpdateChannelInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
+    /// <p>The configuration for input switching based on the media quality confidence score (MQCS) as provided from AWS Elemental MediaLive. This setting is valid only when <code>InputType</code> is <code>CMAF</code>.</p>
+    pub fn input_switch_configuration(&self) -> ::std::option::Option<&crate::types::InputSwitchConfiguration> {
+        self.input_switch_configuration.as_ref()
+    }
+    /// <p>The settings for what common media server data (CMSD) headers AWS Elemental MediaPackage includes in responses to the CDN. This setting is valid only when <code>InputType</code> is <code>CMAF</code>.</p>
+    pub fn output_header_configuration(&self) -> ::std::option::Option<&crate::types::OutputHeaderConfiguration> {
+        self.output_header_configuration.as_ref()
+    }
 }
 impl UpdateChannelInput {
     /// Creates a new builder-style object to manufacture [`UpdateChannelInput`](crate::operation::update_channel::UpdateChannelInput).
@@ -45,6 +57,8 @@ pub struct UpdateChannelInputBuilder {
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) input_switch_configuration: ::std::option::Option<crate::types::InputSwitchConfiguration>,
+    pub(crate) output_header_configuration: ::std::option::Option<crate::types::OutputHeaderConfiguration>,
 }
 impl UpdateChannelInputBuilder {
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
@@ -105,6 +119,34 @@ impl UpdateChannelInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// <p>The configuration for input switching based on the media quality confidence score (MQCS) as provided from AWS Elemental MediaLive. This setting is valid only when <code>InputType</code> is <code>CMAF</code>.</p>
+    pub fn input_switch_configuration(mut self, input: crate::types::InputSwitchConfiguration) -> Self {
+        self.input_switch_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for input switching based on the media quality confidence score (MQCS) as provided from AWS Elemental MediaLive. This setting is valid only when <code>InputType</code> is <code>CMAF</code>.</p>
+    pub fn set_input_switch_configuration(mut self, input: ::std::option::Option<crate::types::InputSwitchConfiguration>) -> Self {
+        self.input_switch_configuration = input;
+        self
+    }
+    /// <p>The configuration for input switching based on the media quality confidence score (MQCS) as provided from AWS Elemental MediaLive. This setting is valid only when <code>InputType</code> is <code>CMAF</code>.</p>
+    pub fn get_input_switch_configuration(&self) -> &::std::option::Option<crate::types::InputSwitchConfiguration> {
+        &self.input_switch_configuration
+    }
+    /// <p>The settings for what common media server data (CMSD) headers AWS Elemental MediaPackage includes in responses to the CDN. This setting is valid only when <code>InputType</code> is <code>CMAF</code>.</p>
+    pub fn output_header_configuration(mut self, input: crate::types::OutputHeaderConfiguration) -> Self {
+        self.output_header_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The settings for what common media server data (CMSD) headers AWS Elemental MediaPackage includes in responses to the CDN. This setting is valid only when <code>InputType</code> is <code>CMAF</code>.</p>
+    pub fn set_output_header_configuration(mut self, input: ::std::option::Option<crate::types::OutputHeaderConfiguration>) -> Self {
+        self.output_header_configuration = input;
+        self
+    }
+    /// <p>The settings for what common media server data (CMSD) headers AWS Elemental MediaPackage includes in responses to the CDN. This setting is valid only when <code>InputType</code> is <code>CMAF</code>.</p>
+    pub fn get_output_header_configuration(&self) -> &::std::option::Option<crate::types::OutputHeaderConfiguration> {
+        &self.output_header_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateChannelInput`](crate::operation::update_channel::UpdateChannelInput).
     pub fn build(
         self,
@@ -114,6 +156,8 @@ impl UpdateChannelInputBuilder {
             channel_name: self.channel_name,
             e_tag: self.e_tag,
             description: self.description,
+            input_switch_configuration: self.input_switch_configuration,
+            output_header_configuration: self.output_header_configuration,
         })
     }
 }

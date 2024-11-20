@@ -12,5 +12,8 @@ pub fn ser_update_application_input_input(
     if let Some(var_3) = &input.description {
         object.key("description").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.wave {
+        object.key("wave").string(var_4.as_str());
+    }
     Ok(())
 }

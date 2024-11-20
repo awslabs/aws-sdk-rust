@@ -75,6 +75,8 @@ pub(crate) mod shape_create_project;
 
 pub(crate) mod shape_create_project_membership;
 
+pub(crate) mod shape_create_rule;
+
 pub(crate) mod shape_create_subscription_grant;
 
 pub(crate) mod shape_create_subscription_request;
@@ -116,6 +118,8 @@ pub(crate) mod shape_delete_listing;
 pub(crate) mod shape_delete_project;
 
 pub(crate) mod shape_delete_project_membership;
+
+pub(crate) mod shape_delete_rule;
 
 pub(crate) mod shape_delete_subscription_grant;
 
@@ -173,6 +177,8 @@ pub(crate) mod shape_get_metadata_generation_run;
 
 pub(crate) mod shape_get_project;
 
+pub(crate) mod shape_get_rule;
+
 pub(crate) mod shape_get_subscription;
 
 pub(crate) mod shape_get_subscription_grant;
@@ -224,6 +230,8 @@ pub(crate) mod shape_list_policy_grants;
 pub(crate) mod shape_list_project_memberships;
 
 pub(crate) mod shape_list_projects;
+
+pub(crate) mod shape_list_rules;
 
 pub(crate) mod shape_list_subscription_grants;
 
@@ -295,6 +303,8 @@ pub(crate) mod shape_update_group_profile;
 
 pub(crate) mod shape_update_project;
 
+pub(crate) mod shape_update_rule;
+
 pub(crate) mod shape_update_subscription_grant_status;
 
 pub(crate) mod shape_update_subscription_request;
@@ -360,6 +370,8 @@ pub(crate) mod shape_create_listing_change_set_input;
 pub(crate) mod shape_create_project_input;
 
 pub(crate) mod shape_create_project_membership_input;
+
+pub(crate) mod shape_create_rule_input;
 
 pub(crate) mod shape_create_subscription_grant_input;
 
@@ -432,6 +444,8 @@ pub(crate) mod shape_update_glossary_term_input;
 pub(crate) mod shape_update_group_profile_input;
 
 pub(crate) mod shape_update_project_input;
+
+pub(crate) mod shape_update_rule_input;
 
 pub(crate) mod shape_update_subscription_grant_status_input;
 
@@ -549,6 +563,8 @@ pub(crate) mod shape_listing_item;
 
 pub(crate) mod shape_member;
 
+pub(crate) mod shape_metadata_forms;
+
 pub(crate) mod shape_metadata_generation_run_target;
 
 pub(crate) mod shape_metadata_generation_runs;
@@ -586,6 +602,14 @@ pub(crate) mod shape_reject_choice;
 pub(crate) mod shape_reject_rule;
 
 pub(crate) mod shape_resource_list;
+
+pub(crate) mod shape_rule_detail;
+
+pub(crate) mod shape_rule_scope;
+
+pub(crate) mod shape_rule_summaries;
+
+pub(crate) mod shape_rule_target;
 
 pub(crate) mod shape_run_statistics_for_assets;
 
@@ -655,6 +679,8 @@ pub(crate) mod shape_asset_listing;
 
 pub(crate) mod shape_asset_revision;
 
+pub(crate) mod shape_asset_types_for_rule;
+
 pub(crate) mod shape_aws_console_link_parameters;
 
 pub(crate) mod shape_business_name_generation_configuration;
@@ -699,6 +725,8 @@ pub(crate) mod shape_domain_unit_policy_grant_principal;
 
 pub(crate) mod shape_domain_unit_summary;
 
+pub(crate) mod shape_domain_unit_target;
+
 pub(crate) mod shape_environment_action_summary;
 
 pub(crate) mod shape_environment_blueprint_configuration_item;
@@ -741,6 +769,8 @@ pub(crate) mod shape_listing_revision;
 
 pub(crate) mod shape_listing_revision_input;
 
+pub(crate) mod shape_metadata_form_enforcement_detail;
+
 pub(crate) mod shape_metadata_generation_run_item;
 
 pub(crate) mod shape_notification_output;
@@ -765,6 +795,8 @@ pub(crate) mod shape_project_policy_grant_principal;
 
 pub(crate) mod shape_project_summary;
 
+pub(crate) mod shape_projects_for_rule;
+
 pub(crate) mod shape_redshift_run_configuration_input;
 
 pub(crate) mod shape_redshift_run_configuration_output;
@@ -776,6 +808,8 @@ pub(crate) mod shape_regional_parameter;
 pub(crate) mod shape_resource;
 
 pub(crate) mod shape_row_filter_configuration;
+
+pub(crate) mod shape_rule_summary;
 
 pub(crate) mod shape_search_inventory_result_item;
 
@@ -847,6 +881,10 @@ pub(crate) mod shape_listing_summaries;
 
 pub(crate) mod shape_member_details;
 
+pub(crate) mod shape_metadata_form_reference;
+
+pub(crate) mod shape_metadata_forms_summary;
+
 pub(crate) mod shape_metadata_map;
 
 pub(crate) mod shape_owner_group_properties_output;
@@ -863,7 +901,13 @@ pub(crate) mod shape_relational_filter_configuration;
 
 pub(crate) mod shape_relational_filter_configurations;
 
+pub(crate) mod shape_required_metadata_form_list;
+
 pub(crate) mod shape_row_filter;
+
+pub(crate) mod shape_rule_asset_type_list;
+
+pub(crate) mod shape_rule_project_identifier_list;
 
 pub(crate) mod shape_self_grant_status_details;
 
@@ -898,6 +942,8 @@ pub(crate) mod shape_group_details;
 pub(crate) mod shape_listing_summary;
 
 pub(crate) mod shape_listing_summary_items;
+
+pub(crate) mod shape_metadata_form_summary;
 
 pub(crate) mod shape_notification_resource;
 

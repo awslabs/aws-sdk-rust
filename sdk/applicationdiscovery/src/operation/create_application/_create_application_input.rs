@@ -3,19 +3,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateApplicationInput {
-    /// <p>Name of the application to be created.</p>
+    /// <p>The name of the application to be created.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>Description of the application to be created.</p>
+    /// <p>The description of the application to be created.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the migration wave of the application to be created.</p>
+    pub wave: ::std::option::Option<::std::string::String>,
 }
 impl CreateApplicationInput {
-    /// <p>Name of the application to be created.</p>
+    /// <p>The name of the application to be created.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Description of the application to be created.</p>
+    /// <p>The description of the application to be created.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
+    }
+    /// <p>The name of the migration wave of the application to be created.</p>
+    pub fn wave(&self) -> ::std::option::Option<&str> {
+        self.wave.as_deref()
     }
 }
 impl CreateApplicationInput {
@@ -31,36 +37,51 @@ impl CreateApplicationInput {
 pub struct CreateApplicationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) wave: ::std::option::Option<::std::string::String>,
 }
 impl CreateApplicationInputBuilder {
-    /// <p>Name of the application to be created.</p>
+    /// <p>The name of the application to be created.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Name of the application to be created.</p>
+    /// <p>The name of the application to be created.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>Name of the application to be created.</p>
+    /// <p>The name of the application to be created.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>Description of the application to be created.</p>
+    /// <p>The description of the application to be created.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Description of the application to be created.</p>
+    /// <p>The description of the application to be created.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>Description of the application to be created.</p>
+    /// <p>The description of the application to be created.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
+    }
+    /// <p>The name of the migration wave of the application to be created.</p>
+    pub fn wave(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.wave = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the migration wave of the application to be created.</p>
+    pub fn set_wave(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.wave = input;
+        self
+    }
+    /// <p>The name of the migration wave of the application to be created.</p>
+    pub fn get_wave(&self) -> &::std::option::Option<::std::string::String> {
+        &self.wave
     }
     /// Consumes the builder and constructs a [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
     pub fn build(
@@ -69,6 +90,7 @@ impl CreateApplicationInputBuilder {
         ::std::result::Result::Ok(crate::operation::create_application::CreateApplicationInput {
             name: self.name,
             description: self.description,
+            wave: self.wave,
         })
     }
 }

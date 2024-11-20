@@ -21,6 +21,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "concurrentJobs" => {
+                            builder = builder.set_concurrent_jobs(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         "createdAt" => {
                             builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
@@ -63,6 +70,11 @@ where
                         }
                         "reservationPlan" => {
                             builder = builder.set_reservation_plan(crate::protocol_serde::shape_reservation_plan::de_reservation_plan(tokens)?);
+                        }
+                        "serviceOverrides" => {
+                            builder = builder.set_service_overrides(
+                                crate::protocol_serde::shape_list_of_service_override::de_list_of_service_override(tokens)?,
+                            );
                         }
                         "status" => {
                             builder = builder.set_status(

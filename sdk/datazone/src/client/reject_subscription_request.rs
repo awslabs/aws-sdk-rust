@@ -19,6 +19,8 @@ impl super::Client {
     ///   - [`subscribed_listings(Vec::<SubscribedListing>)`](crate::operation::reject_subscription_request::RejectSubscriptionRequestOutput::subscribed_listings): <p>The subscribed listings of the subscription request.</p>
     ///   - [`reviewer_id(Option<String>)`](crate::operation::reject_subscription_request::RejectSubscriptionRequestOutput::reviewer_id): <p>The identifier of the subscription request reviewer.</p>
     ///   - [`decision_comment(Option<String>)`](crate::operation::reject_subscription_request::RejectSubscriptionRequestOutput::decision_comment): <p>The decision comment of the rejected subscription request.</p>
+    ///   - [`existing_subscription_id(Option<String>)`](crate::operation::reject_subscription_request::RejectSubscriptionRequestOutput::existing_subscription_id): <p>The ID of the existing subscription.</p>
+    ///   - [`metadata_forms(Option<Vec::<FormOutput>>)`](crate::operation::reject_subscription_request::RejectSubscriptionRequestOutput::metadata_forms): <p>Metadata forms included in the subscription request.</p>
     /// - On failure, responds with [`SdkError<RejectSubscriptionRequestError>`](crate::operation::reject_subscription_request::RejectSubscriptionRequestError)
     pub fn reject_subscription_request(&self) -> crate::operation::reject_subscription_request::builders::RejectSubscriptionRequestFluentBuilder {
         crate::operation::reject_subscription_request::builders::RejectSubscriptionRequestFluentBuilder::new(self.handle.clone())

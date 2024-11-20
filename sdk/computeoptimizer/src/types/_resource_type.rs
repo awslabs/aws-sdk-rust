@@ -16,6 +16,7 @@
 ///     ResourceType::EbsVolume => { /* ... */ },
 ///     ResourceType::Ec2Instance => { /* ... */ },
 ///     ResourceType::EcsService => { /* ... */ },
+///     ResourceType::Idle => { /* ... */ },
 ///     ResourceType::LambdaFunction => { /* ... */ },
 ///     ResourceType::License => { /* ... */ },
 ///     ResourceType::NotApplicable => { /* ... */ },
@@ -56,6 +57,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     EcsService,
     #[allow(missing_docs)] // documentation missing in model
+    Idle,
+    #[allow(missing_docs)] // documentation missing in model
     LambdaFunction,
     #[allow(missing_docs)] // documentation missing in model
     License,
@@ -74,6 +77,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "EbsVolume" => ResourceType::EbsVolume,
             "Ec2Instance" => ResourceType::Ec2Instance,
             "EcsService" => ResourceType::EcsService,
+            "Idle" => ResourceType::Idle,
             "LambdaFunction" => ResourceType::LambdaFunction,
             "License" => ResourceType::License,
             "NotApplicable" => ResourceType::NotApplicable,
@@ -97,6 +101,7 @@ impl ResourceType {
             ResourceType::EbsVolume => "EbsVolume",
             ResourceType::Ec2Instance => "Ec2Instance",
             ResourceType::EcsService => "EcsService",
+            ResourceType::Idle => "Idle",
             ResourceType::LambdaFunction => "LambdaFunction",
             ResourceType::License => "License",
             ResourceType::NotApplicable => "NotApplicable",
@@ -111,6 +116,7 @@ impl ResourceType {
             "EbsVolume",
             "Ec2Instance",
             "EcsService",
+            "Idle",
             "LambdaFunction",
             "License",
             "NotApplicable",
@@ -142,6 +148,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::EbsVolume => write!(f, "EbsVolume"),
             ResourceType::Ec2Instance => write!(f, "Ec2Instance"),
             ResourceType::EcsService => write!(f, "EcsService"),
+            ResourceType::Idle => write!(f, "Idle"),
             ResourceType::LambdaFunction => write!(f, "LambdaFunction"),
             ResourceType::License => write!(f, "License"),
             ResourceType::NotApplicable => write!(f, "NotApplicable"),

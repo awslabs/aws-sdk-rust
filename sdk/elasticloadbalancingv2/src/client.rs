@@ -244,6 +244,8 @@ mod deregister_targets;
 
 mod describe_account_limits;
 
+mod describe_capacity_reservation;
+
 mod describe_listener_attributes;
 
 mod describe_listener_certificates;
@@ -277,6 +279,8 @@ mod get_resource_policy;
 mod get_trust_store_ca_certificates_bundle;
 
 mod get_trust_store_revocation_content;
+
+mod modify_capacity_reservation;
 
 mod modify_listener;
 

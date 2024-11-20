@@ -223,6 +223,11 @@ pub fn ser_create_auto_scaling_group_input_input_input(
     if let Some(var_83) = &input.skip_zonal_shift_validation {
         scope_82.boolean(*var_83);
     }
+    #[allow(unused_mut)]
+    let mut scope_84 = writer.prefix("CapacityReservationSpecification");
+    if let Some(var_85) = &input.capacity_reservation_specification {
+        crate::protocol_serde::shape_capacity_reservation_specification::ser_capacity_reservation_specification(scope_84, var_85)?;
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

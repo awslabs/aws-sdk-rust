@@ -65,21 +65,25 @@ pub fn ser_cache_behavior(
         let mut inner_writer = scope.start_el("ResponseHeadersPolicyId").finish();
         inner_writer.data(var_12.as_str());
     }
-    if let Some(var_13) = &input.forwarded_values {
+    if let Some(var_13) = &input.grpc_config {
+        let inner_writer = scope.start_el("GrpcConfig");
+        crate::protocol_serde::shape_grpc_config::ser_grpc_config(var_13, inner_writer)?
+    }
+    if let Some(var_14) = &input.forwarded_values {
         let inner_writer = scope.start_el("ForwardedValues");
-        crate::protocol_serde::shape_forwarded_values::ser_forwarded_values(var_13, inner_writer)?
+        crate::protocol_serde::shape_forwarded_values::ser_forwarded_values(var_14, inner_writer)?
     }
-    if let Some(var_14) = &input.min_ttl {
+    if let Some(var_15) = &input.min_ttl {
         let mut inner_writer = scope.start_el("MinTTL").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_14).encode());
-    }
-    if let Some(var_15) = &input.default_ttl {
-        let mut inner_writer = scope.start_el("DefaultTTL").finish();
         inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_15).encode());
     }
-    if let Some(var_16) = &input.max_ttl {
-        let mut inner_writer = scope.start_el("MaxTTL").finish();
+    if let Some(var_16) = &input.default_ttl {
+        let mut inner_writer = scope.start_el("DefaultTTL").finish();
         inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_16).encode());
+    }
+    if let Some(var_17) = &input.max_ttl {
+        let mut inner_writer = scope.start_el("MaxTTL").finish();
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_17).encode());
     }
     scope.finish();
     Ok(())
@@ -94,19 +98,6 @@ pub fn de_cache_behavior(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("PathPattern") /* PathPattern com.amazonaws.cloudfront#CacheBehavior$PathPattern */ =>  {
-                let var_17 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_path_pattern(var_17);
-            }
-            ,
-            s if s.matches("TargetOriginId") /* TargetOriginId com.amazonaws.cloudfront#CacheBehavior$TargetOriginId */ =>  {
                 let var_18 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -116,31 +107,44 @@ pub fn de_cache_behavior(
                         ?
                     )
                 ;
-                builder = builder.set_target_origin_id(var_18);
+                builder = builder.set_path_pattern(var_18);
+            }
+            ,
+            s if s.matches("TargetOriginId") /* TargetOriginId com.amazonaws.cloudfront#CacheBehavior$TargetOriginId */ =>  {
+                let var_19 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_target_origin_id(var_19);
             }
             ,
             s if s.matches("TrustedSigners") /* TrustedSigners com.amazonaws.cloudfront#CacheBehavior$TrustedSigners */ =>  {
-                let var_19 =
+                let var_20 =
                     Some(
                         crate::protocol_serde::shape_trusted_signers::de_trusted_signers(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_trusted_signers(var_19);
+                builder = builder.set_trusted_signers(var_20);
             }
             ,
             s if s.matches("TrustedKeyGroups") /* TrustedKeyGroups com.amazonaws.cloudfront#CacheBehavior$TrustedKeyGroups */ =>  {
-                let var_20 =
+                let var_21 =
                     Some(
                         crate::protocol_serde::shape_trusted_key_groups::de_trusted_key_groups(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_trusted_key_groups(var_20);
+                builder = builder.set_trusted_key_groups(var_21);
             }
             ,
             s if s.matches("ViewerProtocolPolicy") /* ViewerProtocolPolicy com.amazonaws.cloudfront#CacheBehavior$ViewerProtocolPolicy */ =>  {
-                let var_21 =
+                let var_22 =
                     Some(
                         Result::<crate::types::ViewerProtocolPolicy, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::ViewerProtocolPolicy::from(
@@ -150,35 +154,20 @@ pub fn de_cache_behavior(
                         ?
                     )
                 ;
-                builder = builder.set_viewer_protocol_policy(var_21);
+                builder = builder.set_viewer_protocol_policy(var_22);
             }
             ,
             s if s.matches("AllowedMethods") /* AllowedMethods com.amazonaws.cloudfront#CacheBehavior$AllowedMethods */ =>  {
-                let var_22 =
+                let var_23 =
                     Some(
                         crate::protocol_serde::shape_allowed_methods::de_allowed_methods(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_allowed_methods(var_22);
+                builder = builder.set_allowed_methods(var_23);
             }
             ,
             s if s.matches("SmoothStreaming") /* SmoothStreaming com.amazonaws.cloudfront#CacheBehavior$SmoothStreaming */ =>  {
-                let var_23 =
-                    Some(
-                         {
-                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.cloudfront#boolean`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_smooth_streaming(var_23);
-            }
-            ,
-            s if s.matches("Compress") /* Compress com.amazonaws.cloudfront#CacheBehavior$Compress */ =>  {
                 let var_24 =
                     Some(
                          {
@@ -190,43 +179,45 @@ pub fn de_cache_behavior(
                         ?
                     )
                 ;
-                builder = builder.set_compress(var_24);
+                builder = builder.set_smooth_streaming(var_24);
+            }
+            ,
+            s if s.matches("Compress") /* Compress com.amazonaws.cloudfront#CacheBehavior$Compress */ =>  {
+                let var_25 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.cloudfront#boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_compress(var_25);
             }
             ,
             s if s.matches("LambdaFunctionAssociations") /* LambdaFunctionAssociations com.amazonaws.cloudfront#CacheBehavior$LambdaFunctionAssociations */ =>  {
-                let var_25 =
+                let var_26 =
                     Some(
                         crate::protocol_serde::shape_lambda_function_associations::de_lambda_function_associations(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_lambda_function_associations(var_25);
+                builder = builder.set_lambda_function_associations(var_26);
             }
             ,
             s if s.matches("FunctionAssociations") /* FunctionAssociations com.amazonaws.cloudfront#CacheBehavior$FunctionAssociations */ =>  {
-                let var_26 =
+                let var_27 =
                     Some(
                         crate::protocol_serde::shape_function_associations::de_function_associations(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_function_associations(var_26);
+                builder = builder.set_function_associations(var_27);
             }
             ,
             s if s.matches("FieldLevelEncryptionId") /* FieldLevelEncryptionId com.amazonaws.cloudfront#CacheBehavior$FieldLevelEncryptionId */ =>  {
-                let var_27 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_field_level_encryption_id(var_27);
-            }
-            ,
-            s if s.matches("RealtimeLogConfigArn") /* RealtimeLogConfigArn com.amazonaws.cloudfront#CacheBehavior$RealtimeLogConfigArn */ =>  {
                 let var_28 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -236,10 +227,10 @@ pub fn de_cache_behavior(
                         ?
                     )
                 ;
-                builder = builder.set_realtime_log_config_arn(var_28);
+                builder = builder.set_field_level_encryption_id(var_28);
             }
             ,
-            s if s.matches("CachePolicyId") /* CachePolicyId com.amazonaws.cloudfront#CacheBehavior$CachePolicyId */ =>  {
+            s if s.matches("RealtimeLogConfigArn") /* RealtimeLogConfigArn com.amazonaws.cloudfront#CacheBehavior$RealtimeLogConfigArn */ =>  {
                 let var_29 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -249,10 +240,10 @@ pub fn de_cache_behavior(
                         ?
                     )
                 ;
-                builder = builder.set_cache_policy_id(var_29);
+                builder = builder.set_realtime_log_config_arn(var_29);
             }
             ,
-            s if s.matches("OriginRequestPolicyId") /* OriginRequestPolicyId com.amazonaws.cloudfront#CacheBehavior$OriginRequestPolicyId */ =>  {
+            s if s.matches("CachePolicyId") /* CachePolicyId com.amazonaws.cloudfront#CacheBehavior$CachePolicyId */ =>  {
                 let var_30 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -262,10 +253,10 @@ pub fn de_cache_behavior(
                         ?
                     )
                 ;
-                builder = builder.set_origin_request_policy_id(var_30);
+                builder = builder.set_cache_policy_id(var_30);
             }
             ,
-            s if s.matches("ResponseHeadersPolicyId") /* ResponseHeadersPolicyId com.amazonaws.cloudfront#CacheBehavior$ResponseHeadersPolicyId */ =>  {
+            s if s.matches("OriginRequestPolicyId") /* OriginRequestPolicyId com.amazonaws.cloudfront#CacheBehavior$OriginRequestPolicyId */ =>  {
                 let var_31 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -275,50 +266,43 @@ pub fn de_cache_behavior(
                         ?
                     )
                 ;
-                builder = builder.set_response_headers_policy_id(var_31);
+                builder = builder.set_origin_request_policy_id(var_31);
+            }
+            ,
+            s if s.matches("ResponseHeadersPolicyId") /* ResponseHeadersPolicyId com.amazonaws.cloudfront#CacheBehavior$ResponseHeadersPolicyId */ =>  {
+                let var_32 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_response_headers_policy_id(var_32);
+            }
+            ,
+            s if s.matches("GrpcConfig") /* GrpcConfig com.amazonaws.cloudfront#CacheBehavior$GrpcConfig */ =>  {
+                let var_33 =
+                    Some(
+                        crate::protocol_serde::shape_grpc_config::de_grpc_config(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_grpc_config(var_33);
             }
             ,
             s if s.matches("ForwardedValues") /* ForwardedValues com.amazonaws.cloudfront#CacheBehavior$ForwardedValues */ =>  {
-                let var_32 =
+                let var_34 =
                     Some(
                         crate::protocol_serde::shape_forwarded_values::de_forwarded_values(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_forwarded_values(var_32);
+                builder = builder.set_forwarded_values(var_34);
             }
             ,
             s if s.matches("MinTTL") /* MinTTL com.amazonaws.cloudfront#CacheBehavior$MinTTL */ =>  {
-                let var_33 =
-                    Some(
-                         {
-                            <i64 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (long: `com.amazonaws.cloudfront#long`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_min_ttl(var_33);
-            }
-            ,
-            s if s.matches("DefaultTTL") /* DefaultTTL com.amazonaws.cloudfront#CacheBehavior$DefaultTTL */ =>  {
-                let var_34 =
-                    Some(
-                         {
-                            <i64 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (long: `com.amazonaws.cloudfront#long`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_default_ttl(var_34);
-            }
-            ,
-            s if s.matches("MaxTTL") /* MaxTTL com.amazonaws.cloudfront#CacheBehavior$MaxTTL */ =>  {
                 let var_35 =
                     Some(
                          {
@@ -330,7 +314,37 @@ pub fn de_cache_behavior(
                         ?
                     )
                 ;
-                builder = builder.set_max_ttl(var_35);
+                builder = builder.set_min_ttl(var_35);
+            }
+            ,
+            s if s.matches("DefaultTTL") /* DefaultTTL com.amazonaws.cloudfront#CacheBehavior$DefaultTTL */ =>  {
+                let var_36 =
+                    Some(
+                         {
+                            <i64 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (long: `com.amazonaws.cloudfront#long`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_default_ttl(var_36);
+            }
+            ,
+            s if s.matches("MaxTTL") /* MaxTTL com.amazonaws.cloudfront#CacheBehavior$MaxTTL */ =>  {
+                let var_37 =
+                    Some(
+                         {
+                            <i64 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (long: `com.amazonaws.cloudfront#long`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_max_ttl(var_37);
             }
             ,
             _ => {}

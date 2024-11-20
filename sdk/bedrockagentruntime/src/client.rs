@@ -130,6 +130,8 @@ mod invoke_agent;
 
 mod invoke_flow;
 
+mod optimize_prompt;
+
 mod retrieve;
 
 mod retrieve_and_generate;

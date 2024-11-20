@@ -177,6 +177,20 @@ pub(crate) fn de_get_run(
                             .transpose()?,
                     );
                 }
+                "cacheBehavior" => {
+                    builder = builder.set_cache_behavior(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::CacheBehavior::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
+                "cacheId" => {
+                    builder = builder.set_cache_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "creationTime" => {
                     builder = builder.set_creation_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),
@@ -192,6 +206,13 @@ pub(crate) fn de_get_run(
                 }
                 "digest" => {
                     builder = builder.set_digest(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "engineVersion" => {
+                    builder = builder.set_engine_version(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,

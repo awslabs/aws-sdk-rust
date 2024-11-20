@@ -367,6 +367,12 @@ pub use crate::types::_launch_template_overrides::LaunchTemplateOverrides;
 
 pub use crate::types::_instance_requirements::InstanceRequirements;
 
+pub use crate::types::_baseline_performance_factors::BaselinePerformanceFactors;
+
+pub use crate::types::_cpu_performance_factor::CpuPerformanceFactor;
+
+pub use crate::types::_performance_factor_reference::PerformanceFactorReference;
+
 pub use crate::types::_network_bandwidth_gbps::NetworkBandwidthGbps;
 
 pub use crate::types::_accelerator_total_memory_mib::AcceleratorTotalMemoryMiB;
@@ -904,6 +910,12 @@ pub use crate::types::_fleet_launch_template_config_request::FleetLaunchTemplate
 pub use crate::types::_fleet_launch_template_overrides_request::FleetLaunchTemplateOverridesRequest;
 
 pub use crate::types::_instance_requirements_request::InstanceRequirementsRequest;
+
+pub use crate::types::_baseline_performance_factors_request::BaselinePerformanceFactorsRequest;
+
+pub use crate::types::_cpu_performance_factor_request::CpuPerformanceFactorRequest;
+
+pub use crate::types::_performance_factor_reference_request::PerformanceFactorReferenceRequest;
 
 pub use crate::types::_network_bandwidth_gbps_request::NetworkBandwidthGbpsRequest;
 
@@ -2347,6 +2359,10 @@ mod _baseline_ebs_bandwidth_mbps;
 
 mod _baseline_ebs_bandwidth_mbps_request;
 
+mod _baseline_performance_factors;
+
+mod _baseline_performance_factors_request;
+
 mod _batch_state;
 
 mod _bgp_status;
@@ -2544,6 +2560,10 @@ mod _cpu_manufacturer;
 mod _cpu_options;
 
 mod _cpu_options_request;
+
+mod _cpu_performance_factor;
+
+mod _cpu_performance_factor_request;
 
 mod _create_fleet_error;
 
@@ -3612,6 +3632,10 @@ mod _peering_connection_options;
 mod _peering_connection_options_request;
 
 mod _peering_tgw_info;
+
+mod _performance_factor_reference;
+
+mod _performance_factor_reference_request;
 
 mod _period_type;
 

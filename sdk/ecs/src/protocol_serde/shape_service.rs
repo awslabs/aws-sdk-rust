@@ -182,6 +182,13 @@ where
                         "enableExecuteCommand" => {
                             builder = builder.set_enable_execute_command(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "availabilityZoneRebalancing" => {
+                            builder = builder.set_availability_zone_rebalancing(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::AvailabilityZoneRebalancing::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -141,6 +141,9 @@ pub(crate) fn de_describe_account_settings(
                             .transpose()?,
                     );
                 }
+                "QueryCompute" => {
+                    builder = builder.set_query_compute(crate::protocol_serde::shape_query_compute_response::de_query_compute_response(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

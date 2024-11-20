@@ -183,6 +183,8 @@ mod associate_alias;
 
 mod copy_distribution;
 
+mod create_anycast_ip_list;
+
 mod create_cache_policy;
 
 mod create_cloud_front_origin_access_identity;
@@ -221,6 +223,8 @@ mod create_streaming_distribution;
 
 mod create_streaming_distribution_with_tags;
 
+mod create_vpc_origin;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -247,6 +251,8 @@ mod create_streaming_distribution_with_tags;
 /// # }
 /// ```
 pub mod customize;
+
+mod delete_anycast_ip_list;
 
 mod delete_cache_policy;
 
@@ -280,9 +286,13 @@ mod delete_response_headers_policy;
 
 mod delete_streaming_distribution;
 
+mod delete_vpc_origin;
+
 mod describe_function;
 
 mod describe_key_value_store;
+
+mod get_anycast_ip_list;
 
 mod get_cache_policy;
 
@@ -340,6 +350,10 @@ mod get_streaming_distribution;
 
 mod get_streaming_distribution_config;
 
+mod get_vpc_origin;
+
+mod list_anycast_ip_lists;
+
 mod list_cache_policies;
 
 mod list_cloud_front_origin_access_identities;
@@ -350,6 +364,8 @@ mod list_continuous_deployment_policies;
 
 mod list_distributions;
 
+mod list_distributions_by_anycast_ip_list_id;
+
 mod list_distributions_by_cache_policy_id;
 
 mod list_distributions_by_key_group;
@@ -359,6 +375,8 @@ mod list_distributions_by_origin_request_policy_id;
 mod list_distributions_by_realtime_log_config;
 
 mod list_distributions_by_response_headers_policy_id;
+
+mod list_distributions_by_vpc_origin_id;
 
 mod list_distributions_by_web_acl_id;
 
@@ -387,6 +405,8 @@ mod list_response_headers_policies;
 mod list_streaming_distributions;
 
 mod list_tags_for_resource;
+
+mod list_vpc_origins;
 
 mod publish_function;
 
@@ -427,3 +447,5 @@ mod update_realtime_log_config;
 mod update_response_headers_policy;
 
 mod update_streaming_distribution;
+
+mod update_vpc_origin;

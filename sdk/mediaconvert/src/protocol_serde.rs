@@ -195,6 +195,8 @@ pub(crate) mod shape_list_of_output_group_detail;
 
 pub(crate) mod shape_list_of_queue_transition;
 
+pub(crate) mod shape_list_of_service_override;
+
 pub(crate) mod shape_list_of_warning_group;
 
 pub(crate) mod shape_map_of_string;
@@ -294,6 +296,8 @@ pub(crate) mod shape_queue_transition;
 pub(crate) mod shape_rectangle;
 
 pub(crate) mod shape_remix_settings;
+
+pub(crate) mod shape_service_override;
 
 pub(crate) mod shape_video_codec_settings;
 

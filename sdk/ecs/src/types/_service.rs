@@ -93,6 +93,9 @@ pub struct Service {
     pub propagate_tags: ::std::option::Option<crate::types::PropagateTags>,
     /// <p>Determines whether the execute command functionality is turned on for the service. If <code>true</code>, the execute command functionality is turned on for all containers in tasks as part of the service.</p>
     pub enable_execute_command: bool,
+    /// <p>Indicates whether to use Availability Zone rebalancing for the service.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html">Balancing an Amazon ECS service across Availability Zones</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub availability_zone_rebalancing: ::std::option::Option<crate::types::AvailabilityZoneRebalancing>,
 }
 impl Service {
     /// <p>The ARN that identifies the service. For more information about the ARN format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
@@ -264,6 +267,11 @@ impl Service {
     pub fn enable_execute_command(&self) -> bool {
         self.enable_execute_command
     }
+    /// <p>Indicates whether to use Availability Zone rebalancing for the service.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html">Balancing an Amazon ECS service across Availability Zones</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn availability_zone_rebalancing(&self) -> ::std::option::Option<&crate::types::AvailabilityZoneRebalancing> {
+        self.availability_zone_rebalancing.as_ref()
+    }
 }
 impl Service {
     /// Creates a new builder-style object to manufacture [`Service`](crate::types::Service).
@@ -307,6 +315,7 @@ pub struct ServiceBuilder {
     pub(crate) enable_ecs_managed_tags: ::std::option::Option<bool>,
     pub(crate) propagate_tags: ::std::option::Option<crate::types::PropagateTags>,
     pub(crate) enable_execute_command: ::std::option::Option<bool>,
+    pub(crate) availability_zone_rebalancing: ::std::option::Option<crate::types::AvailabilityZoneRebalancing>,
 }
 impl ServiceBuilder {
     /// <p>The ARN that identifies the service. For more information about the ARN format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
@@ -881,6 +890,23 @@ impl ServiceBuilder {
     pub fn get_enable_execute_command(&self) -> &::std::option::Option<bool> {
         &self.enable_execute_command
     }
+    /// <p>Indicates whether to use Availability Zone rebalancing for the service.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html">Balancing an Amazon ECS service across Availability Zones</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn availability_zone_rebalancing(mut self, input: crate::types::AvailabilityZoneRebalancing) -> Self {
+        self.availability_zone_rebalancing = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether to use Availability Zone rebalancing for the service.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html">Balancing an Amazon ECS service across Availability Zones</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn set_availability_zone_rebalancing(mut self, input: ::std::option::Option<crate::types::AvailabilityZoneRebalancing>) -> Self {
+        self.availability_zone_rebalancing = input;
+        self
+    }
+    /// <p>Indicates whether to use Availability Zone rebalancing for the service.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html">Balancing an Amazon ECS service across Availability Zones</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn get_availability_zone_rebalancing(&self) -> &::std::option::Option<crate::types::AvailabilityZoneRebalancing> {
+        &self.availability_zone_rebalancing
+    }
     /// Consumes the builder and constructs a [`Service`](crate::types::Service).
     pub fn build(self) -> crate::types::Service {
         crate::types::Service {
@@ -915,6 +941,7 @@ impl ServiceBuilder {
             enable_ecs_managed_tags: self.enable_ecs_managed_tags.unwrap_or_default(),
             propagate_tags: self.propagate_tags,
             enable_execute_command: self.enable_execute_command.unwrap_or_default(),
+            availability_zone_rebalancing: self.availability_zone_rebalancing,
         }
     }
 }

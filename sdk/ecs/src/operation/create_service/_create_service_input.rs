@@ -11,6 +11,9 @@ pub struct CreateServiceInput {
     /// <p>A task definition must be specified if the service uses either the <code>ECS</code> or <code>CODE_DEPLOY</code> deployment controllers.</p>
     /// <p>For more information about deployment types, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS deployment types</a>.</p>
     pub task_definition: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates whether to use Availability Zone rebalancing for the service.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html">Balancing an Amazon ECS service across Availability Zones</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub availability_zone_rebalancing: ::std::option::Option<crate::types::AvailabilityZoneRebalancing>,
     /// <p>A load balancer object representing the load balancers to use with your service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service load balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// <p>If the service uses the rolling update (<code>ECS</code>) deployment controller and using either an Application Load Balancer or Network Load Balancer, you must specify one or more target group ARNs to attach to the service. The service-linked role is required for services that use multiple target groups. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// <p>If the service uses the <code>CODE_DEPLOY</code> deployment controller, the service is required to use either an Application Load Balancer or Network Load Balancer. When creating an CodeDeploy deployment group, you specify two target groups (referred to as a <code>targetGroupPair</code>). During a deployment, CodeDeploy determines which task set in your service has the status <code>PRIMARY</code>, and it associates one target group with it. Then, it also associates the other target group with the replacement task set. The load balancer can also have up to two listeners: a required listener for production traffic and an optional listener that you can use to perform validation tests with Lambda functions before routing production traffic to it.</p>
@@ -121,6 +124,11 @@ impl CreateServiceInput {
     /// <p>For more information about deployment types, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS deployment types</a>.</p>
     pub fn task_definition(&self) -> ::std::option::Option<&str> {
         self.task_definition.as_deref()
+    }
+    /// <p>Indicates whether to use Availability Zone rebalancing for the service.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html">Balancing an Amazon ECS service across Availability Zones</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn availability_zone_rebalancing(&self) -> ::std::option::Option<&crate::types::AvailabilityZoneRebalancing> {
+        self.availability_zone_rebalancing.as_ref()
     }
     /// <p>A load balancer object representing the load balancers to use with your service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service load balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// <p>If the service uses the rolling update (<code>ECS</code>) deployment controller and using either an Application Load Balancer or Network Load Balancer, you must specify one or more target group ARNs to attach to the service. The service-linked role is required for services that use multiple target groups. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
@@ -292,6 +300,7 @@ pub struct CreateServiceInputBuilder {
     pub(crate) cluster: ::std::option::Option<::std::string::String>,
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
     pub(crate) task_definition: ::std::option::Option<::std::string::String>,
+    pub(crate) availability_zone_rebalancing: ::std::option::Option<crate::types::AvailabilityZoneRebalancing>,
     pub(crate) load_balancers: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>>,
     pub(crate) service_registries: ::std::option::Option<::std::vec::Vec<crate::types::ServiceRegistry>>,
     pub(crate) desired_count: ::std::option::Option<i32>,
@@ -364,6 +373,23 @@ impl CreateServiceInputBuilder {
     /// <p>For more information about deployment types, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS deployment types</a>.</p>
     pub fn get_task_definition(&self) -> &::std::option::Option<::std::string::String> {
         &self.task_definition
+    }
+    /// <p>Indicates whether to use Availability Zone rebalancing for the service.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html">Balancing an Amazon ECS service across Availability Zones</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn availability_zone_rebalancing(mut self, input: crate::types::AvailabilityZoneRebalancing) -> Self {
+        self.availability_zone_rebalancing = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether to use Availability Zone rebalancing for the service.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html">Balancing an Amazon ECS service across Availability Zones</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn set_availability_zone_rebalancing(mut self, input: ::std::option::Option<crate::types::AvailabilityZoneRebalancing>) -> Self {
+        self.availability_zone_rebalancing = input;
+        self
+    }
+    /// <p>Indicates whether to use Availability Zone rebalancing for the service.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html">Balancing an Amazon ECS service across Availability Zones</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn get_availability_zone_rebalancing(&self) -> &::std::option::Option<crate::types::AvailabilityZoneRebalancing> {
+        &self.availability_zone_rebalancing
     }
     /// Appends an item to `load_balancers`.
     ///
@@ -885,6 +911,7 @@ impl CreateServiceInputBuilder {
             cluster: self.cluster,
             service_name: self.service_name,
             task_definition: self.task_definition,
+            availability_zone_rebalancing: self.availability_zone_rebalancing,
             load_balancers: self.load_balancers,
             service_registries: self.service_registries,
             desired_count: self.desired_count,

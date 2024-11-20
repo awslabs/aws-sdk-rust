@@ -158,6 +158,8 @@ pub struct InstanceRequirements {
     /// </note>
     /// <p>Default: All instance types</p>
     pub allowed_instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The baseline performance factors for the instance requirements.</p>
+    pub baseline_performance_factors: ::std::option::Option<crate::types::BaselinePerformanceFactorsRequest>,
 }
 impl InstanceRequirements {
     /// <p>The minimum and maximum number of vCPUs for an instance type.</p>
@@ -367,6 +369,10 @@ impl InstanceRequirements {
     pub fn allowed_instance_types(&self) -> &[::std::string::String] {
         self.allowed_instance_types.as_deref().unwrap_or_default()
     }
+    /// <p>The baseline performance factors for the instance requirements.</p>
+    pub fn baseline_performance_factors(&self) -> ::std::option::Option<&crate::types::BaselinePerformanceFactorsRequest> {
+        self.baseline_performance_factors.as_ref()
+    }
 }
 impl InstanceRequirements {
     /// Creates a new builder-style object to manufacture [`InstanceRequirements`](crate::types::InstanceRequirements).
@@ -403,6 +409,7 @@ pub struct InstanceRequirementsBuilder {
     pub(crate) accelerator_total_memory_mib: ::std::option::Option<crate::types::AcceleratorTotalMemoryMiBRequest>,
     pub(crate) network_bandwidth_gbps: ::std::option::Option<crate::types::NetworkBandwidthGbpsRequest>,
     pub(crate) allowed_instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) baseline_performance_factors: ::std::option::Option<crate::types::BaselinePerformanceFactorsRequest>,
 }
 impl InstanceRequirementsBuilder {
     /// <p>The minimum and maximum number of vCPUs for an instance type.</p>
@@ -1076,6 +1083,20 @@ impl InstanceRequirementsBuilder {
     pub fn get_allowed_instance_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.allowed_instance_types
     }
+    /// <p>The baseline performance factors for the instance requirements.</p>
+    pub fn baseline_performance_factors(mut self, input: crate::types::BaselinePerformanceFactorsRequest) -> Self {
+        self.baseline_performance_factors = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The baseline performance factors for the instance requirements.</p>
+    pub fn set_baseline_performance_factors(mut self, input: ::std::option::Option<crate::types::BaselinePerformanceFactorsRequest>) -> Self {
+        self.baseline_performance_factors = input;
+        self
+    }
+    /// <p>The baseline performance factors for the instance requirements.</p>
+    pub fn get_baseline_performance_factors(&self) -> &::std::option::Option<crate::types::BaselinePerformanceFactorsRequest> {
+        &self.baseline_performance_factors
+    }
     /// Consumes the builder and constructs a [`InstanceRequirements`](crate::types::InstanceRequirements).
     pub fn build(self) -> crate::types::InstanceRequirements {
         crate::types::InstanceRequirements {
@@ -1103,6 +1124,7 @@ impl InstanceRequirementsBuilder {
             accelerator_total_memory_mib: self.accelerator_total_memory_mib,
             network_bandwidth_gbps: self.network_bandwidth_gbps,
             allowed_instance_types: self.allowed_instance_types,
+            baseline_performance_factors: self.baseline_performance_factors,
         }
     }
 }

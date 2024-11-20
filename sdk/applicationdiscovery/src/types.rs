@@ -3,6 +3,8 @@ pub use crate::types::_agent_configuration_status::AgentConfigurationStatus;
 
 pub use crate::types::_import_task::ImportTask;
 
+pub use crate::types::_file_classification::FileClassification;
+
 pub use crate::types::_import_status::ImportStatus;
 
 pub use crate::types::_export_preferences::ExportPreferences;
@@ -146,6 +148,8 @@ mod _export_preferences;
 mod _export_status;
 
 mod _failed_configuration;
+
+mod _file_classification;
 
 mod _filter;
 

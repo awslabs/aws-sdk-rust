@@ -20,6 +20,8 @@ pub struct ImportTask {
     pub import_completion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that the import task request was deleted, presented in the Unix time stamp format.</p>
     pub import_deleted_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The type of file detected by the import task.</p>
+    pub file_classification: ::std::option::Option<crate::types::FileClassification>,
     /// <p>The total number of server records in the import file that were successfully imported.</p>
     pub server_import_success: i32,
     /// <p>The total number of server records in the import file that failed to be imported.</p>
@@ -66,6 +68,10 @@ impl ImportTask {
     pub fn import_deleted_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.import_deleted_time.as_ref()
     }
+    /// <p>The type of file detected by the import task.</p>
+    pub fn file_classification(&self) -> ::std::option::Option<&crate::types::FileClassification> {
+        self.file_classification.as_ref()
+    }
     /// <p>The total number of server records in the import file that were successfully imported.</p>
     pub fn server_import_success(&self) -> i32 {
         self.server_import_success
@@ -108,6 +114,7 @@ pub struct ImportTaskBuilder {
     pub(crate) import_request_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) import_completion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) import_deleted_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) file_classification: ::std::option::Option<crate::types::FileClassification>,
     pub(crate) server_import_success: ::std::option::Option<i32>,
     pub(crate) server_import_failure: ::std::option::Option<i32>,
     pub(crate) application_import_success: ::std::option::Option<i32>,
@@ -227,6 +234,20 @@ impl ImportTaskBuilder {
     pub fn get_import_deleted_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.import_deleted_time
     }
+    /// <p>The type of file detected by the import task.</p>
+    pub fn file_classification(mut self, input: crate::types::FileClassification) -> Self {
+        self.file_classification = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of file detected by the import task.</p>
+    pub fn set_file_classification(mut self, input: ::std::option::Option<crate::types::FileClassification>) -> Self {
+        self.file_classification = input;
+        self
+    }
+    /// <p>The type of file detected by the import task.</p>
+    pub fn get_file_classification(&self) -> &::std::option::Option<crate::types::FileClassification> {
+        &self.file_classification
+    }
     /// <p>The total number of server records in the import file that were successfully imported.</p>
     pub fn server_import_success(mut self, input: i32) -> Self {
         self.server_import_success = ::std::option::Option::Some(input);
@@ -314,6 +335,7 @@ impl ImportTaskBuilder {
             import_request_time: self.import_request_time,
             import_completion_time: self.import_completion_time,
             import_deleted_time: self.import_deleted_time,
+            file_classification: self.file_classification,
             server_import_success: self.server_import_success.unwrap_or_default(),
             server_import_failure: self.server_import_failure.unwrap_or_default(),
             application_import_success: self.application_import_success.unwrap_or_default(),

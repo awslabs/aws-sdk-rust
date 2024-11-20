@@ -163,6 +163,16 @@ pub(crate) fn de_get_run_task(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "cacheHit" => {
+                    builder = builder.set_cache_hit(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
+                "cacheS3Uri" => {
+                    builder = builder.set_cache_s3_uri(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "cpus" => {
                     builder = builder.set_cpus(
                         ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

@@ -51,6 +51,35 @@ pub fn ser_create_blue_green_deployment_input_input_input(
     if let Some(var_19) = &input.upgrade_target_storage_config {
         scope_18.boolean(*var_19);
     }
+    #[allow(unused_mut)]
+    let mut scope_20 = writer.prefix("TargetIops");
+    if let Some(var_21) = &input.target_iops {
+        scope_20.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_21).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_22 = writer.prefix("TargetStorageType");
+    if let Some(var_23) = &input.target_storage_type {
+        scope_22.string(var_23);
+    }
+    #[allow(unused_mut)]
+    let mut scope_24 = writer.prefix("TargetAllocatedStorage");
+    if let Some(var_25) = &input.target_allocated_storage {
+        scope_24.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_25).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_26 = writer.prefix("TargetStorageThroughput");
+    if let Some(var_27) = &input.target_storage_throughput {
+        scope_26.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_27).into()),
+        );
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

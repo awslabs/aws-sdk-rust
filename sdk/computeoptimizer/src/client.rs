@@ -175,6 +175,8 @@ mod export_ec2_instance_recommendations;
 
 mod export_ecs_service_recommendations;
 
+mod export_idle_recommendations;
+
 mod export_lambda_function_recommendations;
 
 mod export_license_recommendations;
@@ -198,6 +200,8 @@ mod get_effective_recommendation_preferences;
 mod get_enrollment_status;
 
 mod get_enrollment_statuses_for_organization;
+
+mod get_idle_recommendations;
 
 mod get_lambda_function_recommendations;
 

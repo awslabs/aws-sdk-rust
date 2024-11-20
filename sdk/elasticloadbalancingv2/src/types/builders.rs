@@ -61,6 +61,12 @@ pub use crate::types::_listener::ListenerBuilder;
 
 pub use crate::types::_mutual_authentication_attributes::MutualAuthenticationAttributesBuilder;
 
+pub use crate::types::_zonal_capacity_reservation_state::ZonalCapacityReservationStateBuilder;
+
+pub use crate::types::_capacity_reservation_status::CapacityReservationStatusBuilder;
+
+pub use crate::types::_minimum_load_balancer_capacity::MinimumLoadBalancerCapacityBuilder;
+
 pub use crate::types::_describe_trust_store_revocation::DescribeTrustStoreRevocationBuilder;
 
 pub use crate::types::_trust_store_association::TrustStoreAssociationBuilder;

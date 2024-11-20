@@ -50,6 +50,8 @@
 ///     ValidationExceptionType::NumManifestsHigh => { /* ... */ },
 ///     ValidationExceptionType::NumManifestsLow => { /* ... */ },
 ///     ValidationExceptionType::OnlyCmafInputTypeAllowForceEndpointErrorConfiguration => { /* ... */ },
+///     ValidationExceptionType::OnlyCmafInputTypeAllowMqcsInputSwitching => { /* ... */ },
+///     ValidationExceptionType::OnlyCmafInputTypeAllowMqcsOutputConfiguration => { /* ... */ },
 ///     ValidationExceptionType::PeriodTriggersNoneSpecifiedWithAdditionalValues => { /* ... */ },
 ///     ValidationExceptionType::RoleArnInvalidFormat => { /* ... */ },
 ///     ValidationExceptionType::RoleArnLengthOutOfRange => { /* ... */ },
@@ -173,6 +175,10 @@ pub enum ValidationExceptionType {
     #[allow(missing_docs)] // documentation missing in model
     OnlyCmafInputTypeAllowForceEndpointErrorConfiguration,
     #[allow(missing_docs)] // documentation missing in model
+    OnlyCmafInputTypeAllowMqcsInputSwitching,
+    #[allow(missing_docs)] // documentation missing in model
+    OnlyCmafInputTypeAllowMqcsOutputConfiguration,
+    #[allow(missing_docs)] // documentation missing in model
     PeriodTriggersNoneSpecifiedWithAdditionalValues,
     #[allow(missing_docs)] // documentation missing in model
     RoleArnInvalidFormat,
@@ -259,6 +265,8 @@ impl ::std::convert::From<&str> for ValidationExceptionType {
             "ONLY_CMAF_INPUT_TYPE_ALLOW_FORCE_ENDPOINT_ERROR_CONFIGURATION" => {
                 ValidationExceptionType::OnlyCmafInputTypeAllowForceEndpointErrorConfiguration
             }
+            "ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_INPUT_SWITCHING" => ValidationExceptionType::OnlyCmafInputTypeAllowMqcsInputSwitching,
+            "ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION" => ValidationExceptionType::OnlyCmafInputTypeAllowMqcsOutputConfiguration,
             "PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES" => ValidationExceptionType::PeriodTriggersNoneSpecifiedWithAdditionalValues,
             "ROLE_ARN_INVALID_FORMAT" => ValidationExceptionType::RoleArnInvalidFormat,
             "ROLE_ARN_LENGTH_OUT_OF_RANGE" => ValidationExceptionType::RoleArnLengthOutOfRange,
@@ -335,6 +343,8 @@ impl ValidationExceptionType {
             ValidationExceptionType::OnlyCmafInputTypeAllowForceEndpointErrorConfiguration => {
                 "ONLY_CMAF_INPUT_TYPE_ALLOW_FORCE_ENDPOINT_ERROR_CONFIGURATION"
             }
+            ValidationExceptionType::OnlyCmafInputTypeAllowMqcsInputSwitching => "ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_INPUT_SWITCHING",
+            ValidationExceptionType::OnlyCmafInputTypeAllowMqcsOutputConfiguration => "ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION",
             ValidationExceptionType::PeriodTriggersNoneSpecifiedWithAdditionalValues => "PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES",
             ValidationExceptionType::RoleArnInvalidFormat => "ROLE_ARN_INVALID_FORMAT",
             ValidationExceptionType::RoleArnLengthOutOfRange => "ROLE_ARN_LENGTH_OUT_OF_RANGE",
@@ -398,6 +408,8 @@ impl ValidationExceptionType {
             "NUM_MANIFESTS_HIGH",
             "NUM_MANIFESTS_LOW",
             "ONLY_CMAF_INPUT_TYPE_ALLOW_FORCE_ENDPOINT_ERROR_CONFIGURATION",
+            "ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_INPUT_SWITCHING",
+            "ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION",
             "PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES",
             "ROLE_ARN_INVALID_FORMAT",
             "ROLE_ARN_LENGTH_OUT_OF_RANGE",
@@ -483,6 +495,10 @@ impl ::std::fmt::Display for ValidationExceptionType {
             ValidationExceptionType::NumManifestsLow => write!(f, "NUM_MANIFESTS_LOW"),
             ValidationExceptionType::OnlyCmafInputTypeAllowForceEndpointErrorConfiguration => {
                 write!(f, "ONLY_CMAF_INPUT_TYPE_ALLOW_FORCE_ENDPOINT_ERROR_CONFIGURATION")
+            }
+            ValidationExceptionType::OnlyCmafInputTypeAllowMqcsInputSwitching => write!(f, "ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_INPUT_SWITCHING"),
+            ValidationExceptionType::OnlyCmafInputTypeAllowMqcsOutputConfiguration => {
+                write!(f, "ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION")
             }
             ValidationExceptionType::PeriodTriggersNoneSpecifiedWithAdditionalValues => {
                 write!(f, "PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES")

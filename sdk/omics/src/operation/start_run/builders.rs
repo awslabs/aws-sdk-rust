@@ -24,7 +24,7 @@ impl crate::operation::start_run::builders::StartRunInputBuilder {
 ///
 /// <p>Starts a workflow run. To duplicate a run, specify the run's ID and a role ARN. The remaining parameters are copied from the previous run.</p>
 /// <p>StartRun will not support re-run for a workflow that is shared with you.</p>
-/// <p>The total number of runs in your account is subject to a quota per Region. To avoid needing to delete runs manually, you can set the retention mode to <code>REMOVE</code>. Runs with this setting are deleted automatically when the run quoata is exceeded.</p>
+/// <p>HealthOmics stores a fixed number of runs that are available to the console and API. By default, HealthOmics doesn't any remove any runs. If HealthOmics reaches the maximum number of runs, you must manually remove runs. To have older runs removed automatically, set the retention mode to <code>REMOVE</code>.</p>
 /// <p>By default, the run uses STATIC storage. For STATIC storage, set the <code>storageCapacity</code> field. You can set the storage type to DYNAMIC. You do not set <code>storageCapacity</code>, because HealthOmics dynamically scales the storage up or down as required. For more information about static and dynamic storage, see <a href="https://docs.aws.amazon.com/omics/latest/dev/Using-workflows.html">Running workflows</a> in the <i>AWS HealthOmics User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartRunFluentBuilder {
@@ -172,6 +172,34 @@ impl StartRunFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
+    /// <p>Identifier of the cache associated with this run. If you don't specify a cache ID, no task outputs are cached for this run.</p>
+    pub fn cache_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.cache_id(input.into());
+        self
+    }
+    /// <p>Identifier of the cache associated with this run. If you don't specify a cache ID, no task outputs are cached for this run.</p>
+    pub fn set_cache_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_cache_id(input);
+        self
+    }
+    /// <p>Identifier of the cache associated with this run. If you don't specify a cache ID, no task outputs are cached for this run.</p>
+    pub fn get_cache_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cache_id()
+    }
+    /// <p>The cache behavior for the run. You specify this value if you want to override the default behavior for the cache. You had set the default value when you created the cache. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/how-run-cache.html#run-cache-behavior">Run cache behavior</a> in the AWS HealthOmics User Guide.</p>
+    pub fn cache_behavior(mut self, input: crate::types::CacheBehavior) -> Self {
+        self.inner = self.inner.cache_behavior(input);
+        self
+    }
+    /// <p>The cache behavior for the run. You specify this value if you want to override the default behavior for the cache. You had set the default value when you created the cache. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/how-run-cache.html#run-cache-behavior">Run cache behavior</a> in the AWS HealthOmics User Guide.</p>
+    pub fn set_cache_behavior(mut self, input: ::std::option::Option<crate::types::CacheBehavior>) -> Self {
+        self.inner = self.inner.set_cache_behavior(input);
+        self
+    }
+    /// <p>The cache behavior for the run. You specify this value if you want to override the default behavior for the cache. You had set the default value when you created the cache. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/how-run-cache.html#run-cache-behavior">Run cache behavior</a> in the AWS HealthOmics User Guide.</p>
+    pub fn get_cache_behavior(&self) -> &::std::option::Option<crate::types::CacheBehavior> {
+        self.inner.get_cache_behavior()
+    }
     /// <p>The run's group ID.</p>
     pub fn run_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.run_group_id(input.into());
@@ -289,17 +317,23 @@ impl StartRunFluentBuilder {
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_request_id()
     }
-    /// <p>The retention mode for the run.</p>
+    /// <p>The retention mode for the run. The default value is RETAIN.</p>
+    /// <p>HealthOmics stores a fixed number of runs that are available to the console and API. In the default mode (RETAIN), you need to remove runs manually when the number of run exceeds the maximum. If you set the retention mode to <code>REMOVE</code>, HealthOmics automatically removes runs (that have mode set to REMOVE) when the number of run exceeds the maximum. All run logs are available in CloudWatch logs, if you need information about a run that is no longer available to the API.</p>
+    /// <p>For more information about retention mode, see <a href="https://docs.aws.amazon.com/omics/latest/dev/starting-a-run.html">Specifying run retention mode</a> in the <i>AWS HealthOmics User Guide</i>.</p>
     pub fn retention_mode(mut self, input: crate::types::RunRetentionMode) -> Self {
         self.inner = self.inner.retention_mode(input);
         self
     }
-    /// <p>The retention mode for the run.</p>
+    /// <p>The retention mode for the run. The default value is RETAIN.</p>
+    /// <p>HealthOmics stores a fixed number of runs that are available to the console and API. In the default mode (RETAIN), you need to remove runs manually when the number of run exceeds the maximum. If you set the retention mode to <code>REMOVE</code>, HealthOmics automatically removes runs (that have mode set to REMOVE) when the number of run exceeds the maximum. All run logs are available in CloudWatch logs, if you need information about a run that is no longer available to the API.</p>
+    /// <p>For more information about retention mode, see <a href="https://docs.aws.amazon.com/omics/latest/dev/starting-a-run.html">Specifying run retention mode</a> in the <i>AWS HealthOmics User Guide</i>.</p>
     pub fn set_retention_mode(mut self, input: ::std::option::Option<crate::types::RunRetentionMode>) -> Self {
         self.inner = self.inner.set_retention_mode(input);
         self
     }
-    /// <p>The retention mode for the run.</p>
+    /// <p>The retention mode for the run. The default value is RETAIN.</p>
+    /// <p>HealthOmics stores a fixed number of runs that are available to the console and API. In the default mode (RETAIN), you need to remove runs manually when the number of run exceeds the maximum. If you set the retention mode to <code>REMOVE</code>, HealthOmics automatically removes runs (that have mode set to REMOVE) when the number of run exceeds the maximum. All run logs are available in CloudWatch logs, if you need information about a run that is no longer available to the API.</p>
+    /// <p>For more information about retention mode, see <a href="https://docs.aws.amazon.com/omics/latest/dev/starting-a-run.html">Specifying run retention mode</a> in the <i>AWS HealthOmics User Guide</i>.</p>
     pub fn get_retention_mode(&self) -> &::std::option::Option<crate::types::RunRetentionMode> {
         self.inner.get_retention_mode()
     }

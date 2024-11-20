@@ -4,6 +4,9 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `AssociateBrowserSettings` operation.
 pub mod associate_browser_settings;
 
+/// Types for the `AssociateDataProtectionSettings` operation.
+pub mod associate_data_protection_settings;
+
 /// Types for the `AssociateIpAccessSettings` operation.
 pub mod associate_ip_access_settings;
 
@@ -21,6 +24,9 @@ pub mod associate_user_settings;
 
 /// Types for the `CreateBrowserSettings` operation.
 pub mod create_browser_settings;
+
+/// Types for the `CreateDataProtectionSettings` operation.
+pub mod create_data_protection_settings;
 
 /// Types for the `CreateIdentityProvider` operation.
 pub mod create_identity_provider;
@@ -46,6 +52,9 @@ pub mod create_user_settings;
 /// Types for the `DeleteBrowserSettings` operation.
 pub mod delete_browser_settings;
 
+/// Types for the `DeleteDataProtectionSettings` operation.
+pub mod delete_data_protection_settings;
+
 /// Types for the `DeleteIdentityProvider` operation.
 pub mod delete_identity_provider;
 
@@ -70,6 +79,9 @@ pub mod delete_user_settings;
 /// Types for the `DisassociateBrowserSettings` operation.
 pub mod disassociate_browser_settings;
 
+/// Types for the `DisassociateDataProtectionSettings` operation.
+pub mod disassociate_data_protection_settings;
+
 /// Types for the `DisassociateIpAccessSettings` operation.
 pub mod disassociate_ip_access_settings;
 
@@ -90,6 +102,9 @@ pub mod expire_session;
 
 /// Types for the `GetBrowserSettings` operation.
 pub mod get_browser_settings;
+
+/// Types for the `GetDataProtectionSettings` operation.
+pub mod get_data_protection_settings;
 
 /// Types for the `GetIdentityProvider` operation.
 pub mod get_identity_provider;
@@ -123,6 +138,9 @@ pub mod get_user_settings;
 
 /// Types for the `ListBrowserSettings` operation.
 pub mod list_browser_settings;
+
+/// Types for the `ListDataProtectionSettings` operation.
+pub mod list_data_protection_settings;
 
 /// Types for the `ListIdentityProviders` operation.
 pub mod list_identity_providers;
@@ -162,6 +180,9 @@ pub mod untag_resource;
 
 /// Types for the `UpdateBrowserSettings` operation.
 pub mod update_browser_settings;
+
+/// Types for the `UpdateDataProtectionSettings` operation.
+pub mod update_data_protection_settings;
 
 /// Types for the `UpdateIdentityProvider` operation.
 pub mod update_identity_provider;

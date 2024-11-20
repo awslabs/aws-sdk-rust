@@ -264,6 +264,8 @@ pub enum StartBatchDeleteConfigurationTaskError {
     AuthorizationErrorException(crate::types::error::AuthorizationErrorException),
     /// <p>The home Region is not set. Set the home Region to continue.</p>
     HomeRegionNotSetException(crate::types::error::HomeRegionNotSetException),
+    /// <p>One or more parameters are not valid. Verify the parameters and try again.</p>
+    InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>The value of one or more parameters are either invalid or out of range. Verify the parameter values and try again.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// <p>The limit of 200 configuration IDs per request has been exceeded.</p>
@@ -307,6 +309,7 @@ impl StartBatchDeleteConfigurationTaskError {
         match self {
             Self::AuthorizationErrorException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::HomeRegionNotSetException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterValueException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::LimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::OperationNotPermittedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -321,6 +324,10 @@ impl StartBatchDeleteConfigurationTaskError {
     /// Returns `true` if the error kind is `StartBatchDeleteConfigurationTaskError::HomeRegionNotSetException`.
     pub fn is_home_region_not_set_exception(&self) -> bool {
         matches!(self, Self::HomeRegionNotSetException(_))
+    }
+    /// Returns `true` if the error kind is `StartBatchDeleteConfigurationTaskError::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(self, Self::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `StartBatchDeleteConfigurationTaskError::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
@@ -344,6 +351,7 @@ impl ::std::error::Error for StartBatchDeleteConfigurationTaskError {
         match self {
             Self::AuthorizationErrorException(_inner) => ::std::option::Option::Some(_inner),
             Self::HomeRegionNotSetException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterValueException(_inner) => ::std::option::Option::Some(_inner),
             Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::OperationNotPermittedException(_inner) => ::std::option::Option::Some(_inner),
@@ -357,6 +365,7 @@ impl ::std::fmt::Display for StartBatchDeleteConfigurationTaskError {
         match self {
             Self::AuthorizationErrorException(_inner) => _inner.fmt(f),
             Self::HomeRegionNotSetException(_inner) => _inner.fmt(f),
+            Self::InvalidParameterException(_inner) => _inner.fmt(f),
             Self::InvalidParameterValueException(_inner) => _inner.fmt(f),
             Self::LimitExceededException(_inner) => _inner.fmt(f),
             Self::OperationNotPermittedException(_inner) => _inner.fmt(f),
@@ -384,6 +393,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for StartBatchDel
         match self {
             Self::AuthorizationErrorException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::HomeRegionNotSetException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterValueException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::LimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::OperationNotPermittedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

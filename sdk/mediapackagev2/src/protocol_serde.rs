@@ -149,7 +149,11 @@ pub(crate) mod shape_harvester_schedule_configuration;
 
 pub(crate) mod shape_ingest_endpoint_list;
 
+pub(crate) mod shape_input_switch_configuration;
+
 pub(crate) mod shape_origin_endpoints_list;
+
+pub(crate) mod shape_output_header_configuration;
 
 pub(crate) mod shape_segment;
 

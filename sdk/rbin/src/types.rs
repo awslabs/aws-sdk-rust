@@ -7,11 +7,11 @@ pub use crate::types::_resource_not_found_exception_reason::ResourceNotFoundExce
 
 pub use crate::types::_conflict_exception_reason::ConflictExceptionReason;
 
+pub use crate::types::_resource_tag::ResourceTag;
+
 pub use crate::types::_lock_state::LockState;
 
 pub use crate::types::_rule_status::RuleStatus;
-
-pub use crate::types::_resource_tag::ResourceTag;
 
 pub use crate::types::_resource_type::ResourceType;
 

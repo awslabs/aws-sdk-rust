@@ -42,6 +42,16 @@ where
                                     .transpose()?,
                             );
                         }
+                        "cacheHit" => {
+                            builder = builder.set_cache_hit(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "cacheS3Uri" => {
+                            builder = builder.set_cache_s3_uri(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "memory" => {
                             builder = builder.set_memory(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

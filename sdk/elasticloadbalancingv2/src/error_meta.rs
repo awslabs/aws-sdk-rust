@@ -11,6 +11,12 @@ pub enum Error {
     AvailabilityZoneNotSupportedException(crate::types::error::AvailabilityZoneNotSupportedException),
     /// <p>The specified ca certificate bundle does not exist.</p>
     CaCertificatesBundleNotFoundException(crate::types::error::CaCertificatesBundleNotFoundException),
+    /// <p>You've exceeded the daily capacity decrease limit for this reservation.</p>
+    CapacityDecreaseRequestsLimitExceededException(crate::types::error::CapacityDecreaseRequestsLimitExceededException),
+    /// <p>There is a pending capacity reservation.</p>
+    CapacityReservationPendingException(crate::types::error::CapacityReservationPendingException),
+    /// <p>You've exceeded the capacity units limit.</p>
+    CapacityUnitsLimitExceededException(crate::types::error::CapacityUnitsLimitExceededException),
     /// <p>The specified certificate does not exist.</p>
     CertificateNotFoundException(crate::types::error::CertificateNotFoundException),
     /// <p>The specified association can't be within the same account.</p>
@@ -29,6 +35,8 @@ pub enum Error {
     HealthUnavailableException(crate::types::error::HealthUnavailableException),
     /// <p>The specified configuration is not valid with this protocol.</p>
     IncompatibleProtocolsException(crate::types::error::IncompatibleProtocolsException),
+    /// <p>There is insufficient capacity to reserve.</p>
+    InsufficientCapacityException(crate::types::error::InsufficientCapacityException),
     /// <p>The specified ca certificate bundle is in an invalid format, or corrupt.</p>
     InvalidCaCertificatesBundleException(crate::types::error::InvalidCaCertificatesBundleException),
     /// <p>The requested configuration is not valid.</p>
@@ -51,6 +59,8 @@ pub enum Error {
     LoadBalancerNotFoundException(crate::types::error::LoadBalancerNotFoundException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::types::error::OperationNotPermittedException),
+    /// <p>This operation is not allowed while a prior request has not been completed.</p>
+    PriorRequestNotCompleteException(crate::types::error::PriorRequestNotCompleteException),
     /// <p>The specified priority is in use.</p>
     PriorityInUseException(crate::types::error::PriorityInUseException),
     /// <p>A specified resource is in use.</p>
@@ -121,6 +131,9 @@ impl ::std::fmt::Display for Error {
             Error::AllocationIdNotFoundException(inner) => inner.fmt(f),
             Error::AvailabilityZoneNotSupportedException(inner) => inner.fmt(f),
             Error::CaCertificatesBundleNotFoundException(inner) => inner.fmt(f),
+            Error::CapacityDecreaseRequestsLimitExceededException(inner) => inner.fmt(f),
+            Error::CapacityReservationPendingException(inner) => inner.fmt(f),
+            Error::CapacityUnitsLimitExceededException(inner) => inner.fmt(f),
             Error::CertificateNotFoundException(inner) => inner.fmt(f),
             Error::DeleteAssociationSameAccountException(inner) => inner.fmt(f),
             Error::DuplicateListenerException(inner) => inner.fmt(f),
@@ -130,6 +143,7 @@ impl ::std::fmt::Display for Error {
             Error::DuplicateTrustStoreNameException(inner) => inner.fmt(f),
             Error::HealthUnavailableException(inner) => inner.fmt(f),
             Error::IncompatibleProtocolsException(inner) => inner.fmt(f),
+            Error::InsufficientCapacityException(inner) => inner.fmt(f),
             Error::InvalidCaCertificatesBundleException(inner) => inner.fmt(f),
             Error::InvalidConfigurationRequestException(inner) => inner.fmt(f),
             Error::InvalidLoadBalancerActionException(inner) => inner.fmt(f),
@@ -141,6 +155,7 @@ impl ::std::fmt::Display for Error {
             Error::ListenerNotFoundException(inner) => inner.fmt(f),
             Error::LoadBalancerNotFoundException(inner) => inner.fmt(f),
             Error::OperationNotPermittedException(inner) => inner.fmt(f),
+            Error::PriorRequestNotCompleteException(inner) => inner.fmt(f),
             Error::PriorityInUseException(inner) => inner.fmt(f),
             Error::ResourceInUseException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
@@ -193,6 +208,9 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::AllocationIdNotFoundException(inner) => inner.meta(),
             Self::AvailabilityZoneNotSupportedException(inner) => inner.meta(),
             Self::CaCertificatesBundleNotFoundException(inner) => inner.meta(),
+            Self::CapacityDecreaseRequestsLimitExceededException(inner) => inner.meta(),
+            Self::CapacityReservationPendingException(inner) => inner.meta(),
+            Self::CapacityUnitsLimitExceededException(inner) => inner.meta(),
             Self::CertificateNotFoundException(inner) => inner.meta(),
             Self::DeleteAssociationSameAccountException(inner) => inner.meta(),
             Self::DuplicateListenerException(inner) => inner.meta(),
@@ -202,6 +220,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::DuplicateTrustStoreNameException(inner) => inner.meta(),
             Self::HealthUnavailableException(inner) => inner.meta(),
             Self::IncompatibleProtocolsException(inner) => inner.meta(),
+            Self::InsufficientCapacityException(inner) => inner.meta(),
             Self::InvalidCaCertificatesBundleException(inner) => inner.meta(),
             Self::InvalidConfigurationRequestException(inner) => inner.meta(),
             Self::InvalidLoadBalancerActionException(inner) => inner.meta(),
@@ -213,6 +232,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ListenerNotFoundException(inner) => inner.meta(),
             Self::LoadBalancerNotFoundException(inner) => inner.meta(),
             Self::OperationNotPermittedException(inner) => inner.meta(),
+            Self::PriorRequestNotCompleteException(inner) => inner.meta(),
             Self::PriorityInUseException(inner) => inner.meta(),
             Self::ResourceInUseException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
@@ -764,6 +784,33 @@ impl From<crate::operation::describe_account_limits::DescribeAccountLimitsError>
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_capacity_reservation::DescribeCapacityReservationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_capacity_reservation::DescribeCapacityReservationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_capacity_reservation::DescribeCapacityReservationError> for Error {
+    fn from(err: crate::operation::describe_capacity_reservation::DescribeCapacityReservationError) -> Self {
+        match err {
+            crate::operation::describe_capacity_reservation::DescribeCapacityReservationError::LoadBalancerNotFoundException(inner) => {
+                Error::LoadBalancerNotFoundException(inner)
+            }
+            crate::operation::describe_capacity_reservation::DescribeCapacityReservationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_listener_attributes::DescribeListenerAttributesError, R>>
     for Error
 where
@@ -1267,6 +1314,54 @@ impl From<crate::operation::get_trust_store_revocation_content::GetTrustStoreRev
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_capacity_reservation::ModifyCapacityReservationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_capacity_reservation::ModifyCapacityReservationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::modify_capacity_reservation::ModifyCapacityReservationError> for Error {
+    fn from(err: crate::operation::modify_capacity_reservation::ModifyCapacityReservationError) -> Self {
+        match err {
+            crate::operation::modify_capacity_reservation::ModifyCapacityReservationError::CapacityDecreaseRequestsLimitExceededException(inner) => {
+                Error::CapacityDecreaseRequestsLimitExceededException(inner)
+            }
+            crate::operation::modify_capacity_reservation::ModifyCapacityReservationError::CapacityReservationPendingException(inner) => {
+                Error::CapacityReservationPendingException(inner)
+            }
+            crate::operation::modify_capacity_reservation::ModifyCapacityReservationError::CapacityUnitsLimitExceededException(inner) => {
+                Error::CapacityUnitsLimitExceededException(inner)
+            }
+            crate::operation::modify_capacity_reservation::ModifyCapacityReservationError::InsufficientCapacityException(inner) => {
+                Error::InsufficientCapacityException(inner)
+            }
+            crate::operation::modify_capacity_reservation::ModifyCapacityReservationError::InvalidConfigurationRequestException(inner) => {
+                Error::InvalidConfigurationRequestException(inner)
+            }
+            crate::operation::modify_capacity_reservation::ModifyCapacityReservationError::LoadBalancerNotFoundException(inner) => {
+                Error::LoadBalancerNotFoundException(inner)
+            }
+            crate::operation::modify_capacity_reservation::ModifyCapacityReservationError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::modify_capacity_reservation::ModifyCapacityReservationError::PriorRequestNotCompleteException(inner) => {
+                Error::PriorRequestNotCompleteException(inner)
+            }
+            crate::operation::modify_capacity_reservation::ModifyCapacityReservationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_listener::ModifyListenerError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1741,6 +1836,9 @@ impl From<crate::operation::set_subnets::SetSubnetsError> for Error {
             crate::operation::set_subnets::SetSubnetsError::AvailabilityZoneNotSupportedException(inner) => {
                 Error::AvailabilityZoneNotSupportedException(inner)
             }
+            crate::operation::set_subnets::SetSubnetsError::CapacityReservationPendingException(inner) => {
+                Error::CapacityReservationPendingException(inner)
+            }
             crate::operation::set_subnets::SetSubnetsError::InvalidConfigurationRequestException(inner) => {
                 Error::InvalidConfigurationRequestException(inner)
             }
@@ -1770,6 +1868,9 @@ impl ::std::error::Error for Error {
             Error::AllocationIdNotFoundException(inner) => inner.source(),
             Error::AvailabilityZoneNotSupportedException(inner) => inner.source(),
             Error::CaCertificatesBundleNotFoundException(inner) => inner.source(),
+            Error::CapacityDecreaseRequestsLimitExceededException(inner) => inner.source(),
+            Error::CapacityReservationPendingException(inner) => inner.source(),
+            Error::CapacityUnitsLimitExceededException(inner) => inner.source(),
             Error::CertificateNotFoundException(inner) => inner.source(),
             Error::DeleteAssociationSameAccountException(inner) => inner.source(),
             Error::DuplicateListenerException(inner) => inner.source(),
@@ -1779,6 +1880,7 @@ impl ::std::error::Error for Error {
             Error::DuplicateTrustStoreNameException(inner) => inner.source(),
             Error::HealthUnavailableException(inner) => inner.source(),
             Error::IncompatibleProtocolsException(inner) => inner.source(),
+            Error::InsufficientCapacityException(inner) => inner.source(),
             Error::InvalidCaCertificatesBundleException(inner) => inner.source(),
             Error::InvalidConfigurationRequestException(inner) => inner.source(),
             Error::InvalidLoadBalancerActionException(inner) => inner.source(),
@@ -1790,6 +1892,7 @@ impl ::std::error::Error for Error {
             Error::ListenerNotFoundException(inner) => inner.source(),
             Error::LoadBalancerNotFoundException(inner) => inner.source(),
             Error::OperationNotPermittedException(inner) => inner.source(),
+            Error::PriorRequestNotCompleteException(inner) => inner.source(),
             Error::PriorityInUseException(inner) => inner.source(),
             Error::ResourceInUseException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
@@ -1828,6 +1931,9 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::AllocationIdNotFoundException(e) => e.request_id(),
             Self::AvailabilityZoneNotSupportedException(e) => e.request_id(),
             Self::CaCertificatesBundleNotFoundException(e) => e.request_id(),
+            Self::CapacityDecreaseRequestsLimitExceededException(e) => e.request_id(),
+            Self::CapacityReservationPendingException(e) => e.request_id(),
+            Self::CapacityUnitsLimitExceededException(e) => e.request_id(),
             Self::CertificateNotFoundException(e) => e.request_id(),
             Self::DeleteAssociationSameAccountException(e) => e.request_id(),
             Self::DuplicateListenerException(e) => e.request_id(),
@@ -1837,6 +1943,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::DuplicateTrustStoreNameException(e) => e.request_id(),
             Self::HealthUnavailableException(e) => e.request_id(),
             Self::IncompatibleProtocolsException(e) => e.request_id(),
+            Self::InsufficientCapacityException(e) => e.request_id(),
             Self::InvalidCaCertificatesBundleException(e) => e.request_id(),
             Self::InvalidConfigurationRequestException(e) => e.request_id(),
             Self::InvalidLoadBalancerActionException(e) => e.request_id(),
@@ -1848,6 +1955,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ListenerNotFoundException(e) => e.request_id(),
             Self::LoadBalancerNotFoundException(e) => e.request_id(),
             Self::OperationNotPermittedException(e) => e.request_id(),
+            Self::PriorRequestNotCompleteException(e) => e.request_id(),
             Self::PriorityInUseException(e) => e.request_id(),
             Self::ResourceInUseException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),

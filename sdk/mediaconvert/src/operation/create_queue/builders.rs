@@ -108,6 +108,20 @@ impl CreateQueueFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// Specify the maximum number of jobs your queue can process concurrently. For on-demand queues, the value you enter is constrained by your service quotas for Maximum concurrent jobs, per on-demand queue and Maximum concurrent jobs, per account. For reserved queues, specify the number of jobs you can process concurrently in your reservation plan instead.
+    pub fn concurrent_jobs(mut self, input: i32) -> Self {
+        self.inner = self.inner.concurrent_jobs(input);
+        self
+    }
+    /// Specify the maximum number of jobs your queue can process concurrently. For on-demand queues, the value you enter is constrained by your service quotas for Maximum concurrent jobs, per on-demand queue and Maximum concurrent jobs, per account. For reserved queues, specify the number of jobs you can process concurrently in your reservation plan instead.
+    pub fn set_concurrent_jobs(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_concurrent_jobs(input);
+        self
+    }
+    /// Specify the maximum number of jobs your queue can process concurrently. For on-demand queues, the value you enter is constrained by your service quotas for Maximum concurrent jobs, per on-demand queue and Maximum concurrent jobs, per account. For reserved queues, specify the number of jobs you can process concurrently in your reservation plan instead.
+    pub fn get_concurrent_jobs(&self) -> &::std::option::Option<i32> {
+        self.inner.get_concurrent_jobs()
+    }
     /// Optional. A description of the queue that you are creating.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());

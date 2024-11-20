@@ -57,6 +57,20 @@ pub use crate::types::_identity_provider_type::IdentityProviderType;
 
 pub use crate::types::_identity_provider_summary::IdentityProviderSummary;
 
+pub use crate::types::_data_protection_settings::DataProtectionSettings;
+
+pub use crate::types::_inline_redaction_configuration::InlineRedactionConfiguration;
+
+pub use crate::types::_inline_redaction_pattern::InlineRedactionPattern;
+
+pub use crate::types::_redaction_place_holder::RedactionPlaceHolder;
+
+pub use crate::types::_redaction_place_holder_type::RedactionPlaceHolderType;
+
+pub use crate::types::_custom_pattern::CustomPattern;
+
+pub use crate::types::_data_protection_settings_summary::DataProtectionSettingsSummary;
+
 pub use crate::types::_browser_settings::BrowserSettings;
 
 pub use crate::types::_browser_settings_summary::BrowserSettingsSummary;
@@ -85,6 +99,12 @@ mod _cookie_specification;
 
 mod _cookie_synchronization_configuration;
 
+mod _custom_pattern;
+
+mod _data_protection_settings;
+
+mod _data_protection_settings_summary;
+
 mod _enabled_type;
 
 mod _identity_provider;
@@ -92,6 +112,10 @@ mod _identity_provider;
 mod _identity_provider_summary;
 
 mod _identity_provider_type;
+
+mod _inline_redaction_configuration;
+
+mod _inline_redaction_pattern;
 
 mod _instance_type;
 
@@ -110,6 +134,10 @@ mod _portal;
 mod _portal_status;
 
 mod _portal_summary;
+
+mod _redaction_place_holder;
+
+mod _redaction_place_holder_type;
 
 mod _renderer_type;
 

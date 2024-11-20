@@ -8,6 +8,9 @@ impl super::Client {
     /// - On success, responds with [`GetRunOutput`](crate::operation::get_run::GetRunOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::get_run::GetRunOutput::arn): <p>The run's ARN.</p>
     ///   - [`id(Option<String>)`](crate::operation::get_run::GetRunOutput::id): <p>The run's ID.</p>
+    ///   - [`cache_id(Option<String>)`](crate::operation::get_run::GetRunOutput::cache_id): <p>The run cache associated with the run.</p>
+    ///   - [`cache_behavior(Option<CacheBehavior>)`](crate::operation::get_run::GetRunOutput::cache_behavior): <p>The run cache behavior for the run.</p>
+    ///   - [`engine_version(Option<String>)`](crate::operation::get_run::GetRunOutput::engine_version): <p>The workflow engine version.</p>
     ///   - [`status(Option<RunStatus>)`](crate::operation::get_run::GetRunOutput::status): <p>The run's status.</p>
     ///   - [`workflow_id(Option<String>)`](crate::operation::get_run::GetRunOutput::workflow_id): <p>The run's workflow ID.</p>
     ///   - [`workflow_type(Option<WorkflowType>)`](crate::operation::get_run::GetRunOutput::workflow_type): <p>The run's workflow type.</p>

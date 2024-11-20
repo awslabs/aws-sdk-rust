@@ -6,7 +6,7 @@
 pub struct StreamingLoggingConfig {
     /// <p>Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you don't want to enable logging when you create a streaming distribution or if you want to disable logging for an existing streaming distribution, specify <code>false</code> for <code>Enabled</code>, and specify <code>empty Bucket</code> and <code>Prefix</code> elements. If you specify <code>false</code> for <code>Enabled</code> but you specify values for <code>Bucket</code> and <code>Prefix</code>, the values are automatically deleted.</p>
     pub enabled: bool,
-    /// <p>The Amazon S3 bucket to store the access logs in, for example, <code>myawslogbucket.s3.amazonaws.com</code>.</p>
+    /// <p>The Amazon S3 bucket to store the access logs in, for example, <code>amzn-s3-demo-bucket.s3.amazonaws.com</code>.</p>
     pub bucket: ::std::string::String,
     /// <p>An optional string that you want CloudFront to prefix to the access log filenames for this streaming distribution, for example, <code>myprefix/</code>. If you want to enable logging, but you don't want to specify a prefix, you still must include an empty <code>Prefix</code> element in the <code>Logging</code> element.</p>
     pub prefix: ::std::string::String,
@@ -16,7 +16,7 @@ impl StreamingLoggingConfig {
     pub fn enabled(&self) -> bool {
         self.enabled
     }
-    /// <p>The Amazon S3 bucket to store the access logs in, for example, <code>myawslogbucket.s3.amazonaws.com</code>.</p>
+    /// <p>The Amazon S3 bucket to store the access logs in, for example, <code>amzn-s3-demo-bucket.s3.amazonaws.com</code>.</p>
     pub fn bucket(&self) -> &str {
         use std::ops::Deref;
         self.bucket.deref()
@@ -58,18 +58,18 @@ impl StreamingLoggingConfigBuilder {
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         &self.enabled
     }
-    /// <p>The Amazon S3 bucket to store the access logs in, for example, <code>myawslogbucket.s3.amazonaws.com</code>.</p>
+    /// <p>The Amazon S3 bucket to store the access logs in, for example, <code>amzn-s3-demo-bucket.s3.amazonaws.com</code>.</p>
     /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon S3 bucket to store the access logs in, for example, <code>myawslogbucket.s3.amazonaws.com</code>.</p>
+    /// <p>The Amazon S3 bucket to store the access logs in, for example, <code>amzn-s3-demo-bucket.s3.amazonaws.com</code>.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket = input;
         self
     }
-    /// <p>The Amazon S3 bucket to store the access logs in, for example, <code>myawslogbucket.s3.amazonaws.com</code>.</p>
+    /// <p>The Amazon S3 bucket to store the access logs in, for example, <code>amzn-s3-demo-bucket.s3.amazonaws.com</code>.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
         &self.bucket
     }

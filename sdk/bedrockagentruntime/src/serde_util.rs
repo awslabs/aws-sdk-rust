@@ -152,6 +152,13 @@ pub(crate) fn flow_trace_node_output_event_correct_errors(
     builder
 }
 
+pub(crate) fn text_prompt_correct_errors(mut builder: crate::types::builders::TextPromptBuilder) -> crate::types::builders::TextPromptBuilder {
+    if builder.text.is_none() {
+        builder.text = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn api_invocation_input_correct_errors(
     mut builder: crate::types::builders::ApiInvocationInputBuilder,
 ) -> crate::types::builders::ApiInvocationInputBuilder {

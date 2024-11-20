@@ -6,12 +6,24 @@
 pub struct RecommendationSummary {
     /// <p>An array of objects that describe a recommendation summary.</p>
     pub summaries: ::std::option::Option<::std::vec::Vec<crate::types::Summary>>,
+    /// <p>Describes the findings summary of the idle resources.</p>
+    pub idle_summaries: ::std::option::Option<::std::vec::Vec<crate::types::IdleSummary>>,
     /// <p>The resource type that the recommendation summary applies to.</p>
     pub recommendation_resource_type: ::std::option::Option<crate::types::RecommendationSourceType>,
     /// <p>The Amazon Web Services account ID of the recommendation summary.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>An object that describes the savings opportunity for a given resource type. Savings opportunity includes the estimated monthly savings amount and percentage.</p>
     pub savings_opportunity: ::std::option::Option<crate::types::SavingsOpportunity>,
+    /// <p>Describes the savings opportunity for recommendations of a given resource type or for the recommendation option of an individual resource.</p>
+    /// <p>Savings opportunity represents the estimated monthly savings you can achieve by implementing a given Compute Optimizer recommendation.</p><important>
+    /// <p>Savings opportunity data requires that you opt in to Cost Explorer, as well as activate <b>Receive Amazon EC2 resource recommendations</b> in the Cost Explorer preferences page. That creates a connection between Cost Explorer and Compute Optimizer. With this connection, Cost Explorer generates savings estimates considering the price of existing resources, the price of recommended resources, and historical usage data. Estimated monthly savings reflects the projected dollar savings associated with each of the recommendations generated. For more information, see <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-enable.html">Enabling Cost Explorer</a> and <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-rightsizing.html">Optimizing your cost with Rightsizing Recommendations</a> in the <i>Cost Management User Guide</i>.</p>
+    /// </important>
+    pub idle_savings_opportunity: ::std::option::Option<crate::types::SavingsOpportunity>,
+    /// <p>Describes the savings opportunity for recommendations of a given resource type or for the recommendation option of an individual resource.</p>
+    /// <p>Savings opportunity represents the estimated monthly savings you can achieve by implementing a given Compute Optimizer recommendation.</p><important>
+    /// <p>Savings opportunity data requires that you opt in to Cost Explorer, as well as activate <b>Receive Amazon EC2 resource recommendations</b> in the Cost Explorer preferences page. That creates a connection between Cost Explorer and Compute Optimizer. With this connection, Cost Explorer generates savings estimates considering the price of existing resources, the price of recommended resources, and historical usage data. Estimated monthly savings reflects the projected dollar savings associated with each of the recommendations generated. For more information, see <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-enable.html">Enabling Cost Explorer</a> and <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-rightsizing.html">Optimizing your cost with Rightsizing Recommendations</a> in the <i>Cost Management User Guide</i>.</p>
+    /// </important>
+    pub aggregated_savings_opportunity: ::std::option::Option<crate::types::SavingsOpportunity>,
     /// <p>An object that describes the performance risk ratings for a given resource type.</p>
     pub current_performance_risk_ratings: ::std::option::Option<crate::types::CurrentPerformanceRiskRatings>,
     /// <p>An array of objects that describes the estimated monthly saving amounts for the instances running on the specified <code>inferredWorkloadTypes</code>. The array contains the top five savings opportunites for the instances that run inferred workload types.</p>
@@ -24,6 +36,12 @@ impl RecommendationSummary {
     pub fn summaries(&self) -> &[crate::types::Summary] {
         self.summaries.as_deref().unwrap_or_default()
     }
+    /// <p>Describes the findings summary of the idle resources.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.idle_summaries.is_none()`.
+    pub fn idle_summaries(&self) -> &[crate::types::IdleSummary] {
+        self.idle_summaries.as_deref().unwrap_or_default()
+    }
     /// <p>The resource type that the recommendation summary applies to.</p>
     pub fn recommendation_resource_type(&self) -> ::std::option::Option<&crate::types::RecommendationSourceType> {
         self.recommendation_resource_type.as_ref()
@@ -35,6 +53,20 @@ impl RecommendationSummary {
     /// <p>An object that describes the savings opportunity for a given resource type. Savings opportunity includes the estimated monthly savings amount and percentage.</p>
     pub fn savings_opportunity(&self) -> ::std::option::Option<&crate::types::SavingsOpportunity> {
         self.savings_opportunity.as_ref()
+    }
+    /// <p>Describes the savings opportunity for recommendations of a given resource type or for the recommendation option of an individual resource.</p>
+    /// <p>Savings opportunity represents the estimated monthly savings you can achieve by implementing a given Compute Optimizer recommendation.</p><important>
+    /// <p>Savings opportunity data requires that you opt in to Cost Explorer, as well as activate <b>Receive Amazon EC2 resource recommendations</b> in the Cost Explorer preferences page. That creates a connection between Cost Explorer and Compute Optimizer. With this connection, Cost Explorer generates savings estimates considering the price of existing resources, the price of recommended resources, and historical usage data. Estimated monthly savings reflects the projected dollar savings associated with each of the recommendations generated. For more information, see <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-enable.html">Enabling Cost Explorer</a> and <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-rightsizing.html">Optimizing your cost with Rightsizing Recommendations</a> in the <i>Cost Management User Guide</i>.</p>
+    /// </important>
+    pub fn idle_savings_opportunity(&self) -> ::std::option::Option<&crate::types::SavingsOpportunity> {
+        self.idle_savings_opportunity.as_ref()
+    }
+    /// <p>Describes the savings opportunity for recommendations of a given resource type or for the recommendation option of an individual resource.</p>
+    /// <p>Savings opportunity represents the estimated monthly savings you can achieve by implementing a given Compute Optimizer recommendation.</p><important>
+    /// <p>Savings opportunity data requires that you opt in to Cost Explorer, as well as activate <b>Receive Amazon EC2 resource recommendations</b> in the Cost Explorer preferences page. That creates a connection between Cost Explorer and Compute Optimizer. With this connection, Cost Explorer generates savings estimates considering the price of existing resources, the price of recommended resources, and historical usage data. Estimated monthly savings reflects the projected dollar savings associated with each of the recommendations generated. For more information, see <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-enable.html">Enabling Cost Explorer</a> and <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-rightsizing.html">Optimizing your cost with Rightsizing Recommendations</a> in the <i>Cost Management User Guide</i>.</p>
+    /// </important>
+    pub fn aggregated_savings_opportunity(&self) -> ::std::option::Option<&crate::types::SavingsOpportunity> {
+        self.aggregated_savings_opportunity.as_ref()
     }
     /// <p>An object that describes the performance risk ratings for a given resource type.</p>
     pub fn current_performance_risk_ratings(&self) -> ::std::option::Option<&crate::types::CurrentPerformanceRiskRatings> {
@@ -59,9 +91,12 @@ impl RecommendationSummary {
 #[non_exhaustive]
 pub struct RecommendationSummaryBuilder {
     pub(crate) summaries: ::std::option::Option<::std::vec::Vec<crate::types::Summary>>,
+    pub(crate) idle_summaries: ::std::option::Option<::std::vec::Vec<crate::types::IdleSummary>>,
     pub(crate) recommendation_resource_type: ::std::option::Option<crate::types::RecommendationSourceType>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) savings_opportunity: ::std::option::Option<crate::types::SavingsOpportunity>,
+    pub(crate) idle_savings_opportunity: ::std::option::Option<crate::types::SavingsOpportunity>,
+    pub(crate) aggregated_savings_opportunity: ::std::option::Option<crate::types::SavingsOpportunity>,
     pub(crate) current_performance_risk_ratings: ::std::option::Option<crate::types::CurrentPerformanceRiskRatings>,
     pub(crate) inferred_workload_savings: ::std::option::Option<::std::vec::Vec<crate::types::InferredWorkloadSaving>>,
 }
@@ -85,6 +120,26 @@ impl RecommendationSummaryBuilder {
     /// <p>An array of objects that describe a recommendation summary.</p>
     pub fn get_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Summary>> {
         &self.summaries
+    }
+    /// Appends an item to `idle_summaries`.
+    ///
+    /// To override the contents of this collection use [`set_idle_summaries`](Self::set_idle_summaries).
+    ///
+    /// <p>Describes the findings summary of the idle resources.</p>
+    pub fn idle_summaries(mut self, input: crate::types::IdleSummary) -> Self {
+        let mut v = self.idle_summaries.unwrap_or_default();
+        v.push(input);
+        self.idle_summaries = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Describes the findings summary of the idle resources.</p>
+    pub fn set_idle_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IdleSummary>>) -> Self {
+        self.idle_summaries = input;
+        self
+    }
+    /// <p>Describes the findings summary of the idle resources.</p>
+    pub fn get_idle_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdleSummary>> {
+        &self.idle_summaries
     }
     /// <p>The resource type that the recommendation summary applies to.</p>
     pub fn recommendation_resource_type(mut self, input: crate::types::RecommendationSourceType) -> Self {
@@ -128,6 +183,52 @@ impl RecommendationSummaryBuilder {
     pub fn get_savings_opportunity(&self) -> &::std::option::Option<crate::types::SavingsOpportunity> {
         &self.savings_opportunity
     }
+    /// <p>Describes the savings opportunity for recommendations of a given resource type or for the recommendation option of an individual resource.</p>
+    /// <p>Savings opportunity represents the estimated monthly savings you can achieve by implementing a given Compute Optimizer recommendation.</p><important>
+    /// <p>Savings opportunity data requires that you opt in to Cost Explorer, as well as activate <b>Receive Amazon EC2 resource recommendations</b> in the Cost Explorer preferences page. That creates a connection between Cost Explorer and Compute Optimizer. With this connection, Cost Explorer generates savings estimates considering the price of existing resources, the price of recommended resources, and historical usage data. Estimated monthly savings reflects the projected dollar savings associated with each of the recommendations generated. For more information, see <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-enable.html">Enabling Cost Explorer</a> and <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-rightsizing.html">Optimizing your cost with Rightsizing Recommendations</a> in the <i>Cost Management User Guide</i>.</p>
+    /// </important>
+    pub fn idle_savings_opportunity(mut self, input: crate::types::SavingsOpportunity) -> Self {
+        self.idle_savings_opportunity = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes the savings opportunity for recommendations of a given resource type or for the recommendation option of an individual resource.</p>
+    /// <p>Savings opportunity represents the estimated monthly savings you can achieve by implementing a given Compute Optimizer recommendation.</p><important>
+    /// <p>Savings opportunity data requires that you opt in to Cost Explorer, as well as activate <b>Receive Amazon EC2 resource recommendations</b> in the Cost Explorer preferences page. That creates a connection between Cost Explorer and Compute Optimizer. With this connection, Cost Explorer generates savings estimates considering the price of existing resources, the price of recommended resources, and historical usage data. Estimated monthly savings reflects the projected dollar savings associated with each of the recommendations generated. For more information, see <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-enable.html">Enabling Cost Explorer</a> and <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-rightsizing.html">Optimizing your cost with Rightsizing Recommendations</a> in the <i>Cost Management User Guide</i>.</p>
+    /// </important>
+    pub fn set_idle_savings_opportunity(mut self, input: ::std::option::Option<crate::types::SavingsOpportunity>) -> Self {
+        self.idle_savings_opportunity = input;
+        self
+    }
+    /// <p>Describes the savings opportunity for recommendations of a given resource type or for the recommendation option of an individual resource.</p>
+    /// <p>Savings opportunity represents the estimated monthly savings you can achieve by implementing a given Compute Optimizer recommendation.</p><important>
+    /// <p>Savings opportunity data requires that you opt in to Cost Explorer, as well as activate <b>Receive Amazon EC2 resource recommendations</b> in the Cost Explorer preferences page. That creates a connection between Cost Explorer and Compute Optimizer. With this connection, Cost Explorer generates savings estimates considering the price of existing resources, the price of recommended resources, and historical usage data. Estimated monthly savings reflects the projected dollar savings associated with each of the recommendations generated. For more information, see <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-enable.html">Enabling Cost Explorer</a> and <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-rightsizing.html">Optimizing your cost with Rightsizing Recommendations</a> in the <i>Cost Management User Guide</i>.</p>
+    /// </important>
+    pub fn get_idle_savings_opportunity(&self) -> &::std::option::Option<crate::types::SavingsOpportunity> {
+        &self.idle_savings_opportunity
+    }
+    /// <p>Describes the savings opportunity for recommendations of a given resource type or for the recommendation option of an individual resource.</p>
+    /// <p>Savings opportunity represents the estimated monthly savings you can achieve by implementing a given Compute Optimizer recommendation.</p><important>
+    /// <p>Savings opportunity data requires that you opt in to Cost Explorer, as well as activate <b>Receive Amazon EC2 resource recommendations</b> in the Cost Explorer preferences page. That creates a connection between Cost Explorer and Compute Optimizer. With this connection, Cost Explorer generates savings estimates considering the price of existing resources, the price of recommended resources, and historical usage data. Estimated monthly savings reflects the projected dollar savings associated with each of the recommendations generated. For more information, see <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-enable.html">Enabling Cost Explorer</a> and <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-rightsizing.html">Optimizing your cost with Rightsizing Recommendations</a> in the <i>Cost Management User Guide</i>.</p>
+    /// </important>
+    pub fn aggregated_savings_opportunity(mut self, input: crate::types::SavingsOpportunity) -> Self {
+        self.aggregated_savings_opportunity = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes the savings opportunity for recommendations of a given resource type or for the recommendation option of an individual resource.</p>
+    /// <p>Savings opportunity represents the estimated monthly savings you can achieve by implementing a given Compute Optimizer recommendation.</p><important>
+    /// <p>Savings opportunity data requires that you opt in to Cost Explorer, as well as activate <b>Receive Amazon EC2 resource recommendations</b> in the Cost Explorer preferences page. That creates a connection between Cost Explorer and Compute Optimizer. With this connection, Cost Explorer generates savings estimates considering the price of existing resources, the price of recommended resources, and historical usage data. Estimated monthly savings reflects the projected dollar savings associated with each of the recommendations generated. For more information, see <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-enable.html">Enabling Cost Explorer</a> and <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-rightsizing.html">Optimizing your cost with Rightsizing Recommendations</a> in the <i>Cost Management User Guide</i>.</p>
+    /// </important>
+    pub fn set_aggregated_savings_opportunity(mut self, input: ::std::option::Option<crate::types::SavingsOpportunity>) -> Self {
+        self.aggregated_savings_opportunity = input;
+        self
+    }
+    /// <p>Describes the savings opportunity for recommendations of a given resource type or for the recommendation option of an individual resource.</p>
+    /// <p>Savings opportunity represents the estimated monthly savings you can achieve by implementing a given Compute Optimizer recommendation.</p><important>
+    /// <p>Savings opportunity data requires that you opt in to Cost Explorer, as well as activate <b>Receive Amazon EC2 resource recommendations</b> in the Cost Explorer preferences page. That creates a connection between Cost Explorer and Compute Optimizer. With this connection, Cost Explorer generates savings estimates considering the price of existing resources, the price of recommended resources, and historical usage data. Estimated monthly savings reflects the projected dollar savings associated with each of the recommendations generated. For more information, see <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-enable.html">Enabling Cost Explorer</a> and <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-rightsizing.html">Optimizing your cost with Rightsizing Recommendations</a> in the <i>Cost Management User Guide</i>.</p>
+    /// </important>
+    pub fn get_aggregated_savings_opportunity(&self) -> &::std::option::Option<crate::types::SavingsOpportunity> {
+        &self.aggregated_savings_opportunity
+    }
     /// <p>An object that describes the performance risk ratings for a given resource type.</p>
     pub fn current_performance_risk_ratings(mut self, input: crate::types::CurrentPerformanceRiskRatings) -> Self {
         self.current_performance_risk_ratings = ::std::option::Option::Some(input);
@@ -166,9 +267,12 @@ impl RecommendationSummaryBuilder {
     pub fn build(self) -> crate::types::RecommendationSummary {
         crate::types::RecommendationSummary {
             summaries: self.summaries,
+            idle_summaries: self.idle_summaries,
             recommendation_resource_type: self.recommendation_resource_type,
             account_id: self.account_id,
             savings_opportunity: self.savings_opportunity,
+            idle_savings_opportunity: self.idle_savings_opportunity,
+            aggregated_savings_opportunity: self.aggregated_savings_opportunity,
             current_performance_risk_ratings: self.current_performance_risk_ratings,
             inferred_workload_savings: self.inferred_workload_savings,
         }

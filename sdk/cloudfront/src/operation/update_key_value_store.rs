@@ -259,7 +259,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateKeyValu
 pub enum UpdateKeyValueStoreError {
     /// <p>Access denied.</p>
     AccessDenied(crate::types::error::AccessDenied),
-    /// <p>The key value store entity was not found.</p>
+    /// <p>The entity was not found.</p>
     EntityNotFound(crate::types::error::EntityNotFound),
     /// <p>An argument is invalid.</p>
     InvalidArgument(crate::types::error::InvalidArgument),

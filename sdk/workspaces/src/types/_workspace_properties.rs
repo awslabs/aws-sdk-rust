@@ -22,7 +22,7 @@ pub struct WorkspaceProperties {
     /// <li>
     /// <p>Only available for WorkSpaces created with PCoIP bundles.</p></li>
     /// <li>
-    /// <p>The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code> or <code>WSP</code>.</p></li>
+    /// <p>The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code> or <code>DCV</code> (formerly WSP).</p></li>
     /// <li>
     /// <p>Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p></li>
     /// </ul>
@@ -60,7 +60,7 @@ impl WorkspaceProperties {
     /// <li>
     /// <p>Only available for WorkSpaces created with PCoIP bundles.</p></li>
     /// <li>
-    /// <p>The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code> or <code>WSP</code>.</p></li>
+    /// <p>The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code> or <code>DCV</code> (formerly WSP).</p></li>
     /// <li>
     /// <p>Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p></li>
     /// </ul>
@@ -183,7 +183,7 @@ impl WorkspacePropertiesBuilder {
     /// <li>
     /// <p>Only available for WorkSpaces created with PCoIP bundles.</p></li>
     /// <li>
-    /// <p>The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code> or <code>WSP</code>.</p></li>
+    /// <p>The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code> or <code>DCV</code> (formerly WSP).</p></li>
     /// <li>
     /// <p>Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p></li>
     /// </ul>
@@ -199,7 +199,7 @@ impl WorkspacePropertiesBuilder {
     /// <li>
     /// <p>Only available for WorkSpaces created with PCoIP bundles.</p></li>
     /// <li>
-    /// <p>The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code> or <code>WSP</code>.</p></li>
+    /// <p>The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code> or <code>DCV</code> (formerly WSP).</p></li>
     /// <li>
     /// <p>Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p></li>
     /// </ul>
@@ -213,7 +213,7 @@ impl WorkspacePropertiesBuilder {
     /// <li>
     /// <p>Only available for WorkSpaces created with PCoIP bundles.</p></li>
     /// <li>
-    /// <p>The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code> or <code>WSP</code>.</p></li>
+    /// <p>The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code> or <code>DCV</code> (formerly WSP).</p></li>
     /// <li>
     /// <p>Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p></li>
     /// </ul>

@@ -266,6 +266,23 @@ impl UpdateServiceFluentBuilder {
     pub fn get_deployment_configuration(&self) -> &::std::option::Option<crate::types::DeploymentConfiguration> {
         self.inner.get_deployment_configuration()
     }
+    /// <p>Indicates whether to use Availability Zone rebalancing for the service.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html">Balancing an Amazon ECS service across Availability Zones</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn availability_zone_rebalancing(mut self, input: crate::types::AvailabilityZoneRebalancing) -> Self {
+        self.inner = self.inner.availability_zone_rebalancing(input);
+        self
+    }
+    /// <p>Indicates whether to use Availability Zone rebalancing for the service.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html">Balancing an Amazon ECS service across Availability Zones</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn set_availability_zone_rebalancing(mut self, input: ::std::option::Option<crate::types::AvailabilityZoneRebalancing>) -> Self {
+        self.inner = self.inner.set_availability_zone_rebalancing(input);
+        self
+    }
+    /// <p>Indicates whether to use Availability Zone rebalancing for the service.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html">Balancing an Amazon ECS service across Availability Zones</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn get_availability_zone_rebalancing(&self) -> &::std::option::Option<crate::types::AvailabilityZoneRebalancing> {
+        self.inner.get_availability_zone_rebalancing()
+    }
     /// <p>An object representing the network configuration for the service.</p>
     pub fn network_configuration(mut self, input: crate::types::NetworkConfiguration) -> Self {
         self.inner = self.inner.network_configuration(input);

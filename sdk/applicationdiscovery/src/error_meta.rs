@@ -833,6 +833,9 @@ impl From<crate::operation::start_batch_delete_configuration_task::StartBatchDel
             crate::operation::start_batch_delete_configuration_task::StartBatchDeleteConfigurationTaskError::HomeRegionNotSetException(inner) => {
                 Error::HomeRegionNotSetException(inner)
             }
+            crate::operation::start_batch_delete_configuration_task::StartBatchDeleteConfigurationTaskError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
             crate::operation::start_batch_delete_configuration_task::StartBatchDeleteConfigurationTaskError::InvalidParameterValueException(
                 inner,
             ) => Error::InvalidParameterValueException(inner),

@@ -20,6 +20,8 @@ impl super::Client {
     ///   - [`subscribed_listings(Vec::<SubscribedListing>)`](crate::operation::accept_subscription_request::AcceptSubscriptionRequestOutput::subscribed_listings): <p>Specifies the asset for which the subscription request was created.</p>
     ///   - [`reviewer_id(Option<String>)`](crate::operation::accept_subscription_request::AcceptSubscriptionRequestOutput::reviewer_id): <p>Specifes the ID of the Amazon DataZone user who reviewed the subscription request.</p>
     ///   - [`decision_comment(Option<String>)`](crate::operation::accept_subscription_request::AcceptSubscriptionRequestOutput::decision_comment): <p>Specifies the reason for accepting the subscription request.</p>
+    ///   - [`existing_subscription_id(Option<String>)`](crate::operation::accept_subscription_request::AcceptSubscriptionRequestOutput::existing_subscription_id): <p>The ID of the existing subscription.</p>
+    ///   - [`metadata_forms(Option<Vec::<FormOutput>>)`](crate::operation::accept_subscription_request::AcceptSubscriptionRequestOutput::metadata_forms): <p>The metadata form in the subscription request.</p>
     /// - On failure, responds with [`SdkError<AcceptSubscriptionRequestError>`](crate::operation::accept_subscription_request::AcceptSubscriptionRequestError)
     pub fn accept_subscription_request(&self) -> crate::operation::accept_subscription_request::builders::AcceptSubscriptionRequestFluentBuilder {
         crate::operation::accept_subscription_request::builders::AcceptSubscriptionRequestFluentBuilder::new(self.handle.clone())

@@ -72,6 +72,8 @@ pub struct DistributionConfig {
     pub continuous_deployment_policy_id: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean that indicates whether this is a staging distribution. When this value is <code>true</code>, this is a staging distribution. When this value is <code>false</code>, this is not a staging distribution.</p>
     pub staging: ::std::option::Option<bool>,
+    /// <p>ID of the Anycast static IP list that is associated with the distribution.</p>
+    pub anycast_ip_list_id: ::std::option::Option<::std::string::String>,
 }
 impl DistributionConfig {
     /// <p>A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p>
@@ -182,6 +184,10 @@ impl DistributionConfig {
     pub fn staging(&self) -> ::std::option::Option<bool> {
         self.staging
     }
+    /// <p>ID of the Anycast static IP list that is associated with the distribution.</p>
+    pub fn anycast_ip_list_id(&self) -> ::std::option::Option<&str> {
+        self.anycast_ip_list_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for DistributionConfig {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -205,6 +211,7 @@ impl ::std::fmt::Debug for DistributionConfig {
         formatter.field("is_ipv6_enabled", &self.is_ipv6_enabled);
         formatter.field("continuous_deployment_policy_id", &self.continuous_deployment_policy_id);
         formatter.field("staging", &self.staging);
+        formatter.field("anycast_ip_list_id", &self.anycast_ip_list_id);
         formatter.finish()
     }
 }
@@ -238,6 +245,7 @@ pub struct DistributionConfigBuilder {
     pub(crate) is_ipv6_enabled: ::std::option::Option<bool>,
     pub(crate) continuous_deployment_policy_id: ::std::option::Option<::std::string::String>,
     pub(crate) staging: ::std::option::Option<bool>,
+    pub(crate) anycast_ip_list_id: ::std::option::Option<::std::string::String>,
 }
 impl DistributionConfigBuilder {
     /// <p>A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p>
@@ -601,6 +609,20 @@ impl DistributionConfigBuilder {
     pub fn get_staging(&self) -> &::std::option::Option<bool> {
         &self.staging
     }
+    /// <p>ID of the Anycast static IP list that is associated with the distribution.</p>
+    pub fn anycast_ip_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.anycast_ip_list_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>ID of the Anycast static IP list that is associated with the distribution.</p>
+    pub fn set_anycast_ip_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.anycast_ip_list_id = input;
+        self
+    }
+    /// <p>ID of the Anycast static IP list that is associated with the distribution.</p>
+    pub fn get_anycast_ip_list_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.anycast_ip_list_id
+    }
     /// Consumes the builder and constructs a [`DistributionConfig`](crate::types::DistributionConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`caller_reference`](crate::types::builders::DistributionConfigBuilder::caller_reference)
@@ -642,6 +664,7 @@ impl DistributionConfigBuilder {
             is_ipv6_enabled: self.is_ipv6_enabled,
             continuous_deployment_policy_id: self.continuous_deployment_policy_id,
             staging: self.staging,
+            anycast_ip_list_id: self.anycast_ip_list_id,
         })
     }
 }
@@ -667,6 +690,7 @@ impl ::std::fmt::Debug for DistributionConfigBuilder {
         formatter.field("is_ipv6_enabled", &self.is_ipv6_enabled);
         formatter.field("continuous_deployment_policy_id", &self.continuous_deployment_policy_id);
         formatter.field("staging", &self.staging);
+        formatter.field("anycast_ip_list_id", &self.anycast_ip_list_id);
         formatter.finish()
     }
 }

@@ -149,6 +149,20 @@ pub(crate) fn de_list_queues(
                 "queues" => {
                     builder = builder.set_queues(crate::protocol_serde::shape_list_of_queue::de_list_of_queue(tokens)?);
                 }
+                "totalConcurrentJobs" => {
+                    builder = builder.set_total_concurrent_jobs(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i32::try_from)
+                            .transpose()?,
+                    );
+                }
+                "unallocatedConcurrentJobs" => {
+                    builder = builder.set_unallocated_concurrent_jobs(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i32::try_from)
+                            .transpose()?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

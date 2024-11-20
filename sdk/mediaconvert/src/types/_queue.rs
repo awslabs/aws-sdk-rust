@@ -6,6 +6,8 @@
 pub struct Queue {
     /// An identifier for this resource that is unique within all of AWS.
     pub arn: ::std::option::Option<::std::string::String>,
+    /// The maximum number of jobs your queue can process concurrently.
+    pub concurrent_jobs: ::std::option::Option<i32>,
     /// The timestamp in epoch seconds for when you created the queue.
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// An optional description that you create for each queue.
@@ -20,6 +22,8 @@ pub struct Queue {
     pub progressing_jobs_count: ::std::option::Option<i32>,
     /// Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to on-demand queues.
     pub reservation_plan: ::std::option::Option<crate::types::ReservationPlan>,
+    /// A list of any service overrides applied by MediaConvert to the settings that you have configured. If you see any overrides, we recommend that you contact AWS Support.
+    pub service_overrides: ::std::option::Option<::std::vec::Vec<crate::types::ServiceOverride>>,
     /// Queues can be ACTIVE or PAUSED. If you pause a queue, the service won't begin processing jobs in that queue. Jobs that are running when you pause the queue continue to run until they finish or result in an error.
     pub status: ::std::option::Option<crate::types::QueueStatus>,
     /// The estimated number of jobs with a SUBMITTED status.
@@ -31,6 +35,10 @@ impl Queue {
     /// An identifier for this resource that is unique within all of AWS.
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
+    }
+    /// The maximum number of jobs your queue can process concurrently.
+    pub fn concurrent_jobs(&self) -> ::std::option::Option<i32> {
+        self.concurrent_jobs
     }
     /// The timestamp in epoch seconds for when you created the queue.
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -60,6 +68,12 @@ impl Queue {
     pub fn reservation_plan(&self) -> ::std::option::Option<&crate::types::ReservationPlan> {
         self.reservation_plan.as_ref()
     }
+    /// A list of any service overrides applied by MediaConvert to the settings that you have configured. If you see any overrides, we recommend that you contact AWS Support.
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_overrides.is_none()`.
+    pub fn service_overrides(&self) -> &[crate::types::ServiceOverride] {
+        self.service_overrides.as_deref().unwrap_or_default()
+    }
     /// Queues can be ACTIVE or PAUSED. If you pause a queue, the service won't begin processing jobs in that queue. Jobs that are running when you pause the queue continue to run until they finish or result in an error.
     pub fn status(&self) -> ::std::option::Option<&crate::types::QueueStatus> {
         self.status.as_ref()
@@ -85,6 +99,7 @@ impl Queue {
 #[non_exhaustive]
 pub struct QueueBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) concurrent_jobs: ::std::option::Option<i32>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -92,6 +107,7 @@ pub struct QueueBuilder {
     pub(crate) pricing_plan: ::std::option::Option<crate::types::PricingPlan>,
     pub(crate) progressing_jobs_count: ::std::option::Option<i32>,
     pub(crate) reservation_plan: ::std::option::Option<crate::types::ReservationPlan>,
+    pub(crate) service_overrides: ::std::option::Option<::std::vec::Vec<crate::types::ServiceOverride>>,
     pub(crate) status: ::std::option::Option<crate::types::QueueStatus>,
     pub(crate) submitted_jobs_count: ::std::option::Option<i32>,
     pub(crate) r#type: ::std::option::Option<crate::types::Type>,
@@ -110,6 +126,20 @@ impl QueueBuilder {
     /// An identifier for this resource that is unique within all of AWS.
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
+    }
+    /// The maximum number of jobs your queue can process concurrently.
+    pub fn concurrent_jobs(mut self, input: i32) -> Self {
+        self.concurrent_jobs = ::std::option::Option::Some(input);
+        self
+    }
+    /// The maximum number of jobs your queue can process concurrently.
+    pub fn set_concurrent_jobs(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.concurrent_jobs = input;
+        self
+    }
+    /// The maximum number of jobs your queue can process concurrently.
+    pub fn get_concurrent_jobs(&self) -> &::std::option::Option<i32> {
+        &self.concurrent_jobs
     }
     /// The timestamp in epoch seconds for when you created the queue.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -210,6 +240,26 @@ impl QueueBuilder {
     pub fn get_reservation_plan(&self) -> &::std::option::Option<crate::types::ReservationPlan> {
         &self.reservation_plan
     }
+    /// Appends an item to `service_overrides`.
+    ///
+    /// To override the contents of this collection use [`set_service_overrides`](Self::set_service_overrides).
+    ///
+    /// A list of any service overrides applied by MediaConvert to the settings that you have configured. If you see any overrides, we recommend that you contact AWS Support.
+    pub fn service_overrides(mut self, input: crate::types::ServiceOverride) -> Self {
+        let mut v = self.service_overrides.unwrap_or_default();
+        v.push(input);
+        self.service_overrides = ::std::option::Option::Some(v);
+        self
+    }
+    /// A list of any service overrides applied by MediaConvert to the settings that you have configured. If you see any overrides, we recommend that you contact AWS Support.
+    pub fn set_service_overrides(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceOverride>>) -> Self {
+        self.service_overrides = input;
+        self
+    }
+    /// A list of any service overrides applied by MediaConvert to the settings that you have configured. If you see any overrides, we recommend that you contact AWS Support.
+    pub fn get_service_overrides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceOverride>> {
+        &self.service_overrides
+    }
     /// Queues can be ACTIVE or PAUSED. If you pause a queue, the service won't begin processing jobs in that queue. Jobs that are running when you pause the queue continue to run until they finish or result in an error.
     pub fn status(mut self, input: crate::types::QueueStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -256,6 +306,7 @@ impl QueueBuilder {
     pub fn build(self) -> crate::types::Queue {
         crate::types::Queue {
             arn: self.arn,
+            concurrent_jobs: self.concurrent_jobs,
             created_at: self.created_at,
             description: self.description,
             last_updated: self.last_updated,
@@ -263,6 +314,7 @@ impl QueueBuilder {
             pricing_plan: self.pricing_plan,
             progressing_jobs_count: self.progressing_jobs_count,
             reservation_plan: self.reservation_plan,
+            service_overrides: self.service_overrides,
             status: self.status,
             submitted_jobs_count: self.submitted_jobs_count,
             r#type: self.r#type,

@@ -9,6 +9,16 @@ pub(crate) fn reflens_list_browser_settings_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_data_protection_settings_output_output_next_token(
+    input: &crate::operation::list_data_protection_settings::ListDataProtectionSettingsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_identity_providers_output_output_next_token(
     input: &crate::operation::list_identity_providers::ListIdentityProvidersOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -93,6 +103,16 @@ pub(crate) fn reflens_list_user_settings_output_output_next_token(
     input: &crate::operation::list_user_settings::ListUserSettingsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_data_protection_settings_output_output_data_protection_settings(
+    input: crate::operation::list_data_protection_settings::ListDataProtectionSettingsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::DataProtectionSettingsSummary>> {
+    let input = match input.data_protection_settings {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

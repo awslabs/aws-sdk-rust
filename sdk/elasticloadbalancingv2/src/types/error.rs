@@ -7,6 +7,8 @@ pub use crate::types::error::_invalid_subnet_exception::InvalidSubnetException;
 
 pub use crate::types::error::_invalid_configuration_request_exception::InvalidConfigurationRequestException;
 
+pub use crate::types::error::_capacity_reservation_pending_exception::CapacityReservationPendingException;
+
 pub use crate::types::error::_availability_zone_not_supported_exception::AvailabilityZoneNotSupportedException;
 
 pub use crate::types::error::_allocation_id_not_found_exception::AllocationIdNotFoundException;
@@ -65,6 +67,14 @@ pub use crate::types::error::_certificate_not_found_exception::CertificateNotFou
 
 pub use crate::types::error::_alpn_policy_not_supported_exception::AlpnPolicyNotSupportedException;
 
+pub use crate::types::error::_prior_request_not_complete_exception::PriorRequestNotCompleteException;
+
+pub use crate::types::error::_insufficient_capacity_exception::InsufficientCapacityException;
+
+pub use crate::types::error::_capacity_units_limit_exceeded_exception::CapacityUnitsLimitExceededException;
+
+pub use crate::types::error::_capacity_decrease_requests_limit_exceeded_exception::CapacityDecreaseRequestsLimitExceededException;
+
 pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundException;
 
 pub use crate::types::error::_health_unavailable_exception::HealthUnavailableException;
@@ -109,6 +119,12 @@ mod _availability_zone_not_supported_exception;
 
 mod _ca_certificates_bundle_not_found_exception;
 
+mod _capacity_decrease_requests_limit_exceeded_exception;
+
+mod _capacity_reservation_pending_exception;
+
+mod _capacity_units_limit_exceeded_exception;
+
 mod _certificate_not_found_exception;
 
 mod _delete_association_same_account_exception;
@@ -126,6 +142,8 @@ mod _duplicate_trust_store_name_exception;
 mod _health_unavailable_exception;
 
 mod _incompatible_protocols_exception;
+
+mod _insufficient_capacity_exception;
 
 mod _invalid_ca_certificates_bundle_exception;
 
@@ -148,6 +166,8 @@ mod _listener_not_found_exception;
 mod _load_balancer_not_found_exception;
 
 mod _operation_not_permitted_exception;
+
+mod _prior_request_not_complete_exception;
 
 mod _priority_in_use_exception;
 

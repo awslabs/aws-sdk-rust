@@ -6,44 +6,56 @@ pub fn ser_create_rule_input_input(
     if let Some(var_1) = &input.description {
         object.key("Description").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.lock_configuration {
-        #[allow(unused_mut)]
-        let mut object_3 = object.key("LockConfiguration").start_object();
-        crate::protocol_serde::shape_lock_configuration::ser_lock_configuration(&mut object_3, var_2)?;
-        object_3.finish();
-    }
-    if let Some(var_4) = &input.resource_tags {
-        let mut array_5 = object.key("ResourceTags").start_array();
-        for item_6 in var_4 {
+    if let Some(var_2) = &input.exclude_resource_tags {
+        let mut array_3 = object.key("ExcludeResourceTags").start_array();
+        for item_4 in var_2 {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_resource_tag::ser_resource_tag(&mut object_7, item_6)?;
-                object_7.finish();
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_resource_tag::ser_resource_tag(&mut object_5, item_4)?;
+                object_5.finish();
             }
         }
-        array_5.finish();
+        array_3.finish();
     }
-    if let Some(var_8) = &input.resource_type {
-        object.key("ResourceType").string(var_8.as_str());
-    }
-    if let Some(var_9) = &input.retention_period {
+    if let Some(var_6) = &input.lock_configuration {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("RetentionPeriod").start_object();
-        crate::protocol_serde::shape_retention_period::ser_retention_period(&mut object_10, var_9)?;
-        object_10.finish();
+        let mut object_7 = object.key("LockConfiguration").start_object();
+        crate::protocol_serde::shape_lock_configuration::ser_lock_configuration(&mut object_7, var_6)?;
+        object_7.finish();
     }
-    if let Some(var_11) = &input.tags {
-        let mut array_12 = object.key("Tags").start_array();
-        for item_13 in var_11 {
+    if let Some(var_8) = &input.resource_tags {
+        let mut array_9 = object.key("ResourceTags").start_array();
+        for item_10 in var_8 {
             {
                 #[allow(unused_mut)]
-                let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_14, item_13)?;
-                object_14.finish();
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_resource_tag::ser_resource_tag(&mut object_11, item_10)?;
+                object_11.finish();
             }
         }
-        array_12.finish();
+        array_9.finish();
+    }
+    if let Some(var_12) = &input.resource_type {
+        object.key("ResourceType").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.retention_period {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("RetentionPeriod").start_object();
+        crate::protocol_serde::shape_retention_period::ser_retention_period(&mut object_14, var_13)?;
+        object_14.finish();
+    }
+    if let Some(var_15) = &input.tags {
+        let mut array_16 = object.key("Tags").start_array();
+        for item_17 in var_15 {
+            {
+                #[allow(unused_mut)]
+                let mut object_18 = array_16.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_18, item_17)?;
+                object_18.finish();
+            }
+        }
+        array_16.finish();
     }
     Ok(())
 }

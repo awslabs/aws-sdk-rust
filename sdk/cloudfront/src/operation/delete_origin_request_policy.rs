@@ -259,7 +259,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteOriginR
 pub enum DeleteOriginRequestPolicyError {
     /// <p>Access denied.</p>
     AccessDenied(crate::types::error::AccessDenied),
-    /// <p>You cannot delete a managed policy.</p>
+    /// <p>Deletion is not allowed for this entity.</p>
     IllegalDelete(crate::types::error::IllegalDelete),
     /// <p>The <code>If-Match</code> version is missing or not valid.</p>
     InvalidIfMatchVersion(crate::types::error::InvalidIfMatchVersion),

@@ -21,6 +21,9 @@ pub struct UpdateServiceInput {
     pub capacity_provider_strategy: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
     /// <p>Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and starting tasks.</p>
     pub deployment_configuration: ::std::option::Option<crate::types::DeploymentConfiguration>,
+    /// <p>Indicates whether to use Availability Zone rebalancing for the service.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html">Balancing an Amazon ECS service across Availability Zones</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub availability_zone_rebalancing: ::std::option::Option<crate::types::AvailabilityZoneRebalancing>,
     /// <p>An object representing the network configuration for the service.</p>
     pub network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
     /// <p>An array of task placement constraint objects to update the service to use. If no value is specified, the existing placement constraints for the service will remain unchanged. If this value is specified, it will override any existing placement constraints defined for the service. To remove all existing placement constraints, specify an empty array.</p>
@@ -96,6 +99,11 @@ impl UpdateServiceInput {
     /// <p>Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and starting tasks.</p>
     pub fn deployment_configuration(&self) -> ::std::option::Option<&crate::types::DeploymentConfiguration> {
         self.deployment_configuration.as_ref()
+    }
+    /// <p>Indicates whether to use Availability Zone rebalancing for the service.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html">Balancing an Amazon ECS service across Availability Zones</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn availability_zone_rebalancing(&self) -> ::std::option::Option<&crate::types::AvailabilityZoneRebalancing> {
+        self.availability_zone_rebalancing.as_ref()
     }
     /// <p>An object representing the network configuration for the service.</p>
     pub fn network_configuration(&self) -> ::std::option::Option<&crate::types::NetworkConfiguration> {
@@ -197,6 +205,7 @@ pub struct UpdateServiceInputBuilder {
     pub(crate) task_definition: ::std::option::Option<::std::string::String>,
     pub(crate) capacity_provider_strategy: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
     pub(crate) deployment_configuration: ::std::option::Option<crate::types::DeploymentConfiguration>,
+    pub(crate) availability_zone_rebalancing: ::std::option::Option<crate::types::AvailabilityZoneRebalancing>,
     pub(crate) network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
     pub(crate) placement_constraints: ::std::option::Option<::std::vec::Vec<crate::types::PlacementConstraint>>,
     pub(crate) placement_strategy: ::std::option::Option<::std::vec::Vec<crate::types::PlacementStrategy>>,
@@ -324,6 +333,23 @@ impl UpdateServiceInputBuilder {
     /// <p>Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and starting tasks.</p>
     pub fn get_deployment_configuration(&self) -> &::std::option::Option<crate::types::DeploymentConfiguration> {
         &self.deployment_configuration
+    }
+    /// <p>Indicates whether to use Availability Zone rebalancing for the service.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html">Balancing an Amazon ECS service across Availability Zones</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn availability_zone_rebalancing(mut self, input: crate::types::AvailabilityZoneRebalancing) -> Self {
+        self.availability_zone_rebalancing = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether to use Availability Zone rebalancing for the service.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html">Balancing an Amazon ECS service across Availability Zones</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn set_availability_zone_rebalancing(mut self, input: ::std::option::Option<crate::types::AvailabilityZoneRebalancing>) -> Self {
+        self.availability_zone_rebalancing = input;
+        self
+    }
+    /// <p>Indicates whether to use Availability Zone rebalancing for the service.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html">Balancing an Amazon ECS service across Availability Zones</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn get_availability_zone_rebalancing(&self) -> &::std::option::Option<crate::types::AvailabilityZoneRebalancing> {
+        &self.availability_zone_rebalancing
     }
     /// <p>An object representing the network configuration for the service.</p>
     pub fn network_configuration(mut self, input: crate::types::NetworkConfiguration) -> Self {
@@ -610,6 +636,7 @@ impl UpdateServiceInputBuilder {
             task_definition: self.task_definition,
             capacity_provider_strategy: self.capacity_provider_strategy,
             deployment_configuration: self.deployment_configuration,
+            availability_zone_rebalancing: self.availability_zone_rebalancing,
             network_configuration: self.network_configuration,
             placement_constraints: self.placement_constraints,
             placement_strategy: self.placement_strategy,

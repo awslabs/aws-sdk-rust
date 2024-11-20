@@ -45,6 +45,8 @@ pub(crate) mod shape_create_multipart_read_set_upload;
 
 pub(crate) mod shape_create_reference_store;
 
+pub(crate) mod shape_create_run_cache;
+
 pub(crate) mod shape_create_run_group;
 
 pub(crate) mod shape_create_sequence_store;
@@ -64,6 +66,8 @@ pub(crate) mod shape_delete_reference;
 pub(crate) mod shape_delete_reference_store;
 
 pub(crate) mod shape_delete_run;
+
+pub(crate) mod shape_delete_run_cache;
 
 pub(crate) mod shape_delete_run_group;
 
@@ -100,6 +104,8 @@ pub(crate) mod shape_get_reference_metadata;
 pub(crate) mod shape_get_reference_store;
 
 pub(crate) mod shape_get_run;
+
+pub(crate) mod shape_get_run_cache;
 
 pub(crate) mod shape_get_run_group;
 
@@ -138,6 +144,8 @@ pub(crate) mod shape_list_reference_import_jobs;
 pub(crate) mod shape_list_reference_stores;
 
 pub(crate) mod shape_list_references;
+
+pub(crate) mod shape_list_run_caches;
 
 pub(crate) mod shape_list_run_groups;
 
@@ -179,6 +187,8 @@ pub(crate) mod shape_update_annotation_store;
 
 pub(crate) mod shape_update_annotation_store_version;
 
+pub(crate) mod shape_update_run_cache;
+
 pub(crate) mod shape_update_run_group;
 
 pub(crate) mod shape_update_variant_store;
@@ -212,6 +222,8 @@ pub(crate) mod shape_create_annotation_store_version_input;
 pub(crate) mod shape_create_multipart_read_set_upload_input;
 
 pub(crate) mod shape_create_reference_store_input;
+
+pub(crate) mod shape_create_run_cache_input;
 
 pub(crate) mod shape_create_run_group_input;
 
@@ -292,6 +304,8 @@ pub(crate) mod shape_throttling_exception;
 pub(crate) mod shape_update_annotation_store_input;
 
 pub(crate) mod shape_update_annotation_store_version_input;
+
+pub(crate) mod shape_update_run_cache_input;
 
 pub(crate) mod shape_update_run_group_input;
 
@@ -382,6 +396,8 @@ pub(crate) mod shape_reference_list;
 pub(crate) mod shape_reference_store_detail_list;
 
 pub(crate) mod shape_reference_store_filter;
+
+pub(crate) mod shape_run_cache_list;
 
 pub(crate) mod shape_run_group_list;
 
@@ -474,6 +490,8 @@ pub(crate) mod shape_read_set_upload_part_list_item;
 pub(crate) mod shape_reference_list_item;
 
 pub(crate) mod shape_reference_store_detail;
+
+pub(crate) mod shape_run_cache_list_item;
 
 pub(crate) mod shape_run_group_list_item;
 

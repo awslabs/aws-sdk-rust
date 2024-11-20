@@ -256,15 +256,15 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateSchedul
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum UpdateScheduledQueryError {
-    /// <p>You are not authorized to perform this action.</p>
+    /// <p>You do not have the necessary permissions to access the account settings.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>The service was unable to fully process this request because of an internal server error.</p>
+    /// <p>An internal server error occurred while processing the request.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>The requested endpoint was not valid.</p>
+    /// <p>The requested endpoint is invalid.</p>
     InvalidEndpointException(crate::types::error::InvalidEndpointException),
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>The request was denied due to request throttling.</p>
+    /// <p>The request was throttled due to excessive requests.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>Invalid or malformed request.</p>
     ValidationException(crate::types::error::ValidationException),

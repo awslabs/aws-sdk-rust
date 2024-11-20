@@ -188,6 +188,8 @@ mod create_project;
 
 mod create_project_membership;
 
+mod create_rule;
+
 mod create_subscription_grant;
 
 mod create_subscription_request;
@@ -257,6 +259,8 @@ mod delete_project;
 
 mod delete_project_membership;
 
+mod delete_rule;
+
 mod delete_subscription_grant;
 
 mod delete_subscription_request;
@@ -313,6 +317,8 @@ mod get_metadata_generation_run;
 
 mod get_project;
 
+mod get_rule;
+
 mod get_subscription;
 
 mod get_subscription_grant;
@@ -364,6 +370,8 @@ mod list_policy_grants;
 mod list_project_memberships;
 
 mod list_projects;
+
+mod list_rules;
 
 mod list_subscription_grants;
 
@@ -432,6 +440,8 @@ mod update_glossary_term;
 mod update_group_profile;
 
 mod update_project;
+
+mod update_rule;
 
 mod update_subscription_grant_status;
 

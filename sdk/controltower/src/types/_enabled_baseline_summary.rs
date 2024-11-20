@@ -12,6 +12,8 @@ pub struct EnabledBaselineSummary {
     pub baseline_version: ::std::option::Option<::std::string::String>,
     /// <p>The target upon which the baseline is enabled.</p>
     pub target_identifier: ::std::string::String,
+    /// <p>An ARN that represents an object returned by <code>ListEnabledBaseline</code>, to describe an enabled baseline.</p>
+    pub parent_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The deployment summary of an <code>EnabledControl</code> or <code>EnabledBaseline</code> resource.</p>
     pub status_summary: ::std::option::Option<crate::types::EnablementStatusSummary>,
 }
@@ -35,6 +37,10 @@ impl EnabledBaselineSummary {
         use std::ops::Deref;
         self.target_identifier.deref()
     }
+    /// <p>An ARN that represents an object returned by <code>ListEnabledBaseline</code>, to describe an enabled baseline.</p>
+    pub fn parent_identifier(&self) -> ::std::option::Option<&str> {
+        self.parent_identifier.as_deref()
+    }
     /// <p>The deployment summary of an <code>EnabledControl</code> or <code>EnabledBaseline</code> resource.</p>
     pub fn status_summary(&self) -> ::std::option::Option<&crate::types::EnablementStatusSummary> {
         self.status_summary.as_ref()
@@ -55,6 +61,7 @@ pub struct EnabledBaselineSummaryBuilder {
     pub(crate) baseline_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) baseline_version: ::std::option::Option<::std::string::String>,
     pub(crate) target_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) parent_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) status_summary: ::std::option::Option<crate::types::EnablementStatusSummary>,
 }
 impl EnabledBaselineSummaryBuilder {
@@ -117,6 +124,20 @@ impl EnabledBaselineSummaryBuilder {
     pub fn get_target_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_identifier
     }
+    /// <p>An ARN that represents an object returned by <code>ListEnabledBaseline</code>, to describe an enabled baseline.</p>
+    pub fn parent_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.parent_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>An ARN that represents an object returned by <code>ListEnabledBaseline</code>, to describe an enabled baseline.</p>
+    pub fn set_parent_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.parent_identifier = input;
+        self
+    }
+    /// <p>An ARN that represents an object returned by <code>ListEnabledBaseline</code>, to describe an enabled baseline.</p>
+    pub fn get_parent_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent_identifier
+    }
     /// <p>The deployment summary of an <code>EnabledControl</code> or <code>EnabledBaseline</code> resource.</p>
     /// This field is required.
     pub fn status_summary(mut self, input: crate::types::EnablementStatusSummary) -> Self {
@@ -158,6 +179,7 @@ impl EnabledBaselineSummaryBuilder {
                     "target_identifier was not specified but it is required when building EnabledBaselineSummary",
                 )
             })?,
+            parent_identifier: self.parent_identifier,
             status_summary: self.status_summary,
         })
     }

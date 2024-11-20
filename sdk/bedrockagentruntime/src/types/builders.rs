@@ -67,6 +67,12 @@ pub use crate::types::_generation_configuration::GenerationConfigurationBuilder;
 
 pub use crate::types::_retrieve_and_generate_input::RetrieveAndGenerateInputBuilder;
 
+pub use crate::types::_analyze_prompt_event::AnalyzePromptEventBuilder;
+
+pub use crate::types::_optimized_prompt_event::OptimizedPromptEventBuilder;
+
+pub use crate::types::_text_prompt::TextPromptBuilder;
+
 pub use crate::types::_memory_session_summary::MemorySessionSummaryBuilder;
 
 pub use crate::types::_file_part::FilePartBuilder;

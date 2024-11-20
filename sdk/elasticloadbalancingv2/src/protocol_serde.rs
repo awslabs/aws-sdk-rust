@@ -87,6 +87,10 @@ pub(crate) mod shape_describe_account_limits;
 
 pub(crate) mod shape_describe_account_limits_input;
 
+pub(crate) mod shape_describe_capacity_reservation;
+
+pub(crate) mod shape_describe_capacity_reservation_input;
+
 pub(crate) mod shape_describe_listener_attributes;
 
 pub(crate) mod shape_describe_listener_attributes_input;
@@ -154,6 +158,10 @@ pub(crate) mod shape_get_trust_store_ca_certificates_bundle_input;
 pub(crate) mod shape_get_trust_store_revocation_content;
 
 pub(crate) mod shape_get_trust_store_revocation_content_input;
+
+pub(crate) mod shape_modify_capacity_reservation;
+
+pub(crate) mod shape_modify_capacity_reservation_input;
 
 pub(crate) mod shape_modify_listener;
 
@@ -225,6 +233,12 @@ pub(crate) mod shape_availability_zone_not_supported_exception;
 
 pub(crate) mod shape_ca_certificates_bundle_not_found_exception;
 
+pub(crate) mod shape_capacity_decrease_requests_limit_exceeded_exception;
+
+pub(crate) mod shape_capacity_reservation_pending_exception;
+
+pub(crate) mod shape_capacity_units_limit_exceeded_exception;
+
 pub(crate) mod shape_certificate;
 
 pub(crate) mod shape_certificate_not_found_exception;
@@ -244,6 +258,8 @@ pub(crate) mod shape_duplicate_trust_store_name_exception;
 pub(crate) mod shape_health_unavailable_exception;
 
 pub(crate) mod shape_incompatible_protocols_exception;
+
+pub(crate) mod shape_insufficient_capacity_exception;
 
 pub(crate) mod shape_invalid_ca_certificates_bundle_exception;
 
@@ -271,9 +287,13 @@ pub(crate) mod shape_load_balancer_not_found_exception;
 
 pub(crate) mod shape_matcher;
 
+pub(crate) mod shape_minimum_load_balancer_capacity;
+
 pub(crate) mod shape_mutual_authentication_attributes;
 
 pub(crate) mod shape_operation_not_permitted_exception;
+
+pub(crate) mod shape_prior_request_not_complete_exception;
 
 pub(crate) mod shape_priority_in_use_exception;
 
@@ -401,6 +421,8 @@ pub(crate) mod shape_trust_store_revocations;
 
 pub(crate) mod shape_trust_stores;
 
+pub(crate) mod shape_zonal_capacity_reservation_states;
+
 pub(crate) mod shape_availability_zone;
 
 pub(crate) mod shape_describe_trust_store_revocation;
@@ -433,6 +455,8 @@ pub(crate) mod shape_trust_store_association;
 
 pub(crate) mod shape_trust_store_revocation;
 
+pub(crate) mod shape_zonal_capacity_reservation_state;
+
 pub(crate) mod shape_actions;
 
 pub(crate) mod shape_administrative_override;
@@ -440,6 +464,8 @@ pub(crate) mod shape_administrative_override;
 pub(crate) mod shape_alpn_policy_name;
 
 pub(crate) mod shape_anomaly_detection;
+
+pub(crate) mod shape_capacity_reservation_status;
 
 pub(crate) mod shape_ciphers;
 

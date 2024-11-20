@@ -7,6 +7,10 @@ pub struct ListQueuesOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// List of queues.
     pub queues: ::std::option::Option<::std::vec::Vec<crate::types::Queue>>,
+    /// The maximum number of jobs that MediaConvert can process at one time, across all of your on-demand queues in the current AWS Region.
+    pub total_concurrent_jobs: ::std::option::Option<i32>,
+    /// The remaining number of concurrent jobs that are not associated with a queue and are available to allocate to a queue. You can allocate these jobs when you create or update a queue.
+    pub unallocated_concurrent_jobs: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl ListQueuesOutput {
@@ -19,6 +23,14 @@ impl ListQueuesOutput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.queues.is_none()`.
     pub fn queues(&self) -> &[crate::types::Queue] {
         self.queues.as_deref().unwrap_or_default()
+    }
+    /// The maximum number of jobs that MediaConvert can process at one time, across all of your on-demand queues in the current AWS Region.
+    pub fn total_concurrent_jobs(&self) -> ::std::option::Option<i32> {
+        self.total_concurrent_jobs
+    }
+    /// The remaining number of concurrent jobs that are not associated with a queue and are available to allocate to a queue. You can allocate these jobs when you create or update a queue.
+    pub fn unallocated_concurrent_jobs(&self) -> ::std::option::Option<i32> {
+        self.unallocated_concurrent_jobs
     }
 }
 impl ::aws_types::request_id::RequestId for ListQueuesOutput {
@@ -39,6 +51,8 @@ impl ListQueuesOutput {
 pub struct ListQueuesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) queues: ::std::option::Option<::std::vec::Vec<crate::types::Queue>>,
+    pub(crate) total_concurrent_jobs: ::std::option::Option<i32>,
+    pub(crate) unallocated_concurrent_jobs: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl ListQueuesOutputBuilder {
@@ -76,6 +90,34 @@ impl ListQueuesOutputBuilder {
     pub fn get_queues(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Queue>> {
         &self.queues
     }
+    /// The maximum number of jobs that MediaConvert can process at one time, across all of your on-demand queues in the current AWS Region.
+    pub fn total_concurrent_jobs(mut self, input: i32) -> Self {
+        self.total_concurrent_jobs = ::std::option::Option::Some(input);
+        self
+    }
+    /// The maximum number of jobs that MediaConvert can process at one time, across all of your on-demand queues in the current AWS Region.
+    pub fn set_total_concurrent_jobs(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.total_concurrent_jobs = input;
+        self
+    }
+    /// The maximum number of jobs that MediaConvert can process at one time, across all of your on-demand queues in the current AWS Region.
+    pub fn get_total_concurrent_jobs(&self) -> &::std::option::Option<i32> {
+        &self.total_concurrent_jobs
+    }
+    /// The remaining number of concurrent jobs that are not associated with a queue and are available to allocate to a queue. You can allocate these jobs when you create or update a queue.
+    pub fn unallocated_concurrent_jobs(mut self, input: i32) -> Self {
+        self.unallocated_concurrent_jobs = ::std::option::Option::Some(input);
+        self
+    }
+    /// The remaining number of concurrent jobs that are not associated with a queue and are available to allocate to a queue. You can allocate these jobs when you create or update a queue.
+    pub fn set_unallocated_concurrent_jobs(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.unallocated_concurrent_jobs = input;
+        self
+    }
+    /// The remaining number of concurrent jobs that are not associated with a queue and are available to allocate to a queue. You can allocate these jobs when you create or update a queue.
+    pub fn get_unallocated_concurrent_jobs(&self) -> &::std::option::Option<i32> {
+        &self.unallocated_concurrent_jobs
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -90,6 +132,8 @@ impl ListQueuesOutputBuilder {
         crate::operation::list_queues::ListQueuesOutput {
             next_token: self.next_token,
             queues: self.queues,
+            total_concurrent_jobs: self.total_concurrent_jobs,
+            unallocated_concurrent_jobs: self.unallocated_concurrent_jobs,
             _request_id: self._request_id,
         }
     }

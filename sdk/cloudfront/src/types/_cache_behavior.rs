@@ -70,6 +70,8 @@ pub struct CacheBehavior {
     pub origin_request_policy_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for a response headers policy.</p>
     pub response_headers_policy_id: ::std::option::Option<::std::string::String>,
+    /// <p>The gRPC configuration for your cache behavior.</p>
+    pub grpc_config: ::std::option::Option<crate::types::GrpcConfig>,
     /// <p>This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/working-with-policies.html">Working with policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>If you want to include values in the cache key, use a cache policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>If you want to send values to the origin but not include them in the cache key, use an origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating origin request policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html">Using the managed origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -184,6 +186,10 @@ impl CacheBehavior {
     pub fn response_headers_policy_id(&self) -> ::std::option::Option<&str> {
         self.response_headers_policy_id.as_deref()
     }
+    /// <p>The gRPC configuration for your cache behavior.</p>
+    pub fn grpc_config(&self) -> ::std::option::Option<&crate::types::GrpcConfig> {
+        self.grpc_config.as_ref()
+    }
     /// <p>This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/working-with-policies.html">Working with policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>If you want to include values in the cache key, use a cache policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>If you want to send values to the origin but not include them in the cache key, use an origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating origin request policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html">Using the managed origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -239,6 +245,7 @@ pub struct CacheBehaviorBuilder {
     pub(crate) cache_policy_id: ::std::option::Option<::std::string::String>,
     pub(crate) origin_request_policy_id: ::std::option::Option<::std::string::String>,
     pub(crate) response_headers_policy_id: ::std::option::Option<::std::string::String>,
+    pub(crate) grpc_config: ::std::option::Option<crate::types::GrpcConfig>,
     pub(crate) forwarded_values: ::std::option::Option<crate::types::ForwardedValues>,
     pub(crate) min_ttl: ::std::option::Option<i64>,
     pub(crate) default_ttl: ::std::option::Option<i64>,
@@ -548,6 +555,20 @@ impl CacheBehaviorBuilder {
     pub fn get_response_headers_policy_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.response_headers_policy_id
     }
+    /// <p>The gRPC configuration for your cache behavior.</p>
+    pub fn grpc_config(mut self, input: crate::types::GrpcConfig) -> Self {
+        self.grpc_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The gRPC configuration for your cache behavior.</p>
+    pub fn set_grpc_config(mut self, input: ::std::option::Option<crate::types::GrpcConfig>) -> Self {
+        self.grpc_config = input;
+        self
+    }
+    /// <p>The gRPC configuration for your cache behavior.</p>
+    pub fn get_grpc_config(&self) -> &::std::option::Option<crate::types::GrpcConfig> {
+        &self.grpc_config
+    }
     /// <p>This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/working-with-policies.html">Working with policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>If you want to include values in the cache key, use a cache policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>If you want to send values to the origin but not include them in the cache key, use an origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating origin request policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html">Using the managed origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -677,6 +698,7 @@ impl CacheBehaviorBuilder {
             cache_policy_id: self.cache_policy_id,
             origin_request_policy_id: self.origin_request_policy_id,
             response_headers_policy_id: self.response_headers_policy_id,
+            grpc_config: self.grpc_config,
             forwarded_values: self.forwarded_values,
             min_ttl: self.min_ttl,
             default_ttl: self.default_ttl,

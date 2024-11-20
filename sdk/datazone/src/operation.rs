@@ -79,6 +79,9 @@ pub mod create_project;
 /// Types for the `CreateProjectMembership` operation.
 pub mod create_project_membership;
 
+/// Types for the `CreateRule` operation.
+pub mod create_rule;
+
 /// Types for the `CreateSubscriptionGrant` operation.
 pub mod create_subscription_grant;
 
@@ -141,6 +144,9 @@ pub mod delete_project;
 
 /// Types for the `DeleteProjectMembership` operation.
 pub mod delete_project_membership;
+
+/// Types for the `DeleteRule` operation.
+pub mod delete_rule;
 
 /// Types for the `DeleteSubscriptionGrant` operation.
 pub mod delete_subscription_grant;
@@ -226,6 +232,9 @@ pub mod get_metadata_generation_run;
 /// Types for the `GetProject` operation.
 pub mod get_project;
 
+/// Types for the `GetRule` operation.
+pub mod get_rule;
+
 /// Types for the `GetSubscription` operation.
 pub mod get_subscription;
 
@@ -303,6 +312,9 @@ pub mod list_project_memberships;
 
 /// Types for the `ListProjects` operation.
 pub mod list_projects;
+
+/// Types for the `ListRules` operation.
+pub mod list_rules;
 
 /// Types for the `ListSubscriptionGrants` operation.
 pub mod list_subscription_grants;
@@ -405,6 +417,9 @@ pub mod update_group_profile;
 
 /// Types for the `UpdateProject` operation.
 pub mod update_project;
+
+/// Types for the `UpdateRule` operation.
+pub mod update_rule;
 
 /// Types for the `UpdateSubscriptionGrantStatus` operation.
 pub mod update_subscription_grant_status;

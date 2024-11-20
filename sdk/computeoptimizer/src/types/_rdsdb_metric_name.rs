@@ -12,6 +12,10 @@
 /// ```text
 /// # let rdsdbmetricname = unimplemented!();
 /// match rdsdbmetricname {
+///     RdsdbMetricName::AuroraMemoryHealthState => { /* ... */ },
+///     RdsdbMetricName::AuroraMemoryNumDeclinedSql => { /* ... */ },
+///     RdsdbMetricName::AuroraMemoryNumKillConnTotal => { /* ... */ },
+///     RdsdbMetricName::AuroraMemoryNumKillQueryTotal => { /* ... */ },
 ///     RdsdbMetricName::Cpu => { /* ... */ },
 ///     RdsdbMetricName::DatabaseConnections => { /* ... */ },
 ///     RdsdbMetricName::EbsVolumeReadIops => { /* ... */ },
@@ -22,6 +26,10 @@
 ///     RdsdbMetricName::Memory => { /* ... */ },
 ///     RdsdbMetricName::NetworkReceiveThroughput => { /* ... */ },
 ///     RdsdbMetricName::NetworkTransmitThroughput => { /* ... */ },
+///     RdsdbMetricName::ReadIopsEphemeralStorage => { /* ... */ },
+///     RdsdbMetricName::StorageNetworkReceiveThroughput => { /* ... */ },
+///     RdsdbMetricName::StorageNetworkTransmitThroughput => { /* ... */ },
+///     RdsdbMetricName::WriteIopsEphemeralStorage => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -50,6 +58,14 @@
 )]
 pub enum RdsdbMetricName {
     #[allow(missing_docs)] // documentation missing in model
+    AuroraMemoryHealthState,
+    #[allow(missing_docs)] // documentation missing in model
+    AuroraMemoryNumDeclinedSql,
+    #[allow(missing_docs)] // documentation missing in model
+    AuroraMemoryNumKillConnTotal,
+    #[allow(missing_docs)] // documentation missing in model
+    AuroraMemoryNumKillQueryTotal,
+    #[allow(missing_docs)] // documentation missing in model
     Cpu,
     #[allow(missing_docs)] // documentation missing in model
     DatabaseConnections,
@@ -69,6 +85,14 @@ pub enum RdsdbMetricName {
     NetworkReceiveThroughput,
     #[allow(missing_docs)] // documentation missing in model
     NetworkTransmitThroughput,
+    #[allow(missing_docs)] // documentation missing in model
+    ReadIopsEphemeralStorage,
+    #[allow(missing_docs)] // documentation missing in model
+    StorageNetworkReceiveThroughput,
+    #[allow(missing_docs)] // documentation missing in model
+    StorageNetworkTransmitThroughput,
+    #[allow(missing_docs)] // documentation missing in model
+    WriteIopsEphemeralStorage,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -76,6 +100,10 @@ pub enum RdsdbMetricName {
 impl ::std::convert::From<&str> for RdsdbMetricName {
     fn from(s: &str) -> Self {
         match s {
+            "AuroraMemoryHealthState" => RdsdbMetricName::AuroraMemoryHealthState,
+            "AuroraMemoryNumDeclinedSql" => RdsdbMetricName::AuroraMemoryNumDeclinedSql,
+            "AuroraMemoryNumKillConnTotal" => RdsdbMetricName::AuroraMemoryNumKillConnTotal,
+            "AuroraMemoryNumKillQueryTotal" => RdsdbMetricName::AuroraMemoryNumKillQueryTotal,
             "CPU" => RdsdbMetricName::Cpu,
             "DatabaseConnections" => RdsdbMetricName::DatabaseConnections,
             "EBSVolumeReadIOPS" => RdsdbMetricName::EbsVolumeReadIops,
@@ -86,6 +114,10 @@ impl ::std::convert::From<&str> for RdsdbMetricName {
             "Memory" => RdsdbMetricName::Memory,
             "NetworkReceiveThroughput" => RdsdbMetricName::NetworkReceiveThroughput,
             "NetworkTransmitThroughput" => RdsdbMetricName::NetworkTransmitThroughput,
+            "ReadIOPSEphemeralStorage" => RdsdbMetricName::ReadIopsEphemeralStorage,
+            "StorageNetworkReceiveThroughput" => RdsdbMetricName::StorageNetworkReceiveThroughput,
+            "StorageNetworkTransmitThroughput" => RdsdbMetricName::StorageNetworkTransmitThroughput,
+            "WriteIOPSEphemeralStorage" => RdsdbMetricName::WriteIopsEphemeralStorage,
             other => RdsdbMetricName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -101,6 +133,10 @@ impl RdsdbMetricName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            RdsdbMetricName::AuroraMemoryHealthState => "AuroraMemoryHealthState",
+            RdsdbMetricName::AuroraMemoryNumDeclinedSql => "AuroraMemoryNumDeclinedSql",
+            RdsdbMetricName::AuroraMemoryNumKillConnTotal => "AuroraMemoryNumKillConnTotal",
+            RdsdbMetricName::AuroraMemoryNumKillQueryTotal => "AuroraMemoryNumKillQueryTotal",
             RdsdbMetricName::Cpu => "CPU",
             RdsdbMetricName::DatabaseConnections => "DatabaseConnections",
             RdsdbMetricName::EbsVolumeReadIops => "EBSVolumeReadIOPS",
@@ -111,12 +147,20 @@ impl RdsdbMetricName {
             RdsdbMetricName::Memory => "Memory",
             RdsdbMetricName::NetworkReceiveThroughput => "NetworkReceiveThroughput",
             RdsdbMetricName::NetworkTransmitThroughput => "NetworkTransmitThroughput",
+            RdsdbMetricName::ReadIopsEphemeralStorage => "ReadIOPSEphemeralStorage",
+            RdsdbMetricName::StorageNetworkReceiveThroughput => "StorageNetworkReceiveThroughput",
+            RdsdbMetricName::StorageNetworkTransmitThroughput => "StorageNetworkTransmitThroughput",
+            RdsdbMetricName::WriteIopsEphemeralStorage => "WriteIOPSEphemeralStorage",
             RdsdbMetricName::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "AuroraMemoryHealthState",
+            "AuroraMemoryNumDeclinedSql",
+            "AuroraMemoryNumKillConnTotal",
+            "AuroraMemoryNumKillQueryTotal",
             "CPU",
             "DatabaseConnections",
             "EBSVolumeReadIOPS",
@@ -127,6 +171,10 @@ impl RdsdbMetricName {
             "Memory",
             "NetworkReceiveThroughput",
             "NetworkTransmitThroughput",
+            "ReadIOPSEphemeralStorage",
+            "StorageNetworkReceiveThroughput",
+            "StorageNetworkTransmitThroughput",
+            "WriteIOPSEphemeralStorage",
         ]
     }
 }
@@ -150,6 +198,10 @@ impl RdsdbMetricName {
 impl ::std::fmt::Display for RdsdbMetricName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            RdsdbMetricName::AuroraMemoryHealthState => write!(f, "AuroraMemoryHealthState"),
+            RdsdbMetricName::AuroraMemoryNumDeclinedSql => write!(f, "AuroraMemoryNumDeclinedSql"),
+            RdsdbMetricName::AuroraMemoryNumKillConnTotal => write!(f, "AuroraMemoryNumKillConnTotal"),
+            RdsdbMetricName::AuroraMemoryNumKillQueryTotal => write!(f, "AuroraMemoryNumKillQueryTotal"),
             RdsdbMetricName::Cpu => write!(f, "CPU"),
             RdsdbMetricName::DatabaseConnections => write!(f, "DatabaseConnections"),
             RdsdbMetricName::EbsVolumeReadIops => write!(f, "EBSVolumeReadIOPS"),
@@ -160,6 +212,10 @@ impl ::std::fmt::Display for RdsdbMetricName {
             RdsdbMetricName::Memory => write!(f, "Memory"),
             RdsdbMetricName::NetworkReceiveThroughput => write!(f, "NetworkReceiveThroughput"),
             RdsdbMetricName::NetworkTransmitThroughput => write!(f, "NetworkTransmitThroughput"),
+            RdsdbMetricName::ReadIopsEphemeralStorage => write!(f, "ReadIOPSEphemeralStorage"),
+            RdsdbMetricName::StorageNetworkReceiveThroughput => write!(f, "StorageNetworkReceiveThroughput"),
+            RdsdbMetricName::StorageNetworkTransmitThroughput => write!(f, "StorageNetworkTransmitThroughput"),
+            RdsdbMetricName::WriteIopsEphemeralStorage => write!(f, "WriteIOPSEphemeralStorage"),
             RdsdbMetricName::Unknown(value) => write!(f, "{}", value),
         }
     }

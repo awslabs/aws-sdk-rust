@@ -3,17 +3,23 @@ pub fn ser_update_queue_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_queue::UpdateQueueInput,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.description {
-        object.key("description").string(var_1.as_str());
+    if let Some(var_1) = &input.concurrent_jobs {
+        object.key("concurrentJobs").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+        );
     }
-    if let Some(var_2) = &input.reservation_plan_settings {
+    if let Some(var_2) = &input.description {
+        object.key("description").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.reservation_plan_settings {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("reservationPlanSettings").start_object();
-        crate::protocol_serde::shape_reservation_plan_settings::ser_reservation_plan_settings(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_4 = object.key("reservationPlanSettings").start_object();
+        crate::protocol_serde::shape_reservation_plan_settings::ser_reservation_plan_settings(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_4) = &input.status {
-        object.key("status").string(var_4.as_str());
+    if let Some(var_5) = &input.status {
+        object.key("status").string(var_5.as_str());
     }
     Ok(())
 }

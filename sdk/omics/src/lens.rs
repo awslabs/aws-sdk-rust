@@ -119,6 +119,16 @@ pub(crate) fn reflens_list_references_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_run_caches_output_output_next_token(
+    input: &crate::operation::list_run_caches::ListRunCachesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_run_groups_output_output_next_token(
     input: &crate::operation::list_run_groups::ListRunGroupsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -307,6 +317,16 @@ pub(crate) fn lens_list_references_output_output_references(
     input: crate::operation::list_references::ListReferencesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ReferenceListItem>> {
     let input = input.references;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_run_caches_output_output_items(
+    input: crate::operation::list_run_caches::ListRunCachesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RunCacheListItem>> {
+    let input = match input.items {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
     ::std::option::Option::Some(input)
 }
 

@@ -88,6 +88,8 @@ pub struct CreateAutoScalingGroupInput {
     pub availability_zone_impairment_policy: ::std::option::Option<crate::types::AvailabilityZoneImpairmentPolicy>,
     /// <p>If you enable zonal shift with cross-zone disabled load balancers, capacity could become imbalanced across Availability Zones. To skip the validation, specify <code>true</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-zonal-shift.html">Auto Scaling group zonal shift</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub skip_zonal_shift_validation: ::std::option::Option<bool>,
+    /// <p>The capacity reservation specification for the Auto Scaling group.</p>
+    pub capacity_reservation_specification: ::std::option::Option<crate::types::CapacityReservationSpecification>,
 }
 impl CreateAutoScalingGroupInput {
     /// <p>The name of the Auto Scaling group. This name must be unique per Region per account.</p>
@@ -251,6 +253,10 @@ impl CreateAutoScalingGroupInput {
     pub fn skip_zonal_shift_validation(&self) -> ::std::option::Option<bool> {
         self.skip_zonal_shift_validation
     }
+    /// <p>The capacity reservation specification for the Auto Scaling group.</p>
+    pub fn capacity_reservation_specification(&self) -> ::std::option::Option<&crate::types::CapacityReservationSpecification> {
+        self.capacity_reservation_specification.as_ref()
+    }
 }
 impl CreateAutoScalingGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateAutoScalingGroupInput`](crate::operation::create_auto_scaling_group::CreateAutoScalingGroupInput).
@@ -294,6 +300,7 @@ pub struct CreateAutoScalingGroupInputBuilder {
     pub(crate) availability_zone_distribution: ::std::option::Option<crate::types::AvailabilityZoneDistribution>,
     pub(crate) availability_zone_impairment_policy: ::std::option::Option<crate::types::AvailabilityZoneImpairmentPolicy>,
     pub(crate) skip_zonal_shift_validation: ::std::option::Option<bool>,
+    pub(crate) capacity_reservation_specification: ::std::option::Option<crate::types::CapacityReservationSpecification>,
 }
 impl CreateAutoScalingGroupInputBuilder {
     /// <p>The name of the Auto Scaling group. This name must be unique per Region per account.</p>
@@ -847,6 +854,20 @@ impl CreateAutoScalingGroupInputBuilder {
     pub fn get_skip_zonal_shift_validation(&self) -> &::std::option::Option<bool> {
         &self.skip_zonal_shift_validation
     }
+    /// <p>The capacity reservation specification for the Auto Scaling group.</p>
+    pub fn capacity_reservation_specification(mut self, input: crate::types::CapacityReservationSpecification) -> Self {
+        self.capacity_reservation_specification = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The capacity reservation specification for the Auto Scaling group.</p>
+    pub fn set_capacity_reservation_specification(mut self, input: ::std::option::Option<crate::types::CapacityReservationSpecification>) -> Self {
+        self.capacity_reservation_specification = input;
+        self
+    }
+    /// <p>The capacity reservation specification for the Auto Scaling group.</p>
+    pub fn get_capacity_reservation_specification(&self) -> &::std::option::Option<crate::types::CapacityReservationSpecification> {
+        &self.capacity_reservation_specification
+    }
     /// Consumes the builder and constructs a [`CreateAutoScalingGroupInput`](crate::operation::create_auto_scaling_group::CreateAutoScalingGroupInput).
     pub fn build(
         self,
@@ -886,6 +907,7 @@ impl CreateAutoScalingGroupInputBuilder {
             availability_zone_distribution: self.availability_zone_distribution,
             availability_zone_impairment_policy: self.availability_zone_impairment_policy,
             skip_zonal_shift_validation: self.skip_zonal_shift_validation,
+            capacity_reservation_specification: self.capacity_reservation_specification,
         })
     }
 }

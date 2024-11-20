@@ -81,6 +81,18 @@ pub use crate::types::_retrieve_and_generate_type::RetrieveAndGenerateType;
 
 pub use crate::types::_retrieve_and_generate_input::RetrieveAndGenerateInput;
 
+pub use crate::types::_optimized_prompt_stream::OptimizedPromptStream;
+
+pub use crate::types::_analyze_prompt_event::AnalyzePromptEvent;
+
+pub use crate::types::_optimized_prompt_event::OptimizedPromptEvent;
+
+pub use crate::types::_optimized_prompt::OptimizedPrompt;
+
+pub use crate::types::_text_prompt::TextPrompt;
+
+pub use crate::types::_input_prompt::InputPrompt;
+
 pub use crate::types::_memory::Memory;
 
 pub use crate::types::_memory_session_summary::MemorySessionSummary;
@@ -299,6 +311,8 @@ mod _action_group_invocation_output;
 
 mod _action_invocation_type;
 
+mod _analyze_prompt_event;
+
 mod _api_invocation_input;
 
 mod _api_parameter;
@@ -447,6 +461,8 @@ mod _inference_configuration;
 
 mod _input_file;
 
+mod _input_prompt;
+
 mod _invocation_input;
 
 mod _invocation_input_member;
@@ -484,6 +500,12 @@ mod _model_invocation_input;
 mod _node_type;
 
 mod _observation;
+
+mod _optimized_prompt;
+
+mod _optimized_prompt_event;
+
+mod _optimized_prompt_stream;
 
 mod _orchestration_configuration;
 
@@ -576,6 +598,8 @@ mod _source;
 mod _span;
 
 mod _text_inference_config;
+
+mod _text_prompt;
 
 mod _text_response_part;
 

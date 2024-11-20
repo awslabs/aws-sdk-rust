@@ -255,6 +255,12 @@ pub use crate::types::_launch_template_overrides::LaunchTemplateOverridesBuilder
 
 pub use crate::types::_instance_requirements::InstanceRequirementsBuilder;
 
+pub use crate::types::_baseline_performance_factors::BaselinePerformanceFactorsBuilder;
+
+pub use crate::types::_cpu_performance_factor::CpuPerformanceFactorBuilder;
+
+pub use crate::types::_performance_factor_reference::PerformanceFactorReferenceBuilder;
+
 pub use crate::types::_network_bandwidth_gbps::NetworkBandwidthGbpsBuilder;
 
 pub use crate::types::_accelerator_total_memory_mib::AcceleratorTotalMemoryMiBBuilder;
@@ -576,6 +582,12 @@ pub use crate::types::_fleet_launch_template_config_request::FleetLaunchTemplate
 pub use crate::types::_fleet_launch_template_overrides_request::FleetLaunchTemplateOverridesRequestBuilder;
 
 pub use crate::types::_instance_requirements_request::InstanceRequirementsRequestBuilder;
+
+pub use crate::types::_baseline_performance_factors_request::BaselinePerformanceFactorsRequestBuilder;
+
+pub use crate::types::_cpu_performance_factor_request::CpuPerformanceFactorRequestBuilder;
+
+pub use crate::types::_performance_factor_reference_request::PerformanceFactorReferenceRequestBuilder;
 
 pub use crate::types::_network_bandwidth_gbps_request::NetworkBandwidthGbpsRequestBuilder;
 

@@ -520,4 +520,18 @@ impl UpdateAutoScalingGroupFluentBuilder {
     pub fn get_skip_zonal_shift_validation(&self) -> &::std::option::Option<bool> {
         self.inner.get_skip_zonal_shift_validation()
     }
+    /// <p>The capacity reservation specification for the Auto Scaling group.</p>
+    pub fn capacity_reservation_specification(mut self, input: crate::types::CapacityReservationSpecification) -> Self {
+        self.inner = self.inner.capacity_reservation_specification(input);
+        self
+    }
+    /// <p>The capacity reservation specification for the Auto Scaling group.</p>
+    pub fn set_capacity_reservation_specification(mut self, input: ::std::option::Option<crate::types::CapacityReservationSpecification>) -> Self {
+        self.inner = self.inner.set_capacity_reservation_specification(input);
+        self
+    }
+    /// <p>The capacity reservation specification for the Auto Scaling group.</p>
+    pub fn get_capacity_reservation_specification(&self) -> &::std::option::Option<crate::types::CapacityReservationSpecification> {
+        self.inner.get_capacity_reservation_specification()
+    }
 }

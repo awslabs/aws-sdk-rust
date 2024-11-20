@@ -15,8 +15,10 @@ pub enum Error {
     CachePolicyInUse(crate::types::error::CachePolicyInUse),
     /// <p>You can't change the value of a public key.</p>
     CannotChangeImmutablePublicKeyFields(crate::types::error::CannotChangeImmutablePublicKeyFields),
-    /// <p>The key value store entity cannot be deleted while it is in use.</p>
+    /// <p>The entity cannot be deleted while it is in use.</p>
     CannotDeleteEntityWhileInUse(crate::types::error::CannotDeleteEntityWhileInUse),
+    /// <p>The entity cannot be updated while it is in use.</p>
+    CannotUpdateEntityWhileInUse(crate::types::error::CannotUpdateEntityWhileInUse),
     /// <p>If the <code>CallerReference</code> is a value you already sent in a previous request to create an identity but the content of the <code>CloudFrontOriginAccessIdentityConfig</code> is different from the original request, CloudFront returns a <code>CloudFrontOriginAccessIdentityAlreadyExists</code> error.</p>
     CloudFrontOriginAccessIdentityAlreadyExists(crate::types::error::CloudFrontOriginAccessIdentityAlreadyExists),
     /// <p>The Origin Access Identity specified is already in use.</p>
@@ -29,13 +31,13 @@ pub enum Error {
     DistributionAlreadyExists(crate::types::error::DistributionAlreadyExists),
     /// <p>The specified CloudFront distribution is not disabled. You must disable the distribution before you can delete it.</p>
     DistributionNotDisabled(crate::types::error::DistributionNotDisabled),
-    /// <p>The key value store entity already exists. You must provide a unique key value store entity.</p>
+    /// <p>The entity already exists. You must provide a unique entity.</p>
     EntityAlreadyExists(crate::types::error::EntityAlreadyExists),
-    /// <p>The key value store entity limit has been exceeded.</p>
+    /// <p>The entity limit has been exceeded.</p>
     EntityLimitExceeded(crate::types::error::EntityLimitExceeded),
-    /// <p>The key value store entity was not found.</p>
+    /// <p>The entity was not found.</p>
     EntityNotFound(crate::types::error::EntityNotFound),
-    /// <p>The key value store entity size limit was exceeded.</p>
+    /// <p>The entity size limit was exceeded.</p>
     EntitySizeLimitExceeded(crate::types::error::EntitySizeLimitExceeded),
     /// <p>The specified configuration for field-level encryption already exists.</p>
     FieldLevelEncryptionConfigAlreadyExists(crate::types::error::FieldLevelEncryptionConfigAlreadyExists),
@@ -53,7 +55,7 @@ pub enum Error {
     FunctionInUse(crate::types::error::FunctionInUse),
     /// <p>The function is too large. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
     FunctionSizeLimitExceeded(crate::types::error::FunctionSizeLimitExceeded),
-    /// <p>You cannot delete a managed policy.</p>
+    /// <p>Deletion is not allowed for this entity.</p>
     IllegalDelete(crate::types::error::IllegalDelete),
     /// <p>The specified configuration for field-level encryption can't be associated with the specified cache behavior.</p>
     IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(crate::types::error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior),
@@ -327,6 +329,7 @@ impl ::std::fmt::Display for Error {
             Error::CachePolicyInUse(inner) => inner.fmt(f),
             Error::CannotChangeImmutablePublicKeyFields(inner) => inner.fmt(f),
             Error::CannotDeleteEntityWhileInUse(inner) => inner.fmt(f),
+            Error::CannotUpdateEntityWhileInUse(inner) => inner.fmt(f),
             Error::CloudFrontOriginAccessIdentityAlreadyExists(inner) => inner.fmt(f),
             Error::CloudFrontOriginAccessIdentityInUse(inner) => inner.fmt(f),
             Error::ContinuousDeploymentPolicyAlreadyExists(inner) => inner.fmt(f),
@@ -497,6 +500,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::CachePolicyInUse(inner) => inner.meta(),
             Self::CannotChangeImmutablePublicKeyFields(inner) => inner.meta(),
             Self::CannotDeleteEntityWhileInUse(inner) => inner.meta(),
+            Self::CannotUpdateEntityWhileInUse(inner) => inner.meta(),
             Self::CloudFrontOriginAccessIdentityAlreadyExists(inner) => inner.meta(),
             Self::CloudFrontOriginAccessIdentityInUse(inner) => inner.meta(),
             Self::ContinuousDeploymentPolicyAlreadyExists(inner) => inner.meta(),
@@ -808,6 +812,33 @@ impl From<crate::operation::copy_distribution::CopyDistributionError> for Error 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_anycast_ip_list::CreateAnycastIpListError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_anycast_ip_list::CreateAnycastIpListError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_anycast_ip_list::CreateAnycastIpListError> for Error {
+    fn from(err: crate::operation::create_anycast_ip_list::CreateAnycastIpListError) -> Self {
+        match err {
+            crate::operation::create_anycast_ip_list::CreateAnycastIpListError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::create_anycast_ip_list::CreateAnycastIpListError::EntityAlreadyExists(inner) => Error::EntityAlreadyExists(inner),
+            crate::operation::create_anycast_ip_list::CreateAnycastIpListError::EntityLimitExceeded(inner) => Error::EntityLimitExceeded(inner),
+            crate::operation::create_anycast_ip_list::CreateAnycastIpListError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::create_anycast_ip_list::CreateAnycastIpListError::InvalidTagging(inner) => Error::InvalidTagging(inner),
+            crate::operation::create_anycast_ip_list::CreateAnycastIpListError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
+            crate::operation::create_anycast_ip_list::CreateAnycastIpListError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_cache_policy::CreateCachePolicyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -955,6 +986,7 @@ impl From<crate::operation::create_distribution::CreateDistributionError> for Er
             crate::operation::create_distribution::CreateDistributionError::DistributionAlreadyExists(inner) => {
                 Error::DistributionAlreadyExists(inner)
             }
+            crate::operation::create_distribution::CreateDistributionError::EntityNotFound(inner) => Error::EntityNotFound(inner),
             crate::operation::create_distribution::CreateDistributionError::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner) => {
                 Error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner)
             }
@@ -1118,6 +1150,7 @@ impl From<crate::operation::create_distribution_with_tags::CreateDistributionWit
             crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::CnameAlreadyExists(inner) => Error::CnameAlreadyExists(inner),
             crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::ContinuousDeploymentPolicyInUse(inner) => Error::ContinuousDeploymentPolicyInUse(inner),
             crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::DistributionAlreadyExists(inner) => Error::DistributionAlreadyExists(inner),
+            crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::EntityNotFound(inner) => Error::EntityNotFound(inner),
             crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner) => Error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner),
             crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::IllegalOriginAccessConfiguration(inner) => Error::IllegalOriginAccessConfiguration(inner),
             crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
@@ -1696,6 +1729,65 @@ impl From<crate::operation::create_streaming_distribution_with_tags::CreateStrea
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_vpc_origin::CreateVpcOriginError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_vpc_origin::CreateVpcOriginError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_vpc_origin::CreateVpcOriginError> for Error {
+    fn from(err: crate::operation::create_vpc_origin::CreateVpcOriginError) -> Self {
+        match err {
+            crate::operation::create_vpc_origin::CreateVpcOriginError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::create_vpc_origin::CreateVpcOriginError::EntityAlreadyExists(inner) => Error::EntityAlreadyExists(inner),
+            crate::operation::create_vpc_origin::CreateVpcOriginError::EntityLimitExceeded(inner) => Error::EntityLimitExceeded(inner),
+            crate::operation::create_vpc_origin::CreateVpcOriginError::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
+            crate::operation::create_vpc_origin::CreateVpcOriginError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::create_vpc_origin::CreateVpcOriginError::InvalidTagging(inner) => Error::InvalidTagging(inner),
+            crate::operation::create_vpc_origin::CreateVpcOriginError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
+            crate::operation::create_vpc_origin::CreateVpcOriginError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_anycast_ip_list::DeleteAnycastIpListError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_anycast_ip_list::DeleteAnycastIpListError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_anycast_ip_list::DeleteAnycastIpListError> for Error {
+    fn from(err: crate::operation::delete_anycast_ip_list::DeleteAnycastIpListError) -> Self {
+        match err {
+            crate::operation::delete_anycast_ip_list::DeleteAnycastIpListError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::delete_anycast_ip_list::DeleteAnycastIpListError::CannotDeleteEntityWhileInUse(inner) => {
+                Error::CannotDeleteEntityWhileInUse(inner)
+            }
+            crate::operation::delete_anycast_ip_list::DeleteAnycastIpListError::EntityNotFound(inner) => Error::EntityNotFound(inner),
+            crate::operation::delete_anycast_ip_list::DeleteAnycastIpListError::IllegalDelete(inner) => Error::IllegalDelete(inner),
+            crate::operation::delete_anycast_ip_list::DeleteAnycastIpListError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::delete_anycast_ip_list::DeleteAnycastIpListError::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::operation::delete_anycast_ip_list::DeleteAnycastIpListError::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::operation::delete_anycast_ip_list::DeleteAnycastIpListError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
+            crate::operation::delete_anycast_ip_list::DeleteAnycastIpListError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_cache_policy::DeleteCachePolicyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2264,6 +2356,37 @@ impl From<crate::operation::delete_streaming_distribution::DeleteStreamingDistri
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_vpc_origin::DeleteVpcOriginError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_vpc_origin::DeleteVpcOriginError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_vpc_origin::DeleteVpcOriginError> for Error {
+    fn from(err: crate::operation::delete_vpc_origin::DeleteVpcOriginError) -> Self {
+        match err {
+            crate::operation::delete_vpc_origin::DeleteVpcOriginError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::delete_vpc_origin::DeleteVpcOriginError::CannotDeleteEntityWhileInUse(inner) => {
+                Error::CannotDeleteEntityWhileInUse(inner)
+            }
+            crate::operation::delete_vpc_origin::DeleteVpcOriginError::EntityNotFound(inner) => Error::EntityNotFound(inner),
+            crate::operation::delete_vpc_origin::DeleteVpcOriginError::IllegalDelete(inner) => Error::IllegalDelete(inner),
+            crate::operation::delete_vpc_origin::DeleteVpcOriginError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::delete_vpc_origin::DeleteVpcOriginError::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::operation::delete_vpc_origin::DeleteVpcOriginError::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::operation::delete_vpc_origin::DeleteVpcOriginError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
+            crate::operation::delete_vpc_origin::DeleteVpcOriginError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_function::DescribeFunctionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2311,6 +2434,31 @@ impl From<crate::operation::describe_key_value_store::DescribeKeyValueStoreError
             crate::operation::describe_key_value_store::DescribeKeyValueStoreError::InvalidArgument(inner) => Error::InvalidArgument(inner),
             crate::operation::describe_key_value_store::DescribeKeyValueStoreError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
             crate::operation::describe_key_value_store::DescribeKeyValueStoreError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_anycast_ip_list::GetAnycastIpListError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_anycast_ip_list::GetAnycastIpListError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_anycast_ip_list::GetAnycastIpListError> for Error {
+    fn from(err: crate::operation::get_anycast_ip_list::GetAnycastIpListError) -> Self {
+        match err {
+            crate::operation::get_anycast_ip_list::GetAnycastIpListError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::get_anycast_ip_list::GetAnycastIpListError::EntityNotFound(inner) => Error::EntityNotFound(inner),
+            crate::operation::get_anycast_ip_list::GetAnycastIpListError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::get_anycast_ip_list::GetAnycastIpListError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
+            crate::operation::get_anycast_ip_list::GetAnycastIpListError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3140,6 +3288,56 @@ impl From<crate::operation::get_streaming_distribution_config::GetStreamingDistr
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_vpc_origin::GetVpcOriginError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_vpc_origin::GetVpcOriginError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_vpc_origin::GetVpcOriginError> for Error {
+    fn from(err: crate::operation::get_vpc_origin::GetVpcOriginError) -> Self {
+        match err {
+            crate::operation::get_vpc_origin::GetVpcOriginError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::get_vpc_origin::GetVpcOriginError::EntityNotFound(inner) => Error::EntityNotFound(inner),
+            crate::operation::get_vpc_origin::GetVpcOriginError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::get_vpc_origin::GetVpcOriginError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
+            crate::operation::get_vpc_origin::GetVpcOriginError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_anycast_ip_lists::ListAnycastIpListsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_anycast_ip_lists::ListAnycastIpListsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_anycast_ip_lists::ListAnycastIpListsError> for Error {
+    fn from(err: crate::operation::list_anycast_ip_lists::ListAnycastIpListsError) -> Self {
+        match err {
+            crate::operation::list_anycast_ip_lists::ListAnycastIpListsError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::list_anycast_ip_lists::ListAnycastIpListsError::EntityNotFound(inner) => Error::EntityNotFound(inner),
+            crate::operation::list_anycast_ip_lists::ListAnycastIpListsError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::list_anycast_ip_lists::ListAnycastIpListsError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
+            crate::operation::list_anycast_ip_lists::ListAnycastIpListsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_cache_policies::ListCachePoliciesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3286,6 +3484,52 @@ impl From<crate::operation::list_distributions::ListDistributionsError> for Erro
         match err {
             crate::operation::list_distributions::ListDistributionsError::InvalidArgument(inner) => Error::InvalidArgument(inner),
             crate::operation::list_distributions::ListDistributionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_distributions_by_anycast_ip_list_id::ListDistributionsByAnycastIpListIdError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_distributions_by_anycast_ip_list_id::ListDistributionsByAnycastIpListIdError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_distributions_by_anycast_ip_list_id::ListDistributionsByAnycastIpListIdError> for Error {
+    fn from(err: crate::operation::list_distributions_by_anycast_ip_list_id::ListDistributionsByAnycastIpListIdError) -> Self {
+        match err {
+            crate::operation::list_distributions_by_anycast_ip_list_id::ListDistributionsByAnycastIpListIdError::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::operation::list_distributions_by_anycast_ip_list_id::ListDistributionsByAnycastIpListIdError::EntityNotFound(inner) => {
+                Error::EntityNotFound(inner)
+            }
+            crate::operation::list_distributions_by_anycast_ip_list_id::ListDistributionsByAnycastIpListIdError::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::operation::list_distributions_by_anycast_ip_list_id::ListDistributionsByAnycastIpListIdError::UnsupportedOperation(inner) => {
+                Error::UnsupportedOperation(inner)
+            }
+            crate::operation::list_distributions_by_anycast_ip_list_id::ListDistributionsByAnycastIpListIdError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -3470,6 +3714,50 @@ impl From<crate::operation::list_distributions_by_response_headers_policy_id::Li
             crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyIdError::InvalidArgument(inner) => Error::InvalidArgument(inner),
             crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyIdError::NoSuchResponseHeadersPolicy(inner) => Error::NoSuchResponseHeadersPolicy(inner),
             crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyIdError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_distributions_by_vpc_origin_id::ListDistributionsByVpcOriginIdError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_distributions_by_vpc_origin_id::ListDistributionsByVpcOriginIdError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_distributions_by_vpc_origin_id::ListDistributionsByVpcOriginIdError> for Error {
+    fn from(err: crate::operation::list_distributions_by_vpc_origin_id::ListDistributionsByVpcOriginIdError) -> Self {
+        match err {
+            crate::operation::list_distributions_by_vpc_origin_id::ListDistributionsByVpcOriginIdError::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::operation::list_distributions_by_vpc_origin_id::ListDistributionsByVpcOriginIdError::EntityNotFound(inner) => {
+                Error::EntityNotFound(inner)
+            }
+            crate::operation::list_distributions_by_vpc_origin_id::ListDistributionsByVpcOriginIdError::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::operation::list_distributions_by_vpc_origin_id::ListDistributionsByVpcOriginIdError::UnsupportedOperation(inner) => {
+                Error::UnsupportedOperation(inner)
+            }
+            crate::operation::list_distributions_by_vpc_origin_id::ListDistributionsByVpcOriginIdError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3862,6 +4150,31 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_vpc_origins::ListVpcOriginsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_vpc_origins::ListVpcOriginsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_vpc_origins::ListVpcOriginsError> for Error {
+    fn from(err: crate::operation::list_vpc_origins::ListVpcOriginsError) -> Self {
+        match err {
+            crate::operation::list_vpc_origins::ListVpcOriginsError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::list_vpc_origins::ListVpcOriginsError::EntityNotFound(inner) => Error::EntityNotFound(inner),
+            crate::operation::list_vpc_origins::ListVpcOriginsError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::list_vpc_origins::ListVpcOriginsError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
+            crate::operation::list_vpc_origins::ListVpcOriginsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::publish_function::PublishFunctionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -4117,6 +4430,7 @@ impl From<crate::operation::update_distribution::UpdateDistributionError> for Er
             crate::operation::update_distribution::UpdateDistributionError::ContinuousDeploymentPolicyInUse(inner) => {
                 Error::ContinuousDeploymentPolicyInUse(inner)
             }
+            crate::operation::update_distribution::UpdateDistributionError::EntityNotFound(inner) => Error::EntityNotFound(inner),
             crate::operation::update_distribution::UpdateDistributionError::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner) => {
                 Error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner)
             }
@@ -4288,6 +4602,7 @@ impl From<crate::operation::update_distribution_with_staging_config::UpdateDistr
         match err {
             crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::AccessDenied(inner) => Error::AccessDenied(inner),
             crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::CnameAlreadyExists(inner) => Error::CnameAlreadyExists(inner),
+            crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::EntityNotFound(inner) => Error::EntityNotFound(inner),
             crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner) => Error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner),
             crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::IllegalUpdate(inner) => Error::IllegalUpdate(inner),
             crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
@@ -4785,6 +5100,40 @@ impl From<crate::operation::update_streaming_distribution::UpdateStreamingDistri
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_vpc_origin::UpdateVpcOriginError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_vpc_origin::UpdateVpcOriginError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_vpc_origin::UpdateVpcOriginError> for Error {
+    fn from(err: crate::operation::update_vpc_origin::UpdateVpcOriginError) -> Self {
+        match err {
+            crate::operation::update_vpc_origin::UpdateVpcOriginError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::update_vpc_origin::UpdateVpcOriginError::CannotUpdateEntityWhileInUse(inner) => {
+                Error::CannotUpdateEntityWhileInUse(inner)
+            }
+            crate::operation::update_vpc_origin::UpdateVpcOriginError::EntityAlreadyExists(inner) => Error::EntityAlreadyExists(inner),
+            crate::operation::update_vpc_origin::UpdateVpcOriginError::EntityLimitExceeded(inner) => Error::EntityLimitExceeded(inner),
+            crate::operation::update_vpc_origin::UpdateVpcOriginError::EntityNotFound(inner) => Error::EntityNotFound(inner),
+            crate::operation::update_vpc_origin::UpdateVpcOriginError::IllegalUpdate(inner) => Error::IllegalUpdate(inner),
+            crate::operation::update_vpc_origin::UpdateVpcOriginError::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
+            crate::operation::update_vpc_origin::UpdateVpcOriginError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::update_vpc_origin::UpdateVpcOriginError::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::operation::update_vpc_origin::UpdateVpcOriginError::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::operation::update_vpc_origin::UpdateVpcOriginError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
+            crate::operation::update_vpc_origin::UpdateVpcOriginError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<O, E> ::std::convert::From<::aws_smithy_runtime_api::client::waiters::error::WaiterError<O, E>> for Error
 where
     O: ::std::fmt::Debug + ::std::marker::Send + ::std::marker::Sync + 'static,
@@ -4807,6 +5156,7 @@ impl ::std::error::Error for Error {
             Error::CachePolicyInUse(inner) => inner.source(),
             Error::CannotChangeImmutablePublicKeyFields(inner) => inner.source(),
             Error::CannotDeleteEntityWhileInUse(inner) => inner.source(),
+            Error::CannotUpdateEntityWhileInUse(inner) => inner.source(),
             Error::CloudFrontOriginAccessIdentityAlreadyExists(inner) => inner.source(),
             Error::CloudFrontOriginAccessIdentityInUse(inner) => inner.source(),
             Error::ContinuousDeploymentPolicyAlreadyExists(inner) => inner.source(),
@@ -4963,6 +5313,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::CachePolicyInUse(e) => e.request_id(),
             Self::CannotChangeImmutablePublicKeyFields(e) => e.request_id(),
             Self::CannotDeleteEntityWhileInUse(e) => e.request_id(),
+            Self::CannotUpdateEntityWhileInUse(e) => e.request_id(),
             Self::CloudFrontOriginAccessIdentityAlreadyExists(e) => e.request_id(),
             Self::CloudFrontOriginAccessIdentityInUse(e) => e.request_id(),
             Self::ContinuousDeploymentPolicyAlreadyExists(e) => e.request_id(),

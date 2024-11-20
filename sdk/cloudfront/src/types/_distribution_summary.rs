@@ -47,6 +47,8 @@ pub struct DistributionSummary {
     pub alias_icp_recordals: ::std::option::Option<::std::vec::Vec<crate::types::AliasIcpRecordal>>,
     /// <p>A Boolean that indicates whether this is a staging distribution. When this value is <code>true</code>, this is a staging distribution. When this value is <code>false</code>, this is not a staging distribution.</p>
     pub staging: bool,
+    /// <p>ID of the Anycast static IP list that is associated with the distribution.</p>
+    pub anycast_ip_list_id: ::std::option::Option<::std::string::String>,
 }
 impl DistributionSummary {
     /// <p>The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>.</p>
@@ -142,6 +144,10 @@ impl DistributionSummary {
     pub fn staging(&self) -> bool {
         self.staging
     }
+    /// <p>ID of the Anycast static IP list that is associated with the distribution.</p>
+    pub fn anycast_ip_list_id(&self) -> ::std::option::Option<&str> {
+        self.anycast_ip_list_id.as_deref()
+    }
 }
 impl DistributionSummary {
     /// Creates a new builder-style object to manufacture [`DistributionSummary`](crate::types::DistributionSummary).
@@ -175,6 +181,7 @@ pub struct DistributionSummaryBuilder {
     pub(crate) is_ipv6_enabled: ::std::option::Option<bool>,
     pub(crate) alias_icp_recordals: ::std::option::Option<::std::vec::Vec<crate::types::AliasIcpRecordal>>,
     pub(crate) staging: ::std::option::Option<bool>,
+    pub(crate) anycast_ip_list_id: ::std::option::Option<::std::string::String>,
 }
 impl DistributionSummaryBuilder {
     /// <p>The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>.</p>
@@ -499,6 +506,20 @@ impl DistributionSummaryBuilder {
     pub fn get_staging(&self) -> &::std::option::Option<bool> {
         &self.staging
     }
+    /// <p>ID of the Anycast static IP list that is associated with the distribution.</p>
+    pub fn anycast_ip_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.anycast_ip_list_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>ID of the Anycast static IP list that is associated with the distribution.</p>
+    pub fn set_anycast_ip_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.anycast_ip_list_id = input;
+        self
+    }
+    /// <p>ID of the Anycast static IP list that is associated with the distribution.</p>
+    pub fn get_anycast_ip_list_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.anycast_ip_list_id
+    }
     /// Consumes the builder and constructs a [`DistributionSummary`](crate::types::DistributionSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::DistributionSummaryBuilder::id)
@@ -596,6 +617,7 @@ impl DistributionSummaryBuilder {
                     "staging was not specified but it is required when building DistributionSummary",
                 )
             })?,
+            anycast_ip_list_id: self.anycast_ip_list_id,
         })
     }
 }

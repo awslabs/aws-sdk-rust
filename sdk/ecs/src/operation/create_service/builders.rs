@@ -176,6 +176,23 @@ impl CreateServiceFluentBuilder {
     pub fn get_task_definition(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_task_definition()
     }
+    /// <p>Indicates whether to use Availability Zone rebalancing for the service.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html">Balancing an Amazon ECS service across Availability Zones</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn availability_zone_rebalancing(mut self, input: crate::types::AvailabilityZoneRebalancing) -> Self {
+        self.inner = self.inner.availability_zone_rebalancing(input);
+        self
+    }
+    /// <p>Indicates whether to use Availability Zone rebalancing for the service.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html">Balancing an Amazon ECS service across Availability Zones</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn set_availability_zone_rebalancing(mut self, input: ::std::option::Option<crate::types::AvailabilityZoneRebalancing>) -> Self {
+        self.inner = self.inner.set_availability_zone_rebalancing(input);
+        self
+    }
+    /// <p>Indicates whether to use Availability Zone rebalancing for the service.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html">Balancing an Amazon ECS service across Availability Zones</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn get_availability_zone_rebalancing(&self) -> &::std::option::Option<crate::types::AvailabilityZoneRebalancing> {
+        self.inner.get_availability_zone_rebalancing()
+    }
     ///
     /// Appends an item to `loadBalancers`.
     ///

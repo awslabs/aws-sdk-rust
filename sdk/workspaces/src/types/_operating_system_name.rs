@@ -14,6 +14,7 @@
 /// match operatingsystemname {
 ///     OperatingSystemName::AmazonLinux2 => { /* ... */ },
 ///     OperatingSystemName::Rhel8 => { /* ... */ },
+///     OperatingSystemName::Rocky8 => { /* ... */ },
 ///     OperatingSystemName::Ubuntu1804 => { /* ... */ },
 ///     OperatingSystemName::Ubuntu2004 => { /* ... */ },
 ///     OperatingSystemName::Ubuntu2204 => { /* ... */ },
@@ -56,6 +57,8 @@ pub enum OperatingSystemName {
     #[allow(missing_docs)] // documentation missing in model
     Rhel8,
     #[allow(missing_docs)] // documentation missing in model
+    Rocky8,
+    #[allow(missing_docs)] // documentation missing in model
     Ubuntu1804,
     #[allow(missing_docs)] // documentation missing in model
     Ubuntu2004,
@@ -84,6 +87,7 @@ impl ::std::convert::From<&str> for OperatingSystemName {
         match s {
             "AMAZON_LINUX_2" => OperatingSystemName::AmazonLinux2,
             "RHEL_8" => OperatingSystemName::Rhel8,
+            "ROCKY_8" => OperatingSystemName::Rocky8,
             "UBUNTU_18_04" => OperatingSystemName::Ubuntu1804,
             "UBUNTU_20_04" => OperatingSystemName::Ubuntu2004,
             "UBUNTU_22_04" => OperatingSystemName::Ubuntu2204,
@@ -111,6 +115,7 @@ impl OperatingSystemName {
         match self {
             OperatingSystemName::AmazonLinux2 => "AMAZON_LINUX_2",
             OperatingSystemName::Rhel8 => "RHEL_8",
+            OperatingSystemName::Rocky8 => "ROCKY_8",
             OperatingSystemName::Ubuntu1804 => "UBUNTU_18_04",
             OperatingSystemName::Ubuntu2004 => "UBUNTU_20_04",
             OperatingSystemName::Ubuntu2204 => "UBUNTU_22_04",
@@ -129,6 +134,7 @@ impl OperatingSystemName {
         &[
             "AMAZON_LINUX_2",
             "RHEL_8",
+            "ROCKY_8",
             "UBUNTU_18_04",
             "UBUNTU_20_04",
             "UBUNTU_22_04",
@@ -164,6 +170,7 @@ impl ::std::fmt::Display for OperatingSystemName {
         match self {
             OperatingSystemName::AmazonLinux2 => write!(f, "AMAZON_LINUX_2"),
             OperatingSystemName::Rhel8 => write!(f, "RHEL_8"),
+            OperatingSystemName::Rocky8 => write!(f, "ROCKY_8"),
             OperatingSystemName::Ubuntu1804 => write!(f, "UBUNTU_18_04"),
             OperatingSystemName::Ubuntu2004 => write!(f, "UBUNTU_20_04"),
             OperatingSystemName::Ubuntu2204 => write!(f, "UBUNTU_22_04"),

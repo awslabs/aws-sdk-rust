@@ -5,11 +5,11 @@ pub fn ser_logging_config(
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    {
+    if input.enabled {
         let mut inner_writer = scope.start_el("Enabled").finish();
         inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.enabled).encode());
     }
-    {
+    if input.include_cookies {
         let mut inner_writer = scope.start_el("IncludeCookies").finish();
         inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.include_cookies).encode());
     }
@@ -92,7 +92,5 @@ pub fn de_logging_config(
             _ => {}
         }
     }
-    Ok(crate::serde_util::logging_config_correct_errors(builder)
-        .build()
-        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
+    Ok(builder.build())
 }

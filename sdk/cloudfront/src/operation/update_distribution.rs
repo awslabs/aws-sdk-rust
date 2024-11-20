@@ -264,6 +264,8 @@ pub enum UpdateDistributionError {
     CnameAlreadyExists(crate::types::error::CnameAlreadyExists),
     /// <p>You cannot delete a continuous deployment policy that is associated with a primary distribution.</p>
     ContinuousDeploymentPolicyInUse(crate::types::error::ContinuousDeploymentPolicyInUse),
+    /// <p>The entity was not found.</p>
+    EntityNotFound(crate::types::error::EntityNotFound),
     /// <p>The specified configuration for field-level encryption can't be associated with the specified cache behavior.</p>
     IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(crate::types::error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior),
     /// <p>An origin cannot contain both an origin access control (OAC) and an origin access identity (OAI).</p>
@@ -428,6 +430,7 @@ impl UpdateDistributionError {
             Self::AccessDenied(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::CnameAlreadyExists(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ContinuousDeploymentPolicyInUse(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::EntityNotFound(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(e) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e)
             }
@@ -507,6 +510,10 @@ impl UpdateDistributionError {
     /// Returns `true` if the error kind is `UpdateDistributionError::ContinuousDeploymentPolicyInUse`.
     pub fn is_continuous_deployment_policy_in_use(&self) -> bool {
         matches!(self, Self::ContinuousDeploymentPolicyInUse(_))
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionError::EntityNotFound`.
+    pub fn is_entity_not_found(&self) -> bool {
+        matches!(self, Self::EntityNotFound(_))
     }
     /// Returns `true` if the error kind is `UpdateDistributionError::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior`.
     pub fn is_illegal_field_level_encryption_config_association_with_cache_behavior(&self) -> bool {
@@ -767,6 +774,7 @@ impl ::std::error::Error for UpdateDistributionError {
             Self::AccessDenied(_inner) => ::std::option::Option::Some(_inner),
             Self::CnameAlreadyExists(_inner) => ::std::option::Option::Some(_inner),
             Self::ContinuousDeploymentPolicyInUse(_inner) => ::std::option::Option::Some(_inner),
+            Self::EntityNotFound(_inner) => ::std::option::Option::Some(_inner),
             Self::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(_inner) => ::std::option::Option::Some(_inner),
             Self::IllegalOriginAccessConfiguration(_inner) => ::std::option::Option::Some(_inner),
             Self::IllegalUpdate(_inner) => ::std::option::Option::Some(_inner),
@@ -840,6 +848,7 @@ impl ::std::fmt::Display for UpdateDistributionError {
             Self::AccessDenied(_inner) => _inner.fmt(f),
             Self::CnameAlreadyExists(_inner) => _inner.fmt(f),
             Self::ContinuousDeploymentPolicyInUse(_inner) => _inner.fmt(f),
+            Self::EntityNotFound(_inner) => _inner.fmt(f),
             Self::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(_inner) => _inner.fmt(f),
             Self::IllegalOriginAccessConfiguration(_inner) => _inner.fmt(f),
             Self::IllegalUpdate(_inner) => _inner.fmt(f),
@@ -927,6 +936,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateDistrib
             Self::AccessDenied(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::CnameAlreadyExists(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ContinuousDeploymentPolicyInUse(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::EntityNotFound(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }

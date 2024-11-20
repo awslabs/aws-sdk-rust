@@ -7,6 +7,12 @@ pub struct GetRunOutput {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The run's ID.</p>
     pub id: ::std::option::Option<::std::string::String>,
+    /// <p>The run cache associated with the run.</p>
+    pub cache_id: ::std::option::Option<::std::string::String>,
+    /// <p>The run cache behavior for the run.</p>
+    pub cache_behavior: ::std::option::Option<crate::types::CacheBehavior>,
+    /// <p>The workflow engine version.</p>
+    pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The run's status.</p>
     pub status: ::std::option::Option<crate::types::RunStatus>,
     /// <p>The run's workflow ID.</p>
@@ -75,6 +81,18 @@ impl GetRunOutput {
     /// <p>The run's ID.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
+    }
+    /// <p>The run cache associated with the run.</p>
+    pub fn cache_id(&self) -> ::std::option::Option<&str> {
+        self.cache_id.as_deref()
+    }
+    /// <p>The run cache behavior for the run.</p>
+    pub fn cache_behavior(&self) -> ::std::option::Option<&crate::types::CacheBehavior> {
+        self.cache_behavior.as_ref()
+    }
+    /// <p>The workflow engine version.</p>
+    pub fn engine_version(&self) -> ::std::option::Option<&str> {
+        self.engine_version.as_deref()
     }
     /// <p>The run's status.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::RunStatus> {
@@ -211,6 +229,9 @@ impl GetRunOutput {
 pub struct GetRunOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) cache_id: ::std::option::Option<::std::string::String>,
+    pub(crate) cache_behavior: ::std::option::Option<crate::types::CacheBehavior>,
+    pub(crate) engine_version: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::RunStatus>,
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_type: ::std::option::Option<crate::types::WorkflowType>,
@@ -270,6 +291,48 @@ impl GetRunOutputBuilder {
     /// <p>The run's ID.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
+    }
+    /// <p>The run cache associated with the run.</p>
+    pub fn cache_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cache_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The run cache associated with the run.</p>
+    pub fn set_cache_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cache_id = input;
+        self
+    }
+    /// <p>The run cache associated with the run.</p>
+    pub fn get_cache_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cache_id
+    }
+    /// <p>The run cache behavior for the run.</p>
+    pub fn cache_behavior(mut self, input: crate::types::CacheBehavior) -> Self {
+        self.cache_behavior = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The run cache behavior for the run.</p>
+    pub fn set_cache_behavior(mut self, input: ::std::option::Option<crate::types::CacheBehavior>) -> Self {
+        self.cache_behavior = input;
+        self
+    }
+    /// <p>The run cache behavior for the run.</p>
+    pub fn get_cache_behavior(&self) -> &::std::option::Option<crate::types::CacheBehavior> {
+        &self.cache_behavior
+    }
+    /// <p>The workflow engine version.</p>
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.engine_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The workflow engine version.</p>
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.engine_version = input;
+        self
+    }
+    /// <p>The workflow engine version.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
     }
     /// <p>The run's status.</p>
     pub fn status(mut self, input: crate::types::RunStatus) -> Self {
@@ -710,6 +773,9 @@ impl GetRunOutputBuilder {
         crate::operation::get_run::GetRunOutput {
             arn: self.arn,
             id: self.id,
+            cache_id: self.cache_id,
+            cache_behavior: self.cache_behavior,
+            engine_version: self.engine_version,
             status: self.status,
             workflow_id: self.workflow_id,
             workflow_type: self.workflow_type,

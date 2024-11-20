@@ -262,6 +262,19 @@ pub fn de_distribution_summary(
                 builder = builder.set_staging(var_21);
             }
             ,
+            s if s.matches("AnycastIpListId") /* AnycastIpListId com.amazonaws.cloudfront#DistributionSummary$AnycastIpListId */ =>  {
+                let var_22 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_anycast_ip_list_id(var_22);
+            }
+            ,
             _ => {}
         }
     }

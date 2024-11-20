@@ -25,6 +25,8 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_associate_browser_settings;
 
+pub(crate) mod shape_associate_data_protection_settings;
+
 pub(crate) mod shape_associate_ip_access_settings;
 
 pub(crate) mod shape_associate_network_settings;
@@ -36,6 +38,8 @@ pub(crate) mod shape_associate_user_access_logging_settings;
 pub(crate) mod shape_associate_user_settings;
 
 pub(crate) mod shape_create_browser_settings;
+
+pub(crate) mod shape_create_data_protection_settings;
 
 pub(crate) mod shape_create_identity_provider;
 
@@ -53,6 +57,8 @@ pub(crate) mod shape_create_user_settings;
 
 pub(crate) mod shape_delete_browser_settings;
 
+pub(crate) mod shape_delete_data_protection_settings;
+
 pub(crate) mod shape_delete_identity_provider;
 
 pub(crate) mod shape_delete_ip_access_settings;
@@ -69,6 +75,8 @@ pub(crate) mod shape_delete_user_settings;
 
 pub(crate) mod shape_disassociate_browser_settings;
 
+pub(crate) mod shape_disassociate_data_protection_settings;
+
 pub(crate) mod shape_disassociate_ip_access_settings;
 
 pub(crate) mod shape_disassociate_network_settings;
@@ -82,6 +90,8 @@ pub(crate) mod shape_disassociate_user_settings;
 pub(crate) mod shape_expire_session;
 
 pub(crate) mod shape_get_browser_settings;
+
+pub(crate) mod shape_get_data_protection_settings;
 
 pub(crate) mod shape_get_identity_provider;
 
@@ -104,6 +114,8 @@ pub(crate) mod shape_get_user_access_logging_settings;
 pub(crate) mod shape_get_user_settings;
 
 pub(crate) mod shape_list_browser_settings;
+
+pub(crate) mod shape_list_data_protection_settings;
 
 pub(crate) mod shape_list_identity_providers;
 
@@ -130,6 +142,8 @@ pub(crate) mod shape_tag_resource;
 pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_browser_settings;
+
+pub(crate) mod shape_update_data_protection_settings;
 
 pub(crate) mod shape_update_identity_provider;
 
@@ -159,6 +173,8 @@ pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_browser_settings_input;
 
+pub(crate) mod shape_create_data_protection_settings_input;
+
 pub(crate) mod shape_create_identity_provider_input;
 
 pub(crate) mod shape_create_ip_access_settings_input;
@@ -187,6 +203,8 @@ pub(crate) mod shape_too_many_tags_exception;
 
 pub(crate) mod shape_update_browser_settings_input;
 
+pub(crate) mod shape_update_data_protection_settings_input;
+
 pub(crate) mod shape_update_identity_provider_input;
 
 pub(crate) mod shape_update_ip_access_settings_input;
@@ -213,9 +231,15 @@ pub(crate) mod shape_certificate_summary_list;
 
 pub(crate) mod shape_cookie_synchronization_configuration;
 
+pub(crate) mod shape_data_protection_settings;
+
+pub(crate) mod shape_data_protection_settings_list;
+
 pub(crate) mod shape_identity_provider;
 
 pub(crate) mod shape_identity_provider_list;
+
+pub(crate) mod shape_inline_redaction_configuration;
 
 pub(crate) mod shape_ip_access_settings;
 
@@ -261,11 +285,15 @@ pub(crate) mod shape_certificate_summary;
 
 pub(crate) mod shape_cookie_specification;
 
+pub(crate) mod shape_data_protection_settings_summary;
+
 pub(crate) mod shape_encryption_context_map;
 
 pub(crate) mod shape_identity_provider_details;
 
 pub(crate) mod shape_identity_provider_summary;
+
+pub(crate) mod shape_inline_redaction_pattern;
 
 pub(crate) mod shape_ip_access_settings_summary;
 
@@ -292,3 +320,13 @@ pub(crate) mod shape_user_settings_summary;
 pub(crate) mod shape_validation_exception_field;
 
 pub(crate) mod shape_cookie_specifications;
+
+pub(crate) mod shape_custom_pattern;
+
+pub(crate) mod shape_global_inline_redaction_urls;
+
+pub(crate) mod shape_inline_redaction_patterns;
+
+pub(crate) mod shape_redaction_place_holder;
+
+pub(crate) mod shape_inline_redaction_urls;

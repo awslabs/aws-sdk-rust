@@ -23,7 +23,7 @@ impl crate::operation::create_blue_green_deployment::builders::CreateBlueGreenDe
 /// Fluent builder constructing a request to `CreateBlueGreenDeployment`.
 ///
 /// <p>Creates a blue/green deployment.</p>
-/// <p>A blue/green deployment creates a staging environment that copies the production environment. In a blue/green deployment, the blue environment is the current production environment. The green environment is the staging environment. The staging environment stays in sync with the current production environment using logical replication.</p>
+/// <p>A blue/green deployment creates a staging environment that copies the production environment. In a blue/green deployment, the blue environment is the current production environment. The green environment is the staging environment, and it stays in sync with the current production environment.</p>
 /// <p>You can make changes to the databases in the green environment without affecting production workloads. For example, you can upgrade the major or minor DB engine version, change database parameters, or make schema changes in the staging environment. You can thoroughly test changes in the green environment. When ready, you can switch over the environments to promote the green environment to be the new production environment. The switchover typically takes under a minute.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -257,5 +257,79 @@ impl CreateBlueGreenDeploymentFluentBuilder {
     /// <p>Whether to upgrade the storage file system configuration on the green database. This option migrates the green DB instance from the older 32-bit file system to the preferred configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem">Upgrading the storage file system for a DB instance</a>.</p>
     pub fn get_upgrade_target_storage_config(&self) -> &::std::option::Option<bool> {
         self.inner.get_upgrade_target_storage_config()
+    }
+    /// <p>The amount of Provisioned IOPS (input/output operations per second) to allocate for the green DB instance. For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html">Amazon RDS DB instance storage</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>This setting doesn't apply to Amazon Aurora blue/green deployments.</p>
+    pub fn target_iops(mut self, input: i32) -> Self {
+        self.inner = self.inner.target_iops(input);
+        self
+    }
+    /// <p>The amount of Provisioned IOPS (input/output operations per second) to allocate for the green DB instance. For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html">Amazon RDS DB instance storage</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>This setting doesn't apply to Amazon Aurora blue/green deployments.</p>
+    pub fn set_target_iops(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_target_iops(input);
+        self
+    }
+    /// <p>The amount of Provisioned IOPS (input/output operations per second) to allocate for the green DB instance. For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html">Amazon RDS DB instance storage</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>This setting doesn't apply to Amazon Aurora blue/green deployments.</p>
+    pub fn get_target_iops(&self) -> &::std::option::Option<i32> {
+        self.inner.get_target_iops()
+    }
+    /// <p>The storage type to associate with the green DB instance.</p>
+    /// <p>Valid Values: <code>gp2 | gp3 | io1 | io2</code></p>
+    /// <p>This setting doesn't apply to Amazon Aurora blue/green deployments.</p>
+    pub fn target_storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.target_storage_type(input.into());
+        self
+    }
+    /// <p>The storage type to associate with the green DB instance.</p>
+    /// <p>Valid Values: <code>gp2 | gp3 | io1 | io2</code></p>
+    /// <p>This setting doesn't apply to Amazon Aurora blue/green deployments.</p>
+    pub fn set_target_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_target_storage_type(input);
+        self
+    }
+    /// <p>The storage type to associate with the green DB instance.</p>
+    /// <p>Valid Values: <code>gp2 | gp3 | io1 | io2</code></p>
+    /// <p>This setting doesn't apply to Amazon Aurora blue/green deployments.</p>
+    pub fn get_target_storage_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_storage_type()
+    }
+    /// <p>The amount of storage in gibibytes (GiB) to allocate for the green DB instance. You can choose to increase or decrease the allocated storage on the green DB instance.</p>
+    /// <p>This setting doesn't apply to Amazon Aurora blue/green deployments.</p>
+    pub fn target_allocated_storage(mut self, input: i32) -> Self {
+        self.inner = self.inner.target_allocated_storage(input);
+        self
+    }
+    /// <p>The amount of storage in gibibytes (GiB) to allocate for the green DB instance. You can choose to increase or decrease the allocated storage on the green DB instance.</p>
+    /// <p>This setting doesn't apply to Amazon Aurora blue/green deployments.</p>
+    pub fn set_target_allocated_storage(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_target_allocated_storage(input);
+        self
+    }
+    /// <p>The amount of storage in gibibytes (GiB) to allocate for the green DB instance. You can choose to increase or decrease the allocated storage on the green DB instance.</p>
+    /// <p>This setting doesn't apply to Amazon Aurora blue/green deployments.</p>
+    pub fn get_target_allocated_storage(&self) -> &::std::option::Option<i32> {
+        self.inner.get_target_allocated_storage()
+    }
+    /// <p>The storage throughput value for the green DB instance.</p>
+    /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
+    /// <p>This setting doesn't apply to Amazon Aurora blue/green deployments.</p>
+    pub fn target_storage_throughput(mut self, input: i32) -> Self {
+        self.inner = self.inner.target_storage_throughput(input);
+        self
+    }
+    /// <p>The storage throughput value for the green DB instance.</p>
+    /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
+    /// <p>This setting doesn't apply to Amazon Aurora blue/green deployments.</p>
+    pub fn set_target_storage_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_target_storage_throughput(input);
+        self
+    }
+    /// <p>The storage throughput value for the green DB instance.</p>
+    /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
+    /// <p>This setting doesn't apply to Amazon Aurora blue/green deployments.</p>
+    pub fn get_target_storage_throughput(&self) -> &::std::option::Option<i32> {
+        self.inner.get_target_storage_throughput()
     }
 }

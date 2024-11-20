@@ -520,6 +520,37 @@ impl From<crate::operation::create_reference_store::CreateReferenceStoreError> f
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_run_cache::CreateRunCacheError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_run_cache::CreateRunCacheError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_run_cache::CreateRunCacheError> for Error {
+    fn from(err: crate::operation::create_run_cache::CreateRunCacheError) -> Self {
+        match err {
+            crate::operation::create_run_cache::CreateRunCacheError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_run_cache::CreateRunCacheError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_run_cache::CreateRunCacheError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_run_cache::CreateRunCacheError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
+            crate::operation::create_run_cache::CreateRunCacheError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_run_cache::CreateRunCacheError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_run_cache::CreateRunCacheError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_run_cache::CreateRunCacheError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_run_cache::CreateRunCacheError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_run_group::CreateRunGroupError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -845,6 +876,37 @@ impl From<crate::operation::delete_run::DeleteRunError> for Error {
             crate::operation::delete_run::DeleteRunError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_run::DeleteRunError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_run::DeleteRunError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_run_cache::DeleteRunCacheError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_run_cache::DeleteRunCacheError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_run_cache::DeleteRunCacheError> for Error {
+    fn from(err: crate::operation::delete_run_cache::DeleteRunCacheError) -> Self {
+        match err {
+            crate::operation::delete_run_cache::DeleteRunCacheError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_run_cache::DeleteRunCacheError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_run_cache::DeleteRunCacheError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_run_cache::DeleteRunCacheError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
+            crate::operation::delete_run_cache::DeleteRunCacheError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_run_cache::DeleteRunCacheError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::delete_run_cache::DeleteRunCacheError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_run_cache::DeleteRunCacheError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_run_cache::DeleteRunCacheError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1422,6 +1484,35 @@ impl From<crate::operation::get_run::GetRunError> for Error {
             crate::operation::get_run::GetRunError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_run::GetRunError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_run::GetRunError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_run_cache::GetRunCacheError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_run_cache::GetRunCacheError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_run_cache::GetRunCacheError> for Error {
+    fn from(err: crate::operation::get_run_cache::GetRunCacheError) -> Self {
+        match err {
+            crate::operation::get_run_cache::GetRunCacheError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_run_cache::GetRunCacheError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::get_run_cache::GetRunCacheError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_run_cache::GetRunCacheError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
+            crate::operation::get_run_cache::GetRunCacheError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_run_cache::GetRunCacheError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::get_run_cache::GetRunCacheError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_run_cache::GetRunCacheError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_run_cache::GetRunCacheError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2074,6 +2165,37 @@ impl From<crate::operation::list_reference_stores::ListReferenceStoresError> for
             crate::operation::list_reference_stores::ListReferenceStoresError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_reference_stores::ListReferenceStoresError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_reference_stores::ListReferenceStoresError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_run_caches::ListRunCachesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_run_caches::ListRunCachesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_run_caches::ListRunCachesError> for Error {
+    fn from(err: crate::operation::list_run_caches::ListRunCachesError) -> Self {
+        match err {
+            crate::operation::list_run_caches::ListRunCachesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_run_caches::ListRunCachesError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::list_run_caches::ListRunCachesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_run_caches::ListRunCachesError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
+            crate::operation::list_run_caches::ListRunCachesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_run_caches::ListRunCachesError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::list_run_caches::ListRunCachesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_run_caches::ListRunCachesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_run_caches::ListRunCachesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2758,6 +2880,37 @@ impl From<crate::operation::update_annotation_store_version::UpdateAnnotationSto
                 Error::ValidationException(inner)
             }
             crate::operation::update_annotation_store_version::UpdateAnnotationStoreVersionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_run_cache::UpdateRunCacheError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_run_cache::UpdateRunCacheError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_run_cache::UpdateRunCacheError> for Error {
+    fn from(err: crate::operation::update_run_cache::UpdateRunCacheError) -> Self {
+        match err {
+            crate::operation::update_run_cache::UpdateRunCacheError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_run_cache::UpdateRunCacheError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_run_cache::UpdateRunCacheError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_run_cache::UpdateRunCacheError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
+            crate::operation::update_run_cache::UpdateRunCacheError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_run_cache::UpdateRunCacheError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::update_run_cache::UpdateRunCacheError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_run_cache::UpdateRunCacheError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_run_cache::UpdateRunCacheError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

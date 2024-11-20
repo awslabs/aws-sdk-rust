@@ -12,6 +12,7 @@
 /// ```text
 /// # let importtaskfiltername = unimplemented!();
 /// match importtaskfiltername {
+///     ImportTaskFilterName::FileClassification => { /* ... */ },
 ///     ImportTaskFilterName::ImportTaskId => { /* ... */ },
 ///     ImportTaskFilterName::Name => { /* ... */ },
 ///     ImportTaskFilterName::Status => { /* ... */ },
@@ -43,6 +44,8 @@
 )]
 pub enum ImportTaskFilterName {
     #[allow(missing_docs)] // documentation missing in model
+    FileClassification,
+    #[allow(missing_docs)] // documentation missing in model
     ImportTaskId,
     #[allow(missing_docs)] // documentation missing in model
     Name,
@@ -55,6 +58,7 @@ pub enum ImportTaskFilterName {
 impl ::std::convert::From<&str> for ImportTaskFilterName {
     fn from(s: &str) -> Self {
         match s {
+            "FILE_CLASSIFICATION" => ImportTaskFilterName::FileClassification,
             "IMPORT_TASK_ID" => ImportTaskFilterName::ImportTaskId,
             "NAME" => ImportTaskFilterName::Name,
             "STATUS" => ImportTaskFilterName::Status,
@@ -73,6 +77,7 @@ impl ImportTaskFilterName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ImportTaskFilterName::FileClassification => "FILE_CLASSIFICATION",
             ImportTaskFilterName::ImportTaskId => "IMPORT_TASK_ID",
             ImportTaskFilterName::Name => "NAME",
             ImportTaskFilterName::Status => "STATUS",
@@ -81,7 +86,7 @@ impl ImportTaskFilterName {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["IMPORT_TASK_ID", "NAME", "STATUS"]
+        &["FILE_CLASSIFICATION", "IMPORT_TASK_ID", "NAME", "STATUS"]
     }
 }
 impl ::std::convert::AsRef<str> for ImportTaskFilterName {
@@ -104,6 +109,7 @@ impl ImportTaskFilterName {
 impl ::std::fmt::Display for ImportTaskFilterName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ImportTaskFilterName::FileClassification => write!(f, "FILE_CLASSIFICATION"),
             ImportTaskFilterName::ImportTaskId => write!(f, "IMPORT_TASK_ID"),
             ImportTaskFilterName::Name => write!(f, "NAME"),
             ImportTaskFilterName::Status => write!(f, "STATUS"),

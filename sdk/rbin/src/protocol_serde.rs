@@ -71,6 +71,8 @@ pub(crate) mod shape_update_rule_input;
 
 pub(crate) mod shape_validation_exception;
 
+pub(crate) mod shape_exclude_resource_tags;
+
 pub(crate) mod shape_lock_configuration;
 
 pub(crate) mod shape_resource_tag;

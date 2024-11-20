@@ -12,6 +12,7 @@
 /// ```text
 /// # let capacityreservationpreference = unimplemented!();
 /// match capacityreservationpreference {
+///     CapacityReservationPreference::CapacityReservationsOnly => { /* ... */ },
 ///     CapacityReservationPreference::None => { /* ... */ },
 ///     CapacityReservationPreference::Open => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -42,6 +43,8 @@
 )]
 pub enum CapacityReservationPreference {
     #[allow(missing_docs)] // documentation missing in model
+    CapacityReservationsOnly,
+    #[allow(missing_docs)] // documentation missing in model
     None,
     #[allow(missing_docs)] // documentation missing in model
     Open,
@@ -52,6 +55,7 @@ pub enum CapacityReservationPreference {
 impl ::std::convert::From<&str> for CapacityReservationPreference {
     fn from(s: &str) -> Self {
         match s {
+            "capacity-reservations-only" => CapacityReservationPreference::CapacityReservationsOnly,
             "none" => CapacityReservationPreference::None,
             "open" => CapacityReservationPreference::Open,
             other => CapacityReservationPreference::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -69,6 +73,7 @@ impl CapacityReservationPreference {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            CapacityReservationPreference::CapacityReservationsOnly => "capacity-reservations-only",
             CapacityReservationPreference::None => "none",
             CapacityReservationPreference::Open => "open",
             CapacityReservationPreference::Unknown(value) => value.as_str(),
@@ -76,7 +81,7 @@ impl CapacityReservationPreference {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["none", "open"]
+        &["capacity-reservations-only", "none", "open"]
     }
 }
 impl ::std::convert::AsRef<str> for CapacityReservationPreference {
@@ -99,6 +104,7 @@ impl CapacityReservationPreference {
 impl ::std::fmt::Display for CapacityReservationPreference {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            CapacityReservationPreference::CapacityReservationsOnly => write!(f, "capacity-reservations-only"),
             CapacityReservationPreference::None => write!(f, "none"),
             CapacityReservationPreference::Open => write!(f, "open"),
             CapacityReservationPreference::Unknown(value) => write!(f, "{}", value),

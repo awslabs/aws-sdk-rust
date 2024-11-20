@@ -84,6 +84,22 @@ pub fn de_create_distribution_with_tags_http_error(
                                                         }
             tmp
         }),
+        "EntityNotFound" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::EntityNotFound({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::EntityNotFoundBuilder::default();
+                    output = crate::protocol_serde::shape_entity_not_found::de_entity_not_found_xml_err(_response_body, output).map_err(crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                            tmp.message = _error_message;
+                                                        }
+            tmp
+        }),
         "IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior({
             #[allow(unused_mut)]
             let mut tmp =

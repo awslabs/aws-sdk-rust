@@ -293,6 +293,8 @@ pub(crate) mod shape_availability_zone_impairment_policy;
 
 pub(crate) mod shape_block_device_mapping;
 
+pub(crate) mod shape_capacity_reservation_specification;
+
 pub(crate) mod shape_desired_configuration;
 
 pub(crate) mod shape_filter;
@@ -358,6 +360,8 @@ pub(crate) mod shape_auto_scaling_instances;
 pub(crate) mod shape_auto_scaling_notification_types;
 
 pub(crate) mod shape_capacity_forecast;
+
+pub(crate) mod shape_capacity_reservation_target;
 
 pub(crate) mod shape_customized_metric_specification;
 
@@ -505,6 +509,8 @@ pub(crate) mod shape_accelerator_total_memory_mib_request;
 
 pub(crate) mod shape_baseline_ebs_bandwidth_mbps_request;
 
+pub(crate) mod shape_baseline_performance_factors_request;
+
 pub(crate) mod shape_checkpoint_percentages;
 
 pub(crate) mod shape_enabled_metric;
@@ -535,6 +541,12 @@ pub(crate) mod shape_v_cpu_count_request;
 
 pub(crate) mod shape_alarm_list;
 
+pub(crate) mod shape_capacity_reservation_ids;
+
+pub(crate) mod shape_capacity_reservation_resource_group_arns;
+
+pub(crate) mod shape_cpu_performance_factor_request;
+
 pub(crate) mod shape_metric_data_queries;
 
 pub(crate) mod shape_metric_dimensions;
@@ -542,6 +554,8 @@ pub(crate) mod shape_metric_dimensions;
 pub(crate) mod shape_overrides;
 
 pub(crate) mod shape_target_tracking_metric_data_queries;
+
+pub(crate) mod shape_performance_factor_reference_request;
 
 pub(crate) mod shape_accelerator_manufacturers;
 
@@ -558,3 +572,5 @@ pub(crate) mod shape_excluded_instance_types;
 pub(crate) mod shape_instance_generations;
 
 pub(crate) mod shape_local_storage_types;
+
+pub(crate) mod shape_performance_factor_reference_set_request;

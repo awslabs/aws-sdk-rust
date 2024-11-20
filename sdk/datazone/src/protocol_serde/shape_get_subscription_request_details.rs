@@ -175,12 +175,22 @@ pub(crate) fn de_get_subscription_request_details(
                             .transpose()?,
                     );
                 }
+                "existingSubscriptionId" => {
+                    builder = builder.set_existing_subscription_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "id" => {
                     builder = builder.set_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                     );
+                }
+                "metadataForms" => {
+                    builder = builder.set_metadata_forms(crate::protocol_serde::shape_metadata_forms::de_metadata_forms(tokens)?);
                 }
                 "requestReason" => {
                     builder = builder.set_request_reason(

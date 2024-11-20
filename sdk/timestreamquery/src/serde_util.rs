@@ -228,6 +228,15 @@ pub(crate) fn sns_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn account_settings_notification_configuration_correct_errors(
+    mut builder: crate::types::builders::AccountSettingsNotificationConfigurationBuilder,
+) -> crate::types::builders::AccountSettingsNotificationConfigurationBuilder {
+    if builder.role_arn.is_none() {
+        builder.role_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn s3_configuration_correct_errors(
     mut builder: crate::types::builders::S3ConfigurationBuilder,
 ) -> crate::types::builders::S3ConfigurationBuilder {

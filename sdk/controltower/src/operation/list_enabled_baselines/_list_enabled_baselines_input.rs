@@ -9,6 +9,8 @@ pub struct ListEnabledBaselinesInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to be shown.</p>
     pub max_results: ::std::option::Option<i32>,
+    /// <p>A value that can be set to include the child enabled baselines in responses. The default value is false.</p>
+    pub include_children: ::std::option::Option<bool>,
 }
 impl ListEnabledBaselinesInput {
     /// <p>A filter applied on the <code>ListEnabledBaseline</code> operation. Allowed filters are <code>baselineIdentifiers</code> and <code>targetIdentifiers</code>. The filter can be applied for either, or both.</p>
@@ -22,6 +24,10 @@ impl ListEnabledBaselinesInput {
     /// <p>The maximum number of results to be shown.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
+    }
+    /// <p>A value that can be set to include the child enabled baselines in responses. The default value is false.</p>
+    pub fn include_children(&self) -> ::std::option::Option<bool> {
+        self.include_children
     }
 }
 impl ListEnabledBaselinesInput {
@@ -38,6 +44,7 @@ pub struct ListEnabledBaselinesInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::EnabledBaselineFilter>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) include_children: ::std::option::Option<bool>,
 }
 impl ListEnabledBaselinesInputBuilder {
     /// <p>A filter applied on the <code>ListEnabledBaseline</code> operation. Allowed filters are <code>baselineIdentifiers</code> and <code>targetIdentifiers</code>. The filter can be applied for either, or both.</p>
@@ -82,6 +89,20 @@ impl ListEnabledBaselinesInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
+    /// <p>A value that can be set to include the child enabled baselines in responses. The default value is false.</p>
+    pub fn include_children(mut self, input: bool) -> Self {
+        self.include_children = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A value that can be set to include the child enabled baselines in responses. The default value is false.</p>
+    pub fn set_include_children(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.include_children = input;
+        self
+    }
+    /// <p>A value that can be set to include the child enabled baselines in responses. The default value is false.</p>
+    pub fn get_include_children(&self) -> &::std::option::Option<bool> {
+        &self.include_children
+    }
     /// Consumes the builder and constructs a [`ListEnabledBaselinesInput`](crate::operation::list_enabled_baselines::ListEnabledBaselinesInput).
     pub fn build(
         self,
@@ -91,6 +112,7 @@ impl ListEnabledBaselinesInputBuilder {
             filter: self.filter,
             next_token: self.next_token,
             max_results: self.max_results,
+            include_children: self.include_children,
         })
     }
 }

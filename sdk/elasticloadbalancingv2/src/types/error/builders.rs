@@ -7,6 +7,8 @@ pub use crate::types::error::_invalid_subnet_exception::InvalidSubnetExceptionBu
 
 pub use crate::types::error::_invalid_configuration_request_exception::InvalidConfigurationRequestExceptionBuilder;
 
+pub use crate::types::error::_capacity_reservation_pending_exception::CapacityReservationPendingExceptionBuilder;
+
 pub use crate::types::error::_availability_zone_not_supported_exception::AvailabilityZoneNotSupportedExceptionBuilder;
 
 pub use crate::types::error::_allocation_id_not_found_exception::AllocationIdNotFoundExceptionBuilder;
@@ -64,6 +66,14 @@ pub use crate::types::error::_duplicate_listener_exception::DuplicateListenerExc
 pub use crate::types::error::_certificate_not_found_exception::CertificateNotFoundExceptionBuilder;
 
 pub use crate::types::error::_alpn_policy_not_supported_exception::AlpnPolicyNotSupportedExceptionBuilder;
+
+pub use crate::types::error::_prior_request_not_complete_exception::PriorRequestNotCompleteExceptionBuilder;
+
+pub use crate::types::error::_insufficient_capacity_exception::InsufficientCapacityExceptionBuilder;
+
+pub use crate::types::error::_capacity_units_limit_exceeded_exception::CapacityUnitsLimitExceededExceptionBuilder;
+
+pub use crate::types::error::_capacity_decrease_requests_limit_exceeded_exception::CapacityDecreaseRequestsLimitExceededExceptionBuilder;
 
 pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExceptionBuilder;
 

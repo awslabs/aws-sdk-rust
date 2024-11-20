@@ -197,5 +197,10 @@ pub fn ser_instance_requirements_request(
             ::aws_smithy_types::Number::NegInt((*var_72).into()),
         );
     }
+    #[allow(unused_mut)]
+    let mut scope_73 = writer.prefix("BaselinePerformanceFactors");
+    if let Some(var_74) = &input.baseline_performance_factors {
+        crate::protocol_serde::shape_baseline_performance_factors_request::ser_baseline_performance_factors_request(scope_73, var_74)?;
+    }
     Ok(())
 }

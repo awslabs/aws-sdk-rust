@@ -18,6 +18,8 @@ impl super::Client {
     ///   - [`subscribed_listings(Vec::<SubscribedListing>)`](crate::operation::get_subscription_request_details::GetSubscriptionRequestDetailsOutput::subscribed_listings): <p>The subscribed listings in the subscription request.</p>
     ///   - [`reviewer_id(Option<String>)`](crate::operation::get_subscription_request_details::GetSubscriptionRequestDetailsOutput::reviewer_id): <p>The identifier of the Amazon DataZone user who reviewed the subscription request.</p>
     ///   - [`decision_comment(Option<String>)`](crate::operation::get_subscription_request_details::GetSubscriptionRequestDetailsOutput::decision_comment): <p>The decision comment of the subscription request.</p>
+    ///   - [`existing_subscription_id(Option<String>)`](crate::operation::get_subscription_request_details::GetSubscriptionRequestDetailsOutput::existing_subscription_id): <p>The ID of the existing subscription.</p>
+    ///   - [`metadata_forms(Option<Vec::<FormOutput>>)`](crate::operation::get_subscription_request_details::GetSubscriptionRequestDetailsOutput::metadata_forms): <p>The metadata forms included in the subscription request.</p>
     /// - On failure, responds with [`SdkError<GetSubscriptionRequestDetailsError>`](crate::operation::get_subscription_request_details::GetSubscriptionRequestDetailsError)
     pub fn get_subscription_request_details(
         &self,

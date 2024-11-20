@@ -7,6 +7,8 @@ pub struct UpdateAccountSettingsOutput {
     pub max_query_tcu: ::std::option::Option<i32>,
     /// <p>The pricing model for an account.</p>
     pub query_pricing_model: ::std::option::Option<crate::types::QueryPricingModel>,
+    /// <p>Confirms the updated account settings for querying data in your account.</p>
+    pub query_compute: ::std::option::Option<crate::types::QueryComputeResponse>,
     _request_id: Option<String>,
 }
 impl UpdateAccountSettingsOutput {
@@ -17,6 +19,10 @@ impl UpdateAccountSettingsOutput {
     /// <p>The pricing model for an account.</p>
     pub fn query_pricing_model(&self) -> ::std::option::Option<&crate::types::QueryPricingModel> {
         self.query_pricing_model.as_ref()
+    }
+    /// <p>Confirms the updated account settings for querying data in your account.</p>
+    pub fn query_compute(&self) -> ::std::option::Option<&crate::types::QueryComputeResponse> {
+        self.query_compute.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateAccountSettingsOutput {
@@ -37,6 +43,7 @@ impl UpdateAccountSettingsOutput {
 pub struct UpdateAccountSettingsOutputBuilder {
     pub(crate) max_query_tcu: ::std::option::Option<i32>,
     pub(crate) query_pricing_model: ::std::option::Option<crate::types::QueryPricingModel>,
+    pub(crate) query_compute: ::std::option::Option<crate::types::QueryComputeResponse>,
     _request_id: Option<String>,
 }
 impl UpdateAccountSettingsOutputBuilder {
@@ -68,6 +75,20 @@ impl UpdateAccountSettingsOutputBuilder {
     pub fn get_query_pricing_model(&self) -> &::std::option::Option<crate::types::QueryPricingModel> {
         &self.query_pricing_model
     }
+    /// <p>Confirms the updated account settings for querying data in your account.</p>
+    pub fn query_compute(mut self, input: crate::types::QueryComputeResponse) -> Self {
+        self.query_compute = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Confirms the updated account settings for querying data in your account.</p>
+    pub fn set_query_compute(mut self, input: ::std::option::Option<crate::types::QueryComputeResponse>) -> Self {
+        self.query_compute = input;
+        self
+    }
+    /// <p>Confirms the updated account settings for querying data in your account.</p>
+    pub fn get_query_compute(&self) -> &::std::option::Option<crate::types::QueryComputeResponse> {
+        &self.query_compute
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -82,6 +103,7 @@ impl UpdateAccountSettingsOutputBuilder {
         crate::operation::update_account_settings::UpdateAccountSettingsOutput {
             max_query_tcu: self.max_query_tcu,
             query_pricing_model: self.query_pricing_model,
+            query_compute: self.query_compute,
             _request_id: self._request_id,
         }
     }

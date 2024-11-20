@@ -10,6 +10,8 @@ impl super::Client {
     ///   - [`status(Option<TaskStatus>)`](crate::operation::get_run_task::GetRunTaskOutput::status): <p>The task's status.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_run_task::GetRunTaskOutput::name): <p>The task's name.</p>
     ///   - [`cpus(Option<i32>)`](crate::operation::get_run_task::GetRunTaskOutput::cpus): <p>The task's CPU usage.</p>
+    ///   - [`cache_hit(Option<bool>)`](crate::operation::get_run_task::GetRunTaskOutput::cache_hit): <p>Set to true if AWS HealthOmics found a matching entry in the run cache for this task.</p>
+    ///   - [`cache_s3_uri(Option<String>)`](crate::operation::get_run_task::GetRunTaskOutput::cache_s3_uri): <p>The S3 URI of the cache location.</p>
     ///   - [`memory(Option<i32>)`](crate::operation::get_run_task::GetRunTaskOutput::memory): <p>The task's memory use in gigabytes.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_run_task::GetRunTaskOutput::creation_time): <p>When the task was created.</p>
     ///   - [`start_time(Option<DateTime>)`](crate::operation::get_run_task::GetRunTaskOutput::start_time): <p>The task's start time.</p>

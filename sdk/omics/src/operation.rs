@@ -34,6 +34,9 @@ pub mod create_multipart_read_set_upload;
 /// Types for the `CreateReferenceStore` operation.
 pub mod create_reference_store;
 
+/// Types for the `CreateRunCache` operation.
+pub mod create_run_cache;
+
 /// Types for the `CreateRunGroup` operation.
 pub mod create_run_group;
 
@@ -63,6 +66,9 @@ pub mod delete_reference_store;
 
 /// Types for the `DeleteRun` operation.
 pub mod delete_run;
+
+/// Types for the `DeleteRunCache` operation.
+pub mod delete_run_cache;
 
 /// Types for the `DeleteRunGroup` operation.
 pub mod delete_run_group;
@@ -117,6 +123,9 @@ pub mod get_reference_store;
 
 /// Types for the `GetRun` operation.
 pub mod get_run;
+
+/// Types for the `GetRunCache` operation.
+pub mod get_run_cache;
 
 /// Types for the `GetRunGroup` operation.
 pub mod get_run_group;
@@ -174,6 +183,9 @@ pub mod list_reference_stores;
 
 /// Types for the `ListReferences` operation.
 pub mod list_references;
+
+/// Types for the `ListRunCaches` operation.
+pub mod list_run_caches;
 
 /// Types for the `ListRunGroups` operation.
 pub mod list_run_groups;
@@ -234,6 +246,9 @@ pub mod update_annotation_store;
 
 /// Types for the `UpdateAnnotationStoreVersion` operation.
 pub mod update_annotation_store_version;
+
+/// Types for the `UpdateRunCache` operation.
+pub mod update_run_cache;
 
 /// Types for the `UpdateRunGroup` operation.
 pub mod update_run_group;

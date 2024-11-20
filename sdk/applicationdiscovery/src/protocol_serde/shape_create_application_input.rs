@@ -9,5 +9,8 @@ pub fn ser_create_application_input_input(
     if let Some(var_2) = &input.description {
         object.key("description").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.wave {
+        object.key("wave").string(var_3.as_str());
+    }
     Ok(())
 }

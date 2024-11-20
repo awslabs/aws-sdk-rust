@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotificationConfiguration {
-    /// <p>Details on SNS configuration.</p>
+    /// <p>Details about the Amazon Simple Notification Service (SNS) configuration. This field is visible only when SNS Topic is provided when updating the account settings.</p>
     pub sns_configuration: ::std::option::Option<crate::types::SnsConfiguration>,
 }
 impl NotificationConfiguration {
-    /// <p>Details on SNS configuration.</p>
+    /// <p>Details about the Amazon Simple Notification Service (SNS) configuration. This field is visible only when SNS Topic is provided when updating the account settings.</p>
     pub fn sns_configuration(&self) -> ::std::option::Option<&crate::types::SnsConfiguration> {
         self.sns_configuration.as_ref()
     }
@@ -27,18 +27,18 @@ pub struct NotificationConfigurationBuilder {
     pub(crate) sns_configuration: ::std::option::Option<crate::types::SnsConfiguration>,
 }
 impl NotificationConfigurationBuilder {
-    /// <p>Details on SNS configuration.</p>
+    /// <p>Details about the Amazon Simple Notification Service (SNS) configuration. This field is visible only when SNS Topic is provided when updating the account settings.</p>
     /// This field is required.
     pub fn sns_configuration(mut self, input: crate::types::SnsConfiguration) -> Self {
         self.sns_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Details on SNS configuration.</p>
+    /// <p>Details about the Amazon Simple Notification Service (SNS) configuration. This field is visible only when SNS Topic is provided when updating the account settings.</p>
     pub fn set_sns_configuration(mut self, input: ::std::option::Option<crate::types::SnsConfiguration>) -> Self {
         self.sns_configuration = input;
         self
     }
-    /// <p>Details on SNS configuration.</p>
+    /// <p>Details about the Amazon Simple Notification Service (SNS) configuration. This field is visible only when SNS Topic is provided when updating the account settings.</p>
     pub fn get_sns_configuration(&self) -> &::std::option::Option<crate::types::SnsConfiguration> {
         &self.sns_configuration
     }

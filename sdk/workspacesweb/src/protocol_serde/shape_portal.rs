@@ -69,6 +69,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "dataProtectionSettingsArn" => {
+                            builder = builder.set_data_protection_settings_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "userSettingsArn" => {
                             builder = builder.set_user_settings_arn(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -12,6 +12,10 @@ pub struct TaskListItem {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The task's CPU count.</p>
     pub cpus: ::std::option::Option<i32>,
+    /// <p>Set to true if AWS HealthOmics found a matching entry in the run cache for this task.</p>
+    pub cache_hit: ::std::option::Option<bool>,
+    /// <p>The S3 URI of the cache location.</p>
+    pub cache_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The task's memory use in gigabyes.</p>
     pub memory: ::std::option::Option<i32>,
     /// <p>When the task was created.</p>
@@ -41,6 +45,14 @@ impl TaskListItem {
     /// <p>The task's CPU count.</p>
     pub fn cpus(&self) -> ::std::option::Option<i32> {
         self.cpus
+    }
+    /// <p>Set to true if AWS HealthOmics found a matching entry in the run cache for this task.</p>
+    pub fn cache_hit(&self) -> ::std::option::Option<bool> {
+        self.cache_hit
+    }
+    /// <p>The S3 URI of the cache location.</p>
+    pub fn cache_s3_uri(&self) -> ::std::option::Option<&str> {
+        self.cache_s3_uri.as_deref()
     }
     /// <p>The task's memory use in gigabyes.</p>
     pub fn memory(&self) -> ::std::option::Option<i32> {
@@ -82,6 +94,8 @@ pub struct TaskListItemBuilder {
     pub(crate) status: ::std::option::Option<crate::types::TaskStatus>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) cpus: ::std::option::Option<i32>,
+    pub(crate) cache_hit: ::std::option::Option<bool>,
+    pub(crate) cache_s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) memory: ::std::option::Option<i32>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -145,6 +159,34 @@ impl TaskListItemBuilder {
     /// <p>The task's CPU count.</p>
     pub fn get_cpus(&self) -> &::std::option::Option<i32> {
         &self.cpus
+    }
+    /// <p>Set to true if AWS HealthOmics found a matching entry in the run cache for this task.</p>
+    pub fn cache_hit(mut self, input: bool) -> Self {
+        self.cache_hit = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Set to true if AWS HealthOmics found a matching entry in the run cache for this task.</p>
+    pub fn set_cache_hit(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.cache_hit = input;
+        self
+    }
+    /// <p>Set to true if AWS HealthOmics found a matching entry in the run cache for this task.</p>
+    pub fn get_cache_hit(&self) -> &::std::option::Option<bool> {
+        &self.cache_hit
+    }
+    /// <p>The S3 URI of the cache location.</p>
+    pub fn cache_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cache_s3_uri = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The S3 URI of the cache location.</p>
+    pub fn set_cache_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cache_s3_uri = input;
+        self
+    }
+    /// <p>The S3 URI of the cache location.</p>
+    pub fn get_cache_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cache_s3_uri
     }
     /// <p>The task's memory use in gigabyes.</p>
     pub fn memory(mut self, input: i32) -> Self {
@@ -237,6 +279,8 @@ impl TaskListItemBuilder {
             status: self.status,
             name: self.name,
             cpus: self.cpus,
+            cache_hit: self.cache_hit,
+            cache_s3_uri: self.cache_s3_uri,
             memory: self.memory,
             creation_time: self.creation_time,
             start_time: self.start_time,

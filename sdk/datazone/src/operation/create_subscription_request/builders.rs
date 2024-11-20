@@ -188,4 +188,23 @@ impl CreateSubscriptionRequestFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
+    ///
+    /// Appends an item to `metadataForms`.
+    ///
+    /// To override the contents of this collection use [`set_metadata_forms`](Self::set_metadata_forms).
+    ///
+    /// <p>The metadata form included in the subscription request.</p>
+    pub fn metadata_forms(mut self, input: crate::types::FormInput) -> Self {
+        self.inner = self.inner.metadata_forms(input);
+        self
+    }
+    /// <p>The metadata form included in the subscription request.</p>
+    pub fn set_metadata_forms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FormInput>>) -> Self {
+        self.inner = self.inner.set_metadata_forms(input);
+        self
+    }
+    /// <p>The metadata form included in the subscription request.</p>
+    pub fn get_metadata_forms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FormInput>> {
+        self.inner.get_metadata_forms()
+    }
 }

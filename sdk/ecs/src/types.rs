@@ -31,6 +31,8 @@ pub use crate::types::_protected_task::ProtectedTask;
 
 pub use crate::types::_service::Service;
 
+pub use crate::types::_availability_zone_rebalancing::AvailabilityZoneRebalancing;
+
 pub use crate::types::_propagate_tags::PropagateTags;
 
 pub use crate::types::_deployment_controller::DeploymentController;
@@ -366,6 +368,8 @@ mod _attribute;
 mod _auto_scaling_group_provider;
 
 mod _auto_scaling_group_provider_update;
+
+mod _availability_zone_rebalancing;
 
 mod _aws_vpc_configuration;
 

@@ -17,6 +17,9 @@ where
                         "summaries" => {
                             builder = builder.set_summaries(crate::protocol_serde::shape_summaries::de_summaries(tokens)?);
                         }
+                        "idleSummaries" => {
+                            builder = builder.set_idle_summaries(crate::protocol_serde::shape_idle_summaries::de_idle_summaries(tokens)?);
+                        }
                         "recommendationResourceType" => {
                             builder = builder.set_recommendation_resource_type(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -34,6 +37,15 @@ where
                         "savingsOpportunity" => {
                             builder =
                                 builder.set_savings_opportunity(crate::protocol_serde::shape_savings_opportunity::de_savings_opportunity(tokens)?);
+                        }
+                        "idleSavingsOpportunity" => {
+                            builder = builder
+                                .set_idle_savings_opportunity(crate::protocol_serde::shape_savings_opportunity::de_savings_opportunity(tokens)?);
+                        }
+                        "aggregatedSavingsOpportunity" => {
+                            builder = builder.set_aggregated_savings_opportunity(
+                                crate::protocol_serde::shape_savings_opportunity::de_savings_opportunity(tokens)?,
+                            );
                         }
                         "currentPerformanceRiskRatings" => {
                             builder = builder.set_current_performance_risk_ratings(

@@ -19,6 +19,9 @@ pub mod export_ec2_instance_recommendations;
 /// Types for the `ExportECSServiceRecommendations` operation.
 pub mod export_ecs_service_recommendations;
 
+/// Types for the `ExportIdleRecommendations` operation.
+pub mod export_idle_recommendations;
+
 /// Types for the `ExportLambdaFunctionRecommendations` operation.
 pub mod export_lambda_function_recommendations;
 
@@ -54,6 +57,9 @@ pub mod get_enrollment_status;
 
 /// Types for the `GetEnrollmentStatusesForOrganization` operation.
 pub mod get_enrollment_statuses_for_organization;
+
+/// Types for the `GetIdleRecommendations` operation.
+pub mod get_idle_recommendations;
 
 /// Types for the `GetLambdaFunctionRecommendations` operation.
 pub mod get_lambda_function_recommendations;

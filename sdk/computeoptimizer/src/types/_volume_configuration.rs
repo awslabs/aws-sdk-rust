@@ -5,7 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VolumeConfiguration {
     /// <p>The volume type.</p>
-    /// <p>This can be <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic volumes.</p>
+    /// <p>The volume types can be the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>General Purpose SSD <code>gp2</code> and <code>gp3</code></p></li>
+    /// <li>
+    /// <p>Provisioned IOPS SSD <code>io1</code>, <code>io2</code>, and <code>io2 Block Express</code></p></li>
+    /// <li>
+    /// <p>Throughput Optimized HDD <code>st1</code></p></li>
+    /// <li>
+    /// <p>Cold HDD <code>sc1</code></p></li>
+    /// <li>
+    /// <p>Magnetic volumes <code>standard</code></p></li>
+    /// </ul>
     pub volume_type: ::std::option::Option<::std::string::String>,
     /// <p>The size of the volume, in GiB.</p>
     pub volume_size: i32,
@@ -22,7 +34,19 @@ pub struct VolumeConfiguration {
 }
 impl VolumeConfiguration {
     /// <p>The volume type.</p>
-    /// <p>This can be <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic volumes.</p>
+    /// <p>The volume types can be the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>General Purpose SSD <code>gp2</code> and <code>gp3</code></p></li>
+    /// <li>
+    /// <p>Provisioned IOPS SSD <code>io1</code>, <code>io2</code>, and <code>io2 Block Express</code></p></li>
+    /// <li>
+    /// <p>Throughput Optimized HDD <code>st1</code></p></li>
+    /// <li>
+    /// <p>Cold HDD <code>sc1</code></p></li>
+    /// <li>
+    /// <p>Magnetic volumes <code>standard</code></p></li>
+    /// </ul>
     pub fn volume_type(&self) -> ::std::option::Option<&str> {
         self.volume_type.as_deref()
     }
@@ -72,19 +96,55 @@ pub struct VolumeConfigurationBuilder {
 }
 impl VolumeConfigurationBuilder {
     /// <p>The volume type.</p>
-    /// <p>This can be <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic volumes.</p>
+    /// <p>The volume types can be the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>General Purpose SSD <code>gp2</code> and <code>gp3</code></p></li>
+    /// <li>
+    /// <p>Provisioned IOPS SSD <code>io1</code>, <code>io2</code>, and <code>io2 Block Express</code></p></li>
+    /// <li>
+    /// <p>Throughput Optimized HDD <code>st1</code></p></li>
+    /// <li>
+    /// <p>Cold HDD <code>sc1</code></p></li>
+    /// <li>
+    /// <p>Magnetic volumes <code>standard</code></p></li>
+    /// </ul>
     pub fn volume_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The volume type.</p>
-    /// <p>This can be <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic volumes.</p>
+    /// <p>The volume types can be the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>General Purpose SSD <code>gp2</code> and <code>gp3</code></p></li>
+    /// <li>
+    /// <p>Provisioned IOPS SSD <code>io1</code>, <code>io2</code>, and <code>io2 Block Express</code></p></li>
+    /// <li>
+    /// <p>Throughput Optimized HDD <code>st1</code></p></li>
+    /// <li>
+    /// <p>Cold HDD <code>sc1</code></p></li>
+    /// <li>
+    /// <p>Magnetic volumes <code>standard</code></p></li>
+    /// </ul>
     pub fn set_volume_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_type = input;
         self
     }
     /// <p>The volume type.</p>
-    /// <p>This can be <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic volumes.</p>
+    /// <p>The volume types can be the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>General Purpose SSD <code>gp2</code> and <code>gp3</code></p></li>
+    /// <li>
+    /// <p>Provisioned IOPS SSD <code>io1</code>, <code>io2</code>, and <code>io2 Block Express</code></p></li>
+    /// <li>
+    /// <p>Throughput Optimized HDD <code>st1</code></p></li>
+    /// <li>
+    /// <p>Cold HDD <code>sc1</code></p></li>
+    /// <li>
+    /// <p>Magnetic volumes <code>standard</code></p></li>
+    /// </ul>
     pub fn get_volume_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.volume_type
     }

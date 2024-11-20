@@ -21,6 +21,7 @@
 ///     ImportStatus::ImportFailed => { /* ... */ },
 ///     ImportStatus::ImportFailedRecordLimitExceeded => { /* ... */ },
 ///     ImportStatus::ImportFailedServerLimitExceeded => { /* ... */ },
+///     ImportStatus::ImportFailedUnsupportedFileType => { /* ... */ },
 ///     ImportStatus::ImportInProgress => { /* ... */ },
 ///     ImportStatus::InternalError => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -69,6 +70,8 @@ pub enum ImportStatus {
     #[allow(missing_docs)] // documentation missing in model
     ImportFailedServerLimitExceeded,
     #[allow(missing_docs)] // documentation missing in model
+    ImportFailedUnsupportedFileType,
+    #[allow(missing_docs)] // documentation missing in model
     ImportInProgress,
     #[allow(missing_docs)] // documentation missing in model
     InternalError,
@@ -88,6 +91,7 @@ impl ::std::convert::From<&str> for ImportStatus {
             "IMPORT_FAILED" => ImportStatus::ImportFailed,
             "IMPORT_FAILED_RECORD_LIMIT_EXCEEDED" => ImportStatus::ImportFailedRecordLimitExceeded,
             "IMPORT_FAILED_SERVER_LIMIT_EXCEEDED" => ImportStatus::ImportFailedServerLimitExceeded,
+            "IMPORT_FAILED_UNSUPPORTED_FILE_TYPE" => ImportStatus::ImportFailedUnsupportedFileType,
             "IMPORT_IN_PROGRESS" => ImportStatus::ImportInProgress,
             "INTERNAL_ERROR" => ImportStatus::InternalError,
             other => ImportStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -114,6 +118,7 @@ impl ImportStatus {
             ImportStatus::ImportFailed => "IMPORT_FAILED",
             ImportStatus::ImportFailedRecordLimitExceeded => "IMPORT_FAILED_RECORD_LIMIT_EXCEEDED",
             ImportStatus::ImportFailedServerLimitExceeded => "IMPORT_FAILED_SERVER_LIMIT_EXCEEDED",
+            ImportStatus::ImportFailedUnsupportedFileType => "IMPORT_FAILED_UNSUPPORTED_FILE_TYPE",
             ImportStatus::ImportInProgress => "IMPORT_IN_PROGRESS",
             ImportStatus::InternalError => "INTERNAL_ERROR",
             ImportStatus::Unknown(value) => value.as_str(),
@@ -131,6 +136,7 @@ impl ImportStatus {
             "IMPORT_FAILED",
             "IMPORT_FAILED_RECORD_LIMIT_EXCEEDED",
             "IMPORT_FAILED_SERVER_LIMIT_EXCEEDED",
+            "IMPORT_FAILED_UNSUPPORTED_FILE_TYPE",
             "IMPORT_IN_PROGRESS",
             "INTERNAL_ERROR",
         ]
@@ -165,6 +171,7 @@ impl ::std::fmt::Display for ImportStatus {
             ImportStatus::ImportFailed => write!(f, "IMPORT_FAILED"),
             ImportStatus::ImportFailedRecordLimitExceeded => write!(f, "IMPORT_FAILED_RECORD_LIMIT_EXCEEDED"),
             ImportStatus::ImportFailedServerLimitExceeded => write!(f, "IMPORT_FAILED_SERVER_LIMIT_EXCEEDED"),
+            ImportStatus::ImportFailedUnsupportedFileType => write!(f, "IMPORT_FAILED_UNSUPPORTED_FILE_TYPE"),
             ImportStatus::ImportInProgress => write!(f, "IMPORT_IN_PROGRESS"),
             ImportStatus::InternalError => write!(f, "INTERNAL_ERROR"),
             ImportStatus::Unknown(value) => write!(f, "{}", value),

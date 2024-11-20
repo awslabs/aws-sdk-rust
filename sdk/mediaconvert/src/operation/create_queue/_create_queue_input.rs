@@ -3,6 +3,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateQueueInput {
+    /// Specify the maximum number of jobs your queue can process concurrently. For on-demand queues, the value you enter is constrained by your service quotas for Maximum concurrent jobs, per on-demand queue and Maximum concurrent jobs, per account. For reserved queues, specify the number of jobs you can process concurrently in your reservation plan instead.
+    pub concurrent_jobs: ::std::option::Option<i32>,
     /// Optional. A description of the queue that you are creating.
     pub description: ::std::option::Option<::std::string::String>,
     /// The name of the queue that you are creating.
@@ -17,6 +19,10 @@ pub struct CreateQueueInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateQueueInput {
+    /// Specify the maximum number of jobs your queue can process concurrently. For on-demand queues, the value you enter is constrained by your service quotas for Maximum concurrent jobs, per on-demand queue and Maximum concurrent jobs, per account. For reserved queues, specify the number of jobs you can process concurrently in your reservation plan instead.
+    pub fn concurrent_jobs(&self) -> ::std::option::Option<i32> {
+        self.concurrent_jobs
+    }
     /// Optional. A description of the queue that you are creating.
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
@@ -53,6 +59,7 @@ impl CreateQueueInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct CreateQueueInputBuilder {
+    pub(crate) concurrent_jobs: ::std::option::Option<i32>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) pricing_plan: ::std::option::Option<crate::types::PricingPlan>,
@@ -61,6 +68,20 @@ pub struct CreateQueueInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateQueueInputBuilder {
+    /// Specify the maximum number of jobs your queue can process concurrently. For on-demand queues, the value you enter is constrained by your service quotas for Maximum concurrent jobs, per on-demand queue and Maximum concurrent jobs, per account. For reserved queues, specify the number of jobs you can process concurrently in your reservation plan instead.
+    pub fn concurrent_jobs(mut self, input: i32) -> Self {
+        self.concurrent_jobs = ::std::option::Option::Some(input);
+        self
+    }
+    /// Specify the maximum number of jobs your queue can process concurrently. For on-demand queues, the value you enter is constrained by your service quotas for Maximum concurrent jobs, per on-demand queue and Maximum concurrent jobs, per account. For reserved queues, specify the number of jobs you can process concurrently in your reservation plan instead.
+    pub fn set_concurrent_jobs(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.concurrent_jobs = input;
+        self
+    }
+    /// Specify the maximum number of jobs your queue can process concurrently. For on-demand queues, the value you enter is constrained by your service quotas for Maximum concurrent jobs, per on-demand queue and Maximum concurrent jobs, per account. For reserved queues, specify the number of jobs you can process concurrently in your reservation plan instead.
+    pub fn get_concurrent_jobs(&self) -> &::std::option::Option<i32> {
+        &self.concurrent_jobs
+    }
     /// Optional. A description of the queue that you are creating.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -155,6 +176,7 @@ impl CreateQueueInputBuilder {
     /// Consumes the builder and constructs a [`CreateQueueInput`](crate::operation::create_queue::CreateQueueInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_queue::CreateQueueInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_queue::CreateQueueInput {
+            concurrent_jobs: self.concurrent_jobs,
             description: self.description,
             name: self.name,
             pricing_plan: self.pricing_plan,

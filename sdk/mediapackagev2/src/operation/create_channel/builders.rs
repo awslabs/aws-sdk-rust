@@ -199,6 +199,34 @@ impl CreateChannelFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    /// <p>The configuration for input switching based on the media quality confidence score (MQCS) as provided from AWS Elemental MediaLive. This setting is valid only when <code>InputType</code> is <code>CMAF</code>.</p>
+    pub fn input_switch_configuration(mut self, input: crate::types::InputSwitchConfiguration) -> Self {
+        self.inner = self.inner.input_switch_configuration(input);
+        self
+    }
+    /// <p>The configuration for input switching based on the media quality confidence score (MQCS) as provided from AWS Elemental MediaLive. This setting is valid only when <code>InputType</code> is <code>CMAF</code>.</p>
+    pub fn set_input_switch_configuration(mut self, input: ::std::option::Option<crate::types::InputSwitchConfiguration>) -> Self {
+        self.inner = self.inner.set_input_switch_configuration(input);
+        self
+    }
+    /// <p>The configuration for input switching based on the media quality confidence score (MQCS) as provided from AWS Elemental MediaLive. This setting is valid only when <code>InputType</code> is <code>CMAF</code>.</p>
+    pub fn get_input_switch_configuration(&self) -> &::std::option::Option<crate::types::InputSwitchConfiguration> {
+        self.inner.get_input_switch_configuration()
+    }
+    /// <p>The settings for what common media server data (CMSD) headers AWS Elemental MediaPackage includes in responses to the CDN. This setting is valid only when <code>InputType</code> is <code>CMAF</code>.</p>
+    pub fn output_header_configuration(mut self, input: crate::types::OutputHeaderConfiguration) -> Self {
+        self.inner = self.inner.output_header_configuration(input);
+        self
+    }
+    /// <p>The settings for what common media server data (CMSD) headers AWS Elemental MediaPackage includes in responses to the CDN. This setting is valid only when <code>InputType</code> is <code>CMAF</code>.</p>
+    pub fn set_output_header_configuration(mut self, input: ::std::option::Option<crate::types::OutputHeaderConfiguration>) -> Self {
+        self.inner = self.inner.set_output_header_configuration(input);
+        self
+    }
+    /// <p>The settings for what common media server data (CMSD) headers AWS Elemental MediaPackage includes in responses to the CDN. This setting is valid only when <code>InputType</code> is <code>CMAF</code>.</p>
+    pub fn get_output_header_configuration(&self) -> &::std::option::Option<crate::types::OutputHeaderConfiguration> {
+        self.inner.get_output_header_configuration()
+    }
     ///
     /// Adds a key-value pair to `Tags`.
     ///

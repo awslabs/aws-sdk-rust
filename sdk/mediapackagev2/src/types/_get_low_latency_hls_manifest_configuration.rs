@@ -12,7 +12,7 @@ pub struct GetLowLatencyHlsManifestConfiguration {
     pub child_manifest_name: ::std::option::Option<::std::string::String>,
     /// <p>The total duration (in seconds) of the manifest's content.</p>
     pub manifest_window_seconds: ::std::option::Option<i32>,
-    /// <p>Inserts EXT-X-PROGRAM-DATE-TIME tags in the output manifest at the interval that you specify. If you don't enter an interval, EXT-X-PROGRAM-DATE-TIME tags aren't included in the manifest. The tags sync the stream to the wall clock so that viewers can seek to a specific time in the playback timeline on the player. ID3Timed metadata messages generate every 5 seconds whenever the content is ingested.</p>
+    /// <p>Inserts EXT-X-PROGRAM-DATE-TIME tags in the output manifest at the interval that you specify. If you don't enter an interval, EXT-X-PROGRAM-DATE-TIME tags aren't included in the manifest. The tags sync the stream to the wall clock so that viewers can seek to a specific time in the playback timeline on the player.</p>
     /// <p>Irrespective of this parameter, if any ID3Timed metadata is in the HLS input, it is passed through to the HLS output.</p>
     pub program_date_time_interval_seconds: ::std::option::Option<i32>,
     /// <p>The SCTE configuration.</p>
@@ -41,7 +41,7 @@ impl GetLowLatencyHlsManifestConfiguration {
     pub fn manifest_window_seconds(&self) -> ::std::option::Option<i32> {
         self.manifest_window_seconds
     }
-    /// <p>Inserts EXT-X-PROGRAM-DATE-TIME tags in the output manifest at the interval that you specify. If you don't enter an interval, EXT-X-PROGRAM-DATE-TIME tags aren't included in the manifest. The tags sync the stream to the wall clock so that viewers can seek to a specific time in the playback timeline on the player. ID3Timed metadata messages generate every 5 seconds whenever the content is ingested.</p>
+    /// <p>Inserts EXT-X-PROGRAM-DATE-TIME tags in the output manifest at the interval that you specify. If you don't enter an interval, EXT-X-PROGRAM-DATE-TIME tags aren't included in the manifest. The tags sync the stream to the wall clock so that viewers can seek to a specific time in the playback timeline on the player.</p>
     /// <p>Irrespective of this parameter, if any ID3Timed metadata is in the HLS input, it is passed through to the HLS output.</p>
     pub fn program_date_time_interval_seconds(&self) -> ::std::option::Option<i32> {
         self.program_date_time_interval_seconds
@@ -138,19 +138,19 @@ impl GetLowLatencyHlsManifestConfigurationBuilder {
     pub fn get_manifest_window_seconds(&self) -> &::std::option::Option<i32> {
         &self.manifest_window_seconds
     }
-    /// <p>Inserts EXT-X-PROGRAM-DATE-TIME tags in the output manifest at the interval that you specify. If you don't enter an interval, EXT-X-PROGRAM-DATE-TIME tags aren't included in the manifest. The tags sync the stream to the wall clock so that viewers can seek to a specific time in the playback timeline on the player. ID3Timed metadata messages generate every 5 seconds whenever the content is ingested.</p>
+    /// <p>Inserts EXT-X-PROGRAM-DATE-TIME tags in the output manifest at the interval that you specify. If you don't enter an interval, EXT-X-PROGRAM-DATE-TIME tags aren't included in the manifest. The tags sync the stream to the wall clock so that viewers can seek to a specific time in the playback timeline on the player.</p>
     /// <p>Irrespective of this parameter, if any ID3Timed metadata is in the HLS input, it is passed through to the HLS output.</p>
     pub fn program_date_time_interval_seconds(mut self, input: i32) -> Self {
         self.program_date_time_interval_seconds = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Inserts EXT-X-PROGRAM-DATE-TIME tags in the output manifest at the interval that you specify. If you don't enter an interval, EXT-X-PROGRAM-DATE-TIME tags aren't included in the manifest. The tags sync the stream to the wall clock so that viewers can seek to a specific time in the playback timeline on the player. ID3Timed metadata messages generate every 5 seconds whenever the content is ingested.</p>
+    /// <p>Inserts EXT-X-PROGRAM-DATE-TIME tags in the output manifest at the interval that you specify. If you don't enter an interval, EXT-X-PROGRAM-DATE-TIME tags aren't included in the manifest. The tags sync the stream to the wall clock so that viewers can seek to a specific time in the playback timeline on the player.</p>
     /// <p>Irrespective of this parameter, if any ID3Timed metadata is in the HLS input, it is passed through to the HLS output.</p>
     pub fn set_program_date_time_interval_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.program_date_time_interval_seconds = input;
         self
     }
-    /// <p>Inserts EXT-X-PROGRAM-DATE-TIME tags in the output manifest at the interval that you specify. If you don't enter an interval, EXT-X-PROGRAM-DATE-TIME tags aren't included in the manifest. The tags sync the stream to the wall clock so that viewers can seek to a specific time in the playback timeline on the player. ID3Timed metadata messages generate every 5 seconds whenever the content is ingested.</p>
+    /// <p>Inserts EXT-X-PROGRAM-DATE-TIME tags in the output manifest at the interval that you specify. If you don't enter an interval, EXT-X-PROGRAM-DATE-TIME tags aren't included in the manifest. The tags sync the stream to the wall clock so that viewers can seek to a specific time in the playback timeline on the player.</p>
     /// <p>Irrespective of this parameter, if any ID3Timed metadata is in the HLS input, it is passed through to the HLS output.</p>
     pub fn get_program_date_time_interval_seconds(&self) -> &::std::option::Option<i32> {
         &self.program_date_time_interval_seconds

@@ -52,6 +52,22 @@ pub fn de_update_distribution_with_staging_config_http_error(
                                                         }
             tmp
         }),
+        "EntityNotFound" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::EntityNotFound({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::EntityNotFoundBuilder::default();
+                    output = crate::protocol_serde::shape_entity_not_found::de_entity_not_found_xml_err(_response_body, output).map_err(crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                            tmp.message = _error_message;
+                                                        }
+            tmp
+        }),
         "IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior({
             #[allow(unused_mut)]
             let mut tmp =

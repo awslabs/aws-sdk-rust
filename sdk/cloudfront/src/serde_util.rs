@@ -32,6 +32,51 @@ pub(crate) fn realtime_log_config_correct_errors(
     builder
 }
 
+pub(crate) fn anycast_ip_list_correct_errors(
+    mut builder: crate::types::builders::AnycastIpListBuilder,
+) -> crate::types::builders::AnycastIpListBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.anycast_ips.is_none() {
+        builder.anycast_ips = Some(Default::default())
+    }
+    if builder.ip_count.is_none() {
+        builder.ip_count = Some(Default::default())
+    }
+    if builder.last_modified_time.is_none() {
+        builder.last_modified_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn anycast_ip_list_collection_correct_errors(
+    mut builder: crate::types::builders::AnycastIpListCollectionBuilder,
+) -> crate::types::builders::AnycastIpListCollectionBuilder {
+    if builder.marker.is_none() {
+        builder.marker = Some(Default::default())
+    }
+    if builder.max_items.is_none() {
+        builder.max_items = Some(Default::default())
+    }
+    if builder.is_truncated.is_none() {
+        builder.is_truncated = Some(Default::default())
+    }
+    if builder.quantity.is_none() {
+        builder.quantity = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn cache_policy_correct_errors(mut builder: crate::types::builders::CachePolicyBuilder) -> crate::types::builders::CachePolicyBuilder {
     if builder.id.is_none() {
         builder.id = Some(Default::default())
@@ -760,6 +805,49 @@ pub(crate) fn streaming_distribution_list_correct_errors(
     builder
 }
 
+pub(crate) fn vpc_origin_correct_errors(mut builder: crate::types::builders::VpcOriginBuilder) -> crate::types::builders::VpcOriginBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = Some(Default::default())
+    }
+    if builder.created_time.is_none() {
+        builder.created_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_modified_time.is_none() {
+        builder.last_modified_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.vpc_origin_endpoint_config.is_none() {
+        builder.vpc_origin_endpoint_config = {
+            let builder = crate::types::builders::VpcOriginEndpointConfigBuilder::default();
+            crate::serde_util::vpc_origin_endpoint_config_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn vpc_origin_list_correct_errors(
+    mut builder: crate::types::builders::VpcOriginListBuilder,
+) -> crate::types::builders::VpcOriginListBuilder {
+    if builder.marker.is_none() {
+        builder.marker = Some(Default::default())
+    }
+    if builder.max_items.is_none() {
+        builder.max_items = Some(Default::default())
+    }
+    if builder.is_truncated.is_none() {
+        builder.is_truncated = Some(Default::default())
+    }
+    if builder.quantity.is_none() {
+        builder.quantity = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn active_trusted_key_groups_correct_errors(
     mut builder: crate::types::builders::ActiveTrustedKeyGroupsBuilder,
 ) -> crate::types::builders::ActiveTrustedKeyGroupsBuilder {
@@ -881,24 +969,6 @@ pub(crate) fn invalidation_batch_correct_errors(
     }
     if builder.caller_reference.is_none() {
         builder.caller_reference = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn logging_config_correct_errors(
-    mut builder: crate::types::builders::LoggingConfigBuilder,
-) -> crate::types::builders::LoggingConfigBuilder {
-    if builder.enabled.is_none() {
-        builder.enabled = Some(Default::default())
-    }
-    if builder.include_cookies.is_none() {
-        builder.include_cookies = Some(Default::default())
-    }
-    if builder.bucket.is_none() {
-        builder.bucket = Some(Default::default())
-    }
-    if builder.prefix.is_none() {
-        builder.prefix = Some(Default::default())
     }
     builder
 }
@@ -1120,6 +1190,27 @@ pub(crate) fn trusted_signers_correct_errors(
     builder
 }
 
+pub(crate) fn vpc_origin_endpoint_config_correct_errors(
+    mut builder: crate::types::builders::VpcOriginEndpointConfigBuilder,
+) -> crate::types::builders::VpcOriginEndpointConfigBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.http_port.is_none() {
+        builder.http_port = Some(Default::default())
+    }
+    if builder.https_port.is_none() {
+        builder.https_port = Some(Default::default())
+    }
+    if builder.origin_protocol_policy.is_none() {
+        builder.origin_protocol_policy = "no value was set".parse::<crate::types::OriginProtocolPolicy>().ok()
+    }
+    builder
+}
+
 pub(crate) fn allowed_methods_correct_errors(
     mut builder: crate::types::builders::AllowedMethodsBuilder,
 ) -> crate::types::builders::AllowedMethodsBuilder {
@@ -1128,6 +1219,30 @@ pub(crate) fn allowed_methods_correct_errors(
     }
     if builder.items.is_none() {
         builder.items = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn anycast_ip_list_summary_correct_errors(
+    mut builder: crate::types::builders::AnycastIpListSummaryBuilder,
+) -> crate::types::builders::AnycastIpListSummaryBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.ip_count.is_none() {
+        builder.ip_count = Some(Default::default())
+    }
+    if builder.last_modified_time.is_none() {
+        builder.last_modified_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -1391,6 +1506,13 @@ pub(crate) fn geo_restriction_correct_errors(
     builder
 }
 
+pub(crate) fn grpc_config_correct_errors(mut builder: crate::types::builders::GrpcConfigBuilder) -> crate::types::builders::GrpcConfigBuilder {
+    if builder.enabled.is_none() {
+        builder.enabled = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn headers_correct_errors(mut builder: crate::types::builders::HeadersBuilder) -> crate::types::builders::HeadersBuilder {
     if builder.quantity.is_none() {
         builder.quantity = Some(Default::default())
@@ -1490,6 +1612,18 @@ pub(crate) fn origin_request_policy_summary_correct_errors(
             let builder = crate::types::builders::OriginRequestPolicyBuilder::default();
             crate::serde_util::origin_request_policy_correct_errors(builder).build().ok()
         }
+    }
+    builder
+}
+
+pub(crate) fn origin_ssl_protocols_correct_errors(
+    mut builder: crate::types::builders::OriginSslProtocolsBuilder,
+) -> crate::types::builders::OriginSslProtocolsBuilder {
+    if builder.quantity.is_none() {
+        builder.quantity = Some(Default::default())
+    }
+    if builder.items.is_none() {
+        builder.items = Some(Default::default())
     }
     builder
 }
@@ -1729,6 +1863,33 @@ pub(crate) fn trusted_key_groups_correct_errors(
     }
     if builder.quantity.is_none() {
         builder.quantity = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn vpc_origin_summary_correct_errors(
+    mut builder: crate::types::builders::VpcOriginSummaryBuilder,
+) -> crate::types::builders::VpcOriginSummaryBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = Some(Default::default())
+    }
+    if builder.created_time.is_none() {
+        builder.created_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_modified_time.is_none() {
+        builder.last_modified_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.origin_endpoint_arn.is_none() {
+        builder.origin_endpoint_arn = Some(Default::default())
     }
     builder
 }
@@ -2007,14 +2168,11 @@ pub(crate) fn s3_origin_config_correct_errors(
     builder
 }
 
-pub(crate) fn origin_ssl_protocols_correct_errors(
-    mut builder: crate::types::builders::OriginSslProtocolsBuilder,
-) -> crate::types::builders::OriginSslProtocolsBuilder {
-    if builder.quantity.is_none() {
-        builder.quantity = Some(Default::default())
-    }
-    if builder.items.is_none() {
-        builder.items = Some(Default::default())
+pub(crate) fn vpc_origin_config_correct_errors(
+    mut builder: crate::types::builders::VpcOriginConfigBuilder,
+) -> crate::types::builders::VpcOriginConfigBuilder {
+    if builder.vpc_origin_id.is_none() {
+        builder.vpc_origin_id = Some(Default::default())
     }
     builder
 }

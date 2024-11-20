@@ -972,6 +972,35 @@ impl From<crate::operation::create_project_membership::CreateProjectMembershipEr
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_rule::CreateRuleError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_rule::CreateRuleError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_rule::CreateRuleError> for Error {
+    fn from(err: crate::operation::create_rule::CreateRuleError) -> Self {
+        match err {
+            crate::operation::create_rule::CreateRuleError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_rule::CreateRuleError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_rule::CreateRuleError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_rule::CreateRuleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_rule::CreateRuleError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_rule::CreateRuleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_rule::CreateRuleError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_rule::CreateRuleError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::create_rule::CreateRuleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_subscription_grant::CreateSubscriptionGrantError, R>>
     for Error
 where
@@ -1679,6 +1708,34 @@ impl From<crate::operation::delete_project_membership::DeleteProjectMembershipEr
                 Error::UnauthorizedException(inner)
             }
             crate::operation::delete_project_membership::DeleteProjectMembershipError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_rule::DeleteRuleError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_rule::DeleteRuleError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_rule::DeleteRuleError> for Error {
+    fn from(err: crate::operation::delete_rule::DeleteRuleError) -> Self {
+        match err {
+            crate::operation::delete_rule::DeleteRuleError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_rule::DeleteRuleError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_rule::DeleteRuleError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_rule::DeleteRuleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_rule::DeleteRuleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_rule::DeleteRuleError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_rule::DeleteRuleError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::delete_rule::DeleteRuleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2625,6 +2682,33 @@ impl From<crate::operation::get_project::GetProjectError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_rule::GetRuleError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_rule::GetRuleError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_rule::GetRuleError> for Error {
+    fn from(err: crate::operation::get_rule::GetRuleError) -> Self {
+        match err {
+            crate::operation::get_rule::GetRuleError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_rule::GetRuleError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_rule::GetRuleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_rule::GetRuleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_rule::GetRuleError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_rule::GetRuleError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::get_rule::GetRuleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_subscription::GetSubscriptionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3530,6 +3614,33 @@ impl From<crate::operation::list_projects::ListProjectsError> for Error {
             crate::operation::list_projects::ListProjectsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_projects::ListProjectsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::list_projects::ListProjectsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_rules::ListRulesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_rules::ListRulesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_rules::ListRulesError> for Error {
+    fn from(err: crate::operation::list_rules::ListRulesError) -> Self {
+        match err {
+            crate::operation::list_rules::ListRulesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_rules::ListRulesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_rules::ListRulesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_rules::ListRulesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_rules::ListRulesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_rules::ListRulesError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::list_rules::ListRulesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -4668,6 +4779,35 @@ impl From<crate::operation::update_project::UpdateProjectError> for Error {
             crate::operation::update_project::UpdateProjectError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_project::UpdateProjectError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::update_project::UpdateProjectError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_rule::UpdateRuleError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_rule::UpdateRuleError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_rule::UpdateRuleError> for Error {
+    fn from(err: crate::operation::update_rule::UpdateRuleError) -> Self {
+        match err {
+            crate::operation::update_rule::UpdateRuleError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_rule::UpdateRuleError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_rule::UpdateRuleError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_rule::UpdateRuleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_rule::UpdateRuleError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::update_rule::UpdateRuleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_rule::UpdateRuleError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_rule::UpdateRuleError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::update_rule::UpdateRuleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

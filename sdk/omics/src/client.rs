@@ -261,6 +261,8 @@ mod create_multipart_read_set_upload;
 
 mod create_reference_store;
 
+mod create_run_cache;
+
 mod create_run_group;
 
 mod create_sequence_store;
@@ -284,6 +286,8 @@ mod delete_reference;
 mod delete_reference_store;
 
 mod delete_run;
+
+mod delete_run_cache;
 
 mod delete_run_group;
 
@@ -320,6 +324,8 @@ mod get_reference_metadata;
 mod get_reference_store;
 
 mod get_run;
+
+mod get_run_cache;
 
 mod get_run_group;
 
@@ -358,6 +364,8 @@ mod list_reference_import_jobs;
 mod list_reference_stores;
 
 mod list_references;
+
+mod list_run_caches;
 
 mod list_run_groups;
 
@@ -398,6 +406,8 @@ mod untag_resource;
 mod update_annotation_store;
 
 mod update_annotation_store_version;
+
+mod update_run_cache;
 
 mod update_run_group;
 

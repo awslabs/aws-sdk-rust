@@ -17,6 +17,159 @@ pub use crate::types::error::_dependency_failed_exception::DependencyFailedExcep
 
 pub use crate::types::error::_access_denied_exception::AccessDeniedException;
 
+/// Error type for the `OptimizedPromptStreamError` operation.
+#[non_exhaustive]
+#[derive(::std::fmt::Debug)]
+pub enum OptimizedPromptStreamError {
+    /// <p>An internal server error occurred. Retry your request.</p>
+    InternalServerException(crate::types::error::InternalServerException),
+    /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
+    ThrottlingException(crate::types::error::ThrottlingException),
+    /// <p>Input validation failed. Check your request parameters and retry the request.</p>
+    ValidationException(crate::types::error::ValidationException),
+    /// <p>There was an issue with a dependency. Check the resource configurations and retry the request.</p>
+    DependencyFailedException(crate::types::error::DependencyFailedException),
+    /// <p>The request is denied because of missing access permissions. Check your permissions and retry your request.</p>
+    AccessDeniedException(crate::types::error::AccessDeniedException),
+    /// <p>There was an issue with a dependency due to a server issue. Retry your request.</p>
+    BadGatewayException(crate::types::error::BadGatewayException),
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
+    variable wildcard pattern and check `.code()`:
+     \
+    &nbsp;&nbsp;&nbsp;`err if err.code() == Some(\"SpecificExceptionCode\") => { /* handle the error */ }`
+     \
+    See [`ProvideErrorMetadata`](#impl-ProvideErrorMetadata-for-OptimizedPromptStreamError) for what information is available for the error.")]
+    Unhandled(crate::error::sealed_unhandled::Unhandled),
+}
+impl OptimizedPromptStreamError {
+    /// Creates the `OptimizedPromptStreamError::Unhandled` variant from any error type.
+    pub fn unhandled(
+        err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
+    ) -> Self {
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source: err.into(),
+            meta: ::std::default::Default::default(),
+        })
+    }
+
+    /// Creates the `OptimizedPromptStreamError::Unhandled` variant from an [`ErrorMetadata`](::aws_smithy_types::error::ErrorMetadata).
+    pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source: err.clone().into(),
+            meta: err,
+        })
+    }
+    ///
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    ///
+    pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
+        match self {
+            Self::InternalServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::DependencyFailedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::BadGatewayException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::Unhandled(e) => &e.meta,
+        }
+    }
+    /// Returns `true` if the error kind is `OptimizedPromptStreamError::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(self, Self::InternalServerException(_))
+    }
+    /// Returns `true` if the error kind is `OptimizedPromptStreamError::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(self, Self::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `OptimizedPromptStreamError::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(self, Self::ValidationException(_))
+    }
+    /// Returns `true` if the error kind is `OptimizedPromptStreamError::DependencyFailedException`.
+    pub fn is_dependency_failed_exception(&self) -> bool {
+        matches!(self, Self::DependencyFailedException(_))
+    }
+    /// Returns `true` if the error kind is `OptimizedPromptStreamError::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(self, Self::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `OptimizedPromptStreamError::BadGatewayException`.
+    pub fn is_bad_gateway_exception(&self) -> bool {
+        matches!(self, Self::BadGatewayException(_))
+    }
+}
+impl ::std::error::Error for OptimizedPromptStreamError {
+    fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
+        match self {
+            Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
+            Self::DependencyFailedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::BadGatewayException(_inner) => ::std::option::Option::Some(_inner),
+            Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
+        }
+    }
+}
+impl ::std::fmt::Display for OptimizedPromptStreamError {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        match self {
+            Self::InternalServerException(_inner) => _inner.fmt(f),
+            Self::ThrottlingException(_inner) => _inner.fmt(f),
+            Self::ValidationException(_inner) => _inner.fmt(f),
+            Self::DependencyFailedException(_inner) => _inner.fmt(f),
+            Self::AccessDeniedException(_inner) => _inner.fmt(f),
+            Self::BadGatewayException(_inner) => _inner.fmt(f),
+            Self::Unhandled(_inner) => {
+                if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
+                    write!(f, "unhandled error ({code})")
+                } else {
+                    f.write_str("unhandled error")
+                }
+            }
+        }
+    }
+}
+impl ::aws_smithy_types::retry::ProvideErrorKind for OptimizedPromptStreamError {
+    fn code(&self) -> ::std::option::Option<&str> {
+        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
+    }
+    fn retryable_error_kind(&self) -> ::std::option::Option<::aws_smithy_types::retry::ErrorKind> {
+        ::std::option::Option::None
+    }
+}
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for OptimizedPromptStreamError {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
+        match self {
+            Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DependencyFailedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::BadGatewayException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::Unhandled(_inner) => &_inner.meta,
+        }
+    }
+}
+impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for OptimizedPromptStreamError {
+    fn create_unhandled_error(
+        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
+        meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
+    ) -> Self {
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source,
+            meta: meta.unwrap_or_default(),
+        })
+    }
+}
+impl ::aws_types::request_id::RequestId for crate::types::error::OptimizedPromptStreamError {
+    fn request_id(&self) -> Option<&str> {
+        self.meta().request_id()
+    }
+}
+
 /// Error type for the `ResponseStreamError` operation.
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]

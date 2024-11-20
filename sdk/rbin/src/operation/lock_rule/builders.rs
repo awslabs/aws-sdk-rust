@@ -22,7 +22,9 @@ impl crate::operation::lock_rule::builders::LockRuleInputBuilder {
 }
 /// Fluent builder constructing a request to `LockRule`.
 ///
-/// <p>Locks a retention rule. A locked retention rule can't be modified or deleted.</p>
+/// <p>Locks a Region-level retention rule. A locked retention rule can't be modified or deleted.</p><note>
+/// <p>You can't lock tag-level retention rules, or Region-level retention rules that have exclusion tags.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct LockRuleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

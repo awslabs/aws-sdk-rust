@@ -7,6 +7,9 @@ pub mod associate_alias;
 /// Types for the `CopyDistribution` operation.
 pub mod copy_distribution;
 
+/// Types for the `CreateAnycastIpList` operation.
+pub mod create_anycast_ip_list;
+
 /// Types for the `CreateCachePolicy` operation.
 pub mod create_cache_policy;
 
@@ -64,6 +67,12 @@ pub mod create_streaming_distribution;
 /// Types for the `CreateStreamingDistributionWithTags` operation.
 pub mod create_streaming_distribution_with_tags;
 
+/// Types for the `CreateVpcOrigin` operation.
+pub mod create_vpc_origin;
+
+/// Types for the `DeleteAnycastIpList` operation.
+pub mod delete_anycast_ip_list;
+
 /// Types for the `DeleteCachePolicy` operation.
 pub mod delete_cache_policy;
 
@@ -112,11 +121,17 @@ pub mod delete_response_headers_policy;
 /// Types for the `DeleteStreamingDistribution` operation.
 pub mod delete_streaming_distribution;
 
+/// Types for the `DeleteVpcOrigin` operation.
+pub mod delete_vpc_origin;
+
 /// Types for the `DescribeFunction` operation.
 pub mod describe_function;
 
 /// Types for the `DescribeKeyValueStore` operation.
 pub mod describe_key_value_store;
+
+/// Types for the `GetAnycastIpList` operation.
+pub mod get_anycast_ip_list;
 
 /// Types for the `GetCachePolicy` operation.
 pub mod get_cache_policy;
@@ -202,6 +217,12 @@ pub mod get_streaming_distribution;
 /// Types for the `GetStreamingDistributionConfig` operation.
 pub mod get_streaming_distribution_config;
 
+/// Types for the `GetVpcOrigin` operation.
+pub mod get_vpc_origin;
+
+/// Types for the `ListAnycastIpLists` operation.
+pub mod list_anycast_ip_lists;
+
 /// Types for the `ListCachePolicies` operation.
 pub mod list_cache_policies;
 
@@ -217,6 +238,9 @@ pub mod list_continuous_deployment_policies;
 /// Types for the `ListDistributions` operation.
 pub mod list_distributions;
 
+/// Types for the `ListDistributionsByAnycastIpListId` operation.
+pub mod list_distributions_by_anycast_ip_list_id;
+
 /// Types for the `ListDistributionsByCachePolicyId` operation.
 pub mod list_distributions_by_cache_policy_id;
 
@@ -231,6 +255,9 @@ pub mod list_distributions_by_realtime_log_config;
 
 /// Types for the `ListDistributionsByResponseHeadersPolicyId` operation.
 pub mod list_distributions_by_response_headers_policy_id;
+
+/// Types for the `ListDistributionsByVpcOriginId` operation.
+pub mod list_distributions_by_vpc_origin_id;
 
 /// Types for the `ListDistributionsByWebACLId` operation.
 pub mod list_distributions_by_web_acl_id;
@@ -273,6 +300,9 @@ pub mod list_streaming_distributions;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
+
+/// Types for the `ListVpcOrigins` operation.
+pub mod list_vpc_origins;
 
 /// Types for the `PublishFunction` operation.
 pub mod publish_function;
@@ -333,3 +363,6 @@ pub mod update_response_headers_policy;
 
 /// Types for the `UpdateStreamingDistribution` operation.
 pub mod update_streaming_distribution;
+
+/// Types for the `UpdateVpcOrigin` operation.
+pub mod update_vpc_origin;

@@ -5,6 +5,8 @@ pub use crate::types::_type_::Type;
 
 pub use crate::types::_queue_status::QueueStatus;
 
+pub use crate::types::_service_override::ServiceOverride;
+
 pub use crate::types::_reservation_plan::ReservationPlan;
 
 pub use crate::types::_reservation_plan_status::ReservationPlanStatus;
@@ -2246,6 +2248,8 @@ mod _scaling_behavior;
 mod _scc_destination_framerate;
 
 mod _scc_destination_settings;
+
+mod _service_override;
 
 mod _simulate_reserved_queue;
 

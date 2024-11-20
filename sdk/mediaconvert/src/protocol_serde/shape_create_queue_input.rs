@@ -3,33 +3,39 @@ pub fn ser_create_queue_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_queue::CreateQueueInput,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.description {
-        object.key("description").string(var_1.as_str());
+    if let Some(var_1) = &input.concurrent_jobs {
+        object.key("concurrentJobs").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+        );
     }
-    if let Some(var_2) = &input.name {
-        object.key("name").string(var_2.as_str());
+    if let Some(var_2) = &input.description {
+        object.key("description").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.pricing_plan {
-        object.key("pricingPlan").string(var_3.as_str());
+    if let Some(var_3) = &input.name {
+        object.key("name").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.reservation_plan_settings {
+    if let Some(var_4) = &input.pricing_plan {
+        object.key("pricingPlan").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.reservation_plan_settings {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("reservationPlanSettings").start_object();
-        crate::protocol_serde::shape_reservation_plan_settings::ser_reservation_plan_settings(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_6 = object.key("reservationPlanSettings").start_object();
+        crate::protocol_serde::shape_reservation_plan_settings::ser_reservation_plan_settings(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_6) = &input.status {
-        object.key("status").string(var_6.as_str());
+    if let Some(var_7) = &input.status {
+        object.key("status").string(var_7.as_str());
     }
-    if let Some(var_7) = &input.tags {
+    if let Some(var_8) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("tags").start_object();
-        for (key_9, value_10) in var_7 {
+        let mut object_9 = object.key("tags").start_object();
+        for (key_10, value_11) in var_8 {
             {
-                object_8.key(key_9.as_str()).string(value_10.as_str());
+                object_9.key(key_10.as_str()).string(value_11.as_str());
             }
         }
-        object_8.finish();
+        object_9.finish();
     }
     Ok(())
 }

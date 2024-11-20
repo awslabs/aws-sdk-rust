@@ -9,14 +9,17 @@ pub fn ser_list_enabled_baselines_input_input(
         crate::protocol_serde::shape_enabled_baseline_filter::ser_enabled_baseline_filter(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.max_results {
+    if let Some(var_3) = &input.include_children {
+        object.key("includeChildren").boolean(*var_3);
+    }
+    if let Some(var_4) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_4) = &input.next_token {
-        object.key("nextToken").string(var_4.as_str());
+    if let Some(var_5) = &input.next_token {
+        object.key("nextToken").string(var_5.as_str());
     }
     Ok(())
 }

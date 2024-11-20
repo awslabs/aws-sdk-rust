@@ -40,6 +40,8 @@ pub struct Origin {
     pub s3_origin_config: ::std::option::Option<crate::types::S3OriginConfig>,
     /// <p>Use this type to specify an origin that is not an Amazon S3 bucket, with one exception. If the Amazon S3 bucket is configured with static website hosting, use this type. If the Amazon S3 bucket is not configured with static website hosting, use the <code>S3OriginConfig</code> type instead.</p>
     pub custom_origin_config: ::std::option::Option<crate::types::CustomOriginConfig>,
+    /// <p>The VPC origin configuration.</p>
+    pub vpc_origin_config: ::std::option::Option<crate::types::VpcOriginConfig>,
     /// <p>The number of times that CloudFront attempts to connect to the origin. The minimum number is 1, the maximum is 3, and the default (if you don't specify otherwise) is 3.</p>
     /// <p>For a custom origin (including an Amazon S3 bucket that's configured with static website hosting), this value also specifies the number of times that CloudFront attempts to get a response from the origin, in the case of an <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Origin Response Timeout</a>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-attempts">Origin Connection Attempts</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -85,6 +87,10 @@ impl Origin {
     pub fn custom_origin_config(&self) -> ::std::option::Option<&crate::types::CustomOriginConfig> {
         self.custom_origin_config.as_ref()
     }
+    /// <p>The VPC origin configuration.</p>
+    pub fn vpc_origin_config(&self) -> ::std::option::Option<&crate::types::VpcOriginConfig> {
+        self.vpc_origin_config.as_ref()
+    }
     /// <p>The number of times that CloudFront attempts to connect to the origin. The minimum number is 1, the maximum is 3, and the default (if you don't specify otherwise) is 3.</p>
     /// <p>For a custom origin (including an Amazon S3 bucket that's configured with static website hosting), this value also specifies the number of times that CloudFront attempts to get a response from the origin, in the case of an <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Origin Response Timeout</a>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-attempts">Origin Connection Attempts</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -124,6 +130,7 @@ pub struct OriginBuilder {
     pub(crate) custom_headers: ::std::option::Option<crate::types::CustomHeaders>,
     pub(crate) s3_origin_config: ::std::option::Option<crate::types::S3OriginConfig>,
     pub(crate) custom_origin_config: ::std::option::Option<crate::types::CustomOriginConfig>,
+    pub(crate) vpc_origin_config: ::std::option::Option<crate::types::VpcOriginConfig>,
     pub(crate) connection_attempts: ::std::option::Option<i32>,
     pub(crate) connection_timeout: ::std::option::Option<i32>,
     pub(crate) origin_shield: ::std::option::Option<crate::types::OriginShield>,
@@ -228,6 +235,20 @@ impl OriginBuilder {
     pub fn get_custom_origin_config(&self) -> &::std::option::Option<crate::types::CustomOriginConfig> {
         &self.custom_origin_config
     }
+    /// <p>The VPC origin configuration.</p>
+    pub fn vpc_origin_config(mut self, input: crate::types::VpcOriginConfig) -> Self {
+        self.vpc_origin_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The VPC origin configuration.</p>
+    pub fn set_vpc_origin_config(mut self, input: ::std::option::Option<crate::types::VpcOriginConfig>) -> Self {
+        self.vpc_origin_config = input;
+        self
+    }
+    /// <p>The VPC origin configuration.</p>
+    pub fn get_vpc_origin_config(&self) -> &::std::option::Option<crate::types::VpcOriginConfig> {
+        &self.vpc_origin_config
+    }
     /// <p>The number of times that CloudFront attempts to connect to the origin. The minimum number is 1, the maximum is 3, and the default (if you don't specify otherwise) is 3.</p>
     /// <p>For a custom origin (including an Amazon S3 bucket that's configured with static website hosting), this value also specifies the number of times that CloudFront attempts to get a response from the origin, in the case of an <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Origin Response Timeout</a>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-attempts">Origin Connection Attempts</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -318,6 +339,7 @@ impl OriginBuilder {
             custom_headers: self.custom_headers,
             s3_origin_config: self.s3_origin_config,
             custom_origin_config: self.custom_origin_config,
+            vpc_origin_config: self.vpc_origin_config,
             connection_attempts: self.connection_attempts,
             connection_timeout: self.connection_timeout,
             origin_shield: self.origin_shield,

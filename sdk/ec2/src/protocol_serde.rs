@@ -2889,6 +2889,8 @@ pub(crate) mod shape_availability_zone_list;
 
 pub(crate) mod shape_baseline_ebs_bandwidth_mbps_request;
 
+pub(crate) mod shape_baseline_performance_factors_request;
+
 pub(crate) mod shape_block_device_mapping_list;
 
 pub(crate) mod shape_bundle_task;
@@ -3773,6 +3775,8 @@ pub(crate) mod shape_coip_address_usage;
 
 pub(crate) mod shape_connection_tracking_configuration;
 
+pub(crate) mod shape_cpu_performance_factor_request;
+
 pub(crate) mod shape_create_fleet_error;
 
 pub(crate) mod shape_create_fleet_instance;
@@ -4253,6 +4257,8 @@ pub(crate) mod shape_available_capacity;
 
 pub(crate) mod shape_baseline_ebs_bandwidth_mbps;
 
+pub(crate) mod shape_baseline_performance_factors;
+
 pub(crate) mod shape_boot_mode_type_list;
 
 pub(crate) mod shape_cancel_capacity_reservation_fleet_error;
@@ -4461,6 +4467,8 @@ pub(crate) mod shape_path_component;
 
 pub(crate) mod shape_pci_id;
 
+pub(crate) mod shape_performance_factor_reference_request;
+
 pub(crate) mod shape_placement_group_info;
 
 pub(crate) mod shape_pool_cidr_blocks_set;
@@ -4610,6 +4618,8 @@ pub(crate) mod shape_client_vpn_endpoint_attribute_status;
 pub(crate) mod shape_connection_tracking_specification;
 
 pub(crate) mod shape_core_count_list;
+
+pub(crate) mod shape_cpu_performance_factor;
 
 pub(crate) mod shape_describe_fleet_error;
 
@@ -4812,6 +4822,10 @@ pub(crate) mod shape_network_card_info;
 pub(crate) mod shape_neuron_device_info;
 
 pub(crate) mod shape_packet_header_statement;
+
+pub(crate) mod shape_performance_factor_reference;
+
+pub(crate) mod shape_performance_factor_reference_set;
 
 pub(crate) mod shape_phase1_dh_group_numbers_list;
 

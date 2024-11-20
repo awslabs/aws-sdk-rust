@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateApplicationOutput {
-    /// <p>Configuration ID of an application to be created.</p>
+    /// <p>The configuration ID of an application to be created.</p>
     pub configuration_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateApplicationOutput {
-    /// <p>Configuration ID of an application to be created.</p>
+    /// <p>The configuration ID of an application to be created.</p>
     pub fn configuration_id(&self) -> ::std::option::Option<&str> {
         self.configuration_id.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct CreateApplicationOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateApplicationOutputBuilder {
-    /// <p>Configuration ID of an application to be created.</p>
+    /// <p>The configuration ID of an application to be created.</p>
     pub fn configuration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Configuration ID of an application to be created.</p>
+    /// <p>The configuration ID of an application to be created.</p>
     pub fn set_configuration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_id = input;
         self
     }
-    /// <p>Configuration ID of an application to be created.</p>
+    /// <p>The configuration ID of an application to be created.</p>
     pub fn get_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.configuration_id
     }

@@ -25,6 +25,10 @@ pub use crate::types::_s3_destination_config::S3DestinationConfig;
 
 pub use crate::types::_harvest_job::HarvestJob;
 
+pub use crate::types::_output_header_configuration::OutputHeaderConfiguration;
+
+pub use crate::types::_input_switch_configuration::InputSwitchConfiguration;
+
 pub use crate::types::_input_type::InputType;
 
 pub use crate::types::_ingest_endpoint::IngestEndpoint;
@@ -171,6 +175,8 @@ mod _harvester_schedule_configuration;
 
 mod _ingest_endpoint;
 
+mod _input_switch_configuration;
+
 mod _input_type;
 
 mod _list_dash_manifest_configuration;
@@ -180,6 +186,8 @@ mod _list_hls_manifest_configuration;
 mod _list_low_latency_hls_manifest_configuration;
 
 mod _origin_endpoint_list_configuration;
+
+mod _output_header_configuration;
 
 mod _preset_speke20_audio;
 

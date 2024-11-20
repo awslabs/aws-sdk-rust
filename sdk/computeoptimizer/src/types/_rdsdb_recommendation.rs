@@ -14,10 +14,14 @@ pub struct RdsdbRecommendation {
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The database engine version.</p>
     pub engine_version: ::std::option::Option<::std::string::String>,
+    /// <p>The promotion tier for the Aurora instance.</p>
+    pub promotion_tier: ::std::option::Option<i32>,
     /// <p>The DB instance class of the current RDS instance.</p>
     pub current_db_instance_class: ::std::option::Option<::std::string::String>,
     /// <p>The configuration of the current RDS storage.</p>
     pub current_storage_configuration: ::std::option::Option<crate::types::DbStorageConfiguration>,
+    /// <p>The identifier for DB cluster.</p>
+    pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>This indicates if the RDS instance is idle or not.</p>
     pub idle: ::std::option::Option<crate::types::Idle>,
     /// <p>The finding classification of an Amazon RDS instance.</p>
@@ -44,6 +48,8 @@ pub struct RdsdbRecommendation {
     pub storage_finding: ::std::option::Option<crate::types::RdsStorageFinding>,
     /// <p>The reason for the finding classification of an Amazon RDS instance.</p>
     pub instance_finding_reason_codes: ::std::option::Option<::std::vec::Vec<crate::types::RdsInstanceFindingReasonCode>>,
+    /// <p>The performance risk for the current DB instance.</p>
+    pub current_instance_performance_risk: ::std::option::Option<crate::types::RdsCurrentInstancePerformanceRisk>,
     /// <p>The reason for the finding classification of Amazon RDS storage.</p>
     pub storage_finding_reason_codes: ::std::option::Option<::std::vec::Vec<crate::types::RdsStorageFindingReasonCode>>,
     /// <p>An array of objects that describe the recommendation options for the Amazon RDS instance.</p>
@@ -80,6 +86,10 @@ impl RdsdbRecommendation {
     pub fn engine_version(&self) -> ::std::option::Option<&str> {
         self.engine_version.as_deref()
     }
+    /// <p>The promotion tier for the Aurora instance.</p>
+    pub fn promotion_tier(&self) -> ::std::option::Option<i32> {
+        self.promotion_tier
+    }
     /// <p>The DB instance class of the current RDS instance.</p>
     pub fn current_db_instance_class(&self) -> ::std::option::Option<&str> {
         self.current_db_instance_class.as_deref()
@@ -87,6 +97,10 @@ impl RdsdbRecommendation {
     /// <p>The configuration of the current RDS storage.</p>
     pub fn current_storage_configuration(&self) -> ::std::option::Option<&crate::types::DbStorageConfiguration> {
         self.current_storage_configuration.as_ref()
+    }
+    /// <p>The identifier for DB cluster.</p>
+    pub fn db_cluster_identifier(&self) -> ::std::option::Option<&str> {
+        self.db_cluster_identifier.as_deref()
     }
     /// <p>This indicates if the RDS instance is idle or not.</p>
     pub fn idle(&self) -> ::std::option::Option<&crate::types::Idle> {
@@ -123,6 +137,10 @@ impl RdsdbRecommendation {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_finding_reason_codes.is_none()`.
     pub fn instance_finding_reason_codes(&self) -> &[crate::types::RdsInstanceFindingReasonCode] {
         self.instance_finding_reason_codes.as_deref().unwrap_or_default()
+    }
+    /// <p>The performance risk for the current DB instance.</p>
+    pub fn current_instance_performance_risk(&self) -> ::std::option::Option<&crate::types::RdsCurrentInstancePerformanceRisk> {
+        self.current_instance_performance_risk.as_ref()
     }
     /// <p>The reason for the finding classification of Amazon RDS storage.</p>
     ///
@@ -182,12 +200,15 @@ pub struct RdsdbRecommendationBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) engine: ::std::option::Option<::std::string::String>,
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
+    pub(crate) promotion_tier: ::std::option::Option<i32>,
     pub(crate) current_db_instance_class: ::std::option::Option<::std::string::String>,
     pub(crate) current_storage_configuration: ::std::option::Option<crate::types::DbStorageConfiguration>,
+    pub(crate) db_cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) idle: ::std::option::Option<crate::types::Idle>,
     pub(crate) instance_finding: ::std::option::Option<crate::types::RdsInstanceFinding>,
     pub(crate) storage_finding: ::std::option::Option<crate::types::RdsStorageFinding>,
     pub(crate) instance_finding_reason_codes: ::std::option::Option<::std::vec::Vec<crate::types::RdsInstanceFindingReasonCode>>,
+    pub(crate) current_instance_performance_risk: ::std::option::Option<crate::types::RdsCurrentInstancePerformanceRisk>,
     pub(crate) storage_finding_reason_codes: ::std::option::Option<::std::vec::Vec<crate::types::RdsStorageFindingReasonCode>>,
     pub(crate) instance_recommendation_options: ::std::option::Option<::std::vec::Vec<crate::types::RdsdbInstanceRecommendationOption>>,
     pub(crate) storage_recommendation_options: ::std::option::Option<::std::vec::Vec<crate::types::RdsdbStorageRecommendationOption>>,
@@ -260,6 +281,20 @@ impl RdsdbRecommendationBuilder {
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine_version
     }
+    /// <p>The promotion tier for the Aurora instance.</p>
+    pub fn promotion_tier(mut self, input: i32) -> Self {
+        self.promotion_tier = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The promotion tier for the Aurora instance.</p>
+    pub fn set_promotion_tier(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.promotion_tier = input;
+        self
+    }
+    /// <p>The promotion tier for the Aurora instance.</p>
+    pub fn get_promotion_tier(&self) -> &::std::option::Option<i32> {
+        &self.promotion_tier
+    }
     /// <p>The DB instance class of the current RDS instance.</p>
     pub fn current_db_instance_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_db_instance_class = ::std::option::Option::Some(input.into());
@@ -287,6 +322,20 @@ impl RdsdbRecommendationBuilder {
     /// <p>The configuration of the current RDS storage.</p>
     pub fn get_current_storage_configuration(&self) -> &::std::option::Option<crate::types::DbStorageConfiguration> {
         &self.current_storage_configuration
+    }
+    /// <p>The identifier for DB cluster.</p>
+    pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.db_cluster_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier for DB cluster.</p>
+    pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.db_cluster_identifier = input;
+        self
+    }
+    /// <p>The identifier for DB cluster.</p>
+    pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_identifier
     }
     /// <p>This indicates if the RDS instance is idle or not.</p>
     pub fn idle(mut self, input: crate::types::Idle) -> Self {
@@ -406,6 +455,20 @@ impl RdsdbRecommendationBuilder {
     /// <p>The reason for the finding classification of an Amazon RDS instance.</p>
     pub fn get_instance_finding_reason_codes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RdsInstanceFindingReasonCode>> {
         &self.instance_finding_reason_codes
+    }
+    /// <p>The performance risk for the current DB instance.</p>
+    pub fn current_instance_performance_risk(mut self, input: crate::types::RdsCurrentInstancePerformanceRisk) -> Self {
+        self.current_instance_performance_risk = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The performance risk for the current DB instance.</p>
+    pub fn set_current_instance_performance_risk(mut self, input: ::std::option::Option<crate::types::RdsCurrentInstancePerformanceRisk>) -> Self {
+        self.current_instance_performance_risk = input;
+        self
+    }
+    /// <p>The performance risk for the current DB instance.</p>
+    pub fn get_current_instance_performance_risk(&self) -> &::std::option::Option<crate::types::RdsCurrentInstancePerformanceRisk> {
+        &self.current_instance_performance_risk
     }
     /// Appends an item to `storage_finding_reason_codes`.
     ///
@@ -568,12 +631,15 @@ impl RdsdbRecommendationBuilder {
             account_id: self.account_id,
             engine: self.engine,
             engine_version: self.engine_version,
+            promotion_tier: self.promotion_tier,
             current_db_instance_class: self.current_db_instance_class,
             current_storage_configuration: self.current_storage_configuration,
+            db_cluster_identifier: self.db_cluster_identifier,
             idle: self.idle,
             instance_finding: self.instance_finding,
             storage_finding: self.storage_finding,
             instance_finding_reason_codes: self.instance_finding_reason_codes,
+            current_instance_performance_risk: self.current_instance_performance_risk,
             storage_finding_reason_codes: self.storage_finding_reason_codes,
             instance_recommendation_options: self.instance_recommendation_options,
             storage_recommendation_options: self.storage_recommendation_options,

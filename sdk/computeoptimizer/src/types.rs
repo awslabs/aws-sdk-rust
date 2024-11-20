@@ -49,6 +49,10 @@ pub use crate::types::_savings_opportunity::SavingsOpportunity;
 
 pub use crate::types::_recommendation_source_type::RecommendationSourceType;
 
+pub use crate::types::_idle_summary::IdleSummary;
+
+pub use crate::types::_idle_finding::IdleFinding;
+
 pub use crate::types::_summary::Summary;
 
 pub use crate::types::_reason_code_summary::ReasonCodeSummary;
@@ -96,6 +100,8 @@ pub use crate::types::_rds_instance_savings_opportunity_after_discounts::RdsInst
 pub use crate::types::_rds_instance_estimated_monthly_savings::RdsInstanceEstimatedMonthlySavings;
 
 pub use crate::types::_rds_storage_finding_reason_code::RdsStorageFindingReasonCode;
+
+pub use crate::types::_rds_current_instance_performance_risk::RdsCurrentInstancePerformanceRisk;
 
 pub use crate::types::_rds_instance_finding_reason_code::RdsInstanceFindingReasonCode;
 
@@ -176,6 +182,32 @@ pub use crate::types::_lambda_function_metric_name::LambdaFunctionMetricName;
 pub use crate::types::_lambda_function_recommendation_filter::LambdaFunctionRecommendationFilter;
 
 pub use crate::types::_lambda_function_recommendation_filter_name::LambdaFunctionRecommendationFilterName;
+
+pub use crate::types::_idle_recommendation_error::IdleRecommendationError;
+
+pub use crate::types::_idle_recommendation_resource_type::IdleRecommendationResourceType;
+
+pub use crate::types::_idle_recommendation::IdleRecommendation;
+
+pub use crate::types::_idle_utilization_metric::IdleUtilizationMetric;
+
+pub use crate::types::_idle_metric_name::IdleMetricName;
+
+pub use crate::types::_idle_savings_opportunity_after_discounts::IdleSavingsOpportunityAfterDiscounts;
+
+pub use crate::types::_idle_estimated_monthly_savings::IdleEstimatedMonthlySavings;
+
+pub use crate::types::_idle_savings_opportunity::IdleSavingsOpportunity;
+
+pub use crate::types::_order_by::OrderBy;
+
+pub use crate::types::_order::Order;
+
+pub use crate::types::_dimension::Dimension;
+
+pub use crate::types::_idle_recommendation_filter::IdleRecommendationFilter;
+
+pub use crate::types::_idle_recommendation_filter_name::IdleRecommendationFilterName;
 
 pub use crate::types::_account_enrollment_status::AccountEnrollmentStatus;
 
@@ -323,6 +355,8 @@ pub use crate::types::_exportable_license_field::ExportableLicenseField;
 
 pub use crate::types::_exportable_lambda_function_field::ExportableLambdaFunctionField;
 
+pub use crate::types::_exportable_idle_field::ExportableIdleField;
+
 pub use crate::types::_exportable_ecs_service_field::ExportableEcsServiceField;
 
 pub use crate::types::_exportable_instance_field::ExportableInstanceField;
@@ -378,6 +412,8 @@ mod _customizable_metric_parameters;
 mod _customizable_metric_threshold;
 
 mod _db_storage_configuration;
+
+mod _dimension;
 
 mod _ebs_effective_recommendation_preferences;
 
@@ -453,6 +489,8 @@ mod _exportable_auto_scaling_group_field;
 
 mod _exportable_ecs_service_field;
 
+mod _exportable_idle_field;
+
 mod _exportable_instance_field;
 
 mod _exportable_lambda_function_field;
@@ -488,6 +526,30 @@ mod _gpu;
 mod _gpu_info;
 
 mod _idle;
+
+mod _idle_estimated_monthly_savings;
+
+mod _idle_finding;
+
+mod _idle_metric_name;
+
+mod _idle_recommendation;
+
+mod _idle_recommendation_error;
+
+mod _idle_recommendation_filter;
+
+mod _idle_recommendation_filter_name;
+
+mod _idle_recommendation_resource_type;
+
+mod _idle_savings_opportunity;
+
+mod _idle_savings_opportunity_after_discounts;
+
+mod _idle_summary;
+
+mod _idle_utilization_metric;
 
 mod _inferred_workload_saving;
 
@@ -587,6 +649,10 @@ mod _metric_statistic;
 
 mod _migration_effort;
 
+mod _order;
+
+mod _order_by;
+
 mod _platform_difference;
 
 mod _preferred_resource;
@@ -594,6 +660,8 @@ mod _preferred_resource;
 mod _preferred_resource_name;
 
 mod _projected_metric;
+
+mod _rds_current_instance_performance_risk;
 
 mod _rds_database_projected_metric;
 

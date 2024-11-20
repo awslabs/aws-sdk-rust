@@ -9,10 +9,12 @@ pub struct ListRulesInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type are listed. Currently, only Amazon EBS snapshots and EBS-backed AMIs are supported. To list retention rules that retain snapshots, specify <code>EBS_SNAPSHOT</code>. To list retention rules that retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
-    /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
+    /// <p>\[Tag-level retention rules only\] Information about the resource tags used to identify resources that are retained by the retention rule.</p>
     pub resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
     /// <p>The lock state of the retention rules to list. Only retention rules with the specified lock state are returned.</p>
     pub lock_state: ::std::option::Option<crate::types::LockState>,
+    /// <p>\[Region-level retention rules only\] Information about the exclusion tags used to identify resources that are to be excluded, or ignored, by the retention rule.</p>
+    pub exclude_resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
 }
 impl ListRulesInput {
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
@@ -27,7 +29,7 @@ impl ListRulesInput {
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
-    /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
+    /// <p>\[Tag-level retention rules only\] Information about the resource tags used to identify resources that are retained by the retention rule.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_tags.is_none()`.
     pub fn resource_tags(&self) -> &[crate::types::ResourceTag] {
@@ -36,6 +38,12 @@ impl ListRulesInput {
     /// <p>The lock state of the retention rules to list. Only retention rules with the specified lock state are returned.</p>
     pub fn lock_state(&self) -> ::std::option::Option<&crate::types::LockState> {
         self.lock_state.as_ref()
+    }
+    /// <p>\[Region-level retention rules only\] Information about the exclusion tags used to identify resources that are to be excluded, or ignored, by the retention rule.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclude_resource_tags.is_none()`.
+    pub fn exclude_resource_tags(&self) -> &[crate::types::ResourceTag] {
+        self.exclude_resource_tags.as_deref().unwrap_or_default()
     }
 }
 impl ListRulesInput {
@@ -54,6 +62,7 @@ pub struct ListRulesInputBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
     pub(crate) resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
     pub(crate) lock_state: ::std::option::Option<crate::types::LockState>,
+    pub(crate) exclude_resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
 }
 impl ListRulesInputBuilder {
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
@@ -103,19 +112,19 @@ impl ListRulesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
     ///
-    /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
+    /// <p>\[Tag-level retention rules only\] Information about the resource tags used to identify resources that are retained by the retention rule.</p>
     pub fn resource_tags(mut self, input: crate::types::ResourceTag) -> Self {
         let mut v = self.resource_tags.unwrap_or_default();
         v.push(input);
         self.resource_tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
+    /// <p>\[Tag-level retention rules only\] Information about the resource tags used to identify resources that are retained by the retention rule.</p>
     pub fn set_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>) -> Self {
         self.resource_tags = input;
         self
     }
-    /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
+    /// <p>\[Tag-level retention rules only\] Information about the resource tags used to identify resources that are retained by the retention rule.</p>
     pub fn get_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>> {
         &self.resource_tags
     }
@@ -133,6 +142,26 @@ impl ListRulesInputBuilder {
     pub fn get_lock_state(&self) -> &::std::option::Option<crate::types::LockState> {
         &self.lock_state
     }
+    /// Appends an item to `exclude_resource_tags`.
+    ///
+    /// To override the contents of this collection use [`set_exclude_resource_tags`](Self::set_exclude_resource_tags).
+    ///
+    /// <p>\[Region-level retention rules only\] Information about the exclusion tags used to identify resources that are to be excluded, or ignored, by the retention rule.</p>
+    pub fn exclude_resource_tags(mut self, input: crate::types::ResourceTag) -> Self {
+        let mut v = self.exclude_resource_tags.unwrap_or_default();
+        v.push(input);
+        self.exclude_resource_tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>\[Region-level retention rules only\] Information about the exclusion tags used to identify resources that are to be excluded, or ignored, by the retention rule.</p>
+    pub fn set_exclude_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>) -> Self {
+        self.exclude_resource_tags = input;
+        self
+    }
+    /// <p>\[Region-level retention rules only\] Information about the exclusion tags used to identify resources that are to be excluded, or ignored, by the retention rule.</p>
+    pub fn get_exclude_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>> {
+        &self.exclude_resource_tags
+    }
     /// Consumes the builder and constructs a [`ListRulesInput`](crate::operation::list_rules::ListRulesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_rules::ListRulesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_rules::ListRulesInput {
@@ -141,6 +170,7 @@ impl ListRulesInputBuilder {
             resource_type: self.resource_type,
             resource_tags: self.resource_tags,
             lock_state: self.lock_state,
+            exclude_resource_tags: self.exclude_resource_tags,
         })
     }
 }

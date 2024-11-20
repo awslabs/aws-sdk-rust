@@ -12,5 +12,11 @@ pub fn ser_update_account_settings_input_input(
     if let Some(var_2) = &input.query_pricing_model {
         object.key("QueryPricingModel").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.query_compute {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("QueryCompute").start_object();
+        crate::protocol_serde::shape_query_compute_request::ser_query_compute_request(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }

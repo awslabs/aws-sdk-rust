@@ -230,6 +230,11 @@ pub(crate) fn de_create_channel(
                 "IngestEndpoints" => {
                     builder = builder.set_ingest_endpoints(crate::protocol_serde::shape_ingest_endpoint_list::de_ingest_endpoint_list(tokens)?);
                 }
+                "InputSwitchConfiguration" => {
+                    builder = builder.set_input_switch_configuration(
+                        crate::protocol_serde::shape_input_switch_configuration::de_input_switch_configuration(tokens)?,
+                    );
+                }
                 "InputType" => {
                     builder = builder.set_input_type(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -242,6 +247,11 @@ pub(crate) fn de_create_channel(
                         tokens.next(),
                         ::aws_smithy_types::date_time::Format::EpochSeconds,
                     )?);
+                }
+                "OutputHeaderConfiguration" => {
+                    builder = builder.set_output_header_configuration(
+                        crate::protocol_serde::shape_output_header_configuration::de_output_header_configuration(tokens)?,
+                    );
                 }
                 "Tags" => {
                     builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);

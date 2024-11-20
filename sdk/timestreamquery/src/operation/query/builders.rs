@@ -23,7 +23,7 @@ impl crate::operation::query::builders::QueryInputBuilder {
 /// Fluent builder constructing a request to `Query`.
 ///
 /// <p><code>Query</code> is a synchronous operation that enables you to run a query against your Amazon Timestream data.</p>
-/// <p>If you enabled <code>QueryInsights</code>, this API also returns insights and metrics related to the query that you executed. <code>QueryInsights</code> helps with performance tuning of your query.</p><note>
+/// <p>If you enabled <code>QueryInsights</code>, this API also returns insights and metrics related to the query that you executed. <code>QueryInsights</code> helps with performance tuning of your query. For more information about <code>QueryInsights</code>, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/using-query-insights.html">Using query insights to optimize queries in Amazon Timestream</a>.</p><note>
 /// <p>The maximum number of <code>Query</code> API requests you're allowed to make with <code>QueryInsights</code> enabled is 1 query per second (QPS). If you exceed this query rate, it might result in throttling.</p>
 /// </note>
 /// <p><code>Query</code> will time out after 60 seconds. You must update the default timeout in the SDK to support a timeout of 60 seconds. See the <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.run-query.html">code sample</a> for details.</p>

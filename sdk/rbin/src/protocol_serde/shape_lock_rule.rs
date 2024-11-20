@@ -125,6 +125,10 @@ pub(crate) fn de_lock_rule(
                             .transpose()?,
                     );
                 }
+                "ExcludeResourceTags" => {
+                    builder =
+                        builder.set_exclude_resource_tags(crate::protocol_serde::shape_exclude_resource_tags::de_exclude_resource_tags(tokens)?);
+                }
                 "Identifier" => {
                     builder = builder.set_identifier(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

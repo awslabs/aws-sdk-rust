@@ -11,6 +11,18 @@ pub(crate) fn associate_browser_settings_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn associate_data_protection_settings_output_output_correct_errors(
+    mut builder: crate::operation::associate_data_protection_settings::builders::AssociateDataProtectionSettingsOutputBuilder,
+) -> crate::operation::associate_data_protection_settings::builders::AssociateDataProtectionSettingsOutputBuilder {
+    if builder.portal_arn.is_none() {
+        builder.portal_arn = Some(Default::default())
+    }
+    if builder.data_protection_settings_arn.is_none() {
+        builder.data_protection_settings_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn associate_ip_access_settings_output_output_correct_errors(
     mut builder: crate::operation::associate_ip_access_settings::builders::AssociateIpAccessSettingsOutputBuilder,
 ) -> crate::operation::associate_ip_access_settings::builders::AssociateIpAccessSettingsOutputBuilder {
@@ -76,6 +88,15 @@ pub(crate) fn create_browser_settings_output_output_correct_errors(
 ) -> crate::operation::create_browser_settings::builders::CreateBrowserSettingsOutputBuilder {
     if builder.browser_settings_arn.is_none() {
         builder.browser_settings_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn create_data_protection_settings_output_output_correct_errors(
+    mut builder: crate::operation::create_data_protection_settings::builders::CreateDataProtectionSettingsOutputBuilder,
+) -> crate::operation::create_data_protection_settings::builders::CreateDataProtectionSettingsOutputBuilder {
+    if builder.data_protection_settings_arn.is_none() {
+        builder.data_protection_settings_arn = Some(Default::default())
     }
     builder
 }
@@ -194,6 +215,18 @@ pub(crate) fn update_browser_settings_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_data_protection_settings_output_output_correct_errors(
+    mut builder: crate::operation::update_data_protection_settings::builders::UpdateDataProtectionSettingsOutputBuilder,
+) -> crate::operation::update_data_protection_settings::builders::UpdateDataProtectionSettingsOutputBuilder {
+    if builder.data_protection_settings.is_none() {
+        builder.data_protection_settings = {
+            let builder = crate::types::builders::DataProtectionSettingsBuilder::default();
+            crate::serde_util::data_protection_settings_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn update_identity_provider_output_output_correct_errors(
     mut builder: crate::operation::update_identity_provider::builders::UpdateIdentityProviderOutputBuilder,
 ) -> crate::operation::update_identity_provider::builders::UpdateIdentityProviderOutputBuilder {
@@ -268,6 +301,15 @@ pub(crate) fn browser_settings_correct_errors(
 ) -> crate::types::builders::BrowserSettingsBuilder {
     if builder.browser_settings_arn.is_none() {
         builder.browser_settings_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn data_protection_settings_correct_errors(
+    mut builder: crate::types::builders::DataProtectionSettingsBuilder,
+) -> crate::types::builders::DataProtectionSettingsBuilder {
+    if builder.data_protection_settings_arn.is_none() {
+        builder.data_protection_settings_arn = Some(Default::default())
     }
     builder
 }
@@ -347,11 +389,29 @@ pub(crate) fn cookie_synchronization_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn data_protection_settings_summary_correct_errors(
+    mut builder: crate::types::builders::DataProtectionSettingsSummaryBuilder,
+) -> crate::types::builders::DataProtectionSettingsSummaryBuilder {
+    if builder.data_protection_settings_arn.is_none() {
+        builder.data_protection_settings_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn identity_provider_summary_correct_errors(
     mut builder: crate::types::builders::IdentityProviderSummaryBuilder,
 ) -> crate::types::builders::IdentityProviderSummaryBuilder {
     if builder.identity_provider_arn.is_none() {
         builder.identity_provider_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn inline_redaction_configuration_correct_errors(
+    mut builder: crate::types::builders::InlineRedactionConfigurationBuilder,
+) -> crate::types::builders::InlineRedactionConfigurationBuilder {
+    if builder.inline_redaction_patterns.is_none() {
+        builder.inline_redaction_patterns = Some(Default::default())
     }
     builder
 }
@@ -435,6 +495,39 @@ pub(crate) fn cookie_specification_correct_errors(
 ) -> crate::types::builders::CookieSpecificationBuilder {
     if builder.domain.is_none() {
         builder.domain = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn inline_redaction_pattern_correct_errors(
+    mut builder: crate::types::builders::InlineRedactionPatternBuilder,
+) -> crate::types::builders::InlineRedactionPatternBuilder {
+    if builder.redaction_place_holder.is_none() {
+        builder.redaction_place_holder = {
+            let builder = crate::types::builders::RedactionPlaceHolderBuilder::default();
+            crate::serde_util::redaction_place_holder_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn custom_pattern_correct_errors(
+    mut builder: crate::types::builders::CustomPatternBuilder,
+) -> crate::types::builders::CustomPatternBuilder {
+    if builder.pattern_name.is_none() {
+        builder.pattern_name = Some(Default::default())
+    }
+    if builder.pattern_regex.is_none() {
+        builder.pattern_regex = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn redaction_place_holder_correct_errors(
+    mut builder: crate::types::builders::RedactionPlaceHolderBuilder,
+) -> crate::types::builders::RedactionPlaceHolderBuilder {
+    if builder.redaction_place_holder_type.is_none() {
+        builder.redaction_place_holder_type = "no value was set".parse::<crate::types::RedactionPlaceHolderType>().ok()
     }
     builder
 }

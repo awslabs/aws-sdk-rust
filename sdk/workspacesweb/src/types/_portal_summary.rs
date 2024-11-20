@@ -20,6 +20,8 @@ pub struct PortalSummary {
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ARN of the browser settings that is associated with the web portal.</p>
     pub browser_settings_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of the data protection settings.</p>
+    pub data_protection_settings_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the user settings that is associated with the web portal.</p>
     pub user_settings_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the network settings that is associated with the web portal.</p>
@@ -73,6 +75,10 @@ impl PortalSummary {
     pub fn browser_settings_arn(&self) -> ::std::option::Option<&str> {
         self.browser_settings_arn.as_deref()
     }
+    /// <p>The ARN of the data protection settings.</p>
+    pub fn data_protection_settings_arn(&self) -> ::std::option::Option<&str> {
+        self.data_protection_settings_arn.as_deref()
+    }
     /// <p>The ARN of the user settings that is associated with the web portal.</p>
     pub fn user_settings_arn(&self) -> ::std::option::Option<&str> {
         self.user_settings_arn.as_deref()
@@ -119,6 +125,7 @@ impl ::std::fmt::Debug for PortalSummary {
         formatter.field("display_name", &"*** Sensitive Data Redacted ***");
         formatter.field("creation_date", &self.creation_date);
         formatter.field("browser_settings_arn", &self.browser_settings_arn);
+        formatter.field("data_protection_settings_arn", &self.data_protection_settings_arn);
         formatter.field("user_settings_arn", &self.user_settings_arn);
         formatter.field("network_settings_arn", &self.network_settings_arn);
         formatter.field("trust_store_arn", &self.trust_store_arn);
@@ -149,6 +156,7 @@ pub struct PortalSummaryBuilder {
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) browser_settings_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) data_protection_settings_arn: ::std::option::Option<::std::string::String>,
     pub(crate) user_settings_arn: ::std::option::Option<::std::string::String>,
     pub(crate) network_settings_arn: ::std::option::Option<::std::string::String>,
     pub(crate) trust_store_arn: ::std::option::Option<::std::string::String>,
@@ -271,6 +279,20 @@ impl PortalSummaryBuilder {
     /// <p>The ARN of the browser settings that is associated with the web portal.</p>
     pub fn get_browser_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.browser_settings_arn
+    }
+    /// <p>The ARN of the data protection settings.</p>
+    pub fn data_protection_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data_protection_settings_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the data protection settings.</p>
+    pub fn set_data_protection_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.data_protection_settings_arn = input;
+        self
+    }
+    /// <p>The ARN of the data protection settings.</p>
+    pub fn get_data_protection_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_protection_settings_arn
     }
     /// <p>The ARN of the user settings that is associated with the web portal.</p>
     pub fn user_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -408,6 +430,7 @@ impl PortalSummaryBuilder {
             display_name: self.display_name,
             creation_date: self.creation_date,
             browser_settings_arn: self.browser_settings_arn,
+            data_protection_settings_arn: self.data_protection_settings_arn,
             user_settings_arn: self.user_settings_arn,
             network_settings_arn: self.network_settings_arn,
             trust_store_arn: self.trust_store_arn,
@@ -430,6 +453,7 @@ impl ::std::fmt::Debug for PortalSummaryBuilder {
         formatter.field("display_name", &"*** Sensitive Data Redacted ***");
         formatter.field("creation_date", &self.creation_date);
         formatter.field("browser_settings_arn", &self.browser_settings_arn);
+        formatter.field("data_protection_settings_arn", &self.data_protection_settings_arn);
         formatter.field("user_settings_arn", &self.user_settings_arn);
         formatter.field("network_settings_arn", &self.network_settings_arn);
         formatter.field("trust_store_arn", &self.trust_store_arn);

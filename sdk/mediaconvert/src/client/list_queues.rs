@@ -11,6 +11,8 @@ impl super::Client {
     /// - On success, responds with [`ListQueuesOutput`](crate::operation::list_queues::ListQueuesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_queues::ListQueuesOutput::next_token): Use this string to request the next batch of queues.
     ///   - [`queues(Option<Vec::<Queue>>)`](crate::operation::list_queues::ListQueuesOutput::queues): List of queues.
+    ///   - [`total_concurrent_jobs(Option<i32>)`](crate::operation::list_queues::ListQueuesOutput::total_concurrent_jobs): The maximum number of jobs that MediaConvert can process at one time, across all of your on-demand queues in the current AWS Region.
+    ///   - [`unallocated_concurrent_jobs(Option<i32>)`](crate::operation::list_queues::ListQueuesOutput::unallocated_concurrent_jobs): The remaining number of concurrent jobs that are not associated with a queue and are available to allocate to a queue. You can allocate these jobs when you create or update a queue.
     /// - On failure, responds with [`SdkError<ListQueuesError>`](crate::operation::list_queues::ListQueuesError)
     pub fn list_queues(&self) -> crate::operation::list_queues::builders::ListQueuesFluentBuilder {
         crate::operation::list_queues::builders::ListQueuesFluentBuilder::new(self.handle.clone())

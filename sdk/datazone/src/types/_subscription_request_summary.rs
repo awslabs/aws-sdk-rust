@@ -28,6 +28,10 @@ pub struct SubscriptionRequestSummary {
     pub reviewer_id: ::std::option::Option<::std::string::String>,
     /// <p>The decision comment of the subscription request.</p>
     pub decision_comment: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the existing subscription.</p>
+    pub existing_subscription_id: ::std::option::Option<::std::string::String>,
+    /// <p>The summary of the metadata forms.</p>
+    pub metadata_forms_summary: ::std::option::Option<::std::vec::Vec<crate::types::MetadataFormSummary>>,
 }
 impl SubscriptionRequestSummary {
     /// <p>The identifier of the subscription request.</p>
@@ -84,6 +88,16 @@ impl SubscriptionRequestSummary {
     pub fn decision_comment(&self) -> ::std::option::Option<&str> {
         self.decision_comment.as_deref()
     }
+    /// <p>The ID of the existing subscription.</p>
+    pub fn existing_subscription_id(&self) -> ::std::option::Option<&str> {
+        self.existing_subscription_id.as_deref()
+    }
+    /// <p>The summary of the metadata forms.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metadata_forms_summary.is_none()`.
+    pub fn metadata_forms_summary(&self) -> &[crate::types::MetadataFormSummary] {
+        self.metadata_forms_summary.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for SubscriptionRequestSummary {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -100,6 +114,8 @@ impl ::std::fmt::Debug for SubscriptionRequestSummary {
         formatter.field("subscribed_listings", &self.subscribed_listings);
         formatter.field("reviewer_id", &self.reviewer_id);
         formatter.field("decision_comment", &"*** Sensitive Data Redacted ***");
+        formatter.field("existing_subscription_id", &self.existing_subscription_id);
+        formatter.field("metadata_forms_summary", &self.metadata_forms_summary);
         formatter.finish()
     }
 }
@@ -126,6 +142,8 @@ pub struct SubscriptionRequestSummaryBuilder {
     pub(crate) subscribed_listings: ::std::option::Option<::std::vec::Vec<crate::types::SubscribedListing>>,
     pub(crate) reviewer_id: ::std::option::Option<::std::string::String>,
     pub(crate) decision_comment: ::std::option::Option<::std::string::String>,
+    pub(crate) existing_subscription_id: ::std::option::Option<::std::string::String>,
+    pub(crate) metadata_forms_summary: ::std::option::Option<::std::vec::Vec<crate::types::MetadataFormSummary>>,
 }
 impl SubscriptionRequestSummaryBuilder {
     /// <p>The identifier of the subscription request.</p>
@@ -315,6 +333,40 @@ impl SubscriptionRequestSummaryBuilder {
     pub fn get_decision_comment(&self) -> &::std::option::Option<::std::string::String> {
         &self.decision_comment
     }
+    /// <p>The ID of the existing subscription.</p>
+    pub fn existing_subscription_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.existing_subscription_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the existing subscription.</p>
+    pub fn set_existing_subscription_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.existing_subscription_id = input;
+        self
+    }
+    /// <p>The ID of the existing subscription.</p>
+    pub fn get_existing_subscription_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.existing_subscription_id
+    }
+    /// Appends an item to `metadata_forms_summary`.
+    ///
+    /// To override the contents of this collection use [`set_metadata_forms_summary`](Self::set_metadata_forms_summary).
+    ///
+    /// <p>The summary of the metadata forms.</p>
+    pub fn metadata_forms_summary(mut self, input: crate::types::MetadataFormSummary) -> Self {
+        let mut v = self.metadata_forms_summary.unwrap_or_default();
+        v.push(input);
+        self.metadata_forms_summary = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The summary of the metadata forms.</p>
+    pub fn set_metadata_forms_summary(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetadataFormSummary>>) -> Self {
+        self.metadata_forms_summary = input;
+        self
+    }
+    /// <p>The summary of the metadata forms.</p>
+    pub fn get_metadata_forms_summary(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetadataFormSummary>> {
+        &self.metadata_forms_summary
+    }
     /// Consumes the builder and constructs a [`SubscriptionRequestSummary`](crate::types::SubscriptionRequestSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::SubscriptionRequestSummaryBuilder::id)
@@ -385,6 +437,8 @@ impl SubscriptionRequestSummaryBuilder {
             })?,
             reviewer_id: self.reviewer_id,
             decision_comment: self.decision_comment,
+            existing_subscription_id: self.existing_subscription_id,
+            metadata_forms_summary: self.metadata_forms_summary,
         })
     }
 }
@@ -403,6 +457,8 @@ impl ::std::fmt::Debug for SubscriptionRequestSummaryBuilder {
         formatter.field("subscribed_listings", &self.subscribed_listings);
         formatter.field("reviewer_id", &self.reviewer_id);
         formatter.field("decision_comment", &"*** Sensitive Data Redacted ***");
+        formatter.field("existing_subscription_id", &self.existing_subscription_id);
+        formatter.field("metadata_forms_summary", &self.metadata_forms_summary);
         formatter.finish()
     }
 }

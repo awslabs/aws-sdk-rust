@@ -10,7 +10,7 @@ pub struct RuleSummary {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
     pub retention_period: ::std::option::Option<crate::types::RetentionPeriod>,
-    /// <p>The lock state for the retention rule.</p>
+    /// <p>\[Region-level retention rules only\] The lock state for the retention rule.</p>
     /// <ul>
     /// <li>
     /// <p><code>locked</code> - The retention rule is locked and can't be modified or deleted.</p></li>
@@ -38,7 +38,7 @@ impl RuleSummary {
     pub fn retention_period(&self) -> ::std::option::Option<&crate::types::RetentionPeriod> {
         self.retention_period.as_ref()
     }
-    /// <p>The lock state for the retention rule.</p>
+    /// <p>\[Region-level retention rules only\] The lock state for the retention rule.</p>
     /// <ul>
     /// <li>
     /// <p><code>locked</code> - The retention rule is locked and can't be modified or deleted.</p></li>
@@ -117,7 +117,7 @@ impl RuleSummaryBuilder {
     pub fn get_retention_period(&self) -> &::std::option::Option<crate::types::RetentionPeriod> {
         &self.retention_period
     }
-    /// <p>The lock state for the retention rule.</p>
+    /// <p>\[Region-level retention rules only\] The lock state for the retention rule.</p>
     /// <ul>
     /// <li>
     /// <p><code>locked</code> - The retention rule is locked and can't be modified or deleted.</p></li>
@@ -132,7 +132,7 @@ impl RuleSummaryBuilder {
         self.lock_state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The lock state for the retention rule.</p>
+    /// <p>\[Region-level retention rules only\] The lock state for the retention rule.</p>
     /// <ul>
     /// <li>
     /// <p><code>locked</code> - The retention rule is locked and can't be modified or deleted.</p></li>
@@ -147,7 +147,7 @@ impl RuleSummaryBuilder {
         self.lock_state = input;
         self
     }
-    /// <p>The lock state for the retention rule.</p>
+    /// <p>\[Region-level retention rules only\] The lock state for the retention rule.</p>
     /// <ul>
     /// <li>
     /// <p><code>locked</code> - The retention rule is locked and can't be modified or deleted.</p></li>

@@ -204,6 +204,33 @@ impl From<crate::operation::invoke_flow::InvokeFlowError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::optimize_prompt::OptimizePromptError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::optimize_prompt::OptimizePromptError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::optimize_prompt::OptimizePromptError> for Error {
+    fn from(err: crate::operation::optimize_prompt::OptimizePromptError) -> Self {
+        match err {
+            crate::operation::optimize_prompt::OptimizePromptError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::optimize_prompt::OptimizePromptError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::optimize_prompt::OptimizePromptError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::optimize_prompt::OptimizePromptError::DependencyFailedException(inner) => Error::DependencyFailedException(inner),
+            crate::operation::optimize_prompt::OptimizePromptError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::optimize_prompt::OptimizePromptError::BadGatewayException(inner) => Error::BadGatewayException(inner),
+            crate::operation::optimize_prompt::OptimizePromptError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::retrieve::RetrieveError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -329,6 +356,33 @@ impl From<crate::types::error::FlowResponseStreamError> for Error {
             crate::types::error::FlowResponseStreamError::DependencyFailedException(inner) => Error::DependencyFailedException(inner),
             crate::types::error::FlowResponseStreamError::BadGatewayException(inner) => Error::BadGatewayException(inner),
             crate::types::error::FlowResponseStreamError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::OptimizedPromptStreamError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::OptimizedPromptStreamError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::types::error::OptimizedPromptStreamError> for Error {
+    fn from(err: crate::types::error::OptimizedPromptStreamError) -> Self {
+        match err {
+            crate::types::error::OptimizedPromptStreamError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::types::error::OptimizedPromptStreamError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::types::error::OptimizedPromptStreamError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::types::error::OptimizedPromptStreamError::DependencyFailedException(inner) => Error::DependencyFailedException(inner),
+            crate::types::error::OptimizedPromptStreamError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::types::error::OptimizedPromptStreamError::BadGatewayException(inner) => Error::BadGatewayException(inner),
+            crate::types::error::OptimizedPromptStreamError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -79,6 +79,8 @@ pub struct AutoScalingGroup {
     pub availability_zone_distribution: ::std::option::Option<crate::types::AvailabilityZoneDistribution>,
     /// <p>The Availability Zone impairment policy.</p>
     pub availability_zone_impairment_policy: ::std::option::Option<crate::types::AvailabilityZoneImpairmentPolicy>,
+    /// <p>The capacity reservation specification.</p>
+    pub capacity_reservation_specification: ::std::option::Option<crate::types::CapacityReservationSpecification>,
 }
 impl AutoScalingGroup {
     /// <p>The name of the Auto Scaling group.</p>
@@ -248,6 +250,10 @@ impl AutoScalingGroup {
     pub fn availability_zone_impairment_policy(&self) -> ::std::option::Option<&crate::types::AvailabilityZoneImpairmentPolicy> {
         self.availability_zone_impairment_policy.as_ref()
     }
+    /// <p>The capacity reservation specification.</p>
+    pub fn capacity_reservation_specification(&self) -> ::std::option::Option<&crate::types::CapacityReservationSpecification> {
+        self.capacity_reservation_specification.as_ref()
+    }
 }
 impl AutoScalingGroup {
     /// Creates a new builder-style object to manufacture [`AutoScalingGroup`](crate::types::AutoScalingGroup).
@@ -297,6 +303,7 @@ pub struct AutoScalingGroupBuilder {
     pub(crate) instance_maintenance_policy: ::std::option::Option<crate::types::InstanceMaintenancePolicy>,
     pub(crate) availability_zone_distribution: ::std::option::Option<crate::types::AvailabilityZoneDistribution>,
     pub(crate) availability_zone_impairment_policy: ::std::option::Option<crate::types::AvailabilityZoneImpairmentPolicy>,
+    pub(crate) capacity_reservation_specification: ::std::option::Option<crate::types::CapacityReservationSpecification>,
 }
 impl AutoScalingGroupBuilder {
     /// <p>The name of the Auto Scaling group.</p>
@@ -881,6 +888,20 @@ impl AutoScalingGroupBuilder {
     pub fn get_availability_zone_impairment_policy(&self) -> &::std::option::Option<crate::types::AvailabilityZoneImpairmentPolicy> {
         &self.availability_zone_impairment_policy
     }
+    /// <p>The capacity reservation specification.</p>
+    pub fn capacity_reservation_specification(mut self, input: crate::types::CapacityReservationSpecification) -> Self {
+        self.capacity_reservation_specification = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The capacity reservation specification.</p>
+    pub fn set_capacity_reservation_specification(mut self, input: ::std::option::Option<crate::types::CapacityReservationSpecification>) -> Self {
+        self.capacity_reservation_specification = input;
+        self
+    }
+    /// <p>The capacity reservation specification.</p>
+    pub fn get_capacity_reservation_specification(&self) -> &::std::option::Option<crate::types::CapacityReservationSpecification> {
+        &self.capacity_reservation_specification
+    }
     /// Consumes the builder and constructs a [`AutoScalingGroup`](crate::types::AutoScalingGroup).
     pub fn build(self) -> crate::types::AutoScalingGroup {
         crate::types::AutoScalingGroup {
@@ -921,6 +942,7 @@ impl AutoScalingGroupBuilder {
             instance_maintenance_policy: self.instance_maintenance_policy,
             availability_zone_distribution: self.availability_zone_distribution,
             availability_zone_impairment_policy: self.availability_zone_impairment_policy,
+            capacity_reservation_specification: self.capacity_reservation_specification,
         }
     }
 }

@@ -196,6 +196,8 @@ pub struct InstanceRequirementsRequest {
     /// <p>Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If you don't specify either, Amazon EC2 will automatically apply optimal price protection to consistently select from a wide range of instance types. To indicate no price protection threshold for Spot Instances, meaning you want to consider all instance types that match your attributes, include one of these parameters and specify a high value, such as <code>999999</code>.</p>
     /// </note>
     pub max_spot_price_as_percentage_of_optimal_on_demand_price: ::std::option::Option<i32>,
+    /// <p>The baseline performance to consider, using an instance family as a baseline reference. The instance family establishes the lowest acceptable level of performance. Amazon EC2 uses this baseline to guide instance type selection, but there is no guarantee that the selected instance types will always exceed the baseline for every application. Currently, this parameter only supports CPU performance as a baseline performance factor. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-attribute-based-instance-type-selection.html#ec2fleet-abis-performance-protection">Performance protection</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub baseline_performance_factors: ::std::option::Option<crate::types::BaselinePerformanceFactorsRequest>,
 }
 impl InstanceRequirementsRequest {
     /// <p>The minimum and maximum number of vCPUs.</p>
@@ -441,6 +443,10 @@ impl InstanceRequirementsRequest {
     pub fn max_spot_price_as_percentage_of_optimal_on_demand_price(&self) -> ::std::option::Option<i32> {
         self.max_spot_price_as_percentage_of_optimal_on_demand_price
     }
+    /// <p>The baseline performance to consider, using an instance family as a baseline reference. The instance family establishes the lowest acceptable level of performance. Amazon EC2 uses this baseline to guide instance type selection, but there is no guarantee that the selected instance types will always exceed the baseline for every application. Currently, this parameter only supports CPU performance as a baseline performance factor. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-attribute-based-instance-type-selection.html#ec2fleet-abis-performance-protection">Performance protection</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn baseline_performance_factors(&self) -> ::std::option::Option<&crate::types::BaselinePerformanceFactorsRequest> {
+        self.baseline_performance_factors.as_ref()
+    }
 }
 impl InstanceRequirementsRequest {
     /// Creates a new builder-style object to manufacture [`InstanceRequirementsRequest`](crate::types::InstanceRequirementsRequest).
@@ -477,6 +483,7 @@ pub struct InstanceRequirementsRequestBuilder {
     pub(crate) network_bandwidth_gbps: ::std::option::Option<crate::types::NetworkBandwidthGbpsRequest>,
     pub(crate) allowed_instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) max_spot_price_as_percentage_of_optimal_on_demand_price: ::std::option::Option<i32>,
+    pub(crate) baseline_performance_factors: ::std::option::Option<crate::types::BaselinePerformanceFactorsRequest>,
 }
 impl InstanceRequirementsRequestBuilder {
     /// <p>The minimum and maximum number of vCPUs.</p>
@@ -1258,6 +1265,20 @@ impl InstanceRequirementsRequestBuilder {
     pub fn get_max_spot_price_as_percentage_of_optimal_on_demand_price(&self) -> &::std::option::Option<i32> {
         &self.max_spot_price_as_percentage_of_optimal_on_demand_price
     }
+    /// <p>The baseline performance to consider, using an instance family as a baseline reference. The instance family establishes the lowest acceptable level of performance. Amazon EC2 uses this baseline to guide instance type selection, but there is no guarantee that the selected instance types will always exceed the baseline for every application. Currently, this parameter only supports CPU performance as a baseline performance factor. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-attribute-based-instance-type-selection.html#ec2fleet-abis-performance-protection">Performance protection</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn baseline_performance_factors(mut self, input: crate::types::BaselinePerformanceFactorsRequest) -> Self {
+        self.baseline_performance_factors = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The baseline performance to consider, using an instance family as a baseline reference. The instance family establishes the lowest acceptable level of performance. Amazon EC2 uses this baseline to guide instance type selection, but there is no guarantee that the selected instance types will always exceed the baseline for every application. Currently, this parameter only supports CPU performance as a baseline performance factor. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-attribute-based-instance-type-selection.html#ec2fleet-abis-performance-protection">Performance protection</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn set_baseline_performance_factors(mut self, input: ::std::option::Option<crate::types::BaselinePerformanceFactorsRequest>) -> Self {
+        self.baseline_performance_factors = input;
+        self
+    }
+    /// <p>The baseline performance to consider, using an instance family as a baseline reference. The instance family establishes the lowest acceptable level of performance. Amazon EC2 uses this baseline to guide instance type selection, but there is no guarantee that the selected instance types will always exceed the baseline for every application. Currently, this parameter only supports CPU performance as a baseline performance factor. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-attribute-based-instance-type-selection.html#ec2fleet-abis-performance-protection">Performance protection</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn get_baseline_performance_factors(&self) -> &::std::option::Option<crate::types::BaselinePerformanceFactorsRequest> {
+        &self.baseline_performance_factors
+    }
     /// Consumes the builder and constructs a [`InstanceRequirementsRequest`](crate::types::InstanceRequirementsRequest).
     pub fn build(self) -> crate::types::InstanceRequirementsRequest {
         crate::types::InstanceRequirementsRequest {
@@ -1285,6 +1306,7 @@ impl InstanceRequirementsRequestBuilder {
             network_bandwidth_gbps: self.network_bandwidth_gbps,
             allowed_instance_types: self.allowed_instance_types,
             max_spot_price_as_percentage_of_optimal_on_demand_price: self.max_spot_price_as_percentage_of_optimal_on_demand_price,
+            baseline_performance_factors: self.baseline_performance_factors,
         }
     }
 }

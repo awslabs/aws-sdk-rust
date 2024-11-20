@@ -12,6 +12,8 @@ pub struct EnabledBaselineDetails {
     pub baseline_version: ::std::option::Option<::std::string::String>,
     /// <p>The target on which to enable the <code>Baseline</code>.</p>
     pub target_identifier: ::std::string::String,
+    /// <p>An ARN that represents the parent <code>EnabledBaseline</code> at the Organizational Unit (OU) level, from which the child <code>EnabledBaseline</code> inherits its configuration. The value is returned by <code>GetEnabledBaseline</code>.</p>
+    pub parent_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The deployment summary of an <code>EnabledControl</code> or <code>EnabledBaseline</code> resource.</p>
     pub status_summary: ::std::option::Option<crate::types::EnablementStatusSummary>,
     /// <p>Shows the parameters that are applied when enabling this <code>Baseline</code>.</p>
@@ -36,6 +38,10 @@ impl EnabledBaselineDetails {
     pub fn target_identifier(&self) -> &str {
         use std::ops::Deref;
         self.target_identifier.deref()
+    }
+    /// <p>An ARN that represents the parent <code>EnabledBaseline</code> at the Organizational Unit (OU) level, from which the child <code>EnabledBaseline</code> inherits its configuration. The value is returned by <code>GetEnabledBaseline</code>.</p>
+    pub fn parent_identifier(&self) -> ::std::option::Option<&str> {
+        self.parent_identifier.as_deref()
     }
     /// <p>The deployment summary of an <code>EnabledControl</code> or <code>EnabledBaseline</code> resource.</p>
     pub fn status_summary(&self) -> ::std::option::Option<&crate::types::EnablementStatusSummary> {
@@ -63,6 +69,7 @@ pub struct EnabledBaselineDetailsBuilder {
     pub(crate) baseline_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) baseline_version: ::std::option::Option<::std::string::String>,
     pub(crate) target_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) parent_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) status_summary: ::std::option::Option<crate::types::EnablementStatusSummary>,
     pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::EnabledBaselineParameterSummary>>,
 }
@@ -126,6 +133,20 @@ impl EnabledBaselineDetailsBuilder {
     pub fn get_target_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_identifier
     }
+    /// <p>An ARN that represents the parent <code>EnabledBaseline</code> at the Organizational Unit (OU) level, from which the child <code>EnabledBaseline</code> inherits its configuration. The value is returned by <code>GetEnabledBaseline</code>.</p>
+    pub fn parent_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.parent_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>An ARN that represents the parent <code>EnabledBaseline</code> at the Organizational Unit (OU) level, from which the child <code>EnabledBaseline</code> inherits its configuration. The value is returned by <code>GetEnabledBaseline</code>.</p>
+    pub fn set_parent_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.parent_identifier = input;
+        self
+    }
+    /// <p>An ARN that represents the parent <code>EnabledBaseline</code> at the Organizational Unit (OU) level, from which the child <code>EnabledBaseline</code> inherits its configuration. The value is returned by <code>GetEnabledBaseline</code>.</p>
+    pub fn get_parent_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent_identifier
+    }
     /// <p>The deployment summary of an <code>EnabledControl</code> or <code>EnabledBaseline</code> resource.</p>
     /// This field is required.
     pub fn status_summary(mut self, input: crate::types::EnablementStatusSummary) -> Self {
@@ -187,6 +208,7 @@ impl EnabledBaselineDetailsBuilder {
                     "target_identifier was not specified but it is required when building EnabledBaselineDetails",
                 )
             })?,
+            parent_identifier: self.parent_identifier,
             status_summary: self.status_summary,
             parameters: self.parameters,
         })
