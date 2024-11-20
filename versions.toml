@@ -2529,6 +2529,10 @@ source_hash = 'f926d3a7deb08a19ecbde8ed9516c47a27d4a3db2cf6b2f2532791634565b05e'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '340172f38639aeb06ccd407828639e840caf6a7109c4eac3c6c78a9e06c1ef06'
+
+[release]
+tag = 'release-2024-11-20'
+
 [release.crates]
 aws-sdk-applicationdiscovery = '1.51.0'
 aws-sdk-autoscaling = '1.56.0'
