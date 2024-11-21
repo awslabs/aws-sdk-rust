@@ -345,6 +345,8 @@ pub(crate) mod shape_environment_response;
 
 pub(crate) mod shape_ephemeral_storage;
 
+pub(crate) mod shape_event_source_mapping_metrics_config;
+
 pub(crate) mod shape_event_source_mappings_list;
 
 pub(crate) mod shape_file_system_config;
@@ -436,6 +438,8 @@ pub(crate) mod shape_environment_error;
 pub(crate) mod shape_environment_variables;
 
 pub(crate) mod shape_event_source_mapping_configuration;
+
+pub(crate) mod shape_event_source_mapping_metric_list;
 
 pub(crate) mod shape_filter;
 

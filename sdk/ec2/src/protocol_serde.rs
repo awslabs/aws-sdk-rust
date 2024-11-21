@@ -967,6 +967,14 @@ pub(crate) mod shape_describe_byoip_cidrs;
 
 pub(crate) mod shape_describe_byoip_cidrs_input;
 
+pub(crate) mod shape_describe_capacity_block_extension_history;
+
+pub(crate) mod shape_describe_capacity_block_extension_history_input;
+
+pub(crate) mod shape_describe_capacity_block_extension_offerings;
+
+pub(crate) mod shape_describe_capacity_block_extension_offerings_input;
+
 pub(crate) mod shape_describe_capacity_block_offerings;
 
 pub(crate) mod shape_describe_capacity_block_offerings_input;
@@ -2341,6 +2349,10 @@ pub(crate) mod shape_provision_public_ipv4_pool_cidr_input;
 
 pub(crate) mod shape_purchase_capacity_block;
 
+pub(crate) mod shape_purchase_capacity_block_extension;
+
+pub(crate) mod shape_purchase_capacity_block_extension_input;
+
 pub(crate) mod shape_purchase_capacity_block_input;
 
 pub(crate) mod shape_purchase_host_reservation;
@@ -2599,6 +2611,8 @@ pub(crate) mod shape_access_scope_path_request;
 
 pub(crate) mod shape_add_ipam_operating_region;
 
+pub(crate) mod shape_add_ipam_organizational_unit_exclusion;
+
 pub(crate) mod shape_add_prefix_list_entry;
 
 pub(crate) mod shape_asn_authorization_context;
@@ -2785,6 +2799,8 @@ pub(crate) mod shape_register_instance_tag_attribute_request;
 
 pub(crate) mod shape_remove_ipam_operating_region;
 
+pub(crate) mod shape_remove_ipam_organizational_unit_exclusion;
+
 pub(crate) mod shape_remove_prefix_list_entry;
 
 pub(crate) mod shape_request_ipam_resource_tag;
@@ -2910,6 +2926,10 @@ pub(crate) mod shape_cancel_spot_fleet_requests_error_set;
 pub(crate) mod shape_cancel_spot_fleet_requests_success_set;
 
 pub(crate) mod shape_cancelled_spot_instance_request_list;
+
+pub(crate) mod shape_capacity_block_extension_offering_set;
+
+pub(crate) mod shape_capacity_block_extension_set;
 
 pub(crate) mod shape_capacity_block_offering_set;
 
@@ -3747,9 +3767,15 @@ pub(crate) mod shape_cancelled_spot_instance_request;
 
 pub(crate) mod shape_capacity_allocations;
 
+pub(crate) mod shape_capacity_block_extension;
+
+pub(crate) mod shape_capacity_block_extension_offering;
+
 pub(crate) mod shape_capacity_block_offering;
 
 pub(crate) mod shape_capacity_reservation_billing_request;
+
+pub(crate) mod shape_capacity_reservation_commitment_info;
 
 pub(crate) mod shape_capacity_reservation_fleet;
 
@@ -3920,6 +3946,8 @@ pub(crate) mod shape_ipam_discovered_public_address;
 pub(crate) mod shape_ipam_discovered_resource_cidr;
 
 pub(crate) mod shape_ipam_operating_region_set;
+
+pub(crate) mod shape_ipam_organizational_unit_exclusion_set;
 
 pub(crate) mod shape_ipam_pool_cidr_failure_reason;
 
@@ -4390,6 +4418,8 @@ pub(crate) mod shape_ip_range_list;
 pub(crate) mod shape_ipam_discovery_failure_reason;
 
 pub(crate) mod shape_ipam_operating_region;
+
+pub(crate) mod shape_ipam_organizational_unit_exclusion;
 
 pub(crate) mod shape_ipam_public_address_security_group_list;
 

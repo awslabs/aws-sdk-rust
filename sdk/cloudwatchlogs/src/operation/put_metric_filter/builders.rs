@@ -24,7 +24,7 @@ impl crate::operation::put_metric_filter::builders::PutMetricFilterInputBuilder 
 ///
 /// <p>Creates or updates a metric filter and associates it with the specified log group. With metric filters, you can configure rules to extract metric data from log events ingested through <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html">PutLogEvents</a>.</p>
 /// <p>The maximum number of metric filters that can be associated with a log group is 100.</p>
-/// <p>Using regular expressions to create metric filters is supported. For these filters, there is a quotas of quota of two regular expression patterns within a single filter pattern. There is also a quota of five regular expression patterns per log group. For more information about using regular expressions in metric filters, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html"> Filter pattern syntax for metric filters, subscription filters, filter log events, and Live Tail</a>.</p>
+/// <p>Using regular expressions to create metric filters is supported. For these filters, there is a quota of two regular expression patterns within a single filter pattern. There is also a quota of five regular expression patterns per log group. For more information about using regular expressions in metric filters, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html"> Filter pattern syntax for metric filters, subscription filters, filter log events, and Live Tail</a>.</p>
 /// <p>When you create a metric filter, you can also optionally assign a unit and dimensions to the metric that is created.</p><important>
 /// <p>Metrics extracted from log events are charged as custom metrics. To prevent unexpected high charges, do not specify high-cardinality fields such as <code>IPAddress</code> or <code>requestID</code> as dimensions. Each different value found for a dimension is treated as a separate metric and accrues charges as a separate custom metric.</p>
 /// <p>CloudWatch Logs might disable a metric filter if it generates 1,000 different name/value pairs for your specified dimensions within one hour.</p>
@@ -175,5 +175,22 @@ impl PutMetricFilterFluentBuilder {
     /// <p>A collection of information that defines how metric data gets emitted.</p>
     pub fn get_metric_transformations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricTransformation>> {
         self.inner.get_metric_transformations()
+    }
+    /// <p>This parameter is valid only for log groups that have an active log transformer. For more information about log transformers, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutTransformer.html">PutTransformer</a>.</p>
+    /// <p>If the log group uses either a log-group level or account-level transformer, and you specify <code>true</code>, the metric filter will be applied on the transformed version of the log events instead of the original ingested log events.</p>
+    pub fn apply_on_transformed_logs(mut self, input: bool) -> Self {
+        self.inner = self.inner.apply_on_transformed_logs(input);
+        self
+    }
+    /// <p>This parameter is valid only for log groups that have an active log transformer. For more information about log transformers, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutTransformer.html">PutTransformer</a>.</p>
+    /// <p>If the log group uses either a log-group level or account-level transformer, and you specify <code>true</code>, the metric filter will be applied on the transformed version of the log events instead of the original ingested log events.</p>
+    pub fn set_apply_on_transformed_logs(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_apply_on_transformed_logs(input);
+        self
+    }
+    /// <p>This parameter is valid only for log groups that have an active log transformer. For more information about log transformers, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutTransformer.html">PutTransformer</a>.</p>
+    /// <p>If the log group uses either a log-group level or account-level transformer, and you specify <code>true</code>, the metric filter will be applied on the transformed version of the log events instead of the original ingested log events.</p>
+    pub fn get_apply_on_transformed_logs(&self) -> &::std::option::Option<bool> {
+        self.inner.get_apply_on_transformed_logs()
     }
 }

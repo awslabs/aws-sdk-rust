@@ -23,7 +23,7 @@ impl crate::operation::put_object_lock_configuration::builders::PutObjectLockCon
 /// Fluent builder constructing a request to `PutObjectLockConfiguration`.
 ///
 /// <note>
-/// <p>This operation is not supported by directory buckets.</p>
+/// <p>This operation is not supported for directory buckets.</p>
 /// </note>
 /// <p>Places an Object Lock configuration on the specified bucket. The rule specified in the Object Lock configuration will be applied by default to every new object placed in the specified bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Locking Objects</a>.</p><note>
 /// <ul>

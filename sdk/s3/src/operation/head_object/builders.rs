@@ -79,7 +79,7 @@ impl crate::operation::head_object::builders::HeadObjectInputBuilder {
 /// </ul><note>
 /// <ul>
 /// <li>
-/// <p><b>Directory buckets</b> - Delete marker is not supported by directory buckets.</p></li>
+/// <p><b>Directory buckets</b> - Delete marker is not supported for directory buckets.</p></li>
 /// <li>
 /// <p><b>Directory buckets</b> - S3 Versioning isn't enabled and supported for directory buckets. For this API operation, only the <code>null</code> value of the version ID is supported by directory buckets. You can only specify <code>null</code> to the <code>versionId</code> query parameter in the request.</p></li>
 /// </ul>

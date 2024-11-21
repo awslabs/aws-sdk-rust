@@ -341,6 +341,75 @@ impl DeleteObjectFluentBuilder {
     pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_expected_bucket_owner()
     }
+    /// <p>The <code>If-Match</code> header field makes the request method conditional on ETags. If the ETag value does not match, the operation returns a <code>412 Precondition Failed</code> error. If the ETag matches or if the object doesn't exist, the operation will return a <code>204 Success (No Content) response</code>.</p>
+    /// <p>For more information about conditional requests, see <a href="https://docs.aws.amazon.com/https:/tools.ietf.org/html/rfc7232">RFC 7232</a>.</p><note>
+    /// <p>This functionality is only supported for directory buckets.</p>
+    /// </note>
+    pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.if_match(input.into());
+        self
+    }
+    /// <p>The <code>If-Match</code> header field makes the request method conditional on ETags. If the ETag value does not match, the operation returns a <code>412 Precondition Failed</code> error. If the ETag matches or if the object doesn't exist, the operation will return a <code>204 Success (No Content) response</code>.</p>
+    /// <p>For more information about conditional requests, see <a href="https://docs.aws.amazon.com/https:/tools.ietf.org/html/rfc7232">RFC 7232</a>.</p><note>
+    /// <p>This functionality is only supported for directory buckets.</p>
+    /// </note>
+    pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_if_match(input);
+        self
+    }
+    /// <p>The <code>If-Match</code> header field makes the request method conditional on ETags. If the ETag value does not match, the operation returns a <code>412 Precondition Failed</code> error. If the ETag matches or if the object doesn't exist, the operation will return a <code>204 Success (No Content) response</code>.</p>
+    /// <p>For more information about conditional requests, see <a href="https://docs.aws.amazon.com/https:/tools.ietf.org/html/rfc7232">RFC 7232</a>.</p><note>
+    /// <p>This functionality is only supported for directory buckets.</p>
+    /// </note>
+    pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_if_match()
+    }
+    /// <p>If present, the object is deleted only if its modification times matches the provided <code>Timestamp</code>. If the <code>Timestamp</code> values do not match, the operation returns a <code>412 Precondition Failed</code> error. If the <code>Timestamp</code> matches or if the object doesn’t exist, the operation returns a <code>204 Success (No Content)</code> response.</p><note>
+    /// <p>This functionality is only supported for directory buckets.</p>
+    /// </note>
+    pub fn if_match_last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.inner = self.inner.if_match_last_modified_time(input);
+        self
+    }
+    /// <p>If present, the object is deleted only if its modification times matches the provided <code>Timestamp</code>. If the <code>Timestamp</code> values do not match, the operation returns a <code>412 Precondition Failed</code> error. If the <code>Timestamp</code> matches or if the object doesn’t exist, the operation returns a <code>204 Success (No Content)</code> response.</p><note>
+    /// <p>This functionality is only supported for directory buckets.</p>
+    /// </note>
+    pub fn set_if_match_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.inner = self.inner.set_if_match_last_modified_time(input);
+        self
+    }
+    /// <p>If present, the object is deleted only if its modification times matches the provided <code>Timestamp</code>. If the <code>Timestamp</code> values do not match, the operation returns a <code>412 Precondition Failed</code> error. If the <code>Timestamp</code> matches or if the object doesn’t exist, the operation returns a <code>204 Success (No Content)</code> response.</p><note>
+    /// <p>This functionality is only supported for directory buckets.</p>
+    /// </note>
+    pub fn get_if_match_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_if_match_last_modified_time()
+    }
+    /// <p>If present, the object is deleted only if its size matches the provided size in bytes. If the <code>Size</code> value does not match, the operation returns a <code>412 Precondition Failed</code> error. If the <code>Size</code> matches or if the object doesn’t exist, the operation returns a <code>204 Success (No Content)</code> response.</p><note>
+    /// <p>This functionality is only supported for directory buckets.</p>
+    /// </note> <important>
+    /// <p>You can use the <code>If-Match</code>, <code>x-amz-if-match-last-modified-time</code> and <code>x-amz-if-match-size</code> conditional headers in conjunction with each-other or individually.</p>
+    /// </important>
+    pub fn if_match_size(mut self, input: i64) -> Self {
+        self.inner = self.inner.if_match_size(input);
+        self
+    }
+    /// <p>If present, the object is deleted only if its size matches the provided size in bytes. If the <code>Size</code> value does not match, the operation returns a <code>412 Precondition Failed</code> error. If the <code>Size</code> matches or if the object doesn’t exist, the operation returns a <code>204 Success (No Content)</code> response.</p><note>
+    /// <p>This functionality is only supported for directory buckets.</p>
+    /// </note> <important>
+    /// <p>You can use the <code>If-Match</code>, <code>x-amz-if-match-last-modified-time</code> and <code>x-amz-if-match-size</code> conditional headers in conjunction with each-other or individually.</p>
+    /// </important>
+    pub fn set_if_match_size(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.inner = self.inner.set_if_match_size(input);
+        self
+    }
+    /// <p>If present, the object is deleted only if its size matches the provided size in bytes. If the <code>Size</code> value does not match, the operation returns a <code>412 Precondition Failed</code> error. If the <code>Size</code> matches or if the object doesn’t exist, the operation returns a <code>204 Success (No Content)</code> response.</p><note>
+    /// <p>This functionality is only supported for directory buckets.</p>
+    /// </note> <important>
+    /// <p>You can use the <code>If-Match</code>, <code>x-amz-if-match-last-modified-time</code> and <code>x-amz-if-match-size</code> conditional headers in conjunction with each-other or individually.</p>
+    /// </important>
+    pub fn get_if_match_size(&self) -> &::std::option::Option<i64> {
+        self.inner.get_if_match_size()
+    }
 }
 
 impl crate::client::customize::internal::CustomizablePresigned<crate::operation::delete_object::DeleteObjectError> for DeleteObjectFluentBuilder {

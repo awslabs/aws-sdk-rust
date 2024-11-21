@@ -138,17 +138,23 @@ impl UpdatePatchBaselineFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>A set of global filters used to include patches in the baseline.</p>
+    /// <p>A set of global filters used to include patches in the baseline.</p><important>
+    /// <p>The <code>GlobalFilters</code> parameter can be configured only by using the CLI or an Amazon Web Services SDK. It can't be configured from the Patch Manager console, and its value isn't displayed in the console.</p>
+    /// </important>
     pub fn global_filters(mut self, input: crate::types::PatchFilterGroup) -> Self {
         self.inner = self.inner.global_filters(input);
         self
     }
-    /// <p>A set of global filters used to include patches in the baseline.</p>
+    /// <p>A set of global filters used to include patches in the baseline.</p><important>
+    /// <p>The <code>GlobalFilters</code> parameter can be configured only by using the CLI or an Amazon Web Services SDK. It can't be configured from the Patch Manager console, and its value isn't displayed in the console.</p>
+    /// </important>
     pub fn set_global_filters(mut self, input: ::std::option::Option<crate::types::PatchFilterGroup>) -> Self {
         self.inner = self.inner.set_global_filters(input);
         self
     }
-    /// <p>A set of global filters used to include patches in the baseline.</p>
+    /// <p>A set of global filters used to include patches in the baseline.</p><important>
+    /// <p>The <code>GlobalFilters</code> parameter can be configured only by using the CLI or an Amazon Web Services SDK. It can't be configured from the Patch Manager console, and its value isn't displayed in the console.</p>
+    /// </important>
     pub fn get_global_filters(&self) -> &::std::option::Option<crate::types::PatchFilterGroup> {
         self.inner.get_global_filters()
     }

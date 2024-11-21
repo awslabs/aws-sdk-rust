@@ -5,9 +5,11 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`event_data_store(impl Into<String>)`](crate::operation::cancel_query::builders::CancelQueryFluentBuilder::event_data_store) / [`set_event_data_store(Option<String>)`](crate::operation::cancel_query::builders::CancelQueryFluentBuilder::set_event_data_store):<br>required: **false**<br><p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query is running.</p><br>
     ///   - [`query_id(impl Into<String>)`](crate::operation::cancel_query::builders::CancelQueryFluentBuilder::query_id) / [`set_query_id(Option<String>)`](crate::operation::cancel_query::builders::CancelQueryFluentBuilder::set_query_id):<br>required: **true**<br><p>The ID of the query that you want to cancel. The <code>QueryId</code> comes from the response of a <code>StartQuery</code> operation.</p><br>
+    ///   - [`event_data_store_owner_account_id(impl Into<String>)`](crate::operation::cancel_query::builders::CancelQueryFluentBuilder::event_data_store_owner_account_id) / [`set_event_data_store_owner_account_id(Option<String>)`](crate::operation::cancel_query::builders::CancelQueryFluentBuilder::set_event_data_store_owner_account_id):<br>required: **false**<br><p>The account ID of the event data store owner.</p><br>
     /// - On success, responds with [`CancelQueryOutput`](crate::operation::cancel_query::CancelQueryOutput) with field(s):
     ///   - [`query_id(String)`](crate::operation::cancel_query::CancelQueryOutput::query_id): <p>The ID of the canceled query.</p>
     ///   - [`query_status(QueryStatus)`](crate::operation::cancel_query::CancelQueryOutput::query_status): <p>Shows the status of a query after a <code>CancelQuery</code> request. Typically, the values shown are either <code>RUNNING</code> or <code>CANCELLED</code>.</p>
+    ///   - [`event_data_store_owner_account_id(Option<String>)`](crate::operation::cancel_query::CancelQueryOutput::event_data_store_owner_account_id): <p>The account ID of the event data store owner.</p>
     /// - On failure, responds with [`SdkError<CancelQueryError>`](crate::operation::cancel_query::CancelQueryError)
     pub fn cancel_query(&self) -> crate::operation::cancel_query::builders::CancelQueryFluentBuilder {
         crate::operation::cancel_query::builders::CancelQueryFluentBuilder::new(self.handle.clone())

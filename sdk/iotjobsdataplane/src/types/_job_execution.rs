@@ -8,17 +8,18 @@ pub struct JobExecution {
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the thing that is executing the job.</p>
     pub thing_name: ::std::option::Option<::std::string::String>,
-    /// <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED", "SUCCESS", "CANCELED", "REJECTED", or "REMOVED".</p>
+    /// <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED", "SUCCESS", "CANCELED", "TIMED_OUT", "REJECTED", or "REMOVED".</p>
     pub status: ::std::option::Option<crate::types::JobExecutionStatus>,
     /// <p>A collection of name/value pairs that describe the status of the job execution.</p>
+    /// <p>The maximum length of the value in the name/value pair is 1,024 characters.</p>
     pub status_details: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>The time, in milliseconds since the epoch, when the job execution was enqueued.</p>
+    /// <p>The time, in seconds since the epoch, when the job execution was enqueued.</p>
     pub queued_at: i64,
-    /// <p>The time, in milliseconds since the epoch, when the job execution was started.</p>
+    /// <p>The time, in seconds since the epoch, when the job execution was started.</p>
     pub started_at: ::std::option::Option<i64>,
-    /// <p>The time, in milliseconds since the epoch, when the job execution was last updated.</p>
+    /// <p>The time, in seconds since the epoch, when the job execution was last updated.</p>
     pub last_updated_at: i64,
-    /// <p>The estimated number of seconds that remain before the job execution status will be changed to <code>TIMED_OUT</code>.</p>
+    /// <p>The estimated number of seconds that remain before the job execution status will be changed to <code>TIMED_OUT</code>. The actual job execution timeout can occur up to 60 seconds later than the estimated duration.</p>
     pub approximate_seconds_before_timed_out: ::std::option::Option<i64>,
     /// <p>The version of the job execution. Job execution versions are incremented each time they are updated by a device.</p>
     pub version_number: i64,
@@ -36,27 +37,28 @@ impl JobExecution {
     pub fn thing_name(&self) -> ::std::option::Option<&str> {
         self.thing_name.as_deref()
     }
-    /// <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED", "SUCCESS", "CANCELED", "REJECTED", or "REMOVED".</p>
+    /// <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED", "SUCCESS", "CANCELED", "TIMED_OUT", "REJECTED", or "REMOVED".</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::JobExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>A collection of name/value pairs that describe the status of the job execution.</p>
+    /// <p>The maximum length of the value in the name/value pair is 1,024 characters.</p>
     pub fn status_details(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.status_details.as_ref()
     }
-    /// <p>The time, in milliseconds since the epoch, when the job execution was enqueued.</p>
+    /// <p>The time, in seconds since the epoch, when the job execution was enqueued.</p>
     pub fn queued_at(&self) -> i64 {
         self.queued_at
     }
-    /// <p>The time, in milliseconds since the epoch, when the job execution was started.</p>
+    /// <p>The time, in seconds since the epoch, when the job execution was started.</p>
     pub fn started_at(&self) -> ::std::option::Option<i64> {
         self.started_at
     }
-    /// <p>The time, in milliseconds since the epoch, when the job execution was last updated.</p>
+    /// <p>The time, in seconds since the epoch, when the job execution was last updated.</p>
     pub fn last_updated_at(&self) -> i64 {
         self.last_updated_at
     }
-    /// <p>The estimated number of seconds that remain before the job execution status will be changed to <code>TIMED_OUT</code>.</p>
+    /// <p>The estimated number of seconds that remain before the job execution status will be changed to <code>TIMED_OUT</code>. The actual job execution timeout can occur up to 60 seconds later than the estimated duration.</p>
     pub fn approximate_seconds_before_timed_out(&self) -> ::std::option::Option<i64> {
         self.approximate_seconds_before_timed_out
     }
@@ -125,17 +127,17 @@ impl JobExecutionBuilder {
     pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.thing_name
     }
-    /// <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED", "SUCCESS", "CANCELED", "REJECTED", or "REMOVED".</p>
+    /// <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED", "SUCCESS", "CANCELED", "TIMED_OUT", "REJECTED", or "REMOVED".</p>
     pub fn status(mut self, input: crate::types::JobExecutionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED", "SUCCESS", "CANCELED", "REJECTED", or "REMOVED".</p>
+    /// <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED", "SUCCESS", "CANCELED", "TIMED_OUT", "REJECTED", or "REMOVED".</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::JobExecutionStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED", "SUCCESS", "CANCELED", "REJECTED", or "REMOVED".</p>
+    /// <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED", "SUCCESS", "CANCELED", "TIMED_OUT", "REJECTED", or "REMOVED".</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::JobExecutionStatus> {
         &self.status
     }
@@ -144,6 +146,7 @@ impl JobExecutionBuilder {
     /// To override the contents of this collection use [`set_status_details`](Self::set_status_details).
     ///
     /// <p>A collection of name/value pairs that describe the status of the job execution.</p>
+    /// <p>The maximum length of the value in the name/value pair is 1,024 characters.</p>
     pub fn status_details(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -155,6 +158,7 @@ impl JobExecutionBuilder {
         self
     }
     /// <p>A collection of name/value pairs that describe the status of the job execution.</p>
+    /// <p>The maximum length of the value in the name/value pair is 1,024 characters.</p>
     pub fn set_status_details(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -163,62 +167,63 @@ impl JobExecutionBuilder {
         self
     }
     /// <p>A collection of name/value pairs that describe the status of the job execution.</p>
+    /// <p>The maximum length of the value in the name/value pair is 1,024 characters.</p>
     pub fn get_status_details(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.status_details
     }
-    /// <p>The time, in milliseconds since the epoch, when the job execution was enqueued.</p>
+    /// <p>The time, in seconds since the epoch, when the job execution was enqueued.</p>
     pub fn queued_at(mut self, input: i64) -> Self {
         self.queued_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time, in milliseconds since the epoch, when the job execution was enqueued.</p>
+    /// <p>The time, in seconds since the epoch, when the job execution was enqueued.</p>
     pub fn set_queued_at(mut self, input: ::std::option::Option<i64>) -> Self {
         self.queued_at = input;
         self
     }
-    /// <p>The time, in milliseconds since the epoch, when the job execution was enqueued.</p>
+    /// <p>The time, in seconds since the epoch, when the job execution was enqueued.</p>
     pub fn get_queued_at(&self) -> &::std::option::Option<i64> {
         &self.queued_at
     }
-    /// <p>The time, in milliseconds since the epoch, when the job execution was started.</p>
+    /// <p>The time, in seconds since the epoch, when the job execution was started.</p>
     pub fn started_at(mut self, input: i64) -> Self {
         self.started_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time, in milliseconds since the epoch, when the job execution was started.</p>
+    /// <p>The time, in seconds since the epoch, when the job execution was started.</p>
     pub fn set_started_at(mut self, input: ::std::option::Option<i64>) -> Self {
         self.started_at = input;
         self
     }
-    /// <p>The time, in milliseconds since the epoch, when the job execution was started.</p>
+    /// <p>The time, in seconds since the epoch, when the job execution was started.</p>
     pub fn get_started_at(&self) -> &::std::option::Option<i64> {
         &self.started_at
     }
-    /// <p>The time, in milliseconds since the epoch, when the job execution was last updated.</p>
+    /// <p>The time, in seconds since the epoch, when the job execution was last updated.</p>
     pub fn last_updated_at(mut self, input: i64) -> Self {
         self.last_updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time, in milliseconds since the epoch, when the job execution was last updated.</p>
+    /// <p>The time, in seconds since the epoch, when the job execution was last updated.</p>
     pub fn set_last_updated_at(mut self, input: ::std::option::Option<i64>) -> Self {
         self.last_updated_at = input;
         self
     }
-    /// <p>The time, in milliseconds since the epoch, when the job execution was last updated.</p>
+    /// <p>The time, in seconds since the epoch, when the job execution was last updated.</p>
     pub fn get_last_updated_at(&self) -> &::std::option::Option<i64> {
         &self.last_updated_at
     }
-    /// <p>The estimated number of seconds that remain before the job execution status will be changed to <code>TIMED_OUT</code>.</p>
+    /// <p>The estimated number of seconds that remain before the job execution status will be changed to <code>TIMED_OUT</code>. The actual job execution timeout can occur up to 60 seconds later than the estimated duration.</p>
     pub fn approximate_seconds_before_timed_out(mut self, input: i64) -> Self {
         self.approximate_seconds_before_timed_out = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The estimated number of seconds that remain before the job execution status will be changed to <code>TIMED_OUT</code>.</p>
+    /// <p>The estimated number of seconds that remain before the job execution status will be changed to <code>TIMED_OUT</code>. The actual job execution timeout can occur up to 60 seconds later than the estimated duration.</p>
     pub fn set_approximate_seconds_before_timed_out(mut self, input: ::std::option::Option<i64>) -> Self {
         self.approximate_seconds_before_timed_out = input;
         self
     }
-    /// <p>The estimated number of seconds that remain before the job execution status will be changed to <code>TIMED_OUT</code>.</p>
+    /// <p>The estimated number of seconds that remain before the job execution status will be changed to <code>TIMED_OUT</code>. The actual job execution timeout can occur up to 60 seconds later than the estimated duration.</p>
     pub fn get_approximate_seconds_before_timed_out(&self) -> &::std::option::Option<i64> {
         &self.approximate_seconds_before_timed_out
     }

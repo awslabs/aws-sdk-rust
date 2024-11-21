@@ -4,19 +4,21 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobExecutionState {
-    /// <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED", "SUCCESS", "CANCELED", "REJECTED", or "REMOVED".</p>
+    /// <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED", "SUCCESS", "CANCELED", "TIMED_OUT", "REJECTED", or "REMOVED".</p>
     pub status: ::std::option::Option<crate::types::JobExecutionStatus>,
     /// <p>A collection of name/value pairs that describe the status of the job execution.</p>
+    /// <p>The maximum length of the value in the name/value pair is 1,024 characters.</p>
     pub status_details: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The version of the job execution. Job execution versions are incremented each time they are updated by a device.</p>
     pub version_number: i64,
 }
 impl JobExecutionState {
-    /// <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED", "SUCCESS", "CANCELED", "REJECTED", or "REMOVED".</p>
+    /// <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED", "SUCCESS", "CANCELED", "TIMED_OUT", "REJECTED", or "REMOVED".</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::JobExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>A collection of name/value pairs that describe the status of the job execution.</p>
+    /// <p>The maximum length of the value in the name/value pair is 1,024 characters.</p>
     pub fn status_details(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.status_details.as_ref()
     }
@@ -41,17 +43,17 @@ pub struct JobExecutionStateBuilder {
     pub(crate) version_number: ::std::option::Option<i64>,
 }
 impl JobExecutionStateBuilder {
-    /// <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED", "SUCCESS", "CANCELED", "REJECTED", or "REMOVED".</p>
+    /// <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED", "SUCCESS", "CANCELED", "TIMED_OUT", "REJECTED", or "REMOVED".</p>
     pub fn status(mut self, input: crate::types::JobExecutionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED", "SUCCESS", "CANCELED", "REJECTED", or "REMOVED".</p>
+    /// <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED", "SUCCESS", "CANCELED", "TIMED_OUT", "REJECTED", or "REMOVED".</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::JobExecutionStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED", "SUCCESS", "CANCELED", "REJECTED", or "REMOVED".</p>
+    /// <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED", "SUCCESS", "CANCELED", "TIMED_OUT", "REJECTED", or "REMOVED".</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::JobExecutionStatus> {
         &self.status
     }
@@ -60,6 +62,7 @@ impl JobExecutionStateBuilder {
     /// To override the contents of this collection use [`set_status_details`](Self::set_status_details).
     ///
     /// <p>A collection of name/value pairs that describe the status of the job execution.</p>
+    /// <p>The maximum length of the value in the name/value pair is 1,024 characters.</p>
     pub fn status_details(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -71,6 +74,7 @@ impl JobExecutionStateBuilder {
         self
     }
     /// <p>A collection of name/value pairs that describe the status of the job execution.</p>
+    /// <p>The maximum length of the value in the name/value pair is 1,024 characters.</p>
     pub fn set_status_details(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -79,6 +83,7 @@ impl JobExecutionStateBuilder {
         self
     }
     /// <p>A collection of name/value pairs that describe the status of the job execution.</p>
+    /// <p>The maximum length of the value in the name/value pair is 1,024 characters.</p>
     pub fn get_status_details(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.status_details
     }

@@ -239,4 +239,24 @@ impl AbortMultipartUploadFluentBuilder {
     pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_expected_bucket_owner()
     }
+    /// <p>If present, this header aborts an in progress multipart upload only if it was initiated on the provided timestamp. If the initiated timestamp of the multipart upload does not match the provided value, the operation returns a <code>412 Precondition Failed</code> error. If the initiated timestamp matches or if the multipart upload doesn’t exist, the operation returns a <code>204 Success (No Content)</code> response.</p><note>
+    /// <p>This functionality is only supported for directory buckets.</p>
+    /// </note>
+    pub fn if_match_initiated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.inner = self.inner.if_match_initiated_time(input);
+        self
+    }
+    /// <p>If present, this header aborts an in progress multipart upload only if it was initiated on the provided timestamp. If the initiated timestamp of the multipart upload does not match the provided value, the operation returns a <code>412 Precondition Failed</code> error. If the initiated timestamp matches or if the multipart upload doesn’t exist, the operation returns a <code>204 Success (No Content)</code> response.</p><note>
+    /// <p>This functionality is only supported for directory buckets.</p>
+    /// </note>
+    pub fn set_if_match_initiated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.inner = self.inner.set_if_match_initiated_time(input);
+        self
+    }
+    /// <p>If present, this header aborts an in progress multipart upload only if it was initiated on the provided timestamp. If the initiated timestamp of the multipart upload does not match the provided value, the operation returns a <code>412 Precondition Failed</code> error. If the initiated timestamp matches or if the multipart upload doesn’t exist, the operation returns a <code>204 Success (No Content)</code> response.</p><note>
+    /// <p>This functionality is only supported for directory buckets.</p>
+    /// </note>
+    pub fn get_if_match_initiated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_if_match_initiated_time()
+    }
 }

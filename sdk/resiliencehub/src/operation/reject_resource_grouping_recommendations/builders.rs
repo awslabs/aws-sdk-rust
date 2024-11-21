@@ -130,17 +130,17 @@ impl RejectResourceGroupingRecommendationsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_entries`](Self::set_entries).
     ///
-    /// <p>Indicates the list of resource grouping recommendations you have selected to exclude from your application.</p>
+    /// <p>List of resource grouping recommendations you have selected to exclude from your application.</p>
     pub fn entries(mut self, input: crate::types::RejectGroupingRecommendationEntry) -> Self {
         self.inner = self.inner.entries(input);
         self
     }
-    /// <p>Indicates the list of resource grouping recommendations you have selected to exclude from your application.</p>
+    /// <p>List of resource grouping recommendations you have selected to exclude from your application.</p>
     pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RejectGroupingRecommendationEntry>>) -> Self {
         self.inner = self.inner.set_entries(input);
         self
     }
-    /// <p>Indicates the list of resource grouping recommendations you have selected to exclude from your application.</p>
+    /// <p>List of resource grouping recommendations you have selected to exclude from your application.</p>
     pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RejectGroupingRecommendationEntry>> {
         self.inner.get_entries()
     }

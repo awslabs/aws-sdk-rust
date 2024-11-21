@@ -6136,6 +6136,74 @@ impl From<crate::operation::describe_byoip_cidrs::DescribeByoipCidrsError> for E
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_capacity_block_extension_history::DescribeCapacityBlockExtensionHistoryError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_capacity_block_extension_history::DescribeCapacityBlockExtensionHistoryError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_capacity_block_extension_history::DescribeCapacityBlockExtensionHistoryError> for Error {
+    fn from(err: crate::operation::describe_capacity_block_extension_history::DescribeCapacityBlockExtensionHistoryError) -> Self {
+        match err {
+            crate::operation::describe_capacity_block_extension_history::DescribeCapacityBlockExtensionHistoryError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_capacity_block_extension_offerings::DescribeCapacityBlockExtensionOfferingsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_capacity_block_extension_offerings::DescribeCapacityBlockExtensionOfferingsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_capacity_block_extension_offerings::DescribeCapacityBlockExtensionOfferingsError> for Error {
+    fn from(err: crate::operation::describe_capacity_block_extension_offerings::DescribeCapacityBlockExtensionOfferingsError) -> Self {
+        match err {
+            crate::operation::describe_capacity_block_extension_offerings::DescribeCapacityBlockExtensionOfferingsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::describe_capacity_block_offerings::DescribeCapacityBlockOfferingsError,
             R,
         >,
@@ -15517,6 +15585,38 @@ impl From<crate::operation::purchase_capacity_block::PurchaseCapacityBlockError>
     fn from(err: crate::operation::purchase_capacity_block::PurchaseCapacityBlockError) -> Self {
         match err {
             crate::operation::purchase_capacity_block::PurchaseCapacityBlockError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::purchase_capacity_block_extension::PurchaseCapacityBlockExtensionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::purchase_capacity_block_extension::PurchaseCapacityBlockExtensionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::purchase_capacity_block_extension::PurchaseCapacityBlockExtensionError> for Error {
+    fn from(err: crate::operation::purchase_capacity_block_extension::PurchaseCapacityBlockExtensionError) -> Self {
+        match err {
+            crate::operation::purchase_capacity_block_extension::PurchaseCapacityBlockExtensionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

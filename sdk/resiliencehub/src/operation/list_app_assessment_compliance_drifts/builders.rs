@@ -22,7 +22,7 @@ impl crate::operation::list_app_assessment_compliance_drifts::builders::ListAppA
 }
 /// Fluent builder constructing a request to `ListAppAssessmentComplianceDrifts`.
 ///
-/// <p>Indicates the list of compliance drifts that were detected while running an assessment.</p>
+/// <p>List of compliance drifts that were detected while running an assessment.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAppAssessmentComplianceDriftsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -142,17 +142,17 @@ impl ListAppAssessmentComplianceDriftsFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>Indicates the maximum number of compliance drifts requested.</p>
+    /// <p>Maximum number of compliance drifts requested.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>Indicates the maximum number of compliance drifts requested.</p>
+    /// <p>Maximum number of compliance drifts requested.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>Indicates the maximum number of compliance drifts requested.</p>
+    /// <p>Maximum number of compliance drifts requested.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

@@ -66,6 +66,13 @@ where
                                     crate::protocol_serde::shape_target_tracking_scaling_policy_configuration::de_target_tracking_scaling_policy_configuration(tokens)?
                                 );
                         }
+                        "PredictiveScalingPolicyConfiguration" => {
+                            builder = builder.set_predictive_scaling_policy_configuration(
+                                crate::protocol_serde::shape_predictive_scaling_policy_configuration::de_predictive_scaling_policy_configuration(
+                                    tokens,
+                                )?,
+                            );
+                        }
                         "Alarms" => {
                             builder = builder.set_alarms(crate::protocol_serde::shape_alarms::de_alarms(tokens)?);
                         }

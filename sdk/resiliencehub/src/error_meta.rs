@@ -970,6 +970,40 @@ impl From<crate::operation::describe_draft_app_version_resources_import_status::
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_metrics_export::DescribeMetricsExportError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_metrics_export::DescribeMetricsExportError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_metrics_export::DescribeMetricsExportError> for Error {
+    fn from(err: crate::operation::describe_metrics_export::DescribeMetricsExportError) -> Self {
+        match err {
+            crate::operation::describe_metrics_export::DescribeMetricsExportError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_metrics_export::DescribeMetricsExportError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::describe_metrics_export::DescribeMetricsExportError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_metrics_export::DescribeMetricsExportError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_metrics_export::DescribeMetricsExportError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_metrics_export::DescribeMetricsExportError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_resiliency_policy::DescribeResiliencyPolicyError, R>>
     for Error
 where
@@ -1561,6 +1595,31 @@ impl From<crate::operation::list_app_versions::ListAppVersionsError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_metrics::ListMetricsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_metrics::ListMetricsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_metrics::ListMetricsError> for Error {
+    fn from(err: crate::operation::list_metrics::ListMetricsError) -> Self {
+        match err {
+            crate::operation::list_metrics::ListMetricsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_metrics::ListMetricsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_metrics::ListMetricsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_metrics::ListMetricsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_metrics::ListMetricsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_recommendation_templates::ListRecommendationTemplatesError, R>>
     for Error
 where
@@ -2127,6 +2186,35 @@ impl From<crate::operation::start_app_assessment::StartAppAssessmentError> for E
             crate::operation::start_app_assessment::StartAppAssessmentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::start_app_assessment::StartAppAssessmentError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::start_app_assessment::StartAppAssessmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_metrics_export::StartMetricsExportError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_metrics_export::StartMetricsExportError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_metrics_export::StartMetricsExportError> for Error {
+    fn from(err: crate::operation::start_metrics_export::StartMetricsExportError) -> Self {
+        match err {
+            crate::operation::start_metrics_export::StartMetricsExportError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_metrics_export::StartMetricsExportError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_metrics_export::StartMetricsExportError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_metrics_export::StartMetricsExportError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::start_metrics_export::StartMetricsExportError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_metrics_export::StartMetricsExportError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_metrics_export::StartMetricsExportError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

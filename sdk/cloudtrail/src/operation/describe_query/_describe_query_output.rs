@@ -19,6 +19,8 @@ pub struct DescribeQueryOutput {
     pub delivery_status: ::std::option::Option<crate::types::DeliveryStatus>,
     /// <p>The prompt used for a generated query. For information about generated queries, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/lake-query-generator.html">Create CloudTrail Lake queries from natural language prompts</a> in the <i>CloudTrail </i> user guide.</p>
     pub prompt: ::std::option::Option<::std::string::String>,
+    /// <p>The account ID of the event data store owner.</p>
+    pub event_data_store_owner_account_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeQueryOutput {
@@ -54,6 +56,10 @@ impl DescribeQueryOutput {
     pub fn prompt(&self) -> ::std::option::Option<&str> {
         self.prompt.as_deref()
     }
+    /// <p>The account ID of the event data store owner.</p>
+    pub fn event_data_store_owner_account_id(&self) -> ::std::option::Option<&str> {
+        self.event_data_store_owner_account_id.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeQueryOutput {
     fn request_id(&self) -> Option<&str> {
@@ -79,6 +85,7 @@ pub struct DescribeQueryOutputBuilder {
     pub(crate) delivery_s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) delivery_status: ::std::option::Option<crate::types::DeliveryStatus>,
     pub(crate) prompt: ::std::option::Option<::std::string::String>,
+    pub(crate) event_data_store_owner_account_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeQueryOutputBuilder {
@@ -194,6 +201,20 @@ impl DescribeQueryOutputBuilder {
     pub fn get_prompt(&self) -> &::std::option::Option<::std::string::String> {
         &self.prompt
     }
+    /// <p>The account ID of the event data store owner.</p>
+    pub fn event_data_store_owner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.event_data_store_owner_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The account ID of the event data store owner.</p>
+    pub fn set_event_data_store_owner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.event_data_store_owner_account_id = input;
+        self
+    }
+    /// <p>The account ID of the event data store owner.</p>
+    pub fn get_event_data_store_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_data_store_owner_account_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -214,6 +235,7 @@ impl DescribeQueryOutputBuilder {
             delivery_s3_uri: self.delivery_s3_uri,
             delivery_status: self.delivery_status,
             prompt: self.prompt,
+            event_data_store_owner_account_id: self.event_data_store_owner_account_id,
             _request_id: self._request_id,
         }
     }

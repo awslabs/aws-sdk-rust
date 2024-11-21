@@ -505,7 +505,15 @@ pub use crate::types::_purchase::Purchase;
 
 pub use crate::types::_payment_option::PaymentOption;
 
+pub use crate::types::_capacity_block_extension::CapacityBlockExtension;
+
+pub use crate::types::_capacity_block_extension_status::CapacityBlockExtensionStatus;
+
 pub use crate::types::_capacity_reservation::CapacityReservation;
+
+pub use crate::types::_capacity_reservation_delivery_preference::CapacityReservationDeliveryPreference;
+
+pub use crate::types::_capacity_reservation_commitment_info::CapacityReservationCommitmentInfo;
 
 pub use crate::types::_capacity_reservation_type::CapacityReservationType;
 
@@ -797,9 +805,15 @@ pub use crate::types::_ipam_scope_type::IpamScopeType;
 
 pub use crate::types::_ipam_resource_discovery::IpamResourceDiscovery;
 
+pub use crate::types::_ipam_organizational_unit_exclusion::IpamOrganizationalUnitExclusion;
+
 pub use crate::types::_ipam_resource_discovery_state::IpamResourceDiscoveryState;
 
 pub use crate::types::_ipam_operating_region::IpamOperatingRegion;
+
+pub use crate::types::_remove_ipam_organizational_unit_exclusion::RemoveIpamOrganizationalUnitExclusion;
+
+pub use crate::types::_add_ipam_organizational_unit_exclusion::AddIpamOrganizationalUnitExclusion;
 
 pub use crate::types::_remove_ipam_operating_region::RemoveIpamOperatingRegion;
 
@@ -1997,6 +2011,8 @@ pub use crate::types::_caller_role::CallerRole;
 
 pub use crate::types::_capacity_block_offering::CapacityBlockOffering;
 
+pub use crate::types::_capacity_block_extension_offering::CapacityBlockExtensionOffering;
+
 pub use crate::types::_bundle_task::BundleTask;
 
 pub use crate::types::_bundle_task_error::BundleTaskError;
@@ -2247,6 +2263,8 @@ mod _activity_status;
 
 mod _add_ipam_operating_region;
 
+mod _add_ipam_organizational_unit_exclusion;
+
 mod _add_prefix_list_entry;
 
 mod _added_principal;
@@ -2411,6 +2429,12 @@ mod _cancelled_spot_instance_request;
 
 mod _capacity_allocation;
 
+mod _capacity_block_extension;
+
+mod _capacity_block_extension_offering;
+
+mod _capacity_block_extension_status;
+
 mod _capacity_block_offering;
 
 mod _capacity_reservation;
@@ -2418,6 +2442,10 @@ mod _capacity_reservation;
 mod _capacity_reservation_billing_request;
 
 mod _capacity_reservation_billing_request_status;
+
+mod _capacity_reservation_commitment_info;
+
+mod _capacity_reservation_delivery_preference;
 
 mod _capacity_reservation_fleet;
 
@@ -3193,6 +3221,8 @@ mod _ipam_network_interface_attachment_status;
 
 mod _ipam_operating_region;
 
+mod _ipam_organizational_unit_exclusion;
+
 mod _ipam_overlap_status;
 
 mod _ipam_pool;
@@ -3754,6 +3784,8 @@ mod _region;
 mod _register_instance_tag_attribute_request;
 
 mod _remove_ipam_operating_region;
+
+mod _remove_ipam_organizational_unit_exclusion;
 
 mod _remove_prefix_list_entry;
 

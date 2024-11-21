@@ -189,4 +189,42 @@ impl UpdateVehicleFluentBuilder {
     pub fn get_attribute_update_mode(&self) -> &::std::option::Option<crate::types::UpdateMode> {
         self.inner.get_attribute_update_mode()
     }
+    ///
+    /// Appends an item to `stateTemplatesToAdd`.
+    ///
+    /// To override the contents of this collection use [`set_state_templates_to_add`](Self::set_state_templates_to_add).
+    ///
+    /// <p>Associate state templates with the vehicle.</p>
+    pub fn state_templates_to_add(mut self, input: crate::types::StateTemplateAssociation) -> Self {
+        self.inner = self.inner.state_templates_to_add(input);
+        self
+    }
+    /// <p>Associate state templates with the vehicle.</p>
+    pub fn set_state_templates_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StateTemplateAssociation>>) -> Self {
+        self.inner = self.inner.set_state_templates_to_add(input);
+        self
+    }
+    /// <p>Associate state templates with the vehicle.</p>
+    pub fn get_state_templates_to_add(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StateTemplateAssociation>> {
+        self.inner.get_state_templates_to_add()
+    }
+    ///
+    /// Appends an item to `stateTemplatesToRemove`.
+    ///
+    /// To override the contents of this collection use [`set_state_templates_to_remove`](Self::set_state_templates_to_remove).
+    ///
+    /// <p>Remove state templates from the vehicle.</p>
+    pub fn state_templates_to_remove(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.state_templates_to_remove(input.into());
+        self
+    }
+    /// <p>Remove state templates from the vehicle.</p>
+    pub fn set_state_templates_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_state_templates_to_remove(input);
+        self
+    }
+    /// <p>Remove state templates from the vehicle.</p>
+    pub fn get_state_templates_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_state_templates_to_remove()
+    }
 }

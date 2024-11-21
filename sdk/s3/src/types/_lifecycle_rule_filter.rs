@@ -8,7 +8,9 @@ pub struct LifecycleRuleFilter {
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
     pub prefix: ::std::option::Option<::std::string::String>,
-    /// <p>This tag must exist in the object's tag set in order for the rule to apply.</p>
+    /// <p>This tag must exist in the object's tag set in order for the rule to apply.</p><note>
+    /// <p>This parameter applies to general purpose buckets only. It is not supported for directory bucket lifecycle configurations.</p>
+    /// </note>
     pub tag: ::std::option::Option<crate::types::Tag>,
     /// <p>Minimum object size to which the rule applies.</p>
     pub object_size_greater_than: ::std::option::Option<i64>,
@@ -24,7 +26,9 @@ impl LifecycleRuleFilter {
     pub fn prefix(&self) -> ::std::option::Option<&str> {
         self.prefix.as_deref()
     }
-    /// <p>This tag must exist in the object's tag set in order for the rule to apply.</p>
+    /// <p>This tag must exist in the object's tag set in order for the rule to apply.</p><note>
+    /// <p>This parameter applies to general purpose buckets only. It is not supported for directory bucket lifecycle configurations.</p>
+    /// </note>
     pub fn tag(&self) -> ::std::option::Option<&crate::types::Tag> {
         self.tag.as_ref()
     }
@@ -79,17 +83,23 @@ impl LifecycleRuleFilterBuilder {
     pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
         &self.prefix
     }
-    /// <p>This tag must exist in the object's tag set in order for the rule to apply.</p>
+    /// <p>This tag must exist in the object's tag set in order for the rule to apply.</p><note>
+    /// <p>This parameter applies to general purpose buckets only. It is not supported for directory bucket lifecycle configurations.</p>
+    /// </note>
     pub fn tag(mut self, input: crate::types::Tag) -> Self {
         self.tag = ::std::option::Option::Some(input);
         self
     }
-    /// <p>This tag must exist in the object's tag set in order for the rule to apply.</p>
+    /// <p>This tag must exist in the object's tag set in order for the rule to apply.</p><note>
+    /// <p>This parameter applies to general purpose buckets only. It is not supported for directory bucket lifecycle configurations.</p>
+    /// </note>
     pub fn set_tag(mut self, input: ::std::option::Option<crate::types::Tag>) -> Self {
         self.tag = input;
         self
     }
-    /// <p>This tag must exist in the object's tag set in order for the rule to apply.</p>
+    /// <p>This tag must exist in the object's tag set in order for the rule to apply.</p><note>
+    /// <p>This parameter applies to general purpose buckets only. It is not supported for directory bucket lifecycle configurations.</p>
+    /// </note>
     pub fn get_tag(&self) -> &::std::option::Option<crate::types::Tag> {
         &self.tag
     }

@@ -267,7 +267,7 @@ pub enum CreateChannelError {
     InvalidTagParameterException(crate::types::error::InvalidTagParameterException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
     OperationNotPermittedException(crate::types::error::OperationNotPermittedException),
-    /// <p>The number of tags per trail, event data store, or channel has exceeded the permitted amount. Currently, the limit is 50.</p>
+    /// <p>The number of tags per trail, event data store, dashboard, or channel has exceeded the permitted amount. Currently, the limit is 50.</p>
     TagsLimitExceededException(crate::types::error::TagsLimitExceededException),
     /// <p>This exception is thrown when the requested operation is not supported.</p>
     UnsupportedOperationException(crate::types::error::UnsupportedOperationException),

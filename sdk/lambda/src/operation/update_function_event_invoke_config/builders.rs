@@ -203,10 +203,14 @@ impl UpdateFunctionEventInvokeConfigFluentBuilder {
     /// <li>
     /// <p><b>Queue</b> - The ARN of a standard SQS queue.</p></li>
     /// <li>
+    /// <p><b>Bucket</b> - The ARN of an Amazon S3 bucket.</p></li>
+    /// <li>
     /// <p><b>Topic</b> - The ARN of a standard SNS topic.</p></li>
     /// <li>
     /// <p><b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>S3 buckets are supported only for on-failure destinations. To retain records of successful invocations, use another destination type.</p>
+    /// </note>
     pub fn destination_config(mut self, input: crate::types::DestinationConfig) -> Self {
         self.inner = self.inner.destination_config(input);
         self
@@ -219,10 +223,14 @@ impl UpdateFunctionEventInvokeConfigFluentBuilder {
     /// <li>
     /// <p><b>Queue</b> - The ARN of a standard SQS queue.</p></li>
     /// <li>
+    /// <p><b>Bucket</b> - The ARN of an Amazon S3 bucket.</p></li>
+    /// <li>
     /// <p><b>Topic</b> - The ARN of a standard SNS topic.</p></li>
     /// <li>
     /// <p><b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>S3 buckets are supported only for on-failure destinations. To retain records of successful invocations, use another destination type.</p>
+    /// </note>
     pub fn set_destination_config(mut self, input: ::std::option::Option<crate::types::DestinationConfig>) -> Self {
         self.inner = self.inner.set_destination_config(input);
         self
@@ -235,10 +243,14 @@ impl UpdateFunctionEventInvokeConfigFluentBuilder {
     /// <li>
     /// <p><b>Queue</b> - The ARN of a standard SQS queue.</p></li>
     /// <li>
+    /// <p><b>Bucket</b> - The ARN of an Amazon S3 bucket.</p></li>
+    /// <li>
     /// <p><b>Topic</b> - The ARN of a standard SNS topic.</p></li>
     /// <li>
     /// <p><b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>S3 buckets are supported only for on-failure destinations. To retain records of successful invocations, use another destination type.</p>
+    /// </note>
     pub fn get_destination_config(&self) -> &::std::option::Option<crate::types::DestinationConfig> {
         self.inner.get_destination_config()
     }

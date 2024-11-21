@@ -12,6 +12,7 @@
 /// ```text
 /// # let datasourcetype = unimplemented!();
 /// match datasourcetype {
+///     DataSourceType::AmazonBedrockRuntime => { /* ... */ },
 ///     DataSourceType::AmazonDynamodb => { /* ... */ },
 ///     DataSourceType::AmazonElasticsearch => { /* ... */ },
 ///     DataSourceType::AmazonEventbridge => { /* ... */ },
@@ -48,6 +49,8 @@
 )]
 pub enum DataSourceType {
     #[allow(missing_docs)] // documentation missing in model
+    AmazonBedrockRuntime,
+    #[allow(missing_docs)] // documentation missing in model
     AmazonDynamodb,
     #[allow(missing_docs)] // documentation missing in model
     AmazonElasticsearch,
@@ -70,6 +73,7 @@ pub enum DataSourceType {
 impl ::std::convert::From<&str> for DataSourceType {
     fn from(s: &str) -> Self {
         match s {
+            "AMAZON_BEDROCK_RUNTIME" => DataSourceType::AmazonBedrockRuntime,
             "AMAZON_DYNAMODB" => DataSourceType::AmazonDynamodb,
             "AMAZON_ELASTICSEARCH" => DataSourceType::AmazonElasticsearch,
             "AMAZON_EVENTBRIDGE" => DataSourceType::AmazonEventbridge,
@@ -93,6 +97,7 @@ impl DataSourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            DataSourceType::AmazonBedrockRuntime => "AMAZON_BEDROCK_RUNTIME",
             DataSourceType::AmazonDynamodb => "AMAZON_DYNAMODB",
             DataSourceType::AmazonElasticsearch => "AMAZON_ELASTICSEARCH",
             DataSourceType::AmazonEventbridge => "AMAZON_EVENTBRIDGE",
@@ -107,6 +112,7 @@ impl DataSourceType {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "AMAZON_BEDROCK_RUNTIME",
             "AMAZON_DYNAMODB",
             "AMAZON_ELASTICSEARCH",
             "AMAZON_EVENTBRIDGE",
@@ -138,6 +144,7 @@ impl DataSourceType {
 impl ::std::fmt::Display for DataSourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            DataSourceType::AmazonBedrockRuntime => write!(f, "AMAZON_BEDROCK_RUNTIME"),
             DataSourceType::AmazonDynamodb => write!(f, "AMAZON_DYNAMODB"),
             DataSourceType::AmazonElasticsearch => write!(f, "AMAZON_ELASTICSEARCH"),
             DataSourceType::AmazonEventbridge => write!(f, "AMAZON_EVENTBRIDGE"),

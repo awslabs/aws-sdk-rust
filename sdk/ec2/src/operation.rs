@@ -709,6 +709,12 @@ pub mod describe_bundle_tasks;
 /// Types for the `DescribeByoipCidrs` operation.
 pub mod describe_byoip_cidrs;
 
+/// Types for the `DescribeCapacityBlockExtensionHistory` operation.
+pub mod describe_capacity_block_extension_history;
+
+/// Types for the `DescribeCapacityBlockExtensionOfferings` operation.
+pub mod describe_capacity_block_extension_offerings;
+
 /// Types for the `DescribeCapacityBlockOfferings` operation.
 pub mod describe_capacity_block_offerings;
 
@@ -1740,6 +1746,9 @@ pub mod provision_public_ipv4_pool_cidr;
 
 /// Types for the `PurchaseCapacityBlock` operation.
 pub mod purchase_capacity_block;
+
+/// Types for the `PurchaseCapacityBlockExtension` operation.
+pub mod purchase_capacity_block_extension;
 
 /// Types for the `PurchaseHostReservation` operation.
 pub mod purchase_host_reservation;

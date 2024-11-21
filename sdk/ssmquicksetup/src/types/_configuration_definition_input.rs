@@ -591,7 +591,7 @@ pub struct ConfigurationDefinitionInput {
     /// <p><code>RebootOption</code></p>
     /// <ul>
     /// <li>
-    /// <p>Description: (Optional) A boolean value that determines whether instances are rebooted after patches are installed. The default value is "<code>false</code>".</p></li>
+    /// <p>Description: (Optional) Determines whether instances are rebooted after patches are installed. Valid values are <code>RebootIfNeeded</code> and <code>NoReboot</code>.</p></li>
     /// </ul></li>
     /// <li>
     /// <p><code>IsPolicyAttachAllowed</code></p>
@@ -1281,7 +1281,7 @@ impl ConfigurationDefinitionInput {
     /// <p><code>RebootOption</code></p>
     /// <ul>
     /// <li>
-    /// <p>Description: (Optional) A boolean value that determines whether instances are rebooted after patches are installed. The default value is "<code>false</code>".</p></li>
+    /// <p>Description: (Optional) Determines whether instances are rebooted after patches are installed. Valid values are <code>RebootIfNeeded</code> and <code>NoReboot</code>.</p></li>
     /// </ul></li>
     /// <li>
     /// <p><code>IsPolicyAttachAllowed</code></p>
@@ -2010,7 +2010,7 @@ impl ConfigurationDefinitionInputBuilder {
     /// <p><code>RebootOption</code></p>
     /// <ul>
     /// <li>
-    /// <p>Description: (Optional) A boolean value that determines whether instances are rebooted after patches are installed. The default value is "<code>false</code>".</p></li>
+    /// <p>Description: (Optional) Determines whether instances are rebooted after patches are installed. Valid values are <code>RebootIfNeeded</code> and <code>NoReboot</code>.</p></li>
     /// </ul></li>
     /// <li>
     /// <p><code>IsPolicyAttachAllowed</code></p>
@@ -2692,7 +2692,7 @@ impl ConfigurationDefinitionInputBuilder {
     /// <p><code>RebootOption</code></p>
     /// <ul>
     /// <li>
-    /// <p>Description: (Optional) A boolean value that determines whether instances are rebooted after patches are installed. The default value is "<code>false</code>".</p></li>
+    /// <p>Description: (Optional) Determines whether instances are rebooted after patches are installed. Valid values are <code>RebootIfNeeded</code> and <code>NoReboot</code>.</p></li>
     /// </ul></li>
     /// <li>
     /// <p><code>IsPolicyAttachAllowed</code></p>
@@ -3372,7 +3372,7 @@ impl ConfigurationDefinitionInputBuilder {
     /// <p><code>RebootOption</code></p>
     /// <ul>
     /// <li>
-    /// <p>Description: (Optional) A boolean value that determines whether instances are rebooted after patches are installed. The default value is "<code>false</code>".</p></li>
+    /// <p>Description: (Optional) Determines whether instances are rebooted after patches are installed. Valid values are <code>RebootIfNeeded</code> and <code>NoReboot</code>.</p></li>
     /// </ul></li>
     /// <li>
     /// <p><code>IsPolicyAttachAllowed</code></p>

@@ -248,7 +248,7 @@ pub enum DeleteActivationError {
     InternalServerError(crate::types::error::InternalServerError),
     /// <p>The activation isn't valid. The activation might have been deleted, or the ActivationId and the ActivationCode don't match.</p>
     InvalidActivation(crate::types::error::InvalidActivation),
-    /// <p>The activation ID isn't valid. Verify the you entered the correct ActivationId or ActivationCode and try again.</p>
+    /// <p>The activation ID isn't valid. Verify that you entered the correct ActivationId or ActivationCode and try again.</p>
     InvalidActivationId(crate::types::error::InvalidActivationId),
     /// <p>There are concurrent updates for a resource that supports one update at a time.</p>
     TooManyUpdates(crate::types::error::TooManyUpdates),

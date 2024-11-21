@@ -69,6 +69,8 @@ pub(crate) mod shape_describe_app_version_template;
 
 pub(crate) mod shape_describe_draft_app_version_resources_import_status;
 
+pub(crate) mod shape_describe_metrics_export;
+
 pub(crate) mod shape_describe_resiliency_policy;
 
 pub(crate) mod shape_describe_resource_grouping_recommendation_task;
@@ -99,6 +101,8 @@ pub(crate) mod shape_list_app_versions;
 
 pub(crate) mod shape_list_apps;
 
+pub(crate) mod shape_list_metrics;
+
 pub(crate) mod shape_list_recommendation_templates;
 
 pub(crate) mod shape_list_resiliency_policies;
@@ -126,6 +130,8 @@ pub(crate) mod shape_remove_draft_app_version_resource_mappings;
 pub(crate) mod shape_resolve_app_version_resources;
 
 pub(crate) mod shape_start_app_assessment;
+
+pub(crate) mod shape_start_metrics_export;
 
 pub(crate) mod shape_start_resource_grouping_recommendation_task;
 
@@ -201,6 +207,8 @@ pub(crate) mod shape_describe_app_version_template_input;
 
 pub(crate) mod shape_describe_draft_app_version_resources_import_status_input;
 
+pub(crate) mod shape_describe_metrics_export_input;
+
 pub(crate) mod shape_describe_resiliency_policy_input;
 
 pub(crate) mod shape_describe_resource_grouping_recommendation_task_input;
@@ -229,6 +237,8 @@ pub(crate) mod shape_list_app_version_resources_input;
 
 pub(crate) mod shape_list_app_versions_input;
 
+pub(crate) mod shape_list_metrics_input;
+
 pub(crate) mod shape_list_sop_recommendations_input;
 
 pub(crate) mod shape_list_test_recommendations_input;
@@ -250,6 +260,8 @@ pub(crate) mod shape_resource_not_found_exception;
 pub(crate) mod shape_service_quota_exceeded_exception;
 
 pub(crate) mod shape_start_app_assessment_input;
+
+pub(crate) mod shape_start_metrics_export_input;
 
 pub(crate) mod shape_start_resource_grouping_recommendation_task_input;
 
@@ -305,6 +317,8 @@ pub(crate) mod shape_component_compliances_list;
 
 pub(crate) mod shape_component_recommendation_list;
 
+pub(crate) mod shape_condition;
+
 pub(crate) mod shape_eks_source;
 
 pub(crate) mod shape_eks_source_cluster_namespace;
@@ -318,6 +332,8 @@ pub(crate) mod shape_event_subscription;
 pub(crate) mod shape_failed_grouping_recommendation_entries;
 
 pub(crate) mod shape_failure_policy;
+
+pub(crate) mod shape_field;
 
 pub(crate) mod shape_grouping_recommendation_list;
 
@@ -345,7 +361,13 @@ pub(crate) mod shape_resource_mapping;
 
 pub(crate) mod shape_resource_mapping_list;
 
+pub(crate) mod shape_row_list;
+
+pub(crate) mod shape_s3_location;
+
 pub(crate) mod shape_sop_recommendation_list;
+
+pub(crate) mod shape_sort;
 
 pub(crate) mod shape_tag_map;
 
@@ -407,7 +429,7 @@ pub(crate) mod shape_resource_drift;
 
 pub(crate) mod shape_resource_errors_details;
 
-pub(crate) mod shape_s3_location;
+pub(crate) mod shape_row;
 
 pub(crate) mod shape_sop_recommendation;
 

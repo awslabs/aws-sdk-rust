@@ -23,7 +23,7 @@ impl crate::operation::delete_object_tagging::builders::DeleteObjectTaggingInput
 /// Fluent builder constructing a request to `DeleteObjectTagging`.
 ///
 /// <note>
-/// <p>This operation is not supported by directory buckets.</p>
+/// <p>This operation is not supported for directory buckets.</p>
 /// </note>
 /// <p>Removes the entire tag set from the specified object. For more information about managing object tags, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html"> Object Tagging</a>.</p>
 /// <p>To use this operation, you must have permission to perform the <code>s3:DeleteObjectTagging</code> action.</p>

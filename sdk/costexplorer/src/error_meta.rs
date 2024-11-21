@@ -3,6 +3,8 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
+    /// <p>The requested analysis can't be found.</p>
+    AnalysisNotFoundException(crate::types::error::AnalysisNotFoundException),
     /// <p>A request to backfill is already in progress. Once the previous request is complete, you can create another request.</p>
     BackfillLimitExceededException(crate::types::error::BackfillLimitExceededException),
     /// <p>The requested report expired. Update the date interval and try again.</p>
@@ -41,6 +43,7 @@ pub enum Error {
 impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            Error::AnalysisNotFoundException(inner) => inner.fmt(f),
             Error::BackfillLimitExceededException(inner) => inner.fmt(f),
             Error::BillExpirationException(inner) => inner.fmt(f),
             Error::DataUnavailableException(inner) => inner.fmt(f),
@@ -75,6 +78,7 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
+            Self::AnalysisNotFoundException(inner) => inner.meta(),
             Self::BackfillLimitExceededException(inner) => inner.meta(),
             Self::BillExpirationException(inner) => inner.meta(),
             Self::DataUnavailableException(inner) => inner.meta(),
@@ -418,6 +422,44 @@ impl From<crate::operation::get_approximate_usage_records::GetApproximateUsageRe
                 Error::LimitExceededException(inner)
             }
             crate::operation::get_approximate_usage_records::GetApproximateUsageRecordsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_commitment_purchase_analysis::GetCommitmentPurchaseAnalysisError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_commitment_purchase_analysis::GetCommitmentPurchaseAnalysisError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_commitment_purchase_analysis::GetCommitmentPurchaseAnalysisError> for Error {
+    fn from(err: crate::operation::get_commitment_purchase_analysis::GetCommitmentPurchaseAnalysisError) -> Self {
+        match err {
+            crate::operation::get_commitment_purchase_analysis::GetCommitmentPurchaseAnalysisError::AnalysisNotFoundException(inner) => {
+                Error::AnalysisNotFoundException(inner)
+            }
+            crate::operation::get_commitment_purchase_analysis::GetCommitmentPurchaseAnalysisError::DataUnavailableException(inner) => {
+                Error::DataUnavailableException(inner)
+            }
+            crate::operation::get_commitment_purchase_analysis::GetCommitmentPurchaseAnalysisError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::get_commitment_purchase_analysis::GetCommitmentPurchaseAnalysisError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -949,6 +991,47 @@ impl From<crate::operation::get_usage_forecast::GetUsageForecastError> for Error
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_commitment_purchase_analyses::ListCommitmentPurchaseAnalysesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_commitment_purchase_analyses::ListCommitmentPurchaseAnalysesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_commitment_purchase_analyses::ListCommitmentPurchaseAnalysesError> for Error {
+    fn from(err: crate::operation::list_commitment_purchase_analyses::ListCommitmentPurchaseAnalysesError) -> Self {
+        match err {
+            crate::operation::list_commitment_purchase_analyses::ListCommitmentPurchaseAnalysesError::DataUnavailableException(inner) => {
+                Error::DataUnavailableException(inner)
+            }
+            crate::operation::list_commitment_purchase_analyses::ListCommitmentPurchaseAnalysesError::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
+            }
+            crate::operation::list_commitment_purchase_analyses::ListCommitmentPurchaseAnalysesError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::list_commitment_purchase_analyses::ListCommitmentPurchaseAnalysesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::list_cost_allocation_tag_backfill_history::ListCostAllocationTagBackfillHistoryError,
             R,
         >,
@@ -1132,6 +1215,50 @@ impl From<crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackErro
                 Error::LimitExceededException(inner)
             }
             crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_commitment_purchase_analysis::StartCommitmentPurchaseAnalysisError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_commitment_purchase_analysis::StartCommitmentPurchaseAnalysisError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_commitment_purchase_analysis::StartCommitmentPurchaseAnalysisError> for Error {
+    fn from(err: crate::operation::start_commitment_purchase_analysis::StartCommitmentPurchaseAnalysisError) -> Self {
+        match err {
+            crate::operation::start_commitment_purchase_analysis::StartCommitmentPurchaseAnalysisError::DataUnavailableException(inner) => {
+                Error::DataUnavailableException(inner)
+            }
+            crate::operation::start_commitment_purchase_analysis::StartCommitmentPurchaseAnalysisError::GenerationExistsException(inner) => {
+                Error::GenerationExistsException(inner)
+            }
+            crate::operation::start_commitment_purchase_analysis::StartCommitmentPurchaseAnalysisError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::start_commitment_purchase_analysis::StartCommitmentPurchaseAnalysisError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::start_commitment_purchase_analysis::StartCommitmentPurchaseAnalysisError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1395,6 +1522,7 @@ impl From<crate::operation::update_cost_category_definition::UpdateCostCategoryD
 impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Error::AnalysisNotFoundException(inner) => inner.source(),
             Error::BackfillLimitExceededException(inner) => inner.source(),
             Error::BillExpirationException(inner) => inner.source(),
             Error::DataUnavailableException(inner) => inner.source(),
@@ -1415,6 +1543,7 @@ impl ::std::error::Error for Error {
 impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
+            Self::AnalysisNotFoundException(e) => e.request_id(),
             Self::BackfillLimitExceededException(e) => e.request_id(),
             Self::BillExpirationException(e) => e.request_id(),
             Self::DataUnavailableException(e) => e.request_id(),

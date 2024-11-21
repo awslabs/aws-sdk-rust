@@ -23,7 +23,7 @@ impl crate::operation::delete_bucket_cors::builders::DeleteBucketCorsInputBuilde
 /// Fluent builder constructing a request to `DeleteBucketCors`.
 ///
 /// <note>
-/// <p>This operation is not supported by directory buckets.</p>
+/// <p>This operation is not supported for directory buckets.</p>
 /// </note>
 /// <p>Deletes the <code>cors</code> configuration information set for the bucket.</p>
 /// <p>To use this operation, you must have permission to perform the <code>s3:PutBucketCORS</code> action. The bucket owner has this permission by default and can grant this permission to others.</p>

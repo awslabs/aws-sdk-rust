@@ -429,6 +429,26 @@ pub(crate) fn reflens_list_documents_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_nodes_output_output_next_token(
+    input: &crate::operation::list_nodes::ListNodesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_nodes_summary_output_output_next_token(
+    input: &crate::operation::list_nodes_summary::ListNodesSummaryOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_ops_item_events_output_output_next_token(
     input: &crate::operation::list_ops_item_events::ListOpsItemEventsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -873,6 +893,26 @@ pub(crate) fn lens_list_documents_output_output_document_identifiers(
     input: crate::operation::list_documents::ListDocumentsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DocumentIdentifier>> {
     let input = match input.document_identifiers {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_nodes_output_output_nodes(
+    input: crate::operation::list_nodes::ListNodesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::Node>> {
+    let input = match input.nodes {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_nodes_summary_output_output_summary(
+    input: crate::operation::list_nodes_summary::ListNodesSummaryOutput,
+) -> ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>> {
+    let input = match input.summary {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

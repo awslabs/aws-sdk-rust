@@ -5,7 +5,7 @@
 pub struct DescribeResourceGroupingRecommendationTaskInput {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub app_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates the identifier of the grouping recommendation task.</p>
+    /// <p>Identifier of the grouping recommendation task.</p>
     pub grouping_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeResourceGroupingRecommendationTaskInput {
@@ -13,7 +13,7 @@ impl DescribeResourceGroupingRecommendationTaskInput {
     pub fn app_arn(&self) -> ::std::option::Option<&str> {
         self.app_arn.as_deref()
     }
-    /// <p>Indicates the identifier of the grouping recommendation task.</p>
+    /// <p>Identifier of the grouping recommendation task.</p>
     pub fn grouping_id(&self) -> ::std::option::Option<&str> {
         self.grouping_id.as_deref()
     }
@@ -49,17 +49,17 @@ impl DescribeResourceGroupingRecommendationTaskInputBuilder {
     pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.app_arn
     }
-    /// <p>Indicates the identifier of the grouping recommendation task.</p>
+    /// <p>Identifier of the grouping recommendation task.</p>
     pub fn grouping_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grouping_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Indicates the identifier of the grouping recommendation task.</p>
+    /// <p>Identifier of the grouping recommendation task.</p>
     pub fn set_grouping_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.grouping_id = input;
         self
     }
-    /// <p>Indicates the identifier of the grouping recommendation task.</p>
+    /// <p>Identifier of the grouping recommendation task.</p>
     pub fn get_grouping_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.grouping_id
     }

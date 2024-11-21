@@ -68,6 +68,8 @@ pub struct UpdateEventSourceMappingInput {
     pub document_db_event_source_config: ::std::option::Option<crate::types::DocumentDbEventSourceConfig>,
     /// <p>The ARN of the Key Management Service (KMS) customer managed key that Lambda uses to encrypt your function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-basics">filter criteria</a>. By default, Lambda does not encrypt your filter criteria object. Specify this property to encrypt data using your own customer managed key.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The metrics configuration for your event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics">Event source mapping metrics</a>.</p>
+    pub metrics_config: ::std::option::Option<crate::types::EventSourceMappingMetricsConfig>,
 }
 impl UpdateEventSourceMappingInput {
     /// <p>The identifier of the event source mapping.</p>
@@ -173,6 +175,10 @@ impl UpdateEventSourceMappingInput {
     pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
+    /// <p>The metrics configuration for your event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics">Event source mapping metrics</a>.</p>
+    pub fn metrics_config(&self) -> ::std::option::Option<&crate::types::EventSourceMappingMetricsConfig> {
+        self.metrics_config.as_ref()
+    }
 }
 impl UpdateEventSourceMappingInput {
     /// Creates a new builder-style object to manufacture [`UpdateEventSourceMappingInput`](crate::operation::update_event_source_mapping::UpdateEventSourceMappingInput).
@@ -202,6 +208,7 @@ pub struct UpdateEventSourceMappingInputBuilder {
     pub(crate) scaling_config: ::std::option::Option<crate::types::ScalingConfig>,
     pub(crate) document_db_event_source_config: ::std::option::Option<crate::types::DocumentDbEventSourceConfig>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) metrics_config: ::std::option::Option<crate::types::EventSourceMappingMetricsConfig>,
 }
 impl UpdateEventSourceMappingInputBuilder {
     /// <p>The identifier of the event source mapping.</p>
@@ -551,6 +558,20 @@ impl UpdateEventSourceMappingInputBuilder {
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_arn
     }
+    /// <p>The metrics configuration for your event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics">Event source mapping metrics</a>.</p>
+    pub fn metrics_config(mut self, input: crate::types::EventSourceMappingMetricsConfig) -> Self {
+        self.metrics_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The metrics configuration for your event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics">Event source mapping metrics</a>.</p>
+    pub fn set_metrics_config(mut self, input: ::std::option::Option<crate::types::EventSourceMappingMetricsConfig>) -> Self {
+        self.metrics_config = input;
+        self
+    }
+    /// <p>The metrics configuration for your event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics">Event source mapping metrics</a>.</p>
+    pub fn get_metrics_config(&self) -> &::std::option::Option<crate::types::EventSourceMappingMetricsConfig> {
+        &self.metrics_config
+    }
     /// Consumes the builder and constructs a [`UpdateEventSourceMappingInput`](crate::operation::update_event_source_mapping::UpdateEventSourceMappingInput).
     pub fn build(
         self,
@@ -576,6 +597,7 @@ impl UpdateEventSourceMappingInputBuilder {
             scaling_config: self.scaling_config,
             document_db_event_source_config: self.document_db_event_source_config,
             kms_key_arn: self.kms_key_arn,
+            metrics_config: self.metrics_config,
         })
     }
 }

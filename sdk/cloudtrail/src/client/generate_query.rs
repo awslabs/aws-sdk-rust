@@ -8,6 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GenerateQueryOutput`](crate::operation::generate_query::GenerateQueryOutput) with field(s):
     ///   - [`query_statement(Option<String>)`](crate::operation::generate_query::GenerateQueryOutput::query_statement): <p>The SQL query statement generated from the prompt.</p>
     ///   - [`query_alias(Option<String>)`](crate::operation::generate_query::GenerateQueryOutput::query_alias): <p>An alias that identifies the prompt. When you run the <code>StartQuery</code> operation, you can pass in either the <code>QueryAlias</code> or <code>QueryStatement</code> parameter.</p>
+    ///   - [`event_data_store_owner_account_id(Option<String>)`](crate::operation::generate_query::GenerateQueryOutput::event_data_store_owner_account_id): <p>The account ID of the event data store owner.</p>
     /// - On failure, responds with [`SdkError<GenerateQueryError>`](crate::operation::generate_query::GenerateQueryError)
     pub fn generate_query(&self) -> crate::operation::generate_query::builders::GenerateQueryFluentBuilder {
         crate::operation::generate_query::builders::GenerateQueryFluentBuilder::new(self.handle.clone())

@@ -24,8 +24,23 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()),
                             );
                         }
+                        "estimatedRecordsSkipped" => {
+                            builder = builder.set_estimated_records_skipped(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()),
+                            );
+                        }
                         "bytesScanned" => {
                             builder = builder.set_bytes_scanned(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()),
+                            );
+                        }
+                        "estimatedBytesSkipped" => {
+                            builder = builder.set_estimated_bytes_skipped(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()),
+                            );
+                        }
+                        "logGroupsScanned" => {
+                            builder = builder.set_log_groups_scanned(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()),
                             );
                         }

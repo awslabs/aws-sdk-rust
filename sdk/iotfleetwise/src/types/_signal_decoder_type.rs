@@ -13,6 +13,7 @@
 /// # let signaldecodertype = unimplemented!();
 /// match signaldecodertype {
 ///     SignalDecoderType::CanSignal => { /* ... */ },
+///     SignalDecoderType::CustomDecodingSignal => { /* ... */ },
 ///     SignalDecoderType::MessageSignal => { /* ... */ },
 ///     SignalDecoderType::ObdSignal => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -45,6 +46,8 @@ pub enum SignalDecoderType {
     #[allow(missing_docs)] // documentation missing in model
     CanSignal,
     #[allow(missing_docs)] // documentation missing in model
+    CustomDecodingSignal,
+    #[allow(missing_docs)] // documentation missing in model
     MessageSignal,
     #[allow(missing_docs)] // documentation missing in model
     ObdSignal,
@@ -56,6 +59,7 @@ impl ::std::convert::From<&str> for SignalDecoderType {
     fn from(s: &str) -> Self {
         match s {
             "CAN_SIGNAL" => SignalDecoderType::CanSignal,
+            "CUSTOM_DECODING_SIGNAL" => SignalDecoderType::CustomDecodingSignal,
             "MESSAGE_SIGNAL" => SignalDecoderType::MessageSignal,
             "OBD_SIGNAL" => SignalDecoderType::ObdSignal,
             other => SignalDecoderType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -74,6 +78,7 @@ impl SignalDecoderType {
     pub fn as_str(&self) -> &str {
         match self {
             SignalDecoderType::CanSignal => "CAN_SIGNAL",
+            SignalDecoderType::CustomDecodingSignal => "CUSTOM_DECODING_SIGNAL",
             SignalDecoderType::MessageSignal => "MESSAGE_SIGNAL",
             SignalDecoderType::ObdSignal => "OBD_SIGNAL",
             SignalDecoderType::Unknown(value) => value.as_str(),
@@ -81,7 +86,7 @@ impl SignalDecoderType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CAN_SIGNAL", "MESSAGE_SIGNAL", "OBD_SIGNAL"]
+        &["CAN_SIGNAL", "CUSTOM_DECODING_SIGNAL", "MESSAGE_SIGNAL", "OBD_SIGNAL"]
     }
 }
 impl ::std::convert::AsRef<str> for SignalDecoderType {
@@ -105,6 +110,7 @@ impl ::std::fmt::Display for SignalDecoderType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             SignalDecoderType::CanSignal => write!(f, "CAN_SIGNAL"),
+            SignalDecoderType::CustomDecodingSignal => write!(f, "CUSTOM_DECODING_SIGNAL"),
             SignalDecoderType::MessageSignal => write!(f, "MESSAGE_SIGNAL"),
             SignalDecoderType::ObdSignal => write!(f, "OBD_SIGNAL"),
             SignalDecoderType::Unknown(value) => write!(f, "{}", value),

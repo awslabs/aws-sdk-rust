@@ -33,5 +33,11 @@ pub fn ser_put_scaling_policy_input_input(
         )?;
         object_9.finish();
     }
+    if let Some(var_10) = &input.predictive_scaling_policy_configuration {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("PredictiveScalingPolicyConfiguration").start_object();
+        crate::protocol_serde::shape_predictive_scaling_policy_configuration::ser_predictive_scaling_policy_configuration(&mut object_11, var_10)?;
+        object_11.finish();
+    }
     Ok(())
 }

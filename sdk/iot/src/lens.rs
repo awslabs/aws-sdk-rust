@@ -129,6 +129,26 @@ pub(crate) fn reflens_list_certificates_by_ca_output_output_next_marker(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_command_executions_output_output_next_token(
+    input: &crate::operation::list_command_executions::ListCommandExecutionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_commands_output_output_next_token(
+    input: &crate::operation::list_commands::ListCommandsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_custom_metrics_output_output_next_token(
     input: &crate::operation::list_custom_metrics::ListCustomMetricsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -743,6 +763,26 @@ pub(crate) fn lens_list_certificates_by_ca_output_output_certificates(
     input: crate::operation::list_certificates_by_ca::ListCertificatesByCaOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
     let input = match input.certificates {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_command_executions_output_output_command_executions(
+    input: crate::operation::list_command_executions::ListCommandExecutionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::CommandExecutionSummary>> {
+    let input = match input.command_executions {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_commands_output_output_commands(
+    input: crate::operation::list_commands::ListCommandsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::CommandSummary>> {
+    let input = match input.commands {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

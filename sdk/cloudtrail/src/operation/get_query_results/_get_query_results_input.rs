@@ -12,6 +12,8 @@ pub struct GetQueryResultsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of query results to display on a single page.</p>
     pub max_query_results: ::std::option::Option<i32>,
+    /// <p>The account ID of the event data store owner.</p>
+    pub event_data_store_owner_account_id: ::std::option::Option<::std::string::String>,
 }
 impl GetQueryResultsInput {
     /// <p>The ARN (or ID suffix of the ARN) of the event data store against which the query was run.</p>
@@ -31,6 +33,10 @@ impl GetQueryResultsInput {
     pub fn max_query_results(&self) -> ::std::option::Option<i32> {
         self.max_query_results
     }
+    /// <p>The account ID of the event data store owner.</p>
+    pub fn event_data_store_owner_account_id(&self) -> ::std::option::Option<&str> {
+        self.event_data_store_owner_account_id.as_deref()
+    }
 }
 impl GetQueryResultsInput {
     /// Creates a new builder-style object to manufacture [`GetQueryResultsInput`](crate::operation::get_query_results::GetQueryResultsInput).
@@ -47,6 +53,7 @@ pub struct GetQueryResultsInputBuilder {
     pub(crate) query_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_query_results: ::std::option::Option<i32>,
+    pub(crate) event_data_store_owner_account_id: ::std::option::Option<::std::string::String>,
 }
 impl GetQueryResultsInputBuilder {
     /// <p>The ARN (or ID suffix of the ARN) of the event data store against which the query was run.</p>
@@ -109,6 +116,20 @@ impl GetQueryResultsInputBuilder {
     pub fn get_max_query_results(&self) -> &::std::option::Option<i32> {
         &self.max_query_results
     }
+    /// <p>The account ID of the event data store owner.</p>
+    pub fn event_data_store_owner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.event_data_store_owner_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The account ID of the event data store owner.</p>
+    pub fn set_event_data_store_owner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.event_data_store_owner_account_id = input;
+        self
+    }
+    /// <p>The account ID of the event data store owner.</p>
+    pub fn get_event_data_store_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_data_store_owner_account_id
+    }
     /// Consumes the builder and constructs a [`GetQueryResultsInput`](crate::operation::get_query_results::GetQueryResultsInput).
     pub fn build(
         self,
@@ -118,6 +139,7 @@ impl GetQueryResultsInputBuilder {
             query_id: self.query_id,
             next_token: self.next_token,
             max_query_results: self.max_query_results,
+            event_data_store_owner_account_id: self.event_data_store_owner_account_id,
         })
     }
 }

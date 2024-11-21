@@ -39,10 +39,15 @@ pub struct GetCampaignOutput {
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the campaign was modified.</p>
     pub last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The destination where the campaign sends data. You can choose to send data to be stored in Amazon S3 or Amazon Timestream.</p>
+    /// <p>The destination where the campaign sends data. You can send data to an MQTT topic, or store it in Amazon S3 or Amazon Timestream.</p>
+    /// <p>MQTT is the publish/subscribe messaging protocol used by Amazon Web Services IoT to communicate with your devices.</p>
     /// <p>Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such as data lakes, centralized data storage, data processing pipelines, and analytics.</p>
     /// <p>You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data so that you can identify trends and patterns.</p>
     pub data_destination_configs: ::std::option::Option<::std::vec::Vec<crate::types::DataDestinationConfig>>,
+    /// <p>The data partitions associated with the signals collected from the vehicle.</p>
+    pub data_partitions: ::std::option::Option<::std::vec::Vec<crate::types::DataPartition>>,
+    /// <p>Information about a list of signals to fetch data from.</p>
+    pub signals_to_fetch: ::std::option::Option<::std::vec::Vec<crate::types::SignalFetchInformation>>,
     _request_id: Option<String>,
 }
 impl GetCampaignOutput {
@@ -122,13 +127,26 @@ impl GetCampaignOutput {
     pub fn last_modification_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
-    /// <p>The destination where the campaign sends data. You can choose to send data to be stored in Amazon S3 or Amazon Timestream.</p>
+    /// <p>The destination where the campaign sends data. You can send data to an MQTT topic, or store it in Amazon S3 or Amazon Timestream.</p>
+    /// <p>MQTT is the publish/subscribe messaging protocol used by Amazon Web Services IoT to communicate with your devices.</p>
     /// <p>Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such as data lakes, centralized data storage, data processing pipelines, and analytics.</p>
     /// <p>You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data so that you can identify trends and patterns.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_destination_configs.is_none()`.
     pub fn data_destination_configs(&self) -> &[crate::types::DataDestinationConfig] {
         self.data_destination_configs.as_deref().unwrap_or_default()
+    }
+    /// <p>The data partitions associated with the signals collected from the vehicle.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_partitions.is_none()`.
+    pub fn data_partitions(&self) -> &[crate::types::DataPartition] {
+        self.data_partitions.as_deref().unwrap_or_default()
+    }
+    /// <p>Information about a list of signals to fetch data from.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.signals_to_fetch.is_none()`.
+    pub fn signals_to_fetch(&self) -> &[crate::types::SignalFetchInformation] {
+        self.signals_to_fetch.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for GetCampaignOutput {
@@ -153,6 +171,8 @@ impl ::std::fmt::Debug for GetCampaignOutput {
         formatter.field("creation_time", &self.creation_time);
         formatter.field("last_modification_time", &self.last_modification_time);
         formatter.field("data_destination_configs", &self.data_destination_configs);
+        formatter.field("data_partitions", &self.data_partitions);
+        formatter.field("signals_to_fetch", &self.signals_to_fetch);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -192,6 +212,8 @@ pub struct GetCampaignOutputBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) data_destination_configs: ::std::option::Option<::std::vec::Vec<crate::types::DataDestinationConfig>>,
+    pub(crate) data_partitions: ::std::option::Option<::std::vec::Vec<crate::types::DataPartition>>,
+    pub(crate) signals_to_fetch: ::std::option::Option<::std::vec::Vec<crate::types::SignalFetchInformation>>,
     _request_id: Option<String>,
 }
 impl GetCampaignOutputBuilder {
@@ -463,7 +485,8 @@ impl GetCampaignOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_data_destination_configs`](Self::set_data_destination_configs).
     ///
-    /// <p>The destination where the campaign sends data. You can choose to send data to be stored in Amazon S3 or Amazon Timestream.</p>
+    /// <p>The destination where the campaign sends data. You can send data to an MQTT topic, or store it in Amazon S3 or Amazon Timestream.</p>
+    /// <p>MQTT is the publish/subscribe messaging protocol used by Amazon Web Services IoT to communicate with your devices.</p>
     /// <p>Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such as data lakes, centralized data storage, data processing pipelines, and analytics.</p>
     /// <p>You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data so that you can identify trends and patterns.</p>
     pub fn data_destination_configs(mut self, input: crate::types::DataDestinationConfig) -> Self {
@@ -472,18 +495,60 @@ impl GetCampaignOutputBuilder {
         self.data_destination_configs = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The destination where the campaign sends data. You can choose to send data to be stored in Amazon S3 or Amazon Timestream.</p>
+    /// <p>The destination where the campaign sends data. You can send data to an MQTT topic, or store it in Amazon S3 or Amazon Timestream.</p>
+    /// <p>MQTT is the publish/subscribe messaging protocol used by Amazon Web Services IoT to communicate with your devices.</p>
     /// <p>Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such as data lakes, centralized data storage, data processing pipelines, and analytics.</p>
     /// <p>You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data so that you can identify trends and patterns.</p>
     pub fn set_data_destination_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataDestinationConfig>>) -> Self {
         self.data_destination_configs = input;
         self
     }
-    /// <p>The destination where the campaign sends data. You can choose to send data to be stored in Amazon S3 or Amazon Timestream.</p>
+    /// <p>The destination where the campaign sends data. You can send data to an MQTT topic, or store it in Amazon S3 or Amazon Timestream.</p>
+    /// <p>MQTT is the publish/subscribe messaging protocol used by Amazon Web Services IoT to communicate with your devices.</p>
     /// <p>Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such as data lakes, centralized data storage, data processing pipelines, and analytics.</p>
     /// <p>You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data so that you can identify trends and patterns.</p>
     pub fn get_data_destination_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataDestinationConfig>> {
         &self.data_destination_configs
+    }
+    /// Appends an item to `data_partitions`.
+    ///
+    /// To override the contents of this collection use [`set_data_partitions`](Self::set_data_partitions).
+    ///
+    /// <p>The data partitions associated with the signals collected from the vehicle.</p>
+    pub fn data_partitions(mut self, input: crate::types::DataPartition) -> Self {
+        let mut v = self.data_partitions.unwrap_or_default();
+        v.push(input);
+        self.data_partitions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The data partitions associated with the signals collected from the vehicle.</p>
+    pub fn set_data_partitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataPartition>>) -> Self {
+        self.data_partitions = input;
+        self
+    }
+    /// <p>The data partitions associated with the signals collected from the vehicle.</p>
+    pub fn get_data_partitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataPartition>> {
+        &self.data_partitions
+    }
+    /// Appends an item to `signals_to_fetch`.
+    ///
+    /// To override the contents of this collection use [`set_signals_to_fetch`](Self::set_signals_to_fetch).
+    ///
+    /// <p>Information about a list of signals to fetch data from.</p>
+    pub fn signals_to_fetch(mut self, input: crate::types::SignalFetchInformation) -> Self {
+        let mut v = self.signals_to_fetch.unwrap_or_default();
+        v.push(input);
+        self.signals_to_fetch = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Information about a list of signals to fetch data from.</p>
+    pub fn set_signals_to_fetch(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SignalFetchInformation>>) -> Self {
+        self.signals_to_fetch = input;
+        self
+    }
+    /// <p>Information about a list of signals to fetch data from.</p>
+    pub fn get_signals_to_fetch(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SignalFetchInformation>> {
+        &self.signals_to_fetch
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -516,6 +581,8 @@ impl GetCampaignOutputBuilder {
             creation_time: self.creation_time,
             last_modification_time: self.last_modification_time,
             data_destination_configs: self.data_destination_configs,
+            data_partitions: self.data_partitions,
+            signals_to_fetch: self.signals_to_fetch,
             _request_id: self._request_id,
         }
     }
@@ -542,6 +609,8 @@ impl ::std::fmt::Debug for GetCampaignOutputBuilder {
         formatter.field("creation_time", &self.creation_time);
         formatter.field("last_modification_time", &self.last_modification_time);
         formatter.field("data_destination_configs", &self.data_destination_configs);
+        formatter.field("data_partitions", &self.data_partitions);
+        formatter.field("signals_to_fetch", &self.signals_to_fetch);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

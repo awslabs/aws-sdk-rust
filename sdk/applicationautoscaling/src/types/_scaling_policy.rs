@@ -112,6 +112,8 @@ pub struct ScalingPolicy {
     pub step_scaling_policy_configuration: ::std::option::Option<crate::types::StepScalingPolicyConfiguration>,
     /// <p>A target tracking scaling policy.</p>
     pub target_tracking_scaling_policy_configuration: ::std::option::Option<crate::types::TargetTrackingScalingPolicyConfiguration>,
+    /// <p>The predictive scaling policy configuration.</p>
+    pub predictive_scaling_policy_configuration: ::std::option::Option<crate::types::PredictiveScalingPolicyConfiguration>,
     /// <p>The CloudWatch alarms associated with the scaling policy.</p>
     pub alarms: ::std::option::Option<::std::vec::Vec<crate::types::Alarm>>,
     /// <p>The Unix timestamp for when the scaling policy was created.</p>
@@ -244,6 +246,10 @@ impl ScalingPolicy {
     pub fn target_tracking_scaling_policy_configuration(&self) -> ::std::option::Option<&crate::types::TargetTrackingScalingPolicyConfiguration> {
         self.target_tracking_scaling_policy_configuration.as_ref()
     }
+    /// <p>The predictive scaling policy configuration.</p>
+    pub fn predictive_scaling_policy_configuration(&self) -> ::std::option::Option<&crate::types::PredictiveScalingPolicyConfiguration> {
+        self.predictive_scaling_policy_configuration.as_ref()
+    }
     /// <p>The CloudWatch alarms associated with the scaling policy.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alarms.is_none()`.
@@ -274,6 +280,7 @@ pub struct ScalingPolicyBuilder {
     pub(crate) policy_type: ::std::option::Option<crate::types::PolicyType>,
     pub(crate) step_scaling_policy_configuration: ::std::option::Option<crate::types::StepScalingPolicyConfiguration>,
     pub(crate) target_tracking_scaling_policy_configuration: ::std::option::Option<crate::types::TargetTrackingScalingPolicyConfiguration>,
+    pub(crate) predictive_scaling_policy_configuration: ::std::option::Option<crate::types::PredictiveScalingPolicyConfiguration>,
     pub(crate) alarms: ::std::option::Option<::std::vec::Vec<crate::types::Alarm>>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -672,6 +679,23 @@ impl ScalingPolicyBuilder {
     pub fn get_target_tracking_scaling_policy_configuration(&self) -> &::std::option::Option<crate::types::TargetTrackingScalingPolicyConfiguration> {
         &self.target_tracking_scaling_policy_configuration
     }
+    /// <p>The predictive scaling policy configuration.</p>
+    pub fn predictive_scaling_policy_configuration(mut self, input: crate::types::PredictiveScalingPolicyConfiguration) -> Self {
+        self.predictive_scaling_policy_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The predictive scaling policy configuration.</p>
+    pub fn set_predictive_scaling_policy_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::PredictiveScalingPolicyConfiguration>,
+    ) -> Self {
+        self.predictive_scaling_policy_configuration = input;
+        self
+    }
+    /// <p>The predictive scaling policy configuration.</p>
+    pub fn get_predictive_scaling_policy_configuration(&self) -> &::std::option::Option<crate::types::PredictiveScalingPolicyConfiguration> {
+        &self.predictive_scaling_policy_configuration
+    }
     /// Appends an item to `alarms`.
     ///
     /// To override the contents of this collection use [`set_alarms`](Self::set_alarms).
@@ -756,6 +780,7 @@ impl ScalingPolicyBuilder {
             })?,
             step_scaling_policy_configuration: self.step_scaling_policy_configuration,
             target_tracking_scaling_policy_configuration: self.target_tracking_scaling_policy_configuration,
+            predictive_scaling_policy_configuration: self.predictive_scaling_policy_configuration,
             alarms: self.alarms,
             creation_time: self.creation_time.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(

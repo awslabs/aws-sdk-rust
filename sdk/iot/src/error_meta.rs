@@ -9,7 +9,7 @@ pub enum Error {
     CertificateStateException(crate::types::error::CertificateStateException),
     /// <p>The certificate is invalid.</p>
     CertificateValidationException(crate::types::error::CertificateValidationException),
-    /// <p>A resource with the same name already exists.</p>
+    /// <p>The request conflicts with the current state of the resource.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>A conflicting resource update exception. This exception is thrown when two pending updates cause a conflict.</p>
     ConflictingResourceUpdateException(crate::types::error::ConflictingResourceUpdateException),
@@ -47,7 +47,7 @@ pub enum Error {
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The resource registration failed.</p>
     ResourceRegistrationFailureException(crate::types::error::ResourceRegistrationFailureException),
-    /// <p>A limit has been exceeded.</p>
+    /// <p>Service quota has been exceeded.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The service is temporarily unavailable.</p>
     ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
@@ -1002,6 +1002,32 @@ impl From<crate::operation::create_certificate_provider::CreateCertificateProvid
                 Error::UnauthorizedException(inner)
             }
             crate::operation::create_certificate_provider::CreateCertificateProviderError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_command::CreateCommandError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_command::CreateCommandError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_command::CreateCommandError> for Error {
+    fn from(err: crate::operation::create_command::CreateCommandError) -> Self {
+        match err {
+            crate::operation::create_command::CreateCommandError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_command::CreateCommandError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_command::CreateCommandError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_command::CreateCommandError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_command::CreateCommandError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_command::CreateCommandError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2154,6 +2180,60 @@ impl From<crate::operation::delete_certificate_provider::DeleteCertificateProvid
                 Error::UnauthorizedException(inner)
             }
             crate::operation::delete_certificate_provider::DeleteCertificateProviderError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_command::DeleteCommandError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_command::DeleteCommandError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_command::DeleteCommandError> for Error {
+    fn from(err: crate::operation::delete_command::DeleteCommandError) -> Self {
+        match err {
+            crate::operation::delete_command::DeleteCommandError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_command::DeleteCommandError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_command::DeleteCommandError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_command::DeleteCommandError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_command::DeleteCommandError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_command_execution::DeleteCommandExecutionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_command_execution::DeleteCommandExecutionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_command_execution::DeleteCommandExecutionError> for Error {
+    fn from(err: crate::operation::delete_command_execution::DeleteCommandExecutionError) -> Self {
+        match err {
+            crate::operation::delete_command_execution::DeleteCommandExecutionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_command_execution::DeleteCommandExecutionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_command_execution::DeleteCommandExecutionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_command_execution::DeleteCommandExecutionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_command_execution::DeleteCommandExecutionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -4583,6 +4663,60 @@ impl From<crate::operation::get_cardinality::GetCardinalityError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_command::GetCommandError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_command::GetCommandError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_command::GetCommandError> for Error {
+    fn from(err: crate::operation::get_command::GetCommandError) -> Self {
+        match err {
+            crate::operation::get_command::GetCommandError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_command::GetCommandError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_command::GetCommandError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_command::GetCommandError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_command::GetCommandError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_command_execution::GetCommandExecutionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_command_execution::GetCommandExecutionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_command_execution::GetCommandExecutionError> for Error {
+    fn from(err: crate::operation::get_command_execution::GetCommandExecutionError) -> Self {
+        match err {
+            crate::operation::get_command_execution::GetCommandExecutionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_command_execution::GetCommandExecutionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_command_execution::GetCommandExecutionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_command_execution::GetCommandExecutionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_command_execution::GetCommandExecutionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_effective_policies::GetEffectivePoliciesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -5465,6 +5599,61 @@ impl From<crate::operation::list_certificates_by_ca::ListCertificatesByCAError> 
             crate::operation::list_certificates_by_ca::ListCertificatesByCAError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_certificates_by_ca::ListCertificatesByCAError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::list_certificates_by_ca::ListCertificatesByCAError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_command_executions::ListCommandExecutionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_command_executions::ListCommandExecutionsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_command_executions::ListCommandExecutionsError> for Error {
+    fn from(err: crate::operation::list_command_executions::ListCommandExecutionsError) -> Self {
+        match err {
+            crate::operation::list_command_executions::ListCommandExecutionsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_command_executions::ListCommandExecutionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_command_executions::ListCommandExecutionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_command_executions::ListCommandExecutionsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_command_executions::ListCommandExecutionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_commands::ListCommandsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_commands::ListCommandsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_commands::ListCommandsError> for Error {
+    fn from(err: crate::operation::list_commands::ListCommandsError) -> Self {
+        match err {
+            crate::operation::list_commands::ListCommandsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_commands::ListCommandsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_commands::ListCommandsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_commands::ListCommandsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -8290,6 +8479,32 @@ impl From<crate::operation::update_certificate_provider::UpdateCertificateProvid
                 Error::UnauthorizedException(inner)
             }
             crate::operation::update_certificate_provider::UpdateCertificateProviderError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_command::UpdateCommandError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_command::UpdateCommandError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_command::UpdateCommandError> for Error {
+    fn from(err: crate::operation::update_command::UpdateCommandError) -> Self {
+        match err {
+            crate::operation::update_command::UpdateCommandError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_command::UpdateCommandError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_command::UpdateCommandError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_command::UpdateCommandError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_command::UpdateCommandError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_command::UpdateCommandError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

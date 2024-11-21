@@ -25,5 +25,26 @@ pub fn ser_update_vehicle_request_item(
     if let Some(var_7) = &input.attribute_update_mode {
         object.key("attributeUpdateMode").string(var_7.as_str());
     }
+    if let Some(var_8) = &input.state_templates_to_add {
+        let mut array_9 = object.key("stateTemplatesToAdd").start_array();
+        for item_10 in var_8 {
+            {
+                #[allow(unused_mut)]
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_state_template_association::ser_state_template_association(&mut object_11, item_10)?;
+                object_11.finish();
+            }
+        }
+        array_9.finish();
+    }
+    if let Some(var_12) = &input.state_templates_to_remove {
+        let mut array_13 = object.key("stateTemplatesToRemove").start_array();
+        for item_14 in var_12 {
+            {
+                array_13.value().string(item_14.as_str());
+            }
+        }
+        array_13.finish();
+    }
     Ok(())
 }

@@ -110,31 +110,31 @@ impl CreateResiliencyPolicyFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the policy</p>
+    /// <p>Name of the resiliency policy.</p>
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_name(input.into());
         self
     }
-    /// <p>The name of the policy</p>
+    /// <p>Name of the resiliency policy.</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_name(input);
         self
     }
-    /// <p>The name of the policy</p>
+    /// <p>Name of the resiliency policy.</p>
     pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policy_name()
     }
-    /// <p>The description for the policy.</p>
+    /// <p>Description of the resiliency policy.</p>
     pub fn policy_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_description(input.into());
         self
     }
-    /// <p>The description for the policy.</p>
+    /// <p>Description of the resiliency policy.</p>
     pub fn set_policy_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_description(input);
         self
     }
-    /// <p>The description for the policy.</p>
+    /// <p>Description of the resiliency policy.</p>
     pub fn get_policy_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policy_description()
     }

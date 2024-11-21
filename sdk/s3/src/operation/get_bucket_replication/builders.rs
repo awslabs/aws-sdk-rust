@@ -23,7 +23,7 @@ impl crate::operation::get_bucket_replication::builders::GetBucketReplicationInp
 /// Fluent builder constructing a request to `GetBucketReplication`.
 ///
 /// <note>
-/// <p>This operation is not supported by directory buckets.</p>
+/// <p>This operation is not supported for directory buckets.</p>
 /// </note>
 /// <p>Returns the replication configuration of a bucket.</p><note>
 /// <p>It can take a while to propagate the put or delete a replication configuration to all Amazon S3 systems. Therefore, a get request soon after put or delete can return a wrong result.</p>

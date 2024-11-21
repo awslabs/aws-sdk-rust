@@ -8,11 +8,11 @@ pub struct ModifyVpcBlockPublicAccessOptionsInput {
     /// <p>The mode of VPC BPA.</p>
     /// <ul>
     /// <li>
-    /// <p><code>bidirectional-access-allowed</code>: VPC BPA is not enabled and traffic is allowed to and from internet gateways and egress-only internet gateways in this Region.</p></li>
+    /// <p><code>off</code>: VPC BPA is not enabled and traffic is allowed to and from internet gateways and egress-only internet gateways in this Region.</p></li>
     /// <li>
-    /// <p><code>bidirectional-access-blocked</code>: Block all traffic to and from internet gateways and egress-only internet gateways in this Region (except for excluded VPCs and subnets).</p></li>
+    /// <p><code>block-bidirectional</code>: Block all traffic to and from internet gateways and egress-only internet gateways in this Region (except for excluded VPCs and subnets).</p></li>
     /// <li>
-    /// <p><code>ingress-access-blocked</code>: Block all internet traffic to the VPCs in this Region (except for VPCs or subnets which are excluded). Only traffic to and from NAT gateways and egress-only internet gateways is allowed because these gateways only allow outbound connections to be established.</p></li>
+    /// <p><code>block-ingress</code>: Block all internet traffic to the VPCs in this Region (except for VPCs or subnets which are excluded). Only traffic to and from NAT gateways and egress-only internet gateways is allowed because these gateways only allow outbound connections to be established.</p></li>
     /// </ul>
     pub internet_gateway_block_mode: ::std::option::Option<crate::types::InternetGatewayBlockMode>,
 }
@@ -24,11 +24,11 @@ impl ModifyVpcBlockPublicAccessOptionsInput {
     /// <p>The mode of VPC BPA.</p>
     /// <ul>
     /// <li>
-    /// <p><code>bidirectional-access-allowed</code>: VPC BPA is not enabled and traffic is allowed to and from internet gateways and egress-only internet gateways in this Region.</p></li>
+    /// <p><code>off</code>: VPC BPA is not enabled and traffic is allowed to and from internet gateways and egress-only internet gateways in this Region.</p></li>
     /// <li>
-    /// <p><code>bidirectional-access-blocked</code>: Block all traffic to and from internet gateways and egress-only internet gateways in this Region (except for excluded VPCs and subnets).</p></li>
+    /// <p><code>block-bidirectional</code>: Block all traffic to and from internet gateways and egress-only internet gateways in this Region (except for excluded VPCs and subnets).</p></li>
     /// <li>
-    /// <p><code>ingress-access-blocked</code>: Block all internet traffic to the VPCs in this Region (except for VPCs or subnets which are excluded). Only traffic to and from NAT gateways and egress-only internet gateways is allowed because these gateways only allow outbound connections to be established.</p></li>
+    /// <p><code>block-ingress</code>: Block all internet traffic to the VPCs in this Region (except for VPCs or subnets which are excluded). Only traffic to and from NAT gateways and egress-only internet gateways is allowed because these gateways only allow outbound connections to be established.</p></li>
     /// </ul>
     pub fn internet_gateway_block_mode(&self) -> ::std::option::Option<&crate::types::InternetGatewayBlockMode> {
         self.internet_gateway_block_mode.as_ref()
@@ -66,11 +66,11 @@ impl ModifyVpcBlockPublicAccessOptionsInputBuilder {
     /// <p>The mode of VPC BPA.</p>
     /// <ul>
     /// <li>
-    /// <p><code>bidirectional-access-allowed</code>: VPC BPA is not enabled and traffic is allowed to and from internet gateways and egress-only internet gateways in this Region.</p></li>
+    /// <p><code>off</code>: VPC BPA is not enabled and traffic is allowed to and from internet gateways and egress-only internet gateways in this Region.</p></li>
     /// <li>
-    /// <p><code>bidirectional-access-blocked</code>: Block all traffic to and from internet gateways and egress-only internet gateways in this Region (except for excluded VPCs and subnets).</p></li>
+    /// <p><code>block-bidirectional</code>: Block all traffic to and from internet gateways and egress-only internet gateways in this Region (except for excluded VPCs and subnets).</p></li>
     /// <li>
-    /// <p><code>ingress-access-blocked</code>: Block all internet traffic to the VPCs in this Region (except for VPCs or subnets which are excluded). Only traffic to and from NAT gateways and egress-only internet gateways is allowed because these gateways only allow outbound connections to be established.</p></li>
+    /// <p><code>block-ingress</code>: Block all internet traffic to the VPCs in this Region (except for VPCs or subnets which are excluded). Only traffic to and from NAT gateways and egress-only internet gateways is allowed because these gateways only allow outbound connections to be established.</p></li>
     /// </ul>
     /// This field is required.
     pub fn internet_gateway_block_mode(mut self, input: crate::types::InternetGatewayBlockMode) -> Self {
@@ -80,11 +80,11 @@ impl ModifyVpcBlockPublicAccessOptionsInputBuilder {
     /// <p>The mode of VPC BPA.</p>
     /// <ul>
     /// <li>
-    /// <p><code>bidirectional-access-allowed</code>: VPC BPA is not enabled and traffic is allowed to and from internet gateways and egress-only internet gateways in this Region.</p></li>
+    /// <p><code>off</code>: VPC BPA is not enabled and traffic is allowed to and from internet gateways and egress-only internet gateways in this Region.</p></li>
     /// <li>
-    /// <p><code>bidirectional-access-blocked</code>: Block all traffic to and from internet gateways and egress-only internet gateways in this Region (except for excluded VPCs and subnets).</p></li>
+    /// <p><code>block-bidirectional</code>: Block all traffic to and from internet gateways and egress-only internet gateways in this Region (except for excluded VPCs and subnets).</p></li>
     /// <li>
-    /// <p><code>ingress-access-blocked</code>: Block all internet traffic to the VPCs in this Region (except for VPCs or subnets which are excluded). Only traffic to and from NAT gateways and egress-only internet gateways is allowed because these gateways only allow outbound connections to be established.</p></li>
+    /// <p><code>block-ingress</code>: Block all internet traffic to the VPCs in this Region (except for VPCs or subnets which are excluded). Only traffic to and from NAT gateways and egress-only internet gateways is allowed because these gateways only allow outbound connections to be established.</p></li>
     /// </ul>
     pub fn set_internet_gateway_block_mode(mut self, input: ::std::option::Option<crate::types::InternetGatewayBlockMode>) -> Self {
         self.internet_gateway_block_mode = input;
@@ -93,11 +93,11 @@ impl ModifyVpcBlockPublicAccessOptionsInputBuilder {
     /// <p>The mode of VPC BPA.</p>
     /// <ul>
     /// <li>
-    /// <p><code>bidirectional-access-allowed</code>: VPC BPA is not enabled and traffic is allowed to and from internet gateways and egress-only internet gateways in this Region.</p></li>
+    /// <p><code>off</code>: VPC BPA is not enabled and traffic is allowed to and from internet gateways and egress-only internet gateways in this Region.</p></li>
     /// <li>
-    /// <p><code>bidirectional-access-blocked</code>: Block all traffic to and from internet gateways and egress-only internet gateways in this Region (except for excluded VPCs and subnets).</p></li>
+    /// <p><code>block-bidirectional</code>: Block all traffic to and from internet gateways and egress-only internet gateways in this Region (except for excluded VPCs and subnets).</p></li>
     /// <li>
-    /// <p><code>ingress-access-blocked</code>: Block all internet traffic to the VPCs in this Region (except for VPCs or subnets which are excluded). Only traffic to and from NAT gateways and egress-only internet gateways is allowed because these gateways only allow outbound connections to be established.</p></li>
+    /// <p><code>block-ingress</code>: Block all internet traffic to the VPCs in this Region (except for VPCs or subnets which are excluded). Only traffic to and from NAT gateways and egress-only internet gateways is allowed because these gateways only allow outbound connections to be established.</p></li>
     /// </ul>
     pub fn get_internet_gateway_block_mode(&self) -> &::std::option::Option<crate::types::InternetGatewayBlockMode> {
         &self.internet_gateway_block_mode

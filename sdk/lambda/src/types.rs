@@ -77,6 +77,10 @@ pub use crate::types::_environment::Environment;
 
 pub use crate::types::_vpc_config::VpcConfig;
 
+pub use crate::types::_event_source_mapping_metrics_config::EventSourceMappingMetricsConfig;
+
+pub use crate::types::_event_source_mapping_metric::EventSourceMappingMetric;
+
 pub use crate::types::_filter_criteria_error::FilterCriteriaError;
 
 pub use crate::types::_document_db_event_source_config::DocumentDbEventSourceConfig;
@@ -210,6 +214,10 @@ mod _environment_response;
 mod _ephemeral_storage;
 
 mod _event_source_mapping_configuration;
+
+mod _event_source_mapping_metric;
+
+mod _event_source_mapping_metrics_config;
 
 mod _event_source_position;
 

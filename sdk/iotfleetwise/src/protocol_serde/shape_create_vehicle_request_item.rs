@@ -37,5 +37,17 @@ pub fn ser_create_vehicle_request_item(
         }
         array_7.finish();
     }
+    if let Some(var_10) = &input.state_templates {
+        let mut array_11 = object.key("stateTemplates").start_array();
+        for item_12 in var_10 {
+            {
+                #[allow(unused_mut)]
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_state_template_association::ser_state_template_association(&mut object_13, item_12)?;
+                object_13.finish();
+            }
+        }
+        array_11.finish();
+    }
     Ok(())
 }

@@ -22,7 +22,7 @@ impl crate::operation::batch_apply_update_action::builders::BatchApplyUpdateActi
 }
 /// Fluent builder constructing a request to `BatchApplyUpdateAction`.
 ///
-/// <p>Apply the service update. For more information on service updates and applying them, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/applying-updates.html">Applying Service Updates</a>.</p>
+/// <p>Apply the service update. For more information on service updates and applying them, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/applying-updates.html">Applying Service Updates</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchApplyUpdateActionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

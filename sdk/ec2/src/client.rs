@@ -843,6 +843,10 @@ mod describe_bundle_tasks;
 
 mod describe_byoip_cidrs;
 
+mod describe_capacity_block_extension_history;
+
+mod describe_capacity_block_extension_offerings;
+
 mod describe_capacity_block_offerings;
 
 mod describe_capacity_reservation_billing_requests;
@@ -1530,6 +1534,8 @@ mod provision_ipam_pool_cidr;
 mod provision_public_ipv4_pool_cidr;
 
 mod purchase_capacity_block;
+
+mod purchase_capacity_block_extension;
 
 mod purchase_host_reservation;
 

@@ -67,6 +67,9 @@ pub mod create_certificate_from_csr;
 /// Types for the `CreateCertificateProvider` operation.
 pub mod create_certificate_provider;
 
+/// Types for the `CreateCommand` operation.
+pub mod create_command;
+
 /// Types for the `CreateCustomMetric` operation.
 pub mod create_custom_metric;
 
@@ -165,6 +168,12 @@ pub mod delete_certificate;
 
 /// Types for the `DeleteCertificateProvider` operation.
 pub mod delete_certificate_provider;
+
+/// Types for the `DeleteCommand` operation.
+pub mod delete_command;
+
+/// Types for the `DeleteCommandExecution` operation.
+pub mod delete_command_execution;
 
 /// Types for the `DeleteCustomMetric` operation.
 pub mod delete_custom_metric;
@@ -382,6 +391,12 @@ pub mod get_buckets_aggregation;
 /// Types for the `GetCardinality` operation.
 pub mod get_cardinality;
 
+/// Types for the `GetCommand` operation.
+pub mod get_command;
+
+/// Types for the `GetCommandExecution` operation.
+pub mod get_command_execution;
+
 /// Types for the `GetEffectivePolicies` operation.
 pub mod get_effective_policies;
 
@@ -468,6 +483,12 @@ pub mod list_certificates;
 
 /// Types for the `ListCertificatesByCA` operation.
 pub mod list_certificates_by_ca;
+
+/// Types for the `ListCommandExecutions` operation.
+pub mod list_command_executions;
+
+/// Types for the `ListCommands` operation.
+pub mod list_commands;
 
 /// Types for the `ListCustomMetrics` operation.
 pub mod list_custom_metrics;
@@ -714,6 +735,9 @@ pub mod update_certificate;
 
 /// Types for the `UpdateCertificateProvider` operation.
 pub mod update_certificate_provider;
+
+/// Types for the `UpdateCommand` operation.
+pub mod update_command;
 
 /// Types for the `UpdateCustomMetric` operation.
 pub mod update_custom_metric;

@@ -23,6 +23,7 @@ impl crate::operation::get_pending_job_executions::builders::GetPendingJobExecut
 /// Fluent builder constructing a request to `GetPendingJobExecutions`.
 ///
 /// <p>Gets the list of all jobs for a thing that are not in a terminal status.</p>
+/// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetPendingJobExecutions</a> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetPendingJobExecutionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

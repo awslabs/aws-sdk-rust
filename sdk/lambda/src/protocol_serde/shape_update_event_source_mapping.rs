@@ -270,6 +270,11 @@ pub(crate) fn de_update_event_source_mapping(
                             .transpose()?,
                     );
                 }
+                "MetricsConfig" => {
+                    builder = builder.set_metrics_config(
+                        crate::protocol_serde::shape_event_source_mapping_metrics_config::de_event_source_mapping_metrics_config(tokens)?,
+                    );
+                }
                 "ParallelizationFactor" => {
                     builder = builder.set_parallelization_factor(
                         ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

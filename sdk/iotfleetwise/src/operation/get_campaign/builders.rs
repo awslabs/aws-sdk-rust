@@ -22,7 +22,9 @@ impl crate::operation::get_campaign::builders::GetCampaignInputBuilder {
 }
 /// Fluent builder constructing a request to `GetCampaign`.
 ///
-/// <p>Retrieves information about a campaign.</p>
+/// <p>Retrieves information about a campaign.</p><important>
+/// <p>Access to certain Amazon Web Services IoT FleetWise features is currently gated. For more information, see <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/fleetwise-regions.html">Amazon Web Services Region and feature availability</a> in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>.</p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetCampaignFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

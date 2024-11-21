@@ -23,7 +23,7 @@ impl crate::operation::get_bucket_acl::builders::GetBucketAclInputBuilder {
 /// Fluent builder constructing a request to `GetBucketAcl`.
 ///
 /// <note>
-/// <p>This operation is not supported by directory buckets.</p>
+/// <p>This operation is not supported for directory buckets.</p>
 /// </note>
 /// <p>This implementation of the <code>GET</code> action uses the <code>acl</code> subresource to return the access control list (ACL) of a bucket. To use <code>GET</code> to return the ACL of the bucket, you must have the <code>READ_ACP</code> access to the bucket. If <code>READ_ACP</code> permission is granted to the anonymous user, you can return the ACL of the bucket without using an authorization header.</p>
 /// <p>When you use this API operation with an access point, provide the alias of the access point in place of the bucket name.</p>

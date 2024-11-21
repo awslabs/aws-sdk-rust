@@ -43,14 +43,28 @@ pub struct PutAccountPolicyInput {
     /// <li>
     /// <p><b>Distribution</b> The method used to distribute log data to the destination. By default, log data is grouped by log stream, but the grouping can be set to <code>Random</code> for a more even distribution. This property is only applicable when the destination is an Kinesis Data Streams data stream.</p></li>
     /// </ul>
+    /// <p><b>Transformer policy</b></p>
+    /// <p>A transformer policy must include one JSON block with the array of processors and their configurations. For more information about available processors, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#CloudWatch-Logs-Transformation-Processors"> Processors that you can use</a>.</p>
+    /// <p><b>Field index policy</b></p>
+    /// <p>A field index filter policy can include the following attribute in a JSON block:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>Fields</b> The array of field indexes to create.</p></li>
+    /// </ul>
+    /// <p>It must contain at least one field index.</p>
+    /// <p>The following is an example of an index policy document that creates two indexes, <code>RequestId</code> and <code>TransactionId</code>.</p>
+    /// <p><code>"policyDocument": "{ \"Fields\": \[ \"RequestId\", \"TransactionId\" \] }"</code></p>
     pub policy_document: ::std::option::Option<::std::string::String>,
     /// <p>The type of policy that you're creating or updating.</p>
     pub policy_type: ::std::option::Option<crate::types::PolicyType>,
     /// <p>Currently the only valid value for this parameter is <code>ALL</code>, which specifies that the data protection policy applies to all log groups in the account. If you omit this parameter, the default of <code>ALL</code> is used.</p>
     pub scope: ::std::option::Option<crate::types::Scope>,
-    /// <p>Use this parameter to apply the subscription filter policy to a subset of log groups in the account. Currently, the only supported filter is <code>LogGroupName NOT IN \[\]</code>. The <code>selectionCriteria</code> string can be up to 25KB in length. The length is determined by using its UTF-8 bytes.</p>
-    /// <p>Using the <code>selectionCriteria</code> parameter is useful to help prevent infinite loops. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions-recursion-prevention.html">Log recursion prevention</a>.</p>
-    /// <p>Specifing <code>selectionCriteria</code> is valid only when you specify <code> SUBSCRIPTION_FILTER_POLICY</code> for <code>policyType</code>.</p>
+    /// <p>Use this parameter to apply the new policy to a subset of log groups in the account.</p>
+    /// <p>Specifing <code>selectionCriteria</code> is valid only when you specify <code>SUBSCRIPTION_FILTER_POLICY</code>, <code>FIELD_INDEX_POLICY</code> or <code>TRANSFORMER_POLICY</code>for <code>policyType</code>.</p>
+    /// <p>If <code>policyType</code> is <code>SUBSCRIPTION_FILTER_POLICY</code>, the only supported <code>selectionCriteria</code> filter is <code>LogGroupName NOT IN \[\]</code></p>
+    /// <p>If <code>policyType</code> is <code>FIELD_INDEX_POLICY</code> or <code>TRANSFORMER_POLICY</code>, the only supported <code>selectionCriteria</code> filter is <code>LogGroupNamePrefix</code></p>
+    /// <p>The <code>selectionCriteria</code> string can be up to 25KB in length. The length is determined by using its UTF-8 bytes.</p>
+    /// <p>Using the <code>selectionCriteria</code> parameter with <code>SUBSCRIPTION_FILTER_POLICY</code> is useful to help prevent infinite loops. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions-recursion-prevention.html">Log recursion prevention</a>.</p>
     pub selection_criteria: ::std::option::Option<::std::string::String>,
 }
 impl PutAccountPolicyInput {
@@ -96,6 +110,17 @@ impl PutAccountPolicyInput {
     /// <li>
     /// <p><b>Distribution</b> The method used to distribute log data to the destination. By default, log data is grouped by log stream, but the grouping can be set to <code>Random</code> for a more even distribution. This property is only applicable when the destination is an Kinesis Data Streams data stream.</p></li>
     /// </ul>
+    /// <p><b>Transformer policy</b></p>
+    /// <p>A transformer policy must include one JSON block with the array of processors and their configurations. For more information about available processors, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#CloudWatch-Logs-Transformation-Processors"> Processors that you can use</a>.</p>
+    /// <p><b>Field index policy</b></p>
+    /// <p>A field index filter policy can include the following attribute in a JSON block:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>Fields</b> The array of field indexes to create.</p></li>
+    /// </ul>
+    /// <p>It must contain at least one field index.</p>
+    /// <p>The following is an example of an index policy document that creates two indexes, <code>RequestId</code> and <code>TransactionId</code>.</p>
+    /// <p><code>"policyDocument": "{ \"Fields\": \[ \"RequestId\", \"TransactionId\" \] }"</code></p>
     pub fn policy_document(&self) -> ::std::option::Option<&str> {
         self.policy_document.as_deref()
     }
@@ -107,9 +132,12 @@ impl PutAccountPolicyInput {
     pub fn scope(&self) -> ::std::option::Option<&crate::types::Scope> {
         self.scope.as_ref()
     }
-    /// <p>Use this parameter to apply the subscription filter policy to a subset of log groups in the account. Currently, the only supported filter is <code>LogGroupName NOT IN \[\]</code>. The <code>selectionCriteria</code> string can be up to 25KB in length. The length is determined by using its UTF-8 bytes.</p>
-    /// <p>Using the <code>selectionCriteria</code> parameter is useful to help prevent infinite loops. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions-recursion-prevention.html">Log recursion prevention</a>.</p>
-    /// <p>Specifing <code>selectionCriteria</code> is valid only when you specify <code> SUBSCRIPTION_FILTER_POLICY</code> for <code>policyType</code>.</p>
+    /// <p>Use this parameter to apply the new policy to a subset of log groups in the account.</p>
+    /// <p>Specifing <code>selectionCriteria</code> is valid only when you specify <code>SUBSCRIPTION_FILTER_POLICY</code>, <code>FIELD_INDEX_POLICY</code> or <code>TRANSFORMER_POLICY</code>for <code>policyType</code>.</p>
+    /// <p>If <code>policyType</code> is <code>SUBSCRIPTION_FILTER_POLICY</code>, the only supported <code>selectionCriteria</code> filter is <code>LogGroupName NOT IN \[\]</code></p>
+    /// <p>If <code>policyType</code> is <code>FIELD_INDEX_POLICY</code> or <code>TRANSFORMER_POLICY</code>, the only supported <code>selectionCriteria</code> filter is <code>LogGroupNamePrefix</code></p>
+    /// <p>The <code>selectionCriteria</code> string can be up to 25KB in length. The length is determined by using its UTF-8 bytes.</p>
+    /// <p>Using the <code>selectionCriteria</code> parameter with <code>SUBSCRIPTION_FILTER_POLICY</code> is useful to help prevent infinite loops. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions-recursion-prevention.html">Log recursion prevention</a>.</p>
     pub fn selection_criteria(&self) -> ::std::option::Option<&str> {
         self.selection_criteria.as_deref()
     }
@@ -185,6 +213,17 @@ impl PutAccountPolicyInputBuilder {
     /// <li>
     /// <p><b>Distribution</b> The method used to distribute log data to the destination. By default, log data is grouped by log stream, but the grouping can be set to <code>Random</code> for a more even distribution. This property is only applicable when the destination is an Kinesis Data Streams data stream.</p></li>
     /// </ul>
+    /// <p><b>Transformer policy</b></p>
+    /// <p>A transformer policy must include one JSON block with the array of processors and their configurations. For more information about available processors, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#CloudWatch-Logs-Transformation-Processors"> Processors that you can use</a>.</p>
+    /// <p><b>Field index policy</b></p>
+    /// <p>A field index filter policy can include the following attribute in a JSON block:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>Fields</b> The array of field indexes to create.</p></li>
+    /// </ul>
+    /// <p>It must contain at least one field index.</p>
+    /// <p>The following is an example of an index policy document that creates two indexes, <code>RequestId</code> and <code>TransactionId</code>.</p>
+    /// <p><code>"policyDocument": "{ \"Fields\": \[ \"RequestId\", \"TransactionId\" \] }"</code></p>
     /// This field is required.
     pub fn policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_document = ::std::option::Option::Some(input.into());
@@ -228,6 +267,17 @@ impl PutAccountPolicyInputBuilder {
     /// <li>
     /// <p><b>Distribution</b> The method used to distribute log data to the destination. By default, log data is grouped by log stream, but the grouping can be set to <code>Random</code> for a more even distribution. This property is only applicable when the destination is an Kinesis Data Streams data stream.</p></li>
     /// </ul>
+    /// <p><b>Transformer policy</b></p>
+    /// <p>A transformer policy must include one JSON block with the array of processors and their configurations. For more information about available processors, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#CloudWatch-Logs-Transformation-Processors"> Processors that you can use</a>.</p>
+    /// <p><b>Field index policy</b></p>
+    /// <p>A field index filter policy can include the following attribute in a JSON block:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>Fields</b> The array of field indexes to create.</p></li>
+    /// </ul>
+    /// <p>It must contain at least one field index.</p>
+    /// <p>The following is an example of an index policy document that creates two indexes, <code>RequestId</code> and <code>TransactionId</code>.</p>
+    /// <p><code>"policyDocument": "{ \"Fields\": \[ \"RequestId\", \"TransactionId\" \] }"</code></p>
     pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_document = input;
         self
@@ -270,6 +320,17 @@ impl PutAccountPolicyInputBuilder {
     /// <li>
     /// <p><b>Distribution</b> The method used to distribute log data to the destination. By default, log data is grouped by log stream, but the grouping can be set to <code>Random</code> for a more even distribution. This property is only applicable when the destination is an Kinesis Data Streams data stream.</p></li>
     /// </ul>
+    /// <p><b>Transformer policy</b></p>
+    /// <p>A transformer policy must include one JSON block with the array of processors and their configurations. For more information about available processors, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#CloudWatch-Logs-Transformation-Processors"> Processors that you can use</a>.</p>
+    /// <p><b>Field index policy</b></p>
+    /// <p>A field index filter policy can include the following attribute in a JSON block:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>Fields</b> The array of field indexes to create.</p></li>
+    /// </ul>
+    /// <p>It must contain at least one field index.</p>
+    /// <p>The following is an example of an index policy document that creates two indexes, <code>RequestId</code> and <code>TransactionId</code>.</p>
+    /// <p><code>"policyDocument": "{ \"Fields\": \[ \"RequestId\", \"TransactionId\" \] }"</code></p>
     pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_document
     }
@@ -302,23 +363,32 @@ impl PutAccountPolicyInputBuilder {
     pub fn get_scope(&self) -> &::std::option::Option<crate::types::Scope> {
         &self.scope
     }
-    /// <p>Use this parameter to apply the subscription filter policy to a subset of log groups in the account. Currently, the only supported filter is <code>LogGroupName NOT IN \[\]</code>. The <code>selectionCriteria</code> string can be up to 25KB in length. The length is determined by using its UTF-8 bytes.</p>
-    /// <p>Using the <code>selectionCriteria</code> parameter is useful to help prevent infinite loops. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions-recursion-prevention.html">Log recursion prevention</a>.</p>
-    /// <p>Specifing <code>selectionCriteria</code> is valid only when you specify <code> SUBSCRIPTION_FILTER_POLICY</code> for <code>policyType</code>.</p>
+    /// <p>Use this parameter to apply the new policy to a subset of log groups in the account.</p>
+    /// <p>Specifing <code>selectionCriteria</code> is valid only when you specify <code>SUBSCRIPTION_FILTER_POLICY</code>, <code>FIELD_INDEX_POLICY</code> or <code>TRANSFORMER_POLICY</code>for <code>policyType</code>.</p>
+    /// <p>If <code>policyType</code> is <code>SUBSCRIPTION_FILTER_POLICY</code>, the only supported <code>selectionCriteria</code> filter is <code>LogGroupName NOT IN \[\]</code></p>
+    /// <p>If <code>policyType</code> is <code>FIELD_INDEX_POLICY</code> or <code>TRANSFORMER_POLICY</code>, the only supported <code>selectionCriteria</code> filter is <code>LogGroupNamePrefix</code></p>
+    /// <p>The <code>selectionCriteria</code> string can be up to 25KB in length. The length is determined by using its UTF-8 bytes.</p>
+    /// <p>Using the <code>selectionCriteria</code> parameter with <code>SUBSCRIPTION_FILTER_POLICY</code> is useful to help prevent infinite loops. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions-recursion-prevention.html">Log recursion prevention</a>.</p>
     pub fn selection_criteria(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.selection_criteria = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Use this parameter to apply the subscription filter policy to a subset of log groups in the account. Currently, the only supported filter is <code>LogGroupName NOT IN \[\]</code>. The <code>selectionCriteria</code> string can be up to 25KB in length. The length is determined by using its UTF-8 bytes.</p>
-    /// <p>Using the <code>selectionCriteria</code> parameter is useful to help prevent infinite loops. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions-recursion-prevention.html">Log recursion prevention</a>.</p>
-    /// <p>Specifing <code>selectionCriteria</code> is valid only when you specify <code> SUBSCRIPTION_FILTER_POLICY</code> for <code>policyType</code>.</p>
+    /// <p>Use this parameter to apply the new policy to a subset of log groups in the account.</p>
+    /// <p>Specifing <code>selectionCriteria</code> is valid only when you specify <code>SUBSCRIPTION_FILTER_POLICY</code>, <code>FIELD_INDEX_POLICY</code> or <code>TRANSFORMER_POLICY</code>for <code>policyType</code>.</p>
+    /// <p>If <code>policyType</code> is <code>SUBSCRIPTION_FILTER_POLICY</code>, the only supported <code>selectionCriteria</code> filter is <code>LogGroupName NOT IN \[\]</code></p>
+    /// <p>If <code>policyType</code> is <code>FIELD_INDEX_POLICY</code> or <code>TRANSFORMER_POLICY</code>, the only supported <code>selectionCriteria</code> filter is <code>LogGroupNamePrefix</code></p>
+    /// <p>The <code>selectionCriteria</code> string can be up to 25KB in length. The length is determined by using its UTF-8 bytes.</p>
+    /// <p>Using the <code>selectionCriteria</code> parameter with <code>SUBSCRIPTION_FILTER_POLICY</code> is useful to help prevent infinite loops. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions-recursion-prevention.html">Log recursion prevention</a>.</p>
     pub fn set_selection_criteria(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.selection_criteria = input;
         self
     }
-    /// <p>Use this parameter to apply the subscription filter policy to a subset of log groups in the account. Currently, the only supported filter is <code>LogGroupName NOT IN \[\]</code>. The <code>selectionCriteria</code> string can be up to 25KB in length. The length is determined by using its UTF-8 bytes.</p>
-    /// <p>Using the <code>selectionCriteria</code> parameter is useful to help prevent infinite loops. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions-recursion-prevention.html">Log recursion prevention</a>.</p>
-    /// <p>Specifing <code>selectionCriteria</code> is valid only when you specify <code> SUBSCRIPTION_FILTER_POLICY</code> for <code>policyType</code>.</p>
+    /// <p>Use this parameter to apply the new policy to a subset of log groups in the account.</p>
+    /// <p>Specifing <code>selectionCriteria</code> is valid only when you specify <code>SUBSCRIPTION_FILTER_POLICY</code>, <code>FIELD_INDEX_POLICY</code> or <code>TRANSFORMER_POLICY</code>for <code>policyType</code>.</p>
+    /// <p>If <code>policyType</code> is <code>SUBSCRIPTION_FILTER_POLICY</code>, the only supported <code>selectionCriteria</code> filter is <code>LogGroupName NOT IN \[\]</code></p>
+    /// <p>If <code>policyType</code> is <code>FIELD_INDEX_POLICY</code> or <code>TRANSFORMER_POLICY</code>, the only supported <code>selectionCriteria</code> filter is <code>LogGroupNamePrefix</code></p>
+    /// <p>The <code>selectionCriteria</code> string can be up to 25KB in length. The length is determined by using its UTF-8 bytes.</p>
+    /// <p>Using the <code>selectionCriteria</code> parameter with <code>SUBSCRIPTION_FILTER_POLICY</code> is useful to help prevent infinite loops. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions-recursion-prevention.html">Log recursion prevention</a>.</p>
     pub fn get_selection_criteria(&self) -> &::std::option::Option<::std::string::String> {
         &self.selection_criteria
     }

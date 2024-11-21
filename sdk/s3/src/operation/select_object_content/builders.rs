@@ -23,7 +23,7 @@ impl crate::operation::select_object_content::builders::SelectObjectContentInput
 /// Fluent builder constructing a request to `SelectObjectContent`.
 ///
 /// <note>
-/// <p>This operation is not supported by directory buckets.</p>
+/// <p>This operation is not supported for directory buckets.</p>
 /// </note>
 /// <p>This action filters the contents of an Amazon S3 object based on a simple structured query language (SQL) statement. In the request, along with the SQL expression, you must also specify a data serialization format (JSON, CSV, or Apache Parquet) of the object. Amazon S3 uses this format to parse object data into records, and returns only records that match the specified SQL expression. You must also specify the data serialization format for the response.</p>
 /// <p>This functionality is not supported for Amazon S3 on Outposts.</p>

@@ -5,6 +5,26 @@ pub use crate::types::_scalable_target_action::ScalableTargetActionBuilder;
 
 pub use crate::types::_alarm::AlarmBuilder;
 
+pub use crate::types::_predictive_scaling_policy_configuration::PredictiveScalingPolicyConfigurationBuilder;
+
+pub use crate::types::_predictive_scaling_metric_specification::PredictiveScalingMetricSpecificationBuilder;
+
+pub use crate::types::_predictive_scaling_customized_metric_specification::PredictiveScalingCustomizedMetricSpecificationBuilder;
+
+pub use crate::types::_predictive_scaling_metric_data_query::PredictiveScalingMetricDataQueryBuilder;
+
+pub use crate::types::_predictive_scaling_metric_stat::PredictiveScalingMetricStatBuilder;
+
+pub use crate::types::_predictive_scaling_metric::PredictiveScalingMetricBuilder;
+
+pub use crate::types::_predictive_scaling_metric_dimension::PredictiveScalingMetricDimensionBuilder;
+
+pub use crate::types::_predictive_scaling_predefined_load_metric_specification::PredictiveScalingPredefinedLoadMetricSpecificationBuilder;
+
+pub use crate::types::_predictive_scaling_predefined_scaling_metric_specification::PredictiveScalingPredefinedScalingMetricSpecificationBuilder;
+
+pub use crate::types::_predictive_scaling_predefined_metric_pair_specification::PredictiveScalingPredefinedMetricPairSpecificationBuilder;
+
 pub use crate::types::_target_tracking_scaling_policy_configuration::TargetTrackingScalingPolicyConfigurationBuilder;
 
 pub use crate::types::_customized_metric_specification::CustomizedMetricSpecificationBuilder;
@@ -24,6 +44,10 @@ pub use crate::types::_predefined_metric_specification::PredefinedMetricSpecific
 pub use crate::types::_step_scaling_policy_configuration::StepScalingPolicyConfigurationBuilder;
 
 pub use crate::types::_step_adjustment::StepAdjustmentBuilder;
+
+pub use crate::types::_capacity_forecast::CapacityForecastBuilder;
+
+pub use crate::types::_load_forecast::LoadForecastBuilder;
 
 pub use crate::types::_scheduled_action::ScheduledActionBuilder;
 

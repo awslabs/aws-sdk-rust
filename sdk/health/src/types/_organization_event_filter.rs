@@ -8,7 +8,7 @@ pub struct OrganizationEventFilter {
     pub event_type_codes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
     pub aws_account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The Amazon Web Services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
+    /// <p>The Amazon Web Services services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
     pub services: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of Amazon Web Services Regions.</p>
     pub regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -40,7 +40,7 @@ impl OrganizationEventFilter {
     pub fn aws_account_ids(&self) -> &[::std::string::String] {
         self.aws_account_ids.as_deref().unwrap_or_default()
     }
-    /// <p>The Amazon Web Services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
+    /// <p>The Amazon Web Services services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.services.is_none()`.
     pub fn services(&self) -> &[::std::string::String] {
@@ -157,19 +157,19 @@ impl OrganizationEventFilterBuilder {
     ///
     /// To override the contents of this collection use [`set_services`](Self::set_services).
     ///
-    /// <p>The Amazon Web Services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
+    /// <p>The Amazon Web Services services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
     pub fn services(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.services.unwrap_or_default();
         v.push(input.into());
         self.services = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The Amazon Web Services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
+    /// <p>The Amazon Web Services services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
     pub fn set_services(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.services = input;
         self
     }
-    /// <p>The Amazon Web Services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
+    /// <p>The Amazon Web Services services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
     pub fn get_services(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.services
     }

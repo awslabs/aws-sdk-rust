@@ -12,6 +12,13 @@ pub struct SignalInformation {
     /// <p>If a signal changes often, you might want to collect data at a slower rate.</p>
     /// </note>
     pub minimum_sampling_interval_ms: ::std::option::Option<i64>,
+    /// <p>The ID of the data partition this signal is associated with.</p>
+    /// <p>The ID must match one of the IDs provided in <code>dataPartitions</code>. This is accomplished either by specifying a particular data partition ID or by using <code>default</code> for an established default partition. You can establish a default partition in the <code>DataPartition</code> data type.</p><note>
+    /// <p>If you upload a signal as a condition for a campaign's data partition, the same signal must be included in <code>signalsToCollect</code>.</p>
+    /// </note> <important>
+    /// <p>Access to certain Amazon Web Services IoT FleetWise features is currently gated. For more information, see <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/fleetwise-regions.html">Amazon Web Services Region and feature availability</a> in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>.</p>
+    /// </important>
+    pub data_partition_id: ::std::option::Option<::std::string::String>,
 }
 impl SignalInformation {
     /// <p>The name of the signal.</p>
@@ -29,6 +36,15 @@ impl SignalInformation {
     pub fn minimum_sampling_interval_ms(&self) -> ::std::option::Option<i64> {
         self.minimum_sampling_interval_ms
     }
+    /// <p>The ID of the data partition this signal is associated with.</p>
+    /// <p>The ID must match one of the IDs provided in <code>dataPartitions</code>. This is accomplished either by specifying a particular data partition ID or by using <code>default</code> for an established default partition. You can establish a default partition in the <code>DataPartition</code> data type.</p><note>
+    /// <p>If you upload a signal as a condition for a campaign's data partition, the same signal must be included in <code>signalsToCollect</code>.</p>
+    /// </note> <important>
+    /// <p>Access to certain Amazon Web Services IoT FleetWise features is currently gated. For more information, see <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/fleetwise-regions.html">Amazon Web Services Region and feature availability</a> in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>.</p>
+    /// </important>
+    pub fn data_partition_id(&self) -> ::std::option::Option<&str> {
+        self.data_partition_id.as_deref()
+    }
 }
 impl SignalInformation {
     /// Creates a new builder-style object to manufacture [`SignalInformation`](crate::types::SignalInformation).
@@ -44,6 +60,7 @@ pub struct SignalInformationBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) max_sample_count: ::std::option::Option<i64>,
     pub(crate) minimum_sampling_interval_ms: ::std::option::Option<i64>,
+    pub(crate) data_partition_id: ::std::option::Option<::std::string::String>,
 }
 impl SignalInformationBuilder {
     /// <p>The name of the signal.</p>
@@ -95,6 +112,35 @@ impl SignalInformationBuilder {
     pub fn get_minimum_sampling_interval_ms(&self) -> &::std::option::Option<i64> {
         &self.minimum_sampling_interval_ms
     }
+    /// <p>The ID of the data partition this signal is associated with.</p>
+    /// <p>The ID must match one of the IDs provided in <code>dataPartitions</code>. This is accomplished either by specifying a particular data partition ID or by using <code>default</code> for an established default partition. You can establish a default partition in the <code>DataPartition</code> data type.</p><note>
+    /// <p>If you upload a signal as a condition for a campaign's data partition, the same signal must be included in <code>signalsToCollect</code>.</p>
+    /// </note> <important>
+    /// <p>Access to certain Amazon Web Services IoT FleetWise features is currently gated. For more information, see <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/fleetwise-regions.html">Amazon Web Services Region and feature availability</a> in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>.</p>
+    /// </important>
+    pub fn data_partition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data_partition_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the data partition this signal is associated with.</p>
+    /// <p>The ID must match one of the IDs provided in <code>dataPartitions</code>. This is accomplished either by specifying a particular data partition ID or by using <code>default</code> for an established default partition. You can establish a default partition in the <code>DataPartition</code> data type.</p><note>
+    /// <p>If you upload a signal as a condition for a campaign's data partition, the same signal must be included in <code>signalsToCollect</code>.</p>
+    /// </note> <important>
+    /// <p>Access to certain Amazon Web Services IoT FleetWise features is currently gated. For more information, see <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/fleetwise-regions.html">Amazon Web Services Region and feature availability</a> in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>.</p>
+    /// </important>
+    pub fn set_data_partition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.data_partition_id = input;
+        self
+    }
+    /// <p>The ID of the data partition this signal is associated with.</p>
+    /// <p>The ID must match one of the IDs provided in <code>dataPartitions</code>. This is accomplished either by specifying a particular data partition ID or by using <code>default</code> for an established default partition. You can establish a default partition in the <code>DataPartition</code> data type.</p><note>
+    /// <p>If you upload a signal as a condition for a campaign's data partition, the same signal must be included in <code>signalsToCollect</code>.</p>
+    /// </note> <important>
+    /// <p>Access to certain Amazon Web Services IoT FleetWise features is currently gated. For more information, see <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/fleetwise-regions.html">Amazon Web Services Region and feature availability</a> in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>.</p>
+    /// </important>
+    pub fn get_data_partition_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_partition_id
+    }
     /// Consumes the builder and constructs a [`SignalInformation`](crate::types::SignalInformation).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::SignalInformationBuilder::name)
@@ -108,6 +154,7 @@ impl SignalInformationBuilder {
             })?,
             max_sample_count: self.max_sample_count,
             minimum_sampling_interval_ms: self.minimum_sampling_interval_ms,
+            data_partition_id: self.data_partition_id,
         })
     }
 }

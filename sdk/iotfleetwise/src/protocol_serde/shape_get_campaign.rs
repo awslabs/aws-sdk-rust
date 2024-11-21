@@ -246,6 +246,13 @@ pub(crate) fn de_get_campaign(
                         crate::protocol_serde::shape_data_destination_configs::de_data_destination_configs(tokens)?,
                     );
                 }
+                "dataPartitions" => {
+                    builder = builder.set_data_partitions(crate::protocol_serde::shape_data_partitions::de_data_partitions(tokens)?);
+                }
+                "signalsToFetch" => {
+                    builder = builder
+                        .set_signals_to_fetch(crate::protocol_serde::shape_signal_fetch_information_list::de_signal_fetch_information_list(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

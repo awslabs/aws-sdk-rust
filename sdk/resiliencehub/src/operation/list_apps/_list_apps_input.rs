@@ -11,9 +11,9 @@ pub struct ListAppsInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub app_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates the lower limit of the range that is used to filter applications based on their last assessment times.</p>
+    /// <p>Lower limit of the range that is used to filter applications based on their last assessment times.</p>
     pub from_last_assessment_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Indicates the upper limit of the range that is used to filter the applications based on their last assessment times.</p>
+    /// <p>Upper limit of the range that is used to filter the applications based on their last assessment times.</p>
     pub to_last_assessment_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The application list is sorted based on the values of <code>lastAppComplianceEvaluationTime</code> field. By default, application list is sorted in ascending order. To sort the application list in descending order, set this field to <code>True</code>.</p>
     pub reverse_order: ::std::option::Option<bool>,
@@ -37,11 +37,11 @@ impl ListAppsInput {
     pub fn app_arn(&self) -> ::std::option::Option<&str> {
         self.app_arn.as_deref()
     }
-    /// <p>Indicates the lower limit of the range that is used to filter applications based on their last assessment times.</p>
+    /// <p>Lower limit of the range that is used to filter applications based on their last assessment times.</p>
     pub fn from_last_assessment_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.from_last_assessment_time.as_ref()
     }
-    /// <p>Indicates the upper limit of the range that is used to filter the applications based on their last assessment times.</p>
+    /// <p>Upper limit of the range that is used to filter the applications based on their last assessment times.</p>
     pub fn to_last_assessment_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.to_last_assessment_time.as_ref()
     }
@@ -131,31 +131,31 @@ impl ListAppsInputBuilder {
     pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.app_arn
     }
-    /// <p>Indicates the lower limit of the range that is used to filter applications based on their last assessment times.</p>
+    /// <p>Lower limit of the range that is used to filter applications based on their last assessment times.</p>
     pub fn from_last_assessment_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.from_last_assessment_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates the lower limit of the range that is used to filter applications based on their last assessment times.</p>
+    /// <p>Lower limit of the range that is used to filter applications based on their last assessment times.</p>
     pub fn set_from_last_assessment_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.from_last_assessment_time = input;
         self
     }
-    /// <p>Indicates the lower limit of the range that is used to filter applications based on their last assessment times.</p>
+    /// <p>Lower limit of the range that is used to filter applications based on their last assessment times.</p>
     pub fn get_from_last_assessment_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.from_last_assessment_time
     }
-    /// <p>Indicates the upper limit of the range that is used to filter the applications based on their last assessment times.</p>
+    /// <p>Upper limit of the range that is used to filter the applications based on their last assessment times.</p>
     pub fn to_last_assessment_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.to_last_assessment_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates the upper limit of the range that is used to filter the applications based on their last assessment times.</p>
+    /// <p>Upper limit of the range that is used to filter the applications based on their last assessment times.</p>
     pub fn set_to_last_assessment_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.to_last_assessment_time = input;
         self
     }
-    /// <p>Indicates the upper limit of the range that is used to filter the applications based on their last assessment times.</p>
+    /// <p>Upper limit of the range that is used to filter the applications based on their last assessment times.</p>
     pub fn get_to_last_assessment_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.to_last_assessment_time
     }

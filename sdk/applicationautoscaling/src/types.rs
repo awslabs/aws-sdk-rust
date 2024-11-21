@@ -9,6 +9,30 @@ pub use crate::types::_scalable_target_action::ScalableTargetAction;
 
 pub use crate::types::_alarm::Alarm;
 
+pub use crate::types::_predictive_scaling_policy_configuration::PredictiveScalingPolicyConfiguration;
+
+pub use crate::types::_predictive_scaling_max_capacity_breach_behavior::PredictiveScalingMaxCapacityBreachBehavior;
+
+pub use crate::types::_predictive_scaling_mode::PredictiveScalingMode;
+
+pub use crate::types::_predictive_scaling_metric_specification::PredictiveScalingMetricSpecification;
+
+pub use crate::types::_predictive_scaling_customized_metric_specification::PredictiveScalingCustomizedMetricSpecification;
+
+pub use crate::types::_predictive_scaling_metric_data_query::PredictiveScalingMetricDataQuery;
+
+pub use crate::types::_predictive_scaling_metric_stat::PredictiveScalingMetricStat;
+
+pub use crate::types::_predictive_scaling_metric::PredictiveScalingMetric;
+
+pub use crate::types::_predictive_scaling_metric_dimension::PredictiveScalingMetricDimension;
+
+pub use crate::types::_predictive_scaling_predefined_load_metric_specification::PredictiveScalingPredefinedLoadMetricSpecification;
+
+pub use crate::types::_predictive_scaling_predefined_scaling_metric_specification::PredictiveScalingPredefinedScalingMetricSpecification;
+
+pub use crate::types::_predictive_scaling_predefined_metric_pair_specification::PredictiveScalingPredefinedMetricPairSpecification;
+
 pub use crate::types::_target_tracking_scaling_policy_configuration::TargetTrackingScalingPolicyConfiguration;
 
 pub use crate::types::_customized_metric_specification::CustomizedMetricSpecification;
@@ -39,6 +63,10 @@ pub use crate::types::_adjustment_type::AdjustmentType;
 
 pub use crate::types::_policy_type::PolicyType;
 
+pub use crate::types::_capacity_forecast::CapacityForecast;
+
+pub use crate::types::_load_forecast::LoadForecast;
+
 pub use crate::types::_scheduled_action::ScheduledAction;
 
 pub use crate::types::_scaling_policy::ScalingPolicy;
@@ -55,7 +83,11 @@ mod _adjustment_type;
 
 mod _alarm;
 
+mod _capacity_forecast;
+
 mod _customized_metric_specification;
+
+mod _load_forecast;
 
 mod _metric_aggregation_type;
 
@@ -70,6 +102,30 @@ mod _not_scaled_reason;
 mod _policy_type;
 
 mod _predefined_metric_specification;
+
+mod _predictive_scaling_customized_metric_specification;
+
+mod _predictive_scaling_max_capacity_breach_behavior;
+
+mod _predictive_scaling_metric;
+
+mod _predictive_scaling_metric_data_query;
+
+mod _predictive_scaling_metric_dimension;
+
+mod _predictive_scaling_metric_specification;
+
+mod _predictive_scaling_metric_stat;
+
+mod _predictive_scaling_mode;
+
+mod _predictive_scaling_policy_configuration;
+
+mod _predictive_scaling_predefined_load_metric_specification;
+
+mod _predictive_scaling_predefined_metric_pair_specification;
+
+mod _predictive_scaling_predefined_scaling_metric_specification;
 
 mod _scalable_dimension;
 

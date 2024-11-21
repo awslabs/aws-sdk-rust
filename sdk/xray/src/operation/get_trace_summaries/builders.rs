@@ -27,7 +27,7 @@ impl crate::operation::get_trace_summaries::builders::GetTraceSummariesInputBuil
 /// <p><code>service("api.example.com")</code></p>
 /// <p>This filter expression finds traces that have an annotation named <code>account</code> with the value <code>12345</code>:</p>
 /// <p><code>annotation.account = "12345"</code></p>
-/// <p>For a full list of indexed fields and keywords that you can use in filter expressions, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-console-filters.html">Using Filter Expressions</a> in the <i>Amazon Web Services X-Ray Developer Guide</i>.</p>
+/// <p>For a full list of indexed fields and keywords that you can use in filter expressions, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/aws-xray-interface-console.html#xray-console-filters">Use filter expressions</a> in the <i>Amazon Web Services X-Ray Developer Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetTraceSummariesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -147,17 +147,17 @@ impl GetTraceSummariesFluentBuilder {
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_end_time()
     }
-    /// <p>A parameter to indicate whether to query trace summaries by TraceId, Event (trace update time), or Service (segment end time).</p>
+    /// <p>Query trace summaries by TraceId (trace start time), Event (trace update time), or Service (trace segment end time).</p>
     pub fn time_range_type(mut self, input: crate::types::TimeRangeType) -> Self {
         self.inner = self.inner.time_range_type(input);
         self
     }
-    /// <p>A parameter to indicate whether to query trace summaries by TraceId, Event (trace update time), or Service (segment end time).</p>
+    /// <p>Query trace summaries by TraceId (trace start time), Event (trace update time), or Service (trace segment end time).</p>
     pub fn set_time_range_type(mut self, input: ::std::option::Option<crate::types::TimeRangeType>) -> Self {
         self.inner = self.inner.set_time_range_type(input);
         self
     }
-    /// <p>A parameter to indicate whether to query trace summaries by TraceId, Event (trace update time), or Service (segment end time).</p>
+    /// <p>Query trace summaries by TraceId (trace start time), Event (trace update time), or Service (trace segment end time).</p>
     pub fn get_time_range_type(&self) -> &::std::option::Option<crate::types::TimeRangeType> {
         self.inner.get_time_range_type()
     }

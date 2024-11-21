@@ -36,24 +36,27 @@ pub fn ser_create_domain_name_input_input(
     if let Some(var_11) = &input.ownership_verification_certificate_arn {
         object.key("ownershipVerificationCertificateArn").string(var_11.as_str());
     }
-    if let Some(var_12) = &input.regional_certificate_arn {
-        object.key("regionalCertificateArn").string(var_12.as_str());
+    if let Some(var_12) = &input.policy {
+        object.key("policy").string(var_12.as_str());
     }
-    if let Some(var_13) = &input.regional_certificate_name {
-        object.key("regionalCertificateName").string(var_13.as_str());
+    if let Some(var_13) = &input.regional_certificate_arn {
+        object.key("regionalCertificateArn").string(var_13.as_str());
     }
-    if let Some(var_14) = &input.security_policy {
-        object.key("securityPolicy").string(var_14.as_str());
+    if let Some(var_14) = &input.regional_certificate_name {
+        object.key("regionalCertificateName").string(var_14.as_str());
     }
-    if let Some(var_15) = &input.tags {
+    if let Some(var_15) = &input.security_policy {
+        object.key("securityPolicy").string(var_15.as_str());
+    }
+    if let Some(var_16) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("tags").start_object();
-        for (key_17, value_18) in var_15 {
+        let mut object_17 = object.key("tags").start_object();
+        for (key_18, value_19) in var_16 {
             {
-                object_16.key(key_17.as_str()).string(value_18.as_str());
+                object_17.key(key_18.as_str()).string(value_19.as_str());
             }
         }
-        object_16.finish();
+        object_17.finish();
     }
     Ok(())
 }

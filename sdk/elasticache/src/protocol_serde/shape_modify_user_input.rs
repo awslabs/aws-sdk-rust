@@ -41,6 +41,11 @@ pub fn ser_modify_user_input_input_input(
     if let Some(var_15) = &input.authentication_mode {
         crate::protocol_serde::shape_authentication_mode::ser_authentication_mode(scope_14, var_15)?;
     }
+    #[allow(unused_mut)]
+    let mut scope_16 = writer.prefix("Engine");
+    if let Some(var_17) = &input.engine {
+        scope_16.string(var_17);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

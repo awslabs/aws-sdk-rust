@@ -13,13 +13,16 @@
 /// # let capacityreservationstate = unimplemented!();
 /// match capacityreservationstate {
 ///     CapacityReservationState::Active => { /* ... */ },
+///     CapacityReservationState::Assessing => { /* ... */ },
 ///     CapacityReservationState::Cancelled => { /* ... */ },
+///     CapacityReservationState::Delayed => { /* ... */ },
 ///     CapacityReservationState::Expired => { /* ... */ },
 ///     CapacityReservationState::Failed => { /* ... */ },
 ///     CapacityReservationState::PaymentFailed => { /* ... */ },
 ///     CapacityReservationState::PaymentPending => { /* ... */ },
 ///     CapacityReservationState::Pending => { /* ... */ },
 ///     CapacityReservationState::Scheduled => { /* ... */ },
+///     CapacityReservationState::Unsupported => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -50,7 +53,11 @@ pub enum CapacityReservationState {
     #[allow(missing_docs)] // documentation missing in model
     Active,
     #[allow(missing_docs)] // documentation missing in model
+    Assessing,
+    #[allow(missing_docs)] // documentation missing in model
     Cancelled,
+    #[allow(missing_docs)] // documentation missing in model
+    Delayed,
     #[allow(missing_docs)] // documentation missing in model
     Expired,
     #[allow(missing_docs)] // documentation missing in model
@@ -63,6 +70,8 @@ pub enum CapacityReservationState {
     Pending,
     #[allow(missing_docs)] // documentation missing in model
     Scheduled,
+    #[allow(missing_docs)] // documentation missing in model
+    Unsupported,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -71,13 +80,16 @@ impl ::std::convert::From<&str> for CapacityReservationState {
     fn from(s: &str) -> Self {
         match s {
             "active" => CapacityReservationState::Active,
+            "assessing" => CapacityReservationState::Assessing,
             "cancelled" => CapacityReservationState::Cancelled,
+            "delayed" => CapacityReservationState::Delayed,
             "expired" => CapacityReservationState::Expired,
             "failed" => CapacityReservationState::Failed,
             "payment-failed" => CapacityReservationState::PaymentFailed,
             "payment-pending" => CapacityReservationState::PaymentPending,
             "pending" => CapacityReservationState::Pending,
             "scheduled" => CapacityReservationState::Scheduled,
+            "unsupported" => CapacityReservationState::Unsupported,
             other => CapacityReservationState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -94,13 +106,16 @@ impl CapacityReservationState {
     pub fn as_str(&self) -> &str {
         match self {
             CapacityReservationState::Active => "active",
+            CapacityReservationState::Assessing => "assessing",
             CapacityReservationState::Cancelled => "cancelled",
+            CapacityReservationState::Delayed => "delayed",
             CapacityReservationState::Expired => "expired",
             CapacityReservationState::Failed => "failed",
             CapacityReservationState::PaymentFailed => "payment-failed",
             CapacityReservationState::PaymentPending => "payment-pending",
             CapacityReservationState::Pending => "pending",
             CapacityReservationState::Scheduled => "scheduled",
+            CapacityReservationState::Unsupported => "unsupported",
             CapacityReservationState::Unknown(value) => value.as_str(),
         }
     }
@@ -108,13 +123,16 @@ impl CapacityReservationState {
     pub const fn values() -> &'static [&'static str] {
         &[
             "active",
+            "assessing",
             "cancelled",
+            "delayed",
             "expired",
             "failed",
             "payment-failed",
             "payment-pending",
             "pending",
             "scheduled",
+            "unsupported",
         ]
     }
 }
@@ -139,13 +157,16 @@ impl ::std::fmt::Display for CapacityReservationState {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             CapacityReservationState::Active => write!(f, "active"),
+            CapacityReservationState::Assessing => write!(f, "assessing"),
             CapacityReservationState::Cancelled => write!(f, "cancelled"),
+            CapacityReservationState::Delayed => write!(f, "delayed"),
             CapacityReservationState::Expired => write!(f, "expired"),
             CapacityReservationState::Failed => write!(f, "failed"),
             CapacityReservationState::PaymentFailed => write!(f, "payment-failed"),
             CapacityReservationState::PaymentPending => write!(f, "payment-pending"),
             CapacityReservationState::Pending => write!(f, "pending"),
             CapacityReservationState::Scheduled => write!(f, "scheduled"),
+            CapacityReservationState::Unsupported => write!(f, "unsupported"),
             CapacityReservationState::Unknown(value) => write!(f, "{}", value),
         }
     }

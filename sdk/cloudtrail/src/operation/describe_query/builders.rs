@@ -23,7 +23,7 @@ impl crate::operation::describe_query::builders::DescribeQueryInputBuilder {
 /// Fluent builder constructing a request to `DescribeQuery`.
 ///
 /// <p>Returns metadata about a query, including query run time in milliseconds, number of events scanned and matched, and query status. If the query results were delivered to an S3 bucket, the response also provides the S3 URI and the delivery status.</p>
-/// <p>You must specify either a <code>QueryID</code> or a <code>QueryAlias</code>. Specifying the <code>QueryAlias</code> parameter returns information about the last query run for the alias.</p>
+/// <p>You must specify either <code>QueryId</code> or <code>QueryAlias</code>. Specifying the <code>QueryAlias</code> parameter returns information about the last query run for the alias. You can provide <code>RefreshId</code> along with <code>QueryAlias</code> to view the query results of a dashboard query for the specified <code>RefreshId</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeQueryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -153,5 +153,33 @@ impl DescribeQueryFluentBuilder {
     /// <p>The alias that identifies a query template.</p>
     pub fn get_query_alias(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_query_alias()
+    }
+    /// <p>The ID of the dashboard refresh.</p>
+    pub fn refresh_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.refresh_id(input.into());
+        self
+    }
+    /// <p>The ID of the dashboard refresh.</p>
+    pub fn set_refresh_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_refresh_id(input);
+        self
+    }
+    /// <p>The ID of the dashboard refresh.</p>
+    pub fn get_refresh_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_refresh_id()
+    }
+    /// <p>The account ID of the event data store owner.</p>
+    pub fn event_data_store_owner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.event_data_store_owner_account_id(input.into());
+        self
+    }
+    /// <p>The account ID of the event data store owner.</p>
+    pub fn set_event_data_store_owner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_event_data_store_owner_account_id(input);
+        self
+    }
+    /// <p>The account ID of the event data store owner.</p>
+    pub fn get_event_data_store_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_event_data_store_owner_account_id()
     }
 }

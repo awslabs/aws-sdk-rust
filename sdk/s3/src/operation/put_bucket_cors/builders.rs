@@ -23,7 +23,7 @@ impl crate::operation::put_bucket_cors::builders::PutBucketCorsInputBuilder {
 /// Fluent builder constructing a request to `PutBucketCors`.
 ///
 /// <note>
-/// <p>This operation is not supported by directory buckets.</p>
+/// <p>This operation is not supported for directory buckets.</p>
 /// </note>
 /// <p>Sets the <code>cors</code> configuration for your bucket. If the configuration exists, Amazon S3 replaces it.</p>
 /// <p>To use this operation, you must be allowed to perform the <code>s3:PutBucketCORS</code> action. By default, the bucket owner has this permission and can grant it to others.</p>

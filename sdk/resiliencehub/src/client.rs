@@ -209,6 +209,8 @@ mod describe_app_version_template;
 
 mod describe_draft_app_version_resources_import_status;
 
+mod describe_metrics_export;
+
 mod describe_resiliency_policy;
 
 mod describe_resource_grouping_recommendation_task;
@@ -239,6 +241,8 @@ mod list_app_versions;
 
 mod list_apps;
 
+mod list_metrics;
+
 mod list_recommendation_templates;
 
 mod list_resiliency_policies;
@@ -266,6 +270,8 @@ mod remove_draft_app_version_resource_mappings;
 mod resolve_app_version_resources;
 
 mod start_app_assessment;
+
+mod start_metrics_export;
 
 mod start_resource_grouping_recommendation_task;
 

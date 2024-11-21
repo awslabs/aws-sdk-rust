@@ -12,6 +12,18 @@ pub struct ObjectIdentifier {
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub version_id: ::std::option::Option<::std::string::String>,
+    /// <p>An entity tag (ETag) is an identifier assigned by a web server to a specific version of a resource found at a URL. This header field makes the request method conditional on <code>ETags</code>.</p><note>
+    /// <p>Entity tags (ETags) for S3 Express One Zone are random alphanumeric strings unique to the object.</p>
+    /// </note>
+    pub e_tag: ::std::option::Option<::std::string::String>,
+    /// <p>If present, the objects are deleted only if its modification times matches the provided <code>Timestamp</code>.</p><note>
+    /// <p>This functionality is only supported for directory buckets.</p>
+    /// </note>
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>If present, the objects are deleted only if its size matches the provided size in bytes.</p><note>
+    /// <p>This functionality is only supported for directory buckets.</p>
+    /// </note>
+    pub size: ::std::option::Option<i64>,
 }
 impl ObjectIdentifier {
     /// <p>Key name of the object.</p><important>
@@ -27,6 +39,24 @@ impl ObjectIdentifier {
     pub fn version_id(&self) -> ::std::option::Option<&str> {
         self.version_id.as_deref()
     }
+    /// <p>An entity tag (ETag) is an identifier assigned by a web server to a specific version of a resource found at a URL. This header field makes the request method conditional on <code>ETags</code>.</p><note>
+    /// <p>Entity tags (ETags) for S3 Express One Zone are random alphanumeric strings unique to the object.</p>
+    /// </note>
+    pub fn e_tag(&self) -> ::std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
+    /// <p>If present, the objects are deleted only if its modification times matches the provided <code>Timestamp</code>.</p><note>
+    /// <p>This functionality is only supported for directory buckets.</p>
+    /// </note>
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>If present, the objects are deleted only if its size matches the provided size in bytes.</p><note>
+    /// <p>This functionality is only supported for directory buckets.</p>
+    /// </note>
+    pub fn size(&self) -> ::std::option::Option<i64> {
+        self.size
+    }
 }
 impl ObjectIdentifier {
     /// Creates a new builder-style object to manufacture [`ObjectIdentifier`](crate::types::ObjectIdentifier).
@@ -41,6 +71,9 @@ impl ObjectIdentifier {
 pub struct ObjectIdentifierBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) version_id: ::std::option::Option<::std::string::String>,
+    pub(crate) e_tag: ::std::option::Option<::std::string::String>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) size: ::std::option::Option<i64>,
 }
 impl ObjectIdentifierBuilder {
     /// <p>Key name of the object.</p><important>
@@ -84,6 +117,66 @@ impl ObjectIdentifierBuilder {
     pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.version_id
     }
+    /// <p>An entity tag (ETag) is an identifier assigned by a web server to a specific version of a resource found at a URL. This header field makes the request method conditional on <code>ETags</code>.</p><note>
+    /// <p>Entity tags (ETags) for S3 Express One Zone are random alphanumeric strings unique to the object.</p>
+    /// </note>
+    pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.e_tag = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>An entity tag (ETag) is an identifier assigned by a web server to a specific version of a resource found at a URL. This header field makes the request method conditional on <code>ETags</code>.</p><note>
+    /// <p>Entity tags (ETags) for S3 Express One Zone are random alphanumeric strings unique to the object.</p>
+    /// </note>
+    pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.e_tag = input;
+        self
+    }
+    /// <p>An entity tag (ETag) is an identifier assigned by a web server to a specific version of a resource found at a URL. This header field makes the request method conditional on <code>ETags</code>.</p><note>
+    /// <p>Entity tags (ETags) for S3 Express One Zone are random alphanumeric strings unique to the object.</p>
+    /// </note>
+    pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.e_tag
+    }
+    /// <p>If present, the objects are deleted only if its modification times matches the provided <code>Timestamp</code>.</p><note>
+    /// <p>This functionality is only supported for directory buckets.</p>
+    /// </note>
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If present, the objects are deleted only if its modification times matches the provided <code>Timestamp</code>.</p><note>
+    /// <p>This functionality is only supported for directory buckets.</p>
+    /// </note>
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input;
+        self
+    }
+    /// <p>If present, the objects are deleted only if its modification times matches the provided <code>Timestamp</code>.</p><note>
+    /// <p>This functionality is only supported for directory buckets.</p>
+    /// </note>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
+    /// <p>If present, the objects are deleted only if its size matches the provided size in bytes.</p><note>
+    /// <p>This functionality is only supported for directory buckets.</p>
+    /// </note>
+    pub fn size(mut self, input: i64) -> Self {
+        self.size = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If present, the objects are deleted only if its size matches the provided size in bytes.</p><note>
+    /// <p>This functionality is only supported for directory buckets.</p>
+    /// </note>
+    pub fn set_size(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.size = input;
+        self
+    }
+    /// <p>If present, the objects are deleted only if its size matches the provided size in bytes.</p><note>
+    /// <p>This functionality is only supported for directory buckets.</p>
+    /// </note>
+    pub fn get_size(&self) -> &::std::option::Option<i64> {
+        &self.size
+    }
     /// Consumes the builder and constructs a [`ObjectIdentifier`](crate::types::ObjectIdentifier).
     /// This method will fail if any of the following fields are not set:
     /// - [`key`](crate::types::builders::ObjectIdentifierBuilder::key)
@@ -96,6 +189,9 @@ impl ObjectIdentifierBuilder {
                 )
             })?,
             version_id: self.version_id,
+            e_tag: self.e_tag,
+            last_modified_time: self.last_modified_time,
+            size: self.size,
         })
     }
 }

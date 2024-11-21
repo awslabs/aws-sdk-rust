@@ -10,7 +10,9 @@ pub struct PutLogEventsOutput {
     pub next_sequence_token: ::std::option::Option<::std::string::String>,
     /// <p>The rejected events.</p>
     pub rejected_log_events_info: ::std::option::Option<crate::types::RejectedLogEventsInfo>,
-    /// <p>Reserved for internal use.</p>
+    /// <p>Information about why the entity is rejected when calling <code>PutLogEvents</code>. Only returned when the entity is rejected.</p><note>
+    /// <p>When the entity is rejected, the events may still be accepted.</p>
+    /// </note>
     pub rejected_entity_info: ::std::option::Option<crate::types::RejectedEntityInfo>,
     _request_id: Option<String>,
 }
@@ -26,7 +28,9 @@ impl PutLogEventsOutput {
     pub fn rejected_log_events_info(&self) -> ::std::option::Option<&crate::types::RejectedLogEventsInfo> {
         self.rejected_log_events_info.as_ref()
     }
-    /// <p>Reserved for internal use.</p>
+    /// <p>Information about why the entity is rejected when calling <code>PutLogEvents</code>. Only returned when the entity is rejected.</p><note>
+    /// <p>When the entity is rejected, the events may still be accepted.</p>
+    /// </note>
     pub fn rejected_entity_info(&self) -> ::std::option::Option<&crate::types::RejectedEntityInfo> {
         self.rejected_entity_info.as_ref()
     }
@@ -90,17 +94,23 @@ impl PutLogEventsOutputBuilder {
     pub fn get_rejected_log_events_info(&self) -> &::std::option::Option<crate::types::RejectedLogEventsInfo> {
         &self.rejected_log_events_info
     }
-    /// <p>Reserved for internal use.</p>
+    /// <p>Information about why the entity is rejected when calling <code>PutLogEvents</code>. Only returned when the entity is rejected.</p><note>
+    /// <p>When the entity is rejected, the events may still be accepted.</p>
+    /// </note>
     pub fn rejected_entity_info(mut self, input: crate::types::RejectedEntityInfo) -> Self {
         self.rejected_entity_info = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Reserved for internal use.</p>
+    /// <p>Information about why the entity is rejected when calling <code>PutLogEvents</code>. Only returned when the entity is rejected.</p><note>
+    /// <p>When the entity is rejected, the events may still be accepted.</p>
+    /// </note>
     pub fn set_rejected_entity_info(mut self, input: ::std::option::Option<crate::types::RejectedEntityInfo>) -> Self {
         self.rejected_entity_info = input;
         self
     }
-    /// <p>Reserved for internal use.</p>
+    /// <p>Information about why the entity is rejected when calling <code>PutLogEvents</code>. Only returned when the entity is rejected.</p><note>
+    /// <p>When the entity is rejected, the events may still be accepted.</p>
+    /// </note>
     pub fn get_rejected_entity_info(&self) -> &::std::option::Option<crate::types::RejectedEntityInfo> {
         &self.rejected_entity_info
     }

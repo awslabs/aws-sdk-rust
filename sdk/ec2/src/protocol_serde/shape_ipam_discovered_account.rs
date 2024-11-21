@@ -71,6 +71,19 @@ pub fn de_ipam_discovered_account(
                 builder = builder.set_last_successful_discovery_time(var_5);
             }
             ,
+            s if s.matches("organizationalUnitId") /* OrganizationalUnitId com.amazonaws.ec2#IpamDiscoveredAccount$OrganizationalUnitId */ =>  {
+                let var_6 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_organizational_unit_id(var_6);
+            }
+            ,
             _ => {}
         }
     }

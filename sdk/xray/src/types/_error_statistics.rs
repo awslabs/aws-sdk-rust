@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ErrorStatistics {
-    /// <p>The number of requests that failed with a 419 throttling status code.</p>
+    /// <p>The number of requests that failed with a 429 throttling status code.</p>
     pub throttle_count: ::std::option::Option<i64>,
     /// <p>The number of requests that failed with untracked 4xx Client Error status codes.</p>
     pub other_count: ::std::option::Option<i64>,
@@ -12,7 +12,7 @@ pub struct ErrorStatistics {
     pub total_count: ::std::option::Option<i64>,
 }
 impl ErrorStatistics {
-    /// <p>The number of requests that failed with a 419 throttling status code.</p>
+    /// <p>The number of requests that failed with a 429 throttling status code.</p>
     pub fn throttle_count(&self) -> ::std::option::Option<i64> {
         self.throttle_count
     }
@@ -41,17 +41,17 @@ pub struct ErrorStatisticsBuilder {
     pub(crate) total_count: ::std::option::Option<i64>,
 }
 impl ErrorStatisticsBuilder {
-    /// <p>The number of requests that failed with a 419 throttling status code.</p>
+    /// <p>The number of requests that failed with a 429 throttling status code.</p>
     pub fn throttle_count(mut self, input: i64) -> Self {
         self.throttle_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of requests that failed with a 419 throttling status code.</p>
+    /// <p>The number of requests that failed with a 429 throttling status code.</p>
     pub fn set_throttle_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.throttle_count = input;
         self
     }
-    /// <p>The number of requests that failed with a 419 throttling status code.</p>
+    /// <p>The number of requests that failed with a 429 throttling status code.</p>
     pub fn get_throttle_count(&self) -> &::std::option::Option<i64> {
         &self.throttle_count
     }

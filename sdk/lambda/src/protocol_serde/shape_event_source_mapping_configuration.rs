@@ -188,6 +188,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "MetricsConfig" => {
+                            builder = builder.set_metrics_config(
+                                crate::protocol_serde::shape_event_source_mapping_metrics_config::de_event_source_mapping_metrics_config(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -37,6 +37,8 @@ pub(crate) mod shape_create_documentation_version;
 
 pub(crate) mod shape_create_domain_name;
 
+pub(crate) mod shape_create_domain_name_access_association;
+
 pub(crate) mod shape_create_model;
 
 pub(crate) mod shape_create_request_validator;
@@ -68,6 +70,8 @@ pub(crate) mod shape_delete_documentation_part;
 pub(crate) mod shape_delete_documentation_version;
 
 pub(crate) mod shape_delete_domain_name;
+
+pub(crate) mod shape_delete_domain_name_access_association;
 
 pub(crate) mod shape_delete_gateway_response;
 
@@ -132,6 +136,8 @@ pub(crate) mod shape_get_documentation_version;
 pub(crate) mod shape_get_documentation_versions;
 
 pub(crate) mod shape_get_domain_name;
+
+pub(crate) mod shape_get_domain_name_access_associations;
 
 pub(crate) mod shape_get_domain_names;
 
@@ -219,6 +225,8 @@ pub(crate) mod shape_put_rest_api;
 
 pub(crate) mod shape_put_rest_api_input;
 
+pub(crate) mod shape_reject_domain_name_access_association;
+
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_test_invoke_authorizer;
@@ -294,6 +302,8 @@ pub(crate) mod shape_create_deployment_input;
 pub(crate) mod shape_create_documentation_part_input;
 
 pub(crate) mod shape_create_documentation_version_input;
+
+pub(crate) mod shape_create_domain_name_access_association_input;
 
 pub(crate) mod shape_create_domain_name_input;
 
@@ -423,6 +433,8 @@ pub(crate) mod shape_list_of_documentation_version;
 
 pub(crate) mod shape_list_of_domain_name;
 
+pub(crate) mod shape_list_of_domain_name_access_association;
+
 pub(crate) mod shape_list_of_gateway_response;
 
 pub(crate) mod shape_list_of_model;
@@ -494,6 +506,8 @@ pub(crate) mod shape_documentation_part;
 pub(crate) mod shape_documentation_version;
 
 pub(crate) mod shape_domain_name;
+
+pub(crate) mod shape_domain_name_access_association;
 
 pub(crate) mod shape_gateway_response;
 

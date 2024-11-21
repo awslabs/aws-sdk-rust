@@ -3,6 +3,14 @@ pub use crate::types::error::_object_already_in_active_tier_error::ObjectAlready
 
 pub use crate::types::error::_no_such_key::NoSuchKeyBuilder;
 
+pub use crate::types::error::_too_many_parts::TooManyPartsBuilder;
+
+pub use crate::types::error::_invalid_write_offset::InvalidWriteOffsetBuilder;
+
+pub use crate::types::error::_invalid_request::InvalidRequestBuilder;
+
+pub use crate::types::error::_encryption_type_mismatch::EncryptionTypeMismatchBuilder;
+
 pub use crate::types::error::_no_such_bucket::NoSuchBucketBuilder;
 
 pub use crate::types::error::_not_found::NotFoundBuilder;

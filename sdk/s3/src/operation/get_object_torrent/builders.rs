@@ -23,7 +23,7 @@ impl crate::operation::get_object_torrent::builders::GetObjectTorrentInputBuilde
 /// Fluent builder constructing a request to `GetObjectTorrent`.
 ///
 /// <note>
-/// <p>This operation is not supported by directory buckets.</p>
+/// <p>This operation is not supported for directory buckets.</p>
 /// </note>
 /// <p>Returns torrent files from a bucket. BitTorrent can save you bandwidth when you're distributing large files.</p><note>
 /// <p>You can get torrent only for objects that are less than 5 GB in size, and that are not encrypted using server-side encryption with a customer-provided encryption key.</p>

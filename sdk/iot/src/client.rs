@@ -180,6 +180,8 @@ mod create_certificate_from_csr;
 
 mod create_certificate_provider;
 
+mod create_command;
+
 mod create_custom_metric;
 
 mod create_dimension;
@@ -272,6 +274,10 @@ mod delete_ca_certificate;
 mod delete_certificate;
 
 mod delete_certificate_provider;
+
+mod delete_command;
+
+mod delete_command_execution;
 
 mod delete_custom_metric;
 
@@ -417,6 +423,10 @@ mod get_buckets_aggregation;
 
 mod get_cardinality;
 
+mod get_command;
+
+mod get_command_execution;
+
 mod get_effective_policies;
 
 mod get_indexing_configuration;
@@ -474,6 +484,10 @@ mod list_certificate_providers;
 mod list_certificates;
 
 mod list_certificates_by_ca;
+
+mod list_command_executions;
+
+mod list_commands;
 
 mod list_custom_metrics;
 
@@ -638,6 +652,8 @@ mod update_ca_certificate;
 mod update_certificate;
 
 mod update_certificate_provider;
+
+mod update_command;
 
 mod update_custom_metric;
 

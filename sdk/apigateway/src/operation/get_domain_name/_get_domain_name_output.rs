@@ -6,11 +6,15 @@
 pub struct GetDomainNameOutput {
     /// <p>The custom domain name as an API host name, for example, <code>my-api.example.com</code>.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the certificate that will be used by edge-optimized endpoint for this domain name.</p>
+    /// <p>The identifier for the domain name resource. Supported only for private custom domain names.</p>
+    pub domain_name_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of the domain name. Supported only for private custom domain names.</p>
+    pub domain_name_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the certificate that will be used by edge-optimized endpoint or private endpoint for this domain name.</p>
     pub certificate_name: ::std::option::Option<::std::string::String>,
-    /// <p>The reference to an Amazon Web Services-managed certificate that will be used by edge-optimized endpoint for this domain name. Certificate Manager is the only supported source.</p>
+    /// <p>The reference to an Amazon Web Services-managed certificate that will be used by edge-optimized endpoint or private endpoint for this domain name. Certificate Manager is the only supported source.</p>
     pub certificate_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded. API Gateway doesn't change this value if you update the certificate.</p>
+    /// <p>The timestamp when the certificate that was used by edge-optimized endpoint or private endpoint for this domain name was uploaded.</p>
     pub certificate_upload_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The domain name associated with the regional endpoint for this custom domain name. You set up this association by adding a DNS record that points the custom domain name to this regional domain name. The regional domain name is returned by API Gateway when you create a regional endpoint.</p>
     pub regional_domain_name: ::std::option::Option<::std::string::String>,
@@ -38,6 +42,10 @@ pub struct GetDomainNameOutput {
     pub mutual_tls_authentication: ::std::option::Option<crate::types::MutualTlsAuthentication>,
     /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn.</p>
     pub ownership_verification_certificate_arn: ::std::option::Option<::std::string::String>,
+    /// <p>A stringified JSON policy document that applies to the API Gateway Management service for this DomainName. This policy document controls access for access association sources to create domain name access associations with this DomainName. Supported only for private custom domain names.</p>
+    pub management_policy: ::std::option::Option<::std::string::String>,
+    /// <p>A stringified JSON policy document that applies to the <code>execute-api</code> service for this DomainName regardless of the caller and Method configuration. Supported only for private custom domain names.</p>
+    pub policy: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetDomainNameOutput {
@@ -45,15 +53,23 @@ impl GetDomainNameOutput {
     pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>The name of the certificate that will be used by edge-optimized endpoint for this domain name.</p>
+    /// <p>The identifier for the domain name resource. Supported only for private custom domain names.</p>
+    pub fn domain_name_id(&self) -> ::std::option::Option<&str> {
+        self.domain_name_id.as_deref()
+    }
+    /// <p>The ARN of the domain name. Supported only for private custom domain names.</p>
+    pub fn domain_name_arn(&self) -> ::std::option::Option<&str> {
+        self.domain_name_arn.as_deref()
+    }
+    /// <p>The name of the certificate that will be used by edge-optimized endpoint or private endpoint for this domain name.</p>
     pub fn certificate_name(&self) -> ::std::option::Option<&str> {
         self.certificate_name.as_deref()
     }
-    /// <p>The reference to an Amazon Web Services-managed certificate that will be used by edge-optimized endpoint for this domain name. Certificate Manager is the only supported source.</p>
+    /// <p>The reference to an Amazon Web Services-managed certificate that will be used by edge-optimized endpoint or private endpoint for this domain name. Certificate Manager is the only supported source.</p>
     pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
-    /// <p>The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded. API Gateway doesn't change this value if you update the certificate.</p>
+    /// <p>The timestamp when the certificate that was used by edge-optimized endpoint or private endpoint for this domain name was uploaded.</p>
     pub fn certificate_upload_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.certificate_upload_date.as_ref()
     }
@@ -109,6 +125,14 @@ impl GetDomainNameOutput {
     pub fn ownership_verification_certificate_arn(&self) -> ::std::option::Option<&str> {
         self.ownership_verification_certificate_arn.as_deref()
     }
+    /// <p>A stringified JSON policy document that applies to the API Gateway Management service for this DomainName. This policy document controls access for access association sources to create domain name access associations with this DomainName. Supported only for private custom domain names.</p>
+    pub fn management_policy(&self) -> ::std::option::Option<&str> {
+        self.management_policy.as_deref()
+    }
+    /// <p>A stringified JSON policy document that applies to the <code>execute-api</code> service for this DomainName regardless of the caller and Method configuration. Supported only for private custom domain names.</p>
+    pub fn policy(&self) -> ::std::option::Option<&str> {
+        self.policy.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetDomainNameOutput {
     fn request_id(&self) -> Option<&str> {
@@ -127,6 +151,8 @@ impl GetDomainNameOutput {
 #[non_exhaustive]
 pub struct GetDomainNameOutputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
+    pub(crate) domain_name_id: ::std::option::Option<::std::string::String>,
+    pub(crate) domain_name_arn: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_name: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_upload_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -143,6 +169,8 @@ pub struct GetDomainNameOutputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) mutual_tls_authentication: ::std::option::Option<crate::types::MutualTlsAuthentication>,
     pub(crate) ownership_verification_certificate_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) management_policy: ::std::option::Option<::std::string::String>,
+    pub(crate) policy: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetDomainNameOutputBuilder {
@@ -160,45 +188,73 @@ impl GetDomainNameOutputBuilder {
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_name
     }
-    /// <p>The name of the certificate that will be used by edge-optimized endpoint for this domain name.</p>
+    /// <p>The identifier for the domain name resource. Supported only for private custom domain names.</p>
+    pub fn domain_name_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_name_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier for the domain name resource. Supported only for private custom domain names.</p>
+    pub fn set_domain_name_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.domain_name_id = input;
+        self
+    }
+    /// <p>The identifier for the domain name resource. Supported only for private custom domain names.</p>
+    pub fn get_domain_name_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name_id
+    }
+    /// <p>The ARN of the domain name. Supported only for private custom domain names.</p>
+    pub fn domain_name_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_name_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the domain name. Supported only for private custom domain names.</p>
+    pub fn set_domain_name_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.domain_name_arn = input;
+        self
+    }
+    /// <p>The ARN of the domain name. Supported only for private custom domain names.</p>
+    pub fn get_domain_name_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name_arn
+    }
+    /// <p>The name of the certificate that will be used by edge-optimized endpoint or private endpoint for this domain name.</p>
     pub fn certificate_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the certificate that will be used by edge-optimized endpoint for this domain name.</p>
+    /// <p>The name of the certificate that will be used by edge-optimized endpoint or private endpoint for this domain name.</p>
     pub fn set_certificate_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_name = input;
         self
     }
-    /// <p>The name of the certificate that will be used by edge-optimized endpoint for this domain name.</p>
+    /// <p>The name of the certificate that will be used by edge-optimized endpoint or private endpoint for this domain name.</p>
     pub fn get_certificate_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_name
     }
-    /// <p>The reference to an Amazon Web Services-managed certificate that will be used by edge-optimized endpoint for this domain name. Certificate Manager is the only supported source.</p>
+    /// <p>The reference to an Amazon Web Services-managed certificate that will be used by edge-optimized endpoint or private endpoint for this domain name. Certificate Manager is the only supported source.</p>
     pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The reference to an Amazon Web Services-managed certificate that will be used by edge-optimized endpoint for this domain name. Certificate Manager is the only supported source.</p>
+    /// <p>The reference to an Amazon Web Services-managed certificate that will be used by edge-optimized endpoint or private endpoint for this domain name. Certificate Manager is the only supported source.</p>
     pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_arn = input;
         self
     }
-    /// <p>The reference to an Amazon Web Services-managed certificate that will be used by edge-optimized endpoint for this domain name. Certificate Manager is the only supported source.</p>
+    /// <p>The reference to an Amazon Web Services-managed certificate that will be used by edge-optimized endpoint or private endpoint for this domain name. Certificate Manager is the only supported source.</p>
     pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_arn
     }
-    /// <p>The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded. API Gateway doesn't change this value if you update the certificate.</p>
+    /// <p>The timestamp when the certificate that was used by edge-optimized endpoint or private endpoint for this domain name was uploaded.</p>
     pub fn certificate_upload_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.certificate_upload_date = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded. API Gateway doesn't change this value if you update the certificate.</p>
+    /// <p>The timestamp when the certificate that was used by edge-optimized endpoint or private endpoint for this domain name was uploaded.</p>
     pub fn set_certificate_upload_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.certificate_upload_date = input;
         self
     }
-    /// <p>The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded. API Gateway doesn't change this value if you update the certificate.</p>
+    /// <p>The timestamp when the certificate that was used by edge-optimized endpoint or private endpoint for this domain name was uploaded.</p>
     pub fn get_certificate_upload_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.certificate_upload_date
     }
@@ -390,6 +446,34 @@ impl GetDomainNameOutputBuilder {
     pub fn get_ownership_verification_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.ownership_verification_certificate_arn
     }
+    /// <p>A stringified JSON policy document that applies to the API Gateway Management service for this DomainName. This policy document controls access for access association sources to create domain name access associations with this DomainName. Supported only for private custom domain names.</p>
+    pub fn management_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.management_policy = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A stringified JSON policy document that applies to the API Gateway Management service for this DomainName. This policy document controls access for access association sources to create domain name access associations with this DomainName. Supported only for private custom domain names.</p>
+    pub fn set_management_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.management_policy = input;
+        self
+    }
+    /// <p>A stringified JSON policy document that applies to the API Gateway Management service for this DomainName. This policy document controls access for access association sources to create domain name access associations with this DomainName. Supported only for private custom domain names.</p>
+    pub fn get_management_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.management_policy
+    }
+    /// <p>A stringified JSON policy document that applies to the <code>execute-api</code> service for this DomainName regardless of the caller and Method configuration. Supported only for private custom domain names.</p>
+    pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.policy = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A stringified JSON policy document that applies to the <code>execute-api</code> service for this DomainName regardless of the caller and Method configuration. Supported only for private custom domain names.</p>
+    pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.policy = input;
+        self
+    }
+    /// <p>A stringified JSON policy document that applies to the <code>execute-api</code> service for this DomainName regardless of the caller and Method configuration. Supported only for private custom domain names.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -403,6 +487,8 @@ impl GetDomainNameOutputBuilder {
     pub fn build(self) -> crate::operation::get_domain_name::GetDomainNameOutput {
         crate::operation::get_domain_name::GetDomainNameOutput {
             domain_name: self.domain_name,
+            domain_name_id: self.domain_name_id,
+            domain_name_arn: self.domain_name_arn,
             certificate_name: self.certificate_name,
             certificate_arn: self.certificate_arn,
             certificate_upload_date: self.certificate_upload_date,
@@ -419,6 +505,8 @@ impl GetDomainNameOutputBuilder {
             tags: self.tags,
             mutual_tls_authentication: self.mutual_tls_authentication,
             ownership_verification_certificate_arn: self.ownership_verification_certificate_arn,
+            management_policy: self.management_policy,
+            policy: self.policy,
             _request_id: self._request_id,
         }
     }

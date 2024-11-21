@@ -10,6 +10,47 @@ pub struct ListenerAttribute {
     /// <li>
     /// <p><code>tcp.idle_timeout.seconds</code> - The tcp idle timeout value, in seconds. The valid range is 60-6000 seconds. The default is 350 seconds.</p></li>
     /// </ul>
+    /// <p>The following attributes are only supported by Application Load Balancers.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>routing.http.request.x_amzn_mtls_clientcert_serial_number.header_name</code> - Enables you to modify the header name of the <b>X-Amzn-Mtls-Clientcert-Serial-Number</b> HTTP request header.</p></li>
+    /// <li>
+    /// <p><code>routing.http.request.x_amzn_mtls_clientcert_issuer.header_name</code> - Enables you to modify the header name of the <b>X-Amzn-Mtls-Clientcert-Issuer</b> HTTP request header.</p></li>
+    /// <li>
+    /// <p><code>routing.http.request.x_amzn_mtls_clientcert_subject.header_name</code> - Enables you to modify the header name of the <b>X-Amzn-Mtls-Clientcert-Subject</b> HTTP request header.</p></li>
+    /// <li>
+    /// <p><code>routing.http.request.x_amzn_mtls_clientcert_validity.header_name</code> - Enables you to modify the header name of the <b>X-Amzn-Mtls-Clientcert-Validity</b> HTTP request header.</p></li>
+    /// <li>
+    /// <p><code>routing.http.request.x_amzn_mtls_clientcert_leaf.header_name</code> - Enables you to modify the header name of the <b>X-Amzn-Mtls-Clientcert-Leaf</b> HTTP request header.</p></li>
+    /// <li>
+    /// <p><code>routing.http.request.x_amzn_mtls_clientcert.header_name</code> - Enables you to modify the header name of the <b>X-Amzn-Mtls-Clientcert</b> HTTP request header.</p></li>
+    /// <li>
+    /// <p><code>routing.http.request.x_amzn_tls_version.header_name</code> - Enables you to modify the header name of the <b>X-Amzn-Tls-Version</b> HTTP request header.</p></li>
+    /// <li>
+    /// <p><code>routing.http.request.x_amzn_tls_cipher_suite.header_name</code> - Enables you to modify the header name of the <b>X-Amzn-Tls-Cipher-Suite</b> HTTP request header.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.server.enabled</code> - Enables you to allow or remove the HTTP response server header.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.strict_transport_security.header_value</code> - Informs browsers that the site should only be accessed using HTTPS, and that any future attempts to access it using HTTP should automatically be converted to HTTPS.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.access_control_allow_origin.header_value</code> - Specifies which origins are allowed to access the server.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.access_control_allow_methods.header_value</code> - Returns which HTTP methods are allowed when accessing the server from a different origin.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.access_control_allow_headers.header_value</code> - Specifies which headers can be used during the request.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.access_control_allow_credentials.header_value</code> - Indicates whether the browser should include credentials such as cookies or authentication when making requests.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.access_control_expose_headers.header_value</code> - Returns which headers the browser can expose to the requesting client.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.access_control_max_age.header_value</code> - Specifies how long the results of a preflight request can be cached, in seconds.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.content_security_policy.header_value</code> - Specifies restrictions enforced by the browser to help minimize the risk of certain types of security threats.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.x_content_type_options.header_value</code> - Indicates whether the MIME types advertised in the <b>Content-Type</b> headers should be followed and not be changed.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.x_frame_options.header_value</code> - Indicates whether the browser is allowed to render a page in a <b>frame</b>, <b>iframe</b>, <b>embed</b> or <b>object</b>.</p></li>
+    /// </ul>
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The value of the attribute.</p>
     pub value: ::std::option::Option<::std::string::String>,
@@ -20,6 +61,47 @@ impl ListenerAttribute {
     /// <ul>
     /// <li>
     /// <p><code>tcp.idle_timeout.seconds</code> - The tcp idle timeout value, in seconds. The valid range is 60-6000 seconds. The default is 350 seconds.</p></li>
+    /// </ul>
+    /// <p>The following attributes are only supported by Application Load Balancers.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>routing.http.request.x_amzn_mtls_clientcert_serial_number.header_name</code> - Enables you to modify the header name of the <b>X-Amzn-Mtls-Clientcert-Serial-Number</b> HTTP request header.</p></li>
+    /// <li>
+    /// <p><code>routing.http.request.x_amzn_mtls_clientcert_issuer.header_name</code> - Enables you to modify the header name of the <b>X-Amzn-Mtls-Clientcert-Issuer</b> HTTP request header.</p></li>
+    /// <li>
+    /// <p><code>routing.http.request.x_amzn_mtls_clientcert_subject.header_name</code> - Enables you to modify the header name of the <b>X-Amzn-Mtls-Clientcert-Subject</b> HTTP request header.</p></li>
+    /// <li>
+    /// <p><code>routing.http.request.x_amzn_mtls_clientcert_validity.header_name</code> - Enables you to modify the header name of the <b>X-Amzn-Mtls-Clientcert-Validity</b> HTTP request header.</p></li>
+    /// <li>
+    /// <p><code>routing.http.request.x_amzn_mtls_clientcert_leaf.header_name</code> - Enables you to modify the header name of the <b>X-Amzn-Mtls-Clientcert-Leaf</b> HTTP request header.</p></li>
+    /// <li>
+    /// <p><code>routing.http.request.x_amzn_mtls_clientcert.header_name</code> - Enables you to modify the header name of the <b>X-Amzn-Mtls-Clientcert</b> HTTP request header.</p></li>
+    /// <li>
+    /// <p><code>routing.http.request.x_amzn_tls_version.header_name</code> - Enables you to modify the header name of the <b>X-Amzn-Tls-Version</b> HTTP request header.</p></li>
+    /// <li>
+    /// <p><code>routing.http.request.x_amzn_tls_cipher_suite.header_name</code> - Enables you to modify the header name of the <b>X-Amzn-Tls-Cipher-Suite</b> HTTP request header.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.server.enabled</code> - Enables you to allow or remove the HTTP response server header.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.strict_transport_security.header_value</code> - Informs browsers that the site should only be accessed using HTTPS, and that any future attempts to access it using HTTP should automatically be converted to HTTPS.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.access_control_allow_origin.header_value</code> - Specifies which origins are allowed to access the server.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.access_control_allow_methods.header_value</code> - Returns which HTTP methods are allowed when accessing the server from a different origin.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.access_control_allow_headers.header_value</code> - Specifies which headers can be used during the request.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.access_control_allow_credentials.header_value</code> - Indicates whether the browser should include credentials such as cookies or authentication when making requests.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.access_control_expose_headers.header_value</code> - Returns which headers the browser can expose to the requesting client.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.access_control_max_age.header_value</code> - Specifies how long the results of a preflight request can be cached, in seconds.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.content_security_policy.header_value</code> - Specifies restrictions enforced by the browser to help minimize the risk of certain types of security threats.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.x_content_type_options.header_value</code> - Indicates whether the MIME types advertised in the <b>Content-Type</b> headers should be followed and not be changed.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.x_frame_options.header_value</code> - Indicates whether the browser is allowed to render a page in a <b>frame</b>, <b>iframe</b>, <b>embed</b> or <b>object</b>.</p></li>
     /// </ul>
     pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
@@ -50,6 +132,47 @@ impl ListenerAttributeBuilder {
     /// <li>
     /// <p><code>tcp.idle_timeout.seconds</code> - The tcp idle timeout value, in seconds. The valid range is 60-6000 seconds. The default is 350 seconds.</p></li>
     /// </ul>
+    /// <p>The following attributes are only supported by Application Load Balancers.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>routing.http.request.x_amzn_mtls_clientcert_serial_number.header_name</code> - Enables you to modify the header name of the <b>X-Amzn-Mtls-Clientcert-Serial-Number</b> HTTP request header.</p></li>
+    /// <li>
+    /// <p><code>routing.http.request.x_amzn_mtls_clientcert_issuer.header_name</code> - Enables you to modify the header name of the <b>X-Amzn-Mtls-Clientcert-Issuer</b> HTTP request header.</p></li>
+    /// <li>
+    /// <p><code>routing.http.request.x_amzn_mtls_clientcert_subject.header_name</code> - Enables you to modify the header name of the <b>X-Amzn-Mtls-Clientcert-Subject</b> HTTP request header.</p></li>
+    /// <li>
+    /// <p><code>routing.http.request.x_amzn_mtls_clientcert_validity.header_name</code> - Enables you to modify the header name of the <b>X-Amzn-Mtls-Clientcert-Validity</b> HTTP request header.</p></li>
+    /// <li>
+    /// <p><code>routing.http.request.x_amzn_mtls_clientcert_leaf.header_name</code> - Enables you to modify the header name of the <b>X-Amzn-Mtls-Clientcert-Leaf</b> HTTP request header.</p></li>
+    /// <li>
+    /// <p><code>routing.http.request.x_amzn_mtls_clientcert.header_name</code> - Enables you to modify the header name of the <b>X-Amzn-Mtls-Clientcert</b> HTTP request header.</p></li>
+    /// <li>
+    /// <p><code>routing.http.request.x_amzn_tls_version.header_name</code> - Enables you to modify the header name of the <b>X-Amzn-Tls-Version</b> HTTP request header.</p></li>
+    /// <li>
+    /// <p><code>routing.http.request.x_amzn_tls_cipher_suite.header_name</code> - Enables you to modify the header name of the <b>X-Amzn-Tls-Cipher-Suite</b> HTTP request header.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.server.enabled</code> - Enables you to allow or remove the HTTP response server header.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.strict_transport_security.header_value</code> - Informs browsers that the site should only be accessed using HTTPS, and that any future attempts to access it using HTTP should automatically be converted to HTTPS.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.access_control_allow_origin.header_value</code> - Specifies which origins are allowed to access the server.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.access_control_allow_methods.header_value</code> - Returns which HTTP methods are allowed when accessing the server from a different origin.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.access_control_allow_headers.header_value</code> - Specifies which headers can be used during the request.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.access_control_allow_credentials.header_value</code> - Indicates whether the browser should include credentials such as cookies or authentication when making requests.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.access_control_expose_headers.header_value</code> - Returns which headers the browser can expose to the requesting client.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.access_control_max_age.header_value</code> - Specifies how long the results of a preflight request can be cached, in seconds.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.content_security_policy.header_value</code> - Specifies restrictions enforced by the browser to help minimize the risk of certain types of security threats.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.x_content_type_options.header_value</code> - Indicates whether the MIME types advertised in the <b>Content-Type</b> headers should be followed and not be changed.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.x_frame_options.header_value</code> - Indicates whether the browser is allowed to render a page in a <b>frame</b>, <b>iframe</b>, <b>embed</b> or <b>object</b>.</p></li>
+    /// </ul>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -60,6 +183,47 @@ impl ListenerAttributeBuilder {
     /// <li>
     /// <p><code>tcp.idle_timeout.seconds</code> - The tcp idle timeout value, in seconds. The valid range is 60-6000 seconds. The default is 350 seconds.</p></li>
     /// </ul>
+    /// <p>The following attributes are only supported by Application Load Balancers.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>routing.http.request.x_amzn_mtls_clientcert_serial_number.header_name</code> - Enables you to modify the header name of the <b>X-Amzn-Mtls-Clientcert-Serial-Number</b> HTTP request header.</p></li>
+    /// <li>
+    /// <p><code>routing.http.request.x_amzn_mtls_clientcert_issuer.header_name</code> - Enables you to modify the header name of the <b>X-Amzn-Mtls-Clientcert-Issuer</b> HTTP request header.</p></li>
+    /// <li>
+    /// <p><code>routing.http.request.x_amzn_mtls_clientcert_subject.header_name</code> - Enables you to modify the header name of the <b>X-Amzn-Mtls-Clientcert-Subject</b> HTTP request header.</p></li>
+    /// <li>
+    /// <p><code>routing.http.request.x_amzn_mtls_clientcert_validity.header_name</code> - Enables you to modify the header name of the <b>X-Amzn-Mtls-Clientcert-Validity</b> HTTP request header.</p></li>
+    /// <li>
+    /// <p><code>routing.http.request.x_amzn_mtls_clientcert_leaf.header_name</code> - Enables you to modify the header name of the <b>X-Amzn-Mtls-Clientcert-Leaf</b> HTTP request header.</p></li>
+    /// <li>
+    /// <p><code>routing.http.request.x_amzn_mtls_clientcert.header_name</code> - Enables you to modify the header name of the <b>X-Amzn-Mtls-Clientcert</b> HTTP request header.</p></li>
+    /// <li>
+    /// <p><code>routing.http.request.x_amzn_tls_version.header_name</code> - Enables you to modify the header name of the <b>X-Amzn-Tls-Version</b> HTTP request header.</p></li>
+    /// <li>
+    /// <p><code>routing.http.request.x_amzn_tls_cipher_suite.header_name</code> - Enables you to modify the header name of the <b>X-Amzn-Tls-Cipher-Suite</b> HTTP request header.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.server.enabled</code> - Enables you to allow or remove the HTTP response server header.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.strict_transport_security.header_value</code> - Informs browsers that the site should only be accessed using HTTPS, and that any future attempts to access it using HTTP should automatically be converted to HTTPS.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.access_control_allow_origin.header_value</code> - Specifies which origins are allowed to access the server.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.access_control_allow_methods.header_value</code> - Returns which HTTP methods are allowed when accessing the server from a different origin.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.access_control_allow_headers.header_value</code> - Specifies which headers can be used during the request.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.access_control_allow_credentials.header_value</code> - Indicates whether the browser should include credentials such as cookies or authentication when making requests.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.access_control_expose_headers.header_value</code> - Returns which headers the browser can expose to the requesting client.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.access_control_max_age.header_value</code> - Specifies how long the results of a preflight request can be cached, in seconds.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.content_security_policy.header_value</code> - Specifies restrictions enforced by the browser to help minimize the risk of certain types of security threats.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.x_content_type_options.header_value</code> - Indicates whether the MIME types advertised in the <b>Content-Type</b> headers should be followed and not be changed.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.x_frame_options.header_value</code> - Indicates whether the browser is allowed to render a page in a <b>frame</b>, <b>iframe</b>, <b>embed</b> or <b>object</b>.</p></li>
+    /// </ul>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
@@ -69,6 +233,47 @@ impl ListenerAttributeBuilder {
     /// <ul>
     /// <li>
     /// <p><code>tcp.idle_timeout.seconds</code> - The tcp idle timeout value, in seconds. The valid range is 60-6000 seconds. The default is 350 seconds.</p></li>
+    /// </ul>
+    /// <p>The following attributes are only supported by Application Load Balancers.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>routing.http.request.x_amzn_mtls_clientcert_serial_number.header_name</code> - Enables you to modify the header name of the <b>X-Amzn-Mtls-Clientcert-Serial-Number</b> HTTP request header.</p></li>
+    /// <li>
+    /// <p><code>routing.http.request.x_amzn_mtls_clientcert_issuer.header_name</code> - Enables you to modify the header name of the <b>X-Amzn-Mtls-Clientcert-Issuer</b> HTTP request header.</p></li>
+    /// <li>
+    /// <p><code>routing.http.request.x_amzn_mtls_clientcert_subject.header_name</code> - Enables you to modify the header name of the <b>X-Amzn-Mtls-Clientcert-Subject</b> HTTP request header.</p></li>
+    /// <li>
+    /// <p><code>routing.http.request.x_amzn_mtls_clientcert_validity.header_name</code> - Enables you to modify the header name of the <b>X-Amzn-Mtls-Clientcert-Validity</b> HTTP request header.</p></li>
+    /// <li>
+    /// <p><code>routing.http.request.x_amzn_mtls_clientcert_leaf.header_name</code> - Enables you to modify the header name of the <b>X-Amzn-Mtls-Clientcert-Leaf</b> HTTP request header.</p></li>
+    /// <li>
+    /// <p><code>routing.http.request.x_amzn_mtls_clientcert.header_name</code> - Enables you to modify the header name of the <b>X-Amzn-Mtls-Clientcert</b> HTTP request header.</p></li>
+    /// <li>
+    /// <p><code>routing.http.request.x_amzn_tls_version.header_name</code> - Enables you to modify the header name of the <b>X-Amzn-Tls-Version</b> HTTP request header.</p></li>
+    /// <li>
+    /// <p><code>routing.http.request.x_amzn_tls_cipher_suite.header_name</code> - Enables you to modify the header name of the <b>X-Amzn-Tls-Cipher-Suite</b> HTTP request header.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.server.enabled</code> - Enables you to allow or remove the HTTP response server header.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.strict_transport_security.header_value</code> - Informs browsers that the site should only be accessed using HTTPS, and that any future attempts to access it using HTTP should automatically be converted to HTTPS.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.access_control_allow_origin.header_value</code> - Specifies which origins are allowed to access the server.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.access_control_allow_methods.header_value</code> - Returns which HTTP methods are allowed when accessing the server from a different origin.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.access_control_allow_headers.header_value</code> - Specifies which headers can be used during the request.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.access_control_allow_credentials.header_value</code> - Indicates whether the browser should include credentials such as cookies or authentication when making requests.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.access_control_expose_headers.header_value</code> - Returns which headers the browser can expose to the requesting client.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.access_control_max_age.header_value</code> - Specifies how long the results of a preflight request can be cached, in seconds.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.content_security_policy.header_value</code> - Specifies restrictions enforced by the browser to help minimize the risk of certain types of security threats.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.x_content_type_options.header_value</code> - Indicates whether the MIME types advertised in the <b>Content-Type</b> headers should be followed and not be changed.</p></li>
+    /// <li>
+    /// <p><code>routing.http.response.x_frame_options.header_value</code> - Indicates whether the browser is allowed to render a page in a <b>frame</b>, <b>iframe</b>, <b>embed</b> or <b>object</b>.</p></li>
     /// </ul>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.key

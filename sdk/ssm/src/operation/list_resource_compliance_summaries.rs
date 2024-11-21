@@ -260,7 +260,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListResourceC
 pub enum ListResourceComplianceSummariesError {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::types::error::InternalServerError),
-    /// <p>The filter name isn't valid. Verify the you entered the correct name and try again.</p>
+    /// <p>The filter name isn't valid. Verify that you entered the correct name and try again.</p>
     InvalidFilter(crate::types::error::InvalidFilter),
     /// <p>The specified token isn't valid.</p>
     InvalidNextToken(crate::types::error::InvalidNextToken),

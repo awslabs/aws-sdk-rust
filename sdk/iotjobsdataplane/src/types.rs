@@ -5,7 +5,11 @@ pub use crate::types::_job_execution_status::JobExecutionStatus;
 
 pub use crate::types::_job_execution::JobExecution;
 
+pub use crate::types::_command_parameter_value::CommandParameterValue;
+
 pub use crate::types::_job_execution_summary::JobExecutionSummary;
+
+mod _command_parameter_value;
 
 mod _job_execution;
 

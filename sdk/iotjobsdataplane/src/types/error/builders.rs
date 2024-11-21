@@ -11,4 +11,12 @@ pub use crate::types::error::_invalid_request_exception::InvalidRequestException
 
 pub use crate::types::error::_certificate_validation_exception::CertificateValidationExceptionBuilder;
 
+pub use crate::types::error::_validation_exception::ValidationExceptionBuilder;
+
+pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededExceptionBuilder;
+
+pub use crate::types::error::_internal_server_exception::InternalServerExceptionBuilder;
+
+pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;
+
 pub use crate::types::error::_terminal_state_exception::TerminalStateExceptionBuilder;

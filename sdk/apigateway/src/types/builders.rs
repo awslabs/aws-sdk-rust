@@ -55,6 +55,8 @@ pub use crate::types::_gateway_response::GatewayResponseBuilder;
 
 pub use crate::types::_domain_name::DomainNameBuilder;
 
+pub use crate::types::_domain_name_access_association::DomainNameAccessAssociationBuilder;
+
 pub use crate::types::_documentation_version::DocumentationVersionBuilder;
 
 pub use crate::types::_documentation_part::DocumentationPartBuilder;

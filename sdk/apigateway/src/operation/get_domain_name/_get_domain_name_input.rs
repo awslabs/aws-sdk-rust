@@ -6,11 +6,17 @@
 pub struct GetDomainNameInput {
     /// <p>The name of the DomainName resource.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
+    /// <p>The identifier for the domain name resource. Supported only for private custom domain names.</p>
+    pub domain_name_id: ::std::option::Option<::std::string::String>,
 }
 impl GetDomainNameInput {
     /// <p>The name of the DomainName resource.</p>
     pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
+    }
+    /// <p>The identifier for the domain name resource. Supported only for private custom domain names.</p>
+    pub fn domain_name_id(&self) -> ::std::option::Option<&str> {
+        self.domain_name_id.as_deref()
     }
 }
 impl GetDomainNameInput {
@@ -25,6 +31,7 @@ impl GetDomainNameInput {
 #[non_exhaustive]
 pub struct GetDomainNameInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
+    pub(crate) domain_name_id: ::std::option::Option<::std::string::String>,
 }
 impl GetDomainNameInputBuilder {
     /// <p>The name of the DomainName resource.</p>
@@ -42,12 +49,27 @@ impl GetDomainNameInputBuilder {
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_name
     }
+    /// <p>The identifier for the domain name resource. Supported only for private custom domain names.</p>
+    pub fn domain_name_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_name_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier for the domain name resource. Supported only for private custom domain names.</p>
+    pub fn set_domain_name_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.domain_name_id = input;
+        self
+    }
+    /// <p>The identifier for the domain name resource. Supported only for private custom domain names.</p>
+    pub fn get_domain_name_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name_id
+    }
     /// Consumes the builder and constructs a [`GetDomainNameInput`](crate::operation::get_domain_name::GetDomainNameInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_domain_name::GetDomainNameInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_domain_name::GetDomainNameInput {
             domain_name: self.domain_name,
+            domain_name_id: self.domain_name_id,
         })
     }
 }

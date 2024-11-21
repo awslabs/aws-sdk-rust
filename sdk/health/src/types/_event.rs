@@ -16,7 +16,7 @@ pub struct Event {
     /// <p>For example, an event ARN might look like the following:</p>
     /// <p><code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code></p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Web Service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
+    /// <p>The Amazon Web Services service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
     pub service: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the event type. The format is <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>
     pub event_type_code: ::std::option::Option<::std::string::String>,
@@ -34,7 +34,7 @@ pub struct Event {
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The most recent status of the event. Possible values are <code>open</code>, <code>closed</code>, and <code>upcoming</code>.</p>
     pub status_code: ::std::option::Option<crate::types::EventStatusCode>,
-    /// <p>This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific event.</p>
+    /// <p>This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific event.</p>
     /// <ul>
     /// <li>
     /// <p>If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is always empty.</p></li>
@@ -52,7 +52,7 @@ impl Event {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The Amazon Web Service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
+    /// <p>The Amazon Web Services service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
     pub fn service(&self) -> ::std::option::Option<&str> {
         self.service.as_deref()
     }
@@ -88,7 +88,7 @@ impl Event {
     pub fn status_code(&self) -> ::std::option::Option<&crate::types::EventStatusCode> {
         self.status_code.as_ref()
     }
-    /// <p>This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific event.</p>
+    /// <p>This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific event.</p>
     /// <ul>
     /// <li>
     /// <p>If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is always empty.</p></li>
@@ -145,17 +145,17 @@ impl EventBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>The Amazon Web Service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
+    /// <p>The Amazon Web Services service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
     pub fn service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Web Service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
+    /// <p>The Amazon Web Services service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
     pub fn set_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service = input;
         self
     }
-    /// <p>The Amazon Web Service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
+    /// <p>The Amazon Web Services service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
     pub fn get_service(&self) -> &::std::option::Option<::std::string::String> {
         &self.service
     }
@@ -271,7 +271,7 @@ impl EventBuilder {
     pub fn get_status_code(&self) -> &::std::option::Option<crate::types::EventStatusCode> {
         &self.status_code
     }
-    /// <p>This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific event.</p>
+    /// <p>This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific event.</p>
     /// <ul>
     /// <li>
     /// <p>If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is always empty.</p></li>
@@ -284,7 +284,7 @@ impl EventBuilder {
         self.event_scope_code = ::std::option::Option::Some(input);
         self
     }
-    /// <p>This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific event.</p>
+    /// <p>This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific event.</p>
     /// <ul>
     /// <li>
     /// <p>If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is always empty.</p></li>
@@ -297,7 +297,7 @@ impl EventBuilder {
         self.event_scope_code = input;
         self
     }
-    /// <p>This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific event.</p>
+    /// <p>This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific event.</p>
     /// <ul>
     /// <li>
     /// <p>If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is always empty.</p></li>

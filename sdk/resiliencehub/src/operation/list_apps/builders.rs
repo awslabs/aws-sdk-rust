@@ -164,31 +164,31 @@ impl ListAppsFluentBuilder {
     pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_app_arn()
     }
-    /// <p>Indicates the lower limit of the range that is used to filter applications based on their last assessment times.</p>
+    /// <p>Lower limit of the range that is used to filter applications based on their last assessment times.</p>
     pub fn from_last_assessment_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.from_last_assessment_time(input);
         self
     }
-    /// <p>Indicates the lower limit of the range that is used to filter applications based on their last assessment times.</p>
+    /// <p>Lower limit of the range that is used to filter applications based on their last assessment times.</p>
     pub fn set_from_last_assessment_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_from_last_assessment_time(input);
         self
     }
-    /// <p>Indicates the lower limit of the range that is used to filter applications based on their last assessment times.</p>
+    /// <p>Lower limit of the range that is used to filter applications based on their last assessment times.</p>
     pub fn get_from_last_assessment_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_from_last_assessment_time()
     }
-    /// <p>Indicates the upper limit of the range that is used to filter the applications based on their last assessment times.</p>
+    /// <p>Upper limit of the range that is used to filter the applications based on their last assessment times.</p>
     pub fn to_last_assessment_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.to_last_assessment_time(input);
         self
     }
-    /// <p>Indicates the upper limit of the range that is used to filter the applications based on their last assessment times.</p>
+    /// <p>Upper limit of the range that is used to filter the applications based on their last assessment times.</p>
     pub fn set_to_last_assessment_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_to_last_assessment_time(input);
         self
     }
-    /// <p>Indicates the upper limit of the range that is used to filter the applications based on their last assessment times.</p>
+    /// <p>Upper limit of the range that is used to filter the applications based on their last assessment times.</p>
     pub fn get_to_last_assessment_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_to_last_assessment_time()
     }

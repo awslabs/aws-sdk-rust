@@ -14,6 +14,7 @@
 /// match signaldecoderfailurereason {
 ///     SignalDecoderFailureReason::CanSignalInfoIsNull => { /* ... */ },
 ///     SignalDecoderFailureReason::ConflictingSignal => { /* ... */ },
+///     SignalDecoderFailureReason::CustomDecodingSignalInfoIsNull => { /* ... */ },
 ///     SignalDecoderFailureReason::DuplicateSignal => { /* ... */ },
 ///     SignalDecoderFailureReason::EmptyMessageSignal => { /* ... */ },
 ///     SignalDecoderFailureReason::MessageSignalInfoIsNull => { /* ... */ },
@@ -59,6 +60,8 @@ pub enum SignalDecoderFailureReason {
     #[allow(missing_docs)] // documentation missing in model
     ConflictingSignal,
     #[allow(missing_docs)] // documentation missing in model
+    CustomDecodingSignalInfoIsNull,
+    #[allow(missing_docs)] // documentation missing in model
     DuplicateSignal,
     #[allow(missing_docs)] // documentation missing in model
     EmptyMessageSignal,
@@ -93,6 +96,7 @@ impl ::std::convert::From<&str> for SignalDecoderFailureReason {
         match s {
             "CAN_SIGNAL_INFO_IS_NULL" => SignalDecoderFailureReason::CanSignalInfoIsNull,
             "CONFLICTING_SIGNAL" => SignalDecoderFailureReason::ConflictingSignal,
+            "CUSTOM_DECODING_SIGNAL_INFO_IS_NULL" => SignalDecoderFailureReason::CustomDecodingSignalInfoIsNull,
             "DUPLICATE_SIGNAL" => SignalDecoderFailureReason::DuplicateSignal,
             "EMPTY_MESSAGE_SIGNAL" => SignalDecoderFailureReason::EmptyMessageSignal,
             "MESSAGE_SIGNAL_INFO_IS_NULL" => SignalDecoderFailureReason::MessageSignalInfoIsNull,
@@ -127,6 +131,7 @@ impl SignalDecoderFailureReason {
         match self {
             SignalDecoderFailureReason::CanSignalInfoIsNull => "CAN_SIGNAL_INFO_IS_NULL",
             SignalDecoderFailureReason::ConflictingSignal => "CONFLICTING_SIGNAL",
+            SignalDecoderFailureReason::CustomDecodingSignalInfoIsNull => "CUSTOM_DECODING_SIGNAL_INFO_IS_NULL",
             SignalDecoderFailureReason::DuplicateSignal => "DUPLICATE_SIGNAL",
             SignalDecoderFailureReason::EmptyMessageSignal => "EMPTY_MESSAGE_SIGNAL",
             SignalDecoderFailureReason::MessageSignalInfoIsNull => "MESSAGE_SIGNAL_INFO_IS_NULL",
@@ -152,6 +157,7 @@ impl SignalDecoderFailureReason {
         &[
             "CAN_SIGNAL_INFO_IS_NULL",
             "CONFLICTING_SIGNAL",
+            "CUSTOM_DECODING_SIGNAL_INFO_IS_NULL",
             "DUPLICATE_SIGNAL",
             "EMPTY_MESSAGE_SIGNAL",
             "MESSAGE_SIGNAL_INFO_IS_NULL",
@@ -190,6 +196,7 @@ impl ::std::fmt::Display for SignalDecoderFailureReason {
         match self {
             SignalDecoderFailureReason::CanSignalInfoIsNull => write!(f, "CAN_SIGNAL_INFO_IS_NULL"),
             SignalDecoderFailureReason::ConflictingSignal => write!(f, "CONFLICTING_SIGNAL"),
+            SignalDecoderFailureReason::CustomDecodingSignalInfoIsNull => write!(f, "CUSTOM_DECODING_SIGNAL_INFO_IS_NULL"),
             SignalDecoderFailureReason::DuplicateSignal => write!(f, "DUPLICATE_SIGNAL"),
             SignalDecoderFailureReason::EmptyMessageSignal => write!(f, "EMPTY_MESSAGE_SIGNAL"),
             SignalDecoderFailureReason::MessageSignalInfoIsNull => write!(f, "MESSAGE_SIGNAL_INFO_IS_NULL"),

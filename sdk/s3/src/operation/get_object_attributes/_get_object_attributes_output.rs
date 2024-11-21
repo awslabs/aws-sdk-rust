@@ -7,7 +7,7 @@ pub struct GetObjectAttributesOutput {
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub delete_marker: ::std::option::Option<bool>,
-    /// <p>The creation date of the object.</p>
+    /// <p>Date and time when the object was last modified.</p>
     pub last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The version ID of the object.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
@@ -40,7 +40,7 @@ impl GetObjectAttributesOutput {
     pub fn delete_marker(&self) -> ::std::option::Option<bool> {
         self.delete_marker
     }
-    /// <p>The creation date of the object.</p>
+    /// <p>Date and time when the object was last modified.</p>
     pub fn last_modified(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
@@ -134,17 +134,17 @@ impl GetObjectAttributesOutputBuilder {
     pub fn get_delete_marker(&self) -> &::std::option::Option<bool> {
         &self.delete_marker
     }
-    /// <p>The creation date of the object.</p>
+    /// <p>Date and time when the object was last modified.</p>
     pub fn last_modified(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The creation date of the object.</p>
+    /// <p>Date and time when the object was last modified.</p>
     pub fn set_last_modified(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified = input;
         self
     }
-    /// <p>The creation date of the object.</p>
+    /// <p>Date and time when the object was last modified.</p>
     pub fn get_last_modified(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified
     }

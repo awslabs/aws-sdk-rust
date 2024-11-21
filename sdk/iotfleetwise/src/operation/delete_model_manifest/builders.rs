@@ -22,9 +22,7 @@ impl crate::operation::delete_model_manifest::builders::DeleteModelManifestInput
 }
 /// Fluent builder constructing a request to `DeleteModelManifest`.
 ///
-/// <p>Deletes a vehicle model (model manifest).</p><note>
-/// <p>If the vehicle model is successfully deleted, Amazon Web Services IoT FleetWise sends back an HTTP 200 response with an empty body.</p>
-/// </note>
+/// <p>Deletes a vehicle model (model manifest).</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteModelManifestFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -9,5 +9,8 @@ pub fn ser_cancel_query_input_input(
     if let Some(var_2) = &input.query_id {
         object.key("QueryId").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.event_data_store_owner_account_id {
+        object.key("EventDataStoreOwnerAccountId").string(var_3.as_str());
+    }
     Ok(())
 }

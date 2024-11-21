@@ -121,6 +121,16 @@ pub fn de_ipam_resource_discovery(
                 builder = builder.set_tags(var_9);
             }
             ,
+            s if s.matches("organizationalUnitExclusionSet") /* OrganizationalUnitExclusions com.amazonaws.ec2#IpamResourceDiscovery$OrganizationalUnitExclusions */ =>  {
+                let var_10 =
+                    Some(
+                        crate::protocol_serde::shape_ipam_organizational_unit_exclusion_set::de_ipam_organizational_unit_exclusion_set(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_organizational_unit_exclusions(var_10);
+            }
+            ,
             _ => {}
         }
     }

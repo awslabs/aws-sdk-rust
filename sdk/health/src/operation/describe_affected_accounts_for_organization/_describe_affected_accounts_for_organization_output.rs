@@ -5,7 +5,7 @@
 pub struct DescribeAffectedAccountsForOrganizationOutput {
     /// <p>A JSON set of elements of the affected accounts.</p>
     pub affected_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific event.</p>
+    /// <p>This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific event.</p>
     /// <ul>
     /// <li>
     /// <p>If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is always empty.</p></li>
@@ -26,7 +26,7 @@ impl DescribeAffectedAccountsForOrganizationOutput {
     pub fn affected_accounts(&self) -> &[::std::string::String] {
         self.affected_accounts.as_deref().unwrap_or_default()
     }
-    /// <p>This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific event.</p>
+    /// <p>This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific event.</p>
     /// <ul>
     /// <li>
     /// <p>If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is always empty.</p></li>
@@ -86,7 +86,7 @@ impl DescribeAffectedAccountsForOrganizationOutputBuilder {
     pub fn get_affected_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.affected_accounts
     }
-    /// <p>This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific event.</p>
+    /// <p>This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific event.</p>
     /// <ul>
     /// <li>
     /// <p>If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is always empty.</p></li>
@@ -99,7 +99,7 @@ impl DescribeAffectedAccountsForOrganizationOutputBuilder {
         self.event_scope_code = ::std::option::Option::Some(input);
         self
     }
-    /// <p>This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific event.</p>
+    /// <p>This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific event.</p>
     /// <ul>
     /// <li>
     /// <p>If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is always empty.</p></li>
@@ -112,7 +112,7 @@ impl DescribeAffectedAccountsForOrganizationOutputBuilder {
         self.event_scope_code = input;
         self
     }
-    /// <p>This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific event.</p>
+    /// <p>This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific event.</p>
     /// <ul>
     /// <li>
     /// <p>If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is always empty.</p></li>

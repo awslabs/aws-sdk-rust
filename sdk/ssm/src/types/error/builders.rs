@@ -83,6 +83,8 @@ pub use crate::types::error::_automation_execution_not_found_exception::Automati
 
 pub use crate::types::error::_target_not_connected::TargetNotConnectedBuilder;
 
+pub use crate::types::error::_validation_exception::ValidationExceptionBuilder;
+
 pub use crate::types::error::_invalid_automation_execution_parameters_exception::InvalidAutomationExecutionParametersExceptionBuilder;
 
 pub use crate::types::error::_idempotent_parameter_mismatch::IdempotentParameterMismatchBuilder;
@@ -191,6 +193,10 @@ pub use crate::types::error::_invalid_next_token::InvalidNextTokenBuilder;
 
 pub use crate::types::error::_invalid_filter::InvalidFilterBuilder;
 
+pub use crate::types::error::_unsupported_operation_exception::UnsupportedOperationExceptionBuilder;
+
+pub use crate::types::error::_invalid_aggregator_exception::InvalidAggregatorExceptionBuilder;
+
 pub use crate::types::error::_invalid_filter_key::InvalidFilterKeyBuilder;
 
 pub use crate::types::error::_invalid_command_id::InvalidCommandIdBuilder;
@@ -200,8 +206,6 @@ pub use crate::types::error::_parameter_version_label_limit_exceeded::ParameterV
 pub use crate::types::error::_invalid_filter_value::InvalidFilterValueBuilder;
 
 pub use crate::types::error::_invalid_filter_option::InvalidFilterOptionBuilder;
-
-pub use crate::types::error::_invalid_aggregator_exception::InvalidAggregatorExceptionBuilder;
 
 pub use crate::types::error::_invalid_result_attribute_exception::InvalidResultAttributeExceptionBuilder;
 

@@ -6,11 +6,17 @@
 pub struct DeleteDomainNameInput {
     /// <p>The name of the DomainName resource to be deleted.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
+    /// <p>The identifier for the domain name resource. Supported only for private custom domain names.</p>
+    pub domain_name_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDomainNameInput {
     /// <p>The name of the DomainName resource to be deleted.</p>
     pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
+    }
+    /// <p>The identifier for the domain name resource. Supported only for private custom domain names.</p>
+    pub fn domain_name_id(&self) -> ::std::option::Option<&str> {
+        self.domain_name_id.as_deref()
     }
 }
 impl DeleteDomainNameInput {
@@ -25,6 +31,7 @@ impl DeleteDomainNameInput {
 #[non_exhaustive]
 pub struct DeleteDomainNameInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
+    pub(crate) domain_name_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDomainNameInputBuilder {
     /// <p>The name of the DomainName resource to be deleted.</p>
@@ -42,12 +49,27 @@ impl DeleteDomainNameInputBuilder {
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_name
     }
+    /// <p>The identifier for the domain name resource. Supported only for private custom domain names.</p>
+    pub fn domain_name_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_name_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier for the domain name resource. Supported only for private custom domain names.</p>
+    pub fn set_domain_name_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.domain_name_id = input;
+        self
+    }
+    /// <p>The identifier for the domain name resource. Supported only for private custom domain names.</p>
+    pub fn get_domain_name_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name_id
+    }
     /// Consumes the builder and constructs a [`DeleteDomainNameInput`](crate::operation::delete_domain_name::DeleteDomainNameInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_domain_name::DeleteDomainNameInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_domain_name::DeleteDomainNameInput {
             domain_name: self.domain_name,
+            domain_name_id: self.domain_name_id,
         })
     }
 }

@@ -7,7 +7,7 @@ pub struct DescribeJobExecutionInput {
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The thing name associated with the device the job execution is running on.</p>
     pub thing_name: ::std::option::Option<::std::string::String>,
-    /// <p>Optional. When set to true, the response contains the job document. The default is false.</p>
+    /// <p>Optional. Unless set to false, the response contains the job document. The default is true.</p>
     pub include_job_document: ::std::option::Option<bool>,
     /// <p>Optional. A number that identifies a particular job execution on a particular device. If not specified, the latest job execution is returned.</p>
     pub execution_number: ::std::option::Option<i64>,
@@ -21,7 +21,7 @@ impl DescribeJobExecutionInput {
     pub fn thing_name(&self) -> ::std::option::Option<&str> {
         self.thing_name.as_deref()
     }
-    /// <p>Optional. When set to true, the response contains the job document. The default is false.</p>
+    /// <p>Optional. Unless set to false, the response contains the job document. The default is true.</p>
     pub fn include_job_document(&self) -> ::std::option::Option<bool> {
         self.include_job_document
     }
@@ -77,17 +77,17 @@ impl DescribeJobExecutionInputBuilder {
     pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.thing_name
     }
-    /// <p>Optional. When set to true, the response contains the job document. The default is false.</p>
+    /// <p>Optional. Unless set to false, the response contains the job document. The default is true.</p>
     pub fn include_job_document(mut self, input: bool) -> Self {
         self.include_job_document = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Optional. When set to true, the response contains the job document. The default is false.</p>
+    /// <p>Optional. Unless set to false, the response contains the job document. The default is true.</p>
     pub fn set_include_job_document(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_job_document = input;
         self
     }
-    /// <p>Optional. When set to true, the response contains the job document. The default is false.</p>
+    /// <p>Optional. Unless set to false, the response contains the job document. The default is true.</p>
     pub fn get_include_job_document(&self) -> &::std::option::Option<bool> {
         &self.include_job_document
     }

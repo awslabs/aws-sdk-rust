@@ -303,6 +303,12 @@ pub use crate::types::_mitigation_action::MitigationActionBuilder;
 
 pub use crate::types::_detect_mitigation_action_execution::DetectMitigationActionExecutionBuilder;
 
+pub use crate::types::_command_summary::CommandSummaryBuilder;
+
+pub use crate::types::_command_execution_summary::CommandExecutionSummaryBuilder;
+
+pub use crate::types::_time_filter::TimeFilterBuilder;
+
 pub use crate::types::_certificate::CertificateBuilder;
 
 pub use crate::types::_certificate_provider_summary::CertificateProviderSummaryBuilder;
@@ -374,6 +380,16 @@ pub use crate::types::_aws_job_exponential_rollout_rate::AwsJobExponentialRollou
 pub use crate::types::_aws_job_rate_increase_criteria::AwsJobRateIncreaseCriteriaBuilder;
 
 pub use crate::types::_effective_policy::EffectivePolicyBuilder;
+
+pub use crate::types::_command_parameter_value::CommandParameterValueBuilder;
+
+pub use crate::types::_command_execution_result::CommandExecutionResultBuilder;
+
+pub use crate::types::_status_reason::StatusReasonBuilder;
+
+pub use crate::types::_command_payload::CommandPayloadBuilder;
+
+pub use crate::types::_command_parameter::CommandParameterBuilder;
 
 pub use crate::types::_bucket::BucketBuilder;
 

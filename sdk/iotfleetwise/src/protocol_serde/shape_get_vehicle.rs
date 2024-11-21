@@ -159,6 +159,11 @@ pub(crate) fn de_get_vehicle(
                 "attributes" => {
                     builder = builder.set_attributes(crate::protocol_serde::shape_attributes_map::de_attributes_map(tokens)?);
                 }
+                "stateTemplates" => {
+                    builder = builder.set_state_templates(crate::protocol_serde::shape_state_template_associations::de_state_template_associations(
+                        tokens,
+                    )?);
+                }
                 "creationTime" => {
                     builder = builder.set_creation_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),

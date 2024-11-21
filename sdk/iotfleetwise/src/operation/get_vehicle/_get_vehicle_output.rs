@@ -14,6 +14,8 @@ pub struct GetVehicleOutput {
     /// <p>Static information about a vehicle in a key-value pair. For example:</p>
     /// <p><code>"engineType"</code> : <code>"1.3 L R2"</code></p>
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>State templates associated with the vehicle.</p>
+    pub state_templates: ::std::option::Option<::std::vec::Vec<crate::types::StateTemplateAssociation>>,
     /// <p>The time the vehicle was created in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the vehicle was last updated in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
@@ -41,6 +43,12 @@ impl GetVehicleOutput {
     /// <p><code>"engineType"</code> : <code>"1.3 L R2"</code></p>
     pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
+    }
+    /// <p>State templates associated with the vehicle.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.state_templates.is_none()`.
+    pub fn state_templates(&self) -> &[crate::types::StateTemplateAssociation] {
+        self.state_templates.as_deref().unwrap_or_default()
     }
     /// <p>The time the vehicle was created in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -72,6 +80,7 @@ pub struct GetVehicleOutputBuilder {
     pub(crate) model_manifest_arn: ::std::option::Option<::std::string::String>,
     pub(crate) decoder_manifest_arn: ::std::option::Option<::std::string::String>,
     pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) state_templates: ::std::option::Option<::std::vec::Vec<crate::types::StateTemplateAssociation>>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
@@ -156,6 +165,26 @@ impl GetVehicleOutputBuilder {
     pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
+    /// Appends an item to `state_templates`.
+    ///
+    /// To override the contents of this collection use [`set_state_templates`](Self::set_state_templates).
+    ///
+    /// <p>State templates associated with the vehicle.</p>
+    pub fn state_templates(mut self, input: crate::types::StateTemplateAssociation) -> Self {
+        let mut v = self.state_templates.unwrap_or_default();
+        v.push(input);
+        self.state_templates = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>State templates associated with the vehicle.</p>
+    pub fn set_state_templates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StateTemplateAssociation>>) -> Self {
+        self.state_templates = input;
+        self
+    }
+    /// <p>State templates associated with the vehicle.</p>
+    pub fn get_state_templates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StateTemplateAssociation>> {
+        &self.state_templates
+    }
     /// <p>The time the vehicle was created in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -201,6 +230,7 @@ impl GetVehicleOutputBuilder {
             model_manifest_arn: self.model_manifest_arn,
             decoder_manifest_arn: self.decoder_manifest_arn,
             attributes: self.attributes,
+            state_templates: self.state_templates,
             creation_time: self.creation_time,
             last_modification_time: self.last_modification_time,
             _request_id: self._request_id,

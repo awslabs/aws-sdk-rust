@@ -45,6 +45,8 @@ pub use crate::types::_environment::EnvironmentBuilder;
 
 pub use crate::types::_vpc_config::VpcConfigBuilder;
 
+pub use crate::types::_event_source_mapping_metrics_config::EventSourceMappingMetricsConfigBuilder;
+
 pub use crate::types::_filter_criteria_error::FilterCriteriaErrorBuilder;
 
 pub use crate::types::_document_db_event_source_config::DocumentDbEventSourceConfigBuilder;

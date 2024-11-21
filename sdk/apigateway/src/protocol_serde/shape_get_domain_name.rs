@@ -154,6 +154,20 @@ pub(crate) fn de_get_domain_name(
                             .transpose()?,
                     );
                 }
+                "domainNameArn" => {
+                    builder = builder.set_domain_name_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "domainNameId" => {
+                    builder = builder.set_domain_name_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "domainNameStatus" => {
                     builder = builder.set_domain_name_status(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -172,6 +186,13 @@ pub(crate) fn de_get_domain_name(
                     builder =
                         builder.set_endpoint_configuration(crate::protocol_serde::shape_endpoint_configuration::de_endpoint_configuration(tokens)?);
                 }
+                "managementPolicy" => {
+                    builder = builder.set_management_policy(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "mutualTlsAuthentication" => {
                     builder = builder.set_mutual_tls_authentication(
                         crate::protocol_serde::shape_mutual_tls_authentication::de_mutual_tls_authentication(tokens)?,
@@ -179,6 +200,13 @@ pub(crate) fn de_get_domain_name(
                 }
                 "ownershipVerificationCertificateArn" => {
                     builder = builder.set_ownership_verification_certificate_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "policy" => {
+                    builder = builder.set_policy(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,

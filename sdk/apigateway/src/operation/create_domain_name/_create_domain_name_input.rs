@@ -6,15 +6,15 @@
 pub struct CreateDomainNameInput {
     /// <p>The name of the DomainName resource.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
-    /// <p>The user-friendly name of the certificate that will be used by edge-optimized endpoint for this domain name.</p>
+    /// <p>The user-friendly name of the certificate that will be used by edge-optimized endpoint or private endpoint for this domain name.</p>
     pub certificate_name: ::std::option::Option<::std::string::String>,
-    /// <p>\[Deprecated\] The body of the server certificate that will be used by edge-optimized endpoint for this domain name provided by your certificate authority.</p>
+    /// <p>\[Deprecated\] The body of the server certificate that will be used by edge-optimized endpoint or private endpoint for this domain name provided by your certificate authority.</p>
     pub certificate_body: ::std::option::Option<::std::string::String>,
     /// <p>\[Deprecated\] Your edge-optimized endpoint's domain name certificate's private key.</p>
     pub certificate_private_key: ::std::option::Option<::std::string::String>,
     /// <p>\[Deprecated\] The intermediate certificates and optionally the root certificate, one after the other without any blank lines, used by an edge-optimized endpoint for this domain name. If you include the root certificate, your certificate chain must start with intermediate certificates and end with the root certificate. Use the intermediate certificates that were provided by your certificate authority. Do not include any intermediaries that are not in the chain of trust path.</p>
     pub certificate_chain: ::std::option::Option<::std::string::String>,
-    /// <p>The reference to an Amazon Web Services-managed certificate that will be used by edge-optimized endpoint for this domain name. Certificate Manager is the only supported source.</p>
+    /// <p>The reference to an Amazon Web Services-managed certificate that will be used by edge-optimized endpoint or private endpoint for this domain name. Certificate Manager is the only supported source.</p>
     pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The user-friendly name of the certificate that will be used by regional endpoint for this domain name.</p>
     pub regional_certificate_name: ::std::option::Option<::std::string::String>,
@@ -30,17 +30,19 @@ pub struct CreateDomainNameInput {
     pub mutual_tls_authentication: ::std::option::Option<crate::types::MutualTlsAuthenticationInput>,
     /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn.</p>
     pub ownership_verification_certificate_arn: ::std::option::Option<::std::string::String>,
+    /// <p>A stringified JSON policy document that applies to the <code>execute-api</code> service for this DomainName regardless of the caller and Method configuration. Supported only for private custom domain names.</p>
+    pub policy: ::std::option::Option<::std::string::String>,
 }
 impl CreateDomainNameInput {
     /// <p>The name of the DomainName resource.</p>
     pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>The user-friendly name of the certificate that will be used by edge-optimized endpoint for this domain name.</p>
+    /// <p>The user-friendly name of the certificate that will be used by edge-optimized endpoint or private endpoint for this domain name.</p>
     pub fn certificate_name(&self) -> ::std::option::Option<&str> {
         self.certificate_name.as_deref()
     }
-    /// <p>\[Deprecated\] The body of the server certificate that will be used by edge-optimized endpoint for this domain name provided by your certificate authority.</p>
+    /// <p>\[Deprecated\] The body of the server certificate that will be used by edge-optimized endpoint or private endpoint for this domain name provided by your certificate authority.</p>
     pub fn certificate_body(&self) -> ::std::option::Option<&str> {
         self.certificate_body.as_deref()
     }
@@ -52,7 +54,7 @@ impl CreateDomainNameInput {
     pub fn certificate_chain(&self) -> ::std::option::Option<&str> {
         self.certificate_chain.as_deref()
     }
-    /// <p>The reference to an Amazon Web Services-managed certificate that will be used by edge-optimized endpoint for this domain name. Certificate Manager is the only supported source.</p>
+    /// <p>The reference to an Amazon Web Services-managed certificate that will be used by edge-optimized endpoint or private endpoint for this domain name. Certificate Manager is the only supported source.</p>
     pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
@@ -84,6 +86,10 @@ impl CreateDomainNameInput {
     pub fn ownership_verification_certificate_arn(&self) -> ::std::option::Option<&str> {
         self.ownership_verification_certificate_arn.as_deref()
     }
+    /// <p>A stringified JSON policy document that applies to the <code>execute-api</code> service for this DomainName regardless of the caller and Method configuration. Supported only for private custom domain names.</p>
+    pub fn policy(&self) -> ::std::option::Option<&str> {
+        self.policy.as_deref()
+    }
 }
 impl CreateDomainNameInput {
     /// Creates a new builder-style object to manufacture [`CreateDomainNameInput`](crate::operation::create_domain_name::CreateDomainNameInput).
@@ -109,6 +115,7 @@ pub struct CreateDomainNameInputBuilder {
     pub(crate) security_policy: ::std::option::Option<crate::types::SecurityPolicy>,
     pub(crate) mutual_tls_authentication: ::std::option::Option<crate::types::MutualTlsAuthenticationInput>,
     pub(crate) ownership_verification_certificate_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) policy: ::std::option::Option<::std::string::String>,
 }
 impl CreateDomainNameInputBuilder {
     /// <p>The name of the DomainName resource.</p>
@@ -126,31 +133,31 @@ impl CreateDomainNameInputBuilder {
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_name
     }
-    /// <p>The user-friendly name of the certificate that will be used by edge-optimized endpoint for this domain name.</p>
+    /// <p>The user-friendly name of the certificate that will be used by edge-optimized endpoint or private endpoint for this domain name.</p>
     pub fn certificate_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user-friendly name of the certificate that will be used by edge-optimized endpoint for this domain name.</p>
+    /// <p>The user-friendly name of the certificate that will be used by edge-optimized endpoint or private endpoint for this domain name.</p>
     pub fn set_certificate_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_name = input;
         self
     }
-    /// <p>The user-friendly name of the certificate that will be used by edge-optimized endpoint for this domain name.</p>
+    /// <p>The user-friendly name of the certificate that will be used by edge-optimized endpoint or private endpoint for this domain name.</p>
     pub fn get_certificate_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_name
     }
-    /// <p>\[Deprecated\] The body of the server certificate that will be used by edge-optimized endpoint for this domain name provided by your certificate authority.</p>
+    /// <p>\[Deprecated\] The body of the server certificate that will be used by edge-optimized endpoint or private endpoint for this domain name provided by your certificate authority.</p>
     pub fn certificate_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_body = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>\[Deprecated\] The body of the server certificate that will be used by edge-optimized endpoint for this domain name provided by your certificate authority.</p>
+    /// <p>\[Deprecated\] The body of the server certificate that will be used by edge-optimized endpoint or private endpoint for this domain name provided by your certificate authority.</p>
     pub fn set_certificate_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_body = input;
         self
     }
-    /// <p>\[Deprecated\] The body of the server certificate that will be used by edge-optimized endpoint for this domain name provided by your certificate authority.</p>
+    /// <p>\[Deprecated\] The body of the server certificate that will be used by edge-optimized endpoint or private endpoint for this domain name provided by your certificate authority.</p>
     pub fn get_certificate_body(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_body
     }
@@ -182,17 +189,17 @@ impl CreateDomainNameInputBuilder {
     pub fn get_certificate_chain(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_chain
     }
-    /// <p>The reference to an Amazon Web Services-managed certificate that will be used by edge-optimized endpoint for this domain name. Certificate Manager is the only supported source.</p>
+    /// <p>The reference to an Amazon Web Services-managed certificate that will be used by edge-optimized endpoint or private endpoint for this domain name. Certificate Manager is the only supported source.</p>
     pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The reference to an Amazon Web Services-managed certificate that will be used by edge-optimized endpoint for this domain name. Certificate Manager is the only supported source.</p>
+    /// <p>The reference to an Amazon Web Services-managed certificate that will be used by edge-optimized endpoint or private endpoint for this domain name. Certificate Manager is the only supported source.</p>
     pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_arn = input;
         self
     }
-    /// <p>The reference to an Amazon Web Services-managed certificate that will be used by edge-optimized endpoint for this domain name. Certificate Manager is the only supported source.</p>
+    /// <p>The reference to an Amazon Web Services-managed certificate that will be used by edge-optimized endpoint or private endpoint for this domain name. Certificate Manager is the only supported source.</p>
     pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_arn
     }
@@ -300,6 +307,20 @@ impl CreateDomainNameInputBuilder {
     pub fn get_ownership_verification_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.ownership_verification_certificate_arn
     }
+    /// <p>A stringified JSON policy document that applies to the <code>execute-api</code> service for this DomainName regardless of the caller and Method configuration. Supported only for private custom domain names.</p>
+    pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.policy = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A stringified JSON policy document that applies to the <code>execute-api</code> service for this DomainName regardless of the caller and Method configuration. Supported only for private custom domain names.</p>
+    pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.policy = input;
+        self
+    }
+    /// <p>A stringified JSON policy document that applies to the <code>execute-api</code> service for this DomainName regardless of the caller and Method configuration. Supported only for private custom domain names.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy
+    }
     /// Consumes the builder and constructs a [`CreateDomainNameInput`](crate::operation::create_domain_name::CreateDomainNameInput).
     pub fn build(
         self,
@@ -318,6 +339,7 @@ impl CreateDomainNameInputBuilder {
             security_policy: self.security_policy,
             mutual_tls_authentication: self.mutual_tls_authentication,
             ownership_verification_certificate_arn: self.ownership_verification_certificate_arn,
+            policy: self.policy,
         })
     }
 }

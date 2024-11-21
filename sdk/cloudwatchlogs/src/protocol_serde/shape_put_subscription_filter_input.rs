@@ -21,5 +21,8 @@ pub fn ser_put_subscription_filter_input_input(
     if let Some(var_6) = &input.distribution {
         object.key("distribution").string(var_6.as_str());
     }
+    if let Some(var_7) = &input.apply_on_transformed_logs {
+        object.key("applyOnTransformedLogs").boolean(*var_7);
+    }
     Ok(())
 }

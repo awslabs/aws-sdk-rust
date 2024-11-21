@@ -13,6 +13,10 @@ pub struct ModifyIpamResourceDiscoveryInput {
     pub add_operating_regions: ::std::option::Option<::std::vec::Vec<crate::types::AddIpamOperatingRegion>>,
     /// <p>Remove operating Regions.</p>
     pub remove_operating_regions: ::std::option::Option<::std::vec::Vec<crate::types::RemoveIpamOperatingRegion>>,
+    /// <p>Add an Organizational Unit (OU) exclusion to your IPAM. If your IPAM is integrated with Amazon Web Services Organizations and you add an organizational unit (OU) exclusion, IPAM will not manage the IP addresses in accounts in that OU exclusion. There is a limit on the number of exclusions you can create. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas for your IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    pub add_organizational_unit_exclusions: ::std::option::Option<::std::vec::Vec<crate::types::AddIpamOrganizationalUnitExclusion>>,
+    /// <p>Remove an Organizational Unit (OU) exclusion to your IPAM. If your IPAM is integrated with Amazon Web Services Organizations and you add an organizational unit (OU) exclusion, IPAM will not manage the IP addresses in accounts in that OU exclusion. There is a limit on the number of exclusions you can create. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas for your IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    pub remove_organizational_unit_exclusions: ::std::option::Option<::std::vec::Vec<crate::types::RemoveIpamOrganizationalUnitExclusion>>,
 }
 impl ModifyIpamResourceDiscoveryInput {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -39,6 +43,18 @@ impl ModifyIpamResourceDiscoveryInput {
     pub fn remove_operating_regions(&self) -> &[crate::types::RemoveIpamOperatingRegion] {
         self.remove_operating_regions.as_deref().unwrap_or_default()
     }
+    /// <p>Add an Organizational Unit (OU) exclusion to your IPAM. If your IPAM is integrated with Amazon Web Services Organizations and you add an organizational unit (OU) exclusion, IPAM will not manage the IP addresses in accounts in that OU exclusion. There is a limit on the number of exclusions you can create. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas for your IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_organizational_unit_exclusions.is_none()`.
+    pub fn add_organizational_unit_exclusions(&self) -> &[crate::types::AddIpamOrganizationalUnitExclusion] {
+        self.add_organizational_unit_exclusions.as_deref().unwrap_or_default()
+    }
+    /// <p>Remove an Organizational Unit (OU) exclusion to your IPAM. If your IPAM is integrated with Amazon Web Services Organizations and you add an organizational unit (OU) exclusion, IPAM will not manage the IP addresses in accounts in that OU exclusion. There is a limit on the number of exclusions you can create. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas for your IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove_organizational_unit_exclusions.is_none()`.
+    pub fn remove_organizational_unit_exclusions(&self) -> &[crate::types::RemoveIpamOrganizationalUnitExclusion] {
+        self.remove_organizational_unit_exclusions.as_deref().unwrap_or_default()
+    }
 }
 impl ModifyIpamResourceDiscoveryInput {
     /// Creates a new builder-style object to manufacture [`ModifyIpamResourceDiscoveryInput`](crate::operation::modify_ipam_resource_discovery::ModifyIpamResourceDiscoveryInput).
@@ -56,6 +72,8 @@ pub struct ModifyIpamResourceDiscoveryInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) add_operating_regions: ::std::option::Option<::std::vec::Vec<crate::types::AddIpamOperatingRegion>>,
     pub(crate) remove_operating_regions: ::std::option::Option<::std::vec::Vec<crate::types::RemoveIpamOperatingRegion>>,
+    pub(crate) add_organizational_unit_exclusions: ::std::option::Option<::std::vec::Vec<crate::types::AddIpamOrganizationalUnitExclusion>>,
+    pub(crate) remove_organizational_unit_exclusions: ::std::option::Option<::std::vec::Vec<crate::types::RemoveIpamOrganizationalUnitExclusion>>,
 }
 impl ModifyIpamResourceDiscoveryInputBuilder {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -141,6 +159,56 @@ impl ModifyIpamResourceDiscoveryInputBuilder {
     pub fn get_remove_operating_regions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RemoveIpamOperatingRegion>> {
         &self.remove_operating_regions
     }
+    /// Appends an item to `add_organizational_unit_exclusions`.
+    ///
+    /// To override the contents of this collection use [`set_add_organizational_unit_exclusions`](Self::set_add_organizational_unit_exclusions).
+    ///
+    /// <p>Add an Organizational Unit (OU) exclusion to your IPAM. If your IPAM is integrated with Amazon Web Services Organizations and you add an organizational unit (OU) exclusion, IPAM will not manage the IP addresses in accounts in that OU exclusion. There is a limit on the number of exclusions you can create. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas for your IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    pub fn add_organizational_unit_exclusions(mut self, input: crate::types::AddIpamOrganizationalUnitExclusion) -> Self {
+        let mut v = self.add_organizational_unit_exclusions.unwrap_or_default();
+        v.push(input);
+        self.add_organizational_unit_exclusions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Add an Organizational Unit (OU) exclusion to your IPAM. If your IPAM is integrated with Amazon Web Services Organizations and you add an organizational unit (OU) exclusion, IPAM will not manage the IP addresses in accounts in that OU exclusion. There is a limit on the number of exclusions you can create. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas for your IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    pub fn set_add_organizational_unit_exclusions(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AddIpamOrganizationalUnitExclusion>>,
+    ) -> Self {
+        self.add_organizational_unit_exclusions = input;
+        self
+    }
+    /// <p>Add an Organizational Unit (OU) exclusion to your IPAM. If your IPAM is integrated with Amazon Web Services Organizations and you add an organizational unit (OU) exclusion, IPAM will not manage the IP addresses in accounts in that OU exclusion. There is a limit on the number of exclusions you can create. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas for your IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    pub fn get_add_organizational_unit_exclusions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AddIpamOrganizationalUnitExclusion>> {
+        &self.add_organizational_unit_exclusions
+    }
+    /// Appends an item to `remove_organizational_unit_exclusions`.
+    ///
+    /// To override the contents of this collection use [`set_remove_organizational_unit_exclusions`](Self::set_remove_organizational_unit_exclusions).
+    ///
+    /// <p>Remove an Organizational Unit (OU) exclusion to your IPAM. If your IPAM is integrated with Amazon Web Services Organizations and you add an organizational unit (OU) exclusion, IPAM will not manage the IP addresses in accounts in that OU exclusion. There is a limit on the number of exclusions you can create. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas for your IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    pub fn remove_organizational_unit_exclusions(mut self, input: crate::types::RemoveIpamOrganizationalUnitExclusion) -> Self {
+        let mut v = self.remove_organizational_unit_exclusions.unwrap_or_default();
+        v.push(input);
+        self.remove_organizational_unit_exclusions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Remove an Organizational Unit (OU) exclusion to your IPAM. If your IPAM is integrated with Amazon Web Services Organizations and you add an organizational unit (OU) exclusion, IPAM will not manage the IP addresses in accounts in that OU exclusion. There is a limit on the number of exclusions you can create. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas for your IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    pub fn set_remove_organizational_unit_exclusions(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RemoveIpamOrganizationalUnitExclusion>>,
+    ) -> Self {
+        self.remove_organizational_unit_exclusions = input;
+        self
+    }
+    /// <p>Remove an Organizational Unit (OU) exclusion to your IPAM. If your IPAM is integrated with Amazon Web Services Organizations and you add an organizational unit (OU) exclusion, IPAM will not manage the IP addresses in accounts in that OU exclusion. There is a limit on the number of exclusions you can create. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas for your IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    pub fn get_remove_organizational_unit_exclusions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RemoveIpamOrganizationalUnitExclusion>> {
+        &self.remove_organizational_unit_exclusions
+    }
     /// Consumes the builder and constructs a [`ModifyIpamResourceDiscoveryInput`](crate::operation::modify_ipam_resource_discovery::ModifyIpamResourceDiscoveryInput).
     pub fn build(
         self,
@@ -154,6 +222,8 @@ impl ModifyIpamResourceDiscoveryInputBuilder {
             description: self.description,
             add_operating_regions: self.add_operating_regions,
             remove_operating_regions: self.remove_operating_regions,
+            add_organizational_unit_exclusions: self.add_organizational_unit_exclusions,
+            remove_organizational_unit_exclusions: self.remove_organizational_unit_exclusions,
         })
     }
 }

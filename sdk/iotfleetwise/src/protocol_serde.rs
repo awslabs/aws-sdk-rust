@@ -39,6 +39,8 @@ pub(crate) mod shape_create_model_manifest;
 
 pub(crate) mod shape_create_signal_catalog;
 
+pub(crate) mod shape_create_state_template;
+
 pub(crate) mod shape_create_vehicle;
 
 pub(crate) mod shape_delete_campaign;
@@ -50,6 +52,8 @@ pub(crate) mod shape_delete_fleet;
 pub(crate) mod shape_delete_model_manifest;
 
 pub(crate) mod shape_delete_signal_catalog;
+
+pub(crate) mod shape_delete_state_template;
 
 pub(crate) mod shape_delete_vehicle;
 
@@ -70,6 +74,8 @@ pub(crate) mod shape_get_model_manifest;
 pub(crate) mod shape_get_register_account_status;
 
 pub(crate) mod shape_get_signal_catalog;
+
+pub(crate) mod shape_get_state_template;
 
 pub(crate) mod shape_get_vehicle;
 
@@ -99,6 +105,8 @@ pub(crate) mod shape_list_signal_catalog_nodes;
 
 pub(crate) mod shape_list_signal_catalogs;
 
+pub(crate) mod shape_list_state_templates;
+
 pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_list_vehicles;
@@ -124,6 +132,8 @@ pub(crate) mod shape_update_fleet;
 pub(crate) mod shape_update_model_manifest;
 
 pub(crate) mod shape_update_signal_catalog;
+
+pub(crate) mod shape_update_state_template;
 
 pub(crate) mod shape_update_vehicle;
 
@@ -155,6 +165,8 @@ pub(crate) mod shape_create_model_manifest_input;
 
 pub(crate) mod shape_create_signal_catalog_input;
 
+pub(crate) mod shape_create_state_template_input;
+
 pub(crate) mod shape_create_vehicle_input;
 
 pub(crate) mod shape_decoder_manifest_validation_exception;
@@ -169,6 +181,8 @@ pub(crate) mod shape_delete_model_manifest_input;
 
 pub(crate) mod shape_delete_signal_catalog_input;
 
+pub(crate) mod shape_delete_state_template_input;
+
 pub(crate) mod shape_delete_vehicle_input;
 
 pub(crate) mod shape_disassociate_vehicle_fleet_input;
@@ -182,6 +196,8 @@ pub(crate) mod shape_get_fleet_input;
 pub(crate) mod shape_get_model_manifest_input;
 
 pub(crate) mod shape_get_signal_catalog_input;
+
+pub(crate) mod shape_get_state_template_input;
 
 pub(crate) mod shape_get_vehicle_input;
 
@@ -219,6 +235,8 @@ pub(crate) mod shape_list_signal_catalog_nodes_input;
 
 pub(crate) mod shape_list_signal_catalogs_input;
 
+pub(crate) mod shape_list_state_templates_input;
+
 pub(crate) mod shape_list_tags_for_resource_input;
 
 pub(crate) mod shape_list_vehicles_in_fleet_input;
@@ -249,6 +267,8 @@ pub(crate) mod shape_update_model_manifest_input;
 
 pub(crate) mod shape_update_signal_catalog_input;
 
+pub(crate) mod shape_update_state_template_input;
+
 pub(crate) mod shape_update_vehicle_input;
 
 pub(crate) mod shape_validation_exception;
@@ -272,6 +292,10 @@ pub(crate) mod shape_data_destination_config;
 pub(crate) mod shape_data_destination_configs;
 
 pub(crate) mod shape_data_extra_dimension_node_path_list;
+
+pub(crate) mod shape_data_partition;
+
+pub(crate) mod shape_data_partitions;
 
 pub(crate) mod shape_decoder_manifest_summaries;
 
@@ -311,9 +335,25 @@ pub(crate) mod shape_signal_decoder;
 
 pub(crate) mod shape_signal_decoders;
 
+pub(crate) mod shape_signal_fetch_information;
+
+pub(crate) mod shape_signal_fetch_information_list;
+
 pub(crate) mod shape_signal_information;
 
 pub(crate) mod shape_signal_information_list;
+
+pub(crate) mod shape_state_template_association;
+
+pub(crate) mod shape_state_template_associations;
+
+pub(crate) mod shape_state_template_data_extra_dimension_node_path_list;
+
+pub(crate) mod shape_state_template_metadata_extra_dimension_node_path_list;
+
+pub(crate) mod shape_state_template_properties;
+
+pub(crate) mod shape_state_template_summaries;
 
 pub(crate) mod shape_tag;
 
@@ -357,9 +397,17 @@ pub(crate) mod shape_create_vehicle_error;
 
 pub(crate) mod shape_create_vehicle_response_item;
 
+pub(crate) mod shape_custom_decoding_interface;
+
+pub(crate) mod shape_custom_decoding_signal;
+
 pub(crate) mod shape_custom_property;
 
 pub(crate) mod shape_custom_struct;
+
+pub(crate) mod shape_data_partition_storage_options;
+
+pub(crate) mod shape_data_partition_upload_options;
 
 pub(crate) mod shape_decoder_manifest_summary;
 
@@ -375,6 +423,8 @@ pub(crate) mod shape_message_signal;
 
 pub(crate) mod shape_model_manifest_summary;
 
+pub(crate) mod shape_mqtt_topic_config;
+
 pub(crate) mod shape_obd_interface;
 
 pub(crate) mod shape_obd_signal;
@@ -384,6 +434,12 @@ pub(crate) mod shape_s3_config;
 pub(crate) mod shape_sensor;
 
 pub(crate) mod shape_signal_catalog_summary;
+
+pub(crate) mod shape_signal_fetch_config;
+
+pub(crate) mod shape_state_template_summary;
+
+pub(crate) mod shape_state_template_update_strategy;
 
 pub(crate) mod shape_time_based_collection_scheme;
 
@@ -401,7 +457,21 @@ pub(crate) mod shape_vehicle_status;
 
 pub(crate) mod shape_vehicle_summary;
 
+pub(crate) mod shape_condition_based_signal_fetch_config;
+
+pub(crate) mod shape_event_expression_list;
+
+pub(crate) mod shape_on_change_state_template_update_strategy;
+
+pub(crate) mod shape_periodic_state_template_update_strategy;
+
+pub(crate) mod shape_storage_maximum_size;
+
+pub(crate) mod shape_storage_minimum_time_to_live;
+
 pub(crate) mod shape_structured_message;
+
+pub(crate) mod shape_time_based_signal_fetch_config;
 
 pub(crate) mod shape_list_of_strings;
 
@@ -410,6 +480,8 @@ pub(crate) mod shape_primitive_message_definition;
 pub(crate) mod shape_structured_message_field_name_and_data_type_pair;
 
 pub(crate) mod shape_structured_message_list_definition;
+
+pub(crate) mod shape_time_period;
 
 pub(crate) mod shape_ros2_primitive_message_definition;
 

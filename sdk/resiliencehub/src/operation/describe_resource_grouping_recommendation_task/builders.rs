@@ -129,17 +129,17 @@ impl DescribeResourceGroupingRecommendationTaskFluentBuilder {
     pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_app_arn()
     }
-    /// <p>Indicates the identifier of the grouping recommendation task.</p>
+    /// <p>Identifier of the grouping recommendation task.</p>
     pub fn grouping_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.grouping_id(input.into());
         self
     }
-    /// <p>Indicates the identifier of the grouping recommendation task.</p>
+    /// <p>Identifier of the grouping recommendation task.</p>
     pub fn set_grouping_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_grouping_id(input);
         self
     }
-    /// <p>Indicates the identifier of the grouping recommendation task.</p>
+    /// <p>Identifier of the grouping recommendation task.</p>
     pub fn get_grouping_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_grouping_id()
     }

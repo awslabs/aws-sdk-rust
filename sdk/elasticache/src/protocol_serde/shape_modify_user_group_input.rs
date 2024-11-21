@@ -32,6 +32,11 @@ pub fn ser_modify_user_group_input_input_input(
         }
         list_11.finish();
     }
+    #[allow(unused_mut)]
+    let mut scope_13 = writer.prefix("Engine");
+    if let Some(var_14) = &input.engine {
+        scope_13.string(var_14);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

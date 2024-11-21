@@ -191,6 +191,8 @@ mod delete_delivery_source;
 
 mod delete_destination;
 
+mod delete_index_policy;
+
 mod delete_log_anomaly_detector;
 
 mod delete_log_group;
@@ -207,6 +209,8 @@ mod delete_retention_policy;
 
 mod delete_subscription_filter;
 
+mod delete_transformer;
+
 mod describe_account_policies;
 
 mod describe_configuration_templates;
@@ -220,6 +224,10 @@ mod describe_delivery_sources;
 mod describe_destinations;
 
 mod describe_export_tasks;
+
+mod describe_field_indexes;
+
+mod describe_index_policies;
 
 mod describe_log_groups;
 
@@ -259,9 +267,13 @@ mod get_log_record;
 
 mod get_query_results;
 
+mod get_transformer;
+
 mod list_anomalies;
 
 mod list_log_anomaly_detectors;
+
+mod list_log_groups_for_query;
 
 mod list_tags_for_resource;
 
@@ -281,6 +293,8 @@ mod put_destination;
 
 mod put_destination_policy;
 
+mod put_index_policy;
+
 mod put_log_events;
 
 mod put_metric_filter;
@@ -293,6 +307,8 @@ mod put_retention_policy;
 
 mod put_subscription_filter;
 
+mod put_transformer;
+
 mod start_query;
 
 mod stop_query;
@@ -302,6 +318,8 @@ mod tag_log_group;
 mod tag_resource;
 
 mod test_metric_filter;
+
+mod test_transformer;
 
 mod untag_log_group;
 

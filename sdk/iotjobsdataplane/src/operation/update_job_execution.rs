@@ -274,7 +274,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateJobExec
 pub enum UpdateJobExecutionError {
     /// <p>The certificate is invalid.</p>
     CertificateValidationException(crate::types::error::CertificateValidationException),
-    /// <p>The contents of the request were invalid. For example, this code is returned when an UpdateJobExecution request contains invalid status details. The message contains details about the error.</p>
+    /// <p>The contents of the request were invalid.</p>
     InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>An update attempted to change the job execution to a state that is invalid because of the job execution's current state (for example, an attempt to change a request in state SUCCESS to state IN_PROGRESS). In this case, the body of the error message also contains the executionState field.</p>
     InvalidStateTransitionException(crate::types::error::InvalidStateTransitionException),

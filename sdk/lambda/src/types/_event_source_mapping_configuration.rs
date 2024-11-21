@@ -71,6 +71,8 @@ pub struct EventSourceMappingConfiguration {
     pub filter_criteria_error: ::std::option::Option<crate::types::FilterCriteriaError>,
     /// <p>The Amazon Resource Name (ARN) of the event source mapping.</p>
     pub event_source_mapping_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The metrics configuration for your event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics">Event source mapping metrics</a>.</p>
+    pub metrics_config: ::std::option::Option<crate::types::EventSourceMappingMetricsConfig>,
 }
 impl EventSourceMappingConfiguration {
     /// <p>The identifier of the event source mapping.</p>
@@ -208,6 +210,10 @@ impl EventSourceMappingConfiguration {
     pub fn event_source_mapping_arn(&self) -> ::std::option::Option<&str> {
         self.event_source_mapping_arn.as_deref()
     }
+    /// <p>The metrics configuration for your event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics">Event source mapping metrics</a>.</p>
+    pub fn metrics_config(&self) -> ::std::option::Option<&crate::types::EventSourceMappingMetricsConfig> {
+        self.metrics_config.as_ref()
+    }
 }
 impl EventSourceMappingConfiguration {
     /// Creates a new builder-style object to manufacture [`EventSourceMappingConfiguration`](crate::types::EventSourceMappingConfiguration).
@@ -250,6 +256,7 @@ pub struct EventSourceMappingConfigurationBuilder {
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) filter_criteria_error: ::std::option::Option<crate::types::FilterCriteriaError>,
     pub(crate) event_source_mapping_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) metrics_config: ::std::option::Option<crate::types::EventSourceMappingMetricsConfig>,
 }
 impl EventSourceMappingConfigurationBuilder {
     /// <p>The identifier of the event source mapping.</p>
@@ -726,6 +733,20 @@ impl EventSourceMappingConfigurationBuilder {
     pub fn get_event_source_mapping_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_source_mapping_arn
     }
+    /// <p>The metrics configuration for your event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics">Event source mapping metrics</a>.</p>
+    pub fn metrics_config(mut self, input: crate::types::EventSourceMappingMetricsConfig) -> Self {
+        self.metrics_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The metrics configuration for your event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics">Event source mapping metrics</a>.</p>
+    pub fn set_metrics_config(mut self, input: ::std::option::Option<crate::types::EventSourceMappingMetricsConfig>) -> Self {
+        self.metrics_config = input;
+        self
+    }
+    /// <p>The metrics configuration for your event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics">Event source mapping metrics</a>.</p>
+    pub fn get_metrics_config(&self) -> &::std::option::Option<crate::types::EventSourceMappingMetricsConfig> {
+        &self.metrics_config
+    }
     /// Consumes the builder and constructs a [`EventSourceMappingConfiguration`](crate::types::EventSourceMappingConfiguration).
     pub fn build(self) -> crate::types::EventSourceMappingConfiguration {
         crate::types::EventSourceMappingConfiguration {
@@ -759,6 +780,7 @@ impl EventSourceMappingConfigurationBuilder {
             kms_key_arn: self.kms_key_arn,
             filter_criteria_error: self.filter_criteria_error,
             event_source_mapping_arn: self.event_source_mapping_arn,
+            metrics_config: self.metrics_config,
         }
     }
 }

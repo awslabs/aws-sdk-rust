@@ -7,9 +7,23 @@ pub enum Error {
     BucketAlreadyExists(crate::types::error::BucketAlreadyExists),
     /// <p>The bucket you tried to create already exists, and you own it. Amazon S3 returns this error in all Amazon Web Services Regions except in the North Virginia Region. For legacy compatibility, if you re-create an existing bucket that you already own in the North Virginia Region, Amazon S3 returns 200 OK and resets the bucket access control lists (ACLs).</p>
     BucketAlreadyOwnedByYou(crate::types::error::BucketAlreadyOwnedByYou),
+    /// <p>The existing object was created with a different encryption type. Subsequent write requests must include the appropriate encryption parameters in the request or while creating the session.</p>
+    EncryptionTypeMismatch(crate::types::error::EncryptionTypeMismatch),
     /// <p>Object is archived and inaccessible until restored.</p>
     /// <p>If the object you are retrieving is stored in the S3 Glacier Flexible Retrieval storage class, the S3 Glacier Deep Archive storage class, the S3 Intelligent-Tiering Archive Access tier, or the S3 Intelligent-Tiering Deep Archive Access tier, before you can retrieve the object you must first restore a copy using <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>. Otherwise, this operation returns an <code>InvalidObjectState</code> error. For information about restoring archived objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html">Restoring Archived Objects</a> in the <i>Amazon S3 User Guide</i>.</p>
     InvalidObjectState(crate::types::error::InvalidObjectState),
+    /// <p>You may receive this error in multiple cases. Depending on the reason for the error, you may receive one of the messages below:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Cannot specify both a write offset value and user-defined object metadata for existing objects.</p></li>
+    /// <li>
+    /// <p>Checksum Type mismatch occurred, expected checksum Type: sha1, actual checksum Type: crc32c.</p></li>
+    /// <li>
+    /// <p>Request body cannot be empty when 'write offset' is specified.</p></li>
+    /// </ul>
+    InvalidRequest(crate::types::error::InvalidRequest),
+    /// <p>The write offset value that you specified does not match the current object size.</p>
+    InvalidWriteOffset(crate::types::error::InvalidWriteOffset),
     /// <p>The specified bucket does not exist.</p>
     NoSuchBucket(crate::types::error::NoSuchBucket),
     /// <p>The specified key does not exist.</p>
@@ -22,6 +36,8 @@ pub enum Error {
     ObjectAlreadyInActiveTierError(crate::types::error::ObjectAlreadyInActiveTierError),
     /// <p>The source object of the COPY action is not in the active tier and is only stored in Amazon S3 Glacier.</p>
     ObjectNotInActiveTierError(crate::types::error::ObjectNotInActiveTierError),
+    /// <p>You have attempted to add more parts than the maximum of 10000 that are allowed for this object. You can use the CopyObject operation to copy this object to another and then add more data to the newly copied object.</p>
+    TooManyParts(crate::types::error::TooManyParts),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -36,13 +52,17 @@ impl ::std::fmt::Display for Error {
         match self {
             Error::BucketAlreadyExists(inner) => inner.fmt(f),
             Error::BucketAlreadyOwnedByYou(inner) => inner.fmt(f),
+            Error::EncryptionTypeMismatch(inner) => inner.fmt(f),
             Error::InvalidObjectState(inner) => inner.fmt(f),
+            Error::InvalidRequest(inner) => inner.fmt(f),
+            Error::InvalidWriteOffset(inner) => inner.fmt(f),
             Error::NoSuchBucket(inner) => inner.fmt(f),
             Error::NoSuchKey(inner) => inner.fmt(f),
             Error::NoSuchUpload(inner) => inner.fmt(f),
             Error::NotFound(inner) => inner.fmt(f),
             Error::ObjectAlreadyInActiveTierError(inner) => inner.fmt(f),
             Error::ObjectNotInActiveTierError(inner) => inner.fmt(f),
+            Error::TooManyParts(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -66,13 +86,17 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         match self {
             Self::BucketAlreadyExists(inner) => inner.meta(),
             Self::BucketAlreadyOwnedByYou(inner) => inner.meta(),
+            Self::EncryptionTypeMismatch(inner) => inner.meta(),
             Self::InvalidObjectState(inner) => inner.meta(),
+            Self::InvalidRequest(inner) => inner.meta(),
+            Self::InvalidWriteOffset(inner) => inner.meta(),
             Self::NoSuchBucket(inner) => inner.meta(),
             Self::NoSuchKey(inner) => inner.meta(),
             Self::NoSuchUpload(inner) => inner.meta(),
             Self::NotFound(inner) => inner.meta(),
             Self::ObjectAlreadyInActiveTierError(inner) => inner.meta(),
             Self::ObjectNotInActiveTierError(inner) => inner.meta(),
+            Self::TooManyParts(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
         }
     }
@@ -2148,6 +2172,10 @@ where
 impl From<crate::operation::put_object::PutObjectError> for Error {
     fn from(err: crate::operation::put_object::PutObjectError) -> Self {
         match err {
+            crate::operation::put_object::PutObjectError::EncryptionTypeMismatch(inner) => Error::EncryptionTypeMismatch(inner),
+            crate::operation::put_object::PutObjectError::InvalidRequest(inner) => Error::InvalidRequest(inner),
+            crate::operation::put_object::PutObjectError::InvalidWriteOffset(inner) => Error::InvalidWriteOffset(inner),
+            crate::operation::put_object::PutObjectError::TooManyParts(inner) => Error::TooManyParts(inner),
             crate::operation::put_object::PutObjectError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2433,13 +2461,17 @@ impl ::std::error::Error for Error {
         match self {
             Error::BucketAlreadyExists(inner) => inner.source(),
             Error::BucketAlreadyOwnedByYou(inner) => inner.source(),
+            Error::EncryptionTypeMismatch(inner) => inner.source(),
             Error::InvalidObjectState(inner) => inner.source(),
+            Error::InvalidRequest(inner) => inner.source(),
+            Error::InvalidWriteOffset(inner) => inner.source(),
             Error::NoSuchBucket(inner) => inner.source(),
             Error::NoSuchKey(inner) => inner.source(),
             Error::NoSuchUpload(inner) => inner.source(),
             Error::NotFound(inner) => inner.source(),
             Error::ObjectAlreadyInActiveTierError(inner) => inner.source(),
             Error::ObjectNotInActiveTierError(inner) => inner.source(),
+            Error::TooManyParts(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
         }
     }
@@ -2449,13 +2481,17 @@ impl crate::s3_request_id::RequestIdExt for Error {
         match self {
             Self::BucketAlreadyExists(e) => e.extended_request_id(),
             Self::BucketAlreadyOwnedByYou(e) => e.extended_request_id(),
+            Self::EncryptionTypeMismatch(e) => e.extended_request_id(),
             Self::InvalidObjectState(e) => e.extended_request_id(),
+            Self::InvalidRequest(e) => e.extended_request_id(),
+            Self::InvalidWriteOffset(e) => e.extended_request_id(),
             Self::NoSuchBucket(e) => e.extended_request_id(),
             Self::NoSuchKey(e) => e.extended_request_id(),
             Self::NoSuchUpload(e) => e.extended_request_id(),
             Self::NotFound(e) => e.extended_request_id(),
             Self::ObjectAlreadyInActiveTierError(e) => e.extended_request_id(),
             Self::ObjectNotInActiveTierError(e) => e.extended_request_id(),
+            Self::TooManyParts(e) => e.extended_request_id(),
             Self::Unhandled(e) => e.meta.extended_request_id(),
         }
     }
@@ -2465,13 +2501,17 @@ impl ::aws_types::request_id::RequestId for Error {
         match self {
             Self::BucketAlreadyExists(e) => e.request_id(),
             Self::BucketAlreadyOwnedByYou(e) => e.request_id(),
+            Self::EncryptionTypeMismatch(e) => e.request_id(),
             Self::InvalidObjectState(e) => e.request_id(),
+            Self::InvalidRequest(e) => e.request_id(),
+            Self::InvalidWriteOffset(e) => e.request_id(),
             Self::NoSuchBucket(e) => e.request_id(),
             Self::NoSuchKey(e) => e.request_id(),
             Self::NoSuchUpload(e) => e.request_id(),
             Self::NotFound(e) => e.request_id(),
             Self::ObjectAlreadyInActiveTierError(e) => e.request_id(),
             Self::ObjectNotInActiveTierError(e) => e.request_id(),
+            Self::TooManyParts(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),
         }
     }

@@ -24,6 +24,8 @@ pub struct AffectedEntity {
     /// <p>Currently, the <code>tags</code> property isn't supported.</p>
     /// </note>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>Additional metadata about the affected entity.</p>
+    pub entity_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl AffectedEntity {
     /// <p>The unique identifier for the entity. Format: <code>arn:aws:health:<i>entity-region</i>:<i>aws-account</i>:entity/<i>entity-id</i> </code>. Example: <code>arn:aws:health:us-east-1:111222333444:entity/AVh5GGT7ul1arKr1sE1K</code></p>
@@ -62,6 +64,10 @@ impl AffectedEntity {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>Additional metadata about the affected entity.</p>
+    pub fn entity_metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.entity_metadata.as_ref()
+    }
 }
 impl AffectedEntity {
     /// Creates a new builder-style object to manufacture [`AffectedEntity`](crate::types::AffectedEntity).
@@ -82,6 +88,7 @@ pub struct AffectedEntityBuilder {
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status_code: ::std::option::Option<crate::types::EntityStatusCode>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) entity_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl AffectedEntityBuilder {
     /// <p>The unique identifier for the entity. Format: <code>arn:aws:health:<i>entity-region</i>:<i>aws-account</i>:entity/<i>entity-id</i> </code>. Example: <code>arn:aws:health:us-east-1:111222333444:entity/AVh5GGT7ul1arKr1sE1K</code></p>
@@ -214,6 +221,33 @@ impl AffectedEntityBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// Adds a key-value pair to `entity_metadata`.
+    ///
+    /// To override the contents of this collection use [`set_entity_metadata`](Self::set_entity_metadata).
+    ///
+    /// <p>Additional metadata about the affected entity.</p>
+    pub fn entity_metadata(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.entity_metadata.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.entity_metadata = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Additional metadata about the affected entity.</p>
+    pub fn set_entity_metadata(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.entity_metadata = input;
+        self
+    }
+    /// <p>Additional metadata about the affected entity.</p>
+    pub fn get_entity_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.entity_metadata
+    }
     /// Consumes the builder and constructs a [`AffectedEntity`](crate::types::AffectedEntity).
     pub fn build(self) -> crate::types::AffectedEntity {
         crate::types::AffectedEntity {
@@ -225,6 +259,7 @@ impl AffectedEntityBuilder {
             last_updated_time: self.last_updated_time,
             status_code: self.status_code,
             tags: self.tags,
+            entity_metadata: self.entity_metadata,
         }
     }
 }

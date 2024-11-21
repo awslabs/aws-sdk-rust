@@ -500,4 +500,21 @@ impl PutScalingPolicyFluentBuilder {
     pub fn get_target_tracking_scaling_policy_configuration(&self) -> &::std::option::Option<crate::types::TargetTrackingScalingPolicyConfiguration> {
         self.inner.get_target_tracking_scaling_policy_configuration()
     }
+    /// <p>The configuration of the predictive scaling policy.</p>
+    pub fn predictive_scaling_policy_configuration(mut self, input: crate::types::PredictiveScalingPolicyConfiguration) -> Self {
+        self.inner = self.inner.predictive_scaling_policy_configuration(input);
+        self
+    }
+    /// <p>The configuration of the predictive scaling policy.</p>
+    pub fn set_predictive_scaling_policy_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::PredictiveScalingPolicyConfiguration>,
+    ) -> Self {
+        self.inner = self.inner.set_predictive_scaling_policy_configuration(input);
+        self
+    }
+    /// <p>The configuration of the predictive scaling policy.</p>
+    pub fn get_predictive_scaling_policy_configuration(&self) -> &::std::option::Option<crate::types::PredictiveScalingPolicyConfiguration> {
+        self.inner.get_predictive_scaling_policy_configuration()
+    }
 }

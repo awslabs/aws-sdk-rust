@@ -91,5 +91,16 @@ pub fn ser_abort_multipart_upload_headers(
         })?;
         builder = builder.header("x-amz-expected-bucket-owner", header_value);
     }
+    if let ::std::option::Option::Some(inner_5) = &input.if_match_initiated_time {
+        let formatted_6 = inner_5.fmt(::aws_smithy_types::date_time::Format::HttpDate)?;
+        let header_value = formatted_6;
+        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+            ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                "if_match_initiated_time",
+                format!("`{}` cannot be used as a header value: {}", &header_value, err),
+            )
+        })?;
+        builder = builder.header("x-amz-if-match-initiated-time", header_value);
+    }
     Ok(builder)
 }

@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`job_id(impl Into<String>)`](crate::operation::describe_job::builders::DescribeJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::describe_job::builders::DescribeJobFluentBuilder::set_job_id):<br>required: **true**<br><p>The unique identifier you assigned to this job when it was created.</p><br>
-    ///   - [`before_substitution(bool)`](crate::operation::describe_job::builders::DescribeJobFluentBuilder::before_substitution) / [`set_before_substitution(Option<bool>)`](crate::operation::describe_job::builders::DescribeJobFluentBuilder::set_before_substitution):<br>required: **false**<br><p>A flag that provides a view of the job document before and after the substitution parameters have been resolved with their exact values.</p><br>
+    ///   - [`before_substitution(bool)`](crate::operation::describe_job::builders::DescribeJobFluentBuilder::before_substitution) / [`set_before_substitution(Option<bool>)`](crate::operation::describe_job::builders::DescribeJobFluentBuilder::set_before_substitution):<br>required: **false**<br><p>Provides a view of the job document before and after the substitution parameters have been resolved with their exact values.</p><br>
     /// - On success, responds with [`DescribeJobOutput`](crate::operation::describe_job::DescribeJobOutput) with field(s):
     ///   - [`document_source(Option<String>)`](crate::operation::describe_job::DescribeJobOutput::document_source): <p>An S3 link to the job document.</p>
     ///   - [`job(Option<Job>)`](crate::operation::describe_job::DescribeJobOutput::job): <p>Information about the job.</p>

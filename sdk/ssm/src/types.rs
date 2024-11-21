@@ -129,6 +129,10 @@ pub use crate::types::_association_status_name::AssociationStatusName;
 
 pub use crate::types::_stop_type::StopType;
 
+pub use crate::types::_execution_inputs::ExecutionInputs;
+
+pub use crate::types::_automation_execution_inputs::AutomationExecutionInputs;
+
 pub use crate::types::_runbook::Runbook;
 
 pub use crate::types::_execution_mode::ExecutionMode;
@@ -210,6 +214,32 @@ pub use crate::types::_ops_item_event_filter::OpsItemEventFilter;
 pub use crate::types::_ops_item_event_filter_operator::OpsItemEventFilterOperator;
 
 pub use crate::types::_ops_item_event_filter_key::OpsItemEventFilterKey;
+
+pub use crate::types::_node_aggregator::NodeAggregator;
+
+pub use crate::types::_node_attribute_name::NodeAttributeName;
+
+pub use crate::types::_node_type_name::NodeTypeName;
+
+pub use crate::types::_node_aggregator_type::NodeAggregatorType;
+
+pub use crate::types::_node_filter::NodeFilter;
+
+pub use crate::types::_node_filter_operator_type::NodeFilterOperatorType;
+
+pub use crate::types::_node_filter_key::NodeFilterKey;
+
+pub use crate::types::_node::Node;
+
+pub use crate::types::_node_type::NodeType;
+
+pub use crate::types::_instance_info::InstanceInfo;
+
+pub use crate::types::_resource_type::ResourceType;
+
+pub use crate::types::_managed_status::ManagedStatus;
+
+pub use crate::types::_node_owner_info::NodeOwnerInfo;
 
 pub use crate::types::_inventory_filter::InventoryFilter;
 
@@ -296,6 +326,16 @@ pub use crate::types::_result_attribute::ResultAttribute;
 pub use crate::types::_inventory_aggregator::InventoryAggregator;
 
 pub use crate::types::_inventory_group::InventoryGroup;
+
+pub use crate::types::_execution_preview::ExecutionPreview;
+
+pub use crate::types::_automation_execution_preview::AutomationExecutionPreview;
+
+pub use crate::types::_target_preview::TargetPreview;
+
+pub use crate::types::_impact_type::ImpactType;
+
+pub use crate::types::_execution_preview_status::ExecutionPreviewStatus;
 
 pub use crate::types::_attachment_content::AttachmentContent;
 
@@ -416,8 +456,6 @@ pub use crate::types::_patch_compliance_data::PatchComplianceData;
 pub use crate::types::_patch_compliance_data_state::PatchComplianceDataState;
 
 pub use crate::types::_instance_information::InstanceInformation;
-
-pub use crate::types::_resource_type::ResourceType;
 
 pub use crate::types::_instance_information_string_filter::InstanceInformationStringFilter;
 
@@ -547,7 +585,11 @@ mod _automation_execution_filter;
 
 mod _automation_execution_filter_key;
 
+mod _automation_execution_inputs;
+
 mod _automation_execution_metadata;
+
+mod _automation_execution_preview;
 
 mod _automation_execution_status;
 
@@ -651,7 +693,13 @@ mod _document_version_info;
 
 mod _effective_patch;
 
+mod _execution_inputs;
+
 mod _execution_mode;
+
+mod _execution_preview;
+
+mod _execution_preview_status;
 
 mod _external_alarm_state;
 
@@ -663,6 +711,8 @@ mod _fault;
 
 mod _get_resource_policies_response_entry;
 
+mod _impact_type;
+
 mod _instance_aggregated_association_overview;
 
 mod _instance_association;
@@ -672,6 +722,8 @@ mod _instance_association_output_location;
 mod _instance_association_output_url;
 
 mod _instance_association_status_info;
+
+mod _instance_info;
 
 mod _instance_information;
 
@@ -767,7 +819,29 @@ mod _maintenance_window_task_parameter_value_expression;
 
 mod _maintenance_window_task_type;
 
+mod _managed_status;
+
 mod _metadata_value;
+
+mod _node;
+
+mod _node_aggregator;
+
+mod _node_aggregator_type;
+
+mod _node_attribute_name;
+
+mod _node_filter;
+
+mod _node_filter_key;
+
+mod _node_filter_operator_type;
+
+mod _node_owner_info;
+
+mod _node_type;
+
+mod _node_type_name;
 
 mod _non_compliant_summary;
 
@@ -974,6 +1048,8 @@ mod _tag;
 mod _target;
 
 mod _target_location;
+
+mod _target_preview;
 
 /// Builders
 pub mod builders;

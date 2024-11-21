@@ -66,34 +66,40 @@ pub fn ser_update_event_source_mapping_input_input(
             ::aws_smithy_types::Number::NegInt((*var_17).into()),
         );
     }
-    if let Some(var_18) = &input.parallelization_factor {
+    if let Some(var_18) = &input.metrics_config {
+        #[allow(unused_mut)]
+        let mut object_19 = object.key("MetricsConfig").start_object();
+        crate::protocol_serde::shape_event_source_mapping_metrics_config::ser_event_source_mapping_metrics_config(&mut object_19, var_18)?;
+        object_19.finish();
+    }
+    if let Some(var_20) = &input.parallelization_factor {
         object.key("ParallelizationFactor").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_18).into()),
+            ::aws_smithy_types::Number::NegInt((*var_20).into()),
         );
     }
-    if let Some(var_19) = &input.scaling_config {
+    if let Some(var_21) = &input.scaling_config {
         #[allow(unused_mut)]
-        let mut object_20 = object.key("ScalingConfig").start_object();
-        crate::protocol_serde::shape_scaling_config::ser_scaling_config(&mut object_20, var_19)?;
-        object_20.finish();
+        let mut object_22 = object.key("ScalingConfig").start_object();
+        crate::protocol_serde::shape_scaling_config::ser_scaling_config(&mut object_22, var_21)?;
+        object_22.finish();
     }
-    if let Some(var_21) = &input.source_access_configurations {
-        let mut array_22 = object.key("SourceAccessConfigurations").start_array();
-        for item_23 in var_21 {
+    if let Some(var_23) = &input.source_access_configurations {
+        let mut array_24 = object.key("SourceAccessConfigurations").start_array();
+        for item_25 in var_23 {
             {
                 #[allow(unused_mut)]
-                let mut object_24 = array_22.value().start_object();
-                crate::protocol_serde::shape_source_access_configuration::ser_source_access_configuration(&mut object_24, item_23)?;
-                object_24.finish();
+                let mut object_26 = array_24.value().start_object();
+                crate::protocol_serde::shape_source_access_configuration::ser_source_access_configuration(&mut object_26, item_25)?;
+                object_26.finish();
             }
         }
-        array_22.finish();
+        array_24.finish();
     }
-    if let Some(var_25) = &input.tumbling_window_in_seconds {
+    if let Some(var_27) = &input.tumbling_window_in_seconds {
         object.key("TumblingWindowInSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_25).into()),
+            ::aws_smithy_types::Number::NegInt((*var_27).into()),
         );
     }
     Ok(())

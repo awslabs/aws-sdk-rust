@@ -22,9 +22,7 @@ impl crate::operation::delete_vehicle::builders::DeleteVehicleInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteVehicle`.
 ///
-/// <p>Deletes a vehicle and removes it from any campaigns.</p><note>
-/// <p>If the vehicle is successfully deleted, Amazon Web Services IoT FleetWise sends back an HTTP 200 response with an empty body.</p>
-/// </note>
+/// <p>Deletes a vehicle and removes it from any campaigns.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteVehicleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

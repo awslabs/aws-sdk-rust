@@ -23,7 +23,7 @@ impl crate::operation::get_bucket_versioning::builders::GetBucketVersioningInput
 /// Fluent builder constructing a request to `GetBucketVersioning`.
 ///
 /// <note>
-/// <p>This operation is not supported by directory buckets.</p>
+/// <p>This operation is not supported for directory buckets.</p>
 /// </note>
 /// <p>Returns the versioning state of a bucket.</p>
 /// <p>To retrieve the versioning state of a bucket, you must be the bucket owner.</p>

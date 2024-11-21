@@ -96,6 +96,24 @@ pub fn ser_create_capacity_reservation_input_input_input(
     if let Some(var_35) = &input.placement_group_arn {
         scope_34.string(var_35);
     }
+    #[allow(unused_mut)]
+    let mut scope_36 = writer.prefix("StartDate");
+    if let Some(var_37) = &input.start_date {
+        scope_36.date_time(var_37, ::aws_smithy_types::date_time::Format::DateTime)?;
+    }
+    #[allow(unused_mut)]
+    let mut scope_38 = writer.prefix("CommitmentDuration");
+    if let Some(var_39) = &input.commitment_duration {
+        scope_38.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_39).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_40 = writer.prefix("DeliveryPreference");
+    if let Some(var_41) = &input.delivery_preference {
+        scope_40.string(var_41.as_str());
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

@@ -37,6 +37,8 @@ pub(crate) mod shape_describe_scaling_policies;
 
 pub(crate) mod shape_describe_scheduled_actions;
 
+pub(crate) mod shape_get_predictive_scaling_forecast;
+
 pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_put_scaling_policy;
@@ -75,6 +77,8 @@ pub(crate) mod shape_describe_scheduled_actions_input;
 
 pub(crate) mod shape_failed_resource_access_exception;
 
+pub(crate) mod shape_get_predictive_scaling_forecast_input;
+
 pub(crate) mod shape_internal_service_exception;
 
 pub(crate) mod shape_invalid_next_token_exception;
@@ -103,6 +107,12 @@ pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_alarms;
 
+pub(crate) mod shape_capacity_forecast;
+
+pub(crate) mod shape_load_forecasts;
+
+pub(crate) mod shape_predictive_scaling_policy_configuration;
+
 pub(crate) mod shape_scalable_target_action;
 
 pub(crate) mod shape_scalable_targets;
@@ -125,7 +135,15 @@ pub(crate) mod shape_alarm;
 
 pub(crate) mod shape_customized_metric_specification;
 
+pub(crate) mod shape_load_forecast;
+
 pub(crate) mod shape_predefined_metric_specification;
+
+pub(crate) mod shape_predictive_scaling_forecast_timestamps;
+
+pub(crate) mod shape_predictive_scaling_forecast_values;
+
+pub(crate) mod shape_predictive_scaling_metric_specification;
 
 pub(crate) mod shape_scalable_target;
 
@@ -141,9 +159,21 @@ pub(crate) mod shape_metric_dimension;
 
 pub(crate) mod shape_not_scaled_reasons;
 
+pub(crate) mod shape_predictive_scaling_customized_metric_specification;
+
+pub(crate) mod shape_predictive_scaling_predefined_load_metric_specification;
+
+pub(crate) mod shape_predictive_scaling_predefined_metric_pair_specification;
+
+pub(crate) mod shape_predictive_scaling_predefined_scaling_metric_specification;
+
 pub(crate) mod shape_target_tracking_metric_data_query;
 
 pub(crate) mod shape_not_scaled_reason;
+
+pub(crate) mod shape_predictive_scaling_metric_data_query;
+
+pub(crate) mod shape_predictive_scaling_metric_specifications;
 
 pub(crate) mod shape_step_adjustments;
 
@@ -151,10 +181,20 @@ pub(crate) mod shape_target_tracking_metric_stat;
 
 pub(crate) mod shape_metric_dimensions;
 
+pub(crate) mod shape_predictive_scaling_metric_data_queries;
+
+pub(crate) mod shape_predictive_scaling_metric_stat;
+
 pub(crate) mod shape_target_tracking_metric;
 
 pub(crate) mod shape_target_tracking_metric_data_queries;
 
+pub(crate) mod shape_predictive_scaling_metric;
+
 pub(crate) mod shape_target_tracking_metric_dimension;
+
+pub(crate) mod shape_predictive_scaling_metric_dimension;
+
+pub(crate) mod shape_predictive_scaling_metric_dimensions;
 
 pub(crate) mod shape_target_tracking_metric_dimensions;

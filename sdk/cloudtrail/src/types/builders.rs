@@ -3,6 +3,14 @@ pub use crate::types::_advanced_event_selector::AdvancedEventSelectorBuilder;
 
 pub use crate::types::_advanced_field_selector::AdvancedFieldSelectorBuilder;
 
+pub use crate::types::_refresh_schedule::RefreshScheduleBuilder;
+
+pub use crate::types::_refresh_schedule_frequency::RefreshScheduleFrequencyBuilder;
+
+pub use crate::types::_widget::WidgetBuilder;
+
+pub use crate::types::_request_widget::RequestWidgetBuilder;
+
 pub use crate::types::_destination::DestinationBuilder;
 
 pub use crate::types::_import_statistics::ImportStatisticsBuilder;
@@ -38,6 +46,8 @@ pub use crate::types::_imports_list_item::ImportsListItemBuilder;
 pub use crate::types::_import_failure_list_item::ImportFailureListItemBuilder;
 
 pub use crate::types::_event_data_store::EventDataStoreBuilder;
+
+pub use crate::types::_dashboard_detail::DashboardDetailBuilder;
 
 pub use crate::types::_channel::ChannelBuilder;
 

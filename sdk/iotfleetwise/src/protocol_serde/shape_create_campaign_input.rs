@@ -97,5 +97,29 @@ pub fn ser_create_campaign_input_input(
         }
         array_26.finish();
     }
+    if let Some(var_29) = &input.data_partitions {
+        let mut array_30 = object.key("dataPartitions").start_array();
+        for item_31 in var_29 {
+            {
+                #[allow(unused_mut)]
+                let mut object_32 = array_30.value().start_object();
+                crate::protocol_serde::shape_data_partition::ser_data_partition(&mut object_32, item_31)?;
+                object_32.finish();
+            }
+        }
+        array_30.finish();
+    }
+    if let Some(var_33) = &input.signals_to_fetch {
+        let mut array_34 = object.key("signalsToFetch").start_array();
+        for item_35 in var_33 {
+            {
+                #[allow(unused_mut)]
+                let mut object_36 = array_34.value().start_object();
+                crate::protocol_serde::shape_signal_fetch_information::ser_signal_fetch_information(&mut object_36, item_35)?;
+                object_36.finish();
+            }
+        }
+        array_34.finish();
+    }
     Ok(())
 }

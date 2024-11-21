@@ -144,6 +144,21 @@ pub fn de_capacity_block_offering(
                 builder = builder.set_tenancy(var_10);
             }
             ,
+            s if s.matches("capacityBlockDurationMinutes") /* CapacityBlockDurationMinutes com.amazonaws.ec2#CapacityBlockOffering$CapacityBlockDurationMinutes */ =>  {
+                let var_11 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_capacity_block_duration_minutes(var_11);
+            }
+            ,
             _ => {}
         }
     }

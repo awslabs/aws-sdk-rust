@@ -177,6 +177,8 @@ mod describe_scaling_policies;
 
 mod describe_scheduled_actions;
 
+mod get_predictive_scaling_forecast;
+
 mod list_tags_for_resource;
 
 mod put_scaling_policy;

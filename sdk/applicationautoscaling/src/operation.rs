@@ -22,6 +22,9 @@ pub mod describe_scaling_policies;
 /// Types for the `DescribeScheduledActions` operation.
 pub mod describe_scheduled_actions;
 
+/// Types for the `GetPredictiveScalingForecast` operation.
+pub mod get_predictive_scaling_forecast;
+
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 

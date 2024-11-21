@@ -5,10 +5,9 @@
 pub struct ListVehiclesInput {
     /// <p>The Amazon Resource Name (ARN) of a vehicle model (model manifest). You can use this optional parameter to list only the vehicles created from a certain vehicle model.</p>
     pub model_manifest_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The fully qualified names of the attributes. For example, the fully qualified name of an attribute might be <code>Vehicle.Body.Engine.Type</code>.</p>
+    /// <p>The fully qualified names of the attributes. You can use this optional parameter to list the vehicles containing all the attributes in the request. For example, <code>attributeNames</code> could be "<code>Vehicle.Body.Engine.Type, Vehicle.Color</code>" and the corresponding <code>attributeValues</code> could be "<code>1.3 L R2, Blue</code>" . In this case, the API will filter vehicles with an attribute name <code>Vehicle.Body.Engine.Type</code> that contains a value of <code>1.3 L R2</code> AND an attribute name <code>Vehicle.Color</code> that contains a value of "<code>Blue</code>". A request must contain unique values for the <code>attributeNames</code> filter and the matching number of <code>attributeValues</code> filters to return the subset of vehicles that match the attributes filter condition.</p>
     pub attribute_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Static information about a vehicle attribute value in string format. For example:</p>
-    /// <p><code>"1.3 L R2"</code></p>
+    /// <p>Static information about a vehicle attribute value in string format. You can use this optional parameter in conjunction with <code>attributeNames</code> to list the vehicles containing all the <code>attributeValues</code> corresponding to the <code>attributeNames</code> filter. For example, <code>attributeValues</code> could be "<code>1.3 L R2, Blue</code>" and the corresponding <code>attributeNames</code> filter could be "<code>Vehicle.Body.Engine.Type, Vehicle.Color</code>". In this case, the API will filter vehicles with attribute name <code>Vehicle.Body.Engine.Type</code> that contains a value of <code>1.3 L R2</code> AND an attribute name <code>Vehicle.Color</code> that contains a value of "<code>Blue</code>". A request must contain unique values for the <code>attributeNames</code> filter and the matching number of <code>attributeValues</code> filter to return the subset of vehicles that match the attributes filter condition.</p>
     pub attribute_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A pagination token for the next set of results.</p>
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next set of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
@@ -21,14 +20,13 @@ impl ListVehiclesInput {
     pub fn model_manifest_arn(&self) -> ::std::option::Option<&str> {
         self.model_manifest_arn.as_deref()
     }
-    /// <p>The fully qualified names of the attributes. For example, the fully qualified name of an attribute might be <code>Vehicle.Body.Engine.Type</code>.</p>
+    /// <p>The fully qualified names of the attributes. You can use this optional parameter to list the vehicles containing all the attributes in the request. For example, <code>attributeNames</code> could be "<code>Vehicle.Body.Engine.Type, Vehicle.Color</code>" and the corresponding <code>attributeValues</code> could be "<code>1.3 L R2, Blue</code>" . In this case, the API will filter vehicles with an attribute name <code>Vehicle.Body.Engine.Type</code> that contains a value of <code>1.3 L R2</code> AND an attribute name <code>Vehicle.Color</code> that contains a value of "<code>Blue</code>". A request must contain unique values for the <code>attributeNames</code> filter and the matching number of <code>attributeValues</code> filters to return the subset of vehicles that match the attributes filter condition.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attribute_names.is_none()`.
     pub fn attribute_names(&self) -> &[::std::string::String] {
         self.attribute_names.as_deref().unwrap_or_default()
     }
-    /// <p>Static information about a vehicle attribute value in string format. For example:</p>
-    /// <p><code>"1.3 L R2"</code></p>
+    /// <p>Static information about a vehicle attribute value in string format. You can use this optional parameter in conjunction with <code>attributeNames</code> to list the vehicles containing all the <code>attributeValues</code> corresponding to the <code>attributeNames</code> filter. For example, <code>attributeValues</code> could be "<code>1.3 L R2, Blue</code>" and the corresponding <code>attributeNames</code> filter could be "<code>Vehicle.Body.Engine.Type, Vehicle.Color</code>". In this case, the API will filter vehicles with attribute name <code>Vehicle.Body.Engine.Type</code> that contains a value of <code>1.3 L R2</code> AND an attribute name <code>Vehicle.Color</code> that contains a value of "<code>Blue</code>". A request must contain unique values for the <code>attributeNames</code> filter and the matching number of <code>attributeValues</code> filter to return the subset of vehicles that match the attributes filter condition.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attribute_values.is_none()`.
     pub fn attribute_values(&self) -> &[::std::string::String] {
@@ -80,19 +78,19 @@ impl ListVehiclesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_attribute_names`](Self::set_attribute_names).
     ///
-    /// <p>The fully qualified names of the attributes. For example, the fully qualified name of an attribute might be <code>Vehicle.Body.Engine.Type</code>.</p>
+    /// <p>The fully qualified names of the attributes. You can use this optional parameter to list the vehicles containing all the attributes in the request. For example, <code>attributeNames</code> could be "<code>Vehicle.Body.Engine.Type, Vehicle.Color</code>" and the corresponding <code>attributeValues</code> could be "<code>1.3 L R2, Blue</code>" . In this case, the API will filter vehicles with an attribute name <code>Vehicle.Body.Engine.Type</code> that contains a value of <code>1.3 L R2</code> AND an attribute name <code>Vehicle.Color</code> that contains a value of "<code>Blue</code>". A request must contain unique values for the <code>attributeNames</code> filter and the matching number of <code>attributeValues</code> filters to return the subset of vehicles that match the attributes filter condition.</p>
     pub fn attribute_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.attribute_names.unwrap_or_default();
         v.push(input.into());
         self.attribute_names = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The fully qualified names of the attributes. For example, the fully qualified name of an attribute might be <code>Vehicle.Body.Engine.Type</code>.</p>
+    /// <p>The fully qualified names of the attributes. You can use this optional parameter to list the vehicles containing all the attributes in the request. For example, <code>attributeNames</code> could be "<code>Vehicle.Body.Engine.Type, Vehicle.Color</code>" and the corresponding <code>attributeValues</code> could be "<code>1.3 L R2, Blue</code>" . In this case, the API will filter vehicles with an attribute name <code>Vehicle.Body.Engine.Type</code> that contains a value of <code>1.3 L R2</code> AND an attribute name <code>Vehicle.Color</code> that contains a value of "<code>Blue</code>". A request must contain unique values for the <code>attributeNames</code> filter and the matching number of <code>attributeValues</code> filters to return the subset of vehicles that match the attributes filter condition.</p>
     pub fn set_attribute_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.attribute_names = input;
         self
     }
-    /// <p>The fully qualified names of the attributes. For example, the fully qualified name of an attribute might be <code>Vehicle.Body.Engine.Type</code>.</p>
+    /// <p>The fully qualified names of the attributes. You can use this optional parameter to list the vehicles containing all the attributes in the request. For example, <code>attributeNames</code> could be "<code>Vehicle.Body.Engine.Type, Vehicle.Color</code>" and the corresponding <code>attributeValues</code> could be "<code>1.3 L R2, Blue</code>" . In this case, the API will filter vehicles with an attribute name <code>Vehicle.Body.Engine.Type</code> that contains a value of <code>1.3 L R2</code> AND an attribute name <code>Vehicle.Color</code> that contains a value of "<code>Blue</code>". A request must contain unique values for the <code>attributeNames</code> filter and the matching number of <code>attributeValues</code> filters to return the subset of vehicles that match the attributes filter condition.</p>
     pub fn get_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.attribute_names
     }
@@ -100,22 +98,19 @@ impl ListVehiclesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_attribute_values`](Self::set_attribute_values).
     ///
-    /// <p>Static information about a vehicle attribute value in string format. For example:</p>
-    /// <p><code>"1.3 L R2"</code></p>
+    /// <p>Static information about a vehicle attribute value in string format. You can use this optional parameter in conjunction with <code>attributeNames</code> to list the vehicles containing all the <code>attributeValues</code> corresponding to the <code>attributeNames</code> filter. For example, <code>attributeValues</code> could be "<code>1.3 L R2, Blue</code>" and the corresponding <code>attributeNames</code> filter could be "<code>Vehicle.Body.Engine.Type, Vehicle.Color</code>". In this case, the API will filter vehicles with attribute name <code>Vehicle.Body.Engine.Type</code> that contains a value of <code>1.3 L R2</code> AND an attribute name <code>Vehicle.Color</code> that contains a value of "<code>Blue</code>". A request must contain unique values for the <code>attributeNames</code> filter and the matching number of <code>attributeValues</code> filter to return the subset of vehicles that match the attributes filter condition.</p>
     pub fn attribute_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.attribute_values.unwrap_or_default();
         v.push(input.into());
         self.attribute_values = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Static information about a vehicle attribute value in string format. For example:</p>
-    /// <p><code>"1.3 L R2"</code></p>
+    /// <p>Static information about a vehicle attribute value in string format. You can use this optional parameter in conjunction with <code>attributeNames</code> to list the vehicles containing all the <code>attributeValues</code> corresponding to the <code>attributeNames</code> filter. For example, <code>attributeValues</code> could be "<code>1.3 L R2, Blue</code>" and the corresponding <code>attributeNames</code> filter could be "<code>Vehicle.Body.Engine.Type, Vehicle.Color</code>". In this case, the API will filter vehicles with attribute name <code>Vehicle.Body.Engine.Type</code> that contains a value of <code>1.3 L R2</code> AND an attribute name <code>Vehicle.Color</code> that contains a value of "<code>Blue</code>". A request must contain unique values for the <code>attributeNames</code> filter and the matching number of <code>attributeValues</code> filter to return the subset of vehicles that match the attributes filter condition.</p>
     pub fn set_attribute_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.attribute_values = input;
         self
     }
-    /// <p>Static information about a vehicle attribute value in string format. For example:</p>
-    /// <p><code>"1.3 L R2"</code></p>
+    /// <p>Static information about a vehicle attribute value in string format. You can use this optional parameter in conjunction with <code>attributeNames</code> to list the vehicles containing all the <code>attributeValues</code> corresponding to the <code>attributeNames</code> filter. For example, <code>attributeValues</code> could be "<code>1.3 L R2, Blue</code>" and the corresponding <code>attributeNames</code> filter could be "<code>Vehicle.Body.Engine.Type, Vehicle.Color</code>". In this case, the API will filter vehicles with attribute name <code>Vehicle.Body.Engine.Type</code> that contains a value of <code>1.3 L R2</code> AND an attribute name <code>Vehicle.Color</code> that contains a value of "<code>Blue</code>". A request must contain unique values for the <code>attributeNames</code> filter and the matching number of <code>attributeValues</code> filter to return the subset of vehicles that match the attributes filter condition.</p>
     pub fn get_attribute_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.attribute_values
     }

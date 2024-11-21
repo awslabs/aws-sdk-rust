@@ -45,6 +45,13 @@ pub(crate) fn provisioning_hook_correct_errors(
     builder
 }
 
+pub(crate) fn status_reason_correct_errors(mut builder: crate::types::builders::StatusReasonBuilder) -> crate::types::builders::StatusReasonBuilder {
+    if builder.reason_code.is_none() {
+        builder.reason_code = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn thing_group_indexing_configuration_correct_errors(
     mut builder: crate::types::builders::ThingGroupIndexingConfigurationBuilder,
 ) -> crate::types::builders::ThingGroupIndexingConfigurationBuilder {
@@ -98,6 +105,15 @@ pub(crate) fn audit_suppression_correct_errors(
 }
 
 pub(crate) fn behavior_correct_errors(mut builder: crate::types::builders::BehaviorBuilder) -> crate::types::builders::BehaviorBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn command_parameter_correct_errors(
+    mut builder: crate::types::builders::CommandParameterBuilder,
+) -> crate::types::builders::CommandParameterBuilder {
     if builder.name.is_none() {
         builder.name = Some(Default::default())
     }

@@ -70,6 +70,9 @@ pub mod describe_app_version_template;
 /// Types for the `DescribeDraftAppVersionResourcesImportStatus` operation.
 pub mod describe_draft_app_version_resources_import_status;
 
+/// Types for the `DescribeMetricsExport` operation.
+pub mod describe_metrics_export;
+
 /// Types for the `DescribeResiliencyPolicy` operation.
 pub mod describe_resiliency_policy;
 
@@ -115,6 +118,9 @@ pub mod list_app_versions;
 /// Types for the `ListApps` operation.
 pub mod list_apps;
 
+/// Types for the `ListMetrics` operation.
+pub mod list_metrics;
+
 /// Types for the `ListRecommendationTemplates` operation.
 pub mod list_recommendation_templates;
 
@@ -156,6 +162,9 @@ pub mod resolve_app_version_resources;
 
 /// Types for the `StartAppAssessment` operation.
 pub mod start_app_assessment;
+
+/// Types for the `StartMetricsExport` operation.
+pub mod start_metrics_export;
 
 /// Types for the `StartResourceGroupingRecommendationTask` operation.
 pub mod start_resource_grouping_recommendation_task;

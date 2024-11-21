@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`job_id(impl Into<String>)`](crate::operation::get_job_document::builders::GetJobDocumentFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::get_job_document::builders::GetJobDocumentFluentBuilder::set_job_id):<br>required: **true**<br><p>The unique identifier you assigned to this job when it was created.</p><br>
-    ///   - [`before_substitution(bool)`](crate::operation::get_job_document::builders::GetJobDocumentFluentBuilder::before_substitution) / [`set_before_substitution(Option<bool>)`](crate::operation::get_job_document::builders::GetJobDocumentFluentBuilder::set_before_substitution):<br>required: **false**<br><p>A flag that provides a view of the job document before and after the substitution parameters have been resolved with their exact values.</p><br>
+    ///   - [`before_substitution(bool)`](crate::operation::get_job_document::builders::GetJobDocumentFluentBuilder::before_substitution) / [`set_before_substitution(Option<bool>)`](crate::operation::get_job_document::builders::GetJobDocumentFluentBuilder::set_before_substitution):<br>required: **false**<br><p>Provides a view of the job document before and after the substitution parameters have been resolved with their exact values.</p><br>
     /// - On success, responds with [`GetJobDocumentOutput`](crate::operation::get_job_document::GetJobDocumentOutput) with field(s):
     ///   - [`document(Option<String>)`](crate::operation::get_job_document::GetJobDocumentOutput::document): <p>The job document content.</p>
     /// - On failure, responds with [`SdkError<GetJobDocumentError>`](crate::operation::get_job_document::GetJobDocumentError)

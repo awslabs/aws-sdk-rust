@@ -12,6 +12,7 @@
 /// ```text
 /// # let policytype = unimplemented!();
 /// match policytype {
+///     PolicyType::PredictiveScaling => { /* ... */ },
 ///     PolicyType::StepScaling => { /* ... */ },
 ///     PolicyType::TargetTrackingScaling => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -42,6 +43,8 @@
 )]
 pub enum PolicyType {
     #[allow(missing_docs)] // documentation missing in model
+    PredictiveScaling,
+    #[allow(missing_docs)] // documentation missing in model
     StepScaling,
     #[allow(missing_docs)] // documentation missing in model
     TargetTrackingScaling,
@@ -52,6 +55,7 @@ pub enum PolicyType {
 impl ::std::convert::From<&str> for PolicyType {
     fn from(s: &str) -> Self {
         match s {
+            "PredictiveScaling" => PolicyType::PredictiveScaling,
             "StepScaling" => PolicyType::StepScaling,
             "TargetTrackingScaling" => PolicyType::TargetTrackingScaling,
             other => PolicyType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -69,6 +73,7 @@ impl PolicyType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            PolicyType::PredictiveScaling => "PredictiveScaling",
             PolicyType::StepScaling => "StepScaling",
             PolicyType::TargetTrackingScaling => "TargetTrackingScaling",
             PolicyType::Unknown(value) => value.as_str(),
@@ -76,7 +81,7 @@ impl PolicyType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["StepScaling", "TargetTrackingScaling"]
+        &["PredictiveScaling", "StepScaling", "TargetTrackingScaling"]
     }
 }
 impl ::std::convert::AsRef<str> for PolicyType {
@@ -99,6 +104,7 @@ impl PolicyType {
 impl ::std::fmt::Display for PolicyType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            PolicyType::PredictiveScaling => write!(f, "PredictiveScaling"),
             PolicyType::StepScaling => write!(f, "StepScaling"),
             PolicyType::TargetTrackingScaling => write!(f, "TargetTrackingScaling"),
             PolicyType::Unknown(value) => write!(f, "{}", value),

@@ -16,6 +16,8 @@ pub struct CreateVehicleRequestItem {
     pub association_behavior: ::std::option::Option<crate::types::VehicleAssociationBehavior>,
     /// <p>Metadata which can be used to manage the vehicle.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>Associate state templates to track the state of the vehicle. State templates determine which signal updates the vehicle sends to the cloud.</p>
+    pub state_templates: ::std::option::Option<::std::vec::Vec<crate::types::StateTemplateAssociation>>,
 }
 impl CreateVehicleRequestItem {
     /// <p>The unique ID of the vehicle to create.</p>
@@ -47,6 +49,12 @@ impl CreateVehicleRequestItem {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>Associate state templates to track the state of the vehicle. State templates determine which signal updates the vehicle sends to the cloud.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.state_templates.is_none()`.
+    pub fn state_templates(&self) -> &[crate::types::StateTemplateAssociation] {
+        self.state_templates.as_deref().unwrap_or_default()
+    }
 }
 impl CreateVehicleRequestItem {
     /// Creates a new builder-style object to manufacture [`CreateVehicleRequestItem`](crate::types::CreateVehicleRequestItem).
@@ -65,6 +73,7 @@ pub struct CreateVehicleRequestItemBuilder {
     pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) association_behavior: ::std::option::Option<crate::types::VehicleAssociationBehavior>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) state_templates: ::std::option::Option<::std::vec::Vec<crate::types::StateTemplateAssociation>>,
 }
 impl CreateVehicleRequestItemBuilder {
     /// <p>The unique ID of the vehicle to create.</p>
@@ -166,6 +175,26 @@ impl CreateVehicleRequestItemBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// Appends an item to `state_templates`.
+    ///
+    /// To override the contents of this collection use [`set_state_templates`](Self::set_state_templates).
+    ///
+    /// <p>Associate state templates to track the state of the vehicle. State templates determine which signal updates the vehicle sends to the cloud.</p>
+    pub fn state_templates(mut self, input: crate::types::StateTemplateAssociation) -> Self {
+        let mut v = self.state_templates.unwrap_or_default();
+        v.push(input);
+        self.state_templates = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Associate state templates to track the state of the vehicle. State templates determine which signal updates the vehicle sends to the cloud.</p>
+    pub fn set_state_templates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StateTemplateAssociation>>) -> Self {
+        self.state_templates = input;
+        self
+    }
+    /// <p>Associate state templates to track the state of the vehicle. State templates determine which signal updates the vehicle sends to the cloud.</p>
+    pub fn get_state_templates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StateTemplateAssociation>> {
+        &self.state_templates
+    }
     /// Consumes the builder and constructs a [`CreateVehicleRequestItem`](crate::types::CreateVehicleRequestItem).
     /// This method will fail if any of the following fields are not set:
     /// - [`vehicle_name`](crate::types::builders::CreateVehicleRequestItemBuilder::vehicle_name)
@@ -194,6 +223,7 @@ impl CreateVehicleRequestItemBuilder {
             attributes: self.attributes,
             association_behavior: self.association_behavior,
             tags: self.tags,
+            state_templates: self.state_templates,
         })
     }
 }

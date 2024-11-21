@@ -9,10 +9,30 @@ pub(crate) fn reflens_list_configuration_managers_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_configurations_output_output_next_token(
+    input: &crate::operation::list_configurations::ListConfigurationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_configuration_managers_output_output_configuration_managers_list(
     input: crate::operation::list_configuration_managers::ListConfigurationManagersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationManagerSummary>> {
     let input = match input.configuration_managers_list {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_configurations_output_output_configurations_list(
+    input: crate::operation::list_configurations::ListConfigurationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSummary>> {
+    let input = match input.configurations_list {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

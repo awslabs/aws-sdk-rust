@@ -375,6 +375,22 @@ mod put_object_test {
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum PutObjectError {
+    /// <p>The existing object was created with a different encryption type. Subsequent write requests must include the appropriate encryption parameters in the request or while creating the session.</p>
+    EncryptionTypeMismatch(crate::types::error::EncryptionTypeMismatch),
+    /// <p>You may receive this error in multiple cases. Depending on the reason for the error, you may receive one of the messages below:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Cannot specify both a write offset value and user-defined object metadata for existing objects.</p></li>
+    /// <li>
+    /// <p>Checksum Type mismatch occurred, expected checksum Type: sha1, actual checksum Type: crc32c.</p></li>
+    /// <li>
+    /// <p>Request body cannot be empty when 'write offset' is specified.</p></li>
+    /// </ul>
+    InvalidRequest(crate::types::error::InvalidRequest),
+    /// <p>The write offset value that you specified does not match the current object size.</p>
+    InvalidWriteOffset(crate::types::error::InvalidWriteOffset),
+    /// <p>You have attempted to add more parts than the maximum of 10000 that are allowed for this object. You can use the CopyObject operation to copy this object to another and then add more data to the newly copied object.</p>
+    TooManyParts(crate::types::error::TooManyParts),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -408,13 +424,37 @@ impl PutObjectError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::EncryptionTypeMismatch(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidRequest(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidWriteOffset(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TooManyParts(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `PutObjectError::EncryptionTypeMismatch`.
+    pub fn is_encryption_type_mismatch(&self) -> bool {
+        matches!(self, Self::EncryptionTypeMismatch(_))
+    }
+    /// Returns `true` if the error kind is `PutObjectError::InvalidRequest`.
+    pub fn is_invalid_request(&self) -> bool {
+        matches!(self, Self::InvalidRequest(_))
+    }
+    /// Returns `true` if the error kind is `PutObjectError::InvalidWriteOffset`.
+    pub fn is_invalid_write_offset(&self) -> bool {
+        matches!(self, Self::InvalidWriteOffset(_))
+    }
+    /// Returns `true` if the error kind is `PutObjectError::TooManyParts`.
+    pub fn is_too_many_parts(&self) -> bool {
+        matches!(self, Self::TooManyParts(_))
     }
 }
 impl ::std::error::Error for PutObjectError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::EncryptionTypeMismatch(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidRequest(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidWriteOffset(_inner) => ::std::option::Option::Some(_inner),
+            Self::TooManyParts(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -422,6 +462,10 @@ impl ::std::error::Error for PutObjectError {
 impl ::std::fmt::Display for PutObjectError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::EncryptionTypeMismatch(_inner) => _inner.fmt(f),
+            Self::InvalidRequest(_inner) => _inner.fmt(f),
+            Self::InvalidWriteOffset(_inner) => _inner.fmt(f),
+            Self::TooManyParts(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -443,6 +487,10 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for PutObjectError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for PutObjectError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::EncryptionTypeMismatch(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidRequest(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidWriteOffset(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::TooManyParts(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

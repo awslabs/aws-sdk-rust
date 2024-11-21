@@ -27,11 +27,15 @@ pub(crate) mod shape_create_configuration_manager;
 
 pub(crate) mod shape_delete_configuration_manager;
 
+pub(crate) mod shape_get_configuration;
+
 pub(crate) mod shape_get_configuration_manager;
 
 pub(crate) mod shape_get_service_settings;
 
 pub(crate) mod shape_list_configuration_managers;
+
+pub(crate) mod shape_list_configurations;
 
 pub(crate) mod shape_list_quick_setup_types;
 
@@ -65,6 +69,8 @@ pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_list_configuration_managers_input;
 
+pub(crate) mod shape_list_configurations_input;
+
 pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_tag_resource_input;
@@ -85,6 +91,10 @@ pub(crate) mod shape_configuration_definitions_list;
 
 pub(crate) mod shape_configuration_manager_list;
 
+pub(crate) mod shape_configuration_parameters_map;
+
+pub(crate) mod shape_configurations_list;
+
 pub(crate) mod shape_filter;
 
 pub(crate) mod shape_quick_setup_type_list;
@@ -101,6 +111,8 @@ pub(crate) mod shape_configuration_definition;
 
 pub(crate) mod shape_configuration_manager_summary;
 
+pub(crate) mod shape_configuration_summary;
+
 pub(crate) mod shape_quick_setup_type_output;
 
 pub(crate) mod shape_status_summary;
@@ -108,8 +120,6 @@ pub(crate) mod shape_status_summary;
 pub(crate) mod shape_tag_entry;
 
 pub(crate) mod shape_configuration_definition_summaries_list;
-
-pub(crate) mod shape_configuration_parameters_map;
 
 pub(crate) mod shape_status_details;
 

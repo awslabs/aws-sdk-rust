@@ -16,6 +16,10 @@ pub struct UpdateVehicleRequestItem {
     /// <p>The method the specified attributes will update the existing attributes on the vehicle. Use<code>Overwite</code> to replace the vehicle attributes with the specified attributes. Or use <code>Merge</code> to combine all attributes.</p>
     /// <p>This is required if attributes are present in the input.</p>
     pub attribute_update_mode: ::std::option::Option<crate::types::UpdateMode>,
+    /// <p>Associate additional state templates to track the state of the vehicle. State templates determine which signal updates the vehicle sends to the cloud.</p>
+    pub state_templates_to_add: ::std::option::Option<::std::vec::Vec<crate::types::StateTemplateAssociation>>,
+    /// <p>Remove existing state template associations from the vehicle.</p>
+    pub state_templates_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateVehicleRequestItem {
     /// <p>The unique ID of the vehicle to update.</p>
@@ -41,6 +45,18 @@ impl UpdateVehicleRequestItem {
     pub fn attribute_update_mode(&self) -> ::std::option::Option<&crate::types::UpdateMode> {
         self.attribute_update_mode.as_ref()
     }
+    /// <p>Associate additional state templates to track the state of the vehicle. State templates determine which signal updates the vehicle sends to the cloud.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.state_templates_to_add.is_none()`.
+    pub fn state_templates_to_add(&self) -> &[crate::types::StateTemplateAssociation] {
+        self.state_templates_to_add.as_deref().unwrap_or_default()
+    }
+    /// <p>Remove existing state template associations from the vehicle.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.state_templates_to_remove.is_none()`.
+    pub fn state_templates_to_remove(&self) -> &[::std::string::String] {
+        self.state_templates_to_remove.as_deref().unwrap_or_default()
+    }
 }
 impl UpdateVehicleRequestItem {
     /// Creates a new builder-style object to manufacture [`UpdateVehicleRequestItem`](crate::types::UpdateVehicleRequestItem).
@@ -58,6 +74,8 @@ pub struct UpdateVehicleRequestItemBuilder {
     pub(crate) decoder_manifest_arn: ::std::option::Option<::std::string::String>,
     pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) attribute_update_mode: ::std::option::Option<crate::types::UpdateMode>,
+    pub(crate) state_templates_to_add: ::std::option::Option<::std::vec::Vec<crate::types::StateTemplateAssociation>>,
+    pub(crate) state_templates_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateVehicleRequestItemBuilder {
     /// <p>The unique ID of the vehicle to update.</p>
@@ -143,6 +161,46 @@ impl UpdateVehicleRequestItemBuilder {
     pub fn get_attribute_update_mode(&self) -> &::std::option::Option<crate::types::UpdateMode> {
         &self.attribute_update_mode
     }
+    /// Appends an item to `state_templates_to_add`.
+    ///
+    /// To override the contents of this collection use [`set_state_templates_to_add`](Self::set_state_templates_to_add).
+    ///
+    /// <p>Associate additional state templates to track the state of the vehicle. State templates determine which signal updates the vehicle sends to the cloud.</p>
+    pub fn state_templates_to_add(mut self, input: crate::types::StateTemplateAssociation) -> Self {
+        let mut v = self.state_templates_to_add.unwrap_or_default();
+        v.push(input);
+        self.state_templates_to_add = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Associate additional state templates to track the state of the vehicle. State templates determine which signal updates the vehicle sends to the cloud.</p>
+    pub fn set_state_templates_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StateTemplateAssociation>>) -> Self {
+        self.state_templates_to_add = input;
+        self
+    }
+    /// <p>Associate additional state templates to track the state of the vehicle. State templates determine which signal updates the vehicle sends to the cloud.</p>
+    pub fn get_state_templates_to_add(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StateTemplateAssociation>> {
+        &self.state_templates_to_add
+    }
+    /// Appends an item to `state_templates_to_remove`.
+    ///
+    /// To override the contents of this collection use [`set_state_templates_to_remove`](Self::set_state_templates_to_remove).
+    ///
+    /// <p>Remove existing state template associations from the vehicle.</p>
+    pub fn state_templates_to_remove(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.state_templates_to_remove.unwrap_or_default();
+        v.push(input.into());
+        self.state_templates_to_remove = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Remove existing state template associations from the vehicle.</p>
+    pub fn set_state_templates_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.state_templates_to_remove = input;
+        self
+    }
+    /// <p>Remove existing state template associations from the vehicle.</p>
+    pub fn get_state_templates_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.state_templates_to_remove
+    }
     /// Consumes the builder and constructs a [`UpdateVehicleRequestItem`](crate::types::UpdateVehicleRequestItem).
     /// This method will fail if any of the following fields are not set:
     /// - [`vehicle_name`](crate::types::builders::UpdateVehicleRequestItemBuilder::vehicle_name)
@@ -158,6 +216,8 @@ impl UpdateVehicleRequestItemBuilder {
             decoder_manifest_arn: self.decoder_manifest_arn,
             attributes: self.attributes,
             attribute_update_mode: self.attribute_update_mode,
+            state_templates_to_add: self.state_templates_to_add,
+            state_templates_to_remove: self.state_templates_to_remove,
         })
     }
 }

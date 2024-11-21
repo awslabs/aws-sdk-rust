@@ -15,7 +15,7 @@ pub struct AccountPolicy {
     pub policy_type: ::std::option::Option<crate::types::PolicyType>,
     /// <p>The scope of the account policy.</p>
     pub scope: ::std::option::Option<crate::types::Scope>,
-    /// <p>The log group selection criteria for this subscription filter policy.</p>
+    /// <p>The log group selection criteria that is used for this policy.</p>
     pub selection_criteria: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID that the policy applies to.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
@@ -42,7 +42,7 @@ impl AccountPolicy {
     pub fn scope(&self) -> ::std::option::Option<&crate::types::Scope> {
         self.scope.as_ref()
     }
-    /// <p>The log group selection criteria for this subscription filter policy.</p>
+    /// <p>The log group selection criteria that is used for this policy.</p>
     pub fn selection_criteria(&self) -> ::std::option::Option<&str> {
         self.selection_criteria.as_deref()
     }
@@ -144,17 +144,17 @@ impl AccountPolicyBuilder {
     pub fn get_scope(&self) -> &::std::option::Option<crate::types::Scope> {
         &self.scope
     }
-    /// <p>The log group selection criteria for this subscription filter policy.</p>
+    /// <p>The log group selection criteria that is used for this policy.</p>
     pub fn selection_criteria(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.selection_criteria = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The log group selection criteria for this subscription filter policy.</p>
+    /// <p>The log group selection criteria that is used for this policy.</p>
     pub fn set_selection_criteria(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.selection_criteria = input;
         self
     }
-    /// <p>The log group selection criteria for this subscription filter policy.</p>
+    /// <p>The log group selection criteria that is used for this policy.</p>
     pub fn get_selection_criteria(&self) -> &::std::option::Option<::std::string::String> {
         &self.selection_criteria
     }

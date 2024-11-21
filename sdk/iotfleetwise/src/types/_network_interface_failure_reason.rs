@@ -14,6 +14,7 @@
 /// match networkinterfacefailurereason {
 ///     NetworkInterfaceFailureReason::CanNetworkInterfaceInfoIsNull => { /* ... */ },
 ///     NetworkInterfaceFailureReason::ConflictingNetworkInterface => { /* ... */ },
+///     NetworkInterfaceFailureReason::CustomDecodingSignalNetworkInterfaceInfoIsNull => { /* ... */ },
 ///     NetworkInterfaceFailureReason::DuplicateInterface => { /* ... */ },
 ///     NetworkInterfaceFailureReason::NetworkInterfaceToAddAlreadyExists => { /* ... */ },
 ///     NetworkInterfaceFailureReason::NetworkInterfaceToRemoveAssociatedWithSignals => { /* ... */ },
@@ -51,6 +52,8 @@ pub enum NetworkInterfaceFailureReason {
     #[allow(missing_docs)] // documentation missing in model
     ConflictingNetworkInterface,
     #[allow(missing_docs)] // documentation missing in model
+    CustomDecodingSignalNetworkInterfaceInfoIsNull,
+    #[allow(missing_docs)] // documentation missing in model
     DuplicateInterface,
     #[allow(missing_docs)] // documentation missing in model
     NetworkInterfaceToAddAlreadyExists,
@@ -69,6 +72,7 @@ impl ::std::convert::From<&str> for NetworkInterfaceFailureReason {
         match s {
             "CAN_NETWORK_INTERFACE_INFO_IS_NULL" => NetworkInterfaceFailureReason::CanNetworkInterfaceInfoIsNull,
             "CONFLICTING_NETWORK_INTERFACE" => NetworkInterfaceFailureReason::ConflictingNetworkInterface,
+            "CUSTOM_DECODING_SIGNAL_NETWORK_INTERFACE_INFO_IS_NULL" => NetworkInterfaceFailureReason::CustomDecodingSignalNetworkInterfaceInfoIsNull,
             "DUPLICATE_NETWORK_INTERFACE" => NetworkInterfaceFailureReason::DuplicateInterface,
             "NETWORK_INTERFACE_TO_ADD_ALREADY_EXISTS" => NetworkInterfaceFailureReason::NetworkInterfaceToAddAlreadyExists,
             "NETWORK_INTERFACE_TO_REMOVE_ASSOCIATED_WITH_SIGNALS" => NetworkInterfaceFailureReason::NetworkInterfaceToRemoveAssociatedWithSignals,
@@ -91,6 +95,7 @@ impl NetworkInterfaceFailureReason {
         match self {
             NetworkInterfaceFailureReason::CanNetworkInterfaceInfoIsNull => "CAN_NETWORK_INTERFACE_INFO_IS_NULL",
             NetworkInterfaceFailureReason::ConflictingNetworkInterface => "CONFLICTING_NETWORK_INTERFACE",
+            NetworkInterfaceFailureReason::CustomDecodingSignalNetworkInterfaceInfoIsNull => "CUSTOM_DECODING_SIGNAL_NETWORK_INTERFACE_INFO_IS_NULL",
             NetworkInterfaceFailureReason::DuplicateInterface => "DUPLICATE_NETWORK_INTERFACE",
             NetworkInterfaceFailureReason::NetworkInterfaceToAddAlreadyExists => "NETWORK_INTERFACE_TO_ADD_ALREADY_EXISTS",
             NetworkInterfaceFailureReason::NetworkInterfaceToRemoveAssociatedWithSignals => "NETWORK_INTERFACE_TO_REMOVE_ASSOCIATED_WITH_SIGNALS",
@@ -104,6 +109,7 @@ impl NetworkInterfaceFailureReason {
         &[
             "CAN_NETWORK_INTERFACE_INFO_IS_NULL",
             "CONFLICTING_NETWORK_INTERFACE",
+            "CUSTOM_DECODING_SIGNAL_NETWORK_INTERFACE_INFO_IS_NULL",
             "DUPLICATE_NETWORK_INTERFACE",
             "NETWORK_INTERFACE_TO_ADD_ALREADY_EXISTS",
             "NETWORK_INTERFACE_TO_REMOVE_ASSOCIATED_WITH_SIGNALS",
@@ -134,6 +140,9 @@ impl ::std::fmt::Display for NetworkInterfaceFailureReason {
         match self {
             NetworkInterfaceFailureReason::CanNetworkInterfaceInfoIsNull => write!(f, "CAN_NETWORK_INTERFACE_INFO_IS_NULL"),
             NetworkInterfaceFailureReason::ConflictingNetworkInterface => write!(f, "CONFLICTING_NETWORK_INTERFACE"),
+            NetworkInterfaceFailureReason::CustomDecodingSignalNetworkInterfaceInfoIsNull => {
+                write!(f, "CUSTOM_DECODING_SIGNAL_NETWORK_INTERFACE_INFO_IS_NULL")
+            }
             NetworkInterfaceFailureReason::DuplicateInterface => write!(f, "DUPLICATE_NETWORK_INTERFACE"),
             NetworkInterfaceFailureReason::NetworkInterfaceToAddAlreadyExists => write!(f, "NETWORK_INTERFACE_TO_ADD_ALREADY_EXISTS"),
             NetworkInterfaceFailureReason::NetworkInterfaceToRemoveAssociatedWithSignals => {

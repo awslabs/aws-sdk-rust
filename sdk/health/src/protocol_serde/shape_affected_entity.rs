@@ -65,6 +65,9 @@ where
                         "tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tag_set::de_tag_set(tokens)?);
                         }
+                        "entityMetadata" => {
+                            builder = builder.set_entity_metadata(crate::protocol_serde::shape_entity_metadata::de_entity_metadata(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

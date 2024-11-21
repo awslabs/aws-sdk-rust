@@ -193,14 +193,19 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetBasePathM
                 mut output: &mut ::std::string::String,
             ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
-                if let ::std::option::Option::Some(inner_2) = &_input.position {
+                if let ::std::option::Option::Some(inner_2) = &_input.domain_name_id {
                     {
-                        query.push_kv("position", &::aws_smithy_http::query::fmt_string(inner_2));
+                        query.push_kv("domainNameId", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
-                if let ::std::option::Option::Some(inner_3) = &_input.limit {
+                if let ::std::option::Option::Some(inner_3) = &_input.position {
                     {
-                        query.push_kv("limit", ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode());
+                        query.push_kv("position", &::aws_smithy_http::query::fmt_string(inner_3));
+                    }
+                }
+                if let ::std::option::Option::Some(inner_4) = &_input.limit {
+                    {
+                        query.push_kv("limit", ::aws_smithy_types::primitive::Encoder::from(*inner_4).encode());
                     }
                 }
                 ::std::result::Result::Ok(())

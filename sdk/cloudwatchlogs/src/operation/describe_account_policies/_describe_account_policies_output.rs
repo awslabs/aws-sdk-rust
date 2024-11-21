@@ -5,6 +5,8 @@
 pub struct DescribeAccountPoliciesOutput {
     /// <p>An array of structures that contain information about the CloudWatch Logs account policies that match the specified filters.</p>
     pub account_policies: ::std::option::Option<::std::vec::Vec<crate::types::AccountPolicy>>,
+    /// <p>The token to use when requesting the next set of items. The token expires after 24 hours.</p>
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeAccountPoliciesOutput {
@@ -13,6 +15,10 @@ impl DescribeAccountPoliciesOutput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_policies.is_none()`.
     pub fn account_policies(&self) -> &[crate::types::AccountPolicy] {
         self.account_policies.as_deref().unwrap_or_default()
+    }
+    /// <p>The token to use when requesting the next set of items. The token expires after 24 hours.</p>
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
+        self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeAccountPoliciesOutput {
@@ -32,6 +38,7 @@ impl DescribeAccountPoliciesOutput {
 #[non_exhaustive]
 pub struct DescribeAccountPoliciesOutputBuilder {
     pub(crate) account_policies: ::std::option::Option<::std::vec::Vec<crate::types::AccountPolicy>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeAccountPoliciesOutputBuilder {
@@ -55,6 +62,20 @@ impl DescribeAccountPoliciesOutputBuilder {
     pub fn get_account_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountPolicy>> {
         &self.account_policies
     }
+    /// <p>The token to use when requesting the next set of items. The token expires after 24 hours.</p>
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The token to use when requesting the next set of items. The token expires after 24 hours.</p>
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.next_token = input;
+        self
+    }
+    /// <p>The token to use when requesting the next set of items. The token expires after 24 hours.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -68,6 +89,7 @@ impl DescribeAccountPoliciesOutputBuilder {
     pub fn build(self) -> crate::operation::describe_account_policies::DescribeAccountPoliciesOutput {
         crate::operation::describe_account_policies::DescribeAccountPoliciesOutput {
             account_policies: self.account_policies,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

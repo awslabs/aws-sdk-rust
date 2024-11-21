@@ -103,6 +103,34 @@ impl From<crate::operation::batch_get_traces::BatchGetTracesError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_trace_retrieval::CancelTraceRetrievalError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_trace_retrieval::CancelTraceRetrievalError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::cancel_trace_retrieval::CancelTraceRetrievalError> for Error {
+    fn from(err: crate::operation::cancel_trace_retrieval::CancelTraceRetrievalError) -> Self {
+        match err {
+            crate::operation::cancel_trace_retrieval::CancelTraceRetrievalError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::cancel_trace_retrieval::CancelTraceRetrievalError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::cancel_trace_retrieval::CancelTraceRetrievalError::ThrottledException(inner) => Error::ThrottledException(inner),
+            crate::operation::cancel_trace_retrieval::CancelTraceRetrievalError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_group::CreateGroupError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -297,6 +325,29 @@ impl From<crate::operation::get_groups::GetGroupsError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_indexing_rules::GetIndexingRulesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_indexing_rules::GetIndexingRulesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_indexing_rules::GetIndexingRulesError> for Error {
+    fn from(err: crate::operation::get_indexing_rules::GetIndexingRulesError) -> Self {
+        match err {
+            crate::operation::get_indexing_rules::GetIndexingRulesError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::get_indexing_rules::GetIndexingRulesError::ThrottledException(inner) => Error::ThrottledException(inner),
+            crate::operation::get_indexing_rules::GetIndexingRulesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_insight::GetInsightError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -392,6 +443,37 @@ impl From<crate::operation::get_insight_summaries::GetInsightSummariesError> for
             }
             crate::operation::get_insight_summaries::GetInsightSummariesError::ThrottledException(inner) => Error::ThrottledException(inner),
             crate::operation::get_insight_summaries::GetInsightSummariesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_retrieved_traces_graph::GetRetrievedTracesGraphError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_retrieved_traces_graph::GetRetrievedTracesGraphError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_retrieved_traces_graph::GetRetrievedTracesGraphError> for Error {
+    fn from(err: crate::operation::get_retrieved_traces_graph::GetRetrievedTracesGraphError) -> Self {
+        match err {
+            crate::operation::get_retrieved_traces_graph::GetRetrievedTracesGraphError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::get_retrieved_traces_graph::GetRetrievedTracesGraphError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_retrieved_traces_graph::GetRetrievedTracesGraphError::ThrottledException(inner) => Error::ThrottledException(inner),
+            crate::operation::get_retrieved_traces_graph::GetRetrievedTracesGraphError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -560,6 +642,36 @@ impl From<crate::operation::get_trace_graph::GetTraceGraphError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_trace_segment_destination::GetTraceSegmentDestinationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_trace_segment_destination::GetTraceSegmentDestinationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_trace_segment_destination::GetTraceSegmentDestinationError> for Error {
+    fn from(err: crate::operation::get_trace_segment_destination::GetTraceSegmentDestinationError) -> Self {
+        match err {
+            crate::operation::get_trace_segment_destination::GetTraceSegmentDestinationError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::get_trace_segment_destination::GetTraceSegmentDestinationError::ThrottledException(inner) => {
+                Error::ThrottledException(inner)
+            }
+            crate::operation::get_trace_segment_destination::GetTraceSegmentDestinationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_trace_summaries::GetTraceSummariesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -605,6 +717,34 @@ impl From<crate::operation::list_resource_policies::ListResourcePoliciesError> f
             }
             crate::operation::list_resource_policies::ListResourcePoliciesError::ThrottledException(inner) => Error::ThrottledException(inner),
             crate::operation::list_resource_policies::ListResourcePoliciesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_retrieved_traces::ListRetrievedTracesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_retrieved_traces::ListRetrievedTracesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_retrieved_traces::ListRetrievedTracesError> for Error {
+    fn from(err: crate::operation::list_retrieved_traces::ListRetrievedTracesError) -> Self {
+        match err {
+            crate::operation::list_retrieved_traces::ListRetrievedTracesError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_retrieved_traces::ListRetrievedTracesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_retrieved_traces::ListRetrievedTracesError::ThrottledException(inner) => Error::ThrottledException(inner),
+            crate::operation::list_retrieved_traces::ListRetrievedTracesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -746,6 +886,34 @@ impl From<crate::operation::put_trace_segments::PutTraceSegmentsError> for Error
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_trace_retrieval::StartTraceRetrievalError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_trace_retrieval::StartTraceRetrievalError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_trace_retrieval::StartTraceRetrievalError> for Error {
+    fn from(err: crate::operation::start_trace_retrieval::StartTraceRetrievalError) -> Self {
+        match err {
+            crate::operation::start_trace_retrieval::StartTraceRetrievalError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::start_trace_retrieval::StartTraceRetrievalError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_trace_retrieval::StartTraceRetrievalError::ThrottledException(inner) => Error::ThrottledException(inner),
+            crate::operation::start_trace_retrieval::StartTraceRetrievalError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -818,6 +986,32 @@ impl From<crate::operation::update_group::UpdateGroupError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_indexing_rule::UpdateIndexingRuleError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_indexing_rule::UpdateIndexingRuleError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_indexing_rule::UpdateIndexingRuleError> for Error {
+    fn from(err: crate::operation::update_indexing_rule::UpdateIndexingRuleError) -> Self {
+        match err {
+            crate::operation::update_indexing_rule::UpdateIndexingRuleError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::update_indexing_rule::UpdateIndexingRuleError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_indexing_rule::UpdateIndexingRuleError::ThrottledException(inner) => Error::ThrottledException(inner),
+            crate::operation::update_indexing_rule::UpdateIndexingRuleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_sampling_rule::UpdateSamplingRuleError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -838,6 +1032,41 @@ impl From<crate::operation::update_sampling_rule::UpdateSamplingRuleError> for E
             crate::operation::update_sampling_rule::UpdateSamplingRuleError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::update_sampling_rule::UpdateSamplingRuleError::ThrottledException(inner) => Error::ThrottledException(inner),
             crate::operation::update_sampling_rule::UpdateSamplingRuleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_trace_segment_destination::UpdateTraceSegmentDestinationError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_trace_segment_destination::UpdateTraceSegmentDestinationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_trace_segment_destination::UpdateTraceSegmentDestinationError> for Error {
+    fn from(err: crate::operation::update_trace_segment_destination::UpdateTraceSegmentDestinationError) -> Self {
+        match err {
+            crate::operation::update_trace_segment_destination::UpdateTraceSegmentDestinationError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::update_trace_segment_destination::UpdateTraceSegmentDestinationError::ThrottledException(inner) => {
+                Error::ThrottledException(inner)
+            }
+            crate::operation::update_trace_segment_destination::UpdateTraceSegmentDestinationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

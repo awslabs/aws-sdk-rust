@@ -24,7 +24,9 @@ impl crate::operation::put_function_event_invoke_config::builders::PutFunctionEv
 ///
 /// <p>Configures options for <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html">asynchronous invocation</a> on a function, version, or alias. If a configuration already exists for a function, version, or alias, this operation overwrites it. If you exclude any settings, they are removed. To set one option without affecting existing settings for other options, use <code>UpdateFunctionEventInvokeConfig</code>.</p>
 /// <p>By default, Lambda retries an asynchronous invocation twice if the function returns an error. It retains events in a queue for up to six hours. When an event fails all processing attempts or stays in the asynchronous invocation queue for too long, Lambda discards it. To retain discarded events, configure a dead-letter queue with <code>UpdateFunctionConfiguration</code>.</p>
-/// <p>To send an invocation record to a queue, topic, function, or event bus, specify a <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-async-destinations">destination</a>. You can configure separate destinations for successful invocations (on-success) and events that fail all processing attempts (on-failure). You can configure destinations in addition to or instead of a dead-letter queue.</p>
+/// <p>To send an invocation record to a queue, topic, S3 bucket, function, or event bus, specify a <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-async-destinations">destination</a>. You can configure separate destinations for successful invocations (on-success) and events that fail all processing attempts (on-failure). You can configure destinations in addition to or instead of a dead-letter queue.</p><note>
+/// <p>S3 buckets are supported only for on-failure destinations. To retain records of successful invocations, use another destination type.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutFunctionEventInvokeConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -204,10 +206,14 @@ impl PutFunctionEventInvokeConfigFluentBuilder {
     /// <li>
     /// <p><b>Queue</b> - The ARN of a standard SQS queue.</p></li>
     /// <li>
+    /// <p><b>Bucket</b> - The ARN of an Amazon S3 bucket.</p></li>
+    /// <li>
     /// <p><b>Topic</b> - The ARN of a standard SNS topic.</p></li>
     /// <li>
     /// <p><b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>S3 buckets are supported only for on-failure destinations. To retain records of successful invocations, use another destination type.</p>
+    /// </note>
     pub fn destination_config(mut self, input: crate::types::DestinationConfig) -> Self {
         self.inner = self.inner.destination_config(input);
         self
@@ -220,10 +226,14 @@ impl PutFunctionEventInvokeConfigFluentBuilder {
     /// <li>
     /// <p><b>Queue</b> - The ARN of a standard SQS queue.</p></li>
     /// <li>
+    /// <p><b>Bucket</b> - The ARN of an Amazon S3 bucket.</p></li>
+    /// <li>
     /// <p><b>Topic</b> - The ARN of a standard SNS topic.</p></li>
     /// <li>
     /// <p><b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>S3 buckets are supported only for on-failure destinations. To retain records of successful invocations, use another destination type.</p>
+    /// </note>
     pub fn set_destination_config(mut self, input: ::std::option::Option<crate::types::DestinationConfig>) -> Self {
         self.inner = self.inner.set_destination_config(input);
         self
@@ -236,10 +246,14 @@ impl PutFunctionEventInvokeConfigFluentBuilder {
     /// <li>
     /// <p><b>Queue</b> - The ARN of a standard SQS queue.</p></li>
     /// <li>
+    /// <p><b>Bucket</b> - The ARN of an Amazon S3 bucket.</p></li>
+    /// <li>
     /// <p><b>Topic</b> - The ARN of a standard SNS topic.</p></li>
     /// <li>
     /// <p><b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>S3 buckets are supported only for on-failure destinations. To retain records of successful invocations, use another destination type.</p>
+    /// </note>
     pub fn get_destination_config(&self) -> &::std::option::Option<crate::types::DestinationConfig> {
         self.inner.get_destination_config()
     }

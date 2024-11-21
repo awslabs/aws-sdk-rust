@@ -16,6 +16,12 @@ pub fn ser_data_destination_config(
             crate::protocol_serde::shape_timestream_config::ser_timestream_config(&mut object_2, inner)?;
             object_2.finish();
         }
+        crate::types::DataDestinationConfig::MqttTopicConfig(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_28.key("mqttTopicConfig").start_object();
+            crate::protocol_serde::shape_mqtt_topic_config::ser_mqtt_topic_config(&mut object_3, inner)?;
+            object_3.finish();
+        }
         crate::types::DataDestinationConfig::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "DataDestinationConfig",
@@ -63,6 +69,11 @@ where
                         "timestreamConfig" => Some(crate::types::DataDestinationConfig::TimestreamConfig(
                             crate::protocol_serde::shape_timestream_config::de_timestream_config(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'timestreamConfig' cannot be null")
+                            })?,
+                        )),
+                        "mqttTopicConfig" => Some(crate::types::DataDestinationConfig::MqttTopicConfig(
+                            crate::protocol_serde::shape_mqtt_topic_config::de_mqtt_topic_config(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'mqttTopicConfig' cannot be null")
                             })?,
                         )),
                         _ => {

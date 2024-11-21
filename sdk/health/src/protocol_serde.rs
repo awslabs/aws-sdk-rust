@@ -153,6 +153,8 @@ pub(crate) mod shape_organization_event_details_error_item;
 
 pub(crate) mod shape_account_entity_aggregates_list;
 
+pub(crate) mod shape_entity_metadata;
+
 pub(crate) mod shape_entity_statuses;
 
 pub(crate) mod shape_event_description;

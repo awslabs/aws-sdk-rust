@@ -13,6 +13,7 @@
 /// # let networkinterfacetype = unimplemented!();
 /// match networkinterfacetype {
 ///     NetworkInterfaceType::CanInterface => { /* ... */ },
+///     NetworkInterfaceType::CustomDecodingInterface => { /* ... */ },
 ///     NetworkInterfaceType::ObdInterface => { /* ... */ },
 ///     NetworkInterfaceType::VehicleMiddleware => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -45,6 +46,8 @@ pub enum NetworkInterfaceType {
     #[allow(missing_docs)] // documentation missing in model
     CanInterface,
     #[allow(missing_docs)] // documentation missing in model
+    CustomDecodingInterface,
+    #[allow(missing_docs)] // documentation missing in model
     ObdInterface,
     #[allow(missing_docs)] // documentation missing in model
     VehicleMiddleware,
@@ -56,6 +59,7 @@ impl ::std::convert::From<&str> for NetworkInterfaceType {
     fn from(s: &str) -> Self {
         match s {
             "CAN_INTERFACE" => NetworkInterfaceType::CanInterface,
+            "CUSTOM_DECODING_INTERFACE" => NetworkInterfaceType::CustomDecodingInterface,
             "OBD_INTERFACE" => NetworkInterfaceType::ObdInterface,
             "VEHICLE_MIDDLEWARE" => NetworkInterfaceType::VehicleMiddleware,
             other => NetworkInterfaceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -74,6 +78,7 @@ impl NetworkInterfaceType {
     pub fn as_str(&self) -> &str {
         match self {
             NetworkInterfaceType::CanInterface => "CAN_INTERFACE",
+            NetworkInterfaceType::CustomDecodingInterface => "CUSTOM_DECODING_INTERFACE",
             NetworkInterfaceType::ObdInterface => "OBD_INTERFACE",
             NetworkInterfaceType::VehicleMiddleware => "VEHICLE_MIDDLEWARE",
             NetworkInterfaceType::Unknown(value) => value.as_str(),
@@ -81,7 +86,7 @@ impl NetworkInterfaceType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CAN_INTERFACE", "OBD_INTERFACE", "VEHICLE_MIDDLEWARE"]
+        &["CAN_INTERFACE", "CUSTOM_DECODING_INTERFACE", "OBD_INTERFACE", "VEHICLE_MIDDLEWARE"]
     }
 }
 impl ::std::convert::AsRef<str> for NetworkInterfaceType {
@@ -105,6 +110,7 @@ impl ::std::fmt::Display for NetworkInterfaceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             NetworkInterfaceType::CanInterface => write!(f, "CAN_INTERFACE"),
+            NetworkInterfaceType::CustomDecodingInterface => write!(f, "CUSTOM_DECODING_INTERFACE"),
             NetworkInterfaceType::ObdInterface => write!(f, "OBD_INTERFACE"),
             NetworkInterfaceType::VehicleMiddleware => write!(f, "VEHICLE_MIDDLEWARE"),
             NetworkInterfaceType::Unknown(value) => write!(f, "{}", value),

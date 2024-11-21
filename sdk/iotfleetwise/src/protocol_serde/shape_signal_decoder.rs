@@ -30,6 +30,12 @@ pub fn ser_signal_decoder(
         crate::protocol_serde::shape_message_signal::ser_message_signal(&mut object_6, var_5)?;
         object_6.finish();
     }
+    if let Some(var_7) = &input.custom_decoding_signal {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("customDecodingSignal").start_object();
+        crate::protocol_serde::shape_custom_decoding_signal::ser_custom_decoding_signal(&mut object_8, var_7)?;
+        object_8.finish();
+    }
     Ok(())
 }
 
@@ -77,6 +83,10 @@ where
                         }
                         "messageSignal" => {
                             builder = builder.set_message_signal(crate::protocol_serde::shape_message_signal::de_message_signal(tokens)?);
+                        }
+                        "customDecodingSignal" => {
+                            builder = builder
+                                .set_custom_decoding_signal(crate::protocol_serde::shape_custom_decoding_signal::de_custom_decoding_signal(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

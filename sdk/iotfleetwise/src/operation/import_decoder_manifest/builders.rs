@@ -23,6 +23,7 @@ impl crate::operation::import_decoder_manifest::builders::ImportDecoderManifestI
 /// Fluent builder constructing a request to `ImportDecoderManifest`.
 ///
 /// <p>Creates a decoder manifest using your existing CAN DBC file from your local device.</p>
+/// <p>The CAN signal name must be unique and not repeated across CAN message definitions in a .dbc file.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ImportDecoderManifestFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -60,6 +60,123 @@ pub(crate) fn delivery_destination_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn add_keys_correct_errors(mut builder: crate::types::builders::AddKeysBuilder) -> crate::types::builders::AddKeysBuilder {
+    if builder.entries.is_none() {
+        builder.entries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn copy_value_correct_errors(mut builder: crate::types::builders::CopyValueBuilder) -> crate::types::builders::CopyValueBuilder {
+    if builder.entries.is_none() {
+        builder.entries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn date_time_converter_correct_errors(
+    mut builder: crate::types::builders::DateTimeConverterBuilder,
+) -> crate::types::builders::DateTimeConverterBuilder {
+    if builder.source.is_none() {
+        builder.source = Some(Default::default())
+    }
+    if builder.target.is_none() {
+        builder.target = Some(Default::default())
+    }
+    if builder.match_patterns.is_none() {
+        builder.match_patterns = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn delete_keys_correct_errors(mut builder: crate::types::builders::DeleteKeysBuilder) -> crate::types::builders::DeleteKeysBuilder {
+    if builder.with_keys.is_none() {
+        builder.with_keys = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn grok_correct_errors(mut builder: crate::types::builders::GrokBuilder) -> crate::types::builders::GrokBuilder {
+    if builder.r#match.is_none() {
+        builder.r#match = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_to_map_correct_errors(mut builder: crate::types::builders::ListToMapBuilder) -> crate::types::builders::ListToMapBuilder {
+    if builder.source.is_none() {
+        builder.source = Some(Default::default())
+    }
+    if builder.key.is_none() {
+        builder.key = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn lower_case_string_correct_errors(
+    mut builder: crate::types::builders::LowerCaseStringBuilder,
+) -> crate::types::builders::LowerCaseStringBuilder {
+    if builder.with_keys.is_none() {
+        builder.with_keys = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn move_keys_correct_errors(mut builder: crate::types::builders::MoveKeysBuilder) -> crate::types::builders::MoveKeysBuilder {
+    if builder.entries.is_none() {
+        builder.entries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn rename_keys_correct_errors(mut builder: crate::types::builders::RenameKeysBuilder) -> crate::types::builders::RenameKeysBuilder {
+    if builder.entries.is_none() {
+        builder.entries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn split_string_correct_errors(mut builder: crate::types::builders::SplitStringBuilder) -> crate::types::builders::SplitStringBuilder {
+    if builder.entries.is_none() {
+        builder.entries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn substitute_string_correct_errors(
+    mut builder: crate::types::builders::SubstituteStringBuilder,
+) -> crate::types::builders::SubstituteStringBuilder {
+    if builder.entries.is_none() {
+        builder.entries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn trim_string_correct_errors(mut builder: crate::types::builders::TrimStringBuilder) -> crate::types::builders::TrimStringBuilder {
+    if builder.with_keys.is_none() {
+        builder.with_keys = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn type_converter_correct_errors(
+    mut builder: crate::types::builders::TypeConverterBuilder,
+) -> crate::types::builders::TypeConverterBuilder {
+    if builder.entries.is_none() {
+        builder.entries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn upper_case_string_correct_errors(
+    mut builder: crate::types::builders::UpperCaseStringBuilder,
+) -> crate::types::builders::UpperCaseStringBuilder {
+    if builder.with_keys.is_none() {
+        builder.with_keys = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn metric_transformation_correct_errors(
     mut builder: crate::types::builders::MetricTransformationBuilder,
 ) -> crate::types::builders::MetricTransformationBuilder {
@@ -71,6 +188,89 @@ pub(crate) fn metric_transformation_correct_errors(
     }
     if builder.metric_value.is_none() {
         builder.metric_value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn add_key_entry_correct_errors(mut builder: crate::types::builders::AddKeyEntryBuilder) -> crate::types::builders::AddKeyEntryBuilder {
+    if builder.key.is_none() {
+        builder.key = Some(Default::default())
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn copy_value_entry_correct_errors(
+    mut builder: crate::types::builders::CopyValueEntryBuilder,
+) -> crate::types::builders::CopyValueEntryBuilder {
+    if builder.source.is_none() {
+        builder.source = Some(Default::default())
+    }
+    if builder.target.is_none() {
+        builder.target = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn move_key_entry_correct_errors(mut builder: crate::types::builders::MoveKeyEntryBuilder) -> crate::types::builders::MoveKeyEntryBuilder {
+    if builder.source.is_none() {
+        builder.source = Some(Default::default())
+    }
+    if builder.target.is_none() {
+        builder.target = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn rename_key_entry_correct_errors(
+    mut builder: crate::types::builders::RenameKeyEntryBuilder,
+) -> crate::types::builders::RenameKeyEntryBuilder {
+    if builder.key.is_none() {
+        builder.key = Some(Default::default())
+    }
+    if builder.rename_to.is_none() {
+        builder.rename_to = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn split_string_entry_correct_errors(
+    mut builder: crate::types::builders::SplitStringEntryBuilder,
+) -> crate::types::builders::SplitStringEntryBuilder {
+    if builder.source.is_none() {
+        builder.source = Some(Default::default())
+    }
+    if builder.delimiter.is_none() {
+        builder.delimiter = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn substitute_string_entry_correct_errors(
+    mut builder: crate::types::builders::SubstituteStringEntryBuilder,
+) -> crate::types::builders::SubstituteStringEntryBuilder {
+    if builder.source.is_none() {
+        builder.source = Some(Default::default())
+    }
+    if builder.from.is_none() {
+        builder.from = Some(Default::default())
+    }
+    if builder.to.is_none() {
+        builder.to = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn type_converter_entry_correct_errors(
+    mut builder: crate::types::builders::TypeConverterEntryBuilder,
+) -> crate::types::builders::TypeConverterEntryBuilder {
+    if builder.key.is_none() {
+        builder.key = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::Type>().ok()
     }
     builder
 }

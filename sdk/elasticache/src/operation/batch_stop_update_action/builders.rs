@@ -22,7 +22,7 @@ impl crate::operation::batch_stop_update_action::builders::BatchStopUpdateAction
 }
 /// Fluent builder constructing a request to `BatchStopUpdateAction`.
 ///
-/// <p>Stop the service update. For more information on service updates and stopping them, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/stopping-self-service-updates.html">Stopping Service Updates</a>.</p>
+/// <p>Stop the service update. For more information on service updates and stopping them, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/stopping-self-service-updates.html">Stopping Service Updates</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchStopUpdateActionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -159,19 +159,19 @@ impl CreateVehicleFluentBuilder {
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
     /// <p>Static information about a vehicle in a key-value pair. For example: <code>"engineType"</code> : <code>"1.3 L R2"</code></p>
-    /// <p>A campaign must include the keys (attribute names) in <code>dataExtraDimensions</code> for them to display in Amazon Timestream.</p>
+    /// <p>To use attributes with Campaigns or State Templates, you must include them using the request parameters <code>dataExtraDimensions</code> and/or <code>metadataExtraDimensions</code> (for state templates only) when creating your campaign/state template.</p>
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attributes(k.into(), v.into());
         self
     }
     /// <p>Static information about a vehicle in a key-value pair. For example: <code>"engineType"</code> : <code>"1.3 L R2"</code></p>
-    /// <p>A campaign must include the keys (attribute names) in <code>dataExtraDimensions</code> for them to display in Amazon Timestream.</p>
+    /// <p>To use attributes with Campaigns or State Templates, you must include them using the request parameters <code>dataExtraDimensions</code> and/or <code>metadataExtraDimensions</code> (for state templates only) when creating your campaign/state template.</p>
     pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
     }
     /// <p>Static information about a vehicle in a key-value pair. For example: <code>"engineType"</code> : <code>"1.3 L R2"</code></p>
-    /// <p>A campaign must include the keys (attribute names) in <code>dataExtraDimensions</code> for them to display in Amazon Timestream.</p>
+    /// <p>To use attributes with Campaigns or State Templates, you must include them using the request parameters <code>dataExtraDimensions</code> and/or <code>metadataExtraDimensions</code> (for state templates only) when creating your campaign/state template.</p>
     pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_attributes()
     }
@@ -210,5 +210,24 @@ impl CreateVehicleFluentBuilder {
     /// <p>Metadata that can be used to manage the vehicle.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
+    }
+    ///
+    /// Appends an item to `stateTemplates`.
+    ///
+    /// To override the contents of this collection use [`set_state_templates`](Self::set_state_templates).
+    ///
+    /// <p>Associate state templates with the vehicle. You can monitor the last known state of the vehicle in near real time.</p>
+    pub fn state_templates(mut self, input: crate::types::StateTemplateAssociation) -> Self {
+        self.inner = self.inner.state_templates(input);
+        self
+    }
+    /// <p>Associate state templates with the vehicle. You can monitor the last known state of the vehicle in near real time.</p>
+    pub fn set_state_templates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StateTemplateAssociation>>) -> Self {
+        self.inner = self.inner.set_state_templates(input);
+        self
+    }
+    /// <p>Associate state templates with the vehicle. You can monitor the last known state of the vehicle in near real time.</p>
+    pub fn get_state_templates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StateTemplateAssociation>> {
+        self.inner.get_state_templates()
     }
 }

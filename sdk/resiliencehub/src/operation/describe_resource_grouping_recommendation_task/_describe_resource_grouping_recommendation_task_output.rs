@@ -3,16 +3,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeResourceGroupingRecommendationTaskOutput {
-    /// <p>Indicates the identifier of the grouping recommendation task.</p>
+    /// <p>Identifier of the grouping recommendation task.</p>
     pub grouping_id: ::std::string::String,
     /// <p>Status of the action.</p>
     pub status: crate::types::ResourcesGroupingRecGenStatusType,
-    /// <p>Indicates the error that occurred while generating a grouping recommendation.</p>
+    /// <p>Error that occurred while generating a grouping recommendation.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeResourceGroupingRecommendationTaskOutput {
-    /// <p>Indicates the identifier of the grouping recommendation task.</p>
+    /// <p>Identifier of the grouping recommendation task.</p>
     pub fn grouping_id(&self) -> &str {
         use std::ops::Deref;
         self.grouping_id.deref()
@@ -21,7 +21,7 @@ impl DescribeResourceGroupingRecommendationTaskOutput {
     pub fn status(&self) -> &crate::types::ResourcesGroupingRecGenStatusType {
         &self.status
     }
-    /// <p>Indicates the error that occurred while generating a grouping recommendation.</p>
+    /// <p>Error that occurred while generating a grouping recommendation.</p>
     pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
@@ -49,18 +49,18 @@ pub struct DescribeResourceGroupingRecommendationTaskOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeResourceGroupingRecommendationTaskOutputBuilder {
-    /// <p>Indicates the identifier of the grouping recommendation task.</p>
+    /// <p>Identifier of the grouping recommendation task.</p>
     /// This field is required.
     pub fn grouping_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grouping_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Indicates the identifier of the grouping recommendation task.</p>
+    /// <p>Identifier of the grouping recommendation task.</p>
     pub fn set_grouping_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.grouping_id = input;
         self
     }
-    /// <p>Indicates the identifier of the grouping recommendation task.</p>
+    /// <p>Identifier of the grouping recommendation task.</p>
     pub fn get_grouping_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.grouping_id
     }
@@ -79,17 +79,17 @@ impl DescribeResourceGroupingRecommendationTaskOutputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ResourcesGroupingRecGenStatusType> {
         &self.status
     }
-    /// <p>Indicates the error that occurred while generating a grouping recommendation.</p>
+    /// <p>Error that occurred while generating a grouping recommendation.</p>
     pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Indicates the error that occurred while generating a grouping recommendation.</p>
+    /// <p>Error that occurred while generating a grouping recommendation.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }
-    /// <p>Indicates the error that occurred while generating a grouping recommendation.</p>
+    /// <p>Error that occurred while generating a grouping recommendation.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.error_message
     }

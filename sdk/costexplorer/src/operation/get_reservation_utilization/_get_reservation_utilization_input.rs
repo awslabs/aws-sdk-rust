@@ -29,7 +29,9 @@ pub struct GetReservationUtilizationInput {
     /// <li>
     /// <p>REGION</p></li>
     /// <li>
-    /// <p>SERVICE</p></li>
+    /// <p>SERVICE</p><note>
+    /// <p>If not specified, the <code>SERVICE</code> filter defaults to Amazon Elastic Compute Cloud - Compute. Supported values for <code>SERVICE</code> are Amazon Elastic Compute Cloud - Compute, Amazon Relational Database Service, Amazon ElastiCache, Amazon Redshift, and Amazon Elasticsearch Service. The value for the <code>SERVICE</code> filter should not exceed "1".</p>
+    /// </note></li>
     /// <li>
     /// <p>SCOPE</p></li>
     /// <li>
@@ -117,7 +119,9 @@ impl GetReservationUtilizationInput {
     /// <li>
     /// <p>REGION</p></li>
     /// <li>
-    /// <p>SERVICE</p></li>
+    /// <p>SERVICE</p><note>
+    /// <p>If not specified, the <code>SERVICE</code> filter defaults to Amazon Elastic Compute Cloud - Compute. Supported values for <code>SERVICE</code> are Amazon Elastic Compute Cloud - Compute, Amazon Relational Database Service, Amazon ElastiCache, Amazon Redshift, and Amazon Elasticsearch Service. The value for the <code>SERVICE</code> filter should not exceed "1".</p>
+    /// </note></li>
     /// <li>
     /// <p>SCOPE</p></li>
     /// <li>
@@ -269,7 +273,9 @@ impl GetReservationUtilizationInputBuilder {
     /// <li>
     /// <p>REGION</p></li>
     /// <li>
-    /// <p>SERVICE</p></li>
+    /// <p>SERVICE</p><note>
+    /// <p>If not specified, the <code>SERVICE</code> filter defaults to Amazon Elastic Compute Cloud - Compute. Supported values for <code>SERVICE</code> are Amazon Elastic Compute Cloud - Compute, Amazon Relational Database Service, Amazon ElastiCache, Amazon Redshift, and Amazon Elasticsearch Service. The value for the <code>SERVICE</code> filter should not exceed "1".</p>
+    /// </note></li>
     /// <li>
     /// <p>SCOPE</p></li>
     /// <li>
@@ -299,7 +305,9 @@ impl GetReservationUtilizationInputBuilder {
     /// <li>
     /// <p>REGION</p></li>
     /// <li>
-    /// <p>SERVICE</p></li>
+    /// <p>SERVICE</p><note>
+    /// <p>If not specified, the <code>SERVICE</code> filter defaults to Amazon Elastic Compute Cloud - Compute. Supported values for <code>SERVICE</code> are Amazon Elastic Compute Cloud - Compute, Amazon Relational Database Service, Amazon ElastiCache, Amazon Redshift, and Amazon Elasticsearch Service. The value for the <code>SERVICE</code> filter should not exceed "1".</p>
+    /// </note></li>
     /// <li>
     /// <p>SCOPE</p></li>
     /// <li>
@@ -329,7 +337,9 @@ impl GetReservationUtilizationInputBuilder {
     /// <li>
     /// <p>REGION</p></li>
     /// <li>
-    /// <p>SERVICE</p></li>
+    /// <p>SERVICE</p><note>
+    /// <p>If not specified, the <code>SERVICE</code> filter defaults to Amazon Elastic Compute Cloud - Compute. Supported values for <code>SERVICE</code> are Amazon Elastic Compute Cloud - Compute, Amazon Relational Database Service, Amazon ElastiCache, Amazon Redshift, and Amazon Elasticsearch Service. The value for the <code>SERVICE</code> filter should not exceed "1".</p>
+    /// </note></li>
     /// <li>
     /// <p>SCOPE</p></li>
     /// <li>

@@ -18,6 +18,9 @@ pub fn ser_signal_information(
             ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
+    if let Some(var_3) = &input.data_partition_id {
+        object.key("dataPartitionId").string(var_3.as_str());
+    }
     Ok(())
 }
 
@@ -54,6 +57,13 @@ where
                             builder = builder.set_minimum_sampling_interval_ms(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i64::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "dataPartitionId" => {
+                            builder = builder.set_data_partition_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }

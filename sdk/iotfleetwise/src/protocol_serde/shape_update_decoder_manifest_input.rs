@@ -78,5 +78,8 @@ pub fn ser_update_decoder_manifest_input_input(
     if let Some(var_25) = &input.status {
         object.key("status").string(var_25.as_str());
     }
+    if let Some(var_26) = &input.default_for_unmapped_signals {
+        object.key("defaultForUnmappedSignals").string(var_26.as_str());
+    }
     Ok(())
 }

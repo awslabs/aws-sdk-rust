@@ -150,6 +150,8 @@ mod create_documentation_version;
 
 mod create_domain_name;
 
+mod create_domain_name_access_association;
+
 mod create_model;
 
 mod create_request_validator;
@@ -208,6 +210,8 @@ mod delete_documentation_part;
 mod delete_documentation_version;
 
 mod delete_domain_name;
+
+mod delete_domain_name_access_association;
 
 mod delete_gateway_response;
 
@@ -272,6 +276,8 @@ mod get_documentation_version;
 mod get_documentation_versions;
 
 mod get_domain_name;
+
+mod get_domain_name_access_associations;
 
 mod get_domain_names;
 
@@ -350,6 +356,8 @@ mod put_method;
 mod put_method_response;
 
 mod put_rest_api;
+
+mod reject_domain_name_access_association;
 
 mod tag_resource;
 

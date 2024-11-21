@@ -18,5 +18,8 @@ pub fn ser_get_query_results_input_input(
             ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
+    if let Some(var_5) = &input.event_data_store_owner_account_id {
+        object.key("EventDataStoreOwnerAccountId").string(var_5.as_str());
+    }
     Ok(())
 }

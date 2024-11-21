@@ -206,6 +206,13 @@ pub(crate) fn de_generate_query(
                             .transpose()?,
                     );
                 }
+                "EventDataStoreOwnerAccountId" => {
+                    builder = builder.set_event_data_store_owner_account_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

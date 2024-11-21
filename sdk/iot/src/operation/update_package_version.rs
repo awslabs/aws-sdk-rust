@@ -294,7 +294,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdatePackage
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum UpdatePackageVersionError {
-    /// <p>A resource with the same name already exists.</p>
+    /// <p>The request conflicts with the current state of the resource.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>Internal error from the service that indicates an unexpected error or that the service is unavailable.</p>
     InternalServerException(crate::types::error::InternalServerException),

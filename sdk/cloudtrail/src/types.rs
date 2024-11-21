@@ -9,6 +9,20 @@ pub use crate::types::_advanced_field_selector::AdvancedFieldSelector;
 
 pub use crate::types::_event_data_store_status::EventDataStoreStatus;
 
+pub use crate::types::_refresh_schedule::RefreshSchedule;
+
+pub use crate::types::_refresh_schedule_status::RefreshScheduleStatus;
+
+pub use crate::types::_refresh_schedule_frequency::RefreshScheduleFrequency;
+
+pub use crate::types::_refresh_schedule_frequency_unit::RefreshScheduleFrequencyUnit;
+
+pub use crate::types::_widget::Widget;
+
+pub use crate::types::_dashboard_type::DashboardType;
+
+pub use crate::types::_request_widget::RequestWidget;
+
 pub use crate::types::_destination::Destination;
 
 pub use crate::types::_destination_type::DestinationType;
@@ -63,6 +77,8 @@ pub use crate::types::_import_failure_status::ImportFailureStatus;
 
 pub use crate::types::_event_data_store::EventDataStore;
 
+pub use crate::types::_dashboard_detail::DashboardDetail;
+
 pub use crate::types::_channel::Channel;
 
 pub use crate::types::_trail::Trail;
@@ -70,6 +86,8 @@ pub use crate::types::_trail::Trail;
 pub use crate::types::_query_statistics::QueryStatistics;
 
 pub use crate::types::_partition_key::PartitionKey;
+
+pub use crate::types::_dashboard_status::DashboardStatus;
 
 pub use crate::types::_ingestion_status::IngestionStatus;
 
@@ -86,6 +104,12 @@ mod _advanced_field_selector;
 mod _billing_mode;
 
 mod _channel;
+
+mod _dashboard_detail;
+
+mod _dashboard_status;
+
+mod _dashboard_type;
 
 mod _data_resource;
 
@@ -145,6 +169,16 @@ mod _query_status;
 
 mod _read_write_type;
 
+mod _refresh_schedule;
+
+mod _refresh_schedule_frequency;
+
+mod _refresh_schedule_frequency_unit;
+
+mod _refresh_schedule_status;
+
+mod _request_widget;
+
 mod _resource;
 
 mod _resource_tag;
@@ -158,6 +192,8 @@ mod _tag;
 mod _trail;
 
 mod _trail_info;
+
+mod _widget;
 
 /// Builders
 pub mod builders;

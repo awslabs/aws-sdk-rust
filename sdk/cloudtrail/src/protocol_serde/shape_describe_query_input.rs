@@ -12,5 +12,11 @@ pub fn ser_describe_query_input_input(
     if let Some(var_3) = &input.query_alias {
         object.key("QueryAlias").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.refresh_id {
+        object.key("RefreshId").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.event_data_store_owner_account_id {
+        object.key("EventDataStoreOwnerAccountId").string(var_5.as_str());
+    }
     Ok(())
 }

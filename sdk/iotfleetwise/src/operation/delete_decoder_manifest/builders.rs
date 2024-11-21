@@ -22,9 +22,7 @@ impl crate::operation::delete_decoder_manifest::builders::DeleteDecoderManifestI
 }
 /// Fluent builder constructing a request to `DeleteDecoderManifest`.
 ///
-/// <p>Deletes a decoder manifest. You can't delete a decoder manifest if it has vehicles associated with it.</p><note>
-/// <p>If the decoder manifest is successfully deleted, Amazon Web Services IoT FleetWise sends back an HTTP 200 response with an empty body.</p>
-/// </note>
+/// <p>Deletes a decoder manifest. You can't delete a decoder manifest if it has vehicles associated with it.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDecoderManifestFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

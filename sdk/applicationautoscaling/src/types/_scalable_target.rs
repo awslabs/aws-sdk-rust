@@ -102,6 +102,8 @@ pub struct ScalableTarget {
     pub min_capacity: i32,
     /// <p>The maximum value to scale to in response to a scale-out activity.</p>
     pub max_capacity: i32,
+    /// <p>The predicted capacity of the scalable target.</p>
+    pub predicted_capacity: ::std::option::Option<i32>,
     /// <p>The ARN of an IAM role that allows Application Auto Scaling to modify the scalable target on your behalf.</p>
     pub role_arn: ::std::string::String,
     /// <p>The Unix timestamp for when the scalable target was created.</p>
@@ -221,6 +223,10 @@ impl ScalableTarget {
     pub fn max_capacity(&self) -> i32 {
         self.max_capacity
     }
+    /// <p>The predicted capacity of the scalable target.</p>
+    pub fn predicted_capacity(&self) -> ::std::option::Option<i32> {
+        self.predicted_capacity
+    }
     /// <p>The ARN of an IAM role that allows Application Auto Scaling to modify the scalable target on your behalf.</p>
     pub fn role_arn(&self) -> &str {
         use std::ops::Deref;
@@ -255,6 +261,7 @@ pub struct ScalableTargetBuilder {
     pub(crate) scalable_dimension: ::std::option::Option<crate::types::ScalableDimension>,
     pub(crate) min_capacity: ::std::option::Option<i32>,
     pub(crate) max_capacity: ::std::option::Option<i32>,
+    pub(crate) predicted_capacity: ::std::option::Option<i32>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) suspended_state: ::std::option::Option<crate::types::SuspendedState>,
@@ -600,6 +607,20 @@ impl ScalableTargetBuilder {
     pub fn get_max_capacity(&self) -> &::std::option::Option<i32> {
         &self.max_capacity
     }
+    /// <p>The predicted capacity of the scalable target.</p>
+    pub fn predicted_capacity(mut self, input: i32) -> Self {
+        self.predicted_capacity = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The predicted capacity of the scalable target.</p>
+    pub fn set_predicted_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.predicted_capacity = input;
+        self
+    }
+    /// <p>The predicted capacity of the scalable target.</p>
+    pub fn get_predicted_capacity(&self) -> &::std::option::Option<i32> {
+        &self.predicted_capacity
+    }
     /// <p>The ARN of an IAM role that allows Application Auto Scaling to modify the scalable target on your behalf.</p>
     /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -699,6 +720,7 @@ impl ScalableTargetBuilder {
                     "max_capacity was not specified but it is required when building ScalableTarget",
                 )
             })?,
+            predicted_capacity: self.predicted_capacity,
             role_arn: self.role_arn.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",

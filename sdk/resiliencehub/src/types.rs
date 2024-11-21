@@ -43,6 +43,8 @@ pub use crate::types::_app_status_type::AppStatusType;
 
 pub use crate::types::_resources_grouping_rec_gen_status_type::ResourcesGroupingRecGenStatusType;
 
+pub use crate::types::_metrics_export_status_type::MetricsExportStatusType;
+
 pub use crate::types::_app_assessment::AppAssessment;
 
 pub use crate::types::_assessment_summary::AssessmentSummary;
@@ -118,6 +120,16 @@ pub use crate::types::_template_format::TemplateFormat;
 pub use crate::types::_render_recommendation_type::RenderRecommendationType;
 
 pub use crate::types::_s3_location::S3Location;
+
+pub use crate::types::_sort::Sort;
+
+pub use crate::types::_condition::Condition;
+
+pub use crate::types::_condition_operator_type::ConditionOperatorType;
+
+pub use crate::types::_field::Field;
+
+pub use crate::types::_field_aggregation_type::FieldAggregationType;
 
 pub use crate::types::_app_version_summary::AppVersionSummary;
 
@@ -229,6 +241,10 @@ mod _compliance_status;
 
 mod _component_recommendation;
 
+mod _condition;
+
+mod _condition_operator_type;
+
 mod _config_recommendation;
 
 mod _config_recommendation_optimization_type;
@@ -267,6 +283,10 @@ mod _failed_grouping_recommendation_entry;
 
 mod _failure_policy;
 
+mod _field;
+
+mod _field_aggregation_type;
+
 mod _grouping_app_component;
 
 mod _grouping_recommendation;
@@ -282,6 +302,8 @@ mod _grouping_resource;
 mod _ha_architecture;
 
 mod _logical_resource_id;
+
+mod _metrics_export_status_type;
 
 mod _permission_model;
 
@@ -346,6 +368,8 @@ mod _scoring_component_resiliency_score;
 mod _sop_recommendation;
 
 mod _sop_service_type;
+
+mod _sort;
 
 mod _template_format;
 

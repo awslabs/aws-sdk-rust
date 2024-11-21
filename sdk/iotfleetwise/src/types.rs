@@ -3,6 +3,18 @@ pub use crate::types::_validation_exception_field::ValidationExceptionField;
 
 pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
+pub use crate::types::_state_template_association::StateTemplateAssociation;
+
+pub use crate::types::_state_template_update_strategy::StateTemplateUpdateStrategy;
+
+pub use crate::types::_on_change_state_template_update_strategy::OnChangeStateTemplateUpdateStrategy;
+
+pub use crate::types::_periodic_state_template_update_strategy::PeriodicStateTemplateUpdateStrategy;
+
+pub use crate::types::_time_period::TimePeriod;
+
+pub use crate::types::_time_unit::TimeUnit;
+
 pub use crate::types::_update_mode::UpdateMode;
 
 pub use crate::types::_tag::Tag;
@@ -10,6 +22,10 @@ pub use crate::types::_tag::Tag;
 pub use crate::types::_vehicle_association_behavior::VehicleAssociationBehavior;
 
 pub use crate::types::_vehicle_summary::VehicleSummary;
+
+pub use crate::types::_invalid_signal::InvalidSignal;
+
+pub use crate::types::_state_template_summary::StateTemplateSummary;
 
 pub use crate::types::_node::Node;
 
@@ -31,8 +47,6 @@ pub use crate::types::_branch::Branch;
 
 pub use crate::types::_signal_node_type::SignalNodeType;
 
-pub use crate::types::_invalid_signal::InvalidSignal;
-
 pub use crate::types::_formatted_vss::FormattedVss;
 
 pub use crate::types::_node_counts::NodeCounts;
@@ -46,6 +60,8 @@ pub use crate::types::_model_manifest_summary::ModelManifestSummary;
 pub use crate::types::_fleet_summary::FleetSummary;
 
 pub use crate::types::_signal_decoder::SignalDecoder;
+
+pub use crate::types::_custom_decoding_signal::CustomDecodingSignal;
 
 pub use crate::types::_message_signal::MessageSignal;
 
@@ -71,6 +87,8 @@ pub use crate::types::_signal_decoder_type::SignalDecoderType;
 
 pub use crate::types::_network_interface::NetworkInterface;
 
+pub use crate::types::_custom_decoding_interface::CustomDecodingInterface;
+
 pub use crate::types::_vehicle_middleware::VehicleMiddleware;
 
 pub use crate::types::_vehicle_middleware_protocol::VehicleMiddlewareProtocol;
@@ -93,13 +111,41 @@ pub use crate::types::_network_file_definition::NetworkFileDefinition;
 
 pub use crate::types::_can_dbc_definition::CanDbcDefinition;
 
+pub use crate::types::_default_for_unmapped_signals_type::DefaultForUnmappedSignalsType;
+
 pub use crate::types::_decoder_manifest_summary::DecoderManifestSummary;
 
 pub use crate::types::_campaign_status::CampaignStatus;
 
 pub use crate::types::_update_campaign_action::UpdateCampaignAction;
 
+pub use crate::types::_signal_fetch_information::SignalFetchInformation;
+
+pub use crate::types::_signal_fetch_config::SignalFetchConfig;
+
+pub use crate::types::_condition_based_signal_fetch_config::ConditionBasedSignalFetchConfig;
+
+pub use crate::types::_trigger_mode::TriggerMode;
+
+pub use crate::types::_time_based_signal_fetch_config::TimeBasedSignalFetchConfig;
+
+pub use crate::types::_data_partition::DataPartition;
+
+pub use crate::types::_data_partition_upload_options::DataPartitionUploadOptions;
+
+pub use crate::types::_data_partition_storage_options::DataPartitionStorageOptions;
+
+pub use crate::types::_storage_minimum_time_to_live::StorageMinimumTimeToLive;
+
+pub use crate::types::_storage_minimum_time_to_live_unit::StorageMinimumTimeToLiveUnit;
+
+pub use crate::types::_storage_maximum_size::StorageMaximumSize;
+
+pub use crate::types::_storage_maximum_size_unit::StorageMaximumSizeUnit;
+
 pub use crate::types::_data_destination_config::DataDestinationConfig;
+
+pub use crate::types::_mqtt_topic_config::MqttTopicConfig;
 
 pub use crate::types::_timestream_config::TimestreamConfig;
 
@@ -112,8 +158,6 @@ pub use crate::types::_data_format::DataFormat;
 pub use crate::types::_collection_scheme::CollectionScheme;
 
 pub use crate::types::_condition_based_collection_scheme::ConditionBasedCollectionScheme;
-
-pub use crate::types::_trigger_mode::TriggerMode;
 
 pub use crate::types::_time_based_collection_scheme::TimeBasedCollectionScheme;
 
@@ -185,11 +229,17 @@ mod _compression;
 
 mod _condition_based_collection_scheme;
 
+mod _condition_based_signal_fetch_config;
+
 mod _create_vehicle_error;
 
 mod _create_vehicle_request_item;
 
 mod _create_vehicle_response_item;
+
+mod _custom_decoding_interface;
+
+mod _custom_decoding_signal;
 
 mod _custom_property;
 
@@ -199,7 +249,15 @@ mod _data_destination_config;
 
 mod _data_format;
 
+mod _data_partition;
+
+mod _data_partition_storage_options;
+
+mod _data_partition_upload_options;
+
 mod _decoder_manifest_summary;
+
+mod _default_for_unmapped_signals_type;
 
 mod _diagnostics_mode;
 
@@ -229,6 +287,8 @@ mod _message_signal;
 
 mod _model_manifest_summary;
 
+mod _mqtt_topic_config;
+
 mod _network_file_definition;
 
 mod _network_interface;
@@ -248,6 +308,10 @@ mod _node_data_type;
 mod _obd_interface;
 
 mod _obd_signal;
+
+mod _on_change_state_template_update_strategy;
+
+mod _periodic_state_template_update_strategy;
 
 mod _primitive_message_definition;
 
@@ -269,13 +333,31 @@ mod _signal_decoder_failure_reason;
 
 mod _signal_decoder_type;
 
+mod _signal_fetch_config;
+
+mod _signal_fetch_information;
+
 mod _signal_information;
 
 mod _signal_node_type;
 
 mod _spooling_mode;
 
+mod _state_template_association;
+
+mod _state_template_summary;
+
+mod _state_template_update_strategy;
+
 mod _storage_compression_format;
+
+mod _storage_maximum_size;
+
+mod _storage_maximum_size_unit;
+
+mod _storage_minimum_time_to_live;
+
+mod _storage_minimum_time_to_live_unit;
 
 mod _structured_message;
 
@@ -288,6 +370,12 @@ mod _structured_message_list_type;
 mod _tag;
 
 mod _time_based_collection_scheme;
+
+mod _time_based_signal_fetch_config;
+
+mod _time_period;
+
+mod _time_unit;
 
 mod _timestream_config;
 

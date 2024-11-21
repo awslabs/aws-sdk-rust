@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListResiliencyPoliciesInput {
-    /// <p>The name of the policy</p>
+    /// <p>Name of the resiliency policy.</p>
     pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -11,7 +11,7 @@ pub struct ListResiliencyPoliciesInput {
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListResiliencyPoliciesInput {
-    /// <p>The name of the policy</p>
+    /// <p>Name of the resiliency policy.</p>
     pub fn policy_name(&self) -> ::std::option::Option<&str> {
         self.policy_name.as_deref()
     }
@@ -40,17 +40,17 @@ pub struct ListResiliencyPoliciesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListResiliencyPoliciesInputBuilder {
-    /// <p>The name of the policy</p>
+    /// <p>Name of the resiliency policy.</p>
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the policy</p>
+    /// <p>Name of the resiliency policy.</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_name = input;
         self
     }
-    /// <p>The name of the policy</p>
+    /// <p>Name of the resiliency policy.</p>
     pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_name
     }

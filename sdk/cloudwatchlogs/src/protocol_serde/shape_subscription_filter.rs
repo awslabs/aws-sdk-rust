@@ -56,6 +56,10 @@ where
                                     .transpose()?,
                             );
                         }
+                        "applyOnTransformedLogs" => {
+                            builder =
+                                builder.set_apply_on_transformed_logs(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         "creationTime" => {
                             builder = builder.set_creation_time(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

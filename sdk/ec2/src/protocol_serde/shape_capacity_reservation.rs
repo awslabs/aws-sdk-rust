@@ -343,6 +343,30 @@ pub fn de_capacity_reservation(
                 builder = builder.set_unused_reservation_billing_owner_id(var_25);
             }
             ,
+            s if s.matches("commitmentInfo") /* CommitmentInfo com.amazonaws.ec2#CapacityReservation$CommitmentInfo */ =>  {
+                let var_26 =
+                    Some(
+                        crate::protocol_serde::shape_capacity_reservation_commitment_info::de_capacity_reservation_commitment_info(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_commitment_info(var_26);
+            }
+            ,
+            s if s.matches("deliveryPreference") /* DeliveryPreference com.amazonaws.ec2#CapacityReservation$DeliveryPreference */ =>  {
+                let var_27 =
+                    Some(
+                        Result::<crate::types::CapacityReservationDeliveryPreference, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::CapacityReservationDeliveryPreference::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_delivery_preference(var_27);
+            }
+            ,
             _ => {}
         }
     }

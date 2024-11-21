@@ -129,6 +129,16 @@ pub(crate) fn reflens_list_log_anomaly_detectors_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_log_groups_for_query_output_output_next_token(
+    input: &crate::operation::list_log_groups_for_query::ListLogGroupsForQueryOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_describe_configuration_templates_output_output_configuration_templates(
     input: crate::operation::describe_configuration_templates::DescribeConfigurationTemplatesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationTemplate>> {
@@ -243,6 +253,16 @@ pub(crate) fn lens_list_log_anomaly_detectors_output_output_anomaly_detectors(
     input: crate::operation::list_log_anomaly_detectors::ListLogAnomalyDetectorsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AnomalyDetector>> {
     let input = match input.anomaly_detectors {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_log_groups_for_query_output_output_log_group_identifiers(
+    input: crate::operation::list_log_groups_for_query::ListLogGroupsForQueryOutput,
+) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    let input = match input.log_group_identifiers {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

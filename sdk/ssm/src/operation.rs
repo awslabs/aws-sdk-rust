@@ -211,6 +211,9 @@ pub mod get_deployable_patch_snapshot_for_instance;
 /// Types for the `GetDocument` operation.
 pub mod get_document;
 
+/// Types for the `GetExecutionPreview` operation.
+pub mod get_execution_preview;
+
 /// Types for the `GetInventory` operation.
 pub mod get_inventory;
 
@@ -298,6 +301,12 @@ pub mod list_documents;
 /// Types for the `ListInventoryEntries` operation.
 pub mod list_inventory_entries;
 
+/// Types for the `ListNodes` operation.
+pub mod list_nodes;
+
+/// Types for the `ListNodesSummary` operation.
+pub mod list_nodes_summary;
+
 /// Types for the `ListOpsItemEvents` operation.
 pub mod list_ops_item_events;
 
@@ -366,6 +375,9 @@ pub mod start_automation_execution;
 
 /// Types for the `StartChangeRequestExecution` operation.
 pub mod start_change_request_execution;
+
+/// Types for the `StartExecutionPreview` operation.
+pub mod start_execution_preview;
 
 /// Types for the `StartSession` operation.
 pub mod start_session;

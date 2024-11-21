@@ -23,7 +23,7 @@ impl crate::operation::get_bucket_cors::builders::GetBucketCorsInputBuilder {
 /// Fluent builder constructing a request to `GetBucketCors`.
 ///
 /// <note>
-/// <p>This operation is not supported by directory buckets.</p>
+/// <p>This operation is not supported for directory buckets.</p>
 /// </note>
 /// <p>Returns the Cross-Origin Resource Sharing (CORS) configuration information set for the bucket.</p>
 /// <p>To use this operation, you must have permission to perform the <code>s3:GetBucketCORS</code> action. By default, the bucket owner has this permission and can grant it to others.</p>

@@ -4,6 +4,9 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `BatchGetTraces` operation.
 pub mod batch_get_traces;
 
+/// Types for the `CancelTraceRetrieval` operation.
+pub mod cancel_trace_retrieval;
+
 /// Types for the `CreateGroup` operation.
 pub mod create_group;
 
@@ -28,6 +31,9 @@ pub mod get_group;
 /// Types for the `GetGroups` operation.
 pub mod get_groups;
 
+/// Types for the `GetIndexingRules` operation.
+pub mod get_indexing_rules;
+
 /// Types for the `GetInsight` operation.
 pub mod get_insight;
 
@@ -39,6 +45,9 @@ pub mod get_insight_impact_graph;
 
 /// Types for the `GetInsightSummaries` operation.
 pub mod get_insight_summaries;
+
+/// Types for the `GetRetrievedTracesGraph` operation.
+pub mod get_retrieved_traces_graph;
 
 /// Types for the `GetSamplingRules` operation.
 pub mod get_sampling_rules;
@@ -58,11 +67,17 @@ pub mod get_time_series_service_statistics;
 /// Types for the `GetTraceGraph` operation.
 pub mod get_trace_graph;
 
+/// Types for the `GetTraceSegmentDestination` operation.
+pub mod get_trace_segment_destination;
+
 /// Types for the `GetTraceSummaries` operation.
 pub mod get_trace_summaries;
 
 /// Types for the `ListResourcePolicies` operation.
 pub mod list_resource_policies;
+
+/// Types for the `ListRetrievedTraces` operation.
+pub mod list_retrieved_traces;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
@@ -79,6 +94,9 @@ pub mod put_telemetry_records;
 /// Types for the `PutTraceSegments` operation.
 pub mod put_trace_segments;
 
+/// Types for the `StartTraceRetrieval` operation.
+pub mod start_trace_retrieval;
+
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
 
@@ -88,5 +106,11 @@ pub mod untag_resource;
 /// Types for the `UpdateGroup` operation.
 pub mod update_group;
 
+/// Types for the `UpdateIndexingRule` operation.
+pub mod update_indexing_rule;
+
 /// Types for the `UpdateSamplingRule` operation.
 pub mod update_sampling_rule;
+
+/// Types for the `UpdateTraceSegmentDestination` operation.
+pub mod update_trace_segment_destination;

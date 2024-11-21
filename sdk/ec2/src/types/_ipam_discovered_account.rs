@@ -14,6 +14,8 @@ pub struct IpamDiscoveredAccount {
     pub last_attempted_discovery_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last successful resource discovery time.</p>
     pub last_successful_discovery_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The ID of an Organizational Unit in Amazon Web Services Organizations.</p>
+    pub organizational_unit_id: ::std::option::Option<::std::string::String>,
 }
 impl IpamDiscoveredAccount {
     /// <p>The account ID.</p>
@@ -36,6 +38,10 @@ impl IpamDiscoveredAccount {
     pub fn last_successful_discovery_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_successful_discovery_time.as_ref()
     }
+    /// <p>The ID of an Organizational Unit in Amazon Web Services Organizations.</p>
+    pub fn organizational_unit_id(&self) -> ::std::option::Option<&str> {
+        self.organizational_unit_id.as_deref()
+    }
 }
 impl IpamDiscoveredAccount {
     /// Creates a new builder-style object to manufacture [`IpamDiscoveredAccount`](crate::types::IpamDiscoveredAccount).
@@ -53,6 +59,7 @@ pub struct IpamDiscoveredAccountBuilder {
     pub(crate) failure_reason: ::std::option::Option<crate::types::IpamDiscoveryFailureReason>,
     pub(crate) last_attempted_discovery_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_successful_discovery_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) organizational_unit_id: ::std::option::Option<::std::string::String>,
 }
 impl IpamDiscoveredAccountBuilder {
     /// <p>The account ID.</p>
@@ -125,6 +132,20 @@ impl IpamDiscoveredAccountBuilder {
     pub fn get_last_successful_discovery_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_successful_discovery_time
     }
+    /// <p>The ID of an Organizational Unit in Amazon Web Services Organizations.</p>
+    pub fn organizational_unit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.organizational_unit_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of an Organizational Unit in Amazon Web Services Organizations.</p>
+    pub fn set_organizational_unit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.organizational_unit_id = input;
+        self
+    }
+    /// <p>The ID of an Organizational Unit in Amazon Web Services Organizations.</p>
+    pub fn get_organizational_unit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organizational_unit_id
+    }
     /// Consumes the builder and constructs a [`IpamDiscoveredAccount`](crate::types::IpamDiscoveredAccount).
     pub fn build(self) -> crate::types::IpamDiscoveredAccount {
         crate::types::IpamDiscoveredAccount {
@@ -133,6 +154,7 @@ impl IpamDiscoveredAccountBuilder {
             failure_reason: self.failure_reason,
             last_attempted_discovery_time: self.last_attempted_discovery_time,
             last_successful_discovery_time: self.last_successful_discovery_time,
+            organizational_unit_id: self.organizational_unit_id,
         }
     }
 }

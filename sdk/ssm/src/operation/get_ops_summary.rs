@@ -246,9 +246,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetOpsSummary
 pub enum GetOpsSummaryError {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::types::error::InternalServerError),
-    /// <p>The specified aggregator isn't valid for inventory groups. Verify that the aggregator uses a valid inventory type such as <code>AWS:Application</code> or <code>AWS:InstanceInformation</code>.</p>
+    /// <p>The specified aggregator isn't valid for the group type. Verify that the aggregator you provided is supported.</p>
     InvalidAggregatorException(crate::types::error::InvalidAggregatorException),
-    /// <p>The filter name isn't valid. Verify the you entered the correct name and try again.</p>
+    /// <p>The filter name isn't valid. Verify that you entered the correct name and try again.</p>
     InvalidFilter(crate::types::error::InvalidFilter),
     /// <p>The specified token isn't valid.</p>
     InvalidNextToken(crate::types::error::InvalidNextToken),

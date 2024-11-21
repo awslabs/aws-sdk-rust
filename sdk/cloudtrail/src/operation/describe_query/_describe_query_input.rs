@@ -10,6 +10,10 @@ pub struct DescribeQueryInput {
     pub query_id: ::std::option::Option<::std::string::String>,
     /// <p>The alias that identifies a query template.</p>
     pub query_alias: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the dashboard refresh.</p>
+    pub refresh_id: ::std::option::Option<::std::string::String>,
+    /// <p>The account ID of the event data store owner.</p>
+    pub event_data_store_owner_account_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeQueryInput {
     /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query was run.</p>
@@ -24,6 +28,14 @@ impl DescribeQueryInput {
     /// <p>The alias that identifies a query template.</p>
     pub fn query_alias(&self) -> ::std::option::Option<&str> {
         self.query_alias.as_deref()
+    }
+    /// <p>The ID of the dashboard refresh.</p>
+    pub fn refresh_id(&self) -> ::std::option::Option<&str> {
+        self.refresh_id.as_deref()
+    }
+    /// <p>The account ID of the event data store owner.</p>
+    pub fn event_data_store_owner_account_id(&self) -> ::std::option::Option<&str> {
+        self.event_data_store_owner_account_id.as_deref()
     }
 }
 impl DescribeQueryInput {
@@ -40,6 +52,8 @@ pub struct DescribeQueryInputBuilder {
     pub(crate) event_data_store: ::std::option::Option<::std::string::String>,
     pub(crate) query_id: ::std::option::Option<::std::string::String>,
     pub(crate) query_alias: ::std::option::Option<::std::string::String>,
+    pub(crate) refresh_id: ::std::option::Option<::std::string::String>,
+    pub(crate) event_data_store_owner_account_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeQueryInputBuilder {
     /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query was run.</p>
@@ -87,6 +101,34 @@ impl DescribeQueryInputBuilder {
     pub fn get_query_alias(&self) -> &::std::option::Option<::std::string::String> {
         &self.query_alias
     }
+    /// <p>The ID of the dashboard refresh.</p>
+    pub fn refresh_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.refresh_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the dashboard refresh.</p>
+    pub fn set_refresh_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.refresh_id = input;
+        self
+    }
+    /// <p>The ID of the dashboard refresh.</p>
+    pub fn get_refresh_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.refresh_id
+    }
+    /// <p>The account ID of the event data store owner.</p>
+    pub fn event_data_store_owner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.event_data_store_owner_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The account ID of the event data store owner.</p>
+    pub fn set_event_data_store_owner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.event_data_store_owner_account_id = input;
+        self
+    }
+    /// <p>The account ID of the event data store owner.</p>
+    pub fn get_event_data_store_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_data_store_owner_account_id
+    }
     /// Consumes the builder and constructs a [`DescribeQueryInput`](crate::operation::describe_query::DescribeQueryInput).
     pub fn build(
         self,
@@ -95,6 +137,8 @@ impl DescribeQueryInputBuilder {
             event_data_store: self.event_data_store,
             query_id: self.query_id,
             query_alias: self.query_alias,
+            refresh_id: self.refresh_id,
+            event_data_store_owner_account_id: self.event_data_store_owner_account_id,
         })
     }
 }

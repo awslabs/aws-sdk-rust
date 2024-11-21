@@ -48,6 +48,8 @@ pub struct IpamResourceDiscovery {
     pub state: ::std::option::Option<crate::types::IpamResourceDiscoveryState>,
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>If your IPAM is integrated with Amazon Web Services Organizations and you add an organizational unit (OU) exclusion, IPAM will not manage the IP addresses in accounts in that OU exclusion.</p>
+    pub organizational_unit_exclusions: ::std::option::Option<::std::vec::Vec<crate::types::IpamOrganizationalUnitExclusion>>,
 }
 impl IpamResourceDiscovery {
     /// <p>The ID of the owner.</p>
@@ -116,6 +118,12 @@ impl IpamResourceDiscovery {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>If your IPAM is integrated with Amazon Web Services Organizations and you add an organizational unit (OU) exclusion, IPAM will not manage the IP addresses in accounts in that OU exclusion.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.organizational_unit_exclusions.is_none()`.
+    pub fn organizational_unit_exclusions(&self) -> &[crate::types::IpamOrganizationalUnitExclusion] {
+        self.organizational_unit_exclusions.as_deref().unwrap_or_default()
+    }
 }
 impl IpamResourceDiscovery {
     /// Creates a new builder-style object to manufacture [`IpamResourceDiscovery`](crate::types::IpamResourceDiscovery).
@@ -137,6 +145,7 @@ pub struct IpamResourceDiscoveryBuilder {
     pub(crate) is_default: ::std::option::Option<bool>,
     pub(crate) state: ::std::option::Option<crate::types::IpamResourceDiscoveryState>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) organizational_unit_exclusions: ::std::option::Option<::std::vec::Vec<crate::types::IpamOrganizationalUnitExclusion>>,
 }
 impl IpamResourceDiscoveryBuilder {
     /// <p>The ID of the owner.</p>
@@ -355,6 +364,29 @@ impl IpamResourceDiscoveryBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// Appends an item to `organizational_unit_exclusions`.
+    ///
+    /// To override the contents of this collection use [`set_organizational_unit_exclusions`](Self::set_organizational_unit_exclusions).
+    ///
+    /// <p>If your IPAM is integrated with Amazon Web Services Organizations and you add an organizational unit (OU) exclusion, IPAM will not manage the IP addresses in accounts in that OU exclusion.</p>
+    pub fn organizational_unit_exclusions(mut self, input: crate::types::IpamOrganizationalUnitExclusion) -> Self {
+        let mut v = self.organizational_unit_exclusions.unwrap_or_default();
+        v.push(input);
+        self.organizational_unit_exclusions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>If your IPAM is integrated with Amazon Web Services Organizations and you add an organizational unit (OU) exclusion, IPAM will not manage the IP addresses in accounts in that OU exclusion.</p>
+    pub fn set_organizational_unit_exclusions(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::IpamOrganizationalUnitExclusion>>,
+    ) -> Self {
+        self.organizational_unit_exclusions = input;
+        self
+    }
+    /// <p>If your IPAM is integrated with Amazon Web Services Organizations and you add an organizational unit (OU) exclusion, IPAM will not manage the IP addresses in accounts in that OU exclusion.</p>
+    pub fn get_organizational_unit_exclusions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpamOrganizationalUnitExclusion>> {
+        &self.organizational_unit_exclusions
+    }
     /// Consumes the builder and constructs a [`IpamResourceDiscovery`](crate::types::IpamResourceDiscovery).
     pub fn build(self) -> crate::types::IpamResourceDiscovery {
         crate::types::IpamResourceDiscovery {
@@ -367,6 +399,7 @@ impl IpamResourceDiscoveryBuilder {
             is_default: self.is_default,
             state: self.state,
             tags: self.tags,
+            organizational_unit_exclusions: self.organizational_unit_exclusions,
         }
     }
 }

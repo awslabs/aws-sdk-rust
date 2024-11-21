@@ -25,6 +25,14 @@ pub use crate::types::_resource_tag::ResourceTagBuilder;
 
 pub use crate::types::_cost_allocation_tag_backfill_request::CostAllocationTagBackfillRequestBuilder;
 
+pub use crate::types::_commitment_purchase_analysis_configuration::CommitmentPurchaseAnalysisConfigurationBuilder;
+
+pub use crate::types::_savings_plans_purchase_analysis_configuration::SavingsPlansPurchaseAnalysisConfigurationBuilder;
+
+pub use crate::types::_date_interval::DateIntervalBuilder;
+
+pub use crate::types::_savings_plans::SavingsPlansBuilder;
+
 pub use crate::types::_generation_summary::GenerationSummaryBuilder;
 
 pub use crate::types::_cost_category_reference::CostCategoryReferenceBuilder;
@@ -33,9 +41,9 @@ pub use crate::types::_cost_category_processing_status::CostCategoryProcessingSt
 
 pub use crate::types::_cost_allocation_tag::CostAllocationTagBuilder;
 
-pub use crate::types::_forecast_result::ForecastResultBuilder;
+pub use crate::types::_analysis_summary::AnalysisSummaryBuilder;
 
-pub use crate::types::_date_interval::DateIntervalBuilder;
+pub use crate::types::_forecast_result::ForecastResultBuilder;
 
 pub use crate::types::_metric_value::MetricValueBuilder;
 
@@ -156,6 +164,10 @@ pub use crate::types::_dimension_values_with_attributes::DimensionValuesWithAttr
 pub use crate::types::_result_by_time::ResultByTimeBuilder;
 
 pub use crate::types::_group::GroupBuilder;
+
+pub use crate::types::_analysis_details::AnalysisDetailsBuilder;
+
+pub use crate::types::_savings_plans_purchase_analysis_details::SavingsPlansPurchaseAnalysisDetailsBuilder;
 
 pub use crate::types::_anomaly_subscription::AnomalySubscriptionBuilder;
 

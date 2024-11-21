@@ -27,6 +27,8 @@ pub(crate) mod shape_describe_job_execution;
 
 pub(crate) mod shape_get_pending_job_executions;
 
+pub(crate) mod shape_start_command_execution;
+
 pub(crate) mod shape_start_next_pending_job_execution;
 
 pub(crate) mod shape_update_job_execution;
@@ -41,13 +43,21 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 
 pub(crate) mod shape_certificate_validation_exception;
 
+pub(crate) mod shape_conflict_exception;
+
+pub(crate) mod shape_internal_server_exception;
+
 pub(crate) mod shape_invalid_request_exception;
 
 pub(crate) mod shape_invalid_state_transition_exception;
 
 pub(crate) mod shape_resource_not_found_exception;
 
+pub(crate) mod shape_service_quota_exceeded_exception;
+
 pub(crate) mod shape_service_unavailable_exception;
+
+pub(crate) mod shape_start_command_execution_input;
 
 pub(crate) mod shape_start_next_pending_job_execution_input;
 
@@ -56,6 +66,10 @@ pub(crate) mod shape_terminal_state_exception;
 pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_update_job_execution_input;
+
+pub(crate) mod shape_validation_exception;
+
+pub(crate) mod shape_command_parameter_value;
 
 pub(crate) mod shape_job_execution;
 

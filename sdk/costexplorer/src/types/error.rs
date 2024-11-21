@@ -25,6 +25,10 @@ pub use crate::types::error::_request_changed_exception::RequestChangedException
 
 pub use crate::types::error::_bill_expiration_exception::BillExpirationException;
 
+pub use crate::types::error::_analysis_not_found_exception::AnalysisNotFoundException;
+
+mod _analysis_not_found_exception;
+
 mod _backfill_limit_exceeded_exception;
 
 mod _bill_expiration_exception;

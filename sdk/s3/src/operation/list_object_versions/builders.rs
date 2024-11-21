@@ -23,7 +23,7 @@ impl crate::operation::list_object_versions::builders::ListObjectVersionsInputBu
 /// Fluent builder constructing a request to `ListObjectVersions`.
 ///
 /// <note>
-/// <p>This operation is not supported by directory buckets.</p>
+/// <p>This operation is not supported for directory buckets.</p>
 /// </note>
 /// <p>Returns metadata about all versions of the objects in a bucket. You can also use request parameters as selection criteria to return metadata about a subset of all the object versions.</p><important>
 /// <p>To use this operation, you must have permission to perform the <code>s3:ListBucketVersions</code> action. Be aware of the name difference.</p>

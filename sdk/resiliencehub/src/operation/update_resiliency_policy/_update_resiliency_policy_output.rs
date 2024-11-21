@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateResiliencyPolicyOutput {
-    /// <p>The type of resiliency policy that was updated, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
+    /// <p>The resiliency policy that was updated, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
     pub policy: ::std::option::Option<crate::types::ResiliencyPolicy>,
     _request_id: Option<String>,
 }
 impl UpdateResiliencyPolicyOutput {
-    /// <p>The type of resiliency policy that was updated, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
+    /// <p>The resiliency policy that was updated, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
     pub fn policy(&self) -> ::std::option::Option<&crate::types::ResiliencyPolicy> {
         self.policy.as_ref()
     }
@@ -33,18 +33,18 @@ pub struct UpdateResiliencyPolicyOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateResiliencyPolicyOutputBuilder {
-    /// <p>The type of resiliency policy that was updated, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
+    /// <p>The resiliency policy that was updated, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
     /// This field is required.
     pub fn policy(mut self, input: crate::types::ResiliencyPolicy) -> Self {
         self.policy = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of resiliency policy that was updated, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
+    /// <p>The resiliency policy that was updated, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<crate::types::ResiliencyPolicy>) -> Self {
         self.policy = input;
         self
     }
-    /// <p>The type of resiliency policy that was updated, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
+    /// <p>The resiliency policy that was updated, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
     pub fn get_policy(&self) -> &::std::option::Option<crate::types::ResiliencyPolicy> {
         &self.policy
     }

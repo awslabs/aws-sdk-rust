@@ -91,6 +91,12 @@ pub use crate::types::_gateway_response::GatewayResponse;
 
 pub use crate::types::_domain_name::DomainName;
 
+pub use crate::types::_resource_owner::ResourceOwner;
+
+pub use crate::types::_domain_name_access_association::DomainNameAccessAssociation;
+
+pub use crate::types::_access_association_source_type::AccessAssociationSourceType;
+
 pub use crate::types::_documentation_version::DocumentationVersion;
 
 pub use crate::types::_documentation_part::DocumentationPart;
@@ -112,6 +118,8 @@ pub use crate::types::_mutual_tls_authentication_input::MutualTlsAuthenticationI
 pub use crate::types::_deployment_canary_settings::DeploymentCanarySettings;
 
 pub use crate::types::_stage_key::StageKey;
+
+mod _access_association_source_type;
 
 mod _access_log_settings;
 
@@ -154,6 +162,8 @@ mod _documentation_part_type;
 mod _documentation_version;
 
 mod _domain_name;
+
+mod _domain_name_access_association;
 
 mod _domain_name_status;
 
@@ -200,6 +210,8 @@ mod _quota_settings;
 mod _request_validator;
 
 mod _resource;
+
+mod _resource_owner;
 
 mod _rest_api;
 

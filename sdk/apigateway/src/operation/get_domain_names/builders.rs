@@ -142,4 +142,18 @@ impl GetDomainNamesFluentBuilder {
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         self.inner.get_limit()
     }
+    /// <p>The owner of the domain name access association.</p>
+    pub fn resource_owner(mut self, input: crate::types::ResourceOwner) -> Self {
+        self.inner = self.inner.resource_owner(input);
+        self
+    }
+    /// <p>The owner of the domain name access association.</p>
+    pub fn set_resource_owner(mut self, input: ::std::option::Option<crate::types::ResourceOwner>) -> Self {
+        self.inner = self.inner.set_resource_owner(input);
+        self
+    }
+    /// <p>The owner of the domain name access association.</p>
+    pub fn get_resource_owner(&self) -> &::std::option::Option<crate::types::ResourceOwner> {
+        self.inner.get_resource_owner()
+    }
 }

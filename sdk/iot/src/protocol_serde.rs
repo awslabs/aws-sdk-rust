@@ -67,6 +67,8 @@ pub(crate) mod shape_create_certificate_from_csr;
 
 pub(crate) mod shape_create_certificate_provider;
 
+pub(crate) mod shape_create_command;
+
 pub(crate) mod shape_create_custom_metric;
 
 pub(crate) mod shape_create_dimension;
@@ -138,6 +140,10 @@ pub(crate) mod shape_delete_ca_certificate;
 pub(crate) mod shape_delete_certificate;
 
 pub(crate) mod shape_delete_certificate_provider;
+
+pub(crate) mod shape_delete_command;
+
+pub(crate) mod shape_delete_command_execution;
 
 pub(crate) mod shape_delete_custom_metric;
 
@@ -283,6 +289,10 @@ pub(crate) mod shape_get_buckets_aggregation;
 
 pub(crate) mod shape_get_cardinality;
 
+pub(crate) mod shape_get_command;
+
+pub(crate) mod shape_get_command_execution;
+
 pub(crate) mod shape_get_effective_policies;
 
 pub(crate) mod shape_get_indexing_configuration;
@@ -340,6 +350,10 @@ pub(crate) mod shape_list_certificate_providers;
 pub(crate) mod shape_list_certificates;
 
 pub(crate) mod shape_list_certificates_by_ca;
+
+pub(crate) mod shape_list_command_executions;
+
+pub(crate) mod shape_list_commands;
 
 pub(crate) mod shape_list_custom_metrics;
 
@@ -509,6 +523,8 @@ pub(crate) mod shape_update_certificate;
 
 pub(crate) mod shape_update_certificate_provider;
 
+pub(crate) mod shape_update_command;
+
 pub(crate) mod shape_update_custom_metric;
 
 pub(crate) mod shape_update_dimension;
@@ -596,6 +612,8 @@ pub(crate) mod shape_create_billing_group_input;
 pub(crate) mod shape_create_certificate_from_csr_input;
 
 pub(crate) mod shape_create_certificate_provider_input;
+
+pub(crate) mod shape_create_command_input;
 
 pub(crate) mod shape_create_custom_metric_input;
 
@@ -687,6 +705,8 @@ pub(crate) mod shape_list_audit_findings_input;
 
 pub(crate) mod shape_list_audit_suppressions_input;
 
+pub(crate) mod shape_list_command_executions_input;
+
 pub(crate) mod shape_malformed_policy_exception;
 
 pub(crate) mod shape_not_configured_exception;
@@ -768,6 +788,8 @@ pub(crate) mod shape_update_billing_group_input;
 pub(crate) mod shape_update_ca_certificate_input;
 
 pub(crate) mod shape_update_certificate_provider_input;
+
+pub(crate) mod shape_update_command_input;
 
 pub(crate) mod shape_update_custom_metric_input;
 
@@ -914,6 +936,20 @@ pub(crate) mod shape_certificate_providers;
 pub(crate) mod shape_certificates;
 
 pub(crate) mod shape_client_certificate_config;
+
+pub(crate) mod shape_command_execution_parameter_map;
+
+pub(crate) mod shape_command_execution_result_map;
+
+pub(crate) mod shape_command_execution_summary_list;
+
+pub(crate) mod shape_command_parameter;
+
+pub(crate) mod shape_command_parameter_list;
+
+pub(crate) mod shape_command_payload;
+
+pub(crate) mod shape_command_summary_list;
 
 pub(crate) mod shape_configuration;
 
@@ -1065,6 +1101,8 @@ pub(crate) mod shape_server_certificates;
 
 pub(crate) mod shape_statistics;
 
+pub(crate) mod shape_status_reason;
+
 pub(crate) mod shape_stream_file;
 
 pub(crate) mod shape_stream_info;
@@ -1106,6 +1144,8 @@ pub(crate) mod shape_thing_type_list;
 pub(crate) mod shape_thing_type_metadata;
 
 pub(crate) mod shape_thing_type_properties;
+
+pub(crate) mod shape_time_filter;
 
 pub(crate) mod shape_timeout_config;
 
@@ -1184,6 +1224,14 @@ pub(crate) mod shape_certificate_provider_summary;
 pub(crate) mod shape_certificate_validity;
 
 pub(crate) mod shape_code_signing;
+
+pub(crate) mod shape_command_execution_result;
+
+pub(crate) mod shape_command_execution_summary;
+
+pub(crate) mod shape_command_parameter_value;
+
+pub(crate) mod shape_command_summary;
 
 pub(crate) mod shape_detect_mitigation_action_execution;
 

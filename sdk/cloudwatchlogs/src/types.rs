@@ -9,6 +9,72 @@ pub use crate::types::_suppression_unit::SuppressionUnit;
 
 pub use crate::types::_suppression_type::SuppressionType;
 
+pub use crate::types::_transformed_log_record::TransformedLogRecord;
+
+pub use crate::types::_processor::Processor;
+
+pub use crate::types::_upper_case_string::UpperCaseString;
+
+pub use crate::types::_type_converter::TypeConverter;
+
+pub use crate::types::_type_converter_entry::TypeConverterEntry;
+
+pub use crate::types::_type_::Type;
+
+pub use crate::types::_trim_string::TrimString;
+
+pub use crate::types::_substitute_string::SubstituteString;
+
+pub use crate::types::_substitute_string_entry::SubstituteStringEntry;
+
+pub use crate::types::_split_string::SplitString;
+
+pub use crate::types::_split_string_entry::SplitStringEntry;
+
+pub use crate::types::_rename_keys::RenameKeys;
+
+pub use crate::types::_rename_key_entry::RenameKeyEntry;
+
+pub use crate::types::_parse_waf::ParseWaf;
+
+pub use crate::types::_parse_vpc::ParseVpc;
+
+pub use crate::types::_parse_postgres::ParsePostgres;
+
+pub use crate::types::_parse_route53::ParseRoute53;
+
+pub use crate::types::_parse_key_value::ParseKeyValue;
+
+pub use crate::types::_parse_json::ParseJson;
+
+pub use crate::types::_parse_cloudfront::ParseCloudfront;
+
+pub use crate::types::_move_keys::MoveKeys;
+
+pub use crate::types::_move_key_entry::MoveKeyEntry;
+
+pub use crate::types::_lower_case_string::LowerCaseString;
+
+pub use crate::types::_list_to_map::ListToMap;
+
+pub use crate::types::_flattened_element::FlattenedElement;
+
+pub use crate::types::_grok::Grok;
+
+pub use crate::types::_delete_keys::DeleteKeys;
+
+pub use crate::types::_date_time_converter::DateTimeConverter;
+
+pub use crate::types::_csv::Csv;
+
+pub use crate::types::_copy_value::CopyValue;
+
+pub use crate::types::_copy_value_entry::CopyValueEntry;
+
+pub use crate::types::_add_keys::AddKeys;
+
+pub use crate::types::_add_key_entry::AddKeyEntry;
+
 pub use crate::types::_metric_filter_match_record::MetricFilterMatchRecord;
 
 pub use crate::types::_query_compile_error::QueryCompileError;
@@ -32,6 +98,10 @@ pub use crate::types::_rejected_log_events_info::RejectedLogEventsInfo;
 pub use crate::types::_entity::Entity;
 
 pub use crate::types::_input_log_event::InputLogEvent;
+
+pub use crate::types::_index_policy::IndexPolicy;
+
+pub use crate::types::_index_source::IndexSource;
 
 pub use crate::types::_destination::Destination;
 
@@ -103,6 +173,8 @@ pub use crate::types::_inherited_property::InheritedProperty;
 
 pub use crate::types::_data_protection_status::DataProtectionStatus;
 
+pub use crate::types::_field_index::FieldIndex;
+
 pub use crate::types::_export_task::ExportTask;
 
 pub use crate::types::_export_task_execution_info::ExportTaskExecutionInfo;
@@ -119,6 +191,10 @@ pub use crate::types::_configuration_template_delivery_config_values::Configurat
 
 mod _account_policy;
 
+mod _add_key_entry;
+
+mod _add_keys;
+
 mod _anomaly;
 
 mod _anomaly_detector;
@@ -129,7 +205,17 @@ mod _configuration_template;
 
 mod _configuration_template_delivery_config_values;
 
+mod _copy_value;
+
+mod _copy_value_entry;
+
+mod _csv;
+
 mod _data_protection_status;
+
+mod _date_time_converter;
+
+mod _delete_keys;
 
 mod _delivery;
 
@@ -159,11 +245,23 @@ mod _export_task_status;
 
 mod _export_task_status_code;
 
+mod _field_index;
+
 mod _filtered_log_event;
+
+mod _flattened_element;
+
+mod _grok;
+
+mod _index_policy;
+
+mod _index_source;
 
 mod _inherited_property;
 
 mod _input_log_event;
+
+mod _list_to_map;
 
 mod _log_event;
 
@@ -175,11 +273,17 @@ mod _log_group_field;
 
 mod _log_stream;
 
+mod _lower_case_string;
+
 mod _metric_filter;
 
 mod _metric_filter_match_record;
 
 mod _metric_transformation;
+
+mod _move_key_entry;
+
+mod _move_keys;
 
 mod _order_by;
 
@@ -187,11 +291,27 @@ mod _output_format;
 
 mod _output_log_event;
 
+mod _parse_cloudfront;
+
+mod _parse_json;
+
+mod _parse_key_value;
+
+mod _parse_postgres;
+
+mod _parse_route53;
+
+mod _parse_vpc;
+
+mod _parse_waf;
+
 mod _pattern_token;
 
 mod _policy;
 
 mod _policy_type;
+
+mod _processor;
 
 mod _query_compile_error;
 
@@ -211,6 +331,10 @@ mod _rejected_entity_info;
 
 mod _rejected_log_events_info;
 
+mod _rename_key_entry;
+
+mod _rename_keys;
+
 mod _resource_policy;
 
 mod _result_field;
@@ -221,11 +345,19 @@ mod _scope;
 
 mod _searched_log_stream;
 
+mod _split_string;
+
+mod _split_string_entry;
+
 mod _standard_unit;
 
 mod _state;
 
 mod _subscription_filter;
+
+mod _substitute_string;
+
+mod _substitute_string_entry;
 
 mod _suppression_period;
 
@@ -234,6 +366,18 @@ mod _suppression_state;
 mod _suppression_type;
 
 mod _suppression_unit;
+
+mod _transformed_log_record;
+
+mod _trim_string;
+
+mod _type_;
+
+mod _type_converter;
+
+mod _type_converter_entry;
+
+mod _upper_case_string;
 
 /// Builders
 pub mod builders;

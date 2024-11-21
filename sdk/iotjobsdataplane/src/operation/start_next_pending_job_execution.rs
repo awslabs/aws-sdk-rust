@@ -264,7 +264,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StartNextPend
 pub enum StartNextPendingJobExecutionError {
     /// <p>The certificate is invalid.</p>
     CertificateValidationException(crate::types::error::CertificateValidationException),
-    /// <p>The contents of the request were invalid. For example, this code is returned when an UpdateJobExecution request contains invalid status details. The message contains details about the error.</p>
+    /// <p>The contents of the request were invalid.</p>
     InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),

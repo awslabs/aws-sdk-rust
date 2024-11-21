@@ -233,6 +233,8 @@ pub use crate::types::_origin_groups::OriginGroups;
 
 pub use crate::types::_origin_group::OriginGroup;
 
+pub use crate::types::_origin_group_selection_criteria::OriginGroupSelectionCriteria;
+
 pub use crate::types::_origin_group_members::OriginGroupMembers;
 
 pub use crate::types::_origin_group_member::OriginGroupMember;
@@ -644,6 +646,8 @@ mod _origin_group_failover_criteria;
 mod _origin_group_member;
 
 mod _origin_group_members;
+
+mod _origin_group_selection_criteria;
 
 mod _origin_groups;
 

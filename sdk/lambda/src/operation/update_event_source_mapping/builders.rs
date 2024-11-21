@@ -40,18 +40,21 @@ impl crate::operation::update_event_source_mapping::builders::UpdateEventSourceM
 /// <li>
 /// <p><a href="https://docs.aws.amazon.com/lambda/latest/dg/with-documentdb.html"> Amazon DocumentDB</a></p></li>
 /// </ul>
-/// <p>The following error handling options are available only for stream sources (DynamoDB and Kinesis):</p>
+/// <p>The following error handling options are available only for DynamoDB and Kinesis event sources:</p>
 /// <ul>
 /// <li>
 /// <p><code>BisectBatchOnFunctionError</code> – If the function returns an error, split the batch in two and retry.</p></li>
-/// <li>
-/// <p><code>DestinationConfig</code> – Send discarded records to an Amazon SQS queue or Amazon SNS topic.</p></li>
 /// <li>
 /// <p><code>MaximumRecordAgeInSeconds</code> – Discard records older than the specified age. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires</p></li>
 /// <li>
 /// <p><code>MaximumRetryAttempts</code> – Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p></li>
 /// <li>
 /// <p><code>ParallelizationFactor</code> – Process multiple batches from each shard concurrently.</p></li>
+/// </ul>
+/// <p>For stream sources (DynamoDB, Kinesis, Amazon MSK, and self-managed Apache Kafka), the following option is also available:</p>
+/// <ul>
+/// <li>
+/// <p><code>DestinationConfig</code> – Send discarded records to an Amazon SQS queue, Amazon SNS topic, or Amazon S3 bucket.</p></li>
 /// </ul>
 /// <p>For information about which configuration parameters apply to each event source, see the following topics.</p>
 /// <ul>
@@ -498,5 +501,19 @@ impl UpdateEventSourceMappingFluentBuilder {
     /// <p>The ARN of the Key Management Service (KMS) customer managed key that Lambda uses to encrypt your function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-basics">filter criteria</a>. By default, Lambda does not encrypt your filter criteria object. Specify this property to encrypt data using your own customer managed key.</p>
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kms_key_arn()
+    }
+    /// <p>The metrics configuration for your event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics">Event source mapping metrics</a>.</p>
+    pub fn metrics_config(mut self, input: crate::types::EventSourceMappingMetricsConfig) -> Self {
+        self.inner = self.inner.metrics_config(input);
+        self
+    }
+    /// <p>The metrics configuration for your event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics">Event source mapping metrics</a>.</p>
+    pub fn set_metrics_config(mut self, input: ::std::option::Option<crate::types::EventSourceMappingMetricsConfig>) -> Self {
+        self.inner = self.inner.set_metrics_config(input);
+        self
+    }
+    /// <p>The metrics configuration for your event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics">Event source mapping metrics</a>.</p>
+    pub fn get_metrics_config(&self) -> &::std::option::Option<crate::types::EventSourceMappingMetricsConfig> {
+        self.inner.get_metrics_config()
     }
 }

@@ -7,6 +7,8 @@ pub struct GenerateQueryOutput {
     pub query_statement: ::std::option::Option<::std::string::String>,
     /// <p>An alias that identifies the prompt. When you run the <code>StartQuery</code> operation, you can pass in either the <code>QueryAlias</code> or <code>QueryStatement</code> parameter.</p>
     pub query_alias: ::std::option::Option<::std::string::String>,
+    /// <p>The account ID of the event data store owner.</p>
+    pub event_data_store_owner_account_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GenerateQueryOutput {
@@ -17,6 +19,10 @@ impl GenerateQueryOutput {
     /// <p>An alias that identifies the prompt. When you run the <code>StartQuery</code> operation, you can pass in either the <code>QueryAlias</code> or <code>QueryStatement</code> parameter.</p>
     pub fn query_alias(&self) -> ::std::option::Option<&str> {
         self.query_alias.as_deref()
+    }
+    /// <p>The account ID of the event data store owner.</p>
+    pub fn event_data_store_owner_account_id(&self) -> ::std::option::Option<&str> {
+        self.event_data_store_owner_account_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GenerateQueryOutput {
@@ -37,6 +43,7 @@ impl GenerateQueryOutput {
 pub struct GenerateQueryOutputBuilder {
     pub(crate) query_statement: ::std::option::Option<::std::string::String>,
     pub(crate) query_alias: ::std::option::Option<::std::string::String>,
+    pub(crate) event_data_store_owner_account_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GenerateQueryOutputBuilder {
@@ -68,6 +75,20 @@ impl GenerateQueryOutputBuilder {
     pub fn get_query_alias(&self) -> &::std::option::Option<::std::string::String> {
         &self.query_alias
     }
+    /// <p>The account ID of the event data store owner.</p>
+    pub fn event_data_store_owner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.event_data_store_owner_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The account ID of the event data store owner.</p>
+    pub fn set_event_data_store_owner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.event_data_store_owner_account_id = input;
+        self
+    }
+    /// <p>The account ID of the event data store owner.</p>
+    pub fn get_event_data_store_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_data_store_owner_account_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -82,6 +103,7 @@ impl GenerateQueryOutputBuilder {
         crate::operation::generate_query::GenerateQueryOutput {
             query_statement: self.query_statement,
             query_alias: self.query_alias,
+            event_data_store_owner_account_id: self.event_data_store_owner_account_id,
             _request_id: self._request_id,
         }
     }

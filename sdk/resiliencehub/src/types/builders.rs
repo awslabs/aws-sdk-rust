@@ -57,6 +57,12 @@ pub use crate::types::_recommendation_template::RecommendationTemplateBuilder;
 
 pub use crate::types::_s3_location::S3LocationBuilder;
 
+pub use crate::types::_sort::SortBuilder;
+
+pub use crate::types::_condition::ConditionBuilder;
+
+pub use crate::types::_field::FieldBuilder;
+
 pub use crate::types::_app_version_summary::AppVersionSummaryBuilder;
 
 pub use crate::types::_resource_mapping::ResourceMappingBuilder;

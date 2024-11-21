@@ -23,7 +23,7 @@ impl crate::operation::get_bucket_notification_configuration::builders::GetBucke
 /// Fluent builder constructing a request to `GetBucketNotificationConfiguration`.
 ///
 /// <note>
-/// <p>This operation is not supported by directory buckets.</p>
+/// <p>This operation is not supported for directory buckets.</p>
 /// </note>
 /// <p>Returns the notification configuration of a bucket.</p>
 /// <p>If notifications are not enabled on the bucket, the action returns an empty <code>NotificationConfiguration</code> element.</p>

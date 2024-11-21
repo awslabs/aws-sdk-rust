@@ -167,11 +167,15 @@ pub mod customize;
 
 mod delete_configuration_manager;
 
+mod get_configuration;
+
 mod get_configuration_manager;
 
 mod get_service_settings;
 
 mod list_configuration_managers;
+
+mod list_configurations;
 
 mod list_quick_setup_types;
 

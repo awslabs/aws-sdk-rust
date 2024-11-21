@@ -23,7 +23,7 @@ impl crate::operation::get_object_acl::builders::GetObjectAclInputBuilder {
 /// Fluent builder constructing a request to `GetObjectAcl`.
 ///
 /// <note>
-/// <p>This operation is not supported by directory buckets.</p>
+/// <p>This operation is not supported for directory buckets.</p>
 /// </note>
 /// <p>Returns the access control list (ACL) of an object. To use this operation, you must have <code>s3:GetObjectAcl</code> permissions or <code>READ_ACP</code> access to the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html#acl-access-policy-permission-mapping">Mapping of ACL permissions and access policy permissions</a> in the <i>Amazon S3 User Guide</i></p>
 /// <p>This functionality is not supported for Amazon S3 on Outposts.</p>

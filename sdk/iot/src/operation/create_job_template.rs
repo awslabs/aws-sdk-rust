@@ -250,7 +250,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateJobTemp
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateJobTemplateError {
-    /// <p>A resource with the same name already exists.</p>
+    /// <p>The request conflicts with the current state of the resource.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>An unexpected error has occurred.</p>
     InternalFailureException(crate::types::error::InternalFailureException),

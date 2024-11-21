@@ -83,6 +83,8 @@ pub use crate::types::error::_automation_execution_not_found_exception::Automati
 
 pub use crate::types::error::_target_not_connected::TargetNotConnected;
 
+pub use crate::types::error::_validation_exception::ValidationException;
+
 pub use crate::types::error::_invalid_automation_execution_parameters_exception::InvalidAutomationExecutionParametersException;
 
 pub use crate::types::error::_idempotent_parameter_mismatch::IdempotentParameterMismatch;
@@ -191,6 +193,10 @@ pub use crate::types::error::_invalid_next_token::InvalidNextToken;
 
 pub use crate::types::error::_invalid_filter::InvalidFilter;
 
+pub use crate::types::error::_unsupported_operation_exception::UnsupportedOperationException;
+
+pub use crate::types::error::_invalid_aggregator_exception::InvalidAggregatorException;
+
 pub use crate::types::error::_invalid_filter_key::InvalidFilterKey;
 
 pub use crate::types::error::_invalid_command_id::InvalidCommandId;
@@ -200,8 +206,6 @@ pub use crate::types::error::_parameter_version_label_limit_exceeded::ParameterV
 pub use crate::types::error::_invalid_filter_value::InvalidFilterValue;
 
 pub use crate::types::error::_invalid_filter_option::InvalidFilterOption;
-
-pub use crate::types::error::_invalid_aggregator_exception::InvalidAggregatorException;
 
 pub use crate::types::error::_invalid_result_attribute_exception::InvalidResultAttributeException;
 
@@ -527,9 +531,13 @@ mod _unsupported_inventory_schema_version_exception;
 
 mod _unsupported_operating_system;
 
+mod _unsupported_operation_exception;
+
 mod _unsupported_parameter_type;
 
 mod _unsupported_platform_type;
+
+mod _validation_exception;
 
 /// Builders
 pub mod builders;

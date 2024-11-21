@@ -188,4 +188,52 @@ impl ModifyIpamResourceDiscoveryFluentBuilder {
     pub fn get_remove_operating_regions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RemoveIpamOperatingRegion>> {
         self.inner.get_remove_operating_regions()
     }
+    ///
+    /// Appends an item to `AddOrganizationalUnitExclusions`.
+    ///
+    /// To override the contents of this collection use [`set_add_organizational_unit_exclusions`](Self::set_add_organizational_unit_exclusions).
+    ///
+    /// <p>Add an Organizational Unit (OU) exclusion to your IPAM. If your IPAM is integrated with Amazon Web Services Organizations and you add an organizational unit (OU) exclusion, IPAM will not manage the IP addresses in accounts in that OU exclusion. There is a limit on the number of exclusions you can create. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas for your IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    pub fn add_organizational_unit_exclusions(mut self, input: crate::types::AddIpamOrganizationalUnitExclusion) -> Self {
+        self.inner = self.inner.add_organizational_unit_exclusions(input);
+        self
+    }
+    /// <p>Add an Organizational Unit (OU) exclusion to your IPAM. If your IPAM is integrated with Amazon Web Services Organizations and you add an organizational unit (OU) exclusion, IPAM will not manage the IP addresses in accounts in that OU exclusion. There is a limit on the number of exclusions you can create. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas for your IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    pub fn set_add_organizational_unit_exclusions(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AddIpamOrganizationalUnitExclusion>>,
+    ) -> Self {
+        self.inner = self.inner.set_add_organizational_unit_exclusions(input);
+        self
+    }
+    /// <p>Add an Organizational Unit (OU) exclusion to your IPAM. If your IPAM is integrated with Amazon Web Services Organizations and you add an organizational unit (OU) exclusion, IPAM will not manage the IP addresses in accounts in that OU exclusion. There is a limit on the number of exclusions you can create. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas for your IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    pub fn get_add_organizational_unit_exclusions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AddIpamOrganizationalUnitExclusion>> {
+        self.inner.get_add_organizational_unit_exclusions()
+    }
+    ///
+    /// Appends an item to `RemoveOrganizationalUnitExclusions`.
+    ///
+    /// To override the contents of this collection use [`set_remove_organizational_unit_exclusions`](Self::set_remove_organizational_unit_exclusions).
+    ///
+    /// <p>Remove an Organizational Unit (OU) exclusion to your IPAM. If your IPAM is integrated with Amazon Web Services Organizations and you add an organizational unit (OU) exclusion, IPAM will not manage the IP addresses in accounts in that OU exclusion. There is a limit on the number of exclusions you can create. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas for your IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    pub fn remove_organizational_unit_exclusions(mut self, input: crate::types::RemoveIpamOrganizationalUnitExclusion) -> Self {
+        self.inner = self.inner.remove_organizational_unit_exclusions(input);
+        self
+    }
+    /// <p>Remove an Organizational Unit (OU) exclusion to your IPAM. If your IPAM is integrated with Amazon Web Services Organizations and you add an organizational unit (OU) exclusion, IPAM will not manage the IP addresses in accounts in that OU exclusion. There is a limit on the number of exclusions you can create. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas for your IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    pub fn set_remove_organizational_unit_exclusions(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RemoveIpamOrganizationalUnitExclusion>>,
+    ) -> Self {
+        self.inner = self.inner.set_remove_organizational_unit_exclusions(input);
+        self
+    }
+    /// <p>Remove an Organizational Unit (OU) exclusion to your IPAM. If your IPAM is integrated with Amazon Web Services Organizations and you add an organizational unit (OU) exclusion, IPAM will not manage the IP addresses in accounts in that OU exclusion. There is a limit on the number of exclusions you can create. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas for your IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    pub fn get_remove_organizational_unit_exclusions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RemoveIpamOrganizationalUnitExclusion>> {
+        self.inner.get_remove_organizational_unit_exclusions()
+    }
 }

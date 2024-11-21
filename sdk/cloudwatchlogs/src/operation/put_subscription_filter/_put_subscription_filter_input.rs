@@ -26,6 +26,9 @@ pub struct PutSubscriptionFilterInput {
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The method used to distribute log data to the destination. By default, log data is grouped by log stream, but the grouping can be set to random for a more even distribution. This property is only applicable when the destination is an Amazon Kinesis data stream.</p>
     pub distribution: ::std::option::Option<crate::types::Distribution>,
+    /// <p>This parameter is valid only for log groups that have an active log transformer. For more information about log transformers, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutTransformer.html">PutTransformer</a>.</p>
+    /// <p>If the log group uses either a log-group level or account-level transformer, and you specify <code>true</code>, the subscription filter will be applied on the transformed version of the log events instead of the original ingested log events.</p>
+    pub apply_on_transformed_logs: ::std::option::Option<bool>,
 }
 impl PutSubscriptionFilterInput {
     /// <p>The name of the log group.</p>
@@ -63,6 +66,11 @@ impl PutSubscriptionFilterInput {
     pub fn distribution(&self) -> ::std::option::Option<&crate::types::Distribution> {
         self.distribution.as_ref()
     }
+    /// <p>This parameter is valid only for log groups that have an active log transformer. For more information about log transformers, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutTransformer.html">PutTransformer</a>.</p>
+    /// <p>If the log group uses either a log-group level or account-level transformer, and you specify <code>true</code>, the subscription filter will be applied on the transformed version of the log events instead of the original ingested log events.</p>
+    pub fn apply_on_transformed_logs(&self) -> ::std::option::Option<bool> {
+        self.apply_on_transformed_logs
+    }
 }
 impl PutSubscriptionFilterInput {
     /// Creates a new builder-style object to manufacture [`PutSubscriptionFilterInput`](crate::operation::put_subscription_filter::PutSubscriptionFilterInput).
@@ -81,6 +89,7 @@ pub struct PutSubscriptionFilterInputBuilder {
     pub(crate) destination_arn: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) distribution: ::std::option::Option<crate::types::Distribution>,
+    pub(crate) apply_on_transformed_logs: ::std::option::Option<bool>,
 }
 impl PutSubscriptionFilterInputBuilder {
     /// <p>The name of the log group.</p>
@@ -204,6 +213,23 @@ impl PutSubscriptionFilterInputBuilder {
     pub fn get_distribution(&self) -> &::std::option::Option<crate::types::Distribution> {
         &self.distribution
     }
+    /// <p>This parameter is valid only for log groups that have an active log transformer. For more information about log transformers, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutTransformer.html">PutTransformer</a>.</p>
+    /// <p>If the log group uses either a log-group level or account-level transformer, and you specify <code>true</code>, the subscription filter will be applied on the transformed version of the log events instead of the original ingested log events.</p>
+    pub fn apply_on_transformed_logs(mut self, input: bool) -> Self {
+        self.apply_on_transformed_logs = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>This parameter is valid only for log groups that have an active log transformer. For more information about log transformers, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutTransformer.html">PutTransformer</a>.</p>
+    /// <p>If the log group uses either a log-group level or account-level transformer, and you specify <code>true</code>, the subscription filter will be applied on the transformed version of the log events instead of the original ingested log events.</p>
+    pub fn set_apply_on_transformed_logs(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.apply_on_transformed_logs = input;
+        self
+    }
+    /// <p>This parameter is valid only for log groups that have an active log transformer. For more information about log transformers, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutTransformer.html">PutTransformer</a>.</p>
+    /// <p>If the log group uses either a log-group level or account-level transformer, and you specify <code>true</code>, the subscription filter will be applied on the transformed version of the log events instead of the original ingested log events.</p>
+    pub fn get_apply_on_transformed_logs(&self) -> &::std::option::Option<bool> {
+        &self.apply_on_transformed_logs
+    }
     /// Consumes the builder and constructs a [`PutSubscriptionFilterInput`](crate::operation::put_subscription_filter::PutSubscriptionFilterInput).
     pub fn build(
         self,
@@ -216,6 +242,7 @@ impl PutSubscriptionFilterInputBuilder {
             destination_arn: self.destination_arn,
             role_arn: self.role_arn,
             distribution: self.distribution,
+            apply_on_transformed_logs: self.apply_on_transformed_logs,
         })
     }
 }

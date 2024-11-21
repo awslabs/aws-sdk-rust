@@ -25,6 +25,9 @@ pub mod create_model_manifest;
 /// Types for the `CreateSignalCatalog` operation.
 pub mod create_signal_catalog;
 
+/// Types for the `CreateStateTemplate` operation.
+pub mod create_state_template;
+
 /// Types for the `CreateVehicle` operation.
 pub mod create_vehicle;
 
@@ -42,6 +45,9 @@ pub mod delete_model_manifest;
 
 /// Types for the `DeleteSignalCatalog` operation.
 pub mod delete_signal_catalog;
+
+/// Types for the `DeleteStateTemplate` operation.
+pub mod delete_state_template;
 
 /// Types for the `DeleteVehicle` operation.
 pub mod delete_vehicle;
@@ -72,6 +78,9 @@ pub mod get_register_account_status;
 
 /// Types for the `GetSignalCatalog` operation.
 pub mod get_signal_catalog;
+
+/// Types for the `GetStateTemplate` operation.
+pub mod get_state_template;
 
 /// Types for the `GetVehicle` operation.
 pub mod get_vehicle;
@@ -115,6 +124,9 @@ pub mod list_signal_catalog_nodes;
 /// Types for the `ListSignalCatalogs` operation.
 pub mod list_signal_catalogs;
 
+/// Types for the `ListStateTemplates` operation.
+pub mod list_state_templates;
+
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 
@@ -153,6 +165,9 @@ pub mod update_model_manifest;
 
 /// Types for the `UpdateSignalCatalog` operation.
 pub mod update_signal_catalog;
+
+/// Types for the `UpdateStateTemplate` operation.
+pub mod update_state_template;
 
 /// Types for the `UpdateVehicle` operation.
 pub mod update_vehicle;

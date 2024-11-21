@@ -135,6 +135,13 @@ pub(crate) fn de_describe_account_policies(
                 "accountPolicies" => {
                     builder = builder.set_account_policies(crate::protocol_serde::shape_account_policies::de_account_policies(tokens)?);
                 }
+                "nextToken" => {
+                    builder = builder.set_next_token(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

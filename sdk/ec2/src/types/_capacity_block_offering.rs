@@ -16,7 +16,7 @@ pub struct CapacityBlockOffering {
     pub start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end date of the Capacity Block offering.</p>
     pub end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The amount of time of the Capacity Block reservation in hours.</p>
+    /// <p>The number of hours (in addition to <code>capacityBlockDurationMinutes</code>) for the duration of the Capacity Block reservation. For example, if a Capacity Block starts at <b>04:55</b> and ends at <b>11:30</b>, the hours field would be <b>6</b>.</p>
     pub capacity_block_duration_hours: ::std::option::Option<i32>,
     /// <p>The total price to be paid up front.</p>
     pub upfront_fee: ::std::option::Option<::std::string::String>,
@@ -24,6 +24,8 @@ pub struct CapacityBlockOffering {
     pub currency_code: ::std::option::Option<::std::string::String>,
     /// <p>The tenancy of the Capacity Block.</p>
     pub tenancy: ::std::option::Option<crate::types::CapacityReservationTenancy>,
+    /// <p>The number of minutes (in addition to <code>capacityBlockDurationHours</code>) for the duration of the Capacity Block reservation. For example, if a Capacity Block starts at <b>08:55</b> and ends at <b>11:30</b>, the minutes field would be <b>35</b>.</p>
+    pub capacity_block_duration_minutes: ::std::option::Option<i32>,
 }
 impl CapacityBlockOffering {
     /// <p>The ID of the Capacity Block offering.</p>
@@ -50,7 +52,7 @@ impl CapacityBlockOffering {
     pub fn end_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_date.as_ref()
     }
-    /// <p>The amount of time of the Capacity Block reservation in hours.</p>
+    /// <p>The number of hours (in addition to <code>capacityBlockDurationMinutes</code>) for the duration of the Capacity Block reservation. For example, if a Capacity Block starts at <b>04:55</b> and ends at <b>11:30</b>, the hours field would be <b>6</b>.</p>
     pub fn capacity_block_duration_hours(&self) -> ::std::option::Option<i32> {
         self.capacity_block_duration_hours
     }
@@ -65,6 +67,10 @@ impl CapacityBlockOffering {
     /// <p>The tenancy of the Capacity Block.</p>
     pub fn tenancy(&self) -> ::std::option::Option<&crate::types::CapacityReservationTenancy> {
         self.tenancy.as_ref()
+    }
+    /// <p>The number of minutes (in addition to <code>capacityBlockDurationHours</code>) for the duration of the Capacity Block reservation. For example, if a Capacity Block starts at <b>08:55</b> and ends at <b>11:30</b>, the minutes field would be <b>35</b>.</p>
+    pub fn capacity_block_duration_minutes(&self) -> ::std::option::Option<i32> {
+        self.capacity_block_duration_minutes
     }
 }
 impl CapacityBlockOffering {
@@ -88,6 +94,7 @@ pub struct CapacityBlockOfferingBuilder {
     pub(crate) upfront_fee: ::std::option::Option<::std::string::String>,
     pub(crate) currency_code: ::std::option::Option<::std::string::String>,
     pub(crate) tenancy: ::std::option::Option<crate::types::CapacityReservationTenancy>,
+    pub(crate) capacity_block_duration_minutes: ::std::option::Option<i32>,
 }
 impl CapacityBlockOfferingBuilder {
     /// <p>The ID of the Capacity Block offering.</p>
@@ -174,17 +181,17 @@ impl CapacityBlockOfferingBuilder {
     pub fn get_end_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_date
     }
-    /// <p>The amount of time of the Capacity Block reservation in hours.</p>
+    /// <p>The number of hours (in addition to <code>capacityBlockDurationMinutes</code>) for the duration of the Capacity Block reservation. For example, if a Capacity Block starts at <b>04:55</b> and ends at <b>11:30</b>, the hours field would be <b>6</b>.</p>
     pub fn capacity_block_duration_hours(mut self, input: i32) -> Self {
         self.capacity_block_duration_hours = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The amount of time of the Capacity Block reservation in hours.</p>
+    /// <p>The number of hours (in addition to <code>capacityBlockDurationMinutes</code>) for the duration of the Capacity Block reservation. For example, if a Capacity Block starts at <b>04:55</b> and ends at <b>11:30</b>, the hours field would be <b>6</b>.</p>
     pub fn set_capacity_block_duration_hours(mut self, input: ::std::option::Option<i32>) -> Self {
         self.capacity_block_duration_hours = input;
         self
     }
-    /// <p>The amount of time of the Capacity Block reservation in hours.</p>
+    /// <p>The number of hours (in addition to <code>capacityBlockDurationMinutes</code>) for the duration of the Capacity Block reservation. For example, if a Capacity Block starts at <b>04:55</b> and ends at <b>11:30</b>, the hours field would be <b>6</b>.</p>
     pub fn get_capacity_block_duration_hours(&self) -> &::std::option::Option<i32> {
         &self.capacity_block_duration_hours
     }
@@ -230,6 +237,20 @@ impl CapacityBlockOfferingBuilder {
     pub fn get_tenancy(&self) -> &::std::option::Option<crate::types::CapacityReservationTenancy> {
         &self.tenancy
     }
+    /// <p>The number of minutes (in addition to <code>capacityBlockDurationHours</code>) for the duration of the Capacity Block reservation. For example, if a Capacity Block starts at <b>08:55</b> and ends at <b>11:30</b>, the minutes field would be <b>35</b>.</p>
+    pub fn capacity_block_duration_minutes(mut self, input: i32) -> Self {
+        self.capacity_block_duration_minutes = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of minutes (in addition to <code>capacityBlockDurationHours</code>) for the duration of the Capacity Block reservation. For example, if a Capacity Block starts at <b>08:55</b> and ends at <b>11:30</b>, the minutes field would be <b>35</b>.</p>
+    pub fn set_capacity_block_duration_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.capacity_block_duration_minutes = input;
+        self
+    }
+    /// <p>The number of minutes (in addition to <code>capacityBlockDurationHours</code>) for the duration of the Capacity Block reservation. For example, if a Capacity Block starts at <b>08:55</b> and ends at <b>11:30</b>, the minutes field would be <b>35</b>.</p>
+    pub fn get_capacity_block_duration_minutes(&self) -> &::std::option::Option<i32> {
+        &self.capacity_block_duration_minutes
+    }
     /// Consumes the builder and constructs a [`CapacityBlockOffering`](crate::types::CapacityBlockOffering).
     pub fn build(self) -> crate::types::CapacityBlockOffering {
         crate::types::CapacityBlockOffering {
@@ -243,6 +264,7 @@ impl CapacityBlockOfferingBuilder {
             upfront_fee: self.upfront_fee,
             currency_code: self.currency_code,
             tenancy: self.tenancy,
+            capacity_block_duration_minutes: self.capacity_block_duration_minutes,
         }
     }
 }

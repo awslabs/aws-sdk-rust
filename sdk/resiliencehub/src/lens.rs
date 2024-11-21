@@ -119,6 +119,16 @@ pub(crate) fn reflens_list_apps_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_metrics_output_output_next_token(
+    input: &crate::operation::list_metrics::ListMetricsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_recommendation_templates_output_output_next_token(
     input: &crate::operation::list_recommendation_templates::ListRecommendationTemplatesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -193,6 +203,13 @@ pub(crate) fn lens_list_app_assessment_resource_drifts_output_output_resource_dr
     input: crate::operation::list_app_assessment_resource_drifts::ListAppAssessmentResourceDriftsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ResourceDrift>> {
     let input = input.resource_drifts;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_metrics_output_output_rows(
+    input: crate::operation::list_metrics::ListMetricsOutput,
+) -> ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>> {
+    let input = input.rows;
     ::std::option::Option::Some(input)
 }
 

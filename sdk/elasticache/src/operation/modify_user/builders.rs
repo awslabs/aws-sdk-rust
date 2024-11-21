@@ -197,4 +197,18 @@ impl ModifyUserFluentBuilder {
     pub fn get_authentication_mode(&self) -> &::std::option::Option<crate::types::AuthenticationMode> {
         self.inner.get_authentication_mode()
     }
+    /// <p>The engine for a specific user.</p>
+    pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.engine(input.into());
+        self
+    }
+    /// <p>The engine for a specific user.</p>
+    pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_engine(input);
+        self
+    }
+    /// <p>The engine for a specific user.</p>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_engine()
+    }
 }

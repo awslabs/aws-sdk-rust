@@ -49,6 +49,24 @@ pub use crate::types::_cost_allocation_tag_backfill_request::CostAllocationTagBa
 
 pub use crate::types::_cost_allocation_tag_backfill_status::CostAllocationTagBackfillStatus;
 
+pub use crate::types::_commitment_purchase_analysis_configuration::CommitmentPurchaseAnalysisConfiguration;
+
+pub use crate::types::_savings_plans_purchase_analysis_configuration::SavingsPlansPurchaseAnalysisConfiguration;
+
+pub use crate::types::_date_interval::DateInterval;
+
+pub use crate::types::_savings_plans::SavingsPlans;
+
+pub use crate::types::_term_in_years::TermInYears;
+
+pub use crate::types::_supported_savings_plans_type::SupportedSavingsPlansType;
+
+pub use crate::types::_payment_option::PaymentOption;
+
+pub use crate::types::_analysis_type::AnalysisType;
+
+pub use crate::types::_account_scope::AccountScope;
+
 pub use crate::types::_anomaly_feedback_type::AnomalyFeedbackType;
 
 pub use crate::types::_generation_summary::GenerationSummary;
@@ -67,9 +85,13 @@ pub use crate::types::_cost_allocation_tag::CostAllocationTag;
 
 pub use crate::types::_cost_allocation_tag_type::CostAllocationTagType;
 
-pub use crate::types::_forecast_result::ForecastResult;
+pub use crate::types::_analysis_summary::AnalysisSummary;
 
-pub use crate::types::_date_interval::DateInterval;
+pub use crate::types::_error_code::ErrorCode;
+
+pub use crate::types::_analysis_status::AnalysisStatus;
+
+pub use crate::types::_forecast_result::ForecastResult;
 
 pub use crate::types::_metric_value::MetricValue;
 
@@ -104,14 +126,6 @@ pub use crate::types::_savings_plans_purchase_recommendation_detail::SavingsPlan
 pub use crate::types::_savings_plans_details::SavingsPlansDetails;
 
 pub use crate::types::_lookback_period_in_days::LookbackPeriodInDays;
-
-pub use crate::types::_payment_option::PaymentOption;
-
-pub use crate::types::_term_in_years::TermInYears;
-
-pub use crate::types::_supported_savings_plans_type::SupportedSavingsPlansType;
-
-pub use crate::types::_account_scope::AccountScope;
 
 pub use crate::types::_savings_plans_purchase_recommendation_metadata::SavingsPlansPurchaseRecommendationMetadata;
 
@@ -223,6 +237,10 @@ pub use crate::types::_result_by_time::ResultByTime;
 
 pub use crate::types::_group::Group;
 
+pub use crate::types::_analysis_details::AnalysisDetails;
+
+pub use crate::types::_savings_plans_purchase_analysis_details::SavingsPlansPurchaseAnalysisDetails;
+
 pub use crate::types::_approximation_dimension::ApproximationDimension;
 
 pub use crate::types::_anomaly_subscription::AnomalySubscription;
@@ -251,6 +269,14 @@ pub use crate::types::_cost_category::CostCategory;
 
 mod _account_scope;
 
+mod _analysis_details;
+
+mod _analysis_status;
+
+mod _analysis_summary;
+
+mod _analysis_type;
+
 mod _anomaly;
 
 mod _anomaly_date_interval;
@@ -266,6 +292,8 @@ mod _anomaly_subscription;
 mod _anomaly_subscription_frequency;
 
 mod _approximation_dimension;
+
+mod _commitment_purchase_analysis_configuration;
 
 mod _context;
 
@@ -346,6 +374,8 @@ mod _ec2_resource_utilization;
 mod _ec2_specification;
 
 mod _elasti_cache_instance_details;
+
+mod _error_code;
 
 mod _es_instance_details;
 
@@ -443,6 +473,8 @@ mod _rightsizing_type;
 
 mod _root_cause;
 
+mod _savings_plans;
+
 mod _savings_plans_amortized_commitment;
 
 mod _savings_plans_coverage;
@@ -452,6 +484,10 @@ mod _savings_plans_coverage_data;
 mod _savings_plans_data_type;
 
 mod _savings_plans_details;
+
+mod _savings_plans_purchase_analysis_configuration;
+
+mod _savings_plans_purchase_analysis_details;
 
 mod _savings_plans_purchase_recommendation;
 

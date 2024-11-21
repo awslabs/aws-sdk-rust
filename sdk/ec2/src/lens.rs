@@ -39,6 +39,26 @@ pub(crate) fn reflens_describe_byoip_cidrs_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_capacity_block_extension_history_output_output_next_token(
+    input: &crate::operation::describe_capacity_block_extension_history::DescribeCapacityBlockExtensionHistoryOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_describe_capacity_block_extension_offerings_output_output_next_token(
+    input: &crate::operation::describe_capacity_block_extension_offerings::DescribeCapacityBlockExtensionOfferingsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_describe_capacity_block_offerings_output_output_next_token(
     input: &crate::operation::describe_capacity_block_offerings::DescribeCapacityBlockOfferingsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -1463,6 +1483,26 @@ pub(crate) fn lens_describe_byoip_cidrs_output_output_byoip_cidrs(
     input: crate::operation::describe_byoip_cidrs::DescribeByoipCidrsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ByoipCidr>> {
     let input = match input.byoip_cidrs {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_capacity_block_extension_history_output_output_capacity_block_extensions(
+    input: crate::operation::describe_capacity_block_extension_history::DescribeCapacityBlockExtensionHistoryOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::CapacityBlockExtension>> {
+    let input = match input.capacity_block_extensions {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_capacity_block_extension_offerings_output_output_capacity_block_extension_offerings(
+    input: crate::operation::describe_capacity_block_extension_offerings::DescribeCapacityBlockExtensionOfferingsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::CapacityBlockExtensionOffering>> {
+    let input = match input.capacity_block_extension_offerings {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

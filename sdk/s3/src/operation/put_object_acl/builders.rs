@@ -23,7 +23,7 @@ impl crate::operation::put_object_acl::builders::PutObjectAclInputBuilder {
 /// Fluent builder constructing a request to `PutObjectAcl`.
 ///
 /// <note>
-/// <p>This operation is not supported by directory buckets.</p>
+/// <p>This operation is not supported for directory buckets.</p>
 /// </note>
 /// <p>Uses the <code>acl</code> subresource to set the access control list (ACL) permissions for a new or existing object in an S3 bucket. You must have the <code>WRITE_ACP</code> permission to set the ACL of an object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#permissions">What permissions can I grant?</a> in the <i>Amazon S3 User Guide</i>.</p>
 /// <p>This functionality is not supported for Amazon S3 on Outposts.</p>

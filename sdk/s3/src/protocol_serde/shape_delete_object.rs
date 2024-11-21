@@ -93,5 +93,39 @@ pub fn ser_delete_object_headers(
         })?;
         builder = builder.header("x-amz-expected-bucket-owner", header_value);
     }
+    if let ::std::option::Option::Some(inner_9) = &input.if_match {
+        let formatted_10 = inner_9.as_str();
+        let header_value = formatted_10;
+        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+            ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                "if_match",
+                format!("`{}` cannot be used as a header value: {}", &header_value, err),
+            )
+        })?;
+        builder = builder.header("If-Match", header_value);
+    }
+    if let ::std::option::Option::Some(inner_11) = &input.if_match_last_modified_time {
+        let formatted_12 = inner_11.fmt(::aws_smithy_types::date_time::Format::HttpDate)?;
+        let header_value = formatted_12;
+        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+            ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                "if_match_last_modified_time",
+                format!("`{}` cannot be used as a header value: {}", &header_value, err),
+            )
+        })?;
+        builder = builder.header("x-amz-if-match-last-modified-time", header_value);
+    }
+    if let ::std::option::Option::Some(inner_13) = &input.if_match_size {
+        let mut encoder = ::aws_smithy_types::primitive::Encoder::from(*inner_13);
+        let formatted_14 = encoder.encode();
+        let header_value = formatted_14;
+        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+            ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                "if_match_size",
+                format!("`{}` cannot be used as a header value: {}", &header_value, err),
+            )
+        })?;
+        builder = builder.header("x-amz-if-match-size", header_value);
+    }
     Ok(builder)
 }

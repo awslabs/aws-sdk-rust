@@ -22,7 +22,7 @@ impl crate::operation::remove_tags::builders::RemoveTagsInputBuilder {
 }
 /// Fluent builder constructing a request to `RemoveTags`.
 ///
-/// <p>Removes the specified tags from a trail, event data store, or channel.</p>
+/// <p>Removes the specified tags from a trail, event data store, dashboard, or channel.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemoveTagsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,25 +108,28 @@ impl RemoveTagsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Specifies the ARN of the trail, event data store, or channel from which tags should be removed.</p>
+    /// <p>Specifies the ARN of the trail, event data store, dashboard, or channel from which tags should be removed.</p>
     /// <p>Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code></p>
     /// <p>Example event data store ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code></p>
+    /// <p>Example dashboard ARN format: <code>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</code></p>
     /// <p>Example channel ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code></p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_id(input.into());
         self
     }
-    /// <p>Specifies the ARN of the trail, event data store, or channel from which tags should be removed.</p>
+    /// <p>Specifies the ARN of the trail, event data store, dashboard, or channel from which tags should be removed.</p>
     /// <p>Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code></p>
     /// <p>Example event data store ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code></p>
+    /// <p>Example dashboard ARN format: <code>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</code></p>
     /// <p>Example channel ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code></p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_id(input);
         self
     }
-    /// <p>Specifies the ARN of the trail, event data store, or channel from which tags should be removed.</p>
+    /// <p>Specifies the ARN of the trail, event data store, dashboard, or channel from which tags should be removed.</p>
     /// <p>Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code></p>
     /// <p>Example event data store ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code></p>
+    /// <p>Example dashboard ARN format: <code>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</code></p>
     /// <p>Example channel ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code></p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_id()

@@ -27,6 +27,12 @@ pub fn ser_network_interface(
         crate::protocol_serde::shape_vehicle_middleware::ser_vehicle_middleware(&mut object_6, var_5)?;
         object_6.finish();
     }
+    if let Some(var_7) = &input.custom_decoding_interface {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("customDecodingInterface").start_object();
+        crate::protocol_serde::shape_custom_decoding_interface::ser_custom_decoding_interface(&mut object_8, var_7)?;
+        object_8.finish();
+    }
     Ok(())
 }
 
@@ -67,6 +73,11 @@ where
                         }
                         "vehicleMiddleware" => {
                             builder = builder.set_vehicle_middleware(crate::protocol_serde::shape_vehicle_middleware::de_vehicle_middleware(tokens)?);
+                        }
+                        "customDecodingInterface" => {
+                            builder = builder.set_custom_decoding_interface(
+                                crate::protocol_serde::shape_custom_decoding_interface::de_custom_decoding_interface(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

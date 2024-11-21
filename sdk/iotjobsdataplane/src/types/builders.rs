@@ -3,4 +3,6 @@ pub use crate::types::_job_execution_state::JobExecutionStateBuilder;
 
 pub use crate::types::_job_execution::JobExecutionBuilder;
 
+pub use crate::types::_command_parameter_value::CommandParameterValueBuilder;
+
 pub use crate::types::_job_execution_summary::JobExecutionSummaryBuilder;

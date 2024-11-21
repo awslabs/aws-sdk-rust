@@ -11,10 +11,12 @@ pub struct NetworkInterface {
     pub r#type: crate::types::NetworkInterfaceType,
     /// <p>Information about a network interface specified by the Controller Area Network (CAN) protocol.</p>
     pub can_interface: ::std::option::Option<crate::types::CanInterface>,
-    /// <p>Information about a network interface specified by the On-board diagnostic (OBD) II protocol.</p>
+    /// <p>Information about a network interface specified by the on-board diagnostic (OBD) II protocol.</p>
     pub obd_interface: ::std::option::Option<crate::types::ObdInterface>,
     /// <p>The vehicle middleware defined as a type of network interface. Examples of vehicle middleware include <code>ROS2</code> and <code>SOME/IP</code>.</p>
     pub vehicle_middleware: ::std::option::Option<crate::types::VehicleMiddleware>,
+    /// <p>Information about a <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_CustomDecodingInterface.html">custom network interface</a>.</p>
+    pub custom_decoding_interface: ::std::option::Option<crate::types::CustomDecodingInterface>,
 }
 impl NetworkInterface {
     /// <p>The ID of the network interface.</p>
@@ -30,13 +32,17 @@ impl NetworkInterface {
     pub fn can_interface(&self) -> ::std::option::Option<&crate::types::CanInterface> {
         self.can_interface.as_ref()
     }
-    /// <p>Information about a network interface specified by the On-board diagnostic (OBD) II protocol.</p>
+    /// <p>Information about a network interface specified by the on-board diagnostic (OBD) II protocol.</p>
     pub fn obd_interface(&self) -> ::std::option::Option<&crate::types::ObdInterface> {
         self.obd_interface.as_ref()
     }
     /// <p>The vehicle middleware defined as a type of network interface. Examples of vehicle middleware include <code>ROS2</code> and <code>SOME/IP</code>.</p>
     pub fn vehicle_middleware(&self) -> ::std::option::Option<&crate::types::VehicleMiddleware> {
         self.vehicle_middleware.as_ref()
+    }
+    /// <p>Information about a <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_CustomDecodingInterface.html">custom network interface</a>.</p>
+    pub fn custom_decoding_interface(&self) -> ::std::option::Option<&crate::types::CustomDecodingInterface> {
+        self.custom_decoding_interface.as_ref()
     }
 }
 impl NetworkInterface {
@@ -55,6 +61,7 @@ pub struct NetworkInterfaceBuilder {
     pub(crate) can_interface: ::std::option::Option<crate::types::CanInterface>,
     pub(crate) obd_interface: ::std::option::Option<crate::types::ObdInterface>,
     pub(crate) vehicle_middleware: ::std::option::Option<crate::types::VehicleMiddleware>,
+    pub(crate) custom_decoding_interface: ::std::option::Option<crate::types::CustomDecodingInterface>,
 }
 impl NetworkInterfaceBuilder {
     /// <p>The ID of the network interface.</p>
@@ -101,17 +108,17 @@ impl NetworkInterfaceBuilder {
     pub fn get_can_interface(&self) -> &::std::option::Option<crate::types::CanInterface> {
         &self.can_interface
     }
-    /// <p>Information about a network interface specified by the On-board diagnostic (OBD) II protocol.</p>
+    /// <p>Information about a network interface specified by the on-board diagnostic (OBD) II protocol.</p>
     pub fn obd_interface(mut self, input: crate::types::ObdInterface) -> Self {
         self.obd_interface = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about a network interface specified by the On-board diagnostic (OBD) II protocol.</p>
+    /// <p>Information about a network interface specified by the on-board diagnostic (OBD) II protocol.</p>
     pub fn set_obd_interface(mut self, input: ::std::option::Option<crate::types::ObdInterface>) -> Self {
         self.obd_interface = input;
         self
     }
-    /// <p>Information about a network interface specified by the On-board diagnostic (OBD) II protocol.</p>
+    /// <p>Information about a network interface specified by the on-board diagnostic (OBD) II protocol.</p>
     pub fn get_obd_interface(&self) -> &::std::option::Option<crate::types::ObdInterface> {
         &self.obd_interface
     }
@@ -128,6 +135,20 @@ impl NetworkInterfaceBuilder {
     /// <p>The vehicle middleware defined as a type of network interface. Examples of vehicle middleware include <code>ROS2</code> and <code>SOME/IP</code>.</p>
     pub fn get_vehicle_middleware(&self) -> &::std::option::Option<crate::types::VehicleMiddleware> {
         &self.vehicle_middleware
+    }
+    /// <p>Information about a <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_CustomDecodingInterface.html">custom network interface</a>.</p>
+    pub fn custom_decoding_interface(mut self, input: crate::types::CustomDecodingInterface) -> Self {
+        self.custom_decoding_interface = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about a <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_CustomDecodingInterface.html">custom network interface</a>.</p>
+    pub fn set_custom_decoding_interface(mut self, input: ::std::option::Option<crate::types::CustomDecodingInterface>) -> Self {
+        self.custom_decoding_interface = input;
+        self
+    }
+    /// <p>Information about a <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_CustomDecodingInterface.html">custom network interface</a>.</p>
+    pub fn get_custom_decoding_interface(&self) -> &::std::option::Option<crate::types::CustomDecodingInterface> {
+        &self.custom_decoding_interface
     }
     /// Consumes the builder and constructs a [`NetworkInterface`](crate::types::NetworkInterface).
     /// This method will fail if any of the following fields are not set:
@@ -150,6 +171,7 @@ impl NetworkInterfaceBuilder {
             can_interface: self.can_interface,
             obd_interface: self.obd_interface,
             vehicle_middleware: self.vehicle_middleware,
+            custom_decoding_interface: self.custom_decoding_interface,
         })
     }
 }

@@ -11,7 +11,75 @@ pub fn de_put_object_http_error(
     generic_builder = crate::s3_request_id::apply_extended_request_id(generic_builder, _response_headers);
     generic_builder = ::aws_types::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
-    Err(crate::operation::put_object::PutObjectError::generic(generic))
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::operation::put_object::PutObjectError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "EncryptionTypeMismatch" => crate::operation::put_object::PutObjectError::EncryptionTypeMismatch({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::EncryptionTypeMismatchBuilder::default();
+                output = crate::protocol_serde::shape_encryption_type_mismatch::de_encryption_type_mismatch_xml_err(_response_body, output)
+                    .map_err(crate::operation::put_object::PutObjectError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidRequest" => crate::operation::put_object::PutObjectError::InvalidRequest({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidRequestBuilder::default();
+                output = crate::protocol_serde::shape_invalid_request::de_invalid_request_xml_err(_response_body, output)
+                    .map_err(crate::operation::put_object::PutObjectError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidWriteOffset" => crate::operation::put_object::PutObjectError::InvalidWriteOffset({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidWriteOffsetBuilder::default();
+                output = crate::protocol_serde::shape_invalid_write_offset::de_invalid_write_offset_xml_err(_response_body, output)
+                    .map_err(crate::operation::put_object::PutObjectError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyParts" => crate::operation::put_object::PutObjectError::TooManyParts({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TooManyPartsBuilder::default();
+                output = crate::protocol_serde::shape_too_many_parts::de_too_many_parts_xml_err(_response_body, output)
+                    .map_err(crate::operation::put_object::PutObjectError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        _ => crate::operation::put_object::PutObjectError::generic(generic),
+    })
 }
 
 #[allow(clippy::unnecessary_wraps)]
@@ -97,6 +165,10 @@ pub fn de_put_object_http_response(
                     "Failed to parse ServerSideEncryption from header `x-amz-server-side-encryption",
                 )
             })?,
+        );
+        output = output.set_size(
+            crate::protocol_serde::shape_put_object_output::de_size_header(_response_headers)
+                .map_err(|_| crate::operation::put_object::PutObjectError::unhandled("Failed to parse Size from header `x-amz-object-size"))?,
         );
         output = output.set_version_id(
             crate::protocol_serde::shape_put_object_output::de_version_id_header(_response_headers)
@@ -322,9 +394,21 @@ pub fn ser_put_object_headers(
         })?;
         builder = builder.header("x-amz-grant-write-acp", header_value);
     }
-    if let ::std::option::Option::Some(inner_39) = &input.server_side_encryption {
-        let formatted_40 = inner_39.as_str();
+    if let ::std::option::Option::Some(inner_39) = &input.write_offset_bytes {
+        let mut encoder = ::aws_smithy_types::primitive::Encoder::from(*inner_39);
+        let formatted_40 = encoder.encode();
         let header_value = formatted_40;
+        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+            ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                "write_offset_bytes",
+                format!("`{}` cannot be used as a header value: {}", &header_value, err),
+            )
+        })?;
+        builder = builder.header("x-amz-write-offset-bytes", header_value);
+    }
+    if let ::std::option::Option::Some(inner_41) = &input.server_side_encryption {
+        let formatted_42 = inner_41.as_str();
+        let header_value = formatted_42;
         let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "server_side_encryption",
@@ -333,9 +417,9 @@ pub fn ser_put_object_headers(
         })?;
         builder = builder.header("x-amz-server-side-encryption", header_value);
     }
-    if let ::std::option::Option::Some(inner_41) = &input.storage_class {
-        let formatted_42 = inner_41.as_str();
-        let header_value = formatted_42;
+    if let ::std::option::Option::Some(inner_43) = &input.storage_class {
+        let formatted_44 = inner_43.as_str();
+        let header_value = formatted_44;
         let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "storage_class",
@@ -344,9 +428,9 @@ pub fn ser_put_object_headers(
         })?;
         builder = builder.header("x-amz-storage-class", header_value);
     }
-    if let ::std::option::Option::Some(inner_43) = &input.website_redirect_location {
-        let formatted_44 = inner_43.as_str();
-        let header_value = formatted_44;
+    if let ::std::option::Option::Some(inner_45) = &input.website_redirect_location {
+        let formatted_46 = inner_45.as_str();
+        let header_value = formatted_46;
         let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "website_redirect_location",
@@ -355,9 +439,9 @@ pub fn ser_put_object_headers(
         })?;
         builder = builder.header("x-amz-website-redirect-location", header_value);
     }
-    if let ::std::option::Option::Some(inner_45) = &input.sse_customer_algorithm {
-        let formatted_46 = inner_45.as_str();
-        let header_value = formatted_46;
+    if let ::std::option::Option::Some(inner_47) = &input.sse_customer_algorithm {
+        let formatted_48 = inner_47.as_str();
+        let header_value = formatted_48;
         let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "sse_customer_algorithm",
@@ -366,9 +450,9 @@ pub fn ser_put_object_headers(
         })?;
         builder = builder.header("x-amz-server-side-encryption-customer-algorithm", header_value);
     }
-    if let ::std::option::Option::Some(inner_47) = &input.sse_customer_key {
-        let formatted_48 = inner_47.as_str();
-        let header_value = formatted_48;
+    if let ::std::option::Option::Some(inner_49) = &input.sse_customer_key {
+        let formatted_50 = inner_49.as_str();
+        let header_value = formatted_50;
         let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "sse_customer_key",
@@ -377,9 +461,9 @@ pub fn ser_put_object_headers(
         })?;
         builder = builder.header("x-amz-server-side-encryption-customer-key", header_value);
     }
-    if let ::std::option::Option::Some(inner_49) = &input.sse_customer_key_md5 {
-        let formatted_50 = inner_49.as_str();
-        let header_value = formatted_50;
+    if let ::std::option::Option::Some(inner_51) = &input.sse_customer_key_md5 {
+        let formatted_52 = inner_51.as_str();
+        let header_value = formatted_52;
         let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "sse_customer_key_md5",
@@ -388,9 +472,9 @@ pub fn ser_put_object_headers(
         })?;
         builder = builder.header("x-amz-server-side-encryption-customer-key-MD5", header_value);
     }
-    if let ::std::option::Option::Some(inner_51) = &input.ssekms_key_id {
-        let formatted_52 = inner_51.as_str();
-        let header_value = formatted_52;
+    if let ::std::option::Option::Some(inner_53) = &input.ssekms_key_id {
+        let formatted_54 = inner_53.as_str();
+        let header_value = formatted_54;
         let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "ssekms_key_id",
@@ -399,9 +483,9 @@ pub fn ser_put_object_headers(
         })?;
         builder = builder.header("x-amz-server-side-encryption-aws-kms-key-id", header_value);
     }
-    if let ::std::option::Option::Some(inner_53) = &input.ssekms_encryption_context {
-        let formatted_54 = inner_53.as_str();
-        let header_value = formatted_54;
+    if let ::std::option::Option::Some(inner_55) = &input.ssekms_encryption_context {
+        let formatted_56 = inner_55.as_str();
+        let header_value = formatted_56;
         let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "ssekms_encryption_context",
@@ -410,10 +494,10 @@ pub fn ser_put_object_headers(
         })?;
         builder = builder.header("x-amz-server-side-encryption-context", header_value);
     }
-    if let ::std::option::Option::Some(inner_55) = &input.bucket_key_enabled {
-        let mut encoder = ::aws_smithy_types::primitive::Encoder::from(*inner_55);
-        let formatted_56 = encoder.encode();
-        let header_value = formatted_56;
+    if let ::std::option::Option::Some(inner_57) = &input.bucket_key_enabled {
+        let mut encoder = ::aws_smithy_types::primitive::Encoder::from(*inner_57);
+        let formatted_58 = encoder.encode();
+        let header_value = formatted_58;
         let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "bucket_key_enabled",
@@ -422,9 +506,9 @@ pub fn ser_put_object_headers(
         })?;
         builder = builder.header("x-amz-server-side-encryption-bucket-key-enabled", header_value);
     }
-    if let ::std::option::Option::Some(inner_57) = &input.request_payer {
-        let formatted_58 = inner_57.as_str();
-        let header_value = formatted_58;
+    if let ::std::option::Option::Some(inner_59) = &input.request_payer {
+        let formatted_60 = inner_59.as_str();
+        let header_value = formatted_60;
         let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "request_payer",
@@ -433,9 +517,9 @@ pub fn ser_put_object_headers(
         })?;
         builder = builder.header("x-amz-request-payer", header_value);
     }
-    if let ::std::option::Option::Some(inner_59) = &input.tagging {
-        let formatted_60 = inner_59.as_str();
-        let header_value = formatted_60;
+    if let ::std::option::Option::Some(inner_61) = &input.tagging {
+        let formatted_62 = inner_61.as_str();
+        let header_value = formatted_62;
         let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "tagging",
@@ -444,9 +528,9 @@ pub fn ser_put_object_headers(
         })?;
         builder = builder.header("x-amz-tagging", header_value);
     }
-    if let ::std::option::Option::Some(inner_61) = &input.object_lock_mode {
-        let formatted_62 = inner_61.as_str();
-        let header_value = formatted_62;
+    if let ::std::option::Option::Some(inner_63) = &input.object_lock_mode {
+        let formatted_64 = inner_63.as_str();
+        let header_value = formatted_64;
         let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "object_lock_mode",
@@ -455,9 +539,9 @@ pub fn ser_put_object_headers(
         })?;
         builder = builder.header("x-amz-object-lock-mode", header_value);
     }
-    if let ::std::option::Option::Some(inner_63) = &input.object_lock_retain_until_date {
-        let formatted_64 = inner_63.fmt(::aws_smithy_types::date_time::Format::DateTime)?;
-        let header_value = formatted_64;
+    if let ::std::option::Option::Some(inner_65) = &input.object_lock_retain_until_date {
+        let formatted_66 = inner_65.fmt(::aws_smithy_types::date_time::Format::DateTime)?;
+        let header_value = formatted_66;
         let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "object_lock_retain_until_date",
@@ -466,9 +550,9 @@ pub fn ser_put_object_headers(
         })?;
         builder = builder.header("x-amz-object-lock-retain-until-date", header_value);
     }
-    if let ::std::option::Option::Some(inner_65) = &input.object_lock_legal_hold_status {
-        let formatted_66 = inner_65.as_str();
-        let header_value = formatted_66;
+    if let ::std::option::Option::Some(inner_67) = &input.object_lock_legal_hold_status {
+        let formatted_68 = inner_67.as_str();
+        let header_value = formatted_68;
         let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "object_lock_legal_hold_status",
@@ -477,9 +561,9 @@ pub fn ser_put_object_headers(
         })?;
         builder = builder.header("x-amz-object-lock-legal-hold", header_value);
     }
-    if let ::std::option::Option::Some(inner_67) = &input.expected_bucket_owner {
-        let formatted_68 = inner_67.as_str();
-        let header_value = formatted_68;
+    if let ::std::option::Option::Some(inner_69) = &input.expected_bucket_owner {
+        let formatted_70 = inner_69.as_str();
+        let header_value = formatted_70;
         let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "expected_bucket_owner",
@@ -488,9 +572,9 @@ pub fn ser_put_object_headers(
         })?;
         builder = builder.header("x-amz-expected-bucket-owner", header_value);
     }
-    if let ::std::option::Option::Some(inner_69) = &input.metadata {
+    if let ::std::option::Option::Some(inner_71) = &input.metadata {
         {
-            for (k, v) in inner_69 {
+            for (k, v) in inner_71 {
                 use std::str::FromStr;
                 let header_name = http::header::HeaderName::from_str(&format!("{}{}", "x-amz-meta-", &k)).map_err(|err| {
                     ::aws_smithy_types::error::operation::BuildError::invalid_field(

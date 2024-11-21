@@ -22,9 +22,7 @@ impl crate::operation::delete_signal_catalog::builders::DeleteSignalCatalogInput
 }
 /// Fluent builder constructing a request to `DeleteSignalCatalog`.
 ///
-/// <p>Deletes a signal catalog.</p><note>
-/// <p>If the signal catalog is successfully deleted, Amazon Web Services IoT FleetWise sends back an HTTP 200 response with an empty body.</p>
-/// </note>
+/// <p>Deletes a signal catalog.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteSignalCatalogFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

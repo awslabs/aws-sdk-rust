@@ -5,7 +5,7 @@
 pub struct RejectResourceGroupingRecommendationsOutput {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub app_arn: ::std::string::String,
-    /// <p>Indicates the list of resource grouping recommendations that failed to get excluded in your application.</p>
+    /// <p>List of resource grouping recommendations that failed to get excluded in your application.</p>
     pub failed_entries: ::std::vec::Vec<crate::types::FailedGroupingRecommendationEntry>,
     _request_id: Option<String>,
 }
@@ -15,7 +15,7 @@ impl RejectResourceGroupingRecommendationsOutput {
         use std::ops::Deref;
         self.app_arn.deref()
     }
-    /// <p>Indicates the list of resource grouping recommendations that failed to get excluded in your application.</p>
+    /// <p>List of resource grouping recommendations that failed to get excluded in your application.</p>
     pub fn failed_entries(&self) -> &[crate::types::FailedGroupingRecommendationEntry] {
         use std::ops::Deref;
         self.failed_entries.deref()
@@ -61,19 +61,19 @@ impl RejectResourceGroupingRecommendationsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_failed_entries`](Self::set_failed_entries).
     ///
-    /// <p>Indicates the list of resource grouping recommendations that failed to get excluded in your application.</p>
+    /// <p>List of resource grouping recommendations that failed to get excluded in your application.</p>
     pub fn failed_entries(mut self, input: crate::types::FailedGroupingRecommendationEntry) -> Self {
         let mut v = self.failed_entries.unwrap_or_default();
         v.push(input);
         self.failed_entries = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Indicates the list of resource grouping recommendations that failed to get excluded in your application.</p>
+    /// <p>List of resource grouping recommendations that failed to get excluded in your application.</p>
     pub fn set_failed_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FailedGroupingRecommendationEntry>>) -> Self {
         self.failed_entries = input;
         self
     }
-    /// <p>Indicates the list of resource grouping recommendations that failed to get excluded in your application.</p>
+    /// <p>List of resource grouping recommendations that failed to get excluded in your application.</p>
     pub fn get_failed_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedGroupingRecommendationEntry>> {
         &self.failed_entries
     }

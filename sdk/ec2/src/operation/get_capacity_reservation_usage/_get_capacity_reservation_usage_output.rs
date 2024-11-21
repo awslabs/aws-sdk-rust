@@ -16,15 +16,23 @@ pub struct GetCapacityReservationUsageOutput {
     /// <p>The current state of the Capacity Reservation. A Capacity Reservation can be in one of the following states:</p>
     /// <ul>
     /// <li>
-    /// <p><code>active</code> - The Capacity Reservation is active and the capacity is available for your use.</p></li>
+    /// <p><code>active</code> - The capacity is available for use.</p></li>
     /// <li>
-    /// <p><code>expired</code> - The Capacity Reservation expired automatically at the date and time specified in your request. The reserved capacity is no longer available for your use.</p></li>
+    /// <p><code>expired</code> - The Capacity Reservation expired automatically at the date and time specified in your reservation request. The reserved capacity is no longer available for your use.</p></li>
     /// <li>
-    /// <p><code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer available for your use.</p></li>
+    /// <p><code>cancelled</code> - The Capacity Reservation was canceled. The reserved capacity is no longer available for your use.</p></li>
     /// <li>
     /// <p><code>pending</code> - The Capacity Reservation request was successful but the capacity provisioning is still pending.</p></li>
     /// <li>
-    /// <p><code>failed</code> - The Capacity Reservation request has failed. A request might fail due to invalid request parameters, capacity constraints, or instance limit constraints. Failed requests are retained for 60 minutes.</p></li>
+    /// <p><code>failed</code> - The Capacity Reservation request has failed. A request can fail due to request parameters that are not valid, capacity constraints, or instance limit constraints. You can view a failed request for 60 minutes.</p></li>
+    /// <li>
+    /// <p><code>scheduled</code> - (<i>Future-dated Capacity Reservations only</i>) The future-dated Capacity Reservation request was approved and the Capacity Reservation is scheduled for delivery on the requested start date.</p></li>
+    /// <li>
+    /// <p><code>assessing</code> - (<i>Future-dated Capacity Reservations only</i>) Amazon EC2 is assessing your request for a future-dated Capacity Reservation.</p></li>
+    /// <li>
+    /// <p><code>delayed</code> - (<i>Future-dated Capacity Reservations only</i>) Amazon EC2 encountered a delay in provisioning the requested future-dated Capacity Reservation. Amazon EC2 is unable to deliver the requested capacity by the requested start date and time.</p></li>
+    /// <li>
+    /// <p><code>unsupported</code> - (<i>Future-dated Capacity Reservations only</i>) Amazon EC2 can't support the future-dated Capacity Reservation request due to capacity constraints. You can view unsupported requests for 30 days. The Capacity Reservation will not be delivered.</p></li>
     /// </ul>
     pub state: ::std::option::Option<crate::types::CapacityReservationState>,
     /// <p>Information about the Capacity Reservation usage.</p>
@@ -55,15 +63,23 @@ impl GetCapacityReservationUsageOutput {
     /// <p>The current state of the Capacity Reservation. A Capacity Reservation can be in one of the following states:</p>
     /// <ul>
     /// <li>
-    /// <p><code>active</code> - The Capacity Reservation is active and the capacity is available for your use.</p></li>
+    /// <p><code>active</code> - The capacity is available for use.</p></li>
     /// <li>
-    /// <p><code>expired</code> - The Capacity Reservation expired automatically at the date and time specified in your request. The reserved capacity is no longer available for your use.</p></li>
+    /// <p><code>expired</code> - The Capacity Reservation expired automatically at the date and time specified in your reservation request. The reserved capacity is no longer available for your use.</p></li>
     /// <li>
-    /// <p><code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer available for your use.</p></li>
+    /// <p><code>cancelled</code> - The Capacity Reservation was canceled. The reserved capacity is no longer available for your use.</p></li>
     /// <li>
     /// <p><code>pending</code> - The Capacity Reservation request was successful but the capacity provisioning is still pending.</p></li>
     /// <li>
-    /// <p><code>failed</code> - The Capacity Reservation request has failed. A request might fail due to invalid request parameters, capacity constraints, or instance limit constraints. Failed requests are retained for 60 minutes.</p></li>
+    /// <p><code>failed</code> - The Capacity Reservation request has failed. A request can fail due to request parameters that are not valid, capacity constraints, or instance limit constraints. You can view a failed request for 60 minutes.</p></li>
+    /// <li>
+    /// <p><code>scheduled</code> - (<i>Future-dated Capacity Reservations only</i>) The future-dated Capacity Reservation request was approved and the Capacity Reservation is scheduled for delivery on the requested start date.</p></li>
+    /// <li>
+    /// <p><code>assessing</code> - (<i>Future-dated Capacity Reservations only</i>) Amazon EC2 is assessing your request for a future-dated Capacity Reservation.</p></li>
+    /// <li>
+    /// <p><code>delayed</code> - (<i>Future-dated Capacity Reservations only</i>) Amazon EC2 encountered a delay in provisioning the requested future-dated Capacity Reservation. Amazon EC2 is unable to deliver the requested capacity by the requested start date and time.</p></li>
+    /// <li>
+    /// <p><code>unsupported</code> - (<i>Future-dated Capacity Reservations only</i>) Amazon EC2 can't support the future-dated Capacity Reservation request due to capacity constraints. You can view unsupported requests for 30 days. The Capacity Reservation will not be delivered.</p></li>
     /// </ul>
     pub fn state(&self) -> ::std::option::Option<&crate::types::CapacityReservationState> {
         self.state.as_ref()
@@ -174,15 +190,23 @@ impl GetCapacityReservationUsageOutputBuilder {
     /// <p>The current state of the Capacity Reservation. A Capacity Reservation can be in one of the following states:</p>
     /// <ul>
     /// <li>
-    /// <p><code>active</code> - The Capacity Reservation is active and the capacity is available for your use.</p></li>
+    /// <p><code>active</code> - The capacity is available for use.</p></li>
     /// <li>
-    /// <p><code>expired</code> - The Capacity Reservation expired automatically at the date and time specified in your request. The reserved capacity is no longer available for your use.</p></li>
+    /// <p><code>expired</code> - The Capacity Reservation expired automatically at the date and time specified in your reservation request. The reserved capacity is no longer available for your use.</p></li>
     /// <li>
-    /// <p><code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer available for your use.</p></li>
+    /// <p><code>cancelled</code> - The Capacity Reservation was canceled. The reserved capacity is no longer available for your use.</p></li>
     /// <li>
     /// <p><code>pending</code> - The Capacity Reservation request was successful but the capacity provisioning is still pending.</p></li>
     /// <li>
-    /// <p><code>failed</code> - The Capacity Reservation request has failed. A request might fail due to invalid request parameters, capacity constraints, or instance limit constraints. Failed requests are retained for 60 minutes.</p></li>
+    /// <p><code>failed</code> - The Capacity Reservation request has failed. A request can fail due to request parameters that are not valid, capacity constraints, or instance limit constraints. You can view a failed request for 60 minutes.</p></li>
+    /// <li>
+    /// <p><code>scheduled</code> - (<i>Future-dated Capacity Reservations only</i>) The future-dated Capacity Reservation request was approved and the Capacity Reservation is scheduled for delivery on the requested start date.</p></li>
+    /// <li>
+    /// <p><code>assessing</code> - (<i>Future-dated Capacity Reservations only</i>) Amazon EC2 is assessing your request for a future-dated Capacity Reservation.</p></li>
+    /// <li>
+    /// <p><code>delayed</code> - (<i>Future-dated Capacity Reservations only</i>) Amazon EC2 encountered a delay in provisioning the requested future-dated Capacity Reservation. Amazon EC2 is unable to deliver the requested capacity by the requested start date and time.</p></li>
+    /// <li>
+    /// <p><code>unsupported</code> - (<i>Future-dated Capacity Reservations only</i>) Amazon EC2 can't support the future-dated Capacity Reservation request due to capacity constraints. You can view unsupported requests for 30 days. The Capacity Reservation will not be delivered.</p></li>
     /// </ul>
     pub fn state(mut self, input: crate::types::CapacityReservationState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -191,15 +215,23 @@ impl GetCapacityReservationUsageOutputBuilder {
     /// <p>The current state of the Capacity Reservation. A Capacity Reservation can be in one of the following states:</p>
     /// <ul>
     /// <li>
-    /// <p><code>active</code> - The Capacity Reservation is active and the capacity is available for your use.</p></li>
+    /// <p><code>active</code> - The capacity is available for use.</p></li>
     /// <li>
-    /// <p><code>expired</code> - The Capacity Reservation expired automatically at the date and time specified in your request. The reserved capacity is no longer available for your use.</p></li>
+    /// <p><code>expired</code> - The Capacity Reservation expired automatically at the date and time specified in your reservation request. The reserved capacity is no longer available for your use.</p></li>
     /// <li>
-    /// <p><code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer available for your use.</p></li>
+    /// <p><code>cancelled</code> - The Capacity Reservation was canceled. The reserved capacity is no longer available for your use.</p></li>
     /// <li>
     /// <p><code>pending</code> - The Capacity Reservation request was successful but the capacity provisioning is still pending.</p></li>
     /// <li>
-    /// <p><code>failed</code> - The Capacity Reservation request has failed. A request might fail due to invalid request parameters, capacity constraints, or instance limit constraints. Failed requests are retained for 60 minutes.</p></li>
+    /// <p><code>failed</code> - The Capacity Reservation request has failed. A request can fail due to request parameters that are not valid, capacity constraints, or instance limit constraints. You can view a failed request for 60 minutes.</p></li>
+    /// <li>
+    /// <p><code>scheduled</code> - (<i>Future-dated Capacity Reservations only</i>) The future-dated Capacity Reservation request was approved and the Capacity Reservation is scheduled for delivery on the requested start date.</p></li>
+    /// <li>
+    /// <p><code>assessing</code> - (<i>Future-dated Capacity Reservations only</i>) Amazon EC2 is assessing your request for a future-dated Capacity Reservation.</p></li>
+    /// <li>
+    /// <p><code>delayed</code> - (<i>Future-dated Capacity Reservations only</i>) Amazon EC2 encountered a delay in provisioning the requested future-dated Capacity Reservation. Amazon EC2 is unable to deliver the requested capacity by the requested start date and time.</p></li>
+    /// <li>
+    /// <p><code>unsupported</code> - (<i>Future-dated Capacity Reservations only</i>) Amazon EC2 can't support the future-dated Capacity Reservation request due to capacity constraints. You can view unsupported requests for 30 days. The Capacity Reservation will not be delivered.</p></li>
     /// </ul>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::CapacityReservationState>) -> Self {
         self.state = input;
@@ -208,15 +240,23 @@ impl GetCapacityReservationUsageOutputBuilder {
     /// <p>The current state of the Capacity Reservation. A Capacity Reservation can be in one of the following states:</p>
     /// <ul>
     /// <li>
-    /// <p><code>active</code> - The Capacity Reservation is active and the capacity is available for your use.</p></li>
+    /// <p><code>active</code> - The capacity is available for use.</p></li>
     /// <li>
-    /// <p><code>expired</code> - The Capacity Reservation expired automatically at the date and time specified in your request. The reserved capacity is no longer available for your use.</p></li>
+    /// <p><code>expired</code> - The Capacity Reservation expired automatically at the date and time specified in your reservation request. The reserved capacity is no longer available for your use.</p></li>
     /// <li>
-    /// <p><code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer available for your use.</p></li>
+    /// <p><code>cancelled</code> - The Capacity Reservation was canceled. The reserved capacity is no longer available for your use.</p></li>
     /// <li>
     /// <p><code>pending</code> - The Capacity Reservation request was successful but the capacity provisioning is still pending.</p></li>
     /// <li>
-    /// <p><code>failed</code> - The Capacity Reservation request has failed. A request might fail due to invalid request parameters, capacity constraints, or instance limit constraints. Failed requests are retained for 60 minutes.</p></li>
+    /// <p><code>failed</code> - The Capacity Reservation request has failed. A request can fail due to request parameters that are not valid, capacity constraints, or instance limit constraints. You can view a failed request for 60 minutes.</p></li>
+    /// <li>
+    /// <p><code>scheduled</code> - (<i>Future-dated Capacity Reservations only</i>) The future-dated Capacity Reservation request was approved and the Capacity Reservation is scheduled for delivery on the requested start date.</p></li>
+    /// <li>
+    /// <p><code>assessing</code> - (<i>Future-dated Capacity Reservations only</i>) Amazon EC2 is assessing your request for a future-dated Capacity Reservation.</p></li>
+    /// <li>
+    /// <p><code>delayed</code> - (<i>Future-dated Capacity Reservations only</i>) Amazon EC2 encountered a delay in provisioning the requested future-dated Capacity Reservation. Amazon EC2 is unable to deliver the requested capacity by the requested start date and time.</p></li>
+    /// <li>
+    /// <p><code>unsupported</code> - (<i>Future-dated Capacity Reservations only</i>) Amazon EC2 can't support the future-dated Capacity Reservation request due to capacity constraints. You can view unsupported requests for 30 days. The Capacity Reservation will not be delivered.</p></li>
     /// </ul>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::CapacityReservationState> {
         &self.state

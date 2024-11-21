@@ -42,3 +42,12 @@ pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder
     }
     builder
 }
+
+pub(crate) fn probabilistic_rule_value_correct_errors(
+    mut builder: crate::types::builders::ProbabilisticRuleValueBuilder,
+) -> crate::types::builders::ProbabilisticRuleValueBuilder {
+    if builder.desired_sampling_percentage.is_none() {
+        builder.desired_sampling_percentage = Some(Default::default())
+    }
+    builder
+}

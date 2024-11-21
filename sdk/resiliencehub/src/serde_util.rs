@@ -266,6 +266,18 @@ pub(crate) fn describe_draft_app_version_resources_import_status_output_output_c
     builder
 }
 
+pub(crate) fn describe_metrics_export_output_output_correct_errors(
+    mut builder: crate::operation::describe_metrics_export::builders::DescribeMetricsExportOutputBuilder,
+) -> crate::operation::describe_metrics_export::builders::DescribeMetricsExportOutputBuilder {
+    if builder.metrics_export_id.is_none() {
+        builder.metrics_export_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::MetricsExportStatusType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn describe_resiliency_policy_output_output_correct_errors(
     mut builder: crate::operation::describe_resiliency_policy::builders::DescribeResiliencyPolicyOutputBuilder,
 ) -> crate::operation::describe_resiliency_policy::builders::DescribeResiliencyPolicyOutputBuilder {
@@ -419,6 +431,15 @@ pub(crate) fn list_apps_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_metrics_output_output_correct_errors(
+    mut builder: crate::operation::list_metrics::builders::ListMetricsOutputBuilder,
+) -> crate::operation::list_metrics::builders::ListMetricsOutputBuilder {
+    if builder.rows.is_none() {
+        builder.rows = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_resiliency_policies_output_output_correct_errors(
     mut builder: crate::operation::list_resiliency_policies::builders::ListResiliencyPoliciesOutputBuilder,
 ) -> crate::operation::list_resiliency_policies::builders::ListResiliencyPoliciesOutputBuilder {
@@ -523,6 +544,18 @@ pub(crate) fn start_app_assessment_output_output_correct_errors(
             let builder = crate::types::builders::AppAssessmentBuilder::default();
             crate::serde_util::app_assessment_correct_errors(builder).build().ok()
         }
+    }
+    builder
+}
+
+pub(crate) fn start_metrics_export_output_output_correct_errors(
+    mut builder: crate::operation::start_metrics_export::builders::StartMetricsExportOutputBuilder,
+) -> crate::operation::start_metrics_export::builders::StartMetricsExportOutputBuilder {
+    if builder.metrics_export_id.is_none() {
+        builder.metrics_export_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::MetricsExportStatusType>().ok()
     }
     builder
 }

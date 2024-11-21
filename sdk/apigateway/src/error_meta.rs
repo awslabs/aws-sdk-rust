@@ -293,6 +293,55 @@ impl From<crate::operation::create_domain_name::CreateDomainNameError> for Error
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_domain_name_access_association::CreateDomainNameAccessAssociationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_domain_name_access_association::CreateDomainNameAccessAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_domain_name_access_association::CreateDomainNameAccessAssociationError> for Error {
+    fn from(err: crate::operation::create_domain_name_access_association::CreateDomainNameAccessAssociationError) -> Self {
+        match err {
+            crate::operation::create_domain_name_access_association::CreateDomainNameAccessAssociationError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::create_domain_name_access_association::CreateDomainNameAccessAssociationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_domain_name_access_association::CreateDomainNameAccessAssociationError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::create_domain_name_access_association::CreateDomainNameAccessAssociationError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::create_domain_name_access_association::CreateDomainNameAccessAssociationError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::create_domain_name_access_association::CreateDomainNameAccessAssociationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_model::CreateModelError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -760,6 +809,55 @@ impl From<crate::operation::delete_domain_name::DeleteDomainNameError> for Error
             crate::operation::delete_domain_name::DeleteDomainNameError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::delete_domain_name::DeleteDomainNameError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::delete_domain_name::DeleteDomainNameError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_domain_name_access_association::DeleteDomainNameAccessAssociationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_domain_name_access_association::DeleteDomainNameAccessAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_domain_name_access_association::DeleteDomainNameAccessAssociationError> for Error {
+    fn from(err: crate::operation::delete_domain_name_access_association::DeleteDomainNameAccessAssociationError) -> Self {
+        match err {
+            crate::operation::delete_domain_name_access_association::DeleteDomainNameAccessAssociationError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::delete_domain_name_access_association::DeleteDomainNameAccessAssociationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_domain_name_access_association::DeleteDomainNameAccessAssociationError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::delete_domain_name_access_association::DeleteDomainNameAccessAssociationError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::delete_domain_name_access_association::DeleteDomainNameAccessAssociationError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::delete_domain_name_access_association::DeleteDomainNameAccessAssociationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -1672,6 +1770,50 @@ impl From<crate::operation::get_domain_name::GetDomainNameError> for Error {
             crate::operation::get_domain_name::GetDomainNameError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::get_domain_name::GetDomainNameError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::get_domain_name::GetDomainNameError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_domain_name_access_associations::GetDomainNameAccessAssociationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_domain_name_access_associations::GetDomainNameAccessAssociationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_domain_name_access_associations::GetDomainNameAccessAssociationsError> for Error {
+    fn from(err: crate::operation::get_domain_name_access_associations::GetDomainNameAccessAssociationsError) -> Self {
+        match err {
+            crate::operation::get_domain_name_access_associations::GetDomainNameAccessAssociationsError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_domain_name_access_associations::GetDomainNameAccessAssociationsError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_domain_name_access_associations::GetDomainNameAccessAssociationsError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_domain_name_access_associations::GetDomainNameAccessAssociationsError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::get_domain_name_access_associations::GetDomainNameAccessAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2705,6 +2847,55 @@ impl From<crate::operation::put_rest_api::PutRestApiError> for Error {
             crate::operation::put_rest_api::PutRestApiError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::put_rest_api::PutRestApiError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::put_rest_api::PutRestApiError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::reject_domain_name_access_association::RejectDomainNameAccessAssociationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::reject_domain_name_access_association::RejectDomainNameAccessAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::reject_domain_name_access_association::RejectDomainNameAccessAssociationError> for Error {
+    fn from(err: crate::operation::reject_domain_name_access_association::RejectDomainNameAccessAssociationError) -> Self {
+        match err {
+            crate::operation::reject_domain_name_access_association::RejectDomainNameAccessAssociationError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::reject_domain_name_access_association::RejectDomainNameAccessAssociationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::reject_domain_name_access_association::RejectDomainNameAccessAssociationError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::reject_domain_name_access_association::RejectDomainNameAccessAssociationError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::reject_domain_name_access_association::RejectDomainNameAccessAssociationError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::reject_domain_name_access_association::RejectDomainNameAccessAssociationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

@@ -10,7 +10,7 @@ pub struct ResiliencyPolicy {
     pub policy_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the policy</p>
     pub policy_name: ::std::option::Option<::std::string::String>,
-    /// <p>The description for the policy.</p>
+    /// <p>Description of the resiliency policy.</p>
     pub policy_description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a high-level geographical location constraint for where your resilience policy data can be stored.</p>
     pub data_location_constraint: ::std::option::Option<crate::types::DataLocationConstraint>,
@@ -34,7 +34,7 @@ impl ResiliencyPolicy {
     pub fn policy_name(&self) -> ::std::option::Option<&str> {
         self.policy_name.as_deref()
     }
-    /// <p>The description for the policy.</p>
+    /// <p>Description of the resiliency policy.</p>
     pub fn policy_description(&self) -> ::std::option::Option<&str> {
         self.policy_description.as_deref()
     }
@@ -128,17 +128,17 @@ impl ResiliencyPolicyBuilder {
     pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_name
     }
-    /// <p>The description for the policy.</p>
+    /// <p>Description of the resiliency policy.</p>
     pub fn policy_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The description for the policy.</p>
+    /// <p>Description of the resiliency policy.</p>
     pub fn set_policy_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_description = input;
         self
     }
-    /// <p>The description for the policy.</p>
+    /// <p>Description of the resiliency policy.</p>
     pub fn get_policy_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_description
     }

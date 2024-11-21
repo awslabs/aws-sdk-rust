@@ -5,7 +5,7 @@
 pub struct RejectResourceGroupingRecommendationsInput {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub app_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates the list of resource grouping recommendations you have selected to exclude from your application.</p>
+    /// <p>List of resource grouping recommendations you have selected to exclude from your application.</p>
     pub entries: ::std::option::Option<::std::vec::Vec<crate::types::RejectGroupingRecommendationEntry>>,
 }
 impl RejectResourceGroupingRecommendationsInput {
@@ -13,7 +13,7 @@ impl RejectResourceGroupingRecommendationsInput {
     pub fn app_arn(&self) -> ::std::option::Option<&str> {
         self.app_arn.as_deref()
     }
-    /// <p>Indicates the list of resource grouping recommendations you have selected to exclude from your application.</p>
+    /// <p>List of resource grouping recommendations you have selected to exclude from your application.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entries.is_none()`.
     pub fn entries(&self) -> &[crate::types::RejectGroupingRecommendationEntry] {
@@ -54,19 +54,19 @@ impl RejectResourceGroupingRecommendationsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_entries`](Self::set_entries).
     ///
-    /// <p>Indicates the list of resource grouping recommendations you have selected to exclude from your application.</p>
+    /// <p>List of resource grouping recommendations you have selected to exclude from your application.</p>
     pub fn entries(mut self, input: crate::types::RejectGroupingRecommendationEntry) -> Self {
         let mut v = self.entries.unwrap_or_default();
         v.push(input);
         self.entries = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Indicates the list of resource grouping recommendations you have selected to exclude from your application.</p>
+    /// <p>List of resource grouping recommendations you have selected to exclude from your application.</p>
     pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RejectGroupingRecommendationEntry>>) -> Self {
         self.entries = input;
         self
     }
-    /// <p>Indicates the list of resource grouping recommendations you have selected to exclude from your application.</p>
+    /// <p>List of resource grouping recommendations you have selected to exclude from your application.</p>
     pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RejectGroupingRecommendationEntry>> {
         &self.entries
     }

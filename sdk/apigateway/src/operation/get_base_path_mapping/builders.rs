@@ -122,6 +122,20 @@ impl GetBasePathMappingFluentBuilder {
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_name()
     }
+    /// <p>The identifier for the domain name resource. Supported only for private custom domain names.</p>
+    pub fn domain_name_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.domain_name_id(input.into());
+        self
+    }
+    /// <p>The identifier for the domain name resource. Supported only for private custom domain names.</p>
+    pub fn set_domain_name_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_domain_name_id(input);
+        self
+    }
+    /// <p>The identifier for the domain name resource. Supported only for private custom domain names.</p>
+    pub fn get_domain_name_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name_id()
+    }
     /// <p>The base path name that callers of the API must provide as part of the URL after the domain name. This value must be unique for all of the mappings across a single API. Specify '(none)' if you do not want callers to specify any base path name after the domain name.</p>
     pub fn base_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.base_path(input.into());

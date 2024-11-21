@@ -5,15 +5,15 @@
 pub struct UpdateResiliencyPolicyInput {
     /// <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub policy_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the policy</p>
+    /// <p>Name of the resiliency policy.</p>
     pub policy_name: ::std::option::Option<::std::string::String>,
-    /// <p>The description for the policy.</p>
+    /// <p>Description of the resiliency policy.</p>
     pub policy_description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a high-level geographical location constraint for where your resilience policy data can be stored.</p>
     pub data_location_constraint: ::std::option::Option<crate::types::DataLocationConstraint>,
     /// <p>The tier for this resiliency policy, ranging from the highest severity (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
     pub tier: ::std::option::Option<crate::types::ResiliencyPolicyTier>,
-    /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
+    /// <p>Resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
     pub policy: ::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, crate::types::FailurePolicy>>,
 }
 impl UpdateResiliencyPolicyInput {
@@ -21,11 +21,11 @@ impl UpdateResiliencyPolicyInput {
     pub fn policy_arn(&self) -> ::std::option::Option<&str> {
         self.policy_arn.as_deref()
     }
-    /// <p>The name of the policy</p>
+    /// <p>Name of the resiliency policy.</p>
     pub fn policy_name(&self) -> ::std::option::Option<&str> {
         self.policy_name.as_deref()
     }
-    /// <p>The description for the policy.</p>
+    /// <p>Description of the resiliency policy.</p>
     pub fn policy_description(&self) -> ::std::option::Option<&str> {
         self.policy_description.as_deref()
     }
@@ -37,7 +37,7 @@ impl UpdateResiliencyPolicyInput {
     pub fn tier(&self) -> ::std::option::Option<&crate::types::ResiliencyPolicyTier> {
         self.tier.as_ref()
     }
-    /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
+    /// <p>Resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
     pub fn policy(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::DisruptionType, crate::types::FailurePolicy>> {
         self.policy.as_ref()
     }
@@ -76,31 +76,31 @@ impl UpdateResiliencyPolicyInputBuilder {
     pub fn get_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_arn
     }
-    /// <p>The name of the policy</p>
+    /// <p>Name of the resiliency policy.</p>
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the policy</p>
+    /// <p>Name of the resiliency policy.</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_name = input;
         self
     }
-    /// <p>The name of the policy</p>
+    /// <p>Name of the resiliency policy.</p>
     pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_name
     }
-    /// <p>The description for the policy.</p>
+    /// <p>Description of the resiliency policy.</p>
     pub fn policy_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The description for the policy.</p>
+    /// <p>Description of the resiliency policy.</p>
     pub fn set_policy_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_description = input;
         self
     }
-    /// <p>The description for the policy.</p>
+    /// <p>Description of the resiliency policy.</p>
     pub fn get_policy_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_description
     }
@@ -136,14 +136,14 @@ impl UpdateResiliencyPolicyInputBuilder {
     ///
     /// To override the contents of this collection use [`set_policy`](Self::set_policy).
     ///
-    /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
+    /// <p>Resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
     pub fn policy(mut self, k: crate::types::DisruptionType, v: crate::types::FailurePolicy) -> Self {
         let mut hash_map = self.policy.unwrap_or_default();
         hash_map.insert(k, v);
         self.policy = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
+    /// <p>Resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
     pub fn set_policy(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, crate::types::FailurePolicy>>,
@@ -151,7 +151,7 @@ impl UpdateResiliencyPolicyInputBuilder {
         self.policy = input;
         self
     }
-    /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
+    /// <p>Resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
     pub fn get_policy(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, crate::types::FailurePolicy>> {
         &self.policy
     }

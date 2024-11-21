@@ -10,9 +10,9 @@ pub struct ModifyVpcBlockPublicAccessExclusionInput {
     /// <p>The exclusion mode for internet gateway traffic.</p>
     /// <ul>
     /// <li>
-    /// <p><code>bidirectional-access-allowed</code>: Allow all internet traffic to and from the excluded VPCs and subnets.</p></li>
+    /// <p><code>allow-bidirectional</code>: Allow all internet traffic to and from the excluded VPCs and subnets.</p></li>
     /// <li>
-    /// <p><code>egress-access-allowed</code>: Allow outbound internet traffic from the excluded VPCs and subnets. Block inbound internet traffic to the excluded VPCs and subnets. Only applies when VPC Block Public Access is set to Bidirectional.</p></li>
+    /// <p><code>allow-egress</code>: Allow outbound internet traffic from the excluded VPCs and subnets. Block inbound internet traffic to the excluded VPCs and subnets. Only applies when VPC Block Public Access is set to Bidirectional.</p></li>
     /// </ul>
     pub internet_gateway_exclusion_mode: ::std::option::Option<crate::types::InternetGatewayExclusionMode>,
 }
@@ -28,9 +28,9 @@ impl ModifyVpcBlockPublicAccessExclusionInput {
     /// <p>The exclusion mode for internet gateway traffic.</p>
     /// <ul>
     /// <li>
-    /// <p><code>bidirectional-access-allowed</code>: Allow all internet traffic to and from the excluded VPCs and subnets.</p></li>
+    /// <p><code>allow-bidirectional</code>: Allow all internet traffic to and from the excluded VPCs and subnets.</p></li>
     /// <li>
-    /// <p><code>egress-access-allowed</code>: Allow outbound internet traffic from the excluded VPCs and subnets. Block inbound internet traffic to the excluded VPCs and subnets. Only applies when VPC Block Public Access is set to Bidirectional.</p></li>
+    /// <p><code>allow-egress</code>: Allow outbound internet traffic from the excluded VPCs and subnets. Block inbound internet traffic to the excluded VPCs and subnets. Only applies when VPC Block Public Access is set to Bidirectional.</p></li>
     /// </ul>
     pub fn internet_gateway_exclusion_mode(&self) -> ::std::option::Option<&crate::types::InternetGatewayExclusionMode> {
         self.internet_gateway_exclusion_mode.as_ref()
@@ -84,9 +84,9 @@ impl ModifyVpcBlockPublicAccessExclusionInputBuilder {
     /// <p>The exclusion mode for internet gateway traffic.</p>
     /// <ul>
     /// <li>
-    /// <p><code>bidirectional-access-allowed</code>: Allow all internet traffic to and from the excluded VPCs and subnets.</p></li>
+    /// <p><code>allow-bidirectional</code>: Allow all internet traffic to and from the excluded VPCs and subnets.</p></li>
     /// <li>
-    /// <p><code>egress-access-allowed</code>: Allow outbound internet traffic from the excluded VPCs and subnets. Block inbound internet traffic to the excluded VPCs and subnets. Only applies when VPC Block Public Access is set to Bidirectional.</p></li>
+    /// <p><code>allow-egress</code>: Allow outbound internet traffic from the excluded VPCs and subnets. Block inbound internet traffic to the excluded VPCs and subnets. Only applies when VPC Block Public Access is set to Bidirectional.</p></li>
     /// </ul>
     /// This field is required.
     pub fn internet_gateway_exclusion_mode(mut self, input: crate::types::InternetGatewayExclusionMode) -> Self {
@@ -96,9 +96,9 @@ impl ModifyVpcBlockPublicAccessExclusionInputBuilder {
     /// <p>The exclusion mode for internet gateway traffic.</p>
     /// <ul>
     /// <li>
-    /// <p><code>bidirectional-access-allowed</code>: Allow all internet traffic to and from the excluded VPCs and subnets.</p></li>
+    /// <p><code>allow-bidirectional</code>: Allow all internet traffic to and from the excluded VPCs and subnets.</p></li>
     /// <li>
-    /// <p><code>egress-access-allowed</code>: Allow outbound internet traffic from the excluded VPCs and subnets. Block inbound internet traffic to the excluded VPCs and subnets. Only applies when VPC Block Public Access is set to Bidirectional.</p></li>
+    /// <p><code>allow-egress</code>: Allow outbound internet traffic from the excluded VPCs and subnets. Block inbound internet traffic to the excluded VPCs and subnets. Only applies when VPC Block Public Access is set to Bidirectional.</p></li>
     /// </ul>
     pub fn set_internet_gateway_exclusion_mode(mut self, input: ::std::option::Option<crate::types::InternetGatewayExclusionMode>) -> Self {
         self.internet_gateway_exclusion_mode = input;
@@ -107,9 +107,9 @@ impl ModifyVpcBlockPublicAccessExclusionInputBuilder {
     /// <p>The exclusion mode for internet gateway traffic.</p>
     /// <ul>
     /// <li>
-    /// <p><code>bidirectional-access-allowed</code>: Allow all internet traffic to and from the excluded VPCs and subnets.</p></li>
+    /// <p><code>allow-bidirectional</code>: Allow all internet traffic to and from the excluded VPCs and subnets.</p></li>
     /// <li>
-    /// <p><code>egress-access-allowed</code>: Allow outbound internet traffic from the excluded VPCs and subnets. Block inbound internet traffic to the excluded VPCs and subnets. Only applies when VPC Block Public Access is set to Bidirectional.</p></li>
+    /// <p><code>allow-egress</code>: Allow outbound internet traffic from the excluded VPCs and subnets. Block inbound internet traffic to the excluded VPCs and subnets. Only applies when VPC Block Public Access is set to Bidirectional.</p></li>
     /// </ul>
     pub fn get_internet_gateway_exclusion_mode(&self) -> &::std::option::Option<crate::types::InternetGatewayExclusionMode> {
         &self.internet_gateway_exclusion_mode

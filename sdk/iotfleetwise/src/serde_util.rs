@@ -468,6 +468,21 @@ pub(crate) fn condition_based_collection_scheme_correct_errors(
     builder
 }
 
+pub(crate) fn data_partition_correct_errors(
+    mut builder: crate::types::builders::DataPartitionBuilder,
+) -> crate::types::builders::DataPartitionBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.storage_options.is_none() {
+        builder.storage_options = {
+            let builder = crate::types::builders::DataPartitionStorageOptionsBuilder::default();
+            crate::serde_util::data_partition_storage_options_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn decoder_manifest_summary_correct_errors(
     mut builder: crate::types::builders::DecoderManifestSummaryBuilder,
 ) -> crate::types::builders::DecoderManifestSummaryBuilder {
@@ -535,11 +550,38 @@ pub(crate) fn signal_decoder_correct_errors(
     builder
 }
 
+pub(crate) fn signal_fetch_information_correct_errors(
+    mut builder: crate::types::builders::SignalFetchInformationBuilder,
+) -> crate::types::builders::SignalFetchInformationBuilder {
+    if builder.fully_qualified_name.is_none() {
+        builder.fully_qualified_name = Some(Default::default())
+    }
+    if builder.signal_fetch_config.is_none() {
+        builder.signal_fetch_config = Some(crate::types::SignalFetchConfig::Unknown)
+    }
+    if builder.actions.is_none() {
+        builder.actions = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn signal_information_correct_errors(
     mut builder: crate::types::builders::SignalInformationBuilder,
 ) -> crate::types::builders::SignalInformationBuilder {
     if builder.name.is_none() {
         builder.name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn state_template_association_correct_errors(
+    mut builder: crate::types::builders::StateTemplateAssociationBuilder,
+) -> crate::types::builders::StateTemplateAssociationBuilder {
+    if builder.identifier.is_none() {
+        builder.identifier = Some(Default::default())
+    }
+    if builder.state_template_update_strategy.is_none() {
+        builder.state_template_update_strategy = Some(crate::types::StateTemplateUpdateStrategy::Unknown)
     }
     builder
 }
@@ -658,6 +700,24 @@ pub(crate) fn can_signal_correct_errors(mut builder: crate::types::builders::Can
     builder
 }
 
+pub(crate) fn custom_decoding_interface_correct_errors(
+    mut builder: crate::types::builders::CustomDecodingInterfaceBuilder,
+) -> crate::types::builders::CustomDecodingInterfaceBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn custom_decoding_signal_correct_errors(
+    mut builder: crate::types::builders::CustomDecodingSignalBuilder,
+) -> crate::types::builders::CustomDecodingSignalBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn custom_property_correct_errors(
     mut builder: crate::types::builders::CustomPropertyBuilder,
 ) -> crate::types::builders::CustomPropertyBuilder {
@@ -677,6 +737,36 @@ pub(crate) fn custom_struct_correct_errors(mut builder: crate::types::builders::
     builder
 }
 
+pub(crate) fn data_partition_storage_options_correct_errors(
+    mut builder: crate::types::builders::DataPartitionStorageOptionsBuilder,
+) -> crate::types::builders::DataPartitionStorageOptionsBuilder {
+    if builder.maximum_size.is_none() {
+        builder.maximum_size = {
+            let builder = crate::types::builders::StorageMaximumSizeBuilder::default();
+            crate::serde_util::storage_maximum_size_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.storage_location.is_none() {
+        builder.storage_location = Some(Default::default())
+    }
+    if builder.minimum_time_to_live.is_none() {
+        builder.minimum_time_to_live = {
+            let builder = crate::types::builders::StorageMinimumTimeToLiveBuilder::default();
+            crate::serde_util::storage_minimum_time_to_live_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn data_partition_upload_options_correct_errors(
+    mut builder: crate::types::builders::DataPartitionUploadOptionsBuilder,
+) -> crate::types::builders::DataPartitionUploadOptionsBuilder {
+    if builder.expression.is_none() {
+        builder.expression = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn message_signal_correct_errors(
     mut builder: crate::types::builders::MessageSignalBuilder,
 ) -> crate::types::builders::MessageSignalBuilder {
@@ -685,6 +775,18 @@ pub(crate) fn message_signal_correct_errors(
     }
     if builder.structured_message.is_none() {
         builder.structured_message = Some(crate::types::StructuredMessage::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn mqtt_topic_config_correct_errors(
+    mut builder: crate::types::builders::MqttTopicConfigBuilder,
+) -> crate::types::builders::MqttTopicConfigBuilder {
+    if builder.mqtt_topic_arn.is_none() {
+        builder.mqtt_topic_arn = Some(Default::default())
+    }
+    if builder.execution_role_arn.is_none() {
+        builder.execution_role_arn = Some(Default::default())
     }
     builder
 }
@@ -765,6 +867,63 @@ pub(crate) fn vehicle_middleware_correct_errors(
     builder
 }
 
+pub(crate) fn condition_based_signal_fetch_config_correct_errors(
+    mut builder: crate::types::builders::ConditionBasedSignalFetchConfigBuilder,
+) -> crate::types::builders::ConditionBasedSignalFetchConfigBuilder {
+    if builder.condition_expression.is_none() {
+        builder.condition_expression = Some(Default::default())
+    }
+    if builder.trigger_mode.is_none() {
+        builder.trigger_mode = "no value was set".parse::<crate::types::TriggerMode>().ok()
+    }
+    builder
+}
+
+pub(crate) fn periodic_state_template_update_strategy_correct_errors(
+    mut builder: crate::types::builders::PeriodicStateTemplateUpdateStrategyBuilder,
+) -> crate::types::builders::PeriodicStateTemplateUpdateStrategyBuilder {
+    if builder.state_template_update_rate.is_none() {
+        builder.state_template_update_rate = {
+            let builder = crate::types::builders::TimePeriodBuilder::default();
+            crate::serde_util::time_period_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn storage_maximum_size_correct_errors(
+    mut builder: crate::types::builders::StorageMaximumSizeBuilder,
+) -> crate::types::builders::StorageMaximumSizeBuilder {
+    if builder.unit.is_none() {
+        builder.unit = "no value was set".parse::<crate::types::StorageMaximumSizeUnit>().ok()
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn storage_minimum_time_to_live_correct_errors(
+    mut builder: crate::types::builders::StorageMinimumTimeToLiveBuilder,
+) -> crate::types::builders::StorageMinimumTimeToLiveBuilder {
+    if builder.unit.is_none() {
+        builder.unit = "no value was set".parse::<crate::types::StorageMinimumTimeToLiveUnit>().ok()
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn time_based_signal_fetch_config_correct_errors(
+    mut builder: crate::types::builders::TimeBasedSignalFetchConfigBuilder,
+) -> crate::types::builders::TimeBasedSignalFetchConfigBuilder {
+    if builder.execution_frequency_ms.is_none() {
+        builder.execution_frequency_ms = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn structured_message_list_definition_correct_errors(
     mut builder: crate::types::builders::StructuredMessageListDefinitionBuilder,
 ) -> crate::types::builders::StructuredMessageListDefinitionBuilder {
@@ -776,6 +935,16 @@ pub(crate) fn structured_message_list_definition_correct_errors(
     }
     if builder.list_type.is_none() {
         builder.list_type = "no value was set".parse::<crate::types::StructuredMessageListType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn time_period_correct_errors(mut builder: crate::types::builders::TimePeriodBuilder) -> crate::types::builders::TimePeriodBuilder {
+    if builder.unit.is_none() {
+        builder.unit = "no value was set".parse::<crate::types::TimeUnit>().ok()
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
     }
     builder
 }

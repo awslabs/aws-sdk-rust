@@ -5,18 +5,26 @@
 pub enum Error {
     /// <p>The certificate is invalid.</p>
     CertificateValidationException(crate::types::error::CertificateValidationException),
-    /// <p>The contents of the request were invalid. For example, this code is returned when an UpdateJobExecution request contains invalid status details. The message contains details about the error.</p>
+    /// <p>A conflict has occurred when performing the API request.</p>
+    ConflictException(crate::types::error::ConflictException),
+    /// <p>An internal server error occurred when performing the API request.</p>
+    InternalServerException(crate::types::error::InternalServerException),
+    /// <p>The contents of the request were invalid.</p>
     InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>An update attempted to change the job execution to a state that is invalid because of the job execution's current state (for example, an attempt to change a request in state SUCCESS to state IN_PROGRESS). In this case, the body of the error message also contains the executionState field.</p>
     InvalidStateTransitionException(crate::types::error::InvalidStateTransitionException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
+    /// <p>The service quota has been exceeded for this request.</p>
+    ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The service is temporarily unavailable.</p>
     ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
     /// <p>The job is in a terminal state.</p>
     TerminalStateException(crate::types::error::TerminalStateException),
     /// <p>The rate exceeds the limit.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
+    /// <p>A validation error occurred when performing the API request.</p>
+    ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -30,12 +38,16 @@ impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Error::CertificateValidationException(inner) => inner.fmt(f),
+            Error::ConflictException(inner) => inner.fmt(f),
+            Error::InternalServerException(inner) => inner.fmt(f),
             Error::InvalidRequestException(inner) => inner.fmt(f),
             Error::InvalidStateTransitionException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
+            Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::ServiceUnavailableException(inner) => inner.fmt(f),
             Error::TerminalStateException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
+            Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -58,12 +70,16 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
             Self::CertificateValidationException(inner) => inner.meta(),
+            Self::ConflictException(inner) => inner.meta(),
+            Self::InternalServerException(inner) => inner.meta(),
             Self::InvalidRequestException(inner) => inner.meta(),
             Self::InvalidStateTransitionException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
+            Self::ServiceQuotaExceededException(inner) => inner.meta(),
             Self::ServiceUnavailableException(inner) => inner.meta(),
             Self::TerminalStateException(inner) => inner.meta(),
             Self::ThrottlingException(inner) => inner.meta(),
+            Self::ValidationException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
         }
     }
@@ -141,6 +157,41 @@ impl From<crate::operation::get_pending_job_executions::GetPendingJobExecutionsE
                 Error::ThrottlingException(inner)
             }
             crate::operation::get_pending_job_executions::GetPendingJobExecutionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_command_execution::StartCommandExecutionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_command_execution::StartCommandExecutionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_command_execution::StartCommandExecutionError> for Error {
+    fn from(err: crate::operation::start_command_execution::StartCommandExecutionError) -> Self {
+        match err {
+            crate::operation::start_command_execution::StartCommandExecutionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_command_execution::StartCommandExecutionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::start_command_execution::StartCommandExecutionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_command_execution::StartCommandExecutionError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::start_command_execution::StartCommandExecutionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_command_execution::StartCommandExecutionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_command_execution::StartCommandExecutionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -226,12 +277,16 @@ impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Error::CertificateValidationException(inner) => inner.source(),
+            Error::ConflictException(inner) => inner.source(),
+            Error::InternalServerException(inner) => inner.source(),
             Error::InvalidRequestException(inner) => inner.source(),
             Error::InvalidStateTransitionException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::ServiceQuotaExceededException(inner) => inner.source(),
             Error::ServiceUnavailableException(inner) => inner.source(),
             Error::TerminalStateException(inner) => inner.source(),
             Error::ThrottlingException(inner) => inner.source(),
+            Error::ValidationException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
         }
     }
@@ -240,12 +295,16 @@ impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
             Self::CertificateValidationException(e) => e.request_id(),
+            Self::ConflictException(e) => e.request_id(),
+            Self::InternalServerException(e) => e.request_id(),
             Self::InvalidRequestException(e) => e.request_id(),
             Self::InvalidStateTransitionException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::ServiceQuotaExceededException(e) => e.request_id(),
             Self::ServiceUnavailableException(e) => e.request_id(),
             Self::TerminalStateException(e) => e.request_id(),
             Self::ThrottlingException(e) => e.request_id(),
+            Self::ValidationException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),
         }
     }

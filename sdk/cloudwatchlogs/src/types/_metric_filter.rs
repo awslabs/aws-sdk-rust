@@ -14,6 +14,9 @@ pub struct MetricFilter {
     pub creation_time: ::std::option::Option<i64>,
     /// <p>The name of the log group.</p>
     pub log_group_name: ::std::option::Option<::std::string::String>,
+    /// <p>This parameter is valid only for log groups that have an active log transformer. For more information about log transformers, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutTransformer.html">PutTransformer</a>.</p>
+    /// <p>If this value is <code>true</code>, the metric filter is applied on the transformed version of the log events instead of the original ingested log events.</p>
+    pub apply_on_transformed_logs: bool,
 }
 impl MetricFilter {
     /// <p>The name of the metric filter.</p>
@@ -38,6 +41,11 @@ impl MetricFilter {
     pub fn log_group_name(&self) -> ::std::option::Option<&str> {
         self.log_group_name.as_deref()
     }
+    /// <p>This parameter is valid only for log groups that have an active log transformer. For more information about log transformers, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutTransformer.html">PutTransformer</a>.</p>
+    /// <p>If this value is <code>true</code>, the metric filter is applied on the transformed version of the log events instead of the original ingested log events.</p>
+    pub fn apply_on_transformed_logs(&self) -> bool {
+        self.apply_on_transformed_logs
+    }
 }
 impl MetricFilter {
     /// Creates a new builder-style object to manufacture [`MetricFilter`](crate::types::MetricFilter).
@@ -55,6 +63,7 @@ pub struct MetricFilterBuilder {
     pub(crate) metric_transformations: ::std::option::Option<::std::vec::Vec<crate::types::MetricTransformation>>,
     pub(crate) creation_time: ::std::option::Option<i64>,
     pub(crate) log_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) apply_on_transformed_logs: ::std::option::Option<bool>,
 }
 impl MetricFilterBuilder {
     /// <p>The name of the metric filter.</p>
@@ -133,6 +142,23 @@ impl MetricFilterBuilder {
     pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.log_group_name
     }
+    /// <p>This parameter is valid only for log groups that have an active log transformer. For more information about log transformers, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutTransformer.html">PutTransformer</a>.</p>
+    /// <p>If this value is <code>true</code>, the metric filter is applied on the transformed version of the log events instead of the original ingested log events.</p>
+    pub fn apply_on_transformed_logs(mut self, input: bool) -> Self {
+        self.apply_on_transformed_logs = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>This parameter is valid only for log groups that have an active log transformer. For more information about log transformers, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutTransformer.html">PutTransformer</a>.</p>
+    /// <p>If this value is <code>true</code>, the metric filter is applied on the transformed version of the log events instead of the original ingested log events.</p>
+    pub fn set_apply_on_transformed_logs(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.apply_on_transformed_logs = input;
+        self
+    }
+    /// <p>This parameter is valid only for log groups that have an active log transformer. For more information about log transformers, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutTransformer.html">PutTransformer</a>.</p>
+    /// <p>If this value is <code>true</code>, the metric filter is applied on the transformed version of the log events instead of the original ingested log events.</p>
+    pub fn get_apply_on_transformed_logs(&self) -> &::std::option::Option<bool> {
+        &self.apply_on_transformed_logs
+    }
     /// Consumes the builder and constructs a [`MetricFilter`](crate::types::MetricFilter).
     pub fn build(self) -> crate::types::MetricFilter {
         crate::types::MetricFilter {
@@ -141,6 +167,7 @@ impl MetricFilterBuilder {
             metric_transformations: self.metric_transformations,
             creation_time: self.creation_time,
             log_group_name: self.log_group_name,
+            apply_on_transformed_logs: self.apply_on_transformed_logs.unwrap_or_default(),
         }
     }
 }

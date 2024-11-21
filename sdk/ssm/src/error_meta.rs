@@ -66,9 +66,9 @@ pub enum Error {
     InternalServerError(crate::types::error::InternalServerError),
     /// <p>The activation isn't valid. The activation might have been deleted, or the ActivationId and the ActivationCode don't match.</p>
     InvalidActivation(crate::types::error::InvalidActivation),
-    /// <p>The activation ID isn't valid. Verify the you entered the correct ActivationId or ActivationCode and try again.</p>
+    /// <p>The activation ID isn't valid. Verify that you entered the correct ActivationId or ActivationCode and try again.</p>
     InvalidActivationId(crate::types::error::InvalidActivationId),
-    /// <p>The specified aggregator isn't valid for inventory groups. Verify that the aggregator uses a valid inventory type such as <code>AWS:Application</code> or <code>AWS:InstanceInformation</code>.</p>
+    /// <p>The specified aggregator isn't valid for the group type. Verify that the aggregator you provided is supported.</p>
     InvalidAggregatorException(crate::types::error::InvalidAggregatorException),
     /// <p>The request doesn't meet the regular expression requirement.</p>
     InvalidAllowedPatternException(crate::types::error::InvalidAllowedPatternException),
@@ -100,7 +100,7 @@ pub enum Error {
     InvalidDocumentType(crate::types::error::InvalidDocumentType),
     /// <p>The document version isn't valid or doesn't exist.</p>
     InvalidDocumentVersion(crate::types::error::InvalidDocumentVersion),
-    /// <p>The filter name isn't valid. Verify the you entered the correct name and try again.</p>
+    /// <p>The filter name isn't valid. Verify that you entered the correct name and try again.</p>
     InvalidFilter(crate::types::error::InvalidFilter),
     /// <p>The specified key isn't valid.</p>
     InvalidFilterKey(crate::types::error::InvalidFilterKey),
@@ -281,10 +281,14 @@ pub enum Error {
     UnsupportedInventorySchemaVersionException(crate::types::error::UnsupportedInventorySchemaVersionException),
     /// <p>The operating systems you specified isn't supported, or the operation isn't supported for the operating system.</p>
     UnsupportedOperatingSystem(crate::types::error::UnsupportedOperatingSystem),
+    /// <p>This operation is not supported for the current account. You must first enable the Systems Manager integrated experience in your account.</p>
+    UnsupportedOperationException(crate::types::error::UnsupportedOperationException),
     /// <p>The parameter type isn't supported.</p>
     UnsupportedParameterType(crate::types::error::UnsupportedParameterType),
     /// <p>The document doesn't support the platform type of the given managed node IDs. For example, you sent an document for a Windows managed node to a Linux node.</p>
     UnsupportedPlatformType(crate::types::error::UnsupportedPlatformType),
+    /// <p>The request isn't valid. Verify that you entered valid contents for the command and try again.</p>
+    ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -428,8 +432,10 @@ impl ::std::fmt::Display for Error {
             Error::UnsupportedInventoryItemContextException(inner) => inner.fmt(f),
             Error::UnsupportedInventorySchemaVersionException(inner) => inner.fmt(f),
             Error::UnsupportedOperatingSystem(inner) => inner.fmt(f),
+            Error::UnsupportedOperationException(inner) => inner.fmt(f),
             Error::UnsupportedParameterType(inner) => inner.fmt(f),
             Error::UnsupportedPlatformType(inner) => inner.fmt(f),
+            Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -582,8 +588,10 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::UnsupportedInventoryItemContextException(inner) => inner.meta(),
             Self::UnsupportedInventorySchemaVersionException(inner) => inner.meta(),
             Self::UnsupportedOperatingSystem(inner) => inner.meta(),
+            Self::UnsupportedOperationException(inner) => inner.meta(),
             Self::UnsupportedParameterType(inner) => inner.meta(),
             Self::UnsupportedPlatformType(inner) => inner.meta(),
+            Self::ValidationException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
         }
     }
@@ -2835,6 +2843,31 @@ impl From<crate::operation::get_document::GetDocumentError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_execution_preview::GetExecutionPreviewError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_execution_preview::GetExecutionPreviewError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_execution_preview::GetExecutionPreviewError> for Error {
+    fn from(err: crate::operation::get_execution_preview::GetExecutionPreviewError) -> Self {
+        match err {
+            crate::operation::get_execution_preview::GetExecutionPreviewError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::get_execution_preview::GetExecutionPreviewError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_execution_preview::GetExecutionPreviewError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_inventory::GetInventoryError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3655,6 +3688,65 @@ impl From<crate::operation::list_inventory_entries::ListInventoryEntriesError> f
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_nodes::ListNodesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_nodes::ListNodesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_nodes::ListNodesError> for Error {
+    fn from(err: crate::operation::list_nodes::ListNodesError) -> Self {
+        match err {
+            crate::operation::list_nodes::ListNodesError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::list_nodes::ListNodesError::InvalidFilter(inner) => Error::InvalidFilter(inner),
+            crate::operation::list_nodes::ListNodesError::InvalidNextToken(inner) => Error::InvalidNextToken(inner),
+            crate::operation::list_nodes::ListNodesError::ResourceDataSyncNotFoundException(inner) => Error::ResourceDataSyncNotFoundException(inner),
+            crate::operation::list_nodes::ListNodesError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::operation::list_nodes::ListNodesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_nodes_summary::ListNodesSummaryError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_nodes_summary::ListNodesSummaryError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_nodes_summary::ListNodesSummaryError> for Error {
+    fn from(err: crate::operation::list_nodes_summary::ListNodesSummaryError) -> Self {
+        match err {
+            crate::operation::list_nodes_summary::ListNodesSummaryError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::list_nodes_summary::ListNodesSummaryError::InvalidAggregatorException(inner) => {
+                Error::InvalidAggregatorException(inner)
+            }
+            crate::operation::list_nodes_summary::ListNodesSummaryError::InvalidFilter(inner) => Error::InvalidFilter(inner),
+            crate::operation::list_nodes_summary::ListNodesSummaryError::InvalidNextToken(inner) => Error::InvalidNextToken(inner),
+            crate::operation::list_nodes_summary::ListNodesSummaryError::ResourceDataSyncNotFoundException(inner) => {
+                Error::ResourceDataSyncNotFoundException(inner)
+            }
+            crate::operation::list_nodes_summary::ListNodesSummaryError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::operation::list_nodes_summary::ListNodesSummaryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ops_item_events::ListOpsItemEventsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -4472,6 +4564,31 @@ impl From<crate::operation::start_change_request_execution::StartChangeRequestEx
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_execution_preview::StartExecutionPreviewError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_execution_preview::StartExecutionPreviewError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_execution_preview::StartExecutionPreviewError> for Error {
+    fn from(err: crate::operation::start_execution_preview::StartExecutionPreviewError) -> Self {
+        match err {
+            crate::operation::start_execution_preview::StartExecutionPreviewError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::start_execution_preview::StartExecutionPreviewError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_execution_preview::StartExecutionPreviewError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_session::StartSessionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -5181,8 +5298,10 @@ impl ::std::error::Error for Error {
             Error::UnsupportedInventoryItemContextException(inner) => inner.source(),
             Error::UnsupportedInventorySchemaVersionException(inner) => inner.source(),
             Error::UnsupportedOperatingSystem(inner) => inner.source(),
+            Error::UnsupportedOperationException(inner) => inner.source(),
             Error::UnsupportedParameterType(inner) => inner.source(),
             Error::UnsupportedPlatformType(inner) => inner.source(),
+            Error::ValidationException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
         }
     }
@@ -5321,8 +5440,10 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::UnsupportedInventoryItemContextException(e) => e.request_id(),
             Self::UnsupportedInventorySchemaVersionException(e) => e.request_id(),
             Self::UnsupportedOperatingSystem(e) => e.request_id(),
+            Self::UnsupportedOperationException(e) => e.request_id(),
             Self::UnsupportedParameterType(e) => e.request_id(),
             Self::UnsupportedPlatformType(e) => e.request_id(),
+            Self::ValidationException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),
         }
     }

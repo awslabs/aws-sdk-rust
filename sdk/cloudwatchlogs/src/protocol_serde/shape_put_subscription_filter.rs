@@ -20,6 +20,21 @@ pub fn de_put_subscription_filter_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "InvalidOperationException" => crate::operation::put_subscription_filter::PutSubscriptionFilterError::InvalidOperationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidOperationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_operation_exception::de_invalid_operation_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::put_subscription_filter::PutSubscriptionFilterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ResourceNotFoundException" => crate::operation::put_subscription_filter::PutSubscriptionFilterError::ResourceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {

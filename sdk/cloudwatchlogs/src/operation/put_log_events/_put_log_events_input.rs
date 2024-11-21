@@ -13,7 +13,7 @@ pub struct PutLogEventsInput {
     /// <p>The <code>sequenceToken</code> parameter is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are now accepted and never return <code>InvalidSequenceTokenException</code> or <code>DataAlreadyAcceptedException</code> even if the sequence token is not valid.</p>
     /// </important>
     pub sequence_token: ::std::option::Option<::std::string::String>,
-    /// <p>Reserved for internal use.</p>
+    /// <p>The entity associated with the log events.</p>
     pub entity: ::std::option::Option<crate::types::Entity>,
 }
 impl PutLogEventsInput {
@@ -37,7 +37,7 @@ impl PutLogEventsInput {
     pub fn sequence_token(&self) -> ::std::option::Option<&str> {
         self.sequence_token.as_deref()
     }
-    /// <p>Reserved for internal use.</p>
+    /// <p>The entity associated with the log events.</p>
     pub fn entity(&self) -> ::std::option::Option<&crate::types::Entity> {
         self.entity.as_ref()
     }
@@ -130,17 +130,17 @@ impl PutLogEventsInputBuilder {
     pub fn get_sequence_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.sequence_token
     }
-    /// <p>Reserved for internal use.</p>
+    /// <p>The entity associated with the log events.</p>
     pub fn entity(mut self, input: crate::types::Entity) -> Self {
         self.entity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Reserved for internal use.</p>
+    /// <p>The entity associated with the log events.</p>
     pub fn set_entity(mut self, input: ::std::option::Option<crate::types::Entity>) -> Self {
         self.entity = input;
         self
     }
-    /// <p>Reserved for internal use.</p>
+    /// <p>The entity associated with the log events.</p>
     pub fn get_entity(&self) -> &::std::option::Option<crate::types::Entity> {
         &self.entity
     }

@@ -5,6 +5,12 @@ pub use crate::types::_sampling_rule::SamplingRuleBuilder;
 
 pub use crate::types::_sampling_rule_update::SamplingRuleUpdateBuilder;
 
+pub use crate::types::_indexing_rule::IndexingRuleBuilder;
+
+pub use crate::types::_probabilistic_rule_value::ProbabilisticRuleValueBuilder;
+
+pub use crate::types::_probabilistic_rule_value_update::ProbabilisticRuleValueUpdateBuilder;
+
 pub use crate::types::_group::GroupBuilder;
 
 pub use crate::types::_insights_configuration::InsightsConfigurationBuilder;
@@ -20,6 +26,10 @@ pub use crate::types::_backend_connection_errors::BackendConnectionErrorsBuilder
 pub use crate::types::_resource_policy::ResourcePolicyBuilder;
 
 pub use crate::types::_encryption_config::EncryptionConfigBuilder;
+
+pub use crate::types::_retrieved_trace::RetrievedTraceBuilder;
+
+pub use crate::types::_span::SpanBuilder;
 
 pub use crate::types::_trace_summary::TraceSummaryBuilder;
 
@@ -86,6 +96,10 @@ pub use crate::types::_sampling_target_document::SamplingTargetDocumentBuilder;
 pub use crate::types::_sampling_statistics_document::SamplingStatisticsDocumentBuilder;
 
 pub use crate::types::_sampling_statistic_summary::SamplingStatisticSummaryBuilder;
+
+pub use crate::types::_retrieved_service::RetrievedServiceBuilder;
+
+pub use crate::types::_graph_link::GraphLinkBuilder;
 
 pub use crate::types::_insight_summary::InsightSummaryBuilder;
 

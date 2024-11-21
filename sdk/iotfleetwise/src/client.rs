@@ -152,6 +152,8 @@ mod create_model_manifest;
 
 mod create_signal_catalog;
 
+mod create_state_template;
+
 mod create_vehicle;
 
 /// Operation customization and supporting types.
@@ -191,6 +193,8 @@ mod delete_model_manifest;
 
 mod delete_signal_catalog;
 
+mod delete_state_template;
+
 mod delete_vehicle;
 
 mod disassociate_vehicle_fleet;
@@ -210,6 +214,8 @@ mod get_model_manifest;
 mod get_register_account_status;
 
 mod get_signal_catalog;
+
+mod get_state_template;
 
 mod get_vehicle;
 
@@ -239,6 +245,8 @@ mod list_signal_catalog_nodes;
 
 mod list_signal_catalogs;
 
+mod list_state_templates;
+
 mod list_tags_for_resource;
 
 mod list_vehicles;
@@ -264,5 +272,7 @@ mod update_fleet;
 mod update_model_manifest;
 
 mod update_signal_catalog;
+
+mod update_state_template;
 
 mod update_vehicle;

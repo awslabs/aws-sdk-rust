@@ -136,7 +136,7 @@ impl DescribeVpcBlockPublicAccessExclusionsFluentBuilder {
     /// <li>
     /// <p><code>resource-arn</code> - The Amazon Resource Name (ARN) of a exclusion.</p></li>
     /// <li>
-    /// <p><code>internet-gateway-exclusion-mode</code> - The mode of a VPC BPA exclusion. Possible values: <code>bidirectional-access-allowed | egress-access-allowed</code>.</p></li>
+    /// <p><code>internet-gateway-exclusion-mode</code> - The mode of a VPC BPA exclusion. Possible values: <code>allow-bidirectional | allow-egress</code>.</p></li>
     /// <li>
     /// <p><code>state</code> - The state of VPC BPA. Possible values: <code>create-in-progress | create-complete | update-in-progress | update-complete | delete-in-progress | deleted-complete | disable-in-progress | disable-complete</code></p></li>
     /// <li>
@@ -155,7 +155,7 @@ impl DescribeVpcBlockPublicAccessExclusionsFluentBuilder {
     /// <li>
     /// <p><code>resource-arn</code> - The Amazon Resource Name (ARN) of a exclusion.</p></li>
     /// <li>
-    /// <p><code>internet-gateway-exclusion-mode</code> - The mode of a VPC BPA exclusion. Possible values: <code>bidirectional-access-allowed | egress-access-allowed</code>.</p></li>
+    /// <p><code>internet-gateway-exclusion-mode</code> - The mode of a VPC BPA exclusion. Possible values: <code>allow-bidirectional | allow-egress</code>.</p></li>
     /// <li>
     /// <p><code>state</code> - The state of VPC BPA. Possible values: <code>create-in-progress | create-complete | update-in-progress | update-complete | delete-in-progress | deleted-complete | disable-in-progress | disable-complete</code></p></li>
     /// <li>
@@ -174,7 +174,7 @@ impl DescribeVpcBlockPublicAccessExclusionsFluentBuilder {
     /// <li>
     /// <p><code>resource-arn</code> - The Amazon Resource Name (ARN) of a exclusion.</p></li>
     /// <li>
-    /// <p><code>internet-gateway-exclusion-mode</code> - The mode of a VPC BPA exclusion. Possible values: <code>bidirectional-access-allowed | egress-access-allowed</code>.</p></li>
+    /// <p><code>internet-gateway-exclusion-mode</code> - The mode of a VPC BPA exclusion. Possible values: <code>allow-bidirectional | allow-egress</code>.</p></li>
     /// <li>
     /// <p><code>state</code> - The state of VPC BPA. Possible values: <code>create-in-progress | create-complete | update-in-progress | update-complete | delete-in-progress | deleted-complete | disable-in-progress | disable-complete</code></p></li>
     /// <li>

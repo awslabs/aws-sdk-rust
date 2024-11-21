@@ -8,12 +8,42 @@ pub(crate) fn put_scaling_policy_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn capacity_forecast_correct_errors(
+    mut builder: crate::types::builders::CapacityForecastBuilder,
+) -> crate::types::builders::CapacityForecastBuilder {
+    if builder.timestamps.is_none() {
+        builder.timestamps = Some(Default::default())
+    }
+    if builder.values.is_none() {
+        builder.values = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn alarm_correct_errors(mut builder: crate::types::builders::AlarmBuilder) -> crate::types::builders::AlarmBuilder {
     if builder.alarm_name.is_none() {
         builder.alarm_name = Some(Default::default())
     }
     if builder.alarm_arn.is_none() {
         builder.alarm_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn load_forecast_correct_errors(mut builder: crate::types::builders::LoadForecastBuilder) -> crate::types::builders::LoadForecastBuilder {
+    if builder.timestamps.is_none() {
+        builder.timestamps = Some(Default::default())
+    }
+    if builder.values.is_none() {
+        builder.values = Some(Default::default())
+    }
+    if builder.metric_specification.is_none() {
+        builder.metric_specification = {
+            let builder = crate::types::builders::PredictiveScalingMetricSpecificationBuilder::default();
+            crate::serde_util::predictive_scaling_metric_specification_correct_errors(builder)
+                .build()
+                .ok()
+        }
     }
     builder
 }
@@ -126,6 +156,24 @@ pub(crate) fn scheduled_action_correct_errors(
     builder
 }
 
+pub(crate) fn predictive_scaling_metric_specification_correct_errors(
+    mut builder: crate::types::builders::PredictiveScalingMetricSpecificationBuilder,
+) -> crate::types::builders::PredictiveScalingMetricSpecificationBuilder {
+    if builder.target_value.is_none() {
+        builder.target_value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn predictive_scaling_policy_configuration_correct_errors(
+    mut builder: crate::types::builders::PredictiveScalingPolicyConfigurationBuilder,
+) -> crate::types::builders::PredictiveScalingPolicyConfigurationBuilder {
+    if builder.metric_specifications.is_none() {
+        builder.metric_specifications = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn target_tracking_scaling_policy_configuration_correct_errors(
     mut builder: crate::types::builders::TargetTrackingScalingPolicyConfigurationBuilder,
 ) -> crate::types::builders::TargetTrackingScalingPolicyConfigurationBuilder {
@@ -153,6 +201,42 @@ pub(crate) fn predefined_metric_specification_correct_errors(
     builder
 }
 
+pub(crate) fn predictive_scaling_customized_metric_specification_correct_errors(
+    mut builder: crate::types::builders::PredictiveScalingCustomizedMetricSpecificationBuilder,
+) -> crate::types::builders::PredictiveScalingCustomizedMetricSpecificationBuilder {
+    if builder.metric_data_queries.is_none() {
+        builder.metric_data_queries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn predictive_scaling_predefined_load_metric_specification_correct_errors(
+    mut builder: crate::types::builders::PredictiveScalingPredefinedLoadMetricSpecificationBuilder,
+) -> crate::types::builders::PredictiveScalingPredefinedLoadMetricSpecificationBuilder {
+    if builder.predefined_metric_type.is_none() {
+        builder.predefined_metric_type = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn predictive_scaling_predefined_metric_pair_specification_correct_errors(
+    mut builder: crate::types::builders::PredictiveScalingPredefinedMetricPairSpecificationBuilder,
+) -> crate::types::builders::PredictiveScalingPredefinedMetricPairSpecificationBuilder {
+    if builder.predefined_metric_type.is_none() {
+        builder.predefined_metric_type = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn predictive_scaling_predefined_scaling_metric_specification_correct_errors(
+    mut builder: crate::types::builders::PredictiveScalingPredefinedScalingMetricSpecificationBuilder,
+) -> crate::types::builders::PredictiveScalingPredefinedScalingMetricSpecificationBuilder {
+    if builder.predefined_metric_type.is_none() {
+        builder.predefined_metric_type = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn step_adjustment_correct_errors(
     mut builder: crate::types::builders::StepAdjustmentBuilder,
 ) -> crate::types::builders::StepAdjustmentBuilder {
@@ -174,11 +258,35 @@ pub(crate) fn metric_dimension_correct_errors(
     builder
 }
 
+pub(crate) fn predictive_scaling_metric_data_query_correct_errors(
+    mut builder: crate::types::builders::PredictiveScalingMetricDataQueryBuilder,
+) -> crate::types::builders::PredictiveScalingMetricDataQueryBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn target_tracking_metric_data_query_correct_errors(
     mut builder: crate::types::builders::TargetTrackingMetricDataQueryBuilder,
 ) -> crate::types::builders::TargetTrackingMetricDataQueryBuilder {
     if builder.id.is_none() {
         builder.id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn predictive_scaling_metric_stat_correct_errors(
+    mut builder: crate::types::builders::PredictiveScalingMetricStatBuilder,
+) -> crate::types::builders::PredictiveScalingMetricStatBuilder {
+    if builder.metric.is_none() {
+        builder.metric = {
+            let builder = crate::types::builders::PredictiveScalingMetricBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.stat.is_none() {
+        builder.stat = Some(Default::default())
     }
     builder
 }
@@ -194,6 +302,18 @@ pub(crate) fn target_tracking_metric_stat_correct_errors(
     }
     if builder.stat.is_none() {
         builder.stat = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn predictive_scaling_metric_dimension_correct_errors(
+    mut builder: crate::types::builders::PredictiveScalingMetricDimensionBuilder,
+) -> crate::types::builders::PredictiveScalingMetricDimensionBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
     }
     builder
 }

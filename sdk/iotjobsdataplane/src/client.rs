@@ -167,6 +167,8 @@ mod describe_job_execution;
 
 mod get_pending_job_executions;
 
+mod start_command_execution;
+
 mod start_next_pending_job_execution;
 
 mod update_job_execution;

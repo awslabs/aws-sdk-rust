@@ -429,6 +429,18 @@ pub use crate::types::_detect_mitigation_action_execution::DetectMitigationActio
 
 pub use crate::types::_detect_mitigation_action_execution_status::DetectMitigationActionExecutionStatus;
 
+pub use crate::types::_command_summary::CommandSummary;
+
+pub use crate::types::_sort_order::SortOrder;
+
+pub use crate::types::_command_namespace::CommandNamespace;
+
+pub use crate::types::_command_execution_summary::CommandExecutionSummary;
+
+pub use crate::types::_command_execution_status::CommandExecutionStatus;
+
+pub use crate::types::_time_filter::TimeFilter;
+
 pub use crate::types::_certificate::Certificate;
 
 pub use crate::types::_certificate_provider_summary::CertificateProviderSummary;
@@ -514,6 +526,16 @@ pub use crate::types::_aws_job_rate_increase_criteria::AwsJobRateIncreaseCriteri
 pub use crate::types::_protocol::Protocol;
 
 pub use crate::types::_effective_policy::EffectivePolicy;
+
+pub use crate::types::_command_parameter_value::CommandParameterValue;
+
+pub use crate::types::_command_execution_result::CommandExecutionResult;
+
+pub use crate::types::_status_reason::StatusReason;
+
+pub use crate::types::_command_payload::CommandPayload;
+
+pub use crate::types::_command_parameter::CommandParameter;
 
 pub use crate::types::_bucket::Bucket;
 
@@ -754,6 +776,22 @@ mod _code_signing;
 mod _code_signing_certificate_chain;
 
 mod _code_signing_signature;
+
+mod _command_execution_result;
+
+mod _command_execution_status;
+
+mod _command_execution_summary;
+
+mod _command_namespace;
+
+mod _command_parameter;
+
+mod _command_parameter_value;
+
+mod _command_payload;
+
+mod _command_summary;
 
 mod _comparison_operator;
 
@@ -1075,6 +1113,8 @@ mod _sigv4_authorization;
 
 mod _sns_action;
 
+mod _sort_order;
+
 mod _sqs_action;
 
 mod _start_signing_job_parameter;
@@ -1084,6 +1124,8 @@ mod _statistical_threshold;
 mod _statistics;
 
 mod _status;
+
+mod _status_reason;
 
 mod _step_functions_action;
 
@@ -1140,6 +1182,8 @@ mod _thing_type_definition;
 mod _thing_type_metadata;
 
 mod _thing_type_properties;
+
+mod _time_filter;
 
 mod _timeout_config;
 

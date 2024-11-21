@@ -254,7 +254,8 @@ pub enum StartImportError {
     ImportNotFoundException(crate::types::error::ImportNotFoundException),
     /// <p>The event data store is inactive.</p>
     InactiveEventDataStoreException(crate::types::error::InactiveEventDataStoreException),
-    /// <p>This exception is thrown when the policy on the S3 bucket or KMS key does not have sufficient permissions for the operation.</p>
+    /// <p>For the <code>CreateTrail</code> <code>PutInsightSelectors</code>, <code>UpdateTrail</code>, <code>StartQuery</code>, and <code>StartImport</code> operations, this exception is thrown when the policy on the S3 bucket or KMS key does not have sufficient permissions for the operation.</p>
+    /// <p>For all other operations, this exception is thrown when the policy for the KMS key does not have sufficient permissions for the operation.</p>
     InsufficientEncryptionPolicyException(crate::types::error::InsufficientEncryptionPolicyException),
     /// <p>This exception is thrown when event categories of specified event data stores are not valid.</p>
     InvalidEventDataStoreCategoryException(crate::types::error::InvalidEventDataStoreCategoryException),

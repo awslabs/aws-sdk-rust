@@ -111,6 +111,10 @@ pub struct PutObjectInput {
     pub grant_write_acp: ::std::option::Option<::std::string::String>,
     /// <p>Object key for which the PUT action was initiated.</p>
     pub key: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the offset for appending data to existing objects in bytes. The offset must be equal to the size of the existing object being appended to. If no object exists, setting this header to 0 will create a new object.</p><note>
+    /// <p>This functionality is only supported for objects in the Amazon S3 Express One Zone storage class in directory buckets.</p>
+    /// </note>
+    pub write_offset_bytes: ::std::option::Option<i64>,
     /// <p>A map of metadata to store with the object in S3.</p>
     pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The server-side encryption algorithm that was used when you store this object in Amazon S3 (for example, <code>AES256</code>, <code>aws:kms</code>, <code>aws:kms:dsse</code>).</p>
@@ -343,6 +347,12 @@ impl PutObjectInput {
     pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
     }
+    /// <p>Specifies the offset for appending data to existing objects in bytes. The offset must be equal to the size of the existing object being appended to. If no object exists, setting this header to 0 will create a new object.</p><note>
+    /// <p>This functionality is only supported for objects in the Amazon S3 Express One Zone storage class in directory buckets.</p>
+    /// </note>
+    pub fn write_offset_bytes(&self) -> ::std::option::Option<i64> {
+        self.write_offset_bytes
+    }
     /// <p>A map of metadata to store with the object in S3.</p>
     pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.metadata.as_ref()
@@ -478,6 +488,7 @@ impl ::std::fmt::Debug for PutObjectInput {
         formatter.field("grant_read_acp", &self.grant_read_acp);
         formatter.field("grant_write_acp", &self.grant_write_acp);
         formatter.field("key", &self.key);
+        formatter.field("write_offset_bytes", &self.write_offset_bytes);
         formatter.field("metadata", &self.metadata);
         formatter.field("server_side_encryption", &self.server_side_encryption);
         formatter.field("storage_class", &self.storage_class);
@@ -530,6 +541,7 @@ pub struct PutObjectInputBuilder {
     pub(crate) grant_read_acp: ::std::option::Option<::std::string::String>,
     pub(crate) grant_write_acp: ::std::option::Option<::std::string::String>,
     pub(crate) key: ::std::option::Option<::std::string::String>,
+    pub(crate) write_offset_bytes: ::std::option::Option<i64>,
     pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) server_side_encryption: ::std::option::Option<crate::types::ServerSideEncryption>,
     pub(crate) storage_class: ::std::option::Option<crate::types::StorageClass>,
@@ -1053,6 +1065,26 @@ impl PutObjectInputBuilder {
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.key
     }
+    /// <p>Specifies the offset for appending data to existing objects in bytes. The offset must be equal to the size of the existing object being appended to. If no object exists, setting this header to 0 will create a new object.</p><note>
+    /// <p>This functionality is only supported for objects in the Amazon S3 Express One Zone storage class in directory buckets.</p>
+    /// </note>
+    pub fn write_offset_bytes(mut self, input: i64) -> Self {
+        self.write_offset_bytes = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the offset for appending data to existing objects in bytes. The offset must be equal to the size of the existing object being appended to. If no object exists, setting this header to 0 will create a new object.</p><note>
+    /// <p>This functionality is only supported for objects in the Amazon S3 Express One Zone storage class in directory buckets.</p>
+    /// </note>
+    pub fn set_write_offset_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.write_offset_bytes = input;
+        self
+    }
+    /// <p>Specifies the offset for appending data to existing objects in bytes. The offset must be equal to the size of the existing object being appended to. If no object exists, setting this header to 0 will create a new object.</p><note>
+    /// <p>This functionality is only supported for objects in the Amazon S3 Express One Zone storage class in directory buckets.</p>
+    /// </note>
+    pub fn get_write_offset_bytes(&self) -> &::std::option::Option<i64> {
+        &self.write_offset_bytes
+    }
     /// Adds a key-value pair to `metadata`.
     ///
     /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
@@ -1443,6 +1475,7 @@ impl PutObjectInputBuilder {
             grant_read_acp: self.grant_read_acp,
             grant_write_acp: self.grant_write_acp,
             key: self.key,
+            write_offset_bytes: self.write_offset_bytes,
             metadata: self.metadata,
             server_side_encryption: self.server_side_encryption,
             storage_class: self.storage_class,
@@ -1487,6 +1520,7 @@ impl ::std::fmt::Debug for PutObjectInputBuilder {
         formatter.field("grant_read_acp", &self.grant_read_acp);
         formatter.field("grant_write_acp", &self.grant_write_acp);
         formatter.field("key", &self.key);
+        formatter.field("write_offset_bytes", &self.write_offset_bytes);
         formatter.field("metadata", &self.metadata);
         formatter.field("server_side_encryption", &self.server_side_encryption);
         formatter.field("storage_class", &self.storage_class);

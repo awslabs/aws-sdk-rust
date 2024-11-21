@@ -23,7 +23,7 @@ impl crate::operation::get_bucket_logging::builders::GetBucketLoggingInputBuilde
 /// Fluent builder constructing a request to `GetBucketLogging`.
 ///
 /// <note>
-/// <p>This operation is not supported by directory buckets.</p>
+/// <p>This operation is not supported for directory buckets.</p>
 /// </note>
 /// <p>Returns the logging status of a bucket and the permissions users have to view and modify that status.</p>
 /// <p>The following operations are related to <code>GetBucketLogging</code>:</p>

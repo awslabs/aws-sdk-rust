@@ -11,6 +11,9 @@ pub struct PutMetricFilterInput {
     pub filter_pattern: ::std::option::Option<::std::string::String>,
     /// <p>A collection of information that defines how metric data gets emitted.</p>
     pub metric_transformations: ::std::option::Option<::std::vec::Vec<crate::types::MetricTransformation>>,
+    /// <p>This parameter is valid only for log groups that have an active log transformer. For more information about log transformers, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutTransformer.html">PutTransformer</a>.</p>
+    /// <p>If the log group uses either a log-group level or account-level transformer, and you specify <code>true</code>, the metric filter will be applied on the transformed version of the log events instead of the original ingested log events.</p>
+    pub apply_on_transformed_logs: ::std::option::Option<bool>,
 }
 impl PutMetricFilterInput {
     /// <p>The name of the log group.</p>
@@ -31,6 +34,11 @@ impl PutMetricFilterInput {
     pub fn metric_transformations(&self) -> &[crate::types::MetricTransformation] {
         self.metric_transformations.as_deref().unwrap_or_default()
     }
+    /// <p>This parameter is valid only for log groups that have an active log transformer. For more information about log transformers, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutTransformer.html">PutTransformer</a>.</p>
+    /// <p>If the log group uses either a log-group level or account-level transformer, and you specify <code>true</code>, the metric filter will be applied on the transformed version of the log events instead of the original ingested log events.</p>
+    pub fn apply_on_transformed_logs(&self) -> ::std::option::Option<bool> {
+        self.apply_on_transformed_logs
+    }
 }
 impl PutMetricFilterInput {
     /// Creates a new builder-style object to manufacture [`PutMetricFilterInput`](crate::operation::put_metric_filter::PutMetricFilterInput).
@@ -47,6 +55,7 @@ pub struct PutMetricFilterInputBuilder {
     pub(crate) filter_name: ::std::option::Option<::std::string::String>,
     pub(crate) filter_pattern: ::std::option::Option<::std::string::String>,
     pub(crate) metric_transformations: ::std::option::Option<::std::vec::Vec<crate::types::MetricTransformation>>,
+    pub(crate) apply_on_transformed_logs: ::std::option::Option<bool>,
 }
 impl PutMetricFilterInputBuilder {
     /// <p>The name of the log group.</p>
@@ -114,6 +123,23 @@ impl PutMetricFilterInputBuilder {
     pub fn get_metric_transformations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricTransformation>> {
         &self.metric_transformations
     }
+    /// <p>This parameter is valid only for log groups that have an active log transformer. For more information about log transformers, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutTransformer.html">PutTransformer</a>.</p>
+    /// <p>If the log group uses either a log-group level or account-level transformer, and you specify <code>true</code>, the metric filter will be applied on the transformed version of the log events instead of the original ingested log events.</p>
+    pub fn apply_on_transformed_logs(mut self, input: bool) -> Self {
+        self.apply_on_transformed_logs = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>This parameter is valid only for log groups that have an active log transformer. For more information about log transformers, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutTransformer.html">PutTransformer</a>.</p>
+    /// <p>If the log group uses either a log-group level or account-level transformer, and you specify <code>true</code>, the metric filter will be applied on the transformed version of the log events instead of the original ingested log events.</p>
+    pub fn set_apply_on_transformed_logs(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.apply_on_transformed_logs = input;
+        self
+    }
+    /// <p>This parameter is valid only for log groups that have an active log transformer. For more information about log transformers, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutTransformer.html">PutTransformer</a>.</p>
+    /// <p>If the log group uses either a log-group level or account-level transformer, and you specify <code>true</code>, the metric filter will be applied on the transformed version of the log events instead of the original ingested log events.</p>
+    pub fn get_apply_on_transformed_logs(&self) -> &::std::option::Option<bool> {
+        &self.apply_on_transformed_logs
+    }
     /// Consumes the builder and constructs a [`PutMetricFilterInput`](crate::operation::put_metric_filter::PutMetricFilterInput).
     pub fn build(
         self,
@@ -123,6 +149,7 @@ impl PutMetricFilterInputBuilder {
             filter_name: self.filter_name,
             filter_pattern: self.filter_pattern,
             metric_transformations: self.metric_transformations,
+            apply_on_transformed_logs: self.apply_on_transformed_logs,
         })
     }
 }

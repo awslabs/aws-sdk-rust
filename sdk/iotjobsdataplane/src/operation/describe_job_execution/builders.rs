@@ -23,6 +23,7 @@ impl crate::operation::describe_job_execution::builders::DescribeJobExecutionInp
 /// Fluent builder constructing a request to `DescribeJobExecution`.
 ///
 /// <p>Gets details of a job execution.</p>
+/// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeJobExecution</a> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeJobExecutionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -136,17 +137,17 @@ impl DescribeJobExecutionFluentBuilder {
     pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_thing_name()
     }
-    /// <p>Optional. When set to true, the response contains the job document. The default is false.</p>
+    /// <p>Optional. Unless set to false, the response contains the job document. The default is true.</p>
     pub fn include_job_document(mut self, input: bool) -> Self {
         self.inner = self.inner.include_job_document(input);
         self
     }
-    /// <p>Optional. When set to true, the response contains the job document. The default is false.</p>
+    /// <p>Optional. Unless set to false, the response contains the job document. The default is true.</p>
     pub fn set_include_job_document(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_job_document(input);
         self
     }
-    /// <p>Optional. When set to true, the response contains the job document. The default is false.</p>
+    /// <p>Optional. Unless set to false, the response contains the job document. The default is true.</p>
     pub fn get_include_job_document(&self) -> &::std::option::Option<bool> {
         self.inner.get_include_job_document()
     }

@@ -20,6 +20,10 @@ pub struct AbortMultipartUploadInput {
     pub request_payer: ::std::option::Option<crate::types::RequestPayer>,
     /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: ::std::option::Option<::std::string::String>,
+    /// <p>If present, this header aborts an in progress multipart upload only if it was initiated on the provided timestamp. If the initiated timestamp of the multipart upload does not match the provided value, the operation returns a <code>412 Precondition Failed</code> error. If the initiated timestamp matches or if the multipart upload doesn’t exist, the operation returns a <code>204 Success (No Content)</code> response.</p><note>
+    /// <p>This functionality is only supported for directory buckets.</p>
+    /// </note>
+    pub if_match_initiated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AbortMultipartUploadInput {
     /// <p>The bucket name to which the upload was taking place.</p>
@@ -49,6 +53,12 @@ impl AbortMultipartUploadInput {
     pub fn expected_bucket_owner(&self) -> ::std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
+    /// <p>If present, this header aborts an in progress multipart upload only if it was initiated on the provided timestamp. If the initiated timestamp of the multipart upload does not match the provided value, the operation returns a <code>412 Precondition Failed</code> error. If the initiated timestamp matches or if the multipart upload doesn’t exist, the operation returns a <code>204 Success (No Content)</code> response.</p><note>
+    /// <p>This functionality is only supported for directory buckets.</p>
+    /// </note>
+    pub fn if_match_initiated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.if_match_initiated_time.as_ref()
+    }
 }
 impl AbortMultipartUploadInput {
     /// Creates a new builder-style object to manufacture [`AbortMultipartUploadInput`](crate::operation::abort_multipart_upload::AbortMultipartUploadInput).
@@ -66,6 +76,7 @@ pub struct AbortMultipartUploadInputBuilder {
     pub(crate) upload_id: ::std::option::Option<::std::string::String>,
     pub(crate) request_payer: ::std::option::Option<crate::types::RequestPayer>,
     pub(crate) expected_bucket_owner: ::std::option::Option<::std::string::String>,
+    pub(crate) if_match_initiated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AbortMultipartUploadInputBuilder {
     /// <p>The bucket name to which the upload was taking place.</p>
@@ -162,6 +173,26 @@ impl AbortMultipartUploadInputBuilder {
     pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
         &self.expected_bucket_owner
     }
+    /// <p>If present, this header aborts an in progress multipart upload only if it was initiated on the provided timestamp. If the initiated timestamp of the multipart upload does not match the provided value, the operation returns a <code>412 Precondition Failed</code> error. If the initiated timestamp matches or if the multipart upload doesn’t exist, the operation returns a <code>204 Success (No Content)</code> response.</p><note>
+    /// <p>This functionality is only supported for directory buckets.</p>
+    /// </note>
+    pub fn if_match_initiated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.if_match_initiated_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If present, this header aborts an in progress multipart upload only if it was initiated on the provided timestamp. If the initiated timestamp of the multipart upload does not match the provided value, the operation returns a <code>412 Precondition Failed</code> error. If the initiated timestamp matches or if the multipart upload doesn’t exist, the operation returns a <code>204 Success (No Content)</code> response.</p><note>
+    /// <p>This functionality is only supported for directory buckets.</p>
+    /// </note>
+    pub fn set_if_match_initiated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.if_match_initiated_time = input;
+        self
+    }
+    /// <p>If present, this header aborts an in progress multipart upload only if it was initiated on the provided timestamp. If the initiated timestamp of the multipart upload does not match the provided value, the operation returns a <code>412 Precondition Failed</code> error. If the initiated timestamp matches or if the multipart upload doesn’t exist, the operation returns a <code>204 Success (No Content)</code> response.</p><note>
+    /// <p>This functionality is only supported for directory buckets.</p>
+    /// </note>
+    pub fn get_if_match_initiated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.if_match_initiated_time
+    }
     /// Consumes the builder and constructs a [`AbortMultipartUploadInput`](crate::operation::abort_multipart_upload::AbortMultipartUploadInput).
     pub fn build(
         self,
@@ -173,6 +204,7 @@ impl AbortMultipartUploadInputBuilder {
             upload_id: self.upload_id,
             request_payer: self.request_payer,
             expected_bucket_owner: self.expected_bucket_owner,
+            if_match_initiated_time: self.if_match_initiated_time,
         })
     }
 }

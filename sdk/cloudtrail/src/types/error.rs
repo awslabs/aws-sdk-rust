@@ -77,6 +77,12 @@ pub use crate::types::error::_event_data_store_arn_invalid_exception::EventDataS
 
 pub use crate::types::error::_event_data_store_already_exists_exception::EventDataStoreAlreadyExistsException;
 
+pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededException;
+
+pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundException;
+
+pub use crate::types::error::_invalid_query_statement_exception::InvalidQueryStatementException;
+
 pub use crate::types::error::_invalid_event_data_store_category_exception::InvalidEventDataStoreCategoryException;
 
 pub use crate::types::error::_channel_not_found_exception::ChannelNotFoundException;
@@ -91,8 +97,6 @@ pub use crate::types::error::_invalid_event_data_store_status_exception::Invalid
 
 pub use crate::types::error::_max_concurrent_queries_exception::MaxConcurrentQueriesException;
 
-pub use crate::types::error::_invalid_query_statement_exception::InvalidQueryStatementException;
-
 pub use crate::types::error::_invalid_import_source_exception::InvalidImportSourceException;
 
 pub use crate::types::error::_account_has_ongoing_import_exception::AccountHasOngoingImportException;
@@ -100,8 +104,6 @@ pub use crate::types::error::_account_has_ongoing_import_exception::AccountHasOn
 pub use crate::types::error::_event_data_store_max_limit_exceeded_exception::EventDataStoreMaxLimitExceededException;
 
 pub use crate::types::error::_resource_type_not_supported_exception::ResourceTypeNotSupportedException;
-
-pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundException;
 
 pub use crate::types::error::_invalid_tag_parameter_exception::InvalidTagParameterException;
 
@@ -322,6 +324,8 @@ mod _resource_policy_not_valid_exception;
 mod _resource_type_not_supported_exception;
 
 mod _s3_bucket_does_not_exist_exception;
+
+mod _service_quota_exceeded_exception;
 
 mod _tags_limit_exceeded_exception;
 

@@ -12,10 +12,14 @@ pub struct SignalDecoder {
     pub interface_id: ::std::string::String,
     /// <p>Information about signal decoder using the Controller Area Network (CAN) protocol.</p>
     pub can_signal: ::std::option::Option<crate::types::CanSignal>,
-    /// <p>Information about signal decoder using the On-board diagnostic (OBD) II protocol.</p>
+    /// <p>Information about signal decoder using the on-board diagnostic (OBD) II protocol.</p>
     pub obd_signal: ::std::option::Option<crate::types::ObdSignal>,
     /// <p>The decoding information for a specific message which supports higher order data types.</p>
     pub message_signal: ::std::option::Option<crate::types::MessageSignal>,
+    /// <p>Information about a <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_CustomDecodingSignal.html">custom signal decoder</a>.</p><important>
+    /// <p>Access to certain Amazon Web Services IoT FleetWise features is currently gated. For more information, see <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/fleetwise-regions.html">Amazon Web Services Region and feature availability</a> in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>.</p>
+    /// </important>
+    pub custom_decoding_signal: ::std::option::Option<crate::types::CustomDecodingSignal>,
 }
 impl SignalDecoder {
     /// <p>The fully qualified name of a signal decoder as defined in a vehicle model.</p>
@@ -36,13 +40,19 @@ impl SignalDecoder {
     pub fn can_signal(&self) -> ::std::option::Option<&crate::types::CanSignal> {
         self.can_signal.as_ref()
     }
-    /// <p>Information about signal decoder using the On-board diagnostic (OBD) II protocol.</p>
+    /// <p>Information about signal decoder using the on-board diagnostic (OBD) II protocol.</p>
     pub fn obd_signal(&self) -> ::std::option::Option<&crate::types::ObdSignal> {
         self.obd_signal.as_ref()
     }
     /// <p>The decoding information for a specific message which supports higher order data types.</p>
     pub fn message_signal(&self) -> ::std::option::Option<&crate::types::MessageSignal> {
         self.message_signal.as_ref()
+    }
+    /// <p>Information about a <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_CustomDecodingSignal.html">custom signal decoder</a>.</p><important>
+    /// <p>Access to certain Amazon Web Services IoT FleetWise features is currently gated. For more information, see <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/fleetwise-regions.html">Amazon Web Services Region and feature availability</a> in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>.</p>
+    /// </important>
+    pub fn custom_decoding_signal(&self) -> ::std::option::Option<&crate::types::CustomDecodingSignal> {
+        self.custom_decoding_signal.as_ref()
     }
 }
 impl SignalDecoder {
@@ -62,6 +72,7 @@ pub struct SignalDecoderBuilder {
     pub(crate) can_signal: ::std::option::Option<crate::types::CanSignal>,
     pub(crate) obd_signal: ::std::option::Option<crate::types::ObdSignal>,
     pub(crate) message_signal: ::std::option::Option<crate::types::MessageSignal>,
+    pub(crate) custom_decoding_signal: ::std::option::Option<crate::types::CustomDecodingSignal>,
 }
 impl SignalDecoderBuilder {
     /// <p>The fully qualified name of a signal decoder as defined in a vehicle model.</p>
@@ -123,17 +134,17 @@ impl SignalDecoderBuilder {
     pub fn get_can_signal(&self) -> &::std::option::Option<crate::types::CanSignal> {
         &self.can_signal
     }
-    /// <p>Information about signal decoder using the On-board diagnostic (OBD) II protocol.</p>
+    /// <p>Information about signal decoder using the on-board diagnostic (OBD) II protocol.</p>
     pub fn obd_signal(mut self, input: crate::types::ObdSignal) -> Self {
         self.obd_signal = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about signal decoder using the On-board diagnostic (OBD) II protocol.</p>
+    /// <p>Information about signal decoder using the on-board diagnostic (OBD) II protocol.</p>
     pub fn set_obd_signal(mut self, input: ::std::option::Option<crate::types::ObdSignal>) -> Self {
         self.obd_signal = input;
         self
     }
-    /// <p>Information about signal decoder using the On-board diagnostic (OBD) II protocol.</p>
+    /// <p>Information about signal decoder using the on-board diagnostic (OBD) II protocol.</p>
     pub fn get_obd_signal(&self) -> &::std::option::Option<crate::types::ObdSignal> {
         &self.obd_signal
     }
@@ -150,6 +161,26 @@ impl SignalDecoderBuilder {
     /// <p>The decoding information for a specific message which supports higher order data types.</p>
     pub fn get_message_signal(&self) -> &::std::option::Option<crate::types::MessageSignal> {
         &self.message_signal
+    }
+    /// <p>Information about a <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_CustomDecodingSignal.html">custom signal decoder</a>.</p><important>
+    /// <p>Access to certain Amazon Web Services IoT FleetWise features is currently gated. For more information, see <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/fleetwise-regions.html">Amazon Web Services Region and feature availability</a> in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>.</p>
+    /// </important>
+    pub fn custom_decoding_signal(mut self, input: crate::types::CustomDecodingSignal) -> Self {
+        self.custom_decoding_signal = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about a <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_CustomDecodingSignal.html">custom signal decoder</a>.</p><important>
+    /// <p>Access to certain Amazon Web Services IoT FleetWise features is currently gated. For more information, see <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/fleetwise-regions.html">Amazon Web Services Region and feature availability</a> in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>.</p>
+    /// </important>
+    pub fn set_custom_decoding_signal(mut self, input: ::std::option::Option<crate::types::CustomDecodingSignal>) -> Self {
+        self.custom_decoding_signal = input;
+        self
+    }
+    /// <p>Information about a <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_CustomDecodingSignal.html">custom signal decoder</a>.</p><important>
+    /// <p>Access to certain Amazon Web Services IoT FleetWise features is currently gated. For more information, see <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/fleetwise-regions.html">Amazon Web Services Region and feature availability</a> in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>.</p>
+    /// </important>
+    pub fn get_custom_decoding_signal(&self) -> &::std::option::Option<crate::types::CustomDecodingSignal> {
+        &self.custom_decoding_signal
     }
     /// Consumes the builder and constructs a [`SignalDecoder`](crate::types::SignalDecoder).
     /// This method will fail if any of the following fields are not set:
@@ -179,6 +210,7 @@ impl SignalDecoderBuilder {
             can_signal: self.can_signal,
             obd_signal: self.obd_signal,
             message_signal: self.message_signal,
+            custom_decoding_signal: self.custom_decoding_signal,
         })
     }
 }

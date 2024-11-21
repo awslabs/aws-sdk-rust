@@ -124,31 +124,31 @@ impl UpdateResiliencyPolicyFluentBuilder {
     pub fn get_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policy_arn()
     }
-    /// <p>The name of the policy</p>
+    /// <p>Name of the resiliency policy.</p>
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_name(input.into());
         self
     }
-    /// <p>The name of the policy</p>
+    /// <p>Name of the resiliency policy.</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_name(input);
         self
     }
-    /// <p>The name of the policy</p>
+    /// <p>Name of the resiliency policy.</p>
     pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policy_name()
     }
-    /// <p>The description for the policy.</p>
+    /// <p>Description of the resiliency policy.</p>
     pub fn policy_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_description(input.into());
         self
     }
-    /// <p>The description for the policy.</p>
+    /// <p>Description of the resiliency policy.</p>
     pub fn set_policy_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_description(input);
         self
     }
-    /// <p>The description for the policy.</p>
+    /// <p>Description of the resiliency policy.</p>
     pub fn get_policy_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policy_description()
     }
@@ -185,12 +185,12 @@ impl UpdateResiliencyPolicyFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_policy`](Self::set_policy).
     ///
-    /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
+    /// <p>Resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
     pub fn policy(mut self, k: crate::types::DisruptionType, v: crate::types::FailurePolicy) -> Self {
         self.inner = self.inner.policy(k, v);
         self
     }
-    /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
+    /// <p>Resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
     pub fn set_policy(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, crate::types::FailurePolicy>>,
@@ -198,7 +198,7 @@ impl UpdateResiliencyPolicyFluentBuilder {
         self.inner = self.inner.set_policy(input);
         self
     }
-    /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
+    /// <p>Resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
     pub fn get_policy(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, crate::types::FailurePolicy>> {
         self.inner.get_policy()
     }

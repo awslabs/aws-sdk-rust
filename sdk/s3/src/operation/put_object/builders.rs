@@ -723,6 +723,26 @@ impl PutObjectFluentBuilder {
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_key()
     }
+    /// <p>Specifies the offset for appending data to existing objects in bytes. The offset must be equal to the size of the existing object being appended to. If no object exists, setting this header to 0 will create a new object.</p><note>
+    /// <p>This functionality is only supported for objects in the Amazon S3 Express One Zone storage class in directory buckets.</p>
+    /// </note>
+    pub fn write_offset_bytes(mut self, input: i64) -> Self {
+        self.inner = self.inner.write_offset_bytes(input);
+        self
+    }
+    /// <p>Specifies the offset for appending data to existing objects in bytes. The offset must be equal to the size of the existing object being appended to. If no object exists, setting this header to 0 will create a new object.</p><note>
+    /// <p>This functionality is only supported for objects in the Amazon S3 Express One Zone storage class in directory buckets.</p>
+    /// </note>
+    pub fn set_write_offset_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.inner = self.inner.set_write_offset_bytes(input);
+        self
+    }
+    /// <p>Specifies the offset for appending data to existing objects in bytes. The offset must be equal to the size of the existing object being appended to. If no object exists, setting this header to 0 will create a new object.</p><note>
+    /// <p>This functionality is only supported for objects in the Amazon S3 Express One Zone storage class in directory buckets.</p>
+    /// </note>
+    pub fn get_write_offset_bytes(&self) -> &::std::option::Option<i64> {
+        self.inner.get_write_offset_bytes()
+    }
     ///
     /// Adds a key-value pair to `Metadata`.
     ///

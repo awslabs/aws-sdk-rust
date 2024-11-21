@@ -28,6 +28,7 @@ pub enum Error {
     /// <p>This exception is thrown when an operation is called with an ARN that is not valid.</p>
     /// <p>The following is the format of a trail ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code></p>
     /// <p>The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code></p>
+    /// <p>The following is the format of a dashboard ARN: <code>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</code></p>
     /// <p>The following is the format of a channel ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code></p>
     CloudTrailArnInvalidException(crate::types::error::CloudTrailArnInvalidException),
     /// <p>This exception is thrown when trusted access has not been enabled between CloudTrail and Organizations. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_how-to-enable-disable-trusted-access">How to enable or disable trusted access</a> in the <i>Organizations User Guide</i> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a> in the <i>CloudTrail User Guide</i>.</p>
@@ -68,7 +69,8 @@ pub enum Error {
     InsightNotEnabledException(crate::types::error::InsightNotEnabledException),
     /// <p>This exception is thrown when the IAM identity that is used to create the organization resource lacks one or more required permissions for creating an organization resource in a required service.</p>
     InsufficientDependencyServiceAccessPermissionException(crate::types::error::InsufficientDependencyServiceAccessPermissionException),
-    /// <p>This exception is thrown when the policy on the S3 bucket or KMS key does not have sufficient permissions for the operation.</p>
+    /// <p>For the <code>CreateTrail</code> <code>PutInsightSelectors</code>, <code>UpdateTrail</code>, <code>StartQuery</code>, and <code>StartImport</code> operations, this exception is thrown when the policy on the S3 bucket or KMS key does not have sufficient permissions for the operation.</p>
+    /// <p>For all other operations, this exception is thrown when the policy for the KMS key does not have sufficient permissions for the operation.</p>
     InsufficientEncryptionPolicyException(crate::types::error::InsufficientEncryptionPolicyException),
     /// <p>This exception is thrown when the policy on the S3 bucket is not sufficient.</p>
     InsufficientS3BucketPolicyException(crate::types::error::InsufficientS3BucketPolicyException),
@@ -175,28 +177,24 @@ pub enum Error {
     OrganizationsNotInUseException(crate::types::error::OrganizationsNotInUseException),
     /// <p>The query ID does not exist or does not map to a query.</p>
     QueryIdNotFoundException(crate::types::error::QueryIdNotFoundException),
-    /// <p>This exception is thrown when the provided resource does not exist, or the ARN format of the resource is not valid. The following is the valid format for a resource ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/MyChannel</code>.</p>
+    /// <p>This exception is thrown when the provided resource does not exist, or the ARN format of the resource is not valid.</p>
+    /// <p>The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code></p>
+    /// <p>The following is the format of a dashboard ARN: <code>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</code></p>
+    /// <p>The following is the format of a channel ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code></p>
     ResourceArnNotValidException(crate::types::error::ResourceArnNotValidException),
     /// <p>This exception is thrown when the specified resource is not found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>This exception is thrown when the specified resource policy is not found.</p>
     ResourcePolicyNotFoundException(crate::types::error::ResourcePolicyNotFoundException),
     /// <p>This exception is thrown when the resouce-based policy has syntax errors, or contains a principal that is not valid.</p>
-    /// <p>The following are requirements for the resource policy:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Contains only one action: cloudtrail-data:PutAuditEvents</p></li>
-    /// <li>
-    /// <p>Contains at least one statement. The policy can have a maximum of 20 statements.</p></li>
-    /// <li>
-    /// <p>Each statement contains at least one principal. A statement can have a maximum of 50 principals.</p></li>
-    /// </ul>
     ResourcePolicyNotValidException(crate::types::error::ResourcePolicyNotValidException),
     /// <p>This exception is thrown when the specified resource type is not supported by CloudTrail.</p>
     ResourceTypeNotSupportedException(crate::types::error::ResourceTypeNotSupportedException),
     /// <p>This exception is thrown when the specified S3 bucket does not exist.</p>
     S3BucketDoesNotExistException(crate::types::error::S3BucketDoesNotExistException),
-    /// <p>The number of tags per trail, event data store, or channel has exceeded the permitted amount. Currently, the limit is 50.</p>
+    /// <p>This exception is thrown when the quota is exceeded. For information about CloudTrail quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/ct.html#limits_cloudtrail">Service quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
+    /// <p>The number of tags per trail, event data store, dashboard, or channel has exceeded the permitted amount. Currently, the limit is 50.</p>
     TagsLimitExceededException(crate::types::error::TagsLimitExceededException),
     /// <p>This exception is thrown when the request rate exceeds the limit.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
@@ -298,6 +296,7 @@ impl ::std::fmt::Display for Error {
             Error::ResourcePolicyNotValidException(inner) => inner.fmt(f),
             Error::ResourceTypeNotSupportedException(inner) => inner.fmt(f),
             Error::S3BucketDoesNotExistException(inner) => inner.fmt(f),
+            Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::TagsLimitExceededException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
             Error::TrailAlreadyExistsException(inner) => inner.fmt(f),
@@ -403,6 +402,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ResourcePolicyNotValidException(inner) => inner.meta(),
             Self::ResourceTypeNotSupportedException(inner) => inner.meta(),
             Self::S3BucketDoesNotExistException(inner) => inner.meta(),
+            Self::ServiceQuotaExceededException(inner) => inner.meta(),
             Self::TagsLimitExceededException(inner) => inner.meta(),
             Self::ThrottlingException(inner) => inner.meta(),
             Self::TrailAlreadyExistsException(inner) => inner.meta(),
@@ -531,6 +531,49 @@ impl From<crate::operation::create_channel::CreateChannelError> for Error {
             crate::operation::create_channel::CreateChannelError::TagsLimitExceededException(inner) => Error::TagsLimitExceededException(inner),
             crate::operation::create_channel::CreateChannelError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::create_channel::CreateChannelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_dashboard::CreateDashboardError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_dashboard::CreateDashboardError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_dashboard::CreateDashboardError> for Error {
+    fn from(err: crate::operation::create_dashboard::CreateDashboardError) -> Self {
+        match err {
+            crate::operation::create_dashboard::CreateDashboardError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_dashboard::CreateDashboardError::EventDataStoreNotFoundException(inner) => {
+                Error::EventDataStoreNotFoundException(inner)
+            }
+            crate::operation::create_dashboard::CreateDashboardError::InactiveEventDataStoreException(inner) => {
+                Error::InactiveEventDataStoreException(inner)
+            }
+            crate::operation::create_dashboard::CreateDashboardError::InsufficientEncryptionPolicyException(inner) => {
+                Error::InsufficientEncryptionPolicyException(inner)
+            }
+            crate::operation::create_dashboard::CreateDashboardError::InvalidQueryStatementException(inner) => {
+                Error::InvalidQueryStatementException(inner)
+            }
+            crate::operation::create_dashboard::CreateDashboardError::InvalidTagParameterException(inner) => {
+                Error::InvalidTagParameterException(inner)
+            }
+            crate::operation::create_dashboard::CreateDashboardError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_dashboard::CreateDashboardError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::operation::create_dashboard::CreateDashboardError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -716,6 +759,32 @@ impl From<crate::operation::delete_channel::DeleteChannelError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_dashboard::DeleteDashboardError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_dashboard::DeleteDashboardError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_dashboard::DeleteDashboardError> for Error {
+    fn from(err: crate::operation::delete_dashboard::DeleteDashboardError) -> Self {
+        match err {
+            crate::operation::delete_dashboard::DeleteDashboardError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_dashboard::DeleteDashboardError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_dashboard::DeleteDashboardError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::operation::delete_dashboard::DeleteDashboardError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_event_data_store::DeleteEventDataStoreError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -796,6 +865,7 @@ where
 impl From<crate::operation::delete_resource_policy::DeleteResourcePolicyError> for Error {
     fn from(err: crate::operation::delete_resource_policy::DeleteResourcePolicyError) -> Self {
         match err {
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::delete_resource_policy::DeleteResourcePolicyError::OperationNotPermittedException(inner) => {
                 Error::OperationNotPermittedException(inner)
             }
@@ -1157,6 +1227,29 @@ impl From<crate::operation::get_channel::GetChannelError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_dashboard::GetDashboardError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_dashboard::GetDashboardError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_dashboard::GetDashboardError> for Error {
+    fn from(err: crate::operation::get_dashboard::GetDashboardError) -> Self {
+        match err {
+            crate::operation::get_dashboard::GetDashboardError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_dashboard::GetDashboardError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::operation::get_dashboard::GetDashboardError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_event_data_store::GetEventDataStoreError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1469,6 +1562,30 @@ impl From<crate::operation::list_channels::ListChannelsError> for Error {
             crate::operation::list_channels::ListChannelsError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
             crate::operation::list_channels::ListChannelsError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::list_channels::ListChannelsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_dashboards::ListDashboardsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_dashboards::ListDashboardsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_dashboards::ListDashboardsError> for Error {
+    fn from(err: crate::operation::list_dashboards::ListDashboardsError) -> Self {
+        match err {
+            crate::operation::list_dashboards::ListDashboardsError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::operation::list_dashboards::ListDashboardsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1886,6 +2003,7 @@ where
 impl From<crate::operation::put_resource_policy::PutResourcePolicyError> for Error {
     fn from(err: crate::operation::put_resource_policy::PutResourcePolicyError) -> Self {
         match err {
+            crate::operation::put_resource_policy::PutResourcePolicyError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::put_resource_policy::PutResourcePolicyError::OperationNotPermittedException(inner) => {
                 Error::OperationNotPermittedException(inner)
             }
@@ -2056,6 +2174,44 @@ impl From<crate::operation::restore_event_data_store::RestoreEventDataStoreError
                 Error::UnsupportedOperationException(inner)
             }
             crate::operation::restore_event_data_store::RestoreEventDataStoreError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_dashboard_refresh::StartDashboardRefreshError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_dashboard_refresh::StartDashboardRefreshError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_dashboard_refresh::StartDashboardRefreshError> for Error {
+    fn from(err: crate::operation::start_dashboard_refresh::StartDashboardRefreshError) -> Self {
+        match err {
+            crate::operation::start_dashboard_refresh::StartDashboardRefreshError::EventDataStoreNotFoundException(inner) => {
+                Error::EventDataStoreNotFoundException(inner)
+            }
+            crate::operation::start_dashboard_refresh::StartDashboardRefreshError::InactiveEventDataStoreException(inner) => {
+                Error::InactiveEventDataStoreException(inner)
+            }
+            crate::operation::start_dashboard_refresh::StartDashboardRefreshError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_dashboard_refresh::StartDashboardRefreshError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::start_dashboard_refresh::StartDashboardRefreshError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::operation::start_dashboard_refresh::StartDashboardRefreshError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2363,6 +2519,47 @@ impl From<crate::operation::update_channel::UpdateChannelError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_dashboard::UpdateDashboardError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_dashboard::UpdateDashboardError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_dashboard::UpdateDashboardError> for Error {
+    fn from(err: crate::operation::update_dashboard::UpdateDashboardError) -> Self {
+        match err {
+            crate::operation::update_dashboard::UpdateDashboardError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_dashboard::UpdateDashboardError::EventDataStoreNotFoundException(inner) => {
+                Error::EventDataStoreNotFoundException(inner)
+            }
+            crate::operation::update_dashboard::UpdateDashboardError::InactiveEventDataStoreException(inner) => {
+                Error::InactiveEventDataStoreException(inner)
+            }
+            crate::operation::update_dashboard::UpdateDashboardError::InsufficientEncryptionPolicyException(inner) => {
+                Error::InsufficientEncryptionPolicyException(inner)
+            }
+            crate::operation::update_dashboard::UpdateDashboardError::InvalidQueryStatementException(inner) => {
+                Error::InvalidQueryStatementException(inner)
+            }
+            crate::operation::update_dashboard::UpdateDashboardError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_dashboard::UpdateDashboardError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::update_dashboard::UpdateDashboardError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::operation::update_dashboard::UpdateDashboardError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_event_data_store::UpdateEventDataStoreError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2605,6 +2802,7 @@ impl ::std::error::Error for Error {
             Error::ResourcePolicyNotValidException(inner) => inner.source(),
             Error::ResourceTypeNotSupportedException(inner) => inner.source(),
             Error::S3BucketDoesNotExistException(inner) => inner.source(),
+            Error::ServiceQuotaExceededException(inner) => inner.source(),
             Error::TagsLimitExceededException(inner) => inner.source(),
             Error::ThrottlingException(inner) => inner.source(),
             Error::TrailAlreadyExistsException(inner) => inner.source(),
@@ -2696,6 +2894,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ResourcePolicyNotValidException(e) => e.request_id(),
             Self::ResourceTypeNotSupportedException(e) => e.request_id(),
             Self::S3BucketDoesNotExistException(e) => e.request_id(),
+            Self::ServiceQuotaExceededException(e) => e.request_id(),
             Self::TagsLimitExceededException(e) => e.request_id(),
             Self::ThrottlingException(e) => e.request_id(),
             Self::TrailAlreadyExistsException(e) => e.request_id(),

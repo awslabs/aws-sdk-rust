@@ -13,6 +13,10 @@ pub struct CreateDecoderManifestInput {
     pub signal_decoders: ::std::option::Option<::std::vec::Vec<crate::types::SignalDecoder>>,
     /// <p>A list of information about available network interfaces.</p>
     pub network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
+    /// <p>Use default decoders for all unmapped signals in the model. You don't need to provide any detailed decoding information.</p><important>
+    /// <p>Access to certain Amazon Web Services IoT FleetWise features is currently gated. For more information, see <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/fleetwise-regions.html">Amazon Web Services Region and feature availability</a> in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>.</p>
+    /// </important>
+    pub default_for_unmapped_signals: ::std::option::Option<crate::types::DefaultForUnmappedSignalsType>,
     /// <p>Metadata that can be used to manage the decoder manifest.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
@@ -41,6 +45,12 @@ impl CreateDecoderManifestInput {
     pub fn network_interfaces(&self) -> &[crate::types::NetworkInterface] {
         self.network_interfaces.as_deref().unwrap_or_default()
     }
+    /// <p>Use default decoders for all unmapped signals in the model. You don't need to provide any detailed decoding information.</p><important>
+    /// <p>Access to certain Amazon Web Services IoT FleetWise features is currently gated. For more information, see <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/fleetwise-regions.html">Amazon Web Services Region and feature availability</a> in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>.</p>
+    /// </important>
+    pub fn default_for_unmapped_signals(&self) -> ::std::option::Option<&crate::types::DefaultForUnmappedSignalsType> {
+        self.default_for_unmapped_signals.as_ref()
+    }
     /// <p>Metadata that can be used to manage the decoder manifest.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
@@ -64,6 +74,7 @@ pub struct CreateDecoderManifestInputBuilder {
     pub(crate) model_manifest_arn: ::std::option::Option<::std::string::String>,
     pub(crate) signal_decoders: ::std::option::Option<::std::vec::Vec<crate::types::SignalDecoder>>,
     pub(crate) network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
+    pub(crate) default_for_unmapped_signals: ::std::option::Option<crate::types::DefaultForUnmappedSignalsType>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateDecoderManifestInputBuilder {
@@ -151,6 +162,26 @@ impl CreateDecoderManifestInputBuilder {
     pub fn get_network_interfaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>> {
         &self.network_interfaces
     }
+    /// <p>Use default decoders for all unmapped signals in the model. You don't need to provide any detailed decoding information.</p><important>
+    /// <p>Access to certain Amazon Web Services IoT FleetWise features is currently gated. For more information, see <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/fleetwise-regions.html">Amazon Web Services Region and feature availability</a> in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>.</p>
+    /// </important>
+    pub fn default_for_unmapped_signals(mut self, input: crate::types::DefaultForUnmappedSignalsType) -> Self {
+        self.default_for_unmapped_signals = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Use default decoders for all unmapped signals in the model. You don't need to provide any detailed decoding information.</p><important>
+    /// <p>Access to certain Amazon Web Services IoT FleetWise features is currently gated. For more information, see <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/fleetwise-regions.html">Amazon Web Services Region and feature availability</a> in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>.</p>
+    /// </important>
+    pub fn set_default_for_unmapped_signals(mut self, input: ::std::option::Option<crate::types::DefaultForUnmappedSignalsType>) -> Self {
+        self.default_for_unmapped_signals = input;
+        self
+    }
+    /// <p>Use default decoders for all unmapped signals in the model. You don't need to provide any detailed decoding information.</p><important>
+    /// <p>Access to certain Amazon Web Services IoT FleetWise features is currently gated. For more information, see <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/fleetwise-regions.html">Amazon Web Services Region and feature availability</a> in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>.</p>
+    /// </important>
+    pub fn get_default_for_unmapped_signals(&self) -> &::std::option::Option<crate::types::DefaultForUnmappedSignalsType> {
+        &self.default_for_unmapped_signals
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -182,6 +213,7 @@ impl CreateDecoderManifestInputBuilder {
             model_manifest_arn: self.model_manifest_arn,
             signal_decoders: self.signal_decoders,
             network_interfaces: self.network_interfaces,
+            default_for_unmapped_signals: self.default_for_unmapped_signals,
             tags: self.tags,
         })
     }

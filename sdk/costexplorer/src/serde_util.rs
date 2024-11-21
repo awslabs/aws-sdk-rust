@@ -44,6 +44,30 @@ pub(crate) fn get_anomaly_subscriptions_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_commitment_purchase_analysis_output_output_correct_errors(
+    mut builder: crate::operation::get_commitment_purchase_analysis::builders::GetCommitmentPurchaseAnalysisOutputBuilder,
+) -> crate::operation::get_commitment_purchase_analysis::builders::GetCommitmentPurchaseAnalysisOutputBuilder {
+    if builder.estimated_completion_time.is_none() {
+        builder.estimated_completion_time = Some(Default::default())
+    }
+    if builder.analysis_started_time.is_none() {
+        builder.analysis_started_time = Some(Default::default())
+    }
+    if builder.analysis_id.is_none() {
+        builder.analysis_id = Some(Default::default())
+    }
+    if builder.analysis_status.is_none() {
+        builder.analysis_status = "no value was set".parse::<crate::types::AnalysisStatus>().ok()
+    }
+    if builder.commitment_purchase_analysis_configuration.is_none() {
+        builder.commitment_purchase_analysis_configuration = {
+            let builder = crate::types::builders::CommitmentPurchaseAnalysisConfigurationBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn get_cost_categories_output_output_correct_errors(
     mut builder: crate::operation::get_cost_categories::builders::GetCostCategoriesOutputBuilder,
 ) -> crate::operation::get_cost_categories::builders::GetCostCategoriesOutputBuilder {
@@ -145,6 +169,21 @@ pub(crate) fn provide_anomaly_feedback_output_output_correct_errors(
 ) -> crate::operation::provide_anomaly_feedback::builders::ProvideAnomalyFeedbackOutputBuilder {
     if builder.anomaly_id.is_none() {
         builder.anomaly_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn start_commitment_purchase_analysis_output_output_correct_errors(
+    mut builder: crate::operation::start_commitment_purchase_analysis::builders::StartCommitmentPurchaseAnalysisOutputBuilder,
+) -> crate::operation::start_commitment_purchase_analysis::builders::StartCommitmentPurchaseAnalysisOutputBuilder {
+    if builder.analysis_id.is_none() {
+        builder.analysis_id = Some(Default::default())
+    }
+    if builder.analysis_started_time.is_none() {
+        builder.analysis_started_time = Some(Default::default())
+    }
+    if builder.estimated_completion_time.is_none() {
+        builder.estimated_completion_time = Some(Default::default())
     }
     builder
 }
@@ -293,6 +332,24 @@ pub(crate) fn resource_tag_correct_errors(mut builder: crate::types::builders::R
     }
     if builder.value.is_none() {
         builder.value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn savings_plans_purchase_analysis_configuration_correct_errors(
+    mut builder: crate::types::builders::SavingsPlansPurchaseAnalysisConfigurationBuilder,
+) -> crate::types::builders::SavingsPlansPurchaseAnalysisConfigurationBuilder {
+    if builder.analysis_type.is_none() {
+        builder.analysis_type = "no value was set".parse::<crate::types::AnalysisType>().ok()
+    }
+    if builder.savings_plans_to_add.is_none() {
+        builder.savings_plans_to_add = Some(Default::default())
+    }
+    if builder.look_back_time_period.is_none() {
+        builder.look_back_time_period = {
+            let builder = crate::types::builders::DateIntervalBuilder::default();
+            crate::serde_util::date_interval_correct_errors(builder).build().ok()
+        }
     }
     builder
 }

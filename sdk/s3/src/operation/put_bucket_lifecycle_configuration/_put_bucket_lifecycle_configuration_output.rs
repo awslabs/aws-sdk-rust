@@ -3,7 +3,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutBucketLifecycleConfigurationOutput {
-    /// <p>Indicates which default minimum object size behavior is applied to the lifecycle configuration.</p>
+    /// <p>Indicates which default minimum object size behavior is applied to the lifecycle configuration.</p><note>
+    /// <p>This parameter applies to general purpose buckets only. It is not supported for directory bucket lifecycle configurations.</p>
+    /// </note>
     /// <ul>
     /// <li>
     /// <p><code>all_storage_classes_128K</code> - Objects smaller than 128 KB will not transition to any storage class by default.</p></li>
@@ -16,7 +18,9 @@ pub struct PutBucketLifecycleConfigurationOutput {
     _request_id: Option<String>,
 }
 impl PutBucketLifecycleConfigurationOutput {
-    /// <p>Indicates which default minimum object size behavior is applied to the lifecycle configuration.</p>
+    /// <p>Indicates which default minimum object size behavior is applied to the lifecycle configuration.</p><note>
+    /// <p>This parameter applies to general purpose buckets only. It is not supported for directory bucket lifecycle configurations.</p>
+    /// </note>
     /// <ul>
     /// <li>
     /// <p><code>all_storage_classes_128K</code> - Objects smaller than 128 KB will not transition to any storage class by default.</p></li>
@@ -54,7 +58,9 @@ pub struct PutBucketLifecycleConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
 impl PutBucketLifecycleConfigurationOutputBuilder {
-    /// <p>Indicates which default minimum object size behavior is applied to the lifecycle configuration.</p>
+    /// <p>Indicates which default minimum object size behavior is applied to the lifecycle configuration.</p><note>
+    /// <p>This parameter applies to general purpose buckets only. It is not supported for directory bucket lifecycle configurations.</p>
+    /// </note>
     /// <ul>
     /// <li>
     /// <p><code>all_storage_classes_128K</code> - Objects smaller than 128 KB will not transition to any storage class by default.</p></li>
@@ -66,7 +72,9 @@ impl PutBucketLifecycleConfigurationOutputBuilder {
         self.transition_default_minimum_object_size = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates which default minimum object size behavior is applied to the lifecycle configuration.</p>
+    /// <p>Indicates which default minimum object size behavior is applied to the lifecycle configuration.</p><note>
+    /// <p>This parameter applies to general purpose buckets only. It is not supported for directory bucket lifecycle configurations.</p>
+    /// </note>
     /// <ul>
     /// <li>
     /// <p><code>all_storage_classes_128K</code> - Objects smaller than 128 KB will not transition to any storage class by default.</p></li>
@@ -81,7 +89,9 @@ impl PutBucketLifecycleConfigurationOutputBuilder {
         self.transition_default_minimum_object_size = input;
         self
     }
-    /// <p>Indicates which default minimum object size behavior is applied to the lifecycle configuration.</p>
+    /// <p>Indicates which default minimum object size behavior is applied to the lifecycle configuration.</p><note>
+    /// <p>This parameter applies to general purpose buckets only. It is not supported for directory bucket lifecycle configurations.</p>
+    /// </note>
     /// <ul>
     /// <li>
     /// <p><code>all_storage_classes_128K</code> - Objects smaller than 128 KB will not transition to any storage class by default.</p></li>

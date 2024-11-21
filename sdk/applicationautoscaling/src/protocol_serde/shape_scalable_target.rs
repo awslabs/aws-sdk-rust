@@ -49,6 +49,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "PredictedCapacity" => {
+                            builder = builder.set_predicted_capacity(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         "RoleARN" => {
                             builder = builder.set_role_arn(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

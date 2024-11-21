@@ -23,7 +23,7 @@ impl crate::operation::get_object_tagging::builders::GetObjectTaggingInputBuilde
 /// Fluent builder constructing a request to `GetObjectTagging`.
 ///
 /// <note>
-/// <p>This operation is not supported by directory buckets.</p>
+/// <p>This operation is not supported for directory buckets.</p>
 /// </note>
 /// <p>Returns the tag-set of an object. You send the GET request against the tagging subresource associated with the object.</p>
 /// <p>To use this operation, you must have permission to perform the <code>s3:GetObjectTagging</code> action. By default, the GET action returns information about current version of an object. For a versioned bucket, you can have multiple versions of an object in your bucket. To retrieve tags of any other version, use the versionId query parameter. You also need permission for the <code>s3:GetObjectVersionTagging</code> action.</p>

@@ -3,6 +3,68 @@ pub use crate::types::_s3_delivery_configuration::S3DeliveryConfigurationBuilder
 
 pub use crate::types::_suppression_period::SuppressionPeriodBuilder;
 
+pub use crate::types::_transformed_log_record::TransformedLogRecordBuilder;
+
+pub use crate::types::_processor::ProcessorBuilder;
+
+pub use crate::types::_upper_case_string::UpperCaseStringBuilder;
+
+pub use crate::types::_type_converter::TypeConverterBuilder;
+
+pub use crate::types::_type_converter_entry::TypeConverterEntryBuilder;
+
+pub use crate::types::_trim_string::TrimStringBuilder;
+
+pub use crate::types::_substitute_string::SubstituteStringBuilder;
+
+pub use crate::types::_substitute_string_entry::SubstituteStringEntryBuilder;
+
+pub use crate::types::_split_string::SplitStringBuilder;
+
+pub use crate::types::_split_string_entry::SplitStringEntryBuilder;
+
+pub use crate::types::_rename_keys::RenameKeysBuilder;
+
+pub use crate::types::_rename_key_entry::RenameKeyEntryBuilder;
+
+pub use crate::types::_parse_waf::ParseWafBuilder;
+
+pub use crate::types::_parse_vpc::ParseVpcBuilder;
+
+pub use crate::types::_parse_postgres::ParsePostgresBuilder;
+
+pub use crate::types::_parse_route53::ParseRoute53Builder;
+
+pub use crate::types::_parse_key_value::ParseKeyValueBuilder;
+
+pub use crate::types::_parse_json::ParseJsonBuilder;
+
+pub use crate::types::_parse_cloudfront::ParseCloudfrontBuilder;
+
+pub use crate::types::_move_keys::MoveKeysBuilder;
+
+pub use crate::types::_move_key_entry::MoveKeyEntryBuilder;
+
+pub use crate::types::_lower_case_string::LowerCaseStringBuilder;
+
+pub use crate::types::_list_to_map::ListToMapBuilder;
+
+pub use crate::types::_grok::GrokBuilder;
+
+pub use crate::types::_delete_keys::DeleteKeysBuilder;
+
+pub use crate::types::_date_time_converter::DateTimeConverterBuilder;
+
+pub use crate::types::_csv::CsvBuilder;
+
+pub use crate::types::_copy_value::CopyValueBuilder;
+
+pub use crate::types::_copy_value_entry::CopyValueEntryBuilder;
+
+pub use crate::types::_add_keys::AddKeysBuilder;
+
+pub use crate::types::_add_key_entry::AddKeyEntryBuilder;
+
 pub use crate::types::_metric_filter_match_record::MetricFilterMatchRecordBuilder;
 
 pub use crate::types::_query_compile_error::QueryCompileErrorBuilder;
@@ -20,6 +82,8 @@ pub use crate::types::_rejected_log_events_info::RejectedLogEventsInfoBuilder;
 pub use crate::types::_entity::EntityBuilder;
 
 pub use crate::types::_input_log_event::InputLogEventBuilder;
+
+pub use crate::types::_index_policy::IndexPolicyBuilder;
 
 pub use crate::types::_destination::DestinationBuilder;
 
@@ -66,6 +130,8 @@ pub use crate::types::_metric_filter::MetricFilterBuilder;
 pub use crate::types::_log_stream::LogStreamBuilder;
 
 pub use crate::types::_log_group::LogGroupBuilder;
+
+pub use crate::types::_field_index::FieldIndexBuilder;
 
 pub use crate::types::_export_task::ExportTaskBuilder;
 

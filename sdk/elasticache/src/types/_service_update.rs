@@ -12,7 +12,7 @@ pub struct ServiceUpdate {
     pub service_update_end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The severity of the service update</p>
     pub service_update_severity: ::std::option::Option<crate::types::ServiceUpdateSeverity>,
-    /// <p>The recommendend date to apply the service update in order to ensure compliance. For information on compliance, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/elasticache-compliance.html#elasticache-compliance-self-service">Self-Service Security Updates for Compliance</a>.</p>
+    /// <p>The recommendend date to apply the service update in order to ensure compliance. For information on compliance, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/elasticache-compliance.html#elasticache-compliance-self-service">Self-Service Security Updates for Compliance</a>.</p>
     pub service_update_recommended_apply_by_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the service update</p>
     pub service_update_status: ::std::option::Option<crate::types::ServiceUpdateStatus>,
@@ -46,7 +46,7 @@ impl ServiceUpdate {
     pub fn service_update_severity(&self) -> ::std::option::Option<&crate::types::ServiceUpdateSeverity> {
         self.service_update_severity.as_ref()
     }
-    /// <p>The recommendend date to apply the service update in order to ensure compliance. For information on compliance, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/elasticache-compliance.html#elasticache-compliance-self-service">Self-Service Security Updates for Compliance</a>.</p>
+    /// <p>The recommendend date to apply the service update in order to ensure compliance. For information on compliance, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/elasticache-compliance.html#elasticache-compliance-self-service">Self-Service Security Updates for Compliance</a>.</p>
     pub fn service_update_recommended_apply_by_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.service_update_recommended_apply_by_date.as_ref()
     }
@@ -160,17 +160,17 @@ impl ServiceUpdateBuilder {
     pub fn get_service_update_severity(&self) -> &::std::option::Option<crate::types::ServiceUpdateSeverity> {
         &self.service_update_severity
     }
-    /// <p>The recommendend date to apply the service update in order to ensure compliance. For information on compliance, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/elasticache-compliance.html#elasticache-compliance-self-service">Self-Service Security Updates for Compliance</a>.</p>
+    /// <p>The recommendend date to apply the service update in order to ensure compliance. For information on compliance, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/elasticache-compliance.html#elasticache-compliance-self-service">Self-Service Security Updates for Compliance</a>.</p>
     pub fn service_update_recommended_apply_by_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.service_update_recommended_apply_by_date = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The recommendend date to apply the service update in order to ensure compliance. For information on compliance, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/elasticache-compliance.html#elasticache-compliance-self-service">Self-Service Security Updates for Compliance</a>.</p>
+    /// <p>The recommendend date to apply the service update in order to ensure compliance. For information on compliance, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/elasticache-compliance.html#elasticache-compliance-self-service">Self-Service Security Updates for Compliance</a>.</p>
     pub fn set_service_update_recommended_apply_by_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.service_update_recommended_apply_by_date = input;
         self
     }
-    /// <p>The recommendend date to apply the service update in order to ensure compliance. For information on compliance, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/elasticache-compliance.html#elasticache-compliance-self-service">Self-Service Security Updates for Compliance</a>.</p>
+    /// <p>The recommendend date to apply the service update in order to ensure compliance. For information on compliance, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/elasticache-compliance.html#elasticache-compliance-self-service">Self-Service Security Updates for Compliance</a>.</p>
     pub fn get_service_update_recommended_apply_by_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.service_update_recommended_apply_by_date
     }

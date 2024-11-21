@@ -7,7 +7,9 @@ pub struct CreatePatchBaselineInput {
     pub operating_system: ::std::option::Option<crate::types::OperatingSystem>,
     /// <p>The name of the patch baseline.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>A set of global filters used to include patches in the baseline.</p>
+    /// <p>A set of global filters used to include patches in the baseline.</p><important>
+    /// <p>The <code>GlobalFilters</code> parameter can be configured only by using the CLI or an Amazon Web Services SDK. It can't be configured from the Patch Manager console, and its value isn't displayed in the console.</p>
+    /// </important>
     pub global_filters: ::std::option::Option<crate::types::PatchFilterGroup>,
     /// <p>A set of rules used to include patches in the baseline.</p>
     pub approval_rules: ::std::option::Option<crate::types::PatchRuleGroup>,
@@ -64,7 +66,9 @@ impl CreatePatchBaselineInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A set of global filters used to include patches in the baseline.</p>
+    /// <p>A set of global filters used to include patches in the baseline.</p><important>
+    /// <p>The <code>GlobalFilters</code> parameter can be configured only by using the CLI or an Amazon Web Services SDK. It can't be configured from the Patch Manager console, and its value isn't displayed in the console.</p>
+    /// </important>
     pub fn global_filters(&self) -> ::std::option::Option<&crate::types::PatchFilterGroup> {
         self.global_filters.as_ref()
     }
@@ -197,17 +201,23 @@ impl CreatePatchBaselineInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>A set of global filters used to include patches in the baseline.</p>
+    /// <p>A set of global filters used to include patches in the baseline.</p><important>
+    /// <p>The <code>GlobalFilters</code> parameter can be configured only by using the CLI or an Amazon Web Services SDK. It can't be configured from the Patch Manager console, and its value isn't displayed in the console.</p>
+    /// </important>
     pub fn global_filters(mut self, input: crate::types::PatchFilterGroup) -> Self {
         self.global_filters = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A set of global filters used to include patches in the baseline.</p>
+    /// <p>A set of global filters used to include patches in the baseline.</p><important>
+    /// <p>The <code>GlobalFilters</code> parameter can be configured only by using the CLI or an Amazon Web Services SDK. It can't be configured from the Patch Manager console, and its value isn't displayed in the console.</p>
+    /// </important>
     pub fn set_global_filters(mut self, input: ::std::option::Option<crate::types::PatchFilterGroup>) -> Self {
         self.global_filters = input;
         self
     }
-    /// <p>A set of global filters used to include patches in the baseline.</p>
+    /// <p>A set of global filters used to include patches in the baseline.</p><important>
+    /// <p>The <code>GlobalFilters</code> parameter can be configured only by using the CLI or an Amazon Web Services SDK. It can't be configured from the Patch Manager console, and its value isn't displayed in the console.</p>
+    /// </important>
     pub fn get_global_filters(&self) -> &::std::option::Option<crate::types::PatchFilterGroup> {
         &self.global_filters
     }

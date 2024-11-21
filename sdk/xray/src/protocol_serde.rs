@@ -25,6 +25,8 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_batch_get_traces;
 
+pub(crate) mod shape_cancel_trace_retrieval;
+
 pub(crate) mod shape_create_group;
 
 pub(crate) mod shape_create_sampling_rule;
@@ -41,6 +43,8 @@ pub(crate) mod shape_get_group;
 
 pub(crate) mod shape_get_groups;
 
+pub(crate) mod shape_get_indexing_rules;
+
 pub(crate) mod shape_get_insight;
 
 pub(crate) mod shape_get_insight_events;
@@ -48,6 +52,8 @@ pub(crate) mod shape_get_insight_events;
 pub(crate) mod shape_get_insight_impact_graph;
 
 pub(crate) mod shape_get_insight_summaries;
+
+pub(crate) mod shape_get_retrieved_traces_graph;
 
 pub(crate) mod shape_get_sampling_rules;
 
@@ -61,9 +67,13 @@ pub(crate) mod shape_get_time_series_service_statistics;
 
 pub(crate) mod shape_get_trace_graph;
 
+pub(crate) mod shape_get_trace_segment_destination;
+
 pub(crate) mod shape_get_trace_summaries;
 
 pub(crate) mod shape_list_resource_policies;
+
+pub(crate) mod shape_list_retrieved_traces;
 
 pub(crate) mod shape_list_tags_for_resource;
 
@@ -75,13 +85,19 @@ pub(crate) mod shape_put_telemetry_records;
 
 pub(crate) mod shape_put_trace_segments;
 
+pub(crate) mod shape_start_trace_retrieval;
+
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_group;
 
+pub(crate) mod shape_update_indexing_rule;
+
 pub(crate) mod shape_update_sampling_rule;
+
+pub(crate) mod shape_update_trace_segment_destination;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -92,6 +108,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 }
 
 pub(crate) mod shape_batch_get_traces_input;
+
+pub(crate) mod shape_cancel_trace_retrieval_input;
 
 pub(crate) mod shape_create_group_input;
 
@@ -107,6 +125,8 @@ pub(crate) mod shape_get_group_input;
 
 pub(crate) mod shape_get_groups_input;
 
+pub(crate) mod shape_get_indexing_rules_input;
+
 pub(crate) mod shape_get_insight_events_input;
 
 pub(crate) mod shape_get_insight_impact_graph_input;
@@ -114,6 +134,8 @@ pub(crate) mod shape_get_insight_impact_graph_input;
 pub(crate) mod shape_get_insight_input;
 
 pub(crate) mod shape_get_insight_summaries_input;
+
+pub(crate) mod shape_get_retrieved_traces_graph_input;
 
 pub(crate) mod shape_get_sampling_rules_input;
 
@@ -134,6 +156,8 @@ pub(crate) mod shape_invalid_policy_revision_id_exception;
 pub(crate) mod shape_invalid_request_exception;
 
 pub(crate) mod shape_list_resource_policies_input;
+
+pub(crate) mod shape_list_retrieved_traces_input;
 
 pub(crate) mod shape_list_tags_for_resource_input;
 
@@ -157,6 +181,8 @@ pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_rule_limit_exceeded_exception;
 
+pub(crate) mod shape_start_trace_retrieval_input;
+
 pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_throttled_exception;
@@ -167,13 +193,23 @@ pub(crate) mod shape_untag_resource_input;
 
 pub(crate) mod shape_update_group_input;
 
+pub(crate) mod shape_update_indexing_rule_input;
+
 pub(crate) mod shape_update_sampling_rule_input;
+
+pub(crate) mod shape_update_trace_segment_destination_input;
 
 pub(crate) mod shape_encryption_config;
 
 pub(crate) mod shape_group;
 
 pub(crate) mod shape_group_summary_list;
+
+pub(crate) mod shape_indexing_rule;
+
+pub(crate) mod shape_indexing_rule_list;
+
+pub(crate) mod shape_indexing_rule_value_update;
 
 pub(crate) mod shape_insight;
 
@@ -188,6 +224,8 @@ pub(crate) mod shape_insights_configuration;
 pub(crate) mod shape_resource_policy;
 
 pub(crate) mod shape_resource_policy_list;
+
+pub(crate) mod shape_retrieved_services_list;
 
 pub(crate) mod shape_sampling_rule;
 
@@ -217,6 +255,8 @@ pub(crate) mod shape_time_series_service_statistics_list;
 
 pub(crate) mod shape_trace_list;
 
+pub(crate) mod shape_trace_span_list;
+
 pub(crate) mod shape_trace_summary_list;
 
 pub(crate) mod shape_unprocessed_statistics_list;
@@ -231,6 +271,8 @@ pub(crate) mod shape_backend_connection_errors;
 
 pub(crate) mod shape_group_summary;
 
+pub(crate) mod shape_indexing_rule_value;
+
 pub(crate) mod shape_insight_category_list;
 
 pub(crate) mod shape_insight_event;
@@ -239,7 +281,13 @@ pub(crate) mod shape_insight_impact_graph_service;
 
 pub(crate) mod shape_insight_summary;
 
+pub(crate) mod shape_probabilistic_rule_value_update;
+
 pub(crate) mod shape_request_impact_statistics;
+
+pub(crate) mod shape_retrieved_service;
+
+pub(crate) mod shape_retrieved_trace;
 
 pub(crate) mod shape_sampling_statistic_summary;
 
@@ -281,6 +329,10 @@ pub(crate) mod shape_http;
 
 pub(crate) mod shape_insight_impact_graph_edge_list;
 
+pub(crate) mod shape_links_list;
+
+pub(crate) mod shape_probabilistic_rule_value;
+
 pub(crate) mod shape_response_time_root_causes;
 
 pub(crate) mod shape_segment_list;
@@ -290,6 +342,8 @@ pub(crate) mod shape_service_ids;
 pub(crate) mod shape_service_names;
 
 pub(crate) mod shape_service_statistics;
+
+pub(crate) mod shape_span_list;
 
 pub(crate) mod shape_trace_availability_zones;
 
@@ -311,6 +365,8 @@ pub(crate) mod shape_fault_root_cause;
 
 pub(crate) mod shape_fault_statistics;
 
+pub(crate) mod shape_graph_link;
+
 pub(crate) mod shape_histogram_entry;
 
 pub(crate) mod shape_insight_impact_graph_edge;
@@ -323,6 +379,8 @@ pub(crate) mod shape_response_time_root_cause;
 
 pub(crate) mod shape_segment;
 
+pub(crate) mod shape_span;
+
 pub(crate) mod shape_trace_user;
 
 pub(crate) mod shape_values_with_service_ids;
@@ -334,6 +392,8 @@ pub(crate) mod shape_error_root_cause_services;
 pub(crate) mod shape_fault_root_cause_services;
 
 pub(crate) mod shape_response_time_root_cause_services;
+
+pub(crate) mod shape_trace_id_list;
 
 pub(crate) mod shape_value_with_service_ids;
 

@@ -36,17 +36,20 @@ pub fn ser_create_decoder_manifest_input_input(
         }
         array_9.finish();
     }
-    if let Some(var_12) = &input.tags {
-        let mut array_13 = object.key("tags").start_array();
-        for item_14 in var_12 {
+    if let Some(var_12) = &input.default_for_unmapped_signals {
+        object.key("defaultForUnmappedSignals").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.tags {
+        let mut array_14 = object.key("tags").start_array();
+        for item_15 in var_13 {
             {
                 #[allow(unused_mut)]
-                let mut object_15 = array_13.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_15, item_14)?;
-                object_15.finish();
+                let mut object_16 = array_14.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_16, item_15)?;
+                object_16.finish();
             }
         }
-        array_13.finish();
+        array_14.finish();
     }
     Ok(())
 }

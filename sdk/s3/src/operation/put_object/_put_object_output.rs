@@ -40,6 +40,10 @@ pub struct PutObjectOutput {
     pub ssekms_encryption_context: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the uploaded object uses an S3 Bucket Key for server-side encryption with Key Management Service (KMS) keys (SSE-KMS).</p>
     pub bucket_key_enabled: ::std::option::Option<bool>,
+    /// <p>The size of the object in bytes. This will only be present if you append to an object.</p><note>
+    /// <p>This functionality is only supported for objects in the Amazon S3 Express One Zone storage class in directory buckets.</p>
+    /// </note>
+    pub size: ::std::option::Option<i64>,
     /// <p>If present, indicates that the requester was successfully charged for the request.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
@@ -111,6 +115,12 @@ impl PutObjectOutput {
     pub fn bucket_key_enabled(&self) -> ::std::option::Option<bool> {
         self.bucket_key_enabled
     }
+    /// <p>The size of the object in bytes. This will only be present if you append to an object.</p><note>
+    /// <p>This functionality is only supported for objects in the Amazon S3 Express One Zone storage class in directory buckets.</p>
+    /// </note>
+    pub fn size(&self) -> ::std::option::Option<i64> {
+        self.size
+    }
     /// <p>If present, indicates that the requester was successfully charged for the request.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
@@ -134,6 +144,7 @@ impl ::std::fmt::Debug for PutObjectOutput {
         formatter.field("ssekms_key_id", &"*** Sensitive Data Redacted ***");
         formatter.field("ssekms_encryption_context", &"*** Sensitive Data Redacted ***");
         formatter.field("bucket_key_enabled", &self.bucket_key_enabled);
+        formatter.field("size", &self.size);
         formatter.field("request_charged", &self.request_charged);
         formatter.field("_extended_request_id", &self._extended_request_id);
         formatter.field("_request_id", &self._request_id);
@@ -174,6 +185,7 @@ pub struct PutObjectOutputBuilder {
     pub(crate) ssekms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) ssekms_encryption_context: ::std::option::Option<::std::string::String>,
     pub(crate) bucket_key_enabled: ::std::option::Option<bool>,
+    pub(crate) size: ::std::option::Option<i64>,
     pub(crate) request_charged: ::std::option::Option<crate::types::RequestCharged>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,
@@ -394,6 +406,26 @@ impl PutObjectOutputBuilder {
     pub fn get_bucket_key_enabled(&self) -> &::std::option::Option<bool> {
         &self.bucket_key_enabled
     }
+    /// <p>The size of the object in bytes. This will only be present if you append to an object.</p><note>
+    /// <p>This functionality is only supported for objects in the Amazon S3 Express One Zone storage class in directory buckets.</p>
+    /// </note>
+    pub fn size(mut self, input: i64) -> Self {
+        self.size = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The size of the object in bytes. This will only be present if you append to an object.</p><note>
+    /// <p>This functionality is only supported for objects in the Amazon S3 Express One Zone storage class in directory buckets.</p>
+    /// </note>
+    pub fn set_size(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.size = input;
+        self
+    }
+    /// <p>The size of the object in bytes. This will only be present if you append to an object.</p><note>
+    /// <p>This functionality is only supported for objects in the Amazon S3 Express One Zone storage class in directory buckets.</p>
+    /// </note>
+    pub fn get_size(&self) -> &::std::option::Option<i64> {
+        &self.size
+    }
     /// <p>If present, indicates that the requester was successfully charged for the request.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
@@ -448,6 +480,7 @@ impl PutObjectOutputBuilder {
             ssekms_key_id: self.ssekms_key_id,
             ssekms_encryption_context: self.ssekms_encryption_context,
             bucket_key_enabled: self.bucket_key_enabled,
+            size: self.size,
             request_charged: self.request_charged,
             _extended_request_id: self._extended_request_id,
             _request_id: self._request_id,
@@ -470,6 +503,7 @@ impl ::std::fmt::Debug for PutObjectOutputBuilder {
         formatter.field("ssekms_key_id", &"*** Sensitive Data Redacted ***");
         formatter.field("ssekms_encryption_context", &"*** Sensitive Data Redacted ***");
         formatter.field("bucket_key_enabled", &self.bucket_key_enabled);
+        formatter.field("size", &self.size);
         formatter.field("request_charged", &self.request_charged);
         formatter.field("_extended_request_id", &self._extended_request_id);
         formatter.field("_request_id", &self._request_id);

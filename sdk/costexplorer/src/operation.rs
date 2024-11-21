@@ -34,6 +34,9 @@ pub mod get_anomaly_subscriptions;
 /// Types for the `GetApproximateUsageRecords` operation.
 pub mod get_approximate_usage_records;
 
+/// Types for the `GetCommitmentPurchaseAnalysis` operation.
+pub mod get_commitment_purchase_analysis;
+
 /// Types for the `GetCostAndUsage` operation.
 pub mod get_cost_and_usage;
 
@@ -82,6 +85,9 @@ pub mod get_tags;
 /// Types for the `GetUsageForecast` operation.
 pub mod get_usage_forecast;
 
+/// Types for the `ListCommitmentPurchaseAnalyses` operation.
+pub mod list_commitment_purchase_analyses;
+
 /// Types for the `ListCostAllocationTagBackfillHistory` operation.
 pub mod list_cost_allocation_tag_backfill_history;
 
@@ -99,6 +105,9 @@ pub mod list_tags_for_resource;
 
 /// Types for the `ProvideAnomalyFeedback` operation.
 pub mod provide_anomaly_feedback;
+
+/// Types for the `StartCommitmentPurchaseAnalysis` operation.
+pub mod start_commitment_purchase_analysis;
 
 /// Types for the `StartCostAllocationTagBackfill` operation.
 pub mod start_cost_allocation_tag_backfill;

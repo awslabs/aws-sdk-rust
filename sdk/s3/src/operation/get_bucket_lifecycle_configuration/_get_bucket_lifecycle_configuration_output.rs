@@ -5,7 +5,9 @@
 pub struct GetBucketLifecycleConfigurationOutput {
     /// <p>Container for a lifecycle rule.</p>
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleRule>>,
-    /// <p>Indicates which default minimum object size behavior is applied to the lifecycle configuration.</p>
+    /// <p>Indicates which default minimum object size behavior is applied to the lifecycle configuration.</p><note>
+    /// <p>This parameter applies to general purpose buckets only. It is not supported for directory bucket lifecycle configurations.</p>
+    /// </note>
     /// <ul>
     /// <li>
     /// <p><code>all_storage_classes_128K</code> - Objects smaller than 128 KB will not transition to any storage class by default.</p></li>
@@ -24,7 +26,9 @@ impl GetBucketLifecycleConfigurationOutput {
     pub fn rules(&self) -> &[crate::types::LifecycleRule] {
         self.rules.as_deref().unwrap_or_default()
     }
-    /// <p>Indicates which default minimum object size behavior is applied to the lifecycle configuration.</p>
+    /// <p>Indicates which default minimum object size behavior is applied to the lifecycle configuration.</p><note>
+    /// <p>This parameter applies to general purpose buckets only. It is not supported for directory bucket lifecycle configurations.</p>
+    /// </note>
     /// <ul>
     /// <li>
     /// <p><code>all_storage_classes_128K</code> - Objects smaller than 128 KB will not transition to any storage class by default.</p></li>
@@ -83,7 +87,9 @@ impl GetBucketLifecycleConfigurationOutputBuilder {
     pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecycleRule>> {
         &self.rules
     }
-    /// <p>Indicates which default minimum object size behavior is applied to the lifecycle configuration.</p>
+    /// <p>Indicates which default minimum object size behavior is applied to the lifecycle configuration.</p><note>
+    /// <p>This parameter applies to general purpose buckets only. It is not supported for directory bucket lifecycle configurations.</p>
+    /// </note>
     /// <ul>
     /// <li>
     /// <p><code>all_storage_classes_128K</code> - Objects smaller than 128 KB will not transition to any storage class by default.</p></li>
@@ -95,7 +101,9 @@ impl GetBucketLifecycleConfigurationOutputBuilder {
         self.transition_default_minimum_object_size = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates which default minimum object size behavior is applied to the lifecycle configuration.</p>
+    /// <p>Indicates which default minimum object size behavior is applied to the lifecycle configuration.</p><note>
+    /// <p>This parameter applies to general purpose buckets only. It is not supported for directory bucket lifecycle configurations.</p>
+    /// </note>
     /// <ul>
     /// <li>
     /// <p><code>all_storage_classes_128K</code> - Objects smaller than 128 KB will not transition to any storage class by default.</p></li>
@@ -110,7 +118,9 @@ impl GetBucketLifecycleConfigurationOutputBuilder {
         self.transition_default_minimum_object_size = input;
         self
     }
-    /// <p>Indicates which default minimum object size behavior is applied to the lifecycle configuration.</p>
+    /// <p>Indicates which default minimum object size behavior is applied to the lifecycle configuration.</p><note>
+    /// <p>This parameter applies to general purpose buckets only. It is not supported for directory bucket lifecycle configurations.</p>
+    /// </note>
     /// <ul>
     /// <li>
     /// <p><code>all_storage_classes_128K</code> - Objects smaller than 128 KB will not transition to any storage class by default.</p></li>

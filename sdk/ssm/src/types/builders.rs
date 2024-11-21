@@ -81,6 +81,8 @@ pub use crate::types::_association_overview::AssociationOverviewBuilder;
 
 pub use crate::types::_association_status::AssociationStatusBuilder;
 
+pub use crate::types::_automation_execution_inputs::AutomationExecutionInputsBuilder;
+
 pub use crate::types::_runbook::RunbookBuilder;
 
 pub use crate::types::_command::CommandBuilder;
@@ -124,6 +126,16 @@ pub use crate::types::_ops_item_related_items_filter::OpsItemRelatedItemsFilterB
 pub use crate::types::_ops_item_event_summary::OpsItemEventSummaryBuilder;
 
 pub use crate::types::_ops_item_event_filter::OpsItemEventFilterBuilder;
+
+pub use crate::types::_node_aggregator::NodeAggregatorBuilder;
+
+pub use crate::types::_node_filter::NodeFilterBuilder;
+
+pub use crate::types::_node::NodeBuilder;
+
+pub use crate::types::_instance_info::InstanceInfoBuilder;
+
+pub use crate::types::_node_owner_info::NodeOwnerInfoBuilder;
 
 pub use crate::types::_inventory_filter::InventoryFilterBuilder;
 
@@ -190,6 +202,10 @@ pub use crate::types::_result_attribute::ResultAttributeBuilder;
 pub use crate::types::_inventory_aggregator::InventoryAggregatorBuilder;
 
 pub use crate::types::_inventory_group::InventoryGroupBuilder;
+
+pub use crate::types::_automation_execution_preview::AutomationExecutionPreviewBuilder;
+
+pub use crate::types::_target_preview::TargetPreviewBuilder;
 
 pub use crate::types::_attachment_content::AttachmentContentBuilder;
 

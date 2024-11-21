@@ -71,6 +71,8 @@ pub struct UpdateEventSourceMappingOutput {
     pub filter_criteria_error: ::std::option::Option<crate::types::FilterCriteriaError>,
     /// <p>The Amazon Resource Name (ARN) of the event source mapping.</p>
     pub event_source_mapping_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The metrics configuration for your event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics">Event source mapping metrics</a>.</p>
+    pub metrics_config: ::std::option::Option<crate::types::EventSourceMappingMetricsConfig>,
     _request_id: Option<String>,
 }
 impl UpdateEventSourceMappingOutput {
@@ -209,6 +211,10 @@ impl UpdateEventSourceMappingOutput {
     pub fn event_source_mapping_arn(&self) -> ::std::option::Option<&str> {
         self.event_source_mapping_arn.as_deref()
     }
+    /// <p>The metrics configuration for your event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics">Event source mapping metrics</a>.</p>
+    pub fn metrics_config(&self) -> ::std::option::Option<&crate::types::EventSourceMappingMetricsConfig> {
+        self.metrics_config.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for UpdateEventSourceMappingOutput {
     fn request_id(&self) -> Option<&str> {
@@ -256,6 +262,7 @@ pub struct UpdateEventSourceMappingOutputBuilder {
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) filter_criteria_error: ::std::option::Option<crate::types::FilterCriteriaError>,
     pub(crate) event_source_mapping_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) metrics_config: ::std::option::Option<crate::types::EventSourceMappingMetricsConfig>,
     _request_id: Option<String>,
 }
 impl UpdateEventSourceMappingOutputBuilder {
@@ -733,6 +740,20 @@ impl UpdateEventSourceMappingOutputBuilder {
     pub fn get_event_source_mapping_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_source_mapping_arn
     }
+    /// <p>The metrics configuration for your event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics">Event source mapping metrics</a>.</p>
+    pub fn metrics_config(mut self, input: crate::types::EventSourceMappingMetricsConfig) -> Self {
+        self.metrics_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The metrics configuration for your event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics">Event source mapping metrics</a>.</p>
+    pub fn set_metrics_config(mut self, input: ::std::option::Option<crate::types::EventSourceMappingMetricsConfig>) -> Self {
+        self.metrics_config = input;
+        self
+    }
+    /// <p>The metrics configuration for your event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics">Event source mapping metrics</a>.</p>
+    pub fn get_metrics_config(&self) -> &::std::option::Option<crate::types::EventSourceMappingMetricsConfig> {
+        &self.metrics_config
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -775,6 +796,7 @@ impl UpdateEventSourceMappingOutputBuilder {
             kms_key_arn: self.kms_key_arn,
             filter_criteria_error: self.filter_criteria_error,
             event_source_mapping_arn: self.event_source_mapping_arn,
+            metrics_config: self.metrics_config,
             _request_id: self._request_id,
         }
     }

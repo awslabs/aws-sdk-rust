@@ -22,6 +22,9 @@ pub mod create_documentation_version;
 /// Types for the `CreateDomainName` operation.
 pub mod create_domain_name;
 
+/// Types for the `CreateDomainNameAccessAssociation` operation.
+pub mod create_domain_name_access_association;
+
 /// Types for the `CreateModel` operation.
 pub mod create_model;
 
@@ -69,6 +72,9 @@ pub mod delete_documentation_version;
 
 /// Types for the `DeleteDomainName` operation.
 pub mod delete_domain_name;
+
+/// Types for the `DeleteDomainNameAccessAssociation` operation.
+pub mod delete_domain_name_access_association;
 
 /// Types for the `DeleteGatewayResponse` operation.
 pub mod delete_gateway_response;
@@ -165,6 +171,9 @@ pub mod get_documentation_versions;
 
 /// Types for the `GetDomainName` operation.
 pub mod get_domain_name;
+
+/// Types for the `GetDomainNameAccessAssociations` operation.
+pub mod get_domain_name_access_associations;
 
 /// Types for the `GetDomainNames` operation.
 pub mod get_domain_names;
@@ -282,6 +291,9 @@ pub mod put_method_response;
 
 /// Types for the `PutRestApi` operation.
 pub mod put_rest_api;
+
+/// Types for the `RejectDomainNameAccessAssociation` operation.
+pub mod reject_domain_name_access_association;
 
 /// Types for the `TagResource` operation.
 pub mod tag_resource;

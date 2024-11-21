@@ -253,7 +253,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeInsta
 pub enum DescribeInstancePropertiesError {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::types::error::InternalServerError),
-    /// <p>The activation ID isn't valid. Verify the you entered the correct ActivationId or ActivationCode and try again.</p>
+    /// <p>The activation ID isn't valid. Verify that you entered the correct ActivationId or ActivationCode and try again.</p>
     InvalidActivationId(crate::types::error::InvalidActivationId),
     /// <p>The specified SSM document doesn't exist.</p>
     InvalidDocument(crate::types::error::InvalidDocument),

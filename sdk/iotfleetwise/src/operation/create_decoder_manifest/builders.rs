@@ -198,6 +198,26 @@ impl CreateDecoderManifestFluentBuilder {
     pub fn get_network_interfaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>> {
         self.inner.get_network_interfaces()
     }
+    /// <p>Use default decoders for all unmapped signals in the model. You don't need to provide any detailed decoding information.</p><important>
+    /// <p>Access to certain Amazon Web Services IoT FleetWise features is currently gated. For more information, see <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/fleetwise-regions.html">Amazon Web Services Region and feature availability</a> in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>.</p>
+    /// </important>
+    pub fn default_for_unmapped_signals(mut self, input: crate::types::DefaultForUnmappedSignalsType) -> Self {
+        self.inner = self.inner.default_for_unmapped_signals(input);
+        self
+    }
+    /// <p>Use default decoders for all unmapped signals in the model. You don't need to provide any detailed decoding information.</p><important>
+    /// <p>Access to certain Amazon Web Services IoT FleetWise features is currently gated. For more information, see <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/fleetwise-regions.html">Amazon Web Services Region and feature availability</a> in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>.</p>
+    /// </important>
+    pub fn set_default_for_unmapped_signals(mut self, input: ::std::option::Option<crate::types::DefaultForUnmappedSignalsType>) -> Self {
+        self.inner = self.inner.set_default_for_unmapped_signals(input);
+        self
+    }
+    /// <p>Use default decoders for all unmapped signals in the model. You don't need to provide any detailed decoding information.</p><important>
+    /// <p>Access to certain Amazon Web Services IoT FleetWise features is currently gated. For more information, see <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/fleetwise-regions.html">Amazon Web Services Region and feature availability</a> in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>.</p>
+    /// </important>
+    pub fn get_default_for_unmapped_signals(&self) -> &::std::option::Option<crate::types::DefaultForUnmappedSignalsType> {
+        self.inner.get_default_for_unmapped_signals()
+    }
     ///
     /// Appends an item to `tags`.
     ///

@@ -22,7 +22,7 @@ impl crate::operation::create_user_group::builders::CreateUserGroupInputBuilder 
 }
 /// Fluent builder constructing a request to `CreateUserGroup`.
 ///
-/// <p>For Valkey engine version 7.2 onwards and Redis OSS 6.0 onwards: Creates a user group. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using Role Based Access Control (RBAC)</a></p>
+/// <p>For Valkey engine version 7.2 onwards and Redis OSS 6.0 onwards: Creates a user group. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Clusters.RBAC.html">Using Role Based Access Control (RBAC)</a></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateUserGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

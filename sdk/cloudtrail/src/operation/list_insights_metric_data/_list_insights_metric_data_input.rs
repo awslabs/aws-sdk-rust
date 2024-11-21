@@ -20,9 +20,9 @@ pub struct ListInsightsMetricDataInput {
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Granularity of data to retrieve, in seconds. Valid values are <code>60</code>, <code>300</code>, and <code>3600</code>. If you specify any other value, you will get an error. The default is 3600 seconds.</p>
     pub period: ::std::option::Option<i32>,
-    /// <p>Type of datapoints to return. Valid values are <code>NonZeroData</code> and <code>FillWithZeros</code>. The default is <code>NonZeroData</code>.</p>
+    /// <p>Type of data points to return. Valid values are <code>NonZeroData</code> and <code>FillWithZeros</code>. The default is <code>NonZeroData</code>.</p>
     pub data_type: ::std::option::Option<crate::types::InsightsMetricDataType>,
-    /// <p>The maximum number of datapoints to return. Valid values are integers from 1 to 21600. The default value is 21600.</p>
+    /// <p>The maximum number of data points to return. Valid values are integers from 1 to 21600. The default value is 21600.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>Returned if all datapoints can't be returned in a single call. For example, due to reaching <code>MaxResults</code>.</p>
     /// <p>Add this parameter to the request to continue retrieving results starting from the last evaluated point.</p>
@@ -60,11 +60,11 @@ impl ListInsightsMetricDataInput {
     pub fn period(&self) -> ::std::option::Option<i32> {
         self.period
     }
-    /// <p>Type of datapoints to return. Valid values are <code>NonZeroData</code> and <code>FillWithZeros</code>. The default is <code>NonZeroData</code>.</p>
+    /// <p>Type of data points to return. Valid values are <code>NonZeroData</code> and <code>FillWithZeros</code>. The default is <code>NonZeroData</code>.</p>
     pub fn data_type(&self) -> ::std::option::Option<&crate::types::InsightsMetricDataType> {
         self.data_type.as_ref()
     }
-    /// <p>The maximum number of datapoints to return. Valid values are integers from 1 to 21600. The default value is 21600.</p>
+    /// <p>The maximum number of data points to return. Valid values are integers from 1 to 21600. The default value is 21600.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -207,31 +207,31 @@ impl ListInsightsMetricDataInputBuilder {
     pub fn get_period(&self) -> &::std::option::Option<i32> {
         &self.period
     }
-    /// <p>Type of datapoints to return. Valid values are <code>NonZeroData</code> and <code>FillWithZeros</code>. The default is <code>NonZeroData</code>.</p>
+    /// <p>Type of data points to return. Valid values are <code>NonZeroData</code> and <code>FillWithZeros</code>. The default is <code>NonZeroData</code>.</p>
     pub fn data_type(mut self, input: crate::types::InsightsMetricDataType) -> Self {
         self.data_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Type of datapoints to return. Valid values are <code>NonZeroData</code> and <code>FillWithZeros</code>. The default is <code>NonZeroData</code>.</p>
+    /// <p>Type of data points to return. Valid values are <code>NonZeroData</code> and <code>FillWithZeros</code>. The default is <code>NonZeroData</code>.</p>
     pub fn set_data_type(mut self, input: ::std::option::Option<crate::types::InsightsMetricDataType>) -> Self {
         self.data_type = input;
         self
     }
-    /// <p>Type of datapoints to return. Valid values are <code>NonZeroData</code> and <code>FillWithZeros</code>. The default is <code>NonZeroData</code>.</p>
+    /// <p>Type of data points to return. Valid values are <code>NonZeroData</code> and <code>FillWithZeros</code>. The default is <code>NonZeroData</code>.</p>
     pub fn get_data_type(&self) -> &::std::option::Option<crate::types::InsightsMetricDataType> {
         &self.data_type
     }
-    /// <p>The maximum number of datapoints to return. Valid values are integers from 1 to 21600. The default value is 21600.</p>
+    /// <p>The maximum number of data points to return. Valid values are integers from 1 to 21600. The default value is 21600.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of datapoints to return. Valid values are integers from 1 to 21600. The default value is 21600.</p>
+    /// <p>The maximum number of data points to return. Valid values are integers from 1 to 21600. The default value is 21600.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of datapoints to return. Valid values are integers from 1 to 21600. The default value is 21600.</p>
+    /// <p>The maximum number of data points to return. Valid values are integers from 1 to 21600. The default value is 21600.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

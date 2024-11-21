@@ -23,7 +23,7 @@ impl crate::operation::list_bucket_inventory_configurations::builders::ListBucke
 /// Fluent builder constructing a request to `ListBucketInventoryConfigurations`.
 ///
 /// <note>
-/// <p>This operation is not supported by directory buckets.</p>
+/// <p>This operation is not supported for directory buckets.</p>
 /// </note>
 /// <p>Returns a list of inventory configurations for the bucket. You can have up to 1,000 analytics configurations per bucket.</p>
 /// <p>This action supports list pagination and does not return more than 100 configurations at a time. Always check the <code>IsTruncated</code> element in the response. If there are no more configurations to list, <code>IsTruncated</code> is set to false. If there are more configurations to list, <code>IsTruncated</code> is set to true, and there is a value in <code>NextContinuationToken</code>. You use the <code>NextContinuationToken</code> value to continue the pagination of the list by passing the value in continuation-token in the request to <code>GET</code> the next page.</p>

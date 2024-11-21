@@ -568,6 +568,40 @@ impl From<crate::operation::delete_destination::DeleteDestinationError> for Erro
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_index_policy::DeleteIndexPolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_index_policy::DeleteIndexPolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_index_policy::DeleteIndexPolicyError> for Error {
+    fn from(err: crate::operation::delete_index_policy::DeleteIndexPolicyError) -> Self {
+        match err {
+            crate::operation::delete_index_policy::DeleteIndexPolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_index_policy::DeleteIndexPolicyError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::delete_index_policy::DeleteIndexPolicyError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::delete_index_policy::DeleteIndexPolicyError::OperationAbortedException(inner) => {
+                Error::OperationAbortedException(inner)
+            }
+            crate::operation::delete_index_policy::DeleteIndexPolicyError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::delete_index_policy::DeleteIndexPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_log_anomaly_detector::DeleteLogAnomalyDetectorError, R>>
     for Error
 where
@@ -822,6 +856,34 @@ impl From<crate::operation::delete_subscription_filter::DeleteSubscriptionFilter
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_transformer::DeleteTransformerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_transformer::DeleteTransformerError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_transformer::DeleteTransformerError> for Error {
+    fn from(err: crate::operation::delete_transformer::DeleteTransformerError) -> Self {
+        match err {
+            crate::operation::delete_transformer::DeleteTransformerError::InvalidOperationException(inner) => Error::InvalidOperationException(inner),
+            crate::operation::delete_transformer::DeleteTransformerError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_transformer::DeleteTransformerError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_transformer::DeleteTransformerError::OperationAbortedException(inner) => Error::OperationAbortedException(inner),
+            crate::operation::delete_transformer::DeleteTransformerError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::delete_transformer::DeleteTransformerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_account_policies::DescribeAccountPoliciesError, R>>
     for Error
 where
@@ -1058,6 +1120,80 @@ impl From<crate::operation::describe_export_tasks::DescribeExportTasksError> for
                 Error::ServiceUnavailableException(inner)
             }
             crate::operation::describe_export_tasks::DescribeExportTasksError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_field_indexes::DescribeFieldIndexesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_field_indexes::DescribeFieldIndexesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_field_indexes::DescribeFieldIndexesError> for Error {
+    fn from(err: crate::operation::describe_field_indexes::DescribeFieldIndexesError) -> Self {
+        match err {
+            crate::operation::describe_field_indexes::DescribeFieldIndexesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_field_indexes::DescribeFieldIndexesError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::describe_field_indexes::DescribeFieldIndexesError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::describe_field_indexes::DescribeFieldIndexesError::OperationAbortedException(inner) => {
+                Error::OperationAbortedException(inner)
+            }
+            crate::operation::describe_field_indexes::DescribeFieldIndexesError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::describe_field_indexes::DescribeFieldIndexesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_index_policies::DescribeIndexPoliciesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_index_policies::DescribeIndexPoliciesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_index_policies::DescribeIndexPoliciesError> for Error {
+    fn from(err: crate::operation::describe_index_policies::DescribeIndexPoliciesError) -> Self {
+        match err {
+            crate::operation::describe_index_policies::DescribeIndexPoliciesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_index_policies::DescribeIndexPoliciesError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::describe_index_policies::DescribeIndexPoliciesError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::describe_index_policies::DescribeIndexPoliciesError::OperationAbortedException(inner) => {
+                Error::OperationAbortedException(inner)
+            }
+            crate::operation::describe_index_policies::DescribeIndexPoliciesError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::describe_index_policies::DescribeIndexPoliciesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1632,6 +1768,31 @@ impl From<crate::operation::get_query_results::GetQueryResultsError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_transformer::GetTransformerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_transformer::GetTransformerError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_transformer::GetTransformerError> for Error {
+    fn from(err: crate::operation::get_transformer::GetTransformerError) -> Self {
+        match err {
+            crate::operation::get_transformer::GetTransformerError::InvalidOperationException(inner) => Error::InvalidOperationException(inner),
+            crate::operation::get_transformer::GetTransformerError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_transformer::GetTransformerError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_transformer::GetTransformerError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_transformer::GetTransformerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_anomalies::ListAnomaliesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1690,6 +1851,41 @@ impl From<crate::operation::list_log_anomaly_detectors::ListLogAnomalyDetectorsE
                 Error::ServiceUnavailableException(inner)
             }
             crate::operation::list_log_anomaly_detectors::ListLogAnomalyDetectorsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_log_groups_for_query::ListLogGroupsForQueryError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_log_groups_for_query::ListLogGroupsForQueryError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_log_groups_for_query::ListLogGroupsForQueryError> for Error {
+    fn from(err: crate::operation::list_log_groups_for_query::ListLogGroupsForQueryError) -> Self {
+        match err {
+            crate::operation::list_log_groups_for_query::ListLogGroupsForQueryError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_log_groups_for_query::ListLogGroupsForQueryError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_log_groups_for_query::ListLogGroupsForQueryError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_log_groups_for_query::ListLogGroupsForQueryError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::list_log_groups_for_query::ListLogGroupsForQueryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1976,6 +2172,32 @@ impl From<crate::operation::put_destination_policy::PutDestinationPolicyError> f
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_index_policy::PutIndexPolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_index_policy::PutIndexPolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_index_policy::PutIndexPolicyError> for Error {
+    fn from(err: crate::operation::put_index_policy::PutIndexPolicyError) -> Self {
+        match err {
+            crate::operation::put_index_policy::PutIndexPolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::put_index_policy::PutIndexPolicyError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::put_index_policy::PutIndexPolicyError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::put_index_policy::PutIndexPolicyError::OperationAbortedException(inner) => Error::OperationAbortedException(inner),
+            crate::operation::put_index_policy::PutIndexPolicyError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::put_index_policy::PutIndexPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_log_events::PutLogEventsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2020,6 +2242,7 @@ where
 impl From<crate::operation::put_metric_filter::PutMetricFilterError> for Error {
     fn from(err: crate::operation::put_metric_filter::PutMetricFilterError) -> Self {
         match err {
+            crate::operation::put_metric_filter::PutMetricFilterError::InvalidOperationException(inner) => Error::InvalidOperationException(inner),
             crate::operation::put_metric_filter::PutMetricFilterError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::put_metric_filter::PutMetricFilterError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::put_metric_filter::PutMetricFilterError::LimitExceededException(inner) => Error::LimitExceededException(inner),
@@ -2142,6 +2365,9 @@ where
 impl From<crate::operation::put_subscription_filter::PutSubscriptionFilterError> for Error {
     fn from(err: crate::operation::put_subscription_filter::PutSubscriptionFilterError) -> Self {
         match err {
+            crate::operation::put_subscription_filter::PutSubscriptionFilterError::InvalidOperationException(inner) => {
+                Error::InvalidOperationException(inner)
+            }
             crate::operation::put_subscription_filter::PutSubscriptionFilterError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -2158,6 +2384,33 @@ impl From<crate::operation::put_subscription_filter::PutSubscriptionFilterError>
                 Error::ServiceUnavailableException(inner)
             }
             crate::operation::put_subscription_filter::PutSubscriptionFilterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_transformer::PutTransformerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_transformer::PutTransformerError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_transformer::PutTransformerError> for Error {
+    fn from(err: crate::operation::put_transformer::PutTransformerError) -> Self {
+        match err {
+            crate::operation::put_transformer::PutTransformerError::InvalidOperationException(inner) => Error::InvalidOperationException(inner),
+            crate::operation::put_transformer::PutTransformerError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::put_transformer::PutTransformerError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::put_transformer::PutTransformerError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::put_transformer::PutTransformerError::OperationAbortedException(inner) => Error::OperationAbortedException(inner),
+            crate::operation::put_transformer::PutTransformerError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::put_transformer::PutTransformerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2281,6 +2534,30 @@ impl From<crate::operation::test_metric_filter::TestMetricFilterError> for Error
                 Error::ServiceUnavailableException(inner)
             }
             crate::operation::test_metric_filter::TestMetricFilterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::test_transformer::TestTransformerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::test_transformer::TestTransformerError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::test_transformer::TestTransformerError> for Error {
+    fn from(err: crate::operation::test_transformer::TestTransformerError) -> Self {
+        match err {
+            crate::operation::test_transformer::TestTransformerError::InvalidOperationException(inner) => Error::InvalidOperationException(inner),
+            crate::operation::test_transformer::TestTransformerError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::test_transformer::TestTransformerError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::test_transformer::TestTransformerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

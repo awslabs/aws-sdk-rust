@@ -22,6 +22,8 @@ pub struct LoadBalancerAttribute {
     /// <p><code>access_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the access logs.</p></li>
     /// <li>
     /// <p><code>ipv6.deny_all_igw_traffic</code> - Blocks internet gateway (IGW) access to the load balancer. It is set to <code>false</code> for internet-facing load balancers and <code>true</code> for internal load balancers, preventing unintended access to your internal load balancer through an internet gateway.</p></li>
+    /// <li>
+    /// <p><code>zonal_shift.config.enabled</code> - Indicates whether zonal shift is enabled. The possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.</p></li>
     /// </ul>
     /// <p>The following attributes are supported by only Application Load Balancers:</p>
     /// <ul>
@@ -64,8 +66,6 @@ pub struct LoadBalancerAttribute {
     /// <ul>
     /// <li>
     /// <p><code>dns_record.client_routing_policy</code> - Indicates how traffic is distributed among the load balancer Availability Zones. The possible values are <code>availability_zone_affinity</code> with 100 percent zonal affinity, <code>partial_availability_zone_affinity</code> with 85 percent zonal affinity, and <code>any_availability_zone</code> with 0 percent zonal affinity.</p></li>
-    /// <li>
-    /// <p><code>zonal_shift.config.enabled</code> - Indicates whether zonal shift is enabled. The possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.</p></li>
     /// </ul>
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The value of the attribute.</p>
@@ -90,6 +90,8 @@ impl LoadBalancerAttribute {
     /// <p><code>access_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the access logs.</p></li>
     /// <li>
     /// <p><code>ipv6.deny_all_igw_traffic</code> - Blocks internet gateway (IGW) access to the load balancer. It is set to <code>false</code> for internet-facing load balancers and <code>true</code> for internal load balancers, preventing unintended access to your internal load balancer through an internet gateway.</p></li>
+    /// <li>
+    /// <p><code>zonal_shift.config.enabled</code> - Indicates whether zonal shift is enabled. The possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.</p></li>
     /// </ul>
     /// <p>The following attributes are supported by only Application Load Balancers:</p>
     /// <ul>
@@ -132,8 +134,6 @@ impl LoadBalancerAttribute {
     /// <ul>
     /// <li>
     /// <p><code>dns_record.client_routing_policy</code> - Indicates how traffic is distributed among the load balancer Availability Zones. The possible values are <code>availability_zone_affinity</code> with 100 percent zonal affinity, <code>partial_availability_zone_affinity</code> with 85 percent zonal affinity, and <code>any_availability_zone</code> with 0 percent zonal affinity.</p></li>
-    /// <li>
-    /// <p><code>zonal_shift.config.enabled</code> - Indicates whether zonal shift is enabled. The possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.</p></li>
     /// </ul>
     pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
@@ -176,6 +176,8 @@ impl LoadBalancerAttributeBuilder {
     /// <p><code>access_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the access logs.</p></li>
     /// <li>
     /// <p><code>ipv6.deny_all_igw_traffic</code> - Blocks internet gateway (IGW) access to the load balancer. It is set to <code>false</code> for internet-facing load balancers and <code>true</code> for internal load balancers, preventing unintended access to your internal load balancer through an internet gateway.</p></li>
+    /// <li>
+    /// <p><code>zonal_shift.config.enabled</code> - Indicates whether zonal shift is enabled. The possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.</p></li>
     /// </ul>
     /// <p>The following attributes are supported by only Application Load Balancers:</p>
     /// <ul>
@@ -218,8 +220,6 @@ impl LoadBalancerAttributeBuilder {
     /// <ul>
     /// <li>
     /// <p><code>dns_record.client_routing_policy</code> - Indicates how traffic is distributed among the load balancer Availability Zones. The possible values are <code>availability_zone_affinity</code> with 100 percent zonal affinity, <code>partial_availability_zone_affinity</code> with 85 percent zonal affinity, and <code>any_availability_zone</code> with 0 percent zonal affinity.</p></li>
-    /// <li>
-    /// <p><code>zonal_shift.config.enabled</code> - Indicates whether zonal shift is enabled. The possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.</p></li>
     /// </ul>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
@@ -243,6 +243,8 @@ impl LoadBalancerAttributeBuilder {
     /// <p><code>access_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the access logs.</p></li>
     /// <li>
     /// <p><code>ipv6.deny_all_igw_traffic</code> - Blocks internet gateway (IGW) access to the load balancer. It is set to <code>false</code> for internet-facing load balancers and <code>true</code> for internal load balancers, preventing unintended access to your internal load balancer through an internet gateway.</p></li>
+    /// <li>
+    /// <p><code>zonal_shift.config.enabled</code> - Indicates whether zonal shift is enabled. The possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.</p></li>
     /// </ul>
     /// <p>The following attributes are supported by only Application Load Balancers:</p>
     /// <ul>
@@ -285,8 +287,6 @@ impl LoadBalancerAttributeBuilder {
     /// <ul>
     /// <li>
     /// <p><code>dns_record.client_routing_policy</code> - Indicates how traffic is distributed among the load balancer Availability Zones. The possible values are <code>availability_zone_affinity</code> with 100 percent zonal affinity, <code>partial_availability_zone_affinity</code> with 85 percent zonal affinity, and <code>any_availability_zone</code> with 0 percent zonal affinity.</p></li>
-    /// <li>
-    /// <p><code>zonal_shift.config.enabled</code> - Indicates whether zonal shift is enabled. The possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.</p></li>
     /// </ul>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
@@ -310,6 +310,8 @@ impl LoadBalancerAttributeBuilder {
     /// <p><code>access_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the access logs.</p></li>
     /// <li>
     /// <p><code>ipv6.deny_all_igw_traffic</code> - Blocks internet gateway (IGW) access to the load balancer. It is set to <code>false</code> for internet-facing load balancers and <code>true</code> for internal load balancers, preventing unintended access to your internal load balancer through an internet gateway.</p></li>
+    /// <li>
+    /// <p><code>zonal_shift.config.enabled</code> - Indicates whether zonal shift is enabled. The possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.</p></li>
     /// </ul>
     /// <p>The following attributes are supported by only Application Load Balancers:</p>
     /// <ul>
@@ -352,8 +354,6 @@ impl LoadBalancerAttributeBuilder {
     /// <ul>
     /// <li>
     /// <p><code>dns_record.client_routing_policy</code> - Indicates how traffic is distributed among the load balancer Availability Zones. The possible values are <code>availability_zone_affinity</code> with 100 percent zonal affinity, <code>partial_availability_zone_affinity</code> with 85 percent zonal affinity, and <code>any_availability_zone</code> with 0 percent zonal affinity.</p></li>
-    /// <li>
-    /// <p><code>zonal_shift.config.enabled</code> - Indicates whether zonal shift is enabled. The possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.</p></li>
     /// </ul>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.key

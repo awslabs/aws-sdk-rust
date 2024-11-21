@@ -21,6 +21,8 @@
 //!
 //! For more information, see [What is Amazon Web Services IoT FleetWise?](https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/) in the _Amazon Web Services IoT FleetWise Developer Guide_.
 //!
+//! Access to certain Amazon Web Services IoT FleetWise features is currently gated. For more information, see [Amazon Web Services Region and feature availability](https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/fleetwise-regions.html) in the _Amazon Web Services IoT FleetWise Developer Guide_.
+//!
 //! ## Getting Started
 //!
 //! > Examples are available for many services and operations, check out the
@@ -33,7 +35,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-iotfleetwise = "1.52.0"
+//! aws-sdk-iotfleetwise = "1.53.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

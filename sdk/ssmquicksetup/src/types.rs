@@ -3,9 +3,7 @@ pub use crate::types::_tag_entry::TagEntry;
 
 pub use crate::types::_quick_setup_type_output::QuickSetupTypeOutput;
 
-pub use crate::types::_configuration_manager_summary::ConfigurationManagerSummary;
-
-pub use crate::types::_configuration_definition_summary::ConfigurationDefinitionSummary;
+pub use crate::types::_configuration_summary::ConfigurationSummary;
 
 pub use crate::types::_status_summary::StatusSummary;
 
@@ -14,6 +12,10 @@ pub use crate::types::_status::Status;
 pub use crate::types::_status_type::StatusType;
 
 pub use crate::types::_filter::Filter;
+
+pub use crate::types::_configuration_manager_summary::ConfigurationManagerSummary;
+
+pub use crate::types::_configuration_definition_summary::ConfigurationDefinitionSummary;
 
 pub use crate::types::_service_settings::ServiceSettings;
 
@@ -28,6 +30,8 @@ mod _configuration_definition_input;
 mod _configuration_definition_summary;
 
 mod _configuration_manager_summary;
+
+mod _configuration_summary;
 
 mod _filter;
 

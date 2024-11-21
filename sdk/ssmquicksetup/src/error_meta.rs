@@ -145,6 +145,33 @@ impl From<crate::operation::delete_configuration_manager::DeleteConfigurationMan
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_configuration::GetConfigurationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_configuration::GetConfigurationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_configuration::GetConfigurationError> for Error {
+    fn from(err: crate::operation::get_configuration::GetConfigurationError) -> Self {
+        match err {
+            crate::operation::get_configuration::GetConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_configuration::GetConfigurationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::get_configuration::GetConfigurationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_configuration::GetConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_configuration::GetConfigurationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_configuration::GetConfigurationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_configuration::GetConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_configuration_manager::GetConfigurationManagerError, R>>
     for Error
 where
@@ -246,6 +273,34 @@ impl From<crate::operation::list_configuration_managers::ListConfigurationManage
                 Error::ValidationException(inner)
             }
             crate::operation::list_configuration_managers::ListConfigurationManagersError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_configurations::ListConfigurationsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_configurations::ListConfigurationsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_configurations::ListConfigurationsError> for Error {
+    fn from(err: crate::operation::list_configurations::ListConfigurationsError) -> Self {
+        match err {
+            crate::operation::list_configurations::ListConfigurationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_configurations::ListConfigurationsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_configurations::ListConfigurationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_configurations::ListConfigurationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_configurations::ListConfigurationsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_configurations::ListConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

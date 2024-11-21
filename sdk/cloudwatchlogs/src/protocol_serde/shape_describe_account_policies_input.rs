@@ -18,5 +18,8 @@ pub fn ser_describe_account_policies_input_input(
         }
         array_4.finish();
     }
+    if let Some(var_6) = &input.next_token {
+        object.key("nextToken").string(var_6.as_str());
+    }
     Ok(())
 }

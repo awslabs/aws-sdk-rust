@@ -29,11 +29,15 @@ pub(crate) mod shape_cancel_query;
 
 pub(crate) mod shape_create_channel;
 
+pub(crate) mod shape_create_dashboard;
+
 pub(crate) mod shape_create_event_data_store;
 
 pub(crate) mod shape_create_trail;
 
 pub(crate) mod shape_delete_channel;
+
+pub(crate) mod shape_delete_dashboard;
 
 pub(crate) mod shape_delete_event_data_store;
 
@@ -55,6 +59,8 @@ pub(crate) mod shape_generate_query;
 
 pub(crate) mod shape_get_channel;
 
+pub(crate) mod shape_get_dashboard;
+
 pub(crate) mod shape_get_event_data_store;
 
 pub(crate) mod shape_get_event_selectors;
@@ -72,6 +78,8 @@ pub(crate) mod shape_get_trail;
 pub(crate) mod shape_get_trail_status;
 
 pub(crate) mod shape_list_channels;
+
+pub(crate) mod shape_list_dashboards;
 
 pub(crate) mod shape_list_event_data_stores;
 
@@ -103,6 +111,8 @@ pub(crate) mod shape_remove_tags;
 
 pub(crate) mod shape_restore_event_data_store;
 
+pub(crate) mod shape_start_dashboard_refresh;
+
 pub(crate) mod shape_start_event_data_store_ingestion;
 
 pub(crate) mod shape_start_import;
@@ -118,6 +128,8 @@ pub(crate) mod shape_stop_import;
 pub(crate) mod shape_stop_logging;
 
 pub(crate) mod shape_update_channel;
+
+pub(crate) mod shape_update_dashboard;
 
 pub(crate) mod shape_update_event_data_store;
 
@@ -171,6 +183,8 @@ pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_channel_input;
 
+pub(crate) mod shape_create_dashboard_input;
+
 pub(crate) mod shape_create_event_data_store_input;
 
 pub(crate) mod shape_create_trail_input;
@@ -178,6 +192,8 @@ pub(crate) mod shape_create_trail_input;
 pub(crate) mod shape_delegated_admin_account_limit_exceeded_exception;
 
 pub(crate) mod shape_delete_channel_input;
+
+pub(crate) mod shape_delete_dashboard_input;
 
 pub(crate) mod shape_delete_event_data_store_input;
 
@@ -214,6 +230,8 @@ pub(crate) mod shape_generate_query_input;
 pub(crate) mod shape_generate_response_exception;
 
 pub(crate) mod shape_get_channel_input;
+
+pub(crate) mod shape_get_dashboard_input;
 
 pub(crate) mod shape_get_event_data_store_input;
 
@@ -307,6 +325,8 @@ pub(crate) mod shape_kms_key_not_found_exception;
 
 pub(crate) mod shape_list_channels_input;
 
+pub(crate) mod shape_list_dashboards_input;
+
 pub(crate) mod shape_list_event_data_stores_input;
 
 pub(crate) mod shape_list_import_failures_input;
@@ -367,6 +387,10 @@ pub(crate) mod shape_restore_event_data_store_input;
 
 pub(crate) mod shape_s3_bucket_does_not_exist_exception;
 
+pub(crate) mod shape_service_quota_exceeded_exception;
+
+pub(crate) mod shape_start_dashboard_refresh_input;
+
 pub(crate) mod shape_start_event_data_store_ingestion_input;
 
 pub(crate) mod shape_start_import_input;
@@ -395,6 +419,8 @@ pub(crate) mod shape_unsupported_operation_exception;
 
 pub(crate) mod shape_update_channel_input;
 
+pub(crate) mod shape_update_dashboard_input;
+
 pub(crate) mod shape_update_event_data_store_input;
 
 pub(crate) mod shape_update_trail_input;
@@ -404,6 +430,8 @@ pub(crate) mod shape_advanced_event_selector;
 pub(crate) mod shape_advanced_event_selectors;
 
 pub(crate) mod shape_channels;
+
+pub(crate) mod shape_dashboards;
 
 pub(crate) mod shape_destination;
 
@@ -449,6 +477,10 @@ pub(crate) mod shape_query_statistics;
 
 pub(crate) mod shape_query_statistics_for_describe_query;
 
+pub(crate) mod shape_refresh_schedule;
+
+pub(crate) mod shape_request_widget;
+
 pub(crate) mod shape_resource_tag_list;
 
 pub(crate) mod shape_source_config;
@@ -465,9 +497,13 @@ pub(crate) mod shape_trail_list;
 
 pub(crate) mod shape_trails;
 
+pub(crate) mod shape_widget_list;
+
 pub(crate) mod shape_advanced_field_selector;
 
 pub(crate) mod shape_channel;
+
+pub(crate) mod shape_dashboard_detail;
 
 pub(crate) mod shape_data_resource;
 
@@ -487,11 +523,15 @@ pub(crate) mod shape_query;
 
 pub(crate) mod shape_query_result_row;
 
+pub(crate) mod shape_refresh_schedule_frequency;
+
 pub(crate) mod shape_resource_tag;
 
 pub(crate) mod shape_s3_import_source;
 
 pub(crate) mod shape_trail_info;
+
+pub(crate) mod shape_widget;
 
 pub(crate) mod shape_advanced_field_selectors;
 
@@ -499,9 +539,13 @@ pub(crate) mod shape_data_resources;
 
 pub(crate) mod shape_exclude_management_event_sources;
 
+pub(crate) mod shape_query_parameters;
+
 pub(crate) mod shape_query_result_column;
 
 pub(crate) mod shape_resource_list;
+
+pub(crate) mod shape_view_properties_map;
 
 pub(crate) mod shape_resource;
 

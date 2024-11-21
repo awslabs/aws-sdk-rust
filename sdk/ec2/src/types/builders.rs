@@ -335,7 +335,11 @@ pub use crate::types::_reserved_instance_limit_price::ReservedInstanceLimitPrice
 
 pub use crate::types::_purchase::PurchaseBuilder;
 
+pub use crate::types::_capacity_block_extension::CapacityBlockExtensionBuilder;
+
 pub use crate::types::_capacity_reservation::CapacityReservationBuilder;
+
+pub use crate::types::_capacity_reservation_commitment_info::CapacityReservationCommitmentInfoBuilder;
 
 pub use crate::types::_capacity_allocation::CapacityAllocationBuilder;
 
@@ -521,7 +525,13 @@ pub use crate::types::_ipam_scope::IpamScopeBuilder;
 
 pub use crate::types::_ipam_resource_discovery::IpamResourceDiscoveryBuilder;
 
+pub use crate::types::_ipam_organizational_unit_exclusion::IpamOrganizationalUnitExclusionBuilder;
+
 pub use crate::types::_ipam_operating_region::IpamOperatingRegionBuilder;
+
+pub use crate::types::_remove_ipam_organizational_unit_exclusion::RemoveIpamOrganizationalUnitExclusionBuilder;
+
+pub use crate::types::_add_ipam_organizational_unit_exclusion::AddIpamOrganizationalUnitExclusionBuilder;
 
 pub use crate::types::_remove_ipam_operating_region::RemoveIpamOperatingRegionBuilder;
 
@@ -1332,6 +1342,8 @@ pub use crate::types::_capacity_reservation_billing_request::CapacityReservation
 pub use crate::types::_capacity_reservation_info::CapacityReservationInfoBuilder;
 
 pub use crate::types::_capacity_block_offering::CapacityBlockOfferingBuilder;
+
+pub use crate::types::_capacity_block_extension_offering::CapacityBlockExtensionOfferingBuilder;
 
 pub use crate::types::_bundle_task::BundleTaskBuilder;
 

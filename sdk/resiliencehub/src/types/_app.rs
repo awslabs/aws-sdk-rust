@@ -12,7 +12,7 @@ pub struct App {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub policy_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Date and time when the app was created.</p>
+    /// <p>Date and time when the application was created.</p>
     pub creation_time: ::aws_smithy_types::DateTime,
     /// <p>Status of the application.</p>
     pub status: ::std::option::Option<crate::types::AppStatusType>,
@@ -62,7 +62,7 @@ impl App {
     pub fn policy_arn(&self) -> ::std::option::Option<&str> {
         self.policy_arn.as_deref()
     }
-    /// <p>Date and time when the app was created.</p>
+    /// <p>Date and time when the application was created.</p>
     pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
         &self.creation_time
     }
@@ -240,18 +240,18 @@ impl AppBuilder {
     pub fn get_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_arn
     }
-    /// <p>Date and time when the app was created.</p>
+    /// <p>Date and time when the application was created.</p>
     /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Date and time when the app was created.</p>
+    /// <p>Date and time when the application was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
-    /// <p>Date and time when the app was created.</p>
+    /// <p>Date and time when the application was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }

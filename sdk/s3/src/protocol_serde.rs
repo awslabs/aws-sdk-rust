@@ -311,6 +311,8 @@ pub(crate) mod shape_delete_object_tagging_output;
 
 pub(crate) mod shape_delete_objects_output;
 
+pub(crate) mod shape_encryption_type_mismatch;
+
 pub(crate) mod shape_get_bucket_accelerate_configuration_output;
 
 pub(crate) mod shape_get_bucket_analytics_configuration_output;
@@ -357,6 +359,10 @@ pub(crate) mod shape_head_object_output;
 
 pub(crate) mod shape_invalid_object_state;
 
+pub(crate) mod shape_invalid_request;
+
+pub(crate) mod shape_invalid_write_offset;
+
 pub(crate) mod shape_list_multipart_uploads_output;
 
 pub(crate) mod shape_list_object_versions_output;
@@ -398,6 +404,8 @@ pub(crate) mod shape_restore_object_output;
 pub(crate) mod shape_select_object_content_input;
 
 pub(crate) mod shape_select_object_content_output;
+
+pub(crate) mod shape_too_many_parts;
 
 pub(crate) mod shape_upload_part_copy_output;
 

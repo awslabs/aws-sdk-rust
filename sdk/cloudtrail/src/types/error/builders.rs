@@ -77,6 +77,12 @@ pub use crate::types::error::_event_data_store_arn_invalid_exception::EventDataS
 
 pub use crate::types::error::_event_data_store_already_exists_exception::EventDataStoreAlreadyExistsExceptionBuilder;
 
+pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededExceptionBuilder;
+
+pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExceptionBuilder;
+
+pub use crate::types::error::_invalid_query_statement_exception::InvalidQueryStatementExceptionBuilder;
+
 pub use crate::types::error::_invalid_event_data_store_category_exception::InvalidEventDataStoreCategoryExceptionBuilder;
 
 pub use crate::types::error::_channel_not_found_exception::ChannelNotFoundExceptionBuilder;
@@ -91,8 +97,6 @@ pub use crate::types::error::_invalid_event_data_store_status_exception::Invalid
 
 pub use crate::types::error::_max_concurrent_queries_exception::MaxConcurrentQueriesExceptionBuilder;
 
-pub use crate::types::error::_invalid_query_statement_exception::InvalidQueryStatementExceptionBuilder;
-
 pub use crate::types::error::_invalid_import_source_exception::InvalidImportSourceExceptionBuilder;
 
 pub use crate::types::error::_account_has_ongoing_import_exception::AccountHasOngoingImportExceptionBuilder;
@@ -100,8 +104,6 @@ pub use crate::types::error::_account_has_ongoing_import_exception::AccountHasOn
 pub use crate::types::error::_event_data_store_max_limit_exceeded_exception::EventDataStoreMaxLimitExceededExceptionBuilder;
 
 pub use crate::types::error::_resource_type_not_supported_exception::ResourceTypeNotSupportedExceptionBuilder;
-
-pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExceptionBuilder;
 
 pub use crate::types::error::_invalid_tag_parameter_exception::InvalidTagParameterExceptionBuilder;
 

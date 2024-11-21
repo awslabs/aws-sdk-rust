@@ -3,9 +3,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateResiliencyPolicyInput {
-    /// <p>The name of the policy</p>
+    /// <p>Name of the resiliency policy.</p>
     pub policy_name: ::std::option::Option<::std::string::String>,
-    /// <p>The description for the policy.</p>
+    /// <p>Description of the resiliency policy.</p>
     pub policy_description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a high-level geographical location constraint for where your resilience policy data can be stored.</p>
     pub data_location_constraint: ::std::option::Option<crate::types::DataLocationConstraint>,
@@ -19,11 +19,11 @@ pub struct CreateResiliencyPolicyInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateResiliencyPolicyInput {
-    /// <p>The name of the policy</p>
+    /// <p>Name of the resiliency policy.</p>
     pub fn policy_name(&self) -> ::std::option::Option<&str> {
         self.policy_name.as_deref()
     }
-    /// <p>The description for the policy.</p>
+    /// <p>Description of the resiliency policy.</p>
     pub fn policy_description(&self) -> ::std::option::Option<&str> {
         self.policy_description.as_deref()
     }
@@ -81,32 +81,32 @@ pub struct CreateResiliencyPolicyInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateResiliencyPolicyInputBuilder {
-    /// <p>The name of the policy</p>
+    /// <p>Name of the resiliency policy.</p>
     /// This field is required.
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the policy</p>
+    /// <p>Name of the resiliency policy.</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_name = input;
         self
     }
-    /// <p>The name of the policy</p>
+    /// <p>Name of the resiliency policy.</p>
     pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_name
     }
-    /// <p>The description for the policy.</p>
+    /// <p>Description of the resiliency policy.</p>
     pub fn policy_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The description for the policy.</p>
+    /// <p>Description of the resiliency policy.</p>
     pub fn set_policy_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_description = input;
         self
     }
-    /// <p>The description for the policy.</p>
+    /// <p>Description of the resiliency policy.</p>
     pub fn get_policy_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_description
     }

@@ -112,6 +112,8 @@ pub struct PutScalingPolicyInput {
     /// <p>A target tracking scaling policy. Includes support for predefined or customized metrics.</p>
     /// <p>This parameter is required if you are creating a policy and the policy type is <code>TargetTrackingScaling</code>.</p>
     pub target_tracking_scaling_policy_configuration: ::std::option::Option<crate::types::TargetTrackingScalingPolicyConfiguration>,
+    /// <p>The configuration of the predictive scaling policy.</p>
+    pub predictive_scaling_policy_configuration: ::std::option::Option<crate::types::PredictiveScalingPolicyConfiguration>,
 }
 impl PutScalingPolicyInput {
     /// <p>The name of the scaling policy.</p>
@@ -237,6 +239,10 @@ impl PutScalingPolicyInput {
     pub fn target_tracking_scaling_policy_configuration(&self) -> ::std::option::Option<&crate::types::TargetTrackingScalingPolicyConfiguration> {
         self.target_tracking_scaling_policy_configuration.as_ref()
     }
+    /// <p>The configuration of the predictive scaling policy.</p>
+    pub fn predictive_scaling_policy_configuration(&self) -> ::std::option::Option<&crate::types::PredictiveScalingPolicyConfiguration> {
+        self.predictive_scaling_policy_configuration.as_ref()
+    }
 }
 impl PutScalingPolicyInput {
     /// Creates a new builder-style object to manufacture [`PutScalingPolicyInput`](crate::operation::put_scaling_policy::PutScalingPolicyInput).
@@ -256,6 +262,7 @@ pub struct PutScalingPolicyInputBuilder {
     pub(crate) policy_type: ::std::option::Option<crate::types::PolicyType>,
     pub(crate) step_scaling_policy_configuration: ::std::option::Option<crate::types::StepScalingPolicyConfiguration>,
     pub(crate) target_tracking_scaling_policy_configuration: ::std::option::Option<crate::types::TargetTrackingScalingPolicyConfiguration>,
+    pub(crate) predictive_scaling_policy_configuration: ::std::option::Option<crate::types::PredictiveScalingPolicyConfiguration>,
 }
 impl PutScalingPolicyInputBuilder {
     /// <p>The name of the scaling policy.</p>
@@ -648,6 +655,23 @@ impl PutScalingPolicyInputBuilder {
     pub fn get_target_tracking_scaling_policy_configuration(&self) -> &::std::option::Option<crate::types::TargetTrackingScalingPolicyConfiguration> {
         &self.target_tracking_scaling_policy_configuration
     }
+    /// <p>The configuration of the predictive scaling policy.</p>
+    pub fn predictive_scaling_policy_configuration(mut self, input: crate::types::PredictiveScalingPolicyConfiguration) -> Self {
+        self.predictive_scaling_policy_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration of the predictive scaling policy.</p>
+    pub fn set_predictive_scaling_policy_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::PredictiveScalingPolicyConfiguration>,
+    ) -> Self {
+        self.predictive_scaling_policy_configuration = input;
+        self
+    }
+    /// <p>The configuration of the predictive scaling policy.</p>
+    pub fn get_predictive_scaling_policy_configuration(&self) -> &::std::option::Option<crate::types::PredictiveScalingPolicyConfiguration> {
+        &self.predictive_scaling_policy_configuration
+    }
     /// Consumes the builder and constructs a [`PutScalingPolicyInput`](crate::operation::put_scaling_policy::PutScalingPolicyInput).
     pub fn build(
         self,
@@ -660,6 +684,7 @@ impl PutScalingPolicyInputBuilder {
             policy_type: self.policy_type,
             step_scaling_policy_configuration: self.step_scaling_policy_configuration,
             target_tracking_scaling_policy_configuration: self.target_tracking_scaling_policy_configuration,
+            predictive_scaling_policy_configuration: self.predictive_scaling_policy_configuration,
         })
     }
 }

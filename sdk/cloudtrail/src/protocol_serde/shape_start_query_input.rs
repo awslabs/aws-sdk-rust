@@ -21,5 +21,8 @@ pub fn ser_start_query_input_input(
         }
         array_5.finish();
     }
+    if let Some(var_7) = &input.event_data_store_owner_account_id {
+        object.key("EventDataStoreOwnerAccountId").string(var_7.as_str());
+    }
     Ok(())
 }

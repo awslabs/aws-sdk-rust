@@ -334,6 +334,41 @@ impl From<crate::operation::create_signal_catalog::CreateSignalCatalogError> for
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_state_template::CreateStateTemplateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_state_template::CreateStateTemplateError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_state_template::CreateStateTemplateError> for Error {
+    fn from(err: crate::operation::create_state_template::CreateStateTemplateError) -> Self {
+        match err {
+            crate::operation::create_state_template::CreateStateTemplateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_state_template::CreateStateTemplateError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_state_template::CreateStateTemplateError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_state_template::CreateStateTemplateError::InvalidSignalsException(inner) => {
+                Error::InvalidSignalsException(inner)
+            }
+            crate::operation::create_state_template::CreateStateTemplateError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_state_template::CreateStateTemplateError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_state_template::CreateStateTemplateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_state_template::CreateStateTemplateError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_state_template::CreateStateTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_vehicle::CreateVehicleError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -498,6 +533,33 @@ impl From<crate::operation::delete_signal_catalog::DeleteSignalCatalogError> for
             crate::operation::delete_signal_catalog::DeleteSignalCatalogError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_signal_catalog::DeleteSignalCatalogError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_signal_catalog::DeleteSignalCatalogError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_state_template::DeleteStateTemplateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_state_template::DeleteStateTemplateError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_state_template::DeleteStateTemplateError> for Error {
+    fn from(err: crate::operation::delete_state_template::DeleteStateTemplateError) -> Self {
+        match err {
+            crate::operation::delete_state_template::DeleteStateTemplateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_state_template::DeleteStateTemplateError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_state_template::DeleteStateTemplateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_state_template::DeleteStateTemplateError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_state_template::DeleteStateTemplateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -796,6 +858,32 @@ impl From<crate::operation::get_signal_catalog::GetSignalCatalogError> for Error
             crate::operation::get_signal_catalog::GetSignalCatalogError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_signal_catalog::GetSignalCatalogError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::get_signal_catalog::GetSignalCatalogError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_state_template::GetStateTemplateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_state_template::GetStateTemplateError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_state_template::GetStateTemplateError> for Error {
+    fn from(err: crate::operation::get_state_template::GetStateTemplateError) -> Self {
+        match err {
+            crate::operation::get_state_template::GetStateTemplateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_state_template::GetStateTemplateError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_state_template::GetStateTemplateError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_state_template::GetStateTemplateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_state_template::GetStateTemplateError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_state_template::GetStateTemplateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1251,6 +1339,31 @@ impl From<crate::operation::list_signal_catalogs::ListSignalCatalogsError> for E
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_state_templates::ListStateTemplatesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_state_templates::ListStateTemplatesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_state_templates::ListStateTemplatesError> for Error {
+    fn from(err: crate::operation::list_state_templates::ListStateTemplatesError) -> Self {
+        match err {
+            crate::operation::list_state_templates::ListStateTemplatesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_state_templates::ListStateTemplatesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_state_templates::ListStateTemplatesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_state_templates::ListStateTemplatesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_state_templates::ListStateTemplatesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1648,6 +1761,40 @@ impl From<crate::operation::update_signal_catalog::UpdateSignalCatalogError> for
             crate::operation::update_signal_catalog::UpdateSignalCatalogError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_signal_catalog::UpdateSignalCatalogError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_signal_catalog::UpdateSignalCatalogError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_state_template::UpdateStateTemplateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_state_template::UpdateStateTemplateError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_state_template::UpdateStateTemplateError> for Error {
+    fn from(err: crate::operation::update_state_template::UpdateStateTemplateError) -> Self {
+        match err {
+            crate::operation::update_state_template::UpdateStateTemplateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_state_template::UpdateStateTemplateError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_state_template::UpdateStateTemplateError::InvalidSignalsException(inner) => {
+                Error::InvalidSignalsException(inner)
+            }
+            crate::operation::update_state_template::UpdateStateTemplateError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::update_state_template::UpdateStateTemplateError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_state_template::UpdateStateTemplateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_state_template::UpdateStateTemplateError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_state_template::UpdateStateTemplateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

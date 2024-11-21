@@ -7,6 +7,8 @@ pub struct CancelQueryOutput {
     pub query_id: ::std::string::String,
     /// <p>Shows the status of a query after a <code>CancelQuery</code> request. Typically, the values shown are either <code>RUNNING</code> or <code>CANCELLED</code>.</p>
     pub query_status: crate::types::QueryStatus,
+    /// <p>The account ID of the event data store owner.</p>
+    pub event_data_store_owner_account_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CancelQueryOutput {
@@ -18,6 +20,10 @@ impl CancelQueryOutput {
     /// <p>Shows the status of a query after a <code>CancelQuery</code> request. Typically, the values shown are either <code>RUNNING</code> or <code>CANCELLED</code>.</p>
     pub fn query_status(&self) -> &crate::types::QueryStatus {
         &self.query_status
+    }
+    /// <p>The account ID of the event data store owner.</p>
+    pub fn event_data_store_owner_account_id(&self) -> ::std::option::Option<&str> {
+        self.event_data_store_owner_account_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CancelQueryOutput {
@@ -38,6 +44,7 @@ impl CancelQueryOutput {
 pub struct CancelQueryOutputBuilder {
     pub(crate) query_id: ::std::option::Option<::std::string::String>,
     pub(crate) query_status: ::std::option::Option<crate::types::QueryStatus>,
+    pub(crate) event_data_store_owner_account_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CancelQueryOutputBuilder {
@@ -71,6 +78,20 @@ impl CancelQueryOutputBuilder {
     pub fn get_query_status(&self) -> &::std::option::Option<crate::types::QueryStatus> {
         &self.query_status
     }
+    /// <p>The account ID of the event data store owner.</p>
+    pub fn event_data_store_owner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.event_data_store_owner_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The account ID of the event data store owner.</p>
+    pub fn set_event_data_store_owner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.event_data_store_owner_account_id = input;
+        self
+    }
+    /// <p>The account ID of the event data store owner.</p>
+    pub fn get_event_data_store_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_data_store_owner_account_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -98,6 +119,7 @@ impl CancelQueryOutputBuilder {
                     "query_status was not specified but it is required when building CancelQueryOutput",
                 )
             })?,
+            event_data_store_owner_account_id: self.event_data_store_owner_account_id,
             _request_id: self._request_id,
         })
     }

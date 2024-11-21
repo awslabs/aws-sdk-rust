@@ -22,17 +22,22 @@ impl crate::operation::put_bucket_lifecycle_configuration::builders::PutBucketLi
 }
 /// Fluent builder constructing a request to `PutBucketLifecycleConfiguration`.
 ///
-/// <note>
-/// <p>This operation is not supported by directory buckets.</p>
-/// </note>
 /// <p>Creates a new lifecycle configuration for the bucket or replaces an existing lifecycle configuration. Keep in mind that this will overwrite an existing lifecycle configuration, so if you want to retain any configuration details, they must be included in the new lifecycle configuration. For information about lifecycle configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html">Managing your storage lifecycle</a>.</p>
 /// <dl>
 /// <dt>
 /// Rules
 /// </dt>
+/// <dt>
+/// Permissions
+/// </dt>
+/// <dt>
+/// HTTP Host header syntax
+/// </dt>
 /// <dd>
 /// <p>You specify the lifecycle configuration in your request body. The lifecycle configuration is specified as XML consisting of one or more rules. An Amazon S3 Lifecycle configuration can have up to 1,000 rules. This limit is not adjustable.</p>
-/// <p>Bucket lifecycle configuration supports specifying a lifecycle rule using an object key name prefix, one or more object tags, object size, or any combination of these. Accordingly, this section describes the latest API. The previous version of the API supported filtering based only on an object key name prefix, which is supported for backward compatibility. For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.</p>
+/// <p>Bucket lifecycle configuration supports specifying a lifecycle rule using an object key name prefix, one or more object tags, object size, or any combination of these. Accordingly, this section describes the latest API. The previous version of the API supported filtering based only on an object key name prefix, which is supported for backward compatibility for general purpose buckets. For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.</p><note>
+/// <p>Lifecyle configurations for directory buckets only support expiring objects and cancelling multipart uploads. Expiring of versioned objects,transitions and tag filters are not supported.</p>
+/// </note>
 /// <p>A lifecycle rule consists of the following:</p>
 /// <ul>
 /// <li>
@@ -44,11 +49,10 @@ impl crate::operation::put_bucket_lifecycle_configuration::builders::PutBucketLi
 /// </ul>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html">Object Lifecycle Management</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html">Lifecycle Configuration Elements</a>.</p>
 /// </dd>
-/// <dt>
-/// Permissions
-/// </dt>
 /// <dd>
-/// <p>By default, all Amazon S3 resources are private, including buckets, objects, and related subresources (for example, lifecycle configuration and website configuration). Only the resource owner (that is, the Amazon Web Services account that created it) can access the resource. The resource owner can optionally grant access permissions to others by writing an access policy. For this operation, a user must get the <code>s3:PutLifecycleConfiguration</code> permission.</p>
+/// <ul>
+/// <li>
+/// <p><b>General purpose bucket permissions</b> - By default, all Amazon S3 resources are private, including buckets, objects, and related subresources (for example, lifecycle configuration and website configuration). Only the resource owner (that is, the Amazon Web Services account that created it) can access the resource. The resource owner can optionally grant access permissions to others by writing an access policy. For this operation, a user must have the <code>s3:PutLifecycleConfiguration</code> permission.</p>
 /// <p>You can also explicitly deny permissions. An explicit deny also supersedes any other permissions. If you want to block users or accounts from removing or deleting objects from your bucket, you must deny them permissions for the following actions:</p>
 /// <ul>
 /// <li>
@@ -56,20 +60,29 @@ impl crate::operation::put_bucket_lifecycle_configuration::builders::PutBucketLi
 /// <li>
 /// <p><code>s3:DeleteObjectVersion</code></p></li>
 /// <li>
-/// <p><code>s3:PutLifecycleConfiguration</code></p></li>
+/// <p><code>s3:PutLifecycleConfiguration</code></p>
+/// <p>For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing Access Permissions to Your Amazon S3 Resources</a>.</p></li>
+/// </ul></li>
 /// </ul>
-/// <p>For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing Access Permissions to Your Amazon S3 Resources</a>.</p>
-/// </dd>
-/// </dl>
-/// <p>The following operations are related to <code>PutBucketLifecycleConfiguration</code>:</p>
 /// <ul>
 /// <li>
-/// <p><a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/lifecycle-configuration-examples.html">Examples of Lifecycle Configuration</a></p></li>
+/// <p><b>Directory bucket permissions</b> - You must have the <code>s3express:PutLifecycleConfiguration</code> permission in an IAM identity-based policy to use this operation. Cross-account access to this API operation isn't supported. The resource owner can optionally grant access permissions to others by creating a role or user for them as long as they are within the same account as the owner and resource.</p>
+/// <p>For more information about directory bucket policies and permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam.html">Authorizing Regional endpoint APIs with IAM</a> in the <i>Amazon S3 User Guide</i>.</p><note>
+/// <p><b>Directory buckets </b> - For directory buckets, you must make requests for this API operation to the Regional endpoint. These endpoints support path-style requests in the format <code>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i> </code>. Virtual-hosted-style requests aren't supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.</p>
+/// </note></li>
+/// </ul>
+/// </dd>
+/// <dd>
+/// <p><b>Directory buckets </b> - The HTTP Host header syntax is <code>s3express-control.<i>region</i>.amazonaws.com</code>.</p>
+/// <p>The following operations are related to <code>PutBucketLifecycleConfiguration</code>:</p>
+/// <ul>
 /// <li>
 /// <p><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html">GetBucketLifecycleConfiguration</a></p></li>
 /// <li>
 /// <p><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketLifecycle.html">DeleteBucketLifecycle</a></p></li>
 /// </ul>
+/// </dd>
+/// </dl>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutBucketLifecycleConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -200,21 +213,29 @@ impl PutBucketLifecycleConfigurationFluentBuilder {
     pub fn get_lifecycle_configuration(&self) -> &::std::option::Option<crate::types::BucketLifecycleConfiguration> {
         self.inner.get_lifecycle_configuration()
     }
-    /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
+    /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p><note>
+    /// <p>This parameter applies to general purpose buckets only. It is not supported for directory bucket lifecycle configurations.</p>
+    /// </note>
     pub fn expected_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.expected_bucket_owner(input.into());
         self
     }
-    /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
+    /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p><note>
+    /// <p>This parameter applies to general purpose buckets only. It is not supported for directory bucket lifecycle configurations.</p>
+    /// </note>
     pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_expected_bucket_owner(input);
         self
     }
-    /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
+    /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p><note>
+    /// <p>This parameter applies to general purpose buckets only. It is not supported for directory bucket lifecycle configurations.</p>
+    /// </note>
     pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_expected_bucket_owner()
     }
-    /// <p>Indicates which default minimum object size behavior is applied to the lifecycle configuration.</p>
+    /// <p>Indicates which default minimum object size behavior is applied to the lifecycle configuration.</p><note>
+    /// <p>This parameter applies to general purpose buckets only. It is not supported for directory bucket lifecycle configurations.</p>
+    /// </note>
     /// <ul>
     /// <li>
     /// <p><code>all_storage_classes_128K</code> - Objects smaller than 128 KB will not transition to any storage class by default.</p></li>
@@ -226,7 +247,9 @@ impl PutBucketLifecycleConfigurationFluentBuilder {
         self.inner = self.inner.transition_default_minimum_object_size(input);
         self
     }
-    /// <p>Indicates which default minimum object size behavior is applied to the lifecycle configuration.</p>
+    /// <p>Indicates which default minimum object size behavior is applied to the lifecycle configuration.</p><note>
+    /// <p>This parameter applies to general purpose buckets only. It is not supported for directory bucket lifecycle configurations.</p>
+    /// </note>
     /// <ul>
     /// <li>
     /// <p><code>all_storage_classes_128K</code> - Objects smaller than 128 KB will not transition to any storage class by default.</p></li>
@@ -241,7 +264,9 @@ impl PutBucketLifecycleConfigurationFluentBuilder {
         self.inner = self.inner.set_transition_default_minimum_object_size(input);
         self
     }
-    /// <p>Indicates which default minimum object size behavior is applied to the lifecycle configuration.</p>
+    /// <p>Indicates which default minimum object size behavior is applied to the lifecycle configuration.</p><note>
+    /// <p>This parameter applies to general purpose buckets only. It is not supported for directory bucket lifecycle configurations.</p>
+    /// </note>
     /// <ul>
     /// <li>
     /// <p><code>all_storage_classes_128K</code> - Objects smaller than 128 KB will not transition to any storage class by default.</p></li>

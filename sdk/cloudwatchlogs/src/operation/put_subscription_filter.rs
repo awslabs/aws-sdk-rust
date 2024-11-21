@@ -256,6 +256,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutSubscripti
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum PutSubscriptionFilterError {
+    /// <p>The operation is not valid on the specified resource.</p>
+    InvalidOperationException(crate::types::error::InvalidOperationException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>A parameter is specified incorrectly.</p>
@@ -299,6 +301,7 @@ impl PutSubscriptionFilterError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::InvalidOperationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::LimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -306,6 +309,10 @@ impl PutSubscriptionFilterError {
             Self::ServiceUnavailableException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `PutSubscriptionFilterError::InvalidOperationException`.
+    pub fn is_invalid_operation_exception(&self) -> bool {
+        matches!(self, Self::InvalidOperationException(_))
     }
     /// Returns `true` if the error kind is `PutSubscriptionFilterError::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
@@ -331,6 +338,7 @@ impl PutSubscriptionFilterError {
 impl ::std::error::Error for PutSubscriptionFilterError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::InvalidOperationException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
             Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
@@ -343,6 +351,7 @@ impl ::std::error::Error for PutSubscriptionFilterError {
 impl ::std::fmt::Display for PutSubscriptionFilterError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::InvalidOperationException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
             Self::LimitExceededException(_inner) => _inner.fmt(f),
@@ -369,6 +378,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for PutSubscriptionFilterError 
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for PutSubscriptionFilterError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::InvalidOperationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::LimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

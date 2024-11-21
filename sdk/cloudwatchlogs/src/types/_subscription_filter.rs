@@ -16,6 +16,9 @@ pub struct SubscriptionFilter {
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The method used to distribute log data to the destination, which can be either random or grouped by log stream.</p>
     pub distribution: ::std::option::Option<crate::types::Distribution>,
+    /// <p>This parameter is valid only for log groups that have an active log transformer. For more information about log transformers, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutTransformer.html">PutTransformer</a>.</p>
+    /// <p>If this value is <code>true</code>, the subscription filter is applied on the transformed version of the log events instead of the original ingested log events.</p>
+    pub apply_on_transformed_logs: bool,
     /// <p>The creation time of the subscription filter, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     pub creation_time: ::std::option::Option<i64>,
 }
@@ -44,6 +47,11 @@ impl SubscriptionFilter {
     pub fn distribution(&self) -> ::std::option::Option<&crate::types::Distribution> {
         self.distribution.as_ref()
     }
+    /// <p>This parameter is valid only for log groups that have an active log transformer. For more information about log transformers, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutTransformer.html">PutTransformer</a>.</p>
+    /// <p>If this value is <code>true</code>, the subscription filter is applied on the transformed version of the log events instead of the original ingested log events.</p>
+    pub fn apply_on_transformed_logs(&self) -> bool {
+        self.apply_on_transformed_logs
+    }
     /// <p>The creation time of the subscription filter, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     pub fn creation_time(&self) -> ::std::option::Option<i64> {
         self.creation_time
@@ -66,6 +74,7 @@ pub struct SubscriptionFilterBuilder {
     pub(crate) destination_arn: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) distribution: ::std::option::Option<crate::types::Distribution>,
+    pub(crate) apply_on_transformed_logs: ::std::option::Option<bool>,
     pub(crate) creation_time: ::std::option::Option<i64>,
 }
 impl SubscriptionFilterBuilder {
@@ -153,6 +162,23 @@ impl SubscriptionFilterBuilder {
     pub fn get_distribution(&self) -> &::std::option::Option<crate::types::Distribution> {
         &self.distribution
     }
+    /// <p>This parameter is valid only for log groups that have an active log transformer. For more information about log transformers, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutTransformer.html">PutTransformer</a>.</p>
+    /// <p>If this value is <code>true</code>, the subscription filter is applied on the transformed version of the log events instead of the original ingested log events.</p>
+    pub fn apply_on_transformed_logs(mut self, input: bool) -> Self {
+        self.apply_on_transformed_logs = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>This parameter is valid only for log groups that have an active log transformer. For more information about log transformers, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutTransformer.html">PutTransformer</a>.</p>
+    /// <p>If this value is <code>true</code>, the subscription filter is applied on the transformed version of the log events instead of the original ingested log events.</p>
+    pub fn set_apply_on_transformed_logs(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.apply_on_transformed_logs = input;
+        self
+    }
+    /// <p>This parameter is valid only for log groups that have an active log transformer. For more information about log transformers, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutTransformer.html">PutTransformer</a>.</p>
+    /// <p>If this value is <code>true</code>, the subscription filter is applied on the transformed version of the log events instead of the original ingested log events.</p>
+    pub fn get_apply_on_transformed_logs(&self) -> &::std::option::Option<bool> {
+        &self.apply_on_transformed_logs
+    }
     /// <p>The creation time of the subscription filter, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     pub fn creation_time(mut self, input: i64) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -176,6 +202,7 @@ impl SubscriptionFilterBuilder {
             destination_arn: self.destination_arn,
             role_arn: self.role_arn,
             distribution: self.distribution,
+            apply_on_transformed_logs: self.apply_on_transformed_logs.unwrap_or_default(),
             creation_time: self.creation_time,
         }
     }

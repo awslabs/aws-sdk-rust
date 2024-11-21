@@ -24,5 +24,8 @@ pub fn ser_put_metric_filter_input_input(
         }
         array_5.finish();
     }
+    if let Some(var_8) = &input.apply_on_transformed_logs {
+        object.key("applyOnTransformedLogs").boolean(*var_8);
+    }
     Ok(())
 }

@@ -6,13 +6,13 @@
 pub struct JobExecutionSummary {
     /// <p>The unique identifier you assigned to this job when it was created.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
-    /// <p>The time, in milliseconds since the epoch, when the job execution was enqueued.</p>
+    /// <p>The time, in seconds since the epoch, when the job execution was enqueued.</p>
     pub queued_at: i64,
-    /// <p>The time, in milliseconds since the epoch, when the job execution started.</p>
+    /// <p>The time, in seconds since the epoch, when the job execution started.</p>
     pub started_at: ::std::option::Option<i64>,
-    /// <p>The time, in milliseconds since the epoch, when the job execution was last updated.</p>
+    /// <p>The time, in seconds since the epoch, when the job execution was last updated.</p>
     pub last_updated_at: i64,
-    /// <p>The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives an update from a device.</p>
+    /// <p>The version of the job execution. Job execution versions are incremented each time IoT Jobs receives an update from a device.</p>
     pub version_number: i64,
     /// <p>A number that identifies a particular job execution on a particular device.</p>
     pub execution_number: ::std::option::Option<i64>,
@@ -22,19 +22,19 @@ impl JobExecutionSummary {
     pub fn job_id(&self) -> ::std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p>The time, in milliseconds since the epoch, when the job execution was enqueued.</p>
+    /// <p>The time, in seconds since the epoch, when the job execution was enqueued.</p>
     pub fn queued_at(&self) -> i64 {
         self.queued_at
     }
-    /// <p>The time, in milliseconds since the epoch, when the job execution started.</p>
+    /// <p>The time, in seconds since the epoch, when the job execution started.</p>
     pub fn started_at(&self) -> ::std::option::Option<i64> {
         self.started_at
     }
-    /// <p>The time, in milliseconds since the epoch, when the job execution was last updated.</p>
+    /// <p>The time, in seconds since the epoch, when the job execution was last updated.</p>
     pub fn last_updated_at(&self) -> i64 {
         self.last_updated_at
     }
-    /// <p>The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives an update from a device.</p>
+    /// <p>The version of the job execution. Job execution versions are incremented each time IoT Jobs receives an update from a device.</p>
     pub fn version_number(&self) -> i64 {
         self.version_number
     }
@@ -76,59 +76,59 @@ impl JobExecutionSummaryBuilder {
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_id
     }
-    /// <p>The time, in milliseconds since the epoch, when the job execution was enqueued.</p>
+    /// <p>The time, in seconds since the epoch, when the job execution was enqueued.</p>
     pub fn queued_at(mut self, input: i64) -> Self {
         self.queued_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time, in milliseconds since the epoch, when the job execution was enqueued.</p>
+    /// <p>The time, in seconds since the epoch, when the job execution was enqueued.</p>
     pub fn set_queued_at(mut self, input: ::std::option::Option<i64>) -> Self {
         self.queued_at = input;
         self
     }
-    /// <p>The time, in milliseconds since the epoch, when the job execution was enqueued.</p>
+    /// <p>The time, in seconds since the epoch, when the job execution was enqueued.</p>
     pub fn get_queued_at(&self) -> &::std::option::Option<i64> {
         &self.queued_at
     }
-    /// <p>The time, in milliseconds since the epoch, when the job execution started.</p>
+    /// <p>The time, in seconds since the epoch, when the job execution started.</p>
     pub fn started_at(mut self, input: i64) -> Self {
         self.started_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time, in milliseconds since the epoch, when the job execution started.</p>
+    /// <p>The time, in seconds since the epoch, when the job execution started.</p>
     pub fn set_started_at(mut self, input: ::std::option::Option<i64>) -> Self {
         self.started_at = input;
         self
     }
-    /// <p>The time, in milliseconds since the epoch, when the job execution started.</p>
+    /// <p>The time, in seconds since the epoch, when the job execution started.</p>
     pub fn get_started_at(&self) -> &::std::option::Option<i64> {
         &self.started_at
     }
-    /// <p>The time, in milliseconds since the epoch, when the job execution was last updated.</p>
+    /// <p>The time, in seconds since the epoch, when the job execution was last updated.</p>
     pub fn last_updated_at(mut self, input: i64) -> Self {
         self.last_updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time, in milliseconds since the epoch, when the job execution was last updated.</p>
+    /// <p>The time, in seconds since the epoch, when the job execution was last updated.</p>
     pub fn set_last_updated_at(mut self, input: ::std::option::Option<i64>) -> Self {
         self.last_updated_at = input;
         self
     }
-    /// <p>The time, in milliseconds since the epoch, when the job execution was last updated.</p>
+    /// <p>The time, in seconds since the epoch, when the job execution was last updated.</p>
     pub fn get_last_updated_at(&self) -> &::std::option::Option<i64> {
         &self.last_updated_at
     }
-    /// <p>The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives an update from a device.</p>
+    /// <p>The version of the job execution. Job execution versions are incremented each time IoT Jobs receives an update from a device.</p>
     pub fn version_number(mut self, input: i64) -> Self {
         self.version_number = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives an update from a device.</p>
+    /// <p>The version of the job execution. Job execution versions are incremented each time IoT Jobs receives an update from a device.</p>
     pub fn set_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.version_number = input;
         self
     }
-    /// <p>The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives an update from a device.</p>
+    /// <p>The version of the job execution. Job execution versions are incremented each time IoT Jobs receives an update from a device.</p>
     pub fn get_version_number(&self) -> &::std::option::Option<i64> {
         &self.version_number
     }

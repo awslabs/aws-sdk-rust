@@ -185,6 +185,8 @@ mod get_anomaly_subscriptions;
 
 mod get_approximate_usage_records;
 
+mod get_commitment_purchase_analysis;
+
 mod get_cost_and_usage;
 
 mod get_cost_and_usage_with_resources;
@@ -217,6 +219,8 @@ mod get_tags;
 
 mod get_usage_forecast;
 
+mod list_commitment_purchase_analyses;
+
 mod list_cost_allocation_tag_backfill_history;
 
 mod list_cost_allocation_tags;
@@ -228,6 +232,8 @@ mod list_savings_plans_purchase_recommendation_generation;
 mod list_tags_for_resource;
 
 mod provide_anomaly_feedback;
+
+mod start_commitment_purchase_analysis;
 
 mod start_cost_allocation_tag_backfill;
 

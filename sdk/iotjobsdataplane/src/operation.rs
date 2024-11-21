@@ -7,6 +7,9 @@ pub mod describe_job_execution;
 /// Types for the `GetPendingJobExecutions` operation.
 pub mod get_pending_job_executions;
 
+/// Types for the `StartCommandExecution` operation.
+pub mod start_command_execution;
+
 /// Types for the `StartNextPendingJobExecution` operation.
 pub mod start_next_pending_job_execution;
 

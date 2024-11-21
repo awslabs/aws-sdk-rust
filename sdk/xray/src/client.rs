@@ -138,6 +138,8 @@ impl Client {
 
 mod batch_get_traces;
 
+mod cancel_trace_retrieval;
+
 mod create_group;
 
 mod create_sampling_rule;
@@ -181,6 +183,8 @@ mod get_group;
 
 mod get_groups;
 
+mod get_indexing_rules;
+
 mod get_insight;
 
 mod get_insight_events;
@@ -188,6 +192,8 @@ mod get_insight_events;
 mod get_insight_impact_graph;
 
 mod get_insight_summaries;
+
+mod get_retrieved_traces_graph;
 
 mod get_sampling_rules;
 
@@ -201,9 +207,13 @@ mod get_time_series_service_statistics;
 
 mod get_trace_graph;
 
+mod get_trace_segment_destination;
+
 mod get_trace_summaries;
 
 mod list_resource_policies;
+
+mod list_retrieved_traces;
 
 mod list_tags_for_resource;
 
@@ -215,10 +225,16 @@ mod put_telemetry_records;
 
 mod put_trace_segments;
 
+mod start_trace_retrieval;
+
 mod tag_resource;
 
 mod untag_resource;
 
 mod update_group;
 
+mod update_indexing_rule;
+
 mod update_sampling_rule;
+
+mod update_trace_segment_destination;

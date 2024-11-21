@@ -142,6 +142,8 @@ mod cancel_query;
 
 mod create_channel;
 
+mod create_dashboard;
+
 mod create_event_data_store;
 
 mod create_trail;
@@ -175,6 +177,8 @@ pub mod customize;
 
 mod delete_channel;
 
+mod delete_dashboard;
+
 mod delete_event_data_store;
 
 mod delete_resource_policy;
@@ -195,6 +199,8 @@ mod generate_query;
 
 mod get_channel;
 
+mod get_dashboard;
+
 mod get_event_data_store;
 
 mod get_event_selectors;
@@ -212,6 +218,8 @@ mod get_trail;
 mod get_trail_status;
 
 mod list_channels;
+
+mod list_dashboards;
 
 mod list_event_data_stores;
 
@@ -243,6 +251,8 @@ mod remove_tags;
 
 mod restore_event_data_store;
 
+mod start_dashboard_refresh;
+
 mod start_event_data_store_ingestion;
 
 mod start_import;
@@ -258,6 +268,8 @@ mod stop_import;
 mod stop_logging;
 
 mod update_channel;
+
+mod update_dashboard;
 
 mod update_event_data_store;
 

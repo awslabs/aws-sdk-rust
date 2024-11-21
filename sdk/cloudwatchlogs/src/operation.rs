@@ -43,6 +43,9 @@ pub mod delete_delivery_source;
 /// Types for the `DeleteDestination` operation.
 pub mod delete_destination;
 
+/// Types for the `DeleteIndexPolicy` operation.
+pub mod delete_index_policy;
+
 /// Types for the `DeleteLogAnomalyDetector` operation.
 pub mod delete_log_anomaly_detector;
 
@@ -67,6 +70,9 @@ pub mod delete_retention_policy;
 /// Types for the `DeleteSubscriptionFilter` operation.
 pub mod delete_subscription_filter;
 
+/// Types for the `DeleteTransformer` operation.
+pub mod delete_transformer;
+
 /// Types for the `DescribeAccountPolicies` operation.
 pub mod describe_account_policies;
 
@@ -87,6 +93,12 @@ pub mod describe_destinations;
 
 /// Types for the `DescribeExportTasks` operation.
 pub mod describe_export_tasks;
+
+/// Types for the `DescribeFieldIndexes` operation.
+pub mod describe_field_indexes;
+
+/// Types for the `DescribeIndexPolicies` operation.
+pub mod describe_index_policies;
 
 /// Types for the `DescribeLogGroups` operation.
 pub mod describe_log_groups;
@@ -145,11 +157,17 @@ pub mod get_log_record;
 /// Types for the `GetQueryResults` operation.
 pub mod get_query_results;
 
+/// Types for the `GetTransformer` operation.
+pub mod get_transformer;
+
 /// Types for the `ListAnomalies` operation.
 pub mod list_anomalies;
 
 /// Types for the `ListLogAnomalyDetectors` operation.
 pub mod list_log_anomaly_detectors;
+
+/// Types for the `ListLogGroupsForQuery` operation.
+pub mod list_log_groups_for_query;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
@@ -178,6 +196,9 @@ pub mod put_destination;
 /// Types for the `PutDestinationPolicy` operation.
 pub mod put_destination_policy;
 
+/// Types for the `PutIndexPolicy` operation.
+pub mod put_index_policy;
+
 /// Types for the `PutLogEvents` operation.
 pub mod put_log_events;
 
@@ -196,6 +217,9 @@ pub mod put_retention_policy;
 /// Types for the `PutSubscriptionFilter` operation.
 pub mod put_subscription_filter;
 
+/// Types for the `PutTransformer` operation.
+pub mod put_transformer;
+
 /// Types for the `StartQuery` operation.
 pub mod start_query;
 
@@ -210,6 +234,9 @@ pub mod tag_resource;
 
 /// Types for the `TestMetricFilter` operation.
 pub mod test_metric_filter;
+
+/// Types for the `TestTransformer` operation.
+pub mod test_transformer;
 
 /// Types for the `UntagLogGroup` operation.
 pub mod untag_log_group;

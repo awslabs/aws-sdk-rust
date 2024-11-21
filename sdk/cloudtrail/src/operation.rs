@@ -10,6 +10,9 @@ pub mod cancel_query;
 /// Types for the `CreateChannel` operation.
 pub mod create_channel;
 
+/// Types for the `CreateDashboard` operation.
+pub mod create_dashboard;
+
 /// Types for the `CreateEventDataStore` operation.
 pub mod create_event_data_store;
 
@@ -18,6 +21,9 @@ pub mod create_trail;
 
 /// Types for the `DeleteChannel` operation.
 pub mod delete_channel;
+
+/// Types for the `DeleteDashboard` operation.
+pub mod delete_dashboard;
 
 /// Types for the `DeleteEventDataStore` operation.
 pub mod delete_event_data_store;
@@ -49,6 +55,9 @@ pub mod generate_query;
 /// Types for the `GetChannel` operation.
 pub mod get_channel;
 
+/// Types for the `GetDashboard` operation.
+pub mod get_dashboard;
+
 /// Types for the `GetEventDataStore` operation.
 pub mod get_event_data_store;
 
@@ -75,6 +84,9 @@ pub mod get_trail_status;
 
 /// Types for the `ListChannels` operation.
 pub mod list_channels;
+
+/// Types for the `ListDashboards` operation.
+pub mod list_dashboards;
 
 /// Types for the `ListEventDataStores` operation.
 pub mod list_event_data_stores;
@@ -121,6 +133,9 @@ pub mod remove_tags;
 /// Types for the `RestoreEventDataStore` operation.
 pub mod restore_event_data_store;
 
+/// Types for the `StartDashboardRefresh` operation.
+pub mod start_dashboard_refresh;
+
 /// Types for the `StartEventDataStoreIngestion` operation.
 pub mod start_event_data_store_ingestion;
 
@@ -144,6 +159,9 @@ pub mod stop_logging;
 
 /// Types for the `UpdateChannel` operation.
 pub mod update_channel;
+
+/// Types for the `UpdateDashboard` operation.
+pub mod update_dashboard;
 
 /// Types for the `UpdateEventDataStore` operation.
 pub mod update_event_data_store;

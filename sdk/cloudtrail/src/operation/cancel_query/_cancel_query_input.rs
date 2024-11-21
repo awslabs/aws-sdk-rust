@@ -8,6 +8,8 @@ pub struct CancelQueryInput {
     pub event_data_store: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the query that you want to cancel. The <code>QueryId</code> comes from the response of a <code>StartQuery</code> operation.</p>
     pub query_id: ::std::option::Option<::std::string::String>,
+    /// <p>The account ID of the event data store owner.</p>
+    pub event_data_store_owner_account_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelQueryInput {
     /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query is running.</p>
@@ -18,6 +20,10 @@ impl CancelQueryInput {
     /// <p>The ID of the query that you want to cancel. The <code>QueryId</code> comes from the response of a <code>StartQuery</code> operation.</p>
     pub fn query_id(&self) -> ::std::option::Option<&str> {
         self.query_id.as_deref()
+    }
+    /// <p>The account ID of the event data store owner.</p>
+    pub fn event_data_store_owner_account_id(&self) -> ::std::option::Option<&str> {
+        self.event_data_store_owner_account_id.as_deref()
     }
 }
 impl CancelQueryInput {
@@ -33,6 +39,7 @@ impl CancelQueryInput {
 pub struct CancelQueryInputBuilder {
     pub(crate) event_data_store: ::std::option::Option<::std::string::String>,
     pub(crate) query_id: ::std::option::Option<::std::string::String>,
+    pub(crate) event_data_store_owner_account_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelQueryInputBuilder {
     /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query is running.</p>
@@ -67,11 +74,26 @@ impl CancelQueryInputBuilder {
     pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.query_id
     }
+    /// <p>The account ID of the event data store owner.</p>
+    pub fn event_data_store_owner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.event_data_store_owner_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The account ID of the event data store owner.</p>
+    pub fn set_event_data_store_owner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.event_data_store_owner_account_id = input;
+        self
+    }
+    /// <p>The account ID of the event data store owner.</p>
+    pub fn get_event_data_store_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_data_store_owner_account_id
+    }
     /// Consumes the builder and constructs a [`CancelQueryInput`](crate::operation::cancel_query::CancelQueryInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::cancel_query::CancelQueryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_query::CancelQueryInput {
             event_data_store: self.event_data_store,
             query_id: self.query_id,
+            event_data_store_owner_account_id: self.event_data_store_owner_account_id,
         })
     }
 }

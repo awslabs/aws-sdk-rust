@@ -17,6 +17,10 @@ pub fn ser_origin_group(
         let inner_writer = scope.start_el("Members");
         crate::protocol_serde::shape_origin_group_members::ser_origin_group_members(var_2, inner_writer)?
     }
+    if let Some(var_3) = &input.selection_criteria {
+        let mut inner_writer = scope.start_el("SelectionCriteria").finish();
+        inner_writer.data(var_3.as_str());
+    }
     scope.finish();
     Ok(())
 }
@@ -30,7 +34,7 @@ pub fn de_origin_group(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Id") /* Id com.amazonaws.cloudfront#OriginGroup$Id */ =>  {
-                let var_3 =
+                let var_4 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -39,27 +43,41 @@ pub fn de_origin_group(
                         ?
                     )
                 ;
-                builder = builder.set_id(var_3);
+                builder = builder.set_id(var_4);
             }
             ,
             s if s.matches("FailoverCriteria") /* FailoverCriteria com.amazonaws.cloudfront#OriginGroup$FailoverCriteria */ =>  {
-                let var_4 =
+                let var_5 =
                     Some(
                         crate::protocol_serde::shape_origin_group_failover_criteria::de_origin_group_failover_criteria(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_failover_criteria(var_4);
+                builder = builder.set_failover_criteria(var_5);
             }
             ,
             s if s.matches("Members") /* Members com.amazonaws.cloudfront#OriginGroup$Members */ =>  {
-                let var_5 =
+                let var_6 =
                     Some(
                         crate::protocol_serde::shape_origin_group_members::de_origin_group_members(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_members(var_5);
+                builder = builder.set_members(var_6);
+            }
+            ,
+            s if s.matches("SelectionCriteria") /* SelectionCriteria com.amazonaws.cloudfront#OriginGroup$SelectionCriteria */ =>  {
+                let var_7 =
+                    Some(
+                        Result::<crate::types::OriginGroupSelectionCriteria, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::OriginGroupSelectionCriteria::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_selection_criteria(var_7);
             }
             ,
             _ => {}

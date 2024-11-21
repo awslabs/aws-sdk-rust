@@ -109,6 +109,16 @@ pub(crate) fn reflens_list_signal_catalogs_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_state_templates_output_output_next_token(
+    input: &crate::operation::list_state_templates::ListStateTemplatesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_vehicles_output_output_next_token(
     input: &crate::operation::list_vehicles::ListVehiclesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -232,6 +242,16 @@ pub(crate) fn lens_list_signal_catalog_nodes_output_output_nodes(
 pub(crate) fn lens_list_signal_catalogs_output_output_summaries(
     input: crate::operation::list_signal_catalogs::ListSignalCatalogsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SignalCatalogSummary>> {
+    let input = match input.summaries {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_state_templates_output_output_summaries(
+    input: crate::operation::list_state_templates::ListStateTemplatesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::StateTemplateSummary>> {
     let input = match input.summaries {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,

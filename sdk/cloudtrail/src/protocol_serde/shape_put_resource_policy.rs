@@ -18,6 +18,21 @@ pub fn de_put_resource_policy_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "ConflictException" => crate::operation::put_resource_policy::PutResourcePolicyError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::put_resource_policy::PutResourcePolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "OperationNotPermittedException" => crate::operation::put_resource_policy::PutResourcePolicyError::OperationNotPermittedException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -173,6 +188,13 @@ pub(crate) fn de_put_resource_policy(
                 }
                 "ResourcePolicy" => {
                     builder = builder.set_resource_policy(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "DelegatedAdminResourcePolicy" => {
+                    builder = builder.set_delegated_admin_resource_policy(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,

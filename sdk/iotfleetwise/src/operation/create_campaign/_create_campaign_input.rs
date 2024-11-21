@@ -11,42 +11,49 @@ pub struct CreateCampaignInput {
     pub signal_catalog_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the vehicle or fleet to deploy a campaign to.</p>
     pub target_arn: ::std::option::Option<::std::string::String>,
-    /// <p>(Optional) The time, in milliseconds, to deliver a campaign after it was approved. If it's not specified, <code>0</code> is used.</p>
+    /// <p>The time, in milliseconds, to deliver a campaign after it was approved. If it's not specified, <code>0</code> is used.</p>
     /// <p>Default: <code>0</code></p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>(Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data isn't collected after the campaign expires.</p>
+    /// <p>The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data isn't collected after the campaign expires.</p>
     /// <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)</p>
     pub expiry_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>(Optional) How long (in milliseconds) to collect raw data after a triggering event initiates the collection. If it's not specified, <code>0</code> is used.</p>
+    /// <p>How long (in milliseconds) to collect raw data after a triggering event initiates the collection. If it's not specified, <code>0</code> is used.</p>
     /// <p>Default: <code>0</code></p>
     pub post_trigger_collection_duration: ::std::option::Option<i64>,
-    /// <p>(Optional) Option for a vehicle to send diagnostic trouble codes to Amazon Web Services IoT FleetWise. If you want to send diagnostic trouble codes, use <code>SEND_ACTIVE_DTCS</code>. If it's not specified, <code>OFF</code> is used.</p>
+    /// <p>Option for a vehicle to send diagnostic trouble codes to Amazon Web Services IoT FleetWise. If you want to send diagnostic trouble codes, use <code>SEND_ACTIVE_DTCS</code>. If it's not specified, <code>OFF</code> is used.</p>
     /// <p>Default: <code>OFF</code></p>
     pub diagnostics_mode: ::std::option::Option<crate::types::DiagnosticsMode>,
-    /// <p>(Optional) Whether to store collected data after a vehicle lost a connection with the cloud. After a connection is re-established, the data is automatically forwarded to Amazon Web Services IoT FleetWise. If you want to store collected data when a vehicle loses connection with the cloud, use <code>TO_DISK</code>. If it's not specified, <code>OFF</code> is used.</p>
+    /// <p>Determines whether to store collected data after a vehicle lost a connection with the cloud. After a connection is re-established, the data is automatically forwarded to Amazon Web Services IoT FleetWise. If you want to store collected data when a vehicle loses connection with the cloud, use <code>TO_DISK</code>. If it's not specified, <code>OFF</code> is used.</p>
     /// <p>Default: <code>OFF</code></p>
     pub spooling_mode: ::std::option::Option<crate::types::SpoolingMode>,
-    /// <p>(Optional) Whether to compress signals before transmitting data to Amazon Web Services IoT FleetWise. If you don't want to compress the signals, use <code>OFF</code>. If it's not specified, <code>SNAPPY</code> is used.</p>
+    /// <p>Determines whether to compress signals before transmitting data to Amazon Web Services IoT FleetWise. If you don't want to compress the signals, use <code>OFF</code>. If it's not specified, <code>SNAPPY</code> is used.</p>
     /// <p>Default: <code>SNAPPY</code></p>
     pub compression: ::std::option::Option<crate::types::Compression>,
-    /// <p>(Optional) A number indicating the priority of one campaign over another campaign for a certain vehicle or fleet. A campaign with the lowest value is deployed to vehicles before any other campaigns. If it's not specified, <code>0</code> is used.</p>
+    /// <p>A number indicating the priority of one campaign over another campaign for a certain vehicle or fleet. A campaign with the lowest value is deployed to vehicles before any other campaigns. If it's not specified, <code>0</code> is used.</p>
     /// <p>Default: <code>0</code></p>
     #[deprecated(note = "priority is no longer used or needed as input")]
     pub priority: ::std::option::Option<i32>,
-    /// <p>(Optional) A list of information about signals to collect.</p>
+    /// <p>A list of information about signals to collect.</p><note>
+    /// <p>If you upload a signal as a condition in a data partition for a campaign, then those same signals must be included in <code>signalsToCollect</code>.</p>
+    /// </note>
     pub signals_to_collect: ::std::option::Option<::std::vec::Vec<crate::types::SignalInformation>>,
     /// <p>The data collection scheme associated with the campaign. You can specify a scheme that collects data based on time or an event.</p>
     pub collection_scheme: ::std::option::Option<crate::types::CollectionScheme>,
-    /// <p>(Optional) A list of vehicle attributes to associate with a campaign.</p>
+    /// <p>A list of vehicle attributes to associate with a campaign.</p>
     /// <p>Enrich the data with specified vehicle attributes. For example, add <code>make</code> and <code>model</code> to the campaign, and Amazon Web Services IoT FleetWise will associate the data with those attributes as dimensions in Amazon Timestream. You can then query the data against <code>make</code> and <code>model</code>.</p>
     /// <p>Default: An empty array</p>
     pub data_extra_dimensions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Metadata that can be used to manage the campaign.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    /// <p>The destination where the campaign sends data. You can choose to send data to be stored in Amazon S3 or Amazon Timestream.</p>
+    /// <p>The destination where the campaign sends data. You can send data to an MQTT topic, or store it in Amazon S3 or Amazon Timestream.</p>
+    /// <p>MQTT is the publish/subscribe messaging protocol used by Amazon Web Services IoT to communicate with your devices.</p>
     /// <p>Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such as data lakes, centralized data storage, data processing pipelines, and analytics. Amazon Web Services IoT FleetWise supports at-least-once file delivery to S3. Your vehicle data is stored on multiple Amazon Web Services IoT FleetWise servers for redundancy and high availability.</p>
     /// <p>You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data so that you can identify trends and patterns.</p>
     pub data_destination_configs: ::std::option::Option<::std::vec::Vec<crate::types::DataDestinationConfig>>,
+    /// <p>The data partitions associated with the signals collected from the vehicle.</p>
+    pub data_partitions: ::std::option::Option<::std::vec::Vec<crate::types::DataPartition>>,
+    /// <p>A list of information about signals to fetch.</p>
+    pub signals_to_fetch: ::std::option::Option<::std::vec::Vec<crate::types::SignalFetchInformation>>,
 }
 impl CreateCampaignInput {
     /// <p>The name of the campaign to create.</p>
@@ -65,43 +72,45 @@ impl CreateCampaignInput {
     pub fn target_arn(&self) -> ::std::option::Option<&str> {
         self.target_arn.as_deref()
     }
-    /// <p>(Optional) The time, in milliseconds, to deliver a campaign after it was approved. If it's not specified, <code>0</code> is used.</p>
+    /// <p>The time, in milliseconds, to deliver a campaign after it was approved. If it's not specified, <code>0</code> is used.</p>
     /// <p>Default: <code>0</code></p>
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>(Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data isn't collected after the campaign expires.</p>
+    /// <p>The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data isn't collected after the campaign expires.</p>
     /// <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)</p>
     pub fn expiry_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.expiry_time.as_ref()
     }
-    /// <p>(Optional) How long (in milliseconds) to collect raw data after a triggering event initiates the collection. If it's not specified, <code>0</code> is used.</p>
+    /// <p>How long (in milliseconds) to collect raw data after a triggering event initiates the collection. If it's not specified, <code>0</code> is used.</p>
     /// <p>Default: <code>0</code></p>
     pub fn post_trigger_collection_duration(&self) -> ::std::option::Option<i64> {
         self.post_trigger_collection_duration
     }
-    /// <p>(Optional) Option for a vehicle to send diagnostic trouble codes to Amazon Web Services IoT FleetWise. If you want to send diagnostic trouble codes, use <code>SEND_ACTIVE_DTCS</code>. If it's not specified, <code>OFF</code> is used.</p>
+    /// <p>Option for a vehicle to send diagnostic trouble codes to Amazon Web Services IoT FleetWise. If you want to send diagnostic trouble codes, use <code>SEND_ACTIVE_DTCS</code>. If it's not specified, <code>OFF</code> is used.</p>
     /// <p>Default: <code>OFF</code></p>
     pub fn diagnostics_mode(&self) -> ::std::option::Option<&crate::types::DiagnosticsMode> {
         self.diagnostics_mode.as_ref()
     }
-    /// <p>(Optional) Whether to store collected data after a vehicle lost a connection with the cloud. After a connection is re-established, the data is automatically forwarded to Amazon Web Services IoT FleetWise. If you want to store collected data when a vehicle loses connection with the cloud, use <code>TO_DISK</code>. If it's not specified, <code>OFF</code> is used.</p>
+    /// <p>Determines whether to store collected data after a vehicle lost a connection with the cloud. After a connection is re-established, the data is automatically forwarded to Amazon Web Services IoT FleetWise. If you want to store collected data when a vehicle loses connection with the cloud, use <code>TO_DISK</code>. If it's not specified, <code>OFF</code> is used.</p>
     /// <p>Default: <code>OFF</code></p>
     pub fn spooling_mode(&self) -> ::std::option::Option<&crate::types::SpoolingMode> {
         self.spooling_mode.as_ref()
     }
-    /// <p>(Optional) Whether to compress signals before transmitting data to Amazon Web Services IoT FleetWise. If you don't want to compress the signals, use <code>OFF</code>. If it's not specified, <code>SNAPPY</code> is used.</p>
+    /// <p>Determines whether to compress signals before transmitting data to Amazon Web Services IoT FleetWise. If you don't want to compress the signals, use <code>OFF</code>. If it's not specified, <code>SNAPPY</code> is used.</p>
     /// <p>Default: <code>SNAPPY</code></p>
     pub fn compression(&self) -> ::std::option::Option<&crate::types::Compression> {
         self.compression.as_ref()
     }
-    /// <p>(Optional) A number indicating the priority of one campaign over another campaign for a certain vehicle or fleet. A campaign with the lowest value is deployed to vehicles before any other campaigns. If it's not specified, <code>0</code> is used.</p>
+    /// <p>A number indicating the priority of one campaign over another campaign for a certain vehicle or fleet. A campaign with the lowest value is deployed to vehicles before any other campaigns. If it's not specified, <code>0</code> is used.</p>
     /// <p>Default: <code>0</code></p>
     #[deprecated(note = "priority is no longer used or needed as input")]
     pub fn priority(&self) -> ::std::option::Option<i32> {
         self.priority
     }
-    /// <p>(Optional) A list of information about signals to collect.</p>
+    /// <p>A list of information about signals to collect.</p><note>
+    /// <p>If you upload a signal as a condition in a data partition for a campaign, then those same signals must be included in <code>signalsToCollect</code>.</p>
+    /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.signals_to_collect.is_none()`.
     pub fn signals_to_collect(&self) -> &[crate::types::SignalInformation] {
@@ -111,7 +120,7 @@ impl CreateCampaignInput {
     pub fn collection_scheme(&self) -> ::std::option::Option<&crate::types::CollectionScheme> {
         self.collection_scheme.as_ref()
     }
-    /// <p>(Optional) A list of vehicle attributes to associate with a campaign.</p>
+    /// <p>A list of vehicle attributes to associate with a campaign.</p>
     /// <p>Enrich the data with specified vehicle attributes. For example, add <code>make</code> and <code>model</code> to the campaign, and Amazon Web Services IoT FleetWise will associate the data with those attributes as dimensions in Amazon Timestream. You can then query the data against <code>make</code> and <code>model</code>.</p>
     /// <p>Default: An empty array</p>
     ///
@@ -125,13 +134,26 @@ impl CreateCampaignInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
-    /// <p>The destination where the campaign sends data. You can choose to send data to be stored in Amazon S3 or Amazon Timestream.</p>
+    /// <p>The destination where the campaign sends data. You can send data to an MQTT topic, or store it in Amazon S3 or Amazon Timestream.</p>
+    /// <p>MQTT is the publish/subscribe messaging protocol used by Amazon Web Services IoT to communicate with your devices.</p>
     /// <p>Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such as data lakes, centralized data storage, data processing pipelines, and analytics. Amazon Web Services IoT FleetWise supports at-least-once file delivery to S3. Your vehicle data is stored on multiple Amazon Web Services IoT FleetWise servers for redundancy and high availability.</p>
     /// <p>You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data so that you can identify trends and patterns.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_destination_configs.is_none()`.
     pub fn data_destination_configs(&self) -> &[crate::types::DataDestinationConfig] {
         self.data_destination_configs.as_deref().unwrap_or_default()
+    }
+    /// <p>The data partitions associated with the signals collected from the vehicle.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_partitions.is_none()`.
+    pub fn data_partitions(&self) -> &[crate::types::DataPartition] {
+        self.data_partitions.as_deref().unwrap_or_default()
+    }
+    /// <p>A list of information about signals to fetch.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.signals_to_fetch.is_none()`.
+    pub fn signals_to_fetch(&self) -> &[crate::types::SignalFetchInformation] {
+        self.signals_to_fetch.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for CreateCampaignInput {
@@ -153,6 +175,8 @@ impl ::std::fmt::Debug for CreateCampaignInput {
         formatter.field("data_extra_dimensions", &"*** Sensitive Data Redacted ***");
         formatter.field("tags", &self.tags);
         formatter.field("data_destination_configs", &self.data_destination_configs);
+        formatter.field("data_partitions", &self.data_partitions);
+        formatter.field("signals_to_fetch", &self.signals_to_fetch);
         formatter.finish()
     }
 }
@@ -183,6 +207,8 @@ pub struct CreateCampaignInputBuilder {
     pub(crate) data_extra_dimensions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) data_destination_configs: ::std::option::Option<::std::vec::Vec<crate::types::DataDestinationConfig>>,
+    pub(crate) data_partitions: ::std::option::Option<::std::vec::Vec<crate::types::DataPartition>>,
+    pub(crate) signals_to_fetch: ::std::option::Option<::std::vec::Vec<crate::types::SignalFetchInformation>>,
 }
 impl CreateCampaignInputBuilder {
     /// <p>The name of the campaign to create.</p>
@@ -244,123 +270,123 @@ impl CreateCampaignInputBuilder {
     pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_arn
     }
-    /// <p>(Optional) The time, in milliseconds, to deliver a campaign after it was approved. If it's not specified, <code>0</code> is used.</p>
+    /// <p>The time, in milliseconds, to deliver a campaign after it was approved. If it's not specified, <code>0</code> is used.</p>
     /// <p>Default: <code>0</code></p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>(Optional) The time, in milliseconds, to deliver a campaign after it was approved. If it's not specified, <code>0</code> is used.</p>
+    /// <p>The time, in milliseconds, to deliver a campaign after it was approved. If it's not specified, <code>0</code> is used.</p>
     /// <p>Default: <code>0</code></p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
-    /// <p>(Optional) The time, in milliseconds, to deliver a campaign after it was approved. If it's not specified, <code>0</code> is used.</p>
+    /// <p>The time, in milliseconds, to deliver a campaign after it was approved. If it's not specified, <code>0</code> is used.</p>
     /// <p>Default: <code>0</code></p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_time
     }
-    /// <p>(Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data isn't collected after the campaign expires.</p>
+    /// <p>The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data isn't collected after the campaign expires.</p>
     /// <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)</p>
     pub fn expiry_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.expiry_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>(Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data isn't collected after the campaign expires.</p>
+    /// <p>The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data isn't collected after the campaign expires.</p>
     /// <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)</p>
     pub fn set_expiry_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expiry_time = input;
         self
     }
-    /// <p>(Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data isn't collected after the campaign expires.</p>
+    /// <p>The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data isn't collected after the campaign expires.</p>
     /// <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)</p>
     pub fn get_expiry_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.expiry_time
     }
-    /// <p>(Optional) How long (in milliseconds) to collect raw data after a triggering event initiates the collection. If it's not specified, <code>0</code> is used.</p>
+    /// <p>How long (in milliseconds) to collect raw data after a triggering event initiates the collection. If it's not specified, <code>0</code> is used.</p>
     /// <p>Default: <code>0</code></p>
     pub fn post_trigger_collection_duration(mut self, input: i64) -> Self {
         self.post_trigger_collection_duration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>(Optional) How long (in milliseconds) to collect raw data after a triggering event initiates the collection. If it's not specified, <code>0</code> is used.</p>
+    /// <p>How long (in milliseconds) to collect raw data after a triggering event initiates the collection. If it's not specified, <code>0</code> is used.</p>
     /// <p>Default: <code>0</code></p>
     pub fn set_post_trigger_collection_duration(mut self, input: ::std::option::Option<i64>) -> Self {
         self.post_trigger_collection_duration = input;
         self
     }
-    /// <p>(Optional) How long (in milliseconds) to collect raw data after a triggering event initiates the collection. If it's not specified, <code>0</code> is used.</p>
+    /// <p>How long (in milliseconds) to collect raw data after a triggering event initiates the collection. If it's not specified, <code>0</code> is used.</p>
     /// <p>Default: <code>0</code></p>
     pub fn get_post_trigger_collection_duration(&self) -> &::std::option::Option<i64> {
         &self.post_trigger_collection_duration
     }
-    /// <p>(Optional) Option for a vehicle to send diagnostic trouble codes to Amazon Web Services IoT FleetWise. If you want to send diagnostic trouble codes, use <code>SEND_ACTIVE_DTCS</code>. If it's not specified, <code>OFF</code> is used.</p>
+    /// <p>Option for a vehicle to send diagnostic trouble codes to Amazon Web Services IoT FleetWise. If you want to send diagnostic trouble codes, use <code>SEND_ACTIVE_DTCS</code>. If it's not specified, <code>OFF</code> is used.</p>
     /// <p>Default: <code>OFF</code></p>
     pub fn diagnostics_mode(mut self, input: crate::types::DiagnosticsMode) -> Self {
         self.diagnostics_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>(Optional) Option for a vehicle to send diagnostic trouble codes to Amazon Web Services IoT FleetWise. If you want to send diagnostic trouble codes, use <code>SEND_ACTIVE_DTCS</code>. If it's not specified, <code>OFF</code> is used.</p>
+    /// <p>Option for a vehicle to send diagnostic trouble codes to Amazon Web Services IoT FleetWise. If you want to send diagnostic trouble codes, use <code>SEND_ACTIVE_DTCS</code>. If it's not specified, <code>OFF</code> is used.</p>
     /// <p>Default: <code>OFF</code></p>
     pub fn set_diagnostics_mode(mut self, input: ::std::option::Option<crate::types::DiagnosticsMode>) -> Self {
         self.diagnostics_mode = input;
         self
     }
-    /// <p>(Optional) Option for a vehicle to send diagnostic trouble codes to Amazon Web Services IoT FleetWise. If you want to send diagnostic trouble codes, use <code>SEND_ACTIVE_DTCS</code>. If it's not specified, <code>OFF</code> is used.</p>
+    /// <p>Option for a vehicle to send diagnostic trouble codes to Amazon Web Services IoT FleetWise. If you want to send diagnostic trouble codes, use <code>SEND_ACTIVE_DTCS</code>. If it's not specified, <code>OFF</code> is used.</p>
     /// <p>Default: <code>OFF</code></p>
     pub fn get_diagnostics_mode(&self) -> &::std::option::Option<crate::types::DiagnosticsMode> {
         &self.diagnostics_mode
     }
-    /// <p>(Optional) Whether to store collected data after a vehicle lost a connection with the cloud. After a connection is re-established, the data is automatically forwarded to Amazon Web Services IoT FleetWise. If you want to store collected data when a vehicle loses connection with the cloud, use <code>TO_DISK</code>. If it's not specified, <code>OFF</code> is used.</p>
+    /// <p>Determines whether to store collected data after a vehicle lost a connection with the cloud. After a connection is re-established, the data is automatically forwarded to Amazon Web Services IoT FleetWise. If you want to store collected data when a vehicle loses connection with the cloud, use <code>TO_DISK</code>. If it's not specified, <code>OFF</code> is used.</p>
     /// <p>Default: <code>OFF</code></p>
     pub fn spooling_mode(mut self, input: crate::types::SpoolingMode) -> Self {
         self.spooling_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>(Optional) Whether to store collected data after a vehicle lost a connection with the cloud. After a connection is re-established, the data is automatically forwarded to Amazon Web Services IoT FleetWise. If you want to store collected data when a vehicle loses connection with the cloud, use <code>TO_DISK</code>. If it's not specified, <code>OFF</code> is used.</p>
+    /// <p>Determines whether to store collected data after a vehicle lost a connection with the cloud. After a connection is re-established, the data is automatically forwarded to Amazon Web Services IoT FleetWise. If you want to store collected data when a vehicle loses connection with the cloud, use <code>TO_DISK</code>. If it's not specified, <code>OFF</code> is used.</p>
     /// <p>Default: <code>OFF</code></p>
     pub fn set_spooling_mode(mut self, input: ::std::option::Option<crate::types::SpoolingMode>) -> Self {
         self.spooling_mode = input;
         self
     }
-    /// <p>(Optional) Whether to store collected data after a vehicle lost a connection with the cloud. After a connection is re-established, the data is automatically forwarded to Amazon Web Services IoT FleetWise. If you want to store collected data when a vehicle loses connection with the cloud, use <code>TO_DISK</code>. If it's not specified, <code>OFF</code> is used.</p>
+    /// <p>Determines whether to store collected data after a vehicle lost a connection with the cloud. After a connection is re-established, the data is automatically forwarded to Amazon Web Services IoT FleetWise. If you want to store collected data when a vehicle loses connection with the cloud, use <code>TO_DISK</code>. If it's not specified, <code>OFF</code> is used.</p>
     /// <p>Default: <code>OFF</code></p>
     pub fn get_spooling_mode(&self) -> &::std::option::Option<crate::types::SpoolingMode> {
         &self.spooling_mode
     }
-    /// <p>(Optional) Whether to compress signals before transmitting data to Amazon Web Services IoT FleetWise. If you don't want to compress the signals, use <code>OFF</code>. If it's not specified, <code>SNAPPY</code> is used.</p>
+    /// <p>Determines whether to compress signals before transmitting data to Amazon Web Services IoT FleetWise. If you don't want to compress the signals, use <code>OFF</code>. If it's not specified, <code>SNAPPY</code> is used.</p>
     /// <p>Default: <code>SNAPPY</code></p>
     pub fn compression(mut self, input: crate::types::Compression) -> Self {
         self.compression = ::std::option::Option::Some(input);
         self
     }
-    /// <p>(Optional) Whether to compress signals before transmitting data to Amazon Web Services IoT FleetWise. If you don't want to compress the signals, use <code>OFF</code>. If it's not specified, <code>SNAPPY</code> is used.</p>
+    /// <p>Determines whether to compress signals before transmitting data to Amazon Web Services IoT FleetWise. If you don't want to compress the signals, use <code>OFF</code>. If it's not specified, <code>SNAPPY</code> is used.</p>
     /// <p>Default: <code>SNAPPY</code></p>
     pub fn set_compression(mut self, input: ::std::option::Option<crate::types::Compression>) -> Self {
         self.compression = input;
         self
     }
-    /// <p>(Optional) Whether to compress signals before transmitting data to Amazon Web Services IoT FleetWise. If you don't want to compress the signals, use <code>OFF</code>. If it's not specified, <code>SNAPPY</code> is used.</p>
+    /// <p>Determines whether to compress signals before transmitting data to Amazon Web Services IoT FleetWise. If you don't want to compress the signals, use <code>OFF</code>. If it's not specified, <code>SNAPPY</code> is used.</p>
     /// <p>Default: <code>SNAPPY</code></p>
     pub fn get_compression(&self) -> &::std::option::Option<crate::types::Compression> {
         &self.compression
     }
-    /// <p>(Optional) A number indicating the priority of one campaign over another campaign for a certain vehicle or fleet. A campaign with the lowest value is deployed to vehicles before any other campaigns. If it's not specified, <code>0</code> is used.</p>
+    /// <p>A number indicating the priority of one campaign over another campaign for a certain vehicle or fleet. A campaign with the lowest value is deployed to vehicles before any other campaigns. If it's not specified, <code>0</code> is used.</p>
     /// <p>Default: <code>0</code></p>
     #[deprecated(note = "priority is no longer used or needed as input")]
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
         self
     }
-    /// <p>(Optional) A number indicating the priority of one campaign over another campaign for a certain vehicle or fleet. A campaign with the lowest value is deployed to vehicles before any other campaigns. If it's not specified, <code>0</code> is used.</p>
+    /// <p>A number indicating the priority of one campaign over another campaign for a certain vehicle or fleet. A campaign with the lowest value is deployed to vehicles before any other campaigns. If it's not specified, <code>0</code> is used.</p>
     /// <p>Default: <code>0</code></p>
     #[deprecated(note = "priority is no longer used or needed as input")]
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
     }
-    /// <p>(Optional) A number indicating the priority of one campaign over another campaign for a certain vehicle or fleet. A campaign with the lowest value is deployed to vehicles before any other campaigns. If it's not specified, <code>0</code> is used.</p>
+    /// <p>A number indicating the priority of one campaign over another campaign for a certain vehicle or fleet. A campaign with the lowest value is deployed to vehicles before any other campaigns. If it's not specified, <code>0</code> is used.</p>
     /// <p>Default: <code>0</code></p>
     #[deprecated(note = "priority is no longer used or needed as input")]
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
@@ -370,19 +396,25 @@ impl CreateCampaignInputBuilder {
     ///
     /// To override the contents of this collection use [`set_signals_to_collect`](Self::set_signals_to_collect).
     ///
-    /// <p>(Optional) A list of information about signals to collect.</p>
+    /// <p>A list of information about signals to collect.</p><note>
+    /// <p>If you upload a signal as a condition in a data partition for a campaign, then those same signals must be included in <code>signalsToCollect</code>.</p>
+    /// </note>
     pub fn signals_to_collect(mut self, input: crate::types::SignalInformation) -> Self {
         let mut v = self.signals_to_collect.unwrap_or_default();
         v.push(input);
         self.signals_to_collect = ::std::option::Option::Some(v);
         self
     }
-    /// <p>(Optional) A list of information about signals to collect.</p>
+    /// <p>A list of information about signals to collect.</p><note>
+    /// <p>If you upload a signal as a condition in a data partition for a campaign, then those same signals must be included in <code>signalsToCollect</code>.</p>
+    /// </note>
     pub fn set_signals_to_collect(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SignalInformation>>) -> Self {
         self.signals_to_collect = input;
         self
     }
-    /// <p>(Optional) A list of information about signals to collect.</p>
+    /// <p>A list of information about signals to collect.</p><note>
+    /// <p>If you upload a signal as a condition in a data partition for a campaign, then those same signals must be included in <code>signalsToCollect</code>.</p>
+    /// </note>
     pub fn get_signals_to_collect(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SignalInformation>> {
         &self.signals_to_collect
     }
@@ -405,7 +437,7 @@ impl CreateCampaignInputBuilder {
     ///
     /// To override the contents of this collection use [`set_data_extra_dimensions`](Self::set_data_extra_dimensions).
     ///
-    /// <p>(Optional) A list of vehicle attributes to associate with a campaign.</p>
+    /// <p>A list of vehicle attributes to associate with a campaign.</p>
     /// <p>Enrich the data with specified vehicle attributes. For example, add <code>make</code> and <code>model</code> to the campaign, and Amazon Web Services IoT FleetWise will associate the data with those attributes as dimensions in Amazon Timestream. You can then query the data against <code>make</code> and <code>model</code>.</p>
     /// <p>Default: An empty array</p>
     pub fn data_extra_dimensions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -414,14 +446,14 @@ impl CreateCampaignInputBuilder {
         self.data_extra_dimensions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>(Optional) A list of vehicle attributes to associate with a campaign.</p>
+    /// <p>A list of vehicle attributes to associate with a campaign.</p>
     /// <p>Enrich the data with specified vehicle attributes. For example, add <code>make</code> and <code>model</code> to the campaign, and Amazon Web Services IoT FleetWise will associate the data with those attributes as dimensions in Amazon Timestream. You can then query the data against <code>make</code> and <code>model</code>.</p>
     /// <p>Default: An empty array</p>
     pub fn set_data_extra_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.data_extra_dimensions = input;
         self
     }
-    /// <p>(Optional) A list of vehicle attributes to associate with a campaign.</p>
+    /// <p>A list of vehicle attributes to associate with a campaign.</p>
     /// <p>Enrich the data with specified vehicle attributes. For example, add <code>make</code> and <code>model</code> to the campaign, and Amazon Web Services IoT FleetWise will associate the data with those attributes as dimensions in Amazon Timestream. You can then query the data against <code>make</code> and <code>model</code>.</p>
     /// <p>Default: An empty array</p>
     pub fn get_data_extra_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
@@ -451,7 +483,8 @@ impl CreateCampaignInputBuilder {
     ///
     /// To override the contents of this collection use [`set_data_destination_configs`](Self::set_data_destination_configs).
     ///
-    /// <p>The destination where the campaign sends data. You can choose to send data to be stored in Amazon S3 or Amazon Timestream.</p>
+    /// <p>The destination where the campaign sends data. You can send data to an MQTT topic, or store it in Amazon S3 or Amazon Timestream.</p>
+    /// <p>MQTT is the publish/subscribe messaging protocol used by Amazon Web Services IoT to communicate with your devices.</p>
     /// <p>Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such as data lakes, centralized data storage, data processing pipelines, and analytics. Amazon Web Services IoT FleetWise supports at-least-once file delivery to S3. Your vehicle data is stored on multiple Amazon Web Services IoT FleetWise servers for redundancy and high availability.</p>
     /// <p>You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data so that you can identify trends and patterns.</p>
     pub fn data_destination_configs(mut self, input: crate::types::DataDestinationConfig) -> Self {
@@ -460,18 +493,60 @@ impl CreateCampaignInputBuilder {
         self.data_destination_configs = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The destination where the campaign sends data. You can choose to send data to be stored in Amazon S3 or Amazon Timestream.</p>
+    /// <p>The destination where the campaign sends data. You can send data to an MQTT topic, or store it in Amazon S3 or Amazon Timestream.</p>
+    /// <p>MQTT is the publish/subscribe messaging protocol used by Amazon Web Services IoT to communicate with your devices.</p>
     /// <p>Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such as data lakes, centralized data storage, data processing pipelines, and analytics. Amazon Web Services IoT FleetWise supports at-least-once file delivery to S3. Your vehicle data is stored on multiple Amazon Web Services IoT FleetWise servers for redundancy and high availability.</p>
     /// <p>You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data so that you can identify trends and patterns.</p>
     pub fn set_data_destination_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataDestinationConfig>>) -> Self {
         self.data_destination_configs = input;
         self
     }
-    /// <p>The destination where the campaign sends data. You can choose to send data to be stored in Amazon S3 or Amazon Timestream.</p>
+    /// <p>The destination where the campaign sends data. You can send data to an MQTT topic, or store it in Amazon S3 or Amazon Timestream.</p>
+    /// <p>MQTT is the publish/subscribe messaging protocol used by Amazon Web Services IoT to communicate with your devices.</p>
     /// <p>Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such as data lakes, centralized data storage, data processing pipelines, and analytics. Amazon Web Services IoT FleetWise supports at-least-once file delivery to S3. Your vehicle data is stored on multiple Amazon Web Services IoT FleetWise servers for redundancy and high availability.</p>
     /// <p>You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data so that you can identify trends and patterns.</p>
     pub fn get_data_destination_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataDestinationConfig>> {
         &self.data_destination_configs
+    }
+    /// Appends an item to `data_partitions`.
+    ///
+    /// To override the contents of this collection use [`set_data_partitions`](Self::set_data_partitions).
+    ///
+    /// <p>The data partitions associated with the signals collected from the vehicle.</p>
+    pub fn data_partitions(mut self, input: crate::types::DataPartition) -> Self {
+        let mut v = self.data_partitions.unwrap_or_default();
+        v.push(input);
+        self.data_partitions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The data partitions associated with the signals collected from the vehicle.</p>
+    pub fn set_data_partitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataPartition>>) -> Self {
+        self.data_partitions = input;
+        self
+    }
+    /// <p>The data partitions associated with the signals collected from the vehicle.</p>
+    pub fn get_data_partitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataPartition>> {
+        &self.data_partitions
+    }
+    /// Appends an item to `signals_to_fetch`.
+    ///
+    /// To override the contents of this collection use [`set_signals_to_fetch`](Self::set_signals_to_fetch).
+    ///
+    /// <p>A list of information about signals to fetch.</p>
+    pub fn signals_to_fetch(mut self, input: crate::types::SignalFetchInformation) -> Self {
+        let mut v = self.signals_to_fetch.unwrap_or_default();
+        v.push(input);
+        self.signals_to_fetch = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of information about signals to fetch.</p>
+    pub fn set_signals_to_fetch(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SignalFetchInformation>>) -> Self {
+        self.signals_to_fetch = input;
+        self
+    }
+    /// <p>A list of information about signals to fetch.</p>
+    pub fn get_signals_to_fetch(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SignalFetchInformation>> {
+        &self.signals_to_fetch
     }
     /// Consumes the builder and constructs a [`CreateCampaignInput`](crate::operation::create_campaign::CreateCampaignInput).
     pub fn build(
@@ -494,6 +569,8 @@ impl CreateCampaignInputBuilder {
             data_extra_dimensions: self.data_extra_dimensions,
             tags: self.tags,
             data_destination_configs: self.data_destination_configs,
+            data_partitions: self.data_partitions,
+            signals_to_fetch: self.signals_to_fetch,
         })
     }
 }
@@ -516,6 +593,8 @@ impl ::std::fmt::Debug for CreateCampaignInputBuilder {
         formatter.field("data_extra_dimensions", &"*** Sensitive Data Redacted ***");
         formatter.field("tags", &self.tags);
         formatter.field("data_destination_configs", &self.data_destination_configs);
+        formatter.field("data_partitions", &self.data_partitions);
+        formatter.field("signals_to_fetch", &self.signals_to_fetch);
         formatter.finish()
     }
 }

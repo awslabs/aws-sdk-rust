@@ -7,6 +7,9 @@ pub mod create_configuration_manager;
 /// Types for the `DeleteConfigurationManager` operation.
 pub mod delete_configuration_manager;
 
+/// Types for the `GetConfiguration` operation.
+pub mod get_configuration;
+
 /// Types for the `GetConfigurationManager` operation.
 pub mod get_configuration_manager;
 
@@ -15,6 +18,9 @@ pub mod get_service_settings;
 
 /// Types for the `ListConfigurationManagers` operation.
 pub mod list_configuration_managers;
+
+/// Types for the `ListConfigurations` operation.
+pub mod list_configurations;
 
 /// Types for the `ListQuickSetupTypes` operation.
 pub mod list_quick_setup_types;

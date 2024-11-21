@@ -23,7 +23,7 @@ impl crate::operation::delete_bucket_tagging::builders::DeleteBucketTaggingInput
 /// Fluent builder constructing a request to `DeleteBucketTagging`.
 ///
 /// <note>
-/// <p>This operation is not supported by directory buckets.</p>
+/// <p>This operation is not supported for directory buckets.</p>
 /// </note>
 /// <p>Deletes the tags from the bucket.</p>
 /// <p>To use this operation, you must have permission to perform the <code>s3:PutBucketTagging</code> action. By default, the bucket owner has this permission and can grant this permission to others.</p>

@@ -28,7 +28,7 @@ pub struct InstanceProperty {
     pub last_ping_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The version of SSM Agent running on your managed node.</p>
     pub agent_version: ::std::option::Option<::std::string::String>,
-    /// <p>The operating system platform type of the managed node. For example, Windows.</p>
+    /// <p>The operating system platform type of the managed node. For example, Windows Server or Amazon Linux 2.</p>
     pub platform_type: ::std::option::Option<crate::types::PlatformType>,
     /// <p>The name of the operating system platform running on your managed node.</p>
     pub platform_name: ::std::option::Option<::std::string::String>,
@@ -106,7 +106,7 @@ impl InstanceProperty {
     pub fn agent_version(&self) -> ::std::option::Option<&str> {
         self.agent_version.as_deref()
     }
-    /// <p>The operating system platform type of the managed node. For example, Windows.</p>
+    /// <p>The operating system platform type of the managed node. For example, Windows Server or Amazon Linux 2.</p>
     pub fn platform_type(&self) -> ::std::option::Option<&crate::types::PlatformType> {
         self.platform_type.as_ref()
     }
@@ -405,17 +405,17 @@ impl InstancePropertyBuilder {
     pub fn get_agent_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.agent_version
     }
-    /// <p>The operating system platform type of the managed node. For example, Windows.</p>
+    /// <p>The operating system platform type of the managed node. For example, Windows Server or Amazon Linux 2.</p>
     pub fn platform_type(mut self, input: crate::types::PlatformType) -> Self {
         self.platform_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The operating system platform type of the managed node. For example, Windows.</p>
+    /// <p>The operating system platform type of the managed node. For example, Windows Server or Amazon Linux 2.</p>
     pub fn set_platform_type(mut self, input: ::std::option::Option<crate::types::PlatformType>) -> Self {
         self.platform_type = input;
         self
     }
-    /// <p>The operating system platform type of the managed node. For example, Windows.</p>
+    /// <p>The operating system platform type of the managed node. For example, Windows Server or Amazon Linux 2.</p>
     pub fn get_platform_type(&self) -> &::std::option::Option<crate::types::PlatformType> {
         &self.platform_type
     }

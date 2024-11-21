@@ -163,6 +163,8 @@ pub(crate) mod shape_get_deployable_patch_snapshot_for_instance;
 
 pub(crate) mod shape_get_document;
 
+pub(crate) mod shape_get_execution_preview;
+
 pub(crate) mod shape_get_inventory;
 
 pub(crate) mod shape_get_inventory_schema;
@@ -221,6 +223,10 @@ pub(crate) mod shape_list_documents;
 
 pub(crate) mod shape_list_inventory_entries;
 
+pub(crate) mod shape_list_nodes;
+
+pub(crate) mod shape_list_nodes_summary;
+
 pub(crate) mod shape_list_ops_item_events;
 
 pub(crate) mod shape_list_ops_item_related_items;
@@ -266,6 +272,8 @@ pub(crate) mod shape_start_associations_once;
 pub(crate) mod shape_start_automation_execution;
 
 pub(crate) mod shape_start_change_request_execution;
+
+pub(crate) mod shape_start_execution_preview;
 
 pub(crate) mod shape_start_session;
 
@@ -499,6 +507,8 @@ pub(crate) mod shape_get_deployable_patch_snapshot_for_instance_input;
 
 pub(crate) mod shape_get_document_input;
 
+pub(crate) mod shape_get_execution_preview_input;
+
 pub(crate) mod shape_get_inventory_input;
 
 pub(crate) mod shape_get_inventory_schema_input;
@@ -673,6 +683,10 @@ pub(crate) mod shape_list_documents_input;
 
 pub(crate) mod shape_list_inventory_entries_input;
 
+pub(crate) mod shape_list_nodes_input;
+
+pub(crate) mod shape_list_nodes_summary_input;
+
 pub(crate) mod shape_list_ops_item_events_input;
 
 pub(crate) mod shape_list_ops_item_related_items_input;
@@ -793,6 +807,8 @@ pub(crate) mod shape_start_automation_execution_input;
 
 pub(crate) mod shape_start_change_request_execution_input;
 
+pub(crate) mod shape_start_execution_preview_input;
+
 pub(crate) mod shape_start_session_input;
 
 pub(crate) mod shape_status_unchanged;
@@ -825,6 +841,8 @@ pub(crate) mod shape_unsupported_inventory_schema_version_exception;
 
 pub(crate) mod shape_unsupported_operating_system;
 
+pub(crate) mod shape_unsupported_operation_exception;
+
 pub(crate) mod shape_unsupported_parameter_type;
 
 pub(crate) mod shape_unsupported_platform_type;
@@ -856,6 +874,8 @@ pub(crate) mod shape_update_patch_baseline_input;
 pub(crate) mod shape_update_resource_data_sync_input;
 
 pub(crate) mod shape_update_service_setting_input;
+
+pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_account_id_list;
 
@@ -945,6 +965,10 @@ pub(crate) mod shape_document_version_list;
 
 pub(crate) mod shape_effective_patch_list;
 
+pub(crate) mod shape_execution_inputs;
+
+pub(crate) mod shape_execution_preview;
+
 pub(crate) mod shape_failed_create_association_list;
 
 pub(crate) mod shape_get_resource_policies_response_entries;
@@ -1020,6 +1044,14 @@ pub(crate) mod shape_maintenance_windows_for_target_list;
 pub(crate) mod shape_metadata_map;
 
 pub(crate) mod shape_metadata_value;
+
+pub(crate) mod shape_node_aggregator;
+
+pub(crate) mod shape_node_filter;
+
+pub(crate) mod shape_node_list;
+
+pub(crate) mod shape_node_summary_list;
 
 pub(crate) mod shape_notification_config;
 
@@ -1159,7 +1191,11 @@ pub(crate) mod shape_attachment_content;
 
 pub(crate) mod shape_attachment_information_list;
 
+pub(crate) mod shape_automation_execution_inputs;
+
 pub(crate) mod shape_automation_execution_metadata;
+
+pub(crate) mod shape_automation_execution_preview;
 
 pub(crate) mod shape_automation_parameter_map;
 
@@ -1236,6 +1272,10 @@ pub(crate) mod shape_maintenance_window_step_functions_parameters;
 pub(crate) mod shape_maintenance_window_target;
 
 pub(crate) mod shape_maintenance_window_task;
+
+pub(crate) mod shape_node;
+
+pub(crate) mod shape_node_summary;
 
 pub(crate) mod shape_ops_entity;
 
@@ -1337,6 +1377,10 @@ pub(crate) mod shape_inventory_result_item_map;
 
 pub(crate) mod shape_maintenance_window_task_parameter_value_list;
 
+pub(crate) mod shape_node_owner_info;
+
+pub(crate) mod shape_node_type;
+
 pub(crate) mod shape_non_compliant_summary;
 
 pub(crate) mod shape_normal_string_map;
@@ -1365,6 +1409,8 @@ pub(crate) mod shape_patch_source_product_list;
 
 pub(crate) mod shape_patch_status;
 
+pub(crate) mod shape_region_list;
+
 pub(crate) mod shape_resource_data_sync_organizational_unit;
 
 pub(crate) mod shape_resource_data_sync_source_with_state;
@@ -1373,9 +1419,13 @@ pub(crate) mod shape_review_information;
 
 pub(crate) mod shape_session_manager_output_url;
 
+pub(crate) mod shape_step_preview_map;
+
 pub(crate) mod shape_target_map;
 
 pub(crate) mod shape_target_parameter_list;
+
+pub(crate) mod shape_target_preview_list;
 
 pub(crate) mod shape_target_values;
 
@@ -1390,6 +1440,8 @@ pub(crate) mod shape_document_review_comment_list;
 pub(crate) mod shape_exclude_accounts;
 
 pub(crate) mod shape_instance_association_status_aggregated_count;
+
+pub(crate) mod shape_instance_info;
 
 pub(crate) mod shape_inventory_item_attribute;
 
@@ -1410,6 +1462,8 @@ pub(crate) mod shape_s3_output_url;
 pub(crate) mod shape_severity_summary;
 
 pub(crate) mod shape_target_map_value_list;
+
+pub(crate) mod shape_target_preview;
 
 pub(crate) mod shape_ops_entity_item_entry_list;
 

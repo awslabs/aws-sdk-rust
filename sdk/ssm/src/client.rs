@@ -332,6 +332,8 @@ mod get_deployable_patch_snapshot_for_instance;
 
 mod get_document;
 
+mod get_execution_preview;
+
 mod get_inventory;
 
 mod get_inventory_schema;
@@ -390,6 +392,10 @@ mod list_documents;
 
 mod list_inventory_entries;
 
+mod list_nodes;
+
+mod list_nodes_summary;
+
 mod list_ops_item_events;
 
 mod list_ops_item_related_items;
@@ -435,6 +441,8 @@ mod start_associations_once;
 mod start_automation_execution;
 
 mod start_change_request_execution;
+
+mod start_execution_preview;
 
 mod start_session;
 

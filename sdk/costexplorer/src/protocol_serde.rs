@@ -45,6 +45,8 @@ pub(crate) mod shape_get_anomaly_subscriptions;
 
 pub(crate) mod shape_get_approximate_usage_records;
 
+pub(crate) mod shape_get_commitment_purchase_analysis;
+
 pub(crate) mod shape_get_cost_and_usage;
 
 pub(crate) mod shape_get_cost_and_usage_with_resources;
@@ -77,6 +79,8 @@ pub(crate) mod shape_get_tags;
 
 pub(crate) mod shape_get_usage_forecast;
 
+pub(crate) mod shape_list_commitment_purchase_analyses;
+
 pub(crate) mod shape_list_cost_allocation_tag_backfill_history;
 
 pub(crate) mod shape_list_cost_allocation_tags;
@@ -88,6 +92,8 @@ pub(crate) mod shape_list_savings_plans_purchase_recommendation_generation;
 pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_provide_anomaly_feedback;
+
+pub(crate) mod shape_start_commitment_purchase_analysis;
 
 pub(crate) mod shape_start_cost_allocation_tag_backfill;
 
@@ -112,6 +118,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
         data
     }
 }
+
+pub(crate) mod shape_analysis_not_found_exception;
 
 pub(crate) mod shape_backfill_limit_exceeded_exception;
 
@@ -142,6 +150,8 @@ pub(crate) mod shape_get_anomaly_monitors_input;
 pub(crate) mod shape_get_anomaly_subscriptions_input;
 
 pub(crate) mod shape_get_approximate_usage_records_input;
+
+pub(crate) mod shape_get_commitment_purchase_analysis_input;
 
 pub(crate) mod shape_get_cost_and_usage_input;
 
@@ -179,6 +189,8 @@ pub(crate) mod shape_invalid_next_token_exception;
 
 pub(crate) mod shape_limit_exceeded_exception;
 
+pub(crate) mod shape_list_commitment_purchase_analyses_input;
+
 pub(crate) mod shape_list_cost_allocation_tag_backfill_history_input;
 
 pub(crate) mod shape_list_cost_allocation_tags_input;
@@ -196,6 +208,8 @@ pub(crate) mod shape_request_changed_exception;
 pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
+
+pub(crate) mod shape_start_commitment_purchase_analysis_input;
 
 pub(crate) mod shape_start_cost_allocation_tag_backfill_input;
 
@@ -219,6 +233,10 @@ pub(crate) mod shape_update_cost_allocation_tags_status_input;
 
 pub(crate) mod shape_update_cost_category_definition_input;
 
+pub(crate) mod shape_analysis_details;
+
+pub(crate) mod shape_analysis_summary_list;
+
 pub(crate) mod shape_anomalies;
 
 pub(crate) mod shape_anomaly_date_interval;
@@ -232,6 +250,8 @@ pub(crate) mod shape_anomaly_subscription;
 pub(crate) mod shape_anomaly_subscriptions;
 
 pub(crate) mod shape_approximate_usage_records_per_service;
+
+pub(crate) mod shape_commitment_purchase_analysis_configuration;
 
 pub(crate) mod shape_cost_allocation_tag_backfill_request;
 
@@ -321,6 +341,8 @@ pub(crate) mod shape_update_cost_allocation_tags_status_errors;
 
 pub(crate) mod shape_utilizations_by_time;
 
+pub(crate) mod shape_analysis_summary;
+
 pub(crate) mod shape_anomaly;
 
 pub(crate) mod shape_cost_allocation_tag;
@@ -368,6 +390,10 @@ pub(crate) mod shape_rightsizing_recommendation;
 pub(crate) mod shape_savings_plans_amortized_commitment;
 
 pub(crate) mod shape_savings_plans_coverage;
+
+pub(crate) mod shape_savings_plans_purchase_analysis_configuration;
+
+pub(crate) mod shape_savings_plans_purchase_analysis_details;
 
 pub(crate) mod shape_savings_plans_purchase_recommendation_detail_list;
 
@@ -419,9 +445,15 @@ pub(crate) mod shape_reservation_utilization_groups;
 
 pub(crate) mod shape_root_causes;
 
+pub(crate) mod shape_savings_plans;
+
 pub(crate) mod shape_savings_plans_coverage_data;
 
 pub(crate) mod shape_savings_plans_purchase_recommendation_detail;
+
+pub(crate) mod shape_savings_plans_to_add;
+
+pub(crate) mod shape_savings_plans_to_exclude;
 
 pub(crate) mod shape_subscribers;
 

@@ -273,11 +273,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreatePackage
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreatePackageError {
-    /// <p>A resource with the same name already exists.</p>
+    /// <p>The request conflicts with the current state of the resource.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>Internal error from the service that indicates an unexpected error or that the service is unavailable.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>A limit has been exceeded.</p>
+    /// <p>Service quota has been exceeded.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The rate exceeds the limit.</p>
     ThrottlingException(crate::types::error::ThrottlingException),

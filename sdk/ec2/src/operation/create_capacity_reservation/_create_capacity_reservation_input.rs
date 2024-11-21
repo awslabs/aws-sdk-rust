@@ -5,7 +5,10 @@
 pub struct CreateCapacityReservationInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensure Idempotency</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>The instance type for which to reserve capacity. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The instance type for which to reserve capacity.</p><note>
+    /// <p>You can request future-dated Capacity Reservations for instance types in the C, M, R, I, and T instance families only.</p>
+    /// </note>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The type of operating system for which to reserve capacity.</p>
     pub instance_platform: ::std::option::Option<crate::types::CapacityReservationInstancePlatform>,
@@ -21,7 +24,9 @@ pub struct CreateCapacityReservationInput {
     /// <p><code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated to a single Amazon Web Services account.</p></li>
     /// </ul>
     pub tenancy: ::std::option::Option<crate::types::CapacityReservationTenancy>,
-    /// <p>The number of instances for which to reserve capacity.</p>
+    /// <p>The number of instances for which to reserve capacity.</p><note>
+    /// <p>You can request future-dated Capacity Reservations for an instance count with a minimum of 100 VPUs. For example, if you request a future-dated Capacity Reservation for <code>m5.xlarge</code> instances, you must request at least 25 instances (<i>25 * m5.xlarge = 100 vCPUs</i>).</p>
+    /// </note>
     /// <p>Valid range: 1 - 1000</p>
     pub instance_count: ::std::option::Option<i32>,
     /// <p>Indicates whether the Capacity Reservation supports EBS-optimized instances. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS- optimized instance.</p>
@@ -31,6 +36,7 @@ pub struct CreateCapacityReservationInput {
     /// <p>The date and time at which the Capacity Reservation expires. When a Capacity Reservation expires, the reserved capacity is released and you can no longer launch instances into it. The Capacity Reservation's state changes to <code>expired</code> when it reaches its end date and time.</p>
     /// <p>You must provide an <code>EndDate</code> value if <code>EndDateType</code> is <code>limited</code>. Omit <code>EndDate</code> if <code>EndDateType</code> is <code>unlimited</code>.</p>
     /// <p>If the <code>EndDateType</code> is <code>limited</code>, the Capacity Reservation is cancelled within an hour from the specified time. For example, if you specify 5/31/2019, 13:30:55, the Capacity Reservation is guaranteed to end between 13:30:55 and 14:30:55 on 5/31/2019.</p>
+    /// <p>If you are requesting a future-dated Capacity Reservation, you can't specify an end date and time that is within the commitment duration.</p>
     pub end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates the way in which the Capacity Reservation ends. A Capacity Reservation can have one of the following end types:</p>
     /// <ul>
@@ -46,24 +52,54 @@ pub struct CreateCapacityReservationInput {
     /// <p><code>open</code> - The Capacity Reservation automatically matches all instances that have matching attributes (instance type, platform, and Availability Zone). Instances that have matching attributes run in the Capacity Reservation automatically without specifying any additional parameters.</p></li>
     /// <li>
     /// <p><code>targeted</code> - The Capacity Reservation only accepts instances that have matching attributes (instance type, platform, and Availability Zone), and explicitly target the Capacity Reservation. This ensures that only permitted instances can use the reserved capacity.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>If you are requesting a future-dated Capacity Reservation, you must specify <code>targeted</code>.</p>
+    /// </note>
     /// <p>Default: <code>open</code></p>
     pub instance_match_criteria: ::std::option::Option<crate::types::InstanceMatchCriteria>,
     /// <p>The tags to apply to the Capacity Reservation during launch.</p>
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
+    /// <note>
+    /// <p>Not supported for future-dated Capacity Reservations.</p>
+    /// </note>
     /// <p>The Amazon Resource Name (ARN) of the Outpost on which to create the Capacity Reservation.</p>
     pub outpost_arn: ::std::option::Option<::std::string::String>,
+    /// <note>
+    /// <p>Not supported for future-dated Capacity Reservations.</p>
+    /// </note>
     /// <p>The Amazon Resource Name (ARN) of the cluster placement group in which to create the Capacity Reservation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cr-cpg.html"> Capacity Reservations for cluster placement groups</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub placement_group_arn: ::std::option::Option<::std::string::String>,
+    /// <note>
+    /// <p>Required for future-dated Capacity Reservations only. To create a Capacity Reservation for immediate use, omit this parameter.</p>
+    /// </note>
+    /// <p>The date and time at which the future-dated Capacity Reservation should become available for use, in the ISO8601 format in the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>).</p>
+    /// <p>You can request a future-dated Capacity Reservation between 5 and 120 days in advance.</p>
+    pub start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <note>
+    /// <p>Required for future-dated Capacity Reservations only. To create a Capacity Reservation for immediate use, omit this parameter.</p>
+    /// </note>
+    /// <p>Specify a commitment duration, in seconds, for the future-dated Capacity Reservation.</p>
+    /// <p>The commitment duration is a minimum duration for which you commit to having the future-dated Capacity Reservation in the <code>active</code> state in your account after it has been delivered.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cr-concepts.html#cr-commitment-duration"> Commitment duration</a>.</p>
+    pub commitment_duration: ::std::option::Option<i64>,
+    /// <note>
+    /// <p>Required for future-dated Capacity Reservations only. To create a Capacity Reservation for immediate use, omit this parameter.</p>
+    /// </note>
+    /// <p>Indicates that the requested capacity will be delivered in addition to any running instances or reserved capacity that you have in your account at the requested date and time.</p>
+    /// <p>The only supported value is <code>incremental</code>.</p>
+    pub delivery_preference: ::std::option::Option<crate::types::CapacityReservationDeliveryPreference>,
 }
 impl CreateCapacityReservationInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensure Idempotency</a>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The instance type for which to reserve capacity. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The instance type for which to reserve capacity.</p><note>
+    /// <p>You can request future-dated Capacity Reservations for instance types in the C, M, R, I, and T instance families only.</p>
+    /// </note>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn instance_type(&self) -> ::std::option::Option<&str> {
         self.instance_type.as_deref()
     }
@@ -89,7 +125,9 @@ impl CreateCapacityReservationInput {
     pub fn tenancy(&self) -> ::std::option::Option<&crate::types::CapacityReservationTenancy> {
         self.tenancy.as_ref()
     }
-    /// <p>The number of instances for which to reserve capacity.</p>
+    /// <p>The number of instances for which to reserve capacity.</p><note>
+    /// <p>You can request future-dated Capacity Reservations for an instance count with a minimum of 100 VPUs. For example, if you request a future-dated Capacity Reservation for <code>m5.xlarge</code> instances, you must request at least 25 instances (<i>25 * m5.xlarge = 100 vCPUs</i>).</p>
+    /// </note>
     /// <p>Valid range: 1 - 1000</p>
     pub fn instance_count(&self) -> ::std::option::Option<i32> {
         self.instance_count
@@ -105,6 +143,7 @@ impl CreateCapacityReservationInput {
     /// <p>The date and time at which the Capacity Reservation expires. When a Capacity Reservation expires, the reserved capacity is released and you can no longer launch instances into it. The Capacity Reservation's state changes to <code>expired</code> when it reaches its end date and time.</p>
     /// <p>You must provide an <code>EndDate</code> value if <code>EndDateType</code> is <code>limited</code>. Omit <code>EndDate</code> if <code>EndDateType</code> is <code>unlimited</code>.</p>
     /// <p>If the <code>EndDateType</code> is <code>limited</code>, the Capacity Reservation is cancelled within an hour from the specified time. For example, if you specify 5/31/2019, 13:30:55, the Capacity Reservation is guaranteed to end between 13:30:55 and 14:30:55 on 5/31/2019.</p>
+    /// <p>If you are requesting a future-dated Capacity Reservation, you can't specify an end date and time that is within the commitment duration.</p>
     pub fn end_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_date.as_ref()
     }
@@ -124,7 +163,9 @@ impl CreateCapacityReservationInput {
     /// <p><code>open</code> - The Capacity Reservation automatically matches all instances that have matching attributes (instance type, platform, and Availability Zone). Instances that have matching attributes run in the Capacity Reservation automatically without specifying any additional parameters.</p></li>
     /// <li>
     /// <p><code>targeted</code> - The Capacity Reservation only accepts instances that have matching attributes (instance type, platform, and Availability Zone), and explicitly target the Capacity Reservation. This ensures that only permitted instances can use the reserved capacity.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>If you are requesting a future-dated Capacity Reservation, you must specify <code>targeted</code>.</p>
+    /// </note>
     /// <p>Default: <code>open</code></p>
     pub fn instance_match_criteria(&self) -> ::std::option::Option<&crate::types::InstanceMatchCriteria> {
         self.instance_match_criteria.as_ref()
@@ -139,13 +180,44 @@ impl CreateCapacityReservationInput {
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
+    /// <note>
+    /// <p>Not supported for future-dated Capacity Reservations.</p>
+    /// </note>
     /// <p>The Amazon Resource Name (ARN) of the Outpost on which to create the Capacity Reservation.</p>
     pub fn outpost_arn(&self) -> ::std::option::Option<&str> {
         self.outpost_arn.as_deref()
     }
+    /// <note>
+    /// <p>Not supported for future-dated Capacity Reservations.</p>
+    /// </note>
     /// <p>The Amazon Resource Name (ARN) of the cluster placement group in which to create the Capacity Reservation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cr-cpg.html"> Capacity Reservations for cluster placement groups</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn placement_group_arn(&self) -> ::std::option::Option<&str> {
         self.placement_group_arn.as_deref()
+    }
+    /// <note>
+    /// <p>Required for future-dated Capacity Reservations only. To create a Capacity Reservation for immediate use, omit this parameter.</p>
+    /// </note>
+    /// <p>The date and time at which the future-dated Capacity Reservation should become available for use, in the ISO8601 format in the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>).</p>
+    /// <p>You can request a future-dated Capacity Reservation between 5 and 120 days in advance.</p>
+    pub fn start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.start_date.as_ref()
+    }
+    /// <note>
+    /// <p>Required for future-dated Capacity Reservations only. To create a Capacity Reservation for immediate use, omit this parameter.</p>
+    /// </note>
+    /// <p>Specify a commitment duration, in seconds, for the future-dated Capacity Reservation.</p>
+    /// <p>The commitment duration is a minimum duration for which you commit to having the future-dated Capacity Reservation in the <code>active</code> state in your account after it has been delivered.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cr-concepts.html#cr-commitment-duration"> Commitment duration</a>.</p>
+    pub fn commitment_duration(&self) -> ::std::option::Option<i64> {
+        self.commitment_duration
+    }
+    /// <note>
+    /// <p>Required for future-dated Capacity Reservations only. To create a Capacity Reservation for immediate use, omit this parameter.</p>
+    /// </note>
+    /// <p>Indicates that the requested capacity will be delivered in addition to any running instances or reserved capacity that you have in your account at the requested date and time.</p>
+    /// <p>The only supported value is <code>incremental</code>.</p>
+    pub fn delivery_preference(&self) -> ::std::option::Option<&crate::types::CapacityReservationDeliveryPreference> {
+        self.delivery_preference.as_ref()
     }
 }
 impl CreateCapacityReservationInput {
@@ -175,6 +247,9 @@ pub struct CreateCapacityReservationInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) outpost_arn: ::std::option::Option<::std::string::String>,
     pub(crate) placement_group_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) commitment_duration: ::std::option::Option<i64>,
+    pub(crate) delivery_preference: ::std::option::Option<crate::types::CapacityReservationDeliveryPreference>,
 }
 impl CreateCapacityReservationInputBuilder {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensure Idempotency</a>.</p>
@@ -191,18 +266,27 @@ impl CreateCapacityReservationInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>The instance type for which to reserve capacity. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The instance type for which to reserve capacity.</p><note>
+    /// <p>You can request future-dated Capacity Reservations for instance types in the C, M, R, I, and T instance families only.</p>
+    /// </note>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// This field is required.
     pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The instance type for which to reserve capacity. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The instance type for which to reserve capacity.</p><note>
+    /// <p>You can request future-dated Capacity Reservations for instance types in the C, M, R, I, and T instance families only.</p>
+    /// </note>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_type = input;
         self
     }
-    /// <p>The instance type for which to reserve capacity. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The instance type for which to reserve capacity.</p><note>
+    /// <p>You can request future-dated Capacity Reservations for instance types in the C, M, R, I, and T instance families only.</p>
+    /// </note>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_type
     }
@@ -281,20 +365,26 @@ impl CreateCapacityReservationInputBuilder {
     pub fn get_tenancy(&self) -> &::std::option::Option<crate::types::CapacityReservationTenancy> {
         &self.tenancy
     }
-    /// <p>The number of instances for which to reserve capacity.</p>
+    /// <p>The number of instances for which to reserve capacity.</p><note>
+    /// <p>You can request future-dated Capacity Reservations for an instance count with a minimum of 100 VPUs. For example, if you request a future-dated Capacity Reservation for <code>m5.xlarge</code> instances, you must request at least 25 instances (<i>25 * m5.xlarge = 100 vCPUs</i>).</p>
+    /// </note>
     /// <p>Valid range: 1 - 1000</p>
     /// This field is required.
     pub fn instance_count(mut self, input: i32) -> Self {
         self.instance_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of instances for which to reserve capacity.</p>
+    /// <p>The number of instances for which to reserve capacity.</p><note>
+    /// <p>You can request future-dated Capacity Reservations for an instance count with a minimum of 100 VPUs. For example, if you request a future-dated Capacity Reservation for <code>m5.xlarge</code> instances, you must request at least 25 instances (<i>25 * m5.xlarge = 100 vCPUs</i>).</p>
+    /// </note>
     /// <p>Valid range: 1 - 1000</p>
     pub fn set_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.instance_count = input;
         self
     }
-    /// <p>The number of instances for which to reserve capacity.</p>
+    /// <p>The number of instances for which to reserve capacity.</p><note>
+    /// <p>You can request future-dated Capacity Reservations for an instance count with a minimum of 100 VPUs. For example, if you request a future-dated Capacity Reservation for <code>m5.xlarge</code> instances, you must request at least 25 instances (<i>25 * m5.xlarge = 100 vCPUs</i>).</p>
+    /// </note>
     /// <p>Valid range: 1 - 1000</p>
     pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
         &self.instance_count
@@ -330,6 +420,7 @@ impl CreateCapacityReservationInputBuilder {
     /// <p>The date and time at which the Capacity Reservation expires. When a Capacity Reservation expires, the reserved capacity is released and you can no longer launch instances into it. The Capacity Reservation's state changes to <code>expired</code> when it reaches its end date and time.</p>
     /// <p>You must provide an <code>EndDate</code> value if <code>EndDateType</code> is <code>limited</code>. Omit <code>EndDate</code> if <code>EndDateType</code> is <code>unlimited</code>.</p>
     /// <p>If the <code>EndDateType</code> is <code>limited</code>, the Capacity Reservation is cancelled within an hour from the specified time. For example, if you specify 5/31/2019, 13:30:55, the Capacity Reservation is guaranteed to end between 13:30:55 and 14:30:55 on 5/31/2019.</p>
+    /// <p>If you are requesting a future-dated Capacity Reservation, you can't specify an end date and time that is within the commitment duration.</p>
     pub fn end_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_date = ::std::option::Option::Some(input);
         self
@@ -337,6 +428,7 @@ impl CreateCapacityReservationInputBuilder {
     /// <p>The date and time at which the Capacity Reservation expires. When a Capacity Reservation expires, the reserved capacity is released and you can no longer launch instances into it. The Capacity Reservation's state changes to <code>expired</code> when it reaches its end date and time.</p>
     /// <p>You must provide an <code>EndDate</code> value if <code>EndDateType</code> is <code>limited</code>. Omit <code>EndDate</code> if <code>EndDateType</code> is <code>unlimited</code>.</p>
     /// <p>If the <code>EndDateType</code> is <code>limited</code>, the Capacity Reservation is cancelled within an hour from the specified time. For example, if you specify 5/31/2019, 13:30:55, the Capacity Reservation is guaranteed to end between 13:30:55 and 14:30:55 on 5/31/2019.</p>
+    /// <p>If you are requesting a future-dated Capacity Reservation, you can't specify an end date and time that is within the commitment duration.</p>
     pub fn set_end_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_date = input;
         self
@@ -344,6 +436,7 @@ impl CreateCapacityReservationInputBuilder {
     /// <p>The date and time at which the Capacity Reservation expires. When a Capacity Reservation expires, the reserved capacity is released and you can no longer launch instances into it. The Capacity Reservation's state changes to <code>expired</code> when it reaches its end date and time.</p>
     /// <p>You must provide an <code>EndDate</code> value if <code>EndDateType</code> is <code>limited</code>. Omit <code>EndDate</code> if <code>EndDateType</code> is <code>unlimited</code>.</p>
     /// <p>If the <code>EndDateType</code> is <code>limited</code>, the Capacity Reservation is cancelled within an hour from the specified time. For example, if you specify 5/31/2019, 13:30:55, the Capacity Reservation is guaranteed to end between 13:30:55 and 14:30:55 on 5/31/2019.</p>
+    /// <p>If you are requesting a future-dated Capacity Reservation, you can't specify an end date and time that is within the commitment duration.</p>
     pub fn get_end_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_date
     }
@@ -385,7 +478,9 @@ impl CreateCapacityReservationInputBuilder {
     /// <p><code>open</code> - The Capacity Reservation automatically matches all instances that have matching attributes (instance type, platform, and Availability Zone). Instances that have matching attributes run in the Capacity Reservation automatically without specifying any additional parameters.</p></li>
     /// <li>
     /// <p><code>targeted</code> - The Capacity Reservation only accepts instances that have matching attributes (instance type, platform, and Availability Zone), and explicitly target the Capacity Reservation. This ensures that only permitted instances can use the reserved capacity.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>If you are requesting a future-dated Capacity Reservation, you must specify <code>targeted</code>.</p>
+    /// </note>
     /// <p>Default: <code>open</code></p>
     pub fn instance_match_criteria(mut self, input: crate::types::InstanceMatchCriteria) -> Self {
         self.instance_match_criteria = ::std::option::Option::Some(input);
@@ -397,7 +492,9 @@ impl CreateCapacityReservationInputBuilder {
     /// <p><code>open</code> - The Capacity Reservation automatically matches all instances that have matching attributes (instance type, platform, and Availability Zone). Instances that have matching attributes run in the Capacity Reservation automatically without specifying any additional parameters.</p></li>
     /// <li>
     /// <p><code>targeted</code> - The Capacity Reservation only accepts instances that have matching attributes (instance type, platform, and Availability Zone), and explicitly target the Capacity Reservation. This ensures that only permitted instances can use the reserved capacity.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>If you are requesting a future-dated Capacity Reservation, you must specify <code>targeted</code>.</p>
+    /// </note>
     /// <p>Default: <code>open</code></p>
     pub fn set_instance_match_criteria(mut self, input: ::std::option::Option<crate::types::InstanceMatchCriteria>) -> Self {
         self.instance_match_criteria = input;
@@ -409,7 +506,9 @@ impl CreateCapacityReservationInputBuilder {
     /// <p><code>open</code> - The Capacity Reservation automatically matches all instances that have matching attributes (instance type, platform, and Availability Zone). Instances that have matching attributes run in the Capacity Reservation automatically without specifying any additional parameters.</p></li>
     /// <li>
     /// <p><code>targeted</code> - The Capacity Reservation only accepts instances that have matching attributes (instance type, platform, and Availability Zone), and explicitly target the Capacity Reservation. This ensures that only permitted instances can use the reserved capacity.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>If you are requesting a future-dated Capacity Reservation, you must specify <code>targeted</code>.</p>
+    /// </note>
     /// <p>Default: <code>open</code></p>
     pub fn get_instance_match_criteria(&self) -> &::std::option::Option<crate::types::InstanceMatchCriteria> {
         &self.instance_match_criteria
@@ -448,33 +547,132 @@ impl CreateCapacityReservationInputBuilder {
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
+    /// <note>
+    /// <p>Not supported for future-dated Capacity Reservations.</p>
+    /// </note>
     /// <p>The Amazon Resource Name (ARN) of the Outpost on which to create the Capacity Reservation.</p>
     pub fn outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outpost_arn = ::std::option::Option::Some(input.into());
         self
     }
+    /// <note>
+    /// <p>Not supported for future-dated Capacity Reservations.</p>
+    /// </note>
     /// <p>The Amazon Resource Name (ARN) of the Outpost on which to create the Capacity Reservation.</p>
     pub fn set_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outpost_arn = input;
         self
     }
+    /// <note>
+    /// <p>Not supported for future-dated Capacity Reservations.</p>
+    /// </note>
     /// <p>The Amazon Resource Name (ARN) of the Outpost on which to create the Capacity Reservation.</p>
     pub fn get_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.outpost_arn
     }
+    /// <note>
+    /// <p>Not supported for future-dated Capacity Reservations.</p>
+    /// </note>
     /// <p>The Amazon Resource Name (ARN) of the cluster placement group in which to create the Capacity Reservation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cr-cpg.html"> Capacity Reservations for cluster placement groups</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn placement_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.placement_group_arn = ::std::option::Option::Some(input.into());
         self
     }
+    /// <note>
+    /// <p>Not supported for future-dated Capacity Reservations.</p>
+    /// </note>
     /// <p>The Amazon Resource Name (ARN) of the cluster placement group in which to create the Capacity Reservation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cr-cpg.html"> Capacity Reservations for cluster placement groups</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_placement_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.placement_group_arn = input;
         self
     }
+    /// <note>
+    /// <p>Not supported for future-dated Capacity Reservations.</p>
+    /// </note>
     /// <p>The Amazon Resource Name (ARN) of the cluster placement group in which to create the Capacity Reservation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cr-cpg.html"> Capacity Reservations for cluster placement groups</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn get_placement_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.placement_group_arn
+    }
+    /// <note>
+    /// <p>Required for future-dated Capacity Reservations only. To create a Capacity Reservation for immediate use, omit this parameter.</p>
+    /// </note>
+    /// <p>The date and time at which the future-dated Capacity Reservation should become available for use, in the ISO8601 format in the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>).</p>
+    /// <p>You can request a future-dated Capacity Reservation between 5 and 120 days in advance.</p>
+    pub fn start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.start_date = ::std::option::Option::Some(input);
+        self
+    }
+    /// <note>
+    /// <p>Required for future-dated Capacity Reservations only. To create a Capacity Reservation for immediate use, omit this parameter.</p>
+    /// </note>
+    /// <p>The date and time at which the future-dated Capacity Reservation should become available for use, in the ISO8601 format in the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>).</p>
+    /// <p>You can request a future-dated Capacity Reservation between 5 and 120 days in advance.</p>
+    pub fn set_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.start_date = input;
+        self
+    }
+    /// <note>
+    /// <p>Required for future-dated Capacity Reservations only. To create a Capacity Reservation for immediate use, omit this parameter.</p>
+    /// </note>
+    /// <p>The date and time at which the future-dated Capacity Reservation should become available for use, in the ISO8601 format in the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>).</p>
+    /// <p>You can request a future-dated Capacity Reservation between 5 and 120 days in advance.</p>
+    pub fn get_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_date
+    }
+    /// <note>
+    /// <p>Required for future-dated Capacity Reservations only. To create a Capacity Reservation for immediate use, omit this parameter.</p>
+    /// </note>
+    /// <p>Specify a commitment duration, in seconds, for the future-dated Capacity Reservation.</p>
+    /// <p>The commitment duration is a minimum duration for which you commit to having the future-dated Capacity Reservation in the <code>active</code> state in your account after it has been delivered.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cr-concepts.html#cr-commitment-duration"> Commitment duration</a>.</p>
+    pub fn commitment_duration(mut self, input: i64) -> Self {
+        self.commitment_duration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <note>
+    /// <p>Required for future-dated Capacity Reservations only. To create a Capacity Reservation for immediate use, omit this parameter.</p>
+    /// </note>
+    /// <p>Specify a commitment duration, in seconds, for the future-dated Capacity Reservation.</p>
+    /// <p>The commitment duration is a minimum duration for which you commit to having the future-dated Capacity Reservation in the <code>active</code> state in your account after it has been delivered.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cr-concepts.html#cr-commitment-duration"> Commitment duration</a>.</p>
+    pub fn set_commitment_duration(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.commitment_duration = input;
+        self
+    }
+    /// <note>
+    /// <p>Required for future-dated Capacity Reservations only. To create a Capacity Reservation for immediate use, omit this parameter.</p>
+    /// </note>
+    /// <p>Specify a commitment duration, in seconds, for the future-dated Capacity Reservation.</p>
+    /// <p>The commitment duration is a minimum duration for which you commit to having the future-dated Capacity Reservation in the <code>active</code> state in your account after it has been delivered.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cr-concepts.html#cr-commitment-duration"> Commitment duration</a>.</p>
+    pub fn get_commitment_duration(&self) -> &::std::option::Option<i64> {
+        &self.commitment_duration
+    }
+    /// <note>
+    /// <p>Required for future-dated Capacity Reservations only. To create a Capacity Reservation for immediate use, omit this parameter.</p>
+    /// </note>
+    /// <p>Indicates that the requested capacity will be delivered in addition to any running instances or reserved capacity that you have in your account at the requested date and time.</p>
+    /// <p>The only supported value is <code>incremental</code>.</p>
+    pub fn delivery_preference(mut self, input: crate::types::CapacityReservationDeliveryPreference) -> Self {
+        self.delivery_preference = ::std::option::Option::Some(input);
+        self
+    }
+    /// <note>
+    /// <p>Required for future-dated Capacity Reservations only. To create a Capacity Reservation for immediate use, omit this parameter.</p>
+    /// </note>
+    /// <p>Indicates that the requested capacity will be delivered in addition to any running instances or reserved capacity that you have in your account at the requested date and time.</p>
+    /// <p>The only supported value is <code>incremental</code>.</p>
+    pub fn set_delivery_preference(mut self, input: ::std::option::Option<crate::types::CapacityReservationDeliveryPreference>) -> Self {
+        self.delivery_preference = input;
+        self
+    }
+    /// <note>
+    /// <p>Required for future-dated Capacity Reservations only. To create a Capacity Reservation for immediate use, omit this parameter.</p>
+    /// </note>
+    /// <p>Indicates that the requested capacity will be delivered in addition to any running instances or reserved capacity that you have in your account at the requested date and time.</p>
+    /// <p>The only supported value is <code>incremental</code>.</p>
+    pub fn get_delivery_preference(&self) -> &::std::option::Option<crate::types::CapacityReservationDeliveryPreference> {
+        &self.delivery_preference
     }
     /// Consumes the builder and constructs a [`CreateCapacityReservationInput`](crate::operation::create_capacity_reservation::CreateCapacityReservationInput).
     pub fn build(
@@ -500,6 +698,9 @@ impl CreateCapacityReservationInputBuilder {
             dry_run: self.dry_run,
             outpost_arn: self.outpost_arn,
             placement_group_arn: self.placement_group_arn,
+            start_date: self.start_date,
+            commitment_duration: self.commitment_duration,
+            delivery_preference: self.delivery_preference,
         })
     }
 }

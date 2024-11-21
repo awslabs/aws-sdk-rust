@@ -15,6 +15,8 @@ pub struct ModifyUserInput {
     pub no_password_required: ::std::option::Option<bool>,
     /// <p>Specifies how to authenticate the user.</p>
     pub authentication_mode: ::std::option::Option<crate::types::AuthenticationMode>,
+    /// <p>The engine for a specific user.</p>
+    pub engine: ::std::option::Option<::std::string::String>,
 }
 impl ModifyUserInput {
     /// <p>The ID of the user.</p>
@@ -43,6 +45,10 @@ impl ModifyUserInput {
     pub fn authentication_mode(&self) -> ::std::option::Option<&crate::types::AuthenticationMode> {
         self.authentication_mode.as_ref()
     }
+    /// <p>The engine for a specific user.</p>
+    pub fn engine(&self) -> ::std::option::Option<&str> {
+        self.engine.as_deref()
+    }
 }
 impl ModifyUserInput {
     /// Creates a new builder-style object to manufacture [`ModifyUserInput`](crate::operation::modify_user::ModifyUserInput).
@@ -61,6 +67,7 @@ pub struct ModifyUserInputBuilder {
     pub(crate) passwords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) no_password_required: ::std::option::Option<bool>,
     pub(crate) authentication_mode: ::std::option::Option<crate::types::AuthenticationMode>,
+    pub(crate) engine: ::std::option::Option<::std::string::String>,
 }
 impl ModifyUserInputBuilder {
     /// <p>The ID of the user.</p>
@@ -154,6 +161,20 @@ impl ModifyUserInputBuilder {
     pub fn get_authentication_mode(&self) -> &::std::option::Option<crate::types::AuthenticationMode> {
         &self.authentication_mode
     }
+    /// <p>The engine for a specific user.</p>
+    pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.engine = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The engine for a specific user.</p>
+    pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.engine = input;
+        self
+    }
+    /// <p>The engine for a specific user.</p>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine
+    }
     /// Consumes the builder and constructs a [`ModifyUserInput`](crate::operation::modify_user::ModifyUserInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::modify_user::ModifyUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_user::ModifyUserInput {
@@ -163,6 +184,7 @@ impl ModifyUserInputBuilder {
             passwords: self.passwords,
             no_password_required: self.no_password_required,
             authentication_mode: self.authentication_mode,
+            engine: self.engine,
         })
     }
 }

@@ -10,9 +10,13 @@ pub struct PutBucketLifecycleConfigurationInput {
     pub checksum_algorithm: ::std::option::Option<crate::types::ChecksumAlgorithm>,
     /// <p>Container for lifecycle rules. You can add as many as 1,000 rules.</p>
     pub lifecycle_configuration: ::std::option::Option<crate::types::BucketLifecycleConfiguration>,
-    /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
+    /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p><note>
+    /// <p>This parameter applies to general purpose buckets only. It is not supported for directory bucket lifecycle configurations.</p>
+    /// </note>
     pub expected_bucket_owner: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates which default minimum object size behavior is applied to the lifecycle configuration.</p>
+    /// <p>Indicates which default minimum object size behavior is applied to the lifecycle configuration.</p><note>
+    /// <p>This parameter applies to general purpose buckets only. It is not supported for directory bucket lifecycle configurations.</p>
+    /// </note>
     /// <ul>
     /// <li>
     /// <p><code>all_storage_classes_128K</code> - Objects smaller than 128 KB will not transition to any storage class by default.</p></li>
@@ -36,11 +40,15 @@ impl PutBucketLifecycleConfigurationInput {
     pub fn lifecycle_configuration(&self) -> ::std::option::Option<&crate::types::BucketLifecycleConfiguration> {
         self.lifecycle_configuration.as_ref()
     }
-    /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
+    /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p><note>
+    /// <p>This parameter applies to general purpose buckets only. It is not supported for directory bucket lifecycle configurations.</p>
+    /// </note>
     pub fn expected_bucket_owner(&self) -> ::std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
-    /// <p>Indicates which default minimum object size behavior is applied to the lifecycle configuration.</p>
+    /// <p>Indicates which default minimum object size behavior is applied to the lifecycle configuration.</p><note>
+    /// <p>This parameter applies to general purpose buckets only. It is not supported for directory bucket lifecycle configurations.</p>
+    /// </note>
     /// <ul>
     /// <li>
     /// <p><code>all_storage_classes_128K</code> - Objects smaller than 128 KB will not transition to any storage class by default.</p></li>
@@ -116,21 +124,29 @@ impl PutBucketLifecycleConfigurationInputBuilder {
     pub fn get_lifecycle_configuration(&self) -> &::std::option::Option<crate::types::BucketLifecycleConfiguration> {
         &self.lifecycle_configuration
     }
-    /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
+    /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p><note>
+    /// <p>This parameter applies to general purpose buckets only. It is not supported for directory bucket lifecycle configurations.</p>
+    /// </note>
     pub fn expected_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expected_bucket_owner = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
+    /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p><note>
+    /// <p>This parameter applies to general purpose buckets only. It is not supported for directory bucket lifecycle configurations.</p>
+    /// </note>
     pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expected_bucket_owner = input;
         self
     }
-    /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
+    /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p><note>
+    /// <p>This parameter applies to general purpose buckets only. It is not supported for directory bucket lifecycle configurations.</p>
+    /// </note>
     pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
         &self.expected_bucket_owner
     }
-    /// <p>Indicates which default minimum object size behavior is applied to the lifecycle configuration.</p>
+    /// <p>Indicates which default minimum object size behavior is applied to the lifecycle configuration.</p><note>
+    /// <p>This parameter applies to general purpose buckets only. It is not supported for directory bucket lifecycle configurations.</p>
+    /// </note>
     /// <ul>
     /// <li>
     /// <p><code>all_storage_classes_128K</code> - Objects smaller than 128 KB will not transition to any storage class by default.</p></li>
@@ -142,7 +158,9 @@ impl PutBucketLifecycleConfigurationInputBuilder {
         self.transition_default_minimum_object_size = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates which default minimum object size behavior is applied to the lifecycle configuration.</p>
+    /// <p>Indicates which default minimum object size behavior is applied to the lifecycle configuration.</p><note>
+    /// <p>This parameter applies to general purpose buckets only. It is not supported for directory bucket lifecycle configurations.</p>
+    /// </note>
     /// <ul>
     /// <li>
     /// <p><code>all_storage_classes_128K</code> - Objects smaller than 128 KB will not transition to any storage class by default.</p></li>
@@ -157,7 +175,9 @@ impl PutBucketLifecycleConfigurationInputBuilder {
         self.transition_default_minimum_object_size = input;
         self
     }
-    /// <p>Indicates which default minimum object size behavior is applied to the lifecycle configuration.</p>
+    /// <p>Indicates which default minimum object size behavior is applied to the lifecycle configuration.</p><note>
+    /// <p>This parameter applies to general purpose buckets only. It is not supported for directory bucket lifecycle configurations.</p>
+    /// </note>
     /// <ul>
     /// <li>
     /// <p><code>all_storage_classes_128K</code> - Objects smaller than 128 KB will not transition to any storage class by default.</p></li>

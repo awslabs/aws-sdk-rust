@@ -101,6 +101,14 @@ pub use crate::types::error::_object_already_in_active_tier_error::ObjectAlready
 
 pub use crate::types::error::_no_such_key::NoSuchKey;
 
+pub use crate::types::error::_too_many_parts::TooManyParts;
+
+pub use crate::types::error::_invalid_write_offset::InvalidWriteOffset;
+
+pub use crate::types::error::_invalid_request::InvalidRequest;
+
+pub use crate::types::error::_encryption_type_mismatch::EncryptionTypeMismatch;
+
 pub use crate::types::error::_no_such_bucket::NoSuchBucket;
 
 pub use crate::types::error::_not_found::NotFound;
@@ -119,7 +127,13 @@ mod _bucket_already_exists;
 
 mod _bucket_already_owned_by_you;
 
+mod _encryption_type_mismatch;
+
 mod _invalid_object_state;
+
+mod _invalid_request;
+
+mod _invalid_write_offset;
 
 mod _no_such_bucket;
 
@@ -132,6 +146,8 @@ mod _not_found;
 mod _object_already_in_active_tier_error;
 
 mod _object_not_in_active_tier_error;
+
+mod _too_many_parts;
 
 /// Builders
 pub mod builders;

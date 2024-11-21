@@ -8,6 +8,8 @@ pub struct GetDomainNamesInput {
     pub position: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub limit: ::std::option::Option<i32>,
+    /// <p>The owner of the domain name access association.</p>
+    pub resource_owner: ::std::option::Option<crate::types::ResourceOwner>,
 }
 impl GetDomainNamesInput {
     /// <p>The current pagination position in the paged result set.</p>
@@ -17,6 +19,10 @@ impl GetDomainNamesInput {
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub fn limit(&self) -> ::std::option::Option<i32> {
         self.limit
+    }
+    /// <p>The owner of the domain name access association.</p>
+    pub fn resource_owner(&self) -> ::std::option::Option<&crate::types::ResourceOwner> {
+        self.resource_owner.as_ref()
     }
 }
 impl GetDomainNamesInput {
@@ -32,6 +38,7 @@ impl GetDomainNamesInput {
 pub struct GetDomainNamesInputBuilder {
     pub(crate) position: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,
+    pub(crate) resource_owner: ::std::option::Option<crate::types::ResourceOwner>,
 }
 impl GetDomainNamesInputBuilder {
     /// <p>The current pagination position in the paged result set.</p>
@@ -62,6 +69,20 @@ impl GetDomainNamesInputBuilder {
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         &self.limit
     }
+    /// <p>The owner of the domain name access association.</p>
+    pub fn resource_owner(mut self, input: crate::types::ResourceOwner) -> Self {
+        self.resource_owner = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The owner of the domain name access association.</p>
+    pub fn set_resource_owner(mut self, input: ::std::option::Option<crate::types::ResourceOwner>) -> Self {
+        self.resource_owner = input;
+        self
+    }
+    /// <p>The owner of the domain name access association.</p>
+    pub fn get_resource_owner(&self) -> &::std::option::Option<crate::types::ResourceOwner> {
+        &self.resource_owner
+    }
     /// Consumes the builder and constructs a [`GetDomainNamesInput`](crate::operation::get_domain_names::GetDomainNamesInput).
     pub fn build(
         self,
@@ -69,6 +90,7 @@ impl GetDomainNamesInputBuilder {
         ::std::result::Result::Ok(crate::operation::get_domain_names::GetDomainNamesInput {
             position: self.position,
             limit: self.limit,
+            resource_owner: self.resource_owner,
         })
     }
 }

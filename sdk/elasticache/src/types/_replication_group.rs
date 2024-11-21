@@ -22,7 +22,7 @@ pub struct ReplicationGroup {
     pub snapshotting_cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the status of automatic failover for this Valkey or Redis OSS replication group.</p>
     pub automatic_failover: ::std::option::Option<crate::types::AutomaticFailoverStatus>,
-    /// <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime: Multi-AZ</a></p>
+    /// <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/AutoFailover.html">Minimizing Downtime: Multi-AZ</a></p>
     pub multi_az: ::std::option::Option<crate::types::MultiAzStatus>,
     /// <p>The configuration endpoint for this replication group. Use the configuration endpoint to connect to this replication group.</p>
     pub configuration_endpoint: ::std::option::Option<crate::types::Endpoint>,
@@ -67,7 +67,7 @@ pub struct ReplicationGroup {
     pub log_delivery_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LogDeliveryConfiguration>>,
     /// <p>The date and time when the cluster was created.</p>
     pub replication_group_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Enables data tiering. Data tiering is only supported for replication groups using the r6gd node type. This parameter must be set to true when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data tiering</a>.</p>
+    /// <p>Enables data tiering. Data tiering is only supported for replication groups using the r6gd node type. This parameter must be set to true when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/data-tiering.html">Data tiering</a>.</p>
     pub data_tiering: ::std::option::Option<crate::types::DataTieringStatus>,
     /// <p>If you are running Valkey 7.2 and above, or Redis OSS engine version 6.0 and above, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.</p>
     pub auto_minor_version_upgrade: ::std::option::Option<bool>,
@@ -123,7 +123,7 @@ impl ReplicationGroup {
     pub fn automatic_failover(&self) -> ::std::option::Option<&crate::types::AutomaticFailoverStatus> {
         self.automatic_failover.as_ref()
     }
-    /// <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime: Multi-AZ</a></p>
+    /// <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/AutoFailover.html">Minimizing Downtime: Multi-AZ</a></p>
     pub fn multi_az(&self) -> ::std::option::Option<&crate::types::MultiAzStatus> {
         self.multi_az.as_ref()
     }
@@ -206,7 +206,7 @@ impl ReplicationGroup {
     pub fn replication_group_create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.replication_group_create_time.as_ref()
     }
-    /// <p>Enables data tiering. Data tiering is only supported for replication groups using the r6gd node type. This parameter must be set to true when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data tiering</a>.</p>
+    /// <p>Enables data tiering. Data tiering is only supported for replication groups using the r6gd node type. This parameter must be set to true when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/data-tiering.html">Data tiering</a>.</p>
     pub fn data_tiering(&self) -> ::std::option::Option<&crate::types::DataTieringStatus> {
         self.data_tiering.as_ref()
     }
@@ -418,17 +418,17 @@ impl ReplicationGroupBuilder {
     pub fn get_automatic_failover(&self) -> &::std::option::Option<crate::types::AutomaticFailoverStatus> {
         &self.automatic_failover
     }
-    /// <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime: Multi-AZ</a></p>
+    /// <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/AutoFailover.html">Minimizing Downtime: Multi-AZ</a></p>
     pub fn multi_az(mut self, input: crate::types::MultiAzStatus) -> Self {
         self.multi_az = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime: Multi-AZ</a></p>
+    /// <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/AutoFailover.html">Minimizing Downtime: Multi-AZ</a></p>
     pub fn set_multi_az(mut self, input: ::std::option::Option<crate::types::MultiAzStatus>) -> Self {
         self.multi_az = input;
         self
     }
-    /// <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime: Multi-AZ</a></p>
+    /// <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/AutoFailover.html">Minimizing Downtime: Multi-AZ</a></p>
     pub fn get_multi_az(&self) -> &::std::option::Option<crate::types::MultiAzStatus> {
         &self.multi_az
     }
@@ -699,17 +699,17 @@ impl ReplicationGroupBuilder {
     pub fn get_replication_group_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.replication_group_create_time
     }
-    /// <p>Enables data tiering. Data tiering is only supported for replication groups using the r6gd node type. This parameter must be set to true when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data tiering</a>.</p>
+    /// <p>Enables data tiering. Data tiering is only supported for replication groups using the r6gd node type. This parameter must be set to true when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/data-tiering.html">Data tiering</a>.</p>
     pub fn data_tiering(mut self, input: crate::types::DataTieringStatus) -> Self {
         self.data_tiering = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Enables data tiering. Data tiering is only supported for replication groups using the r6gd node type. This parameter must be set to true when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data tiering</a>.</p>
+    /// <p>Enables data tiering. Data tiering is only supported for replication groups using the r6gd node type. This parameter must be set to true when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/data-tiering.html">Data tiering</a>.</p>
     pub fn set_data_tiering(mut self, input: ::std::option::Option<crate::types::DataTieringStatus>) -> Self {
         self.data_tiering = input;
         self
     }
-    /// <p>Enables data tiering. Data tiering is only supported for replication groups using the r6gd node type. This parameter must be set to true when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data tiering</a>.</p>
+    /// <p>Enables data tiering. Data tiering is only supported for replication groups using the r6gd node type. This parameter must be set to true when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/data-tiering.html">Data tiering</a>.</p>
     pub fn get_data_tiering(&self) -> &::std::option::Option<crate::types::DataTieringStatus> {
         &self.data_tiering
     }

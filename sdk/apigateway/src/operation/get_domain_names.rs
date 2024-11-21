@@ -191,6 +191,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetDomainNam
                         query.push_kv("limit", ::aws_smithy_types::primitive::Encoder::from(*inner_2).encode());
                     }
                 }
+                if let ::std::option::Option::Some(inner_3) = &_input.resource_owner {
+                    {
+                        query.push_kv("resourceOwner", &::aws_smithy_http::query::fmt_string(inner_3));
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

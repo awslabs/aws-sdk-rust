@@ -11,6 +11,8 @@ pub struct StartQueryInput {
     pub query_alias: ::std::option::Option<::std::string::String>,
     /// <p>The query parameters for the specified <code>QueryAlias</code>.</p>
     pub query_parameters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The account ID of the event data store owner.</p>
+    pub event_data_store_owner_account_id: ::std::option::Option<::std::string::String>,
 }
 impl StartQueryInput {
     /// <p>The SQL code of your query.</p>
@@ -31,6 +33,10 @@ impl StartQueryInput {
     pub fn query_parameters(&self) -> &[::std::string::String] {
         self.query_parameters.as_deref().unwrap_or_default()
     }
+    /// <p>The account ID of the event data store owner.</p>
+    pub fn event_data_store_owner_account_id(&self) -> ::std::option::Option<&str> {
+        self.event_data_store_owner_account_id.as_deref()
+    }
 }
 impl StartQueryInput {
     /// Creates a new builder-style object to manufacture [`StartQueryInput`](crate::operation::start_query::StartQueryInput).
@@ -47,6 +53,7 @@ pub struct StartQueryInputBuilder {
     pub(crate) delivery_s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) query_alias: ::std::option::Option<::std::string::String>,
     pub(crate) query_parameters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) event_data_store_owner_account_id: ::std::option::Option<::std::string::String>,
 }
 impl StartQueryInputBuilder {
     /// <p>The SQL code of your query.</p>
@@ -111,6 +118,20 @@ impl StartQueryInputBuilder {
     pub fn get_query_parameters(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.query_parameters
     }
+    /// <p>The account ID of the event data store owner.</p>
+    pub fn event_data_store_owner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.event_data_store_owner_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The account ID of the event data store owner.</p>
+    pub fn set_event_data_store_owner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.event_data_store_owner_account_id = input;
+        self
+    }
+    /// <p>The account ID of the event data store owner.</p>
+    pub fn get_event_data_store_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_data_store_owner_account_id
+    }
     /// Consumes the builder and constructs a [`StartQueryInput`](crate::operation::start_query::StartQueryInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::start_query::StartQueryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_query::StartQueryInput {
@@ -118,6 +139,7 @@ impl StartQueryInputBuilder {
             delivery_s3_uri: self.delivery_s3_uri,
             query_alias: self.query_alias,
             query_parameters: self.query_parameters,
+            event_data_store_owner_account_id: self.event_data_store_owner_account_id,
         })
     }
 }

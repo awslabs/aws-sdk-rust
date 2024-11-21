@@ -23,7 +23,7 @@ impl crate::operation::put_bucket_acl::builders::PutBucketAclInputBuilder {
 /// Fluent builder constructing a request to `PutBucketAcl`.
 ///
 /// <note>
-/// <p>This operation is not supported by directory buckets.</p>
+/// <p>This operation is not supported for directory buckets.</p>
 /// </note>
 /// <p>Sets the permissions on an existing bucket using access control lists (ACL). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using ACLs</a>. To set the ACL of a bucket, you must have the <code>WRITE_ACP</code> permission.</p>
 /// <p>You can use one of the following two ways to set a bucket's permissions:</p>

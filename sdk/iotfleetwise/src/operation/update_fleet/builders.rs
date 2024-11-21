@@ -22,9 +22,7 @@ impl crate::operation::update_fleet::builders::UpdateFleetInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateFleet`.
 ///
-/// <p>Updates the description of an existing fleet.</p><note>
-/// <p>If the fleet is successfully updated, Amazon Web Services IoT FleetWise sends back an HTTP 200 response with an empty HTTP body.</p>
-/// </note>
+/// <p>Updates the description of an existing fleet.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateFleetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
