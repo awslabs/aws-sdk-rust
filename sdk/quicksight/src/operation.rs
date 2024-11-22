@@ -223,6 +223,9 @@ pub mod describe_dashboard_snapshot_job;
 /// Types for the `DescribeDashboardSnapshotJobResult` operation.
 pub mod describe_dashboard_snapshot_job_result;
 
+/// Types for the `DescribeDashboardsQAConfiguration` operation.
+pub mod describe_dashboards_qa_configuration;
+
 /// Types for the `DescribeDataSet` operation.
 pub mod describe_data_set;
 
@@ -457,6 +460,9 @@ pub mod search_folders;
 /// Types for the `SearchGroups` operation.
 pub mod search_groups;
 
+/// Types for the `SearchTopics` operation.
+pub mod search_topics;
+
 /// Types for the `StartAssetBundleExportJob` operation.
 pub mod start_asset_bundle_export_job;
 
@@ -510,6 +516,9 @@ pub mod update_dashboard_permissions;
 
 /// Types for the `UpdateDashboardPublishedVersion` operation.
 pub mod update_dashboard_published_version;
+
+/// Types for the `UpdateDashboardsQAConfiguration` operation.
+pub mod update_dashboards_qa_configuration;
 
 /// Types for the `UpdateDataSet` operation.
 pub mod update_data_set;

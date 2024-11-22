@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateChimeWebhookConfigurationInput {
-    /// <p>The Amazon Resource Number (ARN) of the ChimeWebhookConfiguration to update.</p>
+    /// <p>The Amazon Resource Name (ARN) of the ChimeWebhookConfiguration to update.</p>
     pub chat_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>A description of the webhook. We recommend using the convention <code>RoomName/WebhookName</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/chime-setup.html">Tutorial: Get started with Amazon Chime</a> in the <i> AWS Chatbot Administrator Guide</i>.</p>
@@ -19,7 +19,7 @@ pub struct UpdateChimeWebhookConfigurationInput {
     pub logging_level: ::std::option::Option<::std::string::String>,
 }
 impl UpdateChimeWebhookConfigurationInput {
-    /// <p>The Amazon Resource Number (ARN) of the ChimeWebhookConfiguration to update.</p>
+    /// <p>The Amazon Resource Name (ARN) of the ChimeWebhookConfiguration to update.</p>
     pub fn chat_configuration_arn(&self) -> ::std::option::Option<&str> {
         self.chat_configuration_arn.as_deref()
     }
@@ -79,18 +79,18 @@ pub struct UpdateChimeWebhookConfigurationInputBuilder {
     pub(crate) logging_level: ::std::option::Option<::std::string::String>,
 }
 impl UpdateChimeWebhookConfigurationInputBuilder {
-    /// <p>The Amazon Resource Number (ARN) of the ChimeWebhookConfiguration to update.</p>
+    /// <p>The Amazon Resource Name (ARN) of the ChimeWebhookConfiguration to update.</p>
     /// This field is required.
     pub fn chat_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.chat_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Number (ARN) of the ChimeWebhookConfiguration to update.</p>
+    /// <p>The Amazon Resource Name (ARN) of the ChimeWebhookConfiguration to update.</p>
     pub fn set_chat_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.chat_configuration_arn = input;
         self
     }
-    /// <p>The Amazon Resource Number (ARN) of the ChimeWebhookConfiguration to update.</p>
+    /// <p>The Amazon Resource Name (ARN) of the ChimeWebhookConfiguration to update.</p>
     pub fn get_chat_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.chat_configuration_arn
     }

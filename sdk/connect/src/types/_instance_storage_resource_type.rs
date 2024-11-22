@@ -18,6 +18,7 @@
 ///     InstanceStorageResourceType::ChatTranscripts => { /* ... */ },
 ///     InstanceStorageResourceType::ContactEvaluations => { /* ... */ },
 ///     InstanceStorageResourceType::ContactTraceRecords => { /* ... */ },
+///     InstanceStorageResourceType::EmailMessages => { /* ... */ },
 ///     InstanceStorageResourceType::MediaStreams => { /* ... */ },
 ///     InstanceStorageResourceType::RealTimeContactAnalysisChatSegments => { /* ... */ },
 ///     InstanceStorageResourceType::RealTimeContactAnalysisSegments => { /* ... */ },
@@ -64,6 +65,8 @@ pub enum InstanceStorageResourceType {
     #[allow(missing_docs)] // documentation missing in model
     ContactTraceRecords,
     #[allow(missing_docs)] // documentation missing in model
+    EmailMessages,
+    #[allow(missing_docs)] // documentation missing in model
     MediaStreams,
     #[allow(missing_docs)] // documentation missing in model
     RealTimeContactAnalysisChatSegments,
@@ -88,6 +91,7 @@ impl ::std::convert::From<&str> for InstanceStorageResourceType {
             "CHAT_TRANSCRIPTS" => InstanceStorageResourceType::ChatTranscripts,
             "CONTACT_EVALUATIONS" => InstanceStorageResourceType::ContactEvaluations,
             "CONTACT_TRACE_RECORDS" => InstanceStorageResourceType::ContactTraceRecords,
+            "EMAIL_MESSAGES" => InstanceStorageResourceType::EmailMessages,
             "MEDIA_STREAMS" => InstanceStorageResourceType::MediaStreams,
             "REAL_TIME_CONTACT_ANALYSIS_CHAT_SEGMENTS" => InstanceStorageResourceType::RealTimeContactAnalysisChatSegments,
             "REAL_TIME_CONTACT_ANALYSIS_SEGMENTS" => InstanceStorageResourceType::RealTimeContactAnalysisSegments,
@@ -115,6 +119,7 @@ impl InstanceStorageResourceType {
             InstanceStorageResourceType::ChatTranscripts => "CHAT_TRANSCRIPTS",
             InstanceStorageResourceType::ContactEvaluations => "CONTACT_EVALUATIONS",
             InstanceStorageResourceType::ContactTraceRecords => "CONTACT_TRACE_RECORDS",
+            InstanceStorageResourceType::EmailMessages => "EMAIL_MESSAGES",
             InstanceStorageResourceType::MediaStreams => "MEDIA_STREAMS",
             InstanceStorageResourceType::RealTimeContactAnalysisChatSegments => "REAL_TIME_CONTACT_ANALYSIS_CHAT_SEGMENTS",
             InstanceStorageResourceType::RealTimeContactAnalysisSegments => "REAL_TIME_CONTACT_ANALYSIS_SEGMENTS",
@@ -133,6 +138,7 @@ impl InstanceStorageResourceType {
             "CHAT_TRANSCRIPTS",
             "CONTACT_EVALUATIONS",
             "CONTACT_TRACE_RECORDS",
+            "EMAIL_MESSAGES",
             "MEDIA_STREAMS",
             "REAL_TIME_CONTACT_ANALYSIS_CHAT_SEGMENTS",
             "REAL_TIME_CONTACT_ANALYSIS_SEGMENTS",
@@ -168,6 +174,7 @@ impl ::std::fmt::Display for InstanceStorageResourceType {
             InstanceStorageResourceType::ChatTranscripts => write!(f, "CHAT_TRANSCRIPTS"),
             InstanceStorageResourceType::ContactEvaluations => write!(f, "CONTACT_EVALUATIONS"),
             InstanceStorageResourceType::ContactTraceRecords => write!(f, "CONTACT_TRACE_RECORDS"),
+            InstanceStorageResourceType::EmailMessages => write!(f, "EMAIL_MESSAGES"),
             InstanceStorageResourceType::MediaStreams => write!(f, "MEDIA_STREAMS"),
             InstanceStorageResourceType::RealTimeContactAnalysisChatSegments => write!(f, "REAL_TIME_CONTACT_ANALYSIS_CHAT_SEGMENTS"),
             InstanceStorageResourceType::RealTimeContactAnalysisSegments => write!(f, "REAL_TIME_CONTACT_ANALYSIS_SEGMENTS"),

@@ -11,6 +11,8 @@ pub struct CreateTopicInput {
     pub topic: ::std::option::Option<crate::types::TopicDetails>,
     /// <p>Contains a map of the key-value pairs for the resource tag or tags that are assigned to the dataset.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The Folder ARN of the folder that you want the topic to reside in.</p>
+    pub folder_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateTopicInput {
     /// <p>The ID of the Amazon Web Services account that you want to create a topic in.</p>
@@ -31,6 +33,12 @@ impl CreateTopicInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>The Folder ARN of the folder that you want the topic to reside in.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.folder_arns.is_none()`.
+    pub fn folder_arns(&self) -> &[::std::string::String] {
+        self.folder_arns.as_deref().unwrap_or_default()
+    }
 }
 impl CreateTopicInput {
     /// Creates a new builder-style object to manufacture [`CreateTopicInput`](crate::operation::create_topic::CreateTopicInput).
@@ -47,6 +55,7 @@ pub struct CreateTopicInputBuilder {
     pub(crate) topic_id: ::std::option::Option<::std::string::String>,
     pub(crate) topic: ::std::option::Option<crate::types::TopicDetails>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) folder_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateTopicInputBuilder {
     /// <p>The ID of the Amazon Web Services account that you want to create a topic in.</p>
@@ -114,6 +123,26 @@ impl CreateTopicInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// Appends an item to `folder_arns`.
+    ///
+    /// To override the contents of this collection use [`set_folder_arns`](Self::set_folder_arns).
+    ///
+    /// <p>The Folder ARN of the folder that you want the topic to reside in.</p>
+    pub fn folder_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.folder_arns.unwrap_or_default();
+        v.push(input.into());
+        self.folder_arns = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The Folder ARN of the folder that you want the topic to reside in.</p>
+    pub fn set_folder_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.folder_arns = input;
+        self
+    }
+    /// <p>The Folder ARN of the folder that you want the topic to reside in.</p>
+    pub fn get_folder_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.folder_arns
+    }
     /// Consumes the builder and constructs a [`CreateTopicInput`](crate::operation::create_topic::CreateTopicInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_topic::CreateTopicInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_topic::CreateTopicInput {
@@ -121,6 +150,7 @@ impl CreateTopicInputBuilder {
             topic_id: self.topic_id,
             topic: self.topic,
             tags: self.tags,
+            folder_arns: self.folder_arns,
         })
     }
 }

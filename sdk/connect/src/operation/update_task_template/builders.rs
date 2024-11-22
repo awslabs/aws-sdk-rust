@@ -178,6 +178,20 @@ impl UpdateTaskTemplateFluentBuilder {
     pub fn get_contact_flow_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_contact_flow_id()
     }
+    /// <p></p>
+    pub fn self_assign_flow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.self_assign_flow_id(input.into());
+        self
+    }
+    /// <p></p>
+    pub fn set_self_assign_flow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_self_assign_flow_id(input);
+        self
+    }
+    /// <p></p>
+    pub fn get_self_assign_flow_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_self_assign_flow_id()
+    }
     /// <p>Constraints that are applicable to the fields listed.</p>
     pub fn constraints(mut self, input: crate::types::TaskTemplateConstraints) -> Self {
         self.inner = self.inner.constraints(input);

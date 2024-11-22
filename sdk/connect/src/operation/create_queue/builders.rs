@@ -174,6 +174,20 @@ impl CreateQueueFluentBuilder {
     pub fn get_outbound_caller_config(&self) -> &::std::option::Option<crate::types::OutboundCallerConfig> {
         self.inner.get_outbound_caller_config()
     }
+    /// <p></p>
+    pub fn outbound_email_config(mut self, input: crate::types::OutboundEmailConfig) -> Self {
+        self.inner = self.inner.outbound_email_config(input);
+        self
+    }
+    /// <p></p>
+    pub fn set_outbound_email_config(mut self, input: ::std::option::Option<crate::types::OutboundEmailConfig>) -> Self {
+        self.inner = self.inner.set_outbound_email_config(input);
+        self
+    }
+    /// <p></p>
+    pub fn get_outbound_email_config(&self) -> &::std::option::Option<crate::types::OutboundEmailConfig> {
+        self.inner.get_outbound_email_config()
+    }
     /// <p>The identifier for the hours of operation.</p>
     pub fn hours_of_operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hours_of_operation_id(input.into());

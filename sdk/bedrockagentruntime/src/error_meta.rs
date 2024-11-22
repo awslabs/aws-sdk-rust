@@ -204,6 +204,42 @@ impl From<crate::operation::invoke_flow::InvokeFlowError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::invoke_inline_agent::InvokeInlineAgentError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::invoke_inline_agent::InvokeInlineAgentError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::invoke_inline_agent::InvokeInlineAgentError> for Error {
+    fn from(err: crate::operation::invoke_inline_agent::InvokeInlineAgentError) -> Self {
+        match err {
+            crate::operation::invoke_inline_agent::InvokeInlineAgentError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::invoke_inline_agent::InvokeInlineAgentError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::invoke_inline_agent::InvokeInlineAgentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::invoke_inline_agent::InvokeInlineAgentError::DependencyFailedException(inner) => {
+                Error::DependencyFailedException(inner)
+            }
+            crate::operation::invoke_inline_agent::InvokeInlineAgentError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::invoke_inline_agent::InvokeInlineAgentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::invoke_inline_agent::InvokeInlineAgentError::BadGatewayException(inner) => Error::BadGatewayException(inner),
+            crate::operation::invoke_inline_agent::InvokeInlineAgentError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::invoke_inline_agent::InvokeInlineAgentError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::invoke_inline_agent::InvokeInlineAgentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::optimize_prompt::OptimizePromptError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -356,6 +392,36 @@ impl From<crate::types::error::FlowResponseStreamError> for Error {
             crate::types::error::FlowResponseStreamError::DependencyFailedException(inner) => Error::DependencyFailedException(inner),
             crate::types::error::FlowResponseStreamError::BadGatewayException(inner) => Error::BadGatewayException(inner),
             crate::types::error::FlowResponseStreamError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::InlineAgentResponseStreamError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::InlineAgentResponseStreamError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::types::error::InlineAgentResponseStreamError> for Error {
+    fn from(err: crate::types::error::InlineAgentResponseStreamError) -> Self {
+        match err {
+            crate::types::error::InlineAgentResponseStreamError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::types::error::InlineAgentResponseStreamError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::types::error::InlineAgentResponseStreamError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::types::error::InlineAgentResponseStreamError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::types::error::InlineAgentResponseStreamError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::types::error::InlineAgentResponseStreamError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::types::error::InlineAgentResponseStreamError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::types::error::InlineAgentResponseStreamError::DependencyFailedException(inner) => Error::DependencyFailedException(inner),
+            crate::types::error::InlineAgentResponseStreamError::BadGatewayException(inner) => Error::BadGatewayException(inner),
+            crate::types::error::InlineAgentResponseStreamError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

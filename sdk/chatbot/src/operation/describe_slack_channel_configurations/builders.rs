@@ -142,17 +142,17 @@ impl DescribeSlackChannelConfigurationsFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>An optional Amazon Resource Number (ARN) of a SlackChannelConfiguration to describe.</p>
+    /// <p>An optional Amazon Resource Name (ARN) of a SlackChannelConfiguration to describe.</p>
     pub fn chat_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.chat_configuration_arn(input.into());
         self
     }
-    /// <p>An optional Amazon Resource Number (ARN) of a SlackChannelConfiguration to describe.</p>
+    /// <p>An optional Amazon Resource Name (ARN) of a SlackChannelConfiguration to describe.</p>
     pub fn set_chat_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_chat_configuration_arn(input);
         self
     }
-    /// <p>An optional Amazon Resource Number (ARN) of a SlackChannelConfiguration to describe.</p>
+    /// <p>An optional Amazon Resource Name (ARN) of a SlackChannelConfiguration to describe.</p>
     pub fn get_chat_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_chat_configuration_arn()
     }

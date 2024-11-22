@@ -941,6 +941,44 @@ impl From<crate::operation::delete_run_group::DeleteRunGroupError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_s3_access_policy::DeleteS3AccessPolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_s3_access_policy::DeleteS3AccessPolicyError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_s3_access_policy::DeleteS3AccessPolicyError> for Error {
+    fn from(err: crate::operation::delete_s3_access_policy::DeleteS3AccessPolicyError) -> Self {
+        match err {
+            crate::operation::delete_s3_access_policy::DeleteS3AccessPolicyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_s3_access_policy::DeleteS3AccessPolicyError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_s3_access_policy::DeleteS3AccessPolicyError::NotSupportedOperationException(inner) => {
+                Error::NotSupportedOperationException(inner)
+            }
+            crate::operation::delete_s3_access_policy::DeleteS3AccessPolicyError::RequestTimeoutException(inner) => {
+                Error::RequestTimeoutException(inner)
+            }
+            crate::operation::delete_s3_access_policy::DeleteS3AccessPolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_s3_access_policy::DeleteS3AccessPolicyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_s3_access_policy::DeleteS3AccessPolicyError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_s3_access_policy::DeleteS3AccessPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_sequence_store::DeleteSequenceStoreError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1571,6 +1609,41 @@ impl From<crate::operation::get_run_task::GetRunTaskError> for Error {
             crate::operation::get_run_task::GetRunTaskError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_run_task::GetRunTaskError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_run_task::GetRunTaskError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_s3_access_policy::GetS3AccessPolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_s3_access_policy::GetS3AccessPolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_s3_access_policy::GetS3AccessPolicyError> for Error {
+    fn from(err: crate::operation::get_s3_access_policy::GetS3AccessPolicyError) -> Self {
+        match err {
+            crate::operation::get_s3_access_policy::GetS3AccessPolicyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_s3_access_policy::GetS3AccessPolicyError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_s3_access_policy::GetS3AccessPolicyError::NotSupportedOperationException(inner) => {
+                Error::NotSupportedOperationException(inner)
+            }
+            crate::operation::get_s3_access_policy::GetS3AccessPolicyError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
+            crate::operation::get_s3_access_policy::GetS3AccessPolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_s3_access_policy::GetS3AccessPolicyError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::get_s3_access_policy::GetS3AccessPolicyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_s3_access_policy::GetS3AccessPolicyError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_s3_access_policy::GetS3AccessPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2470,6 +2543,38 @@ impl From<crate::operation::list_workflows::ListWorkflowsError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_s3_access_policy::PutS3AccessPolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_s3_access_policy::PutS3AccessPolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_s3_access_policy::PutS3AccessPolicyError> for Error {
+    fn from(err: crate::operation::put_s3_access_policy::PutS3AccessPolicyError) -> Self {
+        match err {
+            crate::operation::put_s3_access_policy::PutS3AccessPolicyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::put_s3_access_policy::PutS3AccessPolicyError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::put_s3_access_policy::PutS3AccessPolicyError::NotSupportedOperationException(inner) => {
+                Error::NotSupportedOperationException(inner)
+            }
+            crate::operation::put_s3_access_policy::PutS3AccessPolicyError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
+            crate::operation::put_s3_access_policy::PutS3AccessPolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::put_s3_access_policy::PutS3AccessPolicyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::put_s3_access_policy::PutS3AccessPolicyError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_s3_access_policy::PutS3AccessPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_annotation_import_job::StartAnnotationImportJobError, R>>
     for Error
 where
@@ -2942,6 +3047,40 @@ impl From<crate::operation::update_run_group::UpdateRunGroupError> for Error {
             crate::operation::update_run_group::UpdateRunGroupError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_run_group::UpdateRunGroupError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_run_group::UpdateRunGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_sequence_store::UpdateSequenceStoreError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_sequence_store::UpdateSequenceStoreError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_sequence_store::UpdateSequenceStoreError> for Error {
+    fn from(err: crate::operation::update_sequence_store::UpdateSequenceStoreError) -> Self {
+        match err {
+            crate::operation::update_sequence_store::UpdateSequenceStoreError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_sequence_store::UpdateSequenceStoreError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_sequence_store::UpdateSequenceStoreError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_sequence_store::UpdateSequenceStoreError::RequestTimeoutException(inner) => {
+                Error::RequestTimeoutException(inner)
+            }
+            crate::operation::update_sequence_store::UpdateSequenceStoreError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_sequence_store::UpdateSequenceStoreError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_sequence_store::UpdateSequenceStoreError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_sequence_store::UpdateSequenceStoreError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

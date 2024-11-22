@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HistoryEventExecutionDataDetails {
-    /// <p>Indicates whether input or output was truncated in the response. Always <code>false</code> for API calls.</p>
+    /// <p>Indicates whether input or output was truncated in the response. Always <code>false</code> for API calls. In CloudWatch logs, the value will be true if the data is truncated due to size limits.</p>
     pub truncated: bool,
 }
 impl HistoryEventExecutionDataDetails {
-    /// <p>Indicates whether input or output was truncated in the response. Always <code>false</code> for API calls.</p>
+    /// <p>Indicates whether input or output was truncated in the response. Always <code>false</code> for API calls. In CloudWatch logs, the value will be true if the data is truncated due to size limits.</p>
     pub fn truncated(&self) -> bool {
         self.truncated
     }
@@ -27,17 +27,17 @@ pub struct HistoryEventExecutionDataDetailsBuilder {
     pub(crate) truncated: ::std::option::Option<bool>,
 }
 impl HistoryEventExecutionDataDetailsBuilder {
-    /// <p>Indicates whether input or output was truncated in the response. Always <code>false</code> for API calls.</p>
+    /// <p>Indicates whether input or output was truncated in the response. Always <code>false</code> for API calls. In CloudWatch logs, the value will be true if the data is truncated due to size limits.</p>
     pub fn truncated(mut self, input: bool) -> Self {
         self.truncated = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether input or output was truncated in the response. Always <code>false</code> for API calls.</p>
+    /// <p>Indicates whether input or output was truncated in the response. Always <code>false</code> for API calls. In CloudWatch logs, the value will be true if the data is truncated due to size limits.</p>
     pub fn set_truncated(mut self, input: ::std::option::Option<bool>) -> Self {
         self.truncated = input;
         self
     }
-    /// <p>Indicates whether input or output was truncated in the response. Always <code>false</code> for API calls.</p>
+    /// <p>Indicates whether input or output was truncated in the response. Always <code>false</code> for API calls. In CloudWatch logs, the value will be true if the data is truncated due to size limits.</p>
     pub fn get_truncated(&self) -> &::std::option::Option<bool> {
         &self.truncated
     }

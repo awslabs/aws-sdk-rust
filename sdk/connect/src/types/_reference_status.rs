@@ -13,6 +13,10 @@
 /// # let referencestatus = unimplemented!();
 /// match referencestatus {
 ///     ReferenceStatus::Approved => { /* ... */ },
+///     ReferenceStatus::Available => { /* ... */ },
+///     ReferenceStatus::Deleted => { /* ... */ },
+///     ReferenceStatus::Failed => { /* ... */ },
+///     ReferenceStatus::Processing => { /* ... */ },
 ///     ReferenceStatus::Rejected => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -44,6 +48,14 @@ pub enum ReferenceStatus {
     #[allow(missing_docs)] // documentation missing in model
     Approved,
     #[allow(missing_docs)] // documentation missing in model
+    Available,
+    #[allow(missing_docs)] // documentation missing in model
+    Deleted,
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    Processing,
+    #[allow(missing_docs)] // documentation missing in model
     Rejected,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -53,6 +65,10 @@ impl ::std::convert::From<&str> for ReferenceStatus {
     fn from(s: &str) -> Self {
         match s {
             "APPROVED" => ReferenceStatus::Approved,
+            "AVAILABLE" => ReferenceStatus::Available,
+            "DELETED" => ReferenceStatus::Deleted,
+            "FAILED" => ReferenceStatus::Failed,
+            "PROCESSING" => ReferenceStatus::Processing,
             "REJECTED" => ReferenceStatus::Rejected,
             other => ReferenceStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -70,13 +86,17 @@ impl ReferenceStatus {
     pub fn as_str(&self) -> &str {
         match self {
             ReferenceStatus::Approved => "APPROVED",
+            ReferenceStatus::Available => "AVAILABLE",
+            ReferenceStatus::Deleted => "DELETED",
+            ReferenceStatus::Failed => "FAILED",
+            ReferenceStatus::Processing => "PROCESSING",
             ReferenceStatus::Rejected => "REJECTED",
             ReferenceStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["APPROVED", "REJECTED"]
+        &["APPROVED", "AVAILABLE", "DELETED", "FAILED", "PROCESSING", "REJECTED"]
     }
 }
 impl ::std::convert::AsRef<str> for ReferenceStatus {
@@ -100,6 +120,10 @@ impl ::std::fmt::Display for ReferenceStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ReferenceStatus::Approved => write!(f, "APPROVED"),
+            ReferenceStatus::Available => write!(f, "AVAILABLE"),
+            ReferenceStatus::Deleted => write!(f, "DELETED"),
+            ReferenceStatus::Failed => write!(f, "FAILED"),
+            ReferenceStatus::Processing => write!(f, "PROCESSING"),
             ReferenceStatus::Rejected => write!(f, "REJECTED"),
             ReferenceStatus::Unknown(value) => write!(f, "{}", value),
         }

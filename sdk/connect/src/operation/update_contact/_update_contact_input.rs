@@ -13,6 +13,8 @@ pub struct UpdateContactInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Well-formed data on contact, shown to agents on Contact Control Panel (CCP).</p>
     pub references: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Reference>>,
+    /// <p></p>
+    pub segment_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>>,
 }
 impl UpdateContactInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -35,6 +37,12 @@ impl UpdateContactInput {
     pub fn references(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::Reference>> {
         self.references.as_ref()
     }
+    /// <p></p>
+    pub fn segment_attributes(
+        &self,
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>> {
+        self.segment_attributes.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UpdateContactInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -44,6 +52,7 @@ impl ::std::fmt::Debug for UpdateContactInput {
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("references", &self.references);
+        formatter.field("segment_attributes", &self.segment_attributes);
         formatter.finish()
     }
 }
@@ -63,6 +72,7 @@ pub struct UpdateContactInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) references: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Reference>>,
+    pub(crate) segment_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>>,
 }
 impl UpdateContactInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -146,6 +156,31 @@ impl UpdateContactInputBuilder {
     pub fn get_references(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Reference>> {
         &self.references
     }
+    /// Adds a key-value pair to `segment_attributes`.
+    ///
+    /// To override the contents of this collection use [`set_segment_attributes`](Self::set_segment_attributes).
+    ///
+    /// <p></p>
+    pub fn segment_attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::SegmentAttributeValue) -> Self {
+        let mut hash_map = self.segment_attributes.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.segment_attributes = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p></p>
+    pub fn set_segment_attributes(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>>,
+    ) -> Self {
+        self.segment_attributes = input;
+        self
+    }
+    /// <p></p>
+    pub fn get_segment_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>> {
+        &self.segment_attributes
+    }
     /// Consumes the builder and constructs a [`UpdateContactInput`](crate::operation::update_contact::UpdateContactInput).
     pub fn build(
         self,
@@ -156,6 +191,7 @@ impl UpdateContactInputBuilder {
             name: self.name,
             description: self.description,
             references: self.references,
+            segment_attributes: self.segment_attributes,
         })
     }
 }
@@ -167,6 +203,7 @@ impl ::std::fmt::Debug for UpdateContactInputBuilder {
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("references", &self.references);
+        formatter.field("segment_attributes", &self.segment_attributes);
         formatter.finish()
     }
 }

@@ -63,32 +63,44 @@ pub fn ser_sheet_definition(
         }
         array_17.finish();
     }
-    if let Some(var_20) = &input.layouts {
-        let mut array_21 = object.key("Layouts").start_array();
+    if let Some(var_20) = &input.images {
+        let mut array_21 = object.key("Images").start_array();
         for item_22 in var_20 {
             {
                 #[allow(unused_mut)]
                 let mut object_23 = array_21.value().start_object();
-                crate::protocol_serde::shape_layout::ser_layout(&mut object_23, item_22)?;
+                crate::protocol_serde::shape_sheet_image::ser_sheet_image(&mut object_23, item_22)?;
                 object_23.finish();
             }
         }
         array_21.finish();
     }
-    if let Some(var_24) = &input.sheet_control_layouts {
-        let mut array_25 = object.key("SheetControlLayouts").start_array();
+    if let Some(var_24) = &input.layouts {
+        let mut array_25 = object.key("Layouts").start_array();
         for item_26 in var_24 {
             {
                 #[allow(unused_mut)]
                 let mut object_27 = array_25.value().start_object();
-                crate::protocol_serde::shape_sheet_control_layout::ser_sheet_control_layout(&mut object_27, item_26)?;
+                crate::protocol_serde::shape_layout::ser_layout(&mut object_27, item_26)?;
                 object_27.finish();
             }
         }
         array_25.finish();
     }
-    if let Some(var_28) = &input.content_type {
-        object.key("ContentType").string(var_28.as_str());
+    if let Some(var_28) = &input.sheet_control_layouts {
+        let mut array_29 = object.key("SheetControlLayouts").start_array();
+        for item_30 in var_28 {
+            {
+                #[allow(unused_mut)]
+                let mut object_31 = array_29.value().start_object();
+                crate::protocol_serde::shape_sheet_control_layout::ser_sheet_control_layout(&mut object_31, item_30)?;
+                object_31.finish();
+            }
+        }
+        array_29.finish();
+    }
+    if let Some(var_32) = &input.content_type {
+        object.key("ContentType").string(var_32.as_str());
     }
     Ok(())
 }
@@ -148,6 +160,9 @@ where
                         }
                         "TextBoxes" => {
                             builder = builder.set_text_boxes(crate::protocol_serde::shape_sheet_text_box_list::de_sheet_text_box_list(tokens)?);
+                        }
+                        "Images" => {
+                            builder = builder.set_images(crate::protocol_serde::shape_sheet_image_list::de_sheet_image_list(tokens)?);
                         }
                         "Layouts" => {
                             builder = builder.set_layouts(crate::protocol_serde::shape_layout_list::de_layout_list(tokens)?);

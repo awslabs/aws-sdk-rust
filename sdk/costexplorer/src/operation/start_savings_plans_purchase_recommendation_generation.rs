@@ -247,7 +247,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StartSavingsP
 pub enum StartSavingsPlansPurchaseRecommendationGenerationError {
     /// <p>The requested data is unavailable.</p>
     DataUnavailableException(crate::types::error::DataUnavailableException),
-    /// <p>A request to generate a recommendation is already in progress.</p>
+    /// <p>A request to generate a recommendation or analysis is already in progress.</p>
     GenerationExistsException(crate::types::error::GenerationExistsException),
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::types::error::LimitExceededException),

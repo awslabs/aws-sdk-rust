@@ -10,6 +10,8 @@ pub enum RuleAction {
     Archive(crate::types::ArchiveAction),
     /// <p>This action delivers an email to a WorkMail mailbox.</p>
     DeliverToMailbox(crate::types::DeliverToMailboxAction),
+    /// <p>This action delivers an email to an Amazon Q Business application for ingestion into its knowledge base.</p>
+    DeliverToQBusiness(crate::types::DeliverToQBusinessAction),
     /// <p>This action terminates the evaluation of rules in the rule set.</p>
     Drop(crate::types::DropAction),
     /// <p>This action relays the email to another SMTP server.</p>
@@ -69,6 +71,19 @@ impl RuleAction {
     /// Returns true if this is a [`DeliverToMailbox`](crate::types::RuleAction::DeliverToMailbox).
     pub fn is_deliver_to_mailbox(&self) -> bool {
         self.as_deliver_to_mailbox().is_ok()
+    }
+    /// Tries to convert the enum instance into [`DeliverToQBusiness`](crate::types::RuleAction::DeliverToQBusiness), extracting the inner [`DeliverToQBusinessAction`](crate::types::DeliverToQBusinessAction).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_deliver_to_q_business(&self) -> ::std::result::Result<&crate::types::DeliverToQBusinessAction, &Self> {
+        if let RuleAction::DeliverToQBusiness(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`DeliverToQBusiness`](crate::types::RuleAction::DeliverToQBusiness).
+    pub fn is_deliver_to_q_business(&self) -> bool {
+        self.as_deliver_to_q_business().is_ok()
     }
     /// Tries to convert the enum instance into [`Drop`](crate::types::RuleAction::Drop), extracting the inner [`DropAction`](crate::types::DropAction).
     /// Returns `Err(&Self)` if it can't be converted.

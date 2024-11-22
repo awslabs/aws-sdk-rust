@@ -112,17 +112,17 @@ impl UpdateMicrosoftTeamsChannelConfigurationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Number (ARN) of the TeamsChannelConfiguration to update.</p>
+    /// <p>The Amazon Resource Name (ARN) of the TeamsChannelConfiguration to update.</p>
     pub fn chat_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.chat_configuration_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Number (ARN) of the TeamsChannelConfiguration to update.</p>
+    /// <p>The Amazon Resource Name (ARN) of the TeamsChannelConfiguration to update.</p>
     pub fn set_chat_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_chat_configuration_arn(input);
         self
     }
-    /// <p>The Amazon Resource Number (ARN) of the TeamsChannelConfiguration to update.</p>
+    /// <p>The Amazon Resource Name (ARN) of the TeamsChannelConfiguration to update.</p>
     pub fn get_chat_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_chat_configuration_arn()
     }

@@ -23,6 +23,8 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_cancel_export_task;
+
 pub(crate) mod shape_cancel_import_task;
 
 pub(crate) mod shape_cancel_query;
@@ -43,6 +45,8 @@ pub(crate) mod shape_delete_private_graph_endpoint;
 
 pub(crate) mod shape_execute_query;
 
+pub(crate) mod shape_get_export_task;
+
 pub(crate) mod shape_get_graph;
 
 pub(crate) mod shape_get_graph_snapshot;
@@ -54,6 +58,8 @@ pub(crate) mod shape_get_import_task;
 pub(crate) mod shape_get_private_graph_endpoint;
 
 pub(crate) mod shape_get_query;
+
+pub(crate) mod shape_list_export_tasks;
 
 pub(crate) mod shape_list_graph_snapshots;
 
@@ -70,6 +76,8 @@ pub(crate) mod shape_list_tags_for_resource;
 pub(crate) mod shape_reset_graph;
 
 pub(crate) mod shape_restore_graph_from_snapshot;
+
+pub(crate) mod shape_start_export_task;
 
 pub(crate) mod shape_start_import_task;
 
@@ -113,6 +121,8 @@ pub(crate) mod shape_restore_graph_from_snapshot_input;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
 
+pub(crate) mod shape_start_export_task_input;
+
 pub(crate) mod shape_start_import_task_input;
 
 pub(crate) mod shape_tag_resource_input;
@@ -124,6 +134,12 @@ pub(crate) mod shape_unprocessable_exception;
 pub(crate) mod shape_update_graph_input;
 
 pub(crate) mod shape_validation_exception;
+
+pub(crate) mod shape_export_filter;
+
+pub(crate) mod shape_export_task_details;
+
+pub(crate) mod shape_export_task_summary_list;
 
 pub(crate) mod shape_graph_data_summary;
 
@@ -151,6 +167,12 @@ pub(crate) mod shape_edge_labels;
 
 pub(crate) mod shape_edge_structures;
 
+pub(crate) mod shape_export_filter_element;
+
+pub(crate) mod shape_export_filter_per_label_map;
+
+pub(crate) mod shape_export_task_summary;
+
 pub(crate) mod shape_graph_snapshot_summary;
 
 pub(crate) mod shape_graph_summary;
@@ -171,11 +193,15 @@ pub(crate) mod shape_query_summary;
 
 pub(crate) mod shape_edge_structure;
 
+pub(crate) mod shape_export_filter_property_attributes;
+
 pub(crate) mod shape_long_valued_map;
 
 pub(crate) mod shape_node_structure;
 
 pub(crate) mod shape_edge_properties;
+
+pub(crate) mod shape_export_filter_property_map;
 
 pub(crate) mod shape_node_properties;
 

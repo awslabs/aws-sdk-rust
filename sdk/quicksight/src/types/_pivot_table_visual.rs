@@ -17,6 +17,8 @@ pub struct PivotTableVisual {
     pub conditional_formatting: ::std::option::Option<crate::types::PivotTableConditionalFormatting>,
     /// <p>The list of custom actions that are configured for a visual.</p>
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>,
+    /// <p>The alt text for the visual.</p>
+    pub visual_content_alt_text: ::std::option::Option<::std::string::String>,
 }
 impl PivotTableVisual {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers..</p>
@@ -46,6 +48,10 @@ impl PivotTableVisual {
     pub fn actions(&self) -> &[crate::types::VisualCustomAction] {
         self.actions.as_deref().unwrap_or_default()
     }
+    /// <p>The alt text for the visual.</p>
+    pub fn visual_content_alt_text(&self) -> ::std::option::Option<&str> {
+        self.visual_content_alt_text.as_deref()
+    }
 }
 impl PivotTableVisual {
     /// Creates a new builder-style object to manufacture [`PivotTableVisual`](crate::types::PivotTableVisual).
@@ -64,6 +70,7 @@ pub struct PivotTableVisualBuilder {
     pub(crate) chart_configuration: ::std::option::Option<crate::types::PivotTableConfiguration>,
     pub(crate) conditional_formatting: ::std::option::Option<crate::types::PivotTableConditionalFormatting>,
     pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>,
+    pub(crate) visual_content_alt_text: ::std::option::Option<::std::string::String>,
 }
 impl PivotTableVisualBuilder {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers..</p>
@@ -157,6 +164,20 @@ impl PivotTableVisualBuilder {
     pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>> {
         &self.actions
     }
+    /// <p>The alt text for the visual.</p>
+    pub fn visual_content_alt_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.visual_content_alt_text = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The alt text for the visual.</p>
+    pub fn set_visual_content_alt_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.visual_content_alt_text = input;
+        self
+    }
+    /// <p>The alt text for the visual.</p>
+    pub fn get_visual_content_alt_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.visual_content_alt_text
+    }
     /// Consumes the builder and constructs a [`PivotTableVisual`](crate::types::PivotTableVisual).
     /// This method will fail if any of the following fields are not set:
     /// - [`visual_id`](crate::types::builders::PivotTableVisualBuilder::visual_id)
@@ -173,6 +194,7 @@ impl PivotTableVisualBuilder {
             chart_configuration: self.chart_configuration,
             conditional_formatting: self.conditional_formatting,
             actions: self.actions,
+            visual_content_alt_text: self.visual_content_alt_text,
         })
     }
 }

@@ -14,6 +14,7 @@
 /// match endpointtype {
 ///     EndpointType::ConnectPhonenumberArn => { /* ... */ },
 ///     EndpointType::ContactFlow => { /* ... */ },
+///     EndpointType::EmailAddress => { /* ... */ },
 ///     EndpointType::TelephoneNumber => { /* ... */ },
 ///     EndpointType::Voip => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -48,6 +49,8 @@ pub enum EndpointType {
     #[allow(missing_docs)] // documentation missing in model
     ContactFlow,
     #[allow(missing_docs)] // documentation missing in model
+    EmailAddress,
+    #[allow(missing_docs)] // documentation missing in model
     TelephoneNumber,
     #[allow(missing_docs)] // documentation missing in model
     Voip,
@@ -60,6 +63,7 @@ impl ::std::convert::From<&str> for EndpointType {
         match s {
             "CONNECT_PHONENUMBER_ARN" => EndpointType::ConnectPhonenumberArn,
             "CONTACT_FLOW" => EndpointType::ContactFlow,
+            "EMAIL_ADDRESS" => EndpointType::EmailAddress,
             "TELEPHONE_NUMBER" => EndpointType::TelephoneNumber,
             "VOIP" => EndpointType::Voip,
             other => EndpointType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -79,6 +83,7 @@ impl EndpointType {
         match self {
             EndpointType::ConnectPhonenumberArn => "CONNECT_PHONENUMBER_ARN",
             EndpointType::ContactFlow => "CONTACT_FLOW",
+            EndpointType::EmailAddress => "EMAIL_ADDRESS",
             EndpointType::TelephoneNumber => "TELEPHONE_NUMBER",
             EndpointType::Voip => "VOIP",
             EndpointType::Unknown(value) => value.as_str(),
@@ -86,7 +91,7 @@ impl EndpointType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CONNECT_PHONENUMBER_ARN", "CONTACT_FLOW", "TELEPHONE_NUMBER", "VOIP"]
+        &["CONNECT_PHONENUMBER_ARN", "CONTACT_FLOW", "EMAIL_ADDRESS", "TELEPHONE_NUMBER", "VOIP"]
     }
 }
 impl ::std::convert::AsRef<str> for EndpointType {
@@ -111,6 +116,7 @@ impl ::std::fmt::Display for EndpointType {
         match self {
             EndpointType::ConnectPhonenumberArn => write!(f, "CONNECT_PHONENUMBER_ARN"),
             EndpointType::ContactFlow => write!(f, "CONTACT_FLOW"),
+            EndpointType::EmailAddress => write!(f, "EMAIL_ADDRESS"),
             EndpointType::TelephoneNumber => write!(f, "TELEPHONE_NUMBER"),
             EndpointType::Voip => write!(f, "VOIP"),
             EndpointType::Unknown(value) => write!(f, "{}", value),

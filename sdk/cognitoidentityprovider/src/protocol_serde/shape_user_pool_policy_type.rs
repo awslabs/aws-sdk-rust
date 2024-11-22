@@ -9,6 +9,12 @@ pub fn ser_user_pool_policy_type(
         crate::protocol_serde::shape_password_policy_type::ser_password_policy_type(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.sign_in_policy {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("SignInPolicy").start_object();
+        crate::protocol_serde::shape_sign_in_policy_type::ser_sign_in_policy_type(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }
 
@@ -30,6 +36,9 @@ where
                         "PasswordPolicy" => {
                             builder =
                                 builder.set_password_policy(crate::protocol_serde::shape_password_policy_type::de_password_policy_type(tokens)?);
+                        }
+                        "SignInPolicy" => {
+                            builder = builder.set_sign_in_policy(crate::protocol_serde::shape_sign_in_policy_type::de_sign_in_policy_type(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

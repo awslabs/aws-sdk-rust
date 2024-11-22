@@ -5,8 +5,11 @@
 pub struct CreateUserPoolDomainInput {
     /// <p>The domain string. For custom domains, this is the fully-qualified domain name, such as <code>auth.example.com</code>. For Amazon Cognito prefix domains, this is the prefix alone, such as <code>auth</code>.</p>
     pub domain: ::std::option::Option<::std::string::String>,
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where you want to add a domain.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
+    /// <p>The version of managed login branding that you want to apply to your domain. A value of <code>1</code> indicates hosted UI (classic) branding and a version of <code>2</code> indicates managed login branding.</p>
+    /// <p>Managed login requires that your user pool be configured for any <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sign-in-feature-plans.html">feature plan</a> other than <code>Lite</code>.</p>
+    pub managed_login_version: ::std::option::Option<i32>,
     /// <p>The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application.</p>
     /// <p>Provide this parameter only if you want to use a custom domain for your user pool. Otherwise, you can exclude this parameter and use the Amazon Cognito hosted domain instead.</p>
     /// <p>For more information about the hosted domain and custom domains, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain.html">Configuring a User Pool Domain</a>.</p>
@@ -17,9 +20,14 @@ impl CreateUserPoolDomainInput {
     pub fn domain(&self) -> ::std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where you want to add a domain.</p>
     pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
+    }
+    /// <p>The version of managed login branding that you want to apply to your domain. A value of <code>1</code> indicates hosted UI (classic) branding and a version of <code>2</code> indicates managed login branding.</p>
+    /// <p>Managed login requires that your user pool be configured for any <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sign-in-feature-plans.html">feature plan</a> other than <code>Lite</code>.</p>
+    pub fn managed_login_version(&self) -> ::std::option::Option<i32> {
+        self.managed_login_version
     }
     /// <p>The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application.</p>
     /// <p>Provide this parameter only if you want to use a custom domain for your user pool. Otherwise, you can exclude this parameter and use the Amazon Cognito hosted domain instead.</p>
@@ -41,6 +49,7 @@ impl CreateUserPoolDomainInput {
 pub struct CreateUserPoolDomainInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
+    pub(crate) managed_login_version: ::std::option::Option<i32>,
     pub(crate) custom_domain_config: ::std::option::Option<crate::types::CustomDomainConfigType>,
 }
 impl CreateUserPoolDomainInputBuilder {
@@ -59,20 +68,37 @@ impl CreateUserPoolDomainInputBuilder {
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain
     }
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where you want to add a domain.</p>
     /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where you want to add a domain.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
     }
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where you want to add a domain.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_pool_id
+    }
+    /// <p>The version of managed login branding that you want to apply to your domain. A value of <code>1</code> indicates hosted UI (classic) branding and a version of <code>2</code> indicates managed login branding.</p>
+    /// <p>Managed login requires that your user pool be configured for any <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sign-in-feature-plans.html">feature plan</a> other than <code>Lite</code>.</p>
+    pub fn managed_login_version(mut self, input: i32) -> Self {
+        self.managed_login_version = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The version of managed login branding that you want to apply to your domain. A value of <code>1</code> indicates hosted UI (classic) branding and a version of <code>2</code> indicates managed login branding.</p>
+    /// <p>Managed login requires that your user pool be configured for any <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sign-in-feature-plans.html">feature plan</a> other than <code>Lite</code>.</p>
+    pub fn set_managed_login_version(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.managed_login_version = input;
+        self
+    }
+    /// <p>The version of managed login branding that you want to apply to your domain. A value of <code>1</code> indicates hosted UI (classic) branding and a version of <code>2</code> indicates managed login branding.</p>
+    /// <p>Managed login requires that your user pool be configured for any <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sign-in-feature-plans.html">feature plan</a> other than <code>Lite</code>.</p>
+    pub fn get_managed_login_version(&self) -> &::std::option::Option<i32> {
+        &self.managed_login_version
     }
     /// <p>The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application.</p>
     /// <p>Provide this parameter only if you want to use a custom domain for your user pool. Otherwise, you can exclude this parameter and use the Amazon Cognito hosted domain instead.</p>
@@ -102,6 +128,7 @@ impl CreateUserPoolDomainInputBuilder {
         ::std::result::Result::Ok(crate::operation::create_user_pool_domain::CreateUserPoolDomainInput {
             domain: self.domain,
             user_pool_id: self.user_pool_id,
+            managed_login_version: self.managed_login_version,
             custom_domain_config: self.custom_domain_config,
         })
     }

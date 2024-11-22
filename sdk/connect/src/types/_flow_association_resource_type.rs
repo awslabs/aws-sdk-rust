@@ -12,6 +12,8 @@
 /// ```text
 /// # let flowassociationresourcetype = unimplemented!();
 /// match flowassociationresourcetype {
+///     FlowAssociationResourceType::InboundEmail => { /* ... */ },
+///     FlowAssociationResourceType::OutboundEmail => { /* ... */ },
 ///     FlowAssociationResourceType::SmsPhoneNumber => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -41,6 +43,10 @@
 )]
 pub enum FlowAssociationResourceType {
     #[allow(missing_docs)] // documentation missing in model
+    InboundEmail,
+    #[allow(missing_docs)] // documentation missing in model
+    OutboundEmail,
+    #[allow(missing_docs)] // documentation missing in model
     SmsPhoneNumber,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -49,6 +55,8 @@ pub enum FlowAssociationResourceType {
 impl ::std::convert::From<&str> for FlowAssociationResourceType {
     fn from(s: &str) -> Self {
         match s {
+            "INBOUND_EMAIL" => FlowAssociationResourceType::InboundEmail,
+            "OUTBOUND_EMAIL" => FlowAssociationResourceType::OutboundEmail,
             "SMS_PHONE_NUMBER" => FlowAssociationResourceType::SmsPhoneNumber,
             other => FlowAssociationResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -65,13 +73,15 @@ impl FlowAssociationResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            FlowAssociationResourceType::InboundEmail => "INBOUND_EMAIL",
+            FlowAssociationResourceType::OutboundEmail => "OUTBOUND_EMAIL",
             FlowAssociationResourceType::SmsPhoneNumber => "SMS_PHONE_NUMBER",
             FlowAssociationResourceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SMS_PHONE_NUMBER"]
+        &["INBOUND_EMAIL", "OUTBOUND_EMAIL", "SMS_PHONE_NUMBER"]
     }
 }
 impl ::std::convert::AsRef<str> for FlowAssociationResourceType {
@@ -94,6 +104,8 @@ impl FlowAssociationResourceType {
 impl ::std::fmt::Display for FlowAssociationResourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            FlowAssociationResourceType::InboundEmail => write!(f, "INBOUND_EMAIL"),
+            FlowAssociationResourceType::OutboundEmail => write!(f, "OUTBOUND_EMAIL"),
             FlowAssociationResourceType::SmsPhoneNumber => write!(f, "SMS_PHONE_NUMBER"),
             FlowAssociationResourceType::Unknown(value) => write!(f, "{}", value),
         }

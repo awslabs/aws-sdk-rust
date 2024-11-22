@@ -20,6 +20,8 @@ pub struct ClusterInstanceGroupSpecification {
     pub instance_storage_configs: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceStorageConfig>>,
     /// <p>A flag indicating whether deep health checks should be performed when the cluster instance group is created or updated.</p>
     pub on_start_deep_health_checks: ::std::option::Option<::std::vec::Vec<crate::types::DeepHealthCheckType>>,
+    /// <p>Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker Access to Resources in your Amazon VPC</a>.</p>
+    pub override_vpc_config: ::std::option::Option<crate::types::VpcConfig>,
 }
 impl ClusterInstanceGroupSpecification {
     /// <p>Specifies the number of instances to add to the instance group of a SageMaker HyperPod cluster.</p>
@@ -58,6 +60,10 @@ impl ClusterInstanceGroupSpecification {
     pub fn on_start_deep_health_checks(&self) -> &[crate::types::DeepHealthCheckType] {
         self.on_start_deep_health_checks.as_deref().unwrap_or_default()
     }
+    /// <p>Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker Access to Resources in your Amazon VPC</a>.</p>
+    pub fn override_vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
+        self.override_vpc_config.as_ref()
+    }
 }
 impl ClusterInstanceGroupSpecification {
     /// Creates a new builder-style object to manufacture [`ClusterInstanceGroupSpecification`](crate::types::ClusterInstanceGroupSpecification).
@@ -78,6 +84,7 @@ pub struct ClusterInstanceGroupSpecificationBuilder {
     pub(crate) threads_per_core: ::std::option::Option<i32>,
     pub(crate) instance_storage_configs: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceStorageConfig>>,
     pub(crate) on_start_deep_health_checks: ::std::option::Option<::std::vec::Vec<crate::types::DeepHealthCheckType>>,
+    pub(crate) override_vpc_config: ::std::option::Option<crate::types::VpcConfig>,
 }
 impl ClusterInstanceGroupSpecificationBuilder {
     /// <p>Specifies the number of instances to add to the instance group of a SageMaker HyperPod cluster.</p>
@@ -209,6 +216,20 @@ impl ClusterInstanceGroupSpecificationBuilder {
     pub fn get_on_start_deep_health_checks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeepHealthCheckType>> {
         &self.on_start_deep_health_checks
     }
+    /// <p>Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker Access to Resources in your Amazon VPC</a>.</p>
+    pub fn override_vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
+        self.override_vpc_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker Access to Resources in your Amazon VPC</a>.</p>
+    pub fn set_override_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
+        self.override_vpc_config = input;
+        self
+    }
+    /// <p>Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker Access to Resources in your Amazon VPC</a>.</p>
+    pub fn get_override_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
+        &self.override_vpc_config
+    }
     /// Consumes the builder and constructs a [`ClusterInstanceGroupSpecification`](crate::types::ClusterInstanceGroupSpecification).
     pub fn build(self) -> crate::types::ClusterInstanceGroupSpecification {
         crate::types::ClusterInstanceGroupSpecification {
@@ -220,6 +241,7 @@ impl ClusterInstanceGroupSpecificationBuilder {
             threads_per_core: self.threads_per_core,
             instance_storage_configs: self.instance_storage_configs,
             on_start_deep_health_checks: self.on_start_deep_health_checks,
+            override_vpc_config: self.override_vpc_config,
         }
     }
 }

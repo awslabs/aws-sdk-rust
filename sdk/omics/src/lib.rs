@@ -31,7 +31,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-omics = "1.53.0"
+//! aws-sdk-omics = "1.54.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -145,6 +145,24 @@ pub use config::Config;
 /// [`aws_config::from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.from_env.html
 /// [`aws_config::load_from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.load_from_env.html
 /// [builder pattern]: https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
+/// # Using the `Client`
+///
+/// A client has a function for every operation that can be performed by the service.
+/// For example, the [`DeleteS3AccessPolicy`](crate::operation::delete_s3_access_policy) operation has
+/// a [`Client::delete_s3_access_policy`], function which returns a builder for that operation.
+/// The fluent builder ultimately has a `send()` function that returns an async future that
+/// returns a result, as illustrated below:
+///
+/// ```rust,ignore
+/// let result = client.delete_s3_access_policy()
+///     .s3_access_point_arn("example")
+///     .send()
+///     .await;
+/// ```
+///
+/// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
+/// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
+/// information.
 /// # Waiters
 ///
 /// This client provides `wait_until` methods behind the [`Waiters`](crate::client::Waiters) trait.

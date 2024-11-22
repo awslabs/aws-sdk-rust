@@ -91,6 +91,9 @@ impl From<crate::operation::associate_member::AssociateMemberError> for Error {
         match err {
             crate::operation::associate_member::AssociateMemberError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::associate_member::AssociateMemberError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::associate_member::AssociateMemberError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::associate_member::AssociateMemberError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::associate_member::AssociateMemberError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::associate_member::AssociateMemberError::Unhandled(inner) => Error::Unhandled(inner),

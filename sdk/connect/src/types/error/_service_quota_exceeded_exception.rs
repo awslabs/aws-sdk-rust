@@ -6,7 +6,15 @@
 pub struct ServiceQuotaExceededException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::option::Option<::std::string::String>,
+    /// <p></p>
+    pub reason: ::std::option::Option<crate::types::ServiceQuotaExceededExceptionReason>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
+}
+impl ServiceQuotaExceededException {
+    /// <p></p>
+    pub fn reason(&self) -> ::std::option::Option<&crate::types::ServiceQuotaExceededExceptionReason> {
+        self.reason.as_ref()
+    }
 }
 impl ServiceQuotaExceededException {
     /// Returns the error message.
@@ -49,6 +57,7 @@ impl ServiceQuotaExceededException {
 #[non_exhaustive]
 pub struct ServiceQuotaExceededExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) reason: ::std::option::Option<crate::types::ServiceQuotaExceededExceptionReason>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl ServiceQuotaExceededExceptionBuilder {
@@ -66,6 +75,20 @@ impl ServiceQuotaExceededExceptionBuilder {
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
+    /// <p></p>
+    pub fn reason(mut self, input: crate::types::ServiceQuotaExceededExceptionReason) -> Self {
+        self.reason = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p></p>
+    pub fn set_reason(mut self, input: ::std::option::Option<crate::types::ServiceQuotaExceededExceptionReason>) -> Self {
+        self.reason = input;
+        self
+    }
+    /// <p></p>
+    pub fn get_reason(&self) -> &::std::option::Option<crate::types::ServiceQuotaExceededExceptionReason> {
+        &self.reason
+    }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);
@@ -81,6 +104,7 @@ impl ServiceQuotaExceededExceptionBuilder {
     pub fn build(self) -> crate::types::error::ServiceQuotaExceededException {
         crate::types::error::ServiceQuotaExceededException {
             message: self.message,
+            reason: self.reason,
             meta: self.meta.unwrap_or_default(),
         }
     }

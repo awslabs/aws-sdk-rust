@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMicrosoftTeamsChannelConfigurationInput {
-    /// <p>The Amazon Resource Number (ARN) of the MicrosoftTeamsChannelConfiguration to retrieve.</p>
+    /// <p>The Amazon Resource Name (ARN) of the MicrosoftTeamsChannelConfiguration to retrieve.</p>
     pub chat_configuration_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetMicrosoftTeamsChannelConfigurationInput {
-    /// <p>The Amazon Resource Number (ARN) of the MicrosoftTeamsChannelConfiguration to retrieve.</p>
+    /// <p>The Amazon Resource Name (ARN) of the MicrosoftTeamsChannelConfiguration to retrieve.</p>
     pub fn chat_configuration_arn(&self) -> ::std::option::Option<&str> {
         self.chat_configuration_arn.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct GetMicrosoftTeamsChannelConfigurationInputBuilder {
     pub(crate) chat_configuration_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetMicrosoftTeamsChannelConfigurationInputBuilder {
-    /// <p>The Amazon Resource Number (ARN) of the MicrosoftTeamsChannelConfiguration to retrieve.</p>
+    /// <p>The Amazon Resource Name (ARN) of the MicrosoftTeamsChannelConfiguration to retrieve.</p>
     /// This field is required.
     pub fn chat_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.chat_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Number (ARN) of the MicrosoftTeamsChannelConfiguration to retrieve.</p>
+    /// <p>The Amazon Resource Name (ARN) of the MicrosoftTeamsChannelConfiguration to retrieve.</p>
     pub fn set_chat_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.chat_configuration_arn = input;
         self
     }
-    /// <p>The Amazon Resource Number (ARN) of the MicrosoftTeamsChannelConfiguration to retrieve.</p>
+    /// <p>The Amazon Resource Name (ARN) of the MicrosoftTeamsChannelConfiguration to retrieve.</p>
     pub fn get_chat_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.chat_configuration_arn
     }

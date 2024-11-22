@@ -17,6 +17,8 @@ pub use crate::types::_traffic_policy::TrafficPolicyBuilder;
 
 pub use crate::types::_rule::RuleBuilder;
 
+pub use crate::types::_deliver_to_q_business_action::DeliverToQBusinessActionBuilder;
+
 pub use crate::types::_deliver_to_mailbox_action::DeliverToMailboxActionBuilder;
 
 pub use crate::types::_replace_recipient_action::ReplaceRecipientActionBuilder;

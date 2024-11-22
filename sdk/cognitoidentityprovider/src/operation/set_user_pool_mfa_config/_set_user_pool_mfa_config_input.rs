@@ -21,6 +21,8 @@ pub struct SetUserPoolMfaConfigInput {
     /// <p><code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.</p></li>
     /// </ul>
     pub mfa_configuration: ::std::option::Option<crate::types::UserPoolMfaType>,
+    /// <p>The configuration of your user pool for passkey, or webauthN, authentication and registration. You can set this configuration independent of the MFA configuration options in this operation.</p>
+    pub web_authn_configuration: ::std::option::Option<crate::types::WebAuthnConfigurationType>,
 }
 impl SetUserPoolMfaConfigInput {
     /// <p>The user pool ID.</p>
@@ -51,6 +53,10 @@ impl SetUserPoolMfaConfigInput {
     pub fn mfa_configuration(&self) -> ::std::option::Option<&crate::types::UserPoolMfaType> {
         self.mfa_configuration.as_ref()
     }
+    /// <p>The configuration of your user pool for passkey, or webauthN, authentication and registration. You can set this configuration independent of the MFA configuration options in this operation.</p>
+    pub fn web_authn_configuration(&self) -> ::std::option::Option<&crate::types::WebAuthnConfigurationType> {
+        self.web_authn_configuration.as_ref()
+    }
 }
 impl SetUserPoolMfaConfigInput {
     /// Creates a new builder-style object to manufacture [`SetUserPoolMfaConfigInput`](crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigInput).
@@ -68,6 +74,7 @@ pub struct SetUserPoolMfaConfigInputBuilder {
     pub(crate) software_token_mfa_configuration: ::std::option::Option<crate::types::SoftwareTokenMfaConfigType>,
     pub(crate) email_mfa_configuration: ::std::option::Option<crate::types::EmailMfaConfigType>,
     pub(crate) mfa_configuration: ::std::option::Option<crate::types::UserPoolMfaType>,
+    pub(crate) web_authn_configuration: ::std::option::Option<crate::types::WebAuthnConfigurationType>,
 }
 impl SetUserPoolMfaConfigInputBuilder {
     /// <p>The user pool ID.</p>
@@ -165,6 +172,20 @@ impl SetUserPoolMfaConfigInputBuilder {
     pub fn get_mfa_configuration(&self) -> &::std::option::Option<crate::types::UserPoolMfaType> {
         &self.mfa_configuration
     }
+    /// <p>The configuration of your user pool for passkey, or webauthN, authentication and registration. You can set this configuration independent of the MFA configuration options in this operation.</p>
+    pub fn web_authn_configuration(mut self, input: crate::types::WebAuthnConfigurationType) -> Self {
+        self.web_authn_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration of your user pool for passkey, or webauthN, authentication and registration. You can set this configuration independent of the MFA configuration options in this operation.</p>
+    pub fn set_web_authn_configuration(mut self, input: ::std::option::Option<crate::types::WebAuthnConfigurationType>) -> Self {
+        self.web_authn_configuration = input;
+        self
+    }
+    /// <p>The configuration of your user pool for passkey, or webauthN, authentication and registration. You can set this configuration independent of the MFA configuration options in this operation.</p>
+    pub fn get_web_authn_configuration(&self) -> &::std::option::Option<crate::types::WebAuthnConfigurationType> {
+        &self.web_authn_configuration
+    }
     /// Consumes the builder and constructs a [`SetUserPoolMfaConfigInput`](crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigInput).
     pub fn build(
         self,
@@ -176,6 +197,7 @@ impl SetUserPoolMfaConfigInputBuilder {
             software_token_mfa_configuration: self.software_token_mfa_configuration,
             email_mfa_configuration: self.email_mfa_configuration,
             mfa_configuration: self.mfa_configuration,
+            web_authn_configuration: self.web_authn_configuration,
         })
     }
 }

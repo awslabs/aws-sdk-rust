@@ -6,11 +6,23 @@
 pub struct ManagedScalingPolicy {
     /// <p>The Amazon EC2 unit limits for a managed scaling policy. The managed scaling activity of a cluster is not allowed to go above or below these limits. The limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration.</p>
     pub compute_limits: ::std::option::Option<crate::types::ComputeLimits>,
+    /// <p>An integer value that represents an advanced scaling strategy. Setting a higher value optimizes for performance. Setting a lower value optimizes for resource conservation. Setting the value to 50 balances performance and resource conservation. Possible values are 1, 25, 50, 75, and 100.</p>
+    pub utilization_performance_index: ::std::option::Option<i32>,
+    /// <p>Determines whether a custom scaling utilization performance index can be set. Possible values include <i>ADVANCED</i> or <i>DEFAULT</i>.</p>
+    pub scaling_strategy: ::std::option::Option<crate::types::ScalingStrategy>,
 }
 impl ManagedScalingPolicy {
     /// <p>The Amazon EC2 unit limits for a managed scaling policy. The managed scaling activity of a cluster is not allowed to go above or below these limits. The limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration.</p>
     pub fn compute_limits(&self) -> ::std::option::Option<&crate::types::ComputeLimits> {
         self.compute_limits.as_ref()
+    }
+    /// <p>An integer value that represents an advanced scaling strategy. Setting a higher value optimizes for performance. Setting a lower value optimizes for resource conservation. Setting the value to 50 balances performance and resource conservation. Possible values are 1, 25, 50, 75, and 100.</p>
+    pub fn utilization_performance_index(&self) -> ::std::option::Option<i32> {
+        self.utilization_performance_index
+    }
+    /// <p>Determines whether a custom scaling utilization performance index can be set. Possible values include <i>ADVANCED</i> or <i>DEFAULT</i>.</p>
+    pub fn scaling_strategy(&self) -> ::std::option::Option<&crate::types::ScalingStrategy> {
+        self.scaling_strategy.as_ref()
     }
 }
 impl ManagedScalingPolicy {
@@ -25,6 +37,8 @@ impl ManagedScalingPolicy {
 #[non_exhaustive]
 pub struct ManagedScalingPolicyBuilder {
     pub(crate) compute_limits: ::std::option::Option<crate::types::ComputeLimits>,
+    pub(crate) utilization_performance_index: ::std::option::Option<i32>,
+    pub(crate) scaling_strategy: ::std::option::Option<crate::types::ScalingStrategy>,
 }
 impl ManagedScalingPolicyBuilder {
     /// <p>The Amazon EC2 unit limits for a managed scaling policy. The managed scaling activity of a cluster is not allowed to go above or below these limits. The limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration.</p>
@@ -41,10 +55,40 @@ impl ManagedScalingPolicyBuilder {
     pub fn get_compute_limits(&self) -> &::std::option::Option<crate::types::ComputeLimits> {
         &self.compute_limits
     }
+    /// <p>An integer value that represents an advanced scaling strategy. Setting a higher value optimizes for performance. Setting a lower value optimizes for resource conservation. Setting the value to 50 balances performance and resource conservation. Possible values are 1, 25, 50, 75, and 100.</p>
+    pub fn utilization_performance_index(mut self, input: i32) -> Self {
+        self.utilization_performance_index = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An integer value that represents an advanced scaling strategy. Setting a higher value optimizes for performance. Setting a lower value optimizes for resource conservation. Setting the value to 50 balances performance and resource conservation. Possible values are 1, 25, 50, 75, and 100.</p>
+    pub fn set_utilization_performance_index(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.utilization_performance_index = input;
+        self
+    }
+    /// <p>An integer value that represents an advanced scaling strategy. Setting a higher value optimizes for performance. Setting a lower value optimizes for resource conservation. Setting the value to 50 balances performance and resource conservation. Possible values are 1, 25, 50, 75, and 100.</p>
+    pub fn get_utilization_performance_index(&self) -> &::std::option::Option<i32> {
+        &self.utilization_performance_index
+    }
+    /// <p>Determines whether a custom scaling utilization performance index can be set. Possible values include <i>ADVANCED</i> or <i>DEFAULT</i>.</p>
+    pub fn scaling_strategy(mut self, input: crate::types::ScalingStrategy) -> Self {
+        self.scaling_strategy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Determines whether a custom scaling utilization performance index can be set. Possible values include <i>ADVANCED</i> or <i>DEFAULT</i>.</p>
+    pub fn set_scaling_strategy(mut self, input: ::std::option::Option<crate::types::ScalingStrategy>) -> Self {
+        self.scaling_strategy = input;
+        self
+    }
+    /// <p>Determines whether a custom scaling utilization performance index can be set. Possible values include <i>ADVANCED</i> or <i>DEFAULT</i>.</p>
+    pub fn get_scaling_strategy(&self) -> &::std::option::Option<crate::types::ScalingStrategy> {
+        &self.scaling_strategy
+    }
     /// Consumes the builder and constructs a [`ManagedScalingPolicy`](crate::types::ManagedScalingPolicy).
     pub fn build(self) -> crate::types::ManagedScalingPolicy {
         crate::types::ManagedScalingPolicy {
             compute_limits: self.compute_limits,
+            utilization_performance_index: self.utilization_performance_index,
+            scaling_strategy: self.scaling_strategy,
         }
     }
 }

@@ -19,6 +19,14 @@ pub fn ser_target_tracking_metric_stat(
     if let Some(var_6) = &input.unit {
         scope_5.string(var_6);
     }
+    #[allow(unused_mut)]
+    let mut scope_7 = writer.prefix("Period");
+    if let Some(var_8) = &input.period {
+        scope_7.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
+        );
+    }
     Ok(())
 }
 
@@ -31,17 +39,17 @@ pub fn de_target_tracking_metric_stat(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Metric") /* Metric com.amazonaws.autoscaling#TargetTrackingMetricStat$Metric */ =>  {
-                let var_7 =
+                let var_9 =
                     Some(
                         crate::protocol_serde::shape_metric::de_metric(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_metric(var_7);
+                builder = builder.set_metric(var_9);
             }
             ,
             s if s.matches("Stat") /* Stat com.amazonaws.autoscaling#TargetTrackingMetricStat$Stat */ =>  {
-                let var_8 =
+                let var_10 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -50,11 +58,11 @@ pub fn de_target_tracking_metric_stat(
                         ?
                     )
                 ;
-                builder = builder.set_stat(var_8);
+                builder = builder.set_stat(var_10);
             }
             ,
             s if s.matches("Unit") /* Unit com.amazonaws.autoscaling#TargetTrackingMetricStat$Unit */ =>  {
-                let var_9 =
+                let var_11 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -63,7 +71,22 @@ pub fn de_target_tracking_metric_stat(
                         ?
                     )
                 ;
-                builder = builder.set_unit(var_9);
+                builder = builder.set_unit(var_11);
+            }
+            ,
+            s if s.matches("Period") /* Period com.amazonaws.autoscaling#TargetTrackingMetricStat$Period */ =>  {
+                let var_12 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.autoscaling#MetricGranularityInSeconds`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_period(var_12);
             }
             ,
             _ => {}

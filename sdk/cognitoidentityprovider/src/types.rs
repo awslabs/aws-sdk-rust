@@ -17,6 +17,8 @@ pub use crate::types::_token_validity_units_type::TokenValidityUnitsType;
 
 pub use crate::types::_time_units_type::TimeUnitsType;
 
+pub use crate::types::_user_pool_tier_type::UserPoolTierType;
+
 pub use crate::types::_account_recovery_setting_type::AccountRecoverySettingType;
 
 pub use crate::types::_recovery_option_type::RecoveryOptionType;
@@ -71,6 +73,10 @@ pub use crate::types::_deletion_protection_type::DeletionProtectionType;
 
 pub use crate::types::_user_pool_policy_type::UserPoolPolicyType;
 
+pub use crate::types::_sign_in_policy_type::SignInPolicyType;
+
+pub use crate::types::_auth_factor_type::AuthFactorType;
+
 pub use crate::types::_password_policy_type::PasswordPolicyType;
 
 pub use crate::types::_code_delivery_details_type::CodeDeliveryDetailsType;
@@ -82,6 +88,16 @@ pub use crate::types::_attribute_type::AttributeType;
 pub use crate::types::_resource_server_type::ResourceServerType;
 
 pub use crate::types::_resource_server_scope_type::ResourceServerScopeType;
+
+pub use crate::types::_managed_login_branding_type::ManagedLoginBrandingType;
+
+pub use crate::types::_asset_type::AssetType;
+
+pub use crate::types::_asset_extension_type::AssetExtensionType;
+
+pub use crate::types::_color_scheme_mode_type::ColorSchemeModeType;
+
+pub use crate::types::_asset_category_type::AssetCategoryType;
 
 pub use crate::types::_identity_provider_type::IdentityProviderType;
 
@@ -102,6 +118,10 @@ pub use crate::types::_user_context_data_type::UserContextDataType;
 pub use crate::types::_analytics_metadata_type::AnalyticsMetadataType;
 
 pub use crate::types::_mfa_option_type::MfaOptionType;
+
+pub use crate::types::_web_authn_configuration_type::WebAuthnConfigurationType;
+
+pub use crate::types::_user_verification_type::UserVerificationType;
 
 pub use crate::types::_email_mfa_config_type::EmailMfaConfigType;
 
@@ -160,6 +180,8 @@ pub use crate::types::_authentication_result_type::AuthenticationResultType;
 pub use crate::types::_new_device_metadata_type::NewDeviceMetadataType;
 
 pub use crate::types::_challenge_name_type::ChallengeNameType;
+
+pub use crate::types::_web_authn_credential_description::WebAuthnCredentialDescription;
 
 pub use crate::types::_user_type::UserType;
 
@@ -253,11 +275,19 @@ mod _analytics_configuration_type;
 
 mod _analytics_metadata_type;
 
+mod _asset_category_type;
+
+mod _asset_extension_type;
+
+mod _asset_type;
+
 mod _attribute_data_type;
 
 mod _attribute_type;
 
 mod _auth_event_type;
+
+mod _auth_factor_type;
 
 mod _auth_flow_type;
 
@@ -274,6 +304,8 @@ mod _challenge_response_type;
 mod _cloud_watch_logs_configuration_type;
 
 mod _code_delivery_details_type;
+
+mod _color_scheme_mode_type;
 
 mod _compromised_credentials_actions_type;
 
@@ -355,6 +387,8 @@ mod _log_delivery_configuration_type;
 
 mod _log_level;
 
+mod _managed_login_branding_type;
+
 mod _message_action_type;
 
 mod _message_template_type;
@@ -403,6 +437,8 @@ mod _s3_configuration_type;
 
 mod _schema_attribute_type;
 
+mod _sign_in_policy_type;
+
 mod _sms_configuration_type;
 
 mod _sms_mfa_config_type;
@@ -443,11 +479,15 @@ mod _user_pool_mfa_type;
 
 mod _user_pool_policy_type;
 
+mod _user_pool_tier_type;
+
 mod _user_pool_type;
 
 mod _user_status_type;
 
 mod _user_type;
+
+mod _user_verification_type;
 
 mod _username_attribute_type;
 
@@ -458,6 +498,10 @@ mod _verification_message_template_type;
 mod _verified_attribute_type;
 
 mod _verify_software_token_response_type;
+
+mod _web_authn_configuration_type;
+
+mod _web_authn_credential_description;
 
 /// Builders
 pub mod builders;

@@ -128,6 +128,15 @@ pub(crate) fn get_user_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_user_auth_factors_output_output_correct_errors(
+    mut builder: crate::operation::get_user_auth_factors::builders::GetUserAuthFactorsOutputBuilder,
+) -> crate::operation::get_user_auth_factors::builders::GetUserAuthFactorsOutputBuilder {
+    if builder.username.is_none() {
+        builder.username = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_identity_providers_output_output_correct_errors(
     mut builder: crate::operation::list_identity_providers::builders::ListIdentityProvidersOutputBuilder,
 ) -> crate::operation::list_identity_providers::builders::ListIdentityProvidersOutputBuilder {
@@ -142,6 +151,15 @@ pub(crate) fn list_resource_servers_output_output_correct_errors(
 ) -> crate::operation::list_resource_servers::builders::ListResourceServersOutputBuilder {
     if builder.resource_servers.is_none() {
         builder.resource_servers = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_web_authn_credentials_output_output_correct_errors(
+    mut builder: crate::operation::list_web_authn_credentials::builders::ListWebAuthnCredentialsOutputBuilder,
+) -> crate::operation::list_web_authn_credentials::builders::ListWebAuthnCredentialsOutputBuilder {
+    if builder.credentials.is_none() {
+        builder.credentials = Some(Default::default())
     }
     builder
 }
@@ -178,6 +196,15 @@ pub(crate) fn sign_up_output_output_correct_errors(
     }
     if builder.user_sub.is_none() {
         builder.user_sub = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn start_web_authn_registration_output_output_correct_errors(
+    mut builder: crate::operation::start_web_authn_registration::builders::StartWebAuthnRegistrationOutputBuilder,
+) -> crate::operation::start_web_authn_registration::builders::StartWebAuthnRegistrationOutputBuilder {
+    if builder.credential_creation_options.is_none() {
+        builder.credential_creation_options = Some(Default::default())
     }
     builder
 }
@@ -285,6 +312,40 @@ pub(crate) fn username_configuration_type_correct_errors(
 ) -> crate::types::builders::UsernameConfigurationTypeBuilder {
     if builder.case_sensitive.is_none() {
         builder.case_sensitive = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn web_authn_credential_description_correct_errors(
+    mut builder: crate::types::builders::WebAuthnCredentialDescriptionBuilder,
+) -> crate::types::builders::WebAuthnCredentialDescriptionBuilder {
+    if builder.credential_id.is_none() {
+        builder.credential_id = Some(Default::default())
+    }
+    if builder.friendly_credential_name.is_none() {
+        builder.friendly_credential_name = Some(Default::default())
+    }
+    if builder.relying_party_id.is_none() {
+        builder.relying_party_id = Some(Default::default())
+    }
+    if builder.authenticator_transports.is_none() {
+        builder.authenticator_transports = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn asset_type_correct_errors(mut builder: crate::types::builders::AssetTypeBuilder) -> crate::types::builders::AssetTypeBuilder {
+    if builder.category.is_none() {
+        builder.category = "no value was set".parse::<crate::types::AssetCategoryType>().ok()
+    }
+    if builder.color_mode.is_none() {
+        builder.color_mode = "no value was set".parse::<crate::types::ColorSchemeModeType>().ok()
+    }
+    if builder.extension.is_none() {
+        builder.extension = "no value was set".parse::<crate::types::AssetExtensionType>().ok()
     }
     builder
 }

@@ -57,6 +57,8 @@ pub enum Error {
     ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
     /// <p>The supplied list of tags contains too many tags.</p>
     TooManyTagsException(crate::types::error::TooManyTagsException),
+    /// <p>The request was rejected because it doesn't have valid credentials for the target resource.</p>
+    UnauthorizedException(crate::types::error::UnauthorizedException),
     /// <p>We can’t process your request right now because of a server issue. Try again later.</p>
     UpdateAccountPreferencesException(crate::types::error::UpdateAccountPreferencesException),
     /// <p>We can’t process your request right now because of a server issue. Try again later.</p>
@@ -104,6 +106,7 @@ impl ::std::fmt::Display for Error {
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ServiceUnavailableException(inner) => inner.fmt(f),
             Error::TooManyTagsException(inner) => inner.fmt(f),
+            Error::UnauthorizedException(inner) => inner.fmt(f),
             Error::UpdateAccountPreferencesException(inner) => inner.fmt(f),
             Error::UpdateChimeWebhookConfigurationException(inner) => inner.fmt(f),
             Error::UpdateSlackChannelConfigurationException(inner) => inner.fmt(f),
@@ -156,11 +159,45 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::ServiceUnavailableException(inner) => inner.meta(),
             Self::TooManyTagsException(inner) => inner.meta(),
+            Self::UnauthorizedException(inner) => inner.meta(),
             Self::UpdateAccountPreferencesException(inner) => inner.meta(),
             Self::UpdateChimeWebhookConfigurationException(inner) => inner.meta(),
             Self::UpdateSlackChannelConfigurationException(inner) => inner.meta(),
             Self::UpdateTeamsChannelConfigurationException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_to_configuration::AssociateToConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_to_configuration::AssociateToConfigurationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::associate_to_configuration::AssociateToConfigurationError> for Error {
+    fn from(err: crate::operation::associate_to_configuration::AssociateToConfigurationError) -> Self {
+        match err {
+            crate::operation::associate_to_configuration::AssociateToConfigurationError::InternalServiceError(inner) => {
+                Error::InternalServiceError(inner)
+            }
+            crate::operation::associate_to_configuration::AssociateToConfigurationError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::associate_to_configuration::AssociateToConfigurationError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::associate_to_configuration::AssociateToConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -208,6 +245,32 @@ impl From<crate::operation::create_chime_webhook_configuration::CreateChimeWebho
                 Error::LimitExceededException(inner)
             }
             crate::operation::create_chime_webhook_configuration::CreateChimeWebhookConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_custom_action::CreateCustomActionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_custom_action::CreateCustomActionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_custom_action::CreateCustomActionError> for Error {
+    fn from(err: crate::operation::create_custom_action::CreateCustomActionError) -> Self {
+        match err {
+            crate::operation::create_custom_action::CreateCustomActionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_custom_action::CreateCustomActionError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::create_custom_action::CreateCustomActionError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::create_custom_action::CreateCustomActionError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_custom_action::CreateCustomActionError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::create_custom_action::CreateCustomActionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -336,6 +399,33 @@ impl From<crate::operation::delete_chime_webhook_configuration::DeleteChimeWebho
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::delete_chime_webhook_configuration::DeleteChimeWebhookConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_custom_action::DeleteCustomActionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_custom_action::DeleteCustomActionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_custom_action::DeleteCustomActionError> for Error {
+    fn from(err: crate::operation::delete_custom_action::DeleteCustomActionError) -> Self {
+        match err {
+            crate::operation::delete_custom_action::DeleteCustomActionError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::delete_custom_action::DeleteCustomActionError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::delete_custom_action::DeleteCustomActionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_custom_action::DeleteCustomActionError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::delete_custom_action::DeleteCustomActionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -701,6 +791,43 @@ impl From<crate::operation::describe_slack_workspaces::DescribeSlackWorkspacesEr
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_from_configuration::DisassociateFromConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_from_configuration::DisassociateFromConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disassociate_from_configuration::DisassociateFromConfigurationError> for Error {
+    fn from(err: crate::operation::disassociate_from_configuration::DisassociateFromConfigurationError) -> Self {
+        match err {
+            crate::operation::disassociate_from_configuration::DisassociateFromConfigurationError::InternalServiceError(inner) => {
+                Error::InternalServiceError(inner)
+            }
+            crate::operation::disassociate_from_configuration::DisassociateFromConfigurationError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::disassociate_from_configuration::DisassociateFromConfigurationError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::disassociate_from_configuration::DisassociateFromConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_account_preferences::GetAccountPreferencesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -727,6 +854,31 @@ impl From<crate::operation::get_account_preferences::GetAccountPreferencesError>
                 Error::InvalidRequestException(inner)
             }
             crate::operation::get_account_preferences::GetAccountPreferencesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_custom_action::GetCustomActionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_custom_action::GetCustomActionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_custom_action::GetCustomActionError> for Error {
+    fn from(err: crate::operation::get_custom_action::GetCustomActionError) -> Self {
+        match err {
+            crate::operation::get_custom_action::GetCustomActionError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::get_custom_action::GetCustomActionError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::get_custom_action::GetCustomActionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_custom_action::GetCustomActionError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::get_custom_action::GetCustomActionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -762,6 +914,51 @@ impl From<crate::operation::get_microsoft_teams_channel_configuration::GetMicros
             crate::operation::get_microsoft_teams_channel_configuration::GetMicrosoftTeamsChannelConfigurationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::get_microsoft_teams_channel_configuration::GetMicrosoftTeamsChannelConfigurationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::get_microsoft_teams_channel_configuration::GetMicrosoftTeamsChannelConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_associations::ListAssociationsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_associations::ListAssociationsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_associations::ListAssociationsError> for Error {
+    fn from(err: crate::operation::list_associations::ListAssociationsError) -> Self {
+        match err {
+            crate::operation::list_associations::ListAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_custom_actions::ListCustomActionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_custom_actions::ListCustomActionsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_custom_actions::ListCustomActionsError> for Error {
+    fn from(err: crate::operation::list_custom_actions::ListCustomActionsError) -> Self {
+        match err {
+            crate::operation::list_custom_actions::ListCustomActionsError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::list_custom_actions::ListCustomActionsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_custom_actions::ListCustomActionsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::list_custom_actions::ListCustomActionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1024,6 +1221,33 @@ impl From<crate::operation::update_chime_webhook_configuration::UpdateChimeWebho
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_custom_action::UpdateCustomActionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_custom_action::UpdateCustomActionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_custom_action::UpdateCustomActionError> for Error {
+    fn from(err: crate::operation::update_custom_action::UpdateCustomActionError) -> Self {
+        match err {
+            crate::operation::update_custom_action::UpdateCustomActionError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::update_custom_action::UpdateCustomActionError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::update_custom_action::UpdateCustomActionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_custom_action::UpdateCustomActionError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::update_custom_action::UpdateCustomActionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -1134,6 +1358,7 @@ impl ::std::error::Error for Error {
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ServiceUnavailableException(inner) => inner.source(),
             Error::TooManyTagsException(inner) => inner.source(),
+            Error::UnauthorizedException(inner) => inner.source(),
             Error::UpdateAccountPreferencesException(inner) => inner.source(),
             Error::UpdateChimeWebhookConfigurationException(inner) => inner.source(),
             Error::UpdateSlackChannelConfigurationException(inner) => inner.source(),
@@ -1172,6 +1397,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ServiceUnavailableException(e) => e.request_id(),
             Self::TooManyTagsException(e) => e.request_id(),
+            Self::UnauthorizedException(e) => e.request_id(),
             Self::UpdateAccountPreferencesException(e) => e.request_id(),
             Self::UpdateChimeWebhookConfigurationException(e) => e.request_id(),
             Self::UpdateSlackChannelConfigurationException(e) => e.request_id(),

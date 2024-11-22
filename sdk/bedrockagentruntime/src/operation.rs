@@ -13,6 +13,9 @@ pub mod invoke_agent;
 /// Types for the `InvokeFlow` operation.
 pub mod invoke_flow;
 
+/// Types for the `InvokeInlineAgent` operation.
+pub mod invoke_inline_agent;
+
 /// Types for the `OptimizePrompt` operation.
 pub mod optimize_prompt;
 

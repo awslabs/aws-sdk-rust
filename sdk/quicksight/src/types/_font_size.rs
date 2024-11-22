@@ -6,11 +6,17 @@
 pub struct FontSize {
     /// <p>The lexical name for the text size, proportional to its surrounding context.</p>
     pub relative: ::std::option::Option<crate::types::RelativeFontSize>,
+    /// <p>The font size that you want to use in px.</p>
+    pub absolute: ::std::option::Option<::std::string::String>,
 }
 impl FontSize {
     /// <p>The lexical name for the text size, proportional to its surrounding context.</p>
     pub fn relative(&self) -> ::std::option::Option<&crate::types::RelativeFontSize> {
         self.relative.as_ref()
+    }
+    /// <p>The font size that you want to use in px.</p>
+    pub fn absolute(&self) -> ::std::option::Option<&str> {
+        self.absolute.as_deref()
     }
 }
 impl FontSize {
@@ -25,6 +31,7 @@ impl FontSize {
 #[non_exhaustive]
 pub struct FontSizeBuilder {
     pub(crate) relative: ::std::option::Option<crate::types::RelativeFontSize>,
+    pub(crate) absolute: ::std::option::Option<::std::string::String>,
 }
 impl FontSizeBuilder {
     /// <p>The lexical name for the text size, proportional to its surrounding context.</p>
@@ -41,8 +48,25 @@ impl FontSizeBuilder {
     pub fn get_relative(&self) -> &::std::option::Option<crate::types::RelativeFontSize> {
         &self.relative
     }
+    /// <p>The font size that you want to use in px.</p>
+    pub fn absolute(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.absolute = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The font size that you want to use in px.</p>
+    pub fn set_absolute(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.absolute = input;
+        self
+    }
+    /// <p>The font size that you want to use in px.</p>
+    pub fn get_absolute(&self) -> &::std::option::Option<::std::string::String> {
+        &self.absolute
+    }
     /// Consumes the builder and constructs a [`FontSize`](crate::types::FontSize).
     pub fn build(self) -> crate::types::FontSize {
-        crate::types::FontSize { relative: self.relative }
+        crate::types::FontSize {
+            relative: self.relative,
+            absolute: self.absolute,
+        }
     }
 }

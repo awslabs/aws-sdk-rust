@@ -40,6 +40,26 @@ pub fn de_set_user_pool_mfa_config_http_error(
                 tmp
             })
         }
+        "FeatureUnavailableInTierException" => {
+            crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigError::FeatureUnavailableInTierException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::FeatureUnavailableInTierExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_feature_unavailable_in_tier_exception::de_feature_unavailable_in_tier_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "InternalErrorException" => crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigError::InternalErrorException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -216,6 +236,11 @@ pub(crate) fn de_set_user_pool_mfa_config(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| crate::types::UserPoolMfaType::from(u.as_ref())))
                             .transpose()?,
+                    );
+                }
+                "WebAuthnConfiguration" => {
+                    builder = builder.set_web_authn_configuration(
+                        crate::protocol_serde::shape_web_authn_configuration_type::de_web_authn_configuration_type(tokens)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

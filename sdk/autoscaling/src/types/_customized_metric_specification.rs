@@ -25,6 +25,8 @@ pub struct CustomizedMetricSpecification {
     pub statistic: ::std::option::Option<crate::types::MetricStatistic>,
     /// <p>The unit of the metric. For a complete list of the units that CloudWatch supports, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">MetricDatum</a> data type in the <i>Amazon CloudWatch API Reference</i>.</p>
     pub unit: ::std::option::Option<::std::string::String>,
+    /// <p>The period of the metric in seconds. The default value is 60. Accepted values are 10, 30, and 60. For high resolution metric, set the value to less than 60. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/policy-creating-high-resolution-metrics.html">Create a target tracking policy using high-resolution metrics for faster response</a>.</p>
+    pub period: ::std::option::Option<i32>,
     /// <p>The metrics to include in the target tracking scaling policy, as a metric data query. This can include both raw metric and metric math expressions.</p>
     pub metrics: ::std::option::Option<::std::vec::Vec<crate::types::TargetTrackingMetricDataQuery>>,
 }
@@ -52,6 +54,10 @@ impl CustomizedMetricSpecification {
     pub fn unit(&self) -> ::std::option::Option<&str> {
         self.unit.as_deref()
     }
+    /// <p>The period of the metric in seconds. The default value is 60. Accepted values are 10, 30, and 60. For high resolution metric, set the value to less than 60. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/policy-creating-high-resolution-metrics.html">Create a target tracking policy using high-resolution metrics for faster response</a>.</p>
+    pub fn period(&self) -> ::std::option::Option<i32> {
+        self.period
+    }
     /// <p>The metrics to include in the target tracking scaling policy, as a metric data query. This can include both raw metric and metric math expressions.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metrics.is_none()`.
@@ -75,6 +81,7 @@ pub struct CustomizedMetricSpecificationBuilder {
     pub(crate) dimensions: ::std::option::Option<::std::vec::Vec<crate::types::MetricDimension>>,
     pub(crate) statistic: ::std::option::Option<crate::types::MetricStatistic>,
     pub(crate) unit: ::std::option::Option<::std::string::String>,
+    pub(crate) period: ::std::option::Option<i32>,
     pub(crate) metrics: ::std::option::Option<::std::vec::Vec<crate::types::TargetTrackingMetricDataQuery>>,
 }
 impl CustomizedMetricSpecificationBuilder {
@@ -157,6 +164,20 @@ impl CustomizedMetricSpecificationBuilder {
     pub fn get_unit(&self) -> &::std::option::Option<::std::string::String> {
         &self.unit
     }
+    /// <p>The period of the metric in seconds. The default value is 60. Accepted values are 10, 30, and 60. For high resolution metric, set the value to less than 60. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/policy-creating-high-resolution-metrics.html">Create a target tracking policy using high-resolution metrics for faster response</a>.</p>
+    pub fn period(mut self, input: i32) -> Self {
+        self.period = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The period of the metric in seconds. The default value is 60. Accepted values are 10, 30, and 60. For high resolution metric, set the value to less than 60. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/policy-creating-high-resolution-metrics.html">Create a target tracking policy using high-resolution metrics for faster response</a>.</p>
+    pub fn set_period(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.period = input;
+        self
+    }
+    /// <p>The period of the metric in seconds. The default value is 60. Accepted values are 10, 30, and 60. For high resolution metric, set the value to less than 60. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/policy-creating-high-resolution-metrics.html">Create a target tracking policy using high-resolution metrics for faster response</a>.</p>
+    pub fn get_period(&self) -> &::std::option::Option<i32> {
+        &self.period
+    }
     /// Appends an item to `metrics`.
     ///
     /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
@@ -185,6 +206,7 @@ impl CustomizedMetricSpecificationBuilder {
             dimensions: self.dimensions,
             statistic: self.statistic,
             unit: self.unit,
+            period: self.period,
             metrics: self.metrics,
         }
     }

@@ -157,9 +157,7 @@ impl CreateTopicFluentBuilder {
     /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:</p>
     /// <ul>
     /// <li>
-    /// <p><code>ArchivePolicy</code> – Adds or updates an inline policy document to archive messages stored in the specified Amazon SNS topic.</p></li>
-    /// <li>
-    /// <p><code>BeginningArchiveTime</code> – The earliest starting point at which a message in the topic’s archive can be replayed from. This point in time is based on the configured message retention period set by the topic’s message archiving policy.</p></li>
+    /// <p><code>ArchivePolicy</code> – The policy that sets the retention period for messages stored in the message archive of an Amazon SNS FIFO topic.</p></li>
     /// <li>
     /// <p><code>ContentBasedDeduplication</code> – Enables content-based deduplication for FIFO topics.</p>
     /// <ul>
@@ -198,9 +196,7 @@ impl CreateTopicFluentBuilder {
     /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:</p>
     /// <ul>
     /// <li>
-    /// <p><code>ArchivePolicy</code> – Adds or updates an inline policy document to archive messages stored in the specified Amazon SNS topic.</p></li>
-    /// <li>
-    /// <p><code>BeginningArchiveTime</code> – The earliest starting point at which a message in the topic’s archive can be replayed from. This point in time is based on the configured message retention period set by the topic’s message archiving policy.</p></li>
+    /// <p><code>ArchivePolicy</code> – The policy that sets the retention period for messages stored in the message archive of an Amazon SNS FIFO topic.</p></li>
     /// <li>
     /// <p><code>ContentBasedDeduplication</code> – Enables content-based deduplication for FIFO topics.</p>
     /// <ul>
@@ -239,9 +235,7 @@ impl CreateTopicFluentBuilder {
     /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:</p>
     /// <ul>
     /// <li>
-    /// <p><code>ArchivePolicy</code> – Adds or updates an inline policy document to archive messages stored in the specified Amazon SNS topic.</p></li>
-    /// <li>
-    /// <p><code>BeginningArchiveTime</code> – The earliest starting point at which a message in the topic’s archive can be replayed from. This point in time is based on the configured message retention period set by the topic’s message archiving policy.</p></li>
+    /// <p><code>ArchivePolicy</code> – The policy that sets the retention period for messages stored in the message archive of an Amazon SNS FIFO topic.</p></li>
     /// <li>
     /// <p><code>ContentBasedDeduplication</code> – Enables content-based deduplication for FIFO topics.</p>
     /// <ul>

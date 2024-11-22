@@ -3,11 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateUserPoolDomainOutput {
+    /// <p>The version of managed login branding applied your domain. A value of <code>1</code> indicates hosted UI (classic) branding and a version of <code>2</code> indicates managed login branding.</p>
+    pub managed_login_version: ::std::option::Option<i32>,
     /// <p>The Amazon CloudFront endpoint that you use as the target of the alias that you set up with your Domain Name Service (DNS) provider. Amazon Cognito returns this value if you set a custom domain with <code>CustomDomainConfig</code>. If you set an Amazon Cognito prefix domain, this operation returns a blank response.</p>
     pub cloud_front_domain: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateUserPoolDomainOutput {
+    /// <p>The version of managed login branding applied your domain. A value of <code>1</code> indicates hosted UI (classic) branding and a version of <code>2</code> indicates managed login branding.</p>
+    pub fn managed_login_version(&self) -> ::std::option::Option<i32> {
+        self.managed_login_version
+    }
     /// <p>The Amazon CloudFront endpoint that you use as the target of the alias that you set up with your Domain Name Service (DNS) provider. Amazon Cognito returns this value if you set a custom domain with <code>CustomDomainConfig</code>. If you set an Amazon Cognito prefix domain, this operation returns a blank response.</p>
     pub fn cloud_front_domain(&self) -> ::std::option::Option<&str> {
         self.cloud_front_domain.as_deref()
@@ -29,10 +35,25 @@ impl CreateUserPoolDomainOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct CreateUserPoolDomainOutputBuilder {
+    pub(crate) managed_login_version: ::std::option::Option<i32>,
     pub(crate) cloud_front_domain: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateUserPoolDomainOutputBuilder {
+    /// <p>The version of managed login branding applied your domain. A value of <code>1</code> indicates hosted UI (classic) branding and a version of <code>2</code> indicates managed login branding.</p>
+    pub fn managed_login_version(mut self, input: i32) -> Self {
+        self.managed_login_version = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The version of managed login branding applied your domain. A value of <code>1</code> indicates hosted UI (classic) branding and a version of <code>2</code> indicates managed login branding.</p>
+    pub fn set_managed_login_version(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.managed_login_version = input;
+        self
+    }
+    /// <p>The version of managed login branding applied your domain. A value of <code>1</code> indicates hosted UI (classic) branding and a version of <code>2</code> indicates managed login branding.</p>
+    pub fn get_managed_login_version(&self) -> &::std::option::Option<i32> {
+        &self.managed_login_version
+    }
     /// <p>The Amazon CloudFront endpoint that you use as the target of the alias that you set up with your Domain Name Service (DNS) provider. Amazon Cognito returns this value if you set a custom domain with <code>CustomDomainConfig</code>. If you set an Amazon Cognito prefix domain, this operation returns a blank response.</p>
     pub fn cloud_front_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloud_front_domain = ::std::option::Option::Some(input.into());
@@ -59,6 +80,7 @@ impl CreateUserPoolDomainOutputBuilder {
     /// Consumes the builder and constructs a [`CreateUserPoolDomainOutput`](crate::operation::create_user_pool_domain::CreateUserPoolDomainOutput).
     pub fn build(self) -> crate::operation::create_user_pool_domain::CreateUserPoolDomainOutput {
         crate::operation::create_user_pool_domain::CreateUserPoolDomainOutput {
+            managed_login_version: self.managed_login_version,
             cloud_front_domain: self.cloud_front_domain,
             _request_id: self._request_id,
         }

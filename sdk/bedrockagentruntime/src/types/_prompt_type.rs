@@ -16,6 +16,7 @@
 ///     PromptType::Orchestration => { /* ... */ },
 ///     PromptType::PostProcessing => { /* ... */ },
 ///     PromptType::PreProcessing => { /* ... */ },
+///     PromptType::RoutingClassifier => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -51,6 +52,8 @@ pub enum PromptType {
     PostProcessing,
     #[allow(missing_docs)] // documentation missing in model
     PreProcessing,
+    #[allow(missing_docs)] // documentation missing in model
+    RoutingClassifier,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -62,6 +65,7 @@ impl ::std::convert::From<&str> for PromptType {
             "ORCHESTRATION" => PromptType::Orchestration,
             "POST_PROCESSING" => PromptType::PostProcessing,
             "PRE_PROCESSING" => PromptType::PreProcessing,
+            "ROUTING_CLASSIFIER" => PromptType::RoutingClassifier,
             other => PromptType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -81,12 +85,19 @@ impl PromptType {
             PromptType::Orchestration => "ORCHESTRATION",
             PromptType::PostProcessing => "POST_PROCESSING",
             PromptType::PreProcessing => "PRE_PROCESSING",
+            PromptType::RoutingClassifier => "ROUTING_CLASSIFIER",
             PromptType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["KNOWLEDGE_BASE_RESPONSE_GENERATION", "ORCHESTRATION", "POST_PROCESSING", "PRE_PROCESSING"]
+        &[
+            "KNOWLEDGE_BASE_RESPONSE_GENERATION",
+            "ORCHESTRATION",
+            "POST_PROCESSING",
+            "PRE_PROCESSING",
+            "ROUTING_CLASSIFIER",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for PromptType {
@@ -113,6 +124,7 @@ impl ::std::fmt::Display for PromptType {
             PromptType::Orchestration => write!(f, "ORCHESTRATION"),
             PromptType::PostProcessing => write!(f, "POST_PROCESSING"),
             PromptType::PreProcessing => write!(f, "PRE_PROCESSING"),
+            PromptType::RoutingClassifier => write!(f, "ROUTING_CLASSIFIER"),
             PromptType::Unknown(value) => write!(f, "{}", value),
         }
     }

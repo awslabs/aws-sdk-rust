@@ -204,8 +204,32 @@ pub(crate) fn de_create_sequence_store(
                             .transpose()?,
                     );
                 }
+                "propagatedSetLevelTags" => {
+                    builder = builder.set_propagated_set_level_tags(
+                        crate::protocol_serde::shape_propagated_set_level_tags::de_propagated_set_level_tags(tokens)?,
+                    );
+                }
+                "s3Access" => {
+                    builder = builder.set_s3_access(crate::protocol_serde::shape_sequence_store_s3_access::de_sequence_store_s3_access(
+                        tokens,
+                    )?);
+                }
                 "sseConfig" => {
                     builder = builder.set_sse_config(crate::protocol_serde::shape_sse_config::de_sse_config(tokens)?);
+                }
+                "status" => {
+                    builder = builder.set_status(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::SequenceStoreStatus::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
+                "statusMessage" => {
+                    builder = builder.set_status_message(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

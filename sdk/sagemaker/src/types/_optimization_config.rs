@@ -8,6 +8,8 @@ pub enum OptimizationConfig {
     ModelCompilationConfig(crate::types::ModelCompilationConfig),
     /// <p>Settings for the model quantization technique that's applied by a model optimization job.</p>
     ModelQuantizationConfig(crate::types::ModelQuantizationConfig),
+    /// <p>Settings for the model sharding technique that's applied by a model optimization job.</p>
+    ModelShardingConfig(crate::types::ModelShardingConfig),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -44,6 +46,19 @@ impl OptimizationConfig {
     /// Returns true if this is a [`ModelQuantizationConfig`](crate::types::OptimizationConfig::ModelQuantizationConfig).
     pub fn is_model_quantization_config(&self) -> bool {
         self.as_model_quantization_config().is_ok()
+    }
+    /// Tries to convert the enum instance into [`ModelShardingConfig`](crate::types::OptimizationConfig::ModelShardingConfig), extracting the inner [`ModelShardingConfig`](crate::types::ModelShardingConfig).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_model_sharding_config(&self) -> ::std::result::Result<&crate::types::ModelShardingConfig, &Self> {
+        if let OptimizationConfig::ModelShardingConfig(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`ModelShardingConfig`](crate::types::OptimizationConfig::ModelShardingConfig).
+    pub fn is_model_sharding_config(&self) -> bool {
+        self.as_model_sharding_config().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

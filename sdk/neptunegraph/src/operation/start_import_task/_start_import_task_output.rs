@@ -11,6 +11,8 @@ pub struct StartImportTaskOutput {
     pub source: ::std::string::String,
     /// <p>Specifies the format of Amazon S3 data to be imported. Valid values are CSV, which identifies the Gremlin CSV format or OPENCYPHER, which identies the openCypher load format.</p>
     pub format: ::std::option::Option<crate::types::Format>,
+    /// <p>The parquet type of the import task.</p>
+    pub parquet_type: ::std::option::Option<crate::types::ParquetType>,
     /// <p>The ARN of the IAM role that will allow access to the data that is to be imported.</p>
     pub role_arn: ::std::string::String,
     /// <p>The status of the import task.</p>
@@ -37,6 +39,10 @@ impl StartImportTaskOutput {
     /// <p>Specifies the format of Amazon S3 data to be imported. Valid values are CSV, which identifies the Gremlin CSV format or OPENCYPHER, which identies the openCypher load format.</p>
     pub fn format(&self) -> ::std::option::Option<&crate::types::Format> {
         self.format.as_ref()
+    }
+    /// <p>The parquet type of the import task.</p>
+    pub fn parquet_type(&self) -> ::std::option::Option<&crate::types::ParquetType> {
+        self.parquet_type.as_ref()
     }
     /// <p>The ARN of the IAM role that will allow access to the data that is to be imported.</p>
     pub fn role_arn(&self) -> &str {
@@ -72,6 +78,7 @@ pub struct StartImportTaskOutputBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     pub(crate) source: ::std::option::Option<::std::string::String>,
     pub(crate) format: ::std::option::Option<crate::types::Format>,
+    pub(crate) parquet_type: ::std::option::Option<crate::types::ParquetType>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ImportTaskStatus>,
     pub(crate) import_options: ::std::option::Option<crate::types::ImportOptions>,
@@ -135,6 +142,20 @@ impl StartImportTaskOutputBuilder {
     /// <p>Specifies the format of Amazon S3 data to be imported. Valid values are CSV, which identifies the Gremlin CSV format or OPENCYPHER, which identies the openCypher load format.</p>
     pub fn get_format(&self) -> &::std::option::Option<crate::types::Format> {
         &self.format
+    }
+    /// <p>The parquet type of the import task.</p>
+    pub fn parquet_type(mut self, input: crate::types::ParquetType) -> Self {
+        self.parquet_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The parquet type of the import task.</p>
+    pub fn set_parquet_type(mut self, input: ::std::option::Option<crate::types::ParquetType>) -> Self {
+        self.parquet_type = input;
+        self
+    }
+    /// <p>The parquet type of the import task.</p>
+    pub fn get_parquet_type(&self) -> &::std::option::Option<crate::types::ParquetType> {
+        &self.parquet_type
     }
     /// <p>The ARN of the IAM role that will allow access to the data that is to be imported.</p>
     /// This field is required.
@@ -213,6 +234,7 @@ impl StartImportTaskOutputBuilder {
                 )
             })?,
             format: self.format,
+            parquet_type: self.parquet_type,
             role_arn: self.role_arn.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",

@@ -254,6 +254,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateUserPoo
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateUserPoolError {
+    /// <p>This exception is thrown when a feature you attempted to configure isn't available in your current feature plan.</p>
+    FeatureUnavailableInTierException(crate::types::error::FeatureUnavailableInTierException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::types::error::InternalErrorException),
     /// <p>This exception is thrown when Amazon Cognito isn't allowed to use your email identity. HTTP status code: 400.</p>
@@ -268,6 +270,8 @@ pub enum CreateUserPoolError {
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>This exception is thrown when a user isn't authorized.</p>
     NotAuthorizedException(crate::types::error::NotAuthorizedException),
+    /// <p>This exception is thrown when you've attempted to change your feature plan but the operation isn't permitted.</p>
+    TierChangeNotAllowedException(crate::types::error::TierChangeNotAllowedException),
     /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::types::error::TooManyRequestsException),
     /// <p>This exception is thrown when a user pool tag can't be set or updated.</p>
@@ -305,6 +309,7 @@ impl CreateUserPoolError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::FeatureUnavailableInTierException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalErrorException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidEmailRoleAccessPolicyException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -312,10 +317,15 @@ impl CreateUserPoolError {
             Self::InvalidSmsRoleTrustRelationshipException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::LimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::NotAuthorizedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TierChangeNotAllowedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::TooManyRequestsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::UserPoolTaggingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `CreateUserPoolError::FeatureUnavailableInTierException`.
+    pub fn is_feature_unavailable_in_tier_exception(&self) -> bool {
+        matches!(self, Self::FeatureUnavailableInTierException(_))
     }
     /// Returns `true` if the error kind is `CreateUserPoolError::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
@@ -345,6 +355,10 @@ impl CreateUserPoolError {
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(self, Self::NotAuthorizedException(_))
     }
+    /// Returns `true` if the error kind is `CreateUserPoolError::TierChangeNotAllowedException`.
+    pub fn is_tier_change_not_allowed_exception(&self) -> bool {
+        matches!(self, Self::TierChangeNotAllowedException(_))
+    }
     /// Returns `true` if the error kind is `CreateUserPoolError::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(self, Self::TooManyRequestsException(_))
@@ -357,6 +371,7 @@ impl CreateUserPoolError {
 impl ::std::error::Error for CreateUserPoolError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::FeatureUnavailableInTierException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalErrorException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidEmailRoleAccessPolicyException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
@@ -364,6 +379,7 @@ impl ::std::error::Error for CreateUserPoolError {
             Self::InvalidSmsRoleTrustRelationshipException(_inner) => ::std::option::Option::Some(_inner),
             Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::NotAuthorizedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::TierChangeNotAllowedException(_inner) => ::std::option::Option::Some(_inner),
             Self::TooManyRequestsException(_inner) => ::std::option::Option::Some(_inner),
             Self::UserPoolTaggingException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -373,6 +389,7 @@ impl ::std::error::Error for CreateUserPoolError {
 impl ::std::fmt::Display for CreateUserPoolError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::FeatureUnavailableInTierException(_inner) => _inner.fmt(f),
             Self::InternalErrorException(_inner) => _inner.fmt(f),
             Self::InvalidEmailRoleAccessPolicyException(_inner) => _inner.fmt(f),
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
@@ -380,6 +397,7 @@ impl ::std::fmt::Display for CreateUserPoolError {
             Self::InvalidSmsRoleTrustRelationshipException(_inner) => _inner.fmt(f),
             Self::LimitExceededException(_inner) => _inner.fmt(f),
             Self::NotAuthorizedException(_inner) => _inner.fmt(f),
+            Self::TierChangeNotAllowedException(_inner) => _inner.fmt(f),
             Self::TooManyRequestsException(_inner) => _inner.fmt(f),
             Self::UserPoolTaggingException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -403,6 +421,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for CreateUserPoolError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateUserPoolError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::FeatureUnavailableInTierException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalErrorException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidEmailRoleAccessPolicyException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
@@ -410,6 +429,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateUserPoo
             Self::InvalidSmsRoleTrustRelationshipException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::LimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::NotAuthorizedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::TierChangeNotAllowedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TooManyRequestsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UserPoolTaggingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

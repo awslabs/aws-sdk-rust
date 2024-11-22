@@ -901,6 +901,8 @@ pub use crate::types::_optimization_output::OptimizationOutputBuilder;
 
 pub use crate::types::_optimization_job_output_config::OptimizationJobOutputConfigBuilder;
 
+pub use crate::types::_model_sharding_config::ModelShardingConfigBuilder;
+
 pub use crate::types::_model_compilation_config::ModelCompilationConfigBuilder;
 
 pub use crate::types::_model_quantization_config::ModelQuantizationConfigBuilder;

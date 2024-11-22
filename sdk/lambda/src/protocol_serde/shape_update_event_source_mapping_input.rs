@@ -78,28 +78,34 @@ pub fn ser_update_event_source_mapping_input_input(
             ::aws_smithy_types::Number::NegInt((*var_20).into()),
         );
     }
-    if let Some(var_21) = &input.scaling_config {
+    if let Some(var_21) = &input.provisioned_poller_config {
         #[allow(unused_mut)]
-        let mut object_22 = object.key("ScalingConfig").start_object();
-        crate::protocol_serde::shape_scaling_config::ser_scaling_config(&mut object_22, var_21)?;
+        let mut object_22 = object.key("ProvisionedPollerConfig").start_object();
+        crate::protocol_serde::shape_provisioned_poller_config::ser_provisioned_poller_config(&mut object_22, var_21)?;
         object_22.finish();
     }
-    if let Some(var_23) = &input.source_access_configurations {
-        let mut array_24 = object.key("SourceAccessConfigurations").start_array();
-        for item_25 in var_23 {
+    if let Some(var_23) = &input.scaling_config {
+        #[allow(unused_mut)]
+        let mut object_24 = object.key("ScalingConfig").start_object();
+        crate::protocol_serde::shape_scaling_config::ser_scaling_config(&mut object_24, var_23)?;
+        object_24.finish();
+    }
+    if let Some(var_25) = &input.source_access_configurations {
+        let mut array_26 = object.key("SourceAccessConfigurations").start_array();
+        for item_27 in var_25 {
             {
                 #[allow(unused_mut)]
-                let mut object_26 = array_24.value().start_object();
-                crate::protocol_serde::shape_source_access_configuration::ser_source_access_configuration(&mut object_26, item_25)?;
-                object_26.finish();
+                let mut object_28 = array_26.value().start_object();
+                crate::protocol_serde::shape_source_access_configuration::ser_source_access_configuration(&mut object_28, item_27)?;
+                object_28.finish();
             }
         }
-        array_24.finish();
+        array_26.finish();
     }
-    if let Some(var_27) = &input.tumbling_window_in_seconds {
+    if let Some(var_29) = &input.tumbling_window_in_seconds {
         object.key("TumblingWindowInSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_27).into()),
+            ::aws_smithy_types::Number::NegInt((*var_29).into()),
         );
     }
     Ok(())

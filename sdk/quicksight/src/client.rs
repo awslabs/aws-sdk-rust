@@ -311,6 +311,8 @@ mod describe_dashboard_snapshot_job;
 
 mod describe_dashboard_snapshot_job_result;
 
+mod describe_dashboards_qa_configuration;
+
 mod describe_data_set;
 
 mod describe_data_set_permissions;
@@ -467,6 +469,8 @@ mod search_folders;
 
 mod search_groups;
 
+mod search_topics;
+
 mod start_asset_bundle_export_job;
 
 mod start_asset_bundle_import_job;
@@ -502,6 +506,8 @@ mod update_dashboard_links;
 mod update_dashboard_permissions;
 
 mod update_dashboard_published_version;
+
+mod update_dashboards_qa_configuration;
 
 mod update_data_set;
 

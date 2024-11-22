@@ -24,6 +24,11 @@ pub fn ser_mutual_authentication_attributes(
     if let Some(var_8) = &input.trust_store_association_status {
         scope_7.string(var_8.as_str());
     }
+    #[allow(unused_mut)]
+    let mut scope_9 = writer.prefix("AdvertiseTrustStoreCaNames");
+    if let Some(var_10) = &input.advertise_trust_store_ca_names {
+        scope_9.string(var_10.as_str());
+    }
     Ok(())
 }
 
@@ -36,7 +41,7 @@ pub fn de_mutual_authentication_attributes(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Mode") /* Mode com.amazonaws.elasticloadbalancingv2#MutualAuthenticationAttributes$Mode */ =>  {
-                let var_9 =
+                let var_11 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -45,11 +50,11 @@ pub fn de_mutual_authentication_attributes(
                         ?
                     )
                 ;
-                builder = builder.set_mode(var_9);
+                builder = builder.set_mode(var_11);
             }
             ,
             s if s.matches("TrustStoreArn") /* TrustStoreArn com.amazonaws.elasticloadbalancingv2#MutualAuthenticationAttributes$TrustStoreArn */ =>  {
-                let var_10 =
+                let var_12 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -58,11 +63,11 @@ pub fn de_mutual_authentication_attributes(
                         ?
                     )
                 ;
-                builder = builder.set_trust_store_arn(var_10);
+                builder = builder.set_trust_store_arn(var_12);
             }
             ,
             s if s.matches("IgnoreClientCertificateExpiry") /* IgnoreClientCertificateExpiry com.amazonaws.elasticloadbalancingv2#MutualAuthenticationAttributes$IgnoreClientCertificateExpiry */ =>  {
-                let var_11 =
+                let var_13 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -73,11 +78,11 @@ pub fn de_mutual_authentication_attributes(
                         ?
                     )
                 ;
-                builder = builder.set_ignore_client_certificate_expiry(var_11);
+                builder = builder.set_ignore_client_certificate_expiry(var_13);
             }
             ,
             s if s.matches("TrustStoreAssociationStatus") /* TrustStoreAssociationStatus com.amazonaws.elasticloadbalancingv2#MutualAuthenticationAttributes$TrustStoreAssociationStatus */ =>  {
-                let var_12 =
+                let var_14 =
                     Some(
                         Result::<crate::types::TrustStoreAssociationStatusEnum, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::TrustStoreAssociationStatusEnum::from(
@@ -87,7 +92,21 @@ pub fn de_mutual_authentication_attributes(
                         ?
                     )
                 ;
-                builder = builder.set_trust_store_association_status(var_12);
+                builder = builder.set_trust_store_association_status(var_14);
+            }
+            ,
+            s if s.matches("AdvertiseTrustStoreCaNames") /* AdvertiseTrustStoreCaNames com.amazonaws.elasticloadbalancingv2#MutualAuthenticationAttributes$AdvertiseTrustStoreCaNames */ =>  {
+                let var_15 =
+                    Some(
+                        Result::<crate::types::AdvertiseTrustStoreCaNamesEnum, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::AdvertiseTrustStoreCaNamesEnum::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_advertise_trust_store_ca_names(var_15);
             }
             ,
             _ => {}

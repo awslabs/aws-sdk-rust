@@ -56,6 +56,24 @@ pub(crate) struct Handle {
 /// [`aws_config::from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.from_env.html
 /// [`aws_config::load_from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.load_from_env.html
 /// [builder pattern]: https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
+/// # Using the `Client`
+///
+/// A client has a function for every operation that can be performed by the service.
+/// For example, the [`DeleteS3AccessPolicy`](crate::operation::delete_s3_access_policy) operation has
+/// a [`Client::delete_s3_access_policy`], function which returns a builder for that operation.
+/// The fluent builder ultimately has a `send()` function that returns an async future that
+/// returns a result, as illustrated below:
+///
+/// ```rust,ignore
+/// let result = client.delete_s3_access_policy()
+///     .s3_access_point_arn("example")
+///     .send()
+///     .await;
+/// ```
+///
+/// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
+/// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
+/// information.
 /// # Waiters
 ///
 /// This client provides `wait_until` methods behind the [`Waiters`](crate::client::Waiters) trait.
@@ -275,6 +293,29 @@ mod create_workflow;
 
 /// Operation customization and supporting types.
 ///
+/// The underlying HTTP requests made during an operation can be customized
+/// by calling the `customize()` method on the builder returned from a client
+/// operation call. For example, this can be used to add an additional HTTP header:
+///
+/// ```ignore
+/// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_omics::Error> {
+/// # let client: aws_sdk_omics::Client = unimplemented!();
+/// use ::http::header::{HeaderName, HeaderValue};
+///
+/// let result = client.delete_s3_access_policy()
+///     .customize()
+///     .mutate_request(|req| {
+///         // Add `x-example-header` with value
+///         req.headers_mut()
+///             .insert(
+///                 HeaderName::from_static("x-example-header"),
+///                 HeaderValue::from_static("1"),
+///             );
+///     })
+///     .send()
+///     .await;
+/// # }
+/// ```
 pub mod customize;
 
 mod delete_annotation_store;
@@ -290,6 +331,8 @@ mod delete_run;
 mod delete_run_cache;
 
 mod delete_run_group;
+
+mod delete_s3_access_policy;
 
 mod delete_sequence_store;
 
@@ -330,6 +373,8 @@ mod get_run_cache;
 mod get_run_group;
 
 mod get_run_task;
+
+mod get_s3_access_policy;
 
 mod get_sequence_store;
 
@@ -385,6 +430,8 @@ mod list_variant_stores;
 
 mod list_workflows;
 
+mod put_s3_access_policy;
+
 mod start_annotation_import_job;
 
 mod start_read_set_activation_job;
@@ -410,6 +457,8 @@ mod update_annotation_store_version;
 mod update_run_cache;
 
 mod update_run_group;
+
+mod update_sequence_store;
 
 mod update_variant_store;
 

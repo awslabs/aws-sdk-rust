@@ -16,6 +16,10 @@ pub struct NamespaceInfoV2 {
     pub identity_store: ::std::option::Option<crate::types::IdentityStore>,
     /// <p>An error that occurred when the namespace was created.</p>
     pub namespace_error: ::std::option::Option<crate::types::NamespaceError>,
+    /// <p>The Amazon Resource Name (ARN) for the IAM Identity Center application.</p>
+    pub iam_identity_center_application_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) for the IAM Identity Center instance.</p>
+    pub iam_identity_center_instance_arn: ::std::option::Option<::std::string::String>,
 }
 impl NamespaceInfoV2 {
     /// <p>The name of the error.</p>
@@ -42,6 +46,14 @@ impl NamespaceInfoV2 {
     pub fn namespace_error(&self) -> ::std::option::Option<&crate::types::NamespaceError> {
         self.namespace_error.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN) for the IAM Identity Center application.</p>
+    pub fn iam_identity_center_application_arn(&self) -> ::std::option::Option<&str> {
+        self.iam_identity_center_application_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the IAM Identity Center instance.</p>
+    pub fn iam_identity_center_instance_arn(&self) -> ::std::option::Option<&str> {
+        self.iam_identity_center_instance_arn.as_deref()
+    }
 }
 impl NamespaceInfoV2 {
     /// Creates a new builder-style object to manufacture [`NamespaceInfoV2`](crate::types::NamespaceInfoV2).
@@ -60,6 +72,8 @@ pub struct NamespaceInfoV2Builder {
     pub(crate) creation_status: ::std::option::Option<crate::types::NamespaceStatus>,
     pub(crate) identity_store: ::std::option::Option<crate::types::IdentityStore>,
     pub(crate) namespace_error: ::std::option::Option<crate::types::NamespaceError>,
+    pub(crate) iam_identity_center_application_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) iam_identity_center_instance_arn: ::std::option::Option<::std::string::String>,
 }
 impl NamespaceInfoV2Builder {
     /// <p>The name of the error.</p>
@@ -146,6 +160,34 @@ impl NamespaceInfoV2Builder {
     pub fn get_namespace_error(&self) -> &::std::option::Option<crate::types::NamespaceError> {
         &self.namespace_error
     }
+    /// <p>The Amazon Resource Name (ARN) for the IAM Identity Center application.</p>
+    pub fn iam_identity_center_application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.iam_identity_center_application_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the IAM Identity Center application.</p>
+    pub fn set_iam_identity_center_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.iam_identity_center_application_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the IAM Identity Center application.</p>
+    pub fn get_iam_identity_center_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iam_identity_center_application_arn
+    }
+    /// <p>The Amazon Resource Name (ARN) for the IAM Identity Center instance.</p>
+    pub fn iam_identity_center_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.iam_identity_center_instance_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the IAM Identity Center instance.</p>
+    pub fn set_iam_identity_center_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.iam_identity_center_instance_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the IAM Identity Center instance.</p>
+    pub fn get_iam_identity_center_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iam_identity_center_instance_arn
+    }
     /// Consumes the builder and constructs a [`NamespaceInfoV2`](crate::types::NamespaceInfoV2).
     pub fn build(self) -> crate::types::NamespaceInfoV2 {
         crate::types::NamespaceInfoV2 {
@@ -155,6 +197,8 @@ impl NamespaceInfoV2Builder {
             creation_status: self.creation_status,
             identity_store: self.identity_store,
             namespace_error: self.namespace_error,
+            iam_identity_center_application_arn: self.iam_identity_center_application_arn,
+            iam_identity_center_instance_arn: self.iam_identity_center_instance_arn,
         }
     }
 }

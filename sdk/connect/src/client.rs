@@ -182,11 +182,15 @@ mod complete_attached_file_upload;
 
 mod create_agent_status;
 
+mod create_contact;
+
 mod create_contact_flow;
 
 mod create_contact_flow_module;
 
 mod create_contact_flow_version;
+
+mod create_email_address;
 
 mod create_evaluation_form;
 
@@ -267,6 +271,8 @@ mod delete_contact_flow;
 
 mod delete_contact_flow_module;
 
+mod delete_email_address;
+
 mod delete_evaluation_form;
 
 mod delete_hours_of_operation;
@@ -316,6 +322,8 @@ mod describe_contact_evaluation;
 mod describe_contact_flow;
 
 mod describe_contact_flow_module;
+
+mod describe_email_address;
 
 mod describe_evaluation_form;
 
@@ -412,6 +420,8 @@ mod list_agent_statuses;
 mod list_analytics_data_associations;
 
 mod list_approved_origins;
+
+mod list_associated_contacts;
 
 mod list_authentication_profiles;
 
@@ -523,6 +533,8 @@ mod search_contact_flows;
 
 mod search_contacts;
 
+mod search_email_addresses;
+
 mod search_hours_of_operations;
 
 mod search_predefined_attributes;
@@ -547,6 +559,8 @@ mod search_vocabularies;
 
 mod send_chat_integration_event;
 
+mod send_outbound_email;
+
 mod start_attached_file_upload;
 
 mod start_chat_contact;
@@ -557,7 +571,11 @@ mod start_contact_recording;
 
 mod start_contact_streaming;
 
+mod start_email_contact;
+
 mod start_outbound_chat_contact;
+
+mod start_outbound_email_contact;
 
 mod start_outbound_voice_contact;
 
@@ -611,6 +629,8 @@ mod update_contact_routing_data;
 
 mod update_contact_schedule;
 
+mod update_email_address_metadata;
+
 mod update_evaluation_form;
 
 mod update_hours_of_operation;
@@ -636,6 +656,8 @@ mod update_queue_max_contacts;
 mod update_queue_name;
 
 mod update_queue_outbound_caller_config;
+
+mod update_queue_outbound_email_config;
 
 mod update_queue_status;
 

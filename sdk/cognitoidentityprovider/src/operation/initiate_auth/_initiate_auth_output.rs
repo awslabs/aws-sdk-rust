@@ -10,6 +10,14 @@ pub struct InitiateAuthOutput {
     /// </note>
     /// <ul>
     /// <li>
+    /// <p><code>WEB_AUTHN</code>: Respond to the challenge with the results of a successful authentication with a passkey, or webauthN, factor. These are typically biometric devices or security keys.</p></li>
+    /// <li>
+    /// <p><code>PASSWORD</code>: Respond with <code>USER_PASSWORD_AUTH</code> parameters: <code>USERNAME</code> (required), <code>PASSWORD</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p></li>
+    /// <li>
+    /// <p><code>PASSWORD_SRP</code>: Respond with <code>USER_SRP_AUTH</code> parameters: <code>USERNAME</code> (required), <code>SRP_A</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p></li>
+    /// <li>
+    /// <p><code>SELECT_CHALLENGE</code>: Respond to the challenge with <code>USERNAME</code> and an <code>ANSWER</code> that matches one of the challenge types in the <code>AvailableChallenges</code> response parameter.</p></li>
+    /// <li>
     /// <p><code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>that your user pool delivered in an SMS message.</p></li>
     /// <li>
     /// <p><code>EMAIL_OTP</code>: Next challenge is to supply an <code>EMAIL_OTP_CODE</code> that your user pool delivered in an email message.</p></li>
@@ -23,7 +31,8 @@ pub struct InitiateAuthOutput {
     /// <p><code>DEVICE_PASSWORD_VERIFIER</code>: Similar to <code>PASSWORD_VERIFIER</code>, but for devices only.</p></li>
     /// <li>
     /// <p><code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first login.</p>
-    /// <p>Respond to this challenge with <code>NEW_PASSWORD</code> and any required attributes that Amazon Cognito returned in the <code>requiredAttributes</code> parameter. You can also set values for attributes that aren't required by your user pool and that your app client can write. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RespondToAuthChallenge.html">RespondToAuthChallenge</a>.</p><note>
+    /// <p>Respond to this challenge with <code>NEW_PASSWORD</code> and any required attributes that Amazon Cognito returned in the <code>requiredAttributes</code> parameter. You can also set values for attributes that aren't required by your user pool and that your app client can write. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RespondToAuthChallenge.html">RespondToAuthChallenge</a>.</p>
+    /// <p>Amazon Cognito only returns this challenge for users who have temporary passwords. Because of this, and because in some cases you can create users who don't have values for required attributes, take care to collect and submit required-attribute values for all users who don't have passwords. You can create a user in the Amazon Cognito console without, for example, a required <code>birthdate</code> attribute. The API response from Amazon Cognito won't prompt you to submit a birthdate for the user if they don't have a password.</p><note>
     /// <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already has a value. In <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the <code>requiredAttributes</code> parameter, then use the <code>UpdateUserAttributes</code> API operation to modify the value of any additional attributes.</p>
     /// </note></li>
     /// <li>
@@ -31,13 +40,15 @@ pub struct InitiateAuthOutput {
     /// <p>To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>. Use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To set up SMS MFA, an administrator should help the user to add a phone number to their account, and then the user should call <code>InitiateAuth</code> again to restart sign-in.</p></li>
     /// </ul>
     pub challenge_name: ::std::option::Option<crate::types::ChallengeNameType>,
-    /// <p>The session that should pass both ways in challenge-response calls to the service. If the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
+    /// <p>The session that should pass both ways in challenge-response calls to the service. If the caller must pass another challenge, they return a session with other challenge parameters. Include this session identifier in a <code>RespondToAuthChallenge</code> API request.</p>
     pub session: ::std::option::Option<::std::string::String>,
     /// <p>The challenge parameters. These are returned in the <code>InitiateAuth</code> response if you must pass another challenge. The responses in this parameter should be used to compute inputs to the next call (<code>RespondToAuthChallenge</code>).</p>
-    /// <p>All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).</p>
+    /// <p>All challenges require <code>USERNAME</code>. They also require <code>SECRET_HASH</code> if your app client has a client secret.</p>
     pub challenge_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The result of the authentication response. This result is only returned if the caller doesn't need to pass another challenge. If the caller does need to pass another challenge before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> are returned.</p>
     pub authentication_result: ::std::option::Option<crate::types::AuthenticationResultType>,
+    /// <p>This response parameter prompts a user to select from multiple available challenges that they can complete authentication with. For example, they might be able to continue with passwordless authentication or with a one-time password from an SMS message.</p>
+    pub available_challenges: ::std::option::Option<::std::vec::Vec<crate::types::ChallengeNameType>>,
     _request_id: Option<String>,
 }
 impl InitiateAuthOutput {
@@ -47,6 +58,14 @@ impl InitiateAuthOutput {
     /// </note>
     /// <ul>
     /// <li>
+    /// <p><code>WEB_AUTHN</code>: Respond to the challenge with the results of a successful authentication with a passkey, or webauthN, factor. These are typically biometric devices or security keys.</p></li>
+    /// <li>
+    /// <p><code>PASSWORD</code>: Respond with <code>USER_PASSWORD_AUTH</code> parameters: <code>USERNAME</code> (required), <code>PASSWORD</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p></li>
+    /// <li>
+    /// <p><code>PASSWORD_SRP</code>: Respond with <code>USER_SRP_AUTH</code> parameters: <code>USERNAME</code> (required), <code>SRP_A</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p></li>
+    /// <li>
+    /// <p><code>SELECT_CHALLENGE</code>: Respond to the challenge with <code>USERNAME</code> and an <code>ANSWER</code> that matches one of the challenge types in the <code>AvailableChallenges</code> response parameter.</p></li>
+    /// <li>
     /// <p><code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>that your user pool delivered in an SMS message.</p></li>
     /// <li>
     /// <p><code>EMAIL_OTP</code>: Next challenge is to supply an <code>EMAIL_OTP_CODE</code> that your user pool delivered in an email message.</p></li>
@@ -60,7 +79,8 @@ impl InitiateAuthOutput {
     /// <p><code>DEVICE_PASSWORD_VERIFIER</code>: Similar to <code>PASSWORD_VERIFIER</code>, but for devices only.</p></li>
     /// <li>
     /// <p><code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first login.</p>
-    /// <p>Respond to this challenge with <code>NEW_PASSWORD</code> and any required attributes that Amazon Cognito returned in the <code>requiredAttributes</code> parameter. You can also set values for attributes that aren't required by your user pool and that your app client can write. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RespondToAuthChallenge.html">RespondToAuthChallenge</a>.</p><note>
+    /// <p>Respond to this challenge with <code>NEW_PASSWORD</code> and any required attributes that Amazon Cognito returned in the <code>requiredAttributes</code> parameter. You can also set values for attributes that aren't required by your user pool and that your app client can write. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RespondToAuthChallenge.html">RespondToAuthChallenge</a>.</p>
+    /// <p>Amazon Cognito only returns this challenge for users who have temporary passwords. Because of this, and because in some cases you can create users who don't have values for required attributes, take care to collect and submit required-attribute values for all users who don't have passwords. You can create a user in the Amazon Cognito console without, for example, a required <code>birthdate</code> attribute. The API response from Amazon Cognito won't prompt you to submit a birthdate for the user if they don't have a password.</p><note>
     /// <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already has a value. In <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the <code>requiredAttributes</code> parameter, then use the <code>UpdateUserAttributes</code> API operation to modify the value of any additional attributes.</p>
     /// </note></li>
     /// <li>
@@ -70,18 +90,24 @@ impl InitiateAuthOutput {
     pub fn challenge_name(&self) -> ::std::option::Option<&crate::types::ChallengeNameType> {
         self.challenge_name.as_ref()
     }
-    /// <p>The session that should pass both ways in challenge-response calls to the service. If the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
+    /// <p>The session that should pass both ways in challenge-response calls to the service. If the caller must pass another challenge, they return a session with other challenge parameters. Include this session identifier in a <code>RespondToAuthChallenge</code> API request.</p>
     pub fn session(&self) -> ::std::option::Option<&str> {
         self.session.as_deref()
     }
     /// <p>The challenge parameters. These are returned in the <code>InitiateAuth</code> response if you must pass another challenge. The responses in this parameter should be used to compute inputs to the next call (<code>RespondToAuthChallenge</code>).</p>
-    /// <p>All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).</p>
+    /// <p>All challenges require <code>USERNAME</code>. They also require <code>SECRET_HASH</code> if your app client has a client secret.</p>
     pub fn challenge_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.challenge_parameters.as_ref()
     }
     /// <p>The result of the authentication response. This result is only returned if the caller doesn't need to pass another challenge. If the caller does need to pass another challenge before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> are returned.</p>
     pub fn authentication_result(&self) -> ::std::option::Option<&crate::types::AuthenticationResultType> {
         self.authentication_result.as_ref()
+    }
+    /// <p>This response parameter prompts a user to select from multiple available challenges that they can complete authentication with. For example, they might be able to continue with passwordless authentication or with a one-time password from an SMS message.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.available_challenges.is_none()`.
+    pub fn available_challenges(&self) -> &[crate::types::ChallengeNameType] {
+        self.available_challenges.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for InitiateAuthOutput {
@@ -91,6 +117,7 @@ impl ::std::fmt::Debug for InitiateAuthOutput {
         formatter.field("session", &"*** Sensitive Data Redacted ***");
         formatter.field("challenge_parameters", &self.challenge_parameters);
         formatter.field("authentication_result", &self.authentication_result);
+        formatter.field("available_challenges", &self.available_challenges);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -115,6 +142,7 @@ pub struct InitiateAuthOutputBuilder {
     pub(crate) session: ::std::option::Option<::std::string::String>,
     pub(crate) challenge_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) authentication_result: ::std::option::Option<crate::types::AuthenticationResultType>,
+    pub(crate) available_challenges: ::std::option::Option<::std::vec::Vec<crate::types::ChallengeNameType>>,
     _request_id: Option<String>,
 }
 impl InitiateAuthOutputBuilder {
@@ -123,6 +151,14 @@ impl InitiateAuthOutputBuilder {
     /// <p>All of the following challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable) in the parameters.</p>
     /// </note>
     /// <ul>
+    /// <li>
+    /// <p><code>WEB_AUTHN</code>: Respond to the challenge with the results of a successful authentication with a passkey, or webauthN, factor. These are typically biometric devices or security keys.</p></li>
+    /// <li>
+    /// <p><code>PASSWORD</code>: Respond with <code>USER_PASSWORD_AUTH</code> parameters: <code>USERNAME</code> (required), <code>PASSWORD</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p></li>
+    /// <li>
+    /// <p><code>PASSWORD_SRP</code>: Respond with <code>USER_SRP_AUTH</code> parameters: <code>USERNAME</code> (required), <code>SRP_A</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p></li>
+    /// <li>
+    /// <p><code>SELECT_CHALLENGE</code>: Respond to the challenge with <code>USERNAME</code> and an <code>ANSWER</code> that matches one of the challenge types in the <code>AvailableChallenges</code> response parameter.</p></li>
     /// <li>
     /// <p><code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>that your user pool delivered in an SMS message.</p></li>
     /// <li>
@@ -137,7 +173,8 @@ impl InitiateAuthOutputBuilder {
     /// <p><code>DEVICE_PASSWORD_VERIFIER</code>: Similar to <code>PASSWORD_VERIFIER</code>, but for devices only.</p></li>
     /// <li>
     /// <p><code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first login.</p>
-    /// <p>Respond to this challenge with <code>NEW_PASSWORD</code> and any required attributes that Amazon Cognito returned in the <code>requiredAttributes</code> parameter. You can also set values for attributes that aren't required by your user pool and that your app client can write. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RespondToAuthChallenge.html">RespondToAuthChallenge</a>.</p><note>
+    /// <p>Respond to this challenge with <code>NEW_PASSWORD</code> and any required attributes that Amazon Cognito returned in the <code>requiredAttributes</code> parameter. You can also set values for attributes that aren't required by your user pool and that your app client can write. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RespondToAuthChallenge.html">RespondToAuthChallenge</a>.</p>
+    /// <p>Amazon Cognito only returns this challenge for users who have temporary passwords. Because of this, and because in some cases you can create users who don't have values for required attributes, take care to collect and submit required-attribute values for all users who don't have passwords. You can create a user in the Amazon Cognito console without, for example, a required <code>birthdate</code> attribute. The API response from Amazon Cognito won't prompt you to submit a birthdate for the user if they don't have a password.</p><note>
     /// <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already has a value. In <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the <code>requiredAttributes</code> parameter, then use the <code>UpdateUserAttributes</code> API operation to modify the value of any additional attributes.</p>
     /// </note></li>
     /// <li>
@@ -154,6 +191,14 @@ impl InitiateAuthOutputBuilder {
     /// </note>
     /// <ul>
     /// <li>
+    /// <p><code>WEB_AUTHN</code>: Respond to the challenge with the results of a successful authentication with a passkey, or webauthN, factor. These are typically biometric devices or security keys.</p></li>
+    /// <li>
+    /// <p><code>PASSWORD</code>: Respond with <code>USER_PASSWORD_AUTH</code> parameters: <code>USERNAME</code> (required), <code>PASSWORD</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p></li>
+    /// <li>
+    /// <p><code>PASSWORD_SRP</code>: Respond with <code>USER_SRP_AUTH</code> parameters: <code>USERNAME</code> (required), <code>SRP_A</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p></li>
+    /// <li>
+    /// <p><code>SELECT_CHALLENGE</code>: Respond to the challenge with <code>USERNAME</code> and an <code>ANSWER</code> that matches one of the challenge types in the <code>AvailableChallenges</code> response parameter.</p></li>
+    /// <li>
     /// <p><code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>that your user pool delivered in an SMS message.</p></li>
     /// <li>
     /// <p><code>EMAIL_OTP</code>: Next challenge is to supply an <code>EMAIL_OTP_CODE</code> that your user pool delivered in an email message.</p></li>
@@ -167,7 +212,8 @@ impl InitiateAuthOutputBuilder {
     /// <p><code>DEVICE_PASSWORD_VERIFIER</code>: Similar to <code>PASSWORD_VERIFIER</code>, but for devices only.</p></li>
     /// <li>
     /// <p><code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first login.</p>
-    /// <p>Respond to this challenge with <code>NEW_PASSWORD</code> and any required attributes that Amazon Cognito returned in the <code>requiredAttributes</code> parameter. You can also set values for attributes that aren't required by your user pool and that your app client can write. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RespondToAuthChallenge.html">RespondToAuthChallenge</a>.</p><note>
+    /// <p>Respond to this challenge with <code>NEW_PASSWORD</code> and any required attributes that Amazon Cognito returned in the <code>requiredAttributes</code> parameter. You can also set values for attributes that aren't required by your user pool and that your app client can write. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RespondToAuthChallenge.html">RespondToAuthChallenge</a>.</p>
+    /// <p>Amazon Cognito only returns this challenge for users who have temporary passwords. Because of this, and because in some cases you can create users who don't have values for required attributes, take care to collect and submit required-attribute values for all users who don't have passwords. You can create a user in the Amazon Cognito console without, for example, a required <code>birthdate</code> attribute. The API response from Amazon Cognito won't prompt you to submit a birthdate for the user if they don't have a password.</p><note>
     /// <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already has a value. In <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the <code>requiredAttributes</code> parameter, then use the <code>UpdateUserAttributes</code> API operation to modify the value of any additional attributes.</p>
     /// </note></li>
     /// <li>
@@ -184,6 +230,14 @@ impl InitiateAuthOutputBuilder {
     /// </note>
     /// <ul>
     /// <li>
+    /// <p><code>WEB_AUTHN</code>: Respond to the challenge with the results of a successful authentication with a passkey, or webauthN, factor. These are typically biometric devices or security keys.</p></li>
+    /// <li>
+    /// <p><code>PASSWORD</code>: Respond with <code>USER_PASSWORD_AUTH</code> parameters: <code>USERNAME</code> (required), <code>PASSWORD</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p></li>
+    /// <li>
+    /// <p><code>PASSWORD_SRP</code>: Respond with <code>USER_SRP_AUTH</code> parameters: <code>USERNAME</code> (required), <code>SRP_A</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p></li>
+    /// <li>
+    /// <p><code>SELECT_CHALLENGE</code>: Respond to the challenge with <code>USERNAME</code> and an <code>ANSWER</code> that matches one of the challenge types in the <code>AvailableChallenges</code> response parameter.</p></li>
+    /// <li>
     /// <p><code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>that your user pool delivered in an SMS message.</p></li>
     /// <li>
     /// <p><code>EMAIL_OTP</code>: Next challenge is to supply an <code>EMAIL_OTP_CODE</code> that your user pool delivered in an email message.</p></li>
@@ -197,7 +251,8 @@ impl InitiateAuthOutputBuilder {
     /// <p><code>DEVICE_PASSWORD_VERIFIER</code>: Similar to <code>PASSWORD_VERIFIER</code>, but for devices only.</p></li>
     /// <li>
     /// <p><code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first login.</p>
-    /// <p>Respond to this challenge with <code>NEW_PASSWORD</code> and any required attributes that Amazon Cognito returned in the <code>requiredAttributes</code> parameter. You can also set values for attributes that aren't required by your user pool and that your app client can write. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RespondToAuthChallenge.html">RespondToAuthChallenge</a>.</p><note>
+    /// <p>Respond to this challenge with <code>NEW_PASSWORD</code> and any required attributes that Amazon Cognito returned in the <code>requiredAttributes</code> parameter. You can also set values for attributes that aren't required by your user pool and that your app client can write. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RespondToAuthChallenge.html">RespondToAuthChallenge</a>.</p>
+    /// <p>Amazon Cognito only returns this challenge for users who have temporary passwords. Because of this, and because in some cases you can create users who don't have values for required attributes, take care to collect and submit required-attribute values for all users who don't have passwords. You can create a user in the Amazon Cognito console without, for example, a required <code>birthdate</code> attribute. The API response from Amazon Cognito won't prompt you to submit a birthdate for the user if they don't have a password.</p><note>
     /// <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already has a value. In <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the <code>requiredAttributes</code> parameter, then use the <code>UpdateUserAttributes</code> API operation to modify the value of any additional attributes.</p>
     /// </note></li>
     /// <li>
@@ -207,17 +262,17 @@ impl InitiateAuthOutputBuilder {
     pub fn get_challenge_name(&self) -> &::std::option::Option<crate::types::ChallengeNameType> {
         &self.challenge_name
     }
-    /// <p>The session that should pass both ways in challenge-response calls to the service. If the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
+    /// <p>The session that should pass both ways in challenge-response calls to the service. If the caller must pass another challenge, they return a session with other challenge parameters. Include this session identifier in a <code>RespondToAuthChallenge</code> API request.</p>
     pub fn session(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The session that should pass both ways in challenge-response calls to the service. If the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
+    /// <p>The session that should pass both ways in challenge-response calls to the service. If the caller must pass another challenge, they return a session with other challenge parameters. Include this session identifier in a <code>RespondToAuthChallenge</code> API request.</p>
     pub fn set_session(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session = input;
         self
     }
-    /// <p>The session that should pass both ways in challenge-response calls to the service. If the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
+    /// <p>The session that should pass both ways in challenge-response calls to the service. If the caller must pass another challenge, they return a session with other challenge parameters. Include this session identifier in a <code>RespondToAuthChallenge</code> API request.</p>
     pub fn get_session(&self) -> &::std::option::Option<::std::string::String> {
         &self.session
     }
@@ -226,7 +281,7 @@ impl InitiateAuthOutputBuilder {
     /// To override the contents of this collection use [`set_challenge_parameters`](Self::set_challenge_parameters).
     ///
     /// <p>The challenge parameters. These are returned in the <code>InitiateAuth</code> response if you must pass another challenge. The responses in this parameter should be used to compute inputs to the next call (<code>RespondToAuthChallenge</code>).</p>
-    /// <p>All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).</p>
+    /// <p>All challenges require <code>USERNAME</code>. They also require <code>SECRET_HASH</code> if your app client has a client secret.</p>
     pub fn challenge_parameters(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -238,7 +293,7 @@ impl InitiateAuthOutputBuilder {
         self
     }
     /// <p>The challenge parameters. These are returned in the <code>InitiateAuth</code> response if you must pass another challenge. The responses in this parameter should be used to compute inputs to the next call (<code>RespondToAuthChallenge</code>).</p>
-    /// <p>All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).</p>
+    /// <p>All challenges require <code>USERNAME</code>. They also require <code>SECRET_HASH</code> if your app client has a client secret.</p>
     pub fn set_challenge_parameters(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -247,7 +302,7 @@ impl InitiateAuthOutputBuilder {
         self
     }
     /// <p>The challenge parameters. These are returned in the <code>InitiateAuth</code> response if you must pass another challenge. The responses in this parameter should be used to compute inputs to the next call (<code>RespondToAuthChallenge</code>).</p>
-    /// <p>All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).</p>
+    /// <p>All challenges require <code>USERNAME</code>. They also require <code>SECRET_HASH</code> if your app client has a client secret.</p>
     pub fn get_challenge_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.challenge_parameters
     }
@@ -265,6 +320,26 @@ impl InitiateAuthOutputBuilder {
     pub fn get_authentication_result(&self) -> &::std::option::Option<crate::types::AuthenticationResultType> {
         &self.authentication_result
     }
+    /// Appends an item to `available_challenges`.
+    ///
+    /// To override the contents of this collection use [`set_available_challenges`](Self::set_available_challenges).
+    ///
+    /// <p>This response parameter prompts a user to select from multiple available challenges that they can complete authentication with. For example, they might be able to continue with passwordless authentication or with a one-time password from an SMS message.</p>
+    pub fn available_challenges(mut self, input: crate::types::ChallengeNameType) -> Self {
+        let mut v = self.available_challenges.unwrap_or_default();
+        v.push(input);
+        self.available_challenges = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>This response parameter prompts a user to select from multiple available challenges that they can complete authentication with. For example, they might be able to continue with passwordless authentication or with a one-time password from an SMS message.</p>
+    pub fn set_available_challenges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChallengeNameType>>) -> Self {
+        self.available_challenges = input;
+        self
+    }
+    /// <p>This response parameter prompts a user to select from multiple available challenges that they can complete authentication with. For example, they might be able to continue with passwordless authentication or with a one-time password from an SMS message.</p>
+    pub fn get_available_challenges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChallengeNameType>> {
+        &self.available_challenges
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -281,6 +356,7 @@ impl InitiateAuthOutputBuilder {
             session: self.session,
             challenge_parameters: self.challenge_parameters,
             authentication_result: self.authentication_result,
+            available_challenges: self.available_challenges,
             _request_id: self._request_id,
         }
     }
@@ -292,6 +368,7 @@ impl ::std::fmt::Debug for InitiateAuthOutputBuilder {
         formatter.field("session", &"*** Sensitive Data Redacted ***");
         formatter.field("challenge_parameters", &self.challenge_parameters);
         formatter.field("authentication_result", &self.authentication_result);
+        formatter.field("available_challenges", &self.available_challenges);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

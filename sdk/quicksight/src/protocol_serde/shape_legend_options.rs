@@ -21,6 +21,12 @@ pub fn ser_legend_options(
     if let Some(var_6) = &input.height {
         object.key("Height").string(var_6.as_str());
     }
+    if let Some(var_7) = &input.value_font_configuration {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("ValueFontConfiguration").start_object();
+        crate::protocol_serde::shape_font_configuration::ser_font_configuration(&mut object_8, var_7)?;
+        object_8.finish();
+    }
     Ok(())
 }
 
@@ -69,6 +75,10 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "ValueFontConfiguration" => {
+                            builder =
+                                builder.set_value_font_configuration(crate::protocol_serde::shape_font_configuration::de_font_configuration(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

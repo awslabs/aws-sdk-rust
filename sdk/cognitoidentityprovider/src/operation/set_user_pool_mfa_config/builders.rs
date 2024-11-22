@@ -22,9 +22,9 @@ impl crate::operation::set_user_pool_mfa_config::builders::SetUserPoolMfaConfigI
 }
 /// Fluent builder constructing a request to `SetUserPoolMfaConfig`.
 ///
-/// <p>Sets the user pool multi-factor authentication (MFA) configuration.</p><note>
+/// <p>Sets the user pool multi-factor authentication (MFA) and passkey configuration.</p><note>
 /// <p>This action might generate an SMS text message. Starting June 1, 2021, US telecom carriers require you to register an origination phone number before you can send SMS messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you must register a phone number with <a href="https://console.aws.amazon.com/pinpoint/home/">Amazon Pinpoint</a>. Amazon Cognito uses the registered number automatically. Otherwise, Amazon Cognito users who must receive SMS messages might not be able to sign up, activate their accounts, or sign in.</p>
-/// <p>If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Servicesservice, Amazon Simple Notification Service might place your account in the SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox mode</a> </i>, you can send messages only to verified phone numbers. After you test your app while in the sandbox environment, you can move out of the sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html"> SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
+/// <p>If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Services service, Amazon Simple Notification Service might place your account in the SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox mode</a> </i>, you can send messages only to verified phone numbers. After you test your app while in the sandbox environment, you can move out of the sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html"> SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SetUserPoolMfaConfigFluentBuilder {
@@ -204,5 +204,19 @@ impl SetUserPoolMfaConfigFluentBuilder {
     /// </ul>
     pub fn get_mfa_configuration(&self) -> &::std::option::Option<crate::types::UserPoolMfaType> {
         self.inner.get_mfa_configuration()
+    }
+    /// <p>The configuration of your user pool for passkey, or webauthN, authentication and registration. You can set this configuration independent of the MFA configuration options in this operation.</p>
+    pub fn web_authn_configuration(mut self, input: crate::types::WebAuthnConfigurationType) -> Self {
+        self.inner = self.inner.web_authn_configuration(input);
+        self
+    }
+    /// <p>The configuration of your user pool for passkey, or webauthN, authentication and registration. You can set this configuration independent of the MFA configuration options in this operation.</p>
+    pub fn set_web_authn_configuration(mut self, input: ::std::option::Option<crate::types::WebAuthnConfigurationType>) -> Self {
+        self.inner = self.inner.set_web_authn_configuration(input);
+        self
+    }
+    /// <p>The configuration of your user pool for passkey, or webauthN, authentication and registration. You can set this configuration independent of the MFA configuration options in this operation.</p>
+    pub fn get_web_authn_configuration(&self) -> &::std::option::Option<crate::types::WebAuthnConfigurationType> {
+        self.inner.get_web_authn_configuration()
     }
 }

@@ -22,6 +22,8 @@ pub struct SheetDefinition {
     pub visuals: ::std::option::Option<::std::vec::Vec<crate::types::Visual>>,
     /// <p>The text boxes that are on a sheet.</p>
     pub text_boxes: ::std::option::Option<::std::vec::Vec<crate::types::SheetTextBox>>,
+    /// <p>A list of images on a sheet.</p>
+    pub images: ::std::option::Option<::std::vec::Vec<crate::types::SheetImage>>,
     /// <p>Layouts define how the components of a sheet are arranged.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/types-of-layout.html">Types of layout</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub layouts: ::std::option::Option<::std::vec::Vec<crate::types::Layout>>,
@@ -80,6 +82,12 @@ impl SheetDefinition {
     pub fn text_boxes(&self) -> &[crate::types::SheetTextBox] {
         self.text_boxes.as_deref().unwrap_or_default()
     }
+    /// <p>A list of images on a sheet.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.images.is_none()`.
+    pub fn images(&self) -> &[crate::types::SheetImage] {
+        self.images.as_deref().unwrap_or_default()
+    }
     /// <p>Layouts define how the components of a sheet are arranged.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/types-of-layout.html">Types of layout</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     ///
@@ -123,6 +131,7 @@ pub struct SheetDefinitionBuilder {
     pub(crate) filter_controls: ::std::option::Option<::std::vec::Vec<crate::types::FilterControl>>,
     pub(crate) visuals: ::std::option::Option<::std::vec::Vec<crate::types::Visual>>,
     pub(crate) text_boxes: ::std::option::Option<::std::vec::Vec<crate::types::SheetTextBox>>,
+    pub(crate) images: ::std::option::Option<::std::vec::Vec<crate::types::SheetImage>>,
     pub(crate) layouts: ::std::option::Option<::std::vec::Vec<crate::types::Layout>>,
     pub(crate) sheet_control_layouts: ::std::option::Option<::std::vec::Vec<crate::types::SheetControlLayout>>,
     pub(crate) content_type: ::std::option::Option<crate::types::SheetContentType>,
@@ -271,6 +280,26 @@ impl SheetDefinitionBuilder {
     pub fn get_text_boxes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SheetTextBox>> {
         &self.text_boxes
     }
+    /// Appends an item to `images`.
+    ///
+    /// To override the contents of this collection use [`set_images`](Self::set_images).
+    ///
+    /// <p>A list of images on a sheet.</p>
+    pub fn images(mut self, input: crate::types::SheetImage) -> Self {
+        let mut v = self.images.unwrap_or_default();
+        v.push(input);
+        self.images = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of images on a sheet.</p>
+    pub fn set_images(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SheetImage>>) -> Self {
+        self.images = input;
+        self
+    }
+    /// <p>A list of images on a sheet.</p>
+    pub fn get_images(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SheetImage>> {
+        &self.images
+    }
     /// Appends an item to `layouts`.
     ///
     /// To override the contents of this collection use [`set_layouts`](Self::set_layouts).
@@ -364,6 +393,7 @@ impl SheetDefinitionBuilder {
             filter_controls: self.filter_controls,
             visuals: self.visuals,
             text_boxes: self.text_boxes,
+            images: self.images,
             layouts: self.layouts,
             sheet_control_layouts: self.sheet_control_layouts,
             content_type: self.content_type,

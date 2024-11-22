@@ -42,6 +42,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ContactAssociationId" => {
+                            builder = builder.set_contact_association_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "InitiationMethod" => {
                             builder = builder.set_initiation_method(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -136,6 +143,12 @@ where
                         "WisdomInfo" => {
                             builder = builder.set_wisdom_info(crate::protocol_serde::shape_wisdom_info::de_wisdom_info(tokens)?);
                         }
+                        "CustomerEndpoint" => {
+                            builder = builder.set_customer_endpoint(crate::protocol_serde::shape_endpoint_info::de_endpoint_info(tokens)?);
+                        }
+                        "SystemEndpoint" => {
+                            builder = builder.set_system_endpoint(crate::protocol_serde::shape_endpoint_info::de_endpoint_info(tokens)?);
+                        }
                         "QueueTimeAdjustmentSeconds" => {
                             builder = builder.set_queue_time_adjustment_seconds(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
@@ -185,6 +198,11 @@ where
                         }
                         "DisconnectDetails" => {
                             builder = builder.set_disconnect_details(crate::protocol_serde::shape_disconnect_details::de_disconnect_details(tokens)?);
+                        }
+                        "AdditionalEmailRecipients" => {
+                            builder = builder.set_additional_email_recipients(
+                                crate::protocol_serde::shape_additional_email_recipients::de_additional_email_recipients(tokens)?,
+                            );
                         }
                         "SegmentAttributes" => {
                             builder = builder.set_segment_attributes(crate::protocol_serde::shape_segment_attributes::de_segment_attributes(tokens)?);

@@ -30,5 +30,8 @@ pub fn ser_inference_component_specification(
         )?;
         object_7.finish();
     }
+    if let Some(var_8) = &input.base_inference_component_name {
+        object.key("BaseInferenceComponentName").string(var_8.as_str());
+    }
     Ok(())
 }

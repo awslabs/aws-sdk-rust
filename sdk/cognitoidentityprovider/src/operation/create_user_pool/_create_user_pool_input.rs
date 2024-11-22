@@ -11,12 +11,7 @@ pub struct CreateUserPoolInput {
     /// <p>When active, <code>DeletionProtection</code> prevents accidental deletion of your user pool. Before you can delete a user pool that you have protected against deletion, you must deactivate this feature.</p>
     /// <p>When you try to delete a protected user pool in a <code>DeleteUserPool</code> API request, Amazon Cognito returns an <code>InvalidParameterException</code> error. To delete a protected user pool, send a new <code>DeleteUserPool</code> request after you deactivate deletion protection in an <code>UpdateUserPool</code> API request.</p>
     pub deletion_protection: ::std::option::Option<crate::types::DeletionProtectionType>,
-    /// <p>The Lambda trigger configuration information for the new user pool.</p><note>
-    /// <p>In a push model, event sources (such as Amazon S3 and custom applications) need permission to invoke a function. So you must make an extra call to add permission for these event sources to invoke your Lambda function.</p>
-    /// <p></p>
-    /// <p>For more information on using the Lambda API to add permission, see<a href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html"> AddPermission </a>.</p>
-    /// <p>For adding permission using the CLI, see<a href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html"> add-permission </a>.</p>
-    /// </note>
+    /// <p>A collection of user pool Lambda triggers. Amazon Cognito invokes triggers at several possible stages of authentication operations. Triggers can modify the outcome of the operations that invoked them.</p>
     pub lambda_config: ::std::option::Option<crate::types::LambdaConfigType>,
     /// <p>The attributes to be auto-verified. Possible values: <b>email</b>, <b>phone_number</b>.</p>
     pub auto_verified_attributes: ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAttributeType>>,
@@ -30,7 +25,8 @@ pub struct CreateUserPoolInput {
     pub email_verification_message: ::std::option::Option<::std::string::String>,
     /// <p>This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
     pub email_verification_subject: ::std::option::Option<::std::string::String>,
-    /// <p>The template for the verification message that the user sees when the app requests permission to access the user's information.</p>
+    /// <p>The template for the verification message that your user pool delivers to users who set an email address or phone number attribute.</p>
+    /// <p>Set the email message type that corresponds to your <code>DefaultEmailOption</code> selection. For <code>CONFIRM_WITH_LINK</code>, specify an <code>EmailMessageByLink</code> and leave <code>EmailMessage</code> blank. For <code>CONFIRM_WITH_CODE</code>, specify an <code>EmailMessage</code> and leave <code>EmailMessageByLink</code> blank. When you supply both parameters with either choice, Amazon Cognito returns an error.</p>
     pub verification_message_template: ::std::option::Option<crate::types::VerificationMessageTemplateType>,
     /// <p>A string representing the SMS authentication message.</p>
     pub sms_authentication_message: ::std::option::Option<::std::string::String>,
@@ -60,6 +56,8 @@ pub struct CreateUserPoolInput {
     pub username_configuration: ::std::option::Option<crate::types::UsernameConfigurationType>,
     /// <p>The available verified method a user can use to recover their password when they call <code>ForgotPassword</code>. You can use this setting to define a preferred method when a user has more than one method available. With this setting, SMS doesn't qualify for a valid password recovery mechanism if the user also has SMS multi-factor authentication (MFA) activated. In the absence of this setting, Amazon Cognito uses the legacy behavior to determine the recovery method where SMS is preferred through email.</p>
     pub account_recovery_setting: ::std::option::Option<crate::types::AccountRecoverySettingType>,
+    /// <p>The user pool <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sign-in-feature-plans.html">feature plan</a>, or tier. This parameter determines the eligibility of the user pool for features like managed login, access-token customization, and threat protection. Defaults to <code>ESSENTIALS</code>.</p>
+    pub user_pool_tier: ::std::option::Option<crate::types::UserPoolTierType>,
 }
 impl CreateUserPoolInput {
     /// <p>A string used to name the user pool.</p>
@@ -75,12 +73,7 @@ impl CreateUserPoolInput {
     pub fn deletion_protection(&self) -> ::std::option::Option<&crate::types::DeletionProtectionType> {
         self.deletion_protection.as_ref()
     }
-    /// <p>The Lambda trigger configuration information for the new user pool.</p><note>
-    /// <p>In a push model, event sources (such as Amazon S3 and custom applications) need permission to invoke a function. So you must make an extra call to add permission for these event sources to invoke your Lambda function.</p>
-    /// <p></p>
-    /// <p>For more information on using the Lambda API to add permission, see<a href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html"> AddPermission </a>.</p>
-    /// <p>For adding permission using the CLI, see<a href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html"> add-permission </a>.</p>
-    /// </note>
+    /// <p>A collection of user pool Lambda triggers. Amazon Cognito invokes triggers at several possible stages of authentication operations. Triggers can modify the outcome of the operations that invoked them.</p>
     pub fn lambda_config(&self) -> ::std::option::Option<&crate::types::LambdaConfigType> {
         self.lambda_config.as_ref()
     }
@@ -114,7 +107,8 @@ impl CreateUserPoolInput {
     pub fn email_verification_subject(&self) -> ::std::option::Option<&str> {
         self.email_verification_subject.as_deref()
     }
-    /// <p>The template for the verification message that the user sees when the app requests permission to access the user's information.</p>
+    /// <p>The template for the verification message that your user pool delivers to users who set an email address or phone number attribute.</p>
+    /// <p>Set the email message type that corresponds to your <code>DefaultEmailOption</code> selection. For <code>CONFIRM_WITH_LINK</code>, specify an <code>EmailMessageByLink</code> and leave <code>EmailMessage</code> blank. For <code>CONFIRM_WITH_CODE</code>, specify an <code>EmailMessage</code> and leave <code>EmailMessageByLink</code> blank. When you supply both parameters with either choice, Amazon Cognito returns an error.</p>
     pub fn verification_message_template(&self) -> ::std::option::Option<&crate::types::VerificationMessageTemplateType> {
         self.verification_message_template.as_ref()
     }
@@ -172,6 +166,10 @@ impl CreateUserPoolInput {
     pub fn account_recovery_setting(&self) -> ::std::option::Option<&crate::types::AccountRecoverySettingType> {
         self.account_recovery_setting.as_ref()
     }
+    /// <p>The user pool <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sign-in-feature-plans.html">feature plan</a>, or tier. This parameter determines the eligibility of the user pool for features like managed login, access-token customization, and threat protection. Defaults to <code>ESSENTIALS</code>.</p>
+    pub fn user_pool_tier(&self) -> ::std::option::Option<&crate::types::UserPoolTierType> {
+        self.user_pool_tier.as_ref()
+    }
 }
 impl CreateUserPoolInput {
     /// Creates a new builder-style object to manufacture [`CreateUserPoolInput`](crate::operation::create_user_pool::CreateUserPoolInput).
@@ -207,6 +205,7 @@ pub struct CreateUserPoolInputBuilder {
     pub(crate) user_pool_add_ons: ::std::option::Option<crate::types::UserPoolAddOnsType>,
     pub(crate) username_configuration: ::std::option::Option<crate::types::UsernameConfigurationType>,
     pub(crate) account_recovery_setting: ::std::option::Option<crate::types::AccountRecoverySettingType>,
+    pub(crate) user_pool_tier: ::std::option::Option<crate::types::UserPoolTierType>,
 }
 impl CreateUserPoolInputBuilder {
     /// <p>A string used to name the user pool.</p>
@@ -255,32 +254,17 @@ impl CreateUserPoolInputBuilder {
     pub fn get_deletion_protection(&self) -> &::std::option::Option<crate::types::DeletionProtectionType> {
         &self.deletion_protection
     }
-    /// <p>The Lambda trigger configuration information for the new user pool.</p><note>
-    /// <p>In a push model, event sources (such as Amazon S3 and custom applications) need permission to invoke a function. So you must make an extra call to add permission for these event sources to invoke your Lambda function.</p>
-    /// <p></p>
-    /// <p>For more information on using the Lambda API to add permission, see<a href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html"> AddPermission </a>.</p>
-    /// <p>For adding permission using the CLI, see<a href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html"> add-permission </a>.</p>
-    /// </note>
+    /// <p>A collection of user pool Lambda triggers. Amazon Cognito invokes triggers at several possible stages of authentication operations. Triggers can modify the outcome of the operations that invoked them.</p>
     pub fn lambda_config(mut self, input: crate::types::LambdaConfigType) -> Self {
         self.lambda_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Lambda trigger configuration information for the new user pool.</p><note>
-    /// <p>In a push model, event sources (such as Amazon S3 and custom applications) need permission to invoke a function. So you must make an extra call to add permission for these event sources to invoke your Lambda function.</p>
-    /// <p></p>
-    /// <p>For more information on using the Lambda API to add permission, see<a href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html"> AddPermission </a>.</p>
-    /// <p>For adding permission using the CLI, see<a href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html"> add-permission </a>.</p>
-    /// </note>
+    /// <p>A collection of user pool Lambda triggers. Amazon Cognito invokes triggers at several possible stages of authentication operations. Triggers can modify the outcome of the operations that invoked them.</p>
     pub fn set_lambda_config(mut self, input: ::std::option::Option<crate::types::LambdaConfigType>) -> Self {
         self.lambda_config = input;
         self
     }
-    /// <p>The Lambda trigger configuration information for the new user pool.</p><note>
-    /// <p>In a push model, event sources (such as Amazon S3 and custom applications) need permission to invoke a function. So you must make an extra call to add permission for these event sources to invoke your Lambda function.</p>
-    /// <p></p>
-    /// <p>For more information on using the Lambda API to add permission, see<a href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html"> AddPermission </a>.</p>
-    /// <p>For adding permission using the CLI, see<a href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html"> add-permission </a>.</p>
-    /// </note>
+    /// <p>A collection of user pool Lambda triggers. Amazon Cognito invokes triggers at several possible stages of authentication operations. Triggers can modify the outcome of the operations that invoked them.</p>
     pub fn get_lambda_config(&self) -> &::std::option::Option<crate::types::LambdaConfigType> {
         &self.lambda_config
     }
@@ -386,17 +370,20 @@ impl CreateUserPoolInputBuilder {
     pub fn get_email_verification_subject(&self) -> &::std::option::Option<::std::string::String> {
         &self.email_verification_subject
     }
-    /// <p>The template for the verification message that the user sees when the app requests permission to access the user's information.</p>
+    /// <p>The template for the verification message that your user pool delivers to users who set an email address or phone number attribute.</p>
+    /// <p>Set the email message type that corresponds to your <code>DefaultEmailOption</code> selection. For <code>CONFIRM_WITH_LINK</code>, specify an <code>EmailMessageByLink</code> and leave <code>EmailMessage</code> blank. For <code>CONFIRM_WITH_CODE</code>, specify an <code>EmailMessage</code> and leave <code>EmailMessageByLink</code> blank. When you supply both parameters with either choice, Amazon Cognito returns an error.</p>
     pub fn verification_message_template(mut self, input: crate::types::VerificationMessageTemplateType) -> Self {
         self.verification_message_template = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The template for the verification message that the user sees when the app requests permission to access the user's information.</p>
+    /// <p>The template for the verification message that your user pool delivers to users who set an email address or phone number attribute.</p>
+    /// <p>Set the email message type that corresponds to your <code>DefaultEmailOption</code> selection. For <code>CONFIRM_WITH_LINK</code>, specify an <code>EmailMessageByLink</code> and leave <code>EmailMessage</code> blank. For <code>CONFIRM_WITH_CODE</code>, specify an <code>EmailMessage</code> and leave <code>EmailMessageByLink</code> blank. When you supply both parameters with either choice, Amazon Cognito returns an error.</p>
     pub fn set_verification_message_template(mut self, input: ::std::option::Option<crate::types::VerificationMessageTemplateType>) -> Self {
         self.verification_message_template = input;
         self
     }
-    /// <p>The template for the verification message that the user sees when the app requests permission to access the user's information.</p>
+    /// <p>The template for the verification message that your user pool delivers to users who set an email address or phone number attribute.</p>
+    /// <p>Set the email message type that corresponds to your <code>DefaultEmailOption</code> selection. For <code>CONFIRM_WITH_LINK</code>, specify an <code>EmailMessageByLink</code> and leave <code>EmailMessage</code> blank. For <code>CONFIRM_WITH_CODE</code>, specify an <code>EmailMessage</code> and leave <code>EmailMessageByLink</code> blank. When you supply both parameters with either choice, Amazon Cognito returns an error.</p>
     pub fn get_verification_message_template(&self) -> &::std::option::Option<crate::types::VerificationMessageTemplateType> {
         &self.verification_message_template
     }
@@ -599,6 +586,20 @@ impl CreateUserPoolInputBuilder {
     pub fn get_account_recovery_setting(&self) -> &::std::option::Option<crate::types::AccountRecoverySettingType> {
         &self.account_recovery_setting
     }
+    /// <p>The user pool <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sign-in-feature-plans.html">feature plan</a>, or tier. This parameter determines the eligibility of the user pool for features like managed login, access-token customization, and threat protection. Defaults to <code>ESSENTIALS</code>.</p>
+    pub fn user_pool_tier(mut self, input: crate::types::UserPoolTierType) -> Self {
+        self.user_pool_tier = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The user pool <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sign-in-feature-plans.html">feature plan</a>, or tier. This parameter determines the eligibility of the user pool for features like managed login, access-token customization, and threat protection. Defaults to <code>ESSENTIALS</code>.</p>
+    pub fn set_user_pool_tier(mut self, input: ::std::option::Option<crate::types::UserPoolTierType>) -> Self {
+        self.user_pool_tier = input;
+        self
+    }
+    /// <p>The user pool <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sign-in-feature-plans.html">feature plan</a>, or tier. This parameter determines the eligibility of the user pool for features like managed login, access-token customization, and threat protection. Defaults to <code>ESSENTIALS</code>.</p>
+    pub fn get_user_pool_tier(&self) -> &::std::option::Option<crate::types::UserPoolTierType> {
+        &self.user_pool_tier
+    }
     /// Consumes the builder and constructs a [`CreateUserPoolInput`](crate::operation::create_user_pool::CreateUserPoolInput).
     pub fn build(
         self,
@@ -627,6 +628,7 @@ impl CreateUserPoolInputBuilder {
             user_pool_add_ons: self.user_pool_add_ons,
             username_configuration: self.username_configuration,
             account_recovery_setting: self.account_recovery_setting,
+            user_pool_tier: self.user_pool_tier,
         })
     }
 }

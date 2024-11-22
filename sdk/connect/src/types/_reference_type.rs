@@ -13,8 +13,10 @@
 /// # let referencetype = unimplemented!();
 /// match referencetype {
 ///     ReferenceType::Attachment => { /* ... */ },
+///     ReferenceType::ContactAnalysis => { /* ... */ },
 ///     ReferenceType::Date => { /* ... */ },
 ///     ReferenceType::Email => { /* ... */ },
+///     ReferenceType::EmailMessage => { /* ... */ },
 ///     ReferenceType::Number => { /* ... */ },
 ///     ReferenceType::String => { /* ... */ },
 ///     ReferenceType::Url => { /* ... */ },
@@ -48,9 +50,13 @@ pub enum ReferenceType {
     #[allow(missing_docs)] // documentation missing in model
     Attachment,
     #[allow(missing_docs)] // documentation missing in model
+    ContactAnalysis,
+    #[allow(missing_docs)] // documentation missing in model
     Date,
     #[allow(missing_docs)] // documentation missing in model
     Email,
+    #[allow(missing_docs)] // documentation missing in model
+    EmailMessage,
     #[allow(missing_docs)] // documentation missing in model
     Number,
     #[allow(missing_docs)] // documentation missing in model
@@ -65,8 +71,10 @@ impl ::std::convert::From<&str> for ReferenceType {
     fn from(s: &str) -> Self {
         match s {
             "ATTACHMENT" => ReferenceType::Attachment,
+            "CONTACT_ANALYSIS" => ReferenceType::ContactAnalysis,
             "DATE" => ReferenceType::Date,
             "EMAIL" => ReferenceType::Email,
+            "EMAIL_MESSAGE" => ReferenceType::EmailMessage,
             "NUMBER" => ReferenceType::Number,
             "STRING" => ReferenceType::String,
             "URL" => ReferenceType::Url,
@@ -86,8 +94,10 @@ impl ReferenceType {
     pub fn as_str(&self) -> &str {
         match self {
             ReferenceType::Attachment => "ATTACHMENT",
+            ReferenceType::ContactAnalysis => "CONTACT_ANALYSIS",
             ReferenceType::Date => "DATE",
             ReferenceType::Email => "EMAIL",
+            ReferenceType::EmailMessage => "EMAIL_MESSAGE",
             ReferenceType::Number => "NUMBER",
             ReferenceType::String => "STRING",
             ReferenceType::Url => "URL",
@@ -96,7 +106,16 @@ impl ReferenceType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ATTACHMENT", "DATE", "EMAIL", "NUMBER", "STRING", "URL"]
+        &[
+            "ATTACHMENT",
+            "CONTACT_ANALYSIS",
+            "DATE",
+            "EMAIL",
+            "EMAIL_MESSAGE",
+            "NUMBER",
+            "STRING",
+            "URL",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for ReferenceType {
@@ -120,8 +139,10 @@ impl ::std::fmt::Display for ReferenceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ReferenceType::Attachment => write!(f, "ATTACHMENT"),
+            ReferenceType::ContactAnalysis => write!(f, "CONTACT_ANALYSIS"),
             ReferenceType::Date => write!(f, "DATE"),
             ReferenceType::Email => write!(f, "EMAIL"),
+            ReferenceType::EmailMessage => write!(f, "EMAIL_MESSAGE"),
             ReferenceType::Number => write!(f, "NUMBER"),
             ReferenceType::String => write!(f, "STRING"),
             ReferenceType::Url => write!(f, "URL"),

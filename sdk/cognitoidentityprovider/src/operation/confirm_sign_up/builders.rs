@@ -271,4 +271,18 @@ impl ConfirmSignUpFluentBuilder {
     pub fn get_client_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_client_metadata()
     }
+    /// <p>The optional session ID from a <code>SignUp</code> API request. You can sign in a user directly from the sign-up process with the <code>USER_AUTH</code> authentication flow.</p>
+    pub fn session(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.session(input.into());
+        self
+    }
+    /// <p>The optional session ID from a <code>SignUp</code> API request. You can sign in a user directly from the sign-up process with the <code>USER_AUTH</code> authentication flow.</p>
+    pub fn set_session(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_session(input);
+        self
+    }
+    /// <p>The optional session ID from a <code>SignUp</code> API request. You can sign in a user directly from the sign-up process with the <code>USER_AUTH</code> authentication flow.</p>
+    pub fn get_session(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_session()
+    }
 }

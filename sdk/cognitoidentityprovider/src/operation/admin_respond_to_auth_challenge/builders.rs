@@ -25,7 +25,7 @@ impl crate::operation::admin_respond_to_auth_challenge::builders::AdminRespondTo
 /// <p>Some API operations in a user pool generate a challenge, like a prompt for an MFA code, for device authentication that bypasses MFA, or for a custom authentication challenge. An <code>AdminRespondToAuthChallenge</code> API request provides the answer to that challenge, like a code or a secure remote password (SRP). The parameters of a response to an authentication challenge vary with the type of challenge.</p>
 /// <p>For more information about custom authentication challenges, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-challenge.html">Custom authentication challenge Lambda triggers</a>.</p><note>
 /// <p>This action might generate an SMS text message. Starting June 1, 2021, US telecom carriers require you to register an origination phone number before you can send SMS messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you must register a phone number with <a href="https://console.aws.amazon.com/pinpoint/home/">Amazon Pinpoint</a>. Amazon Cognito uses the registered number automatically. Otherwise, Amazon Cognito users who must receive SMS messages might not be able to sign up, activate their accounts, or sign in.</p>
-/// <p>If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Servicesservice, Amazon Simple Notification Service might place your account in the SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox mode</a> </i>, you can send messages only to verified phone numbers. After you test your app while in the sandbox environment, you can move out of the sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html"> SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
+/// <p>If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Services service, Amazon Simple Notification Service might place your account in the SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox mode</a> </i>, you can send messages only to verified phone numbers. After you test your app while in the sandbox environment, you can move out of the sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html"> SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
 /// </note> <note>
 /// <p>Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.</p>
 /// <p class="title"><b>Learn more</b></p>
@@ -169,20 +169,50 @@ impl AdminRespondToAuthChallengeFluentBuilder {
     /// To override the contents of this collection use [`set_challenge_responses`](Self::set_challenge_responses).
     ///
     /// <p>The responses to the challenge that you received in the previous request. Each challenge has its own required response parameters. The following examples are partial JSON request bodies that highlight challenge-response parameters.</p><important>
-    /// <p>You must provide a SECRET_HASH parameter in all challenge responses to an app client that has a client secret.</p>
+    /// <p>You must provide a SECRET_HASH parameter in all challenge responses to an app client that has a client secret. Include a <code>DEVICE_KEY</code> for device authentication.</p>
     /// </important>
     /// <dl>
     /// <dt>
-    /// SMS_MFA
+    /// SELECT_CHALLENGE
     /// </dt>
     /// <dd>
-    /// <p><code>"ChallengeName": "SMS_MFA", "ChallengeResponses": {"SMS_MFA_CODE": "\[code\]", "USERNAME": "\[username\]"}</code></p>
+    /// <p><code>"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "USERNAME": "\[username\]", "ANSWER": "\[Challenge name\]"}</code></p>
+    /// <p>Available challenges are <code>PASSWORD</code>, <code>PASSWORD_SRP</code>, <code>EMAIL_OTP</code>, <code>SMS_OTP</code>, and <code>WEB_AUTHN</code>.</p>
+    /// <p>Complete authentication in the <code>SELECT_CHALLENGE</code> response for <code>PASSWORD</code>, <code>PASSWORD_SRP</code>, and <code>WEB_AUTHN</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "ANSWER": "WEB_AUTHN", "USERNAME": "\[username\]", "CREDENTIAL": "\[AuthenticationResponseJSON\]"}</code></p>
+    /// <p>See <a href="https://www.w3.org/TR/webauthn-3/#dictdef-authenticationresponsejson"> AuthenticationResponseJSON</a>.</p></li>
+    /// <li>
+    /// <p><code>"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "ANSWER": "PASSWORD", "USERNAME": "\[username\]", "PASSWORD": "\[password\]"}</code></p></li>
+    /// <li>
+    /// <p><code>"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "ANSWER": "PASSWORD_SRP", "USERNAME": "\[username\]", "SRP_A": "\[SRP_A\]"}</code></p></li>
+    /// </ul>
+    /// <p>For <code>SMS_OTP</code> and <code>EMAIL_OTP</code>, respond with the username and answer. Your user pool will send a code for the user to submit in the next challenge response.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "ANSWER": "SMS_OTP", "USERNAME": "\[username\]"}</code></p></li>
+    /// <li>
+    /// <p><code>"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "ANSWER": "EMAIL_OTP", "USERNAME": "\[username\]"}</code></p></li>
+    /// </ul>
+    /// </dd>
+    /// <dt>
+    /// SMS_OTP
+    /// </dt>
+    /// <dd>
+    /// <p><code>"ChallengeName": "SMS_OTP", "ChallengeResponses": {"SMS_OTP_CODE": "\[code\]", "USERNAME": "\[username\]"}</code></p>
     /// </dd>
     /// <dt>
     /// EMAIL_OTP
     /// </dt>
     /// <dd>
     /// <p><code>"ChallengeName": "EMAIL_OTP", "ChallengeResponses": {"EMAIL_OTP_CODE": "\[code\]", "USERNAME": "\[username\]"}</code></p>
+    /// </dd>
+    /// <dt>
+    /// SMS_MFA
+    /// </dt>
+    /// <dd>
+    /// <p><code>"ChallengeName": "SMS_MFA", "ChallengeResponses": {"SMS_MFA_CODE": "\[code\]", "USERNAME": "\[username\]"}</code></p>
     /// </dd>
     /// <dt>
     /// PASSWORD_VERIFIER
@@ -249,20 +279,50 @@ impl AdminRespondToAuthChallengeFluentBuilder {
         self
     }
     /// <p>The responses to the challenge that you received in the previous request. Each challenge has its own required response parameters. The following examples are partial JSON request bodies that highlight challenge-response parameters.</p><important>
-    /// <p>You must provide a SECRET_HASH parameter in all challenge responses to an app client that has a client secret.</p>
+    /// <p>You must provide a SECRET_HASH parameter in all challenge responses to an app client that has a client secret. Include a <code>DEVICE_KEY</code> for device authentication.</p>
     /// </important>
     /// <dl>
     /// <dt>
-    /// SMS_MFA
+    /// SELECT_CHALLENGE
     /// </dt>
     /// <dd>
-    /// <p><code>"ChallengeName": "SMS_MFA", "ChallengeResponses": {"SMS_MFA_CODE": "\[code\]", "USERNAME": "\[username\]"}</code></p>
+    /// <p><code>"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "USERNAME": "\[username\]", "ANSWER": "\[Challenge name\]"}</code></p>
+    /// <p>Available challenges are <code>PASSWORD</code>, <code>PASSWORD_SRP</code>, <code>EMAIL_OTP</code>, <code>SMS_OTP</code>, and <code>WEB_AUTHN</code>.</p>
+    /// <p>Complete authentication in the <code>SELECT_CHALLENGE</code> response for <code>PASSWORD</code>, <code>PASSWORD_SRP</code>, and <code>WEB_AUTHN</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "ANSWER": "WEB_AUTHN", "USERNAME": "\[username\]", "CREDENTIAL": "\[AuthenticationResponseJSON\]"}</code></p>
+    /// <p>See <a href="https://www.w3.org/TR/webauthn-3/#dictdef-authenticationresponsejson"> AuthenticationResponseJSON</a>.</p></li>
+    /// <li>
+    /// <p><code>"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "ANSWER": "PASSWORD", "USERNAME": "\[username\]", "PASSWORD": "\[password\]"}</code></p></li>
+    /// <li>
+    /// <p><code>"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "ANSWER": "PASSWORD_SRP", "USERNAME": "\[username\]", "SRP_A": "\[SRP_A\]"}</code></p></li>
+    /// </ul>
+    /// <p>For <code>SMS_OTP</code> and <code>EMAIL_OTP</code>, respond with the username and answer. Your user pool will send a code for the user to submit in the next challenge response.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "ANSWER": "SMS_OTP", "USERNAME": "\[username\]"}</code></p></li>
+    /// <li>
+    /// <p><code>"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "ANSWER": "EMAIL_OTP", "USERNAME": "\[username\]"}</code></p></li>
+    /// </ul>
+    /// </dd>
+    /// <dt>
+    /// SMS_OTP
+    /// </dt>
+    /// <dd>
+    /// <p><code>"ChallengeName": "SMS_OTP", "ChallengeResponses": {"SMS_OTP_CODE": "\[code\]", "USERNAME": "\[username\]"}</code></p>
     /// </dd>
     /// <dt>
     /// EMAIL_OTP
     /// </dt>
     /// <dd>
     /// <p><code>"ChallengeName": "EMAIL_OTP", "ChallengeResponses": {"EMAIL_OTP_CODE": "\[code\]", "USERNAME": "\[username\]"}</code></p>
+    /// </dd>
+    /// <dt>
+    /// SMS_MFA
+    /// </dt>
+    /// <dd>
+    /// <p><code>"ChallengeName": "SMS_MFA", "ChallengeResponses": {"SMS_MFA_CODE": "\[code\]", "USERNAME": "\[username\]"}</code></p>
     /// </dd>
     /// <dt>
     /// PASSWORD_VERIFIER
@@ -328,20 +388,50 @@ impl AdminRespondToAuthChallengeFluentBuilder {
         self
     }
     /// <p>The responses to the challenge that you received in the previous request. Each challenge has its own required response parameters. The following examples are partial JSON request bodies that highlight challenge-response parameters.</p><important>
-    /// <p>You must provide a SECRET_HASH parameter in all challenge responses to an app client that has a client secret.</p>
+    /// <p>You must provide a SECRET_HASH parameter in all challenge responses to an app client that has a client secret. Include a <code>DEVICE_KEY</code> for device authentication.</p>
     /// </important>
     /// <dl>
     /// <dt>
-    /// SMS_MFA
+    /// SELECT_CHALLENGE
     /// </dt>
     /// <dd>
-    /// <p><code>"ChallengeName": "SMS_MFA", "ChallengeResponses": {"SMS_MFA_CODE": "\[code\]", "USERNAME": "\[username\]"}</code></p>
+    /// <p><code>"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "USERNAME": "\[username\]", "ANSWER": "\[Challenge name\]"}</code></p>
+    /// <p>Available challenges are <code>PASSWORD</code>, <code>PASSWORD_SRP</code>, <code>EMAIL_OTP</code>, <code>SMS_OTP</code>, and <code>WEB_AUTHN</code>.</p>
+    /// <p>Complete authentication in the <code>SELECT_CHALLENGE</code> response for <code>PASSWORD</code>, <code>PASSWORD_SRP</code>, and <code>WEB_AUTHN</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "ANSWER": "WEB_AUTHN", "USERNAME": "\[username\]", "CREDENTIAL": "\[AuthenticationResponseJSON\]"}</code></p>
+    /// <p>See <a href="https://www.w3.org/TR/webauthn-3/#dictdef-authenticationresponsejson"> AuthenticationResponseJSON</a>.</p></li>
+    /// <li>
+    /// <p><code>"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "ANSWER": "PASSWORD", "USERNAME": "\[username\]", "PASSWORD": "\[password\]"}</code></p></li>
+    /// <li>
+    /// <p><code>"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "ANSWER": "PASSWORD_SRP", "USERNAME": "\[username\]", "SRP_A": "\[SRP_A\]"}</code></p></li>
+    /// </ul>
+    /// <p>For <code>SMS_OTP</code> and <code>EMAIL_OTP</code>, respond with the username and answer. Your user pool will send a code for the user to submit in the next challenge response.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "ANSWER": "SMS_OTP", "USERNAME": "\[username\]"}</code></p></li>
+    /// <li>
+    /// <p><code>"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "ANSWER": "EMAIL_OTP", "USERNAME": "\[username\]"}</code></p></li>
+    /// </ul>
+    /// </dd>
+    /// <dt>
+    /// SMS_OTP
+    /// </dt>
+    /// <dd>
+    /// <p><code>"ChallengeName": "SMS_OTP", "ChallengeResponses": {"SMS_OTP_CODE": "\[code\]", "USERNAME": "\[username\]"}</code></p>
     /// </dd>
     /// <dt>
     /// EMAIL_OTP
     /// </dt>
     /// <dd>
     /// <p><code>"ChallengeName": "EMAIL_OTP", "ChallengeResponses": {"EMAIL_OTP_CODE": "\[code\]", "USERNAME": "\[username\]"}</code></p>
+    /// </dd>
+    /// <dt>
+    /// SMS_MFA
+    /// </dt>
+    /// <dd>
+    /// <p><code>"ChallengeName": "SMS_MFA", "ChallengeResponses": {"SMS_MFA_CODE": "\[code\]", "USERNAME": "\[username\]"}</code></p>
     /// </dd>
     /// <dt>
     /// PASSWORD_VERIFIER

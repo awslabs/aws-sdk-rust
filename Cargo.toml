@@ -1,11 +1,11 @@
 [workspace]
 resolver = "2"
 exclude = [
-    "examples/cross_service",
-    "examples/examples",
-    "examples/webassembly",
     "examples/lambda",
+    "examples/webassembly",
+    "examples/cross_service",
     "examples/test-utils",
+    "examples/examples",
     "tests/webassembly",
     "tests/no-default-features"
 ]
@@ -77,6 +77,7 @@ members = [
     "sdk/backupgateway",
     "sdk/batch",
     "sdk/bcmdataexports",
+    "sdk/bcmpricingcalculator",
     "sdk/bedrock",
     "sdk/bedrockagent",
     "sdk/bedrockagentruntime",

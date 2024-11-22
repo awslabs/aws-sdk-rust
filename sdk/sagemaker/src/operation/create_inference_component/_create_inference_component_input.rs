@@ -94,7 +94,6 @@ impl CreateInferenceComponentInputBuilder {
         &self.endpoint_name
     }
     /// <p>The name of an existing production variant where you host the inference component.</p>
-    /// This field is required.
     pub fn variant_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.variant_name = ::std::option::Option::Some(input.into());
         self
@@ -124,7 +123,6 @@ impl CreateInferenceComponentInputBuilder {
         &self.specification
     }
     /// <p>Runtime settings for a model that is deployed with an inference component.</p>
-    /// This field is required.
     pub fn runtime_config(mut self, input: crate::types::InferenceComponentRuntimeConfig) -> Self {
         self.runtime_config = ::std::option::Option::Some(input);
         self

@@ -31,6 +31,8 @@ pub(crate) mod shape_invoke_agent;
 
 pub(crate) mod shape_invoke_flow;
 
+pub(crate) mod shape_invoke_inline_agent;
+
 pub(crate) mod shape_optimize_prompt;
 
 pub(crate) mod shape_retrieve;
@@ -63,6 +65,10 @@ pub(crate) mod shape_invoke_flow_input;
 
 pub(crate) mod shape_invoke_flow_output;
 
+pub(crate) mod shape_invoke_inline_agent_input;
+
+pub(crate) mod shape_invoke_inline_agent_output;
+
 pub(crate) mod shape_optimize_prompt_input;
 
 pub(crate) mod shape_optimize_prompt_output;
@@ -85,11 +91,19 @@ pub fn parse_event_stream_error_metadata(
     crate::json_errors::parse_error_metadata(payload, &::aws_smithy_runtime_api::http::Headers::new())
 }
 
+pub(crate) mod shape_agent_action_group;
+
 pub(crate) mod shape_citations;
 
 pub(crate) mod shape_flow_input;
 
+pub(crate) mod shape_guardrail_configuration_with_arn;
+
+pub(crate) mod shape_inline_session_state;
+
 pub(crate) mod shape_input_prompt;
+
+pub(crate) mod shape_knowledge_base;
 
 pub(crate) mod shape_knowledge_base_query;
 
@@ -99,6 +113,8 @@ pub(crate) mod shape_knowledge_base_retrieval_results;
 
 pub(crate) mod shape_memories;
 
+pub(crate) mod shape_prompt_override_configuration;
+
 pub(crate) mod shape_retrieve_and_generate_configuration;
 
 pub(crate) mod shape_retrieve_and_generate_output;
@@ -107,7 +123,11 @@ pub(crate) mod shape_retrieve_and_generate_session_configuration;
 
 pub(crate) mod shape_session_state;
 
+pub(crate) mod shape_action_group_executor;
+
 pub(crate) mod shape_analyze_prompt_event;
+
+pub(crate) mod shape_api_schema;
 
 pub(crate) mod shape_citation;
 
@@ -122,6 +142,16 @@ pub(crate) mod shape_flow_input_content;
 pub(crate) mod shape_flow_output_event;
 
 pub(crate) mod shape_flow_trace_event;
+
+pub(crate) mod shape_function_schema;
+
+pub(crate) mod shape_inline_agent_file_part;
+
+pub(crate) mod shape_inline_agent_payload_part;
+
+pub(crate) mod shape_inline_agent_return_control_payload;
+
+pub(crate) mod shape_inline_agent_trace_part;
 
 pub(crate) mod shape_input_file;
 
@@ -141,6 +171,8 @@ pub(crate) mod shape_optimized_prompt_event;
 
 pub(crate) mod shape_payload_part;
 
+pub(crate) mod shape_prompt_configuration;
+
 pub(crate) mod shape_return_control_payload;
 
 pub(crate) mod shape_text_prompt;
@@ -155,11 +187,15 @@ pub(crate) mod shape_external_sources_generation_configuration;
 
 pub(crate) mod shape_file_source;
 
+pub(crate) mod shape_function_definition;
+
 pub(crate) mod shape_function_result;
 
 pub(crate) mod shape_generated_response_part;
 
 pub(crate) mod shape_generation_configuration;
+
+pub(crate) mod shape_inference_configuration;
 
 pub(crate) mod shape_memory_session_summary;
 
@@ -174,6 +210,8 @@ pub(crate) mod shape_retrieval_result_location;
 pub(crate) mod shape_retrieval_result_metadata;
 
 pub(crate) mod shape_retrieved_references;
+
+pub(crate) mod shape_s3_identifier;
 
 pub(crate) mod shape_attribution;
 
@@ -198,6 +236,8 @@ pub(crate) mod shape_invocation_inputs;
 pub(crate) mod shape_optimized_prompt;
 
 pub(crate) mod shape_output_files;
+
+pub(crate) mod shape_parameter_detail;
 
 pub(crate) mod shape_prompt_template;
 
@@ -296,8 +336,6 @@ pub(crate) mod shape_flow_trace_node_output_field;
 pub(crate) mod shape_function_parameters;
 
 pub(crate) mod shape_guardrail_assessment;
-
-pub(crate) mod shape_inference_configuration;
 
 pub(crate) mod shape_knowledge_base_lookup_input;
 

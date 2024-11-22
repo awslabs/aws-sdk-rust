@@ -12,7 +12,9 @@ pub struct PutApprovalResultInput {
     pub action_name: ::std::option::Option<::std::string::String>,
     /// <p>Represents information about the result of the approval request.</p>
     pub result: ::std::option::Option<crate::types::ApprovalResult>,
-    /// <p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the <code>GetPipelineState</code> action. It is used to validate that the approval request corresponding to this token is still valid.</p>
+    /// <p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the <code>GetPipelineState</code> action. It is used to validate that the approval request corresponding to this token is still valid.</p><important>
+    /// <p>For a pipeline where the execution mode is set to PARALLEL, the token required to approve/reject approval request as detailed above is not available. Instead, use the <code>externalExecutionId</code> from the <code>GetPipelineState</code> action as the token in the approval request.</p>
+    /// </important>
     pub token: ::std::option::Option<::std::string::String>,
 }
 impl PutApprovalResultInput {
@@ -32,7 +34,9 @@ impl PutApprovalResultInput {
     pub fn result(&self) -> ::std::option::Option<&crate::types::ApprovalResult> {
         self.result.as_ref()
     }
-    /// <p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the <code>GetPipelineState</code> action. It is used to validate that the approval request corresponding to this token is still valid.</p>
+    /// <p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the <code>GetPipelineState</code> action. It is used to validate that the approval request corresponding to this token is still valid.</p><important>
+    /// <p>For a pipeline where the execution mode is set to PARALLEL, the token required to approve/reject approval request as detailed above is not available. Instead, use the <code>externalExecutionId</code> from the <code>GetPipelineState</code> action as the token in the approval request.</p>
+    /// </important>
     pub fn token(&self) -> ::std::option::Option<&str> {
         self.token.as_deref()
     }
@@ -115,18 +119,24 @@ impl PutApprovalResultInputBuilder {
     pub fn get_result(&self) -> &::std::option::Option<crate::types::ApprovalResult> {
         &self.result
     }
-    /// <p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the <code>GetPipelineState</code> action. It is used to validate that the approval request corresponding to this token is still valid.</p>
+    /// <p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the <code>GetPipelineState</code> action. It is used to validate that the approval request corresponding to this token is still valid.</p><important>
+    /// <p>For a pipeline where the execution mode is set to PARALLEL, the token required to approve/reject approval request as detailed above is not available. Instead, use the <code>externalExecutionId</code> from the <code>GetPipelineState</code> action as the token in the approval request.</p>
+    /// </important>
     /// This field is required.
     pub fn token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the <code>GetPipelineState</code> action. It is used to validate that the approval request corresponding to this token is still valid.</p>
+    /// <p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the <code>GetPipelineState</code> action. It is used to validate that the approval request corresponding to this token is still valid.</p><important>
+    /// <p>For a pipeline where the execution mode is set to PARALLEL, the token required to approve/reject approval request as detailed above is not available. Instead, use the <code>externalExecutionId</code> from the <code>GetPipelineState</code> action as the token in the approval request.</p>
+    /// </important>
     pub fn set_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.token = input;
         self
     }
-    /// <p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the <code>GetPipelineState</code> action. It is used to validate that the approval request corresponding to this token is still valid.</p>
+    /// <p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the <code>GetPipelineState</code> action. It is used to validate that the approval request corresponding to this token is still valid.</p><important>
+    /// <p>For a pipeline where the execution mode is set to PARALLEL, the token required to approve/reject approval request as detailed above is not available. Instead, use the <code>externalExecutionId</code> from the <code>GetPipelineState</code> action as the token in the approval request.</p>
+    /// </important>
     pub fn get_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.token
     }

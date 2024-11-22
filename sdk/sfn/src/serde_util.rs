@@ -519,6 +519,15 @@ pub(crate) fn activity_scheduled_event_details_correct_errors(
     builder
 }
 
+pub(crate) fn evaluation_failed_event_details_correct_errors(
+    mut builder: crate::types::builders::EvaluationFailedEventDetailsBuilder,
+) -> crate::types::builders::EvaluationFailedEventDetailsBuilder {
+    if builder.state.is_none() {
+        builder.state = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn lambda_function_scheduled_event_details_correct_errors(
     mut builder: crate::types::builders::LambdaFunctionScheduledEventDetailsBuilder,
 ) -> crate::types::builders::LambdaFunctionScheduledEventDetailsBuilder {

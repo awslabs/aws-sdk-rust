@@ -256,6 +256,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateUserPoo
 pub enum UpdateUserPoolError {
     /// <p>This exception is thrown if two or more modifications are happening concurrently.</p>
     ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
+    /// <p>This exception is thrown when a feature you attempted to configure isn't available in your current feature plan.</p>
+    FeatureUnavailableInTierException(crate::types::error::FeatureUnavailableInTierException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::types::error::InternalErrorException),
     /// <p>This exception is thrown when Amazon Cognito isn't allowed to use your email identity. HTTP status code: 400.</p>
@@ -270,6 +272,8 @@ pub enum UpdateUserPoolError {
     NotAuthorizedException(crate::types::error::NotAuthorizedException),
     /// <p>This exception is thrown when the Amazon Cognito service can't find the requested resource.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
+    /// <p>This exception is thrown when you've attempted to change your feature plan but the operation isn't permitted.</p>
+    TierChangeNotAllowedException(crate::types::error::TierChangeNotAllowedException),
     /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::types::error::TooManyRequestsException),
     /// <p>This exception is thrown when you're trying to modify a user pool while a user import job is in progress for that pool.</p>
@@ -310,6 +314,7 @@ impl UpdateUserPoolError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::ConcurrentModificationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::FeatureUnavailableInTierException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalErrorException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidEmailRoleAccessPolicyException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -317,6 +322,7 @@ impl UpdateUserPoolError {
             Self::InvalidSmsRoleTrustRelationshipException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::NotAuthorizedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TierChangeNotAllowedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::TooManyRequestsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::UserImportInProgressException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::UserPoolTaggingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -326,6 +332,10 @@ impl UpdateUserPoolError {
     /// Returns `true` if the error kind is `UpdateUserPoolError::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(self, Self::ConcurrentModificationException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateUserPoolError::FeatureUnavailableInTierException`.
+    pub fn is_feature_unavailable_in_tier_exception(&self) -> bool {
+        matches!(self, Self::FeatureUnavailableInTierException(_))
     }
     /// Returns `true` if the error kind is `UpdateUserPoolError::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
@@ -355,6 +365,10 @@ impl UpdateUserPoolError {
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(self, Self::ResourceNotFoundException(_))
     }
+    /// Returns `true` if the error kind is `UpdateUserPoolError::TierChangeNotAllowedException`.
+    pub fn is_tier_change_not_allowed_exception(&self) -> bool {
+        matches!(self, Self::TierChangeNotAllowedException(_))
+    }
     /// Returns `true` if the error kind is `UpdateUserPoolError::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(self, Self::TooManyRequestsException(_))
@@ -372,6 +386,7 @@ impl ::std::error::Error for UpdateUserPoolError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::ConcurrentModificationException(_inner) => ::std::option::Option::Some(_inner),
+            Self::FeatureUnavailableInTierException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalErrorException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidEmailRoleAccessPolicyException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
@@ -379,6 +394,7 @@ impl ::std::error::Error for UpdateUserPoolError {
             Self::InvalidSmsRoleTrustRelationshipException(_inner) => ::std::option::Option::Some(_inner),
             Self::NotAuthorizedException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
+            Self::TierChangeNotAllowedException(_inner) => ::std::option::Option::Some(_inner),
             Self::TooManyRequestsException(_inner) => ::std::option::Option::Some(_inner),
             Self::UserImportInProgressException(_inner) => ::std::option::Option::Some(_inner),
             Self::UserPoolTaggingException(_inner) => ::std::option::Option::Some(_inner),
@@ -390,6 +406,7 @@ impl ::std::fmt::Display for UpdateUserPoolError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            Self::FeatureUnavailableInTierException(_inner) => _inner.fmt(f),
             Self::InternalErrorException(_inner) => _inner.fmt(f),
             Self::InvalidEmailRoleAccessPolicyException(_inner) => _inner.fmt(f),
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
@@ -397,6 +414,7 @@ impl ::std::fmt::Display for UpdateUserPoolError {
             Self::InvalidSmsRoleTrustRelationshipException(_inner) => _inner.fmt(f),
             Self::NotAuthorizedException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            Self::TierChangeNotAllowedException(_inner) => _inner.fmt(f),
             Self::TooManyRequestsException(_inner) => _inner.fmt(f),
             Self::UserImportInProgressException(_inner) => _inner.fmt(f),
             Self::UserPoolTaggingException(_inner) => _inner.fmt(f),
@@ -422,6 +440,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateUserPoo
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::ConcurrentModificationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::FeatureUnavailableInTierException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalErrorException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidEmailRoleAccessPolicyException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
@@ -429,6 +448,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateUserPoo
             Self::InvalidSmsRoleTrustRelationshipException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::NotAuthorizedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::TierChangeNotAllowedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TooManyRequestsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UserImportInProgressException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UserPoolTaggingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

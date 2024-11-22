@@ -42,6 +42,9 @@ pub fn ser_gauge_chart_visual(
         }
         array_10.finish();
     }
+    if let Some(var_13) = &input.visual_content_alt_text {
+        object.key("VisualContentAltText").string(var_13.as_str());
+    }
     Ok(())
 }
 
@@ -90,6 +93,13 @@ where
                             builder = builder.set_actions(crate::protocol_serde::shape_visual_custom_action_list::de_visual_custom_action_list(
                                 tokens,
                             )?);
+                        }
+                        "VisualContentAltText" => {
+                            builder = builder.set_visual_content_alt_text(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

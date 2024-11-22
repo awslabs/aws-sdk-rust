@@ -10,6 +10,8 @@ pub enum ReferenceSummary {
     Date(crate::types::DateReference),
     /// <p>Information about a reference when the <code>referenceType</code> is <code>EMAIL</code>. Otherwise, null.</p>
     Email(crate::types::EmailReference),
+    /// <p></p>
+    EmailMessage(crate::types::EmailMessageReference),
     /// <p>Information about a reference when the <code>referenceType</code> is <code>NUMBER</code>. Otherwise, null.</p>
     Number(crate::types::NumberReference),
     /// <p>Information about a reference when the <code>referenceType</code> is <code>STRING</code>. Otherwise, null.</p>
@@ -65,6 +67,19 @@ impl ReferenceSummary {
     /// Returns true if this is a [`Email`](crate::types::ReferenceSummary::Email).
     pub fn is_email(&self) -> bool {
         self.as_email().is_ok()
+    }
+    /// Tries to convert the enum instance into [`EmailMessage`](crate::types::ReferenceSummary::EmailMessage), extracting the inner [`EmailMessageReference`](crate::types::EmailMessageReference).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_email_message(&self) -> ::std::result::Result<&crate::types::EmailMessageReference, &Self> {
+        if let ReferenceSummary::EmailMessage(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`EmailMessage`](crate::types::ReferenceSummary::EmailMessage).
+    pub fn is_email_message(&self) -> bool {
+        self.as_email_message().is_ok()
     }
     /// Tries to convert the enum instance into [`Number`](crate::types::ReferenceSummary::Number), extracting the inner [`NumberReference`](crate::types::NumberReference).
     /// Returns `Err(&Self)` if it can't be converted.

@@ -17,6 +17,8 @@ pub struct CustomContentVisual {
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>,
     /// <p>The dataset that is used to create the custom content visual. You can't create a visual without a dataset.</p>
     pub data_set_identifier: ::std::string::String,
+    /// <p>The alt text for the visual.</p>
+    pub visual_content_alt_text: ::std::option::Option<::std::string::String>,
 }
 impl CustomContentVisual {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers.</p>
@@ -47,6 +49,10 @@ impl CustomContentVisual {
         use std::ops::Deref;
         self.data_set_identifier.deref()
     }
+    /// <p>The alt text for the visual.</p>
+    pub fn visual_content_alt_text(&self) -> ::std::option::Option<&str> {
+        self.visual_content_alt_text.as_deref()
+    }
 }
 impl CustomContentVisual {
     /// Creates a new builder-style object to manufacture [`CustomContentVisual`](crate::types::CustomContentVisual).
@@ -65,6 +71,7 @@ pub struct CustomContentVisualBuilder {
     pub(crate) chart_configuration: ::std::option::Option<crate::types::CustomContentConfiguration>,
     pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>,
     pub(crate) data_set_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) visual_content_alt_text: ::std::option::Option<::std::string::String>,
 }
 impl CustomContentVisualBuilder {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers.</p>
@@ -159,6 +166,20 @@ impl CustomContentVisualBuilder {
     pub fn get_data_set_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_set_identifier
     }
+    /// <p>The alt text for the visual.</p>
+    pub fn visual_content_alt_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.visual_content_alt_text = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The alt text for the visual.</p>
+    pub fn set_visual_content_alt_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.visual_content_alt_text = input;
+        self
+    }
+    /// <p>The alt text for the visual.</p>
+    pub fn get_visual_content_alt_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.visual_content_alt_text
+    }
     /// Consumes the builder and constructs a [`CustomContentVisual`](crate::types::CustomContentVisual).
     /// This method will fail if any of the following fields are not set:
     /// - [`visual_id`](crate::types::builders::CustomContentVisualBuilder::visual_id)
@@ -181,6 +202,7 @@ impl CustomContentVisualBuilder {
                     "data_set_identifier was not specified but it is required when building CustomContentVisual",
                 )
             })?,
+            visual_content_alt_text: self.visual_content_alt_text,
         })
     }
 }

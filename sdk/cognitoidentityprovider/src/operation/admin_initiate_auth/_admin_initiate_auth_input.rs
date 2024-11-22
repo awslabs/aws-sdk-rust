@@ -8,31 +8,56 @@ pub struct AdminInitiateAuthInput {
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The app client ID.</p>
     pub client_id: ::std::option::Option<::std::string::String>,
-    /// <p>The authentication flow for this call to run. The API action will depend on this value. For example:</p>
+    /// <p>The authentication flow that you want to initiate. The <code>AuthParameters</code> that you must submit are linked to the flow that you submit. For example:</p>
     /// <ul>
     /// <li>
-    /// <p><code>REFRESH_TOKEN_AUTH</code> will take in a valid refresh token and return new tokens.</p></li>
+    /// <p><code>USER_AUTH</code>: Request a preferred authentication type or review available authentication types. From the offered authentication types, select one in a challenge response and then authenticate with that method in an additional challenge response.</p></li>
     /// <li>
-    /// <p><code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the Secure Remote Password (SRP) protocol variables to be used for next challenge execution.</p></li>
+    /// <p><code>REFRESH_TOKEN_AUTH</code>: Receive new ID and access tokens when you pass a <code>REFRESH_TOKEN</code> parameter with a valid refresh token as the value.</p></li>
     /// <li>
-    /// <p><code>ADMIN_USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return the next challenge or tokens.</p></li>
+    /// <p><code>USER_SRP_AUTH</code>: Receive secure remote password (SRP) variables for the next challenge, <code>PASSWORD_VERIFIER</code>, when you pass <code>USERNAME</code> and <code>SRP_A</code> parameters..</p></li>
+    /// <li>
+    /// <p><code>ADMIN_USER_PASSWORD_AUTH</code>: Receive new tokens or the next challenge, for example <code>SOFTWARE_TOKEN_MFA</code>, when you pass <code>USERNAME</code> and <code>PASSWORD</code> parameters.</p></li>
     /// </ul>
-    /// <p>Valid values include:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password (SRP) protocol.</p></li>
-    /// <li>
-    /// <p><code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication flow for refreshing the access token and ID token by supplying a valid refresh token.</p></li>
-    /// <li>
-    /// <p><code>CUSTOM_AUTH</code>: Custom authentication flow.</p></li>
-    /// <li>
-    /// <p><code>ADMIN_NO_SRP_AUTH</code>: Non-SRP authentication flow; you can pass in the USERNAME and PASSWORD directly if the flow is enabled for calling the app client.</p></li>
-    /// <li>
-    /// <p><code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password authentication. This replaces the <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this flow, Amazon Cognito receives the password in the request instead of using the SRP process to verify passwords.</p></li>
-    /// </ul>
+    /// <p>Valid values include the following:</p>
+    /// <dl>
+    /// <dt>
+    /// USER_AUTH
+    /// </dt>
+    /// <dd>
+    /// <p>The entry point for sign-in with passwords, one-time passwords, biometric devices, and security keys.</p>
+    /// </dd>
+    /// <dt>
+    /// USER_SRP_AUTH
+    /// </dt>
+    /// <dd>
+    /// <p>Username-password authentication with the Secure Remote Password (SRP) protocol. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-authentication-flow.html#Using-SRP-password-verification-in-custom-authentication-flow">Use SRP password verification in custom authentication flow</a>.</p>
+    /// </dd>
+    /// <dt>
+    /// REFRESH_TOKEN_AUTH and REFRESH_TOKEN
+    /// </dt>
+    /// <dd>
+    /// <p>Provide a valid refresh token and receive new ID and access tokens. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-using-the-refresh-token.html">Using the refresh token</a>.</p>
+    /// </dd>
+    /// <dt>
+    /// CUSTOM_AUTH
+    /// </dt>
+    /// <dd>
+    /// <p>Custom authentication with Lambda triggers. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-challenge.html">Custom authentication challenge Lambda triggers</a>.</p>
+    /// </dd>
+    /// <dt>
+    /// ADMIN_USER_PASSWORD_AUTH
+    /// </dt>
+    /// <dd>
+    /// <p>Username-password authentication with the password sent directly in the request. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-authentication-flow.html#Built-in-authentication-flow-and-challenges">Admin authentication flow</a>.</p>
+    /// </dd>
+    /// </dl>
+    /// <p><code>USER_PASSWORD_AUTH</code> is a flow type of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a> and isn't valid for AdminInitiateAuth.</p>
     pub auth_flow: ::std::option::Option<crate::types::AuthFlowType>,
     /// <p>The authentication parameters. These are inputs corresponding to the <code>AuthFlow</code> that you're invoking. The required values depend on the value of <code>AuthFlow</code>:</p>
     /// <ul>
+    /// <li>
+    /// <p>For <code>USER_AUTH</code>: <code>USERNAME</code> (required), <code>PREFERRED_CHALLENGE</code>. If you don't provide a value for <code>PREFERRED_CHALLENGE</code>, Amazon Cognito responds with the <code>AvailableChallenges</code> parameter that specifies the available sign-in methods.</p></li>
     /// <li>
     /// <p>For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SRP_A</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p></li>
     /// <li>
@@ -67,6 +92,10 @@ pub struct AdminInitiateAuthInput {
     /// <p>Create auth challenge</p></li>
     /// <li>
     /// <p>Define auth challenge</p></li>
+    /// <li>
+    /// <p>Custom email sender</p></li>
+    /// <li>
+    /// <p>Custom SMS sender</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html"> Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p><note>
     /// <p>When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:</p>
@@ -84,6 +113,8 @@ pub struct AdminInitiateAuthInput {
     pub analytics_metadata: ::std::option::Option<crate::types::AnalyticsMetadataType>,
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
     pub context_data: ::std::option::Option<crate::types::ContextDataType>,
+    /// <p>The optional session ID from a <code>ConfirmSignUp</code> API request. You can sign in a user directly from the sign-up process with the <code>USER_AUTH</code> authentication flow.</p>
+    pub session: ::std::option::Option<::std::string::String>,
 }
 impl AdminInitiateAuthInput {
     /// <p>The ID of the Amazon Cognito user pool.</p>
@@ -94,33 +125,58 @@ impl AdminInitiateAuthInput {
     pub fn client_id(&self) -> ::std::option::Option<&str> {
         self.client_id.as_deref()
     }
-    /// <p>The authentication flow for this call to run. The API action will depend on this value. For example:</p>
+    /// <p>The authentication flow that you want to initiate. The <code>AuthParameters</code> that you must submit are linked to the flow that you submit. For example:</p>
     /// <ul>
     /// <li>
-    /// <p><code>REFRESH_TOKEN_AUTH</code> will take in a valid refresh token and return new tokens.</p></li>
+    /// <p><code>USER_AUTH</code>: Request a preferred authentication type or review available authentication types. From the offered authentication types, select one in a challenge response and then authenticate with that method in an additional challenge response.</p></li>
     /// <li>
-    /// <p><code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the Secure Remote Password (SRP) protocol variables to be used for next challenge execution.</p></li>
+    /// <p><code>REFRESH_TOKEN_AUTH</code>: Receive new ID and access tokens when you pass a <code>REFRESH_TOKEN</code> parameter with a valid refresh token as the value.</p></li>
     /// <li>
-    /// <p><code>ADMIN_USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return the next challenge or tokens.</p></li>
+    /// <p><code>USER_SRP_AUTH</code>: Receive secure remote password (SRP) variables for the next challenge, <code>PASSWORD_VERIFIER</code>, when you pass <code>USERNAME</code> and <code>SRP_A</code> parameters..</p></li>
+    /// <li>
+    /// <p><code>ADMIN_USER_PASSWORD_AUTH</code>: Receive new tokens or the next challenge, for example <code>SOFTWARE_TOKEN_MFA</code>, when you pass <code>USERNAME</code> and <code>PASSWORD</code> parameters.</p></li>
     /// </ul>
-    /// <p>Valid values include:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password (SRP) protocol.</p></li>
-    /// <li>
-    /// <p><code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication flow for refreshing the access token and ID token by supplying a valid refresh token.</p></li>
-    /// <li>
-    /// <p><code>CUSTOM_AUTH</code>: Custom authentication flow.</p></li>
-    /// <li>
-    /// <p><code>ADMIN_NO_SRP_AUTH</code>: Non-SRP authentication flow; you can pass in the USERNAME and PASSWORD directly if the flow is enabled for calling the app client.</p></li>
-    /// <li>
-    /// <p><code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password authentication. This replaces the <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this flow, Amazon Cognito receives the password in the request instead of using the SRP process to verify passwords.</p></li>
-    /// </ul>
+    /// <p>Valid values include the following:</p>
+    /// <dl>
+    /// <dt>
+    /// USER_AUTH
+    /// </dt>
+    /// <dd>
+    /// <p>The entry point for sign-in with passwords, one-time passwords, biometric devices, and security keys.</p>
+    /// </dd>
+    /// <dt>
+    /// USER_SRP_AUTH
+    /// </dt>
+    /// <dd>
+    /// <p>Username-password authentication with the Secure Remote Password (SRP) protocol. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-authentication-flow.html#Using-SRP-password-verification-in-custom-authentication-flow">Use SRP password verification in custom authentication flow</a>.</p>
+    /// </dd>
+    /// <dt>
+    /// REFRESH_TOKEN_AUTH and REFRESH_TOKEN
+    /// </dt>
+    /// <dd>
+    /// <p>Provide a valid refresh token and receive new ID and access tokens. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-using-the-refresh-token.html">Using the refresh token</a>.</p>
+    /// </dd>
+    /// <dt>
+    /// CUSTOM_AUTH
+    /// </dt>
+    /// <dd>
+    /// <p>Custom authentication with Lambda triggers. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-challenge.html">Custom authentication challenge Lambda triggers</a>.</p>
+    /// </dd>
+    /// <dt>
+    /// ADMIN_USER_PASSWORD_AUTH
+    /// </dt>
+    /// <dd>
+    /// <p>Username-password authentication with the password sent directly in the request. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-authentication-flow.html#Built-in-authentication-flow-and-challenges">Admin authentication flow</a>.</p>
+    /// </dd>
+    /// </dl>
+    /// <p><code>USER_PASSWORD_AUTH</code> is a flow type of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a> and isn't valid for AdminInitiateAuth.</p>
     pub fn auth_flow(&self) -> ::std::option::Option<&crate::types::AuthFlowType> {
         self.auth_flow.as_ref()
     }
     /// <p>The authentication parameters. These are inputs corresponding to the <code>AuthFlow</code> that you're invoking. The required values depend on the value of <code>AuthFlow</code>:</p>
     /// <ul>
+    /// <li>
+    /// <p>For <code>USER_AUTH</code>: <code>USERNAME</code> (required), <code>PREFERRED_CHALLENGE</code>. If you don't provide a value for <code>PREFERRED_CHALLENGE</code>, Amazon Cognito responds with the <code>AvailableChallenges</code> parameter that specifies the available sign-in methods.</p></li>
     /// <li>
     /// <p>For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SRP_A</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p></li>
     /// <li>
@@ -157,6 +213,10 @@ impl AdminInitiateAuthInput {
     /// <p>Create auth challenge</p></li>
     /// <li>
     /// <p>Define auth challenge</p></li>
+    /// <li>
+    /// <p>Custom email sender</p></li>
+    /// <li>
+    /// <p>Custom SMS sender</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html"> Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p><note>
     /// <p>When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:</p>
@@ -180,6 +240,10 @@ impl AdminInitiateAuthInput {
     pub fn context_data(&self) -> ::std::option::Option<&crate::types::ContextDataType> {
         self.context_data.as_ref()
     }
+    /// <p>The optional session ID from a <code>ConfirmSignUp</code> API request. You can sign in a user directly from the sign-up process with the <code>USER_AUTH</code> authentication flow.</p>
+    pub fn session(&self) -> ::std::option::Option<&str> {
+        self.session.as_deref()
+    }
 }
 impl ::std::fmt::Debug for AdminInitiateAuthInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -191,6 +255,7 @@ impl ::std::fmt::Debug for AdminInitiateAuthInput {
         formatter.field("client_metadata", &self.client_metadata);
         formatter.field("analytics_metadata", &self.analytics_metadata);
         formatter.field("context_data", &self.context_data);
+        formatter.field("session", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -212,6 +277,7 @@ pub struct AdminInitiateAuthInputBuilder {
     pub(crate) client_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) analytics_metadata: ::std::option::Option<crate::types::AnalyticsMetadataType>,
     pub(crate) context_data: ::std::option::Option<crate::types::ContextDataType>,
+    pub(crate) session: ::std::option::Option<::std::string::String>,
 }
 impl AdminInitiateAuthInputBuilder {
     /// <p>The ID of the Amazon Cognito user pool.</p>
@@ -244,81 +310,150 @@ impl AdminInitiateAuthInputBuilder {
     pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_id
     }
-    /// <p>The authentication flow for this call to run. The API action will depend on this value. For example:</p>
+    /// <p>The authentication flow that you want to initiate. The <code>AuthParameters</code> that you must submit are linked to the flow that you submit. For example:</p>
     /// <ul>
     /// <li>
-    /// <p><code>REFRESH_TOKEN_AUTH</code> will take in a valid refresh token and return new tokens.</p></li>
+    /// <p><code>USER_AUTH</code>: Request a preferred authentication type or review available authentication types. From the offered authentication types, select one in a challenge response and then authenticate with that method in an additional challenge response.</p></li>
     /// <li>
-    /// <p><code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the Secure Remote Password (SRP) protocol variables to be used for next challenge execution.</p></li>
+    /// <p><code>REFRESH_TOKEN_AUTH</code>: Receive new ID and access tokens when you pass a <code>REFRESH_TOKEN</code> parameter with a valid refresh token as the value.</p></li>
     /// <li>
-    /// <p><code>ADMIN_USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return the next challenge or tokens.</p></li>
+    /// <p><code>USER_SRP_AUTH</code>: Receive secure remote password (SRP) variables for the next challenge, <code>PASSWORD_VERIFIER</code>, when you pass <code>USERNAME</code> and <code>SRP_A</code> parameters..</p></li>
+    /// <li>
+    /// <p><code>ADMIN_USER_PASSWORD_AUTH</code>: Receive new tokens or the next challenge, for example <code>SOFTWARE_TOKEN_MFA</code>, when you pass <code>USERNAME</code> and <code>PASSWORD</code> parameters.</p></li>
     /// </ul>
-    /// <p>Valid values include:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password (SRP) protocol.</p></li>
-    /// <li>
-    /// <p><code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication flow for refreshing the access token and ID token by supplying a valid refresh token.</p></li>
-    /// <li>
-    /// <p><code>CUSTOM_AUTH</code>: Custom authentication flow.</p></li>
-    /// <li>
-    /// <p><code>ADMIN_NO_SRP_AUTH</code>: Non-SRP authentication flow; you can pass in the USERNAME and PASSWORD directly if the flow is enabled for calling the app client.</p></li>
-    /// <li>
-    /// <p><code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password authentication. This replaces the <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this flow, Amazon Cognito receives the password in the request instead of using the SRP process to verify passwords.</p></li>
-    /// </ul>
+    /// <p>Valid values include the following:</p>
+    /// <dl>
+    /// <dt>
+    /// USER_AUTH
+    /// </dt>
+    /// <dd>
+    /// <p>The entry point for sign-in with passwords, one-time passwords, biometric devices, and security keys.</p>
+    /// </dd>
+    /// <dt>
+    /// USER_SRP_AUTH
+    /// </dt>
+    /// <dd>
+    /// <p>Username-password authentication with the Secure Remote Password (SRP) protocol. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-authentication-flow.html#Using-SRP-password-verification-in-custom-authentication-flow">Use SRP password verification in custom authentication flow</a>.</p>
+    /// </dd>
+    /// <dt>
+    /// REFRESH_TOKEN_AUTH and REFRESH_TOKEN
+    /// </dt>
+    /// <dd>
+    /// <p>Provide a valid refresh token and receive new ID and access tokens. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-using-the-refresh-token.html">Using the refresh token</a>.</p>
+    /// </dd>
+    /// <dt>
+    /// CUSTOM_AUTH
+    /// </dt>
+    /// <dd>
+    /// <p>Custom authentication with Lambda triggers. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-challenge.html">Custom authentication challenge Lambda triggers</a>.</p>
+    /// </dd>
+    /// <dt>
+    /// ADMIN_USER_PASSWORD_AUTH
+    /// </dt>
+    /// <dd>
+    /// <p>Username-password authentication with the password sent directly in the request. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-authentication-flow.html#Built-in-authentication-flow-and-challenges">Admin authentication flow</a>.</p>
+    /// </dd>
+    /// </dl>
+    /// <p><code>USER_PASSWORD_AUTH</code> is a flow type of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a> and isn't valid for AdminInitiateAuth.</p>
     /// This field is required.
     pub fn auth_flow(mut self, input: crate::types::AuthFlowType) -> Self {
         self.auth_flow = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The authentication flow for this call to run. The API action will depend on this value. For example:</p>
+    /// <p>The authentication flow that you want to initiate. The <code>AuthParameters</code> that you must submit are linked to the flow that you submit. For example:</p>
     /// <ul>
     /// <li>
-    /// <p><code>REFRESH_TOKEN_AUTH</code> will take in a valid refresh token and return new tokens.</p></li>
+    /// <p><code>USER_AUTH</code>: Request a preferred authentication type or review available authentication types. From the offered authentication types, select one in a challenge response and then authenticate with that method in an additional challenge response.</p></li>
     /// <li>
-    /// <p><code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the Secure Remote Password (SRP) protocol variables to be used for next challenge execution.</p></li>
+    /// <p><code>REFRESH_TOKEN_AUTH</code>: Receive new ID and access tokens when you pass a <code>REFRESH_TOKEN</code> parameter with a valid refresh token as the value.</p></li>
     /// <li>
-    /// <p><code>ADMIN_USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return the next challenge or tokens.</p></li>
+    /// <p><code>USER_SRP_AUTH</code>: Receive secure remote password (SRP) variables for the next challenge, <code>PASSWORD_VERIFIER</code>, when you pass <code>USERNAME</code> and <code>SRP_A</code> parameters..</p></li>
+    /// <li>
+    /// <p><code>ADMIN_USER_PASSWORD_AUTH</code>: Receive new tokens or the next challenge, for example <code>SOFTWARE_TOKEN_MFA</code>, when you pass <code>USERNAME</code> and <code>PASSWORD</code> parameters.</p></li>
     /// </ul>
-    /// <p>Valid values include:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password (SRP) protocol.</p></li>
-    /// <li>
-    /// <p><code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication flow for refreshing the access token and ID token by supplying a valid refresh token.</p></li>
-    /// <li>
-    /// <p><code>CUSTOM_AUTH</code>: Custom authentication flow.</p></li>
-    /// <li>
-    /// <p><code>ADMIN_NO_SRP_AUTH</code>: Non-SRP authentication flow; you can pass in the USERNAME and PASSWORD directly if the flow is enabled for calling the app client.</p></li>
-    /// <li>
-    /// <p><code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password authentication. This replaces the <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this flow, Amazon Cognito receives the password in the request instead of using the SRP process to verify passwords.</p></li>
-    /// </ul>
+    /// <p>Valid values include the following:</p>
+    /// <dl>
+    /// <dt>
+    /// USER_AUTH
+    /// </dt>
+    /// <dd>
+    /// <p>The entry point for sign-in with passwords, one-time passwords, biometric devices, and security keys.</p>
+    /// </dd>
+    /// <dt>
+    /// USER_SRP_AUTH
+    /// </dt>
+    /// <dd>
+    /// <p>Username-password authentication with the Secure Remote Password (SRP) protocol. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-authentication-flow.html#Using-SRP-password-verification-in-custom-authentication-flow">Use SRP password verification in custom authentication flow</a>.</p>
+    /// </dd>
+    /// <dt>
+    /// REFRESH_TOKEN_AUTH and REFRESH_TOKEN
+    /// </dt>
+    /// <dd>
+    /// <p>Provide a valid refresh token and receive new ID and access tokens. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-using-the-refresh-token.html">Using the refresh token</a>.</p>
+    /// </dd>
+    /// <dt>
+    /// CUSTOM_AUTH
+    /// </dt>
+    /// <dd>
+    /// <p>Custom authentication with Lambda triggers. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-challenge.html">Custom authentication challenge Lambda triggers</a>.</p>
+    /// </dd>
+    /// <dt>
+    /// ADMIN_USER_PASSWORD_AUTH
+    /// </dt>
+    /// <dd>
+    /// <p>Username-password authentication with the password sent directly in the request. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-authentication-flow.html#Built-in-authentication-flow-and-challenges">Admin authentication flow</a>.</p>
+    /// </dd>
+    /// </dl>
+    /// <p><code>USER_PASSWORD_AUTH</code> is a flow type of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a> and isn't valid for AdminInitiateAuth.</p>
     pub fn set_auth_flow(mut self, input: ::std::option::Option<crate::types::AuthFlowType>) -> Self {
         self.auth_flow = input;
         self
     }
-    /// <p>The authentication flow for this call to run. The API action will depend on this value. For example:</p>
+    /// <p>The authentication flow that you want to initiate. The <code>AuthParameters</code> that you must submit are linked to the flow that you submit. For example:</p>
     /// <ul>
     /// <li>
-    /// <p><code>REFRESH_TOKEN_AUTH</code> will take in a valid refresh token and return new tokens.</p></li>
+    /// <p><code>USER_AUTH</code>: Request a preferred authentication type or review available authentication types. From the offered authentication types, select one in a challenge response and then authenticate with that method in an additional challenge response.</p></li>
     /// <li>
-    /// <p><code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the Secure Remote Password (SRP) protocol variables to be used for next challenge execution.</p></li>
+    /// <p><code>REFRESH_TOKEN_AUTH</code>: Receive new ID and access tokens when you pass a <code>REFRESH_TOKEN</code> parameter with a valid refresh token as the value.</p></li>
     /// <li>
-    /// <p><code>ADMIN_USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return the next challenge or tokens.</p></li>
+    /// <p><code>USER_SRP_AUTH</code>: Receive secure remote password (SRP) variables for the next challenge, <code>PASSWORD_VERIFIER</code>, when you pass <code>USERNAME</code> and <code>SRP_A</code> parameters..</p></li>
+    /// <li>
+    /// <p><code>ADMIN_USER_PASSWORD_AUTH</code>: Receive new tokens or the next challenge, for example <code>SOFTWARE_TOKEN_MFA</code>, when you pass <code>USERNAME</code> and <code>PASSWORD</code> parameters.</p></li>
     /// </ul>
-    /// <p>Valid values include:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password (SRP) protocol.</p></li>
-    /// <li>
-    /// <p><code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication flow for refreshing the access token and ID token by supplying a valid refresh token.</p></li>
-    /// <li>
-    /// <p><code>CUSTOM_AUTH</code>: Custom authentication flow.</p></li>
-    /// <li>
-    /// <p><code>ADMIN_NO_SRP_AUTH</code>: Non-SRP authentication flow; you can pass in the USERNAME and PASSWORD directly if the flow is enabled for calling the app client.</p></li>
-    /// <li>
-    /// <p><code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password authentication. This replaces the <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this flow, Amazon Cognito receives the password in the request instead of using the SRP process to verify passwords.</p></li>
-    /// </ul>
+    /// <p>Valid values include the following:</p>
+    /// <dl>
+    /// <dt>
+    /// USER_AUTH
+    /// </dt>
+    /// <dd>
+    /// <p>The entry point for sign-in with passwords, one-time passwords, biometric devices, and security keys.</p>
+    /// </dd>
+    /// <dt>
+    /// USER_SRP_AUTH
+    /// </dt>
+    /// <dd>
+    /// <p>Username-password authentication with the Secure Remote Password (SRP) protocol. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-authentication-flow.html#Using-SRP-password-verification-in-custom-authentication-flow">Use SRP password verification in custom authentication flow</a>.</p>
+    /// </dd>
+    /// <dt>
+    /// REFRESH_TOKEN_AUTH and REFRESH_TOKEN
+    /// </dt>
+    /// <dd>
+    /// <p>Provide a valid refresh token and receive new ID and access tokens. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-using-the-refresh-token.html">Using the refresh token</a>.</p>
+    /// </dd>
+    /// <dt>
+    /// CUSTOM_AUTH
+    /// </dt>
+    /// <dd>
+    /// <p>Custom authentication with Lambda triggers. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-challenge.html">Custom authentication challenge Lambda triggers</a>.</p>
+    /// </dd>
+    /// <dt>
+    /// ADMIN_USER_PASSWORD_AUTH
+    /// </dt>
+    /// <dd>
+    /// <p>Username-password authentication with the password sent directly in the request. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-authentication-flow.html#Built-in-authentication-flow-and-challenges">Admin authentication flow</a>.</p>
+    /// </dd>
+    /// </dl>
+    /// <p><code>USER_PASSWORD_AUTH</code> is a flow type of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a> and isn't valid for AdminInitiateAuth.</p>
     pub fn get_auth_flow(&self) -> &::std::option::Option<crate::types::AuthFlowType> {
         &self.auth_flow
     }
@@ -328,6 +463,8 @@ impl AdminInitiateAuthInputBuilder {
     ///
     /// <p>The authentication parameters. These are inputs corresponding to the <code>AuthFlow</code> that you're invoking. The required values depend on the value of <code>AuthFlow</code>:</p>
     /// <ul>
+    /// <li>
+    /// <p>For <code>USER_AUTH</code>: <code>USERNAME</code> (required), <code>PREFERRED_CHALLENGE</code>. If you don't provide a value for <code>PREFERRED_CHALLENGE</code>, Amazon Cognito responds with the <code>AvailableChallenges</code> parameter that specifies the available sign-in methods.</p></li>
     /// <li>
     /// <p>For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SRP_A</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p></li>
     /// <li>
@@ -351,6 +488,8 @@ impl AdminInitiateAuthInputBuilder {
     /// <p>The authentication parameters. These are inputs corresponding to the <code>AuthFlow</code> that you're invoking. The required values depend on the value of <code>AuthFlow</code>:</p>
     /// <ul>
     /// <li>
+    /// <p>For <code>USER_AUTH</code>: <code>USERNAME</code> (required), <code>PREFERRED_CHALLENGE</code>. If you don't provide a value for <code>PREFERRED_CHALLENGE</code>, Amazon Cognito responds with the <code>AvailableChallenges</code> parameter that specifies the available sign-in methods.</p></li>
+    /// <li>
     /// <p>For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SRP_A</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p></li>
     /// <li>
     /// <p>For <code>ADMIN_USER_PASSWORD_AUTH</code>: <code>USERNAME</code> (required), <code>PASSWORD</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p></li>
@@ -369,6 +508,8 @@ impl AdminInitiateAuthInputBuilder {
     }
     /// <p>The authentication parameters. These are inputs corresponding to the <code>AuthFlow</code> that you're invoking. The required values depend on the value of <code>AuthFlow</code>:</p>
     /// <ul>
+    /// <li>
+    /// <p>For <code>USER_AUTH</code>: <code>USERNAME</code> (required), <code>PREFERRED_CHALLENGE</code>. If you don't provide a value for <code>PREFERRED_CHALLENGE</code>, Amazon Cognito responds with the <code>AvailableChallenges</code> parameter that specifies the available sign-in methods.</p></li>
     /// <li>
     /// <p>For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SRP_A</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p></li>
     /// <li>
@@ -409,6 +550,10 @@ impl AdminInitiateAuthInputBuilder {
     /// <p>Create auth challenge</p></li>
     /// <li>
     /// <p>Define auth challenge</p></li>
+    /// <li>
+    /// <p>Custom email sender</p></li>
+    /// <li>
+    /// <p>Custom SMS sender</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html"> Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p><note>
     /// <p>When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:</p>
@@ -454,6 +599,10 @@ impl AdminInitiateAuthInputBuilder {
     /// <p>Create auth challenge</p></li>
     /// <li>
     /// <p>Define auth challenge</p></li>
+    /// <li>
+    /// <p>Custom email sender</p></li>
+    /// <li>
+    /// <p>Custom SMS sender</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html"> Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p><note>
     /// <p>When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:</p>
@@ -496,6 +645,10 @@ impl AdminInitiateAuthInputBuilder {
     /// <p>Create auth challenge</p></li>
     /// <li>
     /// <p>Define auth challenge</p></li>
+    /// <li>
+    /// <p>Custom email sender</p></li>
+    /// <li>
+    /// <p>Custom SMS sender</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html"> Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p><note>
     /// <p>When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:</p>
@@ -539,6 +692,20 @@ impl AdminInitiateAuthInputBuilder {
     pub fn get_context_data(&self) -> &::std::option::Option<crate::types::ContextDataType> {
         &self.context_data
     }
+    /// <p>The optional session ID from a <code>ConfirmSignUp</code> API request. You can sign in a user directly from the sign-up process with the <code>USER_AUTH</code> authentication flow.</p>
+    pub fn session(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.session = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The optional session ID from a <code>ConfirmSignUp</code> API request. You can sign in a user directly from the sign-up process with the <code>USER_AUTH</code> authentication flow.</p>
+    pub fn set_session(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.session = input;
+        self
+    }
+    /// <p>The optional session ID from a <code>ConfirmSignUp</code> API request. You can sign in a user directly from the sign-up process with the <code>USER_AUTH</code> authentication flow.</p>
+    pub fn get_session(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session
+    }
     /// Consumes the builder and constructs a [`AdminInitiateAuthInput`](crate::operation::admin_initiate_auth::AdminInitiateAuthInput).
     pub fn build(
         self,
@@ -551,6 +718,7 @@ impl AdminInitiateAuthInputBuilder {
             client_metadata: self.client_metadata,
             analytics_metadata: self.analytics_metadata,
             context_data: self.context_data,
+            session: self.session,
         })
     }
 }
@@ -564,6 +732,7 @@ impl ::std::fmt::Debug for AdminInitiateAuthInputBuilder {
         formatter.field("client_metadata", &self.client_metadata);
         formatter.field("analytics_metadata", &self.analytics_metadata);
         formatter.field("context_data", &self.context_data);
+        formatter.field("session", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

@@ -22,5 +22,18 @@ pub fn ser_update_contact_input_input(
         }
         object_4.finish();
     }
+    if let Some(var_8) = &input.segment_attributes {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("SegmentAttributes").start_object();
+        for (key_10, value_11) in var_8 {
+            {
+                #[allow(unused_mut)]
+                let mut object_12 = object_9.key(key_10.as_str()).start_object();
+                crate::protocol_serde::shape_segment_attribute_value::ser_segment_attribute_value(&mut object_12, value_11)?;
+                object_12.finish();
+            }
+        }
+        object_9.finish();
+    }
     Ok(())
 }

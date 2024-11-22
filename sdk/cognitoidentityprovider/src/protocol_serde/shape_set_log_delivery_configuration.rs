@@ -20,6 +20,26 @@ pub fn de_set_log_delivery_configuration_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "FeatureUnavailableInTierException" => {
+            crate::operation::set_log_delivery_configuration::SetLogDeliveryConfigurationError::FeatureUnavailableInTierException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::FeatureUnavailableInTierExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_feature_unavailable_in_tier_exception::de_feature_unavailable_in_tier_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::set_log_delivery_configuration::SetLogDeliveryConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "InternalErrorException" => crate::operation::set_log_delivery_configuration::SetLogDeliveryConfigurationError::InternalErrorException({
             #[allow(unused_mut)]
             let mut tmp = {

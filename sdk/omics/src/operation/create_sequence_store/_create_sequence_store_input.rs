@@ -17,6 +17,10 @@ pub struct CreateSequenceStoreInput {
     pub fallback_location: ::std::option::Option<::std::string::String>,
     /// <p>The ETag algorithm family to use for ingested read sets.</p>
     pub e_tag_algorithm_family: ::std::option::Option<crate::types::ETagAlgorithmFamily>,
+    /// <p>The tags keys to propagate to the S3 objects associated with read sets in the sequence store.</p>
+    pub propagated_set_level_tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>S3 access configuration parameters</p>
+    pub s3_access_config: ::std::option::Option<crate::types::S3AccessConfig>,
 }
 impl CreateSequenceStoreInput {
     /// <p>A name for the store.</p>
@@ -47,6 +51,16 @@ impl CreateSequenceStoreInput {
     pub fn e_tag_algorithm_family(&self) -> ::std::option::Option<&crate::types::ETagAlgorithmFamily> {
         self.e_tag_algorithm_family.as_ref()
     }
+    /// <p>The tags keys to propagate to the S3 objects associated with read sets in the sequence store.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.propagated_set_level_tags.is_none()`.
+    pub fn propagated_set_level_tags(&self) -> &[::std::string::String] {
+        self.propagated_set_level_tags.as_deref().unwrap_or_default()
+    }
+    /// <p>S3 access configuration parameters</p>
+    pub fn s3_access_config(&self) -> ::std::option::Option<&crate::types::S3AccessConfig> {
+        self.s3_access_config.as_ref()
+    }
 }
 impl CreateSequenceStoreInput {
     /// Creates a new builder-style object to manufacture [`CreateSequenceStoreInput`](crate::operation::create_sequence_store::CreateSequenceStoreInput).
@@ -66,6 +80,8 @@ pub struct CreateSequenceStoreInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) fallback_location: ::std::option::Option<::std::string::String>,
     pub(crate) e_tag_algorithm_family: ::std::option::Option<crate::types::ETagAlgorithmFamily>,
+    pub(crate) propagated_set_level_tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) s3_access_config: ::std::option::Option<crate::types::S3AccessConfig>,
 }
 impl CreateSequenceStoreInputBuilder {
     /// <p>A name for the store.</p>
@@ -173,6 +189,40 @@ impl CreateSequenceStoreInputBuilder {
     pub fn get_e_tag_algorithm_family(&self) -> &::std::option::Option<crate::types::ETagAlgorithmFamily> {
         &self.e_tag_algorithm_family
     }
+    /// Appends an item to `propagated_set_level_tags`.
+    ///
+    /// To override the contents of this collection use [`set_propagated_set_level_tags`](Self::set_propagated_set_level_tags).
+    ///
+    /// <p>The tags keys to propagate to the S3 objects associated with read sets in the sequence store.</p>
+    pub fn propagated_set_level_tags(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.propagated_set_level_tags.unwrap_or_default();
+        v.push(input.into());
+        self.propagated_set_level_tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The tags keys to propagate to the S3 objects associated with read sets in the sequence store.</p>
+    pub fn set_propagated_set_level_tags(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.propagated_set_level_tags = input;
+        self
+    }
+    /// <p>The tags keys to propagate to the S3 objects associated with read sets in the sequence store.</p>
+    pub fn get_propagated_set_level_tags(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.propagated_set_level_tags
+    }
+    /// <p>S3 access configuration parameters</p>
+    pub fn s3_access_config(mut self, input: crate::types::S3AccessConfig) -> Self {
+        self.s3_access_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>S3 access configuration parameters</p>
+    pub fn set_s3_access_config(mut self, input: ::std::option::Option<crate::types::S3AccessConfig>) -> Self {
+        self.s3_access_config = input;
+        self
+    }
+    /// <p>S3 access configuration parameters</p>
+    pub fn get_s3_access_config(&self) -> &::std::option::Option<crate::types::S3AccessConfig> {
+        &self.s3_access_config
+    }
     /// Consumes the builder and constructs a [`CreateSequenceStoreInput`](crate::operation::create_sequence_store::CreateSequenceStoreInput).
     pub fn build(
         self,
@@ -186,6 +236,8 @@ impl CreateSequenceStoreInputBuilder {
             client_token: self.client_token,
             fallback_location: self.fallback_location,
             e_tag_algorithm_family: self.e_tag_algorithm_family,
+            propagated_set_level_tags: self.propagated_set_level_tags,
+            s3_access_config: self.s3_access_config,
         })
     }
 }

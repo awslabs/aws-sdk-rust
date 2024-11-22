@@ -5,6 +5,8 @@
 pub enum Error {
     /// <p>You do not have sufficient permissions to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
+    /// <p></p>
+    ConditionalOperationFailedException(crate::types::error::ConditionalOperationFailedException),
     /// <p>Operation cannot be performed at this time as there is a conflict with another operation or contact state.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>The flow has not been published.</p>
@@ -66,6 +68,7 @@ impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Error::AccessDeniedException(inner) => inner.fmt(f),
+            Error::ConditionalOperationFailedException(inner) => inner.fmt(f),
             Error::ConflictException(inner) => inner.fmt(f),
             Error::ContactFlowNotPublishedException(inner) => inner.fmt(f),
             Error::ContactNotFoundException(inner) => inner.fmt(f),
@@ -112,6 +115,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
             Self::AccessDeniedException(inner) => inner.meta(),
+            Self::ConditionalOperationFailedException(inner) => inner.meta(),
             Self::ConflictException(inner) => inner.meta(),
             Self::ContactFlowNotPublishedException(inner) => inner.meta(),
             Self::ContactNotFoundException(inner) => inner.meta(),
@@ -1055,6 +1059,36 @@ impl From<crate::operation::create_agent_status::CreateAgentStatusError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_contact::CreateContactError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_contact::CreateContactError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_contact::CreateContactError> for Error {
+    fn from(err: crate::operation::create_contact::CreateContactError) -> Self {
+        match err {
+            crate::operation::create_contact::CreateContactError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_contact::CreateContactError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_contact::CreateContactError::IdempotencyException(inner) => Error::IdempotencyException(inner),
+            crate::operation::create_contact::CreateContactError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::create_contact::CreateContactError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_contact::CreateContactError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::create_contact::CreateContactError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_contact::CreateContactError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_contact::CreateContactError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_contact::CreateContactError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_contact_flow::CreateContactFlowError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1188,6 +1222,49 @@ impl From<crate::operation::create_contact_flow_version::CreateContactFlowVersio
                 Error::ThrottlingException(inner)
             }
             crate::operation::create_contact_flow_version::CreateContactFlowVersionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_email_address::CreateEmailAddressError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_email_address::CreateEmailAddressError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_email_address::CreateEmailAddressError> for Error {
+    fn from(err: crate::operation::create_email_address::CreateEmailAddressError) -> Self {
+        match err {
+            crate::operation::create_email_address::CreateEmailAddressError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_email_address::CreateEmailAddressError::DuplicateResourceException(inner) => {
+                Error::DuplicateResourceException(inner)
+            }
+            crate::operation::create_email_address::CreateEmailAddressError::IdempotencyException(inner) => Error::IdempotencyException(inner),
+            crate::operation::create_email_address::CreateEmailAddressError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::create_email_address::CreateEmailAddressError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::create_email_address::CreateEmailAddressError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::create_email_address::CreateEmailAddressError::ResourceConflictException(inner) => {
+                Error::ResourceConflictException(inner)
+            }
+            crate::operation::create_email_address::CreateEmailAddressError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_email_address::CreateEmailAddressError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_email_address::CreateEmailAddressError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_email_address::CreateEmailAddressError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2136,6 +2213,42 @@ impl From<crate::operation::delete_contact_flow_module::DeleteContactFlowModuleE
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_email_address::DeleteEmailAddressError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_email_address::DeleteEmailAddressError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_email_address::DeleteEmailAddressError> for Error {
+    fn from(err: crate::operation::delete_email_address::DeleteEmailAddressError) -> Self {
+        match err {
+            crate::operation::delete_email_address::DeleteEmailAddressError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_email_address::DeleteEmailAddressError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::delete_email_address::DeleteEmailAddressError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::delete_email_address::DeleteEmailAddressError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::delete_email_address::DeleteEmailAddressError::ResourceConflictException(inner) => {
+                Error::ResourceConflictException(inner)
+            }
+            crate::operation::delete_email_address::DeleteEmailAddressError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_email_address::DeleteEmailAddressError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_email_address::DeleteEmailAddressError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_evaluation_form::DeleteEvaluationFormError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2977,6 +3090,41 @@ impl From<crate::operation::describe_contact_flow_module::DescribeContactFlowMod
                 Error::ThrottlingException(inner)
             }
             crate::operation::describe_contact_flow_module::DescribeContactFlowModuleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_email_address::DescribeEmailAddressError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_email_address::DescribeEmailAddressError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_email_address::DescribeEmailAddressError> for Error {
+    fn from(err: crate::operation::describe_email_address::DescribeEmailAddressError) -> Self {
+        match err {
+            crate::operation::describe_email_address::DescribeEmailAddressError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_email_address::DescribeEmailAddressError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::describe_email_address::DescribeEmailAddressError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::describe_email_address::DescribeEmailAddressError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::describe_email_address::DescribeEmailAddressError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_email_address::DescribeEmailAddressError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_email_address::DescribeEmailAddressError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -4649,6 +4797,42 @@ impl From<crate::operation::list_approved_origins::ListApprovedOriginsError> for
             }
             crate::operation::list_approved_origins::ListApprovedOriginsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_approved_origins::ListApprovedOriginsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_associated_contacts::ListAssociatedContactsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_associated_contacts::ListAssociatedContactsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_associated_contacts::ListAssociatedContactsError> for Error {
+    fn from(err: crate::operation::list_associated_contacts::ListAssociatedContactsError) -> Self {
+        match err {
+            crate::operation::list_associated_contacts::ListAssociatedContactsError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::list_associated_contacts::ListAssociatedContactsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_associated_contacts::ListAssociatedContactsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_associated_contacts::ListAssociatedContactsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_associated_contacts::ListAssociatedContactsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_associated_contacts::ListAssociatedContactsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -6498,6 +6682,41 @@ impl From<crate::operation::search_contacts::SearchContactsError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_email_addresses::SearchEmailAddressesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_email_addresses::SearchEmailAddressesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::search_email_addresses::SearchEmailAddressesError> for Error {
+    fn from(err: crate::operation::search_email_addresses::SearchEmailAddressesError) -> Self {
+        match err {
+            crate::operation::search_email_addresses::SearchEmailAddressesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::search_email_addresses::SearchEmailAddressesError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::search_email_addresses::SearchEmailAddressesError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::search_email_addresses::SearchEmailAddressesError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::search_email_addresses::SearchEmailAddressesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::search_email_addresses::SearchEmailAddressesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::search_email_addresses::SearchEmailAddressesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_hours_of_operations::SearchHoursOfOperationsError, R>>
     for Error
 where
@@ -6898,6 +7117,38 @@ impl From<crate::operation::send_chat_integration_event::SendChatIntegrationEven
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::send_outbound_email::SendOutboundEmailError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::send_outbound_email::SendOutboundEmailError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::send_outbound_email::SendOutboundEmailError> for Error {
+    fn from(err: crate::operation::send_outbound_email::SendOutboundEmailError) -> Self {
+        match err {
+            crate::operation::send_outbound_email::SendOutboundEmailError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::send_outbound_email::SendOutboundEmailError::IdempotencyException(inner) => Error::IdempotencyException(inner),
+            crate::operation::send_outbound_email::SendOutboundEmailError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::send_outbound_email::SendOutboundEmailError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::send_outbound_email::SendOutboundEmailError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::send_outbound_email::SendOutboundEmailError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::send_outbound_email::SendOutboundEmailError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::send_outbound_email::SendOutboundEmailError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_attached_file_upload::StartAttachedFileUploadError, R>>
     for Error
 where
@@ -7078,6 +7329,38 @@ impl From<crate::operation::start_contact_streaming::StartContactStreamingError>
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_email_contact::StartEmailContactError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_email_contact::StartEmailContactError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_email_contact::StartEmailContactError> for Error {
+    fn from(err: crate::operation::start_email_contact::StartEmailContactError) -> Self {
+        match err {
+            crate::operation::start_email_contact::StartEmailContactError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_email_contact::StartEmailContactError::IdempotencyException(inner) => Error::IdempotencyException(inner),
+            crate::operation::start_email_contact::StartEmailContactError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::start_email_contact::StartEmailContactError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::start_email_contact::StartEmailContactError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_email_contact::StartEmailContactError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::start_email_contact::StartEmailContactError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_email_contact::StartEmailContactError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_outbound_chat_contact::StartOutboundChatContactError, R>>
     for Error
 where
@@ -7118,6 +7401,51 @@ impl From<crate::operation::start_outbound_chat_contact::StartOutboundChatContac
                 Error::ThrottlingException(inner)
             }
             crate::operation::start_outbound_chat_contact::StartOutboundChatContactError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_outbound_email_contact::StartOutboundEmailContactError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_outbound_email_contact::StartOutboundEmailContactError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_outbound_email_contact::StartOutboundEmailContactError> for Error {
+    fn from(err: crate::operation::start_outbound_email_contact::StartOutboundEmailContactError) -> Self {
+        match err {
+            crate::operation::start_outbound_email_contact::StartOutboundEmailContactError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::start_outbound_email_contact::StartOutboundEmailContactError::IdempotencyException(inner) => {
+                Error::IdempotencyException(inner)
+            }
+            crate::operation::start_outbound_email_contact::StartOutboundEmailContactError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::start_outbound_email_contact::StartOutboundEmailContactError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::start_outbound_email_contact::StartOutboundEmailContactError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_outbound_email_contact::StartOutboundEmailContactError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::start_outbound_email_contact::StartOutboundEmailContactError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::start_outbound_email_contact::StartOutboundEmailContactError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -8036,6 +8364,51 @@ impl From<crate::operation::update_contact_schedule::UpdateContactScheduleError>
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_email_address_metadata::UpdateEmailAddressMetadataError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_email_address_metadata::UpdateEmailAddressMetadataError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_email_address_metadata::UpdateEmailAddressMetadataError> for Error {
+    fn from(err: crate::operation::update_email_address_metadata::UpdateEmailAddressMetadataError) -> Self {
+        match err {
+            crate::operation::update_email_address_metadata::UpdateEmailAddressMetadataError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_email_address_metadata::UpdateEmailAddressMetadataError::IdempotencyException(inner) => {
+                Error::IdempotencyException(inner)
+            }
+            crate::operation::update_email_address_metadata::UpdateEmailAddressMetadataError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::update_email_address_metadata::UpdateEmailAddressMetadataError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::update_email_address_metadata::UpdateEmailAddressMetadataError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::update_email_address_metadata::UpdateEmailAddressMetadataError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_email_address_metadata::UpdateEmailAddressMetadataError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_email_address_metadata::UpdateEmailAddressMetadataError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_evaluation_form::UpdateEvaluationFormError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -8537,6 +8910,59 @@ impl From<crate::operation::update_queue_outbound_caller_config::UpdateQueueOutb
                 Error::ThrottlingException(inner)
             }
             crate::operation::update_queue_outbound_caller_config::UpdateQueueOutboundCallerConfigError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_queue_outbound_email_config::UpdateQueueOutboundEmailConfigError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_queue_outbound_email_config::UpdateQueueOutboundEmailConfigError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_queue_outbound_email_config::UpdateQueueOutboundEmailConfigError> for Error {
+    fn from(err: crate::operation::update_queue_outbound_email_config::UpdateQueueOutboundEmailConfigError) -> Self {
+        match err {
+            crate::operation::update_queue_outbound_email_config::UpdateQueueOutboundEmailConfigError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_queue_outbound_email_config::UpdateQueueOutboundEmailConfigError::ConditionalOperationFailedException(inner) => {
+                Error::ConditionalOperationFailedException(inner)
+            }
+            crate::operation::update_queue_outbound_email_config::UpdateQueueOutboundEmailConfigError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::update_queue_outbound_email_config::UpdateQueueOutboundEmailConfigError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::update_queue_outbound_email_config::UpdateQueueOutboundEmailConfigError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::update_queue_outbound_email_config::UpdateQueueOutboundEmailConfigError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_queue_outbound_email_config::UpdateQueueOutboundEmailConfigError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_queue_outbound_email_config::UpdateQueueOutboundEmailConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -9381,6 +9807,7 @@ impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Error::AccessDeniedException(inner) => inner.source(),
+            Error::ConditionalOperationFailedException(inner) => inner.source(),
             Error::ConflictException(inner) => inner.source(),
             Error::ContactFlowNotPublishedException(inner) => inner.source(),
             Error::ContactNotFoundException(inner) => inner.source(),
@@ -9413,6 +9840,7 @@ impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
             Self::AccessDeniedException(e) => e.request_id(),
+            Self::ConditionalOperationFailedException(e) => e.request_id(),
             Self::ConflictException(e) => e.request_id(),
             Self::ContactFlowNotPublishedException(e) => e.request_id(),
             Self::ContactNotFoundException(e) => e.request_id(),

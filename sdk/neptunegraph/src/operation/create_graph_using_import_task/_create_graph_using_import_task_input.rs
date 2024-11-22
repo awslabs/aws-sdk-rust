@@ -33,6 +33,8 @@ pub struct CreateGraphUsingImportTaskInput {
     pub source: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the format of S3 data to be imported. Valid values are <code>CSV</code>, which identifies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-gremlin.html">Gremlin CSV format</a>, <code>OPEN_CYPHER</code>, which identifies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-opencypher.html">openCypher load format</a>, or <code>ntriples</code>, which identifies the <a href="https://docs.aws.amazon.com/neptune-analytics/latest/userguide/using-rdf-data.html">RDF n-triples</a> format.</p>
     pub format: ::std::option::Option<crate::types::Format>,
+    /// <p>The parquet type of the import task.</p>
+    pub parquet_type: ::std::option::Option<crate::types::ParquetType>,
     /// <p>The method to handle blank nodes in the dataset. Currently, only <code>convertToIri</code> is supported, meaning blank nodes are converted to unique IRIs at load time. Must be provided when format is <code>ntriples</code>. For more information, see <a href="https://docs.aws.amazon.com/neptune-analytics/latest/userguide/using-rdf-data.html#rdf-handling">Handling RDF values</a>.</p>
     pub blank_node_handling: ::std::option::Option<crate::types::BlankNodeHandling>,
     /// <p>The ARN of the IAM role that will allow access to the data that is to be imported.</p>
@@ -95,6 +97,10 @@ impl CreateGraphUsingImportTaskInput {
     pub fn format(&self) -> ::std::option::Option<&crate::types::Format> {
         self.format.as_ref()
     }
+    /// <p>The parquet type of the import task.</p>
+    pub fn parquet_type(&self) -> ::std::option::Option<&crate::types::ParquetType> {
+        self.parquet_type.as_ref()
+    }
     /// <p>The method to handle blank nodes in the dataset. Currently, only <code>convertToIri</code> is supported, meaning blank nodes are converted to unique IRIs at load time. Must be provided when format is <code>ntriples</code>. For more information, see <a href="https://docs.aws.amazon.com/neptune-analytics/latest/userguide/using-rdf-data.html#rdf-handling">Handling RDF values</a>.</p>
     pub fn blank_node_handling(&self) -> ::std::option::Option<&crate::types::BlankNodeHandling> {
         self.blank_node_handling.as_ref()
@@ -128,6 +134,7 @@ pub struct CreateGraphUsingImportTaskInputBuilder {
     pub(crate) fail_on_error: ::std::option::Option<bool>,
     pub(crate) source: ::std::option::Option<::std::string::String>,
     pub(crate) format: ::std::option::Option<crate::types::Format>,
+    pub(crate) parquet_type: ::std::option::Option<crate::types::ParquetType>,
     pub(crate) blank_node_handling: ::std::option::Option<crate::types::BlankNodeHandling>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
 }
@@ -334,6 +341,20 @@ impl CreateGraphUsingImportTaskInputBuilder {
     pub fn get_format(&self) -> &::std::option::Option<crate::types::Format> {
         &self.format
     }
+    /// <p>The parquet type of the import task.</p>
+    pub fn parquet_type(mut self, input: crate::types::ParquetType) -> Self {
+        self.parquet_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The parquet type of the import task.</p>
+    pub fn set_parquet_type(mut self, input: ::std::option::Option<crate::types::ParquetType>) -> Self {
+        self.parquet_type = input;
+        self
+    }
+    /// <p>The parquet type of the import task.</p>
+    pub fn get_parquet_type(&self) -> &::std::option::Option<crate::types::ParquetType> {
+        &self.parquet_type
+    }
     /// <p>The method to handle blank nodes in the dataset. Currently, only <code>convertToIri</code> is supported, meaning blank nodes are converted to unique IRIs at load time. Must be provided when format is <code>ntriples</code>. For more information, see <a href="https://docs.aws.amazon.com/neptune-analytics/latest/userguide/using-rdf-data.html#rdf-handling">Handling RDF values</a>.</p>
     pub fn blank_node_handling(mut self, input: crate::types::BlankNodeHandling) -> Self {
         self.blank_node_handling = ::std::option::Option::Some(input);
@@ -384,6 +405,7 @@ impl CreateGraphUsingImportTaskInputBuilder {
             fail_on_error: self.fail_on_error,
             source: self.source,
             format: self.format,
+            parquet_type: self.parquet_type,
             blank_node_handling: self.blank_node_handling,
             role_arn: self.role_arn,
         })

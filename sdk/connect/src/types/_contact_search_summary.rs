@@ -26,6 +26,9 @@ pub struct ContactSearchSummary {
     pub disconnect_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp, in Unix epoch time format, at which to start running the inbound flow.</p>
     pub scheduled_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p></p>
+    pub segment_attributes:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ContactSearchSummarySegmentAttributeValue>>,
 }
 impl ContactSearchSummary {
     /// <p>The Amazon Resource Name (ARN) of the contact.</p>
@@ -72,6 +75,12 @@ impl ContactSearchSummary {
     pub fn scheduled_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.scheduled_timestamp.as_ref()
     }
+    /// <p></p>
+    pub fn segment_attributes(
+        &self,
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ContactSearchSummarySegmentAttributeValue>> {
+        self.segment_attributes.as_ref()
+    }
 }
 impl ContactSearchSummary {
     /// Creates a new builder-style object to manufacture [`ContactSearchSummary`](crate::types::ContactSearchSummary).
@@ -95,6 +104,8 @@ pub struct ContactSearchSummaryBuilder {
     pub(crate) initiation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) disconnect_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) scheduled_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) segment_attributes:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ContactSearchSummarySegmentAttributeValue>>,
 }
 impl ContactSearchSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the contact.</p>
@@ -251,6 +262,35 @@ impl ContactSearchSummaryBuilder {
     pub fn get_scheduled_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.scheduled_timestamp
     }
+    /// Adds a key-value pair to `segment_attributes`.
+    ///
+    /// To override the contents of this collection use [`set_segment_attributes`](Self::set_segment_attributes).
+    ///
+    /// <p></p>
+    pub fn segment_attributes(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: crate::types::ContactSearchSummarySegmentAttributeValue,
+    ) -> Self {
+        let mut hash_map = self.segment_attributes.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.segment_attributes = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p></p>
+    pub fn set_segment_attributes(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ContactSearchSummarySegmentAttributeValue>>,
+    ) -> Self {
+        self.segment_attributes = input;
+        self
+    }
+    /// <p></p>
+    pub fn get_segment_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ContactSearchSummarySegmentAttributeValue>> {
+        &self.segment_attributes
+    }
     /// Consumes the builder and constructs a [`ContactSearchSummary`](crate::types::ContactSearchSummary).
     pub fn build(self) -> crate::types::ContactSearchSummary {
         crate::types::ContactSearchSummary {
@@ -265,6 +305,7 @@ impl ContactSearchSummaryBuilder {
             initiation_timestamp: self.initiation_timestamp,
             disconnect_timestamp: self.disconnect_timestamp,
             scheduled_timestamp: self.scheduled_timestamp,
+            segment_attributes: self.segment_attributes,
         }
     }
 }

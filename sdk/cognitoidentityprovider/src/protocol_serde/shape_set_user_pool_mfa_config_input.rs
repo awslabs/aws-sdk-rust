@@ -27,5 +27,11 @@ pub fn ser_set_user_pool_mfa_config_input_input(
     if let Some(var_8) = &input.mfa_configuration {
         object.key("MfaConfiguration").string(var_8.as_str());
     }
+    if let Some(var_9) = &input.web_authn_configuration {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("WebAuthnConfiguration").start_object();
+        crate::protocol_serde::shape_web_authn_configuration_type::ser_web_authn_configuration_type(&mut object_10, var_9)?;
+        object_10.finish();
+    }
     Ok(())
 }

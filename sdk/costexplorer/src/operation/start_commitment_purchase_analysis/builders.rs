@@ -22,7 +22,7 @@ impl crate::operation::start_commitment_purchase_analysis::builders::StartCommit
 }
 /// Fluent builder constructing a request to `StartCommitmentPurchaseAnalysis`.
 ///
-/// <p>Specifies the parameters of a planned commitment purchase and starts the generation of the analysis. This enables you to estimate the cost, coverage, and utilization impact of your planned commitment purchases. You can request up to 20 analysis runs per day.</p>
+/// <p>Specifies the parameters of a planned commitment purchase and starts the generation of the analysis. This enables you to estimate the cost, coverage, and utilization impact of your planned commitment purchases.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartCommitmentPurchaseAnalysisFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

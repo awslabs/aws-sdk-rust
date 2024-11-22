@@ -15,6 +15,7 @@
 ///     ImportTaskStatus::AnalyzingData => { /* ... */ },
 ///     ImportTaskStatus::Cancelled => { /* ... */ },
 ///     ImportTaskStatus::Cancelling => { /* ... */ },
+///     ImportTaskStatus::Deleted => { /* ... */ },
 ///     ImportTaskStatus::Exporting => { /* ... */ },
 ///     ImportTaskStatus::Failed => { /* ... */ },
 ///     ImportTaskStatus::Importing => { /* ... */ },
@@ -56,6 +57,8 @@ pub enum ImportTaskStatus {
     #[allow(missing_docs)] // documentation missing in model
     Cancelling,
     #[allow(missing_docs)] // documentation missing in model
+    Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     Exporting,
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -79,6 +82,7 @@ impl ::std::convert::From<&str> for ImportTaskStatus {
             "ANALYZING_DATA" => ImportTaskStatus::AnalyzingData,
             "CANCELLED" => ImportTaskStatus::Cancelled,
             "CANCELLING" => ImportTaskStatus::Cancelling,
+            "DELETED" => ImportTaskStatus::Deleted,
             "EXPORTING" => ImportTaskStatus::Exporting,
             "FAILED" => ImportTaskStatus::Failed,
             "IMPORTING" => ImportTaskStatus::Importing,
@@ -104,6 +108,7 @@ impl ImportTaskStatus {
             ImportTaskStatus::AnalyzingData => "ANALYZING_DATA",
             ImportTaskStatus::Cancelled => "CANCELLED",
             ImportTaskStatus::Cancelling => "CANCELLING",
+            ImportTaskStatus::Deleted => "DELETED",
             ImportTaskStatus::Exporting => "EXPORTING",
             ImportTaskStatus::Failed => "FAILED",
             ImportTaskStatus::Importing => "IMPORTING",
@@ -120,6 +125,7 @@ impl ImportTaskStatus {
             "ANALYZING_DATA",
             "CANCELLED",
             "CANCELLING",
+            "DELETED",
             "EXPORTING",
             "FAILED",
             "IMPORTING",
@@ -153,6 +159,7 @@ impl ::std::fmt::Display for ImportTaskStatus {
             ImportTaskStatus::AnalyzingData => write!(f, "ANALYZING_DATA"),
             ImportTaskStatus::Cancelled => write!(f, "CANCELLED"),
             ImportTaskStatus::Cancelling => write!(f, "CANCELLING"),
+            ImportTaskStatus::Deleted => write!(f, "DELETED"),
             ImportTaskStatus::Exporting => write!(f, "EXPORTING"),
             ImportTaskStatus::Failed => write!(f, "FAILED"),
             ImportTaskStatus::Importing => write!(f, "IMPORTING"),

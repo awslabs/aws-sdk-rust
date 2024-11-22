@@ -231,4 +231,18 @@ impl TestStateFluentBuilder {
     pub fn get_reveal_secrets(&self) -> &::std::option::Option<bool> {
         self.inner.get_reveal_secrets()
     }
+    /// <p>JSON object literal that sets variables used in the state under test. Object keys are the variable names and values are the variable values.</p>
+    pub fn variables(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.variables(input.into());
+        self
+    }
+    /// <p>JSON object literal that sets variables used in the state under test. Object keys are the variable names and values are the variable values.</p>
+    pub fn set_variables(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_variables(input);
+        self
+    }
+    /// <p>JSON object literal that sets variables used in the state under test. Object keys are the variable names and values are the variable values.</p>
+    pub fn get_variables(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_variables()
+    }
 }

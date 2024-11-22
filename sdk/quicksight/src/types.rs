@@ -145,6 +145,18 @@ pub use crate::types::_validation_strategy_mode::ValidationStrategyMode;
 
 pub use crate::types::_template_version_definition::TemplateVersionDefinition;
 
+pub use crate::types::_static_file::StaticFile;
+
+pub use crate::types::_spatial_static_file::SpatialStaticFile;
+
+pub use crate::types::_static_file_source::StaticFileSource;
+
+pub use crate::types::_static_file_s3_source_options::StaticFileS3SourceOptions;
+
+pub use crate::types::_static_file_url_source_options::StaticFileUrlSourceOptions;
+
+pub use crate::types::_image_static_file::ImageStaticFile;
+
 pub use crate::types::_query_execution_options::QueryExecutionOptions;
 
 pub use crate::types::_query_execution_mode::QueryExecutionMode;
@@ -489,9 +501,105 @@ pub use crate::types::_body_section_content::BodySectionContent;
 
 pub use crate::types::_free_form_layout_configuration::FreeFormLayoutConfiguration;
 
+pub use crate::types::_sheet_image::SheetImage;
+
+pub use crate::types::_image_custom_action::ImageCustomAction;
+
+pub use crate::types::_image_custom_action_operation::ImageCustomActionOperation;
+
+pub use crate::types::_custom_action_set_parameters_operation::CustomActionSetParametersOperation;
+
+pub use crate::types::_set_parameter_value_configuration::SetParameterValueConfiguration;
+
+pub use crate::types::_destination_parameter_value_configuration::DestinationParameterValueConfiguration;
+
+pub use crate::types::_select_all_value_options::SelectAllValueOptions;
+
+pub use crate::types::_custom_values_configuration::CustomValuesConfiguration;
+
+pub use crate::types::_custom_parameter_values::CustomParameterValues;
+
+pub use crate::types::_custom_action_url_operation::CustomActionUrlOperation;
+
+pub use crate::types::_url_target_configuration::UrlTargetConfiguration;
+
+pub use crate::types::_custom_action_navigation_operation::CustomActionNavigationOperation;
+
+pub use crate::types::_local_navigation_configuration::LocalNavigationConfiguration;
+
+pub use crate::types::_image_custom_action_trigger::ImageCustomActionTrigger;
+
+pub use crate::types::_image_interaction_options::ImageInteractionOptions;
+
+pub use crate::types::_image_menu_option::ImageMenuOption;
+
+pub use crate::types::_dashboard_behavior::DashboardBehavior;
+
+pub use crate::types::_sheet_image_tooltip_configuration::SheetImageTooltipConfiguration;
+
+pub use crate::types::_sheet_image_tooltip_text::SheetImageTooltipText;
+
+pub use crate::types::_sheet_image_scaling_configuration::SheetImageScalingConfiguration;
+
+pub use crate::types::_sheet_image_scaling_type::SheetImageScalingType;
+
+pub use crate::types::_sheet_image_source::SheetImageSource;
+
+pub use crate::types::_sheet_image_static_file_source::SheetImageStaticFileSource;
+
 pub use crate::types::_sheet_text_box::SheetTextBox;
 
 pub use crate::types::_visual::Visual;
+
+pub use crate::types::_plugin_visual::PluginVisual;
+
+pub use crate::types::_plugin_visual_configuration::PluginVisualConfiguration;
+
+pub use crate::types::_plugin_visual_sort_configuration::PluginVisualSortConfiguration;
+
+pub use crate::types::_plugin_visual_table_query_sort::PluginVisualTableQuerySort;
+
+pub use crate::types::_plugin_visual_items_limit_configuration::PluginVisualItemsLimitConfiguration;
+
+pub use crate::types::_field_sort_options::FieldSortOptions;
+
+pub use crate::types::_field_sort::FieldSort;
+
+pub use crate::types::_plugin_visual_options::PluginVisualOptions;
+
+pub use crate::types::_plugin_visual_property::PluginVisualProperty;
+
+pub use crate::types::_plugin_visual_field_well::PluginVisualFieldWell;
+
+pub use crate::types::_unaggregated_field::UnaggregatedField;
+
+pub use crate::types::_measure_field::MeasureField;
+
+pub use crate::types::_calculated_measure_field::CalculatedMeasureField;
+
+pub use crate::types::_date_measure_field::DateMeasureField;
+
+pub use crate::types::_categorical_measure_field::CategoricalMeasureField;
+
+pub use crate::types::_numerical_measure_field::NumericalMeasureField;
+
+pub use crate::types::_dimension_field::DimensionField;
+
+pub use crate::types::_date_dimension_field::DateDimensionField;
+
+pub use crate::types::_categorical_dimension_field::CategoricalDimensionField;
+
+pub use crate::types::_numerical_dimension_field::NumericalDimensionField;
+
+pub use crate::types::_plugin_visual_axis_name::PluginVisualAxisName;
+
+pub use crate::types::_visual_subtitle_label_options::VisualSubtitleLabelOptions;
+
+pub use crate::types::_long_format_text::LongFormatText;
+
+pub use crate::types::_visual_title_label_options::VisualTitleLabelOptions;
+
+pub use crate::types::_short_format_text::ShortFormatText;
 
 pub use crate::types::_radar_chart_visual::RadarChartVisual;
 
@@ -515,26 +623,6 @@ pub use crate::types::_visual_custom_action::VisualCustomAction;
 
 pub use crate::types::_visual_custom_action_operation::VisualCustomActionOperation;
 
-pub use crate::types::_custom_action_set_parameters_operation::CustomActionSetParametersOperation;
-
-pub use crate::types::_set_parameter_value_configuration::SetParameterValueConfiguration;
-
-pub use crate::types::_destination_parameter_value_configuration::DestinationParameterValueConfiguration;
-
-pub use crate::types::_select_all_value_options::SelectAllValueOptions;
-
-pub use crate::types::_custom_values_configuration::CustomValuesConfiguration;
-
-pub use crate::types::_custom_parameter_values::CustomParameterValues;
-
-pub use crate::types::_custom_action_url_operation::CustomActionUrlOperation;
-
-pub use crate::types::_url_target_configuration::UrlTargetConfiguration;
-
-pub use crate::types::_custom_action_navigation_operation::CustomActionNavigationOperation;
-
-pub use crate::types::_local_navigation_configuration::LocalNavigationConfiguration;
-
 pub use crate::types::_custom_action_filter_operation::CustomActionFilterOperation;
 
 pub use crate::types::_filter_operation_target_visuals_configuration::FilterOperationTargetVisualsConfiguration;
@@ -554,8 +642,6 @@ pub use crate::types::_radar_chart_configuration::RadarChartConfiguration;
 pub use crate::types::_visual_interaction_options::VisualInteractionOptions;
 
 pub use crate::types::_context_menu_option::ContextMenuOption;
-
-pub use crate::types::_dashboard_behavior::DashboardBehavior;
 
 pub use crate::types::_visual_menu_option::VisualMenuOption;
 
@@ -621,39 +707,9 @@ pub use crate::types::_items_limit_configuration::ItemsLimitConfiguration;
 
 pub use crate::types::_other_categories::OtherCategories;
 
-pub use crate::types::_field_sort_options::FieldSortOptions;
-
-pub use crate::types::_field_sort::FieldSort;
-
 pub use crate::types::_radar_chart_field_wells::RadarChartFieldWells;
 
 pub use crate::types::_radar_chart_aggregated_field_wells::RadarChartAggregatedFieldWells;
-
-pub use crate::types::_measure_field::MeasureField;
-
-pub use crate::types::_calculated_measure_field::CalculatedMeasureField;
-
-pub use crate::types::_date_measure_field::DateMeasureField;
-
-pub use crate::types::_categorical_measure_field::CategoricalMeasureField;
-
-pub use crate::types::_numerical_measure_field::NumericalMeasureField;
-
-pub use crate::types::_dimension_field::DimensionField;
-
-pub use crate::types::_date_dimension_field::DateDimensionField;
-
-pub use crate::types::_categorical_dimension_field::CategoricalDimensionField;
-
-pub use crate::types::_numerical_dimension_field::NumericalDimensionField;
-
-pub use crate::types::_visual_subtitle_label_options::VisualSubtitleLabelOptions;
-
-pub use crate::types::_long_format_text::LongFormatText;
-
-pub use crate::types::_visual_title_label_options::VisualTitleLabelOptions;
-
-pub use crate::types::_short_format_text::ShortFormatText;
 
 pub use crate::types::_empty_visual::EmptyVisual;
 
@@ -891,6 +947,80 @@ pub use crate::types::_funnel_chart_field_wells::FunnelChartFieldWells;
 
 pub use crate::types::_funnel_chart_aggregated_field_wells::FunnelChartAggregatedFieldWells;
 
+pub use crate::types::_layer_map_visual::LayerMapVisual;
+
+pub use crate::types::_geospatial_layer_map_configuration::GeospatialLayerMapConfiguration;
+
+pub use crate::types::_geospatial_map_style::GeospatialMapStyle;
+
+pub use crate::types::_base_map_style_type::BaseMapStyleType;
+
+pub use crate::types::_geospatial_map_state::GeospatialMapState;
+
+pub use crate::types::_geospatial_map_navigation::GeospatialMapNavigation;
+
+pub use crate::types::_geospatial_coordinate_bounds::GeospatialCoordinateBounds;
+
+pub use crate::types::_geospatial_layer_item::GeospatialLayerItem;
+
+pub use crate::types::_layer_custom_action::LayerCustomAction;
+
+pub use crate::types::_layer_custom_action_operation::LayerCustomActionOperation;
+
+pub use crate::types::_layer_custom_action_trigger::LayerCustomActionTrigger;
+
+pub use crate::types::_geospatial_layer_join_definition::GeospatialLayerJoinDefinition;
+
+pub use crate::types::_geospatial_layer_color_field::GeospatialLayerColorField;
+
+pub use crate::types::_geospatial_layer_definition::GeospatialLayerDefinition;
+
+pub use crate::types::_geospatial_polygon_layer::GeospatialPolygonLayer;
+
+pub use crate::types::_geospatial_polygon_style::GeospatialPolygonStyle;
+
+pub use crate::types::_geospatial_polygon_symbol_style::GeospatialPolygonSymbolStyle;
+
+pub use crate::types::_geospatial_line_width::GeospatialLineWidth;
+
+pub use crate::types::_geospatial_color::GeospatialColor;
+
+pub use crate::types::_geospatial_categorical_color::GeospatialCategoricalColor;
+
+pub use crate::types::_geospatial_null_data_settings::GeospatialNullDataSettings;
+
+pub use crate::types::_geospatial_null_symbol_style::GeospatialNullSymbolStyle;
+
+pub use crate::types::_geospatial_categorical_data_color::GeospatialCategoricalDataColor;
+
+pub use crate::types::_geospatial_gradient_color::GeospatialGradientColor;
+
+pub use crate::types::_geospatial_gradient_step_color::GeospatialGradientStepColor;
+
+pub use crate::types::_geospatial_solid_color::GeospatialSolidColor;
+
+pub use crate::types::_geospatial_color_state::GeospatialColorState;
+
+pub use crate::types::_geospatial_line_layer::GeospatialLineLayer;
+
+pub use crate::types::_geospatial_line_style::GeospatialLineStyle;
+
+pub use crate::types::_geospatial_line_symbol_style::GeospatialLineSymbolStyle;
+
+pub use crate::types::_geospatial_point_layer::GeospatialPointLayer;
+
+pub use crate::types::_geospatial_point_style::GeospatialPointStyle;
+
+pub use crate::types::_geospatial_circle_symbol_style::GeospatialCircleSymbolStyle;
+
+pub use crate::types::_geospatial_circle_radius::GeospatialCircleRadius;
+
+pub use crate::types::_geospatial_data_source_item::GeospatialDataSourceItem;
+
+pub use crate::types::_geospatial_static_file_source::GeospatialStaticFileSource;
+
+pub use crate::types::_geospatial_layer_type::GeospatialLayerType;
+
 pub use crate::types::_filled_map_visual::FilledMapVisual;
 
 pub use crate::types::_filled_map_conditional_formatting::FilledMapConditionalFormatting;
@@ -915,13 +1045,9 @@ pub use crate::types::_filled_map_configuration::FilledMapConfiguration;
 
 pub use crate::types::_geospatial_map_style_options::GeospatialMapStyleOptions;
 
-pub use crate::types::_base_map_style_type::BaseMapStyleType;
-
 pub use crate::types::_geospatial_window_options::GeospatialWindowOptions;
 
 pub use crate::types::_map_zoom_mode::MapZoomMode;
-
-pub use crate::types::_geospatial_coordinate_bounds::GeospatialCoordinateBounds;
 
 pub use crate::types::_filled_map_sort_configuration::FilledMapSortConfiguration;
 
@@ -1307,8 +1433,6 @@ pub use crate::types::_table_field_wells::TableFieldWells;
 
 pub use crate::types::_table_unaggregated_field_wells::TableUnaggregatedFieldWells;
 
-pub use crate::types::_unaggregated_field::UnaggregatedField;
-
 pub use crate::types::_table_aggregated_field_wells::TableAggregatedFieldWells;
 
 pub use crate::types::_filter_control::FilterControl;
@@ -1579,6 +1703,8 @@ pub use crate::types::_custom_sql::CustomSql;
 
 pub use crate::types::_relational_table::RelationalTable;
 
+pub use crate::types::_dashboards_qa_status::DashboardsQaStatus;
+
 pub use crate::types::_link_sharing_configuration::LinkSharingConfiguration;
 
 pub use crate::types::_dashboard_version_definition::DashboardVersionDefinition;
@@ -1805,6 +1931,14 @@ pub use crate::types::_asset_bundle_export_job_resource_id_override_configuratio
 
 pub use crate::types::_asset_bundle_export_format::AssetBundleExportFormat;
 
+pub use crate::types::_topic_summary::TopicSummary;
+
+pub use crate::types::_topic_search_filter::TopicSearchFilter;
+
+pub use crate::types::_topic_filter_attribute::TopicFilterAttribute;
+
+pub use crate::types::_topic_filter_operator::TopicFilterOperator;
+
 pub use crate::types::_group_search_filter::GroupSearchFilter;
 
 pub use crate::types::_group_filter_attribute::GroupFilterAttribute;
@@ -1864,8 +1998,6 @@ pub use crate::types::_vpc_connection_summary::VpcConnectionSummary;
 pub use crate::types::_network_interface::NetworkInterface;
 
 pub use crate::types::_network_interface_status::NetworkInterfaceStatus;
-
-pub use crate::types::_topic_summary::TopicSummary;
 
 pub use crate::types::_topic_reviewed_answer::TopicReviewedAnswer;
 
@@ -2687,6 +2819,8 @@ mod _dashboard_visual_id;
 
 mod _dashboard_visual_publish_options;
 
+mod _dashboards_qa_status;
+
 mod _data_aggregation;
 
 mod _data_bars_options;
@@ -3057,7 +3191,25 @@ mod _geo_spatial_country_code;
 
 mod _geo_spatial_data_role;
 
+mod _geospatial_categorical_color;
+
+mod _geospatial_categorical_data_color;
+
+mod _geospatial_circle_radius;
+
+mod _geospatial_circle_symbol_style;
+
+mod _geospatial_color;
+
+mod _geospatial_color_state;
+
 mod _geospatial_coordinate_bounds;
+
+mod _geospatial_data_source_item;
+
+mod _geospatial_gradient_color;
+
+mod _geospatial_gradient_step_color;
 
 mod _geospatial_heatmap_color_scale;
 
@@ -3065,19 +3217,63 @@ mod _geospatial_heatmap_configuration;
 
 mod _geospatial_heatmap_data_color;
 
+mod _geospatial_layer_color_field;
+
+mod _geospatial_layer_definition;
+
+mod _geospatial_layer_item;
+
+mod _geospatial_layer_join_definition;
+
+mod _geospatial_layer_map_configuration;
+
+mod _geospatial_layer_type;
+
+mod _geospatial_line_layer;
+
+mod _geospatial_line_style;
+
+mod _geospatial_line_symbol_style;
+
+mod _geospatial_line_width;
+
 mod _geospatial_map_aggregated_field_wells;
 
 mod _geospatial_map_configuration;
 
 mod _geospatial_map_field_wells;
 
+mod _geospatial_map_navigation;
+
+mod _geospatial_map_state;
+
+mod _geospatial_map_style;
+
 mod _geospatial_map_style_options;
 
 mod _geospatial_map_visual;
 
+mod _geospatial_null_data_settings;
+
+mod _geospatial_null_symbol_style;
+
+mod _geospatial_point_layer;
+
+mod _geospatial_point_style;
+
 mod _geospatial_point_style_options;
 
+mod _geospatial_polygon_layer;
+
+mod _geospatial_polygon_style;
+
+mod _geospatial_polygon_symbol_style;
+
 mod _geospatial_selected_point_style;
+
+mod _geospatial_solid_color;
+
+mod _geospatial_static_file_source;
 
 mod _geospatial_window_options;
 
@@ -3153,11 +3349,23 @@ mod _image;
 
 mod _image_configuration;
 
+mod _image_custom_action;
+
+mod _image_custom_action_operation;
+
+mod _image_custom_action_trigger;
+
+mod _image_interaction_options;
+
+mod _image_menu_option;
+
 mod _image_set;
 
 mod _image_set_configuration;
 
 mod _image_source;
+
+mod _image_static_file;
 
 mod _include_folder_members;
 
@@ -3242,6 +3450,14 @@ mod _kpi_visual_standard_layout;
 mod _kpi_visual_standard_layout_type;
 
 mod _label_options;
+
+mod _layer_custom_action;
+
+mod _layer_custom_action_operation;
+
+mod _layer_custom_action_trigger;
+
+mod _layer_map_visual;
 
 mod _layout;
 
@@ -3541,6 +3757,24 @@ mod _pivot_table_visual;
 
 mod _pivot_total_options;
 
+mod _plugin_visual;
+
+mod _plugin_visual_axis_name;
+
+mod _plugin_visual_configuration;
+
+mod _plugin_visual_field_well;
+
+mod _plugin_visual_items_limit_configuration;
+
+mod _plugin_visual_options;
+
+mod _plugin_visual_property;
+
+mod _plugin_visual_sort_configuration;
+
+mod _plugin_visual_table_query_sort;
+
 mod _postgre_sql_parameters;
 
 mod _predefined_hierarchy;
@@ -3787,6 +4021,20 @@ mod _sheet_element_configuration_overrides;
 
 mod _sheet_element_rendering_rule;
 
+mod _sheet_image;
+
+mod _sheet_image_scaling_configuration;
+
+mod _sheet_image_scaling_type;
+
+mod _sheet_image_source;
+
+mod _sheet_image_static_file_source;
+
+mod _sheet_image_tooltip_configuration;
+
+mod _sheet_image_tooltip_text;
+
 mod _sheet_layout_element_maximization_option;
 
 mod _sheet_style;
@@ -3867,6 +4115,8 @@ mod _spacing;
 
 mod _spark_parameters;
 
+mod _spatial_static_file;
+
 mod _special_value;
 
 mod _sql_server_parameters;
@@ -3878,6 +4128,14 @@ mod _starburst_parameters;
 mod _starburst_product_type;
 
 mod _state_persistence_configurations;
+
+mod _static_file;
+
+mod _static_file_s3_source_options;
+
+mod _static_file_source;
+
+mod _static_file_url_source_options;
 
 mod _status;
 
@@ -4083,6 +4341,10 @@ mod _topic_details;
 
 mod _topic_filter;
 
+mod _topic_filter_attribute;
+
+mod _topic_filter_operator;
+
 mod _topic_ir;
 
 mod _topic_ir_comparison_method;
@@ -4124,6 +4386,8 @@ mod _topic_relative_date_filter_function;
 mod _topic_reviewed_answer;
 
 mod _topic_schedule_type;
+
+mod _topic_search_filter;
 
 mod _topic_singular_filter_constant;
 

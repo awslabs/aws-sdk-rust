@@ -6,7 +6,15 @@
 pub struct InvalidParameterException {
     /// <p>The message returned when the Amazon Cognito service throws an invalid parameter exception.</p>
     pub message: ::std::option::Option<::std::string::String>,
+    /// <p>The reason code of the exception.</p>
+    pub reason_code: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
+}
+impl InvalidParameterException {
+    /// <p>The reason code of the exception.</p>
+    pub fn reason_code(&self) -> ::std::option::Option<&str> {
+        self.reason_code.as_deref()
+    }
 }
 impl InvalidParameterException {
     /// Returns the error message.
@@ -49,6 +57,7 @@ impl InvalidParameterException {
 #[non_exhaustive]
 pub struct InvalidParameterExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) reason_code: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl InvalidParameterExceptionBuilder {
@@ -66,6 +75,20 @@ impl InvalidParameterExceptionBuilder {
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
+    /// <p>The reason code of the exception.</p>
+    pub fn reason_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.reason_code = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The reason code of the exception.</p>
+    pub fn set_reason_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.reason_code = input;
+        self
+    }
+    /// <p>The reason code of the exception.</p>
+    pub fn get_reason_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason_code
+    }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);
@@ -81,6 +104,7 @@ impl InvalidParameterExceptionBuilder {
     pub fn build(self) -> crate::types::error::InvalidParameterException {
         crate::types::error::InvalidParameterException {
             message: self.message,
+            reason_code: self.reason_code,
             meta: self.meta.unwrap_or_default(),
         }
     }

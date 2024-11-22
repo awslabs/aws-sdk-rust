@@ -19,6 +19,8 @@ pub struct GetUserPoolMfaConfigOutput {
     /// <p><code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.</p></li>
     /// </ul>
     pub mfa_configuration: ::std::option::Option<crate::types::UserPoolMfaType>,
+    /// <p>Shows user pool configuration for MFA with passkeys from biometric devices and security keys.</p>
+    pub web_authn_configuration: ::std::option::Option<crate::types::WebAuthnConfigurationType>,
     _request_id: Option<String>,
 }
 impl GetUserPoolMfaConfigOutput {
@@ -46,6 +48,10 @@ impl GetUserPoolMfaConfigOutput {
     pub fn mfa_configuration(&self) -> ::std::option::Option<&crate::types::UserPoolMfaType> {
         self.mfa_configuration.as_ref()
     }
+    /// <p>Shows user pool configuration for MFA with passkeys from biometric devices and security keys.</p>
+    pub fn web_authn_configuration(&self) -> ::std::option::Option<&crate::types::WebAuthnConfigurationType> {
+        self.web_authn_configuration.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetUserPoolMfaConfigOutput {
     fn request_id(&self) -> Option<&str> {
@@ -67,6 +73,7 @@ pub struct GetUserPoolMfaConfigOutputBuilder {
     pub(crate) software_token_mfa_configuration: ::std::option::Option<crate::types::SoftwareTokenMfaConfigType>,
     pub(crate) email_mfa_configuration: ::std::option::Option<crate::types::EmailMfaConfigType>,
     pub(crate) mfa_configuration: ::std::option::Option<crate::types::UserPoolMfaType>,
+    pub(crate) web_authn_configuration: ::std::option::Option<crate::types::WebAuthnConfigurationType>,
     _request_id: Option<String>,
 }
 impl GetUserPoolMfaConfigOutputBuilder {
@@ -150,6 +157,20 @@ impl GetUserPoolMfaConfigOutputBuilder {
     pub fn get_mfa_configuration(&self) -> &::std::option::Option<crate::types::UserPoolMfaType> {
         &self.mfa_configuration
     }
+    /// <p>Shows user pool configuration for MFA with passkeys from biometric devices and security keys.</p>
+    pub fn web_authn_configuration(mut self, input: crate::types::WebAuthnConfigurationType) -> Self {
+        self.web_authn_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Shows user pool configuration for MFA with passkeys from biometric devices and security keys.</p>
+    pub fn set_web_authn_configuration(mut self, input: ::std::option::Option<crate::types::WebAuthnConfigurationType>) -> Self {
+        self.web_authn_configuration = input;
+        self
+    }
+    /// <p>Shows user pool configuration for MFA with passkeys from biometric devices and security keys.</p>
+    pub fn get_web_authn_configuration(&self) -> &::std::option::Option<crate::types::WebAuthnConfigurationType> {
+        &self.web_authn_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -166,6 +187,7 @@ impl GetUserPoolMfaConfigOutputBuilder {
             software_token_mfa_configuration: self.software_token_mfa_configuration,
             email_mfa_configuration: self.email_mfa_configuration,
             mfa_configuration: self.mfa_configuration,
+            web_authn_configuration: self.web_authn_configuration,
             _request_id: self._request_id,
         }
     }

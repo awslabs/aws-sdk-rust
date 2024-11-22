@@ -225,6 +225,9 @@ pub(crate) fn de_describe_state_machine_for_execution(
                         crate::protocol_serde::shape_encryption_configuration::de_encryption_configuration(tokens)?,
                     );
                 }
+                "variableReferences" => {
+                    builder = builder.set_variable_references(crate::protocol_serde::shape_variable_references::de_variable_references(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

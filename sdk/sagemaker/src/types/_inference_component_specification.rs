@@ -10,8 +10,14 @@ pub struct InferenceComponentSpecification {
     pub container: ::std::option::Option<crate::types::InferenceComponentContainerSpecification>,
     /// <p>Settings that take effect while the model container starts up.</p>
     pub startup_parameters: ::std::option::Option<crate::types::InferenceComponentStartupParameters>,
-    /// <p>The compute resources allocated to run the model assigned to the inference component.</p>
+    /// <p>The compute resources allocated to run the model, plus any adapter models, that you assign to the inference component.</p>
+    /// <p>Omit this parameter if your request is meant to create an adapter inference component. An adapter inference component is loaded by a base inference component, and it uses the compute resources of the base inference component.</p>
     pub compute_resource_requirements: ::std::option::Option<crate::types::InferenceComponentComputeResourceRequirements>,
+    /// <p>The name of an existing inference component that is to contain the inference component that you're creating with your request.</p>
+    /// <p>Specify this parameter only if your request is meant to create an adapter inference component. An adapter inference component contains the path to an adapter model. The purpose of the adapter model is to tailor the inference output of a base foundation model, which is hosted by the base inference component. The adapter inference component uses the compute resources that you assigned to the base inference component.</p>
+    /// <p>When you create an adapter inference component, use the <code>Container</code> parameter to specify the location of the adapter artifacts. In the parameter value, use the <code>ArtifactUrl</code> parameter of the <code>InferenceComponentContainerSpecification</code> data type.</p>
+    /// <p>Before you can create an adapter inference component, you must have an existing inference component that contains the foundation model that you want to adapt.</p>
+    pub base_inference_component_name: ::std::option::Option<::std::string::String>,
 }
 impl InferenceComponentSpecification {
     /// <p>The name of an existing SageMaker model object in your account that you want to deploy with the inference component.</p>
@@ -26,9 +32,17 @@ impl InferenceComponentSpecification {
     pub fn startup_parameters(&self) -> ::std::option::Option<&crate::types::InferenceComponentStartupParameters> {
         self.startup_parameters.as_ref()
     }
-    /// <p>The compute resources allocated to run the model assigned to the inference component.</p>
+    /// <p>The compute resources allocated to run the model, plus any adapter models, that you assign to the inference component.</p>
+    /// <p>Omit this parameter if your request is meant to create an adapter inference component. An adapter inference component is loaded by a base inference component, and it uses the compute resources of the base inference component.</p>
     pub fn compute_resource_requirements(&self) -> ::std::option::Option<&crate::types::InferenceComponentComputeResourceRequirements> {
         self.compute_resource_requirements.as_ref()
+    }
+    /// <p>The name of an existing inference component that is to contain the inference component that you're creating with your request.</p>
+    /// <p>Specify this parameter only if your request is meant to create an adapter inference component. An adapter inference component contains the path to an adapter model. The purpose of the adapter model is to tailor the inference output of a base foundation model, which is hosted by the base inference component. The adapter inference component uses the compute resources that you assigned to the base inference component.</p>
+    /// <p>When you create an adapter inference component, use the <code>Container</code> parameter to specify the location of the adapter artifacts. In the parameter value, use the <code>ArtifactUrl</code> parameter of the <code>InferenceComponentContainerSpecification</code> data type.</p>
+    /// <p>Before you can create an adapter inference component, you must have an existing inference component that contains the foundation model that you want to adapt.</p>
+    pub fn base_inference_component_name(&self) -> ::std::option::Option<&str> {
+        self.base_inference_component_name.as_deref()
     }
 }
 impl InferenceComponentSpecification {
@@ -46,6 +60,7 @@ pub struct InferenceComponentSpecificationBuilder {
     pub(crate) container: ::std::option::Option<crate::types::InferenceComponentContainerSpecification>,
     pub(crate) startup_parameters: ::std::option::Option<crate::types::InferenceComponentStartupParameters>,
     pub(crate) compute_resource_requirements: ::std::option::Option<crate::types::InferenceComponentComputeResourceRequirements>,
+    pub(crate) base_inference_component_name: ::std::option::Option<::std::string::String>,
 }
 impl InferenceComponentSpecificationBuilder {
     /// <p>The name of an existing SageMaker model object in your account that you want to deploy with the inference component.</p>
@@ -90,13 +105,14 @@ impl InferenceComponentSpecificationBuilder {
     pub fn get_startup_parameters(&self) -> &::std::option::Option<crate::types::InferenceComponentStartupParameters> {
         &self.startup_parameters
     }
-    /// <p>The compute resources allocated to run the model assigned to the inference component.</p>
-    /// This field is required.
+    /// <p>The compute resources allocated to run the model, plus any adapter models, that you assign to the inference component.</p>
+    /// <p>Omit this parameter if your request is meant to create an adapter inference component. An adapter inference component is loaded by a base inference component, and it uses the compute resources of the base inference component.</p>
     pub fn compute_resource_requirements(mut self, input: crate::types::InferenceComponentComputeResourceRequirements) -> Self {
         self.compute_resource_requirements = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The compute resources allocated to run the model assigned to the inference component.</p>
+    /// <p>The compute resources allocated to run the model, plus any adapter models, that you assign to the inference component.</p>
+    /// <p>Omit this parameter if your request is meant to create an adapter inference component. An adapter inference component is loaded by a base inference component, and it uses the compute resources of the base inference component.</p>
     pub fn set_compute_resource_requirements(
         mut self,
         input: ::std::option::Option<crate::types::InferenceComponentComputeResourceRequirements>,
@@ -104,9 +120,33 @@ impl InferenceComponentSpecificationBuilder {
         self.compute_resource_requirements = input;
         self
     }
-    /// <p>The compute resources allocated to run the model assigned to the inference component.</p>
+    /// <p>The compute resources allocated to run the model, plus any adapter models, that you assign to the inference component.</p>
+    /// <p>Omit this parameter if your request is meant to create an adapter inference component. An adapter inference component is loaded by a base inference component, and it uses the compute resources of the base inference component.</p>
     pub fn get_compute_resource_requirements(&self) -> &::std::option::Option<crate::types::InferenceComponentComputeResourceRequirements> {
         &self.compute_resource_requirements
+    }
+    /// <p>The name of an existing inference component that is to contain the inference component that you're creating with your request.</p>
+    /// <p>Specify this parameter only if your request is meant to create an adapter inference component. An adapter inference component contains the path to an adapter model. The purpose of the adapter model is to tailor the inference output of a base foundation model, which is hosted by the base inference component. The adapter inference component uses the compute resources that you assigned to the base inference component.</p>
+    /// <p>When you create an adapter inference component, use the <code>Container</code> parameter to specify the location of the adapter artifacts. In the parameter value, use the <code>ArtifactUrl</code> parameter of the <code>InferenceComponentContainerSpecification</code> data type.</p>
+    /// <p>Before you can create an adapter inference component, you must have an existing inference component that contains the foundation model that you want to adapt.</p>
+    pub fn base_inference_component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.base_inference_component_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of an existing inference component that is to contain the inference component that you're creating with your request.</p>
+    /// <p>Specify this parameter only if your request is meant to create an adapter inference component. An adapter inference component contains the path to an adapter model. The purpose of the adapter model is to tailor the inference output of a base foundation model, which is hosted by the base inference component. The adapter inference component uses the compute resources that you assigned to the base inference component.</p>
+    /// <p>When you create an adapter inference component, use the <code>Container</code> parameter to specify the location of the adapter artifacts. In the parameter value, use the <code>ArtifactUrl</code> parameter of the <code>InferenceComponentContainerSpecification</code> data type.</p>
+    /// <p>Before you can create an adapter inference component, you must have an existing inference component that contains the foundation model that you want to adapt.</p>
+    pub fn set_base_inference_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.base_inference_component_name = input;
+        self
+    }
+    /// <p>The name of an existing inference component that is to contain the inference component that you're creating with your request.</p>
+    /// <p>Specify this parameter only if your request is meant to create an adapter inference component. An adapter inference component contains the path to an adapter model. The purpose of the adapter model is to tailor the inference output of a base foundation model, which is hosted by the base inference component. The adapter inference component uses the compute resources that you assigned to the base inference component.</p>
+    /// <p>When you create an adapter inference component, use the <code>Container</code> parameter to specify the location of the adapter artifacts. In the parameter value, use the <code>ArtifactUrl</code> parameter of the <code>InferenceComponentContainerSpecification</code> data type.</p>
+    /// <p>Before you can create an adapter inference component, you must have an existing inference component that contains the foundation model that you want to adapt.</p>
+    pub fn get_base_inference_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.base_inference_component_name
     }
     /// Consumes the builder and constructs a [`InferenceComponentSpecification`](crate::types::InferenceComponentSpecification).
     pub fn build(self) -> crate::types::InferenceComponentSpecification {
@@ -115,6 +155,7 @@ impl InferenceComponentSpecificationBuilder {
             container: self.container,
             startup_parameters: self.startup_parameters,
             compute_resource_requirements: self.compute_resource_requirements,
+            base_inference_component_name: self.base_inference_component_name,
         }
     }
 }

@@ -5,7 +5,7 @@
 pub struct ValidateStateMachineDefinitionOutput {
     /// <p>The result value will be <code>OK</code> when no syntax errors are found, or <code>FAIL</code> if the workflow definition does not pass verification.</p>
     pub result: crate::types::ValidateStateMachineDefinitionResultCode,
-    /// <p>If the result is <code>OK</code>, this field will be empty. When there are errors, this field will contain an array of <b>Diagnostic</b> objects to help you troubleshoot.</p>
+    /// <p>An array of diagnostic errors and warnings found during validation of the state machine definition. Since <b>warnings</b> do not prevent deploying your workflow definition, the <b>result</b> value could be <code>OK</code> even when warning diagnostics are present in the response.</p>
     pub diagnostics: ::std::vec::Vec<crate::types::ValidateStateMachineDefinitionDiagnostic>,
     /// <p>The result value will be <code>true</code> if the number of diagnostics found in the workflow definition exceeds <code>maxResults</code>. When all diagnostics results are returned, the value will be <code>false</code>.</p>
     pub truncated: ::std::option::Option<bool>,
@@ -16,7 +16,7 @@ impl ValidateStateMachineDefinitionOutput {
     pub fn result(&self) -> &crate::types::ValidateStateMachineDefinitionResultCode {
         &self.result
     }
-    /// <p>If the result is <code>OK</code>, this field will be empty. When there are errors, this field will contain an array of <b>Diagnostic</b> objects to help you troubleshoot.</p>
+    /// <p>An array of diagnostic errors and warnings found during validation of the state machine definition. Since <b>warnings</b> do not prevent deploying your workflow definition, the <b>result</b> value could be <code>OK</code> even when warning diagnostics are present in the response.</p>
     pub fn diagnostics(&self) -> &[crate::types::ValidateStateMachineDefinitionDiagnostic] {
         use std::ops::Deref;
         self.diagnostics.deref()
@@ -67,19 +67,19 @@ impl ValidateStateMachineDefinitionOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_diagnostics`](Self::set_diagnostics).
     ///
-    /// <p>If the result is <code>OK</code>, this field will be empty. When there are errors, this field will contain an array of <b>Diagnostic</b> objects to help you troubleshoot.</p>
+    /// <p>An array of diagnostic errors and warnings found during validation of the state machine definition. Since <b>warnings</b> do not prevent deploying your workflow definition, the <b>result</b> value could be <code>OK</code> even when warning diagnostics are present in the response.</p>
     pub fn diagnostics(mut self, input: crate::types::ValidateStateMachineDefinitionDiagnostic) -> Self {
         let mut v = self.diagnostics.unwrap_or_default();
         v.push(input);
         self.diagnostics = ::std::option::Option::Some(v);
         self
     }
-    /// <p>If the result is <code>OK</code>, this field will be empty. When there are errors, this field will contain an array of <b>Diagnostic</b> objects to help you troubleshoot.</p>
+    /// <p>An array of diagnostic errors and warnings found during validation of the state machine definition. Since <b>warnings</b> do not prevent deploying your workflow definition, the <b>result</b> value could be <code>OK</code> even when warning diagnostics are present in the response.</p>
     pub fn set_diagnostics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ValidateStateMachineDefinitionDiagnostic>>) -> Self {
         self.diagnostics = input;
         self
     }
-    /// <p>If the result is <code>OK</code>, this field will be empty. When there are errors, this field will contain an array of <b>Diagnostic</b> objects to help you troubleshoot.</p>
+    /// <p>An array of diagnostic errors and warnings found during validation of the state machine definition. Since <b>warnings</b> do not prevent deploying your workflow definition, the <b>result</b> value could be <code>OK</code> even when warning diagnostics are present in the response.</p>
     pub fn get_diagnostics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidateStateMachineDefinitionDiagnostic>> {
         &self.diagnostics
     }

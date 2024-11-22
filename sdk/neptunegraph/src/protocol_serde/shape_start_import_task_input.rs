@@ -18,11 +18,14 @@ pub fn ser_start_import_task_input_input(
         crate::protocol_serde::shape_import_options::ser_import_options(&mut object_5, var_4)?;
         object_5.finish();
     }
-    if let Some(var_6) = &input.role_arn {
-        object.key("roleArn").string(var_6.as_str());
+    if let Some(var_6) = &input.parquet_type {
+        object.key("parquetType").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.source {
-        object.key("source").string(var_7.as_str());
+    if let Some(var_7) = &input.role_arn {
+        object.key("roleArn").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.source {
+        object.key("source").string(var_8.as_str());
     }
     Ok(())
 }

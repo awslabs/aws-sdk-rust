@@ -54,6 +54,10 @@ pub struct UpdateUserPoolInput {
     pub user_pool_add_ons: ::std::option::Option<crate::types::UserPoolAddOnsType>,
     /// <p>The available verified method a user can use to recover their password when they call <code>ForgotPassword</code>. You can use this setting to define a preferred method when a user has more than one method available. With this setting, SMS doesn't qualify for a valid password recovery mechanism if the user also has SMS multi-factor authentication (MFA) activated. In the absence of this setting, Amazon Cognito uses the legacy behavior to determine the recovery method where SMS is preferred through email.</p>
     pub account_recovery_setting: ::std::option::Option<crate::types::AccountRecoverySettingType>,
+    /// <p>The updated name of your user pool.</p>
+    pub pool_name: ::std::option::Option<::std::string::String>,
+    /// <p>The user pool <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sign-in-feature-plans.html">feature plan</a>, or tier. This parameter determines the eligibility of the user pool for features like managed login, access-token customization, and threat protection. Defaults to <code>ESSENTIALS</code>.</p>
+    pub user_pool_tier: ::std::option::Option<crate::types::UserPoolTierType>,
 }
 impl UpdateUserPoolInput {
     /// <p>The user pool ID for the user pool you want to update.</p>
@@ -146,6 +150,14 @@ impl UpdateUserPoolInput {
     pub fn account_recovery_setting(&self) -> ::std::option::Option<&crate::types::AccountRecoverySettingType> {
         self.account_recovery_setting.as_ref()
     }
+    /// <p>The updated name of your user pool.</p>
+    pub fn pool_name(&self) -> ::std::option::Option<&str> {
+        self.pool_name.as_deref()
+    }
+    /// <p>The user pool <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sign-in-feature-plans.html">feature plan</a>, or tier. This parameter determines the eligibility of the user pool for features like managed login, access-token customization, and threat protection. Defaults to <code>ESSENTIALS</code>.</p>
+    pub fn user_pool_tier(&self) -> ::std::option::Option<&crate::types::UserPoolTierType> {
+        self.user_pool_tier.as_ref()
+    }
 }
 impl UpdateUserPoolInput {
     /// Creates a new builder-style object to manufacture [`UpdateUserPoolInput`](crate::operation::update_user_pool::UpdateUserPoolInput).
@@ -177,6 +189,8 @@ pub struct UpdateUserPoolInputBuilder {
     pub(crate) admin_create_user_config: ::std::option::Option<crate::types::AdminCreateUserConfigType>,
     pub(crate) user_pool_add_ons: ::std::option::Option<crate::types::UserPoolAddOnsType>,
     pub(crate) account_recovery_setting: ::std::option::Option<crate::types::AccountRecoverySettingType>,
+    pub(crate) pool_name: ::std::option::Option<::std::string::String>,
+    pub(crate) user_pool_tier: ::std::option::Option<crate::types::UserPoolTierType>,
 }
 impl UpdateUserPoolInputBuilder {
     /// <p>The user pool ID for the user pool you want to update.</p>
@@ -501,6 +515,34 @@ impl UpdateUserPoolInputBuilder {
     pub fn get_account_recovery_setting(&self) -> &::std::option::Option<crate::types::AccountRecoverySettingType> {
         &self.account_recovery_setting
     }
+    /// <p>The updated name of your user pool.</p>
+    pub fn pool_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.pool_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The updated name of your user pool.</p>
+    pub fn set_pool_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.pool_name = input;
+        self
+    }
+    /// <p>The updated name of your user pool.</p>
+    pub fn get_pool_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pool_name
+    }
+    /// <p>The user pool <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sign-in-feature-plans.html">feature plan</a>, or tier. This parameter determines the eligibility of the user pool for features like managed login, access-token customization, and threat protection. Defaults to <code>ESSENTIALS</code>.</p>
+    pub fn user_pool_tier(mut self, input: crate::types::UserPoolTierType) -> Self {
+        self.user_pool_tier = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The user pool <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sign-in-feature-plans.html">feature plan</a>, or tier. This parameter determines the eligibility of the user pool for features like managed login, access-token customization, and threat protection. Defaults to <code>ESSENTIALS</code>.</p>
+    pub fn set_user_pool_tier(mut self, input: ::std::option::Option<crate::types::UserPoolTierType>) -> Self {
+        self.user_pool_tier = input;
+        self
+    }
+    /// <p>The user pool <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sign-in-feature-plans.html">feature plan</a>, or tier. This parameter determines the eligibility of the user pool for features like managed login, access-token customization, and threat protection. Defaults to <code>ESSENTIALS</code>.</p>
+    pub fn get_user_pool_tier(&self) -> &::std::option::Option<crate::types::UserPoolTierType> {
+        &self.user_pool_tier
+    }
     /// Consumes the builder and constructs a [`UpdateUserPoolInput`](crate::operation::update_user_pool::UpdateUserPoolInput).
     pub fn build(
         self,
@@ -525,6 +567,8 @@ impl UpdateUserPoolInputBuilder {
             admin_create_user_config: self.admin_create_user_config,
             user_pool_add_ons: self.user_pool_add_ons,
             account_recovery_setting: self.account_recovery_setting,
+            pool_name: self.pool_name,
+            user_pool_tier: self.user_pool_tier,
         })
     }
 }

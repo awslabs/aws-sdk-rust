@@ -6,6 +6,9 @@ pub fn ser_font_size(
     if let Some(var_1) = &input.relative {
         object.key("Relative").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.absolute {
+        object.key("Absolute").string(var_2.as_str());
+    }
     Ok(())
 }
 
@@ -28,6 +31,13 @@ where
                             builder = builder.set_relative(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::RelativeFontSize::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "Absolute" => {
+                            builder = builder.set_absolute(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }

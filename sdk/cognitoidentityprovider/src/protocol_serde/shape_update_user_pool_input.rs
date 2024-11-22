@@ -103,5 +103,11 @@ pub fn ser_update_user_pool_input_input(
         crate::protocol_serde::shape_account_recovery_setting_type::ser_account_recovery_setting_type(&mut object_34, var_33)?;
         object_34.finish();
     }
+    if let Some(var_35) = &input.pool_name {
+        object.key("PoolName").string(var_35.as_str());
+    }
+    if let Some(var_36) = &input.user_pool_tier {
+        object.key("UserPoolTier").string(var_36.as_str());
+    }
     Ok(())
 }

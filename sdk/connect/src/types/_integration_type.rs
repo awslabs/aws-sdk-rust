@@ -18,6 +18,7 @@
 ///     IntegrationType::FileScanner => { /* ... */ },
 ///     IntegrationType::PinpointApp => { /* ... */ },
 ///     IntegrationType::QMessageTemplates => { /* ... */ },
+///     IntegrationType::SesIdentity => { /* ... */ },
 ///     IntegrationType::VoiceId => { /* ... */ },
 ///     IntegrationType::WisdomAssistant => { /* ... */ },
 ///     IntegrationType::WisdomKnowledgeBase => { /* ... */ },
@@ -62,6 +63,8 @@ pub enum IntegrationType {
     #[allow(missing_docs)] // documentation missing in model
     QMessageTemplates,
     #[allow(missing_docs)] // documentation missing in model
+    SesIdentity,
+    #[allow(missing_docs)] // documentation missing in model
     VoiceId,
     #[allow(missing_docs)] // documentation missing in model
     WisdomAssistant,
@@ -82,6 +85,7 @@ impl ::std::convert::From<&str> for IntegrationType {
             "FILE_SCANNER" => IntegrationType::FileScanner,
             "PINPOINT_APP" => IntegrationType::PinpointApp,
             "Q_MESSAGE_TEMPLATES" => IntegrationType::QMessageTemplates,
+            "SES_IDENTITY" => IntegrationType::SesIdentity,
             "VOICE_ID" => IntegrationType::VoiceId,
             "WISDOM_ASSISTANT" => IntegrationType::WisdomAssistant,
             "WISDOM_KNOWLEDGE_BASE" => IntegrationType::WisdomKnowledgeBase,
@@ -107,6 +111,7 @@ impl IntegrationType {
             IntegrationType::FileScanner => "FILE_SCANNER",
             IntegrationType::PinpointApp => "PINPOINT_APP",
             IntegrationType::QMessageTemplates => "Q_MESSAGE_TEMPLATES",
+            IntegrationType::SesIdentity => "SES_IDENTITY",
             IntegrationType::VoiceId => "VOICE_ID",
             IntegrationType::WisdomAssistant => "WISDOM_ASSISTANT",
             IntegrationType::WisdomKnowledgeBase => "WISDOM_KNOWLEDGE_BASE",
@@ -123,6 +128,7 @@ impl IntegrationType {
             "FILE_SCANNER",
             "PINPOINT_APP",
             "Q_MESSAGE_TEMPLATES",
+            "SES_IDENTITY",
             "VOICE_ID",
             "WISDOM_ASSISTANT",
             "WISDOM_KNOWLEDGE_BASE",
@@ -156,6 +162,7 @@ impl ::std::fmt::Display for IntegrationType {
             IntegrationType::FileScanner => write!(f, "FILE_SCANNER"),
             IntegrationType::PinpointApp => write!(f, "PINPOINT_APP"),
             IntegrationType::QMessageTemplates => write!(f, "Q_MESSAGE_TEMPLATES"),
+            IntegrationType::SesIdentity => write!(f, "SES_IDENTITY"),
             IntegrationType::VoiceId => write!(f, "VOICE_ID"),
             IntegrationType::WisdomAssistant => write!(f, "WISDOM_ASSISTANT"),
             IntegrationType::WisdomKnowledgeBase => write!(f, "WISDOM_KNOWLEDGE_BASE"),

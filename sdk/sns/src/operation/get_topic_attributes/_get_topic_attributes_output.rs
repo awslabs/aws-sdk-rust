@@ -45,7 +45,9 @@ pub struct GetTopicAttributesOutput {
     /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:</p>
     /// <ul>
     /// <li>
-    /// <p><code>FifoTopic</code> – When this is set to <code>true</code>, a FIFO topic is created.</p></li>
+    /// <p><code>ArchivePolicy</code> – The policy that sets the retention period for messages stored in the message archive of an Amazon SNS FIFO topic.</p></li>
+    /// <li>
+    /// <p><code>BeginningArchiveTime</code> – The earliest starting point at which a message in the topic’s archive can be replayed from. This point in time is based on the configured message retention period set by the topic’s message archiving policy.</p></li>
     /// <li>
     /// <p><code>ContentBasedDeduplication</code> – Enables content-based deduplication for FIFO topics.</p>
     /// <ul>
@@ -55,6 +57,8 @@ pub struct GetTopicAttributesOutput {
     /// <p>When you set <code>ContentBasedDeduplication</code> to <code>true</code>, Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).</p>
     /// <p>(Optional) To override the generated value, you can specify a value for the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code> action.</p></li>
     /// </ul></li>
+    /// <li>
+    /// <p><code>FifoTopic</code> – When this is set to <code>true</code>, a FIFO topic is created.</p></li>
     /// </ul>
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
@@ -101,7 +105,9 @@ impl GetTopicAttributesOutput {
     /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:</p>
     /// <ul>
     /// <li>
-    /// <p><code>FifoTopic</code> – When this is set to <code>true</code>, a FIFO topic is created.</p></li>
+    /// <p><code>ArchivePolicy</code> – The policy that sets the retention period for messages stored in the message archive of an Amazon SNS FIFO topic.</p></li>
+    /// <li>
+    /// <p><code>BeginningArchiveTime</code> – The earliest starting point at which a message in the topic’s archive can be replayed from. This point in time is based on the configured message retention period set by the topic’s message archiving policy.</p></li>
     /// <li>
     /// <p><code>ContentBasedDeduplication</code> – Enables content-based deduplication for FIFO topics.</p>
     /// <ul>
@@ -111,6 +117,8 @@ impl GetTopicAttributesOutput {
     /// <p>When you set <code>ContentBasedDeduplication</code> to <code>true</code>, Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).</p>
     /// <p>(Optional) To override the generated value, you can specify a value for the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code> action.</p></li>
     /// </ul></li>
+    /// <li>
+    /// <p><code>FifoTopic</code> – When this is set to <code>true</code>, a FIFO topic is created.</p></li>
     /// </ul>
     pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
@@ -181,7 +189,9 @@ impl GetTopicAttributesOutputBuilder {
     /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:</p>
     /// <ul>
     /// <li>
-    /// <p><code>FifoTopic</code> – When this is set to <code>true</code>, a FIFO topic is created.</p></li>
+    /// <p><code>ArchivePolicy</code> – The policy that sets the retention period for messages stored in the message archive of an Amazon SNS FIFO topic.</p></li>
+    /// <li>
+    /// <p><code>BeginningArchiveTime</code> – The earliest starting point at which a message in the topic’s archive can be replayed from. This point in time is based on the configured message retention period set by the topic’s message archiving policy.</p></li>
     /// <li>
     /// <p><code>ContentBasedDeduplication</code> – Enables content-based deduplication for FIFO topics.</p>
     /// <ul>
@@ -191,6 +201,8 @@ impl GetTopicAttributesOutputBuilder {
     /// <p>When you set <code>ContentBasedDeduplication</code> to <code>true</code>, Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).</p>
     /// <p>(Optional) To override the generated value, you can specify a value for the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code> action.</p></li>
     /// </ul></li>
+    /// <li>
+    /// <p><code>FifoTopic</code> – When this is set to <code>true</code>, a FIFO topic is created.</p></li>
     /// </ul>
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
@@ -239,7 +251,9 @@ impl GetTopicAttributesOutputBuilder {
     /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:</p>
     /// <ul>
     /// <li>
-    /// <p><code>FifoTopic</code> – When this is set to <code>true</code>, a FIFO topic is created.</p></li>
+    /// <p><code>ArchivePolicy</code> – The policy that sets the retention period for messages stored in the message archive of an Amazon SNS FIFO topic.</p></li>
+    /// <li>
+    /// <p><code>BeginningArchiveTime</code> – The earliest starting point at which a message in the topic’s archive can be replayed from. This point in time is based on the configured message retention period set by the topic’s message archiving policy.</p></li>
     /// <li>
     /// <p><code>ContentBasedDeduplication</code> – Enables content-based deduplication for FIFO topics.</p>
     /// <ul>
@@ -249,6 +263,8 @@ impl GetTopicAttributesOutputBuilder {
     /// <p>When you set <code>ContentBasedDeduplication</code> to <code>true</code>, Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).</p>
     /// <p>(Optional) To override the generated value, you can specify a value for the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code> action.</p></li>
     /// </ul></li>
+    /// <li>
+    /// <p><code>FifoTopic</code> – When this is set to <code>true</code>, a FIFO topic is created.</p></li>
     /// </ul>
     pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.attributes = input;
@@ -295,7 +311,9 @@ impl GetTopicAttributesOutputBuilder {
     /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:</p>
     /// <ul>
     /// <li>
-    /// <p><code>FifoTopic</code> – When this is set to <code>true</code>, a FIFO topic is created.</p></li>
+    /// <p><code>ArchivePolicy</code> – The policy that sets the retention period for messages stored in the message archive of an Amazon SNS FIFO topic.</p></li>
+    /// <li>
+    /// <p><code>BeginningArchiveTime</code> – The earliest starting point at which a message in the topic’s archive can be replayed from. This point in time is based on the configured message retention period set by the topic’s message archiving policy.</p></li>
     /// <li>
     /// <p><code>ContentBasedDeduplication</code> – Enables content-based deduplication for FIFO topics.</p>
     /// <ul>
@@ -305,6 +323,8 @@ impl GetTopicAttributesOutputBuilder {
     /// <p>When you set <code>ContentBasedDeduplication</code> to <code>true</code>, Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).</p>
     /// <p>(Optional) To override the generated value, you can specify a value for the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code> action.</p></li>
     /// </ul></li>
+    /// <li>
+    /// <p><code>FifoTopic</code> – When this is set to <code>true</code>, a FIFO topic is created.</p></li>
     /// </ul>
     pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.attributes

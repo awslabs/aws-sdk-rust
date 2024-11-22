@@ -39,36 +39,39 @@ pub fn ser_create_graph_using_import_task_input_input(
             ::aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if let Some(var_11) = &input.public_connectivity {
-        object.key("publicConnectivity").boolean(*var_11);
+    if let Some(var_11) = &input.parquet_type {
+        object.key("parquetType").string(var_11.as_str());
     }
-    if let Some(var_12) = &input.replica_count {
+    if let Some(var_12) = &input.public_connectivity {
+        object.key("publicConnectivity").boolean(*var_12);
+    }
+    if let Some(var_13) = &input.replica_count {
         object.key("replicaCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_12).into()),
+            ::aws_smithy_types::Number::NegInt((*var_13).into()),
         );
     }
-    if let Some(var_13) = &input.role_arn {
-        object.key("roleArn").string(var_13.as_str());
+    if let Some(var_14) = &input.role_arn {
+        object.key("roleArn").string(var_14.as_str());
     }
-    if let Some(var_14) = &input.source {
-        object.key("source").string(var_14.as_str());
+    if let Some(var_15) = &input.source {
+        object.key("source").string(var_15.as_str());
     }
-    if let Some(var_15) = &input.tags {
+    if let Some(var_16) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("tags").start_object();
-        for (key_17, value_18) in var_15 {
+        let mut object_17 = object.key("tags").start_object();
+        for (key_18, value_19) in var_16 {
             {
-                object_16.key(key_17.as_str()).string(value_18.as_str());
+                object_17.key(key_18.as_str()).string(value_19.as_str());
             }
         }
-        object_16.finish();
+        object_17.finish();
     }
-    if let Some(var_19) = &input.vector_search_configuration {
+    if let Some(var_20) = &input.vector_search_configuration {
         #[allow(unused_mut)]
-        let mut object_20 = object.key("vectorSearchConfiguration").start_object();
-        crate::protocol_serde::shape_vector_search_configuration::ser_vector_search_configuration(&mut object_20, var_19)?;
-        object_20.finish();
+        let mut object_21 = object.key("vectorSearchConfiguration").start_object();
+        crate::protocol_serde::shape_vector_search_configuration::ser_vector_search_configuration(&mut object_21, var_20)?;
+        object_21.finish();
     }
     Ok(())
 }

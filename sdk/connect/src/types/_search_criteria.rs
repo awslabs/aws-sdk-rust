@@ -20,6 +20,8 @@ pub struct SearchCriteria {
     /// <p>To use <code>SearchableContactAttributes</code> in a search request, the <code>GetContactAttributes</code> action is required to perform an API request. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-actions-as-permissions">https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-actions-as-permissions</a>Actions defined by Amazon Connect.</p>
     /// </important>
     pub searchable_contact_attributes: ::std::option::Option<crate::types::SearchableContactAttributes>,
+    /// <p></p>
+    pub searchable_segment_attributes: ::std::option::Option<crate::types::SearchableSegmentAttributes>,
 }
 impl SearchCriteria {
     /// <p>The identifiers of agents who handled the contacts.</p>
@@ -60,6 +62,10 @@ impl SearchCriteria {
     pub fn searchable_contact_attributes(&self) -> ::std::option::Option<&crate::types::SearchableContactAttributes> {
         self.searchable_contact_attributes.as_ref()
     }
+    /// <p></p>
+    pub fn searchable_segment_attributes(&self) -> ::std::option::Option<&crate::types::SearchableSegmentAttributes> {
+        self.searchable_segment_attributes.as_ref()
+    }
 }
 impl SearchCriteria {
     /// Creates a new builder-style object to manufacture [`SearchCriteria`](crate::types::SearchCriteria).
@@ -79,6 +85,7 @@ pub struct SearchCriteriaBuilder {
     pub(crate) initiation_methods: ::std::option::Option<::std::vec::Vec<crate::types::ContactInitiationMethod>>,
     pub(crate) queue_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) searchable_contact_attributes: ::std::option::Option<crate::types::SearchableContactAttributes>,
+    pub(crate) searchable_segment_attributes: ::std::option::Option<crate::types::SearchableSegmentAttributes>,
 }
 impl SearchCriteriaBuilder {
     /// Appends an item to `agent_ids`.
@@ -209,6 +216,20 @@ impl SearchCriteriaBuilder {
     pub fn get_searchable_contact_attributes(&self) -> &::std::option::Option<crate::types::SearchableContactAttributes> {
         &self.searchable_contact_attributes
     }
+    /// <p></p>
+    pub fn searchable_segment_attributes(mut self, input: crate::types::SearchableSegmentAttributes) -> Self {
+        self.searchable_segment_attributes = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p></p>
+    pub fn set_searchable_segment_attributes(mut self, input: ::std::option::Option<crate::types::SearchableSegmentAttributes>) -> Self {
+        self.searchable_segment_attributes = input;
+        self
+    }
+    /// <p></p>
+    pub fn get_searchable_segment_attributes(&self) -> &::std::option::Option<crate::types::SearchableSegmentAttributes> {
+        &self.searchable_segment_attributes
+    }
     /// Consumes the builder and constructs a [`SearchCriteria`](crate::types::SearchCriteria).
     pub fn build(self) -> crate::types::SearchCriteria {
         crate::types::SearchCriteria {
@@ -219,6 +240,7 @@ impl SearchCriteriaBuilder {
             initiation_methods: self.initiation_methods,
             queue_ids: self.queue_ids,
             searchable_contact_attributes: self.searchable_contact_attributes,
+            searchable_segment_attributes: self.searchable_segment_attributes,
         }
     }
 }

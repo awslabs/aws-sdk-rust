@@ -19,6 +19,7 @@ impl super::Client {
     ///   - [`revision_id(Option<String>)`](crate::operation::describe_state_machine::DescribeStateMachineOutput::revision_id): <p>The revision identifier for the state machine.</p> <p>Use the <code>revisionId</code> parameter to compare between versions of a state machine configuration used for executions without performing a diff of the properties, such as <code>definition</code> and <code>roleArn</code>.</p>
     ///   - [`description(Option<String>)`](crate::operation::describe_state_machine::DescribeStateMachineOutput::description): <p>The description of the state machine version.</p>
     ///   - [`encryption_configuration(Option<EncryptionConfiguration>)`](crate::operation::describe_state_machine::DescribeStateMachineOutput::encryption_configuration): <p>Settings to configure server-side encryption.</p>
+    ///   - [`variable_references(Option<HashMap::<String, Vec::<String>>>)`](crate::operation::describe_state_machine::DescribeStateMachineOutput::variable_references): <p>A map of <b>state name</b> to a list of variables referenced by that state. States that do not use variable references will not be shown in the response.</p>
     /// - On failure, responds with [`SdkError<DescribeStateMachineError>`](crate::operation::describe_state_machine::DescribeStateMachineError)
     pub fn describe_state_machine(&self) -> crate::operation::describe_state_machine::builders::DescribeStateMachineFluentBuilder {
         crate::operation::describe_state_machine::builders::DescribeStateMachineFluentBuilder::new(self.handle.clone())

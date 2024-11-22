@@ -10,6 +10,12 @@ pub struct SequenceStoreFilter {
     pub created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The filter's end date.</p>
     pub created_before: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Filter results based on status.</p>
+    pub status: ::std::option::Option<crate::types::SequenceStoreStatus>,
+    /// <p>Filter results based on stores updated after the specified time.</p>
+    pub updated_after: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Filter results based on stores updated before the specified time.</p>
+    pub updated_before: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl SequenceStoreFilter {
     /// <p>A name to filter on.</p>
@@ -23,6 +29,18 @@ impl SequenceStoreFilter {
     /// <p>The filter's end date.</p>
     pub fn created_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_before.as_ref()
+    }
+    /// <p>Filter results based on status.</p>
+    pub fn status(&self) -> ::std::option::Option<&crate::types::SequenceStoreStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Filter results based on stores updated after the specified time.</p>
+    pub fn updated_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.updated_after.as_ref()
+    }
+    /// <p>Filter results based on stores updated before the specified time.</p>
+    pub fn updated_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.updated_before.as_ref()
     }
 }
 impl SequenceStoreFilter {
@@ -39,6 +57,9 @@ pub struct SequenceStoreFilterBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_before: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) status: ::std::option::Option<crate::types::SequenceStoreStatus>,
+    pub(crate) updated_after: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) updated_before: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl SequenceStoreFilterBuilder {
     /// <p>A name to filter on.</p>
@@ -83,12 +104,57 @@ impl SequenceStoreFilterBuilder {
     pub fn get_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_before
     }
+    /// <p>Filter results based on status.</p>
+    pub fn status(mut self, input: crate::types::SequenceStoreStatus) -> Self {
+        self.status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Filter results based on status.</p>
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::SequenceStoreStatus>) -> Self {
+        self.status = input;
+        self
+    }
+    /// <p>Filter results based on status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::SequenceStoreStatus> {
+        &self.status
+    }
+    /// <p>Filter results based on stores updated after the specified time.</p>
+    pub fn updated_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.updated_after = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Filter results based on stores updated after the specified time.</p>
+    pub fn set_updated_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.updated_after = input;
+        self
+    }
+    /// <p>Filter results based on stores updated after the specified time.</p>
+    pub fn get_updated_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_after
+    }
+    /// <p>Filter results based on stores updated before the specified time.</p>
+    pub fn updated_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.updated_before = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Filter results based on stores updated before the specified time.</p>
+    pub fn set_updated_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.updated_before = input;
+        self
+    }
+    /// <p>Filter results based on stores updated before the specified time.</p>
+    pub fn get_updated_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_before
+    }
     /// Consumes the builder and constructs a [`SequenceStoreFilter`](crate::types::SequenceStoreFilter).
     pub fn build(self) -> crate::types::SequenceStoreFilter {
         crate::types::SequenceStoreFilter {
             name: self.name,
             created_after: self.created_after,
             created_before: self.created_before,
+            status: self.status,
+            updated_after: self.updated_after,
+            updated_before: self.updated_before,
         }
     }
 }

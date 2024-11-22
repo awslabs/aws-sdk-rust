@@ -16,6 +16,8 @@ pub struct ClusterNodeDetails {
     pub launch_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The LifeCycle configuration applied to the instance.</p>
     pub life_cycle_config: ::std::option::Option<crate::types::ClusterLifeCycleConfig>,
+    /// <p>Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker Access to Resources in your Amazon VPC</a>.</p>
+    pub override_vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     /// <p>The number of threads per CPU core you specified under <code>CreateCluster</code>.</p>
     pub threads_per_core: ::std::option::Option<i32>,
     /// <p>The configurations of additional storage specified to the instance group where the instance (node) is launched.</p>
@@ -51,6 +53,10 @@ impl ClusterNodeDetails {
     /// <p>The LifeCycle configuration applied to the instance.</p>
     pub fn life_cycle_config(&self) -> ::std::option::Option<&crate::types::ClusterLifeCycleConfig> {
         self.life_cycle_config.as_ref()
+    }
+    /// <p>Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker Access to Resources in your Amazon VPC</a>.</p>
+    pub fn override_vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
+        self.override_vpc_config.as_ref()
     }
     /// <p>The number of threads per CPU core you specified under <code>CreateCluster</code>.</p>
     pub fn threads_per_core(&self) -> ::std::option::Option<i32> {
@@ -92,6 +98,7 @@ pub struct ClusterNodeDetailsBuilder {
     pub(crate) instance_type: ::std::option::Option<crate::types::ClusterInstanceType>,
     pub(crate) launch_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) life_cycle_config: ::std::option::Option<crate::types::ClusterLifeCycleConfig>,
+    pub(crate) override_vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     pub(crate) threads_per_core: ::std::option::Option<i32>,
     pub(crate) instance_storage_configs: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceStorageConfig>>,
     pub(crate) private_primary_ip: ::std::option::Option<::std::string::String>,
@@ -183,6 +190,20 @@ impl ClusterNodeDetailsBuilder {
     pub fn get_life_cycle_config(&self) -> &::std::option::Option<crate::types::ClusterLifeCycleConfig> {
         &self.life_cycle_config
     }
+    /// <p>Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker Access to Resources in your Amazon VPC</a>.</p>
+    pub fn override_vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
+        self.override_vpc_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker Access to Resources in your Amazon VPC</a>.</p>
+    pub fn set_override_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
+        self.override_vpc_config = input;
+        self
+    }
+    /// <p>Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker Access to Resources in your Amazon VPC</a>.</p>
+    pub fn get_override_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
+        &self.override_vpc_config
+    }
     /// <p>The number of threads per CPU core you specified under <code>CreateCluster</code>.</p>
     pub fn threads_per_core(mut self, input: i32) -> Self {
         self.threads_per_core = ::std::option::Option::Some(input);
@@ -268,6 +289,7 @@ impl ClusterNodeDetailsBuilder {
             instance_type: self.instance_type,
             launch_time: self.launch_time,
             life_cycle_config: self.life_cycle_config,
+            override_vpc_config: self.override_vpc_config,
             threads_per_core: self.threads_per_core,
             instance_storage_configs: self.instance_storage_configs,
             private_primary_ip: self.private_primary_ip,

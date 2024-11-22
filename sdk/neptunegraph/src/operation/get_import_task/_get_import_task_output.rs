@@ -11,6 +11,8 @@ pub struct GetImportTaskOutput {
     pub source: ::std::string::String,
     /// <p>Specifies the format of S3 data to be imported. Valid values are <code>CSV</code>, which identifies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-gremlin.html">Gremlin CSV format</a> or <code>OPENCYPHER</code>, which identies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-opencypher.html">openCypher load format</a>.</p>
     pub format: ::std::option::Option<crate::types::Format>,
+    /// <p>The parquet type of the import task.</p>
+    pub parquet_type: ::std::option::Option<crate::types::ParquetType>,
     /// <p>The ARN of the IAM role that will allow access to the data that is to be imported.</p>
     pub role_arn: ::std::string::String,
     /// <p>The status of the import task:</p>
@@ -41,7 +43,7 @@ pub struct GetImportTaskOutput {
     pub import_options: ::std::option::Option<crate::types::ImportOptions>,
     /// <p>Contains details about the specified import task.</p>
     pub import_task_details: ::std::option::Option<crate::types::ImportTaskDetails>,
-    /// <p>The number of the current attempt to execute the import task.</p>
+    /// <p>The number of the current attempts to execute the import task.</p>
     pub attempt_number: ::std::option::Option<i32>,
     /// <p>The reason that the import task has this status value.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
@@ -65,6 +67,10 @@ impl GetImportTaskOutput {
     /// <p>Specifies the format of S3 data to be imported. Valid values are <code>CSV</code>, which identifies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-gremlin.html">Gremlin CSV format</a> or <code>OPENCYPHER</code>, which identies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-opencypher.html">openCypher load format</a>.</p>
     pub fn format(&self) -> ::std::option::Option<&crate::types::Format> {
         self.format.as_ref()
+    }
+    /// <p>The parquet type of the import task.</p>
+    pub fn parquet_type(&self) -> ::std::option::Option<&crate::types::ParquetType> {
+        self.parquet_type.as_ref()
     }
     /// <p>The ARN of the IAM role that will allow access to the data that is to be imported.</p>
     pub fn role_arn(&self) -> &str {
@@ -105,7 +111,7 @@ impl GetImportTaskOutput {
     pub fn import_task_details(&self) -> ::std::option::Option<&crate::types::ImportTaskDetails> {
         self.import_task_details.as_ref()
     }
-    /// <p>The number of the current attempt to execute the import task.</p>
+    /// <p>The number of the current attempts to execute the import task.</p>
     pub fn attempt_number(&self) -> ::std::option::Option<i32> {
         self.attempt_number
     }
@@ -134,6 +140,7 @@ pub struct GetImportTaskOutputBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     pub(crate) source: ::std::option::Option<::std::string::String>,
     pub(crate) format: ::std::option::Option<crate::types::Format>,
+    pub(crate) parquet_type: ::std::option::Option<crate::types::ParquetType>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ImportTaskStatus>,
     pub(crate) import_options: ::std::option::Option<crate::types::ImportOptions>,
@@ -200,6 +207,20 @@ impl GetImportTaskOutputBuilder {
     /// <p>Specifies the format of S3 data to be imported. Valid values are <code>CSV</code>, which identifies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-gremlin.html">Gremlin CSV format</a> or <code>OPENCYPHER</code>, which identies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-opencypher.html">openCypher load format</a>.</p>
     pub fn get_format(&self) -> &::std::option::Option<crate::types::Format> {
         &self.format
+    }
+    /// <p>The parquet type of the import task.</p>
+    pub fn parquet_type(mut self, input: crate::types::ParquetType) -> Self {
+        self.parquet_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The parquet type of the import task.</p>
+    pub fn set_parquet_type(mut self, input: ::std::option::Option<crate::types::ParquetType>) -> Self {
+        self.parquet_type = input;
+        self
+    }
+    /// <p>The parquet type of the import task.</p>
+    pub fn get_parquet_type(&self) -> &::std::option::Option<crate::types::ParquetType> {
+        &self.parquet_type
     }
     /// <p>The ARN of the IAM role that will allow access to the data that is to be imported.</p>
     /// This field is required.
@@ -325,17 +346,17 @@ impl GetImportTaskOutputBuilder {
     pub fn get_import_task_details(&self) -> &::std::option::Option<crate::types::ImportTaskDetails> {
         &self.import_task_details
     }
-    /// <p>The number of the current attempt to execute the import task.</p>
+    /// <p>The number of the current attempts to execute the import task.</p>
     pub fn attempt_number(mut self, input: i32) -> Self {
         self.attempt_number = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of the current attempt to execute the import task.</p>
+    /// <p>The number of the current attempts to execute the import task.</p>
     pub fn set_attempt_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.attempt_number = input;
         self
     }
-    /// <p>The number of the current attempt to execute the import task.</p>
+    /// <p>The number of the current attempts to execute the import task.</p>
     pub fn get_attempt_number(&self) -> &::std::option::Option<i32> {
         &self.attempt_number
     }
@@ -386,6 +407,7 @@ impl GetImportTaskOutputBuilder {
                 )
             })?,
             format: self.format,
+            parquet_type: self.parquet_type,
             role_arn: self.role_arn.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",

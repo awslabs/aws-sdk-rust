@@ -518,6 +518,15 @@ pub(crate) fn get_reference_store_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_s3_access_policy_output_output_correct_errors(
+    mut builder: crate::operation::get_s3_access_policy::builders::GetS3AccessPolicyOutputBuilder,
+) -> crate::operation::get_s3_access_policy::builders::GetS3AccessPolicyOutputBuilder {
+    if builder.s3_access_policy.is_none() {
+        builder.s3_access_policy = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_sequence_store_output_output_correct_errors(
     mut builder: crate::operation::get_sequence_store::builders::GetSequenceStoreOutputBuilder,
 ) -> crate::operation::get_sequence_store::builders::GetSequenceStoreOutputBuilder {
@@ -817,6 +826,21 @@ pub(crate) fn update_annotation_store_version_output_output_correct_errors(
     }
     if builder.update_time.is_none() {
         builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn update_sequence_store_output_output_correct_errors(
+    mut builder: crate::operation::update_sequence_store::builders::UpdateSequenceStoreOutputBuilder,
+) -> crate::operation::update_sequence_store::builders::UpdateSequenceStoreOutputBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.creation_time.is_none() {
+        builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }

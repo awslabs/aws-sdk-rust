@@ -15,6 +15,8 @@ pub struct GetTaskTemplateOutput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the flow that runs by default when a task is created by referencing this template.</p>
     pub contact_flow_id: ::std::option::Option<::std::string::String>,
+    /// <p></p>
+    pub self_assign_flow_id: ::std::option::Option<::std::string::String>,
     /// <p>Constraints that are applicable to the fields listed.</p>
     pub constraints: ::std::option::Option<crate::types::TaskTemplateConstraints>,
     /// <p>The default values for fields when a task is created by referencing this template.</p>
@@ -58,6 +60,10 @@ impl GetTaskTemplateOutput {
     /// <p>The identifier of the flow that runs by default when a task is created by referencing this template.</p>
     pub fn contact_flow_id(&self) -> ::std::option::Option<&str> {
         self.contact_flow_id.as_deref()
+    }
+    /// <p></p>
+    pub fn self_assign_flow_id(&self) -> ::std::option::Option<&str> {
+        self.self_assign_flow_id.as_deref()
     }
     /// <p>Constraints that are applicable to the fields listed.</p>
     pub fn constraints(&self) -> ::std::option::Option<&crate::types::TaskTemplateConstraints> {
@@ -112,6 +118,7 @@ pub struct GetTaskTemplateOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) contact_flow_id: ::std::option::Option<::std::string::String>,
+    pub(crate) self_assign_flow_id: ::std::option::Option<::std::string::String>,
     pub(crate) constraints: ::std::option::Option<crate::types::TaskTemplateConstraints>,
     pub(crate) defaults: ::std::option::Option<crate::types::TaskTemplateDefaults>,
     pub(crate) fields: ::std::option::Option<::std::vec::Vec<crate::types::TaskTemplateField>>,
@@ -208,6 +215,20 @@ impl GetTaskTemplateOutputBuilder {
     /// <p>The identifier of the flow that runs by default when a task is created by referencing this template.</p>
     pub fn get_contact_flow_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.contact_flow_id
+    }
+    /// <p></p>
+    pub fn self_assign_flow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.self_assign_flow_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p></p>
+    pub fn set_self_assign_flow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.self_assign_flow_id = input;
+        self
+    }
+    /// <p></p>
+    pub fn get_self_assign_flow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.self_assign_flow_id
     }
     /// <p>Constraints that are applicable to the fields listed.</p>
     pub fn constraints(mut self, input: crate::types::TaskTemplateConstraints) -> Self {
@@ -358,6 +379,7 @@ impl GetTaskTemplateOutputBuilder {
             })?,
             description: self.description,
             contact_flow_id: self.contact_flow_id,
+            self_assign_flow_id: self.self_assign_flow_id,
             constraints: self.constraints,
             defaults: self.defaults,
             fields: self.fields,

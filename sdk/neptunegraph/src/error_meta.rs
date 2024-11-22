@@ -72,6 +72,32 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_export_task::CancelExportTaskError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_export_task::CancelExportTaskError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::cancel_export_task::CancelExportTaskError> for Error {
+    fn from(err: crate::operation::cancel_export_task::CancelExportTaskError) -> Self {
+        match err {
+            crate::operation::cancel_export_task::CancelExportTaskError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::cancel_export_task::CancelExportTaskError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::cancel_export_task::CancelExportTaskError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::cancel_export_task::CancelExportTaskError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::cancel_export_task::CancelExportTaskError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::cancel_export_task::CancelExportTaskError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_import_task::CancelImportTaskError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -386,6 +412,31 @@ impl From<crate::operation::execute_query::ExecuteQueryError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_export_task::GetExportTaskError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_export_task::GetExportTaskError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_export_task::GetExportTaskError> for Error {
+    fn from(err: crate::operation::get_export_task::GetExportTaskError) -> Self {
+        match err {
+            crate::operation::get_export_task::GetExportTaskError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_export_task::GetExportTaskError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_export_task::GetExportTaskError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_export_task::GetExportTaskError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_export_task::GetExportTaskError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_graph::GetGraphError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -546,6 +597,31 @@ impl From<crate::operation::get_query::GetQueryError> for Error {
             crate::operation::get_query::GetQueryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_query::GetQueryError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_query::GetQueryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_export_tasks::ListExportTasksError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_export_tasks::ListExportTasksError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_export_tasks::ListExportTasksError> for Error {
+    fn from(err: crate::operation::list_export_tasks::ListExportTasksError) -> Self {
+        match err {
+            crate::operation::list_export_tasks::ListExportTasksError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_export_tasks::ListExportTasksError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_export_tasks::ListExportTasksError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_export_tasks::ListExportTasksError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_export_tasks::ListExportTasksError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -778,6 +854,32 @@ impl From<crate::operation::restore_graph_from_snapshot::RestoreGraphFromSnapsho
                 Error::ValidationException(inner)
             }
             crate::operation::restore_graph_from_snapshot::RestoreGraphFromSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_export_task::StartExportTaskError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_export_task::StartExportTaskError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_export_task::StartExportTaskError> for Error {
+    fn from(err: crate::operation::start_export_task::StartExportTaskError) -> Self {
+        match err {
+            crate::operation::start_export_task::StartExportTaskError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_export_task::StartExportTaskError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_export_task::StartExportTaskError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_export_task::StartExportTaskError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_export_task::StartExportTaskError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_export_task::StartExportTaskError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

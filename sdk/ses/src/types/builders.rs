@@ -5,6 +5,8 @@ pub use crate::types::_receipt_rule::ReceiptRuleBuilder;
 
 pub use crate::types::_receipt_action::ReceiptActionBuilder;
 
+pub use crate::types::_connect_action::ConnectActionBuilder;
+
 pub use crate::types::_sns_action::SnsActionBuilder;
 
 pub use crate::types::_add_header_action::AddHeaderActionBuilder;

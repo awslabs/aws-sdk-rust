@@ -12,6 +12,8 @@ pub struct MutualAuthenticationAttributes {
     pub ignore_client_certificate_expiry: ::std::option::Option<bool>,
     /// <p>Indicates a shared trust stores association status.</p>
     pub trust_store_association_status: ::std::option::Option<crate::types::TrustStoreAssociationStatusEnum>,
+    /// <p>Indicates whether trust store CA certificate names are advertised.</p>
+    pub advertise_trust_store_ca_names: ::std::option::Option<crate::types::AdvertiseTrustStoreCaNamesEnum>,
 }
 impl MutualAuthenticationAttributes {
     /// <p>The client certificate handling method. Options are <code>off</code>, <code>passthrough</code> or <code>verify</code>. The default value is <code>off</code>.</p>
@@ -30,6 +32,10 @@ impl MutualAuthenticationAttributes {
     pub fn trust_store_association_status(&self) -> ::std::option::Option<&crate::types::TrustStoreAssociationStatusEnum> {
         self.trust_store_association_status.as_ref()
     }
+    /// <p>Indicates whether trust store CA certificate names are advertised.</p>
+    pub fn advertise_trust_store_ca_names(&self) -> ::std::option::Option<&crate::types::AdvertiseTrustStoreCaNamesEnum> {
+        self.advertise_trust_store_ca_names.as_ref()
+    }
 }
 impl MutualAuthenticationAttributes {
     /// Creates a new builder-style object to manufacture [`MutualAuthenticationAttributes`](crate::types::MutualAuthenticationAttributes).
@@ -46,6 +52,7 @@ pub struct MutualAuthenticationAttributesBuilder {
     pub(crate) trust_store_arn: ::std::option::Option<::std::string::String>,
     pub(crate) ignore_client_certificate_expiry: ::std::option::Option<bool>,
     pub(crate) trust_store_association_status: ::std::option::Option<crate::types::TrustStoreAssociationStatusEnum>,
+    pub(crate) advertise_trust_store_ca_names: ::std::option::Option<crate::types::AdvertiseTrustStoreCaNamesEnum>,
 }
 impl MutualAuthenticationAttributesBuilder {
     /// <p>The client certificate handling method. Options are <code>off</code>, <code>passthrough</code> or <code>verify</code>. The default value is <code>off</code>.</p>
@@ -104,6 +111,20 @@ impl MutualAuthenticationAttributesBuilder {
     pub fn get_trust_store_association_status(&self) -> &::std::option::Option<crate::types::TrustStoreAssociationStatusEnum> {
         &self.trust_store_association_status
     }
+    /// <p>Indicates whether trust store CA certificate names are advertised.</p>
+    pub fn advertise_trust_store_ca_names(mut self, input: crate::types::AdvertiseTrustStoreCaNamesEnum) -> Self {
+        self.advertise_trust_store_ca_names = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether trust store CA certificate names are advertised.</p>
+    pub fn set_advertise_trust_store_ca_names(mut self, input: ::std::option::Option<crate::types::AdvertiseTrustStoreCaNamesEnum>) -> Self {
+        self.advertise_trust_store_ca_names = input;
+        self
+    }
+    /// <p>Indicates whether trust store CA certificate names are advertised.</p>
+    pub fn get_advertise_trust_store_ca_names(&self) -> &::std::option::Option<crate::types::AdvertiseTrustStoreCaNamesEnum> {
+        &self.advertise_trust_store_ca_names
+    }
     /// Consumes the builder and constructs a [`MutualAuthenticationAttributes`](crate::types::MutualAuthenticationAttributes).
     pub fn build(self) -> crate::types::MutualAuthenticationAttributes {
         crate::types::MutualAuthenticationAttributes {
@@ -111,6 +132,7 @@ impl MutualAuthenticationAttributesBuilder {
             trust_store_arn: self.trust_store_arn,
             ignore_client_certificate_expiry: self.ignore_client_certificate_expiry,
             trust_store_association_status: self.trust_store_association_status,
+            advertise_trust_store_ca_names: self.advertise_trust_store_ca_names,
         }
     }
 }

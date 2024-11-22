@@ -308,6 +308,20 @@ impl CreateGraphUsingImportTaskFluentBuilder {
     pub fn get_format(&self) -> &::std::option::Option<crate::types::Format> {
         self.inner.get_format()
     }
+    /// <p>The parquet type of the import task.</p>
+    pub fn parquet_type(mut self, input: crate::types::ParquetType) -> Self {
+        self.inner = self.inner.parquet_type(input);
+        self
+    }
+    /// <p>The parquet type of the import task.</p>
+    pub fn set_parquet_type(mut self, input: ::std::option::Option<crate::types::ParquetType>) -> Self {
+        self.inner = self.inner.set_parquet_type(input);
+        self
+    }
+    /// <p>The parquet type of the import task.</p>
+    pub fn get_parquet_type(&self) -> &::std::option::Option<crate::types::ParquetType> {
+        self.inner.get_parquet_type()
+    }
     /// <p>The method to handle blank nodes in the dataset. Currently, only <code>convertToIri</code> is supported, meaning blank nodes are converted to unique IRIs at load time. Must be provided when format is <code>ntriples</code>. For more information, see <a href="https://docs.aws.amazon.com/neptune-analytics/latest/userguide/using-rdf-data.html#rdf-handling">Handling RDF values</a>.</p>
     pub fn blank_node_handling(mut self, input: crate::types::BlankNodeHandling) -> Self {
         self.inner = self.inner.blank_node_handling(input);

@@ -211,4 +211,37 @@ impl CreateSequenceStoreFluentBuilder {
     pub fn get_e_tag_algorithm_family(&self) -> &::std::option::Option<crate::types::ETagAlgorithmFamily> {
         self.inner.get_e_tag_algorithm_family()
     }
+    ///
+    /// Appends an item to `propagatedSetLevelTags`.
+    ///
+    /// To override the contents of this collection use [`set_propagated_set_level_tags`](Self::set_propagated_set_level_tags).
+    ///
+    /// <p>The tags keys to propagate to the S3 objects associated with read sets in the sequence store.</p>
+    pub fn propagated_set_level_tags(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.propagated_set_level_tags(input.into());
+        self
+    }
+    /// <p>The tags keys to propagate to the S3 objects associated with read sets in the sequence store.</p>
+    pub fn set_propagated_set_level_tags(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_propagated_set_level_tags(input);
+        self
+    }
+    /// <p>The tags keys to propagate to the S3 objects associated with read sets in the sequence store.</p>
+    pub fn get_propagated_set_level_tags(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_propagated_set_level_tags()
+    }
+    /// <p>S3 access configuration parameters</p>
+    pub fn s3_access_config(mut self, input: crate::types::S3AccessConfig) -> Self {
+        self.inner = self.inner.s3_access_config(input);
+        self
+    }
+    /// <p>S3 access configuration parameters</p>
+    pub fn set_s3_access_config(mut self, input: ::std::option::Option<crate::types::S3AccessConfig>) -> Self {
+        self.inner = self.inner.set_s3_access_config(input);
+        self
+    }
+    /// <p>S3 access configuration parameters</p>
+    pub fn get_s3_access_config(&self) -> &::std::option::Option<crate::types::S3AccessConfig> {
+        self.inner.get_s3_access_config()
+    }
 }

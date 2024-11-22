@@ -71,6 +71,9 @@ where
                                 crate::protocol_serde::shape_on_start_deep_health_checks::de_on_start_deep_health_checks(tokens)?,
                             );
                         }
+                        "OverrideVpcConfig" => {
+                            builder = builder.set_override_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -223,6 +223,13 @@ pub(crate) fn de_update_task_template(
                             .transpose()?,
                     );
                 }
+                "SelfAssignFlowId" => {
+                    builder = builder.set_self_assign_flow_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "Status" => {
                     builder = builder.set_status(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -24,6 +24,8 @@ pub struct TestStateInput {
     /// <p>If you set <code>revealSecrets</code> to <code>true</code>, you must make sure that the IAM user that calls the <code>TestState</code> API has permission for the <code>states:RevealSecrets</code> action. For an example of IAM policy that sets the <code>states:RevealSecrets</code> permission, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/test-state-isolation.html#test-state-permissions">IAM permissions to test a state</a>. Without this permission, Step Functions throws an access denied error.</p>
     /// <p>By default, <code>revealSecrets</code> is set to <code>false</code>.</p>
     pub reveal_secrets: ::std::option::Option<bool>,
+    /// <p>JSON object literal that sets variables used in the state under test. Object keys are the variable names and values are the variable values.</p>
+    pub variables: ::std::option::Option<::std::string::String>,
 }
 impl TestStateInput {
     /// <p>The <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a> (ASL) definition of the state.</p>
@@ -57,6 +59,10 @@ impl TestStateInput {
     pub fn reveal_secrets(&self) -> ::std::option::Option<bool> {
         self.reveal_secrets
     }
+    /// <p>JSON object literal that sets variables used in the state under test. Object keys are the variable names and values are the variable values.</p>
+    pub fn variables(&self) -> ::std::option::Option<&str> {
+        self.variables.as_deref()
+    }
 }
 impl ::std::fmt::Debug for TestStateInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -66,6 +72,7 @@ impl ::std::fmt::Debug for TestStateInput {
         formatter.field("input", &"*** Sensitive Data Redacted ***");
         formatter.field("inspection_level", &self.inspection_level);
         formatter.field("reveal_secrets", &self.reveal_secrets);
+        formatter.field("variables", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -85,6 +92,7 @@ pub struct TestStateInputBuilder {
     pub(crate) input: ::std::option::Option<::std::string::String>,
     pub(crate) inspection_level: ::std::option::Option<crate::types::InspectionLevel>,
     pub(crate) reveal_secrets: ::std::option::Option<bool>,
+    pub(crate) variables: ::std::option::Option<::std::string::String>,
 }
 impl TestStateInputBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a> (ASL) definition of the state.</p>
@@ -103,7 +111,6 @@ impl TestStateInputBuilder {
         &self.definition
     }
     /// <p>The Amazon Resource Name (ARN) of the execution role with the required IAM permissions for the state.</p>
-    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -192,6 +199,20 @@ impl TestStateInputBuilder {
     pub fn get_reveal_secrets(&self) -> &::std::option::Option<bool> {
         &self.reveal_secrets
     }
+    /// <p>JSON object literal that sets variables used in the state under test. Object keys are the variable names and values are the variable values.</p>
+    pub fn variables(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.variables = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>JSON object literal that sets variables used in the state under test. Object keys are the variable names and values are the variable values.</p>
+    pub fn set_variables(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.variables = input;
+        self
+    }
+    /// <p>JSON object literal that sets variables used in the state under test. Object keys are the variable names and values are the variable values.</p>
+    pub fn get_variables(&self) -> &::std::option::Option<::std::string::String> {
+        &self.variables
+    }
     /// Consumes the builder and constructs a [`TestStateInput`](crate::operation::test_state::TestStateInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::test_state::TestStateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::test_state::TestStateInput {
@@ -200,6 +221,7 @@ impl TestStateInputBuilder {
             input: self.input,
             inspection_level: self.inspection_level,
             reveal_secrets: self.reveal_secrets,
+            variables: self.variables,
         })
     }
 }
@@ -211,6 +233,7 @@ impl ::std::fmt::Debug for TestStateInputBuilder {
         formatter.field("input", &"*** Sensitive Data Redacted ***");
         formatter.field("inspection_level", &self.inspection_level);
         formatter.field("reveal_secrets", &self.reveal_secrets);
+        formatter.field("variables", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

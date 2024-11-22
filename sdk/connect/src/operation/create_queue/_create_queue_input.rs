@@ -11,6 +11,8 @@ pub struct CreateQueueInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The outbound caller ID name, number, and outbound whisper flow.</p>
     pub outbound_caller_config: ::std::option::Option<crate::types::OutboundCallerConfig>,
+    /// <p></p>
+    pub outbound_email_config: ::std::option::Option<crate::types::OutboundEmailConfig>,
     /// <p>The identifier for the hours of operation.</p>
     pub hours_of_operation_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of contacts that can be in the queue before it is considered full.</p>
@@ -36,6 +38,10 @@ impl CreateQueueInput {
     /// <p>The outbound caller ID name, number, and outbound whisper flow.</p>
     pub fn outbound_caller_config(&self) -> ::std::option::Option<&crate::types::OutboundCallerConfig> {
         self.outbound_caller_config.as_ref()
+    }
+    /// <p></p>
+    pub fn outbound_email_config(&self) -> ::std::option::Option<&crate::types::OutboundEmailConfig> {
+        self.outbound_email_config.as_ref()
     }
     /// <p>The identifier for the hours of operation.</p>
     pub fn hours_of_operation_id(&self) -> ::std::option::Option<&str> {
@@ -71,6 +77,7 @@ pub struct CreateQueueInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) outbound_caller_config: ::std::option::Option<crate::types::OutboundCallerConfig>,
+    pub(crate) outbound_email_config: ::std::option::Option<crate::types::OutboundEmailConfig>,
     pub(crate) hours_of_operation_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_contacts: ::std::option::Option<i32>,
     pub(crate) quick_connect_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -134,6 +141,20 @@ impl CreateQueueInputBuilder {
     /// <p>The outbound caller ID name, number, and outbound whisper flow.</p>
     pub fn get_outbound_caller_config(&self) -> &::std::option::Option<crate::types::OutboundCallerConfig> {
         &self.outbound_caller_config
+    }
+    /// <p></p>
+    pub fn outbound_email_config(mut self, input: crate::types::OutboundEmailConfig) -> Self {
+        self.outbound_email_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p></p>
+    pub fn set_outbound_email_config(mut self, input: ::std::option::Option<crate::types::OutboundEmailConfig>) -> Self {
+        self.outbound_email_config = input;
+        self
+    }
+    /// <p></p>
+    pub fn get_outbound_email_config(&self) -> &::std::option::Option<crate::types::OutboundEmailConfig> {
+        &self.outbound_email_config
     }
     /// <p>The identifier for the hours of operation.</p>
     /// This field is required.
@@ -211,6 +232,7 @@ impl CreateQueueInputBuilder {
             name: self.name,
             description: self.description,
             outbound_caller_config: self.outbound_caller_config,
+            outbound_email_config: self.outbound_email_config,
             hours_of_operation_id: self.hours_of_operation_id,
             max_contacts: self.max_contacts,
             quick_connect_ids: self.quick_connect_ids,

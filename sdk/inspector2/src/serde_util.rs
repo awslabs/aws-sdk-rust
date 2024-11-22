@@ -17,6 +17,18 @@ pub(crate) fn internal_server_exception_correct_errors(
     builder
 }
 
+pub(crate) fn service_quota_exceeded_exception_correct_errors(
+    mut builder: crate::types::error::builders::ServiceQuotaExceededExceptionBuilder,
+) -> crate::types::error::builders::ServiceQuotaExceededExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    if builder.resource_id.is_none() {
+        builder.resource_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn throttling_exception_correct_errors(
     mut builder: crate::types::error::builders::ThrottlingExceptionBuilder,
 ) -> crate::types::error::builders::ThrottlingExceptionBuilder {
@@ -91,18 +103,6 @@ pub(crate) fn bad_request_exception_correct_errors(
 ) -> crate::types::error::builders::BadRequestExceptionBuilder {
     if builder.message.is_none() {
         builder.message = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn service_quota_exceeded_exception_correct_errors(
-    mut builder: crate::types::error::builders::ServiceQuotaExceededExceptionBuilder,
-) -> crate::types::error::builders::ServiceQuotaExceededExceptionBuilder {
-    if builder.message.is_none() {
-        builder.message = Some(Default::default())
-    }
-    if builder.resource_id.is_none() {
-        builder.resource_id = Some(Default::default())
     }
     builder
 }

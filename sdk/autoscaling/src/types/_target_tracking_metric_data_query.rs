@@ -14,6 +14,8 @@ pub struct TargetTrackingMetricDataQuery {
     pub metric_stat: ::std::option::Option<crate::types::TargetTrackingMetricStat>,
     /// <p>A human-readable label for this metric or expression. This is especially useful if this is a math expression, so that you know what the value represents.</p>
     pub label: ::std::option::Option<::std::string::String>,
+    /// <p>The period of the metric in seconds. The default value is 60. Accepted values are 10, 30, and 60. For high resolution metric, set the value to less than 60. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/policy-creating-high-resolution-metrics.html">Create a target tracking policy using high-resolution metrics for faster response</a>.</p>
+    pub period: ::std::option::Option<i32>,
     /// <p>Indicates whether to return the timestamps and raw data values of this metric.</p>
     /// <p>If you use any math expressions, specify <code>true</code> for this value for only the final math expression that the metric specification is based on. You must specify <code>false</code> for <code>ReturnData</code> for all the other metrics and expressions used in the metric specification.</p>
     /// <p>If you are only retrieving metrics and not performing any math expressions, do not specify anything for <code>ReturnData</code>. This sets it to its default (<code>true</code>).</p>
@@ -38,6 +40,10 @@ impl TargetTrackingMetricDataQuery {
     pub fn label(&self) -> ::std::option::Option<&str> {
         self.label.as_deref()
     }
+    /// <p>The period of the metric in seconds. The default value is 60. Accepted values are 10, 30, and 60. For high resolution metric, set the value to less than 60. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/policy-creating-high-resolution-metrics.html">Create a target tracking policy using high-resolution metrics for faster response</a>.</p>
+    pub fn period(&self) -> ::std::option::Option<i32> {
+        self.period
+    }
     /// <p>Indicates whether to return the timestamps and raw data values of this metric.</p>
     /// <p>If you use any math expressions, specify <code>true</code> for this value for only the final math expression that the metric specification is based on. You must specify <code>false</code> for <code>ReturnData</code> for all the other metrics and expressions used in the metric specification.</p>
     /// <p>If you are only retrieving metrics and not performing any math expressions, do not specify anything for <code>ReturnData</code>. This sets it to its default (<code>true</code>).</p>
@@ -60,6 +66,7 @@ pub struct TargetTrackingMetricDataQueryBuilder {
     pub(crate) expression: ::std::option::Option<::std::string::String>,
     pub(crate) metric_stat: ::std::option::Option<crate::types::TargetTrackingMetricStat>,
     pub(crate) label: ::std::option::Option<::std::string::String>,
+    pub(crate) period: ::std::option::Option<i32>,
     pub(crate) return_data: ::std::option::Option<bool>,
 }
 impl TargetTrackingMetricDataQueryBuilder {
@@ -126,6 +133,20 @@ impl TargetTrackingMetricDataQueryBuilder {
     pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
         &self.label
     }
+    /// <p>The period of the metric in seconds. The default value is 60. Accepted values are 10, 30, and 60. For high resolution metric, set the value to less than 60. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/policy-creating-high-resolution-metrics.html">Create a target tracking policy using high-resolution metrics for faster response</a>.</p>
+    pub fn period(mut self, input: i32) -> Self {
+        self.period = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The period of the metric in seconds. The default value is 60. Accepted values are 10, 30, and 60. For high resolution metric, set the value to less than 60. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/policy-creating-high-resolution-metrics.html">Create a target tracking policy using high-resolution metrics for faster response</a>.</p>
+    pub fn set_period(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.period = input;
+        self
+    }
+    /// <p>The period of the metric in seconds. The default value is 60. Accepted values are 10, 30, and 60. For high resolution metric, set the value to less than 60. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/policy-creating-high-resolution-metrics.html">Create a target tracking policy using high-resolution metrics for faster response</a>.</p>
+    pub fn get_period(&self) -> &::std::option::Option<i32> {
+        &self.period
+    }
     /// <p>Indicates whether to return the timestamps and raw data values of this metric.</p>
     /// <p>If you use any math expressions, specify <code>true</code> for this value for only the final math expression that the metric specification is based on. You must specify <code>false</code> for <code>ReturnData</code> for all the other metrics and expressions used in the metric specification.</p>
     /// <p>If you are only retrieving metrics and not performing any math expressions, do not specify anything for <code>ReturnData</code>. This sets it to its default (<code>true</code>).</p>
@@ -153,6 +174,7 @@ impl TargetTrackingMetricDataQueryBuilder {
             expression: self.expression,
             metric_stat: self.metric_stat,
             label: self.label,
+            period: self.period,
             return_data: self.return_data,
         }
     }

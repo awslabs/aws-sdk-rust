@@ -81,6 +81,8 @@ pub(crate) mod shape_associate_software_token;
 
 pub(crate) mod shape_change_password;
 
+pub(crate) mod shape_complete_web_authn_registration;
+
 pub(crate) mod shape_confirm_device;
 
 pub(crate) mod shape_confirm_forgot_password;
@@ -90,6 +92,8 @@ pub(crate) mod shape_confirm_sign_up;
 pub(crate) mod shape_create_group;
 
 pub(crate) mod shape_create_identity_provider;
+
+pub(crate) mod shape_create_managed_login_branding;
 
 pub(crate) mod shape_create_resource_server;
 
@@ -105,6 +109,8 @@ pub(crate) mod shape_delete_group;
 
 pub(crate) mod shape_delete_identity_provider;
 
+pub(crate) mod shape_delete_managed_login_branding;
+
 pub(crate) mod shape_delete_resource_server;
 
 pub(crate) mod shape_delete_user;
@@ -117,7 +123,13 @@ pub(crate) mod shape_delete_user_pool_client;
 
 pub(crate) mod shape_delete_user_pool_domain;
 
+pub(crate) mod shape_delete_web_authn_credential;
+
 pub(crate) mod shape_describe_identity_provider;
+
+pub(crate) mod shape_describe_managed_login_branding;
+
+pub(crate) mod shape_describe_managed_login_branding_by_client;
 
 pub(crate) mod shape_describe_resource_server;
 
@@ -153,6 +165,8 @@ pub(crate) mod shape_get_user;
 
 pub(crate) mod shape_get_user_attribute_verification_code;
 
+pub(crate) mod shape_get_user_auth_factors;
+
 pub(crate) mod shape_get_user_pool_mfa_config;
 
 pub(crate) mod shape_global_sign_out;
@@ -179,6 +193,8 @@ pub(crate) mod shape_list_users;
 
 pub(crate) mod shape_list_users_in_group;
 
+pub(crate) mod shape_list_web_authn_credentials;
+
 pub(crate) mod shape_resend_confirmation_code;
 
 pub(crate) mod shape_respond_to_auth_challenge;
@@ -201,6 +217,8 @@ pub(crate) mod shape_sign_up;
 
 pub(crate) mod shape_start_user_import_job;
 
+pub(crate) mod shape_start_web_authn_registration;
+
 pub(crate) mod shape_stop_user_import_job;
 
 pub(crate) mod shape_tag_resource;
@@ -214,6 +232,8 @@ pub(crate) mod shape_update_device_status;
 pub(crate) mod shape_update_group;
 
 pub(crate) mod shape_update_identity_provider;
+
+pub(crate) mod shape_update_managed_login_branding;
 
 pub(crate) mod shape_update_resource_server;
 
@@ -301,6 +321,8 @@ pub(crate) mod shape_code_delivery_failure_exception;
 
 pub(crate) mod shape_code_mismatch_exception;
 
+pub(crate) mod shape_complete_web_authn_registration_input;
+
 pub(crate) mod shape_concurrent_modification_exception;
 
 pub(crate) mod shape_confirm_device_input;
@@ -312,6 +334,8 @@ pub(crate) mod shape_confirm_sign_up_input;
 pub(crate) mod shape_create_group_input;
 
 pub(crate) mod shape_create_identity_provider_input;
+
+pub(crate) mod shape_create_managed_login_branding_input;
 
 pub(crate) mod shape_create_resource_server_input;
 
@@ -327,6 +351,8 @@ pub(crate) mod shape_delete_group_input;
 
 pub(crate) mod shape_delete_identity_provider_input;
 
+pub(crate) mod shape_delete_managed_login_branding_input;
+
 pub(crate) mod shape_delete_resource_server_input;
 
 pub(crate) mod shape_delete_user_attributes_input;
@@ -339,7 +365,13 @@ pub(crate) mod shape_delete_user_pool_domain_input;
 
 pub(crate) mod shape_delete_user_pool_input;
 
+pub(crate) mod shape_delete_web_authn_credential_input;
+
 pub(crate) mod shape_describe_identity_provider_input;
+
+pub(crate) mod shape_describe_managed_login_branding_by_client_input;
+
+pub(crate) mod shape_describe_managed_login_branding_input;
 
 pub(crate) mod shape_describe_resource_server_input;
 
@@ -358,6 +390,8 @@ pub(crate) mod shape_duplicate_provider_exception;
 pub(crate) mod shape_enable_software_token_mfa_exception;
 
 pub(crate) mod shape_expired_code_exception;
+
+pub(crate) mod shape_feature_unavailable_in_tier_exception;
 
 pub(crate) mod shape_forbidden_exception;
 
@@ -380,6 +414,8 @@ pub(crate) mod shape_get_signing_certificate_input;
 pub(crate) mod shape_get_ui_customization_input;
 
 pub(crate) mod shape_get_user_attribute_verification_code_input;
+
+pub(crate) mod shape_get_user_auth_factors_input;
 
 pub(crate) mod shape_get_user_input;
 
@@ -431,6 +467,10 @@ pub(crate) mod shape_list_users_in_group_input;
 
 pub(crate) mod shape_list_users_input;
 
+pub(crate) mod shape_list_web_authn_credentials_input;
+
+pub(crate) mod shape_managed_login_branding_exists_exception;
+
 pub(crate) mod shape_mfa_method_not_found_exception;
 
 pub(crate) mod shape_not_authorized_exception;
@@ -469,9 +509,13 @@ pub(crate) mod shape_software_token_mfa_not_found_exception;
 
 pub(crate) mod shape_start_user_import_job_input;
 
+pub(crate) mod shape_start_web_authn_registration_input;
+
 pub(crate) mod shape_stop_user_import_job_input;
 
 pub(crate) mod shape_tag_resource_input;
+
+pub(crate) mod shape_tier_change_not_allowed_exception;
 
 pub(crate) mod shape_too_many_failed_attempts_exception;
 
@@ -498,6 +542,8 @@ pub(crate) mod shape_update_device_status_input;
 pub(crate) mod shape_update_group_input;
 
 pub(crate) mod shape_update_identity_provider_input;
+
+pub(crate) mod shape_update_managed_login_branding_input;
 
 pub(crate) mod shape_update_resource_server_input;
 
@@ -527,6 +573,20 @@ pub(crate) mod shape_verify_software_token_input;
 
 pub(crate) mod shape_verify_user_attribute_input;
 
+pub(crate) mod shape_web_authn_challenge_not_found_exception;
+
+pub(crate) mod shape_web_authn_client_mismatch_exception;
+
+pub(crate) mod shape_web_authn_configuration_missing_exception;
+
+pub(crate) mod shape_web_authn_credential_not_supported_exception;
+
+pub(crate) mod shape_web_authn_not_enabled_exception;
+
+pub(crate) mod shape_web_authn_origin_not_allowed_exception;
+
+pub(crate) mod shape_web_authn_relying_party_mismatch_exception;
+
 pub(crate) mod shape_account_recovery_setting_type;
 
 pub(crate) mod shape_account_takeover_risk_configuration_type;
@@ -537,6 +597,8 @@ pub(crate) mod shape_analytics_configuration_type;
 
 pub(crate) mod shape_analytics_metadata_type;
 
+pub(crate) mod shape_asset_type;
+
 pub(crate) mod shape_attribute_list_type;
 
 pub(crate) mod shape_attribute_type;
@@ -545,6 +607,8 @@ pub(crate) mod shape_auth_events_type;
 
 pub(crate) mod shape_authentication_result_type;
 
+pub(crate) mod shape_available_challenge_list_type;
+
 pub(crate) mod shape_challenge_parameters_type;
 
 pub(crate) mod shape_code_delivery_details_list_type;
@@ -552,6 +616,8 @@ pub(crate) mod shape_code_delivery_details_list_type;
 pub(crate) mod shape_code_delivery_details_type;
 
 pub(crate) mod shape_compromised_credentials_risk_configuration_type;
+
+pub(crate) mod shape_configured_user_auth_factors_list_type;
 
 pub(crate) mod shape_context_data_type;
 
@@ -586,6 +652,8 @@ pub(crate) mod shape_list_of_string_types;
 pub(crate) mod shape_log_configuration_type;
 
 pub(crate) mod shape_log_delivery_configuration_type;
+
+pub(crate) mod shape_managed_login_branding_type;
 
 pub(crate) mod shape_mfa_option_list_type;
 
@@ -653,11 +721,17 @@ pub(crate) mod shape_users_list_type;
 
 pub(crate) mod shape_verification_message_template_type;
 
+pub(crate) mod shape_web_authn_configuration_type;
+
+pub(crate) mod shape_web_authn_credential_description_list_type;
+
 pub(crate) mod shape_account_takeover_actions_type;
 
 pub(crate) mod shape_advanced_security_additional_flows_type;
 
 pub(crate) mod shape_alias_attributes_list_type;
+
+pub(crate) mod shape_asset_list_type;
 
 pub(crate) mod shape_attribute_mapping_type;
 
@@ -715,6 +789,8 @@ pub(crate) mod shape_schema_attributes_list_type;
 
 pub(crate) mod shape_scope_list_type;
 
+pub(crate) mod shape_sign_in_policy_type;
+
 pub(crate) mod shape_string_attribute_constraints_type;
 
 pub(crate) mod shape_supported_identity_providers_list_type;
@@ -726,6 +802,8 @@ pub(crate) mod shape_user_pool_description_type;
 pub(crate) mod shape_username_attributes_list_type;
 
 pub(crate) mod shape_verified_attributes_list_type;
+
+pub(crate) mod shape_web_authn_credential_description;
 
 pub(crate) mod shape_account_takeover_action_type;
 
@@ -748,5 +826,9 @@ pub(crate) mod shape_notify_email_type;
 pub(crate) mod shape_recovery_mechanisms_type;
 
 pub(crate) mod shape_skipped_ip_range_list_type;
+
+pub(crate) mod shape_web_authn_authenticator_transports_list;
+
+pub(crate) mod shape_allowed_first_auth_factors_list_type;
 
 pub(crate) mod shape_challenge_response_type;

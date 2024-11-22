@@ -18,21 +18,36 @@ pub fn ser_create_sequence_store_input_input(
     if let Some(var_5) = &input.name {
         object.key("name").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.sse_config {
-        #[allow(unused_mut)]
-        let mut object_7 = object.key("sseConfig").start_object();
-        crate::protocol_serde::shape_sse_config::ser_sse_config(&mut object_7, var_6)?;
-        object_7.finish();
-    }
-    if let Some(var_8) = &input.tags {
-        #[allow(unused_mut)]
-        let mut object_9 = object.key("tags").start_object();
-        for (key_10, value_11) in var_8 {
+    if let Some(var_6) = &input.propagated_set_level_tags {
+        let mut array_7 = object.key("propagatedSetLevelTags").start_array();
+        for item_8 in var_6 {
             {
-                object_9.key(key_10.as_str()).string(value_11.as_str());
+                array_7.value().string(item_8.as_str());
             }
         }
-        object_9.finish();
+        array_7.finish();
+    }
+    if let Some(var_9) = &input.s3_access_config {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("s3AccessConfig").start_object();
+        crate::protocol_serde::shape_s3_access_config::ser_s3_access_config(&mut object_10, var_9)?;
+        object_10.finish();
+    }
+    if let Some(var_11) = &input.sse_config {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("sseConfig").start_object();
+        crate::protocol_serde::shape_sse_config::ser_sse_config(&mut object_12, var_11)?;
+        object_12.finish();
+    }
+    if let Some(var_13) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("tags").start_object();
+        for (key_15, value_16) in var_13 {
+            {
+                object_14.key(key_15.as_str()).string(value_16.as_str());
+            }
+        }
+        object_14.finish();
     }
     Ok(())
 }

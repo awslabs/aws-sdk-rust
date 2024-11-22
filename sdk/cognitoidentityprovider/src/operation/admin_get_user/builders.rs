@@ -22,7 +22,7 @@ impl crate::operation::admin_get_user::builders::AdminGetUserInputBuilder {
 }
 /// Fluent builder constructing a request to `AdminGetUser`.
 ///
-/// <p>Gets the specified user by user name in a user pool as an administrator. Works on any user.</p><note>
+/// <p>Gets the specified user by user name in a user pool as an administrator. Works on any user. This operation contributes to your monthly active user (MAU) count for the purpose of billing.</p><note>
 /// <p>Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.</p>
 /// <p class="title"><b>Learn more</b></p>
 /// <ul>

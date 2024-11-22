@@ -35,6 +35,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "LinkedAccountName" => {
+                            builder = builder.set_linked_account_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "UsageType" => {
                             builder = builder.set_usage_type(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -42,12 +49,8 @@ where
                                     .transpose()?,
                             );
                         }
-                        "LinkedAccountName" => {
-                            builder = builder.set_linked_account_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
+                        "Impact" => {
+                            builder = builder.set_impact(crate::protocol_serde::shape_root_cause_impact::de_root_cause_impact(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

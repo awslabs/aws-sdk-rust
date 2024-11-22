@@ -89,6 +89,8 @@ pub use crate::types::_queue_quick_connect_config::QueueQuickConnectConfigBuilde
 
 pub use crate::types::_user_quick_connect_config::UserQuickConnectConfigBuilder;
 
+pub use crate::types::_outbound_email_config::OutboundEmailConfigBuilder;
+
 pub use crate::types::_outbound_caller_config::OutboundCallerConfigBuilder;
 
 pub use crate::types::_chat_participant_role_config::ChatParticipantRoleConfigBuilder;
@@ -151,6 +153,8 @@ pub use crate::types::_evaluation_note::EvaluationNoteBuilder;
 
 pub use crate::types::_evaluation_answer_input::EvaluationAnswerInputBuilder;
 
+pub use crate::types::_segment_attribute_value::SegmentAttributeValueBuilder;
+
 pub use crate::types::_disconnect_reason::DisconnectReasonBuilder;
 
 pub use crate::types::_connection_data::ConnectionDataBuilder;
@@ -173,11 +177,29 @@ pub use crate::types::_participant_capabilities::ParticipantCapabilitiesBuilder;
 
 pub use crate::types::_answer_machine_detection_config::AnswerMachineDetectionConfigBuilder;
 
+pub use crate::types::_outbound_email_content::OutboundEmailContentBuilder;
+
+pub use crate::types::_outbound_raw_message::OutboundRawMessageBuilder;
+
+pub use crate::types::_templated_message_config::TemplatedMessageConfigBuilder;
+
+pub use crate::types::_template_attributes::TemplateAttributesBuilder;
+
+pub use crate::types::_outbound_additional_recipients::OutboundAdditionalRecipientsBuilder;
+
+pub use crate::types::_email_address_info::EmailAddressInfoBuilder;
+
 pub use crate::types::_chat_message::ChatMessageBuilder;
 
-pub use crate::types::_segment_attribute_value::SegmentAttributeValueBuilder;
-
 pub use crate::types::_endpoint::EndpointBuilder;
+
+pub use crate::types::_email_attachment::EmailAttachmentBuilder;
+
+pub use crate::types::_inbound_additional_recipients::InboundAdditionalRecipientsBuilder;
+
+pub use crate::types::_inbound_email_content::InboundEmailContentBuilder;
+
+pub use crate::types::_inbound_raw_message::InboundRawMessageBuilder;
 
 pub use crate::types::_chat_streaming_configuration::ChatStreamingConfigurationBuilder;
 
@@ -186,6 +208,8 @@ pub use crate::types::_voice_recording_configuration::VoiceRecordingConfiguratio
 pub use crate::types::_persistent_chat::PersistentChatBuilder;
 
 pub use crate::types::_upload_url_metadata::UploadUrlMetadataBuilder;
+
+pub use crate::types::_source_campaign::SourceCampaignBuilder;
 
 pub use crate::types::_new_session_details::NewSessionDetailsBuilder;
 
@@ -279,7 +303,15 @@ pub use crate::types::_hours_of_operation_search_criteria::HoursOfOperationSearc
 
 pub use crate::types::_hours_of_operation_search_filter::HoursOfOperationSearchFilterBuilder;
 
+pub use crate::types::_email_address_metadata::EmailAddressMetadataBuilder;
+
+pub use crate::types::_email_address_search_filter::EmailAddressSearchFilterBuilder;
+
+pub use crate::types::_email_address_search_criteria::EmailAddressSearchCriteriaBuilder;
+
 pub use crate::types::_contact_search_summary::ContactSearchSummaryBuilder;
+
+pub use crate::types::_contact_search_summary_segment_attribute_value::ContactSearchSummarySegmentAttributeValueBuilder;
 
 pub use crate::types::_contact_search_summary_agent_info::ContactSearchSummaryAgentInfoBuilder;
 
@@ -288,6 +320,10 @@ pub use crate::types::_contact_search_summary_queue_info::ContactSearchSummaryQu
 pub use crate::types::_sort::SortBuilder;
 
 pub use crate::types::_search_criteria::SearchCriteriaBuilder;
+
+pub use crate::types::_searchable_segment_attributes::SearchableSegmentAttributesBuilder;
+
+pub use crate::types::_searchable_segment_attributes_criteria::SearchableSegmentAttributesCriteriaBuilder;
 
 pub use crate::types::_searchable_contact_attributes::SearchableContactAttributesBuilder;
 
@@ -415,6 +451,8 @@ pub use crate::types::_number_reference::NumberReferenceBuilder;
 
 pub use crate::types::_string_reference::StringReferenceBuilder;
 
+pub use crate::types::_email_message_reference::EmailMessageReferenceBuilder;
+
 pub use crate::types::_attachment_reference::AttachmentReferenceBuilder;
 
 pub use crate::types::_url_reference::UrlReferenceBuilder;
@@ -434,6 +472,8 @@ pub use crate::types::_lex_bot_config::LexBotConfigBuilder;
 pub use crate::types::_lex_v2_bot::LexV2BotBuilder;
 
 pub use crate::types::_authentication_profile_summary::AuthenticationProfileSummaryBuilder;
+
+pub use crate::types::_associated_contact_summary::AssociatedContactSummaryBuilder;
 
 pub use crate::types::_analytics_data_association_result::AnalyticsDataAssociationResultBuilder;
 
@@ -541,6 +581,10 @@ pub use crate::types::_evaluation_metadata::EvaluationMetadataBuilder;
 
 pub use crate::types::_contact::ContactBuilder;
 
+pub use crate::types::_additional_email_recipients::AdditionalEmailRecipientsBuilder;
+
+pub use crate::types::_email_recipient::EmailRecipientBuilder;
+
 pub use crate::types::_disconnect_details::DisconnectDetailsBuilder;
 
 pub use crate::types::_quality_metrics::QualityMetricsBuilder;
@@ -565,6 +609,8 @@ pub use crate::types::_step::StepBuilder;
 
 pub use crate::types::_expiry::ExpiryBuilder;
 
+pub use crate::types::_endpoint_info::EndpointInfoBuilder;
+
 pub use crate::types::_wisdom_info::WisdomInfoBuilder;
 
 pub use crate::types::_agent_info::AgentInfoBuilder;
@@ -580,6 +626,8 @@ pub use crate::types::_authentication_profile::AuthenticationProfileBuilder;
 pub use crate::types::_participant_token_credentials::ParticipantTokenCredentialsBuilder;
 
 pub use crate::types::_participant_details_to_add::ParticipantDetailsToAddBuilder;
+
+pub use crate::types::_user_info::UserInfoBuilder;
 
 pub use crate::types::_failed_request::FailedRequestBuilder;
 

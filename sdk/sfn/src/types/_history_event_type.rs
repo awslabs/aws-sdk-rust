@@ -20,6 +20,7 @@
 ///     HistoryEventType::ActivityTimedOut => { /* ... */ },
 ///     HistoryEventType::ChoiceStateEntered => { /* ... */ },
 ///     HistoryEventType::ChoiceStateExited => { /* ... */ },
+///     HistoryEventType::EvaluationFailed => { /* ... */ },
 ///     HistoryEventType::ExecutionAborted => { /* ... */ },
 ///     HistoryEventType::ExecutionFailed => { /* ... */ },
 ///     HistoryEventType::ExecutionRedriven => { /* ... */ },
@@ -116,6 +117,8 @@ pub enum HistoryEventType {
     ChoiceStateEntered,
     #[allow(missing_docs)] // documentation missing in model
     ChoiceStateExited,
+    #[allow(missing_docs)] // documentation missing in model
+    EvaluationFailed,
     #[allow(missing_docs)] // documentation missing in model
     ExecutionAborted,
     #[allow(missing_docs)] // documentation missing in model
@@ -237,6 +240,7 @@ impl ::std::convert::From<&str> for HistoryEventType {
             "ActivityTimedOut" => HistoryEventType::ActivityTimedOut,
             "ChoiceStateEntered" => HistoryEventType::ChoiceStateEntered,
             "ChoiceStateExited" => HistoryEventType::ChoiceStateExited,
+            "EvaluationFailed" => HistoryEventType::EvaluationFailed,
             "ExecutionAborted" => HistoryEventType::ExecutionAborted,
             "ExecutionFailed" => HistoryEventType::ExecutionFailed,
             "ExecutionRedriven" => HistoryEventType::ExecutionRedriven,
@@ -313,6 +317,7 @@ impl HistoryEventType {
             HistoryEventType::ActivityTimedOut => "ActivityTimedOut",
             HistoryEventType::ChoiceStateEntered => "ChoiceStateEntered",
             HistoryEventType::ChoiceStateExited => "ChoiceStateExited",
+            HistoryEventType::EvaluationFailed => "EvaluationFailed",
             HistoryEventType::ExecutionAborted => "ExecutionAborted",
             HistoryEventType::ExecutionFailed => "ExecutionFailed",
             HistoryEventType::ExecutionRedriven => "ExecutionRedriven",
@@ -380,6 +385,7 @@ impl HistoryEventType {
             "ActivityTimedOut",
             "ChoiceStateEntered",
             "ChoiceStateExited",
+            "EvaluationFailed",
             "ExecutionAborted",
             "ExecutionFailed",
             "ExecutionRedriven",
@@ -464,6 +470,7 @@ impl ::std::fmt::Display for HistoryEventType {
             HistoryEventType::ActivityTimedOut => write!(f, "ActivityTimedOut"),
             HistoryEventType::ChoiceStateEntered => write!(f, "ChoiceStateEntered"),
             HistoryEventType::ChoiceStateExited => write!(f, "ChoiceStateExited"),
+            HistoryEventType::EvaluationFailed => write!(f, "EvaluationFailed"),
             HistoryEventType::ExecutionAborted => write!(f, "ExecutionAborted"),
             HistoryEventType::ExecutionFailed => write!(f, "ExecutionFailed"),
             HistoryEventType::ExecutionRedriven => write!(f, "ExecutionRedriven"),

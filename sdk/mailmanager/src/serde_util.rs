@@ -303,6 +303,21 @@ pub(crate) fn deliver_to_mailbox_action_correct_errors(
     builder
 }
 
+pub(crate) fn deliver_to_q_business_action_correct_errors(
+    mut builder: crate::types::builders::DeliverToQBusinessActionBuilder,
+) -> crate::types::builders::DeliverToQBusinessActionBuilder {
+    if builder.application_id.is_none() {
+        builder.application_id = Some(Default::default())
+    }
+    if builder.index_id.is_none() {
+        builder.index_id = Some(Default::default())
+    }
+    if builder.role_arn.is_none() {
+        builder.role_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn ingress_boolean_expression_correct_errors(
     mut builder: crate::types::builders::IngressBooleanExpressionBuilder,
 ) -> crate::types::builders::IngressBooleanExpressionBuilder {

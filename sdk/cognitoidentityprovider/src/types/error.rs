@@ -31,6 +31,8 @@ pub use crate::types::error::_invalid_user_pool_configuration_exception::Invalid
 
 pub use crate::types::error::_enable_software_token_mfa_exception::EnableSoftwareTokenMfaException;
 
+pub use crate::types::error::_feature_unavailable_in_tier_exception::FeatureUnavailableInTierException;
+
 pub use crate::types::error::_scope_does_not_exist_exception::ScopeDoesNotExistException;
 
 pub use crate::types::error::_invalid_o_auth_flow_exception::InvalidOAuthFlowException;
@@ -40,6 +42,8 @@ pub use crate::types::error::_concurrent_modification_exception::ConcurrentModif
 pub use crate::types::error::_user_pool_tagging_exception::UserPoolTaggingException;
 
 pub use crate::types::error::_user_import_in_progress_exception::UserImportInProgressException;
+
+pub use crate::types::error::_tier_change_not_allowed_exception::TierChangeNotAllowedException;
 
 pub use crate::types::error::_invalid_sms_role_trust_relationship_exception::InvalidSmsRoleTrustRelationshipException;
 
@@ -61,6 +65,10 @@ pub use crate::types::error::_user_pool_add_on_not_enabled_exception::UserPoolAd
 
 pub use crate::types::error::_precondition_not_met_exception::PreconditionNotMetException;
 
+pub use crate::types::error::_web_authn_not_enabled_exception::WebAuthnNotEnabledException;
+
+pub use crate::types::error::_web_authn_configuration_missing_exception::WebAuthnConfigurationMissingException;
+
 pub use crate::types::error::_username_exists_exception::UsernameExistsException;
 
 pub use crate::types::error::_invalid_password_exception::InvalidPasswordException;
@@ -75,11 +83,23 @@ pub use crate::types::error::_password_history_policy_violation_exception::Passw
 
 pub use crate::types::error::_mfa_method_not_found_exception::MfaMethodNotFoundException;
 
+pub use crate::types::error::_managed_login_branding_exists_exception::ManagedLoginBrandingExistsException;
+
 pub use crate::types::error::_duplicate_provider_exception::DuplicateProviderException;
 
 pub use crate::types::error::_group_exists_exception::GroupExistsException;
 
 pub use crate::types::error::_too_many_failed_attempts_exception::TooManyFailedAttemptsException;
+
+pub use crate::types::error::_web_authn_relying_party_mismatch_exception::WebAuthnRelyingPartyMismatchException;
+
+pub use crate::types::error::_web_authn_origin_not_allowed_exception::WebAuthnOriginNotAllowedException;
+
+pub use crate::types::error::_web_authn_credential_not_supported_exception::WebAuthnCredentialNotSupportedException;
+
+pub use crate::types::error::_web_authn_client_mismatch_exception::WebAuthnClientMismatchException;
+
+pub use crate::types::error::_web_authn_challenge_not_found_exception::WebAuthnChallengeNotFoundException;
 
 pub use crate::types::error::_unsupported_user_state_exception::UnsupportedUserStateException;
 
@@ -96,6 +116,8 @@ mod _duplicate_provider_exception;
 mod _enable_software_token_mfa_exception;
 
 mod _expired_code_exception;
+
+mod _feature_unavailable_in_tier_exception;
 
 mod _forbidden_exception;
 
@@ -121,6 +143,8 @@ mod _invalid_user_pool_configuration_exception;
 
 mod _limit_exceeded_exception;
 
+mod _managed_login_branding_exists_exception;
+
 mod _mfa_method_not_found_exception;
 
 mod _not_authorized_exception;
@@ -136,6 +160,8 @@ mod _resource_not_found_exception;
 mod _scope_does_not_exist_exception;
 
 mod _software_token_mfa_not_found_exception;
+
+mod _tier_change_not_allowed_exception;
 
 mod _too_many_failed_attempts_exception;
 
@@ -166,6 +192,20 @@ mod _user_pool_add_on_not_enabled_exception;
 mod _user_pool_tagging_exception;
 
 mod _username_exists_exception;
+
+mod _web_authn_challenge_not_found_exception;
+
+mod _web_authn_client_mismatch_exception;
+
+mod _web_authn_configuration_missing_exception;
+
+mod _web_authn_credential_not_supported_exception;
+
+mod _web_authn_not_enabled_exception;
+
+mod _web_authn_origin_not_allowed_exception;
+
+mod _web_authn_relying_party_mismatch_exception;
 
 /// Builders
 pub mod builders;

@@ -13,7 +13,7 @@ pub struct ListUsersInput {
     pub limit: ::std::option::Option<i32>,
     /// <p>This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.</p>
     pub pagination_token: ::std::option::Option<::std::string::String>,
-    /// <p>A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i> "<i>AttributeValue</i>"". Quotation marks within the filter string must be escaped using the backslash (<code>\</code>) character. For example, <code>"family_name = \"Reddy\""</code>.</p>
+    /// <p>A filter string of the form <code>"AttributeName Filter-Type "AttributeValue"</code>. Quotation marks within the filter string must be escaped using the backslash (<code>\</code>) character. For example, <code>"family_name = \"Reddy\""</code>.</p>
     /// <ul>
     /// <li>
     /// <p><i>AttributeName</i>: The name of the attribute to search for. You can only search for one attribute at a time.</p></li>
@@ -73,7 +73,7 @@ impl ListUsersInput {
     pub fn pagination_token(&self) -> ::std::option::Option<&str> {
         self.pagination_token.as_deref()
     }
-    /// <p>A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i> "<i>AttributeValue</i>"". Quotation marks within the filter string must be escaped using the backslash (<code>\</code>) character. For example, <code>"family_name = \"Reddy\""</code>.</p>
+    /// <p>A filter string of the form <code>"AttributeName Filter-Type "AttributeValue"</code>. Quotation marks within the filter string must be escaped using the backslash (<code>\</code>) character. For example, <code>"family_name = \"Reddy\""</code>.</p>
     /// <ul>
     /// <li>
     /// <p><i>AttributeName</i>: The name of the attribute to search for. You can only search for one attribute at a time.</p></li>
@@ -199,7 +199,7 @@ impl ListUsersInputBuilder {
     pub fn get_pagination_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.pagination_token
     }
-    /// <p>A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i> "<i>AttributeValue</i>"". Quotation marks within the filter string must be escaped using the backslash (<code>\</code>) character. For example, <code>"family_name = \"Reddy\""</code>.</p>
+    /// <p>A filter string of the form <code>"AttributeName Filter-Type "AttributeValue"</code>. Quotation marks within the filter string must be escaped using the backslash (<code>\</code>) character. For example, <code>"family_name = \"Reddy\""</code>.</p>
     /// <ul>
     /// <li>
     /// <p><i>AttributeName</i>: The name of the attribute to search for. You can only search for one attribute at a time.</p></li>
@@ -241,7 +241,7 @@ impl ListUsersInputBuilder {
         self.filter = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i> "<i>AttributeValue</i>"". Quotation marks within the filter string must be escaped using the backslash (<code>\</code>) character. For example, <code>"family_name = \"Reddy\""</code>.</p>
+    /// <p>A filter string of the form <code>"AttributeName Filter-Type "AttributeValue"</code>. Quotation marks within the filter string must be escaped using the backslash (<code>\</code>) character. For example, <code>"family_name = \"Reddy\""</code>.</p>
     /// <ul>
     /// <li>
     /// <p><i>AttributeName</i>: The name of the attribute to search for. You can only search for one attribute at a time.</p></li>
@@ -283,7 +283,7 @@ impl ListUsersInputBuilder {
         self.filter = input;
         self
     }
-    /// <p>A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i> "<i>AttributeValue</i>"". Quotation marks within the filter string must be escaped using the backslash (<code>\</code>) character. For example, <code>"family_name = \"Reddy\""</code>.</p>
+    /// <p>A filter string of the form <code>"AttributeName Filter-Type "AttributeValue"</code>. Quotation marks within the filter string must be escaped using the backslash (<code>\</code>) character. For example, <code>"family_name = \"Reddy\""</code>.</p>
     /// <ul>
     /// <li>
     /// <p><i>AttributeName</i>: The name of the attribute to search for. You can only search for one attribute at a time.</p></li>

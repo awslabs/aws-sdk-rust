@@ -88,6 +88,9 @@ pub mod associate_software_token;
 /// Types for the `ChangePassword` operation.
 pub mod change_password;
 
+/// Types for the `CompleteWebAuthnRegistration` operation.
+pub mod complete_web_authn_registration;
+
 /// Types for the `ConfirmDevice` operation.
 pub mod confirm_device;
 
@@ -102,6 +105,9 @@ pub mod create_group;
 
 /// Types for the `CreateIdentityProvider` operation.
 pub mod create_identity_provider;
+
+/// Types for the `CreateManagedLoginBranding` operation.
+pub mod create_managed_login_branding;
 
 /// Types for the `CreateResourceServer` operation.
 pub mod create_resource_server;
@@ -124,6 +130,9 @@ pub mod delete_group;
 /// Types for the `DeleteIdentityProvider` operation.
 pub mod delete_identity_provider;
 
+/// Types for the `DeleteManagedLoginBranding` operation.
+pub mod delete_managed_login_branding;
+
 /// Types for the `DeleteResourceServer` operation.
 pub mod delete_resource_server;
 
@@ -142,8 +151,17 @@ pub mod delete_user_pool_client;
 /// Types for the `DeleteUserPoolDomain` operation.
 pub mod delete_user_pool_domain;
 
+/// Types for the `DeleteWebAuthnCredential` operation.
+pub mod delete_web_authn_credential;
+
 /// Types for the `DescribeIdentityProvider` operation.
 pub mod describe_identity_provider;
+
+/// Types for the `DescribeManagedLoginBranding` operation.
+pub mod describe_managed_login_branding;
+
+/// Types for the `DescribeManagedLoginBrandingByClient` operation.
+pub mod describe_managed_login_branding_by_client;
 
 /// Types for the `DescribeResourceServer` operation.
 pub mod describe_resource_server;
@@ -196,6 +214,9 @@ pub mod get_user;
 /// Types for the `GetUserAttributeVerificationCode` operation.
 pub mod get_user_attribute_verification_code;
 
+/// Types for the `GetUserAuthFactors` operation.
+pub mod get_user_auth_factors;
+
 /// Types for the `GetUserPoolMfaConfig` operation.
 pub mod get_user_pool_mfa_config;
 
@@ -235,6 +256,9 @@ pub mod list_users;
 /// Types for the `ListUsersInGroup` operation.
 pub mod list_users_in_group;
 
+/// Types for the `ListWebAuthnCredentials` operation.
+pub mod list_web_authn_credentials;
+
 /// Types for the `ResendConfirmationCode` operation.
 pub mod resend_confirmation_code;
 
@@ -268,6 +292,9 @@ pub mod sign_up;
 /// Types for the `StartUserImportJob` operation.
 pub mod start_user_import_job;
 
+/// Types for the `StartWebAuthnRegistration` operation.
+pub mod start_web_authn_registration;
+
 /// Types for the `StopUserImportJob` operation.
 pub mod stop_user_import_job;
 
@@ -288,6 +315,9 @@ pub mod update_group;
 
 /// Types for the `UpdateIdentityProvider` operation.
 pub mod update_identity_provider;
+
+/// Types for the `UpdateManagedLoginBranding` operation.
+pub mod update_managed_login_branding;
 
 /// Types for the `UpdateResourceServer` operation.
 pub mod update_resource_server;

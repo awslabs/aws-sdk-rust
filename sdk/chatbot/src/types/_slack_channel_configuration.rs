@@ -13,7 +13,7 @@ pub struct SlackChannelConfiguration {
     pub slack_channel_id: ::std::string::String,
     /// <p>The name of the Slack channel.</p>
     pub slack_channel_name: ::std::string::String,
-    /// <p>The Amazon Resource Number (ARN) of the SlackChannelConfiguration.</p>
+    /// <p>The Amazon Resource Name (ARN) of the SlackChannelConfiguration.</p>
     pub chat_configuration_arn: ::std::string::String,
     /// <p>A user-defined role that AWS Chatbot assumes. This is not the service-linked role.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/chatbot-iam-policies.html">IAM policies for AWS Chatbot</a> in the <i> AWS Chatbot Administrator Guide</i>.</p>
@@ -57,7 +57,7 @@ impl SlackChannelConfiguration {
         use std::ops::Deref;
         self.slack_channel_name.deref()
     }
-    /// <p>The Amazon Resource Number (ARN) of the SlackChannelConfiguration.</p>
+    /// <p>The Amazon Resource Name (ARN) of the SlackChannelConfiguration.</p>
     pub fn chat_configuration_arn(&self) -> &str {
         use std::ops::Deref;
         self.chat_configuration_arn.deref()
@@ -216,18 +216,18 @@ impl SlackChannelConfigurationBuilder {
     pub fn get_slack_channel_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.slack_channel_name
     }
-    /// <p>The Amazon Resource Number (ARN) of the SlackChannelConfiguration.</p>
+    /// <p>The Amazon Resource Name (ARN) of the SlackChannelConfiguration.</p>
     /// This field is required.
     pub fn chat_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.chat_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Number (ARN) of the SlackChannelConfiguration.</p>
+    /// <p>The Amazon Resource Name (ARN) of the SlackChannelConfiguration.</p>
     pub fn set_chat_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.chat_configuration_arn = input;
         self
     }
-    /// <p>The Amazon Resource Number (ARN) of the SlackChannelConfiguration.</p>
+    /// <p>The Amazon Resource Name (ARN) of the SlackChannelConfiguration.</p>
     pub fn get_chat_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.chat_configuration_arn
     }

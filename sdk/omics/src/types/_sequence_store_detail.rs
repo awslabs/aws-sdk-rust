@@ -20,6 +20,12 @@ pub struct SequenceStoreDetail {
     pub fallback_location: ::std::option::Option<::std::string::String>,
     /// <p>The algorithm family of the ETag.</p>
     pub e_tag_algorithm_family: ::std::option::Option<crate::types::ETagAlgorithmFamily>,
+    /// <p>Status of the sequence store.</p>
+    pub status: ::std::option::Option<crate::types::SequenceStoreStatus>,
+    /// <p>The status message of the sequence store.</p>
+    pub status_message: ::std::option::Option<::std::string::String>,
+    /// <p>The last-updated time of the Sequence Store.</p>
+    pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl SequenceStoreDetail {
     /// <p>The store's ARN.</p>
@@ -56,6 +62,18 @@ impl SequenceStoreDetail {
     pub fn e_tag_algorithm_family(&self) -> ::std::option::Option<&crate::types::ETagAlgorithmFamily> {
         self.e_tag_algorithm_family.as_ref()
     }
+    /// <p>Status of the sequence store.</p>
+    pub fn status(&self) -> ::std::option::Option<&crate::types::SequenceStoreStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The status message of the sequence store.</p>
+    pub fn status_message(&self) -> ::std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>The last-updated time of the Sequence Store.</p>
+    pub fn update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.update_time.as_ref()
+    }
 }
 impl SequenceStoreDetail {
     /// Creates a new builder-style object to manufacture [`SequenceStoreDetail`](crate::types::SequenceStoreDetail).
@@ -76,6 +94,9 @@ pub struct SequenceStoreDetailBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) fallback_location: ::std::option::Option<::std::string::String>,
     pub(crate) e_tag_algorithm_family: ::std::option::Option<crate::types::ETagAlgorithmFamily>,
+    pub(crate) status: ::std::option::Option<crate::types::SequenceStoreStatus>,
+    pub(crate) status_message: ::std::option::Option<::std::string::String>,
+    pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl SequenceStoreDetailBuilder {
     /// <p>The store's ARN.</p>
@@ -193,6 +214,48 @@ impl SequenceStoreDetailBuilder {
     pub fn get_e_tag_algorithm_family(&self) -> &::std::option::Option<crate::types::ETagAlgorithmFamily> {
         &self.e_tag_algorithm_family
     }
+    /// <p>Status of the sequence store.</p>
+    pub fn status(mut self, input: crate::types::SequenceStoreStatus) -> Self {
+        self.status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Status of the sequence store.</p>
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::SequenceStoreStatus>) -> Self {
+        self.status = input;
+        self
+    }
+    /// <p>Status of the sequence store.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::SequenceStoreStatus> {
+        &self.status
+    }
+    /// <p>The status message of the sequence store.</p>
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status_message = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The status message of the sequence store.</p>
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.status_message = input;
+        self
+    }
+    /// <p>The status message of the sequence store.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
+    /// <p>The last-updated time of the Sequence Store.</p>
+    pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.update_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The last-updated time of the Sequence Store.</p>
+    pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.update_time = input;
+        self
+    }
+    /// <p>The last-updated time of the Sequence Store.</p>
+    pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_time
+    }
     /// Consumes the builder and constructs a [`SequenceStoreDetail`](crate::types::SequenceStoreDetail).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::SequenceStoreDetailBuilder::arn)
@@ -223,6 +286,9 @@ impl SequenceStoreDetailBuilder {
             })?,
             fallback_location: self.fallback_location,
             e_tag_algorithm_family: self.e_tag_algorithm_family,
+            status: self.status,
+            status_message: self.status_message,
+            update_time: self.update_time,
         })
     }
 }

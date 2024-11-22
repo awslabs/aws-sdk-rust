@@ -24,6 +24,9 @@ pub fn ser_font_configuration(
     if let Some(var_7) = &input.font_style {
         object.key("FontStyle").string(var_7.as_str());
     }
+    if let Some(var_8) = &input.font_family {
+        object.key("FontFamily").string(var_8.as_str());
+    }
     Ok(())
 }
 
@@ -66,6 +69,13 @@ where
                             builder = builder.set_font_style(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::FontStyle::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "FontFamily" => {
+                            builder = builder.set_font_family(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }

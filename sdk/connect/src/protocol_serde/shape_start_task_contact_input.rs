@@ -55,8 +55,21 @@ pub fn ser_start_task_contact_input_input(
             .key("ScheduledTime")
             .date_time(var_18, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_19) = &input.task_template_id {
-        object.key("TaskTemplateId").string(var_19.as_str());
+    if let Some(var_19) = &input.segment_attributes {
+        #[allow(unused_mut)]
+        let mut object_20 = object.key("SegmentAttributes").start_object();
+        for (key_21, value_22) in var_19 {
+            {
+                #[allow(unused_mut)]
+                let mut object_23 = object_20.key(key_21.as_str()).start_object();
+                crate::protocol_serde::shape_segment_attribute_value::ser_segment_attribute_value(&mut object_23, value_22)?;
+                object_23.finish();
+            }
+        }
+        object_20.finish();
+    }
+    if let Some(var_24) = &input.task_template_id {
+        object.key("TaskTemplateId").string(var_24.as_str());
     }
     Ok(())
 }

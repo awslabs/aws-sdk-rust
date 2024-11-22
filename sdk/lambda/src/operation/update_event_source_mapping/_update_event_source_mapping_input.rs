@@ -70,6 +70,8 @@ pub struct UpdateEventSourceMappingInput {
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The metrics configuration for your event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics">Event source mapping metrics</a>.</p>
     pub metrics_config: ::std::option::Option<crate::types::EventSourceMappingMetricsConfig>,
+    /// <p>(Amazon MSK and self-managed Apache Kafka only) The Provisioned Mode configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html#invocation-eventsourcemapping-provisioned-mode">Provisioned Mode</a>.</p>
+    pub provisioned_poller_config: ::std::option::Option<crate::types::ProvisionedPollerConfig>,
 }
 impl UpdateEventSourceMappingInput {
     /// <p>The identifier of the event source mapping.</p>
@@ -179,6 +181,10 @@ impl UpdateEventSourceMappingInput {
     pub fn metrics_config(&self) -> ::std::option::Option<&crate::types::EventSourceMappingMetricsConfig> {
         self.metrics_config.as_ref()
     }
+    /// <p>(Amazon MSK and self-managed Apache Kafka only) The Provisioned Mode configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html#invocation-eventsourcemapping-provisioned-mode">Provisioned Mode</a>.</p>
+    pub fn provisioned_poller_config(&self) -> ::std::option::Option<&crate::types::ProvisionedPollerConfig> {
+        self.provisioned_poller_config.as_ref()
+    }
 }
 impl UpdateEventSourceMappingInput {
     /// Creates a new builder-style object to manufacture [`UpdateEventSourceMappingInput`](crate::operation::update_event_source_mapping::UpdateEventSourceMappingInput).
@@ -209,6 +215,7 @@ pub struct UpdateEventSourceMappingInputBuilder {
     pub(crate) document_db_event_source_config: ::std::option::Option<crate::types::DocumentDbEventSourceConfig>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) metrics_config: ::std::option::Option<crate::types::EventSourceMappingMetricsConfig>,
+    pub(crate) provisioned_poller_config: ::std::option::Option<crate::types::ProvisionedPollerConfig>,
 }
 impl UpdateEventSourceMappingInputBuilder {
     /// <p>The identifier of the event source mapping.</p>
@@ -572,6 +579,20 @@ impl UpdateEventSourceMappingInputBuilder {
     pub fn get_metrics_config(&self) -> &::std::option::Option<crate::types::EventSourceMappingMetricsConfig> {
         &self.metrics_config
     }
+    /// <p>(Amazon MSK and self-managed Apache Kafka only) The Provisioned Mode configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html#invocation-eventsourcemapping-provisioned-mode">Provisioned Mode</a>.</p>
+    pub fn provisioned_poller_config(mut self, input: crate::types::ProvisionedPollerConfig) -> Self {
+        self.provisioned_poller_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>(Amazon MSK and self-managed Apache Kafka only) The Provisioned Mode configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html#invocation-eventsourcemapping-provisioned-mode">Provisioned Mode</a>.</p>
+    pub fn set_provisioned_poller_config(mut self, input: ::std::option::Option<crate::types::ProvisionedPollerConfig>) -> Self {
+        self.provisioned_poller_config = input;
+        self
+    }
+    /// <p>(Amazon MSK and self-managed Apache Kafka only) The Provisioned Mode configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html#invocation-eventsourcemapping-provisioned-mode">Provisioned Mode</a>.</p>
+    pub fn get_provisioned_poller_config(&self) -> &::std::option::Option<crate::types::ProvisionedPollerConfig> {
+        &self.provisioned_poller_config
+    }
     /// Consumes the builder and constructs a [`UpdateEventSourceMappingInput`](crate::operation::update_event_source_mapping::UpdateEventSourceMappingInput).
     pub fn build(
         self,
@@ -598,6 +619,7 @@ impl UpdateEventSourceMappingInputBuilder {
             document_db_event_source_config: self.document_db_event_source_config,
             kms_key_arn: self.kms_key_arn,
             metrics_config: self.metrics_config,
+            provisioned_poller_config: self.provisioned_poller_config,
         })
     }
 }

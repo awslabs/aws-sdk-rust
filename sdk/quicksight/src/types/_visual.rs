@@ -38,6 +38,8 @@ pub struct Visual {
     /// <p>A filled map.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/filled-maps.html">Creating filled maps</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub filled_map_visual: ::std::option::Option<crate::types::FilledMapVisual>,
+    /// <p>The properties for a layer map visual</p>
+    pub layer_map_visual: ::std::option::Option<crate::types::LayerMapVisual>,
     /// <p>A funnel chart.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/funnel-visual-content.html">Using funnel charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub funnel_chart_visual: ::std::option::Option<crate::types::FunnelChartVisual>,
@@ -73,6 +75,8 @@ pub struct Visual {
     /// <p>A radar chart visual.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/radar-chart.html">Using radar charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub radar_chart_visual: ::std::option::Option<crate::types::RadarChartVisual>,
+    /// <p>The custom plugin visual type.</p>
+    pub plugin_visual: ::std::option::Option<crate::types::PluginVisual>,
 }
 impl Visual {
     /// <p>A table visual.</p>
@@ -129,6 +133,10 @@ impl Visual {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/filled-maps.html">Creating filled maps</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn filled_map_visual(&self) -> ::std::option::Option<&crate::types::FilledMapVisual> {
         self.filled_map_visual.as_ref()
+    }
+    /// <p>The properties for a layer map visual</p>
+    pub fn layer_map_visual(&self) -> ::std::option::Option<&crate::types::LayerMapVisual> {
+        self.layer_map_visual.as_ref()
     }
     /// <p>A funnel chart.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/funnel-visual-content.html">Using funnel charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
@@ -189,6 +197,10 @@ impl Visual {
     pub fn radar_chart_visual(&self) -> ::std::option::Option<&crate::types::RadarChartVisual> {
         self.radar_chart_visual.as_ref()
     }
+    /// <p>The custom plugin visual type.</p>
+    pub fn plugin_visual(&self) -> ::std::option::Option<&crate::types::PluginVisual> {
+        self.plugin_visual.as_ref()
+    }
 }
 impl Visual {
     /// Creates a new builder-style object to manufacture [`Visual`](crate::types::Visual).
@@ -212,6 +224,7 @@ pub struct VisualBuilder {
     pub(crate) tree_map_visual: ::std::option::Option<crate::types::TreeMapVisual>,
     pub(crate) geospatial_map_visual: ::std::option::Option<crate::types::GeospatialMapVisual>,
     pub(crate) filled_map_visual: ::std::option::Option<crate::types::FilledMapVisual>,
+    pub(crate) layer_map_visual: ::std::option::Option<crate::types::LayerMapVisual>,
     pub(crate) funnel_chart_visual: ::std::option::Option<crate::types::FunnelChartVisual>,
     pub(crate) scatter_plot_visual: ::std::option::Option<crate::types::ScatterPlotVisual>,
     pub(crate) combo_chart_visual: ::std::option::Option<crate::types::ComboChartVisual>,
@@ -224,6 +237,7 @@ pub struct VisualBuilder {
     pub(crate) custom_content_visual: ::std::option::Option<crate::types::CustomContentVisual>,
     pub(crate) empty_visual: ::std::option::Option<crate::types::EmptyVisual>,
     pub(crate) radar_chart_visual: ::std::option::Option<crate::types::RadarChartVisual>,
+    pub(crate) plugin_visual: ::std::option::Option<crate::types::PluginVisual>,
 }
 impl VisualBuilder {
     /// <p>A table visual.</p>
@@ -412,6 +426,20 @@ impl VisualBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/filled-maps.html">Creating filled maps</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn get_filled_map_visual(&self) -> &::std::option::Option<crate::types::FilledMapVisual> {
         &self.filled_map_visual
+    }
+    /// <p>The properties for a layer map visual</p>
+    pub fn layer_map_visual(mut self, input: crate::types::LayerMapVisual) -> Self {
+        self.layer_map_visual = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The properties for a layer map visual</p>
+    pub fn set_layer_map_visual(mut self, input: ::std::option::Option<crate::types::LayerMapVisual>) -> Self {
+        self.layer_map_visual = input;
+        self
+    }
+    /// <p>The properties for a layer map visual</p>
+    pub fn get_layer_map_visual(&self) -> &::std::option::Option<crate::types::LayerMapVisual> {
+        &self.layer_map_visual
     }
     /// <p>A funnel chart.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/funnel-visual-content.html">Using funnel charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
@@ -614,6 +642,20 @@ impl VisualBuilder {
     pub fn get_radar_chart_visual(&self) -> &::std::option::Option<crate::types::RadarChartVisual> {
         &self.radar_chart_visual
     }
+    /// <p>The custom plugin visual type.</p>
+    pub fn plugin_visual(mut self, input: crate::types::PluginVisual) -> Self {
+        self.plugin_visual = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The custom plugin visual type.</p>
+    pub fn set_plugin_visual(mut self, input: ::std::option::Option<crate::types::PluginVisual>) -> Self {
+        self.plugin_visual = input;
+        self
+    }
+    /// <p>The custom plugin visual type.</p>
+    pub fn get_plugin_visual(&self) -> &::std::option::Option<crate::types::PluginVisual> {
+        &self.plugin_visual
+    }
     /// Consumes the builder and constructs a [`Visual`](crate::types::Visual).
     pub fn build(self) -> crate::types::Visual {
         crate::types::Visual {
@@ -628,6 +670,7 @@ impl VisualBuilder {
             tree_map_visual: self.tree_map_visual,
             geospatial_map_visual: self.geospatial_map_visual,
             filled_map_visual: self.filled_map_visual,
+            layer_map_visual: self.layer_map_visual,
             funnel_chart_visual: self.funnel_chart_visual,
             scatter_plot_visual: self.scatter_plot_visual,
             combo_chart_visual: self.combo_chart_visual,
@@ -640,6 +683,7 @@ impl VisualBuilder {
             custom_content_visual: self.custom_content_visual,
             empty_visual: self.empty_visual,
             radar_chart_visual: self.radar_chart_visual,
+            plugin_visual: self.plugin_visual,
         }
     }
 }

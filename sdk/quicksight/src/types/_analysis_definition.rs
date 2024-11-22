@@ -25,6 +25,8 @@ pub struct AnalysisDefinition {
     pub options: ::std::option::Option<crate::types::AssetOptions>,
     /// <p>A structure that describes the query execution options.</p>
     pub query_execution_options: ::std::option::Option<crate::types::QueryExecutionOptions>,
+    /// <p>The static files for the definition.</p>
+    pub static_files: ::std::option::Option<::std::vec::Vec<crate::types::StaticFile>>,
 }
 impl AnalysisDefinition {
     /// <p>An array of dataset identifier declarations. This mapping allows the usage of dataset identifiers instead of dataset ARNs throughout analysis sub-structures.</p>
@@ -77,6 +79,12 @@ impl AnalysisDefinition {
     pub fn query_execution_options(&self) -> ::std::option::Option<&crate::types::QueryExecutionOptions> {
         self.query_execution_options.as_ref()
     }
+    /// <p>The static files for the definition.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.static_files.is_none()`.
+    pub fn static_files(&self) -> &[crate::types::StaticFile] {
+        self.static_files.as_deref().unwrap_or_default()
+    }
 }
 impl AnalysisDefinition {
     /// Creates a new builder-style object to manufacture [`AnalysisDefinition`](crate::types::AnalysisDefinition).
@@ -98,6 +106,7 @@ pub struct AnalysisDefinitionBuilder {
     pub(crate) analysis_defaults: ::std::option::Option<crate::types::AnalysisDefaults>,
     pub(crate) options: ::std::option::Option<crate::types::AssetOptions>,
     pub(crate) query_execution_options: ::std::option::Option<crate::types::QueryExecutionOptions>,
+    pub(crate) static_files: ::std::option::Option<::std::vec::Vec<crate::types::StaticFile>>,
 }
 impl AnalysisDefinitionBuilder {
     /// Appends an item to `data_set_identifier_declarations`.
@@ -274,6 +283,26 @@ impl AnalysisDefinitionBuilder {
     pub fn get_query_execution_options(&self) -> &::std::option::Option<crate::types::QueryExecutionOptions> {
         &self.query_execution_options
     }
+    /// Appends an item to `static_files`.
+    ///
+    /// To override the contents of this collection use [`set_static_files`](Self::set_static_files).
+    ///
+    /// <p>The static files for the definition.</p>
+    pub fn static_files(mut self, input: crate::types::StaticFile) -> Self {
+        let mut v = self.static_files.unwrap_or_default();
+        v.push(input);
+        self.static_files = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The static files for the definition.</p>
+    pub fn set_static_files(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StaticFile>>) -> Self {
+        self.static_files = input;
+        self
+    }
+    /// <p>The static files for the definition.</p>
+    pub fn get_static_files(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StaticFile>> {
+        &self.static_files
+    }
     /// Consumes the builder and constructs a [`AnalysisDefinition`](crate::types::AnalysisDefinition).
     /// This method will fail if any of the following fields are not set:
     /// - [`data_set_identifier_declarations`](crate::types::builders::AnalysisDefinitionBuilder::data_set_identifier_declarations)
@@ -293,6 +322,7 @@ impl AnalysisDefinitionBuilder {
             analysis_defaults: self.analysis_defaults,
             options: self.options,
             query_execution_options: self.query_execution_options,
+            static_files: self.static_files,
         })
     }
 }

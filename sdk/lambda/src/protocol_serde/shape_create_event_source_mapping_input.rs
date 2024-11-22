@@ -87,76 +87,82 @@ pub fn ser_create_event_source_mapping_input_input(
             ::aws_smithy_types::Number::NegInt((*var_23).into()),
         );
     }
-    if let Some(var_24) = &input.queues {
-        let mut array_25 = object.key("Queues").start_array();
-        for item_26 in var_24 {
+    if let Some(var_24) = &input.provisioned_poller_config {
+        #[allow(unused_mut)]
+        let mut object_25 = object.key("ProvisionedPollerConfig").start_object();
+        crate::protocol_serde::shape_provisioned_poller_config::ser_provisioned_poller_config(&mut object_25, var_24)?;
+        object_25.finish();
+    }
+    if let Some(var_26) = &input.queues {
+        let mut array_27 = object.key("Queues").start_array();
+        for item_28 in var_26 {
             {
-                array_25.value().string(item_26.as_str());
+                array_27.value().string(item_28.as_str());
             }
         }
-        array_25.finish();
+        array_27.finish();
     }
-    if let Some(var_27) = &input.scaling_config {
+    if let Some(var_29) = &input.scaling_config {
         #[allow(unused_mut)]
-        let mut object_28 = object.key("ScalingConfig").start_object();
-        crate::protocol_serde::shape_scaling_config::ser_scaling_config(&mut object_28, var_27)?;
-        object_28.finish();
-    }
-    if let Some(var_29) = &input.self_managed_event_source {
-        #[allow(unused_mut)]
-        let mut object_30 = object.key("SelfManagedEventSource").start_object();
-        crate::protocol_serde::shape_self_managed_event_source::ser_self_managed_event_source(&mut object_30, var_29)?;
+        let mut object_30 = object.key("ScalingConfig").start_object();
+        crate::protocol_serde::shape_scaling_config::ser_scaling_config(&mut object_30, var_29)?;
         object_30.finish();
     }
-    if let Some(var_31) = &input.self_managed_kafka_event_source_config {
+    if let Some(var_31) = &input.self_managed_event_source {
         #[allow(unused_mut)]
-        let mut object_32 = object.key("SelfManagedKafkaEventSourceConfig").start_object();
-        crate::protocol_serde::shape_self_managed_kafka_event_source_config::ser_self_managed_kafka_event_source_config(&mut object_32, var_31)?;
+        let mut object_32 = object.key("SelfManagedEventSource").start_object();
+        crate::protocol_serde::shape_self_managed_event_source::ser_self_managed_event_source(&mut object_32, var_31)?;
         object_32.finish();
     }
-    if let Some(var_33) = &input.source_access_configurations {
-        let mut array_34 = object.key("SourceAccessConfigurations").start_array();
-        for item_35 in var_33 {
+    if let Some(var_33) = &input.self_managed_kafka_event_source_config {
+        #[allow(unused_mut)]
+        let mut object_34 = object.key("SelfManagedKafkaEventSourceConfig").start_object();
+        crate::protocol_serde::shape_self_managed_kafka_event_source_config::ser_self_managed_kafka_event_source_config(&mut object_34, var_33)?;
+        object_34.finish();
+    }
+    if let Some(var_35) = &input.source_access_configurations {
+        let mut array_36 = object.key("SourceAccessConfigurations").start_array();
+        for item_37 in var_35 {
             {
                 #[allow(unused_mut)]
-                let mut object_36 = array_34.value().start_object();
-                crate::protocol_serde::shape_source_access_configuration::ser_source_access_configuration(&mut object_36, item_35)?;
-                object_36.finish();
+                let mut object_38 = array_36.value().start_object();
+                crate::protocol_serde::shape_source_access_configuration::ser_source_access_configuration(&mut object_38, item_37)?;
+                object_38.finish();
             }
         }
-        array_34.finish();
+        array_36.finish();
     }
-    if let Some(var_37) = &input.starting_position {
-        object.key("StartingPosition").string(var_37.as_str());
+    if let Some(var_39) = &input.starting_position {
+        object.key("StartingPosition").string(var_39.as_str());
     }
-    if let Some(var_38) = &input.starting_position_timestamp {
+    if let Some(var_40) = &input.starting_position_timestamp {
         object
             .key("StartingPositionTimestamp")
-            .date_time(var_38, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_40, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_39) = &input.tags {
+    if let Some(var_41) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_40 = object.key("Tags").start_object();
-        for (key_41, value_42) in var_39 {
+        let mut object_42 = object.key("Tags").start_object();
+        for (key_43, value_44) in var_41 {
             {
-                object_40.key(key_41.as_str()).string(value_42.as_str());
+                object_42.key(key_43.as_str()).string(value_44.as_str());
             }
         }
-        object_40.finish();
+        object_42.finish();
     }
-    if let Some(var_43) = &input.topics {
-        let mut array_44 = object.key("Topics").start_array();
-        for item_45 in var_43 {
+    if let Some(var_45) = &input.topics {
+        let mut array_46 = object.key("Topics").start_array();
+        for item_47 in var_45 {
             {
-                array_44.value().string(item_45.as_str());
+                array_46.value().string(item_47.as_str());
             }
         }
-        array_44.finish();
+        array_46.finish();
     }
-    if let Some(var_46) = &input.tumbling_window_in_seconds {
+    if let Some(var_48) = &input.tumbling_window_in_seconds {
         object.key("TumblingWindowInSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_46).into()),
+            ::aws_smithy_types::Number::NegInt((*var_48).into()),
         );
     }
     Ok(())

@@ -7,7 +7,7 @@ pub struct DescribeChimeWebhookConfigurationsInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>An optional Amazon Resource Number (ARN) of a ChimeWebhookConfiguration to describe.</p>
+    /// <p>An optional Amazon Resource Name (ARN) of a ChimeWebhookConfiguration to describe.</p>
     pub chat_configuration_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeChimeWebhookConfigurationsInput {
@@ -19,7 +19,7 @@ impl DescribeChimeWebhookConfigurationsInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>An optional Amazon Resource Number (ARN) of a ChimeWebhookConfiguration to describe.</p>
+    /// <p>An optional Amazon Resource Name (ARN) of a ChimeWebhookConfiguration to describe.</p>
     pub fn chat_configuration_arn(&self) -> ::std::option::Option<&str> {
         self.chat_configuration_arn.as_deref()
     }
@@ -68,17 +68,17 @@ impl DescribeChimeWebhookConfigurationsInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>An optional Amazon Resource Number (ARN) of a ChimeWebhookConfiguration to describe.</p>
+    /// <p>An optional Amazon Resource Name (ARN) of a ChimeWebhookConfiguration to describe.</p>
     pub fn chat_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.chat_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An optional Amazon Resource Number (ARN) of a ChimeWebhookConfiguration to describe.</p>
+    /// <p>An optional Amazon Resource Name (ARN) of a ChimeWebhookConfiguration to describe.</p>
     pub fn set_chat_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.chat_configuration_arn = input;
         self
     }
-    /// <p>An optional Amazon Resource Number (ARN) of a ChimeWebhookConfiguration to describe.</p>
+    /// <p>An optional Amazon Resource Name (ARN) of a ChimeWebhookConfiguration to describe.</p>
     pub fn get_chat_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.chat_configuration_arn
     }

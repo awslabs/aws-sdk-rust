@@ -36,8 +36,11 @@ pub fn ser_update_task_template_input_input(
     if let Some(var_11) = &input.name {
         object.key("Name").string(var_11.as_str());
     }
-    if let Some(var_12) = &input.status {
-        object.key("Status").string(var_12.as_str());
+    if let Some(var_12) = &input.self_assign_flow_id {
+        object.key("SelfAssignFlowId").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.status {
+        object.key("Status").string(var_13.as_str());
     }
     Ok(())
 }

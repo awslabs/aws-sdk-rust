@@ -38,6 +38,13 @@ where
                         "errorDetails" => {
                             builder = builder.set_error_details(crate::protocol_serde::shape_error_details::de_error_details(tokens)?);
                         }
+                        "logStreamARN" => {
+                            builder = builder.set_log_stream_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

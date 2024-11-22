@@ -20,6 +20,26 @@ pub fn de_create_user_pool_domain_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "FeatureUnavailableInTierException" => {
+            crate::operation::create_user_pool_domain::CreateUserPoolDomainError::FeatureUnavailableInTierException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::FeatureUnavailableInTierExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_feature_unavailable_in_tier_exception::de_feature_unavailable_in_tier_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::create_user_pool_domain::CreateUserPoolDomainError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "InternalErrorException" => crate::operation::create_user_pool_domain::CreateUserPoolDomainError::InternalErrorException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -142,6 +162,13 @@ pub(crate) fn de_create_user_pool_domain(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "ManagedLoginVersion" => {
+                    builder = builder.set_managed_login_version(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i32::try_from)
+                            .transpose()?,
+                    );
+                }
                 "CloudFrontDomain" => {
                     builder = builder.set_cloud_front_domain(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

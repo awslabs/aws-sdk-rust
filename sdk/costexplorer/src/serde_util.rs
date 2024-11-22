@@ -415,3 +415,12 @@ pub(crate) fn cost_category_split_charge_rule_parameter_correct_errors(
     }
     builder
 }
+
+pub(crate) fn root_cause_impact_correct_errors(
+    mut builder: crate::types::builders::RootCauseImpactBuilder,
+) -> crate::types::builders::RootCauseImpactBuilder {
+    if builder.contribution.is_none() {
+        builder.contribution = Some(Default::default())
+    }
+    builder
+}

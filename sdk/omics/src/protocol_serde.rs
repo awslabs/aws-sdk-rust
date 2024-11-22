@@ -71,6 +71,8 @@ pub(crate) mod shape_delete_run_cache;
 
 pub(crate) mod shape_delete_run_group;
 
+pub(crate) mod shape_delete_s3_access_policy;
+
 pub(crate) mod shape_delete_sequence_store;
 
 pub(crate) mod shape_delete_share;
@@ -110,6 +112,8 @@ pub(crate) mod shape_get_run_cache;
 pub(crate) mod shape_get_run_group;
 
 pub(crate) mod shape_get_run_task;
+
+pub(crate) mod shape_get_s3_access_policy;
 
 pub(crate) mod shape_get_sequence_store;
 
@@ -165,6 +169,8 @@ pub(crate) mod shape_list_variant_stores;
 
 pub(crate) mod shape_list_workflows;
 
+pub(crate) mod shape_put_s3_access_policy;
+
 pub(crate) mod shape_start_annotation_import_job;
 
 pub(crate) mod shape_start_read_set_activation_job;
@@ -190,6 +196,8 @@ pub(crate) mod shape_update_annotation_store_version;
 pub(crate) mod shape_update_run_cache;
 
 pub(crate) mod shape_update_run_group;
+
+pub(crate) mod shape_update_sequence_store;
 
 pub(crate) mod shape_update_variant_store;
 
@@ -275,6 +283,8 @@ pub(crate) mod shape_list_variant_stores_input;
 
 pub(crate) mod shape_not_supported_operation_exception;
 
+pub(crate) mod shape_put_s3_access_policy_input;
+
 pub(crate) mod shape_range_not_satisfiable_exception;
 
 pub(crate) mod shape_request_timeout_exception;
@@ -308,6 +318,8 @@ pub(crate) mod shape_update_annotation_store_version_input;
 pub(crate) mod shape_update_run_cache_input;
 
 pub(crate) mod shape_update_run_group_input;
+
+pub(crate) mod shape_update_sequence_store_input;
 
 pub(crate) mod shape_update_variant_store_input;
 
@@ -373,6 +385,8 @@ pub(crate) mod shape_list_variant_stores_filter;
 
 pub(crate) mod shape_multipart_read_set_upload_list;
 
+pub(crate) mod shape_propagated_set_level_tags;
+
 pub(crate) mod shape_read_set_batch_error_list;
 
 pub(crate) mod shape_read_set_files;
@@ -406,6 +420,8 @@ pub(crate) mod shape_run_list;
 pub(crate) mod shape_run_log_location;
 
 pub(crate) mod shape_run_resource_digests;
+
+pub(crate) mod shape_s3_access_config;
 
 pub(crate) mod shape_sequence_information;
 

@@ -9,13 +9,31 @@ pub use crate::types::_neptune_import_options::NeptuneImportOptions;
 
 pub use crate::types::_import_task_status::ImportTaskStatus;
 
+pub use crate::types::_parquet_type::ParquetType;
+
 pub use crate::types::_format::Format;
 
 pub use crate::types::_blank_node_handling::BlankNodeHandling;
 
+pub use crate::types::_export_filter::ExportFilter;
+
+pub use crate::types::_export_filter_element::ExportFilterElement;
+
+pub use crate::types::_export_filter_property_attributes::ExportFilterPropertyAttributes;
+
+pub use crate::types::_multi_value_handling_type::MultiValueHandlingType;
+
+pub use crate::types::_export_format::ExportFormat;
+
+pub use crate::types::_export_task_status::ExportTaskStatus;
+
 pub use crate::types::_import_task_summary::ImportTaskSummary;
 
+pub use crate::types::_export_task_summary::ExportTaskSummary;
+
 pub use crate::types::_import_task_details::ImportTaskDetails;
+
+pub use crate::types::_export_task_details::ExportTaskDetails;
 
 pub use crate::types::_vector_search_configuration::VectorSearchConfiguration;
 
@@ -61,6 +79,20 @@ mod _edge_structure;
 
 mod _explain_mode;
 
+mod _export_filter;
+
+mod _export_filter_element;
+
+mod _export_filter_property_attributes;
+
+mod _export_format;
+
+mod _export_task_details;
+
+mod _export_task_status;
+
+mod _export_task_summary;
+
 mod _format;
 
 mod _graph_data_summary;
@@ -81,9 +113,13 @@ mod _import_task_status;
 
 mod _import_task_summary;
 
+mod _multi_value_handling_type;
+
 mod _neptune_import_options;
 
 mod _node_structure;
+
+mod _parquet_type;
 
 mod _plan_cache_type;
 

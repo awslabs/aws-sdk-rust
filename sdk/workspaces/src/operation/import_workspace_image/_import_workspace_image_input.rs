@@ -5,8 +5,8 @@
 pub struct ImportWorkspaceImageInput {
     /// <p>The identifier of the EC2 image.</p>
     pub ec2_image_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP, DCV, or bring your own protocol (BYOP). To use WSP, specify a value that ends in <code>_DCV</code>. To use PCoIP, specify a value that does not end in <code>_DCV</code>. To use BYOP, specify a value that ends in <code>_BYOP</code>.</p>
-    /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>, <code>BYOL_REGULAR_DCV</code>, or <code>BYOL_REGULAR_BYOP</code>, depending on the protocol.</p><note>
+    /// <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP, WSP, or bring your own protocol (BYOP). To use DCV, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>. To use BYOP, specify a value that ends in <code>_BYOP</code>.</p>
+    /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>, <code>BYOL_REGULAR_WSP</code>, or <code>BYOL_REGULAR_BYOP</code>, depending on the protocol.</p><note>
     /// <p>The <code>BYOL_REGULAR_BYOP</code> and <code>BYOL_GRAPHICS_G4DN_BYOP</code> values are only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use these values. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
     /// </note>
     pub ingestion_process: ::std::option::Option<crate::types::WorkspaceImageIngestionProcess>,
@@ -31,8 +31,8 @@ impl ImportWorkspaceImageInput {
     pub fn ec2_image_id(&self) -> ::std::option::Option<&str> {
         self.ec2_image_id.as_deref()
     }
-    /// <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP, DCV, or bring your own protocol (BYOP). To use WSP, specify a value that ends in <code>_DCV</code>. To use PCoIP, specify a value that does not end in <code>_DCV</code>. To use BYOP, specify a value that ends in <code>_BYOP</code>.</p>
-    /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>, <code>BYOL_REGULAR_DCV</code>, or <code>BYOL_REGULAR_BYOP</code>, depending on the protocol.</p><note>
+    /// <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP, WSP, or bring your own protocol (BYOP). To use DCV, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>. To use BYOP, specify a value that ends in <code>_BYOP</code>.</p>
+    /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>, <code>BYOL_REGULAR_WSP</code>, or <code>BYOL_REGULAR_BYOP</code>, depending on the protocol.</p><note>
     /// <p>The <code>BYOL_REGULAR_BYOP</code> and <code>BYOL_GRAPHICS_G4DN_BYOP</code> values are only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use these values. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
     /// </note>
     pub fn ingestion_process(&self) -> ::std::option::Option<&crate::types::WorkspaceImageIngestionProcess> {
@@ -100,8 +100,8 @@ impl ImportWorkspaceImageInputBuilder {
     pub fn get_ec2_image_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.ec2_image_id
     }
-    /// <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP, DCV, or bring your own protocol (BYOP). To use WSP, specify a value that ends in <code>_DCV</code>. To use PCoIP, specify a value that does not end in <code>_DCV</code>. To use BYOP, specify a value that ends in <code>_BYOP</code>.</p>
-    /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>, <code>BYOL_REGULAR_DCV</code>, or <code>BYOL_REGULAR_BYOP</code>, depending on the protocol.</p><note>
+    /// <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP, WSP, or bring your own protocol (BYOP). To use DCV, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>. To use BYOP, specify a value that ends in <code>_BYOP</code>.</p>
+    /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>, <code>BYOL_REGULAR_WSP</code>, or <code>BYOL_REGULAR_BYOP</code>, depending on the protocol.</p><note>
     /// <p>The <code>BYOL_REGULAR_BYOP</code> and <code>BYOL_GRAPHICS_G4DN_BYOP</code> values are only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use these values. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
     /// </note>
     /// This field is required.
@@ -109,16 +109,16 @@ impl ImportWorkspaceImageInputBuilder {
         self.ingestion_process = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP, DCV, or bring your own protocol (BYOP). To use WSP, specify a value that ends in <code>_DCV</code>. To use PCoIP, specify a value that does not end in <code>_DCV</code>. To use BYOP, specify a value that ends in <code>_BYOP</code>.</p>
-    /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>, <code>BYOL_REGULAR_DCV</code>, or <code>BYOL_REGULAR_BYOP</code>, depending on the protocol.</p><note>
+    /// <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP, WSP, or bring your own protocol (BYOP). To use DCV, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>. To use BYOP, specify a value that ends in <code>_BYOP</code>.</p>
+    /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>, <code>BYOL_REGULAR_WSP</code>, or <code>BYOL_REGULAR_BYOP</code>, depending on the protocol.</p><note>
     /// <p>The <code>BYOL_REGULAR_BYOP</code> and <code>BYOL_GRAPHICS_G4DN_BYOP</code> values are only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use these values. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
     /// </note>
     pub fn set_ingestion_process(mut self, input: ::std::option::Option<crate::types::WorkspaceImageIngestionProcess>) -> Self {
         self.ingestion_process = input;
         self
     }
-    /// <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP, DCV, or bring your own protocol (BYOP). To use WSP, specify a value that ends in <code>_DCV</code>. To use PCoIP, specify a value that does not end in <code>_DCV</code>. To use BYOP, specify a value that ends in <code>_BYOP</code>.</p>
-    /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>, <code>BYOL_REGULAR_DCV</code>, or <code>BYOL_REGULAR_BYOP</code>, depending on the protocol.</p><note>
+    /// <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP, WSP, or bring your own protocol (BYOP). To use DCV, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>. To use BYOP, specify a value that ends in <code>_BYOP</code>.</p>
+    /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>, <code>BYOL_REGULAR_WSP</code>, or <code>BYOL_REGULAR_BYOP</code>, depending on the protocol.</p><note>
     /// <p>The <code>BYOL_REGULAR_BYOP</code> and <code>BYOL_GRAPHICS_G4DN_BYOP</code> values are only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use these values. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
     /// </note>
     pub fn get_ingestion_process(&self) -> &::std::option::Option<crate::types::WorkspaceImageIngestionProcess> {

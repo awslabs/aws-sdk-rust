@@ -14,9 +14,9 @@ pub struct AnalysisSummary {
     pub analysis_status: ::std::option::Option<crate::types::AnalysisStatus>,
     /// <p>The error code used for the analysis.</p>
     pub error_code: ::std::option::Option<crate::types::ErrorCode>,
-    /// <p>The analysis ID that's associated with the commitment purchase.</p>
+    /// <p>The analysis ID that's associated with the commitment purchase analysis.</p>
     pub analysis_id: ::std::option::Option<::std::string::String>,
-    /// <p>The analysis configuration for the commitment purchase analysis.</p>
+    /// <p>The configuration for the commitment purchase analysis.</p>
     pub commitment_purchase_analysis_configuration: ::std::option::Option<crate::types::CommitmentPurchaseAnalysisConfiguration>,
 }
 impl AnalysisSummary {
@@ -40,11 +40,11 @@ impl AnalysisSummary {
     pub fn error_code(&self) -> ::std::option::Option<&crate::types::ErrorCode> {
         self.error_code.as_ref()
     }
-    /// <p>The analysis ID that's associated with the commitment purchase.</p>
+    /// <p>The analysis ID that's associated with the commitment purchase analysis.</p>
     pub fn analysis_id(&self) -> ::std::option::Option<&str> {
         self.analysis_id.as_deref()
     }
-    /// <p>The analysis configuration for the commitment purchase analysis.</p>
+    /// <p>The configuration for the commitment purchase analysis.</p>
     pub fn commitment_purchase_analysis_configuration(&self) -> ::std::option::Option<&crate::types::CommitmentPurchaseAnalysisConfiguration> {
         self.commitment_purchase_analysis_configuration.as_ref()
     }
@@ -139,26 +139,26 @@ impl AnalysisSummaryBuilder {
     pub fn get_error_code(&self) -> &::std::option::Option<crate::types::ErrorCode> {
         &self.error_code
     }
-    /// <p>The analysis ID that's associated with the commitment purchase.</p>
+    /// <p>The analysis ID that's associated with the commitment purchase analysis.</p>
     pub fn analysis_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analysis_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The analysis ID that's associated with the commitment purchase.</p>
+    /// <p>The analysis ID that's associated with the commitment purchase analysis.</p>
     pub fn set_analysis_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.analysis_id = input;
         self
     }
-    /// <p>The analysis ID that's associated with the commitment purchase.</p>
+    /// <p>The analysis ID that's associated with the commitment purchase analysis.</p>
     pub fn get_analysis_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.analysis_id
     }
-    /// <p>The analysis configuration for the commitment purchase analysis.</p>
+    /// <p>The configuration for the commitment purchase analysis.</p>
     pub fn commitment_purchase_analysis_configuration(mut self, input: crate::types::CommitmentPurchaseAnalysisConfiguration) -> Self {
         self.commitment_purchase_analysis_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The analysis configuration for the commitment purchase analysis.</p>
+    /// <p>The configuration for the commitment purchase analysis.</p>
     pub fn set_commitment_purchase_analysis_configuration(
         mut self,
         input: ::std::option::Option<crate::types::CommitmentPurchaseAnalysisConfiguration>,
@@ -166,7 +166,7 @@ impl AnalysisSummaryBuilder {
         self.commitment_purchase_analysis_configuration = input;
         self
     }
-    /// <p>The analysis configuration for the commitment purchase analysis.</p>
+    /// <p>The configuration for the commitment purchase analysis.</p>
     pub fn get_commitment_purchase_analysis_configuration(&self) -> &::std::option::Option<crate::types::CommitmentPurchaseAnalysisConfiguration> {
         &self.commitment_purchase_analysis_configuration
     }

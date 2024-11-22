@@ -28,21 +28,21 @@ pub struct SavingsPlansPurchaseAnalysisDetails {
     pub estimated_average_utilization: ::std::option::Option<::std::string::String>,
     /// <p>The estimated monthly savings amount based on the Savings Plan.</p>
     pub estimated_monthly_savings_amount: ::std::option::Option<::std::string::String>,
-    /// <p>The remaining On-Demand cost estimated to not be covered by the commitment, over the length of the lookback period.</p>
+    /// <p>The remaining On-Demand cost estimated to not be covered by the Savings Plan over the length of the lookback period.</p>
     pub estimated_on_demand_cost: ::std::option::Option<::std::string::String>,
-    /// <p>The estimated On-Demand cost you expect with no additional commitment, based on your usage of the selected time period and the Savings Plan you own.</p>
+    /// <p>The estimated On-Demand cost you expect with no additional commitment based on your usage of the selected time period and the Savings Plan you own.</p>
     pub estimated_on_demand_cost_with_current_commitment: ::std::option::Option<::std::string::String>,
-    /// <p>The estimated return on investment that's based on the purchase commitment and estimated savings. This is calculated as estimatedSavingsAmount/estimatedSPCost*100.</p>
+    /// <p>The estimated return on investment that's based on the Savings Plan and estimated savings. This is calculated as estimatedSavingsAmount/estimatedSPCost*100.</p>
     pub estimated_roi: ::std::option::Option<::std::string::String>,
-    /// <p>The estimated savings amount that's based on the purchase commitment over the length of the lookback period.</p>
+    /// <p>The estimated savings amount that's based on the Savings Plan over the length of the lookback period.</p>
     pub estimated_savings_amount: ::std::option::Option<::std::string::String>,
     /// <p>The estimated savings percentage relative to the total cost over the cost calculation lookback period.</p>
     pub estimated_savings_percentage: ::std::option::Option<::std::string::String>,
-    /// <p>The estimated cost of the purchase commitment over the length of the lookback period.</p>
+    /// <p>The estimated cost of the Savings Plan over the length of the lookback period.</p>
     pub estimated_commitment_cost: ::std::option::Option<::std::string::String>,
     /// <p>The date and time of the last hour that went into the analysis.</p>
     pub latest_usage_timestamp: ::std::option::Option<::std::string::String>,
-    /// <p>The upfront cost of the Savings Plan, based on the selected payment option.</p>
+    /// <p>The upfront cost of the Savings Plan based on the selected payment option.</p>
     pub upfront_cost: ::std::option::Option<::std::string::String>,
     /// <p>Additional metadata that might be applicable to the commitment.</p>
     pub additional_metadata: ::std::option::Option<::std::string::String>,
@@ -98,19 +98,19 @@ impl SavingsPlansPurchaseAnalysisDetails {
     pub fn estimated_monthly_savings_amount(&self) -> ::std::option::Option<&str> {
         self.estimated_monthly_savings_amount.as_deref()
     }
-    /// <p>The remaining On-Demand cost estimated to not be covered by the commitment, over the length of the lookback period.</p>
+    /// <p>The remaining On-Demand cost estimated to not be covered by the Savings Plan over the length of the lookback period.</p>
     pub fn estimated_on_demand_cost(&self) -> ::std::option::Option<&str> {
         self.estimated_on_demand_cost.as_deref()
     }
-    /// <p>The estimated On-Demand cost you expect with no additional commitment, based on your usage of the selected time period and the Savings Plan you own.</p>
+    /// <p>The estimated On-Demand cost you expect with no additional commitment based on your usage of the selected time period and the Savings Plan you own.</p>
     pub fn estimated_on_demand_cost_with_current_commitment(&self) -> ::std::option::Option<&str> {
         self.estimated_on_demand_cost_with_current_commitment.as_deref()
     }
-    /// <p>The estimated return on investment that's based on the purchase commitment and estimated savings. This is calculated as estimatedSavingsAmount/estimatedSPCost*100.</p>
+    /// <p>The estimated return on investment that's based on the Savings Plan and estimated savings. This is calculated as estimatedSavingsAmount/estimatedSPCost*100.</p>
     pub fn estimated_roi(&self) -> ::std::option::Option<&str> {
         self.estimated_roi.as_deref()
     }
-    /// <p>The estimated savings amount that's based on the purchase commitment over the length of the lookback period.</p>
+    /// <p>The estimated savings amount that's based on the Savings Plan over the length of the lookback period.</p>
     pub fn estimated_savings_amount(&self) -> ::std::option::Option<&str> {
         self.estimated_savings_amount.as_deref()
     }
@@ -118,7 +118,7 @@ impl SavingsPlansPurchaseAnalysisDetails {
     pub fn estimated_savings_percentage(&self) -> ::std::option::Option<&str> {
         self.estimated_savings_percentage.as_deref()
     }
-    /// <p>The estimated cost of the purchase commitment over the length of the lookback period.</p>
+    /// <p>The estimated cost of the Savings Plan over the length of the lookback period.</p>
     pub fn estimated_commitment_cost(&self) -> ::std::option::Option<&str> {
         self.estimated_commitment_cost.as_deref()
     }
@@ -126,7 +126,7 @@ impl SavingsPlansPurchaseAnalysisDetails {
     pub fn latest_usage_timestamp(&self) -> ::std::option::Option<&str> {
         self.latest_usage_timestamp.as_deref()
     }
-    /// <p>The upfront cost of the Savings Plan, based on the selected payment option.</p>
+    /// <p>The upfront cost of the Savings Plan based on the selected payment option.</p>
     pub fn upfront_cost(&self) -> ::std::option::Option<&str> {
         self.upfront_cost.as_deref()
     }
@@ -344,59 +344,59 @@ impl SavingsPlansPurchaseAnalysisDetailsBuilder {
     pub fn get_estimated_monthly_savings_amount(&self) -> &::std::option::Option<::std::string::String> {
         &self.estimated_monthly_savings_amount
     }
-    /// <p>The remaining On-Demand cost estimated to not be covered by the commitment, over the length of the lookback period.</p>
+    /// <p>The remaining On-Demand cost estimated to not be covered by the Savings Plan over the length of the lookback period.</p>
     pub fn estimated_on_demand_cost(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.estimated_on_demand_cost = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The remaining On-Demand cost estimated to not be covered by the commitment, over the length of the lookback period.</p>
+    /// <p>The remaining On-Demand cost estimated to not be covered by the Savings Plan over the length of the lookback period.</p>
     pub fn set_estimated_on_demand_cost(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.estimated_on_demand_cost = input;
         self
     }
-    /// <p>The remaining On-Demand cost estimated to not be covered by the commitment, over the length of the lookback period.</p>
+    /// <p>The remaining On-Demand cost estimated to not be covered by the Savings Plan over the length of the lookback period.</p>
     pub fn get_estimated_on_demand_cost(&self) -> &::std::option::Option<::std::string::String> {
         &self.estimated_on_demand_cost
     }
-    /// <p>The estimated On-Demand cost you expect with no additional commitment, based on your usage of the selected time period and the Savings Plan you own.</p>
+    /// <p>The estimated On-Demand cost you expect with no additional commitment based on your usage of the selected time period and the Savings Plan you own.</p>
     pub fn estimated_on_demand_cost_with_current_commitment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.estimated_on_demand_cost_with_current_commitment = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The estimated On-Demand cost you expect with no additional commitment, based on your usage of the selected time period and the Savings Plan you own.</p>
+    /// <p>The estimated On-Demand cost you expect with no additional commitment based on your usage of the selected time period and the Savings Plan you own.</p>
     pub fn set_estimated_on_demand_cost_with_current_commitment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.estimated_on_demand_cost_with_current_commitment = input;
         self
     }
-    /// <p>The estimated On-Demand cost you expect with no additional commitment, based on your usage of the selected time period and the Savings Plan you own.</p>
+    /// <p>The estimated On-Demand cost you expect with no additional commitment based on your usage of the selected time period and the Savings Plan you own.</p>
     pub fn get_estimated_on_demand_cost_with_current_commitment(&self) -> &::std::option::Option<::std::string::String> {
         &self.estimated_on_demand_cost_with_current_commitment
     }
-    /// <p>The estimated return on investment that's based on the purchase commitment and estimated savings. This is calculated as estimatedSavingsAmount/estimatedSPCost*100.</p>
+    /// <p>The estimated return on investment that's based on the Savings Plan and estimated savings. This is calculated as estimatedSavingsAmount/estimatedSPCost*100.</p>
     pub fn estimated_roi(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.estimated_roi = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The estimated return on investment that's based on the purchase commitment and estimated savings. This is calculated as estimatedSavingsAmount/estimatedSPCost*100.</p>
+    /// <p>The estimated return on investment that's based on the Savings Plan and estimated savings. This is calculated as estimatedSavingsAmount/estimatedSPCost*100.</p>
     pub fn set_estimated_roi(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.estimated_roi = input;
         self
     }
-    /// <p>The estimated return on investment that's based on the purchase commitment and estimated savings. This is calculated as estimatedSavingsAmount/estimatedSPCost*100.</p>
+    /// <p>The estimated return on investment that's based on the Savings Plan and estimated savings. This is calculated as estimatedSavingsAmount/estimatedSPCost*100.</p>
     pub fn get_estimated_roi(&self) -> &::std::option::Option<::std::string::String> {
         &self.estimated_roi
     }
-    /// <p>The estimated savings amount that's based on the purchase commitment over the length of the lookback period.</p>
+    /// <p>The estimated savings amount that's based on the Savings Plan over the length of the lookback period.</p>
     pub fn estimated_savings_amount(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.estimated_savings_amount = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The estimated savings amount that's based on the purchase commitment over the length of the lookback period.</p>
+    /// <p>The estimated savings amount that's based on the Savings Plan over the length of the lookback period.</p>
     pub fn set_estimated_savings_amount(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.estimated_savings_amount = input;
         self
     }
-    /// <p>The estimated savings amount that's based on the purchase commitment over the length of the lookback period.</p>
+    /// <p>The estimated savings amount that's based on the Savings Plan over the length of the lookback period.</p>
     pub fn get_estimated_savings_amount(&self) -> &::std::option::Option<::std::string::String> {
         &self.estimated_savings_amount
     }
@@ -414,17 +414,17 @@ impl SavingsPlansPurchaseAnalysisDetailsBuilder {
     pub fn get_estimated_savings_percentage(&self) -> &::std::option::Option<::std::string::String> {
         &self.estimated_savings_percentage
     }
-    /// <p>The estimated cost of the purchase commitment over the length of the lookback period.</p>
+    /// <p>The estimated cost of the Savings Plan over the length of the lookback period.</p>
     pub fn estimated_commitment_cost(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.estimated_commitment_cost = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The estimated cost of the purchase commitment over the length of the lookback period.</p>
+    /// <p>The estimated cost of the Savings Plan over the length of the lookback period.</p>
     pub fn set_estimated_commitment_cost(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.estimated_commitment_cost = input;
         self
     }
-    /// <p>The estimated cost of the purchase commitment over the length of the lookback period.</p>
+    /// <p>The estimated cost of the Savings Plan over the length of the lookback period.</p>
     pub fn get_estimated_commitment_cost(&self) -> &::std::option::Option<::std::string::String> {
         &self.estimated_commitment_cost
     }
@@ -442,17 +442,17 @@ impl SavingsPlansPurchaseAnalysisDetailsBuilder {
     pub fn get_latest_usage_timestamp(&self) -> &::std::option::Option<::std::string::String> {
         &self.latest_usage_timestamp
     }
-    /// <p>The upfront cost of the Savings Plan, based on the selected payment option.</p>
+    /// <p>The upfront cost of the Savings Plan based on the selected payment option.</p>
     pub fn upfront_cost(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upfront_cost = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The upfront cost of the Savings Plan, based on the selected payment option.</p>
+    /// <p>The upfront cost of the Savings Plan based on the selected payment option.</p>
     pub fn set_upfront_cost(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.upfront_cost = input;
         self
     }
-    /// <p>The upfront cost of the Savings Plan, based on the selected payment option.</p>
+    /// <p>The upfront cost of the Savings Plan based on the selected payment option.</p>
     pub fn get_upfront_cost(&self) -> &::std::option::Option<::std::string::String> {
         &self.upfront_cost
     }

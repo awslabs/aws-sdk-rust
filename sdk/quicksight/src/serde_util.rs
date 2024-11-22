@@ -1231,6 +1231,15 @@ pub(crate) fn image_set_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn image_static_file_correct_errors(
+    mut builder: crate::types::builders::ImageStaticFileBuilder,
+) -> crate::types::builders::ImageStaticFileBuilder {
+    if builder.static_file_id.is_none() {
+        builder.static_file_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn integer_dataset_parameter_correct_errors(
     mut builder: crate::types::builders::IntegerDatasetParameterBuilder,
 ) -> crate::types::builders::IntegerDatasetParameterBuilder {
@@ -1360,6 +1369,15 @@ pub(crate) fn snapshot_s3_destination_configuration_correct_errors(
             let builder = crate::types::builders::S3BucketConfigurationBuilder::default();
             crate::serde_util::s3_bucket_configuration_correct_errors(builder).build().ok()
         }
+    }
+    builder
+}
+
+pub(crate) fn spatial_static_file_correct_errors(
+    mut builder: crate::types::builders::SpatialStaticFileBuilder,
+) -> crate::types::builders::SpatialStaticFileBuilder {
+    if builder.static_file_id.is_none() {
+        builder.static_file_id = Some(Default::default())
     }
     builder
 }
@@ -1507,6 +1525,19 @@ pub(crate) fn sheet_control_layout_correct_errors(
     if builder.configuration.is_none() {
         builder.configuration = {
             let builder = crate::types::builders::SheetControlLayoutConfigurationBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn sheet_image_correct_errors(mut builder: crate::types::builders::SheetImageBuilder) -> crate::types::builders::SheetImageBuilder {
+    if builder.sheet_image_id.is_none() {
+        builder.sheet_image_id = Some(Default::default())
+    }
+    if builder.source.is_none() {
+        builder.source = {
+            let builder = crate::types::builders::SheetImageSourceBuilder::default();
             Some(builder.build())
         }
     }
@@ -1896,6 +1927,18 @@ pub(crate) fn kpi_visual_correct_errors(mut builder: crate::types::builders::Kpi
     builder
 }
 
+pub(crate) fn layer_map_visual_correct_errors(
+    mut builder: crate::types::builders::LayerMapVisualBuilder,
+) -> crate::types::builders::LayerMapVisualBuilder {
+    if builder.visual_id.is_none() {
+        builder.visual_id = Some(Default::default())
+    }
+    if builder.data_set_identifier.is_none() {
+        builder.data_set_identifier = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn line_chart_visual_correct_errors(
     mut builder: crate::types::builders::LineChartVisualBuilder,
 ) -> crate::types::builders::LineChartVisualBuilder {
@@ -2113,6 +2156,16 @@ pub(crate) fn pivot_table_visual_correct_errors(
     builder
 }
 
+pub(crate) fn plugin_visual_correct_errors(mut builder: crate::types::builders::PluginVisualBuilder) -> crate::types::builders::PluginVisualBuilder {
+    if builder.visual_id.is_none() {
+        builder.visual_id = Some(Default::default())
+    }
+    if builder.plugin_arn.is_none() {
+        builder.plugin_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn project_operation_correct_errors(
     mut builder: crate::types::builders::ProjectOperationBuilder,
 ) -> crate::types::builders::ProjectOperationBuilder {
@@ -2196,6 +2249,30 @@ pub(crate) fn scatter_plot_visual_correct_errors(
 ) -> crate::types::builders::ScatterPlotVisualBuilder {
     if builder.visual_id.is_none() {
         builder.visual_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn static_file_s3_source_options_correct_errors(
+    mut builder: crate::types::builders::StaticFileS3SourceOptionsBuilder,
+) -> crate::types::builders::StaticFileS3SourceOptionsBuilder {
+    if builder.bucket_name.is_none() {
+        builder.bucket_name = Some(Default::default())
+    }
+    if builder.object_key.is_none() {
+        builder.object_key = Some(Default::default())
+    }
+    if builder.region.is_none() {
+        builder.region = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn static_file_url_source_options_correct_errors(
+    mut builder: crate::types::builders::StaticFileUrlSourceOptionsBuilder,
+) -> crate::types::builders::StaticFileUrlSourceOptionsBuilder {
+    if builder.url.is_none() {
+        builder.url = Some(Default::default())
     }
     builder
 }
@@ -2381,6 +2458,24 @@ pub(crate) fn grid_layout_screen_canvas_size_options_correct_errors(
     builder
 }
 
+pub(crate) fn image_custom_action_correct_errors(
+    mut builder: crate::types::builders::ImageCustomActionBuilder,
+) -> crate::types::builders::ImageCustomActionBuilder {
+    if builder.custom_action_id.is_none() {
+        builder.custom_action_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.trigger.is_none() {
+        builder.trigger = "no value was set".parse::<crate::types::ImageCustomActionTrigger>().ok()
+    }
+    if builder.action_operations.is_none() {
+        builder.action_operations = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn section_based_layout_configuration_correct_errors(
     mut builder: crate::types::builders::SectionBasedLayoutConfigurationBuilder,
 ) -> crate::types::builders::SectionBasedLayoutConfigurationBuilder {
@@ -2398,6 +2493,15 @@ pub(crate) fn section_based_layout_configuration_correct_errors(
             let builder = crate::types::builders::SectionBasedLayoutCanvasSizeOptionsBuilder::default();
             Some(builder.build())
         }
+    }
+    builder
+}
+
+pub(crate) fn sheet_image_static_file_source_correct_errors(
+    mut builder: crate::types::builders::SheetImageStaticFileSourceBuilder,
+) -> crate::types::builders::SheetImageStaticFileSourceBuilder {
+    if builder.static_file_id.is_none() {
+        builder.static_file_id = Some(Default::default())
     }
     builder
 }
@@ -2681,6 +2785,15 @@ pub(crate) fn geospatial_coordinate_bounds_correct_errors(
     builder
 }
 
+pub(crate) fn geospatial_layer_item_correct_errors(
+    mut builder: crate::types::builders::GeospatialLayerItemBuilder,
+) -> crate::types::builders::GeospatialLayerItemBuilder {
+    if builder.layer_id.is_none() {
+        builder.layer_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn grid_layout_element_correct_errors(
     mut builder: crate::types::builders::GridLayoutElementBuilder,
 ) -> crate::types::builders::GridLayoutElementBuilder {
@@ -2762,6 +2875,27 @@ pub(crate) fn reference_line_correct_errors(
 pub(crate) fn y_axis_options_correct_errors(mut builder: crate::types::builders::YAxisOptionsBuilder) -> crate::types::builders::YAxisOptionsBuilder {
     if builder.y_axis.is_none() {
         builder.y_axis = "no value was set".parse::<crate::types::SingleYAxisOption>().ok()
+    }
+    builder
+}
+
+pub(crate) fn custom_action_set_parameters_operation_correct_errors(
+    mut builder: crate::types::builders::CustomActionSetParametersOperationBuilder,
+) -> crate::types::builders::CustomActionSetParametersOperationBuilder {
+    if builder.parameter_value_configurations.is_none() {
+        builder.parameter_value_configurations = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn custom_action_url_operation_correct_errors(
+    mut builder: crate::types::builders::CustomActionUrlOperationBuilder,
+) -> crate::types::builders::CustomActionUrlOperationBuilder {
+    if builder.url_template.is_none() {
+        builder.url_template = Some(Default::default())
+    }
+    if builder.url_target.is_none() {
+        builder.url_target = "no value was set".parse::<crate::types::UrlTargetConfiguration>().ok()
     }
     builder
 }
@@ -3120,27 +3254,6 @@ pub(crate) fn custom_action_filter_operation_correct_errors(
     builder
 }
 
-pub(crate) fn custom_action_set_parameters_operation_correct_errors(
-    mut builder: crate::types::builders::CustomActionSetParametersOperationBuilder,
-) -> crate::types::builders::CustomActionSetParametersOperationBuilder {
-    if builder.parameter_value_configurations.is_none() {
-        builder.parameter_value_configurations = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn custom_action_url_operation_correct_errors(
-    mut builder: crate::types::builders::CustomActionUrlOperationBuilder,
-) -> crate::types::builders::CustomActionUrlOperationBuilder {
-    if builder.url_template.is_none() {
-        builder.url_template = Some(Default::default())
-    }
-    if builder.url_target.is_none() {
-        builder.url_target = "no value was set".parse::<crate::types::UrlTargetConfiguration>().ok()
-    }
-    builder
-}
-
 pub(crate) fn date_dimension_field_correct_errors(
     mut builder: crate::types::builders::DateDimensionFieldBuilder,
 ) -> crate::types::builders::DateDimensionFieldBuilder {
@@ -3186,6 +3299,78 @@ pub(crate) fn free_form_section_layout_configuration_correct_errors(
 ) -> crate::types::builders::FreeFormSectionLayoutConfigurationBuilder {
     if builder.elements.is_none() {
         builder.elements = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn geospatial_line_layer_correct_errors(
+    mut builder: crate::types::builders::GeospatialLineLayerBuilder,
+) -> crate::types::builders::GeospatialLineLayerBuilder {
+    if builder.style.is_none() {
+        builder.style = {
+            let builder = crate::types::builders::GeospatialLineStyleBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn geospatial_point_layer_correct_errors(
+    mut builder: crate::types::builders::GeospatialPointLayerBuilder,
+) -> crate::types::builders::GeospatialPointLayerBuilder {
+    if builder.style.is_none() {
+        builder.style = {
+            let builder = crate::types::builders::GeospatialPointStyleBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn geospatial_polygon_layer_correct_errors(
+    mut builder: crate::types::builders::GeospatialPolygonLayerBuilder,
+) -> crate::types::builders::GeospatialPolygonLayerBuilder {
+    if builder.style.is_none() {
+        builder.style = {
+            let builder = crate::types::builders::GeospatialPolygonStyleBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn geospatial_static_file_source_correct_errors(
+    mut builder: crate::types::builders::GeospatialStaticFileSourceBuilder,
+) -> crate::types::builders::GeospatialStaticFileSourceBuilder {
+    if builder.static_file_id.is_none() {
+        builder.static_file_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn layer_custom_action_correct_errors(
+    mut builder: crate::types::builders::LayerCustomActionBuilder,
+) -> crate::types::builders::LayerCustomActionBuilder {
+    if builder.custom_action_id.is_none() {
+        builder.custom_action_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.trigger.is_none() {
+        builder.trigger = "no value was set".parse::<crate::types::LayerCustomActionTrigger>().ok()
+    }
+    if builder.action_operations.is_none() {
+        builder.action_operations = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn local_navigation_configuration_correct_errors(
+    mut builder: crate::types::builders::LocalNavigationConfigurationBuilder,
+) -> crate::types::builders::LocalNavigationConfigurationBuilder {
+    if builder.target_sheet_id.is_none() {
+        builder.target_sheet_id = Some(Default::default())
     }
     builder
 }
@@ -3437,15 +3622,6 @@ pub(crate) fn geospatial_heatmap_data_color_correct_errors(
     builder
 }
 
-pub(crate) fn local_navigation_configuration_correct_errors(
-    mut builder: crate::types::builders::LocalNavigationConfigurationBuilder,
-) -> crate::types::builders::LocalNavigationConfigurationBuilder {
-    if builder.target_sheet_id.is_none() {
-        builder.target_sheet_id = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn numeric_equality_drill_down_filter_correct_errors(
     mut builder: crate::types::builders::NumericEqualityDrillDownFilterBuilder,
 ) -> crate::types::builders::NumericEqualityDrillDownFilterBuilder {
@@ -3457,6 +3633,21 @@ pub(crate) fn numeric_equality_drill_down_filter_correct_errors(
     }
     if builder.value.is_none() {
         builder.value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn set_parameter_value_configuration_correct_errors(
+    mut builder: crate::types::builders::SetParameterValueConfigurationBuilder,
+) -> crate::types::builders::SetParameterValueConfigurationBuilder {
+    if builder.destination_parameter_name.is_none() {
+        builder.destination_parameter_name = Some(Default::default())
+    }
+    if builder.value.is_none() {
+        builder.value = {
+            let builder = crate::types::builders::DestinationParameterValueConfigurationBuilder::default();
+            Some(builder.build())
+        }
     }
     builder
 }
@@ -3521,15 +3712,12 @@ pub(crate) fn body_section_dynamic_numeric_dimension_configuration_correct_error
     builder
 }
 
-pub(crate) fn set_parameter_value_configuration_correct_errors(
-    mut builder: crate::types::builders::SetParameterValueConfigurationBuilder,
-) -> crate::types::builders::SetParameterValueConfigurationBuilder {
-    if builder.destination_parameter_name.is_none() {
-        builder.destination_parameter_name = Some(Default::default())
-    }
-    if builder.value.is_none() {
-        builder.value = {
-            let builder = crate::types::builders::DestinationParameterValueConfigurationBuilder::default();
+pub(crate) fn custom_values_configuration_correct_errors(
+    mut builder: crate::types::builders::CustomValuesConfigurationBuilder,
+) -> crate::types::builders::CustomValuesConfigurationBuilder {
+    if builder.custom_values.is_none() {
+        builder.custom_values = {
+            let builder = crate::types::builders::CustomParameterValuesBuilder::default();
             Some(builder.build())
         }
     }
@@ -3548,14 +3736,29 @@ pub(crate) fn table_field_custom_text_content_correct_errors(
     builder
 }
 
-pub(crate) fn custom_values_configuration_correct_errors(
-    mut builder: crate::types::builders::CustomValuesConfigurationBuilder,
-) -> crate::types::builders::CustomValuesConfigurationBuilder {
-    if builder.custom_values.is_none() {
-        builder.custom_values = {
-            let builder = crate::types::builders::CustomParameterValuesBuilder::default();
-            Some(builder.build())
-        }
+pub(crate) fn geospatial_categorical_color_correct_errors(
+    mut builder: crate::types::builders::GeospatialCategoricalColorBuilder,
+) -> crate::types::builders::GeospatialCategoricalColorBuilder {
+    if builder.category_data_colors.is_none() {
+        builder.category_data_colors = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn geospatial_gradient_color_correct_errors(
+    mut builder: crate::types::builders::GeospatialGradientColorBuilder,
+) -> crate::types::builders::GeospatialGradientColorBuilder {
+    if builder.step_colors.is_none() {
+        builder.step_colors = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn geospatial_solid_color_correct_errors(
+    mut builder: crate::types::builders::GeospatialSolidColorBuilder,
+) -> crate::types::builders::GeospatialSolidColorBuilder {
+    if builder.color.is_none() {
+        builder.color = Some(Default::default())
     }
     builder
 }
@@ -3563,6 +3766,42 @@ pub(crate) fn custom_values_configuration_correct_errors(
 pub(crate) fn gradient_stop_correct_errors(mut builder: crate::types::builders::GradientStopBuilder) -> crate::types::builders::GradientStopBuilder {
     if builder.gradient_offset.is_none() {
         builder.gradient_offset = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn geospatial_null_data_settings_correct_errors(
+    mut builder: crate::types::builders::GeospatialNullDataSettingsBuilder,
+) -> crate::types::builders::GeospatialNullDataSettingsBuilder {
+    if builder.symbol_style.is_none() {
+        builder.symbol_style = {
+            let builder = crate::types::builders::GeospatialNullSymbolStyleBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn geospatial_categorical_data_color_correct_errors(
+    mut builder: crate::types::builders::GeospatialCategoricalDataColorBuilder,
+) -> crate::types::builders::GeospatialCategoricalDataColorBuilder {
+    if builder.color.is_none() {
+        builder.color = Some(Default::default())
+    }
+    if builder.data_value.is_none() {
+        builder.data_value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn geospatial_gradient_step_color_correct_errors(
+    mut builder: crate::types::builders::GeospatialGradientStepColorBuilder,
+) -> crate::types::builders::GeospatialGradientStepColorBuilder {
+    if builder.color.is_none() {
+        builder.color = Some(Default::default())
+    }
+    if builder.data_value.is_none() {
+        builder.data_value = Some(Default::default())
     }
     builder
 }

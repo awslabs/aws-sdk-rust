@@ -7,7 +7,7 @@ pub struct SlackUserIdentity {
     /// <p>A user-defined role that AWS Chatbot assumes. This is not the service-linked role.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/chatbot-iam-policies.html">IAM policies for AWS Chatbot</a> in the <i> AWS Chatbot Administrator Guide</i>.</p>
     pub iam_role_arn: ::std::string::String,
-    /// <p>The Amazon Resource Number (ARN) of the SlackChannelConfiguration associated with the user identity to delete.</p>
+    /// <p>The Amazon Resource Name (ARN) of the SlackChannelConfiguration associated with the user identity to delete.</p>
     pub chat_configuration_arn: ::std::string::String,
     /// <p>The ID of the Slack workspace authorized with AWS Chatbot.</p>
     pub slack_team_id: ::std::string::String,
@@ -23,7 +23,7 @@ impl SlackUserIdentity {
         use std::ops::Deref;
         self.iam_role_arn.deref()
     }
-    /// <p>The Amazon Resource Number (ARN) of the SlackChannelConfiguration associated with the user identity to delete.</p>
+    /// <p>The Amazon Resource Name (ARN) of the SlackChannelConfiguration associated with the user identity to delete.</p>
     pub fn chat_configuration_arn(&self) -> &str {
         use std::ops::Deref;
         self.chat_configuration_arn.deref()
@@ -79,18 +79,18 @@ impl SlackUserIdentityBuilder {
     pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.iam_role_arn
     }
-    /// <p>The Amazon Resource Number (ARN) of the SlackChannelConfiguration associated with the user identity to delete.</p>
+    /// <p>The Amazon Resource Name (ARN) of the SlackChannelConfiguration associated with the user identity to delete.</p>
     /// This field is required.
     pub fn chat_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.chat_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Number (ARN) of the SlackChannelConfiguration associated with the user identity to delete.</p>
+    /// <p>The Amazon Resource Name (ARN) of the SlackChannelConfiguration associated with the user identity to delete.</p>
     pub fn set_chat_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.chat_configuration_arn = input;
         self
     }
-    /// <p>The Amazon Resource Number (ARN) of the SlackChannelConfiguration associated with the user identity to delete.</p>
+    /// <p>The Amazon Resource Name (ARN) of the SlackChannelConfiguration associated with the user identity to delete.</p>
     pub fn get_chat_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.chat_configuration_arn
     }

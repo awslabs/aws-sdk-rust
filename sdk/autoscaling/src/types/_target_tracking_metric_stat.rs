@@ -12,6 +12,8 @@ pub struct TargetTrackingMetricStat {
     pub stat: ::std::option::Option<::std::string::String>,
     /// <p>The unit to use for the returned data points. For a complete list of the units that CloudWatch supports, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">MetricDatum</a> data type in the <i>Amazon CloudWatch API Reference</i>.</p>
     pub unit: ::std::option::Option<::std::string::String>,
+    /// <p>The period of the metric in seconds. The default value is 60. Accepted values are 10, 30, and 60. For high resolution metric, set the value to less than 60. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/policy-creating-high-resolution-metrics.html">Create a target tracking policy using high-resolution metrics for faster response</a>.</p>
+    pub period: ::std::option::Option<i32>,
 }
 impl TargetTrackingMetricStat {
     /// <p>The metric to use.</p>
@@ -26,6 +28,10 @@ impl TargetTrackingMetricStat {
     /// <p>The unit to use for the returned data points. For a complete list of the units that CloudWatch supports, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">MetricDatum</a> data type in the <i>Amazon CloudWatch API Reference</i>.</p>
     pub fn unit(&self) -> ::std::option::Option<&str> {
         self.unit.as_deref()
+    }
+    /// <p>The period of the metric in seconds. The default value is 60. Accepted values are 10, 30, and 60. For high resolution metric, set the value to less than 60. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/policy-creating-high-resolution-metrics.html">Create a target tracking policy using high-resolution metrics for faster response</a>.</p>
+    pub fn period(&self) -> ::std::option::Option<i32> {
+        self.period
     }
 }
 impl TargetTrackingMetricStat {
@@ -42,6 +48,7 @@ pub struct TargetTrackingMetricStatBuilder {
     pub(crate) metric: ::std::option::Option<crate::types::Metric>,
     pub(crate) stat: ::std::option::Option<::std::string::String>,
     pub(crate) unit: ::std::option::Option<::std::string::String>,
+    pub(crate) period: ::std::option::Option<i32>,
 }
 impl TargetTrackingMetricStatBuilder {
     /// <p>The metric to use.</p>
@@ -91,12 +98,27 @@ impl TargetTrackingMetricStatBuilder {
     pub fn get_unit(&self) -> &::std::option::Option<::std::string::String> {
         &self.unit
     }
+    /// <p>The period of the metric in seconds. The default value is 60. Accepted values are 10, 30, and 60. For high resolution metric, set the value to less than 60. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/policy-creating-high-resolution-metrics.html">Create a target tracking policy using high-resolution metrics for faster response</a>.</p>
+    pub fn period(mut self, input: i32) -> Self {
+        self.period = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The period of the metric in seconds. The default value is 60. Accepted values are 10, 30, and 60. For high resolution metric, set the value to less than 60. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/policy-creating-high-resolution-metrics.html">Create a target tracking policy using high-resolution metrics for faster response</a>.</p>
+    pub fn set_period(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.period = input;
+        self
+    }
+    /// <p>The period of the metric in seconds. The default value is 60. Accepted values are 10, 30, and 60. For high resolution metric, set the value to less than 60. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/policy-creating-high-resolution-metrics.html">Create a target tracking policy using high-resolution metrics for faster response</a>.</p>
+    pub fn get_period(&self) -> &::std::option::Option<i32> {
+        &self.period
+    }
     /// Consumes the builder and constructs a [`TargetTrackingMetricStat`](crate::types::TargetTrackingMetricStat).
     pub fn build(self) -> crate::types::TargetTrackingMetricStat {
         crate::types::TargetTrackingMetricStat {
             metric: self.metric,
             stat: self.stat,
             unit: self.unit,
+            period: self.period,
         }
     }
 }

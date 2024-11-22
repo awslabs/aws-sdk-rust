@@ -169,4 +169,23 @@ impl CreateTopicFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
+    ///
+    /// Appends an item to `FolderArns`.
+    ///
+    /// To override the contents of this collection use [`set_folder_arns`](Self::set_folder_arns).
+    ///
+    /// <p>The Folder ARN of the folder that you want the topic to reside in.</p>
+    pub fn folder_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.folder_arns(input.into());
+        self
+    }
+    /// <p>The Folder ARN of the folder that you want the topic to reside in.</p>
+    pub fn set_folder_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_folder_arns(input);
+        self
+    }
+    /// <p>The Folder ARN of the folder that you want the topic to reside in.</p>
+    pub fn get_folder_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_folder_arns()
+    }
 }

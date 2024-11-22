@@ -8,6 +8,12 @@ pub struct Reference {
     pub value: ::std::string::String,
     /// <p>The type of the reference. <code>DATE</code> must be of type Epoch timestamp.</p>
     pub r#type: crate::types::ReferenceType,
+    /// <p></p>
+    pub status: ::std::option::Option<crate::types::ReferenceStatus>,
+    /// <p></p>
+    pub arn: ::std::option::Option<::std::string::String>,
+    /// <p></p>
+    pub status_reason: ::std::option::Option<::std::string::String>,
 }
 impl Reference {
     /// <p>A valid value for the reference. For example, for a URL reference, a formatted URL that is displayed to an agent in the Contact Control Panel (CCP).</p>
@@ -18,6 +24,18 @@ impl Reference {
     /// <p>The type of the reference. <code>DATE</code> must be of type Epoch timestamp.</p>
     pub fn r#type(&self) -> &crate::types::ReferenceType {
         &self.r#type
+    }
+    /// <p></p>
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ReferenceStatus> {
+        self.status.as_ref()
+    }
+    /// <p></p>
+    pub fn arn(&self) -> ::std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p></p>
+    pub fn status_reason(&self) -> ::std::option::Option<&str> {
+        self.status_reason.as_deref()
     }
 }
 impl Reference {
@@ -33,10 +51,12 @@ impl Reference {
 pub struct ReferenceBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::ReferenceType>,
+    pub(crate) status: ::std::option::Option<crate::types::ReferenceStatus>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) status_reason: ::std::option::Option<::std::string::String>,
 }
 impl ReferenceBuilder {
     /// <p>A valid value for the reference. For example, for a URL reference, a formatted URL that is displayed to an agent in the Contact Control Panel (CCP).</p>
-    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -65,24 +85,63 @@ impl ReferenceBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ReferenceType> {
         &self.r#type
     }
+    /// <p></p>
+    pub fn status(mut self, input: crate::types::ReferenceStatus) -> Self {
+        self.status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p></p>
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReferenceStatus>) -> Self {
+        self.status = input;
+        self
+    }
+    /// <p></p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ReferenceStatus> {
+        &self.status
+    }
+    /// <p></p>
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p></p>
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.arn = input;
+        self
+    }
+    /// <p></p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
+    /// <p></p>
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status_reason = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p></p>
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.status_reason = input;
+        self
+    }
+    /// <p></p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_reason
+    }
     /// Consumes the builder and constructs a [`Reference`](crate::types::Reference).
     /// This method will fail if any of the following fields are not set:
-    /// - [`value`](crate::types::builders::ReferenceBuilder::value)
     /// - [`r#type`](crate::types::builders::ReferenceBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::Reference, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Reference {
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building Reference",
-                )
-            })?,
+            value: self.value.unwrap_or_default(),
             r#type: self.r#type.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building Reference",
                 )
             })?,
+            status: self.status,
+            arn: self.arn,
+            status_reason: self.status_reason,
         })
     }
 }

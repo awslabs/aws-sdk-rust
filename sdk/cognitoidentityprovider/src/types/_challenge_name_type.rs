@@ -19,10 +19,15 @@
 ///     ChallengeNameType::EmailOtp => { /* ... */ },
 ///     ChallengeNameType::MfaSetup => { /* ... */ },
 ///     ChallengeNameType::NewPasswordRequired => { /* ... */ },
+///     ChallengeNameType::Password => { /* ... */ },
+///     ChallengeNameType::PasswordSrp => { /* ... */ },
 ///     ChallengeNameType::PasswordVerifier => { /* ... */ },
+///     ChallengeNameType::SelectChallenge => { /* ... */ },
 ///     ChallengeNameType::SelectMfaType => { /* ... */ },
 ///     ChallengeNameType::SmsMfa => { /* ... */ },
+///     ChallengeNameType::SmsOtp => { /* ... */ },
 ///     ChallengeNameType::SoftwareTokenMfa => { /* ... */ },
+///     ChallengeNameType::WebAuthn => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -65,13 +70,23 @@ pub enum ChallengeNameType {
     #[allow(missing_docs)] // documentation missing in model
     NewPasswordRequired,
     #[allow(missing_docs)] // documentation missing in model
+    Password,
+    #[allow(missing_docs)] // documentation missing in model
+    PasswordSrp,
+    #[allow(missing_docs)] // documentation missing in model
     PasswordVerifier,
+    #[allow(missing_docs)] // documentation missing in model
+    SelectChallenge,
     #[allow(missing_docs)] // documentation missing in model
     SelectMfaType,
     #[allow(missing_docs)] // documentation missing in model
     SmsMfa,
     #[allow(missing_docs)] // documentation missing in model
+    SmsOtp,
+    #[allow(missing_docs)] // documentation missing in model
     SoftwareTokenMfa,
+    #[allow(missing_docs)] // documentation missing in model
+    WebAuthn,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -86,10 +101,15 @@ impl ::std::convert::From<&str> for ChallengeNameType {
             "EMAIL_OTP" => ChallengeNameType::EmailOtp,
             "MFA_SETUP" => ChallengeNameType::MfaSetup,
             "NEW_PASSWORD_REQUIRED" => ChallengeNameType::NewPasswordRequired,
+            "PASSWORD" => ChallengeNameType::Password,
+            "PASSWORD_SRP" => ChallengeNameType::PasswordSrp,
             "PASSWORD_VERIFIER" => ChallengeNameType::PasswordVerifier,
+            "SELECT_CHALLENGE" => ChallengeNameType::SelectChallenge,
             "SELECT_MFA_TYPE" => ChallengeNameType::SelectMfaType,
             "SMS_MFA" => ChallengeNameType::SmsMfa,
+            "SMS_OTP" => ChallengeNameType::SmsOtp,
             "SOFTWARE_TOKEN_MFA" => ChallengeNameType::SoftwareTokenMfa,
+            "WEB_AUTHN" => ChallengeNameType::WebAuthn,
             other => ChallengeNameType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -112,10 +132,15 @@ impl ChallengeNameType {
             ChallengeNameType::EmailOtp => "EMAIL_OTP",
             ChallengeNameType::MfaSetup => "MFA_SETUP",
             ChallengeNameType::NewPasswordRequired => "NEW_PASSWORD_REQUIRED",
+            ChallengeNameType::Password => "PASSWORD",
+            ChallengeNameType::PasswordSrp => "PASSWORD_SRP",
             ChallengeNameType::PasswordVerifier => "PASSWORD_VERIFIER",
+            ChallengeNameType::SelectChallenge => "SELECT_CHALLENGE",
             ChallengeNameType::SelectMfaType => "SELECT_MFA_TYPE",
             ChallengeNameType::SmsMfa => "SMS_MFA",
+            ChallengeNameType::SmsOtp => "SMS_OTP",
             ChallengeNameType::SoftwareTokenMfa => "SOFTWARE_TOKEN_MFA",
+            ChallengeNameType::WebAuthn => "WEB_AUTHN",
             ChallengeNameType::Unknown(value) => value.as_str(),
         }
     }
@@ -129,10 +154,15 @@ impl ChallengeNameType {
             "EMAIL_OTP",
             "MFA_SETUP",
             "NEW_PASSWORD_REQUIRED",
+            "PASSWORD",
+            "PASSWORD_SRP",
             "PASSWORD_VERIFIER",
+            "SELECT_CHALLENGE",
             "SELECT_MFA_TYPE",
             "SMS_MFA",
+            "SMS_OTP",
             "SOFTWARE_TOKEN_MFA",
+            "WEB_AUTHN",
         ]
     }
 }
@@ -163,10 +193,15 @@ impl ::std::fmt::Display for ChallengeNameType {
             ChallengeNameType::EmailOtp => write!(f, "EMAIL_OTP"),
             ChallengeNameType::MfaSetup => write!(f, "MFA_SETUP"),
             ChallengeNameType::NewPasswordRequired => write!(f, "NEW_PASSWORD_REQUIRED"),
+            ChallengeNameType::Password => write!(f, "PASSWORD"),
+            ChallengeNameType::PasswordSrp => write!(f, "PASSWORD_SRP"),
             ChallengeNameType::PasswordVerifier => write!(f, "PASSWORD_VERIFIER"),
+            ChallengeNameType::SelectChallenge => write!(f, "SELECT_CHALLENGE"),
             ChallengeNameType::SelectMfaType => write!(f, "SELECT_MFA_TYPE"),
             ChallengeNameType::SmsMfa => write!(f, "SMS_MFA"),
+            ChallengeNameType::SmsOtp => write!(f, "SMS_OTP"),
             ChallengeNameType::SoftwareTokenMfa => write!(f, "SOFTWARE_TOKEN_MFA"),
+            ChallengeNameType::WebAuthn => write!(f, "WEB_AUTHN"),
             ChallengeNameType::Unknown(value) => write!(f, "{}", value),
         }
     }

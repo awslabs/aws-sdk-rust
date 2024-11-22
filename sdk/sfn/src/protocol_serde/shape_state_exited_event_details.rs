@@ -33,6 +33,14 @@ where
                                 crate::protocol_serde::shape_history_event_execution_data_details::de_history_event_execution_data_details(tokens)?,
                             );
                         }
+                        "assignedVariables" => {
+                            builder = builder.set_assigned_variables(crate::protocol_serde::shape_assigned_variables::de_assigned_variables(tokens)?);
+                        }
+                        "assignedVariablesDetails" => {
+                            builder = builder.set_assigned_variables_details(
+                                crate::protocol_serde::shape_assigned_variables_details::de_assigned_variables_details(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

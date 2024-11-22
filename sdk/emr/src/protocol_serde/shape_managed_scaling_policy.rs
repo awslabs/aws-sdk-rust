@@ -17,6 +17,20 @@ where
                         "ComputeLimits" => {
                             builder = builder.set_compute_limits(crate::protocol_serde::shape_compute_limits::de_compute_limits(tokens)?);
                         }
+                        "UtilizationPerformanceIndex" => {
+                            builder = builder.set_utilization_performance_index(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "ScalingStrategy" => {
+                            builder = builder.set_scaling_strategy(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ScalingStrategy::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -44,6 +58,15 @@ pub fn ser_managed_scaling_policy(
         let mut object_2 = object.key("ComputeLimits").start_object();
         crate::protocol_serde::shape_compute_limits::ser_compute_limits(&mut object_2, var_1)?;
         object_2.finish();
+    }
+    if let Some(var_3) = &input.utilization_performance_index {
+        object.key("UtilizationPerformanceIndex").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+        );
+    }
+    if let Some(var_4) = &input.scaling_strategy {
+        object.key("ScalingStrategy").string(var_4.as_str());
     }
     Ok(())
 }

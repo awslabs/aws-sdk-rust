@@ -8,6 +8,8 @@ pub struct SequenceStoreS3Access {
     pub s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>This is ARN of the access point associated with the S3 bucket storing read sets.</p>
     pub s3_access_point_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Location of the access logs.</p>
+    pub access_log_location: ::std::option::Option<::std::string::String>,
 }
 impl SequenceStoreS3Access {
     /// <p>The S3 URI of the sequence store.</p>
@@ -17,6 +19,10 @@ impl SequenceStoreS3Access {
     /// <p>This is ARN of the access point associated with the S3 bucket storing read sets.</p>
     pub fn s3_access_point_arn(&self) -> ::std::option::Option<&str> {
         self.s3_access_point_arn.as_deref()
+    }
+    /// <p>Location of the access logs.</p>
+    pub fn access_log_location(&self) -> ::std::option::Option<&str> {
+        self.access_log_location.as_deref()
     }
 }
 impl SequenceStoreS3Access {
@@ -32,6 +38,7 @@ impl SequenceStoreS3Access {
 pub struct SequenceStoreS3AccessBuilder {
     pub(crate) s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) s3_access_point_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) access_log_location: ::std::option::Option<::std::string::String>,
 }
 impl SequenceStoreS3AccessBuilder {
     /// <p>The S3 URI of the sequence store.</p>
@@ -62,11 +69,26 @@ impl SequenceStoreS3AccessBuilder {
     pub fn get_s3_access_point_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_access_point_arn
     }
+    /// <p>Location of the access logs.</p>
+    pub fn access_log_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.access_log_location = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Location of the access logs.</p>
+    pub fn set_access_log_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.access_log_location = input;
+        self
+    }
+    /// <p>Location of the access logs.</p>
+    pub fn get_access_log_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_log_location
+    }
     /// Consumes the builder and constructs a [`SequenceStoreS3Access`](crate::types::SequenceStoreS3Access).
     pub fn build(self) -> crate::types::SequenceStoreS3Access {
         crate::types::SequenceStoreS3Access {
             s3_uri: self.s3_uri,
             s3_access_point_arn: self.s3_access_point_arn,
+            access_log_location: self.access_log_location,
         }
     }
 }

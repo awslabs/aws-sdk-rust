@@ -333,6 +333,8 @@ pub(crate) mod shape_archive_string_expression;
 
 pub(crate) mod shape_deliver_to_mailbox_action;
 
+pub(crate) mod shape_deliver_to_q_business_action;
+
 pub(crate) mod shape_drop_action;
 
 pub(crate) mod shape_email_received_headers_list;

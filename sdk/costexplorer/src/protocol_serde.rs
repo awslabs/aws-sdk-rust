@@ -497,6 +497,8 @@ pub(crate) mod shape_match_options;
 
 pub(crate) mod shape_reserved_capacity_details;
 
+pub(crate) mod shape_root_cause_impact;
+
 pub(crate) mod shape_target_instance;
 
 pub(crate) mod shape_values;

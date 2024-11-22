@@ -1253,9 +1253,6 @@ pub(crate) fn real_time_contact_analysis_character_interval_correct_errors(
 }
 
 pub(crate) fn reference_correct_errors(mut builder: crate::types::builders::ReferenceBuilder) -> crate::types::builders::ReferenceBuilder {
-    if builder.value.is_none() {
-        builder.value = Some(Default::default())
-    }
     if builder.r#type.is_none() {
         builder.r#type = "no value was set".parse::<crate::types::ReferenceType>().ok()
     }

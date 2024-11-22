@@ -29,6 +29,8 @@ pub struct StartTaskContactInput {
     pub quick_connect_id: ::std::option::Option<::std::string::String>,
     /// <p>The contactId that is <a href="https://docs.aws.amazon.com/connect/latest/adminguide/tasks.html#linked-tasks">related</a> to this contact. Linking tasks together by using <code>RelatedContactID</code> copies over contact attributes from the related task contact to the new task contact. All updates to user-defined attributes in the new task contact are limited to the individual contact ID, unlike what happens when tasks are linked by using <code>PreviousContactID</code>. There are no limits to the number of contacts that can be linked by using <code>RelatedContactId</code>.</p>
     pub related_contact_id: ::std::option::Option<::std::string::String>,
+    /// <p></p>
+    pub segment_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>>,
 }
 impl StartTaskContactInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -81,6 +83,12 @@ impl StartTaskContactInput {
     pub fn related_contact_id(&self) -> ::std::option::Option<&str> {
         self.related_contact_id.as_deref()
     }
+    /// <p></p>
+    pub fn segment_attributes(
+        &self,
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>> {
+        self.segment_attributes.as_ref()
+    }
 }
 impl ::std::fmt::Debug for StartTaskContactInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -97,6 +105,7 @@ impl ::std::fmt::Debug for StartTaskContactInput {
         formatter.field("task_template_id", &self.task_template_id);
         formatter.field("quick_connect_id", &self.quick_connect_id);
         formatter.field("related_contact_id", &self.related_contact_id);
+        formatter.field("segment_attributes", &self.segment_attributes);
         formatter.finish()
     }
 }
@@ -123,6 +132,7 @@ pub struct StartTaskContactInputBuilder {
     pub(crate) task_template_id: ::std::option::Option<::std::string::String>,
     pub(crate) quick_connect_id: ::std::option::Option<::std::string::String>,
     pub(crate) related_contact_id: ::std::option::Option<::std::string::String>,
+    pub(crate) segment_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>>,
 }
 impl StartTaskContactInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -316,6 +326,31 @@ impl StartTaskContactInputBuilder {
     pub fn get_related_contact_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.related_contact_id
     }
+    /// Adds a key-value pair to `segment_attributes`.
+    ///
+    /// To override the contents of this collection use [`set_segment_attributes`](Self::set_segment_attributes).
+    ///
+    /// <p></p>
+    pub fn segment_attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::SegmentAttributeValue) -> Self {
+        let mut hash_map = self.segment_attributes.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.segment_attributes = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p></p>
+    pub fn set_segment_attributes(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>>,
+    ) -> Self {
+        self.segment_attributes = input;
+        self
+    }
+    /// <p></p>
+    pub fn get_segment_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>> {
+        &self.segment_attributes
+    }
     /// Consumes the builder and constructs a [`StartTaskContactInput`](crate::operation::start_task_contact::StartTaskContactInput).
     pub fn build(
         self,
@@ -333,6 +368,7 @@ impl StartTaskContactInputBuilder {
             task_template_id: self.task_template_id,
             quick_connect_id: self.quick_connect_id,
             related_contact_id: self.related_contact_id,
+            segment_attributes: self.segment_attributes,
         })
     }
 }
@@ -351,6 +387,7 @@ impl ::std::fmt::Debug for StartTaskContactInputBuilder {
         formatter.field("task_template_id", &self.task_template_id);
         formatter.field("quick_connect_id", &self.quick_connect_id);
         formatter.field("related_contact_id", &self.related_contact_id);
+        formatter.field("segment_attributes", &self.segment_attributes);
         formatter.finish()
     }
 }

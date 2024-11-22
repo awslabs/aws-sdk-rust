@@ -27,6 +27,16 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "sessionId" => {
+                            builder = builder.set_session_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "trace" => {
+                            builder = builder.set_trace(crate::protocol_serde::shape_trace::de_trace(tokens)?);
+                        }
                         "agentId" => {
                             builder = builder.set_agent_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -41,22 +51,12 @@ where
                                     .transpose()?,
                             );
                         }
-                        "sessionId" => {
-                            builder = builder.set_session_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
                         "agentVersion" => {
                             builder = builder.set_agent_version(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
-                        }
-                        "trace" => {
-                            builder = builder.set_trace(crate::protocol_serde::shape_trace::de_trace(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

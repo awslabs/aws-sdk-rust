@@ -44,6 +44,33 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
+pub(crate) fn cancel_export_task_output_output_correct_errors(
+    mut builder: crate::operation::cancel_export_task::builders::CancelExportTaskOutputBuilder,
+) -> crate::operation::cancel_export_task::builders::CancelExportTaskOutputBuilder {
+    if builder.graph_id.is_none() {
+        builder.graph_id = Some(Default::default())
+    }
+    if builder.role_arn.is_none() {
+        builder.role_arn = Some(Default::default())
+    }
+    if builder.task_id.is_none() {
+        builder.task_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ExportTaskStatus>().ok()
+    }
+    if builder.format.is_none() {
+        builder.format = "no value was set".parse::<crate::types::ExportFormat>().ok()
+    }
+    if builder.destination.is_none() {
+        builder.destination = Some(Default::default())
+    }
+    if builder.kms_key_identifier.is_none() {
+        builder.kms_key_identifier = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn cancel_import_task_output_output_correct_errors(
     mut builder: crate::operation::cancel_import_task::builders::CancelImportTaskOutputBuilder,
 ) -> crate::operation::cancel_import_task::builders::CancelImportTaskOutputBuilder {
@@ -200,6 +227,33 @@ pub(crate) fn unprocessable_exception_correct_errors(
     builder
 }
 
+pub(crate) fn get_export_task_output_output_correct_errors(
+    mut builder: crate::operation::get_export_task::builders::GetExportTaskOutputBuilder,
+) -> crate::operation::get_export_task::builders::GetExportTaskOutputBuilder {
+    if builder.graph_id.is_none() {
+        builder.graph_id = Some(Default::default())
+    }
+    if builder.role_arn.is_none() {
+        builder.role_arn = Some(Default::default())
+    }
+    if builder.task_id.is_none() {
+        builder.task_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ExportTaskStatus>().ok()
+    }
+    if builder.format.is_none() {
+        builder.format = "no value was set".parse::<crate::types::ExportFormat>().ok()
+    }
+    if builder.destination.is_none() {
+        builder.destination = Some(Default::default())
+    }
+    if builder.kms_key_identifier.is_none() {
+        builder.kms_key_identifier = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_graph_output_output_correct_errors(
     mut builder: crate::operation::get_graph::builders::GetGraphOutputBuilder,
 ) -> crate::operation::get_graph::builders::GetGraphOutputBuilder {
@@ -259,6 +313,15 @@ pub(crate) fn get_private_graph_endpoint_output_output_correct_errors(
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::PrivateGraphEndpointStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn list_export_tasks_output_output_correct_errors(
+    mut builder: crate::operation::list_export_tasks::builders::ListExportTasksOutputBuilder,
+) -> crate::operation::list_export_tasks::builders::ListExportTasksOutputBuilder {
+    if builder.tasks.is_none() {
+        builder.tasks = Some(Default::default())
     }
     builder
 }
@@ -338,6 +401,33 @@ pub(crate) fn restore_graph_from_snapshot_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn start_export_task_output_output_correct_errors(
+    mut builder: crate::operation::start_export_task::builders::StartExportTaskOutputBuilder,
+) -> crate::operation::start_export_task::builders::StartExportTaskOutputBuilder {
+    if builder.graph_id.is_none() {
+        builder.graph_id = Some(Default::default())
+    }
+    if builder.role_arn.is_none() {
+        builder.role_arn = Some(Default::default())
+    }
+    if builder.task_id.is_none() {
+        builder.task_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ExportTaskStatus>().ok()
+    }
+    if builder.format.is_none() {
+        builder.format = "no value was set".parse::<crate::types::ExportFormat>().ok()
+    }
+    if builder.destination.is_none() {
+        builder.destination = Some(Default::default())
+    }
+    if builder.kms_key_identifier.is_none() {
+        builder.kms_key_identifier = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn start_import_task_output_output_correct_errors(
     mut builder: crate::operation::start_import_task::builders::StartImportTaskOutputBuilder,
 ) -> crate::operation::start_import_task::builders::StartImportTaskOutputBuilder {
@@ -367,6 +457,21 @@ pub(crate) fn update_graph_output_output_correct_errors(
     }
     if builder.arn.is_none() {
         builder.arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn export_task_details_correct_errors(
+    mut builder: crate::types::builders::ExportTaskDetailsBuilder,
+) -> crate::types::builders::ExportTaskDetailsBuilder {
+    if builder.start_time.is_none() {
+        builder.start_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.time_elapsed_seconds.is_none() {
+        builder.time_elapsed_seconds = Some(Default::default())
+    }
+    if builder.progress_percentage.is_none() {
+        builder.progress_percentage = Some(Default::default())
     }
     builder
 }
@@ -403,6 +508,33 @@ pub(crate) fn vector_search_configuration_correct_errors(
 ) -> crate::types::builders::VectorSearchConfigurationBuilder {
     if builder.dimension.is_none() {
         builder.dimension = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn export_task_summary_correct_errors(
+    mut builder: crate::types::builders::ExportTaskSummaryBuilder,
+) -> crate::types::builders::ExportTaskSummaryBuilder {
+    if builder.graph_id.is_none() {
+        builder.graph_id = Some(Default::default())
+    }
+    if builder.role_arn.is_none() {
+        builder.role_arn = Some(Default::default())
+    }
+    if builder.task_id.is_none() {
+        builder.task_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ExportTaskStatus>().ok()
+    }
+    if builder.format.is_none() {
+        builder.format = "no value was set".parse::<crate::types::ExportFormat>().ok()
+    }
+    if builder.destination.is_none() {
+        builder.destination = Some(Default::default())
+    }
+    if builder.kms_key_identifier.is_none() {
+        builder.kms_key_identifier = Some(Default::default())
     }
     builder
 }

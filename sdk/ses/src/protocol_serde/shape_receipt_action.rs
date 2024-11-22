@@ -39,6 +39,11 @@ pub fn ser_receipt_action(
     if let Some(var_14) = &input.sns_action {
         crate::protocol_serde::shape_sns_action::ser_sns_action(scope_13, var_14)?;
     }
+    #[allow(unused_mut)]
+    let mut scope_15 = writer.prefix("ConnectAction");
+    if let Some(var_16) = &input.connect_action {
+        crate::protocol_serde::shape_connect_action::ser_connect_action(scope_15, var_16)?;
+    }
     Ok(())
 }
 
@@ -51,73 +56,83 @@ pub fn de_receipt_action(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("S3Action") /* S3Action com.amazonaws.ses#ReceiptAction$S3Action */ =>  {
-                let var_15 =
+                let var_17 =
                     Some(
                         crate::protocol_serde::shape_s3_action::de_s3_action(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_s3_action(var_15);
+                builder = builder.set_s3_action(var_17);
             }
             ,
             s if s.matches("BounceAction") /* BounceAction com.amazonaws.ses#ReceiptAction$BounceAction */ =>  {
-                let var_16 =
+                let var_18 =
                     Some(
                         crate::protocol_serde::shape_bounce_action::de_bounce_action(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_bounce_action(var_16);
+                builder = builder.set_bounce_action(var_18);
             }
             ,
             s if s.matches("WorkmailAction") /* WorkmailAction com.amazonaws.ses#ReceiptAction$WorkmailAction */ =>  {
-                let var_17 =
+                let var_19 =
                     Some(
                         crate::protocol_serde::shape_workmail_action::de_workmail_action(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_workmail_action(var_17);
+                builder = builder.set_workmail_action(var_19);
             }
             ,
             s if s.matches("LambdaAction") /* LambdaAction com.amazonaws.ses#ReceiptAction$LambdaAction */ =>  {
-                let var_18 =
+                let var_20 =
                     Some(
                         crate::protocol_serde::shape_lambda_action::de_lambda_action(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_lambda_action(var_18);
+                builder = builder.set_lambda_action(var_20);
             }
             ,
             s if s.matches("StopAction") /* StopAction com.amazonaws.ses#ReceiptAction$StopAction */ =>  {
-                let var_19 =
+                let var_21 =
                     Some(
                         crate::protocol_serde::shape_stop_action::de_stop_action(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_stop_action(var_19);
+                builder = builder.set_stop_action(var_21);
             }
             ,
             s if s.matches("AddHeaderAction") /* AddHeaderAction com.amazonaws.ses#ReceiptAction$AddHeaderAction */ =>  {
-                let var_20 =
+                let var_22 =
                     Some(
                         crate::protocol_serde::shape_add_header_action::de_add_header_action(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_add_header_action(var_20);
+                builder = builder.set_add_header_action(var_22);
             }
             ,
             s if s.matches("SNSAction") /* SNSAction com.amazonaws.ses#ReceiptAction$SNSAction */ =>  {
-                let var_21 =
+                let var_23 =
                     Some(
                         crate::protocol_serde::shape_sns_action::de_sns_action(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_sns_action(var_21);
+                builder = builder.set_sns_action(var_23);
+            }
+            ,
+            s if s.matches("ConnectAction") /* ConnectAction com.amazonaws.ses#ReceiptAction$ConnectAction */ =>  {
+                let var_24 =
+                    Some(
+                        crate::protocol_serde::shape_connect_action::de_connect_action(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_connect_action(var_24);
             }
             ,
             _ => {}

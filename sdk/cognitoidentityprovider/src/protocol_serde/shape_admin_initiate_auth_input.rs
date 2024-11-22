@@ -44,5 +44,8 @@ pub fn ser_admin_initiate_auth_input_input(
         crate::protocol_serde::shape_context_data_type::ser_context_data_type(&mut object_15, var_14)?;
         object_15.finish();
     }
+    if let Some(var_16) = &input.session {
+        object.key("Session").string(var_16.as_str());
+    }
     Ok(())
 }

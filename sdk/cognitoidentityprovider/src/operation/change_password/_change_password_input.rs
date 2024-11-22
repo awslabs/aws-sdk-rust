@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ChangePasswordInput {
-    /// <p>The old password.</p>
+    /// <p>The user's previous password. Required if the user has a password. If the user has no password and only signs in with passwordless authentication options, you can omit this parameter.</p>
     pub previous_password: ::std::option::Option<::std::string::String>,
     /// <p>The new password.</p>
     pub proposed_password: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct ChangePasswordInput {
     pub access_token: ::std::option::Option<::std::string::String>,
 }
 impl ChangePasswordInput {
-    /// <p>The old password.</p>
+    /// <p>The user's previous password. Required if the user has a password. If the user has no password and only signs in with passwordless authentication options, you can omit this parameter.</p>
     pub fn previous_password(&self) -> ::std::option::Option<&str> {
         self.previous_password.as_deref()
     }
@@ -50,18 +50,17 @@ pub struct ChangePasswordInputBuilder {
     pub(crate) access_token: ::std::option::Option<::std::string::String>,
 }
 impl ChangePasswordInputBuilder {
-    /// <p>The old password.</p>
-    /// This field is required.
+    /// <p>The user's previous password. Required if the user has a password. If the user has no password and only signs in with passwordless authentication options, you can omit this parameter.</p>
     pub fn previous_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.previous_password = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The old password.</p>
+    /// <p>The user's previous password. Required if the user has a password. If the user has no password and only signs in with passwordless authentication options, you can omit this parameter.</p>
     pub fn set_previous_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.previous_password = input;
         self
     }
-    /// <p>The old password.</p>
+    /// <p>The user's previous password. Required if the user has a password. If the user has no password and only signs in with passwordless authentication options, you can omit this parameter.</p>
     pub fn get_previous_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.previous_password
     }

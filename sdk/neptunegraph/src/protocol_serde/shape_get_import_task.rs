@@ -133,6 +133,13 @@ pub(crate) fn de_get_import_task(
                 "importTaskDetails" => {
                     builder = builder.set_import_task_details(crate::protocol_serde::shape_import_task_details::de_import_task_details(tokens)?);
                 }
+                "parquetType" => {
+                    builder = builder.set_parquet_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::ParquetType::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "roleArn" => {
                     builder = builder.set_role_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

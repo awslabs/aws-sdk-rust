@@ -10,8 +10,10 @@ pub struct InferenceComponentSpecificationSummary {
     pub container: ::std::option::Option<crate::types::InferenceComponentContainerSpecificationSummary>,
     /// <p>Settings that take effect while the model container starts up.</p>
     pub startup_parameters: ::std::option::Option<crate::types::InferenceComponentStartupParameters>,
-    /// <p>The compute resources allocated to run the model assigned to the inference component.</p>
+    /// <p>The compute resources allocated to run the model, plus any adapter models, that you assign to the inference component.</p>
     pub compute_resource_requirements: ::std::option::Option<crate::types::InferenceComponentComputeResourceRequirements>,
+    /// <p>The name of the base inference component that contains this inference component.</p>
+    pub base_inference_component_name: ::std::option::Option<::std::string::String>,
 }
 impl InferenceComponentSpecificationSummary {
     /// <p>The name of the SageMaker model object that is deployed with the inference component.</p>
@@ -26,9 +28,13 @@ impl InferenceComponentSpecificationSummary {
     pub fn startup_parameters(&self) -> ::std::option::Option<&crate::types::InferenceComponentStartupParameters> {
         self.startup_parameters.as_ref()
     }
-    /// <p>The compute resources allocated to run the model assigned to the inference component.</p>
+    /// <p>The compute resources allocated to run the model, plus any adapter models, that you assign to the inference component.</p>
     pub fn compute_resource_requirements(&self) -> ::std::option::Option<&crate::types::InferenceComponentComputeResourceRequirements> {
         self.compute_resource_requirements.as_ref()
+    }
+    /// <p>The name of the base inference component that contains this inference component.</p>
+    pub fn base_inference_component_name(&self) -> ::std::option::Option<&str> {
+        self.base_inference_component_name.as_deref()
     }
 }
 impl InferenceComponentSpecificationSummary {
@@ -46,6 +52,7 @@ pub struct InferenceComponentSpecificationSummaryBuilder {
     pub(crate) container: ::std::option::Option<crate::types::InferenceComponentContainerSpecificationSummary>,
     pub(crate) startup_parameters: ::std::option::Option<crate::types::InferenceComponentStartupParameters>,
     pub(crate) compute_resource_requirements: ::std::option::Option<crate::types::InferenceComponentComputeResourceRequirements>,
+    pub(crate) base_inference_component_name: ::std::option::Option<::std::string::String>,
 }
 impl InferenceComponentSpecificationSummaryBuilder {
     /// <p>The name of the SageMaker model object that is deployed with the inference component.</p>
@@ -90,12 +97,12 @@ impl InferenceComponentSpecificationSummaryBuilder {
     pub fn get_startup_parameters(&self) -> &::std::option::Option<crate::types::InferenceComponentStartupParameters> {
         &self.startup_parameters
     }
-    /// <p>The compute resources allocated to run the model assigned to the inference component.</p>
+    /// <p>The compute resources allocated to run the model, plus any adapter models, that you assign to the inference component.</p>
     pub fn compute_resource_requirements(mut self, input: crate::types::InferenceComponentComputeResourceRequirements) -> Self {
         self.compute_resource_requirements = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The compute resources allocated to run the model assigned to the inference component.</p>
+    /// <p>The compute resources allocated to run the model, plus any adapter models, that you assign to the inference component.</p>
     pub fn set_compute_resource_requirements(
         mut self,
         input: ::std::option::Option<crate::types::InferenceComponentComputeResourceRequirements>,
@@ -103,9 +110,23 @@ impl InferenceComponentSpecificationSummaryBuilder {
         self.compute_resource_requirements = input;
         self
     }
-    /// <p>The compute resources allocated to run the model assigned to the inference component.</p>
+    /// <p>The compute resources allocated to run the model, plus any adapter models, that you assign to the inference component.</p>
     pub fn get_compute_resource_requirements(&self) -> &::std::option::Option<crate::types::InferenceComponentComputeResourceRequirements> {
         &self.compute_resource_requirements
+    }
+    /// <p>The name of the base inference component that contains this inference component.</p>
+    pub fn base_inference_component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.base_inference_component_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the base inference component that contains this inference component.</p>
+    pub fn set_base_inference_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.base_inference_component_name = input;
+        self
+    }
+    /// <p>The name of the base inference component that contains this inference component.</p>
+    pub fn get_base_inference_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.base_inference_component_name
     }
     /// Consumes the builder and constructs a [`InferenceComponentSpecificationSummary`](crate::types::InferenceComponentSpecificationSummary).
     pub fn build(self) -> crate::types::InferenceComponentSpecificationSummary {
@@ -114,6 +135,7 @@ impl InferenceComponentSpecificationSummaryBuilder {
             container: self.container,
             startup_parameters: self.startup_parameters,
             compute_resource_requirements: self.compute_resource_requirements,
+            base_inference_component_name: self.base_inference_component_name,
         }
     }
 }

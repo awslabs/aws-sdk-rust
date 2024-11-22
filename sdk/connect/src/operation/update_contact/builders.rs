@@ -189,4 +189,28 @@ impl UpdateContactFluentBuilder {
     pub fn get_references(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Reference>> {
         self.inner.get_references()
     }
+    ///
+    /// Adds a key-value pair to `SegmentAttributes`.
+    ///
+    /// To override the contents of this collection use [`set_segment_attributes`](Self::set_segment_attributes).
+    ///
+    /// <p></p>
+    pub fn segment_attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::SegmentAttributeValue) -> Self {
+        self.inner = self.inner.segment_attributes(k.into(), v);
+        self
+    }
+    /// <p></p>
+    pub fn set_segment_attributes(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>>,
+    ) -> Self {
+        self.inner = self.inner.set_segment_attributes(input);
+        self
+    }
+    /// <p></p>
+    pub fn get_segment_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>> {
+        self.inner.get_segment_attributes()
+    }
 }

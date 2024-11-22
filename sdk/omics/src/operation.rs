@@ -73,6 +73,9 @@ pub mod delete_run_cache;
 /// Types for the `DeleteRunGroup` operation.
 pub mod delete_run_group;
 
+/// Types for the `DeleteS3AccessPolicy` operation.
+pub mod delete_s3_access_policy;
+
 /// Types for the `DeleteSequenceStore` operation.
 pub mod delete_sequence_store;
 
@@ -132,6 +135,9 @@ pub mod get_run_group;
 
 /// Types for the `GetRunTask` operation.
 pub mod get_run_task;
+
+/// Types for the `GetS3AccessPolicy` operation.
+pub mod get_s3_access_policy;
 
 /// Types for the `GetSequenceStore` operation.
 pub mod get_sequence_store;
@@ -214,6 +220,9 @@ pub mod list_variant_stores;
 /// Types for the `ListWorkflows` operation.
 pub mod list_workflows;
 
+/// Types for the `PutS3AccessPolicy` operation.
+pub mod put_s3_access_policy;
+
 /// Types for the `StartAnnotationImportJob` operation.
 pub mod start_annotation_import_job;
 
@@ -252,6 +261,9 @@ pub mod update_run_cache;
 
 /// Types for the `UpdateRunGroup` operation.
 pub mod update_run_group;
+
+/// Types for the `UpdateSequenceStore` operation.
+pub mod update_sequence_store;
 
 /// Types for the `UpdateVariantStore` operation.
 pub mod update_variant_store;

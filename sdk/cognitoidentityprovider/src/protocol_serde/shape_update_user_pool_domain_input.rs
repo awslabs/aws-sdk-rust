@@ -9,11 +9,17 @@ pub fn ser_update_user_pool_domain_input_input(
     if let Some(var_2) = &input.user_pool_id {
         object.key("UserPoolId").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.custom_domain_config {
+    if let Some(var_3) = &input.managed_login_version {
+        object.key("ManagedLoginVersion").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+        );
+    }
+    if let Some(var_4) = &input.custom_domain_config {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("CustomDomainConfig").start_object();
-        crate::protocol_serde::shape_custom_domain_config_type::ser_custom_domain_config_type(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_5 = object.key("CustomDomainConfig").start_object();
+        crate::protocol_serde::shape_custom_domain_config_type::ser_custom_domain_config_type(&mut object_5, var_4)?;
+        object_5.finish();
     }
     Ok(())
 }

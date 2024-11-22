@@ -17,6 +17,8 @@ pub enum Error {
     EnableSoftwareTokenMfaException(crate::types::error::EnableSoftwareTokenMfaException),
     /// <p>This exception is thrown if a code has expired.</p>
     ExpiredCodeException(crate::types::error::ExpiredCodeException),
+    /// <p>This exception is thrown when a feature you attempted to configure isn't available in your current feature plan.</p>
+    FeatureUnavailableInTierException(crate::types::error::FeatureUnavailableInTierException),
     /// <p>This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with your user pool.</p>
     ForbiddenException(crate::types::error::ForbiddenException),
     /// <p>This exception is thrown when Amazon Cognito encounters a group that already exists in the user pool.</p>
@@ -43,6 +45,8 @@ pub enum Error {
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>This exception is thrown when Amazon Cognito can't find a multi-factor authentication (MFA) method.</p>
     MfaMethodNotFoundException(crate::types::error::MfaMethodNotFoundException),
+    /// <p>This exception is thrown when you attempt to apply a managed login branding style to an app client that already has an assigned style.</p>
+    ManagedLoginBrandingExistsException(crate::types::error::ManagedLoginBrandingExistsException),
     /// <p>This exception is thrown when a user isn't authorized.</p>
     NotAuthorizedException(crate::types::error::NotAuthorizedException),
     /// <p>The message returned when a user's new password matches a previous password and doesn't comply with the password-history policy.</p>
@@ -57,6 +61,8 @@ pub enum Error {
     ScopeDoesNotExistException(crate::types::error::ScopeDoesNotExistException),
     /// <p>This exception is thrown when the software token time-based one-time password (TOTP) multi-factor authentication (MFA) isn't activated for the user pool.</p>
     SoftwareTokenMfaNotFoundException(crate::types::error::SoftwareTokenMfaNotFoundException),
+    /// <p>This exception is thrown when you've attempted to change your feature plan but the operation isn't permitted.</p>
+    TierChangeNotAllowedException(crate::types::error::TierChangeNotAllowedException),
     /// <p>This exception is thrown when the user has made too many failed attempts for a given action, such as sign-in.</p>
     TooManyFailedAttemptsException(crate::types::error::TooManyFailedAttemptsException),
     /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
@@ -87,6 +93,20 @@ pub enum Error {
     UserPoolTaggingException(crate::types::error::UserPoolTaggingException),
     /// <p>This exception is thrown when Amazon Cognito encounters a user name that already exists in the user pool.</p>
     UsernameExistsException(crate::types::error::UsernameExistsException),
+    /// <p>This exception is thrown when the challenge from <code>StartWebAuthn</code> registration has expired.</p>
+    WebAuthnChallengeNotFoundException(crate::types::error::WebAuthnChallengeNotFoundException),
+    /// <p>This exception is thrown when the access token is for a different client than the one in the original <code>StartWebAuthnRegistration</code> request.</p>
+    WebAuthnClientMismatchException(crate::types::error::WebAuthnClientMismatchException),
+    /// <p>This exception is thrown when a user pool doesn't have a configured relying party id or a user pool domain.</p>
+    WebAuthnConfigurationMissingException(crate::types::error::WebAuthnConfigurationMissingException),
+    /// <p>This exception is thrown when a user presents passkey credentials from an unsupported device or provider.</p>
+    WebAuthnCredentialNotSupportedException(crate::types::error::WebAuthnCredentialNotSupportedException),
+    /// <p>This exception is thrown when the passkey feature isn't enabled for the user pool.</p>
+    WebAuthnNotEnabledException(crate::types::error::WebAuthnNotEnabledException),
+    /// <p>This exception is thrown when the passkey credential's registration origin does not align with the user pool relying party id.</p>
+    WebAuthnOriginNotAllowedException(crate::types::error::WebAuthnOriginNotAllowedException),
+    /// <p>This exception is thrown when the given passkey credential is associated with a different relying party ID than the user pool relying party ID.</p>
+    WebAuthnRelyingPartyMismatchException(crate::types::error::WebAuthnRelyingPartyMismatchException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -106,6 +126,7 @@ impl ::std::fmt::Display for Error {
             Error::DuplicateProviderException(inner) => inner.fmt(f),
             Error::EnableSoftwareTokenMfaException(inner) => inner.fmt(f),
             Error::ExpiredCodeException(inner) => inner.fmt(f),
+            Error::FeatureUnavailableInTierException(inner) => inner.fmt(f),
             Error::ForbiddenException(inner) => inner.fmt(f),
             Error::GroupExistsException(inner) => inner.fmt(f),
             Error::InternalErrorException(inner) => inner.fmt(f),
@@ -119,6 +140,7 @@ impl ::std::fmt::Display for Error {
             Error::InvalidUserPoolConfigurationException(inner) => inner.fmt(f),
             Error::LimitExceededException(inner) => inner.fmt(f),
             Error::MfaMethodNotFoundException(inner) => inner.fmt(f),
+            Error::ManagedLoginBrandingExistsException(inner) => inner.fmt(f),
             Error::NotAuthorizedException(inner) => inner.fmt(f),
             Error::PasswordHistoryPolicyViolationException(inner) => inner.fmt(f),
             Error::PasswordResetRequiredException(inner) => inner.fmt(f),
@@ -126,6 +148,7 @@ impl ::std::fmt::Display for Error {
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ScopeDoesNotExistException(inner) => inner.fmt(f),
             Error::SoftwareTokenMfaNotFoundException(inner) => inner.fmt(f),
+            Error::TierChangeNotAllowedException(inner) => inner.fmt(f),
             Error::TooManyFailedAttemptsException(inner) => inner.fmt(f),
             Error::TooManyRequestsException(inner) => inner.fmt(f),
             Error::UnauthorizedException(inner) => inner.fmt(f),
@@ -141,6 +164,13 @@ impl ::std::fmt::Display for Error {
             Error::UserPoolAddOnNotEnabledException(inner) => inner.fmt(f),
             Error::UserPoolTaggingException(inner) => inner.fmt(f),
             Error::UsernameExistsException(inner) => inner.fmt(f),
+            Error::WebAuthnChallengeNotFoundException(inner) => inner.fmt(f),
+            Error::WebAuthnClientMismatchException(inner) => inner.fmt(f),
+            Error::WebAuthnConfigurationMissingException(inner) => inner.fmt(f),
+            Error::WebAuthnCredentialNotSupportedException(inner) => inner.fmt(f),
+            Error::WebAuthnNotEnabledException(inner) => inner.fmt(f),
+            Error::WebAuthnOriginNotAllowedException(inner) => inner.fmt(f),
+            Error::WebAuthnRelyingPartyMismatchException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -169,6 +199,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::DuplicateProviderException(inner) => inner.meta(),
             Self::EnableSoftwareTokenMfaException(inner) => inner.meta(),
             Self::ExpiredCodeException(inner) => inner.meta(),
+            Self::FeatureUnavailableInTierException(inner) => inner.meta(),
             Self::ForbiddenException(inner) => inner.meta(),
             Self::GroupExistsException(inner) => inner.meta(),
             Self::InternalErrorException(inner) => inner.meta(),
@@ -182,6 +213,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::InvalidUserPoolConfigurationException(inner) => inner.meta(),
             Self::LimitExceededException(inner) => inner.meta(),
             Self::MfaMethodNotFoundException(inner) => inner.meta(),
+            Self::ManagedLoginBrandingExistsException(inner) => inner.meta(),
             Self::NotAuthorizedException(inner) => inner.meta(),
             Self::PasswordHistoryPolicyViolationException(inner) => inner.meta(),
             Self::PasswordResetRequiredException(inner) => inner.meta(),
@@ -189,6 +221,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::ScopeDoesNotExistException(inner) => inner.meta(),
             Self::SoftwareTokenMfaNotFoundException(inner) => inner.meta(),
+            Self::TierChangeNotAllowedException(inner) => inner.meta(),
             Self::TooManyFailedAttemptsException(inner) => inner.meta(),
             Self::TooManyRequestsException(inner) => inner.meta(),
             Self::UnauthorizedException(inner) => inner.meta(),
@@ -204,6 +237,13 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::UserPoolAddOnNotEnabledException(inner) => inner.meta(),
             Self::UserPoolTaggingException(inner) => inner.meta(),
             Self::UsernameExistsException(inner) => inner.meta(),
+            Self::WebAuthnChallengeNotFoundException(inner) => inner.meta(),
+            Self::WebAuthnClientMismatchException(inner) => inner.meta(),
+            Self::WebAuthnConfigurationMissingException(inner) => inner.meta(),
+            Self::WebAuthnCredentialNotSupportedException(inner) => inner.meta(),
+            Self::WebAuthnNotEnabledException(inner) => inner.meta(),
+            Self::WebAuthnOriginNotAllowedException(inner) => inner.meta(),
+            Self::WebAuthnRelyingPartyMismatchException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
         }
     }
@@ -1467,6 +1507,70 @@ impl From<crate::operation::change_password::ChangePasswordError> for Error {
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::complete_web_authn_registration::CompleteWebAuthnRegistrationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::complete_web_authn_registration::CompleteWebAuthnRegistrationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::complete_web_authn_registration::CompleteWebAuthnRegistrationError> for Error {
+    fn from(err: crate::operation::complete_web_authn_registration::CompleteWebAuthnRegistrationError) -> Self {
+        match err {
+            crate::operation::complete_web_authn_registration::CompleteWebAuthnRegistrationError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::complete_web_authn_registration::CompleteWebAuthnRegistrationError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::complete_web_authn_registration::CompleteWebAuthnRegistrationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::complete_web_authn_registration::CompleteWebAuthnRegistrationError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::complete_web_authn_registration::CompleteWebAuthnRegistrationError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::complete_web_authn_registration::CompleteWebAuthnRegistrationError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::complete_web_authn_registration::CompleteWebAuthnRegistrationError::WebAuthnChallengeNotFoundException(inner) => {
+                Error::WebAuthnChallengeNotFoundException(inner)
+            }
+            crate::operation::complete_web_authn_registration::CompleteWebAuthnRegistrationError::WebAuthnClientMismatchException(inner) => {
+                Error::WebAuthnClientMismatchException(inner)
+            }
+            crate::operation::complete_web_authn_registration::CompleteWebAuthnRegistrationError::WebAuthnCredentialNotSupportedException(inner) => {
+                Error::WebAuthnCredentialNotSupportedException(inner)
+            }
+            crate::operation::complete_web_authn_registration::CompleteWebAuthnRegistrationError::WebAuthnNotEnabledException(inner) => {
+                Error::WebAuthnNotEnabledException(inner)
+            }
+            crate::operation::complete_web_authn_registration::CompleteWebAuthnRegistrationError::WebAuthnOriginNotAllowedException(inner) => {
+                Error::WebAuthnOriginNotAllowedException(inner)
+            }
+            crate::operation::complete_web_authn_registration::CompleteWebAuthnRegistrationError::WebAuthnRelyingPartyMismatchException(inner) => {
+                Error::WebAuthnRelyingPartyMismatchException(inner)
+            }
+            crate::operation::complete_web_authn_registration::CompleteWebAuthnRegistrationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::confirm_device::ConfirmDeviceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1691,6 +1795,54 @@ impl From<crate::operation::create_identity_provider::CreateIdentityProviderErro
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_managed_login_branding::CreateManagedLoginBrandingError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_managed_login_branding::CreateManagedLoginBrandingError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_managed_login_branding::CreateManagedLoginBrandingError> for Error {
+    fn from(err: crate::operation::create_managed_login_branding::CreateManagedLoginBrandingError) -> Self {
+        match err {
+            crate::operation::create_managed_login_branding::CreateManagedLoginBrandingError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::create_managed_login_branding::CreateManagedLoginBrandingError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::create_managed_login_branding::CreateManagedLoginBrandingError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::create_managed_login_branding::CreateManagedLoginBrandingError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::create_managed_login_branding::CreateManagedLoginBrandingError::ManagedLoginBrandingExistsException(inner) => {
+                Error::ManagedLoginBrandingExistsException(inner)
+            }
+            crate::operation::create_managed_login_branding::CreateManagedLoginBrandingError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::create_managed_login_branding::CreateManagedLoginBrandingError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_managed_login_branding::CreateManagedLoginBrandingError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::create_managed_login_branding::CreateManagedLoginBrandingError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_resource_server::CreateResourceServerError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1783,6 +1935,9 @@ where
 impl From<crate::operation::create_user_pool::CreateUserPoolError> for Error {
     fn from(err: crate::operation::create_user_pool::CreateUserPoolError) -> Self {
         match err {
+            crate::operation::create_user_pool::CreateUserPoolError::FeatureUnavailableInTierException(inner) => {
+                Error::FeatureUnavailableInTierException(inner)
+            }
             crate::operation::create_user_pool::CreateUserPoolError::InternalErrorException(inner) => Error::InternalErrorException(inner),
             crate::operation::create_user_pool::CreateUserPoolError::InvalidEmailRoleAccessPolicyException(inner) => {
                 Error::InvalidEmailRoleAccessPolicyException(inner)
@@ -1796,6 +1951,9 @@ impl From<crate::operation::create_user_pool::CreateUserPoolError> for Error {
             }
             crate::operation::create_user_pool::CreateUserPoolError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::create_user_pool::CreateUserPoolError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::create_user_pool::CreateUserPoolError::TierChangeNotAllowedException(inner) => {
+                Error::TierChangeNotAllowedException(inner)
+            }
             crate::operation::create_user_pool::CreateUserPoolError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::create_user_pool::CreateUserPoolError::UserPoolTaggingException(inner) => Error::UserPoolTaggingException(inner),
             crate::operation::create_user_pool::CreateUserPoolError::Unhandled(inner) => Error::Unhandled(inner),
@@ -1868,6 +2026,9 @@ where
 impl From<crate::operation::create_user_pool_domain::CreateUserPoolDomainError> for Error {
     fn from(err: crate::operation::create_user_pool_domain::CreateUserPoolDomainError) -> Self {
         match err {
+            crate::operation::create_user_pool_domain::CreateUserPoolDomainError::FeatureUnavailableInTierException(inner) => {
+                Error::FeatureUnavailableInTierException(inner)
+            }
             crate::operation::create_user_pool_domain::CreateUserPoolDomainError::InternalErrorException(inner) => {
                 Error::InternalErrorException(inner)
             }
@@ -1954,6 +2115,48 @@ impl From<crate::operation::delete_identity_provider::DeleteIdentityProviderErro
                 Error::UnsupportedIdentityProviderException(inner)
             }
             crate::operation::delete_identity_provider::DeleteIdentityProviderError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_managed_login_branding::DeleteManagedLoginBrandingError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_managed_login_branding::DeleteManagedLoginBrandingError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_managed_login_branding::DeleteManagedLoginBrandingError> for Error {
+    fn from(err: crate::operation::delete_managed_login_branding::DeleteManagedLoginBrandingError) -> Self {
+        match err {
+            crate::operation::delete_managed_login_branding::DeleteManagedLoginBrandingError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::delete_managed_login_branding::DeleteManagedLoginBrandingError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::delete_managed_login_branding::DeleteManagedLoginBrandingError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::delete_managed_login_branding::DeleteManagedLoginBrandingError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::delete_managed_login_branding::DeleteManagedLoginBrandingError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_managed_login_branding::DeleteManagedLoginBrandingError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::delete_managed_login_branding::DeleteManagedLoginBrandingError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2172,6 +2375,45 @@ impl From<crate::operation::delete_user_pool_domain::DeleteUserPoolDomainError> 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_web_authn_credential::DeleteWebAuthnCredentialError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_web_authn_credential::DeleteWebAuthnCredentialError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_web_authn_credential::DeleteWebAuthnCredentialError> for Error {
+    fn from(err: crate::operation::delete_web_authn_credential::DeleteWebAuthnCredentialError) -> Self {
+        match err {
+            crate::operation::delete_web_authn_credential::DeleteWebAuthnCredentialError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::delete_web_authn_credential::DeleteWebAuthnCredentialError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::delete_web_authn_credential::DeleteWebAuthnCredentialError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::delete_web_authn_credential::DeleteWebAuthnCredentialError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::delete_web_authn_credential::DeleteWebAuthnCredentialError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_web_authn_credential::DeleteWebAuthnCredentialError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_identity_provider::DescribeIdentityProviderError, R>>
     for Error
 where
@@ -2208,6 +2450,98 @@ impl From<crate::operation::describe_identity_provider::DescribeIdentityProvider
                 Error::TooManyRequestsException(inner)
             }
             crate::operation::describe_identity_provider::DescribeIdentityProviderError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_managed_login_branding::DescribeManagedLoginBrandingError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_managed_login_branding::DescribeManagedLoginBrandingError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_managed_login_branding::DescribeManagedLoginBrandingError> for Error {
+    fn from(err: crate::operation::describe_managed_login_branding::DescribeManagedLoginBrandingError) -> Self {
+        match err {
+            crate::operation::describe_managed_login_branding::DescribeManagedLoginBrandingError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::describe_managed_login_branding::DescribeManagedLoginBrandingError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::describe_managed_login_branding::DescribeManagedLoginBrandingError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::describe_managed_login_branding::DescribeManagedLoginBrandingError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_managed_login_branding::DescribeManagedLoginBrandingError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::describe_managed_login_branding::DescribeManagedLoginBrandingError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_managed_login_branding_by_client::DescribeManagedLoginBrandingByClientError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_managed_login_branding_by_client::DescribeManagedLoginBrandingByClientError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_managed_login_branding_by_client::DescribeManagedLoginBrandingByClientError> for Error {
+    fn from(err: crate::operation::describe_managed_login_branding_by_client::DescribeManagedLoginBrandingByClientError) -> Self {
+        match err {
+            crate::operation::describe_managed_login_branding_by_client::DescribeManagedLoginBrandingByClientError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::describe_managed_login_branding_by_client::DescribeManagedLoginBrandingByClientError::InvalidParameterException(
+                inner,
+            ) => Error::InvalidParameterException(inner),
+            crate::operation::describe_managed_login_branding_by_client::DescribeManagedLoginBrandingByClientError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::describe_managed_login_branding_by_client::DescribeManagedLoginBrandingByClientError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_managed_login_branding_by_client::DescribeManagedLoginBrandingByClientError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
+            crate::operation::describe_managed_login_branding_by_client::DescribeManagedLoginBrandingByClientError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -2828,6 +3162,46 @@ impl From<crate::operation::get_user_attribute_verification_code::GetUserAttribu
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_user_auth_factors::GetUserAuthFactorsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_user_auth_factors::GetUserAuthFactorsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_user_auth_factors::GetUserAuthFactorsError> for Error {
+    fn from(err: crate::operation::get_user_auth_factors::GetUserAuthFactorsError) -> Self {
+        match err {
+            crate::operation::get_user_auth_factors::GetUserAuthFactorsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_user_auth_factors::GetUserAuthFactorsError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::get_user_auth_factors::GetUserAuthFactorsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::get_user_auth_factors::GetUserAuthFactorsError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::get_user_auth_factors::GetUserAuthFactorsError::PasswordResetRequiredException(inner) => {
+                Error::PasswordResetRequiredException(inner)
+            }
+            crate::operation::get_user_auth_factors::GetUserAuthFactorsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_user_auth_factors::GetUserAuthFactorsError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_user_auth_factors::GetUserAuthFactorsError::UserNotConfirmedException(inner) => {
+                Error::UserNotConfirmedException(inner)
+            }
+            crate::operation::get_user_auth_factors::GetUserAuthFactorsError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
+            crate::operation::get_user_auth_factors::GetUserAuthFactorsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_user_pool_mfa_config::GetUserPoolMfaConfigError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3244,6 +3618,40 @@ impl From<crate::operation::list_users_in_group::ListUsersInGroupError> for Erro
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_web_authn_credentials::ListWebAuthnCredentialsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_web_authn_credentials::ListWebAuthnCredentialsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_web_authn_credentials::ListWebAuthnCredentialsError> for Error {
+    fn from(err: crate::operation::list_web_authn_credentials::ListWebAuthnCredentialsError) -> Self {
+        match err {
+            crate::operation::list_web_authn_credentials::ListWebAuthnCredentialsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::list_web_authn_credentials::ListWebAuthnCredentialsError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::list_web_authn_credentials::ListWebAuthnCredentialsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_web_authn_credentials::ListWebAuthnCredentialsError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::list_web_authn_credentials::ListWebAuthnCredentialsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::resend_confirmation_code::ResendConfirmationCodeError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3453,6 +3861,9 @@ where
 impl From<crate::operation::set_log_delivery_configuration::SetLogDeliveryConfigurationError> for Error {
     fn from(err: crate::operation::set_log_delivery_configuration::SetLogDeliveryConfigurationError) -> Self {
         match err {
+            crate::operation::set_log_delivery_configuration::SetLogDeliveryConfigurationError::FeatureUnavailableInTierException(inner) => {
+                Error::FeatureUnavailableInTierException(inner)
+            }
             crate::operation::set_log_delivery_configuration::SetLogDeliveryConfigurationError::InternalErrorException(inner) => {
                 Error::InternalErrorException(inner)
             }
@@ -3614,6 +4025,9 @@ impl From<crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigError>
             crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigError::ConcurrentModificationException(inner) => {
                 Error::ConcurrentModificationException(inner)
             }
+            crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigError::FeatureUnavailableInTierException(inner) => {
+                Error::FeatureUnavailableInTierException(inner)
+            }
             crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigError::InternalErrorException(inner) => {
                 Error::InternalErrorException(inner)
             }
@@ -3743,6 +4157,54 @@ impl From<crate::operation::start_user_import_job::StartUserImportJobError> for 
                 Error::TooManyRequestsException(inner)
             }
             crate::operation::start_user_import_job::StartUserImportJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_web_authn_registration::StartWebAuthnRegistrationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_web_authn_registration::StartWebAuthnRegistrationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_web_authn_registration::StartWebAuthnRegistrationError> for Error {
+    fn from(err: crate::operation::start_web_authn_registration::StartWebAuthnRegistrationError) -> Self {
+        match err {
+            crate::operation::start_web_authn_registration::StartWebAuthnRegistrationError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::start_web_authn_registration::StartWebAuthnRegistrationError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::start_web_authn_registration::StartWebAuthnRegistrationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::start_web_authn_registration::StartWebAuthnRegistrationError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::start_web_authn_registration::StartWebAuthnRegistrationError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::start_web_authn_registration::StartWebAuthnRegistrationError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::start_web_authn_registration::StartWebAuthnRegistrationError::WebAuthnConfigurationMissingException(inner) => {
+                Error::WebAuthnConfigurationMissingException(inner)
+            }
+            crate::operation::start_web_authn_registration::StartWebAuthnRegistrationError::WebAuthnNotEnabledException(inner) => {
+                Error::WebAuthnNotEnabledException(inner)
+            }
+            crate::operation::start_web_authn_registration::StartWebAuthnRegistrationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3989,6 +4451,48 @@ impl From<crate::operation::update_identity_provider::UpdateIdentityProviderErro
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_managed_login_branding::UpdateManagedLoginBrandingError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_managed_login_branding::UpdateManagedLoginBrandingError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_managed_login_branding::UpdateManagedLoginBrandingError> for Error {
+    fn from(err: crate::operation::update_managed_login_branding::UpdateManagedLoginBrandingError) -> Self {
+        match err {
+            crate::operation::update_managed_login_branding::UpdateManagedLoginBrandingError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::update_managed_login_branding::UpdateManagedLoginBrandingError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::update_managed_login_branding::UpdateManagedLoginBrandingError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::update_managed_login_branding::UpdateManagedLoginBrandingError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::update_managed_login_branding::UpdateManagedLoginBrandingError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_managed_login_branding::UpdateManagedLoginBrandingError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::update_managed_login_branding::UpdateManagedLoginBrandingError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_resource_server::UpdateResourceServerError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -4113,6 +4617,9 @@ impl From<crate::operation::update_user_pool::UpdateUserPoolError> for Error {
             crate::operation::update_user_pool::UpdateUserPoolError::ConcurrentModificationException(inner) => {
                 Error::ConcurrentModificationException(inner)
             }
+            crate::operation::update_user_pool::UpdateUserPoolError::FeatureUnavailableInTierException(inner) => {
+                Error::FeatureUnavailableInTierException(inner)
+            }
             crate::operation::update_user_pool::UpdateUserPoolError::InternalErrorException(inner) => Error::InternalErrorException(inner),
             crate::operation::update_user_pool::UpdateUserPoolError::InvalidEmailRoleAccessPolicyException(inner) => {
                 Error::InvalidEmailRoleAccessPolicyException(inner)
@@ -4126,6 +4633,9 @@ impl From<crate::operation::update_user_pool::UpdateUserPoolError> for Error {
             }
             crate::operation::update_user_pool::UpdateUserPoolError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
             crate::operation::update_user_pool::UpdateUserPoolError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_user_pool::UpdateUserPoolError::TierChangeNotAllowedException(inner) => {
+                Error::TierChangeNotAllowedException(inner)
+            }
             crate::operation::update_user_pool::UpdateUserPoolError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::update_user_pool::UpdateUserPoolError::UserImportInProgressException(inner) => {
                 Error::UserImportInProgressException(inner)
@@ -4201,6 +4711,9 @@ where
 impl From<crate::operation::update_user_pool_domain::UpdateUserPoolDomainError> for Error {
     fn from(err: crate::operation::update_user_pool_domain::UpdateUserPoolDomainError) -> Self {
         match err {
+            crate::operation::update_user_pool_domain::UpdateUserPoolDomainError::FeatureUnavailableInTierException(inner) => {
+                Error::FeatureUnavailableInTierException(inner)
+            }
             crate::operation::update_user_pool_domain::UpdateUserPoolDomainError::InternalErrorException(inner) => {
                 Error::InternalErrorException(inner)
             }
@@ -4324,6 +4837,7 @@ impl ::std::error::Error for Error {
             Error::DuplicateProviderException(inner) => inner.source(),
             Error::EnableSoftwareTokenMfaException(inner) => inner.source(),
             Error::ExpiredCodeException(inner) => inner.source(),
+            Error::FeatureUnavailableInTierException(inner) => inner.source(),
             Error::ForbiddenException(inner) => inner.source(),
             Error::GroupExistsException(inner) => inner.source(),
             Error::InternalErrorException(inner) => inner.source(),
@@ -4337,6 +4851,7 @@ impl ::std::error::Error for Error {
             Error::InvalidUserPoolConfigurationException(inner) => inner.source(),
             Error::LimitExceededException(inner) => inner.source(),
             Error::MfaMethodNotFoundException(inner) => inner.source(),
+            Error::ManagedLoginBrandingExistsException(inner) => inner.source(),
             Error::NotAuthorizedException(inner) => inner.source(),
             Error::PasswordHistoryPolicyViolationException(inner) => inner.source(),
             Error::PasswordResetRequiredException(inner) => inner.source(),
@@ -4344,6 +4859,7 @@ impl ::std::error::Error for Error {
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ScopeDoesNotExistException(inner) => inner.source(),
             Error::SoftwareTokenMfaNotFoundException(inner) => inner.source(),
+            Error::TierChangeNotAllowedException(inner) => inner.source(),
             Error::TooManyFailedAttemptsException(inner) => inner.source(),
             Error::TooManyRequestsException(inner) => inner.source(),
             Error::UnauthorizedException(inner) => inner.source(),
@@ -4359,6 +4875,13 @@ impl ::std::error::Error for Error {
             Error::UserPoolAddOnNotEnabledException(inner) => inner.source(),
             Error::UserPoolTaggingException(inner) => inner.source(),
             Error::UsernameExistsException(inner) => inner.source(),
+            Error::WebAuthnChallengeNotFoundException(inner) => inner.source(),
+            Error::WebAuthnClientMismatchException(inner) => inner.source(),
+            Error::WebAuthnConfigurationMissingException(inner) => inner.source(),
+            Error::WebAuthnCredentialNotSupportedException(inner) => inner.source(),
+            Error::WebAuthnNotEnabledException(inner) => inner.source(),
+            Error::WebAuthnOriginNotAllowedException(inner) => inner.source(),
+            Error::WebAuthnRelyingPartyMismatchException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
         }
     }
@@ -4373,6 +4896,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::DuplicateProviderException(e) => e.request_id(),
             Self::EnableSoftwareTokenMfaException(e) => e.request_id(),
             Self::ExpiredCodeException(e) => e.request_id(),
+            Self::FeatureUnavailableInTierException(e) => e.request_id(),
             Self::ForbiddenException(e) => e.request_id(),
             Self::GroupExistsException(e) => e.request_id(),
             Self::InternalErrorException(e) => e.request_id(),
@@ -4386,6 +4910,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::InvalidUserPoolConfigurationException(e) => e.request_id(),
             Self::LimitExceededException(e) => e.request_id(),
             Self::MfaMethodNotFoundException(e) => e.request_id(),
+            Self::ManagedLoginBrandingExistsException(e) => e.request_id(),
             Self::NotAuthorizedException(e) => e.request_id(),
             Self::PasswordHistoryPolicyViolationException(e) => e.request_id(),
             Self::PasswordResetRequiredException(e) => e.request_id(),
@@ -4393,6 +4918,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ScopeDoesNotExistException(e) => e.request_id(),
             Self::SoftwareTokenMfaNotFoundException(e) => e.request_id(),
+            Self::TierChangeNotAllowedException(e) => e.request_id(),
             Self::TooManyFailedAttemptsException(e) => e.request_id(),
             Self::TooManyRequestsException(e) => e.request_id(),
             Self::UnauthorizedException(e) => e.request_id(),
@@ -4408,6 +4934,13 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::UserPoolAddOnNotEnabledException(e) => e.request_id(),
             Self::UserPoolTaggingException(e) => e.request_id(),
             Self::UsernameExistsException(e) => e.request_id(),
+            Self::WebAuthnChallengeNotFoundException(e) => e.request_id(),
+            Self::WebAuthnClientMismatchException(e) => e.request_id(),
+            Self::WebAuthnConfigurationMissingException(e) => e.request_id(),
+            Self::WebAuthnCredentialNotSupportedException(e) => e.request_id(),
+            Self::WebAuthnNotEnabledException(e) => e.request_id(),
+            Self::WebAuthnOriginNotAllowedException(e) => e.request_id(),
+            Self::WebAuthnRelyingPartyMismatchException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),
         }
     }

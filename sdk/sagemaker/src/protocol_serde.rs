@@ -2419,6 +2419,8 @@ pub(crate) mod shape_model_quality;
 
 pub(crate) mod shape_model_quantization_config;
 
+pub(crate) mod shape_model_sharding_config;
+
 pub(crate) mod shape_model_summary;
 
 pub(crate) mod shape_model_variant_config_summary;

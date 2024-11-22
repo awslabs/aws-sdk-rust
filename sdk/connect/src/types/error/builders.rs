@@ -23,6 +23,8 @@ pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExce
 
 pub use crate::types::error::_property_validation_exception::PropertyValidationExceptionBuilder;
 
+pub use crate::types::error::_conditional_operation_failed_exception::ConditionalOperationFailedExceptionBuilder;
+
 pub use crate::types::error::_idempotency_exception::IdempotencyExceptionBuilder;
 
 pub use crate::types::error::_limit_exceeded_exception::LimitExceededExceptionBuilder;

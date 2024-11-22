@@ -39,6 +39,8 @@ pub use crate::types::_activity_list_item::ActivityListItemBuilder;
 
 pub use crate::types::_history_event::HistoryEventBuilder;
 
+pub use crate::types::_evaluation_failed_event_details::EvaluationFailedEventDetailsBuilder;
+
 pub use crate::types::_map_run_redriven_event_details::MapRunRedrivenEventDetailsBuilder;
 
 pub use crate::types::_map_run_failed_event_details::MapRunFailedEventDetailsBuilder;
@@ -46,6 +48,8 @@ pub use crate::types::_map_run_failed_event_details::MapRunFailedEventDetailsBui
 pub use crate::types::_map_run_started_event_details::MapRunStartedEventDetailsBuilder;
 
 pub use crate::types::_state_exited_event_details::StateExitedEventDetailsBuilder;
+
+pub use crate::types::_assigned_variables_details::AssignedVariablesDetailsBuilder;
 
 pub use crate::types::_history_event_execution_data_details::HistoryEventExecutionDataDetailsBuilder;
 

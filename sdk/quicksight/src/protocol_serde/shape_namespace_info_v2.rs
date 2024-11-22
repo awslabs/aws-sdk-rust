@@ -52,6 +52,20 @@ where
                         "NamespaceError" => {
                             builder = builder.set_namespace_error(crate::protocol_serde::shape_namespace_error::de_namespace_error(tokens)?);
                         }
+                        "IamIdentityCenterApplicationArn" => {
+                            builder = builder.set_iam_identity_center_application_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "IamIdentityCenterInstanceArn" => {
+                            builder = builder.set_iam_identity_center_instance_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

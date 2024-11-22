@@ -14,6 +14,10 @@ impl super::Client {
     ///   - [`fallback_location(Option<String>)`](crate::operation::get_sequence_store::GetSequenceStoreOutput::fallback_location): <p>An S3 location that is used to store files that have failed a direct upload.</p>
     ///   - [`s3_access(Option<SequenceStoreS3Access>)`](crate::operation::get_sequence_store::GetSequenceStoreOutput::s3_access): <p>The S3 metadata of a sequence store, including the ARN and S3 URI of the S3 bucket.</p>
     ///   - [`e_tag_algorithm_family(Option<ETagAlgorithmFamily>)`](crate::operation::get_sequence_store::GetSequenceStoreOutput::e_tag_algorithm_family): <p>The algorithm family of the ETag.</p>
+    ///   - [`status(Option<SequenceStoreStatus>)`](crate::operation::get_sequence_store::GetSequenceStoreOutput::status): <p>The status of the sequence store.</p>
+    ///   - [`status_message(Option<String>)`](crate::operation::get_sequence_store::GetSequenceStoreOutput::status_message): <p>The status message of the sequence store.</p>
+    ///   - [`propagated_set_level_tags(Option<Vec::<String>>)`](crate::operation::get_sequence_store::GetSequenceStoreOutput::propagated_set_level_tags): <p>The tags keys to propagate to the S3 objects associated with read sets in the sequence store.</p>
+    ///   - [`update_time(Option<DateTime>)`](crate::operation::get_sequence_store::GetSequenceStoreOutput::update_time): <p>The last-updated time of the sequence store.</p>
     /// - On failure, responds with [`SdkError<GetSequenceStoreError>`](crate::operation::get_sequence_store::GetSequenceStoreError)
     pub fn get_sequence_store(&self) -> crate::operation::get_sequence_store::builders::GetSequenceStoreFluentBuilder {
         crate::operation::get_sequence_store::builders::GetSequenceStoreFluentBuilder::new(self.handle.clone())

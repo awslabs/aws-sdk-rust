@@ -31,6 +31,8 @@ pub use crate::types::error::_invalid_user_pool_configuration_exception::Invalid
 
 pub use crate::types::error::_enable_software_token_mfa_exception::EnableSoftwareTokenMfaExceptionBuilder;
 
+pub use crate::types::error::_feature_unavailable_in_tier_exception::FeatureUnavailableInTierExceptionBuilder;
+
 pub use crate::types::error::_scope_does_not_exist_exception::ScopeDoesNotExistExceptionBuilder;
 
 pub use crate::types::error::_invalid_o_auth_flow_exception::InvalidOAuthFlowExceptionBuilder;
@@ -40,6 +42,8 @@ pub use crate::types::error::_concurrent_modification_exception::ConcurrentModif
 pub use crate::types::error::_user_pool_tagging_exception::UserPoolTaggingExceptionBuilder;
 
 pub use crate::types::error::_user_import_in_progress_exception::UserImportInProgressExceptionBuilder;
+
+pub use crate::types::error::_tier_change_not_allowed_exception::TierChangeNotAllowedExceptionBuilder;
 
 pub use crate::types::error::_invalid_sms_role_trust_relationship_exception::InvalidSmsRoleTrustRelationshipExceptionBuilder;
 
@@ -61,6 +65,10 @@ pub use crate::types::error::_user_pool_add_on_not_enabled_exception::UserPoolAd
 
 pub use crate::types::error::_precondition_not_met_exception::PreconditionNotMetExceptionBuilder;
 
+pub use crate::types::error::_web_authn_not_enabled_exception::WebAuthnNotEnabledExceptionBuilder;
+
+pub use crate::types::error::_web_authn_configuration_missing_exception::WebAuthnConfigurationMissingExceptionBuilder;
+
 pub use crate::types::error::_username_exists_exception::UsernameExistsExceptionBuilder;
 
 pub use crate::types::error::_invalid_password_exception::InvalidPasswordExceptionBuilder;
@@ -75,10 +83,22 @@ pub use crate::types::error::_password_history_policy_violation_exception::Passw
 
 pub use crate::types::error::_mfa_method_not_found_exception::MfaMethodNotFoundExceptionBuilder;
 
+pub use crate::types::error::_managed_login_branding_exists_exception::ManagedLoginBrandingExistsExceptionBuilder;
+
 pub use crate::types::error::_duplicate_provider_exception::DuplicateProviderExceptionBuilder;
 
 pub use crate::types::error::_group_exists_exception::GroupExistsExceptionBuilder;
 
 pub use crate::types::error::_too_many_failed_attempts_exception::TooManyFailedAttemptsExceptionBuilder;
+
+pub use crate::types::error::_web_authn_relying_party_mismatch_exception::WebAuthnRelyingPartyMismatchExceptionBuilder;
+
+pub use crate::types::error::_web_authn_origin_not_allowed_exception::WebAuthnOriginNotAllowedExceptionBuilder;
+
+pub use crate::types::error::_web_authn_credential_not_supported_exception::WebAuthnCredentialNotSupportedExceptionBuilder;
+
+pub use crate::types::error::_web_authn_client_mismatch_exception::WebAuthnClientMismatchExceptionBuilder;
+
+pub use crate::types::error::_web_authn_challenge_not_found_exception::WebAuthnChallengeNotFoundExceptionBuilder;
 
 pub use crate::types::error::_unsupported_user_state_exception::UnsupportedUserStateExceptionBuilder;

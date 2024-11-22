@@ -98,6 +98,14 @@
 ///     ProductionVariantInstanceType::MlG64Xlarge => { /* ... */ },
 ///     ProductionVariantInstanceType::MlG68Xlarge => { /* ... */ },
 ///     ProductionVariantInstanceType::MlG6Xlarge => { /* ... */ },
+///     ProductionVariantInstanceType::MlG6E12Xlarge => { /* ... */ },
+///     ProductionVariantInstanceType::MlG6E16Xlarge => { /* ... */ },
+///     ProductionVariantInstanceType::MlG6E24Xlarge => { /* ... */ },
+///     ProductionVariantInstanceType::MlG6E2Xlarge => { /* ... */ },
+///     ProductionVariantInstanceType::MlG6E48Xlarge => { /* ... */ },
+///     ProductionVariantInstanceType::MlG6E4Xlarge => { /* ... */ },
+///     ProductionVariantInstanceType::MlG6E8Xlarge => { /* ... */ },
+///     ProductionVariantInstanceType::MlG6EXlarge => { /* ... */ },
 ///     ProductionVariantInstanceType::MlInf124Xlarge => { /* ... */ },
 ///     ProductionVariantInstanceType::MlInf12Xlarge => { /* ... */ },
 ///     ProductionVariantInstanceType::MlInf16Xlarge => { /* ... */ },
@@ -137,6 +145,15 @@
 ///     ProductionVariantInstanceType::MlM6Gd8Xlarge => { /* ... */ },
 ///     ProductionVariantInstanceType::MlM6GdLarge => { /* ... */ },
 ///     ProductionVariantInstanceType::MlM6GdXlarge => { /* ... */ },
+///     ProductionVariantInstanceType::MlM6I12Xlarge => { /* ... */ },
+///     ProductionVariantInstanceType::MlM6I16Xlarge => { /* ... */ },
+///     ProductionVariantInstanceType::MlM6I24Xlarge => { /* ... */ },
+///     ProductionVariantInstanceType::MlM6I2Xlarge => { /* ... */ },
+///     ProductionVariantInstanceType::MlM6I32Xlarge => { /* ... */ },
+///     ProductionVariantInstanceType::MlM6I4Xlarge => { /* ... */ },
+///     ProductionVariantInstanceType::MlM6I8Xlarge => { /* ... */ },
+///     ProductionVariantInstanceType::MlM6ILarge => { /* ... */ },
+///     ProductionVariantInstanceType::MlM6IXlarge => { /* ... */ },
 ///     ProductionVariantInstanceType::MlM7I12Xlarge => { /* ... */ },
 ///     ProductionVariantInstanceType::MlM7I16Xlarge => { /* ... */ },
 ///     ProductionVariantInstanceType::MlM7I24Xlarge => { /* ... */ },
@@ -155,6 +172,7 @@
 ///     ProductionVariantInstanceType::MlP4D24Xlarge => { /* ... */ },
 ///     ProductionVariantInstanceType::MlP4De24Xlarge => { /* ... */ },
 ///     ProductionVariantInstanceType::MlP548Xlarge => { /* ... */ },
+///     ProductionVariantInstanceType::MlP5E48Xlarge => { /* ... */ },
 ///     ProductionVariantInstanceType::MlR512Xlarge => { /* ... */ },
 ///     ProductionVariantInstanceType::MlR524Xlarge => { /* ... */ },
 ///     ProductionVariantInstanceType::MlR52Xlarge => { /* ... */ },
@@ -181,6 +199,15 @@
 ///     ProductionVariantInstanceType::MlR6Gd8Xlarge => { /* ... */ },
 ///     ProductionVariantInstanceType::MlR6GdLarge => { /* ... */ },
 ///     ProductionVariantInstanceType::MlR6GdXlarge => { /* ... */ },
+///     ProductionVariantInstanceType::MlR6I12Xlarge => { /* ... */ },
+///     ProductionVariantInstanceType::MlR6I16Xlarge => { /* ... */ },
+///     ProductionVariantInstanceType::MlR6I24Xlarge => { /* ... */ },
+///     ProductionVariantInstanceType::MlR6I2Xlarge => { /* ... */ },
+///     ProductionVariantInstanceType::MlR6I32Xlarge => { /* ... */ },
+///     ProductionVariantInstanceType::MlR6I4Xlarge => { /* ... */ },
+///     ProductionVariantInstanceType::MlR6I8Xlarge => { /* ... */ },
+///     ProductionVariantInstanceType::MlR6ILarge => { /* ... */ },
+///     ProductionVariantInstanceType::MlR6IXlarge => { /* ... */ },
 ///     ProductionVariantInstanceType::MlR7I12Xlarge => { /* ... */ },
 ///     ProductionVariantInstanceType::MlR7I16Xlarge => { /* ... */ },
 ///     ProductionVariantInstanceType::MlR7I24Xlarge => { /* ... */ },
@@ -197,6 +224,7 @@
 ///     ProductionVariantInstanceType::MlTrn12Xlarge => { /* ... */ },
 ///     ProductionVariantInstanceType::MlTrn132Xlarge => { /* ... */ },
 ///     ProductionVariantInstanceType::MlTrn1N32Xlarge => { /* ... */ },
+///     ProductionVariantInstanceType::MlTrn248Xlarge => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -397,6 +425,22 @@ pub enum ProductionVariantInstanceType {
     #[allow(missing_docs)] // documentation missing in model
     MlG6Xlarge,
     #[allow(missing_docs)] // documentation missing in model
+    MlG6E12Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG6E16Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG6E24Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG6E2Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG6E48Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG6E4Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG6E8Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG6EXlarge,
+    #[allow(missing_docs)] // documentation missing in model
     MlInf124Xlarge,
     #[allow(missing_docs)] // documentation missing in model
     MlInf12Xlarge,
@@ -475,6 +519,24 @@ pub enum ProductionVariantInstanceType {
     #[allow(missing_docs)] // documentation missing in model
     MlM6GdXlarge,
     #[allow(missing_docs)] // documentation missing in model
+    MlM6I12Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM6I16Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM6I24Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM6I2Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM6I32Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM6I4Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM6I8Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM6ILarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM6IXlarge,
+    #[allow(missing_docs)] // documentation missing in model
     MlM7I12Xlarge,
     #[allow(missing_docs)] // documentation missing in model
     MlM7I16Xlarge,
@@ -510,6 +572,8 @@ pub enum ProductionVariantInstanceType {
     MlP4De24Xlarge,
     #[allow(missing_docs)] // documentation missing in model
     MlP548Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlP5E48Xlarge,
     #[allow(missing_docs)] // documentation missing in model
     MlR512Xlarge,
     #[allow(missing_docs)] // documentation missing in model
@@ -563,6 +627,24 @@ pub enum ProductionVariantInstanceType {
     #[allow(missing_docs)] // documentation missing in model
     MlR6GdXlarge,
     #[allow(missing_docs)] // documentation missing in model
+    MlR6I12Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlR6I16Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlR6I24Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlR6I2Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlR6I32Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlR6I4Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlR6I8Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlR6ILarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlR6IXlarge,
+    #[allow(missing_docs)] // documentation missing in model
     MlR7I12Xlarge,
     #[allow(missing_docs)] // documentation missing in model
     MlR7I16Xlarge,
@@ -594,6 +676,8 @@ pub enum ProductionVariantInstanceType {
     MlTrn132Xlarge,
     #[allow(missing_docs)] // documentation missing in model
     MlTrn1N32Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlTrn248Xlarge,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -687,6 +771,14 @@ impl ::std::convert::From<&str> for ProductionVariantInstanceType {
             "ml.g6.4xlarge" => ProductionVariantInstanceType::MlG64Xlarge,
             "ml.g6.8xlarge" => ProductionVariantInstanceType::MlG68Xlarge,
             "ml.g6.xlarge" => ProductionVariantInstanceType::MlG6Xlarge,
+            "ml.g6e.12xlarge" => ProductionVariantInstanceType::MlG6E12Xlarge,
+            "ml.g6e.16xlarge" => ProductionVariantInstanceType::MlG6E16Xlarge,
+            "ml.g6e.24xlarge" => ProductionVariantInstanceType::MlG6E24Xlarge,
+            "ml.g6e.2xlarge" => ProductionVariantInstanceType::MlG6E2Xlarge,
+            "ml.g6e.48xlarge" => ProductionVariantInstanceType::MlG6E48Xlarge,
+            "ml.g6e.4xlarge" => ProductionVariantInstanceType::MlG6E4Xlarge,
+            "ml.g6e.8xlarge" => ProductionVariantInstanceType::MlG6E8Xlarge,
+            "ml.g6e.xlarge" => ProductionVariantInstanceType::MlG6EXlarge,
             "ml.inf1.24xlarge" => ProductionVariantInstanceType::MlInf124Xlarge,
             "ml.inf1.2xlarge" => ProductionVariantInstanceType::MlInf12Xlarge,
             "ml.inf1.6xlarge" => ProductionVariantInstanceType::MlInf16Xlarge,
@@ -726,6 +818,15 @@ impl ::std::convert::From<&str> for ProductionVariantInstanceType {
             "ml.m6gd.8xlarge" => ProductionVariantInstanceType::MlM6Gd8Xlarge,
             "ml.m6gd.large" => ProductionVariantInstanceType::MlM6GdLarge,
             "ml.m6gd.xlarge" => ProductionVariantInstanceType::MlM6GdXlarge,
+            "ml.m6i.12xlarge" => ProductionVariantInstanceType::MlM6I12Xlarge,
+            "ml.m6i.16xlarge" => ProductionVariantInstanceType::MlM6I16Xlarge,
+            "ml.m6i.24xlarge" => ProductionVariantInstanceType::MlM6I24Xlarge,
+            "ml.m6i.2xlarge" => ProductionVariantInstanceType::MlM6I2Xlarge,
+            "ml.m6i.32xlarge" => ProductionVariantInstanceType::MlM6I32Xlarge,
+            "ml.m6i.4xlarge" => ProductionVariantInstanceType::MlM6I4Xlarge,
+            "ml.m6i.8xlarge" => ProductionVariantInstanceType::MlM6I8Xlarge,
+            "ml.m6i.large" => ProductionVariantInstanceType::MlM6ILarge,
+            "ml.m6i.xlarge" => ProductionVariantInstanceType::MlM6IXlarge,
             "ml.m7i.12xlarge" => ProductionVariantInstanceType::MlM7I12Xlarge,
             "ml.m7i.16xlarge" => ProductionVariantInstanceType::MlM7I16Xlarge,
             "ml.m7i.24xlarge" => ProductionVariantInstanceType::MlM7I24Xlarge,
@@ -744,6 +845,7 @@ impl ::std::convert::From<&str> for ProductionVariantInstanceType {
             "ml.p4d.24xlarge" => ProductionVariantInstanceType::MlP4D24Xlarge,
             "ml.p4de.24xlarge" => ProductionVariantInstanceType::MlP4De24Xlarge,
             "ml.p5.48xlarge" => ProductionVariantInstanceType::MlP548Xlarge,
+            "ml.p5e.48xlarge" => ProductionVariantInstanceType::MlP5E48Xlarge,
             "ml.r5.12xlarge" => ProductionVariantInstanceType::MlR512Xlarge,
             "ml.r5.24xlarge" => ProductionVariantInstanceType::MlR524Xlarge,
             "ml.r5.2xlarge" => ProductionVariantInstanceType::MlR52Xlarge,
@@ -770,6 +872,15 @@ impl ::std::convert::From<&str> for ProductionVariantInstanceType {
             "ml.r6gd.8xlarge" => ProductionVariantInstanceType::MlR6Gd8Xlarge,
             "ml.r6gd.large" => ProductionVariantInstanceType::MlR6GdLarge,
             "ml.r6gd.xlarge" => ProductionVariantInstanceType::MlR6GdXlarge,
+            "ml.r6i.12xlarge" => ProductionVariantInstanceType::MlR6I12Xlarge,
+            "ml.r6i.16xlarge" => ProductionVariantInstanceType::MlR6I16Xlarge,
+            "ml.r6i.24xlarge" => ProductionVariantInstanceType::MlR6I24Xlarge,
+            "ml.r6i.2xlarge" => ProductionVariantInstanceType::MlR6I2Xlarge,
+            "ml.r6i.32xlarge" => ProductionVariantInstanceType::MlR6I32Xlarge,
+            "ml.r6i.4xlarge" => ProductionVariantInstanceType::MlR6I4Xlarge,
+            "ml.r6i.8xlarge" => ProductionVariantInstanceType::MlR6I8Xlarge,
+            "ml.r6i.large" => ProductionVariantInstanceType::MlR6ILarge,
+            "ml.r6i.xlarge" => ProductionVariantInstanceType::MlR6IXlarge,
             "ml.r7i.12xlarge" => ProductionVariantInstanceType::MlR7I12Xlarge,
             "ml.r7i.16xlarge" => ProductionVariantInstanceType::MlR7I16Xlarge,
             "ml.r7i.24xlarge" => ProductionVariantInstanceType::MlR7I24Xlarge,
@@ -786,6 +897,7 @@ impl ::std::convert::From<&str> for ProductionVariantInstanceType {
             "ml.trn1.2xlarge" => ProductionVariantInstanceType::MlTrn12Xlarge,
             "ml.trn1.32xlarge" => ProductionVariantInstanceType::MlTrn132Xlarge,
             "ml.trn1n.32xlarge" => ProductionVariantInstanceType::MlTrn1N32Xlarge,
+            "ml.trn2.48xlarge" => ProductionVariantInstanceType::MlTrn248Xlarge,
             other => ProductionVariantInstanceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -887,6 +999,14 @@ impl ProductionVariantInstanceType {
             ProductionVariantInstanceType::MlG64Xlarge => "ml.g6.4xlarge",
             ProductionVariantInstanceType::MlG68Xlarge => "ml.g6.8xlarge",
             ProductionVariantInstanceType::MlG6Xlarge => "ml.g6.xlarge",
+            ProductionVariantInstanceType::MlG6E12Xlarge => "ml.g6e.12xlarge",
+            ProductionVariantInstanceType::MlG6E16Xlarge => "ml.g6e.16xlarge",
+            ProductionVariantInstanceType::MlG6E24Xlarge => "ml.g6e.24xlarge",
+            ProductionVariantInstanceType::MlG6E2Xlarge => "ml.g6e.2xlarge",
+            ProductionVariantInstanceType::MlG6E48Xlarge => "ml.g6e.48xlarge",
+            ProductionVariantInstanceType::MlG6E4Xlarge => "ml.g6e.4xlarge",
+            ProductionVariantInstanceType::MlG6E8Xlarge => "ml.g6e.8xlarge",
+            ProductionVariantInstanceType::MlG6EXlarge => "ml.g6e.xlarge",
             ProductionVariantInstanceType::MlInf124Xlarge => "ml.inf1.24xlarge",
             ProductionVariantInstanceType::MlInf12Xlarge => "ml.inf1.2xlarge",
             ProductionVariantInstanceType::MlInf16Xlarge => "ml.inf1.6xlarge",
@@ -926,6 +1046,15 @@ impl ProductionVariantInstanceType {
             ProductionVariantInstanceType::MlM6Gd8Xlarge => "ml.m6gd.8xlarge",
             ProductionVariantInstanceType::MlM6GdLarge => "ml.m6gd.large",
             ProductionVariantInstanceType::MlM6GdXlarge => "ml.m6gd.xlarge",
+            ProductionVariantInstanceType::MlM6I12Xlarge => "ml.m6i.12xlarge",
+            ProductionVariantInstanceType::MlM6I16Xlarge => "ml.m6i.16xlarge",
+            ProductionVariantInstanceType::MlM6I24Xlarge => "ml.m6i.24xlarge",
+            ProductionVariantInstanceType::MlM6I2Xlarge => "ml.m6i.2xlarge",
+            ProductionVariantInstanceType::MlM6I32Xlarge => "ml.m6i.32xlarge",
+            ProductionVariantInstanceType::MlM6I4Xlarge => "ml.m6i.4xlarge",
+            ProductionVariantInstanceType::MlM6I8Xlarge => "ml.m6i.8xlarge",
+            ProductionVariantInstanceType::MlM6ILarge => "ml.m6i.large",
+            ProductionVariantInstanceType::MlM6IXlarge => "ml.m6i.xlarge",
             ProductionVariantInstanceType::MlM7I12Xlarge => "ml.m7i.12xlarge",
             ProductionVariantInstanceType::MlM7I16Xlarge => "ml.m7i.16xlarge",
             ProductionVariantInstanceType::MlM7I24Xlarge => "ml.m7i.24xlarge",
@@ -944,6 +1073,7 @@ impl ProductionVariantInstanceType {
             ProductionVariantInstanceType::MlP4D24Xlarge => "ml.p4d.24xlarge",
             ProductionVariantInstanceType::MlP4De24Xlarge => "ml.p4de.24xlarge",
             ProductionVariantInstanceType::MlP548Xlarge => "ml.p5.48xlarge",
+            ProductionVariantInstanceType::MlP5E48Xlarge => "ml.p5e.48xlarge",
             ProductionVariantInstanceType::MlR512Xlarge => "ml.r5.12xlarge",
             ProductionVariantInstanceType::MlR524Xlarge => "ml.r5.24xlarge",
             ProductionVariantInstanceType::MlR52Xlarge => "ml.r5.2xlarge",
@@ -970,6 +1100,15 @@ impl ProductionVariantInstanceType {
             ProductionVariantInstanceType::MlR6Gd8Xlarge => "ml.r6gd.8xlarge",
             ProductionVariantInstanceType::MlR6GdLarge => "ml.r6gd.large",
             ProductionVariantInstanceType::MlR6GdXlarge => "ml.r6gd.xlarge",
+            ProductionVariantInstanceType::MlR6I12Xlarge => "ml.r6i.12xlarge",
+            ProductionVariantInstanceType::MlR6I16Xlarge => "ml.r6i.16xlarge",
+            ProductionVariantInstanceType::MlR6I24Xlarge => "ml.r6i.24xlarge",
+            ProductionVariantInstanceType::MlR6I2Xlarge => "ml.r6i.2xlarge",
+            ProductionVariantInstanceType::MlR6I32Xlarge => "ml.r6i.32xlarge",
+            ProductionVariantInstanceType::MlR6I4Xlarge => "ml.r6i.4xlarge",
+            ProductionVariantInstanceType::MlR6I8Xlarge => "ml.r6i.8xlarge",
+            ProductionVariantInstanceType::MlR6ILarge => "ml.r6i.large",
+            ProductionVariantInstanceType::MlR6IXlarge => "ml.r6i.xlarge",
             ProductionVariantInstanceType::MlR7I12Xlarge => "ml.r7i.12xlarge",
             ProductionVariantInstanceType::MlR7I16Xlarge => "ml.r7i.16xlarge",
             ProductionVariantInstanceType::MlR7I24Xlarge => "ml.r7i.24xlarge",
@@ -986,6 +1125,7 @@ impl ProductionVariantInstanceType {
             ProductionVariantInstanceType::MlTrn12Xlarge => "ml.trn1.2xlarge",
             ProductionVariantInstanceType::MlTrn132Xlarge => "ml.trn1.32xlarge",
             ProductionVariantInstanceType::MlTrn1N32Xlarge => "ml.trn1n.32xlarge",
+            ProductionVariantInstanceType::MlTrn248Xlarge => "ml.trn2.48xlarge",
             ProductionVariantInstanceType::Unknown(value) => value.as_str(),
         }
     }
@@ -1078,6 +1218,14 @@ impl ProductionVariantInstanceType {
             "ml.g6.4xlarge",
             "ml.g6.8xlarge",
             "ml.g6.xlarge",
+            "ml.g6e.12xlarge",
+            "ml.g6e.16xlarge",
+            "ml.g6e.24xlarge",
+            "ml.g6e.2xlarge",
+            "ml.g6e.48xlarge",
+            "ml.g6e.4xlarge",
+            "ml.g6e.8xlarge",
+            "ml.g6e.xlarge",
             "ml.inf1.24xlarge",
             "ml.inf1.2xlarge",
             "ml.inf1.6xlarge",
@@ -1117,6 +1265,15 @@ impl ProductionVariantInstanceType {
             "ml.m6gd.8xlarge",
             "ml.m6gd.large",
             "ml.m6gd.xlarge",
+            "ml.m6i.12xlarge",
+            "ml.m6i.16xlarge",
+            "ml.m6i.24xlarge",
+            "ml.m6i.2xlarge",
+            "ml.m6i.32xlarge",
+            "ml.m6i.4xlarge",
+            "ml.m6i.8xlarge",
+            "ml.m6i.large",
+            "ml.m6i.xlarge",
             "ml.m7i.12xlarge",
             "ml.m7i.16xlarge",
             "ml.m7i.24xlarge",
@@ -1135,6 +1292,7 @@ impl ProductionVariantInstanceType {
             "ml.p4d.24xlarge",
             "ml.p4de.24xlarge",
             "ml.p5.48xlarge",
+            "ml.p5e.48xlarge",
             "ml.r5.12xlarge",
             "ml.r5.24xlarge",
             "ml.r5.2xlarge",
@@ -1161,6 +1319,15 @@ impl ProductionVariantInstanceType {
             "ml.r6gd.8xlarge",
             "ml.r6gd.large",
             "ml.r6gd.xlarge",
+            "ml.r6i.12xlarge",
+            "ml.r6i.16xlarge",
+            "ml.r6i.24xlarge",
+            "ml.r6i.2xlarge",
+            "ml.r6i.32xlarge",
+            "ml.r6i.4xlarge",
+            "ml.r6i.8xlarge",
+            "ml.r6i.large",
+            "ml.r6i.xlarge",
             "ml.r7i.12xlarge",
             "ml.r7i.16xlarge",
             "ml.r7i.24xlarge",
@@ -1177,6 +1344,7 @@ impl ProductionVariantInstanceType {
             "ml.trn1.2xlarge",
             "ml.trn1.32xlarge",
             "ml.trn1n.32xlarge",
+            "ml.trn2.48xlarge",
         ]
     }
 }
@@ -1286,6 +1454,14 @@ impl ::std::fmt::Display for ProductionVariantInstanceType {
             ProductionVariantInstanceType::MlG64Xlarge => write!(f, "ml.g6.4xlarge"),
             ProductionVariantInstanceType::MlG68Xlarge => write!(f, "ml.g6.8xlarge"),
             ProductionVariantInstanceType::MlG6Xlarge => write!(f, "ml.g6.xlarge"),
+            ProductionVariantInstanceType::MlG6E12Xlarge => write!(f, "ml.g6e.12xlarge"),
+            ProductionVariantInstanceType::MlG6E16Xlarge => write!(f, "ml.g6e.16xlarge"),
+            ProductionVariantInstanceType::MlG6E24Xlarge => write!(f, "ml.g6e.24xlarge"),
+            ProductionVariantInstanceType::MlG6E2Xlarge => write!(f, "ml.g6e.2xlarge"),
+            ProductionVariantInstanceType::MlG6E48Xlarge => write!(f, "ml.g6e.48xlarge"),
+            ProductionVariantInstanceType::MlG6E4Xlarge => write!(f, "ml.g6e.4xlarge"),
+            ProductionVariantInstanceType::MlG6E8Xlarge => write!(f, "ml.g6e.8xlarge"),
+            ProductionVariantInstanceType::MlG6EXlarge => write!(f, "ml.g6e.xlarge"),
             ProductionVariantInstanceType::MlInf124Xlarge => write!(f, "ml.inf1.24xlarge"),
             ProductionVariantInstanceType::MlInf12Xlarge => write!(f, "ml.inf1.2xlarge"),
             ProductionVariantInstanceType::MlInf16Xlarge => write!(f, "ml.inf1.6xlarge"),
@@ -1325,6 +1501,15 @@ impl ::std::fmt::Display for ProductionVariantInstanceType {
             ProductionVariantInstanceType::MlM6Gd8Xlarge => write!(f, "ml.m6gd.8xlarge"),
             ProductionVariantInstanceType::MlM6GdLarge => write!(f, "ml.m6gd.large"),
             ProductionVariantInstanceType::MlM6GdXlarge => write!(f, "ml.m6gd.xlarge"),
+            ProductionVariantInstanceType::MlM6I12Xlarge => write!(f, "ml.m6i.12xlarge"),
+            ProductionVariantInstanceType::MlM6I16Xlarge => write!(f, "ml.m6i.16xlarge"),
+            ProductionVariantInstanceType::MlM6I24Xlarge => write!(f, "ml.m6i.24xlarge"),
+            ProductionVariantInstanceType::MlM6I2Xlarge => write!(f, "ml.m6i.2xlarge"),
+            ProductionVariantInstanceType::MlM6I32Xlarge => write!(f, "ml.m6i.32xlarge"),
+            ProductionVariantInstanceType::MlM6I4Xlarge => write!(f, "ml.m6i.4xlarge"),
+            ProductionVariantInstanceType::MlM6I8Xlarge => write!(f, "ml.m6i.8xlarge"),
+            ProductionVariantInstanceType::MlM6ILarge => write!(f, "ml.m6i.large"),
+            ProductionVariantInstanceType::MlM6IXlarge => write!(f, "ml.m6i.xlarge"),
             ProductionVariantInstanceType::MlM7I12Xlarge => write!(f, "ml.m7i.12xlarge"),
             ProductionVariantInstanceType::MlM7I16Xlarge => write!(f, "ml.m7i.16xlarge"),
             ProductionVariantInstanceType::MlM7I24Xlarge => write!(f, "ml.m7i.24xlarge"),
@@ -1343,6 +1528,7 @@ impl ::std::fmt::Display for ProductionVariantInstanceType {
             ProductionVariantInstanceType::MlP4D24Xlarge => write!(f, "ml.p4d.24xlarge"),
             ProductionVariantInstanceType::MlP4De24Xlarge => write!(f, "ml.p4de.24xlarge"),
             ProductionVariantInstanceType::MlP548Xlarge => write!(f, "ml.p5.48xlarge"),
+            ProductionVariantInstanceType::MlP5E48Xlarge => write!(f, "ml.p5e.48xlarge"),
             ProductionVariantInstanceType::MlR512Xlarge => write!(f, "ml.r5.12xlarge"),
             ProductionVariantInstanceType::MlR524Xlarge => write!(f, "ml.r5.24xlarge"),
             ProductionVariantInstanceType::MlR52Xlarge => write!(f, "ml.r5.2xlarge"),
@@ -1369,6 +1555,15 @@ impl ::std::fmt::Display for ProductionVariantInstanceType {
             ProductionVariantInstanceType::MlR6Gd8Xlarge => write!(f, "ml.r6gd.8xlarge"),
             ProductionVariantInstanceType::MlR6GdLarge => write!(f, "ml.r6gd.large"),
             ProductionVariantInstanceType::MlR6GdXlarge => write!(f, "ml.r6gd.xlarge"),
+            ProductionVariantInstanceType::MlR6I12Xlarge => write!(f, "ml.r6i.12xlarge"),
+            ProductionVariantInstanceType::MlR6I16Xlarge => write!(f, "ml.r6i.16xlarge"),
+            ProductionVariantInstanceType::MlR6I24Xlarge => write!(f, "ml.r6i.24xlarge"),
+            ProductionVariantInstanceType::MlR6I2Xlarge => write!(f, "ml.r6i.2xlarge"),
+            ProductionVariantInstanceType::MlR6I32Xlarge => write!(f, "ml.r6i.32xlarge"),
+            ProductionVariantInstanceType::MlR6I4Xlarge => write!(f, "ml.r6i.4xlarge"),
+            ProductionVariantInstanceType::MlR6I8Xlarge => write!(f, "ml.r6i.8xlarge"),
+            ProductionVariantInstanceType::MlR6ILarge => write!(f, "ml.r6i.large"),
+            ProductionVariantInstanceType::MlR6IXlarge => write!(f, "ml.r6i.xlarge"),
             ProductionVariantInstanceType::MlR7I12Xlarge => write!(f, "ml.r7i.12xlarge"),
             ProductionVariantInstanceType::MlR7I16Xlarge => write!(f, "ml.r7i.16xlarge"),
             ProductionVariantInstanceType::MlR7I24Xlarge => write!(f, "ml.r7i.24xlarge"),
@@ -1385,6 +1580,7 @@ impl ::std::fmt::Display for ProductionVariantInstanceType {
             ProductionVariantInstanceType::MlTrn12Xlarge => write!(f, "ml.trn1.2xlarge"),
             ProductionVariantInstanceType::MlTrn132Xlarge => write!(f, "ml.trn1.32xlarge"),
             ProductionVariantInstanceType::MlTrn1N32Xlarge => write!(f, "ml.trn1n.32xlarge"),
+            ProductionVariantInstanceType::MlTrn248Xlarge => write!(f, "ml.trn2.48xlarge"),
             ProductionVariantInstanceType::Unknown(value) => write!(f, "{}", value),
         }
     }

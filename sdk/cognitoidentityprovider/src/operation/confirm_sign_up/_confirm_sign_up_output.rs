@@ -2,9 +2,25 @@
 
 /// <p>Represents the response from the server for the registration confirmation.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ConfirmSignUpOutput {
+    /// <p>You can automatically sign users in with the one-time password that they provided in a successful <code>ConfirmSignUp</code> request. To do this, pass the <code>Session</code> parameter from the <code>ConfirmSignUp</code> response in the <code>Session</code> parameter of an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a> or <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a> request.</p>
+    pub session: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
+}
+impl ConfirmSignUpOutput {
+    /// <p>You can automatically sign users in with the one-time password that they provided in a successful <code>ConfirmSignUp</code> request. To do this, pass the <code>Session</code> parameter from the <code>ConfirmSignUp</code> response in the <code>Session</code> parameter of an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a> or <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a> request.</p>
+    pub fn session(&self) -> ::std::option::Option<&str> {
+        self.session.as_deref()
+    }
+}
+impl ::std::fmt::Debug for ConfirmSignUpOutput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ConfirmSignUpOutput");
+        formatter.field("session", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
+        formatter.finish()
+    }
 }
 impl ::aws_types::request_id::RequestId for ConfirmSignUpOutput {
     fn request_id(&self) -> Option<&str> {
@@ -19,12 +35,27 @@ impl ConfirmSignUpOutput {
 }
 
 /// A builder for [`ConfirmSignUpOutput`](crate::operation::confirm_sign_up::ConfirmSignUpOutput).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct ConfirmSignUpOutputBuilder {
+    pub(crate) session: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ConfirmSignUpOutputBuilder {
+    /// <p>You can automatically sign users in with the one-time password that they provided in a successful <code>ConfirmSignUp</code> request. To do this, pass the <code>Session</code> parameter from the <code>ConfirmSignUp</code> response in the <code>Session</code> parameter of an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a> or <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a> request.</p>
+    pub fn session(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.session = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>You can automatically sign users in with the one-time password that they provided in a successful <code>ConfirmSignUp</code> request. To do this, pass the <code>Session</code> parameter from the <code>ConfirmSignUp</code> response in the <code>Session</code> parameter of an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a> or <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a> request.</p>
+    pub fn set_session(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.session = input;
+        self
+    }
+    /// <p>You can automatically sign users in with the one-time password that they provided in a successful <code>ConfirmSignUp</code> request. To do this, pass the <code>Session</code> parameter from the <code>ConfirmSignUp</code> response in the <code>Session</code> parameter of an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a> or <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a> request.</p>
+    pub fn get_session(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -37,7 +68,16 @@ impl ConfirmSignUpOutputBuilder {
     /// Consumes the builder and constructs a [`ConfirmSignUpOutput`](crate::operation::confirm_sign_up::ConfirmSignUpOutput).
     pub fn build(self) -> crate::operation::confirm_sign_up::ConfirmSignUpOutput {
         crate::operation::confirm_sign_up::ConfirmSignUpOutput {
+            session: self.session,
             _request_id: self._request_id,
         }
+    }
+}
+impl ::std::fmt::Debug for ConfirmSignUpOutputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ConfirmSignUpOutputBuilder");
+        formatter.field("session", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
+        formatter.finish()
     }
 }

@@ -5,6 +5,8 @@ pub use crate::types::_receipt_rule::ReceiptRule;
 
 pub use crate::types::_receipt_action::ReceiptAction;
 
+pub use crate::types::_connect_action::ConnectAction;
+
 pub use crate::types::_sns_action::SnsAction;
 
 pub use crate::types::_sns_action_encoding::SnsActionEncoding;
@@ -138,6 +140,8 @@ mod _cloud_watch_dimension_configuration;
 mod _configuration_set;
 
 mod _configuration_set_attribute;
+
+mod _connect_action;
 
 mod _content;
 

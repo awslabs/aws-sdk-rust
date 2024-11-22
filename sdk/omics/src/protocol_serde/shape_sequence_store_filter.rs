@@ -16,5 +16,18 @@ pub fn ser_sequence_store_filter(
             .key("createdBefore")
             .date_time(var_3, ::aws_smithy_types::date_time::Format::DateTime)?;
     }
+    if let Some(var_4) = &input.status {
+        object.key("status").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.updated_after {
+        object
+            .key("updatedAfter")
+            .date_time(var_5, ::aws_smithy_types::date_time::Format::DateTime)?;
+    }
+    if let Some(var_6) = &input.updated_before {
+        object
+            .key("updatedBefore")
+            .date_time(var_6, ::aws_smithy_types::date_time::Format::DateTime)?;
+    }
     Ok(())
 }

@@ -87,6 +87,18 @@ pub fn ser_dashboard_version_definition(
         crate::protocol_serde::shape_asset_options::ser_asset_options(&mut object_27, var_26)?;
         object_27.finish();
     }
+    if let Some(var_28) = &input.static_files {
+        let mut array_29 = object.key("StaticFiles").start_array();
+        for item_30 in var_28 {
+            {
+                #[allow(unused_mut)]
+                let mut object_31 = array_29.value().start_object();
+                crate::protocol_serde::shape_static_file::ser_static_file(&mut object_31, item_30)?;
+                object_31.finish();
+            }
+        }
+        array_29.finish();
+    }
     Ok(())
 }
 
@@ -134,6 +146,9 @@ where
                         }
                         "Options" => {
                             builder = builder.set_options(crate::protocol_serde::shape_asset_options::de_asset_options(tokens)?);
+                        }
+                        "StaticFiles" => {
+                            builder = builder.set_static_files(crate::protocol_serde::shape_static_file_list::de_static_file_list(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

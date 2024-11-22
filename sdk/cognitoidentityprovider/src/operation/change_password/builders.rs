@@ -111,17 +111,17 @@ impl ChangePasswordFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The old password.</p>
+    /// <p>The user's previous password. Required if the user has a password. If the user has no password and only signs in with passwordless authentication options, you can omit this parameter.</p>
     pub fn previous_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.previous_password(input.into());
         self
     }
-    /// <p>The old password.</p>
+    /// <p>The user's previous password. Required if the user has a password. If the user has no password and only signs in with passwordless authentication options, you can omit this parameter.</p>
     pub fn set_previous_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_previous_password(input);
         self
     }
-    /// <p>The old password.</p>
+    /// <p>The user's previous password. Required if the user has a password. If the user has no password and only signs in with passwordless authentication options, you can omit this parameter.</p>
     pub fn get_previous_password(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_previous_password()
     }

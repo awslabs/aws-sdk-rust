@@ -12,6 +12,8 @@
 /// ```text
 /// # let listflowassociationresourcetype = unimplemented!();
 /// match listflowassociationresourcetype {
+///     ListFlowAssociationResourceType::InboundEmail => { /* ... */ },
+///     ListFlowAssociationResourceType::OutboundEmail => { /* ... */ },
 ///     ListFlowAssociationResourceType::VoicePhoneNumber => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -41,6 +43,10 @@
 )]
 pub enum ListFlowAssociationResourceType {
     #[allow(missing_docs)] // documentation missing in model
+    InboundEmail,
+    #[allow(missing_docs)] // documentation missing in model
+    OutboundEmail,
+    #[allow(missing_docs)] // documentation missing in model
     VoicePhoneNumber,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -49,6 +55,8 @@ pub enum ListFlowAssociationResourceType {
 impl ::std::convert::From<&str> for ListFlowAssociationResourceType {
     fn from(s: &str) -> Self {
         match s {
+            "INBOUND_EMAIL" => ListFlowAssociationResourceType::InboundEmail,
+            "OUTBOUND_EMAIL" => ListFlowAssociationResourceType::OutboundEmail,
             "VOICE_PHONE_NUMBER" => ListFlowAssociationResourceType::VoicePhoneNumber,
             other => ListFlowAssociationResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -65,13 +73,15 @@ impl ListFlowAssociationResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ListFlowAssociationResourceType::InboundEmail => "INBOUND_EMAIL",
+            ListFlowAssociationResourceType::OutboundEmail => "OUTBOUND_EMAIL",
             ListFlowAssociationResourceType::VoicePhoneNumber => "VOICE_PHONE_NUMBER",
             ListFlowAssociationResourceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["VOICE_PHONE_NUMBER"]
+        &["INBOUND_EMAIL", "OUTBOUND_EMAIL", "VOICE_PHONE_NUMBER"]
     }
 }
 impl ::std::convert::AsRef<str> for ListFlowAssociationResourceType {
@@ -94,6 +104,8 @@ impl ListFlowAssociationResourceType {
 impl ::std::fmt::Display for ListFlowAssociationResourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ListFlowAssociationResourceType::InboundEmail => write!(f, "INBOUND_EMAIL"),
+            ListFlowAssociationResourceType::OutboundEmail => write!(f, "OUTBOUND_EMAIL"),
             ListFlowAssociationResourceType::VoicePhoneNumber => write!(f, "VOICE_PHONE_NUMBER"),
             ListFlowAssociationResourceType::Unknown(value) => write!(f, "{}", value),
         }

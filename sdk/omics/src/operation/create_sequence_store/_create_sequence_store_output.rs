@@ -19,6 +19,14 @@ pub struct CreateSequenceStoreOutput {
     pub fallback_location: ::std::option::Option<::std::string::String>,
     /// <p>The algorithm family of the ETag.</p>
     pub e_tag_algorithm_family: ::std::option::Option<crate::types::ETagAlgorithmFamily>,
+    /// <p>The status of the sequence store.</p>
+    pub status: ::std::option::Option<crate::types::SequenceStoreStatus>,
+    /// <p>The status message of the sequence store.</p>
+    pub status_message: ::std::option::Option<::std::string::String>,
+    /// <p>The tags keys to propagate to the S3 objects associated with read sets in the sequence store.</p>
+    pub propagated_set_level_tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The S3 access metadata of the sequence store.</p>
+    pub s3_access: ::std::option::Option<crate::types::SequenceStoreS3Access>,
     _request_id: Option<String>,
 }
 impl CreateSequenceStoreOutput {
@@ -56,6 +64,24 @@ impl CreateSequenceStoreOutput {
     pub fn e_tag_algorithm_family(&self) -> ::std::option::Option<&crate::types::ETagAlgorithmFamily> {
         self.e_tag_algorithm_family.as_ref()
     }
+    /// <p>The status of the sequence store.</p>
+    pub fn status(&self) -> ::std::option::Option<&crate::types::SequenceStoreStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The status message of the sequence store.</p>
+    pub fn status_message(&self) -> ::std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>The tags keys to propagate to the S3 objects associated with read sets in the sequence store.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.propagated_set_level_tags.is_none()`.
+    pub fn propagated_set_level_tags(&self) -> &[::std::string::String] {
+        self.propagated_set_level_tags.as_deref().unwrap_or_default()
+    }
+    /// <p>The S3 access metadata of the sequence store.</p>
+    pub fn s3_access(&self) -> ::std::option::Option<&crate::types::SequenceStoreS3Access> {
+        self.s3_access.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for CreateSequenceStoreOutput {
     fn request_id(&self) -> Option<&str> {
@@ -81,6 +107,10 @@ pub struct CreateSequenceStoreOutputBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) fallback_location: ::std::option::Option<::std::string::String>,
     pub(crate) e_tag_algorithm_family: ::std::option::Option<crate::types::ETagAlgorithmFamily>,
+    pub(crate) status: ::std::option::Option<crate::types::SequenceStoreStatus>,
+    pub(crate) status_message: ::std::option::Option<::std::string::String>,
+    pub(crate) propagated_set_level_tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) s3_access: ::std::option::Option<crate::types::SequenceStoreS3Access>,
     _request_id: Option<String>,
 }
 impl CreateSequenceStoreOutputBuilder {
@@ -199,6 +229,68 @@ impl CreateSequenceStoreOutputBuilder {
     pub fn get_e_tag_algorithm_family(&self) -> &::std::option::Option<crate::types::ETagAlgorithmFamily> {
         &self.e_tag_algorithm_family
     }
+    /// <p>The status of the sequence store.</p>
+    pub fn status(mut self, input: crate::types::SequenceStoreStatus) -> Self {
+        self.status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The status of the sequence store.</p>
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::SequenceStoreStatus>) -> Self {
+        self.status = input;
+        self
+    }
+    /// <p>The status of the sequence store.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::SequenceStoreStatus> {
+        &self.status
+    }
+    /// <p>The status message of the sequence store.</p>
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status_message = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The status message of the sequence store.</p>
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.status_message = input;
+        self
+    }
+    /// <p>The status message of the sequence store.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
+    /// Appends an item to `propagated_set_level_tags`.
+    ///
+    /// To override the contents of this collection use [`set_propagated_set_level_tags`](Self::set_propagated_set_level_tags).
+    ///
+    /// <p>The tags keys to propagate to the S3 objects associated with read sets in the sequence store.</p>
+    pub fn propagated_set_level_tags(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.propagated_set_level_tags.unwrap_or_default();
+        v.push(input.into());
+        self.propagated_set_level_tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The tags keys to propagate to the S3 objects associated with read sets in the sequence store.</p>
+    pub fn set_propagated_set_level_tags(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.propagated_set_level_tags = input;
+        self
+    }
+    /// <p>The tags keys to propagate to the S3 objects associated with read sets in the sequence store.</p>
+    pub fn get_propagated_set_level_tags(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.propagated_set_level_tags
+    }
+    /// <p>The S3 access metadata of the sequence store.</p>
+    pub fn s3_access(mut self, input: crate::types::SequenceStoreS3Access) -> Self {
+        self.s3_access = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The S3 access metadata of the sequence store.</p>
+    pub fn set_s3_access(mut self, input: ::std::option::Option<crate::types::SequenceStoreS3Access>) -> Self {
+        self.s3_access = input;
+        self
+    }
+    /// <p>The S3 access metadata of the sequence store.</p>
+    pub fn get_s3_access(&self) -> &::std::option::Option<crate::types::SequenceStoreS3Access> {
+        &self.s3_access
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -241,6 +333,10 @@ impl CreateSequenceStoreOutputBuilder {
             })?,
             fallback_location: self.fallback_location,
             e_tag_algorithm_family: self.e_tag_algorithm_family,
+            status: self.status,
+            status_message: self.status_message,
+            propagated_set_level_tags: self.propagated_set_level_tags,
+            s3_access: self.s3_access,
             _request_id: self._request_id,
         })
     }

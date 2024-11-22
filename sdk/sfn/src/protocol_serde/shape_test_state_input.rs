@@ -18,5 +18,8 @@ pub fn ser_test_state_input_input(
     if let Some(var_5) = &input.reveal_secrets {
         object.key("revealSecrets").boolean(*var_5);
     }
+    if let Some(var_6) = &input.variables {
+        object.key("variables").string(var_6.as_str());
+    }
     Ok(())
 }

@@ -17,6 +17,24 @@ pub fn de_create_user_pool_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "FeatureUnavailableInTierException" => crate::operation::create_user_pool::CreateUserPoolError::FeatureUnavailableInTierException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::FeatureUnavailableInTierExceptionBuilder::default();
+                output = crate::protocol_serde::shape_feature_unavailable_in_tier_exception::de_feature_unavailable_in_tier_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_user_pool::CreateUserPoolError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InternalErrorException" => crate::operation::create_user_pool::CreateUserPoolError::InternalErrorException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -119,6 +137,24 @@ pub fn de_create_user_pool_http_error(
                 let mut output = crate::types::error::builders::NotAuthorizedExceptionBuilder::default();
                 output = crate::protocol_serde::shape_not_authorized_exception::de_not_authorized_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_user_pool::CreateUserPoolError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TierChangeNotAllowedException" => crate::operation::create_user_pool::CreateUserPoolError::TierChangeNotAllowedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TierChangeNotAllowedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_tier_change_not_allowed_exception::de_tier_change_not_allowed_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_user_pool::CreateUserPoolError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };

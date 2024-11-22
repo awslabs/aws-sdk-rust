@@ -17,6 +17,8 @@ pub struct WordCloudVisual {
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>,
     /// <p>The column hierarchy that is used during drill-downs and drill-ups.</p>
     pub column_hierarchies: ::std::option::Option<::std::vec::Vec<crate::types::ColumnHierarchy>>,
+    /// <p>The alt text for the visual.</p>
+    pub visual_content_alt_text: ::std::option::Option<::std::string::String>,
 }
 impl WordCloudVisual {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers..</p>
@@ -48,6 +50,10 @@ impl WordCloudVisual {
     pub fn column_hierarchies(&self) -> &[crate::types::ColumnHierarchy] {
         self.column_hierarchies.as_deref().unwrap_or_default()
     }
+    /// <p>The alt text for the visual.</p>
+    pub fn visual_content_alt_text(&self) -> ::std::option::Option<&str> {
+        self.visual_content_alt_text.as_deref()
+    }
 }
 impl WordCloudVisual {
     /// Creates a new builder-style object to manufacture [`WordCloudVisual`](crate::types::WordCloudVisual).
@@ -66,6 +72,7 @@ pub struct WordCloudVisualBuilder {
     pub(crate) chart_configuration: ::std::option::Option<crate::types::WordCloudChartConfiguration>,
     pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>,
     pub(crate) column_hierarchies: ::std::option::Option<::std::vec::Vec<crate::types::ColumnHierarchy>>,
+    pub(crate) visual_content_alt_text: ::std::option::Option<::std::string::String>,
 }
 impl WordCloudVisualBuilder {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers..</p>
@@ -165,6 +172,20 @@ impl WordCloudVisualBuilder {
     pub fn get_column_hierarchies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnHierarchy>> {
         &self.column_hierarchies
     }
+    /// <p>The alt text for the visual.</p>
+    pub fn visual_content_alt_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.visual_content_alt_text = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The alt text for the visual.</p>
+    pub fn set_visual_content_alt_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.visual_content_alt_text = input;
+        self
+    }
+    /// <p>The alt text for the visual.</p>
+    pub fn get_visual_content_alt_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.visual_content_alt_text
+    }
     /// Consumes the builder and constructs a [`WordCloudVisual`](crate::types::WordCloudVisual).
     /// This method will fail if any of the following fields are not set:
     /// - [`visual_id`](crate::types::builders::WordCloudVisualBuilder::visual_id)
@@ -181,6 +202,7 @@ impl WordCloudVisualBuilder {
             chart_configuration: self.chart_configuration,
             actions: self.actions,
             column_hierarchies: self.column_hierarchies,
+            visual_content_alt_text: self.visual_content_alt_text,
         })
     }
 }

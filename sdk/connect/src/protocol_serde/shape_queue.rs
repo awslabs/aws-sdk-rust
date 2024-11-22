@@ -46,6 +46,10 @@ where
                             builder = builder
                                 .set_outbound_caller_config(crate::protocol_serde::shape_outbound_caller_config::de_outbound_caller_config(tokens)?);
                         }
+                        "OutboundEmailConfig" => {
+                            builder = builder
+                                .set_outbound_email_config(crate::protocol_serde::shape_outbound_email_config::de_outbound_email_config(tokens)?);
+                        }
                         "HoursOfOperationId" => {
                             builder = builder.set_hours_of_operation_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

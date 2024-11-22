@@ -161,6 +161,11 @@ pub(crate) fn de_get_user_pool_mfa_config(
                             .transpose()?,
                     );
                 }
+                "WebAuthnConfiguration" => {
+                    builder = builder.set_web_authn_configuration(
+                        crate::protocol_serde::shape_web_authn_configuration_type::de_web_authn_configuration_type(tokens)?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

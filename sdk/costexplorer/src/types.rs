@@ -259,6 +259,8 @@ pub use crate::types::_anomaly_score::AnomalyScore;
 
 pub use crate::types::_root_cause::RootCause;
 
+pub use crate::types::_root_cause_impact::RootCauseImpact;
+
 pub use crate::types::_total_impact_filter::TotalImpactFilter;
 
 pub use crate::types::_numeric_operator::NumericOperator;
@@ -472,6 +474,8 @@ mod _rightsizing_recommendation_summary;
 mod _rightsizing_type;
 
 mod _root_cause;
+
+mod _root_cause_impact;
 
 mod _savings_plans;
 

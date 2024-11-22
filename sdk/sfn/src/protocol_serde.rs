@@ -285,6 +285,8 @@ pub(crate) mod shape_tracing_configuration;
 
 pub(crate) mod shape_validate_state_machine_definition_diagnostic_list;
 
+pub(crate) mod shape_variable_references;
+
 pub(crate) mod shape_activity_list_item;
 
 pub(crate) mod shape_execution_list_item;
@@ -309,6 +311,8 @@ pub(crate) mod shape_state_machine_version_list_item;
 
 pub(crate) mod shape_validate_state_machine_definition_diagnostic;
 
+pub(crate) mod shape_variable_name_list;
+
 pub(crate) mod shape_activity_failed_event_details;
 
 pub(crate) mod shape_activity_schedule_failed_event_details;
@@ -322,6 +326,8 @@ pub(crate) mod shape_activity_succeeded_event_details;
 pub(crate) mod shape_activity_timed_out_event_details;
 
 pub(crate) mod shape_cloud_watch_logs_log_group;
+
+pub(crate) mod shape_evaluation_failed_event_details;
 
 pub(crate) mod shape_execution_aborted_event_details;
 
@@ -376,6 +382,10 @@ pub(crate) mod shape_task_submitted_event_details;
 pub(crate) mod shape_task_succeeded_event_details;
 
 pub(crate) mod shape_task_timed_out_event_details;
+
+pub(crate) mod shape_assigned_variables;
+
+pub(crate) mod shape_assigned_variables_details;
 
 pub(crate) mod shape_history_event_execution_data_details;
 

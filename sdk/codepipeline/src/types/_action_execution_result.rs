@@ -12,6 +12,8 @@ pub struct ActionExecutionResult {
     pub external_execution_url: ::std::option::Option<::std::string::String>,
     /// <p>Represents information about an error in CodePipeline.</p>
     pub error_details: ::std::option::Option<crate::types::ErrorDetails>,
+    /// <p>The Amazon Resource Name (ARN) of the log stream for the action compute.</p>
+    pub log_stream_arn: ::std::option::Option<::std::string::String>,
 }
 impl ActionExecutionResult {
     /// <p>The action provider's external ID for the action execution.</p>
@@ -30,6 +32,10 @@ impl ActionExecutionResult {
     pub fn error_details(&self) -> ::std::option::Option<&crate::types::ErrorDetails> {
         self.error_details.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the log stream for the action compute.</p>
+    pub fn log_stream_arn(&self) -> ::std::option::Option<&str> {
+        self.log_stream_arn.as_deref()
+    }
 }
 impl ActionExecutionResult {
     /// Creates a new builder-style object to manufacture [`ActionExecutionResult`](crate::types::ActionExecutionResult).
@@ -46,6 +52,7 @@ pub struct ActionExecutionResultBuilder {
     pub(crate) external_execution_summary: ::std::option::Option<::std::string::String>,
     pub(crate) external_execution_url: ::std::option::Option<::std::string::String>,
     pub(crate) error_details: ::std::option::Option<crate::types::ErrorDetails>,
+    pub(crate) log_stream_arn: ::std::option::Option<::std::string::String>,
 }
 impl ActionExecutionResultBuilder {
     /// <p>The action provider's external ID for the action execution.</p>
@@ -104,6 +111,20 @@ impl ActionExecutionResultBuilder {
     pub fn get_error_details(&self) -> &::std::option::Option<crate::types::ErrorDetails> {
         &self.error_details
     }
+    /// <p>The Amazon Resource Name (ARN) of the log stream for the action compute.</p>
+    pub fn log_stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.log_stream_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the log stream for the action compute.</p>
+    pub fn set_log_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.log_stream_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the log stream for the action compute.</p>
+    pub fn get_log_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_stream_arn
+    }
     /// Consumes the builder and constructs a [`ActionExecutionResult`](crate::types::ActionExecutionResult).
     pub fn build(self) -> crate::types::ActionExecutionResult {
         crate::types::ActionExecutionResult {
@@ -111,6 +132,7 @@ impl ActionExecutionResultBuilder {
             external_execution_summary: self.external_execution_summary,
             external_execution_url: self.external_execution_url,
             error_details: self.error_details,
+            log_stream_arn: self.log_stream_arn,
         }
     }
 }

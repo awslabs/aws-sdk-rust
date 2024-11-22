@@ -691,4 +691,18 @@ impl CreateEventSourceMappingFluentBuilder {
     pub fn get_metrics_config(&self) -> &::std::option::Option<crate::types::EventSourceMappingMetricsConfig> {
         self.inner.get_metrics_config()
     }
+    /// <p>(Amazon MSK and self-managed Apache Kafka only) The Provisioned Mode configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html#invocation-eventsourcemapping-provisioned-mode">Provisioned Mode</a>.</p>
+    pub fn provisioned_poller_config(mut self, input: crate::types::ProvisionedPollerConfig) -> Self {
+        self.inner = self.inner.provisioned_poller_config(input);
+        self
+    }
+    /// <p>(Amazon MSK and self-managed Apache Kafka only) The Provisioned Mode configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html#invocation-eventsourcemapping-provisioned-mode">Provisioned Mode</a>.</p>
+    pub fn set_provisioned_poller_config(mut self, input: ::std::option::Option<crate::types::ProvisionedPollerConfig>) -> Self {
+        self.inner = self.inner.set_provisioned_poller_config(input);
+        self
+    }
+    /// <p>(Amazon MSK and self-managed Apache Kafka only) The Provisioned Mode configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html#invocation-eventsourcemapping-provisioned-mode">Provisioned Mode</a>.</p>
+    pub fn get_provisioned_poller_config(&self) -> &::std::option::Option<crate::types::ProvisionedPollerConfig> {
+        self.inner.get_provisioned_poller_config()
+    }
 }

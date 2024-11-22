@@ -16,6 +16,7 @@
 ///     ExplicitAuthFlowsType::AllowAdminUserPasswordAuth => { /* ... */ },
 ///     ExplicitAuthFlowsType::AllowCustomAuth => { /* ... */ },
 ///     ExplicitAuthFlowsType::AllowRefreshTokenAuth => { /* ... */ },
+///     ExplicitAuthFlowsType::AllowUserAuth => { /* ... */ },
 ///     ExplicitAuthFlowsType::AllowUserPasswordAuth => { /* ... */ },
 ///     ExplicitAuthFlowsType::AllowUserSrpAuth => { /* ... */ },
 ///     ExplicitAuthFlowsType::CustomAuthFlowOnly => { /* ... */ },
@@ -56,6 +57,8 @@ pub enum ExplicitAuthFlowsType {
     #[allow(missing_docs)] // documentation missing in model
     AllowRefreshTokenAuth,
     #[allow(missing_docs)] // documentation missing in model
+    AllowUserAuth,
+    #[allow(missing_docs)] // documentation missing in model
     AllowUserPasswordAuth,
     #[allow(missing_docs)] // documentation missing in model
     AllowUserSrpAuth,
@@ -74,6 +77,7 @@ impl ::std::convert::From<&str> for ExplicitAuthFlowsType {
             "ALLOW_ADMIN_USER_PASSWORD_AUTH" => ExplicitAuthFlowsType::AllowAdminUserPasswordAuth,
             "ALLOW_CUSTOM_AUTH" => ExplicitAuthFlowsType::AllowCustomAuth,
             "ALLOW_REFRESH_TOKEN_AUTH" => ExplicitAuthFlowsType::AllowRefreshTokenAuth,
+            "ALLOW_USER_AUTH" => ExplicitAuthFlowsType::AllowUserAuth,
             "ALLOW_USER_PASSWORD_AUTH" => ExplicitAuthFlowsType::AllowUserPasswordAuth,
             "ALLOW_USER_SRP_AUTH" => ExplicitAuthFlowsType::AllowUserSrpAuth,
             "CUSTOM_AUTH_FLOW_ONLY" => ExplicitAuthFlowsType::CustomAuthFlowOnly,
@@ -97,6 +101,7 @@ impl ExplicitAuthFlowsType {
             ExplicitAuthFlowsType::AllowAdminUserPasswordAuth => "ALLOW_ADMIN_USER_PASSWORD_AUTH",
             ExplicitAuthFlowsType::AllowCustomAuth => "ALLOW_CUSTOM_AUTH",
             ExplicitAuthFlowsType::AllowRefreshTokenAuth => "ALLOW_REFRESH_TOKEN_AUTH",
+            ExplicitAuthFlowsType::AllowUserAuth => "ALLOW_USER_AUTH",
             ExplicitAuthFlowsType::AllowUserPasswordAuth => "ALLOW_USER_PASSWORD_AUTH",
             ExplicitAuthFlowsType::AllowUserSrpAuth => "ALLOW_USER_SRP_AUTH",
             ExplicitAuthFlowsType::CustomAuthFlowOnly => "CUSTOM_AUTH_FLOW_ONLY",
@@ -111,6 +116,7 @@ impl ExplicitAuthFlowsType {
             "ALLOW_ADMIN_USER_PASSWORD_AUTH",
             "ALLOW_CUSTOM_AUTH",
             "ALLOW_REFRESH_TOKEN_AUTH",
+            "ALLOW_USER_AUTH",
             "ALLOW_USER_PASSWORD_AUTH",
             "ALLOW_USER_SRP_AUTH",
             "CUSTOM_AUTH_FLOW_ONLY",
@@ -142,6 +148,7 @@ impl ::std::fmt::Display for ExplicitAuthFlowsType {
             ExplicitAuthFlowsType::AllowAdminUserPasswordAuth => write!(f, "ALLOW_ADMIN_USER_PASSWORD_AUTH"),
             ExplicitAuthFlowsType::AllowCustomAuth => write!(f, "ALLOW_CUSTOM_AUTH"),
             ExplicitAuthFlowsType::AllowRefreshTokenAuth => write!(f, "ALLOW_REFRESH_TOKEN_AUTH"),
+            ExplicitAuthFlowsType::AllowUserAuth => write!(f, "ALLOW_USER_AUTH"),
             ExplicitAuthFlowsType::AllowUserPasswordAuth => write!(f, "ALLOW_USER_PASSWORD_AUTH"),
             ExplicitAuthFlowsType::AllowUserSrpAuth => write!(f, "ALLOW_USER_SRP_AUTH"),
             ExplicitAuthFlowsType::CustomAuthFlowOnly => write!(f, "CUSTOM_AUTH_FLOW_ONLY"),

@@ -17,6 +17,7 @@
 ///     AuthFlowType::CustomAuth => { /* ... */ },
 ///     AuthFlowType::RefreshToken => { /* ... */ },
 ///     AuthFlowType::RefreshTokenAuth => { /* ... */ },
+///     AuthFlowType::UserAuth => { /* ... */ },
 ///     AuthFlowType::UserPasswordAuth => { /* ... */ },
 ///     AuthFlowType::UserSrpAuth => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -57,6 +58,8 @@ pub enum AuthFlowType {
     #[allow(missing_docs)] // documentation missing in model
     RefreshTokenAuth,
     #[allow(missing_docs)] // documentation missing in model
+    UserAuth,
+    #[allow(missing_docs)] // documentation missing in model
     UserPasswordAuth,
     #[allow(missing_docs)] // documentation missing in model
     UserSrpAuth,
@@ -72,6 +75,7 @@ impl ::std::convert::From<&str> for AuthFlowType {
             "CUSTOM_AUTH" => AuthFlowType::CustomAuth,
             "REFRESH_TOKEN" => AuthFlowType::RefreshToken,
             "REFRESH_TOKEN_AUTH" => AuthFlowType::RefreshTokenAuth,
+            "USER_AUTH" => AuthFlowType::UserAuth,
             "USER_PASSWORD_AUTH" => AuthFlowType::UserPasswordAuth,
             "USER_SRP_AUTH" => AuthFlowType::UserSrpAuth,
             other => AuthFlowType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -94,6 +98,7 @@ impl AuthFlowType {
             AuthFlowType::CustomAuth => "CUSTOM_AUTH",
             AuthFlowType::RefreshToken => "REFRESH_TOKEN",
             AuthFlowType::RefreshTokenAuth => "REFRESH_TOKEN_AUTH",
+            AuthFlowType::UserAuth => "USER_AUTH",
             AuthFlowType::UserPasswordAuth => "USER_PASSWORD_AUTH",
             AuthFlowType::UserSrpAuth => "USER_SRP_AUTH",
             AuthFlowType::Unknown(value) => value.as_str(),
@@ -107,6 +112,7 @@ impl AuthFlowType {
             "CUSTOM_AUTH",
             "REFRESH_TOKEN",
             "REFRESH_TOKEN_AUTH",
+            "USER_AUTH",
             "USER_PASSWORD_AUTH",
             "USER_SRP_AUTH",
         ]
@@ -137,6 +143,7 @@ impl ::std::fmt::Display for AuthFlowType {
             AuthFlowType::CustomAuth => write!(f, "CUSTOM_AUTH"),
             AuthFlowType::RefreshToken => write!(f, "REFRESH_TOKEN"),
             AuthFlowType::RefreshTokenAuth => write!(f, "REFRESH_TOKEN_AUTH"),
+            AuthFlowType::UserAuth => write!(f, "USER_AUTH"),
             AuthFlowType::UserPasswordAuth => write!(f, "USER_PASSWORD_AUTH"),
             AuthFlowType::UserSrpAuth => write!(f, "USER_SRP_AUTH"),
             AuthFlowType::Unknown(value) => write!(f, "{}", value),

@@ -12,15 +12,18 @@
 /// ```text
 /// # let contactinitiationmethod = unimplemented!();
 /// match contactinitiationmethod {
+///     ContactInitiationMethod::AgentReply => { /* ... */ },
 ///     ContactInitiationMethod::Api => { /* ... */ },
 ///     ContactInitiationMethod::Callback => { /* ... */ },
 ///     ContactInitiationMethod::Disconnect => { /* ... */ },
 ///     ContactInitiationMethod::ExternalOutbound => { /* ... */ },
+///     ContactInitiationMethod::Flow => { /* ... */ },
 ///     ContactInitiationMethod::Inbound => { /* ... */ },
 ///     ContactInitiationMethod::Monitor => { /* ... */ },
 ///     ContactInitiationMethod::Outbound => { /* ... */ },
 ///     ContactInitiationMethod::QueueTransfer => { /* ... */ },
 ///     ContactInitiationMethod::Transfer => { /* ... */ },
+///     ContactInitiationMethod::WebrtcApi => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -49,6 +52,8 @@
 )]
 pub enum ContactInitiationMethod {
     #[allow(missing_docs)] // documentation missing in model
+    AgentReply,
+    #[allow(missing_docs)] // documentation missing in model
     Api,
     #[allow(missing_docs)] // documentation missing in model
     Callback,
@@ -56,6 +61,8 @@ pub enum ContactInitiationMethod {
     Disconnect,
     #[allow(missing_docs)] // documentation missing in model
     ExternalOutbound,
+    #[allow(missing_docs)] // documentation missing in model
+    Flow,
     #[allow(missing_docs)] // documentation missing in model
     Inbound,
     #[allow(missing_docs)] // documentation missing in model
@@ -66,6 +73,8 @@ pub enum ContactInitiationMethod {
     QueueTransfer,
     #[allow(missing_docs)] // documentation missing in model
     Transfer,
+    #[allow(missing_docs)] // documentation missing in model
+    WebrtcApi,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -73,15 +82,18 @@ pub enum ContactInitiationMethod {
 impl ::std::convert::From<&str> for ContactInitiationMethod {
     fn from(s: &str) -> Self {
         match s {
+            "AGENT_REPLY" => ContactInitiationMethod::AgentReply,
             "API" => ContactInitiationMethod::Api,
             "CALLBACK" => ContactInitiationMethod::Callback,
             "DISCONNECT" => ContactInitiationMethod::Disconnect,
             "EXTERNAL_OUTBOUND" => ContactInitiationMethod::ExternalOutbound,
+            "FLOW" => ContactInitiationMethod::Flow,
             "INBOUND" => ContactInitiationMethod::Inbound,
             "MONITOR" => ContactInitiationMethod::Monitor,
             "OUTBOUND" => ContactInitiationMethod::Outbound,
             "QUEUE_TRANSFER" => ContactInitiationMethod::QueueTransfer,
             "TRANSFER" => ContactInitiationMethod::Transfer,
+            "WEBRTC_API" => ContactInitiationMethod::WebrtcApi,
             other => ContactInitiationMethod::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -97,30 +109,36 @@ impl ContactInitiationMethod {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ContactInitiationMethod::AgentReply => "AGENT_REPLY",
             ContactInitiationMethod::Api => "API",
             ContactInitiationMethod::Callback => "CALLBACK",
             ContactInitiationMethod::Disconnect => "DISCONNECT",
             ContactInitiationMethod::ExternalOutbound => "EXTERNAL_OUTBOUND",
+            ContactInitiationMethod::Flow => "FLOW",
             ContactInitiationMethod::Inbound => "INBOUND",
             ContactInitiationMethod::Monitor => "MONITOR",
             ContactInitiationMethod::Outbound => "OUTBOUND",
             ContactInitiationMethod::QueueTransfer => "QUEUE_TRANSFER",
             ContactInitiationMethod::Transfer => "TRANSFER",
+            ContactInitiationMethod::WebrtcApi => "WEBRTC_API",
             ContactInitiationMethod::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "AGENT_REPLY",
             "API",
             "CALLBACK",
             "DISCONNECT",
             "EXTERNAL_OUTBOUND",
+            "FLOW",
             "INBOUND",
             "MONITOR",
             "OUTBOUND",
             "QUEUE_TRANSFER",
             "TRANSFER",
+            "WEBRTC_API",
         ]
     }
 }
@@ -144,15 +162,18 @@ impl ContactInitiationMethod {
 impl ::std::fmt::Display for ContactInitiationMethod {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ContactInitiationMethod::AgentReply => write!(f, "AGENT_REPLY"),
             ContactInitiationMethod::Api => write!(f, "API"),
             ContactInitiationMethod::Callback => write!(f, "CALLBACK"),
             ContactInitiationMethod::Disconnect => write!(f, "DISCONNECT"),
             ContactInitiationMethod::ExternalOutbound => write!(f, "EXTERNAL_OUTBOUND"),
+            ContactInitiationMethod::Flow => write!(f, "FLOW"),
             ContactInitiationMethod::Inbound => write!(f, "INBOUND"),
             ContactInitiationMethod::Monitor => write!(f, "MONITOR"),
             ContactInitiationMethod::Outbound => write!(f, "OUTBOUND"),
             ContactInitiationMethod::QueueTransfer => write!(f, "QUEUE_TRANSFER"),
             ContactInitiationMethod::Transfer => write!(f, "TRANSFER"),
+            ContactInitiationMethod::WebrtcApi => write!(f, "WEBRTC_API"),
             ContactInitiationMethod::Unknown(value) => write!(f, "{}", value),
         }
     }

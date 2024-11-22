@@ -3,26 +3,35 @@ pub fn ser_create_topic_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_topic::CreateTopicInput,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.tags {
-        let mut array_2 = object.key("Tags").start_array();
+    if let Some(var_1) = &input.folder_arns {
+        let mut array_2 = object.key("FolderArns").start_array();
         for item_3 in var_1 {
             {
-                #[allow(unused_mut)]
-                let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_4, item_3)?;
-                object_4.finish();
+                array_2.value().string(item_3.as_str());
             }
         }
         array_2.finish();
     }
-    if let Some(var_5) = &input.topic {
-        #[allow(unused_mut)]
-        let mut object_6 = object.key("Topic").start_object();
-        crate::protocol_serde::shape_topic_details::ser_topic_details(&mut object_6, var_5)?;
-        object_6.finish();
+    if let Some(var_4) = &input.tags {
+        let mut array_5 = object.key("Tags").start_array();
+        for item_6 in var_4 {
+            {
+                #[allow(unused_mut)]
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_7, item_6)?;
+                object_7.finish();
+            }
+        }
+        array_5.finish();
     }
-    if let Some(var_7) = &input.topic_id {
-        object.key("TopicId").string(var_7.as_str());
+    if let Some(var_8) = &input.topic {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("Topic").start_object();
+        crate::protocol_serde::shape_topic_details::ser_topic_details(&mut object_9, var_8)?;
+        object_9.finish();
+    }
+    if let Some(var_10) = &input.topic_id {
+        object.key("TopicId").string(var_10.as_str());
     }
     Ok(())
 }

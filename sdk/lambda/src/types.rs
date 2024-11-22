@@ -77,6 +77,8 @@ pub use crate::types::_environment::Environment;
 
 pub use crate::types::_vpc_config::VpcConfig;
 
+pub use crate::types::_provisioned_poller_config::ProvisionedPollerConfig;
+
 pub use crate::types::_event_source_mapping_metrics_config::EventSourceMappingMetricsConfig;
 
 pub use crate::types::_event_source_mapping_metric::EventSourceMappingMetric;
@@ -292,6 +294,8 @@ mod _package_type;
 mod _provisioned_concurrency_config_list_item;
 
 mod _provisioned_concurrency_status_enum;
+
+mod _provisioned_poller_config;
 
 mod _recursive_loop;
 

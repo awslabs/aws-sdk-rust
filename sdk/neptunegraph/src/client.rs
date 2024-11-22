@@ -140,6 +140,10 @@ impl Client {
 /// Import this trait to get `wait_until` methods on the client.
 ///
 pub trait Waiters {
+    /// Wait until Export Task is Successful
+    fn wait_until_export_task_successful(&self) -> crate::waiters::export_task_successful::ExportTaskSuccessfulFluentBuilder;
+    /// Wait until Export Task is Cancelled
+    fn wait_until_export_task_cancelled(&self) -> crate::waiters::export_task_cancelled::ExportTaskCancelledFluentBuilder;
     /// Wait until Graph is Available
     fn wait_until_graph_available(&self) -> crate::waiters::graph_available::GraphAvailableFluentBuilder;
     /// Wait until Graph is Deleted
@@ -160,6 +164,12 @@ pub trait Waiters {
     fn wait_until_private_graph_endpoint_deleted(&self) -> crate::waiters::private_graph_endpoint_deleted::PrivateGraphEndpointDeletedFluentBuilder;
 }
 impl Waiters for Client {
+    fn wait_until_export_task_successful(&self) -> crate::waiters::export_task_successful::ExportTaskSuccessfulFluentBuilder {
+        crate::waiters::export_task_successful::ExportTaskSuccessfulFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_export_task_cancelled(&self) -> crate::waiters::export_task_cancelled::ExportTaskCancelledFluentBuilder {
+        crate::waiters::export_task_cancelled::ExportTaskCancelledFluentBuilder::new(self.handle.clone())
+    }
     fn wait_until_graph_available(&self) -> crate::waiters::graph_available::GraphAvailableFluentBuilder {
         crate::waiters::graph_available::GraphAvailableFluentBuilder::new(self.handle.clone())
     }
@@ -203,6 +213,8 @@ impl Client {
         Self::from_conf(sdk_config.into())
     }
 }
+
+mod cancel_export_task;
 
 mod cancel_import_task;
 
@@ -251,6 +263,8 @@ mod delete_private_graph_endpoint;
 
 mod execute_query;
 
+mod get_export_task;
+
 mod get_graph;
 
 mod get_graph_snapshot;
@@ -262,6 +276,8 @@ mod get_import_task;
 mod get_private_graph_endpoint;
 
 mod get_query;
+
+mod list_export_tasks;
 
 mod list_graph_snapshots;
 
@@ -278,6 +294,8 @@ mod list_tags_for_resource;
 mod reset_graph;
 
 mod restore_graph_from_snapshot;
+
+mod start_export_task;
 
 mod start_import_task;
 

@@ -24,6 +24,10 @@ pub struct StateExitedEventDetails {
     pub output: ::std::option::Option<::std::string::String>,
     /// <p>Contains details about the output of an execution history event.</p>
     pub output_details: ::std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
+    /// <p>Map of variable name and value as a serialized JSON representation.</p>
+    pub assigned_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>Provides details about input or output in an execution history event.</p>
+    pub assigned_variables_details: ::std::option::Option<crate::types::AssignedVariablesDetails>,
 }
 impl StateExitedEventDetails {
     /// <p>The name of the state.</p>
@@ -53,6 +57,14 @@ impl StateExitedEventDetails {
     pub fn output_details(&self) -> ::std::option::Option<&crate::types::HistoryEventExecutionDataDetails> {
         self.output_details.as_ref()
     }
+    /// <p>Map of variable name and value as a serialized JSON representation.</p>
+    pub fn assigned_variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.assigned_variables.as_ref()
+    }
+    /// <p>Provides details about input or output in an execution history event.</p>
+    pub fn assigned_variables_details(&self) -> ::std::option::Option<&crate::types::AssignedVariablesDetails> {
+        self.assigned_variables_details.as_ref()
+    }
 }
 impl ::std::fmt::Debug for StateExitedEventDetails {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -60,6 +72,8 @@ impl ::std::fmt::Debug for StateExitedEventDetails {
         formatter.field("name", &self.name);
         formatter.field("output", &"*** Sensitive Data Redacted ***");
         formatter.field("output_details", &self.output_details);
+        formatter.field("assigned_variables", &"*** Sensitive Data Redacted ***");
+        formatter.field("assigned_variables_details", &self.assigned_variables_details);
         formatter.finish()
     }
 }
@@ -77,6 +91,8 @@ pub struct StateExitedEventDetailsBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) output: ::std::option::Option<::std::string::String>,
     pub(crate) output_details: ::std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
+    pub(crate) assigned_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) assigned_variables_details: ::std::option::Option<crate::types::AssignedVariablesDetails>,
 }
 impl StateExitedEventDetailsBuilder {
     /// <p>The name of the state.</p>
@@ -164,6 +180,47 @@ impl StateExitedEventDetailsBuilder {
     pub fn get_output_details(&self) -> &::std::option::Option<crate::types::HistoryEventExecutionDataDetails> {
         &self.output_details
     }
+    /// Adds a key-value pair to `assigned_variables`.
+    ///
+    /// To override the contents of this collection use [`set_assigned_variables`](Self::set_assigned_variables).
+    ///
+    /// <p>Map of variable name and value as a serialized JSON representation.</p>
+    pub fn assigned_variables(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.assigned_variables.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.assigned_variables = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Map of variable name and value as a serialized JSON representation.</p>
+    pub fn set_assigned_variables(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.assigned_variables = input;
+        self
+    }
+    /// <p>Map of variable name and value as a serialized JSON representation.</p>
+    pub fn get_assigned_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.assigned_variables
+    }
+    /// <p>Provides details about input or output in an execution history event.</p>
+    pub fn assigned_variables_details(mut self, input: crate::types::AssignedVariablesDetails) -> Self {
+        self.assigned_variables_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Provides details about input or output in an execution history event.</p>
+    pub fn set_assigned_variables_details(mut self, input: ::std::option::Option<crate::types::AssignedVariablesDetails>) -> Self {
+        self.assigned_variables_details = input;
+        self
+    }
+    /// <p>Provides details about input or output in an execution history event.</p>
+    pub fn get_assigned_variables_details(&self) -> &::std::option::Option<crate::types::AssignedVariablesDetails> {
+        &self.assigned_variables_details
+    }
     /// Consumes the builder and constructs a [`StateExitedEventDetails`](crate::types::StateExitedEventDetails).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::StateExitedEventDetailsBuilder::name)
@@ -177,6 +234,8 @@ impl StateExitedEventDetailsBuilder {
             })?,
             output: self.output,
             output_details: self.output_details,
+            assigned_variables: self.assigned_variables,
+            assigned_variables_details: self.assigned_variables_details,
         })
     }
 }
@@ -186,6 +245,8 @@ impl ::std::fmt::Debug for StateExitedEventDetailsBuilder {
         formatter.field("name", &self.name);
         formatter.field("output", &"*** Sensitive Data Redacted ***");
         formatter.field("output_details", &self.output_details);
+        formatter.field("assigned_variables", &"*** Sensitive Data Redacted ***");
+        formatter.field("assigned_variables_details", &self.assigned_variables_details);
         formatter.finish()
     }
 }

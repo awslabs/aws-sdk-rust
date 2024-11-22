@@ -9,6 +9,15 @@ pub fn ser_reference(
     {
         object.key("Type").string(input.r#type.as_str());
     }
+    if let Some(var_1) = &input.status {
+        object.key("Status").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.arn {
+        object.key("Arn").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.status_reason {
+        object.key("StatusReason").string(var_3.as_str());
+    }
     Ok(())
 }
 
@@ -38,6 +47,27 @@ where
                             builder = builder.set_type(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::ReferenceType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "Status" => {
+                            builder = builder.set_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ReferenceStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "Arn" => {
+                            builder = builder.set_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "StatusReason" => {
+                            builder = builder.set_status_reason(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }

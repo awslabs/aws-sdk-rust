@@ -1409,6 +1409,8 @@ pub use crate::types::_optimization_job_output_config::OptimizationJobOutputConf
 
 pub use crate::types::_optimization_config::OptimizationConfig;
 
+pub use crate::types::_model_sharding_config::ModelShardingConfig;
+
 pub use crate::types::_model_compilation_config::ModelCompilationConfig;
 
 pub use crate::types::_model_quantization_config::ModelQuantizationConfig;
@@ -2804,6 +2806,8 @@ mod _model_quality_job_input;
 mod _model_quantization_config;
 
 mod _model_register_settings;
+
+mod _model_sharding_config;
 
 mod _model_sort_key;
 

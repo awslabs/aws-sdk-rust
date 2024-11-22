@@ -99,13 +99,13 @@ pub use crate::types::_memory_session_summary::MemorySessionSummary;
 
 pub use crate::types::_memory_type::MemoryType;
 
-pub use crate::types::_response_stream::ResponseStream;
+pub use crate::types::_inline_agent_response_stream::InlineAgentResponseStream;
 
-pub use crate::types::_file_part::FilePart;
+pub use crate::types::_inline_agent_file_part::InlineAgentFilePart;
 
 pub use crate::types::_output_file::OutputFile;
 
-pub use crate::types::_return_control_payload::ReturnControlPayload;
+pub use crate::types::_inline_agent_return_control_payload::InlineAgentReturnControlPayload;
 
 pub use crate::types::_invocation_input_member::InvocationInputMember;
 
@@ -125,7 +125,7 @@ pub use crate::types::_parameter::Parameter;
 
 pub use crate::types::_api_parameter::ApiParameter;
 
-pub use crate::types::_trace_part::TracePart;
+pub use crate::types::_inline_agent_trace_part::InlineAgentTracePart;
 
 pub use crate::types::_trace::Trace;
 
@@ -237,13 +237,43 @@ pub use crate::types::_guardrail_topic_type::GuardrailTopicType;
 
 pub use crate::types::_guardrail_action::GuardrailAction;
 
-pub use crate::types::_payload_part::PayloadPart;
+pub use crate::types::_inline_agent_payload_part::InlineAgentPayloadPart;
 
 pub use crate::types::_attribution::Attribution;
 
-pub use crate::types::_session_state::SessionState;
+pub use crate::types::_prompt_override_configuration::PromptOverrideConfiguration;
 
-pub use crate::types::_knowledge_base_configuration::KnowledgeBaseConfiguration;
+pub use crate::types::_prompt_configuration::PromptConfiguration;
+
+pub use crate::types::_prompt_state::PromptState;
+
+pub use crate::types::_guardrail_configuration_with_arn::GuardrailConfigurationWithArn;
+
+pub use crate::types::_knowledge_base::KnowledgeBase;
+
+pub use crate::types::_agent_action_group::AgentActionGroup;
+
+pub use crate::types::_function_schema::FunctionSchema;
+
+pub use crate::types::_function_definition::FunctionDefinition;
+
+pub use crate::types::_require_confirmation::RequireConfirmation;
+
+pub use crate::types::_parameter_detail::ParameterDetail;
+
+pub use crate::types::_parameter_type::ParameterType;
+
+pub use crate::types::_api_schema::ApiSchema;
+
+pub use crate::types::_s3_identifier::S3Identifier;
+
+pub use crate::types::_action_group_executor::ActionGroupExecutor;
+
+pub use crate::types::_custom_control_method::CustomControlMethod;
+
+pub use crate::types::_action_group_signature::ActionGroupSignature;
+
+pub use crate::types::_inline_session_state::InlineSessionState;
 
 pub use crate::types::_input_file::InputFile;
 
@@ -268,6 +298,20 @@ pub use crate::types::_content_body::ContentBody;
 pub use crate::types::_confirmation_state::ConfirmationState;
 
 pub use crate::types::_api_result::ApiResult;
+
+pub use crate::types::_response_stream::ResponseStream;
+
+pub use crate::types::_file_part::FilePart;
+
+pub use crate::types::_return_control_payload::ReturnControlPayload;
+
+pub use crate::types::_trace_part::TracePart;
+
+pub use crate::types::_payload_part::PayloadPart;
+
+pub use crate::types::_session_state::SessionState;
+
+pub use crate::types::_knowledge_base_configuration::KnowledgeBaseConfiguration;
 
 pub use crate::types::_flow_response_stream::FlowResponseStream;
 
@@ -305,11 +349,17 @@ pub use crate::types::_flow_input::FlowInput;
 
 pub use crate::types::_flow_input_content::FlowInputContent;
 
+mod _action_group_executor;
+
 mod _action_group_invocation_input;
 
 mod _action_group_invocation_output;
 
+mod _action_group_signature;
+
 mod _action_invocation_type;
+
+mod _agent_action_group;
 
 mod _analyze_prompt_event;
 
@@ -320,6 +370,8 @@ mod _api_parameter;
 mod _api_request_body;
 
 mod _api_result;
+
+mod _api_schema;
 
 mod _attribution;
 
@@ -338,6 +390,8 @@ mod _confirmation_state;
 mod _content_body;
 
 mod _creation_mode;
+
+mod _custom_control_method;
 
 mod _execution_type;
 
@@ -397,11 +451,15 @@ mod _flow_trace_node_output_event;
 
 mod _flow_trace_node_output_field;
 
+mod _function_definition;
+
 mod _function_invocation_input;
 
 mod _function_parameter;
 
 mod _function_result;
+
+mod _function_schema;
 
 mod _generated_response_part;
 
@@ -414,6 +472,8 @@ mod _guardrail_action;
 mod _guardrail_assessment;
 
 mod _guardrail_configuration;
+
+mod _guardrail_configuration_with_arn;
 
 mod _guardrail_content_filter;
 
@@ -459,6 +519,18 @@ mod _inference_config;
 
 mod _inference_configuration;
 
+mod _inline_agent_file_part;
+
+mod _inline_agent_payload_part;
+
+mod _inline_agent_response_stream;
+
+mod _inline_agent_return_control_payload;
+
+mod _inline_agent_trace_part;
+
+mod _inline_session_state;
+
 mod _input_file;
 
 mod _input_prompt;
@@ -470,6 +542,8 @@ mod _invocation_input_member;
 mod _invocation_result_member;
 
 mod _invocation_type;
+
+mod _knowledge_base;
 
 mod _knowledge_base_configuration;
 
@@ -517,6 +591,10 @@ mod _output_file;
 
 mod _parameter;
 
+mod _parameter_detail;
+
+mod _parameter_type;
+
 mod _payload_part;
 
 mod _post_processing_model_invocation_output;
@@ -530,6 +608,12 @@ mod _pre_processing_model_invocation_output;
 mod _pre_processing_parsed_response;
 
 mod _pre_processing_trace;
+
+mod _prompt_configuration;
+
+mod _prompt_override_configuration;
+
+mod _prompt_state;
 
 mod _prompt_template;
 
@@ -548,6 +632,8 @@ mod _raw_response;
 mod _reprompt_response;
 
 mod _request_body;
+
+mod _require_confirmation;
 
 mod _response_state;
 
@@ -584,6 +670,8 @@ mod _retrieve_and_generate_type;
 mod _retrieved_reference;
 
 mod _return_control_payload;
+
+mod _s3_identifier;
 
 mod _s3_object_doc;
 

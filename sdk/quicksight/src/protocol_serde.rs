@@ -171,6 +171,8 @@ pub(crate) mod shape_describe_dashboard_snapshot_job;
 
 pub(crate) mod shape_describe_dashboard_snapshot_job_result;
 
+pub(crate) mod shape_describe_dashboards_qa_configuration;
+
 pub(crate) mod shape_describe_data_set;
 
 pub(crate) mod shape_describe_data_set_permissions;
@@ -327,6 +329,8 @@ pub(crate) mod shape_search_folders;
 
 pub(crate) mod shape_search_groups;
 
+pub(crate) mod shape_search_topics;
+
 pub(crate) mod shape_start_asset_bundle_export_job;
 
 pub(crate) mod shape_start_asset_bundle_import_job;
@@ -362,6 +366,8 @@ pub(crate) mod shape_update_dashboard_links;
 pub(crate) mod shape_update_dashboard_permissions;
 
 pub(crate) mod shape_update_dashboard_published_version;
+
+pub(crate) mod shape_update_dashboards_qa_configuration;
 
 pub(crate) mod shape_update_data_set;
 
@@ -527,6 +533,8 @@ pub(crate) mod shape_search_folders_input;
 
 pub(crate) mod shape_search_groups_input;
 
+pub(crate) mod shape_search_topics_input;
+
 pub(crate) mod shape_session_lifetime_in_minutes_invalid_exception;
 
 pub(crate) mod shape_start_asset_bundle_export_job_input;
@@ -564,6 +572,8 @@ pub(crate) mod shape_update_dashboard_input;
 pub(crate) mod shape_update_dashboard_links_input;
 
 pub(crate) mod shape_update_dashboard_permissions_input;
+
+pub(crate) mod shape_update_dashboards_qa_configuration_input;
 
 pub(crate) mod shape_update_data_set_input;
 
@@ -870,6 +880,8 @@ pub(crate) mod shape_topic_refresh_schedule;
 pub(crate) mod shape_topic_refresh_schedule_summaries;
 
 pub(crate) mod shape_topic_reviewed_answers;
+
+pub(crate) mod shape_topic_search_filter;
 
 pub(crate) mod shape_topic_summaries;
 
@@ -1271,6 +1283,10 @@ pub(crate) mod shape_sql_server_parameters;
 
 pub(crate) mod shape_starburst_parameters;
 
+pub(crate) mod shape_static_file;
+
+pub(crate) mod shape_static_file_list;
+
 pub(crate) mod shape_string_dataset_parameter;
 
 pub(crate) mod shape_string_list;
@@ -1399,6 +1415,8 @@ pub(crate) mod shape_format_configuration;
 
 pub(crate) mod shape_identity_center_configuration;
 
+pub(crate) mod shape_image_static_file;
+
 pub(crate) mod shape_incremental_refresh;
 
 pub(crate) mod shape_input_column;
@@ -1449,6 +1467,8 @@ pub(crate) mod shape_sheet;
 
 pub(crate) mod shape_sheet_control_layout;
 
+pub(crate) mod shape_sheet_image;
+
 pub(crate) mod shape_sheet_text_box;
 
 pub(crate) mod shape_slot;
@@ -1460,6 +1480,8 @@ pub(crate) mod shape_snapshot_file;
 pub(crate) mod shape_snapshot_s3_destination_configuration;
 
 pub(crate) mod shape_snapshot_s3_destination_configuration_list;
+
+pub(crate) mod shape_spatial_static_file;
 
 pub(crate) mod shape_string_dataset_parameter_default_values;
 
@@ -1629,6 +1651,10 @@ pub(crate) mod shape_histogram_visual;
 
 pub(crate) mod shape_identifier;
 
+pub(crate) mod shape_image_custom_action;
+
+pub(crate) mod shape_image_interaction_options;
+
 pub(crate) mod shape_image_set;
 
 pub(crate) mod shape_image_set_configuration;
@@ -1642,6 +1668,8 @@ pub(crate) mod shape_integer_value_when_unset_configuration;
 pub(crate) mod shape_join_key_properties;
 
 pub(crate) mod shape_kpi_visual;
+
+pub(crate) mod shape_layer_map_visual;
 
 pub(crate) mod shape_layout_configuration;
 
@@ -1691,6 +1719,8 @@ pub(crate) mod shape_pie_chart_visual;
 
 pub(crate) mod shape_pivot_table_visual;
 
+pub(crate) mod shape_plugin_visual;
+
 pub(crate) mod shape_principal_list;
 
 pub(crate) mod shape_radar_chart_visual;
@@ -1719,6 +1749,14 @@ pub(crate) mod shape_sheet_control_layout_configuration;
 
 pub(crate) mod shape_sheet_control_layout_list;
 
+pub(crate) mod shape_sheet_image_list;
+
+pub(crate) mod shape_sheet_image_scaling_configuration;
+
+pub(crate) mod shape_sheet_image_source;
+
+pub(crate) mod shape_sheet_image_tooltip_configuration;
+
 pub(crate) mod shape_sheet_text_box_list;
 
 pub(crate) mod shape_slots;
@@ -1730,6 +1768,8 @@ pub(crate) mod shape_snapshot_file_sheet_selection;
 pub(crate) mod shape_snapshot_job_result_file_group_list;
 
 pub(crate) mod shape_state_persistence_configurations;
+
+pub(crate) mod shape_static_file_source;
 
 pub(crate) mod shape_string_default_values;
 
@@ -1859,6 +1899,8 @@ pub(crate) mod shape_gauge_chart_conditional_formatting;
 
 pub(crate) mod shape_gauge_chart_configuration;
 
+pub(crate) mod shape_geospatial_layer_map_configuration;
+
 pub(crate) mod shape_geospatial_map_configuration;
 
 pub(crate) mod shape_grid_layout_configuration;
@@ -1870,6 +1912,10 @@ pub(crate) mod shape_histogram_configuration;
 pub(crate) mod shape_image;
 
 pub(crate) mod shape_image_configuration;
+
+pub(crate) mod shape_image_custom_action_operation;
+
+pub(crate) mod shape_image_menu_option;
 
 pub(crate) mod shape_inner_filter;
 
@@ -1905,6 +1951,8 @@ pub(crate) mod shape_pivot_table_conditional_formatting;
 
 pub(crate) mod shape_pivot_table_configuration;
 
+pub(crate) mod shape_plugin_visual_configuration;
+
 pub(crate) mod shape_radar_chart_configuration;
 
 pub(crate) mod shape_relative_date_time_control_display_options;
@@ -1925,11 +1973,19 @@ pub(crate) mod shape_sensitive_string_list;
 
 pub(crate) mod shape_sensitive_timestamp_list;
 
+pub(crate) mod shape_sheet_image_static_file_source;
+
+pub(crate) mod shape_sheet_image_tooltip_text;
+
 pub(crate) mod shape_sheet_visual_scoping_configuration;
 
 pub(crate) mod shape_slider_control_display_options;
 
 pub(crate) mod shape_snapshot_job_result_file_group;
+
+pub(crate) mod shape_static_file_s3_source_options;
+
+pub(crate) mod shape_static_file_url_source_options;
 
 pub(crate) mod shape_table_conditional_formatting;
 
@@ -2005,6 +2061,12 @@ pub(crate) mod shape_contribution_analysis_default;
 
 pub(crate) mod shape_currency_display_format_configuration;
 
+pub(crate) mod shape_custom_action_navigation_operation;
+
+pub(crate) mod shape_custom_action_set_parameters_operation;
+
+pub(crate) mod shape_custom_action_url_operation;
+
 pub(crate) mod shape_custom_filter_configuration;
 
 pub(crate) mod shape_custom_filter_list_configuration;
@@ -2057,7 +2119,13 @@ pub(crate) mod shape_gauge_chart_field_wells;
 
 pub(crate) mod shape_gauge_chart_options;
 
+pub(crate) mod shape_geospatial_layer_item;
+
 pub(crate) mod shape_geospatial_map_field_wells;
+
+pub(crate) mod shape_geospatial_map_state;
+
+pub(crate) mod shape_geospatial_map_style;
 
 pub(crate) mod shape_geospatial_map_style_options;
 
@@ -2078,6 +2146,8 @@ pub(crate) mod shape_heat_map_sort_configuration;
 pub(crate) mod shape_histogram_bin_options;
 
 pub(crate) mod shape_histogram_field_wells;
+
+pub(crate) mod shape_image_custom_action_list;
 
 pub(crate) mod shape_image_source;
 
@@ -2138,6 +2208,12 @@ pub(crate) mod shape_pivot_table_paginated_report_options;
 pub(crate) mod shape_pivot_table_sort_configuration;
 
 pub(crate) mod shape_pivot_table_total_options;
+
+pub(crate) mod shape_plugin_visual_field_well;
+
+pub(crate) mod shape_plugin_visual_options;
+
+pub(crate) mod shape_plugin_visual_sort_configuration;
 
 pub(crate) mod shape_predefined_hierarchy;
 
@@ -2277,12 +2353,6 @@ pub(crate) mod shape_context_menu_option;
 
 pub(crate) mod shape_custom_action_filter_operation;
 
-pub(crate) mod shape_custom_action_navigation_operation;
-
-pub(crate) mod shape_custom_action_set_parameters_operation;
-
-pub(crate) mod shape_custom_action_url_operation;
-
 pub(crate) mod shape_data_bars_options;
 
 pub(crate) mod shape_data_color;
@@ -2347,7 +2417,13 @@ pub(crate) mod shape_gauge_chart_primary_value_conditional_formatting;
 
 pub(crate) mod shape_geospatial_coordinate_bounds;
 
+pub(crate) mod shape_geospatial_data_source_item;
+
 pub(crate) mod shape_geospatial_heatmap_configuration;
+
+pub(crate) mod shape_geospatial_layer_definition;
+
+pub(crate) mod shape_geospatial_layer_join_definition;
 
 pub(crate) mod shape_geospatial_map_aggregated_field_wells;
 
@@ -2373,6 +2449,8 @@ pub(crate) mod shape_kpi_sparkline_options;
 
 pub(crate) mod shape_kpi_visual_layout_options;
 
+pub(crate) mod shape_layer_custom_action;
+
 pub(crate) mod shape_line_chart_aggregated_field_wells;
 
 pub(crate) mod shape_line_chart_line_style_settings;
@@ -2380,6 +2458,8 @@ pub(crate) mod shape_line_chart_line_style_settings;
 pub(crate) mod shape_line_chart_marker_style_settings;
 
 pub(crate) mod shape_loading_animation;
+
+pub(crate) mod shape_local_navigation_configuration;
 
 pub(crate) mod shape_maximum_minimum_computation;
 
@@ -2421,6 +2501,10 @@ pub(crate) mod shape_pivot_table_rows_label_options;
 
 pub(crate) mod shape_pivot_total_options;
 
+pub(crate) mod shape_plugin_visual_property;
+
+pub(crate) mod shape_plugin_visual_table_query_sort;
+
 pub(crate) mod shape_progress_bar_options;
 
 pub(crate) mod shape_projected_column_list;
@@ -2454,6 +2538,8 @@ pub(crate) mod shape_section_layout_configuration;
 pub(crate) mod shape_section_page_break_configuration;
 
 pub(crate) mod shape_section_style;
+
+pub(crate) mod shape_set_parameter_value_configuration;
 
 pub(crate) mod shape_sheet_element_rendering_rule;
 
@@ -2492,6 +2578,8 @@ pub(crate) mod shape_tree_map_aggregated_field_wells;
 pub(crate) mod shape_trend_arrow_options;
 
 pub(crate) mod shape_type_parameters;
+
+pub(crate) mod shape_unaggregated_field;
 
 pub(crate) mod shape_unique_values_computation;
 
@@ -2551,6 +2639,8 @@ pub(crate) mod shape_date_dimension_field;
 
 pub(crate) mod shape_date_measure_field;
 
+pub(crate) mod shape_destination_parameter_value_configuration;
+
 pub(crate) mod shape_field_label_type;
 
 pub(crate) mod shape_field_sort;
@@ -2577,19 +2667,33 @@ pub(crate) mod shape_gauge_chart_conditional_formatting_option_list;
 
 pub(crate) mod shape_geospatial_heatmap_color_scale;
 
+pub(crate) mod shape_geospatial_layer_color_field;
+
+pub(crate) mod shape_geospatial_line_layer;
+
+pub(crate) mod shape_geospatial_map_layer_list;
+
+pub(crate) mod shape_geospatial_point_layer;
+
+pub(crate) mod shape_geospatial_polygon_layer;
+
+pub(crate) mod shape_geospatial_static_file_source;
+
 pub(crate) mod shape_global_table_border_options;
 
 pub(crate) mod shape_grid_layout_element_list;
 
 pub(crate) mod shape_header_footer_section_configuration_list;
 
+pub(crate) mod shape_image_custom_action_operation_list;
+
 pub(crate) mod shape_kpi_conditional_formatting_option_list;
 
 pub(crate) mod shape_kpi_visual_standard_layout;
 
-pub(crate) mod shape_line_chart_series_settings;
+pub(crate) mod shape_layer_custom_action_operation;
 
-pub(crate) mod shape_local_navigation_configuration;
+pub(crate) mod shape_line_chart_series_settings;
 
 pub(crate) mod shape_maximum_label_type;
 
@@ -2617,6 +2721,10 @@ pub(crate) mod shape_pivot_table_field_subtotal_options;
 
 pub(crate) mod shape_pivot_table_sort_by;
 
+pub(crate) mod shape_plugin_visual_field_wells;
+
+pub(crate) mod shape_plugin_visual_items_limit_configuration;
+
 pub(crate) mod shape_range_ends_label_type;
 
 pub(crate) mod shape_reference_line_custom_label_configuration;
@@ -2632,8 +2740,6 @@ pub(crate) mod shape_reference_line_value_label_configuration;
 pub(crate) mod shape_section_after_page_break;
 
 pub(crate) mod shape_series_item_list;
-
-pub(crate) mod shape_set_parameter_value_configuration;
 
 pub(crate) mod shape_shape_conditional_format;
 
@@ -2662,8 +2768,6 @@ pub(crate) mod shape_time_range_drill_down_filter;
 pub(crate) mod shape_tooltip_item;
 
 pub(crate) mod shape_total_aggregation_function;
-
-pub(crate) mod shape_unaggregated_field;
 
 pub(crate) mod shape_visible_range_options;
 
@@ -2697,6 +2801,8 @@ pub(crate) mod shape_conditional_formatting_icon_set;
 
 pub(crate) mod shape_conditional_formatting_solid_color;
 
+pub(crate) mod shape_custom_values_configuration;
+
 pub(crate) mod shape_data_label_types;
 
 pub(crate) mod shape_data_path_color_list;
@@ -2704,8 +2810,6 @@ pub(crate) mod shape_data_path_color_list;
 pub(crate) mod shape_data_path_sort;
 
 pub(crate) mod shape_data_path_type;
-
-pub(crate) mod shape_destination_parameter_value_configuration;
 
 pub(crate) mod shape_dimension_field_list;
 
@@ -2716,6 +2820,12 @@ pub(crate) mod shape_field_sort_options_list;
 pub(crate) mod shape_field_tooltip_item;
 
 pub(crate) mod shape_geospatial_heatmap_data_color;
+
+pub(crate) mod shape_geospatial_line_style;
+
+pub(crate) mod shape_geospatial_point_style;
+
+pub(crate) mod shape_geospatial_polygon_style;
 
 pub(crate) mod shape_measure_field_list;
 
@@ -2730,6 +2840,8 @@ pub(crate) mod shape_pivot_table_data_path_option_list;
 pub(crate) mod shape_pivot_table_field_collapse_state_option_list;
 
 pub(crate) mod shape_pivot_table_field_option_list;
+
+pub(crate) mod shape_plugin_visual_properties_list;
 
 pub(crate) mod shape_row_sort_list;
 
@@ -2771,7 +2883,7 @@ pub(crate) mod shape_conditional_formatting_icon_display_configuration;
 
 pub(crate) mod shape_contributor_dimension_list;
 
-pub(crate) mod shape_custom_values_configuration;
+pub(crate) mod shape_custom_parameter_values;
 
 pub(crate) mod shape_drill_down_filter_list;
 
@@ -2785,6 +2897,12 @@ pub(crate) mod shape_funnel_chart_dimension_field_list;
 
 pub(crate) mod shape_funnel_chart_measure_field_list;
 
+pub(crate) mod shape_geospatial_circle_symbol_style;
+
+pub(crate) mod shape_geospatial_line_symbol_style;
+
+pub(crate) mod shape_geospatial_polygon_symbol_style;
+
 pub(crate) mod shape_gradient_color;
 
 pub(crate) mod shape_heat_map_dimension_field_list;
@@ -2792,6 +2910,8 @@ pub(crate) mod shape_heat_map_dimension_field_list;
 pub(crate) mod shape_heat_map_measure_field_list;
 
 pub(crate) mod shape_histogram_measure_field_list;
+
+pub(crate) mod shape_layer_custom_action_list;
 
 pub(crate) mod shape_pivot_measure_field_list;
 
@@ -2835,11 +2955,15 @@ pub(crate) mod shape_word_cloud_measure_field_list;
 
 pub(crate) mod shape_body_section_repeat_dimension_configuration_list;
 
-pub(crate) mod shape_custom_parameter_values;
-
 pub(crate) mod shape_data_path_value_list;
 
+pub(crate) mod shape_geospatial_circle_radius;
+
+pub(crate) mod shape_geospatial_color;
+
 pub(crate) mod shape_geospatial_heatmap_data_color_list;
+
+pub(crate) mod shape_geospatial_line_width;
 
 pub(crate) mod shape_gradient_stop;
 
@@ -2847,18 +2971,42 @@ pub(crate) mod shape_non_repeating_visuals_list;
 
 pub(crate) mod shape_pivot_table_conditional_formatting_scope_list;
 
+pub(crate) mod shape_set_parameter_value_configuration_list;
+
 pub(crate) mod shape_table_field_custom_icon_content;
 
 pub(crate) mod shape_table_field_custom_text_content;
 
-pub(crate) mod shape_set_parameter_value_configuration_list;
+pub(crate) mod shape_geospatial_categorical_color;
+
+pub(crate) mod shape_geospatial_gradient_color;
+
+pub(crate) mod shape_geospatial_layer_dimension_field_list;
+
+pub(crate) mod shape_geospatial_layer_measure_field_list;
+
+pub(crate) mod shape_geospatial_solid_color;
+
+pub(crate) mod shape_layer_custom_action_operation_list;
 
 pub(crate) mod shape_custom_action_column_list;
+
+pub(crate) mod shape_geospatial_categorical_data_color;
+
+pub(crate) mod shape_geospatial_gradient_step_color;
+
+pub(crate) mod shape_geospatial_null_data_settings;
 
 pub(crate) mod shape_selected_field_list;
 
 pub(crate) mod shape_body_section_dynamic_dimension_sort_configuration_list;
 
+pub(crate) mod shape_geospatial_null_symbol_style;
+
 pub(crate) mod shape_gradient_stop_list;
 
 pub(crate) mod shape_target_visual_list;
+
+pub(crate) mod shape_geospatial_categorical_data_color_list;
+
+pub(crate) mod shape_geospatial_gradient_step_color_list;

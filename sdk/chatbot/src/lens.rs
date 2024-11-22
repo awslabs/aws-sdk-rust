@@ -39,6 +39,26 @@ pub(crate) fn reflens_describe_slack_workspaces_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_associations_output_output_next_token(
+    input: &crate::operation::list_associations::ListAssociationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_custom_actions_output_output_next_token(
+    input: &crate::operation::list_custom_actions::ListCustomActionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_microsoft_teams_channel_configurations_output_output_next_token(
     input: &crate::operation::list_microsoft_teams_channel_configurations::ListMicrosoftTeamsChannelConfigurationsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -106,6 +126,20 @@ pub(crate) fn lens_describe_slack_workspaces_output_output_slack_workspaces(
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_associations_output_output_associations(
+    input: crate::operation::list_associations::ListAssociationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AssociationListing>> {
+    let input = input.associations;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_custom_actions_output_output_custom_actions(
+    input: crate::operation::list_custom_actions::ListCustomActionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    let input = input.custom_actions;
     ::std::option::Option::Some(input)
 }
 

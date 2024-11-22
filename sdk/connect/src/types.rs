@@ -37,6 +37,10 @@ pub use crate::types::_sign_in_distribution::SignInDistribution;
 
 pub use crate::types::_telephony_config::TelephonyConfig;
 
+pub use crate::types::_service_quota_exceeded_exception_reason::ServiceQuotaExceededExceptionReason;
+
+pub use crate::types::_attached_file_service_quota_exceeded_exception_reason::AttachedFileServiceQuotaExceededExceptionReason;
+
 pub use crate::types::_property_validation_exception_property::PropertyValidationExceptionProperty;
 
 pub use crate::types::_property_validation_exception_reason::PropertyValidationExceptionReason;
@@ -97,6 +101,8 @@ pub use crate::types::_task_action_definition::TaskActionDefinition;
 
 pub use crate::types::_reference::Reference;
 
+pub use crate::types::_reference_status::ReferenceStatus;
+
 pub use crate::types::_reference_type::ReferenceType;
 
 pub use crate::types::_action_type::ActionType;
@@ -126,6 +132,8 @@ pub use crate::types::_user_quick_connect_config::UserQuickConnectConfig;
 pub use crate::types::_quick_connect_type::QuickConnectType;
 
 pub use crate::types::_queue_status::QueueStatus;
+
+pub use crate::types::_outbound_email_config::OutboundEmailConfig;
 
 pub use crate::types::_outbound_caller_config::OutboundCallerConfig;
 
@@ -237,6 +245,8 @@ pub use crate::types::_evaluation_answer_input::EvaluationAnswerInput;
 
 pub use crate::types::_evaluation_answer_data::EvaluationAnswerData;
 
+pub use crate::types::_segment_attribute_value::SegmentAttributeValue;
+
 pub use crate::types::_agent_status_state::AgentStatusState;
 
 pub use crate::types::_disconnect_reason::DisconnectReason;
@@ -269,13 +279,37 @@ pub use crate::types::_traffic_type::TrafficType;
 
 pub use crate::types::_answer_machine_detection_config::AnswerMachineDetectionConfig;
 
-pub use crate::types::_chat_message::ChatMessage;
+pub use crate::types::_outbound_email_content::OutboundEmailContent;
 
-pub use crate::types::_segment_attribute_value::SegmentAttributeValue;
+pub use crate::types::_outbound_raw_message::OutboundRawMessage;
+
+pub use crate::types::_templated_message_config::TemplatedMessageConfig;
+
+pub use crate::types::_template_attributes::TemplateAttributes;
+
+pub use crate::types::_outbound_message_source_type::OutboundMessageSourceType;
+
+pub use crate::types::_outbound_additional_recipients::OutboundAdditionalRecipients;
+
+pub use crate::types::_email_address_info::EmailAddressInfo;
+
+pub use crate::types::_chat_message::ChatMessage;
 
 pub use crate::types::_endpoint::Endpoint;
 
 pub use crate::types::_endpoint_type::EndpointType;
+
+pub use crate::types::_email_attachment::EmailAttachment;
+
+pub use crate::types::_inbound_additional_recipients::InboundAdditionalRecipients;
+
+pub use crate::types::_inbound_email_content::InboundEmailContent;
+
+pub use crate::types::_inbound_raw_message::InboundRawMessage;
+
+pub use crate::types::_email_header_type::EmailHeaderType;
+
+pub use crate::types::_inbound_message_source_type::InboundMessageSourceType;
 
 pub use crate::types::_chat_streaming_configuration::ChatStreamingConfiguration;
 
@@ -294,6 +328,8 @@ pub use crate::types::_created_by_info::CreatedByInfo;
 pub use crate::types::_file_status_type::FileStatusType;
 
 pub use crate::types::_file_use_case_type::FileUseCaseType;
+
+pub use crate::types::_source_campaign::SourceCampaign;
 
 pub use crate::types::_new_session_details::NewSessionDetails;
 
@@ -403,7 +439,15 @@ pub use crate::types::_hours_of_operation_search_criteria::HoursOfOperationSearc
 
 pub use crate::types::_hours_of_operation_search_filter::HoursOfOperationSearchFilter;
 
+pub use crate::types::_email_address_metadata::EmailAddressMetadata;
+
+pub use crate::types::_email_address_search_filter::EmailAddressSearchFilter;
+
+pub use crate::types::_email_address_search_criteria::EmailAddressSearchCriteria;
+
 pub use crate::types::_contact_search_summary::ContactSearchSummary;
+
+pub use crate::types::_contact_search_summary_segment_attribute_value::ContactSearchSummarySegmentAttributeValue;
 
 pub use crate::types::_contact_search_summary_agent_info::ContactSearchSummaryAgentInfo;
 
@@ -419,9 +463,13 @@ pub use crate::types::_sortable_field_name::SortableFieldName;
 
 pub use crate::types::_search_criteria::SearchCriteria;
 
-pub use crate::types::_searchable_contact_attributes::SearchableContactAttributes;
+pub use crate::types::_searchable_segment_attributes::SearchableSegmentAttributes;
 
 pub use crate::types::_search_contacts_match_type::SearchContactsMatchType;
+
+pub use crate::types::_searchable_segment_attributes_criteria::SearchableSegmentAttributesCriteria;
+
+pub use crate::types::_searchable_contact_attributes::SearchableContactAttributes;
 
 pub use crate::types::_searchable_contact_attributes_criteria::SearchableContactAttributesCriteria;
 
@@ -607,9 +655,9 @@ pub use crate::types::_number_reference::NumberReference;
 
 pub use crate::types::_string_reference::StringReference;
 
-pub use crate::types::_attachment_reference::AttachmentReference;
+pub use crate::types::_email_message_reference::EmailMessageReference;
 
-pub use crate::types::_reference_status::ReferenceStatus;
+pub use crate::types::_attachment_reference::AttachmentReference;
 
 pub use crate::types::_url_reference::UrlReference;
 
@@ -632,6 +680,8 @@ pub use crate::types::_lex_v2_bot::LexV2Bot;
 pub use crate::types::_lex_version::LexVersion;
 
 pub use crate::types::_authentication_profile_summary::AuthenticationProfileSummary;
+
+pub use crate::types::_associated_contact_summary::AssociatedContactSummary;
 
 pub use crate::types::_analytics_data_association_result::AnalyticsDataAssociationResult;
 
@@ -761,6 +811,10 @@ pub use crate::types::_evaluation_metadata::EvaluationMetadata;
 
 pub use crate::types::_contact::Contact;
 
+pub use crate::types::_additional_email_recipients::AdditionalEmailRecipients;
+
+pub use crate::types::_email_recipient::EmailRecipient;
+
 pub use crate::types::_disconnect_details::DisconnectDetails;
 
 pub use crate::types::_quality_metrics::QualityMetrics;
@@ -789,6 +843,8 @@ pub use crate::types::_routing_criteria_step_status::RoutingCriteriaStepStatus;
 
 pub use crate::types::_expiry::Expiry;
 
+pub use crate::types::_endpoint_info::EndpointInfo;
+
 pub use crate::types::_wisdom_info::WisdomInfo;
 
 pub use crate::types::_agent_info::AgentInfo;
@@ -804,6 +860,10 @@ pub use crate::types::_authentication_profile::AuthenticationProfile;
 pub use crate::types::_participant_token_credentials::ParticipantTokenCredentials;
 
 pub use crate::types::_participant_details_to_add::ParticipantDetailsToAdd;
+
+pub use crate::types::_initiate_as::InitiateAs;
+
+pub use crate::types::_user_info::UserInfo;
 
 pub use crate::types::_failed_request::FailedRequest;
 
@@ -822,6 +882,8 @@ pub use crate::types::_error_result::ErrorResult;
 mod _action_summary;
 
 mod _action_type;
+
+mod _additional_email_recipients;
 
 mod _agent_availability_timer;
 
@@ -867,11 +929,15 @@ mod _artifact_status;
 
 mod _assign_contact_category_action_definition;
 
+mod _associated_contact_summary;
+
 mod _attached_file;
 
 mod _attached_file_error;
 
 mod _attached_file_invalid_request_exception_reason;
+
+mod _attached_file_service_quota_exceeded_exception_reason;
 
 mod _attachment_reference;
 
@@ -963,6 +1029,8 @@ mod _contact_search_summary_agent_info;
 
 mod _contact_search_summary_queue_info;
 
+mod _contact_search_summary_segment_attribute_value;
+
 mod _contact_state;
 
 mod _control_plane_attribute_filter;
@@ -1013,6 +1081,22 @@ mod _distribution;
 
 mod _download_url_metadata;
 
+mod _email_address_info;
+
+mod _email_address_metadata;
+
+mod _email_address_search_criteria;
+
+mod _email_address_search_filter;
+
+mod _email_attachment;
+
+mod _email_header_type;
+
+mod _email_message_reference;
+
+mod _email_recipient;
+
 mod _email_reference;
 
 mod _empty_field_value;
@@ -1024,6 +1108,8 @@ mod _encryption_type;
 mod _end_associated_tasks_action_definition;
 
 mod _endpoint;
+
+mod _endpoint_info;
 
 mod _endpoint_type;
 
@@ -1165,6 +1251,16 @@ mod _hours_of_operation_summary;
 
 mod _hours_of_operation_time_slice;
 
+mod _inbound_additional_recipients;
+
+mod _inbound_email_content;
+
+mod _inbound_message_source_type;
+
+mod _inbound_raw_message;
+
+mod _initiate_as;
+
 mod _instance;
 
 mod _instance_attribute_type;
@@ -1255,7 +1351,17 @@ mod _numeric_question_property_automation_label;
 
 mod _numeric_question_property_value_automation;
 
+mod _outbound_additional_recipients;
+
 mod _outbound_caller_config;
+
+mod _outbound_email_config;
+
+mod _outbound_email_content;
+
+mod _outbound_message_source_type;
+
+mod _outbound_raw_message;
 
 mod _participant_capabilities;
 
@@ -1467,6 +1573,10 @@ mod _searchable_contact_attributes_criteria;
 
 mod _searchable_queue_type;
 
+mod _searchable_segment_attributes;
+
+mod _searchable_segment_attributes_criteria;
+
 mod _security_key;
 
 mod _security_profile;
@@ -1483,6 +1593,8 @@ mod _segment_attribute_value;
 
 mod _send_notification_action_definition;
 
+mod _service_quota_exceeded_exception_reason;
+
 mod _sign_in_config;
 
 mod _sign_in_distribution;
@@ -1496,6 +1608,8 @@ mod _sort;
 mod _sort_order;
 
 mod _sortable_field_name;
+
+mod _source_campaign;
 
 mod _source_type;
 
@@ -1542,6 +1656,10 @@ mod _task_template_metadata;
 mod _task_template_status;
 
 mod _telephony_config;
+
+mod _template_attributes;
+
+mod _templated_message_config;
 
 mod _threshold;
 
@@ -1590,6 +1708,8 @@ mod _user_hierarchy_group_search_filter;
 mod _user_identity_info;
 
 mod _user_identity_info_lite;
+
+mod _user_info;
 
 mod _user_phone_config;
 

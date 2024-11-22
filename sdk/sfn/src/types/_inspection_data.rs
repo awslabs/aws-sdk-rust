@@ -6,31 +6,39 @@
 pub struct InspectionData {
     /// <p>The raw state input.</p>
     pub input: ::std::option::Option<::std::string::String>,
-    /// <p>The input after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-inputpath-params.html#input-output-inputpath">InputPath</a> filter.</p>
+    /// <p>The input after Step Functions applies an Arguments filter. This event will only be present when QueryLanguage for the state machine or individual states is set to JSONata. For more info, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/data-transform.html">Transforming data with Step Functions</a>.</p>
+    pub after_arguments: ::std::option::Option<::std::string::String>,
+    /// <p>The input after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-inputpath-params.html#input-output-inputpath">InputPath</a> filter. Not populated when QueryLanguage is JSONata.</p>
     pub after_input_path: ::std::option::Option<::std::string::String>,
-    /// <p>The effective input after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-inputpath-params.html#input-output-parameters">Parameters</a> filter.</p>
+    /// <p>The effective input after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-inputpath-params.html#input-output-parameters">Parameters</a> filter. Not populated when QueryLanguage is JSONata.</p>
     pub after_parameters: ::std::option::Option<::std::string::String>,
     /// <p>The state's raw result.</p>
     pub result: ::std::option::Option<::std::string::String>,
-    /// <p>The effective result after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-inputpath-params.html#input-output-resultselector">ResultSelector</a> filter.</p>
+    /// <p>The effective result after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-inputpath-params.html#input-output-resultselector">ResultSelector</a> filter. Not populated when QueryLanguage is JSONata.</p>
     pub after_result_selector: ::std::option::Option<::std::string::String>,
-    /// <p>The effective result combined with the raw state input after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-resultpath.html">ResultPath</a> filter.</p>
+    /// <p>The effective result combined with the raw state input after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-resultpath.html">ResultPath</a> filter. Not populated when QueryLanguage is JSONata.</p>
     pub after_result_path: ::std::option::Option<::std::string::String>,
     /// <p>The raw HTTP request that is sent when you test an HTTP Task.</p>
     pub request: ::std::option::Option<crate::types::InspectionDataRequest>,
     /// <p>The raw HTTP response that is returned when you test an HTTP Task.</p>
     pub response: ::std::option::Option<crate::types::InspectionDataResponse>,
+    /// <p>JSON string that contains the set of workflow variables after execution of the state. The set will include variables assigned in the state and variables set up as test state input.</p>
+    pub variables: ::std::option::Option<::std::string::String>,
 }
 impl InspectionData {
     /// <p>The raw state input.</p>
     pub fn input(&self) -> ::std::option::Option<&str> {
         self.input.as_deref()
     }
-    /// <p>The input after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-inputpath-params.html#input-output-inputpath">InputPath</a> filter.</p>
+    /// <p>The input after Step Functions applies an Arguments filter. This event will only be present when QueryLanguage for the state machine or individual states is set to JSONata. For more info, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/data-transform.html">Transforming data with Step Functions</a>.</p>
+    pub fn after_arguments(&self) -> ::std::option::Option<&str> {
+        self.after_arguments.as_deref()
+    }
+    /// <p>The input after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-inputpath-params.html#input-output-inputpath">InputPath</a> filter. Not populated when QueryLanguage is JSONata.</p>
     pub fn after_input_path(&self) -> ::std::option::Option<&str> {
         self.after_input_path.as_deref()
     }
-    /// <p>The effective input after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-inputpath-params.html#input-output-parameters">Parameters</a> filter.</p>
+    /// <p>The effective input after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-inputpath-params.html#input-output-parameters">Parameters</a> filter. Not populated when QueryLanguage is JSONata.</p>
     pub fn after_parameters(&self) -> ::std::option::Option<&str> {
         self.after_parameters.as_deref()
     }
@@ -38,11 +46,11 @@ impl InspectionData {
     pub fn result(&self) -> ::std::option::Option<&str> {
         self.result.as_deref()
     }
-    /// <p>The effective result after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-inputpath-params.html#input-output-resultselector">ResultSelector</a> filter.</p>
+    /// <p>The effective result after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-inputpath-params.html#input-output-resultselector">ResultSelector</a> filter. Not populated when QueryLanguage is JSONata.</p>
     pub fn after_result_selector(&self) -> ::std::option::Option<&str> {
         self.after_result_selector.as_deref()
     }
-    /// <p>The effective result combined with the raw state input after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-resultpath.html">ResultPath</a> filter.</p>
+    /// <p>The effective result combined with the raw state input after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-resultpath.html">ResultPath</a> filter. Not populated when QueryLanguage is JSONata.</p>
     pub fn after_result_path(&self) -> ::std::option::Option<&str> {
         self.after_result_path.as_deref()
     }
@@ -54,11 +62,16 @@ impl InspectionData {
     pub fn response(&self) -> ::std::option::Option<&crate::types::InspectionDataResponse> {
         self.response.as_ref()
     }
+    /// <p>JSON string that contains the set of workflow variables after execution of the state. The set will include variables assigned in the state and variables set up as test state input.</p>
+    pub fn variables(&self) -> ::std::option::Option<&str> {
+        self.variables.as_deref()
+    }
 }
 impl ::std::fmt::Debug for InspectionData {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("InspectionData");
         formatter.field("input", &"*** Sensitive Data Redacted ***");
+        formatter.field("after_arguments", &"*** Sensitive Data Redacted ***");
         formatter.field("after_input_path", &"*** Sensitive Data Redacted ***");
         formatter.field("after_parameters", &"*** Sensitive Data Redacted ***");
         formatter.field("result", &"*** Sensitive Data Redacted ***");
@@ -66,6 +79,7 @@ impl ::std::fmt::Debug for InspectionData {
         formatter.field("after_result_path", &"*** Sensitive Data Redacted ***");
         formatter.field("request", &"*** Sensitive Data Redacted ***");
         formatter.field("response", &"*** Sensitive Data Redacted ***");
+        formatter.field("variables", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -81,6 +95,7 @@ impl InspectionData {
 #[non_exhaustive]
 pub struct InspectionDataBuilder {
     pub(crate) input: ::std::option::Option<::std::string::String>,
+    pub(crate) after_arguments: ::std::option::Option<::std::string::String>,
     pub(crate) after_input_path: ::std::option::Option<::std::string::String>,
     pub(crate) after_parameters: ::std::option::Option<::std::string::String>,
     pub(crate) result: ::std::option::Option<::std::string::String>,
@@ -88,6 +103,7 @@ pub struct InspectionDataBuilder {
     pub(crate) after_result_path: ::std::option::Option<::std::string::String>,
     pub(crate) request: ::std::option::Option<crate::types::InspectionDataRequest>,
     pub(crate) response: ::std::option::Option<crate::types::InspectionDataResponse>,
+    pub(crate) variables: ::std::option::Option<::std::string::String>,
 }
 impl InspectionDataBuilder {
     /// <p>The raw state input.</p>
@@ -104,31 +120,45 @@ impl InspectionDataBuilder {
     pub fn get_input(&self) -> &::std::option::Option<::std::string::String> {
         &self.input
     }
-    /// <p>The input after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-inputpath-params.html#input-output-inputpath">InputPath</a> filter.</p>
+    /// <p>The input after Step Functions applies an Arguments filter. This event will only be present when QueryLanguage for the state machine or individual states is set to JSONata. For more info, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/data-transform.html">Transforming data with Step Functions</a>.</p>
+    pub fn after_arguments(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.after_arguments = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The input after Step Functions applies an Arguments filter. This event will only be present when QueryLanguage for the state machine or individual states is set to JSONata. For more info, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/data-transform.html">Transforming data with Step Functions</a>.</p>
+    pub fn set_after_arguments(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.after_arguments = input;
+        self
+    }
+    /// <p>The input after Step Functions applies an Arguments filter. This event will only be present when QueryLanguage for the state machine or individual states is set to JSONata. For more info, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/data-transform.html">Transforming data with Step Functions</a>.</p>
+    pub fn get_after_arguments(&self) -> &::std::option::Option<::std::string::String> {
+        &self.after_arguments
+    }
+    /// <p>The input after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-inputpath-params.html#input-output-inputpath">InputPath</a> filter. Not populated when QueryLanguage is JSONata.</p>
     pub fn after_input_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.after_input_path = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The input after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-inputpath-params.html#input-output-inputpath">InputPath</a> filter.</p>
+    /// <p>The input after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-inputpath-params.html#input-output-inputpath">InputPath</a> filter. Not populated when QueryLanguage is JSONata.</p>
     pub fn set_after_input_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.after_input_path = input;
         self
     }
-    /// <p>The input after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-inputpath-params.html#input-output-inputpath">InputPath</a> filter.</p>
+    /// <p>The input after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-inputpath-params.html#input-output-inputpath">InputPath</a> filter. Not populated when QueryLanguage is JSONata.</p>
     pub fn get_after_input_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.after_input_path
     }
-    /// <p>The effective input after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-inputpath-params.html#input-output-parameters">Parameters</a> filter.</p>
+    /// <p>The effective input after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-inputpath-params.html#input-output-parameters">Parameters</a> filter. Not populated when QueryLanguage is JSONata.</p>
     pub fn after_parameters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.after_parameters = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The effective input after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-inputpath-params.html#input-output-parameters">Parameters</a> filter.</p>
+    /// <p>The effective input after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-inputpath-params.html#input-output-parameters">Parameters</a> filter. Not populated when QueryLanguage is JSONata.</p>
     pub fn set_after_parameters(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.after_parameters = input;
         self
     }
-    /// <p>The effective input after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-inputpath-params.html#input-output-parameters">Parameters</a> filter.</p>
+    /// <p>The effective input after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-inputpath-params.html#input-output-parameters">Parameters</a> filter. Not populated when QueryLanguage is JSONata.</p>
     pub fn get_after_parameters(&self) -> &::std::option::Option<::std::string::String> {
         &self.after_parameters
     }
@@ -146,31 +176,31 @@ impl InspectionDataBuilder {
     pub fn get_result(&self) -> &::std::option::Option<::std::string::String> {
         &self.result
     }
-    /// <p>The effective result after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-inputpath-params.html#input-output-resultselector">ResultSelector</a> filter.</p>
+    /// <p>The effective result after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-inputpath-params.html#input-output-resultselector">ResultSelector</a> filter. Not populated when QueryLanguage is JSONata.</p>
     pub fn after_result_selector(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.after_result_selector = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The effective result after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-inputpath-params.html#input-output-resultselector">ResultSelector</a> filter.</p>
+    /// <p>The effective result after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-inputpath-params.html#input-output-resultselector">ResultSelector</a> filter. Not populated when QueryLanguage is JSONata.</p>
     pub fn set_after_result_selector(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.after_result_selector = input;
         self
     }
-    /// <p>The effective result after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-inputpath-params.html#input-output-resultselector">ResultSelector</a> filter.</p>
+    /// <p>The effective result after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-inputpath-params.html#input-output-resultselector">ResultSelector</a> filter. Not populated when QueryLanguage is JSONata.</p>
     pub fn get_after_result_selector(&self) -> &::std::option::Option<::std::string::String> {
         &self.after_result_selector
     }
-    /// <p>The effective result combined with the raw state input after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-resultpath.html">ResultPath</a> filter.</p>
+    /// <p>The effective result combined with the raw state input after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-resultpath.html">ResultPath</a> filter. Not populated when QueryLanguage is JSONata.</p>
     pub fn after_result_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.after_result_path = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The effective result combined with the raw state input after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-resultpath.html">ResultPath</a> filter.</p>
+    /// <p>The effective result combined with the raw state input after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-resultpath.html">ResultPath</a> filter. Not populated when QueryLanguage is JSONata.</p>
     pub fn set_after_result_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.after_result_path = input;
         self
     }
-    /// <p>The effective result combined with the raw state input after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-resultpath.html">ResultPath</a> filter.</p>
+    /// <p>The effective result combined with the raw state input after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-resultpath.html">ResultPath</a> filter. Not populated when QueryLanguage is JSONata.</p>
     pub fn get_after_result_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.after_result_path
     }
@@ -202,10 +232,25 @@ impl InspectionDataBuilder {
     pub fn get_response(&self) -> &::std::option::Option<crate::types::InspectionDataResponse> {
         &self.response
     }
+    /// <p>JSON string that contains the set of workflow variables after execution of the state. The set will include variables assigned in the state and variables set up as test state input.</p>
+    pub fn variables(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.variables = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>JSON string that contains the set of workflow variables after execution of the state. The set will include variables assigned in the state and variables set up as test state input.</p>
+    pub fn set_variables(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.variables = input;
+        self
+    }
+    /// <p>JSON string that contains the set of workflow variables after execution of the state. The set will include variables assigned in the state and variables set up as test state input.</p>
+    pub fn get_variables(&self) -> &::std::option::Option<::std::string::String> {
+        &self.variables
+    }
     /// Consumes the builder and constructs a [`InspectionData`](crate::types::InspectionData).
     pub fn build(self) -> crate::types::InspectionData {
         crate::types::InspectionData {
             input: self.input,
+            after_arguments: self.after_arguments,
             after_input_path: self.after_input_path,
             after_parameters: self.after_parameters,
             result: self.result,
@@ -213,6 +258,7 @@ impl InspectionDataBuilder {
             after_result_path: self.after_result_path,
             request: self.request,
             response: self.response,
+            variables: self.variables,
         }
     }
 }
@@ -220,6 +266,7 @@ impl ::std::fmt::Debug for InspectionDataBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("InspectionDataBuilder");
         formatter.field("input", &"*** Sensitive Data Redacted ***");
+        formatter.field("after_arguments", &"*** Sensitive Data Redacted ***");
         formatter.field("after_input_path", &"*** Sensitive Data Redacted ***");
         formatter.field("after_parameters", &"*** Sensitive Data Redacted ***");
         formatter.field("result", &"*** Sensitive Data Redacted ***");
@@ -227,6 +274,7 @@ impl ::std::fmt::Debug for InspectionDataBuilder {
         formatter.field("after_result_path", &"*** Sensitive Data Redacted ***");
         formatter.field("request", &"*** Sensitive Data Redacted ***");
         formatter.field("response", &"*** Sensitive Data Redacted ***");
+        formatter.field("variables", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

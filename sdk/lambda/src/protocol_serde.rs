@@ -391,6 +391,8 @@ pub(crate) mod shape_logging_config;
 
 pub(crate) mod shape_provisioned_concurrency_config_list;
 
+pub(crate) mod shape_provisioned_poller_config;
+
 pub(crate) mod shape_queues;
 
 pub(crate) mod shape_runtime_version_config;

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateSlackChannelConfigurationInput {
-    /// <p>The Amazon Resource Number (ARN) of the SlackChannelConfiguration to update.</p>
+    /// <p>The Amazon Resource Name (ARN) of the SlackChannelConfiguration to update.</p>
     pub chat_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Slack channel.</p>
     /// <p>To get this ID, open Slack, right click on the channel name in the left pane, then choose Copy Link. The channel ID is the 9-character string at the end of the URL. For example, ABCBBLZZZ.</p>
@@ -23,7 +23,7 @@ pub struct UpdateSlackChannelConfigurationInput {
     pub user_authorization_required: ::std::option::Option<bool>,
 }
 impl UpdateSlackChannelConfigurationInput {
-    /// <p>The Amazon Resource Number (ARN) of the SlackChannelConfiguration to update.</p>
+    /// <p>The Amazon Resource Name (ARN) of the SlackChannelConfiguration to update.</p>
     pub fn chat_configuration_arn(&self) -> ::std::option::Option<&str> {
         self.chat_configuration_arn.as_deref()
     }
@@ -97,18 +97,18 @@ pub struct UpdateSlackChannelConfigurationInputBuilder {
     pub(crate) user_authorization_required: ::std::option::Option<bool>,
 }
 impl UpdateSlackChannelConfigurationInputBuilder {
-    /// <p>The Amazon Resource Number (ARN) of the SlackChannelConfiguration to update.</p>
+    /// <p>The Amazon Resource Name (ARN) of the SlackChannelConfiguration to update.</p>
     /// This field is required.
     pub fn chat_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.chat_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Number (ARN) of the SlackChannelConfiguration to update.</p>
+    /// <p>The Amazon Resource Name (ARN) of the SlackChannelConfiguration to update.</p>
     pub fn set_chat_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.chat_configuration_arn = input;
         self
     }
-    /// <p>The Amazon Resource Number (ARN) of the SlackChannelConfiguration to update.</p>
+    /// <p>The Amazon Resource Name (ARN) of the SlackChannelConfiguration to update.</p>
     pub fn get_chat_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.chat_configuration_arn
     }

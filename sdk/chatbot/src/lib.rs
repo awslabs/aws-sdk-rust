@@ -39,7 +39,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-chatbot = "1.38.0"
+//! aws-sdk-chatbot = "1.39.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -156,14 +156,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateChimeWebhookConfiguration`](crate::operation::create_chime_webhook_configuration) operation has
-/// a [`Client::create_chime_webhook_configuration`], function which returns a builder for that operation.
+/// For example, the [`AssociateToConfiguration`](crate::operation::associate_to_configuration) operation has
+/// a [`Client::associate_to_configuration`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_chime_webhook_configuration()
-///     .webhook_description("example")
+/// let result = client.associate_to_configuration()
+///     .resource("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -195,6 +195,10 @@ pub mod types;
 
 mod auth_plugin;
 
+pub(crate) mod client_idempotency_token;
+
+mod idempotency_token;
+
 pub(crate) mod protocol_serde;
 
 mod serialization_settings;
@@ -205,9 +209,9 @@ mod lens;
 
 mod sdk_feature_tracker;
 
-mod json_errors;
-
 mod serde_util;
+
+mod json_errors;
 
 #[doc(inline)]
 pub use client::Client;

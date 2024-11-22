@@ -193,6 +193,11 @@ where
                                 crate::protocol_serde::shape_event_source_mapping_metrics_config::de_event_source_mapping_metrics_config(tokens)?,
                             );
                         }
+                        "ProvisionedPollerConfig" => {
+                            builder = builder.set_provisioned_poller_config(
+                                crate::protocol_serde::shape_provisioned_poller_config::de_provisioned_poller_config(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -84,6 +84,8 @@ pub struct HistoryEvent {
     pub map_run_failed_event_details: ::std::option::Option<crate::types::MapRunFailedEventDetails>,
     /// <p>Contains details about the redrive attempt of a Map Run.</p>
     pub map_run_redriven_event_details: ::std::option::Option<crate::types::MapRunRedrivenEventDetails>,
+    /// <p>Contains details about an evaluation failure that occurred while processing a state.</p>
+    pub evaluation_failed_event_details: ::std::option::Option<crate::types::EvaluationFailedEventDetails>,
 }
 impl HistoryEvent {
     /// <p>The date and time the event occurred.</p>
@@ -246,6 +248,10 @@ impl HistoryEvent {
     pub fn map_run_redriven_event_details(&self) -> ::std::option::Option<&crate::types::MapRunRedrivenEventDetails> {
         self.map_run_redriven_event_details.as_ref()
     }
+    /// <p>Contains details about an evaluation failure that occurred while processing a state.</p>
+    pub fn evaluation_failed_event_details(&self) -> ::std::option::Option<&crate::types::EvaluationFailedEventDetails> {
+        self.evaluation_failed_event_details.as_ref()
+    }
 }
 impl HistoryEvent {
     /// Creates a new builder-style object to manufacture [`HistoryEvent`](crate::types::HistoryEvent).
@@ -298,6 +304,7 @@ pub struct HistoryEventBuilder {
     pub(crate) map_run_started_event_details: ::std::option::Option<crate::types::MapRunStartedEventDetails>,
     pub(crate) map_run_failed_event_details: ::std::option::Option<crate::types::MapRunFailedEventDetails>,
     pub(crate) map_run_redriven_event_details: ::std::option::Option<crate::types::MapRunRedrivenEventDetails>,
+    pub(crate) evaluation_failed_event_details: ::std::option::Option<crate::types::EvaluationFailedEventDetails>,
 }
 impl HistoryEventBuilder {
     /// <p>The date and time the event occurred.</p>
@@ -883,6 +890,20 @@ impl HistoryEventBuilder {
     pub fn get_map_run_redriven_event_details(&self) -> &::std::option::Option<crate::types::MapRunRedrivenEventDetails> {
         &self.map_run_redriven_event_details
     }
+    /// <p>Contains details about an evaluation failure that occurred while processing a state.</p>
+    pub fn evaluation_failed_event_details(mut self, input: crate::types::EvaluationFailedEventDetails) -> Self {
+        self.evaluation_failed_event_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains details about an evaluation failure that occurred while processing a state.</p>
+    pub fn set_evaluation_failed_event_details(mut self, input: ::std::option::Option<crate::types::EvaluationFailedEventDetails>) -> Self {
+        self.evaluation_failed_event_details = input;
+        self
+    }
+    /// <p>Contains details about an evaluation failure that occurred while processing a state.</p>
+    pub fn get_evaluation_failed_event_details(&self) -> &::std::option::Option<crate::types::EvaluationFailedEventDetails> {
+        &self.evaluation_failed_event_details
+    }
     /// Consumes the builder and constructs a [`HistoryEvent`](crate::types::HistoryEvent).
     /// This method will fail if any of the following fields are not set:
     /// - [`timestamp`](crate::types::builders::HistoryEventBuilder::timestamp)
@@ -939,6 +960,7 @@ impl HistoryEventBuilder {
             map_run_started_event_details: self.map_run_started_event_details,
             map_run_failed_event_details: self.map_run_failed_event_details,
             map_run_redriven_event_details: self.map_run_redriven_event_details,
+            evaluation_failed_event_details: self.evaluation_failed_event_details,
         })
     }
 }

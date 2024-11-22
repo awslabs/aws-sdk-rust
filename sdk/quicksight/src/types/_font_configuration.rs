@@ -14,6 +14,8 @@ pub struct FontConfiguration {
     pub font_weight: ::std::option::Option<crate::types::FontWeight>,
     /// <p>Determines the text display face that is inherited by the given font family.</p>
     pub font_style: ::std::option::Option<crate::types::FontStyle>,
+    /// <p>The font family that you want to use.</p>
+    pub font_family: ::std::option::Option<::std::string::String>,
 }
 impl FontConfiguration {
     /// <p>The option that determines the text display size.</p>
@@ -36,6 +38,10 @@ impl FontConfiguration {
     pub fn font_style(&self) -> ::std::option::Option<&crate::types::FontStyle> {
         self.font_style.as_ref()
     }
+    /// <p>The font family that you want to use.</p>
+    pub fn font_family(&self) -> ::std::option::Option<&str> {
+        self.font_family.as_deref()
+    }
 }
 impl FontConfiguration {
     /// Creates a new builder-style object to manufacture [`FontConfiguration`](crate::types::FontConfiguration).
@@ -53,6 +59,7 @@ pub struct FontConfigurationBuilder {
     pub(crate) font_color: ::std::option::Option<::std::string::String>,
     pub(crate) font_weight: ::std::option::Option<crate::types::FontWeight>,
     pub(crate) font_style: ::std::option::Option<crate::types::FontStyle>,
+    pub(crate) font_family: ::std::option::Option<::std::string::String>,
 }
 impl FontConfigurationBuilder {
     /// <p>The option that determines the text display size.</p>
@@ -125,6 +132,20 @@ impl FontConfigurationBuilder {
     pub fn get_font_style(&self) -> &::std::option::Option<crate::types::FontStyle> {
         &self.font_style
     }
+    /// <p>The font family that you want to use.</p>
+    pub fn font_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.font_family = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The font family that you want to use.</p>
+    pub fn set_font_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.font_family = input;
+        self
+    }
+    /// <p>The font family that you want to use.</p>
+    pub fn get_font_family(&self) -> &::std::option::Option<::std::string::String> {
+        &self.font_family
+    }
     /// Consumes the builder and constructs a [`FontConfiguration`](crate::types::FontConfiguration).
     pub fn build(self) -> crate::types::FontConfiguration {
         crate::types::FontConfiguration {
@@ -133,6 +154,7 @@ impl FontConfigurationBuilder {
             font_color: self.font_color,
             font_weight: self.font_weight,
             font_style: self.font_style,
+            font_family: self.font_family,
         }
     }
 }

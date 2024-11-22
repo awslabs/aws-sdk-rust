@@ -68,6 +68,13 @@ where
                                 crate::protocol_serde::shape_custom_domain_config_type::de_custom_domain_config_type(tokens)?,
                             );
                         }
+                        "ManagedLoginVersion" => {
+                            builder = builder.set_managed_login_version(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

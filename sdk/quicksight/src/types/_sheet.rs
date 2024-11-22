@@ -8,6 +8,8 @@ pub struct Sheet {
     pub sheet_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of a sheet. This name is displayed on the sheet's tab in the Amazon QuickSight console.</p>
     pub name: ::std::option::Option<::std::string::String>,
+    /// <p>A list of images on a sheet.</p>
+    pub images: ::std::option::Option<::std::vec::Vec<crate::types::SheetImage>>,
 }
 impl Sheet {
     /// <p>The unique identifier associated with a sheet.</p>
@@ -17,6 +19,12 @@ impl Sheet {
     /// <p>The name of a sheet. This name is displayed on the sheet's tab in the Amazon QuickSight console.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
+    }
+    /// <p>A list of images on a sheet.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.images.is_none()`.
+    pub fn images(&self) -> &[crate::types::SheetImage] {
+        self.images.as_deref().unwrap_or_default()
     }
 }
 impl Sheet {
@@ -32,6 +40,7 @@ impl Sheet {
 pub struct SheetBuilder {
     pub(crate) sheet_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) images: ::std::option::Option<::std::vec::Vec<crate::types::SheetImage>>,
 }
 impl SheetBuilder {
     /// <p>The unique identifier associated with a sheet.</p>
@@ -62,11 +71,32 @@ impl SheetBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
+    /// Appends an item to `images`.
+    ///
+    /// To override the contents of this collection use [`set_images`](Self::set_images).
+    ///
+    /// <p>A list of images on a sheet.</p>
+    pub fn images(mut self, input: crate::types::SheetImage) -> Self {
+        let mut v = self.images.unwrap_or_default();
+        v.push(input);
+        self.images = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of images on a sheet.</p>
+    pub fn set_images(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SheetImage>>) -> Self {
+        self.images = input;
+        self
+    }
+    /// <p>A list of images on a sheet.</p>
+    pub fn get_images(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SheetImage>> {
+        &self.images
+    }
     /// Consumes the builder and constructs a [`Sheet`](crate::types::Sheet).
     pub fn build(self) -> crate::types::Sheet {
         crate::types::Sheet {
             sheet_id: self.sheet_id,
             name: self.name,
+            images: self.images,
         }
     }
 }

@@ -51,6 +51,9 @@ where
                                 crate::protocol_serde::shape_cluster_life_cycle_config::de_cluster_life_cycle_config(tokens)?,
                             );
                         }
+                        "OverrideVpcConfig" => {
+                            builder = builder.set_override_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens)?);
+                        }
                         "ThreadsPerCore" => {
                             builder = builder.set_threads_per_core(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

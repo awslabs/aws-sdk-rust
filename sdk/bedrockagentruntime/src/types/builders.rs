@@ -75,11 +75,11 @@ pub use crate::types::_text_prompt::TextPromptBuilder;
 
 pub use crate::types::_memory_session_summary::MemorySessionSummaryBuilder;
 
-pub use crate::types::_file_part::FilePartBuilder;
+pub use crate::types::_inline_agent_file_part::InlineAgentFilePartBuilder;
 
 pub use crate::types::_output_file::OutputFileBuilder;
 
-pub use crate::types::_return_control_payload::ReturnControlPayloadBuilder;
+pub use crate::types::_inline_agent_return_control_payload::InlineAgentReturnControlPayloadBuilder;
 
 pub use crate::types::_function_invocation_input::FunctionInvocationInputBuilder;
 
@@ -95,7 +95,7 @@ pub use crate::types::_parameter::ParameterBuilder;
 
 pub use crate::types::_api_parameter::ApiParameterBuilder;
 
-pub use crate::types::_trace_part::TracePartBuilder;
+pub use crate::types::_inline_agent_trace_part::InlineAgentTracePartBuilder;
 
 pub use crate::types::_failure_trace::FailureTraceBuilder;
 
@@ -167,13 +167,27 @@ pub use crate::types::_guardrail_topic_policy_assessment::GuardrailTopicPolicyAs
 
 pub use crate::types::_guardrail_topic::GuardrailTopicBuilder;
 
-pub use crate::types::_payload_part::PayloadPartBuilder;
+pub use crate::types::_inline_agent_payload_part::InlineAgentPayloadPartBuilder;
 
 pub use crate::types::_attribution::AttributionBuilder;
 
-pub use crate::types::_session_state::SessionStateBuilder;
+pub use crate::types::_prompt_override_configuration::PromptOverrideConfigurationBuilder;
 
-pub use crate::types::_knowledge_base_configuration::KnowledgeBaseConfigurationBuilder;
+pub use crate::types::_prompt_configuration::PromptConfigurationBuilder;
+
+pub use crate::types::_guardrail_configuration_with_arn::GuardrailConfigurationWithArnBuilder;
+
+pub use crate::types::_knowledge_base::KnowledgeBaseBuilder;
+
+pub use crate::types::_agent_action_group::AgentActionGroupBuilder;
+
+pub use crate::types::_function_definition::FunctionDefinitionBuilder;
+
+pub use crate::types::_parameter_detail::ParameterDetailBuilder;
+
+pub use crate::types::_s3_identifier::S3IdentifierBuilder;
+
+pub use crate::types::_inline_session_state::InlineSessionStateBuilder;
 
 pub use crate::types::_input_file::InputFileBuilder;
 
@@ -188,6 +202,18 @@ pub use crate::types::_function_result::FunctionResultBuilder;
 pub use crate::types::_content_body::ContentBodyBuilder;
 
 pub use crate::types::_api_result::ApiResultBuilder;
+
+pub use crate::types::_file_part::FilePartBuilder;
+
+pub use crate::types::_return_control_payload::ReturnControlPayloadBuilder;
+
+pub use crate::types::_trace_part::TracePartBuilder;
+
+pub use crate::types::_payload_part::PayloadPartBuilder;
+
+pub use crate::types::_session_state::SessionStateBuilder;
+
+pub use crate::types::_knowledge_base_configuration::KnowledgeBaseConfigurationBuilder;
 
 pub use crate::types::_flow_trace_event::FlowTraceEventBuilder;
 

@@ -181,6 +181,8 @@ pub use crate::types::_anomaly_score::AnomalyScoreBuilder;
 
 pub use crate::types::_root_cause::RootCauseBuilder;
 
+pub use crate::types::_root_cause_impact::RootCauseImpactBuilder;
+
 pub use crate::types::_total_impact_filter::TotalImpactFilterBuilder;
 
 pub use crate::types::_anomaly_date_interval::AnomalyDateIntervalBuilder;

@@ -24,6 +24,8 @@ pub struct LegendOptions {
     pub width: ::std::option::Option<::std::string::String>,
     /// <p>The height of the legend. If this value is omitted, a default height is used when rendering.</p>
     pub height: ::std::option::Option<::std::string::String>,
+    /// <p>Configures the display properties of the given text.</p>
+    pub value_font_configuration: ::std::option::Option<crate::types::FontConfiguration>,
 }
 impl LegendOptions {
     /// <p>Determines whether or not the legend is visible.</p>
@@ -56,6 +58,10 @@ impl LegendOptions {
     pub fn height(&self) -> ::std::option::Option<&str> {
         self.height.as_deref()
     }
+    /// <p>Configures the display properties of the given text.</p>
+    pub fn value_font_configuration(&self) -> ::std::option::Option<&crate::types::FontConfiguration> {
+        self.value_font_configuration.as_ref()
+    }
 }
 impl LegendOptions {
     /// Creates a new builder-style object to manufacture [`LegendOptions`](crate::types::LegendOptions).
@@ -73,6 +79,7 @@ pub struct LegendOptionsBuilder {
     pub(crate) position: ::std::option::Option<crate::types::LegendPosition>,
     pub(crate) width: ::std::option::Option<::std::string::String>,
     pub(crate) height: ::std::option::Option<::std::string::String>,
+    pub(crate) value_font_configuration: ::std::option::Option<crate::types::FontConfiguration>,
 }
 impl LegendOptionsBuilder {
     /// <p>Determines whether or not the legend is visible.</p>
@@ -175,6 +182,20 @@ impl LegendOptionsBuilder {
     pub fn get_height(&self) -> &::std::option::Option<::std::string::String> {
         &self.height
     }
+    /// <p>Configures the display properties of the given text.</p>
+    pub fn value_font_configuration(mut self, input: crate::types::FontConfiguration) -> Self {
+        self.value_font_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configures the display properties of the given text.</p>
+    pub fn set_value_font_configuration(mut self, input: ::std::option::Option<crate::types::FontConfiguration>) -> Self {
+        self.value_font_configuration = input;
+        self
+    }
+    /// <p>Configures the display properties of the given text.</p>
+    pub fn get_value_font_configuration(&self) -> &::std::option::Option<crate::types::FontConfiguration> {
+        &self.value_font_configuration
+    }
     /// Consumes the builder and constructs a [`LegendOptions`](crate::types::LegendOptions).
     pub fn build(self) -> crate::types::LegendOptions {
         crate::types::LegendOptions {
@@ -183,6 +204,7 @@ impl LegendOptionsBuilder {
             position: self.position,
             width: self.width,
             height: self.height,
+            value_font_configuration: self.value_font_configuration,
         }
     }
 }

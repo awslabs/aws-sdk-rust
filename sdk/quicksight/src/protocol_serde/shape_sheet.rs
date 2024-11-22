@@ -28,6 +28,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "Images" => {
+                            builder = builder.set_images(crate::protocol_serde::shape_sheet_image_list::de_sheet_image_list(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -40,5 +40,8 @@ pub fn ser_confirm_sign_up_input_input(
         }
         object_11.finish();
     }
+    if let Some(var_14) = &input.session {
+        object.key("Session").string(var_14.as_str());
+    }
     Ok(())
 }

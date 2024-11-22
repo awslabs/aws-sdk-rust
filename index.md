@@ -23,6 +23,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS Batch | [aws-sdk-batch](https://crates.io/crates/aws-sdk-batch) ([docs](https://docs.rs/aws-sdk-batch)) |
 | AWS Billing | [aws-sdk-billing](https://crates.io/crates/aws-sdk-billing) ([docs](https://docs.rs/aws-sdk-billing)) |
 | AWS Billing and Cost Management Data Exports | [aws-sdk-bcmdataexports](https://crates.io/crates/aws-sdk-bcmdataexports) ([docs](https://docs.rs/aws-sdk-bcmdataexports)) |
+| AWS Billing and Cost Management Pricing Calculator | [aws-sdk-bcmpricingcalculator](https://crates.io/crates/aws-sdk-bcmpricingcalculator) ([docs](https://docs.rs/aws-sdk-bcmpricingcalculator)) |
 | AWS Budgets | [aws-sdk-budgets](https://crates.io/crates/aws-sdk-budgets) ([docs](https://docs.rs/aws-sdk-budgets)) |
 | AWS Certificate Manager | [aws-sdk-acm](https://crates.io/crates/aws-sdk-acm) ([docs](https://docs.rs/aws-sdk-acm)) |
 | AWS Certificate Manager Private Certificate Authority | [aws-sdk-acmpca](https://crates.io/crates/aws-sdk-acmpca) ([docs](https://docs.rs/aws-sdk-acmpca)) |

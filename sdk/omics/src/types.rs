@@ -99,6 +99,10 @@ pub use crate::types::_e_tag_algorithm_family::ETagAlgorithmFamily;
 
 pub use crate::types::_sequence_store_s3_access::SequenceStoreS3Access;
 
+pub use crate::types::_sequence_store_status::SequenceStoreStatus;
+
+pub use crate::types::_s3_access_config::S3AccessConfig;
+
 pub use crate::types::_sequence_store_detail::SequenceStoreDetail;
 
 pub use crate::types::_sequence_store_filter::SequenceStoreFilter;
@@ -224,6 +228,8 @@ pub use crate::types::_annotation_import_item_source::AnnotationImportItemSource
 pub use crate::types::_annotation_import_job_item::AnnotationImportJobItem;
 
 pub use crate::types::_list_annotation_import_jobs_filter::ListAnnotationImportJobsFilter;
+
+pub use crate::types::_store_type::StoreType;
 
 mod _accelerators;
 
@@ -379,6 +385,8 @@ mod _run_retention_mode;
 
 mod _run_status;
 
+mod _s3_access_config;
+
 mod _schema_value_type;
 
 mod _sequence_information;
@@ -388,6 +396,8 @@ mod _sequence_store_detail;
 mod _sequence_store_filter;
 
 mod _sequence_store_s3_access;
+
+mod _sequence_store_status;
 
 mod _share_details;
 
@@ -412,6 +422,8 @@ mod _store_format;
 mod _store_options;
 
 mod _store_status;
+
+mod _store_type;
 
 mod _task_list_item;
 

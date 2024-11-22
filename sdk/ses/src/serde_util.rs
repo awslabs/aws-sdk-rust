@@ -287,6 +287,18 @@ pub(crate) fn bounce_action_correct_errors(mut builder: crate::types::builders::
     builder
 }
 
+pub(crate) fn connect_action_correct_errors(
+    mut builder: crate::types::builders::ConnectActionBuilder,
+) -> crate::types::builders::ConnectActionBuilder {
+    if builder.instance_arn.is_none() {
+        builder.instance_arn = Some(Default::default())
+    }
+    if builder.iam_role_arn.is_none() {
+        builder.iam_role_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn lambda_action_correct_errors(mut builder: crate::types::builders::LambdaActionBuilder) -> crate::types::builders::LambdaActionBuilder {
     if builder.function_arn.is_none() {
         builder.function_arn = Some(Default::default())

@@ -70,6 +70,9 @@ pub mod complete_attached_file_upload;
 /// Types for the `CreateAgentStatus` operation.
 pub mod create_agent_status;
 
+/// Types for the `CreateContact` operation.
+pub mod create_contact;
+
 /// Types for the `CreateContactFlow` operation.
 pub mod create_contact_flow;
 
@@ -78,6 +81,9 @@ pub mod create_contact_flow_module;
 
 /// Types for the `CreateContactFlowVersion` operation.
 pub mod create_contact_flow_version;
+
+/// Types for the `CreateEmailAddress` operation.
+pub mod create_email_address;
 
 /// Types for the `CreateEvaluationForm` operation.
 pub mod create_evaluation_form;
@@ -157,6 +163,9 @@ pub mod delete_contact_flow;
 /// Types for the `DeleteContactFlowModule` operation.
 pub mod delete_contact_flow_module;
 
+/// Types for the `DeleteEmailAddress` operation.
+pub mod delete_email_address;
+
 /// Types for the `DeleteEvaluationForm` operation.
 pub mod delete_evaluation_form;
 
@@ -231,6 +240,9 @@ pub mod describe_contact_flow;
 
 /// Types for the `DescribeContactFlowModule` operation.
 pub mod describe_contact_flow_module;
+
+/// Types for the `DescribeEmailAddress` operation.
+pub mod describe_email_address;
 
 /// Types for the `DescribeEvaluationForm` operation.
 pub mod describe_evaluation_form;
@@ -375,6 +387,9 @@ pub mod list_analytics_data_associations;
 
 /// Types for the `ListApprovedOrigins` operation.
 pub mod list_approved_origins;
+
+/// Types for the `ListAssociatedContacts` operation.
+pub mod list_associated_contacts;
 
 /// Types for the `ListAuthenticationProfiles` operation.
 pub mod list_authentication_profiles;
@@ -541,6 +556,9 @@ pub mod search_contact_flows;
 /// Types for the `SearchContacts` operation.
 pub mod search_contacts;
 
+/// Types for the `SearchEmailAddresses` operation.
+pub mod search_email_addresses;
+
 /// Types for the `SearchHoursOfOperations` operation.
 pub mod search_hours_of_operations;
 
@@ -577,6 +595,9 @@ pub mod search_vocabularies;
 /// Types for the `SendChatIntegrationEvent` operation.
 pub mod send_chat_integration_event;
 
+/// Types for the `SendOutboundEmail` operation.
+pub mod send_outbound_email;
+
 /// Types for the `StartAttachedFileUpload` operation.
 pub mod start_attached_file_upload;
 
@@ -592,8 +613,14 @@ pub mod start_contact_recording;
 /// Types for the `StartContactStreaming` operation.
 pub mod start_contact_streaming;
 
+/// Types for the `StartEmailContact` operation.
+pub mod start_email_contact;
+
 /// Types for the `StartOutboundChatContact` operation.
 pub mod start_outbound_chat_contact;
+
+/// Types for the `StartOutboundEmailContact` operation.
+pub mod start_outbound_email_contact;
 
 /// Types for the `StartOutboundVoiceContact` operation.
 pub mod start_outbound_voice_contact;
@@ -673,6 +700,9 @@ pub mod update_contact_routing_data;
 /// Types for the `UpdateContactSchedule` operation.
 pub mod update_contact_schedule;
 
+/// Types for the `UpdateEmailAddressMetadata` operation.
+pub mod update_email_address_metadata;
+
 /// Types for the `UpdateEvaluationForm` operation.
 pub mod update_evaluation_form;
 
@@ -711,6 +741,9 @@ pub mod update_queue_name;
 
 /// Types for the `UpdateQueueOutboundCallerConfig` operation.
 pub mod update_queue_outbound_caller_config;
+
+/// Types for the `UpdateQueueOutboundEmailConfig` operation.
+pub mod update_queue_outbound_email_config;
 
 /// Types for the `UpdateQueueStatus` operation.
 pub mod update_queue_status;

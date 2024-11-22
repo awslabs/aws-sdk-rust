@@ -23,13 +23,19 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_associate_to_configuration;
+
 pub(crate) mod shape_create_chime_webhook_configuration;
+
+pub(crate) mod shape_create_custom_action;
 
 pub(crate) mod shape_create_microsoft_teams_channel_configuration;
 
 pub(crate) mod shape_create_slack_channel_configuration;
 
 pub(crate) mod shape_delete_chime_webhook_configuration;
+
+pub(crate) mod shape_delete_custom_action;
 
 pub(crate) mod shape_delete_microsoft_teams_channel_configuration;
 
@@ -51,9 +57,17 @@ pub(crate) mod shape_describe_slack_user_identities;
 
 pub(crate) mod shape_describe_slack_workspaces;
 
+pub(crate) mod shape_disassociate_from_configuration;
+
 pub(crate) mod shape_get_account_preferences;
 
+pub(crate) mod shape_get_custom_action;
+
 pub(crate) mod shape_get_microsoft_teams_channel_configuration;
+
+pub(crate) mod shape_list_associations;
+
+pub(crate) mod shape_list_custom_actions;
 
 pub(crate) mod shape_list_microsoft_teams_channel_configurations;
 
@@ -71,9 +85,13 @@ pub(crate) mod shape_update_account_preferences;
 
 pub(crate) mod shape_update_chime_webhook_configuration;
 
+pub(crate) mod shape_update_custom_action;
+
 pub(crate) mod shape_update_microsoft_teams_channel_configuration;
 
 pub(crate) mod shape_update_slack_channel_configuration;
+
+pub(crate) mod shape_associate_to_configuration_input;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -89,6 +107,8 @@ pub(crate) mod shape_create_chime_webhook_configuration_exception;
 
 pub(crate) mod shape_create_chime_webhook_configuration_input;
 
+pub(crate) mod shape_create_custom_action_input;
+
 pub(crate) mod shape_create_microsoft_teams_channel_configuration_input;
 
 pub(crate) mod shape_create_slack_channel_configuration_exception;
@@ -100,6 +120,8 @@ pub(crate) mod shape_create_teams_channel_configuration_exception;
 pub(crate) mod shape_delete_chime_webhook_configuration_exception;
 
 pub(crate) mod shape_delete_chime_webhook_configuration_input;
+
+pub(crate) mod shape_delete_custom_action_input;
 
 pub(crate) mod shape_delete_microsoft_teams_channel_configuration_input;
 
@@ -141,7 +163,11 @@ pub(crate) mod shape_describe_slack_workspaces_exception;
 
 pub(crate) mod shape_describe_slack_workspaces_input;
 
+pub(crate) mod shape_disassociate_from_configuration_input;
+
 pub(crate) mod shape_get_account_preferences_exception;
+
+pub(crate) mod shape_get_custom_action_input;
 
 pub(crate) mod shape_get_microsoft_teams_channel_configuration_input;
 
@@ -154,6 +180,10 @@ pub(crate) mod shape_invalid_parameter_exception;
 pub(crate) mod shape_invalid_request_exception;
 
 pub(crate) mod shape_limit_exceeded_exception;
+
+pub(crate) mod shape_list_associations_input;
+
+pub(crate) mod shape_list_custom_actions_input;
 
 pub(crate) mod shape_list_microsoft_teams_channel_configurations_input;
 
@@ -177,6 +207,8 @@ pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_too_many_tags_exception;
 
+pub(crate) mod shape_unauthorized_exception;
+
 pub(crate) mod shape_untag_resource_input;
 
 pub(crate) mod shape_update_account_preferences_exception;
@@ -186,6 +218,8 @@ pub(crate) mod shape_update_account_preferences_input;
 pub(crate) mod shape_update_chime_webhook_configuration_exception;
 
 pub(crate) mod shape_update_chime_webhook_configuration_input;
+
+pub(crate) mod shape_update_custom_action_input;
 
 pub(crate) mod shape_update_microsoft_teams_channel_configuration_input;
 
@@ -197,11 +231,21 @@ pub(crate) mod shape_update_teams_channel_configuration_exception;
 
 pub(crate) mod shape_account_preferences;
 
+pub(crate) mod shape_association_list;
+
 pub(crate) mod shape_chime_webhook_configuration;
 
 pub(crate) mod shape_chime_webhook_configuration_list;
 
 pub(crate) mod shape_configured_teams_list;
+
+pub(crate) mod shape_custom_action;
+
+pub(crate) mod shape_custom_action_arn_list;
+
+pub(crate) mod shape_custom_action_attachment;
+
+pub(crate) mod shape_custom_action_definition;
 
 pub(crate) mod shape_slack_channel_configuration;
 
@@ -221,7 +265,13 @@ pub(crate) mod shape_teams_channel_configuration;
 
 pub(crate) mod shape_teams_user_identities_list;
 
+pub(crate) mod shape_association_listing;
+
 pub(crate) mod shape_configured_team;
+
+pub(crate) mod shape_custom_action_attachment_criteria;
+
+pub(crate) mod shape_custom_action_attachment_list;
 
 pub(crate) mod shape_guardrail_policy_arn_list;
 
@@ -234,3 +284,7 @@ pub(crate) mod shape_sns_topic_arn_list;
 pub(crate) mod shape_tags;
 
 pub(crate) mod shape_teams_user_identity;
+
+pub(crate) mod shape_custom_action_attachment_criteria_list;
+
+pub(crate) mod shape_custom_action_attachment_variables;

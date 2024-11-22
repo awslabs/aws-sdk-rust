@@ -181,6 +181,22 @@ impl Builder {
         self.config.store_or_unset(stalled_stream_protection_config);
         self
     }
+    /// Sets the idempotency token provider to use for service calls that require tokens.
+    pub fn idempotency_token_provider(
+        mut self,
+        idempotency_token_provider: impl ::std::convert::Into<crate::idempotency_token::IdempotencyTokenProvider>,
+    ) -> Self {
+        self.set_idempotency_token_provider(::std::option::Option::Some(idempotency_token_provider.into()));
+        self
+    }
+    /// Sets the idempotency token provider to use for service calls that require tokens.
+    pub fn set_idempotency_token_provider(
+        &mut self,
+        idempotency_token_provider: ::std::option::Option<crate::idempotency_token::IdempotencyTokenProvider>,
+    ) -> &mut Self {
+        self.config.store_or_unset(idempotency_token_provider);
+        self
+    }
     /// Sets the HTTP client to use when making requests.
     ///
     /// # Examples
@@ -1054,6 +1070,7 @@ impl Builder {
     #[allow(unused_mut)]
     /// Apply test defaults to the builder
     pub fn apply_test_defaults(&mut self) -> &mut Self {
+        self.set_idempotency_token_provider(Some("00000000-0000-4000-8000-000000000000".into()));
         self.set_time_source(::std::option::Option::Some(::aws_smithy_async::time::SharedTimeSource::new(
             ::aws_smithy_async::time::StaticTimeSource::new(::std::time::UNIX_EPOCH + ::std::time::Duration::from_secs(1234567890)),
         )));
@@ -1104,7 +1121,11 @@ pub(crate) struct ServiceRuntimePlugin {
 
 impl ServiceRuntimePlugin {
     pub fn new(_service_config: crate::config::Config) -> Self {
-        let config = { None };
+        let config = {
+            let mut cfg = ::aws_smithy_types::config_bag::Layer::new("WheatleyOrchestration_20171011");
+            cfg.store_put(crate::idempotency_token::default_provider());
+            ::std::option::Option::Some(cfg.freeze())
+        };
         let mut runtime_components = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ServiceRuntimePlugin");
         runtime_components.set_endpoint_resolver(Some({
             use crate::config::endpoint::ResolveEndpoint;

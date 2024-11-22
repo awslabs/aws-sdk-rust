@@ -359,6 +359,16 @@ pub(crate) fn reflens_search_groups_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_search_topics_output_output_next_token(
+    input: &crate::operation::search_topics::SearchTopicsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_describe_folder_permissions_output_output_permissions(
     input: crate::operation::describe_folder_permissions::DescribeFolderPermissionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
@@ -693,6 +703,16 @@ pub(crate) fn lens_search_groups_output_output_group_list(
     input: crate::operation::search_groups::SearchGroupsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Group>> {
     let input = match input.group_list {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_search_topics_output_output_topic_summary_list(
+    input: crate::operation::search_topics::SearchTopicsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::TopicSummary>> {
+    let input = match input.topic_summary_list {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

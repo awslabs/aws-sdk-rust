@@ -19,6 +19,8 @@ pub struct ReceiptAction {
     pub add_header_action: ::std::option::Option<crate::types::AddHeaderAction>,
     /// <p>Publishes the email content within a notification to Amazon SNS.</p>
     pub sns_action: ::std::option::Option<crate::types::SnsAction>,
+    /// <p>Parses the received message and starts an email contact in Amazon Connect on your behalf.</p>
+    pub connect_action: ::std::option::Option<crate::types::ConnectAction>,
 }
 impl ReceiptAction {
     /// <p>Saves the received message to an Amazon Simple Storage Service (Amazon S3) bucket and, optionally, publishes a notification to Amazon SNS.</p>
@@ -49,6 +51,10 @@ impl ReceiptAction {
     pub fn sns_action(&self) -> ::std::option::Option<&crate::types::SnsAction> {
         self.sns_action.as_ref()
     }
+    /// <p>Parses the received message and starts an email contact in Amazon Connect on your behalf.</p>
+    pub fn connect_action(&self) -> ::std::option::Option<&crate::types::ConnectAction> {
+        self.connect_action.as_ref()
+    }
 }
 impl ReceiptAction {
     /// Creates a new builder-style object to manufacture [`ReceiptAction`](crate::types::ReceiptAction).
@@ -68,6 +74,7 @@ pub struct ReceiptActionBuilder {
     pub(crate) stop_action: ::std::option::Option<crate::types::StopAction>,
     pub(crate) add_header_action: ::std::option::Option<crate::types::AddHeaderAction>,
     pub(crate) sns_action: ::std::option::Option<crate::types::SnsAction>,
+    pub(crate) connect_action: ::std::option::Option<crate::types::ConnectAction>,
 }
 impl ReceiptActionBuilder {
     /// <p>Saves the received message to an Amazon Simple Storage Service (Amazon S3) bucket and, optionally, publishes a notification to Amazon SNS.</p>
@@ -168,6 +175,20 @@ impl ReceiptActionBuilder {
     pub fn get_sns_action(&self) -> &::std::option::Option<crate::types::SnsAction> {
         &self.sns_action
     }
+    /// <p>Parses the received message and starts an email contact in Amazon Connect on your behalf.</p>
+    pub fn connect_action(mut self, input: crate::types::ConnectAction) -> Self {
+        self.connect_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Parses the received message and starts an email contact in Amazon Connect on your behalf.</p>
+    pub fn set_connect_action(mut self, input: ::std::option::Option<crate::types::ConnectAction>) -> Self {
+        self.connect_action = input;
+        self
+    }
+    /// <p>Parses the received message and starts an email contact in Amazon Connect on your behalf.</p>
+    pub fn get_connect_action(&self) -> &::std::option::Option<crate::types::ConnectAction> {
+        &self.connect_action
+    }
     /// Consumes the builder and constructs a [`ReceiptAction`](crate::types::ReceiptAction).
     pub fn build(self) -> crate::types::ReceiptAction {
         crate::types::ReceiptAction {
@@ -178,6 +199,7 @@ impl ReceiptActionBuilder {
             stop_action: self.stop_action,
             add_header_action: self.add_header_action,
             sns_action: self.sns_action,
+            connect_action: self.connect_action,
         }
     }
 }

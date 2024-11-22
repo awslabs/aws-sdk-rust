@@ -57,6 +57,8 @@ pub use crate::types::_complete_read_set_upload_part_list_item::CompleteReadSetU
 
 pub use crate::types::_sequence_store_s3_access::SequenceStoreS3AccessBuilder;
 
+pub use crate::types::_s3_access_config::S3AccessConfigBuilder;
+
 pub use crate::types::_sequence_store_detail::SequenceStoreDetailBuilder;
 
 pub use crate::types::_sequence_store_filter::SequenceStoreFilterBuilder;

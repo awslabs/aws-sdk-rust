@@ -272,6 +272,11 @@ pub(crate) fn de_delete_event_source_mapping(
                             .transpose()?,
                     );
                 }
+                "ProvisionedPollerConfig" => {
+                    builder = builder.set_provisioned_poller_config(
+                        crate::protocol_serde::shape_provisioned_poller_config::de_provisioned_poller_config(tokens)?,
+                    );
+                }
                 "Queues" => {
                     builder = builder.set_queues(crate::protocol_serde::shape_queues::de_queues(tokens)?);
                 }

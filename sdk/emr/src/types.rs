@@ -23,6 +23,8 @@ pub use crate::types::_instance_role_type::InstanceRoleType;
 
 pub use crate::types::_managed_scaling_policy::ManagedScalingPolicy;
 
+pub use crate::types::_scaling_strategy::ScalingStrategy;
+
 pub use crate::types::_compute_limits::ComputeLimits;
 
 pub use crate::types::_compute_limits_unit_type::ComputeLimitsUnitType;
@@ -512,6 +514,8 @@ mod _scaling_action;
 mod _scaling_constraints;
 
 mod _scaling_rule;
+
+mod _scaling_strategy;
 
 mod _scaling_trigger;
 

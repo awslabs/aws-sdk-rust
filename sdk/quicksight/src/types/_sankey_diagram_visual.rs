@@ -15,6 +15,8 @@ pub struct SankeyDiagramVisual {
     pub chart_configuration: ::std::option::Option<crate::types::SankeyDiagramChartConfiguration>,
     /// <p>The list of custom actions that are configured for a visual.</p>
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>,
+    /// <p>The alt text for the visual.</p>
+    pub visual_content_alt_text: ::std::option::Option<::std::string::String>,
 }
 impl SankeyDiagramVisual {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers.</p>
@@ -40,6 +42,10 @@ impl SankeyDiagramVisual {
     pub fn actions(&self) -> &[crate::types::VisualCustomAction] {
         self.actions.as_deref().unwrap_or_default()
     }
+    /// <p>The alt text for the visual.</p>
+    pub fn visual_content_alt_text(&self) -> ::std::option::Option<&str> {
+        self.visual_content_alt_text.as_deref()
+    }
 }
 impl SankeyDiagramVisual {
     /// Creates a new builder-style object to manufacture [`SankeyDiagramVisual`](crate::types::SankeyDiagramVisual).
@@ -57,6 +63,7 @@ pub struct SankeyDiagramVisualBuilder {
     pub(crate) subtitle: ::std::option::Option<crate::types::VisualSubtitleLabelOptions>,
     pub(crate) chart_configuration: ::std::option::Option<crate::types::SankeyDiagramChartConfiguration>,
     pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>,
+    pub(crate) visual_content_alt_text: ::std::option::Option<::std::string::String>,
 }
 impl SankeyDiagramVisualBuilder {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers.</p>
@@ -136,6 +143,20 @@ impl SankeyDiagramVisualBuilder {
     pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>> {
         &self.actions
     }
+    /// <p>The alt text for the visual.</p>
+    pub fn visual_content_alt_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.visual_content_alt_text = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The alt text for the visual.</p>
+    pub fn set_visual_content_alt_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.visual_content_alt_text = input;
+        self
+    }
+    /// <p>The alt text for the visual.</p>
+    pub fn get_visual_content_alt_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.visual_content_alt_text
+    }
     /// Consumes the builder and constructs a [`SankeyDiagramVisual`](crate::types::SankeyDiagramVisual).
     /// This method will fail if any of the following fields are not set:
     /// - [`visual_id`](crate::types::builders::SankeyDiagramVisualBuilder::visual_id)
@@ -151,6 +172,7 @@ impl SankeyDiagramVisualBuilder {
             subtitle: self.subtitle,
             chart_configuration: self.chart_configuration,
             actions: self.actions,
+            visual_content_alt_text: self.visual_content_alt_text,
         })
     }
 }

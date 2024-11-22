@@ -10,6 +10,8 @@ pub struct AttachmentReference {
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>Status of the attachment reference type.</p>
     pub status: ::std::option::Option<crate::types::ReferenceStatus>,
+    /// <p></p>
+    pub arn: ::std::option::Option<::std::string::String>,
 }
 impl AttachmentReference {
     /// <p>Identifier of the attachment reference.</p>
@@ -23,6 +25,10 @@ impl AttachmentReference {
     /// <p>Status of the attachment reference type.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ReferenceStatus> {
         self.status.as_ref()
+    }
+    /// <p></p>
+    pub fn arn(&self) -> ::std::option::Option<&str> {
+        self.arn.as_deref()
     }
 }
 impl AttachmentReference {
@@ -39,6 +45,7 @@ pub struct AttachmentReferenceBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ReferenceStatus>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
 impl AttachmentReferenceBuilder {
     /// <p>Identifier of the attachment reference.</p>
@@ -83,12 +90,27 @@ impl AttachmentReferenceBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ReferenceStatus> {
         &self.status
     }
+    /// <p></p>
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p></p>
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.arn = input;
+        self
+    }
+    /// <p></p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`AttachmentReference`](crate::types::AttachmentReference).
     pub fn build(self) -> crate::types::AttachmentReference {
         crate::types::AttachmentReference {
             name: self.name,
             value: self.value,
             status: self.status,
+            arn: self.arn,
         }
     }
 }

@@ -161,6 +161,13 @@ pub(crate) fn de_create_graph_using_import_task(
                 "importOptions" => {
                     builder = builder.set_import_options(crate::protocol_serde::shape_import_options::de_import_options(tokens)?);
                 }
+                "parquetType" => {
+                    builder = builder.set_parquet_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::ParquetType::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "roleArn" => {
                     builder = builder.set_role_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

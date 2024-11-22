@@ -16,6 +16,12 @@ pub fn ser_optimization_config(
             crate::protocol_serde::shape_model_compilation_config::ser_model_compilation_config(&mut object_2, inner)?;
             object_2.finish();
         }
+        crate::types::OptimizationConfig::ModelShardingConfig(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_13.key("ModelShardingConfig").start_object();
+            crate::protocol_serde::shape_model_sharding_config::ser_model_sharding_config(&mut object_3, inner)?;
+            object_3.finish();
+        }
         crate::types::OptimizationConfig::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "OptimizationConfig",
@@ -63,6 +69,11 @@ where
                         "ModelCompilationConfig" => Some(crate::types::OptimizationConfig::ModelCompilationConfig(
                             crate::protocol_serde::shape_model_compilation_config::de_model_compilation_config(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ModelCompilationConfig' cannot be null")
+                            })?,
+                        )),
+                        "ModelShardingConfig" => Some(crate::types::OptimizationConfig::ModelShardingConfig(
+                            crate::protocol_serde::shape_model_sharding_config::de_model_sharding_config(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ModelShardingConfig' cannot be null")
                             })?,
                         )),
                         _ => {

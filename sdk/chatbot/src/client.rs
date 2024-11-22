@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateChimeWebhookConfiguration`](crate::operation::create_chime_webhook_configuration) operation has
-/// a [`Client::create_chime_webhook_configuration`], function which returns a builder for that operation.
+/// For example, the [`AssociateToConfiguration`](crate::operation::associate_to_configuration) operation has
+/// a [`Client::associate_to_configuration`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_chime_webhook_configuration()
-///     .webhook_description("example")
+/// let result = client.associate_to_configuration()
+///     .resource("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -136,7 +136,11 @@ impl Client {
     }
 }
 
+mod associate_to_configuration;
+
 mod create_chime_webhook_configuration;
+
+mod create_custom_action;
 
 mod create_microsoft_teams_channel_configuration;
 
@@ -153,7 +157,7 @@ mod create_slack_channel_configuration;
 /// # let client: aws_sdk_chatbot::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.create_chime_webhook_configuration()
+/// let result = client.associate_to_configuration()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -170,6 +174,8 @@ mod create_slack_channel_configuration;
 pub mod customize;
 
 mod delete_chime_webhook_configuration;
+
+mod delete_custom_action;
 
 mod delete_microsoft_teams_channel_configuration;
 
@@ -191,9 +197,17 @@ mod describe_slack_user_identities;
 
 mod describe_slack_workspaces;
 
+mod disassociate_from_configuration;
+
 mod get_account_preferences;
 
+mod get_custom_action;
+
 mod get_microsoft_teams_channel_configuration;
+
+mod list_associations;
+
+mod list_custom_actions;
 
 mod list_microsoft_teams_channel_configurations;
 
@@ -210,6 +224,8 @@ mod untag_resource;
 mod update_account_preferences;
 
 mod update_chime_webhook_configuration;
+
+mod update_custom_action;
 
 mod update_microsoft_teams_channel_configuration;
 

@@ -22,7 +22,7 @@ impl crate::operation::list_commitment_purchase_analyses::builders::ListCommitme
 }
 /// Fluent builder constructing a request to `ListCommitmentPurchaseAnalyses`.
 ///
-/// <p>Lists the commitment purchase analyses for your account based on the last 30 days.</p>
+/// <p>Lists the commitment purchase analyses for your account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListCommitmentPurchaseAnalysesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -16,7 +16,7 @@ pub struct SavingsPlans {
     pub term_in_years: ::std::option::Option<crate::types::TermInYears>,
     /// <p>The Savings Plans commitment.</p>
     pub savings_plans_commitment: ::std::option::Option<f64>,
-    /// <p>The unique ID that's used to distinguish commitments from one another.</p>
+    /// <p>The unique ID that's used to distinguish Savings Plans commitments from one another.</p>
     pub offering_id: ::std::option::Option<::std::string::String>,
 }
 impl SavingsPlans {
@@ -44,7 +44,7 @@ impl SavingsPlans {
     pub fn savings_plans_commitment(&self) -> ::std::option::Option<f64> {
         self.savings_plans_commitment
     }
-    /// <p>The unique ID that's used to distinguish commitments from one another.</p>
+    /// <p>The unique ID that's used to distinguish Savings Plans commitments from one another.</p>
     pub fn offering_id(&self) -> ::std::option::Option<&str> {
         self.offering_id.as_deref()
     }
@@ -153,17 +153,17 @@ impl SavingsPlansBuilder {
     pub fn get_savings_plans_commitment(&self) -> &::std::option::Option<f64> {
         &self.savings_plans_commitment
     }
-    /// <p>The unique ID that's used to distinguish commitments from one another.</p>
+    /// <p>The unique ID that's used to distinguish Savings Plans commitments from one another.</p>
     pub fn offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.offering_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique ID that's used to distinguish commitments from one another.</p>
+    /// <p>The unique ID that's used to distinguish Savings Plans commitments from one another.</p>
     pub fn set_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.offering_id = input;
         self
     }
-    /// <p>The unique ID that's used to distinguish commitments from one another.</p>
+    /// <p>The unique ID that's used to distinguish Savings Plans commitments from one another.</p>
     pub fn get_offering_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.offering_id
     }

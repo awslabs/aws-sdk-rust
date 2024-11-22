@@ -48,6 +48,9 @@ pub fn ser_bar_chart_visual(
         }
         array_12.finish();
     }
+    if let Some(var_15) = &input.visual_content_alt_text {
+        object.key("VisualContentAltText").string(var_15.as_str());
+    }
     Ok(())
 }
 
@@ -94,6 +97,13 @@ where
                         "ColumnHierarchies" => {
                             builder =
                                 builder.set_column_hierarchies(crate::protocol_serde::shape_column_hierarchy_list::de_column_hierarchy_list(tokens)?);
+                        }
+                        "VisualContentAltText" => {
+                            builder = builder.set_visual_content_alt_text(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

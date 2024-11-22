@@ -11,7 +11,7 @@ pub enum Error {
     BillExpirationException(crate::types::error::BillExpirationException),
     /// <p>The requested data is unavailable.</p>
     DataUnavailableException(crate::types::error::DataUnavailableException),
-    /// <p>A request to generate a recommendation is already in progress.</p>
+    /// <p>A request to generate a recommendation or analysis is already in progress.</p>
     GenerationExistsException(crate::types::error::GenerationExistsException),
     /// <p>The pagination token is invalid. Try again without a pagination token.</p>
     InvalidNextTokenException(crate::types::error::InvalidNextTokenException),

@@ -52,6 +52,12 @@ pub fn ser_rule_action(
             crate::protocol_serde::shape_deliver_to_mailbox_action::ser_deliver_to_mailbox_action(&mut object_8, inner)?;
             object_8.finish();
         }
+        crate::types::RuleAction::DeliverToQBusiness(inner) => {
+            #[allow(unused_mut)]
+            let mut object_9 = object_12.key("DeliverToQBusiness").start_object();
+            crate::protocol_serde::shape_deliver_to_q_business_action::ser_deliver_to_q_business_action(&mut object_9, inner)?;
+            object_9.finish();
+        }
         crate::types::RuleAction::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("RuleAction")),
     }
     Ok(())
@@ -122,6 +128,11 @@ where
                         "DeliverToMailbox" => Some(crate::types::RuleAction::DeliverToMailbox(
                             crate::protocol_serde::shape_deliver_to_mailbox_action::de_deliver_to_mailbox_action(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'DeliverToMailbox' cannot be null")
+                            })?,
+                        )),
+                        "DeliverToQBusiness" => Some(crate::types::RuleAction::DeliverToQBusiness(
+                            crate::protocol_serde::shape_deliver_to_q_business_action::de_deliver_to_q_business_action(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'DeliverToQBusiness' cannot be null")
                             })?,
                         )),
                         _ => {

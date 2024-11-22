@@ -139,5 +139,8 @@ pub fn ser_create_user_pool_input_input(
         crate::protocol_serde::shape_account_recovery_setting_type::ser_account_recovery_setting_type(&mut object_46, var_45)?;
         object_46.finish();
     }
+    if let Some(var_47) = &input.user_pool_tier {
+        object.key("UserPoolTier").string(var_47.as_str());
+    }
     Ok(())
 }

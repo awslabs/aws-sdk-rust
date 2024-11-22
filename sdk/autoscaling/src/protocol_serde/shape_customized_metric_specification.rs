@@ -36,15 +36,23 @@ pub fn ser_customized_metric_specification(
         scope_12.string(var_13);
     }
     #[allow(unused_mut)]
-    let mut scope_14 = writer.prefix("Metrics");
-    if let Some(var_15) = &input.metrics {
-        let mut list_17 = scope_14.start_list(false, None);
-        for item_16 in var_15 {
+    let mut scope_14 = writer.prefix("Period");
+    if let Some(var_15) = &input.period {
+        scope_14.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_15).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_16 = writer.prefix("Metrics");
+    if let Some(var_17) = &input.metrics {
+        let mut list_19 = scope_16.start_list(false, None);
+        for item_18 in var_17 {
             #[allow(unused_mut)]
-            let mut entry_18 = list_17.entry();
-            crate::protocol_serde::shape_target_tracking_metric_data_query::ser_target_tracking_metric_data_query(entry_18, item_16)?;
+            let mut entry_20 = list_19.entry();
+            crate::protocol_serde::shape_target_tracking_metric_data_query::ser_target_tracking_metric_data_query(entry_20, item_18)?;
         }
-        list_17.finish();
+        list_19.finish();
     }
     Ok(())
 }
@@ -58,7 +66,7 @@ pub fn de_customized_metric_specification(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("MetricName") /* MetricName com.amazonaws.autoscaling#CustomizedMetricSpecification$MetricName */ =>  {
-                let var_19 =
+                let var_21 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -67,11 +75,11 @@ pub fn de_customized_metric_specification(
                         ?
                     )
                 ;
-                builder = builder.set_metric_name(var_19);
+                builder = builder.set_metric_name(var_21);
             }
             ,
             s if s.matches("Namespace") /* Namespace com.amazonaws.autoscaling#CustomizedMetricSpecification$Namespace */ =>  {
-                let var_20 =
+                let var_22 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -80,21 +88,21 @@ pub fn de_customized_metric_specification(
                         ?
                     )
                 ;
-                builder = builder.set_namespace(var_20);
+                builder = builder.set_namespace(var_22);
             }
             ,
             s if s.matches("Dimensions") /* Dimensions com.amazonaws.autoscaling#CustomizedMetricSpecification$Dimensions */ =>  {
-                let var_21 =
+                let var_23 =
                     Some(
                         crate::protocol_serde::shape_metric_dimensions::de_metric_dimensions(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_dimensions(var_21);
+                builder = builder.set_dimensions(var_23);
             }
             ,
             s if s.matches("Statistic") /* Statistic com.amazonaws.autoscaling#CustomizedMetricSpecification$Statistic */ =>  {
-                let var_22 =
+                let var_24 =
                     Some(
                         Result::<crate::types::MetricStatistic, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::MetricStatistic::from(
@@ -104,11 +112,11 @@ pub fn de_customized_metric_specification(
                         ?
                     )
                 ;
-                builder = builder.set_statistic(var_22);
+                builder = builder.set_statistic(var_24);
             }
             ,
             s if s.matches("Unit") /* Unit com.amazonaws.autoscaling#CustomizedMetricSpecification$Unit */ =>  {
-                let var_23 =
+                let var_25 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -117,17 +125,32 @@ pub fn de_customized_metric_specification(
                         ?
                     )
                 ;
-                builder = builder.set_unit(var_23);
+                builder = builder.set_unit(var_25);
+            }
+            ,
+            s if s.matches("Period") /* Period com.amazonaws.autoscaling#CustomizedMetricSpecification$Period */ =>  {
+                let var_26 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.autoscaling#MetricGranularityInSeconds`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_period(var_26);
             }
             ,
             s if s.matches("Metrics") /* Metrics com.amazonaws.autoscaling#CustomizedMetricSpecification$Metrics */ =>  {
-                let var_24 =
+                let var_27 =
                     Some(
                         crate::protocol_serde::shape_target_tracking_metric_data_queries::de_target_tracking_metric_data_queries(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_metrics(var_24);
+                builder = builder.set_metrics(var_27);
             }
             ,
             _ => {}

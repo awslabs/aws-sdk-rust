@@ -39,6 +39,8 @@ pub use crate::types::_pre_token_generation_version_config_type::PreTokenGenerat
 
 pub use crate::types::_user_pool_policy_type::UserPoolPolicyTypeBuilder;
 
+pub use crate::types::_sign_in_policy_type::SignInPolicyTypeBuilder;
+
 pub use crate::types::_password_policy_type::PasswordPolicyTypeBuilder;
 
 pub use crate::types::_code_delivery_details_type::CodeDeliveryDetailsTypeBuilder;
@@ -48,6 +50,10 @@ pub use crate::types::_attribute_type::AttributeTypeBuilder;
 pub use crate::types::_resource_server_type::ResourceServerTypeBuilder;
 
 pub use crate::types::_resource_server_scope_type::ResourceServerScopeTypeBuilder;
+
+pub use crate::types::_managed_login_branding_type::ManagedLoginBrandingTypeBuilder;
+
+pub use crate::types::_asset_type::AssetTypeBuilder;
 
 pub use crate::types::_identity_provider_type::IdentityProviderTypeBuilder;
 
@@ -60,6 +66,8 @@ pub use crate::types::_user_context_data_type::UserContextDataTypeBuilder;
 pub use crate::types::_analytics_metadata_type::AnalyticsMetadataTypeBuilder;
 
 pub use crate::types::_mfa_option_type::MfaOptionTypeBuilder;
+
+pub use crate::types::_web_authn_configuration_type::WebAuthnConfigurationTypeBuilder;
 
 pub use crate::types::_email_mfa_config_type::EmailMfaConfigTypeBuilder;
 
@@ -106,6 +114,8 @@ pub use crate::types::_cloud_watch_logs_configuration_type::CloudWatchLogsConfig
 pub use crate::types::_authentication_result_type::AuthenticationResultTypeBuilder;
 
 pub use crate::types::_new_device_metadata_type::NewDeviceMetadataTypeBuilder;
+
+pub use crate::types::_web_authn_credential_description::WebAuthnCredentialDescriptionBuilder;
 
 pub use crate::types::_user_type::UserTypeBuilder;
 

@@ -229,6 +229,11 @@ where
                                 crate::protocol_serde::shape_map_run_redriven_event_details::de_map_run_redriven_event_details(tokens)?,
                             );
                         }
+                        "evaluationFailedEventDetails" => {
+                            builder = builder.set_evaluation_failed_event_details(
+                                crate::protocol_serde::shape_evaluation_failed_event_details::de_evaluation_failed_event_details(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

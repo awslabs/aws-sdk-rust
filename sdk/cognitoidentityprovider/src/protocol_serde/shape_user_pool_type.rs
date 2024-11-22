@@ -203,6 +203,13 @@ where
                                 crate::protocol_serde::shape_account_recovery_setting_type::de_account_recovery_setting_type(tokens)?,
                             );
                         }
+                        "UserPoolTier" => {
+                            builder = builder.set_user_pool_tier(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::UserPoolTierType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

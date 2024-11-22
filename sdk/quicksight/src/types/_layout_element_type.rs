@@ -13,6 +13,7 @@
 /// # let layoutelementtype = unimplemented!();
 /// match layoutelementtype {
 ///     LayoutElementType::FilterControl => { /* ... */ },
+///     LayoutElementType::Image => { /* ... */ },
 ///     LayoutElementType::ParameterControl => { /* ... */ },
 ///     LayoutElementType::TextBox => { /* ... */ },
 ///     LayoutElementType::Visual => { /* ... */ },
@@ -46,6 +47,8 @@ pub enum LayoutElementType {
     #[allow(missing_docs)] // documentation missing in model
     FilterControl,
     #[allow(missing_docs)] // documentation missing in model
+    Image,
+    #[allow(missing_docs)] // documentation missing in model
     ParameterControl,
     #[allow(missing_docs)] // documentation missing in model
     TextBox,
@@ -59,6 +62,7 @@ impl ::std::convert::From<&str> for LayoutElementType {
     fn from(s: &str) -> Self {
         match s {
             "FILTER_CONTROL" => LayoutElementType::FilterControl,
+            "IMAGE" => LayoutElementType::Image,
             "PARAMETER_CONTROL" => LayoutElementType::ParameterControl,
             "TEXT_BOX" => LayoutElementType::TextBox,
             "VISUAL" => LayoutElementType::Visual,
@@ -78,6 +82,7 @@ impl LayoutElementType {
     pub fn as_str(&self) -> &str {
         match self {
             LayoutElementType::FilterControl => "FILTER_CONTROL",
+            LayoutElementType::Image => "IMAGE",
             LayoutElementType::ParameterControl => "PARAMETER_CONTROL",
             LayoutElementType::TextBox => "TEXT_BOX",
             LayoutElementType::Visual => "VISUAL",
@@ -86,7 +91,7 @@ impl LayoutElementType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FILTER_CONTROL", "PARAMETER_CONTROL", "TEXT_BOX", "VISUAL"]
+        &["FILTER_CONTROL", "IMAGE", "PARAMETER_CONTROL", "TEXT_BOX", "VISUAL"]
     }
 }
 impl ::std::convert::AsRef<str> for LayoutElementType {
@@ -110,6 +115,7 @@ impl ::std::fmt::Display for LayoutElementType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             LayoutElementType::FilterControl => write!(f, "FILTER_CONTROL"),
+            LayoutElementType::Image => write!(f, "IMAGE"),
             LayoutElementType::ParameterControl => write!(f, "PARAMETER_CONTROL"),
             LayoutElementType::TextBox => write!(f, "TEXT_BOX"),
             LayoutElementType::Visual => write!(f, "VISUAL"),

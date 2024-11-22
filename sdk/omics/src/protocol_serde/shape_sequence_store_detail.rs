@@ -65,6 +65,26 @@ where
                                     .transpose()?,
                             );
                         }
+                        "status" => {
+                            builder = builder.set_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::SequenceStoreStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "statusMessage" => {
+                            builder = builder.set_status_message(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "updateTime" => {
+                            builder = builder.set_update_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

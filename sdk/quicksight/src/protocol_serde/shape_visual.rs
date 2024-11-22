@@ -69,77 +69,89 @@ pub fn ser_visual(
         crate::protocol_serde::shape_filled_map_visual::ser_filled_map_visual(&mut object_22, var_21)?;
         object_22.finish();
     }
-    if let Some(var_23) = &input.funnel_chart_visual {
+    if let Some(var_23) = &input.layer_map_visual {
         #[allow(unused_mut)]
-        let mut object_24 = object.key("FunnelChartVisual").start_object();
-        crate::protocol_serde::shape_funnel_chart_visual::ser_funnel_chart_visual(&mut object_24, var_23)?;
+        let mut object_24 = object.key("LayerMapVisual").start_object();
+        crate::protocol_serde::shape_layer_map_visual::ser_layer_map_visual(&mut object_24, var_23)?;
         object_24.finish();
     }
-    if let Some(var_25) = &input.scatter_plot_visual {
+    if let Some(var_25) = &input.funnel_chart_visual {
         #[allow(unused_mut)]
-        let mut object_26 = object.key("ScatterPlotVisual").start_object();
-        crate::protocol_serde::shape_scatter_plot_visual::ser_scatter_plot_visual(&mut object_26, var_25)?;
+        let mut object_26 = object.key("FunnelChartVisual").start_object();
+        crate::protocol_serde::shape_funnel_chart_visual::ser_funnel_chart_visual(&mut object_26, var_25)?;
         object_26.finish();
     }
-    if let Some(var_27) = &input.combo_chart_visual {
+    if let Some(var_27) = &input.scatter_plot_visual {
         #[allow(unused_mut)]
-        let mut object_28 = object.key("ComboChartVisual").start_object();
-        crate::protocol_serde::shape_combo_chart_visual::ser_combo_chart_visual(&mut object_28, var_27)?;
+        let mut object_28 = object.key("ScatterPlotVisual").start_object();
+        crate::protocol_serde::shape_scatter_plot_visual::ser_scatter_plot_visual(&mut object_28, var_27)?;
         object_28.finish();
     }
-    if let Some(var_29) = &input.box_plot_visual {
+    if let Some(var_29) = &input.combo_chart_visual {
         #[allow(unused_mut)]
-        let mut object_30 = object.key("BoxPlotVisual").start_object();
-        crate::protocol_serde::shape_box_plot_visual::ser_box_plot_visual(&mut object_30, var_29)?;
+        let mut object_30 = object.key("ComboChartVisual").start_object();
+        crate::protocol_serde::shape_combo_chart_visual::ser_combo_chart_visual(&mut object_30, var_29)?;
         object_30.finish();
     }
-    if let Some(var_31) = &input.waterfall_visual {
+    if let Some(var_31) = &input.box_plot_visual {
         #[allow(unused_mut)]
-        let mut object_32 = object.key("WaterfallVisual").start_object();
-        crate::protocol_serde::shape_waterfall_visual::ser_waterfall_visual(&mut object_32, var_31)?;
+        let mut object_32 = object.key("BoxPlotVisual").start_object();
+        crate::protocol_serde::shape_box_plot_visual::ser_box_plot_visual(&mut object_32, var_31)?;
         object_32.finish();
     }
-    if let Some(var_33) = &input.histogram_visual {
+    if let Some(var_33) = &input.waterfall_visual {
         #[allow(unused_mut)]
-        let mut object_34 = object.key("HistogramVisual").start_object();
-        crate::protocol_serde::shape_histogram_visual::ser_histogram_visual(&mut object_34, var_33)?;
+        let mut object_34 = object.key("WaterfallVisual").start_object();
+        crate::protocol_serde::shape_waterfall_visual::ser_waterfall_visual(&mut object_34, var_33)?;
         object_34.finish();
     }
-    if let Some(var_35) = &input.word_cloud_visual {
+    if let Some(var_35) = &input.histogram_visual {
         #[allow(unused_mut)]
-        let mut object_36 = object.key("WordCloudVisual").start_object();
-        crate::protocol_serde::shape_word_cloud_visual::ser_word_cloud_visual(&mut object_36, var_35)?;
+        let mut object_36 = object.key("HistogramVisual").start_object();
+        crate::protocol_serde::shape_histogram_visual::ser_histogram_visual(&mut object_36, var_35)?;
         object_36.finish();
     }
-    if let Some(var_37) = &input.insight_visual {
+    if let Some(var_37) = &input.word_cloud_visual {
         #[allow(unused_mut)]
-        let mut object_38 = object.key("InsightVisual").start_object();
-        crate::protocol_serde::shape_insight_visual::ser_insight_visual(&mut object_38, var_37)?;
+        let mut object_38 = object.key("WordCloudVisual").start_object();
+        crate::protocol_serde::shape_word_cloud_visual::ser_word_cloud_visual(&mut object_38, var_37)?;
         object_38.finish();
     }
-    if let Some(var_39) = &input.sankey_diagram_visual {
+    if let Some(var_39) = &input.insight_visual {
         #[allow(unused_mut)]
-        let mut object_40 = object.key("SankeyDiagramVisual").start_object();
-        crate::protocol_serde::shape_sankey_diagram_visual::ser_sankey_diagram_visual(&mut object_40, var_39)?;
+        let mut object_40 = object.key("InsightVisual").start_object();
+        crate::protocol_serde::shape_insight_visual::ser_insight_visual(&mut object_40, var_39)?;
         object_40.finish();
     }
-    if let Some(var_41) = &input.custom_content_visual {
+    if let Some(var_41) = &input.sankey_diagram_visual {
         #[allow(unused_mut)]
-        let mut object_42 = object.key("CustomContentVisual").start_object();
-        crate::protocol_serde::shape_custom_content_visual::ser_custom_content_visual(&mut object_42, var_41)?;
+        let mut object_42 = object.key("SankeyDiagramVisual").start_object();
+        crate::protocol_serde::shape_sankey_diagram_visual::ser_sankey_diagram_visual(&mut object_42, var_41)?;
         object_42.finish();
     }
-    if let Some(var_43) = &input.empty_visual {
+    if let Some(var_43) = &input.custom_content_visual {
         #[allow(unused_mut)]
-        let mut object_44 = object.key("EmptyVisual").start_object();
-        crate::protocol_serde::shape_empty_visual::ser_empty_visual(&mut object_44, var_43)?;
+        let mut object_44 = object.key("CustomContentVisual").start_object();
+        crate::protocol_serde::shape_custom_content_visual::ser_custom_content_visual(&mut object_44, var_43)?;
         object_44.finish();
     }
-    if let Some(var_45) = &input.radar_chart_visual {
+    if let Some(var_45) = &input.empty_visual {
         #[allow(unused_mut)]
-        let mut object_46 = object.key("RadarChartVisual").start_object();
-        crate::protocol_serde::shape_radar_chart_visual::ser_radar_chart_visual(&mut object_46, var_45)?;
+        let mut object_46 = object.key("EmptyVisual").start_object();
+        crate::protocol_serde::shape_empty_visual::ser_empty_visual(&mut object_46, var_45)?;
         object_46.finish();
+    }
+    if let Some(var_47) = &input.radar_chart_visual {
+        #[allow(unused_mut)]
+        let mut object_48 = object.key("RadarChartVisual").start_object();
+        crate::protocol_serde::shape_radar_chart_visual::ser_radar_chart_visual(&mut object_48, var_47)?;
+        object_48.finish();
+    }
+    if let Some(var_49) = &input.plugin_visual {
+        #[allow(unused_mut)]
+        let mut object_50 = object.key("PluginVisual").start_object();
+        crate::protocol_serde::shape_plugin_visual::ser_plugin_visual(&mut object_50, var_49)?;
+        object_50.finish();
     }
     Ok(())
 }
@@ -193,6 +205,9 @@ where
                         "FilledMapVisual" => {
                             builder = builder.set_filled_map_visual(crate::protocol_serde::shape_filled_map_visual::de_filled_map_visual(tokens)?);
                         }
+                        "LayerMapVisual" => {
+                            builder = builder.set_layer_map_visual(crate::protocol_serde::shape_layer_map_visual::de_layer_map_visual(tokens)?);
+                        }
                         "FunnelChartVisual" => {
                             builder =
                                 builder.set_funnel_chart_visual(crate::protocol_serde::shape_funnel_chart_visual::de_funnel_chart_visual(tokens)?);
@@ -232,6 +247,9 @@ where
                         }
                         "RadarChartVisual" => {
                             builder = builder.set_radar_chart_visual(crate::protocol_serde::shape_radar_chart_visual::de_radar_chart_visual(tokens)?);
+                        }
+                        "PluginVisual" => {
+                            builder = builder.set_plugin_visual(crate::protocol_serde::shape_plugin_visual::de_plugin_visual(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

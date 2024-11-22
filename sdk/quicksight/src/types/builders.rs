@@ -89,6 +89,18 @@ pub use crate::types::_validation_strategy::ValidationStrategyBuilder;
 
 pub use crate::types::_template_version_definition::TemplateVersionDefinitionBuilder;
 
+pub use crate::types::_static_file::StaticFileBuilder;
+
+pub use crate::types::_spatial_static_file::SpatialStaticFileBuilder;
+
+pub use crate::types::_static_file_source::StaticFileSourceBuilder;
+
+pub use crate::types::_static_file_s3_source_options::StaticFileS3SourceOptionsBuilder;
+
+pub use crate::types::_static_file_url_source_options::StaticFileUrlSourceOptionsBuilder;
+
+pub use crate::types::_image_static_file::ImageStaticFileBuilder;
+
 pub use crate::types::_query_execution_options::QueryExecutionOptionsBuilder;
 
 pub use crate::types::_asset_options::AssetOptionsBuilder;
@@ -355,9 +367,93 @@ pub use crate::types::_body_section_content::BodySectionContentBuilder;
 
 pub use crate::types::_free_form_layout_configuration::FreeFormLayoutConfigurationBuilder;
 
+pub use crate::types::_sheet_image::SheetImageBuilder;
+
+pub use crate::types::_image_custom_action::ImageCustomActionBuilder;
+
+pub use crate::types::_image_custom_action_operation::ImageCustomActionOperationBuilder;
+
+pub use crate::types::_custom_action_set_parameters_operation::CustomActionSetParametersOperationBuilder;
+
+pub use crate::types::_set_parameter_value_configuration::SetParameterValueConfigurationBuilder;
+
+pub use crate::types::_destination_parameter_value_configuration::DestinationParameterValueConfigurationBuilder;
+
+pub use crate::types::_custom_values_configuration::CustomValuesConfigurationBuilder;
+
+pub use crate::types::_custom_parameter_values::CustomParameterValuesBuilder;
+
+pub use crate::types::_custom_action_url_operation::CustomActionUrlOperationBuilder;
+
+pub use crate::types::_custom_action_navigation_operation::CustomActionNavigationOperationBuilder;
+
+pub use crate::types::_local_navigation_configuration::LocalNavigationConfigurationBuilder;
+
+pub use crate::types::_image_interaction_options::ImageInteractionOptionsBuilder;
+
+pub use crate::types::_image_menu_option::ImageMenuOptionBuilder;
+
+pub use crate::types::_sheet_image_tooltip_configuration::SheetImageTooltipConfigurationBuilder;
+
+pub use crate::types::_sheet_image_tooltip_text::SheetImageTooltipTextBuilder;
+
+pub use crate::types::_sheet_image_scaling_configuration::SheetImageScalingConfigurationBuilder;
+
+pub use crate::types::_sheet_image_source::SheetImageSourceBuilder;
+
+pub use crate::types::_sheet_image_static_file_source::SheetImageStaticFileSourceBuilder;
+
 pub use crate::types::_sheet_text_box::SheetTextBoxBuilder;
 
 pub use crate::types::_visual::VisualBuilder;
+
+pub use crate::types::_plugin_visual::PluginVisualBuilder;
+
+pub use crate::types::_plugin_visual_configuration::PluginVisualConfigurationBuilder;
+
+pub use crate::types::_plugin_visual_sort_configuration::PluginVisualSortConfigurationBuilder;
+
+pub use crate::types::_plugin_visual_table_query_sort::PluginVisualTableQuerySortBuilder;
+
+pub use crate::types::_plugin_visual_items_limit_configuration::PluginVisualItemsLimitConfigurationBuilder;
+
+pub use crate::types::_field_sort_options::FieldSortOptionsBuilder;
+
+pub use crate::types::_field_sort::FieldSortBuilder;
+
+pub use crate::types::_plugin_visual_options::PluginVisualOptionsBuilder;
+
+pub use crate::types::_plugin_visual_property::PluginVisualPropertyBuilder;
+
+pub use crate::types::_plugin_visual_field_well::PluginVisualFieldWellBuilder;
+
+pub use crate::types::_unaggregated_field::UnaggregatedFieldBuilder;
+
+pub use crate::types::_measure_field::MeasureFieldBuilder;
+
+pub use crate::types::_calculated_measure_field::CalculatedMeasureFieldBuilder;
+
+pub use crate::types::_date_measure_field::DateMeasureFieldBuilder;
+
+pub use crate::types::_categorical_measure_field::CategoricalMeasureFieldBuilder;
+
+pub use crate::types::_numerical_measure_field::NumericalMeasureFieldBuilder;
+
+pub use crate::types::_dimension_field::DimensionFieldBuilder;
+
+pub use crate::types::_date_dimension_field::DateDimensionFieldBuilder;
+
+pub use crate::types::_categorical_dimension_field::CategoricalDimensionFieldBuilder;
+
+pub use crate::types::_numerical_dimension_field::NumericalDimensionFieldBuilder;
+
+pub use crate::types::_visual_subtitle_label_options::VisualSubtitleLabelOptionsBuilder;
+
+pub use crate::types::_long_format_text::LongFormatTextBuilder;
+
+pub use crate::types::_visual_title_label_options::VisualTitleLabelOptionsBuilder;
+
+pub use crate::types::_short_format_text::ShortFormatTextBuilder;
 
 pub use crate::types::_radar_chart_visual::RadarChartVisualBuilder;
 
@@ -380,22 +476,6 @@ pub use crate::types::_explicit_hierarchy::ExplicitHierarchyBuilder;
 pub use crate::types::_visual_custom_action::VisualCustomActionBuilder;
 
 pub use crate::types::_visual_custom_action_operation::VisualCustomActionOperationBuilder;
-
-pub use crate::types::_custom_action_set_parameters_operation::CustomActionSetParametersOperationBuilder;
-
-pub use crate::types::_set_parameter_value_configuration::SetParameterValueConfigurationBuilder;
-
-pub use crate::types::_destination_parameter_value_configuration::DestinationParameterValueConfigurationBuilder;
-
-pub use crate::types::_custom_values_configuration::CustomValuesConfigurationBuilder;
-
-pub use crate::types::_custom_parameter_values::CustomParameterValuesBuilder;
-
-pub use crate::types::_custom_action_url_operation::CustomActionUrlOperationBuilder;
-
-pub use crate::types::_custom_action_navigation_operation::CustomActionNavigationOperationBuilder;
-
-pub use crate::types::_local_navigation_configuration::LocalNavigationConfigurationBuilder;
 
 pub use crate::types::_custom_action_filter_operation::CustomActionFilterOperationBuilder;
 
@@ -465,39 +545,9 @@ pub use crate::types::_radar_chart_sort_configuration::RadarChartSortConfigurati
 
 pub use crate::types::_items_limit_configuration::ItemsLimitConfigurationBuilder;
 
-pub use crate::types::_field_sort_options::FieldSortOptionsBuilder;
-
-pub use crate::types::_field_sort::FieldSortBuilder;
-
 pub use crate::types::_radar_chart_field_wells::RadarChartFieldWellsBuilder;
 
 pub use crate::types::_radar_chart_aggregated_field_wells::RadarChartAggregatedFieldWellsBuilder;
-
-pub use crate::types::_measure_field::MeasureFieldBuilder;
-
-pub use crate::types::_calculated_measure_field::CalculatedMeasureFieldBuilder;
-
-pub use crate::types::_date_measure_field::DateMeasureFieldBuilder;
-
-pub use crate::types::_categorical_measure_field::CategoricalMeasureFieldBuilder;
-
-pub use crate::types::_numerical_measure_field::NumericalMeasureFieldBuilder;
-
-pub use crate::types::_dimension_field::DimensionFieldBuilder;
-
-pub use crate::types::_date_dimension_field::DateDimensionFieldBuilder;
-
-pub use crate::types::_categorical_dimension_field::CategoricalDimensionFieldBuilder;
-
-pub use crate::types::_numerical_dimension_field::NumericalDimensionFieldBuilder;
-
-pub use crate::types::_visual_subtitle_label_options::VisualSubtitleLabelOptionsBuilder;
-
-pub use crate::types::_long_format_text::LongFormatTextBuilder;
-
-pub use crate::types::_visual_title_label_options::VisualTitleLabelOptionsBuilder;
-
-pub use crate::types::_short_format_text::ShortFormatTextBuilder;
 
 pub use crate::types::_empty_visual::EmptyVisualBuilder;
 
@@ -679,6 +729,70 @@ pub use crate::types::_funnel_chart_field_wells::FunnelChartFieldWellsBuilder;
 
 pub use crate::types::_funnel_chart_aggregated_field_wells::FunnelChartAggregatedFieldWellsBuilder;
 
+pub use crate::types::_layer_map_visual::LayerMapVisualBuilder;
+
+pub use crate::types::_geospatial_layer_map_configuration::GeospatialLayerMapConfigurationBuilder;
+
+pub use crate::types::_geospatial_map_style::GeospatialMapStyleBuilder;
+
+pub use crate::types::_geospatial_map_state::GeospatialMapStateBuilder;
+
+pub use crate::types::_geospatial_coordinate_bounds::GeospatialCoordinateBoundsBuilder;
+
+pub use crate::types::_geospatial_layer_item::GeospatialLayerItemBuilder;
+
+pub use crate::types::_layer_custom_action::LayerCustomActionBuilder;
+
+pub use crate::types::_layer_custom_action_operation::LayerCustomActionOperationBuilder;
+
+pub use crate::types::_geospatial_layer_join_definition::GeospatialLayerJoinDefinitionBuilder;
+
+pub use crate::types::_geospatial_layer_color_field::GeospatialLayerColorFieldBuilder;
+
+pub use crate::types::_geospatial_layer_definition::GeospatialLayerDefinitionBuilder;
+
+pub use crate::types::_geospatial_polygon_layer::GeospatialPolygonLayerBuilder;
+
+pub use crate::types::_geospatial_polygon_style::GeospatialPolygonStyleBuilder;
+
+pub use crate::types::_geospatial_polygon_symbol_style::GeospatialPolygonSymbolStyleBuilder;
+
+pub use crate::types::_geospatial_line_width::GeospatialLineWidthBuilder;
+
+pub use crate::types::_geospatial_color::GeospatialColorBuilder;
+
+pub use crate::types::_geospatial_categorical_color::GeospatialCategoricalColorBuilder;
+
+pub use crate::types::_geospatial_null_data_settings::GeospatialNullDataSettingsBuilder;
+
+pub use crate::types::_geospatial_null_symbol_style::GeospatialNullSymbolStyleBuilder;
+
+pub use crate::types::_geospatial_categorical_data_color::GeospatialCategoricalDataColorBuilder;
+
+pub use crate::types::_geospatial_gradient_color::GeospatialGradientColorBuilder;
+
+pub use crate::types::_geospatial_gradient_step_color::GeospatialGradientStepColorBuilder;
+
+pub use crate::types::_geospatial_solid_color::GeospatialSolidColorBuilder;
+
+pub use crate::types::_geospatial_line_layer::GeospatialLineLayerBuilder;
+
+pub use crate::types::_geospatial_line_style::GeospatialLineStyleBuilder;
+
+pub use crate::types::_geospatial_line_symbol_style::GeospatialLineSymbolStyleBuilder;
+
+pub use crate::types::_geospatial_point_layer::GeospatialPointLayerBuilder;
+
+pub use crate::types::_geospatial_point_style::GeospatialPointStyleBuilder;
+
+pub use crate::types::_geospatial_circle_symbol_style::GeospatialCircleSymbolStyleBuilder;
+
+pub use crate::types::_geospatial_circle_radius::GeospatialCircleRadiusBuilder;
+
+pub use crate::types::_geospatial_data_source_item::GeospatialDataSourceItemBuilder;
+
+pub use crate::types::_geospatial_static_file_source::GeospatialStaticFileSourceBuilder;
+
 pub use crate::types::_filled_map_visual::FilledMapVisualBuilder;
 
 pub use crate::types::_filled_map_conditional_formatting::FilledMapConditionalFormattingBuilder;
@@ -704,8 +818,6 @@ pub use crate::types::_filled_map_configuration::FilledMapConfigurationBuilder;
 pub use crate::types::_geospatial_map_style_options::GeospatialMapStyleOptionsBuilder;
 
 pub use crate::types::_geospatial_window_options::GeospatialWindowOptionsBuilder;
-
-pub use crate::types::_geospatial_coordinate_bounds::GeospatialCoordinateBoundsBuilder;
 
 pub use crate::types::_filled_map_sort_configuration::FilledMapSortConfigurationBuilder;
 
@@ -1018,8 +1130,6 @@ pub use crate::types::_table_sort_configuration::TableSortConfigurationBuilder;
 pub use crate::types::_table_field_wells::TableFieldWellsBuilder;
 
 pub use crate::types::_table_unaggregated_field_wells::TableUnaggregatedFieldWellsBuilder;
-
-pub use crate::types::_unaggregated_field::UnaggregatedFieldBuilder;
 
 pub use crate::types::_table_aggregated_field_wells::TableAggregatedFieldWellsBuilder;
 
@@ -1427,6 +1537,10 @@ pub use crate::types::_asset_bundle_export_job_vpc_connection_override_propertie
 
 pub use crate::types::_asset_bundle_export_job_resource_id_override_configuration::AssetBundleExportJobResourceIdOverrideConfigurationBuilder;
 
+pub use crate::types::_topic_summary::TopicSummaryBuilder;
+
+pub use crate::types::_topic_search_filter::TopicSearchFilterBuilder;
+
 pub use crate::types::_group_search_filter::GroupSearchFilterBuilder;
 
 pub use crate::types::_folder_summary::FolderSummaryBuilder;
@@ -1460,8 +1574,6 @@ pub use crate::types::_lookback_window::LookbackWindowBuilder;
 pub use crate::types::_vpc_connection_summary::VpcConnectionSummaryBuilder;
 
 pub use crate::types::_network_interface::NetworkInterfaceBuilder;
-
-pub use crate::types::_topic_summary::TopicSummaryBuilder;
 
 pub use crate::types::_topic_reviewed_answer::TopicReviewedAnswerBuilder;
 

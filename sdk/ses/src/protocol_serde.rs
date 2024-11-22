@@ -469,6 +469,8 @@ pub(crate) mod shape_bulk_email_destination_status;
 
 pub(crate) mod shape_cloud_watch_dimension_configuration;
 
+pub(crate) mod shape_connect_action;
+
 pub(crate) mod shape_custom_verification_email_template;
 
 pub(crate) mod shape_lambda_action;

@@ -47,9 +47,11 @@ pub use crate::types::_rule::Rule;
 
 pub use crate::types::_rule_action::RuleAction;
 
-pub use crate::types::_deliver_to_mailbox_action::DeliverToMailboxAction;
+pub use crate::types::_deliver_to_q_business_action::DeliverToQBusinessAction;
 
 pub use crate::types::_action_failure_policy::ActionFailurePolicy;
+
+pub use crate::types::_deliver_to_mailbox_action::DeliverToMailboxAction;
 
 pub use crate::types::_replace_recipient_action::ReplaceRecipientAction;
 
@@ -238,6 +240,8 @@ mod _archive_string_operator;
 mod _archive_string_to_evaluate;
 
 mod _deliver_to_mailbox_action;
+
+mod _deliver_to_q_business_action;
 
 mod _drop_action;
 

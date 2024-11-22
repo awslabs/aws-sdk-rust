@@ -21,6 +21,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "afterArguments" => {
+                            builder = builder.set_after_arguments(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "afterInputPath" => {
                             builder = builder.set_after_input_path(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -63,6 +70,13 @@ where
                             builder = builder.set_response(crate::protocol_serde::shape_inspection_data_response::de_inspection_data_response(
                                 tokens,
                             )?);
+                        }
+                        "variables" => {
+                            builder = builder.set_variables(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

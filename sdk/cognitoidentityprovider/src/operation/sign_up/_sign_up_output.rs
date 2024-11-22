@@ -2,7 +2,7 @@
 
 /// <p>The response from the server for a registration request.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SignUpOutput {
     /// <p>A response from the server indicating that a user registration has been confirmed.</p>
     pub user_confirmed: bool,
@@ -10,6 +10,8 @@ pub struct SignUpOutput {
     pub code_delivery_details: ::std::option::Option<crate::types::CodeDeliveryDetailsType>,
     /// <p>The 128-bit ID of the authenticated user. This isn't the same as <code>username</code>.</p>
     pub user_sub: ::std::string::String,
+    /// <p>A session Id that you can pass to <code>ConfirmSignUp</code> when you want to immediately sign in your user with the <code>USER_AUTH</code> flow after they complete sign-up.</p>
+    pub session: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl SignUpOutput {
@@ -26,6 +28,21 @@ impl SignUpOutput {
         use std::ops::Deref;
         self.user_sub.deref()
     }
+    /// <p>A session Id that you can pass to <code>ConfirmSignUp</code> when you want to immediately sign in your user with the <code>USER_AUTH</code> flow after they complete sign-up.</p>
+    pub fn session(&self) -> ::std::option::Option<&str> {
+        self.session.as_deref()
+    }
+}
+impl ::std::fmt::Debug for SignUpOutput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("SignUpOutput");
+        formatter.field("user_confirmed", &self.user_confirmed);
+        formatter.field("code_delivery_details", &self.code_delivery_details);
+        formatter.field("user_sub", &self.user_sub);
+        formatter.field("session", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
+        formatter.finish()
+    }
 }
 impl ::aws_types::request_id::RequestId for SignUpOutput {
     fn request_id(&self) -> Option<&str> {
@@ -40,12 +57,13 @@ impl SignUpOutput {
 }
 
 /// A builder for [`SignUpOutput`](crate::operation::sign_up::SignUpOutput).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct SignUpOutputBuilder {
     pub(crate) user_confirmed: ::std::option::Option<bool>,
     pub(crate) code_delivery_details: ::std::option::Option<crate::types::CodeDeliveryDetailsType>,
     pub(crate) user_sub: ::std::option::Option<::std::string::String>,
+    pub(crate) session: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl SignUpOutputBuilder {
@@ -93,6 +111,20 @@ impl SignUpOutputBuilder {
     pub fn get_user_sub(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_sub
     }
+    /// <p>A session Id that you can pass to <code>ConfirmSignUp</code> when you want to immediately sign in your user with the <code>USER_AUTH</code> flow after they complete sign-up.</p>
+    pub fn session(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.session = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A session Id that you can pass to <code>ConfirmSignUp</code> when you want to immediately sign in your user with the <code>USER_AUTH</code> flow after they complete sign-up.</p>
+    pub fn set_session(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.session = input;
+        self
+    }
+    /// <p>A session Id that you can pass to <code>ConfirmSignUp</code> when you want to immediately sign in your user with the <code>USER_AUTH</code> flow after they complete sign-up.</p>
+    pub fn get_session(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -115,7 +147,19 @@ impl SignUpOutputBuilder {
                     "user_sub was not specified but it is required when building SignUpOutput",
                 )
             })?,
+            session: self.session,
             _request_id: self._request_id,
         })
+    }
+}
+impl ::std::fmt::Debug for SignUpOutputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("SignUpOutputBuilder");
+        formatter.field("user_confirmed", &self.user_confirmed);
+        formatter.field("code_delivery_details", &self.code_delivery_details);
+        formatter.field("user_sub", &self.user_sub);
+        formatter.field("session", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
+        formatter.finish()
     }
 }

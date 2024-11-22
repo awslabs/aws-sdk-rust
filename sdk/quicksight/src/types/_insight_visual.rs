@@ -17,6 +17,8 @@ pub struct InsightVisual {
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>,
     /// <p>The dataset that is used in the insight visual.</p>
     pub data_set_identifier: ::std::string::String,
+    /// <p>The alt text for the visual.</p>
+    pub visual_content_alt_text: ::std::option::Option<::std::string::String>,
 }
 impl InsightVisual {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers.</p>
@@ -47,6 +49,10 @@ impl InsightVisual {
         use std::ops::Deref;
         self.data_set_identifier.deref()
     }
+    /// <p>The alt text for the visual.</p>
+    pub fn visual_content_alt_text(&self) -> ::std::option::Option<&str> {
+        self.visual_content_alt_text.as_deref()
+    }
 }
 impl InsightVisual {
     /// Creates a new builder-style object to manufacture [`InsightVisual`](crate::types::InsightVisual).
@@ -65,6 +71,7 @@ pub struct InsightVisualBuilder {
     pub(crate) insight_configuration: ::std::option::Option<crate::types::InsightConfiguration>,
     pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>,
     pub(crate) data_set_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) visual_content_alt_text: ::std::option::Option<::std::string::String>,
 }
 impl InsightVisualBuilder {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers.</p>
@@ -159,6 +166,20 @@ impl InsightVisualBuilder {
     pub fn get_data_set_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_set_identifier
     }
+    /// <p>The alt text for the visual.</p>
+    pub fn visual_content_alt_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.visual_content_alt_text = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The alt text for the visual.</p>
+    pub fn set_visual_content_alt_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.visual_content_alt_text = input;
+        self
+    }
+    /// <p>The alt text for the visual.</p>
+    pub fn get_visual_content_alt_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.visual_content_alt_text
+    }
     /// Consumes the builder and constructs a [`InsightVisual`](crate::types::InsightVisual).
     /// This method will fail if any of the following fields are not set:
     /// - [`visual_id`](crate::types::builders::InsightVisualBuilder::visual_id)
@@ -181,6 +202,7 @@ impl InsightVisualBuilder {
                     "data_set_identifier was not specified but it is required when building InsightVisual",
                 )
             })?,
+            visual_content_alt_text: self.visual_content_alt_text,
         })
     }
 }

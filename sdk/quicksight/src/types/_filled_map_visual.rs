@@ -19,6 +19,8 @@ pub struct FilledMapVisual {
     pub column_hierarchies: ::std::option::Option<::std::vec::Vec<crate::types::ColumnHierarchy>>,
     /// <p>The list of custom actions that are configured for a visual.</p>
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>,
+    /// <p>The alt text for the visual.</p>
+    pub visual_content_alt_text: ::std::option::Option<::std::string::String>,
 }
 impl FilledMapVisual {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers..</p>
@@ -54,6 +56,10 @@ impl FilledMapVisual {
     pub fn actions(&self) -> &[crate::types::VisualCustomAction] {
         self.actions.as_deref().unwrap_or_default()
     }
+    /// <p>The alt text for the visual.</p>
+    pub fn visual_content_alt_text(&self) -> ::std::option::Option<&str> {
+        self.visual_content_alt_text.as_deref()
+    }
 }
 impl FilledMapVisual {
     /// Creates a new builder-style object to manufacture [`FilledMapVisual`](crate::types::FilledMapVisual).
@@ -73,6 +79,7 @@ pub struct FilledMapVisualBuilder {
     pub(crate) conditional_formatting: ::std::option::Option<crate::types::FilledMapConditionalFormatting>,
     pub(crate) column_hierarchies: ::std::option::Option<::std::vec::Vec<crate::types::ColumnHierarchy>>,
     pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>,
+    pub(crate) visual_content_alt_text: ::std::option::Option<::std::string::String>,
 }
 impl FilledMapVisualBuilder {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers..</p>
@@ -186,6 +193,20 @@ impl FilledMapVisualBuilder {
     pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>> {
         &self.actions
     }
+    /// <p>The alt text for the visual.</p>
+    pub fn visual_content_alt_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.visual_content_alt_text = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The alt text for the visual.</p>
+    pub fn set_visual_content_alt_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.visual_content_alt_text = input;
+        self
+    }
+    /// <p>The alt text for the visual.</p>
+    pub fn get_visual_content_alt_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.visual_content_alt_text
+    }
     /// Consumes the builder and constructs a [`FilledMapVisual`](crate::types::FilledMapVisual).
     /// This method will fail if any of the following fields are not set:
     /// - [`visual_id`](crate::types::builders::FilledMapVisualBuilder::visual_id)
@@ -203,6 +224,7 @@ impl FilledMapVisualBuilder {
             conditional_formatting: self.conditional_formatting,
             column_hierarchies: self.column_hierarchies,
             actions: self.actions,
+            visual_content_alt_text: self.visual_content_alt_text,
         })
     }
 }

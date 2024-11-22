@@ -13,6 +13,7 @@
 /// # let channel = unimplemented!();
 /// match channel {
 ///     Channel::Chat => { /* ... */ },
+///     Channel::Email => { /* ... */ },
 ///     Channel::Task => { /* ... */ },
 ///     Channel::Voice => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -45,6 +46,8 @@ pub enum Channel {
     #[allow(missing_docs)] // documentation missing in model
     Chat,
     #[allow(missing_docs)] // documentation missing in model
+    Email,
+    #[allow(missing_docs)] // documentation missing in model
     Task,
     #[allow(missing_docs)] // documentation missing in model
     Voice,
@@ -56,6 +59,7 @@ impl ::std::convert::From<&str> for Channel {
     fn from(s: &str) -> Self {
         match s {
             "CHAT" => Channel::Chat,
+            "EMAIL" => Channel::Email,
             "TASK" => Channel::Task,
             "VOICE" => Channel::Voice,
             other => Channel::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -74,6 +78,7 @@ impl Channel {
     pub fn as_str(&self) -> &str {
         match self {
             Channel::Chat => "CHAT",
+            Channel::Email => "EMAIL",
             Channel::Task => "TASK",
             Channel::Voice => "VOICE",
             Channel::Unknown(value) => value.as_str(),
@@ -81,7 +86,7 @@ impl Channel {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CHAT", "TASK", "VOICE"]
+        &["CHAT", "EMAIL", "TASK", "VOICE"]
     }
 }
 impl ::std::convert::AsRef<str> for Channel {
@@ -105,6 +110,7 @@ impl ::std::fmt::Display for Channel {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             Channel::Chat => write!(f, "CHAT"),
+            Channel::Email => write!(f, "EMAIL"),
             Channel::Task => write!(f, "TASK"),
             Channel::Voice => write!(f, "VOICE"),
             Channel::Unknown(value) => write!(f, "{}", value),

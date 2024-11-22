@@ -11,6 +11,18 @@ pub(crate) fn invoke_agent_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn invoke_inline_agent_output_output_correct_errors(
+    mut builder: crate::operation::invoke_inline_agent::builders::InvokeInlineAgentOutputBuilder,
+) -> crate::operation::invoke_inline_agent::builders::InvokeInlineAgentOutputBuilder {
+    if builder.content_type.is_none() {
+        builder.content_type = Some(Default::default())
+    }
+    if builder.session_id.is_none() {
+        builder.session_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn retrieve_output_output_correct_errors(
     mut builder: crate::operation::retrieve::builders::RetrieveOutputBuilder,
 ) -> crate::operation::retrieve::builders::RetrieveOutputBuilder {

@@ -32,6 +32,8 @@ pub struct ConfirmSignUpInput {
     /// </ul>
     /// </note>
     pub client_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The optional session ID from a <code>SignUp</code> API request. You can sign in a user directly from the sign-up process with the <code>USER_AUTH</code> authentication flow.</p>
+    pub session: ::std::option::Option<::std::string::String>,
 }
 impl ConfirmSignUpInput {
     /// <p>The ID of the app client associated with the user pool.</p>
@@ -78,6 +80,10 @@ impl ConfirmSignUpInput {
     pub fn client_metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.client_metadata.as_ref()
     }
+    /// <p>The optional session ID from a <code>SignUp</code> API request. You can sign in a user directly from the sign-up process with the <code>USER_AUTH</code> authentication flow.</p>
+    pub fn session(&self) -> ::std::option::Option<&str> {
+        self.session.as_deref()
+    }
 }
 impl ::std::fmt::Debug for ConfirmSignUpInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -90,6 +96,7 @@ impl ::std::fmt::Debug for ConfirmSignUpInput {
         formatter.field("analytics_metadata", &self.analytics_metadata);
         formatter.field("user_context_data", &"*** Sensitive Data Redacted ***");
         formatter.field("client_metadata", &self.client_metadata);
+        formatter.field("session", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -112,6 +119,7 @@ pub struct ConfirmSignUpInputBuilder {
     pub(crate) analytics_metadata: ::std::option::Option<crate::types::AnalyticsMetadataType>,
     pub(crate) user_context_data: ::std::option::Option<crate::types::UserContextDataType>,
     pub(crate) client_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) session: ::std::option::Option<::std::string::String>,
 }
 impl ConfirmSignUpInputBuilder {
     /// <p>The ID of the app client associated with the user pool.</p>
@@ -278,6 +286,20 @@ impl ConfirmSignUpInputBuilder {
     pub fn get_client_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.client_metadata
     }
+    /// <p>The optional session ID from a <code>SignUp</code> API request. You can sign in a user directly from the sign-up process with the <code>USER_AUTH</code> authentication flow.</p>
+    pub fn session(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.session = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The optional session ID from a <code>SignUp</code> API request. You can sign in a user directly from the sign-up process with the <code>USER_AUTH</code> authentication flow.</p>
+    pub fn set_session(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.session = input;
+        self
+    }
+    /// <p>The optional session ID from a <code>SignUp</code> API request. You can sign in a user directly from the sign-up process with the <code>USER_AUTH</code> authentication flow.</p>
+    pub fn get_session(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session
+    }
     /// Consumes the builder and constructs a [`ConfirmSignUpInput`](crate::operation::confirm_sign_up::ConfirmSignUpInput).
     pub fn build(
         self,
@@ -291,6 +313,7 @@ impl ConfirmSignUpInputBuilder {
             analytics_metadata: self.analytics_metadata,
             user_context_data: self.user_context_data,
             client_metadata: self.client_metadata,
+            session: self.session,
         })
     }
 }
@@ -305,6 +328,7 @@ impl ::std::fmt::Debug for ConfirmSignUpInputBuilder {
         formatter.field("analytics_metadata", &self.analytics_metadata);
         formatter.field("user_context_data", &"*** Sensitive Data Redacted ***");
         formatter.field("client_metadata", &self.client_metadata);
+        formatter.field("session", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

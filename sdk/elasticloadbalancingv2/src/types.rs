@@ -83,6 +83,8 @@ pub use crate::types::_listener::Listener;
 
 pub use crate::types::_mutual_authentication_attributes::MutualAuthenticationAttributes;
 
+pub use crate::types::_advertise_trust_store_ca_names_enum::AdvertiseTrustStoreCaNamesEnum;
+
 pub use crate::types::_trust_store_association_status_enum::TrustStoreAssociationStatusEnum;
 
 pub use crate::types::_zonal_capacity_reservation_state::ZonalCapacityReservationState;
@@ -150,6 +152,8 @@ mod _action;
 mod _action_type_enum;
 
 mod _administrative_override;
+
+mod _advertise_trust_store_ca_names_enum;
 
 mod _anomaly_detection;
 

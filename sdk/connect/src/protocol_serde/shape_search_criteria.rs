@@ -57,5 +57,11 @@ pub fn ser_search_criteria(
         crate::protocol_serde::shape_searchable_contact_attributes::ser_searchable_contact_attributes(&mut object_18, var_17)?;
         object_18.finish();
     }
+    if let Some(var_19) = &input.searchable_segment_attributes {
+        #[allow(unused_mut)]
+        let mut object_20 = object.key("SearchableSegmentAttributes").start_object();
+        crate::protocol_serde::shape_searchable_segment_attributes::ser_searchable_segment_attributes(&mut object_20, var_19)?;
+        object_20.finish();
+    }
     Ok(())
 }

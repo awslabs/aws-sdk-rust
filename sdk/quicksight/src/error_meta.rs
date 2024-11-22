@@ -2973,6 +2973,58 @@ impl From<crate::operation::describe_dashboard_snapshot_job_result::DescribeDash
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_dashboards_qa_configuration::DescribeDashboardsQAConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_dashboards_qa_configuration::DescribeDashboardsQAConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_dashboards_qa_configuration::DescribeDashboardsQAConfigurationError> for Error {
+    fn from(err: crate::operation::describe_dashboards_qa_configuration::DescribeDashboardsQAConfigurationError) -> Self {
+        match err {
+            crate::operation::describe_dashboards_qa_configuration::DescribeDashboardsQAConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_dashboards_qa_configuration::DescribeDashboardsQAConfigurationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::describe_dashboards_qa_configuration::DescribeDashboardsQAConfigurationError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::describe_dashboards_qa_configuration::DescribeDashboardsQAConfigurationError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::describe_dashboards_qa_configuration::DescribeDashboardsQAConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_dashboards_qa_configuration::DescribeDashboardsQAConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_dashboards_qa_configuration::DescribeDashboardsQAConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_data_set::DescribeDataSetError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -5836,6 +5888,35 @@ impl From<crate::operation::search_groups::SearchGroupsError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_topics::SearchTopicsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_topics::SearchTopicsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::search_topics::SearchTopicsError> for Error {
+    fn from(err: crate::operation::search_topics::SearchTopicsError) -> Self {
+        match err {
+            crate::operation::search_topics::SearchTopicsError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::search_topics::SearchTopicsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::search_topics::SearchTopicsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::search_topics::SearchTopicsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::search_topics::SearchTopicsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::search_topics::SearchTopicsError::UnsupportedUserEditionException(inner) => {
+                Error::UnsupportedUserEditionException(inner)
+            }
+            crate::operation::search_topics::SearchTopicsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJobError, R>>
     for Error
 where
@@ -6564,6 +6645,56 @@ impl From<crate::operation::update_dashboard_published_version::UpdateDashboardP
                 Error::UnsupportedUserEditionException(inner)
             }
             crate::operation::update_dashboard_published_version::UpdateDashboardPublishedVersionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_dashboards_qa_configuration::UpdateDashboardsQAConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_dashboards_qa_configuration::UpdateDashboardsQAConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_dashboards_qa_configuration::UpdateDashboardsQAConfigurationError> for Error {
+    fn from(err: crate::operation::update_dashboards_qa_configuration::UpdateDashboardsQAConfigurationError) -> Self {
+        match err {
+            crate::operation::update_dashboards_qa_configuration::UpdateDashboardsQAConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_dashboards_qa_configuration::UpdateDashboardsQAConfigurationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_dashboards_qa_configuration::UpdateDashboardsQAConfigurationError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::update_dashboards_qa_configuration::UpdateDashboardsQAConfigurationError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::update_dashboards_qa_configuration::UpdateDashboardsQAConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_dashboards_qa_configuration::UpdateDashboardsQAConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_dashboards_qa_configuration::UpdateDashboardsQAConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

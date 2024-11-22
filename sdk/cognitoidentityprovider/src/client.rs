@@ -194,6 +194,8 @@ mod associate_software_token;
 
 mod change_password;
 
+mod complete_web_authn_registration;
+
 mod confirm_device;
 
 mod confirm_forgot_password;
@@ -203,6 +205,8 @@ mod confirm_sign_up;
 mod create_group;
 
 mod create_identity_provider;
+
+mod create_managed_login_branding;
 
 mod create_resource_server;
 
@@ -245,6 +249,8 @@ mod delete_group;
 
 mod delete_identity_provider;
 
+mod delete_managed_login_branding;
+
 mod delete_resource_server;
 
 mod delete_user;
@@ -257,7 +263,13 @@ mod delete_user_pool_client;
 
 mod delete_user_pool_domain;
 
+mod delete_web_authn_credential;
+
 mod describe_identity_provider;
+
+mod describe_managed_login_branding;
+
+mod describe_managed_login_branding_by_client;
 
 mod describe_resource_server;
 
@@ -293,6 +305,8 @@ mod get_user;
 
 mod get_user_attribute_verification_code;
 
+mod get_user_auth_factors;
+
 mod get_user_pool_mfa_config;
 
 mod global_sign_out;
@@ -319,6 +333,8 @@ mod list_users;
 
 mod list_users_in_group;
 
+mod list_web_authn_credentials;
+
 mod resend_confirmation_code;
 
 mod respond_to_auth_challenge;
@@ -341,6 +357,8 @@ mod sign_up;
 
 mod start_user_import_job;
 
+mod start_web_authn_registration;
+
 mod stop_user_import_job;
 
 mod tag_resource;
@@ -354,6 +372,8 @@ mod update_device_status;
 mod update_group;
 
 mod update_identity_provider;
+
+mod update_managed_login_branding;
 
 mod update_resource_server;
 

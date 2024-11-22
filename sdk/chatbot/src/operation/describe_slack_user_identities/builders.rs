@@ -114,17 +114,17 @@ impl DescribeSlackUserIdentitiesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_slack_user_identities::paginator::DescribeSlackUserIdentitiesPaginator {
         crate::operation::describe_slack_user_identities::paginator::DescribeSlackUserIdentitiesPaginator::new(self.handle, self.inner)
     }
-    /// <p>The Amazon Resource Number (ARN) of the SlackChannelConfiguration associated with the user identities to describe.</p>
+    /// <p>The Amazon Resource Name (ARN) of the SlackChannelConfiguration associated with the user identities to describe.</p>
     pub fn chat_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.chat_configuration_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Number (ARN) of the SlackChannelConfiguration associated with the user identities to describe.</p>
+    /// <p>The Amazon Resource Name (ARN) of the SlackChannelConfiguration associated with the user identities to describe.</p>
     pub fn set_chat_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_chat_configuration_arn(input);
         self
     }
-    /// <p>The Amazon Resource Number (ARN) of the SlackChannelConfiguration associated with the user identities to describe.</p>
+    /// <p>The Amazon Resource Name (ARN) of the SlackChannelConfiguration associated with the user identities to describe.</p>
     pub fn get_chat_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_chat_configuration_arn()
     }

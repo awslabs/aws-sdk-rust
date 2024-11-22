@@ -47,6 +47,8 @@ pub struct DescribeStateMachineOutput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Settings to configure server-side encryption.</p>
     pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
+    /// <p>A map of <b>state name</b> to a list of variables referenced by that state. States that do not use variable references will not be shown in the response.</p>
+    pub variable_references: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     _request_id: Option<String>,
 }
 impl DescribeStateMachineOutput {
@@ -124,6 +126,12 @@ impl DescribeStateMachineOutput {
     pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
+    /// <p>A map of <b>state name</b> to a list of variables referenced by that state. States that do not use variable references will not be shown in the response.</p>
+    pub fn variable_references(
+        &self,
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+        self.variable_references.as_ref()
+    }
 }
 impl ::std::fmt::Debug for DescribeStateMachineOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -141,6 +149,7 @@ impl ::std::fmt::Debug for DescribeStateMachineOutput {
         formatter.field("revision_id", &self.revision_id);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("encryption_configuration", &self.encryption_configuration);
+        formatter.field("variable_references", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -174,6 +183,7 @@ pub struct DescribeStateMachineOutputBuilder {
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
+    pub(crate) variable_references: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     _request_id: Option<String>,
 }
 impl DescribeStateMachineOutputBuilder {
@@ -419,6 +429,31 @@ impl DescribeStateMachineOutputBuilder {
     pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
         &self.encryption_configuration
     }
+    /// Adds a key-value pair to `variable_references`.
+    ///
+    /// To override the contents of this collection use [`set_variable_references`](Self::set_variable_references).
+    ///
+    /// <p>A map of <b>state name</b> to a list of variables referenced by that state. States that do not use variable references will not be shown in the response.</p>
+    pub fn variable_references(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
+        let mut hash_map = self.variable_references.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.variable_references = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map of <b>state name</b> to a list of variables referenced by that state. States that do not use variable references will not be shown in the response.</p>
+    pub fn set_variable_references(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    ) -> Self {
+        self.variable_references = input;
+        self
+    }
+    /// <p>A map of <b>state name</b> to a list of variables referenced by that state. States that do not use variable references will not be shown in the response.</p>
+    pub fn get_variable_references(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+        &self.variable_references
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -484,6 +519,7 @@ impl DescribeStateMachineOutputBuilder {
             revision_id: self.revision_id,
             description: self.description,
             encryption_configuration: self.encryption_configuration,
+            variable_references: self.variable_references,
             _request_id: self._request_id,
         })
     }
@@ -504,6 +540,7 @@ impl ::std::fmt::Debug for DescribeStateMachineOutputBuilder {
         formatter.field("revision_id", &self.revision_id);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("encryption_configuration", &self.encryption_configuration);
+        formatter.field("variable_references", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

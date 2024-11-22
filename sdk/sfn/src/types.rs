@@ -65,6 +65,8 @@ pub use crate::types::_activity_list_item::ActivityListItem;
 
 pub use crate::types::_history_event::HistoryEvent;
 
+pub use crate::types::_evaluation_failed_event_details::EvaluationFailedEventDetails;
+
 pub use crate::types::_map_run_redriven_event_details::MapRunRedrivenEventDetails;
 
 pub use crate::types::_map_run_failed_event_details::MapRunFailedEventDetails;
@@ -72,6 +74,8 @@ pub use crate::types::_map_run_failed_event_details::MapRunFailedEventDetails;
 pub use crate::types::_map_run_started_event_details::MapRunStartedEventDetails;
 
 pub use crate::types::_state_exited_event_details::StateExitedEventDetails;
+
+pub use crate::types::_assigned_variables_details::AssignedVariablesDetails;
 
 pub use crate::types::_history_event_execution_data_details::HistoryEventExecutionDataDetails;
 
@@ -161,6 +165,8 @@ mod _activity_succeeded_event_details;
 
 mod _activity_timed_out_event_details;
 
+mod _assigned_variables_details;
+
 mod _billing_details;
 
 mod _cloud_watch_events_execution_data_details;
@@ -170,6 +176,8 @@ mod _cloud_watch_logs_log_group;
 mod _encryption_configuration;
 
 mod _encryption_type;
+
+mod _evaluation_failed_event_details;
 
 mod _execution_aborted_event_details;
 

@@ -23,6 +23,8 @@ pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExce
 
 pub use crate::types::error::_property_validation_exception::PropertyValidationException;
 
+pub use crate::types::error::_conditional_operation_failed_exception::ConditionalOperationFailedException;
+
 pub use crate::types::error::_idempotency_exception::IdempotencyException;
 
 pub use crate::types::error::_limit_exceeded_exception::LimitExceededException;
@@ -50,6 +52,8 @@ pub use crate::types::error::_user_not_found_exception::UserNotFoundException;
 pub use crate::types::error::_contact_flow_not_published_exception::ContactFlowNotPublishedException;
 
 mod _access_denied_exception;
+
+mod _conditional_operation_failed_exception;
 
 mod _conflict_exception;
 
