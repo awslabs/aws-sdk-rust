@@ -30,6 +30,8 @@ pub struct DirectConnectGatewayAssociation {
     pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway.</p>
     pub allowed_prefixes_to_direct_connect_gateway: ::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>>,
+    /// <p>The ID of the Cloud WAN core network associated with the Direct Connect attachment.</p>
+    pub associated_core_network: ::std::option::Option<crate::types::AssociatedCoreNetwork>,
     /// <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
     pub virtual_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region where the virtual private gateway is located.</p>
@@ -80,6 +82,10 @@ impl DirectConnectGatewayAssociation {
     pub fn allowed_prefixes_to_direct_connect_gateway(&self) -> &[crate::types::RouteFilterPrefix] {
         self.allowed_prefixes_to_direct_connect_gateway.as_deref().unwrap_or_default()
     }
+    /// <p>The ID of the Cloud WAN core network associated with the Direct Connect attachment.</p>
+    pub fn associated_core_network(&self) -> ::std::option::Option<&crate::types::AssociatedCoreNetwork> {
+        self.associated_core_network.as_ref()
+    }
     /// <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
     pub fn virtual_gateway_id(&self) -> ::std::option::Option<&str> {
         self.virtual_gateway_id.as_deref()
@@ -111,6 +117,7 @@ pub struct DirectConnectGatewayAssociationBuilder {
     pub(crate) associated_gateway: ::std::option::Option<crate::types::AssociatedGateway>,
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
     pub(crate) allowed_prefixes_to_direct_connect_gateway: ::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>>,
+    pub(crate) associated_core_network: ::std::option::Option<crate::types::AssociatedCoreNetwork>,
     pub(crate) virtual_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) virtual_gateway_region: ::std::option::Option<::std::string::String>,
     pub(crate) virtual_gateway_owner_account: ::std::option::Option<::std::string::String>,
@@ -259,6 +266,20 @@ impl DirectConnectGatewayAssociationBuilder {
     pub fn get_allowed_prefixes_to_direct_connect_gateway(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>> {
         &self.allowed_prefixes_to_direct_connect_gateway
     }
+    /// <p>The ID of the Cloud WAN core network associated with the Direct Connect attachment.</p>
+    pub fn associated_core_network(mut self, input: crate::types::AssociatedCoreNetwork) -> Self {
+        self.associated_core_network = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ID of the Cloud WAN core network associated with the Direct Connect attachment.</p>
+    pub fn set_associated_core_network(mut self, input: ::std::option::Option<crate::types::AssociatedCoreNetwork>) -> Self {
+        self.associated_core_network = input;
+        self
+    }
+    /// <p>The ID of the Cloud WAN core network associated with the Direct Connect attachment.</p>
+    pub fn get_associated_core_network(&self) -> &::std::option::Option<crate::types::AssociatedCoreNetwork> {
+        &self.associated_core_network
+    }
     /// <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
     pub fn virtual_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_gateway_id = ::std::option::Option::Some(input.into());
@@ -311,6 +332,7 @@ impl DirectConnectGatewayAssociationBuilder {
             associated_gateway: self.associated_gateway,
             association_id: self.association_id,
             allowed_prefixes_to_direct_connect_gateway: self.allowed_prefixes_to_direct_connect_gateway,
+            associated_core_network: self.associated_core_network,
             virtual_gateway_id: self.virtual_gateway_id,
             virtual_gateway_region: self.virtual_gateway_region,
             virtual_gateway_owner_account: self.virtual_gateway_owner_account,

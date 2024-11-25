@@ -417,6 +417,58 @@ impl From<crate::operation::create_device::CreateDeviceError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_direct_connect_gateway_attachment::CreateDirectConnectGatewayAttachmentError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_direct_connect_gateway_attachment::CreateDirectConnectGatewayAttachmentError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_direct_connect_gateway_attachment::CreateDirectConnectGatewayAttachmentError> for Error {
+    fn from(err: crate::operation::create_direct_connect_gateway_attachment::CreateDirectConnectGatewayAttachmentError) -> Self {
+        match err {
+            crate::operation::create_direct_connect_gateway_attachment::CreateDirectConnectGatewayAttachmentError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_direct_connect_gateway_attachment::CreateDirectConnectGatewayAttachmentError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_direct_connect_gateway_attachment::CreateDirectConnectGatewayAttachmentError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_direct_connect_gateway_attachment::CreateDirectConnectGatewayAttachmentError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_direct_connect_gateway_attachment::CreateDirectConnectGatewayAttachmentError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_direct_connect_gateway_attachment::CreateDirectConnectGatewayAttachmentError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_direct_connect_gateway_attachment::CreateDirectConnectGatewayAttachmentError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_global_network::CreateGlobalNetworkError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1615,6 +1667,55 @@ impl From<crate::operation::get_devices::GetDevicesError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_direct_connect_gateway_attachment::GetDirectConnectGatewayAttachmentError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_direct_connect_gateway_attachment::GetDirectConnectGatewayAttachmentError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_direct_connect_gateway_attachment::GetDirectConnectGatewayAttachmentError> for Error {
+    fn from(err: crate::operation::get_direct_connect_gateway_attachment::GetDirectConnectGatewayAttachmentError) -> Self {
+        match err {
+            crate::operation::get_direct_connect_gateway_attachment::GetDirectConnectGatewayAttachmentError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_direct_connect_gateway_attachment::GetDirectConnectGatewayAttachmentError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_direct_connect_gateway_attachment::GetDirectConnectGatewayAttachmentError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_direct_connect_gateway_attachment::GetDirectConnectGatewayAttachmentError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_direct_connect_gateway_attachment::GetDirectConnectGatewayAttachmentError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_direct_connect_gateway_attachment::GetDirectConnectGatewayAttachmentError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_link_associations::GetLinkAssociationsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2763,6 +2864,58 @@ impl From<crate::operation::update_device::UpdateDeviceError> for Error {
             crate::operation::update_device::UpdateDeviceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_device::UpdateDeviceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_device::UpdateDeviceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_direct_connect_gateway_attachment::UpdateDirectConnectGatewayAttachmentError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_direct_connect_gateway_attachment::UpdateDirectConnectGatewayAttachmentError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_direct_connect_gateway_attachment::UpdateDirectConnectGatewayAttachmentError> for Error {
+    fn from(err: crate::operation::update_direct_connect_gateway_attachment::UpdateDirectConnectGatewayAttachmentError) -> Self {
+        match err {
+            crate::operation::update_direct_connect_gateway_attachment::UpdateDirectConnectGatewayAttachmentError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_direct_connect_gateway_attachment::UpdateDirectConnectGatewayAttachmentError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_direct_connect_gateway_attachment::UpdateDirectConnectGatewayAttachmentError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_direct_connect_gateway_attachment::UpdateDirectConnectGatewayAttachmentError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_direct_connect_gateway_attachment::UpdateDirectConnectGatewayAttachmentError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_direct_connect_gateway_attachment::UpdateDirectConnectGatewayAttachmentError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_direct_connect_gateway_attachment::UpdateDirectConnectGatewayAttachmentError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

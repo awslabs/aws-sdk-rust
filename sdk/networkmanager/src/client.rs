@@ -156,6 +156,8 @@ mod create_core_network;
 
 mod create_device;
 
+mod create_direct_connect_gateway_attachment;
+
 mod create_global_network;
 
 mod create_link;
@@ -253,6 +255,8 @@ mod get_customer_gateway_associations;
 
 mod get_devices;
 
+mod get_direct_connect_gateway_attachment;
+
 mod get_link_associations;
 
 mod get_links;
@@ -322,6 +326,8 @@ mod update_connection;
 mod update_core_network;
 
 mod update_device;
+
+mod update_direct_connect_gateway_attachment;
 
 mod update_global_network;
 

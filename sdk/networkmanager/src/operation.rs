@@ -31,6 +31,9 @@ pub mod create_core_network;
 /// Types for the `CreateDevice` operation.
 pub mod create_device;
 
+/// Types for the `CreateDirectConnectGatewayAttachment` operation.
+pub mod create_direct_connect_gateway_attachment;
+
 /// Types for the `CreateGlobalNetwork` operation.
 pub mod create_global_network;
 
@@ -136,6 +139,9 @@ pub mod get_customer_gateway_associations;
 /// Types for the `GetDevices` operation.
 pub mod get_devices;
 
+/// Types for the `GetDirectConnectGatewayAttachment` operation.
+pub mod get_direct_connect_gateway_attachment;
+
 /// Types for the `GetLinkAssociations` operation.
 pub mod get_link_associations;
 
@@ -240,6 +246,9 @@ pub mod update_core_network;
 
 /// Types for the `UpdateDevice` operation.
 pub mod update_device;
+
+/// Types for the `UpdateDirectConnectGatewayAttachment` operation.
+pub mod update_direct_connect_gateway_attachment;
 
 /// Types for the `UpdateGlobalNetwork` operation.
 pub mod update_global_network;

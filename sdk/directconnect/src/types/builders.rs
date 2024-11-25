@@ -11,6 +11,8 @@ pub use crate::types::_connection::ConnectionBuilder;
 
 pub use crate::types::_direct_connect_gateway_association::DirectConnectGatewayAssociationBuilder;
 
+pub use crate::types::_associated_core_network::AssociatedCoreNetworkBuilder;
+
 pub use crate::types::_associated_gateway::AssociatedGatewayBuilder;
 
 pub use crate::types::_direct_connect_gateway::DirectConnectGatewayBuilder;

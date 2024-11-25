@@ -16,8 +16,10 @@ pub struct Attachment {
     pub attachment_type: ::std::option::Option<crate::types::AttachmentType>,
     /// <p>The state of the attachment.</p>
     pub state: ::std::option::Option<crate::types::AttachmentState>,
-    /// <p>The Region where the edge is located.</p>
+    /// <p>The Region where the edge is located. This is returned for all attachment types except a Direct Connect gateway attachment, which instead returns <code>EdgeLocations</code>.</p>
     pub edge_location: ::std::option::Option<::std::string::String>,
+    /// <p>The edge locations that the Direct Connect gateway is associated with. This is returned only for Direct Connect gateway attachments. All other attachment types retrun <code>EdgeLocation</code>.</p>
+    pub edge_locations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The attachment resource ARN.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The policy rule number associated with the attachment.</p>
@@ -64,9 +66,15 @@ impl Attachment {
     pub fn state(&self) -> ::std::option::Option<&crate::types::AttachmentState> {
         self.state.as_ref()
     }
-    /// <p>The Region where the edge is located.</p>
+    /// <p>The Region where the edge is located. This is returned for all attachment types except a Direct Connect gateway attachment, which instead returns <code>EdgeLocations</code>.</p>
     pub fn edge_location(&self) -> ::std::option::Option<&str> {
         self.edge_location.as_deref()
+    }
+    /// <p>The edge locations that the Direct Connect gateway is associated with. This is returned only for Direct Connect gateway attachments. All other attachment types retrun <code>EdgeLocation</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.edge_locations.is_none()`.
+    pub fn edge_locations(&self) -> &[::std::string::String] {
+        self.edge_locations.as_deref().unwrap_or_default()
     }
     /// <p>The attachment resource ARN.</p>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
@@ -131,6 +139,7 @@ pub struct AttachmentBuilder {
     pub(crate) attachment_type: ::std::option::Option<crate::types::AttachmentType>,
     pub(crate) state: ::std::option::Option<crate::types::AttachmentState>,
     pub(crate) edge_location: ::std::option::Option<::std::string::String>,
+    pub(crate) edge_locations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) attachment_policy_rule_number: ::std::option::Option<i32>,
     pub(crate) segment_name: ::std::option::Option<::std::string::String>,
@@ -227,19 +236,39 @@ impl AttachmentBuilder {
     pub fn get_state(&self) -> &::std::option::Option<crate::types::AttachmentState> {
         &self.state
     }
-    /// <p>The Region where the edge is located.</p>
+    /// <p>The Region where the edge is located. This is returned for all attachment types except a Direct Connect gateway attachment, which instead returns <code>EdgeLocations</code>.</p>
     pub fn edge_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_location = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Region where the edge is located.</p>
+    /// <p>The Region where the edge is located. This is returned for all attachment types except a Direct Connect gateway attachment, which instead returns <code>EdgeLocations</code>.</p>
     pub fn set_edge_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.edge_location = input;
         self
     }
-    /// <p>The Region where the edge is located.</p>
+    /// <p>The Region where the edge is located. This is returned for all attachment types except a Direct Connect gateway attachment, which instead returns <code>EdgeLocations</code>.</p>
     pub fn get_edge_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.edge_location
+    }
+    /// Appends an item to `edge_locations`.
+    ///
+    /// To override the contents of this collection use [`set_edge_locations`](Self::set_edge_locations).
+    ///
+    /// <p>The edge locations that the Direct Connect gateway is associated with. This is returned only for Direct Connect gateway attachments. All other attachment types retrun <code>EdgeLocation</code>.</p>
+    pub fn edge_locations(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.edge_locations.unwrap_or_default();
+        v.push(input.into());
+        self.edge_locations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The edge locations that the Direct Connect gateway is associated with. This is returned only for Direct Connect gateway attachments. All other attachment types retrun <code>EdgeLocation</code>.</p>
+    pub fn set_edge_locations(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.edge_locations = input;
+        self
+    }
+    /// <p>The edge locations that the Direct Connect gateway is associated with. This is returned only for Direct Connect gateway attachments. All other attachment types retrun <code>EdgeLocation</code>.</p>
+    pub fn get_edge_locations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.edge_locations
     }
     /// <p>The attachment resource ARN.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -406,6 +435,7 @@ impl AttachmentBuilder {
             attachment_type: self.attachment_type,
             state: self.state,
             edge_location: self.edge_location,
+            edge_locations: self.edge_locations,
             resource_arn: self.resource_arn,
             attachment_policy_rule_number: self.attachment_policy_rule_number,
             segment_name: self.segment_name,

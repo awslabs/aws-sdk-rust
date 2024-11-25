@@ -12,6 +12,9 @@
 /// ```text
 /// # let attachmenterrorcode = unimplemented!();
 /// match attachmenterrorcode {
+///     AttachmentErrorCode::DirectConnectGatewayExistingAttachments => { /* ... */ },
+///     AttachmentErrorCode::DirectConnectGatewayNotFound => { /* ... */ },
+///     AttachmentErrorCode::DirectConnectGatewayNoPrivateVif => { /* ... */ },
 ///     AttachmentErrorCode::MaximumNoEncapLimitExceeded => { /* ... */ },
 ///     AttachmentErrorCode::SubnetDuplicatedInAvailabilityZone => { /* ... */ },
 ///     AttachmentErrorCode::SubnetNotFound => { /* ... */ },
@@ -48,6 +51,12 @@
 )]
 pub enum AttachmentErrorCode {
     #[allow(missing_docs)] // documentation missing in model
+    DirectConnectGatewayExistingAttachments,
+    #[allow(missing_docs)] // documentation missing in model
+    DirectConnectGatewayNotFound,
+    #[allow(missing_docs)] // documentation missing in model
+    DirectConnectGatewayNoPrivateVif,
+    #[allow(missing_docs)] // documentation missing in model
     MaximumNoEncapLimitExceeded,
     #[allow(missing_docs)] // documentation missing in model
     SubnetDuplicatedInAvailabilityZone,
@@ -70,6 +79,9 @@ pub enum AttachmentErrorCode {
 impl ::std::convert::From<&str> for AttachmentErrorCode {
     fn from(s: &str) -> Self {
         match s {
+            "DIRECT_CONNECT_GATEWAY_EXISTING_ATTACHMENTS" => AttachmentErrorCode::DirectConnectGatewayExistingAttachments,
+            "DIRECT_CONNECT_GATEWAY_NOT_FOUND" => AttachmentErrorCode::DirectConnectGatewayNotFound,
+            "DIRECT_CONNECT_GATEWAY_NO_PRIVATE_VIF" => AttachmentErrorCode::DirectConnectGatewayNoPrivateVif,
             "MAXIMUM_NO_ENCAP_LIMIT_EXCEEDED" => AttachmentErrorCode::MaximumNoEncapLimitExceeded,
             "SUBNET_DUPLICATED_IN_AVAILABILITY_ZONE" => AttachmentErrorCode::SubnetDuplicatedInAvailabilityZone,
             "SUBNET_NOT_FOUND" => AttachmentErrorCode::SubnetNotFound,
@@ -93,6 +105,9 @@ impl AttachmentErrorCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            AttachmentErrorCode::DirectConnectGatewayExistingAttachments => "DIRECT_CONNECT_GATEWAY_EXISTING_ATTACHMENTS",
+            AttachmentErrorCode::DirectConnectGatewayNotFound => "DIRECT_CONNECT_GATEWAY_NOT_FOUND",
+            AttachmentErrorCode::DirectConnectGatewayNoPrivateVif => "DIRECT_CONNECT_GATEWAY_NO_PRIVATE_VIF",
             AttachmentErrorCode::MaximumNoEncapLimitExceeded => "MAXIMUM_NO_ENCAP_LIMIT_EXCEEDED",
             AttachmentErrorCode::SubnetDuplicatedInAvailabilityZone => "SUBNET_DUPLICATED_IN_AVAILABILITY_ZONE",
             AttachmentErrorCode::SubnetNotFound => "SUBNET_NOT_FOUND",
@@ -107,6 +122,9 @@ impl AttachmentErrorCode {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "DIRECT_CONNECT_GATEWAY_EXISTING_ATTACHMENTS",
+            "DIRECT_CONNECT_GATEWAY_NOT_FOUND",
+            "DIRECT_CONNECT_GATEWAY_NO_PRIVATE_VIF",
             "MAXIMUM_NO_ENCAP_LIMIT_EXCEEDED",
             "SUBNET_DUPLICATED_IN_AVAILABILITY_ZONE",
             "SUBNET_NOT_FOUND",
@@ -138,6 +156,9 @@ impl AttachmentErrorCode {
 impl ::std::fmt::Display for AttachmentErrorCode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            AttachmentErrorCode::DirectConnectGatewayExistingAttachments => write!(f, "DIRECT_CONNECT_GATEWAY_EXISTING_ATTACHMENTS"),
+            AttachmentErrorCode::DirectConnectGatewayNotFound => write!(f, "DIRECT_CONNECT_GATEWAY_NOT_FOUND"),
+            AttachmentErrorCode::DirectConnectGatewayNoPrivateVif => write!(f, "DIRECT_CONNECT_GATEWAY_NO_PRIVATE_VIF"),
             AttachmentErrorCode::MaximumNoEncapLimitExceeded => write!(f, "MAXIMUM_NO_ENCAP_LIMIT_EXCEEDED"),
             AttachmentErrorCode::SubnetDuplicatedInAvailabilityZone => write!(f, "SUBNET_DUPLICATED_IN_AVAILABILITY_ZONE"),
             AttachmentErrorCode::SubnetNotFound => write!(f, "SUBNET_NOT_FOUND"),

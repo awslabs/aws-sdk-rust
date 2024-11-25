@@ -25,6 +25,8 @@ pub use crate::types::_lag_state::LagState;
 
 pub use crate::types::_direct_connect_gateway_association::DirectConnectGatewayAssociation;
 
+pub use crate::types::_associated_core_network::AssociatedCoreNetwork;
+
 pub use crate::types::_associated_gateway::AssociatedGateway;
 
 pub use crate::types::_gateway_type::GatewayType;
@@ -86,6 +88,8 @@ pub use crate::types::_new_public_virtual_interface_allocation::NewPublicVirtual
 pub use crate::types::_new_private_virtual_interface_allocation::NewPrivateVirtualInterfaceAllocation;
 
 mod _address_family;
+
+mod _associated_core_network;
 
 mod _associated_gateway;
 

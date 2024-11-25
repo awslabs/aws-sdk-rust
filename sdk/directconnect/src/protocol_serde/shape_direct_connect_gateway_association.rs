@@ -60,6 +60,11 @@ where
                                 crate::protocol_serde::shape_route_filter_prefix_list::de_route_filter_prefix_list(tokens)?,
                             );
                         }
+                        "associatedCoreNetwork" => {
+                            builder = builder.set_associated_core_network(
+                                crate::protocol_serde::shape_associated_core_network::de_associated_core_network(tokens)?,
+                            );
+                        }
                         "virtualGatewayId" => {
                             builder = builder.set_virtual_gateway_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

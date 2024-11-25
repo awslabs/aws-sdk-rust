@@ -63,6 +63,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "EdgeLocations" => {
+                            builder = builder.set_edge_locations(
+                                crate::protocol_serde::shape_external_region_code_list::de_external_region_code_list(tokens)?,
+                            );
+                        }
                         "ResourceArn" => {
                             builder = builder.set_resource_arn(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

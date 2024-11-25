@@ -43,6 +43,8 @@ pub(crate) mod shape_create_core_network;
 
 pub(crate) mod shape_create_device;
 
+pub(crate) mod shape_create_direct_connect_gateway_attachment;
+
 pub(crate) mod shape_create_global_network;
 
 pub(crate) mod shape_create_link;
@@ -112,6 +114,8 @@ pub(crate) mod shape_get_core_network_policy;
 pub(crate) mod shape_get_customer_gateway_associations;
 
 pub(crate) mod shape_get_devices;
+
+pub(crate) mod shape_get_direct_connect_gateway_attachment;
 
 pub(crate) mod shape_get_link_associations;
 
@@ -183,6 +187,8 @@ pub(crate) mod shape_update_core_network;
 
 pub(crate) mod shape_update_device;
 
+pub(crate) mod shape_update_direct_connect_gateway_attachment;
+
 pub(crate) mod shape_update_global_network;
 
 pub(crate) mod shape_update_link;
@@ -225,6 +231,8 @@ pub(crate) mod shape_create_core_network_input;
 
 pub(crate) mod shape_create_device_input;
 
+pub(crate) mod shape_create_direct_connect_gateway_attachment_input;
+
 pub(crate) mod shape_create_global_network_input;
 
 pub(crate) mod shape_create_link_input;
@@ -266,6 +274,8 @@ pub(crate) mod shape_update_connection_input;
 pub(crate) mod shape_update_core_network_input;
 
 pub(crate) mod shape_update_device_input;
+
+pub(crate) mod shape_update_direct_connect_gateway_attachment_input;
 
 pub(crate) mod shape_update_global_network_input;
 
@@ -328,6 +338,8 @@ pub(crate) mod shape_customer_gateway_association_list;
 pub(crate) mod shape_device;
 
 pub(crate) mod shape_device_list;
+
+pub(crate) mod shape_direct_connect_gateway_attachment;
 
 pub(crate) mod shape_exception_context_map;
 
@@ -425,6 +437,8 @@ pub(crate) mod shape_core_network_segment_list;
 
 pub(crate) mod shape_core_network_summary;
 
+pub(crate) mod shape_external_region_code_list;
+
 pub(crate) mod shape_network_resource;
 
 pub(crate) mod shape_network_resource_count;
@@ -482,8 +496,6 @@ pub(crate) mod shape_peering_error;
 pub(crate) mod shape_route_analysis_completion;
 
 pub(crate) mod shape_connect_peer_bgp_configuration;
-
-pub(crate) mod shape_external_region_code_list;
 
 pub(crate) mod shape_network_route_destination;
 

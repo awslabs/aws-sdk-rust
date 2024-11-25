@@ -712,9 +712,9 @@ model_hash = 'b3acf0a59884b7504ce6f196736993338aa9ea89ac46237d1ed8beaf31cc50aa'
 
 [crates.aws-sdk-directconnect]
 category = 'AwsSdk'
-version = '1.50.0'
-source_hash = 'af0bebd2b5406c880c695a02028d6a49fd0b48d398b815e296d9e82c714a141d'
-model_hash = '72e64ece15c7f5f5b0d3baef12cae6f68c1b69455cec29dc1632f1074475be95'
+version = '1.51.0'
+source_hash = 'a507e8d4f164963db5ad4dc72e8c3d416b6ba56ea72b8788553b73958b07e741'
+model_hash = '42c695f3f0819f340c031781d76f8ede41ea89152c4c7df9a9abc2320b070e3c'
 
 [crates.aws-sdk-directory]
 category = 'AwsSdk'
@@ -1594,9 +1594,9 @@ model_hash = '519c3bb308e6649b84ff3ba6b31f37d8a68fd5cc775b277d162ed92e24797f58'
 
 [crates.aws-sdk-networkmanager]
 category = 'AwsSdk'
-version = '1.51.0'
-source_hash = '514f8b02a653e885fa3a3af11c9e8035dcf0dc9c6407a90655430f4cf610655b'
-model_hash = '3af5cd3615c95ab6a7e630f8c5ab5d143c54c72528804bbc60bfc745cf0078d5'
+version = '1.52.0'
+source_hash = '29c690fe96d19d18c573113b6b304943d9a4728e5d4a96c30ae04c97bbafaf60'
+model_hash = 'bff282028f955cfc6998bbe31c3ebd670bf17bc1582510072f0e2f2af0f55ab4'
 
 [crates.aws-sdk-networkmonitor]
 category = 'AwsSdk'
@@ -1966,9 +1966,9 @@ model_hash = '34648839402316ab9da4bef0fe11beb9bc3ec1d05b3ff7d09664ab74c0cb3d2b'
 
 [crates.aws-sdk-s3]
 category = 'AwsSdk'
-version = '1.62.0'
-source_hash = '2718818e1fcd6fda2e2b2af93d0c3c8003a3938564498954e2ca80ade5baa344'
-model_hash = 'daf8e766b0eb5759a88501a87db37ece8b66c58f3217f3a967e148dde150075e'
+version = '1.63.0'
+source_hash = 'd153cad2abe2b3779e019212b070c2f82fdc5f7e2baf718d8146302b9b4ae7c8'
+model_hash = 'fa854da689c894730ac6efc704ac906596fb2a3081ec19673e0224207d0f7c36'
 
 [crates.aws-sdk-s3control]
 category = 'AwsSdk'
@@ -2547,29 +2547,7 @@ source_hash = 'f926d3a7deb08a19ecbde8ed9516c47a27d4a3db2cf6b2f2532791634565b05e'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '340172f38639aeb06ccd407828639e840caf6a7109c4eac3c6c78a9e06c1ef06'
-
-[release]
-tag = 'release-2024-11-22'
-
 [release.crates]
-aws-sdk-autoscaling = '1.57.0'
-aws-sdk-bcmpricingcalculator = '1.0.0'
-aws-sdk-bedrockagentruntime = '1.61.0'
-aws-sdk-chatbot = '1.39.0'
-aws-sdk-codepipeline = '1.57.0'
-aws-sdk-cognitoidentityprovider = '1.58.0'
-aws-sdk-connect = '1.75.0'
-aws-sdk-costexplorer = '1.54.0'
-aws-sdk-elasticloadbalancingv2 = '1.57.0'
-aws-sdk-emr = '1.55.0'
-aws-sdk-inspector2 = '1.56.0'
-aws-sdk-lambda = '1.59.0'
-aws-sdk-mailmanager = '1.27.0'
-aws-sdk-neptunegraph = '1.48.0'
-aws-sdk-omics = '1.54.0'
-aws-sdk-quicksight = '1.65.0'
-aws-sdk-sagemaker = '1.87.0'
-aws-sdk-ses = '1.52.0'
-aws-sdk-sfn = '1.53.0'
-aws-sdk-sns = '1.50.1'
-aws-sdk-workspaces = '1.59.1'
+aws-sdk-directconnect = '1.51.0'
+aws-sdk-networkmanager = '1.52.0'
+aws-sdk-s3 = '1.63.0'

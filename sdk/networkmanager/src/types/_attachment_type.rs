@@ -13,6 +13,7 @@
 /// # let attachmenttype = unimplemented!();
 /// match attachmenttype {
 ///     AttachmentType::Connect => { /* ... */ },
+///     AttachmentType::DirectConnectGateway => { /* ... */ },
 ///     AttachmentType::SiteToSiteVpn => { /* ... */ },
 ///     AttachmentType::TransitGatewayRouteTable => { /* ... */ },
 ///     AttachmentType::Vpc => { /* ... */ },
@@ -46,6 +47,8 @@ pub enum AttachmentType {
     #[allow(missing_docs)] // documentation missing in model
     Connect,
     #[allow(missing_docs)] // documentation missing in model
+    DirectConnectGateway,
+    #[allow(missing_docs)] // documentation missing in model
     SiteToSiteVpn,
     #[allow(missing_docs)] // documentation missing in model
     TransitGatewayRouteTable,
@@ -59,6 +62,7 @@ impl ::std::convert::From<&str> for AttachmentType {
     fn from(s: &str) -> Self {
         match s {
             "CONNECT" => AttachmentType::Connect,
+            "DIRECT_CONNECT_GATEWAY" => AttachmentType::DirectConnectGateway,
             "SITE_TO_SITE_VPN" => AttachmentType::SiteToSiteVpn,
             "TRANSIT_GATEWAY_ROUTE_TABLE" => AttachmentType::TransitGatewayRouteTable,
             "VPC" => AttachmentType::Vpc,
@@ -78,6 +82,7 @@ impl AttachmentType {
     pub fn as_str(&self) -> &str {
         match self {
             AttachmentType::Connect => "CONNECT",
+            AttachmentType::DirectConnectGateway => "DIRECT_CONNECT_GATEWAY",
             AttachmentType::SiteToSiteVpn => "SITE_TO_SITE_VPN",
             AttachmentType::TransitGatewayRouteTable => "TRANSIT_GATEWAY_ROUTE_TABLE",
             AttachmentType::Vpc => "VPC",
@@ -86,7 +91,13 @@ impl AttachmentType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CONNECT", "SITE_TO_SITE_VPN", "TRANSIT_GATEWAY_ROUTE_TABLE", "VPC"]
+        &[
+            "CONNECT",
+            "DIRECT_CONNECT_GATEWAY",
+            "SITE_TO_SITE_VPN",
+            "TRANSIT_GATEWAY_ROUTE_TABLE",
+            "VPC",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for AttachmentType {
@@ -110,6 +121,7 @@ impl ::std::fmt::Display for AttachmentType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AttachmentType::Connect => write!(f, "CONNECT"),
+            AttachmentType::DirectConnectGateway => write!(f, "DIRECT_CONNECT_GATEWAY"),
             AttachmentType::SiteToSiteVpn => write!(f, "SITE_TO_SITE_VPN"),
             AttachmentType::TransitGatewayRouteTable => write!(f, "TRANSIT_GATEWAY_ROUTE_TABLE"),
             AttachmentType::Vpc => write!(f, "VPC"),

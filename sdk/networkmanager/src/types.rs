@@ -39,6 +39,8 @@ pub use crate::types::_global_network::GlobalNetwork;
 
 pub use crate::types::_global_network_state::GlobalNetworkState;
 
+pub use crate::types::_direct_connect_gateway_attachment::DirectConnectGatewayAttachment;
+
 pub use crate::types::_device::Device;
 
 pub use crate::types::_device_state::DeviceState;
@@ -314,6 +316,8 @@ mod _customer_gateway_association_state;
 mod _device;
 
 mod _device_state;
+
+mod _direct_connect_gateway_attachment;
 
 mod _edge_override;
 

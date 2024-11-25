@@ -351,6 +351,8 @@ pub(crate) mod shape_virtual_interface_test_history;
 
 pub(crate) mod shape_virtual_interface_test_history_list;
 
+pub(crate) mod shape_associated_core_network;
+
 pub(crate) mod shape_associated_gateway;
 
 pub(crate) mod shape_bgp_peer;

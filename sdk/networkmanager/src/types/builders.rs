@@ -25,6 +25,8 @@ pub use crate::types::_bandwidth::BandwidthBuilder;
 
 pub use crate::types::_global_network::GlobalNetworkBuilder;
 
+pub use crate::types::_direct_connect_gateway_attachment::DirectConnectGatewayAttachmentBuilder;
+
 pub use crate::types::_device::DeviceBuilder;
 
 pub use crate::types::_aws_location::AwsLocationBuilder;
