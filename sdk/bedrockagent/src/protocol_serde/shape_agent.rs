@@ -77,6 +77,17 @@ where
                                     .transpose()?,
                             );
                         }
+                        "orchestrationType" => {
+                            builder = builder.set_orchestration_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::OrchestrationType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "customOrchestration" => {
+                            builder =
+                                builder.set_custom_orchestration(crate::protocol_serde::shape_custom_orchestration::de_custom_orchestration(tokens)?);
+                        }
                         "idleSessionTTLInSeconds" => {
                             builder = builder.set_idle_session_ttl_in_seconds(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

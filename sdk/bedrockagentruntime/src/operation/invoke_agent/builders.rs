@@ -256,4 +256,18 @@ impl InvokeAgentFluentBuilder {
     pub fn get_memory_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_memory_id()
     }
+    /// <p>Specifies the configurations for streaming.</p>
+    pub fn streaming_configurations(mut self, input: crate::types::StreamingConfigurations) -> Self {
+        self.inner = self.inner.streaming_configurations(input);
+        self
+    }
+    /// <p>Specifies the configurations for streaming.</p>
+    pub fn set_streaming_configurations(mut self, input: ::std::option::Option<crate::types::StreamingConfigurations>) -> Self {
+        self.inner = self.inner.set_streaming_configurations(input);
+        self
+    }
+    /// <p>Specifies the configurations for streaming.</p>
+    pub fn get_streaming_configurations(&self) -> &::std::option::Option<crate::types::StreamingConfigurations> {
+        self.inner.get_streaming_configurations()
+    }
 }

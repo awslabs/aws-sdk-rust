@@ -11,6 +11,8 @@ pub struct StartQAppSessionInput {
     pub app_version: ::std::option::Option<i32>,
     /// <p>Optional initial input values to provide for the Q App session.</p>
     pub initial_values: ::std::option::Option<::std::vec::Vec<crate::types::CardValue>>,
+    /// <p>The unique identifier of the a Q App session.</p>
+    pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>Optional tags to associate with the new Q App session.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -33,6 +35,10 @@ impl StartQAppSessionInput {
     pub fn initial_values(&self) -> &[crate::types::CardValue] {
         self.initial_values.as_deref().unwrap_or_default()
     }
+    /// <p>The unique identifier of the a Q App session.</p>
+    pub fn session_id(&self) -> ::std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
     /// <p>Optional tags to associate with the new Q App session.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -53,6 +59,7 @@ pub struct StartQAppSessionInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) app_version: ::std::option::Option<i32>,
     pub(crate) initial_values: ::std::option::Option<::std::vec::Vec<crate::types::CardValue>>,
+    pub(crate) session_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl StartQAppSessionInputBuilder {
@@ -121,6 +128,20 @@ impl StartQAppSessionInputBuilder {
     pub fn get_initial_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CardValue>> {
         &self.initial_values
     }
+    /// <p>The unique identifier of the a Q App session.</p>
+    pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.session_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the a Q App session.</p>
+    pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.session_id = input;
+        self
+    }
+    /// <p>The unique identifier of the a Q App session.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -150,6 +171,7 @@ impl StartQAppSessionInputBuilder {
             app_id: self.app_id,
             app_version: self.app_version,
             initial_values: self.initial_values,
+            session_id: self.session_id,
             tags: self.tags,
         })
     }

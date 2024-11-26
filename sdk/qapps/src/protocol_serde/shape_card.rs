@@ -49,6 +49,11 @@ where
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'fileUpload' cannot be null")
                             })?,
                         )),
+                        "formInput" => Some(crate::types::Card::FormInput(
+                            crate::protocol_serde::shape_form_input_card::de_form_input_card(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'formInput' cannot be null")
+                            })?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::Card::Unknown)

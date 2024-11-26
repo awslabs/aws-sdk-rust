@@ -12,7 +12,7 @@ impl super::Client {
     /// - On success, responds with [`SearchContactFlowsOutput`](crate::operation::search_contact_flows::SearchContactFlowsOutput) with field(s):
     ///   - [`contact_flows(Option<Vec::<ContactFlow>>)`](crate::operation::search_contact_flows::SearchContactFlowsOutput::contact_flows): <p>Information about the flows.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::search_contact_flows::SearchContactFlowsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
-    ///   - [`approximate_total_count(Option<i64>)`](crate::operation::search_contact_flows::SearchContactFlowsOutput::approximate_total_count): <p>The total number of contact flows which matched your search query.</p>
+    ///   - [`approximate_total_count(Option<i64>)`](crate::operation::search_contact_flows::SearchContactFlowsOutput::approximate_total_count): <p>The total number of flows which matched your search query.</p>
     /// - On failure, responds with [`SdkError<SearchContactFlowsError>`](crate::operation::search_contact_flows::SearchContactFlowsError)
     pub fn search_contact_flows(&self) -> crate::operation::search_contact_flows::builders::SearchContactFlowsFluentBuilder {
         crate::operation::search_contact_flows::builders::SearchContactFlowsFluentBuilder::new(self.handle.clone())

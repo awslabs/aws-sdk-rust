@@ -14,7 +14,7 @@ pub struct ContactFlow {
     pub r#type: ::std::option::Option<crate::types::ContactFlowType>,
     /// <p>The type of flow.</p>
     pub state: ::std::option::Option<crate::types::ContactFlowState>,
-    /// <p>The status of the contact flow.</p>
+    /// <p>The status of the flow.</p>
     pub status: ::std::option::Option<crate::types::ContactFlowStatus>,
     /// <p>The description of the flow.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -23,17 +23,15 @@ pub struct ContactFlow {
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>Amazon Connect includes a set of default flows that have already been published. It uses them to power your contact center.</p>
-    pub is_default: bool,
     /// <p>Indicates the checksum value of the flow content.</p>
     pub flow_content_sha256: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the flow version.</p>
     pub version: ::std::option::Option<i64>,
     /// <p>The description of the flow version.</p>
     pub version_description: ::std::option::Option<::std::string::String>,
-    /// <p>The time at which the contact flow was last modified.</p>
+    /// <p>The time at which the flow was last modified.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The region in which the contact flow was last modified</p>
+    /// <p>The region in which the flow was last modified</p>
     pub last_modified_region: ::std::option::Option<::std::string::String>,
 }
 impl ContactFlow {
@@ -57,7 +55,7 @@ impl ContactFlow {
     pub fn state(&self) -> ::std::option::Option<&crate::types::ContactFlowState> {
         self.state.as_ref()
     }
-    /// <p>The status of the contact flow.</p>
+    /// <p>The status of the flow.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ContactFlowStatus> {
         self.status.as_ref()
     }
@@ -74,10 +72,6 @@ impl ContactFlow {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>Amazon Connect includes a set of default flows that have already been published. It uses them to power your contact center.</p>
-    pub fn is_default(&self) -> bool {
-        self.is_default
-    }
     /// <p>Indicates the checksum value of the flow content.</p>
     pub fn flow_content_sha256(&self) -> ::std::option::Option<&str> {
         self.flow_content_sha256.as_deref()
@@ -90,11 +84,11 @@ impl ContactFlow {
     pub fn version_description(&self) -> ::std::option::Option<&str> {
         self.version_description.as_deref()
     }
-    /// <p>The time at which the contact flow was last modified.</p>
+    /// <p>The time at which the flow was last modified.</p>
     pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
-    /// <p>The region in which the contact flow was last modified</p>
+    /// <p>The region in which the flow was last modified</p>
     pub fn last_modified_region(&self) -> ::std::option::Option<&str> {
         self.last_modified_region.as_deref()
     }
@@ -119,7 +113,6 @@ pub struct ContactFlowBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) content: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) is_default: ::std::option::Option<bool>,
     pub(crate) flow_content_sha256: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<i64>,
     pub(crate) version_description: ::std::option::Option<::std::string::String>,
@@ -197,17 +190,17 @@ impl ContactFlowBuilder {
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ContactFlowState> {
         &self.state
     }
-    /// <p>The status of the contact flow.</p>
+    /// <p>The status of the flow.</p>
     pub fn status(mut self, input: crate::types::ContactFlowStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the contact flow.</p>
+    /// <p>The status of the flow.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ContactFlowStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the contact flow.</p>
+    /// <p>The status of the flow.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ContactFlowStatus> {
         &self.status
     }
@@ -262,20 +255,6 @@ impl ContactFlowBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
-    /// <p>Amazon Connect includes a set of default flows that have already been published. It uses them to power your contact center.</p>
-    pub fn is_default(mut self, input: bool) -> Self {
-        self.is_default = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Amazon Connect includes a set of default flows that have already been published. It uses them to power your contact center.</p>
-    pub fn set_is_default(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_default = input;
-        self
-    }
-    /// <p>Amazon Connect includes a set of default flows that have already been published. It uses them to power your contact center.</p>
-    pub fn get_is_default(&self) -> &::std::option::Option<bool> {
-        &self.is_default
-    }
     /// <p>Indicates the checksum value of the flow content.</p>
     pub fn flow_content_sha256(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_content_sha256 = ::std::option::Option::Some(input.into());
@@ -318,31 +297,31 @@ impl ContactFlowBuilder {
     pub fn get_version_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.version_description
     }
-    /// <p>The time at which the contact flow was last modified.</p>
+    /// <p>The time at which the flow was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time at which the contact flow was last modified.</p>
+    /// <p>The time at which the flow was last modified.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
-    /// <p>The time at which the contact flow was last modified.</p>
+    /// <p>The time at which the flow was last modified.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time
     }
-    /// <p>The region in which the contact flow was last modified</p>
+    /// <p>The region in which the flow was last modified</p>
     pub fn last_modified_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_modified_region = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The region in which the contact flow was last modified</p>
+    /// <p>The region in which the flow was last modified</p>
     pub fn set_last_modified_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_modified_region = input;
         self
     }
-    /// <p>The region in which the contact flow was last modified</p>
+    /// <p>The region in which the flow was last modified</p>
     pub fn get_last_modified_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_modified_region
     }
@@ -358,7 +337,6 @@ impl ContactFlowBuilder {
             description: self.description,
             content: self.content,
             tags: self.tags,
-            is_default: self.is_default.unwrap_or_default(),
             flow_content_sha256: self.flow_content_sha256,
             version: self.version,
             version_description: self.version_description,

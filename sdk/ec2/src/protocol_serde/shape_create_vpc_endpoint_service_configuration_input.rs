@@ -60,21 +60,34 @@ pub fn ser_create_vpc_endpoint_service_configuration_input_input_input(
         }
     }
     #[allow(unused_mut)]
-    let mut scope_22 = writer.prefix("ClientToken");
-    if let Some(var_23) = &input.client_token {
-        scope_22.string(var_23);
+    let mut scope_22 = writer.prefix("SupportedRegion");
+    if let Some(var_23) = &input.supported_regions {
+        if !var_23.is_empty() {
+            let mut list_25 = scope_22.start_list(true, Some("item"));
+            for item_24 in var_23 {
+                #[allow(unused_mut)]
+                let mut entry_26 = list_25.entry();
+                entry_26.string(item_24);
+            }
+            list_25.finish();
+        }
     }
     #[allow(unused_mut)]
-    let mut scope_24 = writer.prefix("TagSpecification");
-    if let Some(var_25) = &input.tag_specifications {
-        if !var_25.is_empty() {
-            let mut list_27 = scope_24.start_list(true, Some("item"));
-            for item_26 in var_25 {
+    let mut scope_27 = writer.prefix("ClientToken");
+    if let Some(var_28) = &input.client_token {
+        scope_27.string(var_28);
+    }
+    #[allow(unused_mut)]
+    let mut scope_29 = writer.prefix("TagSpecification");
+    if let Some(var_30) = &input.tag_specifications {
+        if !var_30.is_empty() {
+            let mut list_32 = scope_29.start_list(true, Some("item"));
+            for item_31 in var_30 {
                 #[allow(unused_mut)]
-                let mut entry_28 = list_27.entry();
-                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_28, item_26)?;
+                let mut entry_33 = list_32.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_33, item_31)?;
             }
-            list_27.finish();
+            list_32.finish();
         }
     }
     writer.finish();

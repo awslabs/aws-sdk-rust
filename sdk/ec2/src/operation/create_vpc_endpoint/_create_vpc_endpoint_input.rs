@@ -34,6 +34,8 @@ pub struct CreateVpcEndpointInput {
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     /// <p>The subnet configurations for the endpoint.</p>
     pub subnet_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SubnetConfiguration>>,
+    /// <p>The Region where the service is hosted. The default is the current Region.</p>
+    pub service_region: ::std::option::Option<::std::string::String>,
 }
 impl CreateVpcEndpointInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -105,6 +107,10 @@ impl CreateVpcEndpointInput {
     pub fn subnet_configurations(&self) -> &[crate::types::SubnetConfiguration] {
         self.subnet_configurations.as_deref().unwrap_or_default()
     }
+    /// <p>The Region where the service is hosted. The default is the current Region.</p>
+    pub fn service_region(&self) -> ::std::option::Option<&str> {
+        self.service_region.as_deref()
+    }
 }
 impl CreateVpcEndpointInput {
     /// Creates a new builder-style object to manufacture [`CreateVpcEndpointInput`](crate::operation::create_vpc_endpoint::CreateVpcEndpointInput).
@@ -131,6 +137,7 @@ pub struct CreateVpcEndpointInputBuilder {
     pub(crate) private_dns_enabled: ::std::option::Option<bool>,
     pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) subnet_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SubnetConfiguration>>,
+    pub(crate) service_region: ::std::option::Option<::std::string::String>,
 }
 impl CreateVpcEndpointInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -370,6 +377,20 @@ impl CreateVpcEndpointInputBuilder {
     pub fn get_subnet_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubnetConfiguration>> {
         &self.subnet_configurations
     }
+    /// <p>The Region where the service is hosted. The default is the current Region.</p>
+    pub fn service_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.service_region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Region where the service is hosted. The default is the current Region.</p>
+    pub fn set_service_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.service_region = input;
+        self
+    }
+    /// <p>The Region where the service is hosted. The default is the current Region.</p>
+    pub fn get_service_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_region
+    }
     /// Consumes the builder and constructs a [`CreateVpcEndpointInput`](crate::operation::create_vpc_endpoint::CreateVpcEndpointInput).
     pub fn build(
         self,
@@ -389,6 +410,7 @@ impl CreateVpcEndpointInputBuilder {
             private_dns_enabled: self.private_dns_enabled,
             tag_specifications: self.tag_specifications,
             subnet_configurations: self.subnet_configurations,
+            service_region: self.service_region,
         })
     }
 }

@@ -7,7 +7,7 @@ pub struct SearchContactFlowsOutput {
     pub contact_flows: ::std::option::Option<::std::vec::Vec<crate::types::ContactFlow>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The total number of contact flows which matched your search query.</p>
+    /// <p>The total number of flows which matched your search query.</p>
     pub approximate_total_count: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
@@ -22,7 +22,7 @@ impl SearchContactFlowsOutput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The total number of contact flows which matched your search query.</p>
+    /// <p>The total number of flows which matched your search query.</p>
     pub fn approximate_total_count(&self) -> ::std::option::Option<i64> {
         self.approximate_total_count
     }
@@ -83,17 +83,17 @@ impl SearchContactFlowsOutputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>The total number of contact flows which matched your search query.</p>
+    /// <p>The total number of flows which matched your search query.</p>
     pub fn approximate_total_count(mut self, input: i64) -> Self {
         self.approximate_total_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The total number of contact flows which matched your search query.</p>
+    /// <p>The total number of flows which matched your search query.</p>
     pub fn set_approximate_total_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.approximate_total_count = input;
         self
     }
-    /// <p>The total number of contact flows which matched your search query.</p>
+    /// <p>The total number of flows which matched your search query.</p>
     pub fn get_approximate_total_count(&self) -> &::std::option::Option<i64> {
         &self.approximate_total_count
     }

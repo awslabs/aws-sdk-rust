@@ -28,6 +28,12 @@ pub fn ser_card_input(
             crate::protocol_serde::shape_file_upload_card_input::ser_file_upload_card_input(&mut object_4, inner)?;
             object_4.finish();
         }
+        crate::types::CardInput::FormInput(inner) => {
+            #[allow(unused_mut)]
+            let mut object_5 = object_3.key("formInput").start_object();
+            crate::protocol_serde::shape_form_input_card_input::ser_form_input_card_input(&mut object_5, inner)?;
+            object_5.finish();
+        }
         crate::types::CardInput::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("CardInput")),
     }
     Ok(())
@@ -81,6 +87,11 @@ where
                         "fileUpload" => Some(crate::types::CardInput::FileUpload(
                             crate::protocol_serde::shape_file_upload_card_input::de_file_upload_card_input(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'fileUpload' cannot be null")
+                            })?,
+                        )),
+                        "formInput" => Some(crate::types::CardInput::FormInput(
+                            crate::protocol_serde::shape_form_input_card_input::de_form_input_card_input(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'formInput' cannot be null")
                             })?,
                         )),
                         _ => {

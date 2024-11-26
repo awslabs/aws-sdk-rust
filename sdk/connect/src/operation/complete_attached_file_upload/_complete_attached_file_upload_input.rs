@@ -8,7 +8,7 @@ pub struct CompleteAttachedFileUploadInput {
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the attached file resource.</p>
     pub file_id: ::std::option::Option<::std::string::String>,
-    /// <p>The resource to which the attached file is (being) uploaded to. <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Cases</a> are the only current supported resource.</p><note>
+    /// <p>The resource to which the attached file is (being) uploaded to. The supported resources are <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cases.html">Cases</a> and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Email</a>.</p><note>
     /// <p>This value must be a valid ARN.</p>
     /// </note>
     pub associated_resource_arn: ::std::option::Option<::std::string::String>,
@@ -22,7 +22,7 @@ impl CompleteAttachedFileUploadInput {
     pub fn file_id(&self) -> ::std::option::Option<&str> {
         self.file_id.as_deref()
     }
-    /// <p>The resource to which the attached file is (being) uploaded to. <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Cases</a> are the only current supported resource.</p><note>
+    /// <p>The resource to which the attached file is (being) uploaded to. The supported resources are <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cases.html">Cases</a> and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Email</a>.</p><note>
     /// <p>This value must be a valid ARN.</p>
     /// </note>
     pub fn associated_resource_arn(&self) -> ::std::option::Option<&str> {
@@ -75,7 +75,7 @@ impl CompleteAttachedFileUploadInputBuilder {
     pub fn get_file_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.file_id
     }
-    /// <p>The resource to which the attached file is (being) uploaded to. <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Cases</a> are the only current supported resource.</p><note>
+    /// <p>The resource to which the attached file is (being) uploaded to. The supported resources are <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cases.html">Cases</a> and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Email</a>.</p><note>
     /// <p>This value must be a valid ARN.</p>
     /// </note>
     /// This field is required.
@@ -83,14 +83,14 @@ impl CompleteAttachedFileUploadInputBuilder {
         self.associated_resource_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The resource to which the attached file is (being) uploaded to. <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Cases</a> are the only current supported resource.</p><note>
+    /// <p>The resource to which the attached file is (being) uploaded to. The supported resources are <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cases.html">Cases</a> and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Email</a>.</p><note>
     /// <p>This value must be a valid ARN.</p>
     /// </note>
     pub fn set_associated_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.associated_resource_arn = input;
         self
     }
-    /// <p>The resource to which the attached file is (being) uploaded to. <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Cases</a> are the only current supported resource.</p><note>
+    /// <p>The resource to which the attached file is (being) uploaded to. The supported resources are <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cases.html">Cases</a> and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Email</a>.</p><note>
     /// <p>This value must be a valid ARN.</p>
     /// </note>
     pub fn get_associated_resource_arn(&self) -> &::std::option::Option<::std::string::String> {

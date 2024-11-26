@@ -238,6 +238,19 @@ pub fn de_vpc_endpoint(
                 builder = builder.set_last_error(var_19);
             }
             ,
+            s if s.matches("serviceRegion") /* ServiceRegion com.amazonaws.ec2#VpcEndpoint$ServiceRegion */ =>  {
+                let var_20 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_service_region(var_20);
+            }
+            ,
             _ => {}
         }
     }

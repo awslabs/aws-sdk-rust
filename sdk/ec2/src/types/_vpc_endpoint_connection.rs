@@ -26,6 +26,8 @@ pub struct VpcEndpointConnection {
     pub vpc_endpoint_connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The Region of the endpoint.</p>
+    pub vpc_endpoint_region: ::std::option::Option<::std::string::String>,
 }
 impl VpcEndpointConnection {
     /// <p>The ID of the service to which the endpoint is connected.</p>
@@ -80,6 +82,10 @@ impl VpcEndpointConnection {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>The Region of the endpoint.</p>
+    pub fn vpc_endpoint_region(&self) -> ::std::option::Option<&str> {
+        self.vpc_endpoint_region.as_deref()
+    }
 }
 impl VpcEndpointConnection {
     /// Creates a new builder-style object to manufacture [`VpcEndpointConnection`](crate::types::VpcEndpointConnection).
@@ -103,6 +109,7 @@ pub struct VpcEndpointConnectionBuilder {
     pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     pub(crate) vpc_endpoint_connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) vpc_endpoint_region: ::std::option::Option<::std::string::String>,
 }
 impl VpcEndpointConnectionBuilder {
     /// <p>The ID of the service to which the endpoint is connected.</p>
@@ -283,6 +290,20 @@ impl VpcEndpointConnectionBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>The Region of the endpoint.</p>
+    pub fn vpc_endpoint_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpc_endpoint_region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Region of the endpoint.</p>
+    pub fn set_vpc_endpoint_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vpc_endpoint_region = input;
+        self
+    }
+    /// <p>The Region of the endpoint.</p>
+    pub fn get_vpc_endpoint_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_endpoint_region
+    }
     /// Consumes the builder and constructs a [`VpcEndpointConnection`](crate::types::VpcEndpointConnection).
     pub fn build(self) -> crate::types::VpcEndpointConnection {
         crate::types::VpcEndpointConnection {
@@ -297,6 +318,7 @@ impl VpcEndpointConnectionBuilder {
             ip_address_type: self.ip_address_type,
             vpc_endpoint_connection_id: self.vpc_endpoint_connection_id,
             tags: self.tags,
+            vpc_endpoint_region: self.vpc_endpoint_region,
         }
     }
 }

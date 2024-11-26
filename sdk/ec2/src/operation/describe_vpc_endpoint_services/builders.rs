@@ -154,6 +154,8 @@ impl DescribeVpcEndpointServicesFluentBuilder {
     /// <li>
     /// <p><code>service-name</code> - The name of the service.</p></li>
     /// <li>
+    /// <p><code>service-region</code> - The Region of the service.</p></li>
+    /// <li>
     /// <p><code>service-type</code> - The type of service (<code>Interface</code> | <code>Gateway</code> | <code>GatewayLoadBalancer</code>).</p></li>
     /// <li>
     /// <p><code>supported-ip-address-types</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).</p></li>
@@ -179,6 +181,8 @@ impl DescribeVpcEndpointServicesFluentBuilder {
     /// <li>
     /// <p><code>service-name</code> - The name of the service.</p></li>
     /// <li>
+    /// <p><code>service-region</code> - The Region of the service.</p></li>
+    /// <li>
     /// <p><code>service-type</code> - The type of service (<code>Interface</code> | <code>Gateway</code> | <code>GatewayLoadBalancer</code>).</p></li>
     /// <li>
     /// <p><code>supported-ip-address-types</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).</p></li>
@@ -203,6 +207,8 @@ impl DescribeVpcEndpointServicesFluentBuilder {
     /// <p><code>owner</code> - The ID or alias of the Amazon Web Services account that owns the service.</p></li>
     /// <li>
     /// <p><code>service-name</code> - The name of the service.</p></li>
+    /// <li>
+    /// <p><code>service-region</code> - The Region of the service.</p></li>
     /// <li>
     /// <p><code>service-type</code> - The type of service (<code>Interface</code> | <code>Gateway</code> | <code>GatewayLoadBalancer</code>).</p></li>
     /// <li>
@@ -251,5 +257,24 @@ impl DescribeVpcEndpointServicesFluentBuilder {
     /// <p>The token for the next set of items to return. (You received this token from a prior call.)</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
+    }
+    ///
+    /// Appends an item to `ServiceRegions`.
+    ///
+    /// To override the contents of this collection use [`set_service_regions`](Self::set_service_regions).
+    ///
+    /// <p>The service Regions.</p>
+    pub fn service_regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.service_regions(input.into());
+        self
+    }
+    /// <p>The service Regions.</p>
+    pub fn set_service_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_service_regions(input);
+        self
+    }
+    /// <p>The service Regions.</p>
+    pub fn get_service_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_service_regions()
     }
 }

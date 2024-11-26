@@ -5,6 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`instance_id(impl Into<String>)`](crate::operation::get_q_app::builders::GetQAppFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::get_q_app::builders::GetQAppFluentBuilder::set_instance_id):<br>required: **true**<br><p>The unique identifier of the Amazon Q Business application environment instance.</p><br>
     ///   - [`app_id(impl Into<String>)`](crate::operation::get_q_app::builders::GetQAppFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::get_q_app::builders::GetQAppFluentBuilder::set_app_id):<br>required: **true**<br><p>The unique identifier of the Q App to retrieve.</p><br>
+    ///   - [`app_version(i32)`](crate::operation::get_q_app::builders::GetQAppFluentBuilder::app_version) / [`set_app_version(Option<i32>)`](crate::operation::get_q_app::builders::GetQAppFluentBuilder::set_app_version):<br>required: **false**<br><p>The version of the Q App.</p><br>
     /// - On success, responds with [`GetQAppOutput`](crate::operation::get_q_app::GetQAppOutput) with field(s):
     ///   - [`app_id(String)`](crate::operation::get_q_app::GetQAppOutput::app_id): <p>The unique identifier of the Q App.</p>
     ///   - [`app_arn(String)`](crate::operation::get_q_app::GetQAppOutput::app_arn): <p>The Amazon Resource Name (ARN) of the Q App.</p>

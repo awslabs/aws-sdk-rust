@@ -237,6 +237,34 @@ impl CreateAgentFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    /// <p>Specifies the type of orchestration strategy for the agent. This is set to <code>DEFAULT</code> orchestration type, by default.</p>
+    pub fn orchestration_type(mut self, input: crate::types::OrchestrationType) -> Self {
+        self.inner = self.inner.orchestration_type(input);
+        self
+    }
+    /// <p>Specifies the type of orchestration strategy for the agent. This is set to <code>DEFAULT</code> orchestration type, by default.</p>
+    pub fn set_orchestration_type(mut self, input: ::std::option::Option<crate::types::OrchestrationType>) -> Self {
+        self.inner = self.inner.set_orchestration_type(input);
+        self
+    }
+    /// <p>Specifies the type of orchestration strategy for the agent. This is set to <code>DEFAULT</code> orchestration type, by default.</p>
+    pub fn get_orchestration_type(&self) -> &::std::option::Option<crate::types::OrchestrationType> {
+        self.inner.get_orchestration_type()
+    }
+    /// <p>Contains details of the custom orchestration configured for the agent.</p>
+    pub fn custom_orchestration(mut self, input: crate::types::CustomOrchestration) -> Self {
+        self.inner = self.inner.custom_orchestration(input);
+        self
+    }
+    /// <p>Contains details of the custom orchestration configured for the agent.</p>
+    pub fn set_custom_orchestration(mut self, input: ::std::option::Option<crate::types::CustomOrchestration>) -> Self {
+        self.inner = self.inner.set_custom_orchestration(input);
+        self
+    }
+    /// <p>Contains details of the custom orchestration configured for the agent.</p>
+    pub fn get_custom_orchestration(&self) -> &::std::option::Option<crate::types::CustomOrchestration> {
+        self.inner.get_custom_orchestration()
+    }
     /// <p>The number of seconds for which Amazon Bedrock keeps information about a user's conversation with the agent.</p>
     /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Bedrock deletes any data provided before the timeout.</p>
     pub fn idle_session_ttl_in_seconds(mut self, input: i32) -> Self {

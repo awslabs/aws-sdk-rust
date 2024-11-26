@@ -289,7 +289,7 @@ pub enum ListRealtimeContactAnalysisSegmentsV2Error {
     InternalServiceException(crate::types::error::InternalServiceException),
     /// <p>The request is not valid.</p>
     InvalidRequestException(crate::types::error::InvalidRequestException),
-    /// <p>Thrown for analyzed content when requested OutputType was not enabled for a given contact. For example, if an OutputType.Raw was requested for a contact that had `RedactedOnly` Redaction policy set in Contact flow.</p>
+    /// <p>Thrown for analyzed content when requested OutputType was not enabled for a given contact. For example, if an OutputType.Raw was requested for a contact that had `RedactedOnly` Redaction policy set in the flow.</p>
     OutputTypeNotFoundException(crate::types::error::OutputTypeNotFoundException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),

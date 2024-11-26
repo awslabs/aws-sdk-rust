@@ -385,6 +385,12 @@ pub use crate::types::_agent_alias_summary::AgentAliasSummary;
 
 pub use crate::types::_agent::Agent;
 
+pub use crate::types::_custom_orchestration::CustomOrchestration;
+
+pub use crate::types::_orchestration_executor::OrchestrationExecutor;
+
+pub use crate::types::_orchestration_type::OrchestrationType;
+
 pub use crate::types::_agent_summary::AgentSummary;
 
 pub use crate::types::_agent_action_group::AgentActionGroup;
@@ -490,6 +496,8 @@ mod _crawl_filter_configuration_type;
 mod _creation_mode;
 
 mod _custom_control_method;
+
+mod _custom_orchestration;
 
 mod _custom_transformation_configuration;
 
@@ -654,6 +662,10 @@ mod _multiple_node_input_connections_flow_validation_details;
 mod _open_search_serverless_configuration;
 
 mod _open_search_serverless_field_mapping;
+
+mod _orchestration_executor;
+
+mod _orchestration_type;
 
 mod _output_flow_node_configuration;
 

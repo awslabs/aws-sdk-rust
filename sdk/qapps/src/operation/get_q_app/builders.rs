@@ -127,4 +127,18 @@ impl GetQAppFluentBuilder {
     pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_app_id()
     }
+    /// <p>The version of the Q App.</p>
+    pub fn app_version(mut self, input: i32) -> Self {
+        self.inner = self.inner.app_version(input);
+        self
+    }
+    /// <p>The version of the Q App.</p>
+    pub fn set_app_version(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_app_version(input);
+        self
+    }
+    /// <p>The version of the Q App.</p>
+    pub fn get_app_version(&self) -> &::std::option::Option<i32> {
+        self.inner.get_app_version()
+    }
 }

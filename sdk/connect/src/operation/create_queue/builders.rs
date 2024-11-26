@@ -174,17 +174,17 @@ impl CreateQueueFluentBuilder {
     pub fn get_outbound_caller_config(&self) -> &::std::option::Option<crate::types::OutboundCallerConfig> {
         self.inner.get_outbound_caller_config()
     }
-    /// <p></p>
+    /// <p>The outbound email address ID for a specified queue.</p>
     pub fn outbound_email_config(mut self, input: crate::types::OutboundEmailConfig) -> Self {
         self.inner = self.inner.outbound_email_config(input);
         self
     }
-    /// <p></p>
+    /// <p>The outbound email address ID for a specified queue.</p>
     pub fn set_outbound_email_config(mut self, input: ::std::option::Option<crate::types::OutboundEmailConfig>) -> Self {
         self.inner = self.inner.set_outbound_email_config(input);
         self
     }
-    /// <p></p>
+    /// <p>The outbound email address ID for a specified queue.</p>
     pub fn get_outbound_email_config(&self) -> &::std::option::Option<crate::types::OutboundEmailConfig> {
         self.inner.get_outbound_email_config()
     }

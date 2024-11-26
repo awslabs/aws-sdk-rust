@@ -59,9 +59,17 @@ pub fn ser_copy_snapshot_input_input_input(
         }
     }
     #[allow(unused_mut)]
-    let mut scope_22 = writer.prefix("DryRun");
-    if let Some(var_23) = &input.dry_run {
-        scope_22.boolean(*var_23);
+    let mut scope_22 = writer.prefix("CompletionDurationMinutes");
+    if let Some(var_23) = &input.completion_duration_minutes {
+        scope_22.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_23).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_24 = writer.prefix("DryRun");
+    if let Some(var_25) = &input.dry_run {
+        scope_24.boolean(*var_25);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

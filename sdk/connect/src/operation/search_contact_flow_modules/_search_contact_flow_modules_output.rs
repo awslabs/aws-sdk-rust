@@ -3,16 +3,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchContactFlowModulesOutput {
-    /// <p>The search criteria to be used to return contact flow modules.</p>
+    /// <p>The search criteria to be used to return flow modules.</p>
     pub contact_flow_modules: ::std::option::Option<::std::vec::Vec<crate::types::ContactFlowModule>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The total number of contact flows which matched your search query.</p>
+    /// <p>The total number of flows which matched your search query.</p>
     pub approximate_total_count: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
 impl SearchContactFlowModulesOutput {
-    /// <p>The search criteria to be used to return contact flow modules.</p>
+    /// <p>The search criteria to be used to return flow modules.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.contact_flow_modules.is_none()`.
     pub fn contact_flow_modules(&self) -> &[crate::types::ContactFlowModule] {
@@ -22,7 +22,7 @@ impl SearchContactFlowModulesOutput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The total number of contact flows which matched your search query.</p>
+    /// <p>The total number of flows which matched your search query.</p>
     pub fn approximate_total_count(&self) -> ::std::option::Option<i64> {
         self.approximate_total_count
     }
@@ -53,19 +53,19 @@ impl SearchContactFlowModulesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_contact_flow_modules`](Self::set_contact_flow_modules).
     ///
-    /// <p>The search criteria to be used to return contact flow modules.</p>
+    /// <p>The search criteria to be used to return flow modules.</p>
     pub fn contact_flow_modules(mut self, input: crate::types::ContactFlowModule) -> Self {
         let mut v = self.contact_flow_modules.unwrap_or_default();
         v.push(input);
         self.contact_flow_modules = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The search criteria to be used to return contact flow modules.</p>
+    /// <p>The search criteria to be used to return flow modules.</p>
     pub fn set_contact_flow_modules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContactFlowModule>>) -> Self {
         self.contact_flow_modules = input;
         self
     }
-    /// <p>The search criteria to be used to return contact flow modules.</p>
+    /// <p>The search criteria to be used to return flow modules.</p>
     pub fn get_contact_flow_modules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContactFlowModule>> {
         &self.contact_flow_modules
     }
@@ -83,17 +83,17 @@ impl SearchContactFlowModulesOutputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>The total number of contact flows which matched your search query.</p>
+    /// <p>The total number of flows which matched your search query.</p>
     pub fn approximate_total_count(mut self, input: i64) -> Self {
         self.approximate_total_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The total number of contact flows which matched your search query.</p>
+    /// <p>The total number of flows which matched your search query.</p>
     pub fn set_approximate_total_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.approximate_total_count = input;
         self
     }
-    /// <p>The total number of contact flows which matched your search query.</p>
+    /// <p>The total number of flows which matched your search query.</p>
     pub fn get_approximate_total_count(&self) -> &::std::option::Option<i64> {
         &self.approximate_total_count
     }

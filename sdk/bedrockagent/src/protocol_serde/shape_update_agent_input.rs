@@ -9,41 +9,50 @@ pub fn ser_update_agent_input_input(
     if let Some(var_2) = &input.agent_resource_role_arn {
         object.key("agentResourceRoleArn").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.customer_encryption_key_arn {
-        object.key("customerEncryptionKeyArn").string(var_3.as_str());
-    }
-    if let Some(var_4) = &input.description {
-        object.key("description").string(var_4.as_str());
-    }
-    if let Some(var_5) = &input.foundation_model {
-        object.key("foundationModel").string(var_5.as_str());
-    }
-    if let Some(var_6) = &input.guardrail_configuration {
+    if let Some(var_3) = &input.custom_orchestration {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("guardrailConfiguration").start_object();
-        crate::protocol_serde::shape_guardrail_configuration::ser_guardrail_configuration(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_4 = object.key("customOrchestration").start_object();
+        crate::protocol_serde::shape_custom_orchestration::ser_custom_orchestration(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_8) = &input.idle_session_ttl_in_seconds {
+    if let Some(var_5) = &input.customer_encryption_key_arn {
+        object.key("customerEncryptionKeyArn").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.description {
+        object.key("description").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.foundation_model {
+        object.key("foundationModel").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.guardrail_configuration {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("guardrailConfiguration").start_object();
+        crate::protocol_serde::shape_guardrail_configuration::ser_guardrail_configuration(&mut object_9, var_8)?;
+        object_9.finish();
+    }
+    if let Some(var_10) = &input.idle_session_ttl_in_seconds {
         object.key("idleSessionTTLInSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_8).into()),
+            ::aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if let Some(var_9) = &input.instruction {
-        object.key("instruction").string(var_9.as_str());
+    if let Some(var_11) = &input.instruction {
+        object.key("instruction").string(var_11.as_str());
     }
-    if let Some(var_10) = &input.memory_configuration {
+    if let Some(var_12) = &input.memory_configuration {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("memoryConfiguration").start_object();
-        crate::protocol_serde::shape_memory_configuration::ser_memory_configuration(&mut object_11, var_10)?;
-        object_11.finish();
-    }
-    if let Some(var_12) = &input.prompt_override_configuration {
-        #[allow(unused_mut)]
-        let mut object_13 = object.key("promptOverrideConfiguration").start_object();
-        crate::protocol_serde::shape_prompt_override_configuration::ser_prompt_override_configuration(&mut object_13, var_12)?;
+        let mut object_13 = object.key("memoryConfiguration").start_object();
+        crate::protocol_serde::shape_memory_configuration::ser_memory_configuration(&mut object_13, var_12)?;
         object_13.finish();
+    }
+    if let Some(var_14) = &input.orchestration_type {
+        object.key("orchestrationType").string(var_14.as_str());
+    }
+    if let Some(var_15) = &input.prompt_override_configuration {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("promptOverrideConfiguration").start_object();
+        crate::protocol_serde::shape_prompt_override_configuration::ser_prompt_override_configuration(&mut object_16, var_15)?;
+        object_16.finish();
     }
     Ok(())
 }

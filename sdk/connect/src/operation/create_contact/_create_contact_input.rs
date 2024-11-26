@@ -3,83 +3,93 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateContactInput {
-    /// <p></p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
     pub related_contact_id: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
+    /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p></p>
+    /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP). Tasks can have the following reference types at the time of creation: URL | NUMBER | STRING | DATE | EMAIL | ATTACHMENT.</p>
     pub references: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Reference>>,
-    /// <p></p>
+    /// <p>The channel for the contact</p>
     pub channel: ::std::option::Option<crate::types::Channel>,
-    /// <p></p>
+    /// <p>Indicates how the contact was initiated.</p>
     pub initiation_method: ::std::option::Option<crate::types::ContactInitiationMethod>,
-    /// <p></p>
+    /// <p>Number of minutes the contact will be active for before expiring</p>
     pub expiry_duration_in_minutes: ::std::option::Option<i32>,
-    /// <p></p>
+    /// <p>User details for the contact</p>
     pub user_info: ::std::option::Option<crate::types::UserInfo>,
-    /// <p></p>
+    /// <p>Initial state of the contact when it's created</p>
     pub initiate_as: ::std::option::Option<crate::types::InitiateAs>,
-    /// <p></p>
+    /// <p>The name of a the contact.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>A description of the contact.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>A set of system defined key-value pairs stored on individual contact segments (unique contact ID) using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in flows.</p>
+    /// <p>Attribute keys can include only alphanumeric, -, and _.</p>
+    /// <p>This field can be used to set Segment Contact Expiry as a duration in minutes.</p><note>
+    /// <p>To set contact expiry, a ValueMap must be specified containing the integer number of minutes the contact will be active for before expiring, with <code>SegmentAttributes</code> like { <code> "connect:ContactExpiry": {"ValueMap" : { "ExpiryDuration": { "ValueInteger": 135}}}}</code>.</p>
+    /// </note>
     pub segment_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>>,
 }
 impl CreateContactInput {
-    /// <p></p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p></p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p></p>
+    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
     pub fn related_contact_id(&self) -> ::std::option::Option<&str> {
         self.related_contact_id.as_deref()
     }
-    /// <p></p>
+    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
+    /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
     pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
-    /// <p></p>
+    /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP). Tasks can have the following reference types at the time of creation: URL | NUMBER | STRING | DATE | EMAIL | ATTACHMENT.</p>
     pub fn references(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::Reference>> {
         self.references.as_ref()
     }
-    /// <p></p>
+    /// <p>The channel for the contact</p>
     pub fn channel(&self) -> ::std::option::Option<&crate::types::Channel> {
         self.channel.as_ref()
     }
-    /// <p></p>
+    /// <p>Indicates how the contact was initiated.</p>
     pub fn initiation_method(&self) -> ::std::option::Option<&crate::types::ContactInitiationMethod> {
         self.initiation_method.as_ref()
     }
-    /// <p></p>
+    /// <p>Number of minutes the contact will be active for before expiring</p>
     pub fn expiry_duration_in_minutes(&self) -> ::std::option::Option<i32> {
         self.expiry_duration_in_minutes
     }
-    /// <p></p>
+    /// <p>User details for the contact</p>
     pub fn user_info(&self) -> ::std::option::Option<&crate::types::UserInfo> {
         self.user_info.as_ref()
     }
-    /// <p></p>
+    /// <p>Initial state of the contact when it's created</p>
     pub fn initiate_as(&self) -> ::std::option::Option<&crate::types::InitiateAs> {
         self.initiate_as.as_ref()
     }
-    /// <p></p>
+    /// <p>The name of a the contact.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p></p>
+    /// <p>A description of the contact.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p></p>
+    /// <p>A set of system defined key-value pairs stored on individual contact segments (unique contact ID) using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in flows.</p>
+    /// <p>Attribute keys can include only alphanumeric, -, and _.</p>
+    /// <p>This field can be used to set Segment Contact Expiry as a duration in minutes.</p><note>
+    /// <p>To set contact expiry, a ValueMap must be specified containing the integer number of minutes the contact will be active for before expiring, with <code>SegmentAttributes</code> like { <code> "connect:ContactExpiry": {"ValueMap" : { "ExpiryDuration": { "ValueInteger": 135}}}}</code>.</p>
+    /// </note>
     pub fn segment_attributes(
         &self,
     ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>> {
@@ -131,46 +141,46 @@ pub struct CreateContactInputBuilder {
     pub(crate) segment_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>>,
 }
 impl CreateContactInputBuilder {
-    /// <p></p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
     }
-    /// <p></p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }
-    /// <p></p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p></p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p></p>
+    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
     pub fn related_contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.related_contact_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
     pub fn set_related_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.related_contact_id = input;
         self
     }
-    /// <p></p>
+    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
     pub fn get_related_contact_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.related_contact_id
     }
@@ -178,19 +188,22 @@ impl CreateContactInputBuilder {
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
-    /// <p></p>
+    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
+    /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.attributes = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p></p>
+    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
+    /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
     pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.attributes = input;
         self
     }
-    /// <p></p>
+    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
+    /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
     pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
@@ -198,14 +211,14 @@ impl CreateContactInputBuilder {
     ///
     /// To override the contents of this collection use [`set_references`](Self::set_references).
     ///
-    /// <p></p>
+    /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP). Tasks can have the following reference types at the time of creation: URL | NUMBER | STRING | DATE | EMAIL | ATTACHMENT.</p>
     pub fn references(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::Reference) -> Self {
         let mut hash_map = self.references.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.references = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p></p>
+    /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP). Tasks can have the following reference types at the time of creation: URL | NUMBER | STRING | DATE | EMAIL | ATTACHMENT.</p>
     pub fn set_references(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Reference>>,
@@ -213,107 +226,107 @@ impl CreateContactInputBuilder {
         self.references = input;
         self
     }
-    /// <p></p>
+    /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP). Tasks can have the following reference types at the time of creation: URL | NUMBER | STRING | DATE | EMAIL | ATTACHMENT.</p>
     pub fn get_references(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Reference>> {
         &self.references
     }
-    /// <p></p>
+    /// <p>The channel for the contact</p>
     /// This field is required.
     pub fn channel(mut self, input: crate::types::Channel) -> Self {
         self.channel = ::std::option::Option::Some(input);
         self
     }
-    /// <p></p>
+    /// <p>The channel for the contact</p>
     pub fn set_channel(mut self, input: ::std::option::Option<crate::types::Channel>) -> Self {
         self.channel = input;
         self
     }
-    /// <p></p>
+    /// <p>The channel for the contact</p>
     pub fn get_channel(&self) -> &::std::option::Option<crate::types::Channel> {
         &self.channel
     }
-    /// <p></p>
+    /// <p>Indicates how the contact was initiated.</p>
     /// This field is required.
     pub fn initiation_method(mut self, input: crate::types::ContactInitiationMethod) -> Self {
         self.initiation_method = ::std::option::Option::Some(input);
         self
     }
-    /// <p></p>
+    /// <p>Indicates how the contact was initiated.</p>
     pub fn set_initiation_method(mut self, input: ::std::option::Option<crate::types::ContactInitiationMethod>) -> Self {
         self.initiation_method = input;
         self
     }
-    /// <p></p>
+    /// <p>Indicates how the contact was initiated.</p>
     pub fn get_initiation_method(&self) -> &::std::option::Option<crate::types::ContactInitiationMethod> {
         &self.initiation_method
     }
-    /// <p></p>
+    /// <p>Number of minutes the contact will be active for before expiring</p>
     pub fn expiry_duration_in_minutes(mut self, input: i32) -> Self {
         self.expiry_duration_in_minutes = ::std::option::Option::Some(input);
         self
     }
-    /// <p></p>
+    /// <p>Number of minutes the contact will be active for before expiring</p>
     pub fn set_expiry_duration_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.expiry_duration_in_minutes = input;
         self
     }
-    /// <p></p>
+    /// <p>Number of minutes the contact will be active for before expiring</p>
     pub fn get_expiry_duration_in_minutes(&self) -> &::std::option::Option<i32> {
         &self.expiry_duration_in_minutes
     }
-    /// <p></p>
+    /// <p>User details for the contact</p>
     pub fn user_info(mut self, input: crate::types::UserInfo) -> Self {
         self.user_info = ::std::option::Option::Some(input);
         self
     }
-    /// <p></p>
+    /// <p>User details for the contact</p>
     pub fn set_user_info(mut self, input: ::std::option::Option<crate::types::UserInfo>) -> Self {
         self.user_info = input;
         self
     }
-    /// <p></p>
+    /// <p>User details for the contact</p>
     pub fn get_user_info(&self) -> &::std::option::Option<crate::types::UserInfo> {
         &self.user_info
     }
-    /// <p></p>
+    /// <p>Initial state of the contact when it's created</p>
     pub fn initiate_as(mut self, input: crate::types::InitiateAs) -> Self {
         self.initiate_as = ::std::option::Option::Some(input);
         self
     }
-    /// <p></p>
+    /// <p>Initial state of the contact when it's created</p>
     pub fn set_initiate_as(mut self, input: ::std::option::Option<crate::types::InitiateAs>) -> Self {
         self.initiate_as = input;
         self
     }
-    /// <p></p>
+    /// <p>Initial state of the contact when it's created</p>
     pub fn get_initiate_as(&self) -> &::std::option::Option<crate::types::InitiateAs> {
         &self.initiate_as
     }
-    /// <p></p>
+    /// <p>The name of a the contact.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The name of a the contact.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p></p>
+    /// <p>The name of a the contact.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p></p>
+    /// <p>A description of the contact.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>A description of the contact.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p></p>
+    /// <p>A description of the contact.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
@@ -321,14 +334,22 @@ impl CreateContactInputBuilder {
     ///
     /// To override the contents of this collection use [`set_segment_attributes`](Self::set_segment_attributes).
     ///
-    /// <p></p>
+    /// <p>A set of system defined key-value pairs stored on individual contact segments (unique contact ID) using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in flows.</p>
+    /// <p>Attribute keys can include only alphanumeric, -, and _.</p>
+    /// <p>This field can be used to set Segment Contact Expiry as a duration in minutes.</p><note>
+    /// <p>To set contact expiry, a ValueMap must be specified containing the integer number of minutes the contact will be active for before expiring, with <code>SegmentAttributes</code> like { <code> "connect:ContactExpiry": {"ValueMap" : { "ExpiryDuration": { "ValueInteger": 135}}}}</code>.</p>
+    /// </note>
     pub fn segment_attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::SegmentAttributeValue) -> Self {
         let mut hash_map = self.segment_attributes.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.segment_attributes = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p></p>
+    /// <p>A set of system defined key-value pairs stored on individual contact segments (unique contact ID) using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in flows.</p>
+    /// <p>Attribute keys can include only alphanumeric, -, and _.</p>
+    /// <p>This field can be used to set Segment Contact Expiry as a duration in minutes.</p><note>
+    /// <p>To set contact expiry, a ValueMap must be specified containing the integer number of minutes the contact will be active for before expiring, with <code>SegmentAttributes</code> like { <code> "connect:ContactExpiry": {"ValueMap" : { "ExpiryDuration": { "ValueInteger": 135}}}}</code>.</p>
+    /// </note>
     pub fn set_segment_attributes(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>>,
@@ -336,7 +357,11 @@ impl CreateContactInputBuilder {
         self.segment_attributes = input;
         self
     }
-    /// <p></p>
+    /// <p>A set of system defined key-value pairs stored on individual contact segments (unique contact ID) using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in flows.</p>
+    /// <p>Attribute keys can include only alphanumeric, -, and _.</p>
+    /// <p>This field can be used to set Segment Contact Expiry as a duration in minutes.</p><note>
+    /// <p>To set contact expiry, a ValueMap must be specified containing the integer number of minutes the contact will be active for before expiring, with <code>SegmentAttributes</code> like { <code> "connect:ContactExpiry": {"ValueMap" : { "ExpiryDuration": { "ValueInteger": 135}}}}</code>.</p>
+    /// </note>
     pub fn get_segment_attributes(
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>> {

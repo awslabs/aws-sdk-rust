@@ -13,6 +13,7 @@
 /// # let cardtype = unimplemented!();
 /// match cardtype {
 ///     CardType::FileUpload => { /* ... */ },
+///     CardType::FormInput => { /* ... */ },
 ///     CardType::QPlugin => { /* ... */ },
 ///     CardType::QQuery => { /* ... */ },
 ///     CardType::TextInput => { /* ... */ },
@@ -46,6 +47,8 @@ pub enum CardType {
     #[allow(missing_docs)] // documentation missing in model
     FileUpload,
     #[allow(missing_docs)] // documentation missing in model
+    FormInput,
+    #[allow(missing_docs)] // documentation missing in model
     QPlugin,
     #[allow(missing_docs)] // documentation missing in model
     QQuery,
@@ -59,6 +62,7 @@ impl ::std::convert::From<&str> for CardType {
     fn from(s: &str) -> Self {
         match s {
             "file-upload" => CardType::FileUpload,
+            "form-input" => CardType::FormInput,
             "q-plugin" => CardType::QPlugin,
             "q-query" => CardType::QQuery,
             "text-input" => CardType::TextInput,
@@ -78,6 +82,7 @@ impl CardType {
     pub fn as_str(&self) -> &str {
         match self {
             CardType::FileUpload => "file-upload",
+            CardType::FormInput => "form-input",
             CardType::QPlugin => "q-plugin",
             CardType::QQuery => "q-query",
             CardType::TextInput => "text-input",
@@ -86,7 +91,7 @@ impl CardType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["file-upload", "q-plugin", "q-query", "text-input"]
+        &["file-upload", "form-input", "q-plugin", "q-query", "text-input"]
     }
 }
 impl ::std::convert::AsRef<str> for CardType {
@@ -110,6 +115,7 @@ impl ::std::fmt::Display for CardType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             CardType::FileUpload => write!(f, "file-upload"),
+            CardType::FormInput => write!(f, "form-input"),
             CardType::QPlugin => write!(f, "q-plugin"),
             CardType::QQuery => write!(f, "q-query"),
             CardType::TextInput => write!(f, "text-input"),

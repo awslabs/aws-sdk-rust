@@ -148,6 +148,8 @@ mod batch_update_category;
 
 mod create_library_item;
 
+mod create_presigned_url;
+
 mod create_q_app;
 
 /// Operation customization and supporting types.
@@ -181,9 +183,13 @@ mod delete_library_item;
 
 mod delete_q_app;
 
+mod describe_q_app_permissions;
+
 mod disassociate_library_item_review;
 
 mod disassociate_q_app_from_user;
+
+mod export_q_app_session_data;
 
 mod get_library_item;
 
@@ -191,11 +197,15 @@ mod get_q_app;
 
 mod get_q_app_session;
 
+mod get_q_app_session_metadata;
+
 mod import_document;
 
 mod list_categories;
 
 mod list_library_items;
+
+mod list_q_app_session_data;
 
 mod list_q_apps;
 
@@ -217,4 +227,8 @@ mod update_library_item_metadata;
 
 mod update_q_app;
 
+mod update_q_app_permissions;
+
 mod update_q_app_session;
+
+mod update_q_app_session_metadata;

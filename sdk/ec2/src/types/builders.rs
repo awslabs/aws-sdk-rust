@@ -905,6 +905,8 @@ pub use crate::types::_allowed_principal::AllowedPrincipalBuilder;
 
 pub use crate::types::_service_configuration::ServiceConfigurationBuilder;
 
+pub use crate::types::_supported_region_detail::SupportedRegionDetailBuilder;
+
 pub use crate::types::_private_dns_name_configuration::PrivateDnsNameConfigurationBuilder;
 
 pub use crate::types::_vpc_endpoint::VpcEndpointBuilder;

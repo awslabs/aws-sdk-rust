@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateQueueOutboundEmailConfigInput {
-    /// <p></p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>The identifier for the queue.</p>
     pub queue_id: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>The outbound email address ID for a specified queue.</p>
     pub outbound_email_config: ::std::option::Option<crate::types::OutboundEmailConfig>,
 }
 impl UpdateQueueOutboundEmailConfigInput {
-    /// <p></p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p></p>
+    /// <p>The identifier for the queue.</p>
     pub fn queue_id(&self) -> ::std::option::Option<&str> {
         self.queue_id.as_deref()
     }
-    /// <p></p>
+    /// <p>The outbound email address ID for a specified queue.</p>
     pub fn outbound_email_config(&self) -> ::std::option::Option<&crate::types::OutboundEmailConfig> {
         self.outbound_email_config.as_ref()
     }
@@ -40,48 +40,48 @@ pub struct UpdateQueueOutboundEmailConfigInputBuilder {
     pub(crate) outbound_email_config: ::std::option::Option<crate::types::OutboundEmailConfig>,
 }
 impl UpdateQueueOutboundEmailConfigInputBuilder {
-    /// <p></p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
     }
-    /// <p></p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }
-    /// <p></p>
+    /// <p>The identifier for the queue.</p>
     /// This field is required.
     pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The identifier for the queue.</p>
     pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.queue_id = input;
         self
     }
-    /// <p></p>
+    /// <p>The identifier for the queue.</p>
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.queue_id
     }
-    /// <p></p>
+    /// <p>The outbound email address ID for a specified queue.</p>
     /// This field is required.
     pub fn outbound_email_config(mut self, input: crate::types::OutboundEmailConfig) -> Self {
         self.outbound_email_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p></p>
+    /// <p>The outbound email address ID for a specified queue.</p>
     pub fn set_outbound_email_config(mut self, input: ::std::option::Option<crate::types::OutboundEmailConfig>) -> Self {
         self.outbound_email_config = input;
         self
     }
-    /// <p></p>
+    /// <p>The outbound email address ID for a specified queue.</p>
     pub fn get_outbound_email_config(&self) -> &::std::option::Option<crate::types::OutboundEmailConfig> {
         &self.outbound_email_config
     }

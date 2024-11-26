@@ -1801,6 +1801,8 @@ pub(crate) mod shape_real_time_contact_analysis_time_data;
 
 pub(crate) mod shape_real_time_contact_analysis_transcript_item_redaction;
 
+pub(crate) mod shape_segment_attribute_value_map;
+
 pub(crate) mod shape_step;
 
 pub(crate) mod shape_transcript_criteria;

@@ -138,9 +138,13 @@ impl VolumeInUseFluentBuilder {
     /// <li>
     /// <p><code>encrypted</code> - Indicates whether the volume is encrypted (<code>true</code> | <code>false</code>)</p></li>
     /// <li>
+    /// <p><code>fast-restored</code> - Indicates whether the volume was created from a snapshot that is enabled for fast snapshot restore (<code>true</code> | <code>false</code>).</p></li>
+    /// <li>
     /// <p><code>multi-attach-enabled</code> - Indicates whether the volume is enabled for Multi-Attach (<code>true</code> | <code>false</code>)</p></li>
     /// <li>
-    /// <p><code>fast-restored</code> - Indicates whether the volume was created from a snapshot that is enabled for fast snapshot restore (<code>true</code> | <code>false</code>).</p></li>
+    /// <p><code>operator.managed</code> - A Boolean that indicates whether this is a managed volume.</p></li>
+    /// <li>
+    /// <p><code>operator.principal</code> - The principal that manages the volume. Only valid for managed volumes, where <code>managed</code> is <code>true</code>.</p></li>
     /// <li>
     /// <p><code>size</code> - The size of the volume, in GiB.</p></li>
     /// <li>
@@ -185,9 +189,13 @@ impl VolumeInUseFluentBuilder {
     /// <li>
     /// <p><code>encrypted</code> - Indicates whether the volume is encrypted (<code>true</code> | <code>false</code>)</p></li>
     /// <li>
+    /// <p><code>fast-restored</code> - Indicates whether the volume was created from a snapshot that is enabled for fast snapshot restore (<code>true</code> | <code>false</code>).</p></li>
+    /// <li>
     /// <p><code>multi-attach-enabled</code> - Indicates whether the volume is enabled for Multi-Attach (<code>true</code> | <code>false</code>)</p></li>
     /// <li>
-    /// <p><code>fast-restored</code> - Indicates whether the volume was created from a snapshot that is enabled for fast snapshot restore (<code>true</code> | <code>false</code>).</p></li>
+    /// <p><code>operator.managed</code> - A Boolean that indicates whether this is a managed volume.</p></li>
+    /// <li>
+    /// <p><code>operator.principal</code> - The principal that manages the volume. Only valid for managed volumes, where <code>managed</code> is <code>true</code>.</p></li>
     /// <li>
     /// <p><code>size</code> - The size of the volume, in GiB.</p></li>
     /// <li>
@@ -232,9 +240,13 @@ impl VolumeInUseFluentBuilder {
     /// <li>
     /// <p><code>encrypted</code> - Indicates whether the volume is encrypted (<code>true</code> | <code>false</code>)</p></li>
     /// <li>
+    /// <p><code>fast-restored</code> - Indicates whether the volume was created from a snapshot that is enabled for fast snapshot restore (<code>true</code> | <code>false</code>).</p></li>
+    /// <li>
     /// <p><code>multi-attach-enabled</code> - Indicates whether the volume is enabled for Multi-Attach (<code>true</code> | <code>false</code>)</p></li>
     /// <li>
-    /// <p><code>fast-restored</code> - Indicates whether the volume was created from a snapshot that is enabled for fast snapshot restore (<code>true</code> | <code>false</code>).</p></li>
+    /// <p><code>operator.managed</code> - A Boolean that indicates whether this is a managed volume.</p></li>
+    /// <li>
+    /// <p><code>operator.principal</code> - The principal that manages the volume. Only valid for managed volumes, where <code>managed</code> is <code>true</code>.</p></li>
     /// <li>
     /// <p><code>size</code> - The size of the volume, in GiB.</p></li>
     /// <li>

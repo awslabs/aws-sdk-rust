@@ -10,7 +10,7 @@ pub struct AttachmentReference {
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>Status of the attachment reference type.</p>
     pub status: ::std::option::Option<crate::types::ReferenceStatus>,
-    /// <p></p>
+    /// <p>The Amazon Resource Name (ARN) of the attachment reference.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl AttachmentReference {
@@ -26,7 +26,7 @@ impl AttachmentReference {
     pub fn status(&self) -> ::std::option::Option<&crate::types::ReferenceStatus> {
         self.status.as_ref()
     }
-    /// <p></p>
+    /// <p>The Amazon Resource Name (ARN) of the attachment reference.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -90,17 +90,17 @@ impl AttachmentReferenceBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ReferenceStatus> {
         &self.status
     }
-    /// <p></p>
+    /// <p>The Amazon Resource Name (ARN) of the attachment reference.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The Amazon Resource Name (ARN) of the attachment reference.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p></p>
+    /// <p>The Amazon Resource Name (ARN) of the attachment reference.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }

@@ -22,7 +22,7 @@ impl crate::operation::start_outbound_email_contact::builders::StartOutboundEmai
 }
 /// Fluent builder constructing a request to `StartOutboundEmailContact`.
 ///
-/// <p></p>
+/// <p>Initiates a flow to send an agent reply or outbound email contact (created from the CreateContact API) to a customer.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartOutboundEmailContactFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,101 +108,101 @@ impl StartOutboundEmailContactFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p></p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
     }
-    /// <p></p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_id()
     }
-    /// <p></p>
+    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
     pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.contact_id(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
     pub fn set_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_contact_id(input);
         self
     }
-    /// <p></p>
+    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
     pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_contact_id()
     }
-    /// <p></p>
+    /// <p>The email address associated with the instance.</p>
     pub fn from_email_address(mut self, input: crate::types::EmailAddressInfo) -> Self {
         self.inner = self.inner.from_email_address(input);
         self
     }
-    /// <p></p>
+    /// <p>The email address associated with the instance.</p>
     pub fn set_from_email_address(mut self, input: ::std::option::Option<crate::types::EmailAddressInfo>) -> Self {
         self.inner = self.inner.set_from_email_address(input);
         self
     }
-    /// <p></p>
+    /// <p>The email address associated with the instance.</p>
     pub fn get_from_email_address(&self) -> &::std::option::Option<crate::types::EmailAddressInfo> {
         self.inner.get_from_email_address()
     }
-    /// <p></p>
+    /// <p>The email address of the customer.</p>
     pub fn destination_email_address(mut self, input: crate::types::EmailAddressInfo) -> Self {
         self.inner = self.inner.destination_email_address(input);
         self
     }
-    /// <p></p>
+    /// <p>The email address of the customer.</p>
     pub fn set_destination_email_address(mut self, input: ::std::option::Option<crate::types::EmailAddressInfo>) -> Self {
         self.inner = self.inner.set_destination_email_address(input);
         self
     }
-    /// <p></p>
+    /// <p>The email address of the customer.</p>
     pub fn get_destination_email_address(&self) -> &::std::option::Option<crate::types::EmailAddressInfo> {
         self.inner.get_destination_email_address()
     }
-    /// <p></p>
+    /// <p>The addtional recipients address of email in CC.</p>
     pub fn additional_recipients(mut self, input: crate::types::OutboundAdditionalRecipients) -> Self {
         self.inner = self.inner.additional_recipients(input);
         self
     }
-    /// <p></p>
+    /// <p>The addtional recipients address of email in CC.</p>
     pub fn set_additional_recipients(mut self, input: ::std::option::Option<crate::types::OutboundAdditionalRecipients>) -> Self {
         self.inner = self.inner.set_additional_recipients(input);
         self
     }
-    /// <p></p>
+    /// <p>The addtional recipients address of email in CC.</p>
     pub fn get_additional_recipients(&self) -> &::std::option::Option<crate::types::OutboundAdditionalRecipients> {
         self.inner.get_additional_recipients()
     }
-    /// <p></p>
+    /// <p>The email message body to be sent to the newly created email.</p>
     pub fn email_message(mut self, input: crate::types::OutboundEmailContent) -> Self {
         self.inner = self.inner.email_message(input);
         self
     }
-    /// <p></p>
+    /// <p>The email message body to be sent to the newly created email.</p>
     pub fn set_email_message(mut self, input: ::std::option::Option<crate::types::OutboundEmailContent>) -> Self {
         self.inner = self.inner.set_email_message(input);
         self
     }
-    /// <p></p>
+    /// <p>The email message body to be sent to the newly created email.</p>
     pub fn get_email_message(&self) -> &::std::option::Option<crate::types::OutboundEmailContent> {
         self.inner.get_email_message()
     }
-    /// <p></p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p></p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p></p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }

@@ -38,6 +38,10 @@ pub struct Agent {
     pub foundation_model: ::std::option::Option<::std::string::String>,
     /// <p>The description of the agent.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the orchestration strategy for the agent.</p>
+    pub orchestration_type: ::std::option::Option<crate::types::OrchestrationType>,
+    /// <p>Contains custom orchestration configurations for the agent.</p>
+    pub custom_orchestration: ::std::option::Option<crate::types::CustomOrchestration>,
     /// <p>The number of seconds for which Amazon Bedrock keeps information about a user's conversation with the agent.</p>
     /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Bedrock deletes any data provided before the timeout.</p>
     pub idle_session_ttl_in_seconds: i32,
@@ -119,6 +123,14 @@ impl Agent {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
+    /// <p>Specifies the orchestration strategy for the agent.</p>
+    pub fn orchestration_type(&self) -> ::std::option::Option<&crate::types::OrchestrationType> {
+        self.orchestration_type.as_ref()
+    }
+    /// <p>Contains custom orchestration configurations for the agent.</p>
+    pub fn custom_orchestration(&self) -> ::std::option::Option<&crate::types::CustomOrchestration> {
+        self.custom_orchestration.as_ref()
+    }
     /// <p>The number of seconds for which Amazon Bedrock keeps information about a user's conversation with the agent.</p>
     /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Bedrock deletes any data provided before the timeout.</p>
     pub fn idle_session_ttl_in_seconds(&self) -> i32 {
@@ -182,6 +194,8 @@ impl ::std::fmt::Debug for Agent {
         formatter.field("agent_status", &self.agent_status);
         formatter.field("foundation_model", &self.foundation_model);
         formatter.field("description", &self.description);
+        formatter.field("orchestration_type", &self.orchestration_type);
+        formatter.field("custom_orchestration", &self.custom_orchestration);
         formatter.field("idle_session_ttl_in_seconds", &self.idle_session_ttl_in_seconds);
         formatter.field("agent_resource_role_arn", &self.agent_resource_role_arn);
         formatter.field("customer_encryption_key_arn", &self.customer_encryption_key_arn);
@@ -216,6 +230,8 @@ pub struct AgentBuilder {
     pub(crate) agent_status: ::std::option::Option<crate::types::AgentStatus>,
     pub(crate) foundation_model: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) orchestration_type: ::std::option::Option<crate::types::OrchestrationType>,
+    pub(crate) custom_orchestration: ::std::option::Option<crate::types::CustomOrchestration>,
     pub(crate) idle_session_ttl_in_seconds: ::std::option::Option<i32>,
     pub(crate) agent_resource_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) customer_encryption_key_arn: ::std::option::Option<::std::string::String>,
@@ -407,6 +423,34 @@ impl AgentBuilder {
     /// <p>The description of the agent.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
+    }
+    /// <p>Specifies the orchestration strategy for the agent.</p>
+    pub fn orchestration_type(mut self, input: crate::types::OrchestrationType) -> Self {
+        self.orchestration_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the orchestration strategy for the agent.</p>
+    pub fn set_orchestration_type(mut self, input: ::std::option::Option<crate::types::OrchestrationType>) -> Self {
+        self.orchestration_type = input;
+        self
+    }
+    /// <p>Specifies the orchestration strategy for the agent.</p>
+    pub fn get_orchestration_type(&self) -> &::std::option::Option<crate::types::OrchestrationType> {
+        &self.orchestration_type
+    }
+    /// <p>Contains custom orchestration configurations for the agent.</p>
+    pub fn custom_orchestration(mut self, input: crate::types::CustomOrchestration) -> Self {
+        self.custom_orchestration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains custom orchestration configurations for the agent.</p>
+    pub fn set_custom_orchestration(mut self, input: ::std::option::Option<crate::types::CustomOrchestration>) -> Self {
+        self.custom_orchestration = input;
+        self
+    }
+    /// <p>Contains custom orchestration configurations for the agent.</p>
+    pub fn get_custom_orchestration(&self) -> &::std::option::Option<crate::types::CustomOrchestration> {
+        &self.custom_orchestration
     }
     /// <p>The number of seconds for which Amazon Bedrock keeps information about a user's conversation with the agent.</p>
     /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Bedrock deletes any data provided before the timeout.</p>
@@ -628,6 +672,8 @@ impl AgentBuilder {
             })?,
             foundation_model: self.foundation_model,
             description: self.description,
+            orchestration_type: self.orchestration_type,
+            custom_orchestration: self.custom_orchestration,
             idle_session_ttl_in_seconds: self.idle_session_ttl_in_seconds.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "idle_session_ttl_in_seconds",
@@ -674,6 +720,8 @@ impl ::std::fmt::Debug for AgentBuilder {
         formatter.field("agent_status", &self.agent_status);
         formatter.field("foundation_model", &self.foundation_model);
         formatter.field("description", &self.description);
+        formatter.field("orchestration_type", &self.orchestration_type);
+        formatter.field("custom_orchestration", &self.custom_orchestration);
         formatter.field("idle_session_ttl_in_seconds", &self.idle_session_ttl_in_seconds);
         formatter.field("agent_resource_role_arn", &self.agent_resource_role_arn);
         formatter.field("customer_encryption_key_arn", &self.customer_encryption_key_arn);

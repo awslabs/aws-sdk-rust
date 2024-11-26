@@ -3,53 +3,53 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendOutboundEmailInput {
-    /// <p></p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>The email address to be used for sending email.</p>
     pub from_email_address: ::std::option::Option<crate::types::EmailAddressInfo>,
-    /// <p></p>
+    /// <p>The email address to send the email to.</p>
     pub destination_email_address: ::std::option::Option<crate::types::EmailAddressInfo>,
-    /// <p></p>
+    /// <p>The additional recipients address of the email in CC.</p>
     pub additional_recipients: ::std::option::Option<crate::types::OutboundAdditionalRecipients>,
-    /// <p></p>
+    /// <p>The email message body to be sent to the newly created email.</p>
     pub email_message: ::std::option::Option<crate::types::OutboundEmailContent>,
-    /// <p></p>
+    /// <p>Denotes the class of traffic.</p>
     pub traffic_type: ::std::option::Option<crate::types::TrafficType>,
-    /// <p></p>
+    /// <p>A Campaign object need for Campaign traffic type.</p>
     pub source_campaign: ::std::option::Option<crate::types::SourceCampaign>,
-    /// <p></p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl SendOutboundEmailInput {
-    /// <p></p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p></p>
+    /// <p>The email address to be used for sending email.</p>
     pub fn from_email_address(&self) -> ::std::option::Option<&crate::types::EmailAddressInfo> {
         self.from_email_address.as_ref()
     }
-    /// <p></p>
+    /// <p>The email address to send the email to.</p>
     pub fn destination_email_address(&self) -> ::std::option::Option<&crate::types::EmailAddressInfo> {
         self.destination_email_address.as_ref()
     }
-    /// <p></p>
+    /// <p>The additional recipients address of the email in CC.</p>
     pub fn additional_recipients(&self) -> ::std::option::Option<&crate::types::OutboundAdditionalRecipients> {
         self.additional_recipients.as_ref()
     }
-    /// <p></p>
+    /// <p>The email message body to be sent to the newly created email.</p>
     pub fn email_message(&self) -> ::std::option::Option<&crate::types::OutboundEmailContent> {
         self.email_message.as_ref()
     }
-    /// <p></p>
+    /// <p>Denotes the class of traffic.</p>
     pub fn traffic_type(&self) -> ::std::option::Option<&crate::types::TrafficType> {
         self.traffic_type.as_ref()
     }
-    /// <p></p>
+    /// <p>A Campaign object need for Campaign traffic type.</p>
     pub fn source_campaign(&self) -> ::std::option::Option<&crate::types::SourceCampaign> {
         self.source_campaign.as_ref()
     }
-    /// <p></p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -75,120 +75,120 @@ pub struct SendOutboundEmailInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl SendOutboundEmailInputBuilder {
-    /// <p></p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
     }
-    /// <p></p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }
-    /// <p></p>
+    /// <p>The email address to be used for sending email.</p>
     /// This field is required.
     pub fn from_email_address(mut self, input: crate::types::EmailAddressInfo) -> Self {
         self.from_email_address = ::std::option::Option::Some(input);
         self
     }
-    /// <p></p>
+    /// <p>The email address to be used for sending email.</p>
     pub fn set_from_email_address(mut self, input: ::std::option::Option<crate::types::EmailAddressInfo>) -> Self {
         self.from_email_address = input;
         self
     }
-    /// <p></p>
+    /// <p>The email address to be used for sending email.</p>
     pub fn get_from_email_address(&self) -> &::std::option::Option<crate::types::EmailAddressInfo> {
         &self.from_email_address
     }
-    /// <p></p>
+    /// <p>The email address to send the email to.</p>
     /// This field is required.
     pub fn destination_email_address(mut self, input: crate::types::EmailAddressInfo) -> Self {
         self.destination_email_address = ::std::option::Option::Some(input);
         self
     }
-    /// <p></p>
+    /// <p>The email address to send the email to.</p>
     pub fn set_destination_email_address(mut self, input: ::std::option::Option<crate::types::EmailAddressInfo>) -> Self {
         self.destination_email_address = input;
         self
     }
-    /// <p></p>
+    /// <p>The email address to send the email to.</p>
     pub fn get_destination_email_address(&self) -> &::std::option::Option<crate::types::EmailAddressInfo> {
         &self.destination_email_address
     }
-    /// <p></p>
+    /// <p>The additional recipients address of the email in CC.</p>
     pub fn additional_recipients(mut self, input: crate::types::OutboundAdditionalRecipients) -> Self {
         self.additional_recipients = ::std::option::Option::Some(input);
         self
     }
-    /// <p></p>
+    /// <p>The additional recipients address of the email in CC.</p>
     pub fn set_additional_recipients(mut self, input: ::std::option::Option<crate::types::OutboundAdditionalRecipients>) -> Self {
         self.additional_recipients = input;
         self
     }
-    /// <p></p>
+    /// <p>The additional recipients address of the email in CC.</p>
     pub fn get_additional_recipients(&self) -> &::std::option::Option<crate::types::OutboundAdditionalRecipients> {
         &self.additional_recipients
     }
-    /// <p></p>
+    /// <p>The email message body to be sent to the newly created email.</p>
     /// This field is required.
     pub fn email_message(mut self, input: crate::types::OutboundEmailContent) -> Self {
         self.email_message = ::std::option::Option::Some(input);
         self
     }
-    /// <p></p>
+    /// <p>The email message body to be sent to the newly created email.</p>
     pub fn set_email_message(mut self, input: ::std::option::Option<crate::types::OutboundEmailContent>) -> Self {
         self.email_message = input;
         self
     }
-    /// <p></p>
+    /// <p>The email message body to be sent to the newly created email.</p>
     pub fn get_email_message(&self) -> &::std::option::Option<crate::types::OutboundEmailContent> {
         &self.email_message
     }
-    /// <p></p>
+    /// <p>Denotes the class of traffic.</p>
     /// This field is required.
     pub fn traffic_type(mut self, input: crate::types::TrafficType) -> Self {
         self.traffic_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p></p>
+    /// <p>Denotes the class of traffic.</p>
     pub fn set_traffic_type(mut self, input: ::std::option::Option<crate::types::TrafficType>) -> Self {
         self.traffic_type = input;
         self
     }
-    /// <p></p>
+    /// <p>Denotes the class of traffic.</p>
     pub fn get_traffic_type(&self) -> &::std::option::Option<crate::types::TrafficType> {
         &self.traffic_type
     }
-    /// <p></p>
+    /// <p>A Campaign object need for Campaign traffic type.</p>
     pub fn source_campaign(mut self, input: crate::types::SourceCampaign) -> Self {
         self.source_campaign = ::std::option::Option::Some(input);
         self
     }
-    /// <p></p>
+    /// <p>A Campaign object need for Campaign traffic type.</p>
     pub fn set_source_campaign(mut self, input: ::std::option::Option<crate::types::SourceCampaign>) -> Self {
         self.source_campaign = input;
         self
     }
-    /// <p></p>
+    /// <p>A Campaign object need for Campaign traffic type.</p>
     pub fn get_source_campaign(&self) -> &::std::option::Option<crate::types::SourceCampaign> {
         &self.source_campaign
     }
-    /// <p></p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p></p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }

@@ -122,17 +122,17 @@ impl ImportDocumentFluentBuilder {
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_id()
     }
-    /// <p>The unique identifier of the card the file is associated with, if applicable.</p>
+    /// <p>The unique identifier of the card the file is associated with.</p>
     pub fn card_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.card_id(input.into());
         self
     }
-    /// <p>The unique identifier of the card the file is associated with, if applicable.</p>
+    /// <p>The unique identifier of the card the file is associated with.</p>
     pub fn set_card_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_card_id(input);
         self
     }
-    /// <p>The unique identifier of the card the file is associated with, if applicable.</p>
+    /// <p>The unique identifier of the card the file is associated with.</p>
     pub fn get_card_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_card_id()
     }
@@ -178,17 +178,17 @@ impl ImportDocumentFluentBuilder {
     pub fn get_file_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_file_name()
     }
-    /// <p>Whether the file is associated with an Q App definition or a specific Q App session.</p>
+    /// <p>Whether the file is associated with a Q App definition or a specific Q App session.</p>
     pub fn scope(mut self, input: crate::types::DocumentScope) -> Self {
         self.inner = self.inner.scope(input);
         self
     }
-    /// <p>Whether the file is associated with an Q App definition or a specific Q App session.</p>
+    /// <p>Whether the file is associated with a Q App definition or a specific Q App session.</p>
     pub fn set_scope(mut self, input: ::std::option::Option<crate::types::DocumentScope>) -> Self {
         self.inner = self.inner.set_scope(input);
         self
     }
-    /// <p>Whether the file is associated with an Q App definition or a specific Q App session.</p>
+    /// <p>Whether the file is associated with a Q App definition or a specific Q App session.</p>
     pub fn get_scope(&self) -> &::std::option::Option<crate::types::DocumentScope> {
         self.inner.get_scope()
     }

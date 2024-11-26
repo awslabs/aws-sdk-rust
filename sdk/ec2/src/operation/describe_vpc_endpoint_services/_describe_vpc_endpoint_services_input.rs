@@ -14,6 +14,8 @@ pub struct DescribeVpcEndpointServicesInput {
     /// <li>
     /// <p><code>service-name</code> - The name of the service.</p></li>
     /// <li>
+    /// <p><code>service-region</code> - The Region of the service.</p></li>
+    /// <li>
     /// <p><code>service-type</code> - The type of service (<code>Interface</code> | <code>Gateway</code> | <code>GatewayLoadBalancer</code>).</p></li>
     /// <li>
     /// <p><code>supported-ip-address-types</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).</p></li>
@@ -34,6 +36,8 @@ pub struct DescribeVpcEndpointServicesInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of items to return. (You received this token from a prior call.)</p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>The service Regions.</p>
+    pub service_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeVpcEndpointServicesInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -52,6 +56,8 @@ impl DescribeVpcEndpointServicesInput {
     /// <p><code>owner</code> - The ID or alias of the Amazon Web Services account that owns the service.</p></li>
     /// <li>
     /// <p><code>service-name</code> - The name of the service.</p></li>
+    /// <li>
+    /// <p><code>service-region</code> - The Region of the service.</p></li>
     /// <li>
     /// <p><code>service-type</code> - The type of service (<code>Interface</code> | <code>Gateway</code> | <code>GatewayLoadBalancer</code>).</p></li>
     /// <li>
@@ -81,6 +87,12 @@ impl DescribeVpcEndpointServicesInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
+    /// <p>The service Regions.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_regions.is_none()`.
+    pub fn service_regions(&self) -> &[::std::string::String] {
+        self.service_regions.as_deref().unwrap_or_default()
+    }
 }
 impl DescribeVpcEndpointServicesInput {
     /// Creates a new builder-style object to manufacture [`DescribeVpcEndpointServicesInput`](crate::operation::describe_vpc_endpoint_services::DescribeVpcEndpointServicesInput).
@@ -98,6 +110,7 @@ pub struct DescribeVpcEndpointServicesInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) service_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeVpcEndpointServicesInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -145,6 +158,8 @@ impl DescribeVpcEndpointServicesInputBuilder {
     /// <li>
     /// <p><code>service-name</code> - The name of the service.</p></li>
     /// <li>
+    /// <p><code>service-region</code> - The Region of the service.</p></li>
+    /// <li>
     /// <p><code>service-type</code> - The type of service (<code>Interface</code> | <code>Gateway</code> | <code>GatewayLoadBalancer</code>).</p></li>
     /// <li>
     /// <p><code>supported-ip-address-types</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).</p></li>
@@ -172,6 +187,8 @@ impl DescribeVpcEndpointServicesInputBuilder {
     /// <li>
     /// <p><code>service-name</code> - The name of the service.</p></li>
     /// <li>
+    /// <p><code>service-region</code> - The Region of the service.</p></li>
+    /// <li>
     /// <p><code>service-type</code> - The type of service (<code>Interface</code> | <code>Gateway</code> | <code>GatewayLoadBalancer</code>).</p></li>
     /// <li>
     /// <p><code>supported-ip-address-types</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).</p></li>
@@ -196,6 +213,8 @@ impl DescribeVpcEndpointServicesInputBuilder {
     /// <p><code>owner</code> - The ID or alias of the Amazon Web Services account that owns the service.</p></li>
     /// <li>
     /// <p><code>service-name</code> - The name of the service.</p></li>
+    /// <li>
+    /// <p><code>service-region</code> - The Region of the service.</p></li>
     /// <li>
     /// <p><code>service-type</code> - The type of service (<code>Interface</code> | <code>Gateway</code> | <code>GatewayLoadBalancer</code>).</p></li>
     /// <li>
@@ -245,6 +264,26 @@ impl DescribeVpcEndpointServicesInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
+    /// Appends an item to `service_regions`.
+    ///
+    /// To override the contents of this collection use [`set_service_regions`](Self::set_service_regions).
+    ///
+    /// <p>The service Regions.</p>
+    pub fn service_regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.service_regions.unwrap_or_default();
+        v.push(input.into());
+        self.service_regions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The service Regions.</p>
+    pub fn set_service_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.service_regions = input;
+        self
+    }
+    /// <p>The service Regions.</p>
+    pub fn get_service_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.service_regions
+    }
     /// Consumes the builder and constructs a [`DescribeVpcEndpointServicesInput`](crate::operation::describe_vpc_endpoint_services::DescribeVpcEndpointServicesInput).
     pub fn build(
         self,
@@ -258,6 +297,7 @@ impl DescribeVpcEndpointServicesInputBuilder {
             filters: self.filters,
             max_results: self.max_results,
             next_token: self.next_token,
+            service_regions: self.service_regions,
         })
     }
 }

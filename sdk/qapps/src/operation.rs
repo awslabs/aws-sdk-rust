@@ -19,6 +19,9 @@ pub mod batch_update_category;
 /// Types for the `CreateLibraryItem` operation.
 pub mod create_library_item;
 
+/// Types for the `CreatePresignedUrl` operation.
+pub mod create_presigned_url;
+
 /// Types for the `CreateQApp` operation.
 pub mod create_q_app;
 
@@ -28,11 +31,17 @@ pub mod delete_library_item;
 /// Types for the `DeleteQApp` operation.
 pub mod delete_q_app;
 
+/// Types for the `DescribeQAppPermissions` operation.
+pub mod describe_q_app_permissions;
+
 /// Types for the `DisassociateLibraryItemReview` operation.
 pub mod disassociate_library_item_review;
 
 /// Types for the `DisassociateQAppFromUser` operation.
 pub mod disassociate_q_app_from_user;
+
+/// Types for the `ExportQAppSessionData` operation.
+pub mod export_q_app_session_data;
 
 /// Types for the `GetLibraryItem` operation.
 pub mod get_library_item;
@@ -43,6 +52,9 @@ pub mod get_q_app;
 /// Types for the `GetQAppSession` operation.
 pub mod get_q_app_session;
 
+/// Types for the `GetQAppSessionMetadata` operation.
+pub mod get_q_app_session_metadata;
+
 /// Types for the `ImportDocument` operation.
 pub mod import_document;
 
@@ -51,6 +63,9 @@ pub mod list_categories;
 
 /// Types for the `ListLibraryItems` operation.
 pub mod list_library_items;
+
+/// Types for the `ListQAppSessionData` operation.
+pub mod list_q_app_session_data;
 
 /// Types for the `ListQApps` operation.
 pub mod list_q_apps;
@@ -82,5 +97,11 @@ pub mod update_library_item_metadata;
 /// Types for the `UpdateQApp` operation.
 pub mod update_q_app;
 
+/// Types for the `UpdateQAppPermissions` operation.
+pub mod update_q_app_permissions;
+
 /// Types for the `UpdateQAppSession` operation.
 pub mod update_q_app_session;
+
+/// Types for the `UpdateQAppSessionMetadata` operation.
+pub mod update_q_app_session_metadata;

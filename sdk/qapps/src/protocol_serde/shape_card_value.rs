@@ -9,5 +9,11 @@ pub fn ser_card_value(
     {
         object.key("value").string(input.value.as_str());
     }
+    if let Some(var_1) = &input.submission_mutation {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("submissionMutation").start_object();
+        crate::protocol_serde::shape_submission_mutation::ser_submission_mutation(&mut object_2, var_1)?;
+        object_2.finish();
+    }
     Ok(())
 }

@@ -54,6 +54,11 @@ where
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'failureTrace' cannot be null")
                             })?,
                         )),
+                        "customOrchestrationTrace" => Some(crate::types::Trace::CustomOrchestrationTrace(
+                            crate::protocol_serde::shape_custom_orchestration_trace::de_custom_orchestration_trace(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'customOrchestrationTrace' cannot be null")
+                            })?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::Trace::Unknown)

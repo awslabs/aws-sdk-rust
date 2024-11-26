@@ -97,6 +97,10 @@ pub use crate::types::_api_parameter::ApiParameterBuilder;
 
 pub use crate::types::_inline_agent_trace_part::InlineAgentTracePartBuilder;
 
+pub use crate::types::_custom_orchestration_trace::CustomOrchestrationTraceBuilder;
+
+pub use crate::types::_custom_orchestration_trace_event::CustomOrchestrationTraceEventBuilder;
+
 pub use crate::types::_failure_trace::FailureTraceBuilder;
 
 pub use crate::types::_post_processing_model_invocation_output::PostProcessingModelInvocationOutputBuilder;
@@ -210,6 +214,8 @@ pub use crate::types::_return_control_payload::ReturnControlPayloadBuilder;
 pub use crate::types::_trace_part::TracePartBuilder;
 
 pub use crate::types::_payload_part::PayloadPartBuilder;
+
+pub use crate::types::_streaming_configurations::StreamingConfigurationsBuilder;
 
 pub use crate::types::_session_state::SessionStateBuilder;
 

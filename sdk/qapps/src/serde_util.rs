@@ -122,6 +122,24 @@ pub(crate) fn create_library_item_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_presigned_url_output_output_correct_errors(
+    mut builder: crate::operation::create_presigned_url::builders::CreatePresignedUrlOutputBuilder,
+) -> crate::operation::create_presigned_url::builders::CreatePresignedUrlOutputBuilder {
+    if builder.file_id.is_none() {
+        builder.file_id = Some(Default::default())
+    }
+    if builder.presigned_url.is_none() {
+        builder.presigned_url = Some(Default::default())
+    }
+    if builder.presigned_url_fields.is_none() {
+        builder.presigned_url_fields = Some(Default::default())
+    }
+    if builder.presigned_url_expiration.is_none() {
+        builder.presigned_url_expiration = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn content_too_large_exception_correct_errors(
     mut builder: crate::types::error::builders::ContentTooLargeExceptionBuilder,
 ) -> crate::types::error::builders::ContentTooLargeExceptionBuilder {
@@ -166,6 +184,21 @@ pub(crate) fn create_q_app_output_output_correct_errors(
     }
     if builder.updated_by.is_none() {
         builder.updated_by = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn export_q_app_session_data_output_output_correct_errors(
+    mut builder: crate::operation::export_q_app_session_data::builders::ExportQAppSessionDataOutputBuilder,
+) -> crate::operation::export_q_app_session_data::builders::ExportQAppSessionDataOutputBuilder {
+    if builder.csv_file_link.is_none() {
+        builder.csv_file_link = Some(Default::default())
+    }
+    if builder.expires_at.is_none() {
+        builder.expires_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.session_arn.is_none() {
+        builder.session_arn = Some(Default::default())
     }
     builder
 }
@@ -253,6 +286,36 @@ pub(crate) fn get_q_app_session_output_output_correct_errors(
     }
     if builder.card_status.is_none() {
         builder.card_status = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_q_app_session_metadata_output_output_correct_errors(
+    mut builder: crate::operation::get_q_app_session_metadata::builders::GetQAppSessionMetadataOutputBuilder,
+) -> crate::operation::get_q_app_session_metadata::builders::GetQAppSessionMetadataOutputBuilder {
+    if builder.session_id.is_none() {
+        builder.session_id = Some(Default::default())
+    }
+    if builder.session_arn.is_none() {
+        builder.session_arn = Some(Default::default())
+    }
+    if builder.sharing_configuration.is_none() {
+        builder.sharing_configuration = {
+            let builder = crate::types::builders::SessionSharingConfigurationBuilder::default();
+            crate::serde_util::session_sharing_configuration_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn list_q_app_session_data_output_output_correct_errors(
+    mut builder: crate::operation::list_q_app_session_data::builders::ListQAppSessionDataOutputBuilder,
+) -> crate::operation::list_q_app_session_data::builders::ListQAppSessionDataOutputBuilder {
+    if builder.session_id.is_none() {
+        builder.session_id = Some(Default::default())
+    }
+    if builder.session_arn.is_none() {
+        builder.session_arn = Some(Default::default())
     }
     builder
 }
@@ -368,6 +431,24 @@ pub(crate) fn update_q_app_session_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_q_app_session_metadata_output_output_correct_errors(
+    mut builder: crate::operation::update_q_app_session_metadata::builders::UpdateQAppSessionMetadataOutputBuilder,
+) -> crate::operation::update_q_app_session_metadata::builders::UpdateQAppSessionMetadataOutputBuilder {
+    if builder.session_id.is_none() {
+        builder.session_id = Some(Default::default())
+    }
+    if builder.session_arn.is_none() {
+        builder.session_arn = Some(Default::default())
+    }
+    if builder.sharing_configuration.is_none() {
+        builder.sharing_configuration = {
+            let builder = crate::types::builders::SessionSharingConfigurationBuilder::default();
+            crate::serde_util::session_sharing_configuration_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn app_definition_correct_errors(
     mut builder: crate::types::builders::AppDefinitionBuilder,
 ) -> crate::types::builders::AppDefinitionBuilder {
@@ -376,6 +457,15 @@ pub(crate) fn app_definition_correct_errors(
     }
     if builder.cards.is_none() {
         builder.cards = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn session_sharing_configuration_correct_errors(
+    mut builder: crate::types::builders::SessionSharingConfigurationBuilder,
+) -> crate::types::builders::SessionSharingConfigurationBuilder {
+    if builder.enabled.is_none() {
+        builder.enabled = Some(Default::default())
     }
     builder
 }
@@ -454,6 +544,36 @@ pub(crate) fn library_item_member_correct_errors(
     builder
 }
 
+pub(crate) fn permission_output_correct_errors(
+    mut builder: crate::types::builders::PermissionOutputBuilder,
+) -> crate::types::builders::PermissionOutputBuilder {
+    if builder.action.is_none() {
+        builder.action = "no value was set".parse::<crate::types::Action>().ok()
+    }
+    if builder.principal.is_none() {
+        builder.principal = {
+            let builder = crate::types::builders::PrincipalOutputBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn q_app_session_data_correct_errors(
+    mut builder: crate::types::builders::QAppSessionDataBuilder,
+) -> crate::types::builders::QAppSessionDataBuilder {
+    if builder.card_id.is_none() {
+        builder.card_id = Some(Default::default())
+    }
+    if builder.user.is_none() {
+        builder.user = {
+            let builder = crate::types::builders::UserBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn user_app_item_correct_errors(mut builder: crate::types::builders::UserAppItemBuilder) -> crate::types::builders::UserAppItemBuilder {
     if builder.app_id.is_none() {
         builder.app_id = Some(Default::default())
@@ -484,6 +604,30 @@ pub(crate) fn file_upload_card_correct_errors(
     }
     if builder.r#type.is_none() {
         builder.r#type = "no value was set".parse::<crate::types::CardType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn form_input_card_correct_errors(
+    mut builder: crate::types::builders::FormInputCardBuilder,
+) -> crate::types::builders::FormInputCardBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.title.is_none() {
+        builder.title = Some(Default::default())
+    }
+    if builder.dependencies.is_none() {
+        builder.dependencies = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::CardType>().ok()
+    }
+    if builder.metadata.is_none() {
+        builder.metadata = {
+            let builder = crate::types::builders::FormInputCardMetadataBuilder::default();
+            crate::serde_util::form_input_card_metadata_correct_errors(builder).build().ok()
+        }
     }
     builder
 }
@@ -564,6 +708,36 @@ pub(crate) fn file_upload_card_input_correct_errors(
     }
     if builder.r#type.is_none() {
         builder.r#type = "no value was set".parse::<crate::types::CardType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn form_input_card_input_correct_errors(
+    mut builder: crate::types::builders::FormInputCardInputBuilder,
+) -> crate::types::builders::FormInputCardInputBuilder {
+    if builder.title.is_none() {
+        builder.title = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::CardType>().ok()
+    }
+    if builder.metadata.is_none() {
+        builder.metadata = {
+            let builder = crate::types::builders::FormInputCardMetadataBuilder::default();
+            crate::serde_util::form_input_card_metadata_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn form_input_card_metadata_correct_errors(
+    mut builder: crate::types::builders::FormInputCardMetadataBuilder,
+) -> crate::types::builders::FormInputCardMetadataBuilder {
+    if builder.schema.is_none() {
+        builder.schema = Some(Default::default())
     }
     builder
 }

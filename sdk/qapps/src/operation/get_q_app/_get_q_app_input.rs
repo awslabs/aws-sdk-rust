@@ -7,6 +7,8 @@ pub struct GetQAppInput {
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the Q App to retrieve.</p>
     pub app_id: ::std::option::Option<::std::string::String>,
+    /// <p>The version of the Q App.</p>
+    pub app_version: ::std::option::Option<i32>,
 }
 impl GetQAppInput {
     /// <p>The unique identifier of the Amazon Q Business application environment instance.</p>
@@ -16,6 +18,10 @@ impl GetQAppInput {
     /// <p>The unique identifier of the Q App to retrieve.</p>
     pub fn app_id(&self) -> ::std::option::Option<&str> {
         self.app_id.as_deref()
+    }
+    /// <p>The version of the Q App.</p>
+    pub fn app_version(&self) -> ::std::option::Option<i32> {
+        self.app_version
     }
 }
 impl GetQAppInput {
@@ -31,6 +37,7 @@ impl GetQAppInput {
 pub struct GetQAppInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
+    pub(crate) app_version: ::std::option::Option<i32>,
 }
 impl GetQAppInputBuilder {
     /// <p>The unique identifier of the Amazon Q Business application environment instance.</p>
@@ -63,11 +70,26 @@ impl GetQAppInputBuilder {
     pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.app_id
     }
+    /// <p>The version of the Q App.</p>
+    pub fn app_version(mut self, input: i32) -> Self {
+        self.app_version = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The version of the Q App.</p>
+    pub fn set_app_version(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.app_version = input;
+        self
+    }
+    /// <p>The version of the Q App.</p>
+    pub fn get_app_version(&self) -> &::std::option::Option<i32> {
+        &self.app_version
+    }
     /// Consumes the builder and constructs a [`GetQAppInput`](crate::operation::get_q_app::GetQAppInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_q_app::GetQAppInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_q_app::GetQAppInput {
             instance_id: self.instance_id,
             app_id: self.app_id,
+            app_version: self.app_version,
         })
     }
 }

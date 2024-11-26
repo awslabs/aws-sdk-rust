@@ -3,93 +3,105 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StartEmailContactInput {
-    /// <p></p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>The email address of the customer.</p>
     pub from_email_address: ::std::option::Option<crate::types::EmailAddressInfo>,
-    /// <p></p>
+    /// <p>The email address associated with the instance.</p>
     pub destination_email_address: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>A description of the email contact.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP). Emails can have the following reference types at the time of creation: <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> | <code>DATE</code>. <code>EMAIL</code> | <code>EMAIL_MESSAGE</code> |<code>ATTACHMENT</code> are not a supported reference type during email creation.</p>
     pub references: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Reference>>,
-    /// <p></p>
+    /// <p>The name of a email that is shown to an agent in the Contact Control Panel (CCP).</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>The email message body to be sent to the newly created email.</p>
     pub email_message: ::std::option::Option<crate::types::InboundEmailContent>,
-    /// <p></p>
+    /// <p>The addtional recipients address of the email.</p>
     pub additional_recipients: ::std::option::Option<crate::types::InboundAdditionalRecipients>,
-    /// <p></p>
+    /// <p>List of S3 presigned URLs of email attachments and their file name.</p>
     pub attachments: ::std::option::Option<::std::vec::Vec<crate::types::EmailAttachment>>,
-    /// <p></p>
+    /// <p>The identifier of the flow for initiating the emails. To see the ContactFlowId in the Amazon Connect admin website, on the navigation menu go to <b>Routing</b>, <b>Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold:</p>
+    /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b></p>
     pub contact_flow_id: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>The contactId that is related to this contact. Linking emails together by using <code>RelatedContactID</code> copies over contact attributes from the related email contact to the new email contact. All updates to user-defined attributes in the new email contact are limited to the individual contact ID. There are no limits to the number of contacts that can be linked by using <code>RelatedContactId</code>.</p>
     pub related_contact_id: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
+    /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p></p>
+    /// <p>A set of system defined key-value pairs stored on individual contact segments using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in flows.</p>
+    /// <p>Attribute keys can include only alphanumeric, -, and _.</p>
+    /// <p>This field can be used to show channel subtype, such as <code>connect:Guide</code>.</p><note>
+    /// <p>To set contact expiry, a <code>ValueMap</code> must be specified containing the integer number of minutes the contact will be active for before expiring, with <code>SegmentAttributes</code> like { <code> "connect:ContactExpiry": {"ValueMap" : { "ExpiryDuration": { "ValueInteger":135}}}}</code>.</p>
+    /// </note>
     pub segment_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>>,
-    /// <p></p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl StartEmailContactInput {
-    /// <p></p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p></p>
+    /// <p>The email address of the customer.</p>
     pub fn from_email_address(&self) -> ::std::option::Option<&crate::types::EmailAddressInfo> {
         self.from_email_address.as_ref()
     }
-    /// <p></p>
+    /// <p>The email address associated with the instance.</p>
     pub fn destination_email_address(&self) -> ::std::option::Option<&str> {
         self.destination_email_address.as_deref()
     }
-    /// <p></p>
+    /// <p>A description of the email contact.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p></p>
+    /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP). Emails can have the following reference types at the time of creation: <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> | <code>DATE</code>. <code>EMAIL</code> | <code>EMAIL_MESSAGE</code> |<code>ATTACHMENT</code> are not a supported reference type during email creation.</p>
     pub fn references(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::Reference>> {
         self.references.as_ref()
     }
-    /// <p></p>
+    /// <p>The name of a email that is shown to an agent in the Contact Control Panel (CCP).</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p></p>
+    /// <p>The email message body to be sent to the newly created email.</p>
     pub fn email_message(&self) -> ::std::option::Option<&crate::types::InboundEmailContent> {
         self.email_message.as_ref()
     }
-    /// <p></p>
+    /// <p>The addtional recipients address of the email.</p>
     pub fn additional_recipients(&self) -> ::std::option::Option<&crate::types::InboundAdditionalRecipients> {
         self.additional_recipients.as_ref()
     }
-    /// <p></p>
+    /// <p>List of S3 presigned URLs of email attachments and their file name.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attachments.is_none()`.
     pub fn attachments(&self) -> &[crate::types::EmailAttachment] {
         self.attachments.as_deref().unwrap_or_default()
     }
-    /// <p></p>
+    /// <p>The identifier of the flow for initiating the emails. To see the ContactFlowId in the Amazon Connect admin website, on the navigation menu go to <b>Routing</b>, <b>Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold:</p>
+    /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b></p>
     pub fn contact_flow_id(&self) -> ::std::option::Option<&str> {
         self.contact_flow_id.as_deref()
     }
-    /// <p></p>
+    /// <p>The contactId that is related to this contact. Linking emails together by using <code>RelatedContactID</code> copies over contact attributes from the related email contact to the new email contact. All updates to user-defined attributes in the new email contact are limited to the individual contact ID. There are no limits to the number of contacts that can be linked by using <code>RelatedContactId</code>.</p>
     pub fn related_contact_id(&self) -> ::std::option::Option<&str> {
         self.related_contact_id.as_deref()
     }
-    /// <p></p>
+    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
+    /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
     pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
-    /// <p></p>
+    /// <p>A set of system defined key-value pairs stored on individual contact segments using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in flows.</p>
+    /// <p>Attribute keys can include only alphanumeric, -, and _.</p>
+    /// <p>This field can be used to show channel subtype, such as <code>connect:Guide</code>.</p><note>
+    /// <p>To set contact expiry, a <code>ValueMap</code> must be specified containing the integer number of minutes the contact will be active for before expiring, with <code>SegmentAttributes</code> like { <code> "connect:ContactExpiry": {"ValueMap" : { "ExpiryDuration": { "ValueInteger":135}}}}</code>.</p>
+    /// </note>
     pub fn segment_attributes(
         &self,
     ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>> {
         self.segment_attributes.as_ref()
     }
-    /// <p></p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -141,62 +153,62 @@ pub struct StartEmailContactInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl StartEmailContactInputBuilder {
-    /// <p></p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
     }
-    /// <p></p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }
-    /// <p></p>
+    /// <p>The email address of the customer.</p>
     /// This field is required.
     pub fn from_email_address(mut self, input: crate::types::EmailAddressInfo) -> Self {
         self.from_email_address = ::std::option::Option::Some(input);
         self
     }
-    /// <p></p>
+    /// <p>The email address of the customer.</p>
     pub fn set_from_email_address(mut self, input: ::std::option::Option<crate::types::EmailAddressInfo>) -> Self {
         self.from_email_address = input;
         self
     }
-    /// <p></p>
+    /// <p>The email address of the customer.</p>
     pub fn get_from_email_address(&self) -> &::std::option::Option<crate::types::EmailAddressInfo> {
         &self.from_email_address
     }
-    /// <p></p>
+    /// <p>The email address associated with the instance.</p>
     /// This field is required.
     pub fn destination_email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_email_address = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The email address associated with the instance.</p>
     pub fn set_destination_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_email_address = input;
         self
     }
-    /// <p></p>
+    /// <p>The email address associated with the instance.</p>
     pub fn get_destination_email_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_email_address
     }
-    /// <p></p>
+    /// <p>A description of the email contact.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>A description of the email contact.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p></p>
+    /// <p>A description of the email contact.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
@@ -204,14 +216,14 @@ impl StartEmailContactInputBuilder {
     ///
     /// To override the contents of this collection use [`set_references`](Self::set_references).
     ///
-    /// <p></p>
+    /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP). Emails can have the following reference types at the time of creation: <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> | <code>DATE</code>. <code>EMAIL</code> | <code>EMAIL_MESSAGE</code> |<code>ATTACHMENT</code> are not a supported reference type during email creation.</p>
     pub fn references(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::Reference) -> Self {
         let mut hash_map = self.references.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.references = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p></p>
+    /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP). Emails can have the following reference types at the time of creation: <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> | <code>DATE</code>. <code>EMAIL</code> | <code>EMAIL_MESSAGE</code> |<code>ATTACHMENT</code> are not a supported reference type during email creation.</p>
     pub fn set_references(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Reference>>,
@@ -219,50 +231,50 @@ impl StartEmailContactInputBuilder {
         self.references = input;
         self
     }
-    /// <p></p>
+    /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP). Emails can have the following reference types at the time of creation: <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> | <code>DATE</code>. <code>EMAIL</code> | <code>EMAIL_MESSAGE</code> |<code>ATTACHMENT</code> are not a supported reference type during email creation.</p>
     pub fn get_references(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Reference>> {
         &self.references
     }
-    /// <p></p>
+    /// <p>The name of a email that is shown to an agent in the Contact Control Panel (CCP).</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The name of a email that is shown to an agent in the Contact Control Panel (CCP).</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p></p>
+    /// <p>The name of a email that is shown to an agent in the Contact Control Panel (CCP).</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p></p>
+    /// <p>The email message body to be sent to the newly created email.</p>
     /// This field is required.
     pub fn email_message(mut self, input: crate::types::InboundEmailContent) -> Self {
         self.email_message = ::std::option::Option::Some(input);
         self
     }
-    /// <p></p>
+    /// <p>The email message body to be sent to the newly created email.</p>
     pub fn set_email_message(mut self, input: ::std::option::Option<crate::types::InboundEmailContent>) -> Self {
         self.email_message = input;
         self
     }
-    /// <p></p>
+    /// <p>The email message body to be sent to the newly created email.</p>
     pub fn get_email_message(&self) -> &::std::option::Option<crate::types::InboundEmailContent> {
         &self.email_message
     }
-    /// <p></p>
+    /// <p>The addtional recipients address of the email.</p>
     pub fn additional_recipients(mut self, input: crate::types::InboundAdditionalRecipients) -> Self {
         self.additional_recipients = ::std::option::Option::Some(input);
         self
     }
-    /// <p></p>
+    /// <p>The addtional recipients address of the email.</p>
     pub fn set_additional_recipients(mut self, input: ::std::option::Option<crate::types::InboundAdditionalRecipients>) -> Self {
         self.additional_recipients = input;
         self
     }
-    /// <p></p>
+    /// <p>The addtional recipients address of the email.</p>
     pub fn get_additional_recipients(&self) -> &::std::option::Option<crate::types::InboundAdditionalRecipients> {
         &self.additional_recipients
     }
@@ -270,47 +282,50 @@ impl StartEmailContactInputBuilder {
     ///
     /// To override the contents of this collection use [`set_attachments`](Self::set_attachments).
     ///
-    /// <p></p>
+    /// <p>List of S3 presigned URLs of email attachments and their file name.</p>
     pub fn attachments(mut self, input: crate::types::EmailAttachment) -> Self {
         let mut v = self.attachments.unwrap_or_default();
         v.push(input);
         self.attachments = ::std::option::Option::Some(v);
         self
     }
-    /// <p></p>
+    /// <p>List of S3 presigned URLs of email attachments and their file name.</p>
     pub fn set_attachments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EmailAttachment>>) -> Self {
         self.attachments = input;
         self
     }
-    /// <p></p>
+    /// <p>List of S3 presigned URLs of email attachments and their file name.</p>
     pub fn get_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EmailAttachment>> {
         &self.attachments
     }
-    /// <p></p>
+    /// <p>The identifier of the flow for initiating the emails. To see the ContactFlowId in the Amazon Connect admin website, on the navigation menu go to <b>Routing</b>, <b>Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold:</p>
+    /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b></p>
     pub fn contact_flow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_flow_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The identifier of the flow for initiating the emails. To see the ContactFlowId in the Amazon Connect admin website, on the navigation menu go to <b>Routing</b>, <b>Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold:</p>
+    /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b></p>
     pub fn set_contact_flow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contact_flow_id = input;
         self
     }
-    /// <p></p>
+    /// <p>The identifier of the flow for initiating the emails. To see the ContactFlowId in the Amazon Connect admin website, on the navigation menu go to <b>Routing</b>, <b>Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold:</p>
+    /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b></p>
     pub fn get_contact_flow_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.contact_flow_id
     }
-    /// <p></p>
+    /// <p>The contactId that is related to this contact. Linking emails together by using <code>RelatedContactID</code> copies over contact attributes from the related email contact to the new email contact. All updates to user-defined attributes in the new email contact are limited to the individual contact ID. There are no limits to the number of contacts that can be linked by using <code>RelatedContactId</code>.</p>
     pub fn related_contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.related_contact_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The contactId that is related to this contact. Linking emails together by using <code>RelatedContactID</code> copies over contact attributes from the related email contact to the new email contact. All updates to user-defined attributes in the new email contact are limited to the individual contact ID. There are no limits to the number of contacts that can be linked by using <code>RelatedContactId</code>.</p>
     pub fn set_related_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.related_contact_id = input;
         self
     }
-    /// <p></p>
+    /// <p>The contactId that is related to this contact. Linking emails together by using <code>RelatedContactID</code> copies over contact attributes from the related email contact to the new email contact. All updates to user-defined attributes in the new email contact are limited to the individual contact ID. There are no limits to the number of contacts that can be linked by using <code>RelatedContactId</code>.</p>
     pub fn get_related_contact_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.related_contact_id
     }
@@ -318,19 +333,22 @@ impl StartEmailContactInputBuilder {
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
-    /// <p></p>
+    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
+    /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.attributes = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p></p>
+    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
+    /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
     pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.attributes = input;
         self
     }
-    /// <p></p>
+    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
+    /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
     pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
@@ -338,14 +356,22 @@ impl StartEmailContactInputBuilder {
     ///
     /// To override the contents of this collection use [`set_segment_attributes`](Self::set_segment_attributes).
     ///
-    /// <p></p>
+    /// <p>A set of system defined key-value pairs stored on individual contact segments using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in flows.</p>
+    /// <p>Attribute keys can include only alphanumeric, -, and _.</p>
+    /// <p>This field can be used to show channel subtype, such as <code>connect:Guide</code>.</p><note>
+    /// <p>To set contact expiry, a <code>ValueMap</code> must be specified containing the integer number of minutes the contact will be active for before expiring, with <code>SegmentAttributes</code> like { <code> "connect:ContactExpiry": {"ValueMap" : { "ExpiryDuration": { "ValueInteger":135}}}}</code>.</p>
+    /// </note>
     pub fn segment_attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::SegmentAttributeValue) -> Self {
         let mut hash_map = self.segment_attributes.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.segment_attributes = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p></p>
+    /// <p>A set of system defined key-value pairs stored on individual contact segments using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in flows.</p>
+    /// <p>Attribute keys can include only alphanumeric, -, and _.</p>
+    /// <p>This field can be used to show channel subtype, such as <code>connect:Guide</code>.</p><note>
+    /// <p>To set contact expiry, a <code>ValueMap</code> must be specified containing the integer number of minutes the contact will be active for before expiring, with <code>SegmentAttributes</code> like { <code> "connect:ContactExpiry": {"ValueMap" : { "ExpiryDuration": { "ValueInteger":135}}}}</code>.</p>
+    /// </note>
     pub fn set_segment_attributes(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>>,
@@ -353,23 +379,27 @@ impl StartEmailContactInputBuilder {
         self.segment_attributes = input;
         self
     }
-    /// <p></p>
+    /// <p>A set of system defined key-value pairs stored on individual contact segments using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in flows.</p>
+    /// <p>Attribute keys can include only alphanumeric, -, and _.</p>
+    /// <p>This field can be used to show channel subtype, such as <code>connect:Guide</code>.</p><note>
+    /// <p>To set contact expiry, a <code>ValueMap</code> must be specified containing the integer number of minutes the contact will be active for before expiring, with <code>SegmentAttributes</code> like { <code> "connect:ContactExpiry": {"ValueMap" : { "ExpiryDuration": { "ValueInteger":135}}}}</code>.</p>
+    /// </note>
     pub fn get_segment_attributes(
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>> {
         &self.segment_attributes
     }
-    /// <p></p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p></p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }

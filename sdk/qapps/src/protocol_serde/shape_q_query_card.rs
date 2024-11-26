@@ -55,6 +55,10 @@ where
                         "attributeFilter" => {
                             builder = builder.set_attribute_filter(crate::protocol_serde::shape_attribute_filter::de_attribute_filter(tokens)?);
                         }
+                        "memoryReferences" => {
+                            builder =
+                                builder.set_memory_references(crate::protocol_serde::shape_memory_reference_list::de_memory_reference_list(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

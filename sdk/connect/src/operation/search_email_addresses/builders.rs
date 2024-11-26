@@ -22,7 +22,7 @@ impl crate::operation::search_email_addresses::builders::SearchEmailAddressesInp
 }
 /// Fluent builder constructing a request to `SearchEmailAddresses`.
 ///
-/// <p></p>
+/// <p>Searches email address in an instance, with optional filtering.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchEmailAddressesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,73 +108,73 @@ impl SearchEmailAddressesFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p></p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
     }
-    /// <p></p>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_id()
     }
-    /// <p></p>
+    /// <p>The maximum number of results to return per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p></p>
+    /// <p>The maximum number of results to return per page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p></p>
+    /// <p>The maximum number of results to return per page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p></p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p></p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p></p>
+    /// <p>The search criteria to be used to return email addresses.</p>
     pub fn search_criteria(mut self, input: crate::types::EmailAddressSearchCriteria) -> Self {
         self.inner = self.inner.search_criteria(input);
         self
     }
-    /// <p></p>
+    /// <p>The search criteria to be used to return email addresses.</p>
     pub fn set_search_criteria(mut self, input: ::std::option::Option<crate::types::EmailAddressSearchCriteria>) -> Self {
         self.inner = self.inner.set_search_criteria(input);
         self
     }
-    /// <p></p>
+    /// <p>The search criteria to be used to return email addresses.</p>
     pub fn get_search_criteria(&self) -> &::std::option::Option<crate::types::EmailAddressSearchCriteria> {
         self.inner.get_search_criteria()
     }
-    /// <p></p>
+    /// <p>Filters to be applied to search results.</p>
     pub fn search_filter(mut self, input: crate::types::EmailAddressSearchFilter) -> Self {
         self.inner = self.inner.search_filter(input);
         self
     }
-    /// <p></p>
+    /// <p>Filters to be applied to search results.</p>
     pub fn set_search_filter(mut self, input: ::std::option::Option<crate::types::EmailAddressSearchFilter>) -> Self {
         self.inner = self.inner.set_search_filter(input);
         self
     }
-    /// <p></p>
+    /// <p>Filters to be applied to search results.</p>
     pub fn get_search_filter(&self) -> &::std::option::Option<crate::types::EmailAddressSearchFilter> {
         self.inner.get_search_filter()
     }

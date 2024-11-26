@@ -1349,6 +1349,8 @@ pub use crate::types::_allowed_principal::AllowedPrincipal;
 
 pub use crate::types::_service_configuration::ServiceConfiguration;
 
+pub use crate::types::_supported_region_detail::SupportedRegionDetail;
+
 pub use crate::types::_private_dns_name_configuration::PrivateDnsNameConfiguration;
 
 pub use crate::types::_service_state::ServiceState;
@@ -1502,6 +1504,8 @@ pub use crate::types::_tiering_operation_status::TieringOperationStatus;
 pub use crate::types::_storage_tier::StorageTier;
 
 pub use crate::types::_snapshot::Snapshot;
+
+pub use crate::types::_transfer_type::TransferType;
 
 pub use crate::types::_security_group_vpc_association::SecurityGroupVpcAssociation;
 
@@ -4073,6 +4077,8 @@ mod _summary_status;
 
 mod _supported_additional_processor_feature;
 
+mod _supported_region_detail;
+
 mod _tag;
 
 mod _tag_description;
@@ -4144,6 +4150,8 @@ mod _traffic_mirror_target;
 mod _traffic_mirror_target_type;
 
 mod _traffic_type;
+
+mod _transfer_type;
 
 mod _transit_gateway;
 

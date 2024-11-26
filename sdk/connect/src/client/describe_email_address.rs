@@ -3,17 +3,17 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeEmailAddress`](crate::operation::describe_email_address::builders::DescribeEmailAddressFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_id(impl Into<String>)`](crate::operation::describe_email_address::builders::DescribeEmailAddressFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::describe_email_address::builders::DescribeEmailAddressFluentBuilder::set_instance_id):<br>required: **true**<br><p></p><br>
-    ///   - [`email_address_id(impl Into<String>)`](crate::operation::describe_email_address::builders::DescribeEmailAddressFluentBuilder::email_address_id) / [`set_email_address_id(Option<String>)`](crate::operation::describe_email_address::builders::DescribeEmailAddressFluentBuilder::set_email_address_id):<br>required: **true**<br><p></p><br>
+    ///   - [`instance_id(impl Into<String>)`](crate::operation::describe_email_address::builders::DescribeEmailAddressFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::describe_email_address::builders::DescribeEmailAddressFluentBuilder::set_instance_id):<br>required: **true**<br><p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p><br>
+    ///   - [`email_address_id(impl Into<String>)`](crate::operation::describe_email_address::builders::DescribeEmailAddressFluentBuilder::email_address_id) / [`set_email_address_id(Option<String>)`](crate::operation::describe_email_address::builders::DescribeEmailAddressFluentBuilder::set_email_address_id):<br>required: **true**<br><p>The identifier of the email address.</p><br>
     /// - On success, responds with [`DescribeEmailAddressOutput`](crate::operation::describe_email_address::DescribeEmailAddressOutput) with field(s):
-    ///   - [`email_address_id(Option<String>)`](crate::operation::describe_email_address::DescribeEmailAddressOutput::email_address_id): <p></p>
-    ///   - [`email_address_arn(Option<String>)`](crate::operation::describe_email_address::DescribeEmailAddressOutput::email_address_arn): <p></p>
-    ///   - [`email_address(Option<String>)`](crate::operation::describe_email_address::DescribeEmailAddressOutput::email_address): <p></p>
-    ///   - [`display_name(Option<String>)`](crate::operation::describe_email_address::DescribeEmailAddressOutput::display_name): <p></p>
-    ///   - [`description(Option<String>)`](crate::operation::describe_email_address::DescribeEmailAddressOutput::description): <p></p>
-    ///   - [`create_timestamp(Option<String>)`](crate::operation::describe_email_address::DescribeEmailAddressOutput::create_timestamp): <p></p>
-    ///   - [`modified_timestamp(Option<String>)`](crate::operation::describe_email_address::DescribeEmailAddressOutput::modified_timestamp): <p></p>
-    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_email_address::DescribeEmailAddressOutput::tags): <p></p>
+    ///   - [`email_address_id(Option<String>)`](crate::operation::describe_email_address::DescribeEmailAddressOutput::email_address_id): <p>The identifier of the email address.</p>
+    ///   - [`email_address_arn(Option<String>)`](crate::operation::describe_email_address::DescribeEmailAddressOutput::email_address_arn): <p>The Amazon Resource Name (ARN) of the email address.</p>
+    ///   - [`email_address(Option<String>)`](crate::operation::describe_email_address::DescribeEmailAddressOutput::email_address): <p>The email address with the instance, in \[^\s@\]+@\[^\s@\]+\.\[^\s@\]+ format.</p>
+    ///   - [`display_name(Option<String>)`](crate::operation::describe_email_address::DescribeEmailAddressOutput::display_name): <p>The display name of email address</p>
+    ///   - [`description(Option<String>)`](crate::operation::describe_email_address::DescribeEmailAddressOutput::description): <p>The description of the email address.</p>
+    ///   - [`create_timestamp(Option<String>)`](crate::operation::describe_email_address::DescribeEmailAddressOutput::create_timestamp): <p>The email address creation timestamp in ISO 8601 Datetime.</p>
+    ///   - [`modified_timestamp(Option<String>)`](crate::operation::describe_email_address::DescribeEmailAddressOutput::modified_timestamp): <p>The email address last modification timestamp in ISO 8601 Datetime.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_email_address::DescribeEmailAddressOutput::tags): <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
     /// - On failure, responds with [`SdkError<DescribeEmailAddressError>`](crate::operation::describe_email_address::DescribeEmailAddressError)
     pub fn describe_email_address(&self) -> crate::operation::describe_email_address::builders::DescribeEmailAddressFluentBuilder {
         crate::operation::describe_email_address::builders::DescribeEmailAddressFluentBuilder::new(self.handle.clone())

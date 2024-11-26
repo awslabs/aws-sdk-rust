@@ -12,7 +12,7 @@ pub struct Contact {
     pub initial_contact_id: ::std::option::Option<::std::string::String>,
     /// <p>If this contact is not the first contact, this is the ID of the previous contact.</p>
     pub previous_contact_id: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>This is the root contactId which is used as a unique identifier for all subsequent contacts in a contact tree.</p>
     pub contact_association_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates how the contact was initiated.</p>
     pub initiation_method: ::std::option::Option<crate::types::ContactInitiationMethod>,
@@ -46,9 +46,9 @@ pub struct Contact {
     pub related_contact_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about Amazon Connect Wisdom.</p>
     pub wisdom_info: ::std::option::Option<crate::types::WisdomInfo>,
-    /// <p></p>
+    /// <p>The customer or external third party participant endpoint.</p>
     pub customer_endpoint: ::std::option::Option<crate::types::EndpointInfo>,
-    /// <p></p>
+    /// <p>The system endpoint. For <code>INBOUND</code>, this is the phone number or email address that the customer dialed. For <code>OUTBOUND</code> and <code>EXTERNAL_OUTBOUND</code>, this is the outbound caller ID number assigned to the outbound queue that is used to dial the customer. For callback, this shows up as Softphone for calls handled by agents with softphone.</p>
     pub system_endpoint: ::std::option::Option<crate::types::EndpointInfo>,
     /// <p>An integer that represents the queue time adjust to be applied to the contact, in seconds (longer / larger queue time are routed preferentially). Cannot be specified if the QueuePriority is specified. Must be statically defined and a valid integer value.</p>
     pub queue_time_adjustment_seconds: ::std::option::Option<i32>,
@@ -72,7 +72,7 @@ pub struct Contact {
     pub quality_metrics: ::std::option::Option<crate::types::QualityMetrics>,
     /// <p>Information about the call disconnect experience.</p>
     pub disconnect_details: ::std::option::Option<crate::types::DisconnectDetails>,
-    /// <p></p>
+    /// <p>List of additional email addresses for an email contact.</p>
     pub additional_email_recipients: ::std::option::Option<crate::types::AdditionalEmailRecipients>,
     /// <p>A set of system defined key-value pairs stored on individual contact segments using an attribute map. The attributes are standard Amazon Connect attributes and can be accessed in flows. Attribute keys can include only alphanumeric, -, and _ characters. This field can be used to show channel subtype. For example, <code>connect:Guide</code> or <code>connect:SMS</code>.</p>
     pub segment_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>>,
@@ -94,7 +94,7 @@ impl Contact {
     pub fn previous_contact_id(&self) -> ::std::option::Option<&str> {
         self.previous_contact_id.as_deref()
     }
-    /// <p></p>
+    /// <p>This is the root contactId which is used as a unique identifier for all subsequent contacts in a contact tree.</p>
     pub fn contact_association_id(&self) -> ::std::option::Option<&str> {
         self.contact_association_id.as_deref()
     }
@@ -162,11 +162,11 @@ impl Contact {
     pub fn wisdom_info(&self) -> ::std::option::Option<&crate::types::WisdomInfo> {
         self.wisdom_info.as_ref()
     }
-    /// <p></p>
+    /// <p>The customer or external third party participant endpoint.</p>
     pub fn customer_endpoint(&self) -> ::std::option::Option<&crate::types::EndpointInfo> {
         self.customer_endpoint.as_ref()
     }
-    /// <p></p>
+    /// <p>The system endpoint. For <code>INBOUND</code>, this is the phone number or email address that the customer dialed. For <code>OUTBOUND</code> and <code>EXTERNAL_OUTBOUND</code>, this is the outbound caller ID number assigned to the outbound queue that is used to dial the customer. For callback, this shows up as Softphone for calls handled by agents with softphone.</p>
     pub fn system_endpoint(&self) -> ::std::option::Option<&crate::types::EndpointInfo> {
         self.system_endpoint.as_ref()
     }
@@ -214,7 +214,7 @@ impl Contact {
     pub fn disconnect_details(&self) -> ::std::option::Option<&crate::types::DisconnectDetails> {
         self.disconnect_details.as_ref()
     }
-    /// <p></p>
+    /// <p>List of additional email addresses for an email contact.</p>
     pub fn additional_email_recipients(&self) -> ::std::option::Option<&crate::types::AdditionalEmailRecipients> {
         self.additional_email_recipients.as_ref()
     }
@@ -372,17 +372,17 @@ impl ContactBuilder {
     pub fn get_previous_contact_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.previous_contact_id
     }
-    /// <p></p>
+    /// <p>This is the root contactId which is used as a unique identifier for all subsequent contacts in a contact tree.</p>
     pub fn contact_association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_association_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>This is the root contactId which is used as a unique identifier for all subsequent contacts in a contact tree.</p>
     pub fn set_contact_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contact_association_id = input;
         self
     }
-    /// <p></p>
+    /// <p>This is the root contactId which is used as a unique identifier for all subsequent contacts in a contact tree.</p>
     pub fn get_contact_association_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.contact_association_id
     }
@@ -610,31 +610,31 @@ impl ContactBuilder {
     pub fn get_wisdom_info(&self) -> &::std::option::Option<crate::types::WisdomInfo> {
         &self.wisdom_info
     }
-    /// <p></p>
+    /// <p>The customer or external third party participant endpoint.</p>
     pub fn customer_endpoint(mut self, input: crate::types::EndpointInfo) -> Self {
         self.customer_endpoint = ::std::option::Option::Some(input);
         self
     }
-    /// <p></p>
+    /// <p>The customer or external third party participant endpoint.</p>
     pub fn set_customer_endpoint(mut self, input: ::std::option::Option<crate::types::EndpointInfo>) -> Self {
         self.customer_endpoint = input;
         self
     }
-    /// <p></p>
+    /// <p>The customer or external third party participant endpoint.</p>
     pub fn get_customer_endpoint(&self) -> &::std::option::Option<crate::types::EndpointInfo> {
         &self.customer_endpoint
     }
-    /// <p></p>
+    /// <p>The system endpoint. For <code>INBOUND</code>, this is the phone number or email address that the customer dialed. For <code>OUTBOUND</code> and <code>EXTERNAL_OUTBOUND</code>, this is the outbound caller ID number assigned to the outbound queue that is used to dial the customer. For callback, this shows up as Softphone for calls handled by agents with softphone.</p>
     pub fn system_endpoint(mut self, input: crate::types::EndpointInfo) -> Self {
         self.system_endpoint = ::std::option::Option::Some(input);
         self
     }
-    /// <p></p>
+    /// <p>The system endpoint. For <code>INBOUND</code>, this is the phone number or email address that the customer dialed. For <code>OUTBOUND</code> and <code>EXTERNAL_OUTBOUND</code>, this is the outbound caller ID number assigned to the outbound queue that is used to dial the customer. For callback, this shows up as Softphone for calls handled by agents with softphone.</p>
     pub fn set_system_endpoint(mut self, input: ::std::option::Option<crate::types::EndpointInfo>) -> Self {
         self.system_endpoint = input;
         self
     }
-    /// <p></p>
+    /// <p>The system endpoint. For <code>INBOUND</code>, this is the phone number or email address that the customer dialed. For <code>OUTBOUND</code> and <code>EXTERNAL_OUTBOUND</code>, this is the outbound caller ID number assigned to the outbound queue that is used to dial the customer. For callback, this shows up as Softphone for calls handled by agents with softphone.</p>
     pub fn get_system_endpoint(&self) -> &::std::option::Option<crate::types::EndpointInfo> {
         &self.system_endpoint
     }
@@ -798,17 +798,17 @@ impl ContactBuilder {
     pub fn get_disconnect_details(&self) -> &::std::option::Option<crate::types::DisconnectDetails> {
         &self.disconnect_details
     }
-    /// <p></p>
+    /// <p>List of additional email addresses for an email contact.</p>
     pub fn additional_email_recipients(mut self, input: crate::types::AdditionalEmailRecipients) -> Self {
         self.additional_email_recipients = ::std::option::Option::Some(input);
         self
     }
-    /// <p></p>
+    /// <p>List of additional email addresses for an email contact.</p>
     pub fn set_additional_email_recipients(mut self, input: ::std::option::Option<crate::types::AdditionalEmailRecipients>) -> Self {
         self.additional_email_recipients = input;
         self
     }
-    /// <p></p>
+    /// <p>List of additional email addresses for an email contact.</p>
     pub fn get_additional_email_recipients(&self) -> &::std::option::Option<crate::types::AdditionalEmailRecipients> {
         &self.additional_email_recipients
     }

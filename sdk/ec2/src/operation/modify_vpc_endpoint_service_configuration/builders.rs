@@ -22,7 +22,7 @@ impl crate::operation::modify_vpc_endpoint_service_configuration::builders::Modi
 }
 /// Fluent builder constructing a request to `ModifyVpcEndpointServiceConfiguration`.
 ///
-/// <p>Modifies the attributes of your VPC endpoint service configuration. You can change the Network Load Balancers or Gateway Load Balancers for your service, and you can specify whether acceptance is required for requests to connect to your endpoint service through an interface VPC endpoint.</p>
+/// <p>Modifies the attributes of the specified VPC endpoint service configuration.</p>
 /// <p>If you set or modify the private DNS name, you must prove that you own the private DNS domain name.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyVpcEndpointServiceConfigurationFluentBuilder {
@@ -168,17 +168,17 @@ impl ModifyVpcEndpointServiceConfigurationFluentBuilder {
     pub fn get_remove_private_dns_name(&self) -> &::std::option::Option<bool> {
         self.inner.get_remove_private_dns_name()
     }
-    /// <p>Indicates whether requests to create an endpoint to your service must be accepted.</p>
+    /// <p>Indicates whether requests to create an endpoint to the service must be accepted.</p>
     pub fn acceptance_required(mut self, input: bool) -> Self {
         self.inner = self.inner.acceptance_required(input);
         self
     }
-    /// <p>Indicates whether requests to create an endpoint to your service must be accepted.</p>
+    /// <p>Indicates whether requests to create an endpoint to the service must be accepted.</p>
     pub fn set_acceptance_required(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_acceptance_required(input);
         self
     }
-    /// <p>Indicates whether requests to create an endpoint to your service must be accepted.</p>
+    /// <p>Indicates whether requests to create an endpoint to the service must be accepted.</p>
     pub fn get_acceptance_required(&self) -> &::std::option::Option<bool> {
         self.inner.get_acceptance_required()
     }
@@ -187,17 +187,17 @@ impl ModifyVpcEndpointServiceConfigurationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_add_network_load_balancer_arns`](Self::set_add_network_load_balancer_arns).
     ///
-    /// <p>The Amazon Resource Names (ARNs) of Network Load Balancers to add to your service configuration.</p>
+    /// <p>The Amazon Resource Names (ARNs) of Network Load Balancers to add to the service configuration.</p>
     pub fn add_network_load_balancer_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.add_network_load_balancer_arns(input.into());
         self
     }
-    /// <p>The Amazon Resource Names (ARNs) of Network Load Balancers to add to your service configuration.</p>
+    /// <p>The Amazon Resource Names (ARNs) of Network Load Balancers to add to the service configuration.</p>
     pub fn set_add_network_load_balancer_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_add_network_load_balancer_arns(input);
         self
     }
-    /// <p>The Amazon Resource Names (ARNs) of Network Load Balancers to add to your service configuration.</p>
+    /// <p>The Amazon Resource Names (ARNs) of Network Load Balancers to add to the service configuration.</p>
     pub fn get_add_network_load_balancer_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_add_network_load_balancer_arns()
     }
@@ -206,17 +206,17 @@ impl ModifyVpcEndpointServiceConfigurationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_remove_network_load_balancer_arns`](Self::set_remove_network_load_balancer_arns).
     ///
-    /// <p>The Amazon Resource Names (ARNs) of Network Load Balancers to remove from your service configuration.</p>
+    /// <p>The Amazon Resource Names (ARNs) of Network Load Balancers to remove from the service configuration.</p>
     pub fn remove_network_load_balancer_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.remove_network_load_balancer_arns(input.into());
         self
     }
-    /// <p>The Amazon Resource Names (ARNs) of Network Load Balancers to remove from your service configuration.</p>
+    /// <p>The Amazon Resource Names (ARNs) of Network Load Balancers to remove from the service configuration.</p>
     pub fn set_remove_network_load_balancer_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_remove_network_load_balancer_arns(input);
         self
     }
-    /// <p>The Amazon Resource Names (ARNs) of Network Load Balancers to remove from your service configuration.</p>
+    /// <p>The Amazon Resource Names (ARNs) of Network Load Balancers to remove from the service configuration.</p>
     pub fn get_remove_network_load_balancer_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_remove_network_load_balancer_arns()
     }
@@ -225,17 +225,17 @@ impl ModifyVpcEndpointServiceConfigurationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_add_gateway_load_balancer_arns`](Self::set_add_gateway_load_balancer_arns).
     ///
-    /// <p>The Amazon Resource Names (ARNs) of Gateway Load Balancers to add to your service configuration.</p>
+    /// <p>The Amazon Resource Names (ARNs) of Gateway Load Balancers to add to the service configuration.</p>
     pub fn add_gateway_load_balancer_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.add_gateway_load_balancer_arns(input.into());
         self
     }
-    /// <p>The Amazon Resource Names (ARNs) of Gateway Load Balancers to add to your service configuration.</p>
+    /// <p>The Amazon Resource Names (ARNs) of Gateway Load Balancers to add to the service configuration.</p>
     pub fn set_add_gateway_load_balancer_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_add_gateway_load_balancer_arns(input);
         self
     }
-    /// <p>The Amazon Resource Names (ARNs) of Gateway Load Balancers to add to your service configuration.</p>
+    /// <p>The Amazon Resource Names (ARNs) of Gateway Load Balancers to add to the service configuration.</p>
     pub fn get_add_gateway_load_balancer_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_add_gateway_load_balancer_arns()
     }
@@ -244,17 +244,17 @@ impl ModifyVpcEndpointServiceConfigurationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_remove_gateway_load_balancer_arns`](Self::set_remove_gateway_load_balancer_arns).
     ///
-    /// <p>The Amazon Resource Names (ARNs) of Gateway Load Balancers to remove from your service configuration.</p>
+    /// <p>The Amazon Resource Names (ARNs) of Gateway Load Balancers to remove from the service configuration.</p>
     pub fn remove_gateway_load_balancer_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.remove_gateway_load_balancer_arns(input.into());
         self
     }
-    /// <p>The Amazon Resource Names (ARNs) of Gateway Load Balancers to remove from your service configuration.</p>
+    /// <p>The Amazon Resource Names (ARNs) of Gateway Load Balancers to remove from the service configuration.</p>
     pub fn set_remove_gateway_load_balancer_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_remove_gateway_load_balancer_arns(input);
         self
     }
-    /// <p>The Amazon Resource Names (ARNs) of Gateway Load Balancers to remove from your service configuration.</p>
+    /// <p>The Amazon Resource Names (ARNs) of Gateway Load Balancers to remove from the service configuration.</p>
     pub fn get_remove_gateway_load_balancer_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_remove_gateway_load_balancer_arns()
     }
@@ -263,17 +263,17 @@ impl ModifyVpcEndpointServiceConfigurationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_add_supported_ip_address_types`](Self::set_add_supported_ip_address_types).
     ///
-    /// <p>The IP address types to add to your service configuration.</p>
+    /// <p>The IP address types to add to the service configuration.</p>
     pub fn add_supported_ip_address_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.add_supported_ip_address_types(input.into());
         self
     }
-    /// <p>The IP address types to add to your service configuration.</p>
+    /// <p>The IP address types to add to the service configuration.</p>
     pub fn set_add_supported_ip_address_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_add_supported_ip_address_types(input);
         self
     }
-    /// <p>The IP address types to add to your service configuration.</p>
+    /// <p>The IP address types to add to the service configuration.</p>
     pub fn get_add_supported_ip_address_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_add_supported_ip_address_types()
     }
@@ -282,18 +282,56 @@ impl ModifyVpcEndpointServiceConfigurationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_remove_supported_ip_address_types`](Self::set_remove_supported_ip_address_types).
     ///
-    /// <p>The IP address types to remove from your service configuration.</p>
+    /// <p>The IP address types to remove from the service configuration.</p>
     pub fn remove_supported_ip_address_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.remove_supported_ip_address_types(input.into());
         self
     }
-    /// <p>The IP address types to remove from your service configuration.</p>
+    /// <p>The IP address types to remove from the service configuration.</p>
     pub fn set_remove_supported_ip_address_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_remove_supported_ip_address_types(input);
         self
     }
-    /// <p>The IP address types to remove from your service configuration.</p>
+    /// <p>The IP address types to remove from the service configuration.</p>
     pub fn get_remove_supported_ip_address_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_remove_supported_ip_address_types()
+    }
+    ///
+    /// Appends an item to `AddSupportedRegions`.
+    ///
+    /// To override the contents of this collection use [`set_add_supported_regions`](Self::set_add_supported_regions).
+    ///
+    /// <p>The supported Regions to add to the service configuration.</p>
+    pub fn add_supported_regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.add_supported_regions(input.into());
+        self
+    }
+    /// <p>The supported Regions to add to the service configuration.</p>
+    pub fn set_add_supported_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_add_supported_regions(input);
+        self
+    }
+    /// <p>The supported Regions to add to the service configuration.</p>
+    pub fn get_add_supported_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_add_supported_regions()
+    }
+    ///
+    /// Appends an item to `RemoveSupportedRegions`.
+    ///
+    /// To override the contents of this collection use [`set_remove_supported_regions`](Self::set_remove_supported_regions).
+    ///
+    /// <p>The supported Regions to remove from the service configuration.</p>
+    pub fn remove_supported_regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.remove_supported_regions(input.into());
+        self
+    }
+    /// <p>The supported Regions to remove from the service configuration.</p>
+    pub fn set_remove_supported_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_remove_supported_regions(input);
+        self
+    }
+    /// <p>The supported Regions to remove from the service configuration.</p>
+    pub fn get_remove_supported_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_remove_supported_regions()
     }
 }

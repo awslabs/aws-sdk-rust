@@ -10,7 +10,7 @@ pub enum ReferenceSummary {
     Date(crate::types::DateReference),
     /// <p>Information about a reference when the <code>referenceType</code> is <code>EMAIL</code>. Otherwise, null.</p>
     Email(crate::types::EmailReference),
-    /// <p></p>
+    /// <p>Information about the reference when the referenceType is <code>EMAIL_MESSAGE</code>. Otherwise, null.</p>
     EmailMessage(crate::types::EmailMessageReference),
     /// <p>Information about a reference when the <code>referenceType</code> is <code>NUMBER</code>. Otherwise, null.</p>
     Number(crate::types::NumberReference),

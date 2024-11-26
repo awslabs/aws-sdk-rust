@@ -6,12 +6,12 @@
 pub struct ServiceQuotaExceededException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>The reason for the exception.</p>
     pub reason: ::std::option::Option<crate::types::ServiceQuotaExceededExceptionReason>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl ServiceQuotaExceededException {
-    /// <p></p>
+    /// <p>The reason for the exception.</p>
     pub fn reason(&self) -> ::std::option::Option<&crate::types::ServiceQuotaExceededExceptionReason> {
         self.reason.as_ref()
     }
@@ -75,17 +75,17 @@ impl ServiceQuotaExceededExceptionBuilder {
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
-    /// <p></p>
+    /// <p>The reason for the exception.</p>
     pub fn reason(mut self, input: crate::types::ServiceQuotaExceededExceptionReason) -> Self {
         self.reason = ::std::option::Option::Some(input);
         self
     }
-    /// <p></p>
+    /// <p>The reason for the exception.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<crate::types::ServiceQuotaExceededExceptionReason>) -> Self {
         self.reason = input;
         self
     }
-    /// <p></p>
+    /// <p>The reason for the exception.</p>
     pub fn get_reason(&self) -> &::std::option::Option<crate::types::ServiceQuotaExceededExceptionReason> {
         &self.reason
     }

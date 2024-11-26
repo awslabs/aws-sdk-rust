@@ -18,6 +18,8 @@ pub struct ConnectionNotification {
     pub connection_events: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The state of the notification.</p>
     pub connection_notification_state: ::std::option::Option<crate::types::ConnectionNotificationState>,
+    /// <p>The Region for the endpoint service.</p>
+    pub service_region: ::std::option::Option<::std::string::String>,
 }
 impl ConnectionNotification {
     /// <p>The ID of the notification.</p>
@@ -50,6 +52,10 @@ impl ConnectionNotification {
     pub fn connection_notification_state(&self) -> ::std::option::Option<&crate::types::ConnectionNotificationState> {
         self.connection_notification_state.as_ref()
     }
+    /// <p>The Region for the endpoint service.</p>
+    pub fn service_region(&self) -> ::std::option::Option<&str> {
+        self.service_region.as_deref()
+    }
 }
 impl ConnectionNotification {
     /// Creates a new builder-style object to manufacture [`ConnectionNotification`](crate::types::ConnectionNotification).
@@ -69,6 +75,7 @@ pub struct ConnectionNotificationBuilder {
     pub(crate) connection_notification_arn: ::std::option::Option<::std::string::String>,
     pub(crate) connection_events: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) connection_notification_state: ::std::option::Option<crate::types::ConnectionNotificationState>,
+    pub(crate) service_region: ::std::option::Option<::std::string::String>,
 }
 impl ConnectionNotificationBuilder {
     /// <p>The ID of the notification.</p>
@@ -175,6 +182,20 @@ impl ConnectionNotificationBuilder {
     pub fn get_connection_notification_state(&self) -> &::std::option::Option<crate::types::ConnectionNotificationState> {
         &self.connection_notification_state
     }
+    /// <p>The Region for the endpoint service.</p>
+    pub fn service_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.service_region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Region for the endpoint service.</p>
+    pub fn set_service_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.service_region = input;
+        self
+    }
+    /// <p>The Region for the endpoint service.</p>
+    pub fn get_service_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_region
+    }
     /// Consumes the builder and constructs a [`ConnectionNotification`](crate::types::ConnectionNotification).
     pub fn build(self) -> crate::types::ConnectionNotification {
         crate::types::ConnectionNotification {
@@ -185,6 +206,7 @@ impl ConnectionNotificationBuilder {
             connection_notification_arn: self.connection_notification_arn,
             connection_events: self.connection_events,
             connection_notification_state: self.connection_notification_state,
+            service_region: self.service_region,
         }
     }
 }

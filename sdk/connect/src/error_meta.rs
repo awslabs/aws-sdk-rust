@@ -5,7 +5,7 @@
 pub enum Error {
     /// <p>You do not have sufficient permissions to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p></p>
+    /// <p>A conditional check failed.</p>
     ConditionalOperationFailedException(crate::types::error::ConditionalOperationFailedException),
     /// <p>Operation cannot be performed at this time as there is a conflict with another operation or contact state.</p>
     ConflictException(crate::types::error::ConflictException),
@@ -35,7 +35,7 @@ pub enum Error {
     MaximumResultReturnedException(crate::types::error::MaximumResultReturnedException),
     /// <p>The contact is not permitted.</p>
     OutboundContactNotPermittedException(crate::types::error::OutboundContactNotPermittedException),
-    /// <p>Thrown for analyzed content when requested OutputType was not enabled for a given contact. For example, if an OutputType.Raw was requested for a contact that had `RedactedOnly` Redaction policy set in Contact flow.</p>
+    /// <p>Thrown for analyzed content when requested OutputType was not enabled for a given contact. For example, if an OutputType.Raw was requested for a contact that had `RedactedOnly` Redaction policy set in the flow.</p>
     OutputTypeNotFoundException(crate::types::error::OutputTypeNotFoundException),
     /// <p>The property is not valid.</p>
     PropertyValidationException(crate::types::error::PropertyValidationException),

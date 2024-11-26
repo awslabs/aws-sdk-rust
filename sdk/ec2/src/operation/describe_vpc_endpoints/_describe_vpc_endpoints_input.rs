@@ -14,6 +14,8 @@ pub struct DescribeVpcEndpointsInput {
     /// <li>
     /// <p><code>service-name</code> - The name of the service.</p></li>
     /// <li>
+    /// <p><code>service-region</code> - The Region of the service.</p></li>
+    /// <li>
     /// <p><code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
@@ -56,6 +58,8 @@ impl DescribeVpcEndpointsInput {
     /// <p><code>ip-address-type</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).</p></li>
     /// <li>
     /// <p><code>service-name</code> - The name of the service.</p></li>
+    /// <li>
+    /// <p><code>service-region</code> - The Region of the service.</p></li>
     /// <li>
     /// <p><code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
@@ -153,6 +157,8 @@ impl DescribeVpcEndpointsInputBuilder {
     /// <li>
     /// <p><code>service-name</code> - The name of the service.</p></li>
     /// <li>
+    /// <p><code>service-region</code> - The Region of the service.</p></li>
+    /// <li>
     /// <p><code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
@@ -184,6 +190,8 @@ impl DescribeVpcEndpointsInputBuilder {
     /// <li>
     /// <p><code>service-name</code> - The name of the service.</p></li>
     /// <li>
+    /// <p><code>service-region</code> - The Region of the service.</p></li>
+    /// <li>
     /// <p><code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
@@ -212,6 +220,8 @@ impl DescribeVpcEndpointsInputBuilder {
     /// <p><code>ip-address-type</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).</p></li>
     /// <li>
     /// <p><code>service-name</code> - The name of the service.</p></li>
+    /// <li>
+    /// <p><code>service-region</code> - The Region of the service.</p></li>
     /// <li>
     /// <p><code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key

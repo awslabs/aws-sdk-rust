@@ -8,6 +8,8 @@ pub struct CardValue {
     pub card_id: ::std::string::String,
     /// <p>The value or result associated with the card.</p>
     pub value: ::std::string::String,
+    /// <p>The structure that describes how the current form card value is mutated. Only applies for form cards when multiple responses are allowed.</p>
+    pub submission_mutation: ::std::option::Option<crate::types::SubmissionMutation>,
 }
 impl CardValue {
     /// <p>The unique identifier of the card.</p>
@@ -19,6 +21,10 @@ impl CardValue {
     pub fn value(&self) -> &str {
         use std::ops::Deref;
         self.value.deref()
+    }
+    /// <p>The structure that describes how the current form card value is mutated. Only applies for form cards when multiple responses are allowed.</p>
+    pub fn submission_mutation(&self) -> ::std::option::Option<&crate::types::SubmissionMutation> {
+        self.submission_mutation.as_ref()
     }
 }
 impl CardValue {
@@ -34,6 +40,7 @@ impl CardValue {
 pub struct CardValueBuilder {
     pub(crate) card_id: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
+    pub(crate) submission_mutation: ::std::option::Option<crate::types::SubmissionMutation>,
 }
 impl CardValueBuilder {
     /// <p>The unique identifier of the card.</p>
@@ -66,6 +73,20 @@ impl CardValueBuilder {
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.value
     }
+    /// <p>The structure that describes how the current form card value is mutated. Only applies for form cards when multiple responses are allowed.</p>
+    pub fn submission_mutation(mut self, input: crate::types::SubmissionMutation) -> Self {
+        self.submission_mutation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The structure that describes how the current form card value is mutated. Only applies for form cards when multiple responses are allowed.</p>
+    pub fn set_submission_mutation(mut self, input: ::std::option::Option<crate::types::SubmissionMutation>) -> Self {
+        self.submission_mutation = input;
+        self
+    }
+    /// <p>The structure that describes how the current form card value is mutated. Only applies for form cards when multiple responses are allowed.</p>
+    pub fn get_submission_mutation(&self) -> &::std::option::Option<crate::types::SubmissionMutation> {
+        &self.submission_mutation
+    }
     /// Consumes the builder and constructs a [`CardValue`](crate::types::CardValue).
     /// This method will fail if any of the following fields are not set:
     /// - [`card_id`](crate::types::builders::CardValueBuilder::card_id)
@@ -84,6 +105,7 @@ impl CardValueBuilder {
                     "value was not specified but it is required when building CardValue",
                 )
             })?,
+            submission_mutation: self.submission_mutation,
         })
     }
 }

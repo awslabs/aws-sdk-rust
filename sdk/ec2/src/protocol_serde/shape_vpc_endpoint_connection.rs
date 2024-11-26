@@ -141,6 +141,19 @@ pub fn de_vpc_endpoint_connection(
                 builder = builder.set_tags(var_11);
             }
             ,
+            s if s.matches("vpcEndpointRegion") /* VpcEndpointRegion com.amazonaws.ec2#VpcEndpointConnection$VpcEndpointRegion */ =>  {
+                let var_12 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_vpc_endpoint_region(var_12);
+            }
+            ,
             _ => {}
         }
     }

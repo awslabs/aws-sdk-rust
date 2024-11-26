@@ -34,6 +34,10 @@ pub struct ServiceConfiguration {
     pub payer_responsibility: ::std::option::Option<crate::types::PayerResponsibility>,
     /// <p>The tags assigned to the service.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The supported Regions.</p>
+    pub supported_regions: ::std::option::Option<::std::vec::Vec<crate::types::SupportedRegionDetail>>,
+    /// <p>Indicates whether consumers can access the service from a Region other than the Region where the service is hosted.</p>
+    pub remote_access_enabled: ::std::option::Option<bool>,
 }
 impl ServiceConfiguration {
     /// <p>The type of service.</p>
@@ -110,6 +114,16 @@ impl ServiceConfiguration {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>The supported Regions.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_regions.is_none()`.
+    pub fn supported_regions(&self) -> &[crate::types::SupportedRegionDetail] {
+        self.supported_regions.as_deref().unwrap_or_default()
+    }
+    /// <p>Indicates whether consumers can access the service from a Region other than the Region where the service is hosted.</p>
+    pub fn remote_access_enabled(&self) -> ::std::option::Option<bool> {
+        self.remote_access_enabled
+    }
 }
 impl ServiceConfiguration {
     /// Creates a new builder-style object to manufacture [`ServiceConfiguration`](crate::types::ServiceConfiguration).
@@ -137,6 +151,8 @@ pub struct ServiceConfigurationBuilder {
     pub(crate) private_dns_name_configuration: ::std::option::Option<crate::types::PrivateDnsNameConfiguration>,
     pub(crate) payer_responsibility: ::std::option::Option<crate::types::PayerResponsibility>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) supported_regions: ::std::option::Option<::std::vec::Vec<crate::types::SupportedRegionDetail>>,
+    pub(crate) remote_access_enabled: ::std::option::Option<bool>,
 }
 impl ServiceConfigurationBuilder {
     /// Appends an item to `service_type`.
@@ -391,6 +407,40 @@ impl ServiceConfigurationBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// Appends an item to `supported_regions`.
+    ///
+    /// To override the contents of this collection use [`set_supported_regions`](Self::set_supported_regions).
+    ///
+    /// <p>The supported Regions.</p>
+    pub fn supported_regions(mut self, input: crate::types::SupportedRegionDetail) -> Self {
+        let mut v = self.supported_regions.unwrap_or_default();
+        v.push(input);
+        self.supported_regions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The supported Regions.</p>
+    pub fn set_supported_regions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SupportedRegionDetail>>) -> Self {
+        self.supported_regions = input;
+        self
+    }
+    /// <p>The supported Regions.</p>
+    pub fn get_supported_regions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SupportedRegionDetail>> {
+        &self.supported_regions
+    }
+    /// <p>Indicates whether consumers can access the service from a Region other than the Region where the service is hosted.</p>
+    pub fn remote_access_enabled(mut self, input: bool) -> Self {
+        self.remote_access_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether consumers can access the service from a Region other than the Region where the service is hosted.</p>
+    pub fn set_remote_access_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.remote_access_enabled = input;
+        self
+    }
+    /// <p>Indicates whether consumers can access the service from a Region other than the Region where the service is hosted.</p>
+    pub fn get_remote_access_enabled(&self) -> &::std::option::Option<bool> {
+        &self.remote_access_enabled
+    }
     /// Consumes the builder and constructs a [`ServiceConfiguration`](crate::types::ServiceConfiguration).
     pub fn build(self) -> crate::types::ServiceConfiguration {
         crate::types::ServiceConfiguration {
@@ -409,6 +459,8 @@ impl ServiceConfigurationBuilder {
             private_dns_name_configuration: self.private_dns_name_configuration,
             payer_responsibility: self.payer_responsibility,
             tags: self.tags,
+            supported_regions: self.supported_regions,
+            remote_access_enabled: self.remote_access_enabled,
         }
     }
 }

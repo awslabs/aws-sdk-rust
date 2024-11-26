@@ -4,19 +4,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAttachedFileInput {
-    /// <p>The unique identifier of the Connect instance.</p>
+    /// <p>The unique identifier of the Amazon Connect instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the attached file resource.</p>
     pub file_id: ::std::option::Option<::std::string::String>,
     /// <p>Optional override for the expiry of the pre-signed S3 URL in seconds. The default value is 300.</p>
     pub url_expiry_in_seconds: ::std::option::Option<i32>,
-    /// <p>The resource to which the attached file is (being) uploaded to. <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Cases</a> are the only current supported resource.</p><note>
+    /// <p>The resource to which the attached file is (being) uploaded to. The supported resources are <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cases.html">Cases</a> and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Email</a>.</p><note>
     /// <p>This value must be a valid ARN.</p>
     /// </note>
     pub associated_resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetAttachedFileInput {
-    /// <p>The unique identifier of the Connect instance.</p>
+    /// <p>The unique identifier of the Amazon Connect instance.</p>
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
@@ -28,7 +28,7 @@ impl GetAttachedFileInput {
     pub fn url_expiry_in_seconds(&self) -> ::std::option::Option<i32> {
         self.url_expiry_in_seconds
     }
-    /// <p>The resource to which the attached file is (being) uploaded to. <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Cases</a> are the only current supported resource.</p><note>
+    /// <p>The resource to which the attached file is (being) uploaded to. The supported resources are <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cases.html">Cases</a> and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Email</a>.</p><note>
     /// <p>This value must be a valid ARN.</p>
     /// </note>
     pub fn associated_resource_arn(&self) -> ::std::option::Option<&str> {
@@ -52,18 +52,18 @@ pub struct GetAttachedFileInputBuilder {
     pub(crate) associated_resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetAttachedFileInputBuilder {
-    /// <p>The unique identifier of the Connect instance.</p>
+    /// <p>The unique identifier of the Amazon Connect instance.</p>
     /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the Connect instance.</p>
+    /// <p>The unique identifier of the Amazon Connect instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
     }
-    /// <p>The unique identifier of the Connect instance.</p>
+    /// <p>The unique identifier of the Amazon Connect instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }
@@ -96,7 +96,7 @@ impl GetAttachedFileInputBuilder {
     pub fn get_url_expiry_in_seconds(&self) -> &::std::option::Option<i32> {
         &self.url_expiry_in_seconds
     }
-    /// <p>The resource to which the attached file is (being) uploaded to. <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Cases</a> are the only current supported resource.</p><note>
+    /// <p>The resource to which the attached file is (being) uploaded to. The supported resources are <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cases.html">Cases</a> and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Email</a>.</p><note>
     /// <p>This value must be a valid ARN.</p>
     /// </note>
     /// This field is required.
@@ -104,14 +104,14 @@ impl GetAttachedFileInputBuilder {
         self.associated_resource_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The resource to which the attached file is (being) uploaded to. <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Cases</a> are the only current supported resource.</p><note>
+    /// <p>The resource to which the attached file is (being) uploaded to. The supported resources are <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cases.html">Cases</a> and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Email</a>.</p><note>
     /// <p>This value must be a valid ARN.</p>
     /// </note>
     pub fn set_associated_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.associated_resource_arn = input;
         self
     }
-    /// <p>The resource to which the attached file is (being) uploaded to. <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Cases</a> are the only current supported resource.</p><note>
+    /// <p>The resource to which the attached file is (being) uploaded to. The supported resources are <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cases.html">Cases</a> and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Email</a>.</p><note>
     /// <p>This value must be a valid ARN.</p>
     /// </note>
     pub fn get_associated_resource_arn(&self) -> &::std::option::Option<::std::string::String> {

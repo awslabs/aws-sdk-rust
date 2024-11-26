@@ -183,6 +183,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetQAppReque
                     ));
                 }
                 query.push_kv("appId", &::aws_smithy_http::query::fmt_string(inner_1));
+                if let ::std::option::Option::Some(inner_2) = &_input.app_version {
+                    {
+                        query.push_kv("appVersion", ::aws_smithy_types::primitive::Encoder::from(*inner_2).encode());
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

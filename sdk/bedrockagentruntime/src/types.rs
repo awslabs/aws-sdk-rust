@@ -129,6 +129,10 @@ pub use crate::types::_inline_agent_trace_part::InlineAgentTracePart;
 
 pub use crate::types::_trace::Trace;
 
+pub use crate::types::_custom_orchestration_trace::CustomOrchestrationTrace;
+
+pub use crate::types::_custom_orchestration_trace_event::CustomOrchestrationTraceEvent;
+
 pub use crate::types::_failure_trace::FailureTrace;
 
 pub use crate::types::_post_processing_trace::PostProcessingTrace;
@@ -309,6 +313,8 @@ pub use crate::types::_trace_part::TracePart;
 
 pub use crate::types::_payload_part::PayloadPart;
 
+pub use crate::types::_streaming_configurations::StreamingConfigurations;
+
 pub use crate::types::_session_state::SessionState;
 
 pub use crate::types::_knowledge_base_configuration::KnowledgeBaseConfiguration;
@@ -392,6 +398,10 @@ mod _content_body;
 mod _creation_mode;
 
 mod _custom_control_method;
+
+mod _custom_orchestration_trace;
+
+mod _custom_orchestration_trace_event;
 
 mod _execution_type;
 
@@ -684,6 +694,8 @@ mod _session_state;
 mod _source;
 
 mod _span;
+
+mod _streaming_configurations;
 
 mod _text_inference_config;
 

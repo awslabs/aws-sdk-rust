@@ -219,6 +219,25 @@ impl CreateVpcEndpointServiceConfigurationFluentBuilder {
     pub fn get_supported_ip_address_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_supported_ip_address_types()
     }
+    ///
+    /// Appends an item to `SupportedRegions`.
+    ///
+    /// To override the contents of this collection use [`set_supported_regions`](Self::set_supported_regions).
+    ///
+    /// <p>The Regions from which service consumers can access the service.</p>
+    pub fn supported_regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.supported_regions(input.into());
+        self
+    }
+    /// <p>The Regions from which service consumers can access the service.</p>
+    pub fn set_supported_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_supported_regions(input);
+        self
+    }
+    /// <p>The Regions from which service consumers can access the service.</p>
+    pub fn get_supported_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_supported_regions()
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">How to ensure idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());

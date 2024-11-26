@@ -292,6 +292,32 @@ impl From<crate::operation::create_library_item::CreateLibraryItemError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_presigned_url::CreatePresignedUrlError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_presigned_url::CreatePresignedUrlError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_presigned_url::CreatePresignedUrlError> for Error {
+    fn from(err: crate::operation::create_presigned_url::CreatePresignedUrlError) -> Self {
+        match err {
+            crate::operation::create_presigned_url::CreatePresignedUrlError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_presigned_url::CreatePresignedUrlError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_presigned_url::CreatePresignedUrlError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_presigned_url::CreatePresignedUrlError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::create_presigned_url::CreatePresignedUrlError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_presigned_url::CreatePresignedUrlError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_q_app::CreateQAppError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -377,6 +403,48 @@ impl From<crate::operation::delete_q_app::DeleteQAppError> for Error {
             crate::operation::delete_q_app::DeleteQAppError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::delete_q_app::DeleteQAppError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_q_app::DeleteQAppError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_q_app_permissions::DescribeQAppPermissionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_q_app_permissions::DescribeQAppPermissionsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_q_app_permissions::DescribeQAppPermissionsError> for Error {
+    fn from(err: crate::operation::describe_q_app_permissions::DescribeQAppPermissionsError) -> Self {
+        match err {
+            crate::operation::describe_q_app_permissions::DescribeQAppPermissionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_q_app_permissions::DescribeQAppPermissionsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::describe_q_app_permissions::DescribeQAppPermissionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_q_app_permissions::DescribeQAppPermissionsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_q_app_permissions::DescribeQAppPermissionsError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::describe_q_app_permissions::DescribeQAppPermissionsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::describe_q_app_permissions::DescribeQAppPermissionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -475,6 +543,47 @@ impl From<crate::operation::disassociate_q_app_from_user::DisassociateQAppFromUs
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::export_q_app_session_data::ExportQAppSessionDataError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::export_q_app_session_data::ExportQAppSessionDataError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::export_q_app_session_data::ExportQAppSessionDataError> for Error {
+    fn from(err: crate::operation::export_q_app_session_data::ExportQAppSessionDataError) -> Self {
+        match err {
+            crate::operation::export_q_app_session_data::ExportQAppSessionDataError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::export_q_app_session_data::ExportQAppSessionDataError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::export_q_app_session_data::ExportQAppSessionDataError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::export_q_app_session_data::ExportQAppSessionDataError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::export_q_app_session_data::ExportQAppSessionDataError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::export_q_app_session_data::ExportQAppSessionDataError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::export_q_app_session_data::ExportQAppSessionDataError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::export_q_app_session_data::ExportQAppSessionDataError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::export_q_app_session_data::ExportQAppSessionDataError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_library_item::GetLibraryItemError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -556,6 +665,51 @@ impl From<crate::operation::get_q_app_session::GetQAppSessionError> for Error {
             crate::operation::get_q_app_session::GetQAppSessionError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::get_q_app_session::GetQAppSessionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_q_app_session::GetQAppSessionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_q_app_session_metadata::GetQAppSessionMetadataError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_q_app_session_metadata::GetQAppSessionMetadataError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_q_app_session_metadata::GetQAppSessionMetadataError> for Error {
+    fn from(err: crate::operation::get_q_app_session_metadata::GetQAppSessionMetadataError) -> Self {
+        match err {
+            crate::operation::get_q_app_session_metadata::GetQAppSessionMetadataError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_q_app_session_metadata::GetQAppSessionMetadataError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_q_app_session_metadata::GetQAppSessionMetadataError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_q_app_session_metadata::GetQAppSessionMetadataError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::get_q_app_session_metadata::GetQAppSessionMetadataError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_q_app_session_metadata::GetQAppSessionMetadataError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::get_q_app_session_metadata::GetQAppSessionMetadataError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_q_app_session_metadata::GetQAppSessionMetadataError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -667,6 +821,40 @@ impl From<crate::operation::list_q_apps::ListQAppsError> for Error {
             crate::operation::list_q_apps::ListQAppsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::list_q_apps::ListQAppsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_q_apps::ListQAppsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_q_app_session_data::ListQAppSessionDataError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_q_app_session_data::ListQAppSessionDataError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_q_app_session_data::ListQAppSessionDataError> for Error {
+    fn from(err: crate::operation::list_q_app_session_data::ListQAppSessionDataError) -> Self {
+        match err {
+            crate::operation::list_q_app_session_data::ListQAppSessionDataError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_q_app_session_data::ListQAppSessionDataError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_q_app_session_data::ListQAppSessionDataError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_q_app_session_data::ListQAppSessionDataError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::list_q_app_session_data::ListQAppSessionDataError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_q_app_session_data::ListQAppSessionDataError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::list_q_app_session_data::ListQAppSessionDataError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_q_app_session_data::ListQAppSessionDataError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -942,6 +1130,43 @@ impl From<crate::operation::update_q_app::UpdateQAppError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_q_app_permissions::UpdateQAppPermissionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_q_app_permissions::UpdateQAppPermissionsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_q_app_permissions::UpdateQAppPermissionsError> for Error {
+    fn from(err: crate::operation::update_q_app_permissions::UpdateQAppPermissionsError) -> Self {
+        match err {
+            crate::operation::update_q_app_permissions::UpdateQAppPermissionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_q_app_permissions::UpdateQAppPermissionsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_q_app_permissions::UpdateQAppPermissionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_q_app_permissions::UpdateQAppPermissionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_q_app_permissions::UpdateQAppPermissionsError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::update_q_app_permissions::UpdateQAppPermissionsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_q_app_permissions::UpdateQAppPermissionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_q_app_session::UpdateQAppSessionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -971,6 +1196,51 @@ impl From<crate::operation::update_q_app_session::UpdateQAppSessionError> for Er
             crate::operation::update_q_app_session::UpdateQAppSessionError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::update_q_app_session::UpdateQAppSessionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_q_app_session::UpdateQAppSessionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_q_app_session_metadata::UpdateQAppSessionMetadataError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_q_app_session_metadata::UpdateQAppSessionMetadataError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_q_app_session_metadata::UpdateQAppSessionMetadataError> for Error {
+    fn from(err: crate::operation::update_q_app_session_metadata::UpdateQAppSessionMetadataError) -> Self {
+        match err {
+            crate::operation::update_q_app_session_metadata::UpdateQAppSessionMetadataError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_q_app_session_metadata::UpdateQAppSessionMetadataError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_q_app_session_metadata::UpdateQAppSessionMetadataError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_q_app_session_metadata::UpdateQAppSessionMetadataError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::update_q_app_session_metadata::UpdateQAppSessionMetadataError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_q_app_session_metadata::UpdateQAppSessionMetadataError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::update_q_app_session_metadata::UpdateQAppSessionMetadataError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_q_app_session_metadata::UpdateQAppSessionMetadataError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

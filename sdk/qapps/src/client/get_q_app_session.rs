@@ -8,8 +8,12 @@ impl super::Client {
     /// - On success, responds with [`GetQAppSessionOutput`](crate::operation::get_q_app_session::GetQAppSessionOutput) with field(s):
     ///   - [`session_id(String)`](crate::operation::get_q_app_session::GetQAppSessionOutput::session_id): <p>The unique identifier of the Q App session.</p>
     ///   - [`session_arn(String)`](crate::operation::get_q_app_session::GetQAppSessionOutput::session_arn): <p>The Amazon Resource Name (ARN) of the Q App session.</p>
+    ///   - [`session_name(Option<String>)`](crate::operation::get_q_app_session::GetQAppSessionOutput::session_name): <p>The name of the Q App session.</p>
+    ///   - [`app_version(Option<i32>)`](crate::operation::get_q_app_session::GetQAppSessionOutput::app_version): <p>The version of the Q App used for the session.</p>
+    ///   - [`latest_published_app_version(Option<i32>)`](crate::operation::get_q_app_session::GetQAppSessionOutput::latest_published_app_version): <p>The latest published version of the Q App used for the session.</p>
     ///   - [`status(ExecutionStatus)`](crate::operation::get_q_app_session::GetQAppSessionOutput::status): <p>The current status of the Q App session.</p>
     ///   - [`card_status(HashMap::<String, CardStatus>)`](crate::operation::get_q_app_session::GetQAppSessionOutput::card_status): <p>The current status for each card in the Q App session.</p>
+    ///   - [`user_is_host(Option<bool>)`](crate::operation::get_q_app_session::GetQAppSessionOutput::user_is_host): <p>Indicates whether the current user is the owner of the Q App data collection session.</p>
     /// - On failure, responds with [`SdkError<GetQAppSessionError>`](crate::operation::get_q_app_session::GetQAppSessionError)
     pub fn get_q_app_session(&self) -> crate::operation::get_q_app_session::builders::GetQAppSessionFluentBuilder {
         crate::operation::get_q_app_session::builders::GetQAppSessionFluentBuilder::new(self.handle.clone())

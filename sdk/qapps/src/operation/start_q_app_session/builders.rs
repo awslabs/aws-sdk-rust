@@ -171,6 +171,20 @@ impl StartQAppSessionFluentBuilder {
     pub fn get_initial_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CardValue>> {
         self.inner.get_initial_values()
     }
+    /// <p>The unique identifier of the a Q App session.</p>
+    pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.session_id(input.into());
+        self
+    }
+    /// <p>The unique identifier of the a Q App session.</p>
+    pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_session_id(input);
+        self
+    }
+    /// <p>The unique identifier of the a Q App session.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_session_id()
+    }
     ///
     /// Adds a key-value pair to `tags`.
     ///

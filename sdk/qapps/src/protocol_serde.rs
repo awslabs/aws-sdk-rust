@@ -35,15 +35,21 @@ pub(crate) mod shape_batch_update_category;
 
 pub(crate) mod shape_create_library_item;
 
+pub(crate) mod shape_create_presigned_url;
+
 pub(crate) mod shape_create_q_app;
 
 pub(crate) mod shape_delete_library_item;
 
 pub(crate) mod shape_delete_q_app;
 
+pub(crate) mod shape_describe_q_app_permissions;
+
 pub(crate) mod shape_disassociate_library_item_review;
 
 pub(crate) mod shape_disassociate_q_app_from_user;
+
+pub(crate) mod shape_export_q_app_session_data;
 
 pub(crate) mod shape_get_library_item;
 
@@ -51,11 +57,15 @@ pub(crate) mod shape_get_q_app;
 
 pub(crate) mod shape_get_q_app_session;
 
+pub(crate) mod shape_get_q_app_session_metadata;
+
 pub(crate) mod shape_import_document;
 
 pub(crate) mod shape_list_categories;
 
 pub(crate) mod shape_list_library_items;
+
+pub(crate) mod shape_list_q_app_session_data;
 
 pub(crate) mod shape_list_q_apps;
 
@@ -77,7 +87,11 @@ pub(crate) mod shape_update_library_item_metadata;
 
 pub(crate) mod shape_update_q_app;
 
+pub(crate) mod shape_update_q_app_permissions;
+
 pub(crate) mod shape_update_q_app_session;
+
+pub(crate) mod shape_update_q_app_session_metadata;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -105,6 +119,8 @@ pub(crate) mod shape_content_too_large_exception;
 
 pub(crate) mod shape_create_library_item_input;
 
+pub(crate) mod shape_create_presigned_url_input;
+
 pub(crate) mod shape_create_q_app_input;
 
 pub(crate) mod shape_delete_library_item_input;
@@ -114,6 +130,8 @@ pub(crate) mod shape_delete_q_app_input;
 pub(crate) mod shape_disassociate_library_item_review_input;
 
 pub(crate) mod shape_disassociate_q_app_from_user_input;
+
+pub(crate) mod shape_export_q_app_session_data_input;
 
 pub(crate) mod shape_import_document_input;
 
@@ -141,7 +159,11 @@ pub(crate) mod shape_update_library_item_metadata_input;
 
 pub(crate) mod shape_update_q_app_input;
 
+pub(crate) mod shape_update_q_app_permissions_input;
+
 pub(crate) mod shape_update_q_app_session_input;
+
+pub(crate) mod shape_update_q_app_session_metadata_input;
 
 pub(crate) mod shape_validation_exception;
 
@@ -165,9 +187,19 @@ pub(crate) mod shape_category_list;
 
 pub(crate) mod shape_library_item_list;
 
+pub(crate) mod shape_permission_input;
+
+pub(crate) mod shape_permissions_output_list;
+
 pub(crate) mod shape_predict_app_definition;
 
 pub(crate) mod shape_predict_q_app_input_options;
+
+pub(crate) mod shape_presigned_url_fields;
+
+pub(crate) mod shape_q_app_session_data_list;
+
+pub(crate) mod shape_session_sharing_configuration;
 
 pub(crate) mod shape_tags;
 
@@ -185,6 +217,12 @@ pub(crate) mod shape_conversation_message;
 
 pub(crate) mod shape_library_item_member;
 
+pub(crate) mod shape_permission_output;
+
+pub(crate) mod shape_q_app_session_data;
+
+pub(crate) mod shape_submission_mutation;
+
 pub(crate) mod shape_user_app_item;
 
 pub(crate) mod shape_card;
@@ -193,25 +231,41 @@ pub(crate) mod shape_card_list;
 
 pub(crate) mod shape_file_upload_card_input;
 
+pub(crate) mod shape_form_input_card_input;
+
+pub(crate) mod shape_principal_output;
+
 pub(crate) mod shape_q_plugin_card_input;
 
 pub(crate) mod shape_q_query_card_input;
 
+pub(crate) mod shape_submission_list;
+
 pub(crate) mod shape_text_input_card_input;
+
+pub(crate) mod shape_user;
 
 pub(crate) mod shape_attribute_filter;
 
 pub(crate) mod shape_file_upload_card;
 
+pub(crate) mod shape_form_input_card;
+
+pub(crate) mod shape_form_input_card_metadata;
+
 pub(crate) mod shape_q_plugin_card;
 
 pub(crate) mod shape_q_query_card;
+
+pub(crate) mod shape_submission;
 
 pub(crate) mod shape_text_input_card;
 
 pub(crate) mod shape_dependency_list;
 
 pub(crate) mod shape_document_attribute;
+
+pub(crate) mod shape_memory_reference_list;
 
 pub(crate) mod shape_attribute_filters;
 

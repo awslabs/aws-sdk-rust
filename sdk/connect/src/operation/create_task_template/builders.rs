@@ -164,17 +164,17 @@ impl CreateTaskTemplateFluentBuilder {
     pub fn get_contact_flow_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_contact_flow_id()
     }
-    /// <p></p>
+    /// <p>The ContactFlowId for the flow that will be run if this template is used to create a self-assigned task.</p>
     pub fn self_assign_flow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.self_assign_flow_id(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The ContactFlowId for the flow that will be run if this template is used to create a self-assigned task.</p>
     pub fn set_self_assign_flow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_self_assign_flow_id(input);
         self
     }
-    /// <p></p>
+    /// <p>The ContactFlowId for the flow that will be run if this template is used to create a self-assigned task.</p>
     pub fn get_self_assign_flow_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_self_assign_flow_id()
     }

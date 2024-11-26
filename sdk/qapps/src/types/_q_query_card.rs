@@ -18,6 +18,8 @@ pub struct QQueryCard {
     pub output_source: crate::types::CardOutputSource,
     /// <p>The Amazon Q Business filters applied in this query card when resolving data sources</p>
     pub attribute_filter: ::std::option::Option<crate::types::AttributeFilter>,
+    /// <p>Any dependencies for the query card, where the dependencies are references to the collected responses.</p>
+    pub memory_references: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl QQueryCard {
     /// <p>The unique identifier of the query card.</p>
@@ -52,6 +54,12 @@ impl QQueryCard {
     pub fn attribute_filter(&self) -> ::std::option::Option<&crate::types::AttributeFilter> {
         self.attribute_filter.as_ref()
     }
+    /// <p>Any dependencies for the query card, where the dependencies are references to the collected responses.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.memory_references.is_none()`.
+    pub fn memory_references(&self) -> &[::std::string::String] {
+        self.memory_references.as_deref().unwrap_or_default()
+    }
 }
 impl QQueryCard {
     /// Creates a new builder-style object to manufacture [`QQueryCard`](crate::types::QQueryCard).
@@ -71,6 +79,7 @@ pub struct QQueryCardBuilder {
     pub(crate) prompt: ::std::option::Option<::std::string::String>,
     pub(crate) output_source: ::std::option::Option<crate::types::CardOutputSource>,
     pub(crate) attribute_filter: ::std::option::Option<crate::types::AttributeFilter>,
+    pub(crate) memory_references: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl QQueryCardBuilder {
     /// <p>The unique identifier of the query card.</p>
@@ -182,6 +191,26 @@ impl QQueryCardBuilder {
     pub fn get_attribute_filter(&self) -> &::std::option::Option<crate::types::AttributeFilter> {
         &self.attribute_filter
     }
+    /// Appends an item to `memory_references`.
+    ///
+    /// To override the contents of this collection use [`set_memory_references`](Self::set_memory_references).
+    ///
+    /// <p>Any dependencies for the query card, where the dependencies are references to the collected responses.</p>
+    pub fn memory_references(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.memory_references.unwrap_or_default();
+        v.push(input.into());
+        self.memory_references = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Any dependencies for the query card, where the dependencies are references to the collected responses.</p>
+    pub fn set_memory_references(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.memory_references = input;
+        self
+    }
+    /// <p>Any dependencies for the query card, where the dependencies are references to the collected responses.</p>
+    pub fn get_memory_references(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.memory_references
+    }
     /// Consumes the builder and constructs a [`QQueryCard`](crate::types::QQueryCard).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::QQueryCardBuilder::id)
@@ -229,6 +258,7 @@ impl QQueryCardBuilder {
                 )
             })?,
             attribute_filter: self.attribute_filter,
+            memory_references: self.memory_references,
         })
     }
 }

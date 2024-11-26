@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateEmailAddressMetadataOutput {
-    /// <p></p>
+    /// <p>The identifier of the email address.</p>
     pub email_address_id: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>The Amazon Resource Name (ARN) of the email address.</p>
     pub email_address_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateEmailAddressMetadataOutput {
-    /// <p></p>
+    /// <p>The identifier of the email address.</p>
     pub fn email_address_id(&self) -> ::std::option::Option<&str> {
         self.email_address_id.as_deref()
     }
-    /// <p></p>
+    /// <p>The Amazon Resource Name (ARN) of the email address.</p>
     pub fn email_address_arn(&self) -> ::std::option::Option<&str> {
         self.email_address_arn.as_deref()
     }
@@ -40,31 +40,31 @@ pub struct UpdateEmailAddressMetadataOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateEmailAddressMetadataOutputBuilder {
-    /// <p></p>
+    /// <p>The identifier of the email address.</p>
     pub fn email_address_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_address_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The identifier of the email address.</p>
     pub fn set_email_address_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email_address_id = input;
         self
     }
-    /// <p></p>
+    /// <p>The identifier of the email address.</p>
     pub fn get_email_address_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.email_address_id
     }
-    /// <p></p>
+    /// <p>The Amazon Resource Name (ARN) of the email address.</p>
     pub fn email_address_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_address_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The Amazon Resource Name (ARN) of the email address.</p>
     pub fn set_email_address_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email_address_arn = input;
         self
     }
-    /// <p></p>
+    /// <p>The Amazon Resource Name (ARN) of the email address.</p>
     pub fn get_email_address_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.email_address_arn
     }

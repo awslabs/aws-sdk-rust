@@ -36,6 +36,9 @@ pub struct CopySnapshotInput {
     pub source_snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags to apply to the new snapshot.</p>
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    /// <p>Specify a completion duration, in 15 minute increments, to initiate a time-based snapshot copy. Time-based snapshot copy operations complete within the specified duration. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/time-based-copies.html"> Time-based copies</a>.</p>
+    /// <p>If you do not specify a value, the snapshot copy operation is completed on a best-effort basis.</p>
+    pub completion_duration_minutes: ::std::option::Option<i32>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
@@ -93,6 +96,11 @@ impl CopySnapshotInput {
     pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
         self.tag_specifications.as_deref().unwrap_or_default()
     }
+    /// <p>Specify a completion duration, in 15 minute increments, to initiate a time-based snapshot copy. Time-based snapshot copy operations complete within the specified duration. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/time-based-copies.html"> Time-based copies</a>.</p>
+    /// <p>If you do not specify a value, the snapshot copy operation is completed on a best-effort basis.</p>
+    pub fn completion_duration_minutes(&self) -> ::std::option::Option<i32> {
+        self.completion_duration_minutes
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
@@ -110,6 +118,7 @@ impl ::std::fmt::Debug for CopySnapshotInput {
         formatter.field("source_region", &self.source_region);
         formatter.field("source_snapshot_id", &self.source_snapshot_id);
         formatter.field("tag_specifications", &self.tag_specifications);
+        formatter.field("completion_duration_minutes", &self.completion_duration_minutes);
         formatter.field("dry_run", &self.dry_run);
         formatter.finish()
     }
@@ -134,6 +143,7 @@ pub struct CopySnapshotInputBuilder {
     pub(crate) source_region: ::std::option::Option<::std::string::String>,
     pub(crate) source_snapshot_id: ::std::option::Option<::std::string::String>,
     pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) completion_duration_minutes: ::std::option::Option<i32>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl CopySnapshotInputBuilder {
@@ -316,6 +326,23 @@ impl CopySnapshotInputBuilder {
     pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
+    /// <p>Specify a completion duration, in 15 minute increments, to initiate a time-based snapshot copy. Time-based snapshot copy operations complete within the specified duration. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/time-based-copies.html"> Time-based copies</a>.</p>
+    /// <p>If you do not specify a value, the snapshot copy operation is completed on a best-effort basis.</p>
+    pub fn completion_duration_minutes(mut self, input: i32) -> Self {
+        self.completion_duration_minutes = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specify a completion duration, in 15 minute increments, to initiate a time-based snapshot copy. Time-based snapshot copy operations complete within the specified duration. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/time-based-copies.html"> Time-based copies</a>.</p>
+    /// <p>If you do not specify a value, the snapshot copy operation is completed on a best-effort basis.</p>
+    pub fn set_completion_duration_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.completion_duration_minutes = input;
+        self
+    }
+    /// <p>Specify a completion duration, in 15 minute increments, to initiate a time-based snapshot copy. Time-based snapshot copy operations complete within the specified duration. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/time-based-copies.html"> Time-based copies</a>.</p>
+    /// <p>If you do not specify a value, the snapshot copy operation is completed on a best-effort basis.</p>
+    pub fn get_completion_duration_minutes(&self) -> &::std::option::Option<i32> {
+        &self.completion_duration_minutes
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -344,6 +371,7 @@ impl CopySnapshotInputBuilder {
             source_region: self.source_region,
             source_snapshot_id: self.source_snapshot_id,
             tag_specifications: self.tag_specifications,
+            completion_duration_minutes: self.completion_duration_minutes,
             dry_run: self.dry_run,
         })
     }
@@ -360,6 +388,7 @@ impl ::std::fmt::Debug for CopySnapshotInputBuilder {
         formatter.field("source_region", &self.source_region);
         formatter.field("source_snapshot_id", &self.source_snapshot_id);
         formatter.field("tag_specifications", &self.tag_specifications);
+        formatter.field("completion_duration_minutes", &self.completion_duration_minutes);
         formatter.field("dry_run", &self.dry_run);
         formatter.finish()
     }

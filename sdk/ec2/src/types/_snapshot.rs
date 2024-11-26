@@ -16,6 +16,24 @@ pub struct Snapshot {
     pub restore_expiry_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Reserved for future use.</p>
     pub sse_type: ::std::option::Option<crate::types::SseType>,
+    /// <note>
+    /// <p>Only for snapshot copies.</p>
+    /// </note>
+    /// <p>Indicates whether the snapshot copy was created with a standard or time-based snapshot copy operation. Time-based snapshot copy operations complete within the completion duration specified in the request. Standard snapshot copy operations are completed on a best-effort basis.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>standard</code> - The snapshot copy was created with a standard snapshot copy operation.</p></li>
+    /// <li>
+    /// <p><code>time-based</code> - The snapshot copy was created with a time-based snapshot copy operation.</p></li>
+    /// </ul>
+    pub transfer_type: ::std::option::Option<crate::types::TransferType>,
+    /// <note>
+    /// <p>Only for snapshot copies created with time-based snapshot copy operations.</p>
+    /// </note>
+    /// <p>The completion duration requested for the time-based snapshot copy operation.</p>
+    pub completion_duration_minutes: ::std::option::Option<i32>,
+    /// <p>The time stamp when the snapshot was completed.</p>
+    pub completion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ID of the snapshot. Each snapshot receives a unique identifier when it is created.</p>
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the volume that was used to create the snapshot. Snapshots created by the <code>CopySnapshot</code> action have an arbitrary volume ID that should not be used for any purpose.</p>
@@ -67,6 +85,30 @@ impl Snapshot {
     /// <p>Reserved for future use.</p>
     pub fn sse_type(&self) -> ::std::option::Option<&crate::types::SseType> {
         self.sse_type.as_ref()
+    }
+    /// <note>
+    /// <p>Only for snapshot copies.</p>
+    /// </note>
+    /// <p>Indicates whether the snapshot copy was created with a standard or time-based snapshot copy operation. Time-based snapshot copy operations complete within the completion duration specified in the request. Standard snapshot copy operations are completed on a best-effort basis.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>standard</code> - The snapshot copy was created with a standard snapshot copy operation.</p></li>
+    /// <li>
+    /// <p><code>time-based</code> - The snapshot copy was created with a time-based snapshot copy operation.</p></li>
+    /// </ul>
+    pub fn transfer_type(&self) -> ::std::option::Option<&crate::types::TransferType> {
+        self.transfer_type.as_ref()
+    }
+    /// <note>
+    /// <p>Only for snapshot copies created with time-based snapshot copy operations.</p>
+    /// </note>
+    /// <p>The completion duration requested for the time-based snapshot copy operation.</p>
+    pub fn completion_duration_minutes(&self) -> ::std::option::Option<i32> {
+        self.completion_duration_minutes
+    }
+    /// <p>The time stamp when the snapshot was completed.</p>
+    pub fn completion_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.completion_time.as_ref()
     }
     /// <p>The ID of the snapshot. Each snapshot receives a unique identifier when it is created.</p>
     pub fn snapshot_id(&self) -> ::std::option::Option<&str> {
@@ -134,6 +176,9 @@ pub struct SnapshotBuilder {
     pub(crate) storage_tier: ::std::option::Option<crate::types::StorageTier>,
     pub(crate) restore_expiry_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) sse_type: ::std::option::Option<crate::types::SseType>,
+    pub(crate) transfer_type: ::std::option::Option<crate::types::TransferType>,
+    pub(crate) completion_duration_minutes: ::std::option::Option<i32>,
+    pub(crate) completion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
     pub(crate) volume_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::SnapshotState>,
@@ -237,6 +282,84 @@ impl SnapshotBuilder {
     /// <p>Reserved for future use.</p>
     pub fn get_sse_type(&self) -> &::std::option::Option<crate::types::SseType> {
         &self.sse_type
+    }
+    /// <note>
+    /// <p>Only for snapshot copies.</p>
+    /// </note>
+    /// <p>Indicates whether the snapshot copy was created with a standard or time-based snapshot copy operation. Time-based snapshot copy operations complete within the completion duration specified in the request. Standard snapshot copy operations are completed on a best-effort basis.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>standard</code> - The snapshot copy was created with a standard snapshot copy operation.</p></li>
+    /// <li>
+    /// <p><code>time-based</code> - The snapshot copy was created with a time-based snapshot copy operation.</p></li>
+    /// </ul>
+    pub fn transfer_type(mut self, input: crate::types::TransferType) -> Self {
+        self.transfer_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <note>
+    /// <p>Only for snapshot copies.</p>
+    /// </note>
+    /// <p>Indicates whether the snapshot copy was created with a standard or time-based snapshot copy operation. Time-based snapshot copy operations complete within the completion duration specified in the request. Standard snapshot copy operations are completed on a best-effort basis.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>standard</code> - The snapshot copy was created with a standard snapshot copy operation.</p></li>
+    /// <li>
+    /// <p><code>time-based</code> - The snapshot copy was created with a time-based snapshot copy operation.</p></li>
+    /// </ul>
+    pub fn set_transfer_type(mut self, input: ::std::option::Option<crate::types::TransferType>) -> Self {
+        self.transfer_type = input;
+        self
+    }
+    /// <note>
+    /// <p>Only for snapshot copies.</p>
+    /// </note>
+    /// <p>Indicates whether the snapshot copy was created with a standard or time-based snapshot copy operation. Time-based snapshot copy operations complete within the completion duration specified in the request. Standard snapshot copy operations are completed on a best-effort basis.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>standard</code> - The snapshot copy was created with a standard snapshot copy operation.</p></li>
+    /// <li>
+    /// <p><code>time-based</code> - The snapshot copy was created with a time-based snapshot copy operation.</p></li>
+    /// </ul>
+    pub fn get_transfer_type(&self) -> &::std::option::Option<crate::types::TransferType> {
+        &self.transfer_type
+    }
+    /// <note>
+    /// <p>Only for snapshot copies created with time-based snapshot copy operations.</p>
+    /// </note>
+    /// <p>The completion duration requested for the time-based snapshot copy operation.</p>
+    pub fn completion_duration_minutes(mut self, input: i32) -> Self {
+        self.completion_duration_minutes = ::std::option::Option::Some(input);
+        self
+    }
+    /// <note>
+    /// <p>Only for snapshot copies created with time-based snapshot copy operations.</p>
+    /// </note>
+    /// <p>The completion duration requested for the time-based snapshot copy operation.</p>
+    pub fn set_completion_duration_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.completion_duration_minutes = input;
+        self
+    }
+    /// <note>
+    /// <p>Only for snapshot copies created with time-based snapshot copy operations.</p>
+    /// </note>
+    /// <p>The completion duration requested for the time-based snapshot copy operation.</p>
+    pub fn get_completion_duration_minutes(&self) -> &::std::option::Option<i32> {
+        &self.completion_duration_minutes
+    }
+    /// <p>The time stamp when the snapshot was completed.</p>
+    pub fn completion_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.completion_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The time stamp when the snapshot was completed.</p>
+    pub fn set_completion_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.completion_time = input;
+        self
+    }
+    /// <p>The time stamp when the snapshot was completed.</p>
+    pub fn get_completion_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.completion_time
     }
     /// <p>The ID of the snapshot. Each snapshot receives a unique identifier when it is created.</p>
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -415,6 +538,9 @@ impl SnapshotBuilder {
             storage_tier: self.storage_tier,
             restore_expiry_time: self.restore_expiry_time,
             sse_type: self.sse_type,
+            transfer_type: self.transfer_type,
+            completion_duration_minutes: self.completion_duration_minutes,
+            completion_time: self.completion_time,
             snapshot_id: self.snapshot_id,
             volume_id: self.volume_id,
             state: self.state,

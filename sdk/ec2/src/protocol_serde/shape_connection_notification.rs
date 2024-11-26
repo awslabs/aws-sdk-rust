@@ -97,6 +97,19 @@ pub fn de_connection_notification(
                 builder = builder.set_connection_notification_state(var_7);
             }
             ,
+            s if s.matches("serviceRegion") /* ServiceRegion com.amazonaws.ec2#ConnectionNotification$ServiceRegion */ =>  {
+                let var_8 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_service_region(var_8);
+            }
+            ,
             _ => {}
         }
     }

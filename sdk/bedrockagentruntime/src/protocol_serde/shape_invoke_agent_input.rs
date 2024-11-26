@@ -21,5 +21,11 @@ pub fn ser_invoke_agent_input_input(
         crate::protocol_serde::shape_session_state::ser_session_state(&mut object_6, var_5)?;
         object_6.finish();
     }
+    if let Some(var_7) = &input.streaming_configurations {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("streamingConfigurations").start_object();
+        crate::protocol_serde::shape_streaming_configurations::ser_streaming_configurations(&mut object_8, var_7)?;
+        object_8.finish();
+    }
     Ok(())
 }

@@ -3,26 +3,26 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchEmailAddressesOutput {
-    /// <p></p>
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>List of email addresses matching SearchFilter and SearchCriteria</p>
     pub email_addresses: ::std::option::Option<::std::vec::Vec<crate::types::EmailAddressMetadata>>,
-    /// <p></p>
+    /// <p>The total number of email addresses which matched your search query.</p>
     pub approximate_total_count: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
 impl SearchEmailAddressesOutput {
-    /// <p></p>
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p></p>
+    /// <p>List of email addresses matching SearchFilter and SearchCriteria</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.email_addresses.is_none()`.
     pub fn email_addresses(&self) -> &[crate::types::EmailAddressMetadata] {
         self.email_addresses.as_deref().unwrap_or_default()
     }
-    /// <p></p>
+    /// <p>The total number of email addresses which matched your search query.</p>
     pub fn approximate_total_count(&self) -> ::std::option::Option<i64> {
         self.approximate_total_count
     }
@@ -49,17 +49,17 @@ pub struct SearchEmailAddressesOutputBuilder {
     _request_id: Option<String>,
 }
 impl SearchEmailAddressesOutputBuilder {
-    /// <p></p>
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p></p>
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
@@ -67,33 +67,33 @@ impl SearchEmailAddressesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_email_addresses`](Self::set_email_addresses).
     ///
-    /// <p></p>
+    /// <p>List of email addresses matching SearchFilter and SearchCriteria</p>
     pub fn email_addresses(mut self, input: crate::types::EmailAddressMetadata) -> Self {
         let mut v = self.email_addresses.unwrap_or_default();
         v.push(input);
         self.email_addresses = ::std::option::Option::Some(v);
         self
     }
-    /// <p></p>
+    /// <p>List of email addresses matching SearchFilter and SearchCriteria</p>
     pub fn set_email_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EmailAddressMetadata>>) -> Self {
         self.email_addresses = input;
         self
     }
-    /// <p></p>
+    /// <p>List of email addresses matching SearchFilter and SearchCriteria</p>
     pub fn get_email_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EmailAddressMetadata>> {
         &self.email_addresses
     }
-    /// <p></p>
+    /// <p>The total number of email addresses which matched your search query.</p>
     pub fn approximate_total_count(mut self, input: i64) -> Self {
         self.approximate_total_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p></p>
+    /// <p>The total number of email addresses which matched your search query.</p>
     pub fn set_approximate_total_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.approximate_total_count = input;
         self
     }
-    /// <p></p>
+    /// <p>The total number of email addresses which matched your search query.</p>
     pub fn get_approximate_total_count(&self) -> &::std::option::Option<i64> {
         &self.approximate_total_count
     }

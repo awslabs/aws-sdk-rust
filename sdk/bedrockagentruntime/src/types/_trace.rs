@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub enum Trace {
+    /// <p>Details about the custom orchestration step in which the agent determines the order in which actions are executed.</p>
+    CustomOrchestrationTrace(crate::types::CustomOrchestrationTrace),
     /// <p>Contains information about the failure of the interaction.</p>
     FailureTrace(crate::types::FailureTrace),
     /// <p>The trace details for a trace defined in the Guardrail filter.</p>
@@ -25,6 +27,19 @@ pub enum Trace {
     Unknown,
 }
 impl Trace {
+    /// Tries to convert the enum instance into [`CustomOrchestrationTrace`](crate::types::Trace::CustomOrchestrationTrace), extracting the inner [`CustomOrchestrationTrace`](crate::types::CustomOrchestrationTrace).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_custom_orchestration_trace(&self) -> ::std::result::Result<&crate::types::CustomOrchestrationTrace, &Self> {
+        if let Trace::CustomOrchestrationTrace(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`CustomOrchestrationTrace`](crate::types::Trace::CustomOrchestrationTrace).
+    pub fn is_custom_orchestration_trace(&self) -> bool {
+        self.as_custom_orchestration_trace().is_ok()
+    }
     /// Tries to convert the enum instance into [`FailureTrace`](crate::types::Trace::FailureTrace), extracting the inner [`FailureTrace`](crate::types::FailureTrace).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_failure_trace(&self) -> ::std::result::Result<&crate::types::FailureTrace, &Self> {

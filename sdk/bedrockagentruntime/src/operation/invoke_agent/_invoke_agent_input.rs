@@ -23,6 +23,8 @@ pub struct InvokeAgentInput {
     pub input_text: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the agent memory.</p>
     pub memory_id: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the configurations for streaming.</p>
+    pub streaming_configurations: ::std::option::Option<crate::types::StreamingConfigurations>,
 }
 impl InvokeAgentInput {
     /// <p>Contains parameters that specify various attributes of the session. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control session context</a>.</p><note>
@@ -61,6 +63,10 @@ impl InvokeAgentInput {
     pub fn memory_id(&self) -> ::std::option::Option<&str> {
         self.memory_id.as_deref()
     }
+    /// <p>Specifies the configurations for streaming.</p>
+    pub fn streaming_configurations(&self) -> ::std::option::Option<&crate::types::StreamingConfigurations> {
+        self.streaming_configurations.as_ref()
+    }
 }
 impl ::std::fmt::Debug for InvokeAgentInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -73,6 +79,7 @@ impl ::std::fmt::Debug for InvokeAgentInput {
         formatter.field("enable_trace", &self.enable_trace);
         formatter.field("input_text", &"*** Sensitive Data Redacted ***");
         formatter.field("memory_id", &self.memory_id);
+        formatter.field("streaming_configurations", &self.streaming_configurations);
         formatter.finish()
     }
 }
@@ -95,6 +102,7 @@ pub struct InvokeAgentInputBuilder {
     pub(crate) enable_trace: ::std::option::Option<bool>,
     pub(crate) input_text: ::std::option::Option<::std::string::String>,
     pub(crate) memory_id: ::std::option::Option<::std::string::String>,
+    pub(crate) streaming_configurations: ::std::option::Option<crate::types::StreamingConfigurations>,
 }
 impl InvokeAgentInputBuilder {
     /// <p>Contains parameters that specify various attributes of the session. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control session context</a>.</p><note>
@@ -224,6 +232,20 @@ impl InvokeAgentInputBuilder {
     pub fn get_memory_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.memory_id
     }
+    /// <p>Specifies the configurations for streaming.</p>
+    pub fn streaming_configurations(mut self, input: crate::types::StreamingConfigurations) -> Self {
+        self.streaming_configurations = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the configurations for streaming.</p>
+    pub fn set_streaming_configurations(mut self, input: ::std::option::Option<crate::types::StreamingConfigurations>) -> Self {
+        self.streaming_configurations = input;
+        self
+    }
+    /// <p>Specifies the configurations for streaming.</p>
+    pub fn get_streaming_configurations(&self) -> &::std::option::Option<crate::types::StreamingConfigurations> {
+        &self.streaming_configurations
+    }
     /// Consumes the builder and constructs a [`InvokeAgentInput`](crate::operation::invoke_agent::InvokeAgentInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::invoke_agent::InvokeAgentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::invoke_agent::InvokeAgentInput {
@@ -235,6 +257,7 @@ impl InvokeAgentInputBuilder {
             enable_trace: self.enable_trace,
             input_text: self.input_text,
             memory_id: self.memory_id,
+            streaming_configurations: self.streaming_configurations,
         })
     }
 }
@@ -249,6 +272,7 @@ impl ::std::fmt::Debug for InvokeAgentInputBuilder {
         formatter.field("enable_trace", &self.enable_trace);
         formatter.field("input_text", &"*** Sensitive Data Redacted ***");
         formatter.field("memory_id", &self.memory_id);
+        formatter.field("streaming_configurations", &self.streaming_configurations);
         formatter.finish()
     }
 }

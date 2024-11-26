@@ -8,6 +8,8 @@ pub struct CardStatus {
     pub current_state: crate::types::ExecutionStatus,
     /// <p>The current value or result associated with the card.</p>
     pub current_value: ::std::string::String,
+    /// <p>A list of previous submissions, if the card is a form card.</p>
+    pub submissions: ::std::option::Option<::std::vec::Vec<crate::types::Submission>>,
 }
 impl CardStatus {
     /// <p>The current state of the card.</p>
@@ -18,6 +20,12 @@ impl CardStatus {
     pub fn current_value(&self) -> &str {
         use std::ops::Deref;
         self.current_value.deref()
+    }
+    /// <p>A list of previous submissions, if the card is a form card.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.submissions.is_none()`.
+    pub fn submissions(&self) -> &[crate::types::Submission] {
+        self.submissions.as_deref().unwrap_or_default()
     }
 }
 impl CardStatus {
@@ -33,6 +41,7 @@ impl CardStatus {
 pub struct CardStatusBuilder {
     pub(crate) current_state: ::std::option::Option<crate::types::ExecutionStatus>,
     pub(crate) current_value: ::std::option::Option<::std::string::String>,
+    pub(crate) submissions: ::std::option::Option<::std::vec::Vec<crate::types::Submission>>,
 }
 impl CardStatusBuilder {
     /// <p>The current state of the card.</p>
@@ -65,6 +74,26 @@ impl CardStatusBuilder {
     pub fn get_current_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.current_value
     }
+    /// Appends an item to `submissions`.
+    ///
+    /// To override the contents of this collection use [`set_submissions`](Self::set_submissions).
+    ///
+    /// <p>A list of previous submissions, if the card is a form card.</p>
+    pub fn submissions(mut self, input: crate::types::Submission) -> Self {
+        let mut v = self.submissions.unwrap_or_default();
+        v.push(input);
+        self.submissions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of previous submissions, if the card is a form card.</p>
+    pub fn set_submissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Submission>>) -> Self {
+        self.submissions = input;
+        self
+    }
+    /// <p>A list of previous submissions, if the card is a form card.</p>
+    pub fn get_submissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Submission>> {
+        &self.submissions
+    }
     /// Consumes the builder and constructs a [`CardStatus`](crate::types::CardStatus).
     /// This method will fail if any of the following fields are not set:
     /// - [`current_state`](crate::types::builders::CardStatusBuilder::current_state)
@@ -83,6 +112,7 @@ impl CardStatusBuilder {
                     "current_value was not specified but it is required when building CardStatus",
                 )
             })?,
+            submissions: self.submissions,
         })
     }
 }

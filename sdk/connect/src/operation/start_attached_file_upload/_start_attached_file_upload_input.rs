@@ -13,9 +13,11 @@ pub struct StartAttachedFileUploadInput {
     pub file_size_in_bytes: ::std::option::Option<i64>,
     /// <p>Optional override for the expiry of the pre-signed S3 URL in seconds. The default value is 300.</p>
     pub url_expiry_in_seconds: ::std::option::Option<i32>,
-    /// <p>The use case for the file.</p>
+    /// <p>The use case for the file.</p><important>
+    /// <p>Only <code>ATTACHMENTS</code> are supported.</p>
+    /// </important>
     pub file_use_case_type: ::std::option::Option<crate::types::FileUseCaseType>,
-    /// <p>The resource to which the attached file is (being) uploaded to. <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Cases</a> are the only current supported resource.</p><note>
+    /// <p>The resource to which the attached file is (being) uploaded to. The supported resources are <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cases.html">Cases</a> and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Email</a>.</p><note>
     /// <p>This value must be a valid ARN.</p>
     /// </note>
     pub associated_resource_arn: ::std::option::Option<::std::string::String>,
@@ -45,11 +47,13 @@ impl StartAttachedFileUploadInput {
     pub fn url_expiry_in_seconds(&self) -> ::std::option::Option<i32> {
         self.url_expiry_in_seconds
     }
-    /// <p>The use case for the file.</p>
+    /// <p>The use case for the file.</p><important>
+    /// <p>Only <code>ATTACHMENTS</code> are supported.</p>
+    /// </important>
     pub fn file_use_case_type(&self) -> ::std::option::Option<&crate::types::FileUseCaseType> {
         self.file_use_case_type.as_ref()
     }
-    /// <p>The resource to which the attached file is (being) uploaded to. <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Cases</a> are the only current supported resource.</p><note>
+    /// <p>The resource to which the attached file is (being) uploaded to. The supported resources are <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cases.html">Cases</a> and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Email</a>.</p><note>
     /// <p>This value must be a valid ARN.</p>
     /// </note>
     pub fn associated_resource_arn(&self) -> ::std::option::Option<&str> {
@@ -159,22 +163,28 @@ impl StartAttachedFileUploadInputBuilder {
     pub fn get_url_expiry_in_seconds(&self) -> &::std::option::Option<i32> {
         &self.url_expiry_in_seconds
     }
-    /// <p>The use case for the file.</p>
+    /// <p>The use case for the file.</p><important>
+    /// <p>Only <code>ATTACHMENTS</code> are supported.</p>
+    /// </important>
     /// This field is required.
     pub fn file_use_case_type(mut self, input: crate::types::FileUseCaseType) -> Self {
         self.file_use_case_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The use case for the file.</p>
+    /// <p>The use case for the file.</p><important>
+    /// <p>Only <code>ATTACHMENTS</code> are supported.</p>
+    /// </important>
     pub fn set_file_use_case_type(mut self, input: ::std::option::Option<crate::types::FileUseCaseType>) -> Self {
         self.file_use_case_type = input;
         self
     }
-    /// <p>The use case for the file.</p>
+    /// <p>The use case for the file.</p><important>
+    /// <p>Only <code>ATTACHMENTS</code> are supported.</p>
+    /// </important>
     pub fn get_file_use_case_type(&self) -> &::std::option::Option<crate::types::FileUseCaseType> {
         &self.file_use_case_type
     }
-    /// <p>The resource to which the attached file is (being) uploaded to. <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Cases</a> are the only current supported resource.</p><note>
+    /// <p>The resource to which the attached file is (being) uploaded to. The supported resources are <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cases.html">Cases</a> and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Email</a>.</p><note>
     /// <p>This value must be a valid ARN.</p>
     /// </note>
     /// This field is required.
@@ -182,14 +192,14 @@ impl StartAttachedFileUploadInputBuilder {
         self.associated_resource_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The resource to which the attached file is (being) uploaded to. <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Cases</a> are the only current supported resource.</p><note>
+    /// <p>The resource to which the attached file is (being) uploaded to. The supported resources are <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cases.html">Cases</a> and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Email</a>.</p><note>
     /// <p>This value must be a valid ARN.</p>
     /// </note>
     pub fn set_associated_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.associated_resource_arn = input;
         self
     }
-    /// <p>The resource to which the attached file is (being) uploaded to. <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Cases</a> are the only current supported resource.</p><note>
+    /// <p>The resource to which the attached file is (being) uploaded to. The supported resources are <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cases.html">Cases</a> and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Email</a>.</p><note>
     /// <p>This value must be a valid ARN.</p>
     /// </note>
     pub fn get_associated_resource_arn(&self) -> &::std::option::Option<::std::string::String> {

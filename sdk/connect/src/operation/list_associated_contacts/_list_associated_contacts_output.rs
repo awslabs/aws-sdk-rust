@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAssociatedContactsOutput {
-    /// <p></p>
+    /// <p>List of the contact summary for all the contacts in contact tree associated with unique identifier.</p>
     pub contact_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedContactSummary>>,
-    /// <p></p>
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAssociatedContactsOutput {
-    /// <p></p>
+    /// <p>List of the contact summary for all the contacts in contact tree associated with unique identifier.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.contact_summary_list.is_none()`.
     pub fn contact_summary_list(&self) -> &[crate::types::AssociatedContactSummary] {
         self.contact_summary_list.as_deref().unwrap_or_default()
     }
-    /// <p></p>
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl ListAssociatedContactsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_contact_summary_list`](Self::set_contact_summary_list).
     ///
-    /// <p></p>
+    /// <p>List of the contact summary for all the contacts in contact tree associated with unique identifier.</p>
     pub fn contact_summary_list(mut self, input: crate::types::AssociatedContactSummary) -> Self {
         let mut v = self.contact_summary_list.unwrap_or_default();
         v.push(input);
         self.contact_summary_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p></p>
+    /// <p>List of the contact summary for all the contacts in contact tree associated with unique identifier.</p>
     pub fn set_contact_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedContactSummary>>) -> Self {
         self.contact_summary_list = input;
         self
     }
-    /// <p></p>
+    /// <p>List of the contact summary for all the contacts in contact tree associated with unique identifier.</p>
     pub fn get_contact_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociatedContactSummary>> {
         &self.contact_summary_list
     }
-    /// <p></p>
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p></p>
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

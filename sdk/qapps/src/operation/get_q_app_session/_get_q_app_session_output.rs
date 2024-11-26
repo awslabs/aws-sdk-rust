@@ -7,10 +7,18 @@ pub struct GetQAppSessionOutput {
     pub session_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the Q App session.</p>
     pub session_arn: ::std::string::String,
+    /// <p>The name of the Q App session.</p>
+    pub session_name: ::std::option::Option<::std::string::String>,
+    /// <p>The version of the Q App used for the session.</p>
+    pub app_version: ::std::option::Option<i32>,
+    /// <p>The latest published version of the Q App used for the session.</p>
+    pub latest_published_app_version: ::std::option::Option<i32>,
     /// <p>The current status of the Q App session.</p>
     pub status: crate::types::ExecutionStatus,
     /// <p>The current status for each card in the Q App session.</p>
     pub card_status: ::std::collections::HashMap<::std::string::String, crate::types::CardStatus>,
+    /// <p>Indicates whether the current user is the owner of the Q App data collection session.</p>
+    pub user_is_host: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl GetQAppSessionOutput {
@@ -24,6 +32,18 @@ impl GetQAppSessionOutput {
         use std::ops::Deref;
         self.session_arn.deref()
     }
+    /// <p>The name of the Q App session.</p>
+    pub fn session_name(&self) -> ::std::option::Option<&str> {
+        self.session_name.as_deref()
+    }
+    /// <p>The version of the Q App used for the session.</p>
+    pub fn app_version(&self) -> ::std::option::Option<i32> {
+        self.app_version
+    }
+    /// <p>The latest published version of the Q App used for the session.</p>
+    pub fn latest_published_app_version(&self) -> ::std::option::Option<i32> {
+        self.latest_published_app_version
+    }
     /// <p>The current status of the Q App session.</p>
     pub fn status(&self) -> &crate::types::ExecutionStatus {
         &self.status
@@ -31,6 +51,10 @@ impl GetQAppSessionOutput {
     /// <p>The current status for each card in the Q App session.</p>
     pub fn card_status(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::CardStatus> {
         &self.card_status
+    }
+    /// <p>Indicates whether the current user is the owner of the Q App data collection session.</p>
+    pub fn user_is_host(&self) -> ::std::option::Option<bool> {
+        self.user_is_host
     }
 }
 impl ::aws_types::request_id::RequestId for GetQAppSessionOutput {
@@ -51,8 +75,12 @@ impl GetQAppSessionOutput {
 pub struct GetQAppSessionOutputBuilder {
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     pub(crate) session_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) session_name: ::std::option::Option<::std::string::String>,
+    pub(crate) app_version: ::std::option::Option<i32>,
+    pub(crate) latest_published_app_version: ::std::option::Option<i32>,
     pub(crate) status: ::std::option::Option<crate::types::ExecutionStatus>,
     pub(crate) card_status: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CardStatus>>,
+    pub(crate) user_is_host: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl GetQAppSessionOutputBuilder {
@@ -85,6 +113,48 @@ impl GetQAppSessionOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Q App session.</p>
     pub fn get_session_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_arn
+    }
+    /// <p>The name of the Q App session.</p>
+    pub fn session_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.session_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the Q App session.</p>
+    pub fn set_session_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.session_name = input;
+        self
+    }
+    /// <p>The name of the Q App session.</p>
+    pub fn get_session_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_name
+    }
+    /// <p>The version of the Q App used for the session.</p>
+    pub fn app_version(mut self, input: i32) -> Self {
+        self.app_version = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The version of the Q App used for the session.</p>
+    pub fn set_app_version(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.app_version = input;
+        self
+    }
+    /// <p>The version of the Q App used for the session.</p>
+    pub fn get_app_version(&self) -> &::std::option::Option<i32> {
+        &self.app_version
+    }
+    /// <p>The latest published version of the Q App used for the session.</p>
+    pub fn latest_published_app_version(mut self, input: i32) -> Self {
+        self.latest_published_app_version = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The latest published version of the Q App used for the session.</p>
+    pub fn set_latest_published_app_version(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.latest_published_app_version = input;
+        self
+    }
+    /// <p>The latest published version of the Q App used for the session.</p>
+    pub fn get_latest_published_app_version(&self) -> &::std::option::Option<i32> {
+        &self.latest_published_app_version
     }
     /// <p>The current status of the Q App session.</p>
     /// This field is required.
@@ -124,6 +194,20 @@ impl GetQAppSessionOutputBuilder {
     pub fn get_card_status(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CardStatus>> {
         &self.card_status
     }
+    /// <p>Indicates whether the current user is the owner of the Q App data collection session.</p>
+    pub fn user_is_host(mut self, input: bool) -> Self {
+        self.user_is_host = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the current user is the owner of the Q App data collection session.</p>
+    pub fn set_user_is_host(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.user_is_host = input;
+        self
+    }
+    /// <p>Indicates whether the current user is the owner of the Q App data collection session.</p>
+    pub fn get_user_is_host(&self) -> &::std::option::Option<bool> {
+        &self.user_is_host
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -155,6 +239,9 @@ impl GetQAppSessionOutputBuilder {
                     "session_arn was not specified but it is required when building GetQAppSessionOutput",
                 )
             })?,
+            session_name: self.session_name,
+            app_version: self.app_version,
+            latest_published_app_version: self.latest_published_app_version,
             status: self.status.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
@@ -167,6 +254,7 @@ impl GetQAppSessionOutputBuilder {
                     "card_status was not specified but it is required when building GetQAppSessionOutput",
                 )
             })?,
+            user_is_host: self.user_is_host,
             _request_id: self._request_id,
         })
     }

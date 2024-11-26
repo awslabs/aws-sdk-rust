@@ -6,6 +6,8 @@
 pub enum CardInput {
     /// <p>A container for the properties of the file upload input card.</p>
     FileUpload(crate::types::FileUploadCardInput),
+    /// <p>A container for the properties of the form input card.</p>
+    FormInput(crate::types::FormInputCardInput),
     /// <p>A container for the properties of the plugin input card.</p>
     QPlugin(crate::types::QPluginCardInput),
     /// <p>A container for the properties of the query input card.</p>
@@ -35,6 +37,19 @@ impl CardInput {
     /// Returns true if this is a [`FileUpload`](crate::types::CardInput::FileUpload).
     pub fn is_file_upload(&self) -> bool {
         self.as_file_upload().is_ok()
+    }
+    /// Tries to convert the enum instance into [`FormInput`](crate::types::CardInput::FormInput), extracting the inner [`FormInputCardInput`](crate::types::FormInputCardInput).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_form_input(&self) -> ::std::result::Result<&crate::types::FormInputCardInput, &Self> {
+        if let CardInput::FormInput(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`FormInput`](crate::types::CardInput::FormInput).
+    pub fn is_form_input(&self) -> bool {
+        self.as_form_input().is_ok()
     }
     /// Tries to convert the enum instance into [`QPlugin`](crate::types::CardInput::QPlugin), extracting the inner [`QPluginCardInput`](crate::types::QPluginCardInput).
     /// Returns `Err(&Self)` if it can't be converted.

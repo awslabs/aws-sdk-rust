@@ -29,6 +29,8 @@ pub struct InstanceRequirementsRequest {
     /// <p>For instance types with AMD CPUs, specify <code>amd</code>.</p></li>
     /// <li>
     /// <p>For instance types with Amazon Web Services CPUs, specify <code>amazon-web-services</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with Apple CPUs, specify <code>apple</code>.</p></li>
     /// </ul><note>
     /// <p>Don't confuse the CPU manufacturer with the CPU architecture. Instances will be launched with a compatible CPU architecture based on the Amazon Machine Image (AMI) that you specify in your launch template.</p>
     /// </note>
@@ -216,6 +218,8 @@ impl InstanceRequirementsRequest {
     /// <p>For instance types with AMD CPUs, specify <code>amd</code>.</p></li>
     /// <li>
     /// <p>For instance types with Amazon Web Services CPUs, specify <code>amazon-web-services</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with Apple CPUs, specify <code>apple</code>.</p></li>
     /// </ul><note>
     /// <p>Don't confuse the CPU manufacturer with the CPU architecture. Instances will be launched with a compatible CPU architecture based on the Amazon Machine Image (AMI) that you specify in your launch template.</p>
     /// </note>
@@ -528,6 +532,8 @@ impl InstanceRequirementsRequestBuilder {
     /// <p>For instance types with AMD CPUs, specify <code>amd</code>.</p></li>
     /// <li>
     /// <p>For instance types with Amazon Web Services CPUs, specify <code>amazon-web-services</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with Apple CPUs, specify <code>apple</code>.</p></li>
     /// </ul><note>
     /// <p>Don't confuse the CPU manufacturer with the CPU architecture. Instances will be launched with a compatible CPU architecture based on the Amazon Machine Image (AMI) that you specify in your launch template.</p>
     /// </note>
@@ -546,6 +552,8 @@ impl InstanceRequirementsRequestBuilder {
     /// <p>For instance types with AMD CPUs, specify <code>amd</code>.</p></li>
     /// <li>
     /// <p>For instance types with Amazon Web Services CPUs, specify <code>amazon-web-services</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with Apple CPUs, specify <code>apple</code>.</p></li>
     /// </ul><note>
     /// <p>Don't confuse the CPU manufacturer with the CPU architecture. Instances will be launched with a compatible CPU architecture based on the Amazon Machine Image (AMI) that you specify in your launch template.</p>
     /// </note>
@@ -562,6 +570,8 @@ impl InstanceRequirementsRequestBuilder {
     /// <p>For instance types with AMD CPUs, specify <code>amd</code>.</p></li>
     /// <li>
     /// <p>For instance types with Amazon Web Services CPUs, specify <code>amazon-web-services</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with Apple CPUs, specify <code>apple</code>.</p></li>
     /// </ul><note>
     /// <p>Don't confuse the CPU manufacturer with the CPU architecture. Instances will be launched with a compatible CPU architecture based on the Amazon Machine Image (AMI) that you specify in your launch template.</p>
     /// </note>

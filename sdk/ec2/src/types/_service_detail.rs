@@ -10,6 +10,8 @@ pub struct ServiceDetail {
     pub service_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of service.</p>
     pub service_type: ::std::option::Option<::std::vec::Vec<crate::types::ServiceTypeDetail>>,
+    /// <p>The Region where the service is hosted.</p>
+    pub service_region: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zones in which the service is available.</p>
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Web Services account ID of the service owner.</p>
@@ -50,6 +52,10 @@ impl ServiceDetail {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_type.is_none()`.
     pub fn service_type(&self) -> &[crate::types::ServiceTypeDetail] {
         self.service_type.as_deref().unwrap_or_default()
+    }
+    /// <p>The Region where the service is hosted.</p>
+    pub fn service_region(&self) -> ::std::option::Option<&str> {
+        self.service_region.as_deref()
     }
     /// <p>The Availability Zones in which the service is available.</p>
     ///
@@ -125,6 +131,7 @@ pub struct ServiceDetailBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
     pub(crate) service_id: ::std::option::Option<::std::string::String>,
     pub(crate) service_type: ::std::option::Option<::std::vec::Vec<crate::types::ServiceTypeDetail>>,
+    pub(crate) service_region: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) owner: ::std::option::Option<::std::string::String>,
     pub(crate) base_endpoint_dns_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -186,6 +193,20 @@ impl ServiceDetailBuilder {
     /// <p>The type of service.</p>
     pub fn get_service_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceTypeDetail>> {
         &self.service_type
+    }
+    /// <p>The Region where the service is hosted.</p>
+    pub fn service_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.service_region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Region where the service is hosted.</p>
+    pub fn set_service_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.service_region = input;
+        self
+    }
+    /// <p>The Region where the service is hosted.</p>
+    pub fn get_service_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_region
     }
     /// Appends an item to `availability_zones`.
     ///
@@ -394,6 +415,7 @@ impl ServiceDetailBuilder {
             service_name: self.service_name,
             service_id: self.service_id,
             service_type: self.service_type,
+            service_region: self.service_region,
             availability_zones: self.availability_zones,
             owner: self.owner,
             base_endpoint_dns_names: self.base_endpoint_dns_names,

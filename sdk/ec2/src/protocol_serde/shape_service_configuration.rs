@@ -184,6 +184,31 @@ pub fn de_service_configuration(
                 builder = builder.set_tags(var_15);
             }
             ,
+            s if s.matches("supportedRegionSet") /* SupportedRegions com.amazonaws.ec2#ServiceConfiguration$SupportedRegions */ =>  {
+                let var_16 =
+                    Some(
+                        crate::protocol_serde::shape_supported_region_set::de_supported_region_set(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_supported_regions(var_16);
+            }
+            ,
+            s if s.matches("remoteAccessEnabled") /* RemoteAccessEnabled com.amazonaws.ec2#ServiceConfiguration$RemoteAccessEnabled */ =>  {
+                let var_17 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_remote_access_enabled(var_17);
+            }
+            ,
             _ => {}
         }
     }

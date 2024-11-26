@@ -15,7 +15,7 @@ pub struct UpdateTaskTemplateOutput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the flow that runs by default when a task is created by referencing this template.</p>
     pub contact_flow_id: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>The ContactFlowId for the flow that will be run if this template is used to create a self-assigned task.</p>
     pub self_assign_flow_id: ::std::option::Option<::std::string::String>,
     /// <p>Constraints that are applicable to the fields listed.</p>
     pub constraints: ::std::option::Option<crate::types::TaskTemplateConstraints>,
@@ -56,7 +56,7 @@ impl UpdateTaskTemplateOutput {
     pub fn contact_flow_id(&self) -> ::std::option::Option<&str> {
         self.contact_flow_id.as_deref()
     }
-    /// <p></p>
+    /// <p>The ContactFlowId for the flow that will be run if this template is used to create a self-assigned task.</p>
     pub fn self_assign_flow_id(&self) -> ::std::option::Option<&str> {
         self.self_assign_flow_id.as_deref()
     }
@@ -203,17 +203,17 @@ impl UpdateTaskTemplateOutputBuilder {
     pub fn get_contact_flow_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.contact_flow_id
     }
-    /// <p></p>
+    /// <p>The ContactFlowId for the flow that will be run if this template is used to create a self-assigned task.</p>
     pub fn self_assign_flow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.self_assign_flow_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The ContactFlowId for the flow that will be run if this template is used to create a self-assigned task.</p>
     pub fn set_self_assign_flow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.self_assign_flow_id = input;
         self
     }
-    /// <p></p>
+    /// <p>The ContactFlowId for the flow that will be run if this template is used to create a self-assigned task.</p>
     pub fn get_self_assign_flow_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.self_assign_flow_id
     }

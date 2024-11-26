@@ -22,7 +22,7 @@ impl crate::operation::search_contact_flows::builders::SearchContactFlowsInputBu
 }
 /// Fluent builder constructing a request to `SearchContactFlows`.
 ///
-/// <p>Searches the contact flows in an Amazon Connect instance, with optional filtering.</p>
+/// <p>Searches the flows in an Amazon Connect instance, with optional filtering.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchContactFlowsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

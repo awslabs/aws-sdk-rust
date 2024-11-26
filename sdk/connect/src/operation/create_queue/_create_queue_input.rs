@@ -11,7 +11,7 @@ pub struct CreateQueueInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The outbound caller ID name, number, and outbound whisper flow.</p>
     pub outbound_caller_config: ::std::option::Option<crate::types::OutboundCallerConfig>,
-    /// <p></p>
+    /// <p>The outbound email address ID for a specified queue.</p>
     pub outbound_email_config: ::std::option::Option<crate::types::OutboundEmailConfig>,
     /// <p>The identifier for the hours of operation.</p>
     pub hours_of_operation_id: ::std::option::Option<::std::string::String>,
@@ -39,7 +39,7 @@ impl CreateQueueInput {
     pub fn outbound_caller_config(&self) -> ::std::option::Option<&crate::types::OutboundCallerConfig> {
         self.outbound_caller_config.as_ref()
     }
-    /// <p></p>
+    /// <p>The outbound email address ID for a specified queue.</p>
     pub fn outbound_email_config(&self) -> ::std::option::Option<&crate::types::OutboundEmailConfig> {
         self.outbound_email_config.as_ref()
     }
@@ -142,17 +142,17 @@ impl CreateQueueInputBuilder {
     pub fn get_outbound_caller_config(&self) -> &::std::option::Option<crate::types::OutboundCallerConfig> {
         &self.outbound_caller_config
     }
-    /// <p></p>
+    /// <p>The outbound email address ID for a specified queue.</p>
     pub fn outbound_email_config(mut self, input: crate::types::OutboundEmailConfig) -> Self {
         self.outbound_email_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p></p>
+    /// <p>The outbound email address ID for a specified queue.</p>
     pub fn set_outbound_email_config(mut self, input: ::std::option::Option<crate::types::OutboundEmailConfig>) -> Self {
         self.outbound_email_config = input;
         self
     }
-    /// <p></p>
+    /// <p>The outbound email address ID for a specified queue.</p>
     pub fn get_outbound_email_config(&self) -> &::std::option::Option<crate::types::OutboundEmailConfig> {
         &self.outbound_email_config
     }

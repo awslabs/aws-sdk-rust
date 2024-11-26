@@ -26,7 +26,7 @@ pub struct ContactSearchSummary {
     pub disconnect_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp, in Unix epoch time format, at which to start running the inbound flow.</p>
     pub scheduled_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p></p>
+    /// <p>Set of segment attributes for a contact.</p>
     pub segment_attributes:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ContactSearchSummarySegmentAttributeValue>>,
 }
@@ -75,7 +75,7 @@ impl ContactSearchSummary {
     pub fn scheduled_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.scheduled_timestamp.as_ref()
     }
-    /// <p></p>
+    /// <p>Set of segment attributes for a contact.</p>
     pub fn segment_attributes(
         &self,
     ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ContactSearchSummarySegmentAttributeValue>> {
@@ -266,7 +266,7 @@ impl ContactSearchSummaryBuilder {
     ///
     /// To override the contents of this collection use [`set_segment_attributes`](Self::set_segment_attributes).
     ///
-    /// <p></p>
+    /// <p>Set of segment attributes for a contact.</p>
     pub fn segment_attributes(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -277,7 +277,7 @@ impl ContactSearchSummaryBuilder {
         self.segment_attributes = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p></p>
+    /// <p>Set of segment attributes for a contact.</p>
     pub fn set_segment_attributes(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ContactSearchSummarySegmentAttributeValue>>,
@@ -285,7 +285,7 @@ impl ContactSearchSummaryBuilder {
         self.segment_attributes = input;
         self
     }
-    /// <p></p>
+    /// <p>Set of segment attributes for a contact.</p>
     pub fn get_segment_attributes(
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ContactSearchSummarySegmentAttributeValue>> {

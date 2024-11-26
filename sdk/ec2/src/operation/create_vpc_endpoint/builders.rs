@@ -338,4 +338,18 @@ impl CreateVpcEndpointFluentBuilder {
     pub fn get_subnet_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubnetConfiguration>> {
         self.inner.get_subnet_configurations()
     }
+    /// <p>The Region where the service is hosted. The default is the current Region.</p>
+    pub fn service_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.service_region(input.into());
+        self
+    }
+    /// <p>The Region where the service is hosted. The default is the current Region.</p>
+    pub fn set_service_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_service_region(input);
+        self
+    }
+    /// <p>The Region where the service is hosted. The default is the current Region.</p>
+    pub fn get_service_region(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_region()
+    }
 }

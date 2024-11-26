@@ -123,6 +123,8 @@ pub(crate) mod shape_retrieve_and_generate_session_configuration;
 
 pub(crate) mod shape_session_state;
 
+pub(crate) mod shape_streaming_configurations;
+
 pub(crate) mod shape_action_group_executor;
 
 pub(crate) mod shape_analyze_prompt_event;
@@ -263,6 +265,8 @@ pub(crate) mod shape_text_response_part;
 
 pub(crate) mod shape_trace;
 
+pub(crate) mod shape_custom_orchestration_trace;
+
 pub(crate) mod shape_failure_trace;
 
 pub(crate) mod shape_flow_trace_condition_node_result_event;
@@ -288,6 +292,8 @@ pub(crate) mod shape_span;
 pub(crate) mod shape_text_inference_config;
 
 pub(crate) mod shape_api_invocation_input;
+
+pub(crate) mod shape_custom_orchestration_trace_event;
 
 pub(crate) mod shape_flow_trace_conditions;
 

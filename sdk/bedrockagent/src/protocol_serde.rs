@@ -259,6 +259,8 @@ pub(crate) mod shape_agent_version_summaries;
 
 pub(crate) mod shape_api_schema;
 
+pub(crate) mod shape_custom_orchestration;
+
 pub(crate) mod shape_data_source;
 
 pub(crate) mod shape_data_source_configuration;
@@ -368,6 +370,8 @@ pub(crate) mod shape_knowledge_base_summary;
 pub(crate) mod shape_mongo_db_atlas_configuration;
 
 pub(crate) mod shape_open_search_serverless_configuration;
+
+pub(crate) mod shape_orchestration_executor;
 
 pub(crate) mod shape_parsing_configuration;
 

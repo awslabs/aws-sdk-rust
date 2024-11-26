@@ -3,54 +3,54 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DescribeEmailAddressOutput {
-    /// <p></p>
+    /// <p>The identifier of the email address.</p>
     pub email_address_id: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>The Amazon Resource Name (ARN) of the email address.</p>
     pub email_address_arn: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>The email address with the instance, in \[^\s@\]+@\[^\s@\]+\.\[^\s@\]+ format.</p>
     pub email_address: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>The display name of email address</p>
     pub display_name: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>The description of the email address.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>The email address creation timestamp in ISO 8601 Datetime.</p>
     pub create_timestamp: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>The email address last modification timestamp in ISO 8601 Datetime.</p>
     pub modified_timestamp: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeEmailAddressOutput {
-    /// <p></p>
+    /// <p>The identifier of the email address.</p>
     pub fn email_address_id(&self) -> ::std::option::Option<&str> {
         self.email_address_id.as_deref()
     }
-    /// <p></p>
+    /// <p>The Amazon Resource Name (ARN) of the email address.</p>
     pub fn email_address_arn(&self) -> ::std::option::Option<&str> {
         self.email_address_arn.as_deref()
     }
-    /// <p></p>
+    /// <p>The email address with the instance, in \[^\s@\]+@\[^\s@\]+\.\[^\s@\]+ format.</p>
     pub fn email_address(&self) -> ::std::option::Option<&str> {
         self.email_address.as_deref()
     }
-    /// <p></p>
+    /// <p>The display name of email address</p>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p></p>
+    /// <p>The description of the email address.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p></p>
+    /// <p>The email address creation timestamp in ISO 8601 Datetime.</p>
     pub fn create_timestamp(&self) -> ::std::option::Option<&str> {
         self.create_timestamp.as_deref()
     }
-    /// <p></p>
+    /// <p>The email address last modification timestamp in ISO 8601 Datetime.</p>
     pub fn modified_timestamp(&self) -> ::std::option::Option<&str> {
         self.modified_timestamp.as_deref()
     }
-    /// <p></p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -97,101 +97,101 @@ pub struct DescribeEmailAddressOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeEmailAddressOutputBuilder {
-    /// <p></p>
+    /// <p>The identifier of the email address.</p>
     pub fn email_address_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_address_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The identifier of the email address.</p>
     pub fn set_email_address_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email_address_id = input;
         self
     }
-    /// <p></p>
+    /// <p>The identifier of the email address.</p>
     pub fn get_email_address_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.email_address_id
     }
-    /// <p></p>
+    /// <p>The Amazon Resource Name (ARN) of the email address.</p>
     pub fn email_address_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_address_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The Amazon Resource Name (ARN) of the email address.</p>
     pub fn set_email_address_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email_address_arn = input;
         self
     }
-    /// <p></p>
+    /// <p>The Amazon Resource Name (ARN) of the email address.</p>
     pub fn get_email_address_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.email_address_arn
     }
-    /// <p></p>
+    /// <p>The email address with the instance, in \[^\s@\]+@\[^\s@\]+\.\[^\s@\]+ format.</p>
     pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_address = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The email address with the instance, in \[^\s@\]+@\[^\s@\]+\.\[^\s@\]+ format.</p>
     pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email_address = input;
         self
     }
-    /// <p></p>
+    /// <p>The email address with the instance, in \[^\s@\]+@\[^\s@\]+\.\[^\s@\]+ format.</p>
     pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.email_address
     }
-    /// <p></p>
+    /// <p>The display name of email address</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The display name of email address</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
     }
-    /// <p></p>
+    /// <p>The display name of email address</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
-    /// <p></p>
+    /// <p>The description of the email address.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The description of the email address.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p></p>
+    /// <p>The description of the email address.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p></p>
+    /// <p>The email address creation timestamp in ISO 8601 Datetime.</p>
     pub fn create_timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.create_timestamp = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The email address creation timestamp in ISO 8601 Datetime.</p>
     pub fn set_create_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.create_timestamp = input;
         self
     }
-    /// <p></p>
+    /// <p>The email address creation timestamp in ISO 8601 Datetime.</p>
     pub fn get_create_timestamp(&self) -> &::std::option::Option<::std::string::String> {
         &self.create_timestamp
     }
-    /// <p></p>
+    /// <p>The email address last modification timestamp in ISO 8601 Datetime.</p>
     pub fn modified_timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.modified_timestamp = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The email address last modification timestamp in ISO 8601 Datetime.</p>
     pub fn set_modified_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.modified_timestamp = input;
         self
     }
-    /// <p></p>
+    /// <p>The email address last modification timestamp in ISO 8601 Datetime.</p>
     pub fn get_modified_timestamp(&self) -> &::std::option::Option<::std::string::String> {
         &self.modified_timestamp
     }
@@ -199,19 +199,19 @@ impl DescribeEmailAddressOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p></p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p></p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p></p>
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }

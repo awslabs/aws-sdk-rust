@@ -183,8 +183,22 @@ pub(crate) fn de_get_q_app_session(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "appVersion" => {
+                    builder = builder.set_app_version(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i32::try_from)
+                            .transpose()?,
+                    );
+                }
                 "cardStatus" => {
                     builder = builder.set_card_status(crate::protocol_serde::shape_card_status_map::de_card_status_map(tokens)?);
+                }
+                "latestPublishedAppVersion" => {
+                    builder = builder.set_latest_published_app_version(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i32::try_from)
+                            .transpose()?,
+                    );
                 }
                 "sessionArn" => {
                     builder = builder.set_session_arn(
@@ -200,12 +214,22 @@ pub(crate) fn de_get_q_app_session(
                             .transpose()?,
                     );
                 }
+                "sessionName" => {
+                    builder = builder.set_session_name(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "status" => {
                     builder = builder.set_status(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| crate::types::ExecutionStatus::from(u.as_ref())))
                             .transpose()?,
                     );
+                }
+                "userIsHost" => {
+                    builder = builder.set_user_is_host(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

@@ -49,6 +49,19 @@ pub fn ser_describe_vpc_endpoint_services_input_input_input(
     if let Some(var_16) = &input.next_token {
         scope_15.string(var_16);
     }
+    #[allow(unused_mut)]
+    let mut scope_17 = writer.prefix("ServiceRegion");
+    if let Some(var_18) = &input.service_regions {
+        if !var_18.is_empty() {
+            let mut list_20 = scope_17.start_list(true, Some("item"));
+            for item_19 in var_18 {
+                #[allow(unused_mut)]
+                let mut entry_21 = list_20.entry();
+                entry_21.string(item_19);
+            }
+            list_20.finish();
+        }
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

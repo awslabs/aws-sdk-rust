@@ -15,6 +15,8 @@ pub struct CreateVpcEndpointServiceConfigurationInput {
     pub gateway_load_balancer_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The supported IP address types. The possible values are <code>ipv4</code> and <code>ipv6</code>.</p>
     pub supported_ip_address_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The Regions from which service consumers can access the service.</p>
+    pub supported_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">How to ensure idempotency</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags to associate with the service.</p>
@@ -51,6 +53,12 @@ impl CreateVpcEndpointServiceConfigurationInput {
     pub fn supported_ip_address_types(&self) -> &[::std::string::String] {
         self.supported_ip_address_types.as_deref().unwrap_or_default()
     }
+    /// <p>The Regions from which service consumers can access the service.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_regions.is_none()`.
+    pub fn supported_regions(&self) -> &[::std::string::String] {
+        self.supported_regions.as_deref().unwrap_or_default()
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">How to ensure idempotency</a>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
@@ -79,6 +87,7 @@ pub struct CreateVpcEndpointServiceConfigurationInputBuilder {
     pub(crate) network_load_balancer_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) gateway_load_balancer_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) supported_ip_address_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) supported_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
 }
@@ -185,6 +194,26 @@ impl CreateVpcEndpointServiceConfigurationInputBuilder {
     pub fn get_supported_ip_address_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.supported_ip_address_types
     }
+    /// Appends an item to `supported_regions`.
+    ///
+    /// To override the contents of this collection use [`set_supported_regions`](Self::set_supported_regions).
+    ///
+    /// <p>The Regions from which service consumers can access the service.</p>
+    pub fn supported_regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.supported_regions.unwrap_or_default();
+        v.push(input.into());
+        self.supported_regions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The Regions from which service consumers can access the service.</p>
+    pub fn set_supported_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.supported_regions = input;
+        self
+    }
+    /// <p>The Regions from which service consumers can access the service.</p>
+    pub fn get_supported_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.supported_regions
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">How to ensure idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -234,6 +263,7 @@ impl CreateVpcEndpointServiceConfigurationInputBuilder {
                 network_load_balancer_arns: self.network_load_balancer_arns,
                 gateway_load_balancer_arns: self.gateway_load_balancer_arns,
                 supported_ip_address_types: self.supported_ip_address_types,
+                supported_regions: self.supported_regions,
                 client_token: self.client_token,
                 tag_specifications: self.tag_specifications,
             },

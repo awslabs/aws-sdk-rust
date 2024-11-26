@@ -15,7 +15,7 @@ pub struct ContactFlowSummary {
     pub contact_flow_type: ::std::option::Option<crate::types::ContactFlowType>,
     /// <p>The type of flow.</p>
     pub contact_flow_state: ::std::option::Option<crate::types::ContactFlowState>,
-    /// <p>The status of the contact flow.</p>
+    /// <p>The status of the flow.</p>
     pub contact_flow_status: ::std::option::Option<crate::types::ContactFlowStatus>,
 }
 impl ContactFlowSummary {
@@ -39,7 +39,7 @@ impl ContactFlowSummary {
     pub fn contact_flow_state(&self) -> ::std::option::Option<&crate::types::ContactFlowState> {
         self.contact_flow_state.as_ref()
     }
-    /// <p>The status of the contact flow.</p>
+    /// <p>The status of the flow.</p>
     pub fn contact_flow_status(&self) -> ::std::option::Option<&crate::types::ContactFlowStatus> {
         self.contact_flow_status.as_ref()
     }
@@ -133,17 +133,17 @@ impl ContactFlowSummaryBuilder {
     pub fn get_contact_flow_state(&self) -> &::std::option::Option<crate::types::ContactFlowState> {
         &self.contact_flow_state
     }
-    /// <p>The status of the contact flow.</p>
+    /// <p>The status of the flow.</p>
     pub fn contact_flow_status(mut self, input: crate::types::ContactFlowStatus) -> Self {
         self.contact_flow_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the contact flow.</p>
+    /// <p>The status of the flow.</p>
     pub fn set_contact_flow_status(mut self, input: ::std::option::Option<crate::types::ContactFlowStatus>) -> Self {
         self.contact_flow_status = input;
         self
     }
-    /// <p>The status of the contact flow.</p>
+    /// <p>The status of the flow.</p>
     pub fn get_contact_flow_status(&self) -> &::std::option::Option<crate::types::ContactFlowStatus> {
         &self.contact_flow_status
     }

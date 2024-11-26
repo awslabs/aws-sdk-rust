@@ -14,6 +14,8 @@ pub struct DescribeVpcEndpointConnectionsInput {
     /// <li>
     /// <p><code>vpc-endpoint-owner</code> - The ID of the Amazon Web Services account ID that owns the endpoint.</p></li>
     /// <li>
+    /// <p><code>vpc-endpoint-region</code> - The Region of the endpoint or <code>cross-region</code> to find endpoints for other Regions.</p></li>
+    /// <li>
     /// <p><code>vpc-endpoint-state</code> - The state of the endpoint (<code>pendingAcceptance</code> | <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code> | <code>rejected</code> | <code>failed</code>).</p></li>
     /// <li>
     /// <p><code>vpc-endpoint-id</code> - The ID of the endpoint.</p></li>
@@ -37,6 +39,8 @@ impl DescribeVpcEndpointConnectionsInput {
     /// <p><code>service-id</code> - The ID of the service.</p></li>
     /// <li>
     /// <p><code>vpc-endpoint-owner</code> - The ID of the Amazon Web Services account ID that owns the endpoint.</p></li>
+    /// <li>
+    /// <p><code>vpc-endpoint-region</code> - The Region of the endpoint or <code>cross-region</code> to find endpoints for other Regions.</p></li>
     /// <li>
     /// <p><code>vpc-endpoint-state</code> - The state of the endpoint (<code>pendingAcceptance</code> | <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code> | <code>rejected</code> | <code>failed</code>).</p></li>
     /// <li>
@@ -100,6 +104,8 @@ impl DescribeVpcEndpointConnectionsInputBuilder {
     /// <li>
     /// <p><code>vpc-endpoint-owner</code> - The ID of the Amazon Web Services account ID that owns the endpoint.</p></li>
     /// <li>
+    /// <p><code>vpc-endpoint-region</code> - The Region of the endpoint or <code>cross-region</code> to find endpoints for other Regions.</p></li>
+    /// <li>
     /// <p><code>vpc-endpoint-state</code> - The state of the endpoint (<code>pendingAcceptance</code> | <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code> | <code>rejected</code> | <code>failed</code>).</p></li>
     /// <li>
     /// <p><code>vpc-endpoint-id</code> - The ID of the endpoint.</p></li>
@@ -119,6 +125,8 @@ impl DescribeVpcEndpointConnectionsInputBuilder {
     /// <li>
     /// <p><code>vpc-endpoint-owner</code> - The ID of the Amazon Web Services account ID that owns the endpoint.</p></li>
     /// <li>
+    /// <p><code>vpc-endpoint-region</code> - The Region of the endpoint or <code>cross-region</code> to find endpoints for other Regions.</p></li>
+    /// <li>
     /// <p><code>vpc-endpoint-state</code> - The state of the endpoint (<code>pendingAcceptance</code> | <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code> | <code>rejected</code> | <code>failed</code>).</p></li>
     /// <li>
     /// <p><code>vpc-endpoint-id</code> - The ID of the endpoint.</p></li>
@@ -135,6 +143,8 @@ impl DescribeVpcEndpointConnectionsInputBuilder {
     /// <p><code>service-id</code> - The ID of the service.</p></li>
     /// <li>
     /// <p><code>vpc-endpoint-owner</code> - The ID of the Amazon Web Services account ID that owns the endpoint.</p></li>
+    /// <li>
+    /// <p><code>vpc-endpoint-region</code> - The Region of the endpoint or <code>cross-region</code> to find endpoints for other Regions.</p></li>
     /// <li>
     /// <p><code>vpc-endpoint-state</code> - The state of the endpoint (<code>pendingAcceptance</code> | <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code> | <code>rejected</code> | <code>failed</code>).</p></li>
     /// <li>

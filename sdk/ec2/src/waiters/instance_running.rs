@@ -310,6 +310,10 @@ impl InstanceRunningFluentBuilder {
     /// <li>
     /// <p><code>network-interface.network-interface-id</code> - The ID of the network interface.</p></li>
     /// <li>
+    /// <p><code>network-interface.operator.managed</code> - A Boolean that indicates whether the instance has a managed network interface.</p></li>
+    /// <li>
+    /// <p><code>network-interface.operator.principal</code> - The principal that manages the network interface. Only valid for instances with managed network interfaces, where <code>managed</code> is <code>true</code>.</p></li>
+    /// <li>
     /// <p><code>network-interface.outpost-arn</code> - The ARN of the Outpost.</p></li>
     /// <li>
     /// <p><code>network-interface.owner-id</code> - The ID of the owner of the network interface.</p></li>
@@ -335,6 +339,10 @@ impl InstanceRunningFluentBuilder {
     /// <p><code>network-interface.tag-value</code> - The value of a tag assigned to the network interface.</p></li>
     /// <li>
     /// <p><code>network-interface.vpc-id</code> - The ID of the VPC for the network interface.</p></li>
+    /// <li>
+    /// <p><code>operator.managed</code> - A Boolean that indicates whether this is a managed instance.</p></li>
+    /// <li>
+    /// <p><code>operator.principal</code> - The principal that manages the instance. Only valid for managed instances, where <code>managed</code> is <code>true</code>.</p></li>
     /// <li>
     /// <p><code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost.</p></li>
     /// <li>
@@ -577,6 +585,10 @@ impl InstanceRunningFluentBuilder {
     /// <li>
     /// <p><code>network-interface.network-interface-id</code> - The ID of the network interface.</p></li>
     /// <li>
+    /// <p><code>network-interface.operator.managed</code> - A Boolean that indicates whether the instance has a managed network interface.</p></li>
+    /// <li>
+    /// <p><code>network-interface.operator.principal</code> - The principal that manages the network interface. Only valid for instances with managed network interfaces, where <code>managed</code> is <code>true</code>.</p></li>
+    /// <li>
     /// <p><code>network-interface.outpost-arn</code> - The ARN of the Outpost.</p></li>
     /// <li>
     /// <p><code>network-interface.owner-id</code> - The ID of the owner of the network interface.</p></li>
@@ -602,6 +614,10 @@ impl InstanceRunningFluentBuilder {
     /// <p><code>network-interface.tag-value</code> - The value of a tag assigned to the network interface.</p></li>
     /// <li>
     /// <p><code>network-interface.vpc-id</code> - The ID of the VPC for the network interface.</p></li>
+    /// <li>
+    /// <p><code>operator.managed</code> - A Boolean that indicates whether this is a managed instance.</p></li>
+    /// <li>
+    /// <p><code>operator.principal</code> - The principal that manages the instance. Only valid for managed instances, where <code>managed</code> is <code>true</code>.</p></li>
     /// <li>
     /// <p><code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost.</p></li>
     /// <li>
@@ -844,6 +860,10 @@ impl InstanceRunningFluentBuilder {
     /// <li>
     /// <p><code>network-interface.network-interface-id</code> - The ID of the network interface.</p></li>
     /// <li>
+    /// <p><code>network-interface.operator.managed</code> - A Boolean that indicates whether the instance has a managed network interface.</p></li>
+    /// <li>
+    /// <p><code>network-interface.operator.principal</code> - The principal that manages the network interface. Only valid for instances with managed network interfaces, where <code>managed</code> is <code>true</code>.</p></li>
+    /// <li>
     /// <p><code>network-interface.outpost-arn</code> - The ARN of the Outpost.</p></li>
     /// <li>
     /// <p><code>network-interface.owner-id</code> - The ID of the owner of the network interface.</p></li>
@@ -869,6 +889,10 @@ impl InstanceRunningFluentBuilder {
     /// <p><code>network-interface.tag-value</code> - The value of a tag assigned to the network interface.</p></li>
     /// <li>
     /// <p><code>network-interface.vpc-id</code> - The ID of the VPC for the network interface.</p></li>
+    /// <li>
+    /// <p><code>operator.managed</code> - A Boolean that indicates whether this is a managed instance.</p></li>
+    /// <li>
+    /// <p><code>operator.principal</code> - The principal that manages the instance. Only valid for managed instances, where <code>managed</code> is <code>true</code>.</p></li>
     /// <li>
     /// <p><code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost.</p></li>
     /// <li>

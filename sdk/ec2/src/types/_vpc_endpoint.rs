@@ -42,6 +42,8 @@ pub struct VpcEndpoint {
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The last error that occurred for endpoint.</p>
     pub last_error: ::std::option::Option<crate::types::LastError>,
+    /// <p>The Region where the service is hosted.</p>
+    pub service_region: ::std::option::Option<::std::string::String>,
 }
 impl VpcEndpoint {
     /// <p>The ID of the endpoint.</p>
@@ -132,6 +134,10 @@ impl VpcEndpoint {
     pub fn last_error(&self) -> ::std::option::Option<&crate::types::LastError> {
         self.last_error.as_ref()
     }
+    /// <p>The Region where the service is hosted.</p>
+    pub fn service_region(&self) -> ::std::option::Option<&str> {
+        self.service_region.as_deref()
+    }
 }
 impl VpcEndpoint {
     /// Creates a new builder-style object to manufacture [`VpcEndpoint`](crate::types::VpcEndpoint).
@@ -163,6 +169,7 @@ pub struct VpcEndpointBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) last_error: ::std::option::Option<crate::types::LastError>,
+    pub(crate) service_region: ::std::option::Option<::std::string::String>,
 }
 impl VpcEndpointBuilder {
     /// <p>The ID of the endpoint.</p>
@@ -467,6 +474,20 @@ impl VpcEndpointBuilder {
     pub fn get_last_error(&self) -> &::std::option::Option<crate::types::LastError> {
         &self.last_error
     }
+    /// <p>The Region where the service is hosted.</p>
+    pub fn service_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.service_region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Region where the service is hosted.</p>
+    pub fn set_service_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.service_region = input;
+        self
+    }
+    /// <p>The Region where the service is hosted.</p>
+    pub fn get_service_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_region
+    }
     /// Consumes the builder and constructs a [`VpcEndpoint`](crate::types::VpcEndpoint).
     pub fn build(self) -> crate::types::VpcEndpoint {
         crate::types::VpcEndpoint {
@@ -489,6 +510,7 @@ impl VpcEndpointBuilder {
             tags: self.tags,
             owner_id: self.owner_id,
             last_error: self.last_error,
+            service_region: self.service_region,
         }
     }
 }

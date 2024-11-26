@@ -20,7 +20,7 @@ pub struct SearchCriteria {
     /// <p>To use <code>SearchableContactAttributes</code> in a search request, the <code>GetContactAttributes</code> action is required to perform an API request. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-actions-as-permissions">https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-actions-as-permissions</a>Actions defined by Amazon Connect.</p>
     /// </important>
     pub searchable_contact_attributes: ::std::option::Option<crate::types::SearchableContactAttributes>,
-    /// <p></p>
+    /// <p>The search criteria based on searchable segment attributes of a contact.</p>
     pub searchable_segment_attributes: ::std::option::Option<crate::types::SearchableSegmentAttributes>,
 }
 impl SearchCriteria {
@@ -62,7 +62,7 @@ impl SearchCriteria {
     pub fn searchable_contact_attributes(&self) -> ::std::option::Option<&crate::types::SearchableContactAttributes> {
         self.searchable_contact_attributes.as_ref()
     }
-    /// <p></p>
+    /// <p>The search criteria based on searchable segment attributes of a contact.</p>
     pub fn searchable_segment_attributes(&self) -> ::std::option::Option<&crate::types::SearchableSegmentAttributes> {
         self.searchable_segment_attributes.as_ref()
     }
@@ -216,17 +216,17 @@ impl SearchCriteriaBuilder {
     pub fn get_searchable_contact_attributes(&self) -> &::std::option::Option<crate::types::SearchableContactAttributes> {
         &self.searchable_contact_attributes
     }
-    /// <p></p>
+    /// <p>The search criteria based on searchable segment attributes of a contact.</p>
     pub fn searchable_segment_attributes(mut self, input: crate::types::SearchableSegmentAttributes) -> Self {
         self.searchable_segment_attributes = ::std::option::Option::Some(input);
         self
     }
-    /// <p></p>
+    /// <p>The search criteria based on searchable segment attributes of a contact.</p>
     pub fn set_searchable_segment_attributes(mut self, input: ::std::option::Option<crate::types::SearchableSegmentAttributes>) -> Self {
         self.searchable_segment_attributes = input;
         self
     }
-    /// <p></p>
+    /// <p>The search criteria based on searchable segment attributes of a contact.</p>
     pub fn get_searchable_segment_attributes(&self) -> &::std::option::Option<crate::types::SearchableSegmentAttributes> {
         &self.searchable_segment_attributes
     }

@@ -4165,6 +4165,8 @@ pub(crate) mod shape_successful_queued_purchase_deletion;
 
 pub(crate) mod shape_supported_ip_address_types;
 
+pub(crate) mod shape_supported_region_set;
+
 pub(crate) mod shape_tag_description;
 
 pub(crate) mod shape_target_groups_config;
@@ -4550,6 +4552,8 @@ pub(crate) mod shape_spot_options;
 pub(crate) mod shape_stale_ip_permission_set;
 
 pub(crate) mod shape_subnet_association;
+
+pub(crate) mod shape_supported_region_detail;
 
 pub(crate) mod shape_target_capacity_specification;
 

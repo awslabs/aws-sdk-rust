@@ -225,6 +225,10 @@ impl DescribeInstanceStatusFluentBuilder {
     /// <li>
     /// <p><code>instance-status.status</code> - The status of the instance (<code>ok</code> | <code>impaired</code> | <code>initializing</code> | <code>insufficient-data</code> | <code>not-applicable</code>).</p></li>
     /// <li>
+    /// <p><code>operator.managed</code> - A Boolean that indicates whether this is a managed instance.</p></li>
+    /// <li>
+    /// <p><code>operator.principal</code> - The principal that manages the instance. Only valid for managed instances, where <code>managed</code> is <code>true</code>.</p></li>
+    /// <li>
     /// <p><code>system-status.reachability</code> - Filters on system status where the name is <code>reachability</code> (<code>passed</code> | <code>failed</code> | <code>initializing</code> | <code>insufficient-data</code>).</p></li>
     /// <li>
     /// <p><code>system-status.status</code> - The system status of the instance (<code>ok</code> | <code>impaired</code> | <code>initializing</code> | <code>insufficient-data</code> | <code>not-applicable</code>).</p></li>
@@ -260,6 +264,10 @@ impl DescribeInstanceStatusFluentBuilder {
     /// <li>
     /// <p><code>instance-status.status</code> - The status of the instance (<code>ok</code> | <code>impaired</code> | <code>initializing</code> | <code>insufficient-data</code> | <code>not-applicable</code>).</p></li>
     /// <li>
+    /// <p><code>operator.managed</code> - A Boolean that indicates whether this is a managed instance.</p></li>
+    /// <li>
+    /// <p><code>operator.principal</code> - The principal that manages the instance. Only valid for managed instances, where <code>managed</code> is <code>true</code>.</p></li>
+    /// <li>
     /// <p><code>system-status.reachability</code> - Filters on system status where the name is <code>reachability</code> (<code>passed</code> | <code>failed</code> | <code>initializing</code> | <code>insufficient-data</code>).</p></li>
     /// <li>
     /// <p><code>system-status.status</code> - The system status of the instance (<code>ok</code> | <code>impaired</code> | <code>initializing</code> | <code>insufficient-data</code> | <code>not-applicable</code>).</p></li>
@@ -294,6 +302,10 @@ impl DescribeInstanceStatusFluentBuilder {
     /// <p><code>instance-status.reachability</code> - Filters on instance status where the name is <code>reachability</code> (<code>passed</code> | <code>failed</code> | <code>initializing</code> | <code>insufficient-data</code>).</p></li>
     /// <li>
     /// <p><code>instance-status.status</code> - The status of the instance (<code>ok</code> | <code>impaired</code> | <code>initializing</code> | <code>insufficient-data</code> | <code>not-applicable</code>).</p></li>
+    /// <li>
+    /// <p><code>operator.managed</code> - A Boolean that indicates whether this is a managed instance.</p></li>
+    /// <li>
+    /// <p><code>operator.principal</code> - The principal that manages the instance. Only valid for managed instances, where <code>managed</code> is <code>true</code>.</p></li>
     /// <li>
     /// <p><code>system-status.reachability</code> - Filters on system status where the name is <code>reachability</code> (<code>passed</code> | <code>failed</code> | <code>initializing</code> | <code>insufficient-data</code>).</p></li>
     /// <li>

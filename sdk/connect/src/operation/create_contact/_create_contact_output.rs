@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateContactOutput {
-    /// <p></p>
+    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
     pub contact_id: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>The Amazon Resource Name (ARN) of the created contact.</p>
     pub contact_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateContactOutput {
-    /// <p></p>
+    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
     pub fn contact_id(&self) -> ::std::option::Option<&str> {
         self.contact_id.as_deref()
     }
-    /// <p></p>
+    /// <p>The Amazon Resource Name (ARN) of the created contact.</p>
     pub fn contact_arn(&self) -> ::std::option::Option<&str> {
         self.contact_arn.as_deref()
     }
@@ -40,31 +40,31 @@ pub struct CreateContactOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateContactOutputBuilder {
-    /// <p></p>
+    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
     pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
     pub fn set_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contact_id = input;
         self
     }
-    /// <p></p>
+    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
     pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.contact_id
     }
-    /// <p></p>
+    /// <p>The Amazon Resource Name (ARN) of the created contact.</p>
     pub fn contact_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The Amazon Resource Name (ARN) of the created contact.</p>
     pub fn set_contact_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contact_arn = input;
         self
     }
-    /// <p></p>
+    /// <p>The Amazon Resource Name (ARN) of the created contact.</p>
     pub fn get_contact_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.contact_arn
     }

@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartQAppSessionOutput {
-    /// <p>The unique identifier of the new Q App session.</p>
+    /// <p>The unique identifier of the new or retrieved Q App session.</p>
     pub session_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the new Q App session.</p>
     pub session_arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl StartQAppSessionOutput {
-    /// <p>The unique identifier of the new Q App session.</p>
+    /// <p>The unique identifier of the new or retrieved Q App session.</p>
     pub fn session_id(&self) -> &str {
         use std::ops::Deref;
         self.session_id.deref()
@@ -42,18 +42,18 @@ pub struct StartQAppSessionOutputBuilder {
     _request_id: Option<String>,
 }
 impl StartQAppSessionOutputBuilder {
-    /// <p>The unique identifier of the new Q App session.</p>
+    /// <p>The unique identifier of the new or retrieved Q App session.</p>
     /// This field is required.
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the new Q App session.</p>
+    /// <p>The unique identifier of the new or retrieved Q App session.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_id = input;
         self
     }
-    /// <p>The unique identifier of the new Q App session.</p>
+    /// <p>The unique identifier of the new or retrieved Q App session.</p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_id
     }

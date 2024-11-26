@@ -108,6 +108,32 @@ pub fn ser_modify_vpc_endpoint_service_configuration_input_input_input(
             list_39.finish();
         }
     }
+    #[allow(unused_mut)]
+    let mut scope_41 = writer.prefix("AddSupportedRegion");
+    if let Some(var_42) = &input.add_supported_regions {
+        if !var_42.is_empty() {
+            let mut list_44 = scope_41.start_list(true, Some("item"));
+            for item_43 in var_42 {
+                #[allow(unused_mut)]
+                let mut entry_45 = list_44.entry();
+                entry_45.string(item_43);
+            }
+            list_44.finish();
+        }
+    }
+    #[allow(unused_mut)]
+    let mut scope_46 = writer.prefix("RemoveSupportedRegion");
+    if let Some(var_47) = &input.remove_supported_regions {
+        if !var_47.is_empty() {
+            let mut list_49 = scope_46.start_list(true, Some("item"));
+            for item_48 in var_47 {
+                #[allow(unused_mut)]
+                let mut entry_50 = list_49.entry();
+                entry_50.string(item_48);
+            }
+            list_49.finish();
+        }
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

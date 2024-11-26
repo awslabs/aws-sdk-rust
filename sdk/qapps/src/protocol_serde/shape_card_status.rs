@@ -28,6 +28,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "submissions" => {
+                            builder = builder.set_submissions(crate::protocol_serde::shape_submission_list::de_submission_list(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -285,6 +285,8 @@ pub use crate::types::_agent_alias_summary::AgentAliasSummaryBuilder;
 
 pub use crate::types::_agent::AgentBuilder;
 
+pub use crate::types::_custom_orchestration::CustomOrchestrationBuilder;
+
 pub use crate::types::_agent_summary::AgentSummaryBuilder;
 
 pub use crate::types::_agent_action_group::AgentActionGroupBuilder;

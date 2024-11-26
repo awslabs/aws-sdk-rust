@@ -5,7 +5,7 @@
 pub struct ImportDocumentInput {
     /// <p>The unique identifier of the Amazon Q Business application environment instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier of the card the file is associated with, if applicable.</p>
+    /// <p>The unique identifier of the card the file is associated with.</p>
     pub card_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the Q App the file is associated with.</p>
     pub app_id: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct ImportDocumentInput {
     pub file_contents_base64: ::std::option::Option<::std::string::String>,
     /// <p>The name of the file being uploaded.</p>
     pub file_name: ::std::option::Option<::std::string::String>,
-    /// <p>Whether the file is associated with an Q App definition or a specific Q App session.</p>
+    /// <p>Whether the file is associated with a Q App definition or a specific Q App session.</p>
     pub scope: ::std::option::Option<crate::types::DocumentScope>,
     /// <p>The unique identifier of the Q App session the file is associated with, if applicable.</p>
     pub session_id: ::std::option::Option<::std::string::String>,
@@ -23,7 +23,7 @@ impl ImportDocumentInput {
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The unique identifier of the card the file is associated with, if applicable.</p>
+    /// <p>The unique identifier of the card the file is associated with.</p>
     pub fn card_id(&self) -> ::std::option::Option<&str> {
         self.card_id.as_deref()
     }
@@ -39,7 +39,7 @@ impl ImportDocumentInput {
     pub fn file_name(&self) -> ::std::option::Option<&str> {
         self.file_name.as_deref()
     }
-    /// <p>Whether the file is associated with an Q App definition or a specific Q App session.</p>
+    /// <p>Whether the file is associated with a Q App definition or a specific Q App session.</p>
     pub fn scope(&self) -> ::std::option::Option<&crate::types::DocumentScope> {
         self.scope.as_ref()
     }
@@ -83,18 +83,18 @@ impl ImportDocumentInputBuilder {
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }
-    /// <p>The unique identifier of the card the file is associated with, if applicable.</p>
+    /// <p>The unique identifier of the card the file is associated with.</p>
     /// This field is required.
     pub fn card_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.card_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the card the file is associated with, if applicable.</p>
+    /// <p>The unique identifier of the card the file is associated with.</p>
     pub fn set_card_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.card_id = input;
         self
     }
-    /// <p>The unique identifier of the card the file is associated with, if applicable.</p>
+    /// <p>The unique identifier of the card the file is associated with.</p>
     pub fn get_card_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.card_id
     }
@@ -143,18 +143,18 @@ impl ImportDocumentInputBuilder {
     pub fn get_file_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.file_name
     }
-    /// <p>Whether the file is associated with an Q App definition or a specific Q App session.</p>
+    /// <p>Whether the file is associated with a Q App definition or a specific Q App session.</p>
     /// This field is required.
     pub fn scope(mut self, input: crate::types::DocumentScope) -> Self {
         self.scope = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether the file is associated with an Q App definition or a specific Q App session.</p>
+    /// <p>Whether the file is associated with a Q App definition or a specific Q App session.</p>
     pub fn set_scope(mut self, input: ::std::option::Option<crate::types::DocumentScope>) -> Self {
         self.scope = input;
         self
     }
-    /// <p>Whether the file is associated with an Q App definition or a specific Q App session.</p>
+    /// <p>Whether the file is associated with a Q App definition or a specific Q App session.</p>
     pub fn get_scope(&self) -> &::std::option::Option<crate::types::DocumentScope> {
         &self.scope
     }

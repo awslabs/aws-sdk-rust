@@ -283,7 +283,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateQueueOu
 pub enum UpdateQueueOutboundEmailConfigError {
     /// <p>You do not have sufficient permissions to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p></p>
+    /// <p>A conditional check failed.</p>
     ConditionalOperationFailedException(crate::types::error::ConditionalOperationFailedException),
     /// <p>Request processing failed because of an error or failure with the service.</p>
     InternalServiceException(crate::types::error::InternalServiceException),

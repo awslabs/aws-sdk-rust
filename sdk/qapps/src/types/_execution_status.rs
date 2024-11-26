@@ -13,6 +13,7 @@
 /// # let executionstatus = unimplemented!();
 /// match executionstatus {
 ///     ExecutionStatus::Completed => { /* ... */ },
+///     ExecutionStatus::Error => { /* ... */ },
 ///     ExecutionStatus::InProgress => { /* ... */ },
 ///     ExecutionStatus::Waiting => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -45,6 +46,8 @@ pub enum ExecutionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Completed,
     #[allow(missing_docs)] // documentation missing in model
+    Error,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
     #[allow(missing_docs)] // documentation missing in model
     Waiting,
@@ -56,6 +59,7 @@ impl ::std::convert::From<&str> for ExecutionStatus {
     fn from(s: &str) -> Self {
         match s {
             "COMPLETED" => ExecutionStatus::Completed,
+            "ERROR" => ExecutionStatus::Error,
             "IN_PROGRESS" => ExecutionStatus::InProgress,
             "WAITING" => ExecutionStatus::Waiting,
             other => ExecutionStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -74,6 +78,7 @@ impl ExecutionStatus {
     pub fn as_str(&self) -> &str {
         match self {
             ExecutionStatus::Completed => "COMPLETED",
+            ExecutionStatus::Error => "ERROR",
             ExecutionStatus::InProgress => "IN_PROGRESS",
             ExecutionStatus::Waiting => "WAITING",
             ExecutionStatus::Unknown(value) => value.as_str(),
@@ -81,7 +86,7 @@ impl ExecutionStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COMPLETED", "IN_PROGRESS", "WAITING"]
+        &["COMPLETED", "ERROR", "IN_PROGRESS", "WAITING"]
     }
 }
 impl ::std::convert::AsRef<str> for ExecutionStatus {
@@ -105,6 +110,7 @@ impl ::std::fmt::Display for ExecutionStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ExecutionStatus::Completed => write!(f, "COMPLETED"),
+            ExecutionStatus::Error => write!(f, "ERROR"),
             ExecutionStatus::InProgress => write!(f, "IN_PROGRESS"),
             ExecutionStatus::Waiting => write!(f, "WAITING"),
             ExecutionStatus::Unknown(value) => write!(f, "{}", value),

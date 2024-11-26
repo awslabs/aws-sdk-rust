@@ -8,11 +8,11 @@ pub struct Reference {
     pub value: ::std::string::String,
     /// <p>The type of the reference. <code>DATE</code> must be of type Epoch timestamp.</p>
     pub r#type: crate::types::ReferenceType,
-    /// <p></p>
+    /// <p>Status of the attachment reference type.</p>
     pub status: ::std::option::Option<crate::types::ReferenceStatus>,
-    /// <p></p>
+    /// <p>The Amazon Resource Name (ARN) of the reference</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>Relevant details why the reference was not successfully created.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
 }
 impl Reference {
@@ -25,15 +25,15 @@ impl Reference {
     pub fn r#type(&self) -> &crate::types::ReferenceType {
         &self.r#type
     }
-    /// <p></p>
+    /// <p>Status of the attachment reference type.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ReferenceStatus> {
         self.status.as_ref()
     }
-    /// <p></p>
+    /// <p>The Amazon Resource Name (ARN) of the reference</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p></p>
+    /// <p>Relevant details why the reference was not successfully created.</p>
     pub fn status_reason(&self) -> ::std::option::Option<&str> {
         self.status_reason.as_deref()
     }
@@ -85,45 +85,45 @@ impl ReferenceBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ReferenceType> {
         &self.r#type
     }
-    /// <p></p>
+    /// <p>Status of the attachment reference type.</p>
     pub fn status(mut self, input: crate::types::ReferenceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p></p>
+    /// <p>Status of the attachment reference type.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReferenceStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p></p>
+    /// <p>Status of the attachment reference type.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ReferenceStatus> {
         &self.status
     }
-    /// <p></p>
+    /// <p>The Amazon Resource Name (ARN) of the reference</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The Amazon Resource Name (ARN) of the reference</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p></p>
+    /// <p>The Amazon Resource Name (ARN) of the reference</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p></p>
+    /// <p>Relevant details why the reference was not successfully created.</p>
     pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>Relevant details why the reference was not successfully created.</p>
     pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_reason = input;
         self
     }
-    /// <p></p>
+    /// <p>Relevant details why the reference was not successfully created.</p>
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_reason
     }

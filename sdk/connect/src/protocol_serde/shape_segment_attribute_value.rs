@@ -6,6 +6,25 @@ pub fn ser_segment_attribute_value(
     if let Some(var_1) = &input.value_string {
         object.key("ValueString").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.value_map {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("ValueMap").start_object();
+        for (key_4, value_5) in var_2 {
+            {
+                #[allow(unused_mut)]
+                let mut object_6 = object_3.key(key_4.as_str()).start_object();
+                crate::protocol_serde::shape_segment_attribute_value::ser_segment_attribute_value(&mut object_6, value_5)?;
+                object_6.finish();
+            }
+        }
+        object_3.finish();
+    }
+    if let Some(var_7) = &input.value_integer {
+        object.key("ValueInteger").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
+        );
+    }
     Ok(())
 }
 
@@ -28,6 +47,18 @@ where
                             builder = builder.set_value_string(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "ValueMap" => {
+                            builder = builder.set_value_map(
+                                crate::protocol_serde::shape_segment_attribute_value_map::de_segment_attribute_value_map(tokens)?,
+                            );
+                        }
+                        "ValueInteger" => {
+                            builder = builder.set_value_integer(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
                                     .transpose()?,
                             );
                         }
