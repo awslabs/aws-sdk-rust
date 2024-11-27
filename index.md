@@ -363,6 +363,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Auto Scaling | [aws-sdk-autoscaling](https://crates.io/crates/aws-sdk-autoscaling) ([docs](https://docs.rs/aws-sdk-autoscaling)) |
 | Braket | [aws-sdk-braket](https://crates.io/crates/aws-sdk-braket) ([docs](https://docs.rs/aws-sdk-braket)) |
 | CloudWatch Observability Access Manager | [aws-sdk-oam](https://crates.io/crates/aws-sdk-oam) ([docs](https://docs.rs/aws-sdk-oam)) |
+| CloudWatch Observability Admin Service | [aws-sdk-observabilityadmin](https://crates.io/crates/aws-sdk-observabilityadmin) ([docs](https://docs.rs/aws-sdk-observabilityadmin)) |
 | CloudWatch RUM | [aws-sdk-rum](https://crates.io/crates/aws-sdk-rum) ([docs](https://docs.rs/aws-sdk-rum)) |
 | CodeArtifact | [aws-sdk-codeartifact](https://crates.io/crates/aws-sdk-codeartifact) ([docs](https://docs.rs/aws-sdk-codeartifact)) |
 | Cost Optimization Hub | [aws-sdk-costoptimizationhub](https://crates.io/crates/aws-sdk-costoptimizationhub) ([docs](https://docs.rs/aws-sdk-costoptimizationhub)) |

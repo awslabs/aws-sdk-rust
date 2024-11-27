@@ -67,6 +67,12 @@ pub use crate::types::_exclusion_by_resource_types::ExclusionByResourceTypesBuil
 
 pub use crate::types::_configuration_aggregator::ConfigurationAggregatorBuilder;
 
+pub use crate::types::_aggregator_filters::AggregatorFiltersBuilder;
+
+pub use crate::types::_aggregator_filter_service_principal::AggregatorFilterServicePrincipalBuilder;
+
+pub use crate::types::_aggregator_filter_resource_type::AggregatorFilterResourceTypeBuilder;
+
 pub use crate::types::_organization_aggregation_source::OrganizationAggregationSourceBuilder;
 
 pub use crate::types::_account_aggregation_source::AccountAggregationSourceBuilder;
@@ -98,6 +104,10 @@ pub use crate::types::_resource_identifier::ResourceIdentifierBuilder;
 pub use crate::types::_conformance_pack_compliance_score::ConformancePackComplianceScoreBuilder;
 
 pub use crate::types::_conformance_pack_compliance_scores_filters::ConformancePackComplianceScoresFiltersBuilder;
+
+pub use crate::types::_configuration_recorder_summary::ConfigurationRecorderSummaryBuilder;
+
+pub use crate::types::_configuration_recorder_filter::ConfigurationRecorderFilterBuilder;
 
 pub use crate::types::_aggregate_resource_identifier::AggregateResourceIdentifierBuilder;
 

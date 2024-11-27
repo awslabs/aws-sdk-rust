@@ -256,9 +256,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutConfigurat
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum PutConfigurationRecorderError {
-    /// <p>You have provided a name for the configuration recorder that is not valid.</p>
+    /// <p>You have provided a name for the customer managed configuration recorder that is not valid.</p>
     InvalidConfigurationRecorderNameException(crate::types::error::InvalidConfigurationRecorderNameException),
-    /// <p>Indicates one of the following errors:</p>
+    /// <p>One of the following errors:</p>
     /// <ul>
     /// <li>
     /// <p>You have provided a combination of parameter values that is not valid. For example:</p>
@@ -276,13 +276,41 @@ pub enum PutConfigurationRecorderError {
     /// <p>You have provided resource types or a recording strategy that are not valid.</p></li>
     /// </ul>
     InvalidRecordingGroupException(crate::types::error::InvalidRecordingGroupException),
-    /// <p>You have provided a null or empty Amazon Resource Name (ARN) for the IAM role assumed by Config and used by the configuration recorder.</p>
+    /// <p>You have provided a null or empty Amazon Resource Name (ARN) for the IAM role assumed by Config and used by the customer managed configuration recorder.</p>
     InvalidRoleException(crate::types::error::InvalidRoleException),
     /// <p>You have reached the limit of the number of configuration recorders you can create.</p>
     MaxNumberOfConfigurationRecordersExceededException(crate::types::error::MaxNumberOfConfigurationRecordersExceededException),
-    /// <p>The requested action is not valid.</p>
-    /// <p>For PutStoredQuery, you will see this exception if there are missing required fields or if the input value fails the validation, or if you are trying to create more than 300 queries.</p>
-    /// <p>For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are missing required fields or if the input value fails the validation.</p>
+    /// <p>The requested operation is not valid.</p>
+    /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConfigurationRecorder.html">PutConfigurationRecorder</a>, you will see this exception because you cannot use this operation to create a service-linked configuration recorder. Use the <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutServiceLinkedConfigurationRecorder.html">PutServiceLinkedConfigurationRecorder</a> operation to create a service-linked configuration recorder.</p>
+    /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteConfigurationRecorder.html">DeleteConfigurationRecorder</a>, you will see this exception because you cannot use this operation to delete a service-linked configuration recorder. Use the <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a> operation to delete a service-linked configuration recorder.</p>
+    /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_StartConfigurationRecorder.html">StartConfigurationRecorder</a> and <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_StopConfigurationRecorder.html">StopConfigurationRecorder</a>, you will see this exception because these operations do not affect service-linked configuration recorders. Service-linked configuration recorders are always recording. To stop recording, you must delete the service-linked configuration recorder. Use the <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a> operation to delete a service-linked configuration recorder.</p>
+    UnmodifiableEntityException(crate::types::error::UnmodifiableEntityException),
+    /// <p>The requested operation is not valid. You will see this exception if there are missing required fields or if the input value fails the validation.</p>
+    /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutStoredQuery.html">PutStoredQuery</a>, one of the following errors:</p>
+    /// <ul>
+    /// <li>
+    /// <p>There are missing required fields.</p></li>
+    /// <li>
+    /// <p>The input value fails the validation.</p></li>
+    /// <li>
+    /// <p>You are trying to create more than 300 queries.</p></li>
+    /// </ul>
+    /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigurationRecorders.html">DescribeConfigurationRecorders</a> and <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigurationRecorderStatus.html">DescribeConfigurationRecorderStatus</a>, one of the following errors:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You have specified more than one configuration recorder.</p></li>
+    /// <li>
+    /// <p>You have provided a service principal for service-linked configuration recorder that is not valid.</p></li>
+    /// </ul>
+    /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_AssociateResourceTypes.html">AssociateResourceTypes</a> and <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DisassociateResourceTypes.html">DisassociateResourceTypes</a>, one of the following errors:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Your configuraiton recorder has a recording strategy that does not allow the association or disassociation of resource types.</p></li>
+    /// <li>
+    /// <p>One or more of the specified resource types are already associated or disassociated with the configuration recorder.</p></li>
+    /// <li>
+    /// <p>For service-linked configuration recorders, the configuration recorder does not record one or more of the specified resource types.</p></li>
+    /// </ul>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
@@ -321,6 +349,7 @@ impl PutConfigurationRecorderError {
             Self::InvalidRecordingGroupException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidRoleException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::MaxNumberOfConfigurationRecordersExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::UnmodifiableEntityException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
@@ -341,6 +370,10 @@ impl PutConfigurationRecorderError {
     pub fn is_max_number_of_configuration_recorders_exceeded_exception(&self) -> bool {
         matches!(self, Self::MaxNumberOfConfigurationRecordersExceededException(_))
     }
+    /// Returns `true` if the error kind is `PutConfigurationRecorderError::UnmodifiableEntityException`.
+    pub fn is_unmodifiable_entity_exception(&self) -> bool {
+        matches!(self, Self::UnmodifiableEntityException(_))
+    }
     /// Returns `true` if the error kind is `PutConfigurationRecorderError::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(self, Self::ValidationException(_))
@@ -353,6 +386,7 @@ impl ::std::error::Error for PutConfigurationRecorderError {
             Self::InvalidRecordingGroupException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidRoleException(_inner) => ::std::option::Option::Some(_inner),
             Self::MaxNumberOfConfigurationRecordersExceededException(_inner) => ::std::option::Option::Some(_inner),
+            Self::UnmodifiableEntityException(_inner) => ::std::option::Option::Some(_inner),
             Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -365,6 +399,7 @@ impl ::std::fmt::Display for PutConfigurationRecorderError {
             Self::InvalidRecordingGroupException(_inner) => _inner.fmt(f),
             Self::InvalidRoleException(_inner) => _inner.fmt(f),
             Self::MaxNumberOfConfigurationRecordersExceededException(_inner) => _inner.fmt(f),
+            Self::UnmodifiableEntityException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -393,6 +428,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for PutConfigurat
             Self::MaxNumberOfConfigurationRecordersExceededException(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
+            Self::UnmodifiableEntityException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

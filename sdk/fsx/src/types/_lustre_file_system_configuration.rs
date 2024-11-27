@@ -52,6 +52,8 @@ pub struct LustreFileSystemConfiguration {
     pub root_squash_configuration: ::std::option::Option<crate::types::LustreRootSquashConfiguration>,
     /// <p>The Lustre metadata performance configuration for an Amazon FSx for Lustre file system using a <code>PERSISTENT_2</code> deployment type.</p>
     pub metadata_configuration: ::std::option::Option<crate::types::FileSystemLustreMetadataConfiguration>,
+    /// <p>Specifies whether Elastic Fabric Adapter (EFA) and GPUDirect Storage (GDS) support is enabled for the Amazon FSx for Lustre file system.</p>
+    pub efa_enabled: ::std::option::Option<bool>,
 }
 impl LustreFileSystemConfiguration {
     /// <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Here, <code>d</code> is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
@@ -128,6 +130,10 @@ impl LustreFileSystemConfiguration {
     pub fn metadata_configuration(&self) -> ::std::option::Option<&crate::types::FileSystemLustreMetadataConfiguration> {
         self.metadata_configuration.as_ref()
     }
+    /// <p>Specifies whether Elastic Fabric Adapter (EFA) and GPUDirect Storage (GDS) support is enabled for the Amazon FSx for Lustre file system.</p>
+    pub fn efa_enabled(&self) -> ::std::option::Option<bool> {
+        self.efa_enabled
+    }
 }
 impl LustreFileSystemConfiguration {
     /// Creates a new builder-style object to manufacture [`LustreFileSystemConfiguration`](crate::types::LustreFileSystemConfiguration).
@@ -153,6 +159,7 @@ pub struct LustreFileSystemConfigurationBuilder {
     pub(crate) log_configuration: ::std::option::Option<crate::types::LustreLogConfiguration>,
     pub(crate) root_squash_configuration: ::std::option::Option<crate::types::LustreRootSquashConfiguration>,
     pub(crate) metadata_configuration: ::std::option::Option<crate::types::FileSystemLustreMetadataConfiguration>,
+    pub(crate) efa_enabled: ::std::option::Option<bool>,
 }
 impl LustreFileSystemConfigurationBuilder {
     /// <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Here, <code>d</code> is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
@@ -403,6 +410,20 @@ impl LustreFileSystemConfigurationBuilder {
     pub fn get_metadata_configuration(&self) -> &::std::option::Option<crate::types::FileSystemLustreMetadataConfiguration> {
         &self.metadata_configuration
     }
+    /// <p>Specifies whether Elastic Fabric Adapter (EFA) and GPUDirect Storage (GDS) support is enabled for the Amazon FSx for Lustre file system.</p>
+    pub fn efa_enabled(mut self, input: bool) -> Self {
+        self.efa_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether Elastic Fabric Adapter (EFA) and GPUDirect Storage (GDS) support is enabled for the Amazon FSx for Lustre file system.</p>
+    pub fn set_efa_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.efa_enabled = input;
+        self
+    }
+    /// <p>Specifies whether Elastic Fabric Adapter (EFA) and GPUDirect Storage (GDS) support is enabled for the Amazon FSx for Lustre file system.</p>
+    pub fn get_efa_enabled(&self) -> &::std::option::Option<bool> {
+        &self.efa_enabled
+    }
     /// Consumes the builder and constructs a [`LustreFileSystemConfiguration`](crate::types::LustreFileSystemConfiguration).
     pub fn build(self) -> crate::types::LustreFileSystemConfiguration {
         crate::types::LustreFileSystemConfiguration {
@@ -419,6 +440,7 @@ impl LustreFileSystemConfigurationBuilder {
             log_configuration: self.log_configuration,
             root_squash_configuration: self.root_squash_configuration,
             metadata_configuration: self.metadata_configuration,
+            efa_enabled: self.efa_enabled,
         }
     }
 }

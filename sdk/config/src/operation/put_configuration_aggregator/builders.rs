@@ -28,7 +28,9 @@ impl crate::operation::put_configuration_aggregator::builders::PutConfigurationA
 /// <p>If your source type is an organization, you must be signed in to the management account or a registered delegated administrator and all the features must be enabled in your organization. If the caller is a management account, Config calls <code>EnableAwsServiceAccess</code> API to enable integration between Config and Organizations. If the caller is a registered delegated administrator, Config calls <code>ListDelegatedAdministrators</code> API to verify whether the caller is a valid delegated administrator.</p>
 /// <p>To register a delegated administrator, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/set-up-aggregator-cli.html#register-a-delegated-administrator-cli">Register a Delegated Administrator</a> in the <i>Config developer guide</i>.</p>
 /// </note> <note>
+/// <p><b>Tags are added at creation and cannot be updated with this operation</b></p>
 /// <p><code>PutConfigurationAggregator</code> is an idempotent API. Subsequent requests won’t create a duplicate resource if one was already created. If a following request has different <code>tags</code> values, Config will ignore these differences and treat it as an idempotent request of the previous. In this case, <code>tags</code> will not be updated, even if they are different.</p>
+/// <p>Use <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_TagResource.html">TagResource</a> and <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_UntagResource.html">UntagResource</a> to update tags after creation.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutConfigurationAggregatorFluentBuilder {
@@ -180,5 +182,19 @@ impl PutConfigurationAggregatorFluentBuilder {
     /// <p>An array of tag object.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
+    }
+    /// <p>An object to filter configuration recorders in an aggregator. Either <code>ResourceType</code> or <code>ServicePrincipal</code> is required.</p>
+    pub fn aggregator_filters(mut self, input: crate::types::AggregatorFilters) -> Self {
+        self.inner = self.inner.aggregator_filters(input);
+        self
+    }
+    /// <p>An object to filter configuration recorders in an aggregator. Either <code>ResourceType</code> or <code>ServicePrincipal</code> is required.</p>
+    pub fn set_aggregator_filters(mut self, input: ::std::option::Option<crate::types::AggregatorFilters>) -> Self {
+        self.inner = self.inner.set_aggregator_filters(input);
+        self
+    }
+    /// <p>An object to filter configuration recorders in an aggregator. Either <code>ResourceType</code> or <code>ServicePrincipal</code> is required.</p>
+    pub fn get_aggregator_filters(&self) -> &::std::option::Option<crate::types::AggregatorFilters> {
+        self.inner.get_aggregator_filters()
     }
 }

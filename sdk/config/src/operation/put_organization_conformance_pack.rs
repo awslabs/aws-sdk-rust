@@ -259,19 +259,21 @@ pub enum PutOrganizationConformancePackError {
     /// <p>Indicates one of the following errors:</p>
     /// <ul>
     /// <li>
-    /// <p>For PutConfigRule, the rule cannot be created because the IAM role assigned to Config lacks permissions to perform the config:Put* action.</p></li>
+    /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConfigRule.html">PutConfigRule</a>, the rule cannot be created because the IAM role assigned to Config lacks permissions to perform the config:Put* action.</p></li>
     /// <li>
-    /// <p>For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.</p></li>
+    /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConfigRule.html">PutConfigRule</a>, the Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.</p></li>
     /// <li>
-    /// <p>For PutOrganizationConfigRule, organization Config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service-linked role.</p></li>
+    /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutOrganizationConfigRule.html">PutOrganizationConfigRule</a>, organization Config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service-linked role.</p></li>
     /// <li>
-    /// <p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created because you do not have the following permissions:</p>
+    /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConformancePack.html">PutConformancePack</a> and <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutOrganizationConformancePack.html">PutOrganizationConformancePack</a>, a conformance pack cannot be created because you do not have the following permissions:</p>
     /// <ul>
     /// <li>
     /// <p>You do not have permission to call IAM <code>GetRole</code> action or create a service-linked role.</p></li>
     /// <li>
     /// <p>You do not have permission to read Amazon S3 bucket or call SSM:GetDocument.</p></li>
     /// </ul></li>
+    /// <li>
+    /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutServiceLinkedConfigurationRecorder.html">PutServiceLinkedConfigurationRecorder</a>, a service-linked configuration recorder cannot be created because you do not have the following permissions: IAM <code>CreateServiceLinkedRole</code>.</p></li>
     /// </ul>
     InsufficientPermissionsException(crate::types::error::InsufficientPermissionsException),
     /// <p>You have reached the limit of the number of organization conformance packs you can create in an account. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.</p>
@@ -287,7 +289,7 @@ pub enum PutOrganizationConformancePackError {
     /// <li>
     /// <p>The configuration aggregator is associated with a previous Amazon Web Services Organization and Config cannot aggregate data with current Amazon Web Services Organization. Delete this aggregator and create a new one with the current Amazon Web Services Organization.</p></li>
     /// <li>
-    /// <p>You are not a registered delegated administrator for Config with permissions to call <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers delagated administrator for Config service principle name before the delegated administrator creates an aggregator.</p></li>
+    /// <p>You are not a registered delegated administrator for Config with permissions to call <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers delagated administrator for Config service principal name before the delegated administrator creates an aggregator.</p></li>
     /// </ul>
     /// <p>For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code> APIs, Config throws an exception if APIs are called from member accounts. All APIs must be called from organization management account.</p>
     OrganizationAccessDeniedException(crate::types::error::OrganizationAccessDeniedException),
@@ -313,9 +315,32 @@ pub enum PutOrganizationConformancePackError {
     /// <p>For DeleteConformancePack, a conformance pack creation, update, and deletion is in progress. Try your request again later.</p></li>
     /// </ul>
     ResourceInUseException(crate::types::error::ResourceInUseException),
-    /// <p>The requested action is not valid.</p>
-    /// <p>For PutStoredQuery, you will see this exception if there are missing required fields or if the input value fails the validation, or if you are trying to create more than 300 queries.</p>
-    /// <p>For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are missing required fields or if the input value fails the validation.</p>
+    /// <p>The requested operation is not valid. You will see this exception if there are missing required fields or if the input value fails the validation.</p>
+    /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutStoredQuery.html">PutStoredQuery</a>, one of the following errors:</p>
+    /// <ul>
+    /// <li>
+    /// <p>There are missing required fields.</p></li>
+    /// <li>
+    /// <p>The input value fails the validation.</p></li>
+    /// <li>
+    /// <p>You are trying to create more than 300 queries.</p></li>
+    /// </ul>
+    /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigurationRecorders.html">DescribeConfigurationRecorders</a> and <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigurationRecorderStatus.html">DescribeConfigurationRecorderStatus</a>, one of the following errors:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You have specified more than one configuration recorder.</p></li>
+    /// <li>
+    /// <p>You have provided a service principal for service-linked configuration recorder that is not valid.</p></li>
+    /// </ul>
+    /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_AssociateResourceTypes.html">AssociateResourceTypes</a> and <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DisassociateResourceTypes.html">DisassociateResourceTypes</a>, one of the following errors:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Your configuraiton recorder has a recording strategy that does not allow the association or disassociation of resource types.</p></li>
+    /// <li>
+    /// <p>One or more of the specified resource types are already associated or disassociated with the configuration recorder.</p></li>
+    /// <li>
+    /// <p>For service-linked configuration recorders, the configuration recorder does not record one or more of the specified resource types.</p></li>
+    /// </ul>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

@@ -24,23 +24,7 @@ pub struct RecordingGroup {
     /// <p>Check <a href="https://docs.aws.amazon.com/config/latest/developerguide/what-is-resource-config-coverage.html">Resource Coverage by Region Availability</a> to see if a resource type is supported in the Amazon Web Services Region where you set up Config.</p>
     /// </note>
     pub all_supported: bool,
-    /// <p>This option is a bundle which only applies to the global IAM resource types: IAM users, groups, roles, and customer managed policies. These global IAM resource types can only be recorded by Config in Regions where Config was available before February 2022. You cannot be record the global IAM resouce types in Regions supported by Config after February 2022. This list where you cannot record the global IAM resource types includes the following Regions:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Asia Pacific (Hyderabad)</p></li>
-    /// <li>
-    /// <p>Asia Pacific (Melbourne)</p></li>
-    /// <li>
-    /// <p>Canada West (Calgary)</p></li>
-    /// <li>
-    /// <p>Europe (Spain)</p></li>
-    /// <li>
-    /// <p>Europe (Zurich)</p></li>
-    /// <li>
-    /// <p>Israel (Tel Aviv)</p></li>
-    /// <li>
-    /// <p>Middle East (UAE)</p></li>
-    /// </ul><important>
+    /// <p>This option is a bundle which only applies to the global IAM resource types: IAM users, groups, roles, and customer managed policies. These global IAM resource types can only be recorded by Config in Regions where Config was available before February 2022. You cannot be record the global IAM resouce types in Regions supported by Config after February 2022. For a list of those Regions, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-all">Recording Amazon Web Services Resources | Global Resources</a>.</p><important>
     /// <p><b>Aurora global clusters are recorded in all enabled Regions</b></p>
     /// <p>The <code>AWS::RDS::GlobalCluster</code> resource type will be recorded in all supported Config Regions where the configuration recorder is enabled, even if <code>includeGlobalResourceTypes</code> is set<code>false</code>. The <code>includeGlobalResourceTypes</code> option is a bundle which only applies to IAM users, groups, roles, and customer managed policies.</p>
     /// <p>If you do not want to record <code>AWS::RDS::GlobalCluster</code> in all enabled Regions, use one of the following recording strategies:</p>
@@ -101,23 +85,7 @@ pub struct RecordingGroup {
     /// <p><b>Global resources types and the resource exclusion recording strategy</b></p>
     /// <p>By default, if you choose the <code>EXCLUSION_BY_RESOURCE_TYPES</code> recording strategy, when Config adds support for a new resource type in the Region where you set up the configuration recorder, including global resource types, Config starts recording resources of that type automatically.</p>
     /// <p>Unless specifically listed as exclusions, <code>AWS::RDS::GlobalCluster</code> will be recorded automatically in all supported Config Regions were the configuration recorder is enabled.</p>
-    /// <p>IAM users, groups, roles, and customer managed policies will be recorded in the Region where you set up the configuration recorder if that is a Region where Config was available before February 2022. You cannot be record the global IAM resouce types in Regions supported by Config after February 2022. This list where you cannot record the global IAM resource types includes the following Regions:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Asia Pacific (Hyderabad)</p></li>
-    /// <li>
-    /// <p>Asia Pacific (Melbourne)</p></li>
-    /// <li>
-    /// <p>Canada West (Calgary)</p></li>
-    /// <li>
-    /// <p>Europe (Spain)</p></li>
-    /// <li>
-    /// <p>Europe (Zurich)</p></li>
-    /// <li>
-    /// <p>Israel (Tel Aviv)</p></li>
-    /// <li>
-    /// <p>Middle East (UAE)</p></li>
-    /// </ul>
+    /// <p>IAM users, groups, roles, and customer managed policies will be recorded in the Region where you set up the configuration recorder if that is a Region where Config was available before February 2022. You cannot be record the global IAM resouce types in Regions supported by Config after February 2022. For a list of those Regions, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-all">Recording Amazon Web Services Resources | Global Resources</a>.</p>
     /// </note>
     pub recording_strategy: ::std::option::Option<crate::types::RecordingStrategy>,
 }
@@ -131,23 +99,7 @@ impl RecordingGroup {
     pub fn all_supported(&self) -> bool {
         self.all_supported
     }
-    /// <p>This option is a bundle which only applies to the global IAM resource types: IAM users, groups, roles, and customer managed policies. These global IAM resource types can only be recorded by Config in Regions where Config was available before February 2022. You cannot be record the global IAM resouce types in Regions supported by Config after February 2022. This list where you cannot record the global IAM resource types includes the following Regions:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Asia Pacific (Hyderabad)</p></li>
-    /// <li>
-    /// <p>Asia Pacific (Melbourne)</p></li>
-    /// <li>
-    /// <p>Canada West (Calgary)</p></li>
-    /// <li>
-    /// <p>Europe (Spain)</p></li>
-    /// <li>
-    /// <p>Europe (Zurich)</p></li>
-    /// <li>
-    /// <p>Israel (Tel Aviv)</p></li>
-    /// <li>
-    /// <p>Middle East (UAE)</p></li>
-    /// </ul><important>
+    /// <p>This option is a bundle which only applies to the global IAM resource types: IAM users, groups, roles, and customer managed policies. These global IAM resource types can only be recorded by Config in Regions where Config was available before February 2022. You cannot be record the global IAM resouce types in Regions supported by Config after February 2022. For a list of those Regions, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-all">Recording Amazon Web Services Resources | Global Resources</a>.</p><important>
     /// <p><b>Aurora global clusters are recorded in all enabled Regions</b></p>
     /// <p>The <code>AWS::RDS::GlobalCluster</code> resource type will be recorded in all supported Config Regions where the configuration recorder is enabled, even if <code>includeGlobalResourceTypes</code> is set<code>false</code>. The <code>includeGlobalResourceTypes</code> option is a bundle which only applies to IAM users, groups, roles, and customer managed policies.</p>
     /// <p>If you do not want to record <code>AWS::RDS::GlobalCluster</code> in all enabled Regions, use one of the following recording strategies:</p>
@@ -216,23 +168,7 @@ impl RecordingGroup {
     /// <p><b>Global resources types and the resource exclusion recording strategy</b></p>
     /// <p>By default, if you choose the <code>EXCLUSION_BY_RESOURCE_TYPES</code> recording strategy, when Config adds support for a new resource type in the Region where you set up the configuration recorder, including global resource types, Config starts recording resources of that type automatically.</p>
     /// <p>Unless specifically listed as exclusions, <code>AWS::RDS::GlobalCluster</code> will be recorded automatically in all supported Config Regions were the configuration recorder is enabled.</p>
-    /// <p>IAM users, groups, roles, and customer managed policies will be recorded in the Region where you set up the configuration recorder if that is a Region where Config was available before February 2022. You cannot be record the global IAM resouce types in Regions supported by Config after February 2022. This list where you cannot record the global IAM resource types includes the following Regions:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Asia Pacific (Hyderabad)</p></li>
-    /// <li>
-    /// <p>Asia Pacific (Melbourne)</p></li>
-    /// <li>
-    /// <p>Canada West (Calgary)</p></li>
-    /// <li>
-    /// <p>Europe (Spain)</p></li>
-    /// <li>
-    /// <p>Europe (Zurich)</p></li>
-    /// <li>
-    /// <p>Israel (Tel Aviv)</p></li>
-    /// <li>
-    /// <p>Middle East (UAE)</p></li>
-    /// </ul>
+    /// <p>IAM users, groups, roles, and customer managed policies will be recorded in the Region where you set up the configuration recorder if that is a Region where Config was available before February 2022. You cannot be record the global IAM resouce types in Regions supported by Config after February 2022. For a list of those Regions, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-all">Recording Amazon Web Services Resources | Global Resources</a>.</p>
     /// </note>
     pub fn recording_strategy(&self) -> ::std::option::Option<&crate::types::RecordingStrategy> {
         self.recording_strategy.as_ref()
@@ -285,23 +221,7 @@ impl RecordingGroupBuilder {
     pub fn get_all_supported(&self) -> &::std::option::Option<bool> {
         &self.all_supported
     }
-    /// <p>This option is a bundle which only applies to the global IAM resource types: IAM users, groups, roles, and customer managed policies. These global IAM resource types can only be recorded by Config in Regions where Config was available before February 2022. You cannot be record the global IAM resouce types in Regions supported by Config after February 2022. This list where you cannot record the global IAM resource types includes the following Regions:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Asia Pacific (Hyderabad)</p></li>
-    /// <li>
-    /// <p>Asia Pacific (Melbourne)</p></li>
-    /// <li>
-    /// <p>Canada West (Calgary)</p></li>
-    /// <li>
-    /// <p>Europe (Spain)</p></li>
-    /// <li>
-    /// <p>Europe (Zurich)</p></li>
-    /// <li>
-    /// <p>Israel (Tel Aviv)</p></li>
-    /// <li>
-    /// <p>Middle East (UAE)</p></li>
-    /// </ul><important>
+    /// <p>This option is a bundle which only applies to the global IAM resource types: IAM users, groups, roles, and customer managed policies. These global IAM resource types can only be recorded by Config in Regions where Config was available before February 2022. You cannot be record the global IAM resouce types in Regions supported by Config after February 2022. For a list of those Regions, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-all">Recording Amazon Web Services Resources | Global Resources</a>.</p><important>
     /// <p><b>Aurora global clusters are recorded in all enabled Regions</b></p>
     /// <p>The <code>AWS::RDS::GlobalCluster</code> resource type will be recorded in all supported Config Regions where the configuration recorder is enabled, even if <code>includeGlobalResourceTypes</code> is set<code>false</code>. The <code>includeGlobalResourceTypes</code> option is a bundle which only applies to IAM users, groups, roles, and customer managed policies.</p>
     /// <p>If you do not want to record <code>AWS::RDS::GlobalCluster</code> in all enabled Regions, use one of the following recording strategies:</p>
@@ -329,23 +249,7 @@ impl RecordingGroupBuilder {
         self.include_global_resource_types = ::std::option::Option::Some(input);
         self
     }
-    /// <p>This option is a bundle which only applies to the global IAM resource types: IAM users, groups, roles, and customer managed policies. These global IAM resource types can only be recorded by Config in Regions where Config was available before February 2022. You cannot be record the global IAM resouce types in Regions supported by Config after February 2022. This list where you cannot record the global IAM resource types includes the following Regions:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Asia Pacific (Hyderabad)</p></li>
-    /// <li>
-    /// <p>Asia Pacific (Melbourne)</p></li>
-    /// <li>
-    /// <p>Canada West (Calgary)</p></li>
-    /// <li>
-    /// <p>Europe (Spain)</p></li>
-    /// <li>
-    /// <p>Europe (Zurich)</p></li>
-    /// <li>
-    /// <p>Israel (Tel Aviv)</p></li>
-    /// <li>
-    /// <p>Middle East (UAE)</p></li>
-    /// </ul><important>
+    /// <p>This option is a bundle which only applies to the global IAM resource types: IAM users, groups, roles, and customer managed policies. These global IAM resource types can only be recorded by Config in Regions where Config was available before February 2022. You cannot be record the global IAM resouce types in Regions supported by Config after February 2022. For a list of those Regions, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-all">Recording Amazon Web Services Resources | Global Resources</a>.</p><important>
     /// <p><b>Aurora global clusters are recorded in all enabled Regions</b></p>
     /// <p>The <code>AWS::RDS::GlobalCluster</code> resource type will be recorded in all supported Config Regions where the configuration recorder is enabled, even if <code>includeGlobalResourceTypes</code> is set<code>false</code>. The <code>includeGlobalResourceTypes</code> option is a bundle which only applies to IAM users, groups, roles, and customer managed policies.</p>
     /// <p>If you do not want to record <code>AWS::RDS::GlobalCluster</code> in all enabled Regions, use one of the following recording strategies:</p>
@@ -373,23 +277,7 @@ impl RecordingGroupBuilder {
         self.include_global_resource_types = input;
         self
     }
-    /// <p>This option is a bundle which only applies to the global IAM resource types: IAM users, groups, roles, and customer managed policies. These global IAM resource types can only be recorded by Config in Regions where Config was available before February 2022. You cannot be record the global IAM resouce types in Regions supported by Config after February 2022. This list where you cannot record the global IAM resource types includes the following Regions:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Asia Pacific (Hyderabad)</p></li>
-    /// <li>
-    /// <p>Asia Pacific (Melbourne)</p></li>
-    /// <li>
-    /// <p>Canada West (Calgary)</p></li>
-    /// <li>
-    /// <p>Europe (Spain)</p></li>
-    /// <li>
-    /// <p>Europe (Zurich)</p></li>
-    /// <li>
-    /// <p>Israel (Tel Aviv)</p></li>
-    /// <li>
-    /// <p>Middle East (UAE)</p></li>
-    /// </ul><important>
+    /// <p>This option is a bundle which only applies to the global IAM resource types: IAM users, groups, roles, and customer managed policies. These global IAM resource types can only be recorded by Config in Regions where Config was available before February 2022. You cannot be record the global IAM resouce types in Regions supported by Config after February 2022. For a list of those Regions, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-all">Recording Amazon Web Services Resources | Global Resources</a>.</p><important>
     /// <p><b>Aurora global clusters are recorded in all enabled Regions</b></p>
     /// <p>The <code>AWS::RDS::GlobalCluster</code> resource type will be recorded in all supported Config Regions where the configuration recorder is enabled, even if <code>includeGlobalResourceTypes</code> is set<code>false</code>. The <code>includeGlobalResourceTypes</code> option is a bundle which only applies to IAM users, groups, roles, and customer managed policies.</p>
     /// <p>If you do not want to record <code>AWS::RDS::GlobalCluster</code> in all enabled Regions, use one of the following recording strategies:</p>
@@ -504,23 +392,7 @@ impl RecordingGroupBuilder {
     /// <p><b>Global resources types and the resource exclusion recording strategy</b></p>
     /// <p>By default, if you choose the <code>EXCLUSION_BY_RESOURCE_TYPES</code> recording strategy, when Config adds support for a new resource type in the Region where you set up the configuration recorder, including global resource types, Config starts recording resources of that type automatically.</p>
     /// <p>Unless specifically listed as exclusions, <code>AWS::RDS::GlobalCluster</code> will be recorded automatically in all supported Config Regions were the configuration recorder is enabled.</p>
-    /// <p>IAM users, groups, roles, and customer managed policies will be recorded in the Region where you set up the configuration recorder if that is a Region where Config was available before February 2022. You cannot be record the global IAM resouce types in Regions supported by Config after February 2022. This list where you cannot record the global IAM resource types includes the following Regions:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Asia Pacific (Hyderabad)</p></li>
-    /// <li>
-    /// <p>Asia Pacific (Melbourne)</p></li>
-    /// <li>
-    /// <p>Canada West (Calgary)</p></li>
-    /// <li>
-    /// <p>Europe (Spain)</p></li>
-    /// <li>
-    /// <p>Europe (Zurich)</p></li>
-    /// <li>
-    /// <p>Israel (Tel Aviv)</p></li>
-    /// <li>
-    /// <p>Middle East (UAE)</p></li>
-    /// </ul>
+    /// <p>IAM users, groups, roles, and customer managed policies will be recorded in the Region where you set up the configuration recorder if that is a Region where Config was available before February 2022. You cannot be record the global IAM resouce types in Regions supported by Config after February 2022. For a list of those Regions, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-all">Recording Amazon Web Services Resources | Global Resources</a>.</p>
     /// </note>
     pub fn recording_strategy(mut self, input: crate::types::RecordingStrategy) -> Self {
         self.recording_strategy = ::std::option::Option::Some(input);
@@ -547,23 +419,7 @@ impl RecordingGroupBuilder {
     /// <p><b>Global resources types and the resource exclusion recording strategy</b></p>
     /// <p>By default, if you choose the <code>EXCLUSION_BY_RESOURCE_TYPES</code> recording strategy, when Config adds support for a new resource type in the Region where you set up the configuration recorder, including global resource types, Config starts recording resources of that type automatically.</p>
     /// <p>Unless specifically listed as exclusions, <code>AWS::RDS::GlobalCluster</code> will be recorded automatically in all supported Config Regions were the configuration recorder is enabled.</p>
-    /// <p>IAM users, groups, roles, and customer managed policies will be recorded in the Region where you set up the configuration recorder if that is a Region where Config was available before February 2022. You cannot be record the global IAM resouce types in Regions supported by Config after February 2022. This list where you cannot record the global IAM resource types includes the following Regions:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Asia Pacific (Hyderabad)</p></li>
-    /// <li>
-    /// <p>Asia Pacific (Melbourne)</p></li>
-    /// <li>
-    /// <p>Canada West (Calgary)</p></li>
-    /// <li>
-    /// <p>Europe (Spain)</p></li>
-    /// <li>
-    /// <p>Europe (Zurich)</p></li>
-    /// <li>
-    /// <p>Israel (Tel Aviv)</p></li>
-    /// <li>
-    /// <p>Middle East (UAE)</p></li>
-    /// </ul>
+    /// <p>IAM users, groups, roles, and customer managed policies will be recorded in the Region where you set up the configuration recorder if that is a Region where Config was available before February 2022. You cannot be record the global IAM resouce types in Regions supported by Config after February 2022. For a list of those Regions, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-all">Recording Amazon Web Services Resources | Global Resources</a>.</p>
     /// </note>
     pub fn set_recording_strategy(mut self, input: ::std::option::Option<crate::types::RecordingStrategy>) -> Self {
         self.recording_strategy = input;
@@ -590,23 +446,7 @@ impl RecordingGroupBuilder {
     /// <p><b>Global resources types and the resource exclusion recording strategy</b></p>
     /// <p>By default, if you choose the <code>EXCLUSION_BY_RESOURCE_TYPES</code> recording strategy, when Config adds support for a new resource type in the Region where you set up the configuration recorder, including global resource types, Config starts recording resources of that type automatically.</p>
     /// <p>Unless specifically listed as exclusions, <code>AWS::RDS::GlobalCluster</code> will be recorded automatically in all supported Config Regions were the configuration recorder is enabled.</p>
-    /// <p>IAM users, groups, roles, and customer managed policies will be recorded in the Region where you set up the configuration recorder if that is a Region where Config was available before February 2022. You cannot be record the global IAM resouce types in Regions supported by Config after February 2022. This list where you cannot record the global IAM resource types includes the following Regions:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Asia Pacific (Hyderabad)</p></li>
-    /// <li>
-    /// <p>Asia Pacific (Melbourne)</p></li>
-    /// <li>
-    /// <p>Canada West (Calgary)</p></li>
-    /// <li>
-    /// <p>Europe (Spain)</p></li>
-    /// <li>
-    /// <p>Europe (Zurich)</p></li>
-    /// <li>
-    /// <p>Israel (Tel Aviv)</p></li>
-    /// <li>
-    /// <p>Middle East (UAE)</p></li>
-    /// </ul>
+    /// <p>IAM users, groups, roles, and customer managed policies will be recorded in the Region where you set up the configuration recorder if that is a Region where Config was available before February 2022. You cannot be record the global IAM resouce types in Regions supported by Config after February 2022. For a list of those Regions, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-all">Recording Amazon Web Services Resources | Global Resources</a>.</p>
     /// </note>
     pub fn get_recording_strategy(&self) -> &::std::option::Option<crate::types::RecordingStrategy> {
         &self.recording_strategy

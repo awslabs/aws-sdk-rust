@@ -12,5 +12,11 @@ pub fn ser_describe_configuration_recorders_input_input(
         }
         array_2.finish();
     }
+    if let Some(var_4) = &input.service_principal {
+        object.key("ServicePrincipal").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.arn {
+        object.key("Arn").string(var_5.as_str());
+    }
     Ok(())
 }

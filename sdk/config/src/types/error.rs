@@ -5,6 +5,8 @@ pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExce
 
 pub use crate::types::error::_too_many_tags_exception::TooManyTagsException;
 
+pub use crate::types::error::_unmodifiable_entity_exception::UnmodifiableEntityException;
+
 pub use crate::types::error::_no_such_configuration_recorder_exception::NoSuchConfigurationRecorderException;
 
 pub use crate::types::error::_invalid_parameter_value_exception::InvalidParameterValueException;
@@ -32,6 +34,8 @@ pub use crate::types::error::_invalid_expression_exception::InvalidExpressionExc
 pub use crate::types::error::_no_such_configuration_aggregator_exception::NoSuchConfigurationAggregatorException;
 
 pub use crate::types::error::_resource_concurrent_modification_exception::ResourceConcurrentModificationException;
+
+pub use crate::types::error::_conflict_exception::ConflictException;
 
 pub use crate::types::error::_max_number_of_retention_configurations_exceeded_exception::MaxNumberOfRetentionConfigurationsExceededException;
 
@@ -106,6 +110,8 @@ pub use crate::types::error::_no_such_remediation_exception_exception::NoSuchRem
 pub use crate::types::error::_remediation_in_progress_exception::RemediationInProgressException;
 
 pub use crate::types::error::_last_delivery_channel_delete_failed_exception::LastDeliveryChannelDeleteFailedException;
+
+mod _conflict_exception;
 
 mod _conformance_pack_template_validation_exception;
 
@@ -212,6 +218,8 @@ mod _resource_not_discovered_exception;
 mod _resource_not_found_exception;
 
 mod _too_many_tags_exception;
+
+mod _unmodifiable_entity_exception;
 
 mod _validation_exception;
 

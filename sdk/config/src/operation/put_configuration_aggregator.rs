@@ -258,8 +258,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutConfigurat
 pub enum PutConfigurationAggregatorError {
     /// <p>One or more of the specified parameters are not valid. Verify that your parameters are valid and try again.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
-    /// <p>You have provided a null or empty Amazon Resource Name (ARN) for the IAM role assumed by Config and used by the configuration recorder.</p>
+    /// <p>You have provided a null or empty Amazon Resource Name (ARN) for the IAM role assumed by Config and used by the customer managed configuration recorder.</p>
     InvalidRoleException(crate::types::error::InvalidRoleException),
+    /// <p>For <code>PutServiceLinkedConfigurationRecorder</code> API, this exception is thrown if the number of service-linked roles in the account exceeds the limit.</p>
     /// <p>For <code>StartConfigRulesEvaluation</code> API, this exception is thrown if an evaluation is in progress or if you call the <code>StartConfigRulesEvaluation</code> API more than once per minute.</p>
     /// <p>For <code>PutConfigurationAggregator</code> API, this exception is thrown if the number of accounts and aggregators exceeds the limit.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
@@ -274,7 +275,7 @@ pub enum PutConfigurationAggregatorError {
     /// <li>
     /// <p>The configuration aggregator is associated with a previous Amazon Web Services Organization and Config cannot aggregate data with current Amazon Web Services Organization. Delete this aggregator and create a new one with the current Amazon Web Services Organization.</p></li>
     /// <li>
-    /// <p>You are not a registered delegated administrator for Config with permissions to call <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers delagated administrator for Config service principle name before the delegated administrator creates an aggregator.</p></li>
+    /// <p>You are not a registered delegated administrator for Config with permissions to call <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers delagated administrator for Config service principal name before the delegated administrator creates an aggregator.</p></li>
     /// </ul>
     /// <p>For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code> APIs, Config throws an exception if APIs are called from member accounts. All APIs must be called from organization management account.</p>
     OrganizationAccessDeniedException(crate::types::error::OrganizationAccessDeniedException),

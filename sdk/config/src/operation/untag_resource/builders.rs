@@ -108,17 +108,71 @@ impl UntagResourceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are <code>ConfigRule</code>, <code>ConfigurationAggregator</code> and <code>AggregatorAuthorization</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. The following resources are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ConfigurationRecorder</code></p></li>
+    /// <li>
+    /// <p><code>ConfigRule</code></p></li>
+    /// <li>
+    /// <p><code>OrganizationConfigRule</code></p></li>
+    /// <li>
+    /// <p><code>ConformancePack</code></p></li>
+    /// <li>
+    /// <p><code>OrganizationConformancePack</code></p></li>
+    /// <li>
+    /// <p><code>ConfigurationAggregator</code></p></li>
+    /// <li>
+    /// <p><code>AggregationAuthorization</code></p></li>
+    /// <li>
+    /// <p><code>StoredQuery</code></p></li>
+    /// </ul>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are <code>ConfigRule</code>, <code>ConfigurationAggregator</code> and <code>AggregatorAuthorization</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. The following resources are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ConfigurationRecorder</code></p></li>
+    /// <li>
+    /// <p><code>ConfigRule</code></p></li>
+    /// <li>
+    /// <p><code>OrganizationConfigRule</code></p></li>
+    /// <li>
+    /// <p><code>ConformancePack</code></p></li>
+    /// <li>
+    /// <p><code>OrganizationConformancePack</code></p></li>
+    /// <li>
+    /// <p><code>ConfigurationAggregator</code></p></li>
+    /// <li>
+    /// <p><code>AggregationAuthorization</code></p></li>
+    /// <li>
+    /// <p><code>StoredQuery</code></p></li>
+    /// </ul>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are <code>ConfigRule</code>, <code>ConfigurationAggregator</code> and <code>AggregatorAuthorization</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. The following resources are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ConfigurationRecorder</code></p></li>
+    /// <li>
+    /// <p><code>ConfigRule</code></p></li>
+    /// <li>
+    /// <p><code>OrganizationConfigRule</code></p></li>
+    /// <li>
+    /// <p><code>ConformancePack</code></p></li>
+    /// <li>
+    /// <p><code>OrganizationConformancePack</code></p></li>
+    /// <li>
+    /// <p><code>ConfigurationAggregator</code></p></li>
+    /// <li>
+    /// <p><code>AggregationAuthorization</code></p></li>
+    /// <li>
+    /// <p><code>StoredQuery</code></p></li>
+    /// </ul>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_arn()
     }

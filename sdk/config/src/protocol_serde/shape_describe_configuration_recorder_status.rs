@@ -38,6 +38,23 @@ pub fn de_describe_configuration_recorder_status_http_error(
                 },
             )
         }
+        "ValidationException" => {
+            crate::operation::describe_configuration_recorder_status::DescribeConfigurationRecorderStatusError::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::describe_configuration_recorder_status::DescribeConfigurationRecorderStatusError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::operation::describe_configuration_recorder_status::DescribeConfigurationRecorderStatusError::generic(generic),
     })
 }

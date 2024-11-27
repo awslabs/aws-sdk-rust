@@ -256,7 +256,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteDeliver
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DeleteDeliveryChannelError {
-    /// <p>You cannot delete the delivery channel you specified because the configuration recorder is running.</p>
+    /// <p>You cannot delete the delivery channel you specified because the customer managed configuration recorder is running.</p>
     LastDeliveryChannelDeleteFailedException(crate::types::error::LastDeliveryChannelDeleteFailedException),
     /// <p>You have specified a delivery channel that does not exist.</p>
     NoSuchDeliveryChannelException(crate::types::error::NoSuchDeliveryChannelException),

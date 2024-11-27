@@ -22,7 +22,9 @@ impl crate::operation::get_aggregate_resource_config::builders::GetAggregateReso
 }
 /// Fluent builder constructing a request to `GetAggregateResourceConfig`.
 ///
-/// <p>Returns configuration item that is aggregated for your specific resource in a specific source account and region.</p>
+/// <p>Returns configuration item that is aggregated for your specific resource in a specific source account and region.</p><note>
+/// <p>The API does not return results for deleted resources.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAggregateResourceConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

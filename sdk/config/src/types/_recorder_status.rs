@@ -13,6 +13,7 @@
 /// # let recorderstatus = unimplemented!();
 /// match recorderstatus {
 ///     RecorderStatus::Failure => { /* ... */ },
+///     RecorderStatus::NotApplicable => { /* ... */ },
 ///     RecorderStatus::Pending => { /* ... */ },
 ///     RecorderStatus::Success => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -45,6 +46,8 @@ pub enum RecorderStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failure,
     #[allow(missing_docs)] // documentation missing in model
+    NotApplicable,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
     #[allow(missing_docs)] // documentation missing in model
     Success,
@@ -56,6 +59,7 @@ impl ::std::convert::From<&str> for RecorderStatus {
     fn from(s: &str) -> Self {
         match s {
             "Failure" => RecorderStatus::Failure,
+            "NotApplicable" => RecorderStatus::NotApplicable,
             "Pending" => RecorderStatus::Pending,
             "Success" => RecorderStatus::Success,
             other => RecorderStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -74,6 +78,7 @@ impl RecorderStatus {
     pub fn as_str(&self) -> &str {
         match self {
             RecorderStatus::Failure => "Failure",
+            RecorderStatus::NotApplicable => "NotApplicable",
             RecorderStatus::Pending => "Pending",
             RecorderStatus::Success => "Success",
             RecorderStatus::Unknown(value) => value.as_str(),
@@ -81,7 +86,7 @@ impl RecorderStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Failure", "Pending", "Success"]
+        &["Failure", "NotApplicable", "Pending", "Success"]
     }
 }
 impl ::std::convert::AsRef<str> for RecorderStatus {
@@ -105,6 +110,7 @@ impl ::std::fmt::Display for RecorderStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             RecorderStatus::Failure => write!(f, "Failure"),
+            RecorderStatus::NotApplicable => write!(f, "NotApplicable"),
             RecorderStatus::Pending => write!(f, "Pending"),
             RecorderStatus::Success => write!(f, "Success"),
             RecorderStatus::Unknown(value) => write!(f, "{}", value),

@@ -57,6 +57,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "AggregatorFilters" => {
+                            builder = builder.set_aggregator_filters(crate::protocol_serde::shape_aggregator_filters::de_aggregator_filters(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

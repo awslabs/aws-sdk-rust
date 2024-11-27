@@ -36,5 +36,11 @@ pub fn ser_put_configuration_aggregator_input_input(
         }
         array_9.finish();
     }
+    if let Some(var_12) = &input.aggregator_filters {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("AggregatorFilters").start_object();
+        crate::protocol_serde::shape_aggregator_filters::ser_aggregator_filters(&mut object_13, var_12)?;
+        object_13.finish();
+    }
     Ok(())
 }

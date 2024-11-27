@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRemediationExecutionStatusInput {
-    /// <p>A list of Config rule names.</p>
+    /// <p>The name of the Config rule.</p>
     pub config_rule_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID.</p>
     pub resource_keys: ::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>>,
@@ -13,7 +13,7 @@ pub struct DescribeRemediationExecutionStatusInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeRemediationExecutionStatusInput {
-    /// <p>A list of Config rule names.</p>
+    /// <p>The name of the Config rule.</p>
     pub fn config_rule_name(&self) -> ::std::option::Option<&str> {
         self.config_rule_name.as_deref()
     }
@@ -49,18 +49,18 @@ pub struct DescribeRemediationExecutionStatusInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeRemediationExecutionStatusInputBuilder {
-    /// <p>A list of Config rule names.</p>
+    /// <p>The name of the Config rule.</p>
     /// This field is required.
     pub fn config_rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.config_rule_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A list of Config rule names.</p>
+    /// <p>The name of the Config rule.</p>
     pub fn set_config_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.config_rule_name = input;
         self
     }
-    /// <p>A list of Config rule names.</p>
+    /// <p>The name of the Config rule.</p>
     pub fn get_config_rule_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.config_rule_name
     }

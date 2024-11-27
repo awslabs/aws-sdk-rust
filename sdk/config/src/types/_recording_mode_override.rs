@@ -7,7 +7,7 @@ pub struct RecordingModeOverride {
     /// <p>A description that you provide for the override.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A comma-separated list that specifies which resource types Config includes in the override.</p><important>
-    /// <p>Daily recording is not supported for the following resource types:</p>
+    /// <p>Daily recording cannot be specified for the following resource types:</p>
     /// <ul>
     /// <li>
     /// <p><code>AWS::Config::ResourceCompliance</code></p></li>
@@ -35,7 +35,7 @@ impl RecordingModeOverride {
         self.description.as_deref()
     }
     /// <p>A comma-separated list that specifies which resource types Config includes in the override.</p><important>
-    /// <p>Daily recording is not supported for the following resource types:</p>
+    /// <p>Daily recording cannot be specified for the following resource types:</p>
     /// <ul>
     /// <li>
     /// <p><code>AWS::Config::ResourceCompliance</code></p></li>
@@ -97,7 +97,7 @@ impl RecordingModeOverrideBuilder {
     /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
     ///
     /// <p>A comma-separated list that specifies which resource types Config includes in the override.</p><important>
-    /// <p>Daily recording is not supported for the following resource types:</p>
+    /// <p>Daily recording cannot be specified for the following resource types:</p>
     /// <ul>
     /// <li>
     /// <p><code>AWS::Config::ResourceCompliance</code></p></li>
@@ -114,7 +114,7 @@ impl RecordingModeOverrideBuilder {
         self
     }
     /// <p>A comma-separated list that specifies which resource types Config includes in the override.</p><important>
-    /// <p>Daily recording is not supported for the following resource types:</p>
+    /// <p>Daily recording cannot be specified for the following resource types:</p>
     /// <ul>
     /// <li>
     /// <p><code>AWS::Config::ResourceCompliance</code></p></li>
@@ -129,7 +129,7 @@ impl RecordingModeOverrideBuilder {
         self
     }
     /// <p>A comma-separated list that specifies which resource types Config includes in the override.</p><important>
-    /// <p>Daily recording is not supported for the following resource types:</p>
+    /// <p>Daily recording cannot be specified for the following resource types:</p>
     /// <ul>
     /// <li>
     /// <p><code>AWS::Config::ResourceCompliance</code></p></li>

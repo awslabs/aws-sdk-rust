@@ -22,8 +22,8 @@ impl crate::operation::start_configuration_recorder::builders::StartConfiguratio
 }
 /// Fluent builder constructing a request to `StartConfigurationRecorder`.
 ///
-/// <p>Starts recording configurations of the Amazon Web Services resources you have selected to record in your Amazon Web Services account.</p>
-/// <p>You must have created at least one delivery channel to successfully start the configuration recorder.</p>
+/// <p>Starts the customer managed configuration recorder. The customer managed configuration recorder will begin recording configuration changes for the resource types you specify.</p>
+/// <p>You must have created a delivery channel to successfully start the customer managed configuration recorder. You can use the <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutDeliveryChannel.html">PutDeliveryChannel</a> operation to create a delivery channel.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartConfigurationRecorderFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -109,17 +109,17 @@ impl StartConfigurationRecorderFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the recorder object that records each configuration change made to the resources.</p>
+    /// <p>The name of the customer managed configuration recorder that you want to start.</p>
     pub fn configuration_recorder_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_recorder_name(input.into());
         self
     }
-    /// <p>The name of the recorder object that records each configuration change made to the resources.</p>
+    /// <p>The name of the customer managed configuration recorder that you want to start.</p>
     pub fn set_configuration_recorder_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration_recorder_name(input);
         self
     }
-    /// <p>The name of the recorder object that records each configuration change made to the resources.</p>
+    /// <p>The name of the customer managed configuration recorder that you want to start.</p>
     pub fn get_configuration_recorder_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_configuration_recorder_name()
     }

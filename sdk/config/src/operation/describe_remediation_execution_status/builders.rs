@@ -114,17 +114,17 @@ impl DescribeRemediationExecutionStatusFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_remediation_execution_status::paginator::DescribeRemediationExecutionStatusPaginator {
         crate::operation::describe_remediation_execution_status::paginator::DescribeRemediationExecutionStatusPaginator::new(self.handle, self.inner)
     }
-    /// <p>A list of Config rule names.</p>
+    /// <p>The name of the Config rule.</p>
     pub fn config_rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.config_rule_name(input.into());
         self
     }
-    /// <p>A list of Config rule names.</p>
+    /// <p>The name of the Config rule.</p>
     pub fn set_config_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_config_rule_name(input);
         self
     }
-    /// <p>A list of Config rule names.</p>
+    /// <p>The name of the Config rule.</p>
     pub fn get_config_rule_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_config_rule_name()
     }

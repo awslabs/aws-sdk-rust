@@ -9,6 +9,9 @@ pub fn ser_bedrock_embedding_model_configuration(
             ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
+    if let Some(var_2) = &input.embedding_data_type {
+        object.key("embeddingDataType").string(var_2.as_str());
+    }
     Ok(())
 }
 
@@ -31,6 +34,13 @@ where
                             builder = builder.set_dimensions(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "embeddingDataType" => {
+                            builder = builder.set_embedding_data_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::EmbeddingDataType::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

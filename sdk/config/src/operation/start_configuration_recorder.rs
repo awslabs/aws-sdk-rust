@@ -260,6 +260,11 @@ pub enum StartConfigurationRecorderError {
     NoAvailableDeliveryChannelException(crate::types::error::NoAvailableDeliveryChannelException),
     /// <p>You have specified a configuration recorder that does not exist.</p>
     NoSuchConfigurationRecorderException(crate::types::error::NoSuchConfigurationRecorderException),
+    /// <p>The requested operation is not valid.</p>
+    /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConfigurationRecorder.html">PutConfigurationRecorder</a>, you will see this exception because you cannot use this operation to create a service-linked configuration recorder. Use the <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutServiceLinkedConfigurationRecorder.html">PutServiceLinkedConfigurationRecorder</a> operation to create a service-linked configuration recorder.</p>
+    /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteConfigurationRecorder.html">DeleteConfigurationRecorder</a>, you will see this exception because you cannot use this operation to delete a service-linked configuration recorder. Use the <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a> operation to delete a service-linked configuration recorder.</p>
+    /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_StartConfigurationRecorder.html">StartConfigurationRecorder</a> and <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_StopConfigurationRecorder.html">StopConfigurationRecorder</a>, you will see this exception because these operations do not affect service-linked configuration recorders. Service-linked configuration recorders are always recording. To stop recording, you must delete the service-linked configuration recorder. Use the <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a> operation to delete a service-linked configuration recorder.</p>
+    UnmodifiableEntityException(crate::types::error::UnmodifiableEntityException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -295,6 +300,7 @@ impl StartConfigurationRecorderError {
         match self {
             Self::NoAvailableDeliveryChannelException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::NoSuchConfigurationRecorderException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::UnmodifiableEntityException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -306,12 +312,17 @@ impl StartConfigurationRecorderError {
     pub fn is_no_such_configuration_recorder_exception(&self) -> bool {
         matches!(self, Self::NoSuchConfigurationRecorderException(_))
     }
+    /// Returns `true` if the error kind is `StartConfigurationRecorderError::UnmodifiableEntityException`.
+    pub fn is_unmodifiable_entity_exception(&self) -> bool {
+        matches!(self, Self::UnmodifiableEntityException(_))
+    }
 }
 impl ::std::error::Error for StartConfigurationRecorderError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::NoAvailableDeliveryChannelException(_inner) => ::std::option::Option::Some(_inner),
             Self::NoSuchConfigurationRecorderException(_inner) => ::std::option::Option::Some(_inner),
+            Self::UnmodifiableEntityException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -321,6 +332,7 @@ impl ::std::fmt::Display for StartConfigurationRecorderError {
         match self {
             Self::NoAvailableDeliveryChannelException(_inner) => _inner.fmt(f),
             Self::NoSuchConfigurationRecorderException(_inner) => _inner.fmt(f),
+            Self::UnmodifiableEntityException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -344,6 +356,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for StartConfigur
         match self {
             Self::NoAvailableDeliveryChannelException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::NoSuchConfigurationRecorderException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::UnmodifiableEntityException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

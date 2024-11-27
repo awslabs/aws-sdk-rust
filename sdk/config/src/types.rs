@@ -73,6 +73,8 @@ pub use crate::types::_template_ssm_document_details::TemplateSsmDocumentDetails
 
 pub use crate::types::_configuration_recorder::ConfigurationRecorder;
 
+pub use crate::types::_recording_scope::RecordingScope;
+
 pub use crate::types::_recording_mode::RecordingMode;
 
 pub use crate::types::_recording_mode_override::RecordingModeOverride;
@@ -88,6 +90,14 @@ pub use crate::types::_recording_strategy_type::RecordingStrategyType;
 pub use crate::types::_exclusion_by_resource_types::ExclusionByResourceTypes;
 
 pub use crate::types::_configuration_aggregator::ConfigurationAggregator;
+
+pub use crate::types::_aggregator_filters::AggregatorFilters;
+
+pub use crate::types::_aggregator_filter_service_principal::AggregatorFilterServicePrincipal;
+
+pub use crate::types::_aggregator_filter_type::AggregatorFilterType;
+
+pub use crate::types::_aggregator_filter_resource_type::AggregatorFilterResourceType;
 
 pub use crate::types::_organization_aggregation_source::OrganizationAggregationSource;
 
@@ -132,6 +142,12 @@ pub use crate::types::_sort_by::SortBy;
 pub use crate::types::_sort_order::SortOrder;
 
 pub use crate::types::_conformance_pack_compliance_scores_filters::ConformancePackComplianceScoresFilters;
+
+pub use crate::types::_configuration_recorder_summary::ConfigurationRecorderSummary;
+
+pub use crate::types::_configuration_recorder_filter::ConfigurationRecorderFilter;
+
+pub use crate::types::_configuration_recorder_filter_name::ConfigurationRecorderFilterName;
 
 pub use crate::types::_aggregate_resource_identifier::AggregateResourceIdentifier;
 
@@ -313,6 +329,14 @@ mod _aggregated_source_type;
 
 mod _aggregation_authorization;
 
+mod _aggregator_filter_resource_type;
+
+mod _aggregator_filter_service_principal;
+
+mod _aggregator_filter_type;
+
+mod _aggregator_filters;
+
 mod _base_configuration_item;
 
 mod _chronological_order;
@@ -357,7 +381,13 @@ mod _configuration_item_status;
 
 mod _configuration_recorder;
 
+mod _configuration_recorder_filter;
+
+mod _configuration_recorder_filter_name;
+
 mod _configuration_recorder_status;
+
+mod _configuration_recorder_summary;
 
 mod _conformance_pack_compliance_filters;
 
@@ -482,6 +512,8 @@ mod _recording_group;
 mod _recording_mode;
 
 mod _recording_mode_override;
+
+mod _recording_scope;
 
 mod _recording_strategy;
 

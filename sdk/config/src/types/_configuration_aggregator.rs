@@ -18,6 +18,8 @@ pub struct ConfigurationAggregator {
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Amazon Web Services service that created the configuration aggregator.</p>
     pub created_by: ::std::option::Option<::std::string::String>,
+    /// <p>An object to filter the data you specify for an aggregator.</p>
+    pub aggregator_filters: ::std::option::Option<crate::types::AggregatorFilters>,
 }
 impl ConfigurationAggregator {
     /// <p>The name of the aggregator.</p>
@@ -50,6 +52,10 @@ impl ConfigurationAggregator {
     pub fn created_by(&self) -> ::std::option::Option<&str> {
         self.created_by.as_deref()
     }
+    /// <p>An object to filter the data you specify for an aggregator.</p>
+    pub fn aggregator_filters(&self) -> ::std::option::Option<&crate::types::AggregatorFilters> {
+        self.aggregator_filters.as_ref()
+    }
 }
 impl ConfigurationAggregator {
     /// Creates a new builder-style object to manufacture [`ConfigurationAggregator`](crate::types::ConfigurationAggregator).
@@ -69,6 +75,7 @@ pub struct ConfigurationAggregatorBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
+    pub(crate) aggregator_filters: ::std::option::Option<crate::types::AggregatorFilters>,
 }
 impl ConfigurationAggregatorBuilder {
     /// <p>The name of the aggregator.</p>
@@ -175,6 +182,20 @@ impl ConfigurationAggregatorBuilder {
     pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.created_by
     }
+    /// <p>An object to filter the data you specify for an aggregator.</p>
+    pub fn aggregator_filters(mut self, input: crate::types::AggregatorFilters) -> Self {
+        self.aggregator_filters = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object to filter the data you specify for an aggregator.</p>
+    pub fn set_aggregator_filters(mut self, input: ::std::option::Option<crate::types::AggregatorFilters>) -> Self {
+        self.aggregator_filters = input;
+        self
+    }
+    /// <p>An object to filter the data you specify for an aggregator.</p>
+    pub fn get_aggregator_filters(&self) -> &::std::option::Option<crate::types::AggregatorFilters> {
+        &self.aggregator_filters
+    }
     /// Consumes the builder and constructs a [`ConfigurationAggregator`](crate::types::ConfigurationAggregator).
     pub fn build(self) -> crate::types::ConfigurationAggregator {
         crate::types::ConfigurationAggregator {
@@ -185,6 +206,7 @@ impl ConfigurationAggregatorBuilder {
             creation_time: self.creation_time,
             last_updated_time: self.last_updated_time,
             created_by: self.created_by,
+            aggregator_filters: self.aggregator_filters,
         }
     }
 }

@@ -3,7 +3,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
-    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are <code>ConfigRule</code>, <code>ConfigurationAggregator</code> and <code>AggregatorAuthorization</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. The following resources are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ConfigurationRecorder</code></p></li>
+    /// <li>
+    /// <p><code>ConfigRule</code></p></li>
+    /// <li>
+    /// <p><code>OrganizationConfigRule</code></p></li>
+    /// <li>
+    /// <p><code>ConformancePack</code></p></li>
+    /// <li>
+    /// <p><code>OrganizationConformancePack</code></p></li>
+    /// <li>
+    /// <p><code>ConfigurationAggregator</code></p></li>
+    /// <li>
+    /// <p><code>AggregationAuthorization</code></p></li>
+    /// <li>
+    /// <p><code>StoredQuery</code></p></li>
+    /// </ul>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of tags returned on each page. The limit maximum is 50. You cannot specify a number greater than 50. If you specify 0, Config uses the default.</p>
     pub limit: ::std::option::Option<i32>,
@@ -11,7 +29,25 @@ pub struct ListTagsForResourceInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListTagsForResourceInput {
-    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are <code>ConfigRule</code>, <code>ConfigurationAggregator</code> and <code>AggregatorAuthorization</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. The following resources are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ConfigurationRecorder</code></p></li>
+    /// <li>
+    /// <p><code>ConfigRule</code></p></li>
+    /// <li>
+    /// <p><code>OrganizationConfigRule</code></p></li>
+    /// <li>
+    /// <p><code>ConformancePack</code></p></li>
+    /// <li>
+    /// <p><code>OrganizationConformancePack</code></p></li>
+    /// <li>
+    /// <p><code>ConfigurationAggregator</code></p></li>
+    /// <li>
+    /// <p><code>AggregationAuthorization</code></p></li>
+    /// <li>
+    /// <p><code>StoredQuery</code></p></li>
+    /// </ul>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -40,18 +76,72 @@ pub struct ListTagsForResourceInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListTagsForResourceInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are <code>ConfigRule</code>, <code>ConfigurationAggregator</code> and <code>AggregatorAuthorization</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. The following resources are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ConfigurationRecorder</code></p></li>
+    /// <li>
+    /// <p><code>ConfigRule</code></p></li>
+    /// <li>
+    /// <p><code>OrganizationConfigRule</code></p></li>
+    /// <li>
+    /// <p><code>ConformancePack</code></p></li>
+    /// <li>
+    /// <p><code>OrganizationConformancePack</code></p></li>
+    /// <li>
+    /// <p><code>ConfigurationAggregator</code></p></li>
+    /// <li>
+    /// <p><code>AggregationAuthorization</code></p></li>
+    /// <li>
+    /// <p><code>StoredQuery</code></p></li>
+    /// </ul>
     /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are <code>ConfigRule</code>, <code>ConfigurationAggregator</code> and <code>AggregatorAuthorization</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. The following resources are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ConfigurationRecorder</code></p></li>
+    /// <li>
+    /// <p><code>ConfigRule</code></p></li>
+    /// <li>
+    /// <p><code>OrganizationConfigRule</code></p></li>
+    /// <li>
+    /// <p><code>ConformancePack</code></p></li>
+    /// <li>
+    /// <p><code>OrganizationConformancePack</code></p></li>
+    /// <li>
+    /// <p><code>ConfigurationAggregator</code></p></li>
+    /// <li>
+    /// <p><code>AggregationAuthorization</code></p></li>
+    /// <li>
+    /// <p><code>StoredQuery</code></p></li>
+    /// </ul>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are <code>ConfigRule</code>, <code>ConfigurationAggregator</code> and <code>AggregatorAuthorization</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. The following resources are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ConfigurationRecorder</code></p></li>
+    /// <li>
+    /// <p><code>ConfigRule</code></p></li>
+    /// <li>
+    /// <p><code>OrganizationConfigRule</code></p></li>
+    /// <li>
+    /// <p><code>ConformancePack</code></p></li>
+    /// <li>
+    /// <p><code>OrganizationConformancePack</code></p></li>
+    /// <li>
+    /// <p><code>ConfigurationAggregator</code></p></li>
+    /// <li>
+    /// <p><code>AggregationAuthorization</code></p></li>
+    /// <li>
+    /// <p><code>StoredQuery</code></p></li>
+    /// </ul>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }

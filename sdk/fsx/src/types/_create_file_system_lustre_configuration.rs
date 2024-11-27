@@ -86,6 +86,9 @@ pub struct CreateFileSystemLustreConfiguration {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre data compression</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p>
     pub data_compression_type: ::std::option::Option<crate::types::DataCompressionType>,
+    /// <p>(Optional) Specifies whether Elastic Fabric Adapter (EFA) and GPUDirect Storage (GDS) support is enabled for the Amazon FSx for Lustre file system.</p>
+    /// <p>(Default = <code>false</code>)</p>
+    pub efa_enabled: ::std::option::Option<bool>,
     /// <p>The Lustre logging configuration used when creating an Amazon FSx for Lustre file system. When logging is enabled, Lustre logs error and warning events for data repositories associated with your file system to Amazon CloudWatch Logs.</p>
     pub log_configuration: ::std::option::Option<crate::types::LustreLogCreateConfiguration>,
     /// <p>The Lustre root squash configuration used when creating an Amazon FSx for Lustre file system. When enabled, root squash restricts root-level access from clients that try to access your file system as a root user.</p>
@@ -188,6 +191,11 @@ impl CreateFileSystemLustreConfiguration {
     pub fn data_compression_type(&self) -> ::std::option::Option<&crate::types::DataCompressionType> {
         self.data_compression_type.as_ref()
     }
+    /// <p>(Optional) Specifies whether Elastic Fabric Adapter (EFA) and GPUDirect Storage (GDS) support is enabled for the Amazon FSx for Lustre file system.</p>
+    /// <p>(Default = <code>false</code>)</p>
+    pub fn efa_enabled(&self) -> ::std::option::Option<bool> {
+        self.efa_enabled
+    }
     /// <p>The Lustre logging configuration used when creating an Amazon FSx for Lustre file system. When logging is enabled, Lustre logs error and warning events for data repositories associated with your file system to Amazon CloudWatch Logs.</p>
     pub fn log_configuration(&self) -> ::std::option::Option<&crate::types::LustreLogCreateConfiguration> {
         self.log_configuration.as_ref()
@@ -224,6 +232,7 @@ pub struct CreateFileSystemLustreConfigurationBuilder {
     pub(crate) copy_tags_to_backups: ::std::option::Option<bool>,
     pub(crate) drive_cache_type: ::std::option::Option<crate::types::DriveCacheType>,
     pub(crate) data_compression_type: ::std::option::Option<crate::types::DataCompressionType>,
+    pub(crate) efa_enabled: ::std::option::Option<bool>,
     pub(crate) log_configuration: ::std::option::Option<crate::types::LustreLogCreateConfiguration>,
     pub(crate) root_squash_configuration: ::std::option::Option<crate::types::LustreRootSquashConfiguration>,
     pub(crate) metadata_configuration: ::std::option::Option<crate::types::CreateFileSystemLustreMetadataConfiguration>,
@@ -535,6 +544,23 @@ impl CreateFileSystemLustreConfigurationBuilder {
     pub fn get_data_compression_type(&self) -> &::std::option::Option<crate::types::DataCompressionType> {
         &self.data_compression_type
     }
+    /// <p>(Optional) Specifies whether Elastic Fabric Adapter (EFA) and GPUDirect Storage (GDS) support is enabled for the Amazon FSx for Lustre file system.</p>
+    /// <p>(Default = <code>false</code>)</p>
+    pub fn efa_enabled(mut self, input: bool) -> Self {
+        self.efa_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>(Optional) Specifies whether Elastic Fabric Adapter (EFA) and GPUDirect Storage (GDS) support is enabled for the Amazon FSx for Lustre file system.</p>
+    /// <p>(Default = <code>false</code>)</p>
+    pub fn set_efa_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.efa_enabled = input;
+        self
+    }
+    /// <p>(Optional) Specifies whether Elastic Fabric Adapter (EFA) and GPUDirect Storage (GDS) support is enabled for the Amazon FSx for Lustre file system.</p>
+    /// <p>(Default = <code>false</code>)</p>
+    pub fn get_efa_enabled(&self) -> &::std::option::Option<bool> {
+        &self.efa_enabled
+    }
     /// <p>The Lustre logging configuration used when creating an Amazon FSx for Lustre file system. When logging is enabled, Lustre logs error and warning events for data repositories associated with your file system to Amazon CloudWatch Logs.</p>
     pub fn log_configuration(mut self, input: crate::types::LustreLogCreateConfiguration) -> Self {
         self.log_configuration = ::std::option::Option::Some(input);
@@ -592,6 +618,7 @@ impl CreateFileSystemLustreConfigurationBuilder {
             copy_tags_to_backups: self.copy_tags_to_backups,
             drive_cache_type: self.drive_cache_type,
             data_compression_type: self.data_compression_type,
+            efa_enabled: self.efa_enabled,
             log_configuration: self.log_configuration,
             root_squash_configuration: self.root_squash_configuration,
             metadata_configuration: self.metadata_configuration,

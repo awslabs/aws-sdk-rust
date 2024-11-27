@@ -23,6 +23,8 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_associate_resource_types;
+
 pub(crate) mod shape_batch_get_aggregate_resource_config;
 
 pub(crate) mod shape_batch_get_resource_config;
@@ -54,6 +56,8 @@ pub(crate) mod shape_delete_remediation_exceptions;
 pub(crate) mod shape_delete_resource_config;
 
 pub(crate) mod shape_delete_retention_configuration;
+
+pub(crate) mod shape_delete_service_linked_configuration_recorder;
 
 pub(crate) mod shape_delete_stored_query;
 
@@ -109,6 +113,8 @@ pub(crate) mod shape_describe_remediation_execution_status;
 
 pub(crate) mod shape_describe_retention_configurations;
 
+pub(crate) mod shape_disassociate_resource_types;
+
 pub(crate) mod shape_get_aggregate_compliance_details_by_config_rule;
 
 pub(crate) mod shape_get_aggregate_config_rule_compliance_summary;
@@ -149,6 +155,8 @@ pub(crate) mod shape_get_stored_query;
 
 pub(crate) mod shape_list_aggregate_discovered_resources;
 
+pub(crate) mod shape_list_configuration_recorders;
+
 pub(crate) mod shape_list_conformance_pack_compliance_scores;
 
 pub(crate) mod shape_list_discovered_resources;
@@ -187,6 +195,8 @@ pub(crate) mod shape_put_resource_config;
 
 pub(crate) mod shape_put_retention_configuration;
 
+pub(crate) mod shape_put_service_linked_configuration_recorder;
+
 pub(crate) mod shape_put_stored_query;
 
 pub(crate) mod shape_select_aggregate_resource_config;
@@ -215,9 +225,13 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
+pub(crate) mod shape_associate_resource_types_input;
+
 pub(crate) mod shape_batch_get_aggregate_resource_config_input;
 
 pub(crate) mod shape_batch_get_resource_config_input;
+
+pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_conformance_pack_template_validation_exception;
 
@@ -248,6 +262,8 @@ pub(crate) mod shape_delete_remediation_exceptions_input;
 pub(crate) mod shape_delete_resource_config_input;
 
 pub(crate) mod shape_delete_retention_configuration_input;
+
+pub(crate) mod shape_delete_service_linked_configuration_recorder_input;
 
 pub(crate) mod shape_delete_stored_query_input;
 
@@ -302,6 +318,8 @@ pub(crate) mod shape_describe_remediation_exceptions_input;
 pub(crate) mod shape_describe_remediation_execution_status_input;
 
 pub(crate) mod shape_describe_retention_configurations_input;
+
+pub(crate) mod shape_disassociate_resource_types_input;
 
 pub(crate) mod shape_get_aggregate_compliance_details_by_config_rule_input;
 
@@ -376,6 +394,8 @@ pub(crate) mod shape_last_delivery_channel_delete_failed_exception;
 pub(crate) mod shape_limit_exceeded_exception;
 
 pub(crate) mod shape_list_aggregate_discovered_resources_input;
+
+pub(crate) mod shape_list_configuration_recorders_input;
 
 pub(crate) mod shape_list_conformance_pack_compliance_scores_input;
 
@@ -471,6 +491,8 @@ pub(crate) mod shape_put_resource_config_input;
 
 pub(crate) mod shape_put_retention_configuration_input;
 
+pub(crate) mod shape_put_service_linked_configuration_recorder_input;
+
 pub(crate) mod shape_put_stored_query_input;
 
 pub(crate) mod shape_remediation_in_progress_exception;
@@ -501,6 +523,8 @@ pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_too_many_tags_exception;
 
+pub(crate) mod shape_unmodifiable_entity_exception;
+
 pub(crate) mod shape_untag_resource_input;
 
 pub(crate) mod shape_validation_exception;
@@ -528,6 +552,8 @@ pub(crate) mod shape_aggregated_source_status_list;
 pub(crate) mod shape_aggregation_authorization;
 
 pub(crate) mod shape_aggregation_authorization_list;
+
+pub(crate) mod shape_aggregator_filters;
 
 pub(crate) mod shape_base_configuration_items;
 
@@ -559,9 +585,13 @@ pub(crate) mod shape_configuration_item_list;
 
 pub(crate) mod shape_configuration_recorder;
 
+pub(crate) mod shape_configuration_recorder_filter;
+
 pub(crate) mod shape_configuration_recorder_list;
 
 pub(crate) mod shape_configuration_recorder_status_list;
+
+pub(crate) mod shape_configuration_recorder_summaries;
 
 pub(crate) mod shape_conformance_pack_compliance_filters;
 
@@ -701,6 +731,10 @@ pub(crate) mod shape_aggregate_evaluation_result;
 
 pub(crate) mod shape_aggregated_source_status;
 
+pub(crate) mod shape_aggregator_filter_resource_type;
+
+pub(crate) mod shape_aggregator_filter_service_principal;
+
 pub(crate) mod shape_base_configuration_item;
 
 pub(crate) mod shape_compliance_by_config_rule;
@@ -716,6 +750,8 @@ pub(crate) mod shape_config_rule_evaluation_status;
 pub(crate) mod shape_config_snapshot_delivery_properties;
 
 pub(crate) mod shape_configuration_recorder_status;
+
+pub(crate) mod shape_configuration_recorder_summary;
 
 pub(crate) mod shape_conformance_pack_compliance_score;
 
@@ -825,6 +861,8 @@ pub(crate) mod shape_organization_custom_policy_rule_metadata_no_policy;
 
 pub(crate) mod shape_recording_mode_override;
 
+pub(crate) mod shape_recording_mode_overrides;
+
 pub(crate) mod shape_recording_strategy;
 
 pub(crate) mod shape_relationship;
@@ -834,6 +872,8 @@ pub(crate) mod shape_remediation_exception_resource_keys;
 pub(crate) mod shape_remediation_execution_steps;
 
 pub(crate) mod shape_remediation_parameters;
+
+pub(crate) mod shape_resource_type_list;
 
 pub(crate) mod shape_resource_value;
 
@@ -855,13 +895,13 @@ pub(crate) mod shape_organization_config_rule_trigger_type_no_sns;
 
 pub(crate) mod shape_organization_config_rule_trigger_types;
 
-pub(crate) mod shape_recording_mode_overrides;
-
 pub(crate) mod shape_remediation_execution_step;
 
-pub(crate) mod shape_resource_type_list;
+pub(crate) mod shape_resource_type_value_list;
 
 pub(crate) mod shape_resource_types_scope;
+
+pub(crate) mod shape_service_principal_value_list;
 
 pub(crate) mod shape_source_details;
 

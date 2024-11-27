@@ -32,6 +32,9 @@ impl crate::operation::put_remediation_exceptions::builders::PutRemediationExcep
 /// <p><b>Exceptions can only be performed on non-compliant resources</b></p>
 /// <p>Placing an exception can only be performed on resources that are <code>NON_COMPLIANT</code>. If you use this API for <code>COMPLIANT</code> resources or resources that are <code>NOT_APPLICABLE</code>, a remediation exception will not be generated. For more information on the conditions that initiate the possible Config evaluation results, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.html#aws-config-rules">Concepts | Config Rules</a> in the <i>Config Developer Guide</i>.</p>
 /// </note> <note>
+/// <p><b>Exceptions cannot be placed on service-linked remediation actions</b></p>
+/// <p>You cannot place an exception on service-linked remediation actions, such as remediation actions put by an organizational conformance pack.</p>
+/// </note> <note>
 /// <p><b>Auto remediation can be initiated even for compliant resources</b></p>
 /// <p>If you enable auto remediation for a specific Config rule using the <a href="https://docs.aws.amazon.com/config/latest/APIReference/emAPI_PutRemediationConfigurations.html">PutRemediationConfigurations</a> API or the Config console, it initiates the remediation process for all non-compliant resources for that specific rule. The auto remediation process relies on the compliance data snapshot which is captured on a periodic basis. Any non-compliant resource that is updated between the snapshot schedule will continue to be remediated based on the last known compliance data snapshot.</p>
 /// <p>This means that in some cases auto remediation can be initiated even for compliant resources, since the bootstrap processor uses a database that can have stale evaluation results based on the last known compliance data snapshot.</p>

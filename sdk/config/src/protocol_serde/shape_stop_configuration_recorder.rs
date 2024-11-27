@@ -45,6 +45,24 @@ pub fn de_stop_configuration_recorder_http_error(
                 tmp
             })
         }
+        "UnmodifiableEntityException" => {
+            crate::operation::stop_configuration_recorder::StopConfigurationRecorderError::UnmodifiableEntityException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::UnmodifiableEntityExceptionBuilder::default();
+                    output =
+                        crate::protocol_serde::shape_unmodifiable_entity_exception::de_unmodifiable_entity_exception_json_err(_response_body, output)
+                            .map_err(crate::operation::stop_configuration_recorder::StopConfigurationRecorderError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::operation::stop_configuration_recorder::StopConfigurationRecorderError::generic(generic),
     })
 }

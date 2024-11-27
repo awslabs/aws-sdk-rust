@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutDeliveryChannelInput {
-    /// <p>The configuration delivery channel object that delivers the configuration information to an Amazon S3 bucket and to an Amazon SNS topic.</p>
+    /// <p>An object for the delivery channel. A delivery channel sends notifications and updated configuration states.</p>
     pub delivery_channel: ::std::option::Option<crate::types::DeliveryChannel>,
 }
 impl PutDeliveryChannelInput {
-    /// <p>The configuration delivery channel object that delivers the configuration information to an Amazon S3 bucket and to an Amazon SNS topic.</p>
+    /// <p>An object for the delivery channel. A delivery channel sends notifications and updated configuration states.</p>
     pub fn delivery_channel(&self) -> ::std::option::Option<&crate::types::DeliveryChannel> {
         self.delivery_channel.as_ref()
     }
@@ -27,18 +27,18 @@ pub struct PutDeliveryChannelInputBuilder {
     pub(crate) delivery_channel: ::std::option::Option<crate::types::DeliveryChannel>,
 }
 impl PutDeliveryChannelInputBuilder {
-    /// <p>The configuration delivery channel object that delivers the configuration information to an Amazon S3 bucket and to an Amazon SNS topic.</p>
+    /// <p>An object for the delivery channel. A delivery channel sends notifications and updated configuration states.</p>
     /// This field is required.
     pub fn delivery_channel(mut self, input: crate::types::DeliveryChannel) -> Self {
         self.delivery_channel = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration delivery channel object that delivers the configuration information to an Amazon S3 bucket and to an Amazon SNS topic.</p>
+    /// <p>An object for the delivery channel. A delivery channel sends notifications and updated configuration states.</p>
     pub fn set_delivery_channel(mut self, input: ::std::option::Option<crate::types::DeliveryChannel>) -> Self {
         self.delivery_channel = input;
         self
     }
-    /// <p>The configuration delivery channel object that delivers the configuration information to an Amazon S3 bucket and to an Amazon SNS topic.</p>
+    /// <p>An object for the delivery channel. A delivery channel sends notifications and updated configuration states.</p>
     pub fn get_delivery_channel(&self) -> &::std::option::Option<crate::types::DeliveryChannel> {
         &self.delivery_channel
     }

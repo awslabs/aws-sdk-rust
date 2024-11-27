@@ -109,6 +109,8 @@ pub use crate::types::_embedding_model_configuration::EmbeddingModelConfiguratio
 
 pub use crate::types::_bedrock_embedding_model_configuration::BedrockEmbeddingModelConfiguration;
 
+pub use crate::types::_embedding_data_type::EmbeddingDataType;
+
 pub use crate::types::_knowledge_base_type::KnowledgeBaseType;
 
 pub use crate::types::_agent_knowledge_base::AgentKnowledgeBase;
@@ -518,6 +520,8 @@ mod _data_source_type;
 mod _duplicate_condition_expression_flow_validation_details;
 
 mod _duplicate_connections_flow_validation_details;
+
+mod _embedding_data_type;
 
 mod _embedding_model_configuration;
 

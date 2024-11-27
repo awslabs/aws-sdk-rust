@@ -5,6 +5,8 @@ pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExce
 
 pub use crate::types::error::_too_many_tags_exception::TooManyTagsExceptionBuilder;
 
+pub use crate::types::error::_unmodifiable_entity_exception::UnmodifiableEntityExceptionBuilder;
+
 pub use crate::types::error::_no_such_configuration_recorder_exception::NoSuchConfigurationRecorderExceptionBuilder;
 
 pub use crate::types::error::_invalid_parameter_value_exception::InvalidParameterValueExceptionBuilder;
@@ -32,6 +34,8 @@ pub use crate::types::error::_invalid_expression_exception::InvalidExpressionExc
 pub use crate::types::error::_no_such_configuration_aggregator_exception::NoSuchConfigurationAggregatorExceptionBuilder;
 
 pub use crate::types::error::_resource_concurrent_modification_exception::ResourceConcurrentModificationExceptionBuilder;
+
+pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;
 
 pub use crate::types::error::_max_number_of_retention_configurations_exceeded_exception::MaxNumberOfRetentionConfigurationsExceededExceptionBuilder;
 

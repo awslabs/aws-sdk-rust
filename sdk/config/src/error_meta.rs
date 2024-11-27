@@ -3,31 +3,44 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
+    /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutServiceLinkedConfigurationRecorder.html">PutServiceLinkedConfigurationRecorder</a>, you cannot create a service-linked recorder because a service-linked recorder already exists for the specified service.</p>
+    /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>, you cannot delete the service-linked recorder because it is currently in use by the linked Amazon Web Services service.</p>
+    /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteDeliveryChannel.html">DeleteDeliveryChannel</a>, you cannot delete the specified delivery channel because the customer managed configuration recorder is running. Use the <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_StopConfigurationRecorder.html">StopConfigurationRecorder</a> operation to stop the customer managed configuration recorder.</p>
+    /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_AssociateResourceTypes.html">AssociateResourceTypes</a> and <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DisassociateResourceTypes.html">DisassociateResourceTypes</a>, one of the following errors:</p>
+    /// <ul>
+    /// <li>
+    /// <p>For service-linked configuration recorders, the configuration recorder is not in use by the service. No association or dissociation of resource types is permitted.</p></li>
+    /// <li>
+    /// <p>For service-linked configuration recorders, your requested change to the configuration recorder has been denied by its linked Amazon Web Services service.</p></li>
+    /// </ul>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>You have specified a template that is not valid or supported.</p>
     ConformancePackTemplateValidationException(crate::types::error::ConformancePackTemplateValidationException),
     /// <p>Using the same client token with one or more different parameters. Specify a new client token with the parameter changes and try again.</p>
     IdempotentParameterMismatch(crate::types::error::IdempotentParameterMismatch),
-    /// <p>Your Amazon S3 bucket policy does not permit Config to write to it.</p>
+    /// <p>Your Amazon S3 bucket policy does not allow Config to write to it.</p>
     InsufficientDeliveryPolicyException(crate::types::error::InsufficientDeliveryPolicyException),
     /// <p>Indicates one of the following errors:</p>
     /// <ul>
     /// <li>
-    /// <p>For PutConfigRule, the rule cannot be created because the IAM role assigned to Config lacks permissions to perform the config:Put* action.</p></li>
+    /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConfigRule.html">PutConfigRule</a>, the rule cannot be created because the IAM role assigned to Config lacks permissions to perform the config:Put* action.</p></li>
     /// <li>
-    /// <p>For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.</p></li>
+    /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConfigRule.html">PutConfigRule</a>, the Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.</p></li>
     /// <li>
-    /// <p>For PutOrganizationConfigRule, organization Config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service-linked role.</p></li>
+    /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutOrganizationConfigRule.html">PutOrganizationConfigRule</a>, organization Config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service-linked role.</p></li>
     /// <li>
-    /// <p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created because you do not have the following permissions:</p>
+    /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConformancePack.html">PutConformancePack</a> and <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutOrganizationConformancePack.html">PutOrganizationConformancePack</a>, a conformance pack cannot be created because you do not have the following permissions:</p>
     /// <ul>
     /// <li>
     /// <p>You do not have permission to call IAM <code>GetRole</code> action or create a service-linked role.</p></li>
     /// <li>
     /// <p>You do not have permission to read Amazon S3 bucket or call SSM:GetDocument.</p></li>
     /// </ul></li>
+    /// <li>
+    /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutServiceLinkedConfigurationRecorder.html">PutServiceLinkedConfigurationRecorder</a>, a service-linked configuration recorder cannot be created because you do not have the following permissions: IAM <code>CreateServiceLinkedRole</code>.</p></li>
     /// </ul>
     InsufficientPermissionsException(crate::types::error::InsufficientPermissionsException),
-    /// <p>You have provided a name for the configuration recorder that is not valid.</p>
+    /// <p>You have provided a name for the customer managed configuration recorder that is not valid.</p>
     InvalidConfigurationRecorderNameException(crate::types::error::InvalidConfigurationRecorderNameException),
     /// <p>The specified delivery channel name is not valid.</p>
     InvalidDeliveryChannelNameException(crate::types::error::InvalidDeliveryChannelNameException),
@@ -39,7 +52,7 @@ pub enum Error {
     InvalidNextTokenException(crate::types::error::InvalidNextTokenException),
     /// <p>One or more of the specified parameters are not valid. Verify that your parameters are valid and try again.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
-    /// <p>Indicates one of the following errors:</p>
+    /// <p>One of the following errors:</p>
     /// <ul>
     /// <li>
     /// <p>You have provided a combination of parameter values that is not valid. For example:</p>
@@ -59,7 +72,7 @@ pub enum Error {
     InvalidRecordingGroupException(crate::types::error::InvalidRecordingGroupException),
     /// <p>The specified <code>ResultToken</code> is not valid.</p>
     InvalidResultTokenException(crate::types::error::InvalidResultTokenException),
-    /// <p>You have provided a null or empty Amazon Resource Name (ARN) for the IAM role assumed by Config and used by the configuration recorder.</p>
+    /// <p>You have provided a null or empty Amazon Resource Name (ARN) for the IAM role assumed by Config and used by the customer managed configuration recorder.</p>
     InvalidRoleException(crate::types::error::InvalidRoleException),
     /// <p>The specified Amazon S3 key prefix is not valid.</p>
     InvalidS3KeyPrefixException(crate::types::error::InvalidS3KeyPrefixException),
@@ -69,8 +82,9 @@ pub enum Error {
     InvalidSnsTopicArnException(crate::types::error::InvalidSnsTopicArnException),
     /// <p>The specified time range is not valid. The earlier time is not chronologically before the later time.</p>
     InvalidTimeRangeException(crate::types::error::InvalidTimeRangeException),
-    /// <p>You cannot delete the delivery channel you specified because the configuration recorder is running.</p>
+    /// <p>You cannot delete the delivery channel you specified because the customer managed configuration recorder is running.</p>
     LastDeliveryChannelDeleteFailedException(crate::types::error::LastDeliveryChannelDeleteFailedException),
+    /// <p>For <code>PutServiceLinkedConfigurationRecorder</code> API, this exception is thrown if the number of service-linked roles in the account exceeds the limit.</p>
     /// <p>For <code>StartConfigRulesEvaluation</code> API, this exception is thrown if an evaluation is in progress or if you call the <code>StartConfigRulesEvaluation</code> API more than once per minute.</p>
     /// <p>For <code>PutConfigurationAggregator</code> API, this exception is thrown if the number of accounts and aggregators exceeds the limit.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
@@ -90,7 +104,7 @@ pub enum Error {
     MaxNumberOfOrganizationConformancePacksExceededException(crate::types::error::MaxNumberOfOrganizationConformancePacksExceededException),
     /// <p>Failed to add the retention configuration because a retention configuration with that name already exists.</p>
     MaxNumberOfRetentionConfigurationsExceededException(crate::types::error::MaxNumberOfRetentionConfigurationsExceededException),
-    /// <p>There are no configuration recorders available to provide the role needed to describe your resources. Create a configuration recorder.</p>
+    /// <p>There are no customer managed configuration recorders available to record your resources. Use the <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConfigurationRecorder.html">PutConfigurationRecorder</a> operation to create the customer managed configuration recorder.</p>
     NoAvailableConfigurationRecorderException(crate::types::error::NoAvailableConfigurationRecorderException),
     /// <p>There is no delivery channel available to record configurations.</p>
     NoAvailableDeliveryChannelException(crate::types::error::NoAvailableDeliveryChannelException),
@@ -132,7 +146,7 @@ pub enum Error {
     /// <li>
     /// <p>The configuration aggregator is associated with a previous Amazon Web Services Organization and Config cannot aggregate data with current Amazon Web Services Organization. Delete this aggregator and create a new one with the current Amazon Web Services Organization.</p></li>
     /// <li>
-    /// <p>You are not a registered delegated administrator for Config with permissions to call <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers delagated administrator for Config service principle name before the delegated administrator creates an aggregator.</p></li>
+    /// <p>You are not a registered delegated administrator for Config with permissions to call <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers delagated administrator for Config service principal name before the delegated administrator creates an aggregator.</p></li>
     /// </ul>
     /// <p>For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code> APIs, Config throws an exception if APIs are called from member accounts. All APIs must be called from organization management account.</p>
     OrganizationAccessDeniedException(crate::types::error::OrganizationAccessDeniedException),
@@ -170,9 +184,37 @@ pub enum Error {
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>You have reached the limit of the number of tags you can use. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.</p>
     TooManyTagsException(crate::types::error::TooManyTagsException),
-    /// <p>The requested action is not valid.</p>
-    /// <p>For PutStoredQuery, you will see this exception if there are missing required fields or if the input value fails the validation, or if you are trying to create more than 300 queries.</p>
-    /// <p>For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are missing required fields or if the input value fails the validation.</p>
+    /// <p>The requested operation is not valid.</p>
+    /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConfigurationRecorder.html">PutConfigurationRecorder</a>, you will see this exception because you cannot use this operation to create a service-linked configuration recorder. Use the <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutServiceLinkedConfigurationRecorder.html">PutServiceLinkedConfigurationRecorder</a> operation to create a service-linked configuration recorder.</p>
+    /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteConfigurationRecorder.html">DeleteConfigurationRecorder</a>, you will see this exception because you cannot use this operation to delete a service-linked configuration recorder. Use the <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a> operation to delete a service-linked configuration recorder.</p>
+    /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_StartConfigurationRecorder.html">StartConfigurationRecorder</a> and <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_StopConfigurationRecorder.html">StopConfigurationRecorder</a>, you will see this exception because these operations do not affect service-linked configuration recorders. Service-linked configuration recorders are always recording. To stop recording, you must delete the service-linked configuration recorder. Use the <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a> operation to delete a service-linked configuration recorder.</p>
+    UnmodifiableEntityException(crate::types::error::UnmodifiableEntityException),
+    /// <p>The requested operation is not valid. You will see this exception if there are missing required fields or if the input value fails the validation.</p>
+    /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutStoredQuery.html">PutStoredQuery</a>, one of the following errors:</p>
+    /// <ul>
+    /// <li>
+    /// <p>There are missing required fields.</p></li>
+    /// <li>
+    /// <p>The input value fails the validation.</p></li>
+    /// <li>
+    /// <p>You are trying to create more than 300 queries.</p></li>
+    /// </ul>
+    /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigurationRecorders.html">DescribeConfigurationRecorders</a> and <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigurationRecorderStatus.html">DescribeConfigurationRecorderStatus</a>, one of the following errors:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You have specified more than one configuration recorder.</p></li>
+    /// <li>
+    /// <p>You have provided a service principal for service-linked configuration recorder that is not valid.</p></li>
+    /// </ul>
+    /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_AssociateResourceTypes.html">AssociateResourceTypes</a> and <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DisassociateResourceTypes.html">DisassociateResourceTypes</a>, one of the following errors:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Your configuraiton recorder has a recording strategy that does not allow the association or disassociation of resource types.</p></li>
+    /// <li>
+    /// <p>One or more of the specified resource types are already associated or disassociated with the configuration recorder.</p></li>
+    /// <li>
+    /// <p>For service-linked configuration recorders, the configuration recorder does not record one or more of the specified resource types.</p></li>
+    /// </ul>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
@@ -186,6 +228,7 @@ pub enum Error {
 impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            Error::ConflictException(inner) => inner.fmt(f),
             Error::ConformancePackTemplateValidationException(inner) => inner.fmt(f),
             Error::IdempotentParameterMismatch(inner) => inner.fmt(f),
             Error::InsufficientDeliveryPolicyException(inner) => inner.fmt(f),
@@ -239,6 +282,7 @@ impl ::std::fmt::Display for Error {
             Error::ResourceNotDiscoveredException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::TooManyTagsException(inner) => inner.fmt(f),
+            Error::UnmodifiableEntityException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -261,6 +305,7 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
+            Self::ConflictException(inner) => inner.meta(),
             Self::ConformancePackTemplateValidationException(inner) => inner.meta(),
             Self::IdempotentParameterMismatch(inner) => inner.meta(),
             Self::InsufficientDeliveryPolicyException(inner) => inner.meta(),
@@ -314,8 +359,37 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ResourceNotDiscoveredException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::TooManyTagsException(inner) => inner.meta(),
+            Self::UnmodifiableEntityException(inner) => inner.meta(),
             Self::ValidationException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_resource_types::AssociateResourceTypesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_resource_types::AssociateResourceTypesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::associate_resource_types::AssociateResourceTypesError> for Error {
+    fn from(err: crate::operation::associate_resource_types::AssociateResourceTypesError) -> Self {
+        match err {
+            crate::operation::associate_resource_types::AssociateResourceTypesError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::associate_resource_types::AssociateResourceTypesError::NoSuchConfigurationRecorderException(inner) => {
+                Error::NoSuchConfigurationRecorderException(inner)
+            }
+            crate::operation::associate_resource_types::AssociateResourceTypesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::associate_resource_types::AssociateResourceTypesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -496,6 +570,9 @@ impl From<crate::operation::delete_configuration_recorder::DeleteConfigurationRe
         match err {
             crate::operation::delete_configuration_recorder::DeleteConfigurationRecorderError::NoSuchConfigurationRecorderException(inner) => {
                 Error::NoSuchConfigurationRecorderException(inner)
+            }
+            crate::operation::delete_configuration_recorder::DeleteConfigurationRecorderError::UnmodifiableEntityException(inner) => {
+                Error::UnmodifiableEntityException(inner)
             }
             crate::operation::delete_configuration_recorder::DeleteConfigurationRecorderError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -823,6 +900,41 @@ impl From<crate::operation::delete_retention_configuration::DeleteRetentionConfi
                 Error::NoSuchRetentionConfigurationException(inner)
             }
             crate::operation::delete_retention_configuration::DeleteRetentionConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_service_linked_configuration_recorder::DeleteServiceLinkedConfigurationRecorderError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_service_linked_configuration_recorder::DeleteServiceLinkedConfigurationRecorderError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_service_linked_configuration_recorder::DeleteServiceLinkedConfigurationRecorderError> for Error {
+    fn from(err: crate::operation::delete_service_linked_configuration_recorder::DeleteServiceLinkedConfigurationRecorderError) -> Self {
+        match err {
+            crate::operation::delete_service_linked_configuration_recorder::DeleteServiceLinkedConfigurationRecorderError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_service_linked_configuration_recorder::DeleteServiceLinkedConfigurationRecorderError::NoSuchConfigurationRecorderException(inner) => Error::NoSuchConfigurationRecorderException(inner),
+            crate::operation::delete_service_linked_configuration_recorder::DeleteServiceLinkedConfigurationRecorderError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_service_linked_configuration_recorder::DeleteServiceLinkedConfigurationRecorderError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1257,6 +1369,9 @@ impl From<crate::operation::describe_configuration_recorders::DescribeConfigurat
             crate::operation::describe_configuration_recorders::DescribeConfigurationRecordersError::NoSuchConfigurationRecorderException(inner) => {
                 Error::NoSuchConfigurationRecorderException(inner)
             }
+            crate::operation::describe_configuration_recorders::DescribeConfigurationRecordersError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::describe_configuration_recorders::DescribeConfigurationRecordersError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1290,6 +1405,7 @@ impl From<crate::operation::describe_configuration_recorder_status::DescribeConf
     fn from(err: crate::operation::describe_configuration_recorder_status::DescribeConfigurationRecorderStatusError) -> Self {
         match err {
             crate::operation::describe_configuration_recorder_status::DescribeConfigurationRecorderStatusError::NoSuchConfigurationRecorderException(inner) => Error::NoSuchConfigurationRecorderException(inner),
+            crate::operation::describe_configuration_recorder_status::DescribeConfigurationRecorderStatusError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::describe_configuration_recorder_status::DescribeConfigurationRecorderStatusError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1800,6 +1916,39 @@ impl From<crate::operation::describe_retention_configurations::DescribeRetention
                 inner,
             ) => Error::NoSuchRetentionConfigurationException(inner),
             crate::operation::describe_retention_configurations::DescribeRetentionConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_resource_types::DisassociateResourceTypesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_resource_types::DisassociateResourceTypesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disassociate_resource_types::DisassociateResourceTypesError> for Error {
+    fn from(err: crate::operation::disassociate_resource_types::DisassociateResourceTypesError) -> Self {
+        match err {
+            crate::operation::disassociate_resource_types::DisassociateResourceTypesError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::disassociate_resource_types::DisassociateResourceTypesError::NoSuchConfigurationRecorderException(inner) => {
+                Error::NoSuchConfigurationRecorderException(inner)
+            }
+            crate::operation::disassociate_resource_types::DisassociateResourceTypesError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::disassociate_resource_types::DisassociateResourceTypesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2523,6 +2672,33 @@ impl From<crate::operation::list_aggregate_discovered_resources::ListAggregateDi
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_configuration_recorders::ListConfigurationRecordersError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_configuration_recorders::ListConfigurationRecordersError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_configuration_recorders::ListConfigurationRecordersError> for Error {
+    fn from(err: crate::operation::list_configuration_recorders::ListConfigurationRecordersError) -> Self {
+        match err {
+            crate::operation::list_configuration_recorders::ListConfigurationRecordersError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_configuration_recorders::ListConfigurationRecordersError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -2824,6 +3000,9 @@ impl From<crate::operation::put_configuration_recorder::PutConfigurationRecorder
             crate::operation::put_configuration_recorder::PutConfigurationRecorderError::MaxNumberOfConfigurationRecordersExceededException(
                 inner,
             ) => Error::MaxNumberOfConfigurationRecordersExceededException(inner),
+            crate::operation::put_configuration_recorder::PutConfigurationRecorderError::UnmodifiableEntityException(inner) => {
+                Error::UnmodifiableEntityException(inner)
+            }
             crate::operation::put_configuration_recorder::PutConfigurationRecorderError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
@@ -3176,6 +3355,42 @@ impl From<crate::operation::put_retention_configuration::PutRetentionConfigurati
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_service_linked_configuration_recorder::PutServiceLinkedConfigurationRecorderError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_service_linked_configuration_recorder::PutServiceLinkedConfigurationRecorderError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_service_linked_configuration_recorder::PutServiceLinkedConfigurationRecorderError> for Error {
+    fn from(err: crate::operation::put_service_linked_configuration_recorder::PutServiceLinkedConfigurationRecorderError) -> Self {
+        match err {
+            crate::operation::put_service_linked_configuration_recorder::PutServiceLinkedConfigurationRecorderError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::put_service_linked_configuration_recorder::PutServiceLinkedConfigurationRecorderError::InsufficientPermissionsException(inner) => Error::InsufficientPermissionsException(inner),
+            crate::operation::put_service_linked_configuration_recorder::PutServiceLinkedConfigurationRecorderError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::put_service_linked_configuration_recorder::PutServiceLinkedConfigurationRecorderError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_service_linked_configuration_recorder::PutServiceLinkedConfigurationRecorderError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_stored_query::PutStoredQueryError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3333,6 +3548,9 @@ impl From<crate::operation::start_configuration_recorder::StartConfigurationReco
             crate::operation::start_configuration_recorder::StartConfigurationRecorderError::NoSuchConfigurationRecorderException(inner) => {
                 Error::NoSuchConfigurationRecorderException(inner)
             }
+            crate::operation::start_configuration_recorder::StartConfigurationRecorderError::UnmodifiableEntityException(inner) => {
+                Error::UnmodifiableEntityException(inner)
+            }
             crate::operation::start_configuration_recorder::StartConfigurationRecorderError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -3423,6 +3641,9 @@ impl From<crate::operation::stop_configuration_recorder::StopConfigurationRecord
             crate::operation::stop_configuration_recorder::StopConfigurationRecorderError::NoSuchConfigurationRecorderException(inner) => {
                 Error::NoSuchConfigurationRecorderException(inner)
             }
+            crate::operation::stop_configuration_recorder::StopConfigurationRecorderError::UnmodifiableEntityException(inner) => {
+                Error::UnmodifiableEntityException(inner)
+            }
             crate::operation::stop_configuration_recorder::StopConfigurationRecorderError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -3477,6 +3698,7 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
 impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Error::ConflictException(inner) => inner.source(),
             Error::ConformancePackTemplateValidationException(inner) => inner.source(),
             Error::IdempotentParameterMismatch(inner) => inner.source(),
             Error::InsufficientDeliveryPolicyException(inner) => inner.source(),
@@ -3530,6 +3752,7 @@ impl ::std::error::Error for Error {
             Error::ResourceNotDiscoveredException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::TooManyTagsException(inner) => inner.source(),
+            Error::UnmodifiableEntityException(inner) => inner.source(),
             Error::ValidationException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
         }
@@ -3538,6 +3761,7 @@ impl ::std::error::Error for Error {
 impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
+            Self::ConflictException(e) => e.request_id(),
             Self::ConformancePackTemplateValidationException(e) => e.request_id(),
             Self::IdempotentParameterMismatch(e) => e.request_id(),
             Self::InsufficientDeliveryPolicyException(e) => e.request_id(),
@@ -3591,6 +3815,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ResourceNotDiscoveredException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::TooManyTagsException(e) => e.request_id(),
+            Self::UnmodifiableEntityException(e) => e.request_id(),
             Self::ValidationException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),
         }

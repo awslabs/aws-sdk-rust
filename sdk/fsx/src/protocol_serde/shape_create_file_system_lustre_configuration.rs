@@ -48,26 +48,29 @@ pub fn ser_create_file_system_lustre_configuration(
     if let Some(var_12) = &input.data_compression_type {
         object.key("DataCompressionType").string(var_12.as_str());
     }
-    if let Some(var_13) = &input.log_configuration {
-        #[allow(unused_mut)]
-        let mut object_14 = object.key("LogConfiguration").start_object();
-        crate::protocol_serde::shape_lustre_log_create_configuration::ser_lustre_log_create_configuration(&mut object_14, var_13)?;
-        object_14.finish();
+    if let Some(var_13) = &input.efa_enabled {
+        object.key("EfaEnabled").boolean(*var_13);
     }
-    if let Some(var_15) = &input.root_squash_configuration {
+    if let Some(var_14) = &input.log_configuration {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("RootSquashConfiguration").start_object();
-        crate::protocol_serde::shape_lustre_root_squash_configuration::ser_lustre_root_squash_configuration(&mut object_16, var_15)?;
-        object_16.finish();
+        let mut object_15 = object.key("LogConfiguration").start_object();
+        crate::protocol_serde::shape_lustre_log_create_configuration::ser_lustre_log_create_configuration(&mut object_15, var_14)?;
+        object_15.finish();
     }
-    if let Some(var_17) = &input.metadata_configuration {
+    if let Some(var_16) = &input.root_squash_configuration {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("MetadataConfiguration").start_object();
+        let mut object_17 = object.key("RootSquashConfiguration").start_object();
+        crate::protocol_serde::shape_lustre_root_squash_configuration::ser_lustre_root_squash_configuration(&mut object_17, var_16)?;
+        object_17.finish();
+    }
+    if let Some(var_18) = &input.metadata_configuration {
+        #[allow(unused_mut)]
+        let mut object_19 = object.key("MetadataConfiguration").start_object();
         crate::protocol_serde::shape_create_file_system_lustre_metadata_configuration::ser_create_file_system_lustre_metadata_configuration(
-            &mut object_18,
-            var_17,
+            &mut object_19,
+            var_18,
         )?;
-        object_18.finish();
+        object_19.finish();
     }
     Ok(())
 }

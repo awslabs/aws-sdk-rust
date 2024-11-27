@@ -258,6 +258,33 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeConfi
 pub enum DescribeConfigurationRecordersError {
     /// <p>You have specified a configuration recorder that does not exist.</p>
     NoSuchConfigurationRecorderException(crate::types::error::NoSuchConfigurationRecorderException),
+    /// <p>The requested operation is not valid. You will see this exception if there are missing required fields or if the input value fails the validation.</p>
+    /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutStoredQuery.html">PutStoredQuery</a>, one of the following errors:</p>
+    /// <ul>
+    /// <li>
+    /// <p>There are missing required fields.</p></li>
+    /// <li>
+    /// <p>The input value fails the validation.</p></li>
+    /// <li>
+    /// <p>You are trying to create more than 300 queries.</p></li>
+    /// </ul>
+    /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigurationRecorders.html">DescribeConfigurationRecorders</a> and <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigurationRecorderStatus.html">DescribeConfigurationRecorderStatus</a>, one of the following errors:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You have specified more than one configuration recorder.</p></li>
+    /// <li>
+    /// <p>You have provided a service principal for service-linked configuration recorder that is not valid.</p></li>
+    /// </ul>
+    /// <p>For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_AssociateResourceTypes.html">AssociateResourceTypes</a> and <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DisassociateResourceTypes.html">DisassociateResourceTypes</a>, one of the following errors:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Your configuraiton recorder has a recording strategy that does not allow the association or disassociation of resource types.</p></li>
+    /// <li>
+    /// <p>One or more of the specified resource types are already associated or disassociated with the configuration recorder.</p></li>
+    /// <li>
+    /// <p>For service-linked configuration recorders, the configuration recorder does not record one or more of the specified resource types.</p></li>
+    /// </ul>
+    ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -292,6 +319,7 @@ impl DescribeConfigurationRecordersError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::NoSuchConfigurationRecorderException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -299,11 +327,16 @@ impl DescribeConfigurationRecordersError {
     pub fn is_no_such_configuration_recorder_exception(&self) -> bool {
         matches!(self, Self::NoSuchConfigurationRecorderException(_))
     }
+    /// Returns `true` if the error kind is `DescribeConfigurationRecordersError::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(self, Self::ValidationException(_))
+    }
 }
 impl ::std::error::Error for DescribeConfigurationRecordersError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::NoSuchConfigurationRecorderException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -312,6 +345,7 @@ impl ::std::fmt::Display for DescribeConfigurationRecordersError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::NoSuchConfigurationRecorderException(_inner) => _inner.fmt(f),
+            Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -334,6 +368,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DescribeConfi
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::NoSuchConfigurationRecorderException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

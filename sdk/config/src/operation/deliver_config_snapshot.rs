@@ -256,7 +256,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeliverConfig
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DeliverConfigSnapshotError {
-    /// <p>There are no configuration recorders available to provide the role needed to describe your resources. Create a configuration recorder.</p>
+    /// <p>There are no customer managed configuration recorders available to record your resources. Use the <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConfigurationRecorder.html">PutConfigurationRecorder</a> operation to create the customer managed configuration recorder.</p>
     NoAvailableConfigurationRecorderException(crate::types::error::NoAvailableConfigurationRecorderException),
     /// <p>There is no configuration recorder running.</p>
     NoRunningConfigurationRecorderException(crate::types::error::NoRunningConfigurationRecorderException),

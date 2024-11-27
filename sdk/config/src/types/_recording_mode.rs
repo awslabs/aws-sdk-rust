@@ -14,7 +14,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecordingMode {
     /// <p>The default recording frequency that Config uses to record configuration changes.</p><important>
-    /// <p>Daily recording is not supported for the following resource types:</p>
+    /// <p>Daily recording cannot be specified for the following resource types:</p>
     /// <ul>
     /// <li>
     /// <p><code>AWS::Config::ResourceCompliance</code></p></li>
@@ -31,7 +31,7 @@ pub struct RecordingMode {
 }
 impl RecordingMode {
     /// <p>The default recording frequency that Config uses to record configuration changes.</p><important>
-    /// <p>Daily recording is not supported for the following resource types:</p>
+    /// <p>Daily recording cannot be specified for the following resource types:</p>
     /// <ul>
     /// <li>
     /// <p><code>AWS::Config::ResourceCompliance</code></p></li>
@@ -68,7 +68,7 @@ pub struct RecordingModeBuilder {
 }
 impl RecordingModeBuilder {
     /// <p>The default recording frequency that Config uses to record configuration changes.</p><important>
-    /// <p>Daily recording is not supported for the following resource types:</p>
+    /// <p>Daily recording cannot be specified for the following resource types:</p>
     /// <ul>
     /// <li>
     /// <p><code>AWS::Config::ResourceCompliance</code></p></li>
@@ -85,7 +85,7 @@ impl RecordingModeBuilder {
         self
     }
     /// <p>The default recording frequency that Config uses to record configuration changes.</p><important>
-    /// <p>Daily recording is not supported for the following resource types:</p>
+    /// <p>Daily recording cannot be specified for the following resource types:</p>
     /// <ul>
     /// <li>
     /// <p><code>AWS::Config::ResourceCompliance</code></p></li>
@@ -101,7 +101,7 @@ impl RecordingModeBuilder {
         self
     }
     /// <p>The default recording frequency that Config uses to record configuration changes.</p><important>
-    /// <p>Daily recording is not supported for the following resource types:</p>
+    /// <p>Daily recording cannot be specified for the following resource types:</p>
     /// <ul>
     /// <li>
     /// <p><code>AWS::Config::ResourceCompliance</code></p></li>

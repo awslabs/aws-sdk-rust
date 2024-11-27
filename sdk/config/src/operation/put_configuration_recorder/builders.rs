@@ -22,10 +22,17 @@ impl crate::operation::put_configuration_recorder::builders::PutConfigurationRec
 }
 /// Fluent builder constructing a request to `PutConfigurationRecorder`.
 ///
-/// <p>Creates a new configuration recorder to record configuration changes for specified resource types.</p>
-/// <p>You can also use this action to change the <code>roleARN</code> or the <code>recordingGroup</code> of an existing recorder. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/stop-start-recorder.html"> <b>Managing the Configuration Recorder</b> </a> in the <i>Config Developer Guide</i>.</p><note>
-/// <p>You can specify only one configuration recorder for each Amazon Web Services Region for each account.</p>
-/// <p>If the configuration recorder does not have the <code>recordingGroup</code> field specified, the default is to record all supported resource types.</p>
+/// <p>Creates or updates the customer managed configuration recorder.</p>
+/// <p>You can use this operation to create a new customer managed configuration recorder or to update the <code>roleARN</code> and the <code>recordingGroup</code> for an existing customer managed configuration recorder.</p>
+/// <p>To start the customer managed configuration recorder and begin recording configuration changes for the resource types you specify, use the <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_StartConfigurationRecorder.html">StartConfigurationRecorder</a> operation.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/stop-start-recorder.html"> <b>Working with the Configuration Recorder</b> </a> in the <i>Config Developer Guide</i>.</p><note>
+/// <p><b>One customer managed configuration recorder per account per Region</b></p>
+/// <p>You can create only one customer managed configuration recorder for each account for each Amazon Web Services Region.</p>
+/// <p><b>Default is to record all supported resource types, excluding the global IAM resource types</b></p>
+/// <p>If you have not specified values for the <code>recordingGroup</code> field, the default for the customer managed configuration recorder is to record all supported resource types, excluding the global IAM resource types: <code>AWS::IAM::Group</code>, <code>AWS::IAM::Policy</code>, <code>AWS::IAM::Role</code>, and <code>AWS::IAM::User</code>.</p>
+/// <p><b>Tags are added at creation and cannot be updated</b></p>
+/// <p><code>PutConfigurationRecorder</code> is an idempotent API. Subsequent requests won’t create a duplicate resource if one was already created. If a following request has different tags values, Config will ignore these differences and treat it as an idempotent request of the previous. In this case, tags will not be updated, even if they are different.</p>
+/// <p>Use <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_TagResource.html">TagResource</a> and <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_UntagResource.html">UntagResource</a> to update tags after creation.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutConfigurationRecorderFluentBuilder {
@@ -112,18 +119,37 @@ impl PutConfigurationRecorderFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>An object for the configuration recorder to record configuration changes for specified resource types.</p>
+    /// <p>An object for the configuration recorder. A configuration recorder records configuration changes for the resource types in scope.</p>
     pub fn configuration_recorder(mut self, input: crate::types::ConfigurationRecorder) -> Self {
         self.inner = self.inner.configuration_recorder(input);
         self
     }
-    /// <p>An object for the configuration recorder to record configuration changes for specified resource types.</p>
+    /// <p>An object for the configuration recorder. A configuration recorder records configuration changes for the resource types in scope.</p>
     pub fn set_configuration_recorder(mut self, input: ::std::option::Option<crate::types::ConfigurationRecorder>) -> Self {
         self.inner = self.inner.set_configuration_recorder(input);
         self
     }
-    /// <p>An object for the configuration recorder to record configuration changes for specified resource types.</p>
+    /// <p>An object for the configuration recorder. A configuration recorder records configuration changes for the resource types in scope.</p>
     pub fn get_configuration_recorder(&self) -> &::std::option::Option<crate::types::ConfigurationRecorder> {
         self.inner.get_configuration_recorder()
+    }
+    ///
+    /// Appends an item to `Tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>The tags for the customer managed configuration recorder. Each tag consists of a key and an optional value, both of which you define.</p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        self.inner = self.inner.tags(input);
+        self
+    }
+    /// <p>The tags for the customer managed configuration recorder. Each tag consists of a key and an optional value, both of which you define.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.inner = self.inner.set_tags(input);
+        self
+    }
+    /// <p>The tags for the customer managed configuration recorder. Each tag consists of a key and an optional value, both of which you define.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

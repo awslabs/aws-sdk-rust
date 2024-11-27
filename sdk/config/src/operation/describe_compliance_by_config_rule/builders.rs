@@ -22,7 +22,7 @@ impl crate::operation::describe_compliance_by_config_rule::builders::DescribeCom
 }
 /// Fluent builder constructing a request to `DescribeComplianceByConfigRule`.
 ///
-/// <p>Indicates whether the specified Config rules are compliant. If a rule is noncompliant, this action returns the number of Amazon Web Services resources that do not comply with the rule.</p>
+/// <p>Indicates whether the specified Config rules are compliant. If a rule is noncompliant, this operation returns the number of Amazon Web Services resources that do not comply with the rule.</p>
 /// <p>A rule is compliant if all of the evaluated resources comply with it. It is noncompliant if any of these resources do not comply.</p>
 /// <p>If Config has no current evaluation results for the rule, it returns <code>INSUFFICIENT_DATA</code>. This result might indicate one of the following conditions:</p>
 /// <ul>

@@ -24,7 +24,19 @@ impl crate::operation::delete_config_rule::builders::DeleteConfigRuleInputBuilde
 ///
 /// <p>Deletes the specified Config rule and all of its evaluation results.</p>
 /// <p>Config sets the state of a rule to <code>DELETING</code> until the deletion is complete. You cannot update a rule while it is in this state. If you make a <code>PutConfigRule</code> or <code>DeleteConfigRule</code> request for the rule, you will receive a <code>ResourceInUseException</code>.</p>
-/// <p>You can check the state of a rule by using the <code>DescribeConfigRules</code> request.</p>
+/// <p>You can check the state of a rule by using the <code>DescribeConfigRules</code> request.</p><note>
+/// <p><b>Recommendation: Stop recording resource compliance before deleting rules</b></p>
+/// <p>It is highly recommended that you stop recording for the <code>AWS::Config::ResourceCompliance</code> resource type before you delete rules in your account. Deleting rules creates CIs for <code>AWS::Config::ResourceCompliance</code> and can affect your Config <a href="https://docs.aws.amazon.com/config/latest/developerguide/stop-start-recorder.html">configuration recorder</a> costs. If you are deleting rules which evaluate a large number of resource types, this can lead to a spike in the number of CIs recorded.</p>
+/// <p>Best practice:</p>
+/// <ol>
+/// <li>
+/// <p>Stop recording <code>AWS::Config::ResourceCompliance</code></p></li>
+/// <li>
+/// <p>Delete rule(s)</p></li>
+/// <li>
+/// <p>Turn on recording for <code>AWS::Config::ResourceCompliance</code></p></li>
+/// </ol>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteConfigRuleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -4,13 +4,21 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutConfigurationRecorderInput {
-    /// <p>An object for the configuration recorder to record configuration changes for specified resource types.</p>
+    /// <p>An object for the configuration recorder. A configuration recorder records configuration changes for the resource types in scope.</p>
     pub configuration_recorder: ::std::option::Option<crate::types::ConfigurationRecorder>,
+    /// <p>The tags for the customer managed configuration recorder. Each tag consists of a key and an optional value, both of which you define.</p>
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl PutConfigurationRecorderInput {
-    /// <p>An object for the configuration recorder to record configuration changes for specified resource types.</p>
+    /// <p>An object for the configuration recorder. A configuration recorder records configuration changes for the resource types in scope.</p>
     pub fn configuration_recorder(&self) -> ::std::option::Option<&crate::types::ConfigurationRecorder> {
         self.configuration_recorder.as_ref()
+    }
+    /// <p>The tags for the customer managed configuration recorder. Each tag consists of a key and an optional value, both of which you define.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl PutConfigurationRecorderInput {
@@ -25,22 +33,43 @@ impl PutConfigurationRecorderInput {
 #[non_exhaustive]
 pub struct PutConfigurationRecorderInputBuilder {
     pub(crate) configuration_recorder: ::std::option::Option<crate::types::ConfigurationRecorder>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl PutConfigurationRecorderInputBuilder {
-    /// <p>An object for the configuration recorder to record configuration changes for specified resource types.</p>
+    /// <p>An object for the configuration recorder. A configuration recorder records configuration changes for the resource types in scope.</p>
     /// This field is required.
     pub fn configuration_recorder(mut self, input: crate::types::ConfigurationRecorder) -> Self {
         self.configuration_recorder = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object for the configuration recorder to record configuration changes for specified resource types.</p>
+    /// <p>An object for the configuration recorder. A configuration recorder records configuration changes for the resource types in scope.</p>
     pub fn set_configuration_recorder(mut self, input: ::std::option::Option<crate::types::ConfigurationRecorder>) -> Self {
         self.configuration_recorder = input;
         self
     }
-    /// <p>An object for the configuration recorder to record configuration changes for specified resource types.</p>
+    /// <p>An object for the configuration recorder. A configuration recorder records configuration changes for the resource types in scope.</p>
     pub fn get_configuration_recorder(&self) -> &::std::option::Option<crate::types::ConfigurationRecorder> {
         &self.configuration_recorder
+    }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>The tags for the customer managed configuration recorder. Each tag consists of a key and an optional value, both of which you define.</p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+        v.push(input);
+        self.tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The tags for the customer managed configuration recorder. Each tag consists of a key and an optional value, both of which you define.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>The tags for the customer managed configuration recorder. Each tag consists of a key and an optional value, both of which you define.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`PutConfigurationRecorderInput`](crate::operation::put_configuration_recorder::PutConfigurationRecorderInput).
     pub fn build(
@@ -51,6 +80,7 @@ impl PutConfigurationRecorderInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::put_configuration_recorder::PutConfigurationRecorderInput {
             configuration_recorder: self.configuration_recorder,
+            tags: self.tags,
         })
     }
 }

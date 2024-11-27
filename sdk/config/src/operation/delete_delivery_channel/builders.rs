@@ -23,7 +23,7 @@ impl crate::operation::delete_delivery_channel::builders::DeleteDeliveryChannelI
 /// Fluent builder constructing a request to `DeleteDeliveryChannel`.
 ///
 /// <p>Deletes the delivery channel.</p>
-/// <p>Before you can delete the delivery channel, you must stop the configuration recorder by using the <code>StopConfigurationRecorder</code> action.</p>
+/// <p>Before you can delete the delivery channel, you must stop the customer managed configuration recorder. You can use the <code>StopConfigurationRecorder</code> operation to stop the customer managed configuration recorder.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDeliveryChannelFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -109,17 +109,17 @@ impl DeleteDeliveryChannelFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the delivery channel to delete.</p>
+    /// <p>The name of the delivery channel that you want to delete.</p>
     pub fn delivery_channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.delivery_channel_name(input.into());
         self
     }
-    /// <p>The name of the delivery channel to delete.</p>
+    /// <p>The name of the delivery channel that you want to delete.</p>
     pub fn set_delivery_channel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_delivery_channel_name(input);
         self
     }
-    /// <p>The name of the delivery channel to delete.</p>
+    /// <p>The name of the delivery channel that you want to delete.</p>
     pub fn get_delivery_channel_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_delivery_channel_name()
     }

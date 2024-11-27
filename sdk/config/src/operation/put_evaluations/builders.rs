@@ -22,7 +22,7 @@ impl crate::operation::put_evaluations::builders::PutEvaluationsInputBuilder {
 }
 /// Fluent builder constructing a request to `PutEvaluations`.
 ///
-/// <p>Used by an Lambda function to deliver evaluation results to Config. This action is required in every Lambda function that is invoked by an Config rule.</p>
+/// <p>Used by an Lambda function to deliver evaluation results to Config. This operation is required in every Lambda function that is invoked by an Config rule.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutEvaluationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -6,11 +6,17 @@
 pub struct BedrockEmbeddingModelConfiguration {
     /// <p>The dimensions details for the vector configuration used on the Bedrock embeddings model.</p>
     pub dimensions: ::std::option::Option<i32>,
+    /// <p>The data type for the vectors when using a model to convert text into vector embeddings. The model must support the specified data type for vector embeddings. Floating-point (float32) is the default data type, and is supported by most models for vector embeddings. See <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-supported.html">Supported embeddings models</a> for information on the available models and their vector data types.</p>
+    pub embedding_data_type: ::std::option::Option<crate::types::EmbeddingDataType>,
 }
 impl BedrockEmbeddingModelConfiguration {
     /// <p>The dimensions details for the vector configuration used on the Bedrock embeddings model.</p>
     pub fn dimensions(&self) -> ::std::option::Option<i32> {
         self.dimensions
+    }
+    /// <p>The data type for the vectors when using a model to convert text into vector embeddings. The model must support the specified data type for vector embeddings. Floating-point (float32) is the default data type, and is supported by most models for vector embeddings. See <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-supported.html">Supported embeddings models</a> for information on the available models and their vector data types.</p>
+    pub fn embedding_data_type(&self) -> ::std::option::Option<&crate::types::EmbeddingDataType> {
+        self.embedding_data_type.as_ref()
     }
 }
 impl BedrockEmbeddingModelConfiguration {
@@ -25,6 +31,7 @@ impl BedrockEmbeddingModelConfiguration {
 #[non_exhaustive]
 pub struct BedrockEmbeddingModelConfigurationBuilder {
     pub(crate) dimensions: ::std::option::Option<i32>,
+    pub(crate) embedding_data_type: ::std::option::Option<crate::types::EmbeddingDataType>,
 }
 impl BedrockEmbeddingModelConfigurationBuilder {
     /// <p>The dimensions details for the vector configuration used on the Bedrock embeddings model.</p>
@@ -41,8 +48,25 @@ impl BedrockEmbeddingModelConfigurationBuilder {
     pub fn get_dimensions(&self) -> &::std::option::Option<i32> {
         &self.dimensions
     }
+    /// <p>The data type for the vectors when using a model to convert text into vector embeddings. The model must support the specified data type for vector embeddings. Floating-point (float32) is the default data type, and is supported by most models for vector embeddings. See <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-supported.html">Supported embeddings models</a> for information on the available models and their vector data types.</p>
+    pub fn embedding_data_type(mut self, input: crate::types::EmbeddingDataType) -> Self {
+        self.embedding_data_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The data type for the vectors when using a model to convert text into vector embeddings. The model must support the specified data type for vector embeddings. Floating-point (float32) is the default data type, and is supported by most models for vector embeddings. See <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-supported.html">Supported embeddings models</a> for information on the available models and their vector data types.</p>
+    pub fn set_embedding_data_type(mut self, input: ::std::option::Option<crate::types::EmbeddingDataType>) -> Self {
+        self.embedding_data_type = input;
+        self
+    }
+    /// <p>The data type for the vectors when using a model to convert text into vector embeddings. The model must support the specified data type for vector embeddings. Floating-point (float32) is the default data type, and is supported by most models for vector embeddings. See <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-supported.html">Supported embeddings models</a> for information on the available models and their vector data types.</p>
+    pub fn get_embedding_data_type(&self) -> &::std::option::Option<crate::types::EmbeddingDataType> {
+        &self.embedding_data_type
+    }
     /// Consumes the builder and constructs a [`BedrockEmbeddingModelConfiguration`](crate::types::BedrockEmbeddingModelConfiguration).
     pub fn build(self) -> crate::types::BedrockEmbeddingModelConfiguration {
-        crate::types::BedrockEmbeddingModelConfiguration { dimensions: self.dimensions }
+        crate::types::BedrockEmbeddingModelConfiguration {
+            dimensions: self.dimensions,
+            embedding_data_type: self.embedding_data_type,
+        }
     }
 }

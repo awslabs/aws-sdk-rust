@@ -249,7 +249,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutDeliveryCh
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum PutDeliveryChannelError {
-    /// <p>Your Amazon S3 bucket policy does not permit Config to write to it.</p>
+    /// <p>Your Amazon S3 bucket policy does not allow Config to write to it.</p>
     InsufficientDeliveryPolicyException(crate::types::error::InsufficientDeliveryPolicyException),
     /// <p>The specified delivery channel name is not valid.</p>
     InvalidDeliveryChannelNameException(crate::types::error::InvalidDeliveryChannelNameException),
@@ -261,7 +261,7 @@ pub enum PutDeliveryChannelError {
     InvalidSnsTopicArnException(crate::types::error::InvalidSnsTopicArnException),
     /// <p>You have reached the limit of the number of delivery channels you can create.</p>
     MaxNumberOfDeliveryChannelsExceededException(crate::types::error::MaxNumberOfDeliveryChannelsExceededException),
-    /// <p>There are no configuration recorders available to provide the role needed to describe your resources. Create a configuration recorder.</p>
+    /// <p>There are no customer managed configuration recorders available to record your resources. Use the <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConfigurationRecorder.html">PutConfigurationRecorder</a> operation to create the customer managed configuration recorder.</p>
     NoAvailableConfigurationRecorderException(crate::types::error::NoAvailableConfigurationRecorderException),
     /// <p>The specified Amazon S3 bucket does not exist.</p>
     NoSuchBucketException(crate::types::error::NoSuchBucketException),

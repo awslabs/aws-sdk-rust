@@ -22,10 +22,11 @@ impl crate::operation::put_delivery_channel::builders::PutDeliveryChannelInputBu
 }
 /// Fluent builder constructing a request to `PutDeliveryChannel`.
 ///
-/// <p>Creates a delivery channel object to deliver configuration information and other compliance information to an Amazon S3 bucket and Amazon SNS topic. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/notifications-for-AWS-Config.html">Notifications that Config Sends to an Amazon SNS topic</a>.</p>
-/// <p>Before you can create a delivery channel, you must create a configuration recorder.</p>
-/// <p>You can use this action to change the Amazon S3 bucket or an Amazon SNS topic of the existing delivery channel. To change the Amazon S3 bucket or an Amazon SNS topic, call this action and specify the changed values for the S3 bucket and the SNS topic. If you specify a different value for either the S3 bucket or the SNS topic, this action will keep the existing value for the parameter that is not changed.</p><note>
-/// <p>You can have only one delivery channel per region in your account.</p>
+/// <p>Creates or updates a delivery channel to deliver configuration information and other compliance information.</p>
+/// <p>You can use this operation to create a new delivery channel or to update the Amazon S3 bucket and the Amazon SNS topic of an existing delivery channel.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/manage-delivery-channel.html"> <b>Working with the Delivery Channel</b> </a> in the <i>Config Developer Guide.</i></p><note>
+/// <p><b>One delivery channel per account per Region</b></p>
+/// <p>You can have only one delivery channel for each account for each Amazon Web Services Region.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutDeliveryChannelFluentBuilder {
@@ -112,17 +113,17 @@ impl PutDeliveryChannelFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The configuration delivery channel object that delivers the configuration information to an Amazon S3 bucket and to an Amazon SNS topic.</p>
+    /// <p>An object for the delivery channel. A delivery channel sends notifications and updated configuration states.</p>
     pub fn delivery_channel(mut self, input: crate::types::DeliveryChannel) -> Self {
         self.inner = self.inner.delivery_channel(input);
         self
     }
-    /// <p>The configuration delivery channel object that delivers the configuration information to an Amazon S3 bucket and to an Amazon SNS topic.</p>
+    /// <p>An object for the delivery channel. A delivery channel sends notifications and updated configuration states.</p>
     pub fn set_delivery_channel(mut self, input: ::std::option::Option<crate::types::DeliveryChannel>) -> Self {
         self.inner = self.inner.set_delivery_channel(input);
         self
     }
-    /// <p>The configuration delivery channel object that delivers the configuration information to an Amazon S3 bucket and to an Amazon SNS topic.</p>
+    /// <p>An object for the delivery channel. A delivery channel sends notifications and updated configuration states.</p>
     pub fn get_delivery_channel(&self) -> &::std::option::Option<crate::types::DeliveryChannel> {
         self.inner.get_delivery_channel()
     }

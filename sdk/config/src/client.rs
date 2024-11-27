@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`BatchGetAggregateResourceConfig`](crate::operation::batch_get_aggregate_resource_config) operation has
-/// a [`Client::batch_get_aggregate_resource_config`], function which returns a builder for that operation.
+/// For example, the [`AssociateResourceTypes`](crate::operation::associate_resource_types) operation has
+/// a [`Client::associate_resource_types`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.batch_get_aggregate_resource_config()
-///     .configuration_aggregator_name("example")
+/// let result = client.associate_resource_types()
+///     .configuration_recorder_arn("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -136,6 +136,8 @@ impl Client {
     }
 }
 
+mod associate_resource_types;
+
 mod batch_get_aggregate_resource_config;
 
 mod batch_get_resource_config;
@@ -151,7 +153,7 @@ mod batch_get_resource_config;
 /// # let client: aws_sdk_config::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.batch_get_aggregate_resource_config()
+/// let result = client.associate_resource_types()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -194,6 +196,8 @@ mod delete_remediation_exceptions;
 mod delete_resource_config;
 
 mod delete_retention_configuration;
+
+mod delete_service_linked_configuration_recorder;
 
 mod delete_stored_query;
 
@@ -249,6 +253,8 @@ mod describe_remediation_execution_status;
 
 mod describe_retention_configurations;
 
+mod disassociate_resource_types;
+
 mod get_aggregate_compliance_details_by_config_rule;
 
 mod get_aggregate_config_rule_compliance_summary;
@@ -289,6 +295,8 @@ mod get_stored_query;
 
 mod list_aggregate_discovered_resources;
 
+mod list_configuration_recorders;
+
 mod list_conformance_pack_compliance_scores;
 
 mod list_discovered_resources;
@@ -326,6 +334,8 @@ mod put_remediation_exceptions;
 mod put_resource_config;
 
 mod put_retention_configuration;
+
+mod put_service_linked_configuration_recorder;
 
 mod put_stored_query;
 

@@ -22,8 +22,10 @@ impl crate::operation::describe_configuration_recorder_status::builders::Describ
 }
 /// Fluent builder constructing a request to `DescribeConfigurationRecorderStatus`.
 ///
-/// <p>Returns the current status of the specified configuration recorder as well as the status of the last recording event for the recorder. If a configuration recorder is not specified, this action returns the status of all configuration recorders associated with the account.</p><note>
-/// <p>&gt;You can specify only one configuration recorder for each Amazon Web Services Region for each account. For a detailed status of recording events over time, add your Config events to Amazon CloudWatch metrics and use CloudWatch metrics.</p>
+/// <p>Returns the current status of the configuration recorder you specify as well as the status of the last recording event for the configuration recorders.</p>
+/// <p>For a detailed status of recording events over time, add your Config events to Amazon CloudWatch metrics and use CloudWatch metrics.</p>
+/// <p>If a configuration recorder is not specified, this operation returns the status for the customer managed configuration recorder configured for the account, if applicable.</p><note>
+/// <p>When making a request to this operation, you can only specify one configuration recorder.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeConfigurationRecorderStatusFluentBuilder {
@@ -116,18 +118,52 @@ impl DescribeConfigurationRecorderStatusFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_configuration_recorder_names`](Self::set_configuration_recorder_names).
     ///
-    /// <p>The name(s) of the configuration recorder. If the name is not specified, the action returns the current status of all the configuration recorders associated with the account.</p>
+    /// <p>The name of the configuration recorder. If the name is not specified, the opertation returns the status for the customer managed configuration recorder configured for the account, if applicable.</p><note>
+    /// <p>When making a request to this operation, you can only specify one configuration recorder.</p>
+    /// </note>
     pub fn configuration_recorder_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_recorder_names(input.into());
         self
     }
-    /// <p>The name(s) of the configuration recorder. If the name is not specified, the action returns the current status of all the configuration recorders associated with the account.</p>
+    /// <p>The name of the configuration recorder. If the name is not specified, the opertation returns the status for the customer managed configuration recorder configured for the account, if applicable.</p><note>
+    /// <p>When making a request to this operation, you can only specify one configuration recorder.</p>
+    /// </note>
     pub fn set_configuration_recorder_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_configuration_recorder_names(input);
         self
     }
-    /// <p>The name(s) of the configuration recorder. If the name is not specified, the action returns the current status of all the configuration recorders associated with the account.</p>
+    /// <p>The name of the configuration recorder. If the name is not specified, the opertation returns the status for the customer managed configuration recorder configured for the account, if applicable.</p><note>
+    /// <p>When making a request to this operation, you can only specify one configuration recorder.</p>
+    /// </note>
     pub fn get_configuration_recorder_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_configuration_recorder_names()
+    }
+    /// <p>For service-linked configuration recorders, you can use the service principal of the linked Amazon Web Services service to specify the configuration recorder.</p>
+    pub fn service_principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.service_principal(input.into());
+        self
+    }
+    /// <p>For service-linked configuration recorders, you can use the service principal of the linked Amazon Web Services service to specify the configuration recorder.</p>
+    pub fn set_service_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_service_principal(input);
+        self
+    }
+    /// <p>For service-linked configuration recorders, you can use the service principal of the linked Amazon Web Services service to specify the configuration recorder.</p>
+    pub fn get_service_principal(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_principal()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the configuration recorder that you want to specify.</p>
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.arn(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the configuration recorder that you want to specify.</p>
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_arn(input);
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the configuration recorder that you want to specify.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
     }
 }

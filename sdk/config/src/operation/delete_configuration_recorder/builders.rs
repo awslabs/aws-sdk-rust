@@ -22,9 +22,8 @@ impl crate::operation::delete_configuration_recorder::builders::DeleteConfigurat
 }
 /// Fluent builder constructing a request to `DeleteConfigurationRecorder`.
 ///
-/// <p>Deletes the configuration recorder.</p>
-/// <p>After the configuration recorder is deleted, Config will not record resource configuration changes until you create a new configuration recorder.</p>
-/// <p>This action does not delete the configuration information that was previously recorded. You will be able to access the previously recorded information by using the <code>GetResourceConfigHistory</code> action, but you will not be able to access this information in the Config console until you create a new configuration recorder.</p>
+/// <p>Deletes the customer managed configuration recorder.</p>
+/// <p>This operation does not delete the configuration information that was previously recorded. You will be able to access the previously recorded information by using the <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_GetResourceConfigHistory.html">GetResourceConfigHistory</a> operation, but you will not be able to access this information in the Config console until you have created a new customer managed configuration recorder.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteConfigurationRecorderFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -110,17 +109,17 @@ impl DeleteConfigurationRecorderFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the configuration recorder to be deleted. You can retrieve the name of your configuration recorder by using the <code>DescribeConfigurationRecorders</code> action.</p>
+    /// <p>The name of the customer managed configuration recorder that you want to delete. You can retrieve the name of your configuration recorders by using the <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigurationRecorders.html">DescribeConfigurationRecorders</a> operation.</p>
     pub fn configuration_recorder_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_recorder_name(input.into());
         self
     }
-    /// <p>The name of the configuration recorder to be deleted. You can retrieve the name of your configuration recorder by using the <code>DescribeConfigurationRecorders</code> action.</p>
+    /// <p>The name of the customer managed configuration recorder that you want to delete. You can retrieve the name of your configuration recorders by using the <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigurationRecorders.html">DescribeConfigurationRecorders</a> operation.</p>
     pub fn set_configuration_recorder_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration_recorder_name(input);
         self
     }
-    /// <p>The name of the configuration recorder to be deleted. You can retrieve the name of your configuration recorder by using the <code>DescribeConfigurationRecorders</code> action.</p>
+    /// <p>The name of the customer managed configuration recorder that you want to delete. You can retrieve the name of your configuration recorders by using the <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigurationRecorders.html">DescribeConfigurationRecorders</a> operation.</p>
     pub fn get_configuration_recorder_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_configuration_recorder_name()
     }

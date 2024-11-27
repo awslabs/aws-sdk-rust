@@ -22,8 +22,9 @@ impl crate::operation::describe_configuration_recorders::builders::DescribeConfi
 }
 /// Fluent builder constructing a request to `DescribeConfigurationRecorders`.
 ///
-/// <p>Returns the details for the specified configuration recorders. If the configuration recorder is not specified, this action returns the details for all configuration recorders associated with the account.</p><note>
-/// <p>You can specify only one configuration recorder for each Amazon Web Services Region for each account.</p>
+/// <p>Returns details for the configuration recorder you specify.</p>
+/// <p>If a configuration recorder is not specified, this operation returns details for the customer managed configuration recorder configured for the account, if applicable.</p><note>
+/// <p>When making a request to this operation, you can only specify one configuration recorder.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeConfigurationRecordersFluentBuilder {
@@ -115,18 +116,46 @@ impl DescribeConfigurationRecordersFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_configuration_recorder_names`](Self::set_configuration_recorder_names).
     ///
-    /// <p>A list of configuration recorder names.</p>
+    /// <p>A list of names of the configuration recorders that you want to specify.</p>
     pub fn configuration_recorder_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_recorder_names(input.into());
         self
     }
-    /// <p>A list of configuration recorder names.</p>
+    /// <p>A list of names of the configuration recorders that you want to specify.</p>
     pub fn set_configuration_recorder_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_configuration_recorder_names(input);
         self
     }
-    /// <p>A list of configuration recorder names.</p>
+    /// <p>A list of names of the configuration recorders that you want to specify.</p>
     pub fn get_configuration_recorder_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_configuration_recorder_names()
+    }
+    /// <p>For service-linked configuration recorders, you can use the service principal of the linked Amazon Web Services service to specify the configuration recorder.</p>
+    pub fn service_principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.service_principal(input.into());
+        self
+    }
+    /// <p>For service-linked configuration recorders, you can use the service principal of the linked Amazon Web Services service to specify the configuration recorder.</p>
+    pub fn set_service_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_service_principal(input);
+        self
+    }
+    /// <p>For service-linked configuration recorders, you can use the service principal of the linked Amazon Web Services service to specify the configuration recorder.</p>
+    pub fn get_service_principal(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_principal()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the configuration recorder that you want to specify.</p>
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.arn(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the configuration recorder that you want to specify.</p>
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_arn(input);
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the configuration recorder that you want to specify.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
     }
 }

@@ -329,6 +329,16 @@ pub(crate) fn reflens_list_aggregate_discovered_resources_output_output_next_tok
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_configuration_recorders_output_output_next_token(
+    input: &crate::operation::list_configuration_recorders::ListConfigurationRecordersOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_conformance_pack_compliance_scores_output_output_next_token(
     input: &crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -646,6 +656,13 @@ pub(crate) fn lens_list_aggregate_discovered_resources_output_output_resource_id
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_configuration_recorders_output_output_configuration_recorder_summaries(
+    input: crate::operation::list_configuration_recorders::ListConfigurationRecordersOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationRecorderSummary>> {
+    let input = input.configuration_recorder_summaries;
     ::std::option::Option::Some(input)
 }
 
