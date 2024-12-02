@@ -49,6 +49,16 @@ pub fn de_verified_access_endpoint_eni_options(
                 builder = builder.set_port(var_3);
             }
             ,
+            s if s.matches("portRangeSet") /* PortRanges com.amazonaws.ec2#VerifiedAccessEndpointEniOptions$PortRanges */ =>  {
+                let var_4 =
+                    Some(
+                        crate::protocol_serde::shape_verified_access_endpoint_port_range_list::de_verified_access_endpoint_port_range_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_port_ranges(var_4);
+            }
+            ,
             _ => {}
         }
     }

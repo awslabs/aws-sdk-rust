@@ -215,6 +215,10 @@ pub(crate) mod shape_cancel_conversion_task;
 
 pub(crate) mod shape_cancel_conversion_task_input;
 
+pub(crate) mod shape_cancel_declarative_policies_report;
+
+pub(crate) mod shape_cancel_declarative_policies_report_input;
+
 pub(crate) mod shape_cancel_export_task;
 
 pub(crate) mod shape_cancel_export_task_input;
@@ -1031,6 +1035,10 @@ pub(crate) mod shape_describe_customer_gateways;
 
 pub(crate) mod shape_describe_customer_gateways_input;
 
+pub(crate) mod shape_describe_declarative_policies_reports;
+
+pub(crate) mod shape_describe_declarative_policies_reports_input;
+
 pub(crate) mod shape_describe_dhcp_options;
 
 pub(crate) mod shape_describe_dhcp_options_input;
@@ -1527,6 +1535,10 @@ pub(crate) mod shape_describe_vpc_classic_link_dns_support_input;
 
 pub(crate) mod shape_describe_vpc_classic_link_input;
 
+pub(crate) mod shape_describe_vpc_endpoint_associations;
+
+pub(crate) mod shape_describe_vpc_endpoint_associations_input;
+
 pub(crate) mod shape_describe_vpc_endpoint_connection_notifications;
 
 pub(crate) mod shape_describe_vpc_endpoint_connection_notifications_input;
@@ -1594,6 +1606,10 @@ pub(crate) mod shape_detach_vpn_gateway_input;
 pub(crate) mod shape_disable_address_transfer;
 
 pub(crate) mod shape_disable_address_transfer_input;
+
+pub(crate) mod shape_disable_allowed_images_settings;
+
+pub(crate) mod shape_disable_allowed_images_settings_input;
 
 pub(crate) mod shape_disable_aws_network_performance_metric_subscription;
 
@@ -1727,6 +1743,10 @@ pub(crate) mod shape_enable_address_transfer;
 
 pub(crate) mod shape_enable_address_transfer_input;
 
+pub(crate) mod shape_enable_allowed_images_settings;
+
+pub(crate) mod shape_enable_allowed_images_settings_input;
+
 pub(crate) mod shape_enable_aws_network_performance_metric_subscription;
 
 pub(crate) mod shape_enable_aws_network_performance_metric_subscription_input;
@@ -1811,6 +1831,14 @@ pub(crate) mod shape_export_transit_gateway_routes;
 
 pub(crate) mod shape_export_transit_gateway_routes_input;
 
+pub(crate) mod shape_export_verified_access_instance_client_configuration;
+
+pub(crate) mod shape_export_verified_access_instance_client_configuration_input;
+
+pub(crate) mod shape_get_allowed_images_settings;
+
+pub(crate) mod shape_get_allowed_images_settings_input;
+
 pub(crate) mod shape_get_associated_enclave_certificate_iam_roles;
 
 pub(crate) mod shape_get_associated_enclave_certificate_iam_roles_input;
@@ -1838,6 +1866,10 @@ pub(crate) mod shape_get_console_output_input;
 pub(crate) mod shape_get_console_screenshot;
 
 pub(crate) mod shape_get_console_screenshot_input;
+
+pub(crate) mod shape_get_declarative_policies_report_summary;
+
+pub(crate) mod shape_get_declarative_policies_report_summary_input;
 
 pub(crate) mod shape_get_default_credit_specification;
 
@@ -1990,6 +2022,10 @@ pub(crate) mod shape_get_transit_gateway_route_table_propagations_input;
 pub(crate) mod shape_get_verified_access_endpoint_policy;
 
 pub(crate) mod shape_get_verified_access_endpoint_policy_input;
+
+pub(crate) mod shape_get_verified_access_endpoint_targets;
+
+pub(crate) mod shape_get_verified_access_endpoint_targets_input;
 
 pub(crate) mod shape_get_verified_access_group_policy;
 
@@ -2427,6 +2463,10 @@ pub(crate) mod shape_replace_iam_instance_profile_association;
 
 pub(crate) mod shape_replace_iam_instance_profile_association_input;
 
+pub(crate) mod shape_replace_image_criteria_in_allowed_images_settings;
+
+pub(crate) mod shape_replace_image_criteria_in_allowed_images_settings_input;
+
 pub(crate) mod shape_replace_network_acl_association;
 
 pub(crate) mod shape_replace_network_acl_association_input;
@@ -2547,6 +2587,10 @@ pub(crate) mod shape_send_diagnostic_interrupt;
 
 pub(crate) mod shape_send_diagnostic_interrupt_input;
 
+pub(crate) mod shape_start_declarative_policies_report;
+
+pub(crate) mod shape_start_declarative_policies_report_input;
+
 pub(crate) mod shape_start_instances;
 
 pub(crate) mod shape_start_instances_input;
@@ -2651,9 +2695,15 @@ pub(crate) mod shape_create_transit_gateway_peering_attachment_request_options;
 
 pub(crate) mod shape_create_transit_gateway_vpc_attachment_request_options;
 
+pub(crate) mod shape_create_verified_access_endpoint_cidr_options;
+
 pub(crate) mod shape_create_verified_access_endpoint_eni_options;
 
 pub(crate) mod shape_create_verified_access_endpoint_load_balancer_options;
+
+pub(crate) mod shape_create_verified_access_endpoint_rds_options;
+
+pub(crate) mod shape_create_verified_access_native_application_oidc_options;
 
 pub(crate) mod shape_create_verified_access_trust_provider_device_options;
 
@@ -2702,6 +2752,8 @@ pub(crate) mod shape_hibernation_options_request;
 pub(crate) mod shape_iam_instance_profile_specification;
 
 pub(crate) mod shape_icmp_type_code;
+
+pub(crate) mod shape_image_criterion_request;
 
 pub(crate) mod shape_image_disk_container;
 
@@ -2761,9 +2813,15 @@ pub(crate) mod shape_modify_transit_gateway_options;
 
 pub(crate) mod shape_modify_transit_gateway_vpc_attachment_request_options;
 
+pub(crate) mod shape_modify_verified_access_endpoint_cidr_options;
+
 pub(crate) mod shape_modify_verified_access_endpoint_eni_options;
 
 pub(crate) mod shape_modify_verified_access_endpoint_load_balancer_options;
+
+pub(crate) mod shape_modify_verified_access_endpoint_rds_options;
+
+pub(crate) mod shape_modify_verified_access_native_application_oidc_options;
 
 pub(crate) mod shape_modify_verified_access_trust_provider_device_options;
 
@@ -2899,6 +2957,8 @@ pub(crate) mod shape_association_status;
 
 pub(crate) mod shape_athena_integration;
 
+pub(crate) mod shape_attribute_summary_list;
+
 pub(crate) mod shape_authorization_rule_set;
 
 pub(crate) mod shape_availability_zone_list;
@@ -2991,6 +3051,8 @@ pub(crate) mod shape_create_fleet_errors_set;
 
 pub(crate) mod shape_create_fleet_instances_set;
 
+pub(crate) mod shape_create_verified_access_endpoint_port_range;
+
 pub(crate) mod shape_create_volume_permission;
 
 pub(crate) mod shape_create_volume_permission_list;
@@ -3000,6 +3062,8 @@ pub(crate) mod shape_customer_gateway;
 pub(crate) mod shape_customer_gateway_list;
 
 pub(crate) mod shape_data_responses;
+
+pub(crate) mod shape_declarative_policies_report_list;
 
 pub(crate) mod shape_delete_fleet_error_set;
 
@@ -3016,6 +3080,8 @@ pub(crate) mod shape_describe_conversion_task_list;
 pub(crate) mod shape_describe_fast_launch_images_success_set;
 
 pub(crate) mod shape_describe_fast_snapshot_restore_success_set;
+
+pub(crate) mod shape_device_trust_provider_type_list;
 
 pub(crate) mod shape_dhcp_options;
 
@@ -3106,6 +3172,8 @@ pub(crate) mod shape_iam_instance_profile_association_set;
 pub(crate) mod shape_id_format_list;
 
 pub(crate) mod shape_ike_versions_request_list_value;
+
+pub(crate) mod shape_image_criterion_list;
 
 pub(crate) mod shape_image_list;
 
@@ -3312,6 +3380,8 @@ pub(crate) mod shape_managed_prefix_list_set;
 pub(crate) mod shape_memory_gib_per_v_cpu_request;
 
 pub(crate) mod shape_memory_mib_request;
+
+pub(crate) mod shape_modify_verified_access_endpoint_port_range;
 
 pub(crate) mod shape_moving_address_status_set;
 
@@ -3649,6 +3719,8 @@ pub(crate) mod shape_verified_access_endpoint;
 
 pub(crate) mod shape_verified_access_endpoint_list;
 
+pub(crate) mod shape_verified_access_endpoint_target_list;
+
 pub(crate) mod shape_verified_access_group;
 
 pub(crate) mod shape_verified_access_group_list;
@@ -3660,6 +3732,10 @@ pub(crate) mod shape_verified_access_instance_list;
 pub(crate) mod shape_verified_access_instance_logging_configuration;
 
 pub(crate) mod shape_verified_access_instance_logging_configuration_list;
+
+pub(crate) mod shape_verified_access_instance_open_vpn_client_configuration_list;
+
+pub(crate) mod shape_verified_access_instance_user_trust_provider_client_configuration;
 
 pub(crate) mod shape_verified_access_log_cloud_watch_logs_destination_options;
 
@@ -3698,6 +3774,8 @@ pub(crate) mod shape_vpc_cidr_block_association;
 pub(crate) mod shape_vpc_classic_link_list;
 
 pub(crate) mod shape_vpc_endpoint;
+
+pub(crate) mod shape_vpc_endpoint_association_set;
 
 pub(crate) mod shape_vpc_endpoint_connection_set;
 
@@ -3750,6 +3828,8 @@ pub(crate) mod shape_assigned_private_ip_address;
 pub(crate) mod shape_associated_role;
 
 pub(crate) mod shape_attachment_ena_srd_specification;
+
+pub(crate) mod shape_attribute_summary;
 
 pub(crate) mod shape_authorization_rule;
 
@@ -3810,6 +3890,8 @@ pub(crate) mod shape_create_fleet_instance;
 pub(crate) mod shape_credit_specification;
 
 pub(crate) mod shape_data_response;
+
+pub(crate) mod shape_declarative_policies_report;
 
 pub(crate) mod shape_delete_fleet_error_item;
 
@@ -3886,6 +3968,8 @@ pub(crate) mod shape_iam_instance_profile;
 pub(crate) mod shape_id_format;
 
 pub(crate) mod shape_image;
+
+pub(crate) mod shape_image_criterion;
 
 pub(crate) mod shape_image_recycle_bin_info;
 
@@ -4018,6 +4102,8 @@ pub(crate) mod shape_mac_host;
 pub(crate) mod shape_moving_address_status;
 
 pub(crate) mod shape_nat_gateway_address;
+
+pub(crate) mod shape_native_application_oidc_options;
 
 pub(crate) mod shape_network_acl_association_list;
 
@@ -4155,6 +4241,8 @@ pub(crate) mod shape_subnet_association_list;
 
 pub(crate) mod shape_subnet_cidr_block_state;
 
+pub(crate) mod shape_subnet_ip_prefixes_list;
+
 pub(crate) mod shape_subnet_ipv6_cidr_block_association_set;
 
 pub(crate) mod shape_subscription;
@@ -4219,11 +4307,21 @@ pub(crate) mod shape_unsuccessful_item;
 
 pub(crate) mod shape_user_bucket_details;
 
+pub(crate) mod shape_verified_access_endpoint_cidr_options;
+
 pub(crate) mod shape_verified_access_endpoint_eni_options;
 
 pub(crate) mod shape_verified_access_endpoint_load_balancer_options;
 
+pub(crate) mod shape_verified_access_endpoint_rds_options;
+
 pub(crate) mod shape_verified_access_endpoint_status;
+
+pub(crate) mod shape_verified_access_endpoint_target;
+
+pub(crate) mod shape_verified_access_instance_custom_sub_domain;
+
+pub(crate) mod shape_verified_access_instance_open_vpn_client_configuration;
 
 pub(crate) mod shape_verified_access_logs;
 
@@ -4244,6 +4342,8 @@ pub(crate) mod shape_vpc_cidr_block_association_set;
 pub(crate) mod shape_vpc_cidr_block_state;
 
 pub(crate) mod shape_vpc_classic_link;
+
+pub(crate) mod shape_vpc_endpoint_association;
 
 pub(crate) mod shape_vpc_endpoint_connection;
 
@@ -4382,6 +4482,8 @@ pub(crate) mod shape_host_instance_list;
 pub(crate) mod shape_host_properties;
 
 pub(crate) mod shape_image_metadata;
+
+pub(crate) mod shape_image_provider_list;
 
 pub(crate) mod shape_import_instance_volume_detail_set;
 
@@ -4525,6 +4627,8 @@ pub(crate) mod shape_recurring_charges_list;
 
 pub(crate) mod shape_referenced_security_group;
 
+pub(crate) mod shape_regional_summary_list;
+
 pub(crate) mod shape_reserved_instances_modification_result_list;
 
 pub(crate) mod shape_reserved_intances_ids;
@@ -4552,6 +4656,8 @@ pub(crate) mod shape_spot_options;
 pub(crate) mod shape_stale_ip_permission_set;
 
 pub(crate) mod shape_subnet_association;
+
+pub(crate) mod shape_subnet_ip_prefixes;
 
 pub(crate) mod shape_supported_region_detail;
 
@@ -4587,7 +4693,11 @@ pub(crate) mod shape_v_cpu_info;
 
 pub(crate) mod shape_validation_error;
 
+pub(crate) mod shape_verified_access_endpoint_port_range_list;
+
 pub(crate) mod shape_verified_access_endpoint_subnet_id_list;
+
+pub(crate) mod shape_verified_access_instance_open_vpn_client_configuration_route_list;
 
 pub(crate) mod shape_verified_access_log_cloud_watch_logs_destination;
 
@@ -4761,6 +4871,8 @@ pub(crate) mod shape_private_ip_address_specification_list;
 
 pub(crate) mod shape_recurring_charge;
 
+pub(crate) mod shape_regional_summary;
+
 pub(crate) mod shape_reserved_instances_id;
 
 pub(crate) mod shape_reserved_instances_modification_result;
@@ -4784,6 +4896,10 @@ pub(crate) mod shape_transit_gateway_policy_rule_meta_data;
 pub(crate) mod shape_transit_gateway_route_table_route;
 
 pub(crate) mod shape_tunnel_option;
+
+pub(crate) mod shape_verified_access_endpoint_port_range;
+
+pub(crate) mod shape_verified_access_instance_open_vpn_client_configuration_route;
 
 pub(crate) mod shape_verified_access_log_delivery_status;
 

@@ -81,6 +81,8 @@ pub use crate::types::_query_compile_error::QueryCompileError;
 
 pub use crate::types::_query_compile_error_location::QueryCompileErrorLocation;
 
+pub use crate::types::_query_language::QueryLanguage;
+
 pub use crate::types::_distribution::Distribution;
 
 pub use crate::types::_resource_policy::ResourcePolicy;
@@ -98,6 +100,14 @@ pub use crate::types::_rejected_log_events_info::RejectedLogEventsInfo;
 pub use crate::types::_entity::Entity;
 
 pub use crate::types::_input_log_event::InputLogEvent;
+
+pub use crate::types::_integration_status::IntegrationStatus;
+
+pub use crate::types::_integration_type::IntegrationType;
+
+pub use crate::types::_resource_config::ResourceConfig;
+
+pub use crate::types::_open_search_resource_config::OpenSearchResourceConfig;
 
 pub use crate::types::_index_policy::IndexPolicy;
 
@@ -127,6 +137,8 @@ pub use crate::types::_anomaly_detector::AnomalyDetector;
 
 pub use crate::types::_anomaly_detector_status::AnomalyDetectorStatus;
 
+pub use crate::types::_integration_summary::IntegrationSummary;
+
 pub use crate::types::_anomaly::Anomaly;
 
 pub use crate::types::_pattern_token::PatternToken;
@@ -146,6 +158,30 @@ pub use crate::types::_result_field::ResultField;
 pub use crate::types::_log_group_field::LogGroupField;
 
 pub use crate::types::_output_log_event::OutputLogEvent;
+
+pub use crate::types::_integration_details::IntegrationDetails;
+
+pub use crate::types::_open_search_integration_details::OpenSearchIntegrationDetails;
+
+pub use crate::types::_open_search_lifecycle_policy::OpenSearchLifecyclePolicy;
+
+pub use crate::types::_open_search_resource_status::OpenSearchResourceStatus;
+
+pub use crate::types::_open_search_resource_status_type::OpenSearchResourceStatusType;
+
+pub use crate::types::_open_search_data_access_policy::OpenSearchDataAccessPolicy;
+
+pub use crate::types::_open_search_network_policy::OpenSearchNetworkPolicy;
+
+pub use crate::types::_open_search_encryption_policy::OpenSearchEncryptionPolicy;
+
+pub use crate::types::_open_search_workspace::OpenSearchWorkspace;
+
+pub use crate::types::_open_search_collection::OpenSearchCollection;
+
+pub use crate::types::_open_search_application::OpenSearchApplication;
+
+pub use crate::types::_open_search_data_source::OpenSearchDataSource;
 
 pub use crate::types::_delivery::Delivery;
 
@@ -261,6 +297,14 @@ mod _inherited_property;
 
 mod _input_log_event;
 
+mod _integration_details;
+
+mod _integration_status;
+
+mod _integration_summary;
+
+mod _integration_type;
+
 mod _list_to_map;
 
 mod _log_event;
@@ -284,6 +328,30 @@ mod _metric_transformation;
 mod _move_key_entry;
 
 mod _move_keys;
+
+mod _open_search_application;
+
+mod _open_search_collection;
+
+mod _open_search_data_access_policy;
+
+mod _open_search_data_source;
+
+mod _open_search_encryption_policy;
+
+mod _open_search_integration_details;
+
+mod _open_search_lifecycle_policy;
+
+mod _open_search_network_policy;
+
+mod _open_search_resource_config;
+
+mod _open_search_resource_status;
+
+mod _open_search_resource_status_type;
+
+mod _open_search_workspace;
 
 mod _order_by;
 
@@ -321,6 +389,8 @@ mod _query_definition;
 
 mod _query_info;
 
+mod _query_language;
+
 mod _query_statistics;
 
 mod _query_status;
@@ -334,6 +404,8 @@ mod _rejected_log_events_info;
 mod _rename_key_entry;
 
 mod _rename_keys;
+
+mod _resource_config;
 
 mod _resource_policy;
 

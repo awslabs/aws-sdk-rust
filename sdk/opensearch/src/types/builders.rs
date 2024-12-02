@@ -141,6 +141,10 @@ pub use crate::types::_saml_options_input::SamlOptionsInputBuilder;
 
 pub use crate::types::_master_user_options::MasterUserOptionsBuilder;
 
+pub use crate::types::_security_lake_direct_query_data_source::SecurityLakeDirectQueryDataSourceBuilder;
+
+pub use crate::types::_cloud_watch_direct_query_data_source::CloudWatchDirectQueryDataSourceBuilder;
+
 pub use crate::types::_s3_glue_data_catalog::S3GlueDataCatalogBuilder;
 
 pub use crate::types::_app_config::AppConfigBuilder;
@@ -176,6 +180,8 @@ pub use crate::types::_instance_type_details::InstanceTypeDetailsBuilder;
 pub use crate::types::_domain_info::DomainInfoBuilder;
 
 pub use crate::types::_domain_maintenance_details::DomainMaintenanceDetailsBuilder;
+
+pub use crate::types::_direct_query_data_source::DirectQueryDataSourceBuilder;
 
 pub use crate::types::_data_source_details::DataSourceDetailsBuilder;
 

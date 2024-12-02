@@ -6,7 +6,7 @@
 pub struct CustomOrchestrationTrace {
     /// <p>The unique identifier of the trace.</p>
     pub trace_id: ::std::option::Option<::std::string::String>,
-    /// <p>The trace event details used with the custom orchestration.</p>
+    /// <p>The event details used with the custom orchestration.</p>
     pub event: ::std::option::Option<crate::types::CustomOrchestrationTraceEvent>,
 }
 impl CustomOrchestrationTrace {
@@ -14,7 +14,7 @@ impl CustomOrchestrationTrace {
     pub fn trace_id(&self) -> ::std::option::Option<&str> {
         self.trace_id.as_deref()
     }
-    /// <p>The trace event details used with the custom orchestration.</p>
+    /// <p>The event details used with the custom orchestration.</p>
     pub fn event(&self) -> ::std::option::Option<&crate::types::CustomOrchestrationTraceEvent> {
         self.event.as_ref()
     }
@@ -56,17 +56,17 @@ impl CustomOrchestrationTraceBuilder {
     pub fn get_trace_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.trace_id
     }
-    /// <p>The trace event details used with the custom orchestration.</p>
+    /// <p>The event details used with the custom orchestration.</p>
     pub fn event(mut self, input: crate::types::CustomOrchestrationTraceEvent) -> Self {
         self.event = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The trace event details used with the custom orchestration.</p>
+    /// <p>The event details used with the custom orchestration.</p>
     pub fn set_event(mut self, input: ::std::option::Option<crate::types::CustomOrchestrationTraceEvent>) -> Self {
         self.event = input;
         self
     }
-    /// <p>The trace event details used with the custom orchestration.</p>
+    /// <p>The event details used with the custom orchestration.</p>
     pub fn get_event(&self) -> &::std::option::Option<crate::types::CustomOrchestrationTraceEvent> {
         &self.event
     }

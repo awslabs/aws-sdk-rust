@@ -121,6 +121,48 @@ pub use crate::types::_knowledge_base_summary::KnowledgeBaseSummary;
 
 pub use crate::types::_agent_knowledge_base_summary::AgentKnowledgeBaseSummary;
 
+pub use crate::types::_knowledge_base_document_detail::KnowledgeBaseDocumentDetail;
+
+pub use crate::types::_document_identifier::DocumentIdentifier;
+
+pub use crate::types::_custom_document_identifier::CustomDocumentIdentifier;
+
+pub use crate::types::_s3_location::S3Location;
+
+pub use crate::types::_content_data_source_type::ContentDataSourceType;
+
+pub use crate::types::_document_status::DocumentStatus;
+
+pub use crate::types::_knowledge_base_document::KnowledgeBaseDocument;
+
+pub use crate::types::_document_content::DocumentContent;
+
+pub use crate::types::_s3_content::S3Content;
+
+pub use crate::types::_custom_content::CustomContent;
+
+pub use crate::types::_inline_content::InlineContent;
+
+pub use crate::types::_text_content_doc::TextContentDoc;
+
+pub use crate::types::_byte_content_doc::ByteContentDoc;
+
+pub use crate::types::_inline_content_type::InlineContentType;
+
+pub use crate::types::_custom_s3_location::CustomS3Location;
+
+pub use crate::types::_custom_source_type::CustomSourceType;
+
+pub use crate::types::_document_metadata::DocumentMetadata;
+
+pub use crate::types::_metadata_attribute::MetadataAttribute;
+
+pub use crate::types::_metadata_attribute_value::MetadataAttributeValue;
+
+pub use crate::types::_metadata_value_type::MetadataValueType;
+
+pub use crate::types::_metadata_source_type::MetadataSourceType;
+
 pub use crate::types::_ingestion_job::IngestionJob;
 
 pub use crate::types::_ingestion_job_statistics::IngestionJobStatistics;
@@ -299,8 +341,6 @@ pub use crate::types::_transformation_lambda_configuration::TransformationLambda
 
 pub use crate::types::_intermediate_storage::IntermediateStorage;
 
-pub use crate::types::_s3_location::S3Location;
-
 pub use crate::types::_chunking_configuration::ChunkingConfiguration;
 
 pub use crate::types::_semantic_chunking_configuration::SemanticChunkingConfiguration;
@@ -467,6 +507,8 @@ mod _bedrock_embedding_model_configuration;
 
 mod _bedrock_foundation_model_configuration;
 
+mod _byte_content_doc;
+
 mod _chat_prompt_template_configuration;
 
 mod _chunking_configuration;
@@ -489,6 +531,8 @@ mod _confluence_source_configuration;
 
 mod _content_block;
 
+mod _content_data_source_type;
+
 mod _conversation_role;
 
 mod _crawl_filter_configuration;
@@ -497,9 +541,17 @@ mod _crawl_filter_configuration_type;
 
 mod _creation_mode;
 
+mod _custom_content;
+
 mod _custom_control_method;
 
+mod _custom_document_identifier;
+
 mod _custom_orchestration;
+
+mod _custom_s3_location;
+
+mod _custom_source_type;
 
 mod _custom_transformation_configuration;
 
@@ -516,6 +568,14 @@ mod _data_source_status;
 mod _data_source_summary;
 
 mod _data_source_type;
+
+mod _document_content;
+
+mod _document_identifier;
+
+mod _document_metadata;
+
+mod _document_status;
 
 mod _duplicate_condition_expression_flow_validation_details;
 
@@ -603,6 +663,10 @@ mod _ingestion_job_status;
 
 mod _ingestion_job_summary;
 
+mod _inline_content;
+
+mod _inline_content_type;
+
 mod _input_flow_node_configuration;
 
 mod _intermediate_storage;
@@ -612,6 +676,10 @@ mod _iterator_flow_node_configuration;
 mod _knowledge_base;
 
 mod _knowledge_base_configuration;
+
+mod _knowledge_base_document;
+
+mod _knowledge_base_document_detail;
 
 mod _knowledge_base_flow_node_configuration;
 
@@ -638,6 +706,14 @@ mod _memory_configuration;
 mod _memory_type;
 
 mod _message;
+
+mod _metadata_attribute;
+
+mod _metadata_attribute_value;
+
+mod _metadata_source_type;
+
+mod _metadata_value_type;
 
 mod _mismatched_node_input_type_flow_validation_details;
 
@@ -741,6 +817,8 @@ mod _retrieval_flow_node_s3_configuration;
 
 mod _retrieval_flow_node_service_configuration;
 
+mod _s3_content;
+
 mod _s3_data_source_configuration;
 
 mod _s3_identifier;
@@ -786,6 +864,8 @@ mod _storage_flow_node_s3_configuration;
 mod _storage_flow_node_service_configuration;
 
 mod _system_content_block;
+
+mod _text_content_doc;
 
 mod _text_prompt_template_configuration;
 

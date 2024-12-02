@@ -43,7 +43,7 @@ pub struct InstanceNetworkInterface {
     pub ipv6_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::InstanceIpv6Prefix>>,
     /// <p>A security group connection tracking configuration that enables you to set the timeout for connection tracking on an Elastic network interface. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection tracking timeouts</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub connection_tracking_configuration: ::std::option::Option<crate::types::ConnectionTrackingSpecificationResponse>,
-    /// <p>The entity that manages the network interface.</p>
+    /// <p>The service provider that manages the network interface.</p>
     pub operator: ::std::option::Option<crate::types::OperatorResponse>,
 }
 impl InstanceNetworkInterface {
@@ -134,7 +134,7 @@ impl InstanceNetworkInterface {
     pub fn connection_tracking_configuration(&self) -> ::std::option::Option<&crate::types::ConnectionTrackingSpecificationResponse> {
         self.connection_tracking_configuration.as_ref()
     }
-    /// <p>The entity that manages the network interface.</p>
+    /// <p>The service provider that manages the network interface.</p>
     pub fn operator(&self) -> ::std::option::Option<&crate::types::OperatorResponse> {
         self.operator.as_ref()
     }
@@ -474,17 +474,17 @@ impl InstanceNetworkInterfaceBuilder {
     pub fn get_connection_tracking_configuration(&self) -> &::std::option::Option<crate::types::ConnectionTrackingSpecificationResponse> {
         &self.connection_tracking_configuration
     }
-    /// <p>The entity that manages the network interface.</p>
+    /// <p>The service provider that manages the network interface.</p>
     pub fn operator(mut self, input: crate::types::OperatorResponse) -> Self {
         self.operator = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The entity that manages the network interface.</p>
+    /// <p>The service provider that manages the network interface.</p>
     pub fn set_operator(mut self, input: ::std::option::Option<crate::types::OperatorResponse>) -> Self {
         self.operator = input;
         self
     }
-    /// <p>The entity that manages the network interface.</p>
+    /// <p>The service provider that manages the network interface.</p>
     pub fn get_operator(&self) -> &::std::option::Option<crate::types::OperatorResponse> {
         &self.operator
     }

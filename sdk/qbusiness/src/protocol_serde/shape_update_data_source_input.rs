@@ -18,17 +18,23 @@ pub fn ser_update_data_source_input_input(
         crate::protocol_serde::shape_document_enrichment_configuration::ser_document_enrichment_configuration(&mut object_5, var_4)?;
         object_5.finish();
     }
-    if let Some(var_6) = &input.role_arn {
-        object.key("roleArn").string(var_6.as_str());
-    }
-    if let Some(var_7) = &input.sync_schedule {
-        object.key("syncSchedule").string(var_7.as_str());
-    }
-    if let Some(var_8) = &input.vpc_configuration {
+    if let Some(var_6) = &input.media_extraction_configuration {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("vpcConfiguration").start_object();
-        crate::protocol_serde::shape_data_source_vpc_configuration::ser_data_source_vpc_configuration(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_7 = object.key("mediaExtractionConfiguration").start_object();
+        crate::protocol_serde::shape_media_extraction_configuration::ser_media_extraction_configuration(&mut object_7, var_6)?;
+        object_7.finish();
+    }
+    if let Some(var_8) = &input.role_arn {
+        object.key("roleArn").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.sync_schedule {
+        object.key("syncSchedule").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.vpc_configuration {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("vpcConfiguration").start_object();
+        crate::protocol_serde::shape_data_source_vpc_configuration::ser_data_source_vpc_configuration(&mut object_11, var_10)?;
+        object_11.finish();
     }
     Ok(())
 }

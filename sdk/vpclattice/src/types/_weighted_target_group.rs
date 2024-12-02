@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WeightedTargetGroup {
-    /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
+    /// <p>The ID or ARN of the target group.</p>
     pub target_group_identifier: ::std::string::String,
     /// <p>Only required if you specify multiple target groups for a forward action. The weight determines how requests are distributed to the target group. For example, if you specify two target groups, each with a weight of 10, each target group receives half the requests. If you specify two target groups, one with a weight of 10 and the other with a weight of 20, the target group with a weight of 20 receives twice as many requests as the other target group. If there's only one target group specified, then the default value is 100.</p>
     pub weight: ::std::option::Option<i32>,
 }
 impl WeightedTargetGroup {
-    /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
+    /// <p>The ID or ARN of the target group.</p>
     pub fn target_group_identifier(&self) -> &str {
         use std::ops::Deref;
         self.target_group_identifier.deref()
@@ -35,18 +35,18 @@ pub struct WeightedTargetGroupBuilder {
     pub(crate) weight: ::std::option::Option<i32>,
 }
 impl WeightedTargetGroupBuilder {
-    /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
+    /// <p>The ID or ARN of the target group.</p>
     /// This field is required.
     pub fn target_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_group_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
+    /// <p>The ID or ARN of the target group.</p>
     pub fn set_target_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_group_identifier = input;
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
+    /// <p>The ID or ARN of the target group.</p>
     pub fn get_target_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_group_identifier
     }

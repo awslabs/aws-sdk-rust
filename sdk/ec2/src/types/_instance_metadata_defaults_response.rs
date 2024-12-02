@@ -18,6 +18,16 @@ pub struct InstanceMetadataDefaultsResponse {
     pub http_endpoint: ::std::option::Option<crate::types::InstanceMetadataEndpointState>,
     /// <p>Indicates whether access to instance tags from the instance metadata is enabled or disabled. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work with instance tags using the instance metadata</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub instance_metadata_tags: ::std::option::Option<crate::types::InstanceMetadataTagsState>,
+    /// <p>The entity that manages the IMDS default settings. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>account</code> - The IMDS default settings are managed by the account.</p></li>
+    /// <li>
+    /// <p><code>declarative-policy</code> - The IMDS default settings are managed by a declarative policy and can't be modified by the account.</p></li>
+    /// </ul>
+    pub managed_by: ::std::option::Option<crate::types::ManagedBy>,
+    /// <p>The customized exception message that is specified in the declarative policy.</p>
+    pub managed_exception_message: ::std::option::Option<::std::string::String>,
 }
 impl InstanceMetadataDefaultsResponse {
     /// <p>Indicates whether IMDSv2 is required.</p>
@@ -42,6 +52,20 @@ impl InstanceMetadataDefaultsResponse {
     pub fn instance_metadata_tags(&self) -> ::std::option::Option<&crate::types::InstanceMetadataTagsState> {
         self.instance_metadata_tags.as_ref()
     }
+    /// <p>The entity that manages the IMDS default settings. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>account</code> - The IMDS default settings are managed by the account.</p></li>
+    /// <li>
+    /// <p><code>declarative-policy</code> - The IMDS default settings are managed by a declarative policy and can't be modified by the account.</p></li>
+    /// </ul>
+    pub fn managed_by(&self) -> ::std::option::Option<&crate::types::ManagedBy> {
+        self.managed_by.as_ref()
+    }
+    /// <p>The customized exception message that is specified in the declarative policy.</p>
+    pub fn managed_exception_message(&self) -> ::std::option::Option<&str> {
+        self.managed_exception_message.as_deref()
+    }
 }
 impl InstanceMetadataDefaultsResponse {
     /// Creates a new builder-style object to manufacture [`InstanceMetadataDefaultsResponse`](crate::types::InstanceMetadataDefaultsResponse).
@@ -58,6 +82,8 @@ pub struct InstanceMetadataDefaultsResponseBuilder {
     pub(crate) http_put_response_hop_limit: ::std::option::Option<i32>,
     pub(crate) http_endpoint: ::std::option::Option<crate::types::InstanceMetadataEndpointState>,
     pub(crate) instance_metadata_tags: ::std::option::Option<crate::types::InstanceMetadataTagsState>,
+    pub(crate) managed_by: ::std::option::Option<crate::types::ManagedBy>,
+    pub(crate) managed_exception_message: ::std::option::Option<::std::string::String>,
 }
 impl InstanceMetadataDefaultsResponseBuilder {
     /// <p>Indicates whether IMDSv2 is required.</p>
@@ -134,6 +160,52 @@ impl InstanceMetadataDefaultsResponseBuilder {
     pub fn get_instance_metadata_tags(&self) -> &::std::option::Option<crate::types::InstanceMetadataTagsState> {
         &self.instance_metadata_tags
     }
+    /// <p>The entity that manages the IMDS default settings. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>account</code> - The IMDS default settings are managed by the account.</p></li>
+    /// <li>
+    /// <p><code>declarative-policy</code> - The IMDS default settings are managed by a declarative policy and can't be modified by the account.</p></li>
+    /// </ul>
+    pub fn managed_by(mut self, input: crate::types::ManagedBy) -> Self {
+        self.managed_by = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The entity that manages the IMDS default settings. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>account</code> - The IMDS default settings are managed by the account.</p></li>
+    /// <li>
+    /// <p><code>declarative-policy</code> - The IMDS default settings are managed by a declarative policy and can't be modified by the account.</p></li>
+    /// </ul>
+    pub fn set_managed_by(mut self, input: ::std::option::Option<crate::types::ManagedBy>) -> Self {
+        self.managed_by = input;
+        self
+    }
+    /// <p>The entity that manages the IMDS default settings. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>account</code> - The IMDS default settings are managed by the account.</p></li>
+    /// <li>
+    /// <p><code>declarative-policy</code> - The IMDS default settings are managed by a declarative policy and can't be modified by the account.</p></li>
+    /// </ul>
+    pub fn get_managed_by(&self) -> &::std::option::Option<crate::types::ManagedBy> {
+        &self.managed_by
+    }
+    /// <p>The customized exception message that is specified in the declarative policy.</p>
+    pub fn managed_exception_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.managed_exception_message = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The customized exception message that is specified in the declarative policy.</p>
+    pub fn set_managed_exception_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.managed_exception_message = input;
+        self
+    }
+    /// <p>The customized exception message that is specified in the declarative policy.</p>
+    pub fn get_managed_exception_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.managed_exception_message
+    }
     /// Consumes the builder and constructs a [`InstanceMetadataDefaultsResponse`](crate::types::InstanceMetadataDefaultsResponse).
     pub fn build(self) -> crate::types::InstanceMetadataDefaultsResponse {
         crate::types::InstanceMetadataDefaultsResponse {
@@ -141,6 +213,8 @@ impl InstanceMetadataDefaultsResponseBuilder {
             http_put_response_hop_limit: self.http_put_response_hop_limit,
             http_endpoint: self.http_endpoint,
             instance_metadata_tags: self.instance_metadata_tags,
+            managed_by: self.managed_by,
+            managed_exception_message: self.managed_exception_message,
         }
     }
 }

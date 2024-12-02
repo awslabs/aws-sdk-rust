@@ -17,5 +17,20 @@ pub fn ser_modify_verified_access_endpoint_eni_options(
             ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
+    #[allow(unused_mut)]
+    let mut scope_5 = writer.prefix("PortRange");
+    if let Some(var_6) = &input.port_ranges {
+        if !var_6.is_empty() {
+            let mut list_8 = scope_5.start_list(true, Some("item"));
+            for item_7 in var_6 {
+                #[allow(unused_mut)]
+                let mut entry_9 = list_8.entry();
+                crate::protocol_serde::shape_modify_verified_access_endpoint_port_range::ser_modify_verified_access_endpoint_port_range(
+                    entry_9, item_7,
+                )?;
+            }
+            list_8.finish();
+        }
+    }
     Ok(())
 }

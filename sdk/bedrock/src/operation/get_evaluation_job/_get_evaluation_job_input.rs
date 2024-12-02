@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetEvaluationJobInput {
-    /// <p>The Amazon Resource Name (ARN) of the model evaluation job.</p>
+    /// <p>The Amazon Resource Name (ARN) of the evaluation job you want get information on.</p>
     pub job_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetEvaluationJobInput {
-    /// <p>The Amazon Resource Name (ARN) of the model evaluation job.</p>
+    /// <p>The Amazon Resource Name (ARN) of the evaluation job you want get information on.</p>
     pub fn job_identifier(&self) -> ::std::option::Option<&str> {
         self.job_identifier.as_deref()
     }
@@ -33,18 +33,18 @@ pub struct GetEvaluationJobInputBuilder {
     pub(crate) job_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetEvaluationJobInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the model evaluation job.</p>
+    /// <p>The Amazon Resource Name (ARN) of the evaluation job you want get information on.</p>
     /// This field is required.
     pub fn job_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the model evaluation job.</p>
+    /// <p>The Amazon Resource Name (ARN) of the evaluation job you want get information on.</p>
     pub fn set_job_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_identifier = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the model evaluation job.</p>
+    /// <p>The Amazon Resource Name (ARN) of the evaluation job you want get information on.</p>
     pub fn get_job_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_identifier
     }

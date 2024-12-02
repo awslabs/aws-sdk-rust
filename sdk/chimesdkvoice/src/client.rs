@@ -201,6 +201,8 @@ mod delete_voice_connector;
 
 mod delete_voice_connector_emergency_calling_configuration;
 
+mod delete_voice_connector_external_systems_configuration;
+
 mod delete_voice_connector_group;
 
 mod delete_voice_connector_origination;
@@ -244,6 +246,8 @@ mod get_speaker_search_task;
 mod get_voice_connector;
 
 mod get_voice_connector_emergency_calling_configuration;
+
+mod get_voice_connector_external_systems_configuration;
 
 mod get_voice_connector_group;
 
@@ -296,6 +300,8 @@ mod put_sip_media_application_alexa_skill_configuration;
 mod put_sip_media_application_logging_configuration;
 
 mod put_voice_connector_emergency_calling_configuration;
+
+mod put_voice_connector_external_systems_configuration;
 
 mod put_voice_connector_logging_configuration;
 

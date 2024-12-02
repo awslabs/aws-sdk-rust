@@ -225,4 +225,46 @@ impl UpdateClusterConfigFluentBuilder {
     pub fn get_zonal_shift_config(&self) -> &::std::option::Option<crate::types::ZonalShiftConfigRequest> {
         self.inner.get_zonal_shift_config()
     }
+    /// <p>Update the configuration of the compute capability of your EKS Auto Mode cluster. For example, enable the capability.</p>
+    pub fn compute_config(mut self, input: crate::types::ComputeConfigRequest) -> Self {
+        self.inner = self.inner.compute_config(input);
+        self
+    }
+    /// <p>Update the configuration of the compute capability of your EKS Auto Mode cluster. For example, enable the capability.</p>
+    pub fn set_compute_config(mut self, input: ::std::option::Option<crate::types::ComputeConfigRequest>) -> Self {
+        self.inner = self.inner.set_compute_config(input);
+        self
+    }
+    /// <p>Update the configuration of the compute capability of your EKS Auto Mode cluster. For example, enable the capability.</p>
+    pub fn get_compute_config(&self) -> &::std::option::Option<crate::types::ComputeConfigRequest> {
+        self.inner.get_compute_config()
+    }
+    /// <p>The Kubernetes network configuration for the cluster.</p>
+    pub fn kubernetes_network_config(mut self, input: crate::types::KubernetesNetworkConfigRequest) -> Self {
+        self.inner = self.inner.kubernetes_network_config(input);
+        self
+    }
+    /// <p>The Kubernetes network configuration for the cluster.</p>
+    pub fn set_kubernetes_network_config(mut self, input: ::std::option::Option<crate::types::KubernetesNetworkConfigRequest>) -> Self {
+        self.inner = self.inner.set_kubernetes_network_config(input);
+        self
+    }
+    /// <p>The Kubernetes network configuration for the cluster.</p>
+    pub fn get_kubernetes_network_config(&self) -> &::std::option::Option<crate::types::KubernetesNetworkConfigRequest> {
+        self.inner.get_kubernetes_network_config()
+    }
+    /// <p>Update the configuration of the block storage capability of your EKS Auto Mode cluster. For example, enable the capability.</p>
+    pub fn storage_config(mut self, input: crate::types::StorageConfigRequest) -> Self {
+        self.inner = self.inner.storage_config(input);
+        self
+    }
+    /// <p>Update the configuration of the block storage capability of your EKS Auto Mode cluster. For example, enable the capability.</p>
+    pub fn set_storage_config(mut self, input: ::std::option::Option<crate::types::StorageConfigRequest>) -> Self {
+        self.inner = self.inner.set_storage_config(input);
+        self
+    }
+    /// <p>Update the configuration of the block storage capability of your EKS Auto Mode cluster. For example, enable the capability.</p>
+    pub fn get_storage_config(&self) -> &::std::option::Option<crate::types::StorageConfigRequest> {
+        self.inner.get_storage_config()
+    }
 }

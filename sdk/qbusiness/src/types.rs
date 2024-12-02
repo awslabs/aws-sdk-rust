@@ -37,6 +37,10 @@ pub use crate::types::_tag::Tag;
 
 pub use crate::types::_application::Application;
 
+pub use crate::types::_browser_extension_configuration::BrowserExtensionConfiguration;
+
+pub use crate::types::_browser_extension::BrowserExtension;
+
 pub use crate::types::_identity_provider_configuration::IdentityProviderConfiguration;
 
 pub use crate::types::_open_id_connect_provider_configuration::OpenIdConnectProviderConfiguration;
@@ -117,11 +121,17 @@ pub use crate::types::_index_statistics::IndexStatistics;
 
 pub use crate::types::_text_document_statistics::TextDocumentStatistics;
 
-pub use crate::types::_index_status::IndexStatus;
-
 pub use crate::types::_index_type::IndexType;
 
+pub use crate::types::_index_status::IndexStatus;
+
 pub use crate::types::_index::Index;
+
+pub use crate::types::_media_extraction_configuration::MediaExtractionConfiguration;
+
+pub use crate::types::_image_extraction_configuration::ImageExtractionConfiguration;
+
+pub use crate::types::_image_extraction_status::ImageExtractionStatus;
 
 pub use crate::types::_document_enrichment_configuration::DocumentEnrichmentConfiguration;
 
@@ -226,6 +236,12 @@ pub use crate::types::_data_source_sync_job_metrics::DataSourceSyncJobMetrics;
 pub use crate::types::_data_source_sync_job_status::DataSourceSyncJobStatus;
 
 pub use crate::types::_conversation::Conversation;
+
+pub use crate::types::_attachment::Attachment;
+
+pub use crate::types::_copy_from_source::CopyFromSource;
+
+pub use crate::types::_conversation_source::ConversationSource;
 
 pub use crate::types::_group_status_detail::GroupStatusDetail;
 
@@ -333,6 +349,8 @@ mod _applied_attachments_configuration;
 
 mod _applied_creator_mode_configuration;
 
+mod _attachment;
+
 mod _attachment_input;
 
 mod _attachment_input_event;
@@ -369,6 +387,10 @@ mod _blocked_phrases_configuration;
 
 mod _blocked_phrases_configuration_update;
 
+mod _browser_extension;
+
+mod _browser_extension_configuration;
+
 mod _chat_input_stream;
 
 mod _chat_mode;
@@ -386,6 +408,10 @@ mod _content_retrieval_rule;
 mod _content_type;
 
 mod _conversation;
+
+mod _conversation_source;
+
+mod _copy_from_source;
 
 mod _creator_mode_configuration;
 
@@ -465,6 +491,10 @@ mod _identity_provider_configuration;
 
 mod _identity_type;
 
+mod _image_extraction_configuration;
+
+mod _image_extraction_status;
+
 mod _index;
 
 mod _index_capacity_configuration;
@@ -478,6 +508,8 @@ mod _index_type;
 mod _inline_document_enrichment_configuration;
 
 mod _kendra_index_configuration;
+
+mod _media_extraction_configuration;
 
 mod _member_group;
 

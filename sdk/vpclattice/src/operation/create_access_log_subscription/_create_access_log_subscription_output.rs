@@ -11,6 +11,8 @@ pub struct CreateAccessLogSubscriptionOutput {
     pub resource_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the service network or service.</p>
     pub resource_arn: ::std::string::String,
+    /// <p>The type of log that monitors your Amazon VPC Lattice service networks.</p>
+    pub service_network_log_type: ::std::option::Option<crate::types::ServiceNetworkLogType>,
     /// <p>The Amazon Resource Name (ARN) of the log destination.</p>
     pub destination_arn: ::std::string::String,
     _request_id: Option<String>,
@@ -35,6 +37,10 @@ impl CreateAccessLogSubscriptionOutput {
     pub fn resource_arn(&self) -> &str {
         use std::ops::Deref;
         self.resource_arn.deref()
+    }
+    /// <p>The type of log that monitors your Amazon VPC Lattice service networks.</p>
+    pub fn service_network_log_type(&self) -> ::std::option::Option<&crate::types::ServiceNetworkLogType> {
+        self.service_network_log_type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the log destination.</p>
     pub fn destination_arn(&self) -> &str {
@@ -62,6 +68,7 @@ pub struct CreateAccessLogSubscriptionOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) service_network_log_type: ::std::option::Option<crate::types::ServiceNetworkLogType>,
     pub(crate) destination_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -126,6 +133,20 @@ impl CreateAccessLogSubscriptionOutputBuilder {
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }
+    /// <p>The type of log that monitors your Amazon VPC Lattice service networks.</p>
+    pub fn service_network_log_type(mut self, input: crate::types::ServiceNetworkLogType) -> Self {
+        self.service_network_log_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of log that monitors your Amazon VPC Lattice service networks.</p>
+    pub fn set_service_network_log_type(mut self, input: ::std::option::Option<crate::types::ServiceNetworkLogType>) -> Self {
+        self.service_network_log_type = input;
+        self
+    }
+    /// <p>The type of log that monitors your Amazon VPC Lattice service networks.</p>
+    pub fn get_service_network_log_type(&self) -> &::std::option::Option<crate::types::ServiceNetworkLogType> {
+        &self.service_network_log_type
+    }
     /// <p>The Amazon Resource Name (ARN) of the log destination.</p>
     /// This field is required.
     pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -188,6 +209,7 @@ impl CreateAccessLogSubscriptionOutputBuilder {
                     "resource_arn was not specified but it is required when building CreateAccessLogSubscriptionOutput",
                 )
             })?,
+            service_network_log_type: self.service_network_log_type,
             destination_arn: self.destination_arn.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "destination_arn",

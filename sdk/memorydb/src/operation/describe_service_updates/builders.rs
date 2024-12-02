@@ -22,7 +22,7 @@ impl crate::operation::describe_service_updates::builders::DescribeServiceUpdate
 }
 /// Fluent builder constructing a request to `DescribeServiceUpdates`.
 ///
-/// <p>Returns details of the service updates</p>
+/// <p>Returns details of the service updates.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeServiceUpdatesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -133,17 +133,17 @@ impl DescribeServiceUpdatesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_cluster_names`](Self::set_cluster_names).
     ///
-    /// <p>The list of cluster names to identify service updates to apply</p>
+    /// <p>The list of cluster names to identify service updates to apply.</p>
     pub fn cluster_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_names(input.into());
         self
     }
-    /// <p>The list of cluster names to identify service updates to apply</p>
+    /// <p>The list of cluster names to identify service updates to apply.</p>
     pub fn set_cluster_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_cluster_names(input);
         self
     }
-    /// <p>The list of cluster names to identify service updates to apply</p>
+    /// <p>The list of cluster names to identify service updates to apply.</p>
     pub fn get_cluster_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_cluster_names()
     }
@@ -152,17 +152,17 @@ impl DescribeServiceUpdatesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_status`](Self::set_status).
     ///
-    /// <p>The status(es) of the service updates to filter on</p>
+    /// <p>The status(es) of the service updates to filter on.</p>
     pub fn status(mut self, input: crate::types::ServiceUpdateStatus) -> Self {
         self.inner = self.inner.status(input);
         self
     }
-    /// <p>The status(es) of the service updates to filter on</p>
+    /// <p>The status(es) of the service updates to filter on.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceUpdateStatus>>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
-    /// <p>The status(es) of the service updates to filter on</p>
+    /// <p>The status(es) of the service updates to filter on.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceUpdateStatus>> {
         self.inner.get_status()
     }

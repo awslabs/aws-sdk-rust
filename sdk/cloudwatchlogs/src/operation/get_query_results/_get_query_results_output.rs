@@ -3,6 +3,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetQueryResultsOutput {
+    /// <p>The query language used for this query. For more information about the query languages that CloudWatch Logs supports, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData_Languages.html">Supported query languages</a>.</p>
+    pub query_language: ::std::option::Option<crate::types::QueryLanguage>,
     /// <p>The log events that matched the query criteria during the most recent time it ran.</p>
     /// <p>The <code>results</code> value is an array of arrays. Each log event is one object in the top-level array. Each of these log event objects is an array of <code>field</code>/<code>value</code> pairs.</p>
     pub results: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::ResultField>>>,
@@ -16,6 +18,10 @@ pub struct GetQueryResultsOutput {
     _request_id: Option<String>,
 }
 impl GetQueryResultsOutput {
+    /// <p>The query language used for this query. For more information about the query languages that CloudWatch Logs supports, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData_Languages.html">Supported query languages</a>.</p>
+    pub fn query_language(&self) -> ::std::option::Option<&crate::types::QueryLanguage> {
+        self.query_language.as_ref()
+    }
     /// <p>The log events that matched the query criteria during the most recent time it ran.</p>
     /// <p>The <code>results</code> value is an array of arrays. Each log event is one object in the top-level array. Each of these log event objects is an array of <code>field</code>/<code>value</code> pairs.</p>
     ///
@@ -53,6 +59,7 @@ impl GetQueryResultsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct GetQueryResultsOutputBuilder {
+    pub(crate) query_language: ::std::option::Option<crate::types::QueryLanguage>,
     pub(crate) results: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::ResultField>>>,
     pub(crate) statistics: ::std::option::Option<crate::types::QueryStatistics>,
     pub(crate) status: ::std::option::Option<crate::types::QueryStatus>,
@@ -60,6 +67,20 @@ pub struct GetQueryResultsOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetQueryResultsOutputBuilder {
+    /// <p>The query language used for this query. For more information about the query languages that CloudWatch Logs supports, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData_Languages.html">Supported query languages</a>.</p>
+    pub fn query_language(mut self, input: crate::types::QueryLanguage) -> Self {
+        self.query_language = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The query language used for this query. For more information about the query languages that CloudWatch Logs supports, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData_Languages.html">Supported query languages</a>.</p>
+    pub fn set_query_language(mut self, input: ::std::option::Option<crate::types::QueryLanguage>) -> Self {
+        self.query_language = input;
+        self
+    }
+    /// <p>The query language used for this query. For more information about the query languages that CloudWatch Logs supports, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData_Languages.html">Supported query languages</a>.</p>
+    pub fn get_query_language(&self) -> &::std::option::Option<crate::types::QueryLanguage> {
+        &self.query_language
+    }
     /// Appends an item to `results`.
     ///
     /// To override the contents of this collection use [`set_results`](Self::set_results).
@@ -140,6 +161,7 @@ impl GetQueryResultsOutputBuilder {
     /// Consumes the builder and constructs a [`GetQueryResultsOutput`](crate::operation::get_query_results::GetQueryResultsOutput).
     pub fn build(self) -> crate::operation::get_query_results::GetQueryResultsOutput {
         crate::operation::get_query_results::GetQueryResultsOutput {
+            query_language: self.query_language,
             results: self.results,
             statistics: self.statistics,
             status: self.status,

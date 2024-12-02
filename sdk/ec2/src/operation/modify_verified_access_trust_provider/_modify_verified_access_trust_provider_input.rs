@@ -17,6 +17,8 @@ pub struct ModifyVerifiedAccessTrustProviderInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The options for server side encryption.</p>
     pub sse_specification: ::std::option::Option<crate::types::VerifiedAccessSseSpecificationRequest>,
+    /// <p>The OpenID Connect (OIDC) options.</p>
+    pub native_application_oidc_options: ::std::option::Option<crate::types::ModifyVerifiedAccessNativeApplicationOidcOptions>,
 }
 impl ModifyVerifiedAccessTrustProviderInput {
     /// <p>The ID of the Verified Access trust provider.</p>
@@ -47,6 +49,10 @@ impl ModifyVerifiedAccessTrustProviderInput {
     pub fn sse_specification(&self) -> ::std::option::Option<&crate::types::VerifiedAccessSseSpecificationRequest> {
         self.sse_specification.as_ref()
     }
+    /// <p>The OpenID Connect (OIDC) options.</p>
+    pub fn native_application_oidc_options(&self) -> ::std::option::Option<&crate::types::ModifyVerifiedAccessNativeApplicationOidcOptions> {
+        self.native_application_oidc_options.as_ref()
+    }
 }
 impl ModifyVerifiedAccessTrustProviderInput {
     /// Creates a new builder-style object to manufacture [`ModifyVerifiedAccessTrustProviderInput`](crate::operation::modify_verified_access_trust_provider::ModifyVerifiedAccessTrustProviderInput).
@@ -66,6 +72,7 @@ pub struct ModifyVerifiedAccessTrustProviderInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) sse_specification: ::std::option::Option<crate::types::VerifiedAccessSseSpecificationRequest>,
+    pub(crate) native_application_oidc_options: ::std::option::Option<crate::types::ModifyVerifiedAccessNativeApplicationOidcOptions>,
 }
 impl ModifyVerifiedAccessTrustProviderInputBuilder {
     /// <p>The ID of the Verified Access trust provider.</p>
@@ -167,6 +174,23 @@ impl ModifyVerifiedAccessTrustProviderInputBuilder {
     pub fn get_sse_specification(&self) -> &::std::option::Option<crate::types::VerifiedAccessSseSpecificationRequest> {
         &self.sse_specification
     }
+    /// <p>The OpenID Connect (OIDC) options.</p>
+    pub fn native_application_oidc_options(mut self, input: crate::types::ModifyVerifiedAccessNativeApplicationOidcOptions) -> Self {
+        self.native_application_oidc_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The OpenID Connect (OIDC) options.</p>
+    pub fn set_native_application_oidc_options(
+        mut self,
+        input: ::std::option::Option<crate::types::ModifyVerifiedAccessNativeApplicationOidcOptions>,
+    ) -> Self {
+        self.native_application_oidc_options = input;
+        self
+    }
+    /// <p>The OpenID Connect (OIDC) options.</p>
+    pub fn get_native_application_oidc_options(&self) -> &::std::option::Option<crate::types::ModifyVerifiedAccessNativeApplicationOidcOptions> {
+        &self.native_application_oidc_options
+    }
     /// Consumes the builder and constructs a [`ModifyVerifiedAccessTrustProviderInput`](crate::operation::modify_verified_access_trust_provider::ModifyVerifiedAccessTrustProviderInput).
     pub fn build(
         self,
@@ -183,6 +207,7 @@ impl ModifyVerifiedAccessTrustProviderInputBuilder {
                 dry_run: self.dry_run,
                 client_token: self.client_token,
                 sse_specification: self.sse_specification,
+                native_application_oidc_options: self.native_application_oidc_options,
             },
         )
     }

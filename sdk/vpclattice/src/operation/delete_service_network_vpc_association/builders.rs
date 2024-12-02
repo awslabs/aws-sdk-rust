@@ -108,17 +108,17 @@ impl DeleteServiceNetworkVpcAssociationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
+    /// <p>The ID or ARN of the association.</p>
     pub fn service_network_vpc_association_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_network_vpc_association_identifier(input.into());
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
+    /// <p>The ID or ARN of the association.</p>
     pub fn set_service_network_vpc_association_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_network_vpc_association_identifier(input);
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
+    /// <p>The ID or ARN of the association.</p>
     pub fn get_service_network_vpc_association_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_service_network_vpc_association_identifier()
     }

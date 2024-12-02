@@ -128,16 +128,34 @@ impl BatchGetFlowAssociationFluentBuilder {
     /// To override the contents of this collection use [`set_resource_ids`](Self::set_resource_ids).
     ///
     /// <p>A list of resource identifiers to retrieve flow associations.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Web Services End User Messaging SMS phone number ARN when using <code>SMS_PHONE_NUMBER</code></p></li>
+    /// <li>
+    /// <p>Amazon Web Services End User Messaging Social phone number ARN when using <code>WHATSAPP_MESSAGING_PHONE_NUMBER</code></p></li>
+    /// </ul>
     pub fn resource_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_ids(input.into());
         self
     }
     /// <p>A list of resource identifiers to retrieve flow associations.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Web Services End User Messaging SMS phone number ARN when using <code>SMS_PHONE_NUMBER</code></p></li>
+    /// <li>
+    /// <p>Amazon Web Services End User Messaging Social phone number ARN when using <code>WHATSAPP_MESSAGING_PHONE_NUMBER</code></p></li>
+    /// </ul>
     pub fn set_resource_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_resource_ids(input);
         self
     }
     /// <p>A list of resource identifiers to retrieve flow associations.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Web Services End User Messaging SMS phone number ARN when using <code>SMS_PHONE_NUMBER</code></p></li>
+    /// <li>
+    /// <p>Amazon Web Services End User Messaging Social phone number ARN when using <code>WHATSAPP_MESSAGING_PHONE_NUMBER</code></p></li>
+    /// </ul>
     pub fn get_resource_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_resource_ids()
     }

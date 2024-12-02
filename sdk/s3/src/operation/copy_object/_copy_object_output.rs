@@ -6,7 +6,7 @@ pub struct CopyObjectOutput {
     /// <p>Container for all response elements.</p>
     pub copy_object_result: ::std::option::Option<crate::types::CopyObjectResult>,
     /// <p>If the object expiration is configured, the response includes this header.</p><note>
-    /// <p>This functionality is not supported for directory buckets.</p>
+    /// <p>Object expiration information is not returned in directory buckets and this header returns the value "<code>NotImplemented</code>" in all responses for directory buckets.</p>
     /// </note>
     pub expiration: ::std::option::Option<::std::string::String>,
     /// <p>Version ID of the source object that was copied.</p><note>
@@ -46,7 +46,7 @@ impl CopyObjectOutput {
         self.copy_object_result.as_ref()
     }
     /// <p>If the object expiration is configured, the response includes this header.</p><note>
-    /// <p>This functionality is not supported for directory buckets.</p>
+    /// <p>Object expiration information is not returned in directory buckets and this header returns the value "<code>NotImplemented</code>" in all responses for directory buckets.</p>
     /// </note>
     pub fn expiration(&self) -> ::std::option::Option<&str> {
         self.expiration.as_deref()
@@ -168,21 +168,21 @@ impl CopyObjectOutputBuilder {
         &self.copy_object_result
     }
     /// <p>If the object expiration is configured, the response includes this header.</p><note>
-    /// <p>This functionality is not supported for directory buckets.</p>
+    /// <p>Object expiration information is not returned in directory buckets and this header returns the value "<code>NotImplemented</code>" in all responses for directory buckets.</p>
     /// </note>
     pub fn expiration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expiration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the object expiration is configured, the response includes this header.</p><note>
-    /// <p>This functionality is not supported for directory buckets.</p>
+    /// <p>Object expiration information is not returned in directory buckets and this header returns the value "<code>NotImplemented</code>" in all responses for directory buckets.</p>
     /// </note>
     pub fn set_expiration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expiration = input;
         self
     }
     /// <p>If the object expiration is configured, the response includes this header.</p><note>
-    /// <p>This functionality is not supported for directory buckets.</p>
+    /// <p>Object expiration information is not returned in directory buckets and this header returns the value "<code>NotImplemented</code>" in all responses for directory buckets.</p>
     /// </note>
     pub fn get_expiration(&self) -> &::std::option::Option<::std::string::String> {
         &self.expiration

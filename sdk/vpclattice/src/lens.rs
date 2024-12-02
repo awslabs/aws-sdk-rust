@@ -19,8 +19,48 @@ pub(crate) fn reflens_list_listeners_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_resource_configurations_output_output_next_token(
+    input: &crate::operation::list_resource_configurations::ListResourceConfigurationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_resource_endpoint_associations_output_output_next_token(
+    input: &crate::operation::list_resource_endpoint_associations::ListResourceEndpointAssociationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_resource_gateways_output_output_next_token(
+    input: &crate::operation::list_resource_gateways::ListResourceGatewaysOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_rules_output_output_next_token(
     input: &crate::operation::list_rules::ListRulesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_service_network_resource_associations_output_output_next_token(
+    input: &crate::operation::list_service_network_resource_associations::ListServiceNetworkResourceAssociationsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -41,6 +81,16 @@ pub(crate) fn reflens_list_service_network_service_associations_output_output_ne
 
 pub(crate) fn reflens_list_service_network_vpc_associations_output_output_next_token(
     input: &crate::operation::list_service_network_vpc_associations::ListServiceNetworkVpcAssociationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_service_network_vpc_endpoint_associations_output_output_next_token(
+    input: &crate::operation::list_service_network_vpc_endpoint_associations::ListServiceNetworkVpcEndpointAssociationsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -103,9 +153,43 @@ pub(crate) fn lens_list_listeners_output_output_items(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_resource_configurations_output_output_items(
+    input: crate::operation::list_resource_configurations::ListResourceConfigurationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ResourceConfigurationSummary>> {
+    let input = match input.items {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_resource_endpoint_associations_output_output_items(
+    input: crate::operation::list_resource_endpoint_associations::ListResourceEndpointAssociationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ResourceEndpointAssociationSummary>> {
+    let input = input.items;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_resource_gateways_output_output_items(
+    input: crate::operation::list_resource_gateways::ListResourceGatewaysOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ResourceGatewaySummary>> {
+    let input = match input.items {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_rules_output_output_items(
     input: crate::operation::list_rules::ListRulesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RuleSummary>> {
+    let input = input.items;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_service_network_resource_associations_output_output_items(
+    input: crate::operation::list_service_network_resource_associations::ListServiceNetworkResourceAssociationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ServiceNetworkResourceAssociationSummary>> {
     let input = input.items;
     ::std::option::Option::Some(input)
 }
@@ -120,6 +204,13 @@ pub(crate) fn lens_list_service_network_service_associations_output_output_items
 pub(crate) fn lens_list_service_network_vpc_associations_output_output_items(
     input: crate::operation::list_service_network_vpc_associations::ListServiceNetworkVpcAssociationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ServiceNetworkVpcAssociationSummary>> {
+    let input = input.items;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_service_network_vpc_endpoint_associations_output_output_items(
+    input: crate::operation::list_service_network_vpc_endpoint_associations::ListServiceNetworkVpcEndpointAssociationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ServiceNetworkEndpointAssociation>> {
     let input = input.items;
     ::std::option::Option::Some(input)
 }

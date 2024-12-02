@@ -22,8 +22,8 @@ impl crate::operation::list_service_network_service_associations::builders::List
 }
 /// Fluent builder constructing a request to `ListServiceNetworkServiceAssociations`.
 ///
-/// <p>Lists the associations between the service network and the service. You can filter the list either by service or service network. You must provide either the service network identifier or the service identifier.</p>
-/// <p>Every association in Amazon VPC Lattice is given a unique Amazon Resource Name (ARN), such as when a service network is associated with a VPC or when a service is associated with a service network. If the association is for a resource that is shared with another account, the association includes the local account ID as the prefix in the ARN for each account the resource is shared with.</p>
+/// <p>Lists the associations between a service network and a service. You can filter the list either by service or service network. You must provide either the service network identifier or the service identifier.</p>
+/// <p>Every association in Amazon VPC Lattice has a unique Amazon Resource Name (ARN), such as when a service network is associated with a VPC or when a service is associated with a service network. If the association is for a resource is shared with another account, the association includes the local account ID as the prefix in the ARN.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListServiceNetworkServiceAssociationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -123,31 +123,31 @@ impl ListServiceNetworkServiceAssociationsFluentBuilder {
             self.inner,
         )
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
+    /// <p>The ID or ARN of the service network.</p>
     pub fn service_network_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_network_identifier(input.into());
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
+    /// <p>The ID or ARN of the service network.</p>
     pub fn set_service_network_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_network_identifier(input);
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
+    /// <p>The ID or ARN of the service network.</p>
     pub fn get_service_network_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_service_network_identifier()
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    /// <p>The ID or ARN of the service.</p>
     pub fn service_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_identifier(input.into());
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    /// <p>The ID or ARN of the service.</p>
     pub fn set_service_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_identifier(input);
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    /// <p>The ID or ARN of the service.</p>
     pub fn get_service_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_service_identifier()
     }

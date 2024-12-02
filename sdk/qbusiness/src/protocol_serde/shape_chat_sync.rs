@@ -45,6 +45,20 @@ pub fn de_chat_sync_http_error(
             };
             tmp
         }),
+        "ExternalResourceException" => crate::operation::chat_sync::ChatSyncError::ExternalResourceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ExternalResourceExceptionBuilder::default();
+                output = crate::protocol_serde::shape_external_resource_exception::de_external_resource_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::chat_sync::ChatSyncError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::external_resource_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::chat_sync::ChatSyncError::unhandled)?
+            };
+            tmp
+        }),
         "InternalServerException" => crate::operation::chat_sync::ChatSyncError::InternalServerException({
             #[allow(unused_mut)]
             let mut tmp = {

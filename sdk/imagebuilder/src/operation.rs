@@ -100,6 +100,9 @@ pub mod get_lifecycle_execution;
 /// Types for the `GetLifecyclePolicy` operation.
 pub mod get_lifecycle_policy;
 
+/// Types for the `GetMarketplaceResource` operation.
+pub mod get_marketplace_resource;
+
 /// Types for the `GetWorkflow` operation.
 pub mod get_workflow;
 

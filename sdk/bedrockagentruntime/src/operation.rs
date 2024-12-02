@@ -19,8 +19,14 @@ pub mod invoke_inline_agent;
 /// Types for the `OptimizePrompt` operation.
 pub mod optimize_prompt;
 
+/// Types for the `Rerank` operation.
+pub mod rerank;
+
 /// Types for the `Retrieve` operation.
 pub mod retrieve;
 
 /// Types for the `RetrieveAndGenerate` operation.
 pub mod retrieve_and_generate;
+
+/// Types for the `RetrieveAndGenerateStream` operation.
+pub mod retrieve_and_generate_stream;

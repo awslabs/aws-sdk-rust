@@ -201,6 +201,12 @@ pub use crate::types::_saml_options_input::SamlOptionsInput;
 
 pub use crate::types::_master_user_options::MasterUserOptions;
 
+pub use crate::types::_direct_query_data_source_type::DirectQueryDataSourceType;
+
+pub use crate::types::_security_lake_direct_query_data_source::SecurityLakeDirectQueryDataSource;
+
+pub use crate::types::_cloud_watch_direct_query_data_source::CloudWatchDirectQueryDataSource;
+
 pub use crate::types::_data_source_status::DataSourceStatus;
 
 pub use crate::types::_data_source_type::DataSourceType;
@@ -260,6 +266,8 @@ pub use crate::types::_engine_type::EngineType;
 pub use crate::types::_domain_maintenance_details::DomainMaintenanceDetails;
 
 pub use crate::types::_maintenance_status::MaintenanceStatus;
+
+pub use crate::types::_direct_query_data_source::DirectQueryDataSource;
 
 pub use crate::types::_data_source_details::DataSourceDetails;
 
@@ -441,6 +449,8 @@ mod _change_progress_stage;
 
 mod _change_progress_status_details;
 
+mod _cloud_watch_direct_query_data_source;
+
 mod _cluster_config;
 
 mod _cluster_config_status;
@@ -474,6 +484,10 @@ mod _deployment_status;
 mod _describe_packages_filter;
 
 mod _describe_packages_filter_name;
+
+mod _direct_query_data_source;
+
+mod _direct_query_data_source_type;
 
 mod _domain_config;
 
@@ -682,6 +696,8 @@ mod _scheduled_auto_tune_details;
 mod _scheduled_auto_tune_severity_type;
 
 mod _scheduled_by;
+
+mod _security_lake_direct_query_data_source;
 
 mod _service_software_options;
 

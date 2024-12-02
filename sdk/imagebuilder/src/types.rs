@@ -207,19 +207,25 @@ pub use crate::types::_container_type::ContainerType;
 
 pub use crate::types::_component_version::ComponentVersion;
 
+pub use crate::types::_product_code_list_item::ProductCodeListItem;
+
+pub use crate::types::_product_code_type::ProductCodeType;
+
+pub use crate::types::_component_status::ComponentStatus;
+
 pub use crate::types::_component_type::ComponentType;
 
 pub use crate::types::_component_summary::ComponentSummary;
 
 pub use crate::types::_component_state::ComponentState;
 
-pub use crate::types::_component_status::ComponentStatus;
-
 pub use crate::types::_component_format::ComponentFormat;
 
 pub use crate::types::_workflow::Workflow;
 
 pub use crate::types::_workflow_parameter_detail::WorkflowParameterDetail;
+
+pub use crate::types::_marketplace_resource_type::MarketplaceResourceType;
 
 pub use crate::types::_lifecycle_policy::LifecyclePolicy;
 
@@ -437,6 +443,8 @@ mod _lifecycle_policy_time_unit;
 
 mod _logging;
 
+mod _marketplace_resource_type;
+
 mod _on_workflow_failure;
 
 mod _output_resources;
@@ -452,6 +460,10 @@ mod _pipeline_status;
 mod _placement;
 
 mod _platform;
+
+mod _product_code_list_item;
+
+mod _product_code_type;
 
 mod _remediation;
 

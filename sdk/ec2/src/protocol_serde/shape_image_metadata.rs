@@ -99,7 +99,7 @@ pub fn de_image_metadata(
                 builder = builder.set_deprecation_time(var_7);
             }
             ,
-            s if s.matches("isPublic") /* IsPublic com.amazonaws.ec2#ImageMetadata$IsPublic */ =>  {
+            s if s.matches("imageAllowed") /* ImageAllowed com.amazonaws.ec2#ImageMetadata$ImageAllowed */ =>  {
                 let var_8 =
                     Some(
                          {
@@ -111,7 +111,22 @@ pub fn de_image_metadata(
                         ?
                     )
                 ;
-                builder = builder.set_is_public(var_8);
+                builder = builder.set_image_allowed(var_8);
+            }
+            ,
+            s if s.matches("isPublic") /* IsPublic com.amazonaws.ec2#ImageMetadata$IsPublic */ =>  {
+                let var_9 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_is_public(var_9);
             }
             ,
             _ => {}

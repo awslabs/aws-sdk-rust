@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetServiceNetworkVpcAssociationOutput {
-    /// <p>The ID of the specified association between the service network and the VPC.</p>
+    /// <p>The ID of the association.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the association.</p>
     pub status: ::std::option::Option<crate::types::ServiceNetworkVpcAssociationStatus>,
@@ -11,7 +11,7 @@ pub struct GetServiceNetworkVpcAssociationOutput {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The account that created the association.</p>
     pub created_by: ::std::option::Option<::std::string::String>,
-    /// <p>The date and time that the association was created, specified in ISO-8601 format.</p>
+    /// <p>The date and time that the association was created, in ISO-8601 format.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ID of the service network.</p>
     pub service_network_id: ::std::option::Option<::std::string::String>,
@@ -27,12 +27,12 @@ pub struct GetServiceNetworkVpcAssociationOutput {
     pub failure_message: ::std::option::Option<::std::string::String>,
     /// <p>The failure code.</p>
     pub failure_code: ::std::option::Option<::std::string::String>,
-    /// <p>The date and time that the association was last updated, specified in ISO-8601 format.</p>
+    /// <p>The date and time that the association was last updated, in ISO-8601 format.</p>
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl GetServiceNetworkVpcAssociationOutput {
-    /// <p>The ID of the specified association between the service network and the VPC.</p>
+    /// <p>The ID of the association.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -48,7 +48,7 @@ impl GetServiceNetworkVpcAssociationOutput {
     pub fn created_by(&self) -> ::std::option::Option<&str> {
         self.created_by.as_deref()
     }
-    /// <p>The date and time that the association was created, specified in ISO-8601 format.</p>
+    /// <p>The date and time that the association was created, in ISO-8601 format.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
@@ -82,7 +82,7 @@ impl GetServiceNetworkVpcAssociationOutput {
     pub fn failure_code(&self) -> ::std::option::Option<&str> {
         self.failure_code.as_deref()
     }
-    /// <p>The date and time that the association was last updated, specified in ISO-8601 format.</p>
+    /// <p>The date and time that the association was last updated, in ISO-8601 format.</p>
     pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
@@ -119,17 +119,17 @@ pub struct GetServiceNetworkVpcAssociationOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetServiceNetworkVpcAssociationOutputBuilder {
-    /// <p>The ID of the specified association between the service network and the VPC.</p>
+    /// <p>The ID of the association.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the specified association between the service network and the VPC.</p>
+    /// <p>The ID of the association.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>The ID of the specified association between the service network and the VPC.</p>
+    /// <p>The ID of the association.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
@@ -175,17 +175,17 @@ impl GetServiceNetworkVpcAssociationOutputBuilder {
     pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.created_by
     }
-    /// <p>The date and time that the association was created, specified in ISO-8601 format.</p>
+    /// <p>The date and time that the association was created, in ISO-8601 format.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time that the association was created, specified in ISO-8601 format.</p>
+    /// <p>The date and time that the association was created, in ISO-8601 format.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
-    /// <p>The date and time that the association was created, specified in ISO-8601 format.</p>
+    /// <p>The date and time that the association was created, in ISO-8601 format.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
@@ -293,17 +293,17 @@ impl GetServiceNetworkVpcAssociationOutputBuilder {
     pub fn get_failure_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.failure_code
     }
-    /// <p>The date and time that the association was last updated, specified in ISO-8601 format.</p>
+    /// <p>The date and time that the association was last updated, in ISO-8601 format.</p>
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time that the association was last updated, specified in ISO-8601 format.</p>
+    /// <p>The date and time that the association was last updated, in ISO-8601 format.</p>
     pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }
-    /// <p>The date and time that the association was last updated, specified in ISO-8601 format.</p>
+    /// <p>The date and time that the association was last updated, in ISO-8601 format.</p>
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_at
     }

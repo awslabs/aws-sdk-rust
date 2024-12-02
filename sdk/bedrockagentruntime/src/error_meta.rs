@@ -267,6 +267,36 @@ impl From<crate::operation::optimize_prompt::OptimizePromptError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::rerank::RerankError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::rerank::RerankError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::rerank::RerankError> for Error {
+    fn from(err: crate::operation::rerank::RerankError) -> Self {
+        match err {
+            crate::operation::rerank::RerankError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::rerank::RerankError::DependencyFailedException(inner) => Error::DependencyFailedException(inner),
+            crate::operation::rerank::RerankError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::rerank::RerankError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::rerank::RerankError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::rerank::RerankError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::rerank::RerankError::BadGatewayException(inner) => Error::BadGatewayException(inner),
+            crate::operation::rerank::RerankError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::rerank::RerankError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::rerank::RerankError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::retrieve::RetrieveError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -332,6 +362,57 @@ impl From<crate::operation::retrieve_and_generate::RetrieveAndGenerateError> for
                 Error::ServiceQuotaExceededException(inner)
             }
             crate::operation::retrieve_and_generate::RetrieveAndGenerateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::retrieve_and_generate_stream::RetrieveAndGenerateStreamError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::retrieve_and_generate_stream::RetrieveAndGenerateStreamError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::retrieve_and_generate_stream::RetrieveAndGenerateStreamError> for Error {
+    fn from(err: crate::operation::retrieve_and_generate_stream::RetrieveAndGenerateStreamError) -> Self {
+        match err {
+            crate::operation::retrieve_and_generate_stream::RetrieveAndGenerateStreamError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::retrieve_and_generate_stream::RetrieveAndGenerateStreamError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::retrieve_and_generate_stream::RetrieveAndGenerateStreamError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::retrieve_and_generate_stream::RetrieveAndGenerateStreamError::DependencyFailedException(inner) => {
+                Error::DependencyFailedException(inner)
+            }
+            crate::operation::retrieve_and_generate_stream::RetrieveAndGenerateStreamError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::retrieve_and_generate_stream::RetrieveAndGenerateStreamError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::retrieve_and_generate_stream::RetrieveAndGenerateStreamError::BadGatewayException(inner) => {
+                Error::BadGatewayException(inner)
+            }
+            crate::operation::retrieve_and_generate_stream::RetrieveAndGenerateStreamError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::retrieve_and_generate_stream::RetrieveAndGenerateStreamError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::retrieve_and_generate_stream::RetrieveAndGenerateStreamError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -449,6 +530,44 @@ impl From<crate::types::error::OptimizedPromptStreamError> for Error {
             crate::types::error::OptimizedPromptStreamError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::types::error::OptimizedPromptStreamError::BadGatewayException(inner) => Error::BadGatewayException(inner),
             crate::types::error::OptimizedPromptStreamError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::RetrieveAndGenerateStreamResponseOutputError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::RetrieveAndGenerateStreamResponseOutputError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::types::error::RetrieveAndGenerateStreamResponseOutputError> for Error {
+    fn from(err: crate::types::error::RetrieveAndGenerateStreamResponseOutputError) -> Self {
+        match err {
+            crate::types::error::RetrieveAndGenerateStreamResponseOutputError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::types::error::RetrieveAndGenerateStreamResponseOutputError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::types::error::RetrieveAndGenerateStreamResponseOutputError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::types::error::RetrieveAndGenerateStreamResponseOutputError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::types::error::RetrieveAndGenerateStreamResponseOutputError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::types::error::RetrieveAndGenerateStreamResponseOutputError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::types::error::RetrieveAndGenerateStreamResponseOutputError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::types::error::RetrieveAndGenerateStreamResponseOutputError::DependencyFailedException(inner) => {
+                Error::DependencyFailedException(inner)
+            }
+            crate::types::error::RetrieveAndGenerateStreamResponseOutputError::BadGatewayException(inner) => Error::BadGatewayException(inner),
+            crate::types::error::RetrieveAndGenerateStreamResponseOutputError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

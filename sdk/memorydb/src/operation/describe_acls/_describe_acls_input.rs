@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAcLsInput {
-    /// <p>The name of the ACL</p>
+    /// <p>The name of the ACL.</p>
     pub acl_name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -11,7 +11,7 @@ pub struct DescribeAcLsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAcLsInput {
-    /// <p>The name of the ACL</p>
+    /// <p>The name of the ACL.</p>
     pub fn acl_name(&self) -> ::std::option::Option<&str> {
         self.acl_name.as_deref()
     }
@@ -40,17 +40,17 @@ pub struct DescribeAcLsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAcLsInputBuilder {
-    /// <p>The name of the ACL</p>
+    /// <p>The name of the ACL.</p>
     pub fn acl_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.acl_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the ACL</p>
+    /// <p>The name of the ACL.</p>
     pub fn set_acl_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.acl_name = input;
         self
     }
-    /// <p>The name of the ACL</p>
+    /// <p>The name of the ACL.</p>
     pub fn get_acl_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.acl_name
     }

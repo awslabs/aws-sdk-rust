@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleUpdateFailure {
-    /// <p>The ID or Amazon Resource Name (ARN) of the rule.</p>
+    /// <p>The ID or ARN of the rule.</p>
     pub rule_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The failure code.</p>
     pub failure_code: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct RuleUpdateFailure {
     pub failure_message: ::std::option::Option<::std::string::String>,
 }
 impl RuleUpdateFailure {
-    /// <p>The ID or Amazon Resource Name (ARN) of the rule.</p>
+    /// <p>The ID or ARN of the rule.</p>
     pub fn rule_identifier(&self) -> ::std::option::Option<&str> {
         self.rule_identifier.as_deref()
     }
@@ -41,17 +41,17 @@ pub struct RuleUpdateFailureBuilder {
     pub(crate) failure_message: ::std::option::Option<::std::string::String>,
 }
 impl RuleUpdateFailureBuilder {
-    /// <p>The ID or Amazon Resource Name (ARN) of the rule.</p>
+    /// <p>The ID or ARN of the rule.</p>
     pub fn rule_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the rule.</p>
+    /// <p>The ID or ARN of the rule.</p>
     pub fn set_rule_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_identifier = input;
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the rule.</p>
+    /// <p>The ID or ARN of the rule.</p>
     pub fn get_rule_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.rule_identifier
     }

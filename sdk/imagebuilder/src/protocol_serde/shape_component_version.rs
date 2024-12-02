@@ -73,6 +73,16 @@ where
                                     .transpose()?,
                             );
                         }
+                        "status" => {
+                            builder = builder.set_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ComponentStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "productCodes" => {
+                            builder = builder.set_product_codes(crate::protocol_serde::shape_product_code_list::de_product_code_list(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

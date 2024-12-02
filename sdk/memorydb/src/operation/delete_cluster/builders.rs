@@ -22,7 +22,9 @@ impl crate::operation::delete_cluster::builders::DeleteClusterInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteCluster`.
 ///
-/// <p>Deletes a cluster. It also deletes all associated nodes and node endpoints</p>
+/// <p>Deletes a cluster. It also deletes all associated nodes and node endpoints.</p><note>
+/// <p><code>CreateSnapshot</code> permission is required to create a final snapshot. Without this permission, the API call will fail with an <code>Access Denied</code> exception.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteClusterFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -121,6 +123,20 @@ impl DeleteClusterFluentBuilder {
     /// <p>The name of the cluster to be deleted</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cluster_name()
+    }
+    /// <p>The name of the multi-Region cluster to be deleted.</p>
+    pub fn multi_region_cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.multi_region_cluster_name(input.into());
+        self
+    }
+    /// <p>The name of the multi-Region cluster to be deleted.</p>
+    pub fn set_multi_region_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_multi_region_cluster_name(input);
+        self
+    }
+    /// <p>The name of the multi-Region cluster to be deleted.</p>
+    pub fn get_multi_region_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_multi_region_cluster_name()
     }
     /// <p>The user-supplied name of a final cluster snapshot. This is the unique name that identifies the snapshot. MemoryDB creates the snapshot, and then deletes the cluster immediately afterward.</p>
     pub fn final_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

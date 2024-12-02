@@ -8,7 +8,7 @@ pub struct SecurityProfile {
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The organization resource identifier for the security profile.</p>
     pub organization_resource_id: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for the secruity profile.</p>
+    /// <p>The Amazon Resource Name (ARN) for the security profile.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name for the security profile.</p>
     pub security_profile_name: ::std::option::Option<::std::string::String>,
@@ -38,7 +38,7 @@ impl SecurityProfile {
     pub fn organization_resource_id(&self) -> ::std::option::Option<&str> {
         self.organization_resource_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the secruity profile.</p>
+    /// <p>The Amazon Resource Name (ARN) for the security profile.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -136,17 +136,17 @@ impl SecurityProfileBuilder {
     pub fn get_organization_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.organization_resource_id
     }
-    /// <p>The Amazon Resource Name (ARN) for the secruity profile.</p>
+    /// <p>The Amazon Resource Name (ARN) for the security profile.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the secruity profile.</p>
+    /// <p>The Amazon Resource Name (ARN) for the security profile.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the secruity profile.</p>
+    /// <p>The Amazon Resource Name (ARN) for the security profile.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }

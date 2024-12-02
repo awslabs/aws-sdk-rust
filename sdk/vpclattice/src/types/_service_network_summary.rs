@@ -10,14 +10,16 @@ pub struct ServiceNetworkSummary {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the service network.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>The date and time that the service network was created, specified in ISO-8601 format.</p>
+    /// <p>The date and time that the service network was created, in ISO-8601 format.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The date and time that the service network was last updated, specified in ISO-8601 format.</p>
+    /// <p>The date and time that the service network was last updated, in ISO-8601 format.</p>
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The number of VPCs associated with the service network.</p>
     pub number_of_associated_vpcs: ::std::option::Option<i64>,
     /// <p>The number of services associated with the service network.</p>
     pub number_of_associated_services: ::std::option::Option<i64>,
+    /// <p>The number of resource configurations associated with a service network.</p>
+    pub number_of_associated_resource_configurations: ::std::option::Option<i64>,
 }
 impl ServiceNetworkSummary {
     /// <p>The ID of the service network.</p>
@@ -32,11 +34,11 @@ impl ServiceNetworkSummary {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The date and time that the service network was created, specified in ISO-8601 format.</p>
+    /// <p>The date and time that the service network was created, in ISO-8601 format.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The date and time that the service network was last updated, specified in ISO-8601 format.</p>
+    /// <p>The date and time that the service network was last updated, in ISO-8601 format.</p>
     pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
@@ -47,6 +49,10 @@ impl ServiceNetworkSummary {
     /// <p>The number of services associated with the service network.</p>
     pub fn number_of_associated_services(&self) -> ::std::option::Option<i64> {
         self.number_of_associated_services
+    }
+    /// <p>The number of resource configurations associated with a service network.</p>
+    pub fn number_of_associated_resource_configurations(&self) -> ::std::option::Option<i64> {
+        self.number_of_associated_resource_configurations
     }
 }
 impl ServiceNetworkSummary {
@@ -67,6 +73,7 @@ pub struct ServiceNetworkSummaryBuilder {
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) number_of_associated_vpcs: ::std::option::Option<i64>,
     pub(crate) number_of_associated_services: ::std::option::Option<i64>,
+    pub(crate) number_of_associated_resource_configurations: ::std::option::Option<i64>,
 }
 impl ServiceNetworkSummaryBuilder {
     /// <p>The ID of the service network.</p>
@@ -111,31 +118,31 @@ impl ServiceNetworkSummaryBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>The date and time that the service network was created, specified in ISO-8601 format.</p>
+    /// <p>The date and time that the service network was created, in ISO-8601 format.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time that the service network was created, specified in ISO-8601 format.</p>
+    /// <p>The date and time that the service network was created, in ISO-8601 format.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
-    /// <p>The date and time that the service network was created, specified in ISO-8601 format.</p>
+    /// <p>The date and time that the service network was created, in ISO-8601 format.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
-    /// <p>The date and time that the service network was last updated, specified in ISO-8601 format.</p>
+    /// <p>The date and time that the service network was last updated, in ISO-8601 format.</p>
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time that the service network was last updated, specified in ISO-8601 format.</p>
+    /// <p>The date and time that the service network was last updated, in ISO-8601 format.</p>
     pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }
-    /// <p>The date and time that the service network was last updated, specified in ISO-8601 format.</p>
+    /// <p>The date and time that the service network was last updated, in ISO-8601 format.</p>
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_at
     }
@@ -167,6 +174,20 @@ impl ServiceNetworkSummaryBuilder {
     pub fn get_number_of_associated_services(&self) -> &::std::option::Option<i64> {
         &self.number_of_associated_services
     }
+    /// <p>The number of resource configurations associated with a service network.</p>
+    pub fn number_of_associated_resource_configurations(mut self, input: i64) -> Self {
+        self.number_of_associated_resource_configurations = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of resource configurations associated with a service network.</p>
+    pub fn set_number_of_associated_resource_configurations(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.number_of_associated_resource_configurations = input;
+        self
+    }
+    /// <p>The number of resource configurations associated with a service network.</p>
+    pub fn get_number_of_associated_resource_configurations(&self) -> &::std::option::Option<i64> {
+        &self.number_of_associated_resource_configurations
+    }
     /// Consumes the builder and constructs a [`ServiceNetworkSummary`](crate::types::ServiceNetworkSummary).
     pub fn build(self) -> crate::types::ServiceNetworkSummary {
         crate::types::ServiceNetworkSummary {
@@ -177,6 +198,7 @@ impl ServiceNetworkSummaryBuilder {
             last_updated_at: self.last_updated_at,
             number_of_associated_vpcs: self.number_of_associated_vpcs,
             number_of_associated_services: self.number_of_associated_services,
+            number_of_associated_resource_configurations: self.number_of_associated_resource_configurations,
         }
     }
 }

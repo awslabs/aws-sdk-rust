@@ -5,7 +5,7 @@
 pub struct ListEvaluationJobsOutput {
     /// <p>Continuation token from the previous response, for Amazon Bedrock to list the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>A summary of the model evaluation jobs.</p>
+    /// <p>A list of summaries of the evaluation jobs.</p>
     pub job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationSummary>>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl ListEvaluationJobsOutput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>A summary of the model evaluation jobs.</p>
+    /// <p>A list of summaries of the evaluation jobs.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_summaries.is_none()`.
     pub fn job_summaries(&self) -> &[crate::types::EvaluationSummary] {
@@ -60,19 +60,19 @@ impl ListEvaluationJobsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_job_summaries`](Self::set_job_summaries).
     ///
-    /// <p>A summary of the model evaluation jobs.</p>
+    /// <p>A list of summaries of the evaluation jobs.</p>
     pub fn job_summaries(mut self, input: crate::types::EvaluationSummary) -> Self {
         let mut v = self.job_summaries.unwrap_or_default();
         v.push(input);
         self.job_summaries = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A summary of the model evaluation jobs.</p>
+    /// <p>A list of summaries of the evaluation jobs.</p>
     pub fn set_job_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationSummary>>) -> Self {
         self.job_summaries = input;
         self
     }
-    /// <p>A summary of the model evaluation jobs.</p>
+    /// <p>A list of summaries of the evaluation jobs.</p>
     pub fn get_job_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationSummary>> {
         &self.job_summaries
     }

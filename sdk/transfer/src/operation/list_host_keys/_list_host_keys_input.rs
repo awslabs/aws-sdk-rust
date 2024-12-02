@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListHostKeysInput {
-    /// <p>The maximum number of host keys to return.</p>
+    /// <p>The maximum number of items to return.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>When there are additional results that were not returned, a <code>NextToken</code> parameter is returned. You can use that value for a subsequent call to <code>ListHostKeys</code> to continue listing results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -11,7 +11,7 @@ pub struct ListHostKeysInput {
     pub server_id: ::std::option::Option<::std::string::String>,
 }
 impl ListHostKeysInput {
-    /// <p>The maximum number of host keys to return.</p>
+    /// <p>The maximum number of items to return.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -40,17 +40,17 @@ pub struct ListHostKeysInputBuilder {
     pub(crate) server_id: ::std::option::Option<::std::string::String>,
 }
 impl ListHostKeysInputBuilder {
-    /// <p>The maximum number of host keys to return.</p>
+    /// <p>The maximum number of items to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of host keys to return.</p>
+    /// <p>The maximum number of items to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of host keys to return.</p>
+    /// <p>The maximum number of items to return.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

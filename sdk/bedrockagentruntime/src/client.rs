@@ -134,6 +134,10 @@ mod invoke_inline_agent;
 
 mod optimize_prompt;
 
+mod rerank;
+
 mod retrieve;
 
 mod retrieve_and_generate;
+
+mod retrieve_and_generate_stream;

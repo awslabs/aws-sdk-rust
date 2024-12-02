@@ -22,7 +22,7 @@ impl crate::operation::list_rules::builders::ListRulesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListRules`.
 ///
-/// <p>Lists the rules for the listener.</p>
+/// <p>Lists the rules for the specified listener.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListRulesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl ListRulesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_rules::paginator::ListRulesPaginator {
         crate::operation::list_rules::paginator::ListRulesPaginator::new(self.handle, self.inner)
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    /// <p>The ID or ARN of the service.</p>
     pub fn service_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_identifier(input.into());
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    /// <p>The ID or ARN of the service.</p>
     pub fn set_service_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_identifier(input);
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    /// <p>The ID or ARN of the service.</p>
     pub fn get_service_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_service_identifier()
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
+    /// <p>The ID or ARN of the listener.</p>
     pub fn listener_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.listener_identifier(input.into());
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
+    /// <p>The ID or ARN of the listener.</p>
     pub fn set_listener_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_listener_identifier(input);
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
+    /// <p>The ID or ARN of the listener.</p>
     pub fn get_listener_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_listener_identifier()
     }

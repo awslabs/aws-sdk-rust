@@ -17,7 +17,7 @@ pub struct EbsInstanceBlockDevice {
     /// <p>The ID of the Amazon Web Services account that owns the volume.</p>
     /// <p>This parameter is returned only for volumes that are attached to Fargate tasks.</p>
     pub volume_owner_id: ::std::option::Option<::std::string::String>,
-    /// <p>The entity that manages the EBS volume.</p>
+    /// <p>The service provider that manages the EBS volume.</p>
     pub operator: ::std::option::Option<crate::types::OperatorResponse>,
 }
 impl EbsInstanceBlockDevice {
@@ -46,7 +46,7 @@ impl EbsInstanceBlockDevice {
     pub fn volume_owner_id(&self) -> ::std::option::Option<&str> {
         self.volume_owner_id.as_deref()
     }
-    /// <p>The entity that manages the EBS volume.</p>
+    /// <p>The service provider that manages the EBS volume.</p>
     pub fn operator(&self) -> ::std::option::Option<&crate::types::OperatorResponse> {
         self.operator.as_ref()
     }
@@ -158,17 +158,17 @@ impl EbsInstanceBlockDeviceBuilder {
     pub fn get_volume_owner_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.volume_owner_id
     }
-    /// <p>The entity that manages the EBS volume.</p>
+    /// <p>The service provider that manages the EBS volume.</p>
     pub fn operator(mut self, input: crate::types::OperatorResponse) -> Self {
         self.operator = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The entity that manages the EBS volume.</p>
+    /// <p>The service provider that manages the EBS volume.</p>
     pub fn set_operator(mut self, input: ::std::option::Option<crate::types::OperatorResponse>) -> Self {
         self.operator = input;
         self
     }
-    /// <p>The entity that manages the EBS volume.</p>
+    /// <p>The service provider that manages the EBS volume.</p>
     pub fn get_operator(&self) -> &::std::option::Option<crate::types::OperatorResponse> {
         &self.operator
     }

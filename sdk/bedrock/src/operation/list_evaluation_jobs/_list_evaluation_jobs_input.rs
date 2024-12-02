@@ -3,37 +3,43 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEvaluationJobsInput {
-    /// <p>A filter that includes model evaluation jobs created after the time specified.</p>
+    /// <p>A filter to only list evaluation jobs created after a specified time.</p>
     pub creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>A filter that includes model evaluation jobs created prior to the time specified.</p>
+    /// <p>A filter to only list evaluation jobs created before a specified time.</p>
     pub creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Only return jobs where the status condition is met.</p>
+    /// <p>A filter to only list evaluation jobs that are of a certain status.</p>
     pub status_equals: ::std::option::Option<crate::types::EvaluationJobStatus>,
-    /// <p>Query parameter string for model evaluation job names.</p>
+    /// <p>A filter to only list evaluation jobs that are either model evaluations or knowledge base evaluations.</p>
+    pub application_type_equals: ::std::option::Option<crate::types::ApplicationType>,
+    /// <p>A filter to only list evaluation jobs that contain a specified string in the job name.</p>
     pub name_contains: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>Continuation token from the previous response, for Amazon Bedrock to list the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>Allows you to sort model evaluation jobs by when they were created.</p>
+    /// <p>Specifies a creation time to sort the list of evaluation jobs by when they were created.</p>
     pub sort_by: ::std::option::Option<crate::types::SortJobsBy>,
-    /// <p>How you want the order of jobs sorted.</p>
+    /// <p>Specifies whether to sort the list of evaluation jobs by either ascending or descending order.</p>
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl ListEvaluationJobsInput {
-    /// <p>A filter that includes model evaluation jobs created after the time specified.</p>
+    /// <p>A filter to only list evaluation jobs created after a specified time.</p>
     pub fn creation_time_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time_after.as_ref()
     }
-    /// <p>A filter that includes model evaluation jobs created prior to the time specified.</p>
+    /// <p>A filter to only list evaluation jobs created before a specified time.</p>
     pub fn creation_time_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time_before.as_ref()
     }
-    /// <p>Only return jobs where the status condition is met.</p>
+    /// <p>A filter to only list evaluation jobs that are of a certain status.</p>
     pub fn status_equals(&self) -> ::std::option::Option<&crate::types::EvaluationJobStatus> {
         self.status_equals.as_ref()
     }
-    /// <p>Query parameter string for model evaluation job names.</p>
+    /// <p>A filter to only list evaluation jobs that are either model evaluations or knowledge base evaluations.</p>
+    pub fn application_type_equals(&self) -> ::std::option::Option<&crate::types::ApplicationType> {
+        self.application_type_equals.as_ref()
+    }
+    /// <p>A filter to only list evaluation jobs that contain a specified string in the job name.</p>
     pub fn name_contains(&self) -> ::std::option::Option<&str> {
         self.name_contains.as_deref()
     }
@@ -45,11 +51,11 @@ impl ListEvaluationJobsInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Allows you to sort model evaluation jobs by when they were created.</p>
+    /// <p>Specifies a creation time to sort the list of evaluation jobs by when they were created.</p>
     pub fn sort_by(&self) -> ::std::option::Option<&crate::types::SortJobsBy> {
         self.sort_by.as_ref()
     }
-    /// <p>How you want the order of jobs sorted.</p>
+    /// <p>Specifies whether to sort the list of evaluation jobs by either ascending or descending order.</p>
     pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
@@ -68,6 +74,7 @@ pub struct ListEvaluationJobsInputBuilder {
     pub(crate) creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status_equals: ::std::option::Option<crate::types::EvaluationJobStatus>,
+    pub(crate) application_type_equals: ::std::option::Option<crate::types::ApplicationType>,
     pub(crate) name_contains: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -75,59 +82,73 @@ pub struct ListEvaluationJobsInputBuilder {
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl ListEvaluationJobsInputBuilder {
-    /// <p>A filter that includes model evaluation jobs created after the time specified.</p>
+    /// <p>A filter to only list evaluation jobs created after a specified time.</p>
     pub fn creation_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time_after = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A filter that includes model evaluation jobs created after the time specified.</p>
+    /// <p>A filter to only list evaluation jobs created after a specified time.</p>
     pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_after = input;
         self
     }
-    /// <p>A filter that includes model evaluation jobs created after the time specified.</p>
+    /// <p>A filter to only list evaluation jobs created after a specified time.</p>
     pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time_after
     }
-    /// <p>A filter that includes model evaluation jobs created prior to the time specified.</p>
+    /// <p>A filter to only list evaluation jobs created before a specified time.</p>
     pub fn creation_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time_before = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A filter that includes model evaluation jobs created prior to the time specified.</p>
+    /// <p>A filter to only list evaluation jobs created before a specified time.</p>
     pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_before = input;
         self
     }
-    /// <p>A filter that includes model evaluation jobs created prior to the time specified.</p>
+    /// <p>A filter to only list evaluation jobs created before a specified time.</p>
     pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time_before
     }
-    /// <p>Only return jobs where the status condition is met.</p>
+    /// <p>A filter to only list evaluation jobs that are of a certain status.</p>
     pub fn status_equals(mut self, input: crate::types::EvaluationJobStatus) -> Self {
         self.status_equals = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Only return jobs where the status condition is met.</p>
+    /// <p>A filter to only list evaluation jobs that are of a certain status.</p>
     pub fn set_status_equals(mut self, input: ::std::option::Option<crate::types::EvaluationJobStatus>) -> Self {
         self.status_equals = input;
         self
     }
-    /// <p>Only return jobs where the status condition is met.</p>
+    /// <p>A filter to only list evaluation jobs that are of a certain status.</p>
     pub fn get_status_equals(&self) -> &::std::option::Option<crate::types::EvaluationJobStatus> {
         &self.status_equals
     }
-    /// <p>Query parameter string for model evaluation job names.</p>
+    /// <p>A filter to only list evaluation jobs that are either model evaluations or knowledge base evaluations.</p>
+    pub fn application_type_equals(mut self, input: crate::types::ApplicationType) -> Self {
+        self.application_type_equals = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A filter to only list evaluation jobs that are either model evaluations or knowledge base evaluations.</p>
+    pub fn set_application_type_equals(mut self, input: ::std::option::Option<crate::types::ApplicationType>) -> Self {
+        self.application_type_equals = input;
+        self
+    }
+    /// <p>A filter to only list evaluation jobs that are either model evaluations or knowledge base evaluations.</p>
+    pub fn get_application_type_equals(&self) -> &::std::option::Option<crate::types::ApplicationType> {
+        &self.application_type_equals
+    }
+    /// <p>A filter to only list evaluation jobs that contain a specified string in the job name.</p>
     pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name_contains = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Query parameter string for model evaluation job names.</p>
+    /// <p>A filter to only list evaluation jobs that contain a specified string in the job name.</p>
     pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name_contains = input;
         self
     }
-    /// <p>Query parameter string for model evaluation job names.</p>
+    /// <p>A filter to only list evaluation jobs that contain a specified string in the job name.</p>
     pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
         &self.name_contains
     }
@@ -159,31 +180,31 @@ impl ListEvaluationJobsInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>Allows you to sort model evaluation jobs by when they were created.</p>
+    /// <p>Specifies a creation time to sort the list of evaluation jobs by when they were created.</p>
     pub fn sort_by(mut self, input: crate::types::SortJobsBy) -> Self {
         self.sort_by = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Allows you to sort model evaluation jobs by when they were created.</p>
+    /// <p>Specifies a creation time to sort the list of evaluation jobs by when they were created.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SortJobsBy>) -> Self {
         self.sort_by = input;
         self
     }
-    /// <p>Allows you to sort model evaluation jobs by when they were created.</p>
+    /// <p>Specifies a creation time to sort the list of evaluation jobs by when they were created.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::SortJobsBy> {
         &self.sort_by
     }
-    /// <p>How you want the order of jobs sorted.</p>
+    /// <p>Specifies whether to sort the list of evaluation jobs by either ascending or descending order.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
         self
     }
-    /// <p>How you want the order of jobs sorted.</p>
+    /// <p>Specifies whether to sort the list of evaluation jobs by either ascending or descending order.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.sort_order = input;
         self
     }
-    /// <p>How you want the order of jobs sorted.</p>
+    /// <p>Specifies whether to sort the list of evaluation jobs by either ascending or descending order.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
         &self.sort_order
     }
@@ -196,6 +217,7 @@ impl ListEvaluationJobsInputBuilder {
             creation_time_after: self.creation_time_after,
             creation_time_before: self.creation_time_before,
             status_equals: self.status_equals,
+            application_type_equals: self.application_type_equals,
             name_contains: self.name_contains,
             max_results: self.max_results,
             next_token: self.next_token,

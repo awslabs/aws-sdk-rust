@@ -238,6 +238,26 @@ pub fn de_verified_access_endpoint(
                 builder = builder.set_sse_specification(var_19);
             }
             ,
+            s if s.matches("rdsOptions") /* RdsOptions com.amazonaws.ec2#VerifiedAccessEndpoint$RdsOptions */ =>  {
+                let var_20 =
+                    Some(
+                        crate::protocol_serde::shape_verified_access_endpoint_rds_options::de_verified_access_endpoint_rds_options(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_rds_options(var_20);
+            }
+            ,
+            s if s.matches("cidrOptions") /* CidrOptions com.amazonaws.ec2#VerifiedAccessEndpoint$CidrOptions */ =>  {
+                let var_21 =
+                    Some(
+                        crate::protocol_serde::shape_verified_access_endpoint_cidr_options::de_verified_access_endpoint_cidr_options(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_cidr_options(var_21);
+            }
+            ,
             _ => {}
         }
     }

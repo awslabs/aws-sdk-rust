@@ -6,6 +6,12 @@ pub struct BatchGetFlowAssociationInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of resource identifiers to retrieve flow associations.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Web Services End User Messaging SMS phone number ARN when using <code>SMS_PHONE_NUMBER</code></p></li>
+    /// <li>
+    /// <p>Amazon Web Services End User Messaging Social phone number ARN when using <code>WHATSAPP_MESSAGING_PHONE_NUMBER</code></p></li>
+    /// </ul>
     pub resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The type of resource association.</p>
     pub resource_type: ::std::option::Option<crate::types::ListFlowAssociationResourceType>,
@@ -16,6 +22,12 @@ impl BatchGetFlowAssociationInput {
         self.instance_id.as_deref()
     }
     /// <p>A list of resource identifiers to retrieve flow associations.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Web Services End User Messaging SMS phone number ARN when using <code>SMS_PHONE_NUMBER</code></p></li>
+    /// <li>
+    /// <p>Amazon Web Services End User Messaging Social phone number ARN when using <code>WHATSAPP_MESSAGING_PHONE_NUMBER</code></p></li>
+    /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_ids.is_none()`.
     pub fn resource_ids(&self) -> &[::std::string::String] {
@@ -62,6 +74,12 @@ impl BatchGetFlowAssociationInputBuilder {
     /// To override the contents of this collection use [`set_resource_ids`](Self::set_resource_ids).
     ///
     /// <p>A list of resource identifiers to retrieve flow associations.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Web Services End User Messaging SMS phone number ARN when using <code>SMS_PHONE_NUMBER</code></p></li>
+    /// <li>
+    /// <p>Amazon Web Services End User Messaging Social phone number ARN when using <code>WHATSAPP_MESSAGING_PHONE_NUMBER</code></p></li>
+    /// </ul>
     pub fn resource_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_ids.unwrap_or_default();
         v.push(input.into());
@@ -69,11 +87,23 @@ impl BatchGetFlowAssociationInputBuilder {
         self
     }
     /// <p>A list of resource identifiers to retrieve flow associations.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Web Services End User Messaging SMS phone number ARN when using <code>SMS_PHONE_NUMBER</code></p></li>
+    /// <li>
+    /// <p>Amazon Web Services End User Messaging Social phone number ARN when using <code>WHATSAPP_MESSAGING_PHONE_NUMBER</code></p></li>
+    /// </ul>
     pub fn set_resource_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resource_ids = input;
         self
     }
     /// <p>A list of resource identifiers to retrieve flow associations.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Web Services End User Messaging SMS phone number ARN when using <code>SMS_PHONE_NUMBER</code></p></li>
+    /// <li>
+    /// <p>Amazon Web Services End User Messaging Social phone number ARN when using <code>WHATSAPP_MESSAGING_PHONE_NUMBER</code></p></li>
+    /// </ul>
     pub fn get_resource_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resource_ids
     }

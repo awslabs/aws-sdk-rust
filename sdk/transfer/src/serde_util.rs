@@ -107,11 +107,29 @@ pub(crate) fn create_user_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_web_app_output_output_correct_errors(
+    mut builder: crate::operation::create_web_app::builders::CreateWebAppOutputBuilder,
+) -> crate::operation::create_web_app::builders::CreateWebAppOutputBuilder {
+    if builder.web_app_id.is_none() {
+        builder.web_app_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_workflow_output_output_correct_errors(
     mut builder: crate::operation::create_workflow::builders::CreateWorkflowOutputBuilder,
 ) -> crate::operation::create_workflow::builders::CreateWorkflowOutputBuilder {
     if builder.workflow_id.is_none() {
         builder.workflow_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn conflict_exception_correct_errors(
+    mut builder: crate::types::error::builders::ConflictExceptionBuilder,
+) -> crate::types::error::builders::ConflictExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
     }
     builder
 }
@@ -240,6 +258,30 @@ pub(crate) fn describe_user_output_output_correct_errors(
         builder.user = {
             let builder = crate::types::builders::DescribedUserBuilder::default();
             crate::serde_util::described_user_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn describe_web_app_output_output_correct_errors(
+    mut builder: crate::operation::describe_web_app::builders::DescribeWebAppOutputBuilder,
+) -> crate::operation::describe_web_app::builders::DescribeWebAppOutputBuilder {
+    if builder.web_app.is_none() {
+        builder.web_app = {
+            let builder = crate::types::builders::DescribedWebAppBuilder::default();
+            crate::serde_util::described_web_app_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn describe_web_app_customization_output_output_correct_errors(
+    mut builder: crate::operation::describe_web_app_customization::builders::DescribeWebAppCustomizationOutputBuilder,
+) -> crate::operation::describe_web_app_customization::builders::DescribeWebAppCustomizationOutputBuilder {
+    if builder.web_app_customization.is_none() {
+        builder.web_app_customization = {
+            let builder = crate::types::builders::DescribedWebAppCustomizationBuilder::default();
+            crate::serde_util::described_web_app_customization_correct_errors(builder).build().ok()
         }
     }
     builder
@@ -413,6 +455,15 @@ pub(crate) fn list_users_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_web_apps_output_output_correct_errors(
+    mut builder: crate::operation::list_web_apps::builders::ListWebAppsOutputBuilder,
+) -> crate::operation::list_web_apps::builders::ListWebAppsOutputBuilder {
+    if builder.web_apps.is_none() {
+        builder.web_apps = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_workflows_output_output_correct_errors(
     mut builder: crate::operation::list_workflows::builders::ListWorkflowsOutputBuilder,
 ) -> crate::operation::list_workflows::builders::ListWorkflowsOutputBuilder {
@@ -515,15 +566,6 @@ pub(crate) fn update_profile_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn conflict_exception_correct_errors(
-    mut builder: crate::types::error::builders::ConflictExceptionBuilder,
-) -> crate::types::error::builders::ConflictExceptionBuilder {
-    if builder.message.is_none() {
-        builder.message = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn update_server_output_output_correct_errors(
     mut builder: crate::operation::update_server::builders::UpdateServerOutputBuilder,
 ) -> crate::operation::update_server::builders::UpdateServerOutputBuilder {
@@ -541,6 +583,24 @@ pub(crate) fn update_user_output_output_correct_errors(
     }
     if builder.user_name.is_none() {
         builder.user_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn update_web_app_output_output_correct_errors(
+    mut builder: crate::operation::update_web_app::builders::UpdateWebAppOutputBuilder,
+) -> crate::operation::update_web_app::builders::UpdateWebAppOutputBuilder {
+    if builder.web_app_id.is_none() {
+        builder.web_app_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn update_web_app_customization_output_output_correct_errors(
+    mut builder: crate::operation::update_web_app_customization::builders::UpdateWebAppCustomizationOutputBuilder,
+) -> crate::operation::update_web_app_customization::builders::UpdateWebAppCustomizationOutputBuilder {
+    if builder.web_app_id.is_none() {
+        builder.web_app_id = Some(Default::default())
     }
     builder
 }
@@ -617,6 +677,30 @@ pub(crate) fn described_user_correct_errors(
     builder
 }
 
+pub(crate) fn described_web_app_correct_errors(
+    mut builder: crate::types::builders::DescribedWebAppBuilder,
+) -> crate::types::builders::DescribedWebAppBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.web_app_id.is_none() {
+        builder.web_app_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn described_web_app_customization_correct_errors(
+    mut builder: crate::types::builders::DescribedWebAppCustomizationBuilder,
+) -> crate::types::builders::DescribedWebAppCustomizationBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.web_app_id.is_none() {
+        builder.web_app_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn described_workflow_correct_errors(
     mut builder: crate::types::builders::DescribedWorkflowBuilder,
 ) -> crate::types::builders::DescribedWorkflowBuilder {
@@ -657,6 +741,16 @@ pub(crate) fn listed_server_correct_errors(mut builder: crate::types::builders::
 pub(crate) fn listed_user_correct_errors(mut builder: crate::types::builders::ListedUserBuilder) -> crate::types::builders::ListedUserBuilder {
     if builder.arn.is_none() {
         builder.arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn listed_web_app_correct_errors(mut builder: crate::types::builders::ListedWebAppBuilder) -> crate::types::builders::ListedWebAppBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.web_app_id.is_none() {
+        builder.web_app_id = Some(Default::default())
     }
     builder
 }

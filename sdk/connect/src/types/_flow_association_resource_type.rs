@@ -12,9 +12,11 @@
 /// ```text
 /// # let flowassociationresourcetype = unimplemented!();
 /// match flowassociationresourcetype {
+///     FlowAssociationResourceType::AnalyticsConnector => { /* ... */ },
 ///     FlowAssociationResourceType::InboundEmail => { /* ... */ },
 ///     FlowAssociationResourceType::OutboundEmail => { /* ... */ },
 ///     FlowAssociationResourceType::SmsPhoneNumber => { /* ... */ },
+///     FlowAssociationResourceType::WhatsappMessagingPhoneNumber => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -43,11 +45,15 @@
 )]
 pub enum FlowAssociationResourceType {
     #[allow(missing_docs)] // documentation missing in model
+    AnalyticsConnector,
+    #[allow(missing_docs)] // documentation missing in model
     InboundEmail,
     #[allow(missing_docs)] // documentation missing in model
     OutboundEmail,
     #[allow(missing_docs)] // documentation missing in model
     SmsPhoneNumber,
+    #[allow(missing_docs)] // documentation missing in model
+    WhatsappMessagingPhoneNumber,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,9 +61,11 @@ pub enum FlowAssociationResourceType {
 impl ::std::convert::From<&str> for FlowAssociationResourceType {
     fn from(s: &str) -> Self {
         match s {
+            "ANALYTICS_CONNECTOR" => FlowAssociationResourceType::AnalyticsConnector,
             "INBOUND_EMAIL" => FlowAssociationResourceType::InboundEmail,
             "OUTBOUND_EMAIL" => FlowAssociationResourceType::OutboundEmail,
             "SMS_PHONE_NUMBER" => FlowAssociationResourceType::SmsPhoneNumber,
+            "WHATSAPP_MESSAGING_PHONE_NUMBER" => FlowAssociationResourceType::WhatsappMessagingPhoneNumber,
             other => FlowAssociationResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -73,15 +81,23 @@ impl FlowAssociationResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            FlowAssociationResourceType::AnalyticsConnector => "ANALYTICS_CONNECTOR",
             FlowAssociationResourceType::InboundEmail => "INBOUND_EMAIL",
             FlowAssociationResourceType::OutboundEmail => "OUTBOUND_EMAIL",
             FlowAssociationResourceType::SmsPhoneNumber => "SMS_PHONE_NUMBER",
+            FlowAssociationResourceType::WhatsappMessagingPhoneNumber => "WHATSAPP_MESSAGING_PHONE_NUMBER",
             FlowAssociationResourceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["INBOUND_EMAIL", "OUTBOUND_EMAIL", "SMS_PHONE_NUMBER"]
+        &[
+            "ANALYTICS_CONNECTOR",
+            "INBOUND_EMAIL",
+            "OUTBOUND_EMAIL",
+            "SMS_PHONE_NUMBER",
+            "WHATSAPP_MESSAGING_PHONE_NUMBER",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for FlowAssociationResourceType {
@@ -104,9 +120,11 @@ impl FlowAssociationResourceType {
 impl ::std::fmt::Display for FlowAssociationResourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            FlowAssociationResourceType::AnalyticsConnector => write!(f, "ANALYTICS_CONNECTOR"),
             FlowAssociationResourceType::InboundEmail => write!(f, "INBOUND_EMAIL"),
             FlowAssociationResourceType::OutboundEmail => write!(f, "OUTBOUND_EMAIL"),
             FlowAssociationResourceType::SmsPhoneNumber => write!(f, "SMS_PHONE_NUMBER"),
+            FlowAssociationResourceType::WhatsappMessagingPhoneNumber => write!(f, "WHATSAPP_MESSAGING_PHONE_NUMBER"),
             FlowAssociationResourceType::Unknown(value) => write!(f, "{}", value),
         }
     }

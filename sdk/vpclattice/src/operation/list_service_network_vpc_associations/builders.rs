@@ -22,7 +22,7 @@ impl crate::operation::list_service_network_vpc_associations::builders::ListServ
 }
 /// Fluent builder constructing a request to `ListServiceNetworkVpcAssociations`.
 ///
-/// <p>Lists the service network and VPC associations. You can filter the list either by VPC or service network. You must provide either the service network identifier or the VPC identifier.</p>
+/// <p>Lists the associations between a service network and a VPC. You can filter the list either by VPC or service network. You must provide either the ID of the service network identifier or the ID of the VPC.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListServiceNetworkVpcAssociationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,31 +114,31 @@ impl ListServiceNetworkVpcAssociationsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_service_network_vpc_associations::paginator::ListServiceNetworkVpcAssociationsPaginator {
         crate::operation::list_service_network_vpc_associations::paginator::ListServiceNetworkVpcAssociationsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
+    /// <p>The ID or ARN of the service network.</p>
     pub fn service_network_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_network_identifier(input.into());
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
+    /// <p>The ID or ARN of the service network.</p>
     pub fn set_service_network_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_network_identifier(input);
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
+    /// <p>The ID or ARN of the service network.</p>
     pub fn get_service_network_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_service_network_identifier()
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the VPC.</p>
+    /// <p>The ID or ARN of the VPC.</p>
     pub fn vpc_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_identifier(input.into());
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the VPC.</p>
+    /// <p>The ID or ARN of the VPC.</p>
     pub fn set_vpc_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpc_identifier(input);
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the VPC.</p>
+    /// <p>The ID or ARN of the VPC.</p>
     pub fn get_vpc_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_vpc_identifier()
     }

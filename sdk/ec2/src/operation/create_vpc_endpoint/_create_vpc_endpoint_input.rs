@@ -34,6 +34,10 @@ pub struct CreateVpcEndpointInput {
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     /// <p>The subnet configurations for the endpoint.</p>
     pub subnet_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SubnetConfiguration>>,
+    /// <p>The Amazon Resource Name (ARN) of a service network that will be associated with the VPC endpoint of type service-network.</p>
+    pub service_network_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of a resource configuration that will be associated with the VPC endpoint of type resource.</p>
+    pub resource_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Region where the service is hosted. The default is the current Region.</p>
     pub service_region: ::std::option::Option<::std::string::String>,
 }
@@ -107,6 +111,14 @@ impl CreateVpcEndpointInput {
     pub fn subnet_configurations(&self) -> &[crate::types::SubnetConfiguration] {
         self.subnet_configurations.as_deref().unwrap_or_default()
     }
+    /// <p>The Amazon Resource Name (ARN) of a service network that will be associated with the VPC endpoint of type service-network.</p>
+    pub fn service_network_arn(&self) -> ::std::option::Option<&str> {
+        self.service_network_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of a resource configuration that will be associated with the VPC endpoint of type resource.</p>
+    pub fn resource_configuration_arn(&self) -> ::std::option::Option<&str> {
+        self.resource_configuration_arn.as_deref()
+    }
     /// <p>The Region where the service is hosted. The default is the current Region.</p>
     pub fn service_region(&self) -> ::std::option::Option<&str> {
         self.service_region.as_deref()
@@ -137,6 +149,8 @@ pub struct CreateVpcEndpointInputBuilder {
     pub(crate) private_dns_enabled: ::std::option::Option<bool>,
     pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) subnet_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SubnetConfiguration>>,
+    pub(crate) service_network_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_configuration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) service_region: ::std::option::Option<::std::string::String>,
 }
 impl CreateVpcEndpointInputBuilder {
@@ -187,7 +201,6 @@ impl CreateVpcEndpointInputBuilder {
         &self.vpc_id
     }
     /// <p>The name of the endpoint service.</p>
-    /// This field is required.
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
         self
@@ -377,6 +390,34 @@ impl CreateVpcEndpointInputBuilder {
     pub fn get_subnet_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubnetConfiguration>> {
         &self.subnet_configurations
     }
+    /// <p>The Amazon Resource Name (ARN) of a service network that will be associated with the VPC endpoint of type service-network.</p>
+    pub fn service_network_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.service_network_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a service network that will be associated with the VPC endpoint of type service-network.</p>
+    pub fn set_service_network_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.service_network_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a service network that will be associated with the VPC endpoint of type service-network.</p>
+    pub fn get_service_network_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_network_arn
+    }
+    /// <p>The Amazon Resource Name (ARN) of a resource configuration that will be associated with the VPC endpoint of type resource.</p>
+    pub fn resource_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_configuration_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a resource configuration that will be associated with the VPC endpoint of type resource.</p>
+    pub fn set_resource_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_configuration_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a resource configuration that will be associated with the VPC endpoint of type resource.</p>
+    pub fn get_resource_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_configuration_arn
+    }
     /// <p>The Region where the service is hosted. The default is the current Region.</p>
     pub fn service_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_region = ::std::option::Option::Some(input.into());
@@ -410,6 +451,8 @@ impl CreateVpcEndpointInputBuilder {
             private_dns_enabled: self.private_dns_enabled,
             tag_specifications: self.tag_specifications,
             subnet_configurations: self.subnet_configurations,
+            service_network_arn: self.service_network_arn,
+            resource_configuration_arn: self.resource_configuration_arn,
             service_region: self.service_region,
         })
     }

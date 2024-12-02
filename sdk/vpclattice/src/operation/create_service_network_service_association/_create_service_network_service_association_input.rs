@@ -5,9 +5,9 @@
 pub struct CreateServiceNetworkServiceAssociationInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    /// <p>The ID or ARN of the service.</p>
     pub service_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The ID or Amazon Resource Name (ARN) of the service network. You must use the ARN if the resources specified in the operation are in different accounts.</p>
+    /// <p>The ID or ARN of the service network. You must use an ARN if the resources are in different accounts.</p>
     pub service_network_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The tags for the association.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -17,11 +17,11 @@ impl CreateServiceNetworkServiceAssociationInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    /// <p>The ID or ARN of the service.</p>
     pub fn service_identifier(&self) -> ::std::option::Option<&str> {
         self.service_identifier.as_deref()
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service network. You must use the ARN if the resources specified in the operation are in different accounts.</p>
+    /// <p>The ID or ARN of the service network. You must use an ARN if the resources are in different accounts.</p>
     pub fn service_network_identifier(&self) -> ::std::option::Option<&str> {
         self.service_network_identifier.as_deref()
     }
@@ -61,33 +61,33 @@ impl CreateServiceNetworkServiceAssociationInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    /// <p>The ID or ARN of the service.</p>
     /// This field is required.
     pub fn service_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    /// <p>The ID or ARN of the service.</p>
     pub fn set_service_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_identifier = input;
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    /// <p>The ID or ARN of the service.</p>
     pub fn get_service_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_identifier
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service network. You must use the ARN if the resources specified in the operation are in different accounts.</p>
+    /// <p>The ID or ARN of the service network. You must use an ARN if the resources are in different accounts.</p>
     /// This field is required.
     pub fn service_network_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_network_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service network. You must use the ARN if the resources specified in the operation are in different accounts.</p>
+    /// <p>The ID or ARN of the service network. You must use an ARN if the resources are in different accounts.</p>
     pub fn set_service_network_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_network_identifier = input;
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service network. You must use the ARN if the resources specified in the operation are in different accounts.</p>
+    /// <p>The ID or ARN of the service network. You must use an ARN if the resources are in different accounts.</p>
     pub fn get_service_network_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_network_identifier
     }

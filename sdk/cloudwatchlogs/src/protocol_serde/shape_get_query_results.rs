@@ -104,6 +104,13 @@ pub(crate) fn de_get_query_results(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "queryLanguage" => {
+                    builder = builder.set_query_language(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::QueryLanguage::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "results" => {
                     builder = builder.set_results(crate::protocol_serde::shape_query_results::de_query_results(tokens)?);
                 }

@@ -21,29 +21,35 @@ pub fn ser_create_data_source_input_input(
         crate::protocol_serde::shape_document_enrichment_configuration::ser_document_enrichment_configuration(&mut object_6, var_5)?;
         object_6.finish();
     }
-    if let Some(var_7) = &input.role_arn {
-        object.key("roleArn").string(var_7.as_str());
+    if let Some(var_7) = &input.media_extraction_configuration {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("mediaExtractionConfiguration").start_object();
+        crate::protocol_serde::shape_media_extraction_configuration::ser_media_extraction_configuration(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_8) = &input.sync_schedule {
-        object.key("syncSchedule").string(var_8.as_str());
+    if let Some(var_9) = &input.role_arn {
+        object.key("roleArn").string(var_9.as_str());
     }
-    if let Some(var_9) = &input.tags {
-        let mut array_10 = object.key("tags").start_array();
-        for item_11 in var_9 {
+    if let Some(var_10) = &input.sync_schedule {
+        object.key("syncSchedule").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.tags {
+        let mut array_12 = object.key("tags").start_array();
+        for item_13 in var_11 {
             {
                 #[allow(unused_mut)]
-                let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_12, item_11)?;
-                object_12.finish();
+                let mut object_14 = array_12.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_14, item_13)?;
+                object_14.finish();
             }
         }
-        array_10.finish();
+        array_12.finish();
     }
-    if let Some(var_13) = &input.vpc_configuration {
+    if let Some(var_15) = &input.vpc_configuration {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("vpcConfiguration").start_object();
-        crate::protocol_serde::shape_data_source_vpc_configuration::ser_data_source_vpc_configuration(&mut object_14, var_13)?;
-        object_14.finish();
+        let mut object_16 = object.key("vpcConfiguration").start_object();
+        crate::protocol_serde::shape_data_source_vpc_configuration::ser_data_source_vpc_configuration(&mut object_16, var_15)?;
+        object_16.finish();
     }
     Ok(())
 }

@@ -115,6 +115,20 @@ where
                         "Shards" => {
                             builder = builder.set_shards(crate::protocol_serde::shape_shard_details::de_shard_details(tokens)?);
                         }
+                        "MultiRegionParameterGroupName" => {
+                            builder = builder.set_multi_region_parameter_group_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "MultiRegionClusterName" => {
+                            builder = builder.set_multi_region_cluster_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

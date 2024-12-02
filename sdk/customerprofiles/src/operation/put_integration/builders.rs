@@ -225,4 +225,23 @@ impl PutIntegrationFluentBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role_arn()
     }
+    ///
+    /// Appends an item to `EventTriggerNames`.
+    ///
+    /// To override the contents of this collection use [`set_event_trigger_names`](Self::set_event_trigger_names).
+    ///
+    /// <p>A list of unique names for active event triggers associated with the integration.</p>
+    pub fn event_trigger_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.event_trigger_names(input.into());
+        self
+    }
+    /// <p>A list of unique names for active event triggers associated with the integration.</p>
+    pub fn set_event_trigger_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_event_trigger_names(input);
+        self
+    }
+    /// <p>A list of unique names for active event triggers associated with the integration.</p>
+    pub fn get_event_trigger_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_event_trigger_names()
+    }
 }

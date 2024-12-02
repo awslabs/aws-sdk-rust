@@ -9,6 +9,8 @@ pub struct RetrieveInput {
     pub retrieval_query: ::std::option::Option<crate::types::KnowledgeBaseQuery>,
     /// <p>Contains configurations for the knowledge base query and retrieval process. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query configurations</a>.</p>
     pub retrieval_configuration: ::std::option::Option<crate::types::KnowledgeBaseRetrievalConfiguration>,
+    /// <p>Guardrail settings.</p>
+    pub guardrail_configuration: ::std::option::Option<crate::types::GuardrailConfiguration>,
     /// <p>If there are more results than can fit in the response, the response returns a <code>nextToken</code>. Use this token in the <code>nextToken</code> field of another request to retrieve the next batch of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
@@ -25,6 +27,10 @@ impl RetrieveInput {
     pub fn retrieval_configuration(&self) -> ::std::option::Option<&crate::types::KnowledgeBaseRetrievalConfiguration> {
         self.retrieval_configuration.as_ref()
     }
+    /// <p>Guardrail settings.</p>
+    pub fn guardrail_configuration(&self) -> ::std::option::Option<&crate::types::GuardrailConfiguration> {
+        self.guardrail_configuration.as_ref()
+    }
     /// <p>If there are more results than can fit in the response, the response returns a <code>nextToken</code>. Use this token in the <code>nextToken</code> field of another request to retrieve the next batch of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
@@ -36,6 +42,7 @@ impl ::std::fmt::Debug for RetrieveInput {
         formatter.field("knowledge_base_id", &self.knowledge_base_id);
         formatter.field("retrieval_query", &"*** Sensitive Data Redacted ***");
         formatter.field("retrieval_configuration", &self.retrieval_configuration);
+        formatter.field("guardrail_configuration", &self.guardrail_configuration);
         formatter.field("next_token", &self.next_token);
         formatter.finish()
     }
@@ -54,6 +61,7 @@ pub struct RetrieveInputBuilder {
     pub(crate) knowledge_base_id: ::std::option::Option<::std::string::String>,
     pub(crate) retrieval_query: ::std::option::Option<crate::types::KnowledgeBaseQuery>,
     pub(crate) retrieval_configuration: ::std::option::Option<crate::types::KnowledgeBaseRetrievalConfiguration>,
+    pub(crate) guardrail_configuration: ::std::option::Option<crate::types::GuardrailConfiguration>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl RetrieveInputBuilder {
@@ -101,6 +109,20 @@ impl RetrieveInputBuilder {
     pub fn get_retrieval_configuration(&self) -> &::std::option::Option<crate::types::KnowledgeBaseRetrievalConfiguration> {
         &self.retrieval_configuration
     }
+    /// <p>Guardrail settings.</p>
+    pub fn guardrail_configuration(mut self, input: crate::types::GuardrailConfiguration) -> Self {
+        self.guardrail_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Guardrail settings.</p>
+    pub fn set_guardrail_configuration(mut self, input: ::std::option::Option<crate::types::GuardrailConfiguration>) -> Self {
+        self.guardrail_configuration = input;
+        self
+    }
+    /// <p>Guardrail settings.</p>
+    pub fn get_guardrail_configuration(&self) -> &::std::option::Option<crate::types::GuardrailConfiguration> {
+        &self.guardrail_configuration
+    }
     /// <p>If there are more results than can fit in the response, the response returns a <code>nextToken</code>. Use this token in the <code>nextToken</code> field of another request to retrieve the next batch of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -121,6 +143,7 @@ impl RetrieveInputBuilder {
             knowledge_base_id: self.knowledge_base_id,
             retrieval_query: self.retrieval_query,
             retrieval_configuration: self.retrieval_configuration,
+            guardrail_configuration: self.guardrail_configuration,
             next_token: self.next_token,
         })
     }
@@ -131,6 +154,7 @@ impl ::std::fmt::Debug for RetrieveInputBuilder {
         formatter.field("knowledge_base_id", &self.knowledge_base_id);
         formatter.field("retrieval_query", &"*** Sensitive Data Redacted ***");
         formatter.field("retrieval_configuration", &self.retrieval_configuration);
+        formatter.field("guardrail_configuration", &self.guardrail_configuration);
         formatter.field("next_token", &self.next_token);
         formatter.finish()
     }

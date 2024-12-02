@@ -48,6 +48,9 @@ pub struct Image {
     /// <p><code>lastLaunchedTime</code> data is available starting April 2017.</p>
     /// </note>
     pub last_launched_time: ::std::option::Option<::std::string::String>,
+    /// <p>If <code>true</code>, the AMI satisfies the criteria for Allowed AMIs and can be discovered and used in the account. If <code>false</code> and Allowed AMIs is set to <code>enabled</code>, the AMI can't be discovered or used in the account. If <code>false</code> and Allowed AMIs is set to <code>audit-mode</code>, the AMI can be discovered and used in the account.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-allowed-amis.html">Control the discovery and use of AMIs in Amazon EC2 with Allowed AMIs</a> in <i>Amazon EC2 User Guide</i>.</p>
+    pub image_allowed: ::std::option::Option<bool>,
     /// <p>The ID of the source AMI from which the AMI was created.</p>
     /// <p>The ID only appears if the AMI was created using <code>CreateImage</code>, <code>CopyImage</code>, or <code>CreateRestoreImageTask</code>. The ID does not appear if the AMI was created using any other API. For some older AMIs, the ID might not be available. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/identify-source-ami-used-to-create-new-ami.html">Identify the source AMI used to create a new AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub source_image_id: ::std::option::Option<::std::string::String>,
@@ -170,6 +173,11 @@ impl Image {
     pub fn last_launched_time(&self) -> ::std::option::Option<&str> {
         self.last_launched_time.as_deref()
     }
+    /// <p>If <code>true</code>, the AMI satisfies the criteria for Allowed AMIs and can be discovered and used in the account. If <code>false</code> and Allowed AMIs is set to <code>enabled</code>, the AMI can't be discovered or used in the account. If <code>false</code> and Allowed AMIs is set to <code>audit-mode</code>, the AMI can be discovered and used in the account.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-allowed-amis.html">Control the discovery and use of AMIs in Amazon EC2 with Allowed AMIs</a> in <i>Amazon EC2 User Guide</i>.</p>
+    pub fn image_allowed(&self) -> ::std::option::Option<bool> {
+        self.image_allowed
+    }
     /// <p>The ID of the source AMI from which the AMI was created.</p>
     /// <p>The ID only appears if the AMI was created using <code>CreateImage</code>, <code>CopyImage</code>, or <code>CreateRestoreImageTask</code>. The ID does not appear if the AMI was created using any other API. For some older AMIs, the ID might not be available. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/identify-source-ami-used-to-create-new-ami.html">Identify the source AMI used to create a new AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn source_image_id(&self) -> ::std::option::Option<&str> {
@@ -263,6 +271,7 @@ pub struct ImageBuilder {
     pub(crate) source_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) deregistration_protection: ::std::option::Option<::std::string::String>,
     pub(crate) last_launched_time: ::std::option::Option<::std::string::String>,
+    pub(crate) image_allowed: ::std::option::Option<bool>,
     pub(crate) source_image_id: ::std::option::Option<::std::string::String>,
     pub(crate) source_image_region: ::std::option::Option<::std::string::String>,
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
@@ -591,6 +600,23 @@ impl ImageBuilder {
     pub fn get_last_launched_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_launched_time
     }
+    /// <p>If <code>true</code>, the AMI satisfies the criteria for Allowed AMIs and can be discovered and used in the account. If <code>false</code> and Allowed AMIs is set to <code>enabled</code>, the AMI can't be discovered or used in the account. If <code>false</code> and Allowed AMIs is set to <code>audit-mode</code>, the AMI can be discovered and used in the account.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-allowed-amis.html">Control the discovery and use of AMIs in Amazon EC2 with Allowed AMIs</a> in <i>Amazon EC2 User Guide</i>.</p>
+    pub fn image_allowed(mut self, input: bool) -> Self {
+        self.image_allowed = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If <code>true</code>, the AMI satisfies the criteria for Allowed AMIs and can be discovered and used in the account. If <code>false</code> and Allowed AMIs is set to <code>enabled</code>, the AMI can't be discovered or used in the account. If <code>false</code> and Allowed AMIs is set to <code>audit-mode</code>, the AMI can be discovered and used in the account.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-allowed-amis.html">Control the discovery and use of AMIs in Amazon EC2 with Allowed AMIs</a> in <i>Amazon EC2 User Guide</i>.</p>
+    pub fn set_image_allowed(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.image_allowed = input;
+        self
+    }
+    /// <p>If <code>true</code>, the AMI satisfies the criteria for Allowed AMIs and can be discovered and used in the account. If <code>false</code> and Allowed AMIs is set to <code>enabled</code>, the AMI can't be discovered or used in the account. If <code>false</code> and Allowed AMIs is set to <code>audit-mode</code>, the AMI can be discovered and used in the account.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-allowed-amis.html">Control the discovery and use of AMIs in Amazon EC2 with Allowed AMIs</a> in <i>Amazon EC2 User Guide</i>.</p>
+    pub fn get_image_allowed(&self) -> &::std::option::Option<bool> {
+        &self.image_allowed
+    }
     /// <p>The ID of the source AMI from which the AMI was created.</p>
     /// <p>The ID only appears if the AMI was created using <code>CreateImage</code>, <code>CopyImage</code>, or <code>CreateRestoreImageTask</code>. The ID does not appear if the AMI was created using any other API. For some older AMIs, the ID might not be available. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/identify-source-ami-used-to-create-new-ami.html">Identify the source AMI used to create a new AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn source_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -823,6 +849,7 @@ impl ImageBuilder {
             source_instance_id: self.source_instance_id,
             deregistration_protection: self.deregistration_protection,
             last_launched_time: self.last_launched_time,
+            image_allowed: self.image_allowed,
             source_image_id: self.source_image_id,
             source_image_region: self.source_image_region,
             image_id: self.image_id,

@@ -148,6 +148,9 @@ pub(crate) fn de_get_integration(
                             .transpose()?,
                     );
                 }
+                "EventTriggerNames" => {
+                    builder = builder.set_event_trigger_names(crate::protocol_serde::shape_event_trigger_names::de_event_trigger_names(tokens)?);
+                }
                 "IsUnstructured" => {
                     builder = builder.set_is_unstructured(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }

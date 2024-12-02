@@ -270,4 +270,24 @@ impl CreateWebExperienceFluentBuilder {
     pub fn get_identity_provider_configuration(&self) -> &::std::option::Option<crate::types::IdentityProviderConfiguration> {
         self.inner.get_identity_provider_configuration()
     }
+    /// <p>The browser extension configuration for an Amazon Q Business web experience.</p><note>
+    /// <p>For Amazon Q Business application using external OIDC-compliant identity providers (IdPs). The IdP administrator must add the browser extension sign-in redirect URLs to the IdP application. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/browser-extensions.html">Configure external OIDC identity provider for your browser extensions.</a>.</p>
+    /// </note>
+    pub fn browser_extension_configuration(mut self, input: crate::types::BrowserExtensionConfiguration) -> Self {
+        self.inner = self.inner.browser_extension_configuration(input);
+        self
+    }
+    /// <p>The browser extension configuration for an Amazon Q Business web experience.</p><note>
+    /// <p>For Amazon Q Business application using external OIDC-compliant identity providers (IdPs). The IdP administrator must add the browser extension sign-in redirect URLs to the IdP application. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/browser-extensions.html">Configure external OIDC identity provider for your browser extensions.</a>.</p>
+    /// </note>
+    pub fn set_browser_extension_configuration(mut self, input: ::std::option::Option<crate::types::BrowserExtensionConfiguration>) -> Self {
+        self.inner = self.inner.set_browser_extension_configuration(input);
+        self
+    }
+    /// <p>The browser extension configuration for an Amazon Q Business web experience.</p><note>
+    /// <p>For Amazon Q Business application using external OIDC-compliant identity providers (IdPs). The IdP administrator must add the browser extension sign-in redirect URLs to the IdP application. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/browser-extensions.html">Configure external OIDC identity provider for your browser extensions.</a>.</p>
+    /// </note>
+    pub fn get_browser_extension_configuration(&self) -> &::std::option::Option<crate::types::BrowserExtensionConfiguration> {
+        self.inner.get_browser_extension_configuration()
+    }
 }

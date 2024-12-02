@@ -23,6 +23,8 @@ pub use crate::types::_db_instance_role::DbInstanceRole;
 
 pub use crate::types::_processor_feature::ProcessorFeature;
 
+pub use crate::types::_database_insights_mode::DatabaseInsightsMode;
+
 pub use crate::types::_domain_membership::DomainMembership;
 
 pub use crate::types::_db_instance_status_info::DbInstanceStatusInfo;
@@ -344,6 +346,8 @@ mod _context_attribute;
 mod _custom_db_engine_version_ami;
 
 mod _custom_engine_version_status;
+
+mod _database_insights_mode;
 
 mod _db_cluster;
 

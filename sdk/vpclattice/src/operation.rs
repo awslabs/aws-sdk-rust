@@ -10,6 +10,12 @@ pub mod create_access_log_subscription;
 /// Types for the `CreateListener` operation.
 pub mod create_listener;
 
+/// Types for the `CreateResourceConfiguration` operation.
+pub mod create_resource_configuration;
+
+/// Types for the `CreateResourceGateway` operation.
+pub mod create_resource_gateway;
+
 /// Types for the `CreateRule` operation.
 pub mod create_rule;
 
@@ -18,6 +24,9 @@ pub mod create_service;
 
 /// Types for the `CreateServiceNetwork` operation.
 pub mod create_service_network;
+
+/// Types for the `CreateServiceNetworkResourceAssociation` operation.
+pub mod create_service_network_resource_association;
 
 /// Types for the `CreateServiceNetworkServiceAssociation` operation.
 pub mod create_service_network_service_association;
@@ -37,6 +46,15 @@ pub mod delete_auth_policy;
 /// Types for the `DeleteListener` operation.
 pub mod delete_listener;
 
+/// Types for the `DeleteResourceConfiguration` operation.
+pub mod delete_resource_configuration;
+
+/// Types for the `DeleteResourceEndpointAssociation` operation.
+pub mod delete_resource_endpoint_association;
+
+/// Types for the `DeleteResourceGateway` operation.
+pub mod delete_resource_gateway;
+
 /// Types for the `DeleteResourcePolicy` operation.
 pub mod delete_resource_policy;
 
@@ -48,6 +66,9 @@ pub mod delete_service;
 
 /// Types for the `DeleteServiceNetwork` operation.
 pub mod delete_service_network;
+
+/// Types for the `DeleteServiceNetworkResourceAssociation` operation.
+pub mod delete_service_network_resource_association;
 
 /// Types for the `DeleteServiceNetworkServiceAssociation` operation.
 pub mod delete_service_network_service_association;
@@ -70,6 +91,12 @@ pub mod get_auth_policy;
 /// Types for the `GetListener` operation.
 pub mod get_listener;
 
+/// Types for the `GetResourceConfiguration` operation.
+pub mod get_resource_configuration;
+
+/// Types for the `GetResourceGateway` operation.
+pub mod get_resource_gateway;
+
 /// Types for the `GetResourcePolicy` operation.
 pub mod get_resource_policy;
 
@@ -81,6 +108,9 @@ pub mod get_service;
 
 /// Types for the `GetServiceNetwork` operation.
 pub mod get_service_network;
+
+/// Types for the `GetServiceNetworkResourceAssociation` operation.
+pub mod get_service_network_resource_association;
 
 /// Types for the `GetServiceNetworkServiceAssociation` operation.
 pub mod get_service_network_service_association;
@@ -97,14 +127,29 @@ pub mod list_access_log_subscriptions;
 /// Types for the `ListListeners` operation.
 pub mod list_listeners;
 
+/// Types for the `ListResourceConfigurations` operation.
+pub mod list_resource_configurations;
+
+/// Types for the `ListResourceEndpointAssociations` operation.
+pub mod list_resource_endpoint_associations;
+
+/// Types for the `ListResourceGateways` operation.
+pub mod list_resource_gateways;
+
 /// Types for the `ListRules` operation.
 pub mod list_rules;
+
+/// Types for the `ListServiceNetworkResourceAssociations` operation.
+pub mod list_service_network_resource_associations;
 
 /// Types for the `ListServiceNetworkServiceAssociations` operation.
 pub mod list_service_network_service_associations;
 
 /// Types for the `ListServiceNetworkVpcAssociations` operation.
 pub mod list_service_network_vpc_associations;
+
+/// Types for the `ListServiceNetworkVpcEndpointAssociations` operation.
+pub mod list_service_network_vpc_endpoint_associations;
 
 /// Types for the `ListServiceNetworks` operation.
 pub mod list_service_networks;
@@ -141,6 +186,12 @@ pub mod update_access_log_subscription;
 
 /// Types for the `UpdateListener` operation.
 pub mod update_listener;
+
+/// Types for the `UpdateResourceConfiguration` operation.
+pub mod update_resource_configuration;
+
+/// Types for the `UpdateResourceGateway` operation.
+pub mod update_resource_gateway;
 
 /// Types for the `UpdateRule` operation.
 pub mod update_rule;

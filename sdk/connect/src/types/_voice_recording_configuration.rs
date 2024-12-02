@@ -6,11 +6,17 @@
 pub struct VoiceRecordingConfiguration {
     /// <p>Identifies which track is being recorded.</p>
     pub voice_recording_track: ::std::option::Option<crate::types::VoiceRecordingTrack>,
+    /// <p>Identifies which IVR track is being recorded.</p>
+    pub ivr_recording_track: ::std::option::Option<crate::types::IvrRecordingTrack>,
 }
 impl VoiceRecordingConfiguration {
     /// <p>Identifies which track is being recorded.</p>
     pub fn voice_recording_track(&self) -> ::std::option::Option<&crate::types::VoiceRecordingTrack> {
         self.voice_recording_track.as_ref()
+    }
+    /// <p>Identifies which IVR track is being recorded.</p>
+    pub fn ivr_recording_track(&self) -> ::std::option::Option<&crate::types::IvrRecordingTrack> {
+        self.ivr_recording_track.as_ref()
     }
 }
 impl VoiceRecordingConfiguration {
@@ -25,6 +31,7 @@ impl VoiceRecordingConfiguration {
 #[non_exhaustive]
 pub struct VoiceRecordingConfigurationBuilder {
     pub(crate) voice_recording_track: ::std::option::Option<crate::types::VoiceRecordingTrack>,
+    pub(crate) ivr_recording_track: ::std::option::Option<crate::types::IvrRecordingTrack>,
 }
 impl VoiceRecordingConfigurationBuilder {
     /// <p>Identifies which track is being recorded.</p>
@@ -41,10 +48,25 @@ impl VoiceRecordingConfigurationBuilder {
     pub fn get_voice_recording_track(&self) -> &::std::option::Option<crate::types::VoiceRecordingTrack> {
         &self.voice_recording_track
     }
+    /// <p>Identifies which IVR track is being recorded.</p>
+    pub fn ivr_recording_track(mut self, input: crate::types::IvrRecordingTrack) -> Self {
+        self.ivr_recording_track = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Identifies which IVR track is being recorded.</p>
+    pub fn set_ivr_recording_track(mut self, input: ::std::option::Option<crate::types::IvrRecordingTrack>) -> Self {
+        self.ivr_recording_track = input;
+        self
+    }
+    /// <p>Identifies which IVR track is being recorded.</p>
+    pub fn get_ivr_recording_track(&self) -> &::std::option::Option<crate::types::IvrRecordingTrack> {
+        &self.ivr_recording_track
+    }
     /// Consumes the builder and constructs a [`VoiceRecordingConfiguration`](crate::types::VoiceRecordingConfiguration).
     pub fn build(self) -> crate::types::VoiceRecordingConfiguration {
         crate::types::VoiceRecordingConfiguration {
             voice_recording_track: self.voice_recording_track,
+            ivr_recording_track: self.ivr_recording_track,
         }
     }
 }

@@ -338,6 +338,34 @@ impl CreateVpcEndpointFluentBuilder {
     pub fn get_subnet_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubnetConfiguration>> {
         self.inner.get_subnet_configurations()
     }
+    /// <p>The Amazon Resource Name (ARN) of a service network that will be associated with the VPC endpoint of type service-network.</p>
+    pub fn service_network_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.service_network_arn(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a service network that will be associated with the VPC endpoint of type service-network.</p>
+    pub fn set_service_network_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_service_network_arn(input);
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a service network that will be associated with the VPC endpoint of type service-network.</p>
+    pub fn get_service_network_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_network_arn()
+    }
+    /// <p>The Amazon Resource Name (ARN) of a resource configuration that will be associated with the VPC endpoint of type resource.</p>
+    pub fn resource_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.resource_configuration_arn(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a resource configuration that will be associated with the VPC endpoint of type resource.</p>
+    pub fn set_resource_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_resource_configuration_arn(input);
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a resource configuration that will be associated with the VPC endpoint of type resource.</p>
+    pub fn get_resource_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_configuration_arn()
+    }
     /// <p>The Region where the service is hosted. The default is the current Region.</p>
     pub fn service_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_region(input.into());

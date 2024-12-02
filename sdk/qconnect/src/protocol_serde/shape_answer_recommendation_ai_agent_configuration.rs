@@ -12,17 +12,20 @@ pub fn ser_answer_recommendation_ai_agent_configuration(
     if let Some(var_3) = &input.answer_generation_ai_prompt_id {
         object.key("answerGenerationAIPromptId").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.association_configurations {
-        let mut array_5 = object.key("associationConfigurations").start_array();
-        for item_6 in var_4 {
+    if let Some(var_4) = &input.answer_generation_ai_guardrail_id {
+        object.key("answerGenerationAIGuardrailId").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.association_configurations {
+        let mut array_6 = object.key("associationConfigurations").start_array();
+        for item_7 in var_5 {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_association_configuration::ser_association_configuration(&mut object_7, item_6)?;
-                object_7.finish();
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_association_configuration::ser_association_configuration(&mut object_8, item_7)?;
+                object_8.finish();
             }
         }
-        array_5.finish();
+        array_6.finish();
     }
     Ok(())
 }
@@ -58,6 +61,13 @@ where
                         }
                         "answerGenerationAIPromptId" => {
                             builder = builder.set_answer_generation_ai_prompt_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "answerGenerationAIGuardrailId" => {
+                            builder = builder.set_answer_generation_ai_guardrail_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

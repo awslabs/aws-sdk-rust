@@ -107,6 +107,8 @@ impl crate::operation::update_file_system::builders::UpdateFileSystemInputBuilde
 /// <li>
 /// <p><code>DiskIopsConfiguration</code></p></li>
 /// <li>
+/// <p><code>ReadCacheConfiguration</code></p></li>
+/// <li>
 /// <p><code>RemoveRouteTableIds</code></p></li>
 /// <li>
 /// <p><code>StorageCapacity</code></p></li>

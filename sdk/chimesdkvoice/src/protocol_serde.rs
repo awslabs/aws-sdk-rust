@@ -61,6 +61,8 @@ pub(crate) mod shape_delete_voice_connector;
 
 pub(crate) mod shape_delete_voice_connector_emergency_calling_configuration;
 
+pub(crate) mod shape_delete_voice_connector_external_systems_configuration;
+
 pub(crate) mod shape_delete_voice_connector_group;
 
 pub(crate) mod shape_delete_voice_connector_origination;
@@ -104,6 +106,8 @@ pub(crate) mod shape_get_speaker_search_task;
 pub(crate) mod shape_get_voice_connector;
 
 pub(crate) mod shape_get_voice_connector_emergency_calling_configuration;
+
+pub(crate) mod shape_get_voice_connector_external_systems_configuration;
 
 pub(crate) mod shape_get_voice_connector_group;
 
@@ -156,6 +160,8 @@ pub(crate) mod shape_put_sip_media_application_alexa_skill_configuration;
 pub(crate) mod shape_put_sip_media_application_logging_configuration;
 
 pub(crate) mod shape_put_voice_connector_emergency_calling_configuration;
+
+pub(crate) mod shape_put_voice_connector_external_systems_configuration;
 
 pub(crate) mod shape_put_voice_connector_logging_configuration;
 
@@ -267,6 +273,8 @@ pub(crate) mod shape_put_sip_media_application_logging_configuration_input;
 
 pub(crate) mod shape_put_voice_connector_emergency_calling_configuration_input;
 
+pub(crate) mod shape_put_voice_connector_external_systems_configuration_input;
+
 pub(crate) mod shape_put_voice_connector_logging_configuration_input;
 
 pub(crate) mod shape_put_voice_connector_origination_input;
@@ -332,6 +340,8 @@ pub(crate) mod shape_credential;
 pub(crate) mod shape_e164_phone_number_list;
 
 pub(crate) mod shape_emergency_calling_configuration;
+
+pub(crate) mod shape_external_systems_configuration;
 
 pub(crate) mod shape_geo_match_params;
 
@@ -427,6 +437,8 @@ pub(crate) mod shape_candidate_address;
 
 pub(crate) mod shape_capability_list;
 
+pub(crate) mod shape_contact_center_system_type_list;
+
 pub(crate) mod shape_dnis_emergency_calling_configuration;
 
 pub(crate) mod shape_dnis_emergency_calling_configuration_list;
@@ -448,6 +460,8 @@ pub(crate) mod shape_phone_number_capabilities;
 pub(crate) mod shape_phone_number_country;
 
 pub(crate) mod shape_phone_number_error;
+
+pub(crate) mod shape_session_border_controller_type_list;
 
 pub(crate) mod shape_sip_media_application_endpoint_list;
 

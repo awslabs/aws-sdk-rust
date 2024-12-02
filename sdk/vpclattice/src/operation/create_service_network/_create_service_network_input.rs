@@ -17,6 +17,8 @@ pub struct CreateServiceNetworkInput {
     pub auth_type: ::std::option::Option<crate::types::AuthType>,
     /// <p>The tags for the service network.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>Specify if the service network should be enabled for sharing.</p>
+    pub sharing_config: ::std::option::Option<crate::types::SharingConfig>,
 }
 impl CreateServiceNetworkInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
@@ -41,6 +43,10 @@ impl CreateServiceNetworkInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>Specify if the service network should be enabled for sharing.</p>
+    pub fn sharing_config(&self) -> ::std::option::Option<&crate::types::SharingConfig> {
+        self.sharing_config.as_ref()
+    }
 }
 impl CreateServiceNetworkInput {
     /// Creates a new builder-style object to manufacture [`CreateServiceNetworkInput`](crate::operation::create_service_network::CreateServiceNetworkInput).
@@ -57,6 +63,7 @@ pub struct CreateServiceNetworkInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) auth_type: ::std::option::Option<crate::types::AuthType>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) sharing_config: ::std::option::Option<crate::types::SharingConfig>,
 }
 impl CreateServiceNetworkInputBuilder {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
@@ -140,6 +147,20 @@ impl CreateServiceNetworkInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>Specify if the service network should be enabled for sharing.</p>
+    pub fn sharing_config(mut self, input: crate::types::SharingConfig) -> Self {
+        self.sharing_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specify if the service network should be enabled for sharing.</p>
+    pub fn set_sharing_config(mut self, input: ::std::option::Option<crate::types::SharingConfig>) -> Self {
+        self.sharing_config = input;
+        self
+    }
+    /// <p>Specify if the service network should be enabled for sharing.</p>
+    pub fn get_sharing_config(&self) -> &::std::option::Option<crate::types::SharingConfig> {
+        &self.sharing_config
+    }
     /// Consumes the builder and constructs a [`CreateServiceNetworkInput`](crate::operation::create_service_network::CreateServiceNetworkInput).
     pub fn build(
         self,
@@ -150,6 +171,7 @@ impl CreateServiceNetworkInputBuilder {
             name: self.name,
             auth_type: self.auth_type,
             tags: self.tags,
+            sharing_config: self.sharing_config,
         })
     }
 }

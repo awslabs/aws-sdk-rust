@@ -154,6 +154,16 @@ pub fn de_verified_access_trust_provider(
                 builder = builder.set_sse_specification(var_12);
             }
             ,
+            s if s.matches("nativeApplicationOidcOptions") /* NativeApplicationOidcOptions com.amazonaws.ec2#VerifiedAccessTrustProvider$NativeApplicationOidcOptions */ =>  {
+                let var_13 =
+                    Some(
+                        crate::protocol_serde::shape_native_application_oidc_options::de_native_application_oidc_options(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_native_application_oidc_options(var_13);
+            }
+            ,
             _ => {}
         }
     }

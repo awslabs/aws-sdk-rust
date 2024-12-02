@@ -267,4 +267,21 @@ impl CreateVerifiedAccessTrustProviderFluentBuilder {
     pub fn get_sse_specification(&self) -> &::std::option::Option<crate::types::VerifiedAccessSseSpecificationRequest> {
         self.inner.get_sse_specification()
     }
+    /// <p>The OpenID Connect (OIDC) options.</p>
+    pub fn native_application_oidc_options(mut self, input: crate::types::CreateVerifiedAccessNativeApplicationOidcOptions) -> Self {
+        self.inner = self.inner.native_application_oidc_options(input);
+        self
+    }
+    /// <p>The OpenID Connect (OIDC) options.</p>
+    pub fn set_native_application_oidc_options(
+        mut self,
+        input: ::std::option::Option<crate::types::CreateVerifiedAccessNativeApplicationOidcOptions>,
+    ) -> Self {
+        self.inner = self.inner.set_native_application_oidc_options(input);
+        self
+    }
+    /// <p>The OpenID Connect (OIDC) options.</p>
+    pub fn get_native_application_oidc_options(&self) -> &::std::option::Option<crate::types::CreateVerifiedAccessNativeApplicationOidcOptions> {
+        self.inner.get_native_application_oidc_options()
+    }
 }

@@ -5,10 +5,10 @@
 pub struct SendChatIntegrationEventInput {
     /// <p>External identifier of chat customer participant, used in part to uniquely identify a chat. For SMS, this is the E164 phone number of the chat customer participant.</p>
     pub source_id: ::std::option::Option<::std::string::String>,
-    /// <p>Chat system identifier, used in part to uniquely identify chat. This is associated with the Amazon Connect instance and flow to be used to start chats. For SMS, this is the phone number destination of inbound SMS messages represented by an Amazon Pinpoint phone number ARN.</p>
+    /// <p>Chat system identifier, used in part to uniquely identify chat. This is associated with the Amazon Connect instance and flow to be used to start chats. For Server Migration Service, this is the phone number destination of inbound Server Migration Service messages represented by an Amazon Web Services End User Messaging phone number ARN.</p>
     pub destination_id: ::std::option::Option<::std::string::String>,
     /// <p>Classification of a channel. This is used in part to uniquely identify chat.</p>
-    /// <p>Valid value: <code>\["connect:sms"\]</code></p>
+    /// <p>Valid value: <code>\["connect:sms", connect:"WhatsApp"\]</code></p>
     pub subtype: ::std::option::Option<::std::string::String>,
     /// <p>Chat integration event payload</p>
     pub event: ::std::option::Option<crate::types::ChatEvent>,
@@ -20,12 +20,12 @@ impl SendChatIntegrationEventInput {
     pub fn source_id(&self) -> ::std::option::Option<&str> {
         self.source_id.as_deref()
     }
-    /// <p>Chat system identifier, used in part to uniquely identify chat. This is associated with the Amazon Connect instance and flow to be used to start chats. For SMS, this is the phone number destination of inbound SMS messages represented by an Amazon Pinpoint phone number ARN.</p>
+    /// <p>Chat system identifier, used in part to uniquely identify chat. This is associated with the Amazon Connect instance and flow to be used to start chats. For Server Migration Service, this is the phone number destination of inbound Server Migration Service messages represented by an Amazon Web Services End User Messaging phone number ARN.</p>
     pub fn destination_id(&self) -> ::std::option::Option<&str> {
         self.destination_id.as_deref()
     }
     /// <p>Classification of a channel. This is used in part to uniquely identify chat.</p>
-    /// <p>Valid value: <code>\["connect:sms"\]</code></p>
+    /// <p>Valid value: <code>\["connect:sms", connect:"WhatsApp"\]</code></p>
     pub fn subtype(&self) -> ::std::option::Option<&str> {
         self.subtype.as_deref()
     }
@@ -71,35 +71,35 @@ impl SendChatIntegrationEventInputBuilder {
     pub fn get_source_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_id
     }
-    /// <p>Chat system identifier, used in part to uniquely identify chat. This is associated with the Amazon Connect instance and flow to be used to start chats. For SMS, this is the phone number destination of inbound SMS messages represented by an Amazon Pinpoint phone number ARN.</p>
+    /// <p>Chat system identifier, used in part to uniquely identify chat. This is associated with the Amazon Connect instance and flow to be used to start chats. For Server Migration Service, this is the phone number destination of inbound Server Migration Service messages represented by an Amazon Web Services End User Messaging phone number ARN.</p>
     /// This field is required.
     pub fn destination_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Chat system identifier, used in part to uniquely identify chat. This is associated with the Amazon Connect instance and flow to be used to start chats. For SMS, this is the phone number destination of inbound SMS messages represented by an Amazon Pinpoint phone number ARN.</p>
+    /// <p>Chat system identifier, used in part to uniquely identify chat. This is associated with the Amazon Connect instance and flow to be used to start chats. For Server Migration Service, this is the phone number destination of inbound Server Migration Service messages represented by an Amazon Web Services End User Messaging phone number ARN.</p>
     pub fn set_destination_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_id = input;
         self
     }
-    /// <p>Chat system identifier, used in part to uniquely identify chat. This is associated with the Amazon Connect instance and flow to be used to start chats. For SMS, this is the phone number destination of inbound SMS messages represented by an Amazon Pinpoint phone number ARN.</p>
+    /// <p>Chat system identifier, used in part to uniquely identify chat. This is associated with the Amazon Connect instance and flow to be used to start chats. For Server Migration Service, this is the phone number destination of inbound Server Migration Service messages represented by an Amazon Web Services End User Messaging phone number ARN.</p>
     pub fn get_destination_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_id
     }
     /// <p>Classification of a channel. This is used in part to uniquely identify chat.</p>
-    /// <p>Valid value: <code>\["connect:sms"\]</code></p>
+    /// <p>Valid value: <code>\["connect:sms", connect:"WhatsApp"\]</code></p>
     pub fn subtype(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subtype = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Classification of a channel. This is used in part to uniquely identify chat.</p>
-    /// <p>Valid value: <code>\["connect:sms"\]</code></p>
+    /// <p>Valid value: <code>\["connect:sms", connect:"WhatsApp"\]</code></p>
     pub fn set_subtype(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subtype = input;
         self
     }
     /// <p>Classification of a channel. This is used in part to uniquely identify chat.</p>
-    /// <p>Valid value: <code>\["connect:sms"\]</code></p>
+    /// <p>Valid value: <code>\["connect:sms", connect:"WhatsApp"\]</code></p>
     pub fn get_subtype(&self) -> &::std::option::Option<::std::string::String> {
         &self.subtype
     }

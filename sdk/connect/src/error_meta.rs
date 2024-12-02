@@ -7973,6 +7973,8 @@ where
 impl From<crate::operation::update_contact::UpdateContactError> for Error {
     fn from(err: crate::operation::update_contact::UpdateContactError) -> Self {
         match err {
+            crate::operation::update_contact::UpdateContactError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_contact::UpdateContactError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_contact::UpdateContactError::InternalServiceException(inner) => Error::InternalServiceException(inner),
             crate::operation::update_contact::UpdateContactError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::update_contact::UpdateContactError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),

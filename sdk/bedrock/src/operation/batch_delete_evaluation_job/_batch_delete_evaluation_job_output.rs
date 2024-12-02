@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteEvaluationJobOutput {
-    /// <p>A JSON object containing the HTTP status codes and the ARNs of model evaluation jobs that failed to be deleted.</p>
+    /// <p>A JSON object containing the HTTP status codes and the ARNs of evaluation jobs that failed to be deleted.</p>
     pub errors: ::std::vec::Vec<crate::types::BatchDeleteEvaluationJobError>,
-    /// <p>The list of model evaluation jobs to be deleted.</p>
+    /// <p>The list of evaluation jobs for deletion.</p>
     pub evaluation_jobs: ::std::vec::Vec<crate::types::BatchDeleteEvaluationJobItem>,
     _request_id: Option<String>,
 }
 impl BatchDeleteEvaluationJobOutput {
-    /// <p>A JSON object containing the HTTP status codes and the ARNs of model evaluation jobs that failed to be deleted.</p>
+    /// <p>A JSON object containing the HTTP status codes and the ARNs of evaluation jobs that failed to be deleted.</p>
     pub fn errors(&self) -> &[crate::types::BatchDeleteEvaluationJobError] {
         use std::ops::Deref;
         self.errors.deref()
     }
-    /// <p>The list of model evaluation jobs to be deleted.</p>
+    /// <p>The list of evaluation jobs for deletion.</p>
     pub fn evaluation_jobs(&self) -> &[crate::types::BatchDeleteEvaluationJobItem] {
         use std::ops::Deref;
         self.evaluation_jobs.deref()
@@ -46,19 +46,19 @@ impl BatchDeleteEvaluationJobOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
     ///
-    /// <p>A JSON object containing the HTTP status codes and the ARNs of model evaluation jobs that failed to be deleted.</p>
+    /// <p>A JSON object containing the HTTP status codes and the ARNs of evaluation jobs that failed to be deleted.</p>
     pub fn errors(mut self, input: crate::types::BatchDeleteEvaluationJobError) -> Self {
         let mut v = self.errors.unwrap_or_default();
         v.push(input);
         self.errors = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A JSON object containing the HTTP status codes and the ARNs of model evaluation jobs that failed to be deleted.</p>
+    /// <p>A JSON object containing the HTTP status codes and the ARNs of evaluation jobs that failed to be deleted.</p>
     pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteEvaluationJobError>>) -> Self {
         self.errors = input;
         self
     }
-    /// <p>A JSON object containing the HTTP status codes and the ARNs of model evaluation jobs that failed to be deleted.</p>
+    /// <p>A JSON object containing the HTTP status codes and the ARNs of evaluation jobs that failed to be deleted.</p>
     pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteEvaluationJobError>> {
         &self.errors
     }
@@ -66,19 +66,19 @@ impl BatchDeleteEvaluationJobOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_evaluation_jobs`](Self::set_evaluation_jobs).
     ///
-    /// <p>The list of model evaluation jobs to be deleted.</p>
+    /// <p>The list of evaluation jobs for deletion.</p>
     pub fn evaluation_jobs(mut self, input: crate::types::BatchDeleteEvaluationJobItem) -> Self {
         let mut v = self.evaluation_jobs.unwrap_or_default();
         v.push(input);
         self.evaluation_jobs = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of model evaluation jobs to be deleted.</p>
+    /// <p>The list of evaluation jobs for deletion.</p>
     pub fn set_evaluation_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteEvaluationJobItem>>) -> Self {
         self.evaluation_jobs = input;
         self
     }
-    /// <p>The list of model evaluation jobs to be deleted.</p>
+    /// <p>The list of evaluation jobs for deletion.</p>
     pub fn get_evaluation_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteEvaluationJobItem>> {
         &self.evaluation_jobs
     }

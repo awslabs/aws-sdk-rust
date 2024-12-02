@@ -36,5 +36,11 @@ pub fn ser_update_connection_auth_request_parameters(
         crate::protocol_serde::shape_connection_http_parameters::ser_connection_http_parameters(&mut object_8, var_7)?;
         object_8.finish();
     }
+    if let Some(var_9) = &input.connectivity_parameters {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("ConnectivityParameters").start_object();
+        crate::protocol_serde::shape_connectivity_resource_parameters::ser_connectivity_resource_parameters(&mut object_10, var_9)?;
+        object_10.finish();
+    }
     Ok(())
 }

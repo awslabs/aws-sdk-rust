@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`subnet_ids(impl Into<String>)`](crate::operation::create_subnet_group::builders::CreateSubnetGroupFluentBuilder::subnet_ids) / [`set_subnet_ids(Option<Vec::<String>>)`](crate::operation::create_subnet_group::builders::CreateSubnetGroupFluentBuilder::set_subnet_ids):<br>required: **true**<br><p>A list of VPC subnet IDs for the subnet group.</p><br>
     ///   - [`tags(Tag)`](crate::operation::create_subnet_group::builders::CreateSubnetGroupFluentBuilder::tags) / [`set_tags(Option<Vec::<Tag>>)`](crate::operation::create_subnet_group::builders::CreateSubnetGroupFluentBuilder::set_tags):<br>required: **false**<br><p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p><br>
     /// - On success, responds with [`CreateSubnetGroupOutput`](crate::operation::create_subnet_group::CreateSubnetGroupOutput) with field(s):
-    ///   - [`subnet_group(Option<SubnetGroup>)`](crate::operation::create_subnet_group::CreateSubnetGroupOutput::subnet_group): <p>The newly-created subnet group</p>
+    ///   - [`subnet_group(Option<SubnetGroup>)`](crate::operation::create_subnet_group::CreateSubnetGroupOutput::subnet_group): <p>The newly-created subnet group.</p>
     /// - On failure, responds with [`SdkError<CreateSubnetGroupError>`](crate::operation::create_subnet_group::CreateSubnetGroupError)
     pub fn create_subnet_group(&self) -> crate::operation::create_subnet_group::builders::CreateSubnetGroupFluentBuilder {
         crate::operation::create_subnet_group::builders::CreateSubnetGroupFluentBuilder::new(self.handle.clone())

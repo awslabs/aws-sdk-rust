@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateClusterInput {
-    /// <p>The name of the cluster to update</p>
+    /// <p>The name of the cluster to update.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
-    /// <p>The description of the cluster to update</p>
+    /// <p>The description of the cluster to update.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The SecurityGroupIds to update</p>
+    /// <p>The SecurityGroupIds to update.</p>
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
     /// <p>Valid values for <code>ddd</code> are:</p>
@@ -29,11 +29,11 @@ pub struct UpdateClusterInput {
     /// </ul>
     /// <p>Example: <code>sun:23:00-mon:01:30</code></p>
     pub maintenance_window: ::std::option::Option<::std::string::String>,
-    /// <p>The SNS topic ARN to update</p>
+    /// <p>The SNS topic ARN to update.</p>
     pub sns_topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the Amazon SNS notification topic. Notifications are sent only if the status is active.</p>
     pub sns_topic_status: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the parameter group to update</p>
+    /// <p>The name of the parameter group to update.</p>
     pub parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your cluster.</p>
     pub snapshot_window: ::std::option::Option<::std::string::String>,
@@ -41,27 +41,27 @@ pub struct UpdateClusterInput {
     pub snapshot_retention_limit: ::std::option::Option<i32>,
     /// <p>A valid node type that you want to scale this cluster up or down to.</p>
     pub node_type: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the engine to be used for the nodes in this cluster. The value must be set to either Redis or Valkey.</p>
+    /// <p>The name of the engine to be used for the cluster.</p>
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The upgraded version of the engine to be run on the nodes. You can upgrade to a newer engine version, but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing cluster and create it anew with the earlier engine version.</p>
     pub engine_version: ::std::option::Option<::std::string::String>,
-    /// <p>The number of replicas that will reside in each shard</p>
+    /// <p>The number of replicas that will reside in each shard.</p>
     pub replica_configuration: ::std::option::Option<crate::types::ReplicaConfigurationRequest>,
-    /// <p>The number of shards in the cluster</p>
+    /// <p>The number of shards in the cluster.</p>
     pub shard_configuration: ::std::option::Option<crate::types::ShardConfigurationRequest>,
-    /// <p>The Access Control List that is associated with the cluster</p>
+    /// <p>The Access Control List that is associated with the cluster.</p>
     pub acl_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateClusterInput {
-    /// <p>The name of the cluster to update</p>
+    /// <p>The name of the cluster to update.</p>
     pub fn cluster_name(&self) -> ::std::option::Option<&str> {
         self.cluster_name.as_deref()
     }
-    /// <p>The description of the cluster to update</p>
+    /// <p>The description of the cluster to update.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The SecurityGroupIds to update</p>
+    /// <p>The SecurityGroupIds to update.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
     pub fn security_group_ids(&self) -> &[::std::string::String] {
@@ -89,7 +89,7 @@ impl UpdateClusterInput {
     pub fn maintenance_window(&self) -> ::std::option::Option<&str> {
         self.maintenance_window.as_deref()
     }
-    /// <p>The SNS topic ARN to update</p>
+    /// <p>The SNS topic ARN to update.</p>
     pub fn sns_topic_arn(&self) -> ::std::option::Option<&str> {
         self.sns_topic_arn.as_deref()
     }
@@ -97,7 +97,7 @@ impl UpdateClusterInput {
     pub fn sns_topic_status(&self) -> ::std::option::Option<&str> {
         self.sns_topic_status.as_deref()
     }
-    /// <p>The name of the parameter group to update</p>
+    /// <p>The name of the parameter group to update.</p>
     pub fn parameter_group_name(&self) -> ::std::option::Option<&str> {
         self.parameter_group_name.as_deref()
     }
@@ -113,7 +113,7 @@ impl UpdateClusterInput {
     pub fn node_type(&self) -> ::std::option::Option<&str> {
         self.node_type.as_deref()
     }
-    /// <p>The name of the engine to be used for the nodes in this cluster. The value must be set to either Redis or Valkey.</p>
+    /// <p>The name of the engine to be used for the cluster.</p>
     pub fn engine(&self) -> ::std::option::Option<&str> {
         self.engine.as_deref()
     }
@@ -121,15 +121,15 @@ impl UpdateClusterInput {
     pub fn engine_version(&self) -> ::std::option::Option<&str> {
         self.engine_version.as_deref()
     }
-    /// <p>The number of replicas that will reside in each shard</p>
+    /// <p>The number of replicas that will reside in each shard.</p>
     pub fn replica_configuration(&self) -> ::std::option::Option<&crate::types::ReplicaConfigurationRequest> {
         self.replica_configuration.as_ref()
     }
-    /// <p>The number of shards in the cluster</p>
+    /// <p>The number of shards in the cluster.</p>
     pub fn shard_configuration(&self) -> ::std::option::Option<&crate::types::ShardConfigurationRequest> {
         self.shard_configuration.as_ref()
     }
-    /// <p>The Access Control List that is associated with the cluster</p>
+    /// <p>The Access Control List that is associated with the cluster.</p>
     pub fn acl_name(&self) -> ::std::option::Option<&str> {
         self.acl_name.as_deref()
     }
@@ -162,32 +162,32 @@ pub struct UpdateClusterInputBuilder {
     pub(crate) acl_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateClusterInputBuilder {
-    /// <p>The name of the cluster to update</p>
+    /// <p>The name of the cluster to update.</p>
     /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the cluster to update</p>
+    /// <p>The name of the cluster to update.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_name = input;
         self
     }
-    /// <p>The name of the cluster to update</p>
+    /// <p>The name of the cluster to update.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_name
     }
-    /// <p>The description of the cluster to update</p>
+    /// <p>The description of the cluster to update.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The description of the cluster to update</p>
+    /// <p>The description of the cluster to update.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>The description of the cluster to update</p>
+    /// <p>The description of the cluster to update.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
@@ -195,19 +195,19 @@ impl UpdateClusterInputBuilder {
     ///
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
-    /// <p>The SecurityGroupIds to update</p>
+    /// <p>The SecurityGroupIds to update.</p>
     pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.security_group_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The SecurityGroupIds to update</p>
+    /// <p>The SecurityGroupIds to update.</p>
     pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group_ids = input;
         self
     }
-    /// <p>The SecurityGroupIds to update</p>
+    /// <p>The SecurityGroupIds to update.</p>
     pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
@@ -279,17 +279,17 @@ impl UpdateClusterInputBuilder {
     pub fn get_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.maintenance_window
     }
-    /// <p>The SNS topic ARN to update</p>
+    /// <p>The SNS topic ARN to update.</p>
     pub fn sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sns_topic_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The SNS topic ARN to update</p>
+    /// <p>The SNS topic ARN to update.</p>
     pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sns_topic_arn = input;
         self
     }
-    /// <p>The SNS topic ARN to update</p>
+    /// <p>The SNS topic ARN to update.</p>
     pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.sns_topic_arn
     }
@@ -307,17 +307,17 @@ impl UpdateClusterInputBuilder {
     pub fn get_sns_topic_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.sns_topic_status
     }
-    /// <p>The name of the parameter group to update</p>
+    /// <p>The name of the parameter group to update.</p>
     pub fn parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the parameter group to update</p>
+    /// <p>The name of the parameter group to update.</p>
     pub fn set_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_group_name = input;
         self
     }
-    /// <p>The name of the parameter group to update</p>
+    /// <p>The name of the parameter group to update.</p>
     pub fn get_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.parameter_group_name
     }
@@ -363,17 +363,17 @@ impl UpdateClusterInputBuilder {
     pub fn get_node_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.node_type
     }
-    /// <p>The name of the engine to be used for the nodes in this cluster. The value must be set to either Redis or Valkey.</p>
+    /// <p>The name of the engine to be used for the cluster.</p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the engine to be used for the nodes in this cluster. The value must be set to either Redis or Valkey.</p>
+    /// <p>The name of the engine to be used for the cluster.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
         self
     }
-    /// <p>The name of the engine to be used for the nodes in this cluster. The value must be set to either Redis or Valkey.</p>
+    /// <p>The name of the engine to be used for the cluster.</p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine
     }
@@ -391,45 +391,45 @@ impl UpdateClusterInputBuilder {
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine_version
     }
-    /// <p>The number of replicas that will reside in each shard</p>
+    /// <p>The number of replicas that will reside in each shard.</p>
     pub fn replica_configuration(mut self, input: crate::types::ReplicaConfigurationRequest) -> Self {
         self.replica_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of replicas that will reside in each shard</p>
+    /// <p>The number of replicas that will reside in each shard.</p>
     pub fn set_replica_configuration(mut self, input: ::std::option::Option<crate::types::ReplicaConfigurationRequest>) -> Self {
         self.replica_configuration = input;
         self
     }
-    /// <p>The number of replicas that will reside in each shard</p>
+    /// <p>The number of replicas that will reside in each shard.</p>
     pub fn get_replica_configuration(&self) -> &::std::option::Option<crate::types::ReplicaConfigurationRequest> {
         &self.replica_configuration
     }
-    /// <p>The number of shards in the cluster</p>
+    /// <p>The number of shards in the cluster.</p>
     pub fn shard_configuration(mut self, input: crate::types::ShardConfigurationRequest) -> Self {
         self.shard_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of shards in the cluster</p>
+    /// <p>The number of shards in the cluster.</p>
     pub fn set_shard_configuration(mut self, input: ::std::option::Option<crate::types::ShardConfigurationRequest>) -> Self {
         self.shard_configuration = input;
         self
     }
-    /// <p>The number of shards in the cluster</p>
+    /// <p>The number of shards in the cluster.</p>
     pub fn get_shard_configuration(&self) -> &::std::option::Option<crate::types::ShardConfigurationRequest> {
         &self.shard_configuration
     }
-    /// <p>The Access Control List that is associated with the cluster</p>
+    /// <p>The Access Control List that is associated with the cluster.</p>
     pub fn acl_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.acl_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Access Control List that is associated with the cluster</p>
+    /// <p>The Access Control List that is associated with the cluster.</p>
     pub fn set_acl_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.acl_name = input;
         self
     }
-    /// <p>The Access Control List that is associated with the cluster</p>
+    /// <p>The Access Control List that is associated with the cluster.</p>
     pub fn get_acl_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.acl_name
     }

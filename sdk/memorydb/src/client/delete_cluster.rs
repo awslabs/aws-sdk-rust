@@ -4,9 +4,10 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`cluster_name(impl Into<String>)`](crate::operation::delete_cluster::builders::DeleteClusterFluentBuilder::cluster_name) / [`set_cluster_name(Option<String>)`](crate::operation::delete_cluster::builders::DeleteClusterFluentBuilder::set_cluster_name):<br>required: **true**<br><p>The name of the cluster to be deleted</p><br>
+    ///   - [`multi_region_cluster_name(impl Into<String>)`](crate::operation::delete_cluster::builders::DeleteClusterFluentBuilder::multi_region_cluster_name) / [`set_multi_region_cluster_name(Option<String>)`](crate::operation::delete_cluster::builders::DeleteClusterFluentBuilder::set_multi_region_cluster_name):<br>required: **false**<br><p>The name of the multi-Region cluster to be deleted.</p><br>
     ///   - [`final_snapshot_name(impl Into<String>)`](crate::operation::delete_cluster::builders::DeleteClusterFluentBuilder::final_snapshot_name) / [`set_final_snapshot_name(Option<String>)`](crate::operation::delete_cluster::builders::DeleteClusterFluentBuilder::set_final_snapshot_name):<br>required: **false**<br><p>The user-supplied name of a final cluster snapshot. This is the unique name that identifies the snapshot. MemoryDB creates the snapshot, and then deletes the cluster immediately afterward.</p><br>
     /// - On success, responds with [`DeleteClusterOutput`](crate::operation::delete_cluster::DeleteClusterOutput) with field(s):
-    ///   - [`cluster(Option<Cluster>)`](crate::operation::delete_cluster::DeleteClusterOutput::cluster): <p>The cluster object that has been deleted</p>
+    ///   - [`cluster(Option<Cluster>)`](crate::operation::delete_cluster::DeleteClusterOutput::cluster): <p>The cluster object that has been deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteClusterError>`](crate::operation::delete_cluster::DeleteClusterError)
     pub fn delete_cluster(&self) -> crate::operation::delete_cluster::builders::DeleteClusterFluentBuilder {
         crate::operation::delete_cluster::builders::DeleteClusterFluentBuilder::new(self.handle.clone())

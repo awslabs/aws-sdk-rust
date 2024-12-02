@@ -61,6 +61,9 @@ pub mod delete_flow_version;
 /// Types for the `DeleteKnowledgeBase` operation.
 pub mod delete_knowledge_base;
 
+/// Types for the `DeleteKnowledgeBaseDocuments` operation.
+pub mod delete_knowledge_base_documents;
+
 /// Types for the `DeletePrompt` operation.
 pub mod delete_prompt;
 
@@ -100,8 +103,14 @@ pub mod get_ingestion_job;
 /// Types for the `GetKnowledgeBase` operation.
 pub mod get_knowledge_base;
 
+/// Types for the `GetKnowledgeBaseDocuments` operation.
+pub mod get_knowledge_base_documents;
+
 /// Types for the `GetPrompt` operation.
 pub mod get_prompt;
+
+/// Types for the `IngestKnowledgeBaseDocuments` operation.
+pub mod ingest_knowledge_base_documents;
 
 /// Types for the `ListAgentActionGroups` operation.
 pub mod list_agent_action_groups;
@@ -132,6 +141,9 @@ pub mod list_flows;
 
 /// Types for the `ListIngestionJobs` operation.
 pub mod list_ingestion_jobs;
+
+/// Types for the `ListKnowledgeBaseDocuments` operation.
+pub mod list_knowledge_base_documents;
 
 /// Types for the `ListKnowledgeBases` operation.
 pub mod list_knowledge_bases;

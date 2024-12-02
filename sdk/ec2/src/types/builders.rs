@@ -295,6 +295,8 @@ pub use crate::types::_route_table_association_state::RouteTableAssociationState
 
 pub use crate::types::_icmp_type_code::IcmpTypeCodeBuilder;
 
+pub use crate::types::_image_criterion_request::ImageCriterionRequestBuilder;
+
 pub use crate::types::_iam_instance_profile_association::IamInstanceProfileAssociationBuilder;
 
 pub use crate::types::_unsuccessful_item::UnsuccessfulItemBuilder;
@@ -425,11 +427,15 @@ pub use crate::types::_volume_modification::VolumeModificationBuilder;
 
 pub use crate::types::_verified_access_trust_provider::VerifiedAccessTrustProviderBuilder;
 
+pub use crate::types::_native_application_oidc_options::NativeApplicationOidcOptionsBuilder;
+
 pub use crate::types::_verified_access_sse_specification_response::VerifiedAccessSseSpecificationResponseBuilder;
 
 pub use crate::types::_device_options::DeviceOptionsBuilder;
 
 pub use crate::types::_oidc_options::OidcOptionsBuilder;
+
+pub use crate::types::_modify_verified_access_native_application_oidc_options::ModifyVerifiedAccessNativeApplicationOidcOptionsBuilder;
 
 pub use crate::types::_verified_access_sse_specification_request::VerifiedAccessSseSpecificationRequestBuilder;
 
@@ -459,17 +465,31 @@ pub use crate::types::_verified_access_log_s3_destination_options::VerifiedAcces
 
 pub use crate::types::_verified_access_instance::VerifiedAccessInstanceBuilder;
 
+pub use crate::types::_verified_access_instance_custom_sub_domain::VerifiedAccessInstanceCustomSubDomainBuilder;
+
 pub use crate::types::_verified_access_trust_provider_condensed::VerifiedAccessTrustProviderCondensedBuilder;
 
 pub use crate::types::_verified_access_group::VerifiedAccessGroupBuilder;
 
 pub use crate::types::_verified_access_endpoint::VerifiedAccessEndpointBuilder;
 
+pub use crate::types::_verified_access_endpoint_cidr_options::VerifiedAccessEndpointCidrOptionsBuilder;
+
+pub use crate::types::_verified_access_endpoint_port_range::VerifiedAccessEndpointPortRangeBuilder;
+
+pub use crate::types::_verified_access_endpoint_rds_options::VerifiedAccessEndpointRdsOptionsBuilder;
+
 pub use crate::types::_verified_access_endpoint_status::VerifiedAccessEndpointStatusBuilder;
 
 pub use crate::types::_verified_access_endpoint_eni_options::VerifiedAccessEndpointEniOptionsBuilder;
 
 pub use crate::types::_verified_access_endpoint_load_balancer_options::VerifiedAccessEndpointLoadBalancerOptionsBuilder;
+
+pub use crate::types::_modify_verified_access_endpoint_cidr_options::ModifyVerifiedAccessEndpointCidrOptionsBuilder;
+
+pub use crate::types::_modify_verified_access_endpoint_port_range::ModifyVerifiedAccessEndpointPortRangeBuilder;
+
+pub use crate::types::_modify_verified_access_endpoint_rds_options::ModifyVerifiedAccessEndpointRdsOptionsBuilder;
 
 pub use crate::types::_modify_verified_access_endpoint_eni_options::ModifyVerifiedAccessEndpointEniOptionsBuilder;
 
@@ -677,6 +697,8 @@ pub use crate::types::_maintenance_details::MaintenanceDetailsBuilder;
 
 pub use crate::types::_vpn_connection_device_type::VpnConnectionDeviceTypeBuilder;
 
+pub use crate::types::_verified_access_endpoint_target::VerifiedAccessEndpointTargetBuilder;
+
 pub use crate::types::_transit_gateway_route_table_propagation::TransitGatewayRouteTablePropagationBuilder;
 
 pub use crate::types::_transit_gateway_route_table_association::TransitGatewayRouteTableAssociationBuilder;
@@ -809,6 +831,10 @@ pub use crate::types::_integrate_services::IntegrateServicesBuilder;
 
 pub use crate::types::_athena_integration::AthenaIntegrationBuilder;
 
+pub use crate::types::_attribute_summary::AttributeSummaryBuilder;
+
+pub use crate::types::_regional_summary::RegionalSummaryBuilder;
+
 pub use crate::types::_coip_address_usage::CoipAddressUsageBuilder;
 
 pub use crate::types::_instance_usage::InstanceUsageBuilder;
@@ -822,6 +848,14 @@ pub use crate::types::_data_query::DataQueryBuilder;
 pub use crate::types::_ipv6_cidr_association::Ipv6CidrAssociationBuilder;
 
 pub use crate::types::_associated_role::AssociatedRoleBuilder;
+
+pub use crate::types::_image_criterion::ImageCriterionBuilder;
+
+pub use crate::types::_verified_access_instance_open_vpn_client_configuration::VerifiedAccessInstanceOpenVpnClientConfigurationBuilder;
+
+pub use crate::types::_verified_access_instance_open_vpn_client_configuration_route::VerifiedAccessInstanceOpenVpnClientConfigurationRouteBuilder;
+
+pub use crate::types::_verified_access_instance_user_trust_provider_client_configuration::VerifiedAccessInstanceUserTrustProviderClientConfigurationBuilder;
 
 pub use crate::types::_export_task_s3_location::ExportTaskS3LocationBuilder;
 
@@ -911,6 +945,8 @@ pub use crate::types::_private_dns_name_configuration::PrivateDnsNameConfigurati
 
 pub use crate::types::_vpc_endpoint::VpcEndpointBuilder;
 
+pub use crate::types::_subnet_ip_prefixes::SubnetIpPrefixesBuilder;
+
 pub use crate::types::_last_error::LastErrorBuilder;
 
 pub use crate::types::_dns_entry::DnsEntryBuilder;
@@ -922,6 +958,8 @@ pub use crate::types::_security_group_identifier::SecurityGroupIdentifierBuilder
 pub use crate::types::_vpc_endpoint_connection::VpcEndpointConnectionBuilder;
 
 pub use crate::types::_connection_notification::ConnectionNotificationBuilder;
+
+pub use crate::types::_vpc_endpoint_association::VpcEndpointAssociationBuilder;
 
 pub use crate::types::_classic_link_dns_support::ClassicLinkDnsSupportBuilder;
 
@@ -1295,6 +1333,8 @@ pub use crate::types::_dhcp_options::DhcpOptionsBuilder;
 
 pub use crate::types::_dhcp_configuration::DhcpConfigurationBuilder;
 
+pub use crate::types::_declarative_policies_report::DeclarativePoliciesReportBuilder;
+
 pub use crate::types::_customer_gateway::CustomerGatewayBuilder;
 
 pub use crate::types::_coip_pool::CoipPoolBuilder;
@@ -1399,9 +1439,17 @@ pub use crate::types::_vpn_connection_options_specification::VpnConnectionOption
 
 pub use crate::types::_vpn_tunnel_options_specification::VpnTunnelOptionsSpecificationBuilder;
 
+pub use crate::types::_create_verified_access_native_application_oidc_options::CreateVerifiedAccessNativeApplicationOidcOptionsBuilder;
+
 pub use crate::types::_create_verified_access_trust_provider_device_options::CreateVerifiedAccessTrustProviderDeviceOptionsBuilder;
 
 pub use crate::types::_create_verified_access_trust_provider_oidc_options::CreateVerifiedAccessTrustProviderOidcOptionsBuilder;
+
+pub use crate::types::_create_verified_access_endpoint_cidr_options::CreateVerifiedAccessEndpointCidrOptionsBuilder;
+
+pub use crate::types::_create_verified_access_endpoint_port_range::CreateVerifiedAccessEndpointPortRangeBuilder;
+
+pub use crate::types::_create_verified_access_endpoint_rds_options::CreateVerifiedAccessEndpointRdsOptionsBuilder;
 
 pub use crate::types::_create_verified_access_endpoint_eni_options::CreateVerifiedAccessEndpointEniOptionsBuilder;
 

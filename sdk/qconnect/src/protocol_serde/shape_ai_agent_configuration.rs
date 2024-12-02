@@ -19,6 +19,12 @@ pub fn ser_ai_agent_configuration(
             )?;
             object_2.finish();
         }
+        crate::types::AiAgentConfiguration::SelfServiceAiAgentConfiguration(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_3.key("selfServiceAIAgentConfiguration").start_object();
+            crate::protocol_serde::shape_self_service_ai_agent_configuration::ser_self_service_ai_agent_configuration(&mut object_3, inner)?;
+            object_3.finish();
+        }
         crate::types::AiAgentConfiguration::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "AiAgentConfiguration",
@@ -68,6 +74,12 @@ where
                                 Some(crate::types::AiAgentConfiguration::AnswerRecommendationAiAgentConfiguration(
                                     crate::protocol_serde::shape_answer_recommendation_ai_agent_configuration::de_answer_recommendation_ai_agent_configuration(tokens)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'answerRecommendationAIAgentConfiguration' cannot be null"))?
+                                ))
+                            }
+                            "selfServiceAIAgentConfiguration" => {
+                                Some(crate::types::AiAgentConfiguration::SelfServiceAiAgentConfiguration(
+                                    crate::protocol_serde::shape_self_service_ai_agent_configuration::de_self_service_ai_agent_configuration(tokens)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'selfServiceAIAgentConfiguration' cannot be null"))?
                                 ))
                             }
                             _ => {

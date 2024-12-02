@@ -83,9 +83,27 @@ pub(crate) fn service_quota_exceeded_exception_correct_errors(
     builder
 }
 
+pub(crate) fn external_resource_exception_correct_errors(
+    mut builder: crate::types::error::builders::ExternalResourceExceptionBuilder,
+) -> crate::types::error::builders::ExternalResourceExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn license_not_found_exception_correct_errors(
     mut builder: crate::types::error::builders::LicenseNotFoundExceptionBuilder,
 ) -> crate::types::error::builders::LicenseNotFoundExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn media_too_large_exception_correct_errors(
+    mut builder: crate::types::error::builders::MediaTooLargeExceptionBuilder,
+) -> crate::types::error::builders::MediaTooLargeExceptionBuilder {
     if builder.message.is_none() {
         builder.message = Some(Default::default())
     }
@@ -115,6 +133,15 @@ pub(crate) fn auto_subscription_configuration_correct_errors(
 ) -> crate::types::builders::AutoSubscriptionConfigurationBuilder {
     if builder.auto_subscribe.is_none() {
         builder.auto_subscribe = "no value was set".parse::<crate::types::AutoSubscriptionStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn browser_extension_configuration_correct_errors(
+    mut builder: crate::types::builders::BrowserExtensionConfigurationBuilder,
+) -> crate::types::builders::BrowserExtensionConfigurationBuilder {
+    if builder.enabled_browser_extensions.is_none() {
+        builder.enabled_browser_extensions = Some(Default::default())
     }
     builder
 }
@@ -172,6 +199,15 @@ pub(crate) fn basic_auth_configuration_correct_errors(
     }
     if builder.role_arn.is_none() {
         builder.role_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn image_extraction_configuration_correct_errors(
+    mut builder: crate::types::builders::ImageExtractionConfigurationBuilder,
+) -> crate::types::builders::ImageExtractionConfigurationBuilder {
+    if builder.image_extraction_status.is_none() {
+        builder.image_extraction_status = "no value was set".parse::<crate::types::ImageExtractionStatus>().ok()
     }
     builder
 }
@@ -325,6 +361,18 @@ pub(crate) fn s3_correct_errors(mut builder: crate::types::builders::S3Builder) 
     }
     if builder.key.is_none() {
         builder.key = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn conversation_source_correct_errors(
+    mut builder: crate::types::builders::ConversationSourceBuilder,
+) -> crate::types::builders::ConversationSourceBuilder {
+    if builder.conversation_id.is_none() {
+        builder.conversation_id = Some(Default::default())
+    }
+    if builder.attachment_id.is_none() {
+        builder.attachment_id = Some(Default::default())
     }
     builder
 }

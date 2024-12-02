@@ -29,11 +29,17 @@ pub(crate) mod shape_create_access_log_subscription;
 
 pub(crate) mod shape_create_listener;
 
+pub(crate) mod shape_create_resource_configuration;
+
+pub(crate) mod shape_create_resource_gateway;
+
 pub(crate) mod shape_create_rule;
 
 pub(crate) mod shape_create_service;
 
 pub(crate) mod shape_create_service_network;
+
+pub(crate) mod shape_create_service_network_resource_association;
 
 pub(crate) mod shape_create_service_network_service_association;
 
@@ -47,6 +53,12 @@ pub(crate) mod shape_delete_auth_policy;
 
 pub(crate) mod shape_delete_listener;
 
+pub(crate) mod shape_delete_resource_configuration;
+
+pub(crate) mod shape_delete_resource_endpoint_association;
+
+pub(crate) mod shape_delete_resource_gateway;
+
 pub(crate) mod shape_delete_resource_policy;
 
 pub(crate) mod shape_delete_rule;
@@ -54,6 +66,8 @@ pub(crate) mod shape_delete_rule;
 pub(crate) mod shape_delete_service;
 
 pub(crate) mod shape_delete_service_network;
+
+pub(crate) mod shape_delete_service_network_resource_association;
 
 pub(crate) mod shape_delete_service_network_service_association;
 
@@ -69,6 +83,10 @@ pub(crate) mod shape_get_auth_policy;
 
 pub(crate) mod shape_get_listener;
 
+pub(crate) mod shape_get_resource_configuration;
+
+pub(crate) mod shape_get_resource_gateway;
+
 pub(crate) mod shape_get_resource_policy;
 
 pub(crate) mod shape_get_rule;
@@ -76,6 +94,8 @@ pub(crate) mod shape_get_rule;
 pub(crate) mod shape_get_service;
 
 pub(crate) mod shape_get_service_network;
+
+pub(crate) mod shape_get_service_network_resource_association;
 
 pub(crate) mod shape_get_service_network_service_association;
 
@@ -87,11 +107,21 @@ pub(crate) mod shape_list_access_log_subscriptions;
 
 pub(crate) mod shape_list_listeners;
 
+pub(crate) mod shape_list_resource_configurations;
+
+pub(crate) mod shape_list_resource_endpoint_associations;
+
+pub(crate) mod shape_list_resource_gateways;
+
 pub(crate) mod shape_list_rules;
+
+pub(crate) mod shape_list_service_network_resource_associations;
 
 pub(crate) mod shape_list_service_network_service_associations;
 
 pub(crate) mod shape_list_service_network_vpc_associations;
+
+pub(crate) mod shape_list_service_network_vpc_endpoint_associations;
 
 pub(crate) mod shape_list_service_networks;
 
@@ -116,6 +146,10 @@ pub(crate) mod shape_untag_resource;
 pub(crate) mod shape_update_access_log_subscription;
 
 pub(crate) mod shape_update_listener;
+
+pub(crate) mod shape_update_resource_configuration;
+
+pub(crate) mod shape_update_resource_gateway;
 
 pub(crate) mod shape_update_rule;
 
@@ -145,11 +179,17 @@ pub(crate) mod shape_create_access_log_subscription_input;
 
 pub(crate) mod shape_create_listener_input;
 
+pub(crate) mod shape_create_resource_configuration_input;
+
+pub(crate) mod shape_create_resource_gateway_input;
+
 pub(crate) mod shape_create_rule_input;
 
 pub(crate) mod shape_create_service_input;
 
 pub(crate) mod shape_create_service_network_input;
+
+pub(crate) mod shape_create_service_network_resource_association_input;
 
 pub(crate) mod shape_create_service_network_service_association_input;
 
@@ -181,6 +221,10 @@ pub(crate) mod shape_update_access_log_subscription_input;
 
 pub(crate) mod shape_update_listener_input;
 
+pub(crate) mod shape_update_resource_configuration_input;
+
+pub(crate) mod shape_update_resource_gateway_input;
+
 pub(crate) mod shape_update_rule_input;
 
 pub(crate) mod shape_update_service_input;
@@ -200,6 +244,16 @@ pub(crate) mod shape_dns_entry;
 pub(crate) mod shape_health_check_config;
 
 pub(crate) mod shape_listener_summary_list;
+
+pub(crate) mod shape_port_range_list;
+
+pub(crate) mod shape_resource_configuration_definition;
+
+pub(crate) mod shape_resource_configuration_summary_list;
+
+pub(crate) mod shape_resource_endpoint_association_list;
+
+pub(crate) mod shape_resource_gateway_list;
 
 pub(crate) mod shape_rule_action;
 
@@ -221,9 +275,17 @@ pub(crate) mod shape_service_list;
 
 pub(crate) mod shape_service_network_list;
 
+pub(crate) mod shape_service_network_resource_association_list;
+
 pub(crate) mod shape_service_network_service_association_list;
 
 pub(crate) mod shape_service_network_vpc_association_list;
+
+pub(crate) mod shape_service_network_vpc_endpoint_association_list;
+
+pub(crate) mod shape_sharing_config;
+
+pub(crate) mod shape_subnet_list;
 
 pub(crate) mod shape_tag_map;
 
@@ -243,21 +305,37 @@ pub(crate) mod shape_validation_exception_field_list;
 
 pub(crate) mod shape_access_log_subscription_summary;
 
+pub(crate) mod shape_arn_resource;
+
+pub(crate) mod shape_dns_resource;
+
 pub(crate) mod shape_fixed_response_action;
 
 pub(crate) mod shape_forward_action;
 
 pub(crate) mod shape_http_match;
 
+pub(crate) mod shape_ip_resource;
+
 pub(crate) mod shape_listener_summary;
 
 pub(crate) mod shape_matcher;
+
+pub(crate) mod shape_resource_configuration_summary;
+
+pub(crate) mod shape_resource_endpoint_association_summary;
+
+pub(crate) mod shape_resource_gateway_summary;
 
 pub(crate) mod shape_rule_summary;
 
 pub(crate) mod shape_rule_update_failure;
 
 pub(crate) mod shape_rule_update_success;
+
+pub(crate) mod shape_service_network_endpoint_association;
+
+pub(crate) mod shape_service_network_resource_association_summary;
 
 pub(crate) mod shape_service_network_service_association_summary;
 

@@ -278,6 +278,8 @@ impl ImageAvailableFluentBuilder {
     /// <li>
     /// <p><code>hypervisor</code> - The hypervisor type (<code>ovm</code> | <code>xen</code>).</p></li>
     /// <li>
+    /// <p><code>image-allowed</code> - A Boolean that indicates whether the image meets the criteria specified for Allowed AMIs.</p></li>
+    /// <li>
     /// <p><code>image-id</code> - The ID of the image.</p></li>
     /// <li>
     /// <p><code>image-type</code> - The image type (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).</p></li>
@@ -305,6 +307,10 @@ impl ImageAvailableFluentBuilder {
     /// <p><code>root-device-name</code> - The device name of the root device volume (for example, <code>/dev/sda1</code>).</p></li>
     /// <li>
     /// <p><code>root-device-type</code> - The type of the root device volume (<code>ebs</code> | <code>instance-store</code>).</p></li>
+    /// <li>
+    /// <p><code>source-image-id</code> - The ID of the source AMI from which the AMI was created.</p></li>
+    /// <li>
+    /// <p><code>source-image-region</code> - The Region of the source AMI.</p></li>
     /// <li>
     /// <p><code>source-instance-id</code> - The ID of the instance that the AMI was created from if the AMI was created using CreateImage. This filter is applicable only if the AMI was created using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p></li>
     /// <li>
@@ -351,6 +357,8 @@ impl ImageAvailableFluentBuilder {
     /// <li>
     /// <p><code>hypervisor</code> - The hypervisor type (<code>ovm</code> | <code>xen</code>).</p></li>
     /// <li>
+    /// <p><code>image-allowed</code> - A Boolean that indicates whether the image meets the criteria specified for Allowed AMIs.</p></li>
+    /// <li>
     /// <p><code>image-id</code> - The ID of the image.</p></li>
     /// <li>
     /// <p><code>image-type</code> - The image type (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).</p></li>
@@ -378,6 +386,10 @@ impl ImageAvailableFluentBuilder {
     /// <p><code>root-device-name</code> - The device name of the root device volume (for example, <code>/dev/sda1</code>).</p></li>
     /// <li>
     /// <p><code>root-device-type</code> - The type of the root device volume (<code>ebs</code> | <code>instance-store</code>).</p></li>
+    /// <li>
+    /// <p><code>source-image-id</code> - The ID of the source AMI from which the AMI was created.</p></li>
+    /// <li>
+    /// <p><code>source-image-region</code> - The Region of the source AMI.</p></li>
     /// <li>
     /// <p><code>source-instance-id</code> - The ID of the instance that the AMI was created from if the AMI was created using CreateImage. This filter is applicable only if the AMI was created using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p></li>
     /// <li>
@@ -424,6 +436,8 @@ impl ImageAvailableFluentBuilder {
     /// <li>
     /// <p><code>hypervisor</code> - The hypervisor type (<code>ovm</code> | <code>xen</code>).</p></li>
     /// <li>
+    /// <p><code>image-allowed</code> - A Boolean that indicates whether the image meets the criteria specified for Allowed AMIs.</p></li>
+    /// <li>
     /// <p><code>image-id</code> - The ID of the image.</p></li>
     /// <li>
     /// <p><code>image-type</code> - The image type (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).</p></li>
@@ -451,6 +465,10 @@ impl ImageAvailableFluentBuilder {
     /// <p><code>root-device-name</code> - The device name of the root device volume (for example, <code>/dev/sda1</code>).</p></li>
     /// <li>
     /// <p><code>root-device-type</code> - The type of the root device volume (<code>ebs</code> | <code>instance-store</code>).</p></li>
+    /// <li>
+    /// <p><code>source-image-id</code> - The ID of the source AMI from which the AMI was created.</p></li>
+    /// <li>
+    /// <p><code>source-image-region</code> - The Region of the source AMI.</p></li>
     /// <li>
     /// <p><code>source-instance-id</code> - The ID of the instance that the AMI was created from if the AMI was created using CreateImage. This filter is applicable only if the AMI was created using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p></li>
     /// <li>

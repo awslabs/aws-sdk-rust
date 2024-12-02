@@ -443,6 +443,8 @@ pub(crate) mod shape_customizable_properties;
 
 pub(crate) mod shape_date_filter;
 
+pub(crate) mod shape_detection;
+
 pub(crate) mod shape_finding_aggregator;
 
 pub(crate) mod shape_finding_history_record;
@@ -589,6 +591,8 @@ pub(crate) mod shape_security_control_parameter;
 
 pub(crate) mod shape_security_controls_configuration;
 
+pub(crate) mod shape_sequence;
+
 pub(crate) mod shape_software_package;
 
 pub(crate) mod shape_standards_control_arn_list;
@@ -618,6 +622,8 @@ pub(crate) mod shape_action_local_port_details;
 pub(crate) mod shape_action_remote_ip_details;
 
 pub(crate) mod shape_action_remote_port_details;
+
+pub(crate) mod shape_actor;
 
 pub(crate) mod shape_adjustment;
 
@@ -837,11 +843,15 @@ pub(crate) mod shape_enabled_security_control_identifier_list;
 
 pub(crate) mod shape_finding_history_update;
 
+pub(crate) mod shape_indicator;
+
 pub(crate) mod shape_ip_filter_list;
 
 pub(crate) mod shape_keyword_filter_list;
 
 pub(crate) mod shape_map_filter_list;
+
+pub(crate) mod shape_network_endpoint;
 
 pub(crate) mod shape_network_path_component_details;
 
@@ -855,11 +865,19 @@ pub(crate) mod shape_security_control_custom_parameters_list;
 
 pub(crate) mod shape_security_control_parameters_list;
 
+pub(crate) mod shape_signal;
+
 pub(crate) mod shape_status_reasons_list;
 
 pub(crate) mod shape_string_filter_list;
 
 pub(crate) mod shape_action_local_ip_details;
+
+pub(crate) mod shape_actor_session;
+
+pub(crate) mod shape_actor_user;
+
+pub(crate) mod shape_actors_list;
 
 pub(crate) mod shape_association_set_details;
 
@@ -1315,6 +1333,8 @@ pub(crate) mod shape_firewall_policy_details;
 
 pub(crate) mod shape_geo_location;
 
+pub(crate) mod shape_indicators_list;
+
 pub(crate) mod shape_integer_configuration_options;
 
 pub(crate) mod shape_integer_list_configuration_options;
@@ -1325,6 +1345,14 @@ pub(crate) mod shape_ipv6_cidr_block_association;
 
 pub(crate) mod shape_load_balancer_state;
 
+pub(crate) mod shape_network_autonomous_system;
+
+pub(crate) mod shape_network_connection;
+
+pub(crate) mod shape_network_endpoints_list;
+
+pub(crate) mod shape_network_geo_location;
+
 pub(crate) mod shape_port_probe_detail_list;
 
 pub(crate) mod shape_propagating_vgw_set_details;
@@ -1334,6 +1362,8 @@ pub(crate) mod shape_route_set_details;
 pub(crate) mod shape_rule_group_details;
 
 pub(crate) mod shape_sensitive_data_result;
+
+pub(crate) mod shape_signals_list;
 
 pub(crate) mod shape_software_package_list;
 
@@ -1602,6 +1632,8 @@ pub(crate) mod shape_rule_group_source;
 pub(crate) mod shape_rule_group_variables;
 
 pub(crate) mod shape_sensitive_data_detections;
+
+pub(crate) mod shape_user_account;
 
 pub(crate) mod shape_vpc_info_cidr_block_set_details;
 

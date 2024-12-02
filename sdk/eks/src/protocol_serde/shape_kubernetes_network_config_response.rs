@@ -35,6 +35,10 @@ where
                                     .transpose()?,
                             );
                         }
+                        "elasticLoadBalancing" => {
+                            builder = builder
+                                .set_elastic_load_balancing(crate::protocol_serde::shape_elastic_load_balancing::de_elastic_load_balancing(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

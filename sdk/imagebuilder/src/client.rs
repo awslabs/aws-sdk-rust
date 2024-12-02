@@ -229,6 +229,8 @@ mod get_lifecycle_execution;
 
 mod get_lifecycle_policy;
 
+mod get_marketplace_resource;
+
 mod get_workflow;
 
 mod get_workflow_execution;

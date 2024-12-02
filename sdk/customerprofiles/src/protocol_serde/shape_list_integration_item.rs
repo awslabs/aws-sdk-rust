@@ -70,6 +70,10 @@ where
                                     .transpose()?,
                             );
                         }
+                        "EventTriggerNames" => {
+                            builder =
+                                builder.set_event_trigger_names(crate::protocol_serde::shape_event_trigger_names::de_event_trigger_names(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

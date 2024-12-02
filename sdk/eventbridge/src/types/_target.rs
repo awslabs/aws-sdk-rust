@@ -39,7 +39,7 @@ pub struct Target {
     pub sage_maker_pipeline_parameters: ::std::option::Option<crate::types::SageMakerPipelineParameters>,
     /// <p>The <code>DeadLetterConfig</code> that defines the target queue to send dead-letter queue events to.</p>
     pub dead_letter_config: ::std::option::Option<crate::types::DeadLetterConfig>,
-    /// <p>The <code>RetryPolicy</code> object that contains the retry policy configuration to use for the dead-letter queue.</p>
+    /// <p>The retry policy configuration to use for the dead-letter queue.</p>
     pub retry_policy: ::std::option::Option<crate::types::RetryPolicy>,
     /// <p>Contains the GraphQL operation to be parsed and executed, if the event target is an AppSync API.</p>
     pub app_sync_parameters: ::std::option::Option<crate::types::AppSyncParameters>,
@@ -111,7 +111,7 @@ impl Target {
     pub fn dead_letter_config(&self) -> ::std::option::Option<&crate::types::DeadLetterConfig> {
         self.dead_letter_config.as_ref()
     }
-    /// <p>The <code>RetryPolicy</code> object that contains the retry policy configuration to use for the dead-letter queue.</p>
+    /// <p>The retry policy configuration to use for the dead-letter queue.</p>
     pub fn retry_policy(&self) -> ::std::option::Option<&crate::types::RetryPolicy> {
         self.retry_policy.as_ref()
     }
@@ -374,17 +374,17 @@ impl TargetBuilder {
     pub fn get_dead_letter_config(&self) -> &::std::option::Option<crate::types::DeadLetterConfig> {
         &self.dead_letter_config
     }
-    /// <p>The <code>RetryPolicy</code> object that contains the retry policy configuration to use for the dead-letter queue.</p>
+    /// <p>The retry policy configuration to use for the dead-letter queue.</p>
     pub fn retry_policy(mut self, input: crate::types::RetryPolicy) -> Self {
         self.retry_policy = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The <code>RetryPolicy</code> object that contains the retry policy configuration to use for the dead-letter queue.</p>
+    /// <p>The retry policy configuration to use for the dead-letter queue.</p>
     pub fn set_retry_policy(mut self, input: ::std::option::Option<crate::types::RetryPolicy>) -> Self {
         self.retry_policy = input;
         self
     }
-    /// <p>The <code>RetryPolicy</code> object that contains the retry policy configuration to use for the dead-letter queue.</p>
+    /// <p>The retry policy configuration to use for the dead-letter queue.</p>
     pub fn get_retry_policy(&self) -> &::std::option::Option<crate::types::RetryPolicy> {
         &self.retry_policy
     }

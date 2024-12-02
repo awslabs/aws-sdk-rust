@@ -5,6 +5,8 @@
 pub struct RetrieveOutput {
     /// <p>A list of results from querying the knowledge base.</p>
     pub retrieval_results: ::std::vec::Vec<crate::types::KnowledgeBaseRetrievalResult>,
+    /// <p>Specifies if there is a guardrail intervention in the response.</p>
+    pub guardrail_action: ::std::option::Option<crate::types::GuadrailAction>,
     /// <p>If there are more results than can fit in the response, the response returns a <code>nextToken</code>. Use this token in the <code>nextToken</code> field of another request to retrieve the next batch of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -15,6 +17,10 @@ impl RetrieveOutput {
         use std::ops::Deref;
         self.retrieval_results.deref()
     }
+    /// <p>Specifies if there is a guardrail intervention in the response.</p>
+    pub fn guardrail_action(&self) -> ::std::option::Option<&crate::types::GuadrailAction> {
+        self.guardrail_action.as_ref()
+    }
     /// <p>If there are more results than can fit in the response, the response returns a <code>nextToken</code>. Use this token in the <code>nextToken</code> field of another request to retrieve the next batch of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
@@ -24,6 +30,7 @@ impl ::std::fmt::Debug for RetrieveOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RetrieveOutput");
         formatter.field("retrieval_results", &"*** Sensitive Data Redacted ***");
+        formatter.field("guardrail_action", &self.guardrail_action);
         formatter.field("next_token", &self.next_token);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
@@ -46,6 +53,7 @@ impl RetrieveOutput {
 #[non_exhaustive]
 pub struct RetrieveOutputBuilder {
     pub(crate) retrieval_results: ::std::option::Option<::std::vec::Vec<crate::types::KnowledgeBaseRetrievalResult>>,
+    pub(crate) guardrail_action: ::std::option::Option<crate::types::GuadrailAction>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -69,6 +77,20 @@ impl RetrieveOutputBuilder {
     /// <p>A list of results from querying the knowledge base.</p>
     pub fn get_retrieval_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KnowledgeBaseRetrievalResult>> {
         &self.retrieval_results
+    }
+    /// <p>Specifies if there is a guardrail intervention in the response.</p>
+    pub fn guardrail_action(mut self, input: crate::types::GuadrailAction) -> Self {
+        self.guardrail_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies if there is a guardrail intervention in the response.</p>
+    pub fn set_guardrail_action(mut self, input: ::std::option::Option<crate::types::GuadrailAction>) -> Self {
+        self.guardrail_action = input;
+        self
+    }
+    /// <p>Specifies if there is a guardrail intervention in the response.</p>
+    pub fn get_guardrail_action(&self) -> &::std::option::Option<crate::types::GuadrailAction> {
+        &self.guardrail_action
     }
     /// <p>If there are more results than can fit in the response, the response returns a <code>nextToken</code>. Use this token in the <code>nextToken</code> field of another request to retrieve the next batch of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -104,6 +126,7 @@ impl RetrieveOutputBuilder {
                     "retrieval_results was not specified but it is required when building RetrieveOutput",
                 )
             })?,
+            guardrail_action: self.guardrail_action,
             next_token: self.next_token,
             _request_id: self._request_id,
         })
@@ -113,6 +136,7 @@ impl ::std::fmt::Debug for RetrieveOutputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RetrieveOutputBuilder");
         formatter.field("retrieval_results", &"*** Sensitive Data Redacted ***");
+        formatter.field("guardrail_action", &self.guardrail_action);
         formatter.field("next_token", &self.next_token);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()

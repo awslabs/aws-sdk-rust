@@ -40,6 +40,18 @@ pub fn ser_modify_verified_access_endpoint_input_input_input(
     if let Some(var_14) = &input.dry_run {
         scope_13.boolean(*var_14);
     }
+    #[allow(unused_mut)]
+    let mut scope_15 = writer.prefix("RdsOptions");
+    if let Some(var_16) = &input.rds_options {
+        crate::protocol_serde::shape_modify_verified_access_endpoint_rds_options::ser_modify_verified_access_endpoint_rds_options(scope_15, var_16)?;
+    }
+    #[allow(unused_mut)]
+    let mut scope_17 = writer.prefix("CidrOptions");
+    if let Some(var_18) = &input.cidr_options {
+        crate::protocol_serde::shape_modify_verified_access_endpoint_cidr_options::ser_modify_verified_access_endpoint_cidr_options(
+            scope_17, var_18,
+        )?;
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

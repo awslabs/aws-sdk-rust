@@ -123,6 +123,34 @@ pub use crate::types::_insight_result_value::InsightResultValue;
 
 pub use crate::types::_aws_security_finding::AwsSecurityFinding;
 
+pub use crate::types::_detection::Detection;
+
+pub use crate::types::_sequence::Sequence;
+
+pub use crate::types::_indicator::Indicator;
+
+pub use crate::types::_signal::Signal;
+
+pub use crate::types::_network_endpoint::NetworkEndpoint;
+
+pub use crate::types::_network_connection::NetworkConnection;
+
+pub use crate::types::_connection_direction::ConnectionDirection;
+
+pub use crate::types::_network_autonomous_system::NetworkAutonomousSystem;
+
+pub use crate::types::_network_geo_location::NetworkGeoLocation;
+
+pub use crate::types::_actor::Actor;
+
+pub use crate::types::_actor_session::ActorSession;
+
+pub use crate::types::_actor_session_mfa_status::ActorSessionMfaStatus;
+
+pub use crate::types::_actor_user::ActorUser;
+
+pub use crate::types::_user_account::UserAccount;
+
 pub use crate::types::_generator_details::GeneratorDetails;
 
 pub use crate::types::_finding_provider_fields::FindingProviderFields;
@@ -1441,6 +1469,14 @@ mod _action_remote_port_details;
 
 mod _action_target;
 
+mod _actor;
+
+mod _actor_session;
+
+mod _actor_session_mfa_status;
+
+mod _actor_user;
+
 mod _adjustment;
 
 mod _admin_account;
@@ -2505,6 +2541,8 @@ mod _configuration_policy_association_summary;
 
 mod _configuration_policy_summary;
 
+mod _connection_direction;
+
 mod _container_details;
 
 mod _control_finding_generator;
@@ -2526,6 +2564,8 @@ mod _date_filter;
 mod _date_range;
 
 mod _date_range_unit;
+
+mod _detection;
 
 mod _dns_request_action;
 
@@ -2567,6 +2607,8 @@ mod _icmp_type_code;
 
 mod _import_findings_error;
 
+mod _indicator;
+
 mod _insight;
 
 mod _insight_result_value;
@@ -2605,9 +2647,17 @@ mod _member;
 
 mod _network;
 
+mod _network_autonomous_system;
+
+mod _network_connection;
+
 mod _network_connection_action;
 
 mod _network_direction;
+
+mod _network_endpoint;
+
+mod _network_geo_location;
 
 mod _network_header;
 
@@ -2739,6 +2789,8 @@ mod _sensitive_data_detections;
 
 mod _sensitive_data_result;
 
+mod _sequence;
+
 mod _severity;
 
 mod _severity_label;
@@ -2746,6 +2798,8 @@ mod _severity_label;
 mod _severity_rating;
 
 mod _severity_update;
+
+mod _signal;
 
 mod _software_package;
 
@@ -2820,6 +2874,8 @@ mod _unprocessed_standards_control_association_update;
 mod _update_automation_rules_request_item;
 
 mod _update_status;
+
+mod _user_account;
 
 mod _verification_state;
 

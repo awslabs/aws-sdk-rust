@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopEvaluationJob`](crate::operation::stop_evaluation_job::builders::StopEvaluationJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_identifier(impl Into<String>)`](crate::operation::stop_evaluation_job::builders::StopEvaluationJobFluentBuilder::job_identifier) / [`set_job_identifier(Option<String>)`](crate::operation::stop_evaluation_job::builders::StopEvaluationJobFluentBuilder::set_job_identifier):<br>required: **true**<br><p>The ARN of the model evaluation job you want to stop.</p><br>
+    ///   - [`job_identifier(impl Into<String>)`](crate::operation::stop_evaluation_job::builders::StopEvaluationJobFluentBuilder::job_identifier) / [`set_job_identifier(Option<String>)`](crate::operation::stop_evaluation_job::builders::StopEvaluationJobFluentBuilder::set_job_identifier):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the evaluation job you want to stop.</p><br>
     /// - On success, responds with [`StopEvaluationJobOutput`](crate::operation::stop_evaluation_job::StopEvaluationJobOutput)
     /// - On failure, responds with [`SdkError<StopEvaluationJobError>`](crate::operation::stop_evaluation_job::StopEvaluationJobError)
     pub fn stop_evaluation_job(&self) -> crate::operation::stop_evaluation_job::builders::StopEvaluationJobFluentBuilder {

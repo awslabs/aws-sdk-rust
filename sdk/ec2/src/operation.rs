@@ -145,6 +145,9 @@ pub mod cancel_capacity_reservation_fleets;
 /// Types for the `CancelConversionTask` operation.
 pub mod cancel_conversion_task;
 
+/// Types for the `CancelDeclarativePoliciesReport` operation.
+pub mod cancel_declarative_policies_report;
+
 /// Types for the `CancelExportTask` operation.
 pub mod cancel_export_task;
 
@@ -757,6 +760,9 @@ pub mod describe_conversion_tasks;
 /// Types for the `DescribeCustomerGateways` operation.
 pub mod describe_customer_gateways;
 
+/// Types for the `DescribeDeclarativePoliciesReports` operation.
+pub mod describe_declarative_policies_reports;
+
 /// Types for the `DescribeDhcpOptions` operation.
 pub mod describe_dhcp_options;
 
@@ -1129,6 +1135,9 @@ pub mod describe_vpc_classic_link;
 /// Types for the `DescribeVpcClassicLinkDnsSupport` operation.
 pub mod describe_vpc_classic_link_dns_support;
 
+/// Types for the `DescribeVpcEndpointAssociations` operation.
+pub mod describe_vpc_endpoint_associations;
+
 /// Types for the `DescribeVpcEndpointConnectionNotifications` operation.
 pub mod describe_vpc_endpoint_connection_notifications;
 
@@ -1179,6 +1188,9 @@ pub mod detach_vpn_gateway;
 
 /// Types for the `DisableAddressTransfer` operation.
 pub mod disable_address_transfer;
+
+/// Types for the `DisableAllowedImagesSettings` operation.
+pub mod disable_allowed_images_settings;
 
 /// Types for the `DisableAwsNetworkPerformanceMetricSubscription` operation.
 pub mod disable_aws_network_performance_metric_subscription;
@@ -1279,6 +1291,9 @@ pub mod disassociate_vpc_cidr_block;
 /// Types for the `EnableAddressTransfer` operation.
 pub mod enable_address_transfer;
 
+/// Types for the `EnableAllowedImagesSettings` operation.
+pub mod enable_allowed_images_settings;
+
 /// Types for the `EnableAwsNetworkPerformanceMetricSubscription` operation.
 pub mod enable_aws_network_performance_metric_subscription;
 
@@ -1342,6 +1357,12 @@ pub mod export_image;
 /// Types for the `ExportTransitGatewayRoutes` operation.
 pub mod export_transit_gateway_routes;
 
+/// Types for the `ExportVerifiedAccessInstanceClientConfiguration` operation.
+pub mod export_verified_access_instance_client_configuration;
+
+/// Types for the `GetAllowedImagesSettings` operation.
+pub mod get_allowed_images_settings;
+
 /// Types for the `GetAssociatedEnclaveCertificateIamRoles` operation.
 pub mod get_associated_enclave_certificate_iam_roles;
 
@@ -1362,6 +1383,9 @@ pub mod get_console_output;
 
 /// Types for the `GetConsoleScreenshot` operation.
 pub mod get_console_screenshot;
+
+/// Types for the `GetDeclarativePoliciesReportSummary` operation.
+pub mod get_declarative_policies_report_summary;
 
 /// Types for the `GetDefaultCreditSpecification` operation.
 pub mod get_default_credit_specification;
@@ -1476,6 +1500,9 @@ pub mod get_transit_gateway_route_table_propagations;
 
 /// Types for the `GetVerifiedAccessEndpointPolicy` operation.
 pub mod get_verified_access_endpoint_policy;
+
+/// Types for the `GetVerifiedAccessEndpointTargets` operation.
+pub mod get_verified_access_endpoint_targets;
 
 /// Types for the `GetVerifiedAccessGroupPolicy` operation.
 pub mod get_verified_access_group_policy;
@@ -1804,6 +1831,9 @@ pub mod release_ipam_pool_allocation;
 /// Types for the `ReplaceIamInstanceProfileAssociation` operation.
 pub mod replace_iam_instance_profile_association;
 
+/// Types for the `ReplaceImageCriteriaInAllowedImagesSettings` operation.
+pub mod replace_image_criteria_in_allowed_images_settings;
+
 /// Types for the `ReplaceNetworkAclAssociation` operation.
 pub mod replace_network_acl_association;
 
@@ -1893,6 +1923,9 @@ pub mod search_transit_gateway_routes;
 
 /// Types for the `SendDiagnosticInterrupt` operation.
 pub mod send_diagnostic_interrupt;
+
+/// Types for the `StartDeclarativePoliciesReport` operation.
+pub mod start_declarative_policies_report;
 
 /// Types for the `StartInstances` operation.
 pub mod start_instances;

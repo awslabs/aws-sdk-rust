@@ -15,6 +15,12 @@ pub use crate::types::_parameter_group::ParameterGroupBuilder;
 
 pub use crate::types::_parameter_name_value::ParameterNameValueBuilder;
 
+pub use crate::types::_multi_region_cluster::MultiRegionClusterBuilder;
+
+pub use crate::types::_regional_cluster::RegionalClusterBuilder;
+
+pub use crate::types::_shard_configuration_request::ShardConfigurationRequestBuilder;
+
 pub use crate::types::_cluster::ClusterBuilder;
 
 pub use crate::types::_security_group_membership::SecurityGroupMembershipBuilder;
@@ -34,8 +40,6 @@ pub use crate::types::_acls_update_status::AcLsUpdateStatusBuilder;
 pub use crate::types::_resharding_status::ReshardingStatusBuilder;
 
 pub use crate::types::_slot_migration::SlotMigrationBuilder;
-
-pub use crate::types::_shard_configuration_request::ShardConfigurationRequestBuilder;
 
 pub use crate::types::_replica_configuration_request::ReplicaConfigurationRequestBuilder;
 

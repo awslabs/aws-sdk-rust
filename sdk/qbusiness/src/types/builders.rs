@@ -19,6 +19,8 @@ pub use crate::types::_tag::TagBuilder;
 
 pub use crate::types::_application::ApplicationBuilder;
 
+pub use crate::types::_browser_extension_configuration::BrowserExtensionConfigurationBuilder;
+
 pub use crate::types::_open_id_connect_provider_configuration::OpenIdConnectProviderConfigurationBuilder;
 
 pub use crate::types::_saml_provider_configuration::SamlProviderConfigurationBuilder;
@@ -62,6 +64,10 @@ pub use crate::types::_index_statistics::IndexStatisticsBuilder;
 pub use crate::types::_text_document_statistics::TextDocumentStatisticsBuilder;
 
 pub use crate::types::_index::IndexBuilder;
+
+pub use crate::types::_media_extraction_configuration::MediaExtractionConfigurationBuilder;
+
+pub use crate::types::_image_extraction_configuration::ImageExtractionConfigurationBuilder;
 
 pub use crate::types::_document_enrichment_configuration::DocumentEnrichmentConfigurationBuilder;
 
@@ -132,6 +138,10 @@ pub use crate::types::_data_source_sync_job::DataSourceSyncJobBuilder;
 pub use crate::types::_data_source_sync_job_metrics::DataSourceSyncJobMetricsBuilder;
 
 pub use crate::types::_conversation::ConversationBuilder;
+
+pub use crate::types::_attachment::AttachmentBuilder;
+
+pub use crate::types::_conversation_source::ConversationSourceBuilder;
 
 pub use crate::types::_group_status_detail::GroupStatusDetailBuilder;
 

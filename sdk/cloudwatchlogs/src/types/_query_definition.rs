@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryDefinition {
+    /// <p>The query language used for this query. For more information about the query languages that CloudWatch Logs supports, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData_Languages.html">Supported query languages</a>.</p>
+    pub query_language: ::std::option::Option<crate::types::QueryLanguage>,
     /// <p>The unique ID of the query definition.</p>
     pub query_definition_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the query definition.</p>
@@ -16,6 +18,10 @@ pub struct QueryDefinition {
     pub log_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl QueryDefinition {
+    /// <p>The query language used for this query. For more information about the query languages that CloudWatch Logs supports, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData_Languages.html">Supported query languages</a>.</p>
+    pub fn query_language(&self) -> ::std::option::Option<&crate::types::QueryLanguage> {
+        self.query_language.as_ref()
+    }
     /// <p>The unique ID of the query definition.</p>
     pub fn query_definition_id(&self) -> ::std::option::Option<&str> {
         self.query_definition_id.as_deref()
@@ -50,6 +56,7 @@ impl QueryDefinition {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct QueryDefinitionBuilder {
+    pub(crate) query_language: ::std::option::Option<crate::types::QueryLanguage>,
     pub(crate) query_definition_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) query_string: ::std::option::Option<::std::string::String>,
@@ -57,6 +64,20 @@ pub struct QueryDefinitionBuilder {
     pub(crate) log_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl QueryDefinitionBuilder {
+    /// <p>The query language used for this query. For more information about the query languages that CloudWatch Logs supports, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData_Languages.html">Supported query languages</a>.</p>
+    pub fn query_language(mut self, input: crate::types::QueryLanguage) -> Self {
+        self.query_language = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The query language used for this query. For more information about the query languages that CloudWatch Logs supports, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData_Languages.html">Supported query languages</a>.</p>
+    pub fn set_query_language(mut self, input: ::std::option::Option<crate::types::QueryLanguage>) -> Self {
+        self.query_language = input;
+        self
+    }
+    /// <p>The query language used for this query. For more information about the query languages that CloudWatch Logs supports, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData_Languages.html">Supported query languages</a>.</p>
+    pub fn get_query_language(&self) -> &::std::option::Option<crate::types::QueryLanguage> {
+        &self.query_language
+    }
     /// <p>The unique ID of the query definition.</p>
     pub fn query_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_definition_id = ::std::option::Option::Some(input.into());
@@ -136,6 +157,7 @@ impl QueryDefinitionBuilder {
     /// Consumes the builder and constructs a [`QueryDefinition`](crate::types::QueryDefinition).
     pub fn build(self) -> crate::types::QueryDefinition {
         crate::types::QueryDefinition {
+            query_language: self.query_language,
             query_definition_id: self.query_definition_id,
             name: self.name,
             query_string: self.query_string,

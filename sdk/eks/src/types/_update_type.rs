@@ -16,6 +16,7 @@
 ///     UpdateType::AddonUpdate => { /* ... */ },
 ///     UpdateType::AssociateEncryptionConfig => { /* ... */ },
 ///     UpdateType::AssociateIdentityProviderConfig => { /* ... */ },
+///     UpdateType::AutoModeUpdate => { /* ... */ },
 ///     UpdateType::ConfigUpdate => { /* ... */ },
 ///     UpdateType::DisassociateIdentityProviderConfig => { /* ... */ },
 ///     UpdateType::EndpointAccessUpdate => { /* ... */ },
@@ -60,6 +61,8 @@ pub enum UpdateType {
     #[allow(missing_docs)] // documentation missing in model
     AssociateIdentityProviderConfig,
     #[allow(missing_docs)] // documentation missing in model
+    AutoModeUpdate,
+    #[allow(missing_docs)] // documentation missing in model
     ConfigUpdate,
     #[allow(missing_docs)] // documentation missing in model
     DisassociateIdentityProviderConfig,
@@ -86,6 +89,7 @@ impl ::std::convert::From<&str> for UpdateType {
             "AddonUpdate" => UpdateType::AddonUpdate,
             "AssociateEncryptionConfig" => UpdateType::AssociateEncryptionConfig,
             "AssociateIdentityProviderConfig" => UpdateType::AssociateIdentityProviderConfig,
+            "AutoModeUpdate" => UpdateType::AutoModeUpdate,
             "ConfigUpdate" => UpdateType::ConfigUpdate,
             "DisassociateIdentityProviderConfig" => UpdateType::DisassociateIdentityProviderConfig,
             "EndpointAccessUpdate" => UpdateType::EndpointAccessUpdate,
@@ -113,6 +117,7 @@ impl UpdateType {
             UpdateType::AddonUpdate => "AddonUpdate",
             UpdateType::AssociateEncryptionConfig => "AssociateEncryptionConfig",
             UpdateType::AssociateIdentityProviderConfig => "AssociateIdentityProviderConfig",
+            UpdateType::AutoModeUpdate => "AutoModeUpdate",
             UpdateType::ConfigUpdate => "ConfigUpdate",
             UpdateType::DisassociateIdentityProviderConfig => "DisassociateIdentityProviderConfig",
             UpdateType::EndpointAccessUpdate => "EndpointAccessUpdate",
@@ -131,6 +136,7 @@ impl UpdateType {
             "AddonUpdate",
             "AssociateEncryptionConfig",
             "AssociateIdentityProviderConfig",
+            "AutoModeUpdate",
             "ConfigUpdate",
             "DisassociateIdentityProviderConfig",
             "EndpointAccessUpdate",
@@ -166,6 +172,7 @@ impl ::std::fmt::Display for UpdateType {
             UpdateType::AddonUpdate => write!(f, "AddonUpdate"),
             UpdateType::AssociateEncryptionConfig => write!(f, "AssociateEncryptionConfig"),
             UpdateType::AssociateIdentityProviderConfig => write!(f, "AssociateIdentityProviderConfig"),
+            UpdateType::AutoModeUpdate => write!(f, "AutoModeUpdate"),
             UpdateType::ConfigUpdate => write!(f, "ConfigUpdate"),
             UpdateType::DisassociateIdentityProviderConfig => write!(f, "DisassociateIdentityProviderConfig"),
             UpdateType::EndpointAccessUpdate => write!(f, "EndpointAccessUpdate"),

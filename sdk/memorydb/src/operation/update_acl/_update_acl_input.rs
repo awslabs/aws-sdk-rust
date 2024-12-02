@@ -3,25 +3,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAclInput {
-    /// <p>The name of the Access Control List</p>
+    /// <p>The name of the Access Control List.</p>
     pub acl_name: ::std::option::Option<::std::string::String>,
-    /// <p>The list of users to add to the Access Control List</p>
+    /// <p>The list of users to add to the Access Control List.</p>
     pub user_names_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The list of users to remove from the Access Control List</p>
+    /// <p>The list of users to remove from the Access Control List.</p>
     pub user_names_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateAclInput {
-    /// <p>The name of the Access Control List</p>
+    /// <p>The name of the Access Control List.</p>
     pub fn acl_name(&self) -> ::std::option::Option<&str> {
         self.acl_name.as_deref()
     }
-    /// <p>The list of users to add to the Access Control List</p>
+    /// <p>The list of users to add to the Access Control List.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_names_to_add.is_none()`.
     pub fn user_names_to_add(&self) -> &[::std::string::String] {
         self.user_names_to_add.as_deref().unwrap_or_default()
     }
-    /// <p>The list of users to remove from the Access Control List</p>
+    /// <p>The list of users to remove from the Access Control List.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_names_to_remove.is_none()`.
     pub fn user_names_to_remove(&self) -> &[::std::string::String] {
@@ -44,18 +44,18 @@ pub struct UpdateAclInputBuilder {
     pub(crate) user_names_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateAclInputBuilder {
-    /// <p>The name of the Access Control List</p>
+    /// <p>The name of the Access Control List.</p>
     /// This field is required.
     pub fn acl_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.acl_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the Access Control List</p>
+    /// <p>The name of the Access Control List.</p>
     pub fn set_acl_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.acl_name = input;
         self
     }
-    /// <p>The name of the Access Control List</p>
+    /// <p>The name of the Access Control List.</p>
     pub fn get_acl_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.acl_name
     }
@@ -63,19 +63,19 @@ impl UpdateAclInputBuilder {
     ///
     /// To override the contents of this collection use [`set_user_names_to_add`](Self::set_user_names_to_add).
     ///
-    /// <p>The list of users to add to the Access Control List</p>
+    /// <p>The list of users to add to the Access Control List.</p>
     pub fn user_names_to_add(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.user_names_to_add.unwrap_or_default();
         v.push(input.into());
         self.user_names_to_add = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of users to add to the Access Control List</p>
+    /// <p>The list of users to add to the Access Control List.</p>
     pub fn set_user_names_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.user_names_to_add = input;
         self
     }
-    /// <p>The list of users to add to the Access Control List</p>
+    /// <p>The list of users to add to the Access Control List.</p>
     pub fn get_user_names_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.user_names_to_add
     }
@@ -83,19 +83,19 @@ impl UpdateAclInputBuilder {
     ///
     /// To override the contents of this collection use [`set_user_names_to_remove`](Self::set_user_names_to_remove).
     ///
-    /// <p>The list of users to remove from the Access Control List</p>
+    /// <p>The list of users to remove from the Access Control List.</p>
     pub fn user_names_to_remove(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.user_names_to_remove.unwrap_or_default();
         v.push(input.into());
         self.user_names_to_remove = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of users to remove from the Access Control List</p>
+    /// <p>The list of users to remove from the Access Control List.</p>
     pub fn set_user_names_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.user_names_to_remove = input;
         self
     }
-    /// <p>The list of users to remove from the Access Control List</p>
+    /// <p>The list of users to remove from the Access Control List.</p>
     pub fn get_user_names_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.user_names_to_remove
     }

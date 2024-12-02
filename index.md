@@ -80,6 +80,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS Health APIs and Notifications | [aws-sdk-health](https://crates.io/crates/aws-sdk-health) ([docs](https://docs.rs/aws-sdk-health)) |
 | AWS Health Imaging | [aws-sdk-medicalimaging](https://crates.io/crates/aws-sdk-medicalimaging) ([docs](https://docs.rs/aws-sdk-medicalimaging)) |
 | AWS Identity and Access Management | [aws-sdk-iam](https://crates.io/crates/aws-sdk-iam) ([docs](https://docs.rs/aws-sdk-iam)) |
+| AWS Invoicing | [aws-sdk-invoicing](https://crates.io/crates/aws-sdk-invoicing) ([docs](https://docs.rs/aws-sdk-invoicing)) |
 | AWS IoT | [aws-sdk-iot](https://crates.io/crates/aws-sdk-iot) ([docs](https://docs.rs/aws-sdk-iot)) |
 | AWS IoT 1-Click Devices Service | [aws-sdk-iot1clickdevices](https://crates.io/crates/aws-sdk-iot1clickdevices) ([docs](https://docs.rs/aws-sdk-iot1clickdevices)) |
 | AWS IoT 1-Click Projects Service | [aws-sdk-iot1clickprojects](https://crates.io/crates/aws-sdk-iot1clickprojects) ([docs](https://docs.rs/aws-sdk-iot1clickprojects)) |
@@ -382,6 +383,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Managed Streaming for Kafka | [aws-sdk-kafka](https://crates.io/crates/aws-sdk-kafka) ([docs](https://docs.rs/aws-sdk-kafka)) |
 | Managed Streaming for Kafka Connect | [aws-sdk-kafkaconnect](https://crates.io/crates/aws-sdk-kafkaconnect) ([docs](https://docs.rs/aws-sdk-kafkaconnect)) |
 | Migration Hub Strategy Recommendations | [aws-sdk-migrationhubstrategy](https://crates.io/crates/aws-sdk-migrationhubstrategy) ([docs](https://docs.rs/aws-sdk-migrationhubstrategy)) |
+| Network Flow Monitor | [aws-sdk-networkflowmonitor](https://crates.io/crates/aws-sdk-networkflowmonitor) ([docs](https://docs.rs/aws-sdk-networkflowmonitor)) |
 | OpenSearch Service Serverless | [aws-sdk-opensearchserverless](https://crates.io/crates/aws-sdk-opensearchserverless) ([docs](https://docs.rs/aws-sdk-opensearchserverless)) |
 | Partner Central Selling API | [aws-sdk-partnercentralselling](https://crates.io/crates/aws-sdk-partnercentralselling) ([docs](https://docs.rs/aws-sdk-partnercentralselling)) |
 | Payment Cryptography Control Plane | [aws-sdk-paymentcryptography](https://crates.io/crates/aws-sdk-paymentcryptography) ([docs](https://docs.rs/aws-sdk-paymentcryptography)) |
@@ -395,6 +397,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Route 53 Profiles | [aws-sdk-route53profiles](https://crates.io/crates/aws-sdk-route53profiles) ([docs](https://docs.rs/aws-sdk-route53profiles)) |
 | Route53 Recovery Cluster | [aws-sdk-route53recoverycluster](https://crates.io/crates/aws-sdk-route53recoverycluster) ([docs](https://docs.rs/aws-sdk-route53recoverycluster)) |
 | Schemas | [aws-sdk-schemas](https://crates.io/crates/aws-sdk-schemas) ([docs](https://docs.rs/aws-sdk-schemas)) |
+| Security Incident Response | [aws-sdk-securityir](https://crates.io/crates/aws-sdk-securityir) ([docs](https://docs.rs/aws-sdk-securityir)) |
 | Service Quotas | [aws-sdk-servicequotas](https://crates.io/crates/aws-sdk-servicequotas) ([docs](https://docs.rs/aws-sdk-servicequotas)) |
 | Synthetics | [aws-sdk-synthetics](https://crates.io/crates/aws-sdk-synthetics) ([docs](https://docs.rs/aws-sdk-synthetics)) |
 | Tax Settings | [aws-sdk-taxsettings](https://crates.io/crates/aws-sdk-taxsettings) ([docs](https://docs.rs/aws-sdk-taxsettings)) |

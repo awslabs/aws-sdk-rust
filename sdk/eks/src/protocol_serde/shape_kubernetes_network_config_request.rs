@@ -9,5 +9,11 @@ pub fn ser_kubernetes_network_config_request(
     if let Some(var_2) = &input.ip_family {
         object.key("ipFamily").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.elastic_load_balancing {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("elasticLoadBalancing").start_object();
+        crate::protocol_serde::shape_elastic_load_balancing::ser_elastic_load_balancing(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }

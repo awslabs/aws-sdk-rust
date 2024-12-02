@@ -3,6 +3,8 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
+    /// <p>You do not have the necessary permissons for this action.</p>
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>There is concurrent modification on a rule, target, archive, or replay.</p>
     ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
     /// <p>An error occurred because a replay can be canceled only when the state is Running or Starting.</p>
@@ -25,6 +27,8 @@ pub enum Error {
     ResourceAlreadyExistsException(crate::types::error::ResourceAlreadyExistsException),
     /// <p>An entity that you specified does not exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
+    /// <p>This request cannot be completed due to throttling issues.</p>
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -37,6 +41,7 @@ pub enum Error {
 impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::ConcurrentModificationException(inner) => inner.fmt(f),
             Error::IllegalStatusException(inner) => inner.fmt(f),
             Error::InternalException(inner) => inner.fmt(f),
@@ -48,6 +53,7 @@ impl ::std::fmt::Display for Error {
             Error::PolicyLengthExceededException(inner) => inner.fmt(f),
             Error::ResourceAlreadyExistsException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
+            Error::ThrottlingException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -69,6 +75,7 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(inner) => inner.meta(),
             Self::ConcurrentModificationException(inner) => inner.meta(),
             Self::IllegalStatusException(inner) => inner.meta(),
             Self::InternalException(inner) => inner.meta(),
@@ -80,6 +87,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::PolicyLengthExceededException(inner) => inner.meta(),
             Self::ResourceAlreadyExistsException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
+            Self::ThrottlingException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
         }
     }
@@ -222,11 +230,14 @@ where
 impl From<crate::operation::create_connection::CreateConnectionError> for Error {
     fn from(err: crate::operation::create_connection::CreateConnectionError) -> Self {
         match err {
+            crate::operation::create_connection::CreateConnectionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::create_connection::CreateConnectionError::InternalException(inner) => Error::InternalException(inner),
             crate::operation::create_connection::CreateConnectionError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::create_connection::CreateConnectionError::ResourceAlreadyExistsException(inner) => {
                 Error::ResourceAlreadyExistsException(inner)
             }
+            crate::operation::create_connection::CreateConnectionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_connection::CreateConnectionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_connection::CreateConnectionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1548,12 +1559,14 @@ where
 impl From<crate::operation::update_connection::UpdateConnectionError> for Error {
     fn from(err: crate::operation::update_connection::UpdateConnectionError) -> Self {
         match err {
+            crate::operation::update_connection::UpdateConnectionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::update_connection::UpdateConnectionError::ConcurrentModificationException(inner) => {
                 Error::ConcurrentModificationException(inner)
             }
             crate::operation::update_connection::UpdateConnectionError::InternalException(inner) => Error::InternalException(inner),
             crate::operation::update_connection::UpdateConnectionError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::update_connection::UpdateConnectionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_connection::UpdateConnectionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_connection::UpdateConnectionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1614,6 +1627,7 @@ impl From<crate::operation::update_event_bus::UpdateEventBusError> for Error {
 impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Error::AccessDeniedException(inner) => inner.source(),
             Error::ConcurrentModificationException(inner) => inner.source(),
             Error::IllegalStatusException(inner) => inner.source(),
             Error::InternalException(inner) => inner.source(),
@@ -1625,6 +1639,7 @@ impl ::std::error::Error for Error {
             Error::PolicyLengthExceededException(inner) => inner.source(),
             Error::ResourceAlreadyExistsException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::ThrottlingException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
         }
     }
@@ -1632,6 +1647,7 @@ impl ::std::error::Error for Error {
 impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
+            Self::AccessDeniedException(e) => e.request_id(),
             Self::ConcurrentModificationException(e) => e.request_id(),
             Self::IllegalStatusException(e) => e.request_id(),
             Self::InternalException(e) => e.request_id(),
@@ -1643,6 +1659,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::PolicyLengthExceededException(e) => e.request_id(),
             Self::ResourceAlreadyExistsException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::ThrottlingException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),
         }
     }

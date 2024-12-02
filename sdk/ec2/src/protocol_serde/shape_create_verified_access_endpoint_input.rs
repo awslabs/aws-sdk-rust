@@ -96,6 +96,18 @@ pub fn ser_create_verified_access_endpoint_input_input_input(
     if let Some(var_36) = &input.sse_specification {
         crate::protocol_serde::shape_verified_access_sse_specification_request::ser_verified_access_sse_specification_request(scope_35, var_36)?;
     }
+    #[allow(unused_mut)]
+    let mut scope_37 = writer.prefix("RdsOptions");
+    if let Some(var_38) = &input.rds_options {
+        crate::protocol_serde::shape_create_verified_access_endpoint_rds_options::ser_create_verified_access_endpoint_rds_options(scope_37, var_38)?;
+    }
+    #[allow(unused_mut)]
+    let mut scope_39 = writer.prefix("CidrOptions");
+    if let Some(var_40) = &input.cidr_options {
+        crate::protocol_serde::shape_create_verified_access_endpoint_cidr_options::ser_create_verified_access_endpoint_cidr_options(
+            scope_39, var_40,
+        )?;
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

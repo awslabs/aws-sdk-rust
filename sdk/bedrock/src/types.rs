@@ -165,6 +165,8 @@ pub use crate::types::_guardrail_summary::GuardrailSummary;
 
 pub use crate::types::_evaluation_summary::EvaluationSummary;
 
+pub use crate::types::_application_type::ApplicationType;
+
 pub use crate::types::_evaluation_task_type::EvaluationTaskType;
 
 pub use crate::types::_evaluation_job_type::EvaluationJobType;
@@ -174,6 +176,56 @@ pub use crate::types::_evaluation_job_status::EvaluationJobStatus;
 pub use crate::types::_evaluation_output_data_config::EvaluationOutputDataConfig;
 
 pub use crate::types::_evaluation_inference_config::EvaluationInferenceConfig;
+
+pub use crate::types::_rag_config::RagConfig;
+
+pub use crate::types::_knowledge_base_config::KnowledgeBaseConfig;
+
+pub use crate::types::_retrieve_and_generate_configuration::RetrieveAndGenerateConfiguration;
+
+pub use crate::types::_external_sources_retrieve_and_generate_configuration::ExternalSourcesRetrieveAndGenerateConfiguration;
+
+pub use crate::types::_external_sources_generation_configuration::ExternalSourcesGenerationConfiguration;
+
+pub use crate::types::_kb_inference_config::KbInferenceConfig;
+
+pub use crate::types::_text_inference_config::TextInferenceConfig;
+
+pub use crate::types::_guardrail_configuration::GuardrailConfiguration;
+
+pub use crate::types::_prompt_template::PromptTemplate;
+
+pub use crate::types::_external_source::ExternalSource;
+
+pub use crate::types::_byte_content_doc::ByteContentDoc;
+
+pub use crate::types::_s3_object_doc::S3ObjectDoc;
+
+pub use crate::types::_external_source_type::ExternalSourceType;
+
+pub use crate::types::_knowledge_base_retrieve_and_generate_configuration::KnowledgeBaseRetrieveAndGenerateConfiguration;
+
+pub use crate::types::_orchestration_configuration::OrchestrationConfiguration;
+
+pub use crate::types::_query_transformation_configuration::QueryTransformationConfiguration;
+
+pub use crate::types::_query_transformation_type::QueryTransformationType;
+
+pub use crate::types::_generation_configuration::GenerationConfiguration;
+
+pub use crate::types::_knowledge_base_retrieval_configuration::KnowledgeBaseRetrievalConfiguration;
+
+pub use crate::types::_knowledge_base_vector_search_configuration::KnowledgeBaseVectorSearchConfiguration;
+
+pub use crate::types::_retrieval_filter::RetrievalFilter;
+
+pub use crate::types::_filter_attribute::FilterAttribute;
+
+pub use crate::types::_search_type::SearchType;
+
+pub use crate::types::_retrieve_and_generate_type::RetrieveAndGenerateType;
+
+pub use crate::types::_retrieve_config::RetrieveConfig;
 
 pub use crate::types::_evaluation_model_config::EvaluationModelConfig;
 
@@ -195,15 +247,25 @@ pub use crate::types::_human_workflow_config::HumanWorkflowConfig;
 
 pub use crate::types::_automated_evaluation_config::AutomatedEvaluationConfig;
 
+pub use crate::types::_evaluator_model_config::EvaluatorModelConfig;
+
+pub use crate::types::_bedrock_evaluator_model::BedrockEvaluatorModel;
+
 pub use crate::types::_batch_delete_evaluation_job_item::BatchDeleteEvaluationJobItem;
 
 pub use crate::types::_batch_delete_evaluation_job_error::BatchDeleteEvaluationJobError;
+
+mod _application_type;
 
 mod _automated_evaluation_config;
 
 mod _batch_delete_evaluation_job_error;
 
 mod _batch_delete_evaluation_job_item;
+
+mod _bedrock_evaluator_model;
+
+mod _byte_content_doc;
 
 mod _cloud_watch_config;
 
@@ -237,6 +299,18 @@ mod _evaluation_summary;
 
 mod _evaluation_task_type;
 
+mod _evaluator_model_config;
+
+mod _external_source;
+
+mod _external_source_type;
+
+mod _external_sources_generation_configuration;
+
+mod _external_sources_retrieve_and_generate_configuration;
+
+mod _filter_attribute;
+
 mod _fine_tuning_job_status;
 
 mod _foundation_model_details;
@@ -246,6 +320,10 @@ mod _foundation_model_lifecycle;
 mod _foundation_model_lifecycle_status;
 
 mod _foundation_model_summary;
+
+mod _generation_configuration;
+
+mod _guardrail_configuration;
 
 mod _guardrail_content_filter;
 
@@ -333,6 +411,16 @@ mod _inference_profile_type;
 
 mod _inference_type;
 
+mod _kb_inference_config;
+
+mod _knowledge_base_config;
+
+mod _knowledge_base_retrieval_configuration;
+
+mod _knowledge_base_retrieve_and_generate_configuration;
+
+mod _knowledge_base_vector_search_configuration;
+
 mod _logging_config;
 
 mod _model_copy_job_status;
@@ -365,17 +453,39 @@ mod _model_invocation_job_summary;
 
 mod _model_modality;
 
+mod _orchestration_configuration;
+
 mod _output_data_config;
+
+mod _prompt_template;
 
 mod _provisioned_model_status;
 
 mod _provisioned_model_summary;
+
+mod _query_transformation_configuration;
+
+mod _query_transformation_type;
+
+mod _rag_config;
+
+mod _retrieval_filter;
+
+mod _retrieve_and_generate_configuration;
+
+mod _retrieve_and_generate_type;
+
+mod _retrieve_config;
 
 mod _s3_config;
 
 mod _s3_data_source;
 
 mod _s3_input_format;
+
+mod _s3_object_doc;
+
+mod _search_type;
 
 mod _sort_by_provisioned_models;
 
@@ -386,6 +496,8 @@ mod _sort_models_by;
 mod _sort_order;
 
 mod _tag;
+
+mod _text_inference_config;
 
 mod _training_data_config;
 

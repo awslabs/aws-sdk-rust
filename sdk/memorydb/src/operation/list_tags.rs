@@ -246,6 +246,10 @@ pub enum ListTagsError {
     InvalidArnFault(crate::types::error::InvalidArnFault),
     /// <p></p>
     InvalidClusterStateFault(crate::types::error::InvalidClusterStateFault),
+    /// <p>The specified multi-Region cluster does not exist.</p>
+    MultiRegionClusterNotFoundFault(crate::types::error::MultiRegionClusterNotFoundFault),
+    /// <p>The specified multi-Region parameter group does not exist.</p>
+    MultiRegionParameterGroupNotFoundFault(crate::types::error::MultiRegionParameterGroupNotFoundFault),
     /// <p></p>
     ParameterGroupNotFoundFault(crate::types::error::ParameterGroupNotFoundFault),
     /// <p></p>
@@ -293,6 +297,8 @@ impl ListTagsError {
             Self::ClusterNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidArnFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidClusterStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::MultiRegionClusterNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::MultiRegionParameterGroupNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ParameterGroupNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceLinkedRoleNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::SnapshotNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -316,6 +322,14 @@ impl ListTagsError {
     /// Returns `true` if the error kind is `ListTagsError::InvalidClusterStateFault`.
     pub fn is_invalid_cluster_state_fault(&self) -> bool {
         matches!(self, Self::InvalidClusterStateFault(_))
+    }
+    /// Returns `true` if the error kind is `ListTagsError::MultiRegionClusterNotFoundFault`.
+    pub fn is_multi_region_cluster_not_found_fault(&self) -> bool {
+        matches!(self, Self::MultiRegionClusterNotFoundFault(_))
+    }
+    /// Returns `true` if the error kind is `ListTagsError::MultiRegionParameterGroupNotFoundFault`.
+    pub fn is_multi_region_parameter_group_not_found_fault(&self) -> bool {
+        matches!(self, Self::MultiRegionParameterGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `ListTagsError::ParameterGroupNotFoundFault`.
     pub fn is_parameter_group_not_found_fault(&self) -> bool {
@@ -345,6 +359,8 @@ impl ::std::error::Error for ListTagsError {
             Self::ClusterNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidArnFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidClusterStateFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::MultiRegionClusterNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::MultiRegionParameterGroupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::ParameterGroupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceLinkedRoleNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::SnapshotNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
@@ -361,6 +377,8 @@ impl ::std::fmt::Display for ListTagsError {
             Self::ClusterNotFoundFault(_inner) => _inner.fmt(f),
             Self::InvalidArnFault(_inner) => _inner.fmt(f),
             Self::InvalidClusterStateFault(_inner) => _inner.fmt(f),
+            Self::MultiRegionClusterNotFoundFault(_inner) => _inner.fmt(f),
+            Self::MultiRegionParameterGroupNotFoundFault(_inner) => _inner.fmt(f),
             Self::ParameterGroupNotFoundFault(_inner) => _inner.fmt(f),
             Self::ServiceLinkedRoleNotFoundFault(_inner) => _inner.fmt(f),
             Self::SnapshotNotFoundFault(_inner) => _inner.fmt(f),
@@ -391,6 +409,8 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListTagsError
             Self::ClusterNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidArnFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidClusterStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::MultiRegionClusterNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::MultiRegionParameterGroupNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ParameterGroupNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceLinkedRoleNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::SnapshotNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

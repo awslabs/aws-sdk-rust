@@ -11,6 +11,8 @@ pub struct DescribeQueriesInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>Limits the returned queries to only the queries that use the specified query language.</p>
+    pub query_language: ::std::option::Option<crate::types::QueryLanguage>,
 }
 impl DescribeQueriesInput {
     /// <p>Limits the returned queries to only those for the specified log group.</p>
@@ -29,6 +31,10 @@ impl DescribeQueriesInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
+    /// <p>Limits the returned queries to only the queries that use the specified query language.</p>
+    pub fn query_language(&self) -> ::std::option::Option<&crate::types::QueryLanguage> {
+        self.query_language.as_ref()
+    }
 }
 impl DescribeQueriesInput {
     /// Creates a new builder-style object to manufacture [`DescribeQueriesInput`](crate::operation::describe_queries::DescribeQueriesInput).
@@ -45,6 +51,7 @@ pub struct DescribeQueriesInputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::QueryStatus>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) query_language: ::std::option::Option<crate::types::QueryLanguage>,
 }
 impl DescribeQueriesInputBuilder {
     /// <p>Limits the returned queries to only those for the specified log group.</p>
@@ -103,6 +110,20 @@ impl DescribeQueriesInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
+    /// <p>Limits the returned queries to only the queries that use the specified query language.</p>
+    pub fn query_language(mut self, input: crate::types::QueryLanguage) -> Self {
+        self.query_language = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Limits the returned queries to only the queries that use the specified query language.</p>
+    pub fn set_query_language(mut self, input: ::std::option::Option<crate::types::QueryLanguage>) -> Self {
+        self.query_language = input;
+        self
+    }
+    /// <p>Limits the returned queries to only the queries that use the specified query language.</p>
+    pub fn get_query_language(&self) -> &::std::option::Option<crate::types::QueryLanguage> {
+        &self.query_language
+    }
     /// Consumes the builder and constructs a [`DescribeQueriesInput`](crate::operation::describe_queries::DescribeQueriesInput).
     pub fn build(
         self,
@@ -112,6 +133,7 @@ impl DescribeQueriesInputBuilder {
             status: self.status,
             max_results: self.max_results,
             next_token: self.next_token,
+            query_language: self.query_language,
         })
     }
 }

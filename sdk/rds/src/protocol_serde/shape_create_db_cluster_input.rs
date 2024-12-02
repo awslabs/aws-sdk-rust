@@ -258,72 +258,77 @@ pub fn ser_create_db_cluster_input_input_input(
         scope_95.string(var_96);
     }
     #[allow(unused_mut)]
-    let mut scope_97 = writer.prefix("EnablePerformanceInsights");
-    if let Some(var_98) = &input.enable_performance_insights {
-        scope_97.boolean(*var_98);
+    let mut scope_97 = writer.prefix("DatabaseInsightsMode");
+    if let Some(var_98) = &input.database_insights_mode {
+        scope_97.string(var_98.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_99 = writer.prefix("PerformanceInsightsKMSKeyId");
-    if let Some(var_100) = &input.performance_insights_kms_key_id {
-        scope_99.string(var_100);
+    let mut scope_99 = writer.prefix("EnablePerformanceInsights");
+    if let Some(var_100) = &input.enable_performance_insights {
+        scope_99.boolean(*var_100);
     }
     #[allow(unused_mut)]
-    let mut scope_101 = writer.prefix("PerformanceInsightsRetentionPeriod");
-    if let Some(var_102) = &input.performance_insights_retention_period {
-        scope_101.number(
+    let mut scope_101 = writer.prefix("PerformanceInsightsKMSKeyId");
+    if let Some(var_102) = &input.performance_insights_kms_key_id {
+        scope_101.string(var_102);
+    }
+    #[allow(unused_mut)]
+    let mut scope_103 = writer.prefix("PerformanceInsightsRetentionPeriod");
+    if let Some(var_104) = &input.performance_insights_retention_period {
+        scope_103.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_102).into()),
+            ::aws_smithy_types::Number::NegInt((*var_104).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_103 = writer.prefix("EnableLimitlessDatabase");
-    if let Some(var_104) = &input.enable_limitless_database {
-        scope_103.boolean(*var_104);
+    let mut scope_105 = writer.prefix("EnableLimitlessDatabase");
+    if let Some(var_106) = &input.enable_limitless_database {
+        scope_105.boolean(*var_106);
     }
     #[allow(unused_mut)]
-    let mut scope_105 = writer.prefix("ServerlessV2ScalingConfiguration");
-    if let Some(var_106) = &input.serverless_v2_scaling_configuration {
-        crate::protocol_serde::shape_serverless_v2_scaling_configuration::ser_serverless_v2_scaling_configuration(scope_105, var_106)?;
+    let mut scope_107 = writer.prefix("ServerlessV2ScalingConfiguration");
+    if let Some(var_108) = &input.serverless_v2_scaling_configuration {
+        crate::protocol_serde::shape_serverless_v2_scaling_configuration::ser_serverless_v2_scaling_configuration(scope_107, var_108)?;
     }
     #[allow(unused_mut)]
-    let mut scope_107 = writer.prefix("NetworkType");
-    if let Some(var_108) = &input.network_type {
-        scope_107.string(var_108);
+    let mut scope_109 = writer.prefix("NetworkType");
+    if let Some(var_110) = &input.network_type {
+        scope_109.string(var_110);
     }
     #[allow(unused_mut)]
-    let mut scope_109 = writer.prefix("ClusterScalabilityType");
-    if let Some(var_110) = &input.cluster_scalability_type {
-        scope_109.string(var_110.as_str());
+    let mut scope_111 = writer.prefix("ClusterScalabilityType");
+    if let Some(var_112) = &input.cluster_scalability_type {
+        scope_111.string(var_112.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_111 = writer.prefix("DBSystemId");
-    if let Some(var_112) = &input.db_system_id {
-        scope_111.string(var_112);
+    let mut scope_113 = writer.prefix("DBSystemId");
+    if let Some(var_114) = &input.db_system_id {
+        scope_113.string(var_114);
     }
     #[allow(unused_mut)]
-    let mut scope_113 = writer.prefix("ManageMasterUserPassword");
-    if let Some(var_114) = &input.manage_master_user_password {
-        scope_113.boolean(*var_114);
+    let mut scope_115 = writer.prefix("ManageMasterUserPassword");
+    if let Some(var_116) = &input.manage_master_user_password {
+        scope_115.boolean(*var_116);
     }
     #[allow(unused_mut)]
-    let mut scope_115 = writer.prefix("MasterUserSecretKmsKeyId");
-    if let Some(var_116) = &input.master_user_secret_kms_key_id {
-        scope_115.string(var_116);
+    let mut scope_117 = writer.prefix("MasterUserSecretKmsKeyId");
+    if let Some(var_118) = &input.master_user_secret_kms_key_id {
+        scope_117.string(var_118);
     }
     #[allow(unused_mut)]
-    let mut scope_117 = writer.prefix("EnableLocalWriteForwarding");
-    if let Some(var_118) = &input.enable_local_write_forwarding {
-        scope_117.boolean(*var_118);
+    let mut scope_119 = writer.prefix("EnableLocalWriteForwarding");
+    if let Some(var_120) = &input.enable_local_write_forwarding {
+        scope_119.boolean(*var_120);
     }
     #[allow(unused_mut)]
-    let mut scope_119 = writer.prefix("CACertificateIdentifier");
-    if let Some(var_120) = &input.ca_certificate_identifier {
-        scope_119.string(var_120);
-    }
-    #[allow(unused_mut)]
-    let mut scope_121 = writer.prefix("EngineLifecycleSupport");
-    if let Some(var_122) = &input.engine_lifecycle_support {
+    let mut scope_121 = writer.prefix("CACertificateIdentifier");
+    if let Some(var_122) = &input.ca_certificate_identifier {
         scope_121.string(var_122);
+    }
+    #[allow(unused_mut)]
+    let mut scope_123 = writer.prefix("EngineLifecycleSupport");
+    if let Some(var_124) = &input.engine_lifecycle_support {
+        scope_123.string(var_124);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

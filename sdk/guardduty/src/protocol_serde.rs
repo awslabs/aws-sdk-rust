@@ -683,6 +683,8 @@ pub(crate) mod shape_scan_detections;
 
 pub(crate) mod shape_security_context;
 
+pub(crate) mod shape_sequence;
+
 pub(crate) mod shape_sources;
 
 pub(crate) mod shape_tags;
@@ -696,6 +698,8 @@ pub(crate) mod shape_usage_top_account_result;
 pub(crate) mod shape_volume_mounts;
 
 pub(crate) mod shape_vpc_config;
+
+pub(crate) mod shape_actors;
 
 pub(crate) mod shape_affected_resources;
 
@@ -717,6 +721,8 @@ pub(crate) mod shape_highest_severity_threat_details;
 
 pub(crate) mod shape_impersonated_user;
 
+pub(crate) mod shape_indicators;
+
 pub(crate) mod shape_issues;
 
 pub(crate) mod shape_lineage;
@@ -730,6 +736,8 @@ pub(crate) mod shape_login_attributes;
 pub(crate) mod shape_member_additional_configuration_result;
 
 pub(crate) mod shape_memory_regions_list;
+
+pub(crate) mod shape_network_endpoints;
 
 pub(crate) mod shape_network_interface;
 
@@ -749,6 +757,8 @@ pub(crate) mod shape_remote_ip_details;
 
 pub(crate) mod shape_remote_port_details;
 
+pub(crate) mod shape_resources;
+
 pub(crate) mod shape_s3_object_details;
 
 pub(crate) mod shape_scanned_item_count;
@@ -756,6 +766,8 @@ pub(crate) mod shape_scanned_item_count;
 pub(crate) mod shape_security_groups;
 
 pub(crate) mod shape_session_name_list;
+
+pub(crate) mod shape_signals;
 
 pub(crate) mod shape_source_ips;
 
@@ -775,6 +787,8 @@ pub(crate) mod shape_volume_mount;
 
 pub(crate) mod shape_volumes;
 
+pub(crate) mod shape_actor;
+
 pub(crate) mod shape_anomaly_profile_features;
 
 pub(crate) mod shape_behavior;
@@ -785,6 +799,8 @@ pub(crate) mod shape_country;
 
 pub(crate) mod shape_geo_location;
 
+pub(crate) mod shape_indicator;
+
 pub(crate) mod shape_ipv6_addresses;
 
 pub(crate) mod shape_item_paths;
@@ -792,6 +808,8 @@ pub(crate) mod shape_item_paths;
 pub(crate) mod shape_lineage_object;
 
 pub(crate) mod shape_login_attribute;
+
+pub(crate) mod shape_network_endpoint;
 
 pub(crate) mod shape_organization;
 
@@ -801,11 +819,15 @@ pub(crate) mod shape_port_probe_detail;
 
 pub(crate) mod shape_private_ip_addresses;
 
+pub(crate) mod shape_resource_v2;
+
 pub(crate) mod shape_s3_object_detail;
 
 pub(crate) mod shape_scan_threat_names;
 
 pub(crate) mod shape_security_group;
+
+pub(crate) mod shape_signal;
 
 pub(crate) mod shape_threat_names;
 
@@ -813,21 +835,45 @@ pub(crate) mod shape_volume;
 
 pub(crate) mod shape_account_level_permissions;
 
+pub(crate) mod shape_actor_ids;
+
 pub(crate) mod shape_anomaly_profile_feature_objects;
 
 pub(crate) mod shape_anomaly_unusual_behavior_feature;
 
+pub(crate) mod shape_autonomous_system;
+
 pub(crate) mod shape_bucket_level_permissions;
+
+pub(crate) mod shape_endpoint_ids;
 
 pub(crate) mod shape_host_path;
 
+pub(crate) mod shape_indicator_values;
+
 pub(crate) mod shape_item_path;
+
+pub(crate) mod shape_network_connection;
+
+pub(crate) mod shape_network_geo_location;
 
 pub(crate) mod shape_private_ip_address_details;
 
+pub(crate) mod shape_resource_data;
+
+pub(crate) mod shape_resource_uids;
+
 pub(crate) mod shape_scan_threat_name;
 
+pub(crate) mod shape_session;
+
+pub(crate) mod shape_user;
+
 pub(crate) mod shape_access_control_list;
+
+pub(crate) mod shape_access_key;
+
+pub(crate) mod shape_account;
 
 pub(crate) mod shape_anomaly_object;
 
@@ -835,9 +881,23 @@ pub(crate) mod shape_block_public_access;
 
 pub(crate) mod shape_bucket_policy;
 
+pub(crate) mod shape_ec2_instance;
+
+pub(crate) mod shape_ec2_network_interface;
+
 pub(crate) mod shape_file_paths;
 
+pub(crate) mod shape_s3_bucket;
+
+pub(crate) mod shape_s3_object;
+
+pub(crate) mod shape_ec2_network_interface_uids;
+
 pub(crate) mod shape_observations;
+
+pub(crate) mod shape_public_access_configuration;
+
+pub(crate) mod shape_s3_object_uids;
 
 pub(crate) mod shape_scan_file_path;
 

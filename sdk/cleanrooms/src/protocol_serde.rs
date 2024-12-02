@@ -409,6 +409,8 @@ pub(crate) mod shape_analysis_template_summary;
 
 pub(crate) mod shape_analysis_template_validation_status_detail_list;
 
+pub(crate) mod shape_athena_table_reference;
+
 pub(crate) mod shape_batch_get_collaboration_analysis_template_error;
 
 pub(crate) mod shape_batch_get_schema_analysis_rule_error;
@@ -501,6 +503,8 @@ pub(crate) mod shape_schema_summary;
 
 pub(crate) mod shape_schema_type_properties;
 
+pub(crate) mod shape_snowflake_table_reference;
+
 pub(crate) mod shape_validation_exception_field;
 
 pub(crate) mod shape_worker_compute_configuration;
@@ -565,6 +569,8 @@ pub(crate) mod shape_receiver_configurations_list;
 
 pub(crate) mod shape_schema_status_detail;
 
+pub(crate) mod shape_snowflake_table_schema;
+
 pub(crate) mod shape_aggregate_column;
 
 pub(crate) mod shape_aggregation_constraint;
@@ -592,6 +598,8 @@ pub(crate) mod shape_receiver_configuration;
 pub(crate) mod shape_schema_configuration_list;
 
 pub(crate) mod shape_schema_status_reason_list;
+
+pub(crate) mod shape_snowflake_table_schema_v1;
 
 pub(crate) mod shape_aggregate_column_list;
 
@@ -624,6 +632,8 @@ pub(crate) mod shape_query_constraint_list;
 pub(crate) mod shape_scalar_functions_list;
 
 pub(crate) mod shape_schema_status_reason;
+
+pub(crate) mod shape_snowflake_table_schema_list;
 
 pub(crate) mod shape_differential_privacy_column_list;
 

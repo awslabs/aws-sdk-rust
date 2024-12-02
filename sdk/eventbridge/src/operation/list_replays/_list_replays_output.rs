@@ -5,7 +5,9 @@
 pub struct ListReplaysOutput {
     /// <p>An array of <code>Replay</code> objects that contain information about the replay.</p>
     pub replays: ::std::option::Option<::std::vec::Vec<crate::types::Replay>>,
-    /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    /// <p>A token indicating there are more results available. If there are no more results, no token is included in the response.</p>
+    /// <p>The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page of results, make the call again using the returned token. Keep all other arguments unchanged.</p>
+    /// <p>Using an expired pagination token results in an <code>HTTP 400 InvalidToken</code> error.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -16,7 +18,9 @@ impl ListReplaysOutput {
     pub fn replays(&self) -> &[crate::types::Replay] {
         self.replays.as_deref().unwrap_or_default()
     }
-    /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    /// <p>A token indicating there are more results available. If there are no more results, no token is included in the response.</p>
+    /// <p>The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page of results, make the call again using the returned token. Keep all other arguments unchanged.</p>
+    /// <p>Using an expired pagination token results in an <code>HTTP 400 InvalidToken</code> error.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -62,17 +66,23 @@ impl ListReplaysOutputBuilder {
     pub fn get_replays(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Replay>> {
         &self.replays
     }
-    /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    /// <p>A token indicating there are more results available. If there are no more results, no token is included in the response.</p>
+    /// <p>The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page of results, make the call again using the returned token. Keep all other arguments unchanged.</p>
+    /// <p>Using an expired pagination token results in an <code>HTTP 400 InvalidToken</code> error.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    /// <p>A token indicating there are more results available. If there are no more results, no token is included in the response.</p>
+    /// <p>The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page of results, make the call again using the returned token. Keep all other arguments unchanged.</p>
+    /// <p>Using an expired pagination token results in an <code>HTTP 400 InvalidToken</code> error.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    /// <p>A token indicating there are more results available. If there are no more results, no token is included in the response.</p>
+    /// <p>The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page of results, make the call again using the returned token. Keep all other arguments unchanged.</p>
+    /// <p>Using an expired pagination token results in an <code>HTTP 400 InvalidToken</code> error.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

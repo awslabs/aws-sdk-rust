@@ -153,6 +153,12 @@ pub use crate::types::_evaluation_note::EvaluationNoteBuilder;
 
 pub use crate::types::_evaluation_answer_input::EvaluationAnswerInputBuilder;
 
+pub use crate::types::_endpoint::EndpointBuilder;
+
+pub use crate::types::_user_info::UserInfoBuilder;
+
+pub use crate::types::_queue_info_input::QueueInfoInputBuilder;
+
 pub use crate::types::_segment_attribute_value::SegmentAttributeValueBuilder;
 
 pub use crate::types::_disconnect_reason::DisconnectReasonBuilder;
@@ -190,8 +196,6 @@ pub use crate::types::_outbound_additional_recipients::OutboundAdditionalRecipie
 pub use crate::types::_email_address_info::EmailAddressInfoBuilder;
 
 pub use crate::types::_chat_message::ChatMessageBuilder;
-
-pub use crate::types::_endpoint::EndpointBuilder;
 
 pub use crate::types::_email_attachment::EmailAttachmentBuilder;
 
@@ -626,8 +630,6 @@ pub use crate::types::_authentication_profile::AuthenticationProfileBuilder;
 pub use crate::types::_participant_token_credentials::ParticipantTokenCredentialsBuilder;
 
 pub use crate::types::_participant_details_to_add::ParticipantDetailsToAddBuilder;
-
-pub use crate::types::_user_info::UserInfoBuilder;
 
 pub use crate::types::_failed_request::FailedRequestBuilder;
 

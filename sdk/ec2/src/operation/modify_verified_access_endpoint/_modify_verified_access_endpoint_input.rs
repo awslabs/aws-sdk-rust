@@ -17,6 +17,10 @@ pub struct ModifyVerifiedAccessEndpointInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
+    /// <p>The RDS options.</p>
+    pub rds_options: ::std::option::Option<crate::types::ModifyVerifiedAccessEndpointRdsOptions>,
+    /// <p>The CIDR options.</p>
+    pub cidr_options: ::std::option::Option<crate::types::ModifyVerifiedAccessEndpointCidrOptions>,
 }
 impl ModifyVerifiedAccessEndpointInput {
     /// <p>The ID of the Verified Access endpoint.</p>
@@ -47,6 +51,14 @@ impl ModifyVerifiedAccessEndpointInput {
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
+    /// <p>The RDS options.</p>
+    pub fn rds_options(&self) -> ::std::option::Option<&crate::types::ModifyVerifiedAccessEndpointRdsOptions> {
+        self.rds_options.as_ref()
+    }
+    /// <p>The CIDR options.</p>
+    pub fn cidr_options(&self) -> ::std::option::Option<&crate::types::ModifyVerifiedAccessEndpointCidrOptions> {
+        self.cidr_options.as_ref()
+    }
 }
 impl ModifyVerifiedAccessEndpointInput {
     /// Creates a new builder-style object to manufacture [`ModifyVerifiedAccessEndpointInput`](crate::operation::modify_verified_access_endpoint::ModifyVerifiedAccessEndpointInput).
@@ -66,6 +78,8 @@ pub struct ModifyVerifiedAccessEndpointInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
+    pub(crate) rds_options: ::std::option::Option<crate::types::ModifyVerifiedAccessEndpointRdsOptions>,
+    pub(crate) cidr_options: ::std::option::Option<crate::types::ModifyVerifiedAccessEndpointCidrOptions>,
 }
 impl ModifyVerifiedAccessEndpointInputBuilder {
     /// <p>The ID of the Verified Access endpoint.</p>
@@ -167,6 +181,34 @@ impl ModifyVerifiedAccessEndpointInputBuilder {
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
+    /// <p>The RDS options.</p>
+    pub fn rds_options(mut self, input: crate::types::ModifyVerifiedAccessEndpointRdsOptions) -> Self {
+        self.rds_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The RDS options.</p>
+    pub fn set_rds_options(mut self, input: ::std::option::Option<crate::types::ModifyVerifiedAccessEndpointRdsOptions>) -> Self {
+        self.rds_options = input;
+        self
+    }
+    /// <p>The RDS options.</p>
+    pub fn get_rds_options(&self) -> &::std::option::Option<crate::types::ModifyVerifiedAccessEndpointRdsOptions> {
+        &self.rds_options
+    }
+    /// <p>The CIDR options.</p>
+    pub fn cidr_options(mut self, input: crate::types::ModifyVerifiedAccessEndpointCidrOptions) -> Self {
+        self.cidr_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The CIDR options.</p>
+    pub fn set_cidr_options(mut self, input: ::std::option::Option<crate::types::ModifyVerifiedAccessEndpointCidrOptions>) -> Self {
+        self.cidr_options = input;
+        self
+    }
+    /// <p>The CIDR options.</p>
+    pub fn get_cidr_options(&self) -> &::std::option::Option<crate::types::ModifyVerifiedAccessEndpointCidrOptions> {
+        &self.cidr_options
+    }
     /// Consumes the builder and constructs a [`ModifyVerifiedAccessEndpointInput`](crate::operation::modify_verified_access_endpoint::ModifyVerifiedAccessEndpointInput).
     pub fn build(
         self,
@@ -182,6 +224,8 @@ impl ModifyVerifiedAccessEndpointInputBuilder {
             description: self.description,
             client_token: self.client_token,
             dry_run: self.dry_run,
+            rds_options: self.rds_options,
+            cidr_options: self.cidr_options,
         })
     }
 }

@@ -36,7 +36,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-eventbridge = "1.51.0"
+//! aws-sdk-eventbridge = "1.52.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

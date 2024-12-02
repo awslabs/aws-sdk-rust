@@ -112,6 +112,24 @@ pub fn de_create_cluster_http_error(
             }
             tmp
         }),
+        "InvalidMultiRegionClusterStateFault" => crate::operation::create_cluster::CreateClusterError::InvalidMultiRegionClusterStateFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidMultiRegionClusterStateFaultBuilder::default();
+                output = crate::protocol_serde::shape_invalid_multi_region_cluster_state_fault::de_invalid_multi_region_cluster_state_fault_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_cluster::CreateClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InvalidParameterCombinationException" => crate::operation::create_cluster::CreateClusterError::InvalidParameterCombinationException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -156,6 +174,24 @@ pub fn de_create_cluster_http_error(
                 output =
                     crate::protocol_serde::shape_invalid_vpc_network_state_fault::de_invalid_vpc_network_state_fault_json_err(_response_body, output)
                         .map_err(crate::operation::create_cluster::CreateClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "MultiRegionClusterNotFoundFault" => crate::operation::create_cluster::CreateClusterError::MultiRegionClusterNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::MultiRegionClusterNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_multi_region_cluster_not_found_fault::de_multi_region_cluster_not_found_fault_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_cluster::CreateClusterError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };

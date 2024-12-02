@@ -108,17 +108,17 @@ impl DeleteAccessLogSubscriptionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
+    /// <p>The ID or ARN of the access log subscription.</p>
     pub fn access_log_subscription_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.access_log_subscription_identifier(input.into());
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
+    /// <p>The ID or ARN of the access log subscription.</p>
     pub fn set_access_log_subscription_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_access_log_subscription_identifier(input);
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
+    /// <p>The ID or ARN of the access log subscription.</p>
     pub fn get_access_log_subscription_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_access_log_subscription_identifier()
     }

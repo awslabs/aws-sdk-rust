@@ -153,6 +153,46 @@ impl From<crate::operation::add_data_source::AddDataSourceError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::add_direct_query_data_source::AddDirectQueryDataSourceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::add_direct_query_data_source::AddDirectQueryDataSourceError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::add_direct_query_data_source::AddDirectQueryDataSourceError> for Error {
+    fn from(err: crate::operation::add_direct_query_data_source::AddDirectQueryDataSourceError) -> Self {
+        match err {
+            crate::operation::add_direct_query_data_source::AddDirectQueryDataSourceError::BaseException(inner) => Error::BaseException(inner),
+            crate::operation::add_direct_query_data_source::AddDirectQueryDataSourceError::DisabledOperationException(inner) => {
+                Error::DisabledOperationException(inner)
+            }
+            crate::operation::add_direct_query_data_source::AddDirectQueryDataSourceError::InternalException(inner) => {
+                Error::InternalException(inner)
+            }
+            crate::operation::add_direct_query_data_source::AddDirectQueryDataSourceError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::add_direct_query_data_source::AddDirectQueryDataSourceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::add_direct_query_data_source::AddDirectQueryDataSourceError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::add_direct_query_data_source::AddDirectQueryDataSourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::add_tags::AddTagsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -555,6 +595,47 @@ impl From<crate::operation::delete_data_source::DeleteDataSourceError> for Error
             crate::operation::delete_data_source::DeleteDataSourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_data_source::DeleteDataSourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_data_source::DeleteDataSourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_direct_query_data_source::DeleteDirectQueryDataSourceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_direct_query_data_source::DeleteDirectQueryDataSourceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_direct_query_data_source::DeleteDirectQueryDataSourceError> for Error {
+    fn from(err: crate::operation::delete_direct_query_data_source::DeleteDirectQueryDataSourceError) -> Self {
+        match err {
+            crate::operation::delete_direct_query_data_source::DeleteDirectQueryDataSourceError::BaseException(inner) => Error::BaseException(inner),
+            crate::operation::delete_direct_query_data_source::DeleteDirectQueryDataSourceError::DisabledOperationException(inner) => {
+                Error::DisabledOperationException(inner)
+            }
+            crate::operation::delete_direct_query_data_source::DeleteDirectQueryDataSourceError::InternalException(inner) => {
+                Error::InternalException(inner)
+            }
+            crate::operation::delete_direct_query_data_source::DeleteDirectQueryDataSourceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_direct_query_data_source::DeleteDirectQueryDataSourceError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_direct_query_data_source::DeleteDirectQueryDataSourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1320,6 +1401,43 @@ impl From<crate::operation::get_data_source::GetDataSourceError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_direct_query_data_source::GetDirectQueryDataSourceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_direct_query_data_source::GetDirectQueryDataSourceError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_direct_query_data_source::GetDirectQueryDataSourceError> for Error {
+    fn from(err: crate::operation::get_direct_query_data_source::GetDirectQueryDataSourceError) -> Self {
+        match err {
+            crate::operation::get_direct_query_data_source::GetDirectQueryDataSourceError::BaseException(inner) => Error::BaseException(inner),
+            crate::operation::get_direct_query_data_source::GetDirectQueryDataSourceError::DisabledOperationException(inner) => {
+                Error::DisabledOperationException(inner)
+            }
+            crate::operation::get_direct_query_data_source::GetDirectQueryDataSourceError::InternalException(inner) => {
+                Error::InternalException(inner)
+            }
+            crate::operation::get_direct_query_data_source::GetDirectQueryDataSourceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_direct_query_data_source::GetDirectQueryDataSourceError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_direct_query_data_source::GetDirectQueryDataSourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_domain_maintenance_status::GetDomainMaintenanceStatusError, R>>
     for Error
 where
@@ -1501,6 +1619,43 @@ impl From<crate::operation::list_data_sources::ListDataSourcesError> for Error {
             crate::operation::list_data_sources::ListDataSourcesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_data_sources::ListDataSourcesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_data_sources::ListDataSourcesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_direct_query_data_sources::ListDirectQueryDataSourcesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_direct_query_data_sources::ListDirectQueryDataSourcesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_direct_query_data_sources::ListDirectQueryDataSourcesError> for Error {
+    fn from(err: crate::operation::list_direct_query_data_sources::ListDirectQueryDataSourcesError) -> Self {
+        match err {
+            crate::operation::list_direct_query_data_sources::ListDirectQueryDataSourcesError::BaseException(inner) => Error::BaseException(inner),
+            crate::operation::list_direct_query_data_sources::ListDirectQueryDataSourcesError::DisabledOperationException(inner) => {
+                Error::DisabledOperationException(inner)
+            }
+            crate::operation::list_direct_query_data_sources::ListDirectQueryDataSourcesError::InternalException(inner) => {
+                Error::InternalException(inner)
+            }
+            crate::operation::list_direct_query_data_sources::ListDirectQueryDataSourcesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_direct_query_data_sources::ListDirectQueryDataSourcesError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_direct_query_data_sources::ListDirectQueryDataSourcesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2089,6 +2244,47 @@ impl From<crate::operation::update_data_source::UpdateDataSourceError> for Error
             crate::operation::update_data_source::UpdateDataSourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::update_data_source::UpdateDataSourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_data_source::UpdateDataSourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_direct_query_data_source::UpdateDirectQueryDataSourceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_direct_query_data_source::UpdateDirectQueryDataSourceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_direct_query_data_source::UpdateDirectQueryDataSourceError> for Error {
+    fn from(err: crate::operation::update_direct_query_data_source::UpdateDirectQueryDataSourceError) -> Self {
+        match err {
+            crate::operation::update_direct_query_data_source::UpdateDirectQueryDataSourceError::BaseException(inner) => Error::BaseException(inner),
+            crate::operation::update_direct_query_data_source::UpdateDirectQueryDataSourceError::DisabledOperationException(inner) => {
+                Error::DisabledOperationException(inner)
+            }
+            crate::operation::update_direct_query_data_source::UpdateDirectQueryDataSourceError::InternalException(inner) => {
+                Error::InternalException(inner)
+            }
+            crate::operation::update_direct_query_data_source::UpdateDirectQueryDataSourceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_direct_query_data_source::UpdateDirectQueryDataSourceError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_direct_query_data_source::UpdateDirectQueryDataSourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

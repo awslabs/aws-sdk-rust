@@ -28,6 +28,8 @@ pub struct MetricFilterV2 {
     /// <p>The values to use for filtering data. Values for metric-level filters can be either a fixed set of values or a customized list, depending on the use case.</p>
     /// <p>For valid values of metric-level filters <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code>, and <code>ANSWERING_MACHINE_DETECTION_STATUS</code>, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     /// <p>For valid values of the metric-level filter <code>FLOWS_OUTCOME_TYPE</code>, see the description for the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#flows-outcome-historical">Flow outcome</a> metric in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>For valid values of the metric-level filter <code>BOT_CONVERSATION_OUTCOME_TYPE</code>, see the description for the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/bot-metrics.html#bot-conversations-completed-metric">Bot conversations completed</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>For valid values of the metric-level filter <code>BOT_INTENT_OUTCOME_TYPE</code>, see the description for the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/bot-metrics.html#bot-intents-completed-metric">Bot intents completed</a> metric in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub metric_filter_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>If set to <code>true</code>, the API response contains results that filter out the results matched by the metric-level filters condition. By default, <code>Negate</code> is set to <code>false</code>.</p>
     pub negate: bool,
@@ -59,6 +61,8 @@ impl MetricFilterV2 {
     /// <p>The values to use for filtering data. Values for metric-level filters can be either a fixed set of values or a customized list, depending on the use case.</p>
     /// <p>For valid values of metric-level filters <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code>, and <code>ANSWERING_MACHINE_DETECTION_STATUS</code>, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     /// <p>For valid values of the metric-level filter <code>FLOWS_OUTCOME_TYPE</code>, see the description for the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#flows-outcome-historical">Flow outcome</a> metric in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>For valid values of the metric-level filter <code>BOT_CONVERSATION_OUTCOME_TYPE</code>, see the description for the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/bot-metrics.html#bot-conversations-completed-metric">Bot conversations completed</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>For valid values of the metric-level filter <code>BOT_INTENT_OUTCOME_TYPE</code>, see the description for the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/bot-metrics.html#bot-intents-completed-metric">Bot intents completed</a> metric in the <i>Amazon Connect Administrator Guide</i>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_filter_values.is_none()`.
     pub fn metric_filter_values(&self) -> &[::std::string::String] {
@@ -163,6 +167,8 @@ impl MetricFilterV2Builder {
     /// <p>The values to use for filtering data. Values for metric-level filters can be either a fixed set of values or a customized list, depending on the use case.</p>
     /// <p>For valid values of metric-level filters <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code>, and <code>ANSWERING_MACHINE_DETECTION_STATUS</code>, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     /// <p>For valid values of the metric-level filter <code>FLOWS_OUTCOME_TYPE</code>, see the description for the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#flows-outcome-historical">Flow outcome</a> metric in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>For valid values of the metric-level filter <code>BOT_CONVERSATION_OUTCOME_TYPE</code>, see the description for the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/bot-metrics.html#bot-conversations-completed-metric">Bot conversations completed</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>For valid values of the metric-level filter <code>BOT_INTENT_OUTCOME_TYPE</code>, see the description for the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/bot-metrics.html#bot-intents-completed-metric">Bot intents completed</a> metric in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub fn metric_filter_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.metric_filter_values.unwrap_or_default();
         v.push(input.into());
@@ -172,6 +178,8 @@ impl MetricFilterV2Builder {
     /// <p>The values to use for filtering data. Values for metric-level filters can be either a fixed set of values or a customized list, depending on the use case.</p>
     /// <p>For valid values of metric-level filters <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code>, and <code>ANSWERING_MACHINE_DETECTION_STATUS</code>, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     /// <p>For valid values of the metric-level filter <code>FLOWS_OUTCOME_TYPE</code>, see the description for the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#flows-outcome-historical">Flow outcome</a> metric in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>For valid values of the metric-level filter <code>BOT_CONVERSATION_OUTCOME_TYPE</code>, see the description for the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/bot-metrics.html#bot-conversations-completed-metric">Bot conversations completed</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>For valid values of the metric-level filter <code>BOT_INTENT_OUTCOME_TYPE</code>, see the description for the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/bot-metrics.html#bot-intents-completed-metric">Bot intents completed</a> metric in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub fn set_metric_filter_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.metric_filter_values = input;
         self
@@ -179,6 +187,8 @@ impl MetricFilterV2Builder {
     /// <p>The values to use for filtering data. Values for metric-level filters can be either a fixed set of values or a customized list, depending on the use case.</p>
     /// <p>For valid values of metric-level filters <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code>, and <code>ANSWERING_MACHINE_DETECTION_STATUS</code>, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     /// <p>For valid values of the metric-level filter <code>FLOWS_OUTCOME_TYPE</code>, see the description for the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#flows-outcome-historical">Flow outcome</a> metric in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>For valid values of the metric-level filter <code>BOT_CONVERSATION_OUTCOME_TYPE</code>, see the description for the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/bot-metrics.html#bot-conversations-completed-metric">Bot conversations completed</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>For valid values of the metric-level filter <code>BOT_INTENT_OUTCOME_TYPE</code>, see the description for the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/bot-metrics.html#bot-intents-completed-metric">Bot intents completed</a> metric in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub fn get_metric_filter_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.metric_filter_values
     }

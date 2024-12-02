@@ -99,6 +99,16 @@ pub(crate) fn reflens_list_ingestion_jobs_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_knowledge_base_documents_output_output_next_token(
+    input: &crate::operation::list_knowledge_base_documents::ListKnowledgeBaseDocumentsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_knowledge_bases_output_output_next_token(
     input: &crate::operation::list_knowledge_bases::ListKnowledgeBasesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -186,6 +196,13 @@ pub(crate) fn lens_list_ingestion_jobs_output_output_ingestion_job_summaries(
     input: crate::operation::list_ingestion_jobs::ListIngestionJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::IngestionJobSummary>> {
     let input = input.ingestion_job_summaries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_knowledge_base_documents_output_output_document_details(
+    input: crate::operation::list_knowledge_base_documents::ListKnowledgeBaseDocumentsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::KnowledgeBaseDocumentDetail>> {
+    let input = input.document_details;
     ::std::option::Option::Some(input)
 }
 

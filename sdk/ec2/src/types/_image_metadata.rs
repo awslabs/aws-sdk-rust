@@ -19,6 +19,9 @@ pub struct ImageMetadata {
     pub creation_date: ::std::option::Option<::std::string::String>,
     /// <p>The deprecation date and time of the AMI, in UTC, in the following format: <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z.</p>
     pub deprecation_time: ::std::option::Option<::std::string::String>,
+    /// <p>If <code>true</code>, the AMI satisfies the criteria for Allowed AMIs and can be discovered and used in the account. If <code>false</code>, the AMI can't be discovered or used in the account.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-allowed-amis.html">Control the discovery and use of AMIs in Amazon EC2 with Allowed AMIs</a> in <i>Amazon EC2 User Guide</i>.</p>
+    pub image_allowed: ::std::option::Option<bool>,
     /// <p>Indicates whether the AMI has public launch permissions. A value of <code>true</code> means this AMI has public launch permissions, while <code>false</code> means it has only implicit (AMI owner) or explicit (shared with your account) launch permissions.</p>
     pub is_public: ::std::option::Option<bool>,
 }
@@ -52,6 +55,11 @@ impl ImageMetadata {
     pub fn deprecation_time(&self) -> ::std::option::Option<&str> {
         self.deprecation_time.as_deref()
     }
+    /// <p>If <code>true</code>, the AMI satisfies the criteria for Allowed AMIs and can be discovered and used in the account. If <code>false</code>, the AMI can't be discovered or used in the account.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-allowed-amis.html">Control the discovery and use of AMIs in Amazon EC2 with Allowed AMIs</a> in <i>Amazon EC2 User Guide</i>.</p>
+    pub fn image_allowed(&self) -> ::std::option::Option<bool> {
+        self.image_allowed
+    }
     /// <p>Indicates whether the AMI has public launch permissions. A value of <code>true</code> means this AMI has public launch permissions, while <code>false</code> means it has only implicit (AMI owner) or explicit (shared with your account) launch permissions.</p>
     pub fn is_public(&self) -> ::std::option::Option<bool> {
         self.is_public
@@ -75,6 +83,7 @@ pub struct ImageMetadataBuilder {
     pub(crate) image_owner_alias: ::std::option::Option<::std::string::String>,
     pub(crate) creation_date: ::std::option::Option<::std::string::String>,
     pub(crate) deprecation_time: ::std::option::Option<::std::string::String>,
+    pub(crate) image_allowed: ::std::option::Option<bool>,
     pub(crate) is_public: ::std::option::Option<bool>,
 }
 impl ImageMetadataBuilder {
@@ -179,6 +188,23 @@ impl ImageMetadataBuilder {
     pub fn get_deprecation_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.deprecation_time
     }
+    /// <p>If <code>true</code>, the AMI satisfies the criteria for Allowed AMIs and can be discovered and used in the account. If <code>false</code>, the AMI can't be discovered or used in the account.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-allowed-amis.html">Control the discovery and use of AMIs in Amazon EC2 with Allowed AMIs</a> in <i>Amazon EC2 User Guide</i>.</p>
+    pub fn image_allowed(mut self, input: bool) -> Self {
+        self.image_allowed = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If <code>true</code>, the AMI satisfies the criteria for Allowed AMIs and can be discovered and used in the account. If <code>false</code>, the AMI can't be discovered or used in the account.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-allowed-amis.html">Control the discovery and use of AMIs in Amazon EC2 with Allowed AMIs</a> in <i>Amazon EC2 User Guide</i>.</p>
+    pub fn set_image_allowed(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.image_allowed = input;
+        self
+    }
+    /// <p>If <code>true</code>, the AMI satisfies the criteria for Allowed AMIs and can be discovered and used in the account. If <code>false</code>, the AMI can't be discovered or used in the account.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-allowed-amis.html">Control the discovery and use of AMIs in Amazon EC2 with Allowed AMIs</a> in <i>Amazon EC2 User Guide</i>.</p>
+    pub fn get_image_allowed(&self) -> &::std::option::Option<bool> {
+        &self.image_allowed
+    }
     /// <p>Indicates whether the AMI has public launch permissions. A value of <code>true</code> means this AMI has public launch permissions, while <code>false</code> means it has only implicit (AMI owner) or explicit (shared with your account) launch permissions.</p>
     pub fn is_public(mut self, input: bool) -> Self {
         self.is_public = ::std::option::Option::Some(input);
@@ -203,6 +229,7 @@ impl ImageMetadataBuilder {
             image_owner_alias: self.image_owner_alias,
             creation_date: self.creation_date,
             deprecation_time: self.deprecation_time,
+            image_allowed: self.image_allowed,
             is_public: self.is_public,
         }
     }

@@ -3,14 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartQueryInput {
-    /// <p>The log group on which to perform the query.</p>
+    /// <p>Specify the query language to use for this query. The options are Logs Insights QL, OpenSearch PPL, and OpenSearch SQL. For more information about the query languages that CloudWatch Logs supports, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData_Languages.html">Supported query languages</a>.</p>
+    pub query_language: ::std::option::Option<crate::types::QueryLanguage>,
+    /// <p>The log group on which to perform the query.</p><note>
+    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. The exception is queries using the OpenSearch Service SQL query language, where you specify the log group names inside the <code>querystring</code> instead of here.</p>
+    /// </note>
     pub log_group_name: ::std::option::Option<::std::string::String>,
-    /// <p>The list of log groups to be queried. You can include up to 50 log groups.</p>
+    /// <p>The list of log groups to be queried. You can include up to 50 log groups.</p><note>
+    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. The exception is queries using the OpenSearch Service SQL query language, where you specify the log group names inside the <code>querystring</code> instead of here.</p>
+    /// </note>
     pub log_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The list of log groups to query. You can include up to 50 log groups.</p>
     /// <p>You can specify them by the log group name or ARN. If a log group that you're querying is in a source account and you're using a monitoring account, you must specify the ARN of the log group here. The query definition must also be defined in the monitoring account.</p>
     /// <p>If you specify an ARN, use the format arn:aws:logs:<i>region</i>:<i>account-id</i>:log-group:<i>log_group_name</i> Don't include an * at the end.</p>
-    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>.</p>
+    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. The exception is queries using the OpenSearch Service SQL query language, where you specify the log group names inside the <code>querystring</code> instead of here.</p>
     pub log_group_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The beginning of the time range to query. The range is inclusive, so the specified start time is included in the query. Specified as epoch time, the number of seconds since <code>January 1, 1970, 00:00:00 UTC</code>.</p>
     pub start_time: ::std::option::Option<i64>,
@@ -22,11 +28,19 @@ pub struct StartQueryInput {
     pub limit: ::std::option::Option<i32>,
 }
 impl StartQueryInput {
-    /// <p>The log group on which to perform the query.</p>
+    /// <p>Specify the query language to use for this query. The options are Logs Insights QL, OpenSearch PPL, and OpenSearch SQL. For more information about the query languages that CloudWatch Logs supports, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData_Languages.html">Supported query languages</a>.</p>
+    pub fn query_language(&self) -> ::std::option::Option<&crate::types::QueryLanguage> {
+        self.query_language.as_ref()
+    }
+    /// <p>The log group on which to perform the query.</p><note>
+    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. The exception is queries using the OpenSearch Service SQL query language, where you specify the log group names inside the <code>querystring</code> instead of here.</p>
+    /// </note>
     pub fn log_group_name(&self) -> ::std::option::Option<&str> {
         self.log_group_name.as_deref()
     }
-    /// <p>The list of log groups to be queried. You can include up to 50 log groups.</p>
+    /// <p>The list of log groups to be queried. You can include up to 50 log groups.</p><note>
+    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. The exception is queries using the OpenSearch Service SQL query language, where you specify the log group names inside the <code>querystring</code> instead of here.</p>
+    /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_group_names.is_none()`.
     pub fn log_group_names(&self) -> &[::std::string::String] {
@@ -35,7 +49,7 @@ impl StartQueryInput {
     /// <p>The list of log groups to query. You can include up to 50 log groups.</p>
     /// <p>You can specify them by the log group name or ARN. If a log group that you're querying is in a source account and you're using a monitoring account, you must specify the ARN of the log group here. The query definition must also be defined in the monitoring account.</p>
     /// <p>If you specify an ARN, use the format arn:aws:logs:<i>region</i>:<i>account-id</i>:log-group:<i>log_group_name</i> Don't include an * at the end.</p>
-    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>.</p>
+    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. The exception is queries using the OpenSearch Service SQL query language, where you specify the log group names inside the <code>querystring</code> instead of here.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_group_identifiers.is_none()`.
     pub fn log_group_identifiers(&self) -> &[::std::string::String] {
@@ -69,6 +83,7 @@ impl StartQueryInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct StartQueryInputBuilder {
+    pub(crate) query_language: ::std::option::Option<crate::types::QueryLanguage>,
     pub(crate) log_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) log_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) log_group_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -78,17 +93,37 @@ pub struct StartQueryInputBuilder {
     pub(crate) limit: ::std::option::Option<i32>,
 }
 impl StartQueryInputBuilder {
-    /// <p>The log group on which to perform the query.</p>
+    /// <p>Specify the query language to use for this query. The options are Logs Insights QL, OpenSearch PPL, and OpenSearch SQL. For more information about the query languages that CloudWatch Logs supports, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData_Languages.html">Supported query languages</a>.</p>
+    pub fn query_language(mut self, input: crate::types::QueryLanguage) -> Self {
+        self.query_language = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specify the query language to use for this query. The options are Logs Insights QL, OpenSearch PPL, and OpenSearch SQL. For more information about the query languages that CloudWatch Logs supports, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData_Languages.html">Supported query languages</a>.</p>
+    pub fn set_query_language(mut self, input: ::std::option::Option<crate::types::QueryLanguage>) -> Self {
+        self.query_language = input;
+        self
+    }
+    /// <p>Specify the query language to use for this query. The options are Logs Insights QL, OpenSearch PPL, and OpenSearch SQL. For more information about the query languages that CloudWatch Logs supports, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData_Languages.html">Supported query languages</a>.</p>
+    pub fn get_query_language(&self) -> &::std::option::Option<crate::types::QueryLanguage> {
+        &self.query_language
+    }
+    /// <p>The log group on which to perform the query.</p><note>
+    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. The exception is queries using the OpenSearch Service SQL query language, where you specify the log group names inside the <code>querystring</code> instead of here.</p>
+    /// </note>
     pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The log group on which to perform the query.</p>
+    /// <p>The log group on which to perform the query.</p><note>
+    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. The exception is queries using the OpenSearch Service SQL query language, where you specify the log group names inside the <code>querystring</code> instead of here.</p>
+    /// </note>
     pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_group_name = input;
         self
     }
-    /// <p>The log group on which to perform the query.</p>
+    /// <p>The log group on which to perform the query.</p><note>
+    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. The exception is queries using the OpenSearch Service SQL query language, where you specify the log group names inside the <code>querystring</code> instead of here.</p>
+    /// </note>
     pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.log_group_name
     }
@@ -96,19 +131,25 @@ impl StartQueryInputBuilder {
     ///
     /// To override the contents of this collection use [`set_log_group_names`](Self::set_log_group_names).
     ///
-    /// <p>The list of log groups to be queried. You can include up to 50 log groups.</p>
+    /// <p>The list of log groups to be queried. You can include up to 50 log groups.</p><note>
+    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. The exception is queries using the OpenSearch Service SQL query language, where you specify the log group names inside the <code>querystring</code> instead of here.</p>
+    /// </note>
     pub fn log_group_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.log_group_names.unwrap_or_default();
         v.push(input.into());
         self.log_group_names = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of log groups to be queried. You can include up to 50 log groups.</p>
+    /// <p>The list of log groups to be queried. You can include up to 50 log groups.</p><note>
+    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. The exception is queries using the OpenSearch Service SQL query language, where you specify the log group names inside the <code>querystring</code> instead of here.</p>
+    /// </note>
     pub fn set_log_group_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.log_group_names = input;
         self
     }
-    /// <p>The list of log groups to be queried. You can include up to 50 log groups.</p>
+    /// <p>The list of log groups to be queried. You can include up to 50 log groups.</p><note>
+    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. The exception is queries using the OpenSearch Service SQL query language, where you specify the log group names inside the <code>querystring</code> instead of here.</p>
+    /// </note>
     pub fn get_log_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.log_group_names
     }
@@ -119,7 +160,7 @@ impl StartQueryInputBuilder {
     /// <p>The list of log groups to query. You can include up to 50 log groups.</p>
     /// <p>You can specify them by the log group name or ARN. If a log group that you're querying is in a source account and you're using a monitoring account, you must specify the ARN of the log group here. The query definition must also be defined in the monitoring account.</p>
     /// <p>If you specify an ARN, use the format arn:aws:logs:<i>region</i>:<i>account-id</i>:log-group:<i>log_group_name</i> Don't include an * at the end.</p>
-    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>.</p>
+    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. The exception is queries using the OpenSearch Service SQL query language, where you specify the log group names inside the <code>querystring</code> instead of here.</p>
     pub fn log_group_identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.log_group_identifiers.unwrap_or_default();
         v.push(input.into());
@@ -129,7 +170,7 @@ impl StartQueryInputBuilder {
     /// <p>The list of log groups to query. You can include up to 50 log groups.</p>
     /// <p>You can specify them by the log group name or ARN. If a log group that you're querying is in a source account and you're using a monitoring account, you must specify the ARN of the log group here. The query definition must also be defined in the monitoring account.</p>
     /// <p>If you specify an ARN, use the format arn:aws:logs:<i>region</i>:<i>account-id</i>:log-group:<i>log_group_name</i> Don't include an * at the end.</p>
-    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>.</p>
+    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. The exception is queries using the OpenSearch Service SQL query language, where you specify the log group names inside the <code>querystring</code> instead of here.</p>
     pub fn set_log_group_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.log_group_identifiers = input;
         self
@@ -137,7 +178,7 @@ impl StartQueryInputBuilder {
     /// <p>The list of log groups to query. You can include up to 50 log groups.</p>
     /// <p>You can specify them by the log group name or ARN. If a log group that you're querying is in a source account and you're using a monitoring account, you must specify the ARN of the log group here. The query definition must also be defined in the monitoring account.</p>
     /// <p>If you specify an ARN, use the format arn:aws:logs:<i>region</i>:<i>account-id</i>:log-group:<i>log_group_name</i> Don't include an * at the end.</p>
-    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>.</p>
+    /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. The exception is queries using the OpenSearch Service SQL query language, where you specify the log group names inside the <code>querystring</code> instead of here.</p>
     pub fn get_log_group_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.log_group_identifiers
     }
@@ -203,6 +244,7 @@ impl StartQueryInputBuilder {
     /// Consumes the builder and constructs a [`StartQueryInput`](crate::operation::start_query::StartQueryInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::start_query::StartQueryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_query::StartQueryInput {
+            query_language: self.query_language,
             log_group_name: self.log_group_name,
             log_group_names: self.log_group_names,
             log_group_identifiers: self.log_group_identifiers,

@@ -3,6 +3,8 @@ pub use crate::types::_campaign_state::CampaignState;
 
 pub use crate::types::_source::Source;
 
+pub use crate::types::_event_trigger::EventTrigger;
+
 pub use crate::types::_schedule::Schedule;
 
 pub use crate::types::_communication_time_config::CommunicationTimeConfig;
@@ -68,6 +70,14 @@ pub use crate::types::_instance_onboarding_job_status_code::InstanceOnboardingJo
 pub use crate::types::_encryption_config::EncryptionConfig;
 
 pub use crate::types::_encryption_type::EncryptionType;
+
+pub use crate::types::_failed_profile_outbound_request::FailedProfileOutboundRequest;
+
+pub use crate::types::_profile_outbound_request_failure_code::ProfileOutboundRequestFailureCode;
+
+pub use crate::types::_successful_profile_outbound_request::SuccessfulProfileOutboundRequest;
+
+pub use crate::types::_profile_outbound_request::ProfileOutboundRequest;
 
 pub use crate::types::_failed_request::FailedRequest;
 
@@ -185,9 +195,13 @@ mod _encryption_config;
 
 mod _encryption_type;
 
+mod _event_trigger;
+
 mod _event_type;
 
 mod _failed_campaign_state_response;
+
+mod _failed_profile_outbound_request;
 
 mod _failed_request;
 
@@ -223,6 +237,10 @@ mod _outbound_request;
 
 mod _predictive_config;
 
+mod _profile_outbound_request;
+
+mod _profile_outbound_request_failure_code;
+
 mod _progressive_config;
 
 mod _q_connect_integration_config;
@@ -248,6 +266,8 @@ mod _sms_outbound_mode;
 mod _source;
 
 mod _successful_campaign_state_response;
+
+mod _successful_profile_outbound_request;
 
 mod _successful_request;
 

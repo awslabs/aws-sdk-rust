@@ -136,17 +136,23 @@ impl ListApiDestinationsFluentBuilder {
     pub fn get_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_connection_arn()
     }
-    /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    /// <p>The token returned by a previous call, which you can use to retrieve the next set of results.</p>
+    /// <p>The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page of results, make the call again using the returned token. Keep all other arguments unchanged.</p>
+    /// <p>Using an expired pagination token results in an <code>HTTP 400 InvalidToken</code> error.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    /// <p>The token returned by a previous call, which you can use to retrieve the next set of results.</p>
+    /// <p>The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page of results, make the call again using the returned token. Keep all other arguments unchanged.</p>
+    /// <p>Using an expired pagination token results in an <code>HTTP 400 InvalidToken</code> error.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    /// <p>The token returned by a previous call, which you can use to retrieve the next set of results.</p>
+    /// <p>The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page of results, make the call again using the returned token. Keep all other arguments unchanged.</p>
+    /// <p>Using an expired pagination token results in an <code>HTTP 400 InvalidToken</code> error.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

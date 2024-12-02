@@ -10,9 +10,9 @@ pub struct ClusterConfiguration {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The node type used for the cluster</p>
     pub node_type: ::std::option::Option<::std::string::String>,
-    /// <p>The configuration for the Redis OSS or Valkey engine used by the cluster.</p>
+    /// <p>The name of the engine used by the cluster configuration.</p>
     pub engine: ::std::option::Option<::std::string::String>,
-    /// <p>The engine version used by the cluster</p>
+    /// <p>The Redis OSS engine version used by the cluster</p>
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The specified maintenance window for the cluster</p>
     pub maintenance_window: ::std::option::Option<::std::string::String>,
@@ -34,6 +34,10 @@ pub struct ClusterConfiguration {
     pub num_shards: ::std::option::Option<i32>,
     /// <p>The list of shards in the cluster</p>
     pub shards: ::std::option::Option<::std::vec::Vec<crate::types::ShardDetail>>,
+    /// <p>The name of the multi-Region parameter group associated with the cluster configuration.</p>
+    pub multi_region_parameter_group_name: ::std::option::Option<::std::string::String>,
+    /// <p>The name for the multi-Region cluster associated with the cluster configuration.</p>
+    pub multi_region_cluster_name: ::std::option::Option<::std::string::String>,
 }
 impl ClusterConfiguration {
     /// <p>The name of the cluster</p>
@@ -48,11 +52,11 @@ impl ClusterConfiguration {
     pub fn node_type(&self) -> ::std::option::Option<&str> {
         self.node_type.as_deref()
     }
-    /// <p>The configuration for the Redis OSS or Valkey engine used by the cluster.</p>
+    /// <p>The name of the engine used by the cluster configuration.</p>
     pub fn engine(&self) -> ::std::option::Option<&str> {
         self.engine.as_deref()
     }
-    /// <p>The engine version used by the cluster</p>
+    /// <p>The Redis OSS engine version used by the cluster</p>
     pub fn engine_version(&self) -> ::std::option::Option<&str> {
         self.engine_version.as_deref()
     }
@@ -98,6 +102,14 @@ impl ClusterConfiguration {
     pub fn shards(&self) -> &[crate::types::ShardDetail] {
         self.shards.as_deref().unwrap_or_default()
     }
+    /// <p>The name of the multi-Region parameter group associated with the cluster configuration.</p>
+    pub fn multi_region_parameter_group_name(&self) -> ::std::option::Option<&str> {
+        self.multi_region_parameter_group_name.as_deref()
+    }
+    /// <p>The name for the multi-Region cluster associated with the cluster configuration.</p>
+    pub fn multi_region_cluster_name(&self) -> ::std::option::Option<&str> {
+        self.multi_region_cluster_name.as_deref()
+    }
 }
 impl ClusterConfiguration {
     /// Creates a new builder-style object to manufacture [`ClusterConfiguration`](crate::types::ClusterConfiguration).
@@ -125,6 +137,8 @@ pub struct ClusterConfigurationBuilder {
     pub(crate) snapshot_window: ::std::option::Option<::std::string::String>,
     pub(crate) num_shards: ::std::option::Option<i32>,
     pub(crate) shards: ::std::option::Option<::std::vec::Vec<crate::types::ShardDetail>>,
+    pub(crate) multi_region_parameter_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) multi_region_cluster_name: ::std::option::Option<::std::string::String>,
 }
 impl ClusterConfigurationBuilder {
     /// <p>The name of the cluster</p>
@@ -169,31 +183,31 @@ impl ClusterConfigurationBuilder {
     pub fn get_node_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.node_type
     }
-    /// <p>The configuration for the Redis OSS or Valkey engine used by the cluster.</p>
+    /// <p>The name of the engine used by the cluster configuration.</p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The configuration for the Redis OSS or Valkey engine used by the cluster.</p>
+    /// <p>The name of the engine used by the cluster configuration.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
         self
     }
-    /// <p>The configuration for the Redis OSS or Valkey engine used by the cluster.</p>
+    /// <p>The name of the engine used by the cluster configuration.</p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine
     }
-    /// <p>The engine version used by the cluster</p>
+    /// <p>The Redis OSS engine version used by the cluster</p>
     pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The engine version used by the cluster</p>
+    /// <p>The Redis OSS engine version used by the cluster</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
-    /// <p>The engine version used by the cluster</p>
+    /// <p>The Redis OSS engine version used by the cluster</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine_version
     }
@@ -343,6 +357,34 @@ impl ClusterConfigurationBuilder {
     pub fn get_shards(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ShardDetail>> {
         &self.shards
     }
+    /// <p>The name of the multi-Region parameter group associated with the cluster configuration.</p>
+    pub fn multi_region_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.multi_region_parameter_group_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the multi-Region parameter group associated with the cluster configuration.</p>
+    pub fn set_multi_region_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.multi_region_parameter_group_name = input;
+        self
+    }
+    /// <p>The name of the multi-Region parameter group associated with the cluster configuration.</p>
+    pub fn get_multi_region_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.multi_region_parameter_group_name
+    }
+    /// <p>The name for the multi-Region cluster associated with the cluster configuration.</p>
+    pub fn multi_region_cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.multi_region_cluster_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name for the multi-Region cluster associated with the cluster configuration.</p>
+    pub fn set_multi_region_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.multi_region_cluster_name = input;
+        self
+    }
+    /// <p>The name for the multi-Region cluster associated with the cluster configuration.</p>
+    pub fn get_multi_region_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.multi_region_cluster_name
+    }
     /// Consumes the builder and constructs a [`ClusterConfiguration`](crate::types::ClusterConfiguration).
     pub fn build(self) -> crate::types::ClusterConfiguration {
         crate::types::ClusterConfiguration {
@@ -361,6 +403,8 @@ impl ClusterConfigurationBuilder {
             snapshot_window: self.snapshot_window,
             num_shards: self.num_shards,
             shards: self.shards,
+            multi_region_parameter_group_name: self.multi_region_parameter_group_name,
+            multi_region_cluster_name: self.multi_region_cluster_name,
         }
     }
 }

@@ -13,6 +13,10 @@ pub use crate::types::_secondary::SecondaryBuilder;
 
 pub use crate::types::_primary::PrimaryBuilder;
 
+pub use crate::types::_connectivity_resource_parameters::ConnectivityResourceParametersBuilder;
+
+pub use crate::types::_connectivity_resource_configuration_arn::ConnectivityResourceConfigurationArnBuilder;
+
 pub use crate::types::_update_connection_auth_request_parameters::UpdateConnectionAuthRequestParametersBuilder;
 
 pub use crate::types::_connection_http_parameters::ConnectionHttpParametersBuilder;
@@ -112,6 +116,10 @@ pub use crate::types::_archive::ArchiveBuilder;
 pub use crate::types::_api_destination::ApiDestinationBuilder;
 
 pub use crate::types::_connection_auth_response_parameters::ConnectionAuthResponseParametersBuilder;
+
+pub use crate::types::_describe_connection_connectivity_parameters::DescribeConnectionConnectivityParametersBuilder;
+
+pub use crate::types::_describe_connection_resource_parameters::DescribeConnectionResourceParametersBuilder;
 
 pub use crate::types::_connection_api_key_auth_response_parameters::ConnectionApiKeyAuthResponseParametersBuilder;
 

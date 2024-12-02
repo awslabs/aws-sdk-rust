@@ -5,10 +5,12 @@
 pub struct CreateAccessLogSubscriptionInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>The ID or Amazon Resource Name (ARN) of the service network or service.</p>
+    /// <p>The ID or ARN of the service network or service.</p>
     pub resource_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the destination. The supported destination types are CloudWatch Log groups, Kinesis Data Firehose delivery streams, and Amazon S3 buckets.</p>
     pub destination_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The type of log that monitors your Amazon VPC Lattice service networks.</p>
+    pub service_network_log_type: ::std::option::Option<crate::types::ServiceNetworkLogType>,
     /// <p>The tags for the access log subscription.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -17,13 +19,17 @@ impl CreateAccessLogSubscriptionInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service network or service.</p>
+    /// <p>The ID or ARN of the service network or service.</p>
     pub fn resource_identifier(&self) -> ::std::option::Option<&str> {
         self.resource_identifier.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the destination. The supported destination types are CloudWatch Log groups, Kinesis Data Firehose delivery streams, and Amazon S3 buckets.</p>
     pub fn destination_arn(&self) -> ::std::option::Option<&str> {
         self.destination_arn.as_deref()
+    }
+    /// <p>The type of log that monitors your Amazon VPC Lattice service networks.</p>
+    pub fn service_network_log_type(&self) -> ::std::option::Option<&crate::types::ServiceNetworkLogType> {
+        self.service_network_log_type.as_ref()
     }
     /// <p>The tags for the access log subscription.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -44,6 +50,7 @@ pub struct CreateAccessLogSubscriptionInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) resource_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) destination_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) service_network_log_type: ::std::option::Option<crate::types::ServiceNetworkLogType>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateAccessLogSubscriptionInputBuilder {
@@ -61,18 +68,18 @@ impl CreateAccessLogSubscriptionInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service network or service.</p>
+    /// <p>The ID or ARN of the service network or service.</p>
     /// This field is required.
     pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service network or service.</p>
+    /// <p>The ID or ARN of the service network or service.</p>
     pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_identifier = input;
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service network or service.</p>
+    /// <p>The ID or ARN of the service network or service.</p>
     pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_identifier
     }
@@ -90,6 +97,20 @@ impl CreateAccessLogSubscriptionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the destination. The supported destination types are CloudWatch Log groups, Kinesis Data Firehose delivery streams, and Amazon S3 buckets.</p>
     pub fn get_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_arn
+    }
+    /// <p>The type of log that monitors your Amazon VPC Lattice service networks.</p>
+    pub fn service_network_log_type(mut self, input: crate::types::ServiceNetworkLogType) -> Self {
+        self.service_network_log_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of log that monitors your Amazon VPC Lattice service networks.</p>
+    pub fn set_service_network_log_type(mut self, input: ::std::option::Option<crate::types::ServiceNetworkLogType>) -> Self {
+        self.service_network_log_type = input;
+        self
+    }
+    /// <p>The type of log that monitors your Amazon VPC Lattice service networks.</p>
+    pub fn get_service_network_log_type(&self) -> &::std::option::Option<crate::types::ServiceNetworkLogType> {
+        &self.service_network_log_type
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -122,6 +143,7 @@ impl CreateAccessLogSubscriptionInputBuilder {
             client_token: self.client_token,
             resource_identifier: self.resource_identifier,
             destination_arn: self.destination_arn,
+            service_network_log_type: self.service_network_log_type,
             tags: self.tags,
         })
     }

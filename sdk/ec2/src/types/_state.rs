@@ -17,6 +17,7 @@
 ///     State::Deleting => { /* ... */ },
 ///     State::Expired => { /* ... */ },
 ///     State::Failed => { /* ... */ },
+///     State::Partial => { /* ... */ },
 ///     State::Pending => { /* ... */ },
 ///     State::PendingAcceptance => { /* ... */ },
 ///     State::Rejected => { /* ... */ },
@@ -58,6 +59,8 @@ pub enum State {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
     #[allow(missing_docs)] // documentation missing in model
+    Partial,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
     #[allow(missing_docs)] // documentation missing in model
     PendingAcceptance,
@@ -75,6 +78,7 @@ impl ::std::convert::From<&str> for State {
             "Deleting" => State::Deleting,
             "Expired" => State::Expired,
             "Failed" => State::Failed,
+            "Partial" => State::Partial,
             "Pending" => State::Pending,
             "PendingAcceptance" => State::PendingAcceptance,
             "Rejected" => State::Rejected,
@@ -98,6 +102,7 @@ impl State {
             State::Deleting => "Deleting",
             State::Expired => "Expired",
             State::Failed => "Failed",
+            State::Partial => "Partial",
             State::Pending => "Pending",
             State::PendingAcceptance => "PendingAcceptance",
             State::Rejected => "Rejected",
@@ -112,6 +117,7 @@ impl State {
             "Deleting",
             "Expired",
             "Failed",
+            "Partial",
             "Pending",
             "PendingAcceptance",
             "Rejected",
@@ -143,6 +149,7 @@ impl ::std::fmt::Display for State {
             State::Deleting => write!(f, "Deleting"),
             State::Expired => write!(f, "Expired"),
             State::Failed => write!(f, "Failed"),
+            State::Partial => write!(f, "Partial"),
             State::Pending => write!(f, "Pending"),
             State::PendingAcceptance => write!(f, "PendingAcceptance"),
             State::Rejected => write!(f, "Rejected"),

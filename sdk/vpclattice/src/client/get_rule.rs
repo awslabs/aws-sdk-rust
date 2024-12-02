@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetRule`](crate::operation::get_rule::builders::GetRuleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`service_identifier(impl Into<String>)`](crate::operation::get_rule::builders::GetRuleFluentBuilder::service_identifier) / [`set_service_identifier(Option<String>)`](crate::operation::get_rule::builders::GetRuleFluentBuilder::set_service_identifier):<br>required: **true**<br><p>The ID or Amazon Resource Name (ARN) of the service.</p><br>
-    ///   - [`listener_identifier(impl Into<String>)`](crate::operation::get_rule::builders::GetRuleFluentBuilder::listener_identifier) / [`set_listener_identifier(Option<String>)`](crate::operation::get_rule::builders::GetRuleFluentBuilder::set_listener_identifier):<br>required: **true**<br><p>The ID or Amazon Resource Name (ARN) of the listener.</p><br>
-    ///   - [`rule_identifier(impl Into<String>)`](crate::operation::get_rule::builders::GetRuleFluentBuilder::rule_identifier) / [`set_rule_identifier(Option<String>)`](crate::operation::get_rule::builders::GetRuleFluentBuilder::set_rule_identifier):<br>required: **true**<br><p>The ID or Amazon Resource Name (ARN) of the listener rule.</p><br>
+    ///   - [`service_identifier(impl Into<String>)`](crate::operation::get_rule::builders::GetRuleFluentBuilder::service_identifier) / [`set_service_identifier(Option<String>)`](crate::operation::get_rule::builders::GetRuleFluentBuilder::set_service_identifier):<br>required: **true**<br><p>The ID or ARN of the service.</p><br>
+    ///   - [`listener_identifier(impl Into<String>)`](crate::operation::get_rule::builders::GetRuleFluentBuilder::listener_identifier) / [`set_listener_identifier(Option<String>)`](crate::operation::get_rule::builders::GetRuleFluentBuilder::set_listener_identifier):<br>required: **true**<br><p>The ID or ARN of the listener.</p><br>
+    ///   - [`rule_identifier(impl Into<String>)`](crate::operation::get_rule::builders::GetRuleFluentBuilder::rule_identifier) / [`set_rule_identifier(Option<String>)`](crate::operation::get_rule::builders::GetRuleFluentBuilder::set_rule_identifier):<br>required: **true**<br><p>The ID or ARN of the listener rule.</p><br>
     /// - On success, responds with [`GetRuleOutput`](crate::operation::get_rule::GetRuleOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::get_rule::GetRuleOutput::arn): <p>The Amazon Resource Name (ARN) of the listener.</p>
     ///   - [`id(Option<String>)`](crate::operation::get_rule::GetRuleOutput::id): <p>The ID of the listener.</p>
@@ -14,8 +14,8 @@ impl super::Client {
     ///   - [`r#match(Option<RuleMatch>)`](crate::operation::get_rule::GetRuleOutput::match): <p>The rule match.</p>
     ///   - [`priority(Option<i32>)`](crate::operation::get_rule::GetRuleOutput::priority): <p>The priority level for the specified rule.</p>
     ///   - [`action(Option<RuleAction>)`](crate::operation::get_rule::GetRuleOutput::action): <p>The action for the default rule.</p>
-    ///   - [`created_at(Option<DateTime>)`](crate::operation::get_rule::GetRuleOutput::created_at): <p>The date and time that the listener rule was created, specified in ISO-8601 format.</p>
-    ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::get_rule::GetRuleOutput::last_updated_at): <p>The date and time that the listener rule was last updated, specified in ISO-8601 format.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::operation::get_rule::GetRuleOutput::created_at): <p>The date and time that the listener rule was created, in ISO-8601 format.</p>
+    ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::get_rule::GetRuleOutput::last_updated_at): <p>The date and time that the listener rule was last updated, in ISO-8601 format.</p>
     /// - On failure, responds with [`SdkError<GetRuleError>`](crate::operation::get_rule::GetRuleError)
     pub fn get_rule(&self) -> crate::operation::get_rule::builders::GetRuleFluentBuilder {
         crate::operation::get_rule::builders::GetRuleFluentBuilder::new(self.handle.clone())

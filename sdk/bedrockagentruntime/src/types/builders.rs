@@ -3,6 +3,8 @@ pub use crate::types::_knowledge_base_retrieval_result::KnowledgeBaseRetrievalRe
 
 pub use crate::types::_retrieval_result_location::RetrievalResultLocationBuilder;
 
+pub use crate::types::_retrieval_result_custom_document_location::RetrievalResultCustomDocumentLocationBuilder;
+
 pub use crate::types::_retrieval_result_share_point_location::RetrievalResultSharePointLocationBuilder;
 
 pub use crate::types::_retrieval_result_salesforce_location::RetrievalResultSalesforceLocationBuilder;
@@ -15,13 +17,33 @@ pub use crate::types::_retrieval_result_s3_location::RetrievalResultS3LocationBu
 
 pub use crate::types::_retrieval_result_content::RetrievalResultContentBuilder;
 
+pub use crate::types::_guardrail_configuration::GuardrailConfigurationBuilder;
+
 pub use crate::types::_knowledge_base_retrieval_configuration::KnowledgeBaseRetrievalConfigurationBuilder;
 
 pub use crate::types::_knowledge_base_vector_search_configuration::KnowledgeBaseVectorSearchConfigurationBuilder;
 
+pub use crate::types::_implicit_filter_configuration::ImplicitFilterConfigurationBuilder;
+
+pub use crate::types::_metadata_attribute_schema::MetadataAttributeSchemaBuilder;
+
+pub use crate::types::_vector_search_reranking_configuration::VectorSearchRerankingConfigurationBuilder;
+
+pub use crate::types::_vector_search_bedrock_reranking_configuration::VectorSearchBedrockRerankingConfigurationBuilder;
+
+pub use crate::types::_metadata_configuration_for_reranking::MetadataConfigurationForRerankingBuilder;
+
+pub use crate::types::_field_for_reranking::FieldForRerankingBuilder;
+
+pub use crate::types::_vector_search_bedrock_reranking_model_configuration::VectorSearchBedrockRerankingModelConfigurationBuilder;
+
 pub use crate::types::_filter_attribute::FilterAttributeBuilder;
 
 pub use crate::types::_knowledge_base_query::KnowledgeBaseQueryBuilder;
+
+pub use crate::types::_guardrail_event::GuardrailEventBuilder;
+
+pub use crate::types::_citation_event::CitationEventBuilder;
 
 pub use crate::types::_citation::CitationBuilder;
 
@@ -33,7 +55,7 @@ pub use crate::types::_text_response_part::TextResponsePartBuilder;
 
 pub use crate::types::_span::SpanBuilder;
 
-pub use crate::types::_retrieve_and_generate_output::RetrieveAndGenerateOutputBuilder;
+pub use crate::types::_retrieve_and_generate_output_event::RetrieveAndGenerateOutputEventBuilder;
 
 pub use crate::types::_retrieve_and_generate_session_configuration::RetrieveAndGenerateSessionConfigurationBuilder;
 
@@ -46,8 +68,6 @@ pub use crate::types::_external_sources_generation_configuration::ExternalSource
 pub use crate::types::_inference_config::InferenceConfigBuilder;
 
 pub use crate::types::_text_inference_config::TextInferenceConfigBuilder;
-
-pub use crate::types::_guardrail_configuration::GuardrailConfigurationBuilder;
 
 pub use crate::types::_prompt_template::PromptTemplateBuilder;
 
@@ -66,6 +86,24 @@ pub use crate::types::_query_transformation_configuration::QueryTransformationCo
 pub use crate::types::_generation_configuration::GenerationConfigurationBuilder;
 
 pub use crate::types::_retrieve_and_generate_input::RetrieveAndGenerateInputBuilder;
+
+pub use crate::types::_retrieve_and_generate_output::RetrieveAndGenerateOutputBuilder;
+
+pub use crate::types::_rerank_result::RerankResultBuilder;
+
+pub use crate::types::_rerank_document::RerankDocumentBuilder;
+
+pub use crate::types::_rerank_text_document::RerankTextDocumentBuilder;
+
+pub use crate::types::_reranking_configuration::RerankingConfigurationBuilder;
+
+pub use crate::types::_bedrock_reranking_configuration::BedrockRerankingConfigurationBuilder;
+
+pub use crate::types::_bedrock_reranking_model_configuration::BedrockRerankingModelConfigurationBuilder;
+
+pub use crate::types::_rerank_source::RerankSourceBuilder;
+
+pub use crate::types::_rerank_query::RerankQueryBuilder;
 
 pub use crate::types::_analyze_prompt_event::AnalyzePromptEventBuilder;
 

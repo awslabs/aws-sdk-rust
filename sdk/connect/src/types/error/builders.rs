@@ -33,13 +33,13 @@ pub use crate::types::error::_invalid_contact_flow_module_exception::InvalidCont
 
 pub use crate::types::error::_invalid_contact_flow_exception::InvalidContactFlowExceptionBuilder;
 
+pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;
+
 pub use crate::types::error::_contact_not_found_exception::ContactNotFoundExceptionBuilder;
 
 pub use crate::types::error::_outbound_contact_not_permitted_exception::OutboundContactNotPermittedExceptionBuilder;
 
 pub use crate::types::error::_destination_not_allowed_exception::DestinationNotAllowedExceptionBuilder;
-
-pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;
 
 pub use crate::types::error::_maximum_result_returned_exception::MaximumResultReturnedExceptionBuilder;
 

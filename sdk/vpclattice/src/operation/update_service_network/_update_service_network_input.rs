@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateServiceNetworkInput {
-    /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
+    /// <p>The ID or ARN of the service network.</p>
     pub service_network_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The type of IAM policy.</p>
     /// <ul>
@@ -15,7 +15,7 @@ pub struct UpdateServiceNetworkInput {
     pub auth_type: ::std::option::Option<crate::types::AuthType>,
 }
 impl UpdateServiceNetworkInput {
-    /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
+    /// <p>The ID or ARN of the service network.</p>
     pub fn service_network_identifier(&self) -> ::std::option::Option<&str> {
         self.service_network_identifier.as_deref()
     }
@@ -45,18 +45,18 @@ pub struct UpdateServiceNetworkInputBuilder {
     pub(crate) auth_type: ::std::option::Option<crate::types::AuthType>,
 }
 impl UpdateServiceNetworkInputBuilder {
-    /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
+    /// <p>The ID or ARN of the service network.</p>
     /// This field is required.
     pub fn service_network_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_network_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
+    /// <p>The ID or ARN of the service network.</p>
     pub fn set_service_network_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_network_identifier = input;
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
+    /// <p>The ID or ARN of the service network.</p>
     pub fn get_service_network_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_network_identifier
     }

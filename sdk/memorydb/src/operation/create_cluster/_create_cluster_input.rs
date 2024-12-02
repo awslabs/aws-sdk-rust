@@ -7,6 +7,8 @@ pub struct CreateClusterInput {
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The compute and memory capacity of the nodes in the cluster.</p>
     pub node_type: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the multi-Region cluster to be created.</p>
+    pub multi_region_cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the parameter group associated with the cluster.</p>
     pub parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>An optional description of the cluster.</p>
@@ -61,9 +63,9 @@ pub struct CreateClusterInput {
     pub snapshot_window: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Access Control List to associate with the cluster.</p>
     pub acl_name: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the engine to be used for the nodes in this cluster. The value must be set to either Redis or Valkey.</p>
+    /// <p>The name of the engine to be used for the cluster.</p>
     pub engine: ::std::option::Option<::std::string::String>,
-    /// <p>The version number of the engine to be used for the cluster.</p>
+    /// <p>The version number of the Redis OSS engine to be used for the cluster.</p>
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>When set to true, the cluster will automatically receive minor engine version upgrades after launch.</p>
     pub auto_minor_version_upgrade: ::std::option::Option<bool>,
@@ -78,6 +80,10 @@ impl CreateClusterInput {
     /// <p>The compute and memory capacity of the nodes in the cluster.</p>
     pub fn node_type(&self) -> ::std::option::Option<&str> {
         self.node_type.as_deref()
+    }
+    /// <p>The name of the multi-Region cluster to be created.</p>
+    pub fn multi_region_cluster_name(&self) -> ::std::option::Option<&str> {
+        self.multi_region_cluster_name.as_deref()
     }
     /// <p>The name of the parameter group associated with the cluster.</p>
     pub fn parameter_group_name(&self) -> ::std::option::Option<&str> {
@@ -173,11 +179,11 @@ impl CreateClusterInput {
     pub fn acl_name(&self) -> ::std::option::Option<&str> {
         self.acl_name.as_deref()
     }
-    /// <p>The name of the engine to be used for the nodes in this cluster. The value must be set to either Redis or Valkey.</p>
+    /// <p>The name of the engine to be used for the cluster.</p>
     pub fn engine(&self) -> ::std::option::Option<&str> {
         self.engine.as_deref()
     }
-    /// <p>The version number of the engine to be used for the cluster.</p>
+    /// <p>The version number of the Redis OSS engine to be used for the cluster.</p>
     pub fn engine_version(&self) -> ::std::option::Option<&str> {
         self.engine_version.as_deref()
     }
@@ -203,6 +209,7 @@ impl CreateClusterInput {
 pub struct CreateClusterInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) node_type: ::std::option::Option<::std::string::String>,
+    pub(crate) multi_region_cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) num_shards: ::std::option::Option<i32>,
@@ -255,6 +262,20 @@ impl CreateClusterInputBuilder {
     /// <p>The compute and memory capacity of the nodes in the cluster.</p>
     pub fn get_node_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.node_type
+    }
+    /// <p>The name of the multi-Region cluster to be created.</p>
+    pub fn multi_region_cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.multi_region_cluster_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the multi-Region cluster to be created.</p>
+    pub fn set_multi_region_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.multi_region_cluster_name = input;
+        self
+    }
+    /// <p>The name of the multi-Region cluster to be created.</p>
+    pub fn get_multi_region_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.multi_region_cluster_name
     }
     /// <p>The name of the parameter group associated with the cluster.</p>
     pub fn parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -573,31 +594,31 @@ impl CreateClusterInputBuilder {
     pub fn get_acl_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.acl_name
     }
-    /// <p>The name of the engine to be used for the nodes in this cluster. The value must be set to either Redis or Valkey.</p>
+    /// <p>The name of the engine to be used for the cluster.</p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the engine to be used for the nodes in this cluster. The value must be set to either Redis or Valkey.</p>
+    /// <p>The name of the engine to be used for the cluster.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
         self
     }
-    /// <p>The name of the engine to be used for the nodes in this cluster. The value must be set to either Redis or Valkey.</p>
+    /// <p>The name of the engine to be used for the cluster.</p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine
     }
-    /// <p>The version number of the engine to be used for the cluster.</p>
+    /// <p>The version number of the Redis OSS engine to be used for the cluster.</p>
     pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The version number of the engine to be used for the cluster.</p>
+    /// <p>The version number of the Redis OSS engine to be used for the cluster.</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
-    /// <p>The version number of the engine to be used for the cluster.</p>
+    /// <p>The version number of the Redis OSS engine to be used for the cluster.</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine_version
     }
@@ -636,6 +657,7 @@ impl CreateClusterInputBuilder {
         ::std::result::Result::Ok(crate::operation::create_cluster::CreateClusterInput {
             cluster_name: self.cluster_name,
             node_type: self.node_type,
+            multi_region_cluster_name: self.multi_region_cluster_name,
             parameter_group_name: self.parameter_group_name,
             description: self.description,
             num_shards: self.num_shards,

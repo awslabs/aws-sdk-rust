@@ -1406,6 +1406,41 @@ impl From<crate::operation::get_lifecycle_policy::GetLifecyclePolicyError> for E
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_marketplace_resource::GetMarketplaceResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_marketplace_resource::GetMarketplaceResourceError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_marketplace_resource::GetMarketplaceResourceError> for Error {
+    fn from(err: crate::operation::get_marketplace_resource::GetMarketplaceResourceError) -> Self {
+        match err {
+            crate::operation::get_marketplace_resource::GetMarketplaceResourceError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
+            crate::operation::get_marketplace_resource::GetMarketplaceResourceError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::get_marketplace_resource::GetMarketplaceResourceError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_marketplace_resource::GetMarketplaceResourceError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::get_marketplace_resource::GetMarketplaceResourceError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_marketplace_resource::GetMarketplaceResourceError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::get_marketplace_resource::GetMarketplaceResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_workflow::GetWorkflowError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

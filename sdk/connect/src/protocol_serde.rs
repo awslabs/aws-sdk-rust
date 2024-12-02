@@ -1185,6 +1185,8 @@ pub(crate) mod shape_property_validation_exception_property_list;
 
 pub(crate) mod shape_queue;
 
+pub(crate) mod shape_queue_info_input;
+
 pub(crate) mod shape_queue_search_criteria;
 
 pub(crate) mod shape_queue_search_filter;

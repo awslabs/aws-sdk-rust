@@ -20,7 +20,7 @@ pub struct ListPhoneNumbersSummary {
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the phone number.</p>
     pub phone_number_description: ::std::option::Option<::std::string::String>,
-    /// <p>The claimed phone number ARN that was previously imported from the external service, such as Amazon Pinpoint. If it is from Amazon Pinpoint, it looks like the ARN of the phone number that was imported from Amazon Pinpoint.</p>
+    /// <p>The claimed phone number ARN that was previously imported from the external service, such as Amazon Web Services End User Messaging. If it is from Amazon Web Services End User Messaging, it looks like the ARN of the phone number that was imported from Amazon Web Services End User Messaging.</p>
     pub source_phone_number_arn: ::std::option::Option<::std::string::String>,
 }
 impl ListPhoneNumbersSummary {
@@ -56,7 +56,7 @@ impl ListPhoneNumbersSummary {
     pub fn phone_number_description(&self) -> ::std::option::Option<&str> {
         self.phone_number_description.as_deref()
     }
-    /// <p>The claimed phone number ARN that was previously imported from the external service, such as Amazon Pinpoint. If it is from Amazon Pinpoint, it looks like the ARN of the phone number that was imported from Amazon Pinpoint.</p>
+    /// <p>The claimed phone number ARN that was previously imported from the external service, such as Amazon Web Services End User Messaging. If it is from Amazon Web Services End User Messaging, it looks like the ARN of the phone number that was imported from Amazon Web Services End User Messaging.</p>
     pub fn source_phone_number_arn(&self) -> ::std::option::Option<&str> {
         self.source_phone_number_arn.as_deref()
     }
@@ -195,17 +195,17 @@ impl ListPhoneNumbersSummaryBuilder {
     pub fn get_phone_number_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.phone_number_description
     }
-    /// <p>The claimed phone number ARN that was previously imported from the external service, such as Amazon Pinpoint. If it is from Amazon Pinpoint, it looks like the ARN of the phone number that was imported from Amazon Pinpoint.</p>
+    /// <p>The claimed phone number ARN that was previously imported from the external service, such as Amazon Web Services End User Messaging. If it is from Amazon Web Services End User Messaging, it looks like the ARN of the phone number that was imported from Amazon Web Services End User Messaging.</p>
     pub fn source_phone_number_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_phone_number_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The claimed phone number ARN that was previously imported from the external service, such as Amazon Pinpoint. If it is from Amazon Pinpoint, it looks like the ARN of the phone number that was imported from Amazon Pinpoint.</p>
+    /// <p>The claimed phone number ARN that was previously imported from the external service, such as Amazon Web Services End User Messaging. If it is from Amazon Web Services End User Messaging, it looks like the ARN of the phone number that was imported from Amazon Web Services End User Messaging.</p>
     pub fn set_source_phone_number_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_phone_number_arn = input;
         self
     }
-    /// <p>The claimed phone number ARN that was previously imported from the external service, such as Amazon Pinpoint. If it is from Amazon Pinpoint, it looks like the ARN of the phone number that was imported from Amazon Pinpoint.</p>
+    /// <p>The claimed phone number ARN that was previously imported from the external service, such as Amazon Web Services End User Messaging. If it is from Amazon Web Services End User Messaging, it looks like the ARN of the phone number that was imported from Amazon Web Services End User Messaging.</p>
     pub fn get_source_phone_number_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_phone_number_arn
     }

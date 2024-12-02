@@ -11,6 +11,9 @@ pub struct UpdateConnectionInput {
     pub authorization_type: ::std::option::Option<crate::types::ConnectionAuthorizationType>,
     /// <p>The authorization parameters to use for the connection.</p>
     pub auth_parameters: ::std::option::Option<crate::types::UpdateConnectionAuthRequestParameters>,
+    /// <p>For connections to private resource endpoints, the parameters to use for invoking the resource endpoint.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-target-connection-private.html">Connecting to private resources</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
+    pub invocation_connectivity_parameters: ::std::option::Option<crate::types::ConnectivityResourceParameters>,
 }
 impl UpdateConnectionInput {
     /// <p>The name of the connection to update.</p>
@@ -29,6 +32,11 @@ impl UpdateConnectionInput {
     pub fn auth_parameters(&self) -> ::std::option::Option<&crate::types::UpdateConnectionAuthRequestParameters> {
         self.auth_parameters.as_ref()
     }
+    /// <p>For connections to private resource endpoints, the parameters to use for invoking the resource endpoint.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-target-connection-private.html">Connecting to private resources</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
+    pub fn invocation_connectivity_parameters(&self) -> ::std::option::Option<&crate::types::ConnectivityResourceParameters> {
+        self.invocation_connectivity_parameters.as_ref()
+    }
 }
 impl UpdateConnectionInput {
     /// Creates a new builder-style object to manufacture [`UpdateConnectionInput`](crate::operation::update_connection::UpdateConnectionInput).
@@ -45,6 +53,7 @@ pub struct UpdateConnectionInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) authorization_type: ::std::option::Option<crate::types::ConnectionAuthorizationType>,
     pub(crate) auth_parameters: ::std::option::Option<crate::types::UpdateConnectionAuthRequestParameters>,
+    pub(crate) invocation_connectivity_parameters: ::std::option::Option<crate::types::ConnectivityResourceParameters>,
 }
 impl UpdateConnectionInputBuilder {
     /// <p>The name of the connection to update.</p>
@@ -104,6 +113,23 @@ impl UpdateConnectionInputBuilder {
     pub fn get_auth_parameters(&self) -> &::std::option::Option<crate::types::UpdateConnectionAuthRequestParameters> {
         &self.auth_parameters
     }
+    /// <p>For connections to private resource endpoints, the parameters to use for invoking the resource endpoint.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-target-connection-private.html">Connecting to private resources</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
+    pub fn invocation_connectivity_parameters(mut self, input: crate::types::ConnectivityResourceParameters) -> Self {
+        self.invocation_connectivity_parameters = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>For connections to private resource endpoints, the parameters to use for invoking the resource endpoint.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-target-connection-private.html">Connecting to private resources</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
+    pub fn set_invocation_connectivity_parameters(mut self, input: ::std::option::Option<crate::types::ConnectivityResourceParameters>) -> Self {
+        self.invocation_connectivity_parameters = input;
+        self
+    }
+    /// <p>For connections to private resource endpoints, the parameters to use for invoking the resource endpoint.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-target-connection-private.html">Connecting to private resources</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
+    pub fn get_invocation_connectivity_parameters(&self) -> &::std::option::Option<crate::types::ConnectivityResourceParameters> {
+        &self.invocation_connectivity_parameters
+    }
     /// Consumes the builder and constructs a [`UpdateConnectionInput`](crate::operation::update_connection::UpdateConnectionInput).
     pub fn build(
         self,
@@ -113,6 +139,7 @@ impl UpdateConnectionInputBuilder {
             description: self.description,
             authorization_type: self.authorization_type,
             auth_parameters: self.auth_parameters,
+            invocation_connectivity_parameters: self.invocation_connectivity_parameters,
         })
     }
 }

@@ -118,6 +118,9 @@ where
                         "obfuscate" => {
                             builder = builder.set_obfuscate(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "productCodes" => {
+                            builder = builder.set_product_codes(crate::protocol_serde::shape_product_code_list::de_product_code_list(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

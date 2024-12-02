@@ -19,6 +19,10 @@ pub use crate::types::_primary::Primary;
 
 pub use crate::types::_connection_state::ConnectionState;
 
+pub use crate::types::_connectivity_resource_parameters::ConnectivityResourceParameters;
+
+pub use crate::types::_connectivity_resource_configuration_arn::ConnectivityResourceConfigurationArn;
+
 pub use crate::types::_update_connection_auth_request_parameters::UpdateConnectionAuthRequestParameters;
 
 pub use crate::types::_connection_http_parameters::ConnectionHttpParameters;
@@ -145,6 +149,10 @@ pub use crate::types::_api_destination::ApiDestination;
 
 pub use crate::types::_connection_auth_response_parameters::ConnectionAuthResponseParameters;
 
+pub use crate::types::_describe_connection_connectivity_parameters::DescribeConnectionConnectivityParameters;
+
+pub use crate::types::_describe_connection_resource_parameters::DescribeConnectionResourceParameters;
+
 pub use crate::types::_connection_api_key_auth_response_parameters::ConnectionApiKeyAuthResponseParameters;
 
 pub use crate::types::_connection_o_auth_response_parameters::ConnectionOAuthResponseParameters;
@@ -215,6 +223,10 @@ mod _connection_query_string_parameter;
 
 mod _connection_state;
 
+mod _connectivity_resource_configuration_arn;
+
+mod _connectivity_resource_parameters;
+
 mod _create_connection_api_key_auth_request_parameters;
 
 mod _create_connection_auth_request_parameters;
@@ -226,6 +238,10 @@ mod _create_connection_o_auth_client_request_parameters;
 mod _create_connection_o_auth_request_parameters;
 
 mod _dead_letter_config;
+
+mod _describe_connection_connectivity_parameters;
+
+mod _describe_connection_resource_parameters;
 
 mod _ecs_parameters;
 

@@ -215,6 +215,8 @@ mod get_group;
 
 mod get_index;
 
+mod get_media;
+
 mod get_plugin;
 
 mod get_retriever;
@@ -224,6 +226,8 @@ mod get_user;
 mod get_web_experience;
 
 mod list_applications;
+
+mod list_attachments;
 
 mod list_conversations;
 

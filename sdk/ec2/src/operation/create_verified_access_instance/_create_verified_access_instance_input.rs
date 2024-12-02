@@ -13,6 +13,8 @@ pub struct CreateVerifiedAccessInstanceInput {
     pub dry_run: ::std::option::Option<bool>,
     /// <p>Enable or disable support for Federal Information Processing Standards (FIPS) on the instance.</p>
     pub fips_enabled: ::std::option::Option<bool>,
+    /// <p>The custom subdomain.</p>
+    pub cidr_endpoints_custom_sub_domain: ::std::option::Option<::std::string::String>,
 }
 impl CreateVerifiedAccessInstanceInput {
     /// <p>A description for the Verified Access instance.</p>
@@ -37,6 +39,10 @@ impl CreateVerifiedAccessInstanceInput {
     pub fn fips_enabled(&self) -> ::std::option::Option<bool> {
         self.fips_enabled
     }
+    /// <p>The custom subdomain.</p>
+    pub fn cidr_endpoints_custom_sub_domain(&self) -> ::std::option::Option<&str> {
+        self.cidr_endpoints_custom_sub_domain.as_deref()
+    }
 }
 impl CreateVerifiedAccessInstanceInput {
     /// Creates a new builder-style object to manufacture [`CreateVerifiedAccessInstanceInput`](crate::operation::create_verified_access_instance::CreateVerifiedAccessInstanceInput).
@@ -54,6 +60,7 @@ pub struct CreateVerifiedAccessInstanceInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) fips_enabled: ::std::option::Option<bool>,
+    pub(crate) cidr_endpoints_custom_sub_domain: ::std::option::Option<::std::string::String>,
 }
 impl CreateVerifiedAccessInstanceInputBuilder {
     /// <p>A description for the Verified Access instance.</p>
@@ -132,6 +139,20 @@ impl CreateVerifiedAccessInstanceInputBuilder {
     pub fn get_fips_enabled(&self) -> &::std::option::Option<bool> {
         &self.fips_enabled
     }
+    /// <p>The custom subdomain.</p>
+    pub fn cidr_endpoints_custom_sub_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cidr_endpoints_custom_sub_domain = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The custom subdomain.</p>
+    pub fn set_cidr_endpoints_custom_sub_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cidr_endpoints_custom_sub_domain = input;
+        self
+    }
+    /// <p>The custom subdomain.</p>
+    pub fn get_cidr_endpoints_custom_sub_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr_endpoints_custom_sub_domain
+    }
     /// Consumes the builder and constructs a [`CreateVerifiedAccessInstanceInput`](crate::operation::create_verified_access_instance::CreateVerifiedAccessInstanceInput).
     pub fn build(
         self,
@@ -145,6 +166,7 @@ impl CreateVerifiedAccessInstanceInputBuilder {
             client_token: self.client_token,
             dry_run: self.dry_run,
             fips_enabled: self.fips_enabled,
+            cidr_endpoints_custom_sub_domain: self.cidr_endpoints_custom_sub_domain,
         })
     }
 }

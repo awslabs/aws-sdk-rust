@@ -33,6 +33,8 @@ pub enum Error {
     InvalidCredentialsException(crate::types::error::InvalidCredentialsException),
     /// <p></p>
     InvalidKmsKeyFault(crate::types::error::InvalidKmsKeyFault),
+    /// <p>The requested operation cannot be performed on the multi-Region cluster in its current state.</p>
+    InvalidMultiRegionClusterStateFault(crate::types::error::InvalidMultiRegionClusterStateFault),
     /// <p></p>
     InvalidNodeStateFault(crate::types::error::InvalidNodeStateFault),
     /// <p></p>
@@ -49,6 +51,12 @@ pub enum Error {
     InvalidUserStateFault(crate::types::error::InvalidUserStateFault),
     /// <p></p>
     InvalidVpcNetworkStateFault(crate::types::error::InvalidVpcNetworkStateFault),
+    /// <p>A multi-Region cluster with the specified name already exists.</p>
+    MultiRegionClusterAlreadyExistsFault(crate::types::error::MultiRegionClusterAlreadyExistsFault),
+    /// <p>The specified multi-Region cluster does not exist.</p>
+    MultiRegionClusterNotFoundFault(crate::types::error::MultiRegionClusterNotFoundFault),
+    /// <p>The specified multi-Region parameter group does not exist.</p>
+    MultiRegionParameterGroupNotFoundFault(crate::types::error::MultiRegionParameterGroupNotFoundFault),
     /// <p></p>
     NoOperationFault(crate::types::error::NoOperationFault),
     /// <p></p>
@@ -136,6 +144,7 @@ impl ::std::fmt::Display for Error {
             Error::InvalidClusterStateFault(inner) => inner.fmt(f),
             Error::InvalidCredentialsException(inner) => inner.fmt(f),
             Error::InvalidKmsKeyFault(inner) => inner.fmt(f),
+            Error::InvalidMultiRegionClusterStateFault(inner) => inner.fmt(f),
             Error::InvalidNodeStateFault(inner) => inner.fmt(f),
             Error::InvalidParameterCombinationException(inner) => inner.fmt(f),
             Error::InvalidParameterGroupStateFault(inner) => inner.fmt(f),
@@ -144,6 +153,9 @@ impl ::std::fmt::Display for Error {
             Error::InvalidSubnet(inner) => inner.fmt(f),
             Error::InvalidUserStateFault(inner) => inner.fmt(f),
             Error::InvalidVpcNetworkStateFault(inner) => inner.fmt(f),
+            Error::MultiRegionClusterAlreadyExistsFault(inner) => inner.fmt(f),
+            Error::MultiRegionClusterNotFoundFault(inner) => inner.fmt(f),
+            Error::MultiRegionParameterGroupNotFoundFault(inner) => inner.fmt(f),
             Error::NoOperationFault(inner) => inner.fmt(f),
             Error::NodeQuotaForClusterExceededFault(inner) => inner.fmt(f),
             Error::NodeQuotaForCustomerExceededFault(inner) => inner.fmt(f),
@@ -210,6 +222,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::InvalidClusterStateFault(inner) => inner.meta(),
             Self::InvalidCredentialsException(inner) => inner.meta(),
             Self::InvalidKmsKeyFault(inner) => inner.meta(),
+            Self::InvalidMultiRegionClusterStateFault(inner) => inner.meta(),
             Self::InvalidNodeStateFault(inner) => inner.meta(),
             Self::InvalidParameterCombinationException(inner) => inner.meta(),
             Self::InvalidParameterGroupStateFault(inner) => inner.meta(),
@@ -218,6 +231,9 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::InvalidSubnet(inner) => inner.meta(),
             Self::InvalidUserStateFault(inner) => inner.meta(),
             Self::InvalidVpcNetworkStateFault(inner) => inner.meta(),
+            Self::MultiRegionClusterAlreadyExistsFault(inner) => inner.meta(),
+            Self::MultiRegionClusterNotFoundFault(inner) => inner.meta(),
+            Self::MultiRegionParameterGroupNotFoundFault(inner) => inner.meta(),
             Self::NoOperationFault(inner) => inner.meta(),
             Self::NodeQuotaForClusterExceededFault(inner) => inner.meta(),
             Self::NodeQuotaForCustomerExceededFault(inner) => inner.meta(),
@@ -365,6 +381,9 @@ impl From<crate::operation::create_cluster::CreateClusterError> for Error {
             }
             crate::operation::create_cluster::CreateClusterError::InvalidAclStateFault(inner) => Error::InvalidAclStateFault(inner),
             crate::operation::create_cluster::CreateClusterError::InvalidCredentialsException(inner) => Error::InvalidCredentialsException(inner),
+            crate::operation::create_cluster::CreateClusterError::InvalidMultiRegionClusterStateFault(inner) => {
+                Error::InvalidMultiRegionClusterStateFault(inner)
+            }
             crate::operation::create_cluster::CreateClusterError::InvalidParameterCombinationException(inner) => {
                 Error::InvalidParameterCombinationException(inner)
             }
@@ -372,6 +391,9 @@ impl From<crate::operation::create_cluster::CreateClusterError> for Error {
                 Error::InvalidParameterValueException(inner)
             }
             crate::operation::create_cluster::CreateClusterError::InvalidVpcNetworkStateFault(inner) => Error::InvalidVpcNetworkStateFault(inner),
+            crate::operation::create_cluster::CreateClusterError::MultiRegionClusterNotFoundFault(inner) => {
+                Error::MultiRegionClusterNotFoundFault(inner)
+            }
             crate::operation::create_cluster::CreateClusterError::NodeQuotaForClusterExceededFault(inner) => {
                 Error::NodeQuotaForClusterExceededFault(inner)
             }
@@ -388,6 +410,48 @@ impl From<crate::operation::create_cluster::CreateClusterError> for Error {
             crate::operation::create_cluster::CreateClusterError::SubnetGroupNotFoundFault(inner) => Error::SubnetGroupNotFoundFault(inner),
             crate::operation::create_cluster::CreateClusterError::TagQuotaPerResourceExceeded(inner) => Error::TagQuotaPerResourceExceeded(inner),
             crate::operation::create_cluster::CreateClusterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_multi_region_cluster::CreateMultiRegionClusterError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_multi_region_cluster::CreateMultiRegionClusterError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_multi_region_cluster::CreateMultiRegionClusterError> for Error {
+    fn from(err: crate::operation::create_multi_region_cluster::CreateMultiRegionClusterError) -> Self {
+        match err {
+            crate::operation::create_multi_region_cluster::CreateMultiRegionClusterError::ClusterQuotaForCustomerExceededFault(inner) => {
+                Error::ClusterQuotaForCustomerExceededFault(inner)
+            }
+            crate::operation::create_multi_region_cluster::CreateMultiRegionClusterError::InvalidParameterCombinationException(inner) => {
+                Error::InvalidParameterCombinationException(inner)
+            }
+            crate::operation::create_multi_region_cluster::CreateMultiRegionClusterError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::create_multi_region_cluster::CreateMultiRegionClusterError::MultiRegionClusterAlreadyExistsFault(inner) => {
+                Error::MultiRegionClusterAlreadyExistsFault(inner)
+            }
+            crate::operation::create_multi_region_cluster::CreateMultiRegionClusterError::MultiRegionParameterGroupNotFoundFault(inner) => {
+                Error::MultiRegionParameterGroupNotFoundFault(inner)
+            }
+            crate::operation::create_multi_region_cluster::CreateMultiRegionClusterError::TagQuotaPerResourceExceeded(inner) => {
+                Error::TagQuotaPerResourceExceeded(inner)
+            }
+            crate::operation::create_multi_region_cluster::CreateMultiRegionClusterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -587,6 +651,39 @@ impl From<crate::operation::delete_cluster::DeleteClusterError> for Error {
             }
             crate::operation::delete_cluster::DeleteClusterError::SnapshotAlreadyExistsFault(inner) => Error::SnapshotAlreadyExistsFault(inner),
             crate::operation::delete_cluster::DeleteClusterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_multi_region_cluster::DeleteMultiRegionClusterError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_multi_region_cluster::DeleteMultiRegionClusterError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_multi_region_cluster::DeleteMultiRegionClusterError> for Error {
+    fn from(err: crate::operation::delete_multi_region_cluster::DeleteMultiRegionClusterError) -> Self {
+        match err {
+            crate::operation::delete_multi_region_cluster::DeleteMultiRegionClusterError::InvalidMultiRegionClusterStateFault(inner) => {
+                Error::InvalidMultiRegionClusterStateFault(inner)
+            }
+            crate::operation::delete_multi_region_cluster::DeleteMultiRegionClusterError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::delete_multi_region_cluster::DeleteMultiRegionClusterError::MultiRegionClusterNotFoundFault(inner) => {
+                Error::MultiRegionClusterNotFoundFault(inner)
+            }
+            crate::operation::delete_multi_region_cluster::DeleteMultiRegionClusterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -823,6 +920,46 @@ impl From<crate::operation::describe_events::DescribeEventsError> for Error {
                 Error::ServiceLinkedRoleNotFoundFault(inner)
             }
             crate::operation::describe_events::DescribeEventsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_multi_region_clusters::DescribeMultiRegionClustersError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_multi_region_clusters::DescribeMultiRegionClustersError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_multi_region_clusters::DescribeMultiRegionClustersError> for Error {
+    fn from(err: crate::operation::describe_multi_region_clusters::DescribeMultiRegionClustersError) -> Self {
+        match err {
+            crate::operation::describe_multi_region_clusters::DescribeMultiRegionClustersError::ClusterNotFoundFault(inner) => {
+                Error::ClusterNotFoundFault(inner)
+            }
+            crate::operation::describe_multi_region_clusters::DescribeMultiRegionClustersError::InvalidParameterCombinationException(inner) => {
+                Error::InvalidParameterCombinationException(inner)
+            }
+            crate::operation::describe_multi_region_clusters::DescribeMultiRegionClustersError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::describe_multi_region_clusters::DescribeMultiRegionClustersError::MultiRegionClusterNotFoundFault(inner) => {
+                Error::MultiRegionClusterNotFoundFault(inner)
+            }
+            crate::operation::describe_multi_region_clusters::DescribeMultiRegionClustersError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1121,6 +1258,41 @@ impl From<crate::operation::failover_shard::FailoverShardError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_allowed_multi_region_cluster_updates::ListAllowedMultiRegionClusterUpdatesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_allowed_multi_region_cluster_updates::ListAllowedMultiRegionClusterUpdatesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_allowed_multi_region_cluster_updates::ListAllowedMultiRegionClusterUpdatesError> for Error {
+    fn from(err: crate::operation::list_allowed_multi_region_cluster_updates::ListAllowedMultiRegionClusterUpdatesError) -> Self {
+        match err {
+            crate::operation::list_allowed_multi_region_cluster_updates::ListAllowedMultiRegionClusterUpdatesError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::list_allowed_multi_region_cluster_updates::ListAllowedMultiRegionClusterUpdatesError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::list_allowed_multi_region_cluster_updates::ListAllowedMultiRegionClusterUpdatesError::MultiRegionClusterNotFoundFault(inner) => Error::MultiRegionClusterNotFoundFault(inner),
+            crate::operation::list_allowed_multi_region_cluster_updates::ListAllowedMultiRegionClusterUpdatesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_allowed_node_type_updates::ListAllowedNodeTypeUpdatesError, R>>
     for Error
 where
@@ -1178,6 +1350,10 @@ impl From<crate::operation::list_tags::ListTagsError> for Error {
             crate::operation::list_tags::ListTagsError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
             crate::operation::list_tags::ListTagsError::InvalidArnFault(inner) => Error::InvalidArnFault(inner),
             crate::operation::list_tags::ListTagsError::InvalidClusterStateFault(inner) => Error::InvalidClusterStateFault(inner),
+            crate::operation::list_tags::ListTagsError::MultiRegionClusterNotFoundFault(inner) => Error::MultiRegionClusterNotFoundFault(inner),
+            crate::operation::list_tags::ListTagsError::MultiRegionParameterGroupNotFoundFault(inner) => {
+                Error::MultiRegionParameterGroupNotFoundFault(inner)
+            }
             crate::operation::list_tags::ListTagsError::ParameterGroupNotFoundFault(inner) => Error::ParameterGroupNotFoundFault(inner),
             crate::operation::list_tags::ListTagsError::ServiceLinkedRoleNotFoundFault(inner) => Error::ServiceLinkedRoleNotFoundFault(inner),
             crate::operation::list_tags::ListTagsError::SnapshotNotFoundFault(inner) => Error::SnapshotNotFoundFault(inner),
@@ -1294,6 +1470,11 @@ impl From<crate::operation::tag_resource::TagResourceError> for Error {
             crate::operation::tag_resource::TagResourceError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
             crate::operation::tag_resource::TagResourceError::InvalidArnFault(inner) => Error::InvalidArnFault(inner),
             crate::operation::tag_resource::TagResourceError::InvalidClusterStateFault(inner) => Error::InvalidClusterStateFault(inner),
+            crate::operation::tag_resource::TagResourceError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::tag_resource::TagResourceError::MultiRegionClusterNotFoundFault(inner) => Error::MultiRegionClusterNotFoundFault(inner),
+            crate::operation::tag_resource::TagResourceError::MultiRegionParameterGroupNotFoundFault(inner) => {
+                Error::MultiRegionParameterGroupNotFoundFault(inner)
+            }
             crate::operation::tag_resource::TagResourceError::ParameterGroupNotFoundFault(inner) => Error::ParameterGroupNotFoundFault(inner),
             crate::operation::tag_resource::TagResourceError::ServiceLinkedRoleNotFoundFault(inner) => Error::ServiceLinkedRoleNotFoundFault(inner),
             crate::operation::tag_resource::TagResourceError::SnapshotNotFoundFault(inner) => Error::SnapshotNotFoundFault(inner),
@@ -1325,6 +1506,15 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
             crate::operation::untag_resource::UntagResourceError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
             crate::operation::untag_resource::UntagResourceError::InvalidArnFault(inner) => Error::InvalidArnFault(inner),
             crate::operation::untag_resource::UntagResourceError::InvalidClusterStateFault(inner) => Error::InvalidClusterStateFault(inner),
+            crate::operation::untag_resource::UntagResourceError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::untag_resource::UntagResourceError::MultiRegionClusterNotFoundFault(inner) => {
+                Error::MultiRegionClusterNotFoundFault(inner)
+            }
+            crate::operation::untag_resource::UntagResourceError::MultiRegionParameterGroupNotFoundFault(inner) => {
+                Error::MultiRegionParameterGroupNotFoundFault(inner)
+            }
             crate::operation::untag_resource::UntagResourceError::ParameterGroupNotFoundFault(inner) => Error::ParameterGroupNotFoundFault(inner),
             crate::operation::untag_resource::UntagResourceError::ServiceLinkedRoleNotFoundFault(inner) => {
                 Error::ServiceLinkedRoleNotFoundFault(inner)
@@ -1415,6 +1605,45 @@ impl From<crate::operation::update_cluster::UpdateClusterError> for Error {
                 Error::ShardsPerClusterQuotaExceededFault(inner)
             }
             crate::operation::update_cluster::UpdateClusterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_multi_region_cluster::UpdateMultiRegionClusterError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_multi_region_cluster::UpdateMultiRegionClusterError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_multi_region_cluster::UpdateMultiRegionClusterError> for Error {
+    fn from(err: crate::operation::update_multi_region_cluster::UpdateMultiRegionClusterError) -> Self {
+        match err {
+            crate::operation::update_multi_region_cluster::UpdateMultiRegionClusterError::InvalidMultiRegionClusterStateFault(inner) => {
+                Error::InvalidMultiRegionClusterStateFault(inner)
+            }
+            crate::operation::update_multi_region_cluster::UpdateMultiRegionClusterError::InvalidParameterCombinationException(inner) => {
+                Error::InvalidParameterCombinationException(inner)
+            }
+            crate::operation::update_multi_region_cluster::UpdateMultiRegionClusterError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::update_multi_region_cluster::UpdateMultiRegionClusterError::MultiRegionClusterNotFoundFault(inner) => {
+                Error::MultiRegionClusterNotFoundFault(inner)
+            }
+            crate::operation::update_multi_region_cluster::UpdateMultiRegionClusterError::MultiRegionParameterGroupNotFoundFault(inner) => {
+                Error::MultiRegionParameterGroupNotFoundFault(inner)
+            }
+            crate::operation::update_multi_region_cluster::UpdateMultiRegionClusterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1528,6 +1757,7 @@ impl ::std::error::Error for Error {
             Error::InvalidClusterStateFault(inner) => inner.source(),
             Error::InvalidCredentialsException(inner) => inner.source(),
             Error::InvalidKmsKeyFault(inner) => inner.source(),
+            Error::InvalidMultiRegionClusterStateFault(inner) => inner.source(),
             Error::InvalidNodeStateFault(inner) => inner.source(),
             Error::InvalidParameterCombinationException(inner) => inner.source(),
             Error::InvalidParameterGroupStateFault(inner) => inner.source(),
@@ -1536,6 +1766,9 @@ impl ::std::error::Error for Error {
             Error::InvalidSubnet(inner) => inner.source(),
             Error::InvalidUserStateFault(inner) => inner.source(),
             Error::InvalidVpcNetworkStateFault(inner) => inner.source(),
+            Error::MultiRegionClusterAlreadyExistsFault(inner) => inner.source(),
+            Error::MultiRegionClusterNotFoundFault(inner) => inner.source(),
+            Error::MultiRegionParameterGroupNotFoundFault(inner) => inner.source(),
             Error::NoOperationFault(inner) => inner.source(),
             Error::NodeQuotaForClusterExceededFault(inner) => inner.source(),
             Error::NodeQuotaForCustomerExceededFault(inner) => inner.source(),
@@ -1588,6 +1821,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::InvalidClusterStateFault(e) => e.request_id(),
             Self::InvalidCredentialsException(e) => e.request_id(),
             Self::InvalidKmsKeyFault(e) => e.request_id(),
+            Self::InvalidMultiRegionClusterStateFault(e) => e.request_id(),
             Self::InvalidNodeStateFault(e) => e.request_id(),
             Self::InvalidParameterCombinationException(e) => e.request_id(),
             Self::InvalidParameterGroupStateFault(e) => e.request_id(),
@@ -1596,6 +1830,9 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::InvalidSubnet(e) => e.request_id(),
             Self::InvalidUserStateFault(e) => e.request_id(),
             Self::InvalidVpcNetworkStateFault(e) => e.request_id(),
+            Self::MultiRegionClusterAlreadyExistsFault(e) => e.request_id(),
+            Self::MultiRegionClusterNotFoundFault(e) => e.request_id(),
+            Self::MultiRegionParameterGroupNotFoundFault(e) => e.request_id(),
             Self::NoOperationFault(e) => e.request_id(),
             Self::NodeQuotaForClusterExceededFault(e) => e.request_id(),
             Self::NodeQuotaForCustomerExceededFault(e) => e.request_id(),

@@ -21,6 +21,12 @@ pub struct UpdateClusterConfigInput {
     /// <p>Zonal shift is a feature of Amazon Application Recovery Controller (ARC). ARC zonal shift is designed to be a temporary measure that allows you to move traffic for a resource away from an impaired AZ until the zonal shift expires or you cancel it. You can extend the zonal shift if necessary.</p>
     /// <p>You can start a zonal shift for an EKS cluster, or you can allow Amazon Web Services to do it for you by enabling <i>zonal autoshift</i>. This shift updates the flow of east-to-west network traffic in your cluster to only consider network endpoints for Pods running on worker nodes in healthy AZs. Additionally, any ALB or NLB handling ingress traffic for applications in your EKS cluster will automatically route traffic to targets in the healthy AZs. For more information about zonal shift in EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/zone-shift.html">Learn about Amazon Application Recovery Controller (ARC) Zonal Shift in Amazon EKS</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
     pub zonal_shift_config: ::std::option::Option<crate::types::ZonalShiftConfigRequest>,
+    /// <p>Update the configuration of the compute capability of your EKS Auto Mode cluster. For example, enable the capability.</p>
+    pub compute_config: ::std::option::Option<crate::types::ComputeConfigRequest>,
+    /// <p>The Kubernetes network configuration for the cluster.</p>
+    pub kubernetes_network_config: ::std::option::Option<crate::types::KubernetesNetworkConfigRequest>,
+    /// <p>Update the configuration of the block storage capability of your EKS Auto Mode cluster. For example, enable the capability.</p>
+    pub storage_config: ::std::option::Option<crate::types::StorageConfigRequest>,
 }
 impl UpdateClusterConfigInput {
     /// <p>The name of the Amazon EKS cluster to update.</p>
@@ -55,6 +61,18 @@ impl UpdateClusterConfigInput {
     pub fn zonal_shift_config(&self) -> ::std::option::Option<&crate::types::ZonalShiftConfigRequest> {
         self.zonal_shift_config.as_ref()
     }
+    /// <p>Update the configuration of the compute capability of your EKS Auto Mode cluster. For example, enable the capability.</p>
+    pub fn compute_config(&self) -> ::std::option::Option<&crate::types::ComputeConfigRequest> {
+        self.compute_config.as_ref()
+    }
+    /// <p>The Kubernetes network configuration for the cluster.</p>
+    pub fn kubernetes_network_config(&self) -> ::std::option::Option<&crate::types::KubernetesNetworkConfigRequest> {
+        self.kubernetes_network_config.as_ref()
+    }
+    /// <p>Update the configuration of the block storage capability of your EKS Auto Mode cluster. For example, enable the capability.</p>
+    pub fn storage_config(&self) -> ::std::option::Option<&crate::types::StorageConfigRequest> {
+        self.storage_config.as_ref()
+    }
 }
 impl UpdateClusterConfigInput {
     /// Creates a new builder-style object to manufacture [`UpdateClusterConfigInput`](crate::operation::update_cluster_config::UpdateClusterConfigInput).
@@ -74,6 +92,9 @@ pub struct UpdateClusterConfigInputBuilder {
     pub(crate) access_config: ::std::option::Option<crate::types::UpdateAccessConfigRequest>,
     pub(crate) upgrade_policy: ::std::option::Option<crate::types::UpgradePolicyRequest>,
     pub(crate) zonal_shift_config: ::std::option::Option<crate::types::ZonalShiftConfigRequest>,
+    pub(crate) compute_config: ::std::option::Option<crate::types::ComputeConfigRequest>,
+    pub(crate) kubernetes_network_config: ::std::option::Option<crate::types::KubernetesNetworkConfigRequest>,
+    pub(crate) storage_config: ::std::option::Option<crate::types::StorageConfigRequest>,
 }
 impl UpdateClusterConfigInputBuilder {
     /// <p>The name of the Amazon EKS cluster to update.</p>
@@ -187,6 +208,48 @@ impl UpdateClusterConfigInputBuilder {
     pub fn get_zonal_shift_config(&self) -> &::std::option::Option<crate::types::ZonalShiftConfigRequest> {
         &self.zonal_shift_config
     }
+    /// <p>Update the configuration of the compute capability of your EKS Auto Mode cluster. For example, enable the capability.</p>
+    pub fn compute_config(mut self, input: crate::types::ComputeConfigRequest) -> Self {
+        self.compute_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Update the configuration of the compute capability of your EKS Auto Mode cluster. For example, enable the capability.</p>
+    pub fn set_compute_config(mut self, input: ::std::option::Option<crate::types::ComputeConfigRequest>) -> Self {
+        self.compute_config = input;
+        self
+    }
+    /// <p>Update the configuration of the compute capability of your EKS Auto Mode cluster. For example, enable the capability.</p>
+    pub fn get_compute_config(&self) -> &::std::option::Option<crate::types::ComputeConfigRequest> {
+        &self.compute_config
+    }
+    /// <p>The Kubernetes network configuration for the cluster.</p>
+    pub fn kubernetes_network_config(mut self, input: crate::types::KubernetesNetworkConfigRequest) -> Self {
+        self.kubernetes_network_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Kubernetes network configuration for the cluster.</p>
+    pub fn set_kubernetes_network_config(mut self, input: ::std::option::Option<crate::types::KubernetesNetworkConfigRequest>) -> Self {
+        self.kubernetes_network_config = input;
+        self
+    }
+    /// <p>The Kubernetes network configuration for the cluster.</p>
+    pub fn get_kubernetes_network_config(&self) -> &::std::option::Option<crate::types::KubernetesNetworkConfigRequest> {
+        &self.kubernetes_network_config
+    }
+    /// <p>Update the configuration of the block storage capability of your EKS Auto Mode cluster. For example, enable the capability.</p>
+    pub fn storage_config(mut self, input: crate::types::StorageConfigRequest) -> Self {
+        self.storage_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Update the configuration of the block storage capability of your EKS Auto Mode cluster. For example, enable the capability.</p>
+    pub fn set_storage_config(mut self, input: ::std::option::Option<crate::types::StorageConfigRequest>) -> Self {
+        self.storage_config = input;
+        self
+    }
+    /// <p>Update the configuration of the block storage capability of your EKS Auto Mode cluster. For example, enable the capability.</p>
+    pub fn get_storage_config(&self) -> &::std::option::Option<crate::types::StorageConfigRequest> {
+        &self.storage_config
+    }
     /// Consumes the builder and constructs a [`UpdateClusterConfigInput`](crate::operation::update_cluster_config::UpdateClusterConfigInput).
     pub fn build(
         self,
@@ -200,6 +263,9 @@ impl UpdateClusterConfigInputBuilder {
             access_config: self.access_config,
             upgrade_policy: self.upgrade_policy,
             zonal_shift_config: self.zonal_shift_config,
+            compute_config: self.compute_config,
+            kubernetes_network_config: self.kubernetes_network_config,
+            storage_config: self.storage_config,
         })
     }
 }

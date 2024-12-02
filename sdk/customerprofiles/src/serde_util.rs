@@ -74,6 +74,15 @@ pub(crate) fn delete_domain_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn delete_event_trigger_output_output_correct_errors(
+    mut builder: crate::operation::delete_event_trigger::builders::DeleteEventTriggerOutputBuilder,
+) -> crate::operation::delete_event_trigger::builders::DeleteEventTriggerOutputBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn delete_integration_output_output_correct_errors(
     mut builder: crate::operation::delete_integration::builders::DeleteIntegrationOutputBuilder,
 ) -> crate::operation::delete_integration::builders::DeleteIntegrationOutputBuilder {
@@ -391,6 +400,18 @@ pub(crate) fn event_stream_summary_correct_errors(
     builder
 }
 
+pub(crate) fn event_trigger_condition_correct_errors(
+    mut builder: crate::types::builders::EventTriggerConditionBuilder,
+) -> crate::types::builders::EventTriggerConditionBuilder {
+    if builder.event_trigger_dimensions.is_none() {
+        builder.event_trigger_dimensions = Some(Default::default())
+    }
+    if builder.logical_operator.is_none() {
+        builder.logical_operator = "no value was set".parse::<crate::types::EventTriggerLogicalOperator>().ok()
+    }
+    builder
+}
+
 pub(crate) fn job_schedule_correct_errors(mut builder: crate::types::builders::JobScheduleBuilder) -> crate::types::builders::JobScheduleBuilder {
     if builder.day_of_the_week.is_none() {
         builder.day_of_the_week = "no value was set".parse::<crate::types::JobScheduleDayOfTheWeek>().ok()
@@ -606,6 +627,16 @@ pub(crate) fn matching_rule_correct_errors(mut builder: crate::types::builders::
     builder
 }
 
+pub(crate) fn period_correct_errors(mut builder: crate::types::builders::PeriodBuilder) -> crate::types::builders::PeriodBuilder {
+    if builder.unit.is_none() {
+        builder.unit = "no value was set".parse::<crate::types::PeriodUnit>().ok()
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn s3_exporting_config_correct_errors(
     mut builder: crate::types::builders::S3ExportingConfigBuilder,
 ) -> crate::types::builders::S3ExportingConfigBuilder {
@@ -615,11 +646,32 @@ pub(crate) fn s3_exporting_config_correct_errors(
     builder
 }
 
+pub(crate) fn event_trigger_dimension_correct_errors(
+    mut builder: crate::types::builders::EventTriggerDimensionBuilder,
+) -> crate::types::builders::EventTriggerDimensionBuilder {
+    if builder.object_attributes.is_none() {
+        builder.object_attributes = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn filter_dimension_correct_errors(
     mut builder: crate::types::builders::FilterDimensionBuilder,
 ) -> crate::types::builders::FilterDimensionBuilder {
     if builder.attributes.is_none() {
         builder.attributes = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn object_attribute_correct_errors(
+    mut builder: crate::types::builders::ObjectAttributeBuilder,
+) -> crate::types::builders::ObjectAttributeBuilder {
+    if builder.comparison_operator.is_none() {
+        builder.comparison_operator = "no value was set".parse::<crate::types::ComparisonOperator>().ok()
+    }
+    if builder.values.is_none() {
+        builder.values = Some(Default::default())
     }
     builder
 }

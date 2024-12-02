@@ -238,8 +238,28 @@ pub fn de_vpc_endpoint(
                 builder = builder.set_last_error(var_19);
             }
             ,
-            s if s.matches("serviceRegion") /* ServiceRegion com.amazonaws.ec2#VpcEndpoint$ServiceRegion */ =>  {
+            s if s.matches("ipv4PrefixSet") /* Ipv4Prefixes com.amazonaws.ec2#VpcEndpoint$Ipv4Prefixes */ =>  {
                 let var_20 =
+                    Some(
+                        crate::protocol_serde::shape_subnet_ip_prefixes_list::de_subnet_ip_prefixes_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_ipv4_prefixes(var_20);
+            }
+            ,
+            s if s.matches("ipv6PrefixSet") /* Ipv6Prefixes com.amazonaws.ec2#VpcEndpoint$Ipv6Prefixes */ =>  {
+                let var_21 =
+                    Some(
+                        crate::protocol_serde::shape_subnet_ip_prefixes_list::de_subnet_ip_prefixes_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_ipv6_prefixes(var_21);
+            }
+            ,
+            s if s.matches("failureReason") /* FailureReason com.amazonaws.ec2#VpcEndpoint$FailureReason */ =>  {
+                let var_22 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -248,7 +268,46 @@ pub fn de_vpc_endpoint(
                         ?
                     )
                 ;
-                builder = builder.set_service_region(var_20);
+                builder = builder.set_failure_reason(var_22);
+            }
+            ,
+            s if s.matches("serviceNetworkArn") /* ServiceNetworkArn com.amazonaws.ec2#VpcEndpoint$ServiceNetworkArn */ =>  {
+                let var_23 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_service_network_arn(var_23);
+            }
+            ,
+            s if s.matches("resourceConfigurationArn") /* ResourceConfigurationArn com.amazonaws.ec2#VpcEndpoint$ResourceConfigurationArn */ =>  {
+                let var_24 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_resource_configuration_arn(var_24);
+            }
+            ,
+            s if s.matches("serviceRegion") /* ServiceRegion com.amazonaws.ec2#VpcEndpoint$ServiceRegion */ =>  {
+                let var_25 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_service_region(var_25);
             }
             ,
             _ => {}

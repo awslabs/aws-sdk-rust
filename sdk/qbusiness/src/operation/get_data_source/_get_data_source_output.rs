@@ -36,6 +36,8 @@ pub struct GetDataSourceOutput {
     /// <p>Provides the configuration information for altering document metadata and content during the document ingestion process.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/custom-document-enrichment.html">Custom document enrichment</a>.</p>
     pub document_enrichment_configuration: ::std::option::Option<crate::types::DocumentEnrichmentConfiguration>,
+    /// <p>The configuration for extracting information from media in documents for the data source.</p>
+    pub media_extraction_configuration: ::std::option::Option<crate::types::MediaExtractionConfiguration>,
     _request_id: Option<String>,
 }
 impl GetDataSourceOutput {
@@ -104,6 +106,10 @@ impl GetDataSourceOutput {
     pub fn document_enrichment_configuration(&self) -> ::std::option::Option<&crate::types::DocumentEnrichmentConfiguration> {
         self.document_enrichment_configuration.as_ref()
     }
+    /// <p>The configuration for extracting information from media in documents for the data source.</p>
+    pub fn media_extraction_configuration(&self) -> ::std::option::Option<&crate::types::MediaExtractionConfiguration> {
+        self.media_extraction_configuration.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetDataSourceOutput {
     fn request_id(&self) -> Option<&str> {
@@ -137,6 +143,7 @@ pub struct GetDataSourceOutputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) error: ::std::option::Option<crate::types::ErrorDetail>,
     pub(crate) document_enrichment_configuration: ::std::option::Option<crate::types::DocumentEnrichmentConfiguration>,
+    pub(crate) media_extraction_configuration: ::std::option::Option<crate::types::MediaExtractionConfiguration>,
     _request_id: Option<String>,
 }
 impl GetDataSourceOutputBuilder {
@@ -367,6 +374,20 @@ impl GetDataSourceOutputBuilder {
     pub fn get_document_enrichment_configuration(&self) -> &::std::option::Option<crate::types::DocumentEnrichmentConfiguration> {
         &self.document_enrichment_configuration
     }
+    /// <p>The configuration for extracting information from media in documents for the data source.</p>
+    pub fn media_extraction_configuration(mut self, input: crate::types::MediaExtractionConfiguration) -> Self {
+        self.media_extraction_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for extracting information from media in documents for the data source.</p>
+    pub fn set_media_extraction_configuration(mut self, input: ::std::option::Option<crate::types::MediaExtractionConfiguration>) -> Self {
+        self.media_extraction_configuration = input;
+        self
+    }
+    /// <p>The configuration for extracting information from media in documents for the data source.</p>
+    pub fn get_media_extraction_configuration(&self) -> &::std::option::Option<crate::types::MediaExtractionConfiguration> {
+        &self.media_extraction_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -395,6 +416,7 @@ impl GetDataSourceOutputBuilder {
             role_arn: self.role_arn,
             error: self.error,
             document_enrichment_configuration: self.document_enrichment_configuration,
+            media_extraction_configuration: self.media_extraction_configuration,
             _request_id: self._request_id,
         }
     }

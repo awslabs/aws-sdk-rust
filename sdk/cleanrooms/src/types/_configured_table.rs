@@ -12,7 +12,7 @@ pub struct ConfiguredTable {
     pub name: ::std::string::String,
     /// <p>A description for the configured table.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The Glue table that this configured table represents.</p>
+    /// <p>The table that this configured table represents.</p>
     pub table_reference: ::std::option::Option<crate::types::TableReference>,
     /// <p>The time the configured table was created.</p>
     pub create_time: ::aws_smithy_types::DateTime,
@@ -45,7 +45,7 @@ impl ConfiguredTable {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The Glue table that this configured table represents.</p>
+    /// <p>The table that this configured table represents.</p>
     pub fn table_reference(&self) -> ::std::option::Option<&crate::types::TableReference> {
         self.table_reference.as_ref()
     }
@@ -154,18 +154,18 @@ impl ConfiguredTableBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The Glue table that this configured table represents.</p>
+    /// <p>The table that this configured table represents.</p>
     /// This field is required.
     pub fn table_reference(mut self, input: crate::types::TableReference) -> Self {
         self.table_reference = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Glue table that this configured table represents.</p>
+    /// <p>The table that this configured table represents.</p>
     pub fn set_table_reference(mut self, input: ::std::option::Option<crate::types::TableReference>) -> Self {
         self.table_reference = input;
         self
     }
-    /// <p>The Glue table that this configured table represents.</p>
+    /// <p>The table that this configured table represents.</p>
     pub fn get_table_reference(&self) -> &::std::option::Option<crate::types::TableReference> {
         &self.table_reference
     }

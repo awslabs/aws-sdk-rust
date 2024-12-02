@@ -23,6 +23,7 @@ impl crate::operation::create_connection::builders::CreateConnectionInputBuilder
 /// Fluent builder constructing a request to `CreateConnection`.
 ///
 /// <p>Creates a connection. A connection defines the authorization type and credentials to use for authorization with an API destination HTTP endpoint.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-target-connection.html">Connections for endpoint targets</a> in the <i>Amazon EventBridge User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateConnectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -156,18 +157,38 @@ impl CreateConnectionFluentBuilder {
     pub fn get_authorization_type(&self) -> &::std::option::Option<crate::types::ConnectionAuthorizationType> {
         self.inner.get_authorization_type()
     }
-    /// <p>A <code>CreateConnectionAuthRequestParameters</code> object that contains the authorization parameters to use to authorize with the endpoint.</p>
+    /// <p>The authorization parameters to use to authorize with the endpoint.</p>
+    /// <p>You must include only authorization parameters for the <code>AuthorizationType</code> you specify.</p>
     pub fn auth_parameters(mut self, input: crate::types::CreateConnectionAuthRequestParameters) -> Self {
         self.inner = self.inner.auth_parameters(input);
         self
     }
-    /// <p>A <code>CreateConnectionAuthRequestParameters</code> object that contains the authorization parameters to use to authorize with the endpoint.</p>
+    /// <p>The authorization parameters to use to authorize with the endpoint.</p>
+    /// <p>You must include only authorization parameters for the <code>AuthorizationType</code> you specify.</p>
     pub fn set_auth_parameters(mut self, input: ::std::option::Option<crate::types::CreateConnectionAuthRequestParameters>) -> Self {
         self.inner = self.inner.set_auth_parameters(input);
         self
     }
-    /// <p>A <code>CreateConnectionAuthRequestParameters</code> object that contains the authorization parameters to use to authorize with the endpoint.</p>
+    /// <p>The authorization parameters to use to authorize with the endpoint.</p>
+    /// <p>You must include only authorization parameters for the <code>AuthorizationType</code> you specify.</p>
     pub fn get_auth_parameters(&self) -> &::std::option::Option<crate::types::CreateConnectionAuthRequestParameters> {
         self.inner.get_auth_parameters()
+    }
+    /// <p>For connections to private resource endpoints, the parameters to use for invoking the resource endpoint.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-target-connection-private.html">Connecting to private resources</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
+    pub fn invocation_connectivity_parameters(mut self, input: crate::types::ConnectivityResourceParameters) -> Self {
+        self.inner = self.inner.invocation_connectivity_parameters(input);
+        self
+    }
+    /// <p>For connections to private resource endpoints, the parameters to use for invoking the resource endpoint.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-target-connection-private.html">Connecting to private resources</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
+    pub fn set_invocation_connectivity_parameters(mut self, input: ::std::option::Option<crate::types::ConnectivityResourceParameters>) -> Self {
+        self.inner = self.inner.set_invocation_connectivity_parameters(input);
+        self
+    }
+    /// <p>For connections to private resource endpoints, the parameters to use for invoking the resource endpoint.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-target-connection-private.html">Connecting to private resources</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
+    pub fn get_invocation_connectivity_parameters(&self) -> &::std::option::Option<crate::types::ConnectivityResourceParameters> {
+        self.inner.get_invocation_connectivity_parameters()
     }
 }

@@ -64,6 +64,33 @@ pub fn de_instance_metadata_defaults_response(
                 builder = builder.set_instance_metadata_tags(var_4);
             }
             ,
+            s if s.matches("managedBy") /* ManagedBy com.amazonaws.ec2#InstanceMetadataDefaultsResponse$ManagedBy */ =>  {
+                let var_5 =
+                    Some(
+                        Result::<crate::types::ManagedBy, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::ManagedBy::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_managed_by(var_5);
+            }
+            ,
+            s if s.matches("managedExceptionMessage") /* ManagedExceptionMessage com.amazonaws.ec2#InstanceMetadataDefaultsResponse$ManagedExceptionMessage */ =>  {
+                let var_6 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_managed_exception_message(var_6);
+            }
+            ,
             _ => {}
         }
     }

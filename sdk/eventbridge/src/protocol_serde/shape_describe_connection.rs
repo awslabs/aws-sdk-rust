@@ -116,6 +116,13 @@ pub(crate) fn de_describe_connection(
                             .transpose()?,
                     );
                 }
+                "InvocationConnectivityParameters" => {
+                    builder = builder.set_invocation_connectivity_parameters(
+                        crate::protocol_serde::shape_describe_connection_connectivity_parameters::de_describe_connection_connectivity_parameters(
+                            tokens,
+                        )?,
+                    );
+                }
                 "ConnectionState" => {
                     builder = builder.set_connection_state(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

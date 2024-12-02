@@ -23,6 +23,16 @@ pub use crate::types::_eks_anywhere_subscription::EksAnywhereSubscriptionBuilder
 
 pub use crate::types::_eks_anywhere_subscription_term::EksAnywhereSubscriptionTermBuilder;
 
+pub use crate::types::_storage_config_request::StorageConfigRequestBuilder;
+
+pub use crate::types::_block_storage::BlockStorageBuilder;
+
+pub use crate::types::_kubernetes_network_config_request::KubernetesNetworkConfigRequestBuilder;
+
+pub use crate::types::_elastic_load_balancing::ElasticLoadBalancingBuilder;
+
+pub use crate::types::_compute_config_request::ComputeConfigRequestBuilder;
+
 pub use crate::types::_zonal_shift_config_request::ZonalShiftConfigRequestBuilder;
 
 pub use crate::types::_upgrade_policy_request::UpgradePolicyRequestBuilder;
@@ -40,6 +50,16 @@ pub use crate::types::_addon_pod_identity_associations::AddonPodIdentityAssociat
 pub use crate::types::_access_entry::AccessEntryBuilder;
 
 pub use crate::types::_cluster::ClusterBuilder;
+
+pub use crate::types::_storage_config_response::StorageConfigResponseBuilder;
+
+pub use crate::types::_compute_config_response::ComputeConfigResponseBuilder;
+
+pub use crate::types::_remote_network_config_response::RemoteNetworkConfigResponseBuilder;
+
+pub use crate::types::_remote_pod_network::RemotePodNetworkBuilder;
+
+pub use crate::types::_remote_node_network::RemoteNodeNetworkBuilder;
 
 pub use crate::types::_zonal_shift_config_response::ZonalShiftConfigResponseBuilder;
 
@@ -139,12 +159,12 @@ pub use crate::types::_addon_health::AddonHealthBuilder;
 
 pub use crate::types::_addon_issue::AddonIssueBuilder;
 
+pub use crate::types::_remote_network_config_request::RemoteNetworkConfigRequestBuilder;
+
 pub use crate::types::_create_access_config_request::CreateAccessConfigRequestBuilder;
 
 pub use crate::types::_outpost_config_request::OutpostConfigRequestBuilder;
 
 pub use crate::types::_control_plane_placement_request::ControlPlanePlacementRequestBuilder;
-
-pub use crate::types::_kubernetes_network_config_request::KubernetesNetworkConfigRequestBuilder;
 
 pub use crate::types::_oidc_identity_provider_config_request::OidcIdentityProviderConfigRequestBuilder;

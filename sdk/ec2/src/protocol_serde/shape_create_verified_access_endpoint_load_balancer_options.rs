@@ -35,5 +35,20 @@ pub fn ser_create_verified_access_endpoint_load_balancer_options(
             list_10.finish();
         }
     }
+    #[allow(unused_mut)]
+    let mut scope_12 = writer.prefix("PortRange");
+    if let Some(var_13) = &input.port_ranges {
+        if !var_13.is_empty() {
+            let mut list_15 = scope_12.start_list(true, Some("item"));
+            for item_14 in var_13 {
+                #[allow(unused_mut)]
+                let mut entry_16 = list_15.entry();
+                crate::protocol_serde::shape_create_verified_access_endpoint_port_range::ser_create_verified_access_endpoint_port_range(
+                    entry_16, item_14,
+                )?;
+            }
+            list_15.finish();
+        }
+    }
     Ok(())
 }

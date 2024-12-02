@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAclOutput {
-    /// <p>The updated Access Control List</p>
+    /// <p>The updated Access Control List.</p>
     pub acl: ::std::option::Option<crate::types::Acl>,
     _request_id: Option<String>,
 }
 impl UpdateAclOutput {
-    /// <p>The updated Access Control List</p>
+    /// <p>The updated Access Control List.</p>
     pub fn acl(&self) -> ::std::option::Option<&crate::types::Acl> {
         self.acl.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct UpdateAclOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateAclOutputBuilder {
-    /// <p>The updated Access Control List</p>
+    /// <p>The updated Access Control List.</p>
     pub fn acl(mut self, input: crate::types::Acl) -> Self {
         self.acl = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The updated Access Control List</p>
+    /// <p>The updated Access Control List.</p>
     pub fn set_acl(mut self, input: ::std::option::Option<crate::types::Acl>) -> Self {
         self.acl = input;
         self
     }
-    /// <p>The updated Access Control List</p>
+    /// <p>The updated Access Control List.</p>
     pub fn get_acl(&self) -> &::std::option::Option<crate::types::Acl> {
         &self.acl
     }

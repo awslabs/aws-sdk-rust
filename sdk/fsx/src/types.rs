@@ -33,6 +33,10 @@ pub use crate::types::_file_system::FileSystem;
 
 pub use crate::types::_open_zfs_file_system_configuration::OpenZfsFileSystemConfiguration;
 
+pub use crate::types::_open_zfs_read_cache_configuration::OpenZfsReadCacheConfiguration;
+
+pub use crate::types::_open_zfs_read_cache_sizing_mode::OpenZfsReadCacheSizingMode;
+
 pub use crate::types::_disk_iops_configuration::DiskIopsConfiguration;
 
 pub use crate::types::_disk_iops_configuration_mode::DiskIopsConfigurationMode;
@@ -530,6 +534,10 @@ mod _open_zfs_nfs_export;
 mod _open_zfs_origin_snapshot_configuration;
 
 mod _open_zfs_quota_type;
+
+mod _open_zfs_read_cache_configuration;
+
+mod _open_zfs_read_cache_sizing_mode;
 
 mod _open_zfs_user_or_group_quota;
 

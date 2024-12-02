@@ -20,7 +20,7 @@ pub struct Component {
     pub platform: ::std::option::Option<crate::types::Platform>,
     /// <p>The operating system (OS) version supported by the component. If the OS information is available, Image Builder performs a prefix match against the base image OS version during image recipe creation.</p>
     pub supported_os_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Describes the current status of the component. This is used for components that are no longer active.</p>
+    /// <p>Describes the current status of the component.</p>
     pub state: ::std::option::Option<crate::types::ComponentState>,
     /// <p>Contains parameter details for each of the parameters that the component document defined for the component.</p>
     pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::ComponentParameterDetail>>,
@@ -40,6 +40,8 @@ pub struct Component {
     pub publisher: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether component source is hidden from view in the console, and from component detail results for API, CLI, or SDK operations.</p>
     pub obfuscate: bool,
+    /// <p>Contains product codes that are used for billing purposes for Amazon Web Services Marketplace components.</p>
+    pub product_codes: ::std::option::Option<::std::vec::Vec<crate::types::ProductCodeListItem>>,
 }
 impl Component {
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
@@ -76,7 +78,7 @@ impl Component {
     pub fn supported_os_versions(&self) -> &[::std::string::String] {
         self.supported_os_versions.as_deref().unwrap_or_default()
     }
-    /// <p>Describes the current status of the component. This is used for components that are no longer active.</p>
+    /// <p>Describes the current status of the component.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::ComponentState> {
         self.state.as_ref()
     }
@@ -118,6 +120,12 @@ impl Component {
     pub fn obfuscate(&self) -> bool {
         self.obfuscate
     }
+    /// <p>Contains product codes that are used for billing purposes for Amazon Web Services Marketplace components.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.product_codes.is_none()`.
+    pub fn product_codes(&self) -> &[crate::types::ProductCodeListItem] {
+        self.product_codes.as_deref().unwrap_or_default()
+    }
 }
 impl Component {
     /// Creates a new builder-style object to manufacture [`Component`](crate::types::Component).
@@ -148,6 +156,7 @@ pub struct ComponentBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) publisher: ::std::option::Option<::std::string::String>,
     pub(crate) obfuscate: ::std::option::Option<bool>,
+    pub(crate) product_codes: ::std::option::Option<::std::vec::Vec<crate::types::ProductCodeListItem>>,
 }
 impl ComponentBuilder {
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
@@ -268,17 +277,17 @@ impl ComponentBuilder {
     pub fn get_supported_os_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.supported_os_versions
     }
-    /// <p>Describes the current status of the component. This is used for components that are no longer active.</p>
+    /// <p>Describes the current status of the component.</p>
     pub fn state(mut self, input: crate::types::ComponentState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes the current status of the component. This is used for components that are no longer active.</p>
+    /// <p>Describes the current status of the component.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ComponentState>) -> Self {
         self.state = input;
         self
     }
-    /// <p>Describes the current status of the component. This is used for components that are no longer active.</p>
+    /// <p>Describes the current status of the component.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ComponentState> {
         &self.state
     }
@@ -420,6 +429,26 @@ impl ComponentBuilder {
     pub fn get_obfuscate(&self) -> &::std::option::Option<bool> {
         &self.obfuscate
     }
+    /// Appends an item to `product_codes`.
+    ///
+    /// To override the contents of this collection use [`set_product_codes`](Self::set_product_codes).
+    ///
+    /// <p>Contains product codes that are used for billing purposes for Amazon Web Services Marketplace components.</p>
+    pub fn product_codes(mut self, input: crate::types::ProductCodeListItem) -> Self {
+        let mut v = self.product_codes.unwrap_or_default();
+        v.push(input);
+        self.product_codes = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Contains product codes that are used for billing purposes for Amazon Web Services Marketplace components.</p>
+    pub fn set_product_codes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProductCodeListItem>>) -> Self {
+        self.product_codes = input;
+        self
+    }
+    /// <p>Contains product codes that are used for billing purposes for Amazon Web Services Marketplace components.</p>
+    pub fn get_product_codes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductCodeListItem>> {
+        &self.product_codes
+    }
     /// Consumes the builder and constructs a [`Component`](crate::types::Component).
     pub fn build(self) -> crate::types::Component {
         crate::types::Component {
@@ -441,6 +470,7 @@ impl ComponentBuilder {
             tags: self.tags,
             publisher: self.publisher,
             obfuscate: self.obfuscate.unwrap_or_default(),
+            product_codes: self.product_codes,
         }
     }
 }

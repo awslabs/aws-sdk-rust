@@ -136,17 +136,17 @@ impl CreateConfiguredTableFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>A reference to the Glue table being configured.</p>
+    /// <p>A reference to the table being configured.</p>
     pub fn table_reference(mut self, input: crate::types::TableReference) -> Self {
         self.inner = self.inner.table_reference(input);
         self
     }
-    /// <p>A reference to the Glue table being configured.</p>
+    /// <p>A reference to the table being configured.</p>
     pub fn set_table_reference(mut self, input: ::std::option::Option<crate::types::TableReference>) -> Self {
         self.inner = self.inner.set_table_reference(input);
         self
     }
-    /// <p>A reference to the Glue table being configured.</p>
+    /// <p>A reference to the table being configured.</p>
     pub fn get_table_reference(&self) -> &::std::option::Option<crate::types::TableReference> {
         self.inner.get_table_reference()
     }

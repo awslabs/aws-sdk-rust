@@ -12,29 +12,47 @@ pub fn ser_update_cluster_config_input_input(
     if let Some(var_3) = &input.client_request_token {
         object.key("clientRequestToken").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.logging {
+    if let Some(var_4) = &input.compute_config {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("logging").start_object();
-        crate::protocol_serde::shape_logging::ser_logging(&mut object_5, var_4)?;
+        let mut object_5 = object.key("computeConfig").start_object();
+        crate::protocol_serde::shape_compute_config_request::ser_compute_config_request(&mut object_5, var_4)?;
         object_5.finish();
     }
-    if let Some(var_6) = &input.resources_vpc_config {
+    if let Some(var_6) = &input.kubernetes_network_config {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("resourcesVpcConfig").start_object();
-        crate::protocol_serde::shape_vpc_config_request::ser_vpc_config_request(&mut object_7, var_6)?;
+        let mut object_7 = object.key("kubernetesNetworkConfig").start_object();
+        crate::protocol_serde::shape_kubernetes_network_config_request::ser_kubernetes_network_config_request(&mut object_7, var_6)?;
         object_7.finish();
     }
-    if let Some(var_8) = &input.upgrade_policy {
+    if let Some(var_8) = &input.logging {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("upgradePolicy").start_object();
-        crate::protocol_serde::shape_upgrade_policy_request::ser_upgrade_policy_request(&mut object_9, var_8)?;
+        let mut object_9 = object.key("logging").start_object();
+        crate::protocol_serde::shape_logging::ser_logging(&mut object_9, var_8)?;
         object_9.finish();
     }
-    if let Some(var_10) = &input.zonal_shift_config {
+    if let Some(var_10) = &input.resources_vpc_config {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("zonalShiftConfig").start_object();
-        crate::protocol_serde::shape_zonal_shift_config_request::ser_zonal_shift_config_request(&mut object_11, var_10)?;
+        let mut object_11 = object.key("resourcesVpcConfig").start_object();
+        crate::protocol_serde::shape_vpc_config_request::ser_vpc_config_request(&mut object_11, var_10)?;
         object_11.finish();
+    }
+    if let Some(var_12) = &input.storage_config {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("storageConfig").start_object();
+        crate::protocol_serde::shape_storage_config_request::ser_storage_config_request(&mut object_13, var_12)?;
+        object_13.finish();
+    }
+    if let Some(var_14) = &input.upgrade_policy {
+        #[allow(unused_mut)]
+        let mut object_15 = object.key("upgradePolicy").start_object();
+        crate::protocol_serde::shape_upgrade_policy_request::ser_upgrade_policy_request(&mut object_15, var_14)?;
+        object_15.finish();
+    }
+    if let Some(var_16) = &input.zonal_shift_config {
+        #[allow(unused_mut)]
+        let mut object_17 = object.key("zonalShiftConfig").start_object();
+        crate::protocol_serde::shape_zonal_shift_config_request::ser_zonal_shift_config_request(&mut object_17, var_16)?;
+        object_17.finish();
     }
     Ok(())
 }

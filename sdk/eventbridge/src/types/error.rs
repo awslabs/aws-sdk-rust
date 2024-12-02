@@ -7,7 +7,11 @@ pub use crate::types::error::_internal_exception::InternalException;
 
 pub use crate::types::error::_concurrent_modification_exception::ConcurrentModificationException;
 
+pub use crate::types::error::_throttling_exception::ThrottlingException;
+
 pub use crate::types::error::_limit_exceeded_exception::LimitExceededException;
+
+pub use crate::types::error::_access_denied_exception::AccessDeniedException;
 
 pub use crate::types::error::_invalid_event_pattern_exception::InvalidEventPatternException;
 
@@ -20,6 +24,8 @@ pub use crate::types::error::_policy_length_exceeded_exception::PolicyLengthExce
 pub use crate::types::error::_invalid_state_exception::InvalidStateException;
 
 pub use crate::types::error::_illegal_status_exception::IllegalStatusException;
+
+mod _access_denied_exception;
 
 mod _concurrent_modification_exception;
 
@@ -42,6 +48,8 @@ mod _policy_length_exceeded_exception;
 mod _resource_already_exists_exception;
 
 mod _resource_not_found_exception;
+
+mod _throttling_exception;
 
 /// Builders
 pub mod builders;

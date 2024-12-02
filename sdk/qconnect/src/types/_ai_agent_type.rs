@@ -14,6 +14,7 @@
 /// match aiagenttype {
 ///     AiAgentType::AnswerRecommendation => { /* ... */ },
 ///     AiAgentType::ManualSearch => { /* ... */ },
+///     AiAgentType::SelfService => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -45,6 +46,8 @@ pub enum AiAgentType {
     AnswerRecommendation,
     #[allow(missing_docs)] // documentation missing in model
     ManualSearch,
+    #[allow(missing_docs)] // documentation missing in model
+    SelfService,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for AiAgentType {
         match s {
             "ANSWER_RECOMMENDATION" => AiAgentType::AnswerRecommendation,
             "MANUAL_SEARCH" => AiAgentType::ManualSearch,
+            "SELF_SERVICE" => AiAgentType::SelfService,
             other => AiAgentType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -71,12 +75,13 @@ impl AiAgentType {
         match self {
             AiAgentType::AnswerRecommendation => "ANSWER_RECOMMENDATION",
             AiAgentType::ManualSearch => "MANUAL_SEARCH",
+            AiAgentType::SelfService => "SELF_SERVICE",
             AiAgentType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ANSWER_RECOMMENDATION", "MANUAL_SEARCH"]
+        &["ANSWER_RECOMMENDATION", "MANUAL_SEARCH", "SELF_SERVICE"]
     }
 }
 impl ::std::convert::AsRef<str> for AiAgentType {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for AiAgentType {
         match self {
             AiAgentType::AnswerRecommendation => write!(f, "ANSWER_RECOMMENDATION"),
             AiAgentType::ManualSearch => write!(f, "MANUAL_SEARCH"),
+            AiAgentType::SelfService => write!(f, "SELF_SERVICE"),
             AiAgentType::Unknown(value) => write!(f, "{}", value),
         }
     }

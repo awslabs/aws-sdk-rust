@@ -122,17 +122,17 @@ impl CreateAccessLogSubscriptionFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service network or service.</p>
+    /// <p>The ID or ARN of the service network or service.</p>
     pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_identifier(input.into());
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service network or service.</p>
+    /// <p>The ID or ARN of the service network or service.</p>
     pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_identifier(input);
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service network or service.</p>
+    /// <p>The ID or ARN of the service network or service.</p>
     pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_identifier()
     }
@@ -149,6 +149,20 @@ impl CreateAccessLogSubscriptionFluentBuilder {
     /// <p>The Amazon Resource Name (ARN) of the destination. The supported destination types are CloudWatch Log groups, Kinesis Data Firehose delivery streams, and Amazon S3 buckets.</p>
     pub fn get_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_destination_arn()
+    }
+    /// <p>The type of log that monitors your Amazon VPC Lattice service networks.</p>
+    pub fn service_network_log_type(mut self, input: crate::types::ServiceNetworkLogType) -> Self {
+        self.inner = self.inner.service_network_log_type(input);
+        self
+    }
+    /// <p>The type of log that monitors your Amazon VPC Lattice service networks.</p>
+    pub fn set_service_network_log_type(mut self, input: ::std::option::Option<crate::types::ServiceNetworkLogType>) -> Self {
+        self.inner = self.inner.set_service_network_log_type(input);
+        self
+    }
+    /// <p>The type of log that monitors your Amazon VPC Lattice service networks.</p>
+    pub fn get_service_network_log_type(&self) -> &::std::option::Option<crate::types::ServiceNetworkLogType> {
+        self.inner.get_service_network_log_type()
     }
     ///
     /// Adds a key-value pair to `tags`.

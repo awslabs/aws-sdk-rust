@@ -31,6 +31,20 @@ where
                         "snippetExcerpt" => {
                             builder = builder.set_snippet_excerpt(crate::protocol_serde::shape_snippet_excerpt::de_snippet_excerpt(tokens)?);
                         }
+                        "mediaId" => {
+                            builder = builder.set_media_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "mediaMimeType" => {
+                            builder = builder.set_media_mime_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

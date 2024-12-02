@@ -784,7 +784,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Specifies whether to enable the HTTP endpoint for an Aurora Serverless v1 DB cluster. By default, the HTTP endpoint isn't enabled.</p>
     /// <p>When enabled, the HTTP endpoint provides a connectionless web service API (RDS Data API) for running SQL queries on the Aurora Serverless v1 DB cluster. You can also query your database from inside the RDS console with the RDS query editor.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p><note>
-    /// <p>This parameter applies only to Aurora Serverless v1 DB clusters. To enable or disable the HTTP endpoint for an Aurora PostgreSQL Serverless v2 or provisioned DB cluster, use the <code>EnableHttpEndpoint</code> and <code>DisableHttpEndpoint</code> operations.</p>
+    /// <p>This parameter applies only to Aurora Serverless v1 DB clusters. To enable or disable the HTTP endpoint for an Aurora Serverless v2 or provisioned DB cluster, use the <code>EnableHttpEndpoint</code> and <code>DisableHttpEndpoint</code> operations.</p>
     /// </note>
     /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
     pub fn enable_http_endpoint(mut self, input: bool) -> Self {
@@ -794,7 +794,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Specifies whether to enable the HTTP endpoint for an Aurora Serverless v1 DB cluster. By default, the HTTP endpoint isn't enabled.</p>
     /// <p>When enabled, the HTTP endpoint provides a connectionless web service API (RDS Data API) for running SQL queries on the Aurora Serverless v1 DB cluster. You can also query your database from inside the RDS console with the RDS query editor.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p><note>
-    /// <p>This parameter applies only to Aurora Serverless v1 DB clusters. To enable or disable the HTTP endpoint for an Aurora PostgreSQL Serverless v2 or provisioned DB cluster, use the <code>EnableHttpEndpoint</code> and <code>DisableHttpEndpoint</code> operations.</p>
+    /// <p>This parameter applies only to Aurora Serverless v1 DB clusters. To enable or disable the HTTP endpoint for an Aurora Serverless v2 or provisioned DB cluster, use the <code>EnableHttpEndpoint</code> and <code>DisableHttpEndpoint</code> operations.</p>
     /// </note>
     /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
     pub fn set_enable_http_endpoint(mut self, input: ::std::option::Option<bool>) -> Self {
@@ -804,7 +804,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Specifies whether to enable the HTTP endpoint for an Aurora Serverless v1 DB cluster. By default, the HTTP endpoint isn't enabled.</p>
     /// <p>When enabled, the HTTP endpoint provides a connectionless web service API (RDS Data API) for running SQL queries on the Aurora Serverless v1 DB cluster. You can also query your database from inside the RDS console with the RDS query editor.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p><note>
-    /// <p>This parameter applies only to Aurora Serverless v1 DB clusters. To enable or disable the HTTP endpoint for an Aurora PostgreSQL Serverless v2 or provisioned DB cluster, use the <code>EnableHttpEndpoint</code> and <code>DisableHttpEndpoint</code> operations.</p>
+    /// <p>This parameter applies only to Aurora Serverless v1 DB clusters. To enable or disable the HTTP endpoint for an Aurora Serverless v2 or provisioned DB cluster, use the <code>EnableHttpEndpoint</code> and <code>DisableHttpEndpoint</code> operations.</p>
     /// </note>
     /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
     pub fn get_enable_http_endpoint(&self) -> &::std::option::Option<bool> {
@@ -1046,6 +1046,20 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
     pub fn get_monitoring_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_monitoring_role_arn()
+    }
+    /// <p>Specifies the mode of Database Insights to enable for the cluster.</p>
+    pub fn database_insights_mode(mut self, input: crate::types::DatabaseInsightsMode) -> Self {
+        self.inner = self.inner.database_insights_mode(input);
+        self
+    }
+    /// <p>Specifies the mode of Database Insights to enable for the cluster.</p>
+    pub fn set_database_insights_mode(mut self, input: ::std::option::Option<crate::types::DatabaseInsightsMode>) -> Self {
+        self.inner = self.inner.set_database_insights_mode(input);
+        self
+    }
+    /// <p>Specifies the mode of Database Insights to enable for the cluster.</p>
+    pub fn get_database_insights_mode(&self) -> &::std::option::Option<crate::types::DatabaseInsightsMode> {
+        self.inner.get_database_insights_mode()
     }
     /// <p>Specifies whether to turn on Performance Insights for the DB cluster.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html"> Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>

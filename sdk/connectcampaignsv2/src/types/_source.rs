@@ -6,6 +6,8 @@
 pub enum Source {
     /// Amazon Resource Names(ARN)
     CustomerProfilesSegmentArn(::std::string::String),
+    /// Event trigger of the campaign
+    EventTrigger(crate::types::EventTrigger),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -17,7 +19,6 @@ pub enum Source {
     Unknown,
 }
 impl Source {
-    #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`CustomerProfilesSegmentArn`](crate::types::Source::CustomerProfilesSegmentArn), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_customer_profiles_segment_arn(&self) -> ::std::result::Result<&::std::string::String, &Self> {
@@ -30,6 +31,19 @@ impl Source {
     /// Returns true if this is a [`CustomerProfilesSegmentArn`](crate::types::Source::CustomerProfilesSegmentArn).
     pub fn is_customer_profiles_segment_arn(&self) -> bool {
         self.as_customer_profiles_segment_arn().is_ok()
+    }
+    /// Tries to convert the enum instance into [`EventTrigger`](crate::types::Source::EventTrigger), extracting the inner [`EventTrigger`](crate::types::EventTrigger).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_event_trigger(&self) -> ::std::result::Result<&crate::types::EventTrigger, &Self> {
+        if let Source::EventTrigger(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`EventTrigger`](crate::types::Source::EventTrigger).
+    pub fn is_event_trigger(&self) -> bool {
+        self.as_event_trigger().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

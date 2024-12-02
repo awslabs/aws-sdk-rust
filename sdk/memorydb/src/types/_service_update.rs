@@ -16,7 +16,7 @@ pub struct ServiceUpdate {
     pub status: ::std::option::Option<crate::types::ServiceUpdateStatus>,
     /// <p>Reflects the nature of the service update</p>
     pub r#type: ::std::option::Option<crate::types::ServiceUpdateType>,
-    /// <p>The MemoryDB engine to which the update applies. The values are either Redis or Valkey.</p>
+    /// <p>The name of the engine for which a service update is available.</p>
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>A list of nodes updated by the service update</p>
     pub nodes_updated: ::std::option::Option<::std::string::String>,
@@ -48,7 +48,7 @@ impl ServiceUpdate {
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ServiceUpdateType> {
         self.r#type.as_ref()
     }
-    /// <p>The MemoryDB engine to which the update applies. The values are either Redis or Valkey.</p>
+    /// <p>The name of the engine for which a service update is available.</p>
     pub fn engine(&self) -> ::std::option::Option<&str> {
         self.engine.as_deref()
     }
@@ -167,17 +167,17 @@ impl ServiceUpdateBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ServiceUpdateType> {
         &self.r#type
     }
-    /// <p>The MemoryDB engine to which the update applies. The values are either Redis or Valkey.</p>
+    /// <p>The name of the engine for which a service update is available.</p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The MemoryDB engine to which the update applies. The values are either Redis or Valkey.</p>
+    /// <p>The name of the engine for which a service update is available.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
         self
     }
-    /// <p>The MemoryDB engine to which the update applies. The values are either Redis or Valkey.</p>
+    /// <p>The name of the engine for which a service update is available.</p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine
     }

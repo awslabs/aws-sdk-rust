@@ -105,6 +105,42 @@ pub use crate::types::_evaluation_summary::EvaluationSummaryBuilder;
 
 pub use crate::types::_evaluation_output_data_config::EvaluationOutputDataConfigBuilder;
 
+pub use crate::types::_retrieve_and_generate_configuration::RetrieveAndGenerateConfigurationBuilder;
+
+pub use crate::types::_external_sources_retrieve_and_generate_configuration::ExternalSourcesRetrieveAndGenerateConfigurationBuilder;
+
+pub use crate::types::_external_sources_generation_configuration::ExternalSourcesGenerationConfigurationBuilder;
+
+pub use crate::types::_kb_inference_config::KbInferenceConfigBuilder;
+
+pub use crate::types::_text_inference_config::TextInferenceConfigBuilder;
+
+pub use crate::types::_guardrail_configuration::GuardrailConfigurationBuilder;
+
+pub use crate::types::_prompt_template::PromptTemplateBuilder;
+
+pub use crate::types::_external_source::ExternalSourceBuilder;
+
+pub use crate::types::_byte_content_doc::ByteContentDocBuilder;
+
+pub use crate::types::_s3_object_doc::S3ObjectDocBuilder;
+
+pub use crate::types::_knowledge_base_retrieve_and_generate_configuration::KnowledgeBaseRetrieveAndGenerateConfigurationBuilder;
+
+pub use crate::types::_orchestration_configuration::OrchestrationConfigurationBuilder;
+
+pub use crate::types::_query_transformation_configuration::QueryTransformationConfigurationBuilder;
+
+pub use crate::types::_generation_configuration::GenerationConfigurationBuilder;
+
+pub use crate::types::_knowledge_base_retrieval_configuration::KnowledgeBaseRetrievalConfigurationBuilder;
+
+pub use crate::types::_knowledge_base_vector_search_configuration::KnowledgeBaseVectorSearchConfigurationBuilder;
+
+pub use crate::types::_filter_attribute::FilterAttributeBuilder;
+
+pub use crate::types::_retrieve_config::RetrieveConfigBuilder;
+
 pub use crate::types::_evaluation_bedrock_model::EvaluationBedrockModelBuilder;
 
 pub use crate::types::_human_evaluation_config::HumanEvaluationConfigBuilder;
@@ -118,6 +154,8 @@ pub use crate::types::_human_evaluation_custom_metric::HumanEvaluationCustomMetr
 pub use crate::types::_human_workflow_config::HumanWorkflowConfigBuilder;
 
 pub use crate::types::_automated_evaluation_config::AutomatedEvaluationConfigBuilder;
+
+pub use crate::types::_bedrock_evaluator_model::BedrockEvaluatorModelBuilder;
 
 pub use crate::types::_batch_delete_evaluation_job_item::BatchDeleteEvaluationJobItemBuilder;
 

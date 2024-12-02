@@ -22,7 +22,9 @@ impl crate::operation::list_applications::builders::ListApplicationsInputBuilder
 }
 /// Fluent builder constructing a request to `ListApplications`.
 ///
-/// <p>Lists Amazon Q Business applications.</p>
+/// <p>Lists Amazon Q Business applications.</p><note>
+/// <p>Amazon Q Business applications may securely transmit data for processing across Amazon Web Services Regions within your geography. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/cross-region-inference.html">Cross region inference in Amazon Q Business</a>.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListApplicationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

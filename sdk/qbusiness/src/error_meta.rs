@@ -5,12 +5,16 @@
 pub enum Error {
     /// <p>You don't have access to perform this action. Make sure you have the required permission policies and user accounts and try again.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>You are trying to perform an action that conflicts with the current status of your resource. Fix any inconsistences with your resources and try again.</p>
+    /// <p>You are trying to perform an action that conflicts with the current status of your resource. Fix any inconsistencies with your resources and try again.</p>
     ConflictException(crate::types::error::ConflictException),
+    /// <p>An external resource that you configured with your application is returning errors and preventing this operation from succeeding. Fix those errors and try again.</p>
+    ExternalResourceException(crate::types::error::ExternalResourceException),
     /// <p>An issue occurred with the internal server used for your Amazon Q Business service. Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a> for help.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>You don't have permissions to perform the action because your license is inactive. Ask your admin to activate your license and try again after your licence is active.</p>
     LicenseNotFoundException(crate::types::error::LicenseNotFoundException),
+    /// <p>The requested media object is too large to be returned.</p>
+    MediaTooLargeException(crate::types::error::MediaTooLargeException),
     /// <p>The resource you want to use doesn’t exist. Make sure you have provided the correct resource and try again.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>You have exceeded the set limits for your Amazon Q Business service.</p>
@@ -33,8 +37,10 @@ impl ::std::fmt::Display for Error {
         match self {
             Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::ConflictException(inner) => inner.fmt(f),
+            Error::ExternalResourceException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
             Error::LicenseNotFoundException(inner) => inner.fmt(f),
+            Error::MediaTooLargeException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
@@ -62,8 +68,10 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         match self {
             Self::AccessDeniedException(inner) => inner.meta(),
             Self::ConflictException(inner) => inner.meta(),
+            Self::ExternalResourceException(inner) => inner.meta(),
             Self::InternalServerException(inner) => inner.meta(),
             Self::LicenseNotFoundException(inner) => inner.meta(),
+            Self::MediaTooLargeException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::ServiceQuotaExceededException(inner) => inner.meta(),
             Self::ThrottlingException(inner) => inner.meta(),
@@ -152,6 +160,7 @@ impl From<crate::operation::chat::ChatError> for Error {
         match err {
             crate::operation::chat::ChatError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::chat::ChatError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::chat::ChatError::ExternalResourceException(inner) => Error::ExternalResourceException(inner),
             crate::operation::chat::ChatError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::chat::ChatError::LicenseNotFoundException(inner) => Error::LicenseNotFoundException(inner),
             crate::operation::chat::ChatError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
@@ -180,6 +189,7 @@ impl From<crate::operation::chat_sync::ChatSyncError> for Error {
         match err {
             crate::operation::chat_sync::ChatSyncError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::chat_sync::ChatSyncError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::chat_sync::ChatSyncError::ExternalResourceException(inner) => Error::ExternalResourceException(inner),
             crate::operation::chat_sync::ChatSyncError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::chat_sync::ChatSyncError::LicenseNotFoundException(inner) => Error::LicenseNotFoundException(inner),
             crate::operation::chat_sync::ChatSyncError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
@@ -841,6 +851,34 @@ impl From<crate::operation::get_index::GetIndexError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_media::GetMediaError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_media::GetMediaError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_media::GetMediaError> for Error {
+    fn from(err: crate::operation::get_media::GetMediaError) -> Self {
+        match err {
+            crate::operation::get_media::GetMediaError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_media::GetMediaError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_media::GetMediaError::LicenseNotFoundException(inner) => Error::LicenseNotFoundException(inner),
+            crate::operation::get_media::GetMediaError::MediaTooLargeException(inner) => Error::MediaTooLargeException(inner),
+            crate::operation::get_media::GetMediaError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_media::GetMediaError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_media::GetMediaError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_media::GetMediaError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_plugin::GetPluginError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -971,6 +1009,33 @@ impl From<crate::operation::list_applications::ListApplicationsError> for Error 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_attachments::ListAttachmentsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_attachments::ListAttachmentsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_attachments::ListAttachmentsError> for Error {
+    fn from(err: crate::operation::list_attachments::ListAttachmentsError) -> Self {
+        match err {
+            crate::operation::list_attachments::ListAttachmentsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_attachments::ListAttachmentsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_attachments::ListAttachmentsError::LicenseNotFoundException(inner) => Error::LicenseNotFoundException(inner),
+            crate::operation::list_attachments::ListAttachmentsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_attachments::ListAttachmentsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_attachments::ListAttachmentsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_attachments::ListAttachmentsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_conversations::ListConversationsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1047,6 +1112,7 @@ impl From<crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsEr
             crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
+            crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
@@ -1398,6 +1464,7 @@ impl From<crate::operation::stop_data_source_sync_job::StopDataSourceSyncJobErro
             crate::operation::stop_data_source_sync_job::StopDataSourceSyncJobError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
+            crate::operation::stop_data_source_sync_job::StopDataSourceSyncJobError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::stop_data_source_sync_job::StopDataSourceSyncJobError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
@@ -1761,8 +1828,10 @@ impl ::std::error::Error for Error {
         match self {
             Error::AccessDeniedException(inner) => inner.source(),
             Error::ConflictException(inner) => inner.source(),
+            Error::ExternalResourceException(inner) => inner.source(),
             Error::InternalServerException(inner) => inner.source(),
             Error::LicenseNotFoundException(inner) => inner.source(),
+            Error::MediaTooLargeException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ServiceQuotaExceededException(inner) => inner.source(),
             Error::ThrottlingException(inner) => inner.source(),
@@ -1776,8 +1845,10 @@ impl ::aws_types::request_id::RequestId for Error {
         match self {
             Self::AccessDeniedException(e) => e.request_id(),
             Self::ConflictException(e) => e.request_id(),
+            Self::ExternalResourceException(e) => e.request_id(),
             Self::InternalServerException(e) => e.request_id(),
             Self::LicenseNotFoundException(e) => e.request_id(),
+            Self::MediaTooLargeException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ServiceQuotaExceededException(e) => e.request_id(),
             Self::ThrottlingException(e) => e.request_id(),

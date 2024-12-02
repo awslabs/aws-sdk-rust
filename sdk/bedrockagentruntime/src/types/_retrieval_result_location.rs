@@ -25,6 +25,8 @@ pub struct RetrievalResultLocation {
     pub salesforce_location: ::std::option::Option<crate::types::RetrievalResultSalesforceLocation>,
     /// <p>The SharePoint data source location.</p>
     pub share_point_location: ::std::option::Option<crate::types::RetrievalResultSharePointLocation>,
+    /// <p>Specifies the location of a document in a custom data source.</p>
+    pub custom_document_location: ::std::option::Option<crate::types::RetrievalResultCustomDocumentLocation>,
 }
 impl RetrievalResultLocation {
     /// <p>The type of data source location.</p>
@@ -51,6 +53,10 @@ impl RetrievalResultLocation {
     pub fn share_point_location(&self) -> ::std::option::Option<&crate::types::RetrievalResultSharePointLocation> {
         self.share_point_location.as_ref()
     }
+    /// <p>Specifies the location of a document in a custom data source.</p>
+    pub fn custom_document_location(&self) -> ::std::option::Option<&crate::types::RetrievalResultCustomDocumentLocation> {
+        self.custom_document_location.as_ref()
+    }
 }
 impl ::std::fmt::Debug for RetrievalResultLocation {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -61,6 +67,7 @@ impl ::std::fmt::Debug for RetrievalResultLocation {
         formatter.field("confluence_location", &"*** Sensitive Data Redacted ***");
         formatter.field("salesforce_location", &"*** Sensitive Data Redacted ***");
         formatter.field("share_point_location", &"*** Sensitive Data Redacted ***");
+        formatter.field("custom_document_location", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -81,6 +88,7 @@ pub struct RetrievalResultLocationBuilder {
     pub(crate) confluence_location: ::std::option::Option<crate::types::RetrievalResultConfluenceLocation>,
     pub(crate) salesforce_location: ::std::option::Option<crate::types::RetrievalResultSalesforceLocation>,
     pub(crate) share_point_location: ::std::option::Option<crate::types::RetrievalResultSharePointLocation>,
+    pub(crate) custom_document_location: ::std::option::Option<crate::types::RetrievalResultCustomDocumentLocation>,
 }
 impl RetrievalResultLocationBuilder {
     /// <p>The type of data source location.</p>
@@ -168,6 +176,20 @@ impl RetrievalResultLocationBuilder {
     pub fn get_share_point_location(&self) -> &::std::option::Option<crate::types::RetrievalResultSharePointLocation> {
         &self.share_point_location
     }
+    /// <p>Specifies the location of a document in a custom data source.</p>
+    pub fn custom_document_location(mut self, input: crate::types::RetrievalResultCustomDocumentLocation) -> Self {
+        self.custom_document_location = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the location of a document in a custom data source.</p>
+    pub fn set_custom_document_location(mut self, input: ::std::option::Option<crate::types::RetrievalResultCustomDocumentLocation>) -> Self {
+        self.custom_document_location = input;
+        self
+    }
+    /// <p>Specifies the location of a document in a custom data source.</p>
+    pub fn get_custom_document_location(&self) -> &::std::option::Option<crate::types::RetrievalResultCustomDocumentLocation> {
+        &self.custom_document_location
+    }
     /// Consumes the builder and constructs a [`RetrievalResultLocation`](crate::types::RetrievalResultLocation).
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::RetrievalResultLocationBuilder::type)
@@ -184,6 +206,7 @@ impl RetrievalResultLocationBuilder {
             confluence_location: self.confluence_location,
             salesforce_location: self.salesforce_location,
             share_point_location: self.share_point_location,
+            custom_document_location: self.custom_document_location,
         })
     }
 }
@@ -196,6 +219,7 @@ impl ::std::fmt::Debug for RetrievalResultLocationBuilder {
         formatter.field("confluence_location", &"*** Sensitive Data Redacted ***");
         formatter.field("salesforce_location", &"*** Sensitive Data Redacted ***");
         formatter.field("share_point_location", &"*** Sensitive Data Redacted ***");
+        formatter.field("custom_document_location", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

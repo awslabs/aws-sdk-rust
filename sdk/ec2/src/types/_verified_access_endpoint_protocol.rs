@@ -14,6 +14,7 @@
 /// match verifiedaccessendpointprotocol {
 ///     VerifiedAccessEndpointProtocol::Http => { /* ... */ },
 ///     VerifiedAccessEndpointProtocol::Https => { /* ... */ },
+///     VerifiedAccessEndpointProtocol::Tcp => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -45,6 +46,8 @@ pub enum VerifiedAccessEndpointProtocol {
     Http,
     #[allow(missing_docs)] // documentation missing in model
     Https,
+    #[allow(missing_docs)] // documentation missing in model
+    Tcp,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for VerifiedAccessEndpointProtocol {
         match s {
             "http" => VerifiedAccessEndpointProtocol::Http,
             "https" => VerifiedAccessEndpointProtocol::Https,
+            "tcp" => VerifiedAccessEndpointProtocol::Tcp,
             other => VerifiedAccessEndpointProtocol::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -71,12 +75,13 @@ impl VerifiedAccessEndpointProtocol {
         match self {
             VerifiedAccessEndpointProtocol::Http => "http",
             VerifiedAccessEndpointProtocol::Https => "https",
+            VerifiedAccessEndpointProtocol::Tcp => "tcp",
             VerifiedAccessEndpointProtocol::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["http", "https"]
+        &["http", "https", "tcp"]
     }
 }
 impl ::std::convert::AsRef<str> for VerifiedAccessEndpointProtocol {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for VerifiedAccessEndpointProtocol {
         match self {
             VerifiedAccessEndpointProtocol::Http => write!(f, "http"),
             VerifiedAccessEndpointProtocol::Https => write!(f, "https"),
+            VerifiedAccessEndpointProtocol::Tcp => write!(f, "tcp"),
             VerifiedAccessEndpointProtocol::Unknown(value) => write!(f, "{}", value),
         }
     }

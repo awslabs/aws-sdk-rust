@@ -38,6 +38,20 @@ pub fn de_list_data_source_sync_jobs_http_error(
             };
             tmp
         }),
+        "ConflictException" => crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::conflict_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsError::unhandled)?
+            };
+            tmp
+        }),
         "InternalServerException" => crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsError::InternalServerException({
             #[allow(unused_mut)]
             let mut tmp = {

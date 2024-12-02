@@ -1532,6 +1532,20 @@ impl CreateDBClusterFluentBuilder {
     pub fn get_monitoring_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_monitoring_role_arn()
     }
+    /// <p>Specifies the mode of Database Insights to enable for the cluster.</p>
+    pub fn database_insights_mode(mut self, input: crate::types::DatabaseInsightsMode) -> Self {
+        self.inner = self.inner.database_insights_mode(input);
+        self
+    }
+    /// <p>Specifies the mode of Database Insights to enable for the cluster.</p>
+    pub fn set_database_insights_mode(mut self, input: ::std::option::Option<crate::types::DatabaseInsightsMode>) -> Self {
+        self.inner = self.inner.set_database_insights_mode(input);
+        self
+    }
+    /// <p>Specifies the mode of Database Insights to enable for the cluster.</p>
+    pub fn get_database_insights_mode(&self) -> &::std::option::Option<crate::types::DatabaseInsightsMode> {
+        self.inner.get_database_insights_mode()
+    }
     /// <p>Specifies whether to turn on Performance Insights for the DB cluster.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html"> Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>

@@ -79,6 +79,9 @@ pub mod get_group;
 /// Types for the `GetIndex` operation.
 pub mod get_index;
 
+/// Types for the `GetMedia` operation.
+pub mod get_media;
+
 /// Types for the `GetPlugin` operation.
 pub mod get_plugin;
 
@@ -93,6 +96,9 @@ pub mod get_web_experience;
 
 /// Types for the `ListApplications` operation.
 pub mod list_applications;
+
+/// Types for the `ListAttachments` operation.
+pub mod list_attachments;
 
 /// Types for the `ListConversations` operation.
 pub mod list_conversations;

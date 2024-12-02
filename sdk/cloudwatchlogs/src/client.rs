@@ -193,6 +193,8 @@ mod delete_destination;
 
 mod delete_index_policy;
 
+mod delete_integration;
+
 mod delete_log_anomaly_detector;
 
 mod delete_log_group;
@@ -257,6 +259,8 @@ mod get_delivery_destination_policy;
 
 mod get_delivery_source;
 
+mod get_integration;
+
 mod get_log_anomaly_detector;
 
 mod get_log_events;
@@ -270,6 +274,8 @@ mod get_query_results;
 mod get_transformer;
 
 mod list_anomalies;
+
+mod list_integrations;
 
 mod list_log_anomaly_detectors;
 
@@ -294,6 +300,8 @@ mod put_destination;
 mod put_destination_policy;
 
 mod put_index_policy;
+
+mod put_integration;
 
 mod put_log_events;
 

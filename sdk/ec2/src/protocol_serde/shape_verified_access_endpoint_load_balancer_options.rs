@@ -59,6 +59,16 @@ pub fn de_verified_access_endpoint_load_balancer_options(
                 builder = builder.set_subnet_ids(var_4);
             }
             ,
+            s if s.matches("portRangeSet") /* PortRanges com.amazonaws.ec2#VerifiedAccessEndpointLoadBalancerOptions$PortRanges */ =>  {
+                let var_5 =
+                    Some(
+                        crate::protocol_serde::shape_verified_access_endpoint_port_range_list::de_verified_access_endpoint_port_range_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_port_ranges(var_5);
+            }
+            ,
             _ => {}
         }
     }

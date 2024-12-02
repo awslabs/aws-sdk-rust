@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWorkflowsInput {
-    /// <p>Specifies the maximum number of workflows to return.</p>
+    /// <p>The maximum number of items to return.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p><code>ListWorkflows</code> returns the <code>NextToken</code> parameter in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional workflows.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListWorkflowsInput {
-    /// <p>Specifies the maximum number of workflows to return.</p>
+    /// <p>The maximum number of items to return.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -33,17 +33,17 @@ pub struct ListWorkflowsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListWorkflowsInputBuilder {
-    /// <p>Specifies the maximum number of workflows to return.</p>
+    /// <p>The maximum number of items to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the maximum number of workflows to return.</p>
+    /// <p>The maximum number of items to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>Specifies the maximum number of workflows to return.</p>
+    /// <p>The maximum number of items to return.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

@@ -251,4 +251,18 @@ impl UpdateDataSourceFluentBuilder {
     pub fn get_document_enrichment_configuration(&self) -> &::std::option::Option<crate::types::DocumentEnrichmentConfiguration> {
         self.inner.get_document_enrichment_configuration()
     }
+    /// <p>The configuration for extracting information from media in documents for your data source.</p>
+    pub fn media_extraction_configuration(mut self, input: crate::types::MediaExtractionConfiguration) -> Self {
+        self.inner = self.inner.media_extraction_configuration(input);
+        self
+    }
+    /// <p>The configuration for extracting information from media in documents for your data source.</p>
+    pub fn set_media_extraction_configuration(mut self, input: ::std::option::Option<crate::types::MediaExtractionConfiguration>) -> Self {
+        self.inner = self.inner.set_media_extraction_configuration(input);
+        self
+    }
+    /// <p>The configuration for extracting information from media in documents for your data source.</p>
+    pub fn get_media_extraction_configuration(&self) -> &::std::option::Option<crate::types::MediaExtractionConfiguration> {
+        self.inner.get_media_extraction_configuration()
+    }
 }

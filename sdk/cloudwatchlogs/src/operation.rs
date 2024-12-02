@@ -46,6 +46,9 @@ pub mod delete_destination;
 /// Types for the `DeleteIndexPolicy` operation.
 pub mod delete_index_policy;
 
+/// Types for the `DeleteIntegration` operation.
+pub mod delete_integration;
+
 /// Types for the `DeleteLogAnomalyDetector` operation.
 pub mod delete_log_anomaly_detector;
 
@@ -142,6 +145,9 @@ pub mod get_delivery_destination_policy;
 /// Types for the `GetDeliverySource` operation.
 pub mod get_delivery_source;
 
+/// Types for the `GetIntegration` operation.
+pub mod get_integration;
+
 /// Types for the `GetLogAnomalyDetector` operation.
 pub mod get_log_anomaly_detector;
 
@@ -162,6 +168,9 @@ pub mod get_transformer;
 
 /// Types for the `ListAnomalies` operation.
 pub mod list_anomalies;
+
+/// Types for the `ListIntegrations` operation.
+pub mod list_integrations;
 
 /// Types for the `ListLogAnomalyDetectors` operation.
 pub mod list_log_anomaly_detectors;
@@ -198,6 +207,9 @@ pub mod put_destination_policy;
 
 /// Types for the `PutIndexPolicy` operation.
 pub mod put_index_policy;
+
+/// Types for the `PutIntegration` operation.
+pub mod put_integration;
 
 /// Types for the `PutLogEvents` operation.
 pub mod put_log_events;

@@ -4,17 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConnectionOAuthRequestParameters {
-    /// <p>A <code>CreateConnectionOAuthClientRequestParameters</code> object that contains the client parameters for OAuth authorization.</p>
+    /// <p>The client parameters for OAuth authorization.</p>
     pub client_parameters: ::std::option::Option<crate::types::CreateConnectionOAuthClientRequestParameters>,
     /// <p>The URL to the authorization endpoint when OAuth is specified as the authorization type.</p>
     pub authorization_endpoint: ::std::string::String,
     /// <p>The method to use for the authorization request.</p>
     pub http_method: crate::types::ConnectionOAuthHttpMethod,
-    /// <p>A <code>ConnectionHttpParameters</code> object that contains details about the additional parameters to use for the connection.</p>
+    /// <p>Details about the additional parameters to use for the connection.</p>
     pub o_auth_http_parameters: ::std::option::Option<crate::types::ConnectionHttpParameters>,
 }
 impl CreateConnectionOAuthRequestParameters {
-    /// <p>A <code>CreateConnectionOAuthClientRequestParameters</code> object that contains the client parameters for OAuth authorization.</p>
+    /// <p>The client parameters for OAuth authorization.</p>
     pub fn client_parameters(&self) -> ::std::option::Option<&crate::types::CreateConnectionOAuthClientRequestParameters> {
         self.client_parameters.as_ref()
     }
@@ -27,7 +27,7 @@ impl CreateConnectionOAuthRequestParameters {
     pub fn http_method(&self) -> &crate::types::ConnectionOAuthHttpMethod {
         &self.http_method
     }
-    /// <p>A <code>ConnectionHttpParameters</code> object that contains details about the additional parameters to use for the connection.</p>
+    /// <p>Details about the additional parameters to use for the connection.</p>
     pub fn o_auth_http_parameters(&self) -> ::std::option::Option<&crate::types::ConnectionHttpParameters> {
         self.o_auth_http_parameters.as_ref()
     }
@@ -49,18 +49,18 @@ pub struct CreateConnectionOAuthRequestParametersBuilder {
     pub(crate) o_auth_http_parameters: ::std::option::Option<crate::types::ConnectionHttpParameters>,
 }
 impl CreateConnectionOAuthRequestParametersBuilder {
-    /// <p>A <code>CreateConnectionOAuthClientRequestParameters</code> object that contains the client parameters for OAuth authorization.</p>
+    /// <p>The client parameters for OAuth authorization.</p>
     /// This field is required.
     pub fn client_parameters(mut self, input: crate::types::CreateConnectionOAuthClientRequestParameters) -> Self {
         self.client_parameters = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A <code>CreateConnectionOAuthClientRequestParameters</code> object that contains the client parameters for OAuth authorization.</p>
+    /// <p>The client parameters for OAuth authorization.</p>
     pub fn set_client_parameters(mut self, input: ::std::option::Option<crate::types::CreateConnectionOAuthClientRequestParameters>) -> Self {
         self.client_parameters = input;
         self
     }
-    /// <p>A <code>CreateConnectionOAuthClientRequestParameters</code> object that contains the client parameters for OAuth authorization.</p>
+    /// <p>The client parameters for OAuth authorization.</p>
     pub fn get_client_parameters(&self) -> &::std::option::Option<crate::types::CreateConnectionOAuthClientRequestParameters> {
         &self.client_parameters
     }
@@ -94,17 +94,17 @@ impl CreateConnectionOAuthRequestParametersBuilder {
     pub fn get_http_method(&self) -> &::std::option::Option<crate::types::ConnectionOAuthHttpMethod> {
         &self.http_method
     }
-    /// <p>A <code>ConnectionHttpParameters</code> object that contains details about the additional parameters to use for the connection.</p>
+    /// <p>Details about the additional parameters to use for the connection.</p>
     pub fn o_auth_http_parameters(mut self, input: crate::types::ConnectionHttpParameters) -> Self {
         self.o_auth_http_parameters = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A <code>ConnectionHttpParameters</code> object that contains details about the additional parameters to use for the connection.</p>
+    /// <p>Details about the additional parameters to use for the connection.</p>
     pub fn set_o_auth_http_parameters(mut self, input: ::std::option::Option<crate::types::ConnectionHttpParameters>) -> Self {
         self.o_auth_http_parameters = input;
         self
     }
-    /// <p>A <code>ConnectionHttpParameters</code> object that contains details about the additional parameters to use for the connection.</p>
+    /// <p>Details about the additional parameters to use for the connection.</p>
     pub fn get_o_auth_http_parameters(&self) -> &::std::option::Option<crate::types::ConnectionHttpParameters> {
         &self.o_auth_http_parameters
     }

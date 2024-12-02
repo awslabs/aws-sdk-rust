@@ -12,6 +12,8 @@ pub struct Cluster {
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>A group of settings that are currently being applied.</p>
     pub pending_updates: ::std::option::Option<crate::types::ClusterPendingUpdates>,
+    /// <p>The name of the multi-Region cluster that this cluster belongs to.</p>
+    pub multi_region_cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of shards in the cluster</p>
     pub number_of_shards: ::std::option::Option<i32>,
     /// <p>A list of shards that are members of the cluster.</p>
@@ -22,11 +24,11 @@ pub struct Cluster {
     pub cluster_endpoint: ::std::option::Option<crate::types::Endpoint>,
     /// <p>The cluster's node type</p>
     pub node_type: ::std::option::Option<::std::string::String>,
-    /// <p>The Redis OSS or Valkey engine used by the cluster.</p>
+    /// <p>The name of the engine used by the cluster.</p>
     pub engine: ::std::option::Option<::std::string::String>,
-    /// <p>The Redis engine version used by the cluster</p>
+    /// <p>The Redis OSS engine version used by the cluster</p>
     pub engine_version: ::std::option::Option<::std::string::String>,
-    /// <p>The engine patch version used by the cluster</p>
+    /// <p>The Redis OSS engine patch version used by the cluster</p>
     pub engine_patch_version: ::std::option::Option<::std::string::String>,
     /// <p>The name of the parameter group used by the cluster</p>
     pub parameter_group_name: ::std::option::Option<::std::string::String>,
@@ -76,6 +78,10 @@ impl Cluster {
     pub fn pending_updates(&self) -> ::std::option::Option<&crate::types::ClusterPendingUpdates> {
         self.pending_updates.as_ref()
     }
+    /// <p>The name of the multi-Region cluster that this cluster belongs to.</p>
+    pub fn multi_region_cluster_name(&self) -> ::std::option::Option<&str> {
+        self.multi_region_cluster_name.as_deref()
+    }
     /// <p>The number of shards in the cluster</p>
     pub fn number_of_shards(&self) -> ::std::option::Option<i32> {
         self.number_of_shards
@@ -98,15 +104,15 @@ impl Cluster {
     pub fn node_type(&self) -> ::std::option::Option<&str> {
         self.node_type.as_deref()
     }
-    /// <p>The Redis OSS or Valkey engine used by the cluster.</p>
+    /// <p>The name of the engine used by the cluster.</p>
     pub fn engine(&self) -> ::std::option::Option<&str> {
         self.engine.as_deref()
     }
-    /// <p>The Redis engine version used by the cluster</p>
+    /// <p>The Redis OSS engine version used by the cluster</p>
     pub fn engine_version(&self) -> ::std::option::Option<&str> {
         self.engine_version.as_deref()
     }
-    /// <p>The engine patch version used by the cluster</p>
+    /// <p>The Redis OSS engine patch version used by the cluster</p>
     pub fn engine_patch_version(&self) -> ::std::option::Option<&str> {
         self.engine_patch_version.as_deref()
     }
@@ -188,6 +194,7 @@ pub struct ClusterBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) pending_updates: ::std::option::Option<crate::types::ClusterPendingUpdates>,
+    pub(crate) multi_region_cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) number_of_shards: ::std::option::Option<i32>,
     pub(crate) shards: ::std::option::Option<::std::vec::Vec<crate::types::Shard>>,
     pub(crate) availability_mode: ::std::option::Option<crate::types::AzStatus>,
@@ -269,6 +276,20 @@ impl ClusterBuilder {
     pub fn get_pending_updates(&self) -> &::std::option::Option<crate::types::ClusterPendingUpdates> {
         &self.pending_updates
     }
+    /// <p>The name of the multi-Region cluster that this cluster belongs to.</p>
+    pub fn multi_region_cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.multi_region_cluster_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the multi-Region cluster that this cluster belongs to.</p>
+    pub fn set_multi_region_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.multi_region_cluster_name = input;
+        self
+    }
+    /// <p>The name of the multi-Region cluster that this cluster belongs to.</p>
+    pub fn get_multi_region_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.multi_region_cluster_name
+    }
     /// <p>The number of shards in the cluster</p>
     pub fn number_of_shards(mut self, input: i32) -> Self {
         self.number_of_shards = ::std::option::Option::Some(input);
@@ -345,45 +366,45 @@ impl ClusterBuilder {
     pub fn get_node_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.node_type
     }
-    /// <p>The Redis OSS or Valkey engine used by the cluster.</p>
+    /// <p>The name of the engine used by the cluster.</p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Redis OSS or Valkey engine used by the cluster.</p>
+    /// <p>The name of the engine used by the cluster.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
         self
     }
-    /// <p>The Redis OSS or Valkey engine used by the cluster.</p>
+    /// <p>The name of the engine used by the cluster.</p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine
     }
-    /// <p>The Redis engine version used by the cluster</p>
+    /// <p>The Redis OSS engine version used by the cluster</p>
     pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Redis engine version used by the cluster</p>
+    /// <p>The Redis OSS engine version used by the cluster</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
-    /// <p>The Redis engine version used by the cluster</p>
+    /// <p>The Redis OSS engine version used by the cluster</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine_version
     }
-    /// <p>The engine patch version used by the cluster</p>
+    /// <p>The Redis OSS engine patch version used by the cluster</p>
     pub fn engine_patch_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_patch_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The engine patch version used by the cluster</p>
+    /// <p>The Redis OSS engine patch version used by the cluster</p>
     pub fn set_engine_patch_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_patch_version = input;
         self
     }
-    /// <p>The engine patch version used by the cluster</p>
+    /// <p>The Redis OSS engine patch version used by the cluster</p>
     pub fn get_engine_patch_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine_patch_version
     }
@@ -610,6 +631,7 @@ impl ClusterBuilder {
             description: self.description,
             status: self.status,
             pending_updates: self.pending_updates,
+            multi_region_cluster_name: self.multi_region_cluster_name,
             number_of_shards: self.number_of_shards,
             shards: self.shards,
             availability_mode: self.availability_mode,

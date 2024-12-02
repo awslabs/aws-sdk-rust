@@ -114,17 +114,17 @@ impl DescribeClustersFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_clusters::paginator::DescribeClustersPaginator {
         crate::operation::describe_clusters::paginator::DescribeClustersPaginator::new(self.handle, self.inner)
     }
-    /// <p>The name of the cluster</p>
+    /// <p>The name of the cluster.</p>
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_name(input.into());
         self
     }
-    /// <p>The name of the cluster</p>
+    /// <p>The name of the cluster.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_name(input);
         self
     }
-    /// <p>The name of the cluster</p>
+    /// <p>The name of the cluster.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cluster_name()
     }

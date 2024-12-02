@@ -17,6 +17,8 @@ pub use crate::types::_voice_connector_item::VoiceConnectorItem;
 
 pub use crate::types::_voice_connector::VoiceConnector;
 
+pub use crate::types::_voice_connector_integration_type::VoiceConnectorIntegrationType;
+
 pub use crate::types::_voice_connector_aws_region::VoiceConnectorAwsRegion;
 
 pub use crate::types::_sip_rule::SipRule;
@@ -101,6 +103,12 @@ pub use crate::types::_origination_route_protocol::OriginationRouteProtocol;
 
 pub use crate::types::_logging_configuration::LoggingConfiguration;
 
+pub use crate::types::_external_systems_configuration::ExternalSystemsConfiguration;
+
+pub use crate::types::_contact_center_system_type::ContactCenterSystemType;
+
+pub use crate::types::_session_border_controller_type::SessionBorderControllerType;
+
 pub use crate::types::_emergency_calling_configuration::EmergencyCallingConfiguration;
 
 pub use crate::types::_dnis_emergency_calling_configuration::DnisEmergencyCallingConfiguration;
@@ -147,6 +155,8 @@ mod _candidate_address;
 
 mod _capability;
 
+mod _contact_center_system_type;
+
 mod _credential;
 
 mod _dnis_emergency_calling_configuration;
@@ -154,6 +164,8 @@ mod _dnis_emergency_calling_configuration;
 mod _emergency_calling_configuration;
 
 mod _error_code;
+
+mod _external_systems_configuration;
 
 mod _geo_match_level;
 
@@ -213,6 +225,8 @@ mod _proxy_session_status;
 
 mod _server_side_encryption_configuration;
 
+mod _session_border_controller_type;
+
 mod _sip_media_application;
 
 mod _sip_media_application_alexa_skill_configuration;
@@ -252,6 +266,8 @@ mod _voice_connector;
 mod _voice_connector_aws_region;
 
 mod _voice_connector_group;
+
+mod _voice_connector_integration_type;
 
 mod _voice_connector_item;
 

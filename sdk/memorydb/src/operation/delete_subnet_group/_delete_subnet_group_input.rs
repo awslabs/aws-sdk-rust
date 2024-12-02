@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSubnetGroupInput {
-    /// <p>The name of the subnet group to delete</p>
+    /// <p>The name of the subnet group to delete.</p>
     pub subnet_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSubnetGroupInput {
-    /// <p>The name of the subnet group to delete</p>
+    /// <p>The name of the subnet group to delete.</p>
     pub fn subnet_group_name(&self) -> ::std::option::Option<&str> {
         self.subnet_group_name.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct DeleteSubnetGroupInputBuilder {
     pub(crate) subnet_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSubnetGroupInputBuilder {
-    /// <p>The name of the subnet group to delete</p>
+    /// <p>The name of the subnet group to delete.</p>
     /// This field is required.
     pub fn subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the subnet group to delete</p>
+    /// <p>The name of the subnet group to delete.</p>
     pub fn set_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_group_name = input;
         self
     }
-    /// <p>The name of the subnet group to delete</p>
+    /// <p>The name of the subnet group to delete.</p>
     pub fn get_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.subnet_group_name
     }

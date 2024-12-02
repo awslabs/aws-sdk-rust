@@ -7,7 +7,7 @@ pub struct CreateConfiguredTableInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description for the configured table.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>A reference to the Glue table being configured.</p>
+    /// <p>A reference to the table being configured.</p>
     pub table_reference: ::std::option::Option<crate::types::TableReference>,
     /// <p>The columns of the underlying table that can be used by collaborations or analysis rules.</p>
     pub allowed_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -25,7 +25,7 @@ impl CreateConfiguredTableInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A reference to the Glue table being configured.</p>
+    /// <p>A reference to the table being configured.</p>
     pub fn table_reference(&self) -> ::std::option::Option<&crate::types::TableReference> {
         self.table_reference.as_ref()
     }
@@ -92,18 +92,18 @@ impl CreateConfiguredTableInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>A reference to the Glue table being configured.</p>
+    /// <p>A reference to the table being configured.</p>
     /// This field is required.
     pub fn table_reference(mut self, input: crate::types::TableReference) -> Self {
         self.table_reference = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A reference to the Glue table being configured.</p>
+    /// <p>A reference to the table being configured.</p>
     pub fn set_table_reference(mut self, input: ::std::option::Option<crate::types::TableReference>) -> Self {
         self.table_reference = input;
         self
     }
-    /// <p>A reference to the Glue table being configured.</p>
+    /// <p>A reference to the table being configured.</p>
     pub fn get_table_reference(&self) -> &::std::option::Option<crate::types::TableReference> {
         &self.table_reference
     }

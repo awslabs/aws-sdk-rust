@@ -6,11 +6,17 @@
 pub struct Detection {
     /// <p>The details about the anomalous activity that caused GuardDuty to generate the finding.</p>
     pub anomaly: ::std::option::Option<crate::types::Anomaly>,
+    /// <p>The details about the attack sequence.</p>
+    pub sequence: ::std::option::Option<crate::types::Sequence>,
 }
 impl Detection {
     /// <p>The details about the anomalous activity that caused GuardDuty to generate the finding.</p>
     pub fn anomaly(&self) -> ::std::option::Option<&crate::types::Anomaly> {
         self.anomaly.as_ref()
+    }
+    /// <p>The details about the attack sequence.</p>
+    pub fn sequence(&self) -> ::std::option::Option<&crate::types::Sequence> {
+        self.sequence.as_ref()
     }
 }
 impl Detection {
@@ -25,6 +31,7 @@ impl Detection {
 #[non_exhaustive]
 pub struct DetectionBuilder {
     pub(crate) anomaly: ::std::option::Option<crate::types::Anomaly>,
+    pub(crate) sequence: ::std::option::Option<crate::types::Sequence>,
 }
 impl DetectionBuilder {
     /// <p>The details about the anomalous activity that caused GuardDuty to generate the finding.</p>
@@ -41,8 +48,25 @@ impl DetectionBuilder {
     pub fn get_anomaly(&self) -> &::std::option::Option<crate::types::Anomaly> {
         &self.anomaly
     }
+    /// <p>The details about the attack sequence.</p>
+    pub fn sequence(mut self, input: crate::types::Sequence) -> Self {
+        self.sequence = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The details about the attack sequence.</p>
+    pub fn set_sequence(mut self, input: ::std::option::Option<crate::types::Sequence>) -> Self {
+        self.sequence = input;
+        self
+    }
+    /// <p>The details about the attack sequence.</p>
+    pub fn get_sequence(&self) -> &::std::option::Option<crate::types::Sequence> {
+        &self.sequence
+    }
     /// Consumes the builder and constructs a [`Detection`](crate::types::Detection).
     pub fn build(self) -> crate::types::Detection {
-        crate::types::Detection { anomaly: self.anomaly }
+        crate::types::Detection {
+            anomaly: self.anomaly,
+            sequence: self.sequence,
+        }
     }
 }

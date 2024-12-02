@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAcLsOutput {
-    /// <p>The list of ACLs</p>
+    /// <p>The list of ACLs.</p>
     pub acls: ::std::option::Option<::std::vec::Vec<crate::types::Acl>>,
     /// <p>If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeAcLsOutput {
-    /// <p>The list of ACLs</p>
+    /// <p>The list of ACLs.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.acls.is_none()`.
     pub fn acls(&self) -> &[crate::types::Acl] {
@@ -46,19 +46,19 @@ impl DescribeAcLsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_acls`](Self::set_acls).
     ///
-    /// <p>The list of ACLs</p>
+    /// <p>The list of ACLs.</p>
     pub fn acls(mut self, input: crate::types::Acl) -> Self {
         let mut v = self.acls.unwrap_or_default();
         v.push(input);
         self.acls = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of ACLs</p>
+    /// <p>The list of ACLs.</p>
     pub fn set_acls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Acl>>) -> Self {
         self.acls = input;
         self
     }
-    /// <p>The list of ACLs</p>
+    /// <p>The list of ACLs.</p>
     pub fn get_acls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Acl>> {
         &self.acls
     }

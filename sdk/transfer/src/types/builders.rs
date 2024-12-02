@@ -25,6 +25,18 @@ pub use crate::types::_copy_step_details::CopyStepDetailsBuilder;
 
 pub use crate::types::_listed_workflow::ListedWorkflowBuilder;
 
+pub use crate::types::_update_web_app_identity_center_config::UpdateWebAppIdentityCenterConfigBuilder;
+
+pub use crate::types::_described_web_app::DescribedWebAppBuilder;
+
+pub use crate::types::_described_identity_center_config::DescribedIdentityCenterConfigBuilder;
+
+pub use crate::types::_identity_center_config::IdentityCenterConfigBuilder;
+
+pub use crate::types::_listed_web_app::ListedWebAppBuilder;
+
+pub use crate::types::_described_web_app_customization::DescribedWebAppCustomizationBuilder;
+
 pub use crate::types::_posix_profile::PosixProfileBuilder;
 
 pub use crate::types::_home_directory_map_entry::HomeDirectoryMapEntryBuilder;

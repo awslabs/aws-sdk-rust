@@ -58,7 +58,7 @@ pub struct NetworkInterface {
     pub ipv6_native: ::std::option::Option<bool>,
     /// <p>The IPv6 globally unique address associated with the network interface.</p>
     pub ipv6_address: ::std::option::Option<::std::string::String>,
-    /// <p>The entity that manages the network interface.</p>
+    /// <p>The service provider that manages the network interface.</p>
     pub operator: ::std::option::Option<crate::types::OperatorResponse>,
 }
 impl NetworkInterface {
@@ -182,7 +182,7 @@ impl NetworkInterface {
     pub fn ipv6_address(&self) -> ::std::option::Option<&str> {
         self.ipv6_address.as_deref()
     }
-    /// <p>The entity that manages the network interface.</p>
+    /// <p>The service provider that manages the network interface.</p>
     pub fn operator(&self) -> ::std::option::Option<&crate::types::OperatorResponse> {
         self.operator.as_ref()
     }
@@ -642,17 +642,17 @@ impl NetworkInterfaceBuilder {
     pub fn get_ipv6_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.ipv6_address
     }
-    /// <p>The entity that manages the network interface.</p>
+    /// <p>The service provider that manages the network interface.</p>
     pub fn operator(mut self, input: crate::types::OperatorResponse) -> Self {
         self.operator = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The entity that manages the network interface.</p>
+    /// <p>The service provider that manages the network interface.</p>
     pub fn set_operator(mut self, input: ::std::option::Option<crate::types::OperatorResponse>) -> Self {
         self.operator = input;
         self
     }
-    /// <p>The entity that manages the network interface.</p>
+    /// <p>The service provider that manages the network interface.</p>
     pub fn get_operator(&self) -> &::std::option::Option<crate::types::OperatorResponse> {
         &self.operator
     }

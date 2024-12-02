@@ -12,6 +12,14 @@ pub struct GetImageBlockPublicAccessStateOutput {
     /// <p><code>unblocked</code> - Your AMIs in the specified Region can be publicly shared.</p></li>
     /// </ul>
     pub image_block_public_access_state: ::std::option::Option<::std::string::String>,
+    /// <p>The entity that manages the state for block public access for AMIs. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>account</code> - The state is managed by the account.</p></li>
+    /// <li>
+    /// <p><code>declarative-policy</code> - The state is managed by a declarative policy and can't be modified by the account.</p></li>
+    /// </ul>
+    pub managed_by: ::std::option::Option<crate::types::ManagedBy>,
     _request_id: Option<String>,
 }
 impl GetImageBlockPublicAccessStateOutput {
@@ -25,6 +33,16 @@ impl GetImageBlockPublicAccessStateOutput {
     /// </ul>
     pub fn image_block_public_access_state(&self) -> ::std::option::Option<&str> {
         self.image_block_public_access_state.as_deref()
+    }
+    /// <p>The entity that manages the state for block public access for AMIs. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>account</code> - The state is managed by the account.</p></li>
+    /// <li>
+    /// <p><code>declarative-policy</code> - The state is managed by a declarative policy and can't be modified by the account.</p></li>
+    /// </ul>
+    pub fn managed_by(&self) -> ::std::option::Option<&crate::types::ManagedBy> {
+        self.managed_by.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetImageBlockPublicAccessStateOutput {
@@ -44,6 +62,7 @@ impl GetImageBlockPublicAccessStateOutput {
 #[non_exhaustive]
 pub struct GetImageBlockPublicAccessStateOutputBuilder {
     pub(crate) image_block_public_access_state: ::std::option::Option<::std::string::String>,
+    pub(crate) managed_by: ::std::option::Option<crate::types::ManagedBy>,
     _request_id: Option<String>,
 }
 impl GetImageBlockPublicAccessStateOutputBuilder {
@@ -82,6 +101,38 @@ impl GetImageBlockPublicAccessStateOutputBuilder {
     pub fn get_image_block_public_access_state(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_block_public_access_state
     }
+    /// <p>The entity that manages the state for block public access for AMIs. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>account</code> - The state is managed by the account.</p></li>
+    /// <li>
+    /// <p><code>declarative-policy</code> - The state is managed by a declarative policy and can't be modified by the account.</p></li>
+    /// </ul>
+    pub fn managed_by(mut self, input: crate::types::ManagedBy) -> Self {
+        self.managed_by = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The entity that manages the state for block public access for AMIs. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>account</code> - The state is managed by the account.</p></li>
+    /// <li>
+    /// <p><code>declarative-policy</code> - The state is managed by a declarative policy and can't be modified by the account.</p></li>
+    /// </ul>
+    pub fn set_managed_by(mut self, input: ::std::option::Option<crate::types::ManagedBy>) -> Self {
+        self.managed_by = input;
+        self
+    }
+    /// <p>The entity that manages the state for block public access for AMIs. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>account</code> - The state is managed by the account.</p></li>
+    /// <li>
+    /// <p><code>declarative-policy</code> - The state is managed by a declarative policy and can't be modified by the account.</p></li>
+    /// </ul>
+    pub fn get_managed_by(&self) -> &::std::option::Option<crate::types::ManagedBy> {
+        &self.managed_by
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -95,6 +146,7 @@ impl GetImageBlockPublicAccessStateOutputBuilder {
     pub fn build(self) -> crate::operation::get_image_block_public_access_state::GetImageBlockPublicAccessStateOutput {
         crate::operation::get_image_block_public_access_state::GetImageBlockPublicAccessStateOutput {
             image_block_public_access_state: self.image_block_public_access_state,
+            managed_by: self.managed_by,
             _request_id: self._request_id,
         }
     }

@@ -6,11 +6,14 @@ pub fn ser_suspend_contact_recording_input_input(
     if let Some(var_1) = &input.contact_id {
         object.key("ContactId").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.initial_contact_id {
-        object.key("InitialContactId").string(var_2.as_str());
+    if let Some(var_2) = &input.contact_recording_type {
+        object.key("ContactRecordingType").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.instance_id {
-        object.key("InstanceId").string(var_3.as_str());
+    if let Some(var_3) = &input.initial_contact_id {
+        object.key("InitialContactId").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.instance_id {
+        object.key("InstanceId").string(var_4.as_str());
     }
     Ok(())
 }

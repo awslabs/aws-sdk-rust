@@ -264,6 +264,34 @@ impl From<crate::operation::create_event_stream::CreateEventStreamError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_event_trigger::CreateEventTriggerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_event_trigger::CreateEventTriggerError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_event_trigger::CreateEventTriggerError> for Error {
+    fn from(err: crate::operation::create_event_trigger::CreateEventTriggerError) -> Self {
+        match err {
+            crate::operation::create_event_trigger::CreateEventTriggerError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_event_trigger::CreateEventTriggerError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_event_trigger::CreateEventTriggerError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_event_trigger::CreateEventTriggerError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_event_trigger::CreateEventTriggerError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_event_trigger::CreateEventTriggerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_integration_workflow::CreateIntegrationWorkflowError, R>>
     for Error
 where
@@ -536,6 +564,34 @@ impl From<crate::operation::delete_event_stream::DeleteEventStreamError> for Err
             }
             crate::operation::delete_event_stream::DeleteEventStreamError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_event_stream::DeleteEventStreamError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_event_trigger::DeleteEventTriggerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_event_trigger::DeleteEventTriggerError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_event_trigger::DeleteEventTriggerError> for Error {
+    fn from(err: crate::operation::delete_event_trigger::DeleteEventTriggerError) -> Self {
+        match err {
+            crate::operation::delete_event_trigger::DeleteEventTriggerError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_event_trigger::DeleteEventTriggerError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_event_trigger::DeleteEventTriggerError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_event_trigger::DeleteEventTriggerError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_event_trigger::DeleteEventTriggerError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_event_trigger::DeleteEventTriggerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -969,6 +1025,32 @@ impl From<crate::operation::get_event_stream::GetEventStreamError> for Error {
             crate::operation::get_event_stream::GetEventStreamError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_event_stream::GetEventStreamError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_event_stream::GetEventStreamError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_event_trigger::GetEventTriggerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_event_trigger::GetEventTriggerError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_event_trigger::GetEventTriggerError> for Error {
+    fn from(err: crate::operation::get_event_trigger::GetEventTriggerError) -> Self {
+        match err {
+            crate::operation::get_event_trigger::GetEventTriggerError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_event_trigger::GetEventTriggerError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_event_trigger::GetEventTriggerError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_event_trigger::GetEventTriggerError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_event_trigger::GetEventTriggerError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_event_trigger::GetEventTriggerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1520,6 +1602,34 @@ impl From<crate::operation::list_event_streams::ListEventStreamsError> for Error
             crate::operation::list_event_streams::ListEventStreamsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_event_streams::ListEventStreamsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_event_streams::ListEventStreamsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_event_triggers::ListEventTriggersError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_event_triggers::ListEventTriggersError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_event_triggers::ListEventTriggersError> for Error {
+    fn from(err: crate::operation::list_event_triggers::ListEventTriggersError) -> Self {
+        match err {
+            crate::operation::list_event_triggers::ListEventTriggersError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_event_triggers::ListEventTriggersError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_event_triggers::ListEventTriggersError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_event_triggers::ListEventTriggersError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_event_triggers::ListEventTriggersError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_event_triggers::ListEventTriggersError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2151,6 +2261,34 @@ impl From<crate::operation::update_domain::UpdateDomainError> for Error {
             crate::operation::update_domain::UpdateDomainError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::update_domain::UpdateDomainError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_domain::UpdateDomainError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_event_trigger::UpdateEventTriggerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_event_trigger::UpdateEventTriggerError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_event_trigger::UpdateEventTriggerError> for Error {
+    fn from(err: crate::operation::update_event_trigger::UpdateEventTriggerError) -> Self {
+        match err {
+            crate::operation::update_event_trigger::UpdateEventTriggerError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_event_trigger::UpdateEventTriggerError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_event_trigger::UpdateEventTriggerError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_event_trigger::UpdateEventTriggerError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_event_trigger::UpdateEventTriggerError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_event_trigger::UpdateEventTriggerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

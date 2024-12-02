@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchDeleteEvaluationJob`](crate::operation::batch_delete_evaluation_job::builders::BatchDeleteEvaluationJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_identifiers(impl Into<String>)`](crate::operation::batch_delete_evaluation_job::builders::BatchDeleteEvaluationJobFluentBuilder::job_identifiers) / [`set_job_identifiers(Option<Vec::<String>>)`](crate::operation::batch_delete_evaluation_job::builders::BatchDeleteEvaluationJobFluentBuilder::set_job_identifiers):<br>required: **true**<br><p>An array of model evaluation job ARNs to be deleted.</p><br>
+    ///   - [`job_identifiers(impl Into<String>)`](crate::operation::batch_delete_evaluation_job::builders::BatchDeleteEvaluationJobFluentBuilder::job_identifiers) / [`set_job_identifiers(Option<Vec::<String>>)`](crate::operation::batch_delete_evaluation_job::builders::BatchDeleteEvaluationJobFluentBuilder::set_job_identifiers):<br>required: **true**<br><p>A list of one or more evaluation job Amazon Resource Names (ARNs) you want to delete.</p><br>
     /// - On success, responds with [`BatchDeleteEvaluationJobOutput`](crate::operation::batch_delete_evaluation_job::BatchDeleteEvaluationJobOutput) with field(s):
-    ///   - [`errors(Vec::<BatchDeleteEvaluationJobError>)`](crate::operation::batch_delete_evaluation_job::BatchDeleteEvaluationJobOutput::errors): <p>A JSON object containing the HTTP status codes and the ARNs of model evaluation jobs that failed to be deleted.</p>
-    ///   - [`evaluation_jobs(Vec::<BatchDeleteEvaluationJobItem>)`](crate::operation::batch_delete_evaluation_job::BatchDeleteEvaluationJobOutput::evaluation_jobs): <p>The list of model evaluation jobs to be deleted.</p>
+    ///   - [`errors(Vec::<BatchDeleteEvaluationJobError>)`](crate::operation::batch_delete_evaluation_job::BatchDeleteEvaluationJobOutput::errors): <p>A JSON object containing the HTTP status codes and the ARNs of evaluation jobs that failed to be deleted.</p>
+    ///   - [`evaluation_jobs(Vec::<BatchDeleteEvaluationJobItem>)`](crate::operation::batch_delete_evaluation_job::BatchDeleteEvaluationJobOutput::evaluation_jobs): <p>The list of evaluation jobs for deletion.</p>
     /// - On failure, responds with [`SdkError<BatchDeleteEvaluationJobError>`](crate::operation::batch_delete_evaluation_job::BatchDeleteEvaluationJobError)
     pub fn batch_delete_evaluation_job(&self) -> crate::operation::batch_delete_evaluation_job::builders::BatchDeleteEvaluationJobFluentBuilder {
         crate::operation::batch_delete_evaluation_job::builders::BatchDeleteEvaluationJobFluentBuilder::new(self.handle.clone())

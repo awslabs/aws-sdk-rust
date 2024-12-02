@@ -23,6 +23,7 @@ impl crate::operation::describe_clusters::builders::DescribeClustersInputBuilder
 /// Fluent builder constructing a request to `DescribeClusters`.
 ///
 /// <p>Describes one or more of your clusters.</p>
+/// <p>For CLI examples, see <a href="https://github.com/aws/aws-cli/blob/develop/awscli/examples/ecs/describe-clusters.rst">describe-clusters.rst</a> on GitHub.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeClustersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

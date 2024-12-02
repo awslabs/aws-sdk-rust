@@ -15,6 +15,8 @@
 ///     AiPromptType::AnswerGeneration => { /* ... */ },
 ///     AiPromptType::IntentLabelingGeneration => { /* ... */ },
 ///     AiPromptType::QueryReformulation => { /* ... */ },
+///     AiPromptType::SelfServiceAnswerGeneration => { /* ... */ },
+///     AiPromptType::SelfServicePreProcessing => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -48,6 +50,10 @@ pub enum AiPromptType {
     IntentLabelingGeneration,
     #[allow(missing_docs)] // documentation missing in model
     QueryReformulation,
+    #[allow(missing_docs)] // documentation missing in model
+    SelfServiceAnswerGeneration,
+    #[allow(missing_docs)] // documentation missing in model
+    SelfServicePreProcessing,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -58,6 +64,8 @@ impl ::std::convert::From<&str> for AiPromptType {
             "ANSWER_GENERATION" => AiPromptType::AnswerGeneration,
             "INTENT_LABELING_GENERATION" => AiPromptType::IntentLabelingGeneration,
             "QUERY_REFORMULATION" => AiPromptType::QueryReformulation,
+            "SELF_SERVICE_ANSWER_GENERATION" => AiPromptType::SelfServiceAnswerGeneration,
+            "SELF_SERVICE_PRE_PROCESSING" => AiPromptType::SelfServicePreProcessing,
             other => AiPromptType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -76,12 +84,20 @@ impl AiPromptType {
             AiPromptType::AnswerGeneration => "ANSWER_GENERATION",
             AiPromptType::IntentLabelingGeneration => "INTENT_LABELING_GENERATION",
             AiPromptType::QueryReformulation => "QUERY_REFORMULATION",
+            AiPromptType::SelfServiceAnswerGeneration => "SELF_SERVICE_ANSWER_GENERATION",
+            AiPromptType::SelfServicePreProcessing => "SELF_SERVICE_PRE_PROCESSING",
             AiPromptType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ANSWER_GENERATION", "INTENT_LABELING_GENERATION", "QUERY_REFORMULATION"]
+        &[
+            "ANSWER_GENERATION",
+            "INTENT_LABELING_GENERATION",
+            "QUERY_REFORMULATION",
+            "SELF_SERVICE_ANSWER_GENERATION",
+            "SELF_SERVICE_PRE_PROCESSING",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for AiPromptType {
@@ -107,6 +123,8 @@ impl ::std::fmt::Display for AiPromptType {
             AiPromptType::AnswerGeneration => write!(f, "ANSWER_GENERATION"),
             AiPromptType::IntentLabelingGeneration => write!(f, "INTENT_LABELING_GENERATION"),
             AiPromptType::QueryReformulation => write!(f, "QUERY_REFORMULATION"),
+            AiPromptType::SelfServiceAnswerGeneration => write!(f, "SELF_SERVICE_ANSWER_GENERATION"),
+            AiPromptType::SelfServicePreProcessing => write!(f, "SELF_SERVICE_PRE_PROCESSING"),
             AiPromptType::Unknown(value) => write!(f, "{}", value),
         }
     }

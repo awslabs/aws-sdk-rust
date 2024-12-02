@@ -22,7 +22,7 @@ impl crate::operation::get_evaluation_job::builders::GetEvaluationJobInputBuilde
 }
 /// Fluent builder constructing a request to `GetEvaluationJob`.
 ///
-/// <p>Retrieves the properties associated with a model evaluation job, including the status of the job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation.html">Model evaluation</a>.</p>
+/// <p>Gets information about an evaluation job, such as the status of the job.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetEvaluationJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl GetEvaluationJobFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the model evaluation job.</p>
+    /// <p>The Amazon Resource Name (ARN) of the evaluation job you want get information on.</p>
     pub fn job_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_identifier(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the model evaluation job.</p>
+    /// <p>The Amazon Resource Name (ARN) of the evaluation job you want get information on.</p>
     pub fn set_job_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_identifier(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the model evaluation job.</p>
+    /// <p>The Amazon Resource Name (ARN) of the evaluation job you want get information on.</p>
     pub fn get_job_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_job_identifier()
     }

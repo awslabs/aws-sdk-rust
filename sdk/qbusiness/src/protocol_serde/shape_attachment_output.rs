@@ -31,6 +31,20 @@ where
                         "error" => {
                             builder = builder.set_error(crate::protocol_serde::shape_error_detail::de_error_detail(tokens)?);
                         }
+                        "attachmentId" => {
+                            builder = builder.set_attachment_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "conversationId" => {
+                            builder = builder.set_conversation_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

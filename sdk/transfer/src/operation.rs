@@ -19,6 +19,9 @@ pub mod create_server;
 /// Types for the `CreateUser` operation.
 pub mod create_user;
 
+/// Types for the `CreateWebApp` operation.
+pub mod create_web_app;
+
 /// Types for the `CreateWorkflow` operation.
 pub mod create_workflow;
 
@@ -48,6 +51,12 @@ pub mod delete_ssh_public_key;
 
 /// Types for the `DeleteUser` operation.
 pub mod delete_user;
+
+/// Types for the `DeleteWebApp` operation.
+pub mod delete_web_app;
+
+/// Types for the `DeleteWebAppCustomization` operation.
+pub mod delete_web_app_customization;
 
 /// Types for the `DeleteWorkflow` operation.
 pub mod delete_workflow;
@@ -81,6 +90,12 @@ pub mod describe_server;
 
 /// Types for the `DescribeUser` operation.
 pub mod describe_user;
+
+/// Types for the `DescribeWebApp` operation.
+pub mod describe_web_app;
+
+/// Types for the `DescribeWebAppCustomization` operation.
+pub mod describe_web_app_customization;
 
 /// Types for the `DescribeWorkflow` operation.
 pub mod describe_workflow;
@@ -129,6 +144,9 @@ pub mod list_tags_for_resource;
 
 /// Types for the `ListUsers` operation.
 pub mod list_users;
+
+/// Types for the `ListWebApps` operation.
+pub mod list_web_apps;
 
 /// Types for the `ListWorkflows` operation.
 pub mod list_workflows;
@@ -183,3 +201,9 @@ pub mod update_server;
 
 /// Types for the `UpdateUser` operation.
 pub mod update_user;
+
+/// Types for the `UpdateWebApp` operation.
+pub mod update_web_app;
+
+/// Types for the `UpdateWebAppCustomization` operation.
+pub mod update_web_app_customization;

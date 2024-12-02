@@ -31,6 +31,8 @@ pub struct UpdateFileSystemOpenZfsConfiguration {
     pub add_route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>(Multi-AZ only) A list of IDs of existing virtual private cloud (VPC) route tables to disassociate (remove) from your Amazon FSx for OpenZFS file system. You can use the API operation to retrieve the list of VPC route table IDs for a file system.</p>
     pub remove_route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The configuration for the optional provisioned SSD read cache on file systems that use the Intelligent-Tiering storage class.</p>
+    pub read_cache_configuration: ::std::option::Option<crate::types::OpenZfsReadCacheConfiguration>,
 }
 impl UpdateFileSystemOpenZfsConfiguration {
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>.</p>
@@ -82,6 +84,10 @@ impl UpdateFileSystemOpenZfsConfiguration {
     pub fn remove_route_table_ids(&self) -> &[::std::string::String] {
         self.remove_route_table_ids.as_deref().unwrap_or_default()
     }
+    /// <p>The configuration for the optional provisioned SSD read cache on file systems that use the Intelligent-Tiering storage class.</p>
+    pub fn read_cache_configuration(&self) -> ::std::option::Option<&crate::types::OpenZfsReadCacheConfiguration> {
+        self.read_cache_configuration.as_ref()
+    }
 }
 impl UpdateFileSystemOpenZfsConfiguration {
     /// Creates a new builder-style object to manufacture [`UpdateFileSystemOpenZfsConfiguration`](crate::types::UpdateFileSystemOpenZfsConfiguration).
@@ -103,6 +109,7 @@ pub struct UpdateFileSystemOpenZfsConfigurationBuilder {
     pub(crate) disk_iops_configuration: ::std::option::Option<crate::types::DiskIopsConfiguration>,
     pub(crate) add_route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) remove_route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) read_cache_configuration: ::std::option::Option<crate::types::OpenZfsReadCacheConfiguration>,
 }
 impl UpdateFileSystemOpenZfsConfigurationBuilder {
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>.</p>
@@ -270,6 +277,20 @@ impl UpdateFileSystemOpenZfsConfigurationBuilder {
     pub fn get_remove_route_table_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.remove_route_table_ids
     }
+    /// <p>The configuration for the optional provisioned SSD read cache on file systems that use the Intelligent-Tiering storage class.</p>
+    pub fn read_cache_configuration(mut self, input: crate::types::OpenZfsReadCacheConfiguration) -> Self {
+        self.read_cache_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for the optional provisioned SSD read cache on file systems that use the Intelligent-Tiering storage class.</p>
+    pub fn set_read_cache_configuration(mut self, input: ::std::option::Option<crate::types::OpenZfsReadCacheConfiguration>) -> Self {
+        self.read_cache_configuration = input;
+        self
+    }
+    /// <p>The configuration for the optional provisioned SSD read cache on file systems that use the Intelligent-Tiering storage class.</p>
+    pub fn get_read_cache_configuration(&self) -> &::std::option::Option<crate::types::OpenZfsReadCacheConfiguration> {
+        &self.read_cache_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateFileSystemOpenZfsConfiguration`](crate::types::UpdateFileSystemOpenZfsConfiguration).
     pub fn build(self) -> crate::types::UpdateFileSystemOpenZfsConfiguration {
         crate::types::UpdateFileSystemOpenZfsConfiguration {
@@ -282,6 +303,7 @@ impl UpdateFileSystemOpenZfsConfigurationBuilder {
             disk_iops_configuration: self.disk_iops_configuration,
             add_route_table_ids: self.add_route_table_ids,
             remove_route_table_ids: self.remove_route_table_ids,
+            read_cache_configuration: self.read_cache_configuration,
         }
     }
 }

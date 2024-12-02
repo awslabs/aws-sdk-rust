@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateClusterOutput {
-    /// <p>The updated cluster</p>
+    /// <p>The updated cluster.</p>
     pub cluster: ::std::option::Option<crate::types::Cluster>,
     _request_id: Option<String>,
 }
 impl UpdateClusterOutput {
-    /// <p>The updated cluster</p>
+    /// <p>The updated cluster.</p>
     pub fn cluster(&self) -> ::std::option::Option<&crate::types::Cluster> {
         self.cluster.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct UpdateClusterOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateClusterOutputBuilder {
-    /// <p>The updated cluster</p>
+    /// <p>The updated cluster.</p>
     pub fn cluster(mut self, input: crate::types::Cluster) -> Self {
         self.cluster = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The updated cluster</p>
+    /// <p>The updated cluster.</p>
     pub fn set_cluster(mut self, input: ::std::option::Option<crate::types::Cluster>) -> Self {
         self.cluster = input;
         self
     }
-    /// <p>The updated cluster</p>
+    /// <p>The updated cluster.</p>
     pub fn get_cluster(&self) -> &::std::option::Option<crate::types::Cluster> {
         &self.cluster
     }

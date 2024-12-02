@@ -13,6 +13,7 @@
 /// # let storagetype = unimplemented!();
 /// match storagetype {
 ///     StorageType::Hdd => { /* ... */ },
+///     StorageType::IntelligentTiering => { /* ... */ },
 ///     StorageType::Ssd => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -44,6 +45,8 @@ pub enum StorageType {
     #[allow(missing_docs)] // documentation missing in model
     Hdd,
     #[allow(missing_docs)] // documentation missing in model
+    IntelligentTiering,
+    #[allow(missing_docs)] // documentation missing in model
     Ssd,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -53,6 +56,7 @@ impl ::std::convert::From<&str> for StorageType {
     fn from(s: &str) -> Self {
         match s {
             "HDD" => StorageType::Hdd,
+            "INTELLIGENT_TIERING" => StorageType::IntelligentTiering,
             "SSD" => StorageType::Ssd,
             other => StorageType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -70,13 +74,14 @@ impl StorageType {
     pub fn as_str(&self) -> &str {
         match self {
             StorageType::Hdd => "HDD",
+            StorageType::IntelligentTiering => "INTELLIGENT_TIERING",
             StorageType::Ssd => "SSD",
             StorageType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["HDD", "SSD"]
+        &["HDD", "INTELLIGENT_TIERING", "SSD"]
     }
 }
 impl ::std::convert::AsRef<str> for StorageType {
@@ -100,6 +105,7 @@ impl ::std::fmt::Display for StorageType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             StorageType::Hdd => write!(f, "HDD"),
+            StorageType::IntelligentTiering => write!(f, "INTELLIGENT_TIERING"),
             StorageType::Ssd => write!(f, "SSD"),
             StorageType::Unknown(value) => write!(f, "{}", value),
         }

@@ -7,6 +7,9 @@ pub mod accept_inbound_connection;
 /// Types for the `AddDataSource` operation.
 pub mod add_data_source;
 
+/// Types for the `AddDirectQueryDataSource` operation.
+pub mod add_direct_query_data_source;
+
 /// Types for the `AddTags` operation.
 pub mod add_tags;
 
@@ -45,6 +48,9 @@ pub mod delete_application;
 
 /// Types for the `DeleteDataSource` operation.
 pub mod delete_data_source;
+
+/// Types for the `DeleteDirectQueryDataSource` operation.
+pub mod delete_direct_query_data_source;
 
 /// Types for the `DeleteDomain` operation.
 pub mod delete_domain;
@@ -121,6 +127,9 @@ pub mod get_compatible_versions;
 /// Types for the `GetDataSource` operation.
 pub mod get_data_source;
 
+/// Types for the `GetDirectQueryDataSource` operation.
+pub mod get_direct_query_data_source;
+
 /// Types for the `GetDomainMaintenanceStatus` operation.
 pub mod get_domain_maintenance_status;
 
@@ -138,6 +147,9 @@ pub mod list_applications;
 
 /// Types for the `ListDataSources` operation.
 pub mod list_data_sources;
+
+/// Types for the `ListDirectQueryDataSources` operation.
+pub mod list_direct_query_data_sources;
 
 /// Types for the `ListDomainMaintenances` operation.
 pub mod list_domain_maintenances;
@@ -195,6 +207,9 @@ pub mod update_application;
 
 /// Types for the `UpdateDataSource` operation.
 pub mod update_data_source;
+
+/// Types for the `UpdateDirectQueryDataSource` operation.
+pub mod update_direct_query_data_source;
 
 /// Types for the `UpdateDomainConfig` operation.
 pub mod update_domain_config;

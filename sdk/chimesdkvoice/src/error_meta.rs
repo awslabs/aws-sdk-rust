@@ -862,6 +862,47 @@ impl From<crate::operation::delete_voice_connector_emergency_calling_configurati
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_voice_connector_external_systems_configuration::DeleteVoiceConnectorExternalSystemsConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_voice_connector_external_systems_configuration::DeleteVoiceConnectorExternalSystemsConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_voice_connector_external_systems_configuration::DeleteVoiceConnectorExternalSystemsConfigurationError> for Error {
+    fn from(
+        err: crate::operation::delete_voice_connector_external_systems_configuration::DeleteVoiceConnectorExternalSystemsConfigurationError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_voice_connector_external_systems_configuration::DeleteVoiceConnectorExternalSystemsConfigurationError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_voice_connector_external_systems_configuration::DeleteVoiceConnectorExternalSystemsConfigurationError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_voice_connector_external_systems_configuration::DeleteVoiceConnectorExternalSystemsConfigurationError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_voice_connector_external_systems_configuration::DeleteVoiceConnectorExternalSystemsConfigurationError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::operation::delete_voice_connector_external_systems_configuration::DeleteVoiceConnectorExternalSystemsConfigurationError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::delete_voice_connector_external_systems_configuration::DeleteVoiceConnectorExternalSystemsConfigurationError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::operation::delete_voice_connector_external_systems_configuration::DeleteVoiceConnectorExternalSystemsConfigurationError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::delete_voice_connector_external_systems_configuration::DeleteVoiceConnectorExternalSystemsConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_voice_connector_group::DeleteVoiceConnectorGroupError, R>>
     for Error
 where
@@ -1720,6 +1761,45 @@ impl From<crate::operation::get_voice_connector_emergency_calling_configuration:
             crate::operation::get_voice_connector_emergency_calling_configuration::GetVoiceConnectorEmergencyCallingConfigurationError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
             crate::operation::get_voice_connector_emergency_calling_configuration::GetVoiceConnectorEmergencyCallingConfigurationError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
             crate::operation::get_voice_connector_emergency_calling_configuration::GetVoiceConnectorEmergencyCallingConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_voice_connector_external_systems_configuration::GetVoiceConnectorExternalSystemsConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_voice_connector_external_systems_configuration::GetVoiceConnectorExternalSystemsConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_voice_connector_external_systems_configuration::GetVoiceConnectorExternalSystemsConfigurationError> for Error {
+    fn from(err: crate::operation::get_voice_connector_external_systems_configuration::GetVoiceConnectorExternalSystemsConfigurationError) -> Self {
+        match err {
+            crate::operation::get_voice_connector_external_systems_configuration::GetVoiceConnectorExternalSystemsConfigurationError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_voice_connector_external_systems_configuration::GetVoiceConnectorExternalSystemsConfigurationError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_voice_connector_external_systems_configuration::GetVoiceConnectorExternalSystemsConfigurationError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_voice_connector_external_systems_configuration::GetVoiceConnectorExternalSystemsConfigurationError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::operation::get_voice_connector_external_systems_configuration::GetVoiceConnectorExternalSystemsConfigurationError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_voice_connector_external_systems_configuration::GetVoiceConnectorExternalSystemsConfigurationError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::operation::get_voice_connector_external_systems_configuration::GetVoiceConnectorExternalSystemsConfigurationError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::get_voice_connector_external_systems_configuration::GetVoiceConnectorExternalSystemsConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2786,6 +2866,46 @@ impl From<crate::operation::put_voice_connector_emergency_calling_configuration:
             crate::operation::put_voice_connector_emergency_calling_configuration::PutVoiceConnectorEmergencyCallingConfigurationError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
             crate::operation::put_voice_connector_emergency_calling_configuration::PutVoiceConnectorEmergencyCallingConfigurationError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
             crate::operation::put_voice_connector_emergency_calling_configuration::PutVoiceConnectorEmergencyCallingConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_voice_connector_external_systems_configuration::PutVoiceConnectorExternalSystemsConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_voice_connector_external_systems_configuration::PutVoiceConnectorExternalSystemsConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_voice_connector_external_systems_configuration::PutVoiceConnectorExternalSystemsConfigurationError> for Error {
+    fn from(err: crate::operation::put_voice_connector_external_systems_configuration::PutVoiceConnectorExternalSystemsConfigurationError) -> Self {
+        match err {
+            crate::operation::put_voice_connector_external_systems_configuration::PutVoiceConnectorExternalSystemsConfigurationError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::put_voice_connector_external_systems_configuration::PutVoiceConnectorExternalSystemsConfigurationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::put_voice_connector_external_systems_configuration::PutVoiceConnectorExternalSystemsConfigurationError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::put_voice_connector_external_systems_configuration::PutVoiceConnectorExternalSystemsConfigurationError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::put_voice_connector_external_systems_configuration::PutVoiceConnectorExternalSystemsConfigurationError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::operation::put_voice_connector_external_systems_configuration::PutVoiceConnectorExternalSystemsConfigurationError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::put_voice_connector_external_systems_configuration::PutVoiceConnectorExternalSystemsConfigurationError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::operation::put_voice_connector_external_systems_configuration::PutVoiceConnectorExternalSystemsConfigurationError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::put_voice_connector_external_systems_configuration::PutVoiceConnectorExternalSystemsConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

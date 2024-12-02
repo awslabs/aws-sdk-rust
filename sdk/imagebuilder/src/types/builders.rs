@@ -151,6 +151,8 @@ pub use crate::types::_container_recipe_summary::ContainerRecipeSummaryBuilder;
 
 pub use crate::types::_component_version::ComponentVersionBuilder;
 
+pub use crate::types::_product_code_list_item::ProductCodeListItemBuilder;
+
 pub use crate::types::_component_summary::ComponentSummaryBuilder;
 
 pub use crate::types::_component_state::ComponentStateBuilder;

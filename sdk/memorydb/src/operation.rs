@@ -13,6 +13,9 @@ pub mod create_acl;
 /// Types for the `CreateCluster` operation.
 pub mod create_cluster;
 
+/// Types for the `CreateMultiRegionCluster` operation.
+pub mod create_multi_region_cluster;
+
 /// Types for the `CreateParameterGroup` operation.
 pub mod create_parameter_group;
 
@@ -30,6 +33,9 @@ pub mod delete_acl;
 
 /// Types for the `DeleteCluster` operation.
 pub mod delete_cluster;
+
+/// Types for the `DeleteMultiRegionCluster` operation.
+pub mod delete_multi_region_cluster;
 
 /// Types for the `DeleteParameterGroup` operation.
 pub mod delete_parameter_group;
@@ -54,6 +60,9 @@ pub mod describe_engine_versions;
 
 /// Types for the `DescribeEvents` operation.
 pub mod describe_events;
+
+/// Types for the `DescribeMultiRegionClusters` operation.
+pub mod describe_multi_region_clusters;
 
 /// Types for the `DescribeParameterGroups` operation.
 pub mod describe_parameter_groups;
@@ -82,6 +91,9 @@ pub mod describe_users;
 /// Types for the `FailoverShard` operation.
 pub mod failover_shard;
 
+/// Types for the `ListAllowedMultiRegionClusterUpdates` operation.
+pub mod list_allowed_multi_region_cluster_updates;
+
 /// Types for the `ListAllowedNodeTypeUpdates` operation.
 pub mod list_allowed_node_type_updates;
 
@@ -105,6 +117,9 @@ pub mod update_acl;
 
 /// Types for the `UpdateCluster` operation.
 pub mod update_cluster;
+
+/// Types for the `UpdateMultiRegionCluster` operation.
+pub mod update_multi_region_cluster;
 
 /// Types for the `UpdateParameterGroup` operation.
 pub mod update_parameter_group;

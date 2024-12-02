@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailoverShardInput {
-    /// <p>The cluster being failed over</p>
+    /// <p>The cluster being failed over.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the shard</p>
+    /// <p>The name of the shard.</p>
     pub shard_name: ::std::option::Option<::std::string::String>,
 }
 impl FailoverShardInput {
-    /// <p>The cluster being failed over</p>
+    /// <p>The cluster being failed over.</p>
     pub fn cluster_name(&self) -> ::std::option::Option<&str> {
         self.cluster_name.as_deref()
     }
-    /// <p>The name of the shard</p>
+    /// <p>The name of the shard.</p>
     pub fn shard_name(&self) -> ::std::option::Option<&str> {
         self.shard_name.as_deref()
     }
@@ -33,33 +33,33 @@ pub struct FailoverShardInputBuilder {
     pub(crate) shard_name: ::std::option::Option<::std::string::String>,
 }
 impl FailoverShardInputBuilder {
-    /// <p>The cluster being failed over</p>
+    /// <p>The cluster being failed over.</p>
     /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The cluster being failed over</p>
+    /// <p>The cluster being failed over.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_name = input;
         self
     }
-    /// <p>The cluster being failed over</p>
+    /// <p>The cluster being failed over.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_name
     }
-    /// <p>The name of the shard</p>
+    /// <p>The name of the shard.</p>
     /// This field is required.
     pub fn shard_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shard_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the shard</p>
+    /// <p>The name of the shard.</p>
     pub fn set_shard_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.shard_name = input;
         self
     }
-    /// <p>The name of the shard</p>
+    /// <p>The name of the shard.</p>
     pub fn get_shard_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.shard_name
     }

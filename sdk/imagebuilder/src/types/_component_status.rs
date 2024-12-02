@@ -12,7 +12,9 @@
 /// ```text
 /// # let componentstatus = unimplemented!();
 /// match componentstatus {
+///     ComponentStatus::Active => { /* ... */ },
 ///     ComponentStatus::Deprecated => { /* ... */ },
+///     ComponentStatus::Disabled => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -41,7 +43,11 @@
 )]
 pub enum ComponentStatus {
     #[allow(missing_docs)] // documentation missing in model
+    Active,
+    #[allow(missing_docs)] // documentation missing in model
     Deprecated,
+    #[allow(missing_docs)] // documentation missing in model
+    Disabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -49,7 +55,9 @@ pub enum ComponentStatus {
 impl ::std::convert::From<&str> for ComponentStatus {
     fn from(s: &str) -> Self {
         match s {
+            "ACTIVE" => ComponentStatus::Active,
             "DEPRECATED" => ComponentStatus::Deprecated,
+            "DISABLED" => ComponentStatus::Disabled,
             other => ComponentStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -65,13 +73,15 @@ impl ComponentStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ComponentStatus::Active => "ACTIVE",
             ComponentStatus::Deprecated => "DEPRECATED",
+            ComponentStatus::Disabled => "DISABLED",
             ComponentStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DEPRECATED"]
+        &["ACTIVE", "DEPRECATED", "DISABLED"]
     }
 }
 impl ::std::convert::AsRef<str> for ComponentStatus {
@@ -94,7 +104,9 @@ impl ComponentStatus {
 impl ::std::fmt::Display for ComponentStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ComponentStatus::Active => write!(f, "ACTIVE"),
             ComponentStatus::Deprecated => write!(f, "DEPRECATED"),
+            ComponentStatus::Disabled => write!(f, "DISABLED"),
             ComponentStatus::Unknown(value) => write!(f, "{}", value),
         }
     }

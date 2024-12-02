@@ -22,7 +22,7 @@ impl crate::operation::batch_delete_evaluation_job::builders::BatchDeleteEvaluat
 }
 /// Fluent builder constructing a request to `BatchDeleteEvaluationJob`.
 ///
-/// <p>Creates a batch deletion job. A model evaluation job can only be deleted if it has following status <code>FAILED</code>, <code>COMPLETED</code>, and <code>STOPPED</code>. You can request up to 25 model evaluation jobs be deleted in a single request.</p>
+/// <p>Deletes a batch of evaluation jobs. An evaluation job can only be deleted if it has following status <code>FAILED</code>, <code>COMPLETED</code>, and <code>STOPPED</code>. You can request up to 25 model evaluation jobs be deleted in a single request.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchDeleteEvaluationJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -113,17 +113,17 @@ impl BatchDeleteEvaluationJobFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_job_identifiers`](Self::set_job_identifiers).
     ///
-    /// <p>An array of model evaluation job ARNs to be deleted.</p>
+    /// <p>A list of one or more evaluation job Amazon Resource Names (ARNs) you want to delete.</p>
     pub fn job_identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_identifiers(input.into());
         self
     }
-    /// <p>An array of model evaluation job ARNs to be deleted.</p>
+    /// <p>A list of one or more evaluation job Amazon Resource Names (ARNs) you want to delete.</p>
     pub fn set_job_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_job_identifiers(input);
         self
     }
-    /// <p>An array of model evaluation job ARNs to be deleted.</p>
+    /// <p>A list of one or more evaluation job Amazon Resource Names (ARNs) you want to delete.</p>
     pub fn get_job_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_job_identifiers()
     }

@@ -142,6 +142,10 @@ mod create_ai_agent;
 
 mod create_ai_agent_version;
 
+mod create_ai_guardrail;
+
+mod create_ai_guardrail_version;
+
 mod create_ai_prompt;
 
 mod create_ai_prompt_version;
@@ -199,6 +203,10 @@ mod delete_ai_agent;
 
 mod delete_ai_agent_version;
 
+mod delete_ai_guardrail;
+
+mod delete_ai_guardrail_version;
+
 mod delete_ai_prompt;
 
 mod delete_ai_prompt_version;
@@ -223,6 +231,8 @@ mod delete_quick_response;
 
 mod get_ai_agent;
 
+mod get_ai_guardrail;
+
 mod get_ai_prompt;
 
 mod get_assistant;
@@ -241,6 +251,8 @@ mod get_knowledge_base;
 
 mod get_message_template;
 
+mod get_next_message;
+
 mod get_quick_response;
 
 mod get_recommendations;
@@ -250,6 +262,10 @@ mod get_session;
 mod list_ai_agent_versions;
 
 mod list_ai_agents;
+
+mod list_ai_guardrail_versions;
+
+mod list_ai_guardrails;
 
 mod list_ai_prompt_versions;
 
@@ -270,6 +286,8 @@ mod list_knowledge_bases;
 mod list_message_template_versions;
 
 mod list_message_templates;
+
+mod list_messages;
 
 mod list_quick_responses;
 
@@ -295,6 +313,8 @@ mod search_quick_responses;
 
 mod search_sessions;
 
+mod send_message;
+
 mod start_content_upload;
 
 mod start_import_job;
@@ -304,6 +324,8 @@ mod tag_resource;
 mod untag_resource;
 
 mod update_ai_agent;
+
+mod update_ai_guardrail;
 
 mod update_ai_prompt;
 

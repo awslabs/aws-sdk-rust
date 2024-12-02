@@ -22,7 +22,7 @@ impl crate::operation::stop_evaluation_job::builders::StopEvaluationJobInputBuil
 }
 /// Fluent builder constructing a request to `StopEvaluationJob`.
 ///
-/// <p>Stops an in progress model evaluation job.</p>
+/// <p>Stops an evaluation job that is current being created or running.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopEvaluationJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl StopEvaluationJobFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ARN of the model evaluation job you want to stop.</p>
+    /// <p>The Amazon Resource Name (ARN) of the evaluation job you want to stop.</p>
     pub fn job_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_identifier(input.into());
         self
     }
-    /// <p>The ARN of the model evaluation job you want to stop.</p>
+    /// <p>The Amazon Resource Name (ARN) of the evaluation job you want to stop.</p>
     pub fn set_job_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_identifier(input);
         self
     }
-    /// <p>The ARN of the model evaluation job you want to stop.</p>
+    /// <p>The Amazon Resource Name (ARN) of the evaluation job you want to stop.</p>
     pub fn get_job_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_job_identifier()
     }

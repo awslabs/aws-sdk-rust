@@ -193,6 +193,54 @@ pub use crate::types::_item_path::ItemPathBuilder;
 
 pub use crate::types::_detection::DetectionBuilder;
 
+pub use crate::types::_sequence::SequenceBuilder;
+
+pub use crate::types::_indicator::IndicatorBuilder;
+
+pub use crate::types::_signal::SignalBuilder;
+
+pub use crate::types::_network_endpoint::NetworkEndpointBuilder;
+
+pub use crate::types::_network_connection::NetworkConnectionBuilder;
+
+pub use crate::types::_autonomous_system::AutonomousSystemBuilder;
+
+pub use crate::types::_network_geo_location::NetworkGeoLocationBuilder;
+
+pub use crate::types::_resource_v2::ResourceV2Builder;
+
+pub use crate::types::_resource_data::ResourceDataBuilder;
+
+pub use crate::types::_s3_object::S3ObjectBuilder;
+
+pub use crate::types::_ec2_network_interface::Ec2NetworkInterfaceBuilder;
+
+pub use crate::types::_security_group::SecurityGroupBuilder;
+
+pub use crate::types::_private_ip_address_details::PrivateIpAddressDetailsBuilder;
+
+pub use crate::types::_access_key::AccessKeyBuilder;
+
+pub use crate::types::_ec2_instance::Ec2InstanceBuilder;
+
+pub use crate::types::_product_code::ProductCodeBuilder;
+
+pub use crate::types::_iam_instance_profile::IamInstanceProfileBuilder;
+
+pub use crate::types::_s3_bucket::S3BucketBuilder;
+
+pub use crate::types::_public_access_configuration::PublicAccessConfigurationBuilder;
+
+pub use crate::types::_tag::TagBuilder;
+
+pub use crate::types::_actor::ActorBuilder;
+
+pub use crate::types::_session::SessionBuilder;
+
+pub use crate::types::_user::UserBuilder;
+
+pub use crate::types::_account::AccountBuilder;
+
 pub use crate::types::_anomaly::AnomalyBuilder;
 
 pub use crate::types::_anomaly_unusual::AnomalyUnusualBuilder;
@@ -279,11 +327,7 @@ pub use crate::types::_resource::ResourceBuilder;
 
 pub use crate::types::_lambda_details::LambdaDetailsBuilder;
 
-pub use crate::types::_tag::TagBuilder;
-
 pub use crate::types::_vpc_config::VpcConfigBuilder;
-
-pub use crate::types::_security_group::SecurityGroupBuilder;
 
 pub use crate::types::_rds_db_user_details::RdsDbUserDetailsBuilder;
 
@@ -321,13 +365,7 @@ pub use crate::types::_eks_cluster_details::EksClusterDetailsBuilder;
 
 pub use crate::types::_instance_details::InstanceDetailsBuilder;
 
-pub use crate::types::_product_code::ProductCodeBuilder;
-
 pub use crate::types::_network_interface::NetworkInterfaceBuilder;
-
-pub use crate::types::_private_ip_address_details::PrivateIpAddressDetailsBuilder;
-
-pub use crate::types::_iam_instance_profile::IamInstanceProfileBuilder;
 
 pub use crate::types::_s3_bucket_detail::S3BucketDetailBuilder;
 

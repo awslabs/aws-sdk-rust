@@ -136,6 +136,20 @@ impl CreateClusterFluentBuilder {
     pub fn get_node_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_node_type()
     }
+    /// <p>The name of the multi-Region cluster to be created.</p>
+    pub fn multi_region_cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.multi_region_cluster_name(input.into());
+        self
+    }
+    /// <p>The name of the multi-Region cluster to be created.</p>
+    pub fn set_multi_region_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_multi_region_cluster_name(input);
+        self
+    }
+    /// <p>The name of the multi-Region cluster to be created.</p>
+    pub fn get_multi_region_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_multi_region_cluster_name()
+    }
     /// <p>The name of the parameter group associated with the cluster.</p>
     pub fn parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.parameter_group_name(input.into());
@@ -449,31 +463,31 @@ impl CreateClusterFluentBuilder {
     pub fn get_acl_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_acl_name()
     }
-    /// <p>The name of the engine to be used for the nodes in this cluster. The value must be set to either Redis or Valkey.</p>
+    /// <p>The name of the engine to be used for the cluster.</p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine(input.into());
         self
     }
-    /// <p>The name of the engine to be used for the nodes in this cluster. The value must be set to either Redis or Valkey.</p>
+    /// <p>The name of the engine to be used for the cluster.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine(input);
         self
     }
-    /// <p>The name of the engine to be used for the nodes in this cluster. The value must be set to either Redis or Valkey.</p>
+    /// <p>The name of the engine to be used for the cluster.</p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_engine()
     }
-    /// <p>The version number of the engine to be used for the cluster.</p>
+    /// <p>The version number of the Redis OSS engine to be used for the cluster.</p>
     pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine_version(input.into());
         self
     }
-    /// <p>The version number of the engine to be used for the cluster.</p>
+    /// <p>The version number of the Redis OSS engine to be used for the cluster.</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine_version(input);
         self
     }
-    /// <p>The version number of the engine to be used for the cluster.</p>
+    /// <p>The version number of the Redis OSS engine to be used for the cluster.</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_engine_version()
     }

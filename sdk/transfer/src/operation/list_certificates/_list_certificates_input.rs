@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCertificatesInput {
-    /// <p>The maximum number of certificates to return.</p>
+    /// <p>The maximum number of items to return.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>When you can get additional results from the <code>ListCertificates</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional certificates.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListCertificatesInput {
-    /// <p>The maximum number of certificates to return.</p>
+    /// <p>The maximum number of items to return.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -33,17 +33,17 @@ pub struct ListCertificatesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListCertificatesInputBuilder {
-    /// <p>The maximum number of certificates to return.</p>
+    /// <p>The maximum number of items to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of certificates to return.</p>
+    /// <p>The maximum number of items to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of certificates to return.</p>
+    /// <p>The maximum number of items to return.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

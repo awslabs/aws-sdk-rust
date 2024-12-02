@@ -23,6 +23,15 @@ pub(crate) fn invoke_inline_agent_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn rerank_output_output_correct_errors(
+    mut builder: crate::operation::rerank::builders::RerankOutputBuilder,
+) -> crate::operation::rerank::builders::RerankOutputBuilder {
+    if builder.results.is_none() {
+        builder.results = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn retrieve_output_output_correct_errors(
     mut builder: crate::operation::retrieve::builders::RetrieveOutputBuilder,
 ) -> crate::operation::retrieve::builders::RetrieveOutputBuilder {
@@ -47,6 +56,15 @@ pub(crate) fn retrieve_and_generate_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn retrieve_and_generate_stream_output_output_correct_errors(
+    mut builder: crate::operation::retrieve_and_generate_stream::builders::RetrieveAndGenerateStreamOutputBuilder,
+) -> crate::operation::retrieve_and_generate_stream::builders::RetrieveAndGenerateStreamOutputBuilder {
+    if builder.session_id.is_none() {
+        builder.session_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn retrieve_and_generate_output_correct_errors(
     mut builder: crate::types::builders::RetrieveAndGenerateOutputBuilder,
 ) -> crate::types::builders::RetrieveAndGenerateOutputBuilder {
@@ -64,6 +82,16 @@ pub(crate) fn knowledge_base_retrieval_result_correct_errors(
             let builder = crate::types::builders::RetrievalResultContentBuilder::default();
             crate::serde_util::retrieval_result_content_correct_errors(builder).build().ok()
         }
+    }
+    builder
+}
+
+pub(crate) fn rerank_result_correct_errors(mut builder: crate::types::builders::RerankResultBuilder) -> crate::types::builders::RerankResultBuilder {
+    if builder.index.is_none() {
+        builder.index = Some(Default::default())
+    }
+    if builder.relevance_score.is_none() {
+        builder.relevance_score = Some(Default::default())
     }
     builder
 }
@@ -101,6 +129,15 @@ pub(crate) fn flow_trace_event_correct_errors(
     builder
 }
 
+pub(crate) fn rerank_document_correct_errors(
+    mut builder: crate::types::builders::RerankDocumentBuilder,
+) -> crate::types::builders::RerankDocumentBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::RerankDocumentType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn retrieval_result_content_correct_errors(
     mut builder: crate::types::builders::RetrievalResultContentBuilder,
 ) -> crate::types::builders::RetrievalResultContentBuilder {
@@ -115,6 +152,15 @@ pub(crate) fn retrieval_result_location_correct_errors(
 ) -> crate::types::builders::RetrievalResultLocationBuilder {
     if builder.r#type.is_none() {
         builder.r#type = "no value was set".parse::<crate::types::RetrievalResultLocationType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn retrieve_and_generate_output_event_correct_errors(
+    mut builder: crate::types::builders::RetrieveAndGenerateOutputEventBuilder,
+) -> crate::types::builders::RetrieveAndGenerateOutputEventBuilder {
+    if builder.text.is_none() {
+        builder.text = Some(Default::default())
     }
     builder
 }

@@ -18,5 +18,11 @@ pub fn ser_create_connection_input_input(
         crate::protocol_serde::shape_create_connection_auth_request_parameters::ser_create_connection_auth_request_parameters(&mut object_5, var_4)?;
         object_5.finish();
     }
+    if let Some(var_6) = &input.invocation_connectivity_parameters {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("InvocationConnectivityParameters").start_object();
+        crate::protocol_serde::shape_connectivity_resource_parameters::ser_connectivity_resource_parameters(&mut object_7, var_6)?;
+        object_7.finish();
+    }
     Ok(())
 }

@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTagsInput {
-    /// <p>Amazon Resource Name (ARN) for the domain to view tags for.</p>
+    /// <p>Amazon Resource Name (ARN) for the domain, data source, or application to view tags for.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl ListTagsInput {
-    /// <p>Amazon Resource Name (ARN) for the domain to view tags for.</p>
+    /// <p>Amazon Resource Name (ARN) for the domain, data source, or application to view tags for.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -27,18 +27,18 @@ pub struct ListTagsInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
 impl ListTagsInputBuilder {
-    /// <p>Amazon Resource Name (ARN) for the domain to view tags for.</p>
+    /// <p>Amazon Resource Name (ARN) for the domain, data source, or application to view tags for.</p>
     /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Amazon Resource Name (ARN) for the domain to view tags for.</p>
+    /// <p>Amazon Resource Name (ARN) for the domain, data source, or application to view tags for.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>Amazon Resource Name (ARN) for the domain to view tags for.</p>
+    /// <p>Amazon Resource Name (ARN) for the domain, data source, or application to view tags for.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }

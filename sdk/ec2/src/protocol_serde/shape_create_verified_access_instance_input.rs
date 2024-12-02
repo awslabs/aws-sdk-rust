@@ -38,6 +38,11 @@ pub fn ser_create_verified_access_instance_input_input_input(
     if let Some(var_13) = &input.fips_enabled {
         scope_12.boolean(*var_13);
     }
+    #[allow(unused_mut)]
+    let mut scope_14 = writer.prefix("CidrEndpointsCustomSubDomain");
+    if let Some(var_15) = &input.cidr_endpoints_custom_sub_domain {
+        scope_14.string(var_15);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

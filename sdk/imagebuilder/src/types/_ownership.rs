@@ -12,6 +12,7 @@
 /// ```text
 /// # let ownership = unimplemented!();
 /// match ownership {
+///     Ownership::AwsMarketplace => { /* ... */ },
 ///     Ownership::Amazon => { /* ... */ },
 ///     Ownership::SelfValue => { /* ... */ },
 ///     Ownership::Shared => { /* ... */ },
@@ -44,6 +45,8 @@
 )]
 pub enum Ownership {
     #[allow(missing_docs)] // documentation missing in model
+    AwsMarketplace,
+    #[allow(missing_docs)] // documentation missing in model
     Amazon,
     /// _Note: `::Self` has been renamed to `::SelfValue`._
     SelfValue,
@@ -58,6 +61,7 @@ pub enum Ownership {
 impl ::std::convert::From<&str> for Ownership {
     fn from(s: &str) -> Self {
         match s {
+            "AWSMarketplace" => Ownership::AwsMarketplace,
             "Amazon" => Ownership::Amazon,
             "Self" => Ownership::SelfValue,
             "Shared" => Ownership::Shared,
@@ -77,6 +81,7 @@ impl Ownership {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            Ownership::AwsMarketplace => "AWSMarketplace",
             Ownership::Amazon => "Amazon",
             Ownership::SelfValue => "Self",
             Ownership::Shared => "Shared",
@@ -86,7 +91,7 @@ impl Ownership {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Amazon", "Self", "Shared", "ThirdParty"]
+        &["AWSMarketplace", "Amazon", "Self", "Shared", "ThirdParty"]
     }
 }
 impl ::std::convert::AsRef<str> for Ownership {
@@ -109,6 +114,7 @@ impl Ownership {
 impl ::std::fmt::Display for Ownership {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            Ownership::AwsMarketplace => write!(f, "AWSMarketplace"),
             Ownership::Amazon => write!(f, "Amazon"),
             Ownership::SelfValue => write!(f, "Self"),
             Ownership::Shared => write!(f, "Shared"),

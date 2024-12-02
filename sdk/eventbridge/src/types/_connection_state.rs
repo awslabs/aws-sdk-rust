@@ -12,12 +12,14 @@
 /// ```text
 /// # let connectionstate = unimplemented!();
 /// match connectionstate {
+///     ConnectionState::Active => { /* ... */ },
 ///     ConnectionState::Authorized => { /* ... */ },
 ///     ConnectionState::Authorizing => { /* ... */ },
 ///     ConnectionState::Creating => { /* ... */ },
 ///     ConnectionState::Deauthorized => { /* ... */ },
 ///     ConnectionState::Deauthorizing => { /* ... */ },
 ///     ConnectionState::Deleting => { /* ... */ },
+///     ConnectionState::FailedConnectivity => { /* ... */ },
 ///     ConnectionState::Updating => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -47,6 +49,8 @@
 )]
 pub enum ConnectionState {
     #[allow(missing_docs)] // documentation missing in model
+    Active,
+    #[allow(missing_docs)] // documentation missing in model
     Authorized,
     #[allow(missing_docs)] // documentation missing in model
     Authorizing,
@@ -59,6 +63,8 @@ pub enum ConnectionState {
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
     #[allow(missing_docs)] // documentation missing in model
+    FailedConnectivity,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -67,12 +73,14 @@ pub enum ConnectionState {
 impl ::std::convert::From<&str> for ConnectionState {
     fn from(s: &str) -> Self {
         match s {
+            "ACTIVE" => ConnectionState::Active,
             "AUTHORIZED" => ConnectionState::Authorized,
             "AUTHORIZING" => ConnectionState::Authorizing,
             "CREATING" => ConnectionState::Creating,
             "DEAUTHORIZED" => ConnectionState::Deauthorized,
             "DEAUTHORIZING" => ConnectionState::Deauthorizing,
             "DELETING" => ConnectionState::Deleting,
+            "FAILED_CONNECTIVITY" => ConnectionState::FailedConnectivity,
             "UPDATING" => ConnectionState::Updating,
             other => ConnectionState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -89,12 +97,14 @@ impl ConnectionState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ConnectionState::Active => "ACTIVE",
             ConnectionState::Authorized => "AUTHORIZED",
             ConnectionState::Authorizing => "AUTHORIZING",
             ConnectionState::Creating => "CREATING",
             ConnectionState::Deauthorized => "DEAUTHORIZED",
             ConnectionState::Deauthorizing => "DEAUTHORIZING",
             ConnectionState::Deleting => "DELETING",
+            ConnectionState::FailedConnectivity => "FAILED_CONNECTIVITY",
             ConnectionState::Updating => "UPDATING",
             ConnectionState::Unknown(value) => value.as_str(),
         }
@@ -102,12 +112,14 @@ impl ConnectionState {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "ACTIVE",
             "AUTHORIZED",
             "AUTHORIZING",
             "CREATING",
             "DEAUTHORIZED",
             "DEAUTHORIZING",
             "DELETING",
+            "FAILED_CONNECTIVITY",
             "UPDATING",
         ]
     }
@@ -132,12 +144,14 @@ impl ConnectionState {
 impl ::std::fmt::Display for ConnectionState {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ConnectionState::Active => write!(f, "ACTIVE"),
             ConnectionState::Authorized => write!(f, "AUTHORIZED"),
             ConnectionState::Authorizing => write!(f, "AUTHORIZING"),
             ConnectionState::Creating => write!(f, "CREATING"),
             ConnectionState::Deauthorized => write!(f, "DEAUTHORIZED"),
             ConnectionState::Deauthorizing => write!(f, "DEAUTHORIZING"),
             ConnectionState::Deleting => write!(f, "DELETING"),
+            ConnectionState::FailedConnectivity => write!(f, "FAILED_CONNECTIVITY"),
             ConnectionState::Updating => write!(f, "UPDATING"),
             ConnectionState::Unknown(value) => write!(f, "{}", value),
         }

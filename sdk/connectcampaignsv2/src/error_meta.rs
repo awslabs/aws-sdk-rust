@@ -799,6 +799,59 @@ impl From<crate::operation::put_outbound_request_batch::PutOutboundRequestBatchE
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_profile_outbound_request_batch::PutProfileOutboundRequestBatchError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_profile_outbound_request_batch::PutProfileOutboundRequestBatchError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_profile_outbound_request_batch::PutProfileOutboundRequestBatchError> for Error {
+    fn from(err: crate::operation::put_profile_outbound_request_batch::PutProfileOutboundRequestBatchError) -> Self {
+        match err {
+            crate::operation::put_profile_outbound_request_batch::PutProfileOutboundRequestBatchError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::put_profile_outbound_request_batch::PutProfileOutboundRequestBatchError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::put_profile_outbound_request_batch::PutProfileOutboundRequestBatchError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::put_profile_outbound_request_batch::PutProfileOutboundRequestBatchError::InvalidCampaignStateException(inner) => {
+                Error::InvalidCampaignStateException(inner)
+            }
+            crate::operation::put_profile_outbound_request_batch::PutProfileOutboundRequestBatchError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::put_profile_outbound_request_batch::PutProfileOutboundRequestBatchError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::put_profile_outbound_request_batch::PutProfileOutboundRequestBatchError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::put_profile_outbound_request_batch::PutProfileOutboundRequestBatchError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::resume_campaign::ResumeCampaignError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

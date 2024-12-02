@@ -75,6 +75,8 @@ pub(crate) mod shape_get_group;
 
 pub(crate) mod shape_get_index;
 
+pub(crate) mod shape_get_media;
+
 pub(crate) mod shape_get_plugin;
 
 pub(crate) mod shape_get_retriever;
@@ -84,6 +86,8 @@ pub(crate) mod shape_get_user;
 pub(crate) mod shape_get_web_experience;
 
 pub(crate) mod shape_list_applications;
+
+pub(crate) mod shape_list_attachments;
 
 pub(crate) mod shape_list_conversations;
 
@@ -171,9 +175,13 @@ pub(crate) mod shape_create_user_input;
 
 pub(crate) mod shape_create_web_experience_input;
 
+pub(crate) mod shape_external_resource_exception;
+
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_license_not_found_exception;
+
+pub(crate) mod shape_media_too_large_exception;
 
 pub(crate) mod shape_put_feedback_input;
 
@@ -227,6 +235,8 @@ pub(crate) mod shape_attachment_input;
 
 pub(crate) mod shape_attachment_input_event;
 
+pub(crate) mod shape_attachment_list;
+
 pub(crate) mod shape_attachments_configuration;
 
 pub(crate) mod shape_attachments_output;
@@ -244,6 +254,8 @@ pub(crate) mod shape_auto_subscription_configuration;
 pub(crate) mod shape_blocked_phrases_configuration;
 
 pub(crate) mod shape_blocked_phrases_configuration_update;
+
+pub(crate) mod shape_browser_extension_configuration;
 
 pub(crate) mod shape_chat_mode_configuration;
 
@@ -299,6 +311,8 @@ pub(crate) mod shape_index_statistics;
 
 pub(crate) mod shape_indices;
 
+pub(crate) mod shape_media_extraction_configuration;
+
 pub(crate) mod shape_message_usefulness_feedback;
 
 pub(crate) mod shape_messages;
@@ -351,6 +365,8 @@ pub(crate) mod shape_api_schema;
 
 pub(crate) mod shape_application;
 
+pub(crate) mod shape_attachment;
+
 pub(crate) mod shape_attachment_output;
 
 pub(crate) mod shape_auth_challenge_request_event;
@@ -359,7 +375,11 @@ pub(crate) mod shape_basic_auth_configuration;
 
 pub(crate) mod shape_blocked_phrases;
 
+pub(crate) mod shape_browser_extension_list;
+
 pub(crate) mod shape_conversation;
+
+pub(crate) mod shape_copy_from_source;
 
 pub(crate) mod shape_data_source;
 
@@ -378,6 +398,8 @@ pub(crate) mod shape_failed_document;
 pub(crate) mod shape_group_summary;
 
 pub(crate) mod shape_hook_configuration;
+
+pub(crate) mod shape_image_extraction_configuration;
 
 pub(crate) mod shape_index;
 
@@ -434,6 +456,8 @@ pub(crate) mod shape_web_experience;
 pub(crate) mod shape_access_control;
 
 pub(crate) mod shape_action_review_payload_field;
+
+pub(crate) mod shape_conversation_source;
 
 pub(crate) mod shape_data_source_sync_job_metrics;
 

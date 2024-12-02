@@ -22,7 +22,7 @@ impl crate::operation::update_service_network_vpc_association::builders::UpdateS
 }
 /// Fluent builder constructing a request to `UpdateServiceNetworkVpcAssociation`.
 ///
-/// <p>Updates the service network and VPC association. If you add a security group to the service network and VPC association, the association must continue to always have at least one security group. You can add or edit security groups at any time. However, to remove all security groups, you must first delete the association and recreate it without security groups.</p>
+/// <p>Updates the service network and VPC association. If you add a security group to the service network and VPC association, the association must continue to have at least one security group. You can add or edit security groups at any time. However, to remove all security groups, you must first delete the association and then recreate it without security groups.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateServiceNetworkVpcAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl UpdateServiceNetworkVpcAssociationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
+    /// <p>The ID or ARN of the association.</p>
     pub fn service_network_vpc_association_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_network_vpc_association_identifier(input.into());
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
+    /// <p>The ID or ARN of the association.</p>
     pub fn set_service_network_vpc_association_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_network_vpc_association_identifier(input);
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
+    /// <p>The ID or ARN of the association.</p>
     pub fn get_service_network_vpc_association_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_service_network_vpc_association_identifier()
     }

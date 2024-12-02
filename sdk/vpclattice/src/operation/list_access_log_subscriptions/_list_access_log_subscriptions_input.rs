@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAccessLogSubscriptionsInput {
-    /// <p>The ID or Amazon Resource Name (ARN) of the service network or service.</p>
+    /// <p>The ID or ARN of the service network or service.</p>
     pub resource_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -11,7 +11,7 @@ pub struct ListAccessLogSubscriptionsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListAccessLogSubscriptionsInput {
-    /// <p>The ID or Amazon Resource Name (ARN) of the service network or service.</p>
+    /// <p>The ID or ARN of the service network or service.</p>
     pub fn resource_identifier(&self) -> ::std::option::Option<&str> {
         self.resource_identifier.as_deref()
     }
@@ -40,18 +40,18 @@ pub struct ListAccessLogSubscriptionsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListAccessLogSubscriptionsInputBuilder {
-    /// <p>The ID or Amazon Resource Name (ARN) of the service network or service.</p>
+    /// <p>The ID or ARN of the service network or service.</p>
     /// This field is required.
     pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service network or service.</p>
+    /// <p>The ID or ARN of the service network or service.</p>
     pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_identifier = input;
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service network or service.</p>
+    /// <p>The ID or ARN of the service network or service.</p>
     pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_identifier
     }

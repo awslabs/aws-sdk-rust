@@ -24,6 +24,8 @@ pub struct UpdateDataSourceInput {
     /// <p>Provides the configuration information for altering document metadata and content during the document ingestion process.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/custom-document-enrichment.html">Custom document enrichment</a>.</p>
     pub document_enrichment_configuration: ::std::option::Option<crate::types::DocumentEnrichmentConfiguration>,
+    /// <p>The configuration for extracting information from media in documents for your data source.</p>
+    pub media_extraction_configuration: ::std::option::Option<crate::types::MediaExtractionConfiguration>,
 }
 impl UpdateDataSourceInput {
     /// <p>The identifier of the Amazon Q Business application the data source is attached to.</p>
@@ -67,6 +69,10 @@ impl UpdateDataSourceInput {
     pub fn document_enrichment_configuration(&self) -> ::std::option::Option<&crate::types::DocumentEnrichmentConfiguration> {
         self.document_enrichment_configuration.as_ref()
     }
+    /// <p>The configuration for extracting information from media in documents for your data source.</p>
+    pub fn media_extraction_configuration(&self) -> ::std::option::Option<&crate::types::MediaExtractionConfiguration> {
+        self.media_extraction_configuration.as_ref()
+    }
 }
 impl UpdateDataSourceInput {
     /// Creates a new builder-style object to manufacture [`UpdateDataSourceInput`](crate::operation::update_data_source::UpdateDataSourceInput).
@@ -89,6 +95,7 @@ pub struct UpdateDataSourceInputBuilder {
     pub(crate) sync_schedule: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) document_enrichment_configuration: ::std::option::Option<crate::types::DocumentEnrichmentConfiguration>,
+    pub(crate) media_extraction_configuration: ::std::option::Option<crate::types::MediaExtractionConfiguration>,
 }
 impl UpdateDataSourceInputBuilder {
     /// <p>The identifier of the Amazon Q Business application the data source is attached to.</p>
@@ -237,6 +244,20 @@ impl UpdateDataSourceInputBuilder {
     pub fn get_document_enrichment_configuration(&self) -> &::std::option::Option<crate::types::DocumentEnrichmentConfiguration> {
         &self.document_enrichment_configuration
     }
+    /// <p>The configuration for extracting information from media in documents for your data source.</p>
+    pub fn media_extraction_configuration(mut self, input: crate::types::MediaExtractionConfiguration) -> Self {
+        self.media_extraction_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for extracting information from media in documents for your data source.</p>
+    pub fn set_media_extraction_configuration(mut self, input: ::std::option::Option<crate::types::MediaExtractionConfiguration>) -> Self {
+        self.media_extraction_configuration = input;
+        self
+    }
+    /// <p>The configuration for extracting information from media in documents for your data source.</p>
+    pub fn get_media_extraction_configuration(&self) -> &::std::option::Option<crate::types::MediaExtractionConfiguration> {
+        &self.media_extraction_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateDataSourceInput`](crate::operation::update_data_source::UpdateDataSourceInput).
     pub fn build(
         self,
@@ -252,6 +273,7 @@ impl UpdateDataSourceInputBuilder {
             sync_schedule: self.sync_schedule,
             role_arn: self.role_arn,
             document_enrichment_configuration: self.document_enrichment_configuration,
+            media_extraction_configuration: self.media_extraction_configuration,
         })
     }
 }

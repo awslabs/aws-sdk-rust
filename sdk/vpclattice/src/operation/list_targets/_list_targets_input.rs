@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTargetsInput {
-    /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
+    /// <p>The ID or ARN of the target group.</p>
     pub target_group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -13,7 +13,7 @@ pub struct ListTargetsInput {
     pub targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
 }
 impl ListTargetsInput {
-    /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
+    /// <p>The ID or ARN of the target group.</p>
     pub fn target_group_identifier(&self) -> ::std::option::Option<&str> {
         self.target_group_identifier.as_deref()
     }
@@ -49,18 +49,18 @@ pub struct ListTargetsInputBuilder {
     pub(crate) targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
 }
 impl ListTargetsInputBuilder {
-    /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
+    /// <p>The ID or ARN of the target group.</p>
     /// This field is required.
     pub fn target_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_group_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
+    /// <p>The ID or ARN of the target group.</p>
     pub fn set_target_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_group_identifier = input;
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
+    /// <p>The ID or ARN of the target group.</p>
     pub fn get_target_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_group_identifier
     }

@@ -77,6 +77,56 @@ pub fn de_tag_resource_http_error(
             }
             tmp
         }),
+        "InvalidParameterValueException" => crate::operation::tag_resource::TagResourceError::InvalidParameterValueException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "MultiRegionClusterNotFoundFault" => crate::operation::tag_resource::TagResourceError::MultiRegionClusterNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::MultiRegionClusterNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_multi_region_cluster_not_found_fault::de_multi_region_cluster_not_found_fault_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "MultiRegionParameterGroupNotFoundFault" => crate::operation::tag_resource::TagResourceError::MultiRegionParameterGroupNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::MultiRegionParameterGroupNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_multi_region_parameter_group_not_found_fault::de_multi_region_parameter_group_not_found_fault_json_err(_response_body, output).map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ParameterGroupNotFoundFault" => crate::operation::tag_resource::TagResourceError::ParameterGroupNotFoundFault({
             #[allow(unused_mut)]
             let mut tmp = {

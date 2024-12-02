@@ -49,6 +49,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "serviceNetworkLogType" => {
+                            builder = builder.set_service_network_log_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ServiceNetworkLogType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "createdAt" => {
                             builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),

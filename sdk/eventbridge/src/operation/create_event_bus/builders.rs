@@ -210,19 +210,19 @@ impl CreateEventBusFluentBuilder {
         self.inner.get_kms_key_identifier()
     }
     /// <p>Configuration details of the Amazon SQS queue for EventBridge to use as a dead-letter queue (DLQ).</p>
-    /// <p>For more information, see <a href="eventbridge/latest/userguide/eb-rule-dlq.html">Event retry policy and using dead-letter queues</a> in the <i>EventBridge User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-rule-event-delivery.html#eb-rule-dlq">Using dead-letter queues to process undelivered events</a> in the <i>EventBridge User Guide</i>.</p>
     pub fn dead_letter_config(mut self, input: crate::types::DeadLetterConfig) -> Self {
         self.inner = self.inner.dead_letter_config(input);
         self
     }
     /// <p>Configuration details of the Amazon SQS queue for EventBridge to use as a dead-letter queue (DLQ).</p>
-    /// <p>For more information, see <a href="eventbridge/latest/userguide/eb-rule-dlq.html">Event retry policy and using dead-letter queues</a> in the <i>EventBridge User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-rule-event-delivery.html#eb-rule-dlq">Using dead-letter queues to process undelivered events</a> in the <i>EventBridge User Guide</i>.</p>
     pub fn set_dead_letter_config(mut self, input: ::std::option::Option<crate::types::DeadLetterConfig>) -> Self {
         self.inner = self.inner.set_dead_letter_config(input);
         self
     }
     /// <p>Configuration details of the Amazon SQS queue for EventBridge to use as a dead-letter queue (DLQ).</p>
-    /// <p>For more information, see <a href="eventbridge/latest/userguide/eb-rule-dlq.html">Event retry policy and using dead-letter queues</a> in the <i>EventBridge User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-rule-event-delivery.html#eb-rule-dlq">Using dead-letter queues to process undelivered events</a> in the <i>EventBridge User Guide</i>.</p>
     pub fn get_dead_letter_config(&self) -> &::std::option::Option<crate::types::DeadLetterConfig> {
         self.inner.get_dead_letter_config()
     }

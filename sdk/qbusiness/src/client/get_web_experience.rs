@@ -22,6 +22,7 @@ impl super::Client {
     ///   - [`identity_provider_configuration(Option<IdentityProviderConfiguration>)`](crate::operation::get_web_experience::GetWebExperienceOutput::identity_provider_configuration): <p>Information about the identity provider (IdP) used to authenticate end users of an Amazon Q Business web experience.</p>
     ///   - [`authentication_configuration(Option<WebExperienceAuthConfiguration>)`](crate::operation::get_web_experience::GetWebExperienceOutput::authentication_configuration): <p>The authentication configuration information for your Amazon Q Business web experience.</p>
     ///   - [`error(Option<ErrorDetail>)`](crate::operation::get_web_experience::GetWebExperienceOutput::error): <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a description of the error that caused the data source connector to fail.</p>
+    ///   - [`browser_extension_configuration(Option<BrowserExtensionConfiguration>)`](crate::operation::get_web_experience::GetWebExperienceOutput::browser_extension_configuration): <p>The browser extension configuration for an Amazon Q Business web experience.</p>
     /// - On failure, responds with [`SdkError<GetWebExperienceError>`](crate::operation::get_web_experience::GetWebExperienceError)
     pub fn get_web_experience(&self) -> crate::operation::get_web_experience::builders::GetWebExperienceFluentBuilder {
         crate::operation::get_web_experience::builders::GetWebExperienceFluentBuilder::new(self.handle.clone())

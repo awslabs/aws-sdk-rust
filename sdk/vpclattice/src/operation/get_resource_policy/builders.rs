@@ -22,7 +22,7 @@ impl crate::operation::get_resource_policy::builders::GetResourcePolicyInputBuil
 }
 /// Fluent builder constructing a request to `GetResourcePolicy`.
 ///
-/// <p>Retrieves information about the resource policy. The resource policy is an IAM policy created on behalf of the resource owner when they share a resource.</p>
+/// <p>Retrieves information about the specified resource policy. The resource policy is an IAM policy created on behalf of the resource owner when they share a resource.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetResourcePolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

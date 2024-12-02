@@ -22,7 +22,7 @@ impl crate::operation::list_tags::builders::ListTagsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListTags`.
 ///
-/// <p>Returns all resource tags for an Amazon OpenSearch Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-awsresourcetagging.html">Tagging Amazon OpenSearch Service domains</a>.</p>
+/// <p>Returns all resource tags for an Amazon OpenSearch Service domain, data source, or application. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-awsresourcetagging.html">Tagging Amazon OpenSearch Service resources</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTagsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -99,17 +99,17 @@ impl ListTagsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Amazon Resource Name (ARN) for the domain to view tags for.</p>
+    /// <p>Amazon Resource Name (ARN) for the domain, data source, or application to view tags for.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.arn(input.into());
         self
     }
-    /// <p>Amazon Resource Name (ARN) for the domain to view tags for.</p>
+    /// <p>Amazon Resource Name (ARN) for the domain, data source, or application to view tags for.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_arn(input);
         self
     }
-    /// <p>Amazon Resource Name (ARN) for the domain to view tags for.</p>
+    /// <p>Amazon Resource Name (ARN) for the domain, data source, or application to view tags for.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_arn()
     }

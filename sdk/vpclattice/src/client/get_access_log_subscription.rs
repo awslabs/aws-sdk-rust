@@ -3,15 +3,16 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetAccessLogSubscription`](crate::operation::get_access_log_subscription::builders::GetAccessLogSubscriptionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`access_log_subscription_identifier(impl Into<String>)`](crate::operation::get_access_log_subscription::builders::GetAccessLogSubscriptionFluentBuilder::access_log_subscription_identifier) / [`set_access_log_subscription_identifier(Option<String>)`](crate::operation::get_access_log_subscription::builders::GetAccessLogSubscriptionFluentBuilder::set_access_log_subscription_identifier):<br>required: **true**<br><p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p><br>
+    ///   - [`access_log_subscription_identifier(impl Into<String>)`](crate::operation::get_access_log_subscription::builders::GetAccessLogSubscriptionFluentBuilder::access_log_subscription_identifier) / [`set_access_log_subscription_identifier(Option<String>)`](crate::operation::get_access_log_subscription::builders::GetAccessLogSubscriptionFluentBuilder::set_access_log_subscription_identifier):<br>required: **true**<br><p>The ID or ARN of the access log subscription.</p><br>
     /// - On success, responds with [`GetAccessLogSubscriptionOutput`](crate::operation::get_access_log_subscription::GetAccessLogSubscriptionOutput) with field(s):
     ///   - [`id(String)`](crate::operation::get_access_log_subscription::GetAccessLogSubscriptionOutput::id): <p>The ID of the access log subscription.</p>
     ///   - [`arn(String)`](crate::operation::get_access_log_subscription::GetAccessLogSubscriptionOutput::arn): <p>The Amazon Resource Name (ARN) of the access log subscription.</p>
     ///   - [`resource_id(String)`](crate::operation::get_access_log_subscription::GetAccessLogSubscriptionOutput::resource_id): <p>The ID of the service network or service.</p>
     ///   - [`resource_arn(String)`](crate::operation::get_access_log_subscription::GetAccessLogSubscriptionOutput::resource_arn): <p>The Amazon Resource Name (ARN) of the service network or service.</p>
     ///   - [`destination_arn(String)`](crate::operation::get_access_log_subscription::GetAccessLogSubscriptionOutput::destination_arn): <p>The Amazon Resource Name (ARN) of the access log destination.</p>
-    ///   - [`created_at(DateTime)`](crate::operation::get_access_log_subscription::GetAccessLogSubscriptionOutput::created_at): <p>The date and time that the access log subscription was created, specified in ISO-8601 format.</p>
-    ///   - [`last_updated_at(DateTime)`](crate::operation::get_access_log_subscription::GetAccessLogSubscriptionOutput::last_updated_at): <p>The date and time that the access log subscription was last updated, specified in ISO-8601 format.</p>
+    ///   - [`service_network_log_type(Option<ServiceNetworkLogType>)`](crate::operation::get_access_log_subscription::GetAccessLogSubscriptionOutput::service_network_log_type): <p>The log type for the service network.</p>
+    ///   - [`created_at(DateTime)`](crate::operation::get_access_log_subscription::GetAccessLogSubscriptionOutput::created_at): <p>The date and time that the access log subscription was created, in ISO-8601 format.</p>
+    ///   - [`last_updated_at(DateTime)`](crate::operation::get_access_log_subscription::GetAccessLogSubscriptionOutput::last_updated_at): <p>The date and time that the access log subscription was last updated, in ISO-8601 format.</p>
     /// - On failure, responds with [`SdkError<GetAccessLogSubscriptionError>`](crate::operation::get_access_log_subscription::GetAccessLogSubscriptionError)
     pub fn get_access_log_subscription(&self) -> crate::operation::get_access_log_subscription::builders::GetAccessLogSubscriptionFluentBuilder {
         crate::operation::get_access_log_subscription::builders::GetAccessLogSubscriptionFluentBuilder::new(self.handle.clone())

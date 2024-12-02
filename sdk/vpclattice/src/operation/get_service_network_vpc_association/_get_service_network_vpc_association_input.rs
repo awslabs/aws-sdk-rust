@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetServiceNetworkVpcAssociationInput {
-    /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
+    /// <p>The ID or ARN of the association.</p>
     pub service_network_vpc_association_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetServiceNetworkVpcAssociationInput {
-    /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
+    /// <p>The ID or ARN of the association.</p>
     pub fn service_network_vpc_association_identifier(&self) -> ::std::option::Option<&str> {
         self.service_network_vpc_association_identifier.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct GetServiceNetworkVpcAssociationInputBuilder {
     pub(crate) service_network_vpc_association_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetServiceNetworkVpcAssociationInputBuilder {
-    /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
+    /// <p>The ID or ARN of the association.</p>
     /// This field is required.
     pub fn service_network_vpc_association_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_network_vpc_association_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
+    /// <p>The ID or ARN of the association.</p>
     pub fn set_service_network_vpc_association_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_network_vpc_association_identifier = input;
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
+    /// <p>The ID or ARN of the association.</p>
     pub fn get_service_network_vpc_association_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_network_vpc_association_identifier
     }

@@ -10,6 +10,18 @@ pub fn ser_table_reference(
             crate::protocol_serde::shape_glue_table_reference::ser_glue_table_reference(&mut object_1, inner)?;
             object_1.finish();
         }
+        crate::types::TableReference::Snowflake(inner) => {
+            #[allow(unused_mut)]
+            let mut object_2 = object_8.key("snowflake").start_object();
+            crate::protocol_serde::shape_snowflake_table_reference::ser_snowflake_table_reference(&mut object_2, inner)?;
+            object_2.finish();
+        }
+        crate::types::TableReference::Athena(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_8.key("athena").start_object();
+            crate::protocol_serde::shape_athena_table_reference::ser_athena_table_reference(&mut object_3, inner)?;
+            object_3.finish();
+        }
         crate::types::TableReference::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "TableReference",
@@ -52,6 +64,16 @@ where
                         "glue" => Some(crate::types::TableReference::Glue(
                             crate::protocol_serde::shape_glue_table_reference::de_glue_table_reference(tokens)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'glue' cannot be null"))?,
+                        )),
+                        "snowflake" => Some(crate::types::TableReference::Snowflake(
+                            crate::protocol_serde::shape_snowflake_table_reference::de_snowflake_table_reference(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'snowflake' cannot be null")
+                            })?,
+                        )),
+                        "athena" => Some(crate::types::TableReference::Athena(
+                            crate::protocol_serde::shape_athena_table_reference::de_athena_table_reference(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'athena' cannot be null")
+                            })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

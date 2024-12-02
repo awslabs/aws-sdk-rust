@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StopEvaluationJobInput {
-    /// <p>The ARN of the model evaluation job you want to stop.</p>
+    /// <p>The Amazon Resource Name (ARN) of the evaluation job you want to stop.</p>
     pub job_identifier: ::std::option::Option<::std::string::String>,
 }
 impl StopEvaluationJobInput {
-    /// <p>The ARN of the model evaluation job you want to stop.</p>
+    /// <p>The Amazon Resource Name (ARN) of the evaluation job you want to stop.</p>
     pub fn job_identifier(&self) -> ::std::option::Option<&str> {
         self.job_identifier.as_deref()
     }
@@ -33,18 +33,18 @@ pub struct StopEvaluationJobInputBuilder {
     pub(crate) job_identifier: ::std::option::Option<::std::string::String>,
 }
 impl StopEvaluationJobInputBuilder {
-    /// <p>The ARN of the model evaluation job you want to stop.</p>
+    /// <p>The Amazon Resource Name (ARN) of the evaluation job you want to stop.</p>
     /// This field is required.
     pub fn job_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the model evaluation job you want to stop.</p>
+    /// <p>The Amazon Resource Name (ARN) of the evaluation job you want to stop.</p>
     pub fn set_job_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_identifier = input;
         self
     }
-    /// <p>The ARN of the model evaluation job you want to stop.</p>
+    /// <p>The Amazon Resource Name (ARN) of the evaluation job you want to stop.</p>
     pub fn get_job_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_identifier
     }

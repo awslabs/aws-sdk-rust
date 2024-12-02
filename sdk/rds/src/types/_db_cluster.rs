@@ -159,6 +159,8 @@ pub struct DbCluster {
     /// <p>The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics to Amazon CloudWatch Logs.</p>
     /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
     pub monitoring_role_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The mode of Database Insights that is enabled for the cluster.</p>
+    pub database_insights_mode: ::std::option::Option<crate::types::DatabaseInsightsMode>,
     /// <p>Indicates whether Performance Insights is enabled for the DB cluster.</p>
     /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
     pub performance_insights_enabled: ::std::option::Option<bool>,
@@ -520,6 +522,10 @@ impl DbCluster {
     pub fn monitoring_role_arn(&self) -> ::std::option::Option<&str> {
         self.monitoring_role_arn.as_deref()
     }
+    /// <p>The mode of Database Insights that is enabled for the cluster.</p>
+    pub fn database_insights_mode(&self) -> ::std::option::Option<&crate::types::DatabaseInsightsMode> {
+        self.database_insights_mode.as_ref()
+    }
     /// <p>Indicates whether Performance Insights is enabled for the DB cluster.</p>
     /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
     pub fn performance_insights_enabled(&self) -> ::std::option::Option<bool> {
@@ -682,6 +688,7 @@ pub struct DbClusterBuilder {
     pub(crate) auto_minor_version_upgrade: ::std::option::Option<bool>,
     pub(crate) monitoring_interval: ::std::option::Option<i32>,
     pub(crate) monitoring_role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) database_insights_mode: ::std::option::Option<crate::types::DatabaseInsightsMode>,
     pub(crate) performance_insights_enabled: ::std::option::Option<bool>,
     pub(crate) performance_insights_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) performance_insights_retention_period: ::std::option::Option<i32>,
@@ -1749,6 +1756,20 @@ impl DbClusterBuilder {
     pub fn get_monitoring_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.monitoring_role_arn
     }
+    /// <p>The mode of Database Insights that is enabled for the cluster.</p>
+    pub fn database_insights_mode(mut self, input: crate::types::DatabaseInsightsMode) -> Self {
+        self.database_insights_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The mode of Database Insights that is enabled for the cluster.</p>
+    pub fn set_database_insights_mode(mut self, input: ::std::option::Option<crate::types::DatabaseInsightsMode>) -> Self {
+        self.database_insights_mode = input;
+        self
+    }
+    /// <p>The mode of Database Insights that is enabled for the cluster.</p>
+    pub fn get_database_insights_mode(&self) -> &::std::option::Option<crate::types::DatabaseInsightsMode> {
+        &self.database_insights_mode
+    }
     /// <p>Indicates whether Performance Insights is enabled for the DB cluster.</p>
     /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
     pub fn performance_insights_enabled(mut self, input: bool) -> Self {
@@ -2103,6 +2124,7 @@ impl DbClusterBuilder {
             auto_minor_version_upgrade: self.auto_minor_version_upgrade,
             monitoring_interval: self.monitoring_interval,
             monitoring_role_arn: self.monitoring_role_arn,
+            database_insights_mode: self.database_insights_mode,
             performance_insights_enabled: self.performance_insights_enabled,
             performance_insights_kms_key_id: self.performance_insights_kms_key_id,
             performance_insights_retention_period: self.performance_insights_retention_period,

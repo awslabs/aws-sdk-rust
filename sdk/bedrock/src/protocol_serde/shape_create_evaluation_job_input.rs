@@ -3,50 +3,53 @@ pub fn ser_create_evaluation_job_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_evaluation_job::CreateEvaluationJobInput,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.client_request_token {
-        object.key("clientRequestToken").string(var_1.as_str());
+    if let Some(var_1) = &input.application_type {
+        object.key("applicationType").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.customer_encryption_key_id {
-        object.key("customerEncryptionKeyId").string(var_2.as_str());
+    if let Some(var_2) = &input.client_request_token {
+        object.key("clientRequestToken").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.evaluation_config {
+    if let Some(var_3) = &input.customer_encryption_key_id {
+        object.key("customerEncryptionKeyId").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.evaluation_config {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("evaluationConfig").start_object();
-        crate::protocol_serde::shape_evaluation_config::ser_evaluation_config(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_5 = object.key("evaluationConfig").start_object();
+        crate::protocol_serde::shape_evaluation_config::ser_evaluation_config(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_5) = &input.inference_config {
+    if let Some(var_6) = &input.inference_config {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("inferenceConfig").start_object();
-        crate::protocol_serde::shape_evaluation_inference_config::ser_evaluation_inference_config(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_7 = object.key("inferenceConfig").start_object();
+        crate::protocol_serde::shape_evaluation_inference_config::ser_evaluation_inference_config(&mut object_7, var_6)?;
+        object_7.finish();
     }
-    if let Some(var_7) = &input.job_description {
-        object.key("jobDescription").string(var_7.as_str());
+    if let Some(var_8) = &input.job_description {
+        object.key("jobDescription").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.job_name {
-        object.key("jobName").string(var_8.as_str());
+    if let Some(var_9) = &input.job_name {
+        object.key("jobName").string(var_9.as_str());
     }
-    if let Some(var_9) = &input.job_tags {
-        let mut array_10 = object.key("jobTags").start_array();
-        for item_11 in var_9 {
+    if let Some(var_10) = &input.job_tags {
+        let mut array_11 = object.key("jobTags").start_array();
+        for item_12 in var_10 {
             {
                 #[allow(unused_mut)]
-                let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_12, item_11)?;
-                object_12.finish();
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_13, item_12)?;
+                object_13.finish();
             }
         }
-        array_10.finish();
+        array_11.finish();
     }
-    if let Some(var_13) = &input.output_data_config {
+    if let Some(var_14) = &input.output_data_config {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("outputDataConfig").start_object();
-        crate::protocol_serde::shape_evaluation_output_data_config::ser_evaluation_output_data_config(&mut object_14, var_13)?;
-        object_14.finish();
+        let mut object_15 = object.key("outputDataConfig").start_object();
+        crate::protocol_serde::shape_evaluation_output_data_config::ser_evaluation_output_data_config(&mut object_15, var_14)?;
+        object_15.finish();
     }
-    if let Some(var_15) = &input.role_arn {
-        object.key("roleArn").string(var_15.as_str());
+    if let Some(var_16) = &input.role_arn {
+        object.key("roleArn").string(var_16.as_str());
     }
     Ok(())
 }

@@ -23,6 +23,12 @@ pub use crate::types::error::_parameter_group_not_found_fault::ParameterGroupNot
 
 pub use crate::types::error::_invalid_parameter_group_state_fault::InvalidParameterGroupStateFault;
 
+pub use crate::types::error::_multi_region_parameter_group_not_found_fault::MultiRegionParameterGroupNotFoundFault;
+
+pub use crate::types::error::_multi_region_cluster_not_found_fault::MultiRegionClusterNotFoundFault;
+
+pub use crate::types::error::_invalid_multi_region_cluster_state_fault::InvalidMultiRegionClusterStateFault;
+
 pub use crate::types::error::_shards_per_cluster_quota_exceeded_fault::ShardsPerClusterQuotaExceededFault;
 
 pub use crate::types::error::_no_operation_fault::NoOperationFault;
@@ -93,6 +99,8 @@ pub use crate::types::error::_parameter_group_quota_exceeded_fault::ParameterGro
 
 pub use crate::types::error::_parameter_group_already_exists_fault::ParameterGroupAlreadyExistsFault;
 
+pub use crate::types::error::_multi_region_cluster_already_exists_fault::MultiRegionClusterAlreadyExistsFault;
+
 pub use crate::types::error::_invalid_credentials_exception::InvalidCredentialsException;
 
 pub use crate::types::error::_insufficient_cluster_capacity_fault::InsufficientClusterCapacityFault;
@@ -135,6 +143,8 @@ mod _invalid_credentials_exception;
 
 mod _invalid_kms_key_fault;
 
+mod _invalid_multi_region_cluster_state_fault;
+
 mod _invalid_node_state_fault;
 
 mod _invalid_parameter_combination_exception;
@@ -150,6 +160,12 @@ mod _invalid_subnet;
 mod _invalid_user_state_fault;
 
 mod _invalid_vpc_network_state_fault;
+
+mod _multi_region_cluster_already_exists_fault;
+
+mod _multi_region_cluster_not_found_fault;
+
+mod _multi_region_parameter_group_not_found_fault;
 
 mod _no_operation_fault;
 

@@ -108,31 +108,31 @@ impl FailoverShardFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The cluster being failed over</p>
+    /// <p>The cluster being failed over.</p>
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_name(input.into());
         self
     }
-    /// <p>The cluster being failed over</p>
+    /// <p>The cluster being failed over.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_name(input);
         self
     }
-    /// <p>The cluster being failed over</p>
+    /// <p>The cluster being failed over.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cluster_name()
     }
-    /// <p>The name of the shard</p>
+    /// <p>The name of the shard.</p>
     pub fn shard_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.shard_name(input.into());
         self
     }
-    /// <p>The name of the shard</p>
+    /// <p>The name of the shard.</p>
     pub fn set_shard_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_shard_name(input);
         self
     }
-    /// <p>The name of the shard</p>
+    /// <p>The name of the shard.</p>
     pub fn get_shard_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_shard_name()
     }

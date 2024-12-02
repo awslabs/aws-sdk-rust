@@ -115,6 +115,12 @@ pub use crate::types::_analysis_rule_list::AnalysisRuleListBuilder;
 
 pub use crate::types::_configured_table::ConfiguredTableBuilder;
 
+pub use crate::types::_athena_table_reference::AthenaTableReferenceBuilder;
+
+pub use crate::types::_snowflake_table_reference::SnowflakeTableReferenceBuilder;
+
+pub use crate::types::_snowflake_table_schema_v1::SnowflakeTableSchemaV1Builder;
+
 pub use crate::types::_glue_table_reference::GlueTableReferenceBuilder;
 
 pub use crate::types::_configured_table_summary::ConfiguredTableSummaryBuilder;

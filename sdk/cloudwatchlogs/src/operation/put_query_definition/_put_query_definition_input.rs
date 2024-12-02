@@ -3,13 +3,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutQueryDefinitionInput {
+    /// <p>Specify the query language to use for this query. The options are Logs Insights QL, OpenSearch PPL, and OpenSearch SQL. For more information about the query languages that CloudWatch Logs supports, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData_Languages.html">Supported query languages</a>.</p>
+    pub query_language: ::std::option::Option<crate::types::QueryLanguage>,
     /// <p>A name for the query definition. If you are saving numerous query definitions, we recommend that you name them. This way, you can find the ones you want by using the first part of the name as a filter in the <code>queryDefinitionNamePrefix</code> parameter of <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>If you are updating a query definition, use this parameter to specify the ID of the query definition that you want to update. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a> to retrieve the IDs of your saved query definitions.</p>
     /// <p>If you are creating a query definition, do not specify this parameter. CloudWatch generates a unique ID for the new query definition and include it in the response to this operation.</p>
     pub query_definition_id: ::std::option::Option<::std::string::String>,
-    /// <p>Use this parameter to include specific log groups as part of your query definition.</p>
-    /// <p>If you are updating a query definition and you omit this parameter, then the updated definition will contain no log groups.</p>
+    /// <p>Use this parameter to include specific log groups as part of your query definition. If your query uses the OpenSearch Service query language, you specify the log group names inside the <code>querystring</code> instead of here.</p>
+    /// <p>If you are updating an existing query definition for the Logs Insights QL or OpenSearch Service PPL and you omit this parameter, then the updated definition will contain no log groups.</p>
     pub log_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The query string to use for this definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
     pub query_string: ::std::option::Option<::std::string::String>,
@@ -17,6 +19,10 @@ pub struct PutQueryDefinitionInput {
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl PutQueryDefinitionInput {
+    /// <p>Specify the query language to use for this query. The options are Logs Insights QL, OpenSearch PPL, and OpenSearch SQL. For more information about the query languages that CloudWatch Logs supports, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData_Languages.html">Supported query languages</a>.</p>
+    pub fn query_language(&self) -> ::std::option::Option<&crate::types::QueryLanguage> {
+        self.query_language.as_ref()
+    }
     /// <p>A name for the query definition. If you are saving numerous query definitions, we recommend that you name them. This way, you can find the ones you want by using the first part of the name as a filter in the <code>queryDefinitionNamePrefix</code> parameter of <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
@@ -26,8 +32,8 @@ impl PutQueryDefinitionInput {
     pub fn query_definition_id(&self) -> ::std::option::Option<&str> {
         self.query_definition_id.as_deref()
     }
-    /// <p>Use this parameter to include specific log groups as part of your query definition.</p>
-    /// <p>If you are updating a query definition and you omit this parameter, then the updated definition will contain no log groups.</p>
+    /// <p>Use this parameter to include specific log groups as part of your query definition. If your query uses the OpenSearch Service query language, you specify the log group names inside the <code>querystring</code> instead of here.</p>
+    /// <p>If you are updating an existing query definition for the Logs Insights QL or OpenSearch Service PPL and you omit this parameter, then the updated definition will contain no log groups.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_group_names.is_none()`.
     pub fn log_group_names(&self) -> &[::std::string::String] {
@@ -53,6 +59,7 @@ impl PutQueryDefinitionInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct PutQueryDefinitionInputBuilder {
+    pub(crate) query_language: ::std::option::Option<crate::types::QueryLanguage>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) query_definition_id: ::std::option::Option<::std::string::String>,
     pub(crate) log_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -60,6 +67,20 @@ pub struct PutQueryDefinitionInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl PutQueryDefinitionInputBuilder {
+    /// <p>Specify the query language to use for this query. The options are Logs Insights QL, OpenSearch PPL, and OpenSearch SQL. For more information about the query languages that CloudWatch Logs supports, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData_Languages.html">Supported query languages</a>.</p>
+    pub fn query_language(mut self, input: crate::types::QueryLanguage) -> Self {
+        self.query_language = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specify the query language to use for this query. The options are Logs Insights QL, OpenSearch PPL, and OpenSearch SQL. For more information about the query languages that CloudWatch Logs supports, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData_Languages.html">Supported query languages</a>.</p>
+    pub fn set_query_language(mut self, input: ::std::option::Option<crate::types::QueryLanguage>) -> Self {
+        self.query_language = input;
+        self
+    }
+    /// <p>Specify the query language to use for this query. The options are Logs Insights QL, OpenSearch PPL, and OpenSearch SQL. For more information about the query languages that CloudWatch Logs supports, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData_Languages.html">Supported query languages</a>.</p>
+    pub fn get_query_language(&self) -> &::std::option::Option<crate::types::QueryLanguage> {
+        &self.query_language
+    }
     /// <p>A name for the query definition. If you are saving numerous query definitions, we recommend that you name them. This way, you can find the ones you want by using the first part of the name as a filter in the <code>queryDefinitionNamePrefix</code> parameter of <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -96,22 +117,22 @@ impl PutQueryDefinitionInputBuilder {
     ///
     /// To override the contents of this collection use [`set_log_group_names`](Self::set_log_group_names).
     ///
-    /// <p>Use this parameter to include specific log groups as part of your query definition.</p>
-    /// <p>If you are updating a query definition and you omit this parameter, then the updated definition will contain no log groups.</p>
+    /// <p>Use this parameter to include specific log groups as part of your query definition. If your query uses the OpenSearch Service query language, you specify the log group names inside the <code>querystring</code> instead of here.</p>
+    /// <p>If you are updating an existing query definition for the Logs Insights QL or OpenSearch Service PPL and you omit this parameter, then the updated definition will contain no log groups.</p>
     pub fn log_group_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.log_group_names.unwrap_or_default();
         v.push(input.into());
         self.log_group_names = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Use this parameter to include specific log groups as part of your query definition.</p>
-    /// <p>If you are updating a query definition and you omit this parameter, then the updated definition will contain no log groups.</p>
+    /// <p>Use this parameter to include specific log groups as part of your query definition. If your query uses the OpenSearch Service query language, you specify the log group names inside the <code>querystring</code> instead of here.</p>
+    /// <p>If you are updating an existing query definition for the Logs Insights QL or OpenSearch Service PPL and you omit this parameter, then the updated definition will contain no log groups.</p>
     pub fn set_log_group_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.log_group_names = input;
         self
     }
-    /// <p>Use this parameter to include specific log groups as part of your query definition.</p>
-    /// <p>If you are updating a query definition and you omit this parameter, then the updated definition will contain no log groups.</p>
+    /// <p>Use this parameter to include specific log groups as part of your query definition. If your query uses the OpenSearch Service query language, you specify the log group names inside the <code>querystring</code> instead of here.</p>
+    /// <p>If you are updating an existing query definition for the Logs Insights QL or OpenSearch Service PPL and you omit this parameter, then the updated definition will contain no log groups.</p>
     pub fn get_log_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.log_group_names
     }
@@ -150,6 +171,7 @@ impl PutQueryDefinitionInputBuilder {
     ) -> ::std::result::Result<crate::operation::put_query_definition::PutQueryDefinitionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_query_definition::PutQueryDefinitionInput {
+            query_language: self.query_language,
             name: self.name,
             query_definition_id: self.query_definition_id,
             log_group_names: self.log_group_names,

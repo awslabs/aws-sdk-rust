@@ -83,6 +83,8 @@ pub use crate::types::_entity::EntityBuilder;
 
 pub use crate::types::_input_log_event::InputLogEventBuilder;
 
+pub use crate::types::_open_search_resource_config::OpenSearchResourceConfigBuilder;
+
 pub use crate::types::_index_policy::IndexPolicyBuilder;
 
 pub use crate::types::_destination::DestinationBuilder;
@@ -99,6 +101,8 @@ pub use crate::types::_account_policy::AccountPolicyBuilder;
 
 pub use crate::types::_anomaly_detector::AnomalyDetectorBuilder;
 
+pub use crate::types::_integration_summary::IntegrationSummaryBuilder;
+
 pub use crate::types::_anomaly::AnomalyBuilder;
 
 pub use crate::types::_pattern_token::PatternTokenBuilder;
@@ -112,6 +116,26 @@ pub use crate::types::_result_field::ResultFieldBuilder;
 pub use crate::types::_log_group_field::LogGroupFieldBuilder;
 
 pub use crate::types::_output_log_event::OutputLogEventBuilder;
+
+pub use crate::types::_open_search_integration_details::OpenSearchIntegrationDetailsBuilder;
+
+pub use crate::types::_open_search_lifecycle_policy::OpenSearchLifecyclePolicyBuilder;
+
+pub use crate::types::_open_search_resource_status::OpenSearchResourceStatusBuilder;
+
+pub use crate::types::_open_search_data_access_policy::OpenSearchDataAccessPolicyBuilder;
+
+pub use crate::types::_open_search_network_policy::OpenSearchNetworkPolicyBuilder;
+
+pub use crate::types::_open_search_encryption_policy::OpenSearchEncryptionPolicyBuilder;
+
+pub use crate::types::_open_search_workspace::OpenSearchWorkspaceBuilder;
+
+pub use crate::types::_open_search_collection::OpenSearchCollectionBuilder;
+
+pub use crate::types::_open_search_application::OpenSearchApplicationBuilder;
+
+pub use crate::types::_open_search_data_source::OpenSearchDataSourceBuilder;
 
 pub use crate::types::_delivery::DeliveryBuilder;
 

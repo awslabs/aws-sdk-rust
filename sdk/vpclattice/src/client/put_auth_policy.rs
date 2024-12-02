@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PutAuthPolicy`](crate::operation::put_auth_policy::builders::PutAuthPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_identifier(impl Into<String>)`](crate::operation::put_auth_policy::builders::PutAuthPolicyFluentBuilder::resource_identifier) / [`set_resource_identifier(Option<String>)`](crate::operation::put_auth_policy::builders::PutAuthPolicyFluentBuilder::set_resource_identifier):<br>required: **true**<br><p>The ID or Amazon Resource Name (ARN) of the service network or service for which the policy is created.</p><br>
+    ///   - [`resource_identifier(impl Into<String>)`](crate::operation::put_auth_policy::builders::PutAuthPolicyFluentBuilder::resource_identifier) / [`set_resource_identifier(Option<String>)`](crate::operation::put_auth_policy::builders::PutAuthPolicyFluentBuilder::set_resource_identifier):<br>required: **true**<br><p>The ID or ARN of the service network or service for which the policy is created.</p><br>
     ///   - [`policy(impl Into<String>)`](crate::operation::put_auth_policy::builders::PutAuthPolicyFluentBuilder::policy) / [`set_policy(Option<String>)`](crate::operation::put_auth_policy::builders::PutAuthPolicyFluentBuilder::set_policy):<br>required: **true**<br><p>The auth policy. The policy string in JSON must not contain newlines or blank lines.</p><br>
     /// - On success, responds with [`PutAuthPolicyOutput`](crate::operation::put_auth_policy::PutAuthPolicyOutput) with field(s):
     ///   - [`policy(Option<String>)`](crate::operation::put_auth_policy::PutAuthPolicyOutput::policy): <p>The auth policy. The policy string in JSON must not contain newlines or blank lines.</p>

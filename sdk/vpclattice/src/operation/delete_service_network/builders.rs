@@ -108,17 +108,17 @@ impl DeleteServiceNetworkFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) or ID of the service network.</p>
+    /// <p>The ID or ARN of the service network.</p>
     pub fn service_network_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_network_identifier(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) or ID of the service network.</p>
+    /// <p>The ID or ARN of the service network.</p>
     pub fn set_service_network_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_network_identifier(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) or ID of the service network.</p>
+    /// <p>The ID or ARN of the service network.</p>
     pub fn get_service_network_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_service_network_identifier()
     }

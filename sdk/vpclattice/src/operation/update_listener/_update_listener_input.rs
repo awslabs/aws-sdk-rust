@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateListenerInput {
-    /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    /// <p>The ID or ARN of the service.</p>
     pub service_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
+    /// <p>The ID or ARN of the listener.</p>
     pub listener_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The action for the default rule.</p>
     pub default_action: ::std::option::Option<crate::types::RuleAction>,
 }
 impl UpdateListenerInput {
-    /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    /// <p>The ID or ARN of the service.</p>
     pub fn service_identifier(&self) -> ::std::option::Option<&str> {
         self.service_identifier.as_deref()
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
+    /// <p>The ID or ARN of the listener.</p>
     pub fn listener_identifier(&self) -> ::std::option::Option<&str> {
         self.listener_identifier.as_deref()
     }
@@ -40,33 +40,33 @@ pub struct UpdateListenerInputBuilder {
     pub(crate) default_action: ::std::option::Option<crate::types::RuleAction>,
 }
 impl UpdateListenerInputBuilder {
-    /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    /// <p>The ID or ARN of the service.</p>
     /// This field is required.
     pub fn service_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    /// <p>The ID or ARN of the service.</p>
     pub fn set_service_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_identifier = input;
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    /// <p>The ID or ARN of the service.</p>
     pub fn get_service_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_identifier
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
+    /// <p>The ID or ARN of the listener.</p>
     /// This field is required.
     pub fn listener_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.listener_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
+    /// <p>The ID or ARN of the listener.</p>
     pub fn set_listener_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.listener_identifier = input;
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
+    /// <p>The ID or ARN of the listener.</p>
     pub fn get_listener_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.listener_identifier
     }

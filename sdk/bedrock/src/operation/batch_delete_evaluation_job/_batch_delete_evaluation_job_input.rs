@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteEvaluationJobInput {
-    /// <p>An array of model evaluation job ARNs to be deleted.</p>
+    /// <p>A list of one or more evaluation job Amazon Resource Names (ARNs) you want to delete.</p>
     pub job_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchDeleteEvaluationJobInput {
-    /// <p>An array of model evaluation job ARNs to be deleted.</p>
+    /// <p>A list of one or more evaluation job Amazon Resource Names (ARNs) you want to delete.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_identifiers.is_none()`.
     pub fn job_identifiers(&self) -> &[::std::string::String] {
@@ -32,19 +32,19 @@ impl BatchDeleteEvaluationJobInputBuilder {
     ///
     /// To override the contents of this collection use [`set_job_identifiers`](Self::set_job_identifiers).
     ///
-    /// <p>An array of model evaluation job ARNs to be deleted.</p>
+    /// <p>A list of one or more evaluation job Amazon Resource Names (ARNs) you want to delete.</p>
     pub fn job_identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.job_identifiers.unwrap_or_default();
         v.push(input.into());
         self.job_identifiers = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of model evaluation job ARNs to be deleted.</p>
+    /// <p>A list of one or more evaluation job Amazon Resource Names (ARNs) you want to delete.</p>
     pub fn set_job_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.job_identifiers = input;
         self
     }
-    /// <p>An array of model evaluation job ARNs to be deleted.</p>
+    /// <p>A list of one or more evaluation job Amazon Resource Names (ARNs) you want to delete.</p>
     pub fn get_job_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.job_identifiers
     }

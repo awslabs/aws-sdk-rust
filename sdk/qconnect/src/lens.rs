@@ -19,6 +19,26 @@ pub(crate) fn reflens_list_ai_agents_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_ai_guardrail_versions_output_output_next_token(
+    input: &crate::operation::list_ai_guardrail_versions::ListAiGuardrailVersionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_ai_guardrails_output_output_next_token(
+    input: &crate::operation::list_ai_guardrails::ListAiGuardrailsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_ai_prompt_versions_output_output_next_token(
     input: &crate::operation::list_ai_prompt_versions::ListAiPromptVersionsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -119,6 +139,16 @@ pub(crate) fn reflens_list_message_templates_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_messages_output_output_next_token(
+    input: &crate::operation::list_messages::ListMessagesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_quick_responses_output_output_next_token(
     input: &crate::operation::list_quick_responses::ListQuickResponsesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -193,6 +223,20 @@ pub(crate) fn lens_list_ai_agents_output_output_ai_agent_summaries(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_ai_guardrail_versions_output_output_ai_guardrail_version_summaries(
+    input: crate::operation::list_ai_guardrail_versions::ListAiGuardrailVersionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AiGuardrailVersionSummary>> {
+    let input = input.ai_guardrail_version_summaries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_ai_guardrails_output_output_ai_guardrail_summaries(
+    input: crate::operation::list_ai_guardrails::ListAiGuardrailsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AiGuardrailSummary>> {
+    let input = input.ai_guardrail_summaries;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_ai_prompt_versions_output_output_ai_prompt_version_summaries(
     input: crate::operation::list_ai_prompt_versions::ListAiPromptVersionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AiPromptVersionSummary>> {
@@ -260,6 +304,13 @@ pub(crate) fn lens_list_message_templates_output_output_message_template_summari
     input: crate::operation::list_message_templates::ListMessageTemplatesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::MessageTemplateSummary>> {
     let input = input.message_template_summaries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_messages_output_output_messages(
+    input: crate::operation::list_messages::ListMessagesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::MessageOutput>> {
+    let input = input.messages;
     ::std::option::Option::Some(input)
 }
 

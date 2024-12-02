@@ -185,6 +185,8 @@ pub struct AwsSecurityFinding {
     /// <p>The name of the Amazon Web Services account from which a finding was generated.</p>
     /// <p>Length Constraints: Minimum length of 1. Maximum length of 50.</p>
     pub aws_account_name: ::std::option::Option<::std::string::String>,
+    /// <p>Provides details about an Amazon GuardDuty Extended Threat Detection attack sequence. GuardDuty generates an attack sequence finding when multiple events align to a potentially suspicious activity. To receive GuardDuty attack sequence findings in Security Hub, you must have GuardDuty and GuardDuty S3 Protection enabled. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-extended-threat-detection.html">GuardDuty Extended Threat Detection </a> in the <i>Amazon GuardDuty User Guide</i>.</p>
+    pub detection: ::std::option::Option<crate::types::Detection>,
 }
 impl AwsSecurityFinding {
     /// <p>The schema version that a finding is formatted for. The value is <code>2018-10-08</code>.</p>
@@ -470,6 +472,10 @@ impl AwsSecurityFinding {
     pub fn aws_account_name(&self) -> ::std::option::Option<&str> {
         self.aws_account_name.as_deref()
     }
+    /// <p>Provides details about an Amazon GuardDuty Extended Threat Detection attack sequence. GuardDuty generates an attack sequence finding when multiple events align to a potentially suspicious activity. To receive GuardDuty attack sequence findings in Security Hub, you must have GuardDuty and GuardDuty S3 Protection enabled. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-extended-threat-detection.html">GuardDuty Extended Threat Detection </a> in the <i>Amazon GuardDuty User Guide</i>.</p>
+    pub fn detection(&self) -> ::std::option::Option<&crate::types::Detection> {
+        self.detection.as_ref()
+    }
 }
 impl AwsSecurityFinding {
     /// Creates a new builder-style object to manufacture [`AwsSecurityFinding`](crate::types::AwsSecurityFinding).
@@ -526,6 +532,7 @@ pub struct AwsSecurityFindingBuilder {
     pub(crate) generator_details: ::std::option::Option<crate::types::GeneratorDetails>,
     pub(crate) processed_at: ::std::option::Option<::std::string::String>,
     pub(crate) aws_account_name: ::std::option::Option<::std::string::String>,
+    pub(crate) detection: ::std::option::Option<crate::types::Detection>,
 }
 impl AwsSecurityFindingBuilder {
     /// <p>The schema version that a finding is formatted for. The value is <code>2018-10-08</code>.</p>
@@ -1500,6 +1507,20 @@ impl AwsSecurityFindingBuilder {
     pub fn get_aws_account_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_account_name
     }
+    /// <p>Provides details about an Amazon GuardDuty Extended Threat Detection attack sequence. GuardDuty generates an attack sequence finding when multiple events align to a potentially suspicious activity. To receive GuardDuty attack sequence findings in Security Hub, you must have GuardDuty and GuardDuty S3 Protection enabled. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-extended-threat-detection.html">GuardDuty Extended Threat Detection </a> in the <i>Amazon GuardDuty User Guide</i>.</p>
+    pub fn detection(mut self, input: crate::types::Detection) -> Self {
+        self.detection = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Provides details about an Amazon GuardDuty Extended Threat Detection attack sequence. GuardDuty generates an attack sequence finding when multiple events align to a potentially suspicious activity. To receive GuardDuty attack sequence findings in Security Hub, you must have GuardDuty and GuardDuty S3 Protection enabled. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-extended-threat-detection.html">GuardDuty Extended Threat Detection </a> in the <i>Amazon GuardDuty User Guide</i>.</p>
+    pub fn set_detection(mut self, input: ::std::option::Option<crate::types::Detection>) -> Self {
+        self.detection = input;
+        self
+    }
+    /// <p>Provides details about an Amazon GuardDuty Extended Threat Detection attack sequence. GuardDuty generates an attack sequence finding when multiple events align to a potentially suspicious activity. To receive GuardDuty attack sequence findings in Security Hub, you must have GuardDuty and GuardDuty S3 Protection enabled. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-extended-threat-detection.html">GuardDuty Extended Threat Detection </a> in the <i>Amazon GuardDuty User Guide</i>.</p>
+    pub fn get_detection(&self) -> &::std::option::Option<crate::types::Detection> {
+        &self.detection
+    }
     /// Consumes the builder and constructs a [`AwsSecurityFinding`](crate::types::AwsSecurityFinding).
     pub fn build(self) -> crate::types::AwsSecurityFinding {
         crate::types::AwsSecurityFinding {
@@ -1547,6 +1568,7 @@ impl AwsSecurityFindingBuilder {
             generator_details: self.generator_details,
             processed_at: self.processed_at,
             aws_account_name: self.aws_account_name,
+            detection: self.detection,
         }
     }
 }

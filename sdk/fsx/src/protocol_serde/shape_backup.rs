@@ -108,6 +108,13 @@ where
                         "Volume" => {
                             builder = builder.set_volume(crate::protocol_serde::shape_volume::de_volume(tokens)?);
                         }
+                        "SizeInBytes" => {
+                            builder = builder.set_size_in_bytes(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

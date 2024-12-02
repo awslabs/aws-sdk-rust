@@ -42,5 +42,11 @@ pub fn ser_document(
         crate::protocol_serde::shape_document_enrichment_configuration::ser_document_enrichment_configuration(&mut object_12, var_11)?;
         object_12.finish();
     }
+    if let Some(var_13) = &input.media_extraction_configuration {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("mediaExtractionConfiguration").start_object();
+        crate::protocol_serde::shape_media_extraction_configuration::ser_media_extraction_configuration(&mut object_14, var_13)?;
+        object_14.finish();
+    }
     Ok(())
 }

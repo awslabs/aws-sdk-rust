@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttachmentInputEvent {
-    /// <p>A file directly uploaded into a web experience chat.</p>
+    /// <p>This is either a file directly uploaded into a web experience chat or a reference to an existing attachment that is part of a web experience chat.</p>
     pub attachment: ::std::option::Option<crate::types::AttachmentInput>,
 }
 impl AttachmentInputEvent {
-    /// <p>A file directly uploaded into a web experience chat.</p>
+    /// <p>This is either a file directly uploaded into a web experience chat or a reference to an existing attachment that is part of a web experience chat.</p>
     pub fn attachment(&self) -> ::std::option::Option<&crate::types::AttachmentInput> {
         self.attachment.as_ref()
     }
@@ -27,17 +27,17 @@ pub struct AttachmentInputEventBuilder {
     pub(crate) attachment: ::std::option::Option<crate::types::AttachmentInput>,
 }
 impl AttachmentInputEventBuilder {
-    /// <p>A file directly uploaded into a web experience chat.</p>
+    /// <p>This is either a file directly uploaded into a web experience chat or a reference to an existing attachment that is part of a web experience chat.</p>
     pub fn attachment(mut self, input: crate::types::AttachmentInput) -> Self {
         self.attachment = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A file directly uploaded into a web experience chat.</p>
+    /// <p>This is either a file directly uploaded into a web experience chat or a reference to an existing attachment that is part of a web experience chat.</p>
     pub fn set_attachment(mut self, input: ::std::option::Option<crate::types::AttachmentInput>) -> Self {
         self.attachment = input;
         self
     }
-    /// <p>A file directly uploaded into a web experience chat.</p>
+    /// <p>This is either a file directly uploaded into a web experience chat or a reference to an existing attachment that is part of a web experience chat.</p>
     pub fn get_attachment(&self) -> &::std::option::Option<crate::types::AttachmentInput> {
         &self.attachment
     }

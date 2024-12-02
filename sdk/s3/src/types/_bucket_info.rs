@@ -6,13 +6,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BucketInfo {
-    /// <p>The number of Availability Zone that's used for redundancy for the bucket.</p>
+    /// <p>The number of Zone (Availability Zone or Local Zone) that's used for redundancy for the bucket.</p>
     pub data_redundancy: ::std::option::Option<crate::types::DataRedundancy>,
     /// <p>The type of bucket.</p>
     pub r#type: ::std::option::Option<crate::types::BucketType>,
 }
 impl BucketInfo {
-    /// <p>The number of Availability Zone that's used for redundancy for the bucket.</p>
+    /// <p>The number of Zone (Availability Zone or Local Zone) that's used for redundancy for the bucket.</p>
     pub fn data_redundancy(&self) -> ::std::option::Option<&crate::types::DataRedundancy> {
         self.data_redundancy.as_ref()
     }
@@ -36,17 +36,17 @@ pub struct BucketInfoBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::BucketType>,
 }
 impl BucketInfoBuilder {
-    /// <p>The number of Availability Zone that's used for redundancy for the bucket.</p>
+    /// <p>The number of Zone (Availability Zone or Local Zone) that's used for redundancy for the bucket.</p>
     pub fn data_redundancy(mut self, input: crate::types::DataRedundancy) -> Self {
         self.data_redundancy = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of Availability Zone that's used for redundancy for the bucket.</p>
+    /// <p>The number of Zone (Availability Zone or Local Zone) that's used for redundancy for the bucket.</p>
     pub fn set_data_redundancy(mut self, input: ::std::option::Option<crate::types::DataRedundancy>) -> Self {
         self.data_redundancy = input;
         self
     }
-    /// <p>The number of Availability Zone that's used for redundancy for the bucket.</p>
+    /// <p>The number of Zone (Availability Zone or Local Zone) that's used for redundancy for the bucket.</p>
     pub fn get_data_redundancy(&self) -> &::std::option::Option<crate::types::DataRedundancy> {
         &self.data_redundancy
     }

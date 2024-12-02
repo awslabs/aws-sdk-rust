@@ -5,6 +5,8 @@
 pub struct DeleteClusterInput {
     /// <p>The name of the cluster to be deleted</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the multi-Region cluster to be deleted.</p>
+    pub multi_region_cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The user-supplied name of a final cluster snapshot. This is the unique name that identifies the snapshot. MemoryDB creates the snapshot, and then deletes the cluster immediately afterward.</p>
     pub final_snapshot_name: ::std::option::Option<::std::string::String>,
 }
@@ -12,6 +14,10 @@ impl DeleteClusterInput {
     /// <p>The name of the cluster to be deleted</p>
     pub fn cluster_name(&self) -> ::std::option::Option<&str> {
         self.cluster_name.as_deref()
+    }
+    /// <p>The name of the multi-Region cluster to be deleted.</p>
+    pub fn multi_region_cluster_name(&self) -> ::std::option::Option<&str> {
+        self.multi_region_cluster_name.as_deref()
     }
     /// <p>The user-supplied name of a final cluster snapshot. This is the unique name that identifies the snapshot. MemoryDB creates the snapshot, and then deletes the cluster immediately afterward.</p>
     pub fn final_snapshot_name(&self) -> ::std::option::Option<&str> {
@@ -30,6 +36,7 @@ impl DeleteClusterInput {
 #[non_exhaustive]
 pub struct DeleteClusterInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
+    pub(crate) multi_region_cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) final_snapshot_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteClusterInputBuilder {
@@ -47,6 +54,20 @@ impl DeleteClusterInputBuilder {
     /// <p>The name of the cluster to be deleted</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_name
+    }
+    /// <p>The name of the multi-Region cluster to be deleted.</p>
+    pub fn multi_region_cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.multi_region_cluster_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the multi-Region cluster to be deleted.</p>
+    pub fn set_multi_region_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.multi_region_cluster_name = input;
+        self
+    }
+    /// <p>The name of the multi-Region cluster to be deleted.</p>
+    pub fn get_multi_region_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.multi_region_cluster_name
     }
     /// <p>The user-supplied name of a final cluster snapshot. This is the unique name that identifies the snapshot. MemoryDB creates the snapshot, and then deletes the cluster immediately afterward.</p>
     pub fn final_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -68,6 +89,7 @@ impl DeleteClusterInputBuilder {
     ) -> ::std::result::Result<crate::operation::delete_cluster::DeleteClusterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_cluster::DeleteClusterInput {
             cluster_name: self.cluster_name,
+            multi_region_cluster_name: self.multi_region_cluster_name,
             final_snapshot_name: self.final_snapshot_name,
         })
     }

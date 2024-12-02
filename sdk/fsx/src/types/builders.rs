@@ -25,6 +25,8 @@ pub use crate::types::_file_system::FileSystemBuilder;
 
 pub use crate::types::_open_zfs_file_system_configuration::OpenZfsFileSystemConfigurationBuilder;
 
+pub use crate::types::_open_zfs_read_cache_configuration::OpenZfsReadCacheConfigurationBuilder;
+
 pub use crate::types::_disk_iops_configuration::DiskIopsConfigurationBuilder;
 
 pub use crate::types::_ontap_file_system_configuration::OntapFileSystemConfigurationBuilder;

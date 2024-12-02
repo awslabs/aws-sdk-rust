@@ -8,6 +8,8 @@ pub enum AiAgentConfiguration {
     AnswerRecommendationAiAgentConfiguration(crate::types::AnswerRecommendationAiAgentConfiguration),
     /// <p>The configuration for AI Agents of type <code>MANUAL_SEARCH</code>.</p>
     ManualSearchAiAgentConfiguration(crate::types::ManualSearchAiAgentConfiguration),
+    /// <p>The configuration for AI Agents of type SELF_SERVICE.</p>
+    SelfServiceAiAgentConfiguration(crate::types::SelfServiceAiAgentConfiguration),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -46,6 +48,19 @@ impl AiAgentConfiguration {
     /// Returns true if this is a [`ManualSearchAiAgentConfiguration`](crate::types::AiAgentConfiguration::ManualSearchAiAgentConfiguration).
     pub fn is_manual_search_ai_agent_configuration(&self) -> bool {
         self.as_manual_search_ai_agent_configuration().is_ok()
+    }
+    /// Tries to convert the enum instance into [`SelfServiceAiAgentConfiguration`](crate::types::AiAgentConfiguration::SelfServiceAiAgentConfiguration), extracting the inner [`SelfServiceAiAgentConfiguration`](crate::types::SelfServiceAiAgentConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_self_service_ai_agent_configuration(&self) -> ::std::result::Result<&crate::types::SelfServiceAiAgentConfiguration, &Self> {
+        if let AiAgentConfiguration::SelfServiceAiAgentConfiguration(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`SelfServiceAiAgentConfiguration`](crate::types::AiAgentConfiguration::SelfServiceAiAgentConfiguration).
+    pub fn is_self_service_ai_agent_configuration(&self) -> bool {
+        self.as_self_service_ai_agent_configuration().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

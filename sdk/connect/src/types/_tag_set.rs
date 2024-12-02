@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TagSet {
-    /// <p>The tag key in the tagSet.</p>
+    /// <p>The tag key in the TagSet.</p>
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The tag value in the tagSet.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl TagSet {
-    /// <p>The tag key in the tagSet.</p>
+    /// <p>The tag key in the TagSet.</p>
     pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
     }
@@ -34,17 +34,17 @@ pub struct TagSetBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
 }
 impl TagSetBuilder {
-    /// <p>The tag key in the tagSet.</p>
+    /// <p>The tag key in the TagSet.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The tag key in the tagSet.</p>
+    /// <p>The tag key in the TagSet.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
     }
-    /// <p>The tag key in the tagSet.</p>
+    /// <p>The tag key in the TagSet.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.key
     }

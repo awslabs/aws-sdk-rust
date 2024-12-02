@@ -18,6 +18,7 @@
 ///     ResourceType::ClientVpnEndpoint => { /* ... */ },
 ///     ResourceType::CoipPool => { /* ... */ },
 ///     ResourceType::CustomerGateway => { /* ... */ },
+///     ResourceType::DeclarativePoliciesReport => { /* ... */ },
 ///     ResourceType::DedicatedHost => { /* ... */ },
 ///     ResourceType::DhcpOptions => { /* ... */ },
 ///     ResourceType::EgressOnlyInternetGateway => { /* ... */ },
@@ -82,6 +83,7 @@
 ///     ResourceType::TransitGatewayRouteTable => { /* ... */ },
 ///     ResourceType::TransitGatewayRouteTableAnnouncement => { /* ... */ },
 ///     ResourceType::VerifiedAccessEndpoint => { /* ... */ },
+///     ResourceType::VerifiedAccessEndpointTarget => { /* ... */ },
 ///     ResourceType::VerifiedAccessGroup => { /* ... */ },
 ///     ResourceType::VerifiedAccessInstance => { /* ... */ },
 ///     ResourceType::VerifiedAccessPolicy => { /* ... */ },
@@ -138,6 +140,8 @@ pub enum ResourceType {
     CoipPool,
     #[allow(missing_docs)] // documentation missing in model
     CustomerGateway,
+    #[allow(missing_docs)] // documentation missing in model
+    DeclarativePoliciesReport,
     #[allow(missing_docs)] // documentation missing in model
     DedicatedHost,
     #[allow(missing_docs)] // documentation missing in model
@@ -267,6 +271,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     VerifiedAccessEndpoint,
     #[allow(missing_docs)] // documentation missing in model
+    VerifiedAccessEndpointTarget,
+    #[allow(missing_docs)] // documentation missing in model
     VerifiedAccessGroup,
     #[allow(missing_docs)] // documentation missing in model
     VerifiedAccessInstance,
@@ -313,6 +319,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "client-vpn-endpoint" => ResourceType::ClientVpnEndpoint,
             "coip-pool" => ResourceType::CoipPool,
             "customer-gateway" => ResourceType::CustomerGateway,
+            "declarative-policies-report" => ResourceType::DeclarativePoliciesReport,
             "dedicated-host" => ResourceType::DedicatedHost,
             "dhcp-options" => ResourceType::DhcpOptions,
             "egress-only-internet-gateway" => ResourceType::EgressOnlyInternetGateway,
@@ -377,6 +384,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "transit-gateway-route-table" => ResourceType::TransitGatewayRouteTable,
             "transit-gateway-route-table-announcement" => ResourceType::TransitGatewayRouteTableAnnouncement,
             "verified-access-endpoint" => ResourceType::VerifiedAccessEndpoint,
+            "verified-access-endpoint-target" => ResourceType::VerifiedAccessEndpointTarget,
             "verified-access-group" => ResourceType::VerifiedAccessGroup,
             "verified-access-instance" => ResourceType::VerifiedAccessInstance,
             "verified-access-policy" => ResourceType::VerifiedAccessPolicy,
@@ -415,6 +423,7 @@ impl ResourceType {
             ResourceType::ClientVpnEndpoint => "client-vpn-endpoint",
             ResourceType::CoipPool => "coip-pool",
             ResourceType::CustomerGateway => "customer-gateway",
+            ResourceType::DeclarativePoliciesReport => "declarative-policies-report",
             ResourceType::DedicatedHost => "dedicated-host",
             ResourceType::DhcpOptions => "dhcp-options",
             ResourceType::EgressOnlyInternetGateway => "egress-only-internet-gateway",
@@ -479,6 +488,7 @@ impl ResourceType {
             ResourceType::TransitGatewayRouteTable => "transit-gateway-route-table",
             ResourceType::TransitGatewayRouteTableAnnouncement => "transit-gateway-route-table-announcement",
             ResourceType::VerifiedAccessEndpoint => "verified-access-endpoint",
+            ResourceType::VerifiedAccessEndpointTarget => "verified-access-endpoint-target",
             ResourceType::VerifiedAccessGroup => "verified-access-group",
             ResourceType::VerifiedAccessInstance => "verified-access-instance",
             ResourceType::VerifiedAccessPolicy => "verified-access-policy",
@@ -508,6 +518,7 @@ impl ResourceType {
             "client-vpn-endpoint",
             "coip-pool",
             "customer-gateway",
+            "declarative-policies-report",
             "dedicated-host",
             "dhcp-options",
             "egress-only-internet-gateway",
@@ -572,6 +583,7 @@ impl ResourceType {
             "transit-gateway-route-table",
             "transit-gateway-route-table-announcement",
             "verified-access-endpoint",
+            "verified-access-endpoint-target",
             "verified-access-group",
             "verified-access-instance",
             "verified-access-policy",
@@ -618,6 +630,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::ClientVpnEndpoint => write!(f, "client-vpn-endpoint"),
             ResourceType::CoipPool => write!(f, "coip-pool"),
             ResourceType::CustomerGateway => write!(f, "customer-gateway"),
+            ResourceType::DeclarativePoliciesReport => write!(f, "declarative-policies-report"),
             ResourceType::DedicatedHost => write!(f, "dedicated-host"),
             ResourceType::DhcpOptions => write!(f, "dhcp-options"),
             ResourceType::EgressOnlyInternetGateway => write!(f, "egress-only-internet-gateway"),
@@ -684,6 +697,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::TransitGatewayRouteTable => write!(f, "transit-gateway-route-table"),
             ResourceType::TransitGatewayRouteTableAnnouncement => write!(f, "transit-gateway-route-table-announcement"),
             ResourceType::VerifiedAccessEndpoint => write!(f, "verified-access-endpoint"),
+            ResourceType::VerifiedAccessEndpointTarget => write!(f, "verified-access-endpoint-target"),
             ResourceType::VerifiedAccessGroup => write!(f, "verified-access-group"),
             ResourceType::VerifiedAccessInstance => write!(f, "verified-access-instance"),
             ResourceType::VerifiedAccessPolicy => write!(f, "verified-access-policy"),

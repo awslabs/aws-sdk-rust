@@ -81,6 +81,36 @@ pub use crate::types::_knowledge_base_summary::KnowledgeBaseSummaryBuilder;
 
 pub use crate::types::_agent_knowledge_base_summary::AgentKnowledgeBaseSummaryBuilder;
 
+pub use crate::types::_knowledge_base_document_detail::KnowledgeBaseDocumentDetailBuilder;
+
+pub use crate::types::_document_identifier::DocumentIdentifierBuilder;
+
+pub use crate::types::_custom_document_identifier::CustomDocumentIdentifierBuilder;
+
+pub use crate::types::_s3_location::S3LocationBuilder;
+
+pub use crate::types::_knowledge_base_document::KnowledgeBaseDocumentBuilder;
+
+pub use crate::types::_document_content::DocumentContentBuilder;
+
+pub use crate::types::_s3_content::S3ContentBuilder;
+
+pub use crate::types::_custom_content::CustomContentBuilder;
+
+pub use crate::types::_inline_content::InlineContentBuilder;
+
+pub use crate::types::_text_content_doc::TextContentDocBuilder;
+
+pub use crate::types::_byte_content_doc::ByteContentDocBuilder;
+
+pub use crate::types::_custom_s3_location::CustomS3LocationBuilder;
+
+pub use crate::types::_document_metadata::DocumentMetadataBuilder;
+
+pub use crate::types::_metadata_attribute::MetadataAttributeBuilder;
+
+pub use crate::types::_metadata_attribute_value::MetadataAttributeValueBuilder;
+
 pub use crate::types::_ingestion_job::IngestionJobBuilder;
 
 pub use crate::types::_ingestion_job_statistics::IngestionJobStatisticsBuilder;
@@ -218,8 +248,6 @@ pub use crate::types::_transformation_function::TransformationFunctionBuilder;
 pub use crate::types::_transformation_lambda_configuration::TransformationLambdaConfigurationBuilder;
 
 pub use crate::types::_intermediate_storage::IntermediateStorageBuilder;
-
-pub use crate::types::_s3_location::S3LocationBuilder;
 
 pub use crate::types::_chunking_configuration::ChunkingConfigurationBuilder;
 

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetListener`](crate::operation::get_listener::builders::GetListenerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`service_identifier(impl Into<String>)`](crate::operation::get_listener::builders::GetListenerFluentBuilder::service_identifier) / [`set_service_identifier(Option<String>)`](crate::operation::get_listener::builders::GetListenerFluentBuilder::set_service_identifier):<br>required: **true**<br><p>The ID or Amazon Resource Name (ARN) of the service.</p><br>
-    ///   - [`listener_identifier(impl Into<String>)`](crate::operation::get_listener::builders::GetListenerFluentBuilder::listener_identifier) / [`set_listener_identifier(Option<String>)`](crate::operation::get_listener::builders::GetListenerFluentBuilder::set_listener_identifier):<br>required: **true**<br><p>The ID or Amazon Resource Name (ARN) of the listener.</p><br>
+    ///   - [`service_identifier(impl Into<String>)`](crate::operation::get_listener::builders::GetListenerFluentBuilder::service_identifier) / [`set_service_identifier(Option<String>)`](crate::operation::get_listener::builders::GetListenerFluentBuilder::set_service_identifier):<br>required: **true**<br><p>The ID or ARN of the service.</p><br>
+    ///   - [`listener_identifier(impl Into<String>)`](crate::operation::get_listener::builders::GetListenerFluentBuilder::listener_identifier) / [`set_listener_identifier(Option<String>)`](crate::operation::get_listener::builders::GetListenerFluentBuilder::set_listener_identifier):<br>required: **true**<br><p>The ID or ARN of the listener.</p><br>
     /// - On success, responds with [`GetListenerOutput`](crate::operation::get_listener::GetListenerOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::get_listener::GetListenerOutput::arn): <p>The Amazon Resource Name (ARN) of the listener.</p>
     ///   - [`id(Option<String>)`](crate::operation::get_listener::GetListenerOutput::id): <p>The ID of the listener.</p>
@@ -14,8 +14,8 @@ impl super::Client {
     ///   - [`service_arn(Option<String>)`](crate::operation::get_listener::GetListenerOutput::service_arn): <p>The Amazon Resource Name (ARN) of the service.</p>
     ///   - [`service_id(Option<String>)`](crate::operation::get_listener::GetListenerOutput::service_id): <p>The ID of the service.</p>
     ///   - [`default_action(Option<RuleAction>)`](crate::operation::get_listener::GetListenerOutput::default_action): <p>The actions for the default listener rule.</p>
-    ///   - [`created_at(Option<DateTime>)`](crate::operation::get_listener::GetListenerOutput::created_at): <p>The date and time that the listener was created, specified in ISO-8601 format.</p>
-    ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::get_listener::GetListenerOutput::last_updated_at): <p>The date and time that the listener was last updated, specified in ISO-8601 format.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::operation::get_listener::GetListenerOutput::created_at): <p>The date and time that the listener was created, in ISO-8601 format.</p>
+    ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::get_listener::GetListenerOutput::last_updated_at): <p>The date and time that the listener was last updated, in ISO-8601 format.</p>
     /// - On failure, responds with [`SdkError<GetListenerError>`](crate::operation::get_listener::GetListenerError)
     pub fn get_listener(&self) -> crate::operation::get_listener::builders::GetListenerFluentBuilder {
         crate::operation::get_listener::builders::GetListenerFluentBuilder::new(self.handle.clone())

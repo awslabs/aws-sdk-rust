@@ -3,87 +3,93 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetEvaluationJobOutput {
-    /// <p>The name of the model evaluation job.</p>
+    /// <p>The name for the evaluation job.</p>
     pub job_name: ::std::string::String,
-    /// <p>The status of the model evaluation job.</p>
+    /// <p>The current status of the evaluation job.</p>
     pub status: crate::types::EvaluationJobStatus,
-    /// <p>The Amazon Resource Name (ARN) of the model evaluation job.</p>
+    /// <p>The Amazon Resource Name (ARN) of the evaluation job.</p>
     pub job_arn: ::std::string::String,
-    /// <p>The description of the model evaluation job.</p>
+    /// <p>The description of the evaluation job.</p>
     pub job_description: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM service role used in the model evaluation job.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role used in the evaluation job.</p>
     pub role_arn: ::std::string::String,
-    /// <p>The Amazon Resource Name (ARN) of the customer managed key specified when the model evaluation job was created.</p>
+    /// <p>The Amazon Resource Name (ARN) of the customer managed encryption key specified when the evaluation job was created.</p>
     pub customer_encryption_key_id: ::std::option::Option<::std::string::String>,
-    /// <p>The type of model evaluation job.</p>
+    /// <p>Specifies whether the evaluation job is automated or human-based.</p>
     pub job_type: crate::types::EvaluationJobType,
-    /// <p>Contains details about the type of model evaluation job, the metrics used, the task type selected, the datasets used, and any custom metrics you defined.</p>
+    /// <p>Specifies whether the evaluation job is for evaluating a model or evaluating a knowledge base (retrieval and response generation).</p>
+    pub application_type: ::std::option::Option<crate::types::ApplicationType>,
+    /// <p>Contains the configuration details of either an automated or human-based evaluation job.</p>
     pub evaluation_config: ::std::option::Option<crate::types::EvaluationConfig>,
-    /// <p>Details about the models you specified in your model evaluation job.</p>
+    /// <p>Contains the configuration details of the inference model used for the evaluation job.</p>
     pub inference_config: ::std::option::Option<crate::types::EvaluationInferenceConfig>,
-    /// <p>Amazon S3 location for where output data is saved.</p>
+    /// <p>Contains the configuration details of the Amazon S3 bucket for storing the results of the evaluation job.</p>
     pub output_data_config: ::std::option::Option<crate::types::EvaluationOutputDataConfig>,
-    /// <p>When the model evaluation job was created.</p>
+    /// <p>The time the evaluation job was created.</p>
     pub creation_time: ::aws_smithy_types::DateTime,
-    /// <p>When the model evaluation job was last modified.</p>
+    /// <p>The time the evaluation job was last modified.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>An array of strings the specify why the model evaluation job has failed.</p>
+    /// <p>A list of strings that specify why the evaluation job failed to create.</p>
     pub failure_messages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetEvaluationJobOutput {
-    /// <p>The name of the model evaluation job.</p>
+    /// <p>The name for the evaluation job.</p>
     pub fn job_name(&self) -> &str {
         use std::ops::Deref;
         self.job_name.deref()
     }
-    /// <p>The status of the model evaluation job.</p>
+    /// <p>The current status of the evaluation job.</p>
     pub fn status(&self) -> &crate::types::EvaluationJobStatus {
         &self.status
     }
-    /// <p>The Amazon Resource Name (ARN) of the model evaluation job.</p>
+    /// <p>The Amazon Resource Name (ARN) of the evaluation job.</p>
     pub fn job_arn(&self) -> &str {
         use std::ops::Deref;
         self.job_arn.deref()
     }
-    /// <p>The description of the model evaluation job.</p>
+    /// <p>The description of the evaluation job.</p>
     pub fn job_description(&self) -> ::std::option::Option<&str> {
         self.job_description.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM service role used in the model evaluation job.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role used in the evaluation job.</p>
     pub fn role_arn(&self) -> &str {
         use std::ops::Deref;
         self.role_arn.deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the customer managed key specified when the model evaluation job was created.</p>
+    /// <p>The Amazon Resource Name (ARN) of the customer managed encryption key specified when the evaluation job was created.</p>
     pub fn customer_encryption_key_id(&self) -> ::std::option::Option<&str> {
         self.customer_encryption_key_id.as_deref()
     }
-    /// <p>The type of model evaluation job.</p>
+    /// <p>Specifies whether the evaluation job is automated or human-based.</p>
     pub fn job_type(&self) -> &crate::types::EvaluationJobType {
         &self.job_type
     }
-    /// <p>Contains details about the type of model evaluation job, the metrics used, the task type selected, the datasets used, and any custom metrics you defined.</p>
+    /// <p>Specifies whether the evaluation job is for evaluating a model or evaluating a knowledge base (retrieval and response generation).</p>
+    pub fn application_type(&self) -> ::std::option::Option<&crate::types::ApplicationType> {
+        self.application_type.as_ref()
+    }
+    /// <p>Contains the configuration details of either an automated or human-based evaluation job.</p>
     pub fn evaluation_config(&self) -> ::std::option::Option<&crate::types::EvaluationConfig> {
         self.evaluation_config.as_ref()
     }
-    /// <p>Details about the models you specified in your model evaluation job.</p>
+    /// <p>Contains the configuration details of the inference model used for the evaluation job.</p>
     pub fn inference_config(&self) -> ::std::option::Option<&crate::types::EvaluationInferenceConfig> {
         self.inference_config.as_ref()
     }
-    /// <p>Amazon S3 location for where output data is saved.</p>
+    /// <p>Contains the configuration details of the Amazon S3 bucket for storing the results of the evaluation job.</p>
     pub fn output_data_config(&self) -> ::std::option::Option<&crate::types::EvaluationOutputDataConfig> {
         self.output_data_config.as_ref()
     }
-    /// <p>When the model evaluation job was created.</p>
+    /// <p>The time the evaluation job was created.</p>
     pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
         &self.creation_time
     }
-    /// <p>When the model evaluation job was last modified.</p>
+    /// <p>The time the evaluation job was last modified.</p>
     pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
-    /// <p>An array of strings the specify why the model evaluation job has failed.</p>
+    /// <p>A list of strings that specify why the evaluation job failed to create.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failure_messages.is_none()`.
     pub fn failure_messages(&self) -> &[::std::string::String] {
@@ -100,6 +106,7 @@ impl ::std::fmt::Debug for GetEvaluationJobOutput {
         formatter.field("role_arn", &self.role_arn);
         formatter.field("customer_encryption_key_id", &self.customer_encryption_key_id);
         formatter.field("job_type", &self.job_type);
+        formatter.field("application_type", &self.application_type);
         formatter.field("evaluation_config", &self.evaluation_config);
         formatter.field("inference_config", &self.inference_config);
         formatter.field("output_data_config", &self.output_data_config);
@@ -133,6 +140,7 @@ pub struct GetEvaluationJobOutputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) customer_encryption_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_type: ::std::option::Option<crate::types::EvaluationJobType>,
+    pub(crate) application_type: ::std::option::Option<crate::types::ApplicationType>,
     pub(crate) evaluation_config: ::std::option::Option<crate::types::EvaluationConfig>,
     pub(crate) inference_config: ::std::option::Option<crate::types::EvaluationInferenceConfig>,
     pub(crate) output_data_config: ::std::option::Option<crate::types::EvaluationOutputDataConfig>,
@@ -142,180 +150,194 @@ pub struct GetEvaluationJobOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetEvaluationJobOutputBuilder {
-    /// <p>The name of the model evaluation job.</p>
+    /// <p>The name for the evaluation job.</p>
     /// This field is required.
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the model evaluation job.</p>
+    /// <p>The name for the evaluation job.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_name = input;
         self
     }
-    /// <p>The name of the model evaluation job.</p>
+    /// <p>The name for the evaluation job.</p>
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_name
     }
-    /// <p>The status of the model evaluation job.</p>
+    /// <p>The current status of the evaluation job.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::EvaluationJobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the model evaluation job.</p>
+    /// <p>The current status of the evaluation job.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::EvaluationJobStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the model evaluation job.</p>
+    /// <p>The current status of the evaluation job.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::EvaluationJobStatus> {
         &self.status
     }
-    /// <p>The Amazon Resource Name (ARN) of the model evaluation job.</p>
+    /// <p>The Amazon Resource Name (ARN) of the evaluation job.</p>
     /// This field is required.
     pub fn job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the model evaluation job.</p>
+    /// <p>The Amazon Resource Name (ARN) of the evaluation job.</p>
     pub fn set_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the model evaluation job.</p>
+    /// <p>The Amazon Resource Name (ARN) of the evaluation job.</p>
     pub fn get_job_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_arn
     }
-    /// <p>The description of the model evaluation job.</p>
+    /// <p>The description of the evaluation job.</p>
     pub fn job_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The description of the model evaluation job.</p>
+    /// <p>The description of the evaluation job.</p>
     pub fn set_job_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_description = input;
         self
     }
-    /// <p>The description of the model evaluation job.</p>
+    /// <p>The description of the evaluation job.</p>
     pub fn get_job_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_description
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM service role used in the model evaluation job.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role used in the evaluation job.</p>
     /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM service role used in the model evaluation job.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role used in the evaluation job.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM service role used in the model evaluation job.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role used in the evaluation job.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
-    /// <p>The Amazon Resource Name (ARN) of the customer managed key specified when the model evaluation job was created.</p>
+    /// <p>The Amazon Resource Name (ARN) of the customer managed encryption key specified when the evaluation job was created.</p>
     pub fn customer_encryption_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_encryption_key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the customer managed key specified when the model evaluation job was created.</p>
+    /// <p>The Amazon Resource Name (ARN) of the customer managed encryption key specified when the evaluation job was created.</p>
     pub fn set_customer_encryption_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_encryption_key_id = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the customer managed key specified when the model evaluation job was created.</p>
+    /// <p>The Amazon Resource Name (ARN) of the customer managed encryption key specified when the evaluation job was created.</p>
     pub fn get_customer_encryption_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.customer_encryption_key_id
     }
-    /// <p>The type of model evaluation job.</p>
+    /// <p>Specifies whether the evaluation job is automated or human-based.</p>
     /// This field is required.
     pub fn job_type(mut self, input: crate::types::EvaluationJobType) -> Self {
         self.job_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of model evaluation job.</p>
+    /// <p>Specifies whether the evaluation job is automated or human-based.</p>
     pub fn set_job_type(mut self, input: ::std::option::Option<crate::types::EvaluationJobType>) -> Self {
         self.job_type = input;
         self
     }
-    /// <p>The type of model evaluation job.</p>
+    /// <p>Specifies whether the evaluation job is automated or human-based.</p>
     pub fn get_job_type(&self) -> &::std::option::Option<crate::types::EvaluationJobType> {
         &self.job_type
     }
-    /// <p>Contains details about the type of model evaluation job, the metrics used, the task type selected, the datasets used, and any custom metrics you defined.</p>
+    /// <p>Specifies whether the evaluation job is for evaluating a model or evaluating a knowledge base (retrieval and response generation).</p>
+    pub fn application_type(mut self, input: crate::types::ApplicationType) -> Self {
+        self.application_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the evaluation job is for evaluating a model or evaluating a knowledge base (retrieval and response generation).</p>
+    pub fn set_application_type(mut self, input: ::std::option::Option<crate::types::ApplicationType>) -> Self {
+        self.application_type = input;
+        self
+    }
+    /// <p>Specifies whether the evaluation job is for evaluating a model or evaluating a knowledge base (retrieval and response generation).</p>
+    pub fn get_application_type(&self) -> &::std::option::Option<crate::types::ApplicationType> {
+        &self.application_type
+    }
+    /// <p>Contains the configuration details of either an automated or human-based evaluation job.</p>
     /// This field is required.
     pub fn evaluation_config(mut self, input: crate::types::EvaluationConfig) -> Self {
         self.evaluation_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains details about the type of model evaluation job, the metrics used, the task type selected, the datasets used, and any custom metrics you defined.</p>
+    /// <p>Contains the configuration details of either an automated or human-based evaluation job.</p>
     pub fn set_evaluation_config(mut self, input: ::std::option::Option<crate::types::EvaluationConfig>) -> Self {
         self.evaluation_config = input;
         self
     }
-    /// <p>Contains details about the type of model evaluation job, the metrics used, the task type selected, the datasets used, and any custom metrics you defined.</p>
+    /// <p>Contains the configuration details of either an automated or human-based evaluation job.</p>
     pub fn get_evaluation_config(&self) -> &::std::option::Option<crate::types::EvaluationConfig> {
         &self.evaluation_config
     }
-    /// <p>Details about the models you specified in your model evaluation job.</p>
+    /// <p>Contains the configuration details of the inference model used for the evaluation job.</p>
     /// This field is required.
     pub fn inference_config(mut self, input: crate::types::EvaluationInferenceConfig) -> Self {
         self.inference_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Details about the models you specified in your model evaluation job.</p>
+    /// <p>Contains the configuration details of the inference model used for the evaluation job.</p>
     pub fn set_inference_config(mut self, input: ::std::option::Option<crate::types::EvaluationInferenceConfig>) -> Self {
         self.inference_config = input;
         self
     }
-    /// <p>Details about the models you specified in your model evaluation job.</p>
+    /// <p>Contains the configuration details of the inference model used for the evaluation job.</p>
     pub fn get_inference_config(&self) -> &::std::option::Option<crate::types::EvaluationInferenceConfig> {
         &self.inference_config
     }
-    /// <p>Amazon S3 location for where output data is saved.</p>
+    /// <p>Contains the configuration details of the Amazon S3 bucket for storing the results of the evaluation job.</p>
     /// This field is required.
     pub fn output_data_config(mut self, input: crate::types::EvaluationOutputDataConfig) -> Self {
         self.output_data_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Amazon S3 location for where output data is saved.</p>
+    /// <p>Contains the configuration details of the Amazon S3 bucket for storing the results of the evaluation job.</p>
     pub fn set_output_data_config(mut self, input: ::std::option::Option<crate::types::EvaluationOutputDataConfig>) -> Self {
         self.output_data_config = input;
         self
     }
-    /// <p>Amazon S3 location for where output data is saved.</p>
+    /// <p>Contains the configuration details of the Amazon S3 bucket for storing the results of the evaluation job.</p>
     pub fn get_output_data_config(&self) -> &::std::option::Option<crate::types::EvaluationOutputDataConfig> {
         &self.output_data_config
     }
-    /// <p>When the model evaluation job was created.</p>
+    /// <p>The time the evaluation job was created.</p>
     /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>When the model evaluation job was created.</p>
+    /// <p>The time the evaluation job was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
-    /// <p>When the model evaluation job was created.</p>
+    /// <p>The time the evaluation job was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
-    /// <p>When the model evaluation job was last modified.</p>
+    /// <p>The time the evaluation job was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>When the model evaluation job was last modified.</p>
+    /// <p>The time the evaluation job was last modified.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
-    /// <p>When the model evaluation job was last modified.</p>
+    /// <p>The time the evaluation job was last modified.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time
     }
@@ -323,19 +345,19 @@ impl GetEvaluationJobOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_failure_messages`](Self::set_failure_messages).
     ///
-    /// <p>An array of strings the specify why the model evaluation job has failed.</p>
+    /// <p>A list of strings that specify why the evaluation job failed to create.</p>
     pub fn failure_messages(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.failure_messages.unwrap_or_default();
         v.push(input.into());
         self.failure_messages = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of strings the specify why the model evaluation job has failed.</p>
+    /// <p>A list of strings that specify why the evaluation job failed to create.</p>
     pub fn set_failure_messages(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.failure_messages = input;
         self
     }
-    /// <p>An array of strings the specify why the model evaluation job has failed.</p>
+    /// <p>A list of strings that specify why the evaluation job failed to create.</p>
     pub fn get_failure_messages(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.failure_messages
     }
@@ -392,6 +414,7 @@ impl GetEvaluationJobOutputBuilder {
                     "job_type was not specified but it is required when building GetEvaluationJobOutput",
                 )
             })?,
+            application_type: self.application_type,
             evaluation_config: self.evaluation_config,
             inference_config: self.inference_config,
             output_data_config: self.output_data_config,
@@ -417,6 +440,7 @@ impl ::std::fmt::Debug for GetEvaluationJobOutputBuilder {
         formatter.field("role_arn", &self.role_arn);
         formatter.field("customer_encryption_key_id", &self.customer_encryption_key_id);
         formatter.field("job_type", &self.job_type);
+        formatter.field("application_type", &self.application_type);
         formatter.field("evaluation_config", &self.evaluation_config);
         formatter.field("inference_config", &self.inference_config);
         formatter.field("output_data_config", &self.output_data_config);

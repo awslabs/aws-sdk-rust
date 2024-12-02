@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSubnetGroupOutput {
-    /// <p>The newly-created subnet group</p>
+    /// <p>The newly-created subnet group.</p>
     pub subnet_group: ::std::option::Option<crate::types::SubnetGroup>,
     _request_id: Option<String>,
 }
 impl CreateSubnetGroupOutput {
-    /// <p>The newly-created subnet group</p>
+    /// <p>The newly-created subnet group.</p>
     pub fn subnet_group(&self) -> ::std::option::Option<&crate::types::SubnetGroup> {
         self.subnet_group.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct CreateSubnetGroupOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateSubnetGroupOutputBuilder {
-    /// <p>The newly-created subnet group</p>
+    /// <p>The newly-created subnet group.</p>
     pub fn subnet_group(mut self, input: crate::types::SubnetGroup) -> Self {
         self.subnet_group = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The newly-created subnet group</p>
+    /// <p>The newly-created subnet group.</p>
     pub fn set_subnet_group(mut self, input: ::std::option::Option<crate::types::SubnetGroup>) -> Self {
         self.subnet_group = input;
         self
     }
-    /// <p>The newly-created subnet group</p>
+    /// <p>The newly-created subnet group.</p>
     pub fn get_subnet_group(&self) -> &::std::option::Option<crate::types::SubnetGroup> {
         &self.subnet_group
     }

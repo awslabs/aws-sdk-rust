@@ -3,37 +3,61 @@ pub fn ser_update_contact_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_contact::UpdateContactInput,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.description {
-        object.key("Description").string(var_1.as_str());
-    }
-    if let Some(var_2) = &input.name {
-        object.key("Name").string(var_2.as_str());
-    }
-    if let Some(var_3) = &input.references {
+    if let Some(var_1) = &input.customer_endpoint {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("References").start_object();
-        for (key_5, value_6) in var_3 {
+        let mut object_2 = object.key("CustomerEndpoint").start_object();
+        crate::protocol_serde::shape_endpoint::ser_endpoint(&mut object_2, var_1)?;
+        object_2.finish();
+    }
+    if let Some(var_3) = &input.description {
+        object.key("Description").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.name {
+        object.key("Name").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.queue_info {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("QueueInfo").start_object();
+        crate::protocol_serde::shape_queue_info_input::ser_queue_info_input(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.references {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("References").start_object();
+        for (key_9, value_10) in var_7 {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = object_4.key(key_5.as_str()).start_object();
-                crate::protocol_serde::shape_reference::ser_reference(&mut object_7, value_6)?;
-                object_7.finish();
+                let mut object_11 = object_8.key(key_9.as_str()).start_object();
+                crate::protocol_serde::shape_reference::ser_reference(&mut object_11, value_10)?;
+                object_11.finish();
             }
         }
-        object_4.finish();
+        object_8.finish();
     }
-    if let Some(var_8) = &input.segment_attributes {
+    if let Some(var_12) = &input.segment_attributes {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("SegmentAttributes").start_object();
-        for (key_10, value_11) in var_8 {
+        let mut object_13 = object.key("SegmentAttributes").start_object();
+        for (key_14, value_15) in var_12 {
             {
                 #[allow(unused_mut)]
-                let mut object_12 = object_9.key(key_10.as_str()).start_object();
-                crate::protocol_serde::shape_segment_attribute_value::ser_segment_attribute_value(&mut object_12, value_11)?;
-                object_12.finish();
+                let mut object_16 = object_13.key(key_14.as_str()).start_object();
+                crate::protocol_serde::shape_segment_attribute_value::ser_segment_attribute_value(&mut object_16, value_15)?;
+                object_16.finish();
             }
         }
-        object_9.finish();
+        object_13.finish();
+    }
+    if let Some(var_17) = &input.system_endpoint {
+        #[allow(unused_mut)]
+        let mut object_18 = object.key("SystemEndpoint").start_object();
+        crate::protocol_serde::shape_endpoint::ser_endpoint(&mut object_18, var_17)?;
+        object_18.finish();
+    }
+    if let Some(var_19) = &input.user_info {
+        #[allow(unused_mut)]
+        let mut object_20 = object.key("UserInfo").start_object();
+        crate::protocol_serde::shape_user_info::ser_user_info(&mut object_20, var_19)?;
+        object_20.finish();
     }
     Ok(())
 }

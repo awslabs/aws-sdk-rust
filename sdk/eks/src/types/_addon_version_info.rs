@@ -8,6 +8,8 @@ pub struct AddonVersionInfo {
     pub addon_version: ::std::option::Option<::std::string::String>,
     /// <p>The architectures that the version supports.</p>
     pub architecture: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Indicates the compute type of the addon version.</p>
+    pub compute_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An object representing the compatibilities of a version.</p>
     pub compatibilities: ::std::option::Option<::std::vec::Vec<crate::types::Compatibility>>,
     /// <p>Whether the add-on requires configuration.</p>
@@ -25,6 +27,12 @@ impl AddonVersionInfo {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.architecture.is_none()`.
     pub fn architecture(&self) -> &[::std::string::String] {
         self.architecture.as_deref().unwrap_or_default()
+    }
+    /// <p>Indicates the compute type of the addon version.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compute_types.is_none()`.
+    pub fn compute_types(&self) -> &[::std::string::String] {
+        self.compute_types.as_deref().unwrap_or_default()
     }
     /// <p>An object representing the compatibilities of a version.</p>
     ///
@@ -54,6 +62,7 @@ impl AddonVersionInfo {
 pub struct AddonVersionInfoBuilder {
     pub(crate) addon_version: ::std::option::Option<::std::string::String>,
     pub(crate) architecture: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) compute_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) compatibilities: ::std::option::Option<::std::vec::Vec<crate::types::Compatibility>>,
     pub(crate) requires_configuration: ::std::option::Option<bool>,
     pub(crate) requires_iam_permissions: ::std::option::Option<bool>,
@@ -92,6 +101,26 @@ impl AddonVersionInfoBuilder {
     /// <p>The architectures that the version supports.</p>
     pub fn get_architecture(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.architecture
+    }
+    /// Appends an item to `compute_types`.
+    ///
+    /// To override the contents of this collection use [`set_compute_types`](Self::set_compute_types).
+    ///
+    /// <p>Indicates the compute type of the addon version.</p>
+    pub fn compute_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.compute_types.unwrap_or_default();
+        v.push(input.into());
+        self.compute_types = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Indicates the compute type of the addon version.</p>
+    pub fn set_compute_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.compute_types = input;
+        self
+    }
+    /// <p>Indicates the compute type of the addon version.</p>
+    pub fn get_compute_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.compute_types
     }
     /// Appends an item to `compatibilities`.
     ///
@@ -146,6 +175,7 @@ impl AddonVersionInfoBuilder {
         crate::types::AddonVersionInfo {
             addon_version: self.addon_version,
             architecture: self.architecture,
+            compute_types: self.compute_types,
             compatibilities: self.compatibilities,
             requires_configuration: self.requires_configuration.unwrap_or_default(),
             requires_iam_permissions: self.requires_iam_permissions.unwrap_or_default(),

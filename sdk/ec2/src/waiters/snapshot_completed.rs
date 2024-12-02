@@ -212,6 +212,8 @@ impl SnapshotCompletedFluentBuilder {
     /// <li>
     /// <p><code>storage-tier</code> - The storage tier of the snapshot (<code>archive</code> | <code>standard</code>).</p></li>
     /// <li>
+    /// <p><code>transfer-type</code> - The type of operation used to create the snapshot (<code>time-based</code> | <code>standard</code>).</p></li>
+    /// <li>
     /// <p><code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
@@ -251,6 +253,8 @@ impl SnapshotCompletedFluentBuilder {
     /// <li>
     /// <p><code>storage-tier</code> - The storage tier of the snapshot (<code>archive</code> | <code>standard</code>).</p></li>
     /// <li>
+    /// <p><code>transfer-type</code> - The type of operation used to create the snapshot (<code>time-based</code> | <code>standard</code>).</p></li>
+    /// <li>
     /// <p><code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
@@ -289,6 +293,8 @@ impl SnapshotCompletedFluentBuilder {
     /// <p><code>status</code> - The status of the snapshot (<code>pending</code> | <code>completed</code> | <code>error</code>).</p></li>
     /// <li>
     /// <p><code>storage-tier</code> - The storage tier of the snapshot (<code>archive</code> | <code>standard</code>).</p></li>
+    /// <li>
+    /// <p><code>transfer-type</code> - The type of operation used to create the snapshot (<code>time-based</code> | <code>standard</code>).</p></li>
     /// <li>
     /// <p><code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key

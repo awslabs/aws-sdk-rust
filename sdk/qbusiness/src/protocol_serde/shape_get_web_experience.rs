@@ -130,6 +130,11 @@ pub(crate) fn de_get_web_experience(
                         crate::protocol_serde::shape_web_experience_auth_configuration::de_web_experience_auth_configuration(tokens)?,
                     );
                 }
+                "browserExtensionConfiguration" => {
+                    builder = builder.set_browser_extension_configuration(
+                        crate::protocol_serde::shape_browser_extension_configuration::de_browser_extension_configuration(tokens)?,
+                    );
+                }
                 "createdAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),

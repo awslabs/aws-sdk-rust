@@ -22,7 +22,7 @@ impl crate::operation::describe_engine_versions::builders::DescribeEngineVersion
 }
 /// Fluent builder constructing a request to `DescribeEngineVersions`.
 ///
-/// <p>Returns a list of the available engine versions.</p>
+/// <p>Returns a list of the available Redis OSS engine versions.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeEngineVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,31 +114,31 @@ impl DescribeEngineVersionsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_engine_versions::paginator::DescribeEngineVersionsPaginator {
         crate::operation::describe_engine_versions::paginator::DescribeEngineVersionsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The engine version to return. Valid values are either valkey or redis.</p>
+    /// <p>The name of the engine for which to list available versions.</p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine(input.into());
         self
     }
-    /// <p>The engine version to return. Valid values are either valkey or redis.</p>
+    /// <p>The name of the engine for which to list available versions.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine(input);
         self
     }
-    /// <p>The engine version to return. Valid values are either valkey or redis.</p>
+    /// <p>The name of the engine for which to list available versions.</p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_engine()
     }
-    /// <p>The engine version.</p>
+    /// <p>The Redis OSS engine version</p>
     pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine_version(input.into());
         self
     }
-    /// <p>The engine version.</p>
+    /// <p>The Redis OSS engine version</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine_version(input);
         self
     }
-    /// <p>The engine version.</p>
+    /// <p>The Redis OSS engine version</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_engine_version()
     }

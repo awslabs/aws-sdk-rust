@@ -137,8 +137,6 @@ pub(crate) mod shape_update_endpoint;
 
 pub(crate) mod shape_update_event_bus;
 
-pub(crate) mod shape_activate_event_source_input;
-
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
@@ -146,6 +144,10 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
         data
     }
 }
+
+pub(crate) mod shape_access_denied_exception;
+
+pub(crate) mod shape_activate_event_source_input;
 
 pub(crate) mod shape_cancel_replay_input;
 
@@ -269,6 +271,8 @@ pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_test_event_pattern_input;
 
+pub(crate) mod shape_throttling_exception;
+
 pub(crate) mod shape_untag_resource_input;
 
 pub(crate) mod shape_update_api_destination_input;
@@ -291,9 +295,13 @@ pub(crate) mod shape_connection_auth_response_parameters;
 
 pub(crate) mod shape_connection_response_list;
 
+pub(crate) mod shape_connectivity_resource_parameters;
+
 pub(crate) mod shape_create_connection_auth_request_parameters;
 
 pub(crate) mod shape_dead_letter_config;
+
+pub(crate) mod shape_describe_connection_connectivity_parameters;
 
 pub(crate) mod shape_endpoint_event_bus;
 
@@ -361,11 +369,15 @@ pub(crate) mod shape_connection_http_parameters;
 
 pub(crate) mod shape_connection_o_auth_response_parameters;
 
+pub(crate) mod shape_connectivity_resource_configuration_arn;
+
 pub(crate) mod shape_create_connection_api_key_auth_request_parameters;
 
 pub(crate) mod shape_create_connection_basic_auth_request_parameters;
 
 pub(crate) mod shape_create_connection_o_auth_request_parameters;
+
+pub(crate) mod shape_describe_connection_resource_parameters;
 
 pub(crate) mod shape_ecs_parameters;
 

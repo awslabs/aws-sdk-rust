@@ -913,6 +913,20 @@ impl RestoreDBInstanceFromS3FluentBuilder {
     pub fn get_s3_ingestion_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_s3_ingestion_role_arn()
     }
+    /// <p>Specifies the mode of Database Insights to enable for the instance.</p>
+    pub fn database_insights_mode(mut self, input: crate::types::DatabaseInsightsMode) -> Self {
+        self.inner = self.inner.database_insights_mode(input);
+        self
+    }
+    /// <p>Specifies the mode of Database Insights to enable for the instance.</p>
+    pub fn set_database_insights_mode(mut self, input: ::std::option::Option<crate::types::DatabaseInsightsMode>) -> Self {
+        self.inner = self.inner.set_database_insights_mode(input);
+        self
+    }
+    /// <p>Specifies the mode of Database Insights to enable for the instance.</p>
+    pub fn get_database_insights_mode(&self) -> &::std::option::Option<crate::types::DatabaseInsightsMode> {
+        self.inner.get_database_insights_mode()
+    }
     /// <p>Specifies whether to enable Performance Insights for the DB instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub fn enable_performance_insights(mut self, input: bool) -> Self {

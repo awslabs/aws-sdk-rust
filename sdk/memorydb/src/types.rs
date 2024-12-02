@@ -19,6 +19,14 @@ pub use crate::types::_parameter_group::ParameterGroup;
 
 pub use crate::types::_parameter_name_value::ParameterNameValue;
 
+pub use crate::types::_multi_region_cluster::MultiRegionCluster;
+
+pub use crate::types::_regional_cluster::RegionalCluster;
+
+pub use crate::types::_update_strategy::UpdateStrategy;
+
+pub use crate::types::_shard_configuration_request::ShardConfigurationRequest;
+
 pub use crate::types::_cluster::Cluster;
 
 pub use crate::types::_data_tiering_status::DataTieringStatus;
@@ -44,8 +52,6 @@ pub use crate::types::_acls_update_status::AcLsUpdateStatus;
 pub use crate::types::_resharding_status::ReshardingStatus;
 
 pub use crate::types::_slot_migration::SlotMigration;
-
-pub use crate::types::_shard_configuration_request::ShardConfigurationRequest;
 
 pub use crate::types::_replica_configuration_request::ReplicaConfigurationRequest;
 
@@ -121,6 +127,8 @@ mod _filter;
 
 mod _input_authentication_type;
 
+mod _multi_region_cluster;
+
 mod _node;
 
 mod _parameter;
@@ -132,6 +140,8 @@ mod _parameter_name_value;
 mod _pending_modified_service_update;
 
 mod _recurring_charge;
+
+mod _regional_cluster;
 
 mod _replica_configuration_request;
 
@@ -172,6 +182,8 @@ mod _subnet_group;
 mod _tag;
 
 mod _unprocessed_cluster;
+
+mod _update_strategy;
 
 mod _user;
 

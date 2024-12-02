@@ -235,6 +235,8 @@ pub(crate) mod shape_associated_access_policy;
 
 pub(crate) mod shape_cluster;
 
+pub(crate) mod shape_compute_config_request;
+
 pub(crate) mod shape_connector_config_request;
 
 pub(crate) mod shape_create_access_config_request;
@@ -285,6 +287,10 @@ pub(crate) mod shape_pod_identity_association_summaries;
 
 pub(crate) mod shape_remote_access_config;
 
+pub(crate) mod shape_remote_network_config_request;
+
+pub(crate) mod shape_storage_config_request;
+
 pub(crate) mod shape_string_list;
 
 pub(crate) mod shape_tag_map;
@@ -317,13 +323,19 @@ pub(crate) mod shape_addon_info;
 
 pub(crate) mod shape_addon_pod_identity_configuration;
 
+pub(crate) mod shape_block_storage;
+
 pub(crate) mod shape_certificate;
 
 pub(crate) mod shape_cluster_health;
 
+pub(crate) mod shape_compute_config_response;
+
 pub(crate) mod shape_connector_config_response;
 
 pub(crate) mod shape_control_plane_placement_request;
+
+pub(crate) mod shape_elastic_load_balancing;
 
 pub(crate) mod shape_encryption_config_list;
 
@@ -363,6 +375,14 @@ pub(crate) mod shape_pod_identity_association_summary;
 
 pub(crate) mod shape_provider;
 
+pub(crate) mod shape_remote_network_config_response;
+
+pub(crate) mod shape_remote_node_network;
+
+pub(crate) mod shape_remote_pod_network;
+
+pub(crate) mod shape_storage_config_response;
+
 pub(crate) mod shape_taints_list;
 
 pub(crate) mod shape_update_params;
@@ -396,6 +416,10 @@ pub(crate) mod shape_issue_list;
 pub(crate) mod shape_log_setups;
 
 pub(crate) mod shape_oidc;
+
+pub(crate) mod shape_remote_node_network_list;
+
+pub(crate) mod shape_remote_pod_network_list;
 
 pub(crate) mod shape_required_claims_map;
 

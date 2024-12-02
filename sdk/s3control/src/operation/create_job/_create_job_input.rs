@@ -7,7 +7,7 @@ pub struct CreateJobInput {
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether confirmation is required before Amazon S3 runs the job. Confirmation is only required for jobs created through the Amazon S3 console.</p>
     pub confirmation_required: ::std::option::Option<bool>,
-    /// <p>The action that you want this job to perform on every object listed in the manifest. For more information about the available actions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The action that you want this job to perform on every object listed in the manifest. For more information about the available actions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html">Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub operation: ::std::option::Option<crate::types::JobOperation>,
     /// <p>Configuration parameters for the optional job-completion report.</p>
     pub report: ::std::option::Option<crate::types::JobReport>,
@@ -35,7 +35,7 @@ impl CreateJobInput {
     pub fn confirmation_required(&self) -> ::std::option::Option<bool> {
         self.confirmation_required
     }
-    /// <p>The action that you want this job to perform on every object listed in the manifest. For more information about the available actions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The action that you want this job to perform on every object listed in the manifest. For more information about the available actions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html">Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn operation(&self) -> ::std::option::Option<&crate::types::JobOperation> {
         self.operation.as_ref()
     }
@@ -127,18 +127,18 @@ impl CreateJobInputBuilder {
     pub fn get_confirmation_required(&self) -> &::std::option::Option<bool> {
         &self.confirmation_required
     }
-    /// <p>The action that you want this job to perform on every object listed in the manifest. For more information about the available actions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The action that you want this job to perform on every object listed in the manifest. For more information about the available actions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html">Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// This field is required.
     pub fn operation(mut self, input: crate::types::JobOperation) -> Self {
         self.operation = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The action that you want this job to perform on every object listed in the manifest. For more information about the available actions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The action that you want this job to perform on every object listed in the manifest. For more information about the available actions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html">Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn set_operation(mut self, input: ::std::option::Option<crate::types::JobOperation>) -> Self {
         self.operation = input;
         self
     }
-    /// <p>The action that you want this job to perform on every object listed in the manifest. For more information about the available actions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The action that you want this job to perform on every object listed in the manifest. For more information about the available actions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html">Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn get_operation(&self) -> &::std::option::Option<crate::types::JobOperation> {
         &self.operation
     }

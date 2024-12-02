@@ -1,13 +1,13 @@
 [workspace]
 resolver = "2"
 exclude = [
+    "examples/lambda",
     "examples/test-utils",
     "examples/examples",
     "examples/webassembly",
-    "examples/lambda",
     "examples/cross_service",
-    "tests/no-default-features",
-    "tests/webassembly"
+    "tests/webassembly",
+    "tests/no-default-features"
 ]
 members = [
     "sdk/accessanalyzer",
@@ -214,6 +214,7 @@ members = [
     "sdk/inspector2",
     "sdk/inspectorscan",
     "sdk/internetmonitor",
+    "sdk/invoicing",
     "sdk/iot",
     "sdk/iot1clickdevices",
     "sdk/iot1clickprojects",
@@ -299,6 +300,7 @@ members = [
     "sdk/neptunedata",
     "sdk/neptunegraph",
     "sdk/networkfirewall",
+    "sdk/networkflowmonitor",
     "sdk/networkmanager",
     "sdk/networkmonitor",
     "sdk/notifications",
@@ -377,6 +379,7 @@ members = [
     "sdk/schemas",
     "sdk/secretsmanager",
     "sdk/securityhub",
+    "sdk/securityir",
     "sdk/securitylake",
     "sdk/serverlessapplicationrepository",
     "sdk/servicecatalog",

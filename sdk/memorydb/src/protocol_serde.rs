@@ -31,6 +31,8 @@ pub(crate) mod shape_create_acl;
 
 pub(crate) mod shape_create_cluster;
 
+pub(crate) mod shape_create_multi_region_cluster;
+
 pub(crate) mod shape_create_parameter_group;
 
 pub(crate) mod shape_create_snapshot;
@@ -42,6 +44,8 @@ pub(crate) mod shape_create_user;
 pub(crate) mod shape_delete_acl;
 
 pub(crate) mod shape_delete_cluster;
+
+pub(crate) mod shape_delete_multi_region_cluster;
 
 pub(crate) mod shape_delete_parameter_group;
 
@@ -58,6 +62,8 @@ pub(crate) mod shape_describe_clusters;
 pub(crate) mod shape_describe_engine_versions;
 
 pub(crate) mod shape_describe_events;
+
+pub(crate) mod shape_describe_multi_region_clusters;
 
 pub(crate) mod shape_describe_parameter_groups;
 
@@ -77,6 +83,8 @@ pub(crate) mod shape_describe_users;
 
 pub(crate) mod shape_failover_shard;
 
+pub(crate) mod shape_list_allowed_multi_region_cluster_updates;
+
 pub(crate) mod shape_list_allowed_node_type_updates;
 
 pub(crate) mod shape_list_tags;
@@ -92,6 +100,8 @@ pub(crate) mod shape_untag_resource;
 pub(crate) mod shape_update_acl;
 
 pub(crate) mod shape_update_cluster;
+
+pub(crate) mod shape_update_multi_region_cluster;
 
 pub(crate) mod shape_update_parameter_group;
 
@@ -129,6 +139,8 @@ pub(crate) mod shape_create_acl_input;
 
 pub(crate) mod shape_create_cluster_input;
 
+pub(crate) mod shape_create_multi_region_cluster_input;
+
 pub(crate) mod shape_create_parameter_group_input;
 
 pub(crate) mod shape_create_snapshot_input;
@@ -142,6 +154,8 @@ pub(crate) mod shape_default_user_required;
 pub(crate) mod shape_delete_acl_input;
 
 pub(crate) mod shape_delete_cluster_input;
+
+pub(crate) mod shape_delete_multi_region_cluster_input;
 
 pub(crate) mod shape_delete_parameter_group_input;
 
@@ -158,6 +172,8 @@ pub(crate) mod shape_describe_clusters_input;
 pub(crate) mod shape_describe_engine_versions_input;
 
 pub(crate) mod shape_describe_events_input;
+
+pub(crate) mod shape_describe_multi_region_clusters_input;
 
 pub(crate) mod shape_describe_parameter_groups_input;
 
@@ -191,6 +207,8 @@ pub(crate) mod shape_invalid_credentials_exception;
 
 pub(crate) mod shape_invalid_kms_key_fault;
 
+pub(crate) mod shape_invalid_multi_region_cluster_state_fault;
+
 pub(crate) mod shape_invalid_node_state_fault;
 
 pub(crate) mod shape_invalid_parameter_combination_exception;
@@ -207,9 +225,17 @@ pub(crate) mod shape_invalid_user_state_fault;
 
 pub(crate) mod shape_invalid_vpc_network_state_fault;
 
+pub(crate) mod shape_list_allowed_multi_region_cluster_updates_input;
+
 pub(crate) mod shape_list_allowed_node_type_updates_input;
 
 pub(crate) mod shape_list_tags_input;
+
+pub(crate) mod shape_multi_region_cluster_already_exists_fault;
+
+pub(crate) mod shape_multi_region_cluster_not_found_fault;
+
+pub(crate) mod shape_multi_region_parameter_group_not_found_fault;
 
 pub(crate) mod shape_no_operation_fault;
 
@@ -277,6 +303,8 @@ pub(crate) mod shape_update_acl_input;
 
 pub(crate) mod shape_update_cluster_input;
 
+pub(crate) mod shape_update_multi_region_cluster_input;
+
 pub(crate) mod shape_update_parameter_group_input;
 
 pub(crate) mod shape_update_subnet_group_input;
@@ -304,6 +332,10 @@ pub(crate) mod shape_engine_version_info_list;
 pub(crate) mod shape_event_list;
 
 pub(crate) mod shape_filter;
+
+pub(crate) mod shape_multi_region_cluster;
+
+pub(crate) mod shape_multi_region_cluster_list;
 
 pub(crate) mod shape_node_type_list;
 
@@ -369,6 +401,8 @@ pub(crate) mod shape_parameter;
 
 pub(crate) mod shape_recurring_charge_list;
 
+pub(crate) mod shape_regional_cluster_list;
+
 pub(crate) mod shape_reserved_nodes_offering;
 
 pub(crate) mod shape_security_group_membership_list;
@@ -388,6 +422,8 @@ pub(crate) mod shape_acls_update_status;
 pub(crate) mod shape_pending_modified_service_update_list;
 
 pub(crate) mod shape_recurring_charge;
+
+pub(crate) mod shape_regional_cluster;
 
 pub(crate) mod shape_resharding_status;
 

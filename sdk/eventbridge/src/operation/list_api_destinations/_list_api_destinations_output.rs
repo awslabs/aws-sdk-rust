@@ -3,20 +3,24 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListApiDestinationsOutput {
-    /// <p>An array of <code>ApiDestination</code> objects that include information about an API destination.</p>
+    /// <p>An array that includes information about each API destination.</p>
     pub api_destinations: ::std::option::Option<::std::vec::Vec<crate::types::ApiDestination>>,
-    /// <p>A token you can use in a subsequent request to retrieve the next set of results.</p>
+    /// <p>A token indicating there are more results available. If there are no more results, no token is included in the response.</p>
+    /// <p>The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page of results, make the call again using the returned token. Keep all other arguments unchanged.</p>
+    /// <p>Using an expired pagination token results in an <code>HTTP 400 InvalidToken</code> error.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListApiDestinationsOutput {
-    /// <p>An array of <code>ApiDestination</code> objects that include information about an API destination.</p>
+    /// <p>An array that includes information about each API destination.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.api_destinations.is_none()`.
     pub fn api_destinations(&self) -> &[crate::types::ApiDestination] {
         self.api_destinations.as_deref().unwrap_or_default()
     }
-    /// <p>A token you can use in a subsequent request to retrieve the next set of results.</p>
+    /// <p>A token indicating there are more results available. If there are no more results, no token is included in the response.</p>
+    /// <p>The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page of results, make the call again using the returned token. Keep all other arguments unchanged.</p>
+    /// <p>Using an expired pagination token results in an <code>HTTP 400 InvalidToken</code> error.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +50,39 @@ impl ListApiDestinationsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_api_destinations`](Self::set_api_destinations).
     ///
-    /// <p>An array of <code>ApiDestination</code> objects that include information about an API destination.</p>
+    /// <p>An array that includes information about each API destination.</p>
     pub fn api_destinations(mut self, input: crate::types::ApiDestination) -> Self {
         let mut v = self.api_destinations.unwrap_or_default();
         v.push(input);
         self.api_destinations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of <code>ApiDestination</code> objects that include information about an API destination.</p>
+    /// <p>An array that includes information about each API destination.</p>
     pub fn set_api_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApiDestination>>) -> Self {
         self.api_destinations = input;
         self
     }
-    /// <p>An array of <code>ApiDestination</code> objects that include information about an API destination.</p>
+    /// <p>An array that includes information about each API destination.</p>
     pub fn get_api_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApiDestination>> {
         &self.api_destinations
     }
-    /// <p>A token you can use in a subsequent request to retrieve the next set of results.</p>
+    /// <p>A token indicating there are more results available. If there are no more results, no token is included in the response.</p>
+    /// <p>The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page of results, make the call again using the returned token. Keep all other arguments unchanged.</p>
+    /// <p>Using an expired pagination token results in an <code>HTTP 400 InvalidToken</code> error.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A token you can use in a subsequent request to retrieve the next set of results.</p>
+    /// <p>A token indicating there are more results available. If there are no more results, no token is included in the response.</p>
+    /// <p>The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page of results, make the call again using the returned token. Keep all other arguments unchanged.</p>
+    /// <p>Using an expired pagination token results in an <code>HTTP 400 InvalidToken</code> error.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>A token you can use in a subsequent request to retrieve the next set of results.</p>
+    /// <p>A token indicating there are more results available. If there are no more results, no token is included in the response.</p>
+    /// <p>The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page of results, make the call again using the returned token. Keep all other arguments unchanged.</p>
+    /// <p>Using an expired pagination token results in an <code>HTTP 400 InvalidToken</code> error.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

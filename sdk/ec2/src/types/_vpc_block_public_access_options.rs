@@ -24,6 +24,16 @@ pub struct VpcBlockPublicAccessOptions {
     pub reason: ::std::option::Option<::std::string::String>,
     /// <p>The last time the VPC BPA mode was updated.</p>
     pub last_update_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The entity that manages the state of VPC BPA. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>account</code> - The state is managed by the account.</p></li>
+    /// <li>
+    /// <p><code>declarative-policy</code> - The state is managed by a declarative policy and can't be modified by the account.</p></li>
+    /// </ul>
+    pub managed_by: ::std::option::Option<crate::types::ManagedBy>,
+    /// <p>Determines if exclusions are allowed. If you have <a href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html#security-vpc-bpa-exclusions-orgs">enabled VPC BPA at the Organization level</a>, exclusions may be <code>not-allowed</code>. Otherwise, they are <code>allowed</code>.</p>
+    pub exclusions_allowed: ::std::option::Option<crate::types::VpcBlockPublicAccessExclusionsAllowed>,
 }
 impl VpcBlockPublicAccessOptions {
     /// <p>An Amazon Web Services account ID.</p>
@@ -58,6 +68,20 @@ impl VpcBlockPublicAccessOptions {
     pub fn last_update_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_update_timestamp.as_ref()
     }
+    /// <p>The entity that manages the state of VPC BPA. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>account</code> - The state is managed by the account.</p></li>
+    /// <li>
+    /// <p><code>declarative-policy</code> - The state is managed by a declarative policy and can't be modified by the account.</p></li>
+    /// </ul>
+    pub fn managed_by(&self) -> ::std::option::Option<&crate::types::ManagedBy> {
+        self.managed_by.as_ref()
+    }
+    /// <p>Determines if exclusions are allowed. If you have <a href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html#security-vpc-bpa-exclusions-orgs">enabled VPC BPA at the Organization level</a>, exclusions may be <code>not-allowed</code>. Otherwise, they are <code>allowed</code>.</p>
+    pub fn exclusions_allowed(&self) -> ::std::option::Option<&crate::types::VpcBlockPublicAccessExclusionsAllowed> {
+        self.exclusions_allowed.as_ref()
+    }
 }
 impl VpcBlockPublicAccessOptions {
     /// Creates a new builder-style object to manufacture [`VpcBlockPublicAccessOptions`](crate::types::VpcBlockPublicAccessOptions).
@@ -76,6 +100,8 @@ pub struct VpcBlockPublicAccessOptionsBuilder {
     pub(crate) internet_gateway_block_mode: ::std::option::Option<crate::types::InternetGatewayBlockMode>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,
     pub(crate) last_update_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) managed_by: ::std::option::Option<crate::types::ManagedBy>,
+    pub(crate) exclusions_allowed: ::std::option::Option<crate::types::VpcBlockPublicAccessExclusionsAllowed>,
 }
 impl VpcBlockPublicAccessOptionsBuilder {
     /// <p>An Amazon Web Services account ID.</p>
@@ -186,6 +212,52 @@ impl VpcBlockPublicAccessOptionsBuilder {
     pub fn get_last_update_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_update_timestamp
     }
+    /// <p>The entity that manages the state of VPC BPA. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>account</code> - The state is managed by the account.</p></li>
+    /// <li>
+    /// <p><code>declarative-policy</code> - The state is managed by a declarative policy and can't be modified by the account.</p></li>
+    /// </ul>
+    pub fn managed_by(mut self, input: crate::types::ManagedBy) -> Self {
+        self.managed_by = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The entity that manages the state of VPC BPA. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>account</code> - The state is managed by the account.</p></li>
+    /// <li>
+    /// <p><code>declarative-policy</code> - The state is managed by a declarative policy and can't be modified by the account.</p></li>
+    /// </ul>
+    pub fn set_managed_by(mut self, input: ::std::option::Option<crate::types::ManagedBy>) -> Self {
+        self.managed_by = input;
+        self
+    }
+    /// <p>The entity that manages the state of VPC BPA. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>account</code> - The state is managed by the account.</p></li>
+    /// <li>
+    /// <p><code>declarative-policy</code> - The state is managed by a declarative policy and can't be modified by the account.</p></li>
+    /// </ul>
+    pub fn get_managed_by(&self) -> &::std::option::Option<crate::types::ManagedBy> {
+        &self.managed_by
+    }
+    /// <p>Determines if exclusions are allowed. If you have <a href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html#security-vpc-bpa-exclusions-orgs">enabled VPC BPA at the Organization level</a>, exclusions may be <code>not-allowed</code>. Otherwise, they are <code>allowed</code>.</p>
+    pub fn exclusions_allowed(mut self, input: crate::types::VpcBlockPublicAccessExclusionsAllowed) -> Self {
+        self.exclusions_allowed = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Determines if exclusions are allowed. If you have <a href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html#security-vpc-bpa-exclusions-orgs">enabled VPC BPA at the Organization level</a>, exclusions may be <code>not-allowed</code>. Otherwise, they are <code>allowed</code>.</p>
+    pub fn set_exclusions_allowed(mut self, input: ::std::option::Option<crate::types::VpcBlockPublicAccessExclusionsAllowed>) -> Self {
+        self.exclusions_allowed = input;
+        self
+    }
+    /// <p>Determines if exclusions are allowed. If you have <a href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html#security-vpc-bpa-exclusions-orgs">enabled VPC BPA at the Organization level</a>, exclusions may be <code>not-allowed</code>. Otherwise, they are <code>allowed</code>.</p>
+    pub fn get_exclusions_allowed(&self) -> &::std::option::Option<crate::types::VpcBlockPublicAccessExclusionsAllowed> {
+        &self.exclusions_allowed
+    }
     /// Consumes the builder and constructs a [`VpcBlockPublicAccessOptions`](crate::types::VpcBlockPublicAccessOptions).
     pub fn build(self) -> crate::types::VpcBlockPublicAccessOptions {
         crate::types::VpcBlockPublicAccessOptions {
@@ -195,6 +267,8 @@ impl VpcBlockPublicAccessOptionsBuilder {
             internet_gateway_block_mode: self.internet_gateway_block_mode,
             reason: self.reason,
             last_update_timestamp: self.last_update_timestamp,
+            managed_by: self.managed_by,
+            exclusions_allowed: self.exclusions_allowed,
         }
     }
 }

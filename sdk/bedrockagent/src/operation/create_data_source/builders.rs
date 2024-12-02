@@ -22,7 +22,7 @@ impl crate::operation::create_data_source::builders::CreateDataSourceInputBuilde
 }
 /// Fluent builder constructing a request to `CreateDataSource`.
 ///
-/// <p>Creates a data source connector for a knowledge base.</p><important>
+/// <p>Connects a knowledge base to a data source. You specify the configuration for the specific data source service in the <code>dataSourceConfiguration</code> field.</p><important>
 /// <p>You can't change the <code>chunkingConfiguration</code> after you create the data source connector.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

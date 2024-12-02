@@ -252,6 +252,15 @@ pub(crate) fn aws_domain_information_correct_errors(
     builder
 }
 
+pub(crate) fn cloud_watch_direct_query_data_source_correct_errors(
+    mut builder: crate::types::builders::CloudWatchDirectQueryDataSourceBuilder,
+) -> crate::types::builders::CloudWatchDirectQueryDataSourceBuilder {
+    if builder.role_arn.is_none() {
+        builder.role_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn cluster_config_status_correct_errors(
     mut builder: crate::types::builders::ClusterConfigStatusBuilder,
 ) -> crate::types::builders::ClusterConfigStatusBuilder {
@@ -419,6 +428,15 @@ pub(crate) fn package_vending_options_correct_errors(
 ) -> crate::types::builders::PackageVendingOptionsBuilder {
     if builder.vending_enabled.is_none() {
         builder.vending_enabled = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn security_lake_direct_query_data_source_correct_errors(
+    mut builder: crate::types::builders::SecurityLakeDirectQueryDataSourceBuilder,
+) -> crate::types::builders::SecurityLakeDirectQueryDataSourceBuilder {
+    if builder.role_arn.is_none() {
+        builder.role_arn = Some(Default::default())
     }
     builder
 }

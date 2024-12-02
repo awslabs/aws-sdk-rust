@@ -201,6 +201,8 @@ mod put_connect_instance_integration;
 
 mod put_outbound_request_batch;
 
+mod put_profile_outbound_request_batch;
+
 mod resume_campaign;
 
 mod start_campaign;

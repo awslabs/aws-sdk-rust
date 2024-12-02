@@ -683,6 +683,52 @@ impl From<crate::operation::delete_knowledge_base::DeleteKnowledgeBaseError> for
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_knowledge_base_documents::DeleteKnowledgeBaseDocumentsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_knowledge_base_documents::DeleteKnowledgeBaseDocumentsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_knowledge_base_documents::DeleteKnowledgeBaseDocumentsError> for Error {
+    fn from(err: crate::operation::delete_knowledge_base_documents::DeleteKnowledgeBaseDocumentsError) -> Self {
+        match err {
+            crate::operation::delete_knowledge_base_documents::DeleteKnowledgeBaseDocumentsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_knowledge_base_documents::DeleteKnowledgeBaseDocumentsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_knowledge_base_documents::DeleteKnowledgeBaseDocumentsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_knowledge_base_documents::DeleteKnowledgeBaseDocumentsError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::delete_knowledge_base_documents::DeleteKnowledgeBaseDocumentsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_knowledge_base_documents::DeleteKnowledgeBaseDocumentsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_knowledge_base_documents::DeleteKnowledgeBaseDocumentsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_prompt::DeletePromptError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1058,6 +1104,48 @@ impl From<crate::operation::get_knowledge_base::GetKnowledgeBaseError> for Error
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_knowledge_base_documents::GetKnowledgeBaseDocumentsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_knowledge_base_documents::GetKnowledgeBaseDocumentsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_knowledge_base_documents::GetKnowledgeBaseDocumentsError> for Error {
+    fn from(err: crate::operation::get_knowledge_base_documents::GetKnowledgeBaseDocumentsError) -> Self {
+        match err {
+            crate::operation::get_knowledge_base_documents::GetKnowledgeBaseDocumentsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_knowledge_base_documents::GetKnowledgeBaseDocumentsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_knowledge_base_documents::GetKnowledgeBaseDocumentsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_knowledge_base_documents::GetKnowledgeBaseDocumentsError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::get_knowledge_base_documents::GetKnowledgeBaseDocumentsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_knowledge_base_documents::GetKnowledgeBaseDocumentsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_knowledge_base_documents::GetKnowledgeBaseDocumentsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_prompt::GetPromptError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1081,6 +1169,52 @@ impl From<crate::operation::get_prompt::GetPromptError> for Error {
             crate::operation::get_prompt::GetPromptError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_prompt::GetPromptError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_prompt::GetPromptError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::ingest_knowledge_base_documents::IngestKnowledgeBaseDocumentsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::ingest_knowledge_base_documents::IngestKnowledgeBaseDocumentsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::ingest_knowledge_base_documents::IngestKnowledgeBaseDocumentsError> for Error {
+    fn from(err: crate::operation::ingest_knowledge_base_documents::IngestKnowledgeBaseDocumentsError) -> Self {
+        match err {
+            crate::operation::ingest_knowledge_base_documents::IngestKnowledgeBaseDocumentsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::ingest_knowledge_base_documents::IngestKnowledgeBaseDocumentsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::ingest_knowledge_base_documents::IngestKnowledgeBaseDocumentsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::ingest_knowledge_base_documents::IngestKnowledgeBaseDocumentsError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::ingest_knowledge_base_documents::IngestKnowledgeBaseDocumentsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::ingest_knowledge_base_documents::IngestKnowledgeBaseDocumentsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::ingest_knowledge_base_documents::IngestKnowledgeBaseDocumentsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1364,6 +1498,48 @@ impl From<crate::operation::list_ingestion_jobs::ListIngestionJobsError> for Err
             crate::operation::list_ingestion_jobs::ListIngestionJobsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_ingestion_jobs::ListIngestionJobsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_ingestion_jobs::ListIngestionJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_knowledge_base_documents::ListKnowledgeBaseDocumentsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_knowledge_base_documents::ListKnowledgeBaseDocumentsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_knowledge_base_documents::ListKnowledgeBaseDocumentsError> for Error {
+    fn from(err: crate::operation::list_knowledge_base_documents::ListKnowledgeBaseDocumentsError) -> Self {
+        match err {
+            crate::operation::list_knowledge_base_documents::ListKnowledgeBaseDocumentsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_knowledge_base_documents::ListKnowledgeBaseDocumentsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_knowledge_base_documents::ListKnowledgeBaseDocumentsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_knowledge_base_documents::ListKnowledgeBaseDocumentsError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::list_knowledge_base_documents::ListKnowledgeBaseDocumentsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_knowledge_base_documents::ListKnowledgeBaseDocumentsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_knowledge_base_documents::ListKnowledgeBaseDocumentsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

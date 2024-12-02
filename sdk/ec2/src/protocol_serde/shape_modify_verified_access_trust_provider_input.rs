@@ -44,6 +44,11 @@ pub fn ser_modify_verified_access_trust_provider_input_input_input(
     if let Some(var_14) = &input.sse_specification {
         crate::protocol_serde::shape_verified_access_sse_specification_request::ser_verified_access_sse_specification_request(scope_13, var_14)?;
     }
+    #[allow(unused_mut)]
+    let mut scope_15 = writer.prefix("NativeApplicationOidcOptions");
+    if let Some(var_16) = &input.native_application_oidc_options {
+        crate::protocol_serde::shape_modify_verified_access_native_application_oidc_options::ser_modify_verified_access_native_application_oidc_options(scope_15, var_16)?;
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

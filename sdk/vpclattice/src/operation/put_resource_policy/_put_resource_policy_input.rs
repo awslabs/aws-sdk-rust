@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutResourcePolicyInput {
-    /// <p>The ID or Amazon Resource Name (ARN) of the service network or service for which the policy is created.</p>
+    /// <p>The ID or ARN of the service network or service for which the policy is created.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>An IAM policy. The policy string in JSON must not contain newlines or blank lines.</p>
     pub policy: ::std::option::Option<::std::string::String>,
 }
 impl PutResourcePolicyInput {
-    /// <p>The ID or Amazon Resource Name (ARN) of the service network or service for which the policy is created.</p>
+    /// <p>The ID or ARN of the service network or service for which the policy is created.</p>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -33,18 +33,18 @@ pub struct PutResourcePolicyInputBuilder {
     pub(crate) policy: ::std::option::Option<::std::string::String>,
 }
 impl PutResourcePolicyInputBuilder {
-    /// <p>The ID or Amazon Resource Name (ARN) of the service network or service for which the policy is created.</p>
+    /// <p>The ID or ARN of the service network or service for which the policy is created.</p>
     /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service network or service for which the policy is created.</p>
+    /// <p>The ID or ARN of the service network or service for which the policy is created.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service network or service for which the policy is created.</p>
+    /// <p>The ID or ARN of the service network or service for which the policy is created.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }

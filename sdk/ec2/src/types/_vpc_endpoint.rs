@@ -42,6 +42,16 @@ pub struct VpcEndpoint {
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The last error that occurred for endpoint.</p>
     pub last_error: ::std::option::Option<crate::types::LastError>,
+    /// <p>Array of IPv4 prefixes.</p>
+    pub ipv4_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::SubnetIpPrefixes>>,
+    /// <p>Array of IPv6 prefixes.</p>
+    pub ipv6_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::SubnetIpPrefixes>>,
+    /// <p>Reason for the failure.</p>
+    pub failure_reason: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the service network.</p>
+    pub service_network_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the resource configuration.</p>
+    pub resource_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Region where the service is hosted.</p>
     pub service_region: ::std::option::Option<::std::string::String>,
 }
@@ -134,6 +144,30 @@ impl VpcEndpoint {
     pub fn last_error(&self) -> ::std::option::Option<&crate::types::LastError> {
         self.last_error.as_ref()
     }
+    /// <p>Array of IPv4 prefixes.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv4_prefixes.is_none()`.
+    pub fn ipv4_prefixes(&self) -> &[crate::types::SubnetIpPrefixes] {
+        self.ipv4_prefixes.as_deref().unwrap_or_default()
+    }
+    /// <p>Array of IPv6 prefixes.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv6_prefixes.is_none()`.
+    pub fn ipv6_prefixes(&self) -> &[crate::types::SubnetIpPrefixes] {
+        self.ipv6_prefixes.as_deref().unwrap_or_default()
+    }
+    /// <p>Reason for the failure.</p>
+    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the service network.</p>
+    pub fn service_network_arn(&self) -> ::std::option::Option<&str> {
+        self.service_network_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource configuration.</p>
+    pub fn resource_configuration_arn(&self) -> ::std::option::Option<&str> {
+        self.resource_configuration_arn.as_deref()
+    }
     /// <p>The Region where the service is hosted.</p>
     pub fn service_region(&self) -> ::std::option::Option<&str> {
         self.service_region.as_deref()
@@ -169,6 +203,11 @@ pub struct VpcEndpointBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) last_error: ::std::option::Option<crate::types::LastError>,
+    pub(crate) ipv4_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::SubnetIpPrefixes>>,
+    pub(crate) ipv6_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::SubnetIpPrefixes>>,
+    pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) service_network_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_configuration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) service_region: ::std::option::Option<::std::string::String>,
 }
 impl VpcEndpointBuilder {
@@ -474,6 +513,88 @@ impl VpcEndpointBuilder {
     pub fn get_last_error(&self) -> &::std::option::Option<crate::types::LastError> {
         &self.last_error
     }
+    /// Appends an item to `ipv4_prefixes`.
+    ///
+    /// To override the contents of this collection use [`set_ipv4_prefixes`](Self::set_ipv4_prefixes).
+    ///
+    /// <p>Array of IPv4 prefixes.</p>
+    pub fn ipv4_prefixes(mut self, input: crate::types::SubnetIpPrefixes) -> Self {
+        let mut v = self.ipv4_prefixes.unwrap_or_default();
+        v.push(input);
+        self.ipv4_prefixes = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Array of IPv4 prefixes.</p>
+    pub fn set_ipv4_prefixes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubnetIpPrefixes>>) -> Self {
+        self.ipv4_prefixes = input;
+        self
+    }
+    /// <p>Array of IPv4 prefixes.</p>
+    pub fn get_ipv4_prefixes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubnetIpPrefixes>> {
+        &self.ipv4_prefixes
+    }
+    /// Appends an item to `ipv6_prefixes`.
+    ///
+    /// To override the contents of this collection use [`set_ipv6_prefixes`](Self::set_ipv6_prefixes).
+    ///
+    /// <p>Array of IPv6 prefixes.</p>
+    pub fn ipv6_prefixes(mut self, input: crate::types::SubnetIpPrefixes) -> Self {
+        let mut v = self.ipv6_prefixes.unwrap_or_default();
+        v.push(input);
+        self.ipv6_prefixes = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Array of IPv6 prefixes.</p>
+    pub fn set_ipv6_prefixes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubnetIpPrefixes>>) -> Self {
+        self.ipv6_prefixes = input;
+        self
+    }
+    /// <p>Array of IPv6 prefixes.</p>
+    pub fn get_ipv6_prefixes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubnetIpPrefixes>> {
+        &self.ipv6_prefixes
+    }
+    /// <p>Reason for the failure.</p>
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.failure_reason = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Reason for the failure.</p>
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.failure_reason = input;
+        self
+    }
+    /// <p>Reason for the failure.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
+    }
+    /// <p>The Amazon Resource Name (ARN) of the service network.</p>
+    pub fn service_network_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.service_network_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the service network.</p>
+    pub fn set_service_network_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.service_network_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the service network.</p>
+    pub fn get_service_network_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_network_arn
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource configuration.</p>
+    pub fn resource_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_configuration_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource configuration.</p>
+    pub fn set_resource_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_configuration_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource configuration.</p>
+    pub fn get_resource_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_configuration_arn
+    }
     /// <p>The Region where the service is hosted.</p>
     pub fn service_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_region = ::std::option::Option::Some(input.into());
@@ -510,6 +631,11 @@ impl VpcEndpointBuilder {
             tags: self.tags,
             owner_id: self.owner_id,
             last_error: self.last_error,
+            ipv4_prefixes: self.ipv4_prefixes,
+            ipv6_prefixes: self.ipv6_prefixes,
+            failure_reason: self.failure_reason,
+            service_network_arn: self.service_network_arn,
+            resource_configuration_arn: self.resource_configuration_arn,
             service_region: self.service_region,
         }
     }

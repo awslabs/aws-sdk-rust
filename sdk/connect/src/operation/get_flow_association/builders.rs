@@ -123,16 +123,34 @@ impl GetFlowAssociationFluentBuilder {
         self.inner.get_instance_id()
     }
     /// <p>The identifier of the resource.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Web Services End User Messaging SMS phone number ARN when using <code>SMS_PHONE_NUMBER</code></p></li>
+    /// <li>
+    /// <p>Amazon Web Services End User Messaging Social phone number ARN when using <code>WHATSAPP_MESSAGING_PHONE_NUMBER</code></p></li>
+    /// </ul>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_id(input.into());
         self
     }
     /// <p>The identifier of the resource.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Web Services End User Messaging SMS phone number ARN when using <code>SMS_PHONE_NUMBER</code></p></li>
+    /// <li>
+    /// <p>Amazon Web Services End User Messaging Social phone number ARN when using <code>WHATSAPP_MESSAGING_PHONE_NUMBER</code></p></li>
+    /// </ul>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_id(input);
         self
     }
     /// <p>The identifier of the resource.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Web Services End User Messaging SMS phone number ARN when using <code>SMS_PHONE_NUMBER</code></p></li>
+    /// <li>
+    /// <p>Amazon Web Services End User Messaging Social phone number ARN when using <code>WHATSAPP_MESSAGING_PHONE_NUMBER</code></p></li>
+    /// </ul>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_id()
     }

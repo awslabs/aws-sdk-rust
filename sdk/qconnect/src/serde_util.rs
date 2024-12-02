@@ -29,6 +29,30 @@ pub(crate) fn deactivate_message_template_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_next_message_output_output_correct_errors(
+    mut builder: crate::operation::get_next_message::builders::GetNextMessageOutputBuilder,
+) -> crate::operation::get_next_message::builders::GetNextMessageOutputBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::MessageType>().ok()
+    }
+    if builder.response.is_none() {
+        builder.response = {
+            let builder = crate::types::builders::MessageOutputBuilder::default();
+            crate::serde_util::message_output_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.request_message_id.is_none() {
+        builder.request_message_id = Some(Default::default())
+    }
+    if builder.conversation_state.is_none() {
+        builder.conversation_state = {
+            let builder = crate::types::builders::ConversationStateBuilder::default();
+            crate::serde_util::conversation_state_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn get_recommendations_output_output_correct_errors(
     mut builder: crate::operation::get_recommendations::builders::GetRecommendationsOutputBuilder,
 ) -> crate::operation::get_recommendations::builders::GetRecommendationsOutputBuilder {
@@ -52,6 +76,24 @@ pub(crate) fn list_ai_agents_output_output_correct_errors(
 ) -> crate::operation::list_ai_agents::builders::ListAiAgentsOutputBuilder {
     if builder.ai_agent_summaries.is_none() {
         builder.ai_agent_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_ai_guardrail_versions_output_output_correct_errors(
+    mut builder: crate::operation::list_ai_guardrail_versions::builders::ListAiGuardrailVersionsOutputBuilder,
+) -> crate::operation::list_ai_guardrail_versions::builders::ListAiGuardrailVersionsOutputBuilder {
+    if builder.ai_guardrail_version_summaries.is_none() {
+        builder.ai_guardrail_version_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_ai_guardrails_output_output_correct_errors(
+    mut builder: crate::operation::list_ai_guardrails::builders::ListAiGuardrailsOutputBuilder,
+) -> crate::operation::list_ai_guardrails::builders::ListAiGuardrailsOutputBuilder {
+    if builder.ai_guardrail_summaries.is_none() {
+        builder.ai_guardrail_summaries = Some(Default::default())
     }
     builder
 }
@@ -146,6 +188,15 @@ pub(crate) fn list_message_templates_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_messages_output_output_correct_errors(
+    mut builder: crate::operation::list_messages::builders::ListMessagesOutputBuilder,
+) -> crate::operation::list_messages::builders::ListMessagesOutputBuilder {
+    if builder.messages.is_none() {
+        builder.messages = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_quick_responses_output_output_correct_errors(
     mut builder: crate::operation::list_quick_responses::builders::ListQuickResponsesOutputBuilder,
 ) -> crate::operation::list_quick_responses::builders::ListQuickResponsesOutputBuilder {
@@ -230,6 +281,18 @@ pub(crate) fn search_sessions_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn send_message_output_output_correct_errors(
+    mut builder: crate::operation::send_message::builders::SendMessageOutputBuilder,
+) -> crate::operation::send_message::builders::SendMessageOutputBuilder {
+    if builder.request_message_id.is_none() {
+        builder.request_message_id = Some(Default::default())
+    }
+    if builder.next_message_token.is_none() {
+        builder.next_message_token = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn start_content_upload_output_output_correct_errors(
     mut builder: crate::operation::start_content_upload::builders::StartContentUploadOutputBuilder,
 ) -> crate::operation::start_content_upload::builders::StartContentUploadOutputBuilder {
@@ -266,6 +329,33 @@ pub(crate) fn update_session_data_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn message_output_correct_errors(
+    mut builder: crate::types::builders::MessageOutputBuilder,
+) -> crate::types::builders::MessageOutputBuilder {
+    if builder.value.is_none() {
+        builder.value = Some(crate::types::MessageData::Unknown)
+    }
+    if builder.message_id.is_none() {
+        builder.message_id = Some(Default::default())
+    }
+    if builder.participant.is_none() {
+        builder.participant = "no value was set".parse::<crate::types::Participant>().ok()
+    }
+    if builder.timestamp.is_none() {
+        builder.timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn conversation_state_correct_errors(
+    mut builder: crate::types::builders::ConversationStateBuilder,
+) -> crate::types::builders::ConversationStateBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ConversationStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn ai_agent_data_correct_errors(mut builder: crate::types::builders::AiAgentDataBuilder) -> crate::types::builders::AiAgentDataBuilder {
     if builder.assistant_id.is_none() {
         builder.assistant_id = Some(Default::default())
@@ -290,6 +380,36 @@ pub(crate) fn ai_agent_data_correct_errors(mut builder: crate::types::builders::
     }
     if builder.visibility_status.is_none() {
         builder.visibility_status = "no value was set".parse::<crate::types::VisibilityStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn ai_guardrail_data_correct_errors(
+    mut builder: crate::types::builders::AiGuardrailDataBuilder,
+) -> crate::types::builders::AiGuardrailDataBuilder {
+    if builder.assistant_id.is_none() {
+        builder.assistant_id = Some(Default::default())
+    }
+    if builder.assistant_arn.is_none() {
+        builder.assistant_arn = Some(Default::default())
+    }
+    if builder.ai_guardrail_arn.is_none() {
+        builder.ai_guardrail_arn = Some(Default::default())
+    }
+    if builder.ai_guardrail_id.is_none() {
+        builder.ai_guardrail_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.visibility_status.is_none() {
+        builder.visibility_status = "no value was set".parse::<crate::types::VisibilityStatus>().ok()
+    }
+    if builder.blocked_input_messaging.is_none() {
+        builder.blocked_input_messaging = Some(Default::default())
+    }
+    if builder.blocked_outputs_messaging.is_none() {
+        builder.blocked_outputs_messaging = Some(Default::default())
     }
     builder
 }
@@ -710,6 +830,57 @@ pub(crate) fn ai_agent_summary_correct_errors(
     }
     if builder.visibility_status.is_none() {
         builder.visibility_status = "no value was set".parse::<crate::types::VisibilityStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn ai_guardrail_content_policy_config_correct_errors(
+    mut builder: crate::types::builders::AiGuardrailContentPolicyConfigBuilder,
+) -> crate::types::builders::AiGuardrailContentPolicyConfigBuilder {
+    if builder.filters_config.is_none() {
+        builder.filters_config = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn ai_guardrail_contextual_grounding_policy_config_correct_errors(
+    mut builder: crate::types::builders::AiGuardrailContextualGroundingPolicyConfigBuilder,
+) -> crate::types::builders::AiGuardrailContextualGroundingPolicyConfigBuilder {
+    if builder.filters_config.is_none() {
+        builder.filters_config = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn ai_guardrail_summary_correct_errors(
+    mut builder: crate::types::builders::AiGuardrailSummaryBuilder,
+) -> crate::types::builders::AiGuardrailSummaryBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.assistant_id.is_none() {
+        builder.assistant_id = Some(Default::default())
+    }
+    if builder.assistant_arn.is_none() {
+        builder.assistant_arn = Some(Default::default())
+    }
+    if builder.ai_guardrail_id.is_none() {
+        builder.ai_guardrail_id = Some(Default::default())
+    }
+    if builder.ai_guardrail_arn.is_none() {
+        builder.ai_guardrail_arn = Some(Default::default())
+    }
+    if builder.visibility_status.is_none() {
+        builder.visibility_status = "no value was set".parse::<crate::types::VisibilityStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn ai_guardrail_topic_policy_config_correct_errors(
+    mut builder: crate::types::builders::AiGuardrailTopicPolicyConfigBuilder,
+) -> crate::types::builders::AiGuardrailTopicPolicyConfigBuilder {
+    if builder.topics_config.is_none() {
+        builder.topics_config = Some(Default::default())
     }
     builder
 }
@@ -1224,6 +1395,93 @@ pub(crate) fn fixed_size_chunking_configuration_correct_errors(
     }
     if builder.overlap_percentage.is_none() {
         builder.overlap_percentage = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn guardrail_content_filter_config_correct_errors(
+    mut builder: crate::types::builders::GuardrailContentFilterConfigBuilder,
+) -> crate::types::builders::GuardrailContentFilterConfigBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::GuardrailContentFilterType>().ok()
+    }
+    if builder.input_strength.is_none() {
+        builder.input_strength = "no value was set".parse::<crate::types::GuardrailFilterStrength>().ok()
+    }
+    if builder.output_strength.is_none() {
+        builder.output_strength = "no value was set".parse::<crate::types::GuardrailFilterStrength>().ok()
+    }
+    builder
+}
+
+pub(crate) fn guardrail_contextual_grounding_filter_config_correct_errors(
+    mut builder: crate::types::builders::GuardrailContextualGroundingFilterConfigBuilder,
+) -> crate::types::builders::GuardrailContextualGroundingFilterConfigBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::GuardrailContextualGroundingFilterType>().ok()
+    }
+    if builder.threshold.is_none() {
+        builder.threshold = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn guardrail_managed_words_config_correct_errors(
+    mut builder: crate::types::builders::GuardrailManagedWordsConfigBuilder,
+) -> crate::types::builders::GuardrailManagedWordsConfigBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::GuardrailManagedWordsType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn guardrail_pii_entity_config_correct_errors(
+    mut builder: crate::types::builders::GuardrailPiiEntityConfigBuilder,
+) -> crate::types::builders::GuardrailPiiEntityConfigBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::GuardrailPiiEntityType>().ok()
+    }
+    if builder.action.is_none() {
+        builder.action = "no value was set".parse::<crate::types::GuardrailSensitiveInformationAction>().ok()
+    }
+    builder
+}
+
+pub(crate) fn guardrail_regex_config_correct_errors(
+    mut builder: crate::types::builders::GuardrailRegexConfigBuilder,
+) -> crate::types::builders::GuardrailRegexConfigBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.pattern.is_none() {
+        builder.pattern = Some(Default::default())
+    }
+    if builder.action.is_none() {
+        builder.action = "no value was set".parse::<crate::types::GuardrailSensitiveInformationAction>().ok()
+    }
+    builder
+}
+
+pub(crate) fn guardrail_topic_config_correct_errors(
+    mut builder: crate::types::builders::GuardrailTopicConfigBuilder,
+) -> crate::types::builders::GuardrailTopicConfigBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.definition.is_none() {
+        builder.definition = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::GuardrailTopicType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn guardrail_word_config_correct_errors(
+    mut builder: crate::types::builders::GuardrailWordConfigBuilder,
+) -> crate::types::builders::GuardrailWordConfigBuilder {
+    if builder.text.is_none() {
+        builder.text = Some(Default::default())
     }
     builder
 }

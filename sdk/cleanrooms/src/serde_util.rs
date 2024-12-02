@@ -2298,6 +2298,21 @@ pub(crate) fn analysis_template_validation_status_detail_correct_errors(
     builder
 }
 
+pub(crate) fn athena_table_reference_correct_errors(
+    mut builder: crate::types::builders::AthenaTableReferenceBuilder,
+) -> crate::types::builders::AthenaTableReferenceBuilder {
+    if builder.work_group.is_none() {
+        builder.work_group = Some(Default::default())
+    }
+    if builder.database_name.is_none() {
+        builder.database_name = Some(Default::default())
+    }
+    if builder.table_name.is_none() {
+        builder.table_name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn billed_resource_utilization_correct_errors(
     mut builder: crate::types::builders::BilledResourceUtilizationBuilder,
 ) -> crate::types::builders::BilledResourceUtilizationBuilder {
@@ -2379,6 +2394,30 @@ pub(crate) fn schema_status_detail_correct_errors(
     }
     if builder.analysis_type.is_none() {
         builder.analysis_type = "no value was set".parse::<crate::types::AnalysisType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn snowflake_table_reference_correct_errors(
+    mut builder: crate::types::builders::SnowflakeTableReferenceBuilder,
+) -> crate::types::builders::SnowflakeTableReferenceBuilder {
+    if builder.secret_arn.is_none() {
+        builder.secret_arn = Some(Default::default())
+    }
+    if builder.account_identifier.is_none() {
+        builder.account_identifier = Some(Default::default())
+    }
+    if builder.database_name.is_none() {
+        builder.database_name = Some(Default::default())
+    }
+    if builder.table_name.is_none() {
+        builder.table_name = Some(Default::default())
+    }
+    if builder.schema_name.is_none() {
+        builder.schema_name = Some(Default::default())
+    }
+    if builder.table_schema.is_none() {
+        builder.table_schema = Some(crate::types::SnowflakeTableSchema::Unknown)
     }
     builder
 }
@@ -2649,6 +2688,18 @@ pub(crate) fn differential_privacy_privacy_budget_aggregation_correct_errors(
     }
     if builder.remaining_count.is_none() {
         builder.remaining_count = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn snowflake_table_schema_v1_correct_errors(
+    mut builder: crate::types::builders::SnowflakeTableSchemaV1Builder,
+) -> crate::types::builders::SnowflakeTableSchemaV1Builder {
+    if builder.column_name.is_none() {
+        builder.column_name = Some(Default::default())
+    }
+    if builder.column_type.is_none() {
+        builder.column_type = Some(Default::default())
     }
     builder
 }

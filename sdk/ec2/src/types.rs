@@ -441,6 +441,8 @@ pub use crate::types::_icmp_type_code::IcmpTypeCode;
 
 pub use crate::types::_rule_action::RuleAction;
 
+pub use crate::types::_image_criterion_request::ImageCriterionRequest;
+
 pub use crate::types::_iam_instance_profile_association::IamInstanceProfileAssociation;
 
 pub use crate::types::_iam_instance_profile_association_state::IamInstanceProfileAssociationState;
@@ -635,6 +637,10 @@ pub use crate::types::_ip_address_type::IpAddressType;
 
 pub use crate::types::_vpc_block_public_access_options::VpcBlockPublicAccessOptions;
 
+pub use crate::types::_vpc_block_public_access_exclusions_allowed::VpcBlockPublicAccessExclusionsAllowed;
+
+pub use crate::types::_managed_by::ManagedBy;
+
 pub use crate::types::_internet_gateway_block_mode::InternetGatewayBlockMode;
 
 pub use crate::types::_vpc_block_public_access_state::VpcBlockPublicAccessState;
@@ -653,6 +659,8 @@ pub use crate::types::_volume_modification_state::VolumeModificationState;
 
 pub use crate::types::_verified_access_trust_provider::VerifiedAccessTrustProvider;
 
+pub use crate::types::_native_application_oidc_options::NativeApplicationOidcOptions;
+
 pub use crate::types::_verified_access_sse_specification_response::VerifiedAccessSseSpecificationResponse;
 
 pub use crate::types::_device_options::DeviceOptions;
@@ -664,6 +672,8 @@ pub use crate::types::_device_trust_provider_type::DeviceTrustProviderType;
 pub use crate::types::_user_trust_provider_type::UserTrustProviderType;
 
 pub use crate::types::_trust_provider_type::TrustProviderType;
+
+pub use crate::types::_modify_verified_access_native_application_oidc_options::ModifyVerifiedAccessNativeApplicationOidcOptions;
 
 pub use crate::types::_verified_access_sse_specification_request::VerifiedAccessSseSpecificationRequest;
 
@@ -695,11 +705,21 @@ pub use crate::types::_verified_access_log_s3_destination_options::VerifiedAcces
 
 pub use crate::types::_verified_access_instance::VerifiedAccessInstance;
 
+pub use crate::types::_verified_access_instance_custom_sub_domain::VerifiedAccessInstanceCustomSubDomain;
+
 pub use crate::types::_verified_access_trust_provider_condensed::VerifiedAccessTrustProviderCondensed;
 
 pub use crate::types::_verified_access_group::VerifiedAccessGroup;
 
 pub use crate::types::_verified_access_endpoint::VerifiedAccessEndpoint;
+
+pub use crate::types::_verified_access_endpoint_cidr_options::VerifiedAccessEndpointCidrOptions;
+
+pub use crate::types::_verified_access_endpoint_protocol::VerifiedAccessEndpointProtocol;
+
+pub use crate::types::_verified_access_endpoint_port_range::VerifiedAccessEndpointPortRange;
+
+pub use crate::types::_verified_access_endpoint_rds_options::VerifiedAccessEndpointRdsOptions;
 
 pub use crate::types::_verified_access_endpoint_status::VerifiedAccessEndpointStatus;
 
@@ -707,13 +727,17 @@ pub use crate::types::_verified_access_endpoint_status_code::VerifiedAccessEndpo
 
 pub use crate::types::_verified_access_endpoint_eni_options::VerifiedAccessEndpointEniOptions;
 
-pub use crate::types::_verified_access_endpoint_protocol::VerifiedAccessEndpointProtocol;
-
 pub use crate::types::_verified_access_endpoint_load_balancer_options::VerifiedAccessEndpointLoadBalancerOptions;
 
 pub use crate::types::_verified_access_endpoint_attachment_type::VerifiedAccessEndpointAttachmentType;
 
 pub use crate::types::_verified_access_endpoint_type::VerifiedAccessEndpointType;
+
+pub use crate::types::_modify_verified_access_endpoint_cidr_options::ModifyVerifiedAccessEndpointCidrOptions;
+
+pub use crate::types::_modify_verified_access_endpoint_port_range::ModifyVerifiedAccessEndpointPortRange;
+
+pub use crate::types::_modify_verified_access_endpoint_rds_options::ModifyVerifiedAccessEndpointRdsOptions;
 
 pub use crate::types::_modify_verified_access_endpoint_eni_options::ModifyVerifiedAccessEndpointEniOptions;
 
@@ -1025,6 +1049,8 @@ pub use crate::types::_maintenance_details::MaintenanceDetails;
 
 pub use crate::types::_vpn_connection_device_type::VpnConnectionDeviceType;
 
+pub use crate::types::_verified_access_endpoint_target::VerifiedAccessEndpointTarget;
+
 pub use crate::types::_transit_gateway_route_table_propagation::TransitGatewayRouteTablePropagation;
 
 pub use crate::types::_transit_gateway_propagation_state::TransitGatewayPropagationState;
@@ -1203,6 +1229,10 @@ pub use crate::types::_athena_integration::AthenaIntegration;
 
 pub use crate::types::_partition_load_frequency::PartitionLoadFrequency;
 
+pub use crate::types::_attribute_summary::AttributeSummary;
+
+pub use crate::types::_regional_summary::RegionalSummary;
+
 pub use crate::types::_coip_address_usage::CoipAddressUsage;
 
 pub use crate::types::_instance_usage::InstanceUsage;
@@ -1222,6 +1252,14 @@ pub use crate::types::_data_query::DataQuery;
 pub use crate::types::_ipv6_cidr_association::Ipv6CidrAssociation;
 
 pub use crate::types::_associated_role::AssociatedRole;
+
+pub use crate::types::_image_criterion::ImageCriterion;
+
+pub use crate::types::_verified_access_instance_open_vpn_client_configuration::VerifiedAccessInstanceOpenVpnClientConfiguration;
+
+pub use crate::types::_verified_access_instance_open_vpn_client_configuration_route::VerifiedAccessInstanceOpenVpnClientConfigurationRoute;
+
+pub use crate::types::_verified_access_instance_user_trust_provider_client_configuration::VerifiedAccessInstanceUserTrustProviderClientConfiguration;
 
 pub use crate::types::_export_task_s3_location::ExportTaskS3Location;
 
@@ -1256,6 +1294,8 @@ pub use crate::types::_fast_launch_resource_type::FastLaunchResourceType;
 pub use crate::types::_fast_launch_launch_template_specification_request::FastLaunchLaunchTemplateSpecificationRequest;
 
 pub use crate::types::_fast_launch_snapshot_configuration_request::FastLaunchSnapshotConfigurationRequest;
+
+pub use crate::types::_allowed_images_settings_enabled_state::AllowedImagesSettingsEnabledState;
 
 pub use crate::types::_address_transfer::AddressTransfer;
 
@@ -1304,6 +1344,8 @@ pub use crate::types::_disable_fast_snapshot_restore_state_error_item::DisableFa
 pub use crate::types::_disable_fast_snapshot_restore_state_error::DisableFastSnapshotRestoreStateError;
 
 pub use crate::types::_disable_fast_snapshot_restore_success_item::DisableFastSnapshotRestoreSuccessItem;
+
+pub use crate::types::_allowed_images_settings_disabled_state::AllowedImagesSettingsDisabledState;
 
 pub use crate::types::_volume_attachment_state::VolumeAttachmentState;
 
@@ -1357,6 +1399,8 @@ pub use crate::types::_service_state::ServiceState;
 
 pub use crate::types::_vpc_endpoint::VpcEndpoint;
 
+pub use crate::types::_subnet_ip_prefixes::SubnetIpPrefixes;
+
 pub use crate::types::_last_error::LastError;
 
 pub use crate::types::_dns_entry::DnsEntry;
@@ -1376,6 +1420,8 @@ pub use crate::types::_connection_notification::ConnectionNotification;
 pub use crate::types::_connection_notification_state::ConnectionNotificationState;
 
 pub use crate::types::_connection_notification_type::ConnectionNotificationType;
+
+pub use crate::types::_vpc_endpoint_association::VpcEndpointAssociation;
 
 pub use crate::types::_classic_link_dns_support::ClassicLinkDnsSupport;
 
@@ -1939,6 +1985,10 @@ pub use crate::types::_dhcp_options::DhcpOptions;
 
 pub use crate::types::_dhcp_configuration::DhcpConfiguration;
 
+pub use crate::types::_declarative_policies_report::DeclarativePoliciesReport;
+
+pub use crate::types::_report_state::ReportState;
+
 pub use crate::types::_customer_gateway::CustomerGateway;
 
 pub use crate::types::_coip_pool::CoipPool;
@@ -2085,9 +2135,17 @@ pub use crate::types::_vpn_connection_options_specification::VpnConnectionOption
 
 pub use crate::types::_vpn_tunnel_options_specification::VpnTunnelOptionsSpecification;
 
+pub use crate::types::_create_verified_access_native_application_oidc_options::CreateVerifiedAccessNativeApplicationOidcOptions;
+
 pub use crate::types::_create_verified_access_trust_provider_device_options::CreateVerifiedAccessTrustProviderDeviceOptions;
 
 pub use crate::types::_create_verified_access_trust_provider_oidc_options::CreateVerifiedAccessTrustProviderOidcOptions;
+
+pub use crate::types::_create_verified_access_endpoint_cidr_options::CreateVerifiedAccessEndpointCidrOptions;
+
+pub use crate::types::_create_verified_access_endpoint_port_range::CreateVerifiedAccessEndpointPortRange;
+
+pub use crate::types::_create_verified_access_endpoint_rds_options::CreateVerifiedAccessEndpointRdsOptions;
 
 pub use crate::types::_create_verified_access_endpoint_eni_options::CreateVerifiedAccessEndpointEniOptions;
 
@@ -2295,6 +2353,10 @@ mod _allocation_strategy;
 
 mod _allocation_type;
 
+mod _allowed_images_settings_disabled_state;
+
+mod _allowed_images_settings_enabled_state;
+
 mod _allowed_principal;
 
 mod _allows_multiple_instance_types;
@@ -2354,6 +2416,8 @@ mod _attachment_ena_srd_udp_specification;
 mod _attachment_status;
 
 mod _attribute_boolean_value;
+
+mod _attribute_summary;
 
 mod _attribute_value;
 
@@ -2609,9 +2673,17 @@ mod _create_transit_gateway_peering_attachment_request_options;
 
 mod _create_transit_gateway_vpc_attachment_request_options;
 
+mod _create_verified_access_endpoint_cidr_options;
+
 mod _create_verified_access_endpoint_eni_options;
 
 mod _create_verified_access_endpoint_load_balancer_options;
+
+mod _create_verified_access_endpoint_port_range;
+
+mod _create_verified_access_endpoint_rds_options;
+
+mod _create_verified_access_native_application_oidc_options;
 
 mod _create_verified_access_trust_provider_device_options;
 
@@ -2634,6 +2706,8 @@ mod _data_query;
 mod _data_response;
 
 mod _datafeed_subscription_state;
+
+mod _declarative_policies_report;
 
 mod _default_instance_metadata_endpoint_state;
 
@@ -2996,6 +3070,10 @@ mod _image_attribute_name;
 mod _image_block_public_access_disabled_state;
 
 mod _image_block_public_access_enabled_state;
+
+mod _image_criterion;
+
+mod _image_criterion_request;
 
 mod _image_disk_container;
 
@@ -3487,6 +3565,8 @@ mod _mac_host;
 
 mod _maintenance_details;
 
+mod _managed_by;
+
 mod _managed_prefix_list;
 
 mod _market_type;
@@ -3521,9 +3601,17 @@ mod _modify_transit_gateway_options;
 
 mod _modify_transit_gateway_vpc_attachment_request_options;
 
+mod _modify_verified_access_endpoint_cidr_options;
+
 mod _modify_verified_access_endpoint_eni_options;
 
 mod _modify_verified_access_endpoint_load_balancer_options;
+
+mod _modify_verified_access_endpoint_port_range;
+
+mod _modify_verified_access_endpoint_rds_options;
+
+mod _modify_verified_access_native_application_oidc_options;
 
 mod _modify_verified_access_trust_provider_device_options;
 
@@ -3548,6 +3636,8 @@ mod _nat_gateway_address;
 mod _nat_gateway_address_status;
 
 mod _nat_gateway_state;
+
+mod _native_application_oidc_options;
 
 mod _network_acl;
 
@@ -3785,6 +3875,8 @@ mod _referenced_security_group;
 
 mod _region;
 
+mod _regional_summary;
+
 mod _register_instance_tag_attribute_request;
 
 mod _remove_ipam_operating_region;
@@ -3800,6 +3892,8 @@ mod _replace_root_volume_task_state;
 mod _replacement_strategy;
 
 mod _report_instance_reason_codes;
+
+mod _report_state;
 
 mod _report_status_type;
 
@@ -4063,6 +4157,8 @@ mod _subnet_cidr_reservation_type;
 
 mod _subnet_configuration;
 
+mod _subnet_ip_prefixes;
+
 mod _subnet_ipv6_cidr_block_association;
 
 mod _subnet_state;
@@ -4315,15 +4411,23 @@ mod _verified_access_endpoint;
 
 mod _verified_access_endpoint_attachment_type;
 
+mod _verified_access_endpoint_cidr_options;
+
 mod _verified_access_endpoint_eni_options;
 
 mod _verified_access_endpoint_load_balancer_options;
 
+mod _verified_access_endpoint_port_range;
+
 mod _verified_access_endpoint_protocol;
+
+mod _verified_access_endpoint_rds_options;
 
 mod _verified_access_endpoint_status;
 
 mod _verified_access_endpoint_status_code;
+
+mod _verified_access_endpoint_target;
 
 mod _verified_access_endpoint_type;
 
@@ -4331,7 +4435,15 @@ mod _verified_access_group;
 
 mod _verified_access_instance;
 
+mod _verified_access_instance_custom_sub_domain;
+
 mod _verified_access_instance_logging_configuration;
+
+mod _verified_access_instance_open_vpn_client_configuration;
+
+mod _verified_access_instance_open_vpn_client_configuration_route;
+
+mod _verified_access_instance_user_trust_provider_client_configuration;
 
 mod _verified_access_log_cloud_watch_logs_destination;
 
@@ -4409,6 +4521,8 @@ mod _vpc_block_public_access_exclusion;
 
 mod _vpc_block_public_access_exclusion_state;
 
+mod _vpc_block_public_access_exclusions_allowed;
+
 mod _vpc_block_public_access_options;
 
 mod _vpc_block_public_access_state;
@@ -4422,6 +4536,8 @@ mod _vpc_cidr_block_state_code;
 mod _vpc_classic_link;
 
 mod _vpc_endpoint;
+
+mod _vpc_endpoint_association;
 
 mod _vpc_endpoint_connection;
 

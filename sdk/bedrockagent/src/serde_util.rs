@@ -608,6 +608,15 @@ pub(crate) fn list_ingestion_jobs_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_knowledge_base_documents_output_output_correct_errors(
+    mut builder: crate::operation::list_knowledge_base_documents::builders::ListKnowledgeBaseDocumentsOutputBuilder,
+) -> crate::operation::list_knowledge_base_documents::builders::ListKnowledgeBaseDocumentsOutputBuilder {
+    if builder.document_details.is_none() {
+        builder.document_details = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_knowledge_bases_output_output_correct_errors(
     mut builder: crate::operation::list_knowledge_bases::builders::ListKnowledgeBasesOutputBuilder,
 ) -> crate::operation::list_knowledge_bases::builders::ListKnowledgeBasesOutputBuilder {
@@ -1323,6 +1332,27 @@ pub(crate) fn ingestion_job_summary_correct_errors(
     builder
 }
 
+pub(crate) fn knowledge_base_document_detail_correct_errors(
+    mut builder: crate::types::builders::KnowledgeBaseDocumentDetailBuilder,
+) -> crate::types::builders::KnowledgeBaseDocumentDetailBuilder {
+    if builder.knowledge_base_id.is_none() {
+        builder.knowledge_base_id = Some(Default::default())
+    }
+    if builder.data_source_id.is_none() {
+        builder.data_source_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::DocumentStatus>().ok()
+    }
+    if builder.identifier.is_none() {
+        builder.identifier = {
+            let builder = crate::types::builders::DocumentIdentifierBuilder::default();
+            crate::serde_util::document_identifier_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn knowledge_base_summary_correct_errors(
     mut builder: crate::types::builders::KnowledgeBaseSummaryBuilder,
 ) -> crate::types::builders::KnowledgeBaseSummaryBuilder {
@@ -1442,6 +1472,15 @@ pub(crate) fn custom_transformation_configuration_correct_errors(
     }
     if builder.transformations.is_none() {
         builder.transformations = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn document_identifier_correct_errors(
+    mut builder: crate::types::builders::DocumentIdentifierBuilder,
+) -> crate::types::builders::DocumentIdentifierBuilder {
+    if builder.data_source_type.is_none() {
+        builder.data_source_type = "no value was set".parse::<crate::types::ContentDataSourceType>().ok()
     }
     builder
 }
@@ -1681,6 +1720,15 @@ pub(crate) fn confluence_source_configuration_correct_errors(
     }
     if builder.credentials_secret_arn.is_none() {
         builder.credentials_secret_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn custom_document_identifier_correct_errors(
+    mut builder: crate::types::builders::CustomDocumentIdentifierBuilder,
+) -> crate::types::builders::CustomDocumentIdentifierBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
     }
     builder
 }
@@ -1989,6 +2037,13 @@ pub(crate) fn redis_enterprise_cloud_field_mapping_correct_errors(
     builder
 }
 
+pub(crate) fn s3_location_correct_errors(mut builder: crate::types::builders::S3LocationBuilder) -> crate::types::builders::S3LocationBuilder {
+    if builder.uri.is_none() {
+        builder.uri = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn salesforce_source_configuration_correct_errors(
     mut builder: crate::types::builders::SalesforceSourceConfigurationBuilder,
 ) -> crate::types::builders::SalesforceSourceConfigurationBuilder {
@@ -2264,13 +2319,6 @@ pub(crate) fn retrieval_flow_node_configuration_correct_errors(
 ) -> crate::types::builders::RetrievalFlowNodeConfigurationBuilder {
     if builder.service_configuration.is_none() {
         builder.service_configuration = Some(crate::types::RetrievalFlowNodeServiceConfiguration::Unknown)
-    }
-    builder
-}
-
-pub(crate) fn s3_location_correct_errors(mut builder: crate::types::builders::S3LocationBuilder) -> crate::types::builders::S3LocationBuilder {
-    if builder.uri.is_none() {
-        builder.uri = Some(Default::default())
     }
     builder
 }

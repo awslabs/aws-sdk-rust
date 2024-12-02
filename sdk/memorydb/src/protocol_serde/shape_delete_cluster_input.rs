@@ -6,8 +6,11 @@ pub fn ser_delete_cluster_input_input(
     if let Some(var_1) = &input.cluster_name {
         object.key("ClusterName").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.final_snapshot_name {
-        object.key("FinalSnapshotName").string(var_2.as_str());
+    if let Some(var_2) = &input.multi_region_cluster_name {
+        object.key("MultiRegionClusterName").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.final_snapshot_name {
+        object.key("FinalSnapshotName").string(var_3.as_str());
     }
     Ok(())
 }

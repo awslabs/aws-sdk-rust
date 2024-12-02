@@ -147,6 +147,20 @@ impl RetrieveFluentBuilder {
     pub fn get_retrieval_configuration(&self) -> &::std::option::Option<crate::types::KnowledgeBaseRetrievalConfiguration> {
         self.inner.get_retrieval_configuration()
     }
+    /// <p>Guardrail settings.</p>
+    pub fn guardrail_configuration(mut self, input: crate::types::GuardrailConfiguration) -> Self {
+        self.inner = self.inner.guardrail_configuration(input);
+        self
+    }
+    /// <p>Guardrail settings.</p>
+    pub fn set_guardrail_configuration(mut self, input: ::std::option::Option<crate::types::GuardrailConfiguration>) -> Self {
+        self.inner = self.inner.set_guardrail_configuration(input);
+        self
+    }
+    /// <p>Guardrail settings.</p>
+    pub fn get_guardrail_configuration(&self) -> &::std::option::Option<crate::types::GuardrailConfiguration> {
+        self.inner.get_guardrail_configuration()
+    }
     /// <p>If there are more results than can fit in the response, the response returns a <code>nextToken</code>. Use this token in the <code>nextToken</code> field of another request to retrieve the next batch of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

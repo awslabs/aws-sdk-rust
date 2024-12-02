@@ -5,6 +5,22 @@ pub use crate::types::_gender::Gender;
 
 pub use crate::types::_party_type::PartyType;
 
+pub use crate::types::_event_trigger_limits::EventTriggerLimits;
+
+pub use crate::types::_period::Period;
+
+pub use crate::types::_period_unit::PeriodUnit;
+
+pub use crate::types::_event_trigger_condition::EventTriggerCondition;
+
+pub use crate::types::_event_trigger_logical_operator::EventTriggerLogicalOperator;
+
+pub use crate::types::_event_trigger_dimension::EventTriggerDimension;
+
+pub use crate::types::_object_attribute::ObjectAttribute;
+
+pub use crate::types::_comparison_operator::ComparisonOperator;
+
 pub use crate::types::_rule_based_matching_response::RuleBasedMatchingResponse;
 
 pub use crate::types::_exporting_config::ExportingConfig;
@@ -152,6 +168,8 @@ pub use crate::types::_s3_exporting_location::S3ExportingLocation;
 pub use crate::types::_job_stats::JobStats;
 
 pub use crate::types::_identity_resolution_job_status::IdentityResolutionJobStatus;
+
+pub use crate::types::_event_trigger_summary_item::EventTriggerSummaryItem;
 
 pub use crate::types::_event_stream_summary::EventStreamSummary;
 
@@ -305,6 +323,8 @@ mod _calculated_attribute_dimension;
 
 mod _calculated_attribute_value;
 
+mod _comparison_operator;
+
 mod _condition_overrides;
 
 mod _conditions;
@@ -342,6 +362,16 @@ mod _event_stream_destination_status;
 mod _event_stream_state;
 
 mod _event_stream_summary;
+
+mod _event_trigger_condition;
+
+mod _event_trigger_dimension;
+
+mod _event_trigger_limits;
+
+mod _event_trigger_logical_operator;
+
+mod _event_trigger_summary_item;
 
 mod _exporting_config;
 
@@ -423,6 +453,8 @@ mod _matching_response;
 
 mod _matching_rule;
 
+mod _object_attribute;
+
 mod _object_filter;
 
 mod _object_type_field;
@@ -434,6 +466,10 @@ mod _operator;
 mod _operator_properties_keys;
 
 mod _party_type;
+
+mod _period;
+
+mod _period_unit;
 
 mod _profile;
 

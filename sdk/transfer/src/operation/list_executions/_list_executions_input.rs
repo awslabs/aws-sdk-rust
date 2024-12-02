@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListExecutionsInput {
-    /// <p>Specifies the maximum number of executions to return.</p>
+    /// <p>The maximum number of items to return.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p><code>ListExecutions</code> returns the <code>NextToken</code> parameter in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional executions.</p>
     /// <p>This is useful for pagination, for instance. If you have 100 executions for a workflow, you might only want to list first 10. If so, call the API by specifying the <code>max-results</code>:</p>
@@ -16,7 +16,7 @@ pub struct ListExecutionsInput {
     pub workflow_id: ::std::option::Option<::std::string::String>,
 }
 impl ListExecutionsInput {
-    /// <p>Specifies the maximum number of executions to return.</p>
+    /// <p>The maximum number of items to return.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -50,17 +50,17 @@ pub struct ListExecutionsInputBuilder {
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,
 }
 impl ListExecutionsInputBuilder {
-    /// <p>Specifies the maximum number of executions to return.</p>
+    /// <p>The maximum number of items to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the maximum number of executions to return.</p>
+    /// <p>The maximum number of items to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>Specifies the maximum number of executions to return.</p>
+    /// <p>The maximum number of items to return.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

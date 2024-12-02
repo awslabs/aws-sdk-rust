@@ -22,5 +22,20 @@ pub fn ser_create_verified_access_endpoint_eni_options(
             ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
+    #[allow(unused_mut)]
+    let mut scope_7 = writer.prefix("PortRange");
+    if let Some(var_8) = &input.port_ranges {
+        if !var_8.is_empty() {
+            let mut list_10 = scope_7.start_list(true, Some("item"));
+            for item_9 in var_8 {
+                #[allow(unused_mut)]
+                let mut entry_11 = list_10.entry();
+                crate::protocol_serde::shape_create_verified_access_endpoint_port_range::ser_create_verified_access_endpoint_port_range(
+                    entry_11, item_9,
+                )?;
+            }
+            list_10.finish();
+        }
+    }
     Ok(())
 }

@@ -15,6 +15,10 @@ pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExce
 
 pub use crate::types::error::_license_not_found_exception::LicenseNotFoundException;
 
+pub use crate::types::error::_media_too_large_exception::MediaTooLargeException;
+
+pub use crate::types::error::_external_resource_exception::ExternalResourceException;
+
 /// Error type for the `ChatOutputStreamError` operation.
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
@@ -205,9 +209,13 @@ mod _access_denied_exception;
 
 mod _conflict_exception;
 
+mod _external_resource_exception;
+
 mod _internal_server_exception;
 
 mod _license_not_found_exception;
+
+mod _media_too_large_exception;
 
 mod _resource_not_found_exception;
 

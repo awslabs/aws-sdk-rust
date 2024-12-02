@@ -25,6 +25,11 @@ pub fn ser_modify_verified_access_instance_input_input_input(
     if let Some(var_8) = &input.client_token {
         scope_7.string(var_8);
     }
+    #[allow(unused_mut)]
+    let mut scope_9 = writer.prefix("CidrEndpointsCustomSubDomain");
+    if let Some(var_10) = &input.cidr_endpoints_custom_sub_domain {
+        scope_9.string(var_10);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

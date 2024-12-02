@@ -13,6 +13,7 @@
 /// # let locationtype = unimplemented!();
 /// match locationtype {
 ///     LocationType::AvailabilityZone => { /* ... */ },
+///     LocationType::LocalZone => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -42,6 +43,8 @@
 pub enum LocationType {
     #[allow(missing_docs)] // documentation missing in model
     AvailabilityZone,
+    #[allow(missing_docs)] // documentation missing in model
+    LocalZone,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -50,6 +53,7 @@ impl ::std::convert::From<&str> for LocationType {
     fn from(s: &str) -> Self {
         match s {
             "AvailabilityZone" => LocationType::AvailabilityZone,
+            "LocalZone" => LocationType::LocalZone,
             other => LocationType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -66,12 +70,13 @@ impl LocationType {
     pub fn as_str(&self) -> &str {
         match self {
             LocationType::AvailabilityZone => "AvailabilityZone",
+            LocationType::LocalZone => "LocalZone",
             LocationType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AvailabilityZone"]
+        &["AvailabilityZone", "LocalZone"]
     }
 }
 impl ::std::convert::AsRef<str> for LocationType {
@@ -95,6 +100,7 @@ impl ::std::fmt::Display for LocationType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             LocationType::AvailabilityZone => write!(f, "AvailabilityZone"),
+            LocationType::LocalZone => write!(f, "LocalZone"),
             LocationType::Unknown(value) => write!(f, "{}", value),
         }
     }

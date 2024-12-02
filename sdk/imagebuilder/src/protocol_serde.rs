@@ -89,6 +89,8 @@ pub(crate) mod shape_get_lifecycle_execution;
 
 pub(crate) mod shape_get_lifecycle_policy;
 
+pub(crate) mod shape_get_marketplace_resource;
+
 pub(crate) mod shape_get_workflow;
 
 pub(crate) mod shape_get_workflow_execution;
@@ -204,6 +206,8 @@ pub(crate) mod shape_create_lifecycle_policy_input;
 pub(crate) mod shape_create_workflow_input;
 
 pub(crate) mod shape_forbidden_exception;
+
+pub(crate) mod shape_get_marketplace_resource_input;
 
 pub(crate) mod shape_idempotent_parameter_mismatch_exception;
 
@@ -481,6 +485,8 @@ pub(crate) mod shape_os_version_list;
 
 pub(crate) mod shape_output_resources;
 
+pub(crate) mod shape_product_code_list;
+
 pub(crate) mod shape_resource_tag_map;
 
 pub(crate) mod shape_s3_export_configuration;
@@ -542,6 +548,8 @@ pub(crate) mod shape_lifecycle_policy_detail_exclusion_rules_amis_last_launched;
 pub(crate) mod shape_lifecycle_policy_resource_selection_recipes;
 
 pub(crate) mod shape_package_vulnerability_details;
+
+pub(crate) mod shape_product_code_list_item;
 
 pub(crate) mod shape_region_list;
 

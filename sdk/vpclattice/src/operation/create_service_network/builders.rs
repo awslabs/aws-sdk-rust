@@ -188,4 +188,18 @@ impl CreateServiceNetworkFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
+    /// <p>Specify if the service network should be enabled for sharing.</p>
+    pub fn sharing_config(mut self, input: crate::types::SharingConfig) -> Self {
+        self.inner = self.inner.sharing_config(input);
+        self
+    }
+    /// <p>Specify if the service network should be enabled for sharing.</p>
+    pub fn set_sharing_config(mut self, input: ::std::option::Option<crate::types::SharingConfig>) -> Self {
+        self.inner = self.inner.set_sharing_config(input);
+        self
+    }
+    /// <p>Specify if the service network should be enabled for sharing.</p>
+    pub fn get_sharing_config(&self) -> &::std::option::Option<crate::types::SharingConfig> {
+        self.inner.get_sharing_config()
+    }
 }

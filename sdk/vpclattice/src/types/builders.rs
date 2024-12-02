@@ -19,6 +19,10 @@ pub use crate::types::_dns_entry::DnsEntryBuilder;
 
 pub use crate::types::_service_network_service_association_summary::ServiceNetworkServiceAssociationSummaryBuilder;
 
+pub use crate::types::_service_network_resource_association_summary::ServiceNetworkResourceAssociationSummaryBuilder;
+
+pub use crate::types::_sharing_config::SharingConfigBuilder;
+
 pub use crate::types::_service_network_summary::ServiceNetworkSummaryBuilder;
 
 pub use crate::types::_service_summary::ServiceSummaryBuilder;
@@ -37,9 +41,23 @@ pub use crate::types::_path_match::PathMatchBuilder;
 
 pub use crate::types::_rule_summary::RuleSummaryBuilder;
 
+pub use crate::types::_resource_gateway_summary::ResourceGatewaySummaryBuilder;
+
+pub use crate::types::_resource_endpoint_association_summary::ResourceEndpointAssociationSummaryBuilder;
+
+pub use crate::types::_arn_resource::ArnResourceBuilder;
+
+pub use crate::types::_ip_resource::IpResourceBuilder;
+
+pub use crate::types::_dns_resource::DnsResourceBuilder;
+
+pub use crate::types::_resource_configuration_summary::ResourceConfigurationSummaryBuilder;
+
 pub use crate::types::_listener_summary::ListenerSummaryBuilder;
 
 pub use crate::types::_access_log_subscription_summary::AccessLogSubscriptionSummaryBuilder;
+
+pub use crate::types::_service_network_endpoint_association::ServiceNetworkEndpointAssociationBuilder;
 
 pub use crate::types::_rule_update_failure::RuleUpdateFailureBuilder;
 

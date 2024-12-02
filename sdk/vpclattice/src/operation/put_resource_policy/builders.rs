@@ -108,17 +108,17 @@ impl PutResourcePolicyFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service network or service for which the policy is created.</p>
+    /// <p>The ID or ARN of the service network or service for which the policy is created.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service network or service for which the policy is created.</p>
+    /// <p>The ID or ARN of the service network or service for which the policy is created.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service network or service for which the policy is created.</p>
+    /// <p>The ID or ARN of the service network or service for which the policy is created.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_arn()
     }

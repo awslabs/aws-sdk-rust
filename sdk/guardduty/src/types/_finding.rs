@@ -34,6 +34,8 @@ pub struct Finding {
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The time and date when the finding was last updated.</p>
     pub updated_at: ::std::option::Option<::std::string::String>,
+    /// <p>Amazon Resource Name (ARN) associated with the attack sequence finding.</p>
+    pub associated_attack_sequence_arn: ::std::option::Option<::std::string::String>,
 }
 impl Finding {
     /// <p>The ID of the account in which the finding was generated.</p>
@@ -96,6 +98,10 @@ impl Finding {
     pub fn updated_at(&self) -> ::std::option::Option<&str> {
         self.updated_at.as_deref()
     }
+    /// <p>Amazon Resource Name (ARN) associated with the attack sequence finding.</p>
+    pub fn associated_attack_sequence_arn(&self) -> ::std::option::Option<&str> {
+        self.associated_attack_sequence_arn.as_deref()
+    }
 }
 impl Finding {
     /// Creates a new builder-style object to manufacture [`Finding`](crate::types::Finding).
@@ -123,6 +129,7 @@ pub struct FindingBuilder {
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) updated_at: ::std::option::Option<::std::string::String>,
+    pub(crate) associated_attack_sequence_arn: ::std::option::Option<::std::string::String>,
 }
 impl FindingBuilder {
     /// <p>The ID of the account in which the finding was generated.</p>
@@ -345,6 +352,20 @@ impl FindingBuilder {
     pub fn get_updated_at(&self) -> &::std::option::Option<::std::string::String> {
         &self.updated_at
     }
+    /// <p>Amazon Resource Name (ARN) associated with the attack sequence finding.</p>
+    pub fn associated_attack_sequence_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.associated_attack_sequence_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Amazon Resource Name (ARN) associated with the attack sequence finding.</p>
+    pub fn set_associated_attack_sequence_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.associated_attack_sequence_arn = input;
+        self
+    }
+    /// <p>Amazon Resource Name (ARN) associated with the attack sequence finding.</p>
+    pub fn get_associated_attack_sequence_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.associated_attack_sequence_arn
+    }
     /// Consumes the builder and constructs a [`Finding`](crate::types::Finding).
     pub fn build(self) -> crate::types::Finding {
         crate::types::Finding {
@@ -363,6 +384,7 @@ impl FindingBuilder {
             title: self.title,
             r#type: self.r#type,
             updated_at: self.updated_at,
+            associated_attack_sequence_arn: self.associated_attack_sequence_arn,
         }
     }
 }

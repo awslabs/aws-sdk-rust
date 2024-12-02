@@ -257,6 +257,12 @@ pub fn ser_aws_security_finding(
     if let Some(var_84) = &input.aws_account_name {
         object.key("AwsAccountName").string(var_84.as_str());
     }
+    if let Some(var_85) = &input.detection {
+        #[allow(unused_mut)]
+        let mut object_86 = object.key("Detection").start_object();
+        crate::protocol_serde::shape_detection::ser_detection(&mut object_86, var_85)?;
+        object_86.finish();
+    }
     Ok(())
 }
 
@@ -499,6 +505,9 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "Detection" => {
+                            builder = builder.set_detection(crate::protocol_serde::shape_detection::de_detection(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

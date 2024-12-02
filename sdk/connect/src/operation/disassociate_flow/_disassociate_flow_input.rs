@@ -6,6 +6,12 @@ pub struct DisassociateFlowInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the resource.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Web Services End User Messaging SMS phone number ARN when using <code>SMS_PHONE_NUMBER</code></p></li>
+    /// <li>
+    /// <p>Amazon Web Services End User Messaging Social phone number ARN when using <code>WHATSAPP_MESSAGING_PHONE_NUMBER</code></p></li>
+    /// </ul>
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>A valid resource type.</p>
     pub resource_type: ::std::option::Option<crate::types::FlowAssociationResourceType>,
@@ -16,6 +22,12 @@ impl DisassociateFlowInput {
         self.instance_id.as_deref()
     }
     /// <p>The identifier of the resource.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Web Services End User Messaging SMS phone number ARN when using <code>SMS_PHONE_NUMBER</code></p></li>
+    /// <li>
+    /// <p>Amazon Web Services End User Messaging Social phone number ARN when using <code>WHATSAPP_MESSAGING_PHONE_NUMBER</code></p></li>
+    /// </ul>
     pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
     }
@@ -56,17 +68,35 @@ impl DisassociateFlowInputBuilder {
         &self.instance_id
     }
     /// <p>The identifier of the resource.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Web Services End User Messaging SMS phone number ARN when using <code>SMS_PHONE_NUMBER</code></p></li>
+    /// <li>
+    /// <p>Amazon Web Services End User Messaging Social phone number ARN when using <code>WHATSAPP_MESSAGING_PHONE_NUMBER</code></p></li>
+    /// </ul>
     /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the resource.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Web Services End User Messaging SMS phone number ARN when using <code>SMS_PHONE_NUMBER</code></p></li>
+    /// <li>
+    /// <p>Amazon Web Services End User Messaging Social phone number ARN when using <code>WHATSAPP_MESSAGING_PHONE_NUMBER</code></p></li>
+    /// </ul>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
     }
     /// <p>The identifier of the resource.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Web Services End User Messaging SMS phone number ARN when using <code>SMS_PHONE_NUMBER</code></p></li>
+    /// <li>
+    /// <p>Amazon Web Services End User Messaging Social phone number ARN when using <code>WHATSAPP_MESSAGING_PHONE_NUMBER</code></p></li>
+    /// </ul>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_id
     }

@@ -109,6 +109,16 @@ pub(crate) fn reflens_list_users_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_web_apps_output_output_next_token(
+    input: &crate::operation::list_web_apps::ListWebAppsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_workflows_output_output_next_token(
     input: &crate::operation::list_workflows::ListWorkflowsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -196,6 +206,13 @@ pub(crate) fn lens_list_users_output_output_users(
     input: crate::operation::list_users::ListUsersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ListedUser>> {
     let input = input.users;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_web_apps_output_output_web_apps(
+    input: crate::operation::list_web_apps::ListWebAppsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ListedWebApp>> {
+    let input = input.web_apps;
     ::std::option::Option::Some(input)
 }
 

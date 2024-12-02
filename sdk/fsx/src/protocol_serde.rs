@@ -455,6 +455,8 @@ pub(crate) mod shape_open_zfs_file_system_configuration;
 
 pub(crate) mod shape_open_zfs_nfs_export;
 
+pub(crate) mod shape_open_zfs_read_cache_configuration;
+
 pub(crate) mod shape_open_zfs_user_or_group_quota;
 
 pub(crate) mod shape_open_zfs_volume_configuration;

@@ -144,6 +144,8 @@ mod create_acl;
 
 mod create_cluster;
 
+mod create_multi_region_cluster;
+
 mod create_parameter_group;
 
 mod create_snapshot;
@@ -183,6 +185,8 @@ mod delete_acl;
 
 mod delete_cluster;
 
+mod delete_multi_region_cluster;
+
 mod delete_parameter_group;
 
 mod delete_snapshot;
@@ -198,6 +202,8 @@ mod describe_clusters;
 mod describe_engine_versions;
 
 mod describe_events;
+
+mod describe_multi_region_clusters;
 
 mod describe_parameter_groups;
 
@@ -217,6 +223,8 @@ mod describe_users;
 
 mod failover_shard;
 
+mod list_allowed_multi_region_cluster_updates;
+
 mod list_allowed_node_type_updates;
 
 mod list_tags;
@@ -232,6 +240,8 @@ mod untag_resource;
 mod update_acl;
 
 mod update_cluster;
+
+mod update_multi_region_cluster;
 
 mod update_parameter_group;
 

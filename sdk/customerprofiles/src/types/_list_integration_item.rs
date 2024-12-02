@@ -24,6 +24,8 @@ pub struct ListIntegrationItem {
     pub is_unstructured: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role. The Integration uses this role to make Customer Profiles requests on your behalf.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
+    /// <p>A list of unique names for active event triggers associated with the integration.</p>
+    pub event_trigger_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListIntegrationItem {
     /// <p>The unique name of the domain.</p>
@@ -68,6 +70,12 @@ impl ListIntegrationItem {
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
+    /// <p>A list of unique names for active event triggers associated with the integration.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_trigger_names.is_none()`.
+    pub fn event_trigger_names(&self) -> &[::std::string::String] {
+        self.event_trigger_names.as_deref().unwrap_or_default()
+    }
 }
 impl ListIntegrationItem {
     /// Creates a new builder-style object to manufacture [`ListIntegrationItem`](crate::types::ListIntegrationItem).
@@ -90,6 +98,7 @@ pub struct ListIntegrationItemBuilder {
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,
     pub(crate) is_unstructured: ::std::option::Option<bool>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) event_trigger_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListIntegrationItemBuilder {
     /// <p>The unique name of the domain.</p>
@@ -255,6 +264,26 @@ impl ListIntegrationItemBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
+    /// Appends an item to `event_trigger_names`.
+    ///
+    /// To override the contents of this collection use [`set_event_trigger_names`](Self::set_event_trigger_names).
+    ///
+    /// <p>A list of unique names for active event triggers associated with the integration.</p>
+    pub fn event_trigger_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.event_trigger_names.unwrap_or_default();
+        v.push(input.into());
+        self.event_trigger_names = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of unique names for active event triggers associated with the integration.</p>
+    pub fn set_event_trigger_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.event_trigger_names = input;
+        self
+    }
+    /// <p>A list of unique names for active event triggers associated with the integration.</p>
+    pub fn get_event_trigger_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.event_trigger_names
+    }
     /// Consumes the builder and constructs a [`ListIntegrationItem`](crate::types::ListIntegrationItem).
     /// This method will fail if any of the following fields are not set:
     /// - [`domain_name`](crate::types::builders::ListIntegrationItemBuilder::domain_name)
@@ -293,6 +322,7 @@ impl ListIntegrationItemBuilder {
             workflow_id: self.workflow_id,
             is_unstructured: self.is_unstructured,
             role_arn: self.role_arn,
+            event_trigger_names: self.event_trigger_names,
         })
     }
 }

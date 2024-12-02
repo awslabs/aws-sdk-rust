@@ -43,7 +43,13 @@ pub use crate::types::_dns_entry::DnsEntry;
 
 pub use crate::types::_service_network_service_association_summary::ServiceNetworkServiceAssociationSummary;
 
+pub use crate::types::_service_network_resource_association_status::ServiceNetworkResourceAssociationStatus;
+
+pub use crate::types::_service_network_resource_association_summary::ServiceNetworkResourceAssociationSummary;
+
 pub use crate::types::_auth_type::AuthType;
+
+pub use crate::types::_sharing_config::SharingConfig;
 
 pub use crate::types::_service_network_summary::ServiceNetworkSummary;
 
@@ -73,13 +79,43 @@ pub use crate::types::_path_match_type::PathMatchType;
 
 pub use crate::types::_rule_summary::RuleSummary;
 
+pub use crate::types::_resource_gateway_status::ResourceGatewayStatus;
+
+pub use crate::types::_resource_gateway_ip_address_type::ResourceGatewayIpAddressType;
+
+pub use crate::types::_resource_gateway_summary::ResourceGatewaySummary;
+
+pub use crate::types::_resource_endpoint_association_summary::ResourceEndpointAssociationSummary;
+
+pub use crate::types::_resource_configuration_definition::ResourceConfigurationDefinition;
+
+pub use crate::types::_arn_resource::ArnResource;
+
+pub use crate::types::_ip_resource::IpResource;
+
+pub use crate::types::_dns_resource::DnsResource;
+
+pub use crate::types::_resource_configuration_ip_address_type::ResourceConfigurationIpAddressType;
+
+pub use crate::types::_resource_configuration_status::ResourceConfigurationStatus;
+
+pub use crate::types::_protocol_type::ProtocolType;
+
+pub use crate::types::_resource_configuration_type::ResourceConfigurationType;
+
+pub use crate::types::_resource_configuration_summary::ResourceConfigurationSummary;
+
 pub use crate::types::_listener_protocol::ListenerProtocol;
 
 pub use crate::types::_listener_summary::ListenerSummary;
 
+pub use crate::types::_service_network_log_type::ServiceNetworkLogType;
+
 pub use crate::types::_access_log_subscription_summary::AccessLogSubscriptionSummary;
 
 pub use crate::types::_auth_policy_state::AuthPolicyState;
+
+pub use crate::types::_service_network_endpoint_association::ServiceNetworkEndpointAssociation;
 
 pub use crate::types::_rule_update_failure::RuleUpdateFailure;
 
@@ -89,11 +125,15 @@ pub use crate::types::_rule_update::RuleUpdate;
 
 mod _access_log_subscription_summary;
 
+mod _arn_resource;
+
 mod _auth_policy_state;
 
 mod _auth_type;
 
 mod _dns_entry;
+
+mod _dns_resource;
 
 mod _fixed_response_action;
 
@@ -111,6 +151,8 @@ mod _http_match;
 
 mod _ip_address_type;
 
+mod _ip_resource;
+
 mod _lambda_event_structure_version;
 
 mod _listener_protocol;
@@ -123,6 +165,26 @@ mod _path_match;
 
 mod _path_match_type;
 
+mod _protocol_type;
+
+mod _resource_configuration_definition;
+
+mod _resource_configuration_ip_address_type;
+
+mod _resource_configuration_status;
+
+mod _resource_configuration_summary;
+
+mod _resource_configuration_type;
+
+mod _resource_endpoint_association_summary;
+
+mod _resource_gateway_ip_address_type;
+
+mod _resource_gateway_status;
+
+mod _resource_gateway_summary;
+
 mod _rule_action;
 
 mod _rule_match;
@@ -134,6 +196,14 @@ mod _rule_update;
 mod _rule_update_failure;
 
 mod _rule_update_success;
+
+mod _service_network_endpoint_association;
+
+mod _service_network_log_type;
+
+mod _service_network_resource_association_status;
+
+mod _service_network_resource_association_summary;
 
 mod _service_network_service_association_status;
 
@@ -148,6 +218,8 @@ mod _service_network_vpc_association_summary;
 mod _service_status;
 
 mod _service_summary;
+
+mod _sharing_config;
 
 mod _target;
 

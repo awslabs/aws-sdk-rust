@@ -54,6 +54,10 @@ pub struct ComponentVersion {
     pub owner: ::std::option::Option<::std::string::String>,
     /// <p>The date that the component was created.</p>
     pub date_created: ::std::option::Option<::std::string::String>,
+    /// <p>Describes the current status of the component version.</p>
+    pub status: ::std::option::Option<crate::types::ComponentStatus>,
+    /// <p>Contains product codes that are used for billing purposes for Amazon Web Services Marketplace components.</p>
+    pub product_codes: ::std::option::Option<::std::vec::Vec<crate::types::ProductCodeListItem>>,
 }
 impl ComponentVersion {
     /// <p>The Amazon Resource Name (ARN) of the component.</p><note>
@@ -126,6 +130,16 @@ impl ComponentVersion {
     pub fn date_created(&self) -> ::std::option::Option<&str> {
         self.date_created.as_deref()
     }
+    /// <p>Describes the current status of the component version.</p>
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ComponentStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Contains product codes that are used for billing purposes for Amazon Web Services Marketplace components.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.product_codes.is_none()`.
+    pub fn product_codes(&self) -> &[crate::types::ProductCodeListItem] {
+        self.product_codes.as_deref().unwrap_or_default()
+    }
 }
 impl ComponentVersion {
     /// Creates a new builder-style object to manufacture [`ComponentVersion`](crate::types::ComponentVersion).
@@ -147,6 +161,8 @@ pub struct ComponentVersionBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ComponentType>,
     pub(crate) owner: ::std::option::Option<::std::string::String>,
     pub(crate) date_created: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::ComponentStatus>,
+    pub(crate) product_codes: ::std::option::Option<::std::vec::Vec<crate::types::ProductCodeListItem>>,
 }
 impl ComponentVersionBuilder {
     /// <p>The Amazon Resource Name (ARN) of the component.</p><note>
@@ -377,6 +393,40 @@ impl ComponentVersionBuilder {
     pub fn get_date_created(&self) -> &::std::option::Option<::std::string::String> {
         &self.date_created
     }
+    /// <p>Describes the current status of the component version.</p>
+    pub fn status(mut self, input: crate::types::ComponentStatus) -> Self {
+        self.status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes the current status of the component version.</p>
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ComponentStatus>) -> Self {
+        self.status = input;
+        self
+    }
+    /// <p>Describes the current status of the component version.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ComponentStatus> {
+        &self.status
+    }
+    /// Appends an item to `product_codes`.
+    ///
+    /// To override the contents of this collection use [`set_product_codes`](Self::set_product_codes).
+    ///
+    /// <p>Contains product codes that are used for billing purposes for Amazon Web Services Marketplace components.</p>
+    pub fn product_codes(mut self, input: crate::types::ProductCodeListItem) -> Self {
+        let mut v = self.product_codes.unwrap_or_default();
+        v.push(input);
+        self.product_codes = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Contains product codes that are used for billing purposes for Amazon Web Services Marketplace components.</p>
+    pub fn set_product_codes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProductCodeListItem>>) -> Self {
+        self.product_codes = input;
+        self
+    }
+    /// <p>Contains product codes that are used for billing purposes for Amazon Web Services Marketplace components.</p>
+    pub fn get_product_codes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductCodeListItem>> {
+        &self.product_codes
+    }
     /// Consumes the builder and constructs a [`ComponentVersion`](crate::types::ComponentVersion).
     pub fn build(self) -> crate::types::ComponentVersion {
         crate::types::ComponentVersion {
@@ -389,6 +439,8 @@ impl ComponentVersionBuilder {
             r#type: self.r#type,
             owner: self.owner,
             date_created: self.date_created,
+            status: self.status,
+            product_codes: self.product_codes,
         }
     }
 }

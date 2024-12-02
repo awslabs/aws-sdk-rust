@@ -11,7 +11,7 @@ pub struct GetServiceNetworkServiceAssociationOutput {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The account that created the association.</p>
     pub created_by: ::std::option::Option<::std::string::String>,
-    /// <p>The date and time that the association was created, specified in ISO-8601 format.</p>
+    /// <p>The date and time that the association was created, in ISO-8601 format.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ID of the service.</p>
     pub service_id: ::std::option::Option<::std::string::String>,
@@ -52,7 +52,7 @@ impl GetServiceNetworkServiceAssociationOutput {
     pub fn created_by(&self) -> ::std::option::Option<&str> {
         self.created_by.as_deref()
     }
-    /// <p>The date and time that the association was created, specified in ISO-8601 format.</p>
+    /// <p>The date and time that the association was created, in ISO-8601 format.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
@@ -187,17 +187,17 @@ impl GetServiceNetworkServiceAssociationOutputBuilder {
     pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.created_by
     }
-    /// <p>The date and time that the association was created, specified in ISO-8601 format.</p>
+    /// <p>The date and time that the association was created, in ISO-8601 format.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time that the association was created, specified in ISO-8601 format.</p>
+    /// <p>The date and time that the association was created, in ISO-8601 format.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
-    /// <p>The date and time that the association was created, specified in ISO-8601 format.</p>
+    /// <p>The date and time that the association was created, in ISO-8601 format.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }

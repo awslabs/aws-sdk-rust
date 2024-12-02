@@ -51,6 +51,8 @@ pub struct CreateFileSystemOpenZfsConfiguration {
     pub endpoint_ip_address_range: ::std::option::Option<::std::string::String>,
     /// <p>(Multi-AZ only) Specifies the route tables in which Amazon FSx creates the rules for routing traffic to the correct file server. You should specify all virtual private cloud (VPC) route tables associated with the subnets in which your clients are located. By default, Amazon FSx selects your VPC's default route table.</p>
     pub route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Specifies the optional provisioned SSD read cache on file systems that use the Intelligent-Tiering storage class.</p>
+    pub read_cache_configuration: ::std::option::Option<crate::types::OpenZfsReadCacheConfiguration>,
 }
 impl CreateFileSystemOpenZfsConfiguration {
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>.</p>
@@ -126,6 +128,10 @@ impl CreateFileSystemOpenZfsConfiguration {
     pub fn route_table_ids(&self) -> &[::std::string::String] {
         self.route_table_ids.as_deref().unwrap_or_default()
     }
+    /// <p>Specifies the optional provisioned SSD read cache on file systems that use the Intelligent-Tiering storage class.</p>
+    pub fn read_cache_configuration(&self) -> ::std::option::Option<&crate::types::OpenZfsReadCacheConfiguration> {
+        self.read_cache_configuration.as_ref()
+    }
 }
 impl CreateFileSystemOpenZfsConfiguration {
     /// Creates a new builder-style object to manufacture [`CreateFileSystemOpenZfsConfiguration`](crate::types::CreateFileSystemOpenZfsConfiguration).
@@ -150,6 +156,7 @@ pub struct CreateFileSystemOpenZfsConfigurationBuilder {
     pub(crate) preferred_subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_ip_address_range: ::std::option::Option<::std::string::String>,
     pub(crate) route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) read_cache_configuration: ::std::option::Option<crate::types::OpenZfsReadCacheConfiguration>,
 }
 impl CreateFileSystemOpenZfsConfigurationBuilder {
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>.</p>
@@ -397,6 +404,20 @@ impl CreateFileSystemOpenZfsConfigurationBuilder {
     pub fn get_route_table_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.route_table_ids
     }
+    /// <p>Specifies the optional provisioned SSD read cache on file systems that use the Intelligent-Tiering storage class.</p>
+    pub fn read_cache_configuration(mut self, input: crate::types::OpenZfsReadCacheConfiguration) -> Self {
+        self.read_cache_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the optional provisioned SSD read cache on file systems that use the Intelligent-Tiering storage class.</p>
+    pub fn set_read_cache_configuration(mut self, input: ::std::option::Option<crate::types::OpenZfsReadCacheConfiguration>) -> Self {
+        self.read_cache_configuration = input;
+        self
+    }
+    /// <p>Specifies the optional provisioned SSD read cache on file systems that use the Intelligent-Tiering storage class.</p>
+    pub fn get_read_cache_configuration(&self) -> &::std::option::Option<crate::types::OpenZfsReadCacheConfiguration> {
+        &self.read_cache_configuration
+    }
     /// Consumes the builder and constructs a [`CreateFileSystemOpenZfsConfiguration`](crate::types::CreateFileSystemOpenZfsConfiguration).
     pub fn build(self) -> crate::types::CreateFileSystemOpenZfsConfiguration {
         crate::types::CreateFileSystemOpenZfsConfiguration {
@@ -412,6 +433,7 @@ impl CreateFileSystemOpenZfsConfigurationBuilder {
             preferred_subnet_id: self.preferred_subnet_id,
             endpoint_ip_address_range: self.endpoint_ip_address_range,
             route_table_ids: self.route_table_ids,
+            read_cache_configuration: self.read_cache_configuration,
         }
     }
 }

@@ -11,6 +11,8 @@ pub struct ModifyVerifiedAccessInstanceInput {
     pub dry_run: ::std::option::Option<bool>,
     /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">Ensuring idempotency</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>The custom subdomain.</p>
+    pub cidr_endpoints_custom_sub_domain: ::std::option::Option<::std::string::String>,
 }
 impl ModifyVerifiedAccessInstanceInput {
     /// <p>The ID of the Verified Access instance.</p>
@@ -29,6 +31,10 @@ impl ModifyVerifiedAccessInstanceInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
+    /// <p>The custom subdomain.</p>
+    pub fn cidr_endpoints_custom_sub_domain(&self) -> ::std::option::Option<&str> {
+        self.cidr_endpoints_custom_sub_domain.as_deref()
+    }
 }
 impl ModifyVerifiedAccessInstanceInput {
     /// Creates a new builder-style object to manufacture [`ModifyVerifiedAccessInstanceInput`](crate::operation::modify_verified_access_instance::ModifyVerifiedAccessInstanceInput).
@@ -45,6 +51,7 @@ pub struct ModifyVerifiedAccessInstanceInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) cidr_endpoints_custom_sub_domain: ::std::option::Option<::std::string::String>,
 }
 impl ModifyVerifiedAccessInstanceInputBuilder {
     /// <p>The ID of the Verified Access instance.</p>
@@ -104,6 +111,20 @@ impl ModifyVerifiedAccessInstanceInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
+    /// <p>The custom subdomain.</p>
+    pub fn cidr_endpoints_custom_sub_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cidr_endpoints_custom_sub_domain = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The custom subdomain.</p>
+    pub fn set_cidr_endpoints_custom_sub_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cidr_endpoints_custom_sub_domain = input;
+        self
+    }
+    /// <p>The custom subdomain.</p>
+    pub fn get_cidr_endpoints_custom_sub_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr_endpoints_custom_sub_domain
+    }
     /// Consumes the builder and constructs a [`ModifyVerifiedAccessInstanceInput`](crate::operation::modify_verified_access_instance::ModifyVerifiedAccessInstanceInput).
     pub fn build(
         self,
@@ -116,6 +137,7 @@ impl ModifyVerifiedAccessInstanceInputBuilder {
             description: self.description,
             dry_run: self.dry_run,
             client_token: self.client_token,
+            cidr_endpoints_custom_sub_domain: self.cidr_endpoints_custom_sub_domain,
         })
     }
 }

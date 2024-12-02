@@ -27,7 +27,7 @@ pub struct CreateEventBusInput {
     /// </note>
     pub kms_key_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Configuration details of the Amazon SQS queue for EventBridge to use as a dead-letter queue (DLQ).</p>
-    /// <p>For more information, see <a href="eventbridge/latest/userguide/eb-rule-dlq.html">Event retry policy and using dead-letter queues</a> in the <i>EventBridge User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-rule-event-delivery.html#eb-rule-dlq">Using dead-letter queues to process undelivered events</a> in the <i>EventBridge User Guide</i>.</p>
     pub dead_letter_config: ::std::option::Option<crate::types::DeadLetterConfig>,
     /// <p>Tags to associate with the event bus.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -65,7 +65,7 @@ impl CreateEventBusInput {
         self.kms_key_identifier.as_deref()
     }
     /// <p>Configuration details of the Amazon SQS queue for EventBridge to use as a dead-letter queue (DLQ).</p>
-    /// <p>For more information, see <a href="eventbridge/latest/userguide/eb-rule-dlq.html">Event retry policy and using dead-letter queues</a> in the <i>EventBridge User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-rule-event-delivery.html#eb-rule-dlq">Using dead-letter queues to process undelivered events</a> in the <i>EventBridge User Guide</i>.</p>
     pub fn dead_letter_config(&self) -> ::std::option::Option<&crate::types::DeadLetterConfig> {
         self.dead_letter_config.as_ref()
     }
@@ -198,19 +198,19 @@ impl CreateEventBusInputBuilder {
         &self.kms_key_identifier
     }
     /// <p>Configuration details of the Amazon SQS queue for EventBridge to use as a dead-letter queue (DLQ).</p>
-    /// <p>For more information, see <a href="eventbridge/latest/userguide/eb-rule-dlq.html">Event retry policy and using dead-letter queues</a> in the <i>EventBridge User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-rule-event-delivery.html#eb-rule-dlq">Using dead-letter queues to process undelivered events</a> in the <i>EventBridge User Guide</i>.</p>
     pub fn dead_letter_config(mut self, input: crate::types::DeadLetterConfig) -> Self {
         self.dead_letter_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration details of the Amazon SQS queue for EventBridge to use as a dead-letter queue (DLQ).</p>
-    /// <p>For more information, see <a href="eventbridge/latest/userguide/eb-rule-dlq.html">Event retry policy and using dead-letter queues</a> in the <i>EventBridge User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-rule-event-delivery.html#eb-rule-dlq">Using dead-letter queues to process undelivered events</a> in the <i>EventBridge User Guide</i>.</p>
     pub fn set_dead_letter_config(mut self, input: ::std::option::Option<crate::types::DeadLetterConfig>) -> Self {
         self.dead_letter_config = input;
         self
     }
     /// <p>Configuration details of the Amazon SQS queue for EventBridge to use as a dead-letter queue (DLQ).</p>
-    /// <p>For more information, see <a href="eventbridge/latest/userguide/eb-rule-dlq.html">Event retry policy and using dead-letter queues</a> in the <i>EventBridge User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-rule-event-delivery.html#eb-rule-dlq">Using dead-letter queues to process undelivered events</a> in the <i>EventBridge User Guide</i>.</p>
     pub fn get_dead_letter_config(&self) -> &::std::option::Option<crate::types::DeadLetterConfig> {
         &self.dead_letter_config
     }

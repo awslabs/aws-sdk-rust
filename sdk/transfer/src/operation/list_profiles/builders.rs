@@ -114,17 +114,17 @@ impl ListProfilesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_profiles::paginator::ListProfilesPaginator {
         crate::operation::list_profiles::paginator::ListProfilesPaginator::new(self.handle, self.inner)
     }
-    /// <p>The maximum number of profiles to return.</p>
+    /// <p>The maximum number of items to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of profiles to return.</p>
+    /// <p>The maximum number of items to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of profiles to return.</p>
+    /// <p>The maximum number of items to return.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

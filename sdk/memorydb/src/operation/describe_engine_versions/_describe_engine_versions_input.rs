@@ -3,9 +3,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEngineVersionsInput {
-    /// <p>The engine version to return. Valid values are either valkey or redis.</p>
+    /// <p>The name of the engine for which to list available versions.</p>
     pub engine: ::std::option::Option<::std::string::String>,
-    /// <p>The engine version.</p>
+    /// <p>The Redis OSS engine version</p>
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The name of a specific parameter group family to return details for.</p>
     pub parameter_group_family: ::std::option::Option<::std::string::String>,
@@ -17,11 +17,11 @@ pub struct DescribeEngineVersionsInput {
     pub default_only: ::std::option::Option<bool>,
 }
 impl DescribeEngineVersionsInput {
-    /// <p>The engine version to return. Valid values are either valkey or redis.</p>
+    /// <p>The name of the engine for which to list available versions.</p>
     pub fn engine(&self) -> ::std::option::Option<&str> {
         self.engine.as_deref()
     }
-    /// <p>The engine version.</p>
+    /// <p>The Redis OSS engine version</p>
     pub fn engine_version(&self) -> ::std::option::Option<&str> {
         self.engine_version.as_deref()
     }
@@ -61,31 +61,31 @@ pub struct DescribeEngineVersionsInputBuilder {
     pub(crate) default_only: ::std::option::Option<bool>,
 }
 impl DescribeEngineVersionsInputBuilder {
-    /// <p>The engine version to return. Valid values are either valkey or redis.</p>
+    /// <p>The name of the engine for which to list available versions.</p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The engine version to return. Valid values are either valkey or redis.</p>
+    /// <p>The name of the engine for which to list available versions.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
         self
     }
-    /// <p>The engine version to return. Valid values are either valkey or redis.</p>
+    /// <p>The name of the engine for which to list available versions.</p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine
     }
-    /// <p>The engine version.</p>
+    /// <p>The Redis OSS engine version</p>
     pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The engine version.</p>
+    /// <p>The Redis OSS engine version</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
-    /// <p>The engine version.</p>
+    /// <p>The Redis OSS engine version</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine_version
     }

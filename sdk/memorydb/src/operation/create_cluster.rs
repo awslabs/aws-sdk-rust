@@ -256,12 +256,16 @@ pub enum CreateClusterError {
     InvalidAclStateFault(crate::types::error::InvalidAclStateFault),
     /// <p></p>
     InvalidCredentialsException(crate::types::error::InvalidCredentialsException),
+    /// <p>The requested operation cannot be performed on the multi-Region cluster in its current state.</p>
+    InvalidMultiRegionClusterStateFault(crate::types::error::InvalidMultiRegionClusterStateFault),
     /// <p></p>
     InvalidParameterCombinationException(crate::types::error::InvalidParameterCombinationException),
     /// <p></p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// <p></p>
     InvalidVpcNetworkStateFault(crate::types::error::InvalidVpcNetworkStateFault),
+    /// <p>The specified multi-Region cluster does not exist.</p>
+    MultiRegionClusterNotFoundFault(crate::types::error::MultiRegionClusterNotFoundFault),
     /// <p></p>
     NodeQuotaForClusterExceededFault(crate::types::error::NodeQuotaForClusterExceededFault),
     /// <p></p>
@@ -315,9 +319,11 @@ impl CreateClusterError {
             Self::InsufficientClusterCapacityFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidAclStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidCredentialsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidMultiRegionClusterStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterCombinationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterValueException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidVpcNetworkStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::MultiRegionClusterNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::NodeQuotaForClusterExceededFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::NodeQuotaForCustomerExceededFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ParameterGroupNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -352,6 +358,10 @@ impl CreateClusterError {
     pub fn is_invalid_credentials_exception(&self) -> bool {
         matches!(self, Self::InvalidCredentialsException(_))
     }
+    /// Returns `true` if the error kind is `CreateClusterError::InvalidMultiRegionClusterStateFault`.
+    pub fn is_invalid_multi_region_cluster_state_fault(&self) -> bool {
+        matches!(self, Self::InvalidMultiRegionClusterStateFault(_))
+    }
     /// Returns `true` if the error kind is `CreateClusterError::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(self, Self::InvalidParameterCombinationException(_))
@@ -363,6 +373,10 @@ impl CreateClusterError {
     /// Returns `true` if the error kind is `CreateClusterError::InvalidVpcNetworkStateFault`.
     pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
         matches!(self, Self::InvalidVpcNetworkStateFault(_))
+    }
+    /// Returns `true` if the error kind is `CreateClusterError::MultiRegionClusterNotFoundFault`.
+    pub fn is_multi_region_cluster_not_found_fault(&self) -> bool {
+        matches!(self, Self::MultiRegionClusterNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `CreateClusterError::NodeQuotaForClusterExceededFault`.
     pub fn is_node_quota_for_cluster_exceeded_fault(&self) -> bool {
@@ -402,9 +416,11 @@ impl ::std::error::Error for CreateClusterError {
             Self::InsufficientClusterCapacityFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidAclStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidCredentialsException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidMultiRegionClusterStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterCombinationException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterValueException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidVpcNetworkStateFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::MultiRegionClusterNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::NodeQuotaForClusterExceededFault(_inner) => ::std::option::Option::Some(_inner),
             Self::NodeQuotaForCustomerExceededFault(_inner) => ::std::option::Option::Some(_inner),
             Self::ParameterGroupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
@@ -425,9 +441,11 @@ impl ::std::fmt::Display for CreateClusterError {
             Self::InsufficientClusterCapacityFault(_inner) => _inner.fmt(f),
             Self::InvalidAclStateFault(_inner) => _inner.fmt(f),
             Self::InvalidCredentialsException(_inner) => _inner.fmt(f),
+            Self::InvalidMultiRegionClusterStateFault(_inner) => _inner.fmt(f),
             Self::InvalidParameterCombinationException(_inner) => _inner.fmt(f),
             Self::InvalidParameterValueException(_inner) => _inner.fmt(f),
             Self::InvalidVpcNetworkStateFault(_inner) => _inner.fmt(f),
+            Self::MultiRegionClusterNotFoundFault(_inner) => _inner.fmt(f),
             Self::NodeQuotaForClusterExceededFault(_inner) => _inner.fmt(f),
             Self::NodeQuotaForCustomerExceededFault(_inner) => _inner.fmt(f),
             Self::ParameterGroupNotFoundFault(_inner) => _inner.fmt(f),
@@ -462,9 +480,11 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateCluster
             Self::InsufficientClusterCapacityFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidAclStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidCredentialsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidMultiRegionClusterStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterCombinationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterValueException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidVpcNetworkStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::MultiRegionClusterNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::NodeQuotaForClusterExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::NodeQuotaForCustomerExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ParameterGroupNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

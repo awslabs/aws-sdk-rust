@@ -189,6 +189,9 @@ pub(crate) fn de_get_service_network(
                             .transpose()?,
                     );
                 }
+                "sharingConfig" => {
+                    builder = builder.set_sharing_config(crate::protocol_serde::shape_sharing_config::de_sharing_config(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

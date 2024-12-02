@@ -13,6 +13,14 @@ pub struct GetSnapshotBlockPublicAccessStateOutput {
     /// <p><code>unblocked</code> - Public sharing is not blocked. Users can publicly share snapshots.</p></li>
     /// </ul>
     pub state: ::std::option::Option<crate::types::SnapshotBlockPublicAccessState>,
+    /// <p>The entity that manages the state for block public access for snapshots. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>account</code> - The state is managed by the account.</p></li>
+    /// <li>
+    /// <p><code>declarative-policy</code> - The state is managed by a declarative policy and can't be modified by the account.</p></li>
+    /// </ul>
+    pub managed_by: ::std::option::Option<crate::types::ManagedBy>,
     _request_id: Option<String>,
 }
 impl GetSnapshotBlockPublicAccessStateOutput {
@@ -27,6 +35,16 @@ impl GetSnapshotBlockPublicAccessStateOutput {
     /// </ul>
     pub fn state(&self) -> ::std::option::Option<&crate::types::SnapshotBlockPublicAccessState> {
         self.state.as_ref()
+    }
+    /// <p>The entity that manages the state for block public access for snapshots. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>account</code> - The state is managed by the account.</p></li>
+    /// <li>
+    /// <p><code>declarative-policy</code> - The state is managed by a declarative policy and can't be modified by the account.</p></li>
+    /// </ul>
+    pub fn managed_by(&self) -> ::std::option::Option<&crate::types::ManagedBy> {
+        self.managed_by.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetSnapshotBlockPublicAccessStateOutput {
@@ -46,6 +64,7 @@ impl GetSnapshotBlockPublicAccessStateOutput {
 #[non_exhaustive]
 pub struct GetSnapshotBlockPublicAccessStateOutputBuilder {
     pub(crate) state: ::std::option::Option<crate::types::SnapshotBlockPublicAccessState>,
+    pub(crate) managed_by: ::std::option::Option<crate::types::ManagedBy>,
     _request_id: Option<String>,
 }
 impl GetSnapshotBlockPublicAccessStateOutputBuilder {
@@ -87,6 +106,38 @@ impl GetSnapshotBlockPublicAccessStateOutputBuilder {
     pub fn get_state(&self) -> &::std::option::Option<crate::types::SnapshotBlockPublicAccessState> {
         &self.state
     }
+    /// <p>The entity that manages the state for block public access for snapshots. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>account</code> - The state is managed by the account.</p></li>
+    /// <li>
+    /// <p><code>declarative-policy</code> - The state is managed by a declarative policy and can't be modified by the account.</p></li>
+    /// </ul>
+    pub fn managed_by(mut self, input: crate::types::ManagedBy) -> Self {
+        self.managed_by = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The entity that manages the state for block public access for snapshots. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>account</code> - The state is managed by the account.</p></li>
+    /// <li>
+    /// <p><code>declarative-policy</code> - The state is managed by a declarative policy and can't be modified by the account.</p></li>
+    /// </ul>
+    pub fn set_managed_by(mut self, input: ::std::option::Option<crate::types::ManagedBy>) -> Self {
+        self.managed_by = input;
+        self
+    }
+    /// <p>The entity that manages the state for block public access for snapshots. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>account</code> - The state is managed by the account.</p></li>
+    /// <li>
+    /// <p><code>declarative-policy</code> - The state is managed by a declarative policy and can't be modified by the account.</p></li>
+    /// </ul>
+    pub fn get_managed_by(&self) -> &::std::option::Option<crate::types::ManagedBy> {
+        &self.managed_by
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -100,6 +151,7 @@ impl GetSnapshotBlockPublicAccessStateOutputBuilder {
     pub fn build(self) -> crate::operation::get_snapshot_block_public_access_state::GetSnapshotBlockPublicAccessStateOutput {
         crate::operation::get_snapshot_block_public_access_state::GetSnapshotBlockPublicAccessStateOutput {
             state: self.state,
+            managed_by: self.managed_by,
             _request_id: self._request_id,
         }
     }

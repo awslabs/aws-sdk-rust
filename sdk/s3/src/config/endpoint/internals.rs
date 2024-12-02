@@ -449,6 +449,216 @@ pub(super) fn resolve_endpoint(
                                         }
                                     }
                                 }
+                                #[allow(unused_variables)]
+                                if let Some(s3express_availability_zone_id) =
+                                    crate::endpoint_lib::substring::substring(bucket, 6, 19, true, _diagnostic_collector)
+                                {
+                                    #[allow(unused_variables)]
+                                    if let Some(s3express_availability_zone_delim) =
+                                        crate::endpoint_lib::substring::substring(bucket, 19, 21, true, _diagnostic_collector)
+                                    {
+                                        if (s3express_availability_zone_delim) == ("--") {
+                                            if (*use_fips) == (true) {
+                                                return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                                    .url({
+                                                        let mut out = String::new();
+                                                        out.push_str("https://");
+                                                        #[allow(clippy::needless_borrow)]
+                                                        out.push_str(&bucket);
+                                                        out.push_str(".s3express-fips-");
+                                                        #[allow(clippy::needless_borrow)]
+                                                        out.push_str(&s3express_availability_zone_id);
+                                                        out.push('.');
+                                                        #[allow(clippy::needless_borrow)]
+                                                        out.push_str(&region);
+                                                        out.push_str(".amazonaws.com");
+                                                        out
+                                                    })
+                                                    .property("backend", "S3Express".to_string())
+                                                    .property(
+                                                        "authSchemes",
+                                                        vec![::aws_smithy_types::Document::from({
+                                                            let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                                            out.insert("disableDoubleEncoding".to_string(), true.into());
+                                                            out.insert("name".to_string(), "sigv4".to_string().into());
+                                                            out.insert("signingName".to_string(), "s3express".to_string().into());
+                                                            out.insert("signingRegion".to_string(), region.to_owned().into());
+                                                            out
+                                                        })],
+                                                    )
+                                                    .build());
+                                            }
+                                            return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                                .url({
+                                                    let mut out = String::new();
+                                                    out.push_str("https://");
+                                                    #[allow(clippy::needless_borrow)]
+                                                    out.push_str(&bucket);
+                                                    out.push_str(".s3express-");
+                                                    #[allow(clippy::needless_borrow)]
+                                                    out.push_str(&s3express_availability_zone_id);
+                                                    out.push('.');
+                                                    #[allow(clippy::needless_borrow)]
+                                                    out.push_str(&region);
+                                                    out.push_str(".amazonaws.com");
+                                                    out
+                                                })
+                                                .property("backend", "S3Express".to_string())
+                                                .property(
+                                                    "authSchemes",
+                                                    vec![::aws_smithy_types::Document::from({
+                                                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                                                        out.insert("name".to_string(), "sigv4".to_string().into());
+                                                        out.insert("signingName".to_string(), "s3express".to_string().into());
+                                                        out.insert("signingRegion".to_string(), region.to_owned().into());
+                                                        out
+                                                    })],
+                                                )
+                                                .build());
+                                        }
+                                    }
+                                }
+                                #[allow(unused_variables)]
+                                if let Some(s3express_availability_zone_id) =
+                                    crate::endpoint_lib::substring::substring(bucket, 6, 20, true, _diagnostic_collector)
+                                {
+                                    #[allow(unused_variables)]
+                                    if let Some(s3express_availability_zone_delim) =
+                                        crate::endpoint_lib::substring::substring(bucket, 20, 22, true, _diagnostic_collector)
+                                    {
+                                        if (s3express_availability_zone_delim) == ("--") {
+                                            if (*use_fips) == (true) {
+                                                return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                                    .url({
+                                                        let mut out = String::new();
+                                                        out.push_str("https://");
+                                                        #[allow(clippy::needless_borrow)]
+                                                        out.push_str(&bucket);
+                                                        out.push_str(".s3express-fips-");
+                                                        #[allow(clippy::needless_borrow)]
+                                                        out.push_str(&s3express_availability_zone_id);
+                                                        out.push('.');
+                                                        #[allow(clippy::needless_borrow)]
+                                                        out.push_str(&region);
+                                                        out.push_str(".amazonaws.com");
+                                                        out
+                                                    })
+                                                    .property("backend", "S3Express".to_string())
+                                                    .property(
+                                                        "authSchemes",
+                                                        vec![::aws_smithy_types::Document::from({
+                                                            let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                                            out.insert("disableDoubleEncoding".to_string(), true.into());
+                                                            out.insert("name".to_string(), "sigv4".to_string().into());
+                                                            out.insert("signingName".to_string(), "s3express".to_string().into());
+                                                            out.insert("signingRegion".to_string(), region.to_owned().into());
+                                                            out
+                                                        })],
+                                                    )
+                                                    .build());
+                                            }
+                                            return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                                .url({
+                                                    let mut out = String::new();
+                                                    out.push_str("https://");
+                                                    #[allow(clippy::needless_borrow)]
+                                                    out.push_str(&bucket);
+                                                    out.push_str(".s3express-");
+                                                    #[allow(clippy::needless_borrow)]
+                                                    out.push_str(&s3express_availability_zone_id);
+                                                    out.push('.');
+                                                    #[allow(clippy::needless_borrow)]
+                                                    out.push_str(&region);
+                                                    out.push_str(".amazonaws.com");
+                                                    out
+                                                })
+                                                .property("backend", "S3Express".to_string())
+                                                .property(
+                                                    "authSchemes",
+                                                    vec![::aws_smithy_types::Document::from({
+                                                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                                                        out.insert("name".to_string(), "sigv4".to_string().into());
+                                                        out.insert("signingName".to_string(), "s3express".to_string().into());
+                                                        out.insert("signingRegion".to_string(), region.to_owned().into());
+                                                        out
+                                                    })],
+                                                )
+                                                .build());
+                                        }
+                                    }
+                                }
+                                #[allow(unused_variables)]
+                                if let Some(s3express_availability_zone_id) =
+                                    crate::endpoint_lib::substring::substring(bucket, 6, 26, true, _diagnostic_collector)
+                                {
+                                    #[allow(unused_variables)]
+                                    if let Some(s3express_availability_zone_delim) =
+                                        crate::endpoint_lib::substring::substring(bucket, 26, 28, true, _diagnostic_collector)
+                                    {
+                                        if (s3express_availability_zone_delim) == ("--") {
+                                            if (*use_fips) == (true) {
+                                                return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                                    .url({
+                                                        let mut out = String::new();
+                                                        out.push_str("https://");
+                                                        #[allow(clippy::needless_borrow)]
+                                                        out.push_str(&bucket);
+                                                        out.push_str(".s3express-fips-");
+                                                        #[allow(clippy::needless_borrow)]
+                                                        out.push_str(&s3express_availability_zone_id);
+                                                        out.push('.');
+                                                        #[allow(clippy::needless_borrow)]
+                                                        out.push_str(&region);
+                                                        out.push_str(".amazonaws.com");
+                                                        out
+                                                    })
+                                                    .property("backend", "S3Express".to_string())
+                                                    .property(
+                                                        "authSchemes",
+                                                        vec![::aws_smithy_types::Document::from({
+                                                            let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                                            out.insert("disableDoubleEncoding".to_string(), true.into());
+                                                            out.insert("name".to_string(), "sigv4".to_string().into());
+                                                            out.insert("signingName".to_string(), "s3express".to_string().into());
+                                                            out.insert("signingRegion".to_string(), region.to_owned().into());
+                                                            out
+                                                        })],
+                                                    )
+                                                    .build());
+                                            }
+                                            return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                                .url({
+                                                    let mut out = String::new();
+                                                    out.push_str("https://");
+                                                    #[allow(clippy::needless_borrow)]
+                                                    out.push_str(&bucket);
+                                                    out.push_str(".s3express-");
+                                                    #[allow(clippy::needless_borrow)]
+                                                    out.push_str(&s3express_availability_zone_id);
+                                                    out.push('.');
+                                                    #[allow(clippy::needless_borrow)]
+                                                    out.push_str(&region);
+                                                    out.push_str(".amazonaws.com");
+                                                    out
+                                                })
+                                                .property("backend", "S3Express".to_string())
+                                                .property(
+                                                    "authSchemes",
+                                                    vec![::aws_smithy_types::Document::from({
+                                                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                                                        out.insert("name".to_string(), "sigv4".to_string().into());
+                                                        out.insert("signingName".to_string(), "s3express".to_string().into());
+                                                        out.insert("signingRegion".to_string(), region.to_owned().into());
+                                                        out
+                                                    })],
+                                                )
+                                                .build());
+                                        }
+                                    }
+                                }
                                 return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                                     "Unrecognized S3Express bucket name format.".to_string(),
                                 ));
@@ -531,6 +741,216 @@ pub(super) fn resolve_endpoint(
                             #[allow(unused_variables)]
                             if let Some(s3express_availability_zone_delim) =
                                 crate::endpoint_lib::substring::substring(bucket, 15, 17, true, _diagnostic_collector)
+                            {
+                                if (s3express_availability_zone_delim) == ("--") {
+                                    if (*use_fips) == (true) {
+                                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                            .url({
+                                                let mut out = String::new();
+                                                out.push_str("https://");
+                                                #[allow(clippy::needless_borrow)]
+                                                out.push_str(&bucket);
+                                                out.push_str(".s3express-fips-");
+                                                #[allow(clippy::needless_borrow)]
+                                                out.push_str(&s3express_availability_zone_id);
+                                                out.push('.');
+                                                #[allow(clippy::needless_borrow)]
+                                                out.push_str(&region);
+                                                out.push_str(".amazonaws.com");
+                                                out
+                                            })
+                                            .property("backend", "S3Express".to_string())
+                                            .property(
+                                                "authSchemes",
+                                                vec![::aws_smithy_types::Document::from({
+                                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                                    out.insert("disableDoubleEncoding".to_string(), true.into());
+                                                    out.insert("name".to_string(), "sigv4-s3express".to_string().into());
+                                                    out.insert("signingName".to_string(), "s3express".to_string().into());
+                                                    out.insert("signingRegion".to_string(), region.to_owned().into());
+                                                    out
+                                                })],
+                                            )
+                                            .build());
+                                    }
+                                    return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                        .url({
+                                            let mut out = String::new();
+                                            out.push_str("https://");
+                                            #[allow(clippy::needless_borrow)]
+                                            out.push_str(&bucket);
+                                            out.push_str(".s3express-");
+                                            #[allow(clippy::needless_borrow)]
+                                            out.push_str(&s3express_availability_zone_id);
+                                            out.push('.');
+                                            #[allow(clippy::needless_borrow)]
+                                            out.push_str(&region);
+                                            out.push_str(".amazonaws.com");
+                                            out
+                                        })
+                                        .property("backend", "S3Express".to_string())
+                                        .property(
+                                            "authSchemes",
+                                            vec![::aws_smithy_types::Document::from({
+                                                let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                                out.insert("disableDoubleEncoding".to_string(), true.into());
+                                                out.insert("name".to_string(), "sigv4-s3express".to_string().into());
+                                                out.insert("signingName".to_string(), "s3express".to_string().into());
+                                                out.insert("signingRegion".to_string(), region.to_owned().into());
+                                                out
+                                            })],
+                                        )
+                                        .build());
+                                }
+                            }
+                        }
+                        #[allow(unused_variables)]
+                        if let Some(s3express_availability_zone_id) =
+                            crate::endpoint_lib::substring::substring(bucket, 6, 19, true, _diagnostic_collector)
+                        {
+                            #[allow(unused_variables)]
+                            if let Some(s3express_availability_zone_delim) =
+                                crate::endpoint_lib::substring::substring(bucket, 19, 21, true, _diagnostic_collector)
+                            {
+                                if (s3express_availability_zone_delim) == ("--") {
+                                    if (*use_fips) == (true) {
+                                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                            .url({
+                                                let mut out = String::new();
+                                                out.push_str("https://");
+                                                #[allow(clippy::needless_borrow)]
+                                                out.push_str(&bucket);
+                                                out.push_str(".s3express-fips-");
+                                                #[allow(clippy::needless_borrow)]
+                                                out.push_str(&s3express_availability_zone_id);
+                                                out.push('.');
+                                                #[allow(clippy::needless_borrow)]
+                                                out.push_str(&region);
+                                                out.push_str(".amazonaws.com");
+                                                out
+                                            })
+                                            .property("backend", "S3Express".to_string())
+                                            .property(
+                                                "authSchemes",
+                                                vec![::aws_smithy_types::Document::from({
+                                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                                    out.insert("disableDoubleEncoding".to_string(), true.into());
+                                                    out.insert("name".to_string(), "sigv4-s3express".to_string().into());
+                                                    out.insert("signingName".to_string(), "s3express".to_string().into());
+                                                    out.insert("signingRegion".to_string(), region.to_owned().into());
+                                                    out
+                                                })],
+                                            )
+                                            .build());
+                                    }
+                                    return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                        .url({
+                                            let mut out = String::new();
+                                            out.push_str("https://");
+                                            #[allow(clippy::needless_borrow)]
+                                            out.push_str(&bucket);
+                                            out.push_str(".s3express-");
+                                            #[allow(clippy::needless_borrow)]
+                                            out.push_str(&s3express_availability_zone_id);
+                                            out.push('.');
+                                            #[allow(clippy::needless_borrow)]
+                                            out.push_str(&region);
+                                            out.push_str(".amazonaws.com");
+                                            out
+                                        })
+                                        .property("backend", "S3Express".to_string())
+                                        .property(
+                                            "authSchemes",
+                                            vec![::aws_smithy_types::Document::from({
+                                                let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                                out.insert("disableDoubleEncoding".to_string(), true.into());
+                                                out.insert("name".to_string(), "sigv4-s3express".to_string().into());
+                                                out.insert("signingName".to_string(), "s3express".to_string().into());
+                                                out.insert("signingRegion".to_string(), region.to_owned().into());
+                                                out
+                                            })],
+                                        )
+                                        .build());
+                                }
+                            }
+                        }
+                        #[allow(unused_variables)]
+                        if let Some(s3express_availability_zone_id) =
+                            crate::endpoint_lib::substring::substring(bucket, 6, 20, true, _diagnostic_collector)
+                        {
+                            #[allow(unused_variables)]
+                            if let Some(s3express_availability_zone_delim) =
+                                crate::endpoint_lib::substring::substring(bucket, 20, 22, true, _diagnostic_collector)
+                            {
+                                if (s3express_availability_zone_delim) == ("--") {
+                                    if (*use_fips) == (true) {
+                                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                            .url({
+                                                let mut out = String::new();
+                                                out.push_str("https://");
+                                                #[allow(clippy::needless_borrow)]
+                                                out.push_str(&bucket);
+                                                out.push_str(".s3express-fips-");
+                                                #[allow(clippy::needless_borrow)]
+                                                out.push_str(&s3express_availability_zone_id);
+                                                out.push('.');
+                                                #[allow(clippy::needless_borrow)]
+                                                out.push_str(&region);
+                                                out.push_str(".amazonaws.com");
+                                                out
+                                            })
+                                            .property("backend", "S3Express".to_string())
+                                            .property(
+                                                "authSchemes",
+                                                vec![::aws_smithy_types::Document::from({
+                                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                                    out.insert("disableDoubleEncoding".to_string(), true.into());
+                                                    out.insert("name".to_string(), "sigv4-s3express".to_string().into());
+                                                    out.insert("signingName".to_string(), "s3express".to_string().into());
+                                                    out.insert("signingRegion".to_string(), region.to_owned().into());
+                                                    out
+                                                })],
+                                            )
+                                            .build());
+                                    }
+                                    return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                        .url({
+                                            let mut out = String::new();
+                                            out.push_str("https://");
+                                            #[allow(clippy::needless_borrow)]
+                                            out.push_str(&bucket);
+                                            out.push_str(".s3express-");
+                                            #[allow(clippy::needless_borrow)]
+                                            out.push_str(&s3express_availability_zone_id);
+                                            out.push('.');
+                                            #[allow(clippy::needless_borrow)]
+                                            out.push_str(&region);
+                                            out.push_str(".amazonaws.com");
+                                            out
+                                        })
+                                        .property("backend", "S3Express".to_string())
+                                        .property(
+                                            "authSchemes",
+                                            vec![::aws_smithy_types::Document::from({
+                                                let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                                out.insert("disableDoubleEncoding".to_string(), true.into());
+                                                out.insert("name".to_string(), "sigv4-s3express".to_string().into());
+                                                out.insert("signingName".to_string(), "s3express".to_string().into());
+                                                out.insert("signingRegion".to_string(), region.to_owned().into());
+                                                out
+                                            })],
+                                        )
+                                        .build());
+                                }
+                            }
+                        }
+                        #[allow(unused_variables)]
+                        if let Some(s3express_availability_zone_id) =
+                            crate::endpoint_lib::substring::substring(bucket, 6, 26, true, _diagnostic_collector)
+                        {
+                            #[allow(unused_variables)]
+                            if let Some(s3express_availability_zone_delim) =
+                                crate::endpoint_lib::substring::substring(bucket, 26, 28, true, _diagnostic_collector)
                             {
                                 if (s3express_availability_zone_delim) == ("--") {
                                     if (*use_fips) == (true) {

@@ -88,6 +88,34 @@ pub fn de_vpc_block_public_access_options(
                 builder = builder.set_last_update_timestamp(var_6);
             }
             ,
+            s if s.matches("managedBy") /* ManagedBy com.amazonaws.ec2#VpcBlockPublicAccessOptions$ManagedBy */ =>  {
+                let var_7 =
+                    Some(
+                        Result::<crate::types::ManagedBy, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::ManagedBy::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_managed_by(var_7);
+            }
+            ,
+            s if s.matches("exclusionsAllowed") /* ExclusionsAllowed com.amazonaws.ec2#VpcBlockPublicAccessOptions$ExclusionsAllowed */ =>  {
+                let var_8 =
+                    Some(
+                        Result::<crate::types::VpcBlockPublicAccessExclusionsAllowed, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::VpcBlockPublicAccessExclusionsAllowed::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_exclusions_allowed(var_8);
+            }
+            ,
             _ => {}
         }
     }

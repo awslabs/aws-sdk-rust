@@ -440,6 +440,8 @@ mod cancel_capacity_reservation_fleets;
 
 mod cancel_conversion_task;
 
+mod cancel_declarative_policies_report;
+
 mod cancel_export_task;
 
 mod cancel_image_launch_permission;
@@ -875,6 +877,8 @@ mod describe_conversion_tasks;
 
 mod describe_customer_gateways;
 
+mod describe_declarative_policies_reports;
+
 mod describe_dhcp_options;
 
 mod describe_egress_only_internet_gateways;
@@ -1123,6 +1127,8 @@ mod describe_vpc_classic_link;
 
 mod describe_vpc_classic_link_dns_support;
 
+mod describe_vpc_endpoint_associations;
+
 mod describe_vpc_endpoint_connection_notifications;
 
 mod describe_vpc_endpoint_connections;
@@ -1156,6 +1162,8 @@ mod detach_volume;
 mod detach_vpn_gateway;
 
 mod disable_address_transfer;
+
+mod disable_allowed_images_settings;
 
 mod disable_aws_network_performance_metric_subscription;
 
@@ -1223,6 +1231,8 @@ mod disassociate_vpc_cidr_block;
 
 mod enable_address_transfer;
 
+mod enable_allowed_images_settings;
+
 mod enable_aws_network_performance_metric_subscription;
 
 mod enable_ebs_encryption_by_default;
@@ -1265,6 +1275,10 @@ mod export_image;
 
 mod export_transit_gateway_routes;
 
+mod export_verified_access_instance_client_configuration;
+
+mod get_allowed_images_settings;
+
 mod get_associated_enclave_certificate_iam_roles;
 
 mod get_associated_ipv6_pool_cidrs;
@@ -1278,6 +1292,8 @@ mod get_coip_pool_usage;
 mod get_console_output;
 
 mod get_console_screenshot;
+
+mod get_declarative_policies_report_summary;
 
 mod get_default_credit_specification;
 
@@ -1354,6 +1370,8 @@ mod get_transit_gateway_route_table_associations;
 mod get_transit_gateway_route_table_propagations;
 
 mod get_verified_access_endpoint_policy;
+
+mod get_verified_access_endpoint_targets;
 
 mod get_verified_access_group_policy;
 
@@ -1573,6 +1591,8 @@ mod release_ipam_pool_allocation;
 
 mod replace_iam_instance_profile_association;
 
+mod replace_image_criteria_in_allowed_images_settings;
+
 mod replace_network_acl_association;
 
 mod replace_network_acl_entry;
@@ -1632,6 +1652,8 @@ mod search_transit_gateway_multicast_groups;
 mod search_transit_gateway_routes;
 
 mod send_diagnostic_interrupt;
+
+mod start_declarative_policies_report;
 
 mod start_instances;
 

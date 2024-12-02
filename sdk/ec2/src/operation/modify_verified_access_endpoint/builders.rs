@@ -206,4 +206,32 @@ impl ModifyVerifiedAccessEndpointFluentBuilder {
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         self.inner.get_dry_run()
     }
+    /// <p>The RDS options.</p>
+    pub fn rds_options(mut self, input: crate::types::ModifyVerifiedAccessEndpointRdsOptions) -> Self {
+        self.inner = self.inner.rds_options(input);
+        self
+    }
+    /// <p>The RDS options.</p>
+    pub fn set_rds_options(mut self, input: ::std::option::Option<crate::types::ModifyVerifiedAccessEndpointRdsOptions>) -> Self {
+        self.inner = self.inner.set_rds_options(input);
+        self
+    }
+    /// <p>The RDS options.</p>
+    pub fn get_rds_options(&self) -> &::std::option::Option<crate::types::ModifyVerifiedAccessEndpointRdsOptions> {
+        self.inner.get_rds_options()
+    }
+    /// <p>The CIDR options.</p>
+    pub fn cidr_options(mut self, input: crate::types::ModifyVerifiedAccessEndpointCidrOptions) -> Self {
+        self.inner = self.inner.cidr_options(input);
+        self
+    }
+    /// <p>The CIDR options.</p>
+    pub fn set_cidr_options(mut self, input: ::std::option::Option<crate::types::ModifyVerifiedAccessEndpointCidrOptions>) -> Self {
+        self.inner = self.inner.set_cidr_options(input);
+        self
+    }
+    /// <p>The CIDR options.</p>
+    pub fn get_cidr_options(&self) -> &::std::option::Option<crate::types::ModifyVerifiedAccessEndpointCidrOptions> {
+        self.inner.get_cidr_options()
+    }
 }

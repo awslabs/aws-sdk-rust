@@ -3,9 +3,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListServiceNetworkVpcAssociationsInput {
-    /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
+    /// <p>The ID or ARN of the service network.</p>
     pub service_network_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The ID or Amazon Resource Name (ARN) of the VPC.</p>
+    /// <p>The ID or ARN of the VPC.</p>
     pub vpc_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -13,11 +13,11 @@ pub struct ListServiceNetworkVpcAssociationsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListServiceNetworkVpcAssociationsInput {
-    /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
+    /// <p>The ID or ARN of the service network.</p>
     pub fn service_network_identifier(&self) -> ::std::option::Option<&str> {
         self.service_network_identifier.as_deref()
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the VPC.</p>
+    /// <p>The ID or ARN of the VPC.</p>
     pub fn vpc_identifier(&self) -> ::std::option::Option<&str> {
         self.vpc_identifier.as_deref()
     }
@@ -47,31 +47,31 @@ pub struct ListServiceNetworkVpcAssociationsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListServiceNetworkVpcAssociationsInputBuilder {
-    /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
+    /// <p>The ID or ARN of the service network.</p>
     pub fn service_network_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_network_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
+    /// <p>The ID or ARN of the service network.</p>
     pub fn set_service_network_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_network_identifier = input;
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
+    /// <p>The ID or ARN of the service network.</p>
     pub fn get_service_network_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_network_identifier
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the VPC.</p>
+    /// <p>The ID or ARN of the VPC.</p>
     pub fn vpc_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the VPC.</p>
+    /// <p>The ID or ARN of the VPC.</p>
     pub fn set_vpc_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_identifier = input;
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the VPC.</p>
+    /// <p>The ID or ARN of the VPC.</p>
     pub fn get_vpc_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_identifier
     }

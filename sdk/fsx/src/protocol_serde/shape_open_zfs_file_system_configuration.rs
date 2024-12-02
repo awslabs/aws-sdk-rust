@@ -91,6 +91,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ReadCacheConfiguration" => {
+                            builder = builder.set_read_cache_configuration(
+                                crate::protocol_serde::shape_open_zfs_read_cache_configuration::de_open_zfs_read_cache_configuration(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

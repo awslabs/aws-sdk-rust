@@ -152,9 +152,27 @@ pub(crate) fn list_listeners_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_resource_endpoint_associations_output_output_correct_errors(
+    mut builder: crate::operation::list_resource_endpoint_associations::builders::ListResourceEndpointAssociationsOutputBuilder,
+) -> crate::operation::list_resource_endpoint_associations::builders::ListResourceEndpointAssociationsOutputBuilder {
+    if builder.items.is_none() {
+        builder.items = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_rules_output_output_correct_errors(
     mut builder: crate::operation::list_rules::builders::ListRulesOutputBuilder,
 ) -> crate::operation::list_rules::builders::ListRulesOutputBuilder {
+    if builder.items.is_none() {
+        builder.items = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_service_network_resource_associations_output_output_correct_errors(
+    mut builder: crate::operation::list_service_network_resource_associations::builders::ListServiceNetworkResourceAssociationsOutputBuilder,
+) -> crate::operation::list_service_network_resource_associations::builders::ListServiceNetworkResourceAssociationsOutputBuilder {
     if builder.items.is_none() {
         builder.items = Some(Default::default())
     }
@@ -173,6 +191,15 @@ pub(crate) fn list_service_network_service_associations_output_output_correct_er
 pub(crate) fn list_service_network_vpc_associations_output_output_correct_errors(
     mut builder: crate::operation::list_service_network_vpc_associations::builders::ListServiceNetworkVpcAssociationsOutputBuilder,
 ) -> crate::operation::list_service_network_vpc_associations::builders::ListServiceNetworkVpcAssociationsOutputBuilder {
+    if builder.items.is_none() {
+        builder.items = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_service_network_vpc_endpoint_associations_output_output_correct_errors(
+    mut builder: crate::operation::list_service_network_vpc_endpoint_associations::builders::ListServiceNetworkVpcEndpointAssociationsOutputBuilder,
+) -> crate::operation::list_service_network_vpc_endpoint_associations::builders::ListServiceNetworkVpcEndpointAssociationsOutputBuilder {
     if builder.items.is_none() {
         builder.items = Some(Default::default())
     }

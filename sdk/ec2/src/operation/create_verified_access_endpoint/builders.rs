@@ -328,4 +328,32 @@ impl CreateVerifiedAccessEndpointFluentBuilder {
     pub fn get_sse_specification(&self) -> &::std::option::Option<crate::types::VerifiedAccessSseSpecificationRequest> {
         self.inner.get_sse_specification()
     }
+    /// <p>The RDS details. This parameter is required if the endpoint type is <code>rds</code>.</p>
+    pub fn rds_options(mut self, input: crate::types::CreateVerifiedAccessEndpointRdsOptions) -> Self {
+        self.inner = self.inner.rds_options(input);
+        self
+    }
+    /// <p>The RDS details. This parameter is required if the endpoint type is <code>rds</code>.</p>
+    pub fn set_rds_options(mut self, input: ::std::option::Option<crate::types::CreateVerifiedAccessEndpointRdsOptions>) -> Self {
+        self.inner = self.inner.set_rds_options(input);
+        self
+    }
+    /// <p>The RDS details. This parameter is required if the endpoint type is <code>rds</code>.</p>
+    pub fn get_rds_options(&self) -> &::std::option::Option<crate::types::CreateVerifiedAccessEndpointRdsOptions> {
+        self.inner.get_rds_options()
+    }
+    /// <p>The CIDR options. This parameter is required if the endpoint type is <code>cidr</code>.</p>
+    pub fn cidr_options(mut self, input: crate::types::CreateVerifiedAccessEndpointCidrOptions) -> Self {
+        self.inner = self.inner.cidr_options(input);
+        self
+    }
+    /// <p>The CIDR options. This parameter is required if the endpoint type is <code>cidr</code>.</p>
+    pub fn set_cidr_options(mut self, input: ::std::option::Option<crate::types::CreateVerifiedAccessEndpointCidrOptions>) -> Self {
+        self.inner = self.inner.set_cidr_options(input);
+        self
+    }
+    /// <p>The CIDR options. This parameter is required if the endpoint type is <code>cidr</code>.</p>
+    pub fn get_cidr_options(&self) -> &::std::option::Option<crate::types::CreateVerifiedAccessEndpointCidrOptions> {
+        self.inner.get_cidr_options()
+    }
 }

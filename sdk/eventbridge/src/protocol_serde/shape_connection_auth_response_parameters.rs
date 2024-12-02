@@ -36,6 +36,11 @@ where
                                 crate::protocol_serde::shape_connection_http_parameters::de_connection_http_parameters(tokens)?,
                             );
                         }
+                        "ConnectivityParameters" => {
+                            builder = builder.set_connectivity_parameters(
+                                    crate::protocol_serde::shape_describe_connection_connectivity_parameters::de_describe_connection_connectivity_parameters(tokens)?
+                                );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

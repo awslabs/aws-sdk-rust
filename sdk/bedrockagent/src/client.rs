@@ -185,6 +185,8 @@ mod delete_flow_version;
 
 mod delete_knowledge_base;
 
+mod delete_knowledge_base_documents;
+
 mod delete_prompt;
 
 mod disassociate_agent_knowledge_base;
@@ -211,7 +213,11 @@ mod get_ingestion_job;
 
 mod get_knowledge_base;
 
+mod get_knowledge_base_documents;
+
 mod get_prompt;
+
+mod ingest_knowledge_base_documents;
 
 mod list_agent_action_groups;
 
@@ -232,6 +238,8 @@ mod list_flow_versions;
 mod list_flows;
 
 mod list_ingestion_jobs;
+
+mod list_knowledge_base_documents;
 
 mod list_knowledge_bases;
 

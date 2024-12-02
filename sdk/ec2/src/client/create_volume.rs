@@ -26,7 +26,7 @@ impl super::Client {
     ///   - [`multi_attach_enabled(Option<bool>)`](crate::operation::create_volume::CreateVolumeOutput::multi_attach_enabled): <p>Indicates whether Amazon EBS Multi-Attach is enabled.</p>
     ///   - [`throughput(Option<i32>)`](crate::operation::create_volume::CreateVolumeOutput::throughput): <p>The throughput that the volume supports, in MiB/s.</p>
     ///   - [`sse_type(Option<SseType>)`](crate::operation::create_volume::CreateVolumeOutput::sse_type): <note>  <p>This parameter is not returned by CreateVolume.</p> </note> <p>Reserved for future use.</p>
-    ///   - [`operator(Option<OperatorResponse>)`](crate::operation::create_volume::CreateVolumeOutput::operator): <p>The entity that manages the volume.</p>
+    ///   - [`operator(Option<OperatorResponse>)`](crate::operation::create_volume::CreateVolumeOutput::operator): <p>The service provider that manages the volume.</p>
     ///   - [`volume_id(Option<String>)`](crate::operation::create_volume::CreateVolumeOutput::volume_id): <p>The ID of the volume.</p>
     ///   - [`size(Option<i32>)`](crate::operation::create_volume::CreateVolumeOutput::size): <p>The size of the volume, in GiBs.</p>
     ///   - [`snapshot_id(Option<String>)`](crate::operation::create_volume::CreateVolumeOutput::snapshot_id): <p>The snapshot from which the volume was created, if applicable.</p>

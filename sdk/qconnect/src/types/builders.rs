@@ -173,6 +173,18 @@ pub use crate::types::_assistant_summary::AssistantSummaryBuilder;
 
 pub use crate::types::_runtime_session_data::RuntimeSessionDataBuilder;
 
+pub use crate::types::_conversation_context::ConversationContextBuilder;
+
+pub use crate::types::_self_service_conversation_history::SelfServiceConversationHistoryBuilder;
+
+pub use crate::types::_message_input::MessageInputBuilder;
+
+pub use crate::types::_text_message::TextMessageBuilder;
+
+pub use crate::types::_message_output::MessageOutputBuilder;
+
+pub use crate::types::_conversation_state::ConversationStateBuilder;
+
 pub use crate::types::_session_data::SessionDataBuilder;
 
 pub use crate::types::_tag_condition::TagConditionBuilder;
@@ -193,15 +205,47 @@ pub use crate::types::_ai_prompt_data::AiPromptDataBuilder;
 
 pub use crate::types::_text_full_ai_prompt_edit_template_configuration::TextFullAiPromptEditTemplateConfigurationBuilder;
 
+pub use crate::types::_ai_guardrail_version_summary::AiGuardrailVersionSummaryBuilder;
+
+pub use crate::types::_ai_guardrail_summary::AiGuardrailSummaryBuilder;
+
+pub use crate::types::_ai_guardrail_data::AiGuardrailDataBuilder;
+
+pub use crate::types::_ai_guardrail_contextual_grounding_policy_config::AiGuardrailContextualGroundingPolicyConfigBuilder;
+
+pub use crate::types::_guardrail_contextual_grounding_filter_config::GuardrailContextualGroundingFilterConfigBuilder;
+
+pub use crate::types::_ai_guardrail_sensitive_information_policy_config::AiGuardrailSensitiveInformationPolicyConfigBuilder;
+
+pub use crate::types::_guardrail_regex_config::GuardrailRegexConfigBuilder;
+
+pub use crate::types::_guardrail_pii_entity_config::GuardrailPiiEntityConfigBuilder;
+
+pub use crate::types::_ai_guardrail_word_policy_config::AiGuardrailWordPolicyConfigBuilder;
+
+pub use crate::types::_guardrail_managed_words_config::GuardrailManagedWordsConfigBuilder;
+
+pub use crate::types::_guardrail_word_config::GuardrailWordConfigBuilder;
+
+pub use crate::types::_ai_guardrail_content_policy_config::AiGuardrailContentPolicyConfigBuilder;
+
+pub use crate::types::_guardrail_content_filter_config::GuardrailContentFilterConfigBuilder;
+
+pub use crate::types::_ai_guardrail_topic_policy_config::AiGuardrailTopicPolicyConfigBuilder;
+
+pub use crate::types::_guardrail_topic_config::GuardrailTopicConfigBuilder;
+
 pub use crate::types::_ai_agent_version_summary::AiAgentVersionSummaryBuilder;
 
 pub use crate::types::_ai_agent_summary::AiAgentSummaryBuilder;
 
-pub use crate::types::_answer_recommendation_ai_agent_configuration::AnswerRecommendationAiAgentConfigurationBuilder;
+pub use crate::types::_self_service_ai_agent_configuration::SelfServiceAiAgentConfigurationBuilder;
 
 pub use crate::types::_association_configuration::AssociationConfigurationBuilder;
 
 pub use crate::types::_knowledge_base_association_configuration_data::KnowledgeBaseAssociationConfigurationDataBuilder;
+
+pub use crate::types::_answer_recommendation_ai_agent_configuration::AnswerRecommendationAiAgentConfigurationBuilder;
 
 pub use crate::types::_manual_search_ai_agent_configuration::ManualSearchAiAgentConfigurationBuilder;
 

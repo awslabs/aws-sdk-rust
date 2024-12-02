@@ -24,7 +24,8 @@ impl crate::operation::describe_images::builders::DescribeImagesInputBuilder {
 ///
 /// <p>Describes the specified images (AMIs, AKIs, and ARIs) available to you or all of the images available to you.</p>
 /// <p>The images available to you include public images, private images that you own, and private images owned by other Amazon Web Services accounts for which you have explicit launch permissions.</p>
-/// <p>Recently deregistered images appear in the returned results for a short interval and then return empty results. After all instances that reference a deregistered AMI are terminated, specifying the ID of the image will eventually return an error indicating that the AMI ID cannot be found.</p><important>
+/// <p>Recently deregistered images appear in the returned results for a short interval and then return empty results. After all instances that reference a deregistered AMI are terminated, specifying the ID of the image will eventually return an error indicating that the AMI ID cannot be found.</p>
+/// <p>When Allowed AMIs is set to <code>enabled</code>, only allowed images are returned in the results, with the <code>imageAllowed</code> field set to <code>true</code> for each image. In <code>audit-mode</code>, the <code>imageAllowed</code> field is set to <code>true</code> for images that meet the account's Allowed AMIs criteria, and <code>false</code> for images that don't meet the criteria. For more information, see <code>EnableAllowedImagesSettings</code>.</p><important>
 /// <p>We strongly recommend using only paginated requests. Unpaginated requests are susceptible to throttling and timeouts.</p>
 /// </important> <note>
 /// <p>The order of the elements in the response, including those within nested structures, might vary. Applications should not assume the elements appear in a particular order.</p>
@@ -316,6 +317,8 @@ impl DescribeImagesFluentBuilder {
     /// <li>
     /// <p><code>hypervisor</code> - The hypervisor type (<code>ovm</code> | <code>xen</code>).</p></li>
     /// <li>
+    /// <p><code>image-allowed</code> - A Boolean that indicates whether the image meets the criteria specified for Allowed AMIs.</p></li>
+    /// <li>
     /// <p><code>image-id</code> - The ID of the image.</p></li>
     /// <li>
     /// <p><code>image-type</code> - The image type (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).</p></li>
@@ -343,6 +346,10 @@ impl DescribeImagesFluentBuilder {
     /// <p><code>root-device-name</code> - The device name of the root device volume (for example, <code>/dev/sda1</code>).</p></li>
     /// <li>
     /// <p><code>root-device-type</code> - The type of the root device volume (<code>ebs</code> | <code>instance-store</code>).</p></li>
+    /// <li>
+    /// <p><code>source-image-id</code> - The ID of the source AMI from which the AMI was created.</p></li>
+    /// <li>
+    /// <p><code>source-image-region</code> - The Region of the source AMI.</p></li>
     /// <li>
     /// <p><code>source-instance-id</code> - The ID of the instance that the AMI was created from if the AMI was created using CreateImage. This filter is applicable only if the AMI was created using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p></li>
     /// <li>
@@ -389,6 +396,8 @@ impl DescribeImagesFluentBuilder {
     /// <li>
     /// <p><code>hypervisor</code> - The hypervisor type (<code>ovm</code> | <code>xen</code>).</p></li>
     /// <li>
+    /// <p><code>image-allowed</code> - A Boolean that indicates whether the image meets the criteria specified for Allowed AMIs.</p></li>
+    /// <li>
     /// <p><code>image-id</code> - The ID of the image.</p></li>
     /// <li>
     /// <p><code>image-type</code> - The image type (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).</p></li>
@@ -416,6 +425,10 @@ impl DescribeImagesFluentBuilder {
     /// <p><code>root-device-name</code> - The device name of the root device volume (for example, <code>/dev/sda1</code>).</p></li>
     /// <li>
     /// <p><code>root-device-type</code> - The type of the root device volume (<code>ebs</code> | <code>instance-store</code>).</p></li>
+    /// <li>
+    /// <p><code>source-image-id</code> - The ID of the source AMI from which the AMI was created.</p></li>
+    /// <li>
+    /// <p><code>source-image-region</code> - The Region of the source AMI.</p></li>
     /// <li>
     /// <p><code>source-instance-id</code> - The ID of the instance that the AMI was created from if the AMI was created using CreateImage. This filter is applicable only if the AMI was created using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p></li>
     /// <li>
@@ -462,6 +475,8 @@ impl DescribeImagesFluentBuilder {
     /// <li>
     /// <p><code>hypervisor</code> - The hypervisor type (<code>ovm</code> | <code>xen</code>).</p></li>
     /// <li>
+    /// <p><code>image-allowed</code> - A Boolean that indicates whether the image meets the criteria specified for Allowed AMIs.</p></li>
+    /// <li>
     /// <p><code>image-id</code> - The ID of the image.</p></li>
     /// <li>
     /// <p><code>image-type</code> - The image type (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).</p></li>
@@ -489,6 +504,10 @@ impl DescribeImagesFluentBuilder {
     /// <p><code>root-device-name</code> - The device name of the root device volume (for example, <code>/dev/sda1</code>).</p></li>
     /// <li>
     /// <p><code>root-device-type</code> - The type of the root device volume (<code>ebs</code> | <code>instance-store</code>).</p></li>
+    /// <li>
+    /// <p><code>source-image-id</code> - The ID of the source AMI from which the AMI was created.</p></li>
+    /// <li>
+    /// <p><code>source-image-region</code> - The Region of the source AMI.</p></li>
     /// <li>
     /// <p><code>source-instance-id</code> - The ID of the instance that the AMI was created from if the AMI was created using CreateImage. This filter is applicable only if the AMI was created using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p></li>
     /// <li>

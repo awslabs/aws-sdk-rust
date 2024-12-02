@@ -10,6 +10,10 @@ pub struct AttachmentOutput {
     pub status: ::std::option::Option<crate::types::AttachmentStatus>,
     /// <p>An error associated with a file uploaded during chat.</p>
     pub error: ::std::option::Option<crate::types::ErrorDetail>,
+    /// <p>The unique identifier of the Amazon Q Business attachment.</p>
+    pub attachment_id: ::std::option::Option<::std::string::String>,
+    /// <p>The unique identifier of the Amazon Q Business conversation.</p>
+    pub conversation_id: ::std::option::Option<::std::string::String>,
 }
 impl AttachmentOutput {
     /// <p>The name of a file uploaded during chat.</p>
@@ -23,6 +27,14 @@ impl AttachmentOutput {
     /// <p>An error associated with a file uploaded during chat.</p>
     pub fn error(&self) -> ::std::option::Option<&crate::types::ErrorDetail> {
         self.error.as_ref()
+    }
+    /// <p>The unique identifier of the Amazon Q Business attachment.</p>
+    pub fn attachment_id(&self) -> ::std::option::Option<&str> {
+        self.attachment_id.as_deref()
+    }
+    /// <p>The unique identifier of the Amazon Q Business conversation.</p>
+    pub fn conversation_id(&self) -> ::std::option::Option<&str> {
+        self.conversation_id.as_deref()
     }
 }
 impl AttachmentOutput {
@@ -39,6 +51,8 @@ pub struct AttachmentOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::AttachmentStatus>,
     pub(crate) error: ::std::option::Option<crate::types::ErrorDetail>,
+    pub(crate) attachment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) conversation_id: ::std::option::Option<::std::string::String>,
 }
 impl AttachmentOutputBuilder {
     /// <p>The name of a file uploaded during chat.</p>
@@ -83,12 +97,42 @@ impl AttachmentOutputBuilder {
     pub fn get_error(&self) -> &::std::option::Option<crate::types::ErrorDetail> {
         &self.error
     }
+    /// <p>The unique identifier of the Amazon Q Business attachment.</p>
+    pub fn attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.attachment_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the Amazon Q Business attachment.</p>
+    pub fn set_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.attachment_id = input;
+        self
+    }
+    /// <p>The unique identifier of the Amazon Q Business attachment.</p>
+    pub fn get_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attachment_id
+    }
+    /// <p>The unique identifier of the Amazon Q Business conversation.</p>
+    pub fn conversation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.conversation_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the Amazon Q Business conversation.</p>
+    pub fn set_conversation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.conversation_id = input;
+        self
+    }
+    /// <p>The unique identifier of the Amazon Q Business conversation.</p>
+    pub fn get_conversation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.conversation_id
+    }
     /// Consumes the builder and constructs a [`AttachmentOutput`](crate::types::AttachmentOutput).
     pub fn build(self) -> crate::types::AttachmentOutput {
         crate::types::AttachmentOutput {
             name: self.name,
             status: self.status,
             error: self.error,
+            attachment_id: self.attachment_id,
+            conversation_id: self.conversation_id,
         }
     }
 }

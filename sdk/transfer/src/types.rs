@@ -31,6 +31,26 @@ pub use crate::types::_workflow_step_type::WorkflowStepType;
 
 pub use crate::types::_listed_workflow::ListedWorkflow;
 
+pub use crate::types::_web_app_units::WebAppUnits;
+
+pub use crate::types::_update_web_app_identity_provider_details::UpdateWebAppIdentityProviderDetails;
+
+pub use crate::types::_update_web_app_identity_center_config::UpdateWebAppIdentityCenterConfig;
+
+pub use crate::types::_described_web_app::DescribedWebApp;
+
+pub use crate::types::_described_web_app_identity_provider_details::DescribedWebAppIdentityProviderDetails;
+
+pub use crate::types::_described_identity_center_config::DescribedIdentityCenterConfig;
+
+pub use crate::types::_web_app_identity_provider_details::WebAppIdentityProviderDetails;
+
+pub use crate::types::_identity_center_config::IdentityCenterConfig;
+
+pub use crate::types::_listed_web_app::ListedWebApp;
+
+pub use crate::types::_described_web_app_customization::DescribedWebAppCustomization;
+
 pub use crate::types::_posix_profile::PosixProfile;
 
 pub use crate::types::_home_directory_map_entry::HomeDirectoryMapEntry;
@@ -203,6 +223,8 @@ mod _described_execution;
 
 mod _described_host_key;
 
+mod _described_identity_center_config;
+
 mod _described_profile;
 
 mod _described_security_policy;
@@ -210,6 +232,12 @@ mod _described_security_policy;
 mod _described_server;
 
 mod _described_user;
+
+mod _described_web_app;
+
+mod _described_web_app_customization;
+
+mod _described_web_app_identity_provider_details;
 
 mod _described_workflow;
 
@@ -243,6 +271,8 @@ mod _home_directory_map_entry;
 
 mod _home_directory_type;
 
+mod _identity_center_config;
+
 mod _identity_provider_details;
 
 mod _identity_provider_type;
@@ -266,6 +296,8 @@ mod _listed_profile;
 mod _listed_server;
 
 mod _listed_user;
+
+mod _listed_web_app;
 
 mod _listed_workflow;
 
@@ -321,7 +353,15 @@ mod _tls_session_resumption_mode;
 
 mod _transfer_table_status;
 
+mod _update_web_app_identity_center_config;
+
+mod _update_web_app_identity_provider_details;
+
 mod _user_details;
+
+mod _web_app_identity_provider_details;
+
+mod _web_app_units;
 
 mod _workflow_detail;
 

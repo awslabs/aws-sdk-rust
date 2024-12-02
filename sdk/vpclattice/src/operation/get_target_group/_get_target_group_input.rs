@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTargetGroupInput {
-    /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
+    /// <p>The ID or ARN of the target group.</p>
     pub target_group_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetTargetGroupInput {
-    /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
+    /// <p>The ID or ARN of the target group.</p>
     pub fn target_group_identifier(&self) -> ::std::option::Option<&str> {
         self.target_group_identifier.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct GetTargetGroupInputBuilder {
     pub(crate) target_group_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetTargetGroupInputBuilder {
-    /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
+    /// <p>The ID or ARN of the target group.</p>
     /// This field is required.
     pub fn target_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_group_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
+    /// <p>The ID or ARN of the target group.</p>
     pub fn set_target_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_group_identifier = input;
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
+    /// <p>The ID or ARN of the target group.</p>
     pub fn get_target_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_group_identifier
     }

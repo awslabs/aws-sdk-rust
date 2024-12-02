@@ -18,6 +18,14 @@ pub struct UpdateContactInput {
     /// <p>This field can be used to show channel subtype, such as <code>connect:Guide</code>.</p>
     /// <p>Currently Contact Expiry is the only segment attribute which can be updated by using the UpdateContact API.</p>
     pub segment_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>>,
+    /// <p>Information about the queue associated with a contact. This parameter can only be updated for external audio contacts. It is used when you integrate third-party systems with Contact Lens for analytics. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Amazon Connect Contact Lens integration</a> in the <i> Amazon Connect Administrator Guide</i>.</p>
+    pub queue_info: ::std::option::Option<crate::types::QueueInfoInput>,
+    /// <p>Information about the agent associated with a contact. This parameter can only be updated for external audio contacts. It is used when you integrate third-party systems with Contact Lens for analytics. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Amazon Connect Contact Lens integration</a> in the <i> Amazon Connect Administrator Guide</i>.</p>
+    pub user_info: ::std::option::Option<crate::types::UserInfo>,
+    /// <p>The endpoint of the customer for which the contact was initiated. For external audio contacts, this is usually the end customer's phone number. This value can only be updated for external audio contacts. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Amazon Connect Contact Lens integration</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    pub customer_endpoint: ::std::option::Option<crate::types::Endpoint>,
+    /// <p>External system endpoint for the contact was initiated. For external audio contacts, this is the phone number of the external system such as the contact center. This value can only be updated for external audio contacts. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Amazon Connect Contact Lens integration</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    pub system_endpoint: ::std::option::Option<crate::types::Endpoint>,
 }
 impl UpdateContactInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -49,6 +57,22 @@ impl UpdateContactInput {
     ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>> {
         self.segment_attributes.as_ref()
     }
+    /// <p>Information about the queue associated with a contact. This parameter can only be updated for external audio contacts. It is used when you integrate third-party systems with Contact Lens for analytics. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Amazon Connect Contact Lens integration</a> in the <i> Amazon Connect Administrator Guide</i>.</p>
+    pub fn queue_info(&self) -> ::std::option::Option<&crate::types::QueueInfoInput> {
+        self.queue_info.as_ref()
+    }
+    /// <p>Information about the agent associated with a contact. This parameter can only be updated for external audio contacts. It is used when you integrate third-party systems with Contact Lens for analytics. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Amazon Connect Contact Lens integration</a> in the <i> Amazon Connect Administrator Guide</i>.</p>
+    pub fn user_info(&self) -> ::std::option::Option<&crate::types::UserInfo> {
+        self.user_info.as_ref()
+    }
+    /// <p>The endpoint of the customer for which the contact was initiated. For external audio contacts, this is usually the end customer's phone number. This value can only be updated for external audio contacts. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Amazon Connect Contact Lens integration</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    pub fn customer_endpoint(&self) -> ::std::option::Option<&crate::types::Endpoint> {
+        self.customer_endpoint.as_ref()
+    }
+    /// <p>External system endpoint for the contact was initiated. For external audio contacts, this is the phone number of the external system such as the contact center. This value can only be updated for external audio contacts. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Amazon Connect Contact Lens integration</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    pub fn system_endpoint(&self) -> ::std::option::Option<&crate::types::Endpoint> {
+        self.system_endpoint.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UpdateContactInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -59,6 +83,10 @@ impl ::std::fmt::Debug for UpdateContactInput {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("references", &self.references);
         formatter.field("segment_attributes", &self.segment_attributes);
+        formatter.field("queue_info", &self.queue_info);
+        formatter.field("user_info", &self.user_info);
+        formatter.field("customer_endpoint", &self.customer_endpoint);
+        formatter.field("system_endpoint", &self.system_endpoint);
         formatter.finish()
     }
 }
@@ -79,6 +107,10 @@ pub struct UpdateContactInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) references: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Reference>>,
     pub(crate) segment_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>>,
+    pub(crate) queue_info: ::std::option::Option<crate::types::QueueInfoInput>,
+    pub(crate) user_info: ::std::option::Option<crate::types::UserInfo>,
+    pub(crate) customer_endpoint: ::std::option::Option<crate::types::Endpoint>,
+    pub(crate) system_endpoint: ::std::option::Option<crate::types::Endpoint>,
 }
 impl UpdateContactInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -196,6 +228,62 @@ impl UpdateContactInputBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>> {
         &self.segment_attributes
     }
+    /// <p>Information about the queue associated with a contact. This parameter can only be updated for external audio contacts. It is used when you integrate third-party systems with Contact Lens for analytics. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Amazon Connect Contact Lens integration</a> in the <i> Amazon Connect Administrator Guide</i>.</p>
+    pub fn queue_info(mut self, input: crate::types::QueueInfoInput) -> Self {
+        self.queue_info = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the queue associated with a contact. This parameter can only be updated for external audio contacts. It is used when you integrate third-party systems with Contact Lens for analytics. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Amazon Connect Contact Lens integration</a> in the <i> Amazon Connect Administrator Guide</i>.</p>
+    pub fn set_queue_info(mut self, input: ::std::option::Option<crate::types::QueueInfoInput>) -> Self {
+        self.queue_info = input;
+        self
+    }
+    /// <p>Information about the queue associated with a contact. This parameter can only be updated for external audio contacts. It is used when you integrate third-party systems with Contact Lens for analytics. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Amazon Connect Contact Lens integration</a> in the <i> Amazon Connect Administrator Guide</i>.</p>
+    pub fn get_queue_info(&self) -> &::std::option::Option<crate::types::QueueInfoInput> {
+        &self.queue_info
+    }
+    /// <p>Information about the agent associated with a contact. This parameter can only be updated for external audio contacts. It is used when you integrate third-party systems with Contact Lens for analytics. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Amazon Connect Contact Lens integration</a> in the <i> Amazon Connect Administrator Guide</i>.</p>
+    pub fn user_info(mut self, input: crate::types::UserInfo) -> Self {
+        self.user_info = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the agent associated with a contact. This parameter can only be updated for external audio contacts. It is used when you integrate third-party systems with Contact Lens for analytics. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Amazon Connect Contact Lens integration</a> in the <i> Amazon Connect Administrator Guide</i>.</p>
+    pub fn set_user_info(mut self, input: ::std::option::Option<crate::types::UserInfo>) -> Self {
+        self.user_info = input;
+        self
+    }
+    /// <p>Information about the agent associated with a contact. This parameter can only be updated for external audio contacts. It is used when you integrate third-party systems with Contact Lens for analytics. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Amazon Connect Contact Lens integration</a> in the <i> Amazon Connect Administrator Guide</i>.</p>
+    pub fn get_user_info(&self) -> &::std::option::Option<crate::types::UserInfo> {
+        &self.user_info
+    }
+    /// <p>The endpoint of the customer for which the contact was initiated. For external audio contacts, this is usually the end customer's phone number. This value can only be updated for external audio contacts. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Amazon Connect Contact Lens integration</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    pub fn customer_endpoint(mut self, input: crate::types::Endpoint) -> Self {
+        self.customer_endpoint = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The endpoint of the customer for which the contact was initiated. For external audio contacts, this is usually the end customer's phone number. This value can only be updated for external audio contacts. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Amazon Connect Contact Lens integration</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    pub fn set_customer_endpoint(mut self, input: ::std::option::Option<crate::types::Endpoint>) -> Self {
+        self.customer_endpoint = input;
+        self
+    }
+    /// <p>The endpoint of the customer for which the contact was initiated. For external audio contacts, this is usually the end customer's phone number. This value can only be updated for external audio contacts. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Amazon Connect Contact Lens integration</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    pub fn get_customer_endpoint(&self) -> &::std::option::Option<crate::types::Endpoint> {
+        &self.customer_endpoint
+    }
+    /// <p>External system endpoint for the contact was initiated. For external audio contacts, this is the phone number of the external system such as the contact center. This value can only be updated for external audio contacts. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Amazon Connect Contact Lens integration</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    pub fn system_endpoint(mut self, input: crate::types::Endpoint) -> Self {
+        self.system_endpoint = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>External system endpoint for the contact was initiated. For external audio contacts, this is the phone number of the external system such as the contact center. This value can only be updated for external audio contacts. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Amazon Connect Contact Lens integration</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    pub fn set_system_endpoint(mut self, input: ::std::option::Option<crate::types::Endpoint>) -> Self {
+        self.system_endpoint = input;
+        self
+    }
+    /// <p>External system endpoint for the contact was initiated. For external audio contacts, this is the phone number of the external system such as the contact center. This value can only be updated for external audio contacts. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Amazon Connect Contact Lens integration</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    pub fn get_system_endpoint(&self) -> &::std::option::Option<crate::types::Endpoint> {
+        &self.system_endpoint
+    }
     /// Consumes the builder and constructs a [`UpdateContactInput`](crate::operation::update_contact::UpdateContactInput).
     pub fn build(
         self,
@@ -207,6 +295,10 @@ impl UpdateContactInputBuilder {
             description: self.description,
             references: self.references,
             segment_attributes: self.segment_attributes,
+            queue_info: self.queue_info,
+            user_info: self.user_info,
+            customer_endpoint: self.customer_endpoint,
+            system_endpoint: self.system_endpoint,
         })
     }
 }
@@ -219,6 +311,10 @@ impl ::std::fmt::Debug for UpdateContactInputBuilder {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("references", &self.references);
         formatter.field("segment_attributes", &self.segment_attributes);
+        formatter.field("queue_info", &self.queue_info);
+        formatter.field("user_info", &self.user_info);
+        formatter.field("customer_endpoint", &self.customer_endpoint);
+        formatter.field("system_endpoint", &self.system_endpoint);
         formatter.finish()
     }
 }

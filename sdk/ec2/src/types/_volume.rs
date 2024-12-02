@@ -26,7 +26,7 @@ pub struct Volume {
     /// </note>
     /// <p>Reserved for future use.</p>
     pub sse_type: ::std::option::Option<crate::types::SseType>,
-    /// <p>The entity that manages the volume.</p>
+    /// <p>The service provider that manages the volume.</p>
     pub operator: ::std::option::Option<crate::types::OperatorResponse>,
     /// <p>The ID of the volume.</p>
     pub volume_id: ::std::option::Option<::std::string::String>,
@@ -91,7 +91,7 @@ impl Volume {
     pub fn sse_type(&self) -> ::std::option::Option<&crate::types::SseType> {
         self.sse_type.as_ref()
     }
-    /// <p>The entity that manages the volume.</p>
+    /// <p>The service provider that manages the volume.</p>
     pub fn operator(&self) -> ::std::option::Option<&crate::types::OperatorResponse> {
         self.operator.as_ref()
     }
@@ -304,17 +304,17 @@ impl VolumeBuilder {
     pub fn get_sse_type(&self) -> &::std::option::Option<crate::types::SseType> {
         &self.sse_type
     }
-    /// <p>The entity that manages the volume.</p>
+    /// <p>The service provider that manages the volume.</p>
     pub fn operator(mut self, input: crate::types::OperatorResponse) -> Self {
         self.operator = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The entity that manages the volume.</p>
+    /// <p>The service provider that manages the volume.</p>
     pub fn set_operator(mut self, input: ::std::option::Option<crate::types::OperatorResponse>) -> Self {
         self.operator = input;
         self
     }
-    /// <p>The entity that manages the volume.</p>
+    /// <p>The service provider that manages the volume.</p>
     pub fn get_operator(&self) -> &::std::option::Option<crate::types::OperatorResponse> {
         &self.operator
     }

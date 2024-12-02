@@ -9,6 +9,8 @@ pub struct CreateServiceNetworkOutput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the service network.</p>
     pub arn: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies if the service network is enabled for sharing.</p>
+    pub sharing_config: ::std::option::Option<crate::types::SharingConfig>,
     /// <p>The type of IAM policy.</p>
     pub auth_type: ::std::option::Option<crate::types::AuthType>,
     _request_id: Option<String>,
@@ -25,6 +27,10 @@ impl CreateServiceNetworkOutput {
     /// <p>The Amazon Resource Name (ARN) of the service network.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
+    }
+    /// <p>Specifies if the service network is enabled for sharing.</p>
+    pub fn sharing_config(&self) -> ::std::option::Option<&crate::types::SharingConfig> {
+        self.sharing_config.as_ref()
     }
     /// <p>The type of IAM policy.</p>
     pub fn auth_type(&self) -> ::std::option::Option<&crate::types::AuthType> {
@@ -50,6 +56,7 @@ pub struct CreateServiceNetworkOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) sharing_config: ::std::option::Option<crate::types::SharingConfig>,
     pub(crate) auth_type: ::std::option::Option<crate::types::AuthType>,
     _request_id: Option<String>,
 }
@@ -96,6 +103,20 @@ impl CreateServiceNetworkOutputBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
+    /// <p>Specifies if the service network is enabled for sharing.</p>
+    pub fn sharing_config(mut self, input: crate::types::SharingConfig) -> Self {
+        self.sharing_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies if the service network is enabled for sharing.</p>
+    pub fn set_sharing_config(mut self, input: ::std::option::Option<crate::types::SharingConfig>) -> Self {
+        self.sharing_config = input;
+        self
+    }
+    /// <p>Specifies if the service network is enabled for sharing.</p>
+    pub fn get_sharing_config(&self) -> &::std::option::Option<crate::types::SharingConfig> {
+        &self.sharing_config
+    }
     /// <p>The type of IAM policy.</p>
     pub fn auth_type(mut self, input: crate::types::AuthType) -> Self {
         self.auth_type = ::std::option::Option::Some(input);
@@ -125,6 +146,7 @@ impl CreateServiceNetworkOutputBuilder {
             id: self.id,
             name: self.name,
             arn: self.arn,
+            sharing_config: self.sharing_config,
             auth_type: self.auth_type,
             _request_id: self._request_id,
         }

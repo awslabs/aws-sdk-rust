@@ -45,6 +45,13 @@ where
                                 crate::protocol_serde::shape_retrieval_result_share_point_location::de_retrieval_result_share_point_location(tokens)?,
                             );
                         }
+                        "customDocumentLocation" => {
+                            builder = builder.set_custom_document_location(
+                                crate::protocol_serde::shape_retrieval_result_custom_document_location::de_retrieval_result_custom_document_location(
+                                    tokens,
+                                )?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

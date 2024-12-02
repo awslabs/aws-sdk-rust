@@ -69,6 +69,8 @@ pub use crate::types::_origination_route::OriginationRouteBuilder;
 
 pub use crate::types::_logging_configuration::LoggingConfigurationBuilder;
 
+pub use crate::types::_external_systems_configuration::ExternalSystemsConfigurationBuilder;
+
 pub use crate::types::_emergency_calling_configuration::EmergencyCallingConfigurationBuilder;
 
 pub use crate::types::_dnis_emergency_calling_configuration::DnisEmergencyCallingConfigurationBuilder;

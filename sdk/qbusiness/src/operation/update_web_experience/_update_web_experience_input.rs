@@ -31,6 +31,10 @@ pub struct UpdateWebExperienceInput {
     /// </ul>
     /// </note>
     pub origins: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The browser extension configuration for an Amazon Q Business web experience.</p><note>
+    /// <p>For Amazon Q Business application using external OIDC-compliant identity providers (IdPs). The IdP administrator must add the browser extension sign-in redirect URLs to the IdP application. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/browser-extensions.html">Configure external OIDC identity provider for your browser extensions.</a>.</p>
+    /// </note>
+    pub browser_extension_configuration: ::std::option::Option<crate::types::BrowserExtensionConfiguration>,
 }
 impl UpdateWebExperienceInput {
     /// <p>The identifier of the Amazon Q Business application attached to the web experience.</p>
@@ -83,6 +87,12 @@ impl UpdateWebExperienceInput {
     pub fn origins(&self) -> &[::std::string::String] {
         self.origins.as_deref().unwrap_or_default()
     }
+    /// <p>The browser extension configuration for an Amazon Q Business web experience.</p><note>
+    /// <p>For Amazon Q Business application using external OIDC-compliant identity providers (IdPs). The IdP administrator must add the browser extension sign-in redirect URLs to the IdP application. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/browser-extensions.html">Configure external OIDC identity provider for your browser extensions.</a>.</p>
+    /// </note>
+    pub fn browser_extension_configuration(&self) -> ::std::option::Option<&crate::types::BrowserExtensionConfiguration> {
+        self.browser_extension_configuration.as_ref()
+    }
 }
 impl UpdateWebExperienceInput {
     /// Creates a new builder-style object to manufacture [`UpdateWebExperienceInput`](crate::operation::update_web_experience::UpdateWebExperienceInput).
@@ -105,6 +115,7 @@ pub struct UpdateWebExperienceInputBuilder {
     pub(crate) sample_prompts_control_mode: ::std::option::Option<crate::types::WebExperienceSamplePromptsControlMode>,
     pub(crate) identity_provider_configuration: ::std::option::Option<crate::types::IdentityProviderConfiguration>,
     pub(crate) origins: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) browser_extension_configuration: ::std::option::Option<crate::types::BrowserExtensionConfiguration>,
 }
 impl UpdateWebExperienceInputBuilder {
     /// <p>The identifier of the Amazon Q Business application attached to the web experience.</p>
@@ -279,6 +290,26 @@ impl UpdateWebExperienceInputBuilder {
     pub fn get_origins(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.origins
     }
+    /// <p>The browser extension configuration for an Amazon Q Business web experience.</p><note>
+    /// <p>For Amazon Q Business application using external OIDC-compliant identity providers (IdPs). The IdP administrator must add the browser extension sign-in redirect URLs to the IdP application. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/browser-extensions.html">Configure external OIDC identity provider for your browser extensions.</a>.</p>
+    /// </note>
+    pub fn browser_extension_configuration(mut self, input: crate::types::BrowserExtensionConfiguration) -> Self {
+        self.browser_extension_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The browser extension configuration for an Amazon Q Business web experience.</p><note>
+    /// <p>For Amazon Q Business application using external OIDC-compliant identity providers (IdPs). The IdP administrator must add the browser extension sign-in redirect URLs to the IdP application. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/browser-extensions.html">Configure external OIDC identity provider for your browser extensions.</a>.</p>
+    /// </note>
+    pub fn set_browser_extension_configuration(mut self, input: ::std::option::Option<crate::types::BrowserExtensionConfiguration>) -> Self {
+        self.browser_extension_configuration = input;
+        self
+    }
+    /// <p>The browser extension configuration for an Amazon Q Business web experience.</p><note>
+    /// <p>For Amazon Q Business application using external OIDC-compliant identity providers (IdPs). The IdP administrator must add the browser extension sign-in redirect URLs to the IdP application. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/browser-extensions.html">Configure external OIDC identity provider for your browser extensions.</a>.</p>
+    /// </note>
+    pub fn get_browser_extension_configuration(&self) -> &::std::option::Option<crate::types::BrowserExtensionConfiguration> {
+        &self.browser_extension_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateWebExperienceInput`](crate::operation::update_web_experience::UpdateWebExperienceInput).
     pub fn build(
         self,
@@ -295,6 +326,7 @@ impl UpdateWebExperienceInputBuilder {
             sample_prompts_control_mode: self.sample_prompts_control_mode,
             identity_provider_configuration: self.identity_provider_configuration,
             origins: self.origins,
+            browser_extension_configuration: self.browser_extension_configuration,
         })
     }
 }

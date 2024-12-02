@@ -343,6 +343,10 @@ pub(crate) mod shape_model_modality_list;
 
 pub(crate) mod shape_provisioned_model_summary;
 
+pub(crate) mod shape_rag_config;
+
+pub(crate) mod shape_rag_configs;
+
 pub(crate) mod shape_s3_config;
 
 pub(crate) mod shape_s3_data_source;
@@ -367,6 +371,10 @@ pub(crate) mod shape_evaluation_model_identifiers;
 
 pub(crate) mod shape_evaluation_task_types;
 
+pub(crate) mod shape_evaluator_model_config;
+
+pub(crate) mod shape_evaluator_model_identifiers;
+
 pub(crate) mod shape_guardrail_content_filter;
 
 pub(crate) mod shape_guardrail_contextual_grounding_filter;
@@ -387,10 +395,64 @@ pub(crate) mod shape_human_evaluation_custom_metrics;
 
 pub(crate) mod shape_human_workflow_config;
 
+pub(crate) mod shape_knowledge_base_config;
+
+pub(crate) mod shape_rag_identifiers;
+
+pub(crate) mod shape_bedrock_evaluator_model;
+
+pub(crate) mod shape_bedrock_evaluator_models;
+
 pub(crate) mod shape_evaluation_dataset;
 
 pub(crate) mod shape_guardrail_topic_examples;
 
+pub(crate) mod shape_retrieve_and_generate_configuration;
+
+pub(crate) mod shape_retrieve_config;
+
 pub(crate) mod shape_evaluation_dataset_location;
 
 pub(crate) mod shape_evaluation_metric_names;
+
+pub(crate) mod shape_external_sources_retrieve_and_generate_configuration;
+
+pub(crate) mod shape_knowledge_base_retrieval_configuration;
+
+pub(crate) mod shape_knowledge_base_retrieve_and_generate_configuration;
+
+pub(crate) mod shape_external_source;
+
+pub(crate) mod shape_external_sources_generation_configuration;
+
+pub(crate) mod shape_generation_configuration;
+
+pub(crate) mod shape_knowledge_base_vector_search_configuration;
+
+pub(crate) mod shape_orchestration_configuration;
+
+pub(crate) mod shape_byte_content_doc;
+
+pub(crate) mod shape_external_sources;
+
+pub(crate) mod shape_guardrail_configuration;
+
+pub(crate) mod shape_kb_inference_config;
+
+pub(crate) mod shape_prompt_template;
+
+pub(crate) mod shape_query_transformation_configuration;
+
+pub(crate) mod shape_retrieval_filter;
+
+pub(crate) mod shape_s3_object_doc;
+
+pub(crate) mod shape_additional_model_request_fields;
+
+pub(crate) mod shape_filter_attribute;
+
+pub(crate) mod shape_text_inference_config;
+
+pub(crate) mod shape_retrieval_filter_list;
+
+pub(crate) mod shape_rag_stop_sequences;

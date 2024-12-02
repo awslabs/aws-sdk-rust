@@ -261,6 +261,70 @@ pub use crate::types::_item_path::ItemPath;
 
 pub use crate::types::_detection::Detection;
 
+pub use crate::types::_sequence::Sequence;
+
+pub use crate::types::_indicator::Indicator;
+
+pub use crate::types::_indicator_type::IndicatorType;
+
+pub use crate::types::_signal::Signal;
+
+pub use crate::types::_signal_type::SignalType;
+
+pub use crate::types::_network_endpoint::NetworkEndpoint;
+
+pub use crate::types::_network_connection::NetworkConnection;
+
+pub use crate::types::_network_direction::NetworkDirection;
+
+pub use crate::types::_autonomous_system::AutonomousSystem;
+
+pub use crate::types::_network_geo_location::NetworkGeoLocation;
+
+pub use crate::types::_resource_v2::ResourceV2;
+
+pub use crate::types::_resource_data::ResourceData;
+
+pub use crate::types::_s3_object::S3Object;
+
+pub use crate::types::_ec2_network_interface::Ec2NetworkInterface;
+
+pub use crate::types::_security_group::SecurityGroup;
+
+pub use crate::types::_private_ip_address_details::PrivateIpAddressDetails;
+
+pub use crate::types::_access_key::AccessKey;
+
+pub use crate::types::_ec2_instance::Ec2Instance;
+
+pub use crate::types::_product_code::ProductCode;
+
+pub use crate::types::_iam_instance_profile::IamInstanceProfile;
+
+pub use crate::types::_s3_bucket::S3Bucket;
+
+pub use crate::types::_public_access_configuration::PublicAccessConfiguration;
+
+pub use crate::types::_public_bucket_restrict_behavior::PublicBucketRestrictBehavior;
+
+pub use crate::types::_public_acl_ignore_behavior::PublicAclIgnoreBehavior;
+
+pub use crate::types::_public_access_status::PublicAccessStatus;
+
+pub use crate::types::_tag::Tag;
+
+pub use crate::types::_finding_resource_type::FindingResourceType;
+
+pub use crate::types::_actor::Actor;
+
+pub use crate::types::_session::Session;
+
+pub use crate::types::_mfa_status::MfaStatus;
+
+pub use crate::types::_user::User;
+
+pub use crate::types::_account::Account;
+
 pub use crate::types::_anomaly::Anomaly;
 
 pub use crate::types::_anomaly_unusual::AnomalyUnusual;
@@ -353,11 +417,7 @@ pub use crate::types::_resource::Resource;
 
 pub use crate::types::_lambda_details::LambdaDetails;
 
-pub use crate::types::_tag::Tag;
-
 pub use crate::types::_vpc_config::VpcConfig;
-
-pub use crate::types::_security_group::SecurityGroup;
 
 pub use crate::types::_rds_db_user_details::RdsDbUserDetails;
 
@@ -395,13 +455,7 @@ pub use crate::types::_eks_cluster_details::EksClusterDetails;
 
 pub use crate::types::_instance_details::InstanceDetails;
 
-pub use crate::types::_product_code::ProductCode;
-
 pub use crate::types::_network_interface::NetworkInterface;
-
-pub use crate::types::_private_ip_address_details::PrivateIpAddressDetails;
-
-pub use crate::types::_iam_instance_profile::IamInstanceProfile;
 
 pub use crate::types::_s3_bucket_detail::S3BucketDetail;
 
@@ -485,7 +539,11 @@ pub use crate::types::_unprocessed_data_sources_result::UnprocessedDataSourcesRe
 
 mod _access_control_list;
 
+mod _access_key;
+
 mod _access_key_details;
+
+mod _account;
 
 mod _account_detail;
 
@@ -496,6 +554,8 @@ mod _account_level_permissions;
 mod _account_statistics;
 
 mod _action;
+
+mod _actor;
 
 mod _addon_details;
 
@@ -514,6 +574,8 @@ mod _anomaly_object;
 mod _anomaly_unusual;
 
 mod _auto_enable_members;
+
+mod _autonomous_system;
 
 mod _aws_api_call_action;
 
@@ -621,6 +683,10 @@ mod _ebs_volume_scan_details;
 
 mod _ebs_volumes_result;
 
+mod _ec2_instance;
+
+mod _ec2_network_interface;
+
 mod _ecs_cluster_details;
 
 mod _ecs_task_details;
@@ -651,6 +717,8 @@ mod _finding_criteria;
 
 mod _finding_publishing_frequency;
 
+mod _finding_resource_type;
+
 mod _finding_statistic_type;
 
 mod _finding_statistics;
@@ -674,6 +742,10 @@ mod _host_path;
 mod _iam_instance_profile;
 
 mod _impersonated_user;
+
+mod _indicator;
+
+mod _indicator_type;
 
 mod _instance_details;
 
@@ -755,7 +827,17 @@ mod _member_features_configuration;
 
 mod _member_features_configuration_result;
 
+mod _mfa_status;
+
+mod _network_connection;
+
 mod _network_connection_action;
+
+mod _network_direction;
+
+mod _network_endpoint;
+
+mod _network_geo_location;
 
 mod _network_interface;
 
@@ -835,6 +917,14 @@ mod _profile_type;
 
 mod _public_access;
 
+mod _public_access_configuration;
+
+mod _public_access_status;
+
+mod _public_acl_ignore_behavior;
+
+mod _public_bucket_restrict_behavior;
+
 mod _publishing_status;
 
 mod _rds_db_instance_details;
@@ -853,21 +943,29 @@ mod _remote_port_details;
 
 mod _resource;
 
+mod _resource_data;
+
 mod _resource_details;
 
 mod _resource_statistics;
 
 mod _resource_type;
 
+mod _resource_v2;
+
 mod _runtime_context;
 
 mod _runtime_details;
+
+mod _s3_bucket;
 
 mod _s3_bucket_detail;
 
 mod _s3_logs_configuration;
 
 mod _s3_logs_configuration_result;
+
+mod _s3_object;
 
 mod _s3_object_detail;
 
@@ -905,11 +1003,19 @@ mod _security_context;
 
 mod _security_group;
 
+mod _sequence;
+
 mod _service;
 
 mod _service_additional_info;
 
+mod _session;
+
 mod _severity_statistics;
+
+mod _signal;
+
+mod _signal_type;
 
 mod _sort_criteria;
 
@@ -958,6 +1064,8 @@ mod _usage_statistics;
 mod _usage_top_account_result;
 
 mod _usage_top_accounts_result;
+
+mod _user;
 
 mod _volume;
 

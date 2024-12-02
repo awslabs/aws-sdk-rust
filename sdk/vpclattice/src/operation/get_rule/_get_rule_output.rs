@@ -17,9 +17,9 @@ pub struct GetRuleOutput {
     pub priority: ::std::option::Option<i32>,
     /// <p>The action for the default rule.</p>
     pub action: ::std::option::Option<crate::types::RuleAction>,
-    /// <p>The date and time that the listener rule was created, specified in ISO-8601 format.</p>
+    /// <p>The date and time that the listener rule was created, in ISO-8601 format.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The date and time that the listener rule was last updated, specified in ISO-8601 format.</p>
+    /// <p>The date and time that the listener rule was last updated, in ISO-8601 format.</p>
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
@@ -52,11 +52,11 @@ impl GetRuleOutput {
     pub fn action(&self) -> ::std::option::Option<&crate::types::RuleAction> {
         self.action.as_ref()
     }
-    /// <p>The date and time that the listener rule was created, specified in ISO-8601 format.</p>
+    /// <p>The date and time that the listener rule was created, in ISO-8601 format.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The date and time that the listener rule was last updated, specified in ISO-8601 format.</p>
+    /// <p>The date and time that the listener rule was last updated, in ISO-8601 format.</p>
     pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
@@ -187,31 +187,31 @@ impl GetRuleOutputBuilder {
     pub fn get_action(&self) -> &::std::option::Option<crate::types::RuleAction> {
         &self.action
     }
-    /// <p>The date and time that the listener rule was created, specified in ISO-8601 format.</p>
+    /// <p>The date and time that the listener rule was created, in ISO-8601 format.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time that the listener rule was created, specified in ISO-8601 format.</p>
+    /// <p>The date and time that the listener rule was created, in ISO-8601 format.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
-    /// <p>The date and time that the listener rule was created, specified in ISO-8601 format.</p>
+    /// <p>The date and time that the listener rule was created, in ISO-8601 format.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
-    /// <p>The date and time that the listener rule was last updated, specified in ISO-8601 format.</p>
+    /// <p>The date and time that the listener rule was last updated, in ISO-8601 format.</p>
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time that the listener rule was last updated, specified in ISO-8601 format.</p>
+    /// <p>The date and time that the listener rule was last updated, in ISO-8601 format.</p>
     pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }
-    /// <p>The date and time that the listener rule was last updated, specified in ISO-8601 format.</p>
+    /// <p>The date and time that the listener rule was last updated, in ISO-8601 format.</p>
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_at
     }

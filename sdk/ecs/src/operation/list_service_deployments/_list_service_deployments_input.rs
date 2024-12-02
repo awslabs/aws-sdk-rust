@@ -5,7 +5,7 @@
 pub struct ListServiceDeploymentsInput {
     /// <p>The ARN or name of the service</p>
     pub service: ::std::option::Option<::std::string::String>,
-    /// <p>The cluster that hosts the service. This can either be the cluster name or ARN. Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performanceIf you don't specify a cluster, <code>deault</code> is used.</p>
+    /// <p>The cluster that hosts the service. This can either be the cluster name or ARN. Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performanceIf you don't specify a cluster, <code>default</code> is used.</p>
     pub cluster: ::std::option::Option<::std::string::String>,
     /// <p>An optional filter you can use to narrow the results. If you do not specify a status, then all status values are included in the result.</p>
     pub status: ::std::option::Option<::std::vec::Vec<crate::types::ServiceDeploymentStatus>>,
@@ -21,7 +21,7 @@ impl ListServiceDeploymentsInput {
     pub fn service(&self) -> ::std::option::Option<&str> {
         self.service.as_deref()
     }
-    /// <p>The cluster that hosts the service. This can either be the cluster name or ARN. Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performanceIf you don't specify a cluster, <code>deault</code> is used.</p>
+    /// <p>The cluster that hosts the service. This can either be the cluster name or ARN. Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performanceIf you don't specify a cluster, <code>default</code> is used.</p>
     pub fn cluster(&self) -> ::std::option::Option<&str> {
         self.cluster.as_deref()
     }
@@ -78,17 +78,17 @@ impl ListServiceDeploymentsInputBuilder {
     pub fn get_service(&self) -> &::std::option::Option<::std::string::String> {
         &self.service
     }
-    /// <p>The cluster that hosts the service. This can either be the cluster name or ARN. Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performanceIf you don't specify a cluster, <code>deault</code> is used.</p>
+    /// <p>The cluster that hosts the service. This can either be the cluster name or ARN. Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performanceIf you don't specify a cluster, <code>default</code> is used.</p>
     pub fn cluster(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The cluster that hosts the service. This can either be the cluster name or ARN. Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performanceIf you don't specify a cluster, <code>deault</code> is used.</p>
+    /// <p>The cluster that hosts the service. This can either be the cluster name or ARN. Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performanceIf you don't specify a cluster, <code>default</code> is used.</p>
     pub fn set_cluster(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster = input;
         self
     }
-    /// <p>The cluster that hosts the service. This can either be the cluster name or ARN. Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performanceIf you don't specify a cluster, <code>deault</code> is used.</p>
+    /// <p>The cluster that hosts the service. This can either be the cluster name or ARN. Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performanceIf you don't specify a cluster, <code>default</code> is used.</p>
     pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster
     }

@@ -5,12 +5,30 @@
 pub struct GetSerialConsoleAccessStatusOutput {
     /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for your account. If <code>false</code>, access to the EC2 serial console of all instances is disabled for your account.</p>
     pub serial_console_access_enabled: ::std::option::Option<bool>,
+    /// <p>The entity that manages access to the serial console. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>account</code> - Access is managed by the account.</p></li>
+    /// <li>
+    /// <p><code>declarative-policy</code> - Access is managed by a declarative policy and can't be modified by the account.</p></li>
+    /// </ul>
+    pub managed_by: ::std::option::Option<crate::types::ManagedBy>,
     _request_id: Option<String>,
 }
 impl GetSerialConsoleAccessStatusOutput {
     /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for your account. If <code>false</code>, access to the EC2 serial console of all instances is disabled for your account.</p>
     pub fn serial_console_access_enabled(&self) -> ::std::option::Option<bool> {
         self.serial_console_access_enabled
+    }
+    /// <p>The entity that manages access to the serial console. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>account</code> - Access is managed by the account.</p></li>
+    /// <li>
+    /// <p><code>declarative-policy</code> - Access is managed by a declarative policy and can't be modified by the account.</p></li>
+    /// </ul>
+    pub fn managed_by(&self) -> ::std::option::Option<&crate::types::ManagedBy> {
+        self.managed_by.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetSerialConsoleAccessStatusOutput {
@@ -30,6 +48,7 @@ impl GetSerialConsoleAccessStatusOutput {
 #[non_exhaustive]
 pub struct GetSerialConsoleAccessStatusOutputBuilder {
     pub(crate) serial_console_access_enabled: ::std::option::Option<bool>,
+    pub(crate) managed_by: ::std::option::Option<crate::types::ManagedBy>,
     _request_id: Option<String>,
 }
 impl GetSerialConsoleAccessStatusOutputBuilder {
@@ -47,6 +66,38 @@ impl GetSerialConsoleAccessStatusOutputBuilder {
     pub fn get_serial_console_access_enabled(&self) -> &::std::option::Option<bool> {
         &self.serial_console_access_enabled
     }
+    /// <p>The entity that manages access to the serial console. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>account</code> - Access is managed by the account.</p></li>
+    /// <li>
+    /// <p><code>declarative-policy</code> - Access is managed by a declarative policy and can't be modified by the account.</p></li>
+    /// </ul>
+    pub fn managed_by(mut self, input: crate::types::ManagedBy) -> Self {
+        self.managed_by = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The entity that manages access to the serial console. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>account</code> - Access is managed by the account.</p></li>
+    /// <li>
+    /// <p><code>declarative-policy</code> - Access is managed by a declarative policy and can't be modified by the account.</p></li>
+    /// </ul>
+    pub fn set_managed_by(mut self, input: ::std::option::Option<crate::types::ManagedBy>) -> Self {
+        self.managed_by = input;
+        self
+    }
+    /// <p>The entity that manages access to the serial console. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>account</code> - Access is managed by the account.</p></li>
+    /// <li>
+    /// <p><code>declarative-policy</code> - Access is managed by a declarative policy and can't be modified by the account.</p></li>
+    /// </ul>
+    pub fn get_managed_by(&self) -> &::std::option::Option<crate::types::ManagedBy> {
+        &self.managed_by
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -60,6 +111,7 @@ impl GetSerialConsoleAccessStatusOutputBuilder {
     pub fn build(self) -> crate::operation::get_serial_console_access_status::GetSerialConsoleAccessStatusOutput {
         crate::operation::get_serial_console_access_status::GetSerialConsoleAccessStatusOutput {
             serial_console_access_enabled: self.serial_console_access_enabled,
+            managed_by: self.managed_by,
             _request_id: self._request_id,
         }
     }

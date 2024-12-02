@@ -14,9 +14,11 @@ pub struct AccessLogSubscriptionSummary {
     pub resource_arn: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
     pub destination_arn: ::std::string::String,
-    /// <p>The date and time that the access log subscription was created, specified in ISO-8601 format.</p>
+    /// <p>Log type of the service network.</p>
+    pub service_network_log_type: ::std::option::Option<crate::types::ServiceNetworkLogType>,
+    /// <p>The date and time that the access log subscription was created, in ISO-8601 format.</p>
     pub created_at: ::aws_smithy_types::DateTime,
-    /// <p>The date and time that the access log subscription was last updated, specified in ISO-8601 format.</p>
+    /// <p>The date and time that the access log subscription was last updated, in ISO-8601 format.</p>
     pub last_updated_at: ::aws_smithy_types::DateTime,
 }
 impl AccessLogSubscriptionSummary {
@@ -45,11 +47,15 @@ impl AccessLogSubscriptionSummary {
         use std::ops::Deref;
         self.destination_arn.deref()
     }
-    /// <p>The date and time that the access log subscription was created, specified in ISO-8601 format.</p>
+    /// <p>Log type of the service network.</p>
+    pub fn service_network_log_type(&self) -> ::std::option::Option<&crate::types::ServiceNetworkLogType> {
+        self.service_network_log_type.as_ref()
+    }
+    /// <p>The date and time that the access log subscription was created, in ISO-8601 format.</p>
     pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
         &self.created_at
     }
-    /// <p>The date and time that the access log subscription was last updated, specified in ISO-8601 format.</p>
+    /// <p>The date and time that the access log subscription was last updated, in ISO-8601 format.</p>
     pub fn last_updated_at(&self) -> &::aws_smithy_types::DateTime {
         &self.last_updated_at
     }
@@ -70,6 +76,7 @@ pub struct AccessLogSubscriptionSummaryBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) destination_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) service_network_log_type: ::std::option::Option<crate::types::ServiceNetworkLogType>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -149,33 +156,47 @@ impl AccessLogSubscriptionSummaryBuilder {
     pub fn get_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_arn
     }
-    /// <p>The date and time that the access log subscription was created, specified in ISO-8601 format.</p>
+    /// <p>Log type of the service network.</p>
+    pub fn service_network_log_type(mut self, input: crate::types::ServiceNetworkLogType) -> Self {
+        self.service_network_log_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Log type of the service network.</p>
+    pub fn set_service_network_log_type(mut self, input: ::std::option::Option<crate::types::ServiceNetworkLogType>) -> Self {
+        self.service_network_log_type = input;
+        self
+    }
+    /// <p>Log type of the service network.</p>
+    pub fn get_service_network_log_type(&self) -> &::std::option::Option<crate::types::ServiceNetworkLogType> {
+        &self.service_network_log_type
+    }
+    /// <p>The date and time that the access log subscription was created, in ISO-8601 format.</p>
     /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time that the access log subscription was created, specified in ISO-8601 format.</p>
+    /// <p>The date and time that the access log subscription was created, in ISO-8601 format.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
-    /// <p>The date and time that the access log subscription was created, specified in ISO-8601 format.</p>
+    /// <p>The date and time that the access log subscription was created, in ISO-8601 format.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
-    /// <p>The date and time that the access log subscription was last updated, specified in ISO-8601 format.</p>
+    /// <p>The date and time that the access log subscription was last updated, in ISO-8601 format.</p>
     /// This field is required.
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time that the access log subscription was last updated, specified in ISO-8601 format.</p>
+    /// <p>The date and time that the access log subscription was last updated, in ISO-8601 format.</p>
     pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }
-    /// <p>The date and time that the access log subscription was last updated, specified in ISO-8601 format.</p>
+    /// <p>The date and time that the access log subscription was last updated, in ISO-8601 format.</p>
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_at
     }
@@ -220,6 +241,7 @@ impl AccessLogSubscriptionSummaryBuilder {
                     "destination_arn was not specified but it is required when building AccessLogSubscriptionSummary",
                 )
             })?,
+            service_network_log_type: self.service_network_log_type,
             created_at: self.created_at.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",

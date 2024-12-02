@@ -12,8 +12,10 @@
 /// ```text
 /// # let verifiedaccessendpointtype = unimplemented!();
 /// match verifiedaccessendpointtype {
+///     VerifiedAccessEndpointType::Cidr => { /* ... */ },
 ///     VerifiedAccessEndpointType::LoadBalancer => { /* ... */ },
 ///     VerifiedAccessEndpointType::NetworkInterface => { /* ... */ },
+///     VerifiedAccessEndpointType::Rds => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -42,9 +44,13 @@
 )]
 pub enum VerifiedAccessEndpointType {
     #[allow(missing_docs)] // documentation missing in model
+    Cidr,
+    #[allow(missing_docs)] // documentation missing in model
     LoadBalancer,
     #[allow(missing_docs)] // documentation missing in model
     NetworkInterface,
+    #[allow(missing_docs)] // documentation missing in model
+    Rds,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -52,8 +58,10 @@ pub enum VerifiedAccessEndpointType {
 impl ::std::convert::From<&str> for VerifiedAccessEndpointType {
     fn from(s: &str) -> Self {
         match s {
+            "cidr" => VerifiedAccessEndpointType::Cidr,
             "load-balancer" => VerifiedAccessEndpointType::LoadBalancer,
             "network-interface" => VerifiedAccessEndpointType::NetworkInterface,
+            "rds" => VerifiedAccessEndpointType::Rds,
             other => VerifiedAccessEndpointType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -69,14 +77,16 @@ impl VerifiedAccessEndpointType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            VerifiedAccessEndpointType::Cidr => "cidr",
             VerifiedAccessEndpointType::LoadBalancer => "load-balancer",
             VerifiedAccessEndpointType::NetworkInterface => "network-interface",
+            VerifiedAccessEndpointType::Rds => "rds",
             VerifiedAccessEndpointType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["load-balancer", "network-interface"]
+        &["cidr", "load-balancer", "network-interface", "rds"]
     }
 }
 impl ::std::convert::AsRef<str> for VerifiedAccessEndpointType {
@@ -99,8 +109,10 @@ impl VerifiedAccessEndpointType {
 impl ::std::fmt::Display for VerifiedAccessEndpointType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            VerifiedAccessEndpointType::Cidr => write!(f, "cidr"),
             VerifiedAccessEndpointType::LoadBalancer => write!(f, "load-balancer"),
             VerifiedAccessEndpointType::NetworkInterface => write!(f, "network-interface"),
+            VerifiedAccessEndpointType::Rds => write!(f, "rds"),
             VerifiedAccessEndpointType::Unknown(value) => write!(f, "{}", value),
         }
     }

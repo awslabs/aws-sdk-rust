@@ -202,29 +202,34 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListEvaluati
                         query.push_kv("statusEquals", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
-                if let ::std::option::Option::Some(inner_4) = &_input.name_contains {
+                if let ::std::option::Option::Some(inner_4) = &_input.application_type_equals {
                     {
-                        query.push_kv("nameContains", &::aws_smithy_http::query::fmt_string(inner_4));
+                        query.push_kv("applicationTypeEquals", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
-                if let ::std::option::Option::Some(inner_5) = &_input.max_results {
+                if let ::std::option::Option::Some(inner_5) = &_input.name_contains {
                     {
-                        query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_5).encode());
+                        query.push_kv("nameContains", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
-                if let ::std::option::Option::Some(inner_6) = &_input.next_token {
+                if let ::std::option::Option::Some(inner_6) = &_input.max_results {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_6));
+                        query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_6).encode());
                     }
                 }
-                if let ::std::option::Option::Some(inner_7) = &_input.sort_by {
+                if let ::std::option::Option::Some(inner_7) = &_input.next_token {
                     {
-                        query.push_kv("sortBy", &::aws_smithy_http::query::fmt_string(inner_7));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_7));
                     }
                 }
-                if let ::std::option::Option::Some(inner_8) = &_input.sort_order {
+                if let ::std::option::Option::Some(inner_8) = &_input.sort_by {
                     {
-                        query.push_kv("sortOrder", &::aws_smithy_http::query::fmt_string(inner_8));
+                        query.push_kv("sortBy", &::aws_smithy_http::query::fmt_string(inner_8));
+                    }
+                }
+                if let ::std::option::Option::Some(inner_9) = &_input.sort_order {
+                    {
+                        query.push_kv("sortOrder", &::aws_smithy_http::query::fmt_string(inner_9));
                     }
                 }
                 ::std::result::Result::Ok(())

@@ -22,7 +22,7 @@ impl crate::operation::update_rule::builders::UpdateRuleInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateRule`.
 ///
-/// <p>Updates a rule for the listener. You can't modify a default listener rule. To modify a default listener rule, use <code>UpdateListener</code>.</p>
+/// <p>Updates a specified rule for the listener. You can't modify a default listener rule. To modify a default listener rule, use <code>UpdateListener</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateRuleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl UpdateRuleFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    /// <p>The ID or ARN of the service.</p>
     pub fn service_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_identifier(input.into());
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    /// <p>The ID or ARN of the service.</p>
     pub fn set_service_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_identifier(input);
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    /// <p>The ID or ARN of the service.</p>
     pub fn get_service_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_service_identifier()
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
+    /// <p>The ID or ARN of the listener.</p>
     pub fn listener_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.listener_identifier(input.into());
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
+    /// <p>The ID or ARN of the listener.</p>
     pub fn set_listener_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_listener_identifier(input);
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
+    /// <p>The ID or ARN of the listener.</p>
     pub fn get_listener_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_listener_identifier()
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the rule.</p>
+    /// <p>The ID or ARN of the rule.</p>
     pub fn rule_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rule_identifier(input.into());
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the rule.</p>
+    /// <p>The ID or ARN of the rule.</p>
     pub fn set_rule_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_rule_identifier(input);
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the rule.</p>
+    /// <p>The ID or ARN of the rule.</p>
     pub fn get_rule_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_rule_identifier()
     }

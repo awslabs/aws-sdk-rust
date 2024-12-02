@@ -10,6 +10,8 @@ pub struct KubernetesNetworkConfigResponse {
     pub service_ipv6_cidr: ::std::option::Option<::std::string::String>,
     /// <p>The IP family used to assign Kubernetes <code>Pod</code> and <code>Service</code> objects IP addresses. The IP family is always <code>ipv4</code>, unless you have a <code>1.21</code> or later cluster running version <code>1.10.1</code> or later of the Amazon VPC CNI plugin for Kubernetes and specified <code>ipv6</code> when you created the cluster.</p>
     pub ip_family: ::std::option::Option<crate::types::IpFamily>,
+    /// <p>Indicates the current configuration of the load balancing capability on your EKS Auto Mode cluster. For example, if the capability is enabled or disabled.</p>
+    pub elastic_load_balancing: ::std::option::Option<crate::types::ElasticLoadBalancing>,
 }
 impl KubernetesNetworkConfigResponse {
     /// <p>The CIDR block that Kubernetes <code>Pod</code> and <code>Service</code> object IP addresses are assigned from. Kubernetes assigns addresses from an <code>IPv4</code> CIDR block assigned to a subnet that the node is in. If you didn't specify a CIDR block when you created the cluster, then Kubernetes assigns addresses from either the <code>10.100.0.0/16</code> or <code>172.20.0.0/16</code> CIDR blocks. If this was specified, then it was specified when the cluster was created and it can't be changed.</p>
@@ -23,6 +25,10 @@ impl KubernetesNetworkConfigResponse {
     /// <p>The IP family used to assign Kubernetes <code>Pod</code> and <code>Service</code> objects IP addresses. The IP family is always <code>ipv4</code>, unless you have a <code>1.21</code> or later cluster running version <code>1.10.1</code> or later of the Amazon VPC CNI plugin for Kubernetes and specified <code>ipv6</code> when you created the cluster.</p>
     pub fn ip_family(&self) -> ::std::option::Option<&crate::types::IpFamily> {
         self.ip_family.as_ref()
+    }
+    /// <p>Indicates the current configuration of the load balancing capability on your EKS Auto Mode cluster. For example, if the capability is enabled or disabled.</p>
+    pub fn elastic_load_balancing(&self) -> ::std::option::Option<&crate::types::ElasticLoadBalancing> {
+        self.elastic_load_balancing.as_ref()
     }
 }
 impl KubernetesNetworkConfigResponse {
@@ -39,6 +45,7 @@ pub struct KubernetesNetworkConfigResponseBuilder {
     pub(crate) service_ipv4_cidr: ::std::option::Option<::std::string::String>,
     pub(crate) service_ipv6_cidr: ::std::option::Option<::std::string::String>,
     pub(crate) ip_family: ::std::option::Option<crate::types::IpFamily>,
+    pub(crate) elastic_load_balancing: ::std::option::Option<crate::types::ElasticLoadBalancing>,
 }
 impl KubernetesNetworkConfigResponseBuilder {
     /// <p>The CIDR block that Kubernetes <code>Pod</code> and <code>Service</code> object IP addresses are assigned from. Kubernetes assigns addresses from an <code>IPv4</code> CIDR block assigned to a subnet that the node is in. If you didn't specify a CIDR block when you created the cluster, then Kubernetes assigns addresses from either the <code>10.100.0.0/16</code> or <code>172.20.0.0/16</code> CIDR blocks. If this was specified, then it was specified when the cluster was created and it can't be changed.</p>
@@ -83,12 +90,27 @@ impl KubernetesNetworkConfigResponseBuilder {
     pub fn get_ip_family(&self) -> &::std::option::Option<crate::types::IpFamily> {
         &self.ip_family
     }
+    /// <p>Indicates the current configuration of the load balancing capability on your EKS Auto Mode cluster. For example, if the capability is enabled or disabled.</p>
+    pub fn elastic_load_balancing(mut self, input: crate::types::ElasticLoadBalancing) -> Self {
+        self.elastic_load_balancing = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates the current configuration of the load balancing capability on your EKS Auto Mode cluster. For example, if the capability is enabled or disabled.</p>
+    pub fn set_elastic_load_balancing(mut self, input: ::std::option::Option<crate::types::ElasticLoadBalancing>) -> Self {
+        self.elastic_load_balancing = input;
+        self
+    }
+    /// <p>Indicates the current configuration of the load balancing capability on your EKS Auto Mode cluster. For example, if the capability is enabled or disabled.</p>
+    pub fn get_elastic_load_balancing(&self) -> &::std::option::Option<crate::types::ElasticLoadBalancing> {
+        &self.elastic_load_balancing
+    }
     /// Consumes the builder and constructs a [`KubernetesNetworkConfigResponse`](crate::types::KubernetesNetworkConfigResponse).
     pub fn build(self) -> crate::types::KubernetesNetworkConfigResponse {
         crate::types::KubernetesNetworkConfigResponse {
             service_ipv4_cidr: self.service_ipv4_cidr,
             service_ipv6_cidr: self.service_ipv6_cidr,
             ip_family: self.ip_family,
+            elastic_load_balancing: self.elastic_load_balancing,
         }
     }
 }

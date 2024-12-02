@@ -35,6 +35,8 @@ pub(crate) mod shape_create_server;
 
 pub(crate) mod shape_create_user;
 
+pub(crate) mod shape_create_web_app;
+
 pub(crate) mod shape_create_workflow;
 
 pub(crate) mod shape_delete_access;
@@ -54,6 +56,10 @@ pub(crate) mod shape_delete_server;
 pub(crate) mod shape_delete_ssh_public_key;
 
 pub(crate) mod shape_delete_user;
+
+pub(crate) mod shape_delete_web_app;
+
+pub(crate) mod shape_delete_web_app_customization;
 
 pub(crate) mod shape_delete_workflow;
 
@@ -76,6 +82,10 @@ pub(crate) mod shape_describe_security_policy;
 pub(crate) mod shape_describe_server;
 
 pub(crate) mod shape_describe_user;
+
+pub(crate) mod shape_describe_web_app;
+
+pub(crate) mod shape_describe_web_app_customization;
 
 pub(crate) mod shape_describe_workflow;
 
@@ -108,6 +118,8 @@ pub(crate) mod shape_list_servers;
 pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_list_users;
+
+pub(crate) mod shape_list_web_apps;
 
 pub(crate) mod shape_list_workflows;
 
@@ -145,6 +157,10 @@ pub(crate) mod shape_update_server;
 
 pub(crate) mod shape_update_user;
 
+pub(crate) mod shape_update_web_app;
+
+pub(crate) mod shape_update_web_app_customization;
+
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
@@ -169,6 +185,8 @@ pub(crate) mod shape_create_server_input;
 
 pub(crate) mod shape_create_user_input;
 
+pub(crate) mod shape_create_web_app_input;
+
 pub(crate) mod shape_create_workflow_input;
 
 pub(crate) mod shape_delete_access_input;
@@ -188,6 +206,10 @@ pub(crate) mod shape_delete_server_input;
 pub(crate) mod shape_delete_ssh_public_key_input;
 
 pub(crate) mod shape_delete_user_input;
+
+pub(crate) mod shape_delete_web_app_customization_input;
+
+pub(crate) mod shape_delete_web_app_input;
 
 pub(crate) mod shape_delete_workflow_input;
 
@@ -210,6 +232,10 @@ pub(crate) mod shape_describe_security_policy_input;
 pub(crate) mod shape_describe_server_input;
 
 pub(crate) mod shape_describe_user_input;
+
+pub(crate) mod shape_describe_web_app_customization_input;
+
+pub(crate) mod shape_describe_web_app_input;
 
 pub(crate) mod shape_describe_workflow_input;
 
@@ -248,6 +274,8 @@ pub(crate) mod shape_list_servers_input;
 pub(crate) mod shape_list_tags_for_resource_input;
 
 pub(crate) mod shape_list_users_input;
+
+pub(crate) mod shape_list_web_apps_input;
 
 pub(crate) mod shape_list_workflows_input;
 
@@ -293,6 +321,10 @@ pub(crate) mod shape_update_server_input;
 
 pub(crate) mod shape_update_user_input;
 
+pub(crate) mod shape_update_web_app_customization_input;
+
+pub(crate) mod shape_update_web_app_input;
+
 pub(crate) mod shape_as2_connector_config;
 
 pub(crate) mod shape_connector_file_transfer_results;
@@ -316,6 +348,10 @@ pub(crate) mod shape_described_security_policy;
 pub(crate) mod shape_described_server;
 
 pub(crate) mod shape_described_user;
+
+pub(crate) mod shape_described_web_app;
+
+pub(crate) mod shape_described_web_app_customization;
 
 pub(crate) mod shape_described_workflow;
 
@@ -343,6 +379,8 @@ pub(crate) mod shape_listed_servers;
 
 pub(crate) mod shape_listed_users;
 
+pub(crate) mod shape_listed_web_apps;
+
 pub(crate) mod shape_listed_workflows;
 
 pub(crate) mod shape_posix_profile;
@@ -358,6 +396,12 @@ pub(crate) mod shape_sftp_connector_config;
 pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tags;
+
+pub(crate) mod shape_update_web_app_identity_provider_details;
+
+pub(crate) mod shape_web_app_identity_provider_details;
+
+pub(crate) mod shape_web_app_units;
 
 pub(crate) mod shape_workflow_details;
 
@@ -375,11 +419,15 @@ pub(crate) mod shape_decrypt_step_details;
 
 pub(crate) mod shape_delete_step_details;
 
+pub(crate) mod shape_described_web_app_identity_provider_details;
+
 pub(crate) mod shape_execution_results;
 
 pub(crate) mod shape_file_location;
 
 pub(crate) mod shape_home_directory_mappings;
+
+pub(crate) mod shape_identity_center_config;
 
 pub(crate) mod shape_listed_access;
 
@@ -398,6 +446,8 @@ pub(crate) mod shape_listed_profile;
 pub(crate) mod shape_listed_server;
 
 pub(crate) mod shape_listed_user;
+
+pub(crate) mod shape_listed_web_app;
 
 pub(crate) mod shape_listed_workflow;
 
@@ -419,6 +469,8 @@ pub(crate) mod shape_structured_log_destinations;
 
 pub(crate) mod shape_tag_step_details;
 
+pub(crate) mod shape_update_web_app_identity_center_config;
+
 pub(crate) mod shape_workflow_detail;
 
 pub(crate) mod shape_workflow_steps;
@@ -426,6 +478,8 @@ pub(crate) mod shape_workflow_steps;
 pub(crate) mod shape_address_allocation_ids;
 
 pub(crate) mod shape_as2_transports;
+
+pub(crate) mod shape_described_identity_center_config;
 
 pub(crate) mod shape_efs_file_location;
 

@@ -18,5 +18,17 @@ pub fn ser_knowledge_base_vector_search_configuration(
         crate::protocol_serde::shape_retrieval_filter::ser_retrieval_filter(&mut object_3, var_2)?;
         object_3.finish();
     }
+    if let Some(var_4) = &input.reranking_configuration {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("rerankingConfiguration").start_object();
+        crate::protocol_serde::shape_vector_search_reranking_configuration::ser_vector_search_reranking_configuration(&mut object_5, var_4)?;
+        object_5.finish();
+    }
+    if let Some(var_6) = &input.implicit_filter_configuration {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("implicitFilterConfiguration").start_object();
+        crate::protocol_serde::shape_implicit_filter_configuration::ser_implicit_filter_configuration(&mut object_7, var_6)?;
+        object_7.finish();
+    }
     Ok(())
 }

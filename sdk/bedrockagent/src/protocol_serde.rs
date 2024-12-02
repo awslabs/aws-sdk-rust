@@ -63,6 +63,8 @@ pub(crate) mod shape_delete_flow_version;
 
 pub(crate) mod shape_delete_knowledge_base;
 
+pub(crate) mod shape_delete_knowledge_base_documents;
+
 pub(crate) mod shape_delete_prompt;
 
 pub(crate) mod shape_disassociate_agent_knowledge_base;
@@ -89,7 +91,11 @@ pub(crate) mod shape_get_ingestion_job;
 
 pub(crate) mod shape_get_knowledge_base;
 
+pub(crate) mod shape_get_knowledge_base_documents;
+
 pub(crate) mod shape_get_prompt;
+
+pub(crate) mod shape_ingest_knowledge_base_documents;
 
 pub(crate) mod shape_list_agent_action_groups;
 
@@ -110,6 +116,8 @@ pub(crate) mod shape_list_flow_versions;
 pub(crate) mod shape_list_flows;
 
 pub(crate) mod shape_list_ingestion_jobs;
+
+pub(crate) mod shape_list_knowledge_base_documents;
 
 pub(crate) mod shape_list_knowledge_bases;
 
@@ -183,6 +191,12 @@ pub(crate) mod shape_create_prompt_input;
 
 pub(crate) mod shape_create_prompt_version_input;
 
+pub(crate) mod shape_delete_knowledge_base_documents_input;
+
+pub(crate) mod shape_get_knowledge_base_documents_input;
+
+pub(crate) mod shape_ingest_knowledge_base_documents_input;
+
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_list_agent_action_groups_input;
@@ -198,6 +212,8 @@ pub(crate) mod shape_list_agents_input;
 pub(crate) mod shape_list_data_sources_input;
 
 pub(crate) mod shape_list_ingestion_jobs_input;
+
+pub(crate) mod shape_list_knowledge_base_documents_input;
 
 pub(crate) mod shape_list_knowledge_bases_input;
 
@@ -267,6 +283,8 @@ pub(crate) mod shape_data_source_configuration;
 
 pub(crate) mod shape_data_source_summaries;
 
+pub(crate) mod shape_document_identifier;
+
 pub(crate) mod shape_flow_alias_routing_configuration;
 
 pub(crate) mod shape_flow_alias_routing_configuration_list_item;
@@ -296,6 +314,10 @@ pub(crate) mod shape_ingestion_job_summaries;
 pub(crate) mod shape_knowledge_base;
 
 pub(crate) mod shape_knowledge_base_configuration;
+
+pub(crate) mod shape_knowledge_base_document;
+
+pub(crate) mod shape_knowledge_base_document_details;
 
 pub(crate) mod shape_knowledge_base_summaries;
 
@@ -337,9 +359,15 @@ pub(crate) mod shape_chunking_configuration;
 
 pub(crate) mod shape_confluence_data_source_configuration;
 
+pub(crate) mod shape_custom_document_identifier;
+
 pub(crate) mod shape_custom_transformation_configuration;
 
 pub(crate) mod shape_data_source_summary;
+
+pub(crate) mod shape_document_content;
+
+pub(crate) mod shape_document_metadata;
 
 pub(crate) mod shape_failure_reasons;
 
@@ -364,6 +392,8 @@ pub(crate) mod shape_function;
 pub(crate) mod shape_ingestion_job_statistics;
 
 pub(crate) mod shape_ingestion_job_summary;
+
+pub(crate) mod shape_knowledge_base_document_detail;
 
 pub(crate) mod shape_knowledge_base_summary;
 
@@ -399,6 +429,8 @@ pub(crate) mod shape_s3_data_source_configuration;
 
 pub(crate) mod shape_s3_identifier;
 
+pub(crate) mod shape_s3_location;
+
 pub(crate) mod shape_salesforce_data_source_configuration;
 
 pub(crate) mod shape_share_point_data_source_configuration;
@@ -418,6 +450,10 @@ pub(crate) mod shape_chat_prompt_template_configuration;
 pub(crate) mod shape_confluence_crawler_configuration;
 
 pub(crate) mod shape_confluence_source_configuration;
+
+pub(crate) mod shape_custom_content;
+
+pub(crate) mod shape_custom_s3_location;
 
 pub(crate) mod shape_embedding_model_configuration;
 
@@ -443,6 +479,8 @@ pub(crate) mod shape_inference_configuration;
 
 pub(crate) mod shape_intermediate_storage;
 
+pub(crate) mod shape_metadata_attribute;
+
 pub(crate) mod shape_mongo_db_atlas_field_mapping;
 
 pub(crate) mod shape_open_search_serverless_field_mapping;
@@ -462,6 +500,8 @@ pub(crate) mod shape_prompt_model_inference_configuration;
 pub(crate) mod shape_rds_field_mapping;
 
 pub(crate) mod shape_redis_enterprise_cloud_field_mapping;
+
+pub(crate) mod shape_s3_content;
 
 pub(crate) mod shape_salesforce_crawler_configuration;
 
@@ -509,6 +549,8 @@ pub(crate) mod shape_hierarchical_chunking_level_configuration;
 
 pub(crate) mod shape_incompatible_connection_data_type_flow_validation_details;
 
+pub(crate) mod shape_inline_content;
+
 pub(crate) mod shape_input_flow_node_configuration;
 
 pub(crate) mod shape_iterator_flow_node_configuration;
@@ -524,6 +566,8 @@ pub(crate) mod shape_malformed_condition_expression_flow_validation_details;
 pub(crate) mod shape_malformed_node_input_expression_flow_validation_details;
 
 pub(crate) mod shape_message;
+
+pub(crate) mod shape_metadata_attribute_value;
 
 pub(crate) mod shape_mismatched_node_input_type_flow_validation_details;
 
@@ -554,8 +598,6 @@ pub(crate) mod shape_prompt_flow_node_configuration;
 pub(crate) mod shape_prompt_input_variable;
 
 pub(crate) mod shape_retrieval_flow_node_configuration;
-
-pub(crate) mod shape_s3_location;
 
 pub(crate) mod shape_s3_prefixes;
 
@@ -591,6 +633,8 @@ pub(crate) mod shape_url_configuration;
 
 pub(crate) mod shape_web_crawler_limits;
 
+pub(crate) mod shape_byte_content_doc;
+
 pub(crate) mod shape_content_block;
 
 pub(crate) mod shape_filter_list;
@@ -620,6 +664,8 @@ pub(crate) mod shape_stop_sequences;
 pub(crate) mod shape_storage_flow_node_service_configuration;
 
 pub(crate) mod shape_system_content_blocks;
+
+pub(crate) mod shape_text_content_doc;
 
 pub(crate) mod shape_tool;
 

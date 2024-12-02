@@ -58,6 +58,9 @@ pub mod delete_voice_connector;
 /// Types for the `DeleteVoiceConnectorEmergencyCallingConfiguration` operation.
 pub mod delete_voice_connector_emergency_calling_configuration;
 
+/// Types for the `DeleteVoiceConnectorExternalSystemsConfiguration` operation.
+pub mod delete_voice_connector_external_systems_configuration;
+
 /// Types for the `DeleteVoiceConnectorGroup` operation.
 pub mod delete_voice_connector_group;
 
@@ -123,6 +126,9 @@ pub mod get_voice_connector;
 
 /// Types for the `GetVoiceConnectorEmergencyCallingConfiguration` operation.
 pub mod get_voice_connector_emergency_calling_configuration;
+
+/// Types for the `GetVoiceConnectorExternalSystemsConfiguration` operation.
+pub mod get_voice_connector_external_systems_configuration;
 
 /// Types for the `GetVoiceConnectorGroup` operation.
 pub mod get_voice_connector_group;
@@ -201,6 +207,9 @@ pub mod put_sip_media_application_logging_configuration;
 
 /// Types for the `PutVoiceConnectorEmergencyCallingConfiguration` operation.
 pub mod put_voice_connector_emergency_calling_configuration;
+
+/// Types for the `PutVoiceConnectorExternalSystemsConfiguration` operation.
+pub mod put_voice_connector_external_systems_configuration;
 
 /// Types for the `PutVoiceConnectorLoggingConfiguration` operation.
 pub mod put_voice_connector_logging_configuration;

@@ -6,5 +6,8 @@ pub fn ser_voice_recording_configuration(
     if let Some(var_1) = &input.voice_recording_track {
         object.key("VoiceRecordingTrack").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.ivr_recording_track {
+        object.key("IvrRecordingTrack").string(var_2.as_str());
+    }
     Ok(())
 }

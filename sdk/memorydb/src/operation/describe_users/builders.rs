@@ -114,17 +114,17 @@ impl DescribeUsersFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_users::paginator::DescribeUsersPaginator {
         crate::operation::describe_users::paginator::DescribeUsersPaginator::new(self.handle, self.inner)
     }
-    /// <p>The name of the user</p>
+    /// <p>The name of the user.</p>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_name(input.into());
         self
     }
-    /// <p>The name of the user</p>
+    /// <p>The name of the user.</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_name(input);
         self
     }
-    /// <p>The name of the user</p>
+    /// <p>The name of the user.</p>
     pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_name()
     }

@@ -283,6 +283,28 @@ pub use crate::types::_runtime_session_data_value::RuntimeSessionDataValue;
 
 pub use crate::types::_session_data_namespace::SessionDataNamespace;
 
+pub use crate::types::_conversation_context::ConversationContext;
+
+pub use crate::types::_self_service_conversation_history::SelfServiceConversationHistory;
+
+pub use crate::types::_message_input::MessageInput;
+
+pub use crate::types::_message_data::MessageData;
+
+pub use crate::types::_text_message::TextMessage;
+
+pub use crate::types::_message_type::MessageType;
+
+pub use crate::types::_message_output::MessageOutput;
+
+pub use crate::types::_participant::Participant;
+
+pub use crate::types::_conversation_state::ConversationState;
+
+pub use crate::types::_conversation_status_reason::ConversationStatusReason;
+
+pub use crate::types::_conversation_status::ConversationStatus;
+
 pub use crate::types::_session_data::SessionData;
 
 pub use crate::types::_tag_filter::TagFilter;
@@ -327,13 +349,57 @@ pub use crate::types::_ai_prompt_template_configuration::AiPromptTemplateConfigu
 
 pub use crate::types::_text_full_ai_prompt_edit_template_configuration::TextFullAiPromptEditTemplateConfiguration;
 
+pub use crate::types::_ai_guardrail_version_summary::AiGuardrailVersionSummary;
+
+pub use crate::types::_ai_guardrail_summary::AiGuardrailSummary;
+
+pub use crate::types::_ai_guardrail_data::AiGuardrailData;
+
+pub use crate::types::_ai_guardrail_contextual_grounding_policy_config::AiGuardrailContextualGroundingPolicyConfig;
+
+pub use crate::types::_guardrail_contextual_grounding_filter_config::GuardrailContextualGroundingFilterConfig;
+
+pub use crate::types::_guardrail_contextual_grounding_filter_type::GuardrailContextualGroundingFilterType;
+
+pub use crate::types::_ai_guardrail_sensitive_information_policy_config::AiGuardrailSensitiveInformationPolicyConfig;
+
+pub use crate::types::_guardrail_regex_config::GuardrailRegexConfig;
+
+pub use crate::types::_guardrail_sensitive_information_action::GuardrailSensitiveInformationAction;
+
+pub use crate::types::_guardrail_pii_entity_config::GuardrailPiiEntityConfig;
+
+pub use crate::types::_guardrail_pii_entity_type::GuardrailPiiEntityType;
+
+pub use crate::types::_ai_guardrail_word_policy_config::AiGuardrailWordPolicyConfig;
+
+pub use crate::types::_guardrail_managed_words_config::GuardrailManagedWordsConfig;
+
+pub use crate::types::_guardrail_managed_words_type::GuardrailManagedWordsType;
+
+pub use crate::types::_guardrail_word_config::GuardrailWordConfig;
+
+pub use crate::types::_ai_guardrail_content_policy_config::AiGuardrailContentPolicyConfig;
+
+pub use crate::types::_guardrail_content_filter_config::GuardrailContentFilterConfig;
+
+pub use crate::types::_guardrail_filter_strength::GuardrailFilterStrength;
+
+pub use crate::types::_guardrail_content_filter_type::GuardrailContentFilterType;
+
+pub use crate::types::_ai_guardrail_topic_policy_config::AiGuardrailTopicPolicyConfig;
+
+pub use crate::types::_guardrail_topic_config::GuardrailTopicConfig;
+
+pub use crate::types::_guardrail_topic_type::GuardrailTopicType;
+
 pub use crate::types::_ai_agent_version_summary::AiAgentVersionSummary;
 
 pub use crate::types::_ai_agent_summary::AiAgentSummary;
 
 pub use crate::types::_ai_agent_configuration::AiAgentConfiguration;
 
-pub use crate::types::_answer_recommendation_ai_agent_configuration::AnswerRecommendationAiAgentConfiguration;
+pub use crate::types::_self_service_ai_agent_configuration::SelfServiceAiAgentConfiguration;
 
 pub use crate::types::_association_configuration::AssociationConfiguration;
 
@@ -342,6 +408,8 @@ pub use crate::types::_association_configuration_data::AssociationConfigurationD
 pub use crate::types::_knowledge_base_association_configuration_data::KnowledgeBaseAssociationConfigurationData;
 
 pub use crate::types::_ai_agent_association_configuration_type::AiAgentAssociationConfigurationType;
+
+pub use crate::types::_answer_recommendation_ai_agent_configuration::AnswerRecommendationAiAgentConfiguration;
 
 pub use crate::types::_manual_search_ai_agent_configuration::ManualSearchAiAgentConfiguration;
 
@@ -362,6 +430,22 @@ mod _ai_agent_summary;
 mod _ai_agent_type;
 
 mod _ai_agent_version_summary;
+
+mod _ai_guardrail_content_policy_config;
+
+mod _ai_guardrail_contextual_grounding_policy_config;
+
+mod _ai_guardrail_data;
+
+mod _ai_guardrail_sensitive_information_policy_config;
+
+mod _ai_guardrail_summary;
+
+mod _ai_guardrail_topic_policy_config;
+
+mod _ai_guardrail_version_summary;
+
+mod _ai_guardrail_word_policy_config;
 
 mod _ai_prompt_api_format;
 
@@ -447,6 +531,14 @@ mod _content_status;
 
 mod _content_summary;
 
+mod _conversation_context;
+
+mod _conversation_state;
+
+mod _conversation_status;
+
+mod _conversation_status_reason;
+
 mod _customer_profile_attributes;
 
 mod _data_details;
@@ -487,6 +579,34 @@ mod _generative_reference;
 
 mod _grouping_configuration;
 
+mod _guardrail_content_filter_config;
+
+mod _guardrail_content_filter_type;
+
+mod _guardrail_contextual_grounding_filter_config;
+
+mod _guardrail_contextual_grounding_filter_type;
+
+mod _guardrail_filter_strength;
+
+mod _guardrail_managed_words_config;
+
+mod _guardrail_managed_words_type;
+
+mod _guardrail_pii_entity_config;
+
+mod _guardrail_pii_entity_type;
+
+mod _guardrail_regex_config;
+
+mod _guardrail_sensitive_information_action;
+
+mod _guardrail_topic_config;
+
+mod _guardrail_topic_type;
+
+mod _guardrail_word_config;
+
 mod _hierarchical_chunking_configuration;
 
 mod _hierarchical_chunking_level_configuration;
@@ -523,6 +643,12 @@ mod _managed_source_configuration;
 
 mod _manual_search_ai_agent_configuration;
 
+mod _message_data;
+
+mod _message_input;
+
+mod _message_output;
+
 mod _message_template_attachment;
 
 mod _message_template_attribute_type;
@@ -553,6 +679,8 @@ mod _message_template_summary;
 
 mod _message_template_version_summary;
 
+mod _message_type;
+
 mod _notify_recommendations_received_error;
 
 mod _or_condition;
@@ -566,6 +694,8 @@ mod _parsing_configuration;
 mod _parsing_prompt;
 
 mod _parsing_strategy;
+
+mod _participant;
 
 mod _priority;
 
@@ -643,6 +773,10 @@ mod _search_expression;
 
 mod _seed_url;
 
+mod _self_service_ai_agent_configuration;
+
+mod _self_service_conversation_history;
+
 mod _semantic_chunking_configuration;
 
 mod _server_side_encryption_configuration;
@@ -682,6 +816,8 @@ mod _target_type;
 mod _text_data;
 
 mod _text_full_ai_prompt_edit_template_configuration;
+
+mod _text_message;
 
 mod _url_configuration;
 

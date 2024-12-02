@@ -776,3 +776,205 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for OptimizedPromptStrea
         }
     }
 }
+
+#[non_exhaustive]
+#[derive(Debug)]
+pub struct RetrieveAndGenerateStreamResponseOutputUnmarshaller;
+
+impl RetrieveAndGenerateStreamResponseOutputUnmarshaller {
+    pub fn new() -> Self {
+        RetrieveAndGenerateStreamResponseOutputUnmarshaller
+    }
+}
+impl ::aws_smithy_eventstream::frame::UnmarshallMessage for RetrieveAndGenerateStreamResponseOutputUnmarshaller {
+    type Output = crate::types::RetrieveAndGenerateStreamResponseOutput;
+    type Error = crate::types::error::RetrieveAndGenerateStreamResponseOutputError;
+    fn unmarshall(
+        &self,
+        message: &::aws_smithy_types::event_stream::Message,
+    ) -> std::result::Result<::aws_smithy_eventstream::frame::UnmarshalledMessage<Self::Output, Self::Error>, ::aws_smithy_eventstream::error::Error>
+    {
+        let response_headers = ::aws_smithy_eventstream::smithy::parse_response_headers(message)?;
+        match response_headers.message_type.as_str() {
+            "event" => match response_headers.smithy_type.as_str() {
+                "output" => {
+                    let parsed = crate::protocol_serde::shape_retrieve_and_generate_output_event::de_retrieve_and_generate_output_event_payload(
+                        &message.payload()[..],
+                    )
+                    .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall Output: {}", err)))?;
+                    Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
+                        crate::types::RetrieveAndGenerateStreamResponseOutput::Output(parsed),
+                    ))
+                }
+                "citation" => {
+                    let parsed = crate::protocol_serde::shape_citation_event::de_citation_event_payload(&message.payload()[..])
+                        .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall Citation: {}", err)))?;
+                    Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
+                        crate::types::RetrieveAndGenerateStreamResponseOutput::Citation(parsed),
+                    ))
+                }
+                "guardrail" => {
+                    let parsed = crate::protocol_serde::shape_guardrail_event::de_guardrail_event_payload(&message.payload()[..])
+                        .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall Guardrail: {}", err)))?;
+                    Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
+                        crate::types::RetrieveAndGenerateStreamResponseOutput::Guardrail(parsed),
+                    ))
+                }
+                _unknown_variant => Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
+                    crate::types::RetrieveAndGenerateStreamResponseOutput::Unknown,
+                )),
+            },
+            "exception" => {
+                let generic = match crate::protocol_serde::parse_event_stream_error_metadata(message.payload()) {
+                    Ok(builder) => builder.build(),
+                    Err(err) => {
+                        return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
+                            crate::types::error::RetrieveAndGenerateStreamResponseOutputError::unhandled(err),
+                        ))
+                    }
+                };
+                match response_headers.smithy_type.as_str() {
+                    "internalServerException" => {
+                        let mut builder = crate::types::error::builders::InternalServerExceptionBuilder::default();
+                        builder = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(
+                            &message.payload()[..],
+                            builder,
+                        )
+                        .map_err(|err| {
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall internalServerException: {}", err))
+                        })?;
+                        builder.set_meta(Some(generic));
+                        return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
+                            crate::types::error::RetrieveAndGenerateStreamResponseOutputError::InternalServerException(builder.build()),
+                        ));
+                    }
+                    "validationException" => {
+                        let mut builder = crate::types::error::builders::ValidationExceptionBuilder::default();
+                        builder =
+                            crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(&message.payload()[..], builder)
+                                .map_err(|err| {
+                                    ::aws_smithy_eventstream::error::Error::unmarshalling(format!(
+                                        "failed to unmarshall validationException: {}",
+                                        err
+                                    ))
+                                })?;
+                        builder.set_meta(Some(generic));
+                        return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
+                            crate::types::error::RetrieveAndGenerateStreamResponseOutputError::ValidationException(builder.build()),
+                        ));
+                    }
+                    "resourceNotFoundException" => {
+                        let mut builder = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                        builder = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(
+                            &message.payload()[..],
+                            builder,
+                        )
+                        .map_err(|err| {
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall resourceNotFoundException: {}", err))
+                        })?;
+                        builder.set_meta(Some(generic));
+                        return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
+                            crate::types::error::RetrieveAndGenerateStreamResponseOutputError::ResourceNotFoundException(builder.build()),
+                        ));
+                    }
+                    "serviceQuotaExceededException" => {
+                        let mut builder = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
+                        builder = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(
+                            &message.payload()[..],
+                            builder,
+                        )
+                        .map_err(|err| {
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!(
+                                "failed to unmarshall serviceQuotaExceededException: {}",
+                                err
+                            ))
+                        })?;
+                        builder.set_meta(Some(generic));
+                        return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
+                            crate::types::error::RetrieveAndGenerateStreamResponseOutputError::ServiceQuotaExceededException(builder.build()),
+                        ));
+                    }
+                    "throttlingException" => {
+                        let mut builder = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                        builder =
+                            crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(&message.payload()[..], builder)
+                                .map_err(|err| {
+                                    ::aws_smithy_eventstream::error::Error::unmarshalling(format!(
+                                        "failed to unmarshall throttlingException: {}",
+                                        err
+                                    ))
+                                })?;
+                        builder.set_meta(Some(generic));
+                        return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
+                            crate::types::error::RetrieveAndGenerateStreamResponseOutputError::ThrottlingException(builder.build()),
+                        ));
+                    }
+                    "accessDeniedException" => {
+                        let mut builder = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
+                        builder = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(
+                            &message.payload()[..],
+                            builder,
+                        )
+                        .map_err(|err| {
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall accessDeniedException: {}", err))
+                        })?;
+                        builder.set_meta(Some(generic));
+                        return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
+                            crate::types::error::RetrieveAndGenerateStreamResponseOutputError::AccessDeniedException(builder.build()),
+                        ));
+                    }
+                    "conflictException" => {
+                        let mut builder = crate::types::error::builders::ConflictExceptionBuilder::default();
+                        builder = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(&message.payload()[..], builder)
+                            .map_err(|err| {
+                                ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall conflictException: {}", err))
+                            })?;
+                        builder.set_meta(Some(generic));
+                        return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
+                            crate::types::error::RetrieveAndGenerateStreamResponseOutputError::ConflictException(builder.build()),
+                        ));
+                    }
+                    "dependencyFailedException" => {
+                        let mut builder = crate::types::error::builders::DependencyFailedExceptionBuilder::default();
+                        builder = crate::protocol_serde::shape_dependency_failed_exception::de_dependency_failed_exception_json_err(
+                            &message.payload()[..],
+                            builder,
+                        )
+                        .map_err(|err| {
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall dependencyFailedException: {}", err))
+                        })?;
+                        builder.set_meta(Some(generic));
+                        return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
+                            crate::types::error::RetrieveAndGenerateStreamResponseOutputError::DependencyFailedException(builder.build()),
+                        ));
+                    }
+                    "badGatewayException" => {
+                        let mut builder = crate::types::error::builders::BadGatewayExceptionBuilder::default();
+                        builder =
+                            crate::protocol_serde::shape_bad_gateway_exception::de_bad_gateway_exception_json_err(&message.payload()[..], builder)
+                                .map_err(|err| {
+                                    ::aws_smithy_eventstream::error::Error::unmarshalling(format!(
+                                        "failed to unmarshall badGatewayException: {}",
+                                        err
+                                    ))
+                                })?;
+                        builder.set_meta(Some(generic));
+                        return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
+                            crate::types::error::RetrieveAndGenerateStreamResponseOutputError::BadGatewayException(builder.build()),
+                        ));
+                    }
+                    _ => {}
+                }
+                Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
+                    crate::types::error::RetrieveAndGenerateStreamResponseOutputError::generic(generic),
+                ))
+            }
+            value => {
+                return Err(::aws_smithy_eventstream::error::Error::unmarshalling(format!(
+                    "unrecognized :message-type: {}",
+                    value
+                )));
+            }
+        }
+    }
+}

@@ -3,14 +3,15 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetServiceNetwork`](crate::operation::get_service_network::builders::GetServiceNetworkFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`service_network_identifier(impl Into<String>)`](crate::operation::get_service_network::builders::GetServiceNetworkFluentBuilder::service_network_identifier) / [`set_service_network_identifier(Option<String>)`](crate::operation::get_service_network::builders::GetServiceNetworkFluentBuilder::set_service_network_identifier):<br>required: **true**<br><p>The ID or Amazon Resource Name (ARN) of the service network.</p><br>
+    ///   - [`service_network_identifier(impl Into<String>)`](crate::operation::get_service_network::builders::GetServiceNetworkFluentBuilder::service_network_identifier) / [`set_service_network_identifier(Option<String>)`](crate::operation::get_service_network::builders::GetServiceNetworkFluentBuilder::set_service_network_identifier):<br>required: **true**<br><p>The ID or ARN of the service network.</p><br>
     /// - On success, responds with [`GetServiceNetworkOutput`](crate::operation::get_service_network::GetServiceNetworkOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_service_network::GetServiceNetworkOutput::id): <p>The ID of the service network.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_service_network::GetServiceNetworkOutput::name): <p>The name of the service network.</p>
-    ///   - [`created_at(Option<DateTime>)`](crate::operation::get_service_network::GetServiceNetworkOutput::created_at): <p>The date and time that the service network was created, specified in ISO-8601 format.</p>
-    ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::get_service_network::GetServiceNetworkOutput::last_updated_at): <p>The date and time of the last update, specified in ISO-8601 format.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::operation::get_service_network::GetServiceNetworkOutput::created_at): <p>The date and time that the service network was created, in ISO-8601 format.</p>
+    ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::get_service_network::GetServiceNetworkOutput::last_updated_at): <p>The date and time of the last update, in ISO-8601 format.</p>
     ///   - [`arn(Option<String>)`](crate::operation::get_service_network::GetServiceNetworkOutput::arn): <p>The Amazon Resource Name (ARN) of the service network.</p>
     ///   - [`auth_type(Option<AuthType>)`](crate::operation::get_service_network::GetServiceNetworkOutput::auth_type): <p>The type of IAM policy.</p>
+    ///   - [`sharing_config(Option<SharingConfig>)`](crate::operation::get_service_network::GetServiceNetworkOutput::sharing_config): <p>Specifies if the service network is enabled for sharing.</p>
     ///   - [`number_of_associated_vpcs(Option<i64>)`](crate::operation::get_service_network::GetServiceNetworkOutput::number_of_associated_vpcs): <p>The number of VPCs associated with the service network.</p>
     ///   - [`number_of_associated_services(Option<i64>)`](crate::operation::get_service_network::GetServiceNetworkOutput::number_of_associated_services): <p>The number of services associated with the service network.</p>
     /// - On failure, responds with [`SdkError<GetServiceNetworkError>`](crate::operation::get_service_network::GetServiceNetworkError)

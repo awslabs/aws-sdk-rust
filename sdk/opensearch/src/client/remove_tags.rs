@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RemoveTags`](crate::operation::remove_tags::builders::RemoveTagsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::remove_tags::builders::RemoveTagsFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::remove_tags::builders::RemoveTagsFluentBuilder::set_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the domain from which you want to delete the specified tags.</p><br>
-    ///   - [`tag_keys(impl Into<String>)`](crate::operation::remove_tags::builders::RemoveTagsFluentBuilder::tag_keys) / [`set_tag_keys(Option<Vec::<String>>)`](crate::operation::remove_tags::builders::RemoveTagsFluentBuilder::set_tag_keys):<br>required: **true**<br><p>The list of tag keys to remove from the domain.</p><br>
+    ///   - [`arn(impl Into<String>)`](crate::operation::remove_tags::builders::RemoveTagsFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::remove_tags::builders::RemoveTagsFluentBuilder::set_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the domain, data source, or application from which you want to delete the specified tags.</p><br>
+    ///   - [`tag_keys(impl Into<String>)`](crate::operation::remove_tags::builders::RemoveTagsFluentBuilder::tag_keys) / [`set_tag_keys(Option<Vec::<String>>)`](crate::operation::remove_tags::builders::RemoveTagsFluentBuilder::set_tag_keys):<br>required: **true**<br><p>The list of tag keys to remove from the domain, data source, or application.</p><br>
     /// - On success, responds with [`RemoveTagsOutput`](crate::operation::remove_tags::RemoveTagsOutput)
     /// - On failure, responds with [`SdkError<RemoveTagsError>`](crate::operation::remove_tags::RemoveTagsError)
     pub fn remove_tags(&self) -> crate::operation::remove_tags::builders::RemoveTagsFluentBuilder {

@@ -7,7 +7,11 @@ pub use crate::types::error::_internal_exception::InternalExceptionBuilder;
 
 pub use crate::types::error::_concurrent_modification_exception::ConcurrentModificationExceptionBuilder;
 
+pub use crate::types::error::_throttling_exception::ThrottlingExceptionBuilder;
+
 pub use crate::types::error::_limit_exceeded_exception::LimitExceededExceptionBuilder;
+
+pub use crate::types::error::_access_denied_exception::AccessDeniedExceptionBuilder;
 
 pub use crate::types::error::_invalid_event_pattern_exception::InvalidEventPatternExceptionBuilder;
 

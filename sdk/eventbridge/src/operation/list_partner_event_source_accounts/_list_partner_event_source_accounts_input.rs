@@ -5,7 +5,9 @@
 pub struct ListPartnerEventSourceAccountsInput {
     /// <p>The name of the partner event source to display account information about.</p>
     pub event_source_name: ::std::option::Option<::std::string::String>,
-    /// <p>The token returned by a previous call to this operation. Specifying this retrieves the next set of results.</p>
+    /// <p>The token returned by a previous call, which you can use to retrieve the next set of results.</p>
+    /// <p>The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page of results, make the call again using the returned token. Keep all other arguments unchanged.</p>
+    /// <p>Using an expired pagination token results in an <code>HTTP 400 InvalidToken</code> error.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.</p>
     pub limit: ::std::option::Option<i32>,
@@ -15,7 +17,9 @@ impl ListPartnerEventSourceAccountsInput {
     pub fn event_source_name(&self) -> ::std::option::Option<&str> {
         self.event_source_name.as_deref()
     }
-    /// <p>The token returned by a previous call to this operation. Specifying this retrieves the next set of results.</p>
+    /// <p>The token returned by a previous call, which you can use to retrieve the next set of results.</p>
+    /// <p>The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page of results, make the call again using the returned token. Keep all other arguments unchanged.</p>
+    /// <p>Using an expired pagination token results in an <code>HTTP 400 InvalidToken</code> error.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -55,17 +59,23 @@ impl ListPartnerEventSourceAccountsInputBuilder {
     pub fn get_event_source_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_source_name
     }
-    /// <p>The token returned by a previous call to this operation. Specifying this retrieves the next set of results.</p>
+    /// <p>The token returned by a previous call, which you can use to retrieve the next set of results.</p>
+    /// <p>The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page of results, make the call again using the returned token. Keep all other arguments unchanged.</p>
+    /// <p>Using an expired pagination token results in an <code>HTTP 400 InvalidToken</code> error.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token returned by a previous call to this operation. Specifying this retrieves the next set of results.</p>
+    /// <p>The token returned by a previous call, which you can use to retrieve the next set of results.</p>
+    /// <p>The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page of results, make the call again using the returned token. Keep all other arguments unchanged.</p>
+    /// <p>Using an expired pagination token results in an <code>HTTP 400 InvalidToken</code> error.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The token returned by a previous call to this operation. Specifying this retrieves the next set of results.</p>
+    /// <p>The token returned by a previous call, which you can use to retrieve the next set of results.</p>
+    /// <p>The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page of results, make the call again using the returned token. Keep all other arguments unchanged.</p>
+    /// <p>Using an expired pagination token results in an <code>HTTP 400 InvalidToken</code> error.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

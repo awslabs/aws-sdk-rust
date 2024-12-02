@@ -33,6 +33,8 @@ pub struct OpenZfsFileSystemConfiguration {
     pub route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IP address of the endpoint that is used to access data or to manage the file system.</p>
     pub endpoint_ip_address: ::std::option::Option<::std::string::String>,
+    /// <p>Required when <code>StorageType</code> is set to <code>INTELLIGENT_TIERING</code>. Specifies the optional provisioned SSD read cache.</p>
+    pub read_cache_configuration: ::std::option::Option<crate::types::OpenZfsReadCacheConfiguration>,
 }
 impl OpenZfsFileSystemConfiguration {
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>.</p>
@@ -92,6 +94,10 @@ impl OpenZfsFileSystemConfiguration {
     pub fn endpoint_ip_address(&self) -> ::std::option::Option<&str> {
         self.endpoint_ip_address.as_deref()
     }
+    /// <p>Required when <code>StorageType</code> is set to <code>INTELLIGENT_TIERING</code>. Specifies the optional provisioned SSD read cache.</p>
+    pub fn read_cache_configuration(&self) -> ::std::option::Option<&crate::types::OpenZfsReadCacheConfiguration> {
+        self.read_cache_configuration.as_ref()
+    }
 }
 impl OpenZfsFileSystemConfiguration {
     /// Creates a new builder-style object to manufacture [`OpenZfsFileSystemConfiguration`](crate::types::OpenZfsFileSystemConfiguration).
@@ -117,6 +123,7 @@ pub struct OpenZfsFileSystemConfigurationBuilder {
     pub(crate) endpoint_ip_address_range: ::std::option::Option<::std::string::String>,
     pub(crate) route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) endpoint_ip_address: ::std::option::Option<::std::string::String>,
+    pub(crate) read_cache_configuration: ::std::option::Option<crate::types::OpenZfsReadCacheConfiguration>,
 }
 impl OpenZfsFileSystemConfigurationBuilder {
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>.</p>
@@ -316,6 +323,20 @@ impl OpenZfsFileSystemConfigurationBuilder {
     pub fn get_endpoint_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint_ip_address
     }
+    /// <p>Required when <code>StorageType</code> is set to <code>INTELLIGENT_TIERING</code>. Specifies the optional provisioned SSD read cache.</p>
+    pub fn read_cache_configuration(mut self, input: crate::types::OpenZfsReadCacheConfiguration) -> Self {
+        self.read_cache_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Required when <code>StorageType</code> is set to <code>INTELLIGENT_TIERING</code>. Specifies the optional provisioned SSD read cache.</p>
+    pub fn set_read_cache_configuration(mut self, input: ::std::option::Option<crate::types::OpenZfsReadCacheConfiguration>) -> Self {
+        self.read_cache_configuration = input;
+        self
+    }
+    /// <p>Required when <code>StorageType</code> is set to <code>INTELLIGENT_TIERING</code>. Specifies the optional provisioned SSD read cache.</p>
+    pub fn get_read_cache_configuration(&self) -> &::std::option::Option<crate::types::OpenZfsReadCacheConfiguration> {
+        &self.read_cache_configuration
+    }
     /// Consumes the builder and constructs a [`OpenZfsFileSystemConfiguration`](crate::types::OpenZfsFileSystemConfiguration).
     pub fn build(self) -> crate::types::OpenZfsFileSystemConfiguration {
         crate::types::OpenZfsFileSystemConfiguration {
@@ -332,6 +353,7 @@ impl OpenZfsFileSystemConfigurationBuilder {
             endpoint_ip_address_range: self.endpoint_ip_address_range,
             route_table_ids: self.route_table_ids,
             endpoint_ip_address: self.endpoint_ip_address,
+            read_cache_configuration: self.read_cache_configuration,
         }
     }
 }

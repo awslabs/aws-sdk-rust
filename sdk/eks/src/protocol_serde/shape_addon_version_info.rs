@@ -24,6 +24,9 @@ where
                         "architecture" => {
                             builder = builder.set_architecture(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
                         }
+                        "computeTypes" => {
+                            builder = builder.set_compute_types(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                        }
                         "compatibilities" => {
                             builder = builder.set_compatibilities(crate::protocol_serde::shape_compatibilities::de_compatibilities(tokens)?);
                         }

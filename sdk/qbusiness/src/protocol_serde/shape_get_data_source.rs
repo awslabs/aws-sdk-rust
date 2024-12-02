@@ -177,6 +177,11 @@ pub(crate) fn de_get_data_source(
                             .transpose()?,
                     );
                 }
+                "mediaExtractionConfiguration" => {
+                    builder = builder.set_media_extraction_configuration(
+                        crate::protocol_serde::shape_media_extraction_configuration::de_media_extraction_configuration(tokens)?,
+                    );
+                }
                 "roleArn" => {
                     builder = builder.set_role_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

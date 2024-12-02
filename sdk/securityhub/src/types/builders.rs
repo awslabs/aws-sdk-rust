@@ -77,6 +77,30 @@ pub use crate::types::_insight_result_value::InsightResultValueBuilder;
 
 pub use crate::types::_aws_security_finding::AwsSecurityFindingBuilder;
 
+pub use crate::types::_detection::DetectionBuilder;
+
+pub use crate::types::_sequence::SequenceBuilder;
+
+pub use crate::types::_indicator::IndicatorBuilder;
+
+pub use crate::types::_signal::SignalBuilder;
+
+pub use crate::types::_network_endpoint::NetworkEndpointBuilder;
+
+pub use crate::types::_network_connection::NetworkConnectionBuilder;
+
+pub use crate::types::_network_autonomous_system::NetworkAutonomousSystemBuilder;
+
+pub use crate::types::_network_geo_location::NetworkGeoLocationBuilder;
+
+pub use crate::types::_actor::ActorBuilder;
+
+pub use crate::types::_actor_session::ActorSessionBuilder;
+
+pub use crate::types::_actor_user::ActorUserBuilder;
+
+pub use crate::types::_user_account::UserAccountBuilder;
+
 pub use crate::types::_generator_details::GeneratorDetailsBuilder;
 
 pub use crate::types::_finding_provider_fields::FindingProviderFieldsBuilder;

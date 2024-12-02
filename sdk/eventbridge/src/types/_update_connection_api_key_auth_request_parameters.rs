@@ -6,7 +6,7 @@
 pub struct UpdateConnectionApiKeyAuthRequestParameters {
     /// <p>The name of the API key to use for authorization.</p>
     pub api_key_name: ::std::option::Option<::std::string::String>,
-    /// <p>The value associated with teh API key to use for authorization.</p>
+    /// <p>The value associated with the API key to use for authorization.</p>
     pub api_key_value: ::std::option::Option<::std::string::String>,
 }
 impl UpdateConnectionApiKeyAuthRequestParameters {
@@ -14,7 +14,7 @@ impl UpdateConnectionApiKeyAuthRequestParameters {
     pub fn api_key_name(&self) -> ::std::option::Option<&str> {
         self.api_key_name.as_deref()
     }
-    /// <p>The value associated with teh API key to use for authorization.</p>
+    /// <p>The value associated with the API key to use for authorization.</p>
     pub fn api_key_value(&self) -> ::std::option::Option<&str> {
         self.api_key_value.as_deref()
     }
@@ -56,17 +56,17 @@ impl UpdateConnectionApiKeyAuthRequestParametersBuilder {
     pub fn get_api_key_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.api_key_name
     }
-    /// <p>The value associated with teh API key to use for authorization.</p>
+    /// <p>The value associated with the API key to use for authorization.</p>
     pub fn api_key_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_key_value = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The value associated with teh API key to use for authorization.</p>
+    /// <p>The value associated with the API key to use for authorization.</p>
     pub fn set_api_key_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_key_value = input;
         self
     }
-    /// <p>The value associated with teh API key to use for authorization.</p>
+    /// <p>The value associated with the API key to use for authorization.</p>
     pub fn get_api_key_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.api_key_value
     }

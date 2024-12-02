@@ -125,17 +125,17 @@ impl CreateServiceNetworkVpcAssociationFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service network. You must use the ARN when the resources specified in the operation are in different accounts.</p>
+    /// <p>The ID or ARN of the service network. You must use an ARN if the resources are in different accounts.</p>
     pub fn service_network_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_network_identifier(input.into());
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service network. You must use the ARN when the resources specified in the operation are in different accounts.</p>
+    /// <p>The ID or ARN of the service network. You must use an ARN if the resources are in different accounts.</p>
     pub fn set_service_network_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_network_identifier(input);
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service network. You must use the ARN when the resources specified in the operation are in different accounts.</p>
+    /// <p>The ID or ARN of the service network. You must use an ARN if the resources are in different accounts.</p>
     pub fn get_service_network_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_service_network_identifier()
     }

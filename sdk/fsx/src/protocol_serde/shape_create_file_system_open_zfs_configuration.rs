@@ -60,5 +60,11 @@ pub fn ser_create_file_system_open_zfs_configuration(
         }
         array_15.finish();
     }
+    if let Some(var_17) = &input.read_cache_configuration {
+        #[allow(unused_mut)]
+        let mut object_18 = object.key("ReadCacheConfiguration").start_object();
+        crate::protocol_serde::shape_open_zfs_read_cache_configuration::ser_open_zfs_read_cache_configuration(&mut object_18, var_17)?;
+        object_18.finish();
+    }
     Ok(())
 }

@@ -18,5 +18,8 @@ pub fn ser_describe_queries_input_input(
     if let Some(var_4) = &input.next_token {
         object.key("nextToken").string(var_4.as_str());
     }
+    if let Some(var_5) = &input.query_language {
+        object.key("queryLanguage").string(var_5.as_str());
+    }
     Ok(())
 }

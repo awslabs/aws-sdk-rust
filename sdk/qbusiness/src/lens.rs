@@ -19,6 +19,16 @@ pub(crate) fn reflens_list_applications_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_attachments_output_output_next_token(
+    input: &crate::operation::list_attachments::ListAttachmentsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_conversations_output_output_next_token(
     input: &crate::operation::list_conversations::ListConversationsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -133,6 +143,16 @@ pub(crate) fn lens_list_applications_output_output_applications(
     input: crate::operation::list_applications::ListApplicationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Application>> {
     let input = match input.applications {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_attachments_output_output_attachments(
+    input: crate::operation::list_attachments::ListAttachmentsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::Attachment>> {
+    let input = match input.attachments {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

@@ -10,11 +10,17 @@ pub struct DescribeInstanceImageMetadataInput {
     /// <li>
     /// <p><code>instance-id</code> - The ID of the instance.</p></li>
     /// <li>
+    /// <p><code>image-allowed</code> - A Boolean that indicates whether the image meets the criteria specified for Allowed AMIs.</p></li>
+    /// <li>
     /// <p><code>instance-state-name</code> - The state of the instance (<code>pending</code> | <code>running</code> | <code>shutting-down</code> | <code>terminated</code> | <code>stopping</code> | <code>stopped</code>).</p></li>
     /// <li>
     /// <p><code>instance-type</code> - The type of instance (for example, <code>t3.micro</code>).</p></li>
     /// <li>
     /// <p><code>launch-time</code> - The time when the instance was launched, in the ISO 8601 format in the UTC time zone (YYYY-MM-DDThh:mm:ss.sssZ), for example, <code>2023-09-29T11:04:43.305Z</code>. You can use a wildcard (<code>*</code>), for example, <code>2023-09-29T*</code>, which matches an entire day.</p></li>
+    /// <li>
+    /// <p><code>owner-alias</code> - The owner alias (<code>amazon</code> | <code>aws-marketplace</code> | <code>aws-backup-vault</code>). The valid aliases are defined in an Amazon-maintained list. This is not the Amazon Web Services account alias that can be set using the IAM console. We recommend that you use the <code>Owner</code> request parameter instead of this filter.</p></li>
+    /// <li>
+    /// <p><code>owner-id</code> - The Amazon Web Services account ID of the owner. We recommend that you use the <code>Owner</code> request parameter instead of this filter.</p></li>
     /// <li>
     /// <p><code>tag:<key></key></code> - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p></li>
     /// <li>
@@ -42,11 +48,17 @@ impl DescribeInstanceImageMetadataInput {
     /// <li>
     /// <p><code>instance-id</code> - The ID of the instance.</p></li>
     /// <li>
+    /// <p><code>image-allowed</code> - A Boolean that indicates whether the image meets the criteria specified for Allowed AMIs.</p></li>
+    /// <li>
     /// <p><code>instance-state-name</code> - The state of the instance (<code>pending</code> | <code>running</code> | <code>shutting-down</code> | <code>terminated</code> | <code>stopping</code> | <code>stopped</code>).</p></li>
     /// <li>
     /// <p><code>instance-type</code> - The type of instance (for example, <code>t3.micro</code>).</p></li>
     /// <li>
     /// <p><code>launch-time</code> - The time when the instance was launched, in the ISO 8601 format in the UTC time zone (YYYY-MM-DDThh:mm:ss.sssZ), for example, <code>2023-09-29T11:04:43.305Z</code>. You can use a wildcard (<code>*</code>), for example, <code>2023-09-29T*</code>, which matches an entire day.</p></li>
+    /// <li>
+    /// <p><code>owner-alias</code> - The owner alias (<code>amazon</code> | <code>aws-marketplace</code> | <code>aws-backup-vault</code>). The valid aliases are defined in an Amazon-maintained list. This is not the Amazon Web Services account alias that can be set using the IAM console. We recommend that you use the <code>Owner</code> request parameter instead of this filter.</p></li>
+    /// <li>
+    /// <p><code>owner-id</code> - The Amazon Web Services account ID of the owner. We recommend that you use the <code>Owner</code> request parameter instead of this filter.</p></li>
     /// <li>
     /// <p><code>tag:<key></key></code> - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p></li>
     /// <li>
@@ -109,11 +121,17 @@ impl DescribeInstanceImageMetadataInputBuilder {
     /// <li>
     /// <p><code>instance-id</code> - The ID of the instance.</p></li>
     /// <li>
+    /// <p><code>image-allowed</code> - A Boolean that indicates whether the image meets the criteria specified for Allowed AMIs.</p></li>
+    /// <li>
     /// <p><code>instance-state-name</code> - The state of the instance (<code>pending</code> | <code>running</code> | <code>shutting-down</code> | <code>terminated</code> | <code>stopping</code> | <code>stopped</code>).</p></li>
     /// <li>
     /// <p><code>instance-type</code> - The type of instance (for example, <code>t3.micro</code>).</p></li>
     /// <li>
     /// <p><code>launch-time</code> - The time when the instance was launched, in the ISO 8601 format in the UTC time zone (YYYY-MM-DDThh:mm:ss.sssZ), for example, <code>2023-09-29T11:04:43.305Z</code>. You can use a wildcard (<code>*</code>), for example, <code>2023-09-29T*</code>, which matches an entire day.</p></li>
+    /// <li>
+    /// <p><code>owner-alias</code> - The owner alias (<code>amazon</code> | <code>aws-marketplace</code> | <code>aws-backup-vault</code>). The valid aliases are defined in an Amazon-maintained list. This is not the Amazon Web Services account alias that can be set using the IAM console. We recommend that you use the <code>Owner</code> request parameter instead of this filter.</p></li>
+    /// <li>
+    /// <p><code>owner-id</code> - The Amazon Web Services account ID of the owner. We recommend that you use the <code>Owner</code> request parameter instead of this filter.</p></li>
     /// <li>
     /// <p><code>tag:<key></key></code> - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p></li>
     /// <li>
@@ -134,11 +152,17 @@ impl DescribeInstanceImageMetadataInputBuilder {
     /// <li>
     /// <p><code>instance-id</code> - The ID of the instance.</p></li>
     /// <li>
+    /// <p><code>image-allowed</code> - A Boolean that indicates whether the image meets the criteria specified for Allowed AMIs.</p></li>
+    /// <li>
     /// <p><code>instance-state-name</code> - The state of the instance (<code>pending</code> | <code>running</code> | <code>shutting-down</code> | <code>terminated</code> | <code>stopping</code> | <code>stopped</code>).</p></li>
     /// <li>
     /// <p><code>instance-type</code> - The type of instance (for example, <code>t3.micro</code>).</p></li>
     /// <li>
     /// <p><code>launch-time</code> - The time when the instance was launched, in the ISO 8601 format in the UTC time zone (YYYY-MM-DDThh:mm:ss.sssZ), for example, <code>2023-09-29T11:04:43.305Z</code>. You can use a wildcard (<code>*</code>), for example, <code>2023-09-29T*</code>, which matches an entire day.</p></li>
+    /// <li>
+    /// <p><code>owner-alias</code> - The owner alias (<code>amazon</code> | <code>aws-marketplace</code> | <code>aws-backup-vault</code>). The valid aliases are defined in an Amazon-maintained list. This is not the Amazon Web Services account alias that can be set using the IAM console. We recommend that you use the <code>Owner</code> request parameter instead of this filter.</p></li>
+    /// <li>
+    /// <p><code>owner-id</code> - The Amazon Web Services account ID of the owner. We recommend that you use the <code>Owner</code> request parameter instead of this filter.</p></li>
     /// <li>
     /// <p><code>tag:<key></key></code> - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p></li>
     /// <li>
@@ -157,11 +181,17 @@ impl DescribeInstanceImageMetadataInputBuilder {
     /// <li>
     /// <p><code>instance-id</code> - The ID of the instance.</p></li>
     /// <li>
+    /// <p><code>image-allowed</code> - A Boolean that indicates whether the image meets the criteria specified for Allowed AMIs.</p></li>
+    /// <li>
     /// <p><code>instance-state-name</code> - The state of the instance (<code>pending</code> | <code>running</code> | <code>shutting-down</code> | <code>terminated</code> | <code>stopping</code> | <code>stopped</code>).</p></li>
     /// <li>
     /// <p><code>instance-type</code> - The type of instance (for example, <code>t3.micro</code>).</p></li>
     /// <li>
     /// <p><code>launch-time</code> - The time when the instance was launched, in the ISO 8601 format in the UTC time zone (YYYY-MM-DDThh:mm:ss.sssZ), for example, <code>2023-09-29T11:04:43.305Z</code>. You can use a wildcard (<code>*</code>), for example, <code>2023-09-29T*</code>, which matches an entire day.</p></li>
+    /// <li>
+    /// <p><code>owner-alias</code> - The owner alias (<code>amazon</code> | <code>aws-marketplace</code> | <code>aws-backup-vault</code>). The valid aliases are defined in an Amazon-maintained list. This is not the Amazon Web Services account alias that can be set using the IAM console. We recommend that you use the <code>Owner</code> request parameter instead of this filter.</p></li>
+    /// <li>
+    /// <p><code>owner-id</code> - The Amazon Web Services account ID of the owner. We recommend that you use the <code>Owner</code> request parameter instead of this filter.</p></li>
     /// <li>
     /// <p><code>tag:<key></key></code> - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p></li>
     /// <li>

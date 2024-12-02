@@ -183,4 +183,18 @@ impl CreateVerifiedAccessInstanceFluentBuilder {
     pub fn get_fips_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_fips_enabled()
     }
+    /// <p>The custom subdomain.</p>
+    pub fn cidr_endpoints_custom_sub_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.cidr_endpoints_custom_sub_domain(input.into());
+        self
+    }
+    /// <p>The custom subdomain.</p>
+    pub fn set_cidr_endpoints_custom_sub_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_cidr_endpoints_custom_sub_domain(input);
+        self
+    }
+    /// <p>The custom subdomain.</p>
+    pub fn get_cidr_endpoints_custom_sub_domain(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cidr_endpoints_custom_sub_domain()
+    }
 }

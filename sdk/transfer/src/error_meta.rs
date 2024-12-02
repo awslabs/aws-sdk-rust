@@ -236,6 +236,32 @@ impl From<crate::operation::create_user::CreateUserError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_web_app::CreateWebAppError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_web_app::CreateWebAppError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_web_app::CreateWebAppError> for Error {
+    fn from(err: crate::operation::create_web_app::CreateWebAppError) -> Self {
+        match err {
+            crate::operation::create_web_app::CreateWebAppError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_web_app::CreateWebAppError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::create_web_app::CreateWebAppError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::create_web_app::CreateWebAppError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_web_app::CreateWebAppError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_web_app::CreateWebAppError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_workflow::CreateWorkflowError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -494,6 +520,74 @@ impl From<crate::operation::delete_user::DeleteUserError> for Error {
             crate::operation::delete_user::DeleteUserError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_user::DeleteUserError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::delete_user::DeleteUserError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_web_app::DeleteWebAppError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_web_app::DeleteWebAppError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_web_app::DeleteWebAppError> for Error {
+    fn from(err: crate::operation::delete_web_app::DeleteWebAppError) -> Self {
+        match err {
+            crate::operation::delete_web_app::DeleteWebAppError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_web_app::DeleteWebAppError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::delete_web_app::DeleteWebAppError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::delete_web_app::DeleteWebAppError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_web_app::DeleteWebAppError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_web_app::DeleteWebAppError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_web_app_customization::DeleteWebAppCustomizationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_web_app_customization::DeleteWebAppCustomizationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_web_app_customization::DeleteWebAppCustomizationError> for Error {
+    fn from(err: crate::operation::delete_web_app_customization::DeleteWebAppCustomizationError) -> Self {
+        match err {
+            crate::operation::delete_web_app_customization::DeleteWebAppCustomizationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_web_app_customization::DeleteWebAppCustomizationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_web_app_customization::DeleteWebAppCustomizationError::InternalServiceError(inner) => {
+                Error::InternalServiceError(inner)
+            }
+            crate::operation::delete_web_app_customization::DeleteWebAppCustomizationError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::delete_web_app_customization::DeleteWebAppCustomizationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_web_app_customization::DeleteWebAppCustomizationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_web_app_customization::DeleteWebAppCustomizationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -792,6 +886,75 @@ impl From<crate::operation::describe_user::DescribeUserError> for Error {
             crate::operation::describe_user::DescribeUserError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::describe_user::DescribeUserError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::describe_user::DescribeUserError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_web_app::DescribeWebAppError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_web_app::DescribeWebAppError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_web_app::DescribeWebAppError> for Error {
+    fn from(err: crate::operation::describe_web_app::DescribeWebAppError) -> Self {
+        match err {
+            crate::operation::describe_web_app::DescribeWebAppError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_web_app::DescribeWebAppError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::describe_web_app::DescribeWebAppError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_web_app::DescribeWebAppError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_web_app::DescribeWebAppError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_web_app::DescribeWebAppError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_web_app_customization::DescribeWebAppCustomizationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_web_app_customization::DescribeWebAppCustomizationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_web_app_customization::DescribeWebAppCustomizationError> for Error {
+    fn from(err: crate::operation::describe_web_app_customization::DescribeWebAppCustomizationError) -> Self {
+        match err {
+            crate::operation::describe_web_app_customization::DescribeWebAppCustomizationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_web_app_customization::DescribeWebAppCustomizationError::InternalServiceError(inner) => {
+                Error::InternalServiceError(inner)
+            }
+            crate::operation::describe_web_app_customization::DescribeWebAppCustomizationError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::describe_web_app_customization::DescribeWebAppCustomizationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_web_app_customization::DescribeWebAppCustomizationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_web_app_customization::DescribeWebAppCustomizationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1237,6 +1400,31 @@ impl From<crate::operation::list_users::ListUsersError> for Error {
             crate::operation::list_users::ListUsersError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_users::ListUsersError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::list_users::ListUsersError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_web_apps::ListWebAppsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_web_apps::ListWebAppsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_web_apps::ListWebAppsError> for Error {
+    fn from(err: crate::operation::list_web_apps::ListWebAppsError) -> Self {
+        match err {
+            crate::operation::list_web_apps::ListWebAppsError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::list_web_apps::ListWebAppsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::list_web_apps::ListWebAppsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_web_apps::ListWebAppsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_web_apps::ListWebAppsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1737,6 +1925,75 @@ impl From<crate::operation::update_user::UpdateUserError> for Error {
             crate::operation::update_user::UpdateUserError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::update_user::UpdateUserError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_user::UpdateUserError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_web_app::UpdateWebAppError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_web_app::UpdateWebAppError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_web_app::UpdateWebAppError> for Error {
+    fn from(err: crate::operation::update_web_app::UpdateWebAppError) -> Self {
+        match err {
+            crate::operation::update_web_app::UpdateWebAppError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_web_app::UpdateWebAppError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_web_app::UpdateWebAppError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::update_web_app::UpdateWebAppError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::update_web_app::UpdateWebAppError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_web_app::UpdateWebAppError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_web_app::UpdateWebAppError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_web_app_customization::UpdateWebAppCustomizationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_web_app_customization::UpdateWebAppCustomizationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_web_app_customization::UpdateWebAppCustomizationError> for Error {
+    fn from(err: crate::operation::update_web_app_customization::UpdateWebAppCustomizationError) -> Self {
+        match err {
+            crate::operation::update_web_app_customization::UpdateWebAppCustomizationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_web_app_customization::UpdateWebAppCustomizationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_web_app_customization::UpdateWebAppCustomizationError::InternalServiceError(inner) => {
+                Error::InternalServiceError(inner)
+            }
+            crate::operation::update_web_app_customization::UpdateWebAppCustomizationError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::update_web_app_customization::UpdateWebAppCustomizationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_web_app_customization::UpdateWebAppCustomizationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_web_app_customization::UpdateWebAppCustomizationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

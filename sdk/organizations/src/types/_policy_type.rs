@@ -15,6 +15,7 @@
 ///     PolicyType::AiservicesOptOutPolicy => { /* ... */ },
 ///     PolicyType::BackupPolicy => { /* ... */ },
 ///     PolicyType::ChatbotPolicy => { /* ... */ },
+///     PolicyType::DeclarativePolicyEc2 => { /* ... */ },
 ///     PolicyType::ResourceControlPolicy => { /* ... */ },
 ///     PolicyType::ServiceControlPolicy => { /* ... */ },
 ///     PolicyType::TagPolicy => { /* ... */ },
@@ -52,6 +53,8 @@ pub enum PolicyType {
     #[allow(missing_docs)] // documentation missing in model
     ChatbotPolicy,
     #[allow(missing_docs)] // documentation missing in model
+    DeclarativePolicyEc2,
+    #[allow(missing_docs)] // documentation missing in model
     ResourceControlPolicy,
     #[allow(missing_docs)] // documentation missing in model
     ServiceControlPolicy,
@@ -67,6 +70,7 @@ impl ::std::convert::From<&str> for PolicyType {
             "AISERVICES_OPT_OUT_POLICY" => PolicyType::AiservicesOptOutPolicy,
             "BACKUP_POLICY" => PolicyType::BackupPolicy,
             "CHATBOT_POLICY" => PolicyType::ChatbotPolicy,
+            "DECLARATIVE_POLICY_EC2" => PolicyType::DeclarativePolicyEc2,
             "RESOURCE_CONTROL_POLICY" => PolicyType::ResourceControlPolicy,
             "SERVICE_CONTROL_POLICY" => PolicyType::ServiceControlPolicy,
             "TAG_POLICY" => PolicyType::TagPolicy,
@@ -88,6 +92,7 @@ impl PolicyType {
             PolicyType::AiservicesOptOutPolicy => "AISERVICES_OPT_OUT_POLICY",
             PolicyType::BackupPolicy => "BACKUP_POLICY",
             PolicyType::ChatbotPolicy => "CHATBOT_POLICY",
+            PolicyType::DeclarativePolicyEc2 => "DECLARATIVE_POLICY_EC2",
             PolicyType::ResourceControlPolicy => "RESOURCE_CONTROL_POLICY",
             PolicyType::ServiceControlPolicy => "SERVICE_CONTROL_POLICY",
             PolicyType::TagPolicy => "TAG_POLICY",
@@ -100,6 +105,7 @@ impl PolicyType {
             "AISERVICES_OPT_OUT_POLICY",
             "BACKUP_POLICY",
             "CHATBOT_POLICY",
+            "DECLARATIVE_POLICY_EC2",
             "RESOURCE_CONTROL_POLICY",
             "SERVICE_CONTROL_POLICY",
             "TAG_POLICY",
@@ -129,6 +135,7 @@ impl ::std::fmt::Display for PolicyType {
             PolicyType::AiservicesOptOutPolicy => write!(f, "AISERVICES_OPT_OUT_POLICY"),
             PolicyType::BackupPolicy => write!(f, "BACKUP_POLICY"),
             PolicyType::ChatbotPolicy => write!(f, "CHATBOT_POLICY"),
+            PolicyType::DeclarativePolicyEc2 => write!(f, "DECLARATIVE_POLICY_EC2"),
             PolicyType::ResourceControlPolicy => write!(f, "RESOURCE_CONTROL_POLICY"),
             PolicyType::ServiceControlPolicy => write!(f, "SERVICE_CONTROL_POLICY"),
             PolicyType::TagPolicy => write!(f, "TAG_POLICY"),

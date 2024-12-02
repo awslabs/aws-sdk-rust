@@ -137,21 +137,21 @@ impl CreateIntegrationAssociationFluentBuilder {
         self.inner.get_integration_type()
     }
     /// <p>The Amazon Resource Name (ARN) of the integration.</p><note>
-    /// <p>When integrating with Amazon Pinpoint, the Amazon Connect and Amazon Pinpoint instances must be in the same account.</p>
+    /// <p>When integrating with Amazon Web Services End User Messaging, the Amazon Connect and Amazon Web Services End User Messaging instances must be in the same account.</p>
     /// </note>
     pub fn integration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.integration_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the integration.</p><note>
-    /// <p>When integrating with Amazon Pinpoint, the Amazon Connect and Amazon Pinpoint instances must be in the same account.</p>
+    /// <p>When integrating with Amazon Web Services End User Messaging, the Amazon Connect and Amazon Web Services End User Messaging instances must be in the same account.</p>
     /// </note>
     pub fn set_integration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_integration_arn(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the integration.</p><note>
-    /// <p>When integrating with Amazon Pinpoint, the Amazon Connect and Amazon Pinpoint instances must be in the same account.</p>
+    /// <p>When integrating with Amazon Web Services End User Messaging, the Amazon Connect and Amazon Web Services End User Messaging instances must be in the same account.</p>
     /// </note>
     pub fn get_integration_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_integration_arn()

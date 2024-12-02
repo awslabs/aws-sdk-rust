@@ -23,16 +23,18 @@ pub struct ChatSyncInput {
     pub parent_message_id: ::std::option::Option<::std::string::String>,
     /// <p>Enables filtering of Amazon Q Business web experience responses based on document attributes or metadata fields.</p>
     pub attribute_filter: ::std::option::Option<crate::types::AttributeFilter>,
-    /// <p>The chat modes available to an Amazon Q Business end user.</p>
+    /// <p>The <code>chatMode</code> parameter determines the chat modes available to Amazon Q Business users:</p>
     /// <ul>
     /// <li>
-    /// <p><code>RETRIEVAL_MODE</code> - The default chat mode for an Amazon Q Business application. When this mode is enabled, Amazon Q Business generates responses only from data sources connected to an Amazon Q Business application.</p></li>
+    /// <p><code>RETRIEVAL_MODE</code> - If you choose this mode, Amazon Q generates responses solely from the data sources connected and indexed by the application. If an answer is not found in the data sources or there are no data sources available, Amazon Q will respond with a "<i>No Answer Found</i>" message, unless LLM knowledge has been enabled. In that case, Amazon Q will generate a response from the LLM knowledge</p></li>
     /// <li>
-    /// <p><code>CREATOR_MODE</code> - By selecting this mode, users can choose to generate responses only from the LLM knowledge, without consulting connected data sources, for a chat request.</p></li>
+    /// <p><code>CREATOR_MODE</code> - By selecting this mode, you can choose to generate responses only from the LLM knowledge. You can also attach files and have Amazon Q generate a response based on the data in those files. If the attached files do not contain an answer for the query, Amazon Q will automatically fall back to generating a response from the LLM knowledge.</p></li>
     /// <li>
-    /// <p><code>PLUGIN_MODE</code> - By selecting this mode, users can choose to use plugins in chat.</p></li>
-    /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/guardrails.html">Admin controls and guardrails</a>, <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/plugins.html">Plugins</a>, and <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/using-web-experience.html#chat-source-scope">Conversation settings</a>.</p>
+    /// <p><code>PLUGIN_MODE</code> - By selecting this mode, users can choose to use plugins in chat to get their responses.</p></li>
+    /// </ul><note>
+    /// <p>If none of the modes are selected, Amazon Q will only respond using the information from the attached files.</p>
+    /// </note>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/guardrails.html">Admin controls and guardrails</a>, <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/plugins.html">Plugins</a>, and <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/using-web-experience.html#chat-source-scope">Response sources</a>.</p>
     pub chat_mode: ::std::option::Option<crate::types::ChatMode>,
     /// <p>The chat mode configuration for an Amazon Q Business application.</p>
     pub chat_mode_configuration: ::std::option::Option<crate::types::ChatModeConfiguration>,
@@ -84,16 +86,18 @@ impl ChatSyncInput {
     pub fn attribute_filter(&self) -> ::std::option::Option<&crate::types::AttributeFilter> {
         self.attribute_filter.as_ref()
     }
-    /// <p>The chat modes available to an Amazon Q Business end user.</p>
+    /// <p>The <code>chatMode</code> parameter determines the chat modes available to Amazon Q Business users:</p>
     /// <ul>
     /// <li>
-    /// <p><code>RETRIEVAL_MODE</code> - The default chat mode for an Amazon Q Business application. When this mode is enabled, Amazon Q Business generates responses only from data sources connected to an Amazon Q Business application.</p></li>
+    /// <p><code>RETRIEVAL_MODE</code> - If you choose this mode, Amazon Q generates responses solely from the data sources connected and indexed by the application. If an answer is not found in the data sources or there are no data sources available, Amazon Q will respond with a "<i>No Answer Found</i>" message, unless LLM knowledge has been enabled. In that case, Amazon Q will generate a response from the LLM knowledge</p></li>
     /// <li>
-    /// <p><code>CREATOR_MODE</code> - By selecting this mode, users can choose to generate responses only from the LLM knowledge, without consulting connected data sources, for a chat request.</p></li>
+    /// <p><code>CREATOR_MODE</code> - By selecting this mode, you can choose to generate responses only from the LLM knowledge. You can also attach files and have Amazon Q generate a response based on the data in those files. If the attached files do not contain an answer for the query, Amazon Q will automatically fall back to generating a response from the LLM knowledge.</p></li>
     /// <li>
-    /// <p><code>PLUGIN_MODE</code> - By selecting this mode, users can choose to use plugins in chat.</p></li>
-    /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/guardrails.html">Admin controls and guardrails</a>, <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/plugins.html">Plugins</a>, and <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/using-web-experience.html#chat-source-scope">Conversation settings</a>.</p>
+    /// <p><code>PLUGIN_MODE</code> - By selecting this mode, users can choose to use plugins in chat to get their responses.</p></li>
+    /// </ul><note>
+    /// <p>If none of the modes are selected, Amazon Q will only respond using the information from the attached files.</p>
+    /// </note>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/guardrails.html">Admin controls and guardrails</a>, <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/plugins.html">Plugins</a>, and <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/using-web-experience.html#chat-source-scope">Response sources</a>.</p>
     pub fn chat_mode(&self) -> ::std::option::Option<&crate::types::ChatMode> {
         self.chat_mode.as_ref()
     }
@@ -285,44 +289,50 @@ impl ChatSyncInputBuilder {
     pub fn get_attribute_filter(&self) -> &::std::option::Option<crate::types::AttributeFilter> {
         &self.attribute_filter
     }
-    /// <p>The chat modes available to an Amazon Q Business end user.</p>
+    /// <p>The <code>chatMode</code> parameter determines the chat modes available to Amazon Q Business users:</p>
     /// <ul>
     /// <li>
-    /// <p><code>RETRIEVAL_MODE</code> - The default chat mode for an Amazon Q Business application. When this mode is enabled, Amazon Q Business generates responses only from data sources connected to an Amazon Q Business application.</p></li>
+    /// <p><code>RETRIEVAL_MODE</code> - If you choose this mode, Amazon Q generates responses solely from the data sources connected and indexed by the application. If an answer is not found in the data sources or there are no data sources available, Amazon Q will respond with a "<i>No Answer Found</i>" message, unless LLM knowledge has been enabled. In that case, Amazon Q will generate a response from the LLM knowledge</p></li>
     /// <li>
-    /// <p><code>CREATOR_MODE</code> - By selecting this mode, users can choose to generate responses only from the LLM knowledge, without consulting connected data sources, for a chat request.</p></li>
+    /// <p><code>CREATOR_MODE</code> - By selecting this mode, you can choose to generate responses only from the LLM knowledge. You can also attach files and have Amazon Q generate a response based on the data in those files. If the attached files do not contain an answer for the query, Amazon Q will automatically fall back to generating a response from the LLM knowledge.</p></li>
     /// <li>
-    /// <p><code>PLUGIN_MODE</code> - By selecting this mode, users can choose to use plugins in chat.</p></li>
-    /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/guardrails.html">Admin controls and guardrails</a>, <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/plugins.html">Plugins</a>, and <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/using-web-experience.html#chat-source-scope">Conversation settings</a>.</p>
+    /// <p><code>PLUGIN_MODE</code> - By selecting this mode, users can choose to use plugins in chat to get their responses.</p></li>
+    /// </ul><note>
+    /// <p>If none of the modes are selected, Amazon Q will only respond using the information from the attached files.</p>
+    /// </note>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/guardrails.html">Admin controls and guardrails</a>, <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/plugins.html">Plugins</a>, and <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/using-web-experience.html#chat-source-scope">Response sources</a>.</p>
     pub fn chat_mode(mut self, input: crate::types::ChatMode) -> Self {
         self.chat_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The chat modes available to an Amazon Q Business end user.</p>
+    /// <p>The <code>chatMode</code> parameter determines the chat modes available to Amazon Q Business users:</p>
     /// <ul>
     /// <li>
-    /// <p><code>RETRIEVAL_MODE</code> - The default chat mode for an Amazon Q Business application. When this mode is enabled, Amazon Q Business generates responses only from data sources connected to an Amazon Q Business application.</p></li>
+    /// <p><code>RETRIEVAL_MODE</code> - If you choose this mode, Amazon Q generates responses solely from the data sources connected and indexed by the application. If an answer is not found in the data sources or there are no data sources available, Amazon Q will respond with a "<i>No Answer Found</i>" message, unless LLM knowledge has been enabled. In that case, Amazon Q will generate a response from the LLM knowledge</p></li>
     /// <li>
-    /// <p><code>CREATOR_MODE</code> - By selecting this mode, users can choose to generate responses only from the LLM knowledge, without consulting connected data sources, for a chat request.</p></li>
+    /// <p><code>CREATOR_MODE</code> - By selecting this mode, you can choose to generate responses only from the LLM knowledge. You can also attach files and have Amazon Q generate a response based on the data in those files. If the attached files do not contain an answer for the query, Amazon Q will automatically fall back to generating a response from the LLM knowledge.</p></li>
     /// <li>
-    /// <p><code>PLUGIN_MODE</code> - By selecting this mode, users can choose to use plugins in chat.</p></li>
-    /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/guardrails.html">Admin controls and guardrails</a>, <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/plugins.html">Plugins</a>, and <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/using-web-experience.html#chat-source-scope">Conversation settings</a>.</p>
+    /// <p><code>PLUGIN_MODE</code> - By selecting this mode, users can choose to use plugins in chat to get their responses.</p></li>
+    /// </ul><note>
+    /// <p>If none of the modes are selected, Amazon Q will only respond using the information from the attached files.</p>
+    /// </note>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/guardrails.html">Admin controls and guardrails</a>, <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/plugins.html">Plugins</a>, and <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/using-web-experience.html#chat-source-scope">Response sources</a>.</p>
     pub fn set_chat_mode(mut self, input: ::std::option::Option<crate::types::ChatMode>) -> Self {
         self.chat_mode = input;
         self
     }
-    /// <p>The chat modes available to an Amazon Q Business end user.</p>
+    /// <p>The <code>chatMode</code> parameter determines the chat modes available to Amazon Q Business users:</p>
     /// <ul>
     /// <li>
-    /// <p><code>RETRIEVAL_MODE</code> - The default chat mode for an Amazon Q Business application. When this mode is enabled, Amazon Q Business generates responses only from data sources connected to an Amazon Q Business application.</p></li>
+    /// <p><code>RETRIEVAL_MODE</code> - If you choose this mode, Amazon Q generates responses solely from the data sources connected and indexed by the application. If an answer is not found in the data sources or there are no data sources available, Amazon Q will respond with a "<i>No Answer Found</i>" message, unless LLM knowledge has been enabled. In that case, Amazon Q will generate a response from the LLM knowledge</p></li>
     /// <li>
-    /// <p><code>CREATOR_MODE</code> - By selecting this mode, users can choose to generate responses only from the LLM knowledge, without consulting connected data sources, for a chat request.</p></li>
+    /// <p><code>CREATOR_MODE</code> - By selecting this mode, you can choose to generate responses only from the LLM knowledge. You can also attach files and have Amazon Q generate a response based on the data in those files. If the attached files do not contain an answer for the query, Amazon Q will automatically fall back to generating a response from the LLM knowledge.</p></li>
     /// <li>
-    /// <p><code>PLUGIN_MODE</code> - By selecting this mode, users can choose to use plugins in chat.</p></li>
-    /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/guardrails.html">Admin controls and guardrails</a>, <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/plugins.html">Plugins</a>, and <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/using-web-experience.html#chat-source-scope">Conversation settings</a>.</p>
+    /// <p><code>PLUGIN_MODE</code> - By selecting this mode, users can choose to use plugins in chat to get their responses.</p></li>
+    /// </ul><note>
+    /// <p>If none of the modes are selected, Amazon Q will only respond using the information from the attached files.</p>
+    /// </note>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/guardrails.html">Admin controls and guardrails</a>, <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/plugins.html">Plugins</a>, and <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/using-web-experience.html#chat-source-scope">Response sources</a>.</p>
     pub fn get_chat_mode(&self) -> &::std::option::Option<crate::types::ChatMode> {
         &self.chat_mode
     }

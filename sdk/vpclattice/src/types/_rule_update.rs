@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleUpdate {
-    /// <p>The ID or Amazon Resource Name (ARN) of the rule.</p>
+    /// <p>The ID or ARN of the rule.</p>
     pub rule_identifier: ::std::string::String,
     /// <p>The rule match.</p>
     pub r#match: ::std::option::Option<crate::types::RuleMatch>,
@@ -14,7 +14,7 @@ pub struct RuleUpdate {
     pub action: ::std::option::Option<crate::types::RuleAction>,
 }
 impl RuleUpdate {
-    /// <p>The ID or Amazon Resource Name (ARN) of the rule.</p>
+    /// <p>The ID or ARN of the rule.</p>
     pub fn rule_identifier(&self) -> &str {
         use std::ops::Deref;
         self.rule_identifier.deref()
@@ -49,18 +49,18 @@ pub struct RuleUpdateBuilder {
     pub(crate) action: ::std::option::Option<crate::types::RuleAction>,
 }
 impl RuleUpdateBuilder {
-    /// <p>The ID or Amazon Resource Name (ARN) of the rule.</p>
+    /// <p>The ID or ARN of the rule.</p>
     /// This field is required.
     pub fn rule_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the rule.</p>
+    /// <p>The ID or ARN of the rule.</p>
     pub fn set_rule_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_identifier = input;
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the rule.</p>
+    /// <p>The ID or ARN of the rule.</p>
     pub fn get_rule_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.rule_identifier
     }

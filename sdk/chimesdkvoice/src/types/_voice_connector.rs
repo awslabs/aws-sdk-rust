@@ -20,6 +20,8 @@ pub struct VoiceConnector {
     pub updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ARN of the Voice Connector.</p>
     pub voice_connector_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The connectors for use with Amazon Connect.</p>
+    pub integration_type: ::std::option::Option<crate::types::VoiceConnectorIntegrationType>,
 }
 impl VoiceConnector {
     /// <p>The Voice Connector's ID.</p>
@@ -54,6 +56,10 @@ impl VoiceConnector {
     pub fn voice_connector_arn(&self) -> ::std::option::Option<&str> {
         self.voice_connector_arn.as_deref()
     }
+    /// <p>The connectors for use with Amazon Connect.</p>
+    pub fn integration_type(&self) -> ::std::option::Option<&crate::types::VoiceConnectorIntegrationType> {
+        self.integration_type.as_ref()
+    }
 }
 impl VoiceConnector {
     /// Creates a new builder-style object to manufacture [`VoiceConnector`](crate::types::VoiceConnector).
@@ -74,6 +80,7 @@ pub struct VoiceConnectorBuilder {
     pub(crate) created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) voice_connector_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) integration_type: ::std::option::Option<crate::types::VoiceConnectorIntegrationType>,
 }
 impl VoiceConnectorBuilder {
     /// <p>The Voice Connector's ID.</p>
@@ -188,6 +195,20 @@ impl VoiceConnectorBuilder {
     pub fn get_voice_connector_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.voice_connector_arn
     }
+    /// <p>The connectors for use with Amazon Connect.</p>
+    pub fn integration_type(mut self, input: crate::types::VoiceConnectorIntegrationType) -> Self {
+        self.integration_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The connectors for use with Amazon Connect.</p>
+    pub fn set_integration_type(mut self, input: ::std::option::Option<crate::types::VoiceConnectorIntegrationType>) -> Self {
+        self.integration_type = input;
+        self
+    }
+    /// <p>The connectors for use with Amazon Connect.</p>
+    pub fn get_integration_type(&self) -> &::std::option::Option<crate::types::VoiceConnectorIntegrationType> {
+        &self.integration_type
+    }
     /// Consumes the builder and constructs a [`VoiceConnector`](crate::types::VoiceConnector).
     pub fn build(self) -> crate::types::VoiceConnector {
         crate::types::VoiceConnector {
@@ -199,6 +220,7 @@ impl VoiceConnectorBuilder {
             created_timestamp: self.created_timestamp,
             updated_timestamp: self.updated_timestamp,
             voice_connector_arn: self.voice_connector_arn,
+            integration_type: self.integration_type,
         }
     }
 }

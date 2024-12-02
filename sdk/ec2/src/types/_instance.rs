@@ -85,7 +85,7 @@ pub struct Instance {
     pub maintenance_options: ::std::option::Option<crate::types::InstanceMaintenanceOptions>,
     /// <p>The boot mode that is used to boot the instance at launch or start. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub current_instance_boot_mode: ::std::option::Option<crate::types::InstanceBootModeValues>,
-    /// <p>The entity that manages the instance.</p>
+    /// <p>The service provider that manages the instance.</p>
     pub operator: ::std::option::Option<crate::types::OperatorResponse>,
     /// <p>The ID of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
@@ -300,7 +300,7 @@ impl Instance {
     pub fn current_instance_boot_mode(&self) -> ::std::option::Option<&crate::types::InstanceBootModeValues> {
         self.current_instance_boot_mode.as_ref()
     }
-    /// <p>The entity that manages the instance.</p>
+    /// <p>The service provider that manages the instance.</p>
     pub fn operator(&self) -> ::std::option::Option<&crate::types::OperatorResponse> {
         self.operator.as_ref()
     }
@@ -1050,17 +1050,17 @@ impl InstanceBuilder {
     pub fn get_current_instance_boot_mode(&self) -> &::std::option::Option<crate::types::InstanceBootModeValues> {
         &self.current_instance_boot_mode
     }
-    /// <p>The entity that manages the instance.</p>
+    /// <p>The service provider that manages the instance.</p>
     pub fn operator(mut self, input: crate::types::OperatorResponse) -> Self {
         self.operator = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The entity that manages the instance.</p>
+    /// <p>The service provider that manages the instance.</p>
     pub fn set_operator(mut self, input: ::std::option::Option<crate::types::OperatorResponse>) -> Self {
         self.operator = input;
         self
     }
-    /// <p>The entity that manages the instance.</p>
+    /// <p>The service provider that manages the instance.</p>
     pub fn get_operator(&self) -> &::std::option::Option<crate::types::OperatorResponse> {
         &self.operator
     }

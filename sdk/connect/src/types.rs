@@ -245,9 +245,19 @@ pub use crate::types::_evaluation_answer_input::EvaluationAnswerInput;
 
 pub use crate::types::_evaluation_answer_data::EvaluationAnswerData;
 
+pub use crate::types::_endpoint::Endpoint;
+
+pub use crate::types::_endpoint_type::EndpointType;
+
+pub use crate::types::_user_info::UserInfo;
+
+pub use crate::types::_queue_info_input::QueueInfoInput;
+
 pub use crate::types::_segment_attribute_value::SegmentAttributeValue;
 
 pub use crate::types::_agent_status_state::AgentStatusState;
+
+pub use crate::types::_contact_recording_type::ContactRecordingType;
 
 pub use crate::types::_disconnect_reason::DisconnectReason;
 
@@ -295,10 +305,6 @@ pub use crate::types::_email_address_info::EmailAddressInfo;
 
 pub use crate::types::_chat_message::ChatMessage;
 
-pub use crate::types::_endpoint::Endpoint;
-
-pub use crate::types::_endpoint_type::EndpointType;
-
 pub use crate::types::_email_attachment::EmailAttachment;
 
 pub use crate::types::_inbound_additional_recipients::InboundAdditionalRecipients;
@@ -314,6 +320,8 @@ pub use crate::types::_inbound_message_source_type::InboundMessageSourceType;
 pub use crate::types::_chat_streaming_configuration::ChatStreamingConfiguration;
 
 pub use crate::types::_voice_recording_configuration::VoiceRecordingConfiguration;
+
+pub use crate::types::_ivr_recording_track::IvrRecordingTrack;
 
 pub use crate::types::_voice_recording_track::VoiceRecordingTrack;
 
@@ -863,8 +871,6 @@ pub use crate::types::_participant_details_to_add::ParticipantDetailsToAdd;
 
 pub use crate::types::_initiate_as::InitiateAs;
 
-pub use crate::types::_user_info::UserInfo;
-
 pub use crate::types::_failed_request::FailedRequest;
 
 pub use crate::types::_failure_reason_code::FailureReasonCode;
@@ -1022,6 +1028,8 @@ mod _contact_flow_type;
 mod _contact_flow_version_summary;
 
 mod _contact_initiation_method;
+
+mod _contact_recording_type;
 
 mod _contact_search_summary;
 
@@ -1289,6 +1297,8 @@ mod _invalid_request_exception_reason;
 
 mod _invisible_field_info;
 
+mod _ivr_recording_track;
+
 mod _kinesis_firehose_config;
 
 mod _kinesis_stream_config;
@@ -1424,6 +1434,8 @@ mod _quality_metrics;
 mod _queue;
 
 mod _queue_info;
+
+mod _queue_info_input;
 
 mod _queue_quick_connect_config;
 

@@ -142,17 +142,17 @@ impl ListTargetGroupsFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the VPC.</p>
+    /// <p>The ID or ARN of the VPC.</p>
     pub fn vpc_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_identifier(input.into());
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the VPC.</p>
+    /// <p>The ID or ARN of the VPC.</p>
     pub fn set_vpc_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpc_identifier(input);
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the VPC.</p>
+    /// <p>The ID or ARN of the VPC.</p>
     pub fn get_vpc_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_vpc_identifier()
     }

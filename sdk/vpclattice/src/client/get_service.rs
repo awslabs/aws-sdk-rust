@@ -3,13 +3,13 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetService`](crate::operation::get_service::builders::GetServiceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`service_identifier(impl Into<String>)`](crate::operation::get_service::builders::GetServiceFluentBuilder::service_identifier) / [`set_service_identifier(Option<String>)`](crate::operation::get_service::builders::GetServiceFluentBuilder::set_service_identifier):<br>required: **true**<br><p>The ID or Amazon Resource Name (ARN) of the service.</p><br>
+    ///   - [`service_identifier(impl Into<String>)`](crate::operation::get_service::builders::GetServiceFluentBuilder::service_identifier) / [`set_service_identifier(Option<String>)`](crate::operation::get_service::builders::GetServiceFluentBuilder::set_service_identifier):<br>required: **true**<br><p>The ID or ARN of the service.</p><br>
     /// - On success, responds with [`GetServiceOutput`](crate::operation::get_service::GetServiceOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_service::GetServiceOutput::id): <p>The ID of the service.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_service::GetServiceOutput::name): <p>The name of the service.</p>
     ///   - [`arn(Option<String>)`](crate::operation::get_service::GetServiceOutput::arn): <p>The Amazon Resource Name (ARN) of the service.</p>
-    ///   - [`created_at(Option<DateTime>)`](crate::operation::get_service::GetServiceOutput::created_at): <p>The date and time that the service was created, specified in ISO-8601 format.</p>
-    ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::get_service::GetServiceOutput::last_updated_at): <p>The date and time that the service was last updated, specified in ISO-8601 format.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::operation::get_service::GetServiceOutput::created_at): <p>The date and time that the service was created, in ISO-8601 format.</p>
+    ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::get_service::GetServiceOutput::last_updated_at): <p>The date and time that the service was last updated, in ISO-8601 format.</p>
     ///   - [`dns_entry(Option<DnsEntry>)`](crate::operation::get_service::GetServiceOutput::dns_entry): <p>The DNS name of the service.</p>
     ///   - [`custom_domain_name(Option<String>)`](crate::operation::get_service::GetServiceOutput::custom_domain_name): <p>The custom domain name of the service.</p>
     ///   - [`certificate_arn(Option<String>)`](crate::operation::get_service::GetServiceOutput::certificate_arn): <p>The Amazon Resource Name (ARN) of the certificate.</p>

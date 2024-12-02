@@ -3,50 +3,56 @@ pub fn ser_create_web_experience_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_web_experience::CreateWebExperienceInput,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.client_token {
-        object.key("clientToken").string(var_1.as_str());
-    }
-    if let Some(var_2) = &input.identity_provider_configuration {
+    if let Some(var_1) = &input.browser_extension_configuration {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("identityProviderConfiguration").start_object();
-        crate::protocol_serde::shape_identity_provider_configuration::ser_identity_provider_configuration(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("browserExtensionConfiguration").start_object();
+        crate::protocol_serde::shape_browser_extension_configuration::ser_browser_extension_configuration(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.origins {
-        let mut array_5 = object.key("origins").start_array();
-        for item_6 in var_4 {
+    if let Some(var_3) = &input.client_token {
+        object.key("clientToken").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.identity_provider_configuration {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("identityProviderConfiguration").start_object();
+        crate::protocol_serde::shape_identity_provider_configuration::ser_identity_provider_configuration(&mut object_5, var_4)?;
+        object_5.finish();
+    }
+    if let Some(var_6) = &input.origins {
+        let mut array_7 = object.key("origins").start_array();
+        for item_8 in var_6 {
             {
-                array_5.value().string(item_6.as_str());
+                array_7.value().string(item_8.as_str());
             }
         }
-        array_5.finish();
+        array_7.finish();
     }
-    if let Some(var_7) = &input.role_arn {
-        object.key("roleArn").string(var_7.as_str());
+    if let Some(var_9) = &input.role_arn {
+        object.key("roleArn").string(var_9.as_str());
     }
-    if let Some(var_8) = &input.sample_prompts_control_mode {
-        object.key("samplePromptsControlMode").string(var_8.as_str());
+    if let Some(var_10) = &input.sample_prompts_control_mode {
+        object.key("samplePromptsControlMode").string(var_10.as_str());
     }
-    if let Some(var_9) = &input.subtitle {
-        object.key("subtitle").string(var_9.as_str());
+    if let Some(var_11) = &input.subtitle {
+        object.key("subtitle").string(var_11.as_str());
     }
-    if let Some(var_10) = &input.tags {
-        let mut array_11 = object.key("tags").start_array();
-        for item_12 in var_10 {
+    if let Some(var_12) = &input.tags {
+        let mut array_13 = object.key("tags").start_array();
+        for item_14 in var_12 {
             {
                 #[allow(unused_mut)]
-                let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_13, item_12)?;
-                object_13.finish();
+                let mut object_15 = array_13.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_15, item_14)?;
+                object_15.finish();
             }
         }
-        array_11.finish();
+        array_13.finish();
     }
-    if let Some(var_14) = &input.title {
-        object.key("title").string(var_14.as_str());
+    if let Some(var_16) = &input.title {
+        object.key("title").string(var_16.as_str());
     }
-    if let Some(var_15) = &input.welcome_message {
-        object.key("welcomeMessage").string(var_15.as_str());
+    if let Some(var_17) = &input.welcome_message {
+        object.key("welcomeMessage").string(var_17.as_str());
     }
     Ok(())
 }

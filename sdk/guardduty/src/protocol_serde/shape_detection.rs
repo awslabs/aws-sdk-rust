@@ -17,6 +17,9 @@ where
                         "anomaly" => {
                             builder = builder.set_anomaly(crate::protocol_serde::shape_anomaly::de_anomaly(tokens)?);
                         }
+                        "sequence" => {
+                            builder = builder.set_sequence(crate::protocol_serde::shape_sequence::de_sequence(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

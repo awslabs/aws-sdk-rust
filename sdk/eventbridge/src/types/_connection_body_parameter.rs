@@ -8,7 +8,7 @@ pub struct ConnectionBodyParameter {
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The value associated with the key.</p>
     pub value: ::std::option::Option<::std::string::String>,
-    /// <p>Specified whether the value is secret.</p>
+    /// <p>Specifies whether the value is secret.</p>
     pub is_value_secret: bool,
 }
 impl ConnectionBodyParameter {
@@ -20,7 +20,7 @@ impl ConnectionBodyParameter {
     pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
-    /// <p>Specified whether the value is secret.</p>
+    /// <p>Specifies whether the value is secret.</p>
     pub fn is_value_secret(&self) -> bool {
         self.is_value_secret
     }
@@ -78,17 +78,17 @@ impl ConnectionBodyParameterBuilder {
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.value
     }
-    /// <p>Specified whether the value is secret.</p>
+    /// <p>Specifies whether the value is secret.</p>
     pub fn is_value_secret(mut self, input: bool) -> Self {
         self.is_value_secret = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specified whether the value is secret.</p>
+    /// <p>Specifies whether the value is secret.</p>
     pub fn set_is_value_secret(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_value_secret = input;
         self
     }
-    /// <p>Specified whether the value is secret.</p>
+    /// <p>Specifies whether the value is secret.</p>
     pub fn get_is_value_secret(&self) -> &::std::option::Option<bool> {
         &self.is_value_secret
     }

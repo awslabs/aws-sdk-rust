@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAccessLogSubscriptionInput {
-    /// <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
+    /// <p>The ID or ARN of the access log subscription.</p>
     pub access_log_subscription_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the access log destination.</p>
     pub destination_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateAccessLogSubscriptionInput {
-    /// <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
+    /// <p>The ID or ARN of the access log subscription.</p>
     pub fn access_log_subscription_identifier(&self) -> ::std::option::Option<&str> {
         self.access_log_subscription_identifier.as_deref()
     }
@@ -33,18 +33,18 @@ pub struct UpdateAccessLogSubscriptionInputBuilder {
     pub(crate) destination_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateAccessLogSubscriptionInputBuilder {
-    /// <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
+    /// <p>The ID or ARN of the access log subscription.</p>
     /// This field is required.
     pub fn access_log_subscription_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_log_subscription_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
+    /// <p>The ID or ARN of the access log subscription.</p>
     pub fn set_access_log_subscription_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_log_subscription_identifier = input;
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
+    /// <p>The ID or ARN of the access log subscription.</p>
     pub fn get_access_log_subscription_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.access_log_subscription_identifier
     }

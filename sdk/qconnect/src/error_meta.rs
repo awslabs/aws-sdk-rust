@@ -175,6 +175,77 @@ impl From<crate::operation::create_ai_agent_version::CreateAIAgentVersionError> 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_ai_guardrail::CreateAIGuardrailError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_ai_guardrail::CreateAIGuardrailError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_ai_guardrail::CreateAIGuardrailError> for Error {
+    fn from(err: crate::operation::create_ai_guardrail::CreateAIGuardrailError) -> Self {
+        match err {
+            crate::operation::create_ai_guardrail::CreateAIGuardrailError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_ai_guardrail::CreateAIGuardrailError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_ai_guardrail::CreateAIGuardrailError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_ai_guardrail::CreateAIGuardrailError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_ai_guardrail::CreateAIGuardrailError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_ai_guardrail::CreateAIGuardrailError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_ai_guardrail::CreateAIGuardrailError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_ai_guardrail_version::CreateAIGuardrailVersionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_ai_guardrail_version::CreateAIGuardrailVersionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_ai_guardrail_version::CreateAIGuardrailVersionError> for Error {
+    fn from(err: crate::operation::create_ai_guardrail_version::CreateAIGuardrailVersionError) -> Self {
+        match err {
+            crate::operation::create_ai_guardrail_version::CreateAIGuardrailVersionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_ai_guardrail_version::CreateAIGuardrailVersionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_ai_guardrail_version::CreateAIGuardrailVersionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_ai_guardrail_version::CreateAIGuardrailVersionError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_ai_guardrail_version::CreateAIGuardrailVersionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_ai_guardrail_version::CreateAIGuardrailVersionError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_ai_guardrail_version::CreateAIGuardrailVersionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_ai_prompt::CreateAIPromptError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -678,6 +749,71 @@ impl From<crate::operation::delete_ai_agent_version::DeleteAIAgentVersionError> 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_ai_guardrail::DeleteAIGuardrailError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_ai_guardrail::DeleteAIGuardrailError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_ai_guardrail::DeleteAIGuardrailError> for Error {
+    fn from(err: crate::operation::delete_ai_guardrail::DeleteAIGuardrailError) -> Self {
+        match err {
+            crate::operation::delete_ai_guardrail::DeleteAIGuardrailError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_ai_guardrail::DeleteAIGuardrailError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_ai_guardrail::DeleteAIGuardrailError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_ai_guardrail::DeleteAIGuardrailError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_ai_guardrail::DeleteAIGuardrailError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_ai_guardrail::DeleteAIGuardrailError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_ai_guardrail_version::DeleteAIGuardrailVersionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_ai_guardrail_version::DeleteAIGuardrailVersionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_ai_guardrail_version::DeleteAIGuardrailVersionError> for Error {
+    fn from(err: crate::operation::delete_ai_guardrail_version::DeleteAIGuardrailVersionError) -> Self {
+        match err {
+            crate::operation::delete_ai_guardrail_version::DeleteAIGuardrailVersionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_ai_guardrail_version::DeleteAIGuardrailVersionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_ai_guardrail_version::DeleteAIGuardrailVersionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_ai_guardrail_version::DeleteAIGuardrailVersionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_ai_guardrail_version::DeleteAIGuardrailVersionError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_ai_guardrail_version::DeleteAIGuardrailVersionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_ai_prompt::DeleteAIPromptError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1031,6 +1167,31 @@ impl From<crate::operation::get_ai_agent::GetAIAgentError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ai_guardrail::GetAIGuardrailError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ai_guardrail::GetAIGuardrailError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_ai_guardrail::GetAIGuardrailError> for Error {
+    fn from(err: crate::operation::get_ai_guardrail::GetAIGuardrailError) -> Self {
+        match err {
+            crate::operation::get_ai_guardrail::GetAIGuardrailError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_ai_guardrail::GetAIGuardrailError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_ai_guardrail::GetAIGuardrailError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_ai_guardrail::GetAIGuardrailError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_ai_guardrail::GetAIGuardrailError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ai_prompt::GetAIPromptError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1268,6 +1429,30 @@ impl From<crate::operation::get_message_template::GetMessageTemplateError> for E
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_next_message::GetNextMessageError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_next_message::GetNextMessageError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_next_message::GetNextMessageError> for Error {
+    fn from(err: crate::operation::get_next_message::GetNextMessageError) -> Self {
+        match err {
+            crate::operation::get_next_message::GetNextMessageError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_next_message::GetNextMessageError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_next_message::GetNextMessageError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_next_message::GetNextMessageError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_quick_response::GetQuickResponseError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1391,6 +1576,67 @@ impl From<crate::operation::list_ai_agent_versions::ListAIAgentVersionsError> fo
             crate::operation::list_ai_agent_versions::ListAIAgentVersionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_ai_agent_versions::ListAIAgentVersionsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_ai_agent_versions::ListAIAgentVersionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ai_guardrails::ListAIGuardrailsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ai_guardrails::ListAIGuardrailsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_ai_guardrails::ListAIGuardrailsError> for Error {
+    fn from(err: crate::operation::list_ai_guardrails::ListAIGuardrailsError) -> Self {
+        match err {
+            crate::operation::list_ai_guardrails::ListAIGuardrailsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_ai_guardrails::ListAIGuardrailsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_ai_guardrails::ListAIGuardrailsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_ai_guardrails::ListAIGuardrailsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_ai_guardrails::ListAIGuardrailsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ai_guardrail_versions::ListAIGuardrailVersionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ai_guardrail_versions::ListAIGuardrailVersionsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_ai_guardrail_versions::ListAIGuardrailVersionsError> for Error {
+    fn from(err: crate::operation::list_ai_guardrail_versions::ListAIGuardrailVersionsError) -> Self {
+        match err {
+            crate::operation::list_ai_guardrail_versions::ListAIGuardrailVersionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_ai_guardrail_versions::ListAIGuardrailVersionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_ai_guardrail_versions::ListAIGuardrailVersionsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_ai_guardrail_versions::ListAIGuardrailVersionsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_ai_guardrail_versions::ListAIGuardrailVersionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1604,6 +1850,30 @@ impl From<crate::operation::list_knowledge_bases::ListKnowledgeBasesError> for E
             crate::operation::list_knowledge_bases::ListKnowledgeBasesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_knowledge_bases::ListKnowledgeBasesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_knowledge_bases::ListKnowledgeBasesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_messages::ListMessagesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_messages::ListMessagesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_messages::ListMessagesError> for Error {
+    fn from(err: crate::operation::list_messages::ListMessagesError) -> Self {
+        match err {
+            crate::operation::list_messages::ListMessagesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_messages::ListMessagesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_messages::ListMessagesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_messages::ListMessagesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2022,6 +2292,33 @@ impl From<crate::operation::search_sessions::SearchSessionsError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::send_message::SendMessageError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::send_message::SendMessageError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::send_message::SendMessageError> for Error {
+    fn from(err: crate::operation::send_message::SendMessageError) -> Self {
+        match err {
+            crate::operation::send_message::SendMessageError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::send_message::SendMessageError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::send_message::SendMessageError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
+            crate::operation::send_message::SendMessageError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::send_message::SendMessageError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::send_message::SendMessageError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::send_message::SendMessageError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_content_upload::StartContentUploadError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2144,6 +2441,34 @@ impl From<crate::operation::update_ai_agent::UpdateAIAgentError> for Error {
             crate::operation::update_ai_agent::UpdateAIAgentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_ai_agent::UpdateAIAgentError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_ai_agent::UpdateAIAgentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_ai_guardrail::UpdateAIGuardrailError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_ai_guardrail::UpdateAIGuardrailError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_ai_guardrail::UpdateAIGuardrailError> for Error {
+    fn from(err: crate::operation::update_ai_guardrail::UpdateAIGuardrailError) -> Self {
+        match err {
+            crate::operation::update_ai_guardrail::UpdateAIGuardrailError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_ai_guardrail::UpdateAIGuardrailError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_ai_guardrail::UpdateAIGuardrailError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_ai_guardrail::UpdateAIGuardrailError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_ai_guardrail::UpdateAIGuardrailError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_ai_guardrail::UpdateAIGuardrailError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -10,6 +10,12 @@ pub mod create_ai_agent;
 /// Types for the `CreateAIAgentVersion` operation.
 pub mod create_ai_agent_version;
 
+/// Types for the `CreateAIGuardrail` operation.
+pub mod create_ai_guardrail;
+
+/// Types for the `CreateAIGuardrailVersion` operation.
+pub mod create_ai_guardrail_version;
+
 /// Types for the `CreateAIPrompt` operation.
 pub mod create_ai_prompt;
 
@@ -55,6 +61,12 @@ pub mod delete_ai_agent;
 /// Types for the `DeleteAIAgentVersion` operation.
 pub mod delete_ai_agent_version;
 
+/// Types for the `DeleteAIGuardrail` operation.
+pub mod delete_ai_guardrail;
+
+/// Types for the `DeleteAIGuardrailVersion` operation.
+pub mod delete_ai_guardrail_version;
+
 /// Types for the `DeleteAIPrompt` operation.
 pub mod delete_ai_prompt;
 
@@ -91,6 +103,9 @@ pub mod delete_quick_response;
 /// Types for the `GetAIAgent` operation.
 pub mod get_ai_agent;
 
+/// Types for the `GetAIGuardrail` operation.
+pub mod get_ai_guardrail;
+
 /// Types for the `GetAIPrompt` operation.
 pub mod get_ai_prompt;
 
@@ -118,6 +133,9 @@ pub mod get_knowledge_base;
 /// Types for the `GetMessageTemplate` operation.
 pub mod get_message_template;
 
+/// Types for the `GetNextMessage` operation.
+pub mod get_next_message;
+
 /// Types for the `GetQuickResponse` operation.
 pub mod get_quick_response;
 
@@ -132,6 +150,12 @@ pub mod list_ai_agent_versions;
 
 /// Types for the `ListAIAgents` operation.
 pub mod list_ai_agents;
+
+/// Types for the `ListAIGuardrailVersions` operation.
+pub mod list_ai_guardrail_versions;
+
+/// Types for the `ListAIGuardrails` operation.
+pub mod list_ai_guardrails;
 
 /// Types for the `ListAIPromptVersions` operation.
 pub mod list_ai_prompt_versions;
@@ -162,6 +186,9 @@ pub mod list_message_template_versions;
 
 /// Types for the `ListMessageTemplates` operation.
 pub mod list_message_templates;
+
+/// Types for the `ListMessages` operation.
+pub mod list_messages;
 
 /// Types for the `ListQuickResponses` operation.
 pub mod list_quick_responses;
@@ -199,6 +226,9 @@ pub mod search_quick_responses;
 /// Types for the `SearchSessions` operation.
 pub mod search_sessions;
 
+/// Types for the `SendMessage` operation.
+pub mod send_message;
+
 /// Types for the `StartContentUpload` operation.
 pub mod start_content_upload;
 
@@ -213,6 +243,9 @@ pub mod untag_resource;
 
 /// Types for the `UpdateAIAgent` operation.
 pub mod update_ai_agent;
+
+/// Types for the `UpdateAIGuardrail` operation.
+pub mod update_ai_guardrail;
 
 /// Types for the `UpdateAIPrompt` operation.
 pub mod update_ai_prompt;

@@ -123,6 +123,8 @@ pub struct DbInstance {
     /// <p>Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled for the DB instance.</p>
     /// <p>For a list of engine versions that support IAM database authentication, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RDS_Fea_Regions_DB-eng.Feature.IamDatabaseAuthentication.html">IAM database authentication</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.Aurora_Fea_Regions_DB-eng.Feature.IAMdbauth.html">IAM database authentication in Aurora</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub iam_database_authentication_enabled: ::std::option::Option<bool>,
+    /// <p>The mode of Database Insights that is enabled for the instance.</p>
+    pub database_insights_mode: ::std::option::Option<crate::types::DatabaseInsightsMode>,
     /// <p>Indicates whether Performance Insights is enabled for the DB instance.</p>
     pub performance_insights_enabled: ::std::option::Option<bool>,
     /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
@@ -462,6 +464,10 @@ impl DbInstance {
     pub fn iam_database_authentication_enabled(&self) -> ::std::option::Option<bool> {
         self.iam_database_authentication_enabled
     }
+    /// <p>The mode of Database Insights that is enabled for the instance.</p>
+    pub fn database_insights_mode(&self) -> ::std::option::Option<&crate::types::DatabaseInsightsMode> {
+        self.database_insights_mode.as_ref()
+    }
     /// <p>Indicates whether Performance Insights is enabled for the DB instance.</p>
     pub fn performance_insights_enabled(&self) -> ::std::option::Option<bool> {
         self.performance_insights_enabled
@@ -703,6 +709,7 @@ pub struct DbInstanceBuilder {
     pub(crate) db_instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) timezone: ::std::option::Option<::std::string::String>,
     pub(crate) iam_database_authentication_enabled: ::std::option::Option<bool>,
+    pub(crate) database_insights_mode: ::std::option::Option<crate::types::DatabaseInsightsMode>,
     pub(crate) performance_insights_enabled: ::std::option::Option<bool>,
     pub(crate) performance_insights_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) performance_insights_retention_period: ::std::option::Option<i32>,
@@ -1558,6 +1565,20 @@ impl DbInstanceBuilder {
     pub fn get_iam_database_authentication_enabled(&self) -> &::std::option::Option<bool> {
         &self.iam_database_authentication_enabled
     }
+    /// <p>The mode of Database Insights that is enabled for the instance.</p>
+    pub fn database_insights_mode(mut self, input: crate::types::DatabaseInsightsMode) -> Self {
+        self.database_insights_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The mode of Database Insights that is enabled for the instance.</p>
+    pub fn set_database_insights_mode(mut self, input: ::std::option::Option<crate::types::DatabaseInsightsMode>) -> Self {
+        self.database_insights_mode = input;
+        self
+    }
+    /// <p>The mode of Database Insights that is enabled for the instance.</p>
+    pub fn get_database_insights_mode(&self) -> &::std::option::Option<crate::types::DatabaseInsightsMode> {
+        &self.database_insights_mode
+    }
     /// <p>Indicates whether Performance Insights is enabled for the DB instance.</p>
     pub fn performance_insights_enabled(mut self, input: bool) -> Self {
         self.performance_insights_enabled = ::std::option::Option::Some(input);
@@ -2217,6 +2238,7 @@ impl DbInstanceBuilder {
             db_instance_arn: self.db_instance_arn,
             timezone: self.timezone,
             iam_database_authentication_enabled: self.iam_database_authentication_enabled,
+            database_insights_mode: self.database_insights_mode,
             performance_insights_enabled: self.performance_insights_enabled,
             performance_insights_kms_key_id: self.performance_insights_kms_key_id,
             performance_insights_retention_period: self.performance_insights_retention_period,

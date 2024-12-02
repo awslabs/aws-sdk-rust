@@ -22,7 +22,7 @@ impl crate::operation::list_service_networks::builders::ListServiceNetworksInput
 }
 /// Fluent builder constructing a request to `ListServiceNetworks`.
 ///
-/// <p>Lists the service networks owned by the caller account or shared with the caller account. Also includes the account ID in the ARN to show which account owns the service network.</p>
+/// <p>Lists the service networks owned by or shared with this account. The account ID in the ARN shows which account owns the service network.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListServiceNetworksFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

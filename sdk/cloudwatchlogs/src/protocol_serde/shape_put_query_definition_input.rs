@@ -3,26 +3,29 @@ pub fn ser_put_query_definition_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_query_definition::PutQueryDefinitionInput,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("name").string(var_1.as_str());
+    if let Some(var_1) = &input.query_language {
+        object.key("queryLanguage").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.query_definition_id {
-        object.key("queryDefinitionId").string(var_2.as_str());
+    if let Some(var_2) = &input.name {
+        object.key("name").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.log_group_names {
-        let mut array_4 = object.key("logGroupNames").start_array();
-        for item_5 in var_3 {
+    if let Some(var_3) = &input.query_definition_id {
+        object.key("queryDefinitionId").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.log_group_names {
+        let mut array_5 = object.key("logGroupNames").start_array();
+        for item_6 in var_4 {
             {
-                array_4.value().string(item_5.as_str());
+                array_5.value().string(item_6.as_str());
             }
         }
-        array_4.finish();
+        array_5.finish();
     }
-    if let Some(var_6) = &input.query_string {
-        object.key("queryString").string(var_6.as_str());
+    if let Some(var_7) = &input.query_string {
+        object.key("queryString").string(var_7.as_str());
     }
-    if let Some(var_7) = &input.client_token {
-        object.key("clientToken").string(var_7.as_str());
+    if let Some(var_8) = &input.client_token {
+        object.key("clientToken").string(var_8.as_str());
     }
     Ok(())
 }

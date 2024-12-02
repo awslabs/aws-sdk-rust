@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeUsersInput {
-    /// <p>The name of the user</p>
+    /// <p>The name of the user.</p>
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>Filter to determine the list of users to return.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -13,7 +13,7 @@ pub struct DescribeUsersInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeUsersInput {
-    /// <p>The name of the user</p>
+    /// <p>The name of the user.</p>
     pub fn user_name(&self) -> ::std::option::Option<&str> {
         self.user_name.as_deref()
     }
@@ -49,17 +49,17 @@ pub struct DescribeUsersInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeUsersInputBuilder {
-    /// <p>The name of the user</p>
+    /// <p>The name of the user.</p>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the user</p>
+    /// <p>The name of the user.</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_name = input;
         self
     }
-    /// <p>The name of the user</p>
+    /// <p>The name of the user.</p>
     pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_name
     }

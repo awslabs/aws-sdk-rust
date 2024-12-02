@@ -13,6 +13,7 @@
 /// # let retrievalresultlocationtype = unimplemented!();
 /// match retrievalresultlocationtype {
 ///     RetrievalResultLocationType::Confluence => { /* ... */ },
+///     RetrievalResultLocationType::Custom => { /* ... */ },
 ///     RetrievalResultLocationType::S3 => { /* ... */ },
 ///     RetrievalResultLocationType::Salesforce => { /* ... */ },
 ///     RetrievalResultLocationType::Sharepoint => { /* ... */ },
@@ -47,6 +48,8 @@ pub enum RetrievalResultLocationType {
     #[allow(missing_docs)] // documentation missing in model
     Confluence,
     #[allow(missing_docs)] // documentation missing in model
+    Custom,
+    #[allow(missing_docs)] // documentation missing in model
     S3,
     #[allow(missing_docs)] // documentation missing in model
     Salesforce,
@@ -62,6 +65,7 @@ impl ::std::convert::From<&str> for RetrievalResultLocationType {
     fn from(s: &str) -> Self {
         match s {
             "CONFLUENCE" => RetrievalResultLocationType::Confluence,
+            "CUSTOM" => RetrievalResultLocationType::Custom,
             "S3" => RetrievalResultLocationType::S3,
             "SALESFORCE" => RetrievalResultLocationType::Salesforce,
             "SHAREPOINT" => RetrievalResultLocationType::Sharepoint,
@@ -82,6 +86,7 @@ impl RetrievalResultLocationType {
     pub fn as_str(&self) -> &str {
         match self {
             RetrievalResultLocationType::Confluence => "CONFLUENCE",
+            RetrievalResultLocationType::Custom => "CUSTOM",
             RetrievalResultLocationType::S3 => "S3",
             RetrievalResultLocationType::Salesforce => "SALESFORCE",
             RetrievalResultLocationType::Sharepoint => "SHAREPOINT",
@@ -91,7 +96,7 @@ impl RetrievalResultLocationType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CONFLUENCE", "S3", "SALESFORCE", "SHAREPOINT", "WEB"]
+        &["CONFLUENCE", "CUSTOM", "S3", "SALESFORCE", "SHAREPOINT", "WEB"]
     }
 }
 impl ::std::convert::AsRef<str> for RetrievalResultLocationType {
@@ -115,6 +120,7 @@ impl ::std::fmt::Display for RetrievalResultLocationType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             RetrievalResultLocationType::Confluence => write!(f, "CONFLUENCE"),
+            RetrievalResultLocationType::Custom => write!(f, "CUSTOM"),
             RetrievalResultLocationType::S3 => write!(f, "S3"),
             RetrievalResultLocationType::Salesforce => write!(f, "SALESFORCE"),
             RetrievalResultLocationType::Sharepoint => write!(f, "SHAREPOINT"),

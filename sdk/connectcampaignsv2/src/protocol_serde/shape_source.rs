@@ -7,6 +7,12 @@ pub fn ser_source(
         crate::types::Source::CustomerProfilesSegmentArn(inner) => {
             object_13.key("customerProfilesSegmentArn").string(inner.as_str());
         }
+        crate::types::Source::EventTrigger(inner) => {
+            #[allow(unused_mut)]
+            let mut object_1 = object_13.key("eventTrigger").start_object();
+            crate::protocol_serde::shape_event_trigger::ser_event_trigger(&mut object_1, inner)?;
+            object_1.finish();
+        }
         crate::types::Source::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("Source")),
     }
     Ok(())
@@ -51,6 +57,11 @@ where
                                         "value for 'customerProfilesSegmentArn' cannot be null",
                                     )
                                 })?,
+                        )),
+                        "eventTrigger" => Some(crate::types::Source::EventTrigger(
+                            crate::protocol_serde::shape_event_trigger::de_event_trigger(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'eventTrigger' cannot be null")
+                            })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

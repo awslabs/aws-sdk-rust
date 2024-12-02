@@ -5,9 +5,9 @@
 pub struct DescribeServiceUpdatesInput {
     /// <p>The unique ID of the service update to describe.</p>
     pub service_update_name: ::std::option::Option<::std::string::String>,
-    /// <p>The list of cluster names to identify service updates to apply</p>
+    /// <p>The list of cluster names to identify service updates to apply.</p>
     pub cluster_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The status(es) of the service updates to filter on</p>
+    /// <p>The status(es) of the service updates to filter on.</p>
     pub status: ::std::option::Option<::std::vec::Vec<crate::types::ServiceUpdateStatus>>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -19,13 +19,13 @@ impl DescribeServiceUpdatesInput {
     pub fn service_update_name(&self) -> ::std::option::Option<&str> {
         self.service_update_name.as_deref()
     }
-    /// <p>The list of cluster names to identify service updates to apply</p>
+    /// <p>The list of cluster names to identify service updates to apply.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cluster_names.is_none()`.
     pub fn cluster_names(&self) -> &[::std::string::String] {
         self.cluster_names.as_deref().unwrap_or_default()
     }
-    /// <p>The status(es) of the service updates to filter on</p>
+    /// <p>The status(es) of the service updates to filter on.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.status.is_none()`.
     pub fn status(&self) -> &[crate::types::ServiceUpdateStatus] {
@@ -76,19 +76,19 @@ impl DescribeServiceUpdatesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_cluster_names`](Self::set_cluster_names).
     ///
-    /// <p>The list of cluster names to identify service updates to apply</p>
+    /// <p>The list of cluster names to identify service updates to apply.</p>
     pub fn cluster_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.cluster_names.unwrap_or_default();
         v.push(input.into());
         self.cluster_names = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of cluster names to identify service updates to apply</p>
+    /// <p>The list of cluster names to identify service updates to apply.</p>
     pub fn set_cluster_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.cluster_names = input;
         self
     }
-    /// <p>The list of cluster names to identify service updates to apply</p>
+    /// <p>The list of cluster names to identify service updates to apply.</p>
     pub fn get_cluster_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.cluster_names
     }
@@ -96,19 +96,19 @@ impl DescribeServiceUpdatesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_status`](Self::set_status).
     ///
-    /// <p>The status(es) of the service updates to filter on</p>
+    /// <p>The status(es) of the service updates to filter on.</p>
     pub fn status(mut self, input: crate::types::ServiceUpdateStatus) -> Self {
         let mut v = self.status.unwrap_or_default();
         v.push(input);
         self.status = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The status(es) of the service updates to filter on</p>
+    /// <p>The status(es) of the service updates to filter on.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceUpdateStatus>>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status(es) of the service updates to filter on</p>
+    /// <p>The status(es) of the service updates to filter on.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceUpdateStatus>> {
         &self.status
     }

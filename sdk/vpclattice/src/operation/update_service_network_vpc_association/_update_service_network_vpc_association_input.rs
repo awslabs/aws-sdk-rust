@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateServiceNetworkVpcAssociationInput {
-    /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
+    /// <p>The ID or ARN of the association.</p>
     pub service_network_vpc_association_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the security groups.</p>
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateServiceNetworkVpcAssociationInput {
-    /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
+    /// <p>The ID or ARN of the association.</p>
     pub fn service_network_vpc_association_identifier(&self) -> ::std::option::Option<&str> {
         self.service_network_vpc_association_identifier.as_deref()
     }
@@ -35,18 +35,18 @@ pub struct UpdateServiceNetworkVpcAssociationInputBuilder {
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateServiceNetworkVpcAssociationInputBuilder {
-    /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
+    /// <p>The ID or ARN of the association.</p>
     /// This field is required.
     pub fn service_network_vpc_association_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_network_vpc_association_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
+    /// <p>The ID or ARN of the association.</p>
     pub fn set_service_network_vpc_association_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_network_vpc_association_identifier = input;
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
+    /// <p>The ID or ARN of the association.</p>
     pub fn get_service_network_vpc_association_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_network_vpc_association_identifier
     }

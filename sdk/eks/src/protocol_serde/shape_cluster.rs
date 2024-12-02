@@ -133,6 +133,19 @@ where
                                 crate::protocol_serde::shape_zonal_shift_config_response::de_zonal_shift_config_response(tokens)?,
                             );
                         }
+                        "remoteNetworkConfig" => {
+                            builder = builder.set_remote_network_config(
+                                crate::protocol_serde::shape_remote_network_config_response::de_remote_network_config_response(tokens)?,
+                            );
+                        }
+                        "computeConfig" => {
+                            builder =
+                                builder.set_compute_config(crate::protocol_serde::shape_compute_config_response::de_compute_config_response(tokens)?);
+                        }
+                        "storageConfig" => {
+                            builder =
+                                builder.set_storage_config(crate::protocol_serde::shape_storage_config_response::de_storage_config_response(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

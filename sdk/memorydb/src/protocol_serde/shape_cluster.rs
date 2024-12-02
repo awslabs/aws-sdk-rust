@@ -39,6 +39,13 @@ where
                             builder = builder
                                 .set_pending_updates(crate::protocol_serde::shape_cluster_pending_updates::de_cluster_pending_updates(tokens)?);
                         }
+                        "MultiRegionClusterName" => {
+                            builder = builder.set_multi_region_cluster_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "NumberOfShards" => {
                             builder = builder.set_number_of_shards(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

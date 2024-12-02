@@ -39,6 +39,16 @@ pub(crate) fn reflens_describe_events_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_multi_region_clusters_output_output_next_token(
+    input: &crate::operation::describe_multi_region_clusters::DescribeMultiRegionClustersOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_describe_parameter_groups_output_output_next_token(
     input: &crate::operation::describe_parameter_groups::DescribeParameterGroupsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -153,6 +163,16 @@ pub(crate) fn lens_describe_events_output_output_events(
     input: crate::operation::describe_events::DescribeEventsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Event>> {
     let input = match input.events {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_multi_region_clusters_output_output_multi_region_clusters(
+    input: crate::operation::describe_multi_region_clusters::DescribeMultiRegionClustersOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::MultiRegionCluster>> {
+    let input = match input.multi_region_clusters {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

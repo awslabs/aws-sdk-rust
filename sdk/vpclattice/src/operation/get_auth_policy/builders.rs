@@ -108,17 +108,17 @@ impl GetAuthPolicyFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service network or service.</p>
+    /// <p>The ID or ARN of the service network or service.</p>
     pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_identifier(input.into());
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service network or service.</p>
+    /// <p>The ID or ARN of the service network or service.</p>
     pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_identifier(input);
         self
     }
-    /// <p>The ID or Amazon Resource Name (ARN) of the service network or service.</p>
+    /// <p>The ID or ARN of the service network or service.</p>
     pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_identifier()
     }

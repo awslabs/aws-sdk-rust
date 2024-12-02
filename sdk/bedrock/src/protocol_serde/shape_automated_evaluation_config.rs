@@ -15,6 +15,12 @@ pub fn ser_automated_evaluation_config(
         }
         array_1.finish();
     }
+    if let Some(var_4) = &input.evaluator_model_config {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("evaluatorModelConfig").start_object();
+        crate::protocol_serde::shape_evaluator_model_config::ser_evaluator_model_config(&mut object_5, var_4)?;
+        object_5.finish();
+    }
     Ok(())
 }
 
@@ -37,6 +43,10 @@ where
                             builder = builder.set_dataset_metric_configs(
                                 crate::protocol_serde::shape_evaluation_dataset_metric_configs::de_evaluation_dataset_metric_configs(tokens)?,
                             );
+                        }
+                        "evaluatorModelConfig" => {
+                            builder = builder
+                                .set_evaluator_model_config(crate::protocol_serde::shape_evaluator_model_config::de_evaluator_model_config(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

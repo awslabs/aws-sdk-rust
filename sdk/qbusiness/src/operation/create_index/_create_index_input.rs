@@ -7,10 +7,10 @@ pub struct CreateIndexInput {
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>A name for the Amazon Q Business index.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
-    /// <p>The index type that's suitable for your needs. For more information on what's included in each type of index, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/tiers.html#index-tiers">Amazon Q Business tiers</a>.</p>
-    pub r#type: ::std::option::Option<crate::types::IndexType>,
     /// <p>A description for the Amazon Q Business index.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>The index type that's suitable for your needs. For more information on what's included in each type of index, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/tiers.html#index-tiers">Amazon Q Business tiers</a>.</p>
+    pub r#type: ::std::option::Option<crate::types::IndexType>,
     /// <p>A list of key-value pairs that identify or categorize the index. You can also use tags to help control access to the index. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The capacity units you want to provision for your index. You can add and remove capacity to fit your usage needs.</p>
@@ -27,13 +27,13 @@ impl CreateIndexInput {
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>The index type that's suitable for your needs. For more information on what's included in each type of index, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/tiers.html#index-tiers">Amazon Q Business tiers</a>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::IndexType> {
-        self.r#type.as_ref()
-    }
     /// <p>A description for the Amazon Q Business index.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
+    }
+    /// <p>The index type that's suitable for your needs. For more information on what's included in each type of index, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/tiers.html#index-tiers">Amazon Q Business tiers</a>.</p>
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::IndexType> {
+        self.r#type.as_ref()
     }
     /// <p>A list of key-value pairs that identify or categorize the index. You can also use tags to help control access to the index. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
     ///
@@ -63,8 +63,8 @@ impl CreateIndexInput {
 pub struct CreateIndexInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
-    pub(crate) r#type: ::std::option::Option<crate::types::IndexType>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::IndexType>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) capacity_configuration: ::std::option::Option<crate::types::IndexCapacityConfiguration>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -100,20 +100,6 @@ impl CreateIndexInputBuilder {
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
-    /// <p>The index type that's suitable for your needs. For more information on what's included in each type of index, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/tiers.html#index-tiers">Amazon Q Business tiers</a>.</p>
-    pub fn r#type(mut self, input: crate::types::IndexType) -> Self {
-        self.r#type = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The index type that's suitable for your needs. For more information on what's included in each type of index, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/tiers.html#index-tiers">Amazon Q Business tiers</a>.</p>
-    pub fn set_type(mut self, input: ::std::option::Option<crate::types::IndexType>) -> Self {
-        self.r#type = input;
-        self
-    }
-    /// <p>The index type that's suitable for your needs. For more information on what's included in each type of index, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/tiers.html#index-tiers">Amazon Q Business tiers</a>.</p>
-    pub fn get_type(&self) -> &::std::option::Option<crate::types::IndexType> {
-        &self.r#type
-    }
     /// <p>A description for the Amazon Q Business index.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -127,6 +113,20 @@ impl CreateIndexInputBuilder {
     /// <p>A description for the Amazon Q Business index.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
+    }
+    /// <p>The index type that's suitable for your needs. For more information on what's included in each type of index, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/tiers.html#index-tiers">Amazon Q Business tiers</a>.</p>
+    pub fn r#type(mut self, input: crate::types::IndexType) -> Self {
+        self.r#type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The index type that's suitable for your needs. For more information on what's included in each type of index, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/tiers.html#index-tiers">Amazon Q Business tiers</a>.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::IndexType>) -> Self {
+        self.r#type = input;
+        self
+    }
+    /// <p>The index type that's suitable for your needs. For more information on what's included in each type of index, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/tiers.html#index-tiers">Amazon Q Business tiers</a>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::IndexType> {
+        &self.r#type
     }
     /// Appends an item to `tags`.
     ///
@@ -181,8 +181,8 @@ impl CreateIndexInputBuilder {
         ::std::result::Result::Ok(crate::operation::create_index::CreateIndexInput {
             application_id: self.application_id,
             display_name: self.display_name,
-            r#type: self.r#type,
             description: self.description,
+            r#type: self.r#type,
             tags: self.tags,
             capacity_configuration: self.capacity_configuration,
             client_token: self.client_token,

@@ -51,6 +51,12 @@ pub struct Cluster {
     pub upgrade_policy: ::std::option::Option<crate::types::UpgradePolicyResponse>,
     /// <p>The configuration for zonal shift for the cluster.</p>
     pub zonal_shift_config: ::std::option::Option<crate::types::ZonalShiftConfigResponse>,
+    /// <p>The configuration in the cluster for EKS Hybrid Nodes. You can't change or update this configuration after the cluster is created.</p>
+    pub remote_network_config: ::std::option::Option<crate::types::RemoteNetworkConfigResponse>,
+    /// <p>Indicates the current configuration of the compute capability on your EKS Auto Mode cluster. For example, if the capability is enabled or disabled. If the compute capability is enabled, EKS Auto Mode will create and delete EC2 Managed Instances in your Amazon Web Services account. For more information, see EKS Auto Mode compute capability in the EKS User Guide.</p>
+    pub compute_config: ::std::option::Option<crate::types::ComputeConfigResponse>,
+    /// <p>Indicates the current configuration of the block storage capability on your EKS Auto Mode cluster. For example, if the capability is enabled or disabled. If the block storage capability is enabled, EKS Auto Mode will create and delete EBS volumes in your Amazon Web Services account. For more information, see EKS Auto Mode block storage capability in the EKS User Guide.</p>
+    pub storage_config: ::std::option::Option<crate::types::StorageConfigResponse>,
 }
 impl Cluster {
     /// <p>The name of your cluster.</p>
@@ -148,6 +154,18 @@ impl Cluster {
     pub fn zonal_shift_config(&self) -> ::std::option::Option<&crate::types::ZonalShiftConfigResponse> {
         self.zonal_shift_config.as_ref()
     }
+    /// <p>The configuration in the cluster for EKS Hybrid Nodes. You can't change or update this configuration after the cluster is created.</p>
+    pub fn remote_network_config(&self) -> ::std::option::Option<&crate::types::RemoteNetworkConfigResponse> {
+        self.remote_network_config.as_ref()
+    }
+    /// <p>Indicates the current configuration of the compute capability on your EKS Auto Mode cluster. For example, if the capability is enabled or disabled. If the compute capability is enabled, EKS Auto Mode will create and delete EC2 Managed Instances in your Amazon Web Services account. For more information, see EKS Auto Mode compute capability in the EKS User Guide.</p>
+    pub fn compute_config(&self) -> ::std::option::Option<&crate::types::ComputeConfigResponse> {
+        self.compute_config.as_ref()
+    }
+    /// <p>Indicates the current configuration of the block storage capability on your EKS Auto Mode cluster. For example, if the capability is enabled or disabled. If the block storage capability is enabled, EKS Auto Mode will create and delete EBS volumes in your Amazon Web Services account. For more information, see EKS Auto Mode block storage capability in the EKS User Guide.</p>
+    pub fn storage_config(&self) -> ::std::option::Option<&crate::types::StorageConfigResponse> {
+        self.storage_config.as_ref()
+    }
 }
 impl Cluster {
     /// Creates a new builder-style object to manufacture [`Cluster`](crate::types::Cluster).
@@ -183,6 +201,9 @@ pub struct ClusterBuilder {
     pub(crate) access_config: ::std::option::Option<crate::types::AccessConfigResponse>,
     pub(crate) upgrade_policy: ::std::option::Option<crate::types::UpgradePolicyResponse>,
     pub(crate) zonal_shift_config: ::std::option::Option<crate::types::ZonalShiftConfigResponse>,
+    pub(crate) remote_network_config: ::std::option::Option<crate::types::RemoteNetworkConfigResponse>,
+    pub(crate) compute_config: ::std::option::Option<crate::types::ComputeConfigResponse>,
+    pub(crate) storage_config: ::std::option::Option<crate::types::StorageConfigResponse>,
 }
 impl ClusterBuilder {
     /// <p>The name of your cluster.</p>
@@ -522,6 +543,48 @@ impl ClusterBuilder {
     pub fn get_zonal_shift_config(&self) -> &::std::option::Option<crate::types::ZonalShiftConfigResponse> {
         &self.zonal_shift_config
     }
+    /// <p>The configuration in the cluster for EKS Hybrid Nodes. You can't change or update this configuration after the cluster is created.</p>
+    pub fn remote_network_config(mut self, input: crate::types::RemoteNetworkConfigResponse) -> Self {
+        self.remote_network_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration in the cluster for EKS Hybrid Nodes. You can't change or update this configuration after the cluster is created.</p>
+    pub fn set_remote_network_config(mut self, input: ::std::option::Option<crate::types::RemoteNetworkConfigResponse>) -> Self {
+        self.remote_network_config = input;
+        self
+    }
+    /// <p>The configuration in the cluster for EKS Hybrid Nodes. You can't change or update this configuration after the cluster is created.</p>
+    pub fn get_remote_network_config(&self) -> &::std::option::Option<crate::types::RemoteNetworkConfigResponse> {
+        &self.remote_network_config
+    }
+    /// <p>Indicates the current configuration of the compute capability on your EKS Auto Mode cluster. For example, if the capability is enabled or disabled. If the compute capability is enabled, EKS Auto Mode will create and delete EC2 Managed Instances in your Amazon Web Services account. For more information, see EKS Auto Mode compute capability in the EKS User Guide.</p>
+    pub fn compute_config(mut self, input: crate::types::ComputeConfigResponse) -> Self {
+        self.compute_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates the current configuration of the compute capability on your EKS Auto Mode cluster. For example, if the capability is enabled or disabled. If the compute capability is enabled, EKS Auto Mode will create and delete EC2 Managed Instances in your Amazon Web Services account. For more information, see EKS Auto Mode compute capability in the EKS User Guide.</p>
+    pub fn set_compute_config(mut self, input: ::std::option::Option<crate::types::ComputeConfigResponse>) -> Self {
+        self.compute_config = input;
+        self
+    }
+    /// <p>Indicates the current configuration of the compute capability on your EKS Auto Mode cluster. For example, if the capability is enabled or disabled. If the compute capability is enabled, EKS Auto Mode will create and delete EC2 Managed Instances in your Amazon Web Services account. For more information, see EKS Auto Mode compute capability in the EKS User Guide.</p>
+    pub fn get_compute_config(&self) -> &::std::option::Option<crate::types::ComputeConfigResponse> {
+        &self.compute_config
+    }
+    /// <p>Indicates the current configuration of the block storage capability on your EKS Auto Mode cluster. For example, if the capability is enabled or disabled. If the block storage capability is enabled, EKS Auto Mode will create and delete EBS volumes in your Amazon Web Services account. For more information, see EKS Auto Mode block storage capability in the EKS User Guide.</p>
+    pub fn storage_config(mut self, input: crate::types::StorageConfigResponse) -> Self {
+        self.storage_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates the current configuration of the block storage capability on your EKS Auto Mode cluster. For example, if the capability is enabled or disabled. If the block storage capability is enabled, EKS Auto Mode will create and delete EBS volumes in your Amazon Web Services account. For more information, see EKS Auto Mode block storage capability in the EKS User Guide.</p>
+    pub fn set_storage_config(mut self, input: ::std::option::Option<crate::types::StorageConfigResponse>) -> Self {
+        self.storage_config = input;
+        self
+    }
+    /// <p>Indicates the current configuration of the block storage capability on your EKS Auto Mode cluster. For example, if the capability is enabled or disabled. If the block storage capability is enabled, EKS Auto Mode will create and delete EBS volumes in your Amazon Web Services account. For more information, see EKS Auto Mode block storage capability in the EKS User Guide.</p>
+    pub fn get_storage_config(&self) -> &::std::option::Option<crate::types::StorageConfigResponse> {
+        &self.storage_config
+    }
     /// Consumes the builder and constructs a [`Cluster`](crate::types::Cluster).
     pub fn build(self) -> crate::types::Cluster {
         crate::types::Cluster {
@@ -548,6 +611,9 @@ impl ClusterBuilder {
             access_config: self.access_config,
             upgrade_policy: self.upgrade_policy,
             zonal_shift_config: self.zonal_shift_config,
+            remote_network_config: self.remote_network_config,
+            compute_config: self.compute_config,
+            storage_config: self.storage_config,
         }
     }
 }

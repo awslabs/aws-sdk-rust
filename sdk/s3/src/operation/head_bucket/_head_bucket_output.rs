@@ -8,7 +8,7 @@ pub struct HeadBucketOutput {
     /// </note>
     pub bucket_location_type: ::std::option::Option<crate::types::LocationType>,
     /// <p>The name of the location where the bucket will be created.</p>
-    /// <p>For directory buckets, the AZ ID of the Availability Zone where the bucket is created. An example AZ ID value is <code>usw2-az1</code>.</p><note>
+    /// <p>For directory buckets, the Zone ID of the Availability Zone or the Local Zone where the bucket is created. An example Zone ID value for an Availability Zone is <code>usw2-az1</code>.</p><note>
     /// <p>This functionality is only supported by directory buckets.</p>
     /// </note>
     pub bucket_location_name: ::std::option::Option<::std::string::String>,
@@ -29,7 +29,7 @@ impl HeadBucketOutput {
         self.bucket_location_type.as_ref()
     }
     /// <p>The name of the location where the bucket will be created.</p>
-    /// <p>For directory buckets, the AZ ID of the Availability Zone where the bucket is created. An example AZ ID value is <code>usw2-az1</code>.</p><note>
+    /// <p>For directory buckets, the Zone ID of the Availability Zone or the Local Zone where the bucket is created. An example Zone ID value for an Availability Zone is <code>usw2-az1</code>.</p><note>
     /// <p>This functionality is only supported by directory buckets.</p>
     /// </note>
     pub fn bucket_location_name(&self) -> ::std::option::Option<&str> {
@@ -96,7 +96,7 @@ impl HeadBucketOutputBuilder {
         &self.bucket_location_type
     }
     /// <p>The name of the location where the bucket will be created.</p>
-    /// <p>For directory buckets, the AZ ID of the Availability Zone where the bucket is created. An example AZ ID value is <code>usw2-az1</code>.</p><note>
+    /// <p>For directory buckets, the Zone ID of the Availability Zone or the Local Zone where the bucket is created. An example Zone ID value for an Availability Zone is <code>usw2-az1</code>.</p><note>
     /// <p>This functionality is only supported by directory buckets.</p>
     /// </note>
     pub fn bucket_location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -104,7 +104,7 @@ impl HeadBucketOutputBuilder {
         self
     }
     /// <p>The name of the location where the bucket will be created.</p>
-    /// <p>For directory buckets, the AZ ID of the Availability Zone where the bucket is created. An example AZ ID value is <code>usw2-az1</code>.</p><note>
+    /// <p>For directory buckets, the Zone ID of the Availability Zone or the Local Zone where the bucket is created. An example Zone ID value for an Availability Zone is <code>usw2-az1</code>.</p><note>
     /// <p>This functionality is only supported by directory buckets.</p>
     /// </note>
     pub fn set_bucket_location_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -112,7 +112,7 @@ impl HeadBucketOutputBuilder {
         self
     }
     /// <p>The name of the location where the bucket will be created.</p>
-    /// <p>For directory buckets, the AZ ID of the Availability Zone where the bucket is created. An example AZ ID value is <code>usw2-az1</code>.</p><note>
+    /// <p>For directory buckets, the Zone ID of the Availability Zone or the Local Zone where the bucket is created. An example Zone ID value for an Availability Zone is <code>usw2-az1</code>.</p><note>
     /// <p>This functionality is only supported by directory buckets.</p>
     /// </note>
     pub fn get_bucket_location_name(&self) -> &::std::option::Option<::std::string::String> {

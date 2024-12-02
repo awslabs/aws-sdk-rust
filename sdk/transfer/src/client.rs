@@ -182,6 +182,8 @@ mod create_server;
 
 mod create_user;
 
+mod create_web_app;
+
 mod create_workflow;
 
 /// Operation customization and supporting types.
@@ -229,6 +231,10 @@ mod delete_ssh_public_key;
 
 mod delete_user;
 
+mod delete_web_app;
+
+mod delete_web_app_customization;
+
 mod delete_workflow;
 
 mod describe_access;
@@ -250,6 +256,10 @@ mod describe_security_policy;
 mod describe_server;
 
 mod describe_user;
+
+mod describe_web_app;
+
+mod describe_web_app_customization;
 
 mod describe_workflow;
 
@@ -282,6 +292,8 @@ mod list_servers;
 mod list_tags_for_resource;
 
 mod list_users;
+
+mod list_web_apps;
 
 mod list_workflows;
 
@@ -318,3 +330,7 @@ mod update_profile;
 mod update_server;
 
 mod update_user;
+
+mod update_web_app;
+
+mod update_web_app_customization;

@@ -601,3 +601,136 @@ pub(crate) fn scan_condition_pair_correct_errors(
     }
     builder
 }
+
+pub(crate) fn sequence_correct_errors(mut builder: crate::types::builders::SequenceBuilder) -> crate::types::builders::SequenceBuilder {
+    if builder.uid.is_none() {
+        builder.uid = Some(Default::default())
+    }
+    if builder.description.is_none() {
+        builder.description = Some(Default::default())
+    }
+    if builder.signals.is_none() {
+        builder.signals = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn actor_correct_errors(mut builder: crate::types::builders::ActorBuilder) -> crate::types::builders::ActorBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn indicator_correct_errors(mut builder: crate::types::builders::IndicatorBuilder) -> crate::types::builders::IndicatorBuilder {
+    if builder.key.is_none() {
+        builder.key = "no value was set".parse::<crate::types::IndicatorType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn network_endpoint_correct_errors(
+    mut builder: crate::types::builders::NetworkEndpointBuilder,
+) -> crate::types::builders::NetworkEndpointBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn resource_v2_correct_errors(mut builder: crate::types::builders::ResourceV2Builder) -> crate::types::builders::ResourceV2Builder {
+    if builder.uid.is_none() {
+        builder.uid = Some(Default::default())
+    }
+    if builder.resource_type.is_none() {
+        builder.resource_type = "no value was set".parse::<crate::types::FindingResourceType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn signal_correct_errors(mut builder: crate::types::builders::SignalBuilder) -> crate::types::builders::SignalBuilder {
+    if builder.uid.is_none() {
+        builder.uid = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::SignalType>().ok()
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.first_seen_at.is_none() {
+        builder.first_seen_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_seen_at.is_none() {
+        builder.last_seen_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.count.is_none() {
+        builder.count = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn autonomous_system_correct_errors(
+    mut builder: crate::types::builders::AutonomousSystemBuilder,
+) -> crate::types::builders::AutonomousSystemBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.number.is_none() {
+        builder.number = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn network_connection_correct_errors(
+    mut builder: crate::types::builders::NetworkConnectionBuilder,
+) -> crate::types::builders::NetworkConnectionBuilder {
+    if builder.direction.is_none() {
+        builder.direction = "no value was set".parse::<crate::types::NetworkDirection>().ok()
+    }
+    builder
+}
+
+pub(crate) fn network_geo_location_correct_errors(
+    mut builder: crate::types::builders::NetworkGeoLocationBuilder,
+) -> crate::types::builders::NetworkGeoLocationBuilder {
+    if builder.city.is_none() {
+        builder.city = Some(Default::default())
+    }
+    if builder.country.is_none() {
+        builder.country = Some(Default::default())
+    }
+    if builder.latitude.is_none() {
+        builder.latitude = Some(Default::default())
+    }
+    if builder.longitude.is_none() {
+        builder.longitude = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn user_correct_errors(mut builder: crate::types::builders::UserBuilder) -> crate::types::builders::UserBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.uid.is_none() {
+        builder.uid = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn account_correct_errors(mut builder: crate::types::builders::AccountBuilder) -> crate::types::builders::AccountBuilder {
+    if builder.uid.is_none() {
+        builder.uid = Some(Default::default())
+    }
+    builder
+}

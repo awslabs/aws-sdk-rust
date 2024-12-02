@@ -148,6 +148,8 @@ mod create_domain;
 
 mod create_event_stream;
 
+mod create_event_trigger;
+
 mod create_integration_workflow;
 
 mod create_profile;
@@ -191,6 +193,8 @@ mod delete_domain;
 
 mod delete_event_stream;
 
+mod delete_event_trigger;
+
 mod delete_integration;
 
 mod delete_profile;
@@ -216,6 +220,8 @@ mod get_calculated_attribute_for_profile;
 mod get_domain;
 
 mod get_event_stream;
+
+mod get_event_trigger;
 
 mod get_identity_resolution_job;
 
@@ -250,6 +256,8 @@ mod list_calculated_attributes_for_profile;
 mod list_domains;
 
 mod list_event_streams;
+
+mod list_event_triggers;
 
 mod list_identity_resolution_jobs;
 
@@ -290,5 +298,7 @@ mod untag_resource;
 mod update_calculated_attribute_definition;
 
 mod update_domain;
+
+mod update_event_trigger;
 
 mod update_profile;

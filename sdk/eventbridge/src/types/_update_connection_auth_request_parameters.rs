@@ -4,31 +4,39 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateConnectionAuthRequestParameters {
-    /// <p>A <code>UpdateConnectionBasicAuthRequestParameters</code> object that contains the authorization parameters for Basic authorization.</p>
+    /// <p>The authorization parameters for Basic authorization.</p>
     pub basic_auth_parameters: ::std::option::Option<crate::types::UpdateConnectionBasicAuthRequestParameters>,
-    /// <p>A <code>UpdateConnectionOAuthRequestParameters</code> object that contains the authorization parameters for OAuth authorization.</p>
+    /// <p>The authorization parameters for OAuth authorization.</p>
     pub o_auth_parameters: ::std::option::Option<crate::types::UpdateConnectionOAuthRequestParameters>,
-    /// <p>A <code>UpdateConnectionApiKeyAuthRequestParameters</code> object that contains the authorization parameters for API key authorization.</p>
+    /// <p>The authorization parameters for API key authorization.</p>
     pub api_key_auth_parameters: ::std::option::Option<crate::types::UpdateConnectionApiKeyAuthRequestParameters>,
-    /// <p>A <code>ConnectionHttpParameters</code> object that contains the additional parameters to use for the connection.</p>
+    /// <p>The additional parameters to use for the connection.</p>
     pub invocation_http_parameters: ::std::option::Option<crate::types::ConnectionHttpParameters>,
+    /// <p>If you specify a private OAuth endpoint, the parameters for EventBridge to use when authenticating against the endpoint.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-target-connection-auth.html">Authorization methods for connections</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
+    pub connectivity_parameters: ::std::option::Option<crate::types::ConnectivityResourceParameters>,
 }
 impl UpdateConnectionAuthRequestParameters {
-    /// <p>A <code>UpdateConnectionBasicAuthRequestParameters</code> object that contains the authorization parameters for Basic authorization.</p>
+    /// <p>The authorization parameters for Basic authorization.</p>
     pub fn basic_auth_parameters(&self) -> ::std::option::Option<&crate::types::UpdateConnectionBasicAuthRequestParameters> {
         self.basic_auth_parameters.as_ref()
     }
-    /// <p>A <code>UpdateConnectionOAuthRequestParameters</code> object that contains the authorization parameters for OAuth authorization.</p>
+    /// <p>The authorization parameters for OAuth authorization.</p>
     pub fn o_auth_parameters(&self) -> ::std::option::Option<&crate::types::UpdateConnectionOAuthRequestParameters> {
         self.o_auth_parameters.as_ref()
     }
-    /// <p>A <code>UpdateConnectionApiKeyAuthRequestParameters</code> object that contains the authorization parameters for API key authorization.</p>
+    /// <p>The authorization parameters for API key authorization.</p>
     pub fn api_key_auth_parameters(&self) -> ::std::option::Option<&crate::types::UpdateConnectionApiKeyAuthRequestParameters> {
         self.api_key_auth_parameters.as_ref()
     }
-    /// <p>A <code>ConnectionHttpParameters</code> object that contains the additional parameters to use for the connection.</p>
+    /// <p>The additional parameters to use for the connection.</p>
     pub fn invocation_http_parameters(&self) -> ::std::option::Option<&crate::types::ConnectionHttpParameters> {
         self.invocation_http_parameters.as_ref()
+    }
+    /// <p>If you specify a private OAuth endpoint, the parameters for EventBridge to use when authenticating against the endpoint.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-target-connection-auth.html">Authorization methods for connections</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
+    pub fn connectivity_parameters(&self) -> ::std::option::Option<&crate::types::ConnectivityResourceParameters> {
+        self.connectivity_parameters.as_ref()
     }
 }
 impl UpdateConnectionAuthRequestParameters {
@@ -46,63 +54,81 @@ pub struct UpdateConnectionAuthRequestParametersBuilder {
     pub(crate) o_auth_parameters: ::std::option::Option<crate::types::UpdateConnectionOAuthRequestParameters>,
     pub(crate) api_key_auth_parameters: ::std::option::Option<crate::types::UpdateConnectionApiKeyAuthRequestParameters>,
     pub(crate) invocation_http_parameters: ::std::option::Option<crate::types::ConnectionHttpParameters>,
+    pub(crate) connectivity_parameters: ::std::option::Option<crate::types::ConnectivityResourceParameters>,
 }
 impl UpdateConnectionAuthRequestParametersBuilder {
-    /// <p>A <code>UpdateConnectionBasicAuthRequestParameters</code> object that contains the authorization parameters for Basic authorization.</p>
+    /// <p>The authorization parameters for Basic authorization.</p>
     pub fn basic_auth_parameters(mut self, input: crate::types::UpdateConnectionBasicAuthRequestParameters) -> Self {
         self.basic_auth_parameters = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A <code>UpdateConnectionBasicAuthRequestParameters</code> object that contains the authorization parameters for Basic authorization.</p>
+    /// <p>The authorization parameters for Basic authorization.</p>
     pub fn set_basic_auth_parameters(mut self, input: ::std::option::Option<crate::types::UpdateConnectionBasicAuthRequestParameters>) -> Self {
         self.basic_auth_parameters = input;
         self
     }
-    /// <p>A <code>UpdateConnectionBasicAuthRequestParameters</code> object that contains the authorization parameters for Basic authorization.</p>
+    /// <p>The authorization parameters for Basic authorization.</p>
     pub fn get_basic_auth_parameters(&self) -> &::std::option::Option<crate::types::UpdateConnectionBasicAuthRequestParameters> {
         &self.basic_auth_parameters
     }
-    /// <p>A <code>UpdateConnectionOAuthRequestParameters</code> object that contains the authorization parameters for OAuth authorization.</p>
+    /// <p>The authorization parameters for OAuth authorization.</p>
     pub fn o_auth_parameters(mut self, input: crate::types::UpdateConnectionOAuthRequestParameters) -> Self {
         self.o_auth_parameters = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A <code>UpdateConnectionOAuthRequestParameters</code> object that contains the authorization parameters for OAuth authorization.</p>
+    /// <p>The authorization parameters for OAuth authorization.</p>
     pub fn set_o_auth_parameters(mut self, input: ::std::option::Option<crate::types::UpdateConnectionOAuthRequestParameters>) -> Self {
         self.o_auth_parameters = input;
         self
     }
-    /// <p>A <code>UpdateConnectionOAuthRequestParameters</code> object that contains the authorization parameters for OAuth authorization.</p>
+    /// <p>The authorization parameters for OAuth authorization.</p>
     pub fn get_o_auth_parameters(&self) -> &::std::option::Option<crate::types::UpdateConnectionOAuthRequestParameters> {
         &self.o_auth_parameters
     }
-    /// <p>A <code>UpdateConnectionApiKeyAuthRequestParameters</code> object that contains the authorization parameters for API key authorization.</p>
+    /// <p>The authorization parameters for API key authorization.</p>
     pub fn api_key_auth_parameters(mut self, input: crate::types::UpdateConnectionApiKeyAuthRequestParameters) -> Self {
         self.api_key_auth_parameters = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A <code>UpdateConnectionApiKeyAuthRequestParameters</code> object that contains the authorization parameters for API key authorization.</p>
+    /// <p>The authorization parameters for API key authorization.</p>
     pub fn set_api_key_auth_parameters(mut self, input: ::std::option::Option<crate::types::UpdateConnectionApiKeyAuthRequestParameters>) -> Self {
         self.api_key_auth_parameters = input;
         self
     }
-    /// <p>A <code>UpdateConnectionApiKeyAuthRequestParameters</code> object that contains the authorization parameters for API key authorization.</p>
+    /// <p>The authorization parameters for API key authorization.</p>
     pub fn get_api_key_auth_parameters(&self) -> &::std::option::Option<crate::types::UpdateConnectionApiKeyAuthRequestParameters> {
         &self.api_key_auth_parameters
     }
-    /// <p>A <code>ConnectionHttpParameters</code> object that contains the additional parameters to use for the connection.</p>
+    /// <p>The additional parameters to use for the connection.</p>
     pub fn invocation_http_parameters(mut self, input: crate::types::ConnectionHttpParameters) -> Self {
         self.invocation_http_parameters = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A <code>ConnectionHttpParameters</code> object that contains the additional parameters to use for the connection.</p>
+    /// <p>The additional parameters to use for the connection.</p>
     pub fn set_invocation_http_parameters(mut self, input: ::std::option::Option<crate::types::ConnectionHttpParameters>) -> Self {
         self.invocation_http_parameters = input;
         self
     }
-    /// <p>A <code>ConnectionHttpParameters</code> object that contains the additional parameters to use for the connection.</p>
+    /// <p>The additional parameters to use for the connection.</p>
     pub fn get_invocation_http_parameters(&self) -> &::std::option::Option<crate::types::ConnectionHttpParameters> {
         &self.invocation_http_parameters
+    }
+    /// <p>If you specify a private OAuth endpoint, the parameters for EventBridge to use when authenticating against the endpoint.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-target-connection-auth.html">Authorization methods for connections</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
+    pub fn connectivity_parameters(mut self, input: crate::types::ConnectivityResourceParameters) -> Self {
+        self.connectivity_parameters = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If you specify a private OAuth endpoint, the parameters for EventBridge to use when authenticating against the endpoint.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-target-connection-auth.html">Authorization methods for connections</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
+    pub fn set_connectivity_parameters(mut self, input: ::std::option::Option<crate::types::ConnectivityResourceParameters>) -> Self {
+        self.connectivity_parameters = input;
+        self
+    }
+    /// <p>If you specify a private OAuth endpoint, the parameters for EventBridge to use when authenticating against the endpoint.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-target-connection-auth.html">Authorization methods for connections</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
+    pub fn get_connectivity_parameters(&self) -> &::std::option::Option<crate::types::ConnectivityResourceParameters> {
+        &self.connectivity_parameters
     }
     /// Consumes the builder and constructs a [`UpdateConnectionAuthRequestParameters`](crate::types::UpdateConnectionAuthRequestParameters).
     pub fn build(self) -> crate::types::UpdateConnectionAuthRequestParameters {
@@ -111,6 +137,7 @@ impl UpdateConnectionAuthRequestParametersBuilder {
             o_auth_parameters: self.o_auth_parameters,
             api_key_auth_parameters: self.api_key_auth_parameters,
             invocation_http_parameters: self.invocation_http_parameters,
+            connectivity_parameters: self.connectivity_parameters,
         }
     }
 }

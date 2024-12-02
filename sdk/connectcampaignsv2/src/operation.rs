@@ -58,6 +58,9 @@ pub mod put_connect_instance_integration;
 /// Types for the `PutOutboundRequestBatch` operation.
 pub mod put_outbound_request_batch;
 
+/// Types for the `PutProfileOutboundRequestBatch` operation.
+pub mod put_profile_outbound_request_batch;
+
 /// Types for the `ResumeCampaign` operation.
 pub mod resume_campaign;
 

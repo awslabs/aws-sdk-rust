@@ -19,6 +19,16 @@ pub(crate) fn reflens_list_event_streams_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_event_triggers_output_output_next_token(
+    input: &crate::operation::list_event_triggers::ListEventTriggersOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_object_type_attributes_output_output_next_token(
     input: &crate::operation::list_object_type_attributes::ListObjectTypeAttributesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -62,6 +72,16 @@ pub(crate) fn lens_get_similar_profiles_output_output_profile_ids(
 pub(crate) fn lens_list_event_streams_output_output_items(
     input: crate::operation::list_event_streams::ListEventStreamsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::EventStreamSummary>> {
+    let input = match input.items {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_event_triggers_output_output_items(
+    input: crate::operation::list_event_triggers::ListEventTriggersOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::EventTriggerSummaryItem>> {
     let input = match input.items {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,

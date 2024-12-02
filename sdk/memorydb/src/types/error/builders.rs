@@ -23,6 +23,12 @@ pub use crate::types::error::_parameter_group_not_found_fault::ParameterGroupNot
 
 pub use crate::types::error::_invalid_parameter_group_state_fault::InvalidParameterGroupStateFaultBuilder;
 
+pub use crate::types::error::_multi_region_parameter_group_not_found_fault::MultiRegionParameterGroupNotFoundFaultBuilder;
+
+pub use crate::types::error::_multi_region_cluster_not_found_fault::MultiRegionClusterNotFoundFaultBuilder;
+
+pub use crate::types::error::_invalid_multi_region_cluster_state_fault::InvalidMultiRegionClusterStateFaultBuilder;
+
 pub use crate::types::error::_shards_per_cluster_quota_exceeded_fault::ShardsPerClusterQuotaExceededFaultBuilder;
 
 pub use crate::types::error::_no_operation_fault::NoOperationFaultBuilder;
@@ -92,6 +98,8 @@ pub use crate::types::error::_snapshot_quota_exceeded_fault::SnapshotQuotaExceed
 pub use crate::types::error::_parameter_group_quota_exceeded_fault::ParameterGroupQuotaExceededFaultBuilder;
 
 pub use crate::types::error::_parameter_group_already_exists_fault::ParameterGroupAlreadyExistsFaultBuilder;
+
+pub use crate::types::error::_multi_region_cluster_already_exists_fault::MultiRegionClusterAlreadyExistsFaultBuilder;
 
 pub use crate::types::error::_invalid_credentials_exception::InvalidCredentialsExceptionBuilder;
 

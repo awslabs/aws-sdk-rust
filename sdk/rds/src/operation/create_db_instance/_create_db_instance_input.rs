@@ -703,6 +703,8 @@ pub struct CreateDbInstanceInput {
     /// <p>RDS Custom</p></li>
     /// </ul>
     pub enable_iam_database_authentication: ::std::option::Option<bool>,
+    /// <p>Specifies the mode of Database Insights to enable for the instance.</p>
+    pub database_insights_mode: ::std::option::Option<crate::types::DatabaseInsightsMode>,
     /// <p>Specifies whether to enable Performance Insights for the DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     pub enable_performance_insights: ::std::option::Option<bool>,
@@ -1639,6 +1641,10 @@ impl CreateDbInstanceInput {
     pub fn enable_iam_database_authentication(&self) -> ::std::option::Option<bool> {
         self.enable_iam_database_authentication
     }
+    /// <p>Specifies the mode of Database Insights to enable for the instance.</p>
+    pub fn database_insights_mode(&self) -> ::std::option::Option<&crate::types::DatabaseInsightsMode> {
+        self.database_insights_mode.as_ref()
+    }
     /// <p>Specifies whether to enable Performance Insights for the DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     pub fn enable_performance_insights(&self) -> ::std::option::Option<bool> {
@@ -1876,6 +1882,7 @@ pub struct CreateDbInstanceInputBuilder {
     pub(crate) promotion_tier: ::std::option::Option<i32>,
     pub(crate) timezone: ::std::option::Option<::std::string::String>,
     pub(crate) enable_iam_database_authentication: ::std::option::Option<bool>,
+    pub(crate) database_insights_mode: ::std::option::Option<crate::types::DatabaseInsightsMode>,
     pub(crate) enable_performance_insights: ::std::option::Option<bool>,
     pub(crate) performance_insights_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) performance_insights_retention_period: ::std::option::Option<i32>,
@@ -4373,6 +4380,20 @@ impl CreateDbInstanceInputBuilder {
     pub fn get_enable_iam_database_authentication(&self) -> &::std::option::Option<bool> {
         &self.enable_iam_database_authentication
     }
+    /// <p>Specifies the mode of Database Insights to enable for the instance.</p>
+    pub fn database_insights_mode(mut self, input: crate::types::DatabaseInsightsMode) -> Self {
+        self.database_insights_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the mode of Database Insights to enable for the instance.</p>
+    pub fn set_database_insights_mode(mut self, input: ::std::option::Option<crate::types::DatabaseInsightsMode>) -> Self {
+        self.database_insights_mode = input;
+        self
+    }
+    /// <p>Specifies the mode of Database Insights to enable for the instance.</p>
+    pub fn get_database_insights_mode(&self) -> &::std::option::Option<crate::types::DatabaseInsightsMode> {
+        &self.database_insights_mode
+    }
     /// <p>Specifies whether to enable Performance Insights for the DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     pub fn enable_performance_insights(mut self, input: bool) -> Self {
@@ -5003,6 +5024,7 @@ impl CreateDbInstanceInputBuilder {
             promotion_tier: self.promotion_tier,
             timezone: self.timezone,
             enable_iam_database_authentication: self.enable_iam_database_authentication,
+            database_insights_mode: self.database_insights_mode,
             enable_performance_insights: self.enable_performance_insights,
             performance_insights_kms_key_id: self.performance_insights_kms_key_id,
             performance_insights_retention_period: self.performance_insights_retention_period,

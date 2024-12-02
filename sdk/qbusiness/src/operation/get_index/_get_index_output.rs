@@ -9,12 +9,12 @@ pub struct GetIndexOutput {
     pub index_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon Q Business index.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
-    /// <p>The type of index attached to your Amazon Q Business application.</p>
-    pub r#type: ::std::option::Option<crate::types::IndexType>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon Q Business index.</p>
     pub index_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the index. When the value is <code>ACTIVE</code>, the index is ready for use. If the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
     pub status: ::std::option::Option<crate::types::IndexStatus>,
+    /// <p>The type of index attached to your Amazon Q Business application.</p>
+    pub r#type: ::std::option::Option<crate::types::IndexType>,
     /// <p>The description for the Amazon Q Business index.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Unix timestamp when the Amazon Q Business index was created.</p>
@@ -44,10 +44,6 @@ impl GetIndexOutput {
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>The type of index attached to your Amazon Q Business application.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::IndexType> {
-        self.r#type.as_ref()
-    }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Q Business index.</p>
     pub fn index_arn(&self) -> ::std::option::Option<&str> {
         self.index_arn.as_deref()
@@ -55,6 +51,10 @@ impl GetIndexOutput {
     /// <p>The current status of the index. When the value is <code>ACTIVE</code>, the index is ready for use. If the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::IndexStatus> {
         self.status.as_ref()
+    }
+    /// <p>The type of index attached to your Amazon Q Business application.</p>
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::IndexType> {
+        self.r#type.as_ref()
     }
     /// <p>The description for the Amazon Q Business index.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -106,9 +106,9 @@ pub struct GetIndexOutputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
-    pub(crate) r#type: ::std::option::Option<crate::types::IndexType>,
     pub(crate) index_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::IndexStatus>,
+    pub(crate) r#type: ::std::option::Option<crate::types::IndexType>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -161,20 +161,6 @@ impl GetIndexOutputBuilder {
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
-    /// <p>The type of index attached to your Amazon Q Business application.</p>
-    pub fn r#type(mut self, input: crate::types::IndexType) -> Self {
-        self.r#type = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The type of index attached to your Amazon Q Business application.</p>
-    pub fn set_type(mut self, input: ::std::option::Option<crate::types::IndexType>) -> Self {
-        self.r#type = input;
-        self
-    }
-    /// <p>The type of index attached to your Amazon Q Business application.</p>
-    pub fn get_type(&self) -> &::std::option::Option<crate::types::IndexType> {
-        &self.r#type
-    }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Q Business index.</p>
     pub fn index_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_arn = ::std::option::Option::Some(input.into());
@@ -202,6 +188,20 @@ impl GetIndexOutputBuilder {
     /// <p>The current status of the index. When the value is <code>ACTIVE</code>, the index is ready for use. If the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::IndexStatus> {
         &self.status
+    }
+    /// <p>The type of index attached to your Amazon Q Business application.</p>
+    pub fn r#type(mut self, input: crate::types::IndexType) -> Self {
+        self.r#type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of index attached to your Amazon Q Business application.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::IndexType>) -> Self {
+        self.r#type = input;
+        self
+    }
+    /// <p>The type of index attached to your Amazon Q Business application.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::IndexType> {
+        &self.r#type
     }
     /// <p>The description for the Amazon Q Business index.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -325,9 +325,9 @@ impl GetIndexOutputBuilder {
             application_id: self.application_id,
             index_id: self.index_id,
             display_name: self.display_name,
-            r#type: self.r#type,
             index_arn: self.index_arn,
             status: self.status,
+            r#type: self.r#type,
             description: self.description,
             created_at: self.created_at,
             updated_at: self.updated_at,

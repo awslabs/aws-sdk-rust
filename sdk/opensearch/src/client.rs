@@ -140,6 +140,8 @@ mod accept_inbound_connection;
 
 mod add_data_source;
 
+mod add_direct_query_data_source;
+
 mod add_tags;
 
 mod associate_package;
@@ -193,6 +195,8 @@ mod delete_application;
 
 mod delete_data_source;
 
+mod delete_direct_query_data_source;
+
 mod delete_domain;
 
 mod delete_inbound_connection;
@@ -243,6 +247,8 @@ mod get_compatible_versions;
 
 mod get_data_source;
 
+mod get_direct_query_data_source;
+
 mod get_domain_maintenance_status;
 
 mod get_package_version_history;
@@ -254,6 +260,8 @@ mod get_upgrade_status;
 mod list_applications;
 
 mod list_data_sources;
+
+mod list_direct_query_data_sources;
 
 mod list_domain_maintenances;
 
@@ -292,6 +300,8 @@ mod start_service_software_update;
 mod update_application;
 
 mod update_data_source;
+
+mod update_direct_query_data_source;
 
 mod update_domain_config;
 

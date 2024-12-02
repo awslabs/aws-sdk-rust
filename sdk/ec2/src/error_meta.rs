@@ -1320,6 +1320,38 @@ impl From<crate::operation::cancel_conversion_task::CancelConversionTaskError> f
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::cancel_declarative_policies_report::CancelDeclarativePoliciesReportError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::cancel_declarative_policies_report::CancelDeclarativePoliciesReportError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::cancel_declarative_policies_report::CancelDeclarativePoliciesReportError> for Error {
+    fn from(err: crate::operation::cancel_declarative_policies_report::CancelDeclarativePoliciesReportError) -> Self {
+        match err {
+            crate::operation::cancel_declarative_policies_report::CancelDeclarativePoliciesReportError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_export_task::CancelExportTaskError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -6592,6 +6624,40 @@ impl From<crate::operation::describe_customer_gateways::DescribeCustomerGateways
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_declarative_policies_reports::DescribeDeclarativePoliciesReportsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_declarative_policies_reports::DescribeDeclarativePoliciesReportsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_declarative_policies_reports::DescribeDeclarativePoliciesReportsError> for Error {
+    fn from(err: crate::operation::describe_declarative_policies_reports::DescribeDeclarativePoliciesReportsError) -> Self {
+        match err {
+            crate::operation::describe_declarative_policies_reports::DescribeDeclarativePoliciesReportsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_dhcp_options::DescribeDhcpOptionsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -9965,6 +10031,38 @@ impl From<crate::operation::describe_vpc_classic_link_dns_support::DescribeVpcCl
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_vpc_endpoint_associations::DescribeVpcEndpointAssociationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_vpc_endpoint_associations::DescribeVpcEndpointAssociationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_vpc_endpoint_associations::DescribeVpcEndpointAssociationsError> for Error {
+    fn from(err: crate::operation::describe_vpc_endpoint_associations::DescribeVpcEndpointAssociationsError) -> Self {
+        match err {
+            crate::operation::describe_vpc_endpoint_associations::DescribeVpcEndpointAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::describe_vpc_endpoint_connection_notifications::DescribeVpcEndpointConnectionNotificationsError,
             R,
         >,
@@ -10404,6 +10502,34 @@ impl From<crate::operation::disable_address_transfer::DisableAddressTransferErro
     fn from(err: crate::operation::disable_address_transfer::DisableAddressTransferError) -> Self {
         match err {
             crate::operation::disable_address_transfer::DisableAddressTransferError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disable_allowed_images_settings::DisableAllowedImagesSettingsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disable_allowed_images_settings::DisableAllowedImagesSettingsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disable_allowed_images_settings::DisableAllowedImagesSettingsError> for Error {
+    fn from(err: crate::operation::disable_allowed_images_settings::DisableAllowedImagesSettingsError) -> Self {
+        match err {
+            crate::operation::disable_allowed_images_settings::DisableAllowedImagesSettingsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -11364,6 +11490,34 @@ impl From<crate::operation::enable_address_transfer::EnableAddressTransferError>
     }
 }
 impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::enable_allowed_images_settings::EnableAllowedImagesSettingsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::enable_allowed_images_settings::EnableAllowedImagesSettingsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::enable_allowed_images_settings::EnableAllowedImagesSettingsError> for Error {
+    fn from(err: crate::operation::enable_allowed_images_settings::EnableAllowedImagesSettingsError) -> Self {
+        match err {
+            crate::operation::enable_allowed_images_settings::EnableAllowedImagesSettingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::enable_aws_network_performance_metric_subscription::EnableAwsNetworkPerformanceMetricSubscriptionError,
@@ -11950,6 +12104,64 @@ impl From<crate::operation::export_transit_gateway_routes::ExportTransitGatewayR
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::export_verified_access_instance_client_configuration::ExportVerifiedAccessInstanceClientConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::export_verified_access_instance_client_configuration::ExportVerifiedAccessInstanceClientConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::export_verified_access_instance_client_configuration::ExportVerifiedAccessInstanceClientConfigurationError> for Error {
+    fn from(
+        err: crate::operation::export_verified_access_instance_client_configuration::ExportVerifiedAccessInstanceClientConfigurationError,
+    ) -> Self {
+        match err {
+            crate::operation::export_verified_access_instance_client_configuration::ExportVerifiedAccessInstanceClientConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_allowed_images_settings::GetAllowedImagesSettingsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_allowed_images_settings::GetAllowedImagesSettingsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_allowed_images_settings::GetAllowedImagesSettingsError> for Error {
+    fn from(err: crate::operation::get_allowed_images_settings::GetAllowedImagesSettingsError) -> Self {
+        match err {
+            crate::operation::get_allowed_images_settings::GetAllowedImagesSettingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::get_associated_enclave_certificate_iam_roles::GetAssociatedEnclaveCertificateIamRolesError,
             R,
         >,
@@ -12121,6 +12333,40 @@ impl From<crate::operation::get_console_screenshot::GetConsoleScreenshotError> f
     fn from(err: crate::operation::get_console_screenshot::GetConsoleScreenshotError) -> Self {
         match err {
             crate::operation::get_console_screenshot::GetConsoleScreenshotError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_declarative_policies_report_summary::GetDeclarativePoliciesReportSummaryError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_declarative_policies_report_summary::GetDeclarativePoliciesReportSummaryError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_declarative_policies_report_summary::GetDeclarativePoliciesReportSummaryError> for Error {
+    fn from(err: crate::operation::get_declarative_policies_report_summary::GetDeclarativePoliciesReportSummaryError) -> Self {
+        match err {
+            crate::operation::get_declarative_policies_report_summary::GetDeclarativePoliciesReportSummaryError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -13225,6 +13471,40 @@ impl From<crate::operation::get_verified_access_endpoint_policy::GetVerifiedAcce
     fn from(err: crate::operation::get_verified_access_endpoint_policy::GetVerifiedAccessEndpointPolicyError) -> Self {
         match err {
             crate::operation::get_verified_access_endpoint_policy::GetVerifiedAccessEndpointPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_verified_access_endpoint_targets::GetVerifiedAccessEndpointTargetsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_verified_access_endpoint_targets::GetVerifiedAccessEndpointTargetsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_verified_access_endpoint_targets::GetVerifiedAccessEndpointTargetsError> for Error {
+    fn from(err: crate::operation::get_verified_access_endpoint_targets::GetVerifiedAccessEndpointTargetsError) -> Self {
+        match err {
+            crate::operation::get_verified_access_endpoint_targets::GetVerifiedAccessEndpointTargetsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -16135,6 +16415,40 @@ impl From<crate::operation::replace_iam_instance_profile_association::ReplaceIam
     }
 }
 impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::replace_image_criteria_in_allowed_images_settings::ReplaceImageCriteriaInAllowedImagesSettingsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::replace_image_criteria_in_allowed_images_settings::ReplaceImageCriteriaInAllowedImagesSettingsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::replace_image_criteria_in_allowed_images_settings::ReplaceImageCriteriaInAllowedImagesSettingsError> for Error {
+    fn from(err: crate::operation::replace_image_criteria_in_allowed_images_settings::ReplaceImageCriteriaInAllowedImagesSettingsError) -> Self {
+        match err {
+            crate::operation::replace_image_criteria_in_allowed_images_settings::ReplaceImageCriteriaInAllowedImagesSettingsError::Unhandled(
+                inner,
+            ) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::replace_network_acl_association::ReplaceNetworkAclAssociationError, R>>
     for Error
 where
@@ -16865,6 +17179,38 @@ impl From<crate::operation::send_diagnostic_interrupt::SendDiagnosticInterruptEr
     fn from(err: crate::operation::send_diagnostic_interrupt::SendDiagnosticInterruptError) -> Self {
         match err {
             crate::operation::send_diagnostic_interrupt::SendDiagnosticInterruptError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_declarative_policies_report::StartDeclarativePoliciesReportError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_declarative_policies_report::StartDeclarativePoliciesReportError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_declarative_policies_report::StartDeclarativePoliciesReportError> for Error {
+    fn from(err: crate::operation::start_declarative_policies_report::StartDeclarativePoliciesReportError) -> Self {
+        match err {
+            crate::operation::start_declarative_policies_report::StartDeclarativePoliciesReportError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

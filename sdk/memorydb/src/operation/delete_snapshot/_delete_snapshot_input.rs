@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSnapshotInput {
-    /// <p>The name of the snapshot to delete</p>
+    /// <p>The name of the snapshot to delete.</p>
     pub snapshot_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSnapshotInput {
-    /// <p>The name of the snapshot to delete</p>
+    /// <p>The name of the snapshot to delete.</p>
     pub fn snapshot_name(&self) -> ::std::option::Option<&str> {
         self.snapshot_name.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct DeleteSnapshotInputBuilder {
     pub(crate) snapshot_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSnapshotInputBuilder {
-    /// <p>The name of the snapshot to delete</p>
+    /// <p>The name of the snapshot to delete.</p>
     /// This field is required.
     pub fn snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the snapshot to delete</p>
+    /// <p>The name of the snapshot to delete.</p>
     pub fn set_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_name = input;
         self
     }
-    /// <p>The name of the snapshot to delete</p>
+    /// <p>The name of the snapshot to delete.</p>
     pub fn get_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.snapshot_name
     }

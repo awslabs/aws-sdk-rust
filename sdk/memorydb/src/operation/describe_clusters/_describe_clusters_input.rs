@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeClustersInput {
-    /// <p>The name of the cluster</p>
+    /// <p>The name of the cluster.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -13,7 +13,7 @@ pub struct DescribeClustersInput {
     pub show_shard_details: ::std::option::Option<bool>,
 }
 impl DescribeClustersInput {
-    /// <p>The name of the cluster</p>
+    /// <p>The name of the cluster.</p>
     pub fn cluster_name(&self) -> ::std::option::Option<&str> {
         self.cluster_name.as_deref()
     }
@@ -47,17 +47,17 @@ pub struct DescribeClustersInputBuilder {
     pub(crate) show_shard_details: ::std::option::Option<bool>,
 }
 impl DescribeClustersInputBuilder {
-    /// <p>The name of the cluster</p>
+    /// <p>The name of the cluster.</p>
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the cluster</p>
+    /// <p>The name of the cluster.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_name = input;
         self
     }
-    /// <p>The name of the cluster</p>
+    /// <p>The name of the cluster.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_name
     }

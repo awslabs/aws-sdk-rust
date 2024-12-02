@@ -10,6 +10,8 @@ pub struct AnswerRecommendationAiAgentConfiguration {
     pub query_reformulation_ai_prompt_id: ::std::option::Option<::std::string::String>,
     /// <p>The AI Prompt identifier for the Answer Generation prompt used by the <code>ANSWER_RECOMMENDATION</code> AI Agent.</p>
     pub answer_generation_ai_prompt_id: ::std::option::Option<::std::string::String>,
+    /// <p>The AI Guardrail identifier for the Answer Generation Guardrail used by the <code>ANSWER_RECOMMENDATION</code> AI Agent.</p>
+    pub answer_generation_ai_guardrail_id: ::std::option::Option<::std::string::String>,
     /// <p>The association configurations for overriding behavior on this AI Agent.</p>
     pub association_configurations: ::std::option::Option<::std::vec::Vec<crate::types::AssociationConfiguration>>,
 }
@@ -25,6 +27,10 @@ impl AnswerRecommendationAiAgentConfiguration {
     /// <p>The AI Prompt identifier for the Answer Generation prompt used by the <code>ANSWER_RECOMMENDATION</code> AI Agent.</p>
     pub fn answer_generation_ai_prompt_id(&self) -> ::std::option::Option<&str> {
         self.answer_generation_ai_prompt_id.as_deref()
+    }
+    /// <p>The AI Guardrail identifier for the Answer Generation Guardrail used by the <code>ANSWER_RECOMMENDATION</code> AI Agent.</p>
+    pub fn answer_generation_ai_guardrail_id(&self) -> ::std::option::Option<&str> {
+        self.answer_generation_ai_guardrail_id.as_deref()
     }
     /// <p>The association configurations for overriding behavior on this AI Agent.</p>
     ///
@@ -47,6 +53,7 @@ pub struct AnswerRecommendationAiAgentConfigurationBuilder {
     pub(crate) intent_labeling_generation_ai_prompt_id: ::std::option::Option<::std::string::String>,
     pub(crate) query_reformulation_ai_prompt_id: ::std::option::Option<::std::string::String>,
     pub(crate) answer_generation_ai_prompt_id: ::std::option::Option<::std::string::String>,
+    pub(crate) answer_generation_ai_guardrail_id: ::std::option::Option<::std::string::String>,
     pub(crate) association_configurations: ::std::option::Option<::std::vec::Vec<crate::types::AssociationConfiguration>>,
 }
 impl AnswerRecommendationAiAgentConfigurationBuilder {
@@ -92,6 +99,20 @@ impl AnswerRecommendationAiAgentConfigurationBuilder {
     pub fn get_answer_generation_ai_prompt_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.answer_generation_ai_prompt_id
     }
+    /// <p>The AI Guardrail identifier for the Answer Generation Guardrail used by the <code>ANSWER_RECOMMENDATION</code> AI Agent.</p>
+    pub fn answer_generation_ai_guardrail_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.answer_generation_ai_guardrail_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The AI Guardrail identifier for the Answer Generation Guardrail used by the <code>ANSWER_RECOMMENDATION</code> AI Agent.</p>
+    pub fn set_answer_generation_ai_guardrail_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.answer_generation_ai_guardrail_id = input;
+        self
+    }
+    /// <p>The AI Guardrail identifier for the Answer Generation Guardrail used by the <code>ANSWER_RECOMMENDATION</code> AI Agent.</p>
+    pub fn get_answer_generation_ai_guardrail_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.answer_generation_ai_guardrail_id
+    }
     /// Appends an item to `association_configurations`.
     ///
     /// To override the contents of this collection use [`set_association_configurations`](Self::set_association_configurations).
@@ -118,6 +139,7 @@ impl AnswerRecommendationAiAgentConfigurationBuilder {
             intent_labeling_generation_ai_prompt_id: self.intent_labeling_generation_ai_prompt_id,
             query_reformulation_ai_prompt_id: self.query_reformulation_ai_prompt_id,
             answer_generation_ai_prompt_id: self.answer_generation_ai_prompt_id,
+            answer_generation_ai_guardrail_id: self.answer_generation_ai_guardrail_id,
             association_configurations: self.association_configurations,
         }
     }

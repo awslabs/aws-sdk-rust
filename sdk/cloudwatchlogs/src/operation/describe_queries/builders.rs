@@ -164,4 +164,18 @@ impl DescribeQueriesFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
+    /// <p>Limits the returned queries to only the queries that use the specified query language.</p>
+    pub fn query_language(mut self, input: crate::types::QueryLanguage) -> Self {
+        self.inner = self.inner.query_language(input);
+        self
+    }
+    /// <p>Limits the returned queries to only the queries that use the specified query language.</p>
+    pub fn set_query_language(mut self, input: ::std::option::Option<crate::types::QueryLanguage>) -> Self {
+        self.inner = self.inner.set_query_language(input);
+        self
+    }
+    /// <p>Limits the returned queries to only the queries that use the specified query language.</p>
+    pub fn get_query_language(&self) -> &::std::option::Option<crate::types::QueryLanguage> {
+        self.inner.get_query_language()
+    }
 }

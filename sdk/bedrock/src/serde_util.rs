@@ -549,9 +549,6 @@ pub(crate) fn evaluation_summary_correct_errors(
     if builder.evaluation_task_types.is_none() {
         builder.evaluation_task_types = Some(Default::default())
     }
-    if builder.model_identifiers.is_none() {
-        builder.model_identifiers = Some(Default::default())
-    }
     builder
 }
 
@@ -925,9 +922,6 @@ pub(crate) fn evaluation_bedrock_model_correct_errors(
     if builder.model_identifier.is_none() {
         builder.model_identifier = Some(Default::default())
     }
-    if builder.inference_params.is_none() {
-        builder.inference_params = Some(Default::default())
-    }
     builder
 }
 
@@ -961,11 +955,156 @@ pub(crate) fn human_evaluation_custom_metric_correct_errors(
     builder
 }
 
+pub(crate) fn bedrock_evaluator_model_correct_errors(
+    mut builder: crate::types::builders::BedrockEvaluatorModelBuilder,
+) -> crate::types::builders::BedrockEvaluatorModelBuilder {
+    if builder.model_identifier.is_none() {
+        builder.model_identifier = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn evaluation_dataset_correct_errors(
     mut builder: crate::types::builders::EvaluationDatasetBuilder,
 ) -> crate::types::builders::EvaluationDatasetBuilder {
     if builder.name.is_none() {
         builder.name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn retrieve_and_generate_configuration_correct_errors(
+    mut builder: crate::types::builders::RetrieveAndGenerateConfigurationBuilder,
+) -> crate::types::builders::RetrieveAndGenerateConfigurationBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::RetrieveAndGenerateType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn retrieve_config_correct_errors(
+    mut builder: crate::types::builders::RetrieveConfigBuilder,
+) -> crate::types::builders::RetrieveConfigBuilder {
+    if builder.knowledge_base_id.is_none() {
+        builder.knowledge_base_id = Some(Default::default())
+    }
+    if builder.knowledge_base_retrieval_configuration.is_none() {
+        builder.knowledge_base_retrieval_configuration = {
+            let builder = crate::types::builders::KnowledgeBaseRetrievalConfigurationBuilder::default();
+            Some(crate::serde_util::knowledge_base_retrieval_configuration_correct_errors(builder).build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn external_sources_retrieve_and_generate_configuration_correct_errors(
+    mut builder: crate::types::builders::ExternalSourcesRetrieveAndGenerateConfigurationBuilder,
+) -> crate::types::builders::ExternalSourcesRetrieveAndGenerateConfigurationBuilder {
+    if builder.model_arn.is_none() {
+        builder.model_arn = Some(Default::default())
+    }
+    if builder.sources.is_none() {
+        builder.sources = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn knowledge_base_retrieval_configuration_correct_errors(
+    mut builder: crate::types::builders::KnowledgeBaseRetrievalConfigurationBuilder,
+) -> crate::types::builders::KnowledgeBaseRetrievalConfigurationBuilder {
+    if builder.vector_search_configuration.is_none() {
+        builder.vector_search_configuration = {
+            let builder = crate::types::builders::KnowledgeBaseVectorSearchConfigurationBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn knowledge_base_retrieve_and_generate_configuration_correct_errors(
+    mut builder: crate::types::builders::KnowledgeBaseRetrieveAndGenerateConfigurationBuilder,
+) -> crate::types::builders::KnowledgeBaseRetrieveAndGenerateConfigurationBuilder {
+    if builder.knowledge_base_id.is_none() {
+        builder.knowledge_base_id = Some(Default::default())
+    }
+    if builder.model_arn.is_none() {
+        builder.model_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn orchestration_configuration_correct_errors(
+    mut builder: crate::types::builders::OrchestrationConfigurationBuilder,
+) -> crate::types::builders::OrchestrationConfigurationBuilder {
+    if builder.query_transformation_configuration.is_none() {
+        builder.query_transformation_configuration = {
+            let builder = crate::types::builders::QueryTransformationConfigurationBuilder::default();
+            crate::serde_util::query_transformation_configuration_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn external_source_correct_errors(
+    mut builder: crate::types::builders::ExternalSourceBuilder,
+) -> crate::types::builders::ExternalSourceBuilder {
+    if builder.source_type.is_none() {
+        builder.source_type = "no value was set".parse::<crate::types::ExternalSourceType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn guardrail_configuration_correct_errors(
+    mut builder: crate::types::builders::GuardrailConfigurationBuilder,
+) -> crate::types::builders::GuardrailConfigurationBuilder {
+    if builder.guardrail_id.is_none() {
+        builder.guardrail_id = Some(Default::default())
+    }
+    if builder.guardrail_version.is_none() {
+        builder.guardrail_version = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn query_transformation_configuration_correct_errors(
+    mut builder: crate::types::builders::QueryTransformationConfigurationBuilder,
+) -> crate::types::builders::QueryTransformationConfigurationBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::QueryTransformationType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn byte_content_doc_correct_errors(
+    mut builder: crate::types::builders::ByteContentDocBuilder,
+) -> crate::types::builders::ByteContentDocBuilder {
+    if builder.identifier.is_none() {
+        builder.identifier = Some(Default::default())
+    }
+    if builder.content_type.is_none() {
+        builder.content_type = Some(Default::default())
+    }
+    if builder.data.is_none() {
+        builder.data = Some(::aws_smithy_types::Blob::new(""))
+    }
+    builder
+}
+
+pub(crate) fn filter_attribute_correct_errors(
+    mut builder: crate::types::builders::FilterAttributeBuilder,
+) -> crate::types::builders::FilterAttributeBuilder {
+    if builder.key.is_none() {
+        builder.key = Some(Default::default())
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn s3_object_doc_correct_errors(mut builder: crate::types::builders::S3ObjectDocBuilder) -> crate::types::builders::S3ObjectDocBuilder {
+    if builder.uri.is_none() {
+        builder.uri = Some(Default::default())
     }
     builder
 }

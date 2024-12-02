@@ -33,6 +33,10 @@ pub struct CreateVerifiedAccessEndpointInput {
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The options for server side encryption.</p>
     pub sse_specification: ::std::option::Option<crate::types::VerifiedAccessSseSpecificationRequest>,
+    /// <p>The RDS details. This parameter is required if the endpoint type is <code>rds</code>.</p>
+    pub rds_options: ::std::option::Option<crate::types::CreateVerifiedAccessEndpointRdsOptions>,
+    /// <p>The CIDR options. This parameter is required if the endpoint type is <code>cidr</code>.</p>
+    pub cidr_options: ::std::option::Option<crate::types::CreateVerifiedAccessEndpointCidrOptions>,
 }
 impl CreateVerifiedAccessEndpointInput {
     /// <p>The ID of the Verified Access group to associate the endpoint with.</p>
@@ -99,6 +103,14 @@ impl CreateVerifiedAccessEndpointInput {
     pub fn sse_specification(&self) -> ::std::option::Option<&crate::types::VerifiedAccessSseSpecificationRequest> {
         self.sse_specification.as_ref()
     }
+    /// <p>The RDS details. This parameter is required if the endpoint type is <code>rds</code>.</p>
+    pub fn rds_options(&self) -> ::std::option::Option<&crate::types::CreateVerifiedAccessEndpointRdsOptions> {
+        self.rds_options.as_ref()
+    }
+    /// <p>The CIDR options. This parameter is required if the endpoint type is <code>cidr</code>.</p>
+    pub fn cidr_options(&self) -> ::std::option::Option<&crate::types::CreateVerifiedAccessEndpointCidrOptions> {
+        self.cidr_options.as_ref()
+    }
 }
 impl CreateVerifiedAccessEndpointInput {
     /// Creates a new builder-style object to manufacture [`CreateVerifiedAccessEndpointInput`](crate::operation::create_verified_access_endpoint::CreateVerifiedAccessEndpointInput).
@@ -126,6 +138,8 @@ pub struct CreateVerifiedAccessEndpointInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) sse_specification: ::std::option::Option<crate::types::VerifiedAccessSseSpecificationRequest>,
+    pub(crate) rds_options: ::std::option::Option<crate::types::CreateVerifiedAccessEndpointRdsOptions>,
+    pub(crate) cidr_options: ::std::option::Option<crate::types::CreateVerifiedAccessEndpointCidrOptions>,
 }
 impl CreateVerifiedAccessEndpointInputBuilder {
     /// <p>The ID of the Verified Access group to associate the endpoint with.</p>
@@ -174,7 +188,6 @@ impl CreateVerifiedAccessEndpointInputBuilder {
         &self.attachment_type
     }
     /// <p>The ARN of the public TLS/SSL certificate in Amazon Web Services Certificate Manager to associate with the endpoint. The CN in the certificate must match the DNS name your end users will use to reach your application.</p>
-    /// This field is required.
     pub fn domain_certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_certificate_arn = ::std::option::Option::Some(input.into());
         self
@@ -189,7 +202,6 @@ impl CreateVerifiedAccessEndpointInputBuilder {
         &self.domain_certificate_arn
     }
     /// <p>The DNS name for users to reach your application.</p>
-    /// This field is required.
     pub fn application_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_domain = ::std::option::Option::Some(input.into());
         self
@@ -204,7 +216,6 @@ impl CreateVerifiedAccessEndpointInputBuilder {
         &self.application_domain
     }
     /// <p>A custom identifier that is prepended to the DNS name that is generated for the endpoint.</p>
-    /// This field is required.
     pub fn endpoint_domain_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_domain_prefix = ::std::option::Option::Some(input.into());
         self
@@ -356,6 +367,34 @@ impl CreateVerifiedAccessEndpointInputBuilder {
     pub fn get_sse_specification(&self) -> &::std::option::Option<crate::types::VerifiedAccessSseSpecificationRequest> {
         &self.sse_specification
     }
+    /// <p>The RDS details. This parameter is required if the endpoint type is <code>rds</code>.</p>
+    pub fn rds_options(mut self, input: crate::types::CreateVerifiedAccessEndpointRdsOptions) -> Self {
+        self.rds_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The RDS details. This parameter is required if the endpoint type is <code>rds</code>.</p>
+    pub fn set_rds_options(mut self, input: ::std::option::Option<crate::types::CreateVerifiedAccessEndpointRdsOptions>) -> Self {
+        self.rds_options = input;
+        self
+    }
+    /// <p>The RDS details. This parameter is required if the endpoint type is <code>rds</code>.</p>
+    pub fn get_rds_options(&self) -> &::std::option::Option<crate::types::CreateVerifiedAccessEndpointRdsOptions> {
+        &self.rds_options
+    }
+    /// <p>The CIDR options. This parameter is required if the endpoint type is <code>cidr</code>.</p>
+    pub fn cidr_options(mut self, input: crate::types::CreateVerifiedAccessEndpointCidrOptions) -> Self {
+        self.cidr_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The CIDR options. This parameter is required if the endpoint type is <code>cidr</code>.</p>
+    pub fn set_cidr_options(mut self, input: ::std::option::Option<crate::types::CreateVerifiedAccessEndpointCidrOptions>) -> Self {
+        self.cidr_options = input;
+        self
+    }
+    /// <p>The CIDR options. This parameter is required if the endpoint type is <code>cidr</code>.</p>
+    pub fn get_cidr_options(&self) -> &::std::option::Option<crate::types::CreateVerifiedAccessEndpointCidrOptions> {
+        &self.cidr_options
+    }
     /// Consumes the builder and constructs a [`CreateVerifiedAccessEndpointInput`](crate::operation::create_verified_access_endpoint::CreateVerifiedAccessEndpointInput).
     pub fn build(
         self,
@@ -379,6 +418,8 @@ impl CreateVerifiedAccessEndpointInputBuilder {
             client_token: self.client_token,
             dry_run: self.dry_run,
             sse_specification: self.sse_specification,
+            rds_options: self.rds_options,
+            cidr_options: self.cidr_options,
         })
     }
 }

@@ -142,11 +142,17 @@ mod create_access_log_subscription;
 
 mod create_listener;
 
+mod create_resource_configuration;
+
+mod create_resource_gateway;
+
 mod create_rule;
 
 mod create_service;
 
 mod create_service_network;
+
+mod create_service_network_resource_association;
 
 mod create_service_network_service_association;
 
@@ -187,6 +193,12 @@ mod delete_auth_policy;
 
 mod delete_listener;
 
+mod delete_resource_configuration;
+
+mod delete_resource_endpoint_association;
+
+mod delete_resource_gateway;
+
 mod delete_resource_policy;
 
 mod delete_rule;
@@ -194,6 +206,8 @@ mod delete_rule;
 mod delete_service;
 
 mod delete_service_network;
+
+mod delete_service_network_resource_association;
 
 mod delete_service_network_service_association;
 
@@ -209,6 +223,10 @@ mod get_auth_policy;
 
 mod get_listener;
 
+mod get_resource_configuration;
+
+mod get_resource_gateway;
+
 mod get_resource_policy;
 
 mod get_rule;
@@ -216,6 +234,8 @@ mod get_rule;
 mod get_service;
 
 mod get_service_network;
+
+mod get_service_network_resource_association;
 
 mod get_service_network_service_association;
 
@@ -227,11 +247,21 @@ mod list_access_log_subscriptions;
 
 mod list_listeners;
 
+mod list_resource_configurations;
+
+mod list_resource_endpoint_associations;
+
+mod list_resource_gateways;
+
 mod list_rules;
+
+mod list_service_network_resource_associations;
 
 mod list_service_network_service_associations;
 
 mod list_service_network_vpc_associations;
+
+mod list_service_network_vpc_endpoint_associations;
 
 mod list_service_networks;
 
@@ -256,6 +286,10 @@ mod untag_resource;
 mod update_access_log_subscription;
 
 mod update_listener;
+
+mod update_resource_configuration;
+
+mod update_resource_gateway;
 
 mod update_rule;
 

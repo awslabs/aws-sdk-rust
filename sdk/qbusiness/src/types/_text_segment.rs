@@ -10,6 +10,10 @@ pub struct TextSegment {
     pub end_offset: ::std::option::Option<i32>,
     /// <p>The relevant text excerpt from a source that was used to generate a citation text segment in an Amazon Q Business chat response.</p>
     pub snippet_excerpt: ::std::option::Option<crate::types::SnippetExcerpt>,
+    /// <p>The identifier of the media object associated with the text segment in the source attribution.</p>
+    pub media_id: ::std::option::Option<::std::string::String>,
+    /// <p>The MIME type (image/png) of the media object associated with the text segment in the source attribution.</p>
+    pub media_mime_type: ::std::option::Option<::std::string::String>,
 }
 impl TextSegment {
     /// <p>The zero-based location in the response string where the source attribution starts.</p>
@@ -23,6 +27,14 @@ impl TextSegment {
     /// <p>The relevant text excerpt from a source that was used to generate a citation text segment in an Amazon Q Business chat response.</p>
     pub fn snippet_excerpt(&self) -> ::std::option::Option<&crate::types::SnippetExcerpt> {
         self.snippet_excerpt.as_ref()
+    }
+    /// <p>The identifier of the media object associated with the text segment in the source attribution.</p>
+    pub fn media_id(&self) -> ::std::option::Option<&str> {
+        self.media_id.as_deref()
+    }
+    /// <p>The MIME type (image/png) of the media object associated with the text segment in the source attribution.</p>
+    pub fn media_mime_type(&self) -> ::std::option::Option<&str> {
+        self.media_mime_type.as_deref()
     }
 }
 impl TextSegment {
@@ -39,6 +51,8 @@ pub struct TextSegmentBuilder {
     pub(crate) begin_offset: ::std::option::Option<i32>,
     pub(crate) end_offset: ::std::option::Option<i32>,
     pub(crate) snippet_excerpt: ::std::option::Option<crate::types::SnippetExcerpt>,
+    pub(crate) media_id: ::std::option::Option<::std::string::String>,
+    pub(crate) media_mime_type: ::std::option::Option<::std::string::String>,
 }
 impl TextSegmentBuilder {
     /// <p>The zero-based location in the response string where the source attribution starts.</p>
@@ -83,12 +97,42 @@ impl TextSegmentBuilder {
     pub fn get_snippet_excerpt(&self) -> &::std::option::Option<crate::types::SnippetExcerpt> {
         &self.snippet_excerpt
     }
+    /// <p>The identifier of the media object associated with the text segment in the source attribution.</p>
+    pub fn media_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.media_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the media object associated with the text segment in the source attribution.</p>
+    pub fn set_media_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.media_id = input;
+        self
+    }
+    /// <p>The identifier of the media object associated with the text segment in the source attribution.</p>
+    pub fn get_media_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.media_id
+    }
+    /// <p>The MIME type (image/png) of the media object associated with the text segment in the source attribution.</p>
+    pub fn media_mime_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.media_mime_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The MIME type (image/png) of the media object associated with the text segment in the source attribution.</p>
+    pub fn set_media_mime_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.media_mime_type = input;
+        self
+    }
+    /// <p>The MIME type (image/png) of the media object associated with the text segment in the source attribution.</p>
+    pub fn get_media_mime_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.media_mime_type
+    }
     /// Consumes the builder and constructs a [`TextSegment`](crate::types::TextSegment).
     pub fn build(self) -> crate::types::TextSegment {
         crate::types::TextSegment {
             begin_offset: self.begin_offset,
             end_offset: self.end_offset,
             snippet_excerpt: self.snippet_excerpt,
+            media_id: self.media_id,
+            media_mime_type: self.media_mime_type,
         }
     }
 }

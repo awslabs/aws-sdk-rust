@@ -9,6 +9,9 @@ pub struct DescribeConnectionOutput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description for the connection retrieved.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>For connections to private resource endpoints. The parameters EventBridge uses to invoke the resource endpoint.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-target-connection-private.html">Connecting to private resources</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
+    pub invocation_connectivity_parameters: ::std::option::Option<crate::types::DescribeConnectionConnectivityParameters>,
     /// <p>The state of the connection retrieved.</p>
     pub connection_state: ::std::option::Option<crate::types::ConnectionState>,
     /// <p>The reason that the connection is in the current connection state.</p>
@@ -39,6 +42,11 @@ impl DescribeConnectionOutput {
     /// <p>The description for the connection retrieved.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
+    }
+    /// <p>For connections to private resource endpoints. The parameters EventBridge uses to invoke the resource endpoint.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-target-connection-private.html">Connecting to private resources</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
+    pub fn invocation_connectivity_parameters(&self) -> ::std::option::Option<&crate::types::DescribeConnectionConnectivityParameters> {
+        self.invocation_connectivity_parameters.as_ref()
     }
     /// <p>The state of the connection retrieved.</p>
     pub fn connection_state(&self) -> ::std::option::Option<&crate::types::ConnectionState> {
@@ -92,6 +100,7 @@ pub struct DescribeConnectionOutputBuilder {
     pub(crate) connection_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) invocation_connectivity_parameters: ::std::option::Option<crate::types::DescribeConnectionConnectivityParameters>,
     pub(crate) connection_state: ::std::option::Option<crate::types::ConnectionState>,
     pub(crate) state_reason: ::std::option::Option<::std::string::String>,
     pub(crate) authorization_type: ::std::option::Option<crate::types::ConnectionAuthorizationType>,
@@ -144,6 +153,26 @@ impl DescribeConnectionOutputBuilder {
     /// <p>The description for the connection retrieved.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
+    }
+    /// <p>For connections to private resource endpoints. The parameters EventBridge uses to invoke the resource endpoint.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-target-connection-private.html">Connecting to private resources</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
+    pub fn invocation_connectivity_parameters(mut self, input: crate::types::DescribeConnectionConnectivityParameters) -> Self {
+        self.invocation_connectivity_parameters = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>For connections to private resource endpoints. The parameters EventBridge uses to invoke the resource endpoint.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-target-connection-private.html">Connecting to private resources</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
+    pub fn set_invocation_connectivity_parameters(
+        mut self,
+        input: ::std::option::Option<crate::types::DescribeConnectionConnectivityParameters>,
+    ) -> Self {
+        self.invocation_connectivity_parameters = input;
+        self
+    }
+    /// <p>For connections to private resource endpoints. The parameters EventBridge uses to invoke the resource endpoint.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-target-connection-private.html">Connecting to private resources</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
+    pub fn get_invocation_connectivity_parameters(&self) -> &::std::option::Option<crate::types::DescribeConnectionConnectivityParameters> {
+        &self.invocation_connectivity_parameters
     }
     /// <p>The state of the connection retrieved.</p>
     pub fn connection_state(mut self, input: crate::types::ConnectionState) -> Self {
@@ -272,6 +301,7 @@ impl DescribeConnectionOutputBuilder {
             connection_arn: self.connection_arn,
             name: self.name,
             description: self.description,
+            invocation_connectivity_parameters: self.invocation_connectivity_parameters,
             connection_state: self.connection_state,
             state_reason: self.state_reason,
             authorization_type: self.authorization_type,

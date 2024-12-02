@@ -14,6 +14,13 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "queryLanguage" => {
+                            builder = builder.set_query_language(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::QueryLanguage::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "queryDefinitionId" => {
                             builder = builder.set_query_definition_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -12,6 +12,8 @@ pub struct VerifiedAccessEndpointLoadBalancerOptions {
     pub load_balancer_arn: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the subnets.</p>
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The port ranges.</p>
+    pub port_ranges: ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessEndpointPortRange>>,
 }
 impl VerifiedAccessEndpointLoadBalancerOptions {
     /// <p>The IP protocol.</p>
@@ -32,6 +34,12 @@ impl VerifiedAccessEndpointLoadBalancerOptions {
     pub fn subnet_ids(&self) -> &[::std::string::String] {
         self.subnet_ids.as_deref().unwrap_or_default()
     }
+    /// <p>The port ranges.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.port_ranges.is_none()`.
+    pub fn port_ranges(&self) -> &[crate::types::VerifiedAccessEndpointPortRange] {
+        self.port_ranges.as_deref().unwrap_or_default()
+    }
 }
 impl VerifiedAccessEndpointLoadBalancerOptions {
     /// Creates a new builder-style object to manufacture [`VerifiedAccessEndpointLoadBalancerOptions`](crate::types::VerifiedAccessEndpointLoadBalancerOptions).
@@ -48,6 +56,7 @@ pub struct VerifiedAccessEndpointLoadBalancerOptionsBuilder {
     pub(crate) port: ::std::option::Option<i32>,
     pub(crate) load_balancer_arn: ::std::option::Option<::std::string::String>,
     pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) port_ranges: ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessEndpointPortRange>>,
 }
 impl VerifiedAccessEndpointLoadBalancerOptionsBuilder {
     /// <p>The IP protocol.</p>
@@ -112,6 +121,26 @@ impl VerifiedAccessEndpointLoadBalancerOptionsBuilder {
     pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.subnet_ids
     }
+    /// Appends an item to `port_ranges`.
+    ///
+    /// To override the contents of this collection use [`set_port_ranges`](Self::set_port_ranges).
+    ///
+    /// <p>The port ranges.</p>
+    pub fn port_ranges(mut self, input: crate::types::VerifiedAccessEndpointPortRange) -> Self {
+        let mut v = self.port_ranges.unwrap_or_default();
+        v.push(input);
+        self.port_ranges = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The port ranges.</p>
+    pub fn set_port_ranges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessEndpointPortRange>>) -> Self {
+        self.port_ranges = input;
+        self
+    }
+    /// <p>The port ranges.</p>
+    pub fn get_port_ranges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessEndpointPortRange>> {
+        &self.port_ranges
+    }
     /// Consumes the builder and constructs a [`VerifiedAccessEndpointLoadBalancerOptions`](crate::types::VerifiedAccessEndpointLoadBalancerOptions).
     pub fn build(self) -> crate::types::VerifiedAccessEndpointLoadBalancerOptions {
         crate::types::VerifiedAccessEndpointLoadBalancerOptions {
@@ -119,6 +148,7 @@ impl VerifiedAccessEndpointLoadBalancerOptionsBuilder {
             port: self.port,
             load_balancer_arn: self.load_balancer_arn,
             subnet_ids: self.subnet_ids,
+            port_ranges: self.port_ranges,
         }
     }
 }

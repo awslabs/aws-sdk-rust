@@ -195,6 +195,14 @@ pub use crate::types::_analysis_method::AnalysisMethod;
 
 pub use crate::types::_table_reference::TableReference;
 
+pub use crate::types::_athena_table_reference::AthenaTableReference;
+
+pub use crate::types::_snowflake_table_reference::SnowflakeTableReference;
+
+pub use crate::types::_snowflake_table_schema::SnowflakeTableSchema;
+
+pub use crate::types::_snowflake_table_schema_v1::SnowflakeTableSchemaV1;
+
 pub use crate::types::_glue_table_reference::GlueTableReference;
 
 pub use crate::types::_configured_table_summary::ConfiguredTableSummary;
@@ -386,6 +394,8 @@ mod _analysis_template_validation_type;
 mod _analysis_type;
 
 mod _analytics_engine;
+
+mod _athena_table_reference;
 
 mod _batch_get_collaboration_analysis_template_error;
 
@@ -654,6 +664,12 @@ mod _schema_summary;
 mod _schema_type;
 
 mod _schema_type_properties;
+
+mod _snowflake_table_reference;
+
+mod _snowflake_table_schema;
+
+mod _snowflake_table_schema_v1;
 
 mod _table_reference;
 

@@ -12,7 +12,9 @@
 /// ```text
 /// # let integrationtype = unimplemented!();
 /// match integrationtype {
+///     IntegrationType::AnalyticsConnector => { /* ... */ },
 ///     IntegrationType::Application => { /* ... */ },
+///     IntegrationType::CallTransferConnector => { /* ... */ },
 ///     IntegrationType::CasesDomain => { /* ... */ },
 ///     IntegrationType::Event => { /* ... */ },
 ///     IntegrationType::FileScanner => { /* ... */ },
@@ -51,7 +53,11 @@
 )]
 pub enum IntegrationType {
     #[allow(missing_docs)] // documentation missing in model
+    AnalyticsConnector,
+    #[allow(missing_docs)] // documentation missing in model
     Application,
+    #[allow(missing_docs)] // documentation missing in model
+    CallTransferConnector,
     #[allow(missing_docs)] // documentation missing in model
     CasesDomain,
     #[allow(missing_docs)] // documentation missing in model
@@ -79,7 +85,9 @@ pub enum IntegrationType {
 impl ::std::convert::From<&str> for IntegrationType {
     fn from(s: &str) -> Self {
         match s {
+            "ANALYTICS_CONNECTOR" => IntegrationType::AnalyticsConnector,
             "APPLICATION" => IntegrationType::Application,
+            "CALL_TRANSFER_CONNECTOR" => IntegrationType::CallTransferConnector,
             "CASES_DOMAIN" => IntegrationType::CasesDomain,
             "EVENT" => IntegrationType::Event,
             "FILE_SCANNER" => IntegrationType::FileScanner,
@@ -105,7 +113,9 @@ impl IntegrationType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            IntegrationType::AnalyticsConnector => "ANALYTICS_CONNECTOR",
             IntegrationType::Application => "APPLICATION",
+            IntegrationType::CallTransferConnector => "CALL_TRANSFER_CONNECTOR",
             IntegrationType::CasesDomain => "CASES_DOMAIN",
             IntegrationType::Event => "EVENT",
             IntegrationType::FileScanner => "FILE_SCANNER",
@@ -122,7 +132,9 @@ impl IntegrationType {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "ANALYTICS_CONNECTOR",
             "APPLICATION",
+            "CALL_TRANSFER_CONNECTOR",
             "CASES_DOMAIN",
             "EVENT",
             "FILE_SCANNER",
@@ -156,7 +168,9 @@ impl IntegrationType {
 impl ::std::fmt::Display for IntegrationType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            IntegrationType::AnalyticsConnector => write!(f, "ANALYTICS_CONNECTOR"),
             IntegrationType::Application => write!(f, "APPLICATION"),
+            IntegrationType::CallTransferConnector => write!(f, "CALL_TRANSFER_CONNECTOR"),
             IntegrationType::CasesDomain => write!(f, "CASES_DOMAIN"),
             IntegrationType::Event => write!(f, "EVENT"),
             IntegrationType::FileScanner => write!(f, "FILE_SCANNER"),

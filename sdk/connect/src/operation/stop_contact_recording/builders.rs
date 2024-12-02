@@ -151,4 +151,18 @@ impl StopContactRecordingFluentBuilder {
     pub fn get_initial_contact_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_initial_contact_id()
     }
+    /// <p>The type of recording being operated on.</p>
+    pub fn contact_recording_type(mut self, input: crate::types::ContactRecordingType) -> Self {
+        self.inner = self.inner.contact_recording_type(input);
+        self
+    }
+    /// <p>The type of recording being operated on.</p>
+    pub fn set_contact_recording_type(mut self, input: ::std::option::Option<crate::types::ContactRecordingType>) -> Self {
+        self.inner = self.inner.set_contact_recording_type(input);
+        self
+    }
+    /// <p>The type of recording being operated on.</p>
+    pub fn get_contact_recording_type(&self) -> &::std::option::Option<crate::types::ContactRecordingType> {
+        self.inner.get_contact_recording_type()
+    }
 }

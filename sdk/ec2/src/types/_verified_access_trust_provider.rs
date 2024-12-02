@@ -28,6 +28,8 @@ pub struct VerifiedAccessTrustProvider {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The options in use for server side encryption.</p>
     pub sse_specification: ::std::option::Option<crate::types::VerifiedAccessSseSpecificationResponse>,
+    /// <p>The OpenID Connect (OIDC) options.</p>
+    pub native_application_oidc_options: ::std::option::Option<crate::types::NativeApplicationOidcOptions>,
 }
 impl VerifiedAccessTrustProvider {
     /// <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
@@ -80,6 +82,10 @@ impl VerifiedAccessTrustProvider {
     pub fn sse_specification(&self) -> ::std::option::Option<&crate::types::VerifiedAccessSseSpecificationResponse> {
         self.sse_specification.as_ref()
     }
+    /// <p>The OpenID Connect (OIDC) options.</p>
+    pub fn native_application_oidc_options(&self) -> ::std::option::Option<&crate::types::NativeApplicationOidcOptions> {
+        self.native_application_oidc_options.as_ref()
+    }
 }
 impl VerifiedAccessTrustProvider {
     /// Creates a new builder-style object to manufacture [`VerifiedAccessTrustProvider`](crate::types::VerifiedAccessTrustProvider).
@@ -104,6 +110,7 @@ pub struct VerifiedAccessTrustProviderBuilder {
     pub(crate) last_updated_time: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) sse_specification: ::std::option::Option<crate::types::VerifiedAccessSseSpecificationResponse>,
+    pub(crate) native_application_oidc_options: ::std::option::Option<crate::types::NativeApplicationOidcOptions>,
 }
 impl VerifiedAccessTrustProviderBuilder {
     /// <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
@@ -280,6 +287,20 @@ impl VerifiedAccessTrustProviderBuilder {
     pub fn get_sse_specification(&self) -> &::std::option::Option<crate::types::VerifiedAccessSseSpecificationResponse> {
         &self.sse_specification
     }
+    /// <p>The OpenID Connect (OIDC) options.</p>
+    pub fn native_application_oidc_options(mut self, input: crate::types::NativeApplicationOidcOptions) -> Self {
+        self.native_application_oidc_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The OpenID Connect (OIDC) options.</p>
+    pub fn set_native_application_oidc_options(mut self, input: ::std::option::Option<crate::types::NativeApplicationOidcOptions>) -> Self {
+        self.native_application_oidc_options = input;
+        self
+    }
+    /// <p>The OpenID Connect (OIDC) options.</p>
+    pub fn get_native_application_oidc_options(&self) -> &::std::option::Option<crate::types::NativeApplicationOidcOptions> {
+        &self.native_application_oidc_options
+    }
     /// Consumes the builder and constructs a [`VerifiedAccessTrustProvider`](crate::types::VerifiedAccessTrustProvider).
     pub fn build(self) -> crate::types::VerifiedAccessTrustProvider {
         crate::types::VerifiedAccessTrustProvider {
@@ -295,6 +316,7 @@ impl VerifiedAccessTrustProviderBuilder {
             last_updated_time: self.last_updated_time,
             tags: self.tags,
             sse_specification: self.sse_specification,
+            native_application_oidc_options: self.native_application_oidc_options,
         }
     }
 }

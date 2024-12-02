@@ -18,6 +18,8 @@ pub struct VerifiedAccessInstance {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Indicates whether support for Federal Information Processing Standards (FIPS) is enabled on the instance.</p>
     pub fips_enabled: ::std::option::Option<bool>,
+    /// <p>The custom subdomain.</p>
+    pub cidr_endpoints_custom_sub_domain: ::std::option::Option<crate::types::VerifiedAccessInstanceCustomSubDomain>,
 }
 impl VerifiedAccessInstance {
     /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
@@ -52,6 +54,10 @@ impl VerifiedAccessInstance {
     pub fn fips_enabled(&self) -> ::std::option::Option<bool> {
         self.fips_enabled
     }
+    /// <p>The custom subdomain.</p>
+    pub fn cidr_endpoints_custom_sub_domain(&self) -> ::std::option::Option<&crate::types::VerifiedAccessInstanceCustomSubDomain> {
+        self.cidr_endpoints_custom_sub_domain.as_ref()
+    }
 }
 impl VerifiedAccessInstance {
     /// Creates a new builder-style object to manufacture [`VerifiedAccessInstance`](crate::types::VerifiedAccessInstance).
@@ -71,6 +77,7 @@ pub struct VerifiedAccessInstanceBuilder {
     pub(crate) last_updated_time: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) fips_enabled: ::std::option::Option<bool>,
+    pub(crate) cidr_endpoints_custom_sub_domain: ::std::option::Option<crate::types::VerifiedAccessInstanceCustomSubDomain>,
 }
 impl VerifiedAccessInstanceBuilder {
     /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
@@ -186,6 +193,20 @@ impl VerifiedAccessInstanceBuilder {
     pub fn get_fips_enabled(&self) -> &::std::option::Option<bool> {
         &self.fips_enabled
     }
+    /// <p>The custom subdomain.</p>
+    pub fn cidr_endpoints_custom_sub_domain(mut self, input: crate::types::VerifiedAccessInstanceCustomSubDomain) -> Self {
+        self.cidr_endpoints_custom_sub_domain = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The custom subdomain.</p>
+    pub fn set_cidr_endpoints_custom_sub_domain(mut self, input: ::std::option::Option<crate::types::VerifiedAccessInstanceCustomSubDomain>) -> Self {
+        self.cidr_endpoints_custom_sub_domain = input;
+        self
+    }
+    /// <p>The custom subdomain.</p>
+    pub fn get_cidr_endpoints_custom_sub_domain(&self) -> &::std::option::Option<crate::types::VerifiedAccessInstanceCustomSubDomain> {
+        &self.cidr_endpoints_custom_sub_domain
+    }
     /// Consumes the builder and constructs a [`VerifiedAccessInstance`](crate::types::VerifiedAccessInstance).
     pub fn build(self) -> crate::types::VerifiedAccessInstance {
         crate::types::VerifiedAccessInstance {
@@ -196,6 +217,7 @@ impl VerifiedAccessInstanceBuilder {
             last_updated_time: self.last_updated_time,
             tags: self.tags,
             fips_enabled: self.fips_enabled,
+            cidr_endpoints_custom_sub_domain: self.cidr_endpoints_custom_sub_domain,
         }
     }
 }

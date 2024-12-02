@@ -73,6 +73,20 @@ pub fn de_get_snapshot_block_public_access_state(
                 builder = builder.set_state(var_1);
             }
             ,
+            s if s.matches("managedBy") /* ManagedBy com.amazonaws.ec2.synthetic#GetSnapshotBlockPublicAccessStateOutput$ManagedBy */ =>  {
+                let var_2 =
+                    Some(
+                        Result::<crate::types::ManagedBy, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::ManagedBy::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_managed_by(var_2);
+            }
+            ,
             _ => {}
         }
     }

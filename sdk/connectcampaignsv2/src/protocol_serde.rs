@@ -61,6 +61,8 @@ pub(crate) mod shape_put_connect_instance_integration;
 
 pub(crate) mod shape_put_outbound_request_batch;
 
+pub(crate) mod shape_put_profile_outbound_request_batch;
+
 pub(crate) mod shape_resume_campaign;
 
 pub(crate) mod shape_start_campaign;
@@ -117,6 +119,8 @@ pub(crate) mod shape_put_connect_instance_integration_input;
 
 pub(crate) mod shape_put_outbound_request_batch_input;
 
+pub(crate) mod shape_put_profile_outbound_request_batch_input;
+
 pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
@@ -159,6 +163,8 @@ pub(crate) mod shape_encryption_config;
 
 pub(crate) mod shape_failed_campaign_state_response_list;
 
+pub(crate) mod shape_failed_profile_outbound_request_list;
+
 pub(crate) mod shape_failed_request_list;
 
 pub(crate) mod shape_instance_config;
@@ -173,11 +179,15 @@ pub(crate) mod shape_integration_summary_list;
 
 pub(crate) mod shape_outbound_request;
 
+pub(crate) mod shape_profile_outbound_request;
+
 pub(crate) mod shape_schedule;
 
 pub(crate) mod shape_source;
 
 pub(crate) mod shape_successful_campaign_state_response_list;
+
+pub(crate) mod shape_successful_profile_outbound_request_list;
 
 pub(crate) mod shape_successful_request_list;
 
@@ -195,7 +205,11 @@ pub(crate) mod shape_customer_profiles_integration_identifier;
 
 pub(crate) mod shape_email_channel_subtype_config;
 
+pub(crate) mod shape_event_trigger;
+
 pub(crate) mod shape_failed_campaign_state_response;
+
+pub(crate) mod shape_failed_profile_outbound_request;
 
 pub(crate) mod shape_failed_request;
 
@@ -212,6 +226,8 @@ pub(crate) mod shape_q_connect_integration_identifier;
 pub(crate) mod shape_sms_channel_subtype_config;
 
 pub(crate) mod shape_successful_campaign_state_response;
+
+pub(crate) mod shape_successful_profile_outbound_request;
 
 pub(crate) mod shape_successful_request;
 

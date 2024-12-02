@@ -17,6 +17,10 @@ pub struct KnowledgeBaseVectorSearchConfiguration {
     pub override_search_type: ::std::option::Option<crate::types::SearchType>,
     /// <p>Specifies the filters to use on the metadata in the knowledge base data sources before returning results. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query configurations</a>.</p>
     pub filter: ::std::option::Option<crate::types::RetrievalFilter>,
+    /// <p>Contains configurations for reranking the retrieved results. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/rerank.html">Improve the relevance of query responses with a reranker model</a>.</p>
+    pub reranking_configuration: ::std::option::Option<crate::types::VectorSearchRerankingConfiguration>,
+    /// <p>Settings for implicit filtering.</p>
+    pub implicit_filter_configuration: ::std::option::Option<crate::types::ImplicitFilterConfiguration>,
 }
 impl KnowledgeBaseVectorSearchConfiguration {
     /// <p>The number of source chunks to retrieve.</p>
@@ -31,6 +35,14 @@ impl KnowledgeBaseVectorSearchConfiguration {
     pub fn filter(&self) -> ::std::option::Option<&crate::types::RetrievalFilter> {
         self.filter.as_ref()
     }
+    /// <p>Contains configurations for reranking the retrieved results. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/rerank.html">Improve the relevance of query responses with a reranker model</a>.</p>
+    pub fn reranking_configuration(&self) -> ::std::option::Option<&crate::types::VectorSearchRerankingConfiguration> {
+        self.reranking_configuration.as_ref()
+    }
+    /// <p>Settings for implicit filtering.</p>
+    pub fn implicit_filter_configuration(&self) -> ::std::option::Option<&crate::types::ImplicitFilterConfiguration> {
+        self.implicit_filter_configuration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for KnowledgeBaseVectorSearchConfiguration {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -38,6 +50,8 @@ impl ::std::fmt::Debug for KnowledgeBaseVectorSearchConfiguration {
         formatter.field("number_of_results", &self.number_of_results);
         formatter.field("override_search_type", &self.override_search_type);
         formatter.field("filter", &"*** Sensitive Data Redacted ***");
+        formatter.field("reranking_configuration", &self.reranking_configuration);
+        formatter.field("implicit_filter_configuration", &self.implicit_filter_configuration);
         formatter.finish()
     }
 }
@@ -55,6 +69,8 @@ pub struct KnowledgeBaseVectorSearchConfigurationBuilder {
     pub(crate) number_of_results: ::std::option::Option<i32>,
     pub(crate) override_search_type: ::std::option::Option<crate::types::SearchType>,
     pub(crate) filter: ::std::option::Option<crate::types::RetrievalFilter>,
+    pub(crate) reranking_configuration: ::std::option::Option<crate::types::VectorSearchRerankingConfiguration>,
+    pub(crate) implicit_filter_configuration: ::std::option::Option<crate::types::ImplicitFilterConfiguration>,
 }
 impl KnowledgeBaseVectorSearchConfigurationBuilder {
     /// <p>The number of source chunks to retrieve.</p>
@@ -99,12 +115,42 @@ impl KnowledgeBaseVectorSearchConfigurationBuilder {
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::RetrievalFilter> {
         &self.filter
     }
+    /// <p>Contains configurations for reranking the retrieved results. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/rerank.html">Improve the relevance of query responses with a reranker model</a>.</p>
+    pub fn reranking_configuration(mut self, input: crate::types::VectorSearchRerankingConfiguration) -> Self {
+        self.reranking_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains configurations for reranking the retrieved results. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/rerank.html">Improve the relevance of query responses with a reranker model</a>.</p>
+    pub fn set_reranking_configuration(mut self, input: ::std::option::Option<crate::types::VectorSearchRerankingConfiguration>) -> Self {
+        self.reranking_configuration = input;
+        self
+    }
+    /// <p>Contains configurations for reranking the retrieved results. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/rerank.html">Improve the relevance of query responses with a reranker model</a>.</p>
+    pub fn get_reranking_configuration(&self) -> &::std::option::Option<crate::types::VectorSearchRerankingConfiguration> {
+        &self.reranking_configuration
+    }
+    /// <p>Settings for implicit filtering.</p>
+    pub fn implicit_filter_configuration(mut self, input: crate::types::ImplicitFilterConfiguration) -> Self {
+        self.implicit_filter_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Settings for implicit filtering.</p>
+    pub fn set_implicit_filter_configuration(mut self, input: ::std::option::Option<crate::types::ImplicitFilterConfiguration>) -> Self {
+        self.implicit_filter_configuration = input;
+        self
+    }
+    /// <p>Settings for implicit filtering.</p>
+    pub fn get_implicit_filter_configuration(&self) -> &::std::option::Option<crate::types::ImplicitFilterConfiguration> {
+        &self.implicit_filter_configuration
+    }
     /// Consumes the builder and constructs a [`KnowledgeBaseVectorSearchConfiguration`](crate::types::KnowledgeBaseVectorSearchConfiguration).
     pub fn build(self) -> crate::types::KnowledgeBaseVectorSearchConfiguration {
         crate::types::KnowledgeBaseVectorSearchConfiguration {
             number_of_results: self.number_of_results.unwrap_or(5),
             override_search_type: self.override_search_type,
             filter: self.filter,
+            reranking_configuration: self.reranking_configuration,
+            implicit_filter_configuration: self.implicit_filter_configuration,
         }
     }
 }
@@ -114,6 +160,8 @@ impl ::std::fmt::Debug for KnowledgeBaseVectorSearchConfigurationBuilder {
         formatter.field("number_of_results", &self.number_of_results);
         formatter.field("override_search_type", &self.override_search_type);
         formatter.field("filter", &"*** Sensitive Data Redacted ***");
+        formatter.field("reranking_configuration", &self.reranking_configuration);
+        formatter.field("implicit_filter_configuration", &self.implicit_filter_configuration);
         formatter.finish()
     }
 }

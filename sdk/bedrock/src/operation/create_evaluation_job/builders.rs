@@ -22,7 +22,7 @@ impl crate::operation::create_evaluation_job::builders::CreateEvaluationJobInput
 }
 /// Fluent builder constructing a request to `CreateEvaluationJob`.
 ///
-/// <p>API operation for creating and managing Amazon Bedrock automatic model evaluation jobs and model evaluation jobs that use human workers. To learn more about the requirements for creating a model evaluation job see, <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation.html">Model evaluation</a>.</p>
+/// <p>Creates an evaluation job.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateEvaluationJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl CreateEvaluationJobFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the model evaluation job. Model evaluation job names must unique with your AWS account, and your account's AWS region.</p>
+    /// <p>A name for the evaluation job. Names must unique with your Amazon Web Services account, and your account's Amazon Web Services region.</p>
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_name(input.into());
         self
     }
-    /// <p>The name of the model evaluation job. Model evaluation job names must unique with your AWS account, and your account's AWS region.</p>
+    /// <p>A name for the evaluation job. Names must unique with your Amazon Web Services account, and your account's Amazon Web Services region.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_name(input);
         self
     }
-    /// <p>The name of the model evaluation job. Model evaluation job names must unique with your AWS account, and your account's AWS region.</p>
+    /// <p>A name for the evaluation job. Names must unique with your Amazon Web Services account, and your account's Amazon Web Services region.</p>
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_job_name()
     }
-    /// <p>A description of the model evaluation job.</p>
+    /// <p>A description of the evaluation job.</p>
     pub fn job_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_description(input.into());
         self
     }
-    /// <p>A description of the model evaluation job.</p>
+    /// <p>A description of the evaluation job.</p>
     pub fn set_job_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_description(input);
         self
     }
-    /// <p>A description of the model evaluation job.</p>
+    /// <p>A description of the evaluation job.</p>
     pub fn get_job_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_job_description()
     }
@@ -150,31 +150,31 @@ impl CreateEvaluationJobFluentBuilder {
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_request_token()
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM service role that Amazon Bedrock can assume to perform tasks on your behalf. The service role must have Amazon Bedrock as the service principal, and provide access to any Amazon S3 buckets specified in the <code>EvaluationConfig</code> object. To pass this role to Amazon Bedrock, the caller of this API must have the <code>iam:PassRole</code> permission. To learn more about the required permissions, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-security.html">Required permissions</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM service role that Amazon Bedrock can assume to perform tasks on your behalf. To learn more about the required permissions, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-security.html">Required permissions for model evaluations</a>.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM service role that Amazon Bedrock can assume to perform tasks on your behalf. The service role must have Amazon Bedrock as the service principal, and provide access to any Amazon S3 buckets specified in the <code>EvaluationConfig</code> object. To pass this role to Amazon Bedrock, the caller of this API must have the <code>iam:PassRole</code> permission. To learn more about the required permissions, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-security.html">Required permissions</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM service role that Amazon Bedrock can assume to perform tasks on your behalf. To learn more about the required permissions, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-security.html">Required permissions for model evaluations</a>.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM service role that Amazon Bedrock can assume to perform tasks on your behalf. The service role must have Amazon Bedrock as the service principal, and provide access to any Amazon S3 buckets specified in the <code>EvaluationConfig</code> object. To pass this role to Amazon Bedrock, the caller of this API must have the <code>iam:PassRole</code> permission. To learn more about the required permissions, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-security.html">Required permissions</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM service role that Amazon Bedrock can assume to perform tasks on your behalf. To learn more about the required permissions, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-security.html">Required permissions for model evaluations</a>.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role_arn()
     }
-    /// <p>Specify your customer managed key ARN that will be used to encrypt your model evaluation job.</p>
+    /// <p>Specify your customer managed encryption key Amazon Resource Name (ARN) that will be used to encrypt your evaluation job.</p>
     pub fn customer_encryption_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.customer_encryption_key_id(input.into());
         self
     }
-    /// <p>Specify your customer managed key ARN that will be used to encrypt your model evaluation job.</p>
+    /// <p>Specify your customer managed encryption key Amazon Resource Name (ARN) that will be used to encrypt your evaluation job.</p>
     pub fn set_customer_encryption_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_customer_encryption_key_id(input);
         self
     }
-    /// <p>Specify your customer managed key ARN that will be used to encrypt your model evaluation job.</p>
+    /// <p>Specify your customer managed encryption key Amazon Resource Name (ARN) that will be used to encrypt your evaluation job.</p>
     pub fn get_customer_encryption_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_customer_encryption_key_id()
     }
@@ -197,45 +197,62 @@ impl CreateEvaluationJobFluentBuilder {
     pub fn get_job_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_job_tags()
     }
-    /// <p>Specifies whether the model evaluation job is automatic or uses human worker.</p>
+    /// <p>Specifies whether the evaluation job is for evaluating a model or evaluating a knowledge base (retrieval and response generation).</p>
+    pub fn application_type(mut self, input: crate::types::ApplicationType) -> Self {
+        self.inner = self.inner.application_type(input);
+        self
+    }
+    /// <p>Specifies whether the evaluation job is for evaluating a model or evaluating a knowledge base (retrieval and response generation).</p>
+    pub fn set_application_type(mut self, input: ::std::option::Option<crate::types::ApplicationType>) -> Self {
+        self.inner = self.inner.set_application_type(input);
+        self
+    }
+    /// <p>Specifies whether the evaluation job is for evaluating a model or evaluating a knowledge base (retrieval and response generation).</p>
+    pub fn get_application_type(&self) -> &::std::option::Option<crate::types::ApplicationType> {
+        self.inner.get_application_type()
+    }
+    /// <p>Contains the configuration details of either an automated or human-based evaluation job.</p>
     pub fn evaluation_config(mut self, input: crate::types::EvaluationConfig) -> Self {
         self.inner = self.inner.evaluation_config(input);
         self
     }
-    /// <p>Specifies whether the model evaluation job is automatic or uses human worker.</p>
+    /// <p>Contains the configuration details of either an automated or human-based evaluation job.</p>
     pub fn set_evaluation_config(mut self, input: ::std::option::Option<crate::types::EvaluationConfig>) -> Self {
         self.inner = self.inner.set_evaluation_config(input);
         self
     }
-    /// <p>Specifies whether the model evaluation job is automatic or uses human worker.</p>
+    /// <p>Contains the configuration details of either an automated or human-based evaluation job.</p>
     pub fn get_evaluation_config(&self) -> &::std::option::Option<crate::types::EvaluationConfig> {
         self.inner.get_evaluation_config()
     }
-    /// <p>Specify the models you want to use in your model evaluation job. Automatic model evaluation jobs support a single model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference profile</a>, and model evaluation job that use human workers support two models or inference profiles.</p>
+    /// <p>Contains the configuration details of the inference model for the evaluation job.</p>
+    /// <p>For model evaluation jobs, automated jobs support a single model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference profile</a>, and jobs that use human workers support two models or inference profiles.</p>
     pub fn inference_config(mut self, input: crate::types::EvaluationInferenceConfig) -> Self {
         self.inner = self.inner.inference_config(input);
         self
     }
-    /// <p>Specify the models you want to use in your model evaluation job. Automatic model evaluation jobs support a single model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference profile</a>, and model evaluation job that use human workers support two models or inference profiles.</p>
+    /// <p>Contains the configuration details of the inference model for the evaluation job.</p>
+    /// <p>For model evaluation jobs, automated jobs support a single model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference profile</a>, and jobs that use human workers support two models or inference profiles.</p>
     pub fn set_inference_config(mut self, input: ::std::option::Option<crate::types::EvaluationInferenceConfig>) -> Self {
         self.inner = self.inner.set_inference_config(input);
         self
     }
-    /// <p>Specify the models you want to use in your model evaluation job. Automatic model evaluation jobs support a single model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference profile</a>, and model evaluation job that use human workers support two models or inference profiles.</p>
+    /// <p>Contains the configuration details of the inference model for the evaluation job.</p>
+    /// <p>For model evaluation jobs, automated jobs support a single model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference profile</a>, and jobs that use human workers support two models or inference profiles.</p>
     pub fn get_inference_config(&self) -> &::std::option::Option<crate::types::EvaluationInferenceConfig> {
         self.inner.get_inference_config()
     }
-    /// <p>An object that defines where the results of model evaluation job will be saved in Amazon S3.</p>
+    /// <p>Contains the configuration details of the Amazon S3 bucket for storing the results of the evaluation job.</p>
     pub fn output_data_config(mut self, input: crate::types::EvaluationOutputDataConfig) -> Self {
         self.inner = self.inner.output_data_config(input);
         self
     }
-    /// <p>An object that defines where the results of model evaluation job will be saved in Amazon S3.</p>
+    /// <p>Contains the configuration details of the Amazon S3 bucket for storing the results of the evaluation job.</p>
     pub fn set_output_data_config(mut self, input: ::std::option::Option<crate::types::EvaluationOutputDataConfig>) -> Self {
         self.inner = self.inner.set_output_data_config(input);
         self
     }
-    /// <p>An object that defines where the results of model evaluation job will be saved in Amazon S3.</p>
+    /// <p>Contains the configuration details of the Amazon S3 bucket for storing the results of the evaluation job.</p>
     pub fn get_output_data_config(&self) -> &::std::option::Option<crate::types::EvaluationOutputDataConfig> {
         self.inner.get_output_data_config()
     }

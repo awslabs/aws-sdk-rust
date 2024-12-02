@@ -37,6 +37,18 @@ pub use crate::types::_eks_anywhere_subscription_term_unit::EksAnywhereSubscript
 
 pub use crate::types::_eks_anywhere_subscription_license_type::EksAnywhereSubscriptionLicenseType;
 
+pub use crate::types::_storage_config_request::StorageConfigRequest;
+
+pub use crate::types::_block_storage::BlockStorage;
+
+pub use crate::types::_kubernetes_network_config_request::KubernetesNetworkConfigRequest;
+
+pub use crate::types::_elastic_load_balancing::ElasticLoadBalancing;
+
+pub use crate::types::_ip_family::IpFamily;
+
+pub use crate::types::_compute_config_request::ComputeConfigRequest;
+
 pub use crate::types::_zonal_shift_config_request::ZonalShiftConfigRequest;
 
 pub use crate::types::_upgrade_policy_request::UpgradePolicyRequest;
@@ -62,6 +74,16 @@ pub use crate::types::_resolve_conflicts::ResolveConflicts;
 pub use crate::types::_access_entry::AccessEntry;
 
 pub use crate::types::_cluster::Cluster;
+
+pub use crate::types::_storage_config_response::StorageConfigResponse;
+
+pub use crate::types::_compute_config_response::ComputeConfigResponse;
+
+pub use crate::types::_remote_network_config_response::RemoteNetworkConfigResponse;
+
+pub use crate::types::_remote_pod_network::RemotePodNetwork;
+
+pub use crate::types::_remote_node_network::RemoteNodeNetwork;
 
 pub use crate::types::_zonal_shift_config_response::ZonalShiftConfigResponse;
 
@@ -94,8 +116,6 @@ pub use crate::types::_identity::Identity;
 pub use crate::types::_oidc::Oidc;
 
 pub use crate::types::_kubernetes_network_config_response::KubernetesNetworkConfigResponse;
-
-pub use crate::types::_ip_family::IpFamily;
 
 pub use crate::types::_vpc_config_response::VpcConfigResponse;
 
@@ -195,13 +215,13 @@ pub use crate::types::_addon_issue_code::AddonIssueCode;
 
 pub use crate::types::_addon_status::AddonStatus;
 
+pub use crate::types::_remote_network_config_request::RemoteNetworkConfigRequest;
+
 pub use crate::types::_create_access_config_request::CreateAccessConfigRequest;
 
 pub use crate::types::_outpost_config_request::OutpostConfigRequest;
 
 pub use crate::types::_control_plane_placement_request::ControlPlanePlacementRequest;
-
-pub use crate::types::_kubernetes_network_config_request::KubernetesNetworkConfigRequest;
 
 pub use crate::types::_oidc_identity_provider_config_request::OidcIdentityProviderConfigRequest;
 
@@ -241,6 +261,8 @@ mod _authentication_mode;
 
 mod _auto_scaling_group;
 
+mod _block_storage;
+
 mod _capacity_types;
 
 mod _category;
@@ -260,6 +282,10 @@ mod _cluster_issue_code;
 mod _cluster_status;
 
 mod _compatibility;
+
+mod _compute_config_request;
+
+mod _compute_config_response;
 
 mod _config_status;
 
@@ -286,6 +312,8 @@ mod _eks_anywhere_subscription_status;
 mod _eks_anywhere_subscription_term;
 
 mod _eks_anywhere_subscription_term_unit;
+
+mod _elastic_load_balancing;
 
 mod _encryption_config;
 
@@ -375,7 +403,19 @@ mod _provider;
 
 mod _remote_access_config;
 
+mod _remote_network_config_request;
+
+mod _remote_network_config_response;
+
+mod _remote_node_network;
+
+mod _remote_pod_network;
+
 mod _resolve_conflicts;
+
+mod _storage_config_request;
+
+mod _storage_config_response;
 
 mod _support_type;
 

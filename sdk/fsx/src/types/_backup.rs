@@ -52,6 +52,8 @@ pub struct Backup {
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>Describes an Amazon FSx volume.</p>
     pub volume: ::std::option::Option<crate::types::Volume>,
+    /// <p>The size of the backup in bytes. This represents the amount of data that the file system would contain if you restore this backup.</p>
+    pub size_in_bytes: ::std::option::Option<i64>,
 }
 impl Backup {
     /// <p>The ID of the backup.</p>
@@ -136,6 +138,10 @@ impl Backup {
     pub fn volume(&self) -> ::std::option::Option<&crate::types::Volume> {
         self.volume.as_ref()
     }
+    /// <p>The size of the backup in bytes. This represents the amount of data that the file system would contain if you restore this backup.</p>
+    pub fn size_in_bytes(&self) -> ::std::option::Option<i64> {
+        self.size_in_bytes
+    }
 }
 impl Backup {
     /// Creates a new builder-style object to manufacture [`Backup`](crate::types::Backup).
@@ -164,6 +170,7 @@ pub struct BackupBuilder {
     pub(crate) source_backup_region: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
     pub(crate) volume: ::std::option::Option<crate::types::Volume>,
+    pub(crate) size_in_bytes: ::std::option::Option<i64>,
 }
 impl BackupBuilder {
     /// <p>The ID of the backup.</p>
@@ -449,6 +456,20 @@ impl BackupBuilder {
     pub fn get_volume(&self) -> &::std::option::Option<crate::types::Volume> {
         &self.volume
     }
+    /// <p>The size of the backup in bytes. This represents the amount of data that the file system would contain if you restore this backup.</p>
+    pub fn size_in_bytes(mut self, input: i64) -> Self {
+        self.size_in_bytes = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The size of the backup in bytes. This represents the amount of data that the file system would contain if you restore this backup.</p>
+    pub fn set_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.size_in_bytes = input;
+        self
+    }
+    /// <p>The size of the backup in bytes. This represents the amount of data that the file system would contain if you restore this backup.</p>
+    pub fn get_size_in_bytes(&self) -> &::std::option::Option<i64> {
+        &self.size_in_bytes
+    }
     /// Consumes the builder and constructs a [`Backup`](crate::types::Backup).
     pub fn build(self) -> crate::types::Backup {
         crate::types::Backup {
@@ -468,6 +489,7 @@ impl BackupBuilder {
             source_backup_region: self.source_backup_region,
             resource_type: self.resource_type,
             volume: self.volume,
+            size_in_bytes: self.size_in_bytes,
         }
     }
 }

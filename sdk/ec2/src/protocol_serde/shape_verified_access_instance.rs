@@ -94,6 +94,16 @@ pub fn de_verified_access_instance(
                 builder = builder.set_fips_enabled(var_7);
             }
             ,
+            s if s.matches("cidrEndpointsCustomSubDomain") /* CidrEndpointsCustomSubDomain com.amazonaws.ec2#VerifiedAccessInstance$CidrEndpointsCustomSubDomain */ =>  {
+                let var_8 =
+                    Some(
+                        crate::protocol_serde::shape_verified_access_instance_custom_sub_domain::de_verified_access_instance_custom_sub_domain(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_cidr_endpoints_custom_sub_domain(var_8);
+            }
+            ,
             _ => {}
         }
     }

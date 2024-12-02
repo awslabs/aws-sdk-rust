@@ -22,7 +22,7 @@ impl crate::operation::describe_acls::builders::DescribeAcLsInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeACLs`.
 ///
-/// <p>Returns a list of ACLs</p>
+/// <p>Returns a list of ACLs.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeACLsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,17 +114,17 @@ impl DescribeACLsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_acls::paginator::DescribeAcLsPaginator {
         crate::operation::describe_acls::paginator::DescribeAcLsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The name of the ACL</p>
+    /// <p>The name of the ACL.</p>
     pub fn acl_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.acl_name(input.into());
         self
     }
-    /// <p>The name of the ACL</p>
+    /// <p>The name of the ACL.</p>
     pub fn set_acl_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_acl_name(input);
         self
     }
-    /// <p>The name of the ACL</p>
+    /// <p>The name of the ACL.</p>
     pub fn get_acl_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_acl_name()
     }

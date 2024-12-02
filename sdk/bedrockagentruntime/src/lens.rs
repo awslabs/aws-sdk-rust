@@ -9,6 +9,16 @@ pub(crate) fn reflens_get_agent_memory_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_rerank_output_output_next_token(
+    input: &crate::operation::rerank::RerankOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_retrieve_output_output_next_token(
     input: &crate::operation::retrieve::RetrieveOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -26,6 +36,13 @@ pub(crate) fn lens_get_agent_memory_output_output_memory_contents(
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_rerank_output_output_results(
+    input: crate::operation::rerank::RerankOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RerankResult>> {
+    let input = input.results;
     ::std::option::Option::Some(input)
 }
 

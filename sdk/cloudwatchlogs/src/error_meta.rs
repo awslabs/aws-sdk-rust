@@ -602,6 +602,33 @@ impl From<crate::operation::delete_index_policy::DeleteIndexPolicyError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_integration::DeleteIntegrationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_integration::DeleteIntegrationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_integration::DeleteIntegrationError> for Error {
+    fn from(err: crate::operation::delete_integration::DeleteIntegrationError) -> Self {
+        match err {
+            crate::operation::delete_integration::DeleteIntegrationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_integration::DeleteIntegrationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_integration::DeleteIntegrationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_integration::DeleteIntegrationError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::delete_integration::DeleteIntegrationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_log_anomaly_detector::DeleteLogAnomalyDetectorError, R>>
     for Error
 where
@@ -1627,6 +1654,30 @@ impl From<crate::operation::get_delivery_source::GetDeliverySourceError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_integration::GetIntegrationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_integration::GetIntegrationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_integration::GetIntegrationError> for Error {
+    fn from(err: crate::operation::get_integration::GetIntegrationError) -> Self {
+        match err {
+            crate::operation::get_integration::GetIntegrationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_integration::GetIntegrationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_integration::GetIntegrationError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_integration::GetIntegrationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_log_anomaly_detector::GetLogAnomalyDetectorError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1815,6 +1866,31 @@ impl From<crate::operation::list_anomalies::ListAnomaliesError> for Error {
             crate::operation::list_anomalies::ListAnomaliesError::OperationAbortedException(inner) => Error::OperationAbortedException(inner),
             crate::operation::list_anomalies::ListAnomaliesError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::list_anomalies::ListAnomaliesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_integrations::ListIntegrationsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_integrations::ListIntegrationsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_integrations::ListIntegrationsError> for Error {
+    fn from(err: crate::operation::list_integrations::ListIntegrationsError) -> Self {
+        match err {
+            crate::operation::list_integrations::ListIntegrationsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_integrations::ListIntegrationsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::list_integrations::ListIntegrationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2195,6 +2271,31 @@ impl From<crate::operation::put_index_policy::PutIndexPolicyError> for Error {
             crate::operation::put_index_policy::PutIndexPolicyError::OperationAbortedException(inner) => Error::OperationAbortedException(inner),
             crate::operation::put_index_policy::PutIndexPolicyError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::put_index_policy::PutIndexPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_integration::PutIntegrationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_integration::PutIntegrationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_integration::PutIntegrationError> for Error {
+    fn from(err: crate::operation::put_integration::PutIntegrationError) -> Self {
+        match err {
+            crate::operation::put_integration::PutIntegrationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_integration::PutIntegrationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::put_integration::PutIntegrationError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::put_integration::PutIntegrationError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::put_integration::PutIntegrationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

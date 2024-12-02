@@ -19,6 +19,8 @@ pub struct Document {
     pub access_configuration: ::std::option::Option<crate::types::AccessConfiguration>,
     /// <p>The configuration information for altering document metadata and content during the document ingestion process.</p>
     pub document_enrichment_configuration: ::std::option::Option<crate::types::DocumentEnrichmentConfiguration>,
+    /// <p>The configuration for extracting information from media in the document.</p>
+    pub media_extraction_configuration: ::std::option::Option<crate::types::MediaExtractionConfiguration>,
 }
 impl Document {
     /// <p>The identifier of the document.</p>
@@ -53,6 +55,10 @@ impl Document {
     pub fn document_enrichment_configuration(&self) -> ::std::option::Option<&crate::types::DocumentEnrichmentConfiguration> {
         self.document_enrichment_configuration.as_ref()
     }
+    /// <p>The configuration for extracting information from media in the document.</p>
+    pub fn media_extraction_configuration(&self) -> ::std::option::Option<&crate::types::MediaExtractionConfiguration> {
+        self.media_extraction_configuration.as_ref()
+    }
 }
 impl Document {
     /// Creates a new builder-style object to manufacture [`Document`](crate::types::Document).
@@ -72,6 +78,7 @@ pub struct DocumentBuilder {
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) access_configuration: ::std::option::Option<crate::types::AccessConfiguration>,
     pub(crate) document_enrichment_configuration: ::std::option::Option<crate::types::DocumentEnrichmentConfiguration>,
+    pub(crate) media_extraction_configuration: ::std::option::Option<crate::types::MediaExtractionConfiguration>,
 }
 impl DocumentBuilder {
     /// <p>The identifier of the document.</p>
@@ -182,6 +189,20 @@ impl DocumentBuilder {
     pub fn get_document_enrichment_configuration(&self) -> &::std::option::Option<crate::types::DocumentEnrichmentConfiguration> {
         &self.document_enrichment_configuration
     }
+    /// <p>The configuration for extracting information from media in the document.</p>
+    pub fn media_extraction_configuration(mut self, input: crate::types::MediaExtractionConfiguration) -> Self {
+        self.media_extraction_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for extracting information from media in the document.</p>
+    pub fn set_media_extraction_configuration(mut self, input: ::std::option::Option<crate::types::MediaExtractionConfiguration>) -> Self {
+        self.media_extraction_configuration = input;
+        self
+    }
+    /// <p>The configuration for extracting information from media in the document.</p>
+    pub fn get_media_extraction_configuration(&self) -> &::std::option::Option<crate::types::MediaExtractionConfiguration> {
+        &self.media_extraction_configuration
+    }
     /// Consumes the builder and constructs a [`Document`](crate::types::Document).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::DocumentBuilder::id)
@@ -199,6 +220,7 @@ impl DocumentBuilder {
             title: self.title,
             access_configuration: self.access_configuration,
             document_enrichment_configuration: self.document_enrichment_configuration,
+            media_extraction_configuration: self.media_extraction_configuration,
         })
     }
 }

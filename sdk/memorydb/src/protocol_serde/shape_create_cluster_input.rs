@@ -9,101 +9,104 @@ pub fn ser_create_cluster_input_input(
     if let Some(var_2) = &input.node_type {
         object.key("NodeType").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.parameter_group_name {
-        object.key("ParameterGroupName").string(var_3.as_str());
+    if let Some(var_3) = &input.multi_region_cluster_name {
+        object.key("MultiRegionClusterName").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.description {
-        object.key("Description").string(var_4.as_str());
+    if let Some(var_4) = &input.parameter_group_name {
+        object.key("ParameterGroupName").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.num_shards {
+    if let Some(var_5) = &input.description {
+        object.key("Description").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.num_shards {
         object.key("NumShards").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_5).into()),
-        );
-    }
-    if let Some(var_6) = &input.num_replicas_per_shard {
-        object.key("NumReplicasPerShard").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if let Some(var_7) = &input.subnet_group_name {
-        object.key("SubnetGroupName").string(var_7.as_str());
+    if let Some(var_7) = &input.num_replicas_per_shard {
+        object.key("NumReplicasPerShard").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
+        );
     }
-    if let Some(var_8) = &input.security_group_ids {
-        let mut array_9 = object.key("SecurityGroupIds").start_array();
-        for item_10 in var_8 {
+    if let Some(var_8) = &input.subnet_group_name {
+        object.key("SubnetGroupName").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.security_group_ids {
+        let mut array_10 = object.key("SecurityGroupIds").start_array();
+        for item_11 in var_9 {
             {
-                array_9.value().string(item_10.as_str());
+                array_10.value().string(item_11.as_str());
             }
         }
-        array_9.finish();
+        array_10.finish();
     }
-    if let Some(var_11) = &input.maintenance_window {
-        object.key("MaintenanceWindow").string(var_11.as_str());
+    if let Some(var_12) = &input.maintenance_window {
+        object.key("MaintenanceWindow").string(var_12.as_str());
     }
-    if let Some(var_12) = &input.port {
+    if let Some(var_13) = &input.port {
         object.key("Port").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_12).into()),
+            ::aws_smithy_types::Number::NegInt((*var_13).into()),
         );
     }
-    if let Some(var_13) = &input.sns_topic_arn {
-        object.key("SnsTopicArn").string(var_13.as_str());
+    if let Some(var_14) = &input.sns_topic_arn {
+        object.key("SnsTopicArn").string(var_14.as_str());
     }
-    if let Some(var_14) = &input.tls_enabled {
-        object.key("TLSEnabled").boolean(*var_14);
+    if let Some(var_15) = &input.tls_enabled {
+        object.key("TLSEnabled").boolean(*var_15);
     }
-    if let Some(var_15) = &input.kms_key_id {
-        object.key("KmsKeyId").string(var_15.as_str());
+    if let Some(var_16) = &input.kms_key_id {
+        object.key("KmsKeyId").string(var_16.as_str());
     }
-    if let Some(var_16) = &input.snapshot_arns {
-        let mut array_17 = object.key("SnapshotArns").start_array();
-        for item_18 in var_16 {
+    if let Some(var_17) = &input.snapshot_arns {
+        let mut array_18 = object.key("SnapshotArns").start_array();
+        for item_19 in var_17 {
             {
-                array_17.value().string(item_18.as_str());
+                array_18.value().string(item_19.as_str());
             }
         }
-        array_17.finish();
+        array_18.finish();
     }
-    if let Some(var_19) = &input.snapshot_name {
-        object.key("SnapshotName").string(var_19.as_str());
+    if let Some(var_20) = &input.snapshot_name {
+        object.key("SnapshotName").string(var_20.as_str());
     }
-    if let Some(var_20) = &input.snapshot_retention_limit {
+    if let Some(var_21) = &input.snapshot_retention_limit {
         object.key("SnapshotRetentionLimit").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_20).into()),
+            ::aws_smithy_types::Number::NegInt((*var_21).into()),
         );
     }
-    if let Some(var_21) = &input.tags {
-        let mut array_22 = object.key("Tags").start_array();
-        for item_23 in var_21 {
+    if let Some(var_22) = &input.tags {
+        let mut array_23 = object.key("Tags").start_array();
+        for item_24 in var_22 {
             {
                 #[allow(unused_mut)]
-                let mut object_24 = array_22.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_24, item_23)?;
-                object_24.finish();
+                let mut object_25 = array_23.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_25, item_24)?;
+                object_25.finish();
             }
         }
-        array_22.finish();
+        array_23.finish();
     }
-    if let Some(var_25) = &input.snapshot_window {
-        object.key("SnapshotWindow").string(var_25.as_str());
+    if let Some(var_26) = &input.snapshot_window {
+        object.key("SnapshotWindow").string(var_26.as_str());
     }
-    if let Some(var_26) = &input.acl_name {
-        object.key("ACLName").string(var_26.as_str());
+    if let Some(var_27) = &input.acl_name {
+        object.key("ACLName").string(var_27.as_str());
     }
-    if let Some(var_27) = &input.engine {
-        object.key("Engine").string(var_27.as_str());
+    if let Some(var_28) = &input.engine {
+        object.key("Engine").string(var_28.as_str());
     }
-    if let Some(var_28) = &input.engine_version {
-        object.key("EngineVersion").string(var_28.as_str());
+    if let Some(var_29) = &input.engine_version {
+        object.key("EngineVersion").string(var_29.as_str());
     }
-    if let Some(var_29) = &input.auto_minor_version_upgrade {
-        object.key("AutoMinorVersionUpgrade").boolean(*var_29);
+    if let Some(var_30) = &input.auto_minor_version_upgrade {
+        object.key("AutoMinorVersionUpgrade").boolean(*var_30);
     }
-    if let Some(var_30) = &input.data_tiering {
-        object.key("DataTiering").boolean(*var_30);
+    if let Some(var_31) = &input.data_tiering {
+        object.key("DataTiering").boolean(*var_31);
     }
     Ok(())
 }

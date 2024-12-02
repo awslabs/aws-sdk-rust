@@ -19,6 +19,9 @@ pub mod create_domain;
 /// Types for the `CreateEventStream` operation.
 pub mod create_event_stream;
 
+/// Types for the `CreateEventTrigger` operation.
+pub mod create_event_trigger;
+
 /// Types for the `CreateIntegrationWorkflow` operation.
 pub mod create_integration_workflow;
 
@@ -42,6 +45,9 @@ pub mod delete_domain;
 
 /// Types for the `DeleteEventStream` operation.
 pub mod delete_event_stream;
+
+/// Types for the `DeleteEventTrigger` operation.
+pub mod delete_event_trigger;
 
 /// Types for the `DeleteIntegration` operation.
 pub mod delete_integration;
@@ -81,6 +87,9 @@ pub mod get_domain;
 
 /// Types for the `GetEventStream` operation.
 pub mod get_event_stream;
+
+/// Types for the `GetEventTrigger` operation.
+pub mod get_event_trigger;
 
 /// Types for the `GetIdentityResolutionJob` operation.
 pub mod get_identity_resolution_job;
@@ -132,6 +141,9 @@ pub mod list_domains;
 
 /// Types for the `ListEventStreams` operation.
 pub mod list_event_streams;
+
+/// Types for the `ListEventTriggers` operation.
+pub mod list_event_triggers;
 
 /// Types for the `ListIdentityResolutionJobs` operation.
 pub mod list_identity_resolution_jobs;
@@ -192,6 +204,9 @@ pub mod update_calculated_attribute_definition;
 
 /// Types for the `UpdateDomain` operation.
 pub mod update_domain;
+
+/// Types for the `UpdateEventTrigger` operation.
+pub mod update_event_trigger;
 
 /// Types for the `UpdateProfile` operation.
 pub mod update_profile;

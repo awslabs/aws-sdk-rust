@@ -35,9 +35,13 @@ pub(crate) mod shape_invoke_inline_agent;
 
 pub(crate) mod shape_optimize_prompt;
 
+pub(crate) mod shape_rerank;
+
 pub(crate) mod shape_retrieve;
 
 pub(crate) mod shape_retrieve_and_generate;
+
+pub(crate) mod shape_retrieve_and_generate_stream;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -73,9 +77,15 @@ pub(crate) mod shape_optimize_prompt_input;
 
 pub(crate) mod shape_optimize_prompt_output;
 
+pub(crate) mod shape_rerank_input;
+
 pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_retrieve_and_generate_input;
+
+pub(crate) mod shape_retrieve_and_generate_stream_input;
+
+pub(crate) mod shape_retrieve_and_generate_stream_output;
 
 pub(crate) mod shape_retrieve_input;
 
@@ -97,6 +107,8 @@ pub(crate) mod shape_citations;
 
 pub(crate) mod shape_flow_input;
 
+pub(crate) mod shape_guardrail_configuration;
+
 pub(crate) mod shape_guardrail_configuration_with_arn;
 
 pub(crate) mod shape_inline_session_state;
@@ -115,6 +127,14 @@ pub(crate) mod shape_memories;
 
 pub(crate) mod shape_prompt_override_configuration;
 
+pub(crate) mod shape_rerank_query;
+
+pub(crate) mod shape_rerank_results_list;
+
+pub(crate) mod shape_rerank_source;
+
+pub(crate) mod shape_reranking_configuration;
+
 pub(crate) mod shape_retrieve_and_generate_configuration;
 
 pub(crate) mod shape_retrieve_and_generate_output;
@@ -131,7 +151,11 @@ pub(crate) mod shape_analyze_prompt_event;
 
 pub(crate) mod shape_api_schema;
 
+pub(crate) mod shape_bedrock_reranking_configuration;
+
 pub(crate) mod shape_citation;
+
+pub(crate) mod shape_citation_event;
 
 pub(crate) mod shape_external_sources_retrieve_and_generate_configuration;
 
@@ -146,6 +170,8 @@ pub(crate) mod shape_flow_output_event;
 pub(crate) mod shape_flow_trace_event;
 
 pub(crate) mod shape_function_schema;
+
+pub(crate) mod shape_guardrail_event;
 
 pub(crate) mod shape_inline_agent_file_part;
 
@@ -175,6 +201,14 @@ pub(crate) mod shape_payload_part;
 
 pub(crate) mod shape_prompt_configuration;
 
+pub(crate) mod shape_rerank_document;
+
+pub(crate) mod shape_rerank_result;
+
+pub(crate) mod shape_rerank_text_document;
+
+pub(crate) mod shape_retrieve_and_generate_output_event;
+
 pub(crate) mod shape_return_control_payload;
 
 pub(crate) mod shape_text_prompt;
@@ -182,6 +216,8 @@ pub(crate) mod shape_text_prompt;
 pub(crate) mod shape_trace_part;
 
 pub(crate) mod shape_api_result;
+
+pub(crate) mod shape_bedrock_reranking_model_configuration;
 
 pub(crate) mod shape_external_source;
 
@@ -196,6 +232,8 @@ pub(crate) mod shape_function_result;
 pub(crate) mod shape_generated_response_part;
 
 pub(crate) mod shape_generation_configuration;
+
+pub(crate) mod shape_implicit_filter_configuration;
 
 pub(crate) mod shape_inference_configuration;
 
@@ -215,6 +253,8 @@ pub(crate) mod shape_retrieved_references;
 
 pub(crate) mod shape_s3_identifier;
 
+pub(crate) mod shape_vector_search_reranking_configuration;
+
 pub(crate) mod shape_attribution;
 
 pub(crate) mod shape_byte_content_doc;
@@ -229,11 +269,11 @@ pub(crate) mod shape_flow_output_content;
 
 pub(crate) mod shape_flow_trace;
 
-pub(crate) mod shape_guardrail_configuration;
-
 pub(crate) mod shape_inference_config;
 
 pub(crate) mod shape_invocation_inputs;
+
+pub(crate) mod shape_metadata_attribute_schema;
 
 pub(crate) mod shape_optimized_prompt;
 
@@ -246,6 +286,8 @@ pub(crate) mod shape_prompt_template;
 pub(crate) mod shape_query_transformation_configuration;
 
 pub(crate) mod shape_retrieval_result_confluence_location;
+
+pub(crate) mod shape_retrieval_result_custom_document_location;
 
 pub(crate) mod shape_retrieval_result_s3_location;
 
@@ -265,6 +307,8 @@ pub(crate) mod shape_text_response_part;
 
 pub(crate) mod shape_trace;
 
+pub(crate) mod shape_vector_search_bedrock_reranking_configuration;
+
 pub(crate) mod shape_custom_orchestration_trace;
 
 pub(crate) mod shape_failure_trace;
@@ -279,6 +323,8 @@ pub(crate) mod shape_guardrail_trace;
 
 pub(crate) mod shape_invocation_input_member;
 
+pub(crate) mod shape_metadata_configuration_for_reranking;
+
 pub(crate) mod shape_orchestration_trace;
 
 pub(crate) mod shape_output_file;
@@ -290,6 +336,8 @@ pub(crate) mod shape_pre_processing_trace;
 pub(crate) mod shape_span;
 
 pub(crate) mod shape_text_inference_config;
+
+pub(crate) mod shape_vector_search_bedrock_reranking_model_configuration;
 
 pub(crate) mod shape_api_invocation_input;
 
@@ -319,6 +367,8 @@ pub(crate) mod shape_pre_processing_model_invocation_output;
 
 pub(crate) mod shape_rationale;
 
+pub(crate) mod shape_reranking_metadata_selective_mode_configuration;
+
 pub(crate) mod shape_action_group_invocation_input;
 
 pub(crate) mod shape_action_group_invocation_output;
@@ -330,6 +380,8 @@ pub(crate) mod shape_api_request_body;
 pub(crate) mod shape_code_interpreter_invocation_input;
 
 pub(crate) mod shape_code_interpreter_invocation_output;
+
+pub(crate) mod shape_field_for_reranking;
 
 pub(crate) mod shape_final_response;
 

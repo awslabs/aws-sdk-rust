@@ -116,9 +116,19 @@ pub fn ser_create_vpc_endpoint_input_input_input(
         }
     }
     #[allow(unused_mut)]
-    let mut scope_44 = writer.prefix("ServiceRegion");
-    if let Some(var_45) = &input.service_region {
+    let mut scope_44 = writer.prefix("ServiceNetworkArn");
+    if let Some(var_45) = &input.service_network_arn {
         scope_44.string(var_45);
+    }
+    #[allow(unused_mut)]
+    let mut scope_46 = writer.prefix("ResourceConfigurationArn");
+    if let Some(var_47) = &input.resource_configuration_arn {
+        scope_46.string(var_47);
+    }
+    #[allow(unused_mut)]
+    let mut scope_48 = writer.prefix("ServiceRegion");
+    if let Some(var_49) = &input.service_region {
+        scope_48.string(var_49);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

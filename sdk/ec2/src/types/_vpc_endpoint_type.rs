@@ -15,6 +15,8 @@
 ///     VpcEndpointType::Gateway => { /* ... */ },
 ///     VpcEndpointType::GatewayLoadBalancer => { /* ... */ },
 ///     VpcEndpointType::Interface => { /* ... */ },
+///     VpcEndpointType::Resource => { /* ... */ },
+///     VpcEndpointType::ServiceNetwork => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -48,6 +50,10 @@ pub enum VpcEndpointType {
     GatewayLoadBalancer,
     #[allow(missing_docs)] // documentation missing in model
     Interface,
+    #[allow(missing_docs)] // documentation missing in model
+    Resource,
+    #[allow(missing_docs)] // documentation missing in model
+    ServiceNetwork,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -58,6 +64,8 @@ impl ::std::convert::From<&str> for VpcEndpointType {
             "Gateway" => VpcEndpointType::Gateway,
             "GatewayLoadBalancer" => VpcEndpointType::GatewayLoadBalancer,
             "Interface" => VpcEndpointType::Interface,
+            "Resource" => VpcEndpointType::Resource,
+            "ServiceNetwork" => VpcEndpointType::ServiceNetwork,
             other => VpcEndpointType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -76,12 +84,14 @@ impl VpcEndpointType {
             VpcEndpointType::Gateway => "Gateway",
             VpcEndpointType::GatewayLoadBalancer => "GatewayLoadBalancer",
             VpcEndpointType::Interface => "Interface",
+            VpcEndpointType::Resource => "Resource",
+            VpcEndpointType::ServiceNetwork => "ServiceNetwork",
             VpcEndpointType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Gateway", "GatewayLoadBalancer", "Interface"]
+        &["Gateway", "GatewayLoadBalancer", "Interface", "Resource", "ServiceNetwork"]
     }
 }
 impl ::std::convert::AsRef<str> for VpcEndpointType {
@@ -107,6 +117,8 @@ impl ::std::fmt::Display for VpcEndpointType {
             VpcEndpointType::Gateway => write!(f, "Gateway"),
             VpcEndpointType::GatewayLoadBalancer => write!(f, "GatewayLoadBalancer"),
             VpcEndpointType::Interface => write!(f, "Interface"),
+            VpcEndpointType::Resource => write!(f, "Resource"),
+            VpcEndpointType::ServiceNetwork => write!(f, "ServiceNetwork"),
             VpcEndpointType::Unknown(value) => write!(f, "{}", value),
         }
     }

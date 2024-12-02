@@ -9,6 +9,8 @@ pub struct StopContactRecordingInput {
     pub contact_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
     pub initial_contact_id: ::std::option::Option<::std::string::String>,
+    /// <p>The type of recording being operated on.</p>
+    pub contact_recording_type: ::std::option::Option<crate::types::ContactRecordingType>,
 }
 impl StopContactRecordingInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -22,6 +24,10 @@ impl StopContactRecordingInput {
     /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
     pub fn initial_contact_id(&self) -> ::std::option::Option<&str> {
         self.initial_contact_id.as_deref()
+    }
+    /// <p>The type of recording being operated on.</p>
+    pub fn contact_recording_type(&self) -> ::std::option::Option<&crate::types::ContactRecordingType> {
+        self.contact_recording_type.as_ref()
     }
 }
 impl StopContactRecordingInput {
@@ -38,6 +44,7 @@ pub struct StopContactRecordingInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) contact_id: ::std::option::Option<::std::string::String>,
     pub(crate) initial_contact_id: ::std::option::Option<::std::string::String>,
+    pub(crate) contact_recording_type: ::std::option::Option<crate::types::ContactRecordingType>,
 }
 impl StopContactRecordingInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -85,6 +92,20 @@ impl StopContactRecordingInputBuilder {
     pub fn get_initial_contact_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.initial_contact_id
     }
+    /// <p>The type of recording being operated on.</p>
+    pub fn contact_recording_type(mut self, input: crate::types::ContactRecordingType) -> Self {
+        self.contact_recording_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of recording being operated on.</p>
+    pub fn set_contact_recording_type(mut self, input: ::std::option::Option<crate::types::ContactRecordingType>) -> Self {
+        self.contact_recording_type = input;
+        self
+    }
+    /// <p>The type of recording being operated on.</p>
+    pub fn get_contact_recording_type(&self) -> &::std::option::Option<crate::types::ContactRecordingType> {
+        &self.contact_recording_type
+    }
     /// Consumes the builder and constructs a [`StopContactRecordingInput`](crate::operation::stop_contact_recording::StopContactRecordingInput).
     pub fn build(
         self,
@@ -94,6 +115,7 @@ impl StopContactRecordingInputBuilder {
             instance_id: self.instance_id,
             contact_id: self.contact_id,
             initial_contact_id: self.initial_contact_id,
+            contact_recording_type: self.contact_recording_type,
         })
     }
 }
