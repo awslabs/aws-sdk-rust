@@ -31,7 +31,10 @@ impl crate::operation::converse_stream::builders::ConverseStreamInputBuilder {
 /// <p>You can also submit a prompt from Prompt management by specifying the ARN of the prompt version and including a map of variables to values in the <code>promptVariables</code> field. You can append more messages to the prompt by using the <code>messages</code> field. If you use a prompt from Prompt management, you can't include the following fields in the request: <code>additionalModelRequestFields</code>, <code>inferenceConfig</code>, <code>system</code>, or <code>toolConfig</code>. Instead, these fields must be defined through Prompt management. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-use.html">Use a prompt from Prompt management</a>.</p>
 /// <p>For information about the Converse API, see <i>Use the Converse API</i> in the <i>Amazon Bedrock User Guide</i>. To use a guardrail, see <i>Use a guardrail with the Converse API</i> in the <i>Amazon Bedrock User Guide</i>. To use a tool with a model, see <i>Tool use (Function calling)</i> in the <i>Amazon Bedrock User Guide</i></p>
 /// <p>For example code, see <i>Conversation streaming example</i> in the <i>Amazon Bedrock User Guide</i>.</p>
-/// <p>This operation requires permission for the <code>bedrock:InvokeModelWithResponseStream</code> action.</p>
+/// <p>This operation requires permission for the <code>bedrock:InvokeModelWithResponseStream</code> action.</p><important>
+/// <p>To deny all inference access to resources that you specify in the modelId field, you need to deny access to the <code>bedrock:InvokeModel</code> and <code>bedrock:InvokeModelWithResponseStream</code> actions. Doing this also denies access to the resource through the base inference actions (<a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModel.html">InvokeModel</a> and <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModelWithResponseStream.html">InvokeModelWithResponseStream</a>). For more information see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-deny-inference">Deny access for inference on specific models</a>.</p>
+/// </important>
+/// <p>For troubleshooting some of the common errors you might encounter when using the <code>ConverseStream</code> API, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html">Troubleshooting Amazon Bedrock API Error Codes</a> in the Amazon Bedrock User Guide</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ConverseStreamFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -128,7 +131,7 @@ impl ConverseStreamFluentBuilder {
     /// <li>
     /// <p>If you use a custom model, first purchase Provisioned Throughput for it. Then specify the ARN of the resulting provisioned model. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html">Use a custom model in Amazon Bedrock</a> in the Amazon Bedrock User Guide.</p></li>
     /// <li>
-    /// <p>To include a prompt that was defined in Prompt management, specify the ARN of the prompt version to use.</p></li>
+    /// <p>To include a prompt that was defined in <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management.html">Prompt management</a>, specify the ARN of the prompt version to use.</p></li>
     /// </ul>
     /// <p>The Converse API doesn't support <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html">imported models</a>.</p>
     pub fn model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -146,7 +149,7 @@ impl ConverseStreamFluentBuilder {
     /// <li>
     /// <p>If you use a custom model, first purchase Provisioned Throughput for it. Then specify the ARN of the resulting provisioned model. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html">Use a custom model in Amazon Bedrock</a> in the Amazon Bedrock User Guide.</p></li>
     /// <li>
-    /// <p>To include a prompt that was defined in Prompt management, specify the ARN of the prompt version to use.</p></li>
+    /// <p>To include a prompt that was defined in <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management.html">Prompt management</a>, specify the ARN of the prompt version to use.</p></li>
     /// </ul>
     /// <p>The Converse API doesn't support <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html">imported models</a>.</p>
     pub fn set_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -164,7 +167,7 @@ impl ConverseStreamFluentBuilder {
     /// <li>
     /// <p>If you use a custom model, first purchase Provisioned Throughput for it. Then specify the ARN of the resulting provisioned model. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html">Use a custom model in Amazon Bedrock</a> in the Amazon Bedrock User Guide.</p></li>
     /// <li>
-    /// <p>To include a prompt that was defined in Prompt management, specify the ARN of the prompt version to use.</p></li>
+    /// <p>To include a prompt that was defined in <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management.html">Prompt management</a>, specify the ARN of the prompt version to use.</p></li>
     /// </ul>
     /// <p>The Converse API doesn't support <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html">imported models</a>.</p>
     pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -321,5 +324,19 @@ impl ConverseStreamFluentBuilder {
     /// <p><code>Converse</code> and <code>ConverseStream</code> reject an empty JSON Pointer or incorrectly structured JSON Pointer with a <code>400</code> error code. if the JSON Pointer is valid, but the requested field is not in the model response, it is ignored by <code>Converse</code>.</p>
     pub fn get_additional_model_response_field_paths(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_additional_model_response_field_paths()
+    }
+    /// <p>Model performance settings for the request.</p>
+    pub fn performance_config(mut self, input: crate::types::PerformanceConfiguration) -> Self {
+        self.inner = self.inner.performance_config(input);
+        self
+    }
+    /// <p>Model performance settings for the request.</p>
+    pub fn set_performance_config(mut self, input: ::std::option::Option<crate::types::PerformanceConfiguration>) -> Self {
+        self.inner = self.inner.set_performance_config(input);
+        self
+    }
+    /// <p>Model performance settings for the request.</p>
+    pub fn get_performance_config(&self) -> &::std::option::Option<crate::types::PerformanceConfiguration> {
+        self.inner.get_performance_config()
     }
 }

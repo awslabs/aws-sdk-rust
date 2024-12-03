@@ -10,6 +10,8 @@ pub struct LinkedWhatsAppBusinessAccountIdMetaData {
     pub registration_status: ::std::option::Option<crate::types::RegistrationStatus>,
     /// <p>The details for unregistered WhatsApp phone numbers.</p>
     pub unregistered_whats_app_phone_numbers: ::std::option::Option<::std::vec::Vec<crate::types::WhatsAppPhoneNumberDetail>>,
+    /// <p>The Amazon Resource Name (ARN) of the WhatsApp Business Account ID.</p>
+    pub waba_id: ::std::option::Option<::std::string::String>,
 }
 impl LinkedWhatsAppBusinessAccountIdMetaData {
     /// <p>The name of your account.</p>
@@ -26,6 +28,10 @@ impl LinkedWhatsAppBusinessAccountIdMetaData {
     pub fn unregistered_whats_app_phone_numbers(&self) -> &[crate::types::WhatsAppPhoneNumberDetail] {
         self.unregistered_whats_app_phone_numbers.as_deref().unwrap_or_default()
     }
+    /// <p>The Amazon Resource Name (ARN) of the WhatsApp Business Account ID.</p>
+    pub fn waba_id(&self) -> ::std::option::Option<&str> {
+        self.waba_id.as_deref()
+    }
 }
 impl LinkedWhatsAppBusinessAccountIdMetaData {
     /// Creates a new builder-style object to manufacture [`LinkedWhatsAppBusinessAccountIdMetaData`](crate::types::LinkedWhatsAppBusinessAccountIdMetaData).
@@ -41,6 +47,7 @@ pub struct LinkedWhatsAppBusinessAccountIdMetaDataBuilder {
     pub(crate) account_name: ::std::option::Option<::std::string::String>,
     pub(crate) registration_status: ::std::option::Option<crate::types::RegistrationStatus>,
     pub(crate) unregistered_whats_app_phone_numbers: ::std::option::Option<::std::vec::Vec<crate::types::WhatsAppPhoneNumberDetail>>,
+    pub(crate) waba_id: ::std::option::Option<::std::string::String>,
 }
 impl LinkedWhatsAppBusinessAccountIdMetaDataBuilder {
     /// <p>The name of your account.</p>
@@ -94,12 +101,27 @@ impl LinkedWhatsAppBusinessAccountIdMetaDataBuilder {
     pub fn get_unregistered_whats_app_phone_numbers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WhatsAppPhoneNumberDetail>> {
         &self.unregistered_whats_app_phone_numbers
     }
+    /// <p>The Amazon Resource Name (ARN) of the WhatsApp Business Account ID.</p>
+    pub fn waba_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.waba_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the WhatsApp Business Account ID.</p>
+    pub fn set_waba_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.waba_id = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the WhatsApp Business Account ID.</p>
+    pub fn get_waba_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.waba_id
+    }
     /// Consumes the builder and constructs a [`LinkedWhatsAppBusinessAccountIdMetaData`](crate::types::LinkedWhatsAppBusinessAccountIdMetaData).
     pub fn build(self) -> crate::types::LinkedWhatsAppBusinessAccountIdMetaData {
         crate::types::LinkedWhatsAppBusinessAccountIdMetaData {
             account_name: self.account_name,
             registration_status: self.registration_status,
             unregistered_whats_app_phone_numbers: self.unregistered_whats_app_phone_numbers,
+            waba_id: self.waba_id,
         }
     }
 }

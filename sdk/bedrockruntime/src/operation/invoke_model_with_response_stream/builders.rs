@@ -27,7 +27,10 @@ impl crate::operation::invoke_model_with_response_stream::builders::InvokeModelW
 /// <p>The CLI doesn't support streaming operations in Amazon Bedrock, including <code>InvokeModelWithResponseStream</code>.</p>
 /// </note>
 /// <p>For example code, see <i>Invoke model with streaming code example</i> in the <i>Amazon Bedrock User Guide</i>.</p>
-/// <p>This operation requires permissions to perform the <code>bedrock:InvokeModelWithResponseStream</code> action.</p>
+/// <p>This operation requires permissions to perform the <code>bedrock:InvokeModelWithResponseStream</code> action.</p><important>
+/// <p>To deny all inference access to resources that you specify in the modelId field, you need to deny access to the <code>bedrock:InvokeModel</code> and <code>bedrock:InvokeModelWithResponseStream</code> actions. Doing this also denies access to the resource through the Converse API actions (<a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Converse.html">Converse</a> and <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ConverseStream.html">ConverseStream</a>). For more information see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-deny-inference">Deny access for inference on specific models</a>.</p>
+/// </important>
+/// <p>For troubleshooting some of the common errors you might encounter when using the <code>InvokeModelWithResponseStream</code> API, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html">Troubleshooting Amazon Bedrock API Error Codes</a> in the Amazon Bedrock User Guide</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct InvokeModelWithResponseStreamFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -156,10 +159,12 @@ impl InvokeModelWithResponseStreamFluentBuilder {
         self.inner.get_accept()
     }
     /// <p>The unique identifier of the model to invoke to run inference.</p>
-    /// <p>The <code>modelId</code> to provide depends on the type of model that you use:</p>
+    /// <p>The <code>modelId</code> to provide depends on the type of model or throughput that you use:</p>
     /// <ul>
     /// <li>
     /// <p>If you use a base model, specify the model ID or its ARN. For a list of model IDs for base models, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-ids.html#model-ids-arns">Amazon Bedrock base model IDs (on-demand throughput)</a> in the Amazon Bedrock User Guide.</p></li>
+    /// <li>
+    /// <p>If you use an inference profile, specify the inference profile ID or its ARN. For a list of inference profile IDs, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference-support.html">Supported Regions and models for cross-region inference</a> in the Amazon Bedrock User Guide.</p></li>
     /// <li>
     /// <p>If you use a provisioned model, specify the ARN of the Provisioned Throughput. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-thru-use.html">Run inference using a Provisioned Throughput</a> in the Amazon Bedrock User Guide.</p></li>
     /// <li>
@@ -172,10 +177,12 @@ impl InvokeModelWithResponseStreamFluentBuilder {
         self
     }
     /// <p>The unique identifier of the model to invoke to run inference.</p>
-    /// <p>The <code>modelId</code> to provide depends on the type of model that you use:</p>
+    /// <p>The <code>modelId</code> to provide depends on the type of model or throughput that you use:</p>
     /// <ul>
     /// <li>
     /// <p>If you use a base model, specify the model ID or its ARN. For a list of model IDs for base models, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-ids.html#model-ids-arns">Amazon Bedrock base model IDs (on-demand throughput)</a> in the Amazon Bedrock User Guide.</p></li>
+    /// <li>
+    /// <p>If you use an inference profile, specify the inference profile ID or its ARN. For a list of inference profile IDs, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference-support.html">Supported Regions and models for cross-region inference</a> in the Amazon Bedrock User Guide.</p></li>
     /// <li>
     /// <p>If you use a provisioned model, specify the ARN of the Provisioned Throughput. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-thru-use.html">Run inference using a Provisioned Throughput</a> in the Amazon Bedrock User Guide.</p></li>
     /// <li>
@@ -188,10 +195,12 @@ impl InvokeModelWithResponseStreamFluentBuilder {
         self
     }
     /// <p>The unique identifier of the model to invoke to run inference.</p>
-    /// <p>The <code>modelId</code> to provide depends on the type of model that you use:</p>
+    /// <p>The <code>modelId</code> to provide depends on the type of model or throughput that you use:</p>
     /// <ul>
     /// <li>
     /// <p>If you use a base model, specify the model ID or its ARN. For a list of model IDs for base models, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-ids.html#model-ids-arns">Amazon Bedrock base model IDs (on-demand throughput)</a> in the Amazon Bedrock User Guide.</p></li>
+    /// <li>
+    /// <p>If you use an inference profile, specify the inference profile ID or its ARN. For a list of inference profile IDs, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference-support.html">Supported Regions and models for cross-region inference</a> in the Amazon Bedrock User Guide.</p></li>
     /// <li>
     /// <p>If you use a provisioned model, specify the ARN of the Provisioned Throughput. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-thru-use.html">Run inference using a Provisioned Throughput</a> in the Amazon Bedrock User Guide.</p></li>
     /// <li>
@@ -270,5 +279,19 @@ impl InvokeModelWithResponseStreamFluentBuilder {
     /// <p>The version number for the guardrail. The value can also be <code>DRAFT</code>.</p>
     pub fn get_guardrail_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_guardrail_version()
+    }
+    /// <p>Model performance settings for the request.</p>
+    pub fn performance_config_latency(mut self, input: crate::types::PerformanceConfigLatency) -> Self {
+        self.inner = self.inner.performance_config_latency(input);
+        self
+    }
+    /// <p>Model performance settings for the request.</p>
+    pub fn set_performance_config_latency(mut self, input: ::std::option::Option<crate::types::PerformanceConfigLatency>) -> Self {
+        self.inner = self.inner.set_performance_config_latency(input);
+        self
+    }
+    /// <p>Model performance settings for the request.</p>
+    pub fn get_performance_config_latency(&self) -> &::std::option::Option<crate::types::PerformanceConfigLatency> {
+        self.inner.get_performance_config_latency()
     }
 }

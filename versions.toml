@@ -286,9 +286,9 @@ model_hash = '7a87da6fcae4d551138cd746a9f8c8780e5991eeed1ae5ef2e0d11586fbce1ad'
 
 [crates.aws-sdk-bedrockruntime]
 category = 'AwsSdk'
-version = '1.61.0'
-source_hash = '9558b54deb2ac0b3c848bef34a1fb825ba9086a9d8371e677d83e1a0ba6152ae'
-model_hash = '70062669360aa62e7fa6905e73d4b1ce9b7a96352dd14fad9d85d5629c3e9e2d'
+version = '1.62.0'
+source_hash = '587db9795181c1097c6d368ba69ff6765d0be6e6c54c947e250e26857e11a6dc'
+model_hash = '1566b35a4d7cb5b9cea1b41ddd1ee3f438684b4c7a3511b9703bd7ceafe51c45'
 
 [crates.aws-sdk-billing]
 category = 'AwsSdk'
@@ -1990,9 +1990,9 @@ model_hash = '1edaa46f7fd5c13e0382b7e04711194f5833479f29541ceb269ab4fd0f3ddbe0'
 
 [crates.aws-sdk-s3control]
 category = 'AwsSdk'
-version = '1.53.0'
-source_hash = '0a84d3e1734b1a922a5bcb2ccb7f366037922fdd8803c6e8482abe581cc8b926'
-model_hash = '63112bf55cd876d2855eb73d0a96816a307af19d293d41932f3222ebb85e6e67'
+version = '1.54.0'
+source_hash = '68f46f27c57a77e90865ef860af1496382ca16feace966980935b48747b7228d'
+model_hash = '6fb7dbbca8c1f02a774745f33fff88e3104f62aa7b55c109572294f3652bcb4c'
 
 [crates.aws-sdk-s3outposts]
 category = 'AwsSdk'
@@ -2176,9 +2176,9 @@ model_hash = 'fdf1224fe00b4e32140d8ea9b9c93d764bde4027c2e212e2c7f8421c90268134'
 
 [crates.aws-sdk-socialmessaging]
 category = 'AwsSdk'
-version = '1.3.0'
-source_hash = '0137283fef060064de1384cf0b7379c634208ef58f3337fa3ab2eb2b9ab983dd'
-model_hash = 'd0f11fe8d81d0e4a3ae56122cd0e9be4523eaf85d537a5a2052cc44e84b766d0'
+version = '1.4.0'
+source_hash = '8096e602d662920928c6c9f36e1945cc1826ea6ec0703784f3438a2d17f418c8'
+model_hash = '051fb9fac8caa77fe4df43058c66904c841aa66c4905a7197c4077033b5dd862'
 
 [crates.aws-sdk-sqs]
 category = 'AwsSdk'
@@ -2571,38 +2571,7 @@ source_hash = 'f926d3a7deb08a19ecbde8ed9516c47a27d4a3db2cf6b2f2532791634565b05e'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '340172f38639aeb06ccd407828639e840caf6a7109c4eac3c6c78a9e06c1ef06'
-
-[release]
-tag = 'release-2024-12-02'
-
 [release.crates]
-aws-sdk-bedrock = '1.62.0'
-aws-sdk-bedrockagent = '1.65.0'
-aws-sdk-bedrockagentruntime = '1.63.0'
-aws-sdk-chimesdkvoice = '1.51.0'
-aws-sdk-cleanrooms = '1.57.0'
-aws-sdk-cloudwatchlogs = '1.59.0'
-aws-sdk-connect = '1.77.0'
-aws-sdk-connectcampaignsv2 = '1.1.0'
-aws-sdk-customerprofiles = '1.54.0'
-aws-sdk-ec2 = '1.94.0'
-aws-sdk-ecs = '1.56.1'
-aws-sdk-eks = '1.59.0'
-aws-sdk-eventbridge = '1.52.0'
-aws-sdk-fsx = '1.55.0'
-aws-sdk-guardduty = '1.58.0'
-aws-sdk-imagebuilder = '1.52.0'
-aws-sdk-invoicing = '1.0.0'
-aws-sdk-memorydb = '1.51.0'
-aws-sdk-networkflowmonitor = '1.0.0'
-aws-sdk-opensearch = '1.62.0'
-aws-sdk-organizations = '1.56.0'
-aws-sdk-qbusiness = '1.55.0'
-aws-sdk-qconnect = '1.55.0'
-aws-sdk-rds = '1.68.0'
-aws-sdk-s3 = '1.64.0'
-aws-sdk-s3control = '1.53.0'
-aws-sdk-securityhub = '1.53.0'
-aws-sdk-securityir = '1.0.0'
-aws-sdk-transfer = '1.55.0'
-aws-sdk-vpclattice = '1.51.0'
+aws-sdk-bedrockruntime = '1.62.0'
+aws-sdk-s3control = '1.54.0'
+aws-sdk-socialmessaging = '1.4.0'

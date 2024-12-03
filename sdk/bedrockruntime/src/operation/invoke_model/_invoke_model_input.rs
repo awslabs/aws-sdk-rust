@@ -10,10 +10,12 @@ pub struct InvokeModelInput {
     /// <p>The desired MIME type of the inference body in the response. The default value is <code>application/json</code>.</p>
     pub accept: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the model to invoke to run inference.</p>
-    /// <p>The <code>modelId</code> to provide depends on the type of model that you use:</p>
+    /// <p>The <code>modelId</code> to provide depends on the type of model or throughput that you use:</p>
     /// <ul>
     /// <li>
     /// <p>If you use a base model, specify the model ID or its ARN. For a list of model IDs for base models, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-ids.html#model-ids-arns">Amazon Bedrock base model IDs (on-demand throughput)</a> in the Amazon Bedrock User Guide.</p></li>
+    /// <li>
+    /// <p>If you use an inference profile, specify the inference profile ID or its ARN. For a list of inference profile IDs, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference-support.html">Supported Regions and models for cross-region inference</a> in the Amazon Bedrock User Guide.</p></li>
     /// <li>
     /// <p>If you use a provisioned model, specify the ARN of the Provisioned Throughput. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-thru-use.html">Run inference using a Provisioned Throughput</a> in the Amazon Bedrock User Guide.</p></li>
     /// <li>
@@ -37,6 +39,8 @@ pub struct InvokeModelInput {
     pub guardrail_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The version number for the guardrail. The value can also be <code>DRAFT</code>.</p>
     pub guardrail_version: ::std::option::Option<::std::string::String>,
+    /// <p>Model performance settings for the request.</p>
+    pub performance_config_latency: ::std::option::Option<crate::types::PerformanceConfigLatency>,
 }
 impl InvokeModelInput {
     /// <p>The prompt and inference parameters in the format specified in the <code>contentType</code> in the header. You must provide the body in JSON format. To see the format and content of the request and response bodies for different models, refer to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html">Run inference</a> in the Bedrock User Guide.</p>
@@ -52,10 +56,12 @@ impl InvokeModelInput {
         self.accept.as_deref()
     }
     /// <p>The unique identifier of the model to invoke to run inference.</p>
-    /// <p>The <code>modelId</code> to provide depends on the type of model that you use:</p>
+    /// <p>The <code>modelId</code> to provide depends on the type of model or throughput that you use:</p>
     /// <ul>
     /// <li>
     /// <p>If you use a base model, specify the model ID or its ARN. For a list of model IDs for base models, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-ids.html#model-ids-arns">Amazon Bedrock base model IDs (on-demand throughput)</a> in the Amazon Bedrock User Guide.</p></li>
+    /// <li>
+    /// <p>If you use an inference profile, specify the inference profile ID or its ARN. For a list of inference profile IDs, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference-support.html">Supported Regions and models for cross-region inference</a> in the Amazon Bedrock User Guide.</p></li>
     /// <li>
     /// <p>If you use a provisioned model, specify the ARN of the Provisioned Throughput. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-thru-use.html">Run inference using a Provisioned Throughput</a> in the Amazon Bedrock User Guide.</p></li>
     /// <li>
@@ -87,6 +93,10 @@ impl InvokeModelInput {
     pub fn guardrail_version(&self) -> ::std::option::Option<&str> {
         self.guardrail_version.as_deref()
     }
+    /// <p>Model performance settings for the request.</p>
+    pub fn performance_config_latency(&self) -> ::std::option::Option<&crate::types::PerformanceConfigLatency> {
+        self.performance_config_latency.as_ref()
+    }
 }
 impl ::std::fmt::Debug for InvokeModelInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -98,6 +108,7 @@ impl ::std::fmt::Debug for InvokeModelInput {
         formatter.field("trace", &self.trace);
         formatter.field("guardrail_identifier", &self.guardrail_identifier);
         formatter.field("guardrail_version", &self.guardrail_version);
+        formatter.field("performance_config_latency", &self.performance_config_latency);
         formatter.finish()
     }
 }
@@ -119,6 +130,7 @@ pub struct InvokeModelInputBuilder {
     pub(crate) trace: ::std::option::Option<crate::types::Trace>,
     pub(crate) guardrail_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) guardrail_version: ::std::option::Option<::std::string::String>,
+    pub(crate) performance_config_latency: ::std::option::Option<crate::types::PerformanceConfigLatency>,
 }
 impl InvokeModelInputBuilder {
     /// <p>The prompt and inference parameters in the format specified in the <code>contentType</code> in the header. You must provide the body in JSON format. To see the format and content of the request and response bodies for different models, refer to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html">Run inference</a> in the Bedrock User Guide.</p>
@@ -164,10 +176,12 @@ impl InvokeModelInputBuilder {
         &self.accept
     }
     /// <p>The unique identifier of the model to invoke to run inference.</p>
-    /// <p>The <code>modelId</code> to provide depends on the type of model that you use:</p>
+    /// <p>The <code>modelId</code> to provide depends on the type of model or throughput that you use:</p>
     /// <ul>
     /// <li>
     /// <p>If you use a base model, specify the model ID or its ARN. For a list of model IDs for base models, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-ids.html#model-ids-arns">Amazon Bedrock base model IDs (on-demand throughput)</a> in the Amazon Bedrock User Guide.</p></li>
+    /// <li>
+    /// <p>If you use an inference profile, specify the inference profile ID or its ARN. For a list of inference profile IDs, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference-support.html">Supported Regions and models for cross-region inference</a> in the Amazon Bedrock User Guide.</p></li>
     /// <li>
     /// <p>If you use a provisioned model, specify the ARN of the Provisioned Throughput. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-thru-use.html">Run inference using a Provisioned Throughput</a> in the Amazon Bedrock User Guide.</p></li>
     /// <li>
@@ -181,10 +195,12 @@ impl InvokeModelInputBuilder {
         self
     }
     /// <p>The unique identifier of the model to invoke to run inference.</p>
-    /// <p>The <code>modelId</code> to provide depends on the type of model that you use:</p>
+    /// <p>The <code>modelId</code> to provide depends on the type of model or throughput that you use:</p>
     /// <ul>
     /// <li>
     /// <p>If you use a base model, specify the model ID or its ARN. For a list of model IDs for base models, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-ids.html#model-ids-arns">Amazon Bedrock base model IDs (on-demand throughput)</a> in the Amazon Bedrock User Guide.</p></li>
+    /// <li>
+    /// <p>If you use an inference profile, specify the inference profile ID or its ARN. For a list of inference profile IDs, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference-support.html">Supported Regions and models for cross-region inference</a> in the Amazon Bedrock User Guide.</p></li>
     /// <li>
     /// <p>If you use a provisioned model, specify the ARN of the Provisioned Throughput. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-thru-use.html">Run inference using a Provisioned Throughput</a> in the Amazon Bedrock User Guide.</p></li>
     /// <li>
@@ -197,10 +213,12 @@ impl InvokeModelInputBuilder {
         self
     }
     /// <p>The unique identifier of the model to invoke to run inference.</p>
-    /// <p>The <code>modelId</code> to provide depends on the type of model that you use:</p>
+    /// <p>The <code>modelId</code> to provide depends on the type of model or throughput that you use:</p>
     /// <ul>
     /// <li>
     /// <p>If you use a base model, specify the model ID or its ARN. For a list of model IDs for base models, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-ids.html#model-ids-arns">Amazon Bedrock base model IDs (on-demand throughput)</a> in the Amazon Bedrock User Guide.</p></li>
+    /// <li>
+    /// <p>If you use an inference profile, specify the inference profile ID or its ARN. For a list of inference profile IDs, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference-support.html">Supported Regions and models for cross-region inference</a> in the Amazon Bedrock User Guide.</p></li>
     /// <li>
     /// <p>If you use a provisioned model, specify the ARN of the Provisioned Throughput. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-thru-use.html">Run inference using a Provisioned Throughput</a> in the Amazon Bedrock User Guide.</p></li>
     /// <li>
@@ -280,6 +298,20 @@ impl InvokeModelInputBuilder {
     pub fn get_guardrail_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.guardrail_version
     }
+    /// <p>Model performance settings for the request.</p>
+    pub fn performance_config_latency(mut self, input: crate::types::PerformanceConfigLatency) -> Self {
+        self.performance_config_latency = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Model performance settings for the request.</p>
+    pub fn set_performance_config_latency(mut self, input: ::std::option::Option<crate::types::PerformanceConfigLatency>) -> Self {
+        self.performance_config_latency = input;
+        self
+    }
+    /// <p>Model performance settings for the request.</p>
+    pub fn get_performance_config_latency(&self) -> &::std::option::Option<crate::types::PerformanceConfigLatency> {
+        &self.performance_config_latency
+    }
     /// Consumes the builder and constructs a [`InvokeModelInput`](crate::operation::invoke_model::InvokeModelInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::invoke_model::InvokeModelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::invoke_model::InvokeModelInput {
@@ -290,6 +322,7 @@ impl InvokeModelInputBuilder {
             trace: self.trace,
             guardrail_identifier: self.guardrail_identifier,
             guardrail_version: self.guardrail_version,
+            performance_config_latency: self.performance_config_latency,
         })
     }
 }
@@ -303,6 +336,7 @@ impl ::std::fmt::Debug for InvokeModelInputBuilder {
         formatter.field("trace", &self.trace);
         formatter.field("guardrail_identifier", &self.guardrail_identifier);
         formatter.field("guardrail_version", &self.guardrail_version);
+        formatter.field("performance_config_latency", &self.performance_config_latency);
         formatter.finish()
     }
 }

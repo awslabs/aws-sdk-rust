@@ -205,6 +205,11 @@ pub(crate) fn de_converse(
                 "output" => {
                     builder = builder.set_output(crate::protocol_serde::shape_converse_output::de_converse_output(tokens)?);
                 }
+                "performanceConfig" => {
+                    builder = builder.set_performance_config(crate::protocol_serde::shape_performance_configuration::de_performance_configuration(
+                        tokens,
+                    )?);
+                }
                 "stopReason" => {
                     builder = builder.set_stop_reason(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

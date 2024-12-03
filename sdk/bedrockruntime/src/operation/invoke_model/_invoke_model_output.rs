@@ -7,6 +7,8 @@ pub struct InvokeModelOutput {
     pub body: ::aws_smithy_types::Blob,
     /// <p>The MIME type of the inference result.</p>
     pub content_type: ::std::string::String,
+    /// <p>Model performance settings for the request.</p>
+    pub performance_config_latency: ::std::option::Option<crate::types::PerformanceConfigLatency>,
     _request_id: Option<String>,
 }
 impl InvokeModelOutput {
@@ -19,12 +21,17 @@ impl InvokeModelOutput {
         use std::ops::Deref;
         self.content_type.deref()
     }
+    /// <p>Model performance settings for the request.</p>
+    pub fn performance_config_latency(&self) -> ::std::option::Option<&crate::types::PerformanceConfigLatency> {
+        self.performance_config_latency.as_ref()
+    }
 }
 impl ::std::fmt::Debug for InvokeModelOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("InvokeModelOutput");
         formatter.field("body", &"*** Sensitive Data Redacted ***");
         formatter.field("content_type", &self.content_type);
+        formatter.field("performance_config_latency", &self.performance_config_latency);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -47,6 +54,7 @@ impl InvokeModelOutput {
 pub struct InvokeModelOutputBuilder {
     pub(crate) body: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) content_type: ::std::option::Option<::std::string::String>,
+    pub(crate) performance_config_latency: ::std::option::Option<crate::types::PerformanceConfigLatency>,
     _request_id: Option<String>,
 }
 impl InvokeModelOutputBuilder {
@@ -80,6 +88,20 @@ impl InvokeModelOutputBuilder {
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.content_type
     }
+    /// <p>Model performance settings for the request.</p>
+    pub fn performance_config_latency(mut self, input: crate::types::PerformanceConfigLatency) -> Self {
+        self.performance_config_latency = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Model performance settings for the request.</p>
+    pub fn set_performance_config_latency(mut self, input: ::std::option::Option<crate::types::PerformanceConfigLatency>) -> Self {
+        self.performance_config_latency = input;
+        self
+    }
+    /// <p>Model performance settings for the request.</p>
+    pub fn get_performance_config_latency(&self) -> &::std::option::Option<crate::types::PerformanceConfigLatency> {
+        &self.performance_config_latency
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -107,6 +129,7 @@ impl InvokeModelOutputBuilder {
                     "content_type was not specified but it is required when building InvokeModelOutput",
                 )
             })?,
+            performance_config_latency: self.performance_config_latency,
             _request_id: self._request_id,
         })
     }
@@ -116,6 +139,7 @@ impl ::std::fmt::Debug for InvokeModelOutputBuilder {
         let mut formatter = f.debug_struct("InvokeModelOutputBuilder");
         formatter.field("body", &"*** Sensitive Data Redacted ***");
         formatter.field("content_type", &self.content_type);
+        formatter.field("performance_config_latency", &self.performance_config_latency);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

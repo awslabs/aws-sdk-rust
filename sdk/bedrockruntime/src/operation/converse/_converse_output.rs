@@ -15,6 +15,8 @@ pub struct ConverseOutput {
     pub additional_model_response_fields: ::std::option::Option<::aws_smithy_types::Document>,
     /// <p>A trace object that contains information about the Guardrail behavior.</p>
     pub trace: ::std::option::Option<crate::types::ConverseTrace>,
+    /// <p>Model performance settings for the request.</p>
+    pub performance_config: ::std::option::Option<crate::types::PerformanceConfiguration>,
     _request_id: Option<String>,
 }
 impl ConverseOutput {
@@ -42,6 +44,10 @@ impl ConverseOutput {
     pub fn trace(&self) -> ::std::option::Option<&crate::types::ConverseTrace> {
         self.trace.as_ref()
     }
+    /// <p>Model performance settings for the request.</p>
+    pub fn performance_config(&self) -> ::std::option::Option<&crate::types::PerformanceConfiguration> {
+        self.performance_config.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for ConverseOutput {
     fn request_id(&self) -> Option<&str> {
@@ -65,6 +71,7 @@ pub struct ConverseOutputBuilder {
     pub(crate) metrics: ::std::option::Option<crate::types::ConverseMetrics>,
     pub(crate) additional_model_response_fields: ::std::option::Option<::aws_smithy_types::Document>,
     pub(crate) trace: ::std::option::Option<crate::types::ConverseTrace>,
+    pub(crate) performance_config: ::std::option::Option<crate::types::PerformanceConfiguration>,
     _request_id: Option<String>,
 }
 impl ConverseOutputBuilder {
@@ -156,6 +163,20 @@ impl ConverseOutputBuilder {
     pub fn get_trace(&self) -> &::std::option::Option<crate::types::ConverseTrace> {
         &self.trace
     }
+    /// <p>Model performance settings for the request.</p>
+    pub fn performance_config(mut self, input: crate::types::PerformanceConfiguration) -> Self {
+        self.performance_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Model performance settings for the request.</p>
+    pub fn set_performance_config(mut self, input: ::std::option::Option<crate::types::PerformanceConfiguration>) -> Self {
+        self.performance_config = input;
+        self
+    }
+    /// <p>Model performance settings for the request.</p>
+    pub fn get_performance_config(&self) -> &::std::option::Option<crate::types::PerformanceConfiguration> {
+        &self.performance_config
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -181,6 +202,7 @@ impl ConverseOutputBuilder {
             metrics: self.metrics,
             additional_model_response_fields: self.additional_model_response_fields,
             trace: self.trace,
+            performance_config: self.performance_config,
             _request_id: self._request_id,
         })
     }

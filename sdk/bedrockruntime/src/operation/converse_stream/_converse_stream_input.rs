@@ -14,7 +14,7 @@ pub struct ConverseStreamInput {
     /// <li>
     /// <p>If you use a custom model, first purchase Provisioned Throughput for it. Then specify the ARN of the resulting provisioned model. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html">Use a custom model in Amazon Bedrock</a> in the Amazon Bedrock User Guide.</p></li>
     /// <li>
-    /// <p>To include a prompt that was defined in Prompt management, specify the ARN of the prompt version to use.</p></li>
+    /// <p>To include a prompt that was defined in <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management.html">Prompt management</a>, specify the ARN of the prompt version to use.</p></li>
     /// </ul>
     /// <p>The Converse API doesn't support <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html">imported models</a>.</p>
     pub model_id: ::std::option::Option<::std::string::String>,
@@ -39,6 +39,8 @@ pub struct ConverseStreamInput {
     /// <p>For information about the JSON Pointer syntax, see the <a href="https://datatracker.ietf.org/doc/html/rfc6901">Internet Engineering Task Force (IETF)</a> documentation.</p>
     /// <p><code>Converse</code> and <code>ConverseStream</code> reject an empty JSON Pointer or incorrectly structured JSON Pointer with a <code>400</code> error code. if the JSON Pointer is valid, but the requested field is not in the model response, it is ignored by <code>Converse</code>.</p>
     pub additional_model_response_field_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Model performance settings for the request.</p>
+    pub performance_config: ::std::option::Option<crate::types::PerformanceConfiguration>,
 }
 impl ConverseStreamInput {
     /// <p>Specifies the model or throughput with which to run inference, or the prompt resource to use in inference. The value depends on the resource that you use:</p>
@@ -52,7 +54,7 @@ impl ConverseStreamInput {
     /// <li>
     /// <p>If you use a custom model, first purchase Provisioned Throughput for it. Then specify the ARN of the resulting provisioned model. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html">Use a custom model in Amazon Bedrock</a> in the Amazon Bedrock User Guide.</p></li>
     /// <li>
-    /// <p>To include a prompt that was defined in Prompt management, specify the ARN of the prompt version to use.</p></li>
+    /// <p>To include a prompt that was defined in <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management.html">Prompt management</a>, specify the ARN of the prompt version to use.</p></li>
     /// </ul>
     /// <p>The Converse API doesn't support <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html">imported models</a>.</p>
     pub fn model_id(&self) -> ::std::option::Option<&str> {
@@ -101,6 +103,10 @@ impl ConverseStreamInput {
     pub fn additional_model_response_field_paths(&self) -> &[::std::string::String] {
         self.additional_model_response_field_paths.as_deref().unwrap_or_default()
     }
+    /// <p>Model performance settings for the request.</p>
+    pub fn performance_config(&self) -> ::std::option::Option<&crate::types::PerformanceConfiguration> {
+        self.performance_config.as_ref()
+    }
 }
 impl ::std::fmt::Debug for ConverseStreamInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -114,6 +120,7 @@ impl ::std::fmt::Debug for ConverseStreamInput {
         formatter.field("additional_model_request_fields", &self.additional_model_request_fields);
         formatter.field("prompt_variables", &"*** Sensitive Data Redacted ***");
         formatter.field("additional_model_response_field_paths", &self.additional_model_response_field_paths);
+        formatter.field("performance_config", &self.performance_config);
         formatter.finish()
     }
 }
@@ -137,6 +144,7 @@ pub struct ConverseStreamInputBuilder {
     pub(crate) additional_model_request_fields: ::std::option::Option<::aws_smithy_types::Document>,
     pub(crate) prompt_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PromptVariableValues>>,
     pub(crate) additional_model_response_field_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) performance_config: ::std::option::Option<crate::types::PerformanceConfiguration>,
 }
 impl ConverseStreamInputBuilder {
     /// <p>Specifies the model or throughput with which to run inference, or the prompt resource to use in inference. The value depends on the resource that you use:</p>
@@ -150,7 +158,7 @@ impl ConverseStreamInputBuilder {
     /// <li>
     /// <p>If you use a custom model, first purchase Provisioned Throughput for it. Then specify the ARN of the resulting provisioned model. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html">Use a custom model in Amazon Bedrock</a> in the Amazon Bedrock User Guide.</p></li>
     /// <li>
-    /// <p>To include a prompt that was defined in Prompt management, specify the ARN of the prompt version to use.</p></li>
+    /// <p>To include a prompt that was defined in <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management.html">Prompt management</a>, specify the ARN of the prompt version to use.</p></li>
     /// </ul>
     /// <p>The Converse API doesn't support <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html">imported models</a>.</p>
     /// This field is required.
@@ -169,7 +177,7 @@ impl ConverseStreamInputBuilder {
     /// <li>
     /// <p>If you use a custom model, first purchase Provisioned Throughput for it. Then specify the ARN of the resulting provisioned model. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html">Use a custom model in Amazon Bedrock</a> in the Amazon Bedrock User Guide.</p></li>
     /// <li>
-    /// <p>To include a prompt that was defined in Prompt management, specify the ARN of the prompt version to use.</p></li>
+    /// <p>To include a prompt that was defined in <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management.html">Prompt management</a>, specify the ARN of the prompt version to use.</p></li>
     /// </ul>
     /// <p>The Converse API doesn't support <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html">imported models</a>.</p>
     pub fn set_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -187,7 +195,7 @@ impl ConverseStreamInputBuilder {
     /// <li>
     /// <p>If you use a custom model, first purchase Provisioned Throughput for it. Then specify the ARN of the resulting provisioned model. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html">Use a custom model in Amazon Bedrock</a> in the Amazon Bedrock User Guide.</p></li>
     /// <li>
-    /// <p>To include a prompt that was defined in Prompt management, specify the ARN of the prompt version to use.</p></li>
+    /// <p>To include a prompt that was defined in <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management.html">Prompt management</a>, specify the ARN of the prompt version to use.</p></li>
     /// </ul>
     /// <p>The Converse API doesn't support <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html">imported models</a>.</p>
     pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -349,6 +357,20 @@ impl ConverseStreamInputBuilder {
     pub fn get_additional_model_response_field_paths(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.additional_model_response_field_paths
     }
+    /// <p>Model performance settings for the request.</p>
+    pub fn performance_config(mut self, input: crate::types::PerformanceConfiguration) -> Self {
+        self.performance_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Model performance settings for the request.</p>
+    pub fn set_performance_config(mut self, input: ::std::option::Option<crate::types::PerformanceConfiguration>) -> Self {
+        self.performance_config = input;
+        self
+    }
+    /// <p>Model performance settings for the request.</p>
+    pub fn get_performance_config(&self) -> &::std::option::Option<crate::types::PerformanceConfiguration> {
+        &self.performance_config
+    }
     /// Consumes the builder and constructs a [`ConverseStreamInput`](crate::operation::converse_stream::ConverseStreamInput).
     pub fn build(
         self,
@@ -363,6 +385,7 @@ impl ConverseStreamInputBuilder {
             additional_model_request_fields: self.additional_model_request_fields,
             prompt_variables: self.prompt_variables,
             additional_model_response_field_paths: self.additional_model_response_field_paths,
+            performance_config: self.performance_config,
         })
     }
 }
@@ -378,6 +401,7 @@ impl ::std::fmt::Debug for ConverseStreamInputBuilder {
         formatter.field("additional_model_request_fields", &self.additional_model_request_fields);
         formatter.field("prompt_variables", &"*** Sensitive Data Redacted ***");
         formatter.field("additional_model_response_field_paths", &self.additional_model_response_field_paths);
+        formatter.field("performance_config", &self.performance_config);
         formatter.finish()
     }
 }

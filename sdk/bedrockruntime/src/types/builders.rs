@@ -3,6 +3,8 @@ pub use crate::types::_payload_part::PayloadPartBuilder;
 
 pub use crate::types::_converse_stream_metadata_event::ConverseStreamMetadataEventBuilder;
 
+pub use crate::types::_performance_configuration::PerformanceConfigurationBuilder;
+
 pub use crate::types::_converse_stream_trace::ConverseStreamTraceBuilder;
 
 pub use crate::types::_guardrail_trace_assessment::GuardrailTraceAssessmentBuilder;

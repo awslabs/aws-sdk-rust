@@ -25,17 +25,17 @@ pub use crate::types::error::_model_timeout_exception::ModelTimeoutException;
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ResponseStreamError {
-    /// <p>An internal server error occurred. Retry your request.</p>
+    /// <p>An internal server error occurred. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-internal-failure">InternalFailure</a> in the Amazon Bedrock User Guide</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>An error occurred while streaming the response. Retry your request.</p>
     ModelStreamErrorException(crate::types::error::ModelStreamErrorException),
-    /// <p>Input validation failed. Check your request parameters and retry the request.</p>
+    /// <p>The input fails to satisfy the constraints specified by <i>Amazon Bedrock</i>. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-validation-error">ValidationError</a> in the Amazon Bedrock User Guide</p>
     ValidationException(crate::types::error::ValidationException),
-    /// <p>Your request was throttled because of service-wide limitations. Resubmit your request later or in a different region. You can also purchase <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned Throughput</a> to increase the rate or number of tokens you can process.</p>
+    /// <p>Your request was denied due to exceeding the account quotas for <i>Amazon Bedrock</i>. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-throttling-exception">ThrottlingException</a> in the Amazon Bedrock User Guide</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The request took too long to process. Processing time exceeded the model timeout length.</p>
     ModelTimeoutException(crate::types::error::ModelTimeoutException),
-    /// <p>The service isn't currently available. Try again later.</p>
+    /// <p>The service isn't currently available. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-service-unavailable">ServiceUnavailable</a> in the Amazon Bedrock User Guide</p>
     ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
@@ -178,15 +178,15 @@ impl ::aws_types::request_id::RequestId for crate::types::error::ResponseStreamE
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ConverseStreamOutputError {
-    /// <p>An internal server error occurred. Retry your request.</p>
+    /// <p>An internal server error occurred. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-internal-failure">InternalFailure</a> in the Amazon Bedrock User Guide</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>An error occurred while streaming the response. Retry your request.</p>
     ModelStreamErrorException(crate::types::error::ModelStreamErrorException),
-    /// <p>Input validation failed. Check your request parameters and retry the request.</p>
+    /// <p>The input fails to satisfy the constraints specified by <i>Amazon Bedrock</i>. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-validation-error">ValidationError</a> in the Amazon Bedrock User Guide</p>
     ValidationException(crate::types::error::ValidationException),
-    /// <p>Your request was throttled because of service-wide limitations. Resubmit your request later or in a different region. You can also purchase <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned Throughput</a> to increase the rate or number of tokens you can process.</p>
+    /// <p>Your request was denied due to exceeding the account quotas for <i>Amazon Bedrock</i>. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-throttling-exception">ThrottlingException</a> in the Amazon Bedrock User Guide</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p>The service isn't currently available. Try again later.</p>
+    /// <p>The service isn't currently available. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-service-unavailable">ServiceUnavailable</a> in the Amazon Bedrock User Guide</p>
     ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

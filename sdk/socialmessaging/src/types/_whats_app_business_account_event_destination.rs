@@ -6,12 +6,18 @@
 pub struct WhatsAppBusinessAccountEventDestination {
     /// <p>The ARN of the event destination.</p>
     pub event_destination_arn: ::std::string::String,
+    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management role that is able to import phone numbers and write events.</p>
+    pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl WhatsAppBusinessAccountEventDestination {
     /// <p>The ARN of the event destination.</p>
     pub fn event_destination_arn(&self) -> &str {
         use std::ops::Deref;
         self.event_destination_arn.deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management role that is able to import phone numbers and write events.</p>
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+        self.role_arn.as_deref()
     }
 }
 impl WhatsAppBusinessAccountEventDestination {
@@ -26,6 +32,7 @@ impl WhatsAppBusinessAccountEventDestination {
 #[non_exhaustive]
 pub struct WhatsAppBusinessAccountEventDestinationBuilder {
     pub(crate) event_destination_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
 }
 impl WhatsAppBusinessAccountEventDestinationBuilder {
     /// <p>The ARN of the event destination.</p>
@@ -43,6 +50,20 @@ impl WhatsAppBusinessAccountEventDestinationBuilder {
     pub fn get_event_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_destination_arn
     }
+    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management role that is able to import phone numbers and write events.</p>
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management role that is able to import phone numbers and write events.</p>
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.role_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management role that is able to import phone numbers and write events.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// Consumes the builder and constructs a [`WhatsAppBusinessAccountEventDestination`](crate::types::WhatsAppBusinessAccountEventDestination).
     /// This method will fail if any of the following fields are not set:
     /// - [`event_destination_arn`](crate::types::builders::WhatsAppBusinessAccountEventDestinationBuilder::event_destination_arn)
@@ -56,6 +77,7 @@ impl WhatsAppBusinessAccountEventDestinationBuilder {
                     "event_destination_arn was not specified but it is required when building WhatsAppBusinessAccountEventDestination",
                 )
             })?,
+            role_arn: self.role_arn,
         })
     }
 }

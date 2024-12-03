@@ -6,6 +6,9 @@ pub fn ser_whats_app_business_account_event_destination(
     {
         object.key("eventDestinationArn").string(input.event_destination_arn.as_str());
     }
+    if let Some(var_1) = &input.role_arn {
+        object.key("roleArn").string(var_1.as_str());
+    }
     Ok(())
 }
 
@@ -26,6 +29,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "eventDestinationArn" => {
                             builder = builder.set_event_destination_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "roleArn" => {
+                            builder = builder.set_role_arn(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

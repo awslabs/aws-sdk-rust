@@ -10,6 +10,8 @@ pub struct ConverseStreamMetadataEvent {
     pub metrics: ::std::option::Option<crate::types::ConverseStreamMetrics>,
     /// <p>The trace object in the response from <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ConverseStream.html">ConverseStream</a> that contains information about the guardrail behavior.</p>
     pub trace: ::std::option::Option<crate::types::ConverseStreamTrace>,
+    /// <p>Model performance configuration metadata for the conversation stream event.</p>
+    pub performance_config: ::std::option::Option<crate::types::PerformanceConfiguration>,
 }
 impl ConverseStreamMetadataEvent {
     /// <p>Usage information for the conversation stream event.</p>
@@ -23,6 +25,10 @@ impl ConverseStreamMetadataEvent {
     /// <p>The trace object in the response from <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ConverseStream.html">ConverseStream</a> that contains information about the guardrail behavior.</p>
     pub fn trace(&self) -> ::std::option::Option<&crate::types::ConverseStreamTrace> {
         self.trace.as_ref()
+    }
+    /// <p>Model performance configuration metadata for the conversation stream event.</p>
+    pub fn performance_config(&self) -> ::std::option::Option<&crate::types::PerformanceConfiguration> {
+        self.performance_config.as_ref()
     }
 }
 impl ConverseStreamMetadataEvent {
@@ -39,6 +45,7 @@ pub struct ConverseStreamMetadataEventBuilder {
     pub(crate) usage: ::std::option::Option<crate::types::TokenUsage>,
     pub(crate) metrics: ::std::option::Option<crate::types::ConverseStreamMetrics>,
     pub(crate) trace: ::std::option::Option<crate::types::ConverseStreamTrace>,
+    pub(crate) performance_config: ::std::option::Option<crate::types::PerformanceConfiguration>,
 }
 impl ConverseStreamMetadataEventBuilder {
     /// <p>Usage information for the conversation stream event.</p>
@@ -85,12 +92,27 @@ impl ConverseStreamMetadataEventBuilder {
     pub fn get_trace(&self) -> &::std::option::Option<crate::types::ConverseStreamTrace> {
         &self.trace
     }
+    /// <p>Model performance configuration metadata for the conversation stream event.</p>
+    pub fn performance_config(mut self, input: crate::types::PerformanceConfiguration) -> Self {
+        self.performance_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Model performance configuration metadata for the conversation stream event.</p>
+    pub fn set_performance_config(mut self, input: ::std::option::Option<crate::types::PerformanceConfiguration>) -> Self {
+        self.performance_config = input;
+        self
+    }
+    /// <p>Model performance configuration metadata for the conversation stream event.</p>
+    pub fn get_performance_config(&self) -> &::std::option::Option<crate::types::PerformanceConfiguration> {
+        &self.performance_config
+    }
     /// Consumes the builder and constructs a [`ConverseStreamMetadataEvent`](crate::types::ConverseStreamMetadataEvent).
     pub fn build(self) -> crate::types::ConverseStreamMetadataEvent {
         crate::types::ConverseStreamMetadataEvent {
             usage: self.usage,
             metrics: self.metrics,
             trace: self.trace,
+            performance_config: self.performance_config,
         }
     }
 }

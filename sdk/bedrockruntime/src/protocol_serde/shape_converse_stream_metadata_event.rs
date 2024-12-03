@@ -38,6 +38,11 @@ where
                         "trace" => {
                             builder = builder.set_trace(crate::protocol_serde::shape_converse_stream_trace::de_converse_stream_trace(tokens)?);
                         }
+                        "performanceConfig" => {
+                            builder = builder.set_performance_config(
+                                crate::protocol_serde::shape_performance_configuration::de_performance_configuration(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

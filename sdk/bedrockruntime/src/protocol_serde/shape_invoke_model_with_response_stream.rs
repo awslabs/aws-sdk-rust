@@ -25,6 +25,15 @@ pub fn de_invoke_model_with_response_stream_http_response(
                 )
             })?,
         );
+        output = output.set_performance_config_latency(
+            crate::protocol_serde::shape_invoke_model_with_response_stream_output::de_performance_config_latency_header(_response_headers).map_err(
+                |_| {
+                    crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::unhandled(
+                        "Failed to parse performanceConfigLatency from header `X-Amzn-Bedrock-PerformanceConfig-Latency",
+                    )
+                },
+            )?,
+        );
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         crate::serde_util::invoke_model_with_response_stream_output_output_correct_errors(output)
             .build()
@@ -298,6 +307,17 @@ pub fn ser_invoke_model_with_response_stream_headers(
             )
         })?;
         builder = builder.header("X-Amzn-Bedrock-GuardrailVersion", header_value);
+    }
+    if let ::std::option::Option::Some(inner_11) = &input.performance_config_latency {
+        let formatted_12 = inner_11.as_str();
+        let header_value = formatted_12;
+        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+            ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                "performance_config_latency",
+                format!("`{}` cannot be used as a header value: {}", &header_value, err),
+            )
+        })?;
+        builder = builder.header("X-Amzn-Bedrock-PerformanceConfig-Latency", header_value);
     }
     Ok(builder)
 }

@@ -7,6 +7,8 @@ pub struct InvokeModelWithResponseStreamOutput {
     pub body: crate::event_receiver::EventReceiver<crate::types::ResponseStream, crate::types::error::ResponseStreamError>,
     /// <p>The MIME type of the inference result.</p>
     pub content_type: ::std::string::String,
+    /// <p>Model performance settings for the request.</p>
+    pub performance_config_latency: ::std::option::Option<crate::types::PerformanceConfigLatency>,
     _request_id: Option<String>,
 }
 impl InvokeModelWithResponseStreamOutput {
@@ -18,6 +20,10 @@ impl InvokeModelWithResponseStreamOutput {
     pub fn content_type(&self) -> &str {
         use std::ops::Deref;
         self.content_type.deref()
+    }
+    /// <p>Model performance settings for the request.</p>
+    pub fn performance_config_latency(&self) -> ::std::option::Option<&crate::types::PerformanceConfigLatency> {
+        self.performance_config_latency.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for InvokeModelWithResponseStreamOutput {
@@ -39,6 +45,7 @@ pub struct InvokeModelWithResponseStreamOutputBuilder {
     pub(crate) body:
         ::std::option::Option<crate::event_receiver::EventReceiver<crate::types::ResponseStream, crate::types::error::ResponseStreamError>>,
     pub(crate) content_type: ::std::option::Option<::std::string::String>,
+    pub(crate) performance_config_latency: ::std::option::Option<crate::types::PerformanceConfigLatency>,
     _request_id: Option<String>,
 }
 impl InvokeModelWithResponseStreamOutputBuilder {
@@ -80,6 +87,20 @@ impl InvokeModelWithResponseStreamOutputBuilder {
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.content_type
     }
+    /// <p>Model performance settings for the request.</p>
+    pub fn performance_config_latency(mut self, input: crate::types::PerformanceConfigLatency) -> Self {
+        self.performance_config_latency = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Model performance settings for the request.</p>
+    pub fn set_performance_config_latency(mut self, input: ::std::option::Option<crate::types::PerformanceConfigLatency>) -> Self {
+        self.performance_config_latency = input;
+        self
+    }
+    /// <p>Model performance settings for the request.</p>
+    pub fn get_performance_config_latency(&self) -> &::std::option::Option<crate::types::PerformanceConfigLatency> {
+        &self.performance_config_latency
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -112,6 +133,7 @@ impl InvokeModelWithResponseStreamOutputBuilder {
                     "content_type was not specified but it is required when building InvokeModelWithResponseStreamOutput",
                 )
             })?,
+            performance_config_latency: self.performance_config_latency,
             _request_id: self._request_id,
         })
     }
