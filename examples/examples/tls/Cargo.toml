@@ -17,7 +17,7 @@ path = "src/lib.rs"
 webpki-roots = "0.22.4"
 rustls = "0.20.6"
 aws-config= { version = "1.5.10", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
-aws-smithy-runtime= { version = "1.7.3", path = "../../../sdk/aws-smithy-runtime" }
+aws-smithy-runtime= { version = "1.7.4", path = "../../../sdk/aws-smithy-runtime" }
 aws-sdk-kms= { version = "1.51.0", path = "../../../sdk/kms", default-features = false }
 
 [dependencies.tokio]

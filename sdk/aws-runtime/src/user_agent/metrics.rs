@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+use crate::sdk_feature::AwsSdkFeature;
 use aws_smithy_runtime::client::sdk_feature::SmithySdkFeature;
 use once_cell::sync::Lazy;
 use std::borrow::Cow;
@@ -151,6 +152,15 @@ impl ProvideBusinessMetric for SmithySdkFeature {
                 );
                 None
             }
+        }
+    }
+}
+
+impl ProvideBusinessMetric for AwsSdkFeature {
+    fn provide_business_metric(&self) -> Option<BusinessMetric> {
+        use AwsSdkFeature::*;
+        match self {
+            S3Transfer => Some(BusinessMetric::S3Transfer),
         }
     }
 }

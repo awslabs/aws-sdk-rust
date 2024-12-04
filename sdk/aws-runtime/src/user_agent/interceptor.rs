@@ -20,6 +20,7 @@ use aws_smithy_types::config_bag::ConfigBag;
 use aws_types::app_name::AppName;
 use aws_types::os_shim_internal::Env;
 
+use crate::sdk_feature::AwsSdkFeature;
 use crate::user_agent::metrics::ProvideBusinessMetric;
 use crate::user_agent::{AdditionalMetadata, ApiMetadata, AwsUserAgent, InvalidMetadataValue};
 
@@ -134,6 +135,13 @@ impl Intercept for UserAgentInterceptor {
         let smithy_sdk_features = cfg.load::<SmithySdkFeature>();
         for smithy_sdk_feature in smithy_sdk_features {
             smithy_sdk_feature
+                .provide_business_metric()
+                .map(|m| ua.add_business_metric(m));
+        }
+
+        let aws_sdk_features = cfg.load::<AwsSdkFeature>();
+        for aws_sdk_feature in aws_sdk_features {
+            aws_sdk_feature
                 .provide_business_metric()
                 .map(|m| ua.add_business_metric(m));
         }

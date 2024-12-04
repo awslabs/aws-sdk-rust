@@ -38,6 +38,10 @@ pub mod invocation_id;
 /// Supporting code for request metadata headers in the AWS SDK.
 pub mod request_info;
 
+/// AWS SDK feature identifies.
+#[doc(hidden)]
+pub mod sdk_feature;
+
 /// Interceptor that determines the clock skew between the client and service.
 pub mod service_clock_skew;
 
