@@ -54,20 +54,26 @@ pub fn ser_create_application_input_input(
         crate::protocol_serde::shape_q_apps_configuration::ser_q_apps_configuration(&mut object_17, var_16)?;
         object_17.finish();
     }
-    if let Some(var_18) = &input.role_arn {
-        object.key("roleArn").string(var_18.as_str());
+    if let Some(var_18) = &input.quick_sight_configuration {
+        #[allow(unused_mut)]
+        let mut object_19 = object.key("quickSightConfiguration").start_object();
+        crate::protocol_serde::shape_quick_sight_configuration::ser_quick_sight_configuration(&mut object_19, var_18)?;
+        object_19.finish();
     }
-    if let Some(var_19) = &input.tags {
-        let mut array_20 = object.key("tags").start_array();
-        for item_21 in var_19 {
+    if let Some(var_20) = &input.role_arn {
+        object.key("roleArn").string(var_20.as_str());
+    }
+    if let Some(var_21) = &input.tags {
+        let mut array_22 = object.key("tags").start_array();
+        for item_23 in var_21 {
             {
                 #[allow(unused_mut)]
-                let mut object_22 = array_20.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_22, item_21)?;
-                object_22.finish();
+                let mut object_24 = array_22.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_24, item_23)?;
+                object_24.finish();
             }
         }
-        array_20.finish();
+        array_22.finish();
     }
     Ok(())
 }

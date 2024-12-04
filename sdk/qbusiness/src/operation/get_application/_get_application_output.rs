@@ -39,6 +39,8 @@ pub struct GetApplicationOutput {
     pub auto_subscription_configuration: ::std::option::Option<crate::types::AutoSubscriptionConfiguration>,
     /// <p>The OIDC client ID for a Amazon Q Business application.</p>
     pub client_ids_for_oidc: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The Amazon QuickSight authentication configuration for the Amazon Q Business application.</p>
+    pub quick_sight_configuration: ::std::option::Option<crate::types::QuickSightConfiguration>,
     _request_id: Option<String>,
 }
 impl GetApplicationOutput {
@@ -116,6 +118,10 @@ impl GetApplicationOutput {
     pub fn client_ids_for_oidc(&self) -> &[::std::string::String] {
         self.client_ids_for_oidc.as_deref().unwrap_or_default()
     }
+    /// <p>The Amazon QuickSight authentication configuration for the Amazon Q Business application.</p>
+    pub fn quick_sight_configuration(&self) -> ::std::option::Option<&crate::types::QuickSightConfiguration> {
+        self.quick_sight_configuration.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetApplicationOutput {
     fn request_id(&self) -> Option<&str> {
@@ -151,6 +157,7 @@ pub struct GetApplicationOutputBuilder {
     pub(crate) personalization_configuration: ::std::option::Option<crate::types::PersonalizationConfiguration>,
     pub(crate) auto_subscription_configuration: ::std::option::Option<crate::types::AutoSubscriptionConfiguration>,
     pub(crate) client_ids_for_oidc: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) quick_sight_configuration: ::std::option::Option<crate::types::QuickSightConfiguration>,
     _request_id: Option<String>,
 }
 impl GetApplicationOutputBuilder {
@@ -412,6 +419,20 @@ impl GetApplicationOutputBuilder {
     pub fn get_client_ids_for_oidc(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.client_ids_for_oidc
     }
+    /// <p>The Amazon QuickSight authentication configuration for the Amazon Q Business application.</p>
+    pub fn quick_sight_configuration(mut self, input: crate::types::QuickSightConfiguration) -> Self {
+        self.quick_sight_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Amazon QuickSight authentication configuration for the Amazon Q Business application.</p>
+    pub fn set_quick_sight_configuration(mut self, input: ::std::option::Option<crate::types::QuickSightConfiguration>) -> Self {
+        self.quick_sight_configuration = input;
+        self
+    }
+    /// <p>The Amazon QuickSight authentication configuration for the Amazon Q Business application.</p>
+    pub fn get_quick_sight_configuration(&self) -> &::std::option::Option<crate::types::QuickSightConfiguration> {
+        &self.quick_sight_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -442,6 +463,7 @@ impl GetApplicationOutputBuilder {
             personalization_configuration: self.personalization_configuration,
             auto_subscription_configuration: self.auto_subscription_configuration,
             client_ids_for_oidc: self.client_ids_for_oidc,
+            quick_sight_configuration: self.quick_sight_configuration,
             _request_id: self._request_id,
         }
     }

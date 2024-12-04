@@ -44,6 +44,18 @@ pub struct UpdateTableInput {
     pub table_class: ::std::option::Option<crate::types::TableClass>,
     /// <p>Indicates whether deletion protection is to be enabled (true) or disabled (false) on the table.</p>
     pub deletion_protection_enabled: ::std::option::Option<bool>,
+    /// <p>Specifies the consistency mode for a new global table. This parameter is only valid when you create a global table by specifying one or more <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ReplicationGroupUpdate.html#DDB-Type-ReplicationGroupUpdate-Create">Create</a> actions in the <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateTable.html#DDB-UpdateTable-request-ReplicaUpdates">ReplicaUpdates</a> action list.</p>
+    /// <p>You can specify one of the following consistency modes:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EVENTUAL</code>: Configures a new global table for multi-Region eventual consistency. This is the default consistency mode for global tables.</p></li>
+    /// <li>
+    /// <p><code>STRONG</code>: Configures a new global table for multi-Region strong consistency (preview).</p><note>
+    /// <p>Multi-Region strong consistency (MRSC) is a new DynamoDB global tables capability currently available in preview mode. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/PreviewFeatures.html#multi-region-strong-consistency-gt">Global tables multi-Region strong consistency</a>.</p>
+    /// </note></li>
+    /// </ul>
+    /// <p>If you don't specify this parameter, the global table consistency mode defaults to <code>EVENTUAL</code>.</p>
+    pub multi_region_consistency: ::std::option::Option<crate::types::MultiRegionConsistency>,
     /// <p>Updates the maximum number of read and write units for the specified table in on-demand capacity mode. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
     pub on_demand_throughput: ::std::option::Option<crate::types::OnDemandThroughput>,
     /// <p>Represents the warm throughput (in read units per second and write units per second) for updating a table.</p>
@@ -116,6 +128,20 @@ impl UpdateTableInput {
     pub fn deletion_protection_enabled(&self) -> ::std::option::Option<bool> {
         self.deletion_protection_enabled
     }
+    /// <p>Specifies the consistency mode for a new global table. This parameter is only valid when you create a global table by specifying one or more <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ReplicationGroupUpdate.html#DDB-Type-ReplicationGroupUpdate-Create">Create</a> actions in the <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateTable.html#DDB-UpdateTable-request-ReplicaUpdates">ReplicaUpdates</a> action list.</p>
+    /// <p>You can specify one of the following consistency modes:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EVENTUAL</code>: Configures a new global table for multi-Region eventual consistency. This is the default consistency mode for global tables.</p></li>
+    /// <li>
+    /// <p><code>STRONG</code>: Configures a new global table for multi-Region strong consistency (preview).</p><note>
+    /// <p>Multi-Region strong consistency (MRSC) is a new DynamoDB global tables capability currently available in preview mode. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/PreviewFeatures.html#multi-region-strong-consistency-gt">Global tables multi-Region strong consistency</a>.</p>
+    /// </note></li>
+    /// </ul>
+    /// <p>If you don't specify this parameter, the global table consistency mode defaults to <code>EVENTUAL</code>.</p>
+    pub fn multi_region_consistency(&self) -> ::std::option::Option<&crate::types::MultiRegionConsistency> {
+        self.multi_region_consistency.as_ref()
+    }
     /// <p>Updates the maximum number of read and write units for the specified table in on-demand capacity mode. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
     pub fn on_demand_throughput(&self) -> ::std::option::Option<&crate::types::OnDemandThroughput> {
         self.on_demand_throughput.as_ref()
@@ -146,6 +172,7 @@ pub struct UpdateTableInputBuilder {
     pub(crate) replica_updates: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationGroupUpdate>>,
     pub(crate) table_class: ::std::option::Option<crate::types::TableClass>,
     pub(crate) deletion_protection_enabled: ::std::option::Option<bool>,
+    pub(crate) multi_region_consistency: ::std::option::Option<crate::types::MultiRegionConsistency>,
     pub(crate) on_demand_throughput: ::std::option::Option<crate::types::OnDemandThroughput>,
     pub(crate) warm_throughput: ::std::option::Option<crate::types::WarmThroughput>,
 }
@@ -372,6 +399,50 @@ impl UpdateTableInputBuilder {
     pub fn get_deletion_protection_enabled(&self) -> &::std::option::Option<bool> {
         &self.deletion_protection_enabled
     }
+    /// <p>Specifies the consistency mode for a new global table. This parameter is only valid when you create a global table by specifying one or more <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ReplicationGroupUpdate.html#DDB-Type-ReplicationGroupUpdate-Create">Create</a> actions in the <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateTable.html#DDB-UpdateTable-request-ReplicaUpdates">ReplicaUpdates</a> action list.</p>
+    /// <p>You can specify one of the following consistency modes:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EVENTUAL</code>: Configures a new global table for multi-Region eventual consistency. This is the default consistency mode for global tables.</p></li>
+    /// <li>
+    /// <p><code>STRONG</code>: Configures a new global table for multi-Region strong consistency (preview).</p><note>
+    /// <p>Multi-Region strong consistency (MRSC) is a new DynamoDB global tables capability currently available in preview mode. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/PreviewFeatures.html#multi-region-strong-consistency-gt">Global tables multi-Region strong consistency</a>.</p>
+    /// </note></li>
+    /// </ul>
+    /// <p>If you don't specify this parameter, the global table consistency mode defaults to <code>EVENTUAL</code>.</p>
+    pub fn multi_region_consistency(mut self, input: crate::types::MultiRegionConsistency) -> Self {
+        self.multi_region_consistency = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the consistency mode for a new global table. This parameter is only valid when you create a global table by specifying one or more <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ReplicationGroupUpdate.html#DDB-Type-ReplicationGroupUpdate-Create">Create</a> actions in the <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateTable.html#DDB-UpdateTable-request-ReplicaUpdates">ReplicaUpdates</a> action list.</p>
+    /// <p>You can specify one of the following consistency modes:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EVENTUAL</code>: Configures a new global table for multi-Region eventual consistency. This is the default consistency mode for global tables.</p></li>
+    /// <li>
+    /// <p><code>STRONG</code>: Configures a new global table for multi-Region strong consistency (preview).</p><note>
+    /// <p>Multi-Region strong consistency (MRSC) is a new DynamoDB global tables capability currently available in preview mode. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/PreviewFeatures.html#multi-region-strong-consistency-gt">Global tables multi-Region strong consistency</a>.</p>
+    /// </note></li>
+    /// </ul>
+    /// <p>If you don't specify this parameter, the global table consistency mode defaults to <code>EVENTUAL</code>.</p>
+    pub fn set_multi_region_consistency(mut self, input: ::std::option::Option<crate::types::MultiRegionConsistency>) -> Self {
+        self.multi_region_consistency = input;
+        self
+    }
+    /// <p>Specifies the consistency mode for a new global table. This parameter is only valid when you create a global table by specifying one or more <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ReplicationGroupUpdate.html#DDB-Type-ReplicationGroupUpdate-Create">Create</a> actions in the <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateTable.html#DDB-UpdateTable-request-ReplicaUpdates">ReplicaUpdates</a> action list.</p>
+    /// <p>You can specify one of the following consistency modes:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EVENTUAL</code>: Configures a new global table for multi-Region eventual consistency. This is the default consistency mode for global tables.</p></li>
+    /// <li>
+    /// <p><code>STRONG</code>: Configures a new global table for multi-Region strong consistency (preview).</p><note>
+    /// <p>Multi-Region strong consistency (MRSC) is a new DynamoDB global tables capability currently available in preview mode. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/PreviewFeatures.html#multi-region-strong-consistency-gt">Global tables multi-Region strong consistency</a>.</p>
+    /// </note></li>
+    /// </ul>
+    /// <p>If you don't specify this parameter, the global table consistency mode defaults to <code>EVENTUAL</code>.</p>
+    pub fn get_multi_region_consistency(&self) -> &::std::option::Option<crate::types::MultiRegionConsistency> {
+        &self.multi_region_consistency
+    }
     /// <p>Updates the maximum number of read and write units for the specified table in on-demand capacity mode. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
     pub fn on_demand_throughput(mut self, input: crate::types::OnDemandThroughput) -> Self {
         self.on_demand_throughput = ::std::option::Option::Some(input);
@@ -413,6 +484,7 @@ impl UpdateTableInputBuilder {
             replica_updates: self.replica_updates,
             table_class: self.table_class,
             deletion_protection_enabled: self.deletion_protection_enabled,
+            multi_region_consistency: self.multi_region_consistency,
             on_demand_throughput: self.on_demand_throughput,
             warm_throughput: self.warm_throughput,
         })

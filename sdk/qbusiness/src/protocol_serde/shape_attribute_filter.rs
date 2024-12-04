@@ -77,3 +77,69 @@ pub fn ser_attribute_filter(
     }
     Ok(())
 }
+
+pub(crate) fn de_attribute_filter<'a, I>(
+    tokens: &mut ::std::iter::Peekable<I>,
+) -> Result<Option<crate::types::AttributeFilter>, ::aws_smithy_json::deserialize::error::DeserializeError>
+where
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
+{
+    match tokens.next().transpose()? {
+        Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::types::builders::AttributeFilterBuilder::default();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "andAllFilters" => {
+                            builder = builder.set_and_all_filters(crate::protocol_serde::shape_attribute_filters::de_attribute_filters(tokens)?);
+                        }
+                        "orAllFilters" => {
+                            builder = builder.set_or_all_filters(crate::protocol_serde::shape_attribute_filters::de_attribute_filters(tokens)?);
+                        }
+                        "notFilter" => {
+                            builder =
+                                builder.set_not_filter(crate::protocol_serde::shape_attribute_filter::de_attribute_filter(tokens)?.map(Box::new));
+                        }
+                        "equalsTo" => {
+                            builder = builder.set_equals_to(crate::protocol_serde::shape_document_attribute::de_document_attribute(tokens)?);
+                        }
+                        "containsAll" => {
+                            builder = builder.set_contains_all(crate::protocol_serde::shape_document_attribute::de_document_attribute(tokens)?);
+                        }
+                        "containsAny" => {
+                            builder = builder.set_contains_any(crate::protocol_serde::shape_document_attribute::de_document_attribute(tokens)?);
+                        }
+                        "greaterThan" => {
+                            builder = builder.set_greater_than(crate::protocol_serde::shape_document_attribute::de_document_attribute(tokens)?);
+                        }
+                        "greaterThanOrEquals" => {
+                            builder =
+                                builder.set_greater_than_or_equals(crate::protocol_serde::shape_document_attribute::de_document_attribute(tokens)?);
+                        }
+                        "lessThan" => {
+                            builder = builder.set_less_than(crate::protocol_serde::shape_document_attribute::de_document_attribute(tokens)?);
+                        }
+                        "lessThanOrEquals" => {
+                            builder =
+                                builder.set_less_than_or_equals(crate::protocol_serde::shape_document_attribute::de_document_attribute(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
+                    other => {
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
+    }
+}

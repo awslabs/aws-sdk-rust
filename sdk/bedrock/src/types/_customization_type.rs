@@ -13,6 +13,7 @@
 /// # let customizationtype = unimplemented!();
 /// match customizationtype {
 ///     CustomizationType::ContinuedPreTraining => { /* ... */ },
+///     CustomizationType::Distillation => { /* ... */ },
 ///     CustomizationType::FineTuning => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -44,6 +45,8 @@ pub enum CustomizationType {
     #[allow(missing_docs)] // documentation missing in model
     ContinuedPreTraining,
     #[allow(missing_docs)] // documentation missing in model
+    Distillation,
+    #[allow(missing_docs)] // documentation missing in model
     FineTuning,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -53,6 +56,7 @@ impl ::std::convert::From<&str> for CustomizationType {
     fn from(s: &str) -> Self {
         match s {
             "CONTINUED_PRE_TRAINING" => CustomizationType::ContinuedPreTraining,
+            "DISTILLATION" => CustomizationType::Distillation,
             "FINE_TUNING" => CustomizationType::FineTuning,
             other => CustomizationType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -70,13 +74,14 @@ impl CustomizationType {
     pub fn as_str(&self) -> &str {
         match self {
             CustomizationType::ContinuedPreTraining => "CONTINUED_PRE_TRAINING",
+            CustomizationType::Distillation => "DISTILLATION",
             CustomizationType::FineTuning => "FINE_TUNING",
             CustomizationType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CONTINUED_PRE_TRAINING", "FINE_TUNING"]
+        &["CONTINUED_PRE_TRAINING", "DISTILLATION", "FINE_TUNING"]
     }
 }
 impl ::std::convert::AsRef<str> for CustomizationType {
@@ -100,6 +105,7 @@ impl ::std::fmt::Display for CustomizationType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             CustomizationType::ContinuedPreTraining => write!(f, "CONTINUED_PRE_TRAINING"),
+            CustomizationType::Distillation => write!(f, "DISTILLATION"),
             CustomizationType::FineTuning => write!(f, "FINE_TUNING"),
             CustomizationType::Unknown(value) => write!(f, "{}", value),
         }

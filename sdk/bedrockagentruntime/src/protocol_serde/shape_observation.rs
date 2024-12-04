@@ -33,6 +33,11 @@ where
                                 crate::protocol_serde::shape_action_group_invocation_output::de_action_group_invocation_output(tokens)?,
                             );
                         }
+                        "agentCollaboratorInvocationOutput" => {
+                            builder = builder.set_agent_collaborator_invocation_output(
+                                crate::protocol_serde::shape_agent_collaborator_invocation_output::de_agent_collaborator_invocation_output(tokens)?,
+                            );
+                        }
                         "knowledgeBaseLookupOutput" => {
                             builder = builder.set_knowledge_base_lookup_output(
                                 crate::protocol_serde::shape_knowledge_base_lookup_output::de_knowledge_base_lookup_output(tokens)?,

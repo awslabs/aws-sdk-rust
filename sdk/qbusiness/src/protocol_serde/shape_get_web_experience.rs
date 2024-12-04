@@ -141,6 +141,11 @@ pub(crate) fn de_get_web_experience(
                         ::aws_smithy_types::date_time::Format::EpochSeconds,
                     )?);
                 }
+                "customizationConfiguration" => {
+                    builder = builder.set_customization_configuration(
+                        crate::protocol_serde::shape_customization_configuration::de_customization_configuration(tokens)?,
+                    );
+                }
                 "defaultEndpoint" => {
                     builder = builder.set_default_endpoint(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

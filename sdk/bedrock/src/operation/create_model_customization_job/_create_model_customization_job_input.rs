@@ -31,6 +31,8 @@ pub struct CreateModelCustomizationJobInput {
     pub hyper_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The configuration of the Virtual Private Cloud (VPC) that contains the resources that you're using for this job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/vpc-model-customization.html">Protect your model customization jobs using a VPC</a>.</p>
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
+    /// <p>The customization configuration for the model customization job.</p>
+    pub customization_config: ::std::option::Option<crate::types::CustomizationConfig>,
 }
 impl CreateModelCustomizationJobInput {
     /// <p>A name for the fine-tuning job.</p>
@@ -93,6 +95,10 @@ impl CreateModelCustomizationJobInput {
     pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
         self.vpc_config.as_ref()
     }
+    /// <p>The customization configuration for the model customization job.</p>
+    pub fn customization_config(&self) -> ::std::option::Option<&crate::types::CustomizationConfig> {
+        self.customization_config.as_ref()
+    }
 }
 impl CreateModelCustomizationJobInput {
     /// Creates a new builder-style object to manufacture [`CreateModelCustomizationJobInput`](crate::operation::create_model_customization_job::CreateModelCustomizationJobInput).
@@ -119,6 +125,7 @@ pub struct CreateModelCustomizationJobInputBuilder {
     pub(crate) output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,
     pub(crate) hyper_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfig>,
+    pub(crate) customization_config: ::std::option::Option<crate::types::CustomizationConfig>,
 }
 impl CreateModelCustomizationJobInputBuilder {
     /// <p>A name for the fine-tuning job.</p>
@@ -348,6 +355,20 @@ impl CreateModelCustomizationJobInputBuilder {
     pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
         &self.vpc_config
     }
+    /// <p>The customization configuration for the model customization job.</p>
+    pub fn customization_config(mut self, input: crate::types::CustomizationConfig) -> Self {
+        self.customization_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The customization configuration for the model customization job.</p>
+    pub fn set_customization_config(mut self, input: ::std::option::Option<crate::types::CustomizationConfig>) -> Self {
+        self.customization_config = input;
+        self
+    }
+    /// <p>The customization configuration for the model customization job.</p>
+    pub fn get_customization_config(&self) -> &::std::option::Option<crate::types::CustomizationConfig> {
+        &self.customization_config
+    }
     /// Consumes the builder and constructs a [`CreateModelCustomizationJobInput`](crate::operation::create_model_customization_job::CreateModelCustomizationJobInput).
     pub fn build(
         self,
@@ -370,6 +391,7 @@ impl CreateModelCustomizationJobInputBuilder {
             output_data_config: self.output_data_config,
             hyper_parameters: self.hyper_parameters,
             vpc_config: self.vpc_config,
+            customization_config: self.customization_config,
         })
     }
 }

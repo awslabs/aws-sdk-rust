@@ -3,7 +3,21 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PostLineageEventOutput {
+    /// <p>The ID of the lineage event.</p>
+    pub id: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the domain.</p>
+    pub domain_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
+}
+impl PostLineageEventOutput {
+    /// <p>The ID of the lineage event.</p>
+    pub fn id(&self) -> ::std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The ID of the domain.</p>
+    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+        self.domain_id.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for PostLineageEventOutput {
     fn request_id(&self) -> Option<&str> {
@@ -21,9 +35,39 @@ impl PostLineageEventOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct PostLineageEventOutputBuilder {
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl PostLineageEventOutputBuilder {
+    /// <p>The ID of the lineage event.</p>
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the lineage event.</p>
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.id = input;
+        self
+    }
+    /// <p>The ID of the lineage event.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
+    /// <p>The ID of the domain.</p>
+    pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the domain.</p>
+    pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.domain_id = input;
+        self
+    }
+    /// <p>The ID of the domain.</p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -36,6 +80,8 @@ impl PostLineageEventOutputBuilder {
     /// Consumes the builder and constructs a [`PostLineageEventOutput`](crate::operation::post_lineage_event::PostLineageEventOutput).
     pub fn build(self) -> crate::operation::post_lineage_event::PostLineageEventOutput {
         crate::operation::post_lineage_event::PostLineageEventOutput {
+            id: self.id,
+            domain_id: self.domain_id,
             _request_id: self._request_id,
         }
     }

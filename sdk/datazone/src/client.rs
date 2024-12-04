@@ -158,6 +158,8 @@ mod create_asset_revision;
 
 mod create_asset_type;
 
+mod create_connection;
+
 mod create_data_product;
 
 mod create_data_product_revision;
@@ -187,6 +189,8 @@ mod create_listing_change_set;
 mod create_project;
 
 mod create_project_membership;
+
+mod create_project_profile;
 
 mod create_rule;
 
@@ -231,6 +235,8 @@ mod delete_asset_filter;
 
 mod delete_asset_type;
 
+mod delete_connection;
+
 mod delete_data_product;
 
 mod delete_data_source;
@@ -259,6 +265,8 @@ mod delete_project;
 
 mod delete_project_membership;
 
+mod delete_project_profile;
+
 mod delete_rule;
 
 mod delete_subscription_grant;
@@ -276,6 +284,8 @@ mod get_asset;
 mod get_asset_filter;
 
 mod get_asset_type;
+
+mod get_connection;
 
 mod get_data_product;
 
@@ -309,6 +319,10 @@ mod get_group_profile;
 
 mod get_iam_portal_login_url;
 
+mod get_job_run;
+
+mod get_lineage_event;
+
 mod get_lineage_node;
 
 mod get_listing;
@@ -316,6 +330,8 @@ mod get_listing;
 mod get_metadata_generation_run;
 
 mod get_project;
+
+mod get_project_profile;
 
 mod get_rule;
 
@@ -334,6 +350,8 @@ mod get_user_profile;
 mod list_asset_filters;
 
 mod list_asset_revisions;
+
+mod list_connections;
 
 mod list_data_product_revisions;
 
@@ -359,6 +377,10 @@ mod list_environment_profiles;
 
 mod list_environments;
 
+mod list_job_runs;
+
+mod list_lineage_events;
+
 mod list_lineage_node_history;
 
 mod list_metadata_generation_runs;
@@ -368,6 +390,8 @@ mod list_notifications;
 mod list_policy_grants;
 
 mod list_project_memberships;
+
+mod list_project_profiles;
 
 mod list_projects;
 
@@ -421,6 +445,8 @@ mod untag_resource;
 
 mod update_asset_filter;
 
+mod update_connection;
+
 mod update_data_source;
 
 mod update_domain;
@@ -440,6 +466,8 @@ mod update_glossary_term;
 mod update_group_profile;
 
 mod update_project;
+
+mod update_project_profile;
 
 mod update_rule;
 

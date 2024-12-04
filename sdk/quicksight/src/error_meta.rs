@@ -1531,6 +1531,55 @@ impl From<crate::operation::delete_data_source::DeleteDataSourceError> for Error
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_default_q_business_application::DeleteDefaultQBusinessApplicationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_default_q_business_application::DeleteDefaultQBusinessApplicationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_default_q_business_application::DeleteDefaultQBusinessApplicationError> for Error {
+    fn from(err: crate::operation::delete_default_q_business_application::DeleteDefaultQBusinessApplicationError) -> Self {
+        match err {
+            crate::operation::delete_default_q_business_application::DeleteDefaultQBusinessApplicationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_default_q_business_application::DeleteDefaultQBusinessApplicationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_default_q_business_application::DeleteDefaultQBusinessApplicationError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::delete_default_q_business_application::DeleteDefaultQBusinessApplicationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_default_q_business_application::DeleteDefaultQBusinessApplicationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_default_q_business_application::DeleteDefaultQBusinessApplicationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_folder::DeleteFolderError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3223,6 +3272,55 @@ impl From<crate::operation::describe_data_source_permissions::DescribeDataSource
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_default_q_business_application::DescribeDefaultQBusinessApplicationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_default_q_business_application::DescribeDefaultQBusinessApplicationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_default_q_business_application::DescribeDefaultQBusinessApplicationError> for Error {
+    fn from(err: crate::operation::describe_default_q_business_application::DescribeDefaultQBusinessApplicationError) -> Self {
+        match err {
+            crate::operation::describe_default_q_business_application::DescribeDefaultQBusinessApplicationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_default_q_business_application::DescribeDefaultQBusinessApplicationError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::describe_default_q_business_application::DescribeDefaultQBusinessApplicationError::InvalidParameterValueException(
+                inner,
+            ) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_default_q_business_application::DescribeDefaultQBusinessApplicationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_default_q_business_application::DescribeDefaultQBusinessApplicationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_default_q_business_application::DescribeDefaultQBusinessApplicationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_folder::DescribeFolderError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3642,6 +3740,44 @@ impl From<crate::operation::describe_q_personalization_configuration::DescribeQP
             crate::operation::describe_q_personalization_configuration::DescribeQPersonalizationConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::describe_q_personalization_configuration::DescribeQPersonalizationConfigurationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::describe_q_personalization_configuration::DescribeQPersonalizationConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_quick_sight_q_search_configuration::DescribeQuickSightQSearchConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_quick_sight_q_search_configuration::DescribeQuickSightQSearchConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_quick_sight_q_search_configuration::DescribeQuickSightQSearchConfigurationError> for Error {
+    fn from(err: crate::operation::describe_quick_sight_q_search_configuration::DescribeQuickSightQSearchConfigurationError) -> Self {
+        match err {
+            crate::operation::describe_quick_sight_q_search_configuration::DescribeQuickSightQSearchConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_quick_sight_q_search_configuration::DescribeQuickSightQSearchConfigurationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::describe_quick_sight_q_search_configuration::DescribeQuickSightQSearchConfigurationError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::describe_quick_sight_q_search_configuration::DescribeQuickSightQSearchConfigurationError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_quick_sight_q_search_configuration::DescribeQuickSightQSearchConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_quick_sight_q_search_configuration::DescribeQuickSightQSearchConfigurationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_quick_sight_q_search_configuration::DescribeQuickSightQSearchConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -4297,6 +4433,47 @@ impl From<crate::operation::generate_embed_url_for_registered_user::GenerateEmbe
             crate::operation::generate_embed_url_for_registered_user::GenerateEmbedUrlForRegisteredUserError::UnsupportedPricingPlanException(inner) => Error::UnsupportedPricingPlanException(inner),
             crate::operation::generate_embed_url_for_registered_user::GenerateEmbedUrlForRegisteredUserError::UnsupportedUserEditionException(inner) => Error::UnsupportedUserEditionException(inner),
             crate::operation::generate_embed_url_for_registered_user::GenerateEmbedUrlForRegisteredUserError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::generate_embed_url_for_registered_user_with_identity::GenerateEmbedUrlForRegisteredUserWithIdentityError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::generate_embed_url_for_registered_user_with_identity::GenerateEmbedUrlForRegisteredUserWithIdentityError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::generate_embed_url_for_registered_user_with_identity::GenerateEmbedUrlForRegisteredUserWithIdentityError> for Error {
+    fn from(err: crate::operation::generate_embed_url_for_registered_user_with_identity::GenerateEmbedUrlForRegisteredUserWithIdentityError) -> Self {
+        match err {
+            crate::operation::generate_embed_url_for_registered_user_with_identity::GenerateEmbedUrlForRegisteredUserWithIdentityError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::generate_embed_url_for_registered_user_with_identity::GenerateEmbedUrlForRegisteredUserWithIdentityError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::generate_embed_url_for_registered_user_with_identity::GenerateEmbedUrlForRegisteredUserWithIdentityError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::generate_embed_url_for_registered_user_with_identity::GenerateEmbedUrlForRegisteredUserWithIdentityError::QuickSightUserNotFoundException(inner) => Error::QuickSightUserNotFoundException(inner),
+            crate::operation::generate_embed_url_for_registered_user_with_identity::GenerateEmbedUrlForRegisteredUserWithIdentityError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::generate_embed_url_for_registered_user_with_identity::GenerateEmbedUrlForRegisteredUserWithIdentityError::SessionLifetimeInMinutesInvalidException(inner) => Error::SessionLifetimeInMinutesInvalidException(inner),
+            crate::operation::generate_embed_url_for_registered_user_with_identity::GenerateEmbedUrlForRegisteredUserWithIdentityError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::generate_embed_url_for_registered_user_with_identity::GenerateEmbedUrlForRegisteredUserWithIdentityError::UnsupportedPricingPlanException(inner) => Error::UnsupportedPricingPlanException(inner),
+            crate::operation::generate_embed_url_for_registered_user_with_identity::GenerateEmbedUrlForRegisteredUserWithIdentityError::UnsupportedUserEditionException(inner) => Error::UnsupportedUserEditionException(inner),
+            crate::operation::generate_embed_url_for_registered_user_with_identity::GenerateEmbedUrlForRegisteredUserWithIdentityError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -5587,6 +5764,33 @@ impl From<crate::operation::list_vpc_connections::ListVPCConnectionsError> for E
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::predict_qa_results::PredictQAResultsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::predict_qa_results::PredictQAResultsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::predict_qa_results::PredictQAResultsError> for Error {
+    fn from(err: crate::operation::predict_qa_results::PredictQAResultsError) -> Self {
+        match err {
+            crate::operation::predict_qa_results::PredictQAResultsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::predict_qa_results::PredictQAResultsError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::predict_qa_results::PredictQAResultsError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::predict_qa_results::PredictQAResultsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::predict_qa_results::PredictQAResultsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_data_set_refresh_properties::PutDataSetRefreshPropertiesError, R>>
     for Error
@@ -6329,6 +6533,45 @@ impl From<crate::operation::update_analysis_permissions::UpdateAnalysisPermissio
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_application_with_token_exchange_grant::UpdateApplicationWithTokenExchangeGrantError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_application_with_token_exchange_grant::UpdateApplicationWithTokenExchangeGrantError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_application_with_token_exchange_grant::UpdateApplicationWithTokenExchangeGrantError> for Error {
+    fn from(err: crate::operation::update_application_with_token_exchange_grant::UpdateApplicationWithTokenExchangeGrantError) -> Self {
+        match err {
+            crate::operation::update_application_with_token_exchange_grant::UpdateApplicationWithTokenExchangeGrantError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_application_with_token_exchange_grant::UpdateApplicationWithTokenExchangeGrantError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::update_application_with_token_exchange_grant::UpdateApplicationWithTokenExchangeGrantError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::update_application_with_token_exchange_grant::UpdateApplicationWithTokenExchangeGrantError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::update_application_with_token_exchange_grant::UpdateApplicationWithTokenExchangeGrantError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::update_application_with_token_exchange_grant::UpdateApplicationWithTokenExchangeGrantError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_application_with_token_exchange_grant::UpdateApplicationWithTokenExchangeGrantError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_application_with_token_exchange_grant::UpdateApplicationWithTokenExchangeGrantError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_brand::UpdateBrandError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -6849,6 +7092,58 @@ impl From<crate::operation::update_data_source_permissions::UpdateDataSourcePerm
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_default_q_business_application::UpdateDefaultQBusinessApplicationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_default_q_business_application::UpdateDefaultQBusinessApplicationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_default_q_business_application::UpdateDefaultQBusinessApplicationError> for Error {
+    fn from(err: crate::operation::update_default_q_business_application::UpdateDefaultQBusinessApplicationError) -> Self {
+        match err {
+            crate::operation::update_default_q_business_application::UpdateDefaultQBusinessApplicationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_default_q_business_application::UpdateDefaultQBusinessApplicationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_default_q_business_application::UpdateDefaultQBusinessApplicationError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::update_default_q_business_application::UpdateDefaultQBusinessApplicationError::InvalidParameterValueException(
+                inner,
+            ) => Error::InvalidParameterValueException(inner),
+            crate::operation::update_default_q_business_application::UpdateDefaultQBusinessApplicationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_default_q_business_application::UpdateDefaultQBusinessApplicationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_default_q_business_application::UpdateDefaultQBusinessApplicationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_folder::UpdateFolderError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -7209,6 +7504,44 @@ impl From<crate::operation::update_q_personalization_configuration::UpdateQPerso
             crate::operation::update_q_personalization_configuration::UpdateQPersonalizationConfigurationError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_quick_sight_q_search_configuration::UpdateQuickSightQSearchConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_quick_sight_q_search_configuration::UpdateQuickSightQSearchConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_quick_sight_q_search_configuration::UpdateQuickSightQSearchConfigurationError> for Error {
+    fn from(err: crate::operation::update_quick_sight_q_search_configuration::UpdateQuickSightQSearchConfigurationError) -> Self {
+        match err {
+            crate::operation::update_quick_sight_q_search_configuration::UpdateQuickSightQSearchConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_quick_sight_q_search_configuration::UpdateQuickSightQSearchConfigurationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_quick_sight_q_search_configuration::UpdateQuickSightQSearchConfigurationError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::update_quick_sight_q_search_configuration::UpdateQuickSightQSearchConfigurationError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::update_quick_sight_q_search_configuration::UpdateQuickSightQSearchConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_quick_sight_q_search_configuration::UpdateQuickSightQSearchConfigurationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_quick_sight_q_search_configuration::UpdateQuickSightQSearchConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

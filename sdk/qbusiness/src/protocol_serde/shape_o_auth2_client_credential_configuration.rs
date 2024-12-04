@@ -9,6 +9,12 @@ pub fn ser_o_auth2_client_credential_configuration(
     {
         object.key("roleArn").string(input.role_arn.as_str());
     }
+    if let Some(var_1) = &input.authorization_url {
+        object.key("authorizationUrl").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.token_url {
+        object.key("tokenUrl").string(var_2.as_str());
+    }
     Ok(())
 }
 
@@ -36,6 +42,20 @@ where
                         }
                         "roleArn" => {
                             builder = builder.set_role_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "authorizationUrl" => {
+                            builder = builder.set_authorization_url(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "tokenUrl" => {
+                            builder = builder.set_token_url(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

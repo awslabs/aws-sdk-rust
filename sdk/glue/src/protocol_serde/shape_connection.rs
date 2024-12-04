@@ -42,8 +42,14 @@ where
                             builder = builder
                                 .set_connection_properties(crate::protocol_serde::shape_connection_properties::de_connection_properties(tokens)?);
                         }
+                        "SparkProperties" => {
+                            builder = builder.set_spark_properties(crate::protocol_serde::shape_property_map::de_property_map(tokens)?);
+                        }
                         "AthenaProperties" => {
                             builder = builder.set_athena_properties(crate::protocol_serde::shape_property_map::de_property_map(tokens)?);
+                        }
+                        "PythonProperties" => {
+                            builder = builder.set_python_properties(crate::protocol_serde::shape_property_map::de_property_map(tokens)?);
                         }
                         "PhysicalConnectionRequirements" => {
                             builder = builder.set_physical_connection_requirements(
@@ -92,6 +98,18 @@ where
                         "AuthenticationConfiguration" => {
                             builder = builder.set_authentication_configuration(
                                 crate::protocol_serde::shape_authentication_configuration::de_authentication_configuration(tokens)?,
+                            );
+                        }
+                        "ConnectionSchemaVersion" => {
+                            builder = builder.set_connection_schema_version(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "CompatibleComputeEnvironments" => {
+                            builder = builder.set_compatible_compute_environments(
+                                crate::protocol_serde::shape_compute_environment_list::de_compute_environment_list(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

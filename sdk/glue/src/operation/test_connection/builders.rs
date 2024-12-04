@@ -124,6 +124,20 @@ impl TestConnectionFluentBuilder {
     pub fn get_connection_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_connection_name()
     }
+    /// <p>The catalog ID where the connection resides.</p>
+    pub fn catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.catalog_id(input.into());
+        self
+    }
+    /// <p>The catalog ID where the connection resides.</p>
+    pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_catalog_id(input);
+        self
+    }
+    /// <p>The catalog ID where the connection resides.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_catalog_id()
+    }
     /// <p>A structure that is used to specify testing a connection to a service.</p>
     pub fn test_connection_input(mut self, input: crate::types::TestConnectionInput) -> Self {
         self.inner = self.inner.test_connection_input(input);

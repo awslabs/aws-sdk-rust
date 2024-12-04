@@ -173,6 +173,17 @@ pub struct TableDescription {
     pub on_demand_throughput: ::std::option::Option<crate::types::OnDemandThroughput>,
     /// <p>Describes the warm throughput value of the base table.</p>
     pub warm_throughput: ::std::option::Option<crate::types::TableWarmThroughputDescription>,
+    /// <p>Indicates one of the following consistency modes for a global table:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EVENTUAL</code>: Indicates that the global table is configured for multi-Region eventual consistency.</p></li>
+    /// <li>
+    /// <p><code>STRONG</code>: Indicates that the global table is configured for multi-Region strong consistency (preview).</p><note>
+    /// <p>Multi-Region strong consistency (MRSC) is a new DynamoDB global tables capability currently available in preview mode. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/PreviewFeatures.html#multi-region-strong-consistency-gt">Global tables multi-Region strong consistency</a>.</p>
+    /// </note></li>
+    /// </ul>
+    /// <p>If you don't specify this field, the global table consistency mode defaults to <code>EVENTUAL</code>.</p>
+    pub multi_region_consistency: ::std::option::Option<crate::types::MultiRegionConsistency>,
 }
 impl TableDescription {
     /// <p>An array of <code>AttributeDefinition</code> objects. Each of these objects describes one attribute in the table and index key schema.</p>
@@ -404,6 +415,19 @@ impl TableDescription {
     pub fn warm_throughput(&self) -> ::std::option::Option<&crate::types::TableWarmThroughputDescription> {
         self.warm_throughput.as_ref()
     }
+    /// <p>Indicates one of the following consistency modes for a global table:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EVENTUAL</code>: Indicates that the global table is configured for multi-Region eventual consistency.</p></li>
+    /// <li>
+    /// <p><code>STRONG</code>: Indicates that the global table is configured for multi-Region strong consistency (preview).</p><note>
+    /// <p>Multi-Region strong consistency (MRSC) is a new DynamoDB global tables capability currently available in preview mode. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/PreviewFeatures.html#multi-region-strong-consistency-gt">Global tables multi-Region strong consistency</a>.</p>
+    /// </note></li>
+    /// </ul>
+    /// <p>If you don't specify this field, the global table consistency mode defaults to <code>EVENTUAL</code>.</p>
+    pub fn multi_region_consistency(&self) -> ::std::option::Option<&crate::types::MultiRegionConsistency> {
+        self.multi_region_consistency.as_ref()
+    }
 }
 impl TableDescription {
     /// Creates a new builder-style object to manufacture [`TableDescription`](crate::types::TableDescription).
@@ -441,6 +465,7 @@ pub struct TableDescriptionBuilder {
     pub(crate) deletion_protection_enabled: ::std::option::Option<bool>,
     pub(crate) on_demand_throughput: ::std::option::Option<crate::types::OnDemandThroughput>,
     pub(crate) warm_throughput: ::std::option::Option<crate::types::TableWarmThroughputDescription>,
+    pub(crate) multi_region_consistency: ::std::option::Option<crate::types::MultiRegionConsistency>,
 }
 impl TableDescriptionBuilder {
     /// Appends an item to `attribute_definitions`.
@@ -1186,6 +1211,47 @@ impl TableDescriptionBuilder {
     pub fn get_warm_throughput(&self) -> &::std::option::Option<crate::types::TableWarmThroughputDescription> {
         &self.warm_throughput
     }
+    /// <p>Indicates one of the following consistency modes for a global table:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EVENTUAL</code>: Indicates that the global table is configured for multi-Region eventual consistency.</p></li>
+    /// <li>
+    /// <p><code>STRONG</code>: Indicates that the global table is configured for multi-Region strong consistency (preview).</p><note>
+    /// <p>Multi-Region strong consistency (MRSC) is a new DynamoDB global tables capability currently available in preview mode. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/PreviewFeatures.html#multi-region-strong-consistency-gt">Global tables multi-Region strong consistency</a>.</p>
+    /// </note></li>
+    /// </ul>
+    /// <p>If you don't specify this field, the global table consistency mode defaults to <code>EVENTUAL</code>.</p>
+    pub fn multi_region_consistency(mut self, input: crate::types::MultiRegionConsistency) -> Self {
+        self.multi_region_consistency = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates one of the following consistency modes for a global table:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EVENTUAL</code>: Indicates that the global table is configured for multi-Region eventual consistency.</p></li>
+    /// <li>
+    /// <p><code>STRONG</code>: Indicates that the global table is configured for multi-Region strong consistency (preview).</p><note>
+    /// <p>Multi-Region strong consistency (MRSC) is a new DynamoDB global tables capability currently available in preview mode. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/PreviewFeatures.html#multi-region-strong-consistency-gt">Global tables multi-Region strong consistency</a>.</p>
+    /// </note></li>
+    /// </ul>
+    /// <p>If you don't specify this field, the global table consistency mode defaults to <code>EVENTUAL</code>.</p>
+    pub fn set_multi_region_consistency(mut self, input: ::std::option::Option<crate::types::MultiRegionConsistency>) -> Self {
+        self.multi_region_consistency = input;
+        self
+    }
+    /// <p>Indicates one of the following consistency modes for a global table:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EVENTUAL</code>: Indicates that the global table is configured for multi-Region eventual consistency.</p></li>
+    /// <li>
+    /// <p><code>STRONG</code>: Indicates that the global table is configured for multi-Region strong consistency (preview).</p><note>
+    /// <p>Multi-Region strong consistency (MRSC) is a new DynamoDB global tables capability currently available in preview mode. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/PreviewFeatures.html#multi-region-strong-consistency-gt">Global tables multi-Region strong consistency</a>.</p>
+    /// </note></li>
+    /// </ul>
+    /// <p>If you don't specify this field, the global table consistency mode defaults to <code>EVENTUAL</code>.</p>
+    pub fn get_multi_region_consistency(&self) -> &::std::option::Option<crate::types::MultiRegionConsistency> {
+        &self.multi_region_consistency
+    }
     /// Consumes the builder and constructs a [`TableDescription`](crate::types::TableDescription).
     pub fn build(self) -> crate::types::TableDescription {
         crate::types::TableDescription {
@@ -1214,6 +1280,7 @@ impl TableDescriptionBuilder {
             deletion_protection_enabled: self.deletion_protection_enabled,
             on_demand_throughput: self.on_demand_throughput,
             warm_throughput: self.warm_throughput,
+            multi_region_consistency: self.multi_region_consistency,
         }
     }
 }

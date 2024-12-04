@@ -15,6 +15,10 @@ pub struct CreateDomainInput {
     pub kms_key_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The tags specified for the Amazon DataZone domain.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The version of the domain that is created.</p>
+    pub domain_version: ::std::option::Option<crate::types::DomainVersion>,
+    /// <p>The service role of the domain that is created.</p>
+    pub service_role: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
@@ -43,6 +47,14 @@ impl CreateDomainInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>The version of the domain that is created.</p>
+    pub fn domain_version(&self) -> ::std::option::Option<&crate::types::DomainVersion> {
+        self.domain_version.as_ref()
+    }
+    /// <p>The service role of the domain that is created.</p>
+    pub fn service_role(&self) -> ::std::option::Option<&str> {
+        self.service_role.as_deref()
+    }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
@@ -65,6 +77,8 @@ pub struct CreateDomainInputBuilder {
     pub(crate) domain_execution_role: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) domain_version: ::std::option::Option<crate::types::DomainVersion>,
+    pub(crate) service_role: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateDomainInputBuilder {
@@ -160,6 +174,34 @@ impl CreateDomainInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The version of the domain that is created.</p>
+    pub fn domain_version(mut self, input: crate::types::DomainVersion) -> Self {
+        self.domain_version = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The version of the domain that is created.</p>
+    pub fn set_domain_version(mut self, input: ::std::option::Option<crate::types::DomainVersion>) -> Self {
+        self.domain_version = input;
+        self
+    }
+    /// <p>The version of the domain that is created.</p>
+    pub fn get_domain_version(&self) -> &::std::option::Option<crate::types::DomainVersion> {
+        &self.domain_version
+    }
+    /// <p>The service role of the domain that is created.</p>
+    pub fn service_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.service_role = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The service role of the domain that is created.</p>
+    pub fn set_service_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.service_role = input;
+        self
+    }
+    /// <p>The service role of the domain that is created.</p>
+    pub fn get_service_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_role
+    }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -185,6 +227,8 @@ impl CreateDomainInputBuilder {
             domain_execution_role: self.domain_execution_role,
             kms_key_identifier: self.kms_key_identifier,
             tags: self.tags,
+            domain_version: self.domain_version,
+            service_role: self.service_role,
             client_token: self.client_token,
         })
     }

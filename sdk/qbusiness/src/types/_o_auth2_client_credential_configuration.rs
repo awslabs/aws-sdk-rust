@@ -8,6 +8,10 @@ pub struct OAuth2ClientCredentialConfiguration {
     pub secret_arn: ::std::string::String,
     /// <p>The ARN of an IAM role used by Amazon Q Business to access the OAuth 2.0 authentication credentials stored in a Secrets Manager secret.</p>
     pub role_arn: ::std::string::String,
+    /// <p>The redirect URL required by the OAuth 2.0 protocol for Amazon Q Business to authenticate a plugin user through a third party authentication server.</p>
+    pub authorization_url: ::std::option::Option<::std::string::String>,
+    /// <p>The URL required by the OAuth 2.0 protocol to exchange an end user authorization code for an access token.</p>
+    pub token_url: ::std::option::Option<::std::string::String>,
 }
 impl OAuth2ClientCredentialConfiguration {
     /// <p>The ARN of the Secrets Manager secret that stores the OAuth 2.0 credentials/token used for plugin configuration.</p>
@@ -19,6 +23,14 @@ impl OAuth2ClientCredentialConfiguration {
     pub fn role_arn(&self) -> &str {
         use std::ops::Deref;
         self.role_arn.deref()
+    }
+    /// <p>The redirect URL required by the OAuth 2.0 protocol for Amazon Q Business to authenticate a plugin user through a third party authentication server.</p>
+    pub fn authorization_url(&self) -> ::std::option::Option<&str> {
+        self.authorization_url.as_deref()
+    }
+    /// <p>The URL required by the OAuth 2.0 protocol to exchange an end user authorization code for an access token.</p>
+    pub fn token_url(&self) -> ::std::option::Option<&str> {
+        self.token_url.as_deref()
     }
 }
 impl OAuth2ClientCredentialConfiguration {
@@ -34,6 +46,8 @@ impl OAuth2ClientCredentialConfiguration {
 pub struct OAuth2ClientCredentialConfigurationBuilder {
     pub(crate) secret_arn: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) authorization_url: ::std::option::Option<::std::string::String>,
+    pub(crate) token_url: ::std::option::Option<::std::string::String>,
 }
 impl OAuth2ClientCredentialConfigurationBuilder {
     /// <p>The ARN of the Secrets Manager secret that stores the OAuth 2.0 credentials/token used for plugin configuration.</p>
@@ -66,6 +80,34 @@ impl OAuth2ClientCredentialConfigurationBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
+    /// <p>The redirect URL required by the OAuth 2.0 protocol for Amazon Q Business to authenticate a plugin user through a third party authentication server.</p>
+    pub fn authorization_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.authorization_url = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The redirect URL required by the OAuth 2.0 protocol for Amazon Q Business to authenticate a plugin user through a third party authentication server.</p>
+    pub fn set_authorization_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.authorization_url = input;
+        self
+    }
+    /// <p>The redirect URL required by the OAuth 2.0 protocol for Amazon Q Business to authenticate a plugin user through a third party authentication server.</p>
+    pub fn get_authorization_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authorization_url
+    }
+    /// <p>The URL required by the OAuth 2.0 protocol to exchange an end user authorization code for an access token.</p>
+    pub fn token_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.token_url = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The URL required by the OAuth 2.0 protocol to exchange an end user authorization code for an access token.</p>
+    pub fn set_token_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.token_url = input;
+        self
+    }
+    /// <p>The URL required by the OAuth 2.0 protocol to exchange an end user authorization code for an access token.</p>
+    pub fn get_token_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.token_url
+    }
     /// Consumes the builder and constructs a [`OAuth2ClientCredentialConfiguration`](crate::types::OAuth2ClientCredentialConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`secret_arn`](crate::types::builders::OAuth2ClientCredentialConfigurationBuilder::secret_arn)
@@ -84,6 +126,8 @@ impl OAuth2ClientCredentialConfigurationBuilder {
                     "role_arn was not specified but it is required when building OAuth2ClientCredentialConfiguration",
                 )
             })?,
+            authorization_url: self.authorization_url,
+            token_url: self.token_url,
         })
     }
 }

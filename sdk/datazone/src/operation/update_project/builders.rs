@@ -183,4 +183,18 @@ impl UpdateProjectFluentBuilder {
     pub fn get_glossary_terms(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_glossary_terms()
     }
+    /// <p>The environment deployment details of the project.</p>
+    pub fn environment_deployment_details(mut self, input: crate::types::EnvironmentDeploymentDetails) -> Self {
+        self.inner = self.inner.environment_deployment_details(input);
+        self
+    }
+    /// <p>The environment deployment details of the project.</p>
+    pub fn set_environment_deployment_details(mut self, input: ::std::option::Option<crate::types::EnvironmentDeploymentDetails>) -> Self {
+        self.inner = self.inner.set_environment_deployment_details(input);
+        self
+    }
+    /// <p>The environment deployment details of the project.</p>
+    pub fn get_environment_deployment_details(&self) -> &::std::option::Option<crate::types::EnvironmentDeploymentDetails> {
+        self.inner.get_environment_deployment_details()
+    }
 }

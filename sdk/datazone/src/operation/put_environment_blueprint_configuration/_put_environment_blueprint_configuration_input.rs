@@ -11,6 +11,8 @@ pub struct PutEnvironmentBlueprintConfigurationInput {
     pub provisioning_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the manage access role.</p>
     pub manage_access_role_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The environment role permissions boundary.</p>
+    pub environment_role_permission_boundary: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the enabled Amazon Web Services Regions.</p>
     pub enabled_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The regional parameters in the environment blueprint.</p>
@@ -36,6 +38,10 @@ impl PutEnvironmentBlueprintConfigurationInput {
     /// <p>The ARN of the manage access role.</p>
     pub fn manage_access_role_arn(&self) -> ::std::option::Option<&str> {
         self.manage_access_role_arn.as_deref()
+    }
+    /// <p>The environment role permissions boundary.</p>
+    pub fn environment_role_permission_boundary(&self) -> ::std::option::Option<&str> {
+        self.environment_role_permission_boundary.as_deref()
     }
     /// <p>Specifies the enabled Amazon Web Services Regions.</p>
     ///
@@ -73,6 +79,7 @@ pub struct PutEnvironmentBlueprintConfigurationInputBuilder {
     pub(crate) environment_blueprint_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) provisioning_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) manage_access_role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) environment_role_permission_boundary: ::std::option::Option<::std::string::String>,
     pub(crate) enabled_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) regional_parameters: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -137,6 +144,20 @@ impl PutEnvironmentBlueprintConfigurationInputBuilder {
     /// <p>The ARN of the manage access role.</p>
     pub fn get_manage_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.manage_access_role_arn
+    }
+    /// <p>The environment role permissions boundary.</p>
+    pub fn environment_role_permission_boundary(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.environment_role_permission_boundary = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The environment role permissions boundary.</p>
+    pub fn set_environment_role_permission_boundary(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.environment_role_permission_boundary = input;
+        self
+    }
+    /// <p>The environment role permissions boundary.</p>
+    pub fn get_environment_role_permission_boundary(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_role_permission_boundary
     }
     /// Appends an item to `enabled_regions`.
     ///
@@ -224,6 +245,7 @@ impl PutEnvironmentBlueprintConfigurationInputBuilder {
                 environment_blueprint_identifier: self.environment_blueprint_identifier,
                 provisioning_role_arn: self.provisioning_role_arn,
                 manage_access_role_arn: self.manage_access_role_arn,
+                environment_role_permission_boundary: self.environment_role_permission_boundary,
                 enabled_regions: self.enabled_regions,
                 regional_parameters: self.regional_parameters,
                 provisioning_configurations: self.provisioning_configurations,

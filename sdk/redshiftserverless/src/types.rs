@@ -53,6 +53,10 @@ pub use crate::types::_scheduled_action_association::ScheduledActionAssociation;
 
 pub use crate::types::_recovery_point::RecoveryPoint;
 
+pub use crate::types::_managed_workgroup_list_item::ManagedWorkgroupListItem;
+
+pub use crate::types::_managed_workgroup_status::ManagedWorkgroupStatus;
+
 pub use crate::types::_endpoint_access::EndpointAccess;
 
 pub use crate::types::_vpc_security_group_membership::VpcSecurityGroupMembership;
@@ -72,6 +76,10 @@ mod _endpoint;
 mod _endpoint_access;
 
 mod _log_export;
+
+mod _managed_workgroup_list_item;
+
+mod _managed_workgroup_status;
 
 mod _namespace;
 

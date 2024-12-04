@@ -26,6 +26,8 @@ pub struct DataSourceRunSummary {
     pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of when a data source run was stopped.</p>
     pub stopped_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The run lineage summary of a data source.</p>
+    pub lineage_summary: ::std::option::Option<crate::types::DataSourceRunLineageSummary>,
 }
 impl DataSourceRunSummary {
     /// <p>The identifier of the data source run.</p>
@@ -75,6 +77,10 @@ impl DataSourceRunSummary {
     pub fn stopped_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.stopped_at.as_ref()
     }
+    /// <p>The run lineage summary of a data source.</p>
+    pub fn lineage_summary(&self) -> ::std::option::Option<&crate::types::DataSourceRunLineageSummary> {
+        self.lineage_summary.as_ref()
+    }
 }
 impl DataSourceRunSummary {
     /// Creates a new builder-style object to manufacture [`DataSourceRunSummary`](crate::types::DataSourceRunSummary).
@@ -98,6 +104,7 @@ pub struct DataSourceRunSummaryBuilder {
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) stopped_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) lineage_summary: ::std::option::Option<crate::types::DataSourceRunLineageSummary>,
 }
 impl DataSourceRunSummaryBuilder {
     /// <p>The identifier of the data source run.</p>
@@ -261,6 +268,20 @@ impl DataSourceRunSummaryBuilder {
     pub fn get_stopped_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.stopped_at
     }
+    /// <p>The run lineage summary of a data source.</p>
+    pub fn lineage_summary(mut self, input: crate::types::DataSourceRunLineageSummary) -> Self {
+        self.lineage_summary = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The run lineage summary of a data source.</p>
+    pub fn set_lineage_summary(mut self, input: ::std::option::Option<crate::types::DataSourceRunLineageSummary>) -> Self {
+        self.lineage_summary = input;
+        self
+    }
+    /// <p>The run lineage summary of a data source.</p>
+    pub fn get_lineage_summary(&self) -> &::std::option::Option<crate::types::DataSourceRunLineageSummary> {
+        &self.lineage_summary
+    }
     /// Consumes the builder and constructs a [`DataSourceRunSummary`](crate::types::DataSourceRunSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::DataSourceRunSummaryBuilder::id)
@@ -318,6 +339,7 @@ impl DataSourceRunSummaryBuilder {
             })?,
             started_at: self.started_at,
             stopped_at: self.stopped_at,
+            lineage_summary: self.lineage_summary,
         })
     }
 }

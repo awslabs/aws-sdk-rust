@@ -31,6 +31,8 @@ pub struct GetCustomModelOutput {
     pub validation_metrics: ::std::option::Option<::std::vec::Vec<crate::types::ValidatorMetric>>,
     /// <p>Creation time of the model.</p>
     pub creation_time: ::aws_smithy_types::DateTime,
+    /// <p>The customization configuration for the custom model.</p>
+    pub customization_config: ::std::option::Option<crate::types::CustomizationConfig>,
     _request_id: Option<String>,
 }
 impl GetCustomModelOutput {
@@ -96,6 +98,10 @@ impl GetCustomModelOutput {
     pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
         &self.creation_time
     }
+    /// <p>The customization configuration for the custom model.</p>
+    pub fn customization_config(&self) -> ::std::option::Option<&crate::types::CustomizationConfig> {
+        self.customization_config.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetCustomModelOutput {
     fn request_id(&self) -> Option<&str> {
@@ -127,6 +133,7 @@ pub struct GetCustomModelOutputBuilder {
     pub(crate) training_metrics: ::std::option::Option<crate::types::TrainingMetrics>,
     pub(crate) validation_metrics: ::std::option::Option<::std::vec::Vec<crate::types::ValidatorMetric>>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) customization_config: ::std::option::Option<crate::types::CustomizationConfig>,
     _request_id: Option<String>,
 }
 impl GetCustomModelOutputBuilder {
@@ -352,6 +359,20 @@ impl GetCustomModelOutputBuilder {
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
+    /// <p>The customization configuration for the custom model.</p>
+    pub fn customization_config(mut self, input: crate::types::CustomizationConfig) -> Self {
+        self.customization_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The customization configuration for the custom model.</p>
+    pub fn set_customization_config(mut self, input: ::std::option::Option<crate::types::CustomizationConfig>) -> Self {
+        self.customization_config = input;
+        self
+    }
+    /// <p>The customization configuration for the custom model.</p>
+    pub fn get_customization_config(&self) -> &::std::option::Option<crate::types::CustomizationConfig> {
+        &self.customization_config
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -411,6 +432,7 @@ impl GetCustomModelOutputBuilder {
                     "creation_time was not specified but it is required when building GetCustomModelOutput",
                 )
             })?,
+            customization_config: self.customization_config,
             _request_id: self._request_id,
         })
     }

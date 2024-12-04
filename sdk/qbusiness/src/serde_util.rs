@@ -47,6 +47,21 @@ pub(crate) fn resource_not_found_exception_correct_errors(
     builder
 }
 
+pub(crate) fn service_quota_exceeded_exception_correct_errors(
+    mut builder: crate::types::error::builders::ServiceQuotaExceededExceptionBuilder,
+) -> crate::types::error::builders::ServiceQuotaExceededExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    if builder.resource_id.is_none() {
+        builder.resource_id = Some(Default::default())
+    }
+    if builder.resource_type.is_none() {
+        builder.resource_type = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn throttling_exception_correct_errors(
     mut builder: crate::types::error::builders::ThrottlingExceptionBuilder,
 ) -> crate::types::error::builders::ThrottlingExceptionBuilder {
@@ -68,21 +83,6 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
-pub(crate) fn service_quota_exceeded_exception_correct_errors(
-    mut builder: crate::types::error::builders::ServiceQuotaExceededExceptionBuilder,
-) -> crate::types::error::builders::ServiceQuotaExceededExceptionBuilder {
-    if builder.message.is_none() {
-        builder.message = Some(Default::default())
-    }
-    if builder.resource_id.is_none() {
-        builder.resource_id = Some(Default::default())
-    }
-    if builder.resource_type.is_none() {
-        builder.resource_type = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn external_resource_exception_correct_errors(
     mut builder: crate::types::error::builders::ExternalResourceExceptionBuilder,
 ) -> crate::types::error::builders::ExternalResourceExceptionBuilder {
@@ -97,6 +97,21 @@ pub(crate) fn license_not_found_exception_correct_errors(
 ) -> crate::types::error::builders::LicenseNotFoundExceptionBuilder {
     if builder.message.is_none() {
         builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn create_data_accessor_output_output_correct_errors(
+    mut builder: crate::operation::create_data_accessor::builders::CreateDataAccessorOutputBuilder,
+) -> crate::operation::create_data_accessor::builders::CreateDataAccessorOutputBuilder {
+    if builder.data_accessor_id.is_none() {
+        builder.data_accessor_id = Some(Default::default())
+    }
+    if builder.idc_application_arn.is_none() {
+        builder.idc_application_arn = Some(Default::default())
+    }
+    if builder.data_accessor_arn.is_none() {
+        builder.data_accessor_arn = Some(Default::default())
     }
     builder
 }
@@ -191,11 +206,41 @@ pub(crate) fn q_apps_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn quick_sight_configuration_correct_errors(
+    mut builder: crate::types::builders::QuickSightConfigurationBuilder,
+) -> crate::types::builders::QuickSightConfigurationBuilder {
+    if builder.client_namespace.is_none() {
+        builder.client_namespace = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn action_configuration_correct_errors(
+    mut builder: crate::types::builders::ActionConfigurationBuilder,
+) -> crate::types::builders::ActionConfigurationBuilder {
+    if builder.action.is_none() {
+        builder.action = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn basic_auth_configuration_correct_errors(
     mut builder: crate::types::builders::BasicAuthConfigurationBuilder,
 ) -> crate::types::builders::BasicAuthConfigurationBuilder {
     if builder.secret_arn.is_none() {
         builder.secret_arn = Some(Default::default())
+    }
+    if builder.role_arn.is_none() {
+        builder.role_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn idc_auth_configuration_correct_errors(
+    mut builder: crate::types::builders::IdcAuthConfigurationBuilder,
+) -> crate::types::builders::IdcAuthConfigurationBuilder {
+    if builder.idc_application_arn.is_none() {
+        builder.idc_application_arn = Some(Default::default())
     }
     if builder.role_arn.is_none() {
         builder.role_arn = Some(Default::default())
@@ -334,6 +379,18 @@ pub(crate) fn action_execution_correct_errors(
     builder
 }
 
+pub(crate) fn action_filter_configuration_correct_errors(
+    mut builder: crate::types::builders::ActionFilterConfigurationBuilder,
+) -> crate::types::builders::ActionFilterConfigurationBuilder {
+    if builder.document_attribute_filter.is_none() {
+        builder.document_attribute_filter = {
+            let builder = crate::types::builders::AttributeFilterBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn auth_challenge_request_event_correct_errors(
     mut builder: crate::types::builders::AuthChallengeRequestEventBuilder,
 ) -> crate::types::builders::AuthChallengeRequestEventBuilder {
@@ -373,6 +430,18 @@ pub(crate) fn conversation_source_correct_errors(
     }
     if builder.attachment_id.is_none() {
         builder.attachment_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn document_attribute_correct_errors(
+    mut builder: crate::types::builders::DocumentAttributeBuilder,
+) -> crate::types::builders::DocumentAttributeBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.value.is_none() {
+        builder.value = Some(crate::types::DocumentAttributeValue::Unknown)
     }
     builder
 }

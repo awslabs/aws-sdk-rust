@@ -270,4 +270,18 @@ impl InvokeAgentFluentBuilder {
     pub fn get_streaming_configurations(&self) -> &::std::option::Option<crate::types::StreamingConfigurations> {
         self.inner.get_streaming_configurations()
     }
+    /// <p>The ARN of the resource making the request.</p>
+    pub fn source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.source_arn(input.into());
+        self
+    }
+    /// <p>The ARN of the resource making the request.</p>
+    pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_source_arn(input);
+        self
+    }
+    /// <p>The ARN of the resource making the request.</p>
+    pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_arn()
+    }
 }

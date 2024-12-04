@@ -9,6 +9,8 @@ pub use crate::types::_agent_status::AgentStatus;
 
 pub use crate::types::_agent_version::AgentVersion;
 
+pub use crate::types::_agent_collaboration::AgentCollaboration;
+
 pub use crate::types::_memory_configuration::MemoryConfiguration;
 
 pub use crate::types::_memory_type::MemoryType;
@@ -435,6 +437,14 @@ pub use crate::types::_orchestration_type::OrchestrationType;
 
 pub use crate::types::_agent_summary::AgentSummary;
 
+pub use crate::types::_agent_collaborator::AgentCollaborator;
+
+pub use crate::types::_relay_conversation_history::RelayConversationHistory;
+
+pub use crate::types::_agent_descriptor::AgentDescriptor;
+
+pub use crate::types::_agent_collaborator_summary::AgentCollaboratorSummary;
+
 pub use crate::types::_agent_action_group::AgentActionGroup;
 
 pub use crate::types::_action_group_state::ActionGroupState;
@@ -482,6 +492,14 @@ mod _agent_alias_routing_configuration_list_item;
 mod _agent_alias_status;
 
 mod _agent_alias_summary;
+
+mod _agent_collaboration;
+
+mod _agent_collaborator;
+
+mod _agent_collaborator_summary;
+
+mod _agent_descriptor;
 
 mod _agent_flow_node_configuration;
 
@@ -808,6 +826,8 @@ mod _rds_field_mapping;
 mod _redis_enterprise_cloud_configuration;
 
 mod _redis_enterprise_cloud_field_mapping;
+
+mod _relay_conversation_history;
 
 mod _require_confirmation;
 

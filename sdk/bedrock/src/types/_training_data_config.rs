@@ -5,13 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrainingDataConfig {
     /// <p>The S3 URI where the training data is stored.</p>
-    pub s3_uri: ::std::string::String,
+    pub s3_uri: ::std::option::Option<::std::string::String>,
+    /// <p>Settings for using invocation logs to customize a model.</p>
+    pub invocation_logs_config: ::std::option::Option<crate::types::InvocationLogsConfig>,
 }
 impl TrainingDataConfig {
     /// <p>The S3 URI where the training data is stored.</p>
-    pub fn s3_uri(&self) -> &str {
-        use std::ops::Deref;
-        self.s3_uri.deref()
+    pub fn s3_uri(&self) -> ::std::option::Option<&str> {
+        self.s3_uri.as_deref()
+    }
+    /// <p>Settings for using invocation logs to customize a model.</p>
+    pub fn invocation_logs_config(&self) -> ::std::option::Option<&crate::types::InvocationLogsConfig> {
+        self.invocation_logs_config.as_ref()
     }
 }
 impl TrainingDataConfig {
@@ -26,10 +31,10 @@ impl TrainingDataConfig {
 #[non_exhaustive]
 pub struct TrainingDataConfigBuilder {
     pub(crate) s3_uri: ::std::option::Option<::std::string::String>,
+    pub(crate) invocation_logs_config: ::std::option::Option<crate::types::InvocationLogsConfig>,
 }
 impl TrainingDataConfigBuilder {
     /// <p>The S3 URI where the training data is stored.</p>
-    /// This field is required.
     pub fn s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_uri = ::std::option::Option::Some(input.into());
         self
@@ -43,17 +48,25 @@ impl TrainingDataConfigBuilder {
     pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_uri
     }
+    /// <p>Settings for using invocation logs to customize a model.</p>
+    pub fn invocation_logs_config(mut self, input: crate::types::InvocationLogsConfig) -> Self {
+        self.invocation_logs_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Settings for using invocation logs to customize a model.</p>
+    pub fn set_invocation_logs_config(mut self, input: ::std::option::Option<crate::types::InvocationLogsConfig>) -> Self {
+        self.invocation_logs_config = input;
+        self
+    }
+    /// <p>Settings for using invocation logs to customize a model.</p>
+    pub fn get_invocation_logs_config(&self) -> &::std::option::Option<crate::types::InvocationLogsConfig> {
+        &self.invocation_logs_config
+    }
     /// Consumes the builder and constructs a [`TrainingDataConfig`](crate::types::TrainingDataConfig).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`s3_uri`](crate::types::builders::TrainingDataConfigBuilder::s3_uri)
-    pub fn build(self) -> ::std::result::Result<crate::types::TrainingDataConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TrainingDataConfig {
-            s3_uri: self.s3_uri.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "s3_uri",
-                    "s3_uri was not specified but it is required when building TrainingDataConfig",
-                )
-            })?,
-        })
+    pub fn build(self) -> crate::types::TrainingDataConfig {
+        crate::types::TrainingDataConfig {
+            s3_uri: self.s3_uri,
+            invocation_logs_config: self.invocation_logs_config,
+        }
     }
 }

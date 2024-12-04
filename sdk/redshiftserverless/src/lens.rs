@@ -19,6 +19,16 @@ pub(crate) fn reflens_list_endpoint_access_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_managed_workgroups_output_output_next_token(
+    input: &crate::operation::list_managed_workgroups::ListManagedWorkgroupsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_namespaces_output_output_next_token(
     input: &crate::operation::list_namespaces::ListNamespacesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -113,6 +123,16 @@ pub(crate) fn lens_list_endpoint_access_output_output_endpoints(
     input: crate::operation::list_endpoint_access::ListEndpointAccessOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::EndpointAccess>> {
     let input = input.endpoints;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_managed_workgroups_output_output_managed_workgroups(
+    input: crate::operation::list_managed_workgroups::ListManagedWorkgroupsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ManagedWorkgroupListItem>> {
+    let input = match input.managed_workgroups {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
     ::std::option::Option::Some(input)
 }
 

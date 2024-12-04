@@ -13,6 +13,8 @@ pub struct UpdateDomainOutput {
     pub single_sign_on: ::std::option::Option<crate::types::SingleSignOn>,
     /// <p>The domain execution role to be updated as part of the <code>UpdateDomain</code> action.</p>
     pub domain_execution_role: ::std::option::Option<::std::string::String>,
+    /// <p>The service role of the domain.</p>
+    pub service_role: ::std::option::Option<::std::string::String>,
     /// <p>The name to be updated as part of the <code>UpdateDomain</code> action.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the timestamp of when the domain was last updated.</p>
@@ -40,6 +42,10 @@ impl UpdateDomainOutput {
     /// <p>The domain execution role to be updated as part of the <code>UpdateDomain</code> action.</p>
     pub fn domain_execution_role(&self) -> ::std::option::Option<&str> {
         self.domain_execution_role.as_deref()
+    }
+    /// <p>The service role of the domain.</p>
+    pub fn service_role(&self) -> ::std::option::Option<&str> {
+        self.service_role.as_deref()
     }
     /// <p>The name to be updated as part of the <code>UpdateDomain</code> action.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -71,6 +77,7 @@ pub struct UpdateDomainOutputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) single_sign_on: ::std::option::Option<crate::types::SingleSignOn>,
     pub(crate) domain_execution_role: ::std::option::Option<::std::string::String>,
+    pub(crate) service_role: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
@@ -147,6 +154,20 @@ impl UpdateDomainOutputBuilder {
     pub fn get_domain_execution_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_execution_role
     }
+    /// <p>The service role of the domain.</p>
+    pub fn service_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.service_role = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The service role of the domain.</p>
+    pub fn set_service_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.service_role = input;
+        self
+    }
+    /// <p>The service role of the domain.</p>
+    pub fn get_service_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_role
+    }
     /// <p>The name to be updated as part of the <code>UpdateDomain</code> action.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -201,6 +222,7 @@ impl UpdateDomainOutputBuilder {
             description: self.description,
             single_sign_on: self.single_sign_on,
             domain_execution_role: self.domain_execution_role,
+            service_role: self.service_role,
             name: self.name,
             last_updated_at: self.last_updated_at,
             _request_id: self._request_id,

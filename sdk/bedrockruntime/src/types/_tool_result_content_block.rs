@@ -14,6 +14,8 @@ pub enum ToolResultContentBlock {
     Json(::aws_smithy_types::Document),
     /// <p>A tool result that is text.</p>
     Text(::std::string::String),
+    /// <p>A tool result that is video.</p>
+    Video(crate::types::VideoBlock),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -76,6 +78,19 @@ impl ToolResultContentBlock {
     /// Returns true if this is a [`Text`](crate::types::ToolResultContentBlock::Text).
     pub fn is_text(&self) -> bool {
         self.as_text().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Video`](crate::types::ToolResultContentBlock::Video), extracting the inner [`VideoBlock`](crate::types::VideoBlock).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_video(&self) -> ::std::result::Result<&crate::types::VideoBlock, &Self> {
+        if let ToolResultContentBlock::Video(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Video`](crate::types::ToolResultContentBlock::Video).
+    pub fn is_video(&self) -> bool {
+        self.as_video().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

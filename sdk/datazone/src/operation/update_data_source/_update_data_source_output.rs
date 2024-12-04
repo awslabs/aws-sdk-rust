@@ -18,7 +18,9 @@ pub struct UpdateDataSourceOutput {
     /// <p>The identifier of the project where data source is to be updated.</p>
     pub project_id: ::std::string::String,
     /// <p>The identifier of the environment in which a data source is to be updated.</p>
-    pub environment_id: ::std::string::String,
+    pub environment_id: ::std::option::Option<::std::string::String>,
+    /// <p>The connection ID.</p>
+    pub connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The configuration to be updated as part of the <code>UpdateDataSource</code> action.</p>
     pub configuration: ::std::option::Option<crate::types::DataSourceConfigurationOutput>,
     /// <p>The recommendation to be updated as part of the <code>UpdateDataSource</code> action.</p>
@@ -83,9 +85,12 @@ impl UpdateDataSourceOutput {
         self.project_id.deref()
     }
     /// <p>The identifier of the environment in which a data source is to be updated.</p>
-    pub fn environment_id(&self) -> &str {
-        use std::ops::Deref;
-        self.environment_id.deref()
+    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
+    /// <p>The connection ID.</p>
+    pub fn connection_id(&self) -> ::std::option::Option<&str> {
+        self.connection_id.as_deref()
     }
     /// <p>The configuration to be updated as part of the <code>UpdateDataSource</code> action.</p>
     pub fn configuration(&self) -> ::std::option::Option<&crate::types::DataSourceConfigurationOutput> {
@@ -157,6 +162,7 @@ impl ::std::fmt::Debug for UpdateDataSourceOutput {
         formatter.field("domain_id", &self.domain_id);
         formatter.field("project_id", &self.project_id);
         formatter.field("environment_id", &self.environment_id);
+        formatter.field("connection_id", &self.connection_id);
         formatter.field("configuration", &self.configuration);
         formatter.field("recommendation", &self.recommendation);
         formatter.field("enable_setting", &self.enable_setting);
@@ -199,6 +205,7 @@ pub struct UpdateDataSourceOutputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) project_id: ::std::option::Option<::std::string::String>,
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) configuration: ::std::option::Option<crate::types::DataSourceConfigurationOutput>,
     pub(crate) recommendation: ::std::option::Option<crate::types::RecommendationConfiguration>,
     pub(crate) enable_setting: ::std::option::Option<crate::types::EnableSetting>,
@@ -319,7 +326,6 @@ impl UpdateDataSourceOutputBuilder {
         &self.project_id
     }
     /// <p>The identifier of the environment in which a data source is to be updated.</p>
-    /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
@@ -332,6 +338,20 @@ impl UpdateDataSourceOutputBuilder {
     /// <p>The identifier of the environment in which a data source is to be updated.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.environment_id
+    }
+    /// <p>The connection ID.</p>
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.connection_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The connection ID.</p>
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.connection_id = input;
+        self
+    }
+    /// <p>The connection ID.</p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_id
     }
     /// <p>The configuration to be updated as part of the <code>UpdateDataSource</code> action.</p>
     pub fn configuration(mut self, input: crate::types::DataSourceConfigurationOutput) -> Self {
@@ -550,7 +570,6 @@ impl UpdateDataSourceOutputBuilder {
     /// - [`name`](crate::operation::update_data_source::builders::UpdateDataSourceOutputBuilder::name)
     /// - [`domain_id`](crate::operation::update_data_source::builders::UpdateDataSourceOutputBuilder::domain_id)
     /// - [`project_id`](crate::operation::update_data_source::builders::UpdateDataSourceOutputBuilder::project_id)
-    /// - [`environment_id`](crate::operation::update_data_source::builders::UpdateDataSourceOutputBuilder::environment_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_data_source::UpdateDataSourceOutput, ::aws_smithy_types::error::operation::BuildError> {
@@ -582,12 +601,8 @@ impl UpdateDataSourceOutputBuilder {
                     "project_id was not specified but it is required when building UpdateDataSourceOutput",
                 )
             })?,
-            environment_id: self.environment_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "environment_id",
-                    "environment_id was not specified but it is required when building UpdateDataSourceOutput",
-                )
-            })?,
+            environment_id: self.environment_id,
+            connection_id: self.connection_id,
             configuration: self.configuration,
             recommendation: self.recommendation,
             enable_setting: self.enable_setting,
@@ -617,6 +632,7 @@ impl ::std::fmt::Debug for UpdateDataSourceOutputBuilder {
         formatter.field("domain_id", &self.domain_id);
         formatter.field("project_id", &self.project_id);
         formatter.field("environment_id", &self.environment_id);
+        formatter.field("connection_id", &self.connection_id);
         formatter.field("configuration", &self.configuration);
         formatter.field("recommendation", &self.recommendation);
         formatter.field("enable_setting", &self.enable_setting);

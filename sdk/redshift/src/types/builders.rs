@@ -59,6 +59,10 @@ pub use crate::types::_parameter::ParameterBuilder;
 
 pub use crate::types::_data_share_association::DataShareAssociationBuilder;
 
+pub use crate::types::_provisioned_identifier::ProvisionedIdentifierBuilder;
+
+pub use crate::types::_serverless_identifier::ServerlessIdentifierBuilder;
+
 pub use crate::types::_resource_policy::ResourcePolicyBuilder;
 
 pub use crate::types::_reserved_node::ReservedNodeBuilder;

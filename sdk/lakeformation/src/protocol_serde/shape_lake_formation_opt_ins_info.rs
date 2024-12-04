@@ -20,6 +20,9 @@ where
                         "Principal" => {
                             builder = builder.set_principal(crate::protocol_serde::shape_data_lake_principal::de_data_lake_principal(tokens)?);
                         }
+                        "Condition" => {
+                            builder = builder.set_condition(crate::protocol_serde::shape_condition::de_condition(tokens)?);
+                        }
                         "LastModified" => {
                             builder = builder.set_last_modified(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),

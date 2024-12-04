@@ -10,6 +10,7 @@ impl super::Client {
     ///   - [`allow_publicly_accessible_consumers(Option<bool>)`](crate::operation::reject_data_share::RejectDataShareOutput::allow_publicly_accessible_consumers): <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
     ///   - [`data_share_associations(Option<Vec::<DataShareAssociation>>)`](crate::operation::reject_data_share::RejectDataShareOutput::data_share_associations): <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
     ///   - [`managed_by(Option<String>)`](crate::operation::reject_data_share::RejectDataShareOutput::managed_by): <p>The identifier of a datashare to show its managing entity.</p>
+    ///   - [`data_share_type(Option<DataShareType>)`](crate::operation::reject_data_share::RejectDataShareOutput::data_share_type): <p>The type of the datashare created by RegisterNamespace.</p>
     /// - On failure, responds with [`SdkError<RejectDataShareError>`](crate::operation::reject_data_share::RejectDataShareError)
     pub fn reject_data_share(&self) -> crate::operation::reject_data_share::builders::RejectDataShareFluentBuilder {
         crate::operation::reject_data_share::builders::RejectDataShareFluentBuilder::new(self.handle.clone())

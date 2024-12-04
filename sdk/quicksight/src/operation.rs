@@ -112,6 +112,9 @@ pub mod delete_data_set_refresh_properties;
 /// Types for the `DeleteDataSource` operation.
 pub mod delete_data_source;
 
+/// Types for the `DeleteDefaultQBusinessApplication` operation.
+pub mod delete_default_q_business_application;
+
 /// Types for the `DeleteFolder` operation.
 pub mod delete_folder;
 
@@ -241,6 +244,9 @@ pub mod describe_data_source;
 /// Types for the `DescribeDataSourcePermissions` operation.
 pub mod describe_data_source_permissions;
 
+/// Types for the `DescribeDefaultQBusinessApplication` operation.
+pub mod describe_default_q_business_application;
+
 /// Types for the `DescribeFolder` operation.
 pub mod describe_folder;
 
@@ -273,6 +279,9 @@ pub mod describe_namespace;
 
 /// Types for the `DescribeQPersonalizationConfiguration` operation.
 pub mod describe_q_personalization_configuration;
+
+/// Types for the `DescribeQuickSightQSearchConfiguration` operation.
+pub mod describe_quick_sight_q_search_configuration;
 
 /// Types for the `DescribeRefreshSchedule` operation.
 pub mod describe_refresh_schedule;
@@ -324,6 +333,9 @@ pub mod generate_embed_url_for_anonymous_user;
 
 /// Types for the `GenerateEmbedUrlForRegisteredUser` operation.
 pub mod generate_embed_url_for_registered_user;
+
+/// Types for the `GenerateEmbedUrlForRegisteredUserWithIdentity` operation.
+pub mod generate_embed_url_for_registered_user_with_identity;
 
 /// Types for the `GetDashboardEmbedUrl` operation.
 pub mod get_dashboard_embed_url;
@@ -433,6 +445,9 @@ pub mod list_users;
 /// Types for the `ListVPCConnections` operation.
 pub mod list_vpc_connections;
 
+/// Types for the `PredictQAResults` operation.
+pub mod predict_qa_results;
+
 /// Types for the `PutDataSetRefreshProperties` operation.
 pub mod put_data_set_refresh_properties;
 
@@ -493,6 +508,9 @@ pub mod update_analysis;
 /// Types for the `UpdateAnalysisPermissions` operation.
 pub mod update_analysis_permissions;
 
+/// Types for the `UpdateApplicationWithTokenExchangeGrant` operation.
+pub mod update_application_with_token_exchange_grant;
+
 /// Types for the `UpdateBrand` operation.
 pub mod update_brand;
 
@@ -532,6 +550,9 @@ pub mod update_data_source;
 /// Types for the `UpdateDataSourcePermissions` operation.
 pub mod update_data_source_permissions;
 
+/// Types for the `UpdateDefaultQBusinessApplication` operation.
+pub mod update_default_q_business_application;
+
 /// Types for the `UpdateFolder` operation.
 pub mod update_folder;
 
@@ -558,6 +579,9 @@ pub mod update_public_sharing_settings;
 
 /// Types for the `UpdateQPersonalizationConfiguration` operation.
 pub mod update_q_personalization_configuration;
+
+/// Types for the `UpdateQuickSightQSearchConfiguration` operation.
+pub mod update_quick_sight_q_search_configuration;
 
 /// Types for the `UpdateRefreshSchedule` operation.
 pub mod update_refresh_schedule;

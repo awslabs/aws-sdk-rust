@@ -21,5 +21,8 @@ pub fn ser_glue_run_configuration_input(
     if let Some(var_5) = &input.auto_import_data_quality_result {
         object.key("autoImportDataQualityResult").boolean(*var_5);
     }
+    if let Some(var_6) = &input.catalog_name {
+        object.key("catalogName").string(var_6.as_str());
+    }
     Ok(())
 }

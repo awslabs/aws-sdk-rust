@@ -25,6 +25,12 @@ pub struct GetProjectOutput {
     pub glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the domain unit.</p>
     pub domain_unit_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the project profile of a project.</p>
+    pub project_profile_id: ::std::option::Option<::std::string::String>,
+    /// <p>The user parameters of a project.</p>
+    pub user_parameters: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentConfigurationUserParameter>>,
+    /// <p>The environment deployment status of a project.</p>
+    pub environment_deployment_details: ::std::option::Option<crate::types::EnvironmentDeploymentDetails>,
     _request_id: Option<String>,
 }
 impl GetProjectOutput {
@@ -80,6 +86,20 @@ impl GetProjectOutput {
     pub fn domain_unit_id(&self) -> ::std::option::Option<&str> {
         self.domain_unit_id.as_deref()
     }
+    /// <p>The ID of the project profile of a project.</p>
+    pub fn project_profile_id(&self) -> ::std::option::Option<&str> {
+        self.project_profile_id.as_deref()
+    }
+    /// <p>The user parameters of a project.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_parameters.is_none()`.
+    pub fn user_parameters(&self) -> &[crate::types::EnvironmentConfigurationUserParameter] {
+        self.user_parameters.as_deref().unwrap_or_default()
+    }
+    /// <p>The environment deployment status of a project.</p>
+    pub fn environment_deployment_details(&self) -> ::std::option::Option<&crate::types::EnvironmentDeploymentDetails> {
+        self.environment_deployment_details.as_ref()
+    }
 }
 impl ::std::fmt::Debug for GetProjectOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -95,6 +115,9 @@ impl ::std::fmt::Debug for GetProjectOutput {
         formatter.field("last_updated_at", &self.last_updated_at);
         formatter.field("glossary_terms", &self.glossary_terms);
         formatter.field("domain_unit_id", &self.domain_unit_id);
+        formatter.field("project_profile_id", &self.project_profile_id);
+        formatter.field("user_parameters", &self.user_parameters);
+        formatter.field("environment_deployment_details", &self.environment_deployment_details);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -126,6 +149,9 @@ pub struct GetProjectOutputBuilder {
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) domain_unit_id: ::std::option::Option<::std::string::String>,
+    pub(crate) project_profile_id: ::std::option::Option<::std::string::String>,
+    pub(crate) user_parameters: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentConfigurationUserParameter>>,
+    pub(crate) environment_deployment_details: ::std::option::Option<crate::types::EnvironmentDeploymentDetails>,
     _request_id: Option<String>,
 }
 impl GetProjectOutputBuilder {
@@ -299,6 +325,54 @@ impl GetProjectOutputBuilder {
     pub fn get_domain_unit_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_unit_id
     }
+    /// <p>The ID of the project profile of a project.</p>
+    pub fn project_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.project_profile_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the project profile of a project.</p>
+    pub fn set_project_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.project_profile_id = input;
+        self
+    }
+    /// <p>The ID of the project profile of a project.</p>
+    pub fn get_project_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_profile_id
+    }
+    /// Appends an item to `user_parameters`.
+    ///
+    /// To override the contents of this collection use [`set_user_parameters`](Self::set_user_parameters).
+    ///
+    /// <p>The user parameters of a project.</p>
+    pub fn user_parameters(mut self, input: crate::types::EnvironmentConfigurationUserParameter) -> Self {
+        let mut v = self.user_parameters.unwrap_or_default();
+        v.push(input);
+        self.user_parameters = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The user parameters of a project.</p>
+    pub fn set_user_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentConfigurationUserParameter>>) -> Self {
+        self.user_parameters = input;
+        self
+    }
+    /// <p>The user parameters of a project.</p>
+    pub fn get_user_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentConfigurationUserParameter>> {
+        &self.user_parameters
+    }
+    /// <p>The environment deployment status of a project.</p>
+    pub fn environment_deployment_details(mut self, input: crate::types::EnvironmentDeploymentDetails) -> Self {
+        self.environment_deployment_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The environment deployment status of a project.</p>
+    pub fn set_environment_deployment_details(mut self, input: ::std::option::Option<crate::types::EnvironmentDeploymentDetails>) -> Self {
+        self.environment_deployment_details = input;
+        self
+    }
+    /// <p>The environment deployment status of a project.</p>
+    pub fn get_environment_deployment_details(&self) -> &::std::option::Option<crate::types::EnvironmentDeploymentDetails> {
+        &self.environment_deployment_details
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -347,6 +421,9 @@ impl GetProjectOutputBuilder {
             last_updated_at: self.last_updated_at,
             glossary_terms: self.glossary_terms,
             domain_unit_id: self.domain_unit_id,
+            project_profile_id: self.project_profile_id,
+            user_parameters: self.user_parameters,
+            environment_deployment_details: self.environment_deployment_details,
             _request_id: self._request_id,
         })
     }
@@ -365,6 +442,9 @@ impl ::std::fmt::Debug for GetProjectOutputBuilder {
         formatter.field("last_updated_at", &self.last_updated_at);
         formatter.field("glossary_terms", &self.glossary_terms);
         formatter.field("domain_unit_id", &self.domain_unit_id);
+        formatter.field("project_profile_id", &self.project_profile_id);
+        formatter.field("user_parameters", &self.user_parameters);
+        formatter.field("environment_deployment_details", &self.environment_deployment_details);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

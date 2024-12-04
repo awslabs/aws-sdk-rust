@@ -6,11 +6,14 @@ pub fn ser_test_connection_input_input(
     if let Some(var_1) = &input.connection_name {
         object.key("ConnectionName").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.test_connection_input {
+    if let Some(var_2) = &input.catalog_id {
+        object.key("CatalogId").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.test_connection_input {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("TestConnectionInput").start_object();
-        crate::protocol_serde::shape_test_connection_input::ser_test_connection_input(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_4 = object.key("TestConnectionInput").start_object();
+        crate::protocol_serde::shape_test_connection_input::ser_test_connection_input(&mut object_4, var_3)?;
+        object_4.finish();
     }
     Ok(())
 }
@@ -24,19 +27,19 @@ pub fn ser_test_connection_input(
     }
     {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("ConnectionProperties").start_object();
-        for (key_5, value_6) in &input.connection_properties {
+        let mut object_5 = object.key("ConnectionProperties").start_object();
+        for (key_6, value_7) in &input.connection_properties {
             {
-                object_4.key(key_5.as_str()).string(value_6.as_str());
+                object_5.key(key_6.as_str()).string(value_7.as_str());
             }
         }
-        object_4.finish();
+        object_5.finish();
     }
-    if let Some(var_7) = &input.authentication_configuration {
+    if let Some(var_8) = &input.authentication_configuration {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("AuthenticationConfiguration").start_object();
-        crate::protocol_serde::shape_authentication_configuration_input::ser_authentication_configuration_input(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_9 = object.key("AuthenticationConfiguration").start_object();
+        crate::protocol_serde::shape_authentication_configuration_input::ser_authentication_configuration_input(&mut object_9, var_8)?;
+        object_9.finish();
     }
     Ok(())
 }

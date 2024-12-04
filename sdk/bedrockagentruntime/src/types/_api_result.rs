@@ -23,6 +23,8 @@ pub struct ApiResult {
     pub http_status_code: ::std::option::Option<i32>,
     /// <p>Controls the final response state returned to end user when API/Function execution failed. When this state is FAILURE, the request would fail with dependency failure exception. When this state is REPROMPT, the API/function response will be sent to model for re-prompt</p>
     pub response_state: ::std::option::Option<crate::types::ResponseState>,
+    /// <p>The agent's ID.</p>
+    pub agent_id: ::std::option::Option<::std::string::String>,
 }
 impl ApiResult {
     /// <p>The action group that the API operation belongs to.</p>
@@ -54,6 +56,10 @@ impl ApiResult {
     pub fn response_state(&self) -> ::std::option::Option<&crate::types::ResponseState> {
         self.response_state.as_ref()
     }
+    /// <p>The agent's ID.</p>
+    pub fn agent_id(&self) -> ::std::option::Option<&str> {
+        self.agent_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for ApiResult {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -65,6 +71,7 @@ impl ::std::fmt::Debug for ApiResult {
         formatter.field("response_body", &self.response_body);
         formatter.field("http_status_code", &self.http_status_code);
         formatter.field("response_state", &self.response_state);
+        formatter.field("agent_id", &self.agent_id);
         formatter.finish()
     }
 }
@@ -86,6 +93,7 @@ pub struct ApiResultBuilder {
     pub(crate) response_body: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ContentBody>>,
     pub(crate) http_status_code: ::std::option::Option<i32>,
     pub(crate) response_state: ::std::option::Option<crate::types::ResponseState>,
+    pub(crate) agent_id: ::std::option::Option<::std::string::String>,
 }
 impl ApiResultBuilder {
     /// <p>The action group that the API operation belongs to.</p>
@@ -196,6 +204,20 @@ impl ApiResultBuilder {
     pub fn get_response_state(&self) -> &::std::option::Option<crate::types::ResponseState> {
         &self.response_state
     }
+    /// <p>The agent's ID.</p>
+    pub fn agent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.agent_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The agent's ID.</p>
+    pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.agent_id = input;
+        self
+    }
+    /// <p>The agent's ID.</p>
+    pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_id
+    }
     /// Consumes the builder and constructs a [`ApiResult`](crate::types::ApiResult).
     /// This method will fail if any of the following fields are not set:
     /// - [`action_group`](crate::types::builders::ApiResultBuilder::action_group)
@@ -213,6 +235,7 @@ impl ApiResultBuilder {
             response_body: self.response_body,
             http_status_code: self.http_status_code,
             response_state: self.response_state,
+            agent_id: self.agent_id,
         })
     }
 }
@@ -226,6 +249,7 @@ impl ::std::fmt::Debug for ApiResultBuilder {
         formatter.field("response_body", &self.response_body);
         formatter.field("http_status_code", &self.http_status_code);
         formatter.field("response_state", &self.response_state);
+        formatter.field("agent_id", &self.agent_id);
         formatter.finish()
     }
 }

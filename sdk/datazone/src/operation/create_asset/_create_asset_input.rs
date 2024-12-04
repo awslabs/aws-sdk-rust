@@ -81,7 +81,7 @@ impl ::std::fmt::Debug for CreateAssetInput {
         let mut formatter = f.debug_struct("CreateAssetInput");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("domain_identifier", &self.domain_identifier);
-        formatter.field("external_identifier", &"*** Sensitive Data Redacted ***");
+        formatter.field("external_identifier", &self.external_identifier);
         formatter.field("type_identifier", &self.type_identifier);
         formatter.field("type_revision", &self.type_revision);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
@@ -309,7 +309,7 @@ impl ::std::fmt::Debug for CreateAssetInputBuilder {
         let mut formatter = f.debug_struct("CreateAssetInputBuilder");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("domain_identifier", &self.domain_identifier);
-        formatter.field("external_identifier", &"*** Sensitive Data Redacted ***");
+        formatter.field("external_identifier", &self.external_identifier);
         formatter.field("type_identifier", &self.type_identifier);
         formatter.field("type_revision", &self.type_revision);
         formatter.field("description", &"*** Sensitive Data Redacted ***");

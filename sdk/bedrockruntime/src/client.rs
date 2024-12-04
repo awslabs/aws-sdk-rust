@@ -128,6 +128,12 @@ mod converse_stream;
 ///
 pub mod customize;
 
+mod get_async_invoke;
+
 mod invoke_model;
 
 mod invoke_model_with_response_stream;
+
+mod list_async_invokes;
+
+mod start_async_invoke;

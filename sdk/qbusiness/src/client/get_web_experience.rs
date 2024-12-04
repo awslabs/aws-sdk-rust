@@ -23,6 +23,7 @@ impl super::Client {
     ///   - [`authentication_configuration(Option<WebExperienceAuthConfiguration>)`](crate::operation::get_web_experience::GetWebExperienceOutput::authentication_configuration): <p>The authentication configuration information for your Amazon Q Business web experience.</p>
     ///   - [`error(Option<ErrorDetail>)`](crate::operation::get_web_experience::GetWebExperienceOutput::error): <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a description of the error that caused the data source connector to fail.</p>
     ///   - [`browser_extension_configuration(Option<BrowserExtensionConfiguration>)`](crate::operation::get_web_experience::GetWebExperienceOutput::browser_extension_configuration): <p>The browser extension configuration for an Amazon Q Business web experience.</p>
+    ///   - [`customization_configuration(Option<CustomizationConfiguration>)`](crate::operation::get_web_experience::GetWebExperienceOutput::customization_configuration): <p>Gets the custom logo, favicon, font, and color used in the Amazon Q web experience.</p>
     /// - On failure, responds with [`SdkError<GetWebExperienceError>`](crate::operation::get_web_experience::GetWebExperienceError)
     pub fn get_web_experience(&self) -> crate::operation::get_web_experience::builders::GetWebExperienceFluentBuilder {
         crate::operation::get_web_experience::builders::GetWebExperienceFluentBuilder::new(self.handle.clone())

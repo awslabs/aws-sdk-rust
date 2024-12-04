@@ -3,7 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDataCatalogOutput {
+    /// <p>Contains information about a data catalog in an Amazon Web Services account.</p><note>
+    /// <p>In the Athena console, data catalogs are listed as "data sources" on the <b>Data sources</b> page under the <b>Data source name</b> column.</p>
+    /// </note>
+    pub data_catalog: ::std::option::Option<crate::types::DataCatalog>,
     _request_id: Option<String>,
+}
+impl DeleteDataCatalogOutput {
+    /// <p>Contains information about a data catalog in an Amazon Web Services account.</p><note>
+    /// <p>In the Athena console, data catalogs are listed as "data sources" on the <b>Data sources</b> page under the <b>Data source name</b> column.</p>
+    /// </note>
+    pub fn data_catalog(&self) -> ::std::option::Option<&crate::types::DataCatalog> {
+        self.data_catalog.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DeleteDataCatalogOutput {
     fn request_id(&self) -> Option<&str> {
@@ -21,9 +33,30 @@ impl DeleteDataCatalogOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct DeleteDataCatalogOutputBuilder {
+    pub(crate) data_catalog: ::std::option::Option<crate::types::DataCatalog>,
     _request_id: Option<String>,
 }
 impl DeleteDataCatalogOutputBuilder {
+    /// <p>Contains information about a data catalog in an Amazon Web Services account.</p><note>
+    /// <p>In the Athena console, data catalogs are listed as "data sources" on the <b>Data sources</b> page under the <b>Data source name</b> column.</p>
+    /// </note>
+    pub fn data_catalog(mut self, input: crate::types::DataCatalog) -> Self {
+        self.data_catalog = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains information about a data catalog in an Amazon Web Services account.</p><note>
+    /// <p>In the Athena console, data catalogs are listed as "data sources" on the <b>Data sources</b> page under the <b>Data source name</b> column.</p>
+    /// </note>
+    pub fn set_data_catalog(mut self, input: ::std::option::Option<crate::types::DataCatalog>) -> Self {
+        self.data_catalog = input;
+        self
+    }
+    /// <p>Contains information about a data catalog in an Amazon Web Services account.</p><note>
+    /// <p>In the Athena console, data catalogs are listed as "data sources" on the <b>Data sources</b> page under the <b>Data source name</b> column.</p>
+    /// </note>
+    pub fn get_data_catalog(&self) -> &::std::option::Option<crate::types::DataCatalog> {
+        &self.data_catalog
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -36,6 +69,7 @@ impl DeleteDataCatalogOutputBuilder {
     /// Consumes the builder and constructs a [`DeleteDataCatalogOutput`](crate::operation::delete_data_catalog::DeleteDataCatalogOutput).
     pub fn build(self) -> crate::operation::delete_data_catalog::DeleteDataCatalogOutput {
         crate::operation::delete_data_catalog::DeleteDataCatalogOutput {
+            data_catalog: self.data_catalog,
             _request_id: self._request_id,
         }
     }

@@ -25,6 +25,10 @@ pub struct CreateDomainOutput {
     pub portal_url: ::std::option::Option<::std::string::String>,
     /// <p>The tags specified for the Amazon DataZone domain.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The version of the domain that is created.</p>
+    pub domain_version: ::std::option::Option<crate::types::DomainVersion>,
+    /// <p>Te service role of the domain that is created.</p>
+    pub service_role: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateDomainOutput {
@@ -73,6 +77,14 @@ impl CreateDomainOutput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>The version of the domain that is created.</p>
+    pub fn domain_version(&self) -> ::std::option::Option<&crate::types::DomainVersion> {
+        self.domain_version.as_ref()
+    }
+    /// <p>Te service role of the domain that is created.</p>
+    pub fn service_role(&self) -> ::std::option::Option<&str> {
+        self.service_role.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for CreateDomainOutput {
     fn request_id(&self) -> Option<&str> {
@@ -101,6 +113,8 @@ pub struct CreateDomainOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::DomainStatus>,
     pub(crate) portal_url: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) domain_version: ::std::option::Option<crate::types::DomainVersion>,
+    pub(crate) service_role: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateDomainOutputBuilder {
@@ -265,6 +279,34 @@ impl CreateDomainOutputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The version of the domain that is created.</p>
+    pub fn domain_version(mut self, input: crate::types::DomainVersion) -> Self {
+        self.domain_version = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The version of the domain that is created.</p>
+    pub fn set_domain_version(mut self, input: ::std::option::Option<crate::types::DomainVersion>) -> Self {
+        self.domain_version = input;
+        self
+    }
+    /// <p>The version of the domain that is created.</p>
+    pub fn get_domain_version(&self) -> &::std::option::Option<crate::types::DomainVersion> {
+        &self.domain_version
+    }
+    /// <p>Te service role of the domain that is created.</p>
+    pub fn service_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.service_role = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Te service role of the domain that is created.</p>
+    pub fn set_service_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.service_role = input;
+        self
+    }
+    /// <p>Te service role of the domain that is created.</p>
+    pub fn get_service_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_role
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -297,6 +339,8 @@ impl CreateDomainOutputBuilder {
             status: self.status,
             portal_url: self.portal_url,
             tags: self.tags,
+            domain_version: self.domain_version,
+            service_role: self.service_role,
             _request_id: self._request_id,
         })
     }

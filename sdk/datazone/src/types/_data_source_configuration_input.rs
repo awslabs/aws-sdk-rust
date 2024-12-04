@@ -8,6 +8,8 @@ pub enum DataSourceConfigurationInput {
     GlueRunConfiguration(crate::types::GlueRunConfigurationInput),
     /// <p>The configuration of the Amazon Redshift data source.</p>
     RedshiftRunConfiguration(crate::types::RedshiftRunConfigurationInput),
+    /// <p>The Amazon SageMaker run configuration.</p>
+    SageMakerRunConfiguration(crate::types::SageMakerRunConfigurationInput),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -44,6 +46,19 @@ impl DataSourceConfigurationInput {
     /// Returns true if this is a [`RedshiftRunConfiguration`](crate::types::DataSourceConfigurationInput::RedshiftRunConfiguration).
     pub fn is_redshift_run_configuration(&self) -> bool {
         self.as_redshift_run_configuration().is_ok()
+    }
+    /// Tries to convert the enum instance into [`SageMakerRunConfiguration`](crate::types::DataSourceConfigurationInput::SageMakerRunConfiguration), extracting the inner [`SageMakerRunConfigurationInput`](crate::types::SageMakerRunConfigurationInput).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_sage_maker_run_configuration(&self) -> ::std::result::Result<&crate::types::SageMakerRunConfigurationInput, &Self> {
+        if let DataSourceConfigurationInput::SageMakerRunConfiguration(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`SageMakerRunConfiguration`](crate::types::DataSourceConfigurationInput::SageMakerRunConfiguration).
+    pub fn is_sage_maker_run_configuration(&self) -> bool {
+        self.as_sage_maker_run_configuration().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

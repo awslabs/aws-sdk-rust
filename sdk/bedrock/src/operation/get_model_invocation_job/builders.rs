@@ -22,7 +22,7 @@ impl crate::operation::get_model_invocation_job::builders::GetModelInvocationJob
 }
 /// Fluent builder constructing a request to `GetModelInvocationJob`.
 ///
-/// <p>Gets details about a batch inference job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-manage.html#batch-inference-view">View details about a batch inference job</a></p>
+/// <p>Gets details about a batch inference job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-monitor">Monitor batch inference jobs</a></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetModelInvocationJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

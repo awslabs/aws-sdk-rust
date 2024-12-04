@@ -50,6 +50,39 @@ pub fn de_delete_table_http_error(
             }
             tmp
         }),
+        "FederationSourceException" => crate::operation::delete_table::DeleteTableError::FederationSourceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::FederationSourceExceptionBuilder::default();
+                output = crate::protocol_serde::shape_federation_source_exception::de_federation_source_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::delete_table::DeleteTableError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "FederationSourceRetryableException" => crate::operation::delete_table::DeleteTableError::FederationSourceRetryableException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::FederationSourceRetryableExceptionBuilder::default();
+                output = crate::protocol_serde::shape_federation_source_retryable_exception::de_federation_source_retryable_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::delete_table::DeleteTableError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InternalServiceException" => crate::operation::delete_table::DeleteTableError::InternalServiceException({
             #[allow(unused_mut)]
             let mut tmp = {

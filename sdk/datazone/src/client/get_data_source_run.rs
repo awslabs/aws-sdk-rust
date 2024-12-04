@@ -14,6 +14,7 @@ impl super::Client {
     ///   - [`r#type(DataSourceRunType)`](crate::operation::get_data_source_run::GetDataSourceRunOutput::type): <p>The type of this data source run.</p>
     ///   - [`data_source_configuration_snapshot(Option<String>)`](crate::operation::get_data_source_run::GetDataSourceRunOutput::data_source_configuration_snapshot): <p>The configuration snapshot of the data source run.</p>
     ///   - [`run_statistics_for_assets(Option<RunStatisticsForAssets>)`](crate::operation::get_data_source_run::GetDataSourceRunOutput::run_statistics_for_assets): <p>The asset statistics from this data source run.</p>
+    ///   - [`lineage_summary(Option<DataSourceRunLineageSummary>)`](crate::operation::get_data_source_run::GetDataSourceRunOutput::lineage_summary): <p>The summary of the data lineage.</p>
     ///   - [`error_message(Option<DataSourceErrorMessage>)`](crate::operation::get_data_source_run::GetDataSourceRunOutput::error_message): <p>Specifies the error message that is returned if the operation cannot be successfully completed.</p>
     ///   - [`created_at(DateTime)`](crate::operation::get_data_source_run::GetDataSourceRunOutput::created_at): <p>The timestamp of when the data source run was created.</p>
     ///   - [`updated_at(DateTime)`](crate::operation::get_data_source_run::GetDataSourceRunOutput::updated_at): <p>The timestamp of when this data source run was updated.</p>

@@ -13,6 +13,8 @@ pub struct CreateDataSourceInput {
     pub project_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the Amazon DataZone environment to which the data source publishes assets.</p>
     pub environment_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the connection.</p>
+    pub connection_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The type of the data source.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the configuration of the data source. It can be set to either <code>glueRunConfiguration</code> or <code>redshiftRunConfiguration</code>.</p>
@@ -50,6 +52,10 @@ impl CreateDataSourceInput {
     /// <p>The unique identifier of the Amazon DataZone environment to which the data source publishes assets.</p>
     pub fn environment_identifier(&self) -> ::std::option::Option<&str> {
         self.environment_identifier.as_deref()
+    }
+    /// <p>The ID of the connection.</p>
+    pub fn connection_identifier(&self) -> ::std::option::Option<&str> {
+        self.connection_identifier.as_deref()
     }
     /// <p>The type of the data source.</p>
     pub fn r#type(&self) -> ::std::option::Option<&str> {
@@ -94,6 +100,7 @@ impl ::std::fmt::Debug for CreateDataSourceInput {
         formatter.field("domain_identifier", &self.domain_identifier);
         formatter.field("project_identifier", &self.project_identifier);
         formatter.field("environment_identifier", &self.environment_identifier);
+        formatter.field("connection_identifier", &self.connection_identifier);
         formatter.field("r#type", &self.r#type);
         formatter.field("configuration", &self.configuration);
         formatter.field("recommendation", &self.recommendation);
@@ -121,6 +128,7 @@ pub struct CreateDataSourceInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) project_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) environment_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) connection_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) configuration: ::std::option::Option<crate::types::DataSourceConfigurationInput>,
     pub(crate) recommendation: ::std::option::Option<crate::types::RecommendationConfiguration>,
@@ -191,7 +199,6 @@ impl CreateDataSourceInputBuilder {
         &self.project_identifier
     }
     /// <p>The unique identifier of the Amazon DataZone environment to which the data source publishes assets.</p>
-    /// This field is required.
     pub fn environment_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_identifier = ::std::option::Option::Some(input.into());
         self
@@ -204,6 +211,20 @@ impl CreateDataSourceInputBuilder {
     /// <p>The unique identifier of the Amazon DataZone environment to which the data source publishes assets.</p>
     pub fn get_environment_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.environment_identifier
+    }
+    /// <p>The ID of the connection.</p>
+    pub fn connection_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.connection_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the connection.</p>
+    pub fn set_connection_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.connection_identifier = input;
+        self
+    }
+    /// <p>The ID of the connection.</p>
+    pub fn get_connection_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_identifier
     }
     /// <p>The type of the data source.</p>
     /// This field is required.
@@ -334,6 +355,7 @@ impl CreateDataSourceInputBuilder {
             domain_identifier: self.domain_identifier,
             project_identifier: self.project_identifier,
             environment_identifier: self.environment_identifier,
+            connection_identifier: self.connection_identifier,
             r#type: self.r#type,
             configuration: self.configuration,
             recommendation: self.recommendation,
@@ -353,6 +375,7 @@ impl ::std::fmt::Debug for CreateDataSourceInputBuilder {
         formatter.field("domain_identifier", &self.domain_identifier);
         formatter.field("project_identifier", &self.project_identifier);
         formatter.field("environment_identifier", &self.environment_identifier);
+        formatter.field("connection_identifier", &self.connection_identifier);
         formatter.field("r#type", &self.r#type);
         formatter.field("configuration", &self.configuration);
         formatter.field("recommendation", &self.recommendation);

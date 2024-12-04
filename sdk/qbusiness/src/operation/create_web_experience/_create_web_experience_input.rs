@@ -31,6 +31,8 @@ pub struct CreateWebExperienceInput {
     /// <p>For Amazon Q Business application using external OIDC-compliant identity providers (IdPs). The IdP administrator must add the browser extension sign-in redirect URLs to the IdP application. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/browser-extensions.html">Configure external OIDC identity provider for your browser extensions.</a>.</p>
     /// </note>
     pub browser_extension_configuration: ::std::option::Option<crate::types::BrowserExtensionConfiguration>,
+    /// <p>Sets the custom logo, favicon, font, and color used in the Amazon Q web experience.</p>
+    pub customization_configuration: ::std::option::Option<crate::types::CustomizationConfiguration>,
 }
 impl CreateWebExperienceInput {
     /// <p>The identifier of the Amazon Q Business web experience.</p>
@@ -87,6 +89,10 @@ impl CreateWebExperienceInput {
     pub fn browser_extension_configuration(&self) -> ::std::option::Option<&crate::types::BrowserExtensionConfiguration> {
         self.browser_extension_configuration.as_ref()
     }
+    /// <p>Sets the custom logo, favicon, font, and color used in the Amazon Q web experience.</p>
+    pub fn customization_configuration(&self) -> ::std::option::Option<&crate::types::CustomizationConfiguration> {
+        self.customization_configuration.as_ref()
+    }
 }
 impl CreateWebExperienceInput {
     /// Creates a new builder-style object to manufacture [`CreateWebExperienceInput`](crate::operation::create_web_experience::CreateWebExperienceInput).
@@ -110,6 +116,7 @@ pub struct CreateWebExperienceInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) identity_provider_configuration: ::std::option::Option<crate::types::IdentityProviderConfiguration>,
     pub(crate) browser_extension_configuration: ::std::option::Option<crate::types::BrowserExtensionConfiguration>,
+    pub(crate) customization_configuration: ::std::option::Option<crate::types::CustomizationConfiguration>,
 }
 impl CreateWebExperienceInputBuilder {
     /// <p>The identifier of the Amazon Q Business web experience.</p>
@@ -297,6 +304,20 @@ impl CreateWebExperienceInputBuilder {
     pub fn get_browser_extension_configuration(&self) -> &::std::option::Option<crate::types::BrowserExtensionConfiguration> {
         &self.browser_extension_configuration
     }
+    /// <p>Sets the custom logo, favicon, font, and color used in the Amazon Q web experience.</p>
+    pub fn customization_configuration(mut self, input: crate::types::CustomizationConfiguration) -> Self {
+        self.customization_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Sets the custom logo, favicon, font, and color used in the Amazon Q web experience.</p>
+    pub fn set_customization_configuration(mut self, input: ::std::option::Option<crate::types::CustomizationConfiguration>) -> Self {
+        self.customization_configuration = input;
+        self
+    }
+    /// <p>Sets the custom logo, favicon, font, and color used in the Amazon Q web experience.</p>
+    pub fn get_customization_configuration(&self) -> &::std::option::Option<crate::types::CustomizationConfiguration> {
+        &self.customization_configuration
+    }
     /// Consumes the builder and constructs a [`CreateWebExperienceInput`](crate::operation::create_web_experience::CreateWebExperienceInput).
     pub fn build(
         self,
@@ -314,6 +335,7 @@ impl CreateWebExperienceInputBuilder {
             client_token: self.client_token,
             identity_provider_configuration: self.identity_provider_configuration,
             browser_extension_configuration: self.browser_extension_configuration,
+            customization_configuration: self.customization_configuration,
         })
     }
 }

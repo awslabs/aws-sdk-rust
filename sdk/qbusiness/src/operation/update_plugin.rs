@@ -272,7 +272,7 @@ pub enum UpdatePluginError {
     ConflictException(crate::types::error::ConflictException),
     /// <p>An issue occurred with the internal server used for your Amazon Q Business service. Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a> for help.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>The resource you want to use doesn’t exist. Make sure you have provided the correct resource and try again.</p>
+    /// <p>The application or plugin resource you want to use doesn’t exist. Make sure you have provided the correct resource and try again.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>You have exceeded the set limits for your Amazon Q Business service.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),

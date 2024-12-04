@@ -12,5 +12,8 @@ pub fn ser_get_connection_input_input(
     if let Some(var_3) = &input.hide_password {
         object.key("HidePassword").boolean(*var_3);
     }
+    if let Some(var_4) = &input.apply_override_for_compute_environment {
+        object.key("ApplyOverrideForComputeEnvironment").string(var_4.as_str());
+    }
     Ok(())
 }

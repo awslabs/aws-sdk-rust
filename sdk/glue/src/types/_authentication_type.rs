@@ -14,6 +14,7 @@
 /// match authenticationtype {
 ///     AuthenticationType::Basic => { /* ... */ },
 ///     AuthenticationType::Custom => { /* ... */ },
+///     AuthenticationType::Iam => { /* ... */ },
 ///     AuthenticationType::Oauth2 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -47,6 +48,8 @@ pub enum AuthenticationType {
     #[allow(missing_docs)] // documentation missing in model
     Custom,
     #[allow(missing_docs)] // documentation missing in model
+    Iam,
+    #[allow(missing_docs)] // documentation missing in model
     Oauth2,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -57,6 +60,7 @@ impl ::std::convert::From<&str> for AuthenticationType {
         match s {
             "BASIC" => AuthenticationType::Basic,
             "CUSTOM" => AuthenticationType::Custom,
+            "IAM" => AuthenticationType::Iam,
             "OAUTH2" => AuthenticationType::Oauth2,
             other => AuthenticationType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -75,13 +79,14 @@ impl AuthenticationType {
         match self {
             AuthenticationType::Basic => "BASIC",
             AuthenticationType::Custom => "CUSTOM",
+            AuthenticationType::Iam => "IAM",
             AuthenticationType::Oauth2 => "OAUTH2",
             AuthenticationType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BASIC", "CUSTOM", "OAUTH2"]
+        &["BASIC", "CUSTOM", "IAM", "OAUTH2"]
     }
 }
 impl ::std::convert::AsRef<str> for AuthenticationType {
@@ -106,6 +111,7 @@ impl ::std::fmt::Display for AuthenticationType {
         match self {
             AuthenticationType::Basic => write!(f, "BASIC"),
             AuthenticationType::Custom => write!(f, "CUSTOM"),
+            AuthenticationType::Iam => write!(f, "IAM"),
             AuthenticationType::Oauth2 => write!(f, "OAUTH2"),
             AuthenticationType::Unknown(value) => write!(f, "{}", value),
         }

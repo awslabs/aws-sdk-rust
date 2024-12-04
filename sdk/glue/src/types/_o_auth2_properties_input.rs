@@ -14,6 +14,8 @@ pub struct OAuth2PropertiesInput {
     pub token_url_parameters_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The set of properties required for the the OAuth2 <code>AUTHORIZATION_CODE</code> grant type.</p>
     pub authorization_code_properties: ::std::option::Option<crate::types::AuthorizationCodeProperties>,
+    /// <p>The credentials used when the authentication type is OAuth2 authentication.</p>
+    pub o_auth2_credentials: ::std::option::Option<crate::types::OAuth2Credentials>,
 }
 impl OAuth2PropertiesInput {
     /// <p>The OAuth2 grant type in the CreateConnection request. For example, <code>AUTHORIZATION_CODE</code>, <code>JWT_BEARER</code>, or <code>CLIENT_CREDENTIALS</code>.</p>
@@ -36,6 +38,10 @@ impl OAuth2PropertiesInput {
     pub fn authorization_code_properties(&self) -> ::std::option::Option<&crate::types::AuthorizationCodeProperties> {
         self.authorization_code_properties.as_ref()
     }
+    /// <p>The credentials used when the authentication type is OAuth2 authentication.</p>
+    pub fn o_auth2_credentials(&self) -> ::std::option::Option<&crate::types::OAuth2Credentials> {
+        self.o_auth2_credentials.as_ref()
+    }
 }
 impl OAuth2PropertiesInput {
     /// Creates a new builder-style object to manufacture [`OAuth2PropertiesInput`](crate::types::OAuth2PropertiesInput).
@@ -53,6 +59,7 @@ pub struct OAuth2PropertiesInputBuilder {
     pub(crate) token_url: ::std::option::Option<::std::string::String>,
     pub(crate) token_url_parameters_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) authorization_code_properties: ::std::option::Option<crate::types::AuthorizationCodeProperties>,
+    pub(crate) o_auth2_credentials: ::std::option::Option<crate::types::OAuth2Credentials>,
 }
 impl OAuth2PropertiesInputBuilder {
     /// <p>The OAuth2 grant type in the CreateConnection request. For example, <code>AUTHORIZATION_CODE</code>, <code>JWT_BEARER</code>, or <code>CLIENT_CREDENTIALS</code>.</p>
@@ -138,6 +145,20 @@ impl OAuth2PropertiesInputBuilder {
     pub fn get_authorization_code_properties(&self) -> &::std::option::Option<crate::types::AuthorizationCodeProperties> {
         &self.authorization_code_properties
     }
+    /// <p>The credentials used when the authentication type is OAuth2 authentication.</p>
+    pub fn o_auth2_credentials(mut self, input: crate::types::OAuth2Credentials) -> Self {
+        self.o_auth2_credentials = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The credentials used when the authentication type is OAuth2 authentication.</p>
+    pub fn set_o_auth2_credentials(mut self, input: ::std::option::Option<crate::types::OAuth2Credentials>) -> Self {
+        self.o_auth2_credentials = input;
+        self
+    }
+    /// <p>The credentials used when the authentication type is OAuth2 authentication.</p>
+    pub fn get_o_auth2_credentials(&self) -> &::std::option::Option<crate::types::OAuth2Credentials> {
+        &self.o_auth2_credentials
+    }
     /// Consumes the builder and constructs a [`OAuth2PropertiesInput`](crate::types::OAuth2PropertiesInput).
     pub fn build(self) -> crate::types::OAuth2PropertiesInput {
         crate::types::OAuth2PropertiesInput {
@@ -146,6 +167,7 @@ impl OAuth2PropertiesInputBuilder {
             token_url: self.token_url,
             token_url_parameters_map: self.token_url_parameters_map,
             authorization_code_properties: self.authorization_code_properties,
+            o_auth2_credentials: self.o_auth2_credentials,
         }
     }
 }

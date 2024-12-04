@@ -145,7 +145,70 @@ pub fn de_post_lineage_event_http_response(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::post_lineage_event::builders::PostLineageEventOutputBuilder::default();
+        output = crate::protocol_serde::shape_post_lineage_event::de_post_lineage_event(_response_body, output)
+            .map_err(crate::operation::post_lineage_event::PostLineageEventError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
+}
+
+pub fn ser_post_lineage_event_headers(
+    input: &crate::operation::post_lineage_event::PostLineageEventInput,
+    mut builder: ::http::request::Builder,
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
+    if let ::std::option::Option::Some(inner_1) = &input.client_token {
+        let formatted_2 = inner_1.as_str();
+        let header_value = formatted_2;
+        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+            ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                "client_token",
+                format!("`{}` cannot be used as a header value: {}", &header_value, err),
+            )
+        })?;
+        builder = builder.header("Client-Token", header_value);
+    }
+    Ok(builder)
+}
+
+pub(crate) fn de_post_lineage_event(
+    value: &[u8],
+    mut builder: crate::operation::post_lineage_event::builders::PostLineageEventOutputBuilder,
+) -> Result<crate::operation::post_lineage_event::builders::PostLineageEventOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let tokens = &mut tokens_owned;
+    ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "domainId" => {
+                    builder = builder.set_domain_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "id" => {
+                    builder = builder.set_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+            },
+            other => {
+                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
 }

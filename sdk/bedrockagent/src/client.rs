@@ -118,6 +118,8 @@ impl Client {
     }
 }
 
+mod associate_agent_collaborator;
+
 mod associate_agent_knowledge_base;
 
 mod create_agent;
@@ -189,6 +191,8 @@ mod delete_knowledge_base_documents;
 
 mod delete_prompt;
 
+mod disassociate_agent_collaborator;
+
 mod disassociate_agent_knowledge_base;
 
 mod get_agent;
@@ -196,6 +200,8 @@ mod get_agent;
 mod get_agent_action_group;
 
 mod get_agent_alias;
+
+mod get_agent_collaborator;
 
 mod get_agent_knowledge_base;
 
@@ -222,6 +228,8 @@ mod ingest_knowledge_base_documents;
 mod list_agent_action_groups;
 
 mod list_agent_aliases;
+
+mod list_agent_collaborators;
 
 mod list_agent_knowledge_bases;
 
@@ -264,6 +272,8 @@ mod update_agent;
 mod update_agent_action_group;
 
 mod update_agent_alias;
+
+mod update_agent_collaborator;
 
 mod update_agent_knowledge_base;
 

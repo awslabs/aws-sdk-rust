@@ -196,6 +196,13 @@ pub(crate) fn de_create_domain(
                             .transpose()?,
                     );
                 }
+                "domainVersion" => {
+                    builder = builder.set_domain_version(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::DomainVersion::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "id" => {
                     builder = builder.set_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -226,6 +233,13 @@ pub(crate) fn de_create_domain(
                 }
                 "rootDomainUnitId" => {
                     builder = builder.set_root_domain_unit_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "serviceRole" => {
+                    builder = builder.set_service_role(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,

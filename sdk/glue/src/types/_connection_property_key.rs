@@ -26,6 +26,8 @@
 ///     ConnectionPropertyKey::EncryptedKafkaSaslPlainPassword => { /* ... */ },
 ///     ConnectionPropertyKey::EncryptedKafkaSaslScramPassword => { /* ... */ },
 ///     ConnectionPropertyKey::EncryptedPassword => { /* ... */ },
+///     ConnectionPropertyKey::Endpoint => { /* ... */ },
+///     ConnectionPropertyKey::EndpointType => { /* ... */ },
 ///     ConnectionPropertyKey::Host => { /* ... */ },
 ///     ConnectionPropertyKey::InstanceId => { /* ... */ },
 ///     ConnectionPropertyKey::JdbcConnectionUrl => { /* ... */ },
@@ -115,6 +117,10 @@ pub enum ConnectionPropertyKey {
     #[allow(missing_docs)] // documentation missing in model
     EncryptedPassword,
     #[allow(missing_docs)] // documentation missing in model
+    Endpoint,
+    #[allow(missing_docs)] // documentation missing in model
+    EndpointType,
+    #[allow(missing_docs)] // documentation missing in model
     Host,
     #[allow(missing_docs)] // documentation missing in model
     InstanceId,
@@ -201,6 +207,8 @@ impl ::std::convert::From<&str> for ConnectionPropertyKey {
             "ENCRYPTED_KAFKA_SASL_PLAIN_PASSWORD" => ConnectionPropertyKey::EncryptedKafkaSaslPlainPassword,
             "ENCRYPTED_KAFKA_SASL_SCRAM_PASSWORD" => ConnectionPropertyKey::EncryptedKafkaSaslScramPassword,
             "ENCRYPTED_PASSWORD" => ConnectionPropertyKey::EncryptedPassword,
+            "ENDPOINT" => ConnectionPropertyKey::Endpoint,
+            "ENDPOINT_TYPE" => ConnectionPropertyKey::EndpointType,
             "HOST" => ConnectionPropertyKey::Host,
             "INSTANCE_ID" => ConnectionPropertyKey::InstanceId,
             "JDBC_CONNECTION_URL" => ConnectionPropertyKey::JdbcConnectionUrl,
@@ -263,6 +271,8 @@ impl ConnectionPropertyKey {
             ConnectionPropertyKey::EncryptedKafkaSaslPlainPassword => "ENCRYPTED_KAFKA_SASL_PLAIN_PASSWORD",
             ConnectionPropertyKey::EncryptedKafkaSaslScramPassword => "ENCRYPTED_KAFKA_SASL_SCRAM_PASSWORD",
             ConnectionPropertyKey::EncryptedPassword => "ENCRYPTED_PASSWORD",
+            ConnectionPropertyKey::Endpoint => "ENDPOINT",
+            ConnectionPropertyKey::EndpointType => "ENDPOINT_TYPE",
             ConnectionPropertyKey::Host => "HOST",
             ConnectionPropertyKey::InstanceId => "INSTANCE_ID",
             ConnectionPropertyKey::JdbcConnectionUrl => "JDBC_CONNECTION_URL",
@@ -316,6 +326,8 @@ impl ConnectionPropertyKey {
             "ENCRYPTED_KAFKA_SASL_PLAIN_PASSWORD",
             "ENCRYPTED_KAFKA_SASL_SCRAM_PASSWORD",
             "ENCRYPTED_PASSWORD",
+            "ENDPOINT",
+            "ENDPOINT_TYPE",
             "HOST",
             "INSTANCE_ID",
             "JDBC_CONNECTION_URL",
@@ -386,6 +398,8 @@ impl ::std::fmt::Display for ConnectionPropertyKey {
             ConnectionPropertyKey::EncryptedKafkaSaslPlainPassword => write!(f, "ENCRYPTED_KAFKA_SASL_PLAIN_PASSWORD"),
             ConnectionPropertyKey::EncryptedKafkaSaslScramPassword => write!(f, "ENCRYPTED_KAFKA_SASL_SCRAM_PASSWORD"),
             ConnectionPropertyKey::EncryptedPassword => write!(f, "ENCRYPTED_PASSWORD"),
+            ConnectionPropertyKey::Endpoint => write!(f, "ENDPOINT"),
+            ConnectionPropertyKey::EndpointType => write!(f, "ENDPOINT_TYPE"),
             ConnectionPropertyKey::Host => write!(f, "HOST"),
             ConnectionPropertyKey::InstanceId => write!(f, "INSTANCE_ID"),
             ConnectionPropertyKey::JdbcConnectionUrl => write!(f, "JDBC_CONNECTION_URL"),

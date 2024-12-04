@@ -19,6 +19,8 @@ pub struct GetDataSourceRunOutput {
     pub data_source_configuration_snapshot: ::std::option::Option<::std::string::String>,
     /// <p>The asset statistics from this data source run.</p>
     pub run_statistics_for_assets: ::std::option::Option<crate::types::RunStatisticsForAssets>,
+    /// <p>The summary of the data lineage.</p>
+    pub lineage_summary: ::std::option::Option<crate::types::DataSourceRunLineageSummary>,
     /// <p>Specifies the error message that is returned if the operation cannot be successfully completed.</p>
     pub error_message: ::std::option::Option<crate::types::DataSourceErrorMessage>,
     /// <p>The timestamp of when the data source run was created.</p>
@@ -68,6 +70,10 @@ impl GetDataSourceRunOutput {
     pub fn run_statistics_for_assets(&self) -> ::std::option::Option<&crate::types::RunStatisticsForAssets> {
         self.run_statistics_for_assets.as_ref()
     }
+    /// <p>The summary of the data lineage.</p>
+    pub fn lineage_summary(&self) -> ::std::option::Option<&crate::types::DataSourceRunLineageSummary> {
+        self.lineage_summary.as_ref()
+    }
     /// <p>Specifies the error message that is returned if the operation cannot be successfully completed.</p>
     pub fn error_message(&self) -> ::std::option::Option<&crate::types::DataSourceErrorMessage> {
         self.error_message.as_ref()
@@ -113,6 +119,7 @@ pub struct GetDataSourceRunOutputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::DataSourceRunType>,
     pub(crate) data_source_configuration_snapshot: ::std::option::Option<::std::string::String>,
     pub(crate) run_statistics_for_assets: ::std::option::Option<crate::types::RunStatisticsForAssets>,
+    pub(crate) lineage_summary: ::std::option::Option<crate::types::DataSourceRunLineageSummary>,
     pub(crate) error_message: ::std::option::Option<crate::types::DataSourceErrorMessage>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -238,6 +245,20 @@ impl GetDataSourceRunOutputBuilder {
     /// <p>The asset statistics from this data source run.</p>
     pub fn get_run_statistics_for_assets(&self) -> &::std::option::Option<crate::types::RunStatisticsForAssets> {
         &self.run_statistics_for_assets
+    }
+    /// <p>The summary of the data lineage.</p>
+    pub fn lineage_summary(mut self, input: crate::types::DataSourceRunLineageSummary) -> Self {
+        self.lineage_summary = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The summary of the data lineage.</p>
+    pub fn set_lineage_summary(mut self, input: ::std::option::Option<crate::types::DataSourceRunLineageSummary>) -> Self {
+        self.lineage_summary = input;
+        self
+    }
+    /// <p>The summary of the data lineage.</p>
+    pub fn get_lineage_summary(&self) -> &::std::option::Option<crate::types::DataSourceRunLineageSummary> {
+        &self.lineage_summary
     }
     /// <p>Specifies the error message that is returned if the operation cannot be successfully completed.</p>
     pub fn error_message(mut self, input: crate::types::DataSourceErrorMessage) -> Self {
@@ -372,6 +393,7 @@ impl GetDataSourceRunOutputBuilder {
             })?,
             data_source_configuration_snapshot: self.data_source_configuration_snapshot,
             run_statistics_for_assets: self.run_statistics_for_assets,
+            lineage_summary: self.lineage_summary,
             error_message: self.error_message,
             created_at: self.created_at.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(

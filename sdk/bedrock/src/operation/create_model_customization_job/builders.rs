@@ -330,4 +330,18 @@ impl CreateModelCustomizationJobFluentBuilder {
     pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
         self.inner.get_vpc_config()
     }
+    /// <p>The customization configuration for the model customization job.</p>
+    pub fn customization_config(mut self, input: crate::types::CustomizationConfig) -> Self {
+        self.inner = self.inner.customization_config(input);
+        self
+    }
+    /// <p>The customization configuration for the model customization job.</p>
+    pub fn set_customization_config(mut self, input: ::std::option::Option<crate::types::CustomizationConfig>) -> Self {
+        self.inner = self.inner.set_customization_config(input);
+        self
+    }
+    /// <p>The customization configuration for the model customization job.</p>
+    pub fn get_customization_config(&self) -> &::std::option::Option<crate::types::CustomizationConfig> {
+        self.inner.get_customization_config()
+    }
 }

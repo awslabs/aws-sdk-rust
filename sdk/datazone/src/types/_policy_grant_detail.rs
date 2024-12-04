@@ -12,6 +12,8 @@ pub enum PolicyGrantDetail {
     CreateDomainUnit(crate::types::CreateDomainUnitPolicyGrantDetail),
     /// <p>Specifies that this is a create environment policy.</p>
     CreateEnvironment(crate::types::Unit),
+    /// <p>The details of the policy of creating an environment.</p>
+    CreateEnvironmentFromBlueprint(crate::types::Unit),
     /// <p>Specifies that this is a create environment profile policy.</p>
     CreateEnvironmentProfile(crate::types::CreateEnvironmentProfilePolicyGrantDetail),
     /// <p>Specifies that this is a create form type policy.</p>
@@ -20,6 +22,8 @@ pub enum PolicyGrantDetail {
     CreateGlossary(crate::types::CreateGlossaryPolicyGrantDetail),
     /// <p>Specifies that this is a create project policy.</p>
     CreateProject(crate::types::CreateProjectPolicyGrantDetail),
+    /// <p>Specifies whether to create a project from project profile.</p>
+    CreateProjectFromProjectProfile(crate::types::CreateProjectFromProjectProfilePolicyGrantDetail),
     /// <p>Specifies that this is the delegation of the create environment profile policy.</p>
     DelegateCreateEnvironmentProfile(crate::types::Unit),
     /// <p>Specifies whether to override domain unit owners.</p>
@@ -89,6 +93,19 @@ impl PolicyGrantDetail {
     pub fn is_create_environment(&self) -> bool {
         self.as_create_environment().is_ok()
     }
+    /// Tries to convert the enum instance into [`CreateEnvironmentFromBlueprint`](crate::types::PolicyGrantDetail::CreateEnvironmentFromBlueprint), extracting the inner [`Unit`](crate::types::Unit).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_create_environment_from_blueprint(&self) -> ::std::result::Result<&crate::types::Unit, &Self> {
+        if let PolicyGrantDetail::CreateEnvironmentFromBlueprint(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`CreateEnvironmentFromBlueprint`](crate::types::PolicyGrantDetail::CreateEnvironmentFromBlueprint).
+    pub fn is_create_environment_from_blueprint(&self) -> bool {
+        self.as_create_environment_from_blueprint().is_ok()
+    }
     /// Tries to convert the enum instance into [`CreateEnvironmentProfile`](crate::types::PolicyGrantDetail::CreateEnvironmentProfile), extracting the inner [`CreateEnvironmentProfilePolicyGrantDetail`](crate::types::CreateEnvironmentProfilePolicyGrantDetail).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_create_environment_profile(&self) -> ::std::result::Result<&crate::types::CreateEnvironmentProfilePolicyGrantDetail, &Self> {
@@ -140,6 +157,21 @@ impl PolicyGrantDetail {
     /// Returns true if this is a [`CreateProject`](crate::types::PolicyGrantDetail::CreateProject).
     pub fn is_create_project(&self) -> bool {
         self.as_create_project().is_ok()
+    }
+    /// Tries to convert the enum instance into [`CreateProjectFromProjectProfile`](crate::types::PolicyGrantDetail::CreateProjectFromProjectProfile), extracting the inner [`CreateProjectFromProjectProfilePolicyGrantDetail`](crate::types::CreateProjectFromProjectProfilePolicyGrantDetail).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_create_project_from_project_profile(
+        &self,
+    ) -> ::std::result::Result<&crate::types::CreateProjectFromProjectProfilePolicyGrantDetail, &Self> {
+        if let PolicyGrantDetail::CreateProjectFromProjectProfile(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`CreateProjectFromProjectProfile`](crate::types::PolicyGrantDetail::CreateProjectFromProjectProfile).
+    pub fn is_create_project_from_project_profile(&self) -> bool {
+        self.as_create_project_from_project_profile().is_ok()
     }
     /// Tries to convert the enum instance into [`DelegateCreateEnvironmentProfile`](crate::types::PolicyGrantDetail::DelegateCreateEnvironmentProfile), extracting the inner [`Unit`](crate::types::Unit).
     /// Returns `Err(&Self)` if it can't be converted.

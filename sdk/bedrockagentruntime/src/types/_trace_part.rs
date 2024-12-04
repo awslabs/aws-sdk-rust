@@ -14,6 +14,10 @@ pub struct TracePart {
     pub agent_alias_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the agent.</p>
     pub agent_version: ::std::option::Option<::std::string::String>,
+    /// <p>The part's caller chain.</p>
+    pub caller_chain: ::std::option::Option<::std::vec::Vec<crate::types::Caller>>,
+    /// <p>The part's collaborator name.</p>
+    pub collaborator_name: ::std::option::Option<::std::string::String>,
 }
 impl TracePart {
     /// <p>The unique identifier of the session with the agent.</p>
@@ -36,6 +40,16 @@ impl TracePart {
     pub fn agent_version(&self) -> ::std::option::Option<&str> {
         self.agent_version.as_deref()
     }
+    /// <p>The part's caller chain.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.caller_chain.is_none()`.
+    pub fn caller_chain(&self) -> &[crate::types::Caller] {
+        self.caller_chain.as_deref().unwrap_or_default()
+    }
+    /// <p>The part's collaborator name.</p>
+    pub fn collaborator_name(&self) -> ::std::option::Option<&str> {
+        self.collaborator_name.as_deref()
+    }
 }
 impl ::std::fmt::Debug for TracePart {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -45,6 +59,8 @@ impl ::std::fmt::Debug for TracePart {
         formatter.field("agent_id", &"*** Sensitive Data Redacted ***");
         formatter.field("agent_alias_id", &"*** Sensitive Data Redacted ***");
         formatter.field("agent_version", &"*** Sensitive Data Redacted ***");
+        formatter.field("caller_chain", &"*** Sensitive Data Redacted ***");
+        formatter.field("collaborator_name", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -64,6 +80,8 @@ pub struct TracePartBuilder {
     pub(crate) agent_id: ::std::option::Option<::std::string::String>,
     pub(crate) agent_alias_id: ::std::option::Option<::std::string::String>,
     pub(crate) agent_version: ::std::option::Option<::std::string::String>,
+    pub(crate) caller_chain: ::std::option::Option<::std::vec::Vec<crate::types::Caller>>,
+    pub(crate) collaborator_name: ::std::option::Option<::std::string::String>,
 }
 impl TracePartBuilder {
     /// <p>The unique identifier of the session with the agent.</p>
@@ -136,6 +154,40 @@ impl TracePartBuilder {
     pub fn get_agent_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.agent_version
     }
+    /// Appends an item to `caller_chain`.
+    ///
+    /// To override the contents of this collection use [`set_caller_chain`](Self::set_caller_chain).
+    ///
+    /// <p>The part's caller chain.</p>
+    pub fn caller_chain(mut self, input: crate::types::Caller) -> Self {
+        let mut v = self.caller_chain.unwrap_or_default();
+        v.push(input);
+        self.caller_chain = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The part's caller chain.</p>
+    pub fn set_caller_chain(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Caller>>) -> Self {
+        self.caller_chain = input;
+        self
+    }
+    /// <p>The part's caller chain.</p>
+    pub fn get_caller_chain(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Caller>> {
+        &self.caller_chain
+    }
+    /// <p>The part's collaborator name.</p>
+    pub fn collaborator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.collaborator_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The part's collaborator name.</p>
+    pub fn set_collaborator_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.collaborator_name = input;
+        self
+    }
+    /// <p>The part's collaborator name.</p>
+    pub fn get_collaborator_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collaborator_name
+    }
     /// Consumes the builder and constructs a [`TracePart`](crate::types::TracePart).
     pub fn build(self) -> crate::types::TracePart {
         crate::types::TracePart {
@@ -144,6 +196,8 @@ impl TracePartBuilder {
             agent_id: self.agent_id,
             agent_alias_id: self.agent_alias_id,
             agent_version: self.agent_version,
+            caller_chain: self.caller_chain,
+            collaborator_name: self.collaborator_name,
         }
     }
 }
@@ -155,6 +209,8 @@ impl ::std::fmt::Debug for TracePartBuilder {
         formatter.field("agent_id", &"*** Sensitive Data Redacted ***");
         formatter.field("agent_alias_id", &"*** Sensitive Data Redacted ***");
         formatter.field("agent_version", &"*** Sensitive Data Redacted ***");
+        formatter.field("caller_chain", &"*** Sensitive Data Redacted ***");
+        formatter.field("collaborator_name", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

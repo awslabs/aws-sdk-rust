@@ -178,6 +178,20 @@ impl CreateDataSourceFluentBuilder {
     pub fn get_environment_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_environment_identifier()
     }
+    /// <p>The ID of the connection.</p>
+    pub fn connection_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.connection_identifier(input.into());
+        self
+    }
+    /// <p>The ID of the connection.</p>
+    pub fn set_connection_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_connection_identifier(input);
+        self
+    }
+    /// <p>The ID of the connection.</p>
+    pub fn get_connection_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connection_identifier()
+    }
     /// <p>The type of the data source.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.r#type(input.into());

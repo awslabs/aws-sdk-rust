@@ -184,6 +184,8 @@ mod check_schema_version_validity;
 
 mod create_blueprint;
 
+mod create_catalog;
+
 mod create_classifier;
 
 mod create_column_statistics_task_settings;
@@ -199,6 +201,12 @@ mod create_data_quality_ruleset;
 mod create_database;
 
 mod create_dev_endpoint;
+
+mod create_integration;
+
+mod create_integration_resource_property;
+
+mod create_integration_table_properties;
 
 mod create_job;
 
@@ -259,6 +267,8 @@ pub mod customize;
 
 mod delete_blueprint;
 
+mod delete_catalog;
+
 mod delete_classifier;
 
 mod delete_column_statistics_for_partition;
@@ -278,6 +288,10 @@ mod delete_data_quality_ruleset;
 mod delete_database;
 
 mod delete_dev_endpoint;
+
+mod delete_integration;
+
+mod delete_integration_table_properties;
 
 mod delete_job;
 
@@ -313,13 +327,25 @@ mod delete_user_defined_function;
 
 mod delete_workflow;
 
+mod describe_connection_type;
+
+mod describe_entity;
+
+mod describe_inbound_integrations;
+
+mod describe_integrations;
+
 mod get_blueprint;
 
 mod get_blueprint_run;
 
 mod get_blueprint_runs;
 
+mod get_catalog;
+
 mod get_catalog_import_status;
+
+mod get_catalogs;
 
 mod get_classifier;
 
@@ -370,6 +396,12 @@ mod get_dataflow_graph;
 mod get_dev_endpoint;
 
 mod get_dev_endpoints;
+
+mod get_entity_records;
+
+mod get_integration_resource_property;
+
+mod get_integration_table_properties;
 
 mod get_job;
 
@@ -463,6 +495,8 @@ mod list_blueprints;
 
 mod list_column_statistics_task_runs;
 
+mod list_connection_types;
+
 mod list_crawlers;
 
 mod list_crawls;
@@ -482,6 +516,8 @@ mod list_data_quality_statistic_annotations;
 mod list_data_quality_statistics;
 
 mod list_dev_endpoints;
+
+mod list_entities;
 
 mod list_jobs;
 
@@ -504,6 +540,8 @@ mod list_triggers;
 mod list_usage_profiles;
 
 mod list_workflows;
+
+mod modify_integration;
 
 mod put_data_catalog_encryption_settings;
 
@@ -579,6 +617,8 @@ mod untag_resource;
 
 mod update_blueprint;
 
+mod update_catalog;
+
 mod update_classifier;
 
 mod update_column_statistics_for_partition;
@@ -598,6 +638,10 @@ mod update_data_quality_ruleset;
 mod update_database;
 
 mod update_dev_endpoint;
+
+mod update_integration_resource_property;
+
+mod update_integration_table_properties;
 
 mod update_job;
 

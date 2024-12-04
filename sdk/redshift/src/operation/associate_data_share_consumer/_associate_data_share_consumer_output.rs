@@ -13,6 +13,8 @@ pub struct AssociateDataShareConsumerOutput {
     pub data_share_associations: ::std::option::Option<::std::vec::Vec<crate::types::DataShareAssociation>>,
     /// <p>The identifier of a datashare to show its managing entity.</p>
     pub managed_by: ::std::option::Option<::std::string::String>,
+    /// <p>The type of the datashare created by RegisterNamespace.</p>
+    pub data_share_type: ::std::option::Option<crate::types::DataShareType>,
     _request_id: Option<String>,
 }
 impl AssociateDataShareConsumerOutput {
@@ -38,6 +40,10 @@ impl AssociateDataShareConsumerOutput {
     pub fn managed_by(&self) -> ::std::option::Option<&str> {
         self.managed_by.as_deref()
     }
+    /// <p>The type of the datashare created by RegisterNamespace.</p>
+    pub fn data_share_type(&self) -> ::std::option::Option<&crate::types::DataShareType> {
+        self.data_share_type.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for AssociateDataShareConsumerOutput {
     fn request_id(&self) -> Option<&str> {
@@ -60,6 +66,7 @@ pub struct AssociateDataShareConsumerOutputBuilder {
     pub(crate) allow_publicly_accessible_consumers: ::std::option::Option<bool>,
     pub(crate) data_share_associations: ::std::option::Option<::std::vec::Vec<crate::types::DataShareAssociation>>,
     pub(crate) managed_by: ::std::option::Option<::std::string::String>,
+    pub(crate) data_share_type: ::std::option::Option<crate::types::DataShareType>,
     _request_id: Option<String>,
 }
 impl AssociateDataShareConsumerOutputBuilder {
@@ -139,6 +146,20 @@ impl AssociateDataShareConsumerOutputBuilder {
     pub fn get_managed_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.managed_by
     }
+    /// <p>The type of the datashare created by RegisterNamespace.</p>
+    pub fn data_share_type(mut self, input: crate::types::DataShareType) -> Self {
+        self.data_share_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of the datashare created by RegisterNamespace.</p>
+    pub fn set_data_share_type(mut self, input: ::std::option::Option<crate::types::DataShareType>) -> Self {
+        self.data_share_type = input;
+        self
+    }
+    /// <p>The type of the datashare created by RegisterNamespace.</p>
+    pub fn get_data_share_type(&self) -> &::std::option::Option<crate::types::DataShareType> {
+        &self.data_share_type
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -156,6 +177,7 @@ impl AssociateDataShareConsumerOutputBuilder {
             allow_publicly_accessible_consumers: self.allow_publicly_accessible_consumers,
             data_share_associations: self.data_share_associations,
             managed_by: self.managed_by,
+            data_share_type: self.data_share_type,
             _request_id: self._request_id,
         }
     }

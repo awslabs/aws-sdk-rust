@@ -181,6 +181,8 @@ pub(crate) mod shape_batch_delete_evaluation_job_items;
 
 pub(crate) mod shape_custom_model_summary_list;
 
+pub(crate) mod shape_customization_config;
+
 pub(crate) mod shape_error_messages;
 
 pub(crate) mod shape_evaluation_config;
@@ -275,6 +277,8 @@ pub(crate) mod shape_cloud_watch_config;
 
 pub(crate) mod shape_custom_model_summary;
 
+pub(crate) mod shape_distillation_config;
+
 pub(crate) mod shape_evaluation_model_config;
 
 pub(crate) mod shape_evaluation_model_configs;
@@ -324,6 +328,8 @@ pub(crate) mod shape_inference_profile_model;
 pub(crate) mod shape_inference_profile_summary;
 
 pub(crate) mod shape_inference_type_list;
+
+pub(crate) mod shape_invocation_logs_config;
 
 pub(crate) mod shape_model_copy_job_summary;
 
@@ -395,9 +401,15 @@ pub(crate) mod shape_human_evaluation_custom_metrics;
 
 pub(crate) mod shape_human_workflow_config;
 
+pub(crate) mod shape_invocation_log_source;
+
 pub(crate) mod shape_knowledge_base_config;
 
 pub(crate) mod shape_rag_identifiers;
+
+pub(crate) mod shape_request_metadata_filters;
+
+pub(crate) mod shape_teacher_model_config;
 
 pub(crate) mod shape_bedrock_evaluator_model;
 
@@ -406,6 +418,12 @@ pub(crate) mod shape_bedrock_evaluator_models;
 pub(crate) mod shape_evaluation_dataset;
 
 pub(crate) mod shape_guardrail_topic_examples;
+
+pub(crate) mod shape_request_metadata_base_filters;
+
+pub(crate) mod shape_request_metadata_filters_list;
+
+pub(crate) mod shape_request_metadata_map;
 
 pub(crate) mod shape_retrieve_and_generate_configuration;
 

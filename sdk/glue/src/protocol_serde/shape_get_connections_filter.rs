@@ -15,5 +15,11 @@ pub fn ser_get_connections_filter(
     if let Some(var_4) = &input.connection_type {
         object.key("ConnectionType").string(var_4.as_str());
     }
+    if let Some(var_5) = &input.connection_schema_version {
+        object.key("ConnectionSchemaVersion").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
+        );
+    }
     Ok(())
 }

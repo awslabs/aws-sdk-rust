@@ -16,6 +16,12 @@ pub fn ser_data_source_configuration_input(
             crate::protocol_serde::shape_redshift_run_configuration_input::ser_redshift_run_configuration_input(&mut object_2, inner)?;
             object_2.finish();
         }
+        crate::types::DataSourceConfigurationInput::SageMakerRunConfiguration(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_7.key("sageMakerRunConfiguration").start_object();
+            crate::protocol_serde::shape_sage_maker_run_configuration_input::ser_sage_maker_run_configuration_input(&mut object_3, inner)?;
+            object_3.finish();
+        }
         crate::types::DataSourceConfigurationInput::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "DataSourceConfigurationInput",

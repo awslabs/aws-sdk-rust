@@ -12,6 +12,7 @@ impl super::Client {
     ///   - [`allow_publicly_accessible_consumers(Option<bool>)`](crate::operation::authorize_data_share::AuthorizeDataShareOutput::allow_publicly_accessible_consumers): <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
     ///   - [`data_share_associations(Option<Vec::<DataShareAssociation>>)`](crate::operation::authorize_data_share::AuthorizeDataShareOutput::data_share_associations): <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
     ///   - [`managed_by(Option<String>)`](crate::operation::authorize_data_share::AuthorizeDataShareOutput::managed_by): <p>The identifier of a datashare to show its managing entity.</p>
+    ///   - [`data_share_type(Option<DataShareType>)`](crate::operation::authorize_data_share::AuthorizeDataShareOutput::data_share_type): <p>The type of the datashare created by RegisterNamespace.</p>
     /// - On failure, responds with [`SdkError<AuthorizeDataShareError>`](crate::operation::authorize_data_share::AuthorizeDataShareError)
     pub fn authorize_data_share(&self) -> crate::operation::authorize_data_share::builders::AuthorizeDataShareFluentBuilder {
         crate::operation::authorize_data_share::builders::AuthorizeDataShareFluentBuilder::new(self.handle.clone())

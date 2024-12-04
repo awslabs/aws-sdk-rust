@@ -31,6 +31,8 @@ pub use crate::types::_scheduled_action_association::ScheduledActionAssociationB
 
 pub use crate::types::_recovery_point::RecoveryPointBuilder;
 
+pub use crate::types::_managed_workgroup_list_item::ManagedWorkgroupListItemBuilder;
+
 pub use crate::types::_endpoint_access::EndpointAccessBuilder;
 
 pub use crate::types::_vpc_security_group_membership::VpcSecurityGroupMembershipBuilder;

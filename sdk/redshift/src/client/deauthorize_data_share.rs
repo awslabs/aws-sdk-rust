@@ -11,6 +11,7 @@ impl super::Client {
     ///   - [`allow_publicly_accessible_consumers(Option<bool>)`](crate::operation::deauthorize_data_share::DeauthorizeDataShareOutput::allow_publicly_accessible_consumers): <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
     ///   - [`data_share_associations(Option<Vec::<DataShareAssociation>>)`](crate::operation::deauthorize_data_share::DeauthorizeDataShareOutput::data_share_associations): <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
     ///   - [`managed_by(Option<String>)`](crate::operation::deauthorize_data_share::DeauthorizeDataShareOutput::managed_by): <p>The identifier of a datashare to show its managing entity.</p>
+    ///   - [`data_share_type(Option<DataShareType>)`](crate::operation::deauthorize_data_share::DeauthorizeDataShareOutput::data_share_type): <p>The type of the datashare created by RegisterNamespace.</p>
     /// - On failure, responds with [`SdkError<DeauthorizeDataShareError>`](crate::operation::deauthorize_data_share::DeauthorizeDataShareError)
     pub fn deauthorize_data_share(&self) -> crate::operation::deauthorize_data_share::builders::DeauthorizeDataShareFluentBuilder {
         crate::operation::deauthorize_data_share::builders::DeauthorizeDataShareFluentBuilder::new(self.handle.clone())

@@ -371,4 +371,18 @@ impl CreateAgentFluentBuilder {
     pub fn get_memory_configuration(&self) -> &::std::option::Option<crate::types::MemoryConfiguration> {
         self.inner.get_memory_configuration()
     }
+    /// <p>The agent's collaboration role.</p>
+    pub fn agent_collaboration(mut self, input: crate::types::AgentCollaboration) -> Self {
+        self.inner = self.inner.agent_collaboration(input);
+        self
+    }
+    /// <p>The agent's collaboration role.</p>
+    pub fn set_agent_collaboration(mut self, input: ::std::option::Option<crate::types::AgentCollaboration>) -> Self {
+        self.inner = self.inner.set_agent_collaboration(input);
+        self
+    }
+    /// <p>The agent's collaboration role.</p>
+    pub fn get_agent_collaboration(&self) -> &::std::option::Option<crate::types::AgentCollaboration> {
+        self.inner.get_agent_collaboration()
+    }
 }

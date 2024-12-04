@@ -10,6 +10,8 @@ pub struct GlueRunConfigurationInput {
     pub relational_filter_configurations: ::std::vec::Vec<crate::types::RelationalFilterConfiguration>,
     /// <p>Specifies whether to automatically import data quality metrics as part of the data source run.</p>
     pub auto_import_data_quality_result: ::std::option::Option<bool>,
+    /// <p>The catalog name in the Amazon Web Services Glue run configuration.</p>
+    pub catalog_name: ::std::option::Option<::std::string::String>,
 }
 impl GlueRunConfigurationInput {
     /// <p>The data access role included in the configuration details of the Amazon Web Services Glue data source.</p>
@@ -24,6 +26,10 @@ impl GlueRunConfigurationInput {
     /// <p>Specifies whether to automatically import data quality metrics as part of the data source run.</p>
     pub fn auto_import_data_quality_result(&self) -> ::std::option::Option<bool> {
         self.auto_import_data_quality_result
+    }
+    /// <p>The catalog name in the Amazon Web Services Glue run configuration.</p>
+    pub fn catalog_name(&self) -> ::std::option::Option<&str> {
+        self.catalog_name.as_deref()
     }
 }
 impl GlueRunConfigurationInput {
@@ -40,6 +46,7 @@ pub struct GlueRunConfigurationInputBuilder {
     pub(crate) data_access_role: ::std::option::Option<::std::string::String>,
     pub(crate) relational_filter_configurations: ::std::option::Option<::std::vec::Vec<crate::types::RelationalFilterConfiguration>>,
     pub(crate) auto_import_data_quality_result: ::std::option::Option<bool>,
+    pub(crate) catalog_name: ::std::option::Option<::std::string::String>,
 }
 impl GlueRunConfigurationInputBuilder {
     /// <p>The data access role included in the configuration details of the Amazon Web Services Glue data source.</p>
@@ -93,6 +100,20 @@ impl GlueRunConfigurationInputBuilder {
     pub fn get_auto_import_data_quality_result(&self) -> &::std::option::Option<bool> {
         &self.auto_import_data_quality_result
     }
+    /// <p>The catalog name in the Amazon Web Services Glue run configuration.</p>
+    pub fn catalog_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.catalog_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The catalog name in the Amazon Web Services Glue run configuration.</p>
+    pub fn set_catalog_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.catalog_name = input;
+        self
+    }
+    /// <p>The catalog name in the Amazon Web Services Glue run configuration.</p>
+    pub fn get_catalog_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_name
+    }
     /// Consumes the builder and constructs a [`GlueRunConfigurationInput`](crate::types::GlueRunConfigurationInput).
     /// This method will fail if any of the following fields are not set:
     /// - [`relational_filter_configurations`](crate::types::builders::GlueRunConfigurationInputBuilder::relational_filter_configurations)
@@ -106,6 +127,7 @@ impl GlueRunConfigurationInputBuilder {
                 )
             })?,
             auto_import_data_quality_result: self.auto_import_data_quality_result,
+            catalog_name: self.catalog_name,
         })
     }
 }

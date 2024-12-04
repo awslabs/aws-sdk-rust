@@ -10,8 +10,17 @@ pub mod converse;
 /// Types for the `ConverseStream` operation.
 pub mod converse_stream;
 
+/// Types for the `GetAsyncInvoke` operation.
+pub mod get_async_invoke;
+
 /// Types for the `InvokeModel` operation.
 pub mod invoke_model;
 
 /// Types for the `InvokeModelWithResponseStream` operation.
 pub mod invoke_model_with_response_stream;
+
+/// Types for the `ListAsyncInvokes` operation.
+pub mod list_async_invokes;
+
+/// Types for the `StartAsyncInvoke` operation.
+pub mod start_async_invoke;

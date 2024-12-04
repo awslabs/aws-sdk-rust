@@ -42,6 +42,14 @@ where
                                     )
                                 })?,
                         )),
+                        "sageMakerRunConfiguration" => Some(crate::types::DataSourceConfigurationOutput::SageMakerRunConfiguration(
+                            crate::protocol_serde::shape_sage_maker_run_configuration_output::de_sage_maker_run_configuration_output(tokens)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'sageMakerRunConfiguration' cannot be null",
+                                    )
+                                })?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::DataSourceConfigurationOutput::Unknown)

@@ -148,6 +148,13 @@ where
                             builder =
                                 builder.set_memory_configuration(crate::protocol_serde::shape_memory_configuration::de_memory_configuration(tokens)?);
                         }
+                        "agentCollaboration" => {
+                            builder = builder.set_agent_collaboration(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::AgentCollaboration::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

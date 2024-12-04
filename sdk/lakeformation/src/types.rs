@@ -91,6 +91,8 @@ pub use crate::types::_principal_resource_permissions::PrincipalResourcePermissi
 
 pub use crate::types::_details_map::DetailsMap;
 
+pub use crate::types::_condition::Condition;
+
 pub use crate::types::_data_lake_resource_type::DataLakeResourceType;
 
 pub use crate::types::_resource_share_type::ResourceShareType;
@@ -144,6 +146,8 @@ mod _column_lf_tag;
 mod _column_wildcard;
 
 mod _comparison_operator;
+
+mod _condition;
 
 mod _data_cells_filter;
 

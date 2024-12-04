@@ -13,6 +13,7 @@
 /// # let type = unimplemented!();
 /// match type {
 ///     Type::ActionGroup => { /* ... */ },
+///     Type::AgentCollaborator => { /* ... */ },
 ///     Type::AskUser => { /* ... */ },
 ///     Type::Finish => { /* ... */ },
 ///     Type::KnowledgeBase => { /* ... */ },
@@ -47,6 +48,8 @@ pub enum Type {
     #[allow(missing_docs)] // documentation missing in model
     ActionGroup,
     #[allow(missing_docs)] // documentation missing in model
+    AgentCollaborator,
+    #[allow(missing_docs)] // documentation missing in model
     AskUser,
     #[allow(missing_docs)] // documentation missing in model
     Finish,
@@ -62,6 +65,7 @@ impl ::std::convert::From<&str> for Type {
     fn from(s: &str) -> Self {
         match s {
             "ACTION_GROUP" => Type::ActionGroup,
+            "AGENT_COLLABORATOR" => Type::AgentCollaborator,
             "ASK_USER" => Type::AskUser,
             "FINISH" => Type::Finish,
             "KNOWLEDGE_BASE" => Type::KnowledgeBase,
@@ -82,6 +86,7 @@ impl Type {
     pub fn as_str(&self) -> &str {
         match self {
             Type::ActionGroup => "ACTION_GROUP",
+            Type::AgentCollaborator => "AGENT_COLLABORATOR",
             Type::AskUser => "ASK_USER",
             Type::Finish => "FINISH",
             Type::KnowledgeBase => "KNOWLEDGE_BASE",
@@ -91,7 +96,7 @@ impl Type {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTION_GROUP", "ASK_USER", "FINISH", "KNOWLEDGE_BASE", "REPROMPT"]
+        &["ACTION_GROUP", "AGENT_COLLABORATOR", "ASK_USER", "FINISH", "KNOWLEDGE_BASE", "REPROMPT"]
     }
 }
 impl ::std::convert::AsRef<str> for Type {
@@ -115,6 +120,7 @@ impl ::std::fmt::Display for Type {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             Type::ActionGroup => write!(f, "ACTION_GROUP"),
+            Type::AgentCollaborator => write!(f, "AGENT_COLLABORATOR"),
             Type::AskUser => write!(f, "ASK_USER"),
             Type::Finish => write!(f, "FINISH"),
             Type::KnowledgeBase => write!(f, "KNOWLEDGE_BASE"),

@@ -14,6 +14,37 @@ pub struct GetModelInvocationJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the service role with permissions to carry out and manage batch inference. You can use the console to create a default service role or follow the steps at <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-iam-sr.html">Create a service role for batch inference</a>.</p>
     pub role_arn: ::std::string::String,
     /// <p>The status of the batch inference job.</p>
+    /// <p>The following statuses are possible:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Submitted – This job has been submitted to a queue for validation.</p></li>
+    /// <li>
+    /// <p>Validating – This job is being validated for the requirements described in <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-data.html">Format and upload your batch inference data</a>. The criteria include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Your IAM service role has access to the Amazon S3 buckets containing your files.</p></li>
+    /// <li>
+    /// <p>Your files are .jsonl files and each individual record is a JSON object in the correct format. Note that validation doesn't check if the <code>modelInput</code> value matches the request body for the model.</p></li>
+    /// <li>
+    /// <p>Your files fulfill the requirements for file size and number of records. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/quotas.html">Quotas for Amazon Bedrock</a>.</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p>Scheduled – This job has been validated and is now in a queue. The job will automatically start when it reaches its turn.</p></li>
+    /// <li>
+    /// <p>Expired – This job timed out because it was scheduled but didn't begin before the set timeout duration. Submit a new job request.</p></li>
+    /// <li>
+    /// <p>InProgress – This job has begun. You can start viewing the results in the output S3 location.</p></li>
+    /// <li>
+    /// <p>Completed – This job has successfully completed. View the output files in the output S3 location.</p></li>
+    /// <li>
+    /// <p>PartiallyCompleted – This job has partially completed. Not all of your records could be processed in time. View the output files in the output S3 location.</p></li>
+    /// <li>
+    /// <p>Failed – This job has failed. Check the failure message for any further details. For further assistance, reach out to the <a href="https://console.aws.amazon.com/support/home/">Amazon Web Services Support Center</a>.</p></li>
+    /// <li>
+    /// <p>Stopped – This job was stopped by a user.</p></li>
+    /// <li>
+    /// <p>Stopping – This job is being stopped by a user.</p></li>
+    /// </ul>
     pub status: ::std::option::Option<crate::types::ModelInvocationJobStatus>,
     /// <p>If the batch inference job failed, this field contains a message describing why the job failed.</p>
     pub message: ::std::option::Option<::std::string::String>,
@@ -27,7 +58,7 @@ pub struct GetModelInvocationJobOutput {
     pub input_data_config: ::std::option::Option<crate::types::ModelInvocationJobInputDataConfig>,
     /// <p>Details about the location of the output of the batch inference job.</p>
     pub output_data_config: ::std::option::Option<crate::types::ModelInvocationJobOutputDataConfig>,
-    /// <p>The configuration of the Virtual Private Cloud (VPC) for the data in the batch inference job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-vpc">Protect batch inference jobs using a VPC</a>.</p>
+    /// <p>The configuration of the Virtual Private Cloud (VPC) for the data in the batch inference job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-vpc">Protect batch inference jobs using a VPC</a>.</p>
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     /// <p>The number of hours after which batch inference job was set to time out.</p>
     pub timeout_duration_in_hours: ::std::option::Option<i32>,
@@ -60,6 +91,37 @@ impl GetModelInvocationJobOutput {
         self.role_arn.deref()
     }
     /// <p>The status of the batch inference job.</p>
+    /// <p>The following statuses are possible:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Submitted – This job has been submitted to a queue for validation.</p></li>
+    /// <li>
+    /// <p>Validating – This job is being validated for the requirements described in <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-data.html">Format and upload your batch inference data</a>. The criteria include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Your IAM service role has access to the Amazon S3 buckets containing your files.</p></li>
+    /// <li>
+    /// <p>Your files are .jsonl files and each individual record is a JSON object in the correct format. Note that validation doesn't check if the <code>modelInput</code> value matches the request body for the model.</p></li>
+    /// <li>
+    /// <p>Your files fulfill the requirements for file size and number of records. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/quotas.html">Quotas for Amazon Bedrock</a>.</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p>Scheduled – This job has been validated and is now in a queue. The job will automatically start when it reaches its turn.</p></li>
+    /// <li>
+    /// <p>Expired – This job timed out because it was scheduled but didn't begin before the set timeout duration. Submit a new job request.</p></li>
+    /// <li>
+    /// <p>InProgress – This job has begun. You can start viewing the results in the output S3 location.</p></li>
+    /// <li>
+    /// <p>Completed – This job has successfully completed. View the output files in the output S3 location.</p></li>
+    /// <li>
+    /// <p>PartiallyCompleted – This job has partially completed. Not all of your records could be processed in time. View the output files in the output S3 location.</p></li>
+    /// <li>
+    /// <p>Failed – This job has failed. Check the failure message for any further details. For further assistance, reach out to the <a href="https://console.aws.amazon.com/support/home/">Amazon Web Services Support Center</a>.</p></li>
+    /// <li>
+    /// <p>Stopped – This job was stopped by a user.</p></li>
+    /// <li>
+    /// <p>Stopping – This job is being stopped by a user.</p></li>
+    /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ModelInvocationJobStatus> {
         self.status.as_ref()
     }
@@ -87,7 +149,7 @@ impl GetModelInvocationJobOutput {
     pub fn output_data_config(&self) -> ::std::option::Option<&crate::types::ModelInvocationJobOutputDataConfig> {
         self.output_data_config.as_ref()
     }
-    /// <p>The configuration of the Virtual Private Cloud (VPC) for the data in the batch inference job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-vpc">Protect batch inference jobs using a VPC</a>.</p>
+    /// <p>The configuration of the Virtual Private Cloud (VPC) for the data in the batch inference job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-vpc">Protect batch inference jobs using a VPC</a>.</p>
     pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
         self.vpc_config.as_ref()
     }
@@ -230,16 +292,109 @@ impl GetModelInvocationJobOutputBuilder {
         &self.role_arn
     }
     /// <p>The status of the batch inference job.</p>
+    /// <p>The following statuses are possible:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Submitted – This job has been submitted to a queue for validation.</p></li>
+    /// <li>
+    /// <p>Validating – This job is being validated for the requirements described in <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-data.html">Format and upload your batch inference data</a>. The criteria include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Your IAM service role has access to the Amazon S3 buckets containing your files.</p></li>
+    /// <li>
+    /// <p>Your files are .jsonl files and each individual record is a JSON object in the correct format. Note that validation doesn't check if the <code>modelInput</code> value matches the request body for the model.</p></li>
+    /// <li>
+    /// <p>Your files fulfill the requirements for file size and number of records. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/quotas.html">Quotas for Amazon Bedrock</a>.</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p>Scheduled – This job has been validated and is now in a queue. The job will automatically start when it reaches its turn.</p></li>
+    /// <li>
+    /// <p>Expired – This job timed out because it was scheduled but didn't begin before the set timeout duration. Submit a new job request.</p></li>
+    /// <li>
+    /// <p>InProgress – This job has begun. You can start viewing the results in the output S3 location.</p></li>
+    /// <li>
+    /// <p>Completed – This job has successfully completed. View the output files in the output S3 location.</p></li>
+    /// <li>
+    /// <p>PartiallyCompleted – This job has partially completed. Not all of your records could be processed in time. View the output files in the output S3 location.</p></li>
+    /// <li>
+    /// <p>Failed – This job has failed. Check the failure message for any further details. For further assistance, reach out to the <a href="https://console.aws.amazon.com/support/home/">Amazon Web Services Support Center</a>.</p></li>
+    /// <li>
+    /// <p>Stopped – This job was stopped by a user.</p></li>
+    /// <li>
+    /// <p>Stopping – This job is being stopped by a user.</p></li>
+    /// </ul>
     pub fn status(mut self, input: crate::types::ModelInvocationJobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the batch inference job.</p>
+    /// <p>The following statuses are possible:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Submitted – This job has been submitted to a queue for validation.</p></li>
+    /// <li>
+    /// <p>Validating – This job is being validated for the requirements described in <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-data.html">Format and upload your batch inference data</a>. The criteria include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Your IAM service role has access to the Amazon S3 buckets containing your files.</p></li>
+    /// <li>
+    /// <p>Your files are .jsonl files and each individual record is a JSON object in the correct format. Note that validation doesn't check if the <code>modelInput</code> value matches the request body for the model.</p></li>
+    /// <li>
+    /// <p>Your files fulfill the requirements for file size and number of records. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/quotas.html">Quotas for Amazon Bedrock</a>.</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p>Scheduled – This job has been validated and is now in a queue. The job will automatically start when it reaches its turn.</p></li>
+    /// <li>
+    /// <p>Expired – This job timed out because it was scheduled but didn't begin before the set timeout duration. Submit a new job request.</p></li>
+    /// <li>
+    /// <p>InProgress – This job has begun. You can start viewing the results in the output S3 location.</p></li>
+    /// <li>
+    /// <p>Completed – This job has successfully completed. View the output files in the output S3 location.</p></li>
+    /// <li>
+    /// <p>PartiallyCompleted – This job has partially completed. Not all of your records could be processed in time. View the output files in the output S3 location.</p></li>
+    /// <li>
+    /// <p>Failed – This job has failed. Check the failure message for any further details. For further assistance, reach out to the <a href="https://console.aws.amazon.com/support/home/">Amazon Web Services Support Center</a>.</p></li>
+    /// <li>
+    /// <p>Stopped – This job was stopped by a user.</p></li>
+    /// <li>
+    /// <p>Stopping – This job is being stopped by a user.</p></li>
+    /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ModelInvocationJobStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The status of the batch inference job.</p>
+    /// <p>The following statuses are possible:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Submitted – This job has been submitted to a queue for validation.</p></li>
+    /// <li>
+    /// <p>Validating – This job is being validated for the requirements described in <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-data.html">Format and upload your batch inference data</a>. The criteria include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Your IAM service role has access to the Amazon S3 buckets containing your files.</p></li>
+    /// <li>
+    /// <p>Your files are .jsonl files and each individual record is a JSON object in the correct format. Note that validation doesn't check if the <code>modelInput</code> value matches the request body for the model.</p></li>
+    /// <li>
+    /// <p>Your files fulfill the requirements for file size and number of records. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/quotas.html">Quotas for Amazon Bedrock</a>.</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p>Scheduled – This job has been validated and is now in a queue. The job will automatically start when it reaches its turn.</p></li>
+    /// <li>
+    /// <p>Expired – This job timed out because it was scheduled but didn't begin before the set timeout duration. Submit a new job request.</p></li>
+    /// <li>
+    /// <p>InProgress – This job has begun. You can start viewing the results in the output S3 location.</p></li>
+    /// <li>
+    /// <p>Completed – This job has successfully completed. View the output files in the output S3 location.</p></li>
+    /// <li>
+    /// <p>PartiallyCompleted – This job has partially completed. Not all of your records could be processed in time. View the output files in the output S3 location.</p></li>
+    /// <li>
+    /// <p>Failed – This job has failed. Check the failure message for any further details. For further assistance, reach out to the <a href="https://console.aws.amazon.com/support/home/">Amazon Web Services Support Center</a>.</p></li>
+    /// <li>
+    /// <p>Stopped – This job was stopped by a user.</p></li>
+    /// <li>
+    /// <p>Stopping – This job is being stopped by a user.</p></li>
+    /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ModelInvocationJobStatus> {
         &self.status
     }
@@ -330,17 +485,17 @@ impl GetModelInvocationJobOutputBuilder {
     pub fn get_output_data_config(&self) -> &::std::option::Option<crate::types::ModelInvocationJobOutputDataConfig> {
         &self.output_data_config
     }
-    /// <p>The configuration of the Virtual Private Cloud (VPC) for the data in the batch inference job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-vpc">Protect batch inference jobs using a VPC</a>.</p>
+    /// <p>The configuration of the Virtual Private Cloud (VPC) for the data in the batch inference job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-vpc">Protect batch inference jobs using a VPC</a>.</p>
     pub fn vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
         self.vpc_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration of the Virtual Private Cloud (VPC) for the data in the batch inference job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-vpc">Protect batch inference jobs using a VPC</a>.</p>
+    /// <p>The configuration of the Virtual Private Cloud (VPC) for the data in the batch inference job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-vpc">Protect batch inference jobs using a VPC</a>.</p>
     pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
         self.vpc_config = input;
         self
     }
-    /// <p>The configuration of the Virtual Private Cloud (VPC) for the data in the batch inference job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-vpc">Protect batch inference jobs using a VPC</a>.</p>
+    /// <p>The configuration of the Virtual Private Cloud (VPC) for the data in the batch inference job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-vpc">Protect batch inference jobs using a VPC</a>.</p>
     pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
         &self.vpc_config
     }

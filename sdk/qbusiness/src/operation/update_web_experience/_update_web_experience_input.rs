@@ -35,6 +35,8 @@ pub struct UpdateWebExperienceInput {
     /// <p>For Amazon Q Business application using external OIDC-compliant identity providers (IdPs). The IdP administrator must add the browser extension sign-in redirect URLs to the IdP application. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/browser-extensions.html">Configure external OIDC identity provider for your browser extensions.</a>.</p>
     /// </note>
     pub browser_extension_configuration: ::std::option::Option<crate::types::BrowserExtensionConfiguration>,
+    /// <p>Updates the custom logo, favicon, font, and color used in the Amazon Q web experience.</p>
+    pub customization_configuration: ::std::option::Option<crate::types::CustomizationConfiguration>,
 }
 impl UpdateWebExperienceInput {
     /// <p>The identifier of the Amazon Q Business application attached to the web experience.</p>
@@ -93,6 +95,10 @@ impl UpdateWebExperienceInput {
     pub fn browser_extension_configuration(&self) -> ::std::option::Option<&crate::types::BrowserExtensionConfiguration> {
         self.browser_extension_configuration.as_ref()
     }
+    /// <p>Updates the custom logo, favicon, font, and color used in the Amazon Q web experience.</p>
+    pub fn customization_configuration(&self) -> ::std::option::Option<&crate::types::CustomizationConfiguration> {
+        self.customization_configuration.as_ref()
+    }
 }
 impl UpdateWebExperienceInput {
     /// Creates a new builder-style object to manufacture [`UpdateWebExperienceInput`](crate::operation::update_web_experience::UpdateWebExperienceInput).
@@ -116,6 +122,7 @@ pub struct UpdateWebExperienceInputBuilder {
     pub(crate) identity_provider_configuration: ::std::option::Option<crate::types::IdentityProviderConfiguration>,
     pub(crate) origins: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) browser_extension_configuration: ::std::option::Option<crate::types::BrowserExtensionConfiguration>,
+    pub(crate) customization_configuration: ::std::option::Option<crate::types::CustomizationConfiguration>,
 }
 impl UpdateWebExperienceInputBuilder {
     /// <p>The identifier of the Amazon Q Business application attached to the web experience.</p>
@@ -310,6 +317,20 @@ impl UpdateWebExperienceInputBuilder {
     pub fn get_browser_extension_configuration(&self) -> &::std::option::Option<crate::types::BrowserExtensionConfiguration> {
         &self.browser_extension_configuration
     }
+    /// <p>Updates the custom logo, favicon, font, and color used in the Amazon Q web experience.</p>
+    pub fn customization_configuration(mut self, input: crate::types::CustomizationConfiguration) -> Self {
+        self.customization_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Updates the custom logo, favicon, font, and color used in the Amazon Q web experience.</p>
+    pub fn set_customization_configuration(mut self, input: ::std::option::Option<crate::types::CustomizationConfiguration>) -> Self {
+        self.customization_configuration = input;
+        self
+    }
+    /// <p>Updates the custom logo, favicon, font, and color used in the Amazon Q web experience.</p>
+    pub fn get_customization_configuration(&self) -> &::std::option::Option<crate::types::CustomizationConfiguration> {
+        &self.customization_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateWebExperienceInput`](crate::operation::update_web_experience::UpdateWebExperienceInput).
     pub fn build(
         self,
@@ -327,6 +348,7 @@ impl UpdateWebExperienceInputBuilder {
             identity_provider_configuration: self.identity_provider_configuration,
             origins: self.origins,
             browser_extension_configuration: self.browser_extension_configuration,
+            customization_configuration: self.customization_configuration,
         })
     }
 }

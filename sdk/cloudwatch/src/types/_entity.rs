@@ -6,21 +6,21 @@
 pub struct Entity {
     /// <p>The attributes of the entity which identify the specific entity, as a list of key-value pairs. Entities with the same <code>KeyAttributes</code> are considered to be the same entity. For an entity to be valid, the <code>KeyAttributes</code> must exist and be formatted correctly.</p>
     /// <p>There are five allowed attributes (key names): <code>Type</code>, <code>ResourceType</code>, <code>Identifier</code>, <code>Name</code>, and <code>Environment</code>.</p>
-    /// <p>For details about how to use the key attributes to specify an entity, see <a href="https://docs.aws.amazon.com/adding-your-own-related-telemetry.html">How to add related information to telemetry</a> in the <i>CloudWatch User Guide</i>.</p>
+    /// <p>For details about how to use the key attributes to specify an entity, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/adding-your-own-related-telemetry.html">How to add related information to telemetry</a> in the <i>CloudWatch User Guide</i>.</p>
     pub key_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Additional attributes of the entity that are not used to specify the identity of the entity. A list of key-value pairs.</p>
-    /// <p>For details about how to use the attributes, see <a href="https://docs.aws.amazon.com/adding-your-own-related-telemetry.html">How to add related information to telemetry</a> in the <i>CloudWatch User Guide</i>.</p>
+    /// <p>For details about how to use the attributes, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/adding-your-own-related-telemetry.html">How to add related information to telemetry</a> in the <i>CloudWatch User Guide</i>.</p>
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl Entity {
     /// <p>The attributes of the entity which identify the specific entity, as a list of key-value pairs. Entities with the same <code>KeyAttributes</code> are considered to be the same entity. For an entity to be valid, the <code>KeyAttributes</code> must exist and be formatted correctly.</p>
     /// <p>There are five allowed attributes (key names): <code>Type</code>, <code>ResourceType</code>, <code>Identifier</code>, <code>Name</code>, and <code>Environment</code>.</p>
-    /// <p>For details about how to use the key attributes to specify an entity, see <a href="https://docs.aws.amazon.com/adding-your-own-related-telemetry.html">How to add related information to telemetry</a> in the <i>CloudWatch User Guide</i>.</p>
+    /// <p>For details about how to use the key attributes to specify an entity, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/adding-your-own-related-telemetry.html">How to add related information to telemetry</a> in the <i>CloudWatch User Guide</i>.</p>
     pub fn key_attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.key_attributes.as_ref()
     }
     /// <p>Additional attributes of the entity that are not used to specify the identity of the entity. A list of key-value pairs.</p>
-    /// <p>For details about how to use the attributes, see <a href="https://docs.aws.amazon.com/adding-your-own-related-telemetry.html">How to add related information to telemetry</a> in the <i>CloudWatch User Guide</i>.</p>
+    /// <p>For details about how to use the attributes, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/adding-your-own-related-telemetry.html">How to add related information to telemetry</a> in the <i>CloudWatch User Guide</i>.</p>
     pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
@@ -46,7 +46,7 @@ impl EntityBuilder {
     ///
     /// <p>The attributes of the entity which identify the specific entity, as a list of key-value pairs. Entities with the same <code>KeyAttributes</code> are considered to be the same entity. For an entity to be valid, the <code>KeyAttributes</code> must exist and be formatted correctly.</p>
     /// <p>There are five allowed attributes (key names): <code>Type</code>, <code>ResourceType</code>, <code>Identifier</code>, <code>Name</code>, and <code>Environment</code>.</p>
-    /// <p>For details about how to use the key attributes to specify an entity, see <a href="https://docs.aws.amazon.com/adding-your-own-related-telemetry.html">How to add related information to telemetry</a> in the <i>CloudWatch User Guide</i>.</p>
+    /// <p>For details about how to use the key attributes to specify an entity, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/adding-your-own-related-telemetry.html">How to add related information to telemetry</a> in the <i>CloudWatch User Guide</i>.</p>
     pub fn key_attributes(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -59,7 +59,7 @@ impl EntityBuilder {
     }
     /// <p>The attributes of the entity which identify the specific entity, as a list of key-value pairs. Entities with the same <code>KeyAttributes</code> are considered to be the same entity. For an entity to be valid, the <code>KeyAttributes</code> must exist and be formatted correctly.</p>
     /// <p>There are five allowed attributes (key names): <code>Type</code>, <code>ResourceType</code>, <code>Identifier</code>, <code>Name</code>, and <code>Environment</code>.</p>
-    /// <p>For details about how to use the key attributes to specify an entity, see <a href="https://docs.aws.amazon.com/adding-your-own-related-telemetry.html">How to add related information to telemetry</a> in the <i>CloudWatch User Guide</i>.</p>
+    /// <p>For details about how to use the key attributes to specify an entity, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/adding-your-own-related-telemetry.html">How to add related information to telemetry</a> in the <i>CloudWatch User Guide</i>.</p>
     pub fn set_key_attributes(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -69,7 +69,7 @@ impl EntityBuilder {
     }
     /// <p>The attributes of the entity which identify the specific entity, as a list of key-value pairs. Entities with the same <code>KeyAttributes</code> are considered to be the same entity. For an entity to be valid, the <code>KeyAttributes</code> must exist and be formatted correctly.</p>
     /// <p>There are five allowed attributes (key names): <code>Type</code>, <code>ResourceType</code>, <code>Identifier</code>, <code>Name</code>, and <code>Environment</code>.</p>
-    /// <p>For details about how to use the key attributes to specify an entity, see <a href="https://docs.aws.amazon.com/adding-your-own-related-telemetry.html">How to add related information to telemetry</a> in the <i>CloudWatch User Guide</i>.</p>
+    /// <p>For details about how to use the key attributes to specify an entity, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/adding-your-own-related-telemetry.html">How to add related information to telemetry</a> in the <i>CloudWatch User Guide</i>.</p>
     pub fn get_key_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.key_attributes
     }
@@ -78,7 +78,7 @@ impl EntityBuilder {
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
     /// <p>Additional attributes of the entity that are not used to specify the identity of the entity. A list of key-value pairs.</p>
-    /// <p>For details about how to use the attributes, see <a href="https://docs.aws.amazon.com/adding-your-own-related-telemetry.html">How to add related information to telemetry</a> in the <i>CloudWatch User Guide</i>.</p>
+    /// <p>For details about how to use the attributes, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/adding-your-own-related-telemetry.html">How to add related information to telemetry</a> in the <i>CloudWatch User Guide</i>.</p>
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
@@ -86,13 +86,13 @@ impl EntityBuilder {
         self
     }
     /// <p>Additional attributes of the entity that are not used to specify the identity of the entity. A list of key-value pairs.</p>
-    /// <p>For details about how to use the attributes, see <a href="https://docs.aws.amazon.com/adding-your-own-related-telemetry.html">How to add related information to telemetry</a> in the <i>CloudWatch User Guide</i>.</p>
+    /// <p>For details about how to use the attributes, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/adding-your-own-related-telemetry.html">How to add related information to telemetry</a> in the <i>CloudWatch User Guide</i>.</p>
     pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.attributes = input;
         self
     }
     /// <p>Additional attributes of the entity that are not used to specify the identity of the entity. A list of key-value pairs.</p>
-    /// <p>For details about how to use the attributes, see <a href="https://docs.aws.amazon.com/adding-your-own-related-telemetry.html">How to add related information to telemetry</a> in the <i>CloudWatch User Guide</i>.</p>
+    /// <p>For details about how to use the attributes, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/adding-your-own-related-telemetry.html">How to add related information to telemetry</a> in the <i>CloudWatch User Guide</i>.</p>
     pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.attributes
     }

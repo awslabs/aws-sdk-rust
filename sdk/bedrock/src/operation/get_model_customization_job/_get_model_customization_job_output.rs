@@ -28,7 +28,7 @@ pub struct GetModelCustomizationJobOutput {
     /// <p>Amazon Resource Name (ARN) of the base model.</p>
     pub base_model_arn: ::std::string::String,
     /// <p>The hyperparameter values for the job. For details on the format for different models, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom model hyperparameters</a>.</p>
-    pub hyper_parameters: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    pub hyper_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Contains information about the training dataset.</p>
     pub training_data_config: ::std::option::Option<crate::types::TrainingDataConfig>,
     /// <p>Contains information about the validation dataset.</p>
@@ -45,6 +45,8 @@ pub struct GetModelCustomizationJobOutput {
     pub validation_metrics: ::std::option::Option<::std::vec::Vec<crate::types::ValidatorMetric>>,
     /// <p>VPC configuration for the custom model job.</p>
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
+    /// <p>The customization configuration for the model customization job.</p>
+    pub customization_config: ::std::option::Option<crate::types::CustomizationConfig>,
     _request_id: Option<String>,
 }
 impl GetModelCustomizationJobOutput {
@@ -102,8 +104,8 @@ impl GetModelCustomizationJobOutput {
         self.base_model_arn.deref()
     }
     /// <p>The hyperparameter values for the job. For details on the format for different models, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom model hyperparameters</a>.</p>
-    pub fn hyper_parameters(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
-        &self.hyper_parameters
+    pub fn hyper_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.hyper_parameters.as_ref()
     }
     /// <p>Contains information about the training dataset.</p>
     pub fn training_data_config(&self) -> ::std::option::Option<&crate::types::TrainingDataConfig> {
@@ -138,6 +140,10 @@ impl GetModelCustomizationJobOutput {
     /// <p>VPC configuration for the custom model job.</p>
     pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
         self.vpc_config.as_ref()
+    }
+    /// <p>The customization configuration for the model customization job.</p>
+    pub fn customization_config(&self) -> ::std::option::Option<&crate::types::CustomizationConfig> {
+        self.customization_config.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetModelCustomizationJobOutput {
@@ -177,6 +183,7 @@ pub struct GetModelCustomizationJobOutputBuilder {
     pub(crate) training_metrics: ::std::option::Option<crate::types::TrainingMetrics>,
     pub(crate) validation_metrics: ::std::option::Option<::std::vec::Vec<crate::types::ValidatorMetric>>,
     pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfig>,
+    pub(crate) customization_config: ::std::option::Option<crate::types::CustomizationConfig>,
     _request_id: Option<String>,
 }
 impl GetModelCustomizationJobOutputBuilder {
@@ -502,6 +509,20 @@ impl GetModelCustomizationJobOutputBuilder {
     pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
         &self.vpc_config
     }
+    /// <p>The customization configuration for the model customization job.</p>
+    pub fn customization_config(mut self, input: crate::types::CustomizationConfig) -> Self {
+        self.customization_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The customization configuration for the model customization job.</p>
+    pub fn set_customization_config(mut self, input: ::std::option::Option<crate::types::CustomizationConfig>) -> Self {
+        self.customization_config = input;
+        self
+    }
+    /// <p>The customization configuration for the model customization job.</p>
+    pub fn get_customization_config(&self) -> &::std::option::Option<crate::types::CustomizationConfig> {
+        &self.customization_config
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -519,7 +540,6 @@ impl GetModelCustomizationJobOutputBuilder {
     /// - [`role_arn`](crate::operation::get_model_customization_job::builders::GetModelCustomizationJobOutputBuilder::role_arn)
     /// - [`creation_time`](crate::operation::get_model_customization_job::builders::GetModelCustomizationJobOutputBuilder::creation_time)
     /// - [`base_model_arn`](crate::operation::get_model_customization_job::builders::GetModelCustomizationJobOutputBuilder::base_model_arn)
-    /// - [`hyper_parameters`](crate::operation::get_model_customization_job::builders::GetModelCustomizationJobOutputBuilder::hyper_parameters)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -569,12 +589,7 @@ impl GetModelCustomizationJobOutputBuilder {
                     "base_model_arn was not specified but it is required when building GetModelCustomizationJobOutput",
                 )
             })?,
-            hyper_parameters: self.hyper_parameters.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "hyper_parameters",
-                    "hyper_parameters was not specified but it is required when building GetModelCustomizationJobOutput",
-                )
-            })?,
+            hyper_parameters: self.hyper_parameters,
             training_data_config: self.training_data_config,
             validation_data_config: self.validation_data_config,
             output_data_config: self.output_data_config,
@@ -583,6 +598,7 @@ impl GetModelCustomizationJobOutputBuilder {
             training_metrics: self.training_metrics,
             validation_metrics: self.validation_metrics,
             vpc_config: self.vpc_config,
+            customization_config: self.customization_config,
             _request_id: self._request_id,
         })
     }

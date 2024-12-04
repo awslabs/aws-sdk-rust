@@ -7,7 +7,9 @@ pub struct DataSourceSummary {
     /// <p>The ID of the Amazon DataZone domain in which the data source exists.</p>
     pub domain_id: ::std::string::String,
     /// <p>The ID of the environment in which the data source exists.</p>
-    pub environment_id: ::std::string::String,
+    pub environment_id: ::std::option::Option<::std::string::String>,
+    /// <p>The connection ID that's part of the data source summary.</p>
+    pub connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the data source.</p>
     pub data_source_id: ::std::string::String,
     /// <p>The name of the data source.</p>
@@ -32,6 +34,8 @@ pub struct DataSourceSummary {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the data source was updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The data source description.</p>
+    pub description: ::std::option::Option<::std::string::String>,
 }
 impl DataSourceSummary {
     /// <p>The ID of the Amazon DataZone domain in which the data source exists.</p>
@@ -40,9 +44,12 @@ impl DataSourceSummary {
         self.domain_id.deref()
     }
     /// <p>The ID of the environment in which the data source exists.</p>
-    pub fn environment_id(&self) -> &str {
-        use std::ops::Deref;
-        self.environment_id.deref()
+    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
+    /// <p>The connection ID that's part of the data source summary.</p>
+    pub fn connection_id(&self) -> ::std::option::Option<&str> {
+        self.connection_id.as_deref()
     }
     /// <p>The ID of the data source.</p>
     pub fn data_source_id(&self) -> &str {
@@ -95,12 +102,17 @@ impl DataSourceSummary {
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
+    /// <p>The data source description.</p>
+    pub fn description(&self) -> ::std::option::Option<&str> {
+        self.description.as_deref()
+    }
 }
 impl ::std::fmt::Debug for DataSourceSummary {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DataSourceSummary");
         formatter.field("domain_id", &self.domain_id);
         formatter.field("environment_id", &self.environment_id);
+        formatter.field("connection_id", &self.connection_id);
         formatter.field("data_source_id", &self.data_source_id);
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("r#type", &self.r#type);
@@ -113,6 +125,7 @@ impl ::std::fmt::Debug for DataSourceSummary {
         formatter.field("last_run_asset_count", &self.last_run_asset_count);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -129,6 +142,7 @@ impl DataSourceSummary {
 pub struct DataSourceSummaryBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_source_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
@@ -141,6 +155,7 @@ pub struct DataSourceSummaryBuilder {
     pub(crate) last_run_asset_count: ::std::option::Option<i32>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl DataSourceSummaryBuilder {
     /// <p>The ID of the Amazon DataZone domain in which the data source exists.</p>
@@ -159,7 +174,6 @@ impl DataSourceSummaryBuilder {
         &self.domain_id
     }
     /// <p>The ID of the environment in which the data source exists.</p>
-    /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
@@ -172,6 +186,20 @@ impl DataSourceSummaryBuilder {
     /// <p>The ID of the environment in which the data source exists.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.environment_id
+    }
+    /// <p>The connection ID that's part of the data source summary.</p>
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.connection_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The connection ID that's part of the data source summary.</p>
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.connection_id = input;
+        self
+    }
+    /// <p>The connection ID that's part of the data source summary.</p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_id
     }
     /// <p>The ID of the data source.</p>
     /// This field is required.
@@ -345,10 +373,23 @@ impl DataSourceSummaryBuilder {
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
+    /// <p>The data source description.</p>
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The data source description.</p>
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.description = input;
+        self
+    }
+    /// <p>The data source description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// Consumes the builder and constructs a [`DataSourceSummary`](crate::types::DataSourceSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`domain_id`](crate::types::builders::DataSourceSummaryBuilder::domain_id)
-    /// - [`environment_id`](crate::types::builders::DataSourceSummaryBuilder::environment_id)
     /// - [`data_source_id`](crate::types::builders::DataSourceSummaryBuilder::data_source_id)
     /// - [`name`](crate::types::builders::DataSourceSummaryBuilder::name)
     /// - [`r#type`](crate::types::builders::DataSourceSummaryBuilder::type)
@@ -361,12 +402,8 @@ impl DataSourceSummaryBuilder {
                     "domain_id was not specified but it is required when building DataSourceSummary",
                 )
             })?,
-            environment_id: self.environment_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "environment_id",
-                    "environment_id was not specified but it is required when building DataSourceSummary",
-                )
-            })?,
+            environment_id: self.environment_id,
+            connection_id: self.connection_id,
             data_source_id: self.data_source_id.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_source_id",
@@ -399,6 +436,7 @@ impl DataSourceSummaryBuilder {
             last_run_asset_count: self.last_run_asset_count,
             created_at: self.created_at,
             updated_at: self.updated_at,
+            description: self.description,
         })
     }
 }
@@ -407,6 +445,7 @@ impl ::std::fmt::Debug for DataSourceSummaryBuilder {
         let mut formatter = f.debug_struct("DataSourceSummaryBuilder");
         formatter.field("domain_id", &self.domain_id);
         formatter.field("environment_id", &self.environment_id);
+        formatter.field("connection_id", &self.connection_id);
         formatter.field("data_source_id", &self.data_source_id);
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("r#type", &self.r#type);
@@ -419,6 +458,7 @@ impl ::std::fmt::Debug for DataSourceSummaryBuilder {
         formatter.field("last_run_asset_count", &self.last_run_asset_count);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

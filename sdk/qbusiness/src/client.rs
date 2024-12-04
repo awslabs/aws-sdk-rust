@@ -59,13 +59,13 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`BatchDeleteDocument`](crate::operation::batch_delete_document) operation has
-/// a [`Client::batch_delete_document`], function which returns a builder for that operation.
+/// For example, the [`AssociatePermission`](crate::operation::associate_permission) operation has
+/// a [`Client::associate_permission`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.batch_delete_document()
+/// let result = client.associate_permission()
 ///     .application_id("example")
 ///     .send()
 ///     .await;
@@ -136,6 +136,8 @@ impl Client {
     }
 }
 
+mod associate_permission;
+
 mod batch_delete_document;
 
 mod batch_put_document;
@@ -145,6 +147,8 @@ mod chat;
 mod chat_sync;
 
 mod create_application;
+
+mod create_data_accessor;
 
 mod create_data_source;
 
@@ -169,7 +173,7 @@ mod create_web_experience;
 /// # let client: aws_sdk_qbusiness::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.batch_delete_document()
+/// let result = client.associate_permission()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -191,6 +195,8 @@ mod delete_chat_controls_configuration;
 
 mod delete_conversation;
 
+mod delete_data_accessor;
+
 mod delete_data_source;
 
 mod delete_group;
@@ -205,9 +211,13 @@ mod delete_user;
 
 mod delete_web_experience;
 
+mod disassociate_permission;
+
 mod get_application;
 
 mod get_chat_controls_configuration;
+
+mod get_data_accessor;
 
 mod get_data_source;
 
@@ -218,6 +228,8 @@ mod get_index;
 mod get_media;
 
 mod get_plugin;
+
+mod get_policy;
 
 mod get_retriever;
 
@@ -231,6 +243,8 @@ mod list_attachments;
 
 mod list_conversations;
 
+mod list_data_accessors;
+
 mod list_data_source_sync_jobs;
 
 mod list_data_sources;
@@ -242,6 +256,12 @@ mod list_groups;
 mod list_indices;
 
 mod list_messages;
+
+mod list_plugin_actions;
+
+mod list_plugin_type_actions;
+
+mod list_plugin_type_metadata;
 
 mod list_plugins;
 
@@ -255,6 +275,8 @@ mod put_feedback;
 
 mod put_group;
 
+mod search_relevant_content;
+
 mod start_data_source_sync_job;
 
 mod stop_data_source_sync_job;
@@ -266,6 +288,8 @@ mod untag_resource;
 mod update_application;
 
 mod update_chat_controls_configuration;
+
+mod update_data_accessor;
 
 mod update_data_source;
 

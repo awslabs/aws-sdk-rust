@@ -25,7 +25,7 @@ impl super::Client {
     ///   - [`updated_by(Option<String>)`](crate::operation::create_subscription_target::CreateSubscriptionTargetOutput::updated_by): <p>The Amazon DataZone user who updated the subscription target.</p>
     ///   - [`created_at(DateTime)`](crate::operation::create_subscription_target::CreateSubscriptionTargetOutput::created_at): <p>The timestamp of when the subscription target was created.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::create_subscription_target::CreateSubscriptionTargetOutput::updated_at): <p>The timestamp of when the subscription target was updated.</p>
-    ///   - [`manage_access_role(String)`](crate::operation::create_subscription_target::CreateSubscriptionTargetOutput::manage_access_role): <p>The manage access role with which the subscription target was created.</p>
+    ///   - [`manage_access_role(Option<String>)`](crate::operation::create_subscription_target::CreateSubscriptionTargetOutput::manage_access_role): <p>The manage access role with which the subscription target was created.</p>
     ///   - [`applicable_asset_types(Vec::<String>)`](crate::operation::create_subscription_target::CreateSubscriptionTargetOutput::applicable_asset_types): <p>The asset types that can be included in the subscription target.</p>
     ///   - [`subscription_target_config(Vec::<SubscriptionTargetForm>)`](crate::operation::create_subscription_target::CreateSubscriptionTargetOutput::subscription_target_config): <p>The configuration of the subscription target.</p>
     ///   - [`provider(String)`](crate::operation::create_subscription_target::CreateSubscriptionTargetOutput::provider): <p>The provider of the subscription target.</p>

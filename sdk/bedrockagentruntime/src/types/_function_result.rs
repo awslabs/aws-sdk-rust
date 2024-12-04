@@ -19,6 +19,8 @@ pub struct FunctionResult {
     pub response_body: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ContentBody>>,
     /// <p>Controls the final response state returned to end user when API/Function execution failed. When this state is FAILURE, the request would fail with dependency failure exception. When this state is REPROMPT, the API/function response will be sent to model for re-prompt</p>
     pub response_state: ::std::option::Option<crate::types::ResponseState>,
+    /// <p>The agent's ID.</p>
+    pub agent_id: ::std::option::Option<::std::string::String>,
 }
 impl FunctionResult {
     /// <p>The action group that the function belongs to.</p>
@@ -42,6 +44,10 @@ impl FunctionResult {
     pub fn response_state(&self) -> ::std::option::Option<&crate::types::ResponseState> {
         self.response_state.as_ref()
     }
+    /// <p>The agent's ID.</p>
+    pub fn agent_id(&self) -> ::std::option::Option<&str> {
+        self.agent_id.as_deref()
+    }
 }
 impl FunctionResult {
     /// Creates a new builder-style object to manufacture [`FunctionResult`](crate::types::FunctionResult).
@@ -59,6 +65,7 @@ pub struct FunctionResultBuilder {
     pub(crate) function: ::std::option::Option<::std::string::String>,
     pub(crate) response_body: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ContentBody>>,
     pub(crate) response_state: ::std::option::Option<crate::types::ResponseState>,
+    pub(crate) agent_id: ::std::option::Option<::std::string::String>,
 }
 impl FunctionResultBuilder {
     /// <p>The action group that the function belongs to.</p>
@@ -141,6 +148,20 @@ impl FunctionResultBuilder {
     pub fn get_response_state(&self) -> &::std::option::Option<crate::types::ResponseState> {
         &self.response_state
     }
+    /// <p>The agent's ID.</p>
+    pub fn agent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.agent_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The agent's ID.</p>
+    pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.agent_id = input;
+        self
+    }
+    /// <p>The agent's ID.</p>
+    pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_id
+    }
     /// Consumes the builder and constructs a [`FunctionResult`](crate::types::FunctionResult).
     /// This method will fail if any of the following fields are not set:
     /// - [`action_group`](crate::types::builders::FunctionResultBuilder::action_group)
@@ -156,6 +177,7 @@ impl FunctionResultBuilder {
             function: self.function,
             response_body: self.response_body,
             response_state: self.response_state,
+            agent_id: self.agent_id,
         })
     }
 }

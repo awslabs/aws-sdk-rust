@@ -129,7 +129,6 @@ impl RedshiftRunConfigurationOutputBuilder {
         &self.relational_filter_configurations
     }
     /// <p>The details of the credentials required to access an Amazon Redshift cluster.</p>
-    /// This field is required.
     pub fn redshift_credential_configuration(mut self, input: crate::types::RedshiftCredentialConfiguration) -> Self {
         self.redshift_credential_configuration = ::std::option::Option::Some(input);
         self

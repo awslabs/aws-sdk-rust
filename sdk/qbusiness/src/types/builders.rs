@@ -9,6 +9,8 @@ pub use crate::types::_q_apps_configuration::QAppsConfigurationBuilder;
 
 pub use crate::types::_attachments_configuration::AttachmentsConfigurationBuilder;
 
+pub use crate::types::_quick_sight_configuration::QuickSightConfigurationBuilder;
+
 pub use crate::types::_applied_attachments_configuration::AppliedAttachmentsConfigurationBuilder;
 
 pub use crate::types::_error_detail::ErrorDetailBuilder;
@@ -18,6 +20,8 @@ pub use crate::types::_encryption_configuration::EncryptionConfigurationBuilder;
 pub use crate::types::_tag::TagBuilder;
 
 pub use crate::types::_application::ApplicationBuilder;
+
+pub use crate::types::_customization_configuration::CustomizationConfigurationBuilder;
 
 pub use crate::types::_browser_extension_configuration::BrowserExtensionConfigurationBuilder;
 
@@ -42,6 +46,8 @@ pub use crate::types::_string_attribute_boosting_configuration::StringAttributeB
 pub use crate::types::_number_attribute_boosting_configuration::NumberAttributeBoostingConfigurationBuilder;
 
 pub use crate::types::_retriever::RetrieverBuilder;
+
+pub use crate::types::_idc_auth_configuration::IdcAuthConfigurationBuilder;
 
 pub use crate::types::_no_auth_configuration::NoAuthConfigurationBuilder;
 
@@ -83,6 +89,16 @@ pub use crate::types::_data_source_vpc_configuration::DataSourceVpcConfiguration
 
 pub use crate::types::_data_source::DataSourceBuilder;
 
+pub use crate::types::_action_configuration::ActionConfigurationBuilder;
+
+pub use crate::types::_action_filter_configuration::ActionFilterConfigurationBuilder;
+
+pub use crate::types::_attribute_filter::AttributeFilterBuilder;
+
+pub use crate::types::_document_attribute::DocumentAttributeBuilder;
+
+pub use crate::types::_data_accessor::DataAccessorBuilder;
+
 pub use crate::types::_user_alias::UserAliasBuilder;
 
 pub use crate::types::_creator_mode_configuration::CreatorModeConfigurationBuilder;
@@ -101,6 +117,12 @@ pub use crate::types::_users_and_groups::UsersAndGroupsBuilder;
 
 pub use crate::types::_blocked_phrases_configuration_update::BlockedPhrasesConfigurationUpdateBuilder;
 
+pub use crate::types::_relevant_content::RelevantContentBuilder;
+
+pub use crate::types::_score_attributes::ScoreAttributesBuilder;
+
+pub use crate::types::_retriever_content_source::RetrieverContentSourceBuilder;
+
 pub use crate::types::_group_members::GroupMembersBuilder;
 
 pub use crate::types::_member_user::MemberUserBuilder;
@@ -108,6 +130,10 @@ pub use crate::types::_member_user::MemberUserBuilder;
 pub use crate::types::_member_group::MemberGroupBuilder;
 
 pub use crate::types::_message_usefulness_feedback::MessageUsefulnessFeedbackBuilder;
+
+pub use crate::types::_plugin_type_metadata_summary::PluginTypeMetadataSummaryBuilder;
+
+pub use crate::types::_action_summary::ActionSummaryBuilder;
 
 pub use crate::types::_message::MessageBuilder;
 
@@ -152,10 +178,6 @@ pub use crate::types::_blocked_phrases_configuration::BlockedPhrasesConfiguratio
 pub use crate::types::_auth_challenge_request::AuthChallengeRequestBuilder;
 
 pub use crate::types::_plugin_configuration::PluginConfigurationBuilder;
-
-pub use crate::types::_attribute_filter::AttributeFilterBuilder;
-
-pub use crate::types::_document_attribute::DocumentAttributeBuilder;
 
 pub use crate::types::_auth_challenge_response::AuthChallengeResponseBuilder;
 

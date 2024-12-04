@@ -202,6 +202,11 @@ pub(crate) fn de_get_application(
                 "qAppsConfiguration" => {
                     builder = builder.set_q_apps_configuration(crate::protocol_serde::shape_q_apps_configuration::de_q_apps_configuration(tokens)?);
                 }
+                "quickSightConfiguration" => {
+                    builder = builder.set_quick_sight_configuration(
+                        crate::protocol_serde::shape_quick_sight_configuration::de_quick_sight_configuration(tokens)?,
+                    );
+                }
                 "roleArn" => {
                     builder = builder.set_role_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

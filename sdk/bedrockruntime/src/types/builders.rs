@@ -81,6 +81,10 @@ pub use crate::types::_message::MessageBuilder;
 
 pub use crate::types::_tool_result_block::ToolResultBlockBuilder;
 
+pub use crate::types::_video_block::VideoBlockBuilder;
+
+pub use crate::types::_s3_location::S3LocationBuilder;
+
 pub use crate::types::_document_block::DocumentBlockBuilder;
 
 pub use crate::types::_image_block::ImageBlockBuilder;
@@ -96,3 +100,9 @@ pub use crate::types::_guardrail_configuration::GuardrailConfigurationBuilder;
 pub use crate::types::_guardrail_output_content::GuardrailOutputContentBuilder;
 
 pub use crate::types::_guardrail_text_block::GuardrailTextBlockBuilder;
+
+pub use crate::types::_tag::TagBuilder;
+
+pub use crate::types::_async_invoke_s3_output_data_config::AsyncInvokeS3OutputDataConfigBuilder;
+
+pub use crate::types::_async_invoke_summary::AsyncInvokeSummaryBuilder;

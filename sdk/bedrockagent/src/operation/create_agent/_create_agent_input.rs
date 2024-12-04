@@ -45,6 +45,8 @@ pub struct CreateAgentInput {
     pub guardrail_configuration: ::std::option::Option<crate::types::GuardrailConfiguration>,
     /// <p>Contains the details of the memory configured for the agent.</p>
     pub memory_configuration: ::std::option::Option<crate::types::MemoryConfiguration>,
+    /// <p>The agent's collaboration role.</p>
+    pub agent_collaboration: ::std::option::Option<crate::types::AgentCollaboration>,
 }
 impl CreateAgentInput {
     /// <p>A name for the agent that you create.</p>
@@ -117,6 +119,10 @@ impl CreateAgentInput {
     pub fn memory_configuration(&self) -> ::std::option::Option<&crate::types::MemoryConfiguration> {
         self.memory_configuration.as_ref()
     }
+    /// <p>The agent's collaboration role.</p>
+    pub fn agent_collaboration(&self) -> ::std::option::Option<&crate::types::AgentCollaboration> {
+        self.agent_collaboration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreateAgentInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -135,6 +141,7 @@ impl ::std::fmt::Debug for CreateAgentInput {
         formatter.field("prompt_override_configuration", &"*** Sensitive Data Redacted ***");
         formatter.field("guardrail_configuration", &self.guardrail_configuration);
         formatter.field("memory_configuration", &self.memory_configuration);
+        formatter.field("agent_collaboration", &self.agent_collaboration);
         formatter.finish()
     }
 }
@@ -163,6 +170,7 @@ pub struct CreateAgentInputBuilder {
     pub(crate) prompt_override_configuration: ::std::option::Option<crate::types::PromptOverrideConfiguration>,
     pub(crate) guardrail_configuration: ::std::option::Option<crate::types::GuardrailConfiguration>,
     pub(crate) memory_configuration: ::std::option::Option<crate::types::MemoryConfiguration>,
+    pub(crate) agent_collaboration: ::std::option::Option<crate::types::AgentCollaboration>,
 }
 impl CreateAgentInputBuilder {
     /// <p>A name for the agent that you create.</p>
@@ -410,6 +418,20 @@ impl CreateAgentInputBuilder {
     pub fn get_memory_configuration(&self) -> &::std::option::Option<crate::types::MemoryConfiguration> {
         &self.memory_configuration
     }
+    /// <p>The agent's collaboration role.</p>
+    pub fn agent_collaboration(mut self, input: crate::types::AgentCollaboration) -> Self {
+        self.agent_collaboration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The agent's collaboration role.</p>
+    pub fn set_agent_collaboration(mut self, input: ::std::option::Option<crate::types::AgentCollaboration>) -> Self {
+        self.agent_collaboration = input;
+        self
+    }
+    /// <p>The agent's collaboration role.</p>
+    pub fn get_agent_collaboration(&self) -> &::std::option::Option<crate::types::AgentCollaboration> {
+        &self.agent_collaboration
+    }
     /// Consumes the builder and constructs a [`CreateAgentInput`](crate::operation::create_agent::CreateAgentInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_agent::CreateAgentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_agent::CreateAgentInput {
@@ -427,6 +449,7 @@ impl CreateAgentInputBuilder {
             prompt_override_configuration: self.prompt_override_configuration,
             guardrail_configuration: self.guardrail_configuration,
             memory_configuration: self.memory_configuration,
+            agent_collaboration: self.agent_collaboration,
         })
     }
 }
@@ -447,6 +470,7 @@ impl ::std::fmt::Debug for CreateAgentInputBuilder {
         formatter.field("prompt_override_configuration", &"*** Sensitive Data Redacted ***");
         formatter.field("guardrail_configuration", &self.guardrail_configuration);
         formatter.field("memory_configuration", &self.memory_configuration);
+        formatter.field("agent_collaboration", &self.agent_collaboration);
         formatter.finish()
     }
 }

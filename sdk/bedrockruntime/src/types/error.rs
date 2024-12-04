@@ -317,7 +317,11 @@ impl ::aws_types::request_id::RequestId for crate::types::error::ConverseStreamO
     }
 }
 
+pub use crate::types::error::_conflict_exception::ConflictException;
+
 mod _access_denied_exception;
+
+mod _conflict_exception;
 
 mod _internal_server_exception;
 

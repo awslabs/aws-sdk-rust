@@ -32,6 +32,10 @@ where
                             builder = builder
                                 .set_embedding_data_delivery_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "videoDataDeliveryEnabled" => {
+                            builder =
+                                builder.set_video_data_delivery_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -74,6 +78,9 @@ pub fn ser_logging_config(
     }
     if let Some(var_7) = &input.embedding_data_delivery_enabled {
         object.key("embeddingDataDeliveryEnabled").boolean(*var_7);
+    }
+    if let Some(var_8) = &input.video_data_delivery_enabled {
+        object.key("videoDataDeliveryEnabled").boolean(*var_8);
     }
     Ok(())
 }

@@ -213,23 +213,20 @@ impl ConverseFluentBuilder {
     pub fn get_inference_config(&self) -> &::std::option::Option<crate::types::InferenceConfiguration> {
         self.inner.get_inference_config()
     }
-    /// <p>Configuration information for the tools that the model can use when generating a response.</p><note>
-    /// <p>This field is only supported by Anthropic Claude 3, Cohere Command R, Cohere Command R+, and Mistral Large models.</p>
-    /// </note>
+    /// <p>Configuration information for the tools that the model can use when generating a response.</p>
+    /// <p>For information about models that support tool use, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference.html#conversation-inference-supported-models-features">Supported models and model features</a>.</p>
     pub fn tool_config(mut self, input: crate::types::ToolConfiguration) -> Self {
         self.inner = self.inner.tool_config(input);
         self
     }
-    /// <p>Configuration information for the tools that the model can use when generating a response.</p><note>
-    /// <p>This field is only supported by Anthropic Claude 3, Cohere Command R, Cohere Command R+, and Mistral Large models.</p>
-    /// </note>
+    /// <p>Configuration information for the tools that the model can use when generating a response.</p>
+    /// <p>For information about models that support tool use, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference.html#conversation-inference-supported-models-features">Supported models and model features</a>.</p>
     pub fn set_tool_config(mut self, input: ::std::option::Option<crate::types::ToolConfiguration>) -> Self {
         self.inner = self.inner.set_tool_config(input);
         self
     }
-    /// <p>Configuration information for the tools that the model can use when generating a response.</p><note>
-    /// <p>This field is only supported by Anthropic Claude 3, Cohere Command R, Cohere Command R+, and Mistral Large models.</p>
-    /// </note>
+    /// <p>Configuration information for the tools that the model can use when generating a response.</p>
+    /// <p>For information about models that support tool use, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference.html#conversation-inference-supported-models-features">Supported models and model features</a>.</p>
     pub fn get_tool_config(&self) -> &::std::option::Option<crate::types::ToolConfiguration> {
         self.inner.get_tool_config()
     }
@@ -312,6 +309,32 @@ impl ConverseFluentBuilder {
     /// <p><code>Converse</code> and <code>ConverseStream</code> reject an empty JSON Pointer or incorrectly structured JSON Pointer with a <code>400</code> error code. if the JSON Pointer is valid, but the requested field is not in the model response, it is ignored by <code>Converse</code>.</p>
     pub fn get_additional_model_response_field_paths(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_additional_model_response_field_paths()
+    }
+    ///
+    /// Adds a key-value pair to `requestMetadata`.
+    ///
+    /// To override the contents of this collection use [`set_request_metadata`](Self::set_request_metadata).
+    ///
+    /// <p>Key-value pairs that you can use to filter invocation logs.</p>
+    pub fn request_metadata(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.request_metadata(k.into(), v.into());
+        self
+    }
+    /// <p>Key-value pairs that you can use to filter invocation logs.</p>
+    pub fn set_request_metadata(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.inner = self.inner.set_request_metadata(input);
+        self
+    }
+    /// <p>Key-value pairs that you can use to filter invocation logs.</p>
+    pub fn get_request_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.inner.get_request_metadata()
     }
     /// <p>Model performance settings for the request.</p>
     pub fn performance_config(mut self, input: crate::types::PerformanceConfiguration) -> Self {

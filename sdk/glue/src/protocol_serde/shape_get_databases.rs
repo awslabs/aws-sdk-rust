@@ -17,6 +17,54 @@ pub fn de_get_databases_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "EntityNotFoundException" => crate::operation::get_databases::GetDatabasesError::EntityNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::EntityNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_entity_not_found_exception::de_entity_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_databases::GetDatabasesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "FederationSourceException" => crate::operation::get_databases::GetDatabasesError::FederationSourceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::FederationSourceExceptionBuilder::default();
+                output = crate::protocol_serde::shape_federation_source_exception::de_federation_source_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_databases::GetDatabasesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "FederationSourceRetryableException" => crate::operation::get_databases::GetDatabasesError::FederationSourceRetryableException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::FederationSourceRetryableExceptionBuilder::default();
+                output = crate::protocol_serde::shape_federation_source_retryable_exception::de_federation_source_retryable_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::get_databases::GetDatabasesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "GlueEncryptionException" => crate::operation::get_databases::GetDatabasesError::GlueEncryptionException({
             #[allow(unused_mut)]
             let mut tmp = {

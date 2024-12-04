@@ -22,6 +22,8 @@ pub struct DomainSummary {
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>A timestamp of when a Amazon DataZone domain was last updated.</p>
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The domain version.</p>
+    pub domain_version: ::std::option::Option<crate::types::DomainVersion>,
 }
 impl DomainSummary {
     /// <p>The ID of the Amazon DataZone domain.</p>
@@ -64,6 +66,10 @@ impl DomainSummary {
     pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
+    /// <p>The domain version.</p>
+    pub fn domain_version(&self) -> ::std::option::Option<&crate::types::DomainVersion> {
+        self.domain_version.as_ref()
+    }
 }
 impl ::std::fmt::Debug for DomainSummary {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -77,6 +83,7 @@ impl ::std::fmt::Debug for DomainSummary {
         formatter.field("portal_url", &self.portal_url);
         formatter.field("created_at", &self.created_at);
         formatter.field("last_updated_at", &self.last_updated_at);
+        formatter.field("domain_version", &self.domain_version);
         formatter.finish()
     }
 }
@@ -100,6 +107,7 @@ pub struct DomainSummaryBuilder {
     pub(crate) portal_url: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) domain_version: ::std::option::Option<crate::types::DomainVersion>,
 }
 impl DomainSummaryBuilder {
     /// <p>The ID of the Amazon DataZone domain.</p>
@@ -234,6 +242,20 @@ impl DomainSummaryBuilder {
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_at
     }
+    /// <p>The domain version.</p>
+    pub fn domain_version(mut self, input: crate::types::DomainVersion) -> Self {
+        self.domain_version = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The domain version.</p>
+    pub fn set_domain_version(mut self, input: ::std::option::Option<crate::types::DomainVersion>) -> Self {
+        self.domain_version = input;
+        self
+    }
+    /// <p>The domain version.</p>
+    pub fn get_domain_version(&self) -> &::std::option::Option<crate::types::DomainVersion> {
+        &self.domain_version
+    }
     /// Consumes the builder and constructs a [`DomainSummary`](crate::types::DomainSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::DomainSummaryBuilder::id)
@@ -283,6 +305,7 @@ impl DomainSummaryBuilder {
                 )
             })?,
             last_updated_at: self.last_updated_at,
+            domain_version: self.domain_version,
         })
     }
 }
@@ -298,6 +321,7 @@ impl ::std::fmt::Debug for DomainSummaryBuilder {
         formatter.field("portal_url", &self.portal_url);
         formatter.field("created_at", &self.created_at);
         formatter.field("last_updated_at", &self.last_updated_at);
+        formatter.field("domain_version", &self.domain_version);
         formatter.finish()
     }
 }

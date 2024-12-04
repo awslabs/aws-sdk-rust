@@ -73,6 +73,9 @@ pub mod check_schema_version_validity;
 /// Types for the `CreateBlueprint` operation.
 pub mod create_blueprint;
 
+/// Types for the `CreateCatalog` operation.
+pub mod create_catalog;
+
 /// Types for the `CreateClassifier` operation.
 pub mod create_classifier;
 
@@ -96,6 +99,15 @@ pub mod create_database;
 
 /// Types for the `CreateDevEndpoint` operation.
 pub mod create_dev_endpoint;
+
+/// Types for the `CreateIntegration` operation.
+pub mod create_integration;
+
+/// Types for the `CreateIntegrationResourceProperty` operation.
+pub mod create_integration_resource_property;
+
+/// Types for the `CreateIntegrationTableProperties` operation.
+pub mod create_integration_table_properties;
 
 /// Types for the `CreateJob` operation.
 pub mod create_job;
@@ -145,6 +157,9 @@ pub mod create_workflow;
 /// Types for the `DeleteBlueprint` operation.
 pub mod delete_blueprint;
 
+/// Types for the `DeleteCatalog` operation.
+pub mod delete_catalog;
+
 /// Types for the `DeleteClassifier` operation.
 pub mod delete_classifier;
 
@@ -174,6 +189,12 @@ pub mod delete_database;
 
 /// Types for the `DeleteDevEndpoint` operation.
 pub mod delete_dev_endpoint;
+
+/// Types for the `DeleteIntegration` operation.
+pub mod delete_integration;
+
+/// Types for the `DeleteIntegrationTableProperties` operation.
+pub mod delete_integration_table_properties;
 
 /// Types for the `DeleteJob` operation.
 pub mod delete_job;
@@ -226,6 +247,18 @@ pub mod delete_user_defined_function;
 /// Types for the `DeleteWorkflow` operation.
 pub mod delete_workflow;
 
+/// Types for the `DescribeConnectionType` operation.
+pub mod describe_connection_type;
+
+/// Types for the `DescribeEntity` operation.
+pub mod describe_entity;
+
+/// Types for the `DescribeInboundIntegrations` operation.
+pub mod describe_inbound_integrations;
+
+/// Types for the `DescribeIntegrations` operation.
+pub mod describe_integrations;
+
 /// Types for the `GetBlueprint` operation.
 pub mod get_blueprint;
 
@@ -235,8 +268,14 @@ pub mod get_blueprint_run;
 /// Types for the `GetBlueprintRuns` operation.
 pub mod get_blueprint_runs;
 
+/// Types for the `GetCatalog` operation.
+pub mod get_catalog;
+
 /// Types for the `GetCatalogImportStatus` operation.
 pub mod get_catalog_import_status;
+
+/// Types for the `GetCatalogs` operation.
+pub mod get_catalogs;
 
 /// Types for the `GetClassifier` operation.
 pub mod get_classifier;
@@ -312,6 +351,15 @@ pub mod get_dev_endpoint;
 
 /// Types for the `GetDevEndpoints` operation.
 pub mod get_dev_endpoints;
+
+/// Types for the `GetEntityRecords` operation.
+pub mod get_entity_records;
+
+/// Types for the `GetIntegrationResourceProperty` operation.
+pub mod get_integration_resource_property;
+
+/// Types for the `GetIntegrationTableProperties` operation.
+pub mod get_integration_table_properties;
 
 /// Types for the `GetJob` operation.
 pub mod get_job;
@@ -451,6 +499,9 @@ pub mod list_blueprints;
 /// Types for the `ListColumnStatisticsTaskRuns` operation.
 pub mod list_column_statistics_task_runs;
 
+/// Types for the `ListConnectionTypes` operation.
+pub mod list_connection_types;
+
 /// Types for the `ListCrawlers` operation.
 pub mod list_crawlers;
 
@@ -480,6 +531,9 @@ pub mod list_data_quality_statistics;
 
 /// Types for the `ListDevEndpoints` operation.
 pub mod list_dev_endpoints;
+
+/// Types for the `ListEntities` operation.
+pub mod list_entities;
 
 /// Types for the `ListJobs` operation.
 pub mod list_jobs;
@@ -513,6 +567,9 @@ pub mod list_usage_profiles;
 
 /// Types for the `ListWorkflows` operation.
 pub mod list_workflows;
+
+/// Types for the `ModifyIntegration` operation.
+pub mod modify_integration;
 
 /// Types for the `PutDataCatalogEncryptionSettings` operation.
 pub mod put_data_catalog_encryption_settings;
@@ -625,6 +682,9 @@ pub mod untag_resource;
 /// Types for the `UpdateBlueprint` operation.
 pub mod update_blueprint;
 
+/// Types for the `UpdateCatalog` operation.
+pub mod update_catalog;
+
 /// Types for the `UpdateClassifier` operation.
 pub mod update_classifier;
 
@@ -654,6 +714,12 @@ pub mod update_database;
 
 /// Types for the `UpdateDevEndpoint` operation.
 pub mod update_dev_endpoint;
+
+/// Types for the `UpdateIntegrationResourceProperty` operation.
+pub mod update_integration_resource_property;
+
+/// Types for the `UpdateIntegrationTableProperties` operation.
+pub mod update_integration_table_properties;
 
 /// Types for the `UpdateJob` operation.
 pub mod update_job;

@@ -290,4 +290,18 @@ impl CreateWebExperienceFluentBuilder {
     pub fn get_browser_extension_configuration(&self) -> &::std::option::Option<crate::types::BrowserExtensionConfiguration> {
         self.inner.get_browser_extension_configuration()
     }
+    /// <p>Sets the custom logo, favicon, font, and color used in the Amazon Q web experience.</p>
+    pub fn customization_configuration(mut self, input: crate::types::CustomizationConfiguration) -> Self {
+        self.inner = self.inner.customization_configuration(input);
+        self
+    }
+    /// <p>Sets the custom logo, favicon, font, and color used in the Amazon Q web experience.</p>
+    pub fn set_customization_configuration(mut self, input: ::std::option::Option<crate::types::CustomizationConfiguration>) -> Self {
+        self.inner = self.inner.set_customization_configuration(input);
+        self
+    }
+    /// <p>Sets the custom logo, favicon, font, and color used in the Amazon Q web experience.</p>
+    pub fn get_customization_configuration(&self) -> &::std::option::Option<crate::types::CustomizationConfiguration> {
+        self.inner.get_customization_configuration()
+    }
 }

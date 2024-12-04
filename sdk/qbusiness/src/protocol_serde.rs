@@ -23,6 +23,8 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_associate_permission;
+
 pub(crate) mod shape_batch_delete_document;
 
 pub(crate) mod shape_batch_put_document;
@@ -32,6 +34,8 @@ pub(crate) mod shape_chat;
 pub(crate) mod shape_chat_sync;
 
 pub(crate) mod shape_create_application;
+
+pub(crate) mod shape_create_data_accessor;
 
 pub(crate) mod shape_create_data_source;
 
@@ -51,6 +55,8 @@ pub(crate) mod shape_delete_chat_controls_configuration;
 
 pub(crate) mod shape_delete_conversation;
 
+pub(crate) mod shape_delete_data_accessor;
+
 pub(crate) mod shape_delete_data_source;
 
 pub(crate) mod shape_delete_group;
@@ -65,9 +71,13 @@ pub(crate) mod shape_delete_user;
 
 pub(crate) mod shape_delete_web_experience;
 
+pub(crate) mod shape_disassociate_permission;
+
 pub(crate) mod shape_get_application;
 
 pub(crate) mod shape_get_chat_controls_configuration;
+
+pub(crate) mod shape_get_data_accessor;
 
 pub(crate) mod shape_get_data_source;
 
@@ -78,6 +88,8 @@ pub(crate) mod shape_get_index;
 pub(crate) mod shape_get_media;
 
 pub(crate) mod shape_get_plugin;
+
+pub(crate) mod shape_get_policy;
 
 pub(crate) mod shape_get_retriever;
 
@@ -91,6 +103,8 @@ pub(crate) mod shape_list_attachments;
 
 pub(crate) mod shape_list_conversations;
 
+pub(crate) mod shape_list_data_accessors;
+
 pub(crate) mod shape_list_data_source_sync_jobs;
 
 pub(crate) mod shape_list_data_sources;
@@ -102,6 +116,12 @@ pub(crate) mod shape_list_groups;
 pub(crate) mod shape_list_indices;
 
 pub(crate) mod shape_list_messages;
+
+pub(crate) mod shape_list_plugin_actions;
+
+pub(crate) mod shape_list_plugin_type_actions;
+
+pub(crate) mod shape_list_plugin_type_metadata;
 
 pub(crate) mod shape_list_plugins;
 
@@ -115,6 +135,8 @@ pub(crate) mod shape_put_feedback;
 
 pub(crate) mod shape_put_group;
 
+pub(crate) mod shape_search_relevant_content;
+
 pub(crate) mod shape_start_data_source_sync_job;
 
 pub(crate) mod shape_stop_data_source_sync_job;
@@ -126,6 +148,8 @@ pub(crate) mod shape_untag_resource;
 pub(crate) mod shape_update_application;
 
 pub(crate) mod shape_update_chat_controls_configuration;
+
+pub(crate) mod shape_update_data_accessor;
 
 pub(crate) mod shape_update_data_source;
 
@@ -149,6 +173,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 
 pub(crate) mod shape_access_denied_exception;
 
+pub(crate) mod shape_associate_permission_input;
+
 pub(crate) mod shape_batch_delete_document_input;
 
 pub(crate) mod shape_batch_put_document_input;
@@ -162,6 +188,8 @@ pub(crate) mod shape_chat_sync_input;
 pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_application_input;
+
+pub(crate) mod shape_create_data_accessor_input;
 
 pub(crate) mod shape_create_data_source_input;
 
@@ -189,6 +217,8 @@ pub(crate) mod shape_put_group_input;
 
 pub(crate) mod shape_resource_not_found_exception;
 
+pub(crate) mod shape_search_relevant_content_input;
+
 pub(crate) mod shape_service_quota_exceeded_exception;
 
 pub(crate) mod shape_tag_resource_input;
@@ -198,6 +228,8 @@ pub(crate) mod shape_throttling_exception;
 pub(crate) mod shape_update_application_input;
 
 pub(crate) mod shape_update_chat_controls_configuration_input;
+
+pub(crate) mod shape_update_data_accessor_input;
 
 pub(crate) mod shape_update_data_source_input;
 
@@ -219,11 +251,17 @@ pub fn parse_event_stream_error_metadata(
     crate::json_errors::parse_error_metadata(payload, &::aws_smithy_runtime_api::http::Headers::new())
 }
 
+pub(crate) mod shape_action_configuration;
+
+pub(crate) mod shape_action_configuration_list;
+
 pub(crate) mod shape_action_execution;
 
 pub(crate) mod shape_action_execution_event;
 
 pub(crate) mod shape_action_review;
+
+pub(crate) mod shape_actions;
 
 pub(crate) mod shape_applications;
 
@@ -263,11 +301,17 @@ pub(crate) mod shape_client_ids_for_oidc;
 
 pub(crate) mod shape_configuration_event;
 
+pub(crate) mod shape_content_source;
+
 pub(crate) mod shape_conversations;
 
 pub(crate) mod shape_creator_mode_configuration;
 
 pub(crate) mod shape_custom_plugin_configuration;
+
+pub(crate) mod shape_customization_configuration;
+
+pub(crate) mod shape_data_accessors;
 
 pub(crate) mod shape_data_source_sync_jobs;
 
@@ -311,6 +355,8 @@ pub(crate) mod shape_index_statistics;
 
 pub(crate) mod shape_indices;
 
+pub(crate) mod shape_list_plugin_type_metadata_summaries;
+
 pub(crate) mod shape_media_extraction_configuration;
 
 pub(crate) mod shape_message_usefulness_feedback;
@@ -324,6 +370,10 @@ pub(crate) mod shape_plugin_auth_configuration;
 pub(crate) mod shape_plugins;
 
 pub(crate) mod shape_q_apps_configuration;
+
+pub(crate) mod shape_quick_sight_configuration;
+
+pub(crate) mod shape_relevant_content_list;
 
 pub(crate) mod shape_retriever_configuration;
 
@@ -357,9 +407,13 @@ pub(crate) mod shape_access_configuration;
 
 pub(crate) mod shape_action_execution_payload_field;
 
+pub(crate) mod shape_action_filter_configuration;
+
 pub(crate) mod shape_action_review_event;
 
 pub(crate) mod shape_action_review_payload;
+
+pub(crate) mod shape_action_summary;
 
 pub(crate) mod shape_api_schema;
 
@@ -381,6 +435,8 @@ pub(crate) mod shape_conversation;
 
 pub(crate) mod shape_copy_from_source;
 
+pub(crate) mod shape_data_accessor;
+
 pub(crate) mod shape_data_source;
 
 pub(crate) mod shape_data_source_sync_job;
@@ -398,6 +454,8 @@ pub(crate) mod shape_failed_document;
 pub(crate) mod shape_group_summary;
 
 pub(crate) mod shape_hook_configuration;
+
+pub(crate) mod shape_idc_auth_configuration;
 
 pub(crate) mod shape_image_extraction_configuration;
 
@@ -429,7 +487,13 @@ pub(crate) mod shape_plugin;
 
 pub(crate) mod shape_plugin_configuration;
 
+pub(crate) mod shape_plugin_type_metadata_summary;
+
+pub(crate) mod shape_relevant_content;
+
 pub(crate) mod shape_retriever;
+
+pub(crate) mod shape_retriever_content_source;
 
 pub(crate) mod shape_rule;
 
@@ -471,11 +535,15 @@ pub(crate) mod shape_document_attribute_target;
 
 pub(crate) mod shape_document_attribute_value;
 
+pub(crate) mod shape_document_attributes;
+
 pub(crate) mod shape_example_chat_messages;
 
 pub(crate) mod shape_rule_configuration;
 
 pub(crate) mod shape_rules;
+
+pub(crate) mod shape_score_attributes;
 
 pub(crate) mod shape_text_segment_list;
 
@@ -502,6 +570,8 @@ pub(crate) mod shape_string_list_attribute_boosting_configuration;
 pub(crate) mod shape_text_segment;
 
 pub(crate) mod shape_action_review_payload_field_allowed_value;
+
+pub(crate) mod shape_attribute_filters;
 
 pub(crate) mod shape_document_attribute_string_list_value;
 

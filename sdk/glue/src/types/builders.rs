@@ -279,6 +279,16 @@ pub use crate::types::_job_command::JobCommandBuilder;
 
 pub use crate::types::_execution_property::ExecutionPropertyBuilder;
 
+pub use crate::types::_target_table_config::TargetTableConfigBuilder;
+
+pub use crate::types::_integration_partition::IntegrationPartitionBuilder;
+
+pub use crate::types::_source_table_config::SourceTableConfigBuilder;
+
+pub use crate::types::_target_processing_properties::TargetProcessingPropertiesBuilder;
+
+pub use crate::types::_source_processing_properties::SourceProcessingPropertiesBuilder;
+
 pub use crate::types::_dev_endpoint_custom_libraries::DevEndpointCustomLibrariesBuilder;
 
 pub use crate::types::_database_input::DatabaseInputBuilder;
@@ -321,7 +331,11 @@ pub use crate::types::_connection_input::ConnectionInputBuilder;
 
 pub use crate::types::_authentication_configuration_input::AuthenticationConfigurationInputBuilder;
 
+pub use crate::types::_basic_authentication_credentials::BasicAuthenticationCredentialsBuilder;
+
 pub use crate::types::_o_auth2_properties_input::OAuth2PropertiesInputBuilder;
+
+pub use crate::types::_o_auth2_credentials::OAuth2CredentialsBuilder;
 
 pub use crate::types::_authorization_code_properties::AuthorizationCodePropertiesBuilder;
 
@@ -360,6 +374,16 @@ pub use crate::types::_update_json_classifier_request::UpdateJsonClassifierReque
 pub use crate::types::_update_xml_classifier_request::UpdateXmlClassifierRequestBuilder;
 
 pub use crate::types::_update_grok_classifier_request::UpdateGrokClassifierRequestBuilder;
+
+pub use crate::types::_catalog_input::CatalogInputBuilder;
+
+pub use crate::types::_catalog_properties::CatalogPropertiesBuilder;
+
+pub use crate::types::_data_lake_access_properties::DataLakeAccessPropertiesBuilder;
+
+pub use crate::types::_target_redshift_catalog::TargetRedshiftCatalogBuilder;
+
+pub use crate::types::_federated_catalog::FederatedCatalogBuilder;
 
 pub use crate::types::_test_connection_input::TestConnectionInputBuilder;
 
@@ -401,6 +425,10 @@ pub use crate::types::_connection_password_encryption::ConnectionPasswordEncrypt
 
 pub use crate::types::_encryption_at_rest::EncryptionAtRestBuilder;
 
+pub use crate::types::_integration_error::IntegrationErrorBuilder;
+
+pub use crate::types::_tag::TagBuilder;
+
 pub use crate::types::_usage_profile_definition::UsageProfileDefinitionBuilder;
 
 pub use crate::types::_table_optimizer_run::TableOptimizerRunBuilder;
@@ -441,6 +469,8 @@ pub use crate::types::_transform_filter_criteria::TransformFilterCriteriaBuilder
 
 pub use crate::types::_schema_column::SchemaColumnBuilder;
 
+pub use crate::types::_entity::EntityBuilder;
+
 pub use crate::types::_statistic_summary::StatisticSummaryBuilder;
 
 pub use crate::types::_timestamped_inclusion_annotation::TimestampedInclusionAnnotationBuilder;
@@ -474,6 +504,10 @@ pub use crate::types::_custom_entity_type::CustomEntityTypeBuilder;
 pub use crate::types::_crawler_history::CrawlerHistoryBuilder;
 
 pub use crate::types::_crawls_filter::CrawlsFilterBuilder;
+
+pub use crate::types::_connection_type_brief::ConnectionTypeBriefBuilder;
+
+pub use crate::types::_capabilities::CapabilitiesBuilder;
 
 pub use crate::types::_workflow_run::WorkflowRunBuilder;
 
@@ -621,6 +655,8 @@ pub use crate::types::_get_connections_filter::GetConnectionsFilterBuilder;
 
 pub use crate::types::_column_statistics_task_settings::ColumnStatisticsTaskSettingsBuilder;
 
+pub use crate::types::_execution_attempt::ExecutionAttemptBuilder;
+
 pub use crate::types::_column_statistics_task_run::ColumnStatisticsTaskRunBuilder;
 
 pub use crate::types::_column_error::ColumnErrorBuilder;
@@ -635,6 +671,12 @@ pub use crate::types::_xml_classifier::XmlClassifierBuilder;
 
 pub use crate::types::_grok_classifier::GrokClassifierBuilder;
 
+pub use crate::types::_catalog::CatalogBuilder;
+
+pub use crate::types::_catalog_properties_output::CatalogPropertiesOutputBuilder;
+
+pub use crate::types::_data_lake_access_properties_output::DataLakeAccessPropertiesOutputBuilder;
+
 pub use crate::types::_catalog_import_status::CatalogImportStatusBuilder;
 
 pub use crate::types::_blueprint_run::BlueprintRunBuilder;
@@ -642,6 +684,22 @@ pub use crate::types::_blueprint_run::BlueprintRunBuilder;
 pub use crate::types::_blueprint::BlueprintBuilder;
 
 pub use crate::types::_last_active_definition::LastActiveDefinitionBuilder;
+
+pub use crate::types::_integration::IntegrationBuilder;
+
+pub use crate::types::_integration_filter::IntegrationFilterBuilder;
+
+pub use crate::types::_inbound_integration::InboundIntegrationBuilder;
+
+pub use crate::types::_field::FieldBuilder;
+
+pub use crate::types::_property::PropertyBuilder;
+
+pub use crate::types::_allowed_value::AllowedValueBuilder;
+
+pub use crate::types::_compute_environment_configuration::ComputeEnvironmentConfigurationBuilder;
+
+pub use crate::types::_auth_configuration::AuthConfigurationBuilder;
 
 pub use crate::types::_schema_version_error_item::SchemaVersionErrorItemBuilder;
 

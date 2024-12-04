@@ -23,7 +23,15 @@ pub use crate::types::error::_resource_number_limit_exceeded_exception::Resource
 
 pub use crate::types::error::_resource_not_ready_exception::ResourceNotReadyExceptionBuilder;
 
+pub use crate::types::error::_federation_source_retryable_exception::FederationSourceRetryableExceptionBuilder;
+
+pub use crate::types::error::_federation_source_exception::FederationSourceExceptionBuilder;
+
 pub use crate::types::error::_already_exists_exception::AlreadyExistsExceptionBuilder;
+
+pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExceptionBuilder;
+
+pub use crate::types::error::_internal_server_exception::InternalServerExceptionBuilder;
 
 pub use crate::types::error::_idempotent_parameter_mismatch_exception::IdempotentParameterMismatchExceptionBuilder;
 
@@ -34,8 +42,6 @@ pub use crate::types::error::_scheduler_transitioning_exception::SchedulerTransi
 pub use crate::types::error::_crawler_running_exception::CrawlerRunningExceptionBuilder;
 
 pub use crate::types::error::_illegal_blueprint_state_exception::IllegalBlueprintStateExceptionBuilder;
-
-pub use crate::types::error::_federation_source_exception::FederationSourceExceptionBuilder;
 
 pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;
 
@@ -65,10 +71,20 @@ pub use crate::types::error::_column_statistics_task_running_exception::ColumnSt
 
 pub use crate::types::error::_condition_check_failure_exception::ConditionCheckFailureExceptionBuilder;
 
+pub use crate::types::error::_invalid_state_exception::InvalidStateExceptionBuilder;
+
+pub use crate::types::error::_invalid_integration_state_fault::InvalidIntegrationStateFaultBuilder;
+
+pub use crate::types::error::_integration_not_found_fault::IntegrationNotFoundFaultBuilder;
+
+pub use crate::types::error::_integration_conflict_operation_fault::IntegrationConflictOperationFaultBuilder;
+
 pub use crate::types::error::_permission_type_mismatch_exception::PermissionTypeMismatchExceptionBuilder;
 
-pub use crate::types::error::_federation_source_retryable_exception::FederationSourceRetryableExceptionBuilder;
+pub use crate::types::error::_target_resource_not_found::TargetResourceNotFoundBuilder;
 
-pub use crate::types::error::_invalid_state_exception::InvalidStateExceptionBuilder;
+pub use crate::types::error::_kms_key_not_accessible_fault::KmsKeyNotAccessibleFaultBuilder;
+
+pub use crate::types::error::_integration_quota_exceeded_fault::IntegrationQuotaExceededFaultBuilder;
 
 pub use crate::types::error::_federated_resource_already_exists_exception::FederatedResourceAlreadyExistsExceptionBuilder;

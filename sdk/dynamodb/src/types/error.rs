@@ -13,6 +13,8 @@ pub use crate::types::error::_transaction_conflict_exception::TransactionConflic
 
 pub use crate::types::error::_request_limit_exceeded::RequestLimitExceeded;
 
+pub use crate::types::error::_replicated_write_conflict_exception::ReplicatedWriteConflictException;
+
 pub use crate::types::error::_provisioned_throughput_exceeded_exception::ProvisionedThroughputExceededException;
 
 pub use crate::types::error::_item_collection_size_limit_exceeded_exception::ItemCollectionSizeLimitExceededException;
@@ -112,6 +114,8 @@ mod _provisioned_throughput_exceeded_exception;
 mod _replica_already_exists_exception;
 
 mod _replica_not_found_exception;
+
+mod _replicated_write_conflict_exception;
 
 mod _request_limit_exceeded;
 

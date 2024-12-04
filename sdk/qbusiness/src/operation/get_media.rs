@@ -288,7 +288,7 @@ pub enum GetMediaError {
     LicenseNotFoundException(crate::types::error::LicenseNotFoundException),
     /// <p>The requested media object is too large to be returned.</p>
     MediaTooLargeException(crate::types::error::MediaTooLargeException),
-    /// <p>The resource you want to use doesn’t exist. Make sure you have provided the correct resource and try again.</p>
+    /// <p>The application or plugin resource you want to use doesn’t exist. Make sure you have provided the correct resource and try again.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The request was denied due to throttling. Reduce the number of requests and try again.</p>
     ThrottlingException(crate::types::error::ThrottlingException),

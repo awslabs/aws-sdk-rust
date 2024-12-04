@@ -13,6 +13,8 @@ pub use crate::types::error::_transaction_conflict_exception::TransactionConflic
 
 pub use crate::types::error::_request_limit_exceeded::RequestLimitExceededBuilder;
 
+pub use crate::types::error::_replicated_write_conflict_exception::ReplicatedWriteConflictExceptionBuilder;
+
 pub use crate::types::error::_provisioned_throughput_exceeded_exception::ProvisionedThroughputExceededExceptionBuilder;
 
 pub use crate::types::error::_item_collection_size_limit_exceeded_exception::ItemCollectionSizeLimitExceededExceptionBuilder;

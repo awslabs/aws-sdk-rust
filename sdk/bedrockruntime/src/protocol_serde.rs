@@ -29,6 +29,8 @@ pub(crate) mod shape_converse;
 
 pub(crate) mod shape_converse_stream;
 
+pub(crate) mod shape_get_async_invoke;
+
 pub(crate) mod shape_invoke_model;
 
 pub(crate) mod shape_invoke_model_input;
@@ -36,6 +38,10 @@ pub(crate) mod shape_invoke_model_input;
 pub(crate) mod shape_invoke_model_with_response_stream;
 
 pub(crate) mod shape_invoke_model_with_response_stream_input;
+
+pub(crate) mod shape_list_async_invokes;
+
+pub(crate) mod shape_start_async_invoke;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -48,6 +54,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 pub(crate) mod shape_access_denied_exception;
 
 pub(crate) mod shape_apply_guardrail_input;
+
+pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_converse_input;
 
@@ -75,6 +83,8 @@ pub(crate) mod shape_service_quota_exceeded_exception;
 
 pub(crate) mod shape_service_unavailable_exception;
 
+pub(crate) mod shape_start_async_invoke_input;
+
 pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_validation_exception;
@@ -84,6 +94,10 @@ pub fn parse_event_stream_error_metadata(
 ) -> Result<::aws_smithy_types::error::metadata::Builder, ::aws_smithy_json::deserialize::error::DeserializeError> {
     crate::json_errors::parse_error_metadata(payload, &::aws_smithy_runtime_api::http::Headers::new())
 }
+
+pub(crate) mod shape_async_invoke_output_data_config;
+
+pub(crate) mod shape_async_invoke_summaries;
 
 pub(crate) mod shape_converse_metrics;
 
@@ -115,9 +129,15 @@ pub(crate) mod shape_prompt_variable_values;
 
 pub(crate) mod shape_system_content_block;
 
+pub(crate) mod shape_tag;
+
 pub(crate) mod shape_token_usage;
 
 pub(crate) mod shape_tool_configuration;
+
+pub(crate) mod shape_async_invoke_s3_output_data_config;
+
+pub(crate) mod shape_async_invoke_summary;
 
 pub(crate) mod shape_content_block;
 
@@ -189,6 +209,8 @@ pub(crate) mod shape_tool_specification;
 
 pub(crate) mod shape_tool_use_block;
 
+pub(crate) mod shape_video_block;
+
 pub(crate) mod shape_content_block_delta;
 
 pub(crate) mod shape_content_block_start;
@@ -219,6 +241,8 @@ pub(crate) mod shape_tool_input_schema;
 
 pub(crate) mod shape_tool_result_content_block;
 
+pub(crate) mod shape_video_source;
+
 pub(crate) mod shape_guardrail_content_filter;
 
 pub(crate) mod shape_guardrail_contextual_grounding_filter;
@@ -232,6 +256,8 @@ pub(crate) mod shape_guardrail_pii_entity_filter;
 pub(crate) mod shape_guardrail_regex_filter;
 
 pub(crate) mod shape_guardrail_topic;
+
+pub(crate) mod shape_s3_location;
 
 pub(crate) mod shape_tool_use_block_delta;
 

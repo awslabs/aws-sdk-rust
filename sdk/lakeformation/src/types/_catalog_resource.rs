@@ -3,7 +3,16 @@
 /// <p>A structure for the catalog object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CatalogResource {}
+pub struct CatalogResource {
+    /// <p>An identifier for the catalog resource.</p>
+    pub id: ::std::option::Option<::std::string::String>,
+}
+impl CatalogResource {
+    /// <p>An identifier for the catalog resource.</p>
+    pub fn id(&self) -> ::std::option::Option<&str> {
+        self.id.as_deref()
+    }
+}
 impl CatalogResource {
     /// Creates a new builder-style object to manufacture [`CatalogResource`](crate::types::CatalogResource).
     pub fn builder() -> crate::types::builders::CatalogResourceBuilder {
@@ -14,10 +23,26 @@ impl CatalogResource {
 /// A builder for [`CatalogResource`](crate::types::CatalogResource).
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-pub struct CatalogResourceBuilder {}
+pub struct CatalogResourceBuilder {
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+}
 impl CatalogResourceBuilder {
+    /// <p>An identifier for the catalog resource.</p>
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>An identifier for the catalog resource.</p>
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.id = input;
+        self
+    }
+    /// <p>An identifier for the catalog resource.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`CatalogResource`](crate::types::CatalogResource).
     pub fn build(self) -> crate::types::CatalogResource {
-        crate::types::CatalogResource {}
+        crate::types::CatalogResource { id: self.id }
     }
 }

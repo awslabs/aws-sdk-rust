@@ -44,6 +44,27 @@ pub(crate) fn converse_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_async_invoke_output_output_correct_errors(
+    mut builder: crate::operation::get_async_invoke::builders::GetAsyncInvokeOutputBuilder,
+) -> crate::operation::get_async_invoke::builders::GetAsyncInvokeOutputBuilder {
+    if builder.invocation_arn.is_none() {
+        builder.invocation_arn = Some(Default::default())
+    }
+    if builder.model_arn.is_none() {
+        builder.model_arn = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::AsyncInvokeStatus>().ok()
+    }
+    if builder.submit_time.is_none() {
+        builder.submit_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.output_data_config.is_none() {
+        builder.output_data_config = Some(crate::types::AsyncInvokeOutputDataConfig::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn invoke_model_output_output_correct_errors(
     mut builder: crate::operation::invoke_model::builders::InvokeModelOutputBuilder,
 ) -> crate::operation::invoke_model::builders::InvokeModelOutputBuilder {
@@ -61,6 +82,15 @@ pub(crate) fn invoke_model_with_response_stream_output_output_correct_errors(
 ) -> crate::operation::invoke_model_with_response_stream::builders::InvokeModelWithResponseStreamOutputBuilder {
     if builder.content_type.is_none() {
         builder.content_type = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn start_async_invoke_output_output_correct_errors(
+    mut builder: crate::operation::start_async_invoke::builders::StartAsyncInvokeOutputBuilder,
+) -> crate::operation::start_async_invoke::builders::StartAsyncInvokeOutputBuilder {
+    if builder.invocation_arn.is_none() {
+        builder.invocation_arn = Some(Default::default())
     }
     builder
 }
@@ -107,6 +137,33 @@ pub(crate) fn converse_metrics_correct_errors(
 ) -> crate::types::builders::ConverseMetricsBuilder {
     if builder.latency_ms.is_none() {
         builder.latency_ms = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn async_invoke_s3_output_data_config_correct_errors(
+    mut builder: crate::types::builders::AsyncInvokeS3OutputDataConfigBuilder,
+) -> crate::types::builders::AsyncInvokeS3OutputDataConfigBuilder {
+    if builder.s3_uri.is_none() {
+        builder.s3_uri = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn async_invoke_summary_correct_errors(
+    mut builder: crate::types::builders::AsyncInvokeSummaryBuilder,
+) -> crate::types::builders::AsyncInvokeSummaryBuilder {
+    if builder.invocation_arn.is_none() {
+        builder.invocation_arn = Some(Default::default())
+    }
+    if builder.model_arn.is_none() {
+        builder.model_arn = Some(Default::default())
+    }
+    if builder.submit_time.is_none() {
+        builder.submit_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.output_data_config.is_none() {
+        builder.output_data_config = Some(crate::types::AsyncInvokeOutputDataConfig::Unknown)
     }
     builder
 }
@@ -411,11 +468,28 @@ pub(crate) fn tool_use_block_start_correct_errors(
     builder
 }
 
+pub(crate) fn video_block_correct_errors(mut builder: crate::types::builders::VideoBlockBuilder) -> crate::types::builders::VideoBlockBuilder {
+    if builder.format.is_none() {
+        builder.format = "no value was set".parse::<crate::types::VideoFormat>().ok()
+    }
+    if builder.source.is_none() {
+        builder.source = Some(crate::types::VideoSource::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn guardrail_converse_text_block_correct_errors(
     mut builder: crate::types::builders::GuardrailConverseTextBlockBuilder,
 ) -> crate::types::builders::GuardrailConverseTextBlockBuilder {
     if builder.text.is_none() {
         builder.text = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn s3_location_correct_errors(mut builder: crate::types::builders::S3LocationBuilder) -> crate::types::builders::S3LocationBuilder {
+    if builder.uri.is_none() {
+        builder.uri = Some(Default::default())
     }
     builder
 }

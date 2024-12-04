@@ -24,6 +24,9 @@ pub fn ser_prompt_configuration(
     if let Some(var_7) = &input.parser_mode {
         object.key("parserMode").string(var_7.as_str());
     }
+    if let Some(var_8) = &input.foundation_model {
+        object.key("foundationModel").string(var_8.as_str());
+    }
     Ok(())
 }
 
@@ -79,6 +82,13 @@ where
                             builder = builder.set_parser_mode(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::CreationMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "foundationModel" => {
+                            builder = builder.set_foundation_model(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }

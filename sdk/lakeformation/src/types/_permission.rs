@@ -15,6 +15,7 @@
 ///     Permission::All => { /* ... */ },
 ///     Permission::Alter => { /* ... */ },
 ///     Permission::Associate => { /* ... */ },
+///     Permission::CreateCatalog => { /* ... */ },
 ///     Permission::CreateDatabase => { /* ... */ },
 ///     Permission::CreateLfTag => { /* ... */ },
 ///     Permission::CreateLfTagExpression => { /* ... */ },
@@ -26,6 +27,7 @@
 ///     Permission::GrantWithLfTagExpression => { /* ... */ },
 ///     Permission::Insert => { /* ... */ },
 ///     Permission::Select => { /* ... */ },
+///     Permission::SuperUser => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -60,6 +62,8 @@ pub enum Permission {
     #[allow(missing_docs)] // documentation missing in model
     Associate,
     #[allow(missing_docs)] // documentation missing in model
+    CreateCatalog,
+    #[allow(missing_docs)] // documentation missing in model
     CreateDatabase,
     #[allow(missing_docs)] // documentation missing in model
     CreateLfTag,
@@ -81,6 +85,8 @@ pub enum Permission {
     Insert,
     #[allow(missing_docs)] // documentation missing in model
     Select,
+    #[allow(missing_docs)] // documentation missing in model
+    SuperUser,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -91,6 +97,7 @@ impl ::std::convert::From<&str> for Permission {
             "ALL" => Permission::All,
             "ALTER" => Permission::Alter,
             "ASSOCIATE" => Permission::Associate,
+            "CREATE_CATALOG" => Permission::CreateCatalog,
             "CREATE_DATABASE" => Permission::CreateDatabase,
             "CREATE_LF_TAG" => Permission::CreateLfTag,
             "CREATE_LF_TAG_EXPRESSION" => Permission::CreateLfTagExpression,
@@ -102,6 +109,7 @@ impl ::std::convert::From<&str> for Permission {
             "GRANT_WITH_LF_TAG_EXPRESSION" => Permission::GrantWithLfTagExpression,
             "INSERT" => Permission::Insert,
             "SELECT" => Permission::Select,
+            "SUPER_USER" => Permission::SuperUser,
             other => Permission::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -120,6 +128,7 @@ impl Permission {
             Permission::All => "ALL",
             Permission::Alter => "ALTER",
             Permission::Associate => "ASSOCIATE",
+            Permission::CreateCatalog => "CREATE_CATALOG",
             Permission::CreateDatabase => "CREATE_DATABASE",
             Permission::CreateLfTag => "CREATE_LF_TAG",
             Permission::CreateLfTagExpression => "CREATE_LF_TAG_EXPRESSION",
@@ -131,6 +140,7 @@ impl Permission {
             Permission::GrantWithLfTagExpression => "GRANT_WITH_LF_TAG_EXPRESSION",
             Permission::Insert => "INSERT",
             Permission::Select => "SELECT",
+            Permission::SuperUser => "SUPER_USER",
             Permission::Unknown(value) => value.as_str(),
         }
     }
@@ -140,6 +150,7 @@ impl Permission {
             "ALL",
             "ALTER",
             "ASSOCIATE",
+            "CREATE_CATALOG",
             "CREATE_DATABASE",
             "CREATE_LF_TAG",
             "CREATE_LF_TAG_EXPRESSION",
@@ -151,6 +162,7 @@ impl Permission {
             "GRANT_WITH_LF_TAG_EXPRESSION",
             "INSERT",
             "SELECT",
+            "SUPER_USER",
         ]
     }
 }
@@ -177,6 +189,7 @@ impl ::std::fmt::Display for Permission {
             Permission::All => write!(f, "ALL"),
             Permission::Alter => write!(f, "ALTER"),
             Permission::Associate => write!(f, "ASSOCIATE"),
+            Permission::CreateCatalog => write!(f, "CREATE_CATALOG"),
             Permission::CreateDatabase => write!(f, "CREATE_DATABASE"),
             Permission::CreateLfTag => write!(f, "CREATE_LF_TAG"),
             Permission::CreateLfTagExpression => write!(f, "CREATE_LF_TAG_EXPRESSION"),
@@ -188,6 +201,7 @@ impl ::std::fmt::Display for Permission {
             Permission::GrantWithLfTagExpression => write!(f, "GRANT_WITH_LF_TAG_EXPRESSION"),
             Permission::Insert => write!(f, "INSERT"),
             Permission::Select => write!(f, "SELECT"),
+            Permission::SuperUser => write!(f, "SUPER_USER"),
             Permission::Unknown(value) => write!(f, "{}", value),
         }
     }

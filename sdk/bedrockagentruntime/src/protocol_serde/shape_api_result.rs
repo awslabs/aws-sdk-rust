@@ -37,5 +37,95 @@ pub fn ser_api_result(
     if let Some(var_10) = &input.response_state {
         object.key("responseState").string(var_10.as_str());
     }
+    if let Some(var_11) = &input.agent_id {
+        object.key("agentId").string(var_11.as_str());
+    }
     Ok(())
+}
+
+pub(crate) fn de_api_result<'a, I>(
+    tokens: &mut ::std::iter::Peekable<I>,
+) -> Result<Option<crate::types::ApiResult>, ::aws_smithy_json::deserialize::error::DeserializeError>
+where
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
+{
+    match tokens.next().transpose()? {
+        Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::types::builders::ApiResultBuilder::default();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "actionGroup" => {
+                            builder = builder.set_action_group(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "httpMethod" => {
+                            builder = builder.set_http_method(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "apiPath" => {
+                            builder = builder.set_api_path(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "confirmationState" => {
+                            builder = builder.set_confirmation_state(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ConfirmationState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "responseBody" => {
+                            builder = builder.set_response_body(crate::protocol_serde::shape_response_body::de_response_body(tokens)?);
+                        }
+                        "httpStatusCode" => {
+                            builder = builder.set_http_status_code(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "responseState" => {
+                            builder = builder.set_response_state(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ResponseState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "agentId" => {
+                            builder = builder.set_agent_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
+                    other => {
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(crate::serde_util::api_result_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
+        }
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
+    }
 }

@@ -29,6 +29,10 @@ pub struct GetDomainOutput {
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The tags specified for the Amazon DataZone domain.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The version of the domain.</p>
+    pub domain_version: ::std::option::Option<crate::types::DomainVersion>,
+    /// <p>The service role of the domain.</p>
+    pub service_role: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetDomainOutput {
@@ -86,6 +90,14 @@ impl GetDomainOutput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>The version of the domain.</p>
+    pub fn domain_version(&self) -> ::std::option::Option<&crate::types::DomainVersion> {
+        self.domain_version.as_ref()
+    }
+    /// <p>The service role of the domain.</p>
+    pub fn service_role(&self) -> ::std::option::Option<&str> {
+        self.service_role.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetDomainOutput {
     fn request_id(&self) -> Option<&str> {
@@ -116,6 +128,8 @@ pub struct GetDomainOutputBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) domain_version: ::std::option::Option<crate::types::DomainVersion>,
+    pub(crate) service_role: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetDomainOutputBuilder {
@@ -310,6 +324,34 @@ impl GetDomainOutputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The version of the domain.</p>
+    pub fn domain_version(mut self, input: crate::types::DomainVersion) -> Self {
+        self.domain_version = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The version of the domain.</p>
+    pub fn set_domain_version(mut self, input: ::std::option::Option<crate::types::DomainVersion>) -> Self {
+        self.domain_version = input;
+        self
+    }
+    /// <p>The version of the domain.</p>
+    pub fn get_domain_version(&self) -> &::std::option::Option<crate::types::DomainVersion> {
+        &self.domain_version
+    }
+    /// <p>The service role of the domain.</p>
+    pub fn service_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.service_role = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The service role of the domain.</p>
+    pub fn set_service_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.service_role = input;
+        self
+    }
+    /// <p>The service role of the domain.</p>
+    pub fn get_service_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_role
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -354,6 +396,8 @@ impl GetDomainOutputBuilder {
             created_at: self.created_at,
             last_updated_at: self.last_updated_at,
             tags: self.tags,
+            domain_version: self.domain_version,
+            service_role: self.service_role,
             _request_id: self._request_id,
         })
     }

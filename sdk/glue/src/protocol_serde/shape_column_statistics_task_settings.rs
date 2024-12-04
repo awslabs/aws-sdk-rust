@@ -60,6 +60,24 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ScheduleType" => {
+                            builder = builder.set_schedule_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ScheduleType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "SettingSource" => {
+                            builder = builder.set_setting_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::SettingSource::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "LastExecutionAttempt" => {
+                            builder =
+                                builder.set_last_execution_attempt(crate::protocol_serde::shape_execution_attempt::de_execution_attempt(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

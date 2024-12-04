@@ -14,6 +14,8 @@ pub struct InvocationInput {
     pub knowledge_base_lookup_input: ::std::option::Option<crate::types::KnowledgeBaseLookupInput>,
     /// <p>Contains information about the code interpreter to be invoked.</p>
     pub code_interpreter_invocation_input: ::std::option::Option<crate::types::CodeInterpreterInvocationInput>,
+    /// <p>The collaborator's invocation input.</p>
+    pub agent_collaborator_invocation_input: ::std::option::Option<crate::types::AgentCollaboratorInvocationInput>,
 }
 impl InvocationInput {
     /// <p>The unique identifier of the trace.</p>
@@ -36,6 +38,10 @@ impl InvocationInput {
     pub fn code_interpreter_invocation_input(&self) -> ::std::option::Option<&crate::types::CodeInterpreterInvocationInput> {
         self.code_interpreter_invocation_input.as_ref()
     }
+    /// <p>The collaborator's invocation input.</p>
+    pub fn agent_collaborator_invocation_input(&self) -> ::std::option::Option<&crate::types::AgentCollaboratorInvocationInput> {
+        self.agent_collaborator_invocation_input.as_ref()
+    }
 }
 impl ::std::fmt::Debug for InvocationInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -45,6 +51,7 @@ impl ::std::fmt::Debug for InvocationInput {
         formatter.field("action_group_invocation_input", &"*** Sensitive Data Redacted ***");
         formatter.field("knowledge_base_lookup_input", &"*** Sensitive Data Redacted ***");
         formatter.field("code_interpreter_invocation_input", &"*** Sensitive Data Redacted ***");
+        formatter.field("agent_collaborator_invocation_input", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -64,6 +71,7 @@ pub struct InvocationInputBuilder {
     pub(crate) action_group_invocation_input: ::std::option::Option<crate::types::ActionGroupInvocationInput>,
     pub(crate) knowledge_base_lookup_input: ::std::option::Option<crate::types::KnowledgeBaseLookupInput>,
     pub(crate) code_interpreter_invocation_input: ::std::option::Option<crate::types::CodeInterpreterInvocationInput>,
+    pub(crate) agent_collaborator_invocation_input: ::std::option::Option<crate::types::AgentCollaboratorInvocationInput>,
 }
 impl InvocationInputBuilder {
     /// <p>The unique identifier of the trace.</p>
@@ -136,6 +144,20 @@ impl InvocationInputBuilder {
     pub fn get_code_interpreter_invocation_input(&self) -> &::std::option::Option<crate::types::CodeInterpreterInvocationInput> {
         &self.code_interpreter_invocation_input
     }
+    /// <p>The collaborator's invocation input.</p>
+    pub fn agent_collaborator_invocation_input(mut self, input: crate::types::AgentCollaboratorInvocationInput) -> Self {
+        self.agent_collaborator_invocation_input = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The collaborator's invocation input.</p>
+    pub fn set_agent_collaborator_invocation_input(mut self, input: ::std::option::Option<crate::types::AgentCollaboratorInvocationInput>) -> Self {
+        self.agent_collaborator_invocation_input = input;
+        self
+    }
+    /// <p>The collaborator's invocation input.</p>
+    pub fn get_agent_collaborator_invocation_input(&self) -> &::std::option::Option<crate::types::AgentCollaboratorInvocationInput> {
+        &self.agent_collaborator_invocation_input
+    }
     /// Consumes the builder and constructs a [`InvocationInput`](crate::types::InvocationInput).
     pub fn build(self) -> crate::types::InvocationInput {
         crate::types::InvocationInput {
@@ -144,6 +166,7 @@ impl InvocationInputBuilder {
             action_group_invocation_input: self.action_group_invocation_input,
             knowledge_base_lookup_input: self.knowledge_base_lookup_input,
             code_interpreter_invocation_input: self.code_interpreter_invocation_input,
+            agent_collaborator_invocation_input: self.agent_collaborator_invocation_input,
         }
     }
 }
@@ -155,6 +178,7 @@ impl ::std::fmt::Debug for InvocationInputBuilder {
         formatter.field("action_group_invocation_input", &"*** Sensitive Data Redacted ***");
         formatter.field("knowledge_base_lookup_input", &"*** Sensitive Data Redacted ***");
         formatter.field("code_interpreter_invocation_input", &"*** Sensitive Data Redacted ***");
+        formatter.field("agent_collaborator_invocation_input", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

@@ -15,6 +15,9 @@ pub mod copy_object;
 /// Types for the `CreateBucket` operation.
 pub mod create_bucket;
 
+/// Types for the `CreateBucketMetadataTableConfiguration` operation.
+pub mod create_bucket_metadata_table_configuration;
+
 /// Types for the `CreateMultipartUpload` operation.
 pub mod create_multipart_upload;
 
@@ -41,6 +44,9 @@ pub mod delete_bucket_inventory_configuration;
 
 /// Types for the `DeleteBucketLifecycle` operation.
 pub mod delete_bucket_lifecycle;
+
+/// Types for the `DeleteBucketMetadataTableConfiguration` operation.
+pub mod delete_bucket_metadata_table_configuration;
 
 /// Types for the `DeleteBucketMetricsConfiguration` operation.
 pub mod delete_bucket_metrics_configuration;
@@ -101,6 +107,9 @@ pub mod get_bucket_location;
 
 /// Types for the `GetBucketLogging` operation.
 pub mod get_bucket_logging;
+
+/// Types for the `GetBucketMetadataTableConfiguration` operation.
+pub mod get_bucket_metadata_table_configuration;
 
 /// Types for the `GetBucketMetricsConfiguration` operation.
 pub mod get_bucket_metrics_configuration;

@@ -48,12 +48,6 @@ pub struct ConnectionInput {
     /// <p>Required: All of (<code>USERNAME</code>, <code>PASSWORD</code>) or <code>SECRET_ID</code>.</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><code>SALESFORCE</code> - Designates a connection to Salesforce using OAuth authencation.</p>
-    /// <ul>
-    /// <li>
-    /// <p>Requires the <code>AuthenticationConfiguration</code> member to be configured.</p></li>
-    /// </ul></li>
-    /// <li>
     /// <p><code>VIEW_VALIDATION_REDSHIFT</code> - Designates a connection used for view validation by Amazon Redshift.</p></li>
     /// <li>
     /// <p><code>VIEW_VALIDATION_ATHENA</code> - Designates a connection used for view validation by Amazon Athena.</p></li>
@@ -72,6 +66,50 @@ pub struct ConnectionInput {
     /// <li>
     /// <p><code>CUSTOM</code> - Uses configuration settings contained in a custom connector to read from and write to data stores that are not natively supported by Glue.</p></li>
     /// </ul>
+    /// <p>Additionally, a <code>ConnectionType</code> for the following SaaS connectors is supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>FACEBOOKADS</code> - Designates a connection to Facebook Ads.</p></li>
+    /// <li>
+    /// <p><code>GOOGLEADS</code> - Designates a connection to Google Ads.</p></li>
+    /// <li>
+    /// <p><code>GOOGLESHEETS</code> - Designates a connection to Google Sheets.</p></li>
+    /// <li>
+    /// <p><code>GOOGLEANALYTICS4</code> - Designates a connection to Google Analytics 4.</p></li>
+    /// <li>
+    /// <p><code>HUBSPOT</code> - Designates a connection to HubSpot.</p></li>
+    /// <li>
+    /// <p><code>INSTAGRAMADS</code> - Designates a connection to Instagram Ads.</p></li>
+    /// <li>
+    /// <p><code>INTERCOM</code> - Designates a connection to Intercom.</p></li>
+    /// <li>
+    /// <p><code>JIRACLOUD</code> - Designates a connection to Jira Cloud.</p></li>
+    /// <li>
+    /// <p><code>MARKETO</code> - Designates a connection to Adobe Marketo Engage.</p></li>
+    /// <li>
+    /// <p><code>NETSUITEERP</code> - Designates a connection to Oracle NetSuite.</p></li>
+    /// <li>
+    /// <p><code>SALESFORCE</code> - Designates a connection to Salesforce using OAuth authentication.</p></li>
+    /// <li>
+    /// <p><code>SALESFORCEMARKETINGCLOUD</code> - Designates a connection to Salesforce Marketing Cloud.</p></li>
+    /// <li>
+    /// <p><code>SALESFORCEPARDOT</code> - Designates a connection to Salesforce Marketing Cloud Account Engagement (MCAE).</p></li>
+    /// <li>
+    /// <p><code>SAPODATA</code> - Designates a connection to SAP OData.</p></li>
+    /// <li>
+    /// <p><code>SERVICENOW</code> - Designates a connection to ServiceNow.</p></li>
+    /// <li>
+    /// <p><code>SLACK</code> - Designates a connection to Slack.</p></li>
+    /// <li>
+    /// <p><code>SNAPCHATADS</code> - Designates a connection to Snapchat Ads.</p></li>
+    /// <li>
+    /// <p><code>STRIPE</code> - Designates a connection to Stripe.</p></li>
+    /// <li>
+    /// <p><code>ZENDESK</code> - Designates a connection to Zendesk.</p></li>
+    /// <li>
+    /// <p><code>ZOHOCRM</code> - Designates a connection to Zoho CRM.</p></li>
+    /// </ul>
+    /// <p>For more information on the connection parameters needed for a particular connector, see the documentation for the connector in <a href="https://docs.aws.amazon.com/glue/latest/dg/console-connections.html">Adding an Glue connection</a>in the Glue User Guide.</p>
     /// <p><code>SFTP</code> is not supported.</p>
     /// <p>For more information about how optional ConnectionProperties are used to configure features in Glue, consult <a href="https://docs.aws.amazon.com/glue/latest/dg/connection-defining.html">Glue connection properties</a>.</p>
     /// <p>For more information about how optional ConnectionProperties are used to configure features in Glue Studio, consult <a href="https://docs.aws.amazon.com/glue/latest/ug/connectors-chapter.html">Using connectors and connections</a>.</p>
@@ -80,14 +118,20 @@ pub struct ConnectionInput {
     pub match_criteria: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>These key-value pairs define parameters for the connection.</p>
     pub connection_properties: ::std::collections::HashMap<crate::types::ConnectionPropertyKey, ::std::string::String>,
-    /// <p>This field is not currently used.</p>
+    /// <p>Connection properties specific to the Spark compute environment.</p>
+    pub spark_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>Connection properties specific to the Athena compute environment.</p>
     pub athena_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>Connection properties specific to the Python compute environment.</p>
+    pub python_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to successfully make this connection.</p>
     pub physical_connection_requirements: ::std::option::Option<crate::types::PhysicalConnectionRequirements>,
-    /// <p>The authentication properties of the connection. Used for a Salesforce connection.</p>
+    /// <p>The authentication properties of the connection.</p>
     pub authentication_configuration: ::std::option::Option<crate::types::AuthenticationConfigurationInput>,
-    /// <p>A flag to validate the credentials during create connection. Used for a Salesforce connection. Default is true.</p>
+    /// <p>A flag to validate the credentials during create connection. Default is true.</p>
     pub validate_credentials: bool,
+    /// <p>The compute environments that the specified connection properties are validated against.</p>
+    pub validate_for_compute_environments: ::std::option::Option<::std::vec::Vec<crate::types::ComputeEnvironment>>,
 }
 impl ConnectionInput {
     /// <p>The name of the connection.</p>
@@ -139,12 +183,6 @@ impl ConnectionInput {
     /// <p>Required: All of (<code>USERNAME</code>, <code>PASSWORD</code>) or <code>SECRET_ID</code>.</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><code>SALESFORCE</code> - Designates a connection to Salesforce using OAuth authencation.</p>
-    /// <ul>
-    /// <li>
-    /// <p>Requires the <code>AuthenticationConfiguration</code> member to be configured.</p></li>
-    /// </ul></li>
-    /// <li>
     /// <p><code>VIEW_VALIDATION_REDSHIFT</code> - Designates a connection used for view validation by Amazon Redshift.</p></li>
     /// <li>
     /// <p><code>VIEW_VALIDATION_ATHENA</code> - Designates a connection used for view validation by Amazon Athena.</p></li>
@@ -163,6 +201,50 @@ impl ConnectionInput {
     /// <li>
     /// <p><code>CUSTOM</code> - Uses configuration settings contained in a custom connector to read from and write to data stores that are not natively supported by Glue.</p></li>
     /// </ul>
+    /// <p>Additionally, a <code>ConnectionType</code> for the following SaaS connectors is supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>FACEBOOKADS</code> - Designates a connection to Facebook Ads.</p></li>
+    /// <li>
+    /// <p><code>GOOGLEADS</code> - Designates a connection to Google Ads.</p></li>
+    /// <li>
+    /// <p><code>GOOGLESHEETS</code> - Designates a connection to Google Sheets.</p></li>
+    /// <li>
+    /// <p><code>GOOGLEANALYTICS4</code> - Designates a connection to Google Analytics 4.</p></li>
+    /// <li>
+    /// <p><code>HUBSPOT</code> - Designates a connection to HubSpot.</p></li>
+    /// <li>
+    /// <p><code>INSTAGRAMADS</code> - Designates a connection to Instagram Ads.</p></li>
+    /// <li>
+    /// <p><code>INTERCOM</code> - Designates a connection to Intercom.</p></li>
+    /// <li>
+    /// <p><code>JIRACLOUD</code> - Designates a connection to Jira Cloud.</p></li>
+    /// <li>
+    /// <p><code>MARKETO</code> - Designates a connection to Adobe Marketo Engage.</p></li>
+    /// <li>
+    /// <p><code>NETSUITEERP</code> - Designates a connection to Oracle NetSuite.</p></li>
+    /// <li>
+    /// <p><code>SALESFORCE</code> - Designates a connection to Salesforce using OAuth authentication.</p></li>
+    /// <li>
+    /// <p><code>SALESFORCEMARKETINGCLOUD</code> - Designates a connection to Salesforce Marketing Cloud.</p></li>
+    /// <li>
+    /// <p><code>SALESFORCEPARDOT</code> - Designates a connection to Salesforce Marketing Cloud Account Engagement (MCAE).</p></li>
+    /// <li>
+    /// <p><code>SAPODATA</code> - Designates a connection to SAP OData.</p></li>
+    /// <li>
+    /// <p><code>SERVICENOW</code> - Designates a connection to ServiceNow.</p></li>
+    /// <li>
+    /// <p><code>SLACK</code> - Designates a connection to Slack.</p></li>
+    /// <li>
+    /// <p><code>SNAPCHATADS</code> - Designates a connection to Snapchat Ads.</p></li>
+    /// <li>
+    /// <p><code>STRIPE</code> - Designates a connection to Stripe.</p></li>
+    /// <li>
+    /// <p><code>ZENDESK</code> - Designates a connection to Zendesk.</p></li>
+    /// <li>
+    /// <p><code>ZOHOCRM</code> - Designates a connection to Zoho CRM.</p></li>
+    /// </ul>
+    /// <p>For more information on the connection parameters needed for a particular connector, see the documentation for the connector in <a href="https://docs.aws.amazon.com/glue/latest/dg/console-connections.html">Adding an Glue connection</a>in the Glue User Guide.</p>
     /// <p><code>SFTP</code> is not supported.</p>
     /// <p>For more information about how optional ConnectionProperties are used to configure features in Glue, consult <a href="https://docs.aws.amazon.com/glue/latest/dg/connection-defining.html">Glue connection properties</a>.</p>
     /// <p>For more information about how optional ConnectionProperties are used to configure features in Glue Studio, consult <a href="https://docs.aws.amazon.com/glue/latest/ug/connectors-chapter.html">Using connectors and connections</a>.</p>
@@ -179,21 +261,35 @@ impl ConnectionInput {
     pub fn connection_properties(&self) -> &::std::collections::HashMap<crate::types::ConnectionPropertyKey, ::std::string::String> {
         &self.connection_properties
     }
-    /// <p>This field is not currently used.</p>
+    /// <p>Connection properties specific to the Spark compute environment.</p>
+    pub fn spark_properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.spark_properties.as_ref()
+    }
+    /// <p>Connection properties specific to the Athena compute environment.</p>
     pub fn athena_properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.athena_properties.as_ref()
+    }
+    /// <p>Connection properties specific to the Python compute environment.</p>
+    pub fn python_properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.python_properties.as_ref()
     }
     /// <p>The physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to successfully make this connection.</p>
     pub fn physical_connection_requirements(&self) -> ::std::option::Option<&crate::types::PhysicalConnectionRequirements> {
         self.physical_connection_requirements.as_ref()
     }
-    /// <p>The authentication properties of the connection. Used for a Salesforce connection.</p>
+    /// <p>The authentication properties of the connection.</p>
     pub fn authentication_configuration(&self) -> ::std::option::Option<&crate::types::AuthenticationConfigurationInput> {
         self.authentication_configuration.as_ref()
     }
-    /// <p>A flag to validate the credentials during create connection. Used for a Salesforce connection. Default is true.</p>
+    /// <p>A flag to validate the credentials during create connection. Default is true.</p>
     pub fn validate_credentials(&self) -> bool {
         self.validate_credentials
+    }
+    /// <p>The compute environments that the specified connection properties are validated against.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.validate_for_compute_environments.is_none()`.
+    pub fn validate_for_compute_environments(&self) -> &[crate::types::ComputeEnvironment] {
+        self.validate_for_compute_environments.as_deref().unwrap_or_default()
     }
 }
 impl ConnectionInput {
@@ -212,10 +308,13 @@ pub struct ConnectionInputBuilder {
     pub(crate) connection_type: ::std::option::Option<crate::types::ConnectionType>,
     pub(crate) match_criteria: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) connection_properties: ::std::option::Option<::std::collections::HashMap<crate::types::ConnectionPropertyKey, ::std::string::String>>,
+    pub(crate) spark_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) athena_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) python_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) physical_connection_requirements: ::std::option::Option<crate::types::PhysicalConnectionRequirements>,
     pub(crate) authentication_configuration: ::std::option::Option<crate::types::AuthenticationConfigurationInput>,
     pub(crate) validate_credentials: ::std::option::Option<bool>,
+    pub(crate) validate_for_compute_environments: ::std::option::Option<::std::vec::Vec<crate::types::ComputeEnvironment>>,
 }
 impl ConnectionInputBuilder {
     /// <p>The name of the connection.</p>
@@ -287,12 +386,6 @@ impl ConnectionInputBuilder {
     /// <p>Required: All of (<code>USERNAME</code>, <code>PASSWORD</code>) or <code>SECRET_ID</code>.</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><code>SALESFORCE</code> - Designates a connection to Salesforce using OAuth authencation.</p>
-    /// <ul>
-    /// <li>
-    /// <p>Requires the <code>AuthenticationConfiguration</code> member to be configured.</p></li>
-    /// </ul></li>
-    /// <li>
     /// <p><code>VIEW_VALIDATION_REDSHIFT</code> - Designates a connection used for view validation by Amazon Redshift.</p></li>
     /// <li>
     /// <p><code>VIEW_VALIDATION_ATHENA</code> - Designates a connection used for view validation by Amazon Athena.</p></li>
@@ -311,6 +404,50 @@ impl ConnectionInputBuilder {
     /// <li>
     /// <p><code>CUSTOM</code> - Uses configuration settings contained in a custom connector to read from and write to data stores that are not natively supported by Glue.</p></li>
     /// </ul>
+    /// <p>Additionally, a <code>ConnectionType</code> for the following SaaS connectors is supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>FACEBOOKADS</code> - Designates a connection to Facebook Ads.</p></li>
+    /// <li>
+    /// <p><code>GOOGLEADS</code> - Designates a connection to Google Ads.</p></li>
+    /// <li>
+    /// <p><code>GOOGLESHEETS</code> - Designates a connection to Google Sheets.</p></li>
+    /// <li>
+    /// <p><code>GOOGLEANALYTICS4</code> - Designates a connection to Google Analytics 4.</p></li>
+    /// <li>
+    /// <p><code>HUBSPOT</code> - Designates a connection to HubSpot.</p></li>
+    /// <li>
+    /// <p><code>INSTAGRAMADS</code> - Designates a connection to Instagram Ads.</p></li>
+    /// <li>
+    /// <p><code>INTERCOM</code> - Designates a connection to Intercom.</p></li>
+    /// <li>
+    /// <p><code>JIRACLOUD</code> - Designates a connection to Jira Cloud.</p></li>
+    /// <li>
+    /// <p><code>MARKETO</code> - Designates a connection to Adobe Marketo Engage.</p></li>
+    /// <li>
+    /// <p><code>NETSUITEERP</code> - Designates a connection to Oracle NetSuite.</p></li>
+    /// <li>
+    /// <p><code>SALESFORCE</code> - Designates a connection to Salesforce using OAuth authentication.</p></li>
+    /// <li>
+    /// <p><code>SALESFORCEMARKETINGCLOUD</code> - Designates a connection to Salesforce Marketing Cloud.</p></li>
+    /// <li>
+    /// <p><code>SALESFORCEPARDOT</code> - Designates a connection to Salesforce Marketing Cloud Account Engagement (MCAE).</p></li>
+    /// <li>
+    /// <p><code>SAPODATA</code> - Designates a connection to SAP OData.</p></li>
+    /// <li>
+    /// <p><code>SERVICENOW</code> - Designates a connection to ServiceNow.</p></li>
+    /// <li>
+    /// <p><code>SLACK</code> - Designates a connection to Slack.</p></li>
+    /// <li>
+    /// <p><code>SNAPCHATADS</code> - Designates a connection to Snapchat Ads.</p></li>
+    /// <li>
+    /// <p><code>STRIPE</code> - Designates a connection to Stripe.</p></li>
+    /// <li>
+    /// <p><code>ZENDESK</code> - Designates a connection to Zendesk.</p></li>
+    /// <li>
+    /// <p><code>ZOHOCRM</code> - Designates a connection to Zoho CRM.</p></li>
+    /// </ul>
+    /// <p>For more information on the connection parameters needed for a particular connector, see the documentation for the connector in <a href="https://docs.aws.amazon.com/glue/latest/dg/console-connections.html">Adding an Glue connection</a>in the Glue User Guide.</p>
     /// <p><code>SFTP</code> is not supported.</p>
     /// <p>For more information about how optional ConnectionProperties are used to configure features in Glue, consult <a href="https://docs.aws.amazon.com/glue/latest/dg/connection-defining.html">Glue connection properties</a>.</p>
     /// <p>For more information about how optional ConnectionProperties are used to configure features in Glue Studio, consult <a href="https://docs.aws.amazon.com/glue/latest/ug/connectors-chapter.html">Using connectors and connections</a>.</p>
@@ -359,12 +496,6 @@ impl ConnectionInputBuilder {
     /// <p>Required: All of (<code>USERNAME</code>, <code>PASSWORD</code>) or <code>SECRET_ID</code>.</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><code>SALESFORCE</code> - Designates a connection to Salesforce using OAuth authencation.</p>
-    /// <ul>
-    /// <li>
-    /// <p>Requires the <code>AuthenticationConfiguration</code> member to be configured.</p></li>
-    /// </ul></li>
-    /// <li>
     /// <p><code>VIEW_VALIDATION_REDSHIFT</code> - Designates a connection used for view validation by Amazon Redshift.</p></li>
     /// <li>
     /// <p><code>VIEW_VALIDATION_ATHENA</code> - Designates a connection used for view validation by Amazon Athena.</p></li>
@@ -383,6 +514,50 @@ impl ConnectionInputBuilder {
     /// <li>
     /// <p><code>CUSTOM</code> - Uses configuration settings contained in a custom connector to read from and write to data stores that are not natively supported by Glue.</p></li>
     /// </ul>
+    /// <p>Additionally, a <code>ConnectionType</code> for the following SaaS connectors is supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>FACEBOOKADS</code> - Designates a connection to Facebook Ads.</p></li>
+    /// <li>
+    /// <p><code>GOOGLEADS</code> - Designates a connection to Google Ads.</p></li>
+    /// <li>
+    /// <p><code>GOOGLESHEETS</code> - Designates a connection to Google Sheets.</p></li>
+    /// <li>
+    /// <p><code>GOOGLEANALYTICS4</code> - Designates a connection to Google Analytics 4.</p></li>
+    /// <li>
+    /// <p><code>HUBSPOT</code> - Designates a connection to HubSpot.</p></li>
+    /// <li>
+    /// <p><code>INSTAGRAMADS</code> - Designates a connection to Instagram Ads.</p></li>
+    /// <li>
+    /// <p><code>INTERCOM</code> - Designates a connection to Intercom.</p></li>
+    /// <li>
+    /// <p><code>JIRACLOUD</code> - Designates a connection to Jira Cloud.</p></li>
+    /// <li>
+    /// <p><code>MARKETO</code> - Designates a connection to Adobe Marketo Engage.</p></li>
+    /// <li>
+    /// <p><code>NETSUITEERP</code> - Designates a connection to Oracle NetSuite.</p></li>
+    /// <li>
+    /// <p><code>SALESFORCE</code> - Designates a connection to Salesforce using OAuth authentication.</p></li>
+    /// <li>
+    /// <p><code>SALESFORCEMARKETINGCLOUD</code> - Designates a connection to Salesforce Marketing Cloud.</p></li>
+    /// <li>
+    /// <p><code>SALESFORCEPARDOT</code> - Designates a connection to Salesforce Marketing Cloud Account Engagement (MCAE).</p></li>
+    /// <li>
+    /// <p><code>SAPODATA</code> - Designates a connection to SAP OData.</p></li>
+    /// <li>
+    /// <p><code>SERVICENOW</code> - Designates a connection to ServiceNow.</p></li>
+    /// <li>
+    /// <p><code>SLACK</code> - Designates a connection to Slack.</p></li>
+    /// <li>
+    /// <p><code>SNAPCHATADS</code> - Designates a connection to Snapchat Ads.</p></li>
+    /// <li>
+    /// <p><code>STRIPE</code> - Designates a connection to Stripe.</p></li>
+    /// <li>
+    /// <p><code>ZENDESK</code> - Designates a connection to Zendesk.</p></li>
+    /// <li>
+    /// <p><code>ZOHOCRM</code> - Designates a connection to Zoho CRM.</p></li>
+    /// </ul>
+    /// <p>For more information on the connection parameters needed for a particular connector, see the documentation for the connector in <a href="https://docs.aws.amazon.com/glue/latest/dg/console-connections.html">Adding an Glue connection</a>in the Glue User Guide.</p>
     /// <p><code>SFTP</code> is not supported.</p>
     /// <p>For more information about how optional ConnectionProperties are used to configure features in Glue, consult <a href="https://docs.aws.amazon.com/glue/latest/dg/connection-defining.html">Glue connection properties</a>.</p>
     /// <p>For more information about how optional ConnectionProperties are used to configure features in Glue Studio, consult <a href="https://docs.aws.amazon.com/glue/latest/ug/connectors-chapter.html">Using connectors and connections</a>.</p>
@@ -430,12 +605,6 @@ impl ConnectionInputBuilder {
     /// <p>Required: All of (<code>USERNAME</code>, <code>PASSWORD</code>) or <code>SECRET_ID</code>.</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><code>SALESFORCE</code> - Designates a connection to Salesforce using OAuth authencation.</p>
-    /// <ul>
-    /// <li>
-    /// <p>Requires the <code>AuthenticationConfiguration</code> member to be configured.</p></li>
-    /// </ul></li>
-    /// <li>
     /// <p><code>VIEW_VALIDATION_REDSHIFT</code> - Designates a connection used for view validation by Amazon Redshift.</p></li>
     /// <li>
     /// <p><code>VIEW_VALIDATION_ATHENA</code> - Designates a connection used for view validation by Amazon Athena.</p></li>
@@ -454,6 +623,50 @@ impl ConnectionInputBuilder {
     /// <li>
     /// <p><code>CUSTOM</code> - Uses configuration settings contained in a custom connector to read from and write to data stores that are not natively supported by Glue.</p></li>
     /// </ul>
+    /// <p>Additionally, a <code>ConnectionType</code> for the following SaaS connectors is supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>FACEBOOKADS</code> - Designates a connection to Facebook Ads.</p></li>
+    /// <li>
+    /// <p><code>GOOGLEADS</code> - Designates a connection to Google Ads.</p></li>
+    /// <li>
+    /// <p><code>GOOGLESHEETS</code> - Designates a connection to Google Sheets.</p></li>
+    /// <li>
+    /// <p><code>GOOGLEANALYTICS4</code> - Designates a connection to Google Analytics 4.</p></li>
+    /// <li>
+    /// <p><code>HUBSPOT</code> - Designates a connection to HubSpot.</p></li>
+    /// <li>
+    /// <p><code>INSTAGRAMADS</code> - Designates a connection to Instagram Ads.</p></li>
+    /// <li>
+    /// <p><code>INTERCOM</code> - Designates a connection to Intercom.</p></li>
+    /// <li>
+    /// <p><code>JIRACLOUD</code> - Designates a connection to Jira Cloud.</p></li>
+    /// <li>
+    /// <p><code>MARKETO</code> - Designates a connection to Adobe Marketo Engage.</p></li>
+    /// <li>
+    /// <p><code>NETSUITEERP</code> - Designates a connection to Oracle NetSuite.</p></li>
+    /// <li>
+    /// <p><code>SALESFORCE</code> - Designates a connection to Salesforce using OAuth authentication.</p></li>
+    /// <li>
+    /// <p><code>SALESFORCEMARKETINGCLOUD</code> - Designates a connection to Salesforce Marketing Cloud.</p></li>
+    /// <li>
+    /// <p><code>SALESFORCEPARDOT</code> - Designates a connection to Salesforce Marketing Cloud Account Engagement (MCAE).</p></li>
+    /// <li>
+    /// <p><code>SAPODATA</code> - Designates a connection to SAP OData.</p></li>
+    /// <li>
+    /// <p><code>SERVICENOW</code> - Designates a connection to ServiceNow.</p></li>
+    /// <li>
+    /// <p><code>SLACK</code> - Designates a connection to Slack.</p></li>
+    /// <li>
+    /// <p><code>SNAPCHATADS</code> - Designates a connection to Snapchat Ads.</p></li>
+    /// <li>
+    /// <p><code>STRIPE</code> - Designates a connection to Stripe.</p></li>
+    /// <li>
+    /// <p><code>ZENDESK</code> - Designates a connection to Zendesk.</p></li>
+    /// <li>
+    /// <p><code>ZOHOCRM</code> - Designates a connection to Zoho CRM.</p></li>
+    /// </ul>
+    /// <p>For more information on the connection parameters needed for a particular connector, see the documentation for the connector in <a href="https://docs.aws.amazon.com/glue/latest/dg/console-connections.html">Adding an Glue connection</a>in the Glue User Guide.</p>
     /// <p><code>SFTP</code> is not supported.</p>
     /// <p>For more information about how optional ConnectionProperties are used to configure features in Glue, consult <a href="https://docs.aws.amazon.com/glue/latest/dg/connection-defining.html">Glue connection properties</a>.</p>
     /// <p>For more information about how optional ConnectionProperties are used to configure features in Glue Studio, consult <a href="https://docs.aws.amazon.com/glue/latest/ug/connectors-chapter.html">Using connectors and connections</a>.</p>
@@ -505,11 +718,38 @@ impl ConnectionInputBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<crate::types::ConnectionPropertyKey, ::std::string::String>> {
         &self.connection_properties
     }
+    /// Adds a key-value pair to `spark_properties`.
+    ///
+    /// To override the contents of this collection use [`set_spark_properties`](Self::set_spark_properties).
+    ///
+    /// <p>Connection properties specific to the Spark compute environment.</p>
+    pub fn spark_properties(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.spark_properties.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.spark_properties = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Connection properties specific to the Spark compute environment.</p>
+    pub fn set_spark_properties(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.spark_properties = input;
+        self
+    }
+    /// <p>Connection properties specific to the Spark compute environment.</p>
+    pub fn get_spark_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.spark_properties
+    }
     /// Adds a key-value pair to `athena_properties`.
     ///
     /// To override the contents of this collection use [`set_athena_properties`](Self::set_athena_properties).
     ///
-    /// <p>This field is not currently used.</p>
+    /// <p>Connection properties specific to the Athena compute environment.</p>
     pub fn athena_properties(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -520,7 +760,7 @@ impl ConnectionInputBuilder {
         self.athena_properties = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>This field is not currently used.</p>
+    /// <p>Connection properties specific to the Athena compute environment.</p>
     pub fn set_athena_properties(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -528,9 +768,36 @@ impl ConnectionInputBuilder {
         self.athena_properties = input;
         self
     }
-    /// <p>This field is not currently used.</p>
+    /// <p>Connection properties specific to the Athena compute environment.</p>
     pub fn get_athena_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.athena_properties
+    }
+    /// Adds a key-value pair to `python_properties`.
+    ///
+    /// To override the contents of this collection use [`set_python_properties`](Self::set_python_properties).
+    ///
+    /// <p>Connection properties specific to the Python compute environment.</p>
+    pub fn python_properties(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.python_properties.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.python_properties = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Connection properties specific to the Python compute environment.</p>
+    pub fn set_python_properties(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.python_properties = input;
+        self
+    }
+    /// <p>Connection properties specific to the Python compute environment.</p>
+    pub fn get_python_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.python_properties
     }
     /// <p>The physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to successfully make this connection.</p>
     pub fn physical_connection_requirements(mut self, input: crate::types::PhysicalConnectionRequirements) -> Self {
@@ -546,33 +813,53 @@ impl ConnectionInputBuilder {
     pub fn get_physical_connection_requirements(&self) -> &::std::option::Option<crate::types::PhysicalConnectionRequirements> {
         &self.physical_connection_requirements
     }
-    /// <p>The authentication properties of the connection. Used for a Salesforce connection.</p>
+    /// <p>The authentication properties of the connection.</p>
     pub fn authentication_configuration(mut self, input: crate::types::AuthenticationConfigurationInput) -> Self {
         self.authentication_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The authentication properties of the connection. Used for a Salesforce connection.</p>
+    /// <p>The authentication properties of the connection.</p>
     pub fn set_authentication_configuration(mut self, input: ::std::option::Option<crate::types::AuthenticationConfigurationInput>) -> Self {
         self.authentication_configuration = input;
         self
     }
-    /// <p>The authentication properties of the connection. Used for a Salesforce connection.</p>
+    /// <p>The authentication properties of the connection.</p>
     pub fn get_authentication_configuration(&self) -> &::std::option::Option<crate::types::AuthenticationConfigurationInput> {
         &self.authentication_configuration
     }
-    /// <p>A flag to validate the credentials during create connection. Used for a Salesforce connection. Default is true.</p>
+    /// <p>A flag to validate the credentials during create connection. Default is true.</p>
     pub fn validate_credentials(mut self, input: bool) -> Self {
         self.validate_credentials = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A flag to validate the credentials during create connection. Used for a Salesforce connection. Default is true.</p>
+    /// <p>A flag to validate the credentials during create connection. Default is true.</p>
     pub fn set_validate_credentials(mut self, input: ::std::option::Option<bool>) -> Self {
         self.validate_credentials = input;
         self
     }
-    /// <p>A flag to validate the credentials during create connection. Used for a Salesforce connection. Default is true.</p>
+    /// <p>A flag to validate the credentials during create connection. Default is true.</p>
     pub fn get_validate_credentials(&self) -> &::std::option::Option<bool> {
         &self.validate_credentials
+    }
+    /// Appends an item to `validate_for_compute_environments`.
+    ///
+    /// To override the contents of this collection use [`set_validate_for_compute_environments`](Self::set_validate_for_compute_environments).
+    ///
+    /// <p>The compute environments that the specified connection properties are validated against.</p>
+    pub fn validate_for_compute_environments(mut self, input: crate::types::ComputeEnvironment) -> Self {
+        let mut v = self.validate_for_compute_environments.unwrap_or_default();
+        v.push(input);
+        self.validate_for_compute_environments = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The compute environments that the specified connection properties are validated against.</p>
+    pub fn set_validate_for_compute_environments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComputeEnvironment>>) -> Self {
+        self.validate_for_compute_environments = input;
+        self
+    }
+    /// <p>The compute environments that the specified connection properties are validated against.</p>
+    pub fn get_validate_for_compute_environments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComputeEnvironment>> {
+        &self.validate_for_compute_environments
     }
     /// Consumes the builder and constructs a [`ConnectionInput`](crate::types::ConnectionInput).
     /// This method will fail if any of the following fields are not set:
@@ -601,10 +888,13 @@ impl ConnectionInputBuilder {
                     "connection_properties was not specified but it is required when building ConnectionInput",
                 )
             })?,
+            spark_properties: self.spark_properties,
             athena_properties: self.athena_properties,
+            python_properties: self.python_properties,
             physical_connection_requirements: self.physical_connection_requirements,
             authentication_configuration: self.authentication_configuration,
             validate_credentials: self.validate_credentials.unwrap_or_default(),
+            validate_for_compute_environments: self.validate_for_compute_environments,
         })
     }
 }

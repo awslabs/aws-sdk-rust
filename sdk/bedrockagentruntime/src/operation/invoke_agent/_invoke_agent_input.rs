@@ -25,6 +25,8 @@ pub struct InvokeAgentInput {
     pub memory_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the configurations for streaming.</p>
     pub streaming_configurations: ::std::option::Option<crate::types::StreamingConfigurations>,
+    /// <p>The ARN of the resource making the request.</p>
+    pub source_arn: ::std::option::Option<::std::string::String>,
 }
 impl InvokeAgentInput {
     /// <p>Contains parameters that specify various attributes of the session. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control session context</a>.</p><note>
@@ -67,6 +69,10 @@ impl InvokeAgentInput {
     pub fn streaming_configurations(&self) -> ::std::option::Option<&crate::types::StreamingConfigurations> {
         self.streaming_configurations.as_ref()
     }
+    /// <p>The ARN of the resource making the request.</p>
+    pub fn source_arn(&self) -> ::std::option::Option<&str> {
+        self.source_arn.as_deref()
+    }
 }
 impl ::std::fmt::Debug for InvokeAgentInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -80,6 +86,7 @@ impl ::std::fmt::Debug for InvokeAgentInput {
         formatter.field("input_text", &"*** Sensitive Data Redacted ***");
         formatter.field("memory_id", &self.memory_id);
         formatter.field("streaming_configurations", &self.streaming_configurations);
+        formatter.field("source_arn", &self.source_arn);
         formatter.finish()
     }
 }
@@ -103,6 +110,7 @@ pub struct InvokeAgentInputBuilder {
     pub(crate) input_text: ::std::option::Option<::std::string::String>,
     pub(crate) memory_id: ::std::option::Option<::std::string::String>,
     pub(crate) streaming_configurations: ::std::option::Option<crate::types::StreamingConfigurations>,
+    pub(crate) source_arn: ::std::option::Option<::std::string::String>,
 }
 impl InvokeAgentInputBuilder {
     /// <p>Contains parameters that specify various attributes of the session. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control session context</a>.</p><note>
@@ -246,6 +254,20 @@ impl InvokeAgentInputBuilder {
     pub fn get_streaming_configurations(&self) -> &::std::option::Option<crate::types::StreamingConfigurations> {
         &self.streaming_configurations
     }
+    /// <p>The ARN of the resource making the request.</p>
+    pub fn source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the resource making the request.</p>
+    pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_arn = input;
+        self
+    }
+    /// <p>The ARN of the resource making the request.</p>
+    pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_arn
+    }
     /// Consumes the builder and constructs a [`InvokeAgentInput`](crate::operation::invoke_agent::InvokeAgentInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::invoke_agent::InvokeAgentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::invoke_agent::InvokeAgentInput {
@@ -258,6 +280,7 @@ impl InvokeAgentInputBuilder {
             input_text: self.input_text,
             memory_id: self.memory_id,
             streaming_configurations: self.streaming_configurations,
+            source_arn: self.source_arn,
         })
     }
 }
@@ -273,6 +296,7 @@ impl ::std::fmt::Debug for InvokeAgentInputBuilder {
         formatter.field("input_text", &"*** Sensitive Data Redacted ***");
         formatter.field("memory_id", &self.memory_id);
         formatter.field("streaming_configurations", &self.streaming_configurations);
+        formatter.field("source_arn", &self.source_arn);
         formatter.finish()
     }
 }

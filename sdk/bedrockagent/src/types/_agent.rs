@@ -65,6 +65,8 @@ pub struct Agent {
     pub guardrail_configuration: ::std::option::Option<crate::types::GuardrailConfiguration>,
     /// <p>Contains memory configuration for the agent.</p>
     pub memory_configuration: ::std::option::Option<crate::types::MemoryConfiguration>,
+    /// <p>The agent's collaboration settings.</p>
+    pub agent_collaboration: ::std::option::Option<crate::types::AgentCollaboration>,
 }
 impl Agent {
     /// <p>The unique identifier of the agent.</p>
@@ -181,6 +183,10 @@ impl Agent {
     pub fn memory_configuration(&self) -> ::std::option::Option<&crate::types::MemoryConfiguration> {
         self.memory_configuration.as_ref()
     }
+    /// <p>The agent's collaboration settings.</p>
+    pub fn agent_collaboration(&self) -> ::std::option::Option<&crate::types::AgentCollaboration> {
+        self.agent_collaboration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for Agent {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -207,6 +213,7 @@ impl ::std::fmt::Debug for Agent {
         formatter.field("prompt_override_configuration", &"*** Sensitive Data Redacted ***");
         formatter.field("guardrail_configuration", &self.guardrail_configuration);
         formatter.field("memory_configuration", &self.memory_configuration);
+        formatter.field("agent_collaboration", &self.agent_collaboration);
         formatter.finish()
     }
 }
@@ -243,6 +250,7 @@ pub struct AgentBuilder {
     pub(crate) prompt_override_configuration: ::std::option::Option<crate::types::PromptOverrideConfiguration>,
     pub(crate) guardrail_configuration: ::std::option::Option<crate::types::GuardrailConfiguration>,
     pub(crate) memory_configuration: ::std::option::Option<crate::types::MemoryConfiguration>,
+    pub(crate) agent_collaboration: ::std::option::Option<crate::types::AgentCollaboration>,
 }
 impl AgentBuilder {
     /// <p>The unique identifier of the agent.</p>
@@ -625,6 +633,20 @@ impl AgentBuilder {
     pub fn get_memory_configuration(&self) -> &::std::option::Option<crate::types::MemoryConfiguration> {
         &self.memory_configuration
     }
+    /// <p>The agent's collaboration settings.</p>
+    pub fn agent_collaboration(mut self, input: crate::types::AgentCollaboration) -> Self {
+        self.agent_collaboration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The agent's collaboration settings.</p>
+    pub fn set_agent_collaboration(mut self, input: ::std::option::Option<crate::types::AgentCollaboration>) -> Self {
+        self.agent_collaboration = input;
+        self
+    }
+    /// <p>The agent's collaboration settings.</p>
+    pub fn get_agent_collaboration(&self) -> &::std::option::Option<crate::types::AgentCollaboration> {
+        &self.agent_collaboration
+    }
     /// Consumes the builder and constructs a [`Agent`](crate::types::Agent).
     /// This method will fail if any of the following fields are not set:
     /// - [`agent_id`](crate::types::builders::AgentBuilder::agent_id)
@@ -705,6 +727,7 @@ impl AgentBuilder {
             prompt_override_configuration: self.prompt_override_configuration,
             guardrail_configuration: self.guardrail_configuration,
             memory_configuration: self.memory_configuration,
+            agent_collaboration: self.agent_collaboration,
         })
     }
 }
@@ -733,6 +756,7 @@ impl ::std::fmt::Debug for AgentBuilder {
         formatter.field("prompt_override_configuration", &"*** Sensitive Data Redacted ***");
         formatter.field("guardrail_configuration", &self.guardrail_configuration);
         formatter.field("memory_configuration", &self.memory_configuration);
+        formatter.field("agent_collaboration", &self.agent_collaboration);
         formatter.finish()
     }
 }

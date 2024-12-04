@@ -94,7 +94,6 @@ impl CreateSubscriptionGrantInputBuilder {
         &self.environment_identifier
     }
     /// <p>The ID of the subscription target for which the subscription grant is created.</p>
-    /// This field is required.
     pub fn subscription_target_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_target_identifier = ::std::option::Option::Some(input.into());
         self

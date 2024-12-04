@@ -18,7 +18,9 @@ pub struct DeleteDataSourceOutput {
     /// <p>The ID of the project in which this data source exists and from which it's deleted.</p>
     pub project_id: ::std::string::String,
     /// <p>The ID of the environemnt associated with this data source.</p>
-    pub environment_id: ::std::string::String,
+    pub environment_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the connection that is deleted.</p>
+    pub connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The configuration of the data source that is deleted.</p>
     pub configuration: ::std::option::Option<crate::types::DataSourceConfigurationOutput>,
     /// <p>The enable setting of the data source that specifies whether the data source is enabled or disabled.</p>
@@ -81,9 +83,12 @@ impl DeleteDataSourceOutput {
         self.project_id.deref()
     }
     /// <p>The ID of the environemnt associated with this data source.</p>
-    pub fn environment_id(&self) -> &str {
-        use std::ops::Deref;
-        self.environment_id.deref()
+    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
+    /// <p>The ID of the connection that is deleted.</p>
+    pub fn connection_id(&self) -> ::std::option::Option<&str> {
+        self.connection_id.as_deref()
     }
     /// <p>The configuration of the data source that is deleted.</p>
     pub fn configuration(&self) -> ::std::option::Option<&crate::types::DataSourceConfigurationOutput> {
@@ -151,6 +156,7 @@ impl ::std::fmt::Debug for DeleteDataSourceOutput {
         formatter.field("domain_id", &self.domain_id);
         formatter.field("project_id", &self.project_id);
         formatter.field("environment_id", &self.environment_id);
+        formatter.field("connection_id", &self.connection_id);
         formatter.field("configuration", &self.configuration);
         formatter.field("enable_setting", &self.enable_setting);
         formatter.field("publish_on_import", &self.publish_on_import);
@@ -192,6 +198,7 @@ pub struct DeleteDataSourceOutputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) project_id: ::std::option::Option<::std::string::String>,
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) configuration: ::std::option::Option<crate::types::DataSourceConfigurationOutput>,
     pub(crate) enable_setting: ::std::option::Option<crate::types::EnableSetting>,
     pub(crate) publish_on_import: ::std::option::Option<bool>,
@@ -311,7 +318,6 @@ impl DeleteDataSourceOutputBuilder {
         &self.project_id
     }
     /// <p>The ID of the environemnt associated with this data source.</p>
-    /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
@@ -324,6 +330,20 @@ impl DeleteDataSourceOutputBuilder {
     /// <p>The ID of the environemnt associated with this data source.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.environment_id
+    }
+    /// <p>The ID of the connection that is deleted.</p>
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.connection_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the connection that is deleted.</p>
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.connection_id = input;
+        self
+    }
+    /// <p>The ID of the connection that is deleted.</p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_id
     }
     /// <p>The configuration of the data source that is deleted.</p>
     pub fn configuration(mut self, input: crate::types::DataSourceConfigurationOutput) -> Self {
@@ -528,7 +548,6 @@ impl DeleteDataSourceOutputBuilder {
     /// - [`name`](crate::operation::delete_data_source::builders::DeleteDataSourceOutputBuilder::name)
     /// - [`domain_id`](crate::operation::delete_data_source::builders::DeleteDataSourceOutputBuilder::domain_id)
     /// - [`project_id`](crate::operation::delete_data_source::builders::DeleteDataSourceOutputBuilder::project_id)
-    /// - [`environment_id`](crate::operation::delete_data_source::builders::DeleteDataSourceOutputBuilder::environment_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_data_source::DeleteDataSourceOutput, ::aws_smithy_types::error::operation::BuildError> {
@@ -560,12 +579,8 @@ impl DeleteDataSourceOutputBuilder {
                     "project_id was not specified but it is required when building DeleteDataSourceOutput",
                 )
             })?,
-            environment_id: self.environment_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "environment_id",
-                    "environment_id was not specified but it is required when building DeleteDataSourceOutput",
-                )
-            })?,
+            environment_id: self.environment_id,
+            connection_id: self.connection_id,
             configuration: self.configuration,
             enable_setting: self.enable_setting,
             publish_on_import: self.publish_on_import,
@@ -594,6 +609,7 @@ impl ::std::fmt::Debug for DeleteDataSourceOutputBuilder {
         formatter.field("domain_id", &self.domain_id);
         formatter.field("project_id", &self.project_id);
         formatter.field("environment_id", &self.environment_id);
+        formatter.field("connection_id", &self.connection_id);
         formatter.field("configuration", &self.configuration);
         formatter.field("enable_setting", &self.enable_setting);
         formatter.field("publish_on_import", &self.publish_on_import);

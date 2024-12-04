@@ -1571,6 +1571,12 @@ pub use crate::types::_incremental_refresh::IncrementalRefreshBuilder;
 
 pub use crate::types::_lookback_window::LookbackWindowBuilder;
 
+pub use crate::types::_qa_result::QaResultBuilder;
+
+pub use crate::types::_generated_answer_result::GeneratedAnswerResultBuilder;
+
+pub use crate::types::_dashboard_visual_result::DashboardVisualResultBuilder;
+
 pub use crate::types::_vpc_connection_summary::VpcConnectionSummaryBuilder;
 
 pub use crate::types::_network_interface::NetworkInterfaceBuilder;

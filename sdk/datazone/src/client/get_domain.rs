@@ -18,6 +18,8 @@ impl super::Client {
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_domain::GetDomainOutput::created_at): <p>The timestamp of when the Amazon DataZone domain was created.</p>
     ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::get_domain::GetDomainOutput::last_updated_at): <p>The timestamp of when the Amazon DataZone domain was last updated.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_domain::GetDomainOutput::tags): <p>The tags specified for the Amazon DataZone domain.</p>
+    ///   - [`domain_version(Option<DomainVersion>)`](crate::operation::get_domain::GetDomainOutput::domain_version): <p>The version of the domain.</p>
+    ///   - [`service_role(Option<String>)`](crate::operation::get_domain::GetDomainOutput::service_role): <p>The service role of the domain.</p>
     /// - On failure, responds with [`SdkError<GetDomainError>`](crate::operation::get_domain::GetDomainError)
     pub fn get_domain(&self) -> crate::operation::get_domain::builders::GetDomainFluentBuilder {
         crate::operation::get_domain::builders::GetDomainFluentBuilder::new(self.handle.clone())

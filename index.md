@@ -190,6 +190,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon Appflow | [aws-sdk-appflow](https://crates.io/crates/aws-sdk-appflow) ([docs](https://docs.rs/aws-sdk-appflow)) |
 | Amazon Athena | [aws-sdk-athena](https://crates.io/crates/aws-sdk-athena) ([docs](https://docs.rs/aws-sdk-athena)) |
 | Amazon Augmented AI Runtime | [aws-sdk-sagemakera2iruntime](https://crates.io/crates/aws-sdk-sagemakera2iruntime) ([docs](https://docs.rs/aws-sdk-sagemakera2iruntime)) |
+| Amazon Aurora DSQL | [aws-sdk-dsql](https://crates.io/crates/aws-sdk-dsql) ([docs](https://docs.rs/aws-sdk-dsql)) |
 | Amazon Bedrock | [aws-sdk-bedrock](https://crates.io/crates/aws-sdk-bedrock) ([docs](https://docs.rs/aws-sdk-bedrock)) |
 | Amazon Bedrock Runtime | [aws-sdk-bedrockruntime](https://crates.io/crates/aws-sdk-bedrockruntime) ([docs](https://docs.rs/aws-sdk-bedrockruntime)) |
 | Amazon Chime | [aws-sdk-chime](https://crates.io/crates/aws-sdk-chime) ([docs](https://docs.rs/aws-sdk-chime)) |
@@ -321,6 +322,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon Route 53 | [aws-sdk-route53](https://crates.io/crates/aws-sdk-route53) ([docs](https://docs.rs/aws-sdk-route53)) |
 | Amazon Route 53 Domains | [aws-sdk-route53domains](https://crates.io/crates/aws-sdk-route53domains) ([docs](https://docs.rs/aws-sdk-route53domains)) |
 | Amazon Route 53 Resolver | [aws-sdk-route53resolver](https://crates.io/crates/aws-sdk-route53resolver) ([docs](https://docs.rs/aws-sdk-route53resolver)) |
+| Amazon S3 Tables | [aws-sdk-s3tables](https://crates.io/crates/aws-sdk-s3tables) ([docs](https://docs.rs/aws-sdk-s3tables)) |
 | Amazon S3 on Outposts | [aws-sdk-s3outposts](https://crates.io/crates/aws-sdk-s3outposts) ([docs](https://docs.rs/aws-sdk-s3outposts)) |
 | Amazon SageMaker Feature Store Runtime | [aws-sdk-sagemakerfeaturestoreruntime](https://crates.io/crates/aws-sdk-sagemakerfeaturestoreruntime) ([docs](https://docs.rs/aws-sdk-sagemakerfeaturestoreruntime)) |
 | Amazon SageMaker Metrics Service | [aws-sdk-sagemakermetrics](https://crates.io/crates/aws-sdk-sagemakermetrics) ([docs](https://docs.rs/aws-sdk-sagemakermetrics)) |

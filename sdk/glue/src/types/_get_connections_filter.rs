@@ -8,6 +8,8 @@ pub struct GetConnectionsFilter {
     pub match_criteria: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The type of connections to return. Currently, SFTP is not supported.</p>
     pub connection_type: ::std::option::Option<crate::types::ConnectionType>,
+    /// <p>Denotes if the connection was created with schema version 1 or 2.</p>
+    pub connection_schema_version: ::std::option::Option<i32>,
 }
 impl GetConnectionsFilter {
     /// <p>A criteria string that must match the criteria recorded in the connection definition for that connection definition to be returned.</p>
@@ -19,6 +21,10 @@ impl GetConnectionsFilter {
     /// <p>The type of connections to return. Currently, SFTP is not supported.</p>
     pub fn connection_type(&self) -> ::std::option::Option<&crate::types::ConnectionType> {
         self.connection_type.as_ref()
+    }
+    /// <p>Denotes if the connection was created with schema version 1 or 2.</p>
+    pub fn connection_schema_version(&self) -> ::std::option::Option<i32> {
+        self.connection_schema_version
     }
 }
 impl GetConnectionsFilter {
@@ -34,6 +40,7 @@ impl GetConnectionsFilter {
 pub struct GetConnectionsFilterBuilder {
     pub(crate) match_criteria: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) connection_type: ::std::option::Option<crate::types::ConnectionType>,
+    pub(crate) connection_schema_version: ::std::option::Option<i32>,
 }
 impl GetConnectionsFilterBuilder {
     /// Appends an item to `match_criteria`.
@@ -70,11 +77,26 @@ impl GetConnectionsFilterBuilder {
     pub fn get_connection_type(&self) -> &::std::option::Option<crate::types::ConnectionType> {
         &self.connection_type
     }
+    /// <p>Denotes if the connection was created with schema version 1 or 2.</p>
+    pub fn connection_schema_version(mut self, input: i32) -> Self {
+        self.connection_schema_version = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Denotes if the connection was created with schema version 1 or 2.</p>
+    pub fn set_connection_schema_version(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.connection_schema_version = input;
+        self
+    }
+    /// <p>Denotes if the connection was created with schema version 1 or 2.</p>
+    pub fn get_connection_schema_version(&self) -> &::std::option::Option<i32> {
+        &self.connection_schema_version
+    }
     /// Consumes the builder and constructs a [`GetConnectionsFilter`](crate::types::GetConnectionsFilter).
     pub fn build(self) -> crate::types::GetConnectionsFilter {
         crate::types::GetConnectionsFilter {
             match_criteria: self.match_criteria,
             connection_type: self.connection_type,
+            connection_schema_version: self.connection_schema_version,
         }
     }
 }

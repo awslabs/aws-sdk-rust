@@ -209,6 +209,11 @@ pub(crate) fn de_create_project(
                             .transpose()?,
                     );
                 }
+                "environmentDeploymentDetails" => {
+                    builder = builder.set_environment_deployment_details(
+                        crate::protocol_serde::shape_environment_deployment_details::de_environment_deployment_details(tokens)?,
+                    );
+                }
                 "failureReasons" => {
                     builder = builder.set_failure_reasons(crate::protocol_serde::shape_failure_reasons::de_failure_reasons(tokens)?);
                 }
@@ -235,12 +240,24 @@ pub(crate) fn de_create_project(
                             .transpose()?,
                     );
                 }
+                "projectProfileId" => {
+                    builder = builder.set_project_profile_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "projectStatus" => {
                     builder = builder.set_project_status(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| crate::types::ProjectStatus::from(u.as_ref())))
                             .transpose()?,
                     );
+                }
+                "userParameters" => {
+                    builder = builder.set_user_parameters(
+                            crate::protocol_serde::shape_environment_configuration_user_parameters_list::de_environment_configuration_user_parameters_list(tokens)?
+                        );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

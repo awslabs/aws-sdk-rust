@@ -33,6 +33,8 @@ pub use crate::types::_global_secondary_index_auto_scaling_update::GlobalSeconda
 
 pub use crate::types::_table_description::TableDescription;
 
+pub use crate::types::_multi_region_consistency::MultiRegionConsistency;
+
 pub use crate::types::_table_warm_throughput_description::TableWarmThroughputDescription;
 
 pub use crate::types::_on_demand_throughput::OnDemandThroughput;
@@ -462,6 +464,8 @@ mod _local_secondary_index;
 mod _local_secondary_index_description;
 
 mod _local_secondary_index_info;
+
+mod _multi_region_consistency;
 
 mod _on_demand_throughput;
 

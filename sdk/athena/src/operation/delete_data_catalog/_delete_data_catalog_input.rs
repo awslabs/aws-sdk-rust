@@ -5,11 +5,17 @@
 pub struct DeleteDataCatalogInput {
     /// <p>The name of the data catalog to delete.</p>
     pub name: ::std::option::Option<::std::string::String>,
+    /// <p>Deletes the Athena Data Catalog. You can only use this with the <code>FEDERATED</code> catalogs. You usually perform this before registering the connector with Glue Data Catalog. After deletion, you will have to manage the Glue Connection and Lambda function.</p>
+    pub delete_catalog_only: ::std::option::Option<bool>,
 }
 impl DeleteDataCatalogInput {
     /// <p>The name of the data catalog to delete.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
+    }
+    /// <p>Deletes the Athena Data Catalog. You can only use this with the <code>FEDERATED</code> catalogs. You usually perform this before registering the connector with Glue Data Catalog. After deletion, you will have to manage the Glue Connection and Lambda function.</p>
+    pub fn delete_catalog_only(&self) -> ::std::option::Option<bool> {
+        self.delete_catalog_only
     }
 }
 impl DeleteDataCatalogInput {
@@ -24,6 +30,7 @@ impl DeleteDataCatalogInput {
 #[non_exhaustive]
 pub struct DeleteDataCatalogInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) delete_catalog_only: ::std::option::Option<bool>,
 }
 impl DeleteDataCatalogInputBuilder {
     /// <p>The name of the data catalog to delete.</p>
@@ -41,10 +48,27 @@ impl DeleteDataCatalogInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
+    /// <p>Deletes the Athena Data Catalog. You can only use this with the <code>FEDERATED</code> catalogs. You usually perform this before registering the connector with Glue Data Catalog. After deletion, you will have to manage the Glue Connection and Lambda function.</p>
+    pub fn delete_catalog_only(mut self, input: bool) -> Self {
+        self.delete_catalog_only = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Deletes the Athena Data Catalog. You can only use this with the <code>FEDERATED</code> catalogs. You usually perform this before registering the connector with Glue Data Catalog. After deletion, you will have to manage the Glue Connection and Lambda function.</p>
+    pub fn set_delete_catalog_only(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.delete_catalog_only = input;
+        self
+    }
+    /// <p>Deletes the Athena Data Catalog. You can only use this with the <code>FEDERATED</code> catalogs. You usually perform this before registering the connector with Glue Data Catalog. After deletion, you will have to manage the Glue Connection and Lambda function.</p>
+    pub fn get_delete_catalog_only(&self) -> &::std::option::Option<bool> {
+        &self.delete_catalog_only
+    }
     /// Consumes the builder and constructs a [`DeleteDataCatalogInput`](crate::operation::delete_data_catalog::DeleteDataCatalogInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_data_catalog::DeleteDataCatalogInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_data_catalog::DeleteDataCatalogInput { name: self.name })
+        ::std::result::Result::Ok(crate::operation::delete_data_catalog::DeleteDataCatalogInput {
+            name: self.name,
+            delete_catalog_only: self.delete_catalog_only,
+        })
     }
 }

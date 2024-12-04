@@ -21,6 +21,8 @@ pub use crate::types::_attachments_configuration::AttachmentsConfiguration;
 
 pub use crate::types::_attachments_control_mode::AttachmentsControlMode;
 
+pub use crate::types::_quick_sight_configuration::QuickSightConfiguration;
+
 pub use crate::types::_applied_attachments_configuration::AppliedAttachmentsConfiguration;
 
 pub use crate::types::_error_detail::ErrorDetail;
@@ -36,6 +38,8 @@ pub use crate::types::_identity_type::IdentityType;
 pub use crate::types::_tag::Tag;
 
 pub use crate::types::_application::Application;
+
+pub use crate::types::_customization_configuration::CustomizationConfiguration;
 
 pub use crate::types::_browser_extension_configuration::BrowserExtensionConfiguration;
 
@@ -86,6 +90,8 @@ pub use crate::types::_retriever_type::RetrieverType;
 pub use crate::types::_retriever::Retriever;
 
 pub use crate::types::_plugin_auth_configuration::PluginAuthConfiguration;
+
+pub use crate::types::_idc_auth_configuration::IdcAuthConfiguration;
 
 pub use crate::types::_no_auth_configuration::NoAuthConfiguration;
 
@@ -157,6 +163,16 @@ pub use crate::types::_data_source_status::DataSourceStatus;
 
 pub use crate::types::_data_source::DataSource;
 
+pub use crate::types::_action_configuration::ActionConfiguration;
+
+pub use crate::types::_action_filter_configuration::ActionFilterConfiguration;
+
+pub use crate::types::_attribute_filter::AttributeFilter;
+
+pub use crate::types::_document_attribute::DocumentAttribute;
+
+pub use crate::types::_data_accessor::DataAccessor;
+
 pub use crate::types::_user_alias::UserAlias;
 
 pub use crate::types::_creator_mode_configuration::CreatorModeConfiguration;
@@ -183,6 +199,16 @@ pub use crate::types::_blocked_phrases_configuration_update::BlockedPhrasesConfi
 
 pub use crate::types::_response_scope::ResponseScope;
 
+pub use crate::types::_relevant_content::RelevantContent;
+
+pub use crate::types::_score_attributes::ScoreAttributes;
+
+pub use crate::types::_score_confidence::ScoreConfidence;
+
+pub use crate::types::_content_source::ContentSource;
+
+pub use crate::types::_retriever_content_source::RetrieverContentSource;
+
 pub use crate::types::_group_members::GroupMembers;
 
 pub use crate::types::_member_user::MemberUser;
@@ -196,6 +222,12 @@ pub use crate::types::_message_usefulness_feedback::MessageUsefulnessFeedback;
 pub use crate::types::_message_usefulness_reason::MessageUsefulnessReason;
 
 pub use crate::types::_message_usefulness::MessageUsefulness;
+
+pub use crate::types::_plugin_type_metadata_summary::PluginTypeMetadataSummary;
+
+pub use crate::types::_plugin_type_category::PluginTypeCategory;
+
+pub use crate::types::_action_summary::ActionSummary;
 
 pub use crate::types::_message::Message;
 
@@ -259,10 +291,6 @@ pub use crate::types::_plugin_configuration::PluginConfiguration;
 
 pub use crate::types::_chat_mode::ChatMode;
 
-pub use crate::types::_attribute_filter::AttributeFilter;
-
-pub use crate::types::_document_attribute::DocumentAttribute;
-
 pub use crate::types::_auth_challenge_response::AuthChallengeResponse;
 
 pub use crate::types::_attachment_input::AttachmentInput;
@@ -321,11 +349,15 @@ mod _access_configuration;
 
 mod _access_control;
 
+mod _action_configuration;
+
 mod _action_execution;
 
 mod _action_execution_event;
 
 mod _action_execution_payload_field;
+
+mod _action_filter_configuration;
 
 mod _action_payload_field_type;
 
@@ -336,6 +368,8 @@ mod _action_review_event;
 mod _action_review_payload_field;
 
 mod _action_review_payload_field_allowed_value;
+
+mod _action_summary;
 
 mod _api_schema;
 
@@ -405,6 +439,8 @@ mod _content_blocker_rule;
 
 mod _content_retrieval_rule;
 
+mod _content_source;
+
 mod _content_type;
 
 mod _conversation;
@@ -418,6 +454,10 @@ mod _creator_mode_configuration;
 mod _creator_mode_control;
 
 mod _custom_plugin_configuration;
+
+mod _customization_configuration;
+
+mod _data_accessor;
 
 mod _data_source;
 
@@ -486,6 +526,8 @@ mod _group_status_detail;
 mod _group_summary;
 
 mod _hook_configuration;
+
+mod _idc_auth_configuration;
 
 mod _identity_provider_configuration;
 
@@ -559,6 +601,10 @@ mod _plugin_state;
 
 mod _plugin_type;
 
+mod _plugin_type_category;
+
+mod _plugin_type_metadata_summary;
+
 mod _principal;
 
 mod _principal_group;
@@ -569,13 +615,19 @@ mod _q_apps_configuration;
 
 mod _q_apps_control_mode;
 
+mod _quick_sight_configuration;
+
 mod _read_access_type;
+
+mod _relevant_content;
 
 mod _response_scope;
 
 mod _retriever;
 
 mod _retriever_configuration;
+
+mod _retriever_content_source;
 
 mod _retriever_status;
 
@@ -592,6 +644,10 @@ mod _s3;
 mod _saml_configuration;
 
 mod _saml_provider_configuration;
+
+mod _score_attributes;
+
+mod _score_confidence;
 
 mod _snippet_excerpt;
 

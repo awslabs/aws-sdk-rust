@@ -12,7 +12,7 @@ pub struct Connection {
     pub connection_type: ::std::option::Option<crate::types::ConnectionType>,
     /// <p>A list of criteria that can be used in selecting this connection.</p>
     pub match_criteria: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>These key-value pairs define parameters for the connection:</p>
+    /// <p>These key-value pairs define parameters for the connection when using the version 1 Connection schema:</p>
     /// <ul>
     /// <li>
     /// <p><code>HOST</code> - The host URI: either the fully qualified domain name (FQDN) or the IPv4 address of the database host.</p></li>
@@ -110,8 +110,12 @@ pub struct Connection {
     /// <p><code>DATABASE</code> - The Amazon Redshift database that you are connecting to.</p></li>
     /// </ul>
     pub connection_properties: ::std::option::Option<::std::collections::HashMap<crate::types::ConnectionPropertyKey, ::std::string::String>>,
-    /// <p>This field is not currently used.</p>
+    /// <p>Connection properties specific to the Spark compute environment.</p>
+    pub spark_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>Connection properties specific to the Athena compute environment.</p>
     pub athena_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>Connection properties specific to the Python compute environment.</p>
+    pub python_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to make this connection successfully.</p>
     pub physical_connection_requirements: ::std::option::Option<crate::types::PhysicalConnectionRequirements>,
     /// <p>The timestamp of the time that this connection definition was created.</p>
@@ -128,6 +132,10 @@ pub struct Connection {
     pub last_connection_validation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The authentication properties of the connection.</p>
     pub authentication_configuration: ::std::option::Option<crate::types::AuthenticationConfiguration>,
+    /// <p>The version of the connection schema for this connection. Version 2 supports properties for specific compute environments.</p>
+    pub connection_schema_version: ::std::option::Option<i32>,
+    /// <p>A list of compute environments compatible with the connection.</p>
+    pub compatible_compute_environments: ::std::option::Option<::std::vec::Vec<crate::types::ComputeEnvironment>>,
 }
 impl Connection {
     /// <p>The name of the connection definition.</p>
@@ -148,7 +156,7 @@ impl Connection {
     pub fn match_criteria(&self) -> &[::std::string::String] {
         self.match_criteria.as_deref().unwrap_or_default()
     }
-    /// <p>These key-value pairs define parameters for the connection:</p>
+    /// <p>These key-value pairs define parameters for the connection when using the version 1 Connection schema:</p>
     /// <ul>
     /// <li>
     /// <p><code>HOST</code> - The host URI: either the fully qualified domain name (FQDN) or the IPv4 address of the database host.</p></li>
@@ -250,9 +258,17 @@ impl Connection {
     ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::ConnectionPropertyKey, ::std::string::String>> {
         self.connection_properties.as_ref()
     }
-    /// <p>This field is not currently used.</p>
+    /// <p>Connection properties specific to the Spark compute environment.</p>
+    pub fn spark_properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.spark_properties.as_ref()
+    }
+    /// <p>Connection properties specific to the Athena compute environment.</p>
     pub fn athena_properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.athena_properties.as_ref()
+    }
+    /// <p>Connection properties specific to the Python compute environment.</p>
+    pub fn python_properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.python_properties.as_ref()
     }
     /// <p>The physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to make this connection successfully.</p>
     pub fn physical_connection_requirements(&self) -> ::std::option::Option<&crate::types::PhysicalConnectionRequirements> {
@@ -286,6 +302,16 @@ impl Connection {
     pub fn authentication_configuration(&self) -> ::std::option::Option<&crate::types::AuthenticationConfiguration> {
         self.authentication_configuration.as_ref()
     }
+    /// <p>The version of the connection schema for this connection. Version 2 supports properties for specific compute environments.</p>
+    pub fn connection_schema_version(&self) -> ::std::option::Option<i32> {
+        self.connection_schema_version
+    }
+    /// <p>A list of compute environments compatible with the connection.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compatible_compute_environments.is_none()`.
+    pub fn compatible_compute_environments(&self) -> &[crate::types::ComputeEnvironment] {
+        self.compatible_compute_environments.as_deref().unwrap_or_default()
+    }
 }
 impl Connection {
     /// Creates a new builder-style object to manufacture [`Connection`](crate::types::Connection).
@@ -303,7 +329,9 @@ pub struct ConnectionBuilder {
     pub(crate) connection_type: ::std::option::Option<crate::types::ConnectionType>,
     pub(crate) match_criteria: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) connection_properties: ::std::option::Option<::std::collections::HashMap<crate::types::ConnectionPropertyKey, ::std::string::String>>,
+    pub(crate) spark_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) athena_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) python_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) physical_connection_requirements: ::std::option::Option<crate::types::PhysicalConnectionRequirements>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -312,6 +340,8 @@ pub struct ConnectionBuilder {
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) last_connection_validation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) authentication_configuration: ::std::option::Option<crate::types::AuthenticationConfiguration>,
+    pub(crate) connection_schema_version: ::std::option::Option<i32>,
+    pub(crate) compatible_compute_environments: ::std::option::Option<::std::vec::Vec<crate::types::ComputeEnvironment>>,
 }
 impl ConnectionBuilder {
     /// <p>The name of the connection definition.</p>
@@ -380,7 +410,7 @@ impl ConnectionBuilder {
     ///
     /// To override the contents of this collection use [`set_connection_properties`](Self::set_connection_properties).
     ///
-    /// <p>These key-value pairs define parameters for the connection:</p>
+    /// <p>These key-value pairs define parameters for the connection when using the version 1 Connection schema:</p>
     /// <ul>
     /// <li>
     /// <p><code>HOST</code> - The host URI: either the fully qualified domain name (FQDN) or the IPv4 address of the database host.</p></li>
@@ -483,7 +513,7 @@ impl ConnectionBuilder {
         self.connection_properties = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>These key-value pairs define parameters for the connection:</p>
+    /// <p>These key-value pairs define parameters for the connection when using the version 1 Connection schema:</p>
     /// <ul>
     /// <li>
     /// <p><code>HOST</code> - The host URI: either the fully qualified domain name (FQDN) or the IPv4 address of the database host.</p></li>
@@ -587,7 +617,7 @@ impl ConnectionBuilder {
         self.connection_properties = input;
         self
     }
-    /// <p>These key-value pairs define parameters for the connection:</p>
+    /// <p>These key-value pairs define parameters for the connection when using the version 1 Connection schema:</p>
     /// <ul>
     /// <li>
     /// <p><code>HOST</code> - The host URI: either the fully qualified domain name (FQDN) or the IPv4 address of the database host.</p></li>
@@ -689,11 +719,38 @@ impl ConnectionBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<crate::types::ConnectionPropertyKey, ::std::string::String>> {
         &self.connection_properties
     }
+    /// Adds a key-value pair to `spark_properties`.
+    ///
+    /// To override the contents of this collection use [`set_spark_properties`](Self::set_spark_properties).
+    ///
+    /// <p>Connection properties specific to the Spark compute environment.</p>
+    pub fn spark_properties(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.spark_properties.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.spark_properties = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Connection properties specific to the Spark compute environment.</p>
+    pub fn set_spark_properties(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.spark_properties = input;
+        self
+    }
+    /// <p>Connection properties specific to the Spark compute environment.</p>
+    pub fn get_spark_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.spark_properties
+    }
     /// Adds a key-value pair to `athena_properties`.
     ///
     /// To override the contents of this collection use [`set_athena_properties`](Self::set_athena_properties).
     ///
-    /// <p>This field is not currently used.</p>
+    /// <p>Connection properties specific to the Athena compute environment.</p>
     pub fn athena_properties(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -704,7 +761,7 @@ impl ConnectionBuilder {
         self.athena_properties = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>This field is not currently used.</p>
+    /// <p>Connection properties specific to the Athena compute environment.</p>
     pub fn set_athena_properties(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -712,9 +769,36 @@ impl ConnectionBuilder {
         self.athena_properties = input;
         self
     }
-    /// <p>This field is not currently used.</p>
+    /// <p>Connection properties specific to the Athena compute environment.</p>
     pub fn get_athena_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.athena_properties
+    }
+    /// Adds a key-value pair to `python_properties`.
+    ///
+    /// To override the contents of this collection use [`set_python_properties`](Self::set_python_properties).
+    ///
+    /// <p>Connection properties specific to the Python compute environment.</p>
+    pub fn python_properties(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.python_properties.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.python_properties = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Connection properties specific to the Python compute environment.</p>
+    pub fn set_python_properties(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.python_properties = input;
+        self
+    }
+    /// <p>Connection properties specific to the Python compute environment.</p>
+    pub fn get_python_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.python_properties
     }
     /// <p>The physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to make this connection successfully.</p>
     pub fn physical_connection_requirements(mut self, input: crate::types::PhysicalConnectionRequirements) -> Self {
@@ -828,6 +912,40 @@ impl ConnectionBuilder {
     pub fn get_authentication_configuration(&self) -> &::std::option::Option<crate::types::AuthenticationConfiguration> {
         &self.authentication_configuration
     }
+    /// <p>The version of the connection schema for this connection. Version 2 supports properties for specific compute environments.</p>
+    pub fn connection_schema_version(mut self, input: i32) -> Self {
+        self.connection_schema_version = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The version of the connection schema for this connection. Version 2 supports properties for specific compute environments.</p>
+    pub fn set_connection_schema_version(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.connection_schema_version = input;
+        self
+    }
+    /// <p>The version of the connection schema for this connection. Version 2 supports properties for specific compute environments.</p>
+    pub fn get_connection_schema_version(&self) -> &::std::option::Option<i32> {
+        &self.connection_schema_version
+    }
+    /// Appends an item to `compatible_compute_environments`.
+    ///
+    /// To override the contents of this collection use [`set_compatible_compute_environments`](Self::set_compatible_compute_environments).
+    ///
+    /// <p>A list of compute environments compatible with the connection.</p>
+    pub fn compatible_compute_environments(mut self, input: crate::types::ComputeEnvironment) -> Self {
+        let mut v = self.compatible_compute_environments.unwrap_or_default();
+        v.push(input);
+        self.compatible_compute_environments = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of compute environments compatible with the connection.</p>
+    pub fn set_compatible_compute_environments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComputeEnvironment>>) -> Self {
+        self.compatible_compute_environments = input;
+        self
+    }
+    /// <p>A list of compute environments compatible with the connection.</p>
+    pub fn get_compatible_compute_environments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComputeEnvironment>> {
+        &self.compatible_compute_environments
+    }
     /// Consumes the builder and constructs a [`Connection`](crate::types::Connection).
     pub fn build(self) -> crate::types::Connection {
         crate::types::Connection {
@@ -836,7 +954,9 @@ impl ConnectionBuilder {
             connection_type: self.connection_type,
             match_criteria: self.match_criteria,
             connection_properties: self.connection_properties,
+            spark_properties: self.spark_properties,
             athena_properties: self.athena_properties,
+            python_properties: self.python_properties,
             physical_connection_requirements: self.physical_connection_requirements,
             creation_time: self.creation_time,
             last_updated_time: self.last_updated_time,
@@ -845,6 +965,8 @@ impl ConnectionBuilder {
             status_reason: self.status_reason,
             last_connection_validation_time: self.last_connection_validation_time,
             authentication_configuration: self.authentication_configuration,
+            connection_schema_version: self.connection_schema_version,
+            compatible_compute_environments: self.compatible_compute_environments,
         }
     }
 }

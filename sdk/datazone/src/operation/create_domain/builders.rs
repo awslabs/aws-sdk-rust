@@ -197,6 +197,34 @@ impl CreateDomainFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
+    /// <p>The version of the domain that is created.</p>
+    pub fn domain_version(mut self, input: crate::types::DomainVersion) -> Self {
+        self.inner = self.inner.domain_version(input);
+        self
+    }
+    /// <p>The version of the domain that is created.</p>
+    pub fn set_domain_version(mut self, input: ::std::option::Option<crate::types::DomainVersion>) -> Self {
+        self.inner = self.inner.set_domain_version(input);
+        self
+    }
+    /// <p>The version of the domain that is created.</p>
+    pub fn get_domain_version(&self) -> &::std::option::Option<crate::types::DomainVersion> {
+        self.inner.get_domain_version()
+    }
+    /// <p>The service role of the domain that is created.</p>
+    pub fn service_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.service_role(input.into());
+        self
+    }
+    /// <p>The service role of the domain that is created.</p>
+    pub fn set_service_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_service_role(input);
+        self
+    }
+    /// <p>The service role of the domain that is created.</p>
+    pub fn get_service_role(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_role()
+    }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());

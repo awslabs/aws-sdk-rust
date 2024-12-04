@@ -15,35 +15,41 @@ pub fn ser_update_web_experience_input_input(
         crate::protocol_serde::shape_browser_extension_configuration::ser_browser_extension_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.identity_provider_configuration {
+    if let Some(var_5) = &input.customization_configuration {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("identityProviderConfiguration").start_object();
-        crate::protocol_serde::shape_identity_provider_configuration::ser_identity_provider_configuration(&mut object_6, var_5)?;
+        let mut object_6 = object.key("customizationConfiguration").start_object();
+        crate::protocol_serde::shape_customization_configuration::ser_customization_configuration(&mut object_6, var_5)?;
         object_6.finish();
     }
-    if let Some(var_7) = &input.origins {
-        let mut array_8 = object.key("origins").start_array();
-        for item_9 in var_7 {
+    if let Some(var_7) = &input.identity_provider_configuration {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("identityProviderConfiguration").start_object();
+        crate::protocol_serde::shape_identity_provider_configuration::ser_identity_provider_configuration(&mut object_8, var_7)?;
+        object_8.finish();
+    }
+    if let Some(var_9) = &input.origins {
+        let mut array_10 = object.key("origins").start_array();
+        for item_11 in var_9 {
             {
-                array_8.value().string(item_9.as_str());
+                array_10.value().string(item_11.as_str());
             }
         }
-        array_8.finish();
+        array_10.finish();
     }
-    if let Some(var_10) = &input.role_arn {
-        object.key("roleArn").string(var_10.as_str());
+    if let Some(var_12) = &input.role_arn {
+        object.key("roleArn").string(var_12.as_str());
     }
-    if let Some(var_11) = &input.sample_prompts_control_mode {
-        object.key("samplePromptsControlMode").string(var_11.as_str());
+    if let Some(var_13) = &input.sample_prompts_control_mode {
+        object.key("samplePromptsControlMode").string(var_13.as_str());
     }
-    if let Some(var_12) = &input.subtitle {
-        object.key("subtitle").string(var_12.as_str());
+    if let Some(var_14) = &input.subtitle {
+        object.key("subtitle").string(var_14.as_str());
     }
-    if let Some(var_13) = &input.title {
-        object.key("title").string(var_13.as_str());
+    if let Some(var_15) = &input.title {
+        object.key("title").string(var_15.as_str());
     }
-    if let Some(var_14) = &input.welcome_message {
-        object.key("welcomeMessage").string(var_14.as_str());
+    if let Some(var_16) = &input.welcome_message {
+        object.key("welcomeMessage").string(var_16.as_str());
     }
     Ok(())
 }

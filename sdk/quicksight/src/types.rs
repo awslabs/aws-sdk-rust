@@ -1507,6 +1507,8 @@ pub use crate::types::_day_of_week::DayOfWeek;
 
 pub use crate::types::_refresh_interval::RefreshInterval;
 
+pub use crate::types::_q_search_status::QSearchStatus;
+
 pub use crate::types::_personalization_mode::PersonalizationMode;
 
 pub use crate::types::_successful_key_registration_entry::SuccessfulKeyRegistrationEntry;
@@ -1992,6 +1994,20 @@ pub use crate::types::_incremental_refresh::IncrementalRefresh;
 pub use crate::types::_lookback_window::LookbackWindow;
 
 pub use crate::types::_lookback_window_size_unit::LookbackWindowSizeUnit;
+
+pub use crate::types::_qa_result::QaResult;
+
+pub use crate::types::_generated_answer_result::GeneratedAnswerResult;
+
+pub use crate::types::_generated_answer_status::GeneratedAnswerStatus;
+
+pub use crate::types::_dashboard_visual_result::DashboardVisualResult;
+
+pub use crate::types::_qa_result_type::QaResultType;
+
+pub use crate::types::_include_generated_answer::IncludeGeneratedAnswer;
+
+pub use crate::types::_include_quick_sight_q_index::IncludeQuickSightQIndex;
 
 pub use crate::types::_vpc_connection_summary::VpcConnectionSummary;
 
@@ -2819,6 +2835,8 @@ mod _dashboard_visual_id;
 
 mod _dashboard_visual_publish_options;
 
+mod _dashboard_visual_result;
+
 mod _dashboards_qa_status;
 
 mod _data_aggregation;
@@ -3185,6 +3203,10 @@ mod _gauge_chart_primary_value_conditional_formatting;
 
 mod _gauge_chart_visual;
 
+mod _generated_answer_result;
+
+mod _generated_answer_status;
+
 mod _geo_spatial_column_group;
 
 mod _geo_spatial_country_code;
@@ -3368,6 +3390,10 @@ mod _image_source;
 mod _image_static_file;
 
 mod _include_folder_members;
+
+mod _include_generated_answer;
+
+mod _include_quick_sight_q_index;
 
 mod _incremental_refresh;
 
@@ -3792,6 +3818,12 @@ mod _property_role;
 mod _property_usage;
 
 mod _purchase_mode;
+
+mod _q_search_status;
+
+mod _qa_result;
+
+mod _qa_result_type;
 
 mod _query_execution_mode;
 

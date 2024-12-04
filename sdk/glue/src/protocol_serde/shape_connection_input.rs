@@ -31,9 +31,9 @@ pub fn ser_connection_input(
         }
         object_5.finish();
     }
-    if let Some(var_8) = &input.athena_properties {
+    if let Some(var_8) = &input.spark_properties {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("AthenaProperties").start_object();
+        let mut object_9 = object.key("SparkProperties").start_object();
         for (key_10, value_11) in var_8 {
             {
                 object_9.key(key_10.as_str()).string(value_11.as_str());
@@ -41,20 +41,49 @@ pub fn ser_connection_input(
         }
         object_9.finish();
     }
-    if let Some(var_12) = &input.physical_connection_requirements {
+    if let Some(var_12) = &input.athena_properties {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("PhysicalConnectionRequirements").start_object();
-        crate::protocol_serde::shape_physical_connection_requirements::ser_physical_connection_requirements(&mut object_13, var_12)?;
+        let mut object_13 = object.key("AthenaProperties").start_object();
+        for (key_14, value_15) in var_12 {
+            {
+                object_13.key(key_14.as_str()).string(value_15.as_str());
+            }
+        }
         object_13.finish();
     }
-    if let Some(var_14) = &input.authentication_configuration {
+    if let Some(var_16) = &input.python_properties {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("AuthenticationConfiguration").start_object();
-        crate::protocol_serde::shape_authentication_configuration_input::ser_authentication_configuration_input(&mut object_15, var_14)?;
-        object_15.finish();
+        let mut object_17 = object.key("PythonProperties").start_object();
+        for (key_18, value_19) in var_16 {
+            {
+                object_17.key(key_18.as_str()).string(value_19.as_str());
+            }
+        }
+        object_17.finish();
+    }
+    if let Some(var_20) = &input.physical_connection_requirements {
+        #[allow(unused_mut)]
+        let mut object_21 = object.key("PhysicalConnectionRequirements").start_object();
+        crate::protocol_serde::shape_physical_connection_requirements::ser_physical_connection_requirements(&mut object_21, var_20)?;
+        object_21.finish();
+    }
+    if let Some(var_22) = &input.authentication_configuration {
+        #[allow(unused_mut)]
+        let mut object_23 = object.key("AuthenticationConfiguration").start_object();
+        crate::protocol_serde::shape_authentication_configuration_input::ser_authentication_configuration_input(&mut object_23, var_22)?;
+        object_23.finish();
     }
     if input.validate_credentials {
         object.key("ValidateCredentials").boolean(input.validate_credentials);
+    }
+    if let Some(var_24) = &input.validate_for_compute_environments {
+        let mut array_25 = object.key("ValidateForComputeEnvironments").start_array();
+        for item_26 in var_24 {
+            {
+                array_25.value().string(item_26.as_str());
+            }
+        }
+        array_25.finish();
     }
     Ok(())
 }

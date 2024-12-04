@@ -20,6 +20,8 @@ pub struct PutCompositeAlarmInput {
     /// </ul>
     /// <p><b>Systems Manager actions:</b></p>
     /// <p><code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code></p>
+    /// <p><b>Start a Amazon Q Developer operational investigation</b></p>
+    /// <p><code>arn:aws:aiops:<i>region</i>:<i>account-id</i>:investigation-group:<i>ingestigation-group-id</i> </code></p>
     pub alarm_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The description for the composite alarm.</p>
     pub alarm_description: ::std::option::Option<::std::string::String>,
@@ -116,6 +118,8 @@ impl PutCompositeAlarmInput {
     /// </ul>
     /// <p><b>Systems Manager actions:</b></p>
     /// <p><code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code></p>
+    /// <p><b>Start a Amazon Q Developer operational investigation</b></p>
+    /// <p><code>arn:aws:aiops:<i>region</i>:<i>account-id</i>:investigation-group:<i>ingestigation-group-id</i> </code></p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alarm_actions.is_none()`.
     pub fn alarm_actions(&self) -> &[::std::string::String] {
@@ -277,6 +281,8 @@ impl PutCompositeAlarmInputBuilder {
     /// </ul>
     /// <p><b>Systems Manager actions:</b></p>
     /// <p><code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code></p>
+    /// <p><b>Start a Amazon Q Developer operational investigation</b></p>
+    /// <p><code>arn:aws:aiops:<i>region</i>:<i>account-id</i>:investigation-group:<i>ingestigation-group-id</i> </code></p>
     pub fn alarm_actions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.alarm_actions.unwrap_or_default();
         v.push(input.into());
@@ -298,6 +304,8 @@ impl PutCompositeAlarmInputBuilder {
     /// </ul>
     /// <p><b>Systems Manager actions:</b></p>
     /// <p><code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code></p>
+    /// <p><b>Start a Amazon Q Developer operational investigation</b></p>
+    /// <p><code>arn:aws:aiops:<i>region</i>:<i>account-id</i>:investigation-group:<i>ingestigation-group-id</i> </code></p>
     pub fn set_alarm_actions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.alarm_actions = input;
         self
@@ -317,6 +325,8 @@ impl PutCompositeAlarmInputBuilder {
     /// </ul>
     /// <p><b>Systems Manager actions:</b></p>
     /// <p><code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code></p>
+    /// <p><b>Start a Amazon Q Developer operational investigation</b></p>
+    /// <p><code>arn:aws:aiops:<i>region</i>:<i>account-id</i>:investigation-group:<i>ingestigation-group-id</i> </code></p>
     pub fn get_alarm_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.alarm_actions
     }

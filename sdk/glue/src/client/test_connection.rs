@@ -4,6 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`connection_name(impl Into<String>)`](crate::operation::test_connection::builders::TestConnectionFluentBuilder::connection_name) / [`set_connection_name(Option<String>)`](crate::operation::test_connection::builders::TestConnectionFluentBuilder::set_connection_name):<br>required: **false**<br><p>Optional. The name of the connection to test. If only name is provided, the operation will get the connection and use that for testing.</p><br>
+    ///   - [`catalog_id(impl Into<String>)`](crate::operation::test_connection::builders::TestConnectionFluentBuilder::catalog_id) / [`set_catalog_id(Option<String>)`](crate::operation::test_connection::builders::TestConnectionFluentBuilder::set_catalog_id):<br>required: **false**<br><p>The catalog ID where the connection resides.</p><br>
     ///   - [`test_connection_input(TestConnectionInput)`](crate::operation::test_connection::builders::TestConnectionFluentBuilder::test_connection_input) / [`set_test_connection_input(Option<TestConnectionInput>)`](crate::operation::test_connection::builders::TestConnectionFluentBuilder::set_test_connection_input):<br>required: **false**<br><p>A structure that is used to specify testing a connection to a service.</p><br>
     /// - On success, responds with [`TestConnectionOutput`](crate::operation::test_connection::TestConnectionOutput)
     /// - On failure, responds with [`SdkError<TestConnectionError>`](crate::operation::test_connection::TestConnectionError)

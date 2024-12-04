@@ -223,6 +223,10 @@ pub(crate) mod shape_delete_usage_limit;
 
 pub(crate) mod shape_delete_usage_limit_input;
 
+pub(crate) mod shape_deregister_namespace;
+
+pub(crate) mod shape_deregister_namespace_input;
+
 pub(crate) mod shape_describe_account_attributes;
 
 pub(crate) mod shape_describe_account_attributes_input;
@@ -527,6 +531,10 @@ pub(crate) mod shape_reboot_cluster;
 
 pub(crate) mod shape_reboot_cluster_input;
 
+pub(crate) mod shape_register_namespace;
+
+pub(crate) mod shape_register_namespace_input;
+
 pub(crate) mod shape_reject_data_share;
 
 pub(crate) mod shape_reject_data_share_input;
@@ -763,6 +771,8 @@ pub(crate) mod shape_ipv6_cidr_block_not_found_fault;
 
 pub(crate) mod shape_limit_exceeded_fault;
 
+pub(crate) mod shape_namespace_identifier_union;
+
 pub(crate) mod shape_node_configuration_options_filter;
 
 pub(crate) mod shape_number_of_nodes_per_cluster_limit_exceeded_fault;
@@ -963,6 +973,8 @@ pub(crate) mod shape_partner_integration_info_list;
 
 pub(crate) mod shape_pause_cluster_message;
 
+pub(crate) mod shape_provisioned_identifier;
+
 pub(crate) mod shape_recommendation_list;
 
 pub(crate) mod shape_redshift_idc_application;
@@ -994,6 +1006,8 @@ pub(crate) mod shape_scheduled_action_list;
 pub(crate) mod shape_scheduled_action_time_list;
 
 pub(crate) mod shape_scheduled_snapshot_time_list;
+
+pub(crate) mod shape_serverless_identifier;
 
 pub(crate) mod shape_snapshot;
 

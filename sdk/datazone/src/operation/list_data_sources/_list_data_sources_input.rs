@@ -9,6 +9,8 @@ pub struct ListDataSourcesInput {
     pub project_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the environment in which to list the data sources.</p>
     pub environment_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the connection.</p>
+    pub connection_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The type of the data source.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The status of the data source.</p>
@@ -32,6 +34,10 @@ impl ListDataSourcesInput {
     /// <p>The identifier of the environment in which to list the data sources.</p>
     pub fn environment_identifier(&self) -> ::std::option::Option<&str> {
         self.environment_identifier.as_deref()
+    }
+    /// <p>The ID of the connection.</p>
+    pub fn connection_identifier(&self) -> ::std::option::Option<&str> {
+        self.connection_identifier.as_deref()
     }
     /// <p>The type of the data source.</p>
     pub fn r#type(&self) -> ::std::option::Option<&str> {
@@ -60,6 +66,7 @@ impl ::std::fmt::Debug for ListDataSourcesInput {
         formatter.field("domain_identifier", &self.domain_identifier);
         formatter.field("project_identifier", &self.project_identifier);
         formatter.field("environment_identifier", &self.environment_identifier);
+        formatter.field("connection_identifier", &self.connection_identifier);
         formatter.field("r#type", &self.r#type);
         formatter.field("status", &self.status);
         formatter.field("name", &"*** Sensitive Data Redacted ***");
@@ -82,6 +89,7 @@ pub struct ListDataSourcesInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) project_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) environment_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) connection_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::DataSourceStatus>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -132,6 +140,20 @@ impl ListDataSourcesInputBuilder {
     /// <p>The identifier of the environment in which to list the data sources.</p>
     pub fn get_environment_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.environment_identifier
+    }
+    /// <p>The ID of the connection.</p>
+    pub fn connection_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.connection_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the connection.</p>
+    pub fn set_connection_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.connection_identifier = input;
+        self
+    }
+    /// <p>The ID of the connection.</p>
+    pub fn get_connection_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_identifier
     }
     /// <p>The type of the data source.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -211,6 +233,7 @@ impl ListDataSourcesInputBuilder {
             domain_identifier: self.domain_identifier,
             project_identifier: self.project_identifier,
             environment_identifier: self.environment_identifier,
+            connection_identifier: self.connection_identifier,
             r#type: self.r#type,
             status: self.status,
             name: self.name,
@@ -225,6 +248,7 @@ impl ::std::fmt::Debug for ListDataSourcesInputBuilder {
         formatter.field("domain_identifier", &self.domain_identifier);
         formatter.field("project_identifier", &self.project_identifier);
         formatter.field("environment_identifier", &self.environment_identifier);
+        formatter.field("connection_identifier", &self.connection_identifier);
         formatter.field("r#type", &self.r#type);
         formatter.field("status", &self.status);
         formatter.field("name", &"*** Sensitive Data Redacted ***");

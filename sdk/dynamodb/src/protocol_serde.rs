@@ -271,6 +271,8 @@ pub(crate) mod shape_replica_already_exists_exception;
 
 pub(crate) mod shape_replica_not_found_exception;
 
+pub(crate) mod shape_replicated_write_conflict_exception;
+
 pub(crate) mod shape_request_limit_exceeded;
 
 pub(crate) mod shape_resource_in_use_exception;

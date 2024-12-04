@@ -24,9 +24,8 @@ pub struct ConverseInput {
     pub system: ::std::option::Option<::std::vec::Vec<crate::types::SystemContentBlock>>,
     /// <p>Inference parameters to pass to the model. <code>Converse</code> and <code>ConverseStream</code> support a base set of inference parameters. If you need to pass additional parameters that the model supports, use the <code>additionalModelRequestFields</code> request field.</p>
     pub inference_config: ::std::option::Option<crate::types::InferenceConfiguration>,
-    /// <p>Configuration information for the tools that the model can use when generating a response.</p><note>
-    /// <p>This field is only supported by Anthropic Claude 3, Cohere Command R, Cohere Command R+, and Mistral Large models.</p>
-    /// </note>
+    /// <p>Configuration information for the tools that the model can use when generating a response.</p>
+    /// <p>For information about models that support tool use, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference.html#conversation-inference-supported-models-features">Supported models and model features</a>.</p>
     pub tool_config: ::std::option::Option<crate::types::ToolConfiguration>,
     /// <p>Configuration information for a guardrail that you want to use in the request. If you include <code>guardContent</code> blocks in the <code>content</code> field in the <code>messages</code> field, the guardrail operates only on those messages. If you include no <code>guardContent</code> blocks, the guardrail operates on all messages in the request body and in any included prompt resource.</p>
     pub guardrail_config: ::std::option::Option<crate::types::GuardrailConfiguration>,
@@ -39,6 +38,8 @@ pub struct ConverseInput {
     /// <p>For information about the JSON Pointer syntax, see the <a href="https://datatracker.ietf.org/doc/html/rfc6901">Internet Engineering Task Force (IETF)</a> documentation.</p>
     /// <p><code>Converse</code> and <code>ConverseStream</code> reject an empty JSON Pointer or incorrectly structured JSON Pointer with a <code>400</code> error code. if the JSON Pointer is valid, but the requested field is not in the model response, it is ignored by <code>Converse</code>.</p>
     pub additional_model_response_field_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Key-value pairs that you can use to filter invocation logs.</p>
+    pub request_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Model performance settings for the request.</p>
     pub performance_config: ::std::option::Option<crate::types::PerformanceConfiguration>,
 }
@@ -76,9 +77,8 @@ impl ConverseInput {
     pub fn inference_config(&self) -> ::std::option::Option<&crate::types::InferenceConfiguration> {
         self.inference_config.as_ref()
     }
-    /// <p>Configuration information for the tools that the model can use when generating a response.</p><note>
-    /// <p>This field is only supported by Anthropic Claude 3, Cohere Command R, Cohere Command R+, and Mistral Large models.</p>
-    /// </note>
+    /// <p>Configuration information for the tools that the model can use when generating a response.</p>
+    /// <p>For information about models that support tool use, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference.html#conversation-inference-supported-models-features">Supported models and model features</a>.</p>
     pub fn tool_config(&self) -> ::std::option::Option<&crate::types::ToolConfiguration> {
         self.tool_config.as_ref()
     }
@@ -103,6 +103,10 @@ impl ConverseInput {
     pub fn additional_model_response_field_paths(&self) -> &[::std::string::String] {
         self.additional_model_response_field_paths.as_deref().unwrap_or_default()
     }
+    /// <p>Key-value pairs that you can use to filter invocation logs.</p>
+    pub fn request_metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.request_metadata.as_ref()
+    }
     /// <p>Model performance settings for the request.</p>
     pub fn performance_config(&self) -> ::std::option::Option<&crate::types::PerformanceConfiguration> {
         self.performance_config.as_ref()
@@ -120,6 +124,7 @@ impl ::std::fmt::Debug for ConverseInput {
         formatter.field("additional_model_request_fields", &self.additional_model_request_fields);
         formatter.field("prompt_variables", &"*** Sensitive Data Redacted ***");
         formatter.field("additional_model_response_field_paths", &self.additional_model_response_field_paths);
+        formatter.field("request_metadata", &"*** Sensitive Data Redacted ***");
         formatter.field("performance_config", &self.performance_config);
         formatter.finish()
     }
@@ -144,6 +149,7 @@ pub struct ConverseInputBuilder {
     pub(crate) additional_model_request_fields: ::std::option::Option<::aws_smithy_types::Document>,
     pub(crate) prompt_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PromptVariableValues>>,
     pub(crate) additional_model_response_field_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) request_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) performance_config: ::std::option::Option<crate::types::PerformanceConfiguration>,
 }
 impl ConverseInputBuilder {
@@ -255,23 +261,20 @@ impl ConverseInputBuilder {
     pub fn get_inference_config(&self) -> &::std::option::Option<crate::types::InferenceConfiguration> {
         &self.inference_config
     }
-    /// <p>Configuration information for the tools that the model can use when generating a response.</p><note>
-    /// <p>This field is only supported by Anthropic Claude 3, Cohere Command R, Cohere Command R+, and Mistral Large models.</p>
-    /// </note>
+    /// <p>Configuration information for the tools that the model can use when generating a response.</p>
+    /// <p>For information about models that support tool use, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference.html#conversation-inference-supported-models-features">Supported models and model features</a>.</p>
     pub fn tool_config(mut self, input: crate::types::ToolConfiguration) -> Self {
         self.tool_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Configuration information for the tools that the model can use when generating a response.</p><note>
-    /// <p>This field is only supported by Anthropic Claude 3, Cohere Command R, Cohere Command R+, and Mistral Large models.</p>
-    /// </note>
+    /// <p>Configuration information for the tools that the model can use when generating a response.</p>
+    /// <p>For information about models that support tool use, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference.html#conversation-inference-supported-models-features">Supported models and model features</a>.</p>
     pub fn set_tool_config(mut self, input: ::std::option::Option<crate::types::ToolConfiguration>) -> Self {
         self.tool_config = input;
         self
     }
-    /// <p>Configuration information for the tools that the model can use when generating a response.</p><note>
-    /// <p>This field is only supported by Anthropic Claude 3, Cohere Command R, Cohere Command R+, and Mistral Large models.</p>
-    /// </note>
+    /// <p>Configuration information for the tools that the model can use when generating a response.</p>
+    /// <p>For information about models that support tool use, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference.html#conversation-inference-supported-models-features">Supported models and model features</a>.</p>
     pub fn get_tool_config(&self) -> &::std::option::Option<crate::types::ToolConfiguration> {
         &self.tool_config
     }
@@ -357,6 +360,33 @@ impl ConverseInputBuilder {
     pub fn get_additional_model_response_field_paths(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.additional_model_response_field_paths
     }
+    /// Adds a key-value pair to `request_metadata`.
+    ///
+    /// To override the contents of this collection use [`set_request_metadata`](Self::set_request_metadata).
+    ///
+    /// <p>Key-value pairs that you can use to filter invocation logs.</p>
+    pub fn request_metadata(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.request_metadata.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.request_metadata = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Key-value pairs that you can use to filter invocation logs.</p>
+    pub fn set_request_metadata(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.request_metadata = input;
+        self
+    }
+    /// <p>Key-value pairs that you can use to filter invocation logs.</p>
+    pub fn get_request_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.request_metadata
+    }
     /// <p>Model performance settings for the request.</p>
     pub fn performance_config(mut self, input: crate::types::PerformanceConfiguration) -> Self {
         self.performance_config = ::std::option::Option::Some(input);
@@ -383,6 +413,7 @@ impl ConverseInputBuilder {
             additional_model_request_fields: self.additional_model_request_fields,
             prompt_variables: self.prompt_variables,
             additional_model_response_field_paths: self.additional_model_response_field_paths,
+            request_metadata: self.request_metadata,
             performance_config: self.performance_config,
         })
     }
@@ -399,6 +430,7 @@ impl ::std::fmt::Debug for ConverseInputBuilder {
         formatter.field("additional_model_request_fields", &self.additional_model_request_fields);
         formatter.field("prompt_variables", &"*** Sensitive Data Redacted ***");
         formatter.field("additional_model_response_field_paths", &self.additional_model_response_field_paths);
+        formatter.field("request_metadata", &"*** Sensitive Data Redacted ***");
         formatter.field("performance_config", &self.performance_config);
         formatter.finish()
     }

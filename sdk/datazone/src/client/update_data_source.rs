@@ -22,7 +22,8 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::update_data_source::UpdateDataSourceOutput::description): <p>The description to be updated as part of the <code>UpdateDataSource</code> action.</p>
     ///   - [`domain_id(String)`](crate::operation::update_data_source::UpdateDataSourceOutput::domain_id): <p>The identifier of the Amazon DataZone domain in which a data source is to be updated.</p>
     ///   - [`project_id(String)`](crate::operation::update_data_source::UpdateDataSourceOutput::project_id): <p>The identifier of the project where data source is to be updated.</p>
-    ///   - [`environment_id(String)`](crate::operation::update_data_source::UpdateDataSourceOutput::environment_id): <p>The identifier of the environment in which a data source is to be updated.</p>
+    ///   - [`environment_id(Option<String>)`](crate::operation::update_data_source::UpdateDataSourceOutput::environment_id): <p>The identifier of the environment in which a data source is to be updated.</p>
+    ///   - [`connection_id(Option<String>)`](crate::operation::update_data_source::UpdateDataSourceOutput::connection_id): <p>The connection ID.</p>
     ///   - [`configuration(Option<DataSourceConfigurationOutput>)`](crate::operation::update_data_source::UpdateDataSourceOutput::configuration): <p>The configuration to be updated as part of the <code>UpdateDataSource</code> action.</p>
     ///   - [`recommendation(Option<RecommendationConfiguration>)`](crate::operation::update_data_source::UpdateDataSourceOutput::recommendation): <p>The recommendation to be updated as part of the <code>UpdateDataSource</code> action.</p>
     ///   - [`enable_setting(Option<EnableSetting>)`](crate::operation::update_data_source::UpdateDataSourceOutput::enable_setting): <p>The enable setting to be updated as part of the <code>UpdateDataSource</code> action.</p>

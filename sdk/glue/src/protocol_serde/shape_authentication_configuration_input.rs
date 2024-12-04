@@ -15,5 +15,24 @@ pub fn ser_authentication_configuration_input(
     if let Some(var_4) = &input.secret_arn {
         object.key("SecretArn").string(var_4.as_str());
     }
+    if let Some(var_5) = &input.kms_key_arn {
+        object.key("KmsKeyArn").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.basic_authentication_credentials {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("BasicAuthenticationCredentials").start_object();
+        crate::protocol_serde::shape_basic_authentication_credentials::ser_basic_authentication_credentials(&mut object_7, var_6)?;
+        object_7.finish();
+    }
+    if let Some(var_8) = &input.custom_authentication_credentials {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("CustomAuthenticationCredentials").start_object();
+        for (key_10, value_11) in var_8 {
+            {
+                object_9.key(key_10.as_str()).string(value_11.as_str());
+            }
+        }
+        object_9.finish();
+    }
     Ok(())
 }

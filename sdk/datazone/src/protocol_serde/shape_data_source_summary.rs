@@ -28,6 +28,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "connectionId" => {
+                            builder = builder.set_connection_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "dataSourceId" => {
                             builder = builder.set_data_source_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -102,6 +109,13 @@ where
                                 tokens.next(),
                                 ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                             )?);
+                        }
+                        "description" => {
+                            builder = builder.set_description(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

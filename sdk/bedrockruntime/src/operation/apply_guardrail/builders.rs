@@ -23,6 +23,7 @@ impl crate::operation::apply_guardrail::builders::ApplyGuardrailInputBuilder {
 /// Fluent builder constructing a request to `ApplyGuardrail`.
 ///
 /// <p>The action to apply a guardrail.</p>
+/// <p>For troubleshooting some of the common errors you might encounter when using the <code>ApplyGuardrail</code> API, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html">Troubleshooting Amazon Bedrock API Error Codes</a> in the Amazon Bedrock User Guide</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ApplyGuardrailFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

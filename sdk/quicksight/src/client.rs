@@ -237,6 +237,8 @@ mod delete_data_set_refresh_properties;
 
 mod delete_data_source;
 
+mod delete_default_q_business_application;
+
 mod delete_folder;
 
 mod delete_folder_membership;
@@ -323,6 +325,8 @@ mod describe_data_source;
 
 mod describe_data_source_permissions;
 
+mod describe_default_q_business_application;
+
 mod describe_folder;
 
 mod describe_folder_permissions;
@@ -344,6 +348,8 @@ mod describe_key_registration;
 mod describe_namespace;
 
 mod describe_q_personalization_configuration;
+
+mod describe_quick_sight_q_search_configuration;
 
 mod describe_refresh_schedule;
 
@@ -378,6 +384,8 @@ mod describe_vpc_connection;
 mod generate_embed_url_for_anonymous_user;
 
 mod generate_embed_url_for_registered_user;
+
+mod generate_embed_url_for_registered_user_with_identity;
 
 mod get_dashboard_embed_url;
 
@@ -451,6 +459,8 @@ mod list_users;
 
 mod list_vpc_connections;
 
+mod predict_qa_results;
+
 mod put_data_set_refresh_properties;
 
 mod register_user;
@@ -491,6 +501,8 @@ mod update_analysis;
 
 mod update_analysis_permissions;
 
+mod update_application_with_token_exchange_grant;
+
 mod update_brand;
 
 mod update_brand_assignment;
@@ -517,6 +529,8 @@ mod update_data_source;
 
 mod update_data_source_permissions;
 
+mod update_default_q_business_application;
+
 mod update_folder;
 
 mod update_folder_permissions;
@@ -534,6 +548,8 @@ mod update_key_registration;
 mod update_public_sharing_settings;
 
 mod update_q_personalization_configuration;
+
+mod update_quick_sight_q_search_configuration;
 
 mod update_refresh_schedule;
 

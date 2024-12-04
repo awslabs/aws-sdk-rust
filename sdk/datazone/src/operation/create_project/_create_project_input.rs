@@ -13,6 +13,10 @@ pub struct CreateProjectInput {
     pub glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the domain unit. This parameter is not required and if it is not specified, then the project is created at the root domain unit level.</p>
     pub domain_unit_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the project profile.</p>
+    pub project_profile_id: ::std::option::Option<::std::string::String>,
+    /// <p>The user parameters of the project.</p>
+    pub user_parameters: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentConfigurationUserParameter>>,
 }
 impl CreateProjectInput {
     /// <p>The ID of the Amazon DataZone domain in which this project is created.</p>
@@ -37,6 +41,16 @@ impl CreateProjectInput {
     pub fn domain_unit_id(&self) -> ::std::option::Option<&str> {
         self.domain_unit_id.as_deref()
     }
+    /// <p>The ID of the project profile.</p>
+    pub fn project_profile_id(&self) -> ::std::option::Option<&str> {
+        self.project_profile_id.as_deref()
+    }
+    /// <p>The user parameters of the project.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_parameters.is_none()`.
+    pub fn user_parameters(&self) -> &[crate::types::EnvironmentConfigurationUserParameter] {
+        self.user_parameters.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for CreateProjectInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -46,6 +60,8 @@ impl ::std::fmt::Debug for CreateProjectInput {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("glossary_terms", &self.glossary_terms);
         formatter.field("domain_unit_id", &self.domain_unit_id);
+        formatter.field("project_profile_id", &self.project_profile_id);
+        formatter.field("user_parameters", &self.user_parameters);
         formatter.finish()
     }
 }
@@ -65,6 +81,8 @@ pub struct CreateProjectInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) domain_unit_id: ::std::option::Option<::std::string::String>,
+    pub(crate) project_profile_id: ::std::option::Option<::std::string::String>,
+    pub(crate) user_parameters: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentConfigurationUserParameter>>,
 }
 impl CreateProjectInputBuilder {
     /// <p>The ID of the Amazon DataZone domain in which this project is created.</p>
@@ -145,6 +163,40 @@ impl CreateProjectInputBuilder {
     pub fn get_domain_unit_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_unit_id
     }
+    /// <p>The ID of the project profile.</p>
+    pub fn project_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.project_profile_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the project profile.</p>
+    pub fn set_project_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.project_profile_id = input;
+        self
+    }
+    /// <p>The ID of the project profile.</p>
+    pub fn get_project_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_profile_id
+    }
+    /// Appends an item to `user_parameters`.
+    ///
+    /// To override the contents of this collection use [`set_user_parameters`](Self::set_user_parameters).
+    ///
+    /// <p>The user parameters of the project.</p>
+    pub fn user_parameters(mut self, input: crate::types::EnvironmentConfigurationUserParameter) -> Self {
+        let mut v = self.user_parameters.unwrap_or_default();
+        v.push(input);
+        self.user_parameters = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The user parameters of the project.</p>
+    pub fn set_user_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentConfigurationUserParameter>>) -> Self {
+        self.user_parameters = input;
+        self
+    }
+    /// <p>The user parameters of the project.</p>
+    pub fn get_user_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentConfigurationUserParameter>> {
+        &self.user_parameters
+    }
     /// Consumes the builder and constructs a [`CreateProjectInput`](crate::operation::create_project::CreateProjectInput).
     pub fn build(
         self,
@@ -155,6 +207,8 @@ impl CreateProjectInputBuilder {
             description: self.description,
             glossary_terms: self.glossary_terms,
             domain_unit_id: self.domain_unit_id,
+            project_profile_id: self.project_profile_id,
+            user_parameters: self.user_parameters,
         })
     }
 }
@@ -166,6 +220,8 @@ impl ::std::fmt::Debug for CreateProjectInputBuilder {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("glossary_terms", &self.glossary_terms);
         formatter.field("domain_unit_id", &self.domain_unit_id);
+        formatter.field("project_profile_id", &self.project_profile_id);
+        formatter.field("user_parameters", &self.user_parameters);
         formatter.finish()
     }
 }

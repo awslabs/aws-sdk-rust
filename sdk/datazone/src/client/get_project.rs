@@ -17,6 +17,9 @@ impl super::Client {
     ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::get_project::GetProjectOutput::last_updated_at): <p>The timestamp of when the project was last updated.</p>
     ///   - [`glossary_terms(Option<Vec::<String>>)`](crate::operation::get_project::GetProjectOutput::glossary_terms): <p>The business glossary terms that can be used in the project.</p>
     ///   - [`domain_unit_id(Option<String>)`](crate::operation::get_project::GetProjectOutput::domain_unit_id): <p>The ID of the domain unit.</p>
+    ///   - [`project_profile_id(Option<String>)`](crate::operation::get_project::GetProjectOutput::project_profile_id): <p>The ID of the project profile of a project.</p>
+    ///   - [`user_parameters(Option<Vec::<EnvironmentConfigurationUserParameter>>)`](crate::operation::get_project::GetProjectOutput::user_parameters): <p>The user parameters of a project.</p>
+    ///   - [`environment_deployment_details(Option<EnvironmentDeploymentDetails>)`](crate::operation::get_project::GetProjectOutput::environment_deployment_details): <p>The environment deployment status of a project.</p>
     /// - On failure, responds with [`SdkError<GetProjectError>`](crate::operation::get_project::GetProjectError)
     pub fn get_project(&self) -> crate::operation::get_project::builders::GetProjectFluentBuilder {
         crate::operation::get_project::builders::GetProjectFluentBuilder::new(self.handle.clone())

@@ -12,11 +12,14 @@ pub fn ser_update_domain_input_input(
     if let Some(var_3) = &input.name {
         object.key("name").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.single_sign_on {
+    if let Some(var_4) = &input.service_role {
+        object.key("serviceRole").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.single_sign_on {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("singleSignOn").start_object();
-        crate::protocol_serde::shape_single_sign_on::ser_single_sign_on(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_6 = object.key("singleSignOn").start_object();
+        crate::protocol_serde::shape_single_sign_on::ser_single_sign_on(&mut object_6, var_5)?;
+        object_6.finish();
     }
     Ok(())
 }

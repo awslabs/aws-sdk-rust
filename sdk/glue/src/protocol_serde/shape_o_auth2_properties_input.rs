@@ -31,5 +31,11 @@ pub fn ser_o_auth2_properties_input(
         crate::protocol_serde::shape_authorization_code_properties::ser_authorization_code_properties(&mut object_10, var_9)?;
         object_10.finish();
     }
+    if let Some(var_11) = &input.o_auth2_credentials {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("OAuth2Credentials").start_object();
+        crate::protocol_serde::shape_o_auth2_credentials::ser_o_auth2_credentials(&mut object_12, var_11)?;
+        object_12.finish();
+    }
     Ok(())
 }

@@ -35,7 +35,7 @@ impl crate::operation::create_guardrail::builders::CreateGuardrailInputBuilder {
 /// <p><b>Sensitive information filters</b> - Block or mask sensitive information such as personally identifiable information (PII) or custom regex in user inputs and model responses.</p></li>
 /// </ul>
 /// <p>In addition to the above policies, you can also configure the messages to be returned to the user if a user input or model response is in violation of the policies defined in the guardrail.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html">Guardrails for Amazon Bedrock</a> in the <i>Amazon Bedrock User Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html">Amazon Bedrock Guardrails</a> in the <i>Amazon Bedrock User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateGuardrailFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

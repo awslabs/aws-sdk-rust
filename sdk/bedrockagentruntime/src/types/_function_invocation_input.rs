@@ -7,7 +7,7 @@
 /// <p>In the <code>returnControl</code> field of the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html#API_agent-runtime_InvokeAgent_ResponseSyntax">InvokeAgent response</a></p></li>
 /// </ul>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct FunctionInvocationInput {
     /// <p>The action group that the function belongs to.</p>
     pub action_group: ::std::string::String,
@@ -17,6 +17,10 @@ pub struct FunctionInvocationInput {
     pub function: ::std::option::Option<::std::string::String>,
     /// <p>Contains information about the function to invoke,</p>
     pub action_invocation_type: ::std::option::Option<crate::types::ActionInvocationType>,
+    /// <p>The agent's ID.</p>
+    pub agent_id: ::std::option::Option<::std::string::String>,
+    /// <p>The collaborator's name.</p>
+    pub collaborator_name: ::std::option::Option<::std::string::String>,
 }
 impl FunctionInvocationInput {
     /// <p>The action group that the function belongs to.</p>
@@ -38,6 +42,26 @@ impl FunctionInvocationInput {
     pub fn action_invocation_type(&self) -> ::std::option::Option<&crate::types::ActionInvocationType> {
         self.action_invocation_type.as_ref()
     }
+    /// <p>The agent's ID.</p>
+    pub fn agent_id(&self) -> ::std::option::Option<&str> {
+        self.agent_id.as_deref()
+    }
+    /// <p>The collaborator's name.</p>
+    pub fn collaborator_name(&self) -> ::std::option::Option<&str> {
+        self.collaborator_name.as_deref()
+    }
+}
+impl ::std::fmt::Debug for FunctionInvocationInput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("FunctionInvocationInput");
+        formatter.field("action_group", &self.action_group);
+        formatter.field("parameters", &self.parameters);
+        formatter.field("function", &self.function);
+        formatter.field("action_invocation_type", &self.action_invocation_type);
+        formatter.field("agent_id", &self.agent_id);
+        formatter.field("collaborator_name", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
 }
 impl FunctionInvocationInput {
     /// Creates a new builder-style object to manufacture [`FunctionInvocationInput`](crate::types::FunctionInvocationInput).
@@ -47,13 +71,15 @@ impl FunctionInvocationInput {
 }
 
 /// A builder for [`FunctionInvocationInput`](crate::types::FunctionInvocationInput).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct FunctionInvocationInputBuilder {
     pub(crate) action_group: ::std::option::Option<::std::string::String>,
     pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::FunctionParameter>>,
     pub(crate) function: ::std::option::Option<::std::string::String>,
     pub(crate) action_invocation_type: ::std::option::Option<crate::types::ActionInvocationType>,
+    pub(crate) agent_id: ::std::option::Option<::std::string::String>,
+    pub(crate) collaborator_name: ::std::option::Option<::std::string::String>,
 }
 impl FunctionInvocationInputBuilder {
     /// <p>The action group that the function belongs to.</p>
@@ -119,6 +145,34 @@ impl FunctionInvocationInputBuilder {
     pub fn get_action_invocation_type(&self) -> &::std::option::Option<crate::types::ActionInvocationType> {
         &self.action_invocation_type
     }
+    /// <p>The agent's ID.</p>
+    pub fn agent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.agent_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The agent's ID.</p>
+    pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.agent_id = input;
+        self
+    }
+    /// <p>The agent's ID.</p>
+    pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_id
+    }
+    /// <p>The collaborator's name.</p>
+    pub fn collaborator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.collaborator_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The collaborator's name.</p>
+    pub fn set_collaborator_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.collaborator_name = input;
+        self
+    }
+    /// <p>The collaborator's name.</p>
+    pub fn get_collaborator_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collaborator_name
+    }
     /// Consumes the builder and constructs a [`FunctionInvocationInput`](crate::types::FunctionInvocationInput).
     /// This method will fail if any of the following fields are not set:
     /// - [`action_group`](crate::types::builders::FunctionInvocationInputBuilder::action_group)
@@ -133,6 +187,20 @@ impl FunctionInvocationInputBuilder {
             parameters: self.parameters,
             function: self.function,
             action_invocation_type: self.action_invocation_type,
+            agent_id: self.agent_id,
+            collaborator_name: self.collaborator_name,
         })
+    }
+}
+impl ::std::fmt::Debug for FunctionInvocationInputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("FunctionInvocationInputBuilder");
+        formatter.field("action_group", &self.action_group);
+        formatter.field("parameters", &self.parameters);
+        formatter.field("function", &self.function);
+        formatter.field("action_invocation_type", &self.action_invocation_type);
+        formatter.field("agent_id", &self.agent_id);
+        formatter.field("collaborator_name", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

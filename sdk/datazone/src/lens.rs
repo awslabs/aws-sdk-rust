@@ -19,6 +19,16 @@ pub(crate) fn reflens_list_asset_revisions_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_connections_output_output_next_token(
+    input: &crate::operation::list_connections::ListConnectionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_data_product_revisions_output_output_next_token(
     input: &crate::operation::list_data_product_revisions::ListDataProductRevisionsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -139,6 +149,26 @@ pub(crate) fn reflens_list_environments_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_job_runs_output_output_next_token(
+    input: &crate::operation::list_job_runs::ListJobRunsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_lineage_events_output_output_next_token(
+    input: &crate::operation::list_lineage_events::ListLineageEventsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_lineage_node_history_output_output_next_token(
     input: &crate::operation::list_lineage_node_history::ListLineageNodeHistoryOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -181,6 +211,16 @@ pub(crate) fn reflens_list_policy_grants_output_output_next_token(
 
 pub(crate) fn reflens_list_project_memberships_output_output_next_token(
     input: &crate::operation::list_project_memberships::ListProjectMembershipsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_project_profiles_output_output_next_token(
+    input: &crate::operation::list_project_profiles::ListProjectProfilesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -326,6 +366,13 @@ pub(crate) fn lens_list_asset_revisions_output_output_items(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_connections_output_output_items(
+    input: crate::operation::list_connections::ListConnectionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ConnectionSummary>> {
+    let input = input.items;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_data_product_revisions_output_output_items(
     input: crate::operation::list_data_product_revisions::ListDataProductRevisionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DataProductRevision>> {
@@ -416,6 +463,26 @@ pub(crate) fn lens_list_environments_output_output_items(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_job_runs_output_output_items(
+    input: crate::operation::list_job_runs::ListJobRunsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::JobRunSummary>> {
+    let input = match input.items {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_lineage_events_output_output_items(
+    input: crate::operation::list_lineage_events::ListLineageEventsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::LineageEventSummary>> {
+    let input = match input.items {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_lineage_node_history_output_output_nodes(
     input: crate::operation::list_lineage_node_history::ListLineageNodeHistoryOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::LineageNodeSummary>> {
@@ -457,6 +524,16 @@ pub(crate) fn lens_list_project_memberships_output_output_members(
     input: crate::operation::list_project_memberships::ListProjectMembershipsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ProjectMember>> {
     let input = input.members;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_project_profiles_output_output_items(
+    input: crate::operation::list_project_profiles::ListProjectProfilesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ProjectProfileSummary>> {
+    let input = match input.items {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
     ::std::option::Option::Some(input)
 }
 

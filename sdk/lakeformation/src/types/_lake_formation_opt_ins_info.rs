@@ -8,6 +8,8 @@ pub struct LakeFormationOptInsInfo {
     pub resource: ::std::option::Option<crate::types::Resource>,
     /// <p>The Lake Formation principal. Supported principals are IAM users or IAM roles.</p>
     pub principal: ::std::option::Option<crate::types::DataLakePrincipal>,
+    /// <p>A Lake Formation condition, which applies to permissions and opt-ins that contain an expression.</p>
+    pub condition: ::std::option::Option<crate::types::Condition>,
     /// <p>The last modified date and time of the record.</p>
     pub last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The user who updated the record.</p>
@@ -21,6 +23,10 @@ impl LakeFormationOptInsInfo {
     /// <p>The Lake Formation principal. Supported principals are IAM users or IAM roles.</p>
     pub fn principal(&self) -> ::std::option::Option<&crate::types::DataLakePrincipal> {
         self.principal.as_ref()
+    }
+    /// <p>A Lake Formation condition, which applies to permissions and opt-ins that contain an expression.</p>
+    pub fn condition(&self) -> ::std::option::Option<&crate::types::Condition> {
+        self.condition.as_ref()
     }
     /// <p>The last modified date and time of the record.</p>
     pub fn last_modified(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -44,6 +50,7 @@ impl LakeFormationOptInsInfo {
 pub struct LakeFormationOptInsInfoBuilder {
     pub(crate) resource: ::std::option::Option<crate::types::Resource>,
     pub(crate) principal: ::std::option::Option<crate::types::DataLakePrincipal>,
+    pub(crate) condition: ::std::option::Option<crate::types::Condition>,
     pub(crate) last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_by: ::std::option::Option<::std::string::String>,
 }
@@ -75,6 +82,20 @@ impl LakeFormationOptInsInfoBuilder {
     /// <p>The Lake Formation principal. Supported principals are IAM users or IAM roles.</p>
     pub fn get_principal(&self) -> &::std::option::Option<crate::types::DataLakePrincipal> {
         &self.principal
+    }
+    /// <p>A Lake Formation condition, which applies to permissions and opt-ins that contain an expression.</p>
+    pub fn condition(mut self, input: crate::types::Condition) -> Self {
+        self.condition = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A Lake Formation condition, which applies to permissions and opt-ins that contain an expression.</p>
+    pub fn set_condition(mut self, input: ::std::option::Option<crate::types::Condition>) -> Self {
+        self.condition = input;
+        self
+    }
+    /// <p>A Lake Formation condition, which applies to permissions and opt-ins that contain an expression.</p>
+    pub fn get_condition(&self) -> &::std::option::Option<crate::types::Condition> {
+        &self.condition
     }
     /// <p>The last modified date and time of the record.</p>
     pub fn last_modified(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -109,6 +130,7 @@ impl LakeFormationOptInsInfoBuilder {
         crate::types::LakeFormationOptInsInfo {
             resource: self.resource,
             principal: self.principal,
+            condition: self.condition,
             last_modified: self.last_modified,
             last_updated_by: self.last_updated_by,
         }

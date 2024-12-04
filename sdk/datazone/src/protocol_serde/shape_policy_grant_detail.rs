@@ -82,6 +82,18 @@ pub fn ser_policy_grant_detail(
             crate::protocol_serde::shape_unit::ser_unit(&mut object_11, inner)?;
             object_11.finish();
         }
+        crate::types::PolicyGrantDetail::CreateEnvironmentFromBlueprint(inner) => {
+            #[allow(unused_mut)]
+            let mut object_12 = object_3.key("createEnvironmentFromBlueprint").start_object();
+            crate::protocol_serde::shape_unit::ser_unit(&mut object_12, inner)?;
+            object_12.finish();
+        }
+        crate::types::PolicyGrantDetail::CreateProjectFromProjectProfile(inner) => {
+            #[allow(unused_mut)]
+            let mut object_13 = object_3.key("createProjectFromProjectProfile").start_object();
+            crate::protocol_serde::shape_create_project_from_project_profile_policy_grant_detail::ser_create_project_from_project_profile_policy_grant_detail(&mut object_13, inner)?;
+            object_13.finish();
+        }
         crate::types::PolicyGrantDetail::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "PolicyGrantDetail",
@@ -185,6 +197,18 @@ where
                                 Some(crate::types::PolicyGrantDetail::CreateEnvironment(
                                     crate::protocol_serde::shape_unit::de_unit(tokens)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'createEnvironment' cannot be null"))?
+                                ))
+                            }
+                            "createEnvironmentFromBlueprint" => {
+                                Some(crate::types::PolicyGrantDetail::CreateEnvironmentFromBlueprint(
+                                    crate::protocol_serde::shape_unit::de_unit(tokens)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'createEnvironmentFromBlueprint' cannot be null"))?
+                                ))
+                            }
+                            "createProjectFromProjectProfile" => {
+                                Some(crate::types::PolicyGrantDetail::CreateProjectFromProjectProfile(
+                                    crate::protocol_serde::shape_create_project_from_project_profile_policy_grant_detail::de_create_project_from_project_profile_policy_grant_detail(tokens)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'createProjectFromProjectProfile' cannot be null"))?
                                 ))
                             }
                             _ => {

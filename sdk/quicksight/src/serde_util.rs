@@ -41,6 +41,21 @@ pub(crate) fn generate_embed_url_for_registered_user_output_output_correct_error
     builder
 }
 
+pub(crate) fn generate_embed_url_for_registered_user_with_identity_output_output_correct_errors(
+    mut builder: crate::operation::generate_embed_url_for_registered_user_with_identity::builders::GenerateEmbedUrlForRegisteredUserWithIdentityOutputBuilder,
+) -> crate::operation::generate_embed_url_for_registered_user_with_identity::builders::GenerateEmbedUrlForRegisteredUserWithIdentityOutputBuilder {
+    if builder.embed_url.is_none() {
+        builder.embed_url = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = Some(Default::default())
+    }
+    if builder.request_id.is_none() {
+        builder.request_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn analysis_definition_correct_errors(
     mut builder: crate::types::builders::AnalysisDefinitionBuilder,
 ) -> crate::types::builders::AnalysisDefinitionBuilder {

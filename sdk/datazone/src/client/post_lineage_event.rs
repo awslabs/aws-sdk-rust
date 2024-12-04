@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`domain_identifier(impl Into<String>)`](crate::operation::post_lineage_event::builders::PostLineageEventFluentBuilder::domain_identifier) / [`set_domain_identifier(Option<String>)`](crate::operation::post_lineage_event::builders::PostLineageEventFluentBuilder::set_domain_identifier):<br>required: **true**<br><p>The ID of the domain where you want to post a data lineage event.</p><br>
     ///   - [`event(Blob)`](crate::operation::post_lineage_event::builders::PostLineageEventFluentBuilder::event) / [`set_event(Option<Blob>)`](crate::operation::post_lineage_event::builders::PostLineageEventFluentBuilder::set_event):<br>required: **true**<br><p>The data lineage event that you want to post. Only open-lineage run event are supported as events.</p><br>
     ///   - [`client_token(impl Into<String>)`](crate::operation::post_lineage_event::builders::PostLineageEventFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::post_lineage_event::builders::PostLineageEventFluentBuilder::set_client_token):<br>required: **false**<br><p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p><br>
-    /// - On success, responds with [`PostLineageEventOutput`](crate::operation::post_lineage_event::PostLineageEventOutput)
+    /// - On success, responds with [`PostLineageEventOutput`](crate::operation::post_lineage_event::PostLineageEventOutput) with field(s):
+    ///   - [`id(Option<String>)`](crate::operation::post_lineage_event::PostLineageEventOutput::id): <p>The ID of the lineage event.</p>
+    ///   - [`domain_id(Option<String>)`](crate::operation::post_lineage_event::PostLineageEventOutput::domain_id): <p>The ID of the domain.</p>
     /// - On failure, responds with [`SdkError<PostLineageEventError>`](crate::operation::post_lineage_event::PostLineageEventError)
     pub fn post_lineage_event(&self) -> crate::operation::post_lineage_event::builders::PostLineageEventFluentBuilder {
         crate::operation::post_lineage_event::builders::PostLineageEventFluentBuilder::new(self.handle.clone())

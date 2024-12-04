@@ -73,9 +73,19 @@ pub use crate::types::_parameter::Parameter;
 
 pub use crate::types::_parameter_apply_type::ParameterApplyType;
 
+pub use crate::types::_data_share_type::DataShareType;
+
 pub use crate::types::_data_share_association::DataShareAssociation;
 
 pub use crate::types::_data_share_status::DataShareStatus;
+
+pub use crate::types::_namespace_registration_status::NamespaceRegistrationStatus;
+
+pub use crate::types::_namespace_identifier_union::NamespaceIdentifierUnion;
+
+pub use crate::types::_provisioned_identifier::ProvisionedIdentifier;
+
+pub use crate::types::_serverless_identifier::ServerlessIdentifier;
 
 pub use crate::types::_resource_policy::ResourcePolicy;
 
@@ -313,6 +323,8 @@ mod _data_share_status_for_consumer;
 
 mod _data_share_status_for_producer;
 
+mod _data_share_type;
+
 mod _data_transfer_progress;
 
 mod _default_cluster_parameters;
@@ -369,6 +381,10 @@ mod _maintenance_track;
 
 mod _mode;
 
+mod _namespace_identifier_union;
+
+mod _namespace_registration_status;
+
 mod _network_interface;
 
 mod _node_configuration_option;
@@ -392,6 +408,8 @@ mod _partner_integration_status;
 mod _pause_cluster_message;
 
 mod _pending_modified_values;
+
+mod _provisioned_identifier;
 
 mod _read_write_access;
 
@@ -450,6 +468,8 @@ mod _scheduled_action_type;
 mod _scheduled_action_type_values;
 
 mod _secondary_cluster_info;
+
+mod _serverless_identifier;
 
 mod _service_authorization;
 

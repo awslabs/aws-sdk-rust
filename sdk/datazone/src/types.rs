@@ -83,11 +83,17 @@ pub use crate::types::_user_assignment::UserAssignment;
 
 pub use crate::types::_auth_type::AuthType;
 
+pub use crate::types::_domain_version::DomainVersion;
+
 pub use crate::types::_domain_summary::DomainSummary;
 
 pub use crate::types::_data_source_error_message::DataSourceErrorMessage;
 
 pub use crate::types::_data_source_error_type::DataSourceErrorType;
+
+pub use crate::types::_data_source_run_lineage_summary::DataSourceRunLineageSummary;
+
+pub use crate::types::_lineage_import_status::LineageImportStatus;
 
 pub use crate::types::_run_statistics_for_assets::RunStatisticsForAssets;
 
@@ -117,6 +123,8 @@ pub use crate::types::_enable_setting::EnableSetting;
 
 pub use crate::types::_data_source_configuration_output::DataSourceConfigurationOutput;
 
+pub use crate::types::_sage_maker_run_configuration_output::SageMakerRunConfigurationOutput;
+
 pub use crate::types::_redshift_run_configuration_output::RedshiftRunConfigurationOutput;
 
 pub use crate::types::_redshift_storage::RedshiftStorage;
@@ -140,6 +148,8 @@ pub use crate::types::_data_source_status::DataSourceStatus;
 pub use crate::types::_recommendation_configuration::RecommendationConfiguration;
 
 pub use crate::types::_data_source_configuration_input::DataSourceConfigurationInput;
+
+pub use crate::types::_sage_maker_run_configuration_input::SageMakerRunConfigurationInput;
 
 pub use crate::types::_redshift_run_configuration_input::RedshiftRunConfigurationInput;
 
@@ -207,6 +217,30 @@ pub use crate::types::_granted_entity::GrantedEntity;
 
 pub use crate::types::_listing_revision::ListingRevision;
 
+pub use crate::types::_environment_configuration::EnvironmentConfiguration;
+
+pub use crate::types::_region::Region;
+
+pub use crate::types::_aws_account::AwsAccount;
+
+pub use crate::types::_environment_configuration_parameters_details::EnvironmentConfigurationParametersDetails;
+
+pub use crate::types::_environment_configuration_parameter::EnvironmentConfigurationParameter;
+
+pub use crate::types::_deployment_mode::DeploymentMode;
+
+pub use crate::types::_status::Status;
+
+pub use crate::types::_environment_deployment_details::EnvironmentDeploymentDetails;
+
+pub use crate::types::_environment_error::EnvironmentError;
+
+pub use crate::types::_overall_deployment_status::OverallDeploymentStatus;
+
+pub use crate::types::_environment_configuration_user_parameter::EnvironmentConfigurationUserParameter;
+
+pub use crate::types::_environment_parameter::EnvironmentParameter;
+
 pub use crate::types::_project_deletion_error::ProjectDeletionError;
 
 pub use crate::types::_project_status::ProjectStatus;
@@ -214,8 +248,6 @@ pub use crate::types::_project_status::ProjectStatus;
 pub use crate::types::_group_profile_status::GroupProfileStatus;
 
 pub use crate::types::_custom_parameter::CustomParameter;
-
-pub use crate::types::_environment_parameter::EnvironmentParameter;
 
 pub use crate::types::_action_parameters::ActionParameters;
 
@@ -228,8 +260,6 @@ pub use crate::types::_provisioning_properties::ProvisioningProperties;
 pub use crate::types::_cloud_formation_properties::CloudFormationProperties;
 
 pub use crate::types::_deployment::Deployment;
-
-pub use crate::types::_environment_error::EnvironmentError;
 
 pub use crate::types::_deployment_status::DeploymentStatus;
 
@@ -244,6 +274,88 @@ pub use crate::types::_configurable_action_type_authorization::ConfigurableActio
 pub use crate::types::_environment_status::EnvironmentStatus;
 
 pub use crate::types::_resource::Resource;
+
+pub use crate::types::_connection_type::ConnectionType;
+
+pub use crate::types::_connection_properties_output::ConnectionPropertiesOutput;
+
+pub use crate::types::_spark_glue_properties_output::SparkGluePropertiesOutput;
+
+pub use crate::types::_spark_glue_args::SparkGlueArgs;
+
+pub use crate::types::_spark_emr_properties_output::SparkEmrPropertiesOutput;
+
+pub use crate::types::_governance_type::GovernanceType;
+
+pub use crate::types::_username_password::UsernamePassword;
+
+pub use crate::types::_redshift_properties_output::RedshiftPropertiesOutput;
+
+pub use crate::types::_connection_status::ConnectionStatus;
+
+pub use crate::types::_redshift_lineage_sync_configuration_output::RedshiftLineageSyncConfigurationOutput;
+
+pub use crate::types::_lineage_sync_schedule::LineageSyncSchedule;
+
+pub use crate::types::_redshift_credentials::RedshiftCredentials;
+
+pub use crate::types::_redshift_storage_properties::RedshiftStorageProperties;
+
+pub use crate::types::_iam_properties_output::IamPropertiesOutput;
+
+pub use crate::types::_hyper_pod_properties_output::HyperPodPropertiesOutput;
+
+pub use crate::types::_hyper_pod_orchestrator::HyperPodOrchestrator;
+
+pub use crate::types::_glue_properties_output::GluePropertiesOutput;
+
+pub use crate::types::_athena_properties_output::AthenaPropertiesOutput;
+
+pub use crate::types::_physical_endpoint::PhysicalEndpoint;
+
+pub use crate::types::_protocol::Protocol;
+
+pub use crate::types::_glue_connection::GlueConnection;
+
+pub use crate::types::_compute_environments::ComputeEnvironments;
+
+pub use crate::types::_authentication_configuration::AuthenticationConfiguration;
+
+pub use crate::types::_o_auth2_properties::OAuth2Properties;
+
+pub use crate::types::_glue_o_auth2_credentials::GlueOAuth2Credentials;
+
+pub use crate::types::_authorization_code_properties::AuthorizationCodeProperties;
+
+pub use crate::types::_o_auth2_client_application::OAuth2ClientApplication;
+
+pub use crate::types::_o_auth2_grant_type::OAuth2GrantType;
+
+pub use crate::types::_authentication_type::AuthenticationType;
+
+pub use crate::types::_physical_connection_requirements::PhysicalConnectionRequirements;
+
+pub use crate::types::_aws_location::AwsLocation;
+
+pub use crate::types::_connection_properties_patch::ConnectionPropertiesPatch;
+
+pub use crate::types::_spark_emr_properties_patch::SparkEmrPropertiesPatch;
+
+pub use crate::types::_redshift_properties_patch::RedshiftPropertiesPatch;
+
+pub use crate::types::_redshift_lineage_sync_configuration_input::RedshiftLineageSyncConfigurationInput;
+
+pub use crate::types::_iam_properties_patch::IamPropertiesPatch;
+
+pub use crate::types::_glue_properties_patch::GluePropertiesPatch;
+
+pub use crate::types::_glue_connection_patch::GlueConnectionPatch;
+
+pub use crate::types::_authentication_configuration_patch::AuthenticationConfigurationPatch;
+
+pub use crate::types::_basic_authentication_credentials::BasicAuthenticationCredentials;
+
+pub use crate::types::_athena_properties_patch::AthenaPropertiesPatch;
 
 pub use crate::types::_asset_filter_configuration::AssetFilterConfiguration;
 
@@ -401,6 +513,10 @@ pub use crate::types::_subscription_grant_summary::SubscriptionGrantSummary;
 
 pub use crate::types::_project_summary::ProjectSummary;
 
+pub use crate::types::_project_profile_summary::ProjectProfileSummary;
+
+pub use crate::types::_sort_field_project::SortFieldProject;
+
 pub use crate::types::_project_member::ProjectMember;
 
 pub use crate::types::_user_designation::UserDesignation;
@@ -411,11 +527,11 @@ pub use crate::types::_group_details::GroupDetails;
 
 pub use crate::types::_user_details::UserDetails;
 
-pub use crate::types::_sort_field_project::SortFieldProject;
-
 pub use crate::types::_policy_grant_member::PolicyGrantMember;
 
 pub use crate::types::_policy_grant_detail::PolicyGrantDetail;
+
+pub use crate::types::_create_project_from_project_profile_policy_grant_detail::CreateProjectFromProjectProfilePolicyGrantDetail;
 
 pub use crate::types::_unit::Unit;
 
@@ -455,6 +571,28 @@ pub use crate::types::_lineage_node_summary::LineageNodeSummary;
 
 pub use crate::types::_edge_direction::EdgeDirection;
 
+pub use crate::types::_lineage_event_summary::LineageEventSummary;
+
+pub use crate::types::_event_summary::EventSummary;
+
+pub use crate::types::_open_lineage_run_event_summary::OpenLineageRunEventSummary;
+
+pub use crate::types::_name_identifier::NameIdentifier;
+
+pub use crate::types::_open_lineage_run_state::OpenLineageRunState;
+
+pub use crate::types::_lineage_event_processing_status::LineageEventProcessingStatus;
+
+pub use crate::types::_job_run_summary::JobRunSummary;
+
+pub use crate::types::_job_run_error::JobRunError;
+
+pub use crate::types::_job_run_status::JobRunStatus;
+
+pub use crate::types::_job_run_mode::JobRunMode;
+
+pub use crate::types::_job_type::JobType;
+
 pub use crate::types::_environment_summary::EnvironmentSummary;
 
 pub use crate::types::_environment_profile_summary::EnvironmentProfileSummary;
@@ -471,15 +609,29 @@ pub use crate::types::_owner_user_properties_output::OwnerUserPropertiesOutput;
 
 pub use crate::types::_data_source_run_activity::DataSourceRunActivity;
 
+pub use crate::types::_lineage_info::LineageInfo;
+
 pub use crate::types::_data_asset_activity_status::DataAssetActivityStatus;
 
 pub use crate::types::_data_product_revision::DataProductRevision;
+
+pub use crate::types::_connection_summary::ConnectionSummary;
+
+pub use crate::types::_sort_field_connection::SortFieldConnection;
 
 pub use crate::types::_asset_revision::AssetRevision;
 
 pub use crate::types::_asset_filter_summary::AssetFilterSummary;
 
 pub use crate::types::_lineage_node_reference::LineageNodeReference;
+
+pub use crate::types::_job_run_details::JobRunDetails;
+
+pub use crate::types::_lineage_run_details::LineageRunDetails;
+
+pub use crate::types::_lineage_sql_query_run_details::LineageSqlQueryRunDetails;
+
+pub use crate::types::_connection_credentials::ConnectionCredentials;
 
 pub use crate::types::_member::Member;
 
@@ -500,6 +652,28 @@ pub use crate::types::_listing_revision_input::ListingRevisionInput;
 pub use crate::types::_change_action::ChangeAction;
 
 pub use crate::types::_entity_type::EntityType;
+
+pub use crate::types::_connection_properties_input::ConnectionPropertiesInput;
+
+pub use crate::types::_spark_glue_properties_input::SparkGluePropertiesInput;
+
+pub use crate::types::_spark_emr_properties_input::SparkEmrPropertiesInput;
+
+pub use crate::types::_redshift_properties_input::RedshiftPropertiesInput;
+
+pub use crate::types::_iam_properties_input::IamPropertiesInput;
+
+pub use crate::types::_hyper_pod_properties_input::HyperPodPropertiesInput;
+
+pub use crate::types::_glue_properties_input::GluePropertiesInput;
+
+pub use crate::types::_glue_connection_input::GlueConnectionInput;
+
+pub use crate::types::_authentication_configuration_input::AuthenticationConfigurationInput;
+
+pub use crate::types::_glue_connection_type::GlueConnectionType;
+
+pub use crate::types::_athena_properties_input::AthenaPropertiesInput;
 
 pub use crate::types::_accepted_asset_scope::AcceptedAssetScope;
 
@@ -553,9 +727,31 @@ mod _asset_type_item;
 
 mod _asset_types_for_rule;
 
+mod _athena_properties_input;
+
+mod _athena_properties_output;
+
+mod _athena_properties_patch;
+
 mod _auth_type;
 
+mod _authentication_configuration;
+
+mod _authentication_configuration_input;
+
+mod _authentication_configuration_patch;
+
+mod _authentication_type;
+
+mod _authorization_code_properties;
+
+mod _aws_account;
+
 mod _aws_console_link_parameters;
+
+mod _aws_location;
+
+mod _basic_authentication_credentials;
 
 mod _business_name_generation_configuration;
 
@@ -565,11 +761,27 @@ mod _cloud_formation_properties;
 
 mod _column_filter_configuration;
 
+mod _compute_environments;
+
 mod _configurable_action_parameter;
 
 mod _configurable_action_type_authorization;
 
 mod _configurable_environment_action;
+
+mod _connection_credentials;
+
+mod _connection_properties_input;
+
+mod _connection_properties_output;
+
+mod _connection_properties_patch;
+
+mod _connection_status;
+
+mod _connection_summary;
+
+mod _connection_type;
 
 mod _create_asset_type_policy_grant_detail;
 
@@ -580,6 +792,8 @@ mod _create_environment_profile_policy_grant_detail;
 mod _create_form_type_policy_grant_detail;
 
 mod _create_glossary_policy_grant_detail;
+
+mod _create_project_from_project_profile_policy_grant_detail;
 
 mod _create_project_policy_grant_detail;
 
@@ -613,6 +827,8 @@ mod _data_source_error_type;
 
 mod _data_source_run_activity;
 
+mod _data_source_run_lineage_summary;
+
 mod _data_source_run_status;
 
 mod _data_source_run_summary;
@@ -626,6 +842,8 @@ mod _data_source_summary;
 mod _data_zone_entity_type;
 
 mod _deployment;
+
+mod _deployment_mode;
 
 mod _deployment_properties;
 
@@ -657,6 +875,8 @@ mod _domain_unit_target;
 
 mod _domain_unit_user_properties;
 
+mod _domain_version;
+
 mod _edge_direction;
 
 mod _enable_setting;
@@ -669,6 +889,16 @@ mod _environment_blueprint_configuration_item;
 
 mod _environment_blueprint_summary;
 
+mod _environment_configuration;
+
+mod _environment_configuration_parameter;
+
+mod _environment_configuration_parameters_details;
+
+mod _environment_configuration_user_parameter;
+
+mod _environment_deployment_details;
+
 mod _environment_error;
 
 mod _environment_parameter;
@@ -680,6 +910,8 @@ mod _environment_status;
 mod _environment_summary;
 
 mod _equal_to_expression;
+
+mod _event_summary;
 
 mod _failure_cause;
 
@@ -713,11 +945,29 @@ mod _glossary_term_item;
 
 mod _glossary_term_status;
 
+mod _glue_connection;
+
+mod _glue_connection_input;
+
+mod _glue_connection_patch;
+
+mod _glue_connection_type;
+
+mod _glue_o_auth2_credentials;
+
+mod _glue_properties_input;
+
+mod _glue_properties_output;
+
+mod _glue_properties_patch;
+
 mod _glue_run_configuration_input;
 
 mod _glue_run_configuration_output;
 
 mod _glue_self_grant_status_output;
+
+mod _governance_type;
 
 mod _granted_entity;
 
@@ -737,6 +987,18 @@ mod _group_profile_summary;
 
 mod _group_search_type;
 
+mod _hyper_pod_orchestrator;
+
+mod _hyper_pod_properties_input;
+
+mod _hyper_pod_properties_output;
+
+mod _iam_properties_input;
+
+mod _iam_properties_output;
+
+mod _iam_properties_patch;
+
 mod _iam_user_profile_details;
 
 mod _import;
@@ -749,6 +1011,18 @@ mod _is_not_null_expression;
 
 mod _is_null_expression;
 
+mod _job_run_details;
+
+mod _job_run_error;
+
+mod _job_run_mode;
+
+mod _job_run_status;
+
+mod _job_run_summary;
+
+mod _job_type;
+
 mod _lake_formation_configuration;
 
 mod _less_than_expression;
@@ -757,11 +1031,25 @@ mod _less_than_or_equal_to_expression;
 
 mod _like_expression;
 
+mod _lineage_event_processing_status;
+
+mod _lineage_event_summary;
+
+mod _lineage_import_status;
+
+mod _lineage_info;
+
 mod _lineage_node_reference;
 
 mod _lineage_node_summary;
 
 mod _lineage_node_type_item;
+
+mod _lineage_run_details;
+
+mod _lineage_sql_query_run_details;
+
+mod _lineage_sync_schedule;
 
 mod _listing_item;
 
@@ -799,6 +1087,8 @@ mod _metadata_generation_target_type;
 
 mod _model;
 
+mod _name_identifier;
+
 mod _not_equal_to_expression;
 
 mod _not_in_expression;
@@ -815,6 +1105,18 @@ mod _notification_role;
 
 mod _notification_type;
 
+mod _o_auth2_client_application;
+
+mod _o_auth2_grant_type;
+
+mod _o_auth2_properties;
+
+mod _open_lineage_run_event_summary;
+
+mod _open_lineage_run_state;
+
+mod _overall_deployment_status;
+
 mod _override_domain_unit_owners_policy_grant_detail;
 
 mod _override_project_owners_policy_grant_detail;
@@ -830,6 +1132,10 @@ mod _owner_properties_output;
 mod _owner_user_properties;
 
 mod _owner_user_properties_output;
+
+mod _physical_connection_requirements;
+
+mod _physical_endpoint;
 
 mod _policy_grant_detail;
 
@@ -849,11 +1155,15 @@ mod _project_member;
 
 mod _project_policy_grant_principal;
 
+mod _project_profile_summary;
+
 mod _project_status;
 
 mod _project_summary;
 
 mod _projects_for_rule;
+
+mod _protocol;
 
 mod _provisioning_configuration;
 
@@ -865,6 +1175,18 @@ mod _redshift_cluster_storage;
 
 mod _redshift_credential_configuration;
 
+mod _redshift_credentials;
+
+mod _redshift_lineage_sync_configuration_input;
+
+mod _redshift_lineage_sync_configuration_output;
+
+mod _redshift_properties_input;
+
+mod _redshift_properties_output;
+
+mod _redshift_properties_patch;
+
 mod _redshift_run_configuration_input;
 
 mod _redshift_run_configuration_output;
@@ -874,6 +1196,10 @@ mod _redshift_self_grant_status_output;
 mod _redshift_serverless_storage;
 
 mod _redshift_storage;
+
+mod _redshift_storage_properties;
+
+mod _region;
 
 mod _reject_choice;
 
@@ -909,6 +1235,10 @@ mod _rule_type;
 
 mod _run_statistics_for_assets;
 
+mod _sage_maker_run_configuration_input;
+
+mod _sage_maker_run_configuration_output;
+
 mod _schedule_configuration;
 
 mod _search_in_item;
@@ -931,13 +1261,29 @@ mod _self_grant_status_output;
 
 mod _single_sign_on;
 
+mod _sort_field_connection;
+
 mod _sort_field_project;
 
 mod _sort_key;
 
 mod _sort_order;
 
+mod _spark_emr_properties_input;
+
+mod _spark_emr_properties_output;
+
+mod _spark_emr_properties_patch;
+
+mod _spark_glue_args;
+
+mod _spark_glue_properties_input;
+
+mod _spark_glue_properties_output;
+
 mod _sso_user_profile_details;
+
+mod _status;
 
 mod _subscribed_asset;
 
@@ -1018,6 +1364,8 @@ mod _user_profile_type;
 mod _user_search_type;
 
 mod _user_type;
+
+mod _username_password;
 
 /// Builders
 pub mod builders;

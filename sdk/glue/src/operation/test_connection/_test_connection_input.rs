@@ -5,6 +5,8 @@
 pub struct TestConnectionInput {
     /// <p>Optional. The name of the connection to test. If only name is provided, the operation will get the connection and use that for testing.</p>
     pub connection_name: ::std::option::Option<::std::string::String>,
+    /// <p>The catalog ID where the connection resides.</p>
+    pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>A structure that is used to specify testing a connection to a service.</p>
     pub test_connection_input: ::std::option::Option<crate::types::TestConnectionInput>,
 }
@@ -12,6 +14,10 @@ impl TestConnectionInput {
     /// <p>Optional. The name of the connection to test. If only name is provided, the operation will get the connection and use that for testing.</p>
     pub fn connection_name(&self) -> ::std::option::Option<&str> {
         self.connection_name.as_deref()
+    }
+    /// <p>The catalog ID where the connection resides.</p>
+    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
+        self.catalog_id.as_deref()
     }
     /// <p>A structure that is used to specify testing a connection to a service.</p>
     pub fn test_connection_input(&self) -> ::std::option::Option<&crate::types::TestConnectionInput> {
@@ -30,6 +36,7 @@ impl TestConnectionInput {
 #[non_exhaustive]
 pub struct TestConnectionInputBuilder {
     pub(crate) connection_name: ::std::option::Option<::std::string::String>,
+    pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) test_connection_input: ::std::option::Option<crate::types::TestConnectionInput>,
 }
 impl TestConnectionInputBuilder {
@@ -46,6 +53,20 @@ impl TestConnectionInputBuilder {
     /// <p>Optional. The name of the connection to test. If only name is provided, the operation will get the connection and use that for testing.</p>
     pub fn get_connection_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.connection_name
+    }
+    /// <p>The catalog ID where the connection resides.</p>
+    pub fn catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.catalog_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The catalog ID where the connection resides.</p>
+    pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.catalog_id = input;
+        self
+    }
+    /// <p>The catalog ID where the connection resides.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
     }
     /// <p>A structure that is used to specify testing a connection to a service.</p>
     pub fn test_connection_input(mut self, input: crate::types::TestConnectionInput) -> Self {
@@ -67,6 +88,7 @@ impl TestConnectionInputBuilder {
     ) -> ::std::result::Result<crate::operation::test_connection::TestConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::test_connection::TestConnectionInput {
             connection_name: self.connection_name,
+            catalog_id: self.catalog_id,
             test_connection_input: self.test_connection_input,
         })
     }

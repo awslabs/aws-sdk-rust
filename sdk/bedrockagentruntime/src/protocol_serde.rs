@@ -157,6 +157,8 @@ pub(crate) mod shape_citation;
 
 pub(crate) mod shape_citation_event;
 
+pub(crate) mod shape_conversation_history;
+
 pub(crate) mod shape_external_sources_retrieve_and_generate_configuration;
 
 pub(crate) mod shape_file_part;
@@ -239,6 +241,8 @@ pub(crate) mod shape_inference_configuration;
 
 pub(crate) mod shape_memory_session_summary;
 
+pub(crate) mod shape_message;
+
 pub(crate) mod shape_orchestration_configuration;
 
 pub(crate) mod shape_retrieval_filter;
@@ -260,6 +264,10 @@ pub(crate) mod shape_attribution;
 pub(crate) mod shape_byte_content_doc;
 
 pub(crate) mod shape_byte_content_file;
+
+pub(crate) mod shape_caller_chain;
+
+pub(crate) mod shape_content_block;
 
 pub(crate) mod shape_content_body;
 
@@ -309,6 +317,8 @@ pub(crate) mod shape_trace;
 
 pub(crate) mod shape_vector_search_bedrock_reranking_configuration;
 
+pub(crate) mod shape_caller;
+
 pub(crate) mod shape_custom_orchestration_trace;
 
 pub(crate) mod shape_failure_trace;
@@ -332,6 +342,8 @@ pub(crate) mod shape_output_file;
 pub(crate) mod shape_post_processing_trace;
 
 pub(crate) mod shape_pre_processing_trace;
+
+pub(crate) mod shape_routing_classifier_trace;
 
 pub(crate) mod shape_span;
 
@@ -369,9 +381,15 @@ pub(crate) mod shape_rationale;
 
 pub(crate) mod shape_reranking_metadata_selective_mode_configuration;
 
+pub(crate) mod shape_routing_classifier_model_invocation_output;
+
 pub(crate) mod shape_action_group_invocation_input;
 
 pub(crate) mod shape_action_group_invocation_output;
+
+pub(crate) mod shape_agent_collaborator_invocation_input;
+
+pub(crate) mod shape_agent_collaborator_invocation_output;
 
 pub(crate) mod shape_api_parameters;
 
@@ -408,6 +426,10 @@ pub(crate) mod shape_pre_processing_parsed_response;
 pub(crate) mod shape_raw_response;
 
 pub(crate) mod shape_reprompt_response;
+
+pub(crate) mod shape_agent_collaborator_input_payload;
+
+pub(crate) mod shape_agent_collaborator_output_payload;
 
 pub(crate) mod shape_api_content_map;
 
@@ -455,6 +477,8 @@ pub(crate) mod shape_parameter;
 
 pub(crate) mod shape_property_parameters;
 
+pub(crate) mod shape_return_control_results;
+
 pub(crate) mod shape_guardrail_content_filter;
 
 pub(crate) mod shape_guardrail_custom_word;
@@ -468,3 +492,7 @@ pub(crate) mod shape_guardrail_regex_filter;
 pub(crate) mod shape_guardrail_topic;
 
 pub(crate) mod shape_parameter_list;
+
+pub(crate) mod shape_return_control_invocation_results;
+
+pub(crate) mod shape_response_body;

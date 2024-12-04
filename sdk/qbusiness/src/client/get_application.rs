@@ -23,6 +23,7 @@ impl super::Client {
     ///   - [`personalization_configuration(Option<PersonalizationConfiguration>)`](crate::operation::get_application::GetApplicationOutput::personalization_configuration): <p>Configuration information about chat response personalization. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/personalizing-chat-responses.html">Personalizing chat responses</a>.</p>
     ///   - [`auto_subscription_configuration(Option<AutoSubscriptionConfiguration>)`](crate::operation::get_application::GetApplicationOutput::auto_subscription_configuration): <p>Settings for auto-subscription behavior for this application. This is only applicable to SAML and OIDC applications.</p>
     ///   - [`client_ids_for_oidc(Option<Vec::<String>>)`](crate::operation::get_application::GetApplicationOutput::client_ids_for_oidc): <p>The OIDC client ID for a Amazon Q Business application.</p>
+    ///   - [`quick_sight_configuration(Option<QuickSightConfiguration>)`](crate::operation::get_application::GetApplicationOutput::quick_sight_configuration): <p>The Amazon QuickSight authentication configuration for the Amazon Q Business application.</p>
     /// - On failure, responds with [`SdkError<GetApplicationError>`](crate::operation::get_application::GetApplicationError)
     pub fn get_application(&self) -> crate::operation::get_application::builders::GetApplicationFluentBuilder {
         crate::operation::get_application::builders::GetApplicationFluentBuilder::new(self.handle.clone())

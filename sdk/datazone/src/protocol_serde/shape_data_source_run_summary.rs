@@ -83,6 +83,11 @@ where
                                 ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                             )?);
                         }
+                        "lineageSummary" => {
+                            builder = builder.set_lineage_summary(
+                                crate::protocol_serde::shape_data_source_run_lineage_summary::de_data_source_run_lineage_summary(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

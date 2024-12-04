@@ -68,6 +68,51 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_agent_collaborator::AssociateAgentCollaboratorError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_agent_collaborator::AssociateAgentCollaboratorError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::associate_agent_collaborator::AssociateAgentCollaboratorError> for Error {
+    fn from(err: crate::operation::associate_agent_collaborator::AssociateAgentCollaboratorError) -> Self {
+        match err {
+            crate::operation::associate_agent_collaborator::AssociateAgentCollaboratorError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::associate_agent_collaborator::AssociateAgentCollaboratorError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::associate_agent_collaborator::AssociateAgentCollaboratorError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::associate_agent_collaborator::AssociateAgentCollaboratorError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::associate_agent_collaborator::AssociateAgentCollaboratorError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::associate_agent_collaborator::AssociateAgentCollaboratorError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::associate_agent_collaborator::AssociateAgentCollaboratorError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::associate_agent_collaborator::AssociateAgentCollaboratorError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_agent_knowledge_base::AssociateAgentKnowledgeBaseError, R>>
     for Error
@@ -757,6 +802,52 @@ impl From<crate::operation::delete_prompt::DeletePromptError> for Error {
     }
 }
 impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_agent_collaborator::DisassociateAgentCollaboratorError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_agent_collaborator::DisassociateAgentCollaboratorError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disassociate_agent_collaborator::DisassociateAgentCollaboratorError> for Error {
+    fn from(err: crate::operation::disassociate_agent_collaborator::DisassociateAgentCollaboratorError) -> Self {
+        match err {
+            crate::operation::disassociate_agent_collaborator::DisassociateAgentCollaboratorError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::disassociate_agent_collaborator::DisassociateAgentCollaboratorError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::disassociate_agent_collaborator::DisassociateAgentCollaboratorError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::disassociate_agent_collaborator::DisassociateAgentCollaboratorError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::disassociate_agent_collaborator::DisassociateAgentCollaboratorError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::disassociate_agent_collaborator::DisassociateAgentCollaboratorError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::disassociate_agent_collaborator::DisassociateAgentCollaboratorError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::disassociate_agent_knowledge_base::DisassociateAgentKnowledgeBaseError,
@@ -885,6 +976,36 @@ impl From<crate::operation::get_agent_alias::GetAgentAliasError> for Error {
             crate::operation::get_agent_alias::GetAgentAliasError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_agent_alias::GetAgentAliasError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_agent_alias::GetAgentAliasError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_agent_collaborator::GetAgentCollaboratorError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_agent_collaborator::GetAgentCollaboratorError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_agent_collaborator::GetAgentCollaboratorError> for Error {
+    fn from(err: crate::operation::get_agent_collaborator::GetAgentCollaboratorError) -> Self {
+        match err {
+            crate::operation::get_agent_collaborator::GetAgentCollaboratorError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_agent_collaborator::GetAgentCollaboratorError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_agent_collaborator::GetAgentCollaboratorError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_agent_collaborator::GetAgentCollaboratorError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_agent_collaborator::GetAgentCollaboratorError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_agent_collaborator::GetAgentCollaboratorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1275,6 +1396,40 @@ impl From<crate::operation::list_agent_aliases::ListAgentAliasesError> for Error
             crate::operation::list_agent_aliases::ListAgentAliasesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_agent_aliases::ListAgentAliasesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_agent_aliases::ListAgentAliasesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_agent_collaborators::ListAgentCollaboratorsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_agent_collaborators::ListAgentCollaboratorsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_agent_collaborators::ListAgentCollaboratorsError> for Error {
+    fn from(err: crate::operation::list_agent_collaborators::ListAgentCollaboratorsError) -> Self {
+        match err {
+            crate::operation::list_agent_collaborators::ListAgentCollaboratorsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_agent_collaborators::ListAgentCollaboratorsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_agent_collaborators::ListAgentCollaboratorsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_agent_collaborators::ListAgentCollaboratorsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_agent_collaborators::ListAgentCollaboratorsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_agent_collaborators::ListAgentCollaboratorsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1886,6 +2041,49 @@ impl From<crate::operation::update_agent_alias::UpdateAgentAliasError> for Error
             crate::operation::update_agent_alias::UpdateAgentAliasError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_agent_alias::UpdateAgentAliasError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_agent_alias::UpdateAgentAliasError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_agent_collaborator::UpdateAgentCollaboratorError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_agent_collaborator::UpdateAgentCollaboratorError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_agent_collaborator::UpdateAgentCollaboratorError> for Error {
+    fn from(err: crate::operation::update_agent_collaborator::UpdateAgentCollaboratorError) -> Self {
+        match err {
+            crate::operation::update_agent_collaborator::UpdateAgentCollaboratorError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_agent_collaborator::UpdateAgentCollaboratorError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_agent_collaborator::UpdateAgentCollaboratorError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_agent_collaborator::UpdateAgentCollaboratorError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_agent_collaborator::UpdateAgentCollaboratorError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::update_agent_collaborator::UpdateAgentCollaboratorError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_agent_collaborator::UpdateAgentCollaboratorError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_agent_collaborator::UpdateAgentCollaboratorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

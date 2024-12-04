@@ -3,8 +3,14 @@ pub fn ser_training_data_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TrainingDataConfig,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    {
-        object.key("s3Uri").string(input.s3_uri.as_str());
+    if let Some(var_1) = &input.s3_uri {
+        object.key("s3Uri").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.invocation_logs_config {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("invocationLogsConfig").start_object();
+        crate::protocol_serde::shape_invocation_logs_config::ser_invocation_logs_config(&mut object_3, var_2)?;
+        object_3.finish();
     }
     Ok(())
 }
@@ -31,6 +37,10 @@ where
                                     .transpose()?,
                             );
                         }
+                        "invocationLogsConfig" => {
+                            builder = builder
+                                .set_invocation_logs_config(crate::protocol_serde::shape_invocation_logs_config::de_invocation_logs_config(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -41,9 +51,7 @@ where
                     }
                 }
             }
-            Ok(Some(crate::serde_util::training_data_config_correct_errors(builder).build().map_err(
-                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
-            )?))
+            Ok(Some(builder.build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -49,6 +49,10 @@ pub(crate) mod shape_create_bucket;
 
 pub(crate) mod shape_create_bucket_input;
 
+pub(crate) mod shape_create_bucket_metadata_table_configuration;
+
+pub(crate) mod shape_create_bucket_metadata_table_configuration_input;
+
 pub(crate) mod shape_create_multipart_upload;
 
 pub(crate) mod shape_create_session;
@@ -66,6 +70,8 @@ pub(crate) mod shape_delete_bucket_intelligent_tiering_configuration;
 pub(crate) mod shape_delete_bucket_inventory_configuration;
 
 pub(crate) mod shape_delete_bucket_lifecycle;
+
+pub(crate) mod shape_delete_bucket_metadata_table_configuration;
 
 pub(crate) mod shape_delete_bucket_metrics_configuration;
 
@@ -108,6 +114,8 @@ pub(crate) mod shape_get_bucket_lifecycle_configuration;
 pub(crate) mod shape_get_bucket_location;
 
 pub(crate) mod shape_get_bucket_logging;
+
+pub(crate) mod shape_get_bucket_metadata_table_configuration;
 
 pub(crate) mod shape_get_bucket_metrics_configuration;
 
@@ -325,6 +333,8 @@ pub(crate) mod shape_get_bucket_inventory_configuration_output;
 
 pub(crate) mod shape_get_bucket_lifecycle_configuration_output;
 
+pub(crate) mod shape_get_bucket_metadata_table_configuration_output;
+
 pub(crate) mod shape_get_bucket_metrics_configuration_output;
 
 pub(crate) mod shape_get_bucket_ownership_controls_output;
@@ -473,6 +483,8 @@ pub(crate) mod shape_lifecycle_rule;
 
 pub(crate) mod shape_logging_enabled;
 
+pub(crate) mod shape_metadata_table_configuration;
+
 pub(crate) mod shape_metrics_configuration;
 
 pub(crate) mod shape_multipart_upload;
@@ -547,6 +559,8 @@ pub(crate) mod shape_csv_input;
 
 pub(crate) mod shape_csv_output;
 
+pub(crate) mod shape_get_bucket_metadata_table_configuration_result;
+
 pub(crate) mod shape_glacier_job_parameters;
 
 pub(crate) mod shape_grant;
@@ -599,6 +613,8 @@ pub(crate) mod shape_restore_status;
 
 pub(crate) mod shape_routing_rule;
 
+pub(crate) mod shape_s3_tables_destination;
+
 pub(crate) mod shape_select_parameters;
 
 pub(crate) mod shape_server_side_encryption_rule;
@@ -627,6 +643,8 @@ pub(crate) mod shape_delete_marker_replication;
 
 pub(crate) mod shape_destination;
 
+pub(crate) mod shape_error_details;
+
 pub(crate) mod shape_existing_object_replication;
 
 pub(crate) mod shape_grantee;
@@ -636,6 +654,8 @@ pub(crate) mod shape_intelligent_tiering_and_operator;
 pub(crate) mod shape_inventory_s3_bucket_destination;
 
 pub(crate) mod shape_lifecycle_rule_and_operator;
+
+pub(crate) mod shape_metadata_table_configuration_result;
 
 pub(crate) mod shape_metrics_and_operator;
 
@@ -684,6 +704,8 @@ pub(crate) mod shape_replica_modifications;
 pub(crate) mod shape_replication_rule_and_operator;
 
 pub(crate) mod shape_replication_time;
+
+pub(crate) mod shape_s3_tables_destination_result;
 
 pub(crate) mod shape_sse_kms_encrypted_objects;
 

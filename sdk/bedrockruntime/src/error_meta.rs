@@ -5,6 +5,8 @@
 pub enum Error {
     /// <p>The request is denied because you do not have sufficient permissions to perform the requested action. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-access-denied">AccessDeniedException</a> in the Amazon Bedrock User Guide</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
+    /// <p>Error occurred because of a conflict while performing an operation.</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>An internal server error occurred. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-internal-failure">InternalFailure</a> in the Amazon Bedrock User Guide</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The request failed due to an error while processing the model.</p>
@@ -38,6 +40,7 @@ impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Error::AccessDeniedException(inner) => inner.fmt(f),
+            Error::ConflictException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
             Error::ModelErrorException(inner) => inner.fmt(f),
             Error::ModelNotReadyException(inner) => inner.fmt(f),
@@ -70,6 +73,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
             Self::AccessDeniedException(inner) => inner.meta(),
+            Self::ConflictException(inner) => inner.meta(),
             Self::InternalServerException(inner) => inner.meta(),
             Self::ModelErrorException(inner) => inner.meta(),
             Self::ModelNotReadyException(inner) => inner.meta(),
@@ -174,6 +178,31 @@ impl From<crate::operation::converse_stream::ConverseStreamError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_async_invoke::GetAsyncInvokeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_async_invoke::GetAsyncInvokeError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_async_invoke::GetAsyncInvokeError> for Error {
+    fn from(err: crate::operation::get_async_invoke::GetAsyncInvokeError) -> Self {
+        match err {
+            crate::operation::get_async_invoke::GetAsyncInvokeError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_async_invoke::GetAsyncInvokeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_async_invoke::GetAsyncInvokeError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_async_invoke::GetAsyncInvokeError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_async_invoke::GetAsyncInvokeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::invoke_model::InvokeModelError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -270,6 +299,64 @@ impl From<crate::operation::invoke_model_with_response_stream::InvokeModelWithRe
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_async_invokes::ListAsyncInvokesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_async_invokes::ListAsyncInvokesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_async_invokes::ListAsyncInvokesError> for Error {
+    fn from(err: crate::operation::list_async_invokes::ListAsyncInvokesError) -> Self {
+        match err {
+            crate::operation::list_async_invokes::ListAsyncInvokesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_async_invokes::ListAsyncInvokesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_async_invokes::ListAsyncInvokesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_async_invokes::ListAsyncInvokesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_async_invokes::ListAsyncInvokesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_async_invoke::StartAsyncInvokeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_async_invoke::StartAsyncInvokeError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_async_invoke::StartAsyncInvokeError> for Error {
+    fn from(err: crate::operation::start_async_invoke::StartAsyncInvokeError) -> Self {
+        match err {
+            crate::operation::start_async_invoke::StartAsyncInvokeError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_async_invoke::StartAsyncInvokeError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_async_invoke::StartAsyncInvokeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_async_invoke::StartAsyncInvokeError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::start_async_invoke::StartAsyncInvokeError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_async_invoke::StartAsyncInvokeError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_async_invoke::StartAsyncInvokeError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_async_invoke::StartAsyncInvokeError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::start_async_invoke::StartAsyncInvokeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::ConverseStreamOutputError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -327,6 +414,7 @@ impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Error::AccessDeniedException(inner) => inner.source(),
+            Error::ConflictException(inner) => inner.source(),
             Error::InternalServerException(inner) => inner.source(),
             Error::ModelErrorException(inner) => inner.source(),
             Error::ModelNotReadyException(inner) => inner.source(),
@@ -345,6 +433,7 @@ impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
             Self::AccessDeniedException(e) => e.request_id(),
+            Self::ConflictException(e) => e.request_id(),
             Self::InternalServerException(e) => e.request_id(),
             Self::ModelErrorException(e) => e.request_id(),
             Self::ModelNotReadyException(e) => e.request_id(),

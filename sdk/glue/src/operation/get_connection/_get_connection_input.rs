@@ -9,6 +9,8 @@ pub struct GetConnectionInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Allows you to retrieve the connection metadata without returning the password. For instance, the Glue console uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller might not have permission to use the KMS key to decrypt the password, but it does have permission to access the rest of the connection properties.</p>
     pub hide_password: ::std::option::Option<bool>,
+    /// <p>For connections that may be used in multiple services, specifies returning properties for the specified compute environment.</p>
+    pub apply_override_for_compute_environment: ::std::option::Option<crate::types::ComputeEnvironment>,
 }
 impl GetConnectionInput {
     /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
@@ -22,6 +24,10 @@ impl GetConnectionInput {
     /// <p>Allows you to retrieve the connection metadata without returning the password. For instance, the Glue console uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller might not have permission to use the KMS key to decrypt the password, but it does have permission to access the rest of the connection properties.</p>
     pub fn hide_password(&self) -> ::std::option::Option<bool> {
         self.hide_password
+    }
+    /// <p>For connections that may be used in multiple services, specifies returning properties for the specified compute environment.</p>
+    pub fn apply_override_for_compute_environment(&self) -> ::std::option::Option<&crate::types::ComputeEnvironment> {
+        self.apply_override_for_compute_environment.as_ref()
     }
 }
 impl GetConnectionInput {
@@ -38,6 +44,7 @@ pub struct GetConnectionInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) hide_password: ::std::option::Option<bool>,
+    pub(crate) apply_override_for_compute_environment: ::std::option::Option<crate::types::ComputeEnvironment>,
 }
 impl GetConnectionInputBuilder {
     /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
@@ -83,6 +90,20 @@ impl GetConnectionInputBuilder {
     pub fn get_hide_password(&self) -> &::std::option::Option<bool> {
         &self.hide_password
     }
+    /// <p>For connections that may be used in multiple services, specifies returning properties for the specified compute environment.</p>
+    pub fn apply_override_for_compute_environment(mut self, input: crate::types::ComputeEnvironment) -> Self {
+        self.apply_override_for_compute_environment = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>For connections that may be used in multiple services, specifies returning properties for the specified compute environment.</p>
+    pub fn set_apply_override_for_compute_environment(mut self, input: ::std::option::Option<crate::types::ComputeEnvironment>) -> Self {
+        self.apply_override_for_compute_environment = input;
+        self
+    }
+    /// <p>For connections that may be used in multiple services, specifies returning properties for the specified compute environment.</p>
+    pub fn get_apply_override_for_compute_environment(&self) -> &::std::option::Option<crate::types::ComputeEnvironment> {
+        &self.apply_override_for_compute_environment
+    }
     /// Consumes the builder and constructs a [`GetConnectionInput`](crate::operation::get_connection::GetConnectionInput).
     pub fn build(
         self,
@@ -91,6 +112,7 @@ impl GetConnectionInputBuilder {
             catalog_id: self.catalog_id,
             name: self.name,
             hide_password: self.hide_password,
+            apply_override_for_compute_environment: self.apply_override_for_compute_environment,
         })
     }
 }

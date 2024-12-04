@@ -47,3 +47,16 @@ where
         )),
     }
 }
+
+pub fn ser_environment_error(
+    object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::types::EnvironmentError,
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    if let Some(var_1) = &input.code {
+        object.key("code").string(var_1.as_str());
+    }
+    {
+        object.key("message").string(input.message.as_str());
+    }
+    Ok(())
+}

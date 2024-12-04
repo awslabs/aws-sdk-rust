@@ -12,6 +12,7 @@
 /// ```text
 /// # let servicetype = unimplemented!();
 /// match servicetype {
+///     ServiceType::Qbusiness => { /* ... */ },
 ///     ServiceType::Redshift => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -41,6 +42,8 @@
 )]
 pub enum ServiceType {
     #[allow(missing_docs)] // documentation missing in model
+    Qbusiness,
+    #[allow(missing_docs)] // documentation missing in model
     Redshift,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -49,6 +52,7 @@ pub enum ServiceType {
 impl ::std::convert::From<&str> for ServiceType {
     fn from(s: &str) -> Self {
         match s {
+            "QBUSINESS" => ServiceType::Qbusiness,
             "REDSHIFT" => ServiceType::Redshift,
             other => ServiceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -65,13 +69,14 @@ impl ServiceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ServiceType::Qbusiness => "QBUSINESS",
             ServiceType::Redshift => "REDSHIFT",
             ServiceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["REDSHIFT"]
+        &["QBUSINESS", "REDSHIFT"]
     }
 }
 impl ::std::convert::AsRef<str> for ServiceType {
@@ -94,6 +99,7 @@ impl ServiceType {
 impl ::std::fmt::Display for ServiceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ServiceType::Qbusiness => write!(f, "QBUSINESS"),
             ServiceType::Redshift => write!(f, "REDSHIFT"),
             ServiceType::Unknown(value) => write!(f, "{}", value),
         }

@@ -307,6 +307,8 @@ mod delete_tags;
 
 mod delete_usage_limit;
 
+mod deregister_namespace;
+
 mod describe_account_attributes;
 
 mod describe_authentication_profiles;
@@ -458,6 +460,8 @@ mod purchase_reserved_node_offering;
 mod put_resource_policy;
 
 mod reboot_cluster;
+
+mod register_namespace;
 
 mod reject_data_share;
 

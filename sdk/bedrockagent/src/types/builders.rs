@@ -317,6 +317,12 @@ pub use crate::types::_custom_orchestration::CustomOrchestrationBuilder;
 
 pub use crate::types::_agent_summary::AgentSummaryBuilder;
 
+pub use crate::types::_agent_collaborator::AgentCollaboratorBuilder;
+
+pub use crate::types::_agent_descriptor::AgentDescriptorBuilder;
+
+pub use crate::types::_agent_collaborator_summary::AgentCollaboratorSummaryBuilder;
+
 pub use crate::types::_agent_action_group::AgentActionGroupBuilder;
 
 pub use crate::types::_function::FunctionBuilder;

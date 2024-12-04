@@ -8,6 +8,7 @@ impl super::Client {
     ///   - [`name(impl Into<String>)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::set_name):<br>required: **false**<br><p>The name to be updated as part of the <code>UpdateProject</code> action.</p><br>
     ///   - [`description(impl Into<String>)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::set_description):<br>required: **false**<br><p>The description to be updated as part of the <code>UpdateProject</code> action.</p><br>
     ///   - [`glossary_terms(impl Into<String>)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::glossary_terms) / [`set_glossary_terms(Option<Vec::<String>>)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::set_glossary_terms):<br>required: **false**<br><p>The glossary terms to be updated as part of the <code>UpdateProject</code> action.</p><br>
+    ///   - [`environment_deployment_details(EnvironmentDeploymentDetails)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::environment_deployment_details) / [`set_environment_deployment_details(Option<EnvironmentDeploymentDetails>)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::set_environment_deployment_details):<br>required: **false**<br><p>The environment deployment details of the project.</p><br>
     /// - On success, responds with [`UpdateProjectOutput`](crate::operation::update_project::UpdateProjectOutput) with field(s):
     ///   - [`domain_id(String)`](crate::operation::update_project::UpdateProjectOutput::domain_id): <p>The identifier of the Amazon DataZone domain in which a project is updated.</p>
     ///   - [`id(String)`](crate::operation::update_project::UpdateProjectOutput::id): <p>The identifier of the project that is to be updated.</p>
@@ -20,6 +21,9 @@ impl super::Client {
     ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::update_project::UpdateProjectOutput::last_updated_at): <p>The timestamp of when the project was last updated.</p>
     ///   - [`glossary_terms(Option<Vec::<String>>)`](crate::operation::update_project::UpdateProjectOutput::glossary_terms): <p>The glossary terms of the project that are to be updated.</p>
     ///   - [`domain_unit_id(Option<String>)`](crate::operation::update_project::UpdateProjectOutput::domain_unit_id): <p>The ID of the domain unit.</p>
+    ///   - [`project_profile_id(Option<String>)`](crate::operation::update_project::UpdateProjectOutput::project_profile_id): <p>The ID of the project profile.</p>
+    ///   - [`user_parameters(Option<Vec::<EnvironmentConfigurationUserParameter>>)`](crate::operation::update_project::UpdateProjectOutput::user_parameters): <p>The user parameters of the project.</p>
+    ///   - [`environment_deployment_details(Option<EnvironmentDeploymentDetails>)`](crate::operation::update_project::UpdateProjectOutput::environment_deployment_details): <p>The environment deployment details of the project.</p>
     /// - On failure, responds with [`SdkError<UpdateProjectError>`](crate::operation::update_project::UpdateProjectError)
     pub fn update_project(&self) -> crate::operation::update_project::builders::UpdateProjectFluentBuilder {
         crate::operation::update_project::builders::UpdateProjectFluentBuilder::new(self.handle.clone())

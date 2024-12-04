@@ -6,6 +6,8 @@
 pub enum PluginAuthConfiguration {
     /// <p>Information about the basic authentication credentials used to configure a plugin.</p>
     BasicAuthConfiguration(crate::types::BasicAuthConfiguration),
+    /// <p>Information about the IAM Identity Center Application used to configure authentication for a plugin.</p>
+    IdcAuthConfiguration(crate::types::IdcAuthConfiguration),
     /// <p>Information about invoking a custom plugin without any authentication.</p>
     NoAuthConfiguration(crate::types::NoAuthConfiguration),
     /// <p>Information about the OAuth 2.0 authentication credential/token used to configure a plugin.</p>
@@ -33,6 +35,19 @@ impl PluginAuthConfiguration {
     /// Returns true if this is a [`BasicAuthConfiguration`](crate::types::PluginAuthConfiguration::BasicAuthConfiguration).
     pub fn is_basic_auth_configuration(&self) -> bool {
         self.as_basic_auth_configuration().is_ok()
+    }
+    /// Tries to convert the enum instance into [`IdcAuthConfiguration`](crate::types::PluginAuthConfiguration::IdcAuthConfiguration), extracting the inner [`IdcAuthConfiguration`](crate::types::IdcAuthConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_idc_auth_configuration(&self) -> ::std::result::Result<&crate::types::IdcAuthConfiguration, &Self> {
+        if let PluginAuthConfiguration::IdcAuthConfiguration(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`IdcAuthConfiguration`](crate::types::PluginAuthConfiguration::IdcAuthConfiguration).
+    pub fn is_idc_auth_configuration(&self) -> bool {
+        self.as_idc_auth_configuration().is_ok()
     }
     /// Tries to convert the enum instance into [`NoAuthConfiguration`](crate::types::PluginAuthConfiguration::NoAuthConfiguration), extracting the inner [`NoAuthConfiguration`](crate::types::NoAuthConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.

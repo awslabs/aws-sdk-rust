@@ -18,6 +18,9 @@ pub fn ser_q_plugin_card_input(
     {
         object.key("pluginId").string(input.plugin_id.as_str());
     }
+    if let Some(var_1) = &input.action_identifier {
+        object.key("actionIdentifier").string(var_1.as_str());
+    }
     Ok(())
 }
 
@@ -66,6 +69,13 @@ where
                         }
                         "pluginId" => {
                             builder = builder.set_plugin_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "actionIdentifier" => {
+                            builder = builder.set_action_identifier(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

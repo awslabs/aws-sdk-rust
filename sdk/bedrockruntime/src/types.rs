@@ -145,6 +145,14 @@ pub use crate::types::_tool_result_status::ToolResultStatus;
 
 pub use crate::types::_tool_result_content_block::ToolResultContentBlock;
 
+pub use crate::types::_video_block::VideoBlock;
+
+pub use crate::types::_video_source::VideoSource;
+
+pub use crate::types::_s3_location::S3Location;
+
+pub use crate::types::_video_format::VideoFormat;
+
 pub use crate::types::_document_block::DocumentBlock;
 
 pub use crate::types::_document_source::DocumentSource;
@@ -179,7 +187,29 @@ pub use crate::types::_guardrail_content_qualifier::GuardrailContentQualifier;
 
 pub use crate::types::_guardrail_content_source::GuardrailContentSource;
 
+pub use crate::types::_tag::Tag;
+
+pub use crate::types::_async_invoke_output_data_config::AsyncInvokeOutputDataConfig;
+
+pub use crate::types::_async_invoke_s3_output_data_config::AsyncInvokeS3OutputDataConfig;
+
+pub use crate::types::_async_invoke_summary::AsyncInvokeSummary;
+
+pub use crate::types::_async_invoke_status::AsyncInvokeStatus;
+
+pub use crate::types::_sort_order::SortOrder;
+
+pub use crate::types::_sort_async_invocation_by::SortAsyncInvocationBy;
+
 mod _any_tool_choice;
+
+mod _async_invoke_output_data_config;
+
+mod _async_invoke_s3_output_data_config;
+
+mod _async_invoke_status;
+
+mod _async_invoke_summary;
 
 mod _auto_tool_choice;
 
@@ -327,11 +357,19 @@ mod _prompt_variable_values;
 
 mod _response_stream;
 
+mod _s3_location;
+
+mod _sort_async_invocation_by;
+
+mod _sort_order;
+
 mod _specific_tool_choice;
 
 mod _stop_reason;
 
 mod _system_content_block;
+
+mod _tag;
 
 mod _token_usage;
 
@@ -358,6 +396,12 @@ mod _tool_use_block_delta;
 mod _tool_use_block_start;
 
 mod _trace;
+
+mod _video_block;
+
+mod _video_format;
+
+mod _video_source;
 
 /// Builders
 pub mod builders;

@@ -452,6 +452,37 @@ impl From<crate::operation::create_asset_type::CreateAssetTypeError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_connection::CreateConnectionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_connection::CreateConnectionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_connection::CreateConnectionError> for Error {
+    fn from(err: crate::operation::create_connection::CreateConnectionError) -> Self {
+        match err {
+            crate::operation::create_connection::CreateConnectionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_connection::CreateConnectionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_connection::CreateConnectionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_connection::CreateConnectionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_connection::CreateConnectionError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_connection::CreateConnectionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_connection::CreateConnectionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_connection::CreateConnectionError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::create_connection::CreateConnectionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_data_product::CreateDataProductError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -972,6 +1003,41 @@ impl From<crate::operation::create_project_membership::CreateProjectMembershipEr
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_project_profile::CreateProjectProfileError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_project_profile::CreateProjectProfileError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_project_profile::CreateProjectProfileError> for Error {
+    fn from(err: crate::operation::create_project_profile::CreateProjectProfileError) -> Self {
+        match err {
+            crate::operation::create_project_profile::CreateProjectProfileError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_project_profile::CreateProjectProfileError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_project_profile::CreateProjectProfileError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_project_profile::CreateProjectProfileError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_project_profile::CreateProjectProfileError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_project_profile::CreateProjectProfileError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_project_profile::CreateProjectProfileError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_project_profile::CreateProjectProfileError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::create_project_profile::CreateProjectProfileError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_rule::CreateRuleError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1244,6 +1310,33 @@ impl From<crate::operation::delete_asset_type::DeleteAssetTypeError> for Error {
             crate::operation::delete_asset_type::DeleteAssetTypeError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_asset_type::DeleteAssetTypeError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::delete_asset_type::DeleteAssetTypeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_connection::DeleteConnectionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_connection::DeleteConnectionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_connection::DeleteConnectionError> for Error {
+    fn from(err: crate::operation::delete_connection::DeleteConnectionError) -> Self {
+        match err {
+            crate::operation::delete_connection::DeleteConnectionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_connection::DeleteConnectionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_connection::DeleteConnectionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_connection::DeleteConnectionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_connection::DeleteConnectionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_connection::DeleteConnectionError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::delete_connection::DeleteConnectionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1711,6 +1804,37 @@ impl From<crate::operation::delete_project_membership::DeleteProjectMembershipEr
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_project_profile::DeleteProjectProfileError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_project_profile::DeleteProjectProfileError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_project_profile::DeleteProjectProfileError> for Error {
+    fn from(err: crate::operation::delete_project_profile::DeleteProjectProfileError) -> Self {
+        match err {
+            crate::operation::delete_project_profile::DeleteProjectProfileError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_project_profile::DeleteProjectProfileError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_project_profile::DeleteProjectProfileError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_project_profile::DeleteProjectProfileError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_project_profile::DeleteProjectProfileError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_project_profile::DeleteProjectProfileError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::delete_project_profile::DeleteProjectProfileError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_rule::DeleteRuleError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2035,6 +2159,33 @@ impl From<crate::operation::get_asset_type::GetAssetTypeError> for Error {
             crate::operation::get_asset_type::GetAssetTypeError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_asset_type::GetAssetTypeError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::get_asset_type::GetAssetTypeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_connection::GetConnectionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_connection::GetConnectionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_connection::GetConnectionError> for Error {
+    fn from(err: crate::operation::get_connection::GetConnectionError) -> Self {
+        match err {
+            crate::operation::get_connection::GetConnectionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_connection::GetConnectionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_connection::GetConnectionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_connection::GetConnectionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_connection::GetConnectionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_connection::GetConnectionError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::get_connection::GetConnectionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2559,6 +2710,60 @@ impl From<crate::operation::get_iam_portal_login_url::GetIamPortalLoginUrlError>
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_job_run::GetJobRunError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_job_run::GetJobRunError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_job_run::GetJobRunError> for Error {
+    fn from(err: crate::operation::get_job_run::GetJobRunError) -> Self {
+        match err {
+            crate::operation::get_job_run::GetJobRunError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_job_run::GetJobRunError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_job_run::GetJobRunError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_job_run::GetJobRunError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_job_run::GetJobRunError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_job_run::GetJobRunError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::get_job_run::GetJobRunError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_lineage_event::GetLineageEventError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_lineage_event::GetLineageEventError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_lineage_event::GetLineageEventError> for Error {
+    fn from(err: crate::operation::get_lineage_event::GetLineageEventError) -> Self {
+        match err {
+            crate::operation::get_lineage_event::GetLineageEventError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_lineage_event::GetLineageEventError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_lineage_event::GetLineageEventError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_lineage_event::GetLineageEventError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_lineage_event::GetLineageEventError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_lineage_event::GetLineageEventError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::get_lineage_event::GetLineageEventError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_lineage_node::GetLineageNodeError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2679,6 +2884,35 @@ impl From<crate::operation::get_project::GetProjectError> for Error {
             crate::operation::get_project::GetProjectError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_project::GetProjectError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::get_project::GetProjectError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_project_profile::GetProjectProfileError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_project_profile::GetProjectProfileError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_project_profile::GetProjectProfileError> for Error {
+    fn from(err: crate::operation::get_project_profile::GetProjectProfileError) -> Self {
+        match err {
+            crate::operation::get_project_profile::GetProjectProfileError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_project_profile::GetProjectProfileError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_project_profile::GetProjectProfileError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_project_profile::GetProjectProfileError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_project_profile::GetProjectProfileError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_project_profile::GetProjectProfileError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::get_project_profile::GetProjectProfileError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2973,6 +3207,32 @@ impl From<crate::operation::list_asset_revisions::ListAssetRevisionsError> for E
             crate::operation::list_asset_revisions::ListAssetRevisionsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_asset_revisions::ListAssetRevisionsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::list_asset_revisions::ListAssetRevisionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_connections::ListConnectionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_connections::ListConnectionsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_connections::ListConnectionsError> for Error {
+    fn from(err: crate::operation::list_connections::ListConnectionsError) -> Self {
+        match err {
+            crate::operation::list_connections::ListConnectionsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_connections::ListConnectionsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_connections::ListConnectionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_connections::ListConnectionsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_connections::ListConnectionsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::list_connections::ListConnectionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3421,6 +3681,59 @@ impl From<crate::operation::list_environments::ListEnvironmentsError> for Error 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_job_runs::ListJobRunsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_job_runs::ListJobRunsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_job_runs::ListJobRunsError> for Error {
+    fn from(err: crate::operation::list_job_runs::ListJobRunsError) -> Self {
+        match err {
+            crate::operation::list_job_runs::ListJobRunsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_job_runs::ListJobRunsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_job_runs::ListJobRunsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_job_runs::ListJobRunsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_job_runs::ListJobRunsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_job_runs::ListJobRunsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::list_job_runs::ListJobRunsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_lineage_events::ListLineageEventsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_lineage_events::ListLineageEventsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_lineage_events::ListLineageEventsError> for Error {
+    fn from(err: crate::operation::list_lineage_events::ListLineageEventsError) -> Self {
+        match err {
+            crate::operation::list_lineage_events::ListLineageEventsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_lineage_events::ListLineageEventsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_lineage_events::ListLineageEventsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_lineage_events::ListLineageEventsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_lineage_events::ListLineageEventsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::list_lineage_events::ListLineageEventsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_lineage_node_history::ListLineageNodeHistoryError, R>>
     for Error
 where
@@ -3588,6 +3901,34 @@ impl From<crate::operation::list_project_memberships::ListProjectMembershipsErro
                 Error::UnauthorizedException(inner)
             }
             crate::operation::list_project_memberships::ListProjectMembershipsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_project_profiles::ListProjectProfilesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_project_profiles::ListProjectProfilesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_project_profiles::ListProjectProfilesError> for Error {
+    fn from(err: crate::operation::list_project_profiles::ListProjectProfilesError) -> Self {
+        match err {
+            crate::operation::list_project_profiles::ListProjectProfilesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_project_profiles::ListProjectProfilesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_project_profiles::ListProjectProfilesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_project_profiles::ListProjectProfilesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_project_profiles::ListProjectProfilesError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::list_project_profiles::ListProjectProfilesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -4459,6 +4800,37 @@ impl From<crate::operation::update_asset_filter::UpdateAssetFilterError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_connection::UpdateConnectionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_connection::UpdateConnectionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_connection::UpdateConnectionError> for Error {
+    fn from(err: crate::operation::update_connection::UpdateConnectionError) -> Self {
+        match err {
+            crate::operation::update_connection::UpdateConnectionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_connection::UpdateConnectionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_connection::UpdateConnectionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_connection::UpdateConnectionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_connection::UpdateConnectionError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::update_connection::UpdateConnectionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_connection::UpdateConnectionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_connection::UpdateConnectionError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::update_connection::UpdateConnectionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_data_source::UpdateDataSourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -4779,6 +5151,41 @@ impl From<crate::operation::update_project::UpdateProjectError> for Error {
             crate::operation::update_project::UpdateProjectError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_project::UpdateProjectError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::update_project::UpdateProjectError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_project_profile::UpdateProjectProfileError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_project_profile::UpdateProjectProfileError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_project_profile::UpdateProjectProfileError> for Error {
+    fn from(err: crate::operation::update_project_profile::UpdateProjectProfileError) -> Self {
+        match err {
+            crate::operation::update_project_profile::UpdateProjectProfileError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_project_profile::UpdateProjectProfileError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_project_profile::UpdateProjectProfileError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_project_profile::UpdateProjectProfileError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_project_profile::UpdateProjectProfileError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::update_project_profile::UpdateProjectProfileError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_project_profile::UpdateProjectProfileError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_project_profile::UpdateProjectProfileError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::update_project_profile::UpdateProjectProfileError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

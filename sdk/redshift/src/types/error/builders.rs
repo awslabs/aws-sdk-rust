@@ -95,6 +95,8 @@ pub use crate::types::error::_invalid_cluster_parameter_group_state_fault::Inval
 
 pub use crate::types::error::_invalid_data_share_fault::InvalidDataShareFaultBuilder;
 
+pub use crate::types::error::_invalid_namespace_fault::InvalidNamespaceFaultBuilder;
+
 pub use crate::types::error::_resource_not_found_fault::ResourceNotFoundFaultBuilder;
 
 pub use crate::types::error::_invalid_policy_fault::InvalidPolicyFaultBuilder;
@@ -188,8 +190,6 @@ pub use crate::types::error::_invalid_s3_bucket_name_fault::InvalidS3BucketNameF
 pub use crate::types::error::_insufficient_s3_bucket_policy_fault::InsufficientS3BucketPolicyFaultBuilder;
 
 pub use crate::types::error::_bucket_not_found_fault::BucketNotFoundFaultBuilder;
-
-pub use crate::types::error::_invalid_namespace_fault::InvalidNamespaceFaultBuilder;
 
 pub use crate::types::error::_snapshot_copy_already_disabled_fault::SnapshotCopyAlreadyDisabledFaultBuilder;
 

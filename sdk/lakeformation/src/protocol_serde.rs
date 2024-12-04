@@ -449,6 +449,8 @@ pub(crate) mod shape_work_unit_range;
 
 pub(crate) mod shape_all_rows_wildcard;
 
+pub(crate) mod shape_condition;
+
 pub(crate) mod shape_details_map;
 
 pub(crate) mod shape_error_detail;

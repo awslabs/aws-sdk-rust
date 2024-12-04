@@ -18,6 +18,8 @@ pub struct SessionState {
     pub files: ::std::option::Option<::std::vec::Vec<crate::types::InputFile>>,
     /// <p>An array of configurations, each of which applies to a knowledge base attached to the agent.</p>
     pub knowledge_base_configurations: ::std::option::Option<::std::vec::Vec<crate::types::KnowledgeBaseConfiguration>>,
+    /// <p>The state's conversation history.</p>
+    pub conversation_history: ::std::option::Option<crate::types::ConversationHistory>,
 }
 impl SessionState {
     /// <p>Contains attributes that persist across a session and the values of those attributes.</p>
@@ -52,6 +54,10 @@ impl SessionState {
     pub fn knowledge_base_configurations(&self) -> &[crate::types::KnowledgeBaseConfiguration] {
         self.knowledge_base_configurations.as_deref().unwrap_or_default()
     }
+    /// <p>The state's conversation history.</p>
+    pub fn conversation_history(&self) -> ::std::option::Option<&crate::types::ConversationHistory> {
+        self.conversation_history.as_ref()
+    }
 }
 impl SessionState {
     /// Creates a new builder-style object to manufacture [`SessionState`](crate::types::SessionState).
@@ -70,6 +76,7 @@ pub struct SessionStateBuilder {
     pub(crate) invocation_id: ::std::option::Option<::std::string::String>,
     pub(crate) files: ::std::option::Option<::std::vec::Vec<crate::types::InputFile>>,
     pub(crate) knowledge_base_configurations: ::std::option::Option<::std::vec::Vec<crate::types::KnowledgeBaseConfiguration>>,
+    pub(crate) conversation_history: ::std::option::Option<crate::types::ConversationHistory>,
 }
 impl SessionStateBuilder {
     /// Adds a key-value pair to `session_attributes`.
@@ -212,6 +219,20 @@ impl SessionStateBuilder {
     pub fn get_knowledge_base_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KnowledgeBaseConfiguration>> {
         &self.knowledge_base_configurations
     }
+    /// <p>The state's conversation history.</p>
+    pub fn conversation_history(mut self, input: crate::types::ConversationHistory) -> Self {
+        self.conversation_history = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The state's conversation history.</p>
+    pub fn set_conversation_history(mut self, input: ::std::option::Option<crate::types::ConversationHistory>) -> Self {
+        self.conversation_history = input;
+        self
+    }
+    /// <p>The state's conversation history.</p>
+    pub fn get_conversation_history(&self) -> &::std::option::Option<crate::types::ConversationHistory> {
+        &self.conversation_history
+    }
     /// Consumes the builder and constructs a [`SessionState`](crate::types::SessionState).
     pub fn build(self) -> crate::types::SessionState {
         crate::types::SessionState {
@@ -221,6 +242,7 @@ impl SessionStateBuilder {
             invocation_id: self.invocation_id,
             files: self.files,
             knowledge_base_configurations: self.knowledge_base_configurations,
+            conversation_history: self.conversation_history,
         }
     }
 }

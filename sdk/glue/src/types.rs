@@ -51,6 +51,8 @@ pub use crate::types::_table_optimizer_vpc_configuration::TableOptimizerVpcConfi
 
 pub use crate::types::_table_optimizer_type::TableOptimizerType;
 
+pub use crate::types::_federation_source_error_code::FederationSourceErrorCode;
+
 pub use crate::types::_view_update_action::ViewUpdateAction;
 
 pub use crate::types::_table_input::TableInput;
@@ -363,6 +365,18 @@ pub use crate::types::_execution_property::ExecutionProperty;
 
 pub use crate::types::_job_mode::JobMode;
 
+pub use crate::types::_target_table_config::TargetTableConfig;
+
+pub use crate::types::_integration_partition::IntegrationPartition;
+
+pub use crate::types::_unnest_spec::UnnestSpec;
+
+pub use crate::types::_source_table_config::SourceTableConfig;
+
+pub use crate::types::_target_processing_properties::TargetProcessingProperties;
+
+pub use crate::types::_source_processing_properties::SourceProcessingProperties;
+
 pub use crate::types::_dev_endpoint_custom_libraries::DevEndpointCustomLibraries;
 
 pub use crate::types::_database_input::DatabaseInput;
@@ -415,9 +429,15 @@ pub use crate::types::_s3_target::S3Target;
 
 pub use crate::types::_connection_input::ConnectionInput;
 
+pub use crate::types::_compute_environment::ComputeEnvironment;
+
 pub use crate::types::_authentication_configuration_input::AuthenticationConfigurationInput;
 
+pub use crate::types::_basic_authentication_credentials::BasicAuthenticationCredentials;
+
 pub use crate::types::_o_auth2_properties_input::OAuth2PropertiesInput;
+
+pub use crate::types::_o_auth2_credentials::OAuth2Credentials;
 
 pub use crate::types::_authorization_code_properties::AuthorizationCodeProperties;
 
@@ -471,7 +491,15 @@ pub use crate::types::_update_xml_classifier_request::UpdateXmlClassifierRequest
 
 pub use crate::types::_update_grok_classifier_request::UpdateGrokClassifierRequest;
 
-pub use crate::types::_federation_source_error_code::FederationSourceErrorCode;
+pub use crate::types::_catalog_input::CatalogInput;
+
+pub use crate::types::_catalog_properties::CatalogProperties;
+
+pub use crate::types::_data_lake_access_properties::DataLakeAccessProperties;
+
+pub use crate::types::_target_redshift_catalog::TargetRedshiftCatalog;
+
+pub use crate::types::_federated_catalog::FederatedCatalog;
 
 pub use crate::types::_test_connection_input::TestConnectionInput;
 
@@ -535,6 +563,12 @@ pub use crate::types::_encryption_at_rest::EncryptionAtRest;
 
 pub use crate::types::_catalog_encryption_mode::CatalogEncryptionMode;
 
+pub use crate::types::_integration_error::IntegrationError;
+
+pub use crate::types::_integration_status::IntegrationStatus;
+
+pub use crate::types::_tag::Tag;
+
 pub use crate::types::_usage_profile_definition::UsageProfileDefinition;
 
 pub use crate::types::_table_optimizer_run::TableOptimizerRun;
@@ -591,6 +625,8 @@ pub use crate::types::_schema_column::SchemaColumn;
 
 pub use crate::types::_transform_status_type::TransformStatusType;
 
+pub use crate::types::_entity::Entity;
+
 pub use crate::types::_statistic_summary::StatisticSummary;
 
 pub use crate::types::_timestamped_inclusion_annotation::TimestampedInclusionAnnotation;
@@ -634,6 +670,12 @@ pub use crate::types::_crawls_filter::CrawlsFilter;
 pub use crate::types::_filter_operator::FilterOperator;
 
 pub use crate::types::_field_name::FieldName;
+
+pub use crate::types::_connection_type_brief::ConnectionTypeBrief;
+
+pub use crate::types::_capabilities::Capabilities;
+
+pub use crate::types::_data_operation::DataOperation;
 
 pub use crate::types::_workflow_run::WorkflowRun;
 
@@ -825,6 +867,14 @@ pub use crate::types::_get_connections_filter::GetConnectionsFilter;
 
 pub use crate::types::_column_statistics_task_settings::ColumnStatisticsTaskSettings;
 
+pub use crate::types::_execution_attempt::ExecutionAttempt;
+
+pub use crate::types::_execution_status::ExecutionStatus;
+
+pub use crate::types::_setting_source::SettingSource;
+
+pub use crate::types::_schedule_type::ScheduleType;
+
 pub use crate::types::_column_statistics_task_run::ColumnStatisticsTaskRun;
 
 pub use crate::types::_column_statistics_state::ColumnStatisticsState;
@@ -843,6 +893,12 @@ pub use crate::types::_xml_classifier::XmlClassifier;
 
 pub use crate::types::_grok_classifier::GrokClassifier;
 
+pub use crate::types::_catalog::Catalog;
+
+pub use crate::types::_catalog_properties_output::CatalogPropertiesOutput;
+
+pub use crate::types::_data_lake_access_properties_output::DataLakeAccessPropertiesOutput;
+
 pub use crate::types::_catalog_import_status::CatalogImportStatus;
 
 pub use crate::types::_blueprint_run::BlueprintRun;
@@ -854,6 +910,28 @@ pub use crate::types::_blueprint::Blueprint;
 pub use crate::types::_last_active_definition::LastActiveDefinition;
 
 pub use crate::types::_blueprint_status::BlueprintStatus;
+
+pub use crate::types::_integration::Integration;
+
+pub use crate::types::_integration_filter::IntegrationFilter;
+
+pub use crate::types::_inbound_integration::InboundIntegration;
+
+pub use crate::types::_field::Field;
+
+pub use crate::types::_field_filter_operator::FieldFilterOperator;
+
+pub use crate::types::_field_data_type::FieldDataType;
+
+pub use crate::types::_property::Property;
+
+pub use crate::types::_allowed_value::AllowedValue;
+
+pub use crate::types::_property_type::PropertyType;
+
+pub use crate::types::_compute_environment_configuration::ComputeEnvironmentConfiguration;
+
+pub use crate::types::_auth_configuration::AuthConfiguration;
 
 pub use crate::types::_schema_version_error_item::SchemaVersionErrorItem;
 
@@ -911,6 +989,8 @@ mod _aggregate;
 
 mod _aggregate_operation;
 
+mod _allowed_value;
+
 mod _amazon_redshift_advanced_option;
 
 mod _amazon_redshift_node_data;
@@ -927,6 +1007,8 @@ mod _athena_connector_source;
 
 mod _audit_context;
 
+mod _auth_configuration;
+
 mod _authentication_configuration;
 
 mod _authentication_configuration_input;
@@ -938,6 +1020,8 @@ mod _authorization_code_properties;
 mod _backfill_error;
 
 mod _backfill_error_code;
+
+mod _basic_authentication_credentials;
 
 mod _basic_catalog_target;
 
@@ -969,6 +1053,10 @@ mod _blueprint_status;
 
 mod _boolean_column_statistics_data;
 
+mod _capabilities;
+
+mod _catalog;
+
 mod _catalog_delta_source;
 
 mod _catalog_encryption_mode;
@@ -979,9 +1067,15 @@ mod _catalog_hudi_source;
 
 mod _catalog_import_status;
 
+mod _catalog_input;
+
 mod _catalog_kafka_source;
 
 mod _catalog_kinesis_source;
+
+mod _catalog_properties;
+
+mod _catalog_properties_output;
 
 mod _catalog_schema_change_policy;
 
@@ -1035,6 +1129,10 @@ mod _compression_type;
 
 mod _computation_type;
 
+mod _compute_environment;
+
+mod _compute_environment_configuration;
+
 mod _condition;
 
 mod _condition_expression;
@@ -1054,6 +1152,8 @@ mod _connection_property_key;
 mod _connection_status;
 
 mod _connection_type;
+
+mod _connection_type_brief;
 
 mod _connections_list;
 
@@ -1105,7 +1205,13 @@ mod _data_catalog_encryption_settings;
 
 mod _data_format;
 
+mod _data_lake_access_properties;
+
+mod _data_lake_access_properties_output;
+
 mod _data_lake_principal;
+
+mod _data_operation;
 
 mod _data_quality_analyzer_result;
 
@@ -1211,6 +1317,8 @@ mod _encryption_at_rest;
 
 mod _encryption_configuration;
 
+mod _entity;
+
 mod _error_detail;
 
 mod _error_details;
@@ -1223,19 +1331,31 @@ mod _evaluation_metrics;
 
 mod _event_batching_condition;
 
+mod _execution_attempt;
+
 mod _execution_class;
 
 mod _execution_property;
 
+mod _execution_status;
+
 mod _exist_condition;
 
 mod _export_labels_task_run_properties;
+
+mod _federated_catalog;
 
 mod _federated_database;
 
 mod _federated_table;
 
 mod _federation_source_error_code;
+
+mod _field;
+
+mod _field_data_type;
+
+mod _field_filter_operator;
 
 mod _field_name;
 
@@ -1299,7 +1419,19 @@ mod _iceberg_target;
 
 mod _import_labels_task_run_properties;
 
+mod _inbound_integration;
+
 mod _inclusion_annotation_value;
+
+mod _integration;
+
+mod _integration_error;
+
+mod _integration_filter;
+
+mod _integration_partition;
+
+mod _integration_status;
 
 mod _jdbc_connection_type;
 
@@ -1413,6 +1545,8 @@ mod _null_value_field;
 
 mod _o_auth2_client_application;
 
+mod _o_auth2_credentials;
+
 mod _o_auth2_grant_type;
 
 mod _o_auth2_properties;
@@ -1477,7 +1611,11 @@ mod _principal_type;
 
 mod _profile_configuration;
 
+mod _property;
+
 mod _property_predicate;
+
+mod _property_type;
 
 mod _query_session_context;
 
@@ -1571,6 +1709,8 @@ mod _schedule;
 
 mod _schedule_state;
 
+mod _schedule_type;
+
 mod _schema_change_policy;
 
 mod _schema_column;
@@ -1611,6 +1751,8 @@ mod _session_command;
 
 mod _session_status;
 
+mod _setting_source;
+
 mod _skewed_info;
 
 mod _snowflake_node_data;
@@ -1630,6 +1772,10 @@ mod _source_control_auth_strategy;
 mod _source_control_details;
 
 mod _source_control_provider;
+
+mod _source_processing_properties;
+
+mod _source_table_config;
 
 mod _spark_connector_source;
 
@@ -1701,7 +1847,15 @@ mod _table_version;
 
 mod _table_version_error;
 
+mod _tag;
+
 mod _target_format;
+
+mod _target_processing_properties;
+
+mod _target_redshift_catalog;
+
+mod _target_table_config;
 
 mod _task_run;
 
@@ -1754,6 +1908,8 @@ mod _unfiltered_partition;
 mod _union;
 
 mod _union_type;
+
+mod _unnest_spec;
 
 mod _update_behavior;
 

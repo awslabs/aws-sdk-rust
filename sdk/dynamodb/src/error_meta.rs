@@ -58,6 +58,8 @@ pub enum Error {
     ReplicaAlreadyExistsException(crate::types::error::ReplicaAlreadyExistsException),
     /// <p>The specified replica is no longer part of the global table.</p>
     ReplicaNotFoundException(crate::types::error::ReplicaNotFoundException),
+    /// <p>The request was rejected because one or more items in the request are being modified by a request in another Region.</p>
+    ReplicatedWriteConflictException(crate::types::error::ReplicatedWriteConflictException),
     /// <p>Throughput exceeds the current throughput quota for your account. Please contact <a href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a quota increase.</p>
     RequestLimitExceeded(crate::types::error::RequestLimitExceeded),
     /// <p>The operation conflicts with the resource's availability. For example:</p>
@@ -283,6 +285,7 @@ impl ::std::fmt::Display for Error {
             Error::ProvisionedThroughputExceededException(inner) => inner.fmt(f),
             Error::ReplicaAlreadyExistsException(inner) => inner.fmt(f),
             Error::ReplicaNotFoundException(inner) => inner.fmt(f),
+            Error::ReplicatedWriteConflictException(inner) => inner.fmt(f),
             Error::RequestLimitExceeded(inner) => inner.fmt(f),
             Error::ResourceInUseException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
@@ -337,6 +340,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ProvisionedThroughputExceededException(inner) => inner.meta(),
             Self::ReplicaAlreadyExistsException(inner) => inner.meta(),
             Self::ReplicaNotFoundException(inner) => inner.meta(),
+            Self::ReplicatedWriteConflictException(inner) => inner.meta(),
             Self::RequestLimitExceeded(inner) => inner.meta(),
             Self::ResourceInUseException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
@@ -569,6 +573,7 @@ impl From<crate::operation::delete_item::DeleteItemError> for Error {
             crate::operation::delete_item::DeleteItemError::ProvisionedThroughputExceededException(inner) => {
                 Error::ProvisionedThroughputExceededException(inner)
             }
+            crate::operation::delete_item::DeleteItemError::ReplicatedWriteConflictException(inner) => Error::ReplicatedWriteConflictException(inner),
             crate::operation::delete_item::DeleteItemError::RequestLimitExceeded(inner) => Error::RequestLimitExceeded(inner),
             crate::operation::delete_item::DeleteItemError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_item::DeleteItemError::TransactionConflictException(inner) => Error::TransactionConflictException(inner),
@@ -1506,6 +1511,7 @@ impl From<crate::operation::put_item::PutItemError> for Error {
             crate::operation::put_item::PutItemError::ProvisionedThroughputExceededException(inner) => {
                 Error::ProvisionedThroughputExceededException(inner)
             }
+            crate::operation::put_item::PutItemError::ReplicatedWriteConflictException(inner) => Error::ReplicatedWriteConflictException(inner),
             crate::operation::put_item::PutItemError::RequestLimitExceeded(inner) => Error::RequestLimitExceeded(inner),
             crate::operation::put_item::PutItemError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::put_item::PutItemError::TransactionConflictException(inner) => Error::TransactionConflictException(inner),
@@ -1977,6 +1983,7 @@ impl From<crate::operation::update_item::UpdateItemError> for Error {
             crate::operation::update_item::UpdateItemError::ProvisionedThroughputExceededException(inner) => {
                 Error::ProvisionedThroughputExceededException(inner)
             }
+            crate::operation::update_item::UpdateItemError::ReplicatedWriteConflictException(inner) => Error::ReplicatedWriteConflictException(inner),
             crate::operation::update_item::UpdateItemError::RequestLimitExceeded(inner) => Error::RequestLimitExceeded(inner),
             crate::operation::update_item::UpdateItemError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::update_item::UpdateItemError::TransactionConflictException(inner) => Error::TransactionConflictException(inner),
@@ -2168,6 +2175,7 @@ impl ::std::error::Error for Error {
             Error::ProvisionedThroughputExceededException(inner) => inner.source(),
             Error::ReplicaAlreadyExistsException(inner) => inner.source(),
             Error::ReplicaNotFoundException(inner) => inner.source(),
+            Error::ReplicatedWriteConflictException(inner) => inner.source(),
             Error::RequestLimitExceeded(inner) => inner.source(),
             Error::ResourceInUseException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
@@ -2208,6 +2216,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ProvisionedThroughputExceededException(e) => e.request_id(),
             Self::ReplicaAlreadyExistsException(e) => e.request_id(),
             Self::ReplicaNotFoundException(e) => e.request_id(),
+            Self::ReplicatedWriteConflictException(e) => e.request_id(),
             Self::RequestLimitExceeded(e) => e.request_id(),
             Self::ResourceInUseException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),

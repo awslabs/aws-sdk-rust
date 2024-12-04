@@ -38,6 +38,8 @@ pub struct GetWebExperienceOutput {
     pub error: ::std::option::Option<crate::types::ErrorDetail>,
     /// <p>The browser extension configuration for an Amazon Q Business web experience.</p>
     pub browser_extension_configuration: ::std::option::Option<crate::types::BrowserExtensionConfiguration>,
+    /// <p>Gets the custom logo, favicon, font, and color used in the Amazon Q web experience.</p>
+    pub customization_configuration: ::std::option::Option<crate::types::CustomizationConfiguration>,
     _request_id: Option<String>,
 }
 impl GetWebExperienceOutput {
@@ -112,6 +114,10 @@ impl GetWebExperienceOutput {
     pub fn browser_extension_configuration(&self) -> ::std::option::Option<&crate::types::BrowserExtensionConfiguration> {
         self.browser_extension_configuration.as_ref()
     }
+    /// <p>Gets the custom logo, favicon, font, and color used in the Amazon Q web experience.</p>
+    pub fn customization_configuration(&self) -> ::std::option::Option<&crate::types::CustomizationConfiguration> {
+        self.customization_configuration.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetWebExperienceOutput {
     fn request_id(&self) -> Option<&str> {
@@ -146,6 +152,7 @@ pub struct GetWebExperienceOutputBuilder {
     pub(crate) authentication_configuration: ::std::option::Option<crate::types::WebExperienceAuthConfiguration>,
     pub(crate) error: ::std::option::Option<crate::types::ErrorDetail>,
     pub(crate) browser_extension_configuration: ::std::option::Option<crate::types::BrowserExtensionConfiguration>,
+    pub(crate) customization_configuration: ::std::option::Option<crate::types::CustomizationConfiguration>,
     _request_id: Option<String>,
 }
 impl GetWebExperienceOutputBuilder {
@@ -396,6 +403,20 @@ impl GetWebExperienceOutputBuilder {
     pub fn get_browser_extension_configuration(&self) -> &::std::option::Option<crate::types::BrowserExtensionConfiguration> {
         &self.browser_extension_configuration
     }
+    /// <p>Gets the custom logo, favicon, font, and color used in the Amazon Q web experience.</p>
+    pub fn customization_configuration(mut self, input: crate::types::CustomizationConfiguration) -> Self {
+        self.customization_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Gets the custom logo, favicon, font, and color used in the Amazon Q web experience.</p>
+    pub fn set_customization_configuration(mut self, input: ::std::option::Option<crate::types::CustomizationConfiguration>) -> Self {
+        self.customization_configuration = input;
+        self
+    }
+    /// <p>Gets the custom logo, favicon, font, and color used in the Amazon Q web experience.</p>
+    pub fn get_customization_configuration(&self) -> &::std::option::Option<crate::types::CustomizationConfiguration> {
+        &self.customization_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -425,6 +446,7 @@ impl GetWebExperienceOutputBuilder {
             authentication_configuration: self.authentication_configuration,
             error: self.error,
             browser_extension_configuration: self.browser_extension_configuration,
+            customization_configuration: self.customization_configuration,
             _request_id: self._request_id,
         }
     }

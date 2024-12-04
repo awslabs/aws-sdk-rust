@@ -22,6 +22,8 @@ pub struct Observation {
     pub r#type: ::std::option::Option<crate::types::Type>,
     /// <p>Contains the JSON-formatted string returned by the API invoked by the action group.</p>
     pub action_group_invocation_output: ::std::option::Option<crate::types::ActionGroupInvocationOutput>,
+    /// <p>A collaborator's invocation output.</p>
+    pub agent_collaborator_invocation_output: ::std::option::Option<crate::types::AgentCollaboratorInvocationOutput>,
     /// <p>Contains details about the results from looking up the knowledge base.</p>
     pub knowledge_base_lookup_output: ::std::option::Option<crate::types::KnowledgeBaseLookupOutput>,
     /// <p>Contains details about the response to the user.</p>
@@ -56,6 +58,10 @@ impl Observation {
     pub fn action_group_invocation_output(&self) -> ::std::option::Option<&crate::types::ActionGroupInvocationOutput> {
         self.action_group_invocation_output.as_ref()
     }
+    /// <p>A collaborator's invocation output.</p>
+    pub fn agent_collaborator_invocation_output(&self) -> ::std::option::Option<&crate::types::AgentCollaboratorInvocationOutput> {
+        self.agent_collaborator_invocation_output.as_ref()
+    }
     /// <p>Contains details about the results from looking up the knowledge base.</p>
     pub fn knowledge_base_lookup_output(&self) -> ::std::option::Option<&crate::types::KnowledgeBaseLookupOutput> {
         self.knowledge_base_lookup_output.as_ref()
@@ -79,6 +85,7 @@ impl ::std::fmt::Debug for Observation {
         formatter.field("trace_id", &"*** Sensitive Data Redacted ***");
         formatter.field("r#type", &"*** Sensitive Data Redacted ***");
         formatter.field("action_group_invocation_output", &"*** Sensitive Data Redacted ***");
+        formatter.field("agent_collaborator_invocation_output", &"*** Sensitive Data Redacted ***");
         formatter.field("knowledge_base_lookup_output", &"*** Sensitive Data Redacted ***");
         formatter.field("final_response", &"*** Sensitive Data Redacted ***");
         formatter.field("reprompt_response", &"*** Sensitive Data Redacted ***");
@@ -100,6 +107,7 @@ pub struct ObservationBuilder {
     pub(crate) trace_id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::Type>,
     pub(crate) action_group_invocation_output: ::std::option::Option<crate::types::ActionGroupInvocationOutput>,
+    pub(crate) agent_collaborator_invocation_output: ::std::option::Option<crate::types::AgentCollaboratorInvocationOutput>,
     pub(crate) knowledge_base_lookup_output: ::std::option::Option<crate::types::KnowledgeBaseLookupOutput>,
     pub(crate) final_response: ::std::option::Option<crate::types::FinalResponse>,
     pub(crate) reprompt_response: ::std::option::Option<crate::types::RepromptResponse>,
@@ -184,6 +192,20 @@ impl ObservationBuilder {
     pub fn get_action_group_invocation_output(&self) -> &::std::option::Option<crate::types::ActionGroupInvocationOutput> {
         &self.action_group_invocation_output
     }
+    /// <p>A collaborator's invocation output.</p>
+    pub fn agent_collaborator_invocation_output(mut self, input: crate::types::AgentCollaboratorInvocationOutput) -> Self {
+        self.agent_collaborator_invocation_output = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A collaborator's invocation output.</p>
+    pub fn set_agent_collaborator_invocation_output(mut self, input: ::std::option::Option<crate::types::AgentCollaboratorInvocationOutput>) -> Self {
+        self.agent_collaborator_invocation_output = input;
+        self
+    }
+    /// <p>A collaborator's invocation output.</p>
+    pub fn get_agent_collaborator_invocation_output(&self) -> &::std::option::Option<crate::types::AgentCollaboratorInvocationOutput> {
+        &self.agent_collaborator_invocation_output
+    }
     /// <p>Contains details about the results from looking up the knowledge base.</p>
     pub fn knowledge_base_lookup_output(mut self, input: crate::types::KnowledgeBaseLookupOutput) -> Self {
         self.knowledge_base_lookup_output = ::std::option::Option::Some(input);
@@ -246,6 +268,7 @@ impl ObservationBuilder {
             trace_id: self.trace_id,
             r#type: self.r#type,
             action_group_invocation_output: self.action_group_invocation_output,
+            agent_collaborator_invocation_output: self.agent_collaborator_invocation_output,
             knowledge_base_lookup_output: self.knowledge_base_lookup_output,
             final_response: self.final_response,
             reprompt_response: self.reprompt_response,
@@ -259,6 +282,7 @@ impl ::std::fmt::Debug for ObservationBuilder {
         formatter.field("trace_id", &"*** Sensitive Data Redacted ***");
         formatter.field("r#type", &"*** Sensitive Data Redacted ***");
         formatter.field("action_group_invocation_output", &"*** Sensitive Data Redacted ***");
+        formatter.field("agent_collaborator_invocation_output", &"*** Sensitive Data Redacted ***");
         formatter.field("knowledge_base_lookup_output", &"*** Sensitive Data Redacted ***");
         formatter.field("final_response", &"*** Sensitive Data Redacted ***");
         formatter.field("reprompt_response", &"*** Sensitive Data Redacted ***");

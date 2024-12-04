@@ -54,6 +54,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "quickSightConfiguration" => {
+                            builder = builder.set_quick_sight_configuration(
+                                crate::protocol_serde::shape_quick_sight_configuration::de_quick_sight_configuration(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

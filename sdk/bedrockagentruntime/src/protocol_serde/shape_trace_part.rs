@@ -58,6 +58,16 @@ where
                                     .transpose()?,
                             );
                         }
+                        "callerChain" => {
+                            builder = builder.set_caller_chain(crate::protocol_serde::shape_caller_chain::de_caller_chain(tokens)?);
+                        }
+                        "collaboratorName" => {
+                            builder = builder.set_collaborator_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

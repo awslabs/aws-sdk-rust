@@ -23,7 +23,15 @@ pub use crate::types::error::_resource_number_limit_exceeded_exception::Resource
 
 pub use crate::types::error::_resource_not_ready_exception::ResourceNotReadyException;
 
+pub use crate::types::error::_federation_source_retryable_exception::FederationSourceRetryableException;
+
+pub use crate::types::error::_federation_source_exception::FederationSourceException;
+
 pub use crate::types::error::_already_exists_exception::AlreadyExistsException;
+
+pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundException;
+
+pub use crate::types::error::_internal_server_exception::InternalServerException;
 
 pub use crate::types::error::_idempotent_parameter_mismatch_exception::IdempotentParameterMismatchException;
 
@@ -34,8 +42,6 @@ pub use crate::types::error::_scheduler_transitioning_exception::SchedulerTransi
 pub use crate::types::error::_crawler_running_exception::CrawlerRunningException;
 
 pub use crate::types::error::_illegal_blueprint_state_exception::IllegalBlueprintStateException;
-
-pub use crate::types::error::_federation_source_exception::FederationSourceException;
 
 pub use crate::types::error::_conflict_exception::ConflictException;
 
@@ -65,11 +71,21 @@ pub use crate::types::error::_column_statistics_task_running_exception::ColumnSt
 
 pub use crate::types::error::_condition_check_failure_exception::ConditionCheckFailureException;
 
+pub use crate::types::error::_invalid_state_exception::InvalidStateException;
+
+pub use crate::types::error::_invalid_integration_state_fault::InvalidIntegrationStateFault;
+
+pub use crate::types::error::_integration_not_found_fault::IntegrationNotFoundFault;
+
+pub use crate::types::error::_integration_conflict_operation_fault::IntegrationConflictOperationFault;
+
 pub use crate::types::error::_permission_type_mismatch_exception::PermissionTypeMismatchException;
 
-pub use crate::types::error::_federation_source_retryable_exception::FederationSourceRetryableException;
+pub use crate::types::error::_target_resource_not_found::TargetResourceNotFound;
 
-pub use crate::types::error::_invalid_state_exception::InvalidStateException;
+pub use crate::types::error::_kms_key_not_accessible_fault::KmsKeyNotAccessibleFault;
+
+pub use crate::types::error::_integration_quota_exceeded_fault::IntegrationQuotaExceededFault;
 
 pub use crate::types::error::_federated_resource_already_exists_exception::FederatedResourceAlreadyExistsException;
 
@@ -115,11 +131,23 @@ mod _illegal_session_state_exception;
 
 mod _illegal_workflow_state_exception;
 
+mod _integration_conflict_operation_fault;
+
+mod _integration_not_found_fault;
+
+mod _integration_quota_exceeded_fault;
+
+mod _internal_server_exception;
+
 mod _internal_service_exception;
 
 mod _invalid_input_exception;
 
+mod _invalid_integration_state_fault;
+
 mod _invalid_state_exception;
+
+mod _kms_key_not_accessible_fault;
 
 mod _ml_transform_not_ready_exception;
 
@@ -131,6 +159,8 @@ mod _operation_timeout_exception;
 
 mod _permission_type_mismatch_exception;
 
+mod _resource_not_found_exception;
+
 mod _resource_not_ready_exception;
 
 mod _resource_number_limit_exceeded_exception;
@@ -140,6 +170,8 @@ mod _scheduler_not_running_exception;
 mod _scheduler_running_exception;
 
 mod _scheduler_transitioning_exception;
+
+mod _target_resource_not_found;
 
 mod _throttling_exception;
 

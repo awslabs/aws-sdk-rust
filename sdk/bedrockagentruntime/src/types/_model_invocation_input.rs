@@ -26,6 +26,8 @@ pub struct ModelInvocationInput {
     pub inference_configuration: ::std::option::Option<crate::types::InferenceConfiguration>,
     /// <p>Specifies whether to override the default parser Lambda function when parsing the raw foundation model output in the part of the agent sequence defined by the <code>promptType</code>.</p>
     pub parser_mode: ::std::option::Option<crate::types::CreationMode>,
+    /// <p>The identifier of a foundation model.</p>
+    pub foundation_model: ::std::option::Option<::std::string::String>,
 }
 impl ModelInvocationInput {
     /// <p>The unique identifier of the trace.</p>
@@ -56,6 +58,10 @@ impl ModelInvocationInput {
     pub fn parser_mode(&self) -> ::std::option::Option<&crate::types::CreationMode> {
         self.parser_mode.as_ref()
     }
+    /// <p>The identifier of a foundation model.</p>
+    pub fn foundation_model(&self) -> ::std::option::Option<&str> {
+        self.foundation_model.as_deref()
+    }
 }
 impl ::std::fmt::Debug for ModelInvocationInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -67,6 +73,7 @@ impl ::std::fmt::Debug for ModelInvocationInput {
         formatter.field("prompt_creation_mode", &"*** Sensitive Data Redacted ***");
         formatter.field("inference_configuration", &"*** Sensitive Data Redacted ***");
         formatter.field("parser_mode", &"*** Sensitive Data Redacted ***");
+        formatter.field("foundation_model", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -88,6 +95,7 @@ pub struct ModelInvocationInputBuilder {
     pub(crate) prompt_creation_mode: ::std::option::Option<crate::types::CreationMode>,
     pub(crate) inference_configuration: ::std::option::Option<crate::types::InferenceConfiguration>,
     pub(crate) parser_mode: ::std::option::Option<crate::types::CreationMode>,
+    pub(crate) foundation_model: ::std::option::Option<::std::string::String>,
 }
 impl ModelInvocationInputBuilder {
     /// <p>The unique identifier of the trace.</p>
@@ -188,6 +196,20 @@ impl ModelInvocationInputBuilder {
     pub fn get_parser_mode(&self) -> &::std::option::Option<crate::types::CreationMode> {
         &self.parser_mode
     }
+    /// <p>The identifier of a foundation model.</p>
+    pub fn foundation_model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.foundation_model = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of a foundation model.</p>
+    pub fn set_foundation_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.foundation_model = input;
+        self
+    }
+    /// <p>The identifier of a foundation model.</p>
+    pub fn get_foundation_model(&self) -> &::std::option::Option<::std::string::String> {
+        &self.foundation_model
+    }
     /// Consumes the builder and constructs a [`ModelInvocationInput`](crate::types::ModelInvocationInput).
     pub fn build(self) -> crate::types::ModelInvocationInput {
         crate::types::ModelInvocationInput {
@@ -198,6 +220,7 @@ impl ModelInvocationInputBuilder {
             prompt_creation_mode: self.prompt_creation_mode,
             inference_configuration: self.inference_configuration,
             parser_mode: self.parser_mode,
+            foundation_model: self.foundation_model,
         }
     }
 }
@@ -211,6 +234,7 @@ impl ::std::fmt::Debug for ModelInvocationInputBuilder {
         formatter.field("prompt_creation_mode", &"*** Sensitive Data Redacted ***");
         formatter.field("inference_configuration", &"*** Sensitive Data Redacted ***");
         formatter.field("parser_mode", &"*** Sensitive Data Redacted ***");
+        formatter.field("foundation_model", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

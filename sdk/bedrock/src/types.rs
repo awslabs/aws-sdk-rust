@@ -11,6 +11,12 @@ pub use crate::types::_sort_jobs_by::SortJobsBy;
 
 pub use crate::types::_fine_tuning_job_status::FineTuningJobStatus;
 
+pub use crate::types::_customization_config::CustomizationConfig;
+
+pub use crate::types::_distillation_config::DistillationConfig;
+
+pub use crate::types::_teacher_model_config::TeacherModelConfig;
+
 pub use crate::types::_vpc_config::VpcConfig;
 
 pub use crate::types::_validator_metric::ValidatorMetric;
@@ -24,6 +30,14 @@ pub use crate::types::_validation_data_config::ValidationDataConfig;
 pub use crate::types::_validator::Validator;
 
 pub use crate::types::_training_data_config::TrainingDataConfig;
+
+pub use crate::types::_invocation_logs_config::InvocationLogsConfig;
+
+pub use crate::types::_request_metadata_filters::RequestMetadataFilters;
+
+pub use crate::types::_request_metadata_base_filters::RequestMetadataBaseFilters;
+
+pub use crate::types::_invocation_log_source::InvocationLogSource;
 
 pub use crate::types::_tag::Tag;
 
@@ -273,7 +287,11 @@ mod _commitment_duration;
 
 mod _custom_model_summary;
 
+mod _customization_config;
+
 mod _customization_type;
+
+mod _distillation_config;
 
 mod _evaluation_bedrock_model;
 
@@ -411,6 +429,10 @@ mod _inference_profile_type;
 
 mod _inference_type;
 
+mod _invocation_log_source;
+
+mod _invocation_logs_config;
+
 mod _kb_inference_config;
 
 mod _knowledge_base_config;
@@ -469,6 +491,10 @@ mod _query_transformation_type;
 
 mod _rag_config;
 
+mod _request_metadata_base_filters;
+
+mod _request_metadata_filters;
+
 mod _retrieval_filter;
 
 mod _retrieve_and_generate_configuration;
@@ -496,6 +522,8 @@ mod _sort_models_by;
 mod _sort_order;
 
 mod _tag;
+
+mod _teacher_model_config;
 
 mod _text_inference_config;
 

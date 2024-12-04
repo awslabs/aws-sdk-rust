@@ -49,6 +49,11 @@ where
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'postProcessingTrace' cannot be null")
                             })?,
                         )),
+                        "routingClassifierTrace" => Some(crate::types::Trace::RoutingClassifierTrace(
+                            crate::protocol_serde::shape_routing_classifier_trace::de_routing_classifier_trace(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'routingClassifierTrace' cannot be null")
+                            })?,
+                        )),
                         "failureTrace" => Some(crate::types::Trace::FailureTrace(
                             crate::protocol_serde::shape_failure_trace::de_failure_trace(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'failureTrace' cannot be null")

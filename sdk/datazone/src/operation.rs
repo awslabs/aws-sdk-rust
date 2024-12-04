@@ -34,6 +34,9 @@ pub mod create_asset_revision;
 /// Types for the `CreateAssetType` operation.
 pub mod create_asset_type;
 
+/// Types for the `CreateConnection` operation.
+pub mod create_connection;
+
 /// Types for the `CreateDataProduct` operation.
 pub mod create_data_product;
 
@@ -79,6 +82,9 @@ pub mod create_project;
 /// Types for the `CreateProjectMembership` operation.
 pub mod create_project_membership;
 
+/// Types for the `CreateProjectProfile` operation.
+pub mod create_project_profile;
+
 /// Types for the `CreateRule` operation.
 pub mod create_rule;
 
@@ -102,6 +108,9 @@ pub mod delete_asset_filter;
 
 /// Types for the `DeleteAssetType` operation.
 pub mod delete_asset_type;
+
+/// Types for the `DeleteConnection` operation.
+pub mod delete_connection;
 
 /// Types for the `DeleteDataProduct` operation.
 pub mod delete_data_product;
@@ -145,6 +154,9 @@ pub mod delete_project;
 /// Types for the `DeleteProjectMembership` operation.
 pub mod delete_project_membership;
 
+/// Types for the `DeleteProjectProfile` operation.
+pub mod delete_project_profile;
+
 /// Types for the `DeleteRule` operation.
 pub mod delete_rule;
 
@@ -171,6 +183,9 @@ pub mod get_asset_filter;
 
 /// Types for the `GetAssetType` operation.
 pub mod get_asset_type;
+
+/// Types for the `GetConnection` operation.
+pub mod get_connection;
 
 /// Types for the `GetDataProduct` operation.
 pub mod get_data_product;
@@ -220,6 +235,12 @@ pub mod get_group_profile;
 /// Types for the `GetIamPortalLoginUrl` operation.
 pub mod get_iam_portal_login_url;
 
+/// Types for the `GetJobRun` operation.
+pub mod get_job_run;
+
+/// Types for the `GetLineageEvent` operation.
+pub mod get_lineage_event;
+
 /// Types for the `GetLineageNode` operation.
 pub mod get_lineage_node;
 
@@ -231,6 +252,9 @@ pub mod get_metadata_generation_run;
 
 /// Types for the `GetProject` operation.
 pub mod get_project;
+
+/// Types for the `GetProjectProfile` operation.
+pub mod get_project_profile;
 
 /// Types for the `GetRule` operation.
 pub mod get_rule;
@@ -258,6 +282,9 @@ pub mod list_asset_filters;
 
 /// Types for the `ListAssetRevisions` operation.
 pub mod list_asset_revisions;
+
+/// Types for the `ListConnections` operation.
+pub mod list_connections;
 
 /// Types for the `ListDataProductRevisions` operation.
 pub mod list_data_product_revisions;
@@ -295,6 +322,12 @@ pub mod list_environment_profiles;
 /// Types for the `ListEnvironments` operation.
 pub mod list_environments;
 
+/// Types for the `ListJobRuns` operation.
+pub mod list_job_runs;
+
+/// Types for the `ListLineageEvents` operation.
+pub mod list_lineage_events;
+
 /// Types for the `ListLineageNodeHistory` operation.
 pub mod list_lineage_node_history;
 
@@ -309,6 +342,9 @@ pub mod list_policy_grants;
 
 /// Types for the `ListProjectMemberships` operation.
 pub mod list_project_memberships;
+
+/// Types for the `ListProjectProfiles` operation.
+pub mod list_project_profiles;
 
 /// Types for the `ListProjects` operation.
 pub mod list_projects;
@@ -388,6 +424,9 @@ pub mod untag_resource;
 /// Types for the `UpdateAssetFilter` operation.
 pub mod update_asset_filter;
 
+/// Types for the `UpdateConnection` operation.
+pub mod update_connection;
+
 /// Types for the `UpdateDataSource` operation.
 pub mod update_data_source;
 
@@ -417,6 +456,9 @@ pub mod update_group_profile;
 
 /// Types for the `UpdateProject` operation.
 pub mod update_project;
+
+/// Types for the `UpdateProjectProfile` operation.
+pub mod update_project_profile;
 
 /// Types for the `UpdateRule` operation.
 pub mod update_rule;

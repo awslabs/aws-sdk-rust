@@ -12,11 +12,22 @@
 /// ```text
 /// # let plugintype = unimplemented!();
 /// match plugintype {
+///     PluginType::Asana => { /* ... */ },
+///     PluginType::AtlassianConfluence => { /* ... */ },
 ///     PluginType::Custom => { /* ... */ },
+///     PluginType::GoogleCalendar => { /* ... */ },
 ///     PluginType::Jira => { /* ... */ },
+///     PluginType::JiraCloud => { /* ... */ },
+///     PluginType::MicrosoftExchange => { /* ... */ },
+///     PluginType::MicrosoftTeams => { /* ... */ },
+///     PluginType::PagerdutyAdvance => { /* ... */ },
 ///     PluginType::Salesforce => { /* ... */ },
+///     PluginType::SalesforceCrm => { /* ... */ },
+///     PluginType::ServicenowNowPlatform => { /* ... */ },
 ///     PluginType::ServiceNow => { /* ... */ },
+///     PluginType::Smartsheet => { /* ... */ },
 ///     PluginType::Zendesk => { /* ... */ },
+///     PluginType::ZendeskSuite => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -45,15 +56,37 @@
 )]
 pub enum PluginType {
     #[allow(missing_docs)] // documentation missing in model
+    Asana,
+    #[allow(missing_docs)] // documentation missing in model
+    AtlassianConfluence,
+    #[allow(missing_docs)] // documentation missing in model
     Custom,
+    #[allow(missing_docs)] // documentation missing in model
+    GoogleCalendar,
     #[allow(missing_docs)] // documentation missing in model
     Jira,
     #[allow(missing_docs)] // documentation missing in model
+    JiraCloud,
+    #[allow(missing_docs)] // documentation missing in model
+    MicrosoftExchange,
+    #[allow(missing_docs)] // documentation missing in model
+    MicrosoftTeams,
+    #[allow(missing_docs)] // documentation missing in model
+    PagerdutyAdvance,
+    #[allow(missing_docs)] // documentation missing in model
     Salesforce,
+    #[allow(missing_docs)] // documentation missing in model
+    SalesforceCrm,
+    #[allow(missing_docs)] // documentation missing in model
+    ServicenowNowPlatform,
     #[allow(missing_docs)] // documentation missing in model
     ServiceNow,
     #[allow(missing_docs)] // documentation missing in model
+    Smartsheet,
+    #[allow(missing_docs)] // documentation missing in model
     Zendesk,
+    #[allow(missing_docs)] // documentation missing in model
+    ZendeskSuite,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -61,11 +94,22 @@ pub enum PluginType {
 impl ::std::convert::From<&str> for PluginType {
     fn from(s: &str) -> Self {
         match s {
+            "ASANA" => PluginType::Asana,
+            "ATLASSIAN_CONFLUENCE" => PluginType::AtlassianConfluence,
             "CUSTOM" => PluginType::Custom,
+            "GOOGLE_CALENDAR" => PluginType::GoogleCalendar,
             "JIRA" => PluginType::Jira,
+            "JIRA_CLOUD" => PluginType::JiraCloud,
+            "MICROSOFT_EXCHANGE" => PluginType::MicrosoftExchange,
+            "MICROSOFT_TEAMS" => PluginType::MicrosoftTeams,
+            "PAGERDUTY_ADVANCE" => PluginType::PagerdutyAdvance,
             "SALESFORCE" => PluginType::Salesforce,
+            "SALESFORCE_CRM" => PluginType::SalesforceCrm,
+            "SERVICENOW_NOW_PLATFORM" => PluginType::ServicenowNowPlatform,
             "SERVICE_NOW" => PluginType::ServiceNow,
+            "SMARTSHEET" => PluginType::Smartsheet,
             "ZENDESK" => PluginType::Zendesk,
+            "ZENDESK_SUITE" => PluginType::ZendeskSuite,
             other => PluginType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -81,17 +125,45 @@ impl PluginType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            PluginType::Asana => "ASANA",
+            PluginType::AtlassianConfluence => "ATLASSIAN_CONFLUENCE",
             PluginType::Custom => "CUSTOM",
+            PluginType::GoogleCalendar => "GOOGLE_CALENDAR",
             PluginType::Jira => "JIRA",
+            PluginType::JiraCloud => "JIRA_CLOUD",
+            PluginType::MicrosoftExchange => "MICROSOFT_EXCHANGE",
+            PluginType::MicrosoftTeams => "MICROSOFT_TEAMS",
+            PluginType::PagerdutyAdvance => "PAGERDUTY_ADVANCE",
             PluginType::Salesforce => "SALESFORCE",
+            PluginType::SalesforceCrm => "SALESFORCE_CRM",
+            PluginType::ServicenowNowPlatform => "SERVICENOW_NOW_PLATFORM",
             PluginType::ServiceNow => "SERVICE_NOW",
+            PluginType::Smartsheet => "SMARTSHEET",
             PluginType::Zendesk => "ZENDESK",
+            PluginType::ZendeskSuite => "ZENDESK_SUITE",
             PluginType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CUSTOM", "JIRA", "SALESFORCE", "SERVICE_NOW", "ZENDESK"]
+        &[
+            "ASANA",
+            "ATLASSIAN_CONFLUENCE",
+            "CUSTOM",
+            "GOOGLE_CALENDAR",
+            "JIRA",
+            "JIRA_CLOUD",
+            "MICROSOFT_EXCHANGE",
+            "MICROSOFT_TEAMS",
+            "PAGERDUTY_ADVANCE",
+            "SALESFORCE",
+            "SALESFORCE_CRM",
+            "SERVICENOW_NOW_PLATFORM",
+            "SERVICE_NOW",
+            "SMARTSHEET",
+            "ZENDESK",
+            "ZENDESK_SUITE",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for PluginType {
@@ -114,11 +186,22 @@ impl PluginType {
 impl ::std::fmt::Display for PluginType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            PluginType::Asana => write!(f, "ASANA"),
+            PluginType::AtlassianConfluence => write!(f, "ATLASSIAN_CONFLUENCE"),
             PluginType::Custom => write!(f, "CUSTOM"),
+            PluginType::GoogleCalendar => write!(f, "GOOGLE_CALENDAR"),
             PluginType::Jira => write!(f, "JIRA"),
+            PluginType::JiraCloud => write!(f, "JIRA_CLOUD"),
+            PluginType::MicrosoftExchange => write!(f, "MICROSOFT_EXCHANGE"),
+            PluginType::MicrosoftTeams => write!(f, "MICROSOFT_TEAMS"),
+            PluginType::PagerdutyAdvance => write!(f, "PAGERDUTY_ADVANCE"),
             PluginType::Salesforce => write!(f, "SALESFORCE"),
+            PluginType::SalesforceCrm => write!(f, "SALESFORCE_CRM"),
+            PluginType::ServicenowNowPlatform => write!(f, "SERVICENOW_NOW_PLATFORM"),
             PluginType::ServiceNow => write!(f, "SERVICE_NOW"),
+            PluginType::Smartsheet => write!(f, "SMARTSHEET"),
             PluginType::Zendesk => write!(f, "ZENDESK"),
+            PluginType::ZendeskSuite => write!(f, "ZENDESK_SUITE"),
             PluginType::Unknown(value) => write!(f, "{}", value),
         }
     }

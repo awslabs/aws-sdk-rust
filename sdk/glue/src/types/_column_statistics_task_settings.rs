@@ -20,6 +20,12 @@ pub struct ColumnStatisticsTaskSettings {
     pub sample_size: f64,
     /// <p>Name of the security configuration that is used to encrypt CloudWatch logs.</p>
     pub security_configuration: ::std::option::Option<::std::string::String>,
+    /// <p>The type of schedule for a column statistics task. Possible values may be <code>CRON</code> or <code>AUTO</code>.</p>
+    pub schedule_type: ::std::option::Option<crate::types::ScheduleType>,
+    /// <p>The source of setting the column statistics task. Possible values may be <code>CATALOG</code> or <code>TABLE</code>.</p>
+    pub setting_source: ::std::option::Option<crate::types::SettingSource>,
+    /// <p>The last <code>ExecutionAttempt</code> for the column statistics task run.</p>
+    pub last_execution_attempt: ::std::option::Option<crate::types::ExecutionAttempt>,
 }
 impl ColumnStatisticsTaskSettings {
     /// <p>The name of the database where the table resides.</p>
@@ -56,6 +62,18 @@ impl ColumnStatisticsTaskSettings {
     pub fn security_configuration(&self) -> ::std::option::Option<&str> {
         self.security_configuration.as_deref()
     }
+    /// <p>The type of schedule for a column statistics task. Possible values may be <code>CRON</code> or <code>AUTO</code>.</p>
+    pub fn schedule_type(&self) -> ::std::option::Option<&crate::types::ScheduleType> {
+        self.schedule_type.as_ref()
+    }
+    /// <p>The source of setting the column statistics task. Possible values may be <code>CATALOG</code> or <code>TABLE</code>.</p>
+    pub fn setting_source(&self) -> ::std::option::Option<&crate::types::SettingSource> {
+        self.setting_source.as_ref()
+    }
+    /// <p>The last <code>ExecutionAttempt</code> for the column statistics task run.</p>
+    pub fn last_execution_attempt(&self) -> ::std::option::Option<&crate::types::ExecutionAttempt> {
+        self.last_execution_attempt.as_ref()
+    }
 }
 impl ColumnStatisticsTaskSettings {
     /// Creates a new builder-style object to manufacture [`ColumnStatisticsTaskSettings`](crate::types::ColumnStatisticsTaskSettings).
@@ -76,6 +94,9 @@ pub struct ColumnStatisticsTaskSettingsBuilder {
     pub(crate) role: ::std::option::Option<::std::string::String>,
     pub(crate) sample_size: ::std::option::Option<f64>,
     pub(crate) security_configuration: ::std::option::Option<::std::string::String>,
+    pub(crate) schedule_type: ::std::option::Option<crate::types::ScheduleType>,
+    pub(crate) setting_source: ::std::option::Option<crate::types::SettingSource>,
+    pub(crate) last_execution_attempt: ::std::option::Option<crate::types::ExecutionAttempt>,
 }
 impl ColumnStatisticsTaskSettingsBuilder {
     /// <p>The name of the database where the table resides.</p>
@@ -196,6 +217,48 @@ impl ColumnStatisticsTaskSettingsBuilder {
     pub fn get_security_configuration(&self) -> &::std::option::Option<::std::string::String> {
         &self.security_configuration
     }
+    /// <p>The type of schedule for a column statistics task. Possible values may be <code>CRON</code> or <code>AUTO</code>.</p>
+    pub fn schedule_type(mut self, input: crate::types::ScheduleType) -> Self {
+        self.schedule_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of schedule for a column statistics task. Possible values may be <code>CRON</code> or <code>AUTO</code>.</p>
+    pub fn set_schedule_type(mut self, input: ::std::option::Option<crate::types::ScheduleType>) -> Self {
+        self.schedule_type = input;
+        self
+    }
+    /// <p>The type of schedule for a column statistics task. Possible values may be <code>CRON</code> or <code>AUTO</code>.</p>
+    pub fn get_schedule_type(&self) -> &::std::option::Option<crate::types::ScheduleType> {
+        &self.schedule_type
+    }
+    /// <p>The source of setting the column statistics task. Possible values may be <code>CATALOG</code> or <code>TABLE</code>.</p>
+    pub fn setting_source(mut self, input: crate::types::SettingSource) -> Self {
+        self.setting_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The source of setting the column statistics task. Possible values may be <code>CATALOG</code> or <code>TABLE</code>.</p>
+    pub fn set_setting_source(mut self, input: ::std::option::Option<crate::types::SettingSource>) -> Self {
+        self.setting_source = input;
+        self
+    }
+    /// <p>The source of setting the column statistics task. Possible values may be <code>CATALOG</code> or <code>TABLE</code>.</p>
+    pub fn get_setting_source(&self) -> &::std::option::Option<crate::types::SettingSource> {
+        &self.setting_source
+    }
+    /// <p>The last <code>ExecutionAttempt</code> for the column statistics task run.</p>
+    pub fn last_execution_attempt(mut self, input: crate::types::ExecutionAttempt) -> Self {
+        self.last_execution_attempt = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The last <code>ExecutionAttempt</code> for the column statistics task run.</p>
+    pub fn set_last_execution_attempt(mut self, input: ::std::option::Option<crate::types::ExecutionAttempt>) -> Self {
+        self.last_execution_attempt = input;
+        self
+    }
+    /// <p>The last <code>ExecutionAttempt</code> for the column statistics task run.</p>
+    pub fn get_last_execution_attempt(&self) -> &::std::option::Option<crate::types::ExecutionAttempt> {
+        &self.last_execution_attempt
+    }
     /// Consumes the builder and constructs a [`ColumnStatisticsTaskSettings`](crate::types::ColumnStatisticsTaskSettings).
     pub fn build(self) -> crate::types::ColumnStatisticsTaskSettings {
         crate::types::ColumnStatisticsTaskSettings {
@@ -207,6 +270,9 @@ impl ColumnStatisticsTaskSettingsBuilder {
             role: self.role,
             sample_size: self.sample_size.unwrap_or_default(),
             security_configuration: self.security_configuration,
+            schedule_type: self.schedule_type,
+            setting_source: self.setting_source,
+            last_execution_attempt: self.last_execution_attempt,
         }
     }
 }

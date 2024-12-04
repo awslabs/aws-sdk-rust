@@ -150,4 +150,18 @@ impl GetConnectionFluentBuilder {
     pub fn get_hide_password(&self) -> &::std::option::Option<bool> {
         self.inner.get_hide_password()
     }
+    /// <p>For connections that may be used in multiple services, specifies returning properties for the specified compute environment.</p>
+    pub fn apply_override_for_compute_environment(mut self, input: crate::types::ComputeEnvironment) -> Self {
+        self.inner = self.inner.apply_override_for_compute_environment(input);
+        self
+    }
+    /// <p>For connections that may be used in multiple services, specifies returning properties for the specified compute environment.</p>
+    pub fn set_apply_override_for_compute_environment(mut self, input: ::std::option::Option<crate::types::ComputeEnvironment>) -> Self {
+        self.inner = self.inner.set_apply_override_for_compute_environment(input);
+        self
+    }
+    /// <p>For connections that may be used in multiple services, specifies returning properties for the specified compute environment.</p>
+    pub fn get_apply_override_for_compute_environment(&self) -> &::std::option::Option<crate::types::ComputeEnvironment> {
+        self.inner.get_apply_override_for_compute_environment()
+    }
 }

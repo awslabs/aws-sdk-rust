@@ -165,6 +165,20 @@ impl PutEnvironmentBlueprintConfigurationFluentBuilder {
     pub fn get_manage_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_manage_access_role_arn()
     }
+    /// <p>The environment role permissions boundary.</p>
+    pub fn environment_role_permission_boundary(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.environment_role_permission_boundary(input.into());
+        self
+    }
+    /// <p>The environment role permissions boundary.</p>
+    pub fn set_environment_role_permission_boundary(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_environment_role_permission_boundary(input);
+        self
+    }
+    /// <p>The environment role permissions boundary.</p>
+    pub fn get_environment_role_permission_boundary(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_role_permission_boundary()
+    }
     ///
     /// Appends an item to `enabledRegions`.
     ///

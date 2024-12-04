@@ -18,6 +18,8 @@ pub struct QPluginCard {
     pub plugin_type: crate::types::PluginType,
     /// <p>The unique identifier of the plugin used by the card.</p>
     pub plugin_id: ::std::string::String,
+    /// <p>The action identifier of the action to be performed by the plugin card.</p>
+    pub action_identifier: ::std::option::Option<::std::string::String>,
 }
 impl QPluginCard {
     /// <p>The unique identifier of the plugin card.</p>
@@ -53,6 +55,10 @@ impl QPluginCard {
         use std::ops::Deref;
         self.plugin_id.deref()
     }
+    /// <p>The action identifier of the action to be performed by the plugin card.</p>
+    pub fn action_identifier(&self) -> ::std::option::Option<&str> {
+        self.action_identifier.as_deref()
+    }
 }
 impl QPluginCard {
     /// Creates a new builder-style object to manufacture [`QPluginCard`](crate::types::QPluginCard).
@@ -72,6 +78,7 @@ pub struct QPluginCardBuilder {
     pub(crate) prompt: ::std::option::Option<::std::string::String>,
     pub(crate) plugin_type: ::std::option::Option<crate::types::PluginType>,
     pub(crate) plugin_id: ::std::option::Option<::std::string::String>,
+    pub(crate) action_identifier: ::std::option::Option<::std::string::String>,
 }
 impl QPluginCardBuilder {
     /// <p>The unique identifier of the plugin card.</p>
@@ -184,6 +191,20 @@ impl QPluginCardBuilder {
     pub fn get_plugin_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.plugin_id
     }
+    /// <p>The action identifier of the action to be performed by the plugin card.</p>
+    pub fn action_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.action_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The action identifier of the action to be performed by the plugin card.</p>
+    pub fn set_action_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.action_identifier = input;
+        self
+    }
+    /// <p>The action identifier of the action to be performed by the plugin card.</p>
+    pub fn get_action_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_identifier
+    }
     /// Consumes the builder and constructs a [`QPluginCard`](crate::types::QPluginCard).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::QPluginCardBuilder::id)
@@ -237,6 +258,7 @@ impl QPluginCardBuilder {
                     "plugin_id was not specified but it is required when building QPluginCard",
                 )
             })?,
+            action_identifier: self.action_identifier,
         })
     }
 }

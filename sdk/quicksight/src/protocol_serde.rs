@@ -97,6 +97,8 @@ pub(crate) mod shape_delete_data_set_refresh_properties;
 
 pub(crate) mod shape_delete_data_source;
 
+pub(crate) mod shape_delete_default_q_business_application;
+
 pub(crate) mod shape_delete_folder;
 
 pub(crate) mod shape_delete_folder_membership;
@@ -183,6 +185,8 @@ pub(crate) mod shape_describe_data_source;
 
 pub(crate) mod shape_describe_data_source_permissions;
 
+pub(crate) mod shape_describe_default_q_business_application;
+
 pub(crate) mod shape_describe_folder;
 
 pub(crate) mod shape_describe_folder_permissions;
@@ -204,6 +208,8 @@ pub(crate) mod shape_describe_key_registration;
 pub(crate) mod shape_describe_namespace;
 
 pub(crate) mod shape_describe_q_personalization_configuration;
+
+pub(crate) mod shape_describe_quick_sight_q_search_configuration;
 
 pub(crate) mod shape_describe_refresh_schedule;
 
@@ -238,6 +244,8 @@ pub(crate) mod shape_describe_vpc_connection;
 pub(crate) mod shape_generate_embed_url_for_anonymous_user;
 
 pub(crate) mod shape_generate_embed_url_for_registered_user;
+
+pub(crate) mod shape_generate_embed_url_for_registered_user_with_identity;
 
 pub(crate) mod shape_get_dashboard_embed_url;
 
@@ -311,6 +319,8 @@ pub(crate) mod shape_list_users;
 
 pub(crate) mod shape_list_vpc_connections;
 
+pub(crate) mod shape_predict_qa_results;
+
 pub(crate) mod shape_put_data_set_refresh_properties;
 
 pub(crate) mod shape_register_user;
@@ -351,6 +361,8 @@ pub(crate) mod shape_update_analysis;
 
 pub(crate) mod shape_update_analysis_permissions;
 
+pub(crate) mod shape_update_application_with_token_exchange_grant;
+
 pub(crate) mod shape_update_brand;
 
 pub(crate) mod shape_update_brand_assignment;
@@ -377,6 +389,8 @@ pub(crate) mod shape_update_data_source;
 
 pub(crate) mod shape_update_data_source_permissions;
 
+pub(crate) mod shape_update_default_q_business_application;
+
 pub(crate) mod shape_update_folder;
 
 pub(crate) mod shape_update_folder_permissions;
@@ -394,6 +408,8 @@ pub(crate) mod shape_update_key_registration;
 pub(crate) mod shape_update_public_sharing_settings;
 
 pub(crate) mod shape_update_q_personalization_configuration;
+
+pub(crate) mod shape_update_quick_sight_q_search_configuration;
 
 pub(crate) mod shape_update_refresh_schedule;
 
@@ -493,6 +509,8 @@ pub(crate) mod shape_generate_embed_url_for_anonymous_user_input;
 
 pub(crate) mod shape_generate_embed_url_for_registered_user_input;
 
+pub(crate) mod shape_generate_embed_url_for_registered_user_with_identity_input;
+
 pub(crate) mod shape_identity_type_not_supported_exception;
 
 pub(crate) mod shape_internal_failure_exception;
@@ -508,6 +526,8 @@ pub(crate) mod shape_invalid_request_exception;
 pub(crate) mod shape_limit_exceeded_exception;
 
 pub(crate) mod shape_precondition_not_met_exception;
+
+pub(crate) mod shape_predict_qa_results_input;
 
 pub(crate) mod shape_put_data_set_refresh_properties_input;
 
@@ -583,6 +603,8 @@ pub(crate) mod shape_update_data_source_input;
 
 pub(crate) mod shape_update_data_source_permissions_input;
 
+pub(crate) mod shape_update_default_q_business_application_input;
+
 pub(crate) mod shape_update_folder_input;
 
 pub(crate) mod shape_update_folder_permissions_input;
@@ -600,6 +622,8 @@ pub(crate) mod shape_update_key_registration_input;
 pub(crate) mod shape_update_public_sharing_settings_input;
 
 pub(crate) mod shape_update_q_personalization_configuration_input;
+
+pub(crate) mod shape_update_quick_sight_q_search_configuration_input;
 
 pub(crate) mod shape_update_refresh_schedule_input;
 
@@ -802,6 +826,10 @@ pub(crate) mod shape_namespaces;
 pub(crate) mod shape_parameters;
 
 pub(crate) mod shape_physical_table;
+
+pub(crate) mod shape_qa_result;
+
+pub(crate) mod shape_qa_results;
 
 pub(crate) mod shape_refresh_schedule;
 
@@ -1107,6 +1135,8 @@ pub(crate) mod shape_dashboard_version_summary;
 
 pub(crate) mod shape_dashboard_visual_publish_options;
 
+pub(crate) mod shape_dashboard_visual_result;
+
 pub(crate) mod shape_data_color_palette;
 
 pub(crate) mod shape_data_point_drill_up_down_option;
@@ -1168,6 +1198,8 @@ pub(crate) mod shape_filter_group;
 pub(crate) mod shape_filter_group_list;
 
 pub(crate) mod shape_folder_summary;
+
+pub(crate) mod shape_generated_answer_result;
 
 pub(crate) mod shape_geo_spatial_column_group;
 

@@ -21,5 +21,23 @@ pub fn ser_create_project_input_input(
     if let Some(var_6) = &input.name {
         object.key("name").string(var_6.as_str());
     }
+    if let Some(var_7) = &input.project_profile_id {
+        object.key("projectProfileId").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.user_parameters {
+        let mut array_9 = object.key("userParameters").start_array();
+        for item_10 in var_8 {
+            {
+                #[allow(unused_mut)]
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_environment_configuration_user_parameter::ser_environment_configuration_user_parameter(
+                    &mut object_11,
+                    item_10,
+                )?;
+                object_11.finish();
+            }
+        }
+        array_9.finish();
+    }
     Ok(())
 }

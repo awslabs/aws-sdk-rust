@@ -164,6 +164,20 @@ impl UpdateDomainFluentBuilder {
     pub fn get_domain_execution_role(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_execution_role()
     }
+    /// <p>The service role of the domain.</p>
+    pub fn service_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.service_role(input.into());
+        self
+    }
+    /// <p>The service role of the domain.</p>
+    pub fn set_service_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_service_role(input);
+        self
+    }
+    /// <p>The service role of the domain.</p>
+    pub fn get_service_role(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_role()
+    }
     /// <p>The name to be updated as part of the <code>UpdateDomain</code> action.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());

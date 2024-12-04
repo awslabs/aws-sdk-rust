@@ -71,6 +71,20 @@ pub fn de_data_share(
                 builder = builder.set_managed_by(var_5);
             }
             ,
+            s if s.matches("DataShareType") /* DataShareType com.amazonaws.redshift#DataShare$DataShareType */ =>  {
+                let var_6 =
+                    Some(
+                        Result::<crate::types::DataShareType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::DataShareType::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_data_share_type(var_6);
+            }
+            ,
             _ => {}
         }
     }

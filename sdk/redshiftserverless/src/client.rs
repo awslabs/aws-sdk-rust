@@ -225,6 +225,8 @@ mod list_custom_domain_associations;
 
 mod list_endpoint_access;
 
+mod list_managed_workgroups;
+
 mod list_namespaces;
 
 mod list_recovery_points;

@@ -71,6 +71,8 @@ pub(crate) mod shape_check_schema_version_validity;
 
 pub(crate) mod shape_create_blueprint;
 
+pub(crate) mod shape_create_catalog;
+
 pub(crate) mod shape_create_classifier;
 
 pub(crate) mod shape_create_column_statistics_task_settings;
@@ -86,6 +88,12 @@ pub(crate) mod shape_create_data_quality_ruleset;
 pub(crate) mod shape_create_database;
 
 pub(crate) mod shape_create_dev_endpoint;
+
+pub(crate) mod shape_create_integration;
+
+pub(crate) mod shape_create_integration_resource_property;
+
+pub(crate) mod shape_create_integration_table_properties;
 
 pub(crate) mod shape_create_job;
 
@@ -119,6 +127,8 @@ pub(crate) mod shape_create_workflow;
 
 pub(crate) mod shape_delete_blueprint;
 
+pub(crate) mod shape_delete_catalog;
+
 pub(crate) mod shape_delete_classifier;
 
 pub(crate) mod shape_delete_column_statistics_for_partition;
@@ -138,6 +148,10 @@ pub(crate) mod shape_delete_data_quality_ruleset;
 pub(crate) mod shape_delete_database;
 
 pub(crate) mod shape_delete_dev_endpoint;
+
+pub(crate) mod shape_delete_integration;
+
+pub(crate) mod shape_delete_integration_table_properties;
 
 pub(crate) mod shape_delete_job;
 
@@ -173,13 +187,25 @@ pub(crate) mod shape_delete_user_defined_function;
 
 pub(crate) mod shape_delete_workflow;
 
+pub(crate) mod shape_describe_connection_type;
+
+pub(crate) mod shape_describe_entity;
+
+pub(crate) mod shape_describe_inbound_integrations;
+
+pub(crate) mod shape_describe_integrations;
+
 pub(crate) mod shape_get_blueprint;
 
 pub(crate) mod shape_get_blueprint_run;
 
 pub(crate) mod shape_get_blueprint_runs;
 
+pub(crate) mod shape_get_catalog;
+
 pub(crate) mod shape_get_catalog_import_status;
+
+pub(crate) mod shape_get_catalogs;
 
 pub(crate) mod shape_get_classifier;
 
@@ -230,6 +256,12 @@ pub(crate) mod shape_get_dataflow_graph;
 pub(crate) mod shape_get_dev_endpoint;
 
 pub(crate) mod shape_get_dev_endpoints;
+
+pub(crate) mod shape_get_entity_records;
+
+pub(crate) mod shape_get_integration_resource_property;
+
+pub(crate) mod shape_get_integration_table_properties;
 
 pub(crate) mod shape_get_job;
 
@@ -323,6 +355,8 @@ pub(crate) mod shape_list_blueprints;
 
 pub(crate) mod shape_list_column_statistics_task_runs;
 
+pub(crate) mod shape_list_connection_types;
+
 pub(crate) mod shape_list_crawlers;
 
 pub(crate) mod shape_list_crawls;
@@ -342,6 +376,8 @@ pub(crate) mod shape_list_data_quality_statistic_annotations;
 pub(crate) mod shape_list_data_quality_statistics;
 
 pub(crate) mod shape_list_dev_endpoints;
+
+pub(crate) mod shape_list_entities;
 
 pub(crate) mod shape_list_jobs;
 
@@ -364,6 +400,8 @@ pub(crate) mod shape_list_triggers;
 pub(crate) mod shape_list_usage_profiles;
 
 pub(crate) mod shape_list_workflows;
+
+pub(crate) mod shape_modify_integration;
 
 pub(crate) mod shape_put_data_catalog_encryption_settings;
 
@@ -439,6 +477,8 @@ pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_blueprint;
 
+pub(crate) mod shape_update_catalog;
+
 pub(crate) mod shape_update_classifier;
 
 pub(crate) mod shape_update_column_statistics_for_partition;
@@ -458,6 +498,10 @@ pub(crate) mod shape_update_data_quality_ruleset;
 pub(crate) mod shape_update_database;
 
 pub(crate) mod shape_update_dev_endpoint;
+
+pub(crate) mod shape_update_integration_resource_property;
+
+pub(crate) mod shape_update_integration_table_properties;
 
 pub(crate) mod shape_update_job;
 
@@ -565,6 +609,8 @@ pub(crate) mod shape_crawler_stopping_exception;
 
 pub(crate) mod shape_create_blueprint_input;
 
+pub(crate) mod shape_create_catalog_input;
+
 pub(crate) mod shape_create_classifier_input;
 
 pub(crate) mod shape_create_column_statistics_task_settings_input;
@@ -580,6 +626,12 @@ pub(crate) mod shape_create_data_quality_ruleset_input;
 pub(crate) mod shape_create_database_input;
 
 pub(crate) mod shape_create_dev_endpoint_input;
+
+pub(crate) mod shape_create_integration_input;
+
+pub(crate) mod shape_create_integration_resource_property_input;
+
+pub(crate) mod shape_create_integration_table_properties_input;
 
 pub(crate) mod shape_create_job_input;
 
@@ -613,6 +665,8 @@ pub(crate) mod shape_create_workflow_input;
 
 pub(crate) mod shape_delete_blueprint_input;
 
+pub(crate) mod shape_delete_catalog_input;
+
 pub(crate) mod shape_delete_classifier_input;
 
 pub(crate) mod shape_delete_column_statistics_for_partition_input;
@@ -632,6 +686,10 @@ pub(crate) mod shape_delete_data_quality_ruleset_input;
 pub(crate) mod shape_delete_database_input;
 
 pub(crate) mod shape_delete_dev_endpoint_input;
+
+pub(crate) mod shape_delete_integration_input;
+
+pub(crate) mod shape_delete_integration_table_properties_input;
 
 pub(crate) mod shape_delete_job_input;
 
@@ -667,6 +725,14 @@ pub(crate) mod shape_delete_user_defined_function_input;
 
 pub(crate) mod shape_delete_workflow_input;
 
+pub(crate) mod shape_describe_connection_type_input;
+
+pub(crate) mod shape_describe_entity_input;
+
+pub(crate) mod shape_describe_inbound_integrations_input;
+
+pub(crate) mod shape_describe_integrations_input;
+
 pub(crate) mod shape_entity_not_found_exception;
 
 pub(crate) mod shape_federated_resource_already_exists_exception;
@@ -682,6 +748,10 @@ pub(crate) mod shape_get_blueprint_run_input;
 pub(crate) mod shape_get_blueprint_runs_input;
 
 pub(crate) mod shape_get_catalog_import_status_input;
+
+pub(crate) mod shape_get_catalog_input;
+
+pub(crate) mod shape_get_catalogs_input;
 
 pub(crate) mod shape_get_classifier_input;
 
@@ -732,6 +802,12 @@ pub(crate) mod shape_get_dataflow_graph_input;
 pub(crate) mod shape_get_dev_endpoint_input;
 
 pub(crate) mod shape_get_dev_endpoints_input;
+
+pub(crate) mod shape_get_entity_records_input;
+
+pub(crate) mod shape_get_integration_resource_property_input;
+
+pub(crate) mod shape_get_integration_table_properties_input;
 
 pub(crate) mod shape_get_job_bookmark_input;
 
@@ -831,15 +907,29 @@ pub(crate) mod shape_illegal_workflow_state_exception;
 
 pub(crate) mod shape_import_catalog_to_glue_input;
 
+pub(crate) mod shape_integration_conflict_operation_fault;
+
+pub(crate) mod shape_integration_not_found_fault;
+
+pub(crate) mod shape_integration_quota_exceeded_fault;
+
+pub(crate) mod shape_internal_server_exception;
+
 pub(crate) mod shape_internal_service_exception;
 
 pub(crate) mod shape_invalid_input_exception;
 
+pub(crate) mod shape_invalid_integration_state_fault;
+
 pub(crate) mod shape_invalid_state_exception;
+
+pub(crate) mod shape_kms_key_not_accessible_fault;
 
 pub(crate) mod shape_list_blueprints_input;
 
 pub(crate) mod shape_list_column_statistics_task_runs_input;
+
+pub(crate) mod shape_list_connection_types_input;
 
 pub(crate) mod shape_list_crawlers_input;
 
@@ -860,6 +950,8 @@ pub(crate) mod shape_list_data_quality_statistic_annotations_input;
 pub(crate) mod shape_list_data_quality_statistics_input;
 
 pub(crate) mod shape_list_dev_endpoints_input;
+
+pub(crate) mod shape_list_entities_input;
 
 pub(crate) mod shape_list_jobs_input;
 
@@ -884,6 +976,8 @@ pub(crate) mod shape_list_usage_profiles_input;
 pub(crate) mod shape_list_workflows_input;
 
 pub(crate) mod shape_ml_transform_not_ready_exception;
+
+pub(crate) mod shape_modify_integration_input;
 
 pub(crate) mod shape_no_schedule_exception;
 
@@ -910,6 +1004,8 @@ pub(crate) mod shape_register_schema_version_input;
 pub(crate) mod shape_remove_schema_version_metadata_input;
 
 pub(crate) mod shape_reset_job_bookmark_input;
+
+pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_resource_not_ready_exception;
 
@@ -971,6 +1067,8 @@ pub(crate) mod shape_stop_workflow_run_input;
 
 pub(crate) mod shape_tag_resource_input;
 
+pub(crate) mod shape_target_resource_not_found;
+
 pub(crate) mod shape_test_connection_input;
 
 pub(crate) mod shape_throttling_exception;
@@ -978,6 +1076,8 @@ pub(crate) mod shape_throttling_exception;
 pub(crate) mod shape_untag_resource_input;
 
 pub(crate) mod shape_update_blueprint_input;
+
+pub(crate) mod shape_update_catalog_input;
 
 pub(crate) mod shape_update_classifier_input;
 
@@ -998,6 +1098,10 @@ pub(crate) mod shape_update_data_quality_ruleset_input;
 pub(crate) mod shape_update_database_input;
 
 pub(crate) mod shape_update_dev_endpoint_input;
+
+pub(crate) mod shape_update_integration_resource_property_input;
+
+pub(crate) mod shape_update_integration_table_properties_input;
 
 pub(crate) mod shape_update_job_from_source_control_input;
 
@@ -1037,6 +1141,8 @@ pub(crate) mod shape_annotation_list;
 
 pub(crate) mod shape_audit_context;
 
+pub(crate) mod shape_auth_configuration;
+
 pub(crate) mod shape_batch_get_partition_value_list;
 
 pub(crate) mod shape_batch_get_table_optimizer_entry;
@@ -1063,9 +1169,17 @@ pub(crate) mod shape_blueprint_runs;
 
 pub(crate) mod shape_blueprints;
 
+pub(crate) mod shape_capabilities;
+
+pub(crate) mod shape_catalog;
+
 pub(crate) mod shape_catalog_entry;
 
 pub(crate) mod shape_catalog_import_status;
+
+pub(crate) mod shape_catalog_input;
+
+pub(crate) mod shape_catalog_list;
 
 pub(crate) mod shape_classifier;
 
@@ -1095,11 +1209,15 @@ pub(crate) mod shape_column_statistics_task_runs_list;
 
 pub(crate) mod shape_column_statistics_task_settings;
 
+pub(crate) mod shape_compute_environment_configuration_map;
+
 pub(crate) mod shape_connection;
 
 pub(crate) mod shape_connection_input;
 
 pub(crate) mod shape_connection_list;
+
+pub(crate) mod shape_connection_type_list;
 
 pub(crate) mod shape_connections_list;
 
@@ -1193,6 +1311,8 @@ pub(crate) mod shape_dev_endpoint_names;
 
 pub(crate) mod shape_encryption_configuration;
 
+pub(crate) mod shape_entity_list;
+
 pub(crate) mod shape_error_by_name;
 
 pub(crate) mod shape_evaluation_metrics;
@@ -1200,6 +1320,8 @@ pub(crate) mod shape_evaluation_metrics;
 pub(crate) mod shape_event_batching_condition;
 
 pub(crate) mod shape_execution_property;
+
+pub(crate) mod shape_fields_list;
 
 pub(crate) mod shape_get_connections_filter;
 
@@ -1210,6 +1332,18 @@ pub(crate) mod shape_get_table_versions_list;
 pub(crate) mod shape_glue_table;
 
 pub(crate) mod shape_glue_tables;
+
+pub(crate) mod shape_inbound_integrations_list;
+
+pub(crate) mod shape_integration_additional_encryption_context_map;
+
+pub(crate) mod shape_integration_error_list;
+
+pub(crate) mod shape_integration_filter;
+
+pub(crate) mod shape_integration_tags_list;
+
+pub(crate) mod shape_integrations_list;
 
 pub(crate) mod shape_job;
 
@@ -1271,9 +1405,13 @@ pub(crate) mod shape_predicate;
 
 pub(crate) mod shape_profile_configuration;
 
+pub(crate) mod shape_properties_map;
+
 pub(crate) mod shape_property_predicate;
 
 pub(crate) mod shape_query_session_context;
+
+pub(crate) mod shape_records;
 
 pub(crate) mod shape_recrawl_policy;
 
@@ -1313,6 +1451,10 @@ pub(crate) mod shape_sort_criterion;
 
 pub(crate) mod shape_source_control_details;
 
+pub(crate) mod shape_source_processing_properties;
+
+pub(crate) mod shape_source_table_config;
+
 pub(crate) mod shape_statement;
 
 pub(crate) mod shape_statement_list;
@@ -1343,7 +1485,13 @@ pub(crate) mod shape_table_version;
 
 pub(crate) mod shape_table_version_errors;
 
+pub(crate) mod shape_tag;
+
 pub(crate) mod shape_tags_map;
+
+pub(crate) mod shape_target_processing_properties;
+
+pub(crate) mod shape_target_table_config;
 
 pub(crate) mod shape_task_run_filter_criteria;
 
@@ -1425,6 +1573,8 @@ pub(crate) mod shape_authentication_configuration;
 
 pub(crate) mod shape_authentication_configuration_input;
 
+pub(crate) mod shape_authentication_types;
+
 pub(crate) mod shape_basic_catalog_target;
 
 pub(crate) mod shape_batch_get_table_optimizer_error;
@@ -1446,6 +1596,10 @@ pub(crate) mod shape_catalog_hudi_source;
 pub(crate) mod shape_catalog_kafka_source;
 
 pub(crate) mod shape_catalog_kinesis_source;
+
+pub(crate) mod shape_catalog_properties;
+
+pub(crate) mod shape_catalog_properties_output;
 
 pub(crate) mod shape_catalog_source;
 
@@ -1473,6 +1627,12 @@ pub(crate) mod shape_column_statistics_data;
 
 pub(crate) mod shape_column_statistics_error;
 
+pub(crate) mod shape_compute_environment_configuration;
+
+pub(crate) mod shape_compute_environment_list;
+
+pub(crate) mod shape_compute_environments;
+
 pub(crate) mod shape_condition;
 
 pub(crate) mod shape_configuration_map;
@@ -1482,6 +1642,8 @@ pub(crate) mod shape_configuration_object;
 pub(crate) mod shape_connection_password_encryption;
 
 pub(crate) mod shape_connection_properties;
+
+pub(crate) mod shape_connection_type_brief;
 
 pub(crate) mod shape_connector_data_source;
 
@@ -1496,6 +1658,8 @@ pub(crate) mod shape_csv_classifier;
 pub(crate) mod shape_custom_code;
 
 pub(crate) mod shape_custom_entity_type;
+
+pub(crate) mod shape_data_operations;
 
 pub(crate) mod shape_data_quality_analyzer_result;
 
@@ -1537,17 +1701,25 @@ pub(crate) mod shape_dynamo_db_target;
 
 pub(crate) mod shape_encryption_at_rest;
 
+pub(crate) mod shape_entity;
+
 pub(crate) mod shape_error_detail;
 
 pub(crate) mod shape_evaluate_data_quality;
 
 pub(crate) mod shape_evaluate_data_quality_multi_frame;
 
+pub(crate) mod shape_execution_attempt;
+
 pub(crate) mod shape_export_labels_task_run_properties;
+
+pub(crate) mod shape_federated_catalog;
 
 pub(crate) mod shape_federated_database;
 
 pub(crate) mod shape_federated_table;
+
+pub(crate) mod shape_field;
 
 pub(crate) mod shape_fill_missing_values;
 
@@ -1576,6 +1748,16 @@ pub(crate) mod shape_iceberg_input;
 pub(crate) mod shape_iceberg_target;
 
 pub(crate) mod shape_import_labels_task_run_properties;
+
+pub(crate) mod shape_inbound_integration;
+
+pub(crate) mod shape_integration;
+
+pub(crate) mod shape_integration_error;
+
+pub(crate) mod shape_integration_partition;
+
+pub(crate) mod shape_integration_partition_spec_list;
 
 pub(crate) mod shape_jdbc_connector_source;
 
@@ -1639,9 +1821,13 @@ pub(crate) mod shape_postgre_sql_catalog_target;
 
 pub(crate) mod shape_predecessor_list;
 
+pub(crate) mod shape_primary_key_list;
+
 pub(crate) mod shape_principal_permissions;
 
 pub(crate) mod shape_principal_permissions_list;
+
+pub(crate) mod shape_property;
 
 pub(crate) mod shape_property_map;
 
@@ -1717,6 +1903,8 @@ pub(crate) mod shape_snowflake_source;
 
 pub(crate) mod shape_snowflake_target;
 
+pub(crate) mod shape_source_table_fields_list;
+
 pub(crate) mod shape_spark_connector_source;
 
 pub(crate) mod shape_spark_connector_target;
@@ -1751,6 +1939,8 @@ pub(crate) mod shape_table_status;
 
 pub(crate) mod shape_table_version_error;
 
+pub(crate) mod shape_target_redshift_catalog;
+
 pub(crate) mod shape_task_run;
 
 pub(crate) mod shape_unfiltered_partition;
@@ -1773,9 +1963,13 @@ pub(crate) mod shape_xml_classifier;
 
 pub(crate) mod shape_aggregate_operation;
 
+pub(crate) mod shape_allowed_values;
+
 pub(crate) mod shape_amazon_redshift_node_data;
 
 pub(crate) mod shape_backfill_errors;
+
+pub(crate) mod shape_basic_authentication_credentials;
 
 pub(crate) mod shape_binary_column_statistics_data;
 
@@ -1801,6 +1995,12 @@ pub(crate) mod shape_csv_header;
 
 pub(crate) mod shape_custom_datatypes;
 
+pub(crate) mod shape_custom_properties;
+
+pub(crate) mod shape_data_lake_access_properties;
+
+pub(crate) mod shape_data_lake_access_properties_output;
+
 pub(crate) mod shape_data_lake_principal;
 
 pub(crate) mod shape_date_column_statistics_data;
@@ -1824,6 +2024,8 @@ pub(crate) mod shape_edge_list;
 pub(crate) mod shape_error_details;
 
 pub(crate) mod shape_evaluated_metrics_map;
+
+pub(crate) mod shape_field_filter_operators_list;
 
 pub(crate) mod shape_filter_expression;
 
@@ -1850,6 +2052,8 @@ pub(crate) mod shape_kafka_streaming_source_options;
 pub(crate) mod shape_key_schema_element_list;
 
 pub(crate) mod shape_kinesis_streaming_source_options;
+
+pub(crate) mod shape_list_of_string;
 
 pub(crate) mod shape_location_string_list;
 
@@ -1882,6 +2086,10 @@ pub(crate) mod shape_orphan_file_deletion_metrics;
 pub(crate) mod shape_other_metadata_value_list;
 
 pub(crate) mod shape_predecessor;
+
+pub(crate) mod shape_property_name_overrides;
+
+pub(crate) mod shape_property_types;
 
 pub(crate) mod shape_recipe_reference;
 
@@ -1937,6 +2145,8 @@ pub(crate) mod shape_view_representation_list;
 
 pub(crate) mod shape_view_sub_objects_list;
 
+pub(crate) mod shape_allowed_value;
+
 pub(crate) mod shape_allowed_values_string_list;
 
 pub(crate) mod shape_amazon_redshift_advanced_option;
@@ -1978,6 +2188,8 @@ pub(crate) mod shape_new_rules;
 pub(crate) mod shape_node;
 
 pub(crate) mod shape_o_auth2_client_application;
+
+pub(crate) mod shape_o_auth2_credentials;
 
 pub(crate) mod shape_option;
 

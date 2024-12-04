@@ -94,6 +94,9 @@ pub mod list_custom_domain_associations;
 /// Types for the `ListEndpointAccess` operation.
 pub mod list_endpoint_access;
 
+/// Types for the `ListManagedWorkgroups` operation.
+pub mod list_managed_workgroups;
+
 /// Types for the `ListNamespaces` operation.
 pub mod list_namespaces;
 

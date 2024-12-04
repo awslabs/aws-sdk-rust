@@ -8,6 +8,72 @@ pub(crate) fn batch_get_data_quality_result_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_integration_output_output_correct_errors(
+    mut builder: crate::operation::create_integration::builders::CreateIntegrationOutputBuilder,
+) -> crate::operation::create_integration::builders::CreateIntegrationOutputBuilder {
+    if builder.source_arn.is_none() {
+        builder.source_arn = Some(Default::default())
+    }
+    if builder.target_arn.is_none() {
+        builder.target_arn = Some(Default::default())
+    }
+    if builder.integration_name.is_none() {
+        builder.integration_name = Some(Default::default())
+    }
+    if builder.integration_arn.is_none() {
+        builder.integration_arn = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::IntegrationStatus>().ok()
+    }
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn create_integration_resource_property_output_output_correct_errors(
+    mut builder: crate::operation::create_integration_resource_property::builders::CreateIntegrationResourcePropertyOutputBuilder,
+) -> crate::operation::create_integration_resource_property::builders::CreateIntegrationResourcePropertyOutputBuilder {
+    if builder.resource_arn.is_none() {
+        builder.resource_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn delete_integration_output_output_correct_errors(
+    mut builder: crate::operation::delete_integration::builders::DeleteIntegrationOutputBuilder,
+) -> crate::operation::delete_integration::builders::DeleteIntegrationOutputBuilder {
+    if builder.source_arn.is_none() {
+        builder.source_arn = Some(Default::default())
+    }
+    if builder.target_arn.is_none() {
+        builder.target_arn = Some(Default::default())
+    }
+    if builder.integration_name.is_none() {
+        builder.integration_name = Some(Default::default())
+    }
+    if builder.integration_arn.is_none() {
+        builder.integration_arn = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::IntegrationStatus>().ok()
+    }
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn get_catalogs_output_output_correct_errors(
+    mut builder: crate::operation::get_catalogs::builders::GetCatalogsOutputBuilder,
+) -> crate::operation::get_catalogs::builders::GetCatalogsOutputBuilder {
+    if builder.catalog_list.is_none() {
+        builder.catalog_list = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_databases_output_output_correct_errors(
     mut builder: crate::operation::get_databases::builders::GetDatabasesOutputBuilder,
 ) -> crate::operation::get_databases::builders::GetDatabasesOutputBuilder {
@@ -49,6 +115,62 @@ pub(crate) fn list_ml_transforms_output_output_correct_errors(
 ) -> crate::operation::list_ml_transforms::builders::ListMlTransformsOutputBuilder {
     if builder.transform_ids.is_none() {
         builder.transform_ids = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn modify_integration_output_output_correct_errors(
+    mut builder: crate::operation::modify_integration::builders::ModifyIntegrationOutputBuilder,
+) -> crate::operation::modify_integration::builders::ModifyIntegrationOutputBuilder {
+    if builder.source_arn.is_none() {
+        builder.source_arn = Some(Default::default())
+    }
+    if builder.target_arn.is_none() {
+        builder.target_arn = Some(Default::default())
+    }
+    if builder.integration_name.is_none() {
+        builder.integration_name = Some(Default::default())
+    }
+    if builder.integration_arn.is_none() {
+        builder.integration_arn = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::IntegrationStatus>().ok()
+    }
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn auth_configuration_correct_errors(
+    mut builder: crate::types::builders::AuthConfigurationBuilder,
+) -> crate::types::builders::AuthConfigurationBuilder {
+    if builder.authentication_type.is_none() {
+        builder.authentication_type = {
+            let builder = crate::types::builders::PropertyBuilder::default();
+            crate::serde_util::property_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn capabilities_correct_errors(mut builder: crate::types::builders::CapabilitiesBuilder) -> crate::types::builders::CapabilitiesBuilder {
+    if builder.supported_authentication_types.is_none() {
+        builder.supported_authentication_types = Some(Default::default())
+    }
+    if builder.supported_data_operations.is_none() {
+        builder.supported_data_operations = Some(Default::default())
+    }
+    if builder.supported_compute_environments.is_none() {
+        builder.supported_compute_environments = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn catalog_correct_errors(mut builder: crate::types::builders::CatalogBuilder) -> crate::types::builders::CatalogBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
     }
     builder
 }
@@ -151,6 +273,36 @@ pub(crate) fn column_statistics_correct_errors(
     builder
 }
 
+pub(crate) fn compute_environment_configuration_correct_errors(
+    mut builder: crate::types::builders::ComputeEnvironmentConfigurationBuilder,
+) -> crate::types::builders::ComputeEnvironmentConfigurationBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.description.is_none() {
+        builder.description = Some(Default::default())
+    }
+    if builder.compute_environment.is_none() {
+        builder.compute_environment = "no value was set".parse::<crate::types::ComputeEnvironment>().ok()
+    }
+    if builder.supported_authentication_types.is_none() {
+        builder.supported_authentication_types = Some(Default::default())
+    }
+    if builder.connection_options.is_none() {
+        builder.connection_options = Some(Default::default())
+    }
+    if builder.connection_property_name_overrides.is_none() {
+        builder.connection_property_name_overrides = Some(Default::default())
+    }
+    if builder.connection_option_name_overrides.is_none() {
+        builder.connection_option_name_overrides = Some(Default::default())
+    }
+    if builder.connection_properties_required_overrides.is_none() {
+        builder.connection_properties_required_overrides = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn connection_password_encryption_correct_errors(
     mut builder: crate::types::builders::ConnectionPasswordEncryptionBuilder,
 ) -> crate::types::builders::ConnectionPasswordEncryptionBuilder {
@@ -224,6 +376,49 @@ pub(crate) fn grok_classifier_correct_errors(
     builder
 }
 
+pub(crate) fn inbound_integration_correct_errors(
+    mut builder: crate::types::builders::InboundIntegrationBuilder,
+) -> crate::types::builders::InboundIntegrationBuilder {
+    if builder.source_arn.is_none() {
+        builder.source_arn = Some(Default::default())
+    }
+    if builder.target_arn.is_none() {
+        builder.target_arn = Some(Default::default())
+    }
+    if builder.integration_arn.is_none() {
+        builder.integration_arn = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::IntegrationStatus>().ok()
+    }
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn integration_correct_errors(mut builder: crate::types::builders::IntegrationBuilder) -> crate::types::builders::IntegrationBuilder {
+    if builder.source_arn.is_none() {
+        builder.source_arn = Some(Default::default())
+    }
+    if builder.target_arn.is_none() {
+        builder.target_arn = Some(Default::default())
+    }
+    if builder.integration_name.is_none() {
+        builder.integration_name = Some(Default::default())
+    }
+    if builder.integration_arn.is_none() {
+        builder.integration_arn = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::IntegrationStatus>().ok()
+    }
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn json_classifier_correct_errors(
     mut builder: crate::types::builders::JsonClassifierBuilder,
 ) -> crate::types::builders::JsonClassifierBuilder {
@@ -269,6 +464,31 @@ pub(crate) fn partition_value_list_correct_errors(
     builder
 }
 
+pub(crate) fn property_correct_errors(mut builder: crate::types::builders::PropertyBuilder) -> crate::types::builders::PropertyBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.description.is_none() {
+        builder.description = Some(Default::default())
+    }
+    if builder.required.is_none() {
+        builder.required = Some(Default::default())
+    }
+    if builder.property_types.is_none() {
+        builder.property_types = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn target_redshift_catalog_correct_errors(
+    mut builder: crate::types::builders::TargetRedshiftCatalogBuilder,
+) -> crate::types::builders::TargetRedshiftCatalogBuilder {
+    if builder.catalog_arn.is_none() {
+        builder.catalog_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn xml_classifier_correct_errors(
     mut builder: crate::types::builders::XmlClassifierBuilder,
 ) -> crate::types::builders::XmlClassifierBuilder {
@@ -309,6 +529,13 @@ pub(crate) fn aggregate_correct_errors(mut builder: crate::types::builders::Aggr
     }
     if builder.aggs.is_none() {
         builder.aggs = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn allowed_value_correct_errors(mut builder: crate::types::builders::AllowedValueBuilder) -> crate::types::builders::AllowedValueBuilder {
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
     }
     builder
 }

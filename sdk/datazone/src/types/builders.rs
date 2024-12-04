@@ -47,6 +47,8 @@ pub use crate::types::_domain_summary::DomainSummaryBuilder;
 
 pub use crate::types::_data_source_error_message::DataSourceErrorMessageBuilder;
 
+pub use crate::types::_data_source_run_lineage_summary::DataSourceRunLineageSummaryBuilder;
+
 pub use crate::types::_run_statistics_for_assets::RunStatisticsForAssetsBuilder;
 
 pub use crate::types::_data_source_run_summary::DataSourceRunSummaryBuilder;
@@ -60,6 +62,8 @@ pub use crate::types::_glue_self_grant_status_output::GlueSelfGrantStatusOutputB
 pub use crate::types::_schedule_configuration::ScheduleConfigurationBuilder;
 
 pub use crate::types::_form_output::FormOutputBuilder;
+
+pub use crate::types::_sage_maker_run_configuration_output::SageMakerRunConfigurationOutputBuilder;
 
 pub use crate::types::_redshift_run_configuration_output::RedshiftRunConfigurationOutputBuilder;
 
@@ -76,6 +80,8 @@ pub use crate::types::_filter_expression::FilterExpressionBuilder;
 pub use crate::types::_glue_run_configuration_output::GlueRunConfigurationOutputBuilder;
 
 pub use crate::types::_recommendation_configuration::RecommendationConfigurationBuilder;
+
+pub use crate::types::_sage_maker_run_configuration_input::SageMakerRunConfigurationInputBuilder;
 
 pub use crate::types::_redshift_run_configuration_input::RedshiftRunConfigurationInputBuilder;
 
@@ -121,11 +127,23 @@ pub use crate::types::_failure_cause::FailureCauseBuilder;
 
 pub use crate::types::_listing_revision::ListingRevisionBuilder;
 
+pub use crate::types::_environment_configuration::EnvironmentConfigurationBuilder;
+
+pub use crate::types::_environment_configuration_parameters_details::EnvironmentConfigurationParametersDetailsBuilder;
+
+pub use crate::types::_environment_configuration_parameter::EnvironmentConfigurationParameterBuilder;
+
+pub use crate::types::_environment_deployment_details::EnvironmentDeploymentDetailsBuilder;
+
+pub use crate::types::_environment_error::EnvironmentErrorBuilder;
+
+pub use crate::types::_environment_configuration_user_parameter::EnvironmentConfigurationUserParameterBuilder;
+
+pub use crate::types::_environment_parameter::EnvironmentParameterBuilder;
+
 pub use crate::types::_project_deletion_error::ProjectDeletionErrorBuilder;
 
 pub use crate::types::_custom_parameter::CustomParameterBuilder;
-
-pub use crate::types::_environment_parameter::EnvironmentParameterBuilder;
 
 pub use crate::types::_aws_console_link_parameters::AwsConsoleLinkParametersBuilder;
 
@@ -135,13 +153,69 @@ pub use crate::types::_cloud_formation_properties::CloudFormationPropertiesBuild
 
 pub use crate::types::_deployment::DeploymentBuilder;
 
-pub use crate::types::_environment_error::EnvironmentErrorBuilder;
-
 pub use crate::types::_configurable_environment_action::ConfigurableEnvironmentActionBuilder;
 
 pub use crate::types::_configurable_action_parameter::ConfigurableActionParameterBuilder;
 
 pub use crate::types::_resource::ResourceBuilder;
+
+pub use crate::types::_spark_glue_properties_output::SparkGluePropertiesOutputBuilder;
+
+pub use crate::types::_spark_glue_args::SparkGlueArgsBuilder;
+
+pub use crate::types::_spark_emr_properties_output::SparkEmrPropertiesOutputBuilder;
+
+pub use crate::types::_username_password::UsernamePasswordBuilder;
+
+pub use crate::types::_redshift_properties_output::RedshiftPropertiesOutputBuilder;
+
+pub use crate::types::_redshift_lineage_sync_configuration_output::RedshiftLineageSyncConfigurationOutputBuilder;
+
+pub use crate::types::_lineage_sync_schedule::LineageSyncScheduleBuilder;
+
+pub use crate::types::_iam_properties_output::IamPropertiesOutputBuilder;
+
+pub use crate::types::_hyper_pod_properties_output::HyperPodPropertiesOutputBuilder;
+
+pub use crate::types::_glue_properties_output::GluePropertiesOutputBuilder;
+
+pub use crate::types::_athena_properties_output::AthenaPropertiesOutputBuilder;
+
+pub use crate::types::_physical_endpoint::PhysicalEndpointBuilder;
+
+pub use crate::types::_glue_connection::GlueConnectionBuilder;
+
+pub use crate::types::_authentication_configuration::AuthenticationConfigurationBuilder;
+
+pub use crate::types::_o_auth2_properties::OAuth2PropertiesBuilder;
+
+pub use crate::types::_glue_o_auth2_credentials::GlueOAuth2CredentialsBuilder;
+
+pub use crate::types::_authorization_code_properties::AuthorizationCodePropertiesBuilder;
+
+pub use crate::types::_o_auth2_client_application::OAuth2ClientApplicationBuilder;
+
+pub use crate::types::_physical_connection_requirements::PhysicalConnectionRequirementsBuilder;
+
+pub use crate::types::_aws_location::AwsLocationBuilder;
+
+pub use crate::types::_spark_emr_properties_patch::SparkEmrPropertiesPatchBuilder;
+
+pub use crate::types::_redshift_properties_patch::RedshiftPropertiesPatchBuilder;
+
+pub use crate::types::_redshift_lineage_sync_configuration_input::RedshiftLineageSyncConfigurationInputBuilder;
+
+pub use crate::types::_iam_properties_patch::IamPropertiesPatchBuilder;
+
+pub use crate::types::_glue_properties_patch::GluePropertiesPatchBuilder;
+
+pub use crate::types::_glue_connection_patch::GlueConnectionPatchBuilder;
+
+pub use crate::types::_authentication_configuration_patch::AuthenticationConfigurationPatchBuilder;
+
+pub use crate::types::_basic_authentication_credentials::BasicAuthenticationCredentialsBuilder;
+
+pub use crate::types::_athena_properties_patch::AthenaPropertiesPatchBuilder;
 
 pub use crate::types::_row_filter_configuration::RowFilterConfigurationBuilder;
 
@@ -241,6 +315,8 @@ pub use crate::types::_subscription_grant_summary::SubscriptionGrantSummaryBuild
 
 pub use crate::types::_project_summary::ProjectSummaryBuilder;
 
+pub use crate::types::_project_profile_summary::ProjectProfileSummaryBuilder;
+
 pub use crate::types::_project_member::ProjectMemberBuilder;
 
 pub use crate::types::_group_details::GroupDetailsBuilder;
@@ -248,6 +324,8 @@ pub use crate::types::_group_details::GroupDetailsBuilder;
 pub use crate::types::_user_details::UserDetailsBuilder;
 
 pub use crate::types::_policy_grant_member::PolicyGrantMemberBuilder;
+
+pub use crate::types::_create_project_from_project_profile_policy_grant_detail::CreateProjectFromProjectProfilePolicyGrantDetailBuilder;
 
 pub use crate::types::_unit::UnitBuilder;
 
@@ -277,6 +355,16 @@ pub use crate::types::_notification_resource::NotificationResourceBuilder;
 
 pub use crate::types::_lineage_node_summary::LineageNodeSummaryBuilder;
 
+pub use crate::types::_lineage_event_summary::LineageEventSummaryBuilder;
+
+pub use crate::types::_open_lineage_run_event_summary::OpenLineageRunEventSummaryBuilder;
+
+pub use crate::types::_name_identifier::NameIdentifierBuilder;
+
+pub use crate::types::_job_run_summary::JobRunSummaryBuilder;
+
+pub use crate::types::_job_run_error::JobRunErrorBuilder;
+
 pub use crate::types::_environment_summary::EnvironmentSummaryBuilder;
 
 pub use crate::types::_environment_profile_summary::EnvironmentProfileSummaryBuilder;
@@ -291,13 +379,23 @@ pub use crate::types::_owner_user_properties_output::OwnerUserPropertiesOutputBu
 
 pub use crate::types::_data_source_run_activity::DataSourceRunActivityBuilder;
 
+pub use crate::types::_lineage_info::LineageInfoBuilder;
+
 pub use crate::types::_data_product_revision::DataProductRevisionBuilder;
+
+pub use crate::types::_connection_summary::ConnectionSummaryBuilder;
 
 pub use crate::types::_asset_revision::AssetRevisionBuilder;
 
 pub use crate::types::_asset_filter_summary::AssetFilterSummaryBuilder;
 
 pub use crate::types::_lineage_node_reference::LineageNodeReferenceBuilder;
+
+pub use crate::types::_lineage_run_details::LineageRunDetailsBuilder;
+
+pub use crate::types::_lineage_sql_query_run_details::LineageSqlQueryRunDetailsBuilder;
+
+pub use crate::types::_connection_credentials::ConnectionCredentialsBuilder;
 
 pub use crate::types::_subscribed_listing_input::SubscribedListingInputBuilder;
 
@@ -306,6 +404,24 @@ pub use crate::types::_subscribed_project_input::SubscribedProjectInputBuilder;
 pub use crate::types::_asset_target_name_map::AssetTargetNameMapBuilder;
 
 pub use crate::types::_listing_revision_input::ListingRevisionInputBuilder;
+
+pub use crate::types::_spark_glue_properties_input::SparkGluePropertiesInputBuilder;
+
+pub use crate::types::_spark_emr_properties_input::SparkEmrPropertiesInputBuilder;
+
+pub use crate::types::_redshift_properties_input::RedshiftPropertiesInputBuilder;
+
+pub use crate::types::_iam_properties_input::IamPropertiesInputBuilder;
+
+pub use crate::types::_hyper_pod_properties_input::HyperPodPropertiesInputBuilder;
+
+pub use crate::types::_glue_properties_input::GluePropertiesInputBuilder;
+
+pub use crate::types::_glue_connection_input::GlueConnectionInputBuilder;
+
+pub use crate::types::_authentication_configuration_input::AuthenticationConfigurationInputBuilder;
+
+pub use crate::types::_athena_properties_input::AthenaPropertiesInputBuilder;
 
 pub use crate::types::_accepted_asset_scope::AcceptedAssetScopeBuilder;
 

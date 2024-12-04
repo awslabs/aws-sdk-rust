@@ -28,5 +28,81 @@ pub fn ser_function_result(
     if let Some(var_8) = &input.response_state {
         object.key("responseState").string(var_8.as_str());
     }
+    if let Some(var_9) = &input.agent_id {
+        object.key("agentId").string(var_9.as_str());
+    }
     Ok(())
+}
+
+pub(crate) fn de_function_result<'a, I>(
+    tokens: &mut ::std::iter::Peekable<I>,
+) -> Result<Option<crate::types::FunctionResult>, ::aws_smithy_json::deserialize::error::DeserializeError>
+where
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
+{
+    match tokens.next().transpose()? {
+        Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::types::builders::FunctionResultBuilder::default();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "actionGroup" => {
+                            builder = builder.set_action_group(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "confirmationState" => {
+                            builder = builder.set_confirmation_state(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ConfirmationState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "function" => {
+                            builder = builder.set_function(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "responseBody" => {
+                            builder = builder.set_response_body(crate::protocol_serde::shape_response_body::de_response_body(tokens)?);
+                        }
+                        "responseState" => {
+                            builder = builder.set_response_state(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ResponseState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "agentId" => {
+                            builder = builder.set_agent_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
+                    other => {
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(crate::serde_util::function_result_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
+        }
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
+    }
 }

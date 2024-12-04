@@ -22,6 +22,12 @@ pub fn ser_plugin_auth_configuration(
             crate::protocol_serde::shape_no_auth_configuration::ser_no_auth_configuration(&mut object_3, inner)?;
             object_3.finish();
         }
+        crate::types::PluginAuthConfiguration::IdcAuthConfiguration(inner) => {
+            #[allow(unused_mut)]
+            let mut object_4 = object_2.key("idcAuthConfiguration").start_object();
+            crate::protocol_serde::shape_idc_auth_configuration::ser_idc_auth_configuration(&mut object_4, inner)?;
+            object_4.finish();
+        }
         crate::types::PluginAuthConfiguration::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "PluginAuthConfiguration",
@@ -77,6 +83,11 @@ where
                         "noAuthConfiguration" => Some(crate::types::PluginAuthConfiguration::NoAuthConfiguration(
                             crate::protocol_serde::shape_no_auth_configuration::de_no_auth_configuration(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'noAuthConfiguration' cannot be null")
+                            })?,
+                        )),
+                        "idcAuthConfiguration" => Some(crate::types::PluginAuthConfiguration::IdcAuthConfiguration(
+                            crate::protocol_serde::shape_idc_auth_configuration::de_idc_auth_configuration(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'idcAuthConfiguration' cannot be null")
                             })?,
                         )),
                         _ => {

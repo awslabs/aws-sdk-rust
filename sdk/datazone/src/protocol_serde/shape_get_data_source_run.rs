@@ -206,6 +206,11 @@ pub(crate) fn de_get_data_source_run(
                             .transpose()?,
                     );
                 }
+                "lineageSummary" => {
+                    builder = builder.set_lineage_summary(
+                        crate::protocol_serde::shape_data_source_run_lineage_summary::de_data_source_run_lineage_summary(tokens)?,
+                    );
+                }
                 "projectId" => {
                     builder = builder.set_project_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

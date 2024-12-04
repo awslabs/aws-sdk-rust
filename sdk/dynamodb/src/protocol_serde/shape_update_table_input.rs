@@ -69,17 +69,20 @@ pub fn ser_update_table_input_input(
     if let Some(var_22) = &input.deletion_protection_enabled {
         object.key("DeletionProtectionEnabled").boolean(*var_22);
     }
-    if let Some(var_23) = &input.on_demand_throughput {
-        #[allow(unused_mut)]
-        let mut object_24 = object.key("OnDemandThroughput").start_object();
-        crate::protocol_serde::shape_on_demand_throughput::ser_on_demand_throughput(&mut object_24, var_23)?;
-        object_24.finish();
+    if let Some(var_23) = &input.multi_region_consistency {
+        object.key("MultiRegionConsistency").string(var_23.as_str());
     }
-    if let Some(var_25) = &input.warm_throughput {
+    if let Some(var_24) = &input.on_demand_throughput {
         #[allow(unused_mut)]
-        let mut object_26 = object.key("WarmThroughput").start_object();
-        crate::protocol_serde::shape_warm_throughput::ser_warm_throughput(&mut object_26, var_25)?;
-        object_26.finish();
+        let mut object_25 = object.key("OnDemandThroughput").start_object();
+        crate::protocol_serde::shape_on_demand_throughput::ser_on_demand_throughput(&mut object_25, var_24)?;
+        object_25.finish();
+    }
+    if let Some(var_26) = &input.warm_throughput {
+        #[allow(unused_mut)]
+        let mut object_27 = object.key("WarmThroughput").start_object();
+        crate::protocol_serde::shape_warm_throughput::ser_warm_throughput(&mut object_27, var_26)?;
+        object_27.finish();
     }
     Ok(())
 }

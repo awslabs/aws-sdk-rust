@@ -183,4 +183,37 @@ impl CreateProjectFluentBuilder {
     pub fn get_domain_unit_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_unit_id()
     }
+    /// <p>The ID of the project profile.</p>
+    pub fn project_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.project_profile_id(input.into());
+        self
+    }
+    /// <p>The ID of the project profile.</p>
+    pub fn set_project_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_project_profile_id(input);
+        self
+    }
+    /// <p>The ID of the project profile.</p>
+    pub fn get_project_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_profile_id()
+    }
+    ///
+    /// Appends an item to `userParameters`.
+    ///
+    /// To override the contents of this collection use [`set_user_parameters`](Self::set_user_parameters).
+    ///
+    /// <p>The user parameters of the project.</p>
+    pub fn user_parameters(mut self, input: crate::types::EnvironmentConfigurationUserParameter) -> Self {
+        self.inner = self.inner.user_parameters(input);
+        self
+    }
+    /// <p>The user parameters of the project.</p>
+    pub fn set_user_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentConfigurationUserParameter>>) -> Self {
+        self.inner = self.inner.set_user_parameters(input);
+        self
+    }
+    /// <p>The user parameters of the project.</p>
+    pub fn get_user_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentConfigurationUserParameter>> {
+        self.inner.get_user_parameters()
+    }
 }

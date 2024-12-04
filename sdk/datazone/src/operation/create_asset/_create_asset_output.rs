@@ -142,7 +142,7 @@ impl ::std::fmt::Debug for CreateAssetOutput {
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("type_identifier", &self.type_identifier);
         formatter.field("type_revision", &self.type_revision);
-        formatter.field("external_identifier", &"*** Sensitive Data Redacted ***");
+        formatter.field("external_identifier", &self.external_identifier);
         formatter.field("revision", &self.revision);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("created_at", &self.created_at);
@@ -595,7 +595,7 @@ impl ::std::fmt::Debug for CreateAssetOutputBuilder {
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("type_identifier", &self.type_identifier);
         formatter.field("type_revision", &self.type_revision);
-        formatter.field("external_identifier", &"*** Sensitive Data Redacted ***");
+        formatter.field("external_identifier", &self.external_identifier);
         formatter.field("revision", &self.revision);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("created_at", &self.created_at);

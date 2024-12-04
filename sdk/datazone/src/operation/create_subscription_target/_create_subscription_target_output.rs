@@ -26,7 +26,7 @@ pub struct CreateSubscriptionTargetOutput {
     /// <p>The timestamp of when the subscription target was updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The manage access role with which the subscription target was created.</p>
-    pub manage_access_role: ::std::string::String,
+    pub manage_access_role: ::std::option::Option<::std::string::String>,
     /// <p>The asset types that can be included in the subscription target.</p>
     pub applicable_asset_types: ::std::vec::Vec<::std::string::String>,
     /// <p>The configuration of the subscription target.</p>
@@ -89,9 +89,8 @@ impl CreateSubscriptionTargetOutput {
         self.updated_at.as_ref()
     }
     /// <p>The manage access role with which the subscription target was created.</p>
-    pub fn manage_access_role(&self) -> &str {
-        use std::ops::Deref;
-        self.manage_access_role.deref()
+    pub fn manage_access_role(&self) -> ::std::option::Option<&str> {
+        self.manage_access_role.as_deref()
     }
     /// <p>The asset types that can be included in the subscription target.</p>
     pub fn applicable_asset_types(&self) -> &[::std::string::String] {
@@ -334,7 +333,6 @@ impl CreateSubscriptionTargetOutputBuilder {
         &self.updated_at
     }
     /// <p>The manage access role with which the subscription target was created.</p>
-    /// This field is required.
     pub fn manage_access_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.manage_access_role = ::std::option::Option::Some(input.into());
         self
@@ -423,7 +421,6 @@ impl CreateSubscriptionTargetOutputBuilder {
     /// - [`r#type`](crate::operation::create_subscription_target::builders::CreateSubscriptionTargetOutputBuilder::type)
     /// - [`created_by`](crate::operation::create_subscription_target::builders::CreateSubscriptionTargetOutputBuilder::created_by)
     /// - [`created_at`](crate::operation::create_subscription_target::builders::CreateSubscriptionTargetOutputBuilder::created_at)
-    /// - [`manage_access_role`](crate::operation::create_subscription_target::builders::CreateSubscriptionTargetOutputBuilder::manage_access_role)
     /// - [`applicable_asset_types`](crate::operation::create_subscription_target::builders::CreateSubscriptionTargetOutputBuilder::applicable_asset_types)
     /// - [`subscription_target_config`](crate::operation::create_subscription_target::builders::CreateSubscriptionTargetOutputBuilder::subscription_target_config)
     /// - [`provider`](crate::operation::create_subscription_target::builders::CreateSubscriptionTargetOutputBuilder::provider)
@@ -490,12 +487,7 @@ impl CreateSubscriptionTargetOutputBuilder {
                 )
             })?,
             updated_at: self.updated_at,
-            manage_access_role: self.manage_access_role.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "manage_access_role",
-                    "manage_access_role was not specified but it is required when building CreateSubscriptionTargetOutput",
-                )
-            })?,
+            manage_access_role: self.manage_access_role,
             applicable_asset_types: self.applicable_asset_types.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "applicable_asset_types",

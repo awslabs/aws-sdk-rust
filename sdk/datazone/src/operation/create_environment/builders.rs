@@ -258,4 +258,32 @@ impl CreateEnvironmentFluentBuilder {
     pub fn get_environment_blueprint_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_environment_blueprint_identifier()
     }
+    /// <p>The deployment order of the environment.</p>
+    pub fn deployment_order(mut self, input: i32) -> Self {
+        self.inner = self.inner.deployment_order(input);
+        self
+    }
+    /// <p>The deployment order of the environment.</p>
+    pub fn set_deployment_order(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_deployment_order(input);
+        self
+    }
+    /// <p>The deployment order of the environment.</p>
+    pub fn get_deployment_order(&self) -> &::std::option::Option<i32> {
+        self.inner.get_deployment_order()
+    }
+    /// <p>The configuration ID of the environment.</p>
+    pub fn environment_configuration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.environment_configuration_id(input.into());
+        self
+    }
+    /// <p>The configuration ID of the environment.</p>
+    pub fn set_environment_configuration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_environment_configuration_id(input);
+        self
+    }
+    /// <p>The configuration ID of the environment.</p>
+    pub fn get_environment_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_configuration_id()
+    }
 }

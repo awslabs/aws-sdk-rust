@@ -85,6 +85,8 @@ pub(crate) mod shape_list_custom_domain_associations;
 
 pub(crate) mod shape_list_endpoint_access;
 
+pub(crate) mod shape_list_managed_workgroups;
+
 pub(crate) mod shape_list_namespaces;
 
 pub(crate) mod shape_list_recovery_points;
@@ -215,6 +217,8 @@ pub(crate) mod shape_list_custom_domain_associations_input;
 
 pub(crate) mod shape_list_endpoint_access_input;
 
+pub(crate) mod shape_list_managed_workgroups_input;
+
 pub(crate) mod shape_list_namespaces_input;
 
 pub(crate) mod shape_list_recovery_points_input;
@@ -281,6 +285,8 @@ pub(crate) mod shape_endpoint_access;
 
 pub(crate) mod shape_endpoint_access_list;
 
+pub(crate) mod shape_managed_workgroups;
+
 pub(crate) mod shape_namespace;
 
 pub(crate) mod shape_namespace_list;
@@ -338,6 +344,8 @@ pub(crate) mod shape_endpoint;
 pub(crate) mod shape_iam_role_arn_list;
 
 pub(crate) mod shape_log_export_list;
+
+pub(crate) mod shape_managed_workgroup_list_item;
 
 pub(crate) mod shape_next_invocations_list;
 

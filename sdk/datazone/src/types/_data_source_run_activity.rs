@@ -20,6 +20,8 @@ pub struct DataSourceRunActivity {
     pub technical_description: ::std::option::Option<::std::string::String>,
     /// <p>The details of the error message that is returned if the operation cannot be successfully completed.</p>
     pub error_message: ::std::option::Option<crate::types::DataSourceErrorMessage>,
+    /// <p>The data lineage summary.</p>
+    pub lineage_summary: ::std::option::Option<crate::types::LineageInfo>,
     /// <p>The timestamp of when data source run activity was created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The timestamp of when data source run activity was updated.</p>
@@ -62,6 +64,10 @@ impl DataSourceRunActivity {
     pub fn error_message(&self) -> ::std::option::Option<&crate::types::DataSourceErrorMessage> {
         self.error_message.as_ref()
     }
+    /// <p>The data lineage summary.</p>
+    pub fn lineage_summary(&self) -> ::std::option::Option<&crate::types::LineageInfo> {
+        self.lineage_summary.as_ref()
+    }
     /// <p>The timestamp of when data source run activity was created.</p>
     pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
         &self.created_at
@@ -82,6 +88,7 @@ impl ::std::fmt::Debug for DataSourceRunActivity {
         formatter.field("data_asset_id", &self.data_asset_id);
         formatter.field("technical_description", &"*** Sensitive Data Redacted ***");
         formatter.field("error_message", &self.error_message);
+        formatter.field("lineage_summary", &self.lineage_summary);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.finish()
@@ -106,6 +113,7 @@ pub struct DataSourceRunActivityBuilder {
     pub(crate) data_asset_id: ::std::option::Option<::std::string::String>,
     pub(crate) technical_description: ::std::option::Option<::std::string::String>,
     pub(crate) error_message: ::std::option::Option<crate::types::DataSourceErrorMessage>,
+    pub(crate) lineage_summary: ::std::option::Option<crate::types::LineageInfo>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -227,6 +235,20 @@ impl DataSourceRunActivityBuilder {
     pub fn get_error_message(&self) -> &::std::option::Option<crate::types::DataSourceErrorMessage> {
         &self.error_message
     }
+    /// <p>The data lineage summary.</p>
+    pub fn lineage_summary(mut self, input: crate::types::LineageInfo) -> Self {
+        self.lineage_summary = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The data lineage summary.</p>
+    pub fn set_lineage_summary(mut self, input: ::std::option::Option<crate::types::LineageInfo>) -> Self {
+        self.lineage_summary = input;
+        self
+    }
+    /// <p>The data lineage summary.</p>
+    pub fn get_lineage_summary(&self) -> &::std::option::Option<crate::types::LineageInfo> {
+        &self.lineage_summary
+    }
     /// <p>The timestamp of when data source run activity was created.</p>
     /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -301,6 +323,7 @@ impl DataSourceRunActivityBuilder {
             data_asset_id: self.data_asset_id,
             technical_description: self.technical_description,
             error_message: self.error_message,
+            lineage_summary: self.lineage_summary,
             created_at: self.created_at.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
@@ -327,6 +350,7 @@ impl ::std::fmt::Debug for DataSourceRunActivityBuilder {
         formatter.field("data_asset_id", &self.data_asset_id);
         formatter.field("technical_description", &"*** Sensitive Data Redacted ***");
         formatter.field("error_message", &self.error_message);
+        formatter.field("lineage_summary", &self.lineage_summary);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.finish()

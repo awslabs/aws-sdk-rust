@@ -122,4 +122,18 @@ impl DeleteDataCatalogFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
+    /// <p>Deletes the Athena Data Catalog. You can only use this with the <code>FEDERATED</code> catalogs. You usually perform this before registering the connector with Glue Data Catalog. After deletion, you will have to manage the Glue Connection and Lambda function.</p>
+    pub fn delete_catalog_only(mut self, input: bool) -> Self {
+        self.inner = self.inner.delete_catalog_only(input);
+        self
+    }
+    /// <p>Deletes the Athena Data Catalog. You can only use this with the <code>FEDERATED</code> catalogs. You usually perform this before registering the connector with Glue Data Catalog. After deletion, you will have to manage the Glue Connection and Lambda function.</p>
+    pub fn set_delete_catalog_only(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_delete_catalog_only(input);
+        self
+    }
+    /// <p>Deletes the Athena Data Catalog. You can only use this with the <code>FEDERATED</code> catalogs. You usually perform this before registering the connector with Glue Data Catalog. After deletion, you will have to manage the Glue Connection and Lambda function.</p>
+    pub fn get_delete_catalog_only(&self) -> &::std::option::Option<bool> {
+        self.inner.get_delete_catalog_only()
+    }
 }

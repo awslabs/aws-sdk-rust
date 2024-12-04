@@ -2,7 +2,7 @@
 
 /// <p>A structure containing the authentication configuration in the CreateConnection request.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AuthenticationConfigurationInput {
     /// <p>A structure containing the authentication configuration in the CreateConnection request.</p>
     pub authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
@@ -10,6 +10,12 @@ pub struct AuthenticationConfigurationInput {
     pub o_auth2_properties: ::std::option::Option<crate::types::OAuth2PropertiesInput>,
     /// <p>The secret manager ARN to store credentials in the CreateConnection request.</p>
     pub secret_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of the KMS key used to encrypt the connection. Only taken an as input in the request and stored in the Secret Manager.</p>
+    pub kms_key_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The credentials used when the authentication type is basic authentication.</p>
+    pub basic_authentication_credentials: ::std::option::Option<crate::types::BasicAuthenticationCredentials>,
+    /// <p>The credentials used when the authentication type is custom authentication.</p>
+    pub custom_authentication_credentials: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl AuthenticationConfigurationInput {
     /// <p>A structure containing the authentication configuration in the CreateConnection request.</p>
@@ -24,6 +30,32 @@ impl AuthenticationConfigurationInput {
     pub fn secret_arn(&self) -> ::std::option::Option<&str> {
         self.secret_arn.as_deref()
     }
+    /// <p>The ARN of the KMS key used to encrypt the connection. Only taken an as input in the request and stored in the Secret Manager.</p>
+    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
+    /// <p>The credentials used when the authentication type is basic authentication.</p>
+    pub fn basic_authentication_credentials(&self) -> ::std::option::Option<&crate::types::BasicAuthenticationCredentials> {
+        self.basic_authentication_credentials.as_ref()
+    }
+    /// <p>The credentials used when the authentication type is custom authentication.</p>
+    pub fn custom_authentication_credentials(
+        &self,
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.custom_authentication_credentials.as_ref()
+    }
+}
+impl ::std::fmt::Debug for AuthenticationConfigurationInput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AuthenticationConfigurationInput");
+        formatter.field("authentication_type", &self.authentication_type);
+        formatter.field("o_auth2_properties", &self.o_auth2_properties);
+        formatter.field("secret_arn", &self.secret_arn);
+        formatter.field("kms_key_arn", &self.kms_key_arn);
+        formatter.field("basic_authentication_credentials", &self.basic_authentication_credentials);
+        formatter.field("custom_authentication_credentials", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
 }
 impl AuthenticationConfigurationInput {
     /// Creates a new builder-style object to manufacture [`AuthenticationConfigurationInput`](crate::types::AuthenticationConfigurationInput).
@@ -33,12 +65,15 @@ impl AuthenticationConfigurationInput {
 }
 
 /// A builder for [`AuthenticationConfigurationInput`](crate::types::AuthenticationConfigurationInput).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct AuthenticationConfigurationInputBuilder {
     pub(crate) authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
     pub(crate) o_auth2_properties: ::std::option::Option<crate::types::OAuth2PropertiesInput>,
     pub(crate) secret_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) basic_authentication_credentials: ::std::option::Option<crate::types::BasicAuthenticationCredentials>,
+    pub(crate) custom_authentication_credentials: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl AuthenticationConfigurationInputBuilder {
     /// <p>A structure containing the authentication configuration in the CreateConnection request.</p>
@@ -83,12 +118,84 @@ impl AuthenticationConfigurationInputBuilder {
     pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.secret_arn
     }
+    /// <p>The ARN of the KMS key used to encrypt the connection. Only taken an as input in the request and stored in the Secret Manager.</p>
+    pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the KMS key used to encrypt the connection. Only taken an as input in the request and stored in the Secret Manager.</p>
+    pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_arn = input;
+        self
+    }
+    /// <p>The ARN of the KMS key used to encrypt the connection. Only taken an as input in the request and stored in the Secret Manager.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
+    }
+    /// <p>The credentials used when the authentication type is basic authentication.</p>
+    pub fn basic_authentication_credentials(mut self, input: crate::types::BasicAuthenticationCredentials) -> Self {
+        self.basic_authentication_credentials = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The credentials used when the authentication type is basic authentication.</p>
+    pub fn set_basic_authentication_credentials(mut self, input: ::std::option::Option<crate::types::BasicAuthenticationCredentials>) -> Self {
+        self.basic_authentication_credentials = input;
+        self
+    }
+    /// <p>The credentials used when the authentication type is basic authentication.</p>
+    pub fn get_basic_authentication_credentials(&self) -> &::std::option::Option<crate::types::BasicAuthenticationCredentials> {
+        &self.basic_authentication_credentials
+    }
+    /// Adds a key-value pair to `custom_authentication_credentials`.
+    ///
+    /// To override the contents of this collection use [`set_custom_authentication_credentials`](Self::set_custom_authentication_credentials).
+    ///
+    /// <p>The credentials used when the authentication type is custom authentication.</p>
+    pub fn custom_authentication_credentials(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.custom_authentication_credentials.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.custom_authentication_credentials = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The credentials used when the authentication type is custom authentication.</p>
+    pub fn set_custom_authentication_credentials(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.custom_authentication_credentials = input;
+        self
+    }
+    /// <p>The credentials used when the authentication type is custom authentication.</p>
+    pub fn get_custom_authentication_credentials(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.custom_authentication_credentials
+    }
     /// Consumes the builder and constructs a [`AuthenticationConfigurationInput`](crate::types::AuthenticationConfigurationInput).
     pub fn build(self) -> crate::types::AuthenticationConfigurationInput {
         crate::types::AuthenticationConfigurationInput {
             authentication_type: self.authentication_type,
             o_auth2_properties: self.o_auth2_properties,
             secret_arn: self.secret_arn,
+            kms_key_arn: self.kms_key_arn,
+            basic_authentication_credentials: self.basic_authentication_credentials,
+            custom_authentication_credentials: self.custom_authentication_credentials,
         }
+    }
+}
+impl ::std::fmt::Debug for AuthenticationConfigurationInputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AuthenticationConfigurationInputBuilder");
+        formatter.field("authentication_type", &self.authentication_type);
+        formatter.field("o_auth2_properties", &self.o_auth2_properties);
+        formatter.field("secret_arn", &self.secret_arn);
+        formatter.field("kms_key_arn", &self.kms_key_arn);
+        formatter.field("basic_authentication_credentials", &self.basic_authentication_credentials);
+        formatter.field("custom_authentication_credentials", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

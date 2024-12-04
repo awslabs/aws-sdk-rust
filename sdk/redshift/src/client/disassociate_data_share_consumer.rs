@@ -13,6 +13,7 @@ impl super::Client {
     ///   - [`allow_publicly_accessible_consumers(Option<bool>)`](crate::operation::disassociate_data_share_consumer::DisassociateDataShareConsumerOutput::allow_publicly_accessible_consumers): <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
     ///   - [`data_share_associations(Option<Vec::<DataShareAssociation>>)`](crate::operation::disassociate_data_share_consumer::DisassociateDataShareConsumerOutput::data_share_associations): <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
     ///   - [`managed_by(Option<String>)`](crate::operation::disassociate_data_share_consumer::DisassociateDataShareConsumerOutput::managed_by): <p>The identifier of a datashare to show its managing entity.</p>
+    ///   - [`data_share_type(Option<DataShareType>)`](crate::operation::disassociate_data_share_consumer::DisassociateDataShareConsumerOutput::data_share_type): <p>The type of the datashare created by RegisterNamespace.</p>
     /// - On failure, responds with [`SdkError<DisassociateDataShareConsumerError>`](crate::operation::disassociate_data_share_consumer::DisassociateDataShareConsumerError)
     pub fn disassociate_data_share_consumer(
         &self,

@@ -22,7 +22,7 @@ impl crate::operation::stop_model_invocation_job::builders::StopModelInvocationJ
 }
 /// Fluent builder constructing a request to `StopModelInvocationJob`.
 ///
-/// <p>Stops a batch inference job. You're only charged for tokens that were already processed. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-manage.html#batch-inference-stop">Stop a batch inference job</a>.</p>
+/// <p>Stops a batch inference job. You're only charged for tokens that were already processed. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-stop.html">Stop a batch inference job</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopModelInvocationJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

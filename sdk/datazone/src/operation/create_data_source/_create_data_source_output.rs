@@ -18,7 +18,9 @@ pub struct CreateDataSourceOutput {
     /// <p>The ID of the Amazon DataZone project to which the data source is added.</p>
     pub project_id: ::std::string::String,
     /// <p>The unique identifier of the Amazon DataZone environment to which the data source publishes assets.</p>
-    pub environment_id: ::std::string::String,
+    pub environment_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the connection.</p>
+    pub connection_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the configuration of the data source. It can be set to either <code>glueRunConfiguration</code> or <code>redshiftRunConfiguration</code>.</p>
     pub configuration: ::std::option::Option<crate::types::DataSourceConfigurationOutput>,
     /// <p>Specifies whether the business name generation is to be enabled for this data source.</p>
@@ -79,9 +81,12 @@ impl CreateDataSourceOutput {
         self.project_id.deref()
     }
     /// <p>The unique identifier of the Amazon DataZone environment to which the data source publishes assets.</p>
-    pub fn environment_id(&self) -> &str {
-        use std::ops::Deref;
-        self.environment_id.deref()
+    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
+    /// <p>The ID of the connection.</p>
+    pub fn connection_id(&self) -> ::std::option::Option<&str> {
+        self.connection_id.as_deref()
     }
     /// <p>Specifies the configuration of the data source. It can be set to either <code>glueRunConfiguration</code> or <code>redshiftRunConfiguration</code>.</p>
     pub fn configuration(&self) -> ::std::option::Option<&crate::types::DataSourceConfigurationOutput> {
@@ -145,6 +150,7 @@ impl ::std::fmt::Debug for CreateDataSourceOutput {
         formatter.field("domain_id", &self.domain_id);
         formatter.field("project_id", &self.project_id);
         formatter.field("environment_id", &self.environment_id);
+        formatter.field("connection_id", &self.connection_id);
         formatter.field("configuration", &self.configuration);
         formatter.field("recommendation", &self.recommendation);
         formatter.field("enable_setting", &self.enable_setting);
@@ -185,6 +191,7 @@ pub struct CreateDataSourceOutputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) project_id: ::std::option::Option<::std::string::String>,
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) configuration: ::std::option::Option<crate::types::DataSourceConfigurationOutput>,
     pub(crate) recommendation: ::std::option::Option<crate::types::RecommendationConfiguration>,
     pub(crate) enable_setting: ::std::option::Option<crate::types::EnableSetting>,
@@ -303,7 +310,6 @@ impl CreateDataSourceOutputBuilder {
         &self.project_id
     }
     /// <p>The unique identifier of the Amazon DataZone environment to which the data source publishes assets.</p>
-    /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
@@ -316,6 +322,20 @@ impl CreateDataSourceOutputBuilder {
     /// <p>The unique identifier of the Amazon DataZone environment to which the data source publishes assets.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.environment_id
+    }
+    /// <p>The ID of the connection.</p>
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.connection_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the connection.</p>
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.connection_id = input;
+        self
+    }
+    /// <p>The ID of the connection.</p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_id
     }
     /// <p>Specifies the configuration of the data source. It can be set to either <code>glueRunConfiguration</code> or <code>redshiftRunConfiguration</code>.</p>
     pub fn configuration(mut self, input: crate::types::DataSourceConfigurationOutput) -> Self {
@@ -506,7 +526,6 @@ impl CreateDataSourceOutputBuilder {
     /// - [`name`](crate::operation::create_data_source::builders::CreateDataSourceOutputBuilder::name)
     /// - [`domain_id`](crate::operation::create_data_source::builders::CreateDataSourceOutputBuilder::domain_id)
     /// - [`project_id`](crate::operation::create_data_source::builders::CreateDataSourceOutputBuilder::project_id)
-    /// - [`environment_id`](crate::operation::create_data_source::builders::CreateDataSourceOutputBuilder::environment_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_data_source::CreateDataSourceOutput, ::aws_smithy_types::error::operation::BuildError> {
@@ -538,12 +557,8 @@ impl CreateDataSourceOutputBuilder {
                     "project_id was not specified but it is required when building CreateDataSourceOutput",
                 )
             })?,
-            environment_id: self.environment_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "environment_id",
-                    "environment_id was not specified but it is required when building CreateDataSourceOutput",
-                )
-            })?,
+            environment_id: self.environment_id,
+            connection_id: self.connection_id,
             configuration: self.configuration,
             recommendation: self.recommendation,
             enable_setting: self.enable_setting,
@@ -571,6 +586,7 @@ impl ::std::fmt::Debug for CreateDataSourceOutputBuilder {
         formatter.field("domain_id", &self.domain_id);
         formatter.field("project_id", &self.project_id);
         formatter.field("environment_id", &self.environment_id);
+        formatter.field("connection_id", &self.connection_id);
         formatter.field("configuration", &self.configuration);
         formatter.field("recommendation", &self.recommendation);
         formatter.field("enable_setting", &self.enable_setting);

@@ -15,7 +15,8 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::delete_data_source::DeleteDataSourceOutput::description): <p>The description of the data source that is deleted.</p>
     ///   - [`domain_id(String)`](crate::operation::delete_data_source::DeleteDataSourceOutput::domain_id): <p>The ID of the Amazon DataZone domain in which the data source is deleted.</p>
     ///   - [`project_id(String)`](crate::operation::delete_data_source::DeleteDataSourceOutput::project_id): <p>The ID of the project in which this data source exists and from which it's deleted.</p>
-    ///   - [`environment_id(String)`](crate::operation::delete_data_source::DeleteDataSourceOutput::environment_id): <p>The ID of the environemnt associated with this data source.</p>
+    ///   - [`environment_id(Option<String>)`](crate::operation::delete_data_source::DeleteDataSourceOutput::environment_id): <p>The ID of the environemnt associated with this data source.</p>
+    ///   - [`connection_id(Option<String>)`](crate::operation::delete_data_source::DeleteDataSourceOutput::connection_id): <p>The ID of the connection that is deleted.</p>
     ///   - [`configuration(Option<DataSourceConfigurationOutput>)`](crate::operation::delete_data_source::DeleteDataSourceOutput::configuration): <p>The configuration of the data source that is deleted.</p>
     ///   - [`enable_setting(Option<EnableSetting>)`](crate::operation::delete_data_source::DeleteDataSourceOutput::enable_setting): <p>The enable setting of the data source that specifies whether the data source is enabled or disabled.</p>
     ///   - [`publish_on_import(Option<bool>)`](crate::operation::delete_data_source::DeleteDataSourceOutput::publish_on_import): <p>Specifies whether the assets that this data source creates in the inventory are to be also automatically published to the catalog.</p>

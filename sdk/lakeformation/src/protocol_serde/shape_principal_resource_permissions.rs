@@ -20,6 +20,9 @@ where
                         "Resource" => {
                             builder = builder.set_resource(crate::protocol_serde::shape_resource::de_resource(tokens)?);
                         }
+                        "Condition" => {
+                            builder = builder.set_condition(crate::protocol_serde::shape_condition::de_condition(tokens)?);
+                        }
                         "Permissions" => {
                             builder = builder.set_permissions(crate::protocol_serde::shape_permission_list::de_permission_list(tokens)?);
                         }

@@ -248,6 +248,8 @@ pub enum GetDatabaseError {
     EntityNotFoundException(crate::types::error::EntityNotFoundException),
     /// <p>A federation source failed.</p>
     FederationSourceException(crate::types::error::FederationSourceException),
+    /// <p>A federation source failed, but the operation may be retried.</p>
+    FederationSourceRetryableException(crate::types::error::FederationSourceRetryableException),
     /// <p>An encryption operation failed.</p>
     GlueEncryptionException(crate::types::error::GlueEncryptionException),
     /// <p>An internal service error occurred.</p>
@@ -291,6 +293,7 @@ impl GetDatabaseError {
         match self {
             Self::EntityNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::FederationSourceException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::FederationSourceRetryableException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::GlueEncryptionException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServiceException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidInputException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -305,6 +308,10 @@ impl GetDatabaseError {
     /// Returns `true` if the error kind is `GetDatabaseError::FederationSourceException`.
     pub fn is_federation_source_exception(&self) -> bool {
         matches!(self, Self::FederationSourceException(_))
+    }
+    /// Returns `true` if the error kind is `GetDatabaseError::FederationSourceRetryableException`.
+    pub fn is_federation_source_retryable_exception(&self) -> bool {
+        matches!(self, Self::FederationSourceRetryableException(_))
     }
     /// Returns `true` if the error kind is `GetDatabaseError::GlueEncryptionException`.
     pub fn is_glue_encryption_exception(&self) -> bool {
@@ -328,6 +335,7 @@ impl ::std::error::Error for GetDatabaseError {
         match self {
             Self::EntityNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::FederationSourceException(_inner) => ::std::option::Option::Some(_inner),
+            Self::FederationSourceRetryableException(_inner) => ::std::option::Option::Some(_inner),
             Self::GlueEncryptionException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServiceException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidInputException(_inner) => ::std::option::Option::Some(_inner),
@@ -341,6 +349,7 @@ impl ::std::fmt::Display for GetDatabaseError {
         match self {
             Self::EntityNotFoundException(_inner) => _inner.fmt(f),
             Self::FederationSourceException(_inner) => _inner.fmt(f),
+            Self::FederationSourceRetryableException(_inner) => _inner.fmt(f),
             Self::GlueEncryptionException(_inner) => _inner.fmt(f),
             Self::InternalServiceException(_inner) => _inner.fmt(f),
             Self::InvalidInputException(_inner) => _inner.fmt(f),
@@ -368,6 +377,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for GetDatabaseEr
         match self {
             Self::EntityNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::FederationSourceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::FederationSourceRetryableException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::GlueEncryptionException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServiceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidInputException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

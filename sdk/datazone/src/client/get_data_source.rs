@@ -13,7 +13,8 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::get_data_source::GetDataSourceOutput::description): <p>The description of the data source.</p>
     ///   - [`domain_id(String)`](crate::operation::get_data_source::GetDataSourceOutput::domain_id): <p>The ID of the Amazon DataZone domain in which the data source exists.</p>
     ///   - [`project_id(String)`](crate::operation::get_data_source::GetDataSourceOutput::project_id): <p>The ID of the project where the data source creates and publishes assets.</p>
-    ///   - [`environment_id(String)`](crate::operation::get_data_source::GetDataSourceOutput::environment_id): <p>The ID of the environment where this data source creates and publishes assets,</p>
+    ///   - [`environment_id(Option<String>)`](crate::operation::get_data_source::GetDataSourceOutput::environment_id): <p>The ID of the environment where this data source creates and publishes assets,</p>
+    ///   - [`connection_id(Option<String>)`](crate::operation::get_data_source::GetDataSourceOutput::connection_id): <p>The ID of the connection.</p>
     ///   - [`configuration(Option<DataSourceConfigurationOutput>)`](crate::operation::get_data_source::GetDataSourceOutput::configuration): <p>The configuration of the data source.</p>
     ///   - [`recommendation(Option<RecommendationConfiguration>)`](crate::operation::get_data_source::GetDataSourceOutput::recommendation): <p>The recommendation configuration of the data source.</p>
     ///   - [`enable_setting(Option<EnableSetting>)`](crate::operation::get_data_source::GetDataSourceOutput::enable_setting): <p>Specifies whether this data source is enabled or not.</p>

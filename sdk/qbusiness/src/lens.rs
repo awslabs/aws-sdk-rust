@@ -39,6 +39,16 @@ pub(crate) fn reflens_list_conversations_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_data_accessors_output_output_next_token(
+    input: &crate::operation::list_data_accessors::ListDataAccessorsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_data_source_sync_jobs_output_output_next_token(
     input: &crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -99,6 +109,36 @@ pub(crate) fn reflens_list_messages_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_plugin_actions_output_output_next_token(
+    input: &crate::operation::list_plugin_actions::ListPluginActionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_plugin_type_actions_output_output_next_token(
+    input: &crate::operation::list_plugin_type_actions::ListPluginTypeActionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_plugin_type_metadata_output_output_next_token(
+    input: &crate::operation::list_plugin_type_metadata::ListPluginTypeMetadataOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_plugins_output_output_next_token(
     input: &crate::operation::list_plugins::ListPluginsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -121,6 +161,16 @@ pub(crate) fn reflens_list_retrievers_output_output_next_token(
 
 pub(crate) fn reflens_list_web_experiences_output_output_next_token(
     input: &crate::operation::list_web_experiences::ListWebExperiencesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_search_relevant_content_output_output_next_token(
+    input: &crate::operation::search_relevant_content::SearchRelevantContentOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -163,6 +213,16 @@ pub(crate) fn lens_list_conversations_output_output_conversations(
     input: crate::operation::list_conversations::ListConversationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Conversation>> {
     let input = match input.conversations {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_data_accessors_output_output_data_accessors(
+    input: crate::operation::list_data_accessors::ListDataAccessorsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::DataAccessor>> {
+    let input = match input.data_accessors {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };
@@ -229,6 +289,36 @@ pub(crate) fn lens_list_messages_output_output_messages(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_plugin_actions_output_output_items(
+    input: crate::operation::list_plugin_actions::ListPluginActionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ActionSummary>> {
+    let input = match input.items {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_plugin_type_actions_output_output_items(
+    input: crate::operation::list_plugin_type_actions::ListPluginTypeActionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ActionSummary>> {
+    let input = match input.items {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_plugin_type_metadata_output_output_items(
+    input: crate::operation::list_plugin_type_metadata::ListPluginTypeMetadataOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::PluginTypeMetadataSummary>> {
+    let input = match input.items {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_plugins_output_output_plugins(
     input: crate::operation::list_plugins::ListPluginsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Plugin>> {
@@ -253,6 +343,16 @@ pub(crate) fn lens_list_web_experiences_output_output_web_experiences(
     input: crate::operation::list_web_experiences::ListWebExperiencesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::WebExperience>> {
     let input = match input.web_experiences {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_search_relevant_content_output_output_relevant_content(
+    input: crate::operation::search_relevant_content::SearchRelevantContentOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RelevantContent>> {
+    let input = match input.relevant_content {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

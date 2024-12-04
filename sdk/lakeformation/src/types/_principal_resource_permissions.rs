@@ -8,6 +8,8 @@ pub struct PrincipalResourcePermissions {
     pub principal: ::std::option::Option<crate::types::DataLakePrincipal>,
     /// <p>The resource where permissions are to be granted or revoked.</p>
     pub resource: ::std::option::Option<crate::types::Resource>,
+    /// <p>A Lake Formation condition, which applies to permissions and opt-ins that contain an expression.</p>
+    pub condition: ::std::option::Option<crate::types::Condition>,
     /// <p>The permissions to be granted or revoked on the resource.</p>
     pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
     /// <p>Indicates whether to grant the ability to grant permissions (as a subset of permissions granted).</p>
@@ -27,6 +29,10 @@ impl PrincipalResourcePermissions {
     /// <p>The resource where permissions are to be granted or revoked.</p>
     pub fn resource(&self) -> ::std::option::Option<&crate::types::Resource> {
         self.resource.as_ref()
+    }
+    /// <p>A Lake Formation condition, which applies to permissions and opt-ins that contain an expression.</p>
+    pub fn condition(&self) -> ::std::option::Option<&crate::types::Condition> {
+        self.condition.as_ref()
     }
     /// <p>The permissions to be granted or revoked on the resource.</p>
     ///
@@ -66,6 +72,7 @@ impl PrincipalResourcePermissions {
 pub struct PrincipalResourcePermissionsBuilder {
     pub(crate) principal: ::std::option::Option<crate::types::DataLakePrincipal>,
     pub(crate) resource: ::std::option::Option<crate::types::Resource>,
+    pub(crate) condition: ::std::option::Option<crate::types::Condition>,
     pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
     pub(crate) permissions_with_grant_option: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
     pub(crate) additional_details: ::std::option::Option<crate::types::DetailsMap>,
@@ -100,6 +107,20 @@ impl PrincipalResourcePermissionsBuilder {
     /// <p>The resource where permissions are to be granted or revoked.</p>
     pub fn get_resource(&self) -> &::std::option::Option<crate::types::Resource> {
         &self.resource
+    }
+    /// <p>A Lake Formation condition, which applies to permissions and opt-ins that contain an expression.</p>
+    pub fn condition(mut self, input: crate::types::Condition) -> Self {
+        self.condition = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A Lake Formation condition, which applies to permissions and opt-ins that contain an expression.</p>
+    pub fn set_condition(mut self, input: ::std::option::Option<crate::types::Condition>) -> Self {
+        self.condition = input;
+        self
+    }
+    /// <p>A Lake Formation condition, which applies to permissions and opt-ins that contain an expression.</p>
+    pub fn get_condition(&self) -> &::std::option::Option<crate::types::Condition> {
+        &self.condition
     }
     /// Appends an item to `permissions`.
     ///
@@ -188,6 +209,7 @@ impl PrincipalResourcePermissionsBuilder {
         crate::types::PrincipalResourcePermissions {
             principal: self.principal,
             resource: self.resource,
+            condition: self.condition,
             permissions: self.permissions,
             permissions_with_grant_option: self.permissions_with_grant_option,
             additional_details: self.additional_details,

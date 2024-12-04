@@ -188,6 +188,8 @@ mod copy_object;
 
 mod create_bucket;
 
+mod create_bucket_metadata_table_configuration;
+
 mod create_multipart_upload;
 
 mod create_session;
@@ -233,6 +235,8 @@ mod delete_bucket_inventory_configuration;
 
 mod delete_bucket_lifecycle;
 
+mod delete_bucket_metadata_table_configuration;
+
 mod delete_bucket_metrics_configuration;
 
 mod delete_bucket_ownership_controls;
@@ -272,6 +276,8 @@ mod get_bucket_lifecycle_configuration;
 mod get_bucket_location;
 
 mod get_bucket_logging;
+
+mod get_bucket_metadata_table_configuration;
 
 mod get_bucket_metrics_configuration;
 

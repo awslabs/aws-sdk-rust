@@ -19,6 +19,16 @@ pub(crate) fn reflens_list_agent_aliases_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_agent_collaborators_output_output_next_token(
+    input: &crate::operation::list_agent_collaborators::ListAgentCollaboratorsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_agent_knowledge_bases_output_output_next_token(
     input: &crate::operation::list_agent_knowledge_bases::ListAgentKnowledgeBasesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -140,6 +150,13 @@ pub(crate) fn lens_list_agent_aliases_output_output_agent_alias_summaries(
     input: crate::operation::list_agent_aliases::ListAgentAliasesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AgentAliasSummary>> {
     let input = input.agent_alias_summaries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_agent_collaborators_output_output_agent_collaborator_summaries(
+    input: crate::operation::list_agent_collaborators::ListAgentCollaboratorsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AgentCollaboratorSummary>> {
+    let input = input.agent_collaborator_summaries;
     ::std::option::Option::Some(input)
 }
 

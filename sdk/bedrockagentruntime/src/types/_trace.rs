@@ -16,6 +16,8 @@ pub enum Trace {
     PostProcessingTrace(crate::types::PostProcessingTrace),
     /// <p>Details about the pre-processing step, in which the agent contextualizes and categorizes user inputs.</p>
     PreProcessingTrace(crate::types::PreProcessingTrace),
+    /// <p>A routing classifier's trace.</p>
+    RoutingClassifierTrace(crate::types::RoutingClassifierTrace),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -104,6 +106,19 @@ impl Trace {
     /// Returns true if this is a [`PreProcessingTrace`](crate::types::Trace::PreProcessingTrace).
     pub fn is_pre_processing_trace(&self) -> bool {
         self.as_pre_processing_trace().is_ok()
+    }
+    /// Tries to convert the enum instance into [`RoutingClassifierTrace`](crate::types::Trace::RoutingClassifierTrace), extracting the inner [`RoutingClassifierTrace`](crate::types::RoutingClassifierTrace).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_routing_classifier_trace(&self) -> ::std::result::Result<&crate::types::RoutingClassifierTrace, &Self> {
+        if let Trace::RoutingClassifierTrace(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`RoutingClassifierTrace`](crate::types::Trace::RoutingClassifierTrace).
+    pub fn is_routing_classifier_trace(&self) -> bool {
+        self.as_routing_classifier_trace().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

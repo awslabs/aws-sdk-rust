@@ -71,6 +71,8 @@ pub use crate::types::_principal_resource_permissions::PrincipalResourcePermissi
 
 pub use crate::types::_details_map::DetailsMapBuilder;
 
+pub use crate::types::_condition::ConditionBuilder;
+
 pub use crate::types::_lf_tag_expression::LfTagExpressionBuilder;
 
 pub use crate::types::_lake_formation_opt_ins_info::LakeFormationOptInsInfoBuilder;

@@ -87,7 +87,6 @@ impl RedshiftRunConfigurationInputBuilder {
         &self.relational_filter_configurations
     }
     /// <p>The details of the credentials required to access an Amazon Redshift cluster.</p>
-    /// This field is required.
     pub fn redshift_credential_configuration(mut self, input: crate::types::RedshiftCredentialConfiguration) -> Self {
         self.redshift_credential_configuration = ::std::option::Option::Some(input);
         self
@@ -102,7 +101,6 @@ impl RedshiftRunConfigurationInputBuilder {
         &self.redshift_credential_configuration
     }
     /// <p>The details of the Amazon Redshift storage as part of the configuration of an Amazon Redshift data source run.</p>
-    /// This field is required.
     pub fn redshift_storage(mut self, input: crate::types::RedshiftStorage) -> Self {
         self.redshift_storage = ::std::option::Option::Some(input);
         self

@@ -26,6 +26,8 @@ pub struct PromptConfiguration {
     pub inference_configuration: ::std::option::Option<crate::types::InferenceConfiguration>,
     /// <p>Specifies whether to override the default parser Lambda function when parsing the raw foundation model output in the part of the agent sequence defined by the <code>promptType</code>. If you set the field as <code>OVERRIDEN</code>, the <code>overrideLambda</code> field in the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PromptOverrideConfiguration.html">PromptOverrideConfiguration</a> must be specified with the ARN of a Lambda function.</p>
     pub parser_mode: ::std::option::Option<crate::types::CreationMode>,
+    /// <p>The agent's foundation model.</p>
+    pub foundation_model: ::std::option::Option<::std::string::String>,
 }
 impl PromptConfiguration {
     /// <p>The step in the agent sequence that this prompt configuration applies to.</p>
@@ -62,6 +64,10 @@ impl PromptConfiguration {
     pub fn parser_mode(&self) -> ::std::option::Option<&crate::types::CreationMode> {
         self.parser_mode.as_ref()
     }
+    /// <p>The agent's foundation model.</p>
+    pub fn foundation_model(&self) -> ::std::option::Option<&str> {
+        self.foundation_model.as_deref()
+    }
 }
 impl ::std::fmt::Debug for PromptConfiguration {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -72,6 +78,7 @@ impl ::std::fmt::Debug for PromptConfiguration {
         formatter.field("base_prompt_template", &"*** Sensitive Data Redacted ***");
         formatter.field("inference_configuration", &self.inference_configuration);
         formatter.field("parser_mode", &self.parser_mode);
+        formatter.field("foundation_model", &self.foundation_model);
         formatter.finish()
     }
 }
@@ -92,6 +99,7 @@ pub struct PromptConfigurationBuilder {
     pub(crate) base_prompt_template: ::std::option::Option<::std::string::String>,
     pub(crate) inference_configuration: ::std::option::Option<crate::types::InferenceConfiguration>,
     pub(crate) parser_mode: ::std::option::Option<crate::types::CreationMode>,
+    pub(crate) foundation_model: ::std::option::Option<::std::string::String>,
 }
 impl PromptConfigurationBuilder {
     /// <p>The step in the agent sequence that this prompt configuration applies to.</p>
@@ -208,6 +216,20 @@ impl PromptConfigurationBuilder {
     pub fn get_parser_mode(&self) -> &::std::option::Option<crate::types::CreationMode> {
         &self.parser_mode
     }
+    /// <p>The agent's foundation model.</p>
+    pub fn foundation_model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.foundation_model = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The agent's foundation model.</p>
+    pub fn set_foundation_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.foundation_model = input;
+        self
+    }
+    /// <p>The agent's foundation model.</p>
+    pub fn get_foundation_model(&self) -> &::std::option::Option<::std::string::String> {
+        &self.foundation_model
+    }
     /// Consumes the builder and constructs a [`PromptConfiguration`](crate::types::PromptConfiguration).
     pub fn build(self) -> crate::types::PromptConfiguration {
         crate::types::PromptConfiguration {
@@ -217,6 +239,7 @@ impl PromptConfigurationBuilder {
             base_prompt_template: self.base_prompt_template,
             inference_configuration: self.inference_configuration,
             parser_mode: self.parser_mode,
+            foundation_model: self.foundation_model,
         }
     }
 }
@@ -229,6 +252,7 @@ impl ::std::fmt::Debug for PromptConfigurationBuilder {
         formatter.field("base_prompt_template", &"*** Sensitive Data Redacted ***");
         formatter.field("inference_configuration", &self.inference_configuration);
         formatter.field("parser_mode", &self.parser_mode);
+        formatter.field("foundation_model", &self.foundation_model);
         formatter.finish()
     }
 }

@@ -251,6 +251,30 @@ pub(crate) fn create_asset_type_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_connection_output_output_correct_errors(
+    mut builder: crate::operation::create_connection::builders::CreateConnectionOutputBuilder,
+) -> crate::operation::create_connection::builders::CreateConnectionOutputBuilder {
+    if builder.connection_id.is_none() {
+        builder.connection_id = Some(Default::default())
+    }
+    if builder.domain_id.is_none() {
+        builder.domain_id = Some(Default::default())
+    }
+    if builder.domain_unit_id.is_none() {
+        builder.domain_unit_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.physical_endpoints.is_none() {
+        builder.physical_endpoints = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::ConnectionType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn create_data_product_output_output_correct_errors(
     mut builder: crate::operation::create_data_product::builders::CreateDataProductOutputBuilder,
 ) -> crate::operation::create_data_product::builders::CreateDataProductOutputBuilder {
@@ -313,9 +337,6 @@ pub(crate) fn create_data_source_output_output_correct_errors(
     }
     if builder.project_id.is_none() {
         builder.project_id = Some(Default::default())
-    }
-    if builder.environment_id.is_none() {
-        builder.environment_id = Some(Default::default())
     }
     builder
 }
@@ -500,6 +521,24 @@ pub(crate) fn create_project_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_project_profile_output_output_correct_errors(
+    mut builder: crate::operation::create_project_profile::builders::CreateProjectProfileOutputBuilder,
+) -> crate::operation::create_project_profile::builders::CreateProjectProfileOutputBuilder {
+    if builder.domain_id.is_none() {
+        builder.domain_id = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.created_by.is_none() {
+        builder.created_by = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_rule_output_output_correct_errors(
     mut builder: crate::operation::create_rule::builders::CreateRuleOutputBuilder,
 ) -> crate::operation::create_rule::builders::CreateRuleOutputBuilder {
@@ -629,9 +668,6 @@ pub(crate) fn create_subscription_target_output_output_correct_errors(
     if builder.created_at.is_none() {
         builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
-    if builder.manage_access_role.is_none() {
-        builder.manage_access_role = Some(Default::default())
-    }
     if builder.applicable_asset_types.is_none() {
         builder.applicable_asset_types = Some(Default::default())
     }
@@ -658,9 +694,6 @@ pub(crate) fn delete_data_source_output_output_correct_errors(
     }
     if builder.project_id.is_none() {
         builder.project_id = Some(Default::default())
-    }
-    if builder.environment_id.is_none() {
-        builder.environment_id = Some(Default::default())
     }
     builder
 }
@@ -776,6 +809,30 @@ pub(crate) fn get_asset_type_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_connection_output_output_correct_errors(
+    mut builder: crate::operation::get_connection::builders::GetConnectionOutputBuilder,
+) -> crate::operation::get_connection::builders::GetConnectionOutputBuilder {
+    if builder.connection_id.is_none() {
+        builder.connection_id = Some(Default::default())
+    }
+    if builder.domain_id.is_none() {
+        builder.domain_id = Some(Default::default())
+    }
+    if builder.domain_unit_id.is_none() {
+        builder.domain_unit_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.physical_endpoints.is_none() {
+        builder.physical_endpoints = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::ConnectionType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn get_data_product_output_output_correct_errors(
     mut builder: crate::operation::get_data_product::builders::GetDataProductOutputBuilder,
 ) -> crate::operation::get_data_product::builders::GetDataProductOutputBuilder {
@@ -814,9 +871,6 @@ pub(crate) fn get_data_source_output_output_correct_errors(
     }
     if builder.project_id.is_none() {
         builder.project_id = Some(Default::default())
-    }
-    if builder.environment_id.is_none() {
-        builder.environment_id = Some(Default::default())
     }
     builder
 }
@@ -1109,6 +1163,24 @@ pub(crate) fn get_project_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_project_profile_output_output_correct_errors(
+    mut builder: crate::operation::get_project_profile::builders::GetProjectProfileOutputBuilder,
+) -> crate::operation::get_project_profile::builders::GetProjectProfileOutputBuilder {
+    if builder.domain_id.is_none() {
+        builder.domain_id = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.created_by.is_none() {
+        builder.created_by = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_rule_output_output_correct_errors(
     mut builder: crate::operation::get_rule::builders::GetRuleOutputBuilder,
 ) -> crate::operation::get_rule::builders::GetRuleOutputBuilder {
@@ -1280,9 +1352,6 @@ pub(crate) fn get_subscription_target_output_output_correct_errors(
     if builder.created_at.is_none() {
         builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
-    if builder.manage_access_role.is_none() {
-        builder.manage_access_role = Some(Default::default())
-    }
     if builder.applicable_asset_types.is_none() {
         builder.applicable_asset_types = Some(Default::default())
     }
@@ -1298,6 +1367,15 @@ pub(crate) fn get_subscription_target_output_output_correct_errors(
 pub(crate) fn list_asset_filters_output_output_correct_errors(
     mut builder: crate::operation::list_asset_filters::builders::ListAssetFiltersOutputBuilder,
 ) -> crate::operation::list_asset_filters::builders::ListAssetFiltersOutputBuilder {
+    if builder.items.is_none() {
+        builder.items = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_connections_output_output_correct_errors(
+    mut builder: crate::operation::list_connections::builders::ListConnectionsOutputBuilder,
+) -> crate::operation::list_connections::builders::ListConnectionsOutputBuilder {
     if builder.items.is_none() {
         builder.items = Some(Default::default())
     }
@@ -1613,6 +1691,30 @@ pub(crate) fn update_asset_filter_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_connection_output_output_correct_errors(
+    mut builder: crate::operation::update_connection::builders::UpdateConnectionOutputBuilder,
+) -> crate::operation::update_connection::builders::UpdateConnectionOutputBuilder {
+    if builder.connection_id.is_none() {
+        builder.connection_id = Some(Default::default())
+    }
+    if builder.domain_id.is_none() {
+        builder.domain_id = Some(Default::default())
+    }
+    if builder.domain_unit_id.is_none() {
+        builder.domain_unit_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.physical_endpoints.is_none() {
+        builder.physical_endpoints = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::ConnectionType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn update_data_source_output_output_correct_errors(
     mut builder: crate::operation::update_data_source::builders::UpdateDataSourceOutputBuilder,
 ) -> crate::operation::update_data_source::builders::UpdateDataSourceOutputBuilder {
@@ -1627,9 +1729,6 @@ pub(crate) fn update_data_source_output_output_correct_errors(
     }
     if builder.project_id.is_none() {
         builder.project_id = Some(Default::default())
-    }
-    if builder.environment_id.is_none() {
-        builder.environment_id = Some(Default::default())
     }
     builder
 }
@@ -1766,6 +1865,24 @@ pub(crate) fn update_glossary_term_output_output_correct_errors(
 pub(crate) fn update_project_output_output_correct_errors(
     mut builder: crate::operation::update_project::builders::UpdateProjectOutputBuilder,
 ) -> crate::operation::update_project::builders::UpdateProjectOutputBuilder {
+    if builder.domain_id.is_none() {
+        builder.domain_id = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.created_by.is_none() {
+        builder.created_by = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn update_project_profile_output_output_correct_errors(
+    mut builder: crate::operation::update_project_profile::builders::UpdateProjectProfileOutputBuilder,
+) -> crate::operation::update_project_profile::builders::UpdateProjectProfileOutputBuilder {
     if builder.domain_id.is_none() {
         builder.domain_id = Some(Default::default())
     }
@@ -1919,9 +2036,6 @@ pub(crate) fn update_subscription_target_output_output_correct_errors(
     if builder.created_at.is_none() {
         builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
-    if builder.manage_access_role.is_none() {
-        builder.manage_access_role = Some(Default::default())
-    }
     if builder.applicable_asset_types.is_none() {
         builder.applicable_asset_types = Some(Default::default())
     }
@@ -1972,6 +2086,13 @@ pub(crate) fn data_source_error_message_correct_errors(
 ) -> crate::types::builders::DataSourceErrorMessageBuilder {
     if builder.error_type.is_none() {
         builder.error_type = "no value was set".parse::<crate::types::DataSourceErrorType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn job_run_error_correct_errors(mut builder: crate::types::builders::JobRunErrorBuilder) -> crate::types::builders::JobRunErrorBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
     }
     builder
 }
@@ -2047,6 +2168,30 @@ pub(crate) fn configurable_environment_action_correct_errors(
     }
     if builder.parameters.is_none() {
         builder.parameters = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn connection_summary_correct_errors(
+    mut builder: crate::types::builders::ConnectionSummaryBuilder,
+) -> crate::types::builders::ConnectionSummaryBuilder {
+    if builder.connection_id.is_none() {
+        builder.connection_id = Some(Default::default())
+    }
+    if builder.domain_id.is_none() {
+        builder.domain_id = Some(Default::default())
+    }
+    if builder.domain_unit_id.is_none() {
+        builder.domain_unit_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.physical_endpoints.is_none() {
+        builder.physical_endpoints = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::ConnectionType>().ok()
     }
     builder
 }
@@ -2134,9 +2279,6 @@ pub(crate) fn data_source_summary_correct_errors(
 ) -> crate::types::builders::DataSourceSummaryBuilder {
     if builder.domain_id.is_none() {
         builder.domain_id = Some(Default::default())
-    }
-    if builder.environment_id.is_none() {
-        builder.environment_id = Some(Default::default())
     }
     if builder.data_source_id.is_none() {
         builder.data_source_id = Some(Default::default())
@@ -2249,6 +2391,24 @@ pub(crate) fn environment_blueprint_summary_correct_errors(
     builder
 }
 
+pub(crate) fn environment_configuration_correct_errors(
+    mut builder: crate::types::builders::EnvironmentConfigurationBuilder,
+) -> crate::types::builders::EnvironmentConfigurationBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.environment_blueprint_id.is_none() {
+        builder.environment_blueprint_id = Some(Default::default())
+    }
+    if builder.aws_account.is_none() {
+        builder.aws_account = Some(crate::types::AwsAccount::Unknown)
+    }
+    if builder.aws_region.is_none() {
+        builder.aws_region = Some(crate::types::Region::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn environment_error_correct_errors(
     mut builder: crate::types::builders::EnvironmentErrorBuilder,
 ) -> crate::types::builders::EnvironmentErrorBuilder {
@@ -2333,6 +2493,15 @@ pub(crate) fn glue_self_grant_status_output_correct_errors(
 ) -> crate::types::builders::GlueSelfGrantStatusOutputBuilder {
     if builder.self_grant_status_details.is_none() {
         builder.self_grant_status_details = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn hyper_pod_properties_output_correct_errors(
+    mut builder: crate::types::builders::HyperPodPropertiesOutputBuilder,
+) -> crate::types::builders::HyperPodPropertiesOutputBuilder {
+    if builder.cluster_name.is_none() {
+        builder.cluster_name = Some(Default::default())
     }
     builder
 }
@@ -2437,6 +2606,24 @@ pub(crate) fn project_member_correct_errors(
     builder
 }
 
+pub(crate) fn project_profile_summary_correct_errors(
+    mut builder: crate::types::builders::ProjectProfileSummaryBuilder,
+) -> crate::types::builders::ProjectProfileSummaryBuilder {
+    if builder.domain_id.is_none() {
+        builder.domain_id = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.created_by.is_none() {
+        builder.created_by = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn project_summary_correct_errors(
     mut builder: crate::types::builders::ProjectSummaryBuilder,
 ) -> crate::types::builders::ProjectSummaryBuilder {
@@ -2470,12 +2657,6 @@ pub(crate) fn redshift_run_configuration_output_correct_errors(
     if builder.relational_filter_configurations.is_none() {
         builder.relational_filter_configurations = Some(Default::default())
     }
-    if builder.redshift_credential_configuration.is_none() {
-        builder.redshift_credential_configuration = {
-            let builder = crate::types::builders::RedshiftCredentialConfigurationBuilder::default();
-            crate::serde_util::redshift_credential_configuration_correct_errors(builder).build().ok()
-        }
-    }
     if builder.redshift_storage.is_none() {
         builder.redshift_storage = Some(crate::types::RedshiftStorage::Unknown)
     }
@@ -2506,6 +2687,15 @@ pub(crate) fn row_filter_configuration_correct_errors(
 ) -> crate::types::builders::RowFilterConfigurationBuilder {
     if builder.row_filter.is_none() {
         builder.row_filter = Some(crate::types::RowFilter::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn sage_maker_run_configuration_output_correct_errors(
+    mut builder: crate::types::builders::SageMakerRunConfigurationOutputBuilder,
+) -> crate::types::builders::SageMakerRunConfigurationOutputBuilder {
+    if builder.tracking_assets.is_none() {
+        builder.tracking_assets = Some(Default::default())
     }
     builder
 }
@@ -2662,9 +2852,6 @@ pub(crate) fn subscription_target_summary_correct_errors(
     }
     if builder.created_at.is_none() {
         builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
-    }
-    if builder.manage_access_role.is_none() {
-        builder.manage_access_role = Some(Default::default())
     }
     if builder.applicable_asset_types.is_none() {
         builder.applicable_asset_types = Some(Default::default())
@@ -2856,6 +3043,18 @@ pub(crate) fn topic_correct_errors(mut builder: crate::types::builders::TopicBui
     }
     if builder.role.is_none() {
         builder.role = "no value was set".parse::<crate::types::NotificationRole>().ok()
+    }
+    builder
+}
+
+pub(crate) fn username_password_correct_errors(
+    mut builder: crate::types::builders::UsernamePasswordBuilder,
+) -> crate::types::builders::UsernamePasswordBuilder {
+    if builder.password.is_none() {
+        builder.password = Some(Default::default())
+    }
+    if builder.username.is_none() {
+        builder.username = Some(Default::default())
     }
     builder
 }

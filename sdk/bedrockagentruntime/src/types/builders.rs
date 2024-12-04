@@ -141,7 +141,7 @@ pub use crate::types::_custom_orchestration_trace_event::CustomOrchestrationTrac
 
 pub use crate::types::_failure_trace::FailureTraceBuilder;
 
-pub use crate::types::_post_processing_model_invocation_output::PostProcessingModelInvocationOutputBuilder;
+pub use crate::types::_routing_classifier_model_invocation_output::RoutingClassifierModelInvocationOutputBuilder;
 
 pub use crate::types::_metadata::MetadataBuilder;
 
@@ -149,13 +149,9 @@ pub use crate::types::_usage::UsageBuilder;
 
 pub use crate::types::_raw_response::RawResponseBuilder;
 
-pub use crate::types::_post_processing_parsed_response::PostProcessingParsedResponseBuilder;
-
 pub use crate::types::_model_invocation_input::ModelInvocationInputBuilder;
 
 pub use crate::types::_inference_configuration::InferenceConfigurationBuilder;
-
-pub use crate::types::_orchestration_model_invocation_output::OrchestrationModelInvocationOutputBuilder;
 
 pub use crate::types::_observation::ObservationBuilder;
 
@@ -167,9 +163,27 @@ pub use crate::types::_final_response::FinalResponseBuilder;
 
 pub use crate::types::_knowledge_base_lookup_output::KnowledgeBaseLookupOutputBuilder;
 
+pub use crate::types::_agent_collaborator_invocation_output::AgentCollaboratorInvocationOutputBuilder;
+
+pub use crate::types::_agent_collaborator_output_payload::AgentCollaboratorOutputPayloadBuilder;
+
+pub use crate::types::_return_control_payload::ReturnControlPayloadBuilder;
+
 pub use crate::types::_action_group_invocation_output::ActionGroupInvocationOutputBuilder;
 
 pub use crate::types::_invocation_input::InvocationInputBuilder;
+
+pub use crate::types::_agent_collaborator_invocation_input::AgentCollaboratorInvocationInputBuilder;
+
+pub use crate::types::_agent_collaborator_input_payload::AgentCollaboratorInputPayloadBuilder;
+
+pub use crate::types::_return_control_results::ReturnControlResultsBuilder;
+
+pub use crate::types::_function_result::FunctionResultBuilder;
+
+pub use crate::types::_content_body::ContentBodyBuilder;
+
+pub use crate::types::_api_result::ApiResultBuilder;
 
 pub use crate::types::_code_interpreter_invocation_input::CodeInterpreterInvocationInputBuilder;
 
@@ -178,6 +192,12 @@ pub use crate::types::_knowledge_base_lookup_input::KnowledgeBaseLookupInputBuil
 pub use crate::types::_action_group_invocation_input::ActionGroupInvocationInputBuilder;
 
 pub use crate::types::_request_body::RequestBodyBuilder;
+
+pub use crate::types::_post_processing_model_invocation_output::PostProcessingModelInvocationOutputBuilder;
+
+pub use crate::types::_post_processing_parsed_response::PostProcessingParsedResponseBuilder;
+
+pub use crate::types::_orchestration_model_invocation_output::OrchestrationModelInvocationOutputBuilder;
 
 pub use crate::types::_rationale::RationaleBuilder;
 
@@ -239,15 +259,7 @@ pub use crate::types::_byte_content_file::ByteContentFileBuilder;
 
 pub use crate::types::_s3_object_file::S3ObjectFileBuilder;
 
-pub use crate::types::_function_result::FunctionResultBuilder;
-
-pub use crate::types::_content_body::ContentBodyBuilder;
-
-pub use crate::types::_api_result::ApiResultBuilder;
-
 pub use crate::types::_file_part::FilePartBuilder;
-
-pub use crate::types::_return_control_payload::ReturnControlPayloadBuilder;
 
 pub use crate::types::_trace_part::TracePartBuilder;
 
@@ -256,6 +268,10 @@ pub use crate::types::_payload_part::PayloadPartBuilder;
 pub use crate::types::_streaming_configurations::StreamingConfigurationsBuilder;
 
 pub use crate::types::_session_state::SessionStateBuilder;
+
+pub use crate::types::_conversation_history::ConversationHistoryBuilder;
+
+pub use crate::types::_message::MessageBuilder;
 
 pub use crate::types::_knowledge_base_configuration::KnowledgeBaseConfigurationBuilder;
 

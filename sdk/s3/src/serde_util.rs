@@ -207,6 +207,21 @@ pub(crate) fn topic_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn get_bucket_metadata_table_configuration_result_correct_errors(
+    mut builder: crate::types::builders::GetBucketMetadataTableConfigurationResultBuilder,
+) -> crate::types::builders::GetBucketMetadataTableConfigurationResultBuilder {
+    if builder.metadata_table_configuration_result.is_none() {
+        builder.metadata_table_configuration_result = {
+            let builder = crate::types::builders::MetadataTableConfigurationResultBuilder::default();
+            Some(crate::serde_util::metadata_table_configuration_result_correct_errors(builder).build())
+        }
+    }
+    if builder.status.is_none() {
+        builder.status = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn inventory_destination_correct_errors(
     mut builder: crate::types::builders::InventoryDestinationBuilder,
 ) -> crate::types::builders::InventoryDestinationBuilder {
@@ -316,6 +331,18 @@ pub(crate) fn inventory_s3_bucket_destination_correct_errors(
     builder
 }
 
+pub(crate) fn metadata_table_configuration_result_correct_errors(
+    mut builder: crate::types::builders::MetadataTableConfigurationResultBuilder,
+) -> crate::types::builders::MetadataTableConfigurationResultBuilder {
+    if builder.s3_tables_destination_result.is_none() {
+        builder.s3_tables_destination_result = {
+            let builder = crate::types::builders::S3TablesDestinationResultBuilder::default();
+            crate::serde_util::s3_tables_destination_result_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn ownership_controls_rule_correct_errors(
     mut builder: crate::types::builders::OwnershipControlsRuleBuilder,
 ) -> crate::types::builders::OwnershipControlsRuleBuilder {
@@ -379,6 +406,24 @@ pub(crate) fn existing_object_replication_correct_errors(
 ) -> crate::types::builders::ExistingObjectReplicationBuilder {
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::ExistingObjectReplicationStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn s3_tables_destination_result_correct_errors(
+    mut builder: crate::types::builders::S3TablesDestinationResultBuilder,
+) -> crate::types::builders::S3TablesDestinationResultBuilder {
+    if builder.table_bucket_arn.is_none() {
+        builder.table_bucket_arn = Some(Default::default())
+    }
+    if builder.table_name.is_none() {
+        builder.table_name = Some(Default::default())
+    }
+    if builder.table_arn.is_none() {
+        builder.table_arn = Some(Default::default())
+    }
+    if builder.table_namespace.is_none() {
+        builder.table_namespace = Some(Default::default())
     }
     builder
 }

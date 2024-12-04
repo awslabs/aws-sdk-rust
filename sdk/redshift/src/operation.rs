@@ -151,6 +151,9 @@ pub mod delete_tags;
 /// Types for the `DeleteUsageLimit` operation.
 pub mod delete_usage_limit;
 
+/// Types for the `DeregisterNamespace` operation.
+pub mod deregister_namespace;
+
 /// Types for the `DescribeAccountAttributes` operation.
 pub mod describe_account_attributes;
 
@@ -378,6 +381,9 @@ pub mod put_resource_policy;
 
 /// Types for the `RebootCluster` operation.
 pub mod reboot_cluster;
+
+/// Types for the `RegisterNamespace` operation.
+pub mod register_namespace;
 
 /// Types for the `RejectDataShare` operation.
 pub mod reject_data_share;

@@ -192,6 +192,40 @@ impl From<crate::operation::create_bucket::CreateBucketError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_bucket_metadata_table_configuration::CreateBucketMetadataTableConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_bucket_metadata_table_configuration::CreateBucketMetadataTableConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_bucket_metadata_table_configuration::CreateBucketMetadataTableConfigurationError> for Error {
+    fn from(err: crate::operation::create_bucket_metadata_table_configuration::CreateBucketMetadataTableConfigurationError) -> Self {
+        match err {
+            crate::operation::create_bucket_metadata_table_configuration::CreateBucketMetadataTableConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_multipart_upload::CreateMultipartUploadError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -424,6 +458,40 @@ impl From<crate::operation::delete_bucket_lifecycle::DeleteBucketLifecycleError>
     fn from(err: crate::operation::delete_bucket_lifecycle::DeleteBucketLifecycleError) -> Self {
         match err {
             crate::operation::delete_bucket_lifecycle::DeleteBucketLifecycleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_bucket_metadata_table_configuration::DeleteBucketMetadataTableConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_bucket_metadata_table_configuration::DeleteBucketMetadataTableConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_bucket_metadata_table_configuration::DeleteBucketMetadataTableConfigurationError> for Error {
+    fn from(err: crate::operation::delete_bucket_metadata_table_configuration::DeleteBucketMetadataTableConfigurationError) -> Self {
+        match err {
+            crate::operation::delete_bucket_metadata_table_configuration::DeleteBucketMetadataTableConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -926,6 +994,40 @@ impl From<crate::operation::get_bucket_logging::GetBucketLoggingError> for Error
     fn from(err: crate::operation::get_bucket_logging::GetBucketLoggingError) -> Self {
         match err {
             crate::operation::get_bucket_logging::GetBucketLoggingError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_bucket_metadata_table_configuration::GetBucketMetadataTableConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_bucket_metadata_table_configuration::GetBucketMetadataTableConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_bucket_metadata_table_configuration::GetBucketMetadataTableConfigurationError> for Error {
+    fn from(err: crate::operation::get_bucket_metadata_table_configuration::GetBucketMetadataTableConfigurationError) -> Self {
+        match err {
+            crate::operation::get_bucket_metadata_table_configuration::GetBucketMetadataTableConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

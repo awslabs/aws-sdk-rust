@@ -23,6 +23,10 @@ pub struct CreateEnvironmentInput {
     pub environment_account_region: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the blueprint with which the environment is being created.</p>
     pub environment_blueprint_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>The deployment order of the environment.</p>
+    pub deployment_order: ::std::option::Option<i32>,
+    /// <p>The configuration ID of the environment.</p>
+    pub environment_configuration_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateEnvironmentInput {
     /// <p>The identifier of the Amazon DataZone project in which this environment is created.</p>
@@ -69,6 +73,14 @@ impl CreateEnvironmentInput {
     pub fn environment_blueprint_identifier(&self) -> ::std::option::Option<&str> {
         self.environment_blueprint_identifier.as_deref()
     }
+    /// <p>The deployment order of the environment.</p>
+    pub fn deployment_order(&self) -> ::std::option::Option<i32> {
+        self.deployment_order
+    }
+    /// <p>The configuration ID of the environment.</p>
+    pub fn environment_configuration_id(&self) -> ::std::option::Option<&str> {
+        self.environment_configuration_id.as_deref()
+    }
 }
 impl CreateEnvironmentInput {
     /// Creates a new builder-style object to manufacture [`CreateEnvironmentInput`](crate::operation::create_environment::CreateEnvironmentInput).
@@ -91,6 +103,8 @@ pub struct CreateEnvironmentInputBuilder {
     pub(crate) environment_account_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) environment_account_region: ::std::option::Option<::std::string::String>,
     pub(crate) environment_blueprint_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) deployment_order: ::std::option::Option<i32>,
+    pub(crate) environment_configuration_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateEnvironmentInputBuilder {
     /// <p>The identifier of the Amazon DataZone project in which this environment is created.</p>
@@ -249,6 +263,34 @@ impl CreateEnvironmentInputBuilder {
     pub fn get_environment_blueprint_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.environment_blueprint_identifier
     }
+    /// <p>The deployment order of the environment.</p>
+    pub fn deployment_order(mut self, input: i32) -> Self {
+        self.deployment_order = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The deployment order of the environment.</p>
+    pub fn set_deployment_order(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.deployment_order = input;
+        self
+    }
+    /// <p>The deployment order of the environment.</p>
+    pub fn get_deployment_order(&self) -> &::std::option::Option<i32> {
+        &self.deployment_order
+    }
+    /// <p>The configuration ID of the environment.</p>
+    pub fn environment_configuration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.environment_configuration_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The configuration ID of the environment.</p>
+    pub fn set_environment_configuration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.environment_configuration_id = input;
+        self
+    }
+    /// <p>The configuration ID of the environment.</p>
+    pub fn get_environment_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_configuration_id
+    }
     /// Consumes the builder and constructs a [`CreateEnvironmentInput`](crate::operation::create_environment::CreateEnvironmentInput).
     pub fn build(
         self,
@@ -264,6 +306,8 @@ impl CreateEnvironmentInputBuilder {
             environment_account_identifier: self.environment_account_identifier,
             environment_account_region: self.environment_account_region,
             environment_blueprint_identifier: self.environment_blueprint_identifier,
+            deployment_order: self.deployment_order,
+            environment_configuration_id: self.environment_configuration_id,
         })
     }
 }

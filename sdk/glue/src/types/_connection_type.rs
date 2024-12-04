@@ -13,15 +13,34 @@
 /// # let connectiontype = unimplemented!();
 /// match connectiontype {
 ///     ConnectionType::Custom => { /* ... */ },
+///     ConnectionType::Facebookads => { /* ... */ },
+///     ConnectionType::Googleads => { /* ... */ },
+///     ConnectionType::Googleanalytics4 => { /* ... */ },
+///     ConnectionType::Googlesheets => { /* ... */ },
+///     ConnectionType::Hubspot => { /* ... */ },
+///     ConnectionType::Instagramads => { /* ... */ },
+///     ConnectionType::Intercom => { /* ... */ },
 ///     ConnectionType::Jdbc => { /* ... */ },
+///     ConnectionType::Jiracloud => { /* ... */ },
 ///     ConnectionType::Kafka => { /* ... */ },
+///     ConnectionType::Marketo => { /* ... */ },
 ///     ConnectionType::Marketplace => { /* ... */ },
 ///     ConnectionType::Mongodb => { /* ... */ },
+///     ConnectionType::Netsuiteerp => { /* ... */ },
 ///     ConnectionType::Network => { /* ... */ },
 ///     ConnectionType::Salesforce => { /* ... */ },
+///     ConnectionType::Salesforcemarketingcloud => { /* ... */ },
+///     ConnectionType::Salesforcepardot => { /* ... */ },
+///     ConnectionType::Sapodata => { /* ... */ },
+///     ConnectionType::Servicenow => { /* ... */ },
 ///     ConnectionType::Sftp => { /* ... */ },
+///     ConnectionType::Slack => { /* ... */ },
+///     ConnectionType::Snapchatads => { /* ... */ },
+///     ConnectionType::Stripe => { /* ... */ },
 ///     ConnectionType::ViewValidationAthena => { /* ... */ },
 ///     ConnectionType::ViewValidationRedshift => { /* ... */ },
+///     ConnectionType::Zendesk => { /* ... */ },
+///     ConnectionType::Zohocrm => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -52,23 +71,61 @@ pub enum ConnectionType {
     #[allow(missing_docs)] // documentation missing in model
     Custom,
     #[allow(missing_docs)] // documentation missing in model
+    Facebookads,
+    #[allow(missing_docs)] // documentation missing in model
+    Googleads,
+    #[allow(missing_docs)] // documentation missing in model
+    Googleanalytics4,
+    #[allow(missing_docs)] // documentation missing in model
+    Googlesheets,
+    #[allow(missing_docs)] // documentation missing in model
+    Hubspot,
+    #[allow(missing_docs)] // documentation missing in model
+    Instagramads,
+    #[allow(missing_docs)] // documentation missing in model
+    Intercom,
+    #[allow(missing_docs)] // documentation missing in model
     Jdbc,
     #[allow(missing_docs)] // documentation missing in model
+    Jiracloud,
+    #[allow(missing_docs)] // documentation missing in model
     Kafka,
+    #[allow(missing_docs)] // documentation missing in model
+    Marketo,
     #[allow(missing_docs)] // documentation missing in model
     Marketplace,
     #[allow(missing_docs)] // documentation missing in model
     Mongodb,
     #[allow(missing_docs)] // documentation missing in model
+    Netsuiteerp,
+    #[allow(missing_docs)] // documentation missing in model
     Network,
     #[allow(missing_docs)] // documentation missing in model
     Salesforce,
     #[allow(missing_docs)] // documentation missing in model
+    Salesforcemarketingcloud,
+    #[allow(missing_docs)] // documentation missing in model
+    Salesforcepardot,
+    #[allow(missing_docs)] // documentation missing in model
+    Sapodata,
+    #[allow(missing_docs)] // documentation missing in model
+    Servicenow,
+    #[allow(missing_docs)] // documentation missing in model
     Sftp,
+    #[allow(missing_docs)] // documentation missing in model
+    Slack,
+    #[allow(missing_docs)] // documentation missing in model
+    Snapchatads,
+    #[allow(missing_docs)] // documentation missing in model
+    Stripe,
     #[allow(missing_docs)] // documentation missing in model
     ViewValidationAthena,
     #[allow(missing_docs)] // documentation missing in model
     ViewValidationRedshift,
+    #[allow(missing_docs)] // documentation missing in model
+    Zendesk,
+    #[allow(missing_docs)] // documentation missing in model
+    Zohocrm,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -77,15 +134,34 @@ impl ::std::convert::From<&str> for ConnectionType {
     fn from(s: &str) -> Self {
         match s {
             "CUSTOM" => ConnectionType::Custom,
+            "FACEBOOKADS" => ConnectionType::Facebookads,
+            "GOOGLEADS" => ConnectionType::Googleads,
+            "GOOGLEANALYTICS4" => ConnectionType::Googleanalytics4,
+            "GOOGLESHEETS" => ConnectionType::Googlesheets,
+            "HUBSPOT" => ConnectionType::Hubspot,
+            "INSTAGRAMADS" => ConnectionType::Instagramads,
+            "INTERCOM" => ConnectionType::Intercom,
             "JDBC" => ConnectionType::Jdbc,
+            "JIRACLOUD" => ConnectionType::Jiracloud,
             "KAFKA" => ConnectionType::Kafka,
+            "MARKETO" => ConnectionType::Marketo,
             "MARKETPLACE" => ConnectionType::Marketplace,
             "MONGODB" => ConnectionType::Mongodb,
+            "NETSUITEERP" => ConnectionType::Netsuiteerp,
             "NETWORK" => ConnectionType::Network,
             "SALESFORCE" => ConnectionType::Salesforce,
+            "SALESFORCEMARKETINGCLOUD" => ConnectionType::Salesforcemarketingcloud,
+            "SALESFORCEPARDOT" => ConnectionType::Salesforcepardot,
+            "SAPODATA" => ConnectionType::Sapodata,
+            "SERVICENOW" => ConnectionType::Servicenow,
             "SFTP" => ConnectionType::Sftp,
+            "SLACK" => ConnectionType::Slack,
+            "SNAPCHATADS" => ConnectionType::Snapchatads,
+            "STRIPE" => ConnectionType::Stripe,
             "VIEW_VALIDATION_ATHENA" => ConnectionType::ViewValidationAthena,
             "VIEW_VALIDATION_REDSHIFT" => ConnectionType::ViewValidationRedshift,
+            "ZENDESK" => ConnectionType::Zendesk,
+            "ZOHOCRM" => ConnectionType::Zohocrm,
             other => ConnectionType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -102,15 +178,34 @@ impl ConnectionType {
     pub fn as_str(&self) -> &str {
         match self {
             ConnectionType::Custom => "CUSTOM",
+            ConnectionType::Facebookads => "FACEBOOKADS",
+            ConnectionType::Googleads => "GOOGLEADS",
+            ConnectionType::Googleanalytics4 => "GOOGLEANALYTICS4",
+            ConnectionType::Googlesheets => "GOOGLESHEETS",
+            ConnectionType::Hubspot => "HUBSPOT",
+            ConnectionType::Instagramads => "INSTAGRAMADS",
+            ConnectionType::Intercom => "INTERCOM",
             ConnectionType::Jdbc => "JDBC",
+            ConnectionType::Jiracloud => "JIRACLOUD",
             ConnectionType::Kafka => "KAFKA",
+            ConnectionType::Marketo => "MARKETO",
             ConnectionType::Marketplace => "MARKETPLACE",
             ConnectionType::Mongodb => "MONGODB",
+            ConnectionType::Netsuiteerp => "NETSUITEERP",
             ConnectionType::Network => "NETWORK",
             ConnectionType::Salesforce => "SALESFORCE",
+            ConnectionType::Salesforcemarketingcloud => "SALESFORCEMARKETINGCLOUD",
+            ConnectionType::Salesforcepardot => "SALESFORCEPARDOT",
+            ConnectionType::Sapodata => "SAPODATA",
+            ConnectionType::Servicenow => "SERVICENOW",
             ConnectionType::Sftp => "SFTP",
+            ConnectionType::Slack => "SLACK",
+            ConnectionType::Snapchatads => "SNAPCHATADS",
+            ConnectionType::Stripe => "STRIPE",
             ConnectionType::ViewValidationAthena => "VIEW_VALIDATION_ATHENA",
             ConnectionType::ViewValidationRedshift => "VIEW_VALIDATION_REDSHIFT",
+            ConnectionType::Zendesk => "ZENDESK",
+            ConnectionType::Zohocrm => "ZOHOCRM",
             ConnectionType::Unknown(value) => value.as_str(),
         }
     }
@@ -118,15 +213,34 @@ impl ConnectionType {
     pub const fn values() -> &'static [&'static str] {
         &[
             "CUSTOM",
+            "FACEBOOKADS",
+            "GOOGLEADS",
+            "GOOGLEANALYTICS4",
+            "GOOGLESHEETS",
+            "HUBSPOT",
+            "INSTAGRAMADS",
+            "INTERCOM",
             "JDBC",
+            "JIRACLOUD",
             "KAFKA",
+            "MARKETO",
             "MARKETPLACE",
             "MONGODB",
+            "NETSUITEERP",
             "NETWORK",
             "SALESFORCE",
+            "SALESFORCEMARKETINGCLOUD",
+            "SALESFORCEPARDOT",
+            "SAPODATA",
+            "SERVICENOW",
             "SFTP",
+            "SLACK",
+            "SNAPCHATADS",
+            "STRIPE",
             "VIEW_VALIDATION_ATHENA",
             "VIEW_VALIDATION_REDSHIFT",
+            "ZENDESK",
+            "ZOHOCRM",
         ]
     }
 }
@@ -151,15 +265,34 @@ impl ::std::fmt::Display for ConnectionType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ConnectionType::Custom => write!(f, "CUSTOM"),
+            ConnectionType::Facebookads => write!(f, "FACEBOOKADS"),
+            ConnectionType::Googleads => write!(f, "GOOGLEADS"),
+            ConnectionType::Googleanalytics4 => write!(f, "GOOGLEANALYTICS4"),
+            ConnectionType::Googlesheets => write!(f, "GOOGLESHEETS"),
+            ConnectionType::Hubspot => write!(f, "HUBSPOT"),
+            ConnectionType::Instagramads => write!(f, "INSTAGRAMADS"),
+            ConnectionType::Intercom => write!(f, "INTERCOM"),
             ConnectionType::Jdbc => write!(f, "JDBC"),
+            ConnectionType::Jiracloud => write!(f, "JIRACLOUD"),
             ConnectionType::Kafka => write!(f, "KAFKA"),
+            ConnectionType::Marketo => write!(f, "MARKETO"),
             ConnectionType::Marketplace => write!(f, "MARKETPLACE"),
             ConnectionType::Mongodb => write!(f, "MONGODB"),
+            ConnectionType::Netsuiteerp => write!(f, "NETSUITEERP"),
             ConnectionType::Network => write!(f, "NETWORK"),
             ConnectionType::Salesforce => write!(f, "SALESFORCE"),
+            ConnectionType::Salesforcemarketingcloud => write!(f, "SALESFORCEMARKETINGCLOUD"),
+            ConnectionType::Salesforcepardot => write!(f, "SALESFORCEPARDOT"),
+            ConnectionType::Sapodata => write!(f, "SAPODATA"),
+            ConnectionType::Servicenow => write!(f, "SERVICENOW"),
             ConnectionType::Sftp => write!(f, "SFTP"),
+            ConnectionType::Slack => write!(f, "SLACK"),
+            ConnectionType::Snapchatads => write!(f, "SNAPCHATADS"),
+            ConnectionType::Stripe => write!(f, "STRIPE"),
             ConnectionType::ViewValidationAthena => write!(f, "VIEW_VALIDATION_ATHENA"),
             ConnectionType::ViewValidationRedshift => write!(f, "VIEW_VALIDATION_REDSHIFT"),
+            ConnectionType::Zendesk => write!(f, "ZENDESK"),
+            ConnectionType::Zohocrm => write!(f, "ZOHOCRM"),
             ConnectionType::Unknown(value) => write!(f, "{}", value),
         }
     }

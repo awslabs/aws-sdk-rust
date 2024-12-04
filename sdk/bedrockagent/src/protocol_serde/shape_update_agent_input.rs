@@ -3,56 +3,59 @@ pub fn ser_update_agent_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_agent::UpdateAgentInput,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.agent_name {
-        object.key("agentName").string(var_1.as_str());
+    if let Some(var_1) = &input.agent_collaboration {
+        object.key("agentCollaboration").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.agent_resource_role_arn {
-        object.key("agentResourceRoleArn").string(var_2.as_str());
+    if let Some(var_2) = &input.agent_name {
+        object.key("agentName").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.custom_orchestration {
+    if let Some(var_3) = &input.agent_resource_role_arn {
+        object.key("agentResourceRoleArn").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.custom_orchestration {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("customOrchestration").start_object();
-        crate::protocol_serde::shape_custom_orchestration::ser_custom_orchestration(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_5 = object.key("customOrchestration").start_object();
+        crate::protocol_serde::shape_custom_orchestration::ser_custom_orchestration(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_5) = &input.customer_encryption_key_arn {
-        object.key("customerEncryptionKeyArn").string(var_5.as_str());
+    if let Some(var_6) = &input.customer_encryption_key_arn {
+        object.key("customerEncryptionKeyArn").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.description {
-        object.key("description").string(var_6.as_str());
+    if let Some(var_7) = &input.description {
+        object.key("description").string(var_7.as_str());
     }
-    if let Some(var_7) = &input.foundation_model {
-        object.key("foundationModel").string(var_7.as_str());
+    if let Some(var_8) = &input.foundation_model {
+        object.key("foundationModel").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.guardrail_configuration {
+    if let Some(var_9) = &input.guardrail_configuration {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("guardrailConfiguration").start_object();
-        crate::protocol_serde::shape_guardrail_configuration::ser_guardrail_configuration(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_10 = object.key("guardrailConfiguration").start_object();
+        crate::protocol_serde::shape_guardrail_configuration::ser_guardrail_configuration(&mut object_10, var_9)?;
+        object_10.finish();
     }
-    if let Some(var_10) = &input.idle_session_ttl_in_seconds {
+    if let Some(var_11) = &input.idle_session_ttl_in_seconds {
         object.key("idleSessionTTLInSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_10).into()),
+            ::aws_smithy_types::Number::NegInt((*var_11).into()),
         );
     }
-    if let Some(var_11) = &input.instruction {
-        object.key("instruction").string(var_11.as_str());
+    if let Some(var_12) = &input.instruction {
+        object.key("instruction").string(var_12.as_str());
     }
-    if let Some(var_12) = &input.memory_configuration {
+    if let Some(var_13) = &input.memory_configuration {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("memoryConfiguration").start_object();
-        crate::protocol_serde::shape_memory_configuration::ser_memory_configuration(&mut object_13, var_12)?;
-        object_13.finish();
+        let mut object_14 = object.key("memoryConfiguration").start_object();
+        crate::protocol_serde::shape_memory_configuration::ser_memory_configuration(&mut object_14, var_13)?;
+        object_14.finish();
     }
-    if let Some(var_14) = &input.orchestration_type {
-        object.key("orchestrationType").string(var_14.as_str());
+    if let Some(var_15) = &input.orchestration_type {
+        object.key("orchestrationType").string(var_15.as_str());
     }
-    if let Some(var_15) = &input.prompt_override_configuration {
+    if let Some(var_16) = &input.prompt_override_configuration {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("promptOverrideConfiguration").start_object();
-        crate::protocol_serde::shape_prompt_override_configuration::ser_prompt_override_configuration(&mut object_16, var_15)?;
-        object_16.finish();
+        let mut object_17 = object.key("promptOverrideConfiguration").start_object();
+        crate::protocol_serde::shape_prompt_override_configuration::ser_prompt_override_configuration(&mut object_17, var_16)?;
+        object_17.finish();
     }
     Ok(())
 }

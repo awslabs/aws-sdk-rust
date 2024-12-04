@@ -148,6 +148,13 @@ where
                                 crate::protocol_serde::shape_table_warm_throughput_description::de_table_warm_throughput_description(tokens)?,
                             );
                         }
+                        "MultiRegionConsistency" => {
+                            builder = builder.set_multi_region_consistency(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::MultiRegionConsistency::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

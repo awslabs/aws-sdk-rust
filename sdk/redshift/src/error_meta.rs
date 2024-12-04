@@ -2328,6 +2328,32 @@ impl From<crate::operation::delete_usage_limit::DeleteUsageLimitError> for Error
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::deregister_namespace::DeregisterNamespaceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::deregister_namespace::DeregisterNamespaceError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::deregister_namespace::DeregisterNamespaceError> for Error {
+    fn from(err: crate::operation::deregister_namespace::DeregisterNamespaceError) -> Self {
+        match err {
+            crate::operation::deregister_namespace::DeregisterNamespaceError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
+            crate::operation::deregister_namespace::DeregisterNamespaceError::InvalidClusterStateFault(inner) => {
+                Error::InvalidClusterStateFault(inner)
+            }
+            crate::operation::deregister_namespace::DeregisterNamespaceError::InvalidNamespaceFault(inner) => Error::InvalidNamespaceFault(inner),
+            crate::operation::deregister_namespace::DeregisterNamespaceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_account_attributes::DescribeAccountAttributesError, R>>
     for Error
 where
@@ -4804,6 +4830,30 @@ impl From<crate::operation::reboot_cluster::RebootClusterError> for Error {
             crate::operation::reboot_cluster::RebootClusterError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
             crate::operation::reboot_cluster::RebootClusterError::InvalidClusterStateFault(inner) => Error::InvalidClusterStateFault(inner),
             crate::operation::reboot_cluster::RebootClusterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::register_namespace::RegisterNamespaceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::register_namespace::RegisterNamespaceError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::register_namespace::RegisterNamespaceError> for Error {
+    fn from(err: crate::operation::register_namespace::RegisterNamespaceError) -> Self {
+        match err {
+            crate::operation::register_namespace::RegisterNamespaceError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
+            crate::operation::register_namespace::RegisterNamespaceError::InvalidClusterStateFault(inner) => Error::InvalidClusterStateFault(inner),
+            crate::operation::register_namespace::RegisterNamespaceError::InvalidNamespaceFault(inner) => Error::InvalidNamespaceFault(inner),
+            crate::operation::register_namespace::RegisterNamespaceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

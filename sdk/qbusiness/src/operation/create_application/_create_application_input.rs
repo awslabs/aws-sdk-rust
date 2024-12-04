@@ -29,6 +29,8 @@ pub struct CreateApplicationInput {
     pub q_apps_configuration: ::std::option::Option<crate::types::QAppsConfiguration>,
     /// <p>Configuration information about chat response personalization. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/personalizing-chat-responses.html">Personalizing chat responses</a></p>
     pub personalization_configuration: ::std::option::Option<crate::types::PersonalizationConfiguration>,
+    /// <p>The Amazon QuickSight configuration for an Amazon Q Business application that uses QuickSight for authentication. This configuration is required if your application uses QuickSight as the identity provider. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/create-quicksight-integrated-application.html">Creating an Amazon QuickSight integrated application</a>.</p>
+    pub quick_sight_configuration: ::std::option::Option<crate::types::QuickSightConfiguration>,
 }
 impl CreateApplicationInput {
     /// <p>A name for the Amazon Q Business application.</p>
@@ -87,6 +89,10 @@ impl CreateApplicationInput {
     pub fn personalization_configuration(&self) -> ::std::option::Option<&crate::types::PersonalizationConfiguration> {
         self.personalization_configuration.as_ref()
     }
+    /// <p>The Amazon QuickSight configuration for an Amazon Q Business application that uses QuickSight for authentication. This configuration is required if your application uses QuickSight as the identity provider. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/create-quicksight-integrated-application.html">Creating an Amazon QuickSight integrated application</a>.</p>
+    pub fn quick_sight_configuration(&self) -> ::std::option::Option<&crate::types::QuickSightConfiguration> {
+        self.quick_sight_configuration.as_ref()
+    }
 }
 impl CreateApplicationInput {
     /// Creates a new builder-style object to manufacture [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
@@ -112,6 +118,7 @@ pub struct CreateApplicationInputBuilder {
     pub(crate) attachments_configuration: ::std::option::Option<crate::types::AttachmentsConfiguration>,
     pub(crate) q_apps_configuration: ::std::option::Option<crate::types::QAppsConfiguration>,
     pub(crate) personalization_configuration: ::std::option::Option<crate::types::PersonalizationConfiguration>,
+    pub(crate) quick_sight_configuration: ::std::option::Option<crate::types::QuickSightConfiguration>,
 }
 impl CreateApplicationInputBuilder {
     /// <p>A name for the Amazon Q Business application.</p>
@@ -309,6 +316,20 @@ impl CreateApplicationInputBuilder {
     pub fn get_personalization_configuration(&self) -> &::std::option::Option<crate::types::PersonalizationConfiguration> {
         &self.personalization_configuration
     }
+    /// <p>The Amazon QuickSight configuration for an Amazon Q Business application that uses QuickSight for authentication. This configuration is required if your application uses QuickSight as the identity provider. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/create-quicksight-integrated-application.html">Creating an Amazon QuickSight integrated application</a>.</p>
+    pub fn quick_sight_configuration(mut self, input: crate::types::QuickSightConfiguration) -> Self {
+        self.quick_sight_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Amazon QuickSight configuration for an Amazon Q Business application that uses QuickSight for authentication. This configuration is required if your application uses QuickSight as the identity provider. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/create-quicksight-integrated-application.html">Creating an Amazon QuickSight integrated application</a>.</p>
+    pub fn set_quick_sight_configuration(mut self, input: ::std::option::Option<crate::types::QuickSightConfiguration>) -> Self {
+        self.quick_sight_configuration = input;
+        self
+    }
+    /// <p>The Amazon QuickSight configuration for an Amazon Q Business application that uses QuickSight for authentication. This configuration is required if your application uses QuickSight as the identity provider. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/create-quicksight-integrated-application.html">Creating an Amazon QuickSight integrated application</a>.</p>
+    pub fn get_quick_sight_configuration(&self) -> &::std::option::Option<crate::types::QuickSightConfiguration> {
+        &self.quick_sight_configuration
+    }
     /// Consumes the builder and constructs a [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
     pub fn build(
         self,
@@ -327,6 +348,7 @@ impl CreateApplicationInputBuilder {
             attachments_configuration: self.attachments_configuration,
             q_apps_configuration: self.q_apps_configuration,
             personalization_configuration: self.personalization_configuration,
+            quick_sight_configuration: self.quick_sight_configuration,
         })
     }
 }

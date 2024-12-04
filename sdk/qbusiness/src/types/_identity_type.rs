@@ -15,6 +15,7 @@
 ///     IdentityType::AwsIamIdc => { /* ... */ },
 ///     IdentityType::AwsIamIdpOidc => { /* ... */ },
 ///     IdentityType::AwsIamIdpSaml => { /* ... */ },
+///     IdentityType::AwsQuicksightIdp => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -48,6 +49,8 @@ pub enum IdentityType {
     AwsIamIdpOidc,
     #[allow(missing_docs)] // documentation missing in model
     AwsIamIdpSaml,
+    #[allow(missing_docs)] // documentation missing in model
+    AwsQuicksightIdp,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -58,6 +61,7 @@ impl ::std::convert::From<&str> for IdentityType {
             "AWS_IAM_IDC" => IdentityType::AwsIamIdc,
             "AWS_IAM_IDP_OIDC" => IdentityType::AwsIamIdpOidc,
             "AWS_IAM_IDP_SAML" => IdentityType::AwsIamIdpSaml,
+            "AWS_QUICKSIGHT_IDP" => IdentityType::AwsQuicksightIdp,
             other => IdentityType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -76,12 +80,13 @@ impl IdentityType {
             IdentityType::AwsIamIdc => "AWS_IAM_IDC",
             IdentityType::AwsIamIdpOidc => "AWS_IAM_IDP_OIDC",
             IdentityType::AwsIamIdpSaml => "AWS_IAM_IDP_SAML",
+            IdentityType::AwsQuicksightIdp => "AWS_QUICKSIGHT_IDP",
             IdentityType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AWS_IAM_IDC", "AWS_IAM_IDP_OIDC", "AWS_IAM_IDP_SAML"]
+        &["AWS_IAM_IDC", "AWS_IAM_IDP_OIDC", "AWS_IAM_IDP_SAML", "AWS_QUICKSIGHT_IDP"]
     }
 }
 impl ::std::convert::AsRef<str> for IdentityType {
@@ -107,6 +112,7 @@ impl ::std::fmt::Display for IdentityType {
             IdentityType::AwsIamIdc => write!(f, "AWS_IAM_IDC"),
             IdentityType::AwsIamIdpOidc => write!(f, "AWS_IAM_IDP_OIDC"),
             IdentityType::AwsIamIdpSaml => write!(f, "AWS_IAM_IDP_SAML"),
+            IdentityType::AwsQuicksightIdp => write!(f, "AWS_QUICKSIGHT_IDP"),
             IdentityType::Unknown(value) => write!(f, "{}", value),
         }
     }

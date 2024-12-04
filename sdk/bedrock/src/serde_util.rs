@@ -122,7 +122,7 @@ pub(crate) fn get_custom_model_output_output_correct_errors(
     if builder.training_data_config.is_none() {
         builder.training_data_config = {
             let builder = crate::types::builders::TrainingDataConfigBuilder::default();
-            crate::serde_util::training_data_config_correct_errors(builder).build().ok()
+            Some(builder.build())
         }
     }
     if builder.output_data_config.is_none() {
@@ -275,13 +275,10 @@ pub(crate) fn get_model_customization_job_output_output_correct_errors(
     if builder.base_model_arn.is_none() {
         builder.base_model_arn = Some(Default::default())
     }
-    if builder.hyper_parameters.is_none() {
-        builder.hyper_parameters = Some(Default::default())
-    }
     if builder.training_data_config.is_none() {
         builder.training_data_config = {
             let builder = crate::types::builders::TrainingDataConfigBuilder::default();
-            crate::serde_util::training_data_config_correct_errors(builder).build().ok()
+            Some(builder.build())
         }
     }
     if builder.validation_data_config.is_none() {
@@ -382,15 +379,6 @@ pub(crate) fn update_guardrail_output_output_correct_errors(
     }
     if builder.updated_at.is_none() {
         builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
-    }
-    builder
-}
-
-pub(crate) fn training_data_config_correct_errors(
-    mut builder: crate::types::builders::TrainingDataConfigBuilder,
-) -> crate::types::builders::TrainingDataConfigBuilder {
-    if builder.s3_uri.is_none() {
-        builder.s3_uri = Some(Default::default())
     }
     builder
 }
@@ -528,6 +516,18 @@ pub(crate) fn custom_model_summary_correct_errors(
     builder
 }
 
+pub(crate) fn distillation_config_correct_errors(
+    mut builder: crate::types::builders::DistillationConfigBuilder,
+) -> crate::types::builders::DistillationConfigBuilder {
+    if builder.teacher_model_config.is_none() {
+        builder.teacher_model_config = {
+            let builder = crate::types::builders::TeacherModelConfigBuilder::default();
+            crate::serde_util::teacher_model_config_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn evaluation_summary_correct_errors(
     mut builder: crate::types::builders::EvaluationSummaryBuilder,
 ) -> crate::types::builders::EvaluationSummaryBuilder {
@@ -644,6 +644,15 @@ pub(crate) fn inference_profile_summary_correct_errors(
     }
     if builder.r#type.is_none() {
         builder.r#type = "no value was set".parse::<crate::types::InferenceProfileType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn invocation_logs_config_correct_errors(
+    mut builder: crate::types::builders::InvocationLogsConfigBuilder,
+) -> crate::types::builders::InvocationLogsConfigBuilder {
+    if builder.invocation_log_source.is_none() {
+        builder.invocation_log_source = Some(crate::types::InvocationLogSource::Unknown)
     }
     builder
 }
@@ -905,6 +914,15 @@ pub(crate) fn human_workflow_config_correct_errors(
 ) -> crate::types::builders::HumanWorkflowConfigBuilder {
     if builder.flow_definition_arn.is_none() {
         builder.flow_definition_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn teacher_model_config_correct_errors(
+    mut builder: crate::types::builders::TeacherModelConfigBuilder,
+) -> crate::types::builders::TeacherModelConfigBuilder {
+    if builder.teacher_model_identifier.is_none() {
+        builder.teacher_model_identifier = Some(Default::default())
     }
     builder
 }

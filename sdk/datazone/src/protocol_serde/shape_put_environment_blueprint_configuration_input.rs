@@ -12,40 +12,43 @@ pub fn ser_put_environment_blueprint_configuration_input_input(
         }
         array_2.finish();
     }
-    if let Some(var_4) = &input.manage_access_role_arn {
-        object.key("manageAccessRoleArn").string(var_4.as_str());
+    if let Some(var_4) = &input.environment_role_permission_boundary {
+        object.key("environmentRolePermissionBoundary").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.provisioning_configurations {
-        let mut array_6 = object.key("provisioningConfigurations").start_array();
-        for item_7 in var_5 {
+    if let Some(var_5) = &input.manage_access_role_arn {
+        object.key("manageAccessRoleArn").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.provisioning_configurations {
+        let mut array_7 = object.key("provisioningConfigurations").start_array();
+        for item_8 in var_6 {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_provisioning_configuration::ser_provisioning_configuration(&mut object_8, item_7)?;
-                object_8.finish();
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_provisioning_configuration::ser_provisioning_configuration(&mut object_9, item_8)?;
+                object_9.finish();
             }
         }
-        array_6.finish();
+        array_7.finish();
     }
-    if let Some(var_9) = &input.provisioning_role_arn {
-        object.key("provisioningRoleArn").string(var_9.as_str());
+    if let Some(var_10) = &input.provisioning_role_arn {
+        object.key("provisioningRoleArn").string(var_10.as_str());
     }
-    if let Some(var_10) = &input.regional_parameters {
+    if let Some(var_11) = &input.regional_parameters {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("regionalParameters").start_object();
-        for (key_12, value_13) in var_10 {
+        let mut object_12 = object.key("regionalParameters").start_object();
+        for (key_13, value_14) in var_11 {
             {
                 #[allow(unused_mut)]
-                let mut object_14 = object_11.key(key_12.as_str()).start_object();
-                for (key_15, value_16) in value_13 {
+                let mut object_15 = object_12.key(key_13.as_str()).start_object();
+                for (key_16, value_17) in value_14 {
                     {
-                        object_14.key(key_15.as_str()).string(value_16.as_str());
+                        object_15.key(key_16.as_str()).string(value_17.as_str());
                     }
                 }
-                object_14.finish();
+                object_15.finish();
             }
         }
-        object_11.finish();
+        object_12.finish();
     }
     Ok(())
 }

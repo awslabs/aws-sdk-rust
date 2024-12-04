@@ -17,6 +17,21 @@ pub fn de_update_database_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "AlreadyExistsException" => crate::operation::update_database::UpdateDatabaseError::AlreadyExistsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::AlreadyExistsExceptionBuilder::default();
+                output = crate::protocol_serde::shape_already_exists_exception::de_already_exists_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::update_database::UpdateDatabaseError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ConcurrentModificationException" => crate::operation::update_database::UpdateDatabaseError::ConcurrentModificationException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -42,6 +57,39 @@ pub fn de_update_database_http_error(
                 let mut output = crate::types::error::builders::EntityNotFoundExceptionBuilder::default();
                 output = crate::protocol_serde::shape_entity_not_found_exception::de_entity_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_database::UpdateDatabaseError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "FederationSourceException" => crate::operation::update_database::UpdateDatabaseError::FederationSourceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::FederationSourceExceptionBuilder::default();
+                output = crate::protocol_serde::shape_federation_source_exception::de_federation_source_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::update_database::UpdateDatabaseError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "FederationSourceRetryableException" => crate::operation::update_database::UpdateDatabaseError::FederationSourceRetryableException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::FederationSourceRetryableExceptionBuilder::default();
+                output = crate::protocol_serde::shape_federation_source_retryable_exception::de_federation_source_retryable_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::update_database::UpdateDatabaseError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };

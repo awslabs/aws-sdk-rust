@@ -22,7 +22,7 @@ impl crate::operation::list_model_invocation_jobs::builders::ListModelInvocation
 }
 /// Fluent builder constructing a request to `ListModelInvocationJobs`.
 ///
-/// <p>Lists all batch inference jobs in the account. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-manage.html#batch-inference-view">View details about a batch inference job</a>.</p>
+/// <p>Lists all batch inference jobs in the account. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-view.html">View details about a batch inference job</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListModelInvocationJobsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -143,16 +143,109 @@ impl ListModelInvocationJobsFluentBuilder {
         self.inner.get_submit_time_before()
     }
     /// <p>Specify a status to filter for batch inference jobs whose statuses match the string you specify.</p>
+    /// <p>The following statuses are possible:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Submitted – This job has been submitted to a queue for validation.</p></li>
+    /// <li>
+    /// <p>Validating – This job is being validated for the requirements described in <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-data.html">Format and upload your batch inference data</a>. The criteria include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Your IAM service role has access to the Amazon S3 buckets containing your files.</p></li>
+    /// <li>
+    /// <p>Your files are .jsonl files and each individual record is a JSON object in the correct format. Note that validation doesn't check if the <code>modelInput</code> value matches the request body for the model.</p></li>
+    /// <li>
+    /// <p>Your files fulfill the requirements for file size and number of records. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/quotas.html">Quotas for Amazon Bedrock</a>.</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p>Scheduled – This job has been validated and is now in a queue. The job will automatically start when it reaches its turn.</p></li>
+    /// <li>
+    /// <p>Expired – This job timed out because it was scheduled but didn't begin before the set timeout duration. Submit a new job request.</p></li>
+    /// <li>
+    /// <p>InProgress – This job has begun. You can start viewing the results in the output S3 location.</p></li>
+    /// <li>
+    /// <p>Completed – This job has successfully completed. View the output files in the output S3 location.</p></li>
+    /// <li>
+    /// <p>PartiallyCompleted – This job has partially completed. Not all of your records could be processed in time. View the output files in the output S3 location.</p></li>
+    /// <li>
+    /// <p>Failed – This job has failed. Check the failure message for any further details. For further assistance, reach out to the <a href="https://console.aws.amazon.com/support/home/">Amazon Web Services Support Center</a>.</p></li>
+    /// <li>
+    /// <p>Stopped – This job was stopped by a user.</p></li>
+    /// <li>
+    /// <p>Stopping – This job is being stopped by a user.</p></li>
+    /// </ul>
     pub fn status_equals(mut self, input: crate::types::ModelInvocationJobStatus) -> Self {
         self.inner = self.inner.status_equals(input);
         self
     }
     /// <p>Specify a status to filter for batch inference jobs whose statuses match the string you specify.</p>
+    /// <p>The following statuses are possible:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Submitted – This job has been submitted to a queue for validation.</p></li>
+    /// <li>
+    /// <p>Validating – This job is being validated for the requirements described in <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-data.html">Format and upload your batch inference data</a>. The criteria include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Your IAM service role has access to the Amazon S3 buckets containing your files.</p></li>
+    /// <li>
+    /// <p>Your files are .jsonl files and each individual record is a JSON object in the correct format. Note that validation doesn't check if the <code>modelInput</code> value matches the request body for the model.</p></li>
+    /// <li>
+    /// <p>Your files fulfill the requirements for file size and number of records. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/quotas.html">Quotas for Amazon Bedrock</a>.</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p>Scheduled – This job has been validated and is now in a queue. The job will automatically start when it reaches its turn.</p></li>
+    /// <li>
+    /// <p>Expired – This job timed out because it was scheduled but didn't begin before the set timeout duration. Submit a new job request.</p></li>
+    /// <li>
+    /// <p>InProgress – This job has begun. You can start viewing the results in the output S3 location.</p></li>
+    /// <li>
+    /// <p>Completed – This job has successfully completed. View the output files in the output S3 location.</p></li>
+    /// <li>
+    /// <p>PartiallyCompleted – This job has partially completed. Not all of your records could be processed in time. View the output files in the output S3 location.</p></li>
+    /// <li>
+    /// <p>Failed – This job has failed. Check the failure message for any further details. For further assistance, reach out to the <a href="https://console.aws.amazon.com/support/home/">Amazon Web Services Support Center</a>.</p></li>
+    /// <li>
+    /// <p>Stopped – This job was stopped by a user.</p></li>
+    /// <li>
+    /// <p>Stopping – This job is being stopped by a user.</p></li>
+    /// </ul>
     pub fn set_status_equals(mut self, input: ::std::option::Option<crate::types::ModelInvocationJobStatus>) -> Self {
         self.inner = self.inner.set_status_equals(input);
         self
     }
     /// <p>Specify a status to filter for batch inference jobs whose statuses match the string you specify.</p>
+    /// <p>The following statuses are possible:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Submitted – This job has been submitted to a queue for validation.</p></li>
+    /// <li>
+    /// <p>Validating – This job is being validated for the requirements described in <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-data.html">Format and upload your batch inference data</a>. The criteria include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Your IAM service role has access to the Amazon S3 buckets containing your files.</p></li>
+    /// <li>
+    /// <p>Your files are .jsonl files and each individual record is a JSON object in the correct format. Note that validation doesn't check if the <code>modelInput</code> value matches the request body for the model.</p></li>
+    /// <li>
+    /// <p>Your files fulfill the requirements for file size and number of records. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/quotas.html">Quotas for Amazon Bedrock</a>.</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p>Scheduled – This job has been validated and is now in a queue. The job will automatically start when it reaches its turn.</p></li>
+    /// <li>
+    /// <p>Expired – This job timed out because it was scheduled but didn't begin before the set timeout duration. Submit a new job request.</p></li>
+    /// <li>
+    /// <p>InProgress – This job has begun. You can start viewing the results in the output S3 location.</p></li>
+    /// <li>
+    /// <p>Completed – This job has successfully completed. View the output files in the output S3 location.</p></li>
+    /// <li>
+    /// <p>PartiallyCompleted – This job has partially completed. Not all of your records could be processed in time. View the output files in the output S3 location.</p></li>
+    /// <li>
+    /// <p>Failed – This job has failed. Check the failure message for any further details. For further assistance, reach out to the <a href="https://console.aws.amazon.com/support/home/">Amazon Web Services Support Center</a>.</p></li>
+    /// <li>
+    /// <p>Stopped – This job was stopped by a user.</p></li>
+    /// <li>
+    /// <p>Stopping – This job is being stopped by a user.</p></li>
+    /// </ul>
     pub fn get_status_equals(&self) -> &::std::option::Option<crate::types::ModelInvocationJobStatus> {
         self.inner.get_status_equals()
     }

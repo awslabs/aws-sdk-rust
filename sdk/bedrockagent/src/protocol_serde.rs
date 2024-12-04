@@ -23,6 +23,8 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_associate_agent_collaborator;
+
 pub(crate) mod shape_associate_agent_knowledge_base;
 
 pub(crate) mod shape_create_agent;
@@ -67,6 +69,8 @@ pub(crate) mod shape_delete_knowledge_base_documents;
 
 pub(crate) mod shape_delete_prompt;
 
+pub(crate) mod shape_disassociate_agent_collaborator;
+
 pub(crate) mod shape_disassociate_agent_knowledge_base;
 
 pub(crate) mod shape_get_agent;
@@ -74,6 +78,8 @@ pub(crate) mod shape_get_agent;
 pub(crate) mod shape_get_agent_action_group;
 
 pub(crate) mod shape_get_agent_alias;
+
+pub(crate) mod shape_get_agent_collaborator;
 
 pub(crate) mod shape_get_agent_knowledge_base;
 
@@ -100,6 +106,8 @@ pub(crate) mod shape_ingest_knowledge_base_documents;
 pub(crate) mod shape_list_agent_action_groups;
 
 pub(crate) mod shape_list_agent_aliases;
+
+pub(crate) mod shape_list_agent_collaborators;
 
 pub(crate) mod shape_list_agent_knowledge_bases;
 
@@ -143,6 +151,8 @@ pub(crate) mod shape_update_agent_action_group;
 
 pub(crate) mod shape_update_agent_alias;
 
+pub(crate) mod shape_update_agent_collaborator;
+
 pub(crate) mod shape_update_agent_knowledge_base;
 
 pub(crate) mod shape_update_data_source;
@@ -166,6 +176,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 }
 
 pub(crate) mod shape_access_denied_exception;
+
+pub(crate) mod shape_associate_agent_collaborator_input;
 
 pub(crate) mod shape_associate_agent_knowledge_base_input;
 
@@ -203,6 +215,8 @@ pub(crate) mod shape_list_agent_action_groups_input;
 
 pub(crate) mod shape_list_agent_aliases_input;
 
+pub(crate) mod shape_list_agent_collaborators_input;
+
 pub(crate) mod shape_list_agent_knowledge_bases_input;
 
 pub(crate) mod shape_list_agent_versions_input;
@@ -230,6 +244,8 @@ pub(crate) mod shape_throttling_exception;
 pub(crate) mod shape_update_agent_action_group_input;
 
 pub(crate) mod shape_update_agent_alias_input;
+
+pub(crate) mod shape_update_agent_collaborator_input;
 
 pub(crate) mod shape_update_agent_input;
 
@@ -262,6 +278,12 @@ pub(crate) mod shape_agent_alias;
 pub(crate) mod shape_agent_alias_routing_configuration_list_item;
 
 pub(crate) mod shape_agent_alias_summaries;
+
+pub(crate) mod shape_agent_collaborator;
+
+pub(crate) mod shape_agent_collaborator_summaries;
+
+pub(crate) mod shape_agent_descriptor;
 
 pub(crate) mod shape_agent_knowledge_base;
 
@@ -348,6 +370,8 @@ pub(crate) mod shape_agent_alias_history_events;
 pub(crate) mod shape_agent_alias_routing_configuration;
 
 pub(crate) mod shape_agent_alias_summary;
+
+pub(crate) mod shape_agent_collaborator_summary;
 
 pub(crate) mod shape_agent_knowledge_base_summary;
 

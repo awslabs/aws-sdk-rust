@@ -19,6 +19,7 @@ impl super::Client {
     ///   - [`training_metrics(Option<TrainingMetrics>)`](crate::operation::get_custom_model::GetCustomModelOutput::training_metrics): <p>Contains training metrics from the job creation.</p>
     ///   - [`validation_metrics(Option<Vec::<ValidatorMetric>>)`](crate::operation::get_custom_model::GetCustomModelOutput::validation_metrics): <p>The validation metrics from the job creation.</p>
     ///   - [`creation_time(DateTime)`](crate::operation::get_custom_model::GetCustomModelOutput::creation_time): <p>Creation time of the model.</p>
+    ///   - [`customization_config(Option<CustomizationConfig>)`](crate::operation::get_custom_model::GetCustomModelOutput::customization_config): <p>The customization configuration for the custom model.</p>
     /// - On failure, responds with [`SdkError<GetCustomModelError>`](crate::operation::get_custom_model::GetCustomModelError)
     pub fn get_custom_model(&self) -> crate::operation::get_custom_model::builders::GetCustomModelFluentBuilder {
         crate::operation::get_custom_model::builders::GetCustomModelFluentBuilder::new(self.handle.clone())

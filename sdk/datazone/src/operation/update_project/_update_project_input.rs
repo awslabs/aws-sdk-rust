@@ -13,6 +13,8 @@ pub struct UpdateProjectInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The glossary terms to be updated as part of the <code>UpdateProject</code> action.</p>
     pub glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The environment deployment details of the project.</p>
+    pub environment_deployment_details: ::std::option::Option<crate::types::EnvironmentDeploymentDetails>,
 }
 impl UpdateProjectInput {
     /// <p>The ID of the Amazon DataZone domain where a project is being updated.</p>
@@ -37,6 +39,10 @@ impl UpdateProjectInput {
     pub fn glossary_terms(&self) -> &[::std::string::String] {
         self.glossary_terms.as_deref().unwrap_or_default()
     }
+    /// <p>The environment deployment details of the project.</p>
+    pub fn environment_deployment_details(&self) -> ::std::option::Option<&crate::types::EnvironmentDeploymentDetails> {
+        self.environment_deployment_details.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UpdateProjectInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -46,6 +52,7 @@ impl ::std::fmt::Debug for UpdateProjectInput {
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("glossary_terms", &self.glossary_terms);
+        formatter.field("environment_deployment_details", &self.environment_deployment_details);
         formatter.finish()
     }
 }
@@ -65,6 +72,7 @@ pub struct UpdateProjectInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) environment_deployment_details: ::std::option::Option<crate::types::EnvironmentDeploymentDetails>,
 }
 impl UpdateProjectInputBuilder {
     /// <p>The ID of the Amazon DataZone domain where a project is being updated.</p>
@@ -145,6 +153,20 @@ impl UpdateProjectInputBuilder {
     pub fn get_glossary_terms(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.glossary_terms
     }
+    /// <p>The environment deployment details of the project.</p>
+    pub fn environment_deployment_details(mut self, input: crate::types::EnvironmentDeploymentDetails) -> Self {
+        self.environment_deployment_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The environment deployment details of the project.</p>
+    pub fn set_environment_deployment_details(mut self, input: ::std::option::Option<crate::types::EnvironmentDeploymentDetails>) -> Self {
+        self.environment_deployment_details = input;
+        self
+    }
+    /// <p>The environment deployment details of the project.</p>
+    pub fn get_environment_deployment_details(&self) -> &::std::option::Option<crate::types::EnvironmentDeploymentDetails> {
+        &self.environment_deployment_details
+    }
     /// Consumes the builder and constructs a [`UpdateProjectInput`](crate::operation::update_project::UpdateProjectInput).
     pub fn build(
         self,
@@ -155,6 +177,7 @@ impl UpdateProjectInputBuilder {
             name: self.name,
             description: self.description,
             glossary_terms: self.glossary_terms,
+            environment_deployment_details: self.environment_deployment_details,
         })
     }
 }
@@ -166,6 +189,7 @@ impl ::std::fmt::Debug for UpdateProjectInputBuilder {
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("glossary_terms", &self.glossary_terms);
+        formatter.field("environment_deployment_details", &self.environment_deployment_details);
         formatter.finish()
     }
 }
