@@ -25,7 +25,7 @@ impl<'a> EscapedStr<'a> {
     }
 
     /// Returns the escaped string value
-    pub fn as_escaped_str(&self) -> &str {
+    pub fn as_escaped_str(&self) -> &'a str {
         self.0
     }
 
