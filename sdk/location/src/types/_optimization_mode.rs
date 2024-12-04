@@ -15,18 +15,18 @@ impl OptimizationMode {
         &["FastestRoute", "ShortestRoute"]
     }
 }
-impl ::std::str::FromStr for OptimizationMode {
-    type Err = ::std::convert::Infallible;
-
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(OptimizationMode::from(s))
-    }
-}
 impl<T> ::std::convert::From<T> for OptimizationMode
 where
     T: ::std::convert::AsRef<str>,
 {
     fn from(s: T) -> Self {
         OptimizationMode(s.as_ref().to_owned())
+    }
+}
+impl ::std::str::FromStr for OptimizationMode {
+    type Err = ::std::convert::Infallible;
+
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(OptimizationMode::from(s))
     }
 }

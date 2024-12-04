@@ -15,18 +15,18 @@ impl PricingPlan {
         &["MobileAssetManagement", "MobileAssetTracking", "RequestBasedUsage"]
     }
 }
-impl ::std::str::FromStr for PricingPlan {
-    type Err = ::std::convert::Infallible;
-
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(PricingPlan::from(s))
-    }
-}
 impl<T> ::std::convert::From<T> for PricingPlan
 where
     T: ::std::convert::AsRef<str>,
 {
     fn from(s: T) -> Self {
         PricingPlan(s.as_ref().to_owned())
+    }
+}
+impl ::std::str::FromStr for PricingPlan {
+    type Err = ::std::convert::Infallible;
+
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(PricingPlan::from(s))
     }
 }

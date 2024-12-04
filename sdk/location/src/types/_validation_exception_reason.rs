@@ -15,18 +15,18 @@ impl ValidationExceptionReason {
         &["CannotParse", "FieldValidationFailed", "Missing", "Other", "UnknownOperation"]
     }
 }
-impl ::std::str::FromStr for ValidationExceptionReason {
-    type Err = ::std::convert::Infallible;
-
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(ValidationExceptionReason::from(s))
-    }
-}
 impl<T> ::std::convert::From<T> for ValidationExceptionReason
 where
     T: ::std::convert::AsRef<str>,
 {
     fn from(s: T) -> Self {
         ValidationExceptionReason(s.as_ref().to_owned())
+    }
+}
+impl ::std::str::FromStr for ValidationExceptionReason {
+    type Err = ::std::convert::Infallible;
+
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ValidationExceptionReason::from(s))
     }
 }

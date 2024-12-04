@@ -22,18 +22,18 @@ impl BatchItemErrorCode {
         ]
     }
 }
-impl ::std::str::FromStr for BatchItemErrorCode {
-    type Err = ::std::convert::Infallible;
-
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(BatchItemErrorCode::from(s))
-    }
-}
 impl<T> ::std::convert::From<T> for BatchItemErrorCode
 where
     T: ::std::convert::AsRef<str>,
 {
     fn from(s: T) -> Self {
         BatchItemErrorCode(s.as_ref().to_owned())
+    }
+}
+impl ::std::str::FromStr for BatchItemErrorCode {
+    type Err = ::std::convert::Infallible;
+
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(BatchItemErrorCode::from(s))
     }
 }

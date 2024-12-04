@@ -15,18 +15,18 @@ impl SpeedUnit {
         &["KilometersPerHour", "MilesPerHour"]
     }
 }
-impl ::std::str::FromStr for SpeedUnit {
-    type Err = ::std::convert::Infallible;
-
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(SpeedUnit::from(s))
-    }
-}
 impl<T> ::std::convert::From<T> for SpeedUnit
 where
     T: ::std::convert::AsRef<str>,
 {
     fn from(s: T) -> Self {
         SpeedUnit(s.as_ref().to_owned())
+    }
+}
+impl ::std::str::FromStr for SpeedUnit {
+    type Err = ::std::convert::Infallible;
+
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(SpeedUnit::from(s))
     }
 }

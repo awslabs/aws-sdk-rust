@@ -15,18 +15,18 @@ impl Status {
         &["Active", "Expired"]
     }
 }
-impl ::std::str::FromStr for Status {
-    type Err = ::std::convert::Infallible;
-
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(Status::from(s))
-    }
-}
 impl<T> ::std::convert::From<T> for Status
 where
     T: ::std::convert::AsRef<str>,
 {
     fn from(s: T) -> Self {
         Status(s.as_ref().to_owned())
+    }
+}
+impl ::std::str::FromStr for Status {
+    type Err = ::std::convert::Infallible;
+
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(Status::from(s))
     }
 }

@@ -22,18 +22,18 @@ impl RouteMatrixErrorCode {
         ]
     }
 }
-impl ::std::str::FromStr for RouteMatrixErrorCode {
-    type Err = ::std::convert::Infallible;
-
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(RouteMatrixErrorCode::from(s))
-    }
-}
 impl<T> ::std::convert::From<T> for RouteMatrixErrorCode
 where
     T: ::std::convert::AsRef<str>,
 {
     fn from(s: T) -> Self {
         RouteMatrixErrorCode(s.as_ref().to_owned())
+    }
+}
+impl ::std::str::FromStr for RouteMatrixErrorCode {
+    type Err = ::std::convert::Infallible;
+
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(RouteMatrixErrorCode::from(s))
     }
 }
