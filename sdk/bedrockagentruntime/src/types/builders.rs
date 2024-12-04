@@ -3,6 +3,10 @@ pub use crate::types::_knowledge_base_retrieval_result::KnowledgeBaseRetrievalRe
 
 pub use crate::types::_retrieval_result_location::RetrievalResultLocationBuilder;
 
+pub use crate::types::_retrieval_result_sql_location::RetrievalResultSqlLocationBuilder;
+
+pub use crate::types::_retrieval_result_kendra_document_location::RetrievalResultKendraDocumentLocationBuilder;
+
 pub use crate::types::_retrieval_result_custom_document_location::RetrievalResultCustomDocumentLocationBuilder;
 
 pub use crate::types::_retrieval_result_share_point_location::RetrievalResultSharePointLocationBuilder;
@@ -16,6 +20,8 @@ pub use crate::types::_retrieval_result_web_location::RetrievalResultWebLocation
 pub use crate::types::_retrieval_result_s3_location::RetrievalResultS3LocationBuilder;
 
 pub use crate::types::_retrieval_result_content::RetrievalResultContentBuilder;
+
+pub use crate::types::_retrieval_result_content_column::RetrievalResultContentColumnBuilder;
 
 pub use crate::types::_guardrail_configuration::GuardrailConfigurationBuilder;
 
@@ -274,6 +280,16 @@ pub use crate::types::_conversation_history::ConversationHistoryBuilder;
 pub use crate::types::_message::MessageBuilder;
 
 pub use crate::types::_knowledge_base_configuration::KnowledgeBaseConfigurationBuilder;
+
+pub use crate::types::_generated_query::GeneratedQueryBuilder;
+
+pub use crate::types::_transformation_configuration::TransformationConfigurationBuilder;
+
+pub use crate::types::_text_to_sql_configuration::TextToSqlConfigurationBuilder;
+
+pub use crate::types::_text_to_sql_knowledge_base_configuration::TextToSqlKnowledgeBaseConfigurationBuilder;
+
+pub use crate::types::_query_generation_input::QueryGenerationInputBuilder;
 
 pub use crate::types::_flow_trace_event::FlowTraceEventBuilder;
 

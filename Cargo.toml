@@ -1,11 +1,11 @@
 [workspace]
 resolver = "2"
 exclude = [
-    "examples/cross_service",
+    "examples/lambda",
+    "examples/webassembly",
     "examples/examples",
     "examples/test-utils",
-    "examples/webassembly",
-    "examples/lambda",
+    "examples/cross_service",
     "tests/no-default-features",
     "tests/webassembly"
 ]
@@ -81,6 +81,8 @@ members = [
     "sdk/bedrock",
     "sdk/bedrockagent",
     "sdk/bedrockagentruntime",
+    "sdk/bedrockdataautomation",
+    "sdk/bedrockdataautomationruntime",
     "sdk/bedrockruntime",
     "sdk/billing",
     "sdk/billingconductor",

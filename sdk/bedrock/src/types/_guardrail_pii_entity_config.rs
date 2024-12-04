@@ -15,7 +15,7 @@ pub struct GuardrailPiiEntityConfig {
     /// <p>A physical address, such as "100 Main Street, Anytown, USA" or "Suite #12, Building 123". An address can include information such as the street, building, location, city, state, country, county, zip code, precinct, and neighborhood.</p></li>
     /// <li>
     /// <p><b>AGE</b></p>
-    /// <p>An individual's age, including the quantity and unit of time. For example, in the phrase "I am 40 years old," Guarrails recognizes "40 years" as an age.</p></li>
+    /// <p>An individual's age, including the quantity and unit of time. For example, in the phrase "I am 40 years old," Guardrails recognizes "40 years" as an age.</p></li>
     /// <li>
     /// <p><b>NAME</b></p>
     /// <p>An individual's name. This entity type does not include titles, such as Dr., Mr., Mrs., or Miss. guardrails doesn't apply this entity type to names that are part of organizations or addresses. For example, guardrails recognizes the "John Doe Organization" as an organization, and it recognizes "Jane Doe Street" as an address.</p></li>
@@ -45,7 +45,7 @@ pub struct GuardrailPiiEntityConfig {
     /// <p><b>Finance</b></p>
     /// <ul>
     /// <li>
-    /// <p><b>REDIT_DEBIT_CARD_CVV</b></p>
+    /// <p><b>CREDIT_DEBIT_CARD_CVV</b></p>
     /// <p>A three-digit card verification code (CVV) that is present on VISA, MasterCard, and Discover credit and debit cards. For American Express credit or debit cards, the CVV is a four-digit numeric code.</p></li>
     /// <li>
     /// <p><b>CREDIT_DEBIT_CARD_EXPIRY</b></p>
@@ -150,7 +150,7 @@ impl GuardrailPiiEntityConfig {
     /// <p>A physical address, such as "100 Main Street, Anytown, USA" or "Suite #12, Building 123". An address can include information such as the street, building, location, city, state, country, county, zip code, precinct, and neighborhood.</p></li>
     /// <li>
     /// <p><b>AGE</b></p>
-    /// <p>An individual's age, including the quantity and unit of time. For example, in the phrase "I am 40 years old," Guarrails recognizes "40 years" as an age.</p></li>
+    /// <p>An individual's age, including the quantity and unit of time. For example, in the phrase "I am 40 years old," Guardrails recognizes "40 years" as an age.</p></li>
     /// <li>
     /// <p><b>NAME</b></p>
     /// <p>An individual's name. This entity type does not include titles, such as Dr., Mr., Mrs., or Miss. guardrails doesn't apply this entity type to names that are part of organizations or addresses. For example, guardrails recognizes the "John Doe Organization" as an organization, and it recognizes "Jane Doe Street" as an address.</p></li>
@@ -180,7 +180,7 @@ impl GuardrailPiiEntityConfig {
     /// <p><b>Finance</b></p>
     /// <ul>
     /// <li>
-    /// <p><b>REDIT_DEBIT_CARD_CVV</b></p>
+    /// <p><b>CREDIT_DEBIT_CARD_CVV</b></p>
     /// <p>A three-digit card verification code (CVV) that is present on VISA, MasterCard, and Discover credit and debit cards. For American Express credit or debit cards, the CVV is a four-digit numeric code.</p></li>
     /// <li>
     /// <p><b>CREDIT_DEBIT_CARD_EXPIRY</b></p>
@@ -303,7 +303,7 @@ impl GuardrailPiiEntityConfigBuilder {
     /// <p>A physical address, such as "100 Main Street, Anytown, USA" or "Suite #12, Building 123". An address can include information such as the street, building, location, city, state, country, county, zip code, precinct, and neighborhood.</p></li>
     /// <li>
     /// <p><b>AGE</b></p>
-    /// <p>An individual's age, including the quantity and unit of time. For example, in the phrase "I am 40 years old," Guarrails recognizes "40 years" as an age.</p></li>
+    /// <p>An individual's age, including the quantity and unit of time. For example, in the phrase "I am 40 years old," Guardrails recognizes "40 years" as an age.</p></li>
     /// <li>
     /// <p><b>NAME</b></p>
     /// <p>An individual's name. This entity type does not include titles, such as Dr., Mr., Mrs., or Miss. guardrails doesn't apply this entity type to names that are part of organizations or addresses. For example, guardrails recognizes the "John Doe Organization" as an organization, and it recognizes "Jane Doe Street" as an address.</p></li>
@@ -333,7 +333,7 @@ impl GuardrailPiiEntityConfigBuilder {
     /// <p><b>Finance</b></p>
     /// <ul>
     /// <li>
-    /// <p><b>REDIT_DEBIT_CARD_CVV</b></p>
+    /// <p><b>CREDIT_DEBIT_CARD_CVV</b></p>
     /// <p>A three-digit card verification code (CVV) that is present on VISA, MasterCard, and Discover credit and debit cards. For American Express credit or debit cards, the CVV is a four-digit numeric code.</p></li>
     /// <li>
     /// <p><b>CREDIT_DEBIT_CARD_EXPIRY</b></p>
@@ -438,7 +438,7 @@ impl GuardrailPiiEntityConfigBuilder {
     /// <p>A physical address, such as "100 Main Street, Anytown, USA" or "Suite #12, Building 123". An address can include information such as the street, building, location, city, state, country, county, zip code, precinct, and neighborhood.</p></li>
     /// <li>
     /// <p><b>AGE</b></p>
-    /// <p>An individual's age, including the quantity and unit of time. For example, in the phrase "I am 40 years old," Guarrails recognizes "40 years" as an age.</p></li>
+    /// <p>An individual's age, including the quantity and unit of time. For example, in the phrase "I am 40 years old," Guardrails recognizes "40 years" as an age.</p></li>
     /// <li>
     /// <p><b>NAME</b></p>
     /// <p>An individual's name. This entity type does not include titles, such as Dr., Mr., Mrs., or Miss. guardrails doesn't apply this entity type to names that are part of organizations or addresses. For example, guardrails recognizes the "John Doe Organization" as an organization, and it recognizes "Jane Doe Street" as an address.</p></li>
@@ -468,7 +468,7 @@ impl GuardrailPiiEntityConfigBuilder {
     /// <p><b>Finance</b></p>
     /// <ul>
     /// <li>
-    /// <p><b>REDIT_DEBIT_CARD_CVV</b></p>
+    /// <p><b>CREDIT_DEBIT_CARD_CVV</b></p>
     /// <p>A three-digit card verification code (CVV) that is present on VISA, MasterCard, and Discover credit and debit cards. For American Express credit or debit cards, the CVV is a four-digit numeric code.</p></li>
     /// <li>
     /// <p><b>CREDIT_DEBIT_CARD_EXPIRY</b></p>
@@ -572,7 +572,7 @@ impl GuardrailPiiEntityConfigBuilder {
     /// <p>A physical address, such as "100 Main Street, Anytown, USA" or "Suite #12, Building 123". An address can include information such as the street, building, location, city, state, country, county, zip code, precinct, and neighborhood.</p></li>
     /// <li>
     /// <p><b>AGE</b></p>
-    /// <p>An individual's age, including the quantity and unit of time. For example, in the phrase "I am 40 years old," Guarrails recognizes "40 years" as an age.</p></li>
+    /// <p>An individual's age, including the quantity and unit of time. For example, in the phrase "I am 40 years old," Guardrails recognizes "40 years" as an age.</p></li>
     /// <li>
     /// <p><b>NAME</b></p>
     /// <p>An individual's name. This entity type does not include titles, such as Dr., Mr., Mrs., or Miss. guardrails doesn't apply this entity type to names that are part of organizations or addresses. For example, guardrails recognizes the "John Doe Organization" as an organization, and it recognizes "Jane Doe Street" as an address.</p></li>
@@ -602,7 +602,7 @@ impl GuardrailPiiEntityConfigBuilder {
     /// <p><b>Finance</b></p>
     /// <ul>
     /// <li>
-    /// <p><b>REDIT_DEBIT_CARD_CVV</b></p>
+    /// <p><b>CREDIT_DEBIT_CARD_CVV</b></p>
     /// <p>A three-digit card verification code (CVV) that is present on VISA, MasterCard, and Discover credit and debit cards. For American Express credit or debit cards, the CVV is a four-digit numeric code.</p></li>
     /// <li>
     /// <p><b>CREDIT_DEBIT_CARD_EXPIRY</b></p>

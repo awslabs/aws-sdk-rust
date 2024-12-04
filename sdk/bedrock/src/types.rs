@@ -49,6 +49,16 @@ pub use crate::types::_provisioned_model_status::ProvisionedModelStatus;
 
 pub use crate::types::_sort_by_provisioned_models::SortByProvisionedModels;
 
+pub use crate::types::_prompt_router_type::PromptRouterType;
+
+pub use crate::types::_prompt_router_status::PromptRouterStatus;
+
+pub use crate::types::_prompt_router_target_model::PromptRouterTargetModel;
+
+pub use crate::types::_routing_criteria::RoutingCriteria;
+
+pub use crate::types::_prompt_router_summary::PromptRouterSummary;
+
 pub use crate::types::_foundation_model_summary::FoundationModelSummary;
 
 pub use crate::types::_foundation_model_lifecycle::FoundationModelLifecycle;
@@ -138,6 +148,8 @@ pub use crate::types::_guardrail_word_config::GuardrailWordConfig;
 pub use crate::types::_guardrail_content_policy_config::GuardrailContentPolicyConfig;
 
 pub use crate::types::_guardrail_content_filter_config::GuardrailContentFilterConfig;
+
+pub use crate::types::_guardrail_modality::GuardrailModality;
 
 pub use crate::types::_guardrail_filter_strength::GuardrailFilterStrength;
 
@@ -269,6 +281,16 @@ pub use crate::types::_batch_delete_evaluation_job_item::BatchDeleteEvaluationJo
 
 pub use crate::types::_batch_delete_evaluation_job_error::BatchDeleteEvaluationJobError;
 
+pub use crate::types::_marketplace_model_endpoint::MarketplaceModelEndpoint;
+
+pub use crate::types::_endpoint_config::EndpointConfig;
+
+pub use crate::types::_sage_maker_endpoint::SageMakerEndpoint;
+
+pub use crate::types::_status::Status;
+
+pub use crate::types::_marketplace_model_endpoint_summary::MarketplaceModelEndpointSummary;
+
 mod _application_type;
 
 mod _automated_evaluation_config;
@@ -292,6 +314,8 @@ mod _customization_config;
 mod _customization_type;
 
 mod _distillation_config;
+
+mod _endpoint_config;
 
 mod _evaluation_bedrock_model;
 
@@ -371,6 +395,8 @@ mod _guardrail_managed_words_config;
 
 mod _guardrail_managed_words_type;
 
+mod _guardrail_modality;
+
 mod _guardrail_pii_entity;
 
 mod _guardrail_pii_entity_config;
@@ -445,6 +471,10 @@ mod _knowledge_base_vector_search_configuration;
 
 mod _logging_config;
 
+mod _marketplace_model_endpoint;
+
+mod _marketplace_model_endpoint_summary;
+
 mod _model_copy_job_status;
 
 mod _model_copy_job_summary;
@@ -479,6 +509,14 @@ mod _orchestration_configuration;
 
 mod _output_data_config;
 
+mod _prompt_router_status;
+
+mod _prompt_router_summary;
+
+mod _prompt_router_target_model;
+
+mod _prompt_router_type;
+
 mod _prompt_template;
 
 mod _provisioned_model_status;
@@ -503,6 +541,8 @@ mod _retrieve_and_generate_type;
 
 mod _retrieve_config;
 
+mod _routing_criteria;
+
 mod _s3_config;
 
 mod _s3_data_source;
@@ -510,6 +550,8 @@ mod _s3_data_source;
 mod _s3_input_format;
 
 mod _s3_object_doc;
+
+mod _sage_maker_endpoint;
 
 mod _search_type;
 
@@ -520,6 +562,8 @@ mod _sort_jobs_by;
 mod _sort_models_by;
 
 mod _sort_order;
+
+mod _status;
 
 mod _tag;
 

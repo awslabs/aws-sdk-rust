@@ -10,6 +10,12 @@ pub fn ser_guardrail_converse_content_block(
             crate::protocol_serde::shape_guardrail_converse_text_block::ser_guardrail_converse_text_block(&mut object_1, inner)?;
             object_1.finish();
         }
+        crate::types::GuardrailConverseContentBlock::Image(inner) => {
+            #[allow(unused_mut)]
+            let mut object_2 = object_1.key("image").start_object();
+            crate::protocol_serde::shape_guardrail_converse_image_block::ser_guardrail_converse_image_block(&mut object_2, inner)?;
+            object_2.finish();
+        }
         crate::types::GuardrailConverseContentBlock::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "GuardrailConverseContentBlock",
@@ -52,6 +58,10 @@ where
                         "text" => Some(crate::types::GuardrailConverseContentBlock::Text(
                             crate::protocol_serde::shape_guardrail_converse_text_block::de_guardrail_converse_text_block(tokens)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'text' cannot be null"))?,
+                        )),
+                        "image" => Some(crate::types::GuardrailConverseContentBlock::Image(
+                            crate::protocol_serde::shape_guardrail_converse_image_block::de_guardrail_converse_image_block(tokens)?
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'image' cannot be null"))?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

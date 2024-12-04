@@ -49,9 +49,13 @@ pub(crate) mod shape_create_auto_ml_job_v2;
 
 pub(crate) mod shape_create_cluster;
 
+pub(crate) mod shape_create_cluster_scheduler_config;
+
 pub(crate) mod shape_create_code_repository;
 
 pub(crate) mod shape_create_compilation_job;
+
+pub(crate) mod shape_create_compute_quota;
 
 pub(crate) mod shape_create_context;
 
@@ -123,6 +127,10 @@ pub(crate) mod shape_create_notebook_instance_lifecycle_config;
 
 pub(crate) mod shape_create_optimization_job;
 
+pub(crate) mod shape_create_partner_app;
+
+pub(crate) mod shape_create_partner_app_presigned_url;
+
 pub(crate) mod shape_create_pipeline;
 
 pub(crate) mod shape_create_presigned_domain_url;
@@ -140,6 +148,8 @@ pub(crate) mod shape_create_space;
 pub(crate) mod shape_create_studio_lifecycle_config;
 
 pub(crate) mod shape_create_training_job;
+
+pub(crate) mod shape_create_training_plan;
 
 pub(crate) mod shape_create_transform_job;
 
@@ -167,9 +177,13 @@ pub(crate) mod shape_delete_association;
 
 pub(crate) mod shape_delete_cluster;
 
+pub(crate) mod shape_delete_cluster_scheduler_config;
+
 pub(crate) mod shape_delete_code_repository;
 
 pub(crate) mod shape_delete_compilation_job;
+
+pub(crate) mod shape_delete_compute_quota;
 
 pub(crate) mod shape_delete_context;
 
@@ -237,6 +251,8 @@ pub(crate) mod shape_delete_notebook_instance_lifecycle_config;
 
 pub(crate) mod shape_delete_optimization_job;
 
+pub(crate) mod shape_delete_partner_app;
+
 pub(crate) mod shape_delete_pipeline;
 
 pub(crate) mod shape_delete_project;
@@ -277,9 +293,13 @@ pub(crate) mod shape_describe_cluster;
 
 pub(crate) mod shape_describe_cluster_node;
 
+pub(crate) mod shape_describe_cluster_scheduler_config;
+
 pub(crate) mod shape_describe_code_repository;
 
 pub(crate) mod shape_describe_compilation_job;
+
+pub(crate) mod shape_describe_compute_quota;
 
 pub(crate) mod shape_describe_context;
 
@@ -355,6 +375,8 @@ pub(crate) mod shape_describe_notebook_instance_lifecycle_config;
 
 pub(crate) mod shape_describe_optimization_job;
 
+pub(crate) mod shape_describe_partner_app;
+
 pub(crate) mod shape_describe_pipeline;
 
 pub(crate) mod shape_describe_pipeline_definition_for_execution;
@@ -372,6 +394,8 @@ pub(crate) mod shape_describe_studio_lifecycle_config;
 pub(crate) mod shape_describe_subscribed_workteam;
 
 pub(crate) mod shape_describe_training_job;
+
+pub(crate) mod shape_describe_training_plan;
 
 pub(crate) mod shape_describe_transform_job;
 
@@ -425,11 +449,15 @@ pub(crate) mod shape_list_candidates_for_auto_ml_job;
 
 pub(crate) mod shape_list_cluster_nodes;
 
+pub(crate) mod shape_list_cluster_scheduler_configs;
+
 pub(crate) mod shape_list_clusters;
 
 pub(crate) mod shape_list_code_repositories;
 
 pub(crate) mod shape_list_compilation_jobs;
+
+pub(crate) mod shape_list_compute_quotas;
 
 pub(crate) mod shape_list_contexts;
 
@@ -519,6 +547,8 @@ pub(crate) mod shape_list_notebook_instances;
 
 pub(crate) mod shape_list_optimization_jobs;
 
+pub(crate) mod shape_list_partner_apps;
+
 pub(crate) mod shape_list_pipeline_execution_steps;
 
 pub(crate) mod shape_list_pipeline_executions;
@@ -547,6 +577,8 @@ pub(crate) mod shape_list_training_jobs;
 
 pub(crate) mod shape_list_training_jobs_for_hyper_parameter_tuning_job;
 
+pub(crate) mod shape_list_training_plans;
+
 pub(crate) mod shape_list_transform_jobs;
 
 pub(crate) mod shape_list_trial_components;
@@ -570,6 +602,8 @@ pub(crate) mod shape_render_ui_template;
 pub(crate) mod shape_retry_pipeline_execution;
 
 pub(crate) mod shape_search;
+
+pub(crate) mod shape_search_training_plan_offerings;
 
 pub(crate) mod shape_send_pipeline_execution_step_failure;
 
@@ -627,9 +661,13 @@ pub(crate) mod shape_update_artifact;
 
 pub(crate) mod shape_update_cluster;
 
+pub(crate) mod shape_update_cluster_scheduler_config;
+
 pub(crate) mod shape_update_cluster_software;
 
 pub(crate) mod shape_update_code_repository;
+
+pub(crate) mod shape_update_compute_quota;
 
 pub(crate) mod shape_update_context;
 
@@ -674,6 +712,8 @@ pub(crate) mod shape_update_monitoring_schedule;
 pub(crate) mod shape_update_notebook_instance;
 
 pub(crate) mod shape_update_notebook_instance_lifecycle_config;
+
+pub(crate) mod shape_update_partner_app;
 
 pub(crate) mod shape_update_pipeline;
 
@@ -731,9 +771,13 @@ pub(crate) mod shape_create_auto_ml_job_v2_input;
 
 pub(crate) mod shape_create_cluster_input;
 
+pub(crate) mod shape_create_cluster_scheduler_config_input;
+
 pub(crate) mod shape_create_code_repository_input;
 
 pub(crate) mod shape_create_compilation_job_input;
+
+pub(crate) mod shape_create_compute_quota_input;
 
 pub(crate) mod shape_create_context_input;
 
@@ -805,6 +849,10 @@ pub(crate) mod shape_create_notebook_instance_lifecycle_config_input;
 
 pub(crate) mod shape_create_optimization_job_input;
 
+pub(crate) mod shape_create_partner_app_input;
+
+pub(crate) mod shape_create_partner_app_presigned_url_input;
+
 pub(crate) mod shape_create_pipeline_input;
 
 pub(crate) mod shape_create_presigned_domain_url_input;
@@ -822,6 +870,8 @@ pub(crate) mod shape_create_space_input;
 pub(crate) mod shape_create_studio_lifecycle_config_input;
 
 pub(crate) mod shape_create_training_job_input;
+
+pub(crate) mod shape_create_training_plan_input;
 
 pub(crate) mod shape_create_transform_job_input;
 
@@ -849,9 +899,13 @@ pub(crate) mod shape_delete_association_input;
 
 pub(crate) mod shape_delete_cluster_input;
 
+pub(crate) mod shape_delete_cluster_scheduler_config_input;
+
 pub(crate) mod shape_delete_code_repository_input;
 
 pub(crate) mod shape_delete_compilation_job_input;
+
+pub(crate) mod shape_delete_compute_quota_input;
 
 pub(crate) mod shape_delete_context_input;
 
@@ -919,6 +973,8 @@ pub(crate) mod shape_delete_notebook_instance_lifecycle_config_input;
 
 pub(crate) mod shape_delete_optimization_job_input;
 
+pub(crate) mod shape_delete_partner_app_input;
+
 pub(crate) mod shape_delete_pipeline_input;
 
 pub(crate) mod shape_delete_project_input;
@@ -959,9 +1015,13 @@ pub(crate) mod shape_describe_cluster_input;
 
 pub(crate) mod shape_describe_cluster_node_input;
 
+pub(crate) mod shape_describe_cluster_scheduler_config_input;
+
 pub(crate) mod shape_describe_code_repository_input;
 
 pub(crate) mod shape_describe_compilation_job_input;
+
+pub(crate) mod shape_describe_compute_quota_input;
 
 pub(crate) mod shape_describe_context_input;
 
@@ -1037,6 +1097,8 @@ pub(crate) mod shape_describe_notebook_instance_lifecycle_config_input;
 
 pub(crate) mod shape_describe_optimization_job_input;
 
+pub(crate) mod shape_describe_partner_app_input;
+
 pub(crate) mod shape_describe_pipeline_definition_for_execution_input;
 
 pub(crate) mod shape_describe_pipeline_execution_input;
@@ -1054,6 +1116,8 @@ pub(crate) mod shape_describe_studio_lifecycle_config_input;
 pub(crate) mod shape_describe_subscribed_workteam_input;
 
 pub(crate) mod shape_describe_training_job_input;
+
+pub(crate) mod shape_describe_training_plan_input;
 
 pub(crate) mod shape_describe_transform_job_input;
 
@@ -1101,11 +1165,15 @@ pub(crate) mod shape_list_candidates_for_auto_ml_job_input;
 
 pub(crate) mod shape_list_cluster_nodes_input;
 
+pub(crate) mod shape_list_cluster_scheduler_configs_input;
+
 pub(crate) mod shape_list_clusters_input;
 
 pub(crate) mod shape_list_code_repositories_input;
 
 pub(crate) mod shape_list_compilation_jobs_input;
+
+pub(crate) mod shape_list_compute_quotas_input;
 
 pub(crate) mod shape_list_contexts_input;
 
@@ -1195,6 +1263,8 @@ pub(crate) mod shape_list_notebook_instances_input;
 
 pub(crate) mod shape_list_optimization_jobs_input;
 
+pub(crate) mod shape_list_partner_apps_input;
+
 pub(crate) mod shape_list_pipeline_execution_steps_input;
 
 pub(crate) mod shape_list_pipeline_executions_input;
@@ -1222,6 +1292,8 @@ pub(crate) mod shape_list_tags_input;
 pub(crate) mod shape_list_training_jobs_for_hyper_parameter_tuning_job_input;
 
 pub(crate) mod shape_list_training_jobs_input;
+
+pub(crate) mod shape_list_training_plans_input;
 
 pub(crate) mod shape_list_transform_jobs_input;
 
@@ -1252,6 +1324,8 @@ pub(crate) mod shape_resource_not_found;
 pub(crate) mod shape_retry_pipeline_execution_input;
 
 pub(crate) mod shape_search_input;
+
+pub(crate) mod shape_search_training_plan_offerings_input;
 
 pub(crate) mod shape_send_pipeline_execution_step_failure_input;
 
@@ -1309,9 +1383,13 @@ pub(crate) mod shape_update_artifact_input;
 
 pub(crate) mod shape_update_cluster_input;
 
+pub(crate) mod shape_update_cluster_scheduler_config_input;
+
 pub(crate) mod shape_update_cluster_software_input;
 
 pub(crate) mod shape_update_code_repository_input;
+
+pub(crate) mod shape_update_compute_quota_input;
 
 pub(crate) mod shape_update_context_input;
 
@@ -1356,6 +1434,8 @@ pub(crate) mod shape_update_monitoring_schedule_input;
 pub(crate) mod shape_update_notebook_instance_input;
 
 pub(crate) mod shape_update_notebook_instance_lifecycle_config_input;
+
+pub(crate) mod shape_update_partner_app_input;
 
 pub(crate) mod shape_update_pipeline_execution_input;
 
@@ -1469,6 +1549,8 @@ pub(crate) mod shape_cluster_node_summaries;
 
 pub(crate) mod shape_cluster_orchestrator;
 
+pub(crate) mod shape_cluster_scheduler_config_summary_list;
+
 pub(crate) mod shape_cluster_summaries;
 
 pub(crate) mod shape_code_editor_app_image_config;
@@ -1478,6 +1560,12 @@ pub(crate) mod shape_code_repository_summary_list;
 pub(crate) mod shape_cognito_config;
 
 pub(crate) mod shape_compilation_job_summaries;
+
+pub(crate) mod shape_compute_quota_config;
+
+pub(crate) mod shape_compute_quota_summary_list;
+
+pub(crate) mod shape_compute_quota_target;
 
 pub(crate) mod shape_container_definition;
 
@@ -1568,6 +1656,8 @@ pub(crate) mod shape_endpoint_metadata;
 pub(crate) mod shape_endpoint_performances;
 
 pub(crate) mod shape_endpoint_summary_list;
+
+pub(crate) mod shape_error_info;
 
 pub(crate) mod shape_experiment_config;
 
@@ -1855,6 +1945,12 @@ pub(crate) mod shape_parameter;
 
 pub(crate) mod shape_parameter_list;
 
+pub(crate) mod shape_partner_app_config;
+
+pub(crate) mod shape_partner_app_maintenance_config;
+
+pub(crate) mod shape_partner_app_summaries;
+
 pub(crate) mod shape_pending_deployment_summary;
 
 pub(crate) mod shape_pipeline_definition_s3_location;
@@ -1917,6 +2013,8 @@ pub(crate) mod shape_renderable_task;
 
 pub(crate) mod shape_rendering_error_list;
 
+pub(crate) mod shape_reserved_capacity_summaries;
+
 pub(crate) mod shape_resolved_attributes;
 
 pub(crate) mod shape_resource_catalog_list;
@@ -1933,9 +2031,13 @@ pub(crate) mod shape_retry_strategy;
 
 pub(crate) mod shape_sage_maker_image_version_aliases;
 
+pub(crate) mod shape_sage_maker_resource_names;
+
 pub(crate) mod shape_scaling_policy_metric;
 
 pub(crate) mod shape_scaling_policy_objective;
+
+pub(crate) mod shape_scheduler_config;
 
 pub(crate) mod shape_search_expression;
 
@@ -1998,6 +2100,12 @@ pub(crate) mod shape_training_environment_map;
 pub(crate) mod shape_training_job_status_counters;
 
 pub(crate) mod shape_training_job_summaries;
+
+pub(crate) mod shape_training_plan_filter;
+
+pub(crate) mod shape_training_plan_offerings;
+
+pub(crate) mod shape_training_plan_summaries;
 
 pub(crate) mod shape_training_specification;
 
@@ -2167,6 +2275,8 @@ pub(crate) mod shape_cluster_node_summary;
 
 pub(crate) mod shape_cluster_orchestrator_eks_config;
 
+pub(crate) mod shape_cluster_scheduler_config_summary;
+
 pub(crate) mod shape_cluster_summary;
 
 pub(crate) mod shape_code_editor_app_settings;
@@ -2182,6 +2292,12 @@ pub(crate) mod shape_collection_configuration;
 pub(crate) mod shape_collection_configurations;
 
 pub(crate) mod shape_compilation_job_summary;
+
+pub(crate) mod shape_compute_quota_resource_config;
+
+pub(crate) mod shape_compute_quota_resource_config_list;
+
+pub(crate) mod shape_compute_quota_summary;
 
 pub(crate) mod shape_container_arguments;
 
@@ -2483,6 +2599,12 @@ pub(crate) mod shape_parent_hyper_parameter_tuning_job;
 
 pub(crate) mod shape_parent_hyper_parameter_tuning_jobs;
 
+pub(crate) mod shape_partner_app_admin_user_list;
+
+pub(crate) mod shape_partner_app_arguments;
+
+pub(crate) mod shape_partner_app_summary;
+
 pub(crate) mod shape_pending_production_variant_summary_list;
 
 pub(crate) mod shape_pipeline_execution_step;
@@ -2490,6 +2612,10 @@ pub(crate) mod shape_pipeline_execution_step;
 pub(crate) mod shape_pipeline_execution_summary;
 
 pub(crate) mod shape_pipeline_summary;
+
+pub(crate) mod shape_priority_class;
+
+pub(crate) mod shape_priority_class_list;
 
 pub(crate) mod shape_processing_cluster_config;
 
@@ -2553,9 +2679,13 @@ pub(crate) mod shape_recommendation_job_vpc_config;
 
 pub(crate) mod shape_rendering_error;
 
+pub(crate) mod shape_reserved_capacity_summary;
+
 pub(crate) mod shape_resource_catalog;
 
 pub(crate) mod shape_resource_limits;
+
+pub(crate) mod shape_resource_sharing_config;
 
 pub(crate) mod shape_response_mime_types;
 
@@ -2628,6 +2758,10 @@ pub(crate) mod shape_training_image_config;
 pub(crate) mod shape_training_instance_types;
 
 pub(crate) mod shape_training_job_summary;
+
+pub(crate) mod shape_training_plan_offering;
+
+pub(crate) mod shape_training_plan_summary;
 
 pub(crate) mod shape_transform_data_source;
 
@@ -2758,6 +2892,10 @@ pub(crate) mod shape_endpoint_output_configuration;
 pub(crate) mod shape_environment_parameter_ranges;
 
 pub(crate) mod shape_experiment;
+
+pub(crate) mod shape_f_sx_lustre_file_system;
+
+pub(crate) mod shape_f_sx_lustre_file_system_config;
 
 pub(crate) mod shape_feature_group;
 
@@ -2905,6 +3043,8 @@ pub(crate) mod shape_redshift_dataset_definition;
 
 pub(crate) mod shape_repository_auth_config;
 
+pub(crate) mod shape_reserved_capacity_offerings;
+
 pub(crate) mod shape_rule_parameters;
 
 pub(crate) mod shape_s3_data_source;
@@ -2940,6 +3080,8 @@ pub(crate) mod shape_traffic_routing_config;
 pub(crate) mod shape_training_job;
 
 pub(crate) mod shape_training_job_definition;
+
+pub(crate) mod shape_training_plan_arns;
 
 pub(crate) mod shape_training_repository_auth_config;
 
@@ -3060,6 +3202,8 @@ pub(crate) mod shape_quality_check_step_metadata;
 pub(crate) mod shape_recommendation_job_supported_content_types;
 
 pub(crate) mod shape_register_model_step_metadata;
+
+pub(crate) mod shape_reserved_capacity_offering;
 
 pub(crate) mod shape_space_idle_settings;
 

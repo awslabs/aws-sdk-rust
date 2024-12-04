@@ -7,6 +7,8 @@ pub use crate::types::_performance_configuration::PerformanceConfigurationBuilde
 
 pub use crate::types::_converse_stream_trace::ConverseStreamTraceBuilder;
 
+pub use crate::types::_prompt_router_trace::PromptRouterTraceBuilder;
+
 pub use crate::types::_guardrail_trace_assessment::GuardrailTraceAssessmentBuilder;
 
 pub use crate::types::_guardrail_assessment::GuardrailAssessmentBuilder;
@@ -14,6 +16,8 @@ pub use crate::types::_guardrail_assessment::GuardrailAssessmentBuilder;
 pub use crate::types::_guardrail_invocation_metrics::GuardrailInvocationMetricsBuilder;
 
 pub use crate::types::_guardrail_coverage::GuardrailCoverageBuilder;
+
+pub use crate::types::_guardrail_image_coverage::GuardrailImageCoverageBuilder;
 
 pub use crate::types::_guardrail_text_characters_coverage::GuardrailTextCharactersCoverageBuilder;
 
@@ -75,6 +79,8 @@ pub use crate::types::_tool_specification::ToolSpecificationBuilder;
 
 pub use crate::types::_inference_configuration::InferenceConfigurationBuilder;
 
+pub use crate::types::_guardrail_converse_image_block::GuardrailConverseImageBlockBuilder;
+
 pub use crate::types::_guardrail_converse_text_block::GuardrailConverseTextBlockBuilder;
 
 pub use crate::types::_message::MessageBuilder;
@@ -98,6 +104,8 @@ pub use crate::types::_converse_metrics::ConverseMetricsBuilder;
 pub use crate::types::_guardrail_configuration::GuardrailConfigurationBuilder;
 
 pub use crate::types::_guardrail_output_content::GuardrailOutputContentBuilder;
+
+pub use crate::types::_guardrail_image_block::GuardrailImageBlockBuilder;
 
 pub use crate::types::_guardrail_text_block::GuardrailTextBlockBuilder;
 

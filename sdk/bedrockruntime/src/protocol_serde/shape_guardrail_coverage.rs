@@ -19,6 +19,11 @@ where
                                 crate::protocol_serde::shape_guardrail_text_characters_coverage::de_guardrail_text_characters_coverage(tokens)?,
                             );
                         }
+                        "images" => {
+                            builder = builder.set_images(crate::protocol_serde::shape_guardrail_image_coverage::de_guardrail_image_coverage(
+                                tokens,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

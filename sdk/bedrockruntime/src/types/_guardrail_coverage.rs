@@ -6,11 +6,17 @@
 pub struct GuardrailCoverage {
     /// <p>The text characters of the guardrail coverage details.</p>
     pub text_characters: ::std::option::Option<crate::types::GuardrailTextCharactersCoverage>,
+    /// <p>The guardrail coverage for images (the number of images that guardrails guarded).</p>
+    pub images: ::std::option::Option<crate::types::GuardrailImageCoverage>,
 }
 impl GuardrailCoverage {
     /// <p>The text characters of the guardrail coverage details.</p>
     pub fn text_characters(&self) -> ::std::option::Option<&crate::types::GuardrailTextCharactersCoverage> {
         self.text_characters.as_ref()
+    }
+    /// <p>The guardrail coverage for images (the number of images that guardrails guarded).</p>
+    pub fn images(&self) -> ::std::option::Option<&crate::types::GuardrailImageCoverage> {
+        self.images.as_ref()
     }
 }
 impl GuardrailCoverage {
@@ -25,6 +31,7 @@ impl GuardrailCoverage {
 #[non_exhaustive]
 pub struct GuardrailCoverageBuilder {
     pub(crate) text_characters: ::std::option::Option<crate::types::GuardrailTextCharactersCoverage>,
+    pub(crate) images: ::std::option::Option<crate::types::GuardrailImageCoverage>,
 }
 impl GuardrailCoverageBuilder {
     /// <p>The text characters of the guardrail coverage details.</p>
@@ -41,10 +48,25 @@ impl GuardrailCoverageBuilder {
     pub fn get_text_characters(&self) -> &::std::option::Option<crate::types::GuardrailTextCharactersCoverage> {
         &self.text_characters
     }
+    /// <p>The guardrail coverage for images (the number of images that guardrails guarded).</p>
+    pub fn images(mut self, input: crate::types::GuardrailImageCoverage) -> Self {
+        self.images = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The guardrail coverage for images (the number of images that guardrails guarded).</p>
+    pub fn set_images(mut self, input: ::std::option::Option<crate::types::GuardrailImageCoverage>) -> Self {
+        self.images = input;
+        self
+    }
+    /// <p>The guardrail coverage for images (the number of images that guardrails guarded).</p>
+    pub fn get_images(&self) -> &::std::option::Option<crate::types::GuardrailImageCoverage> {
+        &self.images
+    }
     /// Consumes the builder and constructs a [`GuardrailCoverage`](crate::types::GuardrailCoverage).
     pub fn build(self) -> crate::types::GuardrailCoverage {
         crate::types::GuardrailCoverage {
             text_characters: self.text_characters,
+            images: self.images,
         }
     }
 }

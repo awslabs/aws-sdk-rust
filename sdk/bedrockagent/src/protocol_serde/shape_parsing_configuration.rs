@@ -12,6 +12,12 @@ pub fn ser_parsing_configuration(
         crate::protocol_serde::shape_bedrock_foundation_model_configuration::ser_bedrock_foundation_model_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.bedrock_data_automation_configuration {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("bedrockDataAutomationConfiguration").start_object();
+        crate::protocol_serde::shape_bedrock_data_automation_configuration::ser_bedrock_data_automation_configuration(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }
 
@@ -42,6 +48,11 @@ where
                                 crate::protocol_serde::shape_bedrock_foundation_model_configuration::de_bedrock_foundation_model_configuration(
                                     tokens,
                                 )?,
+                            );
+                        }
+                        "bedrockDataAutomationConfiguration" => {
+                            builder = builder.set_bedrock_data_automation_configuration(
+                                crate::protocol_serde::shape_bedrock_data_automation_configuration::de_bedrock_data_automation_configuration(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

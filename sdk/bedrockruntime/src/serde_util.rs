@@ -478,6 +478,18 @@ pub(crate) fn video_block_correct_errors(mut builder: crate::types::builders::Vi
     builder
 }
 
+pub(crate) fn guardrail_converse_image_block_correct_errors(
+    mut builder: crate::types::builders::GuardrailConverseImageBlockBuilder,
+) -> crate::types::builders::GuardrailConverseImageBlockBuilder {
+    if builder.format.is_none() {
+        builder.format = "no value was set".parse::<crate::types::GuardrailConverseImageFormat>().ok()
+    }
+    if builder.source.is_none() {
+        builder.source = Some(crate::types::GuardrailConverseImageSource::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn guardrail_converse_text_block_correct_errors(
     mut builder: crate::types::builders::GuardrailConverseTextBlockBuilder,
 ) -> crate::types::builders::GuardrailConverseTextBlockBuilder {

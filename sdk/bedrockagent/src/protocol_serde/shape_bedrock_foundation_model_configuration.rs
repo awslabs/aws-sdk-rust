@@ -12,6 +12,9 @@ pub fn ser_bedrock_foundation_model_configuration(
         crate::protocol_serde::shape_parsing_prompt::ser_parsing_prompt(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.parsing_modality {
+        object.key("parsingModality").string(var_3.as_str());
+    }
     Ok(())
 }
 
@@ -39,6 +42,13 @@ where
                         }
                         "parsingPrompt" => {
                             builder = builder.set_parsing_prompt(crate::protocol_serde::shape_parsing_prompt::de_parsing_prompt(tokens)?);
+                        }
+                        "parsingModality" => {
+                            builder = builder.set_parsing_modality(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ParsingModality::from(u.as_ref())))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

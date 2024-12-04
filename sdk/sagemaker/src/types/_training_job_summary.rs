@@ -20,6 +20,9 @@ pub struct TrainingJobSummary {
     pub secondary_status: ::std::option::Option<crate::types::SecondaryStatus>,
     /// <p>The status of the warm pool associated with the training job.</p>
     pub warm_pool_status: ::std::option::Option<crate::types::WarmPoolStatus>,
+    /// <p>The Amazon Resource Name (ARN); of the training plan associated with this training job.</p>
+    /// <p>For more information about how to reserve GPU capacity for your SageMaker HyperPod clusters using Amazon SageMaker Training Plan, see <code> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingPlan.html">CreateTrainingPlan</a> </code>.</p>
+    pub training_plan_arn: ::std::option::Option<::std::string::String>,
 }
 impl TrainingJobSummary {
     /// <p>The name of the training job that you want a summary for.</p>
@@ -54,6 +57,11 @@ impl TrainingJobSummary {
     pub fn warm_pool_status(&self) -> ::std::option::Option<&crate::types::WarmPoolStatus> {
         self.warm_pool_status.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN); of the training plan associated with this training job.</p>
+    /// <p>For more information about how to reserve GPU capacity for your SageMaker HyperPod clusters using Amazon SageMaker Training Plan, see <code> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingPlan.html">CreateTrainingPlan</a> </code>.</p>
+    pub fn training_plan_arn(&self) -> ::std::option::Option<&str> {
+        self.training_plan_arn.as_deref()
+    }
 }
 impl TrainingJobSummary {
     /// Creates a new builder-style object to manufacture [`TrainingJobSummary`](crate::types::TrainingJobSummary).
@@ -74,6 +82,7 @@ pub struct TrainingJobSummaryBuilder {
     pub(crate) training_job_status: ::std::option::Option<crate::types::TrainingJobStatus>,
     pub(crate) secondary_status: ::std::option::Option<crate::types::SecondaryStatus>,
     pub(crate) warm_pool_status: ::std::option::Option<crate::types::WarmPoolStatus>,
+    pub(crate) training_plan_arn: ::std::option::Option<::std::string::String>,
 }
 impl TrainingJobSummaryBuilder {
     /// <p>The name of the training job that you want a summary for.</p>
@@ -192,6 +201,23 @@ impl TrainingJobSummaryBuilder {
     pub fn get_warm_pool_status(&self) -> &::std::option::Option<crate::types::WarmPoolStatus> {
         &self.warm_pool_status
     }
+    /// <p>The Amazon Resource Name (ARN); of the training plan associated with this training job.</p>
+    /// <p>For more information about how to reserve GPU capacity for your SageMaker HyperPod clusters using Amazon SageMaker Training Plan, see <code> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingPlan.html">CreateTrainingPlan</a> </code>.</p>
+    pub fn training_plan_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.training_plan_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN); of the training plan associated with this training job.</p>
+    /// <p>For more information about how to reserve GPU capacity for your SageMaker HyperPod clusters using Amazon SageMaker Training Plan, see <code> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingPlan.html">CreateTrainingPlan</a> </code>.</p>
+    pub fn set_training_plan_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.training_plan_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN); of the training plan associated with this training job.</p>
+    /// <p>For more information about how to reserve GPU capacity for your SageMaker HyperPod clusters using Amazon SageMaker Training Plan, see <code> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingPlan.html">CreateTrainingPlan</a> </code>.</p>
+    pub fn get_training_plan_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.training_plan_arn
+    }
     /// Consumes the builder and constructs a [`TrainingJobSummary`](crate::types::TrainingJobSummary).
     pub fn build(self) -> crate::types::TrainingJobSummary {
         crate::types::TrainingJobSummary {
@@ -203,6 +229,7 @@ impl TrainingJobSummaryBuilder {
             training_job_status: self.training_job_status,
             secondary_status: self.secondary_status,
             warm_pool_status: self.warm_pool_status,
+            training_plan_arn: self.training_plan_arn,
         }
     }
 }

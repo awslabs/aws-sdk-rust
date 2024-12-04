@@ -59,6 +59,18 @@ pub(crate) fn create_inference_profile_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_marketplace_model_endpoint_output_output_correct_errors(
+    mut builder: crate::operation::create_marketplace_model_endpoint::builders::CreateMarketplaceModelEndpointOutputBuilder,
+) -> crate::operation::create_marketplace_model_endpoint::builders::CreateMarketplaceModelEndpointOutputBuilder {
+    if builder.marketplace_model_endpoint.is_none() {
+        builder.marketplace_model_endpoint = {
+            let builder = crate::types::builders::MarketplaceModelEndpointBuilder::default();
+            crate::serde_util::marketplace_model_endpoint_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn create_model_copy_job_output_output_correct_errors(
     mut builder: crate::operation::create_model_copy_job::builders::CreateModelCopyJobOutputBuilder,
 ) -> crate::operation::create_model_copy_job::builders::CreateModelCopyJobOutputBuilder {
@@ -320,6 +332,39 @@ pub(crate) fn get_model_invocation_job_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_prompt_router_output_output_correct_errors(
+    mut builder: crate::operation::get_prompt_router::builders::GetPromptRouterOutputBuilder,
+) -> crate::operation::get_prompt_router::builders::GetPromptRouterOutputBuilder {
+    if builder.prompt_router_name.is_none() {
+        builder.prompt_router_name = Some(Default::default())
+    }
+    if builder.routing_criteria.is_none() {
+        builder.routing_criteria = {
+            let builder = crate::types::builders::RoutingCriteriaBuilder::default();
+            crate::serde_util::routing_criteria_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.prompt_router_arn.is_none() {
+        builder.prompt_router_arn = Some(Default::default())
+    }
+    if builder.models.is_none() {
+        builder.models = Some(Default::default())
+    }
+    if builder.fallback_model.is_none() {
+        builder.fallback_model = {
+            let builder = crate::types::builders::PromptRouterTargetModelBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::PromptRouterStatus>().ok()
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::PromptRouterType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn get_provisioned_model_throughput_output_output_correct_errors(
     mut builder: crate::operation::get_provisioned_model_throughput::builders::GetProvisionedModelThroughputOutputBuilder,
 ) -> crate::operation::get_provisioned_model_throughput::builders::GetProvisionedModelThroughputOutputBuilder {
@@ -365,6 +410,18 @@ pub(crate) fn list_guardrails_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn register_marketplace_model_endpoint_output_output_correct_errors(
+    mut builder: crate::operation::register_marketplace_model_endpoint::builders::RegisterMarketplaceModelEndpointOutputBuilder,
+) -> crate::operation::register_marketplace_model_endpoint::builders::RegisterMarketplaceModelEndpointOutputBuilder {
+    if builder.marketplace_model_endpoint.is_none() {
+        builder.marketplace_model_endpoint = {
+            let builder = crate::types::builders::MarketplaceModelEndpointBuilder::default();
+            crate::serde_util::marketplace_model_endpoint_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn update_guardrail_output_output_correct_errors(
     mut builder: crate::operation::update_guardrail::builders::UpdateGuardrailOutputBuilder,
 ) -> crate::operation::update_guardrail::builders::UpdateGuardrailOutputBuilder {
@@ -379,6 +436,42 @@ pub(crate) fn update_guardrail_output_output_correct_errors(
     }
     if builder.updated_at.is_none() {
         builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn update_marketplace_model_endpoint_output_output_correct_errors(
+    mut builder: crate::operation::update_marketplace_model_endpoint::builders::UpdateMarketplaceModelEndpointOutputBuilder,
+) -> crate::operation::update_marketplace_model_endpoint::builders::UpdateMarketplaceModelEndpointOutputBuilder {
+    if builder.marketplace_model_endpoint.is_none() {
+        builder.marketplace_model_endpoint = {
+            let builder = crate::types::builders::MarketplaceModelEndpointBuilder::default();
+            crate::serde_util::marketplace_model_endpoint_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn marketplace_model_endpoint_correct_errors(
+    mut builder: crate::types::builders::MarketplaceModelEndpointBuilder,
+) -> crate::types::builders::MarketplaceModelEndpointBuilder {
+    if builder.endpoint_arn.is_none() {
+        builder.endpoint_arn = Some(Default::default())
+    }
+    if builder.model_source_identifier.is_none() {
+        builder.model_source_identifier = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.endpoint_config.is_none() {
+        builder.endpoint_config = Some(crate::types::EndpointConfig::Unknown)
+    }
+    if builder.endpoint_status.is_none() {
+        builder.endpoint_status = Some(Default::default())
     }
     builder
 }
@@ -406,6 +499,15 @@ pub(crate) fn validation_data_config_correct_errors(
 ) -> crate::types::builders::ValidationDataConfigBuilder {
     if builder.validators.is_none() {
         builder.validators = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn routing_criteria_correct_errors(
+    mut builder: crate::types::builders::RoutingCriteriaBuilder,
+) -> crate::types::builders::RoutingCriteriaBuilder {
+    if builder.response_quality_difference.is_none() {
+        builder.response_quality_difference = Some(Default::default())
     }
     builder
 }
@@ -657,6 +759,24 @@ pub(crate) fn invocation_logs_config_correct_errors(
     builder
 }
 
+pub(crate) fn marketplace_model_endpoint_summary_correct_errors(
+    mut builder: crate::types::builders::MarketplaceModelEndpointSummaryBuilder,
+) -> crate::types::builders::MarketplaceModelEndpointSummaryBuilder {
+    if builder.endpoint_arn.is_none() {
+        builder.endpoint_arn = Some(Default::default())
+    }
+    if builder.model_source_identifier.is_none() {
+        builder.model_source_identifier = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn model_copy_job_summary_correct_errors(
     mut builder: crate::types::builders::ModelCopyJobSummaryBuilder,
 ) -> crate::types::builders::ModelCopyJobSummaryBuilder {
@@ -761,6 +881,39 @@ pub(crate) fn model_invocation_job_summary_correct_errors(
     }
     if builder.output_data_config.is_none() {
         builder.output_data_config = Some(crate::types::ModelInvocationJobOutputDataConfig::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn prompt_router_summary_correct_errors(
+    mut builder: crate::types::builders::PromptRouterSummaryBuilder,
+) -> crate::types::builders::PromptRouterSummaryBuilder {
+    if builder.prompt_router_name.is_none() {
+        builder.prompt_router_name = Some(Default::default())
+    }
+    if builder.routing_criteria.is_none() {
+        builder.routing_criteria = {
+            let builder = crate::types::builders::RoutingCriteriaBuilder::default();
+            crate::serde_util::routing_criteria_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.prompt_router_arn.is_none() {
+        builder.prompt_router_arn = Some(Default::default())
+    }
+    if builder.models.is_none() {
+        builder.models = Some(Default::default())
+    }
+    if builder.fallback_model.is_none() {
+        builder.fallback_model = {
+            let builder = crate::types::builders::PromptRouterTargetModelBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::PromptRouterStatus>().ok()
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::PromptRouterType>().ok()
     }
     builder
 }
@@ -914,6 +1067,21 @@ pub(crate) fn human_workflow_config_correct_errors(
 ) -> crate::types::builders::HumanWorkflowConfigBuilder {
     if builder.flow_definition_arn.is_none() {
         builder.flow_definition_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn sage_maker_endpoint_correct_errors(
+    mut builder: crate::types::builders::SageMakerEndpointBuilder,
+) -> crate::types::builders::SageMakerEndpointBuilder {
+    if builder.initial_instance_count.is_none() {
+        builder.initial_instance_count = Some(Default::default())
+    }
+    if builder.instance_type.is_none() {
+        builder.instance_type = Some(Default::default())
+    }
+    if builder.execution_role.is_none() {
+        builder.execution_role = Some(Default::default())
     }
     builder
 }

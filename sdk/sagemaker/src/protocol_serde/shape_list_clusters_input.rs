@@ -31,5 +31,8 @@ pub fn ser_list_clusters_input_input(
     if let Some(var_7) = &input.sort_order {
         object.key("SortOrder").string(var_7.as_str());
     }
+    if let Some(var_8) = &input.training_plan_arn {
+        object.key("TrainingPlanArn").string(var_8.as_str());
+    }
     Ok(())
 }

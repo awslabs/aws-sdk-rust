@@ -13,6 +13,8 @@ pub enum Error {
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The number of requests exceeds the service quota. Resubmit your request later.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
+    /// <p>Returned if the service cannot complete the request.</p>
+    ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request.</p>
@@ -36,6 +38,7 @@ impl ::std::fmt::Display for Error {
             Error::InternalServerException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
+            Error::ServiceUnavailableException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
             Error::TooManyTagsException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
@@ -65,6 +68,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::InternalServerException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::ServiceQuotaExceededException(inner) => inner.meta(),
+            Self::ServiceUnavailableException(inner) => inner.meta(),
             Self::ThrottlingException(inner) => inner.meta(),
             Self::TooManyTagsException(inner) => inner.meta(),
             Self::ValidationException(inner) => inner.meta(),
@@ -253,6 +257,59 @@ impl From<crate::operation::create_inference_profile::CreateInferenceProfileErro
             }
             crate::operation::create_inference_profile::CreateInferenceProfileError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_inference_profile::CreateInferenceProfileError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_marketplace_model_endpoint::CreateMarketplaceModelEndpointError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_marketplace_model_endpoint::CreateMarketplaceModelEndpointError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_marketplace_model_endpoint::CreateMarketplaceModelEndpointError> for Error {
+    fn from(err: crate::operation::create_marketplace_model_endpoint::CreateMarketplaceModelEndpointError) -> Self {
+        match err {
+            crate::operation::create_marketplace_model_endpoint::CreateMarketplaceModelEndpointError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_marketplace_model_endpoint::CreateMarketplaceModelEndpointError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_marketplace_model_endpoint::CreateMarketplaceModelEndpointError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_marketplace_model_endpoint::CreateMarketplaceModelEndpointError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_marketplace_model_endpoint::CreateMarketplaceModelEndpointError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_marketplace_model_endpoint::CreateMarketplaceModelEndpointError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_marketplace_model_endpoint::CreateMarketplaceModelEndpointError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_marketplace_model_endpoint::CreateMarketplaceModelEndpointError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -593,6 +650,53 @@ impl From<crate::operation::delete_inference_profile::DeleteInferenceProfileErro
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_marketplace_model_endpoint::DeleteMarketplaceModelEndpointError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_marketplace_model_endpoint::DeleteMarketplaceModelEndpointError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_marketplace_model_endpoint::DeleteMarketplaceModelEndpointError> for Error {
+    fn from(err: crate::operation::delete_marketplace_model_endpoint::DeleteMarketplaceModelEndpointError) -> Self {
+        match err {
+            crate::operation::delete_marketplace_model_endpoint::DeleteMarketplaceModelEndpointError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_marketplace_model_endpoint::DeleteMarketplaceModelEndpointError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_marketplace_model_endpoint::DeleteMarketplaceModelEndpointError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_marketplace_model_endpoint::DeleteMarketplaceModelEndpointError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_marketplace_model_endpoint::DeleteMarketplaceModelEndpointError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_marketplace_model_endpoint::DeleteMarketplaceModelEndpointError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::delete_model_invocation_logging_configuration::DeleteModelInvocationLoggingConfigurationError,
             R,
         >,
@@ -672,6 +776,58 @@ impl From<crate::operation::delete_provisioned_model_throughput::DeleteProvision
                 Error::ValidationException(inner)
             }
             crate::operation::delete_provisioned_model_throughput::DeleteProvisionedModelThroughputError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::deregister_marketplace_model_endpoint::DeregisterMarketplaceModelEndpointError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::deregister_marketplace_model_endpoint::DeregisterMarketplaceModelEndpointError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::deregister_marketplace_model_endpoint::DeregisterMarketplaceModelEndpointError> for Error {
+    fn from(err: crate::operation::deregister_marketplace_model_endpoint::DeregisterMarketplaceModelEndpointError) -> Self {
+        match err {
+            crate::operation::deregister_marketplace_model_endpoint::DeregisterMarketplaceModelEndpointError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::deregister_marketplace_model_endpoint::DeregisterMarketplaceModelEndpointError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::deregister_marketplace_model_endpoint::DeregisterMarketplaceModelEndpointError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::deregister_marketplace_model_endpoint::DeregisterMarketplaceModelEndpointError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::deregister_marketplace_model_endpoint::DeregisterMarketplaceModelEndpointError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::deregister_marketplace_model_endpoint::DeregisterMarketplaceModelEndpointError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::deregister_marketplace_model_endpoint::DeregisterMarketplaceModelEndpointError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -834,6 +990,49 @@ impl From<crate::operation::get_inference_profile::GetInferenceProfileError> for
             crate::operation::get_inference_profile::GetInferenceProfileError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_inference_profile::GetInferenceProfileError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_inference_profile::GetInferenceProfileError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_marketplace_model_endpoint::GetMarketplaceModelEndpointError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_marketplace_model_endpoint::GetMarketplaceModelEndpointError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_marketplace_model_endpoint::GetMarketplaceModelEndpointError> for Error {
+    fn from(err: crate::operation::get_marketplace_model_endpoint::GetMarketplaceModelEndpointError) -> Self {
+        match err {
+            crate::operation::get_marketplace_model_endpoint::GetMarketplaceModelEndpointError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_marketplace_model_endpoint::GetMarketplaceModelEndpointError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_marketplace_model_endpoint::GetMarketplaceModelEndpointError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_marketplace_model_endpoint::GetMarketplaceModelEndpointError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_marketplace_model_endpoint::GetMarketplaceModelEndpointError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_marketplace_model_endpoint::GetMarketplaceModelEndpointError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1004,6 +1203,32 @@ impl From<crate::operation::get_model_invocation_logging_configuration::GetModel
             crate::operation::get_model_invocation_logging_configuration::GetModelInvocationLoggingConfigurationError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_prompt_router::GetPromptRouterError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_prompt_router::GetPromptRouterError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_prompt_router::GetPromptRouterError> for Error {
+    fn from(err: crate::operation::get_prompt_router::GetPromptRouterError) -> Self {
+        match err {
+            crate::operation::get_prompt_router::GetPromptRouterError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_prompt_router::GetPromptRouterError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_prompt_router::GetPromptRouterError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_prompt_router::GetPromptRouterError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_prompt_router::GetPromptRouterError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_prompt_router::GetPromptRouterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1210,6 +1435,50 @@ impl From<crate::operation::list_inference_profiles::ListInferenceProfilesError>
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_marketplace_model_endpoints::ListMarketplaceModelEndpointsError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_marketplace_model_endpoints::ListMarketplaceModelEndpointsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_marketplace_model_endpoints::ListMarketplaceModelEndpointsError> for Error {
+    fn from(err: crate::operation::list_marketplace_model_endpoints::ListMarketplaceModelEndpointsError) -> Self {
+        match err {
+            crate::operation::list_marketplace_model_endpoints::ListMarketplaceModelEndpointsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_marketplace_model_endpoints::ListMarketplaceModelEndpointsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_marketplace_model_endpoints::ListMarketplaceModelEndpointsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_marketplace_model_endpoints::ListMarketplaceModelEndpointsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_marketplace_model_endpoints::ListMarketplaceModelEndpointsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_marketplace_model_endpoints::ListMarketplaceModelEndpointsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_model_copy_jobs::ListModelCopyJobsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1337,6 +1606,31 @@ impl From<crate::operation::list_model_invocation_jobs::ListModelInvocationJobsE
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_prompt_routers::ListPromptRoutersError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_prompt_routers::ListPromptRoutersError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_prompt_routers::ListPromptRoutersError> for Error {
+    fn from(err: crate::operation::list_prompt_routers::ListPromptRoutersError) -> Self {
+        match err {
+            crate::operation::list_prompt_routers::ListPromptRoutersError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_prompt_routers::ListPromptRoutersError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_prompt_routers::ListPromptRoutersError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_prompt_routers::ListPromptRoutersError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_prompt_routers::ListPromptRoutersError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -1454,6 +1748,56 @@ impl From<crate::operation::put_model_invocation_logging_configuration::PutModel
             crate::operation::put_model_invocation_logging_configuration::PutModelInvocationLoggingConfigurationError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::register_marketplace_model_endpoint::RegisterMarketplaceModelEndpointError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::register_marketplace_model_endpoint::RegisterMarketplaceModelEndpointError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::register_marketplace_model_endpoint::RegisterMarketplaceModelEndpointError> for Error {
+    fn from(err: crate::operation::register_marketplace_model_endpoint::RegisterMarketplaceModelEndpointError) -> Self {
+        match err {
+            crate::operation::register_marketplace_model_endpoint::RegisterMarketplaceModelEndpointError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::register_marketplace_model_endpoint::RegisterMarketplaceModelEndpointError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::register_marketplace_model_endpoint::RegisterMarketplaceModelEndpointError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::register_marketplace_model_endpoint::RegisterMarketplaceModelEndpointError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::register_marketplace_model_endpoint::RegisterMarketplaceModelEndpointError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::register_marketplace_model_endpoint::RegisterMarketplaceModelEndpointError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::register_marketplace_model_endpoint::RegisterMarketplaceModelEndpointError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1650,6 +1994,59 @@ impl From<crate::operation::update_guardrail::UpdateGuardrailError> for Error {
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_marketplace_model_endpoint::UpdateMarketplaceModelEndpointError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_marketplace_model_endpoint::UpdateMarketplaceModelEndpointError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_marketplace_model_endpoint::UpdateMarketplaceModelEndpointError> for Error {
+    fn from(err: crate::operation::update_marketplace_model_endpoint::UpdateMarketplaceModelEndpointError) -> Self {
+        match err {
+            crate::operation::update_marketplace_model_endpoint::UpdateMarketplaceModelEndpointError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_marketplace_model_endpoint::UpdateMarketplaceModelEndpointError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_marketplace_model_endpoint::UpdateMarketplaceModelEndpointError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_marketplace_model_endpoint::UpdateMarketplaceModelEndpointError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_marketplace_model_endpoint::UpdateMarketplaceModelEndpointError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::update_marketplace_model_endpoint::UpdateMarketplaceModelEndpointError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_marketplace_model_endpoint::UpdateMarketplaceModelEndpointError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_marketplace_model_endpoint::UpdateMarketplaceModelEndpointError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::update_provisioned_model_throughput::UpdateProvisionedModelThroughputError,
             R,
         >,
@@ -1702,6 +2099,7 @@ impl ::std::error::Error for Error {
             Error::InternalServerException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ServiceQuotaExceededException(inner) => inner.source(),
+            Error::ServiceUnavailableException(inner) => inner.source(),
             Error::ThrottlingException(inner) => inner.source(),
             Error::TooManyTagsException(inner) => inner.source(),
             Error::ValidationException(inner) => inner.source(),
@@ -1717,6 +2115,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::InternalServerException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ServiceQuotaExceededException(e) => e.request_id(),
+            Self::ServiceUnavailableException(e) => e.request_id(),
             Self::ThrottlingException(e) => e.request_id(),
             Self::TooManyTagsException(e) => e.request_id(),
             Self::ValidationException(e) => e.request_id(),

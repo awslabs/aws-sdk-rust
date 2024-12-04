@@ -8,6 +8,8 @@ pub struct VectorKnowledgeBaseConfiguration {
     pub embedding_model_arn: ::std::string::String,
     /// <p>The embeddings model configuration details for the vector model used in Knowledge Base.</p>
     pub embedding_model_configuration: ::std::option::Option<crate::types::EmbeddingModelConfiguration>,
+    /// <p>If you include multimodal data from your data source, use this object to specify configurations for the storage location of the images extracted from your documents. These images can be retrieved and returned to the end user. They can also be used in generation when using <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_RetrieveAndGenerate.html">RetrieveAndGenerate</a>.</p>
+    pub supplemental_data_storage_configuration: ::std::option::Option<crate::types::SupplementalDataStorageConfiguration>,
 }
 impl VectorKnowledgeBaseConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the model or inference profile used to create vector embeddings for the knowledge base.</p>
@@ -18,6 +20,10 @@ impl VectorKnowledgeBaseConfiguration {
     /// <p>The embeddings model configuration details for the vector model used in Knowledge Base.</p>
     pub fn embedding_model_configuration(&self) -> ::std::option::Option<&crate::types::EmbeddingModelConfiguration> {
         self.embedding_model_configuration.as_ref()
+    }
+    /// <p>If you include multimodal data from your data source, use this object to specify configurations for the storage location of the images extracted from your documents. These images can be retrieved and returned to the end user. They can also be used in generation when using <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_RetrieveAndGenerate.html">RetrieveAndGenerate</a>.</p>
+    pub fn supplemental_data_storage_configuration(&self) -> ::std::option::Option<&crate::types::SupplementalDataStorageConfiguration> {
+        self.supplemental_data_storage_configuration.as_ref()
     }
 }
 impl VectorKnowledgeBaseConfiguration {
@@ -33,6 +39,7 @@ impl VectorKnowledgeBaseConfiguration {
 pub struct VectorKnowledgeBaseConfigurationBuilder {
     pub(crate) embedding_model_arn: ::std::option::Option<::std::string::String>,
     pub(crate) embedding_model_configuration: ::std::option::Option<crate::types::EmbeddingModelConfiguration>,
+    pub(crate) supplemental_data_storage_configuration: ::std::option::Option<crate::types::SupplementalDataStorageConfiguration>,
 }
 impl VectorKnowledgeBaseConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the model or inference profile used to create vector embeddings for the knowledge base.</p>
@@ -64,6 +71,23 @@ impl VectorKnowledgeBaseConfigurationBuilder {
     pub fn get_embedding_model_configuration(&self) -> &::std::option::Option<crate::types::EmbeddingModelConfiguration> {
         &self.embedding_model_configuration
     }
+    /// <p>If you include multimodal data from your data source, use this object to specify configurations for the storage location of the images extracted from your documents. These images can be retrieved and returned to the end user. They can also be used in generation when using <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_RetrieveAndGenerate.html">RetrieveAndGenerate</a>.</p>
+    pub fn supplemental_data_storage_configuration(mut self, input: crate::types::SupplementalDataStorageConfiguration) -> Self {
+        self.supplemental_data_storage_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If you include multimodal data from your data source, use this object to specify configurations for the storage location of the images extracted from your documents. These images can be retrieved and returned to the end user. They can also be used in generation when using <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_RetrieveAndGenerate.html">RetrieveAndGenerate</a>.</p>
+    pub fn set_supplemental_data_storage_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::SupplementalDataStorageConfiguration>,
+    ) -> Self {
+        self.supplemental_data_storage_configuration = input;
+        self
+    }
+    /// <p>If you include multimodal data from your data source, use this object to specify configurations for the storage location of the images extracted from your documents. These images can be retrieved and returned to the end user. They can also be used in generation when using <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_RetrieveAndGenerate.html">RetrieveAndGenerate</a>.</p>
+    pub fn get_supplemental_data_storage_configuration(&self) -> &::std::option::Option<crate::types::SupplementalDataStorageConfiguration> {
+        &self.supplemental_data_storage_configuration
+    }
     /// Consumes the builder and constructs a [`VectorKnowledgeBaseConfiguration`](crate::types::VectorKnowledgeBaseConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`embedding_model_arn`](crate::types::builders::VectorKnowledgeBaseConfigurationBuilder::embedding_model_arn)
@@ -76,6 +100,7 @@ impl VectorKnowledgeBaseConfigurationBuilder {
                 )
             })?,
             embedding_model_configuration: self.embedding_model_configuration,
+            supplemental_data_storage_configuration: self.supplemental_data_storage_configuration,
         })
     }
 }

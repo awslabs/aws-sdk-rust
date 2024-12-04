@@ -6,6 +6,8 @@
 pub enum CustomFileSystemConfig {
     /// <p>The settings for a custom Amazon EFS file system.</p>
     EfsFileSystemConfig(crate::types::EfsFileSystemConfig),
+    /// <p>The settings for a custom Amazon FSx for Lustre file system.</p>
+    FSxLustreFileSystemConfig(crate::types::FSxLustreFileSystemConfig),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -17,7 +19,6 @@ pub enum CustomFileSystemConfig {
     Unknown,
 }
 impl CustomFileSystemConfig {
-    #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`EfsFileSystemConfig`](crate::types::CustomFileSystemConfig::EfsFileSystemConfig), extracting the inner [`EfsFileSystemConfig`](crate::types::EfsFileSystemConfig).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_efs_file_system_config(&self) -> ::std::result::Result<&crate::types::EfsFileSystemConfig, &Self> {
@@ -30,6 +31,19 @@ impl CustomFileSystemConfig {
     /// Returns true if this is a [`EfsFileSystemConfig`](crate::types::CustomFileSystemConfig::EfsFileSystemConfig).
     pub fn is_efs_file_system_config(&self) -> bool {
         self.as_efs_file_system_config().is_ok()
+    }
+    /// Tries to convert the enum instance into [`FSxLustreFileSystemConfig`](crate::types::CustomFileSystemConfig::FSxLustreFileSystemConfig), extracting the inner [`FSxLustreFileSystemConfig`](crate::types::FSxLustreFileSystemConfig).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_f_sx_lustre_file_system_config(&self) -> ::std::result::Result<&crate::types::FSxLustreFileSystemConfig, &Self> {
+        if let CustomFileSystemConfig::FSxLustreFileSystemConfig(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`FSxLustreFileSystemConfig`](crate::types::CustomFileSystemConfig::FSxLustreFileSystemConfig).
+    pub fn is_f_sx_lustre_file_system_config(&self) -> bool {
+        self.as_f_sx_lustre_file_system_config().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

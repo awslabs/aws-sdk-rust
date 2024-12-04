@@ -40,11 +40,17 @@ pub mod create_auto_ml_job_v2;
 /// Types for the `CreateCluster` operation.
 pub mod create_cluster;
 
+/// Types for the `CreateClusterSchedulerConfig` operation.
+pub mod create_cluster_scheduler_config;
+
 /// Types for the `CreateCodeRepository` operation.
 pub mod create_code_repository;
 
 /// Types for the `CreateCompilationJob` operation.
 pub mod create_compilation_job;
+
+/// Types for the `CreateComputeQuota` operation.
+pub mod create_compute_quota;
 
 /// Types for the `CreateContext` operation.
 pub mod create_context;
@@ -151,6 +157,12 @@ pub mod create_notebook_instance_lifecycle_config;
 /// Types for the `CreateOptimizationJob` operation.
 pub mod create_optimization_job;
 
+/// Types for the `CreatePartnerApp` operation.
+pub mod create_partner_app;
+
+/// Types for the `CreatePartnerAppPresignedUrl` operation.
+pub mod create_partner_app_presigned_url;
+
 /// Types for the `CreatePipeline` operation.
 pub mod create_pipeline;
 
@@ -177,6 +189,9 @@ pub mod create_studio_lifecycle_config;
 
 /// Types for the `CreateTrainingJob` operation.
 pub mod create_training_job;
+
+/// Types for the `CreateTrainingPlan` operation.
+pub mod create_training_plan;
 
 /// Types for the `CreateTransformJob` operation.
 pub mod create_transform_job;
@@ -217,11 +232,17 @@ pub mod delete_association;
 /// Types for the `DeleteCluster` operation.
 pub mod delete_cluster;
 
+/// Types for the `DeleteClusterSchedulerConfig` operation.
+pub mod delete_cluster_scheduler_config;
+
 /// Types for the `DeleteCodeRepository` operation.
 pub mod delete_code_repository;
 
 /// Types for the `DeleteCompilationJob` operation.
 pub mod delete_compilation_job;
+
+/// Types for the `DeleteComputeQuota` operation.
+pub mod delete_compute_quota;
 
 /// Types for the `DeleteContext` operation.
 pub mod delete_context;
@@ -322,6 +343,9 @@ pub mod delete_notebook_instance_lifecycle_config;
 /// Types for the `DeleteOptimizationJob` operation.
 pub mod delete_optimization_job;
 
+/// Types for the `DeletePartnerApp` operation.
+pub mod delete_partner_app;
+
 /// Types for the `DeletePipeline` operation.
 pub mod delete_pipeline;
 
@@ -382,11 +406,17 @@ pub mod describe_cluster;
 /// Types for the `DescribeClusterNode` operation.
 pub mod describe_cluster_node;
 
+/// Types for the `DescribeClusterSchedulerConfig` operation.
+pub mod describe_cluster_scheduler_config;
+
 /// Types for the `DescribeCodeRepository` operation.
 pub mod describe_code_repository;
 
 /// Types for the `DescribeCompilationJob` operation.
 pub mod describe_compilation_job;
+
+/// Types for the `DescribeComputeQuota` operation.
+pub mod describe_compute_quota;
 
 /// Types for the `DescribeContext` operation.
 pub mod describe_context;
@@ -499,6 +529,9 @@ pub mod describe_notebook_instance_lifecycle_config;
 /// Types for the `DescribeOptimizationJob` operation.
 pub mod describe_optimization_job;
 
+/// Types for the `DescribePartnerApp` operation.
+pub mod describe_partner_app;
+
 /// Types for the `DescribePipeline` operation.
 pub mod describe_pipeline;
 
@@ -525,6 +558,9 @@ pub mod describe_subscribed_workteam;
 
 /// Types for the `DescribeTrainingJob` operation.
 pub mod describe_training_job;
+
+/// Types for the `DescribeTrainingPlan` operation.
+pub mod describe_training_plan;
 
 /// Types for the `DescribeTransformJob` operation.
 pub mod describe_transform_job;
@@ -604,6 +640,9 @@ pub mod list_candidates_for_auto_ml_job;
 /// Types for the `ListClusterNodes` operation.
 pub mod list_cluster_nodes;
 
+/// Types for the `ListClusterSchedulerConfigs` operation.
+pub mod list_cluster_scheduler_configs;
+
 /// Types for the `ListClusters` operation.
 pub mod list_clusters;
 
@@ -612,6 +651,9 @@ pub mod list_code_repositories;
 
 /// Types for the `ListCompilationJobs` operation.
 pub mod list_compilation_jobs;
+
+/// Types for the `ListComputeQuotas` operation.
+pub mod list_compute_quotas;
 
 /// Types for the `ListContexts` operation.
 pub mod list_contexts;
@@ -745,6 +787,9 @@ pub mod list_notebook_instances;
 /// Types for the `ListOptimizationJobs` operation.
 pub mod list_optimization_jobs;
 
+/// Types for the `ListPartnerApps` operation.
+pub mod list_partner_apps;
+
 /// Types for the `ListPipelineExecutionSteps` operation.
 pub mod list_pipeline_execution_steps;
 
@@ -787,6 +832,9 @@ pub mod list_training_jobs;
 /// Types for the `ListTrainingJobsForHyperParameterTuningJob` operation.
 pub mod list_training_jobs_for_hyper_parameter_tuning_job;
 
+/// Types for the `ListTrainingPlans` operation.
+pub mod list_training_plans;
+
 /// Types for the `ListTransformJobs` operation.
 pub mod list_transform_jobs;
 
@@ -822,6 +870,9 @@ pub mod retry_pipeline_execution;
 
 /// Types for the `Search` operation.
 pub mod search;
+
+/// Types for the `SearchTrainingPlanOfferings` operation.
+pub mod search_training_plan_offerings;
 
 /// Types for the `SendPipelineExecutionStepFailure` operation.
 pub mod send_pipeline_execution_step_failure;
@@ -907,11 +958,17 @@ pub mod update_artifact;
 /// Types for the `UpdateCluster` operation.
 pub mod update_cluster;
 
+/// Types for the `UpdateClusterSchedulerConfig` operation.
+pub mod update_cluster_scheduler_config;
+
 /// Types for the `UpdateClusterSoftware` operation.
 pub mod update_cluster_software;
 
 /// Types for the `UpdateCodeRepository` operation.
 pub mod update_code_repository;
+
+/// Types for the `UpdateComputeQuota` operation.
+pub mod update_compute_quota;
 
 /// Types for the `UpdateContext` operation.
 pub mod update_context;
@@ -978,6 +1035,9 @@ pub mod update_notebook_instance;
 
 /// Types for the `UpdateNotebookInstanceLifecycleConfig` operation.
 pub mod update_notebook_instance_lifecycle_config;
+
+/// Types for the `UpdatePartnerApp` operation.
+pub mod update_partner_app;
 
 /// Types for the `UpdatePipeline` operation.
 pub mod update_pipeline;

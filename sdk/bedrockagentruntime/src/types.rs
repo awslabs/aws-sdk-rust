@@ -5,6 +5,10 @@ pub use crate::types::_knowledge_base_retrieval_result::KnowledgeBaseRetrievalRe
 
 pub use crate::types::_retrieval_result_location::RetrievalResultLocation;
 
+pub use crate::types::_retrieval_result_sql_location::RetrievalResultSqlLocation;
+
+pub use crate::types::_retrieval_result_kendra_document_location::RetrievalResultKendraDocumentLocation;
+
 pub use crate::types::_retrieval_result_custom_document_location::RetrievalResultCustomDocumentLocation;
 
 pub use crate::types::_retrieval_result_share_point_location::RetrievalResultSharePointLocation;
@@ -20,6 +24,12 @@ pub use crate::types::_retrieval_result_s3_location::RetrievalResultS3Location;
 pub use crate::types::_retrieval_result_location_type::RetrievalResultLocationType;
 
 pub use crate::types::_retrieval_result_content::RetrievalResultContent;
+
+pub use crate::types::_retrieval_result_content_column::RetrievalResultContentColumn;
+
+pub use crate::types::_retrieval_result_content_column_type::RetrievalResultContentColumnType;
+
+pub use crate::types::_retrieval_result_content_type::RetrievalResultContentType;
 
 pub use crate::types::_guardrail_configuration::GuardrailConfiguration;
 
@@ -401,6 +411,24 @@ pub use crate::types::_conversation_role::ConversationRole;
 
 pub use crate::types::_knowledge_base_configuration::KnowledgeBaseConfiguration;
 
+pub use crate::types::_generated_query::GeneratedQuery;
+
+pub use crate::types::_generated_query_type::GeneratedQueryType;
+
+pub use crate::types::_transformation_configuration::TransformationConfiguration;
+
+pub use crate::types::_text_to_sql_configuration::TextToSqlConfiguration;
+
+pub use crate::types::_text_to_sql_knowledge_base_configuration::TextToSqlKnowledgeBaseConfiguration;
+
+pub use crate::types::_text_to_sql_configuration_type::TextToSqlConfigurationType;
+
+pub use crate::types::_query_transformation_mode::QueryTransformationMode;
+
+pub use crate::types::_query_generation_input::QueryGenerationInput;
+
+pub use crate::types::_input_query_type::InputQueryType;
+
 pub use crate::types::_flow_response_stream::FlowResponseStream;
 
 pub use crate::types::_flow_trace_event::FlowTraceEvent;
@@ -579,6 +607,10 @@ mod _function_result;
 
 mod _function_schema;
 
+mod _generated_query;
+
+mod _generated_query_type;
+
 mod _generated_response_part;
 
 mod _generation_configuration;
@@ -656,6 +688,8 @@ mod _inline_session_state;
 mod _input_file;
 
 mod _input_prompt;
+
+mod _input_query_type;
 
 mod _invocation_input;
 
@@ -751,7 +785,11 @@ mod _prompt_type;
 
 mod _property_parameters;
 
+mod _query_generation_input;
+
 mod _query_transformation_configuration;
+
+mod _query_transformation_mode;
 
 mod _query_transformation_type;
 
@@ -799,7 +837,15 @@ mod _retrieval_result_confluence_location;
 
 mod _retrieval_result_content;
 
+mod _retrieval_result_content_column;
+
+mod _retrieval_result_content_column_type;
+
+mod _retrieval_result_content_type;
+
 mod _retrieval_result_custom_document_location;
+
+mod _retrieval_result_kendra_document_location;
 
 mod _retrieval_result_location;
 
@@ -810,6 +856,8 @@ mod _retrieval_result_s3_location;
 mod _retrieval_result_salesforce_location;
 
 mod _retrieval_result_share_point_location;
+
+mod _retrieval_result_sql_location;
 
 mod _retrieval_result_web_location;
 
@@ -859,9 +907,17 @@ mod _text_prompt;
 
 mod _text_response_part;
 
+mod _text_to_sql_configuration;
+
+mod _text_to_sql_configuration_type;
+
+mod _text_to_sql_knowledge_base_configuration;
+
 mod _trace;
 
 mod _trace_part;
+
+mod _transformation_configuration;
 
 mod _type_;
 

@@ -13,14 +13,19 @@
 /// # let mltools = unimplemented!();
 /// match mltools {
 ///     MlTools::AutoMl => { /* ... */ },
+///     MlTools::Comet => { /* ... */ },
 ///     MlTools::DataWrangler => { /* ... */ },
+///     MlTools::DeepchecksLlmEvaluation => { /* ... */ },
 ///     MlTools::EmrClusters => { /* ... */ },
 ///     MlTools::Endpoints => { /* ... */ },
 ///     MlTools::Experiments => { /* ... */ },
 ///     MlTools::FeatureStore => { /* ... */ },
+///     MlTools::Fiddler => { /* ... */ },
+///     MlTools::HyperPodClusters => { /* ... */ },
 ///     MlTools::InferenceOptimization => { /* ... */ },
 ///     MlTools::InferenceRecommender => { /* ... */ },
 ///     MlTools::JumpStart => { /* ... */ },
+///     MlTools::LakeraGuard => { /* ... */ },
 ///     MlTools::ModelEvaluation => { /* ... */ },
 ///     MlTools::Models => { /* ... */ },
 ///     MlTools::PerformanceEvaluation => { /* ... */ },
@@ -57,7 +62,11 @@ pub enum MlTools {
     #[allow(missing_docs)] // documentation missing in model
     AutoMl,
     #[allow(missing_docs)] // documentation missing in model
+    Comet,
+    #[allow(missing_docs)] // documentation missing in model
     DataWrangler,
+    #[allow(missing_docs)] // documentation missing in model
+    DeepchecksLlmEvaluation,
     #[allow(missing_docs)] // documentation missing in model
     EmrClusters,
     #[allow(missing_docs)] // documentation missing in model
@@ -67,11 +76,17 @@ pub enum MlTools {
     #[allow(missing_docs)] // documentation missing in model
     FeatureStore,
     #[allow(missing_docs)] // documentation missing in model
+    Fiddler,
+    #[allow(missing_docs)] // documentation missing in model
+    HyperPodClusters,
+    #[allow(missing_docs)] // documentation missing in model
     InferenceOptimization,
     #[allow(missing_docs)] // documentation missing in model
     InferenceRecommender,
     #[allow(missing_docs)] // documentation missing in model
     JumpStart,
+    #[allow(missing_docs)] // documentation missing in model
+    LakeraGuard,
     #[allow(missing_docs)] // documentation missing in model
     ModelEvaluation,
     #[allow(missing_docs)] // documentation missing in model
@@ -92,14 +107,19 @@ impl ::std::convert::From<&str> for MlTools {
     fn from(s: &str) -> Self {
         match s {
             "AutoMl" => MlTools::AutoMl,
+            "Comet" => MlTools::Comet,
             "DataWrangler" => MlTools::DataWrangler,
+            "DeepchecksLLMEvaluation" => MlTools::DeepchecksLlmEvaluation,
             "EmrClusters" => MlTools::EmrClusters,
             "Endpoints" => MlTools::Endpoints,
             "Experiments" => MlTools::Experiments,
             "FeatureStore" => MlTools::FeatureStore,
+            "Fiddler" => MlTools::Fiddler,
+            "HyperPodClusters" => MlTools::HyperPodClusters,
             "InferenceOptimization" => MlTools::InferenceOptimization,
             "InferenceRecommender" => MlTools::InferenceRecommender,
             "JumpStart" => MlTools::JumpStart,
+            "LakeraGuard" => MlTools::LakeraGuard,
             "ModelEvaluation" => MlTools::ModelEvaluation,
             "Models" => MlTools::Models,
             "PerformanceEvaluation" => MlTools::PerformanceEvaluation,
@@ -122,14 +142,19 @@ impl MlTools {
     pub fn as_str(&self) -> &str {
         match self {
             MlTools::AutoMl => "AutoMl",
+            MlTools::Comet => "Comet",
             MlTools::DataWrangler => "DataWrangler",
+            MlTools::DeepchecksLlmEvaluation => "DeepchecksLLMEvaluation",
             MlTools::EmrClusters => "EmrClusters",
             MlTools::Endpoints => "Endpoints",
             MlTools::Experiments => "Experiments",
             MlTools::FeatureStore => "FeatureStore",
+            MlTools::Fiddler => "Fiddler",
+            MlTools::HyperPodClusters => "HyperPodClusters",
             MlTools::InferenceOptimization => "InferenceOptimization",
             MlTools::InferenceRecommender => "InferenceRecommender",
             MlTools::JumpStart => "JumpStart",
+            MlTools::LakeraGuard => "LakeraGuard",
             MlTools::ModelEvaluation => "ModelEvaluation",
             MlTools::Models => "Models",
             MlTools::PerformanceEvaluation => "PerformanceEvaluation",
@@ -143,14 +168,19 @@ impl MlTools {
     pub const fn values() -> &'static [&'static str] {
         &[
             "AutoMl",
+            "Comet",
             "DataWrangler",
+            "DeepchecksLLMEvaluation",
             "EmrClusters",
             "Endpoints",
             "Experiments",
             "FeatureStore",
+            "Fiddler",
+            "HyperPodClusters",
             "InferenceOptimization",
             "InferenceRecommender",
             "JumpStart",
+            "LakeraGuard",
             "ModelEvaluation",
             "Models",
             "PerformanceEvaluation",
@@ -181,14 +211,19 @@ impl ::std::fmt::Display for MlTools {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             MlTools::AutoMl => write!(f, "AutoMl"),
+            MlTools::Comet => write!(f, "Comet"),
             MlTools::DataWrangler => write!(f, "DataWrangler"),
+            MlTools::DeepchecksLlmEvaluation => write!(f, "DeepchecksLLMEvaluation"),
             MlTools::EmrClusters => write!(f, "EmrClusters"),
             MlTools::Endpoints => write!(f, "Endpoints"),
             MlTools::Experiments => write!(f, "Experiments"),
             MlTools::FeatureStore => write!(f, "FeatureStore"),
+            MlTools::Fiddler => write!(f, "Fiddler"),
+            MlTools::HyperPodClusters => write!(f, "HyperPodClusters"),
             MlTools::InferenceOptimization => write!(f, "InferenceOptimization"),
             MlTools::InferenceRecommender => write!(f, "InferenceRecommender"),
             MlTools::JumpStart => write!(f, "JumpStart"),
+            MlTools::LakeraGuard => write!(f, "LakeraGuard"),
             MlTools::ModelEvaluation => write!(f, "ModelEvaluation"),
             MlTools::Models => write!(f, "Models"),
             MlTools::PerformanceEvaluation => write!(f, "PerformanceEvaluation"),

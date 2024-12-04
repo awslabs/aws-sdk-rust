@@ -69,7 +69,45 @@ pub use crate::types::_open_search_serverless_field_mapping::OpenSearchServerles
 
 pub use crate::types::_knowledge_base_configuration::KnowledgeBaseConfigurationBuilder;
 
+pub use crate::types::_sql_knowledge_base_configuration::SqlKnowledgeBaseConfigurationBuilder;
+
+pub use crate::types::_redshift_configuration::RedshiftConfigurationBuilder;
+
+pub use crate::types::_query_generation_configuration::QueryGenerationConfigurationBuilder;
+
+pub use crate::types::_query_generation_context::QueryGenerationContextBuilder;
+
+pub use crate::types::_curated_query::CuratedQueryBuilder;
+
+pub use crate::types::_query_generation_table::QueryGenerationTableBuilder;
+
+pub use crate::types::_query_generation_column::QueryGenerationColumnBuilder;
+
+pub use crate::types::_redshift_query_engine_configuration::RedshiftQueryEngineConfigurationBuilder;
+
+pub use crate::types::_redshift_provisioned_configuration::RedshiftProvisionedConfigurationBuilder;
+
+pub use crate::types::_redshift_provisioned_auth_configuration::RedshiftProvisionedAuthConfigurationBuilder;
+
+pub use crate::types::_redshift_serverless_configuration::RedshiftServerlessConfigurationBuilder;
+
+pub use crate::types::_redshift_serverless_auth_configuration::RedshiftServerlessAuthConfigurationBuilder;
+
+pub use crate::types::_redshift_query_engine_storage_configuration::RedshiftQueryEngineStorageConfigurationBuilder;
+
+pub use crate::types::_redshift_query_engine_redshift_storage_configuration::RedshiftQueryEngineRedshiftStorageConfigurationBuilder;
+
+pub use crate::types::_redshift_query_engine_aws_data_catalog_storage_configuration::RedshiftQueryEngineAwsDataCatalogStorageConfigurationBuilder;
+
+pub use crate::types::_kendra_knowledge_base_configuration::KendraKnowledgeBaseConfigurationBuilder;
+
 pub use crate::types::_vector_knowledge_base_configuration::VectorKnowledgeBaseConfigurationBuilder;
+
+pub use crate::types::_supplemental_data_storage_configuration::SupplementalDataStorageConfigurationBuilder;
+
+pub use crate::types::_supplemental_data_storage_location::SupplementalDataStorageLocationBuilder;
+
+pub use crate::types::_s3_location::S3LocationBuilder;
 
 pub use crate::types::_embedding_model_configuration::EmbeddingModelConfigurationBuilder;
 
@@ -86,8 +124,6 @@ pub use crate::types::_knowledge_base_document_detail::KnowledgeBaseDocumentDeta
 pub use crate::types::_document_identifier::DocumentIdentifierBuilder;
 
 pub use crate::types::_custom_document_identifier::CustomDocumentIdentifierBuilder;
-
-pub use crate::types::_s3_location::S3LocationBuilder;
 
 pub use crate::types::_knowledge_base_document::KnowledgeBaseDocumentBuilder;
 
@@ -234,6 +270,8 @@ pub use crate::types::_data_source::DataSourceBuilder;
 pub use crate::types::_vector_ingestion_configuration::VectorIngestionConfigurationBuilder;
 
 pub use crate::types::_parsing_configuration::ParsingConfigurationBuilder;
+
+pub use crate::types::_bedrock_data_automation_configuration::BedrockDataAutomationConfigurationBuilder;
 
 pub use crate::types::_bedrock_foundation_model_configuration::BedrockFoundationModelConfigurationBuilder;
 

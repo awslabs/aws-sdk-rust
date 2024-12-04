@@ -51,6 +51,8 @@ pub use crate::types::_ml_tools::MlTools;
 
 pub use crate::types::_custom_file_system_config::CustomFileSystemConfig;
 
+pub use crate::types::_f_sx_lustre_file_system_config::FSxLustreFileSystemConfig;
+
 pub use crate::types::_efs_file_system_config::EfsFileSystemConfig;
 
 pub use crate::types::_custom_posix_user_config::CustomPosixUserConfig;
@@ -141,6 +143,8 @@ pub use crate::types::_space_settings::SpaceSettings;
 
 pub use crate::types::_custom_file_system::CustomFileSystem;
 
+pub use crate::types::_f_sx_lustre_file_system::FSxLustreFileSystem;
+
 pub use crate::types::_efs_file_system::EfsFileSystem;
 
 pub use crate::types::_space_storage_settings::SpaceStorageSettings;
@@ -164,6 +168,10 @@ pub use crate::types::_provisioning_parameter::ProvisioningParameter;
 pub use crate::types::_parallelism_configuration::ParallelismConfiguration;
 
 pub use crate::types::_pipeline_definition_s3_location::PipelineDefinitionS3Location;
+
+pub use crate::types::_partner_app_config::PartnerAppConfig;
+
+pub use crate::types::_partner_app_maintenance_config::PartnerAppMaintenanceConfig;
 
 pub use crate::types::_notebook_instance_lifecycle_hook::NotebookInstanceLifecycleHook;
 
@@ -373,7 +381,29 @@ pub use crate::types::_edge_output_config::EdgeOutputConfig;
 
 pub use crate::types::_edge_preset_deployment_type::EdgePresetDeploymentType;
 
+pub use crate::types::_activation_state::ActivationState;
+
+pub use crate::types::_compute_quota_target::ComputeQuotaTarget;
+
+pub use crate::types::_compute_quota_config::ComputeQuotaConfig;
+
+pub use crate::types::_preempt_team_tasks::PreemptTeamTasks;
+
+pub use crate::types::_resource_sharing_config::ResourceSharingConfig;
+
+pub use crate::types::_resource_sharing_strategy::ResourceSharingStrategy;
+
+pub use crate::types::_compute_quota_resource_config::ComputeQuotaResourceConfig;
+
+pub use crate::types::_cluster_instance_type::ClusterInstanceType;
+
 pub use crate::types::_git_config_for_update::GitConfigForUpdate;
+
+pub use crate::types::_scheduler_config::SchedulerConfig;
+
+pub use crate::types::_fair_share::FairShare;
+
+pub use crate::types::_priority_class::PriorityClass;
 
 pub use crate::types::_cluster_node_recovery::ClusterNodeRecovery;
 
@@ -386,8 +416,6 @@ pub use crate::types::_cluster_instance_storage_config::ClusterInstanceStorageCo
 pub use crate::types::_cluster_ebs_volume_config::ClusterEbsVolumeConfig;
 
 pub use crate::types::_cluster_life_cycle_config::ClusterLifeCycleConfig;
-
-pub use crate::types::_cluster_instance_type::ClusterInstanceType;
 
 pub use crate::types::_code_editor_app_image_config::CodeEditorAppImageConfig;
 
@@ -414,6 +442,14 @@ pub use crate::types::_selected_step::SelectedStep;
 pub use crate::types::_parameter::Parameter;
 
 pub use crate::types::_output_parameter::OutputParameter;
+
+pub use crate::types::_training_plan_offering::TrainingPlanOffering;
+
+pub use crate::types::_reserved_capacity_offering::ReservedCapacityOffering;
+
+pub use crate::types::_reserved_capacity_instance_type::ReservedCapacityInstanceType;
+
+pub use crate::types::_sage_maker_resource_name::SageMakerResourceName;
 
 pub use crate::types::_search_record::SearchRecord;
 
@@ -903,6 +939,22 @@ pub use crate::types::_transform_job_summary::TransformJobSummary;
 
 pub use crate::types::_sort_by::SortBy;
 
+pub use crate::types::_training_plan_summary::TrainingPlanSummary;
+
+pub use crate::types::_reserved_capacity_summary::ReservedCapacitySummary;
+
+pub use crate::types::_reserved_capacity_status::ReservedCapacityStatus;
+
+pub use crate::types::_training_plan_status::TrainingPlanStatus;
+
+pub use crate::types::_training_plan_filter::TrainingPlanFilter;
+
+pub use crate::types::_training_plan_filter_name::TrainingPlanFilterName;
+
+pub use crate::types::_training_plan_sort_order::TrainingPlanSortOrder;
+
+pub use crate::types::_training_plan_sort_by::TrainingPlanSortBy;
+
 pub use crate::types::_training_job_sort_by_options::TrainingJobSortByOptions;
 
 pub use crate::types::_training_job_summary::TrainingJobSummary;
@@ -1002,6 +1054,12 @@ pub use crate::types::_step_status::StepStatus;
 pub use crate::types::_pipeline_execution_summary::PipelineExecutionSummary;
 
 pub use crate::types::_sort_pipeline_executions_by::SortPipelineExecutionsBy;
+
+pub use crate::types::_partner_app_summary::PartnerAppSummary;
+
+pub use crate::types::_partner_app_status::PartnerAppStatus;
+
+pub use crate::types::_partner_app_type::PartnerAppType;
 
 pub use crate::types::_optimization_job_summary::OptimizationJobSummary;
 
@@ -1245,6 +1303,12 @@ pub use crate::types::_context_source::ContextSource;
 
 pub use crate::types::_sort_contexts_by::SortContextsBy;
 
+pub use crate::types::_compute_quota_summary::ComputeQuotaSummary;
+
+pub use crate::types::_scheduler_resource_status::SchedulerResourceStatus;
+
+pub use crate::types::_sort_quota_by::SortQuotaBy;
+
 pub use crate::types::_compilation_job_summary::CompilationJobSummary;
 
 pub use crate::types::_compilation_job_status::CompilationJobStatus;
@@ -1266,6 +1330,10 @@ pub use crate::types::_git_config::GitConfig;
 pub use crate::types::_code_repository_sort_order::CodeRepositorySortOrder;
 
 pub use crate::types::_code_repository_sort_by::CodeRepositorySortBy;
+
+pub use crate::types::_cluster_scheduler_config_summary::ClusterSchedulerConfigSummary;
+
+pub use crate::types::_sort_cluster_scheduler_config_by::SortClusterSchedulerConfigBy;
 
 pub use crate::types::_cluster_summary::ClusterSummary;
 
@@ -1400,6 +1468,10 @@ pub use crate::types::_profiler_rule_evaluation_status::ProfilerRuleEvaluationSt
 pub use crate::types::_space_sharing_settings::SpaceSharingSettings;
 
 pub use crate::types::_ownership_settings::OwnershipSettings;
+
+pub use crate::types::_error_info::ErrorInfo;
+
+pub use crate::types::_partner_app_auth_type::PartnerAppAuthType;
 
 pub use crate::types::_optimization_vpc_config::OptimizationVpcConfig;
 
@@ -1651,6 +1723,8 @@ pub use crate::types::_cluster_orchestrator_eks_config::ClusterOrchestratorEksCo
 
 pub use crate::types::_cluster_instance_group_details::ClusterInstanceGroupDetails;
 
+pub use crate::types::_instance_group_status::InstanceGroupStatus;
+
 pub use crate::types::_auto_ml_compute_config::AutoMlComputeConfig;
 
 pub use crate::types::_emr_serverless_compute_config::EmrServerlessComputeConfig;
@@ -1786,6 +1860,8 @@ mod _action_source;
 mod _action_status;
 
 mod _action_summary;
+
+mod _activation_state;
 
 mod _additional_inference_specification_definition;
 
@@ -2069,6 +2145,8 @@ mod _cluster_orchestrator;
 
 mod _cluster_orchestrator_eks_config;
 
+mod _cluster_scheduler_config_summary;
+
 mod _cluster_sort_by;
 
 mod _cluster_status;
@@ -2104,6 +2182,14 @@ mod _compilation_job_summary;
 mod _complete_on_convergence;
 
 mod _compression_type;
+
+mod _compute_quota_config;
+
+mod _compute_quota_resource_config;
+
+mod _compute_quota_summary;
+
+mod _compute_quota_target;
 
 mod _condition_outcome;
 
@@ -2313,6 +2399,8 @@ mod _environment_parameter;
 
 mod _environment_parameter_ranges;
 
+mod _error_info;
+
 mod _execution_role_identity_config;
 
 mod _execution_status;
@@ -2329,9 +2417,15 @@ mod _explainability;
 
 mod _explainer_config;
 
+mod _f_sx_lustre_file_system;
+
+mod _f_sx_lustre_file_system_config;
+
 mod _fail_step_metadata;
 
 mod _failure_handling_policy;
+
+mod _fair_share;
 
 mod _feature_definition;
 
@@ -2554,6 +2648,8 @@ mod _input_config;
 mod _input_mode;
 
 mod _instance_group;
+
+mod _instance_group_status;
 
 mod _instance_metadata_service_configuration;
 
@@ -2991,6 +3087,18 @@ mod _parent;
 
 mod _parent_hyper_parameter_tuning_job;
 
+mod _partner_app_auth_type;
+
+mod _partner_app_config;
+
+mod _partner_app_maintenance_config;
+
+mod _partner_app_status;
+
+mod _partner_app_summary;
+
+mod _partner_app_type;
+
 mod _pending_deployment_summary;
 
 mod _pending_production_variant_summary;
@@ -3018,6 +3126,10 @@ mod _pipeline_status;
 mod _pipeline_summary;
 
 mod _predefined_metric_specification;
+
+mod _preempt_team_tasks;
+
+mod _priority_class;
 
 mod _problem_type;
 
@@ -3183,6 +3295,14 @@ mod _repository_access_mode;
 
 mod _repository_auth_config;
 
+mod _reserved_capacity_instance_type;
+
+mod _reserved_capacity_offering;
+
+mod _reserved_capacity_status;
+
+mod _reserved_capacity_summary;
+
 mod _resolved_attributes;
 
 mod _resource_catalog;
@@ -3196,6 +3316,10 @@ mod _resource_config;
 mod _resource_config_for_update;
 
 mod _resource_limits;
+
+mod _resource_sharing_config;
+
+mod _resource_sharing_strategy;
 
 mod _resource_spec;
 
@@ -3231,6 +3355,8 @@ mod _s3_storage_config;
 
 mod _sage_maker_image_name;
 
+mod _sage_maker_resource_name;
+
 mod _sagemaker_servicecatalog_status;
 
 mod _scaling_policy;
@@ -3242,6 +3368,10 @@ mod _scaling_policy_objective;
 mod _schedule_config;
 
 mod _schedule_status;
+
+mod _scheduler_config;
+
+mod _scheduler_resource_status;
 
 mod _search_expression;
 
@@ -3287,6 +3417,8 @@ mod _sort_associations_by;
 
 mod _sort_by;
 
+mod _sort_cluster_scheduler_config_by;
+
 mod _sort_contexts_by;
 
 mod _sort_experiments_by;
@@ -3300,6 +3432,8 @@ mod _sort_order;
 mod _sort_pipeline_executions_by;
 
 mod _sort_pipelines_by;
+
+mod _sort_quota_by;
 
 mod _sort_tracking_server_by;
 
@@ -3448,6 +3582,20 @@ mod _training_job_status_counters;
 mod _training_job_step_metadata;
 
 mod _training_job_summary;
+
+mod _training_plan_filter;
+
+mod _training_plan_filter_name;
+
+mod _training_plan_offering;
+
+mod _training_plan_sort_by;
+
+mod _training_plan_sort_order;
+
+mod _training_plan_status;
+
+mod _training_plan_summary;
 
 mod _training_repository_access_mode;
 

@@ -6,6 +6,8 @@
 pub struct BatchPutDocumentResponseFailedDocument {
     /// <p>The identifier of the document.</p>
     pub id: ::std::option::Option<::std::string::String>,
+    /// <p>The identifier of the data source connector that the failed document belongs to.</p>
+    pub data_source_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of error that caused the document to fail to be indexed.</p>
     pub error_code: ::std::option::Option<crate::types::ErrorCode>,
     /// <p>A description of the reason why the document could not be indexed.</p>
@@ -15,6 +17,10 @@ impl BatchPutDocumentResponseFailedDocument {
     /// <p>The identifier of the document.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
+    }
+    /// <p>The identifier of the data source connector that the failed document belongs to.</p>
+    pub fn data_source_id(&self) -> ::std::option::Option<&str> {
+        self.data_source_id.as_deref()
     }
     /// <p>The type of error that caused the document to fail to be indexed.</p>
     pub fn error_code(&self) -> ::std::option::Option<&crate::types::ErrorCode> {
@@ -37,6 +43,7 @@ impl BatchPutDocumentResponseFailedDocument {
 #[non_exhaustive]
 pub struct BatchPutDocumentResponseFailedDocumentBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) data_source_id: ::std::option::Option<::std::string::String>,
     pub(crate) error_code: ::std::option::Option<crate::types::ErrorCode>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
 }
@@ -54,6 +61,20 @@ impl BatchPutDocumentResponseFailedDocumentBuilder {
     /// <p>The identifier of the document.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
+    }
+    /// <p>The identifier of the data source connector that the failed document belongs to.</p>
+    pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data_source_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the data source connector that the failed document belongs to.</p>
+    pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.data_source_id = input;
+        self
+    }
+    /// <p>The identifier of the data source connector that the failed document belongs to.</p>
+    pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_source_id
     }
     /// <p>The type of error that caused the document to fail to be indexed.</p>
     pub fn error_code(mut self, input: crate::types::ErrorCode) -> Self {
@@ -87,6 +108,7 @@ impl BatchPutDocumentResponseFailedDocumentBuilder {
     pub fn build(self) -> crate::types::BatchPutDocumentResponseFailedDocument {
         crate::types::BatchPutDocumentResponseFailedDocument {
             id: self.id,
+            data_source_id: self.data_source_id,
             error_code: self.error_code,
             error_message: self.error_message,
         }

@@ -14,6 +14,7 @@
 /// match datasourcetype {
 ///     DataSourceType::Confluence => { /* ... */ },
 ///     DataSourceType::Custom => { /* ... */ },
+///     DataSourceType::RedshiftMetadata => { /* ... */ },
 ///     DataSourceType::S3 => { /* ... */ },
 ///     DataSourceType::Salesforce => { /* ... */ },
 ///     DataSourceType::Sharepoint => { /* ... */ },
@@ -50,6 +51,8 @@ pub enum DataSourceType {
     #[allow(missing_docs)] // documentation missing in model
     Custom,
     #[allow(missing_docs)] // documentation missing in model
+    RedshiftMetadata,
+    #[allow(missing_docs)] // documentation missing in model
     S3,
     #[allow(missing_docs)] // documentation missing in model
     Salesforce,
@@ -66,6 +69,7 @@ impl ::std::convert::From<&str> for DataSourceType {
         match s {
             "CONFLUENCE" => DataSourceType::Confluence,
             "CUSTOM" => DataSourceType::Custom,
+            "REDSHIFT_METADATA" => DataSourceType::RedshiftMetadata,
             "S3" => DataSourceType::S3,
             "SALESFORCE" => DataSourceType::Salesforce,
             "SHAREPOINT" => DataSourceType::Sharepoint,
@@ -87,6 +91,7 @@ impl DataSourceType {
         match self {
             DataSourceType::Confluence => "CONFLUENCE",
             DataSourceType::Custom => "CUSTOM",
+            DataSourceType::RedshiftMetadata => "REDSHIFT_METADATA",
             DataSourceType::S3 => "S3",
             DataSourceType::Salesforce => "SALESFORCE",
             DataSourceType::Sharepoint => "SHAREPOINT",
@@ -96,7 +101,7 @@ impl DataSourceType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CONFLUENCE", "CUSTOM", "S3", "SALESFORCE", "SHAREPOINT", "WEB"]
+        &["CONFLUENCE", "CUSTOM", "REDSHIFT_METADATA", "S3", "SALESFORCE", "SHAREPOINT", "WEB"]
     }
 }
 impl ::std::convert::AsRef<str> for DataSourceType {
@@ -121,6 +126,7 @@ impl ::std::fmt::Display for DataSourceType {
         match self {
             DataSourceType::Confluence => write!(f, "CONFLUENCE"),
             DataSourceType::Custom => write!(f, "CUSTOM"),
+            DataSourceType::RedshiftMetadata => write!(f, "REDSHIFT_METADATA"),
             DataSourceType::S3 => write!(f, "S3"),
             DataSourceType::Salesforce => write!(f, "SALESFORCE"),
             DataSourceType::Sharepoint => write!(f, "SHAREPOINT"),

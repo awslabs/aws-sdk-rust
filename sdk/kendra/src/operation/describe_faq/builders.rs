@@ -22,7 +22,7 @@ impl crate::operation::describe_faq::builders::DescribeFaqInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeFaq`.
 ///
-/// <p>Gets information about an FAQ list.</p>
+/// <p>Gets information about a FAQ.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeFaqFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

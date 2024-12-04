@@ -63,12 +63,14 @@
 ///     ClusterInstanceType::MlP4De24Xlarge => { /* ... */ },
 ///     ClusterInstanceType::MlP548Xlarge => { /* ... */ },
 ///     ClusterInstanceType::MlP5E48Xlarge => { /* ... */ },
+///     ClusterInstanceType::MlP5En48Xlarge => { /* ... */ },
 ///     ClusterInstanceType::MlT32Xlarge => { /* ... */ },
 ///     ClusterInstanceType::MlT3Large => { /* ... */ },
 ///     ClusterInstanceType::MlT3Medium => { /* ... */ },
 ///     ClusterInstanceType::MlT3Xlarge => { /* ... */ },
 ///     ClusterInstanceType::MlTrn132Xlarge => { /* ... */ },
 ///     ClusterInstanceType::MlTrn1N32Xlarge => { /* ... */ },
+///     ClusterInstanceType::MlTrn248Xlarge => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -199,6 +201,8 @@ pub enum ClusterInstanceType {
     #[allow(missing_docs)] // documentation missing in model
     MlP5E48Xlarge,
     #[allow(missing_docs)] // documentation missing in model
+    MlP5En48Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
     MlT32Xlarge,
     #[allow(missing_docs)] // documentation missing in model
     MlT3Large,
@@ -210,6 +214,8 @@ pub enum ClusterInstanceType {
     MlTrn132Xlarge,
     #[allow(missing_docs)] // documentation missing in model
     MlTrn1N32Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlTrn248Xlarge,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -268,12 +274,14 @@ impl ::std::convert::From<&str> for ClusterInstanceType {
             "ml.p4de.24xlarge" => ClusterInstanceType::MlP4De24Xlarge,
             "ml.p5.48xlarge" => ClusterInstanceType::MlP548Xlarge,
             "ml.p5e.48xlarge" => ClusterInstanceType::MlP5E48Xlarge,
+            "ml.p5en.48xlarge" => ClusterInstanceType::MlP5En48Xlarge,
             "ml.t3.2xlarge" => ClusterInstanceType::MlT32Xlarge,
             "ml.t3.large" => ClusterInstanceType::MlT3Large,
             "ml.t3.medium" => ClusterInstanceType::MlT3Medium,
             "ml.t3.xlarge" => ClusterInstanceType::MlT3Xlarge,
             "ml.trn1.32xlarge" => ClusterInstanceType::MlTrn132Xlarge,
             "ml.trn1n.32xlarge" => ClusterInstanceType::MlTrn1N32Xlarge,
+            "ml.trn2.48xlarge" => ClusterInstanceType::MlTrn248Xlarge,
             other => ClusterInstanceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -340,12 +348,14 @@ impl ClusterInstanceType {
             ClusterInstanceType::MlP4De24Xlarge => "ml.p4de.24xlarge",
             ClusterInstanceType::MlP548Xlarge => "ml.p5.48xlarge",
             ClusterInstanceType::MlP5E48Xlarge => "ml.p5e.48xlarge",
+            ClusterInstanceType::MlP5En48Xlarge => "ml.p5en.48xlarge",
             ClusterInstanceType::MlT32Xlarge => "ml.t3.2xlarge",
             ClusterInstanceType::MlT3Large => "ml.t3.large",
             ClusterInstanceType::MlT3Medium => "ml.t3.medium",
             ClusterInstanceType::MlT3Xlarge => "ml.t3.xlarge",
             ClusterInstanceType::MlTrn132Xlarge => "ml.trn1.32xlarge",
             ClusterInstanceType::MlTrn1N32Xlarge => "ml.trn1n.32xlarge",
+            ClusterInstanceType::MlTrn248Xlarge => "ml.trn2.48xlarge",
             ClusterInstanceType::Unknown(value) => value.as_str(),
         }
     }
@@ -403,12 +413,14 @@ impl ClusterInstanceType {
             "ml.p4de.24xlarge",
             "ml.p5.48xlarge",
             "ml.p5e.48xlarge",
+            "ml.p5en.48xlarge",
             "ml.t3.2xlarge",
             "ml.t3.large",
             "ml.t3.medium",
             "ml.t3.xlarge",
             "ml.trn1.32xlarge",
             "ml.trn1n.32xlarge",
+            "ml.trn2.48xlarge",
         ]
     }
 }
@@ -483,12 +495,14 @@ impl ::std::fmt::Display for ClusterInstanceType {
             ClusterInstanceType::MlP4De24Xlarge => write!(f, "ml.p4de.24xlarge"),
             ClusterInstanceType::MlP548Xlarge => write!(f, "ml.p5.48xlarge"),
             ClusterInstanceType::MlP5E48Xlarge => write!(f, "ml.p5e.48xlarge"),
+            ClusterInstanceType::MlP5En48Xlarge => write!(f, "ml.p5en.48xlarge"),
             ClusterInstanceType::MlT32Xlarge => write!(f, "ml.t3.2xlarge"),
             ClusterInstanceType::MlT3Large => write!(f, "ml.t3.large"),
             ClusterInstanceType::MlT3Medium => write!(f, "ml.t3.medium"),
             ClusterInstanceType::MlT3Xlarge => write!(f, "ml.t3.xlarge"),
             ClusterInstanceType::MlTrn132Xlarge => write!(f, "ml.trn1.32xlarge"),
             ClusterInstanceType::MlTrn1N32Xlarge => write!(f, "ml.trn1n.32xlarge"),
+            ClusterInstanceType::MlTrn248Xlarge => write!(f, "ml.trn2.48xlarge"),
             ClusterInstanceType::Unknown(value) => write!(f, "{}", value),
         }
     }

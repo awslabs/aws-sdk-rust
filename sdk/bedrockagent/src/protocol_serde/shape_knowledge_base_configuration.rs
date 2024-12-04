@@ -12,6 +12,18 @@ pub fn ser_knowledge_base_configuration(
         crate::protocol_serde::shape_vector_knowledge_base_configuration::ser_vector_knowledge_base_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.kendra_knowledge_base_configuration {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("kendraKnowledgeBaseConfiguration").start_object();
+        crate::protocol_serde::shape_kendra_knowledge_base_configuration::ser_kendra_knowledge_base_configuration(&mut object_4, var_3)?;
+        object_4.finish();
+    }
+    if let Some(var_5) = &input.sql_knowledge_base_configuration {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("sqlKnowledgeBaseConfiguration").start_object();
+        crate::protocol_serde::shape_sql_knowledge_base_configuration::ser_sql_knowledge_base_configuration(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }
 
@@ -40,6 +52,16 @@ where
                         "vectorKnowledgeBaseConfiguration" => {
                             builder = builder.set_vector_knowledge_base_configuration(
                                 crate::protocol_serde::shape_vector_knowledge_base_configuration::de_vector_knowledge_base_configuration(tokens)?,
+                            );
+                        }
+                        "kendraKnowledgeBaseConfiguration" => {
+                            builder = builder.set_kendra_knowledge_base_configuration(
+                                crate::protocol_serde::shape_kendra_knowledge_base_configuration::de_kendra_knowledge_base_configuration(tokens)?,
+                            );
+                        }
+                        "sqlKnowledgeBaseConfiguration" => {
+                            builder = builder.set_sql_knowledge_base_configuration(
+                                crate::protocol_serde::shape_sql_knowledge_base_configuration::de_sql_knowledge_base_configuration(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

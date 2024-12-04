@@ -19,6 +19,9 @@ where
                                 tokens,
                             )?);
                         }
+                        "promptRouter" => {
+                            builder = builder.set_prompt_router(crate::protocol_serde::shape_prompt_router_trace::de_prompt_router_trace(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

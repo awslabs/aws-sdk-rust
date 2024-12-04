@@ -51,11 +51,14 @@ pub fn ser_cluster_instance_group_specification(
         }
         array_13.finish();
     }
-    if let Some(var_15) = &input.override_vpc_config {
+    if let Some(var_15) = &input.training_plan_arn {
+        object.key("TrainingPlanArn").string(var_15.as_str());
+    }
+    if let Some(var_16) = &input.override_vpc_config {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("OverrideVpcConfig").start_object();
-        crate::protocol_serde::shape_vpc_config::ser_vpc_config(&mut object_16, var_15)?;
-        object_16.finish();
+        let mut object_17 = object.key("OverrideVpcConfig").start_object();
+        crate::protocol_serde::shape_vpc_config::ser_vpc_config(&mut object_17, var_16)?;
+        object_17.finish();
     }
     Ok(())
 }

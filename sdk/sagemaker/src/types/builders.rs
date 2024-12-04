@@ -35,6 +35,8 @@ pub use crate::types::_studio_web_portal_settings::StudioWebPortalSettingsBuilde
 
 pub use crate::types::_hidden_sage_maker_image::HiddenSageMakerImageBuilder;
 
+pub use crate::types::_f_sx_lustre_file_system_config::FSxLustreFileSystemConfigBuilder;
+
 pub use crate::types::_efs_file_system_config::EfsFileSystemConfigBuilder;
 
 pub use crate::types::_custom_posix_user_config::CustomPosixUserConfigBuilder;
@@ -103,6 +105,8 @@ pub use crate::types::_profiler_config_for_update::ProfilerConfigForUpdateBuilde
 
 pub use crate::types::_space_settings::SpaceSettingsBuilder;
 
+pub use crate::types::_f_sx_lustre_file_system::FSxLustreFileSystemBuilder;
+
 pub use crate::types::_efs_file_system::EfsFileSystemBuilder;
 
 pub use crate::types::_space_storage_settings::SpaceStorageSettingsBuilder;
@@ -126,6 +130,10 @@ pub use crate::types::_provisioning_parameter::ProvisioningParameterBuilder;
 pub use crate::types::_parallelism_configuration::ParallelismConfigurationBuilder;
 
 pub use crate::types::_pipeline_definition_s3_location::PipelineDefinitionS3LocationBuilder;
+
+pub use crate::types::_partner_app_config::PartnerAppConfigBuilder;
+
+pub use crate::types::_partner_app_maintenance_config::PartnerAppMaintenanceConfigBuilder;
 
 pub use crate::types::_notebook_instance_lifecycle_hook::NotebookInstanceLifecycleHookBuilder;
 
@@ -269,7 +277,19 @@ pub use crate::types::_device::DeviceBuilder;
 
 pub use crate::types::_edge_output_config::EdgeOutputConfigBuilder;
 
+pub use crate::types::_compute_quota_target::ComputeQuotaTargetBuilder;
+
+pub use crate::types::_compute_quota_config::ComputeQuotaConfigBuilder;
+
+pub use crate::types::_resource_sharing_config::ResourceSharingConfigBuilder;
+
+pub use crate::types::_compute_quota_resource_config::ComputeQuotaResourceConfigBuilder;
+
 pub use crate::types::_git_config_for_update::GitConfigForUpdateBuilder;
+
+pub use crate::types::_scheduler_config::SchedulerConfigBuilder;
+
+pub use crate::types::_priority_class::PriorityClassBuilder;
 
 pub use crate::types::_cluster_instance_group_specification::ClusterInstanceGroupSpecificationBuilder;
 
@@ -296,6 +316,10 @@ pub use crate::types::_selected_step::SelectedStepBuilder;
 pub use crate::types::_parameter::ParameterBuilder;
 
 pub use crate::types::_output_parameter::OutputParameterBuilder;
+
+pub use crate::types::_training_plan_offering::TrainingPlanOfferingBuilder;
+
+pub use crate::types::_reserved_capacity_offering::ReservedCapacityOfferingBuilder;
 
 pub use crate::types::_search_record::SearchRecordBuilder;
 
@@ -633,6 +657,12 @@ pub use crate::types::_trial_component_summary::TrialComponentSummaryBuilder;
 
 pub use crate::types::_transform_job_summary::TransformJobSummaryBuilder;
 
+pub use crate::types::_training_plan_summary::TrainingPlanSummaryBuilder;
+
+pub use crate::types::_reserved_capacity_summary::ReservedCapacitySummaryBuilder;
+
+pub use crate::types::_training_plan_filter::TrainingPlanFilterBuilder;
+
 pub use crate::types::_training_job_summary::TrainingJobSummaryBuilder;
 
 pub use crate::types::_warm_pool_status::WarmPoolStatusBuilder;
@@ -700,6 +730,8 @@ pub use crate::types::_training_job_step_metadata::TrainingJobStepMetadataBuilde
 pub use crate::types::_cache_hit_result::CacheHitResultBuilder;
 
 pub use crate::types::_pipeline_execution_summary::PipelineExecutionSummaryBuilder;
+
+pub use crate::types::_partner_app_summary::PartnerAppSummaryBuilder;
 
 pub use crate::types::_optimization_job_summary::OptimizationJobSummaryBuilder;
 
@@ -813,11 +845,15 @@ pub use crate::types::_context_summary::ContextSummaryBuilder;
 
 pub use crate::types::_context_source::ContextSourceBuilder;
 
+pub use crate::types::_compute_quota_summary::ComputeQuotaSummaryBuilder;
+
 pub use crate::types::_compilation_job_summary::CompilationJobSummaryBuilder;
 
 pub use crate::types::_code_repository_summary::CodeRepositorySummaryBuilder;
 
 pub use crate::types::_git_config::GitConfigBuilder;
+
+pub use crate::types::_cluster_scheduler_config_summary::ClusterSchedulerConfigSummaryBuilder;
 
 pub use crate::types::_cluster_summary::ClusterSummaryBuilder;
 
@@ -894,6 +930,8 @@ pub use crate::types::_profiler_rule_evaluation_status::ProfilerRuleEvaluationSt
 pub use crate::types::_space_sharing_settings::SpaceSharingSettingsBuilder;
 
 pub use crate::types::_ownership_settings::OwnershipSettingsBuilder;
+
+pub use crate::types::_error_info::ErrorInfoBuilder;
 
 pub use crate::types::_optimization_vpc_config::OptimizationVpcConfigBuilder;
 

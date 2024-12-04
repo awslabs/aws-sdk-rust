@@ -16,6 +16,9 @@ pub mod create_guardrail_version;
 /// Types for the `CreateInferenceProfile` operation.
 pub mod create_inference_profile;
 
+/// Types for the `CreateMarketplaceModelEndpoint` operation.
+pub mod create_marketplace_model_endpoint;
+
 /// Types for the `CreateModelCopyJob` operation.
 pub mod create_model_copy_job;
 
@@ -43,11 +46,17 @@ pub mod delete_imported_model;
 /// Types for the `DeleteInferenceProfile` operation.
 pub mod delete_inference_profile;
 
+/// Types for the `DeleteMarketplaceModelEndpoint` operation.
+pub mod delete_marketplace_model_endpoint;
+
 /// Types for the `DeleteModelInvocationLoggingConfiguration` operation.
 pub mod delete_model_invocation_logging_configuration;
 
 /// Types for the `DeleteProvisionedModelThroughput` operation.
 pub mod delete_provisioned_model_throughput;
+
+/// Types for the `DeregisterMarketplaceModelEndpoint` operation.
+pub mod deregister_marketplace_model_endpoint;
 
 /// Types for the `GetCustomModel` operation.
 pub mod get_custom_model;
@@ -67,6 +76,9 @@ pub mod get_imported_model;
 /// Types for the `GetInferenceProfile` operation.
 pub mod get_inference_profile;
 
+/// Types for the `GetMarketplaceModelEndpoint` operation.
+pub mod get_marketplace_model_endpoint;
+
 /// Types for the `GetModelCopyJob` operation.
 pub mod get_model_copy_job;
 
@@ -81,6 +93,9 @@ pub mod get_model_invocation_job;
 
 /// Types for the `GetModelInvocationLoggingConfiguration` operation.
 pub mod get_model_invocation_logging_configuration;
+
+/// Types for the `GetPromptRouter` operation.
+pub mod get_prompt_router;
 
 /// Types for the `GetProvisionedModelThroughput` operation.
 pub mod get_provisioned_model_throughput;
@@ -103,6 +118,9 @@ pub mod list_imported_models;
 /// Types for the `ListInferenceProfiles` operation.
 pub mod list_inference_profiles;
 
+/// Types for the `ListMarketplaceModelEndpoints` operation.
+pub mod list_marketplace_model_endpoints;
+
 /// Types for the `ListModelCopyJobs` operation.
 pub mod list_model_copy_jobs;
 
@@ -115,6 +133,9 @@ pub mod list_model_import_jobs;
 /// Types for the `ListModelInvocationJobs` operation.
 pub mod list_model_invocation_jobs;
 
+/// Types for the `ListPromptRouters` operation.
+pub mod list_prompt_routers;
+
 /// Types for the `ListProvisionedModelThroughputs` operation.
 pub mod list_provisioned_model_throughputs;
 
@@ -123,6 +144,9 @@ pub mod list_tags_for_resource;
 
 /// Types for the `PutModelInvocationLoggingConfiguration` operation.
 pub mod put_model_invocation_logging_configuration;
+
+/// Types for the `RegisterMarketplaceModelEndpoint` operation.
+pub mod register_marketplace_model_endpoint;
 
 /// Types for the `StopEvaluationJob` operation.
 pub mod stop_evaluation_job;
@@ -141,6 +165,9 @@ pub mod untag_resource;
 
 /// Types for the `UpdateGuardrail` operation.
 pub mod update_guardrail;
+
+/// Types for the `UpdateMarketplaceModelEndpoint` operation.
+pub mod update_marketplace_model_endpoint;
 
 /// Types for the `UpdateProvisionedModelThroughput` operation.
 pub mod update_provisioned_model_throughput;

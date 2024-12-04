@@ -2,19 +2,19 @@
 
 /// <p>Filters the search results based on document attributes or fields.</p>
 /// <p>You can filter results using attributes for your particular documents. The attributes must exist in your index. For example, if your documents include the custom attribute "Department", you can filter documents that belong to the "HR" department. You would use the <code>EqualsTo</code> operation to filter results or documents with "Department" equals to "HR".</p>
-/// <p>You can use <code>AndAllFilters</code> and <code>AndOrFilters</code> in combination with each other or with other operations such as <code>EqualsTo</code>. For example:</p>
+/// <p>You can use <code>AndAllFilters</code> and <code>OrAllFilters</code> in combination with each other or with other operations such as <code>EqualsTo</code>. For example:</p>
 /// <p><code>AndAllFilters</code></p>
 /// <ul>
 /// <li>
 /// <p><code>EqualsTo</code>: "Department", "HR"</p></li>
 /// <li>
-/// <p><code>AndOrFilters</code></p>
+/// <p><code>OrAllFilters</code></p>
 /// <ul>
 /// <li>
 /// <p>ContainsAny: "Project Name", \["new hires", "new hiring"\]</p></li>
 /// </ul></li>
 /// </ul>
-/// <p>This example filters results or documents that belong to the HR department <i>and</i> belong to projects that contain "new hires" <i>or</i> "new hiring" in the project name (must use <code>ContainAny</code> with <code>StringListValue</code>). This example is filtering with a depth of 2.</p>
+/// <p>This example filters results or documents that belong to the HR department <code>AND</code> belong to projects that contain "new hires" <code>OR</code> "new hiring" in the project name (must use <code>ContainAny</code> with <code>StringListValue</code>). This example is filtering with a depth of 2.</p>
 /// <p>You cannot filter more than a depth of 2, otherwise you receive a <code>ValidationException</code> exception with the message "AttributeFilter cannot have a depth of more than 2." Also, if you use more than 10 attribute filters in a given list for <code>AndAllFilters</code> or <code>OrAllFilters</code>, you receive a <code>ValidationException</code> with the message "AttributeFilter cannot have a length of more than 10".</p>
 /// <p>For examples of using <code>AttributeFilter</code>, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/filtering.html#search-filtering">Using document attributes to filter search results</a>.</p>
 #[non_exhaustive]

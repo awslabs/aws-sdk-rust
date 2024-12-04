@@ -9,7 +9,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct KnowledgeBaseRetrievalResult {
-    /// <p>Contains a chunk of text from a data source in the knowledge base.</p>
+    /// <p>Contains information about the content of the chunk.</p>
     pub content: ::std::option::Option<crate::types::RetrievalResultContent>,
     /// <p>Contains information about the location of the data source.</p>
     pub location: ::std::option::Option<crate::types::RetrievalResultLocation>,
@@ -19,7 +19,7 @@ pub struct KnowledgeBaseRetrievalResult {
     pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>>,
 }
 impl KnowledgeBaseRetrievalResult {
-    /// <p>Contains a chunk of text from a data source in the knowledge base.</p>
+    /// <p>Contains information about the content of the chunk.</p>
     pub fn content(&self) -> ::std::option::Option<&crate::types::RetrievalResultContent> {
         self.content.as_ref()
     }
@@ -63,18 +63,18 @@ pub struct KnowledgeBaseRetrievalResultBuilder {
     pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>>,
 }
 impl KnowledgeBaseRetrievalResultBuilder {
-    /// <p>Contains a chunk of text from a data source in the knowledge base.</p>
+    /// <p>Contains information about the content of the chunk.</p>
     /// This field is required.
     pub fn content(mut self, input: crate::types::RetrievalResultContent) -> Self {
         self.content = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains a chunk of text from a data source in the knowledge base.</p>
+    /// <p>Contains information about the content of the chunk.</p>
     pub fn set_content(mut self, input: ::std::option::Option<crate::types::RetrievalResultContent>) -> Self {
         self.content = input;
         self
     }
-    /// <p>Contains a chunk of text from a data source in the knowledge base.</p>
+    /// <p>Contains information about the content of the chunk.</p>
     pub fn get_content(&self) -> &::std::option::Option<crate::types::RetrievalResultContent> {
         &self.content
     }

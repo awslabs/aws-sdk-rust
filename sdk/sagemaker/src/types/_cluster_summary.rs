@@ -12,6 +12,9 @@ pub struct ClusterSummary {
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the SageMaker HyperPod cluster.</p>
     pub cluster_status: ::std::option::Option<crate::types::ClusterStatus>,
+    /// <p>A list of Amazon Resource Names (ARNs) of the training plans associated with this cluster.</p>
+    /// <p>For more information about how to reserve GPU capacity for your SageMaker HyperPod clusters using Amazon SageMaker Training Plan, see <code> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingPlan.html">CreateTrainingPlan</a> </code>.</p>
+    pub training_plan_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ClusterSummary {
     /// <p>The Amazon Resource Name (ARN) of the SageMaker HyperPod cluster.</p>
@@ -30,6 +33,13 @@ impl ClusterSummary {
     pub fn cluster_status(&self) -> ::std::option::Option<&crate::types::ClusterStatus> {
         self.cluster_status.as_ref()
     }
+    /// <p>A list of Amazon Resource Names (ARNs) of the training plans associated with this cluster.</p>
+    /// <p>For more information about how to reserve GPU capacity for your SageMaker HyperPod clusters using Amazon SageMaker Training Plan, see <code> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingPlan.html">CreateTrainingPlan</a> </code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.training_plan_arns.is_none()`.
+    pub fn training_plan_arns(&self) -> &[::std::string::String] {
+        self.training_plan_arns.as_deref().unwrap_or_default()
+    }
 }
 impl ClusterSummary {
     /// Creates a new builder-style object to manufacture [`ClusterSummary`](crate::types::ClusterSummary).
@@ -46,6 +56,7 @@ pub struct ClusterSummaryBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) cluster_status: ::std::option::Option<crate::types::ClusterStatus>,
+    pub(crate) training_plan_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ClusterSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the SageMaker HyperPod cluster.</p>
@@ -108,6 +119,29 @@ impl ClusterSummaryBuilder {
     pub fn get_cluster_status(&self) -> &::std::option::Option<crate::types::ClusterStatus> {
         &self.cluster_status
     }
+    /// Appends an item to `training_plan_arns`.
+    ///
+    /// To override the contents of this collection use [`set_training_plan_arns`](Self::set_training_plan_arns).
+    ///
+    /// <p>A list of Amazon Resource Names (ARNs) of the training plans associated with this cluster.</p>
+    /// <p>For more information about how to reserve GPU capacity for your SageMaker HyperPod clusters using Amazon SageMaker Training Plan, see <code> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingPlan.html">CreateTrainingPlan</a> </code>.</p>
+    pub fn training_plan_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.training_plan_arns.unwrap_or_default();
+        v.push(input.into());
+        self.training_plan_arns = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of Amazon Resource Names (ARNs) of the training plans associated with this cluster.</p>
+    /// <p>For more information about how to reserve GPU capacity for your SageMaker HyperPod clusters using Amazon SageMaker Training Plan, see <code> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingPlan.html">CreateTrainingPlan</a> </code>.</p>
+    pub fn set_training_plan_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.training_plan_arns = input;
+        self
+    }
+    /// <p>A list of Amazon Resource Names (ARNs) of the training plans associated with this cluster.</p>
+    /// <p>For more information about how to reserve GPU capacity for your SageMaker HyperPod clusters using Amazon SageMaker Training Plan, see <code> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingPlan.html">CreateTrainingPlan</a> </code>.</p>
+    pub fn get_training_plan_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.training_plan_arns
+    }
     /// Consumes the builder and constructs a [`ClusterSummary`](crate::types::ClusterSummary).
     pub fn build(self) -> crate::types::ClusterSummary {
         crate::types::ClusterSummary {
@@ -115,6 +149,7 @@ impl ClusterSummaryBuilder {
             cluster_name: self.cluster_name,
             creation_time: self.creation_time,
             cluster_status: self.cluster_status,
+            training_plan_arns: self.training_plan_arns,
         }
     }
 }

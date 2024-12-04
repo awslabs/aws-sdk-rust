@@ -25,6 +25,8 @@ pub struct ListTrainingJobsInput {
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
     /// <p>A filter that retrieves only training jobs with a specific warm pool status.</p>
     pub warm_pool_status_equals: ::std::option::Option<crate::types::WarmPoolResourceStatus>,
+    /// <p>The Amazon Resource Name (ARN); of the training plan to filter training jobs by. For more information about reserving GPU capacity for your SageMaker training jobs using Amazon SageMaker Training Plan, see <code> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingPlan.html">CreateTrainingPlan</a> </code>.</p>
+    pub training_plan_arn_equals: ::std::option::Option<::std::string::String>,
 }
 impl ListTrainingJobsInput {
     /// <p>If the result of the previous <code>ListTrainingJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of training jobs, use the token in the next request.</p>
@@ -71,6 +73,10 @@ impl ListTrainingJobsInput {
     pub fn warm_pool_status_equals(&self) -> ::std::option::Option<&crate::types::WarmPoolResourceStatus> {
         self.warm_pool_status_equals.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN); of the training plan to filter training jobs by. For more information about reserving GPU capacity for your SageMaker training jobs using Amazon SageMaker Training Plan, see <code> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingPlan.html">CreateTrainingPlan</a> </code>.</p>
+    pub fn training_plan_arn_equals(&self) -> ::std::option::Option<&str> {
+        self.training_plan_arn_equals.as_deref()
+    }
 }
 impl ListTrainingJobsInput {
     /// Creates a new builder-style object to manufacture [`ListTrainingJobsInput`](crate::operation::list_training_jobs::ListTrainingJobsInput).
@@ -94,6 +100,7 @@ pub struct ListTrainingJobsInputBuilder {
     pub(crate) sort_by: ::std::option::Option<crate::types::SortBy>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
     pub(crate) warm_pool_status_equals: ::std::option::Option<crate::types::WarmPoolResourceStatus>,
+    pub(crate) training_plan_arn_equals: ::std::option::Option<::std::string::String>,
 }
 impl ListTrainingJobsInputBuilder {
     /// <p>If the result of the previous <code>ListTrainingJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of training jobs, use the token in the next request.</p>
@@ -250,6 +257,20 @@ impl ListTrainingJobsInputBuilder {
     pub fn get_warm_pool_status_equals(&self) -> &::std::option::Option<crate::types::WarmPoolResourceStatus> {
         &self.warm_pool_status_equals
     }
+    /// <p>The Amazon Resource Name (ARN); of the training plan to filter training jobs by. For more information about reserving GPU capacity for your SageMaker training jobs using Amazon SageMaker Training Plan, see <code> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingPlan.html">CreateTrainingPlan</a> </code>.</p>
+    pub fn training_plan_arn_equals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.training_plan_arn_equals = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN); of the training plan to filter training jobs by. For more information about reserving GPU capacity for your SageMaker training jobs using Amazon SageMaker Training Plan, see <code> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingPlan.html">CreateTrainingPlan</a> </code>.</p>
+    pub fn set_training_plan_arn_equals(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.training_plan_arn_equals = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN); of the training plan to filter training jobs by. For more information about reserving GPU capacity for your SageMaker training jobs using Amazon SageMaker Training Plan, see <code> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingPlan.html">CreateTrainingPlan</a> </code>.</p>
+    pub fn get_training_plan_arn_equals(&self) -> &::std::option::Option<::std::string::String> {
+        &self.training_plan_arn_equals
+    }
     /// Consumes the builder and constructs a [`ListTrainingJobsInput`](crate::operation::list_training_jobs::ListTrainingJobsInput).
     pub fn build(
         self,
@@ -266,6 +287,7 @@ impl ListTrainingJobsInputBuilder {
             sort_by: self.sort_by,
             sort_order: self.sort_order,
             warm_pool_status_equals: self.warm_pool_status_equals,
+            training_plan_arn_equals: self.training_plan_arn_equals,
         })
     }
 }

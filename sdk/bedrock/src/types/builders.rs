@@ -27,6 +27,12 @@ pub use crate::types::_tag::TagBuilder;
 
 pub use crate::types::_provisioned_model_summary::ProvisionedModelSummaryBuilder;
 
+pub use crate::types::_prompt_router_target_model::PromptRouterTargetModelBuilder;
+
+pub use crate::types::_routing_criteria::RoutingCriteriaBuilder;
+
+pub use crate::types::_prompt_router_summary::PromptRouterSummaryBuilder;
+
 pub use crate::types::_foundation_model_summary::FoundationModelSummaryBuilder;
 
 pub use crate::types::_foundation_model_lifecycle::FoundationModelLifecycleBuilder;
@@ -168,3 +174,9 @@ pub use crate::types::_bedrock_evaluator_model::BedrockEvaluatorModelBuilder;
 pub use crate::types::_batch_delete_evaluation_job_item::BatchDeleteEvaluationJobItemBuilder;
 
 pub use crate::types::_batch_delete_evaluation_job_error::BatchDeleteEvaluationJobErrorBuilder;
+
+pub use crate::types::_marketplace_model_endpoint::MarketplaceModelEndpointBuilder;
+
+pub use crate::types::_sage_maker_endpoint::SageMakerEndpointBuilder;
+
+pub use crate::types::_marketplace_model_endpoint_summary::MarketplaceModelEndpointSummaryBuilder;

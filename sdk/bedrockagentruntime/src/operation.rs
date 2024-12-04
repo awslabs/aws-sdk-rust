@@ -4,6 +4,9 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `DeleteAgentMemory` operation.
 pub mod delete_agent_memory;
 
+/// Types for the `GenerateQuery` operation.
+pub mod generate_query;
+
 /// Types for the `GetAgentMemory` operation.
 pub mod get_agent_memory;
 

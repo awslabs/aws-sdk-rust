@@ -6,6 +6,8 @@
 pub struct BatchDeleteDocumentResponseFailedDocument {
     /// <p>The identifier of the document that couldn't be removed from the index.</p>
     pub id: ::std::option::Option<::std::string::String>,
+    /// <p>The identifier of the data source connector that the document belongs to.</p>
+    pub data_source_id: ::std::option::Option<::std::string::String>,
     /// <p>The error code for why the document couldn't be removed from the index.</p>
     pub error_code: ::std::option::Option<crate::types::ErrorCode>,
     /// <p>An explanation for why the document couldn't be removed from the index.</p>
@@ -15,6 +17,10 @@ impl BatchDeleteDocumentResponseFailedDocument {
     /// <p>The identifier of the document that couldn't be removed from the index.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
+    }
+    /// <p>The identifier of the data source connector that the document belongs to.</p>
+    pub fn data_source_id(&self) -> ::std::option::Option<&str> {
+        self.data_source_id.as_deref()
     }
     /// <p>The error code for why the document couldn't be removed from the index.</p>
     pub fn error_code(&self) -> ::std::option::Option<&crate::types::ErrorCode> {
@@ -37,6 +43,7 @@ impl BatchDeleteDocumentResponseFailedDocument {
 #[non_exhaustive]
 pub struct BatchDeleteDocumentResponseFailedDocumentBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) data_source_id: ::std::option::Option<::std::string::String>,
     pub(crate) error_code: ::std::option::Option<crate::types::ErrorCode>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
 }
@@ -54,6 +61,20 @@ impl BatchDeleteDocumentResponseFailedDocumentBuilder {
     /// <p>The identifier of the document that couldn't be removed from the index.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
+    }
+    /// <p>The identifier of the data source connector that the document belongs to.</p>
+    pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data_source_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the data source connector that the document belongs to.</p>
+    pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.data_source_id = input;
+        self
+    }
+    /// <p>The identifier of the data source connector that the document belongs to.</p>
+    pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_source_id
     }
     /// <p>The error code for why the document couldn't be removed from the index.</p>
     pub fn error_code(mut self, input: crate::types::ErrorCode) -> Self {
@@ -87,6 +108,7 @@ impl BatchDeleteDocumentResponseFailedDocumentBuilder {
     pub fn build(self) -> crate::types::BatchDeleteDocumentResponseFailedDocument {
         crate::types::BatchDeleteDocumentResponseFailedDocument {
             id: self.id,
+            data_source_id: self.data_source_id,
             error_code: self.error_code,
             error_message: self.error_message,
         }

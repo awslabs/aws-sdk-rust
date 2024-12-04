@@ -12,5 +12,23 @@ pub fn ser_guardrail_content_filter_config(
     {
         object.key("outputStrength").string(input.output_strength.as_str());
     }
+    if let Some(var_1) = &input.input_modalities {
+        let mut array_2 = object.key("inputModalities").start_array();
+        for item_3 in var_1 {
+            {
+                array_2.value().string(item_3.as_str());
+            }
+        }
+        array_2.finish();
+    }
+    if let Some(var_4) = &input.output_modalities {
+        let mut array_5 = object.key("outputModalities").start_array();
+        for item_6 in var_4 {
+            {
+                array_5.value().string(item_6.as_str());
+            }
+        }
+        array_5.finish();
+    }
     Ok(())
 }

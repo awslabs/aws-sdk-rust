@@ -6,6 +6,8 @@
 pub struct BatchGetDocumentStatusResponseError {
     /// <p>The identifier of the document whose status could not be retrieved.</p>
     pub document_id: ::std::option::Option<::std::string::String>,
+    /// <p>The identifier of the data source connector that the failed document belongs to.</p>
+    pub data_source_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the source of the error.</p>
     pub error_code: ::std::option::Option<crate::types::ErrorCode>,
     /// <p>States that the API could not get the status of a document. This could be because the request is not valid or there is a system error.</p>
@@ -15,6 +17,10 @@ impl BatchGetDocumentStatusResponseError {
     /// <p>The identifier of the document whose status could not be retrieved.</p>
     pub fn document_id(&self) -> ::std::option::Option<&str> {
         self.document_id.as_deref()
+    }
+    /// <p>The identifier of the data source connector that the failed document belongs to.</p>
+    pub fn data_source_id(&self) -> ::std::option::Option<&str> {
+        self.data_source_id.as_deref()
     }
     /// <p>Indicates the source of the error.</p>
     pub fn error_code(&self) -> ::std::option::Option<&crate::types::ErrorCode> {
@@ -37,6 +43,7 @@ impl BatchGetDocumentStatusResponseError {
 #[non_exhaustive]
 pub struct BatchGetDocumentStatusResponseErrorBuilder {
     pub(crate) document_id: ::std::option::Option<::std::string::String>,
+    pub(crate) data_source_id: ::std::option::Option<::std::string::String>,
     pub(crate) error_code: ::std::option::Option<crate::types::ErrorCode>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
 }
@@ -54,6 +61,20 @@ impl BatchGetDocumentStatusResponseErrorBuilder {
     /// <p>The identifier of the document whose status could not be retrieved.</p>
     pub fn get_document_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.document_id
+    }
+    /// <p>The identifier of the data source connector that the failed document belongs to.</p>
+    pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data_source_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the data source connector that the failed document belongs to.</p>
+    pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.data_source_id = input;
+        self
+    }
+    /// <p>The identifier of the data source connector that the failed document belongs to.</p>
+    pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_source_id
     }
     /// <p>Indicates the source of the error.</p>
     pub fn error_code(mut self, input: crate::types::ErrorCode) -> Self {
@@ -87,6 +108,7 @@ impl BatchGetDocumentStatusResponseErrorBuilder {
     pub fn build(self) -> crate::types::BatchGetDocumentStatusResponseError {
         crate::types::BatchGetDocumentStatusResponseError {
             document_id: self.document_id,
+            data_source_id: self.data_source_id,
             error_code: self.error_code,
             error_message: self.error_message,
         }

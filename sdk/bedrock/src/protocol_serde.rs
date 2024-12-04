@@ -33,6 +33,8 @@ pub(crate) mod shape_create_guardrail_version;
 
 pub(crate) mod shape_create_inference_profile;
 
+pub(crate) mod shape_create_marketplace_model_endpoint;
+
 pub(crate) mod shape_create_model_copy_job;
 
 pub(crate) mod shape_create_model_customization_job;
@@ -51,9 +53,13 @@ pub(crate) mod shape_delete_imported_model;
 
 pub(crate) mod shape_delete_inference_profile;
 
+pub(crate) mod shape_delete_marketplace_model_endpoint;
+
 pub(crate) mod shape_delete_model_invocation_logging_configuration;
 
 pub(crate) mod shape_delete_provisioned_model_throughput;
+
+pub(crate) mod shape_deregister_marketplace_model_endpoint;
 
 pub(crate) mod shape_get_custom_model;
 
@@ -67,6 +73,8 @@ pub(crate) mod shape_get_imported_model;
 
 pub(crate) mod shape_get_inference_profile;
 
+pub(crate) mod shape_get_marketplace_model_endpoint;
+
 pub(crate) mod shape_get_model_copy_job;
 
 pub(crate) mod shape_get_model_customization_job;
@@ -76,6 +84,8 @@ pub(crate) mod shape_get_model_import_job;
 pub(crate) mod shape_get_model_invocation_job;
 
 pub(crate) mod shape_get_model_invocation_logging_configuration;
+
+pub(crate) mod shape_get_prompt_router;
 
 pub(crate) mod shape_get_provisioned_model_throughput;
 
@@ -91,6 +101,8 @@ pub(crate) mod shape_list_imported_models;
 
 pub(crate) mod shape_list_inference_profiles;
 
+pub(crate) mod shape_list_marketplace_model_endpoints;
+
 pub(crate) mod shape_list_model_copy_jobs;
 
 pub(crate) mod shape_list_model_customization_jobs;
@@ -99,11 +111,15 @@ pub(crate) mod shape_list_model_import_jobs;
 
 pub(crate) mod shape_list_model_invocation_jobs;
 
+pub(crate) mod shape_list_prompt_routers;
+
 pub(crate) mod shape_list_provisioned_model_throughputs;
 
 pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_put_model_invocation_logging_configuration;
+
+pub(crate) mod shape_register_marketplace_model_endpoint;
 
 pub(crate) mod shape_stop_evaluation_job;
 
@@ -116,6 +132,8 @@ pub(crate) mod shape_tag_resource;
 pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_guardrail;
+
+pub(crate) mod shape_update_marketplace_model_endpoint;
 
 pub(crate) mod shape_update_provisioned_model_throughput;
 
@@ -141,6 +159,8 @@ pub(crate) mod shape_create_guardrail_version_input;
 
 pub(crate) mod shape_create_inference_profile_input;
 
+pub(crate) mod shape_create_marketplace_model_endpoint_input;
+
 pub(crate) mod shape_create_model_copy_job_input;
 
 pub(crate) mod shape_create_model_customization_job_input;
@@ -157,9 +177,13 @@ pub(crate) mod shape_list_tags_for_resource_input;
 
 pub(crate) mod shape_put_model_invocation_logging_configuration_input;
 
+pub(crate) mod shape_register_marketplace_model_endpoint_input;
+
 pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
+
+pub(crate) mod shape_service_unavailable_exception;
 
 pub(crate) mod shape_tag_resource_input;
 
@@ -170,6 +194,8 @@ pub(crate) mod shape_too_many_tags_exception;
 pub(crate) mod shape_untag_resource_input;
 
 pub(crate) mod shape_update_guardrail_input;
+
+pub(crate) mod shape_update_marketplace_model_endpoint_input;
 
 pub(crate) mod shape_update_provisioned_model_throughput_input;
 
@@ -182,6 +208,8 @@ pub(crate) mod shape_batch_delete_evaluation_job_items;
 pub(crate) mod shape_custom_model_summary_list;
 
 pub(crate) mod shape_customization_config;
+
+pub(crate) mod shape_endpoint_config;
 
 pub(crate) mod shape_error_messages;
 
@@ -233,6 +261,10 @@ pub(crate) mod shape_inference_profile_summaries;
 
 pub(crate) mod shape_logging_config;
 
+pub(crate) mod shape_marketplace_model_endpoint;
+
+pub(crate) mod shape_marketplace_model_endpoint_summaries;
+
 pub(crate) mod shape_model_copy_job_summaries;
 
 pub(crate) mod shape_model_customization_hyper_parameters;
@@ -251,7 +283,15 @@ pub(crate) mod shape_model_invocation_job_summaries;
 
 pub(crate) mod shape_output_data_config;
 
+pub(crate) mod shape_prompt_router_summaries;
+
+pub(crate) mod shape_prompt_router_target_model;
+
+pub(crate) mod shape_prompt_router_target_models;
+
 pub(crate) mod shape_provisioned_model_summaries;
+
+pub(crate) mod shape_routing_criteria;
 
 pub(crate) mod shape_tag;
 
@@ -331,6 +371,8 @@ pub(crate) mod shape_inference_type_list;
 
 pub(crate) mod shape_invocation_logs_config;
 
+pub(crate) mod shape_marketplace_model_endpoint_summary;
+
 pub(crate) mod shape_model_copy_job_summary;
 
 pub(crate) mod shape_model_customization_job_summary;
@@ -347,6 +389,8 @@ pub(crate) mod shape_model_invocation_job_summary;
 
 pub(crate) mod shape_model_modality_list;
 
+pub(crate) mod shape_prompt_router_summary;
+
 pub(crate) mod shape_provisioned_model_summary;
 
 pub(crate) mod shape_rag_config;
@@ -356,6 +400,8 @@ pub(crate) mod shape_rag_configs;
 pub(crate) mod shape_s3_config;
 
 pub(crate) mod shape_s3_data_source;
+
+pub(crate) mod shape_sage_maker_endpoint;
 
 pub(crate) mod shape_security_group_ids;
 
@@ -416,6 +462,8 @@ pub(crate) mod shape_bedrock_evaluator_model;
 pub(crate) mod shape_bedrock_evaluator_models;
 
 pub(crate) mod shape_evaluation_dataset;
+
+pub(crate) mod shape_guardrail_modalities;
 
 pub(crate) mod shape_guardrail_topic_examples;
 

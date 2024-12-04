@@ -370,6 +370,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | CloudWatch RUM | [aws-sdk-rum](https://crates.io/crates/aws-sdk-rum) ([docs](https://docs.rs/aws-sdk-rum)) |
 | CodeArtifact | [aws-sdk-codeartifact](https://crates.io/crates/aws-sdk-codeartifact) ([docs](https://docs.rs/aws-sdk-codeartifact)) |
 | Cost Optimization Hub | [aws-sdk-costoptimizationhub](https://crates.io/crates/aws-sdk-costoptimizationhub) ([docs](https://docs.rs/aws-sdk-costoptimizationhub)) |
+| Data Automation for Amazon Bedrock | [aws-sdk-bedrockdataautomation](https://crates.io/crates/aws-sdk-bedrockdataautomation) ([docs](https://docs.rs/aws-sdk-bedrockdataautomation)) |
 | EC2 Image Builder | [aws-sdk-imagebuilder](https://crates.io/crates/aws-sdk-imagebuilder) ([docs](https://docs.rs/aws-sdk-imagebuilder)) |
 | EMR Serverless | [aws-sdk-emrserverless](https://crates.io/crates/aws-sdk-emrserverless) ([docs](https://docs.rs/aws-sdk-emrserverless)) |
 | Elastic Disaster Recovery Service | [aws-sdk-drs](https://crates.io/crates/aws-sdk-drs) ([docs](https://docs.rs/aws-sdk-drs)) |
@@ -398,6 +399,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Redshift Serverless | [aws-sdk-redshiftserverless](https://crates.io/crates/aws-sdk-redshiftserverless) ([docs](https://docs.rs/aws-sdk-redshiftserverless)) |
 | Route 53 Profiles | [aws-sdk-route53profiles](https://crates.io/crates/aws-sdk-route53profiles) ([docs](https://docs.rs/aws-sdk-route53profiles)) |
 | Route53 Recovery Cluster | [aws-sdk-route53recoverycluster](https://crates.io/crates/aws-sdk-route53recoverycluster) ([docs](https://docs.rs/aws-sdk-route53recoverycluster)) |
+| Runtime for Amazon Bedrock Data Automation | [aws-sdk-bedrockdataautomationruntime](https://crates.io/crates/aws-sdk-bedrockdataautomationruntime) ([docs](https://docs.rs/aws-sdk-bedrockdataautomationruntime)) |
 | Schemas | [aws-sdk-schemas](https://crates.io/crates/aws-sdk-schemas) ([docs](https://docs.rs/aws-sdk-schemas)) |
 | Security Incident Response | [aws-sdk-securityir](https://crates.io/crates/aws-sdk-securityir) ([docs](https://docs.rs/aws-sdk-securityir)) |
 | Service Quotas | [aws-sdk-servicequotas](https://crates.io/crates/aws-sdk-servicequotas) ([docs](https://docs.rs/aws-sdk-servicequotas)) |

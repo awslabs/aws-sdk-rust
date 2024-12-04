@@ -14,6 +14,7 @@
 /// match indexedition {
 ///     IndexEdition::DeveloperEdition => { /* ... */ },
 ///     IndexEdition::EnterpriseEdition => { /* ... */ },
+///     IndexEdition::GenAiEnterpriseEdition => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -45,6 +46,8 @@ pub enum IndexEdition {
     DeveloperEdition,
     #[allow(missing_docs)] // documentation missing in model
     EnterpriseEdition,
+    #[allow(missing_docs)] // documentation missing in model
+    GenAiEnterpriseEdition,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for IndexEdition {
         match s {
             "DEVELOPER_EDITION" => IndexEdition::DeveloperEdition,
             "ENTERPRISE_EDITION" => IndexEdition::EnterpriseEdition,
+            "GEN_AI_ENTERPRISE_EDITION" => IndexEdition::GenAiEnterpriseEdition,
             other => IndexEdition::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -71,12 +75,13 @@ impl IndexEdition {
         match self {
             IndexEdition::DeveloperEdition => "DEVELOPER_EDITION",
             IndexEdition::EnterpriseEdition => "ENTERPRISE_EDITION",
+            IndexEdition::GenAiEnterpriseEdition => "GEN_AI_ENTERPRISE_EDITION",
             IndexEdition::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DEVELOPER_EDITION", "ENTERPRISE_EDITION"]
+        &["DEVELOPER_EDITION", "ENTERPRISE_EDITION", "GEN_AI_ENTERPRISE_EDITION"]
     }
 }
 impl ::std::convert::AsRef<str> for IndexEdition {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for IndexEdition {
         match self {
             IndexEdition::DeveloperEdition => write!(f, "DEVELOPER_EDITION"),
             IndexEdition::EnterpriseEdition => write!(f, "ENTERPRISE_EDITION"),
+            IndexEdition::GenAiEnterpriseEdition => write!(f, "GEN_AI_ENTERPRISE_EDITION"),
             IndexEdition::Unknown(value) => write!(f, "{}", value),
         }
     }

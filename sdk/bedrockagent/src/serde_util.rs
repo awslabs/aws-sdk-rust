@@ -1091,12 +1091,6 @@ pub(crate) fn knowledge_base_correct_errors(
             crate::serde_util::knowledge_base_configuration_correct_errors(builder).build().ok()
         }
     }
-    if builder.storage_configuration.is_none() {
-        builder.storage_configuration = {
-            let builder = crate::types::builders::StorageConfigurationBuilder::default();
-            crate::serde_util::storage_configuration_correct_errors(builder).build().ok()
-        }
-    }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::KnowledgeBaseStatus>().ok()
     }
@@ -1176,15 +1170,6 @@ pub(crate) fn knowledge_base_configuration_correct_errors(
 ) -> crate::types::builders::KnowledgeBaseConfigurationBuilder {
     if builder.r#type.is_none() {
         builder.r#type = "no value was set".parse::<crate::types::KnowledgeBaseType>().ok()
-    }
-    builder
-}
-
-pub(crate) fn storage_configuration_correct_errors(
-    mut builder: crate::types::builders::StorageConfigurationBuilder,
-) -> crate::types::builders::StorageConfigurationBuilder {
-    if builder.r#type.is_none() {
-        builder.r#type = "no value was set".parse::<crate::types::KnowledgeBaseStorageType>().ok()
     }
     builder
 }
@@ -1542,6 +1527,15 @@ pub(crate) fn prompt_variant_correct_errors(
     builder
 }
 
+pub(crate) fn storage_configuration_correct_errors(
+    mut builder: crate::types::builders::StorageConfigurationBuilder,
+) -> crate::types::builders::StorageConfigurationBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::KnowledgeBaseStorageType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn validation_exception_field_correct_errors(
     mut builder: crate::types::builders::ValidationExceptionFieldBuilder,
 ) -> crate::types::builders::ValidationExceptionFieldBuilder {
@@ -1623,6 +1617,15 @@ pub(crate) fn flow_node_correct_errors(mut builder: crate::types::builders::Flow
     }
     if builder.r#type.is_none() {
         builder.r#type = "no value was set".parse::<crate::types::FlowNodeType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn kendra_knowledge_base_configuration_correct_errors(
+    mut builder: crate::types::builders::KendraKnowledgeBaseConfigurationBuilder,
+) -> crate::types::builders::KendraKnowledgeBaseConfigurationBuilder {
+    if builder.kendra_index_arn.is_none() {
+        builder.kendra_index_arn = Some(Default::default())
     }
     builder
 }
@@ -1777,6 +1780,15 @@ pub(crate) fn share_point_data_source_configuration_correct_errors(
             let builder = crate::types::builders::SharePointSourceConfigurationBuilder::default();
             crate::serde_util::share_point_source_configuration_correct_errors(builder).build().ok()
         }
+    }
+    builder
+}
+
+pub(crate) fn sql_knowledge_base_configuration_correct_errors(
+    mut builder: crate::types::builders::SqlKnowledgeBaseConfigurationBuilder,
+) -> crate::types::builders::SqlKnowledgeBaseConfigurationBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::QueryEngineType>().ok()
     }
     builder
 }
@@ -2151,6 +2163,23 @@ pub(crate) fn redis_enterprise_cloud_field_mapping_correct_errors(
     builder
 }
 
+pub(crate) fn redshift_configuration_correct_errors(
+    mut builder: crate::types::builders::RedshiftConfigurationBuilder,
+) -> crate::types::builders::RedshiftConfigurationBuilder {
+    if builder.storage_configurations.is_none() {
+        builder.storage_configurations = Some(Default::default())
+    }
+    if builder.query_engine_configuration.is_none() {
+        builder.query_engine_configuration = {
+            let builder = crate::types::builders::RedshiftQueryEngineConfigurationBuilder::default();
+            crate::serde_util::redshift_query_engine_configuration_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn s3_location_correct_errors(mut builder: crate::types::builders::S3LocationBuilder) -> crate::types::builders::S3LocationBuilder {
     if builder.uri.is_none() {
         builder.uri = Some(Default::default())
@@ -2205,6 +2234,15 @@ pub(crate) fn share_point_source_configuration_correct_errors(
     }
     if builder.credentials_secret_arn.is_none() {
         builder.credentials_secret_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn supplemental_data_storage_configuration_correct_errors(
+    mut builder: crate::types::builders::SupplementalDataStorageConfigurationBuilder,
+) -> crate::types::builders::SupplementalDataStorageConfigurationBuilder {
+    if builder.storage_locations.is_none() {
+        builder.storage_locations = Some(Default::default())
     }
     builder
 }
@@ -2428,6 +2466,15 @@ pub(crate) fn prompt_flow_node_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn redshift_query_engine_configuration_correct_errors(
+    mut builder: crate::types::builders::RedshiftQueryEngineConfigurationBuilder,
+) -> crate::types::builders::RedshiftQueryEngineConfigurationBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::RedshiftQueryEngineType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn retrieval_flow_node_configuration_correct_errors(
     mut builder: crate::types::builders::RetrievalFlowNodeConfigurationBuilder,
 ) -> crate::types::builders::RetrievalFlowNodeConfigurationBuilder {
@@ -2507,6 +2554,58 @@ pub(crate) fn pattern_object_filter_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn redshift_provisioned_configuration_correct_errors(
+    mut builder: crate::types::builders::RedshiftProvisionedConfigurationBuilder,
+) -> crate::types::builders::RedshiftProvisionedConfigurationBuilder {
+    if builder.cluster_identifier.is_none() {
+        builder.cluster_identifier = Some(Default::default())
+    }
+    if builder.auth_configuration.is_none() {
+        builder.auth_configuration = {
+            let builder = crate::types::builders::RedshiftProvisionedAuthConfigurationBuilder::default();
+            crate::serde_util::redshift_provisioned_auth_configuration_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn redshift_query_engine_storage_configuration_correct_errors(
+    mut builder: crate::types::builders::RedshiftQueryEngineStorageConfigurationBuilder,
+) -> crate::types::builders::RedshiftQueryEngineStorageConfigurationBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::RedshiftQueryEngineStorageType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn redshift_serverless_configuration_correct_errors(
+    mut builder: crate::types::builders::RedshiftServerlessConfigurationBuilder,
+) -> crate::types::builders::RedshiftServerlessConfigurationBuilder {
+    if builder.workgroup_arn.is_none() {
+        builder.workgroup_arn = Some(Default::default())
+    }
+    if builder.auth_configuration.is_none() {
+        builder.auth_configuration = {
+            let builder = crate::types::builders::RedshiftServerlessAuthConfigurationBuilder::default();
+            crate::serde_util::redshift_serverless_auth_configuration_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn supplemental_data_storage_location_correct_errors(
+    mut builder: crate::types::builders::SupplementalDataStorageLocationBuilder,
+) -> crate::types::builders::SupplementalDataStorageLocationBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::SupplementalDataStorageLocationType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn transformation_function_correct_errors(
     mut builder: crate::types::builders::TransformationFunctionBuilder,
 ) -> crate::types::builders::TransformationFunctionBuilder {
@@ -2554,6 +2653,42 @@ pub(crate) fn prompt_flow_node_resource_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn redshift_provisioned_auth_configuration_correct_errors(
+    mut builder: crate::types::builders::RedshiftProvisionedAuthConfigurationBuilder,
+) -> crate::types::builders::RedshiftProvisionedAuthConfigurationBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::RedshiftProvisionedAuthType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn redshift_query_engine_aws_data_catalog_storage_configuration_correct_errors(
+    mut builder: crate::types::builders::RedshiftQueryEngineAwsDataCatalogStorageConfigurationBuilder,
+) -> crate::types::builders::RedshiftQueryEngineAwsDataCatalogStorageConfigurationBuilder {
+    if builder.table_names.is_none() {
+        builder.table_names = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn redshift_query_engine_redshift_storage_configuration_correct_errors(
+    mut builder: crate::types::builders::RedshiftQueryEngineRedshiftStorageConfigurationBuilder,
+) -> crate::types::builders::RedshiftQueryEngineRedshiftStorageConfigurationBuilder {
+    if builder.database_name.is_none() {
+        builder.database_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn redshift_serverless_auth_configuration_correct_errors(
+    mut builder: crate::types::builders::RedshiftServerlessAuthConfigurationBuilder,
+) -> crate::types::builders::RedshiftServerlessAuthConfigurationBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::RedshiftServerlessAuthType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn retrieval_flow_node_s3_configuration_correct_errors(
     mut builder: crate::types::builders::RetrievalFlowNodeS3ConfigurationBuilder,
 ) -> crate::types::builders::RetrievalFlowNodeS3ConfigurationBuilder {
@@ -2590,11 +2725,30 @@ pub(crate) fn transformation_lambda_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn curated_query_correct_errors(mut builder: crate::types::builders::CuratedQueryBuilder) -> crate::types::builders::CuratedQueryBuilder {
+    if builder.natural_language.is_none() {
+        builder.natural_language = Some(Default::default())
+    }
+    if builder.sql.is_none() {
+        builder.sql = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn pattern_object_filter_correct_errors(
     mut builder: crate::types::builders::PatternObjectFilterBuilder,
 ) -> crate::types::builders::PatternObjectFilterBuilder {
     if builder.object_type.is_none() {
         builder.object_type = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn query_generation_table_correct_errors(
+    mut builder: crate::types::builders::QueryGenerationTableBuilder,
+) -> crate::types::builders::QueryGenerationTableBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
     }
     builder
 }

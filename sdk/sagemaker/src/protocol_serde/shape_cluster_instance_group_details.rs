@@ -71,6 +71,27 @@ where
                                 crate::protocol_serde::shape_on_start_deep_health_checks::de_on_start_deep_health_checks(tokens)?,
                             );
                         }
+                        "Status" => {
+                            builder = builder.set_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::InstanceGroupStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "TrainingPlanArn" => {
+                            builder = builder.set_training_plan_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "TrainingPlanStatus" => {
+                            builder = builder.set_training_plan_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "OverrideVpcConfig" => {
                             builder = builder.set_override_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens)?);
                         }

@@ -8,6 +8,10 @@ pub struct KnowledgeBaseConfiguration {
     pub r#type: crate::types::KnowledgeBaseType,
     /// <p>Contains details about the model that's used to convert the data source into vector embeddings.</p>
     pub vector_knowledge_base_configuration: ::std::option::Option<crate::types::VectorKnowledgeBaseConfiguration>,
+    /// <p>Settings for an Amazon Kendra knowledge base.</p>
+    pub kendra_knowledge_base_configuration: ::std::option::Option<crate::types::KendraKnowledgeBaseConfiguration>,
+    /// <p>Specifies configurations for a knowledge base connected to an SQL database.</p>
+    pub sql_knowledge_base_configuration: ::std::option::Option<crate::types::SqlKnowledgeBaseConfiguration>,
 }
 impl KnowledgeBaseConfiguration {
     /// <p>The type of data that the data source is converted into for the knowledge base.</p>
@@ -17,6 +21,14 @@ impl KnowledgeBaseConfiguration {
     /// <p>Contains details about the model that's used to convert the data source into vector embeddings.</p>
     pub fn vector_knowledge_base_configuration(&self) -> ::std::option::Option<&crate::types::VectorKnowledgeBaseConfiguration> {
         self.vector_knowledge_base_configuration.as_ref()
+    }
+    /// <p>Settings for an Amazon Kendra knowledge base.</p>
+    pub fn kendra_knowledge_base_configuration(&self) -> ::std::option::Option<&crate::types::KendraKnowledgeBaseConfiguration> {
+        self.kendra_knowledge_base_configuration.as_ref()
+    }
+    /// <p>Specifies configurations for a knowledge base connected to an SQL database.</p>
+    pub fn sql_knowledge_base_configuration(&self) -> ::std::option::Option<&crate::types::SqlKnowledgeBaseConfiguration> {
+        self.sql_knowledge_base_configuration.as_ref()
     }
 }
 impl KnowledgeBaseConfiguration {
@@ -32,6 +44,8 @@ impl KnowledgeBaseConfiguration {
 pub struct KnowledgeBaseConfigurationBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::KnowledgeBaseType>,
     pub(crate) vector_knowledge_base_configuration: ::std::option::Option<crate::types::VectorKnowledgeBaseConfiguration>,
+    pub(crate) kendra_knowledge_base_configuration: ::std::option::Option<crate::types::KendraKnowledgeBaseConfiguration>,
+    pub(crate) sql_knowledge_base_configuration: ::std::option::Option<crate::types::SqlKnowledgeBaseConfiguration>,
 }
 impl KnowledgeBaseConfigurationBuilder {
     /// <p>The type of data that the data source is converted into for the knowledge base.</p>
@@ -63,6 +77,34 @@ impl KnowledgeBaseConfigurationBuilder {
     pub fn get_vector_knowledge_base_configuration(&self) -> &::std::option::Option<crate::types::VectorKnowledgeBaseConfiguration> {
         &self.vector_knowledge_base_configuration
     }
+    /// <p>Settings for an Amazon Kendra knowledge base.</p>
+    pub fn kendra_knowledge_base_configuration(mut self, input: crate::types::KendraKnowledgeBaseConfiguration) -> Self {
+        self.kendra_knowledge_base_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Settings for an Amazon Kendra knowledge base.</p>
+    pub fn set_kendra_knowledge_base_configuration(mut self, input: ::std::option::Option<crate::types::KendraKnowledgeBaseConfiguration>) -> Self {
+        self.kendra_knowledge_base_configuration = input;
+        self
+    }
+    /// <p>Settings for an Amazon Kendra knowledge base.</p>
+    pub fn get_kendra_knowledge_base_configuration(&self) -> &::std::option::Option<crate::types::KendraKnowledgeBaseConfiguration> {
+        &self.kendra_knowledge_base_configuration
+    }
+    /// <p>Specifies configurations for a knowledge base connected to an SQL database.</p>
+    pub fn sql_knowledge_base_configuration(mut self, input: crate::types::SqlKnowledgeBaseConfiguration) -> Self {
+        self.sql_knowledge_base_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies configurations for a knowledge base connected to an SQL database.</p>
+    pub fn set_sql_knowledge_base_configuration(mut self, input: ::std::option::Option<crate::types::SqlKnowledgeBaseConfiguration>) -> Self {
+        self.sql_knowledge_base_configuration = input;
+        self
+    }
+    /// <p>Specifies configurations for a knowledge base connected to an SQL database.</p>
+    pub fn get_sql_knowledge_base_configuration(&self) -> &::std::option::Option<crate::types::SqlKnowledgeBaseConfiguration> {
+        &self.sql_knowledge_base_configuration
+    }
     /// Consumes the builder and constructs a [`KnowledgeBaseConfiguration`](crate::types::KnowledgeBaseConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::KnowledgeBaseConfigurationBuilder::type)
@@ -75,6 +117,8 @@ impl KnowledgeBaseConfigurationBuilder {
                 )
             })?,
             vector_knowledge_base_configuration: self.vector_knowledge_base_configuration,
+            kendra_knowledge_base_configuration: self.kendra_knowledge_base_configuration,
+            sql_knowledge_base_configuration: self.sql_knowledge_base_configuration,
         })
     }
 }

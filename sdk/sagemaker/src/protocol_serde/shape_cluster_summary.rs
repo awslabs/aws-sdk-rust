@@ -41,6 +41,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "TrainingPlanArns" => {
+                            builder = builder.set_training_plan_arns(crate::protocol_serde::shape_training_plan_arns::de_training_plan_arns(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

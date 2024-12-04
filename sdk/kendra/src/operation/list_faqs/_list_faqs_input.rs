@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFaqsInput {
-    /// <p>The index that contains the FAQ lists.</p>
+    /// <p>The index for the FAQs.</p>
     pub index_id: ::std::option::Option<::std::string::String>,
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of FAQs.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -11,7 +11,7 @@ pub struct ListFaqsInput {
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListFaqsInput {
-    /// <p>The index that contains the FAQ lists.</p>
+    /// <p>The index for the FAQs.</p>
     pub fn index_id(&self) -> ::std::option::Option<&str> {
         self.index_id.as_deref()
     }
@@ -40,18 +40,18 @@ pub struct ListFaqsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListFaqsInputBuilder {
-    /// <p>The index that contains the FAQ lists.</p>
+    /// <p>The index for the FAQs.</p>
     /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The index that contains the FAQ lists.</p>
+    /// <p>The index for the FAQs.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.index_id = input;
         self
     }
-    /// <p>The index that contains the FAQ lists.</p>
+    /// <p>The index for the FAQs.</p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.index_id
     }

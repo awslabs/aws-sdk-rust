@@ -22,6 +22,27 @@ pub struct ClusterInstanceGroupDetails {
     pub instance_storage_configs: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceStorageConfig>>,
     /// <p>A flag indicating whether deep health checks should be performed when the cluster instance group is created or updated.</p>
     pub on_start_deep_health_checks: ::std::option::Option<::std::vec::Vec<crate::types::DeepHealthCheckType>>,
+    /// <p>The current status of the cluster instance group.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>InService</code>: The instance group is active and healthy.</p></li>
+    /// <li>
+    /// <p><code>Creating</code>: The instance group is being provisioned.</p></li>
+    /// <li>
+    /// <p><code>Updating</code>: The instance group is being updated.</p></li>
+    /// <li>
+    /// <p><code>Failed</code>: The instance group has failed to provision or is no longer healthy.</p></li>
+    /// <li>
+    /// <p><code>Degraded</code>: The instance group is degraded, meaning that some instances have failed to provision or are no longer healthy.</p></li>
+    /// <li>
+    /// <p><code>Deleting</code>: The instance group is being deleted.</p></li>
+    /// </ul>
+    pub status: ::std::option::Option<crate::types::InstanceGroupStatus>,
+    /// <p>The Amazon Resource Name (ARN); of the training plan associated with this cluster instance group.</p>
+    /// <p>For more information about how to reserve GPU capacity for your SageMaker HyperPod clusters using Amazon SageMaker Training Plan, see <code> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingPlan.html">CreateTrainingPlan</a> </code>.</p>
+    pub training_plan_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The current status of the training plan associated with this cluster instance group.</p>
+    pub training_plan_status: ::std::option::Option<::std::string::String>,
     /// <p>Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker Access to Resources in your Amazon VPC</a>.</p>
     pub override_vpc_config: ::std::option::Option<crate::types::VpcConfig>,
 }
@@ -66,6 +87,33 @@ impl ClusterInstanceGroupDetails {
     pub fn on_start_deep_health_checks(&self) -> &[crate::types::DeepHealthCheckType] {
         self.on_start_deep_health_checks.as_deref().unwrap_or_default()
     }
+    /// <p>The current status of the cluster instance group.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>InService</code>: The instance group is active and healthy.</p></li>
+    /// <li>
+    /// <p><code>Creating</code>: The instance group is being provisioned.</p></li>
+    /// <li>
+    /// <p><code>Updating</code>: The instance group is being updated.</p></li>
+    /// <li>
+    /// <p><code>Failed</code>: The instance group has failed to provision or is no longer healthy.</p></li>
+    /// <li>
+    /// <p><code>Degraded</code>: The instance group is degraded, meaning that some instances have failed to provision or are no longer healthy.</p></li>
+    /// <li>
+    /// <p><code>Deleting</code>: The instance group is being deleted.</p></li>
+    /// </ul>
+    pub fn status(&self) -> ::std::option::Option<&crate::types::InstanceGroupStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN); of the training plan associated with this cluster instance group.</p>
+    /// <p>For more information about how to reserve GPU capacity for your SageMaker HyperPod clusters using Amazon SageMaker Training Plan, see <code> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingPlan.html">CreateTrainingPlan</a> </code>.</p>
+    pub fn training_plan_arn(&self) -> ::std::option::Option<&str> {
+        self.training_plan_arn.as_deref()
+    }
+    /// <p>The current status of the training plan associated with this cluster instance group.</p>
+    pub fn training_plan_status(&self) -> ::std::option::Option<&str> {
+        self.training_plan_status.as_deref()
+    }
     /// <p>Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker Access to Resources in your Amazon VPC</a>.</p>
     pub fn override_vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
         self.override_vpc_config.as_ref()
@@ -91,6 +139,9 @@ pub struct ClusterInstanceGroupDetailsBuilder {
     pub(crate) threads_per_core: ::std::option::Option<i32>,
     pub(crate) instance_storage_configs: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceStorageConfig>>,
     pub(crate) on_start_deep_health_checks: ::std::option::Option<::std::vec::Vec<crate::types::DeepHealthCheckType>>,
+    pub(crate) status: ::std::option::Option<crate::types::InstanceGroupStatus>,
+    pub(crate) training_plan_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) training_plan_status: ::std::option::Option<::std::string::String>,
     pub(crate) override_vpc_config: ::std::option::Option<crate::types::VpcConfig>,
 }
 impl ClusterInstanceGroupDetailsBuilder {
@@ -232,6 +283,93 @@ impl ClusterInstanceGroupDetailsBuilder {
     pub fn get_on_start_deep_health_checks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeepHealthCheckType>> {
         &self.on_start_deep_health_checks
     }
+    /// <p>The current status of the cluster instance group.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>InService</code>: The instance group is active and healthy.</p></li>
+    /// <li>
+    /// <p><code>Creating</code>: The instance group is being provisioned.</p></li>
+    /// <li>
+    /// <p><code>Updating</code>: The instance group is being updated.</p></li>
+    /// <li>
+    /// <p><code>Failed</code>: The instance group has failed to provision or is no longer healthy.</p></li>
+    /// <li>
+    /// <p><code>Degraded</code>: The instance group is degraded, meaning that some instances have failed to provision or are no longer healthy.</p></li>
+    /// <li>
+    /// <p><code>Deleting</code>: The instance group is being deleted.</p></li>
+    /// </ul>
+    pub fn status(mut self, input: crate::types::InstanceGroupStatus) -> Self {
+        self.status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current status of the cluster instance group.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>InService</code>: The instance group is active and healthy.</p></li>
+    /// <li>
+    /// <p><code>Creating</code>: The instance group is being provisioned.</p></li>
+    /// <li>
+    /// <p><code>Updating</code>: The instance group is being updated.</p></li>
+    /// <li>
+    /// <p><code>Failed</code>: The instance group has failed to provision or is no longer healthy.</p></li>
+    /// <li>
+    /// <p><code>Degraded</code>: The instance group is degraded, meaning that some instances have failed to provision or are no longer healthy.</p></li>
+    /// <li>
+    /// <p><code>Deleting</code>: The instance group is being deleted.</p></li>
+    /// </ul>
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::InstanceGroupStatus>) -> Self {
+        self.status = input;
+        self
+    }
+    /// <p>The current status of the cluster instance group.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>InService</code>: The instance group is active and healthy.</p></li>
+    /// <li>
+    /// <p><code>Creating</code>: The instance group is being provisioned.</p></li>
+    /// <li>
+    /// <p><code>Updating</code>: The instance group is being updated.</p></li>
+    /// <li>
+    /// <p><code>Failed</code>: The instance group has failed to provision or is no longer healthy.</p></li>
+    /// <li>
+    /// <p><code>Degraded</code>: The instance group is degraded, meaning that some instances have failed to provision or are no longer healthy.</p></li>
+    /// <li>
+    /// <p><code>Deleting</code>: The instance group is being deleted.</p></li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::InstanceGroupStatus> {
+        &self.status
+    }
+    /// <p>The Amazon Resource Name (ARN); of the training plan associated with this cluster instance group.</p>
+    /// <p>For more information about how to reserve GPU capacity for your SageMaker HyperPod clusters using Amazon SageMaker Training Plan, see <code> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingPlan.html">CreateTrainingPlan</a> </code>.</p>
+    pub fn training_plan_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.training_plan_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN); of the training plan associated with this cluster instance group.</p>
+    /// <p>For more information about how to reserve GPU capacity for your SageMaker HyperPod clusters using Amazon SageMaker Training Plan, see <code> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingPlan.html">CreateTrainingPlan</a> </code>.</p>
+    pub fn set_training_plan_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.training_plan_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN); of the training plan associated with this cluster instance group.</p>
+    /// <p>For more information about how to reserve GPU capacity for your SageMaker HyperPod clusters using Amazon SageMaker Training Plan, see <code> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingPlan.html">CreateTrainingPlan</a> </code>.</p>
+    pub fn get_training_plan_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.training_plan_arn
+    }
+    /// <p>The current status of the training plan associated with this cluster instance group.</p>
+    pub fn training_plan_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.training_plan_status = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The current status of the training plan associated with this cluster instance group.</p>
+    pub fn set_training_plan_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.training_plan_status = input;
+        self
+    }
+    /// <p>The current status of the training plan associated with this cluster instance group.</p>
+    pub fn get_training_plan_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.training_plan_status
+    }
     /// <p>Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker Access to Resources in your Amazon VPC</a>.</p>
     pub fn override_vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
         self.override_vpc_config = ::std::option::Option::Some(input);
@@ -258,6 +396,9 @@ impl ClusterInstanceGroupDetailsBuilder {
             threads_per_core: self.threads_per_core,
             instance_storage_configs: self.instance_storage_configs,
             on_start_deep_health_checks: self.on_start_deep_health_checks,
+            status: self.status,
+            training_plan_arn: self.training_plan_arn,
+            training_plan_status: self.training_plan_status,
             override_vpc_config: self.override_vpc_config,
         }
     }

@@ -4,13 +4,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BedrockFoundationModelConfiguration {
-    /// <p>The ARN of the foundation model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference profile</a>.</p>
+    /// <p>The ARN of the foundation model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference profile</a> to use for parsing.</p>
     pub model_arn: ::std::string::String,
     /// <p>Instructions for interpreting the contents of a document.</p>
     pub parsing_prompt: ::std::option::Option<crate::types::ParsingPrompt>,
+    /// <p>Specifies whether to enable parsing of multimodal data, including both text and/or images.</p>
+    pub parsing_modality: ::std::option::Option<crate::types::ParsingModality>,
 }
 impl BedrockFoundationModelConfiguration {
-    /// <p>The ARN of the foundation model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference profile</a>.</p>
+    /// <p>The ARN of the foundation model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference profile</a> to use for parsing.</p>
     pub fn model_arn(&self) -> &str {
         use std::ops::Deref;
         self.model_arn.deref()
@@ -18,6 +20,10 @@ impl BedrockFoundationModelConfiguration {
     /// <p>Instructions for interpreting the contents of a document.</p>
     pub fn parsing_prompt(&self) -> ::std::option::Option<&crate::types::ParsingPrompt> {
         self.parsing_prompt.as_ref()
+    }
+    /// <p>Specifies whether to enable parsing of multimodal data, including both text and/or images.</p>
+    pub fn parsing_modality(&self) -> ::std::option::Option<&crate::types::ParsingModality> {
+        self.parsing_modality.as_ref()
     }
 }
 impl BedrockFoundationModelConfiguration {
@@ -33,20 +39,21 @@ impl BedrockFoundationModelConfiguration {
 pub struct BedrockFoundationModelConfigurationBuilder {
     pub(crate) model_arn: ::std::option::Option<::std::string::String>,
     pub(crate) parsing_prompt: ::std::option::Option<crate::types::ParsingPrompt>,
+    pub(crate) parsing_modality: ::std::option::Option<crate::types::ParsingModality>,
 }
 impl BedrockFoundationModelConfigurationBuilder {
-    /// <p>The ARN of the foundation model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference profile</a>.</p>
+    /// <p>The ARN of the foundation model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference profile</a> to use for parsing.</p>
     /// This field is required.
     pub fn model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the foundation model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference profile</a>.</p>
+    /// <p>The ARN of the foundation model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference profile</a> to use for parsing.</p>
     pub fn set_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_arn = input;
         self
     }
-    /// <p>The ARN of the foundation model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference profile</a>.</p>
+    /// <p>The ARN of the foundation model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference profile</a> to use for parsing.</p>
     pub fn get_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_arn
     }
@@ -64,6 +71,20 @@ impl BedrockFoundationModelConfigurationBuilder {
     pub fn get_parsing_prompt(&self) -> &::std::option::Option<crate::types::ParsingPrompt> {
         &self.parsing_prompt
     }
+    /// <p>Specifies whether to enable parsing of multimodal data, including both text and/or images.</p>
+    pub fn parsing_modality(mut self, input: crate::types::ParsingModality) -> Self {
+        self.parsing_modality = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to enable parsing of multimodal data, including both text and/or images.</p>
+    pub fn set_parsing_modality(mut self, input: ::std::option::Option<crate::types::ParsingModality>) -> Self {
+        self.parsing_modality = input;
+        self
+    }
+    /// <p>Specifies whether to enable parsing of multimodal data, including both text and/or images.</p>
+    pub fn get_parsing_modality(&self) -> &::std::option::Option<crate::types::ParsingModality> {
+        &self.parsing_modality
+    }
     /// Consumes the builder and constructs a [`BedrockFoundationModelConfiguration`](crate::types::BedrockFoundationModelConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`model_arn`](crate::types::builders::BedrockFoundationModelConfigurationBuilder::model_arn)
@@ -76,6 +97,7 @@ impl BedrockFoundationModelConfigurationBuilder {
                 )
             })?,
             parsing_prompt: self.parsing_prompt,
+            parsing_modality: self.parsing_modality,
         })
     }
 }

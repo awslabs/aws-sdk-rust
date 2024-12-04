@@ -10,6 +10,12 @@ pub fn ser_custom_file_system_config(
             crate::protocol_serde::shape_efs_file_system_config::ser_efs_file_system_config(&mut object_1, inner)?;
             object_1.finish();
         }
+        crate::types::CustomFileSystemConfig::FSxLustreFileSystemConfig(inner) => {
+            #[allow(unused_mut)]
+            let mut object_2 = object_18.key("FSxLustreFileSystemConfig").start_object();
+            crate::protocol_serde::shape_f_sx_lustre_file_system_config::ser_f_sx_lustre_file_system_config(&mut object_2, inner)?;
+            object_2.finish();
+        }
         crate::types::CustomFileSystemConfig::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "CustomFileSystemConfig",
@@ -53,6 +59,15 @@ where
                             crate::protocol_serde::shape_efs_file_system_config::de_efs_file_system_config(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'EFSFileSystemConfig' cannot be null")
                             })?,
+                        )),
+                        "FSxLustreFileSystemConfig" => Some(crate::types::CustomFileSystemConfig::FSxLustreFileSystemConfig(
+                            crate::protocol_serde::shape_f_sx_lustre_file_system_config::de_f_sx_lustre_file_system_config(tokens)?.ok_or_else(
+                                || {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'FSxLustreFileSystemConfig' cannot be null",
+                                    )
+                                },
+                            )?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

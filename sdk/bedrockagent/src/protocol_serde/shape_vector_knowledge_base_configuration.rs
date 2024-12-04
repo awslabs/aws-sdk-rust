@@ -12,6 +12,12 @@ pub fn ser_vector_knowledge_base_configuration(
         crate::protocol_serde::shape_embedding_model_configuration::ser_embedding_model_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.supplemental_data_storage_configuration {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("supplementalDataStorageConfiguration").start_object();
+        crate::protocol_serde::shape_supplemental_data_storage_configuration::ser_supplemental_data_storage_configuration(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }
 
@@ -40,6 +46,13 @@ where
                         "embeddingModelConfiguration" => {
                             builder = builder.set_embedding_model_configuration(
                                 crate::protocol_serde::shape_embedding_model_configuration::de_embedding_model_configuration(tokens)?,
+                            );
+                        }
+                        "supplementalDataStorageConfiguration" => {
+                            builder = builder.set_supplemental_data_storage_configuration(
+                                crate::protocol_serde::shape_supplemental_data_storage_configuration::de_supplemental_data_storage_configuration(
+                                    tokens,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

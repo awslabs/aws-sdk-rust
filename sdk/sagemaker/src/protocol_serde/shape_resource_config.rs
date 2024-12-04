@@ -39,6 +39,9 @@ pub fn ser_resource_config(
         }
         array_7.finish();
     }
+    if let Some(var_10) = &input.training_plan_arn {
+        object.key("TrainingPlanArn").string(var_10.as_str());
+    }
     Ok(())
 }
 
@@ -94,6 +97,13 @@ where
                         }
                         "InstanceGroups" => {
                             builder = builder.set_instance_groups(crate::protocol_serde::shape_instance_groups::de_instance_groups(tokens)?);
+                        }
+                        "TrainingPlanArn" => {
+                            builder = builder.set_training_plan_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

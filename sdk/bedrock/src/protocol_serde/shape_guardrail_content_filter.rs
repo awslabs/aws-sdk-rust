@@ -35,6 +35,14 @@ where
                                     .transpose()?,
                             );
                         }
+                        "inputModalities" => {
+                            builder =
+                                builder.set_input_modalities(crate::protocol_serde::shape_guardrail_modalities::de_guardrail_modalities(tokens)?);
+                        }
+                        "outputModalities" => {
+                            builder =
+                                builder.set_output_modalities(crate::protocol_serde::shape_guardrail_modalities::de_guardrail_modalities(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -22,7 +22,7 @@ impl crate::operation::delete_faq::builders::DeleteFaqInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteFaq`.
 ///
-/// <p>Removes an FAQ from an index.</p>
+/// <p>Removes a FAQ from an index.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteFaqFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

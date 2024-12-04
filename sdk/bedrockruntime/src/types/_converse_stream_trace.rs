@@ -6,11 +6,17 @@
 pub struct ConverseStreamTrace {
     /// <p>The guardrail trace object.</p>
     pub guardrail: ::std::option::Option<crate::types::GuardrailTraceAssessment>,
+    /// <p>The request's prompt router.</p>
+    pub prompt_router: ::std::option::Option<crate::types::PromptRouterTrace>,
 }
 impl ConverseStreamTrace {
     /// <p>The guardrail trace object.</p>
     pub fn guardrail(&self) -> ::std::option::Option<&crate::types::GuardrailTraceAssessment> {
         self.guardrail.as_ref()
+    }
+    /// <p>The request's prompt router.</p>
+    pub fn prompt_router(&self) -> ::std::option::Option<&crate::types::PromptRouterTrace> {
+        self.prompt_router.as_ref()
     }
 }
 impl ConverseStreamTrace {
@@ -25,6 +31,7 @@ impl ConverseStreamTrace {
 #[non_exhaustive]
 pub struct ConverseStreamTraceBuilder {
     pub(crate) guardrail: ::std::option::Option<crate::types::GuardrailTraceAssessment>,
+    pub(crate) prompt_router: ::std::option::Option<crate::types::PromptRouterTrace>,
 }
 impl ConverseStreamTraceBuilder {
     /// <p>The guardrail trace object.</p>
@@ -41,8 +48,25 @@ impl ConverseStreamTraceBuilder {
     pub fn get_guardrail(&self) -> &::std::option::Option<crate::types::GuardrailTraceAssessment> {
         &self.guardrail
     }
+    /// <p>The request's prompt router.</p>
+    pub fn prompt_router(mut self, input: crate::types::PromptRouterTrace) -> Self {
+        self.prompt_router = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The request's prompt router.</p>
+    pub fn set_prompt_router(mut self, input: ::std::option::Option<crate::types::PromptRouterTrace>) -> Self {
+        self.prompt_router = input;
+        self
+    }
+    /// <p>The request's prompt router.</p>
+    pub fn get_prompt_router(&self) -> &::std::option::Option<crate::types::PromptRouterTrace> {
+        &self.prompt_router
+    }
     /// Consumes the builder and constructs a [`ConverseStreamTrace`](crate::types::ConverseStreamTrace).
     pub fn build(self) -> crate::types::ConverseStreamTrace {
-        crate::types::ConverseStreamTrace { guardrail: self.guardrail }
+        crate::types::ConverseStreamTrace {
+            guardrail: self.guardrail,
+            prompt_router: self.prompt_router,
+        }
     }
 }

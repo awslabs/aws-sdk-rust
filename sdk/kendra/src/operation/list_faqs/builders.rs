@@ -22,7 +22,7 @@ impl crate::operation::list_faqs::builders::ListFaqsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListFaqs`.
 ///
-/// <p>Gets a list of FAQ lists associated with an index.</p>
+/// <p>Gets a list of FAQs associated with an index.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListFaqsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -105,17 +105,17 @@ impl ListFaqsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_faqs::paginator::ListFaqsPaginator {
         crate::operation::list_faqs::paginator::ListFaqsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The index that contains the FAQ lists.</p>
+    /// <p>The index for the FAQs.</p>
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.index_id(input.into());
         self
     }
-    /// <p>The index that contains the FAQ lists.</p>
+    /// <p>The index for the FAQs.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_index_id(input);
         self
     }
-    /// <p>The index that contains the FAQ lists.</p>
+    /// <p>The index for the FAQs.</p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_index_id()
     }

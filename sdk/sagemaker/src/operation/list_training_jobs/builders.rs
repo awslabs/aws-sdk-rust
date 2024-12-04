@@ -275,4 +275,18 @@ impl ListTrainingJobsFluentBuilder {
     pub fn get_warm_pool_status_equals(&self) -> &::std::option::Option<crate::types::WarmPoolResourceStatus> {
         self.inner.get_warm_pool_status_equals()
     }
+    /// <p>The Amazon Resource Name (ARN); of the training plan to filter training jobs by. For more information about reserving GPU capacity for your SageMaker training jobs using Amazon SageMaker Training Plan, see <code> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingPlan.html">CreateTrainingPlan</a> </code>.</p>
+    pub fn training_plan_arn_equals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.training_plan_arn_equals(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN); of the training plan to filter training jobs by. For more information about reserving GPU capacity for your SageMaker training jobs using Amazon SageMaker Training Plan, see <code> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingPlan.html">CreateTrainingPlan</a> </code>.</p>
+    pub fn set_training_plan_arn_equals(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_training_plan_arn_equals(input);
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN); of the training plan to filter training jobs by. For more information about reserving GPU capacity for your SageMaker training jobs using Amazon SageMaker Training Plan, see <code> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingPlan.html">CreateTrainingPlan</a> </code>.</p>
+    pub fn get_training_plan_arn_equals(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_training_plan_arn_equals()
+    }
 }

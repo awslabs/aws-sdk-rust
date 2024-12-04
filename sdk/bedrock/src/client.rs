@@ -128,6 +128,8 @@ mod create_guardrail_version;
 
 mod create_inference_profile;
 
+mod create_marketplace_model_endpoint;
+
 mod create_model_copy_job;
 
 mod create_model_customization_job;
@@ -150,9 +152,13 @@ mod delete_imported_model;
 
 mod delete_inference_profile;
 
+mod delete_marketplace_model_endpoint;
+
 mod delete_model_invocation_logging_configuration;
 
 mod delete_provisioned_model_throughput;
+
+mod deregister_marketplace_model_endpoint;
 
 mod get_custom_model;
 
@@ -166,6 +172,8 @@ mod get_imported_model;
 
 mod get_inference_profile;
 
+mod get_marketplace_model_endpoint;
+
 mod get_model_copy_job;
 
 mod get_model_customization_job;
@@ -175,6 +183,8 @@ mod get_model_import_job;
 mod get_model_invocation_job;
 
 mod get_model_invocation_logging_configuration;
+
+mod get_prompt_router;
 
 mod get_provisioned_model_throughput;
 
@@ -190,6 +200,8 @@ mod list_imported_models;
 
 mod list_inference_profiles;
 
+mod list_marketplace_model_endpoints;
+
 mod list_model_copy_jobs;
 
 mod list_model_customization_jobs;
@@ -198,11 +210,15 @@ mod list_model_import_jobs;
 
 mod list_model_invocation_jobs;
 
+mod list_prompt_routers;
+
 mod list_provisioned_model_throughputs;
 
 mod list_tags_for_resource;
 
 mod put_model_invocation_logging_configuration;
+
+mod register_marketplace_model_endpoint;
 
 mod stop_evaluation_job;
 
@@ -215,5 +231,7 @@ mod tag_resource;
 mod untag_resource;
 
 mod update_guardrail;
+
+mod update_marketplace_model_endpoint;
 
 mod update_provisioned_model_throughput;

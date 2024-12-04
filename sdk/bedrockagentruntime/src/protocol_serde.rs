@@ -25,6 +25,8 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_delete_agent_memory;
 
+pub(crate) mod shape_generate_query;
+
 pub(crate) mod shape_get_agent_memory;
 
 pub(crate) mod shape_invoke_agent;
@@ -58,6 +60,8 @@ pub(crate) mod shape_bad_gateway_exception;
 pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_dependency_failed_exception;
+
+pub(crate) mod shape_generate_query_input;
 
 pub(crate) mod shape_internal_server_exception;
 
@@ -107,6 +111,8 @@ pub(crate) mod shape_citations;
 
 pub(crate) mod shape_flow_input;
 
+pub(crate) mod shape_generated_queries;
+
 pub(crate) mod shape_guardrail_configuration;
 
 pub(crate) mod shape_guardrail_configuration_with_arn;
@@ -127,6 +133,8 @@ pub(crate) mod shape_memories;
 
 pub(crate) mod shape_prompt_override_configuration;
 
+pub(crate) mod shape_query_generation_input;
+
 pub(crate) mod shape_rerank_query;
 
 pub(crate) mod shape_rerank_results_list;
@@ -144,6 +152,8 @@ pub(crate) mod shape_retrieve_and_generate_session_configuration;
 pub(crate) mod shape_session_state;
 
 pub(crate) mod shape_streaming_configurations;
+
+pub(crate) mod shape_transformation_configuration;
 
 pub(crate) mod shape_action_group_executor;
 
@@ -172,6 +182,8 @@ pub(crate) mod shape_flow_output_event;
 pub(crate) mod shape_flow_trace_event;
 
 pub(crate) mod shape_function_schema;
+
+pub(crate) mod shape_generated_query;
 
 pub(crate) mod shape_guardrail_event;
 
@@ -215,6 +227,8 @@ pub(crate) mod shape_return_control_payload;
 
 pub(crate) mod shape_text_prompt;
 
+pub(crate) mod shape_text_to_sql_configuration;
+
 pub(crate) mod shape_trace_part;
 
 pub(crate) mod shape_api_result;
@@ -257,6 +271,8 @@ pub(crate) mod shape_retrieved_references;
 
 pub(crate) mod shape_s3_identifier;
 
+pub(crate) mod shape_text_to_sql_knowledge_base_configuration;
+
 pub(crate) mod shape_vector_search_reranking_configuration;
 
 pub(crate) mod shape_attribution;
@@ -295,13 +311,19 @@ pub(crate) mod shape_query_transformation_configuration;
 
 pub(crate) mod shape_retrieval_result_confluence_location;
 
+pub(crate) mod shape_retrieval_result_content_row;
+
 pub(crate) mod shape_retrieval_result_custom_document_location;
+
+pub(crate) mod shape_retrieval_result_kendra_document_location;
 
 pub(crate) mod shape_retrieval_result_s3_location;
 
 pub(crate) mod shape_retrieval_result_salesforce_location;
 
 pub(crate) mod shape_retrieval_result_share_point_location;
+
+pub(crate) mod shape_retrieval_result_sql_location;
 
 pub(crate) mod shape_retrieval_result_web_location;
 
@@ -342,6 +364,8 @@ pub(crate) mod shape_output_file;
 pub(crate) mod shape_post_processing_trace;
 
 pub(crate) mod shape_pre_processing_trace;
+
+pub(crate) mod shape_retrieval_result_content_column;
 
 pub(crate) mod shape_routing_classifier_trace;
 

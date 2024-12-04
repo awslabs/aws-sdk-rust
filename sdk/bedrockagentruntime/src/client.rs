@@ -124,6 +124,8 @@ pub mod customize;
 
 mod delete_agent_memory;
 
+mod generate_query;
+
 mod get_agent_memory;
 
 mod invoke_agent;

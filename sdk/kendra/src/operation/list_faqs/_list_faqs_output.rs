@@ -5,7 +5,7 @@
 pub struct ListFaqsOutput {
     /// <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of FAQs.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>information about the FAQs associated with the specified index.</p>
+    /// <p>Summary information about the FAQs for a specified index.</p>
     pub faq_summary_items: ::std::option::Option<::std::vec::Vec<crate::types::FaqSummary>>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl ListFaqsOutput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>information about the FAQs associated with the specified index.</p>
+    /// <p>Summary information about the FAQs for a specified index.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.faq_summary_items.is_none()`.
     pub fn faq_summary_items(&self) -> &[crate::types::FaqSummary] {
@@ -60,19 +60,19 @@ impl ListFaqsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_faq_summary_items`](Self::set_faq_summary_items).
     ///
-    /// <p>information about the FAQs associated with the specified index.</p>
+    /// <p>Summary information about the FAQs for a specified index.</p>
     pub fn faq_summary_items(mut self, input: crate::types::FaqSummary) -> Self {
         let mut v = self.faq_summary_items.unwrap_or_default();
         v.push(input);
         self.faq_summary_items = ::std::option::Option::Some(v);
         self
     }
-    /// <p>information about the FAQs associated with the specified index.</p>
+    /// <p>Summary information about the FAQs for a specified index.</p>
     pub fn set_faq_summary_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FaqSummary>>) -> Self {
         self.faq_summary_items = input;
         self
     }
-    /// <p>information about the FAQs associated with the specified index.</p>
+    /// <p>Summary information about the FAQs for a specified index.</p>
     pub fn get_faq_summary_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FaqSummary>> {
         &self.faq_summary_items
     }

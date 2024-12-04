@@ -44,6 +44,8 @@ pub struct ResourceConfig {
     pub keep_alive_period_in_seconds: ::std::option::Option<i32>,
     /// <p>The configuration of a heterogeneous cluster in JSON format.</p>
     pub instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroup>>,
+    /// <p>The Amazon Resource Name (ARN); of the training plan to use for this resource configuration.</p>
+    pub training_plan_arn: ::std::option::Option<::std::string::String>,
 }
 impl ResourceConfig {
     /// <p>The ML compute instance type.</p><note>
@@ -100,6 +102,10 @@ impl ResourceConfig {
     pub fn instance_groups(&self) -> &[crate::types::InstanceGroup] {
         self.instance_groups.as_deref().unwrap_or_default()
     }
+    /// <p>The Amazon Resource Name (ARN); of the training plan to use for this resource configuration.</p>
+    pub fn training_plan_arn(&self) -> ::std::option::Option<&str> {
+        self.training_plan_arn.as_deref()
+    }
 }
 impl ResourceConfig {
     /// Creates a new builder-style object to manufacture [`ResourceConfig`](crate::types::ResourceConfig).
@@ -118,6 +124,7 @@ pub struct ResourceConfigBuilder {
     pub(crate) volume_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) keep_alive_period_in_seconds: ::std::option::Option<i32>,
     pub(crate) instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroup>>,
+    pub(crate) training_plan_arn: ::std::option::Option<::std::string::String>,
 }
 impl ResourceConfigBuilder {
     /// <p>The ML compute instance type.</p><note>
@@ -295,6 +302,20 @@ impl ResourceConfigBuilder {
     pub fn get_instance_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceGroup>> {
         &self.instance_groups
     }
+    /// <p>The Amazon Resource Name (ARN); of the training plan to use for this resource configuration.</p>
+    pub fn training_plan_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.training_plan_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN); of the training plan to use for this resource configuration.</p>
+    pub fn set_training_plan_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.training_plan_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN); of the training plan to use for this resource configuration.</p>
+    pub fn get_training_plan_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.training_plan_arn
+    }
     /// Consumes the builder and constructs a [`ResourceConfig`](crate::types::ResourceConfig).
     pub fn build(self) -> crate::types::ResourceConfig {
         crate::types::ResourceConfig {
@@ -304,6 +325,7 @@ impl ResourceConfigBuilder {
             volume_kms_key_id: self.volume_kms_key_id,
             keep_alive_period_in_seconds: self.keep_alive_period_in_seconds,
             instance_groups: self.instance_groups,
+            training_plan_arn: self.training_plan_arn,
         }
     }
 }

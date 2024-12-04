@@ -47,5 +47,8 @@ pub fn ser_list_training_jobs_input_input(
     if let Some(var_11) = &input.warm_pool_status_equals {
         object.key("WarmPoolStatusEquals").string(var_11.as_str());
     }
+    if let Some(var_12) = &input.training_plan_arn_equals {
+        object.key("TrainingPlanArnEquals").string(var_12.as_str());
+    }
     Ok(())
 }

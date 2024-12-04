@@ -6,6 +6,8 @@
 pub enum CustomFileSystem {
     /// <p>A custom file system in Amazon EFS.</p>
     EfsFileSystem(crate::types::EfsFileSystem),
+    /// <p>A custom file system in Amazon FSx for Lustre.</p>
+    FSxLustreFileSystem(crate::types::FSxLustreFileSystem),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -17,7 +19,6 @@ pub enum CustomFileSystem {
     Unknown,
 }
 impl CustomFileSystem {
-    #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`EfsFileSystem`](crate::types::CustomFileSystem::EfsFileSystem), extracting the inner [`EfsFileSystem`](crate::types::EfsFileSystem).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_efs_file_system(&self) -> ::std::result::Result<&crate::types::EfsFileSystem, &Self> {
@@ -30,6 +31,19 @@ impl CustomFileSystem {
     /// Returns true if this is a [`EfsFileSystem`](crate::types::CustomFileSystem::EfsFileSystem).
     pub fn is_efs_file_system(&self) -> bool {
         self.as_efs_file_system().is_ok()
+    }
+    /// Tries to convert the enum instance into [`FSxLustreFileSystem`](crate::types::CustomFileSystem::FSxLustreFileSystem), extracting the inner [`FSxLustreFileSystem`](crate::types::FSxLustreFileSystem).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_f_sx_lustre_file_system(&self) -> ::std::result::Result<&crate::types::FSxLustreFileSystem, &Self> {
+        if let CustomFileSystem::FSxLustreFileSystem(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`FSxLustreFileSystem`](crate::types::CustomFileSystem::FSxLustreFileSystem).
+    pub fn is_f_sx_lustre_file_system(&self) -> bool {
+        self.as_f_sx_lustre_file_system().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

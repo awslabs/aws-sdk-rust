@@ -2,8 +2,10 @@
 
 /// <p>The content block to be evaluated by the guardrail.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub enum GuardrailContentBlock {
+    /// <p>Image within guardrail content block to be evaluated by the guardrail.</p>
+    Image(crate::types::GuardrailImageBlock),
     /// <p>Text within content block to be evaluated by the guardrail.</p>
     Text(crate::types::GuardrailTextBlock),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -17,7 +19,19 @@ pub enum GuardrailContentBlock {
     Unknown,
 }
 impl GuardrailContentBlock {
-    #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into [`Image`](crate::types::GuardrailContentBlock::Image), extracting the inner [`GuardrailImageBlock`](crate::types::GuardrailImageBlock).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_image(&self) -> ::std::result::Result<&crate::types::GuardrailImageBlock, &Self> {
+        if let GuardrailContentBlock::Image(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Image`](crate::types::GuardrailContentBlock::Image).
+    pub fn is_image(&self) -> bool {
+        self.as_image().is_ok()
+    }
     /// Tries to convert the enum instance into [`Text`](crate::types::GuardrailContentBlock::Text), extracting the inner [`GuardrailTextBlock`](crate::types::GuardrailTextBlock).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_text(&self) -> ::std::result::Result<&crate::types::GuardrailTextBlock, &Self> {
@@ -34,5 +48,14 @@ impl GuardrailContentBlock {
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {
         matches!(self, Self::Unknown)
+    }
+}
+impl ::std::fmt::Debug for GuardrailContentBlock {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        match self {
+            GuardrailContentBlock::Image(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
+            GuardrailContentBlock::Text(val) => f.debug_tuple("Text").field(&val).finish(),
+            GuardrailContentBlock::Unknown => f.debug_tuple("Unknown").finish(),
+        }
     }
 }

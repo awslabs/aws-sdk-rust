@@ -49,6 +49,16 @@ pub(crate) fn reflens_list_inference_profiles_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_marketplace_model_endpoints_output_output_next_token(
+    input: &crate::operation::list_marketplace_model_endpoints::ListMarketplaceModelEndpointsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_model_copy_jobs_output_output_next_token(
     input: &crate::operation::list_model_copy_jobs::ListModelCopyJobsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -81,6 +91,16 @@ pub(crate) fn reflens_list_model_import_jobs_output_output_next_token(
 
 pub(crate) fn reflens_list_model_invocation_jobs_output_output_next_token(
     input: &crate::operation::list_model_invocation_jobs::ListModelInvocationJobsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_prompt_routers_output_output_next_token(
+    input: &crate::operation::list_prompt_routers::ListPromptRoutersOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -146,6 +166,16 @@ pub(crate) fn lens_list_inference_profiles_output_output_inference_profile_summa
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_marketplace_model_endpoints_output_output_marketplace_model_endpoints(
+    input: crate::operation::list_marketplace_model_endpoints::ListMarketplaceModelEndpointsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::MarketplaceModelEndpointSummary>> {
+    let input = match input.marketplace_model_endpoints {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_model_copy_jobs_output_output_model_copy_job_summaries(
     input: crate::operation::list_model_copy_jobs::ListModelCopyJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ModelCopyJobSummary>> {
@@ -180,6 +210,16 @@ pub(crate) fn lens_list_model_invocation_jobs_output_output_invocation_job_summa
     input: crate::operation::list_model_invocation_jobs::ListModelInvocationJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ModelInvocationJobSummary>> {
     let input = match input.invocation_job_summaries {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_prompt_routers_output_output_prompt_router_summaries(
+    input: crate::operation::list_prompt_routers::ListPromptRoutersOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::PromptRouterSummary>> {
+    let input = match input.prompt_router_summaries {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

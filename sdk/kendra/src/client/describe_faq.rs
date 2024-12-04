@@ -14,9 +14,9 @@ impl super::Client {
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::describe_faq::DescribeFaqOutput::updated_at): <p>The Unix timestamp when the FAQ was last updated.</p>
     ///   - [`s3_path(Option<S3Path>)`](crate::operation::describe_faq::DescribeFaqOutput::s3_path): <p>Information required to find a specific file in an Amazon S3 bucket.</p>
     ///   - [`status(Option<FaqStatus>)`](crate::operation::describe_faq::DescribeFaqOutput::status): <p>The status of the FAQ. It is ready to use when the status is <code>ACTIVE</code>.</p>
-    ///   - [`role_arn(Option<String>)`](crate::operation::describe_faq::DescribeFaqOutput::role_arn): <p>The Amazon Resource Name (ARN) of the role that provides access to the S3 bucket containing the input files for the FAQ.</p>
+    ///   - [`role_arn(Option<String>)`](crate::operation::describe_faq::DescribeFaqOutput::role_arn): <p>The Amazon Resource Name (ARN) of the IAM role that provides access to the S3 bucket containing the FAQ file.</p>
     ///   - [`error_message(Option<String>)`](crate::operation::describe_faq::DescribeFaqOutput::error_message): <p>If the <code>Status</code> field is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason why the FAQ failed.</p>
-    ///   - [`file_format(Option<FaqFileFormat>)`](crate::operation::describe_faq::DescribeFaqOutput::file_format): <p>The file format used by the input files for the FAQ.</p>
+    ///   - [`file_format(Option<FaqFileFormat>)`](crate::operation::describe_faq::DescribeFaqOutput::file_format): <p>The file format used for the FAQ file.</p>
     ///   - [`language_code(Option<String>)`](crate::operation::describe_faq::DescribeFaqOutput::language_code): <p>The code for a language. This shows a supported language for the FAQ document. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
     /// - On failure, responds with [`SdkError<DescribeFaqError>`](crate::operation::describe_faq::DescribeFaqError)
     pub fn describe_faq(&self) -> crate::operation::describe_faq::builders::DescribeFaqFluentBuilder {

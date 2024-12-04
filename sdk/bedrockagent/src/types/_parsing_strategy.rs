@@ -12,6 +12,7 @@
 /// ```text
 /// # let parsingstrategy = unimplemented!();
 /// match parsingstrategy {
+///     ParsingStrategy::BedrockDataAutomation => { /* ... */ },
 ///     ParsingStrategy::BedrockFoundationModel => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -41,6 +42,8 @@
 )]
 pub enum ParsingStrategy {
     #[allow(missing_docs)] // documentation missing in model
+    BedrockDataAutomation,
+    #[allow(missing_docs)] // documentation missing in model
     BedrockFoundationModel,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -49,6 +52,7 @@ pub enum ParsingStrategy {
 impl ::std::convert::From<&str> for ParsingStrategy {
     fn from(s: &str) -> Self {
         match s {
+            "BEDROCK_DATA_AUTOMATION" => ParsingStrategy::BedrockDataAutomation,
             "BEDROCK_FOUNDATION_MODEL" => ParsingStrategy::BedrockFoundationModel,
             other => ParsingStrategy::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -65,13 +69,14 @@ impl ParsingStrategy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ParsingStrategy::BedrockDataAutomation => "BEDROCK_DATA_AUTOMATION",
             ParsingStrategy::BedrockFoundationModel => "BEDROCK_FOUNDATION_MODEL",
             ParsingStrategy::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BEDROCK_FOUNDATION_MODEL"]
+        &["BEDROCK_DATA_AUTOMATION", "BEDROCK_FOUNDATION_MODEL"]
     }
 }
 impl ::std::convert::AsRef<str> for ParsingStrategy {
@@ -94,6 +99,7 @@ impl ParsingStrategy {
 impl ::std::fmt::Display for ParsingStrategy {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ParsingStrategy::BedrockDataAutomation => write!(f, "BEDROCK_DATA_AUTOMATION"),
             ParsingStrategy::BedrockFoundationModel => write!(f, "BEDROCK_FOUNDATION_MODEL"),
             ParsingStrategy::Unknown(value) => write!(f, "{}", value),
         }

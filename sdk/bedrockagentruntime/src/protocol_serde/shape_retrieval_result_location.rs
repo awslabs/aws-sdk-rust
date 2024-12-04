@@ -52,6 +52,18 @@ where
                                 )?,
                             );
                         }
+                        "kendraDocumentLocation" => {
+                            builder = builder.set_kendra_document_location(
+                                crate::protocol_serde::shape_retrieval_result_kendra_document_location::de_retrieval_result_kendra_document_location(
+                                    tokens,
+                                )?,
+                            );
+                        }
+                        "sqlLocation" => {
+                            builder = builder.set_sql_location(
+                                crate::protocol_serde::shape_retrieval_result_sql_location::de_retrieval_result_sql_location(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

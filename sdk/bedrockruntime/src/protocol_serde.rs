@@ -153,6 +153,10 @@ pub(crate) mod shape_guardrail_assessment;
 
 pub(crate) mod shape_guardrail_converse_content_block;
 
+pub(crate) mod shape_guardrail_image_block;
+
+pub(crate) mod shape_guardrail_image_coverage;
+
 pub(crate) mod shape_guardrail_output_content;
 
 pub(crate) mod shape_guardrail_text_block;
@@ -166,6 +170,8 @@ pub(crate) mod shape_message_start_event;
 pub(crate) mod shape_message_stop_event;
 
 pub(crate) mod shape_payload_part;
+
+pub(crate) mod shape_prompt_router_trace;
 
 pub(crate) mod shape_tool;
 
@@ -187,7 +193,11 @@ pub(crate) mod shape_guardrail_content_policy_assessment;
 
 pub(crate) mod shape_guardrail_contextual_grounding_policy_assessment;
 
+pub(crate) mod shape_guardrail_converse_image_block;
+
 pub(crate) mod shape_guardrail_converse_text_block;
+
+pub(crate) mod shape_guardrail_image_source;
 
 pub(crate) mod shape_guardrail_invocation_metrics;
 
@@ -224,6 +234,8 @@ pub(crate) mod shape_document_source;
 pub(crate) mod shape_guardrail_content_filter_list;
 
 pub(crate) mod shape_guardrail_contextual_grounding_filters;
+
+pub(crate) mod shape_guardrail_converse_image_source;
 
 pub(crate) mod shape_guardrail_custom_word_list;
 

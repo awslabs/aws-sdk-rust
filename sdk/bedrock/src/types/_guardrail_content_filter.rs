@@ -27,6 +27,10 @@ pub struct GuardrailContentFilter {
     pub input_strength: crate::types::GuardrailFilterStrength,
     /// <p>The strength of the content filter to apply to model responses. As you increase the filter strength, the likelihood of filtering harmful content increases and the probability of seeing harmful content in your application reduces.</p>
     pub output_strength: crate::types::GuardrailFilterStrength,
+    /// <p>The input modalities selected for the guardrail content filter.</p>
+    pub input_modalities: ::std::option::Option<::std::vec::Vec<crate::types::GuardrailModality>>,
+    /// <p>The output modalities selected for the guardrail content filter.</p>
+    pub output_modalities: ::std::option::Option<::std::vec::Vec<crate::types::GuardrailModality>>,
 }
 impl GuardrailContentFilter {
     /// <p>The harmful category that the content filter is applied to.</p>
@@ -40,6 +44,18 @@ impl GuardrailContentFilter {
     /// <p>The strength of the content filter to apply to model responses. As you increase the filter strength, the likelihood of filtering harmful content increases and the probability of seeing harmful content in your application reduces.</p>
     pub fn output_strength(&self) -> &crate::types::GuardrailFilterStrength {
         &self.output_strength
+    }
+    /// <p>The input modalities selected for the guardrail content filter.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_modalities.is_none()`.
+    pub fn input_modalities(&self) -> &[crate::types::GuardrailModality] {
+        self.input_modalities.as_deref().unwrap_or_default()
+    }
+    /// <p>The output modalities selected for the guardrail content filter.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_modalities.is_none()`.
+    pub fn output_modalities(&self) -> &[crate::types::GuardrailModality] {
+        self.output_modalities.as_deref().unwrap_or_default()
     }
 }
 impl GuardrailContentFilter {
@@ -56,6 +72,8 @@ pub struct GuardrailContentFilterBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::GuardrailContentFilterType>,
     pub(crate) input_strength: ::std::option::Option<crate::types::GuardrailFilterStrength>,
     pub(crate) output_strength: ::std::option::Option<crate::types::GuardrailFilterStrength>,
+    pub(crate) input_modalities: ::std::option::Option<::std::vec::Vec<crate::types::GuardrailModality>>,
+    pub(crate) output_modalities: ::std::option::Option<::std::vec::Vec<crate::types::GuardrailModality>>,
 }
 impl GuardrailContentFilterBuilder {
     /// <p>The harmful category that the content filter is applied to.</p>
@@ -103,6 +121,46 @@ impl GuardrailContentFilterBuilder {
     pub fn get_output_strength(&self) -> &::std::option::Option<crate::types::GuardrailFilterStrength> {
         &self.output_strength
     }
+    /// Appends an item to `input_modalities`.
+    ///
+    /// To override the contents of this collection use [`set_input_modalities`](Self::set_input_modalities).
+    ///
+    /// <p>The input modalities selected for the guardrail content filter.</p>
+    pub fn input_modalities(mut self, input: crate::types::GuardrailModality) -> Self {
+        let mut v = self.input_modalities.unwrap_or_default();
+        v.push(input);
+        self.input_modalities = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The input modalities selected for the guardrail content filter.</p>
+    pub fn set_input_modalities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GuardrailModality>>) -> Self {
+        self.input_modalities = input;
+        self
+    }
+    /// <p>The input modalities selected for the guardrail content filter.</p>
+    pub fn get_input_modalities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GuardrailModality>> {
+        &self.input_modalities
+    }
+    /// Appends an item to `output_modalities`.
+    ///
+    /// To override the contents of this collection use [`set_output_modalities`](Self::set_output_modalities).
+    ///
+    /// <p>The output modalities selected for the guardrail content filter.</p>
+    pub fn output_modalities(mut self, input: crate::types::GuardrailModality) -> Self {
+        let mut v = self.output_modalities.unwrap_or_default();
+        v.push(input);
+        self.output_modalities = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The output modalities selected for the guardrail content filter.</p>
+    pub fn set_output_modalities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GuardrailModality>>) -> Self {
+        self.output_modalities = input;
+        self
+    }
+    /// <p>The output modalities selected for the guardrail content filter.</p>
+    pub fn get_output_modalities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GuardrailModality>> {
+        &self.output_modalities
+    }
     /// Consumes the builder and constructs a [`GuardrailContentFilter`](crate::types::GuardrailContentFilter).
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::GuardrailContentFilterBuilder::type)
@@ -128,6 +186,8 @@ impl GuardrailContentFilterBuilder {
                     "output_strength was not specified but it is required when building GuardrailContentFilter",
                 )
             })?,
+            input_modalities: self.input_modalities,
+            output_modalities: self.output_modalities,
         })
     }
 }

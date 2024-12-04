@@ -136,7 +136,6 @@ impl UpdateKnowledgeBaseInputBuilder {
         &self.knowledge_base_configuration
     }
     /// <p>Specifies the configuration for the vector store used for the knowledge base. You must use the same configuration as when the knowledge base was created.</p>
-    /// This field is required.
     pub fn storage_configuration(mut self, input: crate::types::StorageConfiguration) -> Self {
         self.storage_configuration = ::std::option::Option::Some(input);
         self

@@ -417,6 +417,8 @@ pub(crate) mod shape_ingestion_job_statistics;
 
 pub(crate) mod shape_ingestion_job_summary;
 
+pub(crate) mod shape_kendra_knowledge_base_configuration;
+
 pub(crate) mod shape_knowledge_base_document_detail;
 
 pub(crate) mod shape_knowledge_base_summary;
@@ -459,6 +461,8 @@ pub(crate) mod shape_salesforce_data_source_configuration;
 
 pub(crate) mod shape_share_point_data_source_configuration;
 
+pub(crate) mod shape_sql_knowledge_base_configuration;
+
 pub(crate) mod shape_validation_exception_field;
 
 pub(crate) mod shape_vector_knowledge_base_configuration;
@@ -466,6 +470,8 @@ pub(crate) mod shape_vector_knowledge_base_configuration;
 pub(crate) mod shape_web_data_source_configuration;
 
 pub(crate) mod shape_agent_alias_history_event;
+
+pub(crate) mod shape_bedrock_data_automation_configuration;
 
 pub(crate) mod shape_bedrock_foundation_model_configuration;
 
@@ -525,6 +531,8 @@ pub(crate) mod shape_rds_field_mapping;
 
 pub(crate) mod shape_redis_enterprise_cloud_field_mapping;
 
+pub(crate) mod shape_redshift_configuration;
+
 pub(crate) mod shape_s3_content;
 
 pub(crate) mod shape_salesforce_crawler_configuration;
@@ -536,6 +544,8 @@ pub(crate) mod shape_semantic_chunking_configuration;
 pub(crate) mod shape_share_point_crawler_configuration;
 
 pub(crate) mod shape_share_point_source_configuration;
+
+pub(crate) mod shape_supplemental_data_storage_configuration;
 
 pub(crate) mod shape_text_prompt_template_configuration;
 
@@ -621,11 +631,19 @@ pub(crate) mod shape_prompt_flow_node_configuration;
 
 pub(crate) mod shape_prompt_input_variable;
 
+pub(crate) mod shape_query_generation_configuration;
+
+pub(crate) mod shape_redshift_query_engine_configuration;
+
+pub(crate) mod shape_redshift_query_engine_storage_configuration;
+
 pub(crate) mod shape_retrieval_flow_node_configuration;
 
 pub(crate) mod shape_s3_prefixes;
 
 pub(crate) mod shape_storage_flow_node_configuration;
+
+pub(crate) mod shape_supplemental_data_storage_location;
 
 pub(crate) mod shape_system_content_block;
 
@@ -677,6 +695,18 @@ pub(crate) mod shape_prompt_flow_node_source_configuration;
 
 pub(crate) mod shape_prompt_input_variables_list;
 
+pub(crate) mod shape_query_generation_context;
+
+pub(crate) mod shape_redshift_provisioned_configuration;
+
+pub(crate) mod shape_redshift_query_engine_aws_data_catalog_storage_configuration;
+
+pub(crate) mod shape_redshift_query_engine_redshift_storage_configuration;
+
+pub(crate) mod shape_redshift_query_engine_storage_configurations;
+
+pub(crate) mod shape_redshift_serverless_configuration;
+
 pub(crate) mod shape_retrieval_flow_node_service_configuration;
 
 pub(crate) mod shape_seed_url;
@@ -686,6 +716,8 @@ pub(crate) mod shape_share_point_site_urls;
 pub(crate) mod shape_stop_sequences;
 
 pub(crate) mod shape_storage_flow_node_service_configuration;
+
+pub(crate) mod shape_supplemental_data_storage_locations;
 
 pub(crate) mod shape_system_content_blocks;
 
@@ -701,6 +733,8 @@ pub(crate) mod shape_any_tool_choice;
 
 pub(crate) mod shape_auto_tool_choice;
 
+pub(crate) mod shape_curated_query;
+
 pub(crate) mod shape_flow_conditions;
 
 pub(crate) mod shape_pattern_object_filter;
@@ -708,6 +742,12 @@ pub(crate) mod shape_pattern_object_filter;
 pub(crate) mod shape_prompt_flow_node_inline_configuration;
 
 pub(crate) mod shape_prompt_flow_node_resource_configuration;
+
+pub(crate) mod shape_query_generation_table;
+
+pub(crate) mod shape_redshift_provisioned_auth_configuration;
+
+pub(crate) mod shape_redshift_serverless_auth_configuration;
 
 pub(crate) mod shape_retrieval_flow_node_s3_configuration;
 
@@ -723,6 +763,16 @@ pub(crate) mod shape_tools;
 
 pub(crate) mod shape_content_blocks;
 
+pub(crate) mod shape_curated_queries;
+
 pub(crate) mod shape_pattern_object_filter_list;
 
+pub(crate) mod shape_query_generation_column;
+
+pub(crate) mod shape_query_generation_tables;
+
 pub(crate) mod shape_tool_input_schema;
+
+pub(crate) mod shape_aws_data_catalog_table_names;
+
+pub(crate) mod shape_query_generation_columns;

@@ -25,7 +25,7 @@ pub struct DescribeDataSourceOutput {
     pub status: ::std::option::Option<crate::types::DataSourceStatus>,
     /// <p>The schedule for Amazon Kendra to update the index.</p>
     pub schedule: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the role with permission to access the data source and required resources.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role with permission to access the data source and required resources.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a description of the error that caused the data source to fail.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
@@ -81,7 +81,7 @@ impl DescribeDataSourceOutput {
     pub fn schedule(&self) -> ::std::option::Option<&str> {
         self.schedule.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the role with permission to access the data source and required resources.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role with permission to access the data source and required resources.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -287,17 +287,17 @@ impl DescribeDataSourceOutputBuilder {
     pub fn get_schedule(&self) -> &::std::option::Option<::std::string::String> {
         &self.schedule
     }
-    /// <p>The Amazon Resource Name (ARN) of the role with permission to access the data source and required resources.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role with permission to access the data source and required resources.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the role with permission to access the data source and required resources.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role with permission to access the data source and required resources.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the role with permission to access the data source and required resources.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role with permission to access the data source and required resources.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }

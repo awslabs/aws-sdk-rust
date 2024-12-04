@@ -8,7 +8,7 @@ pub struct VectorIngestionConfiguration {
     pub chunking_configuration: ::std::option::Option<crate::types::ChunkingConfiguration>,
     /// <p>A custom document transformer for parsed data source documents.</p>
     pub custom_transformation_configuration: ::std::option::Option<crate::types::CustomTransformationConfiguration>,
-    /// <p>A custom parser for data source documents.</p>
+    /// <p>Configurations for a parser to use for parsing documents in your data source. If you exclude this field, the default parser will be used.</p>
     pub parsing_configuration: ::std::option::Option<crate::types::ParsingConfiguration>,
 }
 impl VectorIngestionConfiguration {
@@ -20,7 +20,7 @@ impl VectorIngestionConfiguration {
     pub fn custom_transformation_configuration(&self) -> ::std::option::Option<&crate::types::CustomTransformationConfiguration> {
         self.custom_transformation_configuration.as_ref()
     }
-    /// <p>A custom parser for data source documents.</p>
+    /// <p>Configurations for a parser to use for parsing documents in your data source. If you exclude this field, the default parser will be used.</p>
     pub fn parsing_configuration(&self) -> ::std::option::Option<&crate::types::ParsingConfiguration> {
         self.parsing_configuration.as_ref()
     }
@@ -69,17 +69,17 @@ impl VectorIngestionConfigurationBuilder {
     pub fn get_custom_transformation_configuration(&self) -> &::std::option::Option<crate::types::CustomTransformationConfiguration> {
         &self.custom_transformation_configuration
     }
-    /// <p>A custom parser for data source documents.</p>
+    /// <p>Configurations for a parser to use for parsing documents in your data source. If you exclude this field, the default parser will be used.</p>
     pub fn parsing_configuration(mut self, input: crate::types::ParsingConfiguration) -> Self {
         self.parsing_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A custom parser for data source documents.</p>
+    /// <p>Configurations for a parser to use for parsing documents in your data source. If you exclude this field, the default parser will be used.</p>
     pub fn set_parsing_configuration(mut self, input: ::std::option::Option<crate::types::ParsingConfiguration>) -> Self {
         self.parsing_configuration = input;
         self
     }
-    /// <p>A custom parser for data source documents.</p>
+    /// <p>Configurations for a parser to use for parsing documents in your data source. If you exclude this field, the default parser will be used.</p>
     pub fn get_parsing_configuration(&self) -> &::std::option::Option<crate::types::ParsingConfiguration> {
         &self.parsing_configuration
     }

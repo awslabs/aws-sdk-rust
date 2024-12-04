@@ -15,6 +15,8 @@ pub use crate::types::_performance_configuration::PerformanceConfiguration;
 
 pub use crate::types::_converse_stream_trace::ConverseStreamTrace;
 
+pub use crate::types::_prompt_router_trace::PromptRouterTrace;
+
 pub use crate::types::_guardrail_trace_assessment::GuardrailTraceAssessment;
 
 pub use crate::types::_guardrail_assessment::GuardrailAssessment;
@@ -22,6 +24,8 @@ pub use crate::types::_guardrail_assessment::GuardrailAssessment;
 pub use crate::types::_guardrail_invocation_metrics::GuardrailInvocationMetrics;
 
 pub use crate::types::_guardrail_coverage::GuardrailCoverage;
+
+pub use crate::types::_guardrail_image_coverage::GuardrailImageCoverage;
 
 pub use crate::types::_guardrail_text_characters_coverage::GuardrailTextCharactersCoverage;
 
@@ -131,6 +135,12 @@ pub use crate::types::_system_content_block::SystemContentBlock;
 
 pub use crate::types::_guardrail_converse_content_block::GuardrailConverseContentBlock;
 
+pub use crate::types::_guardrail_converse_image_block::GuardrailConverseImageBlock;
+
+pub use crate::types::_guardrail_converse_image_source::GuardrailConverseImageSource;
+
+pub use crate::types::_guardrail_converse_image_format::GuardrailConverseImageFormat;
+
 pub use crate::types::_guardrail_converse_text_block::GuardrailConverseTextBlock;
 
 pub use crate::types::_guardrail_converse_content_qualifier::GuardrailConverseContentQualifier;
@@ -180,6 +190,12 @@ pub use crate::types::_guardrail_output_content::GuardrailOutputContent;
 pub use crate::types::_guardrail_action::GuardrailAction;
 
 pub use crate::types::_guardrail_content_block::GuardrailContentBlock;
+
+pub use crate::types::_guardrail_image_block::GuardrailImageBlock;
+
+pub use crate::types::_guardrail_image_source::GuardrailImageSource;
+
+pub use crate::types::_guardrail_image_format::GuardrailImageFormat;
 
 pub use crate::types::_guardrail_text_block::GuardrailTextBlock;
 
@@ -283,11 +299,25 @@ mod _guardrail_converse_content_block;
 
 mod _guardrail_converse_content_qualifier;
 
+mod _guardrail_converse_image_block;
+
+mod _guardrail_converse_image_format;
+
+mod _guardrail_converse_image_source;
+
 mod _guardrail_converse_text_block;
 
 mod _guardrail_coverage;
 
 mod _guardrail_custom_word;
+
+mod _guardrail_image_block;
+
+mod _guardrail_image_coverage;
+
+mod _guardrail_image_format;
+
+mod _guardrail_image_source;
 
 mod _guardrail_invocation_metrics;
 
@@ -352,6 +382,8 @@ mod _payload_part;
 mod _performance_config_latency;
 
 mod _performance_configuration;
+
+mod _prompt_router_trace;
 
 mod _prompt_variable_values;
 

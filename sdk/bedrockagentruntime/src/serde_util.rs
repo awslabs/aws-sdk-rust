@@ -80,7 +80,7 @@ pub(crate) fn knowledge_base_retrieval_result_correct_errors(
     if builder.content.is_none() {
         builder.content = {
             let builder = crate::types::builders::RetrievalResultContentBuilder::default();
-            crate::serde_util::retrieval_result_content_correct_errors(builder).build().ok()
+            Some(builder.build())
         }
     }
     builder
@@ -134,15 +134,6 @@ pub(crate) fn rerank_document_correct_errors(
 ) -> crate::types::builders::RerankDocumentBuilder {
     if builder.r#type.is_none() {
         builder.r#type = "no value was set".parse::<crate::types::RerankDocumentType>().ok()
-    }
-    builder
-}
-
-pub(crate) fn retrieval_result_content_correct_errors(
-    mut builder: crate::types::builders::RetrievalResultContentBuilder,
-) -> crate::types::builders::RetrievalResultContentBuilder {
-    if builder.text.is_none() {
-        builder.text = Some(Default::default())
     }
     builder
 }

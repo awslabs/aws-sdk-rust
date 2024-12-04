@@ -263,9 +263,13 @@ mod create_auto_ml_job_v2;
 
 mod create_cluster;
 
+mod create_cluster_scheduler_config;
+
 mod create_code_repository;
 
 mod create_compilation_job;
+
+mod create_compute_quota;
 
 mod create_context;
 
@@ -337,6 +341,10 @@ mod create_notebook_instance_lifecycle_config;
 
 mod create_optimization_job;
 
+mod create_partner_app;
+
+mod create_partner_app_presigned_url;
+
 mod create_pipeline;
 
 mod create_presigned_domain_url;
@@ -354,6 +362,8 @@ mod create_space;
 mod create_studio_lifecycle_config;
 
 mod create_training_job;
+
+mod create_training_plan;
 
 mod create_transform_job;
 
@@ -408,9 +418,13 @@ mod delete_association;
 
 mod delete_cluster;
 
+mod delete_cluster_scheduler_config;
+
 mod delete_code_repository;
 
 mod delete_compilation_job;
+
+mod delete_compute_quota;
 
 mod delete_context;
 
@@ -478,6 +492,8 @@ mod delete_notebook_instance_lifecycle_config;
 
 mod delete_optimization_job;
 
+mod delete_partner_app;
+
 mod delete_pipeline;
 
 mod delete_project;
@@ -518,9 +534,13 @@ mod describe_cluster;
 
 mod describe_cluster_node;
 
+mod describe_cluster_scheduler_config;
+
 mod describe_code_repository;
 
 mod describe_compilation_job;
+
+mod describe_compute_quota;
 
 mod describe_context;
 
@@ -596,6 +616,8 @@ mod describe_notebook_instance_lifecycle_config;
 
 mod describe_optimization_job;
 
+mod describe_partner_app;
+
 mod describe_pipeline;
 
 mod describe_pipeline_definition_for_execution;
@@ -613,6 +635,8 @@ mod describe_studio_lifecycle_config;
 mod describe_subscribed_workteam;
 
 mod describe_training_job;
+
+mod describe_training_plan;
 
 mod describe_transform_job;
 
@@ -666,11 +690,15 @@ mod list_candidates_for_auto_ml_job;
 
 mod list_cluster_nodes;
 
+mod list_cluster_scheduler_configs;
+
 mod list_clusters;
 
 mod list_code_repositories;
 
 mod list_compilation_jobs;
+
+mod list_compute_quotas;
 
 mod list_contexts;
 
@@ -760,6 +788,8 @@ mod list_notebook_instances;
 
 mod list_optimization_jobs;
 
+mod list_partner_apps;
+
 mod list_pipeline_execution_steps;
 
 mod list_pipeline_executions;
@@ -788,6 +818,8 @@ mod list_training_jobs;
 
 mod list_training_jobs_for_hyper_parameter_tuning_job;
 
+mod list_training_plans;
+
 mod list_transform_jobs;
 
 mod list_trial_components;
@@ -811,6 +843,8 @@ mod render_ui_template;
 mod retry_pipeline_execution;
 
 mod search;
+
+mod search_training_plan_offerings;
 
 mod send_pipeline_execution_step_failure;
 
@@ -868,9 +902,13 @@ mod update_artifact;
 
 mod update_cluster;
 
+mod update_cluster_scheduler_config;
+
 mod update_cluster_software;
 
 mod update_code_repository;
+
+mod update_compute_quota;
 
 mod update_context;
 
@@ -915,6 +953,8 @@ mod update_monitoring_schedule;
 mod update_notebook_instance;
 
 mod update_notebook_instance_lifecycle_config;
+
+mod update_partner_app;
 
 mod update_pipeline;
 

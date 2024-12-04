@@ -105,7 +105,59 @@ pub use crate::types::_knowledge_base_storage_type::KnowledgeBaseStorageType;
 
 pub use crate::types::_knowledge_base_configuration::KnowledgeBaseConfiguration;
 
+pub use crate::types::_sql_knowledge_base_configuration::SqlKnowledgeBaseConfiguration;
+
+pub use crate::types::_redshift_configuration::RedshiftConfiguration;
+
+pub use crate::types::_query_generation_configuration::QueryGenerationConfiguration;
+
+pub use crate::types::_query_generation_context::QueryGenerationContext;
+
+pub use crate::types::_curated_query::CuratedQuery;
+
+pub use crate::types::_query_generation_table::QueryGenerationTable;
+
+pub use crate::types::_query_generation_column::QueryGenerationColumn;
+
+pub use crate::types::_include_exclude::IncludeExclude;
+
+pub use crate::types::_redshift_query_engine_configuration::RedshiftQueryEngineConfiguration;
+
+pub use crate::types::_redshift_provisioned_configuration::RedshiftProvisionedConfiguration;
+
+pub use crate::types::_redshift_provisioned_auth_configuration::RedshiftProvisionedAuthConfiguration;
+
+pub use crate::types::_redshift_provisioned_auth_type::RedshiftProvisionedAuthType;
+
+pub use crate::types::_redshift_serverless_configuration::RedshiftServerlessConfiguration;
+
+pub use crate::types::_redshift_serverless_auth_configuration::RedshiftServerlessAuthConfiguration;
+
+pub use crate::types::_redshift_serverless_auth_type::RedshiftServerlessAuthType;
+
+pub use crate::types::_redshift_query_engine_type::RedshiftQueryEngineType;
+
+pub use crate::types::_redshift_query_engine_storage_configuration::RedshiftQueryEngineStorageConfiguration;
+
+pub use crate::types::_redshift_query_engine_redshift_storage_configuration::RedshiftQueryEngineRedshiftStorageConfiguration;
+
+pub use crate::types::_redshift_query_engine_aws_data_catalog_storage_configuration::RedshiftQueryEngineAwsDataCatalogStorageConfiguration;
+
+pub use crate::types::_redshift_query_engine_storage_type::RedshiftQueryEngineStorageType;
+
+pub use crate::types::_query_engine_type::QueryEngineType;
+
+pub use crate::types::_kendra_knowledge_base_configuration::KendraKnowledgeBaseConfiguration;
+
 pub use crate::types::_vector_knowledge_base_configuration::VectorKnowledgeBaseConfiguration;
+
+pub use crate::types::_supplemental_data_storage_configuration::SupplementalDataStorageConfiguration;
+
+pub use crate::types::_supplemental_data_storage_location::SupplementalDataStorageLocation;
+
+pub use crate::types::_s3_location::S3Location;
+
+pub use crate::types::_supplemental_data_storage_location_type::SupplementalDataStorageLocationType;
 
 pub use crate::types::_embedding_model_configuration::EmbeddingModelConfiguration;
 
@@ -128,8 +180,6 @@ pub use crate::types::_knowledge_base_document_detail::KnowledgeBaseDocumentDeta
 pub use crate::types::_document_identifier::DocumentIdentifier;
 
 pub use crate::types::_custom_document_identifier::CustomDocumentIdentifier;
-
-pub use crate::types::_s3_location::S3Location;
 
 pub use crate::types::_content_data_source_type::ContentDataSourceType;
 
@@ -324,6 +374,10 @@ pub use crate::types::_data_deletion_policy::DataDeletionPolicy;
 pub use crate::types::_vector_ingestion_configuration::VectorIngestionConfiguration;
 
 pub use crate::types::_parsing_configuration::ParsingConfiguration;
+
+pub use crate::types::_bedrock_data_automation_configuration::BedrockDataAutomationConfiguration;
+
+pub use crate::types::_parsing_modality::ParsingModality;
 
 pub use crate::types::_bedrock_foundation_model_configuration::BedrockFoundationModelConfiguration;
 
@@ -521,6 +575,8 @@ mod _api_schema;
 
 mod _auto_tool_choice;
 
+mod _bedrock_data_automation_configuration;
+
 mod _bedrock_embedding_model_configuration;
 
 mod _bedrock_foundation_model_configuration;
@@ -558,6 +614,8 @@ mod _crawl_filter_configuration;
 mod _crawl_filter_configuration_type;
 
 mod _creation_mode;
+
+mod _curated_query;
 
 mod _custom_content;
 
@@ -659,6 +717,8 @@ mod _hierarchical_chunking_configuration;
 
 mod _hierarchical_chunking_level_configuration;
 
+mod _include_exclude;
+
 mod _incompatible_connection_data_type_flow_validation_details;
 
 mod _inference_configuration;
@@ -690,6 +750,8 @@ mod _input_flow_node_configuration;
 mod _intermediate_storage;
 
 mod _iterator_flow_node_configuration;
+
+mod _kendra_knowledge_base_configuration;
 
 mod _knowledge_base;
 
@@ -771,6 +833,8 @@ mod _parameter_detail;
 
 mod _parsing_configuration;
 
+mod _parsing_modality;
+
 mod _parsing_prompt;
 
 mod _parsing_strategy;
@@ -819,6 +883,16 @@ mod _prompt_type;
 
 mod _prompt_variant;
 
+mod _query_engine_type;
+
+mod _query_generation_column;
+
+mod _query_generation_configuration;
+
+mod _query_generation_context;
+
+mod _query_generation_table;
+
 mod _rds_configuration;
 
 mod _rds_field_mapping;
@@ -826,6 +900,32 @@ mod _rds_field_mapping;
 mod _redis_enterprise_cloud_configuration;
 
 mod _redis_enterprise_cloud_field_mapping;
+
+mod _redshift_configuration;
+
+mod _redshift_provisioned_auth_configuration;
+
+mod _redshift_provisioned_auth_type;
+
+mod _redshift_provisioned_configuration;
+
+mod _redshift_query_engine_aws_data_catalog_storage_configuration;
+
+mod _redshift_query_engine_configuration;
+
+mod _redshift_query_engine_redshift_storage_configuration;
+
+mod _redshift_query_engine_storage_configuration;
+
+mod _redshift_query_engine_storage_type;
+
+mod _redshift_query_engine_type;
+
+mod _redshift_serverless_auth_configuration;
+
+mod _redshift_serverless_auth_type;
+
+mod _redshift_serverless_configuration;
 
 mod _relay_conversation_history;
 
@@ -873,6 +973,8 @@ mod _sort_order;
 
 mod _specific_tool_choice;
 
+mod _sql_knowledge_base_configuration;
+
 mod _step_type;
 
 mod _storage_configuration;
@@ -882,6 +984,12 @@ mod _storage_flow_node_configuration;
 mod _storage_flow_node_s3_configuration;
 
 mod _storage_flow_node_service_configuration;
+
+mod _supplemental_data_storage_configuration;
+
+mod _supplemental_data_storage_location;
+
+mod _supplemental_data_storage_location_type;
 
 mod _system_content_block;
 

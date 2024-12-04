@@ -15,6 +15,8 @@ pub use crate::types::error::_too_many_tags_exception::TooManyTagsException;
 
 pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededException;
 
+pub use crate::types::error::_service_unavailable_exception::ServiceUnavailableException;
+
 mod _access_denied_exception;
 
 mod _conflict_exception;
@@ -24,6 +26,8 @@ mod _internal_server_exception;
 mod _resource_not_found_exception;
 
 mod _service_quota_exceeded_exception;
+
+mod _service_unavailable_exception;
 
 mod _throttling_exception;
 

@@ -8,7 +8,7 @@
 /// <li>
 /// <p><a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_RetrieveAndGenerate.html#API_agent-runtime_RetrieveAndGenerate_ResponseSyntax">RetrieveAndGenerate response</a> – in the <code>location</code> field</p></li>
 /// <li>
-/// <p><a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html#API_agent-runtime_InvokeAgent_ResponseSyntax">InvokeAgent response</a> – in the <code>locatino</code> field</p></li>
+/// <p><a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html#API_agent-runtime_InvokeAgent_ResponseSyntax">InvokeAgent response</a> – in the <code>location</code> field</p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
@@ -27,6 +27,10 @@ pub struct RetrievalResultLocation {
     pub share_point_location: ::std::option::Option<crate::types::RetrievalResultSharePointLocation>,
     /// <p>Specifies the location of a document in a custom data source.</p>
     pub custom_document_location: ::std::option::Option<crate::types::RetrievalResultCustomDocumentLocation>,
+    /// <p>The location of a document in Amazon Kendra.</p>
+    pub kendra_document_location: ::std::option::Option<crate::types::RetrievalResultKendraDocumentLocation>,
+    /// <p>Specifies information about the SQL query used to retrieve the result.</p>
+    pub sql_location: ::std::option::Option<crate::types::RetrievalResultSqlLocation>,
 }
 impl RetrievalResultLocation {
     /// <p>The type of data source location.</p>
@@ -57,6 +61,14 @@ impl RetrievalResultLocation {
     pub fn custom_document_location(&self) -> ::std::option::Option<&crate::types::RetrievalResultCustomDocumentLocation> {
         self.custom_document_location.as_ref()
     }
+    /// <p>The location of a document in Amazon Kendra.</p>
+    pub fn kendra_document_location(&self) -> ::std::option::Option<&crate::types::RetrievalResultKendraDocumentLocation> {
+        self.kendra_document_location.as_ref()
+    }
+    /// <p>Specifies information about the SQL query used to retrieve the result.</p>
+    pub fn sql_location(&self) -> ::std::option::Option<&crate::types::RetrievalResultSqlLocation> {
+        self.sql_location.as_ref()
+    }
 }
 impl ::std::fmt::Debug for RetrievalResultLocation {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -68,6 +80,8 @@ impl ::std::fmt::Debug for RetrievalResultLocation {
         formatter.field("salesforce_location", &"*** Sensitive Data Redacted ***");
         formatter.field("share_point_location", &"*** Sensitive Data Redacted ***");
         formatter.field("custom_document_location", &"*** Sensitive Data Redacted ***");
+        formatter.field("kendra_document_location", &"*** Sensitive Data Redacted ***");
+        formatter.field("sql_location", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -89,6 +103,8 @@ pub struct RetrievalResultLocationBuilder {
     pub(crate) salesforce_location: ::std::option::Option<crate::types::RetrievalResultSalesforceLocation>,
     pub(crate) share_point_location: ::std::option::Option<crate::types::RetrievalResultSharePointLocation>,
     pub(crate) custom_document_location: ::std::option::Option<crate::types::RetrievalResultCustomDocumentLocation>,
+    pub(crate) kendra_document_location: ::std::option::Option<crate::types::RetrievalResultKendraDocumentLocation>,
+    pub(crate) sql_location: ::std::option::Option<crate::types::RetrievalResultSqlLocation>,
 }
 impl RetrievalResultLocationBuilder {
     /// <p>The type of data source location.</p>
@@ -190,6 +206,34 @@ impl RetrievalResultLocationBuilder {
     pub fn get_custom_document_location(&self) -> &::std::option::Option<crate::types::RetrievalResultCustomDocumentLocation> {
         &self.custom_document_location
     }
+    /// <p>The location of a document in Amazon Kendra.</p>
+    pub fn kendra_document_location(mut self, input: crate::types::RetrievalResultKendraDocumentLocation) -> Self {
+        self.kendra_document_location = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The location of a document in Amazon Kendra.</p>
+    pub fn set_kendra_document_location(mut self, input: ::std::option::Option<crate::types::RetrievalResultKendraDocumentLocation>) -> Self {
+        self.kendra_document_location = input;
+        self
+    }
+    /// <p>The location of a document in Amazon Kendra.</p>
+    pub fn get_kendra_document_location(&self) -> &::std::option::Option<crate::types::RetrievalResultKendraDocumentLocation> {
+        &self.kendra_document_location
+    }
+    /// <p>Specifies information about the SQL query used to retrieve the result.</p>
+    pub fn sql_location(mut self, input: crate::types::RetrievalResultSqlLocation) -> Self {
+        self.sql_location = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies information about the SQL query used to retrieve the result.</p>
+    pub fn set_sql_location(mut self, input: ::std::option::Option<crate::types::RetrievalResultSqlLocation>) -> Self {
+        self.sql_location = input;
+        self
+    }
+    /// <p>Specifies information about the SQL query used to retrieve the result.</p>
+    pub fn get_sql_location(&self) -> &::std::option::Option<crate::types::RetrievalResultSqlLocation> {
+        &self.sql_location
+    }
     /// Consumes the builder and constructs a [`RetrievalResultLocation`](crate::types::RetrievalResultLocation).
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::RetrievalResultLocationBuilder::type)
@@ -207,6 +251,8 @@ impl RetrievalResultLocationBuilder {
             salesforce_location: self.salesforce_location,
             share_point_location: self.share_point_location,
             custom_document_location: self.custom_document_location,
+            kendra_document_location: self.kendra_document_location,
+            sql_location: self.sql_location,
         })
     }
 }
@@ -220,6 +266,8 @@ impl ::std::fmt::Debug for RetrievalResultLocationBuilder {
         formatter.field("salesforce_location", &"*** Sensitive Data Redacted ***");
         formatter.field("share_point_location", &"*** Sensitive Data Redacted ***");
         formatter.field("custom_document_location", &"*** Sensitive Data Redacted ***");
+        formatter.field("kendra_document_location", &"*** Sensitive Data Redacted ***");
+        formatter.field("sql_location", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

@@ -19,11 +19,11 @@ pub struct DescribeFaqOutput {
     pub s3_path: ::std::option::Option<crate::types::S3Path>,
     /// <p>The status of the FAQ. It is ready to use when the status is <code>ACTIVE</code>.</p>
     pub status: ::std::option::Option<crate::types::FaqStatus>,
-    /// <p>The Amazon Resource Name (ARN) of the role that provides access to the S3 bucket containing the input files for the FAQ.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that provides access to the S3 bucket containing the FAQ file.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>If the <code>Status</code> field is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason why the FAQ failed.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
-    /// <p>The file format used by the input files for the FAQ.</p>
+    /// <p>The file format used for the FAQ file.</p>
     pub file_format: ::std::option::Option<crate::types::FaqFileFormat>,
     /// <p>The code for a language. This shows a supported language for the FAQ document. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
     pub language_code: ::std::option::Option<::std::string::String>,
@@ -62,7 +62,7 @@ impl DescribeFaqOutput {
     pub fn status(&self) -> ::std::option::Option<&crate::types::FaqStatus> {
         self.status.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the role that provides access to the S3 bucket containing the input files for the FAQ.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that provides access to the S3 bucket containing the FAQ file.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -70,7 +70,7 @@ impl DescribeFaqOutput {
     pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
-    /// <p>The file format used by the input files for the FAQ.</p>
+    /// <p>The file format used for the FAQ file.</p>
     pub fn file_format(&self) -> ::std::option::Option<&crate::types::FaqFileFormat> {
         self.file_format.as_ref()
     }
@@ -222,17 +222,17 @@ impl DescribeFaqOutputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::FaqStatus> {
         &self.status
     }
-    /// <p>The Amazon Resource Name (ARN) of the role that provides access to the S3 bucket containing the input files for the FAQ.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that provides access to the S3 bucket containing the FAQ file.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the role that provides access to the S3 bucket containing the input files for the FAQ.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that provides access to the S3 bucket containing the FAQ file.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the role that provides access to the S3 bucket containing the input files for the FAQ.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that provides access to the S3 bucket containing the FAQ file.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
@@ -250,17 +250,17 @@ impl DescribeFaqOutputBuilder {
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.error_message
     }
-    /// <p>The file format used by the input files for the FAQ.</p>
+    /// <p>The file format used for the FAQ file.</p>
     pub fn file_format(mut self, input: crate::types::FaqFileFormat) -> Self {
         self.file_format = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The file format used by the input files for the FAQ.</p>
+    /// <p>The file format used for the FAQ file.</p>
     pub fn set_file_format(mut self, input: ::std::option::Option<crate::types::FaqFileFormat>) -> Self {
         self.file_format = input;
         self
     }
-    /// <p>The file format used by the input files for the FAQ.</p>
+    /// <p>The file format used for the FAQ file.</p>
     pub fn get_file_format(&self) -> &::std::option::Option<crate::types::FaqFileFormat> {
         &self.file_format
     }

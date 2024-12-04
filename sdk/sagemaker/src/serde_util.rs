@@ -35,6 +35,18 @@ pub(crate) fn create_cluster_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_cluster_scheduler_config_output_output_correct_errors(
+    mut builder: crate::operation::create_cluster_scheduler_config::builders::CreateClusterSchedulerConfigOutputBuilder,
+) -> crate::operation::create_cluster_scheduler_config::builders::CreateClusterSchedulerConfigOutputBuilder {
+    if builder.cluster_scheduler_config_arn.is_none() {
+        builder.cluster_scheduler_config_arn = Some(Default::default())
+    }
+    if builder.cluster_scheduler_config_id.is_none() {
+        builder.cluster_scheduler_config_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_code_repository_output_output_correct_errors(
     mut builder: crate::operation::create_code_repository::builders::CreateCodeRepositoryOutputBuilder,
 ) -> crate::operation::create_code_repository::builders::CreateCodeRepositoryOutputBuilder {
@@ -49,6 +61,18 @@ pub(crate) fn create_compilation_job_output_output_correct_errors(
 ) -> crate::operation::create_compilation_job::builders::CreateCompilationJobOutputBuilder {
     if builder.compilation_job_arn.is_none() {
         builder.compilation_job_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn create_compute_quota_output_output_correct_errors(
+    mut builder: crate::operation::create_compute_quota::builders::CreateComputeQuotaOutputBuilder,
+) -> crate::operation::create_compute_quota::builders::CreateComputeQuotaOutputBuilder {
+    if builder.compute_quota_arn.is_none() {
+        builder.compute_quota_arn = Some(Default::default())
+    }
+    if builder.compute_quota_id.is_none() {
+        builder.compute_quota_id = Some(Default::default())
     }
     builder
 }
@@ -302,6 +326,15 @@ pub(crate) fn create_training_job_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_training_plan_output_output_correct_errors(
+    mut builder: crate::operation::create_training_plan::builders::CreateTrainingPlanOutputBuilder,
+) -> crate::operation::create_training_plan::builders::CreateTrainingPlanOutputBuilder {
+    if builder.training_plan_arn.is_none() {
+        builder.training_plan_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_transform_job_output_output_correct_errors(
     mut builder: crate::operation::create_transform_job::builders::CreateTransformJobOutputBuilder,
 ) -> crate::operation::create_transform_job::builders::CreateTransformJobOutputBuilder {
@@ -476,6 +509,30 @@ pub(crate) fn describe_cluster_node_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn describe_cluster_scheduler_config_output_output_correct_errors(
+    mut builder: crate::operation::describe_cluster_scheduler_config::builders::DescribeClusterSchedulerConfigOutputBuilder,
+) -> crate::operation::describe_cluster_scheduler_config::builders::DescribeClusterSchedulerConfigOutputBuilder {
+    if builder.cluster_scheduler_config_arn.is_none() {
+        builder.cluster_scheduler_config_arn = Some(Default::default())
+    }
+    if builder.cluster_scheduler_config_id.is_none() {
+        builder.cluster_scheduler_config_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.cluster_scheduler_config_version.is_none() {
+        builder.cluster_scheduler_config_version = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::SchedulerResourceStatus>().ok()
+    }
+    if builder.creation_time.is_none() {
+        builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn describe_code_repository_output_output_correct_errors(
     mut builder: crate::operation::describe_code_repository::builders::DescribeCodeRepositoryOutputBuilder,
 ) -> crate::operation::describe_code_repository::builders::DescribeCodeRepositoryOutputBuilder {
@@ -541,6 +598,36 @@ pub(crate) fn describe_compilation_job_output_output_correct_errors(
             let builder = crate::types::builders::OutputConfigBuilder::default();
             Some(crate::serde_util::output_config_correct_errors(builder).build())
         }
+    }
+    builder
+}
+
+pub(crate) fn describe_compute_quota_output_output_correct_errors(
+    mut builder: crate::operation::describe_compute_quota::builders::DescribeComputeQuotaOutputBuilder,
+) -> crate::operation::describe_compute_quota::builders::DescribeComputeQuotaOutputBuilder {
+    if builder.compute_quota_arn.is_none() {
+        builder.compute_quota_arn = Some(Default::default())
+    }
+    if builder.compute_quota_id.is_none() {
+        builder.compute_quota_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.compute_quota_version.is_none() {
+        builder.compute_quota_version = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::SchedulerResourceStatus>().ok()
+    }
+    if builder.compute_quota_target.is_none() {
+        builder.compute_quota_target = {
+            let builder = crate::types::builders::ComputeQuotaTargetBuilder::default();
+            Some(crate::serde_util::compute_quota_target_correct_errors(builder).build())
+        }
+    }
+    if builder.creation_time.is_none() {
+        builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -1469,6 +1556,21 @@ pub(crate) fn describe_training_job_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn describe_training_plan_output_output_correct_errors(
+    mut builder: crate::operation::describe_training_plan::builders::DescribeTrainingPlanOutputBuilder,
+) -> crate::operation::describe_training_plan::builders::DescribeTrainingPlanOutputBuilder {
+    if builder.training_plan_arn.is_none() {
+        builder.training_plan_arn = Some(Default::default())
+    }
+    if builder.training_plan_name.is_none() {
+        builder.training_plan_name = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::TrainingPlanStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn describe_transform_job_output_output_correct_errors(
     mut builder: crate::operation::describe_transform_job::builders::DescribeTransformJobOutputBuilder,
 ) -> crate::operation::describe_transform_job::builders::DescribeTransformJobOutputBuilder {
@@ -1952,6 +2054,15 @@ pub(crate) fn list_training_jobs_for_hyper_parameter_tuning_job_output_output_co
     builder
 }
 
+pub(crate) fn list_training_plans_output_output_correct_errors(
+    mut builder: crate::operation::list_training_plans::builders::ListTrainingPlansOutputBuilder,
+) -> crate::operation::list_training_plans::builders::ListTrainingPlansOutputBuilder {
+    if builder.training_plan_summaries.is_none() {
+        builder.training_plan_summaries = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_transform_jobs_output_output_correct_errors(
     mut builder: crate::operation::list_transform_jobs::builders::ListTransformJobsOutputBuilder,
 ) -> crate::operation::list_transform_jobs::builders::ListTransformJobsOutputBuilder {
@@ -2000,6 +2111,15 @@ pub(crate) fn render_ui_template_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn search_training_plan_offerings_output_output_correct_errors(
+    mut builder: crate::operation::search_training_plan_offerings::builders::SearchTrainingPlanOfferingsOutputBuilder,
+) -> crate::operation::search_training_plan_offerings::builders::SearchTrainingPlanOfferingsOutputBuilder {
+    if builder.training_plan_offerings.is_none() {
+        builder.training_plan_offerings = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn start_inference_experiment_output_output_correct_errors(
     mut builder: crate::operation::start_inference_experiment::builders::StartInferenceExperimentOutputBuilder,
 ) -> crate::operation::start_inference_experiment::builders::StartInferenceExperimentOutputBuilder {
@@ -2027,6 +2147,18 @@ pub(crate) fn update_cluster_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_cluster_scheduler_config_output_output_correct_errors(
+    mut builder: crate::operation::update_cluster_scheduler_config::builders::UpdateClusterSchedulerConfigOutputBuilder,
+) -> crate::operation::update_cluster_scheduler_config::builders::UpdateClusterSchedulerConfigOutputBuilder {
+    if builder.cluster_scheduler_config_arn.is_none() {
+        builder.cluster_scheduler_config_arn = Some(Default::default())
+    }
+    if builder.cluster_scheduler_config_version.is_none() {
+        builder.cluster_scheduler_config_version = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn update_cluster_software_output_output_correct_errors(
     mut builder: crate::operation::update_cluster_software::builders::UpdateClusterSoftwareOutputBuilder,
 ) -> crate::operation::update_cluster_software::builders::UpdateClusterSoftwareOutputBuilder {
@@ -2041,6 +2173,18 @@ pub(crate) fn update_code_repository_output_output_correct_errors(
 ) -> crate::operation::update_code_repository::builders::UpdateCodeRepositoryOutputBuilder {
     if builder.code_repository_arn.is_none() {
         builder.code_repository_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn update_compute_quota_output_output_correct_errors(
+    mut builder: crate::operation::update_compute_quota::builders::UpdateComputeQuotaOutputBuilder,
+) -> crate::operation::update_compute_quota::builders::UpdateComputeQuotaOutputBuilder {
+    if builder.compute_quota_arn.is_none() {
+        builder.compute_quota_arn = Some(Default::default())
+    }
+    if builder.compute_quota_version.is_none() {
+        builder.compute_quota_version = Some(Default::default())
     }
     builder
 }
@@ -2232,6 +2376,15 @@ pub(crate) fn input_config_correct_errors(mut builder: crate::types::builders::I
 pub(crate) fn output_config_correct_errors(mut builder: crate::types::builders::OutputConfigBuilder) -> crate::types::builders::OutputConfigBuilder {
     if builder.s3_output_location.is_none() {
         builder.s3_output_location = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn compute_quota_target_correct_errors(
+    mut builder: crate::types::builders::ComputeQuotaTargetBuilder,
+) -> crate::types::builders::ComputeQuotaTargetBuilder {
+    if builder.team_name.is_none() {
+        builder.team_name = Some(Default::default())
     }
     builder
 }
@@ -3513,6 +3666,27 @@ pub(crate) fn cluster_orchestrator_eks_config_correct_errors(
     builder
 }
 
+pub(crate) fn cluster_scheduler_config_summary_correct_errors(
+    mut builder: crate::types::builders::ClusterSchedulerConfigSummaryBuilder,
+) -> crate::types::builders::ClusterSchedulerConfigSummaryBuilder {
+    if builder.cluster_scheduler_config_arn.is_none() {
+        builder.cluster_scheduler_config_arn = Some(Default::default())
+    }
+    if builder.cluster_scheduler_config_id.is_none() {
+        builder.cluster_scheduler_config_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.creation_time.is_none() {
+        builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::SchedulerResourceStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn cluster_summary_correct_errors(
     mut builder: crate::types::builders::ClusterSummaryBuilder,
 ) -> crate::types::builders::ClusterSummaryBuilder {
@@ -3575,6 +3749,33 @@ pub(crate) fn compilation_job_summary_correct_errors(
     }
     if builder.compilation_job_status.is_none() {
         builder.compilation_job_status = "no value was set".parse::<crate::types::CompilationJobStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn compute_quota_summary_correct_errors(
+    mut builder: crate::types::builders::ComputeQuotaSummaryBuilder,
+) -> crate::types::builders::ComputeQuotaSummaryBuilder {
+    if builder.compute_quota_arn.is_none() {
+        builder.compute_quota_arn = Some(Default::default())
+    }
+    if builder.compute_quota_id.is_none() {
+        builder.compute_quota_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::SchedulerResourceStatus>().ok()
+    }
+    if builder.compute_quota_target.is_none() {
+        builder.compute_quota_target = {
+            let builder = crate::types::builders::ComputeQuotaTargetBuilder::default();
+            Some(crate::serde_util::compute_quota_target_correct_errors(builder).build())
+        }
+    }
+    if builder.creation_time.is_none() {
+        builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -4696,6 +4897,24 @@ pub(crate) fn rendering_error_correct_errors(
     builder
 }
 
+pub(crate) fn reserved_capacity_summary_correct_errors(
+    mut builder: crate::types::builders::ReservedCapacitySummaryBuilder,
+) -> crate::types::builders::ReservedCapacitySummaryBuilder {
+    if builder.reserved_capacity_arn.is_none() {
+        builder.reserved_capacity_arn = Some(Default::default())
+    }
+    if builder.instance_type.is_none() {
+        builder.instance_type = "no value was set".parse::<crate::types::ReservedCapacityInstanceType>().ok()
+    }
+    if builder.total_instance_count.is_none() {
+        builder.total_instance_count = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ReservedCapacityStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn resource_catalog_correct_errors(
     mut builder: crate::types::builders::ResourceCatalogBuilder,
 ) -> crate::types::builders::ResourceCatalogBuilder {
@@ -4710,6 +4929,15 @@ pub(crate) fn resource_catalog_correct_errors(
     }
     if builder.creation_time.is_none() {
         builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn resource_sharing_config_correct_errors(
+    mut builder: crate::types::builders::ResourceSharingConfigBuilder,
+) -> crate::types::builders::ResourceSharingConfigBuilder {
+    if builder.strategy.is_none() {
+        builder.strategy = "no value was set".parse::<crate::types::ResourceSharingStrategy>().ok()
     }
     builder
 }
@@ -4852,6 +5080,33 @@ pub(crate) fn training_job_summary_correct_errors(
     }
     if builder.training_job_status.is_none() {
         builder.training_job_status = "no value was set".parse::<crate::types::TrainingJobStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn training_plan_offering_correct_errors(
+    mut builder: crate::types::builders::TrainingPlanOfferingBuilder,
+) -> crate::types::builders::TrainingPlanOfferingBuilder {
+    if builder.training_plan_offering_id.is_none() {
+        builder.training_plan_offering_id = Some(Default::default())
+    }
+    if builder.target_resources.is_none() {
+        builder.target_resources = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn training_plan_summary_correct_errors(
+    mut builder: crate::types::builders::TrainingPlanSummaryBuilder,
+) -> crate::types::builders::TrainingPlanSummaryBuilder {
+    if builder.training_plan_arn.is_none() {
+        builder.training_plan_arn = Some(Default::default())
+    }
+    if builder.training_plan_name.is_none() {
+        builder.training_plan_name = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::TrainingPlanStatus>().ok()
     }
     builder
 }
@@ -5054,6 +5309,18 @@ pub(crate) fn clarify_shap_config_correct_errors(
             let builder = crate::types::builders::ClarifyShapBaselineConfigBuilder::default();
             Some(builder.build())
         }
+    }
+    builder
+}
+
+pub(crate) fn compute_quota_resource_config_correct_errors(
+    mut builder: crate::types::builders::ComputeQuotaResourceConfigBuilder,
+) -> crate::types::builders::ComputeQuotaResourceConfigBuilder {
+    if builder.instance_type.is_none() {
+        builder.instance_type = "no value was set".parse::<crate::types::ClusterInstanceType>().ok()
+    }
+    if builder.count.is_none() {
+        builder.count = Some(Default::default())
     }
     builder
 }
@@ -5339,6 +5606,18 @@ pub(crate) fn pending_production_variant_summary_correct_errors(
 ) -> crate::types::builders::PendingProductionVariantSummaryBuilder {
     if builder.variant_name.is_none() {
         builder.variant_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn priority_class_correct_errors(
+    mut builder: crate::types::builders::PriorityClassBuilder,
+) -> crate::types::builders::PriorityClassBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.weight.is_none() {
+        builder.weight = Some(Default::default())
     }
     builder
 }
@@ -5681,6 +5960,24 @@ pub(crate) fn efs_file_system_config_correct_errors(
     builder
 }
 
+pub(crate) fn f_sx_lustre_file_system_correct_errors(
+    mut builder: crate::types::builders::FSxLustreFileSystemBuilder,
+) -> crate::types::builders::FSxLustreFileSystemBuilder {
+    if builder.file_system_id.is_none() {
+        builder.file_system_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn f_sx_lustre_file_system_config_correct_errors(
+    mut builder: crate::types::builders::FSxLustreFileSystemConfigBuilder,
+) -> crate::types::builders::FSxLustreFileSystemConfigBuilder {
+    if builder.file_system_id.is_none() {
+        builder.file_system_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn file_system_data_source_correct_errors(
     mut builder: crate::types::builders::FileSystemDataSourceBuilder,
 ) -> crate::types::builders::FileSystemDataSourceBuilder {
@@ -5822,6 +6119,18 @@ pub(crate) fn redshift_dataset_definition_correct_errors(
     }
     if builder.output_format.is_none() {
         builder.output_format = "no value was set".parse::<crate::types::RedshiftResultFormat>().ok()
+    }
+    builder
+}
+
+pub(crate) fn reserved_capacity_offering_correct_errors(
+    mut builder: crate::types::builders::ReservedCapacityOfferingBuilder,
+) -> crate::types::builders::ReservedCapacityOfferingBuilder {
+    if builder.instance_type.is_none() {
+        builder.instance_type = "no value was set".parse::<crate::types::ReservedCapacityInstanceType>().ok()
+    }
+    if builder.instance_count.is_none() {
+        builder.instance_count = Some(Default::default())
     }
     builder
 }
