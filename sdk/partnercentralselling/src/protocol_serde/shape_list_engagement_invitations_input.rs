@@ -33,5 +33,32 @@ pub fn ser_list_engagement_invitations_input_input(
     if let Some(var_9) = &input.participant_type {
         object.key("ParticipantType").string(var_9.as_str());
     }
+    if let Some(var_10) = &input.status {
+        let mut array_11 = object.key("Status").start_array();
+        for item_12 in var_10 {
+            {
+                array_11.value().string(item_12.as_str());
+            }
+        }
+        array_11.finish();
+    }
+    if let Some(var_13) = &input.engagement_identifier {
+        let mut array_14 = object.key("EngagementIdentifier").start_array();
+        for item_15 in var_13 {
+            {
+                array_14.value().string(item_15.as_str());
+            }
+        }
+        array_14.finish();
+    }
+    if let Some(var_16) = &input.sender_aws_account_id {
+        let mut array_17 = object.key("SenderAwsAccountId").start_array();
+        for item_18 in var_16 {
+            {
+                array_17.value().string(item_18.as_str());
+            }
+        }
+        array_17.finish();
+    }
     Ok(())
 }

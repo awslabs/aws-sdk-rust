@@ -53,6 +53,8 @@ pub struct GetOpportunityOutput {
     pub software_revenue: ::std::option::Option<crate::types::SoftwareRevenue>,
     /// <p>Read-only, system generated <code>Opportunity</code> unique identifier.</p>
     pub id: ::std::string::String,
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the opportunity.</p>
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p><code>DateTime</code> when the opportunity was last modified.</p>
     pub last_modified_date: ::aws_smithy_types::DateTime,
     /// <p><code>DateTime</code> when the <code>Opportunity</code> was last created.</p>
@@ -140,6 +142,10 @@ impl GetOpportunityOutput {
         use std::ops::Deref;
         self.id.deref()
     }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the opportunity.</p>
+    pub fn arn(&self) -> ::std::option::Option<&str> {
+        self.arn.as_deref()
+    }
     /// <p><code>DateTime</code> when the opportunity was last modified.</p>
     pub fn last_modified_date(&self) -> &::aws_smithy_types::DateTime {
         &self.last_modified_date
@@ -189,6 +195,7 @@ pub struct GetOpportunityOutputBuilder {
     pub(crate) marketing: ::std::option::Option<crate::types::Marketing>,
     pub(crate) software_revenue: ::std::option::Option<crate::types::SoftwareRevenue>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) related_entity_identifiers: ::std::option::Option<crate::types::RelatedEntityIdentifiers>,
@@ -435,6 +442,20 @@ impl GetOpportunityOutputBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the opportunity.</p>
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the opportunity.</p>
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the opportunity.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p><code>DateTime</code> when the opportunity was last modified.</p>
     /// This field is required.
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -553,6 +574,7 @@ impl GetOpportunityOutputBuilder {
                     "id was not specified but it is required when building GetOpportunityOutput",
                 )
             })?,
+            arn: self.arn,
             last_modified_date: self.last_modified_date.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_modified_date",

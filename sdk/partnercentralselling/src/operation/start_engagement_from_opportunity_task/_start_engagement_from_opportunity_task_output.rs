@@ -17,6 +17,12 @@ pub struct StartEngagementFromOpportunityTaskOutput {
     pub reason_code: ::std::option::Option<crate::types::ReasonCode>,
     /// <p>Returns the original opportunity identifier passed in the request, which is the unique identifier for the opportunity created in the partner’s system.</p>
     pub opportunity_id: ::std::option::Option<::std::string::String>,
+    /// <p>The identifier of the resource snapshot job created to add the opportunity resource snapshot to the Engagement. Only populated if TaskStatus is COMPLETE.</p>
+    pub resource_snapshot_job_id: ::std::option::Option<::std::string::String>,
+    /// <p>The identifier of the newly created engagement. Only populated if TaskStatus is COMPLETE.</p>
+    pub engagement_id: ::std::option::Option<::std::string::String>,
+    /// <p>The identifier of the new engagement invitation. Only populated if TaskStatus is COMPLETE.</p>
+    pub engagement_invitation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StartEngagementFromOpportunityTaskOutput {
@@ -48,6 +54,18 @@ impl StartEngagementFromOpportunityTaskOutput {
     pub fn opportunity_id(&self) -> ::std::option::Option<&str> {
         self.opportunity_id.as_deref()
     }
+    /// <p>The identifier of the resource snapshot job created to add the opportunity resource snapshot to the Engagement. Only populated if TaskStatus is COMPLETE.</p>
+    pub fn resource_snapshot_job_id(&self) -> ::std::option::Option<&str> {
+        self.resource_snapshot_job_id.as_deref()
+    }
+    /// <p>The identifier of the newly created engagement. Only populated if TaskStatus is COMPLETE.</p>
+    pub fn engagement_id(&self) -> ::std::option::Option<&str> {
+        self.engagement_id.as_deref()
+    }
+    /// <p>The identifier of the new engagement invitation. Only populated if TaskStatus is COMPLETE.</p>
+    pub fn engagement_invitation_id(&self) -> ::std::option::Option<&str> {
+        self.engagement_invitation_id.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for StartEngagementFromOpportunityTaskOutput {
     fn request_id(&self) -> Option<&str> {
@@ -72,6 +90,9 @@ pub struct StartEngagementFromOpportunityTaskOutputBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) reason_code: ::std::option::Option<crate::types::ReasonCode>,
     pub(crate) opportunity_id: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_snapshot_job_id: ::std::option::Option<::std::string::String>,
+    pub(crate) engagement_id: ::std::option::Option<::std::string::String>,
+    pub(crate) engagement_invitation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StartEngagementFromOpportunityTaskOutputBuilder {
@@ -173,6 +194,48 @@ impl StartEngagementFromOpportunityTaskOutputBuilder {
     pub fn get_opportunity_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.opportunity_id
     }
+    /// <p>The identifier of the resource snapshot job created to add the opportunity resource snapshot to the Engagement. Only populated if TaskStatus is COMPLETE.</p>
+    pub fn resource_snapshot_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_snapshot_job_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the resource snapshot job created to add the opportunity resource snapshot to the Engagement. Only populated if TaskStatus is COMPLETE.</p>
+    pub fn set_resource_snapshot_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_snapshot_job_id = input;
+        self
+    }
+    /// <p>The identifier of the resource snapshot job created to add the opportunity resource snapshot to the Engagement. Only populated if TaskStatus is COMPLETE.</p>
+    pub fn get_resource_snapshot_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_snapshot_job_id
+    }
+    /// <p>The identifier of the newly created engagement. Only populated if TaskStatus is COMPLETE.</p>
+    pub fn engagement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.engagement_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the newly created engagement. Only populated if TaskStatus is COMPLETE.</p>
+    pub fn set_engagement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.engagement_id = input;
+        self
+    }
+    /// <p>The identifier of the newly created engagement. Only populated if TaskStatus is COMPLETE.</p>
+    pub fn get_engagement_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engagement_id
+    }
+    /// <p>The identifier of the new engagement invitation. Only populated if TaskStatus is COMPLETE.</p>
+    pub fn engagement_invitation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.engagement_invitation_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the new engagement invitation. Only populated if TaskStatus is COMPLETE.</p>
+    pub fn set_engagement_invitation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.engagement_invitation_id = input;
+        self
+    }
+    /// <p>The identifier of the new engagement invitation. Only populated if TaskStatus is COMPLETE.</p>
+    pub fn get_engagement_invitation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engagement_invitation_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -192,6 +255,9 @@ impl StartEngagementFromOpportunityTaskOutputBuilder {
             message: self.message,
             reason_code: self.reason_code,
             opportunity_id: self.opportunity_id,
+            resource_snapshot_job_id: self.resource_snapshot_job_id,
+            engagement_id: self.engagement_id,
+            engagement_invitation_id: self.engagement_invitation_id,
             _request_id: self._request_id,
         }
     }

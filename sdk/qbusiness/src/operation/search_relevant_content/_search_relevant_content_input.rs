@@ -5,10 +5,6 @@
 pub struct SearchRelevantContentInput {
     /// <p>The unique identifier of the Q Business application to search.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the user performing the search. Used for access control.</p>
-    pub user_id: ::std::option::Option<::std::string::String>,
-    /// <p>The groups the user belongs to. Used for access control.</p>
-    pub user_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The text to search for.</p>
     pub query_text: ::std::option::Option<::std::string::String>,
     /// <p>The source of content to search in.</p>
@@ -24,16 +20,6 @@ impl SearchRelevantContentInput {
     /// <p>The unique identifier of the Q Business application to search.</p>
     pub fn application_id(&self) -> ::std::option::Option<&str> {
         self.application_id.as_deref()
-    }
-    /// <p>The ID of the user performing the search. Used for access control.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
-        self.user_id.as_deref()
-    }
-    /// <p>The groups the user belongs to. Used for access control.</p>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_groups.is_none()`.
-    pub fn user_groups(&self) -> &[::std::string::String] {
-        self.user_groups.as_deref().unwrap_or_default()
     }
     /// <p>The text to search for.</p>
     pub fn query_text(&self) -> ::std::option::Option<&str> {
@@ -68,8 +54,6 @@ impl SearchRelevantContentInput {
 #[non_exhaustive]
 pub struct SearchRelevantContentInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
-    pub(crate) user_id: ::std::option::Option<::std::string::String>,
-    pub(crate) user_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) query_text: ::std::option::Option<::std::string::String>,
     pub(crate) content_source: ::std::option::Option<crate::types::ContentSource>,
     pub(crate) attribute_filter: ::std::option::Option<crate::types::AttributeFilter>,
@@ -91,40 +75,6 @@ impl SearchRelevantContentInputBuilder {
     /// <p>The unique identifier of the Q Business application to search.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_id
-    }
-    /// <p>The ID of the user performing the search. Used for access control.</p>
-    pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.user_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The ID of the user performing the search. Used for access control.</p>
-    pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
-    }
-    /// <p>The ID of the user performing the search. Used for access control.</p>
-    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.user_id
-    }
-    /// Appends an item to `user_groups`.
-    ///
-    /// To override the contents of this collection use [`set_user_groups`](Self::set_user_groups).
-    ///
-    /// <p>The groups the user belongs to. Used for access control.</p>
-    pub fn user_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.user_groups.unwrap_or_default();
-        v.push(input.into());
-        self.user_groups = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>The groups the user belongs to. Used for access control.</p>
-    pub fn set_user_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.user_groups = input;
-        self
-    }
-    /// <p>The groups the user belongs to. Used for access control.</p>
-    pub fn get_user_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.user_groups
     }
     /// <p>The text to search for.</p>
     /// This field is required.
@@ -205,8 +155,6 @@ impl SearchRelevantContentInputBuilder {
     {
         ::std::result::Result::Ok(crate::operation::search_relevant_content::SearchRelevantContentInput {
             application_id: self.application_id,
-            user_id: self.user_id,
-            user_groups: self.user_groups,
             query_text: self.query_text,
             content_source: self.content_source,
             attribute_filter: self.attribute_filter,

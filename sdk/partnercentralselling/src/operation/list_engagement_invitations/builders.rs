@@ -203,4 +203,61 @@ impl ListEngagementInvitationsFluentBuilder {
     pub fn get_participant_type(&self) -> &::std::option::Option<crate::types::ParticipantType> {
         self.inner.get_participant_type()
     }
+    ///
+    /// Appends an item to `Status`.
+    ///
+    /// To override the contents of this collection use [`set_status`](Self::set_status).
+    ///
+    /// <p>Status values to filter the invitations.</p>
+    pub fn status(mut self, input: crate::types::InvitationStatus) -> Self {
+        self.inner = self.inner.status(input);
+        self
+    }
+    /// <p>Status values to filter the invitations.</p>
+    pub fn set_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InvitationStatus>>) -> Self {
+        self.inner = self.inner.set_status(input);
+        self
+    }
+    /// <p>Status values to filter the invitations.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InvitationStatus>> {
+        self.inner.get_status()
+    }
+    ///
+    /// Appends an item to `EngagementIdentifier`.
+    ///
+    /// To override the contents of this collection use [`set_engagement_identifier`](Self::set_engagement_identifier).
+    ///
+    /// <p>Retrieves a list of engagement invitation summaries based on specified filters. The ListEngagementInvitations operation allows you to view all invitations that you have sent or received. You must specify the ParticipantType to filter invitations where you are either the SENDER or the RECEIVER. Invitations will automatically expire if not accepted within 15 days.</p>
+    pub fn engagement_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.engagement_identifier(input.into());
+        self
+    }
+    /// <p>Retrieves a list of engagement invitation summaries based on specified filters. The ListEngagementInvitations operation allows you to view all invitations that you have sent or received. You must specify the ParticipantType to filter invitations where you are either the SENDER or the RECEIVER. Invitations will automatically expire if not accepted within 15 days.</p>
+    pub fn set_engagement_identifier(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_engagement_identifier(input);
+        self
+    }
+    /// <p>Retrieves a list of engagement invitation summaries based on specified filters. The ListEngagementInvitations operation allows you to view all invitations that you have sent or received. You must specify the ParticipantType to filter invitations where you are either the SENDER or the RECEIVER. Invitations will automatically expire if not accepted within 15 days.</p>
+    pub fn get_engagement_identifier(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_engagement_identifier()
+    }
+    ///
+    /// Appends an item to `SenderAwsAccountId`.
+    ///
+    /// To override the contents of this collection use [`set_sender_aws_account_id`](Self::set_sender_aws_account_id).
+    ///
+    /// <p>List of sender AWS account IDs to filter the invitations.</p>
+    pub fn sender_aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.sender_aws_account_id(input.into());
+        self
+    }
+    /// <p>List of sender AWS account IDs to filter the invitations.</p>
+    pub fn set_sender_aws_account_id(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_sender_aws_account_id(input);
+        self
+    }
+    /// <p>List of sender AWS account IDs to filter the invitations.</p>
+    pub fn get_sender_aws_account_id(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_sender_aws_account_id()
+    }
 }

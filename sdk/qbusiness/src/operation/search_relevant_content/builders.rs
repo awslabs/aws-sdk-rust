@@ -22,7 +22,7 @@ impl crate::operation::search_relevant_content::builders::SearchRelevantContentI
 }
 /// Fluent builder constructing a request to `SearchRelevantContent`.
 ///
-/// <p>Searches for relevant content in a Q Business application based on a query. This operation takes a search query text, the Q Business application identifier, and optional filters (such as user ID, user groups, content source, and maximum results) as input. It returns a list of relevant content items, where each item includes the content text, the unique document identifier, the document title, the document URI, any relevant document attributes, and score attributes indicating the confidence level of the relevance.</p>
+/// <p>Searches for relevant content in a Q Business application based on a query. This operation takes a search query text, the Q Business application identifier, and optional filters (such as content source and maximum results) as input. It returns a list of relevant content items, where each item includes the content text, the unique document identifier, the document title, the document URI, any relevant document attributes, and score attributes indicating the confidence level of the relevance.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchRelevantContentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -127,39 +127,6 @@ impl SearchRelevantContentFluentBuilder {
     /// <p>The unique identifier of the Q Business application to search.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
-    }
-    /// <p>The ID of the user performing the search. Used for access control.</p>
-    pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.user_id(input.into());
-        self
-    }
-    /// <p>The ID of the user performing the search. Used for access control.</p>
-    pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_user_id(input);
-        self
-    }
-    /// <p>The ID of the user performing the search. Used for access control.</p>
-    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_user_id()
-    }
-    ///
-    /// Appends an item to `userGroups`.
-    ///
-    /// To override the contents of this collection use [`set_user_groups`](Self::set_user_groups).
-    ///
-    /// <p>The groups the user belongs to. Used for access control.</p>
-    pub fn user_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.user_groups(input.into());
-        self
-    }
-    /// <p>The groups the user belongs to. Used for access control.</p>
-    pub fn set_user_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inner = self.inner.set_user_groups(input);
-        self
-    }
-    /// <p>The groups the user belongs to. Used for access control.</p>
-    pub fn get_user_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        self.inner.get_user_groups()
     }
     /// <p>The text to search for.</p>
     pub fn query_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

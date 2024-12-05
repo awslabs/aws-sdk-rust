@@ -8,6 +8,8 @@ pub struct SolutionBase {
     pub catalog: ::std::string::String,
     /// <p>Enables the association of solutions (offerings) to opportunities.</p>
     pub id: ::std::string::String,
+    /// <p>The SolutionBase structure provides essential information about a solution.</p>
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the solution name.</p>
     pub name: ::std::string::String,
     /// <p>Specifies the solution's current status, which indicates its state in the system. Valid values: <code>Active</code> | <code>Inactive</code> | <code>Draft</code>. The status helps partners and Amazon Web Services track the solution's lifecycle and availability. Filter for <code>Active</code> solutions for association to an opportunity.</p>
@@ -27,6 +29,10 @@ impl SolutionBase {
     pub fn id(&self) -> &str {
         use std::ops::Deref;
         self.id.deref()
+    }
+    /// <p>The SolutionBase structure provides essential information about a solution.</p>
+    pub fn arn(&self) -> ::std::option::Option<&str> {
+        self.arn.as_deref()
     }
     /// <p>Specifies the solution name.</p>
     pub fn name(&self) -> &str {
@@ -60,6 +66,7 @@ impl SolutionBase {
 pub struct SolutionBaseBuilder {
     pub(crate) catalog: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::SolutionStatus>,
     pub(crate) category: ::std::option::Option<::std::string::String>,
@@ -95,6 +102,20 @@ impl SolutionBaseBuilder {
     /// <p>Enables the association of solutions (offerings) to opportunities.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
+    }
+    /// <p>The SolutionBase structure provides essential information about a solution.</p>
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The SolutionBase structure provides essential information about a solution.</p>
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.arn = input;
+        self
+    }
+    /// <p>The SolutionBase structure provides essential information about a solution.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>Specifies the solution name.</p>
     /// This field is required.
@@ -178,6 +199,7 @@ impl SolutionBaseBuilder {
                     "id was not specified but it is required when building SolutionBase",
                 )
             })?,
+            arn: self.arn,
             name: self.name.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",

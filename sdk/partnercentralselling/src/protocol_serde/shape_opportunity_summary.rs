@@ -28,6 +28,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "Arn" => {
+                            builder = builder.set_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "PartnerOpportunityIdentifier" => {
                             builder = builder.set_partner_opportunity_identifier(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

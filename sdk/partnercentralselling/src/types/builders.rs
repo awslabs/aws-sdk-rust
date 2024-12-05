@@ -5,13 +5,35 @@ pub use crate::types::_solution_base::SolutionBaseBuilder;
 
 pub use crate::types::_solution_sort::SolutionSortBuilder;
 
-pub use crate::types::_aws_opportunity_project::AwsOpportunityProjectBuilder;
+pub use crate::types::_resource_snapshot_job_summary::ResourceSnapshotJobSummaryBuilder;
+
+pub use crate::types::_sort_object::SortObjectBuilder;
+
+pub use crate::types::_resource_snapshot_summary::ResourceSnapshotSummaryBuilder;
+
+pub use crate::types::_engagement_resource_association_summary::EngagementResourceAssociationSummaryBuilder;
+
+pub use crate::types::_opportunity_summary_view::OpportunitySummaryViewBuilder;
+
+pub use crate::types::_related_entity_identifiers::RelatedEntityIdentifiersBuilder;
+
+pub use crate::types::_project_view::ProjectViewBuilder;
 
 pub use crate::types::_expected_customer_spend::ExpectedCustomerSpendBuilder;
 
-pub use crate::types::_aws_opportunity_customer::AwsOpportunityCustomerBuilder;
+pub use crate::types::_customer::CustomerBuilder;
 
 pub use crate::types::_contact::ContactBuilder;
+
+pub use crate::types::_account::AccountBuilder;
+
+pub use crate::types::_address::AddressBuilder;
+
+pub use crate::types::_life_cycle_for_view::LifeCycleForViewBuilder;
+
+pub use crate::types::_aws_opportunity_project::AwsOpportunityProjectBuilder;
+
+pub use crate::types::_aws_opportunity_customer::AwsOpportunityCustomerBuilder;
 
 pub use crate::types::_aws_opportunity_related_entities::AwsOpportunityRelatedEntitiesBuilder;
 
@@ -37,14 +59,6 @@ pub use crate::types::_marketing::MarketingBuilder;
 
 pub use crate::types::_project::ProjectBuilder;
 
-pub use crate::types::_customer::CustomerBuilder;
-
-pub use crate::types::_account::AccountBuilder;
-
-pub use crate::types::_address::AddressBuilder;
-
-pub use crate::types::_related_entity_identifiers::RelatedEntityIdentifiersBuilder;
-
 pub use crate::types::_opportunity_summary::OpportunitySummaryBuilder;
 
 pub use crate::types::_project_summary::ProjectSummaryBuilder;
@@ -61,6 +75,8 @@ pub use crate::types::_last_modified_date::LastModifiedDateBuilder;
 
 pub use crate::types::_opportunity_sort::OpportunitySortBuilder;
 
+pub use crate::types::_engagement_member_summary::EngagementMemberSummaryBuilder;
+
 pub use crate::types::_opportunity_invitation_payload::OpportunityInvitationPayloadBuilder;
 
 pub use crate::types::_project_details::ProjectDetailsBuilder;
@@ -71,8 +87,28 @@ pub use crate::types::_sender_contact::SenderContactBuilder;
 
 pub use crate::types::_account_receiver::AccountReceiverBuilder;
 
+pub use crate::types::_invitation::InvitationBuilder;
+
 pub use crate::types::_engagement_invitation_summary::EngagementInvitationSummaryBuilder;
 
 pub use crate::types::_opportunity_engagement_invitation_sort::OpportunityEngagementInvitationSortBuilder;
 
 pub use crate::types::_aws_submission::AwsSubmissionBuilder;
+
+pub use crate::types::_list_engagement_from_opportunity_task_summary::ListEngagementFromOpportunityTaskSummaryBuilder;
+
+pub use crate::types::_list_tasks_sort_base::ListTasksSortBaseBuilder;
+
+pub use crate::types::_list_engagement_by_accepting_invitation_task_summary::ListEngagementByAcceptingInvitationTaskSummaryBuilder;
+
+pub use crate::types::_engagement_member::EngagementMemberBuilder;
+
+pub use crate::types::_engagement_context_details::EngagementContextDetailsBuilder;
+
+pub use crate::types::_customer_projects_context::CustomerProjectsContextBuilder;
+
+pub use crate::types::_engagement_customer_project_details::EngagementCustomerProjectDetailsBuilder;
+
+pub use crate::types::_engagement_summary::EngagementSummaryBuilder;
+
+pub use crate::types::_engagement_sort::EngagementSortBuilder;

@@ -10,6 +10,8 @@ pub struct EngagementInvitationSummary {
     pub payload_type: ::std::option::Option<crate::types::EngagementInvitationPayloadType>,
     /// <p>Represents the unique identifier of the Engagement Invitation. This identifier is used to track the invitation and to manage responses like acceptance or rejection.</p>
     pub id: ::std::string::String,
+    /// <p>The identifier of the Engagement associated with this invitation. This links the invitation to its parent Engagement.</p>
+    pub engagement_id: ::std::option::Option<::std::string::String>,
     /// <p>Provides a short title or description of the Engagement Invitation. This title helps partners quickly identify and differentiate between multiple engagement opportunities.</p>
     pub engagement_title: ::std::option::Option<::std::string::String>,
     /// <p>Represents the current status of the Engagement Invitation, such as <code>Pending</code>, <code>Accepted</code>, or <code>Rejected</code>. The status helps track the progress and response to the invitation.</p>
@@ -26,6 +28,8 @@ pub struct EngagementInvitationSummary {
     pub receiver: ::std::option::Option<crate::types::Receiver>,
     /// <p>Specifies the catalog in which the Engagement Invitation resides. This can be either the <code>AWS</code> or <code>Sandbox</code> catalog, indicating whether the opportunity is live or being tested.</p>
     pub catalog: ::std::string::String,
+    /// <p>Identifies the role of the caller in the engagement invitation.</p>
+    pub participant_type: ::std::option::Option<crate::types::ParticipantType>,
 }
 impl EngagementInvitationSummary {
     /// <p>The Amazon Resource Name (ARN) of the Engagement Invitation. The ARN is a unique identifier that allows partners to reference the invitation in their system and manage its lifecycle.</p>
@@ -40,6 +44,10 @@ impl EngagementInvitationSummary {
     pub fn id(&self) -> &str {
         use std::ops::Deref;
         self.id.deref()
+    }
+    /// <p>The identifier of the Engagement associated with this invitation. This links the invitation to its parent Engagement.</p>
+    pub fn engagement_id(&self) -> ::std::option::Option<&str> {
+        self.engagement_id.as_deref()
     }
     /// <p>Provides a short title or description of the Engagement Invitation. This title helps partners quickly identify and differentiate between multiple engagement opportunities.</p>
     pub fn engagement_title(&self) -> ::std::option::Option<&str> {
@@ -74,6 +82,10 @@ impl EngagementInvitationSummary {
         use std::ops::Deref;
         self.catalog.deref()
     }
+    /// <p>Identifies the role of the caller in the engagement invitation.</p>
+    pub fn participant_type(&self) -> ::std::option::Option<&crate::types::ParticipantType> {
+        self.participant_type.as_ref()
+    }
 }
 impl ::std::fmt::Debug for EngagementInvitationSummary {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -81,6 +93,7 @@ impl ::std::fmt::Debug for EngagementInvitationSummary {
         formatter.field("arn", &self.arn);
         formatter.field("payload_type", &self.payload_type);
         formatter.field("id", &self.id);
+        formatter.field("engagement_id", &self.engagement_id);
         formatter.field("engagement_title", &self.engagement_title);
         formatter.field("status", &self.status);
         formatter.field("invitation_date", &self.invitation_date);
@@ -89,6 +102,7 @@ impl ::std::fmt::Debug for EngagementInvitationSummary {
         formatter.field("sender_company_name", &self.sender_company_name);
         formatter.field("receiver", &self.receiver);
         formatter.field("catalog", &self.catalog);
+        formatter.field("participant_type", &self.participant_type);
         formatter.finish()
     }
 }
@@ -106,6 +120,7 @@ pub struct EngagementInvitationSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) payload_type: ::std::option::Option<crate::types::EngagementInvitationPayloadType>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) engagement_id: ::std::option::Option<::std::string::String>,
     pub(crate) engagement_title: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::InvitationStatus>,
     pub(crate) invitation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -114,6 +129,7 @@ pub struct EngagementInvitationSummaryBuilder {
     pub(crate) sender_company_name: ::std::option::Option<::std::string::String>,
     pub(crate) receiver: ::std::option::Option<crate::types::Receiver>,
     pub(crate) catalog: ::std::option::Option<::std::string::String>,
+    pub(crate) participant_type: ::std::option::Option<crate::types::ParticipantType>,
 }
 impl EngagementInvitationSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Engagement Invitation. The ARN is a unique identifier that allows partners to reference the invitation in their system and manage its lifecycle.</p>
@@ -158,6 +174,20 @@ impl EngagementInvitationSummaryBuilder {
     /// <p>Represents the unique identifier of the Engagement Invitation. This identifier is used to track the invitation and to manage responses like acceptance or rejection.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
+    }
+    /// <p>The identifier of the Engagement associated with this invitation. This links the invitation to its parent Engagement.</p>
+    pub fn engagement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.engagement_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the Engagement associated with this invitation. This links the invitation to its parent Engagement.</p>
+    pub fn set_engagement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.engagement_id = input;
+        self
+    }
+    /// <p>The identifier of the Engagement associated with this invitation. This links the invitation to its parent Engagement.</p>
+    pub fn get_engagement_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engagement_id
     }
     /// <p>Provides a short title or description of the Engagement Invitation. This title helps partners quickly identify and differentiate between multiple engagement opportunities.</p>
     pub fn engagement_title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -272,6 +302,20 @@ impl EngagementInvitationSummaryBuilder {
     pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
         &self.catalog
     }
+    /// <p>Identifies the role of the caller in the engagement invitation.</p>
+    pub fn participant_type(mut self, input: crate::types::ParticipantType) -> Self {
+        self.participant_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Identifies the role of the caller in the engagement invitation.</p>
+    pub fn set_participant_type(mut self, input: ::std::option::Option<crate::types::ParticipantType>) -> Self {
+        self.participant_type = input;
+        self
+    }
+    /// <p>Identifies the role of the caller in the engagement invitation.</p>
+    pub fn get_participant_type(&self) -> &::std::option::Option<crate::types::ParticipantType> {
+        &self.participant_type
+    }
     /// Consumes the builder and constructs a [`EngagementInvitationSummary`](crate::types::EngagementInvitationSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::EngagementInvitationSummaryBuilder::id)
@@ -286,6 +330,7 @@ impl EngagementInvitationSummaryBuilder {
                     "id was not specified but it is required when building EngagementInvitationSummary",
                 )
             })?,
+            engagement_id: self.engagement_id,
             engagement_title: self.engagement_title,
             status: self.status,
             invitation_date: self.invitation_date,
@@ -299,6 +344,7 @@ impl EngagementInvitationSummaryBuilder {
                     "catalog was not specified but it is required when building EngagementInvitationSummary",
                 )
             })?,
+            participant_type: self.participant_type,
         })
     }
 }
@@ -308,6 +354,7 @@ impl ::std::fmt::Debug for EngagementInvitationSummaryBuilder {
         formatter.field("arn", &self.arn);
         formatter.field("payload_type", &self.payload_type);
         formatter.field("id", &self.id);
+        formatter.field("engagement_id", &self.engagement_id);
         formatter.field("engagement_title", &self.engagement_title);
         formatter.field("status", &self.status);
         formatter.field("invitation_date", &self.invitation_date);
@@ -316,6 +363,7 @@ impl ::std::fmt::Debug for EngagementInvitationSummaryBuilder {
         formatter.field("sender_company_name", &self.sender_company_name);
         formatter.field("receiver", &self.receiver);
         formatter.field("catalog", &self.catalog);
+        formatter.field("participant_type", &self.participant_type);
         formatter.finish()
     }
 }

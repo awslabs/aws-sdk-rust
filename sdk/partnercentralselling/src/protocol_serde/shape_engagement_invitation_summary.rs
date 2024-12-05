@@ -35,6 +35,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "EngagementId" => {
+                            builder = builder.set_engagement_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "EngagementTitle" => {
                             builder = builder.set_engagement_title(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -82,6 +89,13 @@ where
                             builder = builder.set_catalog(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "ParticipantType" => {
+                            builder = builder.set_participant_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ParticipantType::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

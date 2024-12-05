@@ -61,3 +61,22 @@ where
         )),
     }
 }
+
+pub fn ser_engagement_customer(
+    object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::types::EngagementCustomer,
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("Industry").string(input.industry.as_str());
+    }
+    {
+        object.key("CompanyName").string(input.company_name.as_str());
+    }
+    {
+        object.key("WebsiteUrl").string(input.website_url.as_str());
+    }
+    {
+        object.key("CountryCode").string(input.country_code.as_str());
+    }
+    Ok(())
+}

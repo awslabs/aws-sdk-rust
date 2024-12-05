@@ -17,6 +17,8 @@ pub struct StartEngagementByAcceptingInvitationTaskOutput {
     pub reason_code: ::std::option::Option<crate::types::ReasonCode>,
     /// <p>Returns the original opportunity identifier passed in the request. This is the unique identifier for the opportunity.</p>
     pub opportunity_id: ::std::option::Option<::std::string::String>,
+    /// <p>The identifier of the resource snapshot job created as part of this task.</p>
+    pub resource_snapshot_job_id: ::std::option::Option<::std::string::String>,
     /// <p>Returns the identifier of the engagement invitation that was accepted and used to create the opportunity.</p>
     pub engagement_invitation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -50,6 +52,10 @@ impl StartEngagementByAcceptingInvitationTaskOutput {
     pub fn opportunity_id(&self) -> ::std::option::Option<&str> {
         self.opportunity_id.as_deref()
     }
+    /// <p>The identifier of the resource snapshot job created as part of this task.</p>
+    pub fn resource_snapshot_job_id(&self) -> ::std::option::Option<&str> {
+        self.resource_snapshot_job_id.as_deref()
+    }
     /// <p>Returns the identifier of the engagement invitation that was accepted and used to create the opportunity.</p>
     pub fn engagement_invitation_id(&self) -> ::std::option::Option<&str> {
         self.engagement_invitation_id.as_deref()
@@ -79,6 +85,7 @@ pub struct StartEngagementByAcceptingInvitationTaskOutputBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) reason_code: ::std::option::Option<crate::types::ReasonCode>,
     pub(crate) opportunity_id: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_snapshot_job_id: ::std::option::Option<::std::string::String>,
     pub(crate) engagement_invitation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -181,6 +188,20 @@ impl StartEngagementByAcceptingInvitationTaskOutputBuilder {
     pub fn get_opportunity_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.opportunity_id
     }
+    /// <p>The identifier of the resource snapshot job created as part of this task.</p>
+    pub fn resource_snapshot_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_snapshot_job_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the resource snapshot job created as part of this task.</p>
+    pub fn set_resource_snapshot_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_snapshot_job_id = input;
+        self
+    }
+    /// <p>The identifier of the resource snapshot job created as part of this task.</p>
+    pub fn get_resource_snapshot_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_snapshot_job_id
+    }
     /// <p>Returns the identifier of the engagement invitation that was accepted and used to create the opportunity.</p>
     pub fn engagement_invitation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engagement_invitation_id = ::std::option::Option::Some(input.into());
@@ -214,6 +235,7 @@ impl StartEngagementByAcceptingInvitationTaskOutputBuilder {
             message: self.message,
             reason_code: self.reason_code,
             opportunity_id: self.opportunity_id,
+            resource_snapshot_job_id: self.resource_snapshot_job_id,
             engagement_invitation_id: self.engagement_invitation_id,
             _request_id: self._request_id,
         }

@@ -11,6 +11,18 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
+pub(crate) fn create_engagement_invitation_output_output_correct_errors(
+    mut builder: crate::operation::create_engagement_invitation::builders::CreateEngagementInvitationOutputBuilder,
+) -> crate::operation::create_engagement_invitation::builders::CreateEngagementInvitationOutputBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_opportunity_output_output_correct_errors(
     mut builder: crate::operation::create_opportunity::builders::CreateOpportunityOutputBuilder,
 ) -> crate::operation::create_opportunity::builders::CreateOpportunityOutputBuilder {
@@ -65,6 +77,60 @@ pub(crate) fn get_opportunity_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_resource_snapshot_output_output_correct_errors(
+    mut builder: crate::operation::get_resource_snapshot::builders::GetResourceSnapshotOutputBuilder,
+) -> crate::operation::get_resource_snapshot::builders::GetResourceSnapshotOutputBuilder {
+    if builder.catalog.is_none() {
+        builder.catalog = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_resource_snapshot_job_output_output_correct_errors(
+    mut builder: crate::operation::get_resource_snapshot_job::builders::GetResourceSnapshotJobOutputBuilder,
+) -> crate::operation::get_resource_snapshot_job::builders::GetResourceSnapshotJobOutputBuilder {
+    if builder.catalog.is_none() {
+        builder.catalog = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_selling_system_settings_output_output_correct_errors(
+    mut builder: crate::operation::get_selling_system_settings::builders::GetSellingSystemSettingsOutputBuilder,
+) -> crate::operation::get_selling_system_settings::builders::GetSellingSystemSettingsOutputBuilder {
+    if builder.catalog.is_none() {
+        builder.catalog = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_engagement_members_output_output_correct_errors(
+    mut builder: crate::operation::list_engagement_members::builders::ListEngagementMembersOutputBuilder,
+) -> crate::operation::list_engagement_members::builders::ListEngagementMembersOutputBuilder {
+    if builder.engagement_member_list.is_none() {
+        builder.engagement_member_list = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_engagement_resource_associations_output_output_correct_errors(
+    mut builder: crate::operation::list_engagement_resource_associations::builders::ListEngagementResourceAssociationsOutputBuilder,
+) -> crate::operation::list_engagement_resource_associations::builders::ListEngagementResourceAssociationsOutputBuilder {
+    if builder.engagement_resource_association_summaries.is_none() {
+        builder.engagement_resource_association_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_engagements_output_output_correct_errors(
+    mut builder: crate::operation::list_engagements::builders::ListEngagementsOutputBuilder,
+) -> crate::operation::list_engagements::builders::ListEngagementsOutputBuilder {
+    if builder.engagement_summary_list.is_none() {
+        builder.engagement_summary_list = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_opportunities_output_output_correct_errors(
     mut builder: crate::operation::list_opportunities::builders::ListOpportunitiesOutputBuilder,
 ) -> crate::operation::list_opportunities::builders::ListOpportunitiesOutputBuilder {
@@ -74,11 +140,38 @@ pub(crate) fn list_opportunities_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_resource_snapshot_jobs_output_output_correct_errors(
+    mut builder: crate::operation::list_resource_snapshot_jobs::builders::ListResourceSnapshotJobsOutputBuilder,
+) -> crate::operation::list_resource_snapshot_jobs::builders::ListResourceSnapshotJobsOutputBuilder {
+    if builder.resource_snapshot_job_summaries.is_none() {
+        builder.resource_snapshot_job_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_resource_snapshots_output_output_correct_errors(
+    mut builder: crate::operation::list_resource_snapshots::builders::ListResourceSnapshotsOutputBuilder,
+) -> crate::operation::list_resource_snapshots::builders::ListResourceSnapshotsOutputBuilder {
+    if builder.resource_snapshot_summaries.is_none() {
+        builder.resource_snapshot_summaries = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_solutions_output_output_correct_errors(
     mut builder: crate::operation::list_solutions::builders::ListSolutionsOutputBuilder,
 ) -> crate::operation::list_solutions::builders::ListSolutionsOutputBuilder {
     if builder.solution_summaries.is_none() {
         builder.solution_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn put_selling_system_settings_output_output_correct_errors(
+    mut builder: crate::operation::put_selling_system_settings::builders::PutSellingSystemSettingsOutputBuilder,
+) -> crate::operation::put_selling_system_settings::builders::PutSellingSystemSettingsOutputBuilder {
+    if builder.catalog.is_none() {
+        builder.catalog = Some(Default::default())
     }
     builder
 }
@@ -111,12 +204,30 @@ pub(crate) fn account_receiver_correct_errors(
     builder
 }
 
+pub(crate) fn engagement_context_details_correct_errors(
+    mut builder: crate::types::builders::EngagementContextDetailsBuilder,
+) -> crate::types::builders::EngagementContextDetailsBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::EngagementContextType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn engagement_invitation_summary_correct_errors(
     mut builder: crate::types::builders::EngagementInvitationSummaryBuilder,
 ) -> crate::types::builders::EngagementInvitationSummaryBuilder {
     if builder.id.is_none() {
         builder.id = Some(Default::default())
     }
+    if builder.catalog.is_none() {
+        builder.catalog = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn engagement_resource_association_summary_correct_errors(
+    mut builder: crate::types::builders::EngagementResourceAssociationSummaryBuilder,
+) -> crate::types::builders::EngagementResourceAssociationSummaryBuilder {
     if builder.catalog.is_none() {
         builder.catalog = Some(Default::default())
     }
@@ -291,6 +402,21 @@ pub(crate) fn sender_contact_correct_errors(
 ) -> crate::types::builders::SenderContactBuilder {
     if builder.email.is_none() {
         builder.email = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn engagement_customer_project_details_correct_errors(
+    mut builder: crate::types::builders::EngagementCustomerProjectDetailsBuilder,
+) -> crate::types::builders::EngagementCustomerProjectDetailsBuilder {
+    if builder.title.is_none() {
+        builder.title = Some(Default::default())
+    }
+    if builder.business_problem.is_none() {
+        builder.business_problem = Some(Default::default())
+    }
+    if builder.target_completion_date.is_none() {
+        builder.target_completion_date = Some(Default::default())
     }
     builder
 }

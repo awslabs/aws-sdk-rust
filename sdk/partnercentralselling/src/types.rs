@@ -15,7 +15,29 @@ pub use crate::types::_solution_sort_name::SolutionSortName;
 
 pub use crate::types::_sort_order::SortOrder;
 
-pub use crate::types::_aws_opportunity_project::AwsOpportunityProject;
+pub use crate::types::_resource_snapshot_job_status::ResourceSnapshotJobStatus;
+
+pub use crate::types::_resource_type::ResourceType;
+
+pub use crate::types::_resource_snapshot_job_summary::ResourceSnapshotJobSummary;
+
+pub use crate::types::_sort_object::SortObject;
+
+pub use crate::types::_sort_by::SortBy;
+
+pub use crate::types::_resource_snapshot_summary::ResourceSnapshotSummary;
+
+pub use crate::types::_engagement_resource_association_summary::EngagementResourceAssociationSummary;
+
+pub use crate::types::_resource_snapshot_payload::ResourceSnapshotPayload;
+
+pub use crate::types::_opportunity_summary_view::OpportunitySummaryView;
+
+pub use crate::types::_related_entity_identifiers::RelatedEntityIdentifiers;
+
+pub use crate::types::_project_view::ProjectView;
+
+pub use crate::types::_sales_activity::SalesActivity;
 
 pub use crate::types::_expected_customer_spend::ExpectedCustomerSpend;
 
@@ -23,9 +45,37 @@ pub use crate::types::_payment_frequency::PaymentFrequency;
 
 pub use crate::types::_currency_code::CurrencyCode;
 
-pub use crate::types::_aws_opportunity_customer::AwsOpportunityCustomer;
+pub use crate::types::_delivery_model::DeliveryModel;
+
+pub use crate::types::_customer::Customer;
 
 pub use crate::types::_contact::Contact;
+
+pub use crate::types::_account::Account;
+
+pub use crate::types::_address::Address;
+
+pub use crate::types::_country_code::CountryCode;
+
+pub use crate::types::_industry::Industry;
+
+pub use crate::types::_primary_need_from_aws::PrimaryNeedFromAws;
+
+pub use crate::types::_life_cycle_for_view::LifeCycleForView;
+
+pub use crate::types::_stage::Stage;
+
+pub use crate::types::_review_status::ReviewStatus;
+
+pub use crate::types::_opportunity_type::OpportunityType;
+
+pub use crate::types::_visibility::Visibility;
+
+pub use crate::types::_sales_involvement_type::SalesInvolvementType;
+
+pub use crate::types::_aws_opportunity_project::AwsOpportunityProject;
+
+pub use crate::types::_aws_opportunity_customer::AwsOpportunityCustomer;
 
 pub use crate::types::_aws_opportunity_related_entities::AwsOpportunityRelatedEntities;
 
@@ -47,10 +97,6 @@ pub use crate::types::_aws_opportunity_stage::AwsOpportunityStage;
 
 pub use crate::types::_aws_closed_lost_reason::AwsClosedLostReason;
 
-pub use crate::types::_visibility::Visibility;
-
-pub use crate::types::_sales_involvement_type::SalesInvolvementType;
-
 pub use crate::types::_opportunity_origin::OpportunityOrigin;
 
 pub use crate::types::_related_entity_type::RelatedEntityType;
@@ -61,11 +107,7 @@ pub use crate::types::_life_cycle::LifeCycle;
 
 pub use crate::types::_next_steps_history::NextStepsHistory;
 
-pub use crate::types::_review_status::ReviewStatus;
-
 pub use crate::types::_closed_lost_reason::ClosedLostReason;
-
-pub use crate::types::_stage::Stage;
 
 pub use crate::types::_software_revenue::SoftwareRevenue;
 
@@ -81,31 +123,11 @@ pub use crate::types::_channel::Channel;
 
 pub use crate::types::_marketing_source::MarketingSource;
 
-pub use crate::types::_opportunity_type::OpportunityType;
-
 pub use crate::types::_project::Project;
 
 pub use crate::types::_competitor_name::CompetitorName;
 
-pub use crate::types::_sales_activity::SalesActivity;
-
-pub use crate::types::_delivery_model::DeliveryModel;
-
-pub use crate::types::_customer::Customer;
-
-pub use crate::types::_account::Account;
-
-pub use crate::types::_address::Address;
-
-pub use crate::types::_country_code::CountryCode;
-
-pub use crate::types::_industry::Industry;
-
 pub use crate::types::_national_security::NationalSecurity;
-
-pub use crate::types::_primary_need_from_aws::PrimaryNeedFromAws;
-
-pub use crate::types::_related_entity_identifiers::RelatedEntityIdentifiers;
 
 pub use crate::types::_opportunity_summary::OpportunitySummary;
 
@@ -124,6 +146,8 @@ pub use crate::types::_last_modified_date::LastModifiedDate;
 pub use crate::types::_opportunity_sort::OpportunitySort;
 
 pub use crate::types::_opportunity_sort_name::OpportunitySortName;
+
+pub use crate::types::_engagement_member_summary::EngagementMemberSummary;
 
 pub use crate::types::_payload::Payload;
 
@@ -145,6 +169,8 @@ pub use crate::types::_invitation_status::InvitationStatus;
 
 pub use crate::types::_engagement_invitation_payload_type::EngagementInvitationPayloadType;
 
+pub use crate::types::_invitation::Invitation;
+
 pub use crate::types::_engagement_invitation_summary::EngagementInvitationSummary;
 
 pub use crate::types::_participant_type::ParticipantType;
@@ -158,6 +184,32 @@ pub use crate::types::_reason_code::ReasonCode;
 pub use crate::types::_task_status::TaskStatus;
 
 pub use crate::types::_aws_submission::AwsSubmission;
+
+pub use crate::types::_list_engagement_from_opportunity_task_summary::ListEngagementFromOpportunityTaskSummary;
+
+pub use crate::types::_list_tasks_sort_base::ListTasksSortBase;
+
+pub use crate::types::_list_tasks_sort_name::ListTasksSortName;
+
+pub use crate::types::_list_engagement_by_accepting_invitation_task_summary::ListEngagementByAcceptingInvitationTaskSummary;
+
+pub use crate::types::_engagement_member::EngagementMember;
+
+pub use crate::types::_engagement_context_details::EngagementContextDetails;
+
+pub use crate::types::_engagement_context_payload::EngagementContextPayload;
+
+pub use crate::types::_customer_projects_context::CustomerProjectsContext;
+
+pub use crate::types::_engagement_customer_project_details::EngagementCustomerProjectDetails;
+
+pub use crate::types::_engagement_context_type::EngagementContextType;
+
+pub use crate::types::_engagement_summary::EngagementSummary;
+
+pub use crate::types::_engagement_sort::EngagementSort;
+
+pub use crate::types::_engagement_sort_name::EngagementSortName;
 
 mod _account;
 
@@ -207,21 +259,45 @@ mod _currency_code;
 
 mod _customer;
 
+mod _customer_projects_context;
+
 mod _customer_summary;
 
 mod _delivery_model;
 
+mod _engagement_context_details;
+
+mod _engagement_context_payload;
+
+mod _engagement_context_type;
+
 mod _engagement_customer;
+
+mod _engagement_customer_project_details;
 
 mod _engagement_invitation_payload_type;
 
 mod _engagement_invitation_summary;
 
+mod _engagement_member;
+
+mod _engagement_member_summary;
+
+mod _engagement_resource_association_summary;
+
 mod _engagement_score;
+
+mod _engagement_sort;
+
+mod _engagement_sort_name;
+
+mod _engagement_summary;
 
 mod _expected_customer_spend;
 
 mod _industry;
+
+mod _invitation;
 
 mod _invitation_status;
 
@@ -231,7 +307,17 @@ mod _last_modified_date;
 
 mod _life_cycle;
 
+mod _life_cycle_for_view;
+
 mod _life_cycle_summary;
+
+mod _list_engagement_by_accepting_invitation_task_summary;
+
+mod _list_engagement_from_opportunity_task_summary;
+
+mod _list_tasks_sort_base;
+
+mod _list_tasks_sort_name;
 
 mod _marketing;
 
@@ -257,6 +343,8 @@ mod _opportunity_sort_name;
 
 mod _opportunity_summary;
 
+mod _opportunity_summary_view;
+
 mod _opportunity_type;
 
 mod _participant_type;
@@ -275,6 +363,8 @@ mod _project_details;
 
 mod _project_summary;
 
+mod _project_view;
+
 mod _reason_code;
 
 mod _receiver;
@@ -284,6 +374,16 @@ mod _receiver_responsibility;
 mod _related_entity_identifiers;
 
 mod _related_entity_type;
+
+mod _resource_snapshot_job_status;
+
+mod _resource_snapshot_job_summary;
+
+mod _resource_snapshot_payload;
+
+mod _resource_snapshot_summary;
+
+mod _resource_type;
 
 mod _revenue_model;
 
@@ -304,6 +404,10 @@ mod _solution_sort;
 mod _solution_sort_name;
 
 mod _solution_status;
+
+mod _sort_by;
+
+mod _sort_object;
 
 mod _sort_order;
 

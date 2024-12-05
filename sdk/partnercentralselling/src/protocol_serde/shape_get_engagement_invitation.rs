@@ -168,6 +168,13 @@ pub(crate) fn de_get_engagement_invitation(
                             .transpose()?,
                     );
                 }
+                "EngagementId" => {
+                    builder = builder.set_engagement_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "EngagementTitle" => {
                     builder = builder.set_engagement_title(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -227,6 +234,25 @@ pub(crate) fn de_get_engagement_invitation(
                 }
                 "Payload" => {
                     builder = builder.set_payload(crate::protocol_serde::shape_payload::de_payload(tokens)?);
+                }
+                "InvitationMessage" => {
+                    builder = builder.set_invitation_message(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "EngagementDescription" => {
+                    builder = builder.set_engagement_description(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "ExistingMembers" => {
+                    builder = builder.set_existing_members(crate::protocol_serde::shape_engagement_member_summaries::de_engagement_member_summaries(
+                        tokens,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

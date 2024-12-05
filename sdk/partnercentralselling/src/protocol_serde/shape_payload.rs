@@ -65,3 +65,19 @@ where
     }
     Ok(variant)
 }
+
+pub fn ser_payload(
+    object_4: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::types::Payload,
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    match input {
+        crate::types::Payload::OpportunityInvitation(inner) => {
+            #[allow(unused_mut)]
+            let mut object_1 = object_4.key("OpportunityInvitation").start_object();
+            crate::protocol_serde::shape_opportunity_invitation_payload::ser_opportunity_invitation_payload(&mut object_1, inner)?;
+            object_1.finish();
+        }
+        crate::types::Payload::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("Payload")),
+    }
+    Ok(())
+}

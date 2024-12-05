@@ -49,3 +49,43 @@ where
         )),
     }
 }
+
+pub fn ser_opportunity_invitation_payload(
+    object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::types::OpportunityInvitationPayload,
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    if let Some(var_1) = &input.sender_contacts {
+        let mut array_2 = object.key("SenderContacts").start_array();
+        for item_3 in var_1 {
+            {
+                #[allow(unused_mut)]
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_sender_contact::ser_sender_contact(&mut object_4, item_3)?;
+                object_4.finish();
+            }
+        }
+        array_2.finish();
+    }
+    {
+        let mut array_5 = object.key("ReceiverResponsibilities").start_array();
+        for item_6 in &input.receiver_responsibilities {
+            {
+                array_5.value().string(item_6.as_str());
+            }
+        }
+        array_5.finish();
+    }
+    if let Some(var_7) = &input.customer {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("Customer").start_object();
+        crate::protocol_serde::shape_engagement_customer::ser_engagement_customer(&mut object_8, var_7)?;
+        object_8.finish();
+    }
+    if let Some(var_9) = &input.project {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("Project").start_object();
+        crate::protocol_serde::shape_project_details::ser_project_details(&mut object_10, var_9)?;
+        object_10.finish();
+    }
+    Ok(())
+}

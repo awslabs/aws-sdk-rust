@@ -13,16 +13,24 @@
 /// # let reasoncode = unimplemented!();
 /// match reasoncode {
 ///     ReasonCode::EngagementAccessDenied => { /* ... */ },
+///     ReasonCode::EngagementConflict => { /* ... */ },
 ///     ReasonCode::EngagementInvitationConflict => { /* ... */ },
 ///     ReasonCode::EngagementValidationFailed => { /* ... */ },
 ///     ReasonCode::InternalError => { /* ... */ },
 ///     ReasonCode::InvitationAccessDenied => { /* ... */ },
+///     ReasonCode::InvitationValidationFailed => { /* ... */ },
 ///     ReasonCode::OpportunityAccessDenied => { /* ... */ },
 ///     ReasonCode::OpportunityConflict => { /* ... */ },
 ///     ReasonCode::OpportunitySubmissionFailed => { /* ... */ },
 ///     ReasonCode::OpportunityValidationFailed => { /* ... */ },
+///     ReasonCode::RequestThrottled => { /* ... */ },
 ///     ReasonCode::ResourceSnapshotAccessDenied => { /* ... */ },
+///     ReasonCode::ResourceSnapshotConflict => { /* ... */ },
 ///     ReasonCode::ResourceSnapshotJobAccessDenied => { /* ... */ },
+///     ReasonCode::ResourceSnapshotJobConflict => { /* ... */ },
+///     ReasonCode::ResourceSnapshotJobValidationFailed => { /* ... */ },
+///     ReasonCode::ResourceSnapshotValidationFailed => { /* ... */ },
+///     ReasonCode::ServiceQuotaExceeded => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -53,6 +61,8 @@ pub enum ReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     EngagementAccessDenied,
     #[allow(missing_docs)] // documentation missing in model
+    EngagementConflict,
+    #[allow(missing_docs)] // documentation missing in model
     EngagementInvitationConflict,
     #[allow(missing_docs)] // documentation missing in model
     EngagementValidationFailed,
@@ -60,6 +70,8 @@ pub enum ReasonCode {
     InternalError,
     #[allow(missing_docs)] // documentation missing in model
     InvitationAccessDenied,
+    #[allow(missing_docs)] // documentation missing in model
+    InvitationValidationFailed,
     #[allow(missing_docs)] // documentation missing in model
     OpportunityAccessDenied,
     #[allow(missing_docs)] // documentation missing in model
@@ -69,9 +81,21 @@ pub enum ReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     OpportunityValidationFailed,
     #[allow(missing_docs)] // documentation missing in model
+    RequestThrottled,
+    #[allow(missing_docs)] // documentation missing in model
     ResourceSnapshotAccessDenied,
     #[allow(missing_docs)] // documentation missing in model
+    ResourceSnapshotConflict,
+    #[allow(missing_docs)] // documentation missing in model
     ResourceSnapshotJobAccessDenied,
+    #[allow(missing_docs)] // documentation missing in model
+    ResourceSnapshotJobConflict,
+    #[allow(missing_docs)] // documentation missing in model
+    ResourceSnapshotJobValidationFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    ResourceSnapshotValidationFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    ServiceQuotaExceeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -80,16 +104,24 @@ impl ::std::convert::From<&str> for ReasonCode {
     fn from(s: &str) -> Self {
         match s {
             "EngagementAccessDenied" => ReasonCode::EngagementAccessDenied,
+            "EngagementConflict" => ReasonCode::EngagementConflict,
             "EngagementInvitationConflict" => ReasonCode::EngagementInvitationConflict,
             "EngagementValidationFailed" => ReasonCode::EngagementValidationFailed,
             "InternalError" => ReasonCode::InternalError,
             "InvitationAccessDenied" => ReasonCode::InvitationAccessDenied,
+            "InvitationValidationFailed" => ReasonCode::InvitationValidationFailed,
             "OpportunityAccessDenied" => ReasonCode::OpportunityAccessDenied,
             "OpportunityConflict" => ReasonCode::OpportunityConflict,
             "OpportunitySubmissionFailed" => ReasonCode::OpportunitySubmissionFailed,
             "OpportunityValidationFailed" => ReasonCode::OpportunityValidationFailed,
+            "RequestThrottled" => ReasonCode::RequestThrottled,
             "ResourceSnapshotAccessDenied" => ReasonCode::ResourceSnapshotAccessDenied,
+            "ResourceSnapshotConflict" => ReasonCode::ResourceSnapshotConflict,
             "ResourceSnapshotJobAccessDenied" => ReasonCode::ResourceSnapshotJobAccessDenied,
+            "ResourceSnapshotJobConflict" => ReasonCode::ResourceSnapshotJobConflict,
+            "ResourceSnapshotJobValidationFailed" => ReasonCode::ResourceSnapshotJobValidationFailed,
+            "ResourceSnapshotValidationFailed" => ReasonCode::ResourceSnapshotValidationFailed,
+            "ServiceQuotaExceeded" => ReasonCode::ServiceQuotaExceeded,
             other => ReasonCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -106,16 +138,24 @@ impl ReasonCode {
     pub fn as_str(&self) -> &str {
         match self {
             ReasonCode::EngagementAccessDenied => "EngagementAccessDenied",
+            ReasonCode::EngagementConflict => "EngagementConflict",
             ReasonCode::EngagementInvitationConflict => "EngagementInvitationConflict",
             ReasonCode::EngagementValidationFailed => "EngagementValidationFailed",
             ReasonCode::InternalError => "InternalError",
             ReasonCode::InvitationAccessDenied => "InvitationAccessDenied",
+            ReasonCode::InvitationValidationFailed => "InvitationValidationFailed",
             ReasonCode::OpportunityAccessDenied => "OpportunityAccessDenied",
             ReasonCode::OpportunityConflict => "OpportunityConflict",
             ReasonCode::OpportunitySubmissionFailed => "OpportunitySubmissionFailed",
             ReasonCode::OpportunityValidationFailed => "OpportunityValidationFailed",
+            ReasonCode::RequestThrottled => "RequestThrottled",
             ReasonCode::ResourceSnapshotAccessDenied => "ResourceSnapshotAccessDenied",
+            ReasonCode::ResourceSnapshotConflict => "ResourceSnapshotConflict",
             ReasonCode::ResourceSnapshotJobAccessDenied => "ResourceSnapshotJobAccessDenied",
+            ReasonCode::ResourceSnapshotJobConflict => "ResourceSnapshotJobConflict",
+            ReasonCode::ResourceSnapshotJobValidationFailed => "ResourceSnapshotJobValidationFailed",
+            ReasonCode::ResourceSnapshotValidationFailed => "ResourceSnapshotValidationFailed",
+            ReasonCode::ServiceQuotaExceeded => "ServiceQuotaExceeded",
             ReasonCode::Unknown(value) => value.as_str(),
         }
     }
@@ -123,16 +163,24 @@ impl ReasonCode {
     pub const fn values() -> &'static [&'static str] {
         &[
             "EngagementAccessDenied",
+            "EngagementConflict",
             "EngagementInvitationConflict",
             "EngagementValidationFailed",
             "InternalError",
             "InvitationAccessDenied",
+            "InvitationValidationFailed",
             "OpportunityAccessDenied",
             "OpportunityConflict",
             "OpportunitySubmissionFailed",
             "OpportunityValidationFailed",
+            "RequestThrottled",
             "ResourceSnapshotAccessDenied",
+            "ResourceSnapshotConflict",
             "ResourceSnapshotJobAccessDenied",
+            "ResourceSnapshotJobConflict",
+            "ResourceSnapshotJobValidationFailed",
+            "ResourceSnapshotValidationFailed",
+            "ServiceQuotaExceeded",
         ]
     }
 }
@@ -157,16 +205,24 @@ impl ::std::fmt::Display for ReasonCode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ReasonCode::EngagementAccessDenied => write!(f, "EngagementAccessDenied"),
+            ReasonCode::EngagementConflict => write!(f, "EngagementConflict"),
             ReasonCode::EngagementInvitationConflict => write!(f, "EngagementInvitationConflict"),
             ReasonCode::EngagementValidationFailed => write!(f, "EngagementValidationFailed"),
             ReasonCode::InternalError => write!(f, "InternalError"),
             ReasonCode::InvitationAccessDenied => write!(f, "InvitationAccessDenied"),
+            ReasonCode::InvitationValidationFailed => write!(f, "InvitationValidationFailed"),
             ReasonCode::OpportunityAccessDenied => write!(f, "OpportunityAccessDenied"),
             ReasonCode::OpportunityConflict => write!(f, "OpportunityConflict"),
             ReasonCode::OpportunitySubmissionFailed => write!(f, "OpportunitySubmissionFailed"),
             ReasonCode::OpportunityValidationFailed => write!(f, "OpportunityValidationFailed"),
+            ReasonCode::RequestThrottled => write!(f, "RequestThrottled"),
             ReasonCode::ResourceSnapshotAccessDenied => write!(f, "ResourceSnapshotAccessDenied"),
+            ReasonCode::ResourceSnapshotConflict => write!(f, "ResourceSnapshotConflict"),
             ReasonCode::ResourceSnapshotJobAccessDenied => write!(f, "ResourceSnapshotJobAccessDenied"),
+            ReasonCode::ResourceSnapshotJobConflict => write!(f, "ResourceSnapshotJobConflict"),
+            ReasonCode::ResourceSnapshotJobValidationFailed => write!(f, "ResourceSnapshotJobValidationFailed"),
+            ReasonCode::ResourceSnapshotValidationFailed => write!(f, "ResourceSnapshotValidationFailed"),
+            ReasonCode::ServiceQuotaExceeded => write!(f, "ServiceQuotaExceeded"),
             ReasonCode::Unknown(value) => write!(f, "{}", value),
         }
     }

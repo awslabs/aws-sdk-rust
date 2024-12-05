@@ -185,6 +185,13 @@ pub(crate) fn de_get_opportunity(
                             .transpose()?,
                     );
                 }
+                "Arn" => {
+                    builder = builder.set_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "LastModifiedDate" => {
                     builder = builder.set_last_modified_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),

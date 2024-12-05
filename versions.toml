@@ -1714,9 +1714,9 @@ model_hash = 'febaa3d19e9d98c7c7888395b77777d20b9914187a054b1443a86e9a0a5ab35f'
 
 [crates.aws-sdk-partnercentralselling]
 category = 'AwsSdk'
-version = '1.2.0'
-source_hash = 'd8d65539a4ed440bef37bb3aba71fc51d90bf92731e12d093357025632d66d3f'
-model_hash = '4aa49717be7a5ae3a582e272a5c6855cba351fd5d8ae5c7a16e347dc9da7bb72'
+version = '1.3.0'
+source_hash = 'f5465a8a306c9b5536602fc62f5f5c9a2efe65504260ca946d0dfcedd0a1e25f'
+model_hash = '718011ecfa598f393269530695e328238f08df25edf81246d414d47a12e68018'
 
 [crates.aws-sdk-paymentcryptography]
 category = 'AwsSdk'
@@ -1834,9 +1834,9 @@ model_hash = '4bd2edc09378bd9e8ef92cab901028113ec7feb54f270f86c3764629d5f66d1b'
 
 [crates.aws-sdk-qbusiness]
 category = 'AwsSdk'
-version = '1.56.0'
-source_hash = '65a2472b421c5e2f114043cab5a62a26d5be4dde9d1247da06968da98caff708'
-model_hash = 'c20da80fb8456c329fd6d90c7bf3508dd8926d35b70ef4a862fb24d0ee396d26'
+version = '1.57.0'
+source_hash = '5e737f41917e38d48976cb56c68ea5a7d6d2acd49e60b18b35e502505233bcd2'
+model_hash = '8da5beb48da96680deec8bf7f18edbcbc712961c3ce00e36212198f106649ffb'
 
 [crates.aws-sdk-qconnect]
 category = 'AwsSdk'
@@ -2595,16 +2595,6 @@ source_hash = 'b7c5a96b70ca91516704e98f8f8f7e51fa7f6660d593b3addc64ba9568405cdb'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '340172f38639aeb06ccd407828639e840caf6a7109c4eac3c6c78a9e06c1ef06'
-
-[release]
-tag = 'release-2024-12-04.2'
-
 [release.crates]
-aws-sdk-bedrock = '1.64.0'
-aws-sdk-bedrockagent = '1.67.0'
-aws-sdk-bedrockagentruntime = '1.65.0'
-aws-sdk-bedrockdataautomation = '1.0.0'
-aws-sdk-bedrockdataautomationruntime = '1.0.0'
-aws-sdk-bedrockruntime = '1.64.0'
-aws-sdk-kendra = '1.52.0'
-aws-sdk-sagemaker = '1.89.0'
+aws-sdk-partnercentralselling = '1.3.0'
+aws-sdk-qbusiness = '1.57.0'

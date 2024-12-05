@@ -47,3 +47,16 @@ where
         )),
     }
 }
+
+pub fn ser_account_receiver(
+    object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::types::AccountReceiver,
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    if let Some(var_1) = &input.alias {
+        object.key("Alias").string(var_1.as_str());
+    }
+    {
+        object.key("AwsAccountId").string(input.aws_account_id.as_str());
+    }
+    Ok(())
+}

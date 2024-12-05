@@ -118,34 +118,76 @@ impl Client {
     }
 }
 
+mod accept_engagement_invitation;
+
 mod assign_opportunity;
 
 mod associate_opportunity;
 
+mod create_engagement;
+
+mod create_engagement_invitation;
+
 mod create_opportunity;
+
+mod create_resource_snapshot;
+
+mod create_resource_snapshot_job;
 
 /// Operation customization and supporting types.
 ///
 pub mod customize;
 
+mod delete_resource_snapshot_job;
+
 mod disassociate_opportunity;
 
 mod get_aws_opportunity_summary;
+
+mod get_engagement;
 
 mod get_engagement_invitation;
 
 mod get_opportunity;
 
+mod get_resource_snapshot;
+
+mod get_resource_snapshot_job;
+
+mod get_selling_system_settings;
+
+mod list_engagement_by_accepting_invitation_tasks;
+
+mod list_engagement_from_opportunity_tasks;
+
 mod list_engagement_invitations;
+
+mod list_engagement_members;
+
+mod list_engagement_resource_associations;
+
+mod list_engagements;
 
 mod list_opportunities;
 
+mod list_resource_snapshot_jobs;
+
+mod list_resource_snapshots;
+
 mod list_solutions;
+
+mod put_selling_system_settings;
 
 mod reject_engagement_invitation;
 
 mod start_engagement_by_accepting_invitation_task;
 
 mod start_engagement_from_opportunity_task;
+
+mod start_resource_snapshot_job;
+
+mod stop_resource_snapshot_job;
+
+mod submit_opportunity;
 
 mod update_opportunity;

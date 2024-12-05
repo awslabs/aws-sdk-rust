@@ -61,3 +61,19 @@ where
     }
     Ok(variant)
 }
+
+pub fn ser_receiver(
+    object_2: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::types::Receiver,
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    match input {
+        crate::types::Receiver::Account(inner) => {
+            #[allow(unused_mut)]
+            let mut object_1 = object_2.key("Account").start_object();
+            crate::protocol_serde::shape_account_receiver::ser_account_receiver(&mut object_1, inner)?;
+            object_1.finish();
+        }
+        crate::types::Receiver::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("Receiver")),
+    }
+    Ok(())
+}

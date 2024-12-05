@@ -236,6 +236,13 @@ pub(crate) fn de_start_engagement_by_accepting_invitation_task(
                             .transpose()?,
                     );
                 }
+                "ResourceSnapshotJobId" => {
+                    builder = builder.set_resource_snapshot_job_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "EngagementInvitationId" => {
                     builder = builder.set_engagement_invitation_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -59,3 +59,31 @@ where
         )),
     }
 }
+
+pub fn ser_project_details(
+    object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::types::ProjectDetails,
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("BusinessProblem").string(input.business_problem.as_str());
+    }
+    {
+        object.key("Title").string(input.title.as_str());
+    }
+    {
+        object.key("TargetCompletionDate").string(input.target_completion_date.as_str());
+    }
+    {
+        let mut array_1 = object.key("ExpectedCustomerSpend").start_array();
+        for item_2 in &input.expected_customer_spend {
+            {
+                #[allow(unused_mut)]
+                let mut object_3 = array_1.value().start_object();
+                crate::protocol_serde::shape_expected_customer_spend::ser_expected_customer_spend(&mut object_3, item_2)?;
+                object_3.finish();
+            }
+        }
+        array_1.finish();
+    }
+    Ok(())
+}

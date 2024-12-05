@@ -12,6 +12,8 @@ pub struct ExpectedCustomerSpend {
     pub frequency: crate::types::PaymentFrequency,
     /// <p>Specifies the name of the partner company that is expected to generate revenue from the opportunity. This field helps track the partner’s involvement in the opportunity.</p>
     pub target_company: ::std::string::String,
+    /// <p>A URL providing additional information or context about the spend estimation.</p>
+    pub estimation_url: ::std::option::Option<::std::string::String>,
 }
 impl ExpectedCustomerSpend {
     /// <p>Represents the estimated monthly revenue that the partner expects to earn from the opportunity. This helps in forecasting financial returns.</p>
@@ -32,6 +34,10 @@ impl ExpectedCustomerSpend {
         use std::ops::Deref;
         self.target_company.deref()
     }
+    /// <p>A URL providing additional information or context about the spend estimation.</p>
+    pub fn estimation_url(&self) -> ::std::option::Option<&str> {
+        self.estimation_url.as_deref()
+    }
 }
 impl ::std::fmt::Debug for ExpectedCustomerSpend {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -40,6 +46,7 @@ impl ::std::fmt::Debug for ExpectedCustomerSpend {
         formatter.field("currency_code", &"*** Sensitive Data Redacted ***");
         formatter.field("frequency", &self.frequency);
         formatter.field("target_company", &self.target_company);
+        formatter.field("estimation_url", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -58,6 +65,7 @@ pub struct ExpectedCustomerSpendBuilder {
     pub(crate) currency_code: ::std::option::Option<crate::types::CurrencyCode>,
     pub(crate) frequency: ::std::option::Option<crate::types::PaymentFrequency>,
     pub(crate) target_company: ::std::option::Option<::std::string::String>,
+    pub(crate) estimation_url: ::std::option::Option<::std::string::String>,
 }
 impl ExpectedCustomerSpendBuilder {
     /// <p>Represents the estimated monthly revenue that the partner expects to earn from the opportunity. This helps in forecasting financial returns.</p>
@@ -120,6 +128,20 @@ impl ExpectedCustomerSpendBuilder {
     pub fn get_target_company(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_company
     }
+    /// <p>A URL providing additional information or context about the spend estimation.</p>
+    pub fn estimation_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.estimation_url = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A URL providing additional information or context about the spend estimation.</p>
+    pub fn set_estimation_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.estimation_url = input;
+        self
+    }
+    /// <p>A URL providing additional information or context about the spend estimation.</p>
+    pub fn get_estimation_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.estimation_url
+    }
     /// Consumes the builder and constructs a [`ExpectedCustomerSpend`](crate::types::ExpectedCustomerSpend).
     /// This method will fail if any of the following fields are not set:
     /// - [`amount`](crate::types::builders::ExpectedCustomerSpendBuilder::amount)
@@ -152,6 +174,7 @@ impl ExpectedCustomerSpendBuilder {
                     "target_company was not specified but it is required when building ExpectedCustomerSpend",
                 )
             })?,
+            estimation_url: self.estimation_url,
         })
     }
 }
@@ -162,6 +185,7 @@ impl ::std::fmt::Debug for ExpectedCustomerSpendBuilder {
         formatter.field("currency_code", &"*** Sensitive Data Redacted ***");
         formatter.field("frequency", &self.frequency);
         formatter.field("target_company", &self.target_company);
+        formatter.field("estimation_url", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

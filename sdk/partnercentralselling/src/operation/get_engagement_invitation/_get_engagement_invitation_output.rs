@@ -9,6 +9,8 @@ pub struct GetEngagementInvitationOutput {
     pub payload_type: ::std::option::Option<crate::types::EngagementInvitationPayloadType>,
     /// <p>Unique identifier assigned to the engagement invitation being retrieved.</p>
     pub id: ::std::string::String,
+    /// <p>The identifier of the engagement associated with this invitation.This ID links the invitation to its corresponding engagement.</p>
+    pub engagement_id: ::std::option::Option<::std::string::String>,
     /// <p>The title of the engagement invitation, summarizing the purpose or objectives of the opportunity shared by AWS.</p>
     pub engagement_title: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the engagement invitation.</p>
@@ -29,6 +31,18 @@ pub struct GetEngagementInvitationOutput {
     pub rejection_reason: ::std::option::Option<::std::string::String>,
     /// <p>Details of the engagement invitation payload, including specific data relevant to the invitation's contents, such as customer information and opportunity insights.</p>
     pub payload: ::std::option::Option<crate::types::Payload>,
+    /// <p>The message sent to the invited partner when the invitation was created.</p>
+    pub invitation_message: ::std::option::Option<::std::string::String>,
+    /// <p>The description of the engagement associated with this invitation.</p>
+    pub engagement_description: ::std::option::Option<::std::string::String>,
+    /// <p>A list of active members currently part of the Engagement. This array contains a maximum of 10 members, each represented by an object with the following properties.</p>
+    /// <ul>
+    /// <li>
+    /// <p>CompanyName: The name of the member's company.</p></li>
+    /// <li>
+    /// <p>WebsiteUrl: The website URL of the member's company.</p></li>
+    /// </ul>
+    pub existing_members: ::std::option::Option<::std::vec::Vec<crate::types::EngagementMemberSummary>>,
     _request_id: Option<String>,
 }
 impl GetEngagementInvitationOutput {
@@ -44,6 +58,10 @@ impl GetEngagementInvitationOutput {
     pub fn id(&self) -> &str {
         use std::ops::Deref;
         self.id.deref()
+    }
+    /// <p>The identifier of the engagement associated with this invitation.This ID links the invitation to its corresponding engagement.</p>
+    pub fn engagement_id(&self) -> ::std::option::Option<&str> {
+        self.engagement_id.as_deref()
     }
     /// <p>The title of the engagement invitation, summarizing the purpose or objectives of the opportunity shared by AWS.</p>
     pub fn engagement_title(&self) -> ::std::option::Option<&str> {
@@ -86,6 +104,26 @@ impl GetEngagementInvitationOutput {
     pub fn payload(&self) -> ::std::option::Option<&crate::types::Payload> {
         self.payload.as_ref()
     }
+    /// <p>The message sent to the invited partner when the invitation was created.</p>
+    pub fn invitation_message(&self) -> ::std::option::Option<&str> {
+        self.invitation_message.as_deref()
+    }
+    /// <p>The description of the engagement associated with this invitation.</p>
+    pub fn engagement_description(&self) -> ::std::option::Option<&str> {
+        self.engagement_description.as_deref()
+    }
+    /// <p>A list of active members currently part of the Engagement. This array contains a maximum of 10 members, each represented by an object with the following properties.</p>
+    /// <ul>
+    /// <li>
+    /// <p>CompanyName: The name of the member's company.</p></li>
+    /// <li>
+    /// <p>WebsiteUrl: The website URL of the member's company.</p></li>
+    /// </ul>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.existing_members.is_none()`.
+    pub fn existing_members(&self) -> &[crate::types::EngagementMemberSummary] {
+        self.existing_members.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for GetEngagementInvitationOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -93,6 +131,7 @@ impl ::std::fmt::Debug for GetEngagementInvitationOutput {
         formatter.field("arn", &self.arn);
         formatter.field("payload_type", &self.payload_type);
         formatter.field("id", &self.id);
+        formatter.field("engagement_id", &self.engagement_id);
         formatter.field("engagement_title", &self.engagement_title);
         formatter.field("status", &self.status);
         formatter.field("invitation_date", &self.invitation_date);
@@ -103,6 +142,9 @@ impl ::std::fmt::Debug for GetEngagementInvitationOutput {
         formatter.field("catalog", &self.catalog);
         formatter.field("rejection_reason", &self.rejection_reason);
         formatter.field("payload", &self.payload);
+        formatter.field("invitation_message", &self.invitation_message);
+        formatter.field("engagement_description", &self.engagement_description);
+        formatter.field("existing_members", &self.existing_members);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -126,6 +168,7 @@ pub struct GetEngagementInvitationOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) payload_type: ::std::option::Option<crate::types::EngagementInvitationPayloadType>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) engagement_id: ::std::option::Option<::std::string::String>,
     pub(crate) engagement_title: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::InvitationStatus>,
     pub(crate) invitation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -136,6 +179,9 @@ pub struct GetEngagementInvitationOutputBuilder {
     pub(crate) catalog: ::std::option::Option<::std::string::String>,
     pub(crate) rejection_reason: ::std::option::Option<::std::string::String>,
     pub(crate) payload: ::std::option::Option<crate::types::Payload>,
+    pub(crate) invitation_message: ::std::option::Option<::std::string::String>,
+    pub(crate) engagement_description: ::std::option::Option<::std::string::String>,
+    pub(crate) existing_members: ::std::option::Option<::std::vec::Vec<crate::types::EngagementMemberSummary>>,
     _request_id: Option<String>,
 }
 impl GetEngagementInvitationOutputBuilder {
@@ -181,6 +227,20 @@ impl GetEngagementInvitationOutputBuilder {
     /// <p>Unique identifier assigned to the engagement invitation being retrieved.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
+    }
+    /// <p>The identifier of the engagement associated with this invitation.This ID links the invitation to its corresponding engagement.</p>
+    pub fn engagement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.engagement_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the engagement associated with this invitation.This ID links the invitation to its corresponding engagement.</p>
+    pub fn set_engagement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.engagement_id = input;
+        self
+    }
+    /// <p>The identifier of the engagement associated with this invitation.This ID links the invitation to its corresponding engagement.</p>
+    pub fn get_engagement_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engagement_id
     }
     /// <p>The title of the engagement invitation, summarizing the purpose or objectives of the opportunity shared by AWS.</p>
     pub fn engagement_title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -323,6 +383,72 @@ impl GetEngagementInvitationOutputBuilder {
     pub fn get_payload(&self) -> &::std::option::Option<crate::types::Payload> {
         &self.payload
     }
+    /// <p>The message sent to the invited partner when the invitation was created.</p>
+    pub fn invitation_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.invitation_message = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The message sent to the invited partner when the invitation was created.</p>
+    pub fn set_invitation_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.invitation_message = input;
+        self
+    }
+    /// <p>The message sent to the invited partner when the invitation was created.</p>
+    pub fn get_invitation_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.invitation_message
+    }
+    /// <p>The description of the engagement associated with this invitation.</p>
+    pub fn engagement_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.engagement_description = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The description of the engagement associated with this invitation.</p>
+    pub fn set_engagement_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.engagement_description = input;
+        self
+    }
+    /// <p>The description of the engagement associated with this invitation.</p>
+    pub fn get_engagement_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engagement_description
+    }
+    /// Appends an item to `existing_members`.
+    ///
+    /// To override the contents of this collection use [`set_existing_members`](Self::set_existing_members).
+    ///
+    /// <p>A list of active members currently part of the Engagement. This array contains a maximum of 10 members, each represented by an object with the following properties.</p>
+    /// <ul>
+    /// <li>
+    /// <p>CompanyName: The name of the member's company.</p></li>
+    /// <li>
+    /// <p>WebsiteUrl: The website URL of the member's company.</p></li>
+    /// </ul>
+    pub fn existing_members(mut self, input: crate::types::EngagementMemberSummary) -> Self {
+        let mut v = self.existing_members.unwrap_or_default();
+        v.push(input);
+        self.existing_members = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of active members currently part of the Engagement. This array contains a maximum of 10 members, each represented by an object with the following properties.</p>
+    /// <ul>
+    /// <li>
+    /// <p>CompanyName: The name of the member's company.</p></li>
+    /// <li>
+    /// <p>WebsiteUrl: The website URL of the member's company.</p></li>
+    /// </ul>
+    pub fn set_existing_members(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EngagementMemberSummary>>) -> Self {
+        self.existing_members = input;
+        self
+    }
+    /// <p>A list of active members currently part of the Engagement. This array contains a maximum of 10 members, each represented by an object with the following properties.</p>
+    /// <ul>
+    /// <li>
+    /// <p>CompanyName: The name of the member's company.</p></li>
+    /// <li>
+    /// <p>WebsiteUrl: The website URL of the member's company.</p></li>
+    /// </ul>
+    pub fn get_existing_members(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EngagementMemberSummary>> {
+        &self.existing_members
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -351,6 +477,7 @@ impl GetEngagementInvitationOutputBuilder {
                     "id was not specified but it is required when building GetEngagementInvitationOutput",
                 )
             })?,
+            engagement_id: self.engagement_id,
             engagement_title: self.engagement_title,
             status: self.status,
             invitation_date: self.invitation_date,
@@ -366,6 +493,9 @@ impl GetEngagementInvitationOutputBuilder {
             })?,
             rejection_reason: self.rejection_reason,
             payload: self.payload,
+            invitation_message: self.invitation_message,
+            engagement_description: self.engagement_description,
+            existing_members: self.existing_members,
             _request_id: self._request_id,
         })
     }
@@ -376,6 +506,7 @@ impl ::std::fmt::Debug for GetEngagementInvitationOutputBuilder {
         formatter.field("arn", &self.arn);
         formatter.field("payload_type", &self.payload_type);
         formatter.field("id", &self.id);
+        formatter.field("engagement_id", &self.engagement_id);
         formatter.field("engagement_title", &self.engagement_title);
         formatter.field("status", &self.status);
         formatter.field("invitation_date", &self.invitation_date);
@@ -386,6 +517,9 @@ impl ::std::fmt::Debug for GetEngagementInvitationOutputBuilder {
         formatter.field("catalog", &self.catalog);
         formatter.field("rejection_reason", &self.rejection_reason);
         formatter.field("payload", &self.payload);
+        formatter.field("invitation_message", &self.invitation_message);
+        formatter.field("engagement_description", &self.engagement_description);
+        formatter.field("existing_members", &self.existing_members);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

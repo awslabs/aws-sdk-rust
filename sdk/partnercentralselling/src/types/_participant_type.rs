@@ -13,6 +13,7 @@
 /// # let participanttype = unimplemented!();
 /// match participanttype {
 ///     ParticipantType::Receiver => { /* ... */ },
+///     ParticipantType::Sender => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -42,6 +43,8 @@
 pub enum ParticipantType {
     #[allow(missing_docs)] // documentation missing in model
     Receiver,
+    #[allow(missing_docs)] // documentation missing in model
+    Sender,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -50,6 +53,7 @@ impl ::std::convert::From<&str> for ParticipantType {
     fn from(s: &str) -> Self {
         match s {
             "RECEIVER" => ParticipantType::Receiver,
+            "SENDER" => ParticipantType::Sender,
             other => ParticipantType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -66,12 +70,13 @@ impl ParticipantType {
     pub fn as_str(&self) -> &str {
         match self {
             ParticipantType::Receiver => "RECEIVER",
+            ParticipantType::Sender => "SENDER",
             ParticipantType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["RECEIVER"]
+        &["RECEIVER", "SENDER"]
     }
 }
 impl ::std::convert::AsRef<str> for ParticipantType {
@@ -95,6 +100,7 @@ impl ::std::fmt::Display for ParticipantType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ParticipantType::Receiver => write!(f, "RECEIVER"),
+            ParticipantType::Sender => write!(f, "SENDER"),
             ParticipantType::Unknown(value) => write!(f, "{}", value),
         }
     }

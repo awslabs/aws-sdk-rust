@@ -15,6 +15,9 @@ pub fn ser_expected_customer_spend(
     {
         object.key("TargetCompany").string(input.target_company.as_str());
     }
+    if let Some(var_1) = &input.estimation_url {
+        object.key("EstimationUrl").string(var_1.as_str());
+    }
     Ok(())
 }
 
@@ -56,6 +59,13 @@ where
                         }
                         "TargetCompany" => {
                             builder = builder.set_target_company(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "EstimationUrl" => {
+                            builder = builder.set_estimation_url(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

@@ -8,6 +8,8 @@ pub struct OpportunitySummary {
     pub catalog: ::std::string::String,
     /// <p>Read-only, system-generated <code>Opportunity</code> unique identifier.</p>
     pub id: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) for the opportunity. This globally unique identifier can be used for IAM policies and cross-service references.</p>
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the <code>Opportunity</code>'s unique identifier in the partner's CRM system. This value is essential to track and reconcile because it's included in the outbound payload sent back to the partner. It allows partners to link an opportunity to their CRM.</p>
     pub partner_opportunity_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specifies opportunity type as a renewal, new, or expansion.</p>
@@ -41,6 +43,10 @@ impl OpportunitySummary {
     /// <p>Read-only, system-generated <code>Opportunity</code> unique identifier.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the opportunity. This globally unique identifier can be used for IAM policies and cross-service references.</p>
+    pub fn arn(&self) -> ::std::option::Option<&str> {
+        self.arn.as_deref()
     }
     /// <p>Specifies the <code>Opportunity</code>'s unique identifier in the partner's CRM system. This value is essential to track and reconcile because it's included in the outbound payload sent back to the partner. It allows partners to link an opportunity to their CRM.</p>
     pub fn partner_opportunity_identifier(&self) -> ::std::option::Option<&str> {
@@ -93,6 +99,7 @@ impl OpportunitySummary {
 pub struct OpportunitySummaryBuilder {
     pub(crate) catalog: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) partner_opportunity_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) opportunity_type: ::std::option::Option<crate::types::OpportunityType>,
     pub(crate) last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -130,6 +137,20 @@ impl OpportunitySummaryBuilder {
     /// <p>Read-only, system-generated <code>Opportunity</code> unique identifier.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
+    }
+    /// <p>The Amazon Resource Name (ARN) for the opportunity. This globally unique identifier can be used for IAM policies and cross-service references.</p>
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the opportunity. This globally unique identifier can be used for IAM policies and cross-service references.</p>
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the opportunity. This globally unique identifier can be used for IAM policies and cross-service references.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>Specifies the <code>Opportunity</code>'s unique identifier in the partner's CRM system. This value is essential to track and reconcile because it's included in the outbound payload sent back to the partner. It allows partners to link an opportunity to their CRM.</p>
     pub fn partner_opportunity_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -268,6 +289,7 @@ impl OpportunitySummaryBuilder {
                 )
             })?,
             id: self.id,
+            arn: self.arn,
             partner_opportunity_identifier: self.partner_opportunity_identifier,
             opportunity_type: self.opportunity_type,
             last_modified_date: self.last_modified_date,
