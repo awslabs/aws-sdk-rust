@@ -2595,6 +2595,10 @@ source_hash = 'b7c5a96b70ca91516704e98f8f8f7e51fa7f6660d593b3addc64ba9568405cdb'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '340172f38639aeb06ccd407828639e840caf6a7109c4eac3c6c78a9e06c1ef06'
+
+[release]
+tag = 'release-2024-12-09'
+
 [release.crates]
 aws-sdk-appsync = '1.58.1'
 aws-sdk-cognitoidentityprovider = '1.60.0'
