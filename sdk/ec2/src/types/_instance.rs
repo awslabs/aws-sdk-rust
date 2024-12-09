@@ -85,6 +85,8 @@ pub struct Instance {
     pub maintenance_options: ::std::option::Option<crate::types::InstanceMaintenanceOptions>,
     /// <p>The boot mode that is used to boot the instance at launch or start. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub current_instance_boot_mode: ::std::option::Option<crate::types::InstanceBootModeValues>,
+    /// <p>Contains settings for the network performance options for your instance.</p>
+    pub network_performance_options: ::std::option::Option<crate::types::InstanceNetworkPerformanceOptions>,
     /// <p>The service provider that manages the instance.</p>
     pub operator: ::std::option::Option<crate::types::OperatorResponse>,
     /// <p>The ID of the instance.</p>
@@ -300,6 +302,10 @@ impl Instance {
     pub fn current_instance_boot_mode(&self) -> ::std::option::Option<&crate::types::InstanceBootModeValues> {
         self.current_instance_boot_mode.as_ref()
     }
+    /// <p>Contains settings for the network performance options for your instance.</p>
+    pub fn network_performance_options(&self) -> ::std::option::Option<&crate::types::InstanceNetworkPerformanceOptions> {
+        self.network_performance_options.as_ref()
+    }
     /// <p>The service provider that manages the instance.</p>
     pub fn operator(&self) -> ::std::option::Option<&crate::types::OperatorResponse> {
         self.operator.as_ref()
@@ -438,6 +444,7 @@ pub struct InstanceBuilder {
     pub(crate) tpm_support: ::std::option::Option<::std::string::String>,
     pub(crate) maintenance_options: ::std::option::Option<crate::types::InstanceMaintenanceOptions>,
     pub(crate) current_instance_boot_mode: ::std::option::Option<crate::types::InstanceBootModeValues>,
+    pub(crate) network_performance_options: ::std::option::Option<crate::types::InstanceNetworkPerformanceOptions>,
     pub(crate) operator: ::std::option::Option<crate::types::OperatorResponse>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
@@ -1050,6 +1057,20 @@ impl InstanceBuilder {
     pub fn get_current_instance_boot_mode(&self) -> &::std::option::Option<crate::types::InstanceBootModeValues> {
         &self.current_instance_boot_mode
     }
+    /// <p>Contains settings for the network performance options for your instance.</p>
+    pub fn network_performance_options(mut self, input: crate::types::InstanceNetworkPerformanceOptions) -> Self {
+        self.network_performance_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains settings for the network performance options for your instance.</p>
+    pub fn set_network_performance_options(mut self, input: ::std::option::Option<crate::types::InstanceNetworkPerformanceOptions>) -> Self {
+        self.network_performance_options = input;
+        self
+    }
+    /// <p>Contains settings for the network performance options for your instance.</p>
+    pub fn get_network_performance_options(&self) -> &::std::option::Option<crate::types::InstanceNetworkPerformanceOptions> {
+        &self.network_performance_options
+    }
     /// <p>The service provider that manages the instance.</p>
     pub fn operator(mut self, input: crate::types::OperatorResponse) -> Self {
         self.operator = ::std::option::Option::Some(input);
@@ -1396,6 +1417,7 @@ impl InstanceBuilder {
             tpm_support: self.tpm_support,
             maintenance_options: self.maintenance_options,
             current_instance_boot_mode: self.current_instance_boot_mode,
+            network_performance_options: self.network_performance_options,
             operator: self.operator,
             instance_id: self.instance_id,
             image_id: self.image_id,

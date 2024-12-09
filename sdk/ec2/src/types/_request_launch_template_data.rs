@@ -136,6 +136,8 @@ pub struct RequestLaunchTemplateData {
     pub disable_api_stop: ::std::option::Option<bool>,
     /// <p>The entity that manages the launch template.</p>
     pub operator: ::std::option::Option<crate::types::OperatorRequest>,
+    /// <p>Contains launch template settings to boost network performance for the type of workload that runs on your instance.</p>
+    pub network_performance_options: ::std::option::Option<crate::types::LaunchTemplateNetworkPerformanceOptionsRequest>,
 }
 impl RequestLaunchTemplateData {
     /// <p>The ID of the kernel.</p><important>
@@ -348,6 +350,10 @@ impl RequestLaunchTemplateData {
     pub fn operator(&self) -> ::std::option::Option<&crate::types::OperatorRequest> {
         self.operator.as_ref()
     }
+    /// <p>Contains launch template settings to boost network performance for the type of workload that runs on your instance.</p>
+    pub fn network_performance_options(&self) -> ::std::option::Option<&crate::types::LaunchTemplateNetworkPerformanceOptionsRequest> {
+        self.network_performance_options.as_ref()
+    }
 }
 impl ::std::fmt::Debug for RequestLaunchTemplateData {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -384,6 +390,7 @@ impl ::std::fmt::Debug for RequestLaunchTemplateData {
         formatter.field("maintenance_options", &self.maintenance_options);
         formatter.field("disable_api_stop", &self.disable_api_stop);
         formatter.field("operator", &self.operator);
+        formatter.field("network_performance_options", &self.network_performance_options);
         formatter.finish()
     }
 }
@@ -430,6 +437,7 @@ pub struct RequestLaunchTemplateDataBuilder {
     pub(crate) maintenance_options: ::std::option::Option<crate::types::LaunchTemplateInstanceMaintenanceOptionsRequest>,
     pub(crate) disable_api_stop: ::std::option::Option<bool>,
     pub(crate) operator: ::std::option::Option<crate::types::OperatorRequest>,
+    pub(crate) network_performance_options: ::std::option::Option<crate::types::LaunchTemplateNetworkPerformanceOptionsRequest>,
 }
 impl RequestLaunchTemplateDataBuilder {
     /// <p>The ID of the kernel.</p><important>
@@ -1153,6 +1161,23 @@ impl RequestLaunchTemplateDataBuilder {
     pub fn get_operator(&self) -> &::std::option::Option<crate::types::OperatorRequest> {
         &self.operator
     }
+    /// <p>Contains launch template settings to boost network performance for the type of workload that runs on your instance.</p>
+    pub fn network_performance_options(mut self, input: crate::types::LaunchTemplateNetworkPerformanceOptionsRequest) -> Self {
+        self.network_performance_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains launch template settings to boost network performance for the type of workload that runs on your instance.</p>
+    pub fn set_network_performance_options(
+        mut self,
+        input: ::std::option::Option<crate::types::LaunchTemplateNetworkPerformanceOptionsRequest>,
+    ) -> Self {
+        self.network_performance_options = input;
+        self
+    }
+    /// <p>Contains launch template settings to boost network performance for the type of workload that runs on your instance.</p>
+    pub fn get_network_performance_options(&self) -> &::std::option::Option<crate::types::LaunchTemplateNetworkPerformanceOptionsRequest> {
+        &self.network_performance_options
+    }
     /// Consumes the builder and constructs a [`RequestLaunchTemplateData`](crate::types::RequestLaunchTemplateData).
     pub fn build(self) -> crate::types::RequestLaunchTemplateData {
         crate::types::RequestLaunchTemplateData {
@@ -1188,6 +1213,7 @@ impl RequestLaunchTemplateDataBuilder {
             maintenance_options: self.maintenance_options,
             disable_api_stop: self.disable_api_stop,
             operator: self.operator,
+            network_performance_options: self.network_performance_options,
         }
     }
 }
@@ -1226,6 +1252,7 @@ impl ::std::fmt::Debug for RequestLaunchTemplateDataBuilder {
         formatter.field("maintenance_options", &self.maintenance_options);
         formatter.field("disable_api_stop", &self.disable_api_stop);
         formatter.field("operator", &self.operator);
+        formatter.field("network_performance_options", &self.network_performance_options);
         formatter.finish()
     }
 }

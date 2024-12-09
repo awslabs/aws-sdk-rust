@@ -7,6 +7,7 @@ pub struct WorkspaceRequest {
     /// <p>The identifier of the Directory Service directory for the WorkSpace. You can use <code>DescribeWorkspaceDirectories</code> to list the available directories.</p>
     pub directory_id: ::std::string::String,
     /// <p>The user name of the user for the WorkSpace. This user name must exist in the Directory Service directory for the WorkSpace.</p>
+    /// <p>The username is not case-sensitive, but we recommend matching the case in the Directory Service directory to avoid potential incompatibilities.</p>
     /// <p>The reserved keyword, <code>\[UNDEFINED\]</code>, is used when creating user-decoupled WorkSpaces.</p>
     pub user_name: ::std::string::String,
     /// <p>The identifier of the bundle for the WorkSpace. You can use <code>DescribeWorkspaceBundles</code> to list the available bundles.</p>
@@ -33,6 +34,7 @@ impl WorkspaceRequest {
         self.directory_id.deref()
     }
     /// <p>The user name of the user for the WorkSpace. This user name must exist in the Directory Service directory for the WorkSpace.</p>
+    /// <p>The username is not case-sensitive, but we recommend matching the case in the Directory Service directory to avoid potential incompatibilities.</p>
     /// <p>The reserved keyword, <code>\[UNDEFINED\]</code>, is used when creating user-decoupled WorkSpaces.</p>
     pub fn user_name(&self) -> &str {
         use std::ops::Deref;
@@ -110,6 +112,7 @@ impl WorkspaceRequestBuilder {
         &self.directory_id
     }
     /// <p>The user name of the user for the WorkSpace. This user name must exist in the Directory Service directory for the WorkSpace.</p>
+    /// <p>The username is not case-sensitive, but we recommend matching the case in the Directory Service directory to avoid potential incompatibilities.</p>
     /// <p>The reserved keyword, <code>\[UNDEFINED\]</code>, is used when creating user-decoupled WorkSpaces.</p>
     /// This field is required.
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -117,12 +120,14 @@ impl WorkspaceRequestBuilder {
         self
     }
     /// <p>The user name of the user for the WorkSpace. This user name must exist in the Directory Service directory for the WorkSpace.</p>
+    /// <p>The username is not case-sensitive, but we recommend matching the case in the Directory Service directory to avoid potential incompatibilities.</p>
     /// <p>The reserved keyword, <code>\[UNDEFINED\]</code>, is used when creating user-decoupled WorkSpaces.</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_name = input;
         self
     }
     /// <p>The user name of the user for the WorkSpace. This user name must exist in the Directory Service directory for the WorkSpace.</p>
+    /// <p>The username is not case-sensitive, but we recommend matching the case in the Directory Service directory to avoid potential incompatibilities.</p>
     /// <p>The reserved keyword, <code>\[UNDEFINED\]</code>, is used when creating user-decoupled WorkSpaces.</p>
     pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_name

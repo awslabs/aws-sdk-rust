@@ -101,7 +101,6 @@ impl UpdateUserPoolDomainInputBuilder {
     }
     /// <p>The configuration for a custom domain that hosts the sign-up and sign-in pages for your application. Use this object to specify an SSL certificate that is managed by ACM.</p>
     /// <p>When you create a custom domain, the passkey RP ID defaults to the custom domain. If you had a prefix domain active, this will cause passkey integration for your prefix domain to stop working due to a mismatch in RP ID. To keep the prefix domain passkey integration working, you can explicitly set RP ID to the prefix domain. Update the RP ID in a <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a> request.</p>
-    /// This field is required.
     pub fn custom_domain_config(mut self, input: crate::types::CustomDomainConfigType) -> Self {
         self.custom_domain_config = ::std::option::Option::Some(input);
         self

@@ -1609,6 +1609,9 @@ pub mod modify_instance_metadata_defaults;
 /// Types for the `ModifyInstanceMetadataOptions` operation.
 pub mod modify_instance_metadata_options;
 
+/// Types for the `ModifyInstanceNetworkPerformanceOptions` operation.
+pub mod modify_instance_network_performance_options;
+
 /// Types for the `ModifyInstancePlacement` operation.
 pub mod modify_instance_placement;
 

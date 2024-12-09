@@ -41,7 +41,7 @@ pub struct CreateServiceInput {
     pub launch_type: ::std::option::Option<crate::types::LaunchType>,
     /// <p>The capacity provider strategy to use for the service.</p>
     /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or <code>launchType</code> is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
-    /// <p>A capacity provider strategy may contain a maximum of 6 capacity providers.</p>
+    /// <p>A capacity provider strategy can contain a maximum of 20 capacity providers.</p>
     pub capacity_provider_strategy: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
     /// <p>The platform version that your tasks in the service are running on. A platform version is specified only for tasks using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub platform_version: ::std::option::Option<::std::string::String>,
@@ -171,7 +171,7 @@ impl CreateServiceInput {
     }
     /// <p>The capacity provider strategy to use for the service.</p>
     /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or <code>launchType</code> is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
-    /// <p>A capacity provider strategy may contain a maximum of 6 capacity providers.</p>
+    /// <p>A capacity provider strategy can contain a maximum of 20 capacity providers.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capacity_provider_strategy.is_none()`.
     pub fn capacity_provider_strategy(&self) -> &[crate::types::CapacityProviderStrategyItem] {
@@ -524,7 +524,7 @@ impl CreateServiceInputBuilder {
     ///
     /// <p>The capacity provider strategy to use for the service.</p>
     /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or <code>launchType</code> is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
-    /// <p>A capacity provider strategy may contain a maximum of 6 capacity providers.</p>
+    /// <p>A capacity provider strategy can contain a maximum of 20 capacity providers.</p>
     pub fn capacity_provider_strategy(mut self, input: crate::types::CapacityProviderStrategyItem) -> Self {
         let mut v = self.capacity_provider_strategy.unwrap_or_default();
         v.push(input);
@@ -533,7 +533,7 @@ impl CreateServiceInputBuilder {
     }
     /// <p>The capacity provider strategy to use for the service.</p>
     /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or <code>launchType</code> is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
-    /// <p>A capacity provider strategy may contain a maximum of 6 capacity providers.</p>
+    /// <p>A capacity provider strategy can contain a maximum of 20 capacity providers.</p>
     pub fn set_capacity_provider_strategy(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
@@ -543,7 +543,7 @@ impl CreateServiceInputBuilder {
     }
     /// <p>The capacity provider strategy to use for the service.</p>
     /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or <code>launchType</code> is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
-    /// <p>A capacity provider strategy may contain a maximum of 6 capacity providers.</p>
+    /// <p>A capacity provider strategy can contain a maximum of 20 capacity providers.</p>
     pub fn get_capacity_provider_strategy(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>> {
         &self.capacity_provider_strategy
     }

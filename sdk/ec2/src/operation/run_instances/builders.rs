@@ -723,6 +723,20 @@ impl RunInstancesFluentBuilder {
     pub fn get_enable_primary_ipv6(&self) -> &::std::option::Option<bool> {
         self.inner.get_enable_primary_ipv6()
     }
+    /// <p>Contains settings for the network performance options for the instance.</p>
+    pub fn network_performance_options(mut self, input: crate::types::InstanceNetworkPerformanceOptionsRequest) -> Self {
+        self.inner = self.inner.network_performance_options(input);
+        self
+    }
+    /// <p>Contains settings for the network performance options for the instance.</p>
+    pub fn set_network_performance_options(mut self, input: ::std::option::Option<crate::types::InstanceNetworkPerformanceOptionsRequest>) -> Self {
+        self.inner = self.inner.set_network_performance_options(input);
+        self
+    }
+    /// <p>Contains settings for the network performance options for the instance.</p>
+    pub fn get_network_performance_options(&self) -> &::std::option::Option<crate::types::InstanceNetworkPerformanceOptionsRequest> {
+        self.inner.get_network_performance_options()
+    }
     /// <p>Reserved for internal use.</p>
     pub fn operator(mut self, input: crate::types::OperatorRequest) -> Self {
         self.inner = self.inner.operator(input);

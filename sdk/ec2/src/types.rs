@@ -147,6 +147,10 @@ pub use crate::types::_product_code_values::ProductCodeValues;
 
 pub use crate::types::_operator_response::OperatorResponse;
 
+pub use crate::types::_instance_network_performance_options::InstanceNetworkPerformanceOptions;
+
+pub use crate::types::_instance_bandwidth_weighting::InstanceBandwidthWeighting;
+
 pub use crate::types::_instance_boot_mode_values::InstanceBootModeValues;
 
 pub use crate::types::_instance_maintenance_options::InstanceMaintenanceOptions;
@@ -254,6 +258,8 @@ pub use crate::types::_private_ip_address_specification::PrivateIpAddressSpecifi
 pub use crate::types::_shutdown_behavior::ShutdownBehavior;
 
 pub use crate::types::_operator_request::OperatorRequest;
+
+pub use crate::types::_instance_network_performance_options_request::InstanceNetworkPerformanceOptionsRequest;
 
 pub use crate::types::_instance_maintenance_options_request::InstanceMaintenanceOptionsRequest;
 
@@ -1117,6 +1123,8 @@ pub use crate::types::_prefix_list_association::PrefixListAssociation;
 
 pub use crate::types::_response_launch_template_data::ResponseLaunchTemplateData;
 
+pub use crate::types::_launch_template_network_performance_options::LaunchTemplateNetworkPerformanceOptions;
+
 pub use crate::types::_launch_template_instance_maintenance_options::LaunchTemplateInstanceMaintenanceOptions;
 
 pub use crate::types::_launch_template_auto_recovery_state::LaunchTemplateAutoRecoveryState;
@@ -1783,6 +1791,8 @@ pub use crate::types::_gpu_device_memory_info::GpuDeviceMemoryInfo;
 
 pub use crate::types::_network_info::NetworkInfo;
 
+pub use crate::types::_bandwidth_weighting_type::BandwidthWeightingType;
+
 pub use crate::types::_efa_info::EfaInfo;
 
 pub use crate::types::_ena_support::EnaSupport;
@@ -2195,6 +2205,8 @@ pub use crate::types::_validation_error::ValidationError;
 
 pub use crate::types::_request_launch_template_data::RequestLaunchTemplateData;
 
+pub use crate::types::_launch_template_network_performance_options_request::LaunchTemplateNetworkPerformanceOptionsRequest;
+
 pub use crate::types::_launch_template_instance_maintenance_options_request::LaunchTemplateInstanceMaintenanceOptionsRequest;
 
 pub use crate::types::_launch_template_private_dns_name_options_request::LaunchTemplatePrivateDnsNameOptionsRequest;
@@ -2438,6 +2450,8 @@ mod _availability_zone_opt_in_status;
 mod _availability_zone_state;
 
 mod _available_capacity;
+
+mod _bandwidth_weighting_type;
 
 mod _bare_metal;
 
@@ -3119,6 +3133,8 @@ mod _instance_attribute_name;
 
 mod _instance_auto_recovery_state;
 
+mod _instance_bandwidth_weighting;
+
 mod _instance_block_device_mapping;
 
 mod _instance_block_device_mapping_specification;
@@ -3204,6 +3220,10 @@ mod _instance_network_interface_association;
 mod _instance_network_interface_attachment;
 
 mod _instance_network_interface_specification;
+
+mod _instance_network_performance_options;
+
+mod _instance_network_performance_options_request;
 
 mod _instance_private_ip_address;
 
@@ -3484,6 +3504,10 @@ mod _launch_template_instance_network_interface_specification_request;
 mod _launch_template_license_configuration;
 
 mod _launch_template_license_configuration_request;
+
+mod _launch_template_network_performance_options;
+
+mod _launch_template_network_performance_options_request;
 
 mod _launch_template_overrides;
 

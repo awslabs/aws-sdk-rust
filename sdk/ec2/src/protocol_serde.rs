@@ -2167,6 +2167,10 @@ pub(crate) mod shape_modify_instance_metadata_options;
 
 pub(crate) mod shape_modify_instance_metadata_options_input;
 
+pub(crate) mod shape_modify_instance_network_performance_options;
+
+pub(crate) mod shape_modify_instance_network_performance_options_input;
+
 pub(crate) mod shape_modify_instance_placement;
 
 pub(crate) mod shape_modify_instance_placement_input;
@@ -2781,6 +2785,8 @@ pub(crate) mod shape_instance_metadata_options_request;
 
 pub(crate) mod shape_instance_network_interface_specification;
 
+pub(crate) mod shape_instance_network_performance_options_request;
+
 pub(crate) mod shape_instance_requirements_request;
 
 pub(crate) mod shape_instance_requirements_with_metadata_request;
@@ -3324,6 +3330,8 @@ pub(crate) mod shape_launch_template_instance_metadata_options_request;
 pub(crate) mod shape_launch_template_instance_network_interface_specification_request;
 
 pub(crate) mod shape_launch_template_license_configuration_request;
+
+pub(crate) mod shape_launch_template_network_performance_options_request;
 
 pub(crate) mod shape_launch_template_overrides;
 
@@ -4077,6 +4085,8 @@ pub(crate) mod shape_launch_template_instance_network_interface_specification_li
 
 pub(crate) mod shape_launch_template_license_list;
 
+pub(crate) mod shape_launch_template_network_performance_options;
+
 pub(crate) mod shape_launch_template_placement;
 
 pub(crate) mod shape_launch_template_private_dns_name_options;
@@ -4505,6 +4515,8 @@ pub(crate) mod shape_instance_maintenance_options;
 
 pub(crate) mod shape_instance_network_interface_list;
 
+pub(crate) mod shape_instance_network_performance_options;
+
 pub(crate) mod shape_instance_state;
 
 pub(crate) mod shape_instance_status_event_list;
@@ -4750,6 +4762,8 @@ pub(crate) mod shape_associated_target_network;
 pub(crate) mod shape_availability_zone_message;
 
 pub(crate) mod shape_available_instance_capacity_list;
+
+pub(crate) mod shape_bandwidth_weighting_type_list;
 
 pub(crate) mod shape_capacity_reservation_options;
 

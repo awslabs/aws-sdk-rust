@@ -168,6 +168,9 @@ pub fn ser_h265_settings(
             ::aws_smithy_types::Number::NegInt((*var_40).into()),
         );
     }
+    if let Some(var_41) = &input.deblocking {
+        object.key("deblocking").string(var_41.as_str());
+    }
     Ok(())
 }
 
@@ -432,6 +435,13 @@ where
                             builder = builder.set_min_qp(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "deblocking" => {
+                            builder = builder.set_deblocking(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::H265Deblocking::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

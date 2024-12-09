@@ -109,6 +109,8 @@ pub use crate::types::_product_code::ProductCodeBuilder;
 
 pub use crate::types::_operator_response::OperatorResponseBuilder;
 
+pub use crate::types::_instance_network_performance_options::InstanceNetworkPerformanceOptionsBuilder;
+
 pub use crate::types::_instance_maintenance_options::InstanceMaintenanceOptionsBuilder;
 
 pub use crate::types::_private_dns_name_options_response::PrivateDnsNameOptionsResponseBuilder;
@@ -178,6 +180,8 @@ pub use crate::types::_ipv4_prefix_specification_request::Ipv4PrefixSpecificatio
 pub use crate::types::_private_ip_address_specification::PrivateIpAddressSpecificationBuilder;
 
 pub use crate::types::_operator_request::OperatorRequestBuilder;
+
+pub use crate::types::_instance_network_performance_options_request::InstanceNetworkPerformanceOptionsRequestBuilder;
 
 pub use crate::types::_instance_maintenance_options_request::InstanceMaintenanceOptionsRequestBuilder;
 
@@ -752,6 +756,8 @@ pub use crate::types::_prefix_list_entry::PrefixListEntryBuilder;
 pub use crate::types::_prefix_list_association::PrefixListAssociationBuilder;
 
 pub use crate::types::_response_launch_template_data::ResponseLaunchTemplateDataBuilder;
+
+pub use crate::types::_launch_template_network_performance_options::LaunchTemplateNetworkPerformanceOptionsBuilder;
 
 pub use crate::types::_launch_template_instance_maintenance_options::LaunchTemplateInstanceMaintenanceOptionsBuilder;
 
@@ -1494,6 +1500,8 @@ pub use crate::types::_validation_warning::ValidationWarningBuilder;
 pub use crate::types::_validation_error::ValidationErrorBuilder;
 
 pub use crate::types::_request_launch_template_data::RequestLaunchTemplateDataBuilder;
+
+pub use crate::types::_launch_template_network_performance_options_request::LaunchTemplateNetworkPerformanceOptionsRequestBuilder;
 
 pub use crate::types::_launch_template_instance_maintenance_options_request::LaunchTemplateInstanceMaintenanceOptionsRequestBuilder;
 

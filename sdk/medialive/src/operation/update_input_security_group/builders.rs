@@ -128,16 +128,19 @@ impl UpdateInputSecurityGroupFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// A collection of key-value pairs.
+    #[deprecated(note = "This API is deprecated. You must use UpdateTagsForResource instead.", since = "2024-11-20")]
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// A collection of key-value pairs.
+    #[deprecated(note = "This API is deprecated. You must use UpdateTagsForResource instead.", since = "2024-11-20")]
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// A collection of key-value pairs.
+    #[deprecated(note = "This API is deprecated. You must use UpdateTagsForResource instead.", since = "2024-11-20")]
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }

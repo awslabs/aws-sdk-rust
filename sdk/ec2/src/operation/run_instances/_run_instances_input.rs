@@ -102,6 +102,8 @@ pub struct RunInstancesInput {
     pub disable_api_stop: ::std::option::Option<bool>,
     /// <p>If you’re launching an instance into a dual-stack or IPv6-only subnet, you can enable assigning a primary IPv6 address. A primary IPv6 address is an IPv6 GUA address associated with an ENI that you have enabled to use a primary IPv6 address. Use this option if an instance relies on its IPv6 address not changing. When you launch the instance, Amazon Web Services will automatically assign an IPv6 address associated with the ENI attached to your instance to be the primary IPv6 address. Once you enable an IPv6 GUA address to be a primary IPv6, you cannot disable it. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network interface is detached. If you have multiple IPv6 addresses associated with an ENI attached to your instance and you enable a primary IPv6 address, the first IPv6 GUA address associated with the ENI becomes the primary IPv6 address.</p>
     pub enable_primary_ipv6: ::std::option::Option<bool>,
+    /// <p>Contains settings for the network performance options for the instance.</p>
+    pub network_performance_options: ::std::option::Option<crate::types::InstanceNetworkPerformanceOptionsRequest>,
     /// <p>Reserved for internal use.</p>
     pub operator: ::std::option::Option<crate::types::OperatorRequest>,
     /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -310,6 +312,10 @@ impl RunInstancesInput {
     pub fn enable_primary_ipv6(&self) -> ::std::option::Option<bool> {
         self.enable_primary_ipv6
     }
+    /// <p>Contains settings for the network performance options for the instance.</p>
+    pub fn network_performance_options(&self) -> ::std::option::Option<&crate::types::InstanceNetworkPerformanceOptionsRequest> {
+        self.network_performance_options.as_ref()
+    }
     /// <p>Reserved for internal use.</p>
     pub fn operator(&self) -> ::std::option::Option<&crate::types::OperatorRequest> {
         self.operator.as_ref()
@@ -395,6 +401,7 @@ impl ::std::fmt::Debug for RunInstancesInput {
         formatter.field("maintenance_options", &self.maintenance_options);
         formatter.field("disable_api_stop", &self.disable_api_stop);
         formatter.field("enable_primary_ipv6", &self.enable_primary_ipv6);
+        formatter.field("network_performance_options", &self.network_performance_options);
         formatter.field("operator", &self.operator);
         formatter.field("dry_run", &self.dry_run);
         formatter.field("disable_api_termination", &self.disable_api_termination);
@@ -451,6 +458,7 @@ pub struct RunInstancesInputBuilder {
     pub(crate) maintenance_options: ::std::option::Option<crate::types::InstanceMaintenanceOptionsRequest>,
     pub(crate) disable_api_stop: ::std::option::Option<bool>,
     pub(crate) enable_primary_ipv6: ::std::option::Option<bool>,
+    pub(crate) network_performance_options: ::std::option::Option<crate::types::InstanceNetworkPerformanceOptionsRequest>,
     pub(crate) operator: ::std::option::Option<crate::types::OperatorRequest>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) disable_api_termination: ::std::option::Option<bool>,
@@ -1069,6 +1077,20 @@ impl RunInstancesInputBuilder {
     pub fn get_enable_primary_ipv6(&self) -> &::std::option::Option<bool> {
         &self.enable_primary_ipv6
     }
+    /// <p>Contains settings for the network performance options for the instance.</p>
+    pub fn network_performance_options(mut self, input: crate::types::InstanceNetworkPerformanceOptionsRequest) -> Self {
+        self.network_performance_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains settings for the network performance options for the instance.</p>
+    pub fn set_network_performance_options(mut self, input: ::std::option::Option<crate::types::InstanceNetworkPerformanceOptionsRequest>) -> Self {
+        self.network_performance_options = input;
+        self
+    }
+    /// <p>Contains settings for the network performance options for the instance.</p>
+    pub fn get_network_performance_options(&self) -> &::std::option::Option<crate::types::InstanceNetworkPerformanceOptionsRequest> {
+        &self.network_performance_options
+    }
     /// <p>Reserved for internal use.</p>
     pub fn operator(mut self, input: crate::types::OperatorRequest) -> Self {
         self.operator = ::std::option::Option::Some(input);
@@ -1276,6 +1298,7 @@ impl RunInstancesInputBuilder {
             maintenance_options: self.maintenance_options,
             disable_api_stop: self.disable_api_stop,
             enable_primary_ipv6: self.enable_primary_ipv6,
+            network_performance_options: self.network_performance_options,
             operator: self.operator,
             dry_run: self.dry_run,
             disable_api_termination: self.disable_api_termination,
@@ -1324,6 +1347,7 @@ impl ::std::fmt::Debug for RunInstancesInputBuilder {
         formatter.field("maintenance_options", &self.maintenance_options);
         formatter.field("disable_api_stop", &self.disable_api_stop);
         formatter.field("enable_primary_ipv6", &self.enable_primary_ipv6);
+        formatter.field("network_performance_options", &self.network_performance_options);
         formatter.field("operator", &self.operator);
         formatter.field("dry_run", &self.dry_run);
         formatter.field("disable_api_termination", &self.disable_api_termination);

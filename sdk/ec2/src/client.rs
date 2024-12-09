@@ -1443,6 +1443,8 @@ mod modify_instance_metadata_defaults;
 
 mod modify_instance_metadata_options;
 
+mod modify_instance_network_performance_options;
+
 mod modify_instance_placement;
 
 mod modify_ipam;

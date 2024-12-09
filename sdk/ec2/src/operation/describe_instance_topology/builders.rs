@@ -39,7 +39,7 @@ impl crate::operation::describe_instance_topology::builders::DescribeInstanceTop
 /// <li>
 /// <p><code>hpc6a.48xlarge</code> | <code>hpc6id.32xlarge</code> | <code>hpc7a.12xlarge</code> | <code>hpc7a.24xlarge</code> | <code>hpc7a.48xlarge</code> | <code>hpc7a.96xlarge</code> | <code>hpc7g.4xlarge</code> | <code>hpc7g.8xlarge</code> | <code>hpc7g.16xlarge</code></p></li>
 /// <li>
-/// <p><code>p3dn.24xlarge</code> | <code>p4d.24xlarge</code> | <code>p4de.24xlarge</code> | <code>p5.48xlarge</code> | <code>p5e.48xlarge</code></p></li>
+/// <p><code>p3dn.24xlarge</code> | <code>p4d.24xlarge</code> | <code>p4de.24xlarge</code> | <code>p5.48xlarge</code> | <code>p5e.48xlarge</code> | <code>p5en.48xlarge</code></p></li>
 /// <li>
 /// <p><code>trn1.2xlarge</code> | <code>trn1.32xlarge</code> | <code>trn1n.32xlarge</code></p></li>
 /// </ul></li>

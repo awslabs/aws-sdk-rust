@@ -244,5 +244,12 @@ pub fn ser_request_launch_template_data(
     if let Some(var_88) = &input.operator {
         crate::protocol_serde::shape_operator_request::ser_operator_request(scope_87, var_88)?;
     }
+    #[allow(unused_mut)]
+    let mut scope_89 = writer.prefix("NetworkPerformanceOptions");
+    if let Some(var_90) = &input.network_performance_options {
+        crate::protocol_serde::shape_launch_template_network_performance_options_request::ser_launch_template_network_performance_options_request(
+            scope_89, var_90,
+        )?;
+    }
     Ok(())
 }

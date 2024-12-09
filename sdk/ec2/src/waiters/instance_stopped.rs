@@ -332,6 +332,8 @@ impl InstanceStoppedFluentBuilder {
     /// <li>
     /// <p><code>network-interface.vpc-id</code> - The ID of the VPC for the network interface.</p></li>
     /// <li>
+    /// <p><code>network-performance-options.bandwidth-weighting</code> - Where the performance boost is applied, if applicable. Valid values: <code>default</code>, <code>vpc-1</code>, <code>ebs-1</code>.</p></li>
+    /// <li>
     /// <p><code>operator.managed</code> - A Boolean that indicates whether this is a managed instance.</p></li>
     /// <li>
     /// <p><code>operator.principal</code> - The principal that manages the instance. Only valid for managed instances, where <code>managed</code> is <code>true</code>.</p></li>
@@ -607,6 +609,8 @@ impl InstanceStoppedFluentBuilder {
     /// <li>
     /// <p><code>network-interface.vpc-id</code> - The ID of the VPC for the network interface.</p></li>
     /// <li>
+    /// <p><code>network-performance-options.bandwidth-weighting</code> - Where the performance boost is applied, if applicable. Valid values: <code>default</code>, <code>vpc-1</code>, <code>ebs-1</code>.</p></li>
+    /// <li>
     /// <p><code>operator.managed</code> - A Boolean that indicates whether this is a managed instance.</p></li>
     /// <li>
     /// <p><code>operator.principal</code> - The principal that manages the instance. Only valid for managed instances, where <code>managed</code> is <code>true</code>.</p></li>
@@ -881,6 +885,8 @@ impl InstanceStoppedFluentBuilder {
     /// <p><code>network-interface.tag-value</code> - The value of a tag assigned to the network interface.</p></li>
     /// <li>
     /// <p><code>network-interface.vpc-id</code> - The ID of the VPC for the network interface.</p></li>
+    /// <li>
+    /// <p><code>network-performance-options.bandwidth-weighting</code> - Where the performance boost is applied, if applicable. Valid values: <code>default</code>, <code>vpc-1</code>, <code>ebs-1</code>.</p></li>
     /// <li>
     /// <p><code>operator.managed</code> - A Boolean that indicates whether this is a managed instance.</p></li>
     /// <li>

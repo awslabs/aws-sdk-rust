@@ -365,6 +365,16 @@ pub fn de_response_launch_template_data(
                 builder = builder.set_operator(var_32);
             }
             ,
+            s if s.matches("networkPerformanceOptions") /* NetworkPerformanceOptions com.amazonaws.ec2#ResponseLaunchTemplateData$NetworkPerformanceOptions */ =>  {
+                let var_33 =
+                    Some(
+                        crate::protocol_serde::shape_launch_template_network_performance_options::de_launch_template_network_performance_options(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_network_performance_options(var_33);
+            }
+            ,
             _ => {}
         }
     }

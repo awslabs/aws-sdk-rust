@@ -122,7 +122,7 @@ impl RunTaskFluentBuilder {
     /// <p>The capacity provider strategy to use for the task.</p>
     /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or <code>launchType</code> is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
     /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>.</p>
-    /// <p>A capacity provider strategy may contain a maximum of 6 capacity providers.</p>
+    /// <p>A capacity provider strategy can contain a maximum of 20 capacity providers.</p>
     pub fn capacity_provider_strategy(mut self, input: crate::types::CapacityProviderStrategyItem) -> Self {
         self.inner = self.inner.capacity_provider_strategy(input);
         self
@@ -130,7 +130,7 @@ impl RunTaskFluentBuilder {
     /// <p>The capacity provider strategy to use for the task.</p>
     /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or <code>launchType</code> is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
     /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>.</p>
-    /// <p>A capacity provider strategy may contain a maximum of 6 capacity providers.</p>
+    /// <p>A capacity provider strategy can contain a maximum of 20 capacity providers.</p>
     pub fn set_capacity_provider_strategy(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
@@ -141,7 +141,7 @@ impl RunTaskFluentBuilder {
     /// <p>The capacity provider strategy to use for the task.</p>
     /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or <code>launchType</code> is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
     /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>.</p>
-    /// <p>A capacity provider strategy may contain a maximum of 6 capacity providers.</p>
+    /// <p>A capacity provider strategy can contain a maximum of 20 capacity providers.</p>
     pub fn get_capacity_provider_strategy(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>> {
         self.inner.get_capacity_provider_strategy()
     }

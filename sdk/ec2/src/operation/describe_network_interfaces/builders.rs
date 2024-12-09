@@ -235,10 +235,6 @@ impl DescribeNetworkInterfacesFluentBuilder {
     /// <li>
     /// <p><code>network-interface-id</code> - The ID of the network interface.</p></li>
     /// <li>
-    /// <p><code>operator.managed</code> - A Boolean that indicates whether this is a managed network interface.</p></li>
-    /// <li>
-    /// <p><code>operator.principal</code> - The principal that manages the network interface. Only valid for managed network interfaces, where <code>managed</code> is <code>true</code>.</p></li>
-    /// <li>
     /// <p><code>owner-id</code> - The Amazon Web Services account ID of the network interface owner.</p></li>
     /// <li>
     /// <p><code>private-dns-name</code> - The private DNS name of the network interface (IPv4).</p></li>
@@ -320,10 +316,6 @@ impl DescribeNetworkInterfacesFluentBuilder {
     /// <li>
     /// <p><code>network-interface-id</code> - The ID of the network interface.</p></li>
     /// <li>
-    /// <p><code>operator.managed</code> - A Boolean that indicates whether this is a managed network interface.</p></li>
-    /// <li>
-    /// <p><code>operator.principal</code> - The principal that manages the network interface. Only valid for managed network interfaces, where <code>managed</code> is <code>true</code>.</p></li>
-    /// <li>
     /// <p><code>owner-id</code> - The Amazon Web Services account ID of the network interface owner.</p></li>
     /// <li>
     /// <p><code>private-dns-name</code> - The private DNS name of the network interface (IPv4).</p></li>
@@ -404,10 +396,6 @@ impl DescribeNetworkInterfacesFluentBuilder {
     /// <p><code>mac-address</code> - The MAC address of the network interface.</p></li>
     /// <li>
     /// <p><code>network-interface-id</code> - The ID of the network interface.</p></li>
-    /// <li>
-    /// <p><code>operator.managed</code> - A Boolean that indicates whether this is a managed network interface.</p></li>
-    /// <li>
-    /// <p><code>operator.principal</code> - The principal that manages the network interface. Only valid for managed network interfaces, where <code>managed</code> is <code>true</code>.</p></li>
     /// <li>
     /// <p><code>owner-id</code> - The Amazon Web Services account ID of the network interface owner.</p></li>
     /// <li>

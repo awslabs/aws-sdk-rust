@@ -7,6 +7,7 @@ pub struct UpdateInputSecurityGroupInput {
     /// The id of the Input Security Group to update.
     pub input_security_group_id: ::std::option::Option<::std::string::String>,
     /// A collection of key-value pairs.
+    #[deprecated(note = "This API is deprecated. You must use UpdateTagsForResource instead.", since = "2024-11-20")]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// List of IPv4 CIDR addresses to whitelist
     pub whitelist_rules: ::std::option::Option<::std::vec::Vec<crate::types::InputWhitelistRuleCidr>>,
@@ -17,6 +18,7 @@ impl UpdateInputSecurityGroupInput {
         self.input_security_group_id.as_deref()
     }
     /// A collection of key-value pairs.
+    #[deprecated(note = "This API is deprecated. You must use UpdateTagsForResource instead.", since = "2024-11-20")]
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -63,6 +65,7 @@ impl UpdateInputSecurityGroupInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// A collection of key-value pairs.
+    #[deprecated(note = "This API is deprecated. You must use UpdateTagsForResource instead.", since = "2024-11-20")]
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
@@ -70,11 +73,13 @@ impl UpdateInputSecurityGroupInputBuilder {
         self
     }
     /// A collection of key-value pairs.
+    #[deprecated(note = "This API is deprecated. You must use UpdateTagsForResource instead.", since = "2024-11-20")]
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// A collection of key-value pairs.
+    #[deprecated(note = "This API is deprecated. You must use UpdateTagsForResource instead.", since = "2024-11-20")]
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }

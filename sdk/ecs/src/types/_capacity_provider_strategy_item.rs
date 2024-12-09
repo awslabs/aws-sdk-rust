@@ -5,7 +5,7 @@
 /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created. New Auto Scaling group capacity providers can be created with the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateClusterCapacityProvider.html">CreateClusterCapacityProvider</a> API operation.</p>
 /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are available to all accounts and only need to be associated with a cluster to be used in a capacity provider strategy.</p>
 /// <p>With <code>FARGATE_SPOT</code>, you can run interruption tolerant tasks at a rate that's discounted compared to the <code>FARGATE</code> price. <code>FARGATE_SPOT</code> runs tasks on spare compute capacity. When Amazon Web Services needs the capacity back, your tasks are interrupted with a two-minute warning. <code>FARGATE_SPOT</code> supports Linux tasks with the X86_64 architecture on platform version 1.3.0 or later. <code>FARGATE_SPOT</code> supports Linux tasks with the ARM64 architecture on platform version 1.4.0 or later.</p>
-/// <p>A capacity provider strategy may contain a maximum of 6 capacity providers.</p>
+/// <p>A capacity provider strategy can contain a maximum of 20 capacity providers.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CapacityProviderStrategyItem {

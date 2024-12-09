@@ -30,6 +30,8 @@ pub struct NetworkInfo {
     pub encryption_in_transit_supported: ::std::option::Option<bool>,
     /// <p>Indicates whether the instance type supports ENA Express. ENA Express uses Amazon Web Services Scalable Reliable Datagram (SRD) technology to increase the maximum bandwidth used per stream and minimize tail latency of network traffic between EC2 instances.</p>
     pub ena_srd_supported: ::std::option::Option<bool>,
+    /// <p>A list of valid settings for configurable bandwidth weighting for the instance type, if supported.</p>
+    pub bandwidth_weightings: ::std::option::Option<::std::vec::Vec<crate::types::BandwidthWeightingType>>,
 }
 impl NetworkInfo {
     /// <p>The network performance.</p>
@@ -86,6 +88,12 @@ impl NetworkInfo {
     pub fn ena_srd_supported(&self) -> ::std::option::Option<bool> {
         self.ena_srd_supported
     }
+    /// <p>A list of valid settings for configurable bandwidth weighting for the instance type, if supported.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bandwidth_weightings.is_none()`.
+    pub fn bandwidth_weightings(&self) -> &[crate::types::BandwidthWeightingType] {
+        self.bandwidth_weightings.as_deref().unwrap_or_default()
+    }
 }
 impl NetworkInfo {
     /// Creates a new builder-style object to manufacture [`NetworkInfo`](crate::types::NetworkInfo).
@@ -111,6 +119,7 @@ pub struct NetworkInfoBuilder {
     pub(crate) efa_info: ::std::option::Option<crate::types::EfaInfo>,
     pub(crate) encryption_in_transit_supported: ::std::option::Option<bool>,
     pub(crate) ena_srd_supported: ::std::option::Option<bool>,
+    pub(crate) bandwidth_weightings: ::std::option::Option<::std::vec::Vec<crate::types::BandwidthWeightingType>>,
 }
 impl NetworkInfoBuilder {
     /// <p>The network performance.</p>
@@ -301,6 +310,26 @@ impl NetworkInfoBuilder {
     pub fn get_ena_srd_supported(&self) -> &::std::option::Option<bool> {
         &self.ena_srd_supported
     }
+    /// Appends an item to `bandwidth_weightings`.
+    ///
+    /// To override the contents of this collection use [`set_bandwidth_weightings`](Self::set_bandwidth_weightings).
+    ///
+    /// <p>A list of valid settings for configurable bandwidth weighting for the instance type, if supported.</p>
+    pub fn bandwidth_weightings(mut self, input: crate::types::BandwidthWeightingType) -> Self {
+        let mut v = self.bandwidth_weightings.unwrap_or_default();
+        v.push(input);
+        self.bandwidth_weightings = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of valid settings for configurable bandwidth weighting for the instance type, if supported.</p>
+    pub fn set_bandwidth_weightings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BandwidthWeightingType>>) -> Self {
+        self.bandwidth_weightings = input;
+        self
+    }
+    /// <p>A list of valid settings for configurable bandwidth weighting for the instance type, if supported.</p>
+    pub fn get_bandwidth_weightings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BandwidthWeightingType>> {
+        &self.bandwidth_weightings
+    }
     /// Consumes the builder and constructs a [`NetworkInfo`](crate::types::NetworkInfo).
     pub fn build(self) -> crate::types::NetworkInfo {
         crate::types::NetworkInfo {
@@ -317,6 +346,7 @@ impl NetworkInfoBuilder {
             efa_info: self.efa_info,
             encryption_in_transit_supported: self.encryption_in_transit_supported,
             ena_srd_supported: self.ena_srd_supported,
+            bandwidth_weightings: self.bandwidth_weightings,
         }
     }
 }

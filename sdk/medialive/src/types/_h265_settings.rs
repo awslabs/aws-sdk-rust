@@ -78,6 +78,8 @@ pub struct H265Settings {
     pub treeblock_size: ::std::option::Option<crate::types::H265TreeblockSize>,
     /// Sets the minimum QP. If you aren't familiar with quantization adjustment, leave the field empty. MediaLive will apply an appropriate value.
     pub min_qp: ::std::option::Option<i32>,
+    /// Enable or disable the deblocking filter for this codec. The filter reduces blocking artifacts at block boundaries, which improves overall video quality. If the filter is disabled, visible block edges might appear in the output, especially at lower bitrates.
+    pub deblocking: ::std::option::Option<crate::types::H265Deblocking>,
 }
 impl H265Settings {
     /// Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
@@ -228,6 +230,10 @@ impl H265Settings {
     pub fn min_qp(&self) -> ::std::option::Option<i32> {
         self.min_qp
     }
+    /// Enable or disable the deblocking filter for this codec. The filter reduces blocking artifacts at block boundaries, which improves overall video quality. If the filter is disabled, visible block edges might appear in the output, especially at lower bitrates.
+    pub fn deblocking(&self) -> ::std::option::Option<&crate::types::H265Deblocking> {
+        self.deblocking.as_ref()
+    }
 }
 impl H265Settings {
     /// Creates a new builder-style object to manufacture [`H265Settings`](crate::types::H265Settings).
@@ -277,6 +283,7 @@ pub struct H265SettingsBuilder {
     pub(crate) tile_width: ::std::option::Option<i32>,
     pub(crate) treeblock_size: ::std::option::Option<crate::types::H265TreeblockSize>,
     pub(crate) min_qp: ::std::option::Option<i32>,
+    pub(crate) deblocking: ::std::option::Option<crate::types::H265Deblocking>,
 }
 impl H265SettingsBuilder {
     /// Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
@@ -799,6 +806,20 @@ impl H265SettingsBuilder {
     pub fn get_min_qp(&self) -> &::std::option::Option<i32> {
         &self.min_qp
     }
+    /// Enable or disable the deblocking filter for this codec. The filter reduces blocking artifacts at block boundaries, which improves overall video quality. If the filter is disabled, visible block edges might appear in the output, especially at lower bitrates.
+    pub fn deblocking(mut self, input: crate::types::H265Deblocking) -> Self {
+        self.deblocking = ::std::option::Option::Some(input);
+        self
+    }
+    /// Enable or disable the deblocking filter for this codec. The filter reduces blocking artifacts at block boundaries, which improves overall video quality. If the filter is disabled, visible block edges might appear in the output, especially at lower bitrates.
+    pub fn set_deblocking(mut self, input: ::std::option::Option<crate::types::H265Deblocking>) -> Self {
+        self.deblocking = input;
+        self
+    }
+    /// Enable or disable the deblocking filter for this codec. The filter reduces blocking artifacts at block boundaries, which improves overall video quality. If the filter is disabled, visible block edges might appear in the output, especially at lower bitrates.
+    pub fn get_deblocking(&self) -> &::std::option::Option<crate::types::H265Deblocking> {
+        &self.deblocking
+    }
     /// Consumes the builder and constructs a [`H265Settings`](crate::types::H265Settings).
     pub fn build(self) -> crate::types::H265Settings {
         crate::types::H265Settings {
@@ -839,6 +860,7 @@ impl H265SettingsBuilder {
             tile_width: self.tile_width,
             treeblock_size: self.treeblock_size,
             min_qp: self.min_qp,
+            deblocking: self.deblocking,
         }
     }
 }

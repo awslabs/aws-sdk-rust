@@ -60,6 +60,8 @@ pub struct DescribeInstanceTypesInput {
     /// <li>
     /// <p><code>memory-info.size-in-mib</code> - The memory size.</p></li>
     /// <li>
+    /// <p><code>network-info.bandwidth-weightings</code> - For instances that support bandwidth weighting to boost performance (<code>default</code>, <code>vpc-1</code>, <code>ebs-1</code>).</p></li>
+    /// <li>
     /// <p><code>network-info.efa-info.maximum-efa-interfaces</code> - The maximum number of Elastic Fabric Adapters (EFAs) per instance.</p></li>
     /// <li>
     /// <p><code>network-info.efa-supported</code> - Indicates whether the instance type supports Elastic Fabric Adapter (EFA) (<code>true</code> | <code>false</code>).</p></li>
@@ -179,6 +181,8 @@ impl DescribeInstanceTypesInput {
     /// <p><code>instance-type</code> - The instance type (for example <code>c5.2xlarge</code> or c5*).</p></li>
     /// <li>
     /// <p><code>memory-info.size-in-mib</code> - The memory size.</p></li>
+    /// <li>
+    /// <p><code>network-info.bandwidth-weightings</code> - For instances that support bandwidth weighting to boost performance (<code>default</code>, <code>vpc-1</code>, <code>ebs-1</code>).</p></li>
     /// <li>
     /// <p><code>network-info.efa-info.maximum-efa-interfaces</code> - The maximum number of Elastic Fabric Adapters (EFAs) per instance.</p></li>
     /// <li>
@@ -353,6 +357,8 @@ impl DescribeInstanceTypesInputBuilder {
     /// <li>
     /// <p><code>memory-info.size-in-mib</code> - The memory size.</p></li>
     /// <li>
+    /// <p><code>network-info.bandwidth-weightings</code> - For instances that support bandwidth weighting to boost performance (<code>default</code>, <code>vpc-1</code>, <code>ebs-1</code>).</p></li>
+    /// <li>
     /// <p><code>network-info.efa-info.maximum-efa-interfaces</code> - The maximum number of Elastic Fabric Adapters (EFAs) per instance.</p></li>
     /// <li>
     /// <p><code>network-info.efa-supported</code> - Indicates whether the instance type supports Elastic Fabric Adapter (EFA) (<code>true</code> | <code>false</code>).</p></li>
@@ -462,6 +468,8 @@ impl DescribeInstanceTypesInputBuilder {
     /// <li>
     /// <p><code>memory-info.size-in-mib</code> - The memory size.</p></li>
     /// <li>
+    /// <p><code>network-info.bandwidth-weightings</code> - For instances that support bandwidth weighting to boost performance (<code>default</code>, <code>vpc-1</code>, <code>ebs-1</code>).</p></li>
+    /// <li>
     /// <p><code>network-info.efa-info.maximum-efa-interfaces</code> - The maximum number of Elastic Fabric Adapters (EFAs) per instance.</p></li>
     /// <li>
     /// <p><code>network-info.efa-supported</code> - Indicates whether the instance type supports Elastic Fabric Adapter (EFA) (<code>true</code> | <code>false</code>).</p></li>
@@ -568,6 +576,8 @@ impl DescribeInstanceTypesInputBuilder {
     /// <p><code>instance-type</code> - The instance type (for example <code>c5.2xlarge</code> or c5*).</p></li>
     /// <li>
     /// <p><code>memory-info.size-in-mib</code> - The memory size.</p></li>
+    /// <li>
+    /// <p><code>network-info.bandwidth-weightings</code> - For instances that support bandwidth weighting to boost performance (<code>default</code>, <code>vpc-1</code>, <code>ebs-1</code>).</p></li>
     /// <li>
     /// <p><code>network-info.efa-info.maximum-efa-interfaces</code> - The maximum number of Elastic Fabric Adapters (EFAs) per instance.</p></li>
     /// <li>

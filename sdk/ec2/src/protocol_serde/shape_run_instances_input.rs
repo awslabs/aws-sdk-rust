@@ -239,64 +239,71 @@ pub fn ser_run_instances_input_input_input(
         scope_87.boolean(*var_88);
     }
     #[allow(unused_mut)]
-    let mut scope_89 = writer.prefix("Operator");
-    if let Some(var_90) = &input.operator {
-        crate::protocol_serde::shape_operator_request::ser_operator_request(scope_89, var_90)?;
+    let mut scope_89 = writer.prefix("NetworkPerformanceOptions");
+    if let Some(var_90) = &input.network_performance_options {
+        crate::protocol_serde::shape_instance_network_performance_options_request::ser_instance_network_performance_options_request(
+            scope_89, var_90,
+        )?;
     }
     #[allow(unused_mut)]
-    let mut scope_91 = writer.prefix("DryRun");
-    if let Some(var_92) = &input.dry_run {
-        scope_91.boolean(*var_92);
+    let mut scope_91 = writer.prefix("Operator");
+    if let Some(var_92) = &input.operator {
+        crate::protocol_serde::shape_operator_request::ser_operator_request(scope_91, var_92)?;
     }
     #[allow(unused_mut)]
-    let mut scope_93 = writer.prefix("DisableApiTermination");
-    if let Some(var_94) = &input.disable_api_termination {
+    let mut scope_93 = writer.prefix("DryRun");
+    if let Some(var_94) = &input.dry_run {
         scope_93.boolean(*var_94);
     }
     #[allow(unused_mut)]
-    let mut scope_95 = writer.prefix("InstanceInitiatedShutdownBehavior");
-    if let Some(var_96) = &input.instance_initiated_shutdown_behavior {
-        scope_95.string(var_96.as_str());
+    let mut scope_95 = writer.prefix("DisableApiTermination");
+    if let Some(var_96) = &input.disable_api_termination {
+        scope_95.boolean(*var_96);
     }
     #[allow(unused_mut)]
-    let mut scope_97 = writer.prefix("PrivateIpAddress");
-    if let Some(var_98) = &input.private_ip_address {
-        scope_97.string(var_98);
+    let mut scope_97 = writer.prefix("InstanceInitiatedShutdownBehavior");
+    if let Some(var_98) = &input.instance_initiated_shutdown_behavior {
+        scope_97.string(var_98.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_99 = writer.prefix("ClientToken");
-    if let Some(var_100) = &input.client_token {
+    let mut scope_99 = writer.prefix("PrivateIpAddress");
+    if let Some(var_100) = &input.private_ip_address {
         scope_99.string(var_100);
     }
     #[allow(unused_mut)]
-    let mut scope_101 = writer.prefix("AdditionalInfo");
-    if let Some(var_102) = &input.additional_info {
+    let mut scope_101 = writer.prefix("ClientToken");
+    if let Some(var_102) = &input.client_token {
         scope_101.string(var_102);
     }
     #[allow(unused_mut)]
-    let mut scope_103 = writer.prefix("NetworkInterface");
-    if let Some(var_104) = &input.network_interfaces {
-        if !var_104.is_empty() {
-            let mut list_106 = scope_103.start_list(true, Some("item"));
-            for item_105 in var_104 {
+    let mut scope_103 = writer.prefix("AdditionalInfo");
+    if let Some(var_104) = &input.additional_info {
+        scope_103.string(var_104);
+    }
+    #[allow(unused_mut)]
+    let mut scope_105 = writer.prefix("NetworkInterface");
+    if let Some(var_106) = &input.network_interfaces {
+        if !var_106.is_empty() {
+            let mut list_108 = scope_105.start_list(true, Some("item"));
+            for item_107 in var_106 {
                 #[allow(unused_mut)]
-                let mut entry_107 = list_106.entry();
+                let mut entry_109 = list_108.entry();
                 crate::protocol_serde::shape_instance_network_interface_specification::ser_instance_network_interface_specification(
-                    entry_107, item_105,
+                    entry_109, item_107,
                 )?;
             }
-            list_106.finish();
+            list_108.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_108 = writer.prefix("IamInstanceProfile");
-    if let Some(var_109) = &input.iam_instance_profile {
-        crate::protocol_serde::shape_iam_instance_profile_specification::ser_iam_instance_profile_specification(scope_108, var_109)?;
+    let mut scope_110 = writer.prefix("IamInstanceProfile");
+    if let Some(var_111) = &input.iam_instance_profile {
+        crate::protocol_serde::shape_iam_instance_profile_specification::ser_iam_instance_profile_specification(scope_110, var_111)?;
     }
     #[allow(unused_mut)]
-    let mut scope_110 = writer.prefix("EbsOptimized");
-    if let Some(var_111) = &input.ebs_optimized {
-        scope_110.boolean(*var_111);
+    let mut scope_112 = writer.prefix("EbsOptimized");
+    if let Some(var_113) = &input.ebs_optimized {
+        scope_112.boolean(*var_113);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

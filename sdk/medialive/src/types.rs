@@ -415,6 +415,8 @@ pub use crate::types::_mpeg2_adaptive_quantization::Mpeg2AdaptiveQuantization;
 
 pub use crate::types::_h265_settings::H265Settings;
 
+pub use crate::types::_h265_deblocking::H265Deblocking;
+
 pub use crate::types::_h265_treeblock_size::H265TreeblockSize;
 
 pub use crate::types::_h265_tile_padding::H265TilePadding;
@@ -1696,6 +1698,8 @@ mod _h265_alternative_transfer_function;
 mod _h265_color_metadata;
 
 mod _h265_color_space_settings;
+
+mod _h265_deblocking;
 
 mod _h265_filter_settings;
 

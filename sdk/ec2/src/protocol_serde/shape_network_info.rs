@@ -189,6 +189,16 @@ pub fn de_network_info(
                 builder = builder.set_ena_srd_supported(var_13);
             }
             ,
+            s if s.matches("bandwidthWeightings") /* BandwidthWeightings com.amazonaws.ec2#NetworkInfo$BandwidthWeightings */ =>  {
+                let var_14 =
+                    Some(
+                        crate::protocol_serde::shape_bandwidth_weighting_type_list::de_bandwidth_weighting_type_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_bandwidth_weightings(var_14);
+            }
+            ,
             _ => {}
         }
     }
