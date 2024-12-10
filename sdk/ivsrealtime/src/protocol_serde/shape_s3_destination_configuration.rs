@@ -21,6 +21,18 @@ pub fn ser_s3_destination_configuration(
         crate::protocol_serde::shape_recording_configuration::ser_recording_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.thumbnail_configurations {
+        let mut array_6 = object.key("thumbnailConfigurations").start_array();
+        for item_7 in var_5 {
+            {
+                #[allow(unused_mut)]
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_composition_thumbnail_configuration::ser_composition_thumbnail_configuration(&mut object_8, item_7)?;
+                object_8.finish();
+            }
+        }
+        array_6.finish();
+    }
     Ok(())
 }
 
@@ -38,26 +50,33 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "storageConfigurationArn" => {
-                            builder = builder.set_storage_configuration_arn(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "storageConfigurationArn" => {
+                                builder = builder.set_storage_configuration_arn(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "encoderConfigurationArns" => {
+                                builder = builder.set_encoder_configuration_arns(
+                                    crate::protocol_serde::shape_encoder_configuration_arn_list::de_encoder_configuration_arn_list(tokens)?,
+                                );
+                            }
+                            "recordingConfiguration" => {
+                                builder = builder.set_recording_configuration(
+                                    crate::protocol_serde::shape_recording_configuration::de_recording_configuration(tokens)?,
+                                );
+                            }
+                            "thumbnailConfigurations" => {
+                                builder = builder.set_thumbnail_configurations(
+                                    crate::protocol_serde::shape_composition_thumbnail_configuration_list::de_composition_thumbnail_configuration_list(tokens)?
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "encoderConfigurationArns" => {
-                            builder = builder.set_encoder_configuration_arns(
-                                crate::protocol_serde::shape_encoder_configuration_arn_list::de_encoder_configuration_arn_list(tokens)?,
-                            );
-                        }
-                        "recordingConfiguration" => {
-                            builder = builder.set_recording_configuration(
-                                crate::protocol_serde::shape_recording_configuration::de_recording_configuration(tokens)?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {:?}",

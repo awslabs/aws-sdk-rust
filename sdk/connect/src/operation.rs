@@ -109,6 +109,9 @@ pub mod create_predefined_attribute;
 /// Types for the `CreatePrompt` operation.
 pub mod create_prompt;
 
+/// Types for the `CreatePushNotificationRegistration` operation.
+pub mod create_push_notification_registration;
+
 /// Types for the `CreateQueue` operation.
 pub mod create_queue;
 
@@ -183,6 +186,9 @@ pub mod delete_predefined_attribute;
 
 /// Types for the `DeletePrompt` operation.
 pub mod delete_prompt;
+
+/// Types for the `DeletePushNotificationRegistration` operation.
+pub mod delete_push_notification_registration;
 
 /// Types for the `DeleteQueue` operation.
 pub mod delete_queue;

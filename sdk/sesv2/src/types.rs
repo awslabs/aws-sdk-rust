@@ -67,9 +67,9 @@ pub use crate::types::_dkim_status::DkimStatus;
 
 pub use crate::types::_dkim_signing_attributes::DkimSigningAttributes;
 
-pub use crate::types::_dkim_signing_key_length::DkimSigningKeyLength;
-
 pub use crate::types::_dkim_signing_attributes_origin::DkimSigningAttributesOrigin;
+
+pub use crate::types::_dkim_signing_key_length::DkimSigningKeyLength;
 
 pub use crate::types::_domain_deliverability_tracking_option::DomainDeliverabilityTrackingOption;
 

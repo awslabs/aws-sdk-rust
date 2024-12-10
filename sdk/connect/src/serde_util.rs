@@ -26,6 +26,15 @@ pub(crate) fn create_evaluation_form_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_push_notification_registration_output_output_correct_errors(
+    mut builder: crate::operation::create_push_notification_registration::builders::CreatePushNotificationRegistrationOutputBuilder,
+) -> crate::operation::create_push_notification_registration::builders::CreatePushNotificationRegistrationOutputBuilder {
+    if builder.registration_id.is_none() {
+        builder.registration_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_rule_output_output_correct_errors(
     mut builder: crate::operation::create_rule::builders::CreateRuleOutputBuilder,
 ) -> crate::operation::create_rule::builders::CreateRuleOutputBuilder {

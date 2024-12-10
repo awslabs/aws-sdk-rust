@@ -1571,6 +1571,58 @@ impl From<crate::operation::create_prompt::CreatePromptError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_push_notification_registration::CreatePushNotificationRegistrationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_push_notification_registration::CreatePushNotificationRegistrationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_push_notification_registration::CreatePushNotificationRegistrationError> for Error {
+    fn from(err: crate::operation::create_push_notification_registration::CreatePushNotificationRegistrationError) -> Self {
+        match err {
+            crate::operation::create_push_notification_registration::CreatePushNotificationRegistrationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_push_notification_registration::CreatePushNotificationRegistrationError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::create_push_notification_registration::CreatePushNotificationRegistrationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::create_push_notification_registration::CreatePushNotificationRegistrationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_push_notification_registration::CreatePushNotificationRegistrationError::ServiceQuotaExceededException(
+                inner,
+            ) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_push_notification_registration::CreatePushNotificationRegistrationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_push_notification_registration::CreatePushNotificationRegistrationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_queue::CreateQueueError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2449,6 +2501,55 @@ impl From<crate::operation::delete_prompt::DeletePromptError> for Error {
             crate::operation::delete_prompt::DeletePromptError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_prompt::DeletePromptError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_prompt::DeletePromptError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_push_notification_registration::DeletePushNotificationRegistrationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_push_notification_registration::DeletePushNotificationRegistrationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_push_notification_registration::DeletePushNotificationRegistrationError> for Error {
+    fn from(err: crate::operation::delete_push_notification_registration::DeletePushNotificationRegistrationError) -> Self {
+        match err {
+            crate::operation::delete_push_notification_registration::DeletePushNotificationRegistrationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_push_notification_registration::DeletePushNotificationRegistrationError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::delete_push_notification_registration::DeletePushNotificationRegistrationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::delete_push_notification_registration::DeletePushNotificationRegistrationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_push_notification_registration::DeletePushNotificationRegistrationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_push_notification_registration::DeletePushNotificationRegistrationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

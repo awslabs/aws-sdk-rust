@@ -208,6 +208,8 @@ mod create_predefined_attribute;
 
 mod create_prompt;
 
+mod create_push_notification_registration;
+
 mod create_queue;
 
 mod create_quick_connect;
@@ -284,6 +286,8 @@ mod delete_integration_association;
 mod delete_predefined_attribute;
 
 mod delete_prompt;
+
+mod delete_push_notification_registration;
 
 mod delete_queue;
 

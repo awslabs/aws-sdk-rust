@@ -95,6 +95,8 @@ pub(crate) mod shape_create_predefined_attribute;
 
 pub(crate) mod shape_create_prompt;
 
+pub(crate) mod shape_create_push_notification_registration;
+
 pub(crate) mod shape_create_queue;
 
 pub(crate) mod shape_create_quick_connect;
@@ -144,6 +146,8 @@ pub(crate) mod shape_delete_integration_association;
 pub(crate) mod shape_delete_predefined_attribute;
 
 pub(crate) mod shape_delete_prompt;
+
+pub(crate) mod shape_delete_push_notification_registration;
 
 pub(crate) mod shape_delete_queue;
 
@@ -651,6 +655,8 @@ pub(crate) mod shape_create_predefined_attribute_input;
 
 pub(crate) mod shape_create_prompt_input;
 
+pub(crate) mod shape_create_push_notification_registration_input;
+
 pub(crate) mod shape_create_queue_input;
 
 pub(crate) mod shape_create_quick_connect_input;
@@ -988,6 +994,8 @@ pub(crate) mod shape_claimed_phone_number_summary;
 pub(crate) mod shape_connection_data;
 
 pub(crate) mod shape_contact;
+
+pub(crate) mod shape_contact_configuration;
 
 pub(crate) mod shape_contact_data_request;
 

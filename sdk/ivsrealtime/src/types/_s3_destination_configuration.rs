@@ -10,6 +10,8 @@ pub struct S3DestinationConfiguration {
     pub encoder_configuration_arns: ::std::vec::Vec<::std::string::String>,
     /// <p>Array of maps, each of the form <code>string:string (key:value)</code>. This is an optional customer specification, currently used only to specify the recording format for storing a recording in Amazon S3.</p>
     pub recording_configuration: ::std::option::Option<crate::types::RecordingConfiguration>,
+    /// <p>A complex type that allows you to enable/disable the recording of thumbnails for a <code>Composition</code> and modify the interval at which thumbnails are generated for the live session.</p>
+    pub thumbnail_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CompositionThumbnailConfiguration>>,
 }
 impl S3DestinationConfiguration {
     /// <p>ARN of the <code>StorageConfiguration</code> where recorded videos will be stored.</p>
@@ -26,6 +28,12 @@ impl S3DestinationConfiguration {
     pub fn recording_configuration(&self) -> ::std::option::Option<&crate::types::RecordingConfiguration> {
         self.recording_configuration.as_ref()
     }
+    /// <p>A complex type that allows you to enable/disable the recording of thumbnails for a <code>Composition</code> and modify the interval at which thumbnails are generated for the live session.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.thumbnail_configurations.is_none()`.
+    pub fn thumbnail_configurations(&self) -> &[crate::types::CompositionThumbnailConfiguration] {
+        self.thumbnail_configurations.as_deref().unwrap_or_default()
+    }
 }
 impl S3DestinationConfiguration {
     /// Creates a new builder-style object to manufacture [`S3DestinationConfiguration`](crate::types::S3DestinationConfiguration).
@@ -41,6 +49,7 @@ pub struct S3DestinationConfigurationBuilder {
     pub(crate) storage_configuration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) encoder_configuration_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) recording_configuration: ::std::option::Option<crate::types::RecordingConfiguration>,
+    pub(crate) thumbnail_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CompositionThumbnailConfiguration>>,
 }
 impl S3DestinationConfigurationBuilder {
     /// <p>ARN of the <code>StorageConfiguration</code> where recorded videos will be stored.</p>
@@ -92,6 +101,29 @@ impl S3DestinationConfigurationBuilder {
     pub fn get_recording_configuration(&self) -> &::std::option::Option<crate::types::RecordingConfiguration> {
         &self.recording_configuration
     }
+    /// Appends an item to `thumbnail_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_thumbnail_configurations`](Self::set_thumbnail_configurations).
+    ///
+    /// <p>A complex type that allows you to enable/disable the recording of thumbnails for a <code>Composition</code> and modify the interval at which thumbnails are generated for the live session.</p>
+    pub fn thumbnail_configurations(mut self, input: crate::types::CompositionThumbnailConfiguration) -> Self {
+        let mut v = self.thumbnail_configurations.unwrap_or_default();
+        v.push(input);
+        self.thumbnail_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A complex type that allows you to enable/disable the recording of thumbnails for a <code>Composition</code> and modify the interval at which thumbnails are generated for the live session.</p>
+    pub fn set_thumbnail_configurations(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CompositionThumbnailConfiguration>>,
+    ) -> Self {
+        self.thumbnail_configurations = input;
+        self
+    }
+    /// <p>A complex type that allows you to enable/disable the recording of thumbnails for a <code>Composition</code> and modify the interval at which thumbnails are generated for the live session.</p>
+    pub fn get_thumbnail_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CompositionThumbnailConfiguration>> {
+        &self.thumbnail_configurations
+    }
     /// Consumes the builder and constructs a [`S3DestinationConfiguration`](crate::types::S3DestinationConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`storage_configuration_arn`](crate::types::builders::S3DestinationConfigurationBuilder::storage_configuration_arn)
@@ -111,6 +143,7 @@ impl S3DestinationConfigurationBuilder {
                 )
             })?,
             recording_configuration: self.recording_configuration,
+            thumbnail_configurations: self.thumbnail_configurations,
         })
     }
 }

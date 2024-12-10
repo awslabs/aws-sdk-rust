@@ -14,6 +14,7 @@
 /// match participantrecordingmediatype {
 ///     ParticipantRecordingMediaType::AudioOnly => { /* ... */ },
 ///     ParticipantRecordingMediaType::AudioVideo => { /* ... */ },
+///     ParticipantRecordingMediaType::None => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -45,6 +46,8 @@ pub enum ParticipantRecordingMediaType {
     AudioOnly,
     #[allow(missing_docs)] // documentation missing in model
     AudioVideo,
+    #[allow(missing_docs)] // documentation missing in model
+    None,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for ParticipantRecordingMediaType {
         match s {
             "AUDIO_ONLY" => ParticipantRecordingMediaType::AudioOnly,
             "AUDIO_VIDEO" => ParticipantRecordingMediaType::AudioVideo,
+            "NONE" => ParticipantRecordingMediaType::None,
             other => ParticipantRecordingMediaType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -71,12 +75,13 @@ impl ParticipantRecordingMediaType {
         match self {
             ParticipantRecordingMediaType::AudioOnly => "AUDIO_ONLY",
             ParticipantRecordingMediaType::AudioVideo => "AUDIO_VIDEO",
+            ParticipantRecordingMediaType::None => "NONE",
             ParticipantRecordingMediaType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AUDIO_ONLY", "AUDIO_VIDEO"]
+        &["AUDIO_ONLY", "AUDIO_VIDEO", "NONE"]
     }
 }
 impl ::std::convert::AsRef<str> for ParticipantRecordingMediaType {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for ParticipantRecordingMediaType {
         match self {
             ParticipantRecordingMediaType::AudioOnly => write!(f, "AUDIO_ONLY"),
             ParticipantRecordingMediaType::AudioVideo => write!(f, "AUDIO_VIDEO"),
+            ParticipantRecordingMediaType::None => write!(f, "NONE"),
             ParticipantRecordingMediaType::Unknown(value) => write!(f, "{}", value),
         }
     }

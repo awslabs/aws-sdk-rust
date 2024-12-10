@@ -15,6 +15,11 @@
 ///     VerificationError::DnsServerError => { /* ... */ },
 ///     VerificationError::HostNotFound => { /* ... */ },
 ///     VerificationError::InvalidValue => { /* ... */ },
+///     VerificationError::ReplicationAccessDenied => { /* ... */ },
+///     VerificationError::ReplicationPrimaryByoDkimNotSupported => { /* ... */ },
+///     VerificationError::ReplicationPrimaryInvalidRegion => { /* ... */ },
+///     VerificationError::ReplicationPrimaryNotFound => { /* ... */ },
+///     VerificationError::ReplicationReplicaAsPrimaryNotSupported => { /* ... */ },
 ///     VerificationError::ServiceError => { /* ... */ },
 ///     VerificationError::TypeNotFound => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -51,6 +56,16 @@ pub enum VerificationError {
     #[allow(missing_docs)] // documentation missing in model
     InvalidValue,
     #[allow(missing_docs)] // documentation missing in model
+    ReplicationAccessDenied,
+    #[allow(missing_docs)] // documentation missing in model
+    ReplicationPrimaryByoDkimNotSupported,
+    #[allow(missing_docs)] // documentation missing in model
+    ReplicationPrimaryInvalidRegion,
+    #[allow(missing_docs)] // documentation missing in model
+    ReplicationPrimaryNotFound,
+    #[allow(missing_docs)] // documentation missing in model
+    ReplicationReplicaAsPrimaryNotSupported,
+    #[allow(missing_docs)] // documentation missing in model
     ServiceError,
     #[allow(missing_docs)] // documentation missing in model
     TypeNotFound,
@@ -64,6 +79,11 @@ impl ::std::convert::From<&str> for VerificationError {
             "DNS_SERVER_ERROR" => VerificationError::DnsServerError,
             "HOST_NOT_FOUND" => VerificationError::HostNotFound,
             "INVALID_VALUE" => VerificationError::InvalidValue,
+            "REPLICATION_ACCESS_DENIED" => VerificationError::ReplicationAccessDenied,
+            "REPLICATION_PRIMARY_BYO_DKIM_NOT_SUPPORTED" => VerificationError::ReplicationPrimaryByoDkimNotSupported,
+            "REPLICATION_PRIMARY_INVALID_REGION" => VerificationError::ReplicationPrimaryInvalidRegion,
+            "REPLICATION_PRIMARY_NOT_FOUND" => VerificationError::ReplicationPrimaryNotFound,
+            "REPLICATION_REPLICA_AS_PRIMARY_NOT_SUPPORTED" => VerificationError::ReplicationReplicaAsPrimaryNotSupported,
             "SERVICE_ERROR" => VerificationError::ServiceError,
             "TYPE_NOT_FOUND" => VerificationError::TypeNotFound,
             other => VerificationError::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -84,6 +104,11 @@ impl VerificationError {
             VerificationError::DnsServerError => "DNS_SERVER_ERROR",
             VerificationError::HostNotFound => "HOST_NOT_FOUND",
             VerificationError::InvalidValue => "INVALID_VALUE",
+            VerificationError::ReplicationAccessDenied => "REPLICATION_ACCESS_DENIED",
+            VerificationError::ReplicationPrimaryByoDkimNotSupported => "REPLICATION_PRIMARY_BYO_DKIM_NOT_SUPPORTED",
+            VerificationError::ReplicationPrimaryInvalidRegion => "REPLICATION_PRIMARY_INVALID_REGION",
+            VerificationError::ReplicationPrimaryNotFound => "REPLICATION_PRIMARY_NOT_FOUND",
+            VerificationError::ReplicationReplicaAsPrimaryNotSupported => "REPLICATION_REPLICA_AS_PRIMARY_NOT_SUPPORTED",
             VerificationError::ServiceError => "SERVICE_ERROR",
             VerificationError::TypeNotFound => "TYPE_NOT_FOUND",
             VerificationError::Unknown(value) => value.as_str(),
@@ -91,7 +116,18 @@ impl VerificationError {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DNS_SERVER_ERROR", "HOST_NOT_FOUND", "INVALID_VALUE", "SERVICE_ERROR", "TYPE_NOT_FOUND"]
+        &[
+            "DNS_SERVER_ERROR",
+            "HOST_NOT_FOUND",
+            "INVALID_VALUE",
+            "REPLICATION_ACCESS_DENIED",
+            "REPLICATION_PRIMARY_BYO_DKIM_NOT_SUPPORTED",
+            "REPLICATION_PRIMARY_INVALID_REGION",
+            "REPLICATION_PRIMARY_NOT_FOUND",
+            "REPLICATION_REPLICA_AS_PRIMARY_NOT_SUPPORTED",
+            "SERVICE_ERROR",
+            "TYPE_NOT_FOUND",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for VerificationError {
@@ -117,6 +153,11 @@ impl ::std::fmt::Display for VerificationError {
             VerificationError::DnsServerError => write!(f, "DNS_SERVER_ERROR"),
             VerificationError::HostNotFound => write!(f, "HOST_NOT_FOUND"),
             VerificationError::InvalidValue => write!(f, "INVALID_VALUE"),
+            VerificationError::ReplicationAccessDenied => write!(f, "REPLICATION_ACCESS_DENIED"),
+            VerificationError::ReplicationPrimaryByoDkimNotSupported => write!(f, "REPLICATION_PRIMARY_BYO_DKIM_NOT_SUPPORTED"),
+            VerificationError::ReplicationPrimaryInvalidRegion => write!(f, "REPLICATION_PRIMARY_INVALID_REGION"),
+            VerificationError::ReplicationPrimaryNotFound => write!(f, "REPLICATION_PRIMARY_NOT_FOUND"),
+            VerificationError::ReplicationReplicaAsPrimaryNotSupported => write!(f, "REPLICATION_REPLICA_AS_PRIMARY_NOT_SUPPORTED"),
             VerificationError::ServiceError => write!(f, "SERVICE_ERROR"),
             VerificationError::TypeNotFound => write!(f, "TYPE_NOT_FOUND"),
             VerificationError::Unknown(value) => write!(f, "{}", value),

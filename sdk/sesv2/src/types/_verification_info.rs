@@ -20,6 +20,16 @@ pub struct VerificationInfo {
     /// <p><code>SERVICE_ERROR</code> – A temporary issue is preventing Amazon SES from determining the verification status of the domain.</p></li>
     /// <li>
     /// <p><code>DNS_SERVER_ERROR</code> – The DNS server encountered an issue and was unable to complete the request.</p></li>
+    /// <li>
+    /// <p><code>REPLICATION_ACCESS_DENIED</code> – The verification failed because the user does not have the required permissions to replicate the DKIM key from the primary region. Ensure you have the necessary permissions in both primary and replica regions.</p></li>
+    /// <li>
+    /// <p><code>REPLICATION_PRIMARY_NOT_FOUND</code> – The verification failed because no corresponding identity was found in the specified primary region. Ensure the identity exists in the primary region before attempting replication.</p></li>
+    /// <li>
+    /// <p><code>REPLICATION_PRIMARY_BYO_DKIM_NOT_SUPPORTED</code> – The verification failed because the identity in the primary region is configured with Bring Your Own DKIM (BYODKIM). DKIM key replication is only supported for identities using Easy DKIM.</p></li>
+    /// <li>
+    /// <p><code>REPLICATION_REPLICA_AS_PRIMARY_NOT_SUPPORTED</code> – The verification failed because the specified primary identity is a replica of another identity, and multi-level replication is not supported; the primary identity must be a non-replica identity.</p></li>
+    /// <li>
+    /// <p><code>REPLICATION_PRIMARY_INVALID_REGION</code> – The verification failed due to an invalid primary region specified. Ensure you provide a valid AWS region where Amazon SES is available and different from the replica region.</p></li>
     /// </ul>
     pub error_type: ::std::option::Option<crate::types::VerificationError>,
     /// <p>An object that contains information about the start of authority (SOA) record associated with the identity.</p>
@@ -46,6 +56,16 @@ impl VerificationInfo {
     /// <p><code>SERVICE_ERROR</code> – A temporary issue is preventing Amazon SES from determining the verification status of the domain.</p></li>
     /// <li>
     /// <p><code>DNS_SERVER_ERROR</code> – The DNS server encountered an issue and was unable to complete the request.</p></li>
+    /// <li>
+    /// <p><code>REPLICATION_ACCESS_DENIED</code> – The verification failed because the user does not have the required permissions to replicate the DKIM key from the primary region. Ensure you have the necessary permissions in both primary and replica regions.</p></li>
+    /// <li>
+    /// <p><code>REPLICATION_PRIMARY_NOT_FOUND</code> – The verification failed because no corresponding identity was found in the specified primary region. Ensure the identity exists in the primary region before attempting replication.</p></li>
+    /// <li>
+    /// <p><code>REPLICATION_PRIMARY_BYO_DKIM_NOT_SUPPORTED</code> – The verification failed because the identity in the primary region is configured with Bring Your Own DKIM (BYODKIM). DKIM key replication is only supported for identities using Easy DKIM.</p></li>
+    /// <li>
+    /// <p><code>REPLICATION_REPLICA_AS_PRIMARY_NOT_SUPPORTED</code> – The verification failed because the specified primary identity is a replica of another identity, and multi-level replication is not supported; the primary identity must be a non-replica identity.</p></li>
+    /// <li>
+    /// <p><code>REPLICATION_PRIMARY_INVALID_REGION</code> – The verification failed due to an invalid primary region specified. Ensure you provide a valid AWS region where Amazon SES is available and different from the replica region.</p></li>
     /// </ul>
     pub fn error_type(&self) -> ::std::option::Option<&crate::types::VerificationError> {
         self.error_type.as_ref()
@@ -112,6 +132,16 @@ impl VerificationInfoBuilder {
     /// <p><code>SERVICE_ERROR</code> – A temporary issue is preventing Amazon SES from determining the verification status of the domain.</p></li>
     /// <li>
     /// <p><code>DNS_SERVER_ERROR</code> – The DNS server encountered an issue and was unable to complete the request.</p></li>
+    /// <li>
+    /// <p><code>REPLICATION_ACCESS_DENIED</code> – The verification failed because the user does not have the required permissions to replicate the DKIM key from the primary region. Ensure you have the necessary permissions in both primary and replica regions.</p></li>
+    /// <li>
+    /// <p><code>REPLICATION_PRIMARY_NOT_FOUND</code> – The verification failed because no corresponding identity was found in the specified primary region. Ensure the identity exists in the primary region before attempting replication.</p></li>
+    /// <li>
+    /// <p><code>REPLICATION_PRIMARY_BYO_DKIM_NOT_SUPPORTED</code> – The verification failed because the identity in the primary region is configured with Bring Your Own DKIM (BYODKIM). DKIM key replication is only supported for identities using Easy DKIM.</p></li>
+    /// <li>
+    /// <p><code>REPLICATION_REPLICA_AS_PRIMARY_NOT_SUPPORTED</code> – The verification failed because the specified primary identity is a replica of another identity, and multi-level replication is not supported; the primary identity must be a non-replica identity.</p></li>
+    /// <li>
+    /// <p><code>REPLICATION_PRIMARY_INVALID_REGION</code> – The verification failed due to an invalid primary region specified. Ensure you provide a valid AWS region where Amazon SES is available and different from the replica region.</p></li>
     /// </ul>
     pub fn error_type(mut self, input: crate::types::VerificationError) -> Self {
         self.error_type = ::std::option::Option::Some(input);
@@ -129,6 +159,16 @@ impl VerificationInfoBuilder {
     /// <p><code>SERVICE_ERROR</code> – A temporary issue is preventing Amazon SES from determining the verification status of the domain.</p></li>
     /// <li>
     /// <p><code>DNS_SERVER_ERROR</code> – The DNS server encountered an issue and was unable to complete the request.</p></li>
+    /// <li>
+    /// <p><code>REPLICATION_ACCESS_DENIED</code> – The verification failed because the user does not have the required permissions to replicate the DKIM key from the primary region. Ensure you have the necessary permissions in both primary and replica regions.</p></li>
+    /// <li>
+    /// <p><code>REPLICATION_PRIMARY_NOT_FOUND</code> – The verification failed because no corresponding identity was found in the specified primary region. Ensure the identity exists in the primary region before attempting replication.</p></li>
+    /// <li>
+    /// <p><code>REPLICATION_PRIMARY_BYO_DKIM_NOT_SUPPORTED</code> – The verification failed because the identity in the primary region is configured with Bring Your Own DKIM (BYODKIM). DKIM key replication is only supported for identities using Easy DKIM.</p></li>
+    /// <li>
+    /// <p><code>REPLICATION_REPLICA_AS_PRIMARY_NOT_SUPPORTED</code> – The verification failed because the specified primary identity is a replica of another identity, and multi-level replication is not supported; the primary identity must be a non-replica identity.</p></li>
+    /// <li>
+    /// <p><code>REPLICATION_PRIMARY_INVALID_REGION</code> – The verification failed due to an invalid primary region specified. Ensure you provide a valid AWS region where Amazon SES is available and different from the replica region.</p></li>
     /// </ul>
     pub fn set_error_type(mut self, input: ::std::option::Option<crate::types::VerificationError>) -> Self {
         self.error_type = input;
@@ -146,6 +186,16 @@ impl VerificationInfoBuilder {
     /// <p><code>SERVICE_ERROR</code> – A temporary issue is preventing Amazon SES from determining the verification status of the domain.</p></li>
     /// <li>
     /// <p><code>DNS_SERVER_ERROR</code> – The DNS server encountered an issue and was unable to complete the request.</p></li>
+    /// <li>
+    /// <p><code>REPLICATION_ACCESS_DENIED</code> – The verification failed because the user does not have the required permissions to replicate the DKIM key from the primary region. Ensure you have the necessary permissions in both primary and replica regions.</p></li>
+    /// <li>
+    /// <p><code>REPLICATION_PRIMARY_NOT_FOUND</code> – The verification failed because no corresponding identity was found in the specified primary region. Ensure the identity exists in the primary region before attempting replication.</p></li>
+    /// <li>
+    /// <p><code>REPLICATION_PRIMARY_BYO_DKIM_NOT_SUPPORTED</code> – The verification failed because the identity in the primary region is configured with Bring Your Own DKIM (BYODKIM). DKIM key replication is only supported for identities using Easy DKIM.</p></li>
+    /// <li>
+    /// <p><code>REPLICATION_REPLICA_AS_PRIMARY_NOT_SUPPORTED</code> – The verification failed because the specified primary identity is a replica of another identity, and multi-level replication is not supported; the primary identity must be a non-replica identity.</p></li>
+    /// <li>
+    /// <p><code>REPLICATION_PRIMARY_INVALID_REGION</code> – The verification failed due to an invalid primary region specified. Ensure you provide a valid AWS region where Amazon SES is available and different from the replica region.</p></li>
     /// </ul>
     pub fn get_error_type(&self) -> &::std::option::Option<crate::types::VerificationError> {
         &self.error_type

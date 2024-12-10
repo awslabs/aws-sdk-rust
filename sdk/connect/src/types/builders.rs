@@ -627,6 +627,8 @@ pub use crate::types::_queue_info::QueueInfoBuilder;
 
 pub use crate::types::_authentication_profile::AuthenticationProfileBuilder;
 
+pub use crate::types::_contact_configuration::ContactConfigurationBuilder;
+
 pub use crate::types::_participant_token_credentials::ParticipantTokenCredentialsBuilder;
 
 pub use crate::types::_participant_details_to_add::ParticipantDetailsToAddBuilder;

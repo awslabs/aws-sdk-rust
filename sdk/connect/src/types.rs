@@ -865,6 +865,10 @@ pub use crate::types::_queue_info::QueueInfo;
 
 pub use crate::types::_authentication_profile::AuthenticationProfile;
 
+pub use crate::types::_contact_configuration::ContactConfiguration;
+
+pub use crate::types::_device_type::DeviceType;
+
 pub use crate::types::_participant_token_credentials::ParticipantTokenCredentials;
 
 pub use crate::types::_participant_details_to_add::ParticipantDetailsToAdd;
@@ -995,6 +999,8 @@ mod _contact;
 
 mod _contact_analysis;
 
+mod _contact_configuration;
+
 mod _contact_data_request;
 
 mod _contact_filter;
@@ -1076,6 +1082,8 @@ mod _date_reference;
 mod _default_vocabulary;
 
 mod _device_info;
+
+mod _device_type;
 
 mod _dimensions;
 

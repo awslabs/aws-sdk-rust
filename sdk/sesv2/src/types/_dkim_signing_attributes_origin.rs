@@ -13,6 +13,28 @@
 /// # let dkimsigningattributesorigin = unimplemented!();
 /// match dkimsigningattributesorigin {
 ///     DkimSigningAttributesOrigin::AwsSes => { /* ... */ },
+///     DkimSigningAttributesOrigin::AwsSesAfSouth1 => { /* ... */ },
+///     DkimSigningAttributesOrigin::AwsSesApNortheast1 => { /* ... */ },
+///     DkimSigningAttributesOrigin::AwsSesApNortheast2 => { /* ... */ },
+///     DkimSigningAttributesOrigin::AwsSesApNortheast3 => { /* ... */ },
+///     DkimSigningAttributesOrigin::AwsSesApSoutheast1 => { /* ... */ },
+///     DkimSigningAttributesOrigin::AwsSesApSoutheast2 => { /* ... */ },
+///     DkimSigningAttributesOrigin::AwsSesApSoutheast3 => { /* ... */ },
+///     DkimSigningAttributesOrigin::AwsSesApSouth1 => { /* ... */ },
+///     DkimSigningAttributesOrigin::AwsSesCaCentral1 => { /* ... */ },
+///     DkimSigningAttributesOrigin::AwsSesEuCentral1 => { /* ... */ },
+///     DkimSigningAttributesOrigin::AwsSesEuNorth1 => { /* ... */ },
+///     DkimSigningAttributesOrigin::AwsSesEuSouth1 => { /* ... */ },
+///     DkimSigningAttributesOrigin::AwsSesEuWest1 => { /* ... */ },
+///     DkimSigningAttributesOrigin::AwsSesEuWest2 => { /* ... */ },
+///     DkimSigningAttributesOrigin::AwsSesEuWest3 => { /* ... */ },
+///     DkimSigningAttributesOrigin::AwsSesIlCentral1 => { /* ... */ },
+///     DkimSigningAttributesOrigin::AwsSesMeSouth1 => { /* ... */ },
+///     DkimSigningAttributesOrigin::AwsSesSaEast1 => { /* ... */ },
+///     DkimSigningAttributesOrigin::AwsSesUsEast1 => { /* ... */ },
+///     DkimSigningAttributesOrigin::AwsSesUsEast2 => { /* ... */ },
+///     DkimSigningAttributesOrigin::AwsSesUsWest1 => { /* ... */ },
+///     DkimSigningAttributesOrigin::AwsSesUsWest2 => { /* ... */ },
 ///     DkimSigningAttributesOrigin::External => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -44,6 +66,50 @@ pub enum DkimSigningAttributesOrigin {
     #[allow(missing_docs)] // documentation missing in model
     AwsSes,
     #[allow(missing_docs)] // documentation missing in model
+    AwsSesAfSouth1,
+    #[allow(missing_docs)] // documentation missing in model
+    AwsSesApNortheast1,
+    #[allow(missing_docs)] // documentation missing in model
+    AwsSesApNortheast2,
+    #[allow(missing_docs)] // documentation missing in model
+    AwsSesApNortheast3,
+    #[allow(missing_docs)] // documentation missing in model
+    AwsSesApSoutheast1,
+    #[allow(missing_docs)] // documentation missing in model
+    AwsSesApSoutheast2,
+    #[allow(missing_docs)] // documentation missing in model
+    AwsSesApSoutheast3,
+    #[allow(missing_docs)] // documentation missing in model
+    AwsSesApSouth1,
+    #[allow(missing_docs)] // documentation missing in model
+    AwsSesCaCentral1,
+    #[allow(missing_docs)] // documentation missing in model
+    AwsSesEuCentral1,
+    #[allow(missing_docs)] // documentation missing in model
+    AwsSesEuNorth1,
+    #[allow(missing_docs)] // documentation missing in model
+    AwsSesEuSouth1,
+    #[allow(missing_docs)] // documentation missing in model
+    AwsSesEuWest1,
+    #[allow(missing_docs)] // documentation missing in model
+    AwsSesEuWest2,
+    #[allow(missing_docs)] // documentation missing in model
+    AwsSesEuWest3,
+    #[allow(missing_docs)] // documentation missing in model
+    AwsSesIlCentral1,
+    #[allow(missing_docs)] // documentation missing in model
+    AwsSesMeSouth1,
+    #[allow(missing_docs)] // documentation missing in model
+    AwsSesSaEast1,
+    #[allow(missing_docs)] // documentation missing in model
+    AwsSesUsEast1,
+    #[allow(missing_docs)] // documentation missing in model
+    AwsSesUsEast2,
+    #[allow(missing_docs)] // documentation missing in model
+    AwsSesUsWest1,
+    #[allow(missing_docs)] // documentation missing in model
+    AwsSesUsWest2,
+    #[allow(missing_docs)] // documentation missing in model
     External,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -53,6 +119,28 @@ impl ::std::convert::From<&str> for DkimSigningAttributesOrigin {
     fn from(s: &str) -> Self {
         match s {
             "AWS_SES" => DkimSigningAttributesOrigin::AwsSes,
+            "AWS_SES_AF_SOUTH_1" => DkimSigningAttributesOrigin::AwsSesAfSouth1,
+            "AWS_SES_AP_NORTHEAST_1" => DkimSigningAttributesOrigin::AwsSesApNortheast1,
+            "AWS_SES_AP_NORTHEAST_2" => DkimSigningAttributesOrigin::AwsSesApNortheast2,
+            "AWS_SES_AP_NORTHEAST_3" => DkimSigningAttributesOrigin::AwsSesApNortheast3,
+            "AWS_SES_AP_SOUTHEAST_1" => DkimSigningAttributesOrigin::AwsSesApSoutheast1,
+            "AWS_SES_AP_SOUTHEAST_2" => DkimSigningAttributesOrigin::AwsSesApSoutheast2,
+            "AWS_SES_AP_SOUTHEAST_3" => DkimSigningAttributesOrigin::AwsSesApSoutheast3,
+            "AWS_SES_AP_SOUTH_1" => DkimSigningAttributesOrigin::AwsSesApSouth1,
+            "AWS_SES_CA_CENTRAL_1" => DkimSigningAttributesOrigin::AwsSesCaCentral1,
+            "AWS_SES_EU_CENTRAL_1" => DkimSigningAttributesOrigin::AwsSesEuCentral1,
+            "AWS_SES_EU_NORTH_1" => DkimSigningAttributesOrigin::AwsSesEuNorth1,
+            "AWS_SES_EU_SOUTH_1" => DkimSigningAttributesOrigin::AwsSesEuSouth1,
+            "AWS_SES_EU_WEST_1" => DkimSigningAttributesOrigin::AwsSesEuWest1,
+            "AWS_SES_EU_WEST_2" => DkimSigningAttributesOrigin::AwsSesEuWest2,
+            "AWS_SES_EU_WEST_3" => DkimSigningAttributesOrigin::AwsSesEuWest3,
+            "AWS_SES_IL_CENTRAL_1" => DkimSigningAttributesOrigin::AwsSesIlCentral1,
+            "AWS_SES_ME_SOUTH_1" => DkimSigningAttributesOrigin::AwsSesMeSouth1,
+            "AWS_SES_SA_EAST_1" => DkimSigningAttributesOrigin::AwsSesSaEast1,
+            "AWS_SES_US_EAST_1" => DkimSigningAttributesOrigin::AwsSesUsEast1,
+            "AWS_SES_US_EAST_2" => DkimSigningAttributesOrigin::AwsSesUsEast2,
+            "AWS_SES_US_WEST_1" => DkimSigningAttributesOrigin::AwsSesUsWest1,
+            "AWS_SES_US_WEST_2" => DkimSigningAttributesOrigin::AwsSesUsWest2,
             "EXTERNAL" => DkimSigningAttributesOrigin::External,
             other => DkimSigningAttributesOrigin::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -70,13 +158,60 @@ impl DkimSigningAttributesOrigin {
     pub fn as_str(&self) -> &str {
         match self {
             DkimSigningAttributesOrigin::AwsSes => "AWS_SES",
+            DkimSigningAttributesOrigin::AwsSesAfSouth1 => "AWS_SES_AF_SOUTH_1",
+            DkimSigningAttributesOrigin::AwsSesApNortheast1 => "AWS_SES_AP_NORTHEAST_1",
+            DkimSigningAttributesOrigin::AwsSesApNortheast2 => "AWS_SES_AP_NORTHEAST_2",
+            DkimSigningAttributesOrigin::AwsSesApNortheast3 => "AWS_SES_AP_NORTHEAST_3",
+            DkimSigningAttributesOrigin::AwsSesApSoutheast1 => "AWS_SES_AP_SOUTHEAST_1",
+            DkimSigningAttributesOrigin::AwsSesApSoutheast2 => "AWS_SES_AP_SOUTHEAST_2",
+            DkimSigningAttributesOrigin::AwsSesApSoutheast3 => "AWS_SES_AP_SOUTHEAST_3",
+            DkimSigningAttributesOrigin::AwsSesApSouth1 => "AWS_SES_AP_SOUTH_1",
+            DkimSigningAttributesOrigin::AwsSesCaCentral1 => "AWS_SES_CA_CENTRAL_1",
+            DkimSigningAttributesOrigin::AwsSesEuCentral1 => "AWS_SES_EU_CENTRAL_1",
+            DkimSigningAttributesOrigin::AwsSesEuNorth1 => "AWS_SES_EU_NORTH_1",
+            DkimSigningAttributesOrigin::AwsSesEuSouth1 => "AWS_SES_EU_SOUTH_1",
+            DkimSigningAttributesOrigin::AwsSesEuWest1 => "AWS_SES_EU_WEST_1",
+            DkimSigningAttributesOrigin::AwsSesEuWest2 => "AWS_SES_EU_WEST_2",
+            DkimSigningAttributesOrigin::AwsSesEuWest3 => "AWS_SES_EU_WEST_3",
+            DkimSigningAttributesOrigin::AwsSesIlCentral1 => "AWS_SES_IL_CENTRAL_1",
+            DkimSigningAttributesOrigin::AwsSesMeSouth1 => "AWS_SES_ME_SOUTH_1",
+            DkimSigningAttributesOrigin::AwsSesSaEast1 => "AWS_SES_SA_EAST_1",
+            DkimSigningAttributesOrigin::AwsSesUsEast1 => "AWS_SES_US_EAST_1",
+            DkimSigningAttributesOrigin::AwsSesUsEast2 => "AWS_SES_US_EAST_2",
+            DkimSigningAttributesOrigin::AwsSesUsWest1 => "AWS_SES_US_WEST_1",
+            DkimSigningAttributesOrigin::AwsSesUsWest2 => "AWS_SES_US_WEST_2",
             DkimSigningAttributesOrigin::External => "EXTERNAL",
             DkimSigningAttributesOrigin::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AWS_SES", "EXTERNAL"]
+        &[
+            "AWS_SES",
+            "AWS_SES_AF_SOUTH_1",
+            "AWS_SES_AP_NORTHEAST_1",
+            "AWS_SES_AP_NORTHEAST_2",
+            "AWS_SES_AP_NORTHEAST_3",
+            "AWS_SES_AP_SOUTHEAST_1",
+            "AWS_SES_AP_SOUTHEAST_2",
+            "AWS_SES_AP_SOUTHEAST_3",
+            "AWS_SES_AP_SOUTH_1",
+            "AWS_SES_CA_CENTRAL_1",
+            "AWS_SES_EU_CENTRAL_1",
+            "AWS_SES_EU_NORTH_1",
+            "AWS_SES_EU_SOUTH_1",
+            "AWS_SES_EU_WEST_1",
+            "AWS_SES_EU_WEST_2",
+            "AWS_SES_EU_WEST_3",
+            "AWS_SES_IL_CENTRAL_1",
+            "AWS_SES_ME_SOUTH_1",
+            "AWS_SES_SA_EAST_1",
+            "AWS_SES_US_EAST_1",
+            "AWS_SES_US_EAST_2",
+            "AWS_SES_US_WEST_1",
+            "AWS_SES_US_WEST_2",
+            "EXTERNAL",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for DkimSigningAttributesOrigin {
@@ -100,6 +235,28 @@ impl ::std::fmt::Display for DkimSigningAttributesOrigin {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             DkimSigningAttributesOrigin::AwsSes => write!(f, "AWS_SES"),
+            DkimSigningAttributesOrigin::AwsSesAfSouth1 => write!(f, "AWS_SES_AF_SOUTH_1"),
+            DkimSigningAttributesOrigin::AwsSesApNortheast1 => write!(f, "AWS_SES_AP_NORTHEAST_1"),
+            DkimSigningAttributesOrigin::AwsSesApNortheast2 => write!(f, "AWS_SES_AP_NORTHEAST_2"),
+            DkimSigningAttributesOrigin::AwsSesApNortheast3 => write!(f, "AWS_SES_AP_NORTHEAST_3"),
+            DkimSigningAttributesOrigin::AwsSesApSoutheast1 => write!(f, "AWS_SES_AP_SOUTHEAST_1"),
+            DkimSigningAttributesOrigin::AwsSesApSoutheast2 => write!(f, "AWS_SES_AP_SOUTHEAST_2"),
+            DkimSigningAttributesOrigin::AwsSesApSoutheast3 => write!(f, "AWS_SES_AP_SOUTHEAST_3"),
+            DkimSigningAttributesOrigin::AwsSesApSouth1 => write!(f, "AWS_SES_AP_SOUTH_1"),
+            DkimSigningAttributesOrigin::AwsSesCaCentral1 => write!(f, "AWS_SES_CA_CENTRAL_1"),
+            DkimSigningAttributesOrigin::AwsSesEuCentral1 => write!(f, "AWS_SES_EU_CENTRAL_1"),
+            DkimSigningAttributesOrigin::AwsSesEuNorth1 => write!(f, "AWS_SES_EU_NORTH_1"),
+            DkimSigningAttributesOrigin::AwsSesEuSouth1 => write!(f, "AWS_SES_EU_SOUTH_1"),
+            DkimSigningAttributesOrigin::AwsSesEuWest1 => write!(f, "AWS_SES_EU_WEST_1"),
+            DkimSigningAttributesOrigin::AwsSesEuWest2 => write!(f, "AWS_SES_EU_WEST_2"),
+            DkimSigningAttributesOrigin::AwsSesEuWest3 => write!(f, "AWS_SES_EU_WEST_3"),
+            DkimSigningAttributesOrigin::AwsSesIlCentral1 => write!(f, "AWS_SES_IL_CENTRAL_1"),
+            DkimSigningAttributesOrigin::AwsSesMeSouth1 => write!(f, "AWS_SES_ME_SOUTH_1"),
+            DkimSigningAttributesOrigin::AwsSesSaEast1 => write!(f, "AWS_SES_SA_EAST_1"),
+            DkimSigningAttributesOrigin::AwsSesUsEast1 => write!(f, "AWS_SES_US_EAST_1"),
+            DkimSigningAttributesOrigin::AwsSesUsEast2 => write!(f, "AWS_SES_US_EAST_2"),
+            DkimSigningAttributesOrigin::AwsSesUsWest1 => write!(f, "AWS_SES_US_WEST_1"),
+            DkimSigningAttributesOrigin::AwsSesUsWest2 => write!(f, "AWS_SES_US_WEST_2"),
             DkimSigningAttributesOrigin::External => write!(f, "EXTERNAL"),
             DkimSigningAttributesOrigin::Unknown(value) => write!(f, "{}", value),
         }

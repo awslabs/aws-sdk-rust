@@ -15,6 +15,12 @@ pub fn ser_auto_participant_recording_configuration(
         }
         array_2.finish();
     }
+    if let Some(var_4) = &input.thumbnail_configuration {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("thumbnailConfiguration").start_object();
+        crate::protocol_serde::shape_participant_thumbnail_configuration::ser_participant_thumbnail_configuration(&mut object_5, var_4)?;
+        object_5.finish();
+    }
     Ok(())
 }
 
@@ -43,6 +49,11 @@ where
                         "mediaTypes" => {
                             builder = builder.set_media_types(
                                 crate::protocol_serde::shape_participant_recording_media_type_list::de_participant_recording_media_type_list(tokens)?,
+                            );
+                        }
+                        "thumbnailConfiguration" => {
+                            builder = builder.set_thumbnail_configuration(
+                                crate::protocol_serde::shape_participant_thumbnail_configuration::de_participant_thumbnail_configuration(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

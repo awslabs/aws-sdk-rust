@@ -255,6 +255,8 @@ pub(crate) mod shape_participant_attributes;
 
 pub(crate) mod shape_participant_summary;
 
+pub(crate) mod shape_participant_thumbnail_configuration;
+
 pub(crate) mod shape_participant_token_attributes;
 
 pub(crate) mod shape_participant_token_capabilities;
@@ -273,6 +275,8 @@ pub(crate) mod shape_stage_summary;
 
 pub(crate) mod shape_storage_configuration_summary;
 
+pub(crate) mod shape_composition_thumbnail_configuration;
+
 pub(crate) mod shape_destination;
 
 pub(crate) mod shape_destination_summary_list;
@@ -285,6 +289,10 @@ pub(crate) mod shape_destination_detail;
 
 pub(crate) mod shape_destination_summary;
 
+pub(crate) mod shape_thumbnail_storage_type_list;
+
 pub(crate) mod shape_s3_detail;
+
+pub(crate) mod shape_composition_thumbnail_configuration_list;
 
 pub(crate) mod shape_encoder_configuration_arn_list;

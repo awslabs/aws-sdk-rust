@@ -5,6 +5,12 @@ pub use crate::types::_stage_endpoints::StageEndpoints;
 
 pub use crate::types::_auto_participant_recording_configuration::AutoParticipantRecordingConfiguration;
 
+pub use crate::types::_participant_thumbnail_configuration::ParticipantThumbnailConfiguration;
+
+pub use crate::types::_thumbnail_recording_mode::ThumbnailRecordingMode;
+
+pub use crate::types::_thumbnail_storage_type::ThumbnailStorageType;
+
 pub use crate::types::_participant_recording_media_type::ParticipantRecordingMediaType;
 
 pub use crate::types::_ingest_configuration::IngestConfiguration;
@@ -24,6 +30,8 @@ pub use crate::types::_s3_detail::S3Detail;
 pub use crate::types::_destination_configuration::DestinationConfiguration;
 
 pub use crate::types::_s3_destination_configuration::S3DestinationConfiguration;
+
+pub use crate::types::_composition_thumbnail_configuration::CompositionThumbnailConfiguration;
 
 pub use crate::types::_recording_configuration::RecordingConfiguration;
 
@@ -111,6 +119,8 @@ mod _composition_state;
 
 mod _composition_summary;
 
+mod _composition_thumbnail_configuration;
+
 mod _destination;
 
 mod _destination_configuration;
@@ -157,6 +167,8 @@ mod _participant_state;
 
 mod _participant_summary;
 
+mod _participant_thumbnail_configuration;
+
 mod _participant_token;
 
 mod _participant_token_capability;
@@ -196,6 +208,10 @@ mod _stage_summary;
 mod _storage_configuration;
 
 mod _storage_configuration_summary;
+
+mod _thumbnail_recording_mode;
+
+mod _thumbnail_storage_type;
 
 mod _video;
 

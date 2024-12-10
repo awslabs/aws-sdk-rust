@@ -8,6 +8,8 @@ pub struct AutoParticipantRecordingConfiguration {
     pub storage_configuration_arn: ::std::string::String,
     /// <p>Types of media to be recorded. Default: <code>AUDIO_VIDEO</code>.</p>
     pub media_types: ::std::option::Option<::std::vec::Vec<crate::types::ParticipantRecordingMediaType>>,
+    /// <p>A complex type that allows you to enable/disable the recording of thumbnails for individual participant recording and modify the interval at which thumbnails are generated for the live session.</p>
+    pub thumbnail_configuration: ::std::option::Option<crate::types::ParticipantThumbnailConfiguration>,
 }
 impl AutoParticipantRecordingConfiguration {
     /// <p>ARN of the <code>StorageConfiguration</code> resource to use for individual participant recording. Default: <code>""</code> (empty string, no storage configuration is specified). Individual participant recording cannot be started unless a storage configuration is specified, when a <code>Stage</code> is created or updated.</p>
@@ -20,6 +22,10 @@ impl AutoParticipantRecordingConfiguration {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.media_types.is_none()`.
     pub fn media_types(&self) -> &[crate::types::ParticipantRecordingMediaType] {
         self.media_types.as_deref().unwrap_or_default()
+    }
+    /// <p>A complex type that allows you to enable/disable the recording of thumbnails for individual participant recording and modify the interval at which thumbnails are generated for the live session.</p>
+    pub fn thumbnail_configuration(&self) -> ::std::option::Option<&crate::types::ParticipantThumbnailConfiguration> {
+        self.thumbnail_configuration.as_ref()
     }
 }
 impl AutoParticipantRecordingConfiguration {
@@ -35,6 +41,7 @@ impl AutoParticipantRecordingConfiguration {
 pub struct AutoParticipantRecordingConfigurationBuilder {
     pub(crate) storage_configuration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) media_types: ::std::option::Option<::std::vec::Vec<crate::types::ParticipantRecordingMediaType>>,
+    pub(crate) thumbnail_configuration: ::std::option::Option<crate::types::ParticipantThumbnailConfiguration>,
 }
 impl AutoParticipantRecordingConfigurationBuilder {
     /// <p>ARN of the <code>StorageConfiguration</code> resource to use for individual participant recording. Default: <code>""</code> (empty string, no storage configuration is specified). Individual participant recording cannot be started unless a storage configuration is specified, when a <code>Stage</code> is created or updated.</p>
@@ -72,6 +79,20 @@ impl AutoParticipantRecordingConfigurationBuilder {
     pub fn get_media_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParticipantRecordingMediaType>> {
         &self.media_types
     }
+    /// <p>A complex type that allows you to enable/disable the recording of thumbnails for individual participant recording and modify the interval at which thumbnails are generated for the live session.</p>
+    pub fn thumbnail_configuration(mut self, input: crate::types::ParticipantThumbnailConfiguration) -> Self {
+        self.thumbnail_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A complex type that allows you to enable/disable the recording of thumbnails for individual participant recording and modify the interval at which thumbnails are generated for the live session.</p>
+    pub fn set_thumbnail_configuration(mut self, input: ::std::option::Option<crate::types::ParticipantThumbnailConfiguration>) -> Self {
+        self.thumbnail_configuration = input;
+        self
+    }
+    /// <p>A complex type that allows you to enable/disable the recording of thumbnails for individual participant recording and modify the interval at which thumbnails are generated for the live session.</p>
+    pub fn get_thumbnail_configuration(&self) -> &::std::option::Option<crate::types::ParticipantThumbnailConfiguration> {
+        &self.thumbnail_configuration
+    }
     /// Consumes the builder and constructs a [`AutoParticipantRecordingConfiguration`](crate::types::AutoParticipantRecordingConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`storage_configuration_arn`](crate::types::builders::AutoParticipantRecordingConfigurationBuilder::storage_configuration_arn)
@@ -86,6 +107,7 @@ impl AutoParticipantRecordingConfigurationBuilder {
                 )
             })?,
             media_types: self.media_types,
+            thumbnail_configuration: self.thumbnail_configuration,
         })
     }
 }

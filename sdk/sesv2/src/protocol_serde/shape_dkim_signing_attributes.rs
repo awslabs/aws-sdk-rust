@@ -12,5 +12,8 @@ pub fn ser_dkim_signing_attributes(
     if let Some(var_3) = &input.next_signing_key_length {
         object.key("NextSigningKeyLength").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.domain_signing_attributes_origin {
+        object.key("DomainSigningAttributesOrigin").string(var_4.as_str());
+    }
     Ok(())
 }
