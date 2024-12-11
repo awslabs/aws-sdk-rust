@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AdminUpdateAuthEventFeedbackInput {
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where you want to submit authentication-event feedback.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, this value must be the <code>sub</code> of a local user or the username of a user from a third-party IdP.</p>
     pub username: ::std::option::Option<::std::string::String>,
-    /// <p>The authentication event ID.</p>
+    /// <p>The authentication event ID. To query authentication events for a user, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListUserAuthEvents.html">AdminListUserAuthEvents</a>.</p>
     pub event_id: ::std::option::Option<::std::string::String>,
     /// <p>The authentication event feedback value. When you provide a <code>FeedbackValue</code> value of <code>valid</code>, you tell Amazon Cognito that you trust a user session where Amazon Cognito has evaluated some level of risk. When you provide a <code>FeedbackValue</code> value of <code>invalid</code>, you tell Amazon Cognito that you don't trust a user session, or you don't believe that Amazon Cognito evaluated a high-enough risk level.</p>
     pub feedback_value: ::std::option::Option<crate::types::FeedbackValueType>,
 }
 impl AdminUpdateAuthEventFeedbackInput {
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where you want to submit authentication-event feedback.</p>
     pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
@@ -21,7 +21,7 @@ impl AdminUpdateAuthEventFeedbackInput {
     pub fn username(&self) -> ::std::option::Option<&str> {
         self.username.as_deref()
     }
-    /// <p>The authentication event ID.</p>
+    /// <p>The authentication event ID. To query authentication events for a user, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListUserAuthEvents.html">AdminListUserAuthEvents</a>.</p>
     pub fn event_id(&self) -> ::std::option::Option<&str> {
         self.event_id.as_deref()
     }
@@ -57,18 +57,18 @@ pub struct AdminUpdateAuthEventFeedbackInputBuilder {
     pub(crate) feedback_value: ::std::option::Option<crate::types::FeedbackValueType>,
 }
 impl AdminUpdateAuthEventFeedbackInputBuilder {
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where you want to submit authentication-event feedback.</p>
     /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where you want to submit authentication-event feedback.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
     }
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where you want to submit authentication-event feedback.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_pool_id
     }
@@ -87,18 +87,18 @@ impl AdminUpdateAuthEventFeedbackInputBuilder {
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
         &self.username
     }
-    /// <p>The authentication event ID.</p>
+    /// <p>The authentication event ID. To query authentication events for a user, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListUserAuthEvents.html">AdminListUserAuthEvents</a>.</p>
     /// This field is required.
     pub fn event_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The authentication event ID.</p>
+    /// <p>The authentication event ID. To query authentication events for a user, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListUserAuthEvents.html">AdminListUserAuthEvents</a>.</p>
     pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_id = input;
         self
     }
-    /// <p>The authentication event ID.</p>
+    /// <p>The authentication event ID. To query authentication events for a user, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListUserAuthEvents.html">AdminListUserAuthEvents</a>.</p>
     pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_id
     }

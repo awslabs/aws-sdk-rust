@@ -22,7 +22,7 @@ impl crate::operation::describe_user_pool_client::builders::DescribeUserPoolClie
 }
 /// Fluent builder constructing a request to `DescribeUserPoolClient`.
 ///
-/// <p>Client method for returning the configuration information and metadata of the specified user pool app client.</p><note>
+/// <p>Given an app client ID, returns configuration information. This operation is useful when you want to inspect an existing app client and programmatically replicate the configuration to another app client. For more information about app clients, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-client-apps.html">App clients</a>.</p><note>
 /// <p>Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.</p>
 /// <p class="title"><b>Learn more</b></p>
 /// <ul>
@@ -117,31 +117,31 @@ impl DescribeUserPoolClientFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The user pool ID for the user pool you want to describe.</p>
+    /// <p>The ID of the user pool that contains the app client you want to describe.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_pool_id(input.into());
         self
     }
-    /// <p>The user pool ID for the user pool you want to describe.</p>
+    /// <p>The ID of the user pool that contains the app client you want to describe.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
-    /// <p>The user pool ID for the user pool you want to describe.</p>
+    /// <p>The ID of the user pool that contains the app client you want to describe.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_pool_id()
     }
-    /// <p>The app client ID of the app associated with the user pool.</p>
+    /// <p>The ID of the app client that you want to describe.</p>
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_id(input.into());
         self
     }
-    /// <p>The app client ID of the app associated with the user pool.</p>
+    /// <p>The ID of the app client that you want to describe.</p>
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_id(input);
         self
     }
-    /// <p>The app client ID of the app associated with the user pool.</p>
+    /// <p>The ID of the app client that you want to describe.</p>
     pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_id()
     }

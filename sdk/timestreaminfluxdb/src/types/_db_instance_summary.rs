@@ -6,7 +6,7 @@
 pub struct DbInstanceSummary {
     /// <p>The service-generated unique identifier of the DB instance.</p>
     pub id: ::std::string::String,
-    /// <p>This customer-supplied name uniquely identifies the DB instance when interacting with the Amazon Timestream for InfluxDB API and AWS CLI commands.</p>
+    /// <p>This customer-supplied name uniquely identifies the DB instance when interacting with the Amazon Timestream for InfluxDB API and Amazon Web Services CLI commands.</p>
     pub name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the DB instance.</p>
     pub arn: ::std::string::String,
@@ -16,6 +16,8 @@ pub struct DbInstanceSummary {
     pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The port number on which InfluxDB accepts connections.</p>
     pub port: ::std::option::Option<i32>,
+    /// <p>Specifies whether the networkType of the Timestream for InfluxDB instance is IPV4, which can communicate over IPv4 protocol only, or DUAL, which can communicate over both IPv4 and IPv6 protocols.</p>
+    pub network_type: ::std::option::Option<crate::types::NetworkType>,
     /// <p>The Timestream for InfluxDB instance type to run InfluxDB on.</p>
     pub db_instance_type: ::std::option::Option<crate::types::DbInstanceType>,
     /// <p>The storage type for your DB instance.</p>
@@ -31,7 +33,7 @@ impl DbInstanceSummary {
         use std::ops::Deref;
         self.id.deref()
     }
-    /// <p>This customer-supplied name uniquely identifies the DB instance when interacting with the Amazon Timestream for InfluxDB API and AWS CLI commands.</p>
+    /// <p>This customer-supplied name uniquely identifies the DB instance when interacting with the Amazon Timestream for InfluxDB API and Amazon Web Services CLI commands.</p>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
@@ -52,6 +54,10 @@ impl DbInstanceSummary {
     /// <p>The port number on which InfluxDB accepts connections.</p>
     pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
+    }
+    /// <p>Specifies whether the networkType of the Timestream for InfluxDB instance is IPV4, which can communicate over IPv4 protocol only, or DUAL, which can communicate over both IPv4 and IPv6 protocols.</p>
+    pub fn network_type(&self) -> ::std::option::Option<&crate::types::NetworkType> {
+        self.network_type.as_ref()
     }
     /// <p>The Timestream for InfluxDB instance type to run InfluxDB on.</p>
     pub fn db_instance_type(&self) -> ::std::option::Option<&crate::types::DbInstanceType> {
@@ -87,6 +93,7 @@ pub struct DbInstanceSummaryBuilder {
     pub(crate) status: ::std::option::Option<crate::types::Status>,
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) port: ::std::option::Option<i32>,
+    pub(crate) network_type: ::std::option::Option<crate::types::NetworkType>,
     pub(crate) db_instance_type: ::std::option::Option<crate::types::DbInstanceType>,
     pub(crate) db_storage_type: ::std::option::Option<crate::types::DbStorageType>,
     pub(crate) allocated_storage: ::std::option::Option<i32>,
@@ -108,18 +115,18 @@ impl DbInstanceSummaryBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p>This customer-supplied name uniquely identifies the DB instance when interacting with the Amazon Timestream for InfluxDB API and AWS CLI commands.</p>
+    /// <p>This customer-supplied name uniquely identifies the DB instance when interacting with the Amazon Timestream for InfluxDB API and Amazon Web Services CLI commands.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>This customer-supplied name uniquely identifies the DB instance when interacting with the Amazon Timestream for InfluxDB API and AWS CLI commands.</p>
+    /// <p>This customer-supplied name uniquely identifies the DB instance when interacting with the Amazon Timestream for InfluxDB API and Amazon Web Services CLI commands.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>This customer-supplied name uniquely identifies the DB instance when interacting with the Amazon Timestream for InfluxDB API and AWS CLI commands.</p>
+    /// <p>This customer-supplied name uniquely identifies the DB instance when interacting with the Amazon Timestream for InfluxDB API and Amazon Web Services CLI commands.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
@@ -179,6 +186,20 @@ impl DbInstanceSummaryBuilder {
     /// <p>The port number on which InfluxDB accepts connections.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
         &self.port
+    }
+    /// <p>Specifies whether the networkType of the Timestream for InfluxDB instance is IPV4, which can communicate over IPv4 protocol only, or DUAL, which can communicate over both IPv4 and IPv6 protocols.</p>
+    pub fn network_type(mut self, input: crate::types::NetworkType) -> Self {
+        self.network_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the networkType of the Timestream for InfluxDB instance is IPV4, which can communicate over IPv4 protocol only, or DUAL, which can communicate over both IPv4 and IPv6 protocols.</p>
+    pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::NetworkType>) -> Self {
+        self.network_type = input;
+        self
+    }
+    /// <p>Specifies whether the networkType of the Timestream for InfluxDB instance is IPV4, which can communicate over IPv4 protocol only, or DUAL, which can communicate over both IPv4 and IPv6 protocols.</p>
+    pub fn get_network_type(&self) -> &::std::option::Option<crate::types::NetworkType> {
+        &self.network_type
     }
     /// <p>The Timestream for InfluxDB instance type to run InfluxDB on.</p>
     pub fn db_instance_type(mut self, input: crate::types::DbInstanceType) -> Self {
@@ -264,6 +285,7 @@ impl DbInstanceSummaryBuilder {
             status: self.status,
             endpoint: self.endpoint,
             port: self.port,
+            network_type: self.network_type,
             db_instance_type: self.db_instance_type,
             db_storage_type: self.db_storage_type,
             allocated_storage: self.allocated_storage,

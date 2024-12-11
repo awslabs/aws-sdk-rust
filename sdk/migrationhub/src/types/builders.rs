@@ -3,7 +3,11 @@ pub use crate::types::_resource_attribute::ResourceAttributeBuilder;
 
 pub use crate::types::_task::TaskBuilder;
 
+pub use crate::types::_source_resource::SourceResourceBuilder;
+
 pub use crate::types::_progress_update_stream_summary::ProgressUpdateStreamSummaryBuilder;
+
+pub use crate::types::_migration_task_update::MigrationTaskUpdateBuilder;
 
 pub use crate::types::_migration_task_summary::MigrationTaskSummaryBuilder;
 

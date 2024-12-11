@@ -51,6 +51,8 @@ pub(crate) mod shape_create_export_job;
 
 pub(crate) mod shape_create_import_job;
 
+pub(crate) mod shape_create_multi_region_endpoint;
+
 pub(crate) mod shape_delete_configuration_set;
 
 pub(crate) mod shape_delete_configuration_set_event_destination;
@@ -68,6 +70,8 @@ pub(crate) mod shape_delete_email_identity;
 pub(crate) mod shape_delete_email_identity_policy;
 
 pub(crate) mod shape_delete_email_template;
+
+pub(crate) mod shape_delete_multi_region_endpoint;
 
 pub(crate) mod shape_delete_suppressed_destination;
 
@@ -111,6 +115,8 @@ pub(crate) mod shape_get_import_job;
 
 pub(crate) mod shape_get_message_insights;
 
+pub(crate) mod shape_get_multi_region_endpoint;
+
 pub(crate) mod shape_get_suppressed_destination;
 
 pub(crate) mod shape_list_configuration_sets;
@@ -134,6 +140,8 @@ pub(crate) mod shape_list_email_templates;
 pub(crate) mod shape_list_export_jobs;
 
 pub(crate) mod shape_list_import_jobs;
+
+pub(crate) mod shape_list_multi_region_endpoints;
 
 pub(crate) mod shape_list_recommendations;
 
@@ -250,6 +258,8 @@ pub(crate) mod shape_create_email_template_input;
 pub(crate) mod shape_create_export_job_input;
 
 pub(crate) mod shape_create_import_job_input;
+
+pub(crate) mod shape_create_multi_region_endpoint_input;
 
 pub(crate) mod shape_internal_service_error_exception;
 
@@ -371,6 +381,8 @@ pub(crate) mod shape_delivery_options;
 
 pub(crate) mod shape_destination;
 
+pub(crate) mod shape_details;
+
 pub(crate) mod shape_dkim_attributes;
 
 pub(crate) mod shape_dkim_signing_attributes;
@@ -437,6 +449,8 @@ pub(crate) mod shape_metric_data_error_list;
 
 pub(crate) mod shape_metric_data_result_list;
 
+pub(crate) mod shape_multi_region_endpoints;
+
 pub(crate) mod shape_overall_volume;
 
 pub(crate) mod shape_placement_statistics;
@@ -446,6 +460,8 @@ pub(crate) mod shape_policy_map;
 pub(crate) mod shape_recommendations_list;
 
 pub(crate) mod shape_reputation_options;
+
+pub(crate) mod shape_routes;
 
 pub(crate) mod shape_send_quota;
 
@@ -543,6 +559,8 @@ pub(crate) mod shape_metric_data_result;
 
 pub(crate) mod shape_metrics_data_source;
 
+pub(crate) mod shape_multi_region_endpoint;
+
 pub(crate) mod shape_pinpoint_destination;
 
 pub(crate) mod shape_raw_message;
@@ -552,6 +570,10 @@ pub(crate) mod shape_recommendation;
 pub(crate) mod shape_replacement_email_content;
 
 pub(crate) mod shape_review_details;
+
+pub(crate) mod shape_route;
+
+pub(crate) mod shape_route_details;
 
 pub(crate) mod shape_sns_destination;
 
@@ -594,6 +616,8 @@ pub(crate) mod shape_insights_events;
 pub(crate) mod shape_message_insights_filters;
 
 pub(crate) mod shape_metric_value_list;
+
+pub(crate) mod shape_regions;
 
 pub(crate) mod shape_replacement_template;
 

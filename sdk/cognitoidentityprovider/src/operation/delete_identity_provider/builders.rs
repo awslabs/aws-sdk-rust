@@ -22,7 +22,16 @@ impl crate::operation::delete_identity_provider::builders::DeleteIdentityProvide
 }
 /// Fluent builder constructing a request to `DeleteIdentityProvider`.
 ///
-/// <p>Deletes an IdP for a user pool.</p>
+/// <p>Deletes a user pool identity provider (IdP). After you delete an IdP, users can no longer sign in to your user pool through that IdP. For more information about user pool IdPs, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation.html">Third-party IdP sign-in</a>.</p><note>
+/// <p>Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.</p>
+/// <p class="title"><b>Learn more</b></p>
+/// <ul>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing Amazon Web Services API Requests</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using the Amazon Cognito user pools API and user pool endpoints</a></p></li>
+/// </ul>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteIdentityProviderFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +117,31 @@ impl DeleteIdentityProviderFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where you want to delete the identity provider.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_pool_id(input.into());
         self
     }
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where you want to delete the identity provider.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where you want to delete the identity provider.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_pool_id()
     }
-    /// <p>The IdP name.</p>
+    /// <p>The name of the IdP that you want to delete.</p>
     pub fn provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.provider_name(input.into());
         self
     }
-    /// <p>The IdP name.</p>
+    /// <p>The name of the IdP that you want to delete.</p>
     pub fn set_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_provider_name(input);
         self
     }
-    /// <p>The IdP name.</p>
+    /// <p>The name of the IdP that you want to delete.</p>
     pub fn get_provider_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_provider_name()
     }

@@ -113,7 +113,7 @@ impl InitiateAuthFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The authentication flow that you want to initiate. The <code>AuthParameters</code> that you must submit are linked to the flow that you submit. For example:</p>
+    /// <p>The authentication flow that you want to initiate. Each <code>AuthFlow</code> has linked <code>AuthParameters</code> that you must submit. The following are some example flows and their parameters.</p>
     /// <ul>
     /// <li>
     /// <p><code>USER_AUTH</code>: Request a preferred authentication type or review available authentication types. From the offered authentication types, select one in a challenge response and then authenticate with that method in an additional challenge response.</p></li>
@@ -124,13 +124,13 @@ impl InitiateAuthFluentBuilder {
     /// <li>
     /// <p><code>USER_PASSWORD_AUTH</code>: Receive new tokens or the next challenge, for example <code>SOFTWARE_TOKEN_MFA</code>, when you pass <code>USERNAME</code> and <code>PASSWORD</code> parameters.</p></li>
     /// </ul>
-    /// <p>Valid values include the following:</p>
+    /// <p><i>All flows</i></p>
     /// <dl>
     /// <dt>
     /// USER_AUTH
     /// </dt>
     /// <dd>
-    /// <p>The entry point for sign-in with passwords, one-time passwords, biometric devices, and security keys.</p>
+    /// <p>The entry point for sign-in with passwords, one-time passwords, and WebAuthN authenticators.</p>
     /// </dd>
     /// <dt>
     /// USER_SRP_AUTH
@@ -162,7 +162,7 @@ impl InitiateAuthFluentBuilder {
         self.inner = self.inner.auth_flow(input);
         self
     }
-    /// <p>The authentication flow that you want to initiate. The <code>AuthParameters</code> that you must submit are linked to the flow that you submit. For example:</p>
+    /// <p>The authentication flow that you want to initiate. Each <code>AuthFlow</code> has linked <code>AuthParameters</code> that you must submit. The following are some example flows and their parameters.</p>
     /// <ul>
     /// <li>
     /// <p><code>USER_AUTH</code>: Request a preferred authentication type or review available authentication types. From the offered authentication types, select one in a challenge response and then authenticate with that method in an additional challenge response.</p></li>
@@ -173,13 +173,13 @@ impl InitiateAuthFluentBuilder {
     /// <li>
     /// <p><code>USER_PASSWORD_AUTH</code>: Receive new tokens or the next challenge, for example <code>SOFTWARE_TOKEN_MFA</code>, when you pass <code>USERNAME</code> and <code>PASSWORD</code> parameters.</p></li>
     /// </ul>
-    /// <p>Valid values include the following:</p>
+    /// <p><i>All flows</i></p>
     /// <dl>
     /// <dt>
     /// USER_AUTH
     /// </dt>
     /// <dd>
-    /// <p>The entry point for sign-in with passwords, one-time passwords, biometric devices, and security keys.</p>
+    /// <p>The entry point for sign-in with passwords, one-time passwords, and WebAuthN authenticators.</p>
     /// </dd>
     /// <dt>
     /// USER_SRP_AUTH
@@ -211,7 +211,7 @@ impl InitiateAuthFluentBuilder {
         self.inner = self.inner.set_auth_flow(input);
         self
     }
-    /// <p>The authentication flow that you want to initiate. The <code>AuthParameters</code> that you must submit are linked to the flow that you submit. For example:</p>
+    /// <p>The authentication flow that you want to initiate. Each <code>AuthFlow</code> has linked <code>AuthParameters</code> that you must submit. The following are some example flows and their parameters.</p>
     /// <ul>
     /// <li>
     /// <p><code>USER_AUTH</code>: Request a preferred authentication type or review available authentication types. From the offered authentication types, select one in a challenge response and then authenticate with that method in an additional challenge response.</p></li>
@@ -222,13 +222,13 @@ impl InitiateAuthFluentBuilder {
     /// <li>
     /// <p><code>USER_PASSWORD_AUTH</code>: Receive new tokens or the next challenge, for example <code>SOFTWARE_TOKEN_MFA</code>, when you pass <code>USERNAME</code> and <code>PASSWORD</code> parameters.</p></li>
     /// </ul>
-    /// <p>Valid values include the following:</p>
+    /// <p><i>All flows</i></p>
     /// <dl>
     /// <dt>
     /// USER_AUTH
     /// </dt>
     /// <dd>
-    /// <p>The entry point for sign-in with passwords, one-time passwords, biometric devices, and security keys.</p>
+    /// <p>The entry point for sign-in with passwords, one-time passwords, and WebAuthN authenticators.</p>
     /// </dd>
     /// <dt>
     /// USER_SRP_AUTH
@@ -358,14 +358,14 @@ impl InitiateAuthFluentBuilder {
     /// <p>Custom SMS sender</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html"> Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p><note>
-    /// <p>When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:</p>
+    /// <p>When you use the <code>ClientMetadata</code> parameter, note that Amazon Cognito won't do the following:</p>
     /// <ul>
     /// <li>
-    /// <p>Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the ClientMetadata parameter serves no purpose.</p></li>
+    /// <p>Store the <code>ClientMetadata</code> value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the <code>ClientMetadata</code> parameter serves no purpose.</p></li>
     /// <li>
-    /// <p>Validate the ClientMetadata value.</p></li>
+    /// <p>Validate the <code>ClientMetadata</code> value.</p></li>
     /// <li>
-    /// <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p></li>
+    /// <p>Encrypt the <code>ClientMetadata</code> value. Don't send sensitive information in this parameter.</p></li>
     /// </ul>
     /// </note>
     pub fn client_metadata(
@@ -405,14 +405,14 @@ impl InitiateAuthFluentBuilder {
     /// <p>Custom SMS sender</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html"> Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p><note>
-    /// <p>When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:</p>
+    /// <p>When you use the <code>ClientMetadata</code> parameter, note that Amazon Cognito won't do the following:</p>
     /// <ul>
     /// <li>
-    /// <p>Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the ClientMetadata parameter serves no purpose.</p></li>
+    /// <p>Store the <code>ClientMetadata</code> value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the <code>ClientMetadata</code> parameter serves no purpose.</p></li>
     /// <li>
-    /// <p>Validate the ClientMetadata value.</p></li>
+    /// <p>Validate the <code>ClientMetadata</code> value.</p></li>
     /// <li>
-    /// <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p></li>
+    /// <p>Encrypt the <code>ClientMetadata</code> value. Don't send sensitive information in this parameter.</p></li>
     /// </ul>
     /// </note>
     pub fn set_client_metadata(
@@ -451,14 +451,14 @@ impl InitiateAuthFluentBuilder {
     /// <p>Custom SMS sender</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html"> Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p><note>
-    /// <p>When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:</p>
+    /// <p>When you use the <code>ClientMetadata</code> parameter, note that Amazon Cognito won't do the following:</p>
     /// <ul>
     /// <li>
-    /// <p>Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the ClientMetadata parameter serves no purpose.</p></li>
+    /// <p>Store the <code>ClientMetadata</code> value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the <code>ClientMetadata</code> parameter serves no purpose.</p></li>
     /// <li>
-    /// <p>Validate the ClientMetadata value.</p></li>
+    /// <p>Validate the <code>ClientMetadata</code> value.</p></li>
     /// <li>
-    /// <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p></li>
+    /// <p>Encrypt the <code>ClientMetadata</code> value. Don't send sensitive information in this parameter.</p></li>
     /// </ul>
     /// </note>
     pub fn get_client_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -493,16 +493,19 @@ impl InitiateAuthFluentBuilder {
         self.inner.get_analytics_metadata()
     }
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-viewing-threat-protection-app.html">Collecting data for threat protection in applications</a>.</p>
     pub fn user_context_data(mut self, input: crate::types::UserContextDataType) -> Self {
         self.inner = self.inner.user_context_data(input);
         self
     }
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-viewing-threat-protection-app.html">Collecting data for threat protection in applications</a>.</p>
     pub fn set_user_context_data(mut self, input: ::std::option::Option<crate::types::UserContextDataType>) -> Self {
         self.inner = self.inner.set_user_context_data(input);
         self
     }
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-viewing-threat-protection-app.html">Collecting data for threat protection in applications</a>.</p>
     pub fn get_user_context_data(&self) -> &::std::option::Option<crate::types::UserContextDataType> {
         self.inner.get_user_context_data()
     }

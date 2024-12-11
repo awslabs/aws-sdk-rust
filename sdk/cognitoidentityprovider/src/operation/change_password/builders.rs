@@ -125,17 +125,17 @@ impl ChangePasswordFluentBuilder {
     pub fn get_previous_password(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_previous_password()
     }
-    /// <p>The new password.</p>
+    /// <p>A new password that you prompted the user to enter in your application.</p>
     pub fn proposed_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.proposed_password(input.into());
         self
     }
-    /// <p>The new password.</p>
+    /// <p>A new password that you prompted the user to enter in your application.</p>
     pub fn set_proposed_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_proposed_password(input);
         self
     }
-    /// <p>The new password.</p>
+    /// <p>A new password that you prompted the user to enter in your application.</p>
     pub fn get_proposed_password(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_proposed_password()
     }

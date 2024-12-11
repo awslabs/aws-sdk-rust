@@ -111,6 +111,10 @@ pub use crate::types::_recommendation_type::RecommendationType;
 
 pub use crate::types::_list_recommendations_filter_key::ListRecommendationsFilterKey;
 
+pub use crate::types::_multi_region_endpoint::MultiRegionEndpoint;
+
+pub use crate::types::_status::Status;
+
 pub use crate::types::_import_job_summary::ImportJobSummary;
 
 pub use crate::types::_job_status::JobStatus;
@@ -158,6 +162,8 @@ pub use crate::types::_contact_list::ContactList;
 pub use crate::types::_suppressed_destination::SuppressedDestination;
 
 pub use crate::types::_suppressed_destination_attributes::SuppressedDestinationAttributes;
+
+pub use crate::types::_route::Route;
 
 pub use crate::types::_email_insights::EmailInsights;
 
@@ -259,6 +265,10 @@ pub use crate::types::_suppression_attributes::SuppressionAttributes;
 
 pub use crate::types::_send_quota::SendQuota;
 
+pub use crate::types::_details::Details;
+
+pub use crate::types::_route_details::RouteDetails;
+
 pub use crate::types::_metric_data_error::MetricDataError;
 
 pub use crate::types::_query_error_code::QueryErrorCode;
@@ -332,6 +342,8 @@ mod _delivery_event_type;
 mod _delivery_options;
 
 mod _destination;
+
+mod _details;
 
 mod _dimension_value_source;
 
@@ -451,6 +463,8 @@ mod _metric_namespace;
 
 mod _metrics_data_source;
 
+mod _multi_region_endpoint;
+
 mod _overall_volume;
 
 mod _pinpoint_destination;
@@ -479,6 +493,10 @@ mod _review_details;
 
 mod _review_status;
 
+mod _route;
+
+mod _route_details;
+
 mod _scaling_mode;
 
 mod _send_quota;
@@ -488,6 +506,8 @@ mod _sending_options;
 mod _sns_destination;
 
 mod _soa_record;
+
+mod _status;
 
 mod _subscription_status;
 

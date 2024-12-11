@@ -22,7 +22,8 @@ impl crate::operation::delete_user_pool::builders::DeleteUserPoolInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteUserPool`.
 ///
-/// <p>Deletes the specified Amazon Cognito user pool.</p>
+/// <p>Deletes a user pool. After you delete a user pool, users can no longer sign in to any associated applications.</p>
+/// <p></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteUserPoolFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +109,17 @@ impl DeleteUserPoolFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The user pool ID for the user pool you want to delete.</p>
+    /// <p>The ID of the user pool that you want to delete.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_pool_id(input.into());
         self
     }
-    /// <p>The user pool ID for the user pool you want to delete.</p>
+    /// <p>The ID of the user pool that you want to delete.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
-    /// <p>The user pool ID for the user pool you want to delete.</p>
+    /// <p>The ID of the user pool that you want to delete.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_pool_id()
     }

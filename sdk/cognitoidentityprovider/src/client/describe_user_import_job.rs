@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeUserImportJob`](crate::operation::describe_user_import_job::builders::DescribeUserImportJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`user_pool_id(impl Into<String>)`](crate::operation::describe_user_import_job::builders::DescribeUserImportJobFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::describe_user_import_job::builders::DescribeUserImportJobFluentBuilder::set_user_pool_id):<br>required: **true**<br><p>The user pool ID for the user pool that the users are being imported into.</p><br>
-    ///   - [`job_id(impl Into<String>)`](crate::operation::describe_user_import_job::builders::DescribeUserImportJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::describe_user_import_job::builders::DescribeUserImportJobFluentBuilder::set_job_id):<br>required: **true**<br><p>The job ID for the user import job.</p><br>
+    ///   - [`user_pool_id(impl Into<String>)`](crate::operation::describe_user_import_job::builders::DescribeUserImportJobFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::describe_user_import_job::builders::DescribeUserImportJobFluentBuilder::set_user_pool_id):<br>required: **true**<br><p>The ID of the user pool that's associated with the import job.</p><br>
+    ///   - [`job_id(impl Into<String>)`](crate::operation::describe_user_import_job::builders::DescribeUserImportJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::describe_user_import_job::builders::DescribeUserImportJobFluentBuilder::set_job_id):<br>required: **true**<br><p>The Id of the user import job that you want to describe.</p><br>
     /// - On success, responds with [`DescribeUserImportJobOutput`](crate::operation::describe_user_import_job::DescribeUserImportJobOutput) with field(s):
-    ///   - [`user_import_job(Option<UserImportJobType>)`](crate::operation::describe_user_import_job::DescribeUserImportJobOutput::user_import_job): <p>The job object that represents the user import job.</p>
+    ///   - [`user_import_job(Option<UserImportJobType>)`](crate::operation::describe_user_import_job::DescribeUserImportJobOutput::user_import_job): <p>The details of the user import job.</p>
     /// - On failure, responds with [`SdkError<DescribeUserImportJobError>`](crate::operation::describe_user_import_job::DescribeUserImportJobError)
     pub fn describe_user_import_job(&self) -> crate::operation::describe_user_import_job::builders::DescribeUserImportJobFluentBuilder {
         crate::operation::describe_user_import_job::builders::DescribeUserImportJobFluentBuilder::new(self.handle.clone())

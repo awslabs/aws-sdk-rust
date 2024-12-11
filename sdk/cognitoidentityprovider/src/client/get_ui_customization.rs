@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetUICustomization`](crate::operation::get_ui_customization::builders::GetUICustomizationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`user_pool_id(impl Into<String>)`](crate::operation::get_ui_customization::builders::GetUICustomizationFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::get_ui_customization::builders::GetUICustomizationFluentBuilder::set_user_pool_id):<br>required: **true**<br><p>The user pool ID for the user pool.</p><br>
+    ///   - [`user_pool_id(impl Into<String>)`](crate::operation::get_ui_customization::builders::GetUICustomizationFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::get_ui_customization::builders::GetUICustomizationFluentBuilder::set_user_pool_id):<br>required: **true**<br><p>The ID of the user pool.</p><br>
     ///   - [`client_id(impl Into<String>)`](crate::operation::get_ui_customization::builders::GetUICustomizationFluentBuilder::client_id) / [`set_client_id(Option<String>)`](crate::operation::get_ui_customization::builders::GetUICustomizationFluentBuilder::set_client_id):<br>required: **false**<br><p>The client ID for the client app.</p><br>
     /// - On success, responds with [`GetUiCustomizationOutput`](crate::operation::get_ui_customization::GetUiCustomizationOutput) with field(s):
     ///   - [`ui_customization(Option<UiCustomizationType>)`](crate::operation::get_ui_customization::GetUiCustomizationOutput::ui_customization): <p>The UI customization information.</p>

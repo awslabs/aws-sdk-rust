@@ -119,6 +119,16 @@ pub(crate) fn reflens_list_import_jobs_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_multi_region_endpoints_output_output_next_token(
+    input: &crate::operation::list_multi_region_endpoints::ListMultiRegionEndpointsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_recommendations_output_output_next_token(
     input: &crate::operation::list_recommendations::ListRecommendationsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -133,6 +143,16 @@ pub(crate) fn reflens_list_suppressed_destinations_output_output_next_token(
     input: &crate::operation::list_suppressed_destinations::ListSuppressedDestinationsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_multi_region_endpoints_output_output_multi_region_endpoints(
+    input: crate::operation::list_multi_region_endpoints::ListMultiRegionEndpointsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::MultiRegionEndpoint>> {
+    let input = match input.multi_region_endpoints {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

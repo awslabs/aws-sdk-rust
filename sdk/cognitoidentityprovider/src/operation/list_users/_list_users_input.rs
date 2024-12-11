@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListUsersInput {
-    /// <p>The user pool ID for the user pool on which the search should be performed.</p>
+    /// <p>The ID of the user pool on which the search should be performed.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>A JSON array of user attribute names, for example <code>given_name</code>, that you want Amazon Cognito to include in the response for each user. When you don't provide an <code>AttributesToGet</code> parameter, Amazon Cognito returns all attributes for each user.</p>
     /// <p>Use <code>AttributesToGet</code> with required attributes in your user pool, or in conjunction with <code>Filter</code>. Amazon Cognito returns an error if not all users in the results have set a value for the attribute you request. Attributes that you can't filter on, including custom attributes, must have a value set in every user profile before an <code>AttributesToGet</code> parameter returns results.</p>
@@ -54,7 +54,7 @@ pub struct ListUsersInput {
     pub filter: ::std::option::Option<::std::string::String>,
 }
 impl ListUsersInput {
-    /// <p>The user pool ID for the user pool on which the search should be performed.</p>
+    /// <p>The ID of the user pool on which the search should be performed.</p>
     pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
@@ -133,18 +133,18 @@ pub struct ListUsersInputBuilder {
     pub(crate) filter: ::std::option::Option<::std::string::String>,
 }
 impl ListUsersInputBuilder {
-    /// <p>The user pool ID for the user pool on which the search should be performed.</p>
+    /// <p>The ID of the user pool on which the search should be performed.</p>
     /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user pool ID for the user pool on which the search should be performed.</p>
+    /// <p>The ID of the user pool on which the search should be performed.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
     }
-    /// <p>The user pool ID for the user pool on which the search should be performed.</p>
+    /// <p>The ID of the user pool on which the search should be performed.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_pool_id
     }

@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdminDisableProviderForUserInput {
-    /// <p>The user pool ID for the user pool.</p>
+    /// <p>The ID of the user pool where you want to delete the user's linked identities.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
-    /// <p>The user to be disabled.</p>
+    /// <p>The user profile that you want to delete a linked identity from.</p>
     pub user: ::std::option::Option<crate::types::ProviderUserIdentifierType>,
 }
 impl AdminDisableProviderForUserInput {
-    /// <p>The user pool ID for the user pool.</p>
+    /// <p>The ID of the user pool where you want to delete the user's linked identities.</p>
     pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
-    /// <p>The user to be disabled.</p>
+    /// <p>The user profile that you want to delete a linked identity from.</p>
     pub fn user(&self) -> ::std::option::Option<&crate::types::ProviderUserIdentifierType> {
         self.user.as_ref()
     }
@@ -33,33 +33,33 @@ pub struct AdminDisableProviderForUserInputBuilder {
     pub(crate) user: ::std::option::Option<crate::types::ProviderUserIdentifierType>,
 }
 impl AdminDisableProviderForUserInputBuilder {
-    /// <p>The user pool ID for the user pool.</p>
+    /// <p>The ID of the user pool where you want to delete the user's linked identities.</p>
     /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user pool ID for the user pool.</p>
+    /// <p>The ID of the user pool where you want to delete the user's linked identities.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
     }
-    /// <p>The user pool ID for the user pool.</p>
+    /// <p>The ID of the user pool where you want to delete the user's linked identities.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_pool_id
     }
-    /// <p>The user to be disabled.</p>
+    /// <p>The user profile that you want to delete a linked identity from.</p>
     /// This field is required.
     pub fn user(mut self, input: crate::types::ProviderUserIdentifierType) -> Self {
         self.user = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The user to be disabled.</p>
+    /// <p>The user profile that you want to delete a linked identity from.</p>
     pub fn set_user(mut self, input: ::std::option::Option<crate::types::ProviderUserIdentifierType>) -> Self {
         self.user = input;
         self
     }
-    /// <p>The user to be disabled.</p>
+    /// <p>The user profile that you want to delete a linked identity from.</p>
     pub fn get_user(&self) -> &::std::option::Option<crate::types::ProviderUserIdentifierType> {
         &self.user
     }

@@ -22,7 +22,7 @@ impl crate::operation::describe_managed_login_branding_by_client::builders::Desc
 }
 /// Fluent builder constructing a request to `DescribeManagedLoginBrandingByClient`.
 ///
-/// <p>When given the ID of a user pool app client, returns detailed information about the style assigned to the app client.</p>
+/// <p>Given the ID of a user pool app client, returns detailed information about the style assigned to the app client.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeManagedLoginBrandingByClientFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

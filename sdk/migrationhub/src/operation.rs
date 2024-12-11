@@ -7,6 +7,9 @@ pub mod associate_created_artifact;
 /// Types for the `AssociateDiscoveredResource` operation.
 pub mod associate_discovered_resource;
 
+/// Types for the `AssociateSourceResource` operation.
+pub mod associate_source_resource;
+
 /// Types for the `CreateProgressUpdateStream` operation.
 pub mod create_progress_update_stream;
 
@@ -25,6 +28,9 @@ pub mod disassociate_created_artifact;
 /// Types for the `DisassociateDiscoveredResource` operation.
 pub mod disassociate_discovered_resource;
 
+/// Types for the `DisassociateSourceResource` operation.
+pub mod disassociate_source_resource;
+
 /// Types for the `ImportMigrationTask` operation.
 pub mod import_migration_task;
 
@@ -37,11 +43,17 @@ pub mod list_created_artifacts;
 /// Types for the `ListDiscoveredResources` operation.
 pub mod list_discovered_resources;
 
+/// Types for the `ListMigrationTaskUpdates` operation.
+pub mod list_migration_task_updates;
+
 /// Types for the `ListMigrationTasks` operation.
 pub mod list_migration_tasks;
 
 /// Types for the `ListProgressUpdateStreams` operation.
 pub mod list_progress_update_streams;
+
+/// Types for the `ListSourceResources` operation.
+pub mod list_source_resources;
 
 /// Types for the `NotifyApplicationState` operation.
 pub mod notify_application_state;

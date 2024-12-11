@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListUserImportJobsInput {
-    /// <p>The user pool ID for the user pool that the users are being imported into.</p>
+    /// <p>The ID of the user pool that the users are being imported into.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of import jobs you want the request to return.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -12,7 +12,7 @@ pub struct ListUserImportJobsInput {
     pub pagination_token: ::std::option::Option<::std::string::String>,
 }
 impl ListUserImportJobsInput {
-    /// <p>The user pool ID for the user pool that the users are being imported into.</p>
+    /// <p>The ID of the user pool that the users are being imported into.</p>
     pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
@@ -41,18 +41,18 @@ pub struct ListUserImportJobsInputBuilder {
     pub(crate) pagination_token: ::std::option::Option<::std::string::String>,
 }
 impl ListUserImportJobsInputBuilder {
-    /// <p>The user pool ID for the user pool that the users are being imported into.</p>
+    /// <p>The ID of the user pool that the users are being imported into.</p>
     /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user pool ID for the user pool that the users are being imported into.</p>
+    /// <p>The ID of the user pool that the users are being imported into.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
     }
-    /// <p>The user pool ID for the user pool that the users are being imported into.</p>
+    /// <p>The ID of the user pool that the users are being imported into.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_pool_id
     }

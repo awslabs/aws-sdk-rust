@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeIdentityProviderInput {
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool that has the IdP that you want to describe..</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
-    /// <p>The IdP name.</p>
+    /// <p>The name of the IdP that you want to describe.</p>
     pub provider_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeIdentityProviderInput {
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool that has the IdP that you want to describe..</p>
     pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
-    /// <p>The IdP name.</p>
+    /// <p>The name of the IdP that you want to describe.</p>
     pub fn provider_name(&self) -> ::std::option::Option<&str> {
         self.provider_name.as_deref()
     }
@@ -33,33 +33,33 @@ pub struct DescribeIdentityProviderInputBuilder {
     pub(crate) provider_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeIdentityProviderInputBuilder {
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool that has the IdP that you want to describe..</p>
     /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool that has the IdP that you want to describe..</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
     }
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool that has the IdP that you want to describe..</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_pool_id
     }
-    /// <p>The IdP name.</p>
+    /// <p>The name of the IdP that you want to describe.</p>
     /// This field is required.
     pub fn provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The IdP name.</p>
+    /// <p>The name of the IdP that you want to describe.</p>
     pub fn set_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provider_name = input;
         self
     }
-    /// <p>The IdP name.</p>
+    /// <p>The name of the IdP that you want to describe.</p>
     pub fn get_provider_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.provider_name
     }

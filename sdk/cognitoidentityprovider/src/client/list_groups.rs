@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_groups::builders::ListGroupsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`user_pool_id(impl Into<String>)`](crate::operation::list_groups::builders::ListGroupsFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::list_groups::builders::ListGroupsFluentBuilder::set_user_pool_id):<br>required: **true**<br><p>The user pool ID for the user pool.</p><br>
+    ///   - [`user_pool_id(impl Into<String>)`](crate::operation::list_groups::builders::ListGroupsFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::list_groups::builders::ListGroupsFluentBuilder::set_user_pool_id):<br>required: **true**<br><p>The ID of the user pool.</p><br>
     ///   - [`limit(i32)`](crate::operation::list_groups::builders::ListGroupsFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::list_groups::builders::ListGroupsFluentBuilder::set_limit):<br>required: **false**<br><p>The limit of the request to list groups.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_groups::builders::ListGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_groups::builders::ListGroupsFluentBuilder::set_next_token):<br>required: **false**<br><p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p><br>
     /// - On success, responds with [`ListGroupsOutput`](crate::operation::list_groups::ListGroupsOutput) with field(s):

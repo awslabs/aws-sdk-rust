@@ -31,6 +31,8 @@ pub(crate) mod shape_get_report_metadata;
 
 pub(crate) mod shape_get_term_for_report;
 
+pub(crate) mod shape_list_customer_agreements;
+
 pub(crate) mod shape_list_reports;
 
 pub(crate) mod shape_put_account_settings;
@@ -61,12 +63,18 @@ pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_account_settings;
 
+pub(crate) mod shape_customer_agreement_list;
+
 pub(crate) mod shape_report_detail;
 
 pub(crate) mod shape_reports_list;
 
 pub(crate) mod shape_validation_exception_field_list;
 
+pub(crate) mod shape_customer_agreement_summary;
+
 pub(crate) mod shape_report_summary;
 
 pub(crate) mod shape_validation_exception_field;
+
+pub(crate) mod shape_agreement_terms;

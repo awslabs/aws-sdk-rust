@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CompleteWebAuthnRegistrationInput {
-    /// <p>A valid access token that Amazon Cognito issued to the user whose passkey registration you want to verify.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user whose passkey registration you want to complete.</p>
     pub access_token: ::std::option::Option<::std::string::String>,
     /// <p>A <a href="https://www.w3.org/TR/webauthn-3/#dictdef-registrationresponsejson">RegistrationResponseJSON</a> public-key credential response from the user's passkey provider.</p>
     pub credential: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl CompleteWebAuthnRegistrationInput {
-    /// <p>A valid access token that Amazon Cognito issued to the user whose passkey registration you want to verify.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user whose passkey registration you want to complete.</p>
     pub fn access_token(&self) -> ::std::option::Option<&str> {
         self.access_token.as_deref()
     }
@@ -41,18 +41,18 @@ pub struct CompleteWebAuthnRegistrationInputBuilder {
     pub(crate) credential: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl CompleteWebAuthnRegistrationInputBuilder {
-    /// <p>A valid access token that Amazon Cognito issued to the user whose passkey registration you want to verify.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user whose passkey registration you want to complete.</p>
     /// This field is required.
     pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A valid access token that Amazon Cognito issued to the user whose passkey registration you want to verify.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user whose passkey registration you want to complete.</p>
     pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_token = input;
         self
     }
-    /// <p>A valid access token that Amazon Cognito issued to the user whose passkey registration you want to verify.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user whose passkey registration you want to complete.</p>
     pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.access_token
     }

@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteGroupInput {
-    /// <p>The name of the group.</p>
+    /// <p>The name of the group that you want to delete.</p>
     pub group_name: ::std::option::Option<::std::string::String>,
-    /// <p>The user pool ID for the user pool.</p>
+    /// <p>The ID of the user pool where you want to delete the group.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteGroupInput {
-    /// <p>The name of the group.</p>
+    /// <p>The name of the group that you want to delete.</p>
     pub fn group_name(&self) -> ::std::option::Option<&str> {
         self.group_name.as_deref()
     }
-    /// <p>The user pool ID for the user pool.</p>
+    /// <p>The ID of the user pool where you want to delete the group.</p>
     pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
@@ -33,33 +33,33 @@ pub struct DeleteGroupInputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteGroupInputBuilder {
-    /// <p>The name of the group.</p>
+    /// <p>The name of the group that you want to delete.</p>
     /// This field is required.
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the group.</p>
+    /// <p>The name of the group that you want to delete.</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_name = input;
         self
     }
-    /// <p>The name of the group.</p>
+    /// <p>The name of the group that you want to delete.</p>
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_name
     }
-    /// <p>The user pool ID for the user pool.</p>
+    /// <p>The ID of the user pool where you want to delete the group.</p>
     /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user pool ID for the user pool.</p>
+    /// <p>The ID of the user pool where you want to delete the group.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
     }
-    /// <p>The user pool ID for the user pool.</p>
+    /// <p>The ID of the user pool where you want to delete the group.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_pool_id
     }

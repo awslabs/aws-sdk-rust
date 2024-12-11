@@ -4,23 +4,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateUserImportJobInput {
-    /// <p>The job name for the user import job.</p>
+    /// <p>A friendly name for the user import job.</p>
     pub job_name: ::std::option::Option<::std::string::String>,
-    /// <p>The user pool ID for the user pool that the users are being imported into.</p>
+    /// <p>The ID of the user pool that you want to import users into.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
-    /// <p>The role ARN for the Amazon CloudWatch Logs Logging role for the user import job.</p>
+    /// <p>You must specify an IAM role that has permission to log import-job results to Amazon CloudWatch Logs. This parameter is the ARN of that role.</p>
     pub cloud_watch_logs_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateUserImportJobInput {
-    /// <p>The job name for the user import job.</p>
+    /// <p>A friendly name for the user import job.</p>
     pub fn job_name(&self) -> ::std::option::Option<&str> {
         self.job_name.as_deref()
     }
-    /// <p>The user pool ID for the user pool that the users are being imported into.</p>
+    /// <p>The ID of the user pool that you want to import users into.</p>
     pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
-    /// <p>The role ARN for the Amazon CloudWatch Logs Logging role for the user import job.</p>
+    /// <p>You must specify an IAM role that has permission to log import-job results to Amazon CloudWatch Logs. This parameter is the ARN of that role.</p>
     pub fn cloud_watch_logs_role_arn(&self) -> ::std::option::Option<&str> {
         self.cloud_watch_logs_role_arn.as_deref()
     }
@@ -41,48 +41,48 @@ pub struct CreateUserImportJobInputBuilder {
     pub(crate) cloud_watch_logs_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateUserImportJobInputBuilder {
-    /// <p>The job name for the user import job.</p>
+    /// <p>A friendly name for the user import job.</p>
     /// This field is required.
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The job name for the user import job.</p>
+    /// <p>A friendly name for the user import job.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_name = input;
         self
     }
-    /// <p>The job name for the user import job.</p>
+    /// <p>A friendly name for the user import job.</p>
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_name
     }
-    /// <p>The user pool ID for the user pool that the users are being imported into.</p>
+    /// <p>The ID of the user pool that you want to import users into.</p>
     /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user pool ID for the user pool that the users are being imported into.</p>
+    /// <p>The ID of the user pool that you want to import users into.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
     }
-    /// <p>The user pool ID for the user pool that the users are being imported into.</p>
+    /// <p>The ID of the user pool that you want to import users into.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_pool_id
     }
-    /// <p>The role ARN for the Amazon CloudWatch Logs Logging role for the user import job.</p>
+    /// <p>You must specify an IAM role that has permission to log import-job results to Amazon CloudWatch Logs. This parameter is the ARN of that role.</p>
     /// This field is required.
     pub fn cloud_watch_logs_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloud_watch_logs_role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The role ARN for the Amazon CloudWatch Logs Logging role for the user import job.</p>
+    /// <p>You must specify an IAM role that has permission to log import-job results to Amazon CloudWatch Logs. This parameter is the ARN of that role.</p>
     pub fn set_cloud_watch_logs_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cloud_watch_logs_role_arn = input;
         self
     }
-    /// <p>The role ARN for the Amazon CloudWatch Logs Logging role for the user import job.</p>
+    /// <p>You must specify an IAM role that has permission to log import-job results to Amazon CloudWatch Logs. This parameter is the ARN of that role.</p>
     pub fn get_cloud_watch_logs_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.cloud_watch_logs_role_arn
     }

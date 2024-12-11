@@ -9,6 +9,8 @@ pub struct GetDashboardForJobRunInput {
     pub job_run_id: ::std::option::Option<::std::string::String>,
     /// <p>An optimal parameter that indicates the amount of attempts for the job. If not specified, this value defaults to the attempt of the latest job.</p>
     pub attempt: ::std::option::Option<i32>,
+    /// <p>Allows access to system profile logs for Lake Formation-enabled jobs. Default is false.</p>
+    pub access_system_profile_logs: ::std::option::Option<bool>,
 }
 impl GetDashboardForJobRunInput {
     /// <p>The ID of the application.</p>
@@ -22,6 +24,10 @@ impl GetDashboardForJobRunInput {
     /// <p>An optimal parameter that indicates the amount of attempts for the job. If not specified, this value defaults to the attempt of the latest job.</p>
     pub fn attempt(&self) -> ::std::option::Option<i32> {
         self.attempt
+    }
+    /// <p>Allows access to system profile logs for Lake Formation-enabled jobs. Default is false.</p>
+    pub fn access_system_profile_logs(&self) -> ::std::option::Option<bool> {
+        self.access_system_profile_logs
     }
 }
 impl GetDashboardForJobRunInput {
@@ -38,6 +44,7 @@ pub struct GetDashboardForJobRunInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_run_id: ::std::option::Option<::std::string::String>,
     pub(crate) attempt: ::std::option::Option<i32>,
+    pub(crate) access_system_profile_logs: ::std::option::Option<bool>,
 }
 impl GetDashboardForJobRunInputBuilder {
     /// <p>The ID of the application.</p>
@@ -84,6 +91,20 @@ impl GetDashboardForJobRunInputBuilder {
     pub fn get_attempt(&self) -> &::std::option::Option<i32> {
         &self.attempt
     }
+    /// <p>Allows access to system profile logs for Lake Formation-enabled jobs. Default is false.</p>
+    pub fn access_system_profile_logs(mut self, input: bool) -> Self {
+        self.access_system_profile_logs = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Allows access to system profile logs for Lake Formation-enabled jobs. Default is false.</p>
+    pub fn set_access_system_profile_logs(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.access_system_profile_logs = input;
+        self
+    }
+    /// <p>Allows access to system profile logs for Lake Formation-enabled jobs. Default is false.</p>
+    pub fn get_access_system_profile_logs(&self) -> &::std::option::Option<bool> {
+        &self.access_system_profile_logs
+    }
     /// Consumes the builder and constructs a [`GetDashboardForJobRunInput`](crate::operation::get_dashboard_for_job_run::GetDashboardForJobRunInput).
     pub fn build(
         self,
@@ -95,6 +116,7 @@ impl GetDashboardForJobRunInputBuilder {
             application_id: self.application_id,
             job_run_id: self.job_run_id,
             attempt: self.attempt,
+            access_system_profile_logs: self.access_system_profile_logs,
         })
     }
 }

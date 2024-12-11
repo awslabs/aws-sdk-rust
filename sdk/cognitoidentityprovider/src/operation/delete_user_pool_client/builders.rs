@@ -22,7 +22,7 @@ impl crate::operation::delete_user_pool_client::builders::DeleteUserPoolClientIn
 }
 /// Fluent builder constructing a request to `DeleteUserPoolClient`.
 ///
-/// <p>Allows the developer to delete the user pool client.</p>
+/// <p>Deletes a user pool app client. After you delete an app client, users can no longer sign in to the associated application.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteUserPoolClientFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl DeleteUserPoolClientFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The user pool ID for the user pool where you want to delete the client.</p>
+    /// <p>The ID of the user pool where you want to delete the client.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_pool_id(input.into());
         self
     }
-    /// <p>The user pool ID for the user pool where you want to delete the client.</p>
+    /// <p>The ID of the user pool where you want to delete the client.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
-    /// <p>The user pool ID for the user pool where you want to delete the client.</p>
+    /// <p>The ID of the user pool where you want to delete the client.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_pool_id()
     }
-    /// <p>The app client ID of the app associated with the user pool.</p>
+    /// <p>The ID of the user pool app client that you want to delete.</p>
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_id(input.into());
         self
     }
-    /// <p>The app client ID of the app associated with the user pool.</p>
+    /// <p>The ID of the user pool app client that you want to delete.</p>
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_id(input);
         self
     }
-    /// <p>The app client ID of the app associated with the user pool.</p>
+    /// <p>The ID of the user pool app client that you want to delete.</p>
     pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_id()
     }

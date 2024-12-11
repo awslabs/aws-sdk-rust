@@ -5,17 +5,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EmailMfaConfigType {
-    /// <p>The template for the email message that your user pool sends to users with an MFA code. The message must contain the <code>{####}</code> placeholder. In the message, Amazon Cognito replaces this placeholder with the code. If you don't provide this parameter, Amazon Cognito sends messages in the default format.</p>
+    /// <p>The template for the email message that your user pool sends to users with a code for MFA and sign-in with an email OTP. The message must contain the <code>{####}</code> placeholder. In the message, Amazon Cognito replaces this placeholder with the code. If you don't provide this parameter, Amazon Cognito sends messages in the default format.</p>
     pub message: ::std::option::Option<::std::string::String>,
-    /// <p>The subject of the email message that your user pool sends to users with an MFA code.</p>
+    /// <p>The subject of the email message that your user pool sends to users with a code for MFA and email OTP sign-in.</p>
     pub subject: ::std::option::Option<::std::string::String>,
 }
 impl EmailMfaConfigType {
-    /// <p>The template for the email message that your user pool sends to users with an MFA code. The message must contain the <code>{####}</code> placeholder. In the message, Amazon Cognito replaces this placeholder with the code. If you don't provide this parameter, Amazon Cognito sends messages in the default format.</p>
+    /// <p>The template for the email message that your user pool sends to users with a code for MFA and sign-in with an email OTP. The message must contain the <code>{####}</code> placeholder. In the message, Amazon Cognito replaces this placeholder with the code. If you don't provide this parameter, Amazon Cognito sends messages in the default format.</p>
     pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
-    /// <p>The subject of the email message that your user pool sends to users with an MFA code.</p>
+    /// <p>The subject of the email message that your user pool sends to users with a code for MFA and email OTP sign-in.</p>
     pub fn subject(&self) -> ::std::option::Option<&str> {
         self.subject.as_deref()
     }
@@ -35,31 +35,31 @@ pub struct EmailMfaConfigTypeBuilder {
     pub(crate) subject: ::std::option::Option<::std::string::String>,
 }
 impl EmailMfaConfigTypeBuilder {
-    /// <p>The template for the email message that your user pool sends to users with an MFA code. The message must contain the <code>{####}</code> placeholder. In the message, Amazon Cognito replaces this placeholder with the code. If you don't provide this parameter, Amazon Cognito sends messages in the default format.</p>
+    /// <p>The template for the email message that your user pool sends to users with a code for MFA and sign-in with an email OTP. The message must contain the <code>{####}</code> placeholder. In the message, Amazon Cognito replaces this placeholder with the code. If you don't provide this parameter, Amazon Cognito sends messages in the default format.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The template for the email message that your user pool sends to users with an MFA code. The message must contain the <code>{####}</code> placeholder. In the message, Amazon Cognito replaces this placeholder with the code. If you don't provide this parameter, Amazon Cognito sends messages in the default format.</p>
+    /// <p>The template for the email message that your user pool sends to users with a code for MFA and sign-in with an email OTP. The message must contain the <code>{####}</code> placeholder. In the message, Amazon Cognito replaces this placeholder with the code. If you don't provide this parameter, Amazon Cognito sends messages in the default format.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
-    /// <p>The template for the email message that your user pool sends to users with an MFA code. The message must contain the <code>{####}</code> placeholder. In the message, Amazon Cognito replaces this placeholder with the code. If you don't provide this parameter, Amazon Cognito sends messages in the default format.</p>
+    /// <p>The template for the email message that your user pool sends to users with a code for MFA and sign-in with an email OTP. The message must contain the <code>{####}</code> placeholder. In the message, Amazon Cognito replaces this placeholder with the code. If you don't provide this parameter, Amazon Cognito sends messages in the default format.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
-    /// <p>The subject of the email message that your user pool sends to users with an MFA code.</p>
+    /// <p>The subject of the email message that your user pool sends to users with a code for MFA and email OTP sign-in.</p>
     pub fn subject(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subject = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The subject of the email message that your user pool sends to users with an MFA code.</p>
+    /// <p>The subject of the email message that your user pool sends to users with a code for MFA and email OTP sign-in.</p>
     pub fn set_subject(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subject = input;
         self
     }
-    /// <p>The subject of the email message that your user pool sends to users with an MFA code.</p>
+    /// <p>The subject of the email message that your user pool sends to users with a code for MFA and email OTP sign-in.</p>
     pub fn get_subject(&self) -> &::std::option::Option<::std::string::String> {
         &self.subject
     }

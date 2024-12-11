@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AdminRespondToAuthChallengeInput {
-    /// <p>The ID of the Amazon Cognito user pool.</p>
+    /// <p>The ID of the user pool where you want to respond to an authentication challenge.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
-    /// <p>The app client ID.</p>
+    /// <p>The ID of the app client where you initiated sign-in.</p>
     pub client_id: ::std::option::Option<::std::string::String>,
-    /// <p>The challenge name. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
+    /// <p>The name of the challenge that you are responding to. You can find more information about values for <code>ChallengeName</code> in the response parameters of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html#CognitoUserPools-AdminInitiateAuth-response-ChallengeName">AdminInitiateAuth</a>.</p>
     pub challenge_name: ::std::option::Option<crate::types::ChallengeNameType>,
     /// <p>The responses to the challenge that you received in the previous request. Each challenge has its own required response parameters. The following examples are partial JSON request bodies that highlight challenge-response parameters.</p><important>
     /// <p>You must provide a SECRET_HASH parameter in all challenge responses to an app client that has a client secret. Include a <code>DEVICE_KEY</code> for device authentication.</p>
@@ -113,56 +113,57 @@ pub struct AdminRespondToAuthChallengeInput {
     /// </dl>
     /// <p>For more information about <code>SECRET_HASH</code>, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working with user devices in your user pool</a>.</p>
     pub challenge_responses: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>The session that should be passed both ways in challenge-response calls to the service. If an <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller must pass another challenge, it returns a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
+    /// <p>The session identifier that maintains the state of authentication requests and challenge responses. If an <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API request results in a determination that your application must pass another challenge, Amazon Cognito returns a session with other challenge parameters. Send this session identifier, unmodified, to the next <code>AdminRespondToAuthChallenge</code> request.</p>
     pub session: ::std::option::Option<::std::string::String>,
     /// <p>The analytics metadata for collecting Amazon Pinpoint metrics for <code>AdminRespondToAuthChallenge</code> calls.</p>
     pub analytics_metadata: ::std::option::Option<crate::types::AnalyticsMetadataType>,
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-viewing-threat-protection-app.html">Collecting data for threat protection in applications</a>.</p>
     pub context_data: ::std::option::Option<crate::types::ContextDataType>,
     /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers.</p>
     /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminRespondToAuthChallenge API action, Amazon Cognito invokes any functions that you have assigned to the following triggers:</p>
     /// <ul>
     /// <li>
-    /// <p>pre sign-up</p></li>
+    /// <p>Pre sign-up</p></li>
     /// <li>
     /// <p>custom message</p></li>
     /// <li>
-    /// <p>post authentication</p></li>
+    /// <p>Post authentication</p></li>
     /// <li>
-    /// <p>user migration</p></li>
+    /// <p>User migration</p></li>
     /// <li>
-    /// <p>pre token generation</p></li>
+    /// <p>Pre token generation</p></li>
     /// <li>
-    /// <p>define auth challenge</p></li>
+    /// <p>Define auth challenge</p></li>
     /// <li>
-    /// <p>create auth challenge</p></li>
+    /// <p>Create auth challenge</p></li>
     /// <li>
-    /// <p>verify auth challenge response</p></li>
+    /// <p>Verify auth challenge response</p></li>
     /// </ul>
     /// <p>When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute that provides the data that you assigned to the ClientMetadata parameter in your AdminRespondToAuthChallenge request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html"> Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p><note>
-    /// <p>When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:</p>
+    /// <p>When you use the <code>ClientMetadata</code> parameter, note that Amazon Cognito won't do the following:</p>
     /// <ul>
     /// <li>
-    /// <p>Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the ClientMetadata parameter serves no purpose.</p></li>
+    /// <p>Store the <code>ClientMetadata</code> value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the <code>ClientMetadata</code> parameter serves no purpose.</p></li>
     /// <li>
-    /// <p>Validate the ClientMetadata value.</p></li>
+    /// <p>Validate the <code>ClientMetadata</code> value.</p></li>
     /// <li>
-    /// <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p></li>
+    /// <p>Encrypt the <code>ClientMetadata</code> value. Don't send sensitive information in this parameter.</p></li>
     /// </ul>
     /// </note>
     pub client_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl AdminRespondToAuthChallengeInput {
-    /// <p>The ID of the Amazon Cognito user pool.</p>
+    /// <p>The ID of the user pool where you want to respond to an authentication challenge.</p>
     pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
-    /// <p>The app client ID.</p>
+    /// <p>The ID of the app client where you initiated sign-in.</p>
     pub fn client_id(&self) -> ::std::option::Option<&str> {
         self.client_id.as_deref()
     }
-    /// <p>The challenge name. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
+    /// <p>The name of the challenge that you are responding to. You can find more information about values for <code>ChallengeName</code> in the response parameters of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html#CognitoUserPools-AdminInitiateAuth-response-ChallengeName">AdminInitiateAuth</a>.</p>
     pub fn challenge_name(&self) -> ::std::option::Option<&crate::types::ChallengeNameType> {
         self.challenge_name.as_ref()
     }
@@ -271,7 +272,7 @@ impl AdminRespondToAuthChallengeInput {
     pub fn challenge_responses(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.challenge_responses.as_ref()
     }
-    /// <p>The session that should be passed both ways in challenge-response calls to the service. If an <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller must pass another challenge, it returns a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
+    /// <p>The session identifier that maintains the state of authentication requests and challenge responses. If an <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API request results in a determination that your application must pass another challenge, Amazon Cognito returns a session with other challenge parameters. Send this session identifier, unmodified, to the next <code>AdminRespondToAuthChallenge</code> request.</p>
     pub fn session(&self) -> ::std::option::Option<&str> {
         self.session.as_deref()
     }
@@ -280,6 +281,7 @@ impl AdminRespondToAuthChallengeInput {
         self.analytics_metadata.as_ref()
     }
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-viewing-threat-protection-app.html">Collecting data for threat protection in applications</a>.</p>
     pub fn context_data(&self) -> ::std::option::Option<&crate::types::ContextDataType> {
         self.context_data.as_ref()
     }
@@ -287,32 +289,32 @@ impl AdminRespondToAuthChallengeInput {
     /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminRespondToAuthChallenge API action, Amazon Cognito invokes any functions that you have assigned to the following triggers:</p>
     /// <ul>
     /// <li>
-    /// <p>pre sign-up</p></li>
+    /// <p>Pre sign-up</p></li>
     /// <li>
     /// <p>custom message</p></li>
     /// <li>
-    /// <p>post authentication</p></li>
+    /// <p>Post authentication</p></li>
     /// <li>
-    /// <p>user migration</p></li>
+    /// <p>User migration</p></li>
     /// <li>
-    /// <p>pre token generation</p></li>
+    /// <p>Pre token generation</p></li>
     /// <li>
-    /// <p>define auth challenge</p></li>
+    /// <p>Define auth challenge</p></li>
     /// <li>
-    /// <p>create auth challenge</p></li>
+    /// <p>Create auth challenge</p></li>
     /// <li>
-    /// <p>verify auth challenge response</p></li>
+    /// <p>Verify auth challenge response</p></li>
     /// </ul>
     /// <p>When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute that provides the data that you assigned to the ClientMetadata parameter in your AdminRespondToAuthChallenge request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html"> Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p><note>
-    /// <p>When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:</p>
+    /// <p>When you use the <code>ClientMetadata</code> parameter, note that Amazon Cognito won't do the following:</p>
     /// <ul>
     /// <li>
-    /// <p>Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the ClientMetadata parameter serves no purpose.</p></li>
+    /// <p>Store the <code>ClientMetadata</code> value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the <code>ClientMetadata</code> parameter serves no purpose.</p></li>
     /// <li>
-    /// <p>Validate the ClientMetadata value.</p></li>
+    /// <p>Validate the <code>ClientMetadata</code> value.</p></li>
     /// <li>
-    /// <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p></li>
+    /// <p>Encrypt the <code>ClientMetadata</code> value. Don't send sensitive information in this parameter.</p></li>
     /// </ul>
     /// </note>
     pub fn client_metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -354,48 +356,48 @@ pub struct AdminRespondToAuthChallengeInputBuilder {
     pub(crate) client_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl AdminRespondToAuthChallengeInputBuilder {
-    /// <p>The ID of the Amazon Cognito user pool.</p>
+    /// <p>The ID of the user pool where you want to respond to an authentication challenge.</p>
     /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the Amazon Cognito user pool.</p>
+    /// <p>The ID of the user pool where you want to respond to an authentication challenge.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
     }
-    /// <p>The ID of the Amazon Cognito user pool.</p>
+    /// <p>The ID of the user pool where you want to respond to an authentication challenge.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_pool_id
     }
-    /// <p>The app client ID.</p>
+    /// <p>The ID of the app client where you initiated sign-in.</p>
     /// This field is required.
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The app client ID.</p>
+    /// <p>The ID of the app client where you initiated sign-in.</p>
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_id = input;
         self
     }
-    /// <p>The app client ID.</p>
+    /// <p>The ID of the app client where you initiated sign-in.</p>
     pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_id
     }
-    /// <p>The challenge name. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
+    /// <p>The name of the challenge that you are responding to. You can find more information about values for <code>ChallengeName</code> in the response parameters of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html#CognitoUserPools-AdminInitiateAuth-response-ChallengeName">AdminInitiateAuth</a>.</p>
     /// This field is required.
     pub fn challenge_name(mut self, input: crate::types::ChallengeNameType) -> Self {
         self.challenge_name = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The challenge name. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
+    /// <p>The name of the challenge that you are responding to. You can find more information about values for <code>ChallengeName</code> in the response parameters of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html#CognitoUserPools-AdminInitiateAuth-response-ChallengeName">AdminInitiateAuth</a>.</p>
     pub fn set_challenge_name(mut self, input: ::std::option::Option<crate::types::ChallengeNameType>) -> Self {
         self.challenge_name = input;
         self
     }
-    /// <p>The challenge name. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
+    /// <p>The name of the challenge that you are responding to. You can find more information about values for <code>ChallengeName</code> in the response parameters of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html#CognitoUserPools-AdminInitiateAuth-response-ChallengeName">AdminInitiateAuth</a>.</p>
     pub fn get_challenge_name(&self) -> &::std::option::Option<crate::types::ChallengeNameType> {
         &self.challenge_name
     }
@@ -729,17 +731,17 @@ impl AdminRespondToAuthChallengeInputBuilder {
     pub fn get_challenge_responses(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.challenge_responses
     }
-    /// <p>The session that should be passed both ways in challenge-response calls to the service. If an <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller must pass another challenge, it returns a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
+    /// <p>The session identifier that maintains the state of authentication requests and challenge responses. If an <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API request results in a determination that your application must pass another challenge, Amazon Cognito returns a session with other challenge parameters. Send this session identifier, unmodified, to the next <code>AdminRespondToAuthChallenge</code> request.</p>
     pub fn session(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The session that should be passed both ways in challenge-response calls to the service. If an <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller must pass another challenge, it returns a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
+    /// <p>The session identifier that maintains the state of authentication requests and challenge responses. If an <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API request results in a determination that your application must pass another challenge, Amazon Cognito returns a session with other challenge parameters. Send this session identifier, unmodified, to the next <code>AdminRespondToAuthChallenge</code> request.</p>
     pub fn set_session(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session = input;
         self
     }
-    /// <p>The session that should be passed both ways in challenge-response calls to the service. If an <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller must pass another challenge, it returns a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
+    /// <p>The session identifier that maintains the state of authentication requests and challenge responses. If an <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API request results in a determination that your application must pass another challenge, Amazon Cognito returns a session with other challenge parameters. Send this session identifier, unmodified, to the next <code>AdminRespondToAuthChallenge</code> request.</p>
     pub fn get_session(&self) -> &::std::option::Option<::std::string::String> {
         &self.session
     }
@@ -758,16 +760,19 @@ impl AdminRespondToAuthChallengeInputBuilder {
         &self.analytics_metadata
     }
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-viewing-threat-protection-app.html">Collecting data for threat protection in applications</a>.</p>
     pub fn context_data(mut self, input: crate::types::ContextDataType) -> Self {
         self.context_data = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-viewing-threat-protection-app.html">Collecting data for threat protection in applications</a>.</p>
     pub fn set_context_data(mut self, input: ::std::option::Option<crate::types::ContextDataType>) -> Self {
         self.context_data = input;
         self
     }
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-viewing-threat-protection-app.html">Collecting data for threat protection in applications</a>.</p>
     pub fn get_context_data(&self) -> &::std::option::Option<crate::types::ContextDataType> {
         &self.context_data
     }
@@ -779,32 +784,32 @@ impl AdminRespondToAuthChallengeInputBuilder {
     /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminRespondToAuthChallenge API action, Amazon Cognito invokes any functions that you have assigned to the following triggers:</p>
     /// <ul>
     /// <li>
-    /// <p>pre sign-up</p></li>
+    /// <p>Pre sign-up</p></li>
     /// <li>
     /// <p>custom message</p></li>
     /// <li>
-    /// <p>post authentication</p></li>
+    /// <p>Post authentication</p></li>
     /// <li>
-    /// <p>user migration</p></li>
+    /// <p>User migration</p></li>
     /// <li>
-    /// <p>pre token generation</p></li>
+    /// <p>Pre token generation</p></li>
     /// <li>
-    /// <p>define auth challenge</p></li>
+    /// <p>Define auth challenge</p></li>
     /// <li>
-    /// <p>create auth challenge</p></li>
+    /// <p>Create auth challenge</p></li>
     /// <li>
-    /// <p>verify auth challenge response</p></li>
+    /// <p>Verify auth challenge response</p></li>
     /// </ul>
     /// <p>When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute that provides the data that you assigned to the ClientMetadata parameter in your AdminRespondToAuthChallenge request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html"> Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p><note>
-    /// <p>When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:</p>
+    /// <p>When you use the <code>ClientMetadata</code> parameter, note that Amazon Cognito won't do the following:</p>
     /// <ul>
     /// <li>
-    /// <p>Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the ClientMetadata parameter serves no purpose.</p></li>
+    /// <p>Store the <code>ClientMetadata</code> value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the <code>ClientMetadata</code> parameter serves no purpose.</p></li>
     /// <li>
-    /// <p>Validate the ClientMetadata value.</p></li>
+    /// <p>Validate the <code>ClientMetadata</code> value.</p></li>
     /// <li>
-    /// <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p></li>
+    /// <p>Encrypt the <code>ClientMetadata</code> value. Don't send sensitive information in this parameter.</p></li>
     /// </ul>
     /// </note>
     pub fn client_metadata(
@@ -821,32 +826,32 @@ impl AdminRespondToAuthChallengeInputBuilder {
     /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminRespondToAuthChallenge API action, Amazon Cognito invokes any functions that you have assigned to the following triggers:</p>
     /// <ul>
     /// <li>
-    /// <p>pre sign-up</p></li>
+    /// <p>Pre sign-up</p></li>
     /// <li>
     /// <p>custom message</p></li>
     /// <li>
-    /// <p>post authentication</p></li>
+    /// <p>Post authentication</p></li>
     /// <li>
-    /// <p>user migration</p></li>
+    /// <p>User migration</p></li>
     /// <li>
-    /// <p>pre token generation</p></li>
+    /// <p>Pre token generation</p></li>
     /// <li>
-    /// <p>define auth challenge</p></li>
+    /// <p>Define auth challenge</p></li>
     /// <li>
-    /// <p>create auth challenge</p></li>
+    /// <p>Create auth challenge</p></li>
     /// <li>
-    /// <p>verify auth challenge response</p></li>
+    /// <p>Verify auth challenge response</p></li>
     /// </ul>
     /// <p>When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute that provides the data that you assigned to the ClientMetadata parameter in your AdminRespondToAuthChallenge request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html"> Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p><note>
-    /// <p>When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:</p>
+    /// <p>When you use the <code>ClientMetadata</code> parameter, note that Amazon Cognito won't do the following:</p>
     /// <ul>
     /// <li>
-    /// <p>Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the ClientMetadata parameter serves no purpose.</p></li>
+    /// <p>Store the <code>ClientMetadata</code> value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the <code>ClientMetadata</code> parameter serves no purpose.</p></li>
     /// <li>
-    /// <p>Validate the ClientMetadata value.</p></li>
+    /// <p>Validate the <code>ClientMetadata</code> value.</p></li>
     /// <li>
-    /// <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p></li>
+    /// <p>Encrypt the <code>ClientMetadata</code> value. Don't send sensitive information in this parameter.</p></li>
     /// </ul>
     /// </note>
     pub fn set_client_metadata(
@@ -860,32 +865,32 @@ impl AdminRespondToAuthChallengeInputBuilder {
     /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminRespondToAuthChallenge API action, Amazon Cognito invokes any functions that you have assigned to the following triggers:</p>
     /// <ul>
     /// <li>
-    /// <p>pre sign-up</p></li>
+    /// <p>Pre sign-up</p></li>
     /// <li>
     /// <p>custom message</p></li>
     /// <li>
-    /// <p>post authentication</p></li>
+    /// <p>Post authentication</p></li>
     /// <li>
-    /// <p>user migration</p></li>
+    /// <p>User migration</p></li>
     /// <li>
-    /// <p>pre token generation</p></li>
+    /// <p>Pre token generation</p></li>
     /// <li>
-    /// <p>define auth challenge</p></li>
+    /// <p>Define auth challenge</p></li>
     /// <li>
-    /// <p>create auth challenge</p></li>
+    /// <p>Create auth challenge</p></li>
     /// <li>
-    /// <p>verify auth challenge response</p></li>
+    /// <p>Verify auth challenge response</p></li>
     /// </ul>
     /// <p>When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute that provides the data that you assigned to the ClientMetadata parameter in your AdminRespondToAuthChallenge request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html"> Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p><note>
-    /// <p>When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:</p>
+    /// <p>When you use the <code>ClientMetadata</code> parameter, note that Amazon Cognito won't do the following:</p>
     /// <ul>
     /// <li>
-    /// <p>Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the ClientMetadata parameter serves no purpose.</p></li>
+    /// <p>Store the <code>ClientMetadata</code> value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the <code>ClientMetadata</code> parameter serves no purpose.</p></li>
     /// <li>
-    /// <p>Validate the ClientMetadata value.</p></li>
+    /// <p>Validate the <code>ClientMetadata</code> value.</p></li>
     /// <li>
-    /// <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p></li>
+    /// <p>Encrypt the <code>ClientMetadata</code> value. Don't send sensitive information in this parameter.</p></li>
     /// </ul>
     /// </note>
     pub fn get_client_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {

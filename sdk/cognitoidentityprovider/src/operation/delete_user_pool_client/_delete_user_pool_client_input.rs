@@ -4,17 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DeleteUserPoolClientInput {
-    /// <p>The user pool ID for the user pool where you want to delete the client.</p>
+    /// <p>The ID of the user pool where you want to delete the client.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
-    /// <p>The app client ID of the app associated with the user pool.</p>
+    /// <p>The ID of the user pool app client that you want to delete.</p>
     pub client_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteUserPoolClientInput {
-    /// <p>The user pool ID for the user pool where you want to delete the client.</p>
+    /// <p>The ID of the user pool where you want to delete the client.</p>
     pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
-    /// <p>The app client ID of the app associated with the user pool.</p>
+    /// <p>The ID of the user pool app client that you want to delete.</p>
     pub fn client_id(&self) -> ::std::option::Option<&str> {
         self.client_id.as_deref()
     }
@@ -42,33 +42,33 @@ pub struct DeleteUserPoolClientInputBuilder {
     pub(crate) client_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteUserPoolClientInputBuilder {
-    /// <p>The user pool ID for the user pool where you want to delete the client.</p>
+    /// <p>The ID of the user pool where you want to delete the client.</p>
     /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user pool ID for the user pool where you want to delete the client.</p>
+    /// <p>The ID of the user pool where you want to delete the client.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
     }
-    /// <p>The user pool ID for the user pool where you want to delete the client.</p>
+    /// <p>The ID of the user pool where you want to delete the client.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_pool_id
     }
-    /// <p>The app client ID of the app associated with the user pool.</p>
+    /// <p>The ID of the user pool app client that you want to delete.</p>
     /// This field is required.
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The app client ID of the app associated with the user pool.</p>
+    /// <p>The ID of the user pool app client that you want to delete.</p>
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_id = input;
         self
     }
-    /// <p>The app client ID of the app associated with the user pool.</p>
+    /// <p>The ID of the user pool app client that you want to delete.</p>
     pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_id
     }

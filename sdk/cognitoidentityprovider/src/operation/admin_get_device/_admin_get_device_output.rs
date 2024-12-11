@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdminGetDeviceOutput {
-    /// <p>The device.</p>
+    /// <p>Details of the requested device. Includes device information, last-accessed and created dates, and the device key.</p>
     pub device: ::std::option::Option<crate::types::DeviceType>,
     _request_id: Option<String>,
 }
 impl AdminGetDeviceOutput {
-    /// <p>The device.</p>
+    /// <p>Details of the requested device. Includes device information, last-accessed and created dates, and the device key.</p>
     pub fn device(&self) -> ::std::option::Option<&crate::types::DeviceType> {
         self.device.as_ref()
     }
@@ -34,18 +34,18 @@ pub struct AdminGetDeviceOutputBuilder {
     _request_id: Option<String>,
 }
 impl AdminGetDeviceOutputBuilder {
-    /// <p>The device.</p>
+    /// <p>Details of the requested device. Includes device information, last-accessed and created dates, and the device key.</p>
     /// This field is required.
     pub fn device(mut self, input: crate::types::DeviceType) -> Self {
         self.device = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The device.</p>
+    /// <p>Details of the requested device. Includes device information, last-accessed and created dates, and the device key.</p>
     pub fn set_device(mut self, input: ::std::option::Option<crate::types::DeviceType>) -> Self {
         self.device = input;
         self
     }
-    /// <p>The device.</p>
+    /// <p>Details of the requested device. Includes device information, last-accessed and created dates, and the device key.</p>
     pub fn get_device(&self) -> &::std::option::Option<crate::types::DeviceType> {
         &self.device
     }

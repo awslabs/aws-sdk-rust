@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`group_name(impl Into<String>)`](crate::operation::get_group::builders::GetGroupFluentBuilder::group_name) / [`set_group_name(Option<String>)`](crate::operation::get_group::builders::GetGroupFluentBuilder::set_group_name):<br>required: **true**<br><p>The name of the group.</p><br>
-    ///   - [`user_pool_id(impl Into<String>)`](crate::operation::get_group::builders::GetGroupFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::get_group::builders::GetGroupFluentBuilder::set_user_pool_id):<br>required: **true**<br><p>The user pool ID for the user pool.</p><br>
+    ///   - [`user_pool_id(impl Into<String>)`](crate::operation::get_group::builders::GetGroupFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::get_group::builders::GetGroupFluentBuilder::set_user_pool_id):<br>required: **true**<br><p>The ID of the user pool.</p><br>
     /// - On success, responds with [`GetGroupOutput`](crate::operation::get_group::GetGroupOutput) with field(s):
     ///   - [`group(Option<GroupType>)`](crate::operation::get_group::GetGroupOutput::group): <p>The group object for the group.</p>
     /// - On failure, responds with [`SdkError<GetGroupError>`](crate::operation::get_group::GetGroupError)

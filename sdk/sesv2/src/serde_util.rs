@@ -310,6 +310,13 @@ pub(crate) fn metrics_data_source_correct_errors(
     builder
 }
 
+pub(crate) fn route_correct_errors(mut builder: crate::types::builders::RouteBuilder) -> crate::types::builders::RouteBuilder {
+    if builder.region.is_none() {
+        builder.region = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn suppressed_destination_summary_correct_errors(
     mut builder: crate::types::builders::SuppressedDestinationSummaryBuilder,
 ) -> crate::types::builders::SuppressedDestinationSummaryBuilder {

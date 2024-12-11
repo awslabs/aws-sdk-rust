@@ -121,31 +121,31 @@ impl AdminDisableProviderForUserFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The user pool ID for the user pool.</p>
+    /// <p>The ID of the user pool where you want to delete the user's linked identities.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_pool_id(input.into());
         self
     }
-    /// <p>The user pool ID for the user pool.</p>
+    /// <p>The ID of the user pool where you want to delete the user's linked identities.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
-    /// <p>The user pool ID for the user pool.</p>
+    /// <p>The ID of the user pool where you want to delete the user's linked identities.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_pool_id()
     }
-    /// <p>The user to be disabled.</p>
+    /// <p>The user profile that you want to delete a linked identity from.</p>
     pub fn user(mut self, input: crate::types::ProviderUserIdentifierType) -> Self {
         self.inner = self.inner.user(input);
         self
     }
-    /// <p>The user to be disabled.</p>
+    /// <p>The user profile that you want to delete a linked identity from.</p>
     pub fn set_user(mut self, input: ::std::option::Option<crate::types::ProviderUserIdentifierType>) -> Self {
         self.inner = self.inner.set_user(input);
         self
     }
-    /// <p>The user to be disabled.</p>
+    /// <p>The user profile that you want to delete a linked identity from.</p>
     pub fn get_user(&self) -> &::std::option::Option<crate::types::ProviderUserIdentifierType> {
         self.inner.get_user()
     }

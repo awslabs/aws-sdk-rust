@@ -22,7 +22,7 @@ impl crate::operation::describe_identity_provider::builders::DescribeIdentityPro
 }
 /// Fluent builder constructing a request to `DescribeIdentityProvider`.
 ///
-/// <p>Gets information about a specific IdP.</p>
+/// <p>Given a user pool ID and identity provider (IdP) name, returns details about the IdP.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeIdentityProviderFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl DescribeIdentityProviderFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool that has the IdP that you want to describe..</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_pool_id(input.into());
         self
     }
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool that has the IdP that you want to describe..</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool that has the IdP that you want to describe..</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_pool_id()
     }
-    /// <p>The IdP name.</p>
+    /// <p>The name of the IdP that you want to describe.</p>
     pub fn provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.provider_name(input.into());
         self
     }
-    /// <p>The IdP name.</p>
+    /// <p>The name of the IdP that you want to describe.</p>
     pub fn set_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_provider_name(input);
         self
     }
-    /// <p>The IdP name.</p>
+    /// <p>The name of the IdP that you want to describe.</p>
     pub fn get_provider_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_provider_name()
     }

@@ -26,6 +26,8 @@ pub struct SendBulkEmailInput {
     pub bulk_email_entries: ::std::option::Option<::std::vec::Vec<crate::types::BulkEmailEntry>>,
     /// <p>The name of the configuration set to use when sending the email.</p>
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the multi-region endpoint (global-endpoint).</p>
+    pub endpoint_id: ::std::option::Option<::std::string::String>,
 }
 impl SendBulkEmailInput {
     /// <p>The email address to use as the "From" address for the email. The address that you specify has to be verified.</p>
@@ -74,6 +76,10 @@ impl SendBulkEmailInput {
     pub fn configuration_set_name(&self) -> ::std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
+    /// <p>The ID of the multi-region endpoint (global-endpoint).</p>
+    pub fn endpoint_id(&self) -> ::std::option::Option<&str> {
+        self.endpoint_id.as_deref()
+    }
 }
 impl SendBulkEmailInput {
     /// Creates a new builder-style object to manufacture [`SendBulkEmailInput`](crate::operation::send_bulk_email::SendBulkEmailInput).
@@ -95,6 +101,7 @@ pub struct SendBulkEmailInputBuilder {
     pub(crate) default_content: ::std::option::Option<crate::types::BulkEmailContent>,
     pub(crate) bulk_email_entries: ::std::option::Option<::std::vec::Vec<crate::types::BulkEmailEntry>>,
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
+    pub(crate) endpoint_id: ::std::option::Option<::std::string::String>,
 }
 impl SendBulkEmailInputBuilder {
     /// <p>The email address to use as the "From" address for the email. The address that you specify has to be verified.</p>
@@ -254,6 +261,20 @@ impl SendBulkEmailInputBuilder {
     pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.configuration_set_name
     }
+    /// <p>The ID of the multi-region endpoint (global-endpoint).</p>
+    pub fn endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.endpoint_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the multi-region endpoint (global-endpoint).</p>
+    pub fn set_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.endpoint_id = input;
+        self
+    }
+    /// <p>The ID of the multi-region endpoint (global-endpoint).</p>
+    pub fn get_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_id
+    }
     /// Consumes the builder and constructs a [`SendBulkEmailInput`](crate::operation::send_bulk_email::SendBulkEmailInput).
     pub fn build(
         self,
@@ -268,6 +289,7 @@ impl SendBulkEmailInputBuilder {
             default_content: self.default_content,
             bulk_email_entries: self.bulk_email_entries,
             configuration_set_name: self.configuration_set_name,
+            endpoint_id: self.endpoint_id,
         })
     }
 }

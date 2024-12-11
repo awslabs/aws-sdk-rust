@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeUserPoolDomain`](crate::operation::describe_user_pool_domain::builders::DescribeUserPoolDomainFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain(impl Into<String>)`](crate::operation::describe_user_pool_domain::builders::DescribeUserPoolDomainFluentBuilder::domain) / [`set_domain(Option<String>)`](crate::operation::describe_user_pool_domain::builders::DescribeUserPoolDomainFluentBuilder::set_domain):<br>required: **true**<br><p>The domain string. For custom domains, this is the fully-qualified domain name, such as <code>auth.example.com</code>. For Amazon Cognito prefix domains, this is the prefix alone, such as <code>auth</code>.</p><br>
+    ///   - [`domain(impl Into<String>)`](crate::operation::describe_user_pool_domain::builders::DescribeUserPoolDomainFluentBuilder::domain) / [`set_domain(Option<String>)`](crate::operation::describe_user_pool_domain::builders::DescribeUserPoolDomainFluentBuilder::set_domain):<br>required: **true**<br><p>The domain that you want to describe. For custom domains, this is the fully-qualified domain name, such as <code>auth.example.com</code>. For Amazon Cognito prefix domains, this is the prefix alone, such as <code>auth</code>.</p><br>
     /// - On success, responds with [`DescribeUserPoolDomainOutput`](crate::operation::describe_user_pool_domain::DescribeUserPoolDomainOutput) with field(s):
-    ///   - [`domain_description(Option<DomainDescriptionType>)`](crate::operation::describe_user_pool_domain::DescribeUserPoolDomainOutput::domain_description): <p>A domain description object containing information about the domain.</p>
+    ///   - [`domain_description(Option<DomainDescriptionType>)`](crate::operation::describe_user_pool_domain::DescribeUserPoolDomainOutput::domain_description): <p>The details of the requested user pool domain.</p>
     /// - On failure, responds with [`SdkError<DescribeUserPoolDomainError>`](crate::operation::describe_user_pool_domain::DescribeUserPoolDomainError)
     pub fn describe_user_pool_domain(&self) -> crate::operation::describe_user_pool_domain::builders::DescribeUserPoolDomainFluentBuilder {
         crate::operation::describe_user_pool_domain::builders::DescribeUserPoolDomainFluentBuilder::new(self.handle.clone())

@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ConfirmSignUpOutput {
-    /// <p>You can automatically sign users in with the one-time password that they provided in a successful <code>ConfirmSignUp</code> request. To do this, pass the <code>Session</code> parameter from the <code>ConfirmSignUp</code> response in the <code>Session</code> parameter of an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a> or <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a> request.</p>
+    /// <p>A session identifier that you can use to immediately sign in the confirmed user. You can automatically sign users in with the one-time password that they provided in a successful <code>ConfirmSignUp</code> request. To do this, pass the <code>Session</code> parameter from this response in the <code>Session</code> parameter of an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a> or <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a> request.</p>
     pub session: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ConfirmSignUpOutput {
-    /// <p>You can automatically sign users in with the one-time password that they provided in a successful <code>ConfirmSignUp</code> request. To do this, pass the <code>Session</code> parameter from the <code>ConfirmSignUp</code> response in the <code>Session</code> parameter of an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a> or <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a> request.</p>
+    /// <p>A session identifier that you can use to immediately sign in the confirmed user. You can automatically sign users in with the one-time password that they provided in a successful <code>ConfirmSignUp</code> request. To do this, pass the <code>Session</code> parameter from this response in the <code>Session</code> parameter of an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a> or <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a> request.</p>
     pub fn session(&self) -> ::std::option::Option<&str> {
         self.session.as_deref()
     }
@@ -42,17 +42,17 @@ pub struct ConfirmSignUpOutputBuilder {
     _request_id: Option<String>,
 }
 impl ConfirmSignUpOutputBuilder {
-    /// <p>You can automatically sign users in with the one-time password that they provided in a successful <code>ConfirmSignUp</code> request. To do this, pass the <code>Session</code> parameter from the <code>ConfirmSignUp</code> response in the <code>Session</code> parameter of an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a> or <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a> request.</p>
+    /// <p>A session identifier that you can use to immediately sign in the confirmed user. You can automatically sign users in with the one-time password that they provided in a successful <code>ConfirmSignUp</code> request. To do this, pass the <code>Session</code> parameter from this response in the <code>Session</code> parameter of an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a> or <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a> request.</p>
     pub fn session(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>You can automatically sign users in with the one-time password that they provided in a successful <code>ConfirmSignUp</code> request. To do this, pass the <code>Session</code> parameter from the <code>ConfirmSignUp</code> response in the <code>Session</code> parameter of an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a> or <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a> request.</p>
+    /// <p>A session identifier that you can use to immediately sign in the confirmed user. You can automatically sign users in with the one-time password that they provided in a successful <code>ConfirmSignUp</code> request. To do this, pass the <code>Session</code> parameter from this response in the <code>Session</code> parameter of an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a> or <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a> request.</p>
     pub fn set_session(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session = input;
         self
     }
-    /// <p>You can automatically sign users in with the one-time password that they provided in a successful <code>ConfirmSignUp</code> request. To do this, pass the <code>Session</code> parameter from the <code>ConfirmSignUp</code> response in the <code>Session</code> parameter of an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a> or <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a> request.</p>
+    /// <p>A session identifier that you can use to immediately sign in the confirmed user. You can automatically sign users in with the one-time password that they provided in a successful <code>ConfirmSignUp</code> request. To do this, pass the <code>Session</code> parameter from this response in the <code>Session</code> parameter of an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a> or <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a> request.</p>
     pub fn get_session(&self) -> &::std::option::Option<::std::string::String> {
         &self.session
     }

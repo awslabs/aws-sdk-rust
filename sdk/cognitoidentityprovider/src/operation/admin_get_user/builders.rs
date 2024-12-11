@@ -22,7 +22,7 @@ impl crate::operation::admin_get_user::builders::AdminGetUserInputBuilder {
 }
 /// Fluent builder constructing a request to `AdminGetUser`.
 ///
-/// <p>Gets the specified user by user name in a user pool as an administrator. Works on any user. This operation contributes to your monthly active user (MAU) count for the purpose of billing.</p><note>
+/// <p>Given the username, returns details about a user profile in a user pool. This operation contributes to your monthly active user (MAU) count for the purpose of billing. You can specify alias attributes in the <code>Username</code> parameter.</p><note>
 /// <p>Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.</p>
 /// <p class="title"><b>Learn more</b></p>
 /// <ul>
@@ -117,17 +117,17 @@ impl AdminGetUserFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The user pool ID for the user pool where you want to get information about the user.</p>
+    /// <p>The ID of the user pool where you want to get information about the user.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_pool_id(input.into());
         self
     }
-    /// <p>The user pool ID for the user pool where you want to get information about the user.</p>
+    /// <p>The ID of the user pool where you want to get information about the user.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
-    /// <p>The user pool ID for the user pool where you want to get information about the user.</p>
+    /// <p>The ID of the user pool where you want to get information about the user.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_pool_id()
     }

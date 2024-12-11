@@ -4,17 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AdminUpdateDeviceStatusInput {
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where you want to change a user's device status.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, this value must be the <code>sub</code> of a local user or the username of a user from a third-party IdP.</p>
     pub username: ::std::option::Option<::std::string::String>,
-    /// <p>The device key.</p>
+    /// <p>The unique identifier, or device key, of the device that you want to update the status for.</p>
     pub device_key: ::std::option::Option<::std::string::String>,
-    /// <p>The status indicating whether a device has been remembered or not.</p>
+    /// <p>To enable device authentication with the specified device, set to <code>remembered</code>.To disable, set to <code>not_remembered</code>.</p>
     pub device_remembered_status: ::std::option::Option<crate::types::DeviceRememberedStatusType>,
 }
 impl AdminUpdateDeviceStatusInput {
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where you want to change a user's device status.</p>
     pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
@@ -22,11 +22,11 @@ impl AdminUpdateDeviceStatusInput {
     pub fn username(&self) -> ::std::option::Option<&str> {
         self.username.as_deref()
     }
-    /// <p>The device key.</p>
+    /// <p>The unique identifier, or device key, of the device that you want to update the status for.</p>
     pub fn device_key(&self) -> ::std::option::Option<&str> {
         self.device_key.as_deref()
     }
-    /// <p>The status indicating whether a device has been remembered or not.</p>
+    /// <p>To enable device authentication with the specified device, set to <code>remembered</code>.To disable, set to <code>not_remembered</code>.</p>
     pub fn device_remembered_status(&self) -> ::std::option::Option<&crate::types::DeviceRememberedStatusType> {
         self.device_remembered_status.as_ref()
     }
@@ -58,18 +58,18 @@ pub struct AdminUpdateDeviceStatusInputBuilder {
     pub(crate) device_remembered_status: ::std::option::Option<crate::types::DeviceRememberedStatusType>,
 }
 impl AdminUpdateDeviceStatusInputBuilder {
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where you want to change a user's device status.</p>
     /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where you want to change a user's device status.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
     }
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where you want to change a user's device status.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_pool_id
     }
@@ -88,32 +88,32 @@ impl AdminUpdateDeviceStatusInputBuilder {
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
         &self.username
     }
-    /// <p>The device key.</p>
+    /// <p>The unique identifier, or device key, of the device that you want to update the status for.</p>
     /// This field is required.
     pub fn device_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The device key.</p>
+    /// <p>The unique identifier, or device key, of the device that you want to update the status for.</p>
     pub fn set_device_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_key = input;
         self
     }
-    /// <p>The device key.</p>
+    /// <p>The unique identifier, or device key, of the device that you want to update the status for.</p>
     pub fn get_device_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.device_key
     }
-    /// <p>The status indicating whether a device has been remembered or not.</p>
+    /// <p>To enable device authentication with the specified device, set to <code>remembered</code>.To disable, set to <code>not_remembered</code>.</p>
     pub fn device_remembered_status(mut self, input: crate::types::DeviceRememberedStatusType) -> Self {
         self.device_remembered_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status indicating whether a device has been remembered or not.</p>
+    /// <p>To enable device authentication with the specified device, set to <code>remembered</code>.To disable, set to <code>not_remembered</code>.</p>
     pub fn set_device_remembered_status(mut self, input: ::std::option::Option<crate::types::DeviceRememberedStatusType>) -> Self {
         self.device_remembered_status = input;
         self
     }
-    /// <p>The status indicating whether a device has been remembered or not.</p>
+    /// <p>To enable device authentication with the specified device, set to <code>remembered</code>.To disable, set to <code>not_remembered</code>.</p>
     pub fn get_device_remembered_status(&self) -> &::std::option::Option<crate::types::DeviceRememberedStatusType> {
         &self.device_remembered_status
     }

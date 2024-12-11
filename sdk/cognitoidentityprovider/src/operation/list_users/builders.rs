@@ -117,17 +117,17 @@ impl ListUsersFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_users::paginator::ListUsersPaginator {
         crate::operation::list_users::paginator::ListUsersPaginator::new(self.handle, self.inner)
     }
-    /// <p>The user pool ID for the user pool on which the search should be performed.</p>
+    /// <p>The ID of the user pool on which the search should be performed.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_pool_id(input.into());
         self
     }
-    /// <p>The user pool ID for the user pool on which the search should be performed.</p>
+    /// <p>The ID of the user pool on which the search should be performed.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
-    /// <p>The user pool ID for the user pool on which the search should be performed.</p>
+    /// <p>The ID of the user pool on which the search should be performed.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_pool_id()
     }

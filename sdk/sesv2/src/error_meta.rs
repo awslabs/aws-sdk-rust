@@ -571,6 +571,42 @@ impl From<crate::operation::create_import_job::CreateImportJobError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_multi_region_endpoint::CreateMultiRegionEndpointError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_multi_region_endpoint::CreateMultiRegionEndpointError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_multi_region_endpoint::CreateMultiRegionEndpointError> for Error {
+    fn from(err: crate::operation::create_multi_region_endpoint::CreateMultiRegionEndpointError) -> Self {
+        match err {
+            crate::operation::create_multi_region_endpoint::CreateMultiRegionEndpointError::AlreadyExistsException(inner) => {
+                Error::AlreadyExistsException(inner)
+            }
+            crate::operation::create_multi_region_endpoint::CreateMultiRegionEndpointError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::create_multi_region_endpoint::CreateMultiRegionEndpointError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::create_multi_region_endpoint::CreateMultiRegionEndpointError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::create_multi_region_endpoint::CreateMultiRegionEndpointError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_configuration_set::DeleteConfigurationSetError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -855,6 +891,42 @@ impl From<crate::operation::delete_email_template::DeleteEmailTemplateError> for
                 Error::TooManyRequestsException(inner)
             }
             crate::operation::delete_email_template::DeleteEmailTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_multi_region_endpoint::DeleteMultiRegionEndpointError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_multi_region_endpoint::DeleteMultiRegionEndpointError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_multi_region_endpoint::DeleteMultiRegionEndpointError> for Error {
+    fn from(err: crate::operation::delete_multi_region_endpoint::DeleteMultiRegionEndpointError) -> Self {
+        match err {
+            crate::operation::delete_multi_region_endpoint::DeleteMultiRegionEndpointError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::delete_multi_region_endpoint::DeleteMultiRegionEndpointError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::delete_multi_region_endpoint::DeleteMultiRegionEndpointError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::delete_multi_region_endpoint::DeleteMultiRegionEndpointError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::delete_multi_region_endpoint::DeleteMultiRegionEndpointError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1481,6 +1553,35 @@ impl From<crate::operation::get_message_insights::GetMessageInsightsError> for E
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_multi_region_endpoint::GetMultiRegionEndpointError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_multi_region_endpoint::GetMultiRegionEndpointError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_multi_region_endpoint::GetMultiRegionEndpointError> for Error {
+    fn from(err: crate::operation::get_multi_region_endpoint::GetMultiRegionEndpointError) -> Self {
+        match err {
+            crate::operation::get_multi_region_endpoint::GetMultiRegionEndpointError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_multi_region_endpoint::GetMultiRegionEndpointError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_multi_region_endpoint::GetMultiRegionEndpointError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_multi_region_endpoint::GetMultiRegionEndpointError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_suppressed_destination::GetSuppressedDestinationError, R>>
     for Error
 where
@@ -1827,6 +1928,36 @@ impl From<crate::operation::list_import_jobs::ListImportJobsError> for Error {
             crate::operation::list_import_jobs::ListImportJobsError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::list_import_jobs::ListImportJobsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::list_import_jobs::ListImportJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_multi_region_endpoints::ListMultiRegionEndpointsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_multi_region_endpoints::ListMultiRegionEndpointsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_multi_region_endpoints::ListMultiRegionEndpointsError> for Error {
+    fn from(err: crate::operation::list_multi_region_endpoints::ListMultiRegionEndpointsError) -> Self {
+        match err {
+            crate::operation::list_multi_region_endpoints::ListMultiRegionEndpointsError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::list_multi_region_endpoints::ListMultiRegionEndpointsError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::list_multi_region_endpoints::ListMultiRegionEndpointsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

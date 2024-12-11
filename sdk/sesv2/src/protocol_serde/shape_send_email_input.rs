@@ -30,32 +30,35 @@ pub fn ser_send_email_input_input(
         }
         array_7.finish();
     }
-    if let Some(var_10) = &input.feedback_forwarding_email_address {
-        object.key("FeedbackForwardingEmailAddress").string(var_10.as_str());
+    if let Some(var_10) = &input.endpoint_id {
+        object.key("EndpointId").string(var_10.as_str());
     }
-    if let Some(var_11) = &input.feedback_forwarding_email_address_identity_arn {
-        object.key("FeedbackForwardingEmailAddressIdentityArn").string(var_11.as_str());
+    if let Some(var_11) = &input.feedback_forwarding_email_address {
+        object.key("FeedbackForwardingEmailAddress").string(var_11.as_str());
     }
-    if let Some(var_12) = &input.from_email_address {
-        object.key("FromEmailAddress").string(var_12.as_str());
+    if let Some(var_12) = &input.feedback_forwarding_email_address_identity_arn {
+        object.key("FeedbackForwardingEmailAddressIdentityArn").string(var_12.as_str());
     }
-    if let Some(var_13) = &input.from_email_address_identity_arn {
-        object.key("FromEmailAddressIdentityArn").string(var_13.as_str());
+    if let Some(var_13) = &input.from_email_address {
+        object.key("FromEmailAddress").string(var_13.as_str());
     }
-    if let Some(var_14) = &input.list_management_options {
+    if let Some(var_14) = &input.from_email_address_identity_arn {
+        object.key("FromEmailAddressIdentityArn").string(var_14.as_str());
+    }
+    if let Some(var_15) = &input.list_management_options {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("ListManagementOptions").start_object();
-        crate::protocol_serde::shape_list_management_options::ser_list_management_options(&mut object_15, var_14)?;
-        object_15.finish();
+        let mut object_16 = object.key("ListManagementOptions").start_object();
+        crate::protocol_serde::shape_list_management_options::ser_list_management_options(&mut object_16, var_15)?;
+        object_16.finish();
     }
-    if let Some(var_16) = &input.reply_to_addresses {
-        let mut array_17 = object.key("ReplyToAddresses").start_array();
-        for item_18 in var_16 {
+    if let Some(var_17) = &input.reply_to_addresses {
+        let mut array_18 = object.key("ReplyToAddresses").start_array();
+        for item_19 in var_17 {
             {
-                array_17.value().string(item_18.as_str());
+                array_18.value().string(item_19.as_str());
             }
         }
-        array_17.finish();
+        array_18.finish();
     }
     Ok(())
 }

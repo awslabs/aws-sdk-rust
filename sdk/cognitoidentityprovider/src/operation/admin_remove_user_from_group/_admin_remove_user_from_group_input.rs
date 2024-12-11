@@ -3,15 +3,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AdminRemoveUserFromGroupInput {
-    /// <p>The user pool ID for the user pool.</p>
+    /// <p>The ID of the user pool that contains the group and the user that you want to remove.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, this value must be the <code>sub</code> of a local user or the username of a user from a third-party IdP.</p>
     pub username: ::std::option::Option<::std::string::String>,
-    /// <p>The group name.</p>
+    /// <p>The name of the group that you want to remove the user from, for example <code>MyTestGroup</code>.</p>
     pub group_name: ::std::option::Option<::std::string::String>,
 }
 impl AdminRemoveUserFromGroupInput {
-    /// <p>The user pool ID for the user pool.</p>
+    /// <p>The ID of the user pool that contains the group and the user that you want to remove.</p>
     pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
@@ -19,7 +19,7 @@ impl AdminRemoveUserFromGroupInput {
     pub fn username(&self) -> ::std::option::Option<&str> {
         self.username.as_deref()
     }
-    /// <p>The group name.</p>
+    /// <p>The name of the group that you want to remove the user from, for example <code>MyTestGroup</code>.</p>
     pub fn group_name(&self) -> ::std::option::Option<&str> {
         self.group_name.as_deref()
     }
@@ -49,18 +49,18 @@ pub struct AdminRemoveUserFromGroupInputBuilder {
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
 }
 impl AdminRemoveUserFromGroupInputBuilder {
-    /// <p>The user pool ID for the user pool.</p>
+    /// <p>The ID of the user pool that contains the group and the user that you want to remove.</p>
     /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user pool ID for the user pool.</p>
+    /// <p>The ID of the user pool that contains the group and the user that you want to remove.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
     }
-    /// <p>The user pool ID for the user pool.</p>
+    /// <p>The ID of the user pool that contains the group and the user that you want to remove.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_pool_id
     }
@@ -79,18 +79,18 @@ impl AdminRemoveUserFromGroupInputBuilder {
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
         &self.username
     }
-    /// <p>The group name.</p>
+    /// <p>The name of the group that you want to remove the user from, for example <code>MyTestGroup</code>.</p>
     /// This field is required.
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The group name.</p>
+    /// <p>The name of the group that you want to remove the user from, for example <code>MyTestGroup</code>.</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_name = input;
         self
     }
-    /// <p>The group name.</p>
+    /// <p>The name of the group that you want to remove the user from, for example <code>MyTestGroup</code>.</p>
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_name
     }

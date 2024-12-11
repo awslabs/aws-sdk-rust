@@ -22,7 +22,7 @@ impl crate::operation::delete_managed_login_branding::builders::DeleteManagedLog
 }
 /// Fluent builder constructing a request to `DeleteManagedLoginBranding`.
 ///
-/// <p>Deletes a managed login branding style. When you delete a style, you delete the branding association for an app client and restore it to default settings.</p><note>
+/// <p>Deletes a managed login branding style. When you delete a style, you delete the branding association for an app client. When an app client doesn't have a style assigned, your managed login pages for that app client are nonfunctional until you create a new style or switch the domain branding version.</p><note>
 /// <p>Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.</p>
 /// <p class="title"><b>Learn more</b></p>
 /// <ul>

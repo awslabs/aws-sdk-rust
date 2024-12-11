@@ -22,7 +22,7 @@ impl crate::operation::admin_get_device::builders::AdminGetDeviceInputBuilder {
 }
 /// Fluent builder constructing a request to `AdminGetDevice`.
 ///
-/// <p>Gets the device, as an administrator.</p><note>
+/// <p>Given the device key, returns details for a user' device. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working with devices</a>.</p><note>
 /// <p>Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.</p>
 /// <p class="title"><b>Learn more</b></p>
 /// <ul>
@@ -117,31 +117,31 @@ impl AdminGetDeviceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The device key.</p>
+    /// <p>The key of the device that you want to delete. You can get device IDs in the response to an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListDevices.html">AdminListDevices</a> request.</p>
     pub fn device_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_key(input.into());
         self
     }
-    /// <p>The device key.</p>
+    /// <p>The key of the device that you want to delete. You can get device IDs in the response to an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListDevices.html">AdminListDevices</a> request.</p>
     pub fn set_device_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_key(input);
         self
     }
-    /// <p>The device key.</p>
+    /// <p>The key of the device that you want to delete. You can get device IDs in the response to an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListDevices.html">AdminListDevices</a> request.</p>
     pub fn get_device_key(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_device_key()
     }
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where the device owner is a user.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_pool_id(input.into());
         self
     }
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where the device owner is a user.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where the device owner is a user.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_pool_id()
     }

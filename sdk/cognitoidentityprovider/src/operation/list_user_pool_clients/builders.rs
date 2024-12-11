@@ -123,17 +123,17 @@ impl ListUserPoolClientsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_user_pool_clients::paginator::ListUserPoolClientsPaginator {
         crate::operation::list_user_pool_clients::paginator::ListUserPoolClientsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The user pool ID for the user pool where you want to list user pool clients.</p>
+    /// <p>The ID of the user pool where you want to list user pool clients.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_pool_id(input.into());
         self
     }
-    /// <p>The user pool ID for the user pool where you want to list user pool clients.</p>
+    /// <p>The ID of the user pool where you want to list user pool clients.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
-    /// <p>The user pool ID for the user pool where you want to list user pool clients.</p>
+    /// <p>The ID of the user pool where you want to list user pool clients.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_pool_id()
     }

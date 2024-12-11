@@ -13,6 +13,12 @@ pub use crate::types::_published_state::PublishedState;
 
 pub use crate::types::_report_summary::ReportSummary;
 
+pub use crate::types::_customer_agreement_summary::CustomerAgreementSummary;
+
+pub use crate::types::_agreement_type::AgreementType;
+
+pub use crate::types::_customer_agreement_state::CustomerAgreementState;
+
 pub use crate::types::_account_settings::AccountSettings;
 
 pub use crate::types::_notification_subscription_status::NotificationSubscriptionStatus;
@@ -20,6 +26,12 @@ pub use crate::types::_notification_subscription_status::NotificationSubscriptio
 mod _acceptance_type;
 
 mod _account_settings;
+
+mod _agreement_type;
+
+mod _customer_agreement_state;
+
+mod _customer_agreement_summary;
 
 mod _notification_subscription_status;
 

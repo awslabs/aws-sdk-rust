@@ -164,6 +164,8 @@ mod create_export_job;
 
 mod create_import_job;
 
+mod create_multi_region_endpoint;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -209,6 +211,8 @@ mod delete_email_identity_policy;
 
 mod delete_email_template;
 
+mod delete_multi_region_endpoint;
+
 mod delete_suppressed_destination;
 
 mod get_account;
@@ -251,6 +255,8 @@ mod get_import_job;
 
 mod get_message_insights;
 
+mod get_multi_region_endpoint;
+
 mod get_suppressed_destination;
 
 mod list_configuration_sets;
@@ -274,6 +280,8 @@ mod list_email_templates;
 mod list_export_jobs;
 
 mod list_import_jobs;
+
+mod list_multi_region_endpoints;
 
 mod list_recommendations;
 

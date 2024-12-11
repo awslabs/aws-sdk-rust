@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeUserPoolDomainOutput {
-    /// <p>A domain description object containing information about the domain.</p>
+    /// <p>The details of the requested user pool domain.</p>
     pub domain_description: ::std::option::Option<crate::types::DomainDescriptionType>,
     _request_id: Option<String>,
 }
 impl DescribeUserPoolDomainOutput {
-    /// <p>A domain description object containing information about the domain.</p>
+    /// <p>The details of the requested user pool domain.</p>
     pub fn domain_description(&self) -> ::std::option::Option<&crate::types::DomainDescriptionType> {
         self.domain_description.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct DescribeUserPoolDomainOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeUserPoolDomainOutputBuilder {
-    /// <p>A domain description object containing information about the domain.</p>
+    /// <p>The details of the requested user pool domain.</p>
     pub fn domain_description(mut self, input: crate::types::DomainDescriptionType) -> Self {
         self.domain_description = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A domain description object containing information about the domain.</p>
+    /// <p>The details of the requested user pool domain.</p>
     pub fn set_domain_description(mut self, input: ::std::option::Option<crate::types::DomainDescriptionType>) -> Self {
         self.domain_description = input;
         self
     }
-    /// <p>A domain description object containing information about the domain.</p>
+    /// <p>The details of the requested user pool domain.</p>
     pub fn get_domain_description(&self) -> &::std::option::Option<crate::types::DomainDescriptionType> {
         &self.domain_description
     }

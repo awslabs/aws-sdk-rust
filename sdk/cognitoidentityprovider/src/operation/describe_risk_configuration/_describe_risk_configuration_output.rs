@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRiskConfigurationOutput {
-    /// <p>The risk configuration.</p>
+    /// <p>The details of the requested risk configuration.</p>
     pub risk_configuration: ::std::option::Option<crate::types::RiskConfigurationType>,
     _request_id: Option<String>,
 }
 impl DescribeRiskConfigurationOutput {
-    /// <p>The risk configuration.</p>
+    /// <p>The details of the requested risk configuration.</p>
     pub fn risk_configuration(&self) -> ::std::option::Option<&crate::types::RiskConfigurationType> {
         self.risk_configuration.as_ref()
     }
@@ -33,18 +33,18 @@ pub struct DescribeRiskConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeRiskConfigurationOutputBuilder {
-    /// <p>The risk configuration.</p>
+    /// <p>The details of the requested risk configuration.</p>
     /// This field is required.
     pub fn risk_configuration(mut self, input: crate::types::RiskConfigurationType) -> Self {
         self.risk_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The risk configuration.</p>
+    /// <p>The details of the requested risk configuration.</p>
     pub fn set_risk_configuration(mut self, input: ::std::option::Option<crate::types::RiskConfigurationType>) -> Self {
         self.risk_configuration = input;
         self
     }
-    /// <p>The risk configuration.</p>
+    /// <p>The details of the requested risk configuration.</p>
     pub fn get_risk_configuration(&self) -> &::std::option::Option<crate::types::RiskConfigurationType> {
         &self.risk_configuration
     }

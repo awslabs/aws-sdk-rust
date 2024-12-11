@@ -22,7 +22,17 @@ impl crate::operation::delete_resource_server::builders::DeleteResourceServerInp
 }
 /// Fluent builder constructing a request to `DeleteResourceServer`.
 ///
-/// <p>Deletes a resource server.</p>
+/// <p>Deletes a resource server. After you delete a resource server, users can no longer generate access tokens with scopes that are associate with that resource server.</p>
+/// <p>Resource servers are associated with custom scopes and machine-to-machine (M2M) authorization. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-define-resource-servers.html">Access control with resource servers</a>.</p><note>
+/// <p>Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.</p>
+/// <p class="title"><b>Learn more</b></p>
+/// <ul>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing Amazon Web Services API Requests</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using the Amazon Cognito user pools API and user pool endpoints</a></p></li>
+/// </ul>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteResourceServerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +118,31 @@ impl DeleteResourceServerFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The user pool ID for the user pool that hosts the resource server.</p>
+    /// <p>The ID of the user pool where you want to delete the resource server.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_pool_id(input.into());
         self
     }
-    /// <p>The user pool ID for the user pool that hosts the resource server.</p>
+    /// <p>The ID of the user pool where you want to delete the resource server.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
-    /// <p>The user pool ID for the user pool that hosts the resource server.</p>
+    /// <p>The ID of the user pool where you want to delete the resource server.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_pool_id()
     }
-    /// <p>The identifier for the resource server.</p>
+    /// <p>The identifier of the resource server that you want to delete.</p>
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identifier(input.into());
         self
     }
-    /// <p>The identifier for the resource server.</p>
+    /// <p>The identifier of the resource server that you want to delete.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identifier(input);
         self
     }
-    /// <p>The identifier for the resource server.</p>
+    /// <p>The identifier of the resource server that you want to delete.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identifier()
     }

@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AssociateSoftwareTokenInput {
-    /// <p>A valid access token that Amazon Cognito issued to the user whose software token you want to generate.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user whose software token you want to generate. You can provide either an access token or a session ID in the request.</p>
     pub access_token: ::std::option::Option<::std::string::String>,
-    /// <p>The session that should be passed both ways in challenge-response calls to the service. This allows authentication of the user as part of the MFA setup process.</p>
+    /// <p>The session identifier that maintains the state of authentication requests and challenge responses. In <code>AssociateSoftwareToken</code>, this is the session ID from a successful sign-in. You can provide either an access token or a session ID in the request.</p>
     pub session: ::std::option::Option<::std::string::String>,
 }
 impl AssociateSoftwareTokenInput {
-    /// <p>A valid access token that Amazon Cognito issued to the user whose software token you want to generate.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user whose software token you want to generate. You can provide either an access token or a session ID in the request.</p>
     pub fn access_token(&self) -> ::std::option::Option<&str> {
         self.access_token.as_deref()
     }
-    /// <p>The session that should be passed both ways in challenge-response calls to the service. This allows authentication of the user as part of the MFA setup process.</p>
+    /// <p>The session identifier that maintains the state of authentication requests and challenge responses. In <code>AssociateSoftwareToken</code>, this is the session ID from a successful sign-in. You can provide either an access token or a session ID in the request.</p>
     pub fn session(&self) -> ::std::option::Option<&str> {
         self.session.as_deref()
     }
@@ -41,31 +41,31 @@ pub struct AssociateSoftwareTokenInputBuilder {
     pub(crate) session: ::std::option::Option<::std::string::String>,
 }
 impl AssociateSoftwareTokenInputBuilder {
-    /// <p>A valid access token that Amazon Cognito issued to the user whose software token you want to generate.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user whose software token you want to generate. You can provide either an access token or a session ID in the request.</p>
     pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A valid access token that Amazon Cognito issued to the user whose software token you want to generate.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user whose software token you want to generate. You can provide either an access token or a session ID in the request.</p>
     pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_token = input;
         self
     }
-    /// <p>A valid access token that Amazon Cognito issued to the user whose software token you want to generate.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user whose software token you want to generate. You can provide either an access token or a session ID in the request.</p>
     pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.access_token
     }
-    /// <p>The session that should be passed both ways in challenge-response calls to the service. This allows authentication of the user as part of the MFA setup process.</p>
+    /// <p>The session identifier that maintains the state of authentication requests and challenge responses. In <code>AssociateSoftwareToken</code>, this is the session ID from a successful sign-in. You can provide either an access token or a session ID in the request.</p>
     pub fn session(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The session that should be passed both ways in challenge-response calls to the service. This allows authentication of the user as part of the MFA setup process.</p>
+    /// <p>The session identifier that maintains the state of authentication requests and challenge responses. In <code>AssociateSoftwareToken</code>, this is the session ID from a successful sign-in. You can provide either an access token or a session ID in the request.</p>
     pub fn set_session(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session = input;
         self
     }
-    /// <p>The session that should be passed both ways in challenge-response calls to the service. This allows authentication of the user as part of the MFA setup process.</p>
+    /// <p>The session identifier that maintains the state of authentication requests and challenge responses. In <code>AssociateSoftwareToken</code>, this is the session ID from a successful sign-in. You can provide either an access token or a session ID in the request.</p>
     pub fn get_session(&self) -> &::std::option::Option<::std::string::String> {
         &self.session
     }

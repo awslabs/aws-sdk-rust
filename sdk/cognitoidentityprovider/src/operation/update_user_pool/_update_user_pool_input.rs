@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateUserPoolInput {
-    /// <p>The user pool ID for the user pool you want to update.</p>
+    /// <p>The ID of the user pool you want to update.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>A container with the policies you want to update in a user pool.</p>
     pub policies: ::std::option::Option<crate::types::UserPoolPolicyType>,
@@ -60,7 +60,7 @@ pub struct UpdateUserPoolInput {
     pub user_pool_tier: ::std::option::Option<crate::types::UserPoolTierType>,
 }
 impl UpdateUserPoolInput {
-    /// <p>The user pool ID for the user pool you want to update.</p>
+    /// <p>The ID of the user pool you want to update.</p>
     pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
@@ -193,18 +193,18 @@ pub struct UpdateUserPoolInputBuilder {
     pub(crate) user_pool_tier: ::std::option::Option<crate::types::UserPoolTierType>,
 }
 impl UpdateUserPoolInputBuilder {
-    /// <p>The user pool ID for the user pool you want to update.</p>
+    /// <p>The ID of the user pool you want to update.</p>
     /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user pool ID for the user pool you want to update.</p>
+    /// <p>The ID of the user pool you want to update.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
     }
-    /// <p>The user pool ID for the user pool you want to update.</p>
+    /// <p>The ID of the user pool you want to update.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_pool_id
     }

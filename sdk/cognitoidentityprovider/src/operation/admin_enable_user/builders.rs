@@ -22,7 +22,7 @@ impl crate::operation::admin_enable_user::builders::AdminEnableUserInputBuilder 
 }
 /// Fluent builder constructing a request to `AdminEnableUser`.
 ///
-/// <p>Enables the specified user as an administrator. Works on any user.</p><note>
+/// <p>Activate sign-in for a user profile that previously had sign-in access disabled.</p><note>
 /// <p>Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.</p>
 /// <p class="title"><b>Learn more</b></p>
 /// <ul>
@@ -117,17 +117,17 @@ impl AdminEnableUserFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The user pool ID for the user pool where you want to enable the user.</p>
+    /// <p>The ID of the user pool where you want to activate sign-in for the user.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_pool_id(input.into());
         self
     }
-    /// <p>The user pool ID for the user pool where you want to enable the user.</p>
+    /// <p>The ID of the user pool where you want to activate sign-in for the user.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
-    /// <p>The user pool ID for the user pool where you want to enable the user.</p>
+    /// <p>The ID of the user pool where you want to activate sign-in for the user.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_pool_id()
     }

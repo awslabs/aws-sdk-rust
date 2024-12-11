@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdminLinkProviderForUserInput {
-    /// <p>The user pool ID for the user pool.</p>
+    /// <p>The ID of the user pool where you want to link a federated identity.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The existing user in the user pool that you want to assign to the external IdP user account. This user can be a local (Username + Password) Amazon Cognito user pools user or a federated user (for example, a SAML or Facebook user). If the user doesn't exist, Amazon Cognito generates an exception. Amazon Cognito returns this user when the new user (with the linked IdP attribute) signs in.</p>
     /// <p>For a native username + password user, the <code>ProviderAttributeValue</code> for the <code>DestinationUser</code> should be the username in the user pool. For a federated user, it should be the provider-specific <code>user_id</code>.</p>
@@ -25,7 +25,7 @@ pub struct AdminLinkProviderForUserInput {
     pub source_user: ::std::option::Option<crate::types::ProviderUserIdentifierType>,
 }
 impl AdminLinkProviderForUserInput {
-    /// <p>The user pool ID for the user pool.</p>
+    /// <p>The ID of the user pool where you want to link a federated identity.</p>
     pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
@@ -68,18 +68,18 @@ pub struct AdminLinkProviderForUserInputBuilder {
     pub(crate) source_user: ::std::option::Option<crate::types::ProviderUserIdentifierType>,
 }
 impl AdminLinkProviderForUserInputBuilder {
-    /// <p>The user pool ID for the user pool.</p>
+    /// <p>The ID of the user pool where you want to link a federated identity.</p>
     /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user pool ID for the user pool.</p>
+    /// <p>The ID of the user pool where you want to link a federated identity.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
     }
-    /// <p>The user pool ID for the user pool.</p>
+    /// <p>The ID of the user pool where you want to link a federated identity.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_pool_id
     }

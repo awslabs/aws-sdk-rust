@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AdminUserGlobalSignOutInput {
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where you want to sign out a user.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, this value must be the <code>sub</code> of a local user or the username of a user from a third-party IdP.</p>
     pub username: ::std::option::Option<::std::string::String>,
 }
 impl AdminUserGlobalSignOutInput {
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where you want to sign out a user.</p>
     pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
@@ -42,18 +42,18 @@ pub struct AdminUserGlobalSignOutInputBuilder {
     pub(crate) username: ::std::option::Option<::std::string::String>,
 }
 impl AdminUserGlobalSignOutInputBuilder {
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where you want to sign out a user.</p>
     /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where you want to sign out a user.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
     }
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where you want to sign out a user.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_pool_id
     }

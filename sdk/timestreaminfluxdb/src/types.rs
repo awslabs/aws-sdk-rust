@@ -25,6 +25,8 @@ pub use crate::types::_db_storage_type::DbStorageType;
 
 pub use crate::types::_db_instance_type::DbInstanceType;
 
+pub use crate::types::_network_type::NetworkType;
+
 pub use crate::types::_status::Status;
 
 pub use crate::types::_db_instance_summary::DbInstanceSummary;
@@ -48,6 +50,8 @@ mod _influx_dbv2_parameters;
 mod _log_delivery_configuration;
 
 mod _log_level;
+
+mod _network_type;
 
 mod _parameters;
 

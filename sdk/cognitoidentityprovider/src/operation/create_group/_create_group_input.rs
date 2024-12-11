@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateGroupInput {
-    /// <p>The name of the group. Must be unique.</p>
+    /// <p>A name for the group. This name must be unique in your user pool.</p>
     pub group_name: ::std::option::Option<::std::string::String>,
-    /// <p>The user pool ID for the user pool.</p>
+    /// <p>The ID of the user pool where you want to create a user group.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
-    /// <p>A string containing the description of the group.</p>
+    /// <p>A description of the group that you're creating.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The role Amazon Resource Name (ARN) for the group.</p>
+    /// <p>The Amazon Resource Name (ARN) for the IAM role that you want to associate with the group. A group role primarily declares a preferred role for the credentials that you get from an identity pool. Amazon Cognito ID tokens have a <code>cognito:preferred_role</code> claim that presents the highest-precedence group that a user belongs to. Both ID and access tokens also contain a <code>cognito:groups</code> claim that list all the groups that a user is a member of.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A non-negative integer value that specifies the precedence of this group relative to the other groups that a user can belong to in the user pool. Zero is the highest precedence value. Groups with lower <code>Precedence</code> values take precedence over groups with higher or null <code>Precedence</code> values. If a user belongs to two or more groups, it is the group with the lowest precedence value whose role ARN is given in the user's tokens for the <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims.</p>
     /// <p>Two groups can have the same <code>Precedence</code> value. If this happens, neither group takes precedence over the other. If two groups with the same <code>Precedence</code> have the same role ARN, that role is used in the <code>cognito:preferred_role</code> claim in tokens for users in each group. If the two groups have different role ARNs, the <code>cognito:preferred_role</code> claim isn't set in users' tokens.</p>
@@ -17,19 +17,19 @@ pub struct CreateGroupInput {
     pub precedence: ::std::option::Option<i32>,
 }
 impl CreateGroupInput {
-    /// <p>The name of the group. Must be unique.</p>
+    /// <p>A name for the group. This name must be unique in your user pool.</p>
     pub fn group_name(&self) -> ::std::option::Option<&str> {
         self.group_name.as_deref()
     }
-    /// <p>The user pool ID for the user pool.</p>
+    /// <p>The ID of the user pool where you want to create a user group.</p>
     pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
-    /// <p>A string containing the description of the group.</p>
+    /// <p>A description of the group that you're creating.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The role Amazon Resource Name (ARN) for the group.</p>
+    /// <p>The Amazon Resource Name (ARN) for the IAM role that you want to associate with the group. A group role primarily declares a preferred role for the credentials that you get from an identity pool. Amazon Cognito ID tokens have a <code>cognito:preferred_role</code> claim that presents the highest-precedence group that a user belongs to. Both ID and access tokens also contain a <code>cognito:groups</code> claim that list all the groups that a user is a member of.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -58,61 +58,61 @@ pub struct CreateGroupInputBuilder {
     pub(crate) precedence: ::std::option::Option<i32>,
 }
 impl CreateGroupInputBuilder {
-    /// <p>The name of the group. Must be unique.</p>
+    /// <p>A name for the group. This name must be unique in your user pool.</p>
     /// This field is required.
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the group. Must be unique.</p>
+    /// <p>A name for the group. This name must be unique in your user pool.</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_name = input;
         self
     }
-    /// <p>The name of the group. Must be unique.</p>
+    /// <p>A name for the group. This name must be unique in your user pool.</p>
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_name
     }
-    /// <p>The user pool ID for the user pool.</p>
+    /// <p>The ID of the user pool where you want to create a user group.</p>
     /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user pool ID for the user pool.</p>
+    /// <p>The ID of the user pool where you want to create a user group.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
     }
-    /// <p>The user pool ID for the user pool.</p>
+    /// <p>The ID of the user pool where you want to create a user group.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_pool_id
     }
-    /// <p>A string containing the description of the group.</p>
+    /// <p>A description of the group that you're creating.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A string containing the description of the group.</p>
+    /// <p>A description of the group that you're creating.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>A string containing the description of the group.</p>
+    /// <p>A description of the group that you're creating.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The role Amazon Resource Name (ARN) for the group.</p>
+    /// <p>The Amazon Resource Name (ARN) for the IAM role that you want to associate with the group. A group role primarily declares a preferred role for the credentials that you get from an identity pool. Amazon Cognito ID tokens have a <code>cognito:preferred_role</code> claim that presents the highest-precedence group that a user belongs to. Both ID and access tokens also contain a <code>cognito:groups</code> claim that list all the groups that a user is a member of.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The role Amazon Resource Name (ARN) for the group.</p>
+    /// <p>The Amazon Resource Name (ARN) for the IAM role that you want to associate with the group. A group role primarily declares a preferred role for the credentials that you get from an identity pool. Amazon Cognito ID tokens have a <code>cognito:preferred_role</code> claim that presents the highest-precedence group that a user belongs to. Both ID and access tokens also contain a <code>cognito:groups</code> claim that list all the groups that a user is a member of.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The role Amazon Resource Name (ARN) for the group.</p>
+    /// <p>The Amazon Resource Name (ARN) for the IAM role that you want to associate with the group. A group role primarily declares a preferred role for the credentials that you get from an identity pool. Amazon Cognito ID tokens have a <code>cognito:preferred_role</code> claim that presents the highest-precedence group that a user belongs to. Both ID and access tokens also contain a <code>cognito:groups</code> claim that list all the groups that a user is a member of.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }

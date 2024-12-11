@@ -32,7 +32,7 @@ impl crate::operation::global_sign_out::builders::GlobalSignOutInputBuilder {
 /// <li>
 /// <p>Amazon Cognito no longer accepts a signed-out user's refresh tokens in refresh requests.</p></li>
 /// </ul>
-/// <p>Other requests might be valid until your user's token expires.</p>
+/// <p>Other requests might be valid until your user's token expires. This operation doesn't clear the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html">managed login</a> session cookie. To clear the session for a user who signed in with managed login or the classic hosted UI, direct their browser session to the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/logout-endpoint.html">logout endpoint</a>.</p>
 /// <p>Authorize this action with a signed-in user's access token. It must include the scope <code>aws.cognito.signin.user.admin</code>.</p><note>
 /// <p>Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you can't use IAM credentials to authorize requests, and you can't grant IAM permissions in policies. For more information about authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using the Amazon Cognito user pools API and user pool endpoints</a>.</p>
 /// </note>

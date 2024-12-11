@@ -140,6 +140,8 @@ mod associate_created_artifact;
 
 mod associate_discovered_resource;
 
+mod associate_source_resource;
+
 mod create_progress_update_stream;
 
 /// Operation customization and supporting types.
@@ -179,6 +181,8 @@ mod disassociate_created_artifact;
 
 mod disassociate_discovered_resource;
 
+mod disassociate_source_resource;
+
 mod import_migration_task;
 
 mod list_application_states;
@@ -187,9 +191,13 @@ mod list_created_artifacts;
 
 mod list_discovered_resources;
 
+mod list_migration_task_updates;
+
 mod list_migration_tasks;
 
 mod list_progress_update_streams;
+
+mod list_source_resources;
 
 mod notify_application_state;
 

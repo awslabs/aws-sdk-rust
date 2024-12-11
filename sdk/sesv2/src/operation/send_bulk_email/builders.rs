@@ -261,4 +261,18 @@ impl SendBulkEmailFluentBuilder {
     pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_configuration_set_name()
     }
+    /// <p>The ID of the multi-region endpoint (global-endpoint).</p>
+    pub fn endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.endpoint_id(input.into());
+        self
+    }
+    /// <p>The ID of the multi-region endpoint (global-endpoint).</p>
+    pub fn set_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_endpoint_id(input);
+        self
+    }
+    /// <p>The ID of the multi-region endpoint (global-endpoint).</p>
+    pub fn get_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_endpoint_id()
+    }
 }

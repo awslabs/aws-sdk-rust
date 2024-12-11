@@ -41,12 +41,11 @@
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AcceptanceType {
-    /// Require explicit click-through acceptance of
-    /// the Term associated with this Report.
+    /// Require explicit click-through acceptance of the
+    /// Term associated with this Report.
     Explicit,
-    /// Do not require explicit click-through
-    /// acceptance of the Term associated with
-    /// this Report.
+    /// Do not require explicit click-through acceptance
+    /// of the Term associated with this Report
     Passthrough,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]

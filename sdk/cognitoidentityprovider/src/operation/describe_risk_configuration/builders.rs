@@ -22,7 +22,7 @@ impl crate::operation::describe_risk_configuration::builders::DescribeRiskConfig
 }
 /// Fluent builder constructing a request to `DescribeRiskConfiguration`.
 ///
-/// <p>Describes the risk configuration.</p>
+/// <p>Given an app client or user pool ID where threat protection is configured, describes the risk configuration. This operation returns details about adaptive authentication, compromised credentials, and IP-address allow- and denylists. For more information about threat protection, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-threat-protection.html">Threat protection</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeRiskConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl DescribeRiskConfigurationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool with the risk configuration that you want to inspect. You can apply default risk configuration at the user pool level and further customize it from user pool defaults at the app-client level. Specify <code>ClientId</code> to inspect client-level configuration, or <code>UserPoolId</code> to inspect pool-level configuration.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_pool_id(input.into());
         self
     }
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool with the risk configuration that you want to inspect. You can apply default risk configuration at the user pool level and further customize it from user pool defaults at the app-client level. Specify <code>ClientId</code> to inspect client-level configuration, or <code>UserPoolId</code> to inspect pool-level configuration.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool with the risk configuration that you want to inspect. You can apply default risk configuration at the user pool level and further customize it from user pool defaults at the app-client level. Specify <code>ClientId</code> to inspect client-level configuration, or <code>UserPoolId</code> to inspect pool-level configuration.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_pool_id()
     }
-    /// <p>The app client ID.</p>
+    /// <p>The ID of the app client with the risk configuration that you want to inspect. You can apply default risk configuration at the user pool level and further customize it from user pool defaults at the app-client level. Specify <code>ClientId</code> to inspect client-level configuration, or <code>UserPoolId</code> to inspect pool-level configuration.</p>
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_id(input.into());
         self
     }
-    /// <p>The app client ID.</p>
+    /// <p>The ID of the app client with the risk configuration that you want to inspect. You can apply default risk configuration at the user pool level and further customize it from user pool defaults at the app-client level. Specify <code>ClientId</code> to inspect client-level configuration, or <code>UserPoolId</code> to inspect pool-level configuration.</p>
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_id(input);
         self
     }
-    /// <p>The app client ID.</p>
+    /// <p>The ID of the app client with the risk configuration that you want to inspect. You can apply default risk configuration at the user pool level and further customize it from user pool defaults at the app-client level. Specify <code>ClientId</code> to inspect client-level configuration, or <code>UserPoolId</code> to inspect pool-level configuration.</p>
     pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_id()
     }

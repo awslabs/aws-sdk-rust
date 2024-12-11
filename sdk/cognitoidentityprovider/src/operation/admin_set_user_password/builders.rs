@@ -22,9 +22,10 @@ impl crate::operation::admin_set_user_password::builders::AdminSetUserPasswordIn
 }
 /// Fluent builder constructing a request to `AdminSetUserPassword`.
 ///
-/// <p>Sets the specified user's password in a user pool as an administrator. Works on any user.</p>
-/// <p>The password can be temporary or permanent. If it is temporary, the user status enters the <code>FORCE_CHANGE_PASSWORD</code> state. When the user next tries to sign in, the InitiateAuth/AdminInitiateAuth response will contain the <code>NEW_PASSWORD_REQUIRED</code> challenge. If the user doesn't sign in before it expires, the user won't be able to sign in, and an administrator must reset their password.</p>
-/// <p>Once the user has set a new password, or the password is permanent, the user status is set to <code>Confirmed</code>.</p>
+/// <p>Sets the specified user's password in a user pool. This operation administratively sets a temporary or permanent password for a user. With this operation, you can bypass self-service password changes and permit immediate sign-in with the password that you set. To do this, set <code>Permanent</code> to <code>true</code>.</p>
+/// <p>You can also set a new temporary password in this request, send it to a user, and require them to choose a new password on their next sign-in. To do this, set <code>Permanent</code> to <code>false</code>.</p>
+/// <p>If the password is temporary, the user's <code>Status</code> becomes <code>FORCE_CHANGE_PASSWORD</code>. When the user next tries to sign in, the <code>InitiateAuth</code> or <code>AdminInitiateAuth</code> response includes the <code>NEW_PASSWORD_REQUIRED</code> challenge. If the user doesn't sign in before the temporary password expires, they can no longer sign in and you must repeat this operation to set a temporary or permanent password for them.</p>
+/// <p>After the user sets a new password, or if you set a permanent password, their status becomes <code>Confirmed</code>.</p>
 /// <p><code>AdminSetUserPassword</code> can set a password for the user profile that Amazon Cognito creates for third-party federated users. When you set a password, the federated user's status changes from <code>EXTERNAL_PROVIDER</code> to <code>CONFIRMED</code>. A user in this state can sign in as a federated user, and initiate authentication flows in the API like a linked native user. They can also modify their password and attributes in token-authenticated API requests like <code>ChangePassword</code> and <code>UpdateUserAttributes</code>. As a best security practice and to keep users in sync with your external IdP, don't set passwords on federated user profiles. To set up a federated user for native sign-in with a linked native user, refer to <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation-consolidate-users.html">Linking federated users to an existing user profile</a>.</p><note>
 /// <p>Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.</p>
 /// <p class="title"><b>Learn more</b></p>
@@ -120,17 +121,17 @@ impl AdminSetUserPasswordFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The user pool ID for the user pool where you want to set the user's password.</p>
+    /// <p>The ID of the user pool where you want to set the user's password.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_pool_id(input.into());
         self
     }
-    /// <p>The user pool ID for the user pool where you want to set the user's password.</p>
+    /// <p>The ID of the user pool where you want to set the user's password.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
-    /// <p>The user pool ID for the user pool where you want to set the user's password.</p>
+    /// <p>The ID of the user pool where you want to set the user's password.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_pool_id()
     }
@@ -148,31 +149,31 @@ impl AdminSetUserPasswordFluentBuilder {
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_username()
     }
-    /// <p>The password for the user.</p>
+    /// <p>The new temporary or permanent password that you want to set for the user. You can't remove the password for a user who already has a password so that they can only sign in with passwordless methods. In this scenario, you must create a new user without a password.</p>
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.password(input.into());
         self
     }
-    /// <p>The password for the user.</p>
+    /// <p>The new temporary or permanent password that you want to set for the user. You can't remove the password for a user who already has a password so that they can only sign in with passwordless methods. In this scenario, you must create a new user without a password.</p>
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_password(input);
         self
     }
-    /// <p>The password for the user.</p>
+    /// <p>The new temporary or permanent password that you want to set for the user. You can't remove the password for a user who already has a password so that they can only sign in with passwordless methods. In this scenario, you must create a new user without a password.</p>
     pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_password()
     }
-    /// <p><code>True</code> if the password is permanent, <code>False</code> if it is temporary.</p>
+    /// <p>Set to <code>true</code> to set a password that the user can immediately sign in with. Set to <code>false</code> to set a temporary password that the user must change on their next sign-in.</p>
     pub fn permanent(mut self, input: bool) -> Self {
         self.inner = self.inner.permanent(input);
         self
     }
-    /// <p><code>True</code> if the password is permanent, <code>False</code> if it is temporary.</p>
+    /// <p>Set to <code>true</code> to set a password that the user can immediately sign in with. Set to <code>false</code> to set a temporary password that the user must change on their next sign-in.</p>
     pub fn set_permanent(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_permanent(input);
         self
     }
-    /// <p><code>True</code> if the password is permanent, <code>False</code> if it is temporary.</p>
+    /// <p>Set to <code>true</code> to set a password that the user can immediately sign in with. Set to <code>false</code> to set a temporary password that the user must change on their next sign-in.</p>
     pub fn get_permanent(&self) -> &::std::option::Option<bool> {
         self.inner.get_permanent()
     }

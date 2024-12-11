@@ -2,67 +2,7 @@
 
 /// <p>Advanced event selectors let you create fine-grained selectors for CloudTrail management, data, and network activity events. They help you control costs by logging only those events that are important to you. For more information about configuring advanced event selectors, see the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging data events</a>, <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-network-events-with-cloudtrail.html">Logging network activity events</a>, and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Logging management events</a> topics in the <i>CloudTrail User Guide</i>.</p>
 /// <p>You cannot apply both event selectors and advanced event selectors to a trail.</p>
-/// <p><b>Supported CloudTrail event record fields for management events</b></p>
-/// <ul>
-/// <li>
-/// <p><code>eventCategory</code> (required)</p></li>
-/// <li>
-/// <p><code>eventSource</code></p></li>
-/// <li>
-/// <p><code>readOnly</code></p></li>
-/// </ul>
-/// <p>The following additional fields are available for event data stores:</p>
-/// <ul>
-/// <li>
-/// <p><code>eventName</code></p></li>
-/// <li>
-/// <p><code>eventType</code></p></li>
-/// <li>
-/// <p><code>sessionCredentialFromConsole</code></p></li>
-/// <li>
-/// <p><code>userIdentity.arn</code></p></li>
-/// </ul>
-/// <p><b>Supported CloudTrail event record fields for data events</b></p>
-/// <ul>
-/// <li>
-/// <p><code>eventCategory</code> (required)</p></li>
-/// <li>
-/// <p><code>resources.type</code> (required)</p></li>
-/// <li>
-/// <p><code>readOnly</code></p></li>
-/// <li>
-/// <p><code>eventName</code></p></li>
-/// <li>
-/// <p><code>resources.ARN</code></p></li>
-/// </ul>
-/// <p>The following additional fields are available for event data stores:</p>
-/// <ul>
-/// <li>
-/// <p><code>eventSource</code></p></li>
-/// <li>
-/// <p><code>eventType</code></p></li>
-/// <li>
-/// <p><code>sessionCredentialFromConsole</code></p></li>
-/// <li>
-/// <p><code>userIdentity.arn</code></p></li>
-/// </ul>
-/// <p><b>Supported CloudTrail event record fields for network activity events</b></p><note>
-/// <p>Network activity events is in preview release for CloudTrail and is subject to change.</p>
-/// </note>
-/// <ul>
-/// <li>
-/// <p><code>eventCategory</code> (required)</p></li>
-/// <li>
-/// <p><code>eventSource</code> (required)</p></li>
-/// <li>
-/// <p><code>eventName</code></p></li>
-/// <li>
-/// <p><code>errorCode</code> - The only valid value for <code>errorCode</code> is <code>VpceAccessDenied</code>.</p></li>
-/// <li>
-/// <p><code>vpcEndpointId</code></p></li>
-/// </ul><note>
-/// <p>For event data stores for CloudTrail Insights events, Config configuration items, Audit Manager evidence, or events outside of Amazon Web Services, the only supported field is <code>eventCategory</code>.</p>
-/// </note>
+/// <p>For information about configurable advanced event selector fields, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedEventSelector.html">AdvancedEventSelector</a> in the <i>CloudTrailUser Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdvancedEventSelector {

@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AdminSetUserPasswordInput {
-    /// <p>The user pool ID for the user pool where you want to set the user's password.</p>
+    /// <p>The ID of the user pool where you want to set the user's password.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, this value must be the <code>sub</code> of a local user or the username of a user from a third-party IdP.</p>
     pub username: ::std::option::Option<::std::string::String>,
-    /// <p>The password for the user.</p>
+    /// <p>The new temporary or permanent password that you want to set for the user. You can't remove the password for a user who already has a password so that they can only sign in with passwordless methods. In this scenario, you must create a new user without a password.</p>
     pub password: ::std::option::Option<::std::string::String>,
-    /// <p><code>True</code> if the password is permanent, <code>False</code> if it is temporary.</p>
+    /// <p>Set to <code>true</code> to set a password that the user can immediately sign in with. Set to <code>false</code> to set a temporary password that the user must change on their next sign-in.</p>
     pub permanent: ::std::option::Option<bool>,
 }
 impl AdminSetUserPasswordInput {
-    /// <p>The user pool ID for the user pool where you want to set the user's password.</p>
+    /// <p>The ID of the user pool where you want to set the user's password.</p>
     pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
@@ -21,11 +21,11 @@ impl AdminSetUserPasswordInput {
     pub fn username(&self) -> ::std::option::Option<&str> {
         self.username.as_deref()
     }
-    /// <p>The password for the user.</p>
+    /// <p>The new temporary or permanent password that you want to set for the user. You can't remove the password for a user who already has a password so that they can only sign in with passwordless methods. In this scenario, you must create a new user without a password.</p>
     pub fn password(&self) -> ::std::option::Option<&str> {
         self.password.as_deref()
     }
-    /// <p><code>True</code> if the password is permanent, <code>False</code> if it is temporary.</p>
+    /// <p>Set to <code>true</code> to set a password that the user can immediately sign in with. Set to <code>false</code> to set a temporary password that the user must change on their next sign-in.</p>
     pub fn permanent(&self) -> ::std::option::Option<bool> {
         self.permanent
     }
@@ -57,18 +57,18 @@ pub struct AdminSetUserPasswordInputBuilder {
     pub(crate) permanent: ::std::option::Option<bool>,
 }
 impl AdminSetUserPasswordInputBuilder {
-    /// <p>The user pool ID for the user pool where you want to set the user's password.</p>
+    /// <p>The ID of the user pool where you want to set the user's password.</p>
     /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user pool ID for the user pool where you want to set the user's password.</p>
+    /// <p>The ID of the user pool where you want to set the user's password.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
     }
-    /// <p>The user pool ID for the user pool where you want to set the user's password.</p>
+    /// <p>The ID of the user pool where you want to set the user's password.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_pool_id
     }
@@ -87,32 +87,32 @@ impl AdminSetUserPasswordInputBuilder {
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
         &self.username
     }
-    /// <p>The password for the user.</p>
+    /// <p>The new temporary or permanent password that you want to set for the user. You can't remove the password for a user who already has a password so that they can only sign in with passwordless methods. In this scenario, you must create a new user without a password.</p>
     /// This field is required.
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The password for the user.</p>
+    /// <p>The new temporary or permanent password that you want to set for the user. You can't remove the password for a user who already has a password so that they can only sign in with passwordless methods. In this scenario, you must create a new user without a password.</p>
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.password = input;
         self
     }
-    /// <p>The password for the user.</p>
+    /// <p>The new temporary or permanent password that you want to set for the user. You can't remove the password for a user who already has a password so that they can only sign in with passwordless methods. In this scenario, you must create a new user without a password.</p>
     pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.password
     }
-    /// <p><code>True</code> if the password is permanent, <code>False</code> if it is temporary.</p>
+    /// <p>Set to <code>true</code> to set a password that the user can immediately sign in with. Set to <code>false</code> to set a temporary password that the user must change on their next sign-in.</p>
     pub fn permanent(mut self, input: bool) -> Self {
         self.permanent = ::std::option::Option::Some(input);
         self
     }
-    /// <p><code>True</code> if the password is permanent, <code>False</code> if it is temporary.</p>
+    /// <p>Set to <code>true</code> to set a password that the user can immediately sign in with. Set to <code>false</code> to set a temporary password that the user must change on their next sign-in.</p>
     pub fn set_permanent(mut self, input: ::std::option::Option<bool>) -> Self {
         self.permanent = input;
         self
     }
-    /// <p><code>True</code> if the password is permanent, <code>False</code> if it is temporary.</p>
+    /// <p>Set to <code>true</code> to set a password that the user can immediately sign in with. Set to <code>false</code> to set a temporary password that the user must change on their next sign-in.</p>
     pub fn get_permanent(&self) -> &::std::option::Option<bool> {
         &self.permanent
     }

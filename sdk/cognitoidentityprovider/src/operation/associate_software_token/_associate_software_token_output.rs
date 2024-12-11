@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AssociateSoftwareTokenOutput {
-    /// <p>A unique generated shared secret code that is used in the TOTP algorithm to generate a one-time code.</p>
+    /// <p>A unique generated shared secret code that is used by the TOTP algorithm to generate a one-time code.</p>
     pub secret_code: ::std::option::Option<::std::string::String>,
-    /// <p>The session that should be passed both ways in challenge-response calls to the service. This allows authentication of the user as part of the MFA setup process.</p>
+    /// <p>The session identifier that maintains the state of authentication requests and challenge responses. This session ID is valid for the next request in this flow, <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerifySoftwareToken.html">VerifySoftwareToken</a>.</p>
     pub session: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl AssociateSoftwareTokenOutput {
-    /// <p>A unique generated shared secret code that is used in the TOTP algorithm to generate a one-time code.</p>
+    /// <p>A unique generated shared secret code that is used by the TOTP algorithm to generate a one-time code.</p>
     pub fn secret_code(&self) -> ::std::option::Option<&str> {
         self.secret_code.as_deref()
     }
-    /// <p>The session that should be passed both ways in challenge-response calls to the service. This allows authentication of the user as part of the MFA setup process.</p>
+    /// <p>The session identifier that maintains the state of authentication requests and challenge responses. This session ID is valid for the next request in this flow, <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerifySoftwareToken.html">VerifySoftwareToken</a>.</p>
     pub fn session(&self) -> ::std::option::Option<&str> {
         self.session.as_deref()
     }
@@ -49,31 +49,31 @@ pub struct AssociateSoftwareTokenOutputBuilder {
     _request_id: Option<String>,
 }
 impl AssociateSoftwareTokenOutputBuilder {
-    /// <p>A unique generated shared secret code that is used in the TOTP algorithm to generate a one-time code.</p>
+    /// <p>A unique generated shared secret code that is used by the TOTP algorithm to generate a one-time code.</p>
     pub fn secret_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique generated shared secret code that is used in the TOTP algorithm to generate a one-time code.</p>
+    /// <p>A unique generated shared secret code that is used by the TOTP algorithm to generate a one-time code.</p>
     pub fn set_secret_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_code = input;
         self
     }
-    /// <p>A unique generated shared secret code that is used in the TOTP algorithm to generate a one-time code.</p>
+    /// <p>A unique generated shared secret code that is used by the TOTP algorithm to generate a one-time code.</p>
     pub fn get_secret_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.secret_code
     }
-    /// <p>The session that should be passed both ways in challenge-response calls to the service. This allows authentication of the user as part of the MFA setup process.</p>
+    /// <p>The session identifier that maintains the state of authentication requests and challenge responses. This session ID is valid for the next request in this flow, <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerifySoftwareToken.html">VerifySoftwareToken</a>.</p>
     pub fn session(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The session that should be passed both ways in challenge-response calls to the service. This allows authentication of the user as part of the MFA setup process.</p>
+    /// <p>The session identifier that maintains the state of authentication requests and challenge responses. This session ID is valid for the next request in this flow, <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerifySoftwareToken.html">VerifySoftwareToken</a>.</p>
     pub fn set_session(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session = input;
         self
     }
-    /// <p>The session that should be passed both ways in challenge-response calls to the service. This allows authentication of the user as part of the MFA setup process.</p>
+    /// <p>The session identifier that maintains the state of authentication requests and challenge responses. This session ID is valid for the next request in this flow, <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerifySoftwareToken.html">VerifySoftwareToken</a>.</p>
     pub fn get_session(&self) -> &::std::option::Option<::std::string::String> {
         &self.session
     }

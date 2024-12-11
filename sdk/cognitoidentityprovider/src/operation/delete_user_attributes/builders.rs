@@ -22,7 +22,7 @@ impl crate::operation::delete_user_attributes::builders::DeleteUserAttributesInp
 }
 /// Fluent builder constructing a request to `DeleteUserAttributes`.
 ///
-/// <p>Deletes the attributes for a user.</p>
+/// <p>Self-deletes attributes for a user. For example, your application can submit a request to this operation when a user wants to remove their <code>birthdate</code> attribute value.</p>
 /// <p>Authorize this action with a signed-in user's access token. It must include the scope <code>aws.cognito.signin.user.admin</code>.</p><note>
 /// <p>Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you can't use IAM credentials to authorize requests, and you can't grant IAM permissions in policies. For more information about authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using the Amazon Cognito user pools API and user pool endpoints</a>.</p>
 /// </note>
@@ -117,19 +117,19 @@ impl DeleteUserAttributesFluentBuilder {
     /// To override the contents of this collection use [`set_user_attribute_names`](Self::set_user_attribute_names).
     ///
     /// <p>An array of strings representing the user attribute names you want to delete.</p>
-    /// <p>For custom attributes, you must prependattach the <code>custom:</code> prefix to the front of the attribute name.</p>
+    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name, for example <code>custom:department</code>.</p>
     pub fn user_attribute_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_attribute_names(input.into());
         self
     }
     /// <p>An array of strings representing the user attribute names you want to delete.</p>
-    /// <p>For custom attributes, you must prependattach the <code>custom:</code> prefix to the front of the attribute name.</p>
+    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name, for example <code>custom:department</code>.</p>
     pub fn set_user_attribute_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_user_attribute_names(input);
         self
     }
     /// <p>An array of strings representing the user attribute names you want to delete.</p>
-    /// <p>For custom attributes, you must prependattach the <code>custom:</code> prefix to the front of the attribute name.</p>
+    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name, for example <code>custom:department</code>.</p>
     pub fn get_user_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_user_attribute_names()
     }

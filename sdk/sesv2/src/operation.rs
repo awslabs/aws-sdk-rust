@@ -43,6 +43,9 @@ pub mod create_export_job;
 /// Types for the `CreateImportJob` operation.
 pub mod create_import_job;
 
+/// Types for the `CreateMultiRegionEndpoint` operation.
+pub mod create_multi_region_endpoint;
+
 /// Types for the `DeleteConfigurationSet` operation.
 pub mod delete_configuration_set;
 
@@ -69,6 +72,9 @@ pub mod delete_email_identity_policy;
 
 /// Types for the `DeleteEmailTemplate` operation.
 pub mod delete_email_template;
+
+/// Types for the `DeleteMultiRegionEndpoint` operation.
+pub mod delete_multi_region_endpoint;
 
 /// Types for the `DeleteSuppressedDestination` operation.
 pub mod delete_suppressed_destination;
@@ -133,6 +139,9 @@ pub mod get_import_job;
 /// Types for the `GetMessageInsights` operation.
 pub mod get_message_insights;
 
+/// Types for the `GetMultiRegionEndpoint` operation.
+pub mod get_multi_region_endpoint;
+
 /// Types for the `GetSuppressedDestination` operation.
 pub mod get_suppressed_destination;
 
@@ -168,6 +177,9 @@ pub mod list_export_jobs;
 
 /// Types for the `ListImportJobs` operation.
 pub mod list_import_jobs;
+
+/// Types for the `ListMultiRegionEndpoints` operation.
+pub mod list_multi_region_endpoints;
 
 /// Types for the `ListRecommendations` operation.
 pub mod list_recommendations;

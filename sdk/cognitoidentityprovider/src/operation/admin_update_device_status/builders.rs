@@ -22,7 +22,7 @@ impl crate::operation::admin_update_device_status::builders::AdminUpdateDeviceSt
 }
 /// Fluent builder constructing a request to `AdminUpdateDeviceStatus`.
 ///
-/// <p>Updates the device status as an administrator.</p><note>
+/// <p>Updates the status of a user's device so that it is marked as remembered or not remembered for the purpose of device authentication. Device authentication is a "remember me" mechanism that silently completes sign-in from trusted devices with a device key instead of a user-provided MFA code. This operation changes the status of a device without deleting it, so you can enable it again later. For more information about device authentication, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working with devices</a>.</p><note>
 /// <p>Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.</p>
 /// <p class="title"><b>Learn more</b></p>
 /// <ul>
@@ -117,17 +117,17 @@ impl AdminUpdateDeviceStatusFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where you want to change a user's device status.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_pool_id(input.into());
         self
     }
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where you want to change a user's device status.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where you want to change a user's device status.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_pool_id()
     }
@@ -145,31 +145,31 @@ impl AdminUpdateDeviceStatusFluentBuilder {
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_username()
     }
-    /// <p>The device key.</p>
+    /// <p>The unique identifier, or device key, of the device that you want to update the status for.</p>
     pub fn device_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_key(input.into());
         self
     }
-    /// <p>The device key.</p>
+    /// <p>The unique identifier, or device key, of the device that you want to update the status for.</p>
     pub fn set_device_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_key(input);
         self
     }
-    /// <p>The device key.</p>
+    /// <p>The unique identifier, or device key, of the device that you want to update the status for.</p>
     pub fn get_device_key(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_device_key()
     }
-    /// <p>The status indicating whether a device has been remembered or not.</p>
+    /// <p>To enable device authentication with the specified device, set to <code>remembered</code>.To disable, set to <code>not_remembered</code>.</p>
     pub fn device_remembered_status(mut self, input: crate::types::DeviceRememberedStatusType) -> Self {
         self.inner = self.inner.device_remembered_status(input);
         self
     }
-    /// <p>The status indicating whether a device has been remembered or not.</p>
+    /// <p>To enable device authentication with the specified device, set to <code>remembered</code>.To disable, set to <code>not_remembered</code>.</p>
     pub fn set_device_remembered_status(mut self, input: ::std::option::Option<crate::types::DeviceRememberedStatusType>) -> Self {
         self.inner = self.inner.set_device_remembered_status(input);
         self
     }
-    /// <p>The status indicating whether a device has been remembered or not.</p>
+    /// <p>To enable device authentication with the specified device, set to <code>remembered</code>.To disable, set to <code>not_remembered</code>.</p>
     pub fn get_device_remembered_status(&self) -> &::std::option::Option<crate::types::DeviceRememberedStatusType> {
         self.inner.get_device_remembered_status()
     }

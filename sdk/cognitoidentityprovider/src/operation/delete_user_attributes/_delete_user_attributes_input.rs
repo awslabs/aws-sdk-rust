@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DeleteUserAttributesInput {
     /// <p>An array of strings representing the user attribute names you want to delete.</p>
-    /// <p>For custom attributes, you must prependattach the <code>custom:</code> prefix to the front of the attribute name.</p>
+    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name, for example <code>custom:department</code>.</p>
     pub user_attribute_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A valid access token that Amazon Cognito issued to the user whose attributes you want to delete.</p>
     pub access_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteUserAttributesInput {
     /// <p>An array of strings representing the user attribute names you want to delete.</p>
-    /// <p>For custom attributes, you must prependattach the <code>custom:</code> prefix to the front of the attribute name.</p>
+    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name, for example <code>custom:department</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_attribute_names.is_none()`.
     pub fn user_attribute_names(&self) -> &[::std::string::String] {
@@ -51,7 +51,7 @@ impl DeleteUserAttributesInputBuilder {
     /// To override the contents of this collection use [`set_user_attribute_names`](Self::set_user_attribute_names).
     ///
     /// <p>An array of strings representing the user attribute names you want to delete.</p>
-    /// <p>For custom attributes, you must prependattach the <code>custom:</code> prefix to the front of the attribute name.</p>
+    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name, for example <code>custom:department</code>.</p>
     pub fn user_attribute_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.user_attribute_names.unwrap_or_default();
         v.push(input.into());
@@ -59,13 +59,13 @@ impl DeleteUserAttributesInputBuilder {
         self
     }
     /// <p>An array of strings representing the user attribute names you want to delete.</p>
-    /// <p>For custom attributes, you must prependattach the <code>custom:</code> prefix to the front of the attribute name.</p>
+    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name, for example <code>custom:department</code>.</p>
     pub fn set_user_attribute_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.user_attribute_names = input;
         self
     }
     /// <p>An array of strings representing the user attribute names you want to delete.</p>
-    /// <p>For custom attributes, you must prependattach the <code>custom:</code> prefix to the front of the attribute name.</p>
+    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name, for example <code>custom:department</code>.</p>
     pub fn get_user_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.user_attribute_names
     }

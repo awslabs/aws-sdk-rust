@@ -36,26 +36,29 @@ pub fn ser_send_bulk_email_input_input(
         }
         array_9.finish();
     }
-    if let Some(var_12) = &input.feedback_forwarding_email_address {
-        object.key("FeedbackForwardingEmailAddress").string(var_12.as_str());
+    if let Some(var_12) = &input.endpoint_id {
+        object.key("EndpointId").string(var_12.as_str());
     }
-    if let Some(var_13) = &input.feedback_forwarding_email_address_identity_arn {
-        object.key("FeedbackForwardingEmailAddressIdentityArn").string(var_13.as_str());
+    if let Some(var_13) = &input.feedback_forwarding_email_address {
+        object.key("FeedbackForwardingEmailAddress").string(var_13.as_str());
     }
-    if let Some(var_14) = &input.from_email_address {
-        object.key("FromEmailAddress").string(var_14.as_str());
+    if let Some(var_14) = &input.feedback_forwarding_email_address_identity_arn {
+        object.key("FeedbackForwardingEmailAddressIdentityArn").string(var_14.as_str());
     }
-    if let Some(var_15) = &input.from_email_address_identity_arn {
-        object.key("FromEmailAddressIdentityArn").string(var_15.as_str());
+    if let Some(var_15) = &input.from_email_address {
+        object.key("FromEmailAddress").string(var_15.as_str());
     }
-    if let Some(var_16) = &input.reply_to_addresses {
-        let mut array_17 = object.key("ReplyToAddresses").start_array();
-        for item_18 in var_16 {
+    if let Some(var_16) = &input.from_email_address_identity_arn {
+        object.key("FromEmailAddressIdentityArn").string(var_16.as_str());
+    }
+    if let Some(var_17) = &input.reply_to_addresses {
+        let mut array_18 = object.key("ReplyToAddresses").start_array();
+        for item_19 in var_17 {
             {
-                array_17.value().string(item_18.as_str());
+                array_18.value().string(item_19.as_str());
             }
         }
-        array_17.finish();
+        array_18.finish();
     }
     Ok(())
 }

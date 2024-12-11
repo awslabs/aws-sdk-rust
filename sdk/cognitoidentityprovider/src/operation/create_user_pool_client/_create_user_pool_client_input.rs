@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateUserPoolClientInput {
-    /// <p>The user pool ID for the user pool where you want to create a user pool client.</p>
+    /// <p>The ID of the user pool where you want to create an app client.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
-    /// <p>The client name for the user pool client you would like to create.</p>
+    /// <p>A friendly name for the app client that you want to create.</p>
     pub client_name: ::std::option::Option<::std::string::String>,
-    /// <p>Boolean to specify whether you want to generate a secret for the user pool client being created.</p>
+    /// <p>When <code>true</code>, generates a client secret for the app client. Client secrets are used with server-side and machine-to-machine applications. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-client-apps.html#user-pool-settings-client-app-client-types">App client types</a>.</p>
     pub generate_secret: ::std::option::Option<bool>,
     /// <p>The refresh token time limit. After this limit expires, your user can't use their refresh token. To specify the time unit for <code>RefreshTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
     /// <p>For example, when you set <code>RefreshTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>days</code>, your user can refresh their session and retrieve new access and ID tokens for 10 days.</p>
@@ -25,7 +25,7 @@ pub struct CreateUserPoolClientInput {
     /// <p>The default time unit for <code>IdTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
     /// <p>If you don't specify otherwise in the configuration of your app client, your ID tokens are valid for one hour.</p>
     pub id_token_validity: ::std::option::Option<i32>,
-    /// <p>The units in which the validity times are represented. The default unit for RefreshToken is days, and default for ID and access tokens are hours.</p>
+    /// <p>The units that validity times are represented in. The default unit for refresh tokens is days, and the default for ID and access tokens are hours.</p>
     pub token_validity_units: ::std::option::Option<crate::types::TokenValidityUnitsType>,
     /// <p>The list of user attributes that you want your app client to have read access to. After your user authenticates in your app, their access token authorizes them to read their own attribute value for any attribute in this list. An example of this kind of activity is when your user selects a link to view their profile information. Your app makes a <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUser.html">GetUser</a> API request to retrieve and display your user's profile data.</p>
     /// <p>When you don't specify the <code>ReadAttributes</code> for your app client, your app can read the values of <code>email_verified</code>, <code>phone_number_verified</code>, and the Standard attributes of your user pool. When your user pool app client has read access to these default attributes, <code>ReadAttributes</code> doesn't return any information. Amazon Cognito only populates <code>ReadAttributes</code> in the API response if you have specified your own custom set of read attributes.</p>
@@ -55,7 +55,7 @@ pub struct CreateUserPoolClientInput {
     /// <p>In some environments, you will see the values <code>ADMIN_NO_SRP_AUTH</code>, <code>CUSTOM_AUTH_FLOW_ONLY</code>, or <code>USER_PASSWORD_AUTH</code>. You can't assign these legacy <code>ExplicitAuthFlows</code> values to user pool clients at the same time as values that begin with <code>ALLOW_</code>, like <code>ALLOW_USER_SRP_AUTH</code>.</p>
     pub explicit_auth_flows: ::std::option::Option<::std::vec::Vec<crate::types::ExplicitAuthFlowsType>>,
     /// <p>A list of provider names for the identity providers (IdPs) that are supported on this client. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code>, <code>SignInWithApple</code>, and <code>LoginWithAmazon</code>. You can also specify the names that you configured for the SAML and OIDC IdPs in your user pool, for example <code>MySAMLIdP</code> or <code>MyOIDCIdP</code>.</p>
-    /// <p>This setting applies to providers that you can access with the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-app-integration.html">hosted UI and OAuth 2.0 authorization server</a>. The removal of <code>COGNITO</code> from this list doesn't prevent authentication operations for local users with the user pools API in an Amazon Web Services SDK. The only way to prevent API-based authentication is to block access with a <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-waf.html">WAF rule</a>.</p>
+    /// <p>This setting applies to providers that you can access with <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html">managed login</a>. The removal of <code>COGNITO</code> from this list doesn't prevent authentication operations for local users with the user pools API in an Amazon Web Services SDK. The only way to prevent API-based authentication is to block access with a <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-waf.html">WAF rule</a>.</p>
     pub supported_identity_providers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of allowed redirect (callback) URLs for the IdPs.</p>
     /// <p>A redirect URI must:</p>
@@ -63,7 +63,7 @@ pub struct CreateUserPoolClientInput {
     /// <li>
     /// <p>Be an absolute URI.</p></li>
     /// <li>
-    /// <p>Be registered with the authorization server.</p></li>
+    /// <p>Be registered with the authorization server. Amazon Cognito doesn't accept authorization requests with <code>redirect_uri</code> values that aren't in the list of <code>CallbackURLs</code> that you provide in this parameter.</p></li>
     /// <li>
     /// <p>Not include a fragment component.</p></li>
     /// </ul>
@@ -71,21 +71,9 @@ pub struct CreateUserPoolClientInput {
     /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
     /// <p>App callback URLs such as myapp://example are also supported.</p>
     pub callback_urls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>A list of allowed logout URLs for the IdPs.</p>
+    /// <p>A list of allowed logout URLs for managed login authentication. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/logout-endpoint.html">Logout endpoint</a>.</p>
     pub logout_urls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The default redirect URI. In app clients with one assigned IdP, replaces <code>redirect_uri</code> in authentication requests. Must be in the <code>CallbackURLs</code> list.</p>
-    /// <p>A redirect URI must:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Be an absolute URI.</p></li>
-    /// <li>
-    /// <p>Be registered with the authorization server.</p></li>
-    /// <li>
-    /// <p>Not include a fragment component.</p></li>
-    /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-client-apps.html#cognito-user-pools-app-idp-settings-about">Default redirect URI</a>.</p>
-    /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
-    /// <p>App callback URLs such as myapp://example are also supported.</p>
     pub default_redirect_uri: ::std::option::Option<::std::string::String>,
     /// <p>The OAuth grant types that you want your app client to generate. To create an app client that generates client credentials grants, you must add <code>client_credentials</code> as the only allowed OAuth flow.</p>
     /// <dl>
@@ -109,7 +97,7 @@ pub struct CreateUserPoolClientInput {
     /// </dd>
     /// </dl>
     pub allowed_o_auth_flows: ::std::option::Option<::std::vec::Vec<crate::types::OAuthFlowType>>,
-    /// <p>The allowed OAuth scopes. Possible values provided by OAuth are <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.</p>
+    /// <p>The OAuth 2.0 scopes that you want to permit your app client to authorize. Scopes govern access control to user pool self-service API operations, user data from the <code>userInfo</code> endpoint, and third-party APIs. Possible values provided by OAuth are <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.</p>
     pub allowed_o_auth_scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Set to <code>true</code> to use OAuth 2.0 features in your user pool app client.</p>
     /// <p><code>AllowedOAuthFlowsUserPoolClient</code> must be <code>true</code> before you can configure the following features in your app client.</p>
@@ -125,9 +113,8 @@ pub struct CreateUserPoolClientInput {
     /// </ul>
     /// <p>To use OAuth 2.0 features, configure one of these features in the Amazon Cognito console or set <code>AllowedOAuthFlowsUserPoolClient</code> to <code>true</code> in a <code>CreateUserPoolClient</code> or <code>UpdateUserPoolClient</code> API request. If you don't set a value for <code>AllowedOAuthFlowsUserPoolClient</code> in a request with the CLI or SDKs, it defaults to <code>false</code>.</p>
     pub allowed_o_auth_flows_user_pool_client: ::std::option::Option<bool>,
-    /// <p>The user pool analytics configuration for collecting metrics and sending them to your Amazon Pinpoint campaign.</p><note>
-    /// <p>In Amazon Web Services Regions where Amazon Pinpoint isn't available, user pools only support sending events to Amazon Pinpoint projects in Amazon Web Services Region us-east-1. In Regions where Amazon Pinpoint is available, user pools support sending events to Amazon Pinpoint projects within that same Region.</p>
-    /// </note>
+    /// <p>The user pool analytics configuration for collecting metrics and sending them to your Amazon Pinpoint campaign.</p>
+    /// <p>In Amazon Web Services Regions where Amazon Pinpoint isn't available, user pools might not have access to analytics or might be configurable with campaigns in the US East (N. Virginia) Region. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-pinpoint-integration.html">Using Amazon Pinpoint analytics</a>.</p>
     pub analytics_configuration: ::std::option::Option<crate::types::AnalyticsConfigurationType>,
     /// <p>Errors and responses that you want Amazon Cognito APIs to return during authentication, account confirmation, and password recovery when the user doesn't exist in the user pool. When set to <code>ENABLED</code> and the user doesn't exist, authentication returns an error indicating either the username or password was incorrect. Account confirmation and password recovery return a response indicating a code was sent to a simulated destination. When set to <code>LEGACY</code>, those APIs return a <code>UserNotFoundException</code> exception if the user doesn't exist in the user pool.</p>
     /// <p>Valid values include:</p>
@@ -148,15 +135,15 @@ pub struct CreateUserPoolClientInput {
     pub auth_session_validity: ::std::option::Option<i32>,
 }
 impl CreateUserPoolClientInput {
-    /// <p>The user pool ID for the user pool where you want to create a user pool client.</p>
+    /// <p>The ID of the user pool where you want to create an app client.</p>
     pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
-    /// <p>The client name for the user pool client you would like to create.</p>
+    /// <p>A friendly name for the app client that you want to create.</p>
     pub fn client_name(&self) -> ::std::option::Option<&str> {
         self.client_name.as_deref()
     }
-    /// <p>Boolean to specify whether you want to generate a secret for the user pool client being created.</p>
+    /// <p>When <code>true</code>, generates a client secret for the app client. Client secrets are used with server-side and machine-to-machine applications. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-client-apps.html#user-pool-settings-client-app-client-types">App client types</a>.</p>
     pub fn generate_secret(&self) -> ::std::option::Option<bool> {
         self.generate_secret
     }
@@ -181,7 +168,7 @@ impl CreateUserPoolClientInput {
     pub fn id_token_validity(&self) -> ::std::option::Option<i32> {
         self.id_token_validity
     }
-    /// <p>The units in which the validity times are represented. The default unit for RefreshToken is days, and default for ID and access tokens are hours.</p>
+    /// <p>The units that validity times are represented in. The default unit for refresh tokens is days, and the default for ID and access tokens are hours.</p>
     pub fn token_validity_units(&self) -> ::std::option::Option<&crate::types::TokenValidityUnitsType> {
         self.token_validity_units.as_ref()
     }
@@ -225,7 +212,7 @@ impl CreateUserPoolClientInput {
         self.explicit_auth_flows.as_deref().unwrap_or_default()
     }
     /// <p>A list of provider names for the identity providers (IdPs) that are supported on this client. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code>, <code>SignInWithApple</code>, and <code>LoginWithAmazon</code>. You can also specify the names that you configured for the SAML and OIDC IdPs in your user pool, for example <code>MySAMLIdP</code> or <code>MyOIDCIdP</code>.</p>
-    /// <p>This setting applies to providers that you can access with the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-app-integration.html">hosted UI and OAuth 2.0 authorization server</a>. The removal of <code>COGNITO</code> from this list doesn't prevent authentication operations for local users with the user pools API in an Amazon Web Services SDK. The only way to prevent API-based authentication is to block access with a <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-waf.html">WAF rule</a>.</p>
+    /// <p>This setting applies to providers that you can access with <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html">managed login</a>. The removal of <code>COGNITO</code> from this list doesn't prevent authentication operations for local users with the user pools API in an Amazon Web Services SDK. The only way to prevent API-based authentication is to block access with a <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-waf.html">WAF rule</a>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_identity_providers.is_none()`.
     pub fn supported_identity_providers(&self) -> &[::std::string::String] {
@@ -237,7 +224,7 @@ impl CreateUserPoolClientInput {
     /// <li>
     /// <p>Be an absolute URI.</p></li>
     /// <li>
-    /// <p>Be registered with the authorization server.</p></li>
+    /// <p>Be registered with the authorization server. Amazon Cognito doesn't accept authorization requests with <code>redirect_uri</code> values that aren't in the list of <code>CallbackURLs</code> that you provide in this parameter.</p></li>
     /// <li>
     /// <p>Not include a fragment component.</p></li>
     /// </ul>
@@ -249,25 +236,13 @@ impl CreateUserPoolClientInput {
     pub fn callback_urls(&self) -> &[::std::string::String] {
         self.callback_urls.as_deref().unwrap_or_default()
     }
-    /// <p>A list of allowed logout URLs for the IdPs.</p>
+    /// <p>A list of allowed logout URLs for managed login authentication. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/logout-endpoint.html">Logout endpoint</a>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.logout_urls.is_none()`.
     pub fn logout_urls(&self) -> &[::std::string::String] {
         self.logout_urls.as_deref().unwrap_or_default()
     }
     /// <p>The default redirect URI. In app clients with one assigned IdP, replaces <code>redirect_uri</code> in authentication requests. Must be in the <code>CallbackURLs</code> list.</p>
-    /// <p>A redirect URI must:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Be an absolute URI.</p></li>
-    /// <li>
-    /// <p>Be registered with the authorization server.</p></li>
-    /// <li>
-    /// <p>Not include a fragment component.</p></li>
-    /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-client-apps.html#cognito-user-pools-app-idp-settings-about">Default redirect URI</a>.</p>
-    /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
-    /// <p>App callback URLs such as myapp://example are also supported.</p>
     pub fn default_redirect_uri(&self) -> ::std::option::Option<&str> {
         self.default_redirect_uri.as_deref()
     }
@@ -297,7 +272,7 @@ impl CreateUserPoolClientInput {
     pub fn allowed_o_auth_flows(&self) -> &[crate::types::OAuthFlowType] {
         self.allowed_o_auth_flows.as_deref().unwrap_or_default()
     }
-    /// <p>The allowed OAuth scopes. Possible values provided by OAuth are <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.</p>
+    /// <p>The OAuth 2.0 scopes that you want to permit your app client to authorize. Scopes govern access control to user pool self-service API operations, user data from the <code>userInfo</code> endpoint, and third-party APIs. Possible values provided by OAuth are <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_o_auth_scopes.is_none()`.
     pub fn allowed_o_auth_scopes(&self) -> &[::std::string::String] {
@@ -319,9 +294,8 @@ impl CreateUserPoolClientInput {
     pub fn allowed_o_auth_flows_user_pool_client(&self) -> ::std::option::Option<bool> {
         self.allowed_o_auth_flows_user_pool_client
     }
-    /// <p>The user pool analytics configuration for collecting metrics and sending them to your Amazon Pinpoint campaign.</p><note>
-    /// <p>In Amazon Web Services Regions where Amazon Pinpoint isn't available, user pools only support sending events to Amazon Pinpoint projects in Amazon Web Services Region us-east-1. In Regions where Amazon Pinpoint is available, user pools support sending events to Amazon Pinpoint projects within that same Region.</p>
-    /// </note>
+    /// <p>The user pool analytics configuration for collecting metrics and sending them to your Amazon Pinpoint campaign.</p>
+    /// <p>In Amazon Web Services Regions where Amazon Pinpoint isn't available, user pools might not have access to analytics or might be configurable with campaigns in the US East (N. Virginia) Region. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-pinpoint-integration.html">Using Amazon Pinpoint analytics</a>.</p>
     pub fn analytics_configuration(&self) -> ::std::option::Option<&crate::types::AnalyticsConfigurationType> {
         self.analytics_configuration.as_ref()
     }
@@ -386,47 +360,47 @@ pub struct CreateUserPoolClientInputBuilder {
     pub(crate) auth_session_validity: ::std::option::Option<i32>,
 }
 impl CreateUserPoolClientInputBuilder {
-    /// <p>The user pool ID for the user pool where you want to create a user pool client.</p>
+    /// <p>The ID of the user pool where you want to create an app client.</p>
     /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user pool ID for the user pool where you want to create a user pool client.</p>
+    /// <p>The ID of the user pool where you want to create an app client.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
     }
-    /// <p>The user pool ID for the user pool where you want to create a user pool client.</p>
+    /// <p>The ID of the user pool where you want to create an app client.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_pool_id
     }
-    /// <p>The client name for the user pool client you would like to create.</p>
+    /// <p>A friendly name for the app client that you want to create.</p>
     /// This field is required.
     pub fn client_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The client name for the user pool client you would like to create.</p>
+    /// <p>A friendly name for the app client that you want to create.</p>
     pub fn set_client_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_name = input;
         self
     }
-    /// <p>The client name for the user pool client you would like to create.</p>
+    /// <p>A friendly name for the app client that you want to create.</p>
     pub fn get_client_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_name
     }
-    /// <p>Boolean to specify whether you want to generate a secret for the user pool client being created.</p>
+    /// <p>When <code>true</code>, generates a client secret for the app client. Client secrets are used with server-side and machine-to-machine applications. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-client-apps.html#user-pool-settings-client-app-client-types">App client types</a>.</p>
     pub fn generate_secret(mut self, input: bool) -> Self {
         self.generate_secret = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Boolean to specify whether you want to generate a secret for the user pool client being created.</p>
+    /// <p>When <code>true</code>, generates a client secret for the app client. Client secrets are used with server-side and machine-to-machine applications. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-client-apps.html#user-pool-settings-client-app-client-types">App client types</a>.</p>
     pub fn set_generate_secret(mut self, input: ::std::option::Option<bool>) -> Self {
         self.generate_secret = input;
         self
     }
-    /// <p>Boolean to specify whether you want to generate a secret for the user pool client being created.</p>
+    /// <p>When <code>true</code>, generates a client secret for the app client. Client secrets are used with server-side and machine-to-machine applications. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-client-apps.html#user-pool-settings-client-app-client-types">App client types</a>.</p>
     pub fn get_generate_secret(&self) -> &::std::option::Option<bool> {
         &self.generate_secret
     }
@@ -499,17 +473,17 @@ impl CreateUserPoolClientInputBuilder {
     pub fn get_id_token_validity(&self) -> &::std::option::Option<i32> {
         &self.id_token_validity
     }
-    /// <p>The units in which the validity times are represented. The default unit for RefreshToken is days, and default for ID and access tokens are hours.</p>
+    /// <p>The units that validity times are represented in. The default unit for refresh tokens is days, and the default for ID and access tokens are hours.</p>
     pub fn token_validity_units(mut self, input: crate::types::TokenValidityUnitsType) -> Self {
         self.token_validity_units = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The units in which the validity times are represented. The default unit for RefreshToken is days, and default for ID and access tokens are hours.</p>
+    /// <p>The units that validity times are represented in. The default unit for refresh tokens is days, and the default for ID and access tokens are hours.</p>
     pub fn set_token_validity_units(mut self, input: ::std::option::Option<crate::types::TokenValidityUnitsType>) -> Self {
         self.token_validity_units = input;
         self
     }
-    /// <p>The units in which the validity times are represented. The default unit for RefreshToken is days, and default for ID and access tokens are hours.</p>
+    /// <p>The units that validity times are represented in. The default unit for refresh tokens is days, and the default for ID and access tokens are hours.</p>
     pub fn get_token_validity_units(&self) -> &::std::option::Option<crate::types::TokenValidityUnitsType> {
         &self.token_validity_units
     }
@@ -641,7 +615,7 @@ impl CreateUserPoolClientInputBuilder {
     /// To override the contents of this collection use [`set_supported_identity_providers`](Self::set_supported_identity_providers).
     ///
     /// <p>A list of provider names for the identity providers (IdPs) that are supported on this client. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code>, <code>SignInWithApple</code>, and <code>LoginWithAmazon</code>. You can also specify the names that you configured for the SAML and OIDC IdPs in your user pool, for example <code>MySAMLIdP</code> or <code>MyOIDCIdP</code>.</p>
-    /// <p>This setting applies to providers that you can access with the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-app-integration.html">hosted UI and OAuth 2.0 authorization server</a>. The removal of <code>COGNITO</code> from this list doesn't prevent authentication operations for local users with the user pools API in an Amazon Web Services SDK. The only way to prevent API-based authentication is to block access with a <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-waf.html">WAF rule</a>.</p>
+    /// <p>This setting applies to providers that you can access with <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html">managed login</a>. The removal of <code>COGNITO</code> from this list doesn't prevent authentication operations for local users with the user pools API in an Amazon Web Services SDK. The only way to prevent API-based authentication is to block access with a <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-waf.html">WAF rule</a>.</p>
     pub fn supported_identity_providers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.supported_identity_providers.unwrap_or_default();
         v.push(input.into());
@@ -649,13 +623,13 @@ impl CreateUserPoolClientInputBuilder {
         self
     }
     /// <p>A list of provider names for the identity providers (IdPs) that are supported on this client. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code>, <code>SignInWithApple</code>, and <code>LoginWithAmazon</code>. You can also specify the names that you configured for the SAML and OIDC IdPs in your user pool, for example <code>MySAMLIdP</code> or <code>MyOIDCIdP</code>.</p>
-    /// <p>This setting applies to providers that you can access with the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-app-integration.html">hosted UI and OAuth 2.0 authorization server</a>. The removal of <code>COGNITO</code> from this list doesn't prevent authentication operations for local users with the user pools API in an Amazon Web Services SDK. The only way to prevent API-based authentication is to block access with a <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-waf.html">WAF rule</a>.</p>
+    /// <p>This setting applies to providers that you can access with <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html">managed login</a>. The removal of <code>COGNITO</code> from this list doesn't prevent authentication operations for local users with the user pools API in an Amazon Web Services SDK. The only way to prevent API-based authentication is to block access with a <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-waf.html">WAF rule</a>.</p>
     pub fn set_supported_identity_providers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.supported_identity_providers = input;
         self
     }
     /// <p>A list of provider names for the identity providers (IdPs) that are supported on this client. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code>, <code>SignInWithApple</code>, and <code>LoginWithAmazon</code>. You can also specify the names that you configured for the SAML and OIDC IdPs in your user pool, for example <code>MySAMLIdP</code> or <code>MyOIDCIdP</code>.</p>
-    /// <p>This setting applies to providers that you can access with the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-app-integration.html">hosted UI and OAuth 2.0 authorization server</a>. The removal of <code>COGNITO</code> from this list doesn't prevent authentication operations for local users with the user pools API in an Amazon Web Services SDK. The only way to prevent API-based authentication is to block access with a <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-waf.html">WAF rule</a>.</p>
+    /// <p>This setting applies to providers that you can access with <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html">managed login</a>. The removal of <code>COGNITO</code> from this list doesn't prevent authentication operations for local users with the user pools API in an Amazon Web Services SDK. The only way to prevent API-based authentication is to block access with a <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-waf.html">WAF rule</a>.</p>
     pub fn get_supported_identity_providers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.supported_identity_providers
     }
@@ -669,7 +643,7 @@ impl CreateUserPoolClientInputBuilder {
     /// <li>
     /// <p>Be an absolute URI.</p></li>
     /// <li>
-    /// <p>Be registered with the authorization server.</p></li>
+    /// <p>Be registered with the authorization server. Amazon Cognito doesn't accept authorization requests with <code>redirect_uri</code> values that aren't in the list of <code>CallbackURLs</code> that you provide in this parameter.</p></li>
     /// <li>
     /// <p>Not include a fragment component.</p></li>
     /// </ul>
@@ -688,7 +662,7 @@ impl CreateUserPoolClientInputBuilder {
     /// <li>
     /// <p>Be an absolute URI.</p></li>
     /// <li>
-    /// <p>Be registered with the authorization server.</p></li>
+    /// <p>Be registered with the authorization server. Amazon Cognito doesn't accept authorization requests with <code>redirect_uri</code> values that aren't in the list of <code>CallbackURLs</code> that you provide in this parameter.</p></li>
     /// <li>
     /// <p>Not include a fragment component.</p></li>
     /// </ul>
@@ -705,7 +679,7 @@ impl CreateUserPoolClientInputBuilder {
     /// <li>
     /// <p>Be an absolute URI.</p></li>
     /// <li>
-    /// <p>Be registered with the authorization server.</p></li>
+    /// <p>Be registered with the authorization server. Amazon Cognito doesn't accept authorization requests with <code>redirect_uri</code> values that aren't in the list of <code>CallbackURLs</code> that you provide in this parameter.</p></li>
     /// <li>
     /// <p>Not include a fragment component.</p></li>
     /// </ul>
@@ -719,69 +693,33 @@ impl CreateUserPoolClientInputBuilder {
     ///
     /// To override the contents of this collection use [`set_logout_urls`](Self::set_logout_urls).
     ///
-    /// <p>A list of allowed logout URLs for the IdPs.</p>
+    /// <p>A list of allowed logout URLs for managed login authentication. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/logout-endpoint.html">Logout endpoint</a>.</p>
     pub fn logout_urls(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.logout_urls.unwrap_or_default();
         v.push(input.into());
         self.logout_urls = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of allowed logout URLs for the IdPs.</p>
+    /// <p>A list of allowed logout URLs for managed login authentication. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/logout-endpoint.html">Logout endpoint</a>.</p>
     pub fn set_logout_urls(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.logout_urls = input;
         self
     }
-    /// <p>A list of allowed logout URLs for the IdPs.</p>
+    /// <p>A list of allowed logout URLs for managed login authentication. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/logout-endpoint.html">Logout endpoint</a>.</p>
     pub fn get_logout_urls(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.logout_urls
     }
     /// <p>The default redirect URI. In app clients with one assigned IdP, replaces <code>redirect_uri</code> in authentication requests. Must be in the <code>CallbackURLs</code> list.</p>
-    /// <p>A redirect URI must:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Be an absolute URI.</p></li>
-    /// <li>
-    /// <p>Be registered with the authorization server.</p></li>
-    /// <li>
-    /// <p>Not include a fragment component.</p></li>
-    /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-client-apps.html#cognito-user-pools-app-idp-settings-about">Default redirect URI</a>.</p>
-    /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
-    /// <p>App callback URLs such as myapp://example are also supported.</p>
     pub fn default_redirect_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_redirect_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default redirect URI. In app clients with one assigned IdP, replaces <code>redirect_uri</code> in authentication requests. Must be in the <code>CallbackURLs</code> list.</p>
-    /// <p>A redirect URI must:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Be an absolute URI.</p></li>
-    /// <li>
-    /// <p>Be registered with the authorization server.</p></li>
-    /// <li>
-    /// <p>Not include a fragment component.</p></li>
-    /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-client-apps.html#cognito-user-pools-app-idp-settings-about">Default redirect URI</a>.</p>
-    /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
-    /// <p>App callback URLs such as myapp://example are also supported.</p>
     pub fn set_default_redirect_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_redirect_uri = input;
         self
     }
     /// <p>The default redirect URI. In app clients with one assigned IdP, replaces <code>redirect_uri</code> in authentication requests. Must be in the <code>CallbackURLs</code> list.</p>
-    /// <p>A redirect URI must:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Be an absolute URI.</p></li>
-    /// <li>
-    /// <p>Be registered with the authorization server.</p></li>
-    /// <li>
-    /// <p>Not include a fragment component.</p></li>
-    /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-client-apps.html#cognito-user-pools-app-idp-settings-about">Default redirect URI</a>.</p>
-    /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
-    /// <p>App callback URLs such as myapp://example are also supported.</p>
     pub fn get_default_redirect_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.default_redirect_uri
     }
@@ -869,19 +807,19 @@ impl CreateUserPoolClientInputBuilder {
     ///
     /// To override the contents of this collection use [`set_allowed_o_auth_scopes`](Self::set_allowed_o_auth_scopes).
     ///
-    /// <p>The allowed OAuth scopes. Possible values provided by OAuth are <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.</p>
+    /// <p>The OAuth 2.0 scopes that you want to permit your app client to authorize. Scopes govern access control to user pool self-service API operations, user data from the <code>userInfo</code> endpoint, and third-party APIs. Possible values provided by OAuth are <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.</p>
     pub fn allowed_o_auth_scopes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allowed_o_auth_scopes.unwrap_or_default();
         v.push(input.into());
         self.allowed_o_auth_scopes = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The allowed OAuth scopes. Possible values provided by OAuth are <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.</p>
+    /// <p>The OAuth 2.0 scopes that you want to permit your app client to authorize. Scopes govern access control to user pool self-service API operations, user data from the <code>userInfo</code> endpoint, and third-party APIs. Possible values provided by OAuth are <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.</p>
     pub fn set_allowed_o_auth_scopes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.allowed_o_auth_scopes = input;
         self
     }
-    /// <p>The allowed OAuth scopes. Possible values provided by OAuth are <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.</p>
+    /// <p>The OAuth 2.0 scopes that you want to permit your app client to authorize. Scopes govern access control to user pool self-service API operations, user data from the <code>userInfo</code> endpoint, and third-party APIs. Possible values provided by OAuth are <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.</p>
     pub fn get_allowed_o_auth_scopes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.allowed_o_auth_scopes
     }
@@ -935,23 +873,20 @@ impl CreateUserPoolClientInputBuilder {
     pub fn get_allowed_o_auth_flows_user_pool_client(&self) -> &::std::option::Option<bool> {
         &self.allowed_o_auth_flows_user_pool_client
     }
-    /// <p>The user pool analytics configuration for collecting metrics and sending them to your Amazon Pinpoint campaign.</p><note>
-    /// <p>In Amazon Web Services Regions where Amazon Pinpoint isn't available, user pools only support sending events to Amazon Pinpoint projects in Amazon Web Services Region us-east-1. In Regions where Amazon Pinpoint is available, user pools support sending events to Amazon Pinpoint projects within that same Region.</p>
-    /// </note>
+    /// <p>The user pool analytics configuration for collecting metrics and sending them to your Amazon Pinpoint campaign.</p>
+    /// <p>In Amazon Web Services Regions where Amazon Pinpoint isn't available, user pools might not have access to analytics or might be configurable with campaigns in the US East (N. Virginia) Region. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-pinpoint-integration.html">Using Amazon Pinpoint analytics</a>.</p>
     pub fn analytics_configuration(mut self, input: crate::types::AnalyticsConfigurationType) -> Self {
         self.analytics_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The user pool analytics configuration for collecting metrics and sending them to your Amazon Pinpoint campaign.</p><note>
-    /// <p>In Amazon Web Services Regions where Amazon Pinpoint isn't available, user pools only support sending events to Amazon Pinpoint projects in Amazon Web Services Region us-east-1. In Regions where Amazon Pinpoint is available, user pools support sending events to Amazon Pinpoint projects within that same Region.</p>
-    /// </note>
+    /// <p>The user pool analytics configuration for collecting metrics and sending them to your Amazon Pinpoint campaign.</p>
+    /// <p>In Amazon Web Services Regions where Amazon Pinpoint isn't available, user pools might not have access to analytics or might be configurable with campaigns in the US East (N. Virginia) Region. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-pinpoint-integration.html">Using Amazon Pinpoint analytics</a>.</p>
     pub fn set_analytics_configuration(mut self, input: ::std::option::Option<crate::types::AnalyticsConfigurationType>) -> Self {
         self.analytics_configuration = input;
         self
     }
-    /// <p>The user pool analytics configuration for collecting metrics and sending them to your Amazon Pinpoint campaign.</p><note>
-    /// <p>In Amazon Web Services Regions where Amazon Pinpoint isn't available, user pools only support sending events to Amazon Pinpoint projects in Amazon Web Services Region us-east-1. In Regions where Amazon Pinpoint is available, user pools support sending events to Amazon Pinpoint projects within that same Region.</p>
-    /// </note>
+    /// <p>The user pool analytics configuration for collecting metrics and sending them to your Amazon Pinpoint campaign.</p>
+    /// <p>In Amazon Web Services Regions where Amazon Pinpoint isn't available, user pools might not have access to analytics or might be configurable with campaigns in the US East (N. Virginia) Region. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-pinpoint-integration.html">Using Amazon Pinpoint analytics</a>.</p>
     pub fn get_analytics_configuration(&self) -> &::std::option::Option<crate::types::AnalyticsConfigurationType> {
         &self.analytics_configuration
     }

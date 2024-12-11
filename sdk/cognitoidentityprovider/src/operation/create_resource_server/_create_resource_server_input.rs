@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateResourceServerInput {
-    /// <p>The user pool ID for the user pool.</p>
+    /// <p>The ID of the user pool where you want to create a resource server.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique resource server identifier for the resource server. The identifier can be an API friendly name like <code>solar-system-data</code>. You can also set an API URL like <code>https://solar-system-data-api.example.com</code> as your identifier.</p>
     /// <p>Amazon Cognito represents scopes in the access token in the format <code>$resource-server-identifier/$scope</code>. Longer scope-identifier strings increase the size of your access tokens.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>A friendly name for the resource server.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>A list of scopes. Each scope is a key-value map with the keys <code>name</code> and <code>description</code>.</p>
+    /// <p>A list of custom scopes. Each scope is a key-value map with the keys <code>ScopeName</code> and <code>ScopeDescription</code>. The name of a custom scope is a combination of <code>ScopeName</code> and the resource server <code>Name</code> in this request, for example <code>MyResourceServerName/MyScopeName</code>.</p>
     pub scopes: ::std::option::Option<::std::vec::Vec<crate::types::ResourceServerScopeType>>,
 }
 impl CreateResourceServerInput {
-    /// <p>The user pool ID for the user pool.</p>
+    /// <p>The ID of the user pool where you want to create a resource server.</p>
     pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
@@ -27,7 +27,7 @@ impl CreateResourceServerInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A list of scopes. Each scope is a key-value map with the keys <code>name</code> and <code>description</code>.</p>
+    /// <p>A list of custom scopes. Each scope is a key-value map with the keys <code>ScopeName</code> and <code>ScopeDescription</code>. The name of a custom scope is a combination of <code>ScopeName</code> and the resource server <code>Name</code> in this request, for example <code>MyResourceServerName/MyScopeName</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scopes.is_none()`.
     pub fn scopes(&self) -> &[crate::types::ResourceServerScopeType] {
@@ -51,18 +51,18 @@ pub struct CreateResourceServerInputBuilder {
     pub(crate) scopes: ::std::option::Option<::std::vec::Vec<crate::types::ResourceServerScopeType>>,
 }
 impl CreateResourceServerInputBuilder {
-    /// <p>The user pool ID for the user pool.</p>
+    /// <p>The ID of the user pool where you want to create a resource server.</p>
     /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user pool ID for the user pool.</p>
+    /// <p>The ID of the user pool where you want to create a resource server.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
     }
-    /// <p>The user pool ID for the user pool.</p>
+    /// <p>The ID of the user pool where you want to create a resource server.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_pool_id
     }
@@ -103,19 +103,19 @@ impl CreateResourceServerInputBuilder {
     ///
     /// To override the contents of this collection use [`set_scopes`](Self::set_scopes).
     ///
-    /// <p>A list of scopes. Each scope is a key-value map with the keys <code>name</code> and <code>description</code>.</p>
+    /// <p>A list of custom scopes. Each scope is a key-value map with the keys <code>ScopeName</code> and <code>ScopeDescription</code>. The name of a custom scope is a combination of <code>ScopeName</code> and the resource server <code>Name</code> in this request, for example <code>MyResourceServerName/MyScopeName</code>.</p>
     pub fn scopes(mut self, input: crate::types::ResourceServerScopeType) -> Self {
         let mut v = self.scopes.unwrap_or_default();
         v.push(input);
         self.scopes = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of scopes. Each scope is a key-value map with the keys <code>name</code> and <code>description</code>.</p>
+    /// <p>A list of custom scopes. Each scope is a key-value map with the keys <code>ScopeName</code> and <code>ScopeDescription</code>. The name of a custom scope is a combination of <code>ScopeName</code> and the resource server <code>Name</code> in this request, for example <code>MyResourceServerName/MyScopeName</code>.</p>
     pub fn set_scopes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceServerScopeType>>) -> Self {
         self.scopes = input;
         self
     }
-    /// <p>A list of scopes. Each scope is a key-value map with the keys <code>name</code> and <code>description</code>.</p>
+    /// <p>A list of custom scopes. Each scope is a key-value map with the keys <code>ScopeName</code> and <code>ScopeDescription</code>. The name of a custom scope is a combination of <code>ScopeName</code> and the resource server <code>Name</code> in this request, for example <code>MyResourceServerName/MyScopeName</code>.</p>
     pub fn get_scopes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceServerScopeType>> {
         &self.scopes
     }

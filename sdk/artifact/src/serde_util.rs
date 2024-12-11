@@ -89,6 +89,15 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
+pub(crate) fn list_customer_agreements_output_output_correct_errors(
+    mut builder: crate::operation::list_customer_agreements::builders::ListCustomerAgreementsOutputBuilder,
+) -> crate::operation::list_customer_agreements::builders::ListCustomerAgreementsOutputBuilder {
+    if builder.customer_agreements.is_none() {
+        builder.customer_agreements = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn validation_exception_field_correct_errors(
     mut builder: crate::types::builders::ValidationExceptionFieldBuilder,
 ) -> crate::types::builders::ValidationExceptionFieldBuilder {

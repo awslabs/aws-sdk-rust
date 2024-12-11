@@ -41,9 +41,9 @@
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum PublishedState {
-    /// The resource is published for consumption.
+    #[allow(missing_docs)] // documentation missing in model
     Published,
-    /// The resource is not published for consumption.
+    #[allow(missing_docs)] // documentation missing in model
     Unpublished,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]

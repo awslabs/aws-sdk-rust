@@ -4,17 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AdminListDevicesInput {
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where the device owner is a user.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, this value must be the <code>sub</code> of a local user or the username of a user from a third-party IdP.</p>
     pub username: ::std::option::Option<::std::string::String>,
-    /// <p>The limit of the devices request.</p>
+    /// <p>The maximum number of devices that you want Amazon Cognito to return in the response.</p>
     pub limit: ::std::option::Option<i32>,
     /// <p>This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.</p>
     pub pagination_token: ::std::option::Option<::std::string::String>,
 }
 impl AdminListDevicesInput {
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where the device owner is a user.</p>
     pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
@@ -22,7 +22,7 @@ impl AdminListDevicesInput {
     pub fn username(&self) -> ::std::option::Option<&str> {
         self.username.as_deref()
     }
-    /// <p>The limit of the devices request.</p>
+    /// <p>The maximum number of devices that you want Amazon Cognito to return in the response.</p>
     pub fn limit(&self) -> ::std::option::Option<i32> {
         self.limit
     }
@@ -58,18 +58,18 @@ pub struct AdminListDevicesInputBuilder {
     pub(crate) pagination_token: ::std::option::Option<::std::string::String>,
 }
 impl AdminListDevicesInputBuilder {
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where the device owner is a user.</p>
     /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where the device owner is a user.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
     }
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where the device owner is a user.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_pool_id
     }
@@ -88,17 +88,17 @@ impl AdminListDevicesInputBuilder {
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
         &self.username
     }
-    /// <p>The limit of the devices request.</p>
+    /// <p>The maximum number of devices that you want Amazon Cognito to return in the response.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The limit of the devices request.</p>
+    /// <p>The maximum number of devices that you want Amazon Cognito to return in the response.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
     }
-    /// <p>The limit of the devices request.</p>
+    /// <p>The maximum number of devices that you want Amazon Cognito to return in the response.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         &self.limit
     }

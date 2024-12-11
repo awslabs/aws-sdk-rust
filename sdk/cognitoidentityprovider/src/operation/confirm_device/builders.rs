@@ -22,7 +22,7 @@ impl crate::operation::confirm_device::builders::ConfirmDeviceInputBuilder {
 }
 /// Fluent builder constructing a request to `ConfirmDevice`.
 ///
-/// <p>Confirms tracking of the device. This API call is the call that begins device tracking. For more information about device authentication, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working with user devices in your user pool</a>.</p>
+/// <p>Confirms a device that a user wants to remember. A remembered device is a "Remember me on this device" option for user pools that perform authentication with the device key of a trusted device in the back end, instead of a user-provided MFA code. For more information about device authentication, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working with user devices in your user pool</a>.</p>
 /// <p>Authorize this action with a signed-in user's access token. It must include the scope <code>aws.cognito.signin.user.admin</code>.</p><note>
 /// <p>Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you can't use IAM credentials to authorize requests, and you can't grant IAM permissions in policies. For more information about authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using the Amazon Cognito user pools API and user pool endpoints</a>.</p>
 /// </note>
@@ -125,17 +125,17 @@ impl ConfirmDeviceFluentBuilder {
     pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_access_token()
     }
-    /// <p>The device key.</p>
+    /// <p>The unique identifier, or device key, of the device that you want to update the status for.</p>
     pub fn device_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_key(input.into());
         self
     }
-    /// <p>The device key.</p>
+    /// <p>The unique identifier, or device key, of the device that you want to update the status for.</p>
     pub fn set_device_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_key(input);
         self
     }
-    /// <p>The device key.</p>
+    /// <p>The unique identifier, or device key, of the device that you want to update the status for.</p>
     pub fn get_device_key(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_device_key()
     }
@@ -153,17 +153,17 @@ impl ConfirmDeviceFluentBuilder {
     pub fn get_device_secret_verifier_config(&self) -> &::std::option::Option<crate::types::DeviceSecretVerifierConfigType> {
         self.inner.get_device_secret_verifier_config()
     }
-    /// <p>The device name.</p>
+    /// <p>A friendly name for the device, for example <code>MyMobilePhone</code>.</p>
     pub fn device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_name(input.into());
         self
     }
-    /// <p>The device name.</p>
+    /// <p>A friendly name for the device, for example <code>MyMobilePhone</code>.</p>
     pub fn set_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_name(input);
         self
     }
-    /// <p>The device name.</p>
+    /// <p>A friendly name for the device, for example <code>MyMobilePhone</code>.</p>
     pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_device_name()
     }

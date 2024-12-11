@@ -22,7 +22,8 @@ impl crate::operation::add_custom_attributes::builders::AddCustomAttributesInput
 }
 /// Fluent builder constructing a request to `AddCustomAttributes`.
 ///
-/// <p>Adds additional user attributes to the user pool schema.</p><note>
+/// <p>Adds additional user attributes to the user pool schema. Custom attributes can be mutable or immutable and have a <code>custom:</code> or <code>dev:</code> prefix. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#user-pool-settings-custom-attributes">Custom attributes</a>.</p>
+/// <p>You can also create custom attributes in the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html#CognitoUserPools-CreateUserPool-request-Schema">Schema parameter</a> of <code>CreateUserPool</code> and <code>UpdateUserPool</code>. You can't delete custom attributes after you create them.</p><note>
 /// <p>Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.</p>
 /// <p class="title"><b>Learn more</b></p>
 /// <ul>
@@ -117,17 +118,17 @@ impl AddCustomAttributesFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The user pool ID for the user pool where you want to add custom attributes.</p>
+    /// <p>The ID of the user pool where you want to add custom attributes.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_pool_id(input.into());
         self
     }
-    /// <p>The user pool ID for the user pool where you want to add custom attributes.</p>
+    /// <p>The ID of the user pool where you want to add custom attributes.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
-    /// <p>The user pool ID for the user pool where you want to add custom attributes.</p>
+    /// <p>The ID of the user pool where you want to add custom attributes.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_pool_id()
     }
@@ -136,17 +137,149 @@ impl AddCustomAttributesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_custom_attributes`](Self::set_custom_attributes).
     ///
-    /// <p>An array of custom attributes, such as Mutable and Name.</p>
+    /// <p>An array of custom attribute names and other properties. Sets the following characteristics:</p>
+    /// <dl>
+    /// <dt>
+    /// AttributeDataType
+    /// </dt>
+    /// <dd>
+    /// <p>The expected data type. Can be a string, a number, a date and time, or a boolean.</p>
+    /// </dd>
+    /// <dt>
+    /// Mutable
+    /// </dt>
+    /// <dd>
+    /// <p>If true, you can grant app clients write access to the attribute value. If false, the attribute value can only be set up on sign-up or administrator creation of users.</p>
+    /// </dd>
+    /// <dt>
+    /// Name
+    /// </dt>
+    /// <dd>
+    /// <p>The attribute name. For an attribute like <code>custom:myAttribute</code>, enter <code>myAttribute</code> for this field.</p>
+    /// </dd>
+    /// <dt>
+    /// Required
+    /// </dt>
+    /// <dd>
+    /// <p>When true, users who sign up or are created must set a value for the attribute.</p>
+    /// </dd>
+    /// <dt>
+    /// NumberAttributeConstraints
+    /// </dt>
+    /// <dd>
+    /// <p>The minimum and maximum length of accepted values for a <code>Number</code>-type attribute.</p>
+    /// </dd>
+    /// <dt>
+    /// StringAttributeConstraints
+    /// </dt>
+    /// <dd>
+    /// <p>The minimum and maximum length of accepted values for a <code>String</code>-type attribute.</p>
+    /// </dd>
+    /// <dt>
+    /// DeveloperOnlyAttribute
+    /// </dt>
+    /// <dd>
+    /// <p>This legacy option creates an attribute with a <code>dev:</code> prefix. You can only set the value of a developer-only attribute with administrative IAM credentials.</p>
+    /// </dd>
+    /// </dl>
     pub fn custom_attributes(mut self, input: crate::types::SchemaAttributeType) -> Self {
         self.inner = self.inner.custom_attributes(input);
         self
     }
-    /// <p>An array of custom attributes, such as Mutable and Name.</p>
+    /// <p>An array of custom attribute names and other properties. Sets the following characteristics:</p>
+    /// <dl>
+    /// <dt>
+    /// AttributeDataType
+    /// </dt>
+    /// <dd>
+    /// <p>The expected data type. Can be a string, a number, a date and time, or a boolean.</p>
+    /// </dd>
+    /// <dt>
+    /// Mutable
+    /// </dt>
+    /// <dd>
+    /// <p>If true, you can grant app clients write access to the attribute value. If false, the attribute value can only be set up on sign-up or administrator creation of users.</p>
+    /// </dd>
+    /// <dt>
+    /// Name
+    /// </dt>
+    /// <dd>
+    /// <p>The attribute name. For an attribute like <code>custom:myAttribute</code>, enter <code>myAttribute</code> for this field.</p>
+    /// </dd>
+    /// <dt>
+    /// Required
+    /// </dt>
+    /// <dd>
+    /// <p>When true, users who sign up or are created must set a value for the attribute.</p>
+    /// </dd>
+    /// <dt>
+    /// NumberAttributeConstraints
+    /// </dt>
+    /// <dd>
+    /// <p>The minimum and maximum length of accepted values for a <code>Number</code>-type attribute.</p>
+    /// </dd>
+    /// <dt>
+    /// StringAttributeConstraints
+    /// </dt>
+    /// <dd>
+    /// <p>The minimum and maximum length of accepted values for a <code>String</code>-type attribute.</p>
+    /// </dd>
+    /// <dt>
+    /// DeveloperOnlyAttribute
+    /// </dt>
+    /// <dd>
+    /// <p>This legacy option creates an attribute with a <code>dev:</code> prefix. You can only set the value of a developer-only attribute with administrative IAM credentials.</p>
+    /// </dd>
+    /// </dl>
     pub fn set_custom_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaAttributeType>>) -> Self {
         self.inner = self.inner.set_custom_attributes(input);
         self
     }
-    /// <p>An array of custom attributes, such as Mutable and Name.</p>
+    /// <p>An array of custom attribute names and other properties. Sets the following characteristics:</p>
+    /// <dl>
+    /// <dt>
+    /// AttributeDataType
+    /// </dt>
+    /// <dd>
+    /// <p>The expected data type. Can be a string, a number, a date and time, or a boolean.</p>
+    /// </dd>
+    /// <dt>
+    /// Mutable
+    /// </dt>
+    /// <dd>
+    /// <p>If true, you can grant app clients write access to the attribute value. If false, the attribute value can only be set up on sign-up or administrator creation of users.</p>
+    /// </dd>
+    /// <dt>
+    /// Name
+    /// </dt>
+    /// <dd>
+    /// <p>The attribute name. For an attribute like <code>custom:myAttribute</code>, enter <code>myAttribute</code> for this field.</p>
+    /// </dd>
+    /// <dt>
+    /// Required
+    /// </dt>
+    /// <dd>
+    /// <p>When true, users who sign up or are created must set a value for the attribute.</p>
+    /// </dd>
+    /// <dt>
+    /// NumberAttributeConstraints
+    /// </dt>
+    /// <dd>
+    /// <p>The minimum and maximum length of accepted values for a <code>Number</code>-type attribute.</p>
+    /// </dd>
+    /// <dt>
+    /// StringAttributeConstraints
+    /// </dt>
+    /// <dd>
+    /// <p>The minimum and maximum length of accepted values for a <code>String</code>-type attribute.</p>
+    /// </dd>
+    /// <dt>
+    /// DeveloperOnlyAttribute
+    /// </dt>
+    /// <dd>
+    /// <p>This legacy option creates an attribute with a <code>dev:</code> prefix. You can only set the value of a developer-only attribute with administrative IAM credentials.</p>
+    /// </dd>
+    /// </dl>
     pub fn get_custom_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaAttributeType>> {
         self.inner.get_custom_attributes()
     }

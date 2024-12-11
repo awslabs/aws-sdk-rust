@@ -22,7 +22,7 @@ impl crate::operation::describe_user_pool::builders::DescribeUserPoolInputBuilde
 }
 /// Fluent builder constructing a request to `DescribeUserPool`.
 ///
-/// <p>Returns the configuration information and metadata of the specified user pool.</p><note>
+/// <p>Given a user pool ID, returns configuration information. This operation is useful when you want to inspect an existing user pool and programmatically replicate the configuration to another user pool.</p><note>
 /// <p>Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.</p>
 /// <p class="title"><b>Learn more</b></p>
 /// <ul>
@@ -117,17 +117,17 @@ impl DescribeUserPoolFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The user pool ID for the user pool you want to describe.</p>
+    /// <p>The ID of the user pool you want to describe.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_pool_id(input.into());
         self
     }
-    /// <p>The user pool ID for the user pool you want to describe.</p>
+    /// <p>The ID of the user pool you want to describe.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
-    /// <p>The user pool ID for the user pool you want to describe.</p>
+    /// <p>The ID of the user pool you want to describe.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_pool_id()
     }

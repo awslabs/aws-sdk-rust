@@ -153,4 +153,18 @@ impl GetDashboardForJobRunFluentBuilder {
     pub fn get_attempt(&self) -> &::std::option::Option<i32> {
         self.inner.get_attempt()
     }
+    /// <p>Allows access to system profile logs for Lake Formation-enabled jobs. Default is false.</p>
+    pub fn access_system_profile_logs(mut self, input: bool) -> Self {
+        self.inner = self.inner.access_system_profile_logs(input);
+        self
+    }
+    /// <p>Allows access to system profile logs for Lake Formation-enabled jobs. Default is false.</p>
+    pub fn set_access_system_profile_logs(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_access_system_profile_logs(input);
+        self
+    }
+    /// <p>Allows access to system profile logs for Lake Formation-enabled jobs. Default is false.</p>
+    pub fn get_access_system_profile_logs(&self) -> &::std::option::Option<bool> {
+        self.inner.get_access_system_profile_logs()
+    }
 }

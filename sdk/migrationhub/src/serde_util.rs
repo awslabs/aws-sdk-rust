@@ -26,6 +26,15 @@ pub(crate) fn discovered_resource_correct_errors(
     builder
 }
 
+pub(crate) fn source_resource_correct_errors(
+    mut builder: crate::types::builders::SourceResourceBuilder,
+) -> crate::types::builders::SourceResourceBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn task_correct_errors(mut builder: crate::types::builders::TaskBuilder) -> crate::types::builders::TaskBuilder {
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::Status>().ok()

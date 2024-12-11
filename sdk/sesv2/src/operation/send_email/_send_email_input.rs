@@ -27,6 +27,8 @@ pub struct SendEmailInput {
     pub email_tags: ::std::option::Option<::std::vec::Vec<crate::types::MessageTag>>,
     /// <p>The name of the configuration set to use when sending the email.</p>
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the multi-region endpoint (global-endpoint).</p>
+    pub endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>An object used to specify a list or topic to which an email belongs, which will be used when a contact chooses to unsubscribe.</p>
     pub list_management_options: ::std::option::Option<crate::types::ListManagementOptions>,
 }
@@ -76,6 +78,10 @@ impl SendEmailInput {
     pub fn configuration_set_name(&self) -> ::std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
+    /// <p>The ID of the multi-region endpoint (global-endpoint).</p>
+    pub fn endpoint_id(&self) -> ::std::option::Option<&str> {
+        self.endpoint_id.as_deref()
+    }
     /// <p>An object used to specify a list or topic to which an email belongs, which will be used when a contact chooses to unsubscribe.</p>
     pub fn list_management_options(&self) -> ::std::option::Option<&crate::types::ListManagementOptions> {
         self.list_management_options.as_ref()
@@ -101,6 +107,7 @@ pub struct SendEmailInputBuilder {
     pub(crate) content: ::std::option::Option<crate::types::EmailContent>,
     pub(crate) email_tags: ::std::option::Option<::std::vec::Vec<crate::types::MessageTag>>,
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
+    pub(crate) endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) list_management_options: ::std::option::Option<crate::types::ListManagementOptions>,
 }
 impl SendEmailInputBuilder {
@@ -258,6 +265,20 @@ impl SendEmailInputBuilder {
     pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.configuration_set_name
     }
+    /// <p>The ID of the multi-region endpoint (global-endpoint).</p>
+    pub fn endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.endpoint_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the multi-region endpoint (global-endpoint).</p>
+    pub fn set_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.endpoint_id = input;
+        self
+    }
+    /// <p>The ID of the multi-region endpoint (global-endpoint).</p>
+    pub fn get_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_id
+    }
     /// <p>An object used to specify a list or topic to which an email belongs, which will be used when a contact chooses to unsubscribe.</p>
     pub fn list_management_options(mut self, input: crate::types::ListManagementOptions) -> Self {
         self.list_management_options = ::std::option::Option::Some(input);
@@ -284,6 +305,7 @@ impl SendEmailInputBuilder {
             content: self.content,
             email_tags: self.email_tags,
             configuration_set_name: self.configuration_set_name,
+            endpoint_id: self.endpoint_id,
             list_management_options: self.list_management_options,
         })
     }

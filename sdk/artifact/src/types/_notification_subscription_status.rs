@@ -41,9 +41,9 @@
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum NotificationSubscriptionStatus {
-    /// The account is not subscribed for notification.
+    #[allow(missing_docs)] // documentation missing in model
     NotSubscribed,
-    /// The account is subscribed for notification.
+    #[allow(missing_docs)] // documentation missing in model
     Subscribed,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]

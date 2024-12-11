@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DeleteWebAuthnCredentialInput {
-    /// <p>A valid access token that Amazon Cognito issued to the user whose passkey you want to delete.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user whose passkey credential you want to delete.</p>
     pub access_token: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier of the passkey that you want to delete. Look up registered devices with <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListWebAuthnCredentials.html"> ListWebAuthnCredentials</a>.</p>
+    /// <p>The unique identifier of the passkey that you want to delete. Look up registered devices with <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListWebAuthnCredentials.html">ListWebAuthnCredentials</a>.</p>
     pub credential_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteWebAuthnCredentialInput {
-    /// <p>A valid access token that Amazon Cognito issued to the user whose passkey you want to delete.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user whose passkey credential you want to delete.</p>
     pub fn access_token(&self) -> ::std::option::Option<&str> {
         self.access_token.as_deref()
     }
-    /// <p>The unique identifier of the passkey that you want to delete. Look up registered devices with <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListWebAuthnCredentials.html"> ListWebAuthnCredentials</a>.</p>
+    /// <p>The unique identifier of the passkey that you want to delete. Look up registered devices with <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListWebAuthnCredentials.html">ListWebAuthnCredentials</a>.</p>
     pub fn credential_id(&self) -> ::std::option::Option<&str> {
         self.credential_id.as_deref()
     }
@@ -41,33 +41,33 @@ pub struct DeleteWebAuthnCredentialInputBuilder {
     pub(crate) credential_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteWebAuthnCredentialInputBuilder {
-    /// <p>A valid access token that Amazon Cognito issued to the user whose passkey you want to delete.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user whose passkey credential you want to delete.</p>
     /// This field is required.
     pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A valid access token that Amazon Cognito issued to the user whose passkey you want to delete.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user whose passkey credential you want to delete.</p>
     pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_token = input;
         self
     }
-    /// <p>A valid access token that Amazon Cognito issued to the user whose passkey you want to delete.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user whose passkey credential you want to delete.</p>
     pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.access_token
     }
-    /// <p>The unique identifier of the passkey that you want to delete. Look up registered devices with <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListWebAuthnCredentials.html"> ListWebAuthnCredentials</a>.</p>
+    /// <p>The unique identifier of the passkey that you want to delete. Look up registered devices with <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListWebAuthnCredentials.html">ListWebAuthnCredentials</a>.</p>
     /// This field is required.
     pub fn credential_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.credential_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the passkey that you want to delete. Look up registered devices with <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListWebAuthnCredentials.html"> ListWebAuthnCredentials</a>.</p>
+    /// <p>The unique identifier of the passkey that you want to delete. Look up registered devices with <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListWebAuthnCredentials.html">ListWebAuthnCredentials</a>.</p>
     pub fn set_credential_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.credential_id = input;
         self
     }
-    /// <p>The unique identifier of the passkey that you want to delete. Look up registered devices with <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListWebAuthnCredentials.html"> ListWebAuthnCredentials</a>.</p>
+    /// <p>The unique identifier of the passkey that you want to delete. Look up registered devices with <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListWebAuthnCredentials.html">ListWebAuthnCredentials</a>.</p>
     pub fn get_credential_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.credential_id
     }

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListResourceServersInput {
-    /// <p>The user pool ID for the user pool.</p>
+    /// <p>The ID of the user pool.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of resource servers to return.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -11,7 +11,7 @@ pub struct ListResourceServersInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListResourceServersInput {
-    /// <p>The user pool ID for the user pool.</p>
+    /// <p>The ID of the user pool.</p>
     pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
@@ -40,18 +40,18 @@ pub struct ListResourceServersInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListResourceServersInputBuilder {
-    /// <p>The user pool ID for the user pool.</p>
+    /// <p>The ID of the user pool.</p>
     /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user pool ID for the user pool.</p>
+    /// <p>The ID of the user pool.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
     }
-    /// <p>The user pool ID for the user pool.</p>
+    /// <p>The ID of the user pool.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_pool_id
     }

@@ -9,7 +9,13 @@ pub use crate::types::_status::Status;
 
 pub use crate::types::_application_status::ApplicationStatus;
 
+pub use crate::types::_source_resource::SourceResource;
+
 pub use crate::types::_progress_update_stream_summary::ProgressUpdateStreamSummary;
+
+pub use crate::types::_migration_task_update::MigrationTaskUpdate;
+
+pub use crate::types::_update_type::UpdateType;
 
 pub use crate::types::_migration_task_summary::MigrationTaskSummary;
 
@@ -33,15 +39,21 @@ mod _migration_task;
 
 mod _migration_task_summary;
 
+mod _migration_task_update;
+
 mod _progress_update_stream_summary;
 
 mod _resource_attribute;
 
 mod _resource_attribute_type;
 
+mod _source_resource;
+
 mod _status;
 
 mod _task;
+
+mod _update_type;
 
 /// Builders
 pub mod builders;

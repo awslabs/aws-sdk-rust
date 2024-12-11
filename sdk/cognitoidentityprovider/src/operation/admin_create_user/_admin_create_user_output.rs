@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdminCreateUserOutput {
-    /// <p>The newly created user.</p>
+    /// <p>The new user's profile details.</p>
     pub user: ::std::option::Option<crate::types::UserType>,
     _request_id: Option<String>,
 }
 impl AdminCreateUserOutput {
-    /// <p>The newly created user.</p>
+    /// <p>The new user's profile details.</p>
     pub fn user(&self) -> ::std::option::Option<&crate::types::UserType> {
         self.user.as_ref()
     }
@@ -34,17 +34,17 @@ pub struct AdminCreateUserOutputBuilder {
     _request_id: Option<String>,
 }
 impl AdminCreateUserOutputBuilder {
-    /// <p>The newly created user.</p>
+    /// <p>The new user's profile details.</p>
     pub fn user(mut self, input: crate::types::UserType) -> Self {
         self.user = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The newly created user.</p>
+    /// <p>The new user's profile details.</p>
     pub fn set_user(mut self, input: ::std::option::Option<crate::types::UserType>) -> Self {
         self.user = input;
         self
     }
-    /// <p>The newly created user.</p>
+    /// <p>The new user's profile details.</p>
     pub fn get_user(&self) -> &::std::option::Option<crate::types::UserType> {
         &self.user
     }

@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateIdentityProviderOutput {
-    /// <p>The newly created IdP object.</p>
+    /// <p>The details of the new user pool IdP.</p>
     pub identity_provider: ::std::option::Option<crate::types::IdentityProviderType>,
     _request_id: Option<String>,
 }
 impl CreateIdentityProviderOutput {
-    /// <p>The newly created IdP object.</p>
+    /// <p>The details of the new user pool IdP.</p>
     pub fn identity_provider(&self) -> ::std::option::Option<&crate::types::IdentityProviderType> {
         self.identity_provider.as_ref()
     }
@@ -33,18 +33,18 @@ pub struct CreateIdentityProviderOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateIdentityProviderOutputBuilder {
-    /// <p>The newly created IdP object.</p>
+    /// <p>The details of the new user pool IdP.</p>
     /// This field is required.
     pub fn identity_provider(mut self, input: crate::types::IdentityProviderType) -> Self {
         self.identity_provider = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The newly created IdP object.</p>
+    /// <p>The details of the new user pool IdP.</p>
     pub fn set_identity_provider(mut self, input: ::std::option::Option<crate::types::IdentityProviderType>) -> Self {
         self.identity_provider = input;
         self
     }
-    /// <p>The newly created IdP object.</p>
+    /// <p>The details of the new user pool IdP.</p>
     pub fn get_identity_provider(&self) -> &::std::option::Option<crate::types::IdentityProviderType> {
         &self.identity_provider
     }

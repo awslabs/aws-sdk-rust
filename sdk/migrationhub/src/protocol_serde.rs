@@ -27,6 +27,8 @@ pub(crate) mod shape_associate_created_artifact;
 
 pub(crate) mod shape_associate_discovered_resource;
 
+pub(crate) mod shape_associate_source_resource;
+
 pub(crate) mod shape_create_progress_update_stream;
 
 pub(crate) mod shape_delete_progress_update_stream;
@@ -39,6 +41,8 @@ pub(crate) mod shape_disassociate_created_artifact;
 
 pub(crate) mod shape_disassociate_discovered_resource;
 
+pub(crate) mod shape_disassociate_source_resource;
+
 pub(crate) mod shape_import_migration_task;
 
 pub(crate) mod shape_list_application_states;
@@ -47,9 +51,13 @@ pub(crate) mod shape_list_created_artifacts;
 
 pub(crate) mod shape_list_discovered_resources;
 
+pub(crate) mod shape_list_migration_task_updates;
+
 pub(crate) mod shape_list_migration_tasks;
 
 pub(crate) mod shape_list_progress_update_streams;
+
+pub(crate) mod shape_list_source_resources;
 
 pub(crate) mod shape_notify_application_state;
 
@@ -71,6 +79,8 @@ pub(crate) mod shape_associate_created_artifact_input;
 
 pub(crate) mod shape_associate_discovered_resource_input;
 
+pub(crate) mod shape_associate_source_resource_input;
+
 pub(crate) mod shape_create_progress_update_stream_input;
 
 pub(crate) mod shape_delete_progress_update_stream_input;
@@ -82,6 +92,8 @@ pub(crate) mod shape_describe_migration_task_input;
 pub(crate) mod shape_disassociate_created_artifact_input;
 
 pub(crate) mod shape_disassociate_discovered_resource_input;
+
+pub(crate) mod shape_disassociate_source_resource_input;
 
 pub(crate) mod shape_dry_run_operation;
 
@@ -99,9 +111,13 @@ pub(crate) mod shape_list_created_artifacts_input;
 
 pub(crate) mod shape_list_discovered_resources_input;
 
+pub(crate) mod shape_list_migration_task_updates_input;
+
 pub(crate) mod shape_list_migration_tasks_input;
 
 pub(crate) mod shape_list_progress_update_streams_input;
+
+pub(crate) mod shape_list_source_resources_input;
 
 pub(crate) mod shape_notify_application_state_input;
 
@@ -133,9 +149,15 @@ pub(crate) mod shape_migration_task;
 
 pub(crate) mod shape_migration_task_summary_list;
 
+pub(crate) mod shape_migration_task_update_list;
+
 pub(crate) mod shape_progress_update_stream_summary_list;
 
 pub(crate) mod shape_resource_attribute;
+
+pub(crate) mod shape_source_resource;
+
+pub(crate) mod shape_source_resource_list;
 
 pub(crate) mod shape_task;
 
@@ -144,5 +166,7 @@ pub(crate) mod shape_application_state;
 pub(crate) mod shape_latest_resource_attribute_list;
 
 pub(crate) mod shape_migration_task_summary;
+
+pub(crate) mod shape_migration_task_update;
 
 pub(crate) mod shape_progress_update_stream_summary;

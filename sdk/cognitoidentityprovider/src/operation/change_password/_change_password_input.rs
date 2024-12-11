@@ -6,7 +6,7 @@
 pub struct ChangePasswordInput {
     /// <p>The user's previous password. Required if the user has a password. If the user has no password and only signs in with passwordless authentication options, you can omit this parameter.</p>
     pub previous_password: ::std::option::Option<::std::string::String>,
-    /// <p>The new password.</p>
+    /// <p>A new password that you prompted the user to enter in your application.</p>
     pub proposed_password: ::std::option::Option<::std::string::String>,
     /// <p>A valid access token that Amazon Cognito issued to the user whose password you want to change.</p>
     pub access_token: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ impl ChangePasswordInput {
     pub fn previous_password(&self) -> ::std::option::Option<&str> {
         self.previous_password.as_deref()
     }
-    /// <p>The new password.</p>
+    /// <p>A new password that you prompted the user to enter in your application.</p>
     pub fn proposed_password(&self) -> ::std::option::Option<&str> {
         self.proposed_password.as_deref()
     }
@@ -64,18 +64,18 @@ impl ChangePasswordInputBuilder {
     pub fn get_previous_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.previous_password
     }
-    /// <p>The new password.</p>
+    /// <p>A new password that you prompted the user to enter in your application.</p>
     /// This field is required.
     pub fn proposed_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.proposed_password = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The new password.</p>
+    /// <p>A new password that you prompted the user to enter in your application.</p>
     pub fn set_proposed_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.proposed_password = input;
         self
     }
-    /// <p>The new password.</p>
+    /// <p>A new password that you prompted the user to enter in your application.</p>
     pub fn get_proposed_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.proposed_password
     }

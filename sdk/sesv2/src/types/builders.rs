@@ -73,6 +73,8 @@ pub use crate::types::_suppressed_destination_summary::SuppressedDestinationSumm
 
 pub use crate::types::_recommendation::RecommendationBuilder;
 
+pub use crate::types::_multi_region_endpoint::MultiRegionEndpointBuilder;
+
 pub use crate::types::_import_job_summary::ImportJobSummaryBuilder;
 
 pub use crate::types::_import_destination::ImportDestinationBuilder;
@@ -104,6 +106,8 @@ pub use crate::types::_contact_list::ContactListBuilder;
 pub use crate::types::_suppressed_destination::SuppressedDestinationBuilder;
 
 pub use crate::types::_suppressed_destination_attributes::SuppressedDestinationAttributesBuilder;
+
+pub use crate::types::_route::RouteBuilder;
 
 pub use crate::types::_email_insights::EmailInsightsBuilder;
 
@@ -178,6 +182,10 @@ pub use crate::types::_review_details::ReviewDetailsBuilder;
 pub use crate::types::_suppression_attributes::SuppressionAttributesBuilder;
 
 pub use crate::types::_send_quota::SendQuotaBuilder;
+
+pub use crate::types::_details::DetailsBuilder;
+
+pub use crate::types::_route_details::RouteDetailsBuilder;
 
 pub use crate::types::_metric_data_error::MetricDataErrorBuilder;
 

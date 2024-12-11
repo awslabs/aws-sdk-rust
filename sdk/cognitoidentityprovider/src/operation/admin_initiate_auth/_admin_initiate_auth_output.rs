@@ -42,13 +42,13 @@ pub struct AdminInitiateAuthOutput {
     /// <p>To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To set up SMS MFA, users will need help from an administrator to add a phone number to their account and then call <code>InitiateAuth</code> again to restart sign-in.</p></li>
     /// </ul>
     pub challenge_name: ::std::option::Option<crate::types::ChallengeNameType>,
-    /// <p>The session that should be passed both ways in challenge-response calls to the service. If <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API call determines that the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>AdminRespondToAuthChallenge</code> API call.</p>
+    /// <p>The session that must be passed to challenge-response requests. If an <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API request determines that the caller must pass another challenge, Amazon Cognito returns a session ID and the parameters of the next challenge. Pass this session Id in the <code>Session</code> parameter of <code>AdminRespondToAuthChallenge</code>.</p>
     pub session: ::std::option::Option<::std::string::String>,
     /// <p>The challenge parameters. These are returned to you in the <code>AdminInitiateAuth</code> response if you must pass another challenge. The responses in this parameter should be used to compute inputs to the next call (<code>AdminRespondToAuthChallenge</code>).</p>
     /// <p>All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).</p>
     /// <p>The value of the <code>USER_ID_FOR_SRP</code> attribute is the user's actual username, not an alias (such as email address or phone number), even if you specified an alias in your call to <code>AdminInitiateAuth</code>. This happens because, in the <code>AdminRespondToAuthChallenge</code> API <code>ChallengeResponses</code>, the <code>USERNAME</code> attribute can't be an alias.</p>
     pub challenge_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>The result of the authentication response. This is only returned if the caller doesn't need to pass another challenge. If the caller does need to pass another challenge before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> are returned.</p>
+    /// <p>The outcome of successful authentication. This is only returned if the user pool has no additional challenges to return. If Amazon Cognito returns another challenge, the response includes <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> so that your user can answer the challenge.</p>
     pub authentication_result: ::std::option::Option<crate::types::AuthenticationResultType>,
     _request_id: Option<String>,
 }
@@ -93,7 +93,7 @@ impl AdminInitiateAuthOutput {
     pub fn challenge_name(&self) -> ::std::option::Option<&crate::types::ChallengeNameType> {
         self.challenge_name.as_ref()
     }
-    /// <p>The session that should be passed both ways in challenge-response calls to the service. If <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API call determines that the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>AdminRespondToAuthChallenge</code> API call.</p>
+    /// <p>The session that must be passed to challenge-response requests. If an <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API request determines that the caller must pass another challenge, Amazon Cognito returns a session ID and the parameters of the next challenge. Pass this session Id in the <code>Session</code> parameter of <code>AdminRespondToAuthChallenge</code>.</p>
     pub fn session(&self) -> ::std::option::Option<&str> {
         self.session.as_deref()
     }
@@ -103,7 +103,7 @@ impl AdminInitiateAuthOutput {
     pub fn challenge_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.challenge_parameters.as_ref()
     }
-    /// <p>The result of the authentication response. This is only returned if the caller doesn't need to pass another challenge. If the caller does need to pass another challenge before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> are returned.</p>
+    /// <p>The outcome of successful authentication. This is only returned if the user pool has no additional challenges to return. If Amazon Cognito returns another challenge, the response includes <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> so that your user can answer the challenge.</p>
     pub fn authentication_result(&self) -> ::std::option::Option<&crate::types::AuthenticationResultType> {
         self.authentication_result.as_ref()
     }
@@ -264,17 +264,17 @@ impl AdminInitiateAuthOutputBuilder {
     pub fn get_challenge_name(&self) -> &::std::option::Option<crate::types::ChallengeNameType> {
         &self.challenge_name
     }
-    /// <p>The session that should be passed both ways in challenge-response calls to the service. If <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API call determines that the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>AdminRespondToAuthChallenge</code> API call.</p>
+    /// <p>The session that must be passed to challenge-response requests. If an <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API request determines that the caller must pass another challenge, Amazon Cognito returns a session ID and the parameters of the next challenge. Pass this session Id in the <code>Session</code> parameter of <code>AdminRespondToAuthChallenge</code>.</p>
     pub fn session(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The session that should be passed both ways in challenge-response calls to the service. If <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API call determines that the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>AdminRespondToAuthChallenge</code> API call.</p>
+    /// <p>The session that must be passed to challenge-response requests. If an <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API request determines that the caller must pass another challenge, Amazon Cognito returns a session ID and the parameters of the next challenge. Pass this session Id in the <code>Session</code> parameter of <code>AdminRespondToAuthChallenge</code>.</p>
     pub fn set_session(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session = input;
         self
     }
-    /// <p>The session that should be passed both ways in challenge-response calls to the service. If <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API call determines that the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>AdminRespondToAuthChallenge</code> API call.</p>
+    /// <p>The session that must be passed to challenge-response requests. If an <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API request determines that the caller must pass another challenge, Amazon Cognito returns a session ID and the parameters of the next challenge. Pass this session Id in the <code>Session</code> parameter of <code>AdminRespondToAuthChallenge</code>.</p>
     pub fn get_session(&self) -> &::std::option::Option<::std::string::String> {
         &self.session
     }
@@ -311,17 +311,17 @@ impl AdminInitiateAuthOutputBuilder {
     pub fn get_challenge_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.challenge_parameters
     }
-    /// <p>The result of the authentication response. This is only returned if the caller doesn't need to pass another challenge. If the caller does need to pass another challenge before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> are returned.</p>
+    /// <p>The outcome of successful authentication. This is only returned if the user pool has no additional challenges to return. If Amazon Cognito returns another challenge, the response includes <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> so that your user can answer the challenge.</p>
     pub fn authentication_result(mut self, input: crate::types::AuthenticationResultType) -> Self {
         self.authentication_result = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The result of the authentication response. This is only returned if the caller doesn't need to pass another challenge. If the caller does need to pass another challenge before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> are returned.</p>
+    /// <p>The outcome of successful authentication. This is only returned if the user pool has no additional challenges to return. If Amazon Cognito returns another challenge, the response includes <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> so that your user can answer the challenge.</p>
     pub fn set_authentication_result(mut self, input: ::std::option::Option<crate::types::AuthenticationResultType>) -> Self {
         self.authentication_result = input;
         self
     }
-    /// <p>The result of the authentication response. This is only returned if the caller doesn't need to pass another challenge. If the caller does need to pass another challenge before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> are returned.</p>
+    /// <p>The outcome of successful authentication. This is only returned if the user pool has no additional challenges to return. If Amazon Cognito returns another challenge, the response includes <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> so that your user can answer the challenge.</p>
     pub fn get_authentication_result(&self) -> &::std::option::Option<crate::types::AuthenticationResultType> {
         &self.authentication_result
     }

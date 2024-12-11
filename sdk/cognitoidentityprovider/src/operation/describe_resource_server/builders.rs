@@ -22,7 +22,7 @@ impl crate::operation::describe_resource_server::builders::DescribeResourceServe
 }
 /// Fluent builder constructing a request to `DescribeResourceServer`.
 ///
-/// <p>Describes a resource server.</p>
+/// <p>Describes a resource server. For more information about resource servers, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-define-resource-servers.html">Access control with resource servers</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeResourceServerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DescribeResourceServerFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The user pool ID for the user pool that hosts the resource server.</p>
+    /// <p>The ID of the user pool that hosts the resource server.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_pool_id(input.into());
         self
     }
-    /// <p>The user pool ID for the user pool that hosts the resource server.</p>
+    /// <p>The ID of the user pool that hosts the resource server.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
-    /// <p>The user pool ID for the user pool that hosts the resource server.</p>
+    /// <p>The ID of the user pool that hosts the resource server.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_pool_id()
     }

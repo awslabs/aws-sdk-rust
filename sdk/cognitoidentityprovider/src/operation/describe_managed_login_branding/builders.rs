@@ -22,7 +22,7 @@ impl crate::operation::describe_managed_login_branding::builders::DescribeManage
 }
 /// Fluent builder constructing a request to `DescribeManagedLoginBranding`.
 ///
-/// <p>When given the ID of a managed login branding style, returns detailed information about the style.</p>
+/// <p>Given the ID of a managed login branding style, returns detailed information about the style.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeManagedLoginBrandingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

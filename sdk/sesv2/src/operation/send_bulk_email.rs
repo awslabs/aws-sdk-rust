@@ -61,6 +61,10 @@ impl SendBulkEmail {
         let mut runtime_plugins = client_runtime_plugins.with_operation_plugin(Self::new());
         runtime_plugins = runtime_plugins.with_client_plugin(crate::auth_plugin::DefaultAuthOptionsPlugin::new(vec![
             ::aws_runtime::auth::sigv4::SCHEME_ID,
+            #[cfg(feature = "sigv4a")]
+            {
+                ::aws_runtime::auth::sigv4a::SCHEME_ID
+            },
         ]));
         if let ::std::option::Option::Some(config_override) = config_override {
             for plugin in config_override.runtime_plugins.iter().cloned() {
@@ -222,6 +226,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for SendBulkEmail
             .set_use_dual_stack(cfg.load::<::aws_types::endpoint_config::UseDualStack>().map(|ty| ty.0))
             .set_use_fips(cfg.load::<::aws_types::endpoint_config::UseFips>().map(|ty| ty.0))
             .set_endpoint(cfg.load::<::aws_types::endpoint_config::EndpointUrl>().map(|ty| ty.0.clone()))
+            .set_endpoint_id(_input.endpoint_id.clone())
             .build()
             .map_err(|err| {
                 ::aws_smithy_runtime_api::client::interceptors::error::ContextAttachedError::new("endpoint params could not be built", err)

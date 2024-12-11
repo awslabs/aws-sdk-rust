@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeUserPoolOutput {
-    /// <p>The container of metadata returned by the server to describe the pool.</p>
+    /// <p>The details of the requested user pool.</p>
     pub user_pool: ::std::option::Option<crate::types::UserPoolType>,
     _request_id: Option<String>,
 }
 impl DescribeUserPoolOutput {
-    /// <p>The container of metadata returned by the server to describe the pool.</p>
+    /// <p>The details of the requested user pool.</p>
     pub fn user_pool(&self) -> ::std::option::Option<&crate::types::UserPoolType> {
         self.user_pool.as_ref()
     }
@@ -34,17 +34,17 @@ pub struct DescribeUserPoolOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeUserPoolOutputBuilder {
-    /// <p>The container of metadata returned by the server to describe the pool.</p>
+    /// <p>The details of the requested user pool.</p>
     pub fn user_pool(mut self, input: crate::types::UserPoolType) -> Self {
         self.user_pool = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The container of metadata returned by the server to describe the pool.</p>
+    /// <p>The details of the requested user pool.</p>
     pub fn set_user_pool(mut self, input: ::std::option::Option<crate::types::UserPoolType>) -> Self {
         self.user_pool = input;
         self
     }
-    /// <p>The container of metadata returned by the server to describe the pool.</p>
+    /// <p>The details of the requested user pool.</p>
     pub fn get_user_pool(&self) -> &::std::option::Option<crate::types::UserPoolType> {
         &self.user_pool
     }

@@ -79,5 +79,8 @@ pub fn ser_create_db_instance_input_input(
             ::aws_smithy_types::Number::NegInt((*var_24).into()),
         );
     }
+    if let Some(var_25) = &input.network_type {
+        object.key("networkType").string(var_25.as_str());
+    }
     Ok(())
 }

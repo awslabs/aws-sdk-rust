@@ -28,6 +28,7 @@ impl crate::operation::associate_software_token::builders::AssociateSoftwareToke
 /// </note> <note>
 /// <p>Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you can't use IAM credentials to authorize requests, and you can't grant IAM permissions in policies. For more information about authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using the Amazon Cognito user pools API and user pool endpoints</a>.</p>
 /// </note>
+/// <p>Authorize this action with a signed-in user's access token. It must include the scope <code>aws.cognito.signin.user.admin</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateSoftwareTokenFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -113,31 +114,31 @@ impl AssociateSoftwareTokenFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>A valid access token that Amazon Cognito issued to the user whose software token you want to generate.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user whose software token you want to generate. You can provide either an access token or a session ID in the request.</p>
     pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.access_token(input.into());
         self
     }
-    /// <p>A valid access token that Amazon Cognito issued to the user whose software token you want to generate.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user whose software token you want to generate. You can provide either an access token or a session ID in the request.</p>
     pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_access_token(input);
         self
     }
-    /// <p>A valid access token that Amazon Cognito issued to the user whose software token you want to generate.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the user whose software token you want to generate. You can provide either an access token or a session ID in the request.</p>
     pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_access_token()
     }
-    /// <p>The session that should be passed both ways in challenge-response calls to the service. This allows authentication of the user as part of the MFA setup process.</p>
+    /// <p>The session identifier that maintains the state of authentication requests and challenge responses. In <code>AssociateSoftwareToken</code>, this is the session ID from a successful sign-in. You can provide either an access token or a session ID in the request.</p>
     pub fn session(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.session(input.into());
         self
     }
-    /// <p>The session that should be passed both ways in challenge-response calls to the service. This allows authentication of the user as part of the MFA setup process.</p>
+    /// <p>The session identifier that maintains the state of authentication requests and challenge responses. In <code>AssociateSoftwareToken</code>, this is the session ID from a successful sign-in. You can provide either an access token or a session ID in the request.</p>
     pub fn set_session(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_session(input);
         self
     }
-    /// <p>The session that should be passed both ways in challenge-response calls to the service. This allows authentication of the user as part of the MFA setup process.</p>
+    /// <p>The session identifier that maintains the state of authentication requests and challenge responses. In <code>AssociateSoftwareToken</code>, this is the session ID from a successful sign-in. You can provide either an access token or a session ID in the request.</p>
     pub fn get_session(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_session()
     }

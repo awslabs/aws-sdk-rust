@@ -56,6 +56,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "networkType" => {
+                            builder = builder.set_network_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::NetworkType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "dbInstanceType" => {
                             builder = builder.set_db_instance_type(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

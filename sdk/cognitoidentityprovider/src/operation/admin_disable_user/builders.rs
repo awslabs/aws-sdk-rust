@@ -22,7 +22,7 @@ impl crate::operation::admin_disable_user::builders::AdminDisableUserInputBuilde
 }
 /// Fluent builder constructing a request to `AdminDisableUser`.
 ///
-/// <p>Deactivates a user and revokes all access tokens for the user. A deactivated user can't sign in, but still appears in the responses to <code>GetUser</code> and <code>ListUsers</code> API requests.</p><note>
+/// <p>Deactivates a user profile and revokes all access tokens for the user. A deactivated user can't sign in, but still appears in the responses to <code>ListUsers</code> API requests.</p><note>
 /// <p>Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.</p>
 /// <p class="title"><b>Learn more</b></p>
 /// <ul>
@@ -117,17 +117,17 @@ impl AdminDisableUserFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The user pool ID for the user pool where you want to disable the user.</p>
+    /// <p>The ID of the user pool where you want to disable the user.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_pool_id(input.into());
         self
     }
-    /// <p>The user pool ID for the user pool where you want to disable the user.</p>
+    /// <p>The ID of the user pool where you want to disable the user.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
-    /// <p>The user pool ID for the user pool where you want to disable the user.</p>
+    /// <p>The ID of the user pool where you want to disable the user.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_pool_id()
     }

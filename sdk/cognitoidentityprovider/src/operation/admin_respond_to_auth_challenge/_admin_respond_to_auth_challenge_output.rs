@@ -4,30 +4,30 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AdminRespondToAuthChallengeOutput {
-    /// <p>The name of the challenge. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
+    /// <p>The name of the challenge that you must next respond to. You can find more information about values for <code>ChallengeName</code> in the response parameters of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html#CognitoUserPools-AdminInitiateAuth-response-ChallengeName">AdminInitiateAuth</a>.</p>
     pub challenge_name: ::std::option::Option<crate::types::ChallengeNameType>,
-    /// <p>The session that should be passed both ways in challenge-response calls to the service. If the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
+    /// <p>The session identifier that maintains the state of authentication requests and challenge responses. If an <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API request results in a determination that your application must pass another challenge, Amazon Cognito returns a session with other challenge parameters. Send this session identifier, unmodified, to the next <code>AdminRespondToAuthChallenge</code> request.</p>
     pub session: ::std::option::Option<::std::string::String>,
-    /// <p>The challenge parameters. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
+    /// <p>The parameters that define your response to the next challenge. Take the values in <code>ChallengeParameters</code> and provide values for them in the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminRespondToAuthChallenge.html#CognitoUserPools-AdminRespondToAuthChallenge-request-ChallengeResponses">ChallengeResponses</a> of the next <code>AdminRespondToAuthChallenge</code> request.</p>
     pub challenge_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>The result returned by the server in response to the authentication request.</p>
+    /// <p>The outcome of a successful authentication process. After your application has passed all challenges, Amazon Cognito returns an <code>AuthenticationResult</code> with the JSON web tokens (JWTs) that indicate successful sign-in.</p>
     pub authentication_result: ::std::option::Option<crate::types::AuthenticationResultType>,
     _request_id: Option<String>,
 }
 impl AdminRespondToAuthChallengeOutput {
-    /// <p>The name of the challenge. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
+    /// <p>The name of the challenge that you must next respond to. You can find more information about values for <code>ChallengeName</code> in the response parameters of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html#CognitoUserPools-AdminInitiateAuth-response-ChallengeName">AdminInitiateAuth</a>.</p>
     pub fn challenge_name(&self) -> ::std::option::Option<&crate::types::ChallengeNameType> {
         self.challenge_name.as_ref()
     }
-    /// <p>The session that should be passed both ways in challenge-response calls to the service. If the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
+    /// <p>The session identifier that maintains the state of authentication requests and challenge responses. If an <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API request results in a determination that your application must pass another challenge, Amazon Cognito returns a session with other challenge parameters. Send this session identifier, unmodified, to the next <code>AdminRespondToAuthChallenge</code> request.</p>
     pub fn session(&self) -> ::std::option::Option<&str> {
         self.session.as_deref()
     }
-    /// <p>The challenge parameters. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
+    /// <p>The parameters that define your response to the next challenge. Take the values in <code>ChallengeParameters</code> and provide values for them in the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminRespondToAuthChallenge.html#CognitoUserPools-AdminRespondToAuthChallenge-request-ChallengeResponses">ChallengeResponses</a> of the next <code>AdminRespondToAuthChallenge</code> request.</p>
     pub fn challenge_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.challenge_parameters.as_ref()
     }
-    /// <p>The result returned by the server in response to the authentication request.</p>
+    /// <p>The outcome of a successful authentication process. After your application has passed all challenges, Amazon Cognito returns an <code>AuthenticationResult</code> with the JSON web tokens (JWTs) that indicate successful sign-in.</p>
     pub fn authentication_result(&self) -> ::std::option::Option<&crate::types::AuthenticationResultType> {
         self.authentication_result.as_ref()
     }
@@ -66,31 +66,31 @@ pub struct AdminRespondToAuthChallengeOutputBuilder {
     _request_id: Option<String>,
 }
 impl AdminRespondToAuthChallengeOutputBuilder {
-    /// <p>The name of the challenge. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
+    /// <p>The name of the challenge that you must next respond to. You can find more information about values for <code>ChallengeName</code> in the response parameters of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html#CognitoUserPools-AdminInitiateAuth-response-ChallengeName">AdminInitiateAuth</a>.</p>
     pub fn challenge_name(mut self, input: crate::types::ChallengeNameType) -> Self {
         self.challenge_name = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The name of the challenge. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
+    /// <p>The name of the challenge that you must next respond to. You can find more information about values for <code>ChallengeName</code> in the response parameters of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html#CognitoUserPools-AdminInitiateAuth-response-ChallengeName">AdminInitiateAuth</a>.</p>
     pub fn set_challenge_name(mut self, input: ::std::option::Option<crate::types::ChallengeNameType>) -> Self {
         self.challenge_name = input;
         self
     }
-    /// <p>The name of the challenge. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
+    /// <p>The name of the challenge that you must next respond to. You can find more information about values for <code>ChallengeName</code> in the response parameters of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html#CognitoUserPools-AdminInitiateAuth-response-ChallengeName">AdminInitiateAuth</a>.</p>
     pub fn get_challenge_name(&self) -> &::std::option::Option<crate::types::ChallengeNameType> {
         &self.challenge_name
     }
-    /// <p>The session that should be passed both ways in challenge-response calls to the service. If the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
+    /// <p>The session identifier that maintains the state of authentication requests and challenge responses. If an <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API request results in a determination that your application must pass another challenge, Amazon Cognito returns a session with other challenge parameters. Send this session identifier, unmodified, to the next <code>AdminRespondToAuthChallenge</code> request.</p>
     pub fn session(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The session that should be passed both ways in challenge-response calls to the service. If the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
+    /// <p>The session identifier that maintains the state of authentication requests and challenge responses. If an <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API request results in a determination that your application must pass another challenge, Amazon Cognito returns a session with other challenge parameters. Send this session identifier, unmodified, to the next <code>AdminRespondToAuthChallenge</code> request.</p>
     pub fn set_session(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session = input;
         self
     }
-    /// <p>The session that should be passed both ways in challenge-response calls to the service. If the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
+    /// <p>The session identifier that maintains the state of authentication requests and challenge responses. If an <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API request results in a determination that your application must pass another challenge, Amazon Cognito returns a session with other challenge parameters. Send this session identifier, unmodified, to the next <code>AdminRespondToAuthChallenge</code> request.</p>
     pub fn get_session(&self) -> &::std::option::Option<::std::string::String> {
         &self.session
     }
@@ -98,7 +98,7 @@ impl AdminRespondToAuthChallengeOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_challenge_parameters`](Self::set_challenge_parameters).
     ///
-    /// <p>The challenge parameters. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
+    /// <p>The parameters that define your response to the next challenge. Take the values in <code>ChallengeParameters</code> and provide values for them in the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminRespondToAuthChallenge.html#CognitoUserPools-AdminRespondToAuthChallenge-request-ChallengeResponses">ChallengeResponses</a> of the next <code>AdminRespondToAuthChallenge</code> request.</p>
     pub fn challenge_parameters(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -109,7 +109,7 @@ impl AdminRespondToAuthChallengeOutputBuilder {
         self.challenge_parameters = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The challenge parameters. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
+    /// <p>The parameters that define your response to the next challenge. Take the values in <code>ChallengeParameters</code> and provide values for them in the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminRespondToAuthChallenge.html#CognitoUserPools-AdminRespondToAuthChallenge-request-ChallengeResponses">ChallengeResponses</a> of the next <code>AdminRespondToAuthChallenge</code> request.</p>
     pub fn set_challenge_parameters(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -117,21 +117,21 @@ impl AdminRespondToAuthChallengeOutputBuilder {
         self.challenge_parameters = input;
         self
     }
-    /// <p>The challenge parameters. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
+    /// <p>The parameters that define your response to the next challenge. Take the values in <code>ChallengeParameters</code> and provide values for them in the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminRespondToAuthChallenge.html#CognitoUserPools-AdminRespondToAuthChallenge-request-ChallengeResponses">ChallengeResponses</a> of the next <code>AdminRespondToAuthChallenge</code> request.</p>
     pub fn get_challenge_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.challenge_parameters
     }
-    /// <p>The result returned by the server in response to the authentication request.</p>
+    /// <p>The outcome of a successful authentication process. After your application has passed all challenges, Amazon Cognito returns an <code>AuthenticationResult</code> with the JSON web tokens (JWTs) that indicate successful sign-in.</p>
     pub fn authentication_result(mut self, input: crate::types::AuthenticationResultType) -> Self {
         self.authentication_result = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The result returned by the server in response to the authentication request.</p>
+    /// <p>The outcome of a successful authentication process. After your application has passed all challenges, Amazon Cognito returns an <code>AuthenticationResult</code> with the JSON web tokens (JWTs) that indicate successful sign-in.</p>
     pub fn set_authentication_result(mut self, input: ::std::option::Option<crate::types::AuthenticationResultType>) -> Self {
         self.authentication_result = input;
         self
     }
-    /// <p>The result returned by the server in response to the authentication request.</p>
+    /// <p>The outcome of a successful authentication process. After your application has passed all challenges, Amazon Cognito returns an <code>AuthenticationResult</code> with the JSON web tokens (JWTs) that indicate successful sign-in.</p>
     pub fn get_authentication_result(&self) -> &::std::option::Option<crate::types::AuthenticationResultType> {
         &self.authentication_result
     }

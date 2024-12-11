@@ -5,7 +5,7 @@
 pub struct GetGroupInput {
     /// <p>The name of the group.</p>
     pub group_name: ::std::option::Option<::std::string::String>,
-    /// <p>The user pool ID for the user pool.</p>
+    /// <p>The ID of the user pool.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
 }
 impl GetGroupInput {
@@ -13,7 +13,7 @@ impl GetGroupInput {
     pub fn group_name(&self) -> ::std::option::Option<&str> {
         self.group_name.as_deref()
     }
-    /// <p>The user pool ID for the user pool.</p>
+    /// <p>The ID of the user pool.</p>
     pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
@@ -48,18 +48,18 @@ impl GetGroupInputBuilder {
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_name
     }
-    /// <p>The user pool ID for the user pool.</p>
+    /// <p>The ID of the user pool.</p>
     /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user pool ID for the user pool.</p>
+    /// <p>The ID of the user pool.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
     }
-    /// <p>The user pool ID for the user pool.</p>
+    /// <p>The ID of the user pool.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_pool_id
     }

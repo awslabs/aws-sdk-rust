@@ -956,6 +956,11 @@ impl Builder {
     /// Sets the credentials provider for this service
     pub fn set_credentials_provider(&mut self, credentials_provider: ::std::option::Option<crate::config::SharedCredentialsProvider>) -> &mut Self {
         if let Some(credentials_provider) = credentials_provider {
+            #[cfg(feature = "sigv4a")]
+            {
+                self.runtime_components
+                    .set_identity_resolver(::aws_runtime::auth::sigv4a::SCHEME_ID, credentials_provider.clone());
+            }
             self.runtime_components
                 .set_identity_resolver(::aws_runtime::auth::sigv4::SCHEME_ID, credentials_provider);
         }
@@ -1120,6 +1125,12 @@ impl ServiceRuntimePlugin {
         runtime_components.push_auth_scheme(::aws_smithy_runtime_api::client::auth::SharedAuthScheme::new(
             ::aws_runtime::auth::sigv4::SigV4AuthScheme::new(),
         ));
+        #[cfg(feature = "sigv4a")]
+        {
+            runtime_components.push_auth_scheme(::aws_smithy_runtime_api::client::auth::SharedAuthScheme::new(
+                ::aws_runtime::auth::sigv4a::SigV4aAuthScheme::new(),
+            ));
+        }
         Self { config, runtime_components }
     }
 }

@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateUserPoolDomainOutput {
-    /// <p>The version of managed login branding applied your domain. A value of <code>1</code> indicates hosted UI (classic) branding and a version of <code>2</code> indicates managed login branding.</p>
+    /// <p>The version of managed login branding applied your domain. A value of <code>1</code> indicates hosted UI (classic) and a version of <code>2</code> indicates managed login.</p>
     pub managed_login_version: ::std::option::Option<i32>,
     /// <p>The Amazon CloudFront endpoint that you use as the target of the alias that you set up with your Domain Name Service (DNS) provider. Amazon Cognito returns this value if you set a custom domain with <code>CustomDomainConfig</code>. If you set an Amazon Cognito prefix domain, this operation returns a blank response.</p>
     pub cloud_front_domain: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateUserPoolDomainOutput {
-    /// <p>The version of managed login branding applied your domain. A value of <code>1</code> indicates hosted UI (classic) branding and a version of <code>2</code> indicates managed login branding.</p>
+    /// <p>The version of managed login branding applied your domain. A value of <code>1</code> indicates hosted UI (classic) and a version of <code>2</code> indicates managed login.</p>
     pub fn managed_login_version(&self) -> ::std::option::Option<i32> {
         self.managed_login_version
     }
@@ -40,17 +40,17 @@ pub struct CreateUserPoolDomainOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateUserPoolDomainOutputBuilder {
-    /// <p>The version of managed login branding applied your domain. A value of <code>1</code> indicates hosted UI (classic) branding and a version of <code>2</code> indicates managed login branding.</p>
+    /// <p>The version of managed login branding applied your domain. A value of <code>1</code> indicates hosted UI (classic) and a version of <code>2</code> indicates managed login.</p>
     pub fn managed_login_version(mut self, input: i32) -> Self {
         self.managed_login_version = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The version of managed login branding applied your domain. A value of <code>1</code> indicates hosted UI (classic) branding and a version of <code>2</code> indicates managed login branding.</p>
+    /// <p>The version of managed login branding applied your domain. A value of <code>1</code> indicates hosted UI (classic) and a version of <code>2</code> indicates managed login.</p>
     pub fn set_managed_login_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.managed_login_version = input;
         self
     }
-    /// <p>The version of managed login branding applied your domain. A value of <code>1</code> indicates hosted UI (classic) branding and a version of <code>2</code> indicates managed login branding.</p>
+    /// <p>The version of managed login branding applied your domain. A value of <code>1</code> indicates hosted UI (classic) and a version of <code>2</code> indicates managed login.</p>
     pub fn get_managed_login_version(&self) -> &::std::option::Option<i32> {
         &self.managed_login_version
     }

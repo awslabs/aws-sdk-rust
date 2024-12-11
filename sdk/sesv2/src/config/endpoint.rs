@@ -913,6 +913,230 @@ mod test {
         let error = endpoint.expect_err("expected error: Invalid Configuration: Missing Region [Missing region]");
         assert_eq!(format!("{}", error), "Invalid Configuration: Missing Region")
     }
+
+    /// Valid EndpointId with dualstack and FIPS disabled. i.e, IPv4 Only stack with no FIPS
+    #[test]
+    fn test_48() {
+        let params = crate::config::endpoint::Params::builder()
+            .endpoint_id("abc123.456def".to_string())
+            .use_dual_stack(false)
+            .use_fips(false)
+            .region("us-east-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://abc123.456def.endpoints.email.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://abc123.456def.endpoints.email.amazonaws.com")
+                .property(
+                    "authSchemes",
+                    vec![::aws_smithy_types::Document::from({
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("signingName".to_string(), "ses".to_string().into());
+                        out.insert("name".to_string(), "sigv4a".to_string().into());
+                        out.insert(
+                            "signingRegionSet".to_string(),
+                            vec![::aws_smithy_types::Document::from("*".to_string())].into(),
+                        );
+                        out
+                    })]
+                )
+                .build()
+        );
+    }
+
+    /// Valid EndpointId with dualstack enabled
+    #[test]
+    fn test_49() {
+        let params = crate::config::endpoint::Params::builder()
+            .endpoint_id("abc123.456def".to_string())
+            .use_dual_stack(true)
+            .use_fips(false)
+            .region("us-west-2".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://abc123.456def.endpoints.email.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://abc123.456def.endpoints.email.api.aws")
+                .property(
+                    "authSchemes",
+                    vec![::aws_smithy_types::Document::from({
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("signingName".to_string(), "ses".to_string().into());
+                        out.insert("name".to_string(), "sigv4a".to_string().into());
+                        out.insert(
+                            "signingRegionSet".to_string(),
+                            vec![::aws_smithy_types::Document::from("*".to_string())].into(),
+                        );
+                        out
+                    })]
+                )
+                .build()
+        );
+    }
+
+    /// Valid EndpointId with FIPS set, dualstack disabled
+    #[test]
+    fn test_50() {
+        let params = crate::config::endpoint::Params::builder()
+            .endpoint_id("abc123.456def".to_string())
+            .use_dual_stack(false)
+            .use_fips(true)
+            .region("ap-northeast-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: Invalid Configuration: FIPS is not supported with multi-region endpoints [Valid EndpointId with FIPS set, dualstack disabled]");
+        assert_eq!(
+            format!("{}", error),
+            "Invalid Configuration: FIPS is not supported with multi-region endpoints"
+        )
+    }
+
+    /// Valid EndpointId with both dualstack and FIPS enabled
+    #[test]
+    fn test_51() {
+        let params = crate::config::endpoint::Params::builder()
+            .endpoint_id("abc123.456def".to_string())
+            .use_dual_stack(true)
+            .use_fips(true)
+            .region("ap-northeast-2".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: Invalid Configuration: FIPS is not supported with multi-region endpoints [Valid EndpointId with both dualstack and FIPS enabled]");
+        assert_eq!(
+            format!("{}", error),
+            "Invalid Configuration: FIPS is not supported with multi-region endpoints"
+        )
+    }
+
+    /// Regular regional request, without EndpointId
+    #[test]
+    fn test_52() {
+        let params = crate::config::endpoint::Params::builder()
+            .use_dual_stack(false)
+            .region("eu-west-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://email.eu-west-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://email.eu-west-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// Invalid EndpointId (Invalid chars / format)
+    #[test]
+    fn test_53() {
+        let params = crate::config::endpoint::Params::builder()
+            .endpoint_id("badactor.com?foo=bar".to_string())
+            .use_dual_stack(false)
+            .region("eu-west-2".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: EndpointId must be a valid host label [Invalid EndpointId (Invalid chars / format)]");
+        assert_eq!(format!("{}", error), "EndpointId must be a valid host label")
+    }
+
+    /// Invalid EndpointId (Empty)
+    #[test]
+    fn test_54() {
+        let params = crate::config::endpoint::Params::builder()
+            .endpoint_id("".to_string())
+            .use_dual_stack(false)
+            .region("ap-south-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: EndpointId must be a valid host label [Invalid EndpointId (Empty)]");
+        assert_eq!(format!("{}", error), "EndpointId must be a valid host label")
+    }
+
+    /// Valid EndpointId with custom sdk endpoint
+    #[test]
+    fn test_55() {
+        let params = crate::config::endpoint::Params::builder()
+            .endpoint_id("abc123.456def".to_string())
+            .use_dual_stack(false)
+            .region("us-east-1".to_string())
+            .endpoint("https://example.com".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://example.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://example.com")
+                .property(
+                    "authSchemes",
+                    vec![::aws_smithy_types::Document::from({
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("signingName".to_string(), "ses".to_string().into());
+                        out.insert("name".to_string(), "sigv4a".to_string().into());
+                        out.insert(
+                            "signingRegionSet".to_string(),
+                            vec![::aws_smithy_types::Document::from("*".to_string())].into(),
+                        );
+                        out
+                    })]
+                )
+                .build()
+        );
+    }
+
+    /// Valid EndpointId with custom sdk endpoint with FIPS enabled
+    #[test]
+    fn test_56() {
+        let params = crate::config::endpoint::Params::builder()
+            .endpoint_id("abc123.456def".to_string())
+            .use_dual_stack(false)
+            .use_fips(true)
+            .region("us-east-1".to_string())
+            .endpoint("https://example.com".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: Invalid Configuration: FIPS is not supported with multi-region endpoints [Valid EndpointId with custom sdk endpoint with FIPS enabled]");
+        assert_eq!(
+            format!("{}", error),
+            "Invalid Configuration: FIPS is not supported with multi-region endpoints"
+        )
+    }
+
+    /// Valid EndpointId with DualStack enabled and partition does not support DualStack
+    #[test]
+    fn test_57() {
+        let params = crate::config::endpoint::Params::builder()
+            .endpoint_id("abc123.456def".to_string())
+            .use_dual_stack(true)
+            .region("us-isob-east-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: DualStack is enabled but this partition does not support DualStack [Valid EndpointId with DualStack enabled and partition does not support DualStack]");
+        assert_eq!(format!("{}", error), "DualStack is enabled but this partition does not support DualStack")
+    }
 }
 
 /// Endpoint resolver trait specific to Amazon Simple Email Service
@@ -993,6 +1217,8 @@ pub struct Params {
     pub(crate) use_fips: bool,
     /// Override the endpoint used to send this request
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
+    /// Operation parameter for EndpointId
+    pub(crate) endpoint_id: ::std::option::Option<::std::string::String>,
 }
 impl Params {
     /// Create a builder for [`Params`]
@@ -1015,6 +1241,10 @@ impl Params {
     pub fn endpoint(&self) -> ::std::option::Option<&str> {
         self.endpoint.as_deref()
     }
+    /// Operation parameter for EndpointId
+    pub fn endpoint_id(&self) -> ::std::option::Option<&str> {
+        self.endpoint_id.as_deref()
+    }
 }
 
 /// Builder for [`Params`]
@@ -1024,6 +1254,7 @@ pub struct ParamsBuilder {
     use_dual_stack: ::std::option::Option<bool>,
     use_fips: ::std::option::Option<bool>,
     endpoint: ::std::option::Option<::std::string::String>,
+    endpoint_id: ::std::option::Option<::std::string::String>,
 }
 impl ParamsBuilder {
     /// Consume this builder, creating [`Params`].
@@ -1041,6 +1272,7 @@ impl ParamsBuilder {
                     .or_else(|| Some(false))
                     .ok_or_else(|| crate::config::endpoint::InvalidParams::missing("use_fips"))?,
                 endpoint: self.endpoint,
+                endpoint_id: self.endpoint_id,
             },
         )
     }
@@ -1106,6 +1338,21 @@ impl ParamsBuilder {
     /// Override the endpoint used to send this request
     pub fn set_endpoint(mut self, param: Option<::std::string::String>) -> Self {
         self.endpoint = param;
+        self
+    }
+    /// Sets the value for endpoint_id
+    ///
+    /// Operation parameter for EndpointId
+    pub fn endpoint_id(mut self, value: impl Into<::std::string::String>) -> Self {
+        self.endpoint_id = Some(value.into());
+        self
+    }
+
+    /// Sets the value for endpoint_id
+    ///
+    /// Operation parameter for EndpointId
+    pub fn set_endpoint_id(mut self, param: Option<::std::string::String>) -> Self {
+        self.endpoint_id = param;
         self
     }
 }

@@ -6,15 +6,15 @@
 pub struct AdminGetUserOutput {
     /// <p>The username of the user that you requested.</p>
     pub username: ::std::string::String,
-    /// <p>An array of name-value pairs representing user attributes.</p>
+    /// <p>An array of name-value pairs of user attributes and their values, for example <code>"email": "testuser@example.com"</code>.</p>
     pub user_attributes: ::std::option::Option<::std::vec::Vec<crate::types::AttributeType>>,
-    /// <p>The date the user was created.</p>
+    /// <p>The date and time when the item was created. Amazon Cognito returns this timestamp in UNIX epoch time format. Your SDK might render the output in a human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
     pub user_create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the item was modified. Amazon Cognito returns this timestamp in UNIX epoch time format. Your SDK might render the output in a human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
     pub user_last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Indicates that the status is <code>enabled</code>.</p>
+    /// <p>Indicates whether the user is activated for sign-in. The <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminDisableUser.html">AdminDisableUser</a> and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminEnableUser.html">AdminEnableUser</a> API operations deactivate and activate user sign-in, respectively.</p>
     pub enabled: bool,
-    /// <p>The user status. Can be one of the following:</p>
+    /// <p>The user's status. Can be one of the following:</p>
     /// <ul>
     /// <li>
     /// <p>UNCONFIRMED - User has been created but not confirmed.</p></li>
@@ -26,13 +26,15 @@ pub struct AdminGetUserOutput {
     /// <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p></li>
     /// <li>
     /// <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else.</p></li>
+    /// <li>
+    /// <p>EXTERNAL_PROVIDER - The user signed in with a third-party identity provider.</p></li>
     /// </ul>
     pub user_status: ::std::option::Option<crate::types::UserStatusType>,
     /// <p><i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
     pub mfa_options: ::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>>,
-    /// <p>The user's preferred MFA setting.</p>
+    /// <p>The user's preferred MFA. Users can prefer SMS message, email message, or TOTP MFA.</p>
     pub preferred_mfa_setting: ::std::option::Option<::std::string::String>,
-    /// <p>The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code>, <code>EMAIL_OTP</code>, and <code>SOFTWARE_TOKEN_MFA</code>.</p>
+    /// <p>The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code>, <code>EMAIL_OTP</code>, and <code>SOFTWARE_TOKEN_MFA</code>. You can change the MFA preference for users who have more than one available MFA factor with <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminSetUserMFAPreference.html">AdminSetUserMFAPreference</a> or <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserMFAPreference.html">SetUserMFAPreference</a>.</p>
     pub user_mfa_setting_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
@@ -42,13 +44,13 @@ impl AdminGetUserOutput {
         use std::ops::Deref;
         self.username.deref()
     }
-    /// <p>An array of name-value pairs representing user attributes.</p>
+    /// <p>An array of name-value pairs of user attributes and their values, for example <code>"email": "testuser@example.com"</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_attributes.is_none()`.
     pub fn user_attributes(&self) -> &[crate::types::AttributeType] {
         self.user_attributes.as_deref().unwrap_or_default()
     }
-    /// <p>The date the user was created.</p>
+    /// <p>The date and time when the item was created. Amazon Cognito returns this timestamp in UNIX epoch time format. Your SDK might render the output in a human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
     pub fn user_create_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.user_create_date.as_ref()
     }
@@ -56,11 +58,11 @@ impl AdminGetUserOutput {
     pub fn user_last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.user_last_modified_date.as_ref()
     }
-    /// <p>Indicates that the status is <code>enabled</code>.</p>
+    /// <p>Indicates whether the user is activated for sign-in. The <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminDisableUser.html">AdminDisableUser</a> and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminEnableUser.html">AdminEnableUser</a> API operations deactivate and activate user sign-in, respectively.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
     }
-    /// <p>The user status. Can be one of the following:</p>
+    /// <p>The user's status. Can be one of the following:</p>
     /// <ul>
     /// <li>
     /// <p>UNCONFIRMED - User has been created but not confirmed.</p></li>
@@ -72,6 +74,8 @@ impl AdminGetUserOutput {
     /// <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p></li>
     /// <li>
     /// <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else.</p></li>
+    /// <li>
+    /// <p>EXTERNAL_PROVIDER - The user signed in with a third-party identity provider.</p></li>
     /// </ul>
     pub fn user_status(&self) -> ::std::option::Option<&crate::types::UserStatusType> {
         self.user_status.as_ref()
@@ -82,11 +86,11 @@ impl AdminGetUserOutput {
     pub fn mfa_options(&self) -> &[crate::types::MfaOptionType] {
         self.mfa_options.as_deref().unwrap_or_default()
     }
-    /// <p>The user's preferred MFA setting.</p>
+    /// <p>The user's preferred MFA. Users can prefer SMS message, email message, or TOTP MFA.</p>
     pub fn preferred_mfa_setting(&self) -> ::std::option::Option<&str> {
         self.preferred_mfa_setting.as_deref()
     }
-    /// <p>The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code>, <code>EMAIL_OTP</code>, and <code>SOFTWARE_TOKEN_MFA</code>.</p>
+    /// <p>The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code>, <code>EMAIL_OTP</code>, and <code>SOFTWARE_TOKEN_MFA</code>. You can change the MFA preference for users who have more than one available MFA factor with <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminSetUserMFAPreference.html">AdminSetUserMFAPreference</a> or <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserMFAPreference.html">SetUserMFAPreference</a>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_mfa_setting_list.is_none()`.
     pub fn user_mfa_setting_list(&self) -> &[::std::string::String] {
@@ -156,33 +160,33 @@ impl AdminGetUserOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_user_attributes`](Self::set_user_attributes).
     ///
-    /// <p>An array of name-value pairs representing user attributes.</p>
+    /// <p>An array of name-value pairs of user attributes and their values, for example <code>"email": "testuser@example.com"</code>.</p>
     pub fn user_attributes(mut self, input: crate::types::AttributeType) -> Self {
         let mut v = self.user_attributes.unwrap_or_default();
         v.push(input);
         self.user_attributes = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of name-value pairs representing user attributes.</p>
+    /// <p>An array of name-value pairs of user attributes and their values, for example <code>"email": "testuser@example.com"</code>.</p>
     pub fn set_user_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeType>>) -> Self {
         self.user_attributes = input;
         self
     }
-    /// <p>An array of name-value pairs representing user attributes.</p>
+    /// <p>An array of name-value pairs of user attributes and their values, for example <code>"email": "testuser@example.com"</code>.</p>
     pub fn get_user_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeType>> {
         &self.user_attributes
     }
-    /// <p>The date the user was created.</p>
+    /// <p>The date and time when the item was created. Amazon Cognito returns this timestamp in UNIX epoch time format. Your SDK might render the output in a human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
     pub fn user_create_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.user_create_date = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date the user was created.</p>
+    /// <p>The date and time when the item was created. Amazon Cognito returns this timestamp in UNIX epoch time format. Your SDK might render the output in a human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
     pub fn set_user_create_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.user_create_date = input;
         self
     }
-    /// <p>The date the user was created.</p>
+    /// <p>The date and time when the item was created. Amazon Cognito returns this timestamp in UNIX epoch time format. Your SDK might render the output in a human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
     pub fn get_user_create_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.user_create_date
     }
@@ -200,21 +204,21 @@ impl AdminGetUserOutputBuilder {
     pub fn get_user_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.user_last_modified_date
     }
-    /// <p>Indicates that the status is <code>enabled</code>.</p>
+    /// <p>Indicates whether the user is activated for sign-in. The <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminDisableUser.html">AdminDisableUser</a> and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminEnableUser.html">AdminEnableUser</a> API operations deactivate and activate user sign-in, respectively.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates that the status is <code>enabled</code>.</p>
+    /// <p>Indicates whether the user is activated for sign-in. The <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminDisableUser.html">AdminDisableUser</a> and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminEnableUser.html">AdminEnableUser</a> API operations deactivate and activate user sign-in, respectively.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
-    /// <p>Indicates that the status is <code>enabled</code>.</p>
+    /// <p>Indicates whether the user is activated for sign-in. The <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminDisableUser.html">AdminDisableUser</a> and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminEnableUser.html">AdminEnableUser</a> API operations deactivate and activate user sign-in, respectively.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         &self.enabled
     }
-    /// <p>The user status. Can be one of the following:</p>
+    /// <p>The user's status. Can be one of the following:</p>
     /// <ul>
     /// <li>
     /// <p>UNCONFIRMED - User has been created but not confirmed.</p></li>
@@ -226,12 +230,14 @@ impl AdminGetUserOutputBuilder {
     /// <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p></li>
     /// <li>
     /// <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else.</p></li>
+    /// <li>
+    /// <p>EXTERNAL_PROVIDER - The user signed in with a third-party identity provider.</p></li>
     /// </ul>
     pub fn user_status(mut self, input: crate::types::UserStatusType) -> Self {
         self.user_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The user status. Can be one of the following:</p>
+    /// <p>The user's status. Can be one of the following:</p>
     /// <ul>
     /// <li>
     /// <p>UNCONFIRMED - User has been created but not confirmed.</p></li>
@@ -243,12 +249,14 @@ impl AdminGetUserOutputBuilder {
     /// <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p></li>
     /// <li>
     /// <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else.</p></li>
+    /// <li>
+    /// <p>EXTERNAL_PROVIDER - The user signed in with a third-party identity provider.</p></li>
     /// </ul>
     pub fn set_user_status(mut self, input: ::std::option::Option<crate::types::UserStatusType>) -> Self {
         self.user_status = input;
         self
     }
-    /// <p>The user status. Can be one of the following:</p>
+    /// <p>The user's status. Can be one of the following:</p>
     /// <ul>
     /// <li>
     /// <p>UNCONFIRMED - User has been created but not confirmed.</p></li>
@@ -260,6 +268,8 @@ impl AdminGetUserOutputBuilder {
     /// <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p></li>
     /// <li>
     /// <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else.</p></li>
+    /// <li>
+    /// <p>EXTERNAL_PROVIDER - The user signed in with a third-party identity provider.</p></li>
     /// </ul>
     pub fn get_user_status(&self) -> &::std::option::Option<crate::types::UserStatusType> {
         &self.user_status
@@ -284,17 +294,17 @@ impl AdminGetUserOutputBuilder {
     pub fn get_mfa_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>> {
         &self.mfa_options
     }
-    /// <p>The user's preferred MFA setting.</p>
+    /// <p>The user's preferred MFA. Users can prefer SMS message, email message, or TOTP MFA.</p>
     pub fn preferred_mfa_setting(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_mfa_setting = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user's preferred MFA setting.</p>
+    /// <p>The user's preferred MFA. Users can prefer SMS message, email message, or TOTP MFA.</p>
     pub fn set_preferred_mfa_setting(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_mfa_setting = input;
         self
     }
-    /// <p>The user's preferred MFA setting.</p>
+    /// <p>The user's preferred MFA. Users can prefer SMS message, email message, or TOTP MFA.</p>
     pub fn get_preferred_mfa_setting(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_mfa_setting
     }
@@ -302,19 +312,19 @@ impl AdminGetUserOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_user_mfa_setting_list`](Self::set_user_mfa_setting_list).
     ///
-    /// <p>The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code>, <code>EMAIL_OTP</code>, and <code>SOFTWARE_TOKEN_MFA</code>.</p>
+    /// <p>The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code>, <code>EMAIL_OTP</code>, and <code>SOFTWARE_TOKEN_MFA</code>. You can change the MFA preference for users who have more than one available MFA factor with <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminSetUserMFAPreference.html">AdminSetUserMFAPreference</a> or <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserMFAPreference.html">SetUserMFAPreference</a>.</p>
     pub fn user_mfa_setting_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.user_mfa_setting_list.unwrap_or_default();
         v.push(input.into());
         self.user_mfa_setting_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code>, <code>EMAIL_OTP</code>, and <code>SOFTWARE_TOKEN_MFA</code>.</p>
+    /// <p>The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code>, <code>EMAIL_OTP</code>, and <code>SOFTWARE_TOKEN_MFA</code>. You can change the MFA preference for users who have more than one available MFA factor with <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminSetUserMFAPreference.html">AdminSetUserMFAPreference</a> or <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserMFAPreference.html">SetUserMFAPreference</a>.</p>
     pub fn set_user_mfa_setting_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.user_mfa_setting_list = input;
         self
     }
-    /// <p>The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code>, <code>EMAIL_OTP</code>, and <code>SOFTWARE_TOKEN_MFA</code>.</p>
+    /// <p>The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code>, <code>EMAIL_OTP</code>, and <code>SOFTWARE_TOKEN_MFA</code>. You can change the MFA preference for users who have more than one available MFA factor with <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminSetUserMFAPreference.html">AdminSetUserMFAPreference</a> or <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserMFAPreference.html">SetUserMFAPreference</a>.</p>
     pub fn get_user_mfa_setting_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.user_mfa_setting_list
     }

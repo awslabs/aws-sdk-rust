@@ -24,7 +24,7 @@ pub struct WebAuthnConfigurationType {
     /// <p>Your application performs authentication with managed login or the classic hosted UI.</p></li>
     /// </ul>
     pub relying_party_id: ::std::option::Option<::std::string::String>,
-    /// <p>Sets or displays your user-pool treatment for MFA with a passkey. You can override other MFA options and require passkey MFA, or you can set it as preferred. When passkey MFA is preferred, the hosted UI encourages users to register a passkey at sign-in.</p>
+    /// <p>When <code>required</code>, users can only register and sign in users with passkeys that are capable of <a href="https://www.w3.org/TR/webauthn-2/#enum-userVerificationRequirement">user verification</a>. When <code>preferred</code>, your user pool doesn't require the use of authenticators with user verification but encourages it.</p>
     pub user_verification: ::std::option::Option<crate::types::UserVerificationType>,
 }
 impl WebAuthnConfigurationType {
@@ -41,7 +41,7 @@ impl WebAuthnConfigurationType {
     pub fn relying_party_id(&self) -> ::std::option::Option<&str> {
         self.relying_party_id.as_deref()
     }
-    /// <p>Sets or displays your user-pool treatment for MFA with a passkey. You can override other MFA options and require passkey MFA, or you can set it as preferred. When passkey MFA is preferred, the hosted UI encourages users to register a passkey at sign-in.</p>
+    /// <p>When <code>required</code>, users can only register and sign in users with passkeys that are capable of <a href="https://www.w3.org/TR/webauthn-2/#enum-userVerificationRequirement">user verification</a>. When <code>preferred</code>, your user pool doesn't require the use of authenticators with user verification but encourages it.</p>
     pub fn user_verification(&self) -> ::std::option::Option<&crate::types::UserVerificationType> {
         self.user_verification.as_ref()
     }
@@ -102,17 +102,17 @@ impl WebAuthnConfigurationTypeBuilder {
     pub fn get_relying_party_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.relying_party_id
     }
-    /// <p>Sets or displays your user-pool treatment for MFA with a passkey. You can override other MFA options and require passkey MFA, or you can set it as preferred. When passkey MFA is preferred, the hosted UI encourages users to register a passkey at sign-in.</p>
+    /// <p>When <code>required</code>, users can only register and sign in users with passkeys that are capable of <a href="https://www.w3.org/TR/webauthn-2/#enum-userVerificationRequirement">user verification</a>. When <code>preferred</code>, your user pool doesn't require the use of authenticators with user verification but encourages it.</p>
     pub fn user_verification(mut self, input: crate::types::UserVerificationType) -> Self {
         self.user_verification = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Sets or displays your user-pool treatment for MFA with a passkey. You can override other MFA options and require passkey MFA, or you can set it as preferred. When passkey MFA is preferred, the hosted UI encourages users to register a passkey at sign-in.</p>
+    /// <p>When <code>required</code>, users can only register and sign in users with passkeys that are capable of <a href="https://www.w3.org/TR/webauthn-2/#enum-userVerificationRequirement">user verification</a>. When <code>preferred</code>, your user pool doesn't require the use of authenticators with user verification but encourages it.</p>
     pub fn set_user_verification(mut self, input: ::std::option::Option<crate::types::UserVerificationType>) -> Self {
         self.user_verification = input;
         self
     }
-    /// <p>Sets or displays your user-pool treatment for MFA with a passkey. You can override other MFA options and require passkey MFA, or you can set it as preferred. When passkey MFA is preferred, the hosted UI encourages users to register a passkey at sign-in.</p>
+    /// <p>When <code>required</code>, users can only register and sign in users with passkeys that are capable of <a href="https://www.w3.org/TR/webauthn-2/#enum-userVerificationRequirement">user verification</a>. When <code>preferred</code>, your user pool doesn't require the use of authenticators with user verification but encourages it.</p>
     pub fn get_user_verification(&self) -> &::std::option::Option<crate::types::UserVerificationType> {
         &self.user_verification
     }
