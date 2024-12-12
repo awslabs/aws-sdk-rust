@@ -196,6 +196,8 @@ mod create_evaluation_form;
 
 mod create_hours_of_operation;
 
+mod create_hours_of_operation_override;
+
 mod create_instance;
 
 mod create_integration_association;
@@ -279,6 +281,8 @@ mod delete_evaluation_form;
 
 mod delete_hours_of_operation;
 
+mod delete_hours_of_operation_override;
+
 mod delete_instance;
 
 mod delete_integration_association;
@@ -332,6 +336,8 @@ mod describe_email_address;
 mod describe_evaluation_form;
 
 mod describe_hours_of_operation;
+
+mod describe_hours_of_operation_override;
 
 mod describe_instance;
 
@@ -403,6 +409,8 @@ mod get_current_metric_data;
 
 mod get_current_user_data;
 
+mod get_effective_hours_of_operations;
+
 mod get_federation_token;
 
 mod get_flow_association;
@@ -448,6 +456,8 @@ mod list_evaluation_form_versions;
 mod list_evaluation_forms;
 
 mod list_flow_associations;
+
+mod list_hours_of_operation_overrides;
 
 mod list_hours_of_operations;
 
@@ -538,6 +548,8 @@ mod search_contact_flows;
 mod search_contacts;
 
 mod search_email_addresses;
+
+mod search_hours_of_operation_overrides;
 
 mod search_hours_of_operations;
 
@@ -638,6 +650,8 @@ mod update_email_address_metadata;
 mod update_evaluation_form;
 
 mod update_hours_of_operation;
+
+mod update_hours_of_operation_override;
 
 mod update_instance_attribute;
 

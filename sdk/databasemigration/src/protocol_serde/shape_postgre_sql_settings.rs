@@ -87,6 +87,9 @@ pub fn ser_postgre_sql_settings(
     if let Some(var_24) = &input.babelfish_database_name {
         object.key("BabelfishDatabaseName").string(var_24.as_str());
     }
+    if let Some(var_25) = &input.disable_unicode_source_filter {
+        object.key("DisableUnicodeSourceFilter").boolean(*var_25);
+    }
     Ok(())
 }
 
@@ -249,6 +252,10 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "DisableUnicodeSourceFilter" => {
+                            builder =
+                                builder.set_disable_unicode_source_filter(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

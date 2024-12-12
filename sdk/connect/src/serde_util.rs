@@ -1134,6 +1134,18 @@ pub(crate) fn hours_of_operation_time_slice_correct_errors(
     builder
 }
 
+pub(crate) fn override_time_slice_correct_errors(
+    mut builder: crate::types::builders::OverrideTimeSliceBuilder,
+) -> crate::types::builders::OverrideTimeSliceBuilder {
+    if builder.hours.is_none() {
+        builder.hours = Some(Default::default())
+    }
+    if builder.minutes.is_none() {
+        builder.minutes = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn send_notification_action_definition_correct_errors(
     mut builder: crate::types::builders::SendNotificationActionDefinitionBuilder,
 ) -> crate::types::builders::SendNotificationActionDefinitionBuilder {

@@ -5,7 +5,7 @@
 pub enum Error {
     /// <p>You do not have sufficient permissions to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>A conditional check failed.</p>
+    /// <p>Request processing failed because dependent condition failed.</p>
     ConditionalOperationFailedException(crate::types::error::ConditionalOperationFailedException),
     /// <p>Operation cannot be performed at this time as there is a conflict with another operation or contact state.</p>
     ConflictException(crate::types::error::ConflictException),
@@ -1348,6 +1348,59 @@ impl From<crate::operation::create_hours_of_operation::CreateHoursOfOperationErr
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_hours_of_operation_override::CreateHoursOfOperationOverrideError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_hours_of_operation_override::CreateHoursOfOperationOverrideError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_hours_of_operation_override::CreateHoursOfOperationOverrideError> for Error {
+    fn from(err: crate::operation::create_hours_of_operation_override::CreateHoursOfOperationOverrideError) -> Self {
+        match err {
+            crate::operation::create_hours_of_operation_override::CreateHoursOfOperationOverrideError::DuplicateResourceException(inner) => {
+                Error::DuplicateResourceException(inner)
+            }
+            crate::operation::create_hours_of_operation_override::CreateHoursOfOperationOverrideError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::create_hours_of_operation_override::CreateHoursOfOperationOverrideError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::create_hours_of_operation_override::CreateHoursOfOperationOverrideError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::create_hours_of_operation_override::CreateHoursOfOperationOverrideError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::create_hours_of_operation_override::CreateHoursOfOperationOverrideError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_hours_of_operation_override::CreateHoursOfOperationOverrideError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_hours_of_operation_override::CreateHoursOfOperationOverrideError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_instance::CreateInstanceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2372,6 +2425,53 @@ impl From<crate::operation::delete_hours_of_operation::DeleteHoursOfOperationErr
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_hours_of_operation_override::DeleteHoursOfOperationOverrideError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_hours_of_operation_override::DeleteHoursOfOperationOverrideError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_hours_of_operation_override::DeleteHoursOfOperationOverrideError> for Error {
+    fn from(err: crate::operation::delete_hours_of_operation_override::DeleteHoursOfOperationOverrideError) -> Self {
+        match err {
+            crate::operation::delete_hours_of_operation_override::DeleteHoursOfOperationOverrideError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::delete_hours_of_operation_override::DeleteHoursOfOperationOverrideError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::delete_hours_of_operation_override::DeleteHoursOfOperationOverrideError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::delete_hours_of_operation_override::DeleteHoursOfOperationOverrideError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_hours_of_operation_override::DeleteHoursOfOperationOverrideError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_hours_of_operation_override::DeleteHoursOfOperationOverrideError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_instance::DeleteInstanceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3298,6 +3398,55 @@ impl From<crate::operation::describe_hours_of_operation::DescribeHoursOfOperatio
                 Error::ThrottlingException(inner)
             }
             crate::operation::describe_hours_of_operation::DescribeHoursOfOperationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_hours_of_operation_override::DescribeHoursOfOperationOverrideError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_hours_of_operation_override::DescribeHoursOfOperationOverrideError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_hours_of_operation_override::DescribeHoursOfOperationOverrideError> for Error {
+    fn from(err: crate::operation::describe_hours_of_operation_override::DescribeHoursOfOperationOverrideError) -> Self {
+        match err {
+            crate::operation::describe_hours_of_operation_override::DescribeHoursOfOperationOverrideError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::describe_hours_of_operation_override::DescribeHoursOfOperationOverrideError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::describe_hours_of_operation_override::DescribeHoursOfOperationOverrideError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::describe_hours_of_operation_override::DescribeHoursOfOperationOverrideError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_hours_of_operation_override::DescribeHoursOfOperationOverrideError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_hours_of_operation_override::DescribeHoursOfOperationOverrideError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -4554,6 +4703,53 @@ impl From<crate::operation::get_current_user_data::GetCurrentUserDataError> for 
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_effective_hours_of_operations::GetEffectiveHoursOfOperationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_effective_hours_of_operations::GetEffectiveHoursOfOperationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_effective_hours_of_operations::GetEffectiveHoursOfOperationsError> for Error {
+    fn from(err: crate::operation::get_effective_hours_of_operations::GetEffectiveHoursOfOperationsError) -> Self {
+        match err {
+            crate::operation::get_effective_hours_of_operations::GetEffectiveHoursOfOperationsError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::get_effective_hours_of_operations::GetEffectiveHoursOfOperationsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::get_effective_hours_of_operations::GetEffectiveHoursOfOperationsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::get_effective_hours_of_operations::GetEffectiveHoursOfOperationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_effective_hours_of_operations::GetEffectiveHoursOfOperationsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_effective_hours_of_operations::GetEffectiveHoursOfOperationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_federation_token::GetFederationTokenError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -5313,6 +5509,53 @@ impl From<crate::operation::list_flow_associations::ListFlowAssociationsError> f
             }
             crate::operation::list_flow_associations::ListFlowAssociationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_flow_associations::ListFlowAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_hours_of_operation_overrides::ListHoursOfOperationOverridesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_hours_of_operation_overrides::ListHoursOfOperationOverridesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_hours_of_operation_overrides::ListHoursOfOperationOverridesError> for Error {
+    fn from(err: crate::operation::list_hours_of_operation_overrides::ListHoursOfOperationOverridesError) -> Self {
+        match err {
+            crate::operation::list_hours_of_operation_overrides::ListHoursOfOperationOverridesError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::list_hours_of_operation_overrides::ListHoursOfOperationOverridesError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_hours_of_operation_overrides::ListHoursOfOperationOverridesError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_hours_of_operation_overrides::ListHoursOfOperationOverridesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_hours_of_operation_overrides::ListHoursOfOperationOverridesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_hours_of_operation_overrides::ListHoursOfOperationOverridesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -6815,6 +7058,53 @@ impl From<crate::operation::search_email_addresses::SearchEmailAddressesError> f
             }
             crate::operation::search_email_addresses::SearchEmailAddressesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::search_email_addresses::SearchEmailAddressesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::search_hours_of_operation_overrides::SearchHoursOfOperationOverridesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::search_hours_of_operation_overrides::SearchHoursOfOperationOverridesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::search_hours_of_operation_overrides::SearchHoursOfOperationOverridesError> for Error {
+    fn from(err: crate::operation::search_hours_of_operation_overrides::SearchHoursOfOperationOverridesError) -> Self {
+        match err {
+            crate::operation::search_hours_of_operation_overrides::SearchHoursOfOperationOverridesError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::search_hours_of_operation_overrides::SearchHoursOfOperationOverridesError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::search_hours_of_operation_overrides::SearchHoursOfOperationOverridesError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::search_hours_of_operation_overrides::SearchHoursOfOperationOverridesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::search_hours_of_operation_overrides::SearchHoursOfOperationOverridesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::search_hours_of_operation_overrides::SearchHoursOfOperationOverridesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -8586,6 +8876,59 @@ impl From<crate::operation::update_hours_of_operation::UpdateHoursOfOperationErr
             }
             crate::operation::update_hours_of_operation::UpdateHoursOfOperationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_hours_of_operation::UpdateHoursOfOperationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_hours_of_operation_override::UpdateHoursOfOperationOverrideError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_hours_of_operation_override::UpdateHoursOfOperationOverrideError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_hours_of_operation_override::UpdateHoursOfOperationOverrideError> for Error {
+    fn from(err: crate::operation::update_hours_of_operation_override::UpdateHoursOfOperationOverrideError) -> Self {
+        match err {
+            crate::operation::update_hours_of_operation_override::UpdateHoursOfOperationOverrideError::ConditionalOperationFailedException(inner) => {
+                Error::ConditionalOperationFailedException(inner)
+            }
+            crate::operation::update_hours_of_operation_override::UpdateHoursOfOperationOverrideError::DuplicateResourceException(inner) => {
+                Error::DuplicateResourceException(inner)
+            }
+            crate::operation::update_hours_of_operation_override::UpdateHoursOfOperationOverrideError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::update_hours_of_operation_override::UpdateHoursOfOperationOverrideError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::update_hours_of_operation_override::UpdateHoursOfOperationOverrideError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::update_hours_of_operation_override::UpdateHoursOfOperationOverrideError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_hours_of_operation_override::UpdateHoursOfOperationOverrideError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_hours_of_operation_override::UpdateHoursOfOperationOverrideError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

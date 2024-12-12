@@ -256,6 +256,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ModifyEventSu
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ModifyEventSubscriptionError {
+    /// <p>DMS was denied access to the endpoint. Check that the role is correctly configured.</p>
+    AccessDeniedFault(crate::types::error::AccessDeniedFault),
     /// <p>The ciphertext references a key that doesn't exist or that the DMS account doesn't have access to.</p>
     KmsAccessDeniedFault(crate::types::error::KmsAccessDeniedFault),
     /// <p>The specified KMS key isn't enabled.</p>
@@ -307,6 +309,7 @@ impl ModifyEventSubscriptionError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::AccessDeniedFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::KmsAccessDeniedFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::KmsDisabledFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::KmsInvalidStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -318,6 +321,10 @@ impl ModifyEventSubscriptionError {
             Self::SnsNoAuthorizationFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `ModifyEventSubscriptionError::AccessDeniedFault`.
+    pub fn is_access_denied_fault(&self) -> bool {
+        matches!(self, Self::AccessDeniedFault(_))
     }
     /// Returns `true` if the error kind is `ModifyEventSubscriptionError::KmsAccessDeniedFault`.
     pub fn is_kms_access_denied_fault(&self) -> bool {
@@ -359,6 +366,7 @@ impl ModifyEventSubscriptionError {
 impl ::std::error::Error for ModifyEventSubscriptionError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::AccessDeniedFault(_inner) => ::std::option::Option::Some(_inner),
             Self::KmsAccessDeniedFault(_inner) => ::std::option::Option::Some(_inner),
             Self::KmsDisabledFault(_inner) => ::std::option::Option::Some(_inner),
             Self::KmsInvalidStateFault(_inner) => ::std::option::Option::Some(_inner),
@@ -375,6 +383,7 @@ impl ::std::error::Error for ModifyEventSubscriptionError {
 impl ::std::fmt::Display for ModifyEventSubscriptionError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::AccessDeniedFault(_inner) => _inner.fmt(f),
             Self::KmsAccessDeniedFault(_inner) => _inner.fmt(f),
             Self::KmsDisabledFault(_inner) => _inner.fmt(f),
             Self::KmsInvalidStateFault(_inner) => _inner.fmt(f),
@@ -405,6 +414,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for ModifyEventSubscriptionErro
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ModifyEventSubscriptionError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::AccessDeniedFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::KmsAccessDeniedFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::KmsDisabledFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::KmsInvalidStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

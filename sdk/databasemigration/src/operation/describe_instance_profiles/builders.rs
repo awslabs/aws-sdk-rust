@@ -120,16 +120,19 @@ impl DescribeInstanceProfilesFluentBuilder {
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
     /// <p>Filters applied to the instance profiles described in the form of key-value pairs.</p>
+    /// <p>Valid filter names and values: instance-profile-identifier, instance profile arn or name</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
     /// <p>Filters applied to the instance profiles described in the form of key-value pairs.</p>
+    /// <p>Valid filter names and values: instance-profile-identifier, instance profile arn or name</p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>Filters applied to the instance profiles described in the form of key-value pairs.</p>
+    /// <p>Valid filter names and values: instance-profile-identifier, instance profile arn or name</p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()
     }

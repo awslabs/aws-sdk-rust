@@ -10,6 +10,8 @@ pub struct EncryptionConfiguration {
     pub cloud_watch_encryption: ::std::option::Option<crate::types::CloudWatchEncryption>,
     /// <p>The encryption configuration for job bookmarks.</p>
     pub job_bookmarks_encryption: ::std::option::Option<crate::types::JobBookmarksEncryption>,
+    /// <p>The encryption configuration for Glue Data Quality assets.</p>
+    pub data_quality_encryption: ::std::option::Option<crate::types::DataQualityEncryption>,
 }
 impl EncryptionConfiguration {
     /// <p>The encryption configuration for Amazon Simple Storage Service (Amazon S3) data.</p>
@@ -26,6 +28,10 @@ impl EncryptionConfiguration {
     pub fn job_bookmarks_encryption(&self) -> ::std::option::Option<&crate::types::JobBookmarksEncryption> {
         self.job_bookmarks_encryption.as_ref()
     }
+    /// <p>The encryption configuration for Glue Data Quality assets.</p>
+    pub fn data_quality_encryption(&self) -> ::std::option::Option<&crate::types::DataQualityEncryption> {
+        self.data_quality_encryption.as_ref()
+    }
 }
 impl EncryptionConfiguration {
     /// Creates a new builder-style object to manufacture [`EncryptionConfiguration`](crate::types::EncryptionConfiguration).
@@ -41,6 +47,7 @@ pub struct EncryptionConfigurationBuilder {
     pub(crate) s3_encryption: ::std::option::Option<::std::vec::Vec<crate::types::S3Encryption>>,
     pub(crate) cloud_watch_encryption: ::std::option::Option<crate::types::CloudWatchEncryption>,
     pub(crate) job_bookmarks_encryption: ::std::option::Option<crate::types::JobBookmarksEncryption>,
+    pub(crate) data_quality_encryption: ::std::option::Option<crate::types::DataQualityEncryption>,
 }
 impl EncryptionConfigurationBuilder {
     /// Appends an item to `s3_encryption`.
@@ -91,12 +98,27 @@ impl EncryptionConfigurationBuilder {
     pub fn get_job_bookmarks_encryption(&self) -> &::std::option::Option<crate::types::JobBookmarksEncryption> {
         &self.job_bookmarks_encryption
     }
+    /// <p>The encryption configuration for Glue Data Quality assets.</p>
+    pub fn data_quality_encryption(mut self, input: crate::types::DataQualityEncryption) -> Self {
+        self.data_quality_encryption = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The encryption configuration for Glue Data Quality assets.</p>
+    pub fn set_data_quality_encryption(mut self, input: ::std::option::Option<crate::types::DataQualityEncryption>) -> Self {
+        self.data_quality_encryption = input;
+        self
+    }
+    /// <p>The encryption configuration for Glue Data Quality assets.</p>
+    pub fn get_data_quality_encryption(&self) -> &::std::option::Option<crate::types::DataQualityEncryption> {
+        &self.data_quality_encryption
+    }
     /// Consumes the builder and constructs a [`EncryptionConfiguration`](crate::types::EncryptionConfiguration).
     pub fn build(self) -> crate::types::EncryptionConfiguration {
         crate::types::EncryptionConfiguration {
             s3_encryption: self.s3_encryption,
             cloud_watch_encryption: self.cloud_watch_encryption,
             job_bookmarks_encryption: self.job_bookmarks_encryption,
+            data_quality_encryption: self.data_quality_encryption,
         }
     }
 }

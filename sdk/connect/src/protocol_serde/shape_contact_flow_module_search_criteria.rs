@@ -33,5 +33,11 @@ pub fn ser_contact_flow_module_search_criteria(
         crate::protocol_serde::shape_string_condition::ser_string_condition(&mut object_10, var_9)?;
         object_10.finish();
     }
+    if let Some(var_11) = &input.state_condition {
+        object.key("StateCondition").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.status_condition {
+        object.key("StatusCondition").string(var_12.as_str());
+    }
     Ok(())
 }

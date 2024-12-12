@@ -2,7 +2,7 @@
 
 /// <p>The task assessment report in JSON format.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ReplicationTaskAssessmentResult {
     /// <p>The replication task identifier of the task on which the task assessment was run.</p>
     pub replication_task_identifier: ::std::option::Option<::std::string::String>,
@@ -53,6 +53,19 @@ impl ReplicationTaskAssessmentResult {
         self.s3_object_url.as_deref()
     }
 }
+impl ::std::fmt::Debug for ReplicationTaskAssessmentResult {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ReplicationTaskAssessmentResult");
+        formatter.field("replication_task_identifier", &self.replication_task_identifier);
+        formatter.field("replication_task_arn", &self.replication_task_arn);
+        formatter.field("replication_task_last_assessment_date", &self.replication_task_last_assessment_date);
+        formatter.field("assessment_status", &self.assessment_status);
+        formatter.field("assessment_results_file", &self.assessment_results_file);
+        formatter.field("assessment_results", &self.assessment_results);
+        formatter.field("s3_object_url", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl ReplicationTaskAssessmentResult {
     /// Creates a new builder-style object to manufacture [`ReplicationTaskAssessmentResult`](crate::types::ReplicationTaskAssessmentResult).
     pub fn builder() -> crate::types::builders::ReplicationTaskAssessmentResultBuilder {
@@ -61,7 +74,7 @@ impl ReplicationTaskAssessmentResult {
 }
 
 /// A builder for [`ReplicationTaskAssessmentResult`](crate::types::ReplicationTaskAssessmentResult).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct ReplicationTaskAssessmentResultBuilder {
     pub(crate) replication_task_identifier: ::std::option::Option<::std::string::String>,
@@ -188,5 +201,18 @@ impl ReplicationTaskAssessmentResultBuilder {
             assessment_results: self.assessment_results,
             s3_object_url: self.s3_object_url,
         }
+    }
+}
+impl ::std::fmt::Debug for ReplicationTaskAssessmentResultBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ReplicationTaskAssessmentResultBuilder");
+        formatter.field("replication_task_identifier", &self.replication_task_identifier);
+        formatter.field("replication_task_arn", &self.replication_task_arn);
+        formatter.field("replication_task_last_assessment_date", &self.replication_task_last_assessment_date);
+        formatter.field("assessment_status", &self.assessment_status);
+        formatter.field("assessment_results_file", &self.assessment_results_file);
+        formatter.field("assessment_results", &self.assessment_results);
+        formatter.field("s3_object_url", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

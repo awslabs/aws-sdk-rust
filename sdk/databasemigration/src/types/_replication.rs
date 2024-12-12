@@ -54,7 +54,7 @@ pub struct Replication {
     pub failure_messages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>This object provides a collection of statistics about a serverless replication.</p>
     pub replication_stats: ::std::option::Option<crate::types::ReplicationStats>,
-    /// <p>The replication type.</p>
+    /// <p>The type of replication to start.</p>
     pub start_replication_type: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the start time for a change data capture (CDC) operation. Use either <code>CdcStartTime</code> or <code>CdcStartPosition</code> to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
     pub cdc_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -146,7 +146,7 @@ impl Replication {
     pub fn replication_stats(&self) -> ::std::option::Option<&crate::types::ReplicationStats> {
         self.replication_stats.as_ref()
     }
-    /// <p>The replication type.</p>
+    /// <p>The type of replication to start.</p>
     pub fn start_replication_type(&self) -> ::std::option::Option<&str> {
         self.start_replication_type.as_deref()
     }
@@ -451,17 +451,17 @@ impl ReplicationBuilder {
     pub fn get_replication_stats(&self) -> &::std::option::Option<crate::types::ReplicationStats> {
         &self.replication_stats
     }
-    /// <p>The replication type.</p>
+    /// <p>The type of replication to start.</p>
     pub fn start_replication_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_replication_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The replication type.</p>
+    /// <p>The type of replication to start.</p>
     pub fn set_start_replication_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start_replication_type = input;
         self
     }
-    /// <p>The replication type.</p>
+    /// <p>The type of replication to start.</p>
     pub fn get_start_replication_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.start_replication_type
     }

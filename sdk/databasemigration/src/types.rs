@@ -47,6 +47,8 @@ pub use crate::types::_refresh_schemas_status_type_value::RefreshSchemasStatusTy
 
 pub use crate::types::_replication_instance::ReplicationInstance;
 
+pub use crate::types::_kerberos_authentication_settings::KerberosAuthenticationSettings;
+
 pub use crate::types::_replication_pending_modified_values::ReplicationPendingModifiedValues;
 
 pub use crate::types::_replication_subnet_group::ReplicationSubnetGroup;
@@ -95,6 +97,8 @@ pub use crate::types::_ibm_db2_settings::IbmDb2Settings;
 
 pub use crate::types::_microsoft_sql_server_settings::MicrosoftSqlServerSettings;
 
+pub use crate::types::_sql_server_authentication_method::SqlServerAuthenticationMethod;
+
 pub use crate::types::_tlog_access_mode::TlogAccessMode;
 
 pub use crate::types::_safeguard_policy::SafeguardPolicy;
@@ -102,6 +106,8 @@ pub use crate::types::_safeguard_policy::SafeguardPolicy;
 pub use crate::types::_sybase_settings::SybaseSettings;
 
 pub use crate::types::_oracle_settings::OracleSettings;
+
+pub use crate::types::_oracle_authentication_method::OracleAuthenticationMethod;
 
 pub use crate::types::_char_length_semantics::CharLengthSemantics;
 
@@ -397,6 +403,8 @@ mod _kafka_settings;
 
 mod _kafka_ssl_endpoint_identification_algorithm;
 
+mod _kerberos_authentication_settings;
+
 mod _kinesis_settings;
 
 mod _limitation;
@@ -426,6 +434,8 @@ mod _my_sql_settings;
 mod _neptune_settings;
 
 mod _nesting_level_value;
+
+mod _oracle_authentication_method;
 
 mod _oracle_data_provider_settings;
 
@@ -524,6 +534,8 @@ mod _server_short_info_response;
 mod _source_data_setting;
 
 mod _source_type;
+
+mod _sql_server_authentication_method;
 
 mod _ssl_security_protocol_value;
 

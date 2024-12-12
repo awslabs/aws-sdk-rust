@@ -603,6 +603,8 @@ pub(crate) mod shape_instance_profile_list;
 
 pub(crate) mod shape_kafka_settings;
 
+pub(crate) mod shape_kerberos_authentication_settings;
+
 pub(crate) mod shape_kinesis_settings;
 
 pub(crate) mod shape_limitation_list;

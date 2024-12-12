@@ -6,7 +6,9 @@
 pub struct ContactConfiguration {
     /// <p>The identifier of the contact within the Amazon Connect instance.</p>
     pub contact_id: ::std::string::String,
-    /// <p>The role of the participant in the chat conversation.</p>
+    /// <p>The role of the participant in the chat conversation.</p><note>
+    /// <p>Only <code>CUSTOMER</code> is currently supported. Any other values other than <code>CUSTOMER</code> will result in an exception (4xx error).</p>
+    /// </note>
     pub participant_role: ::std::option::Option<crate::types::ParticipantRole>,
     /// <p>Whether to include raw connect message in the push notification payload. Default is <code>False</code>.</p>
     pub include_raw_message: bool,
@@ -17,7 +19,9 @@ impl ContactConfiguration {
         use std::ops::Deref;
         self.contact_id.deref()
     }
-    /// <p>The role of the participant in the chat conversation.</p>
+    /// <p>The role of the participant in the chat conversation.</p><note>
+    /// <p>Only <code>CUSTOMER</code> is currently supported. Any other values other than <code>CUSTOMER</code> will result in an exception (4xx error).</p>
+    /// </note>
     pub fn participant_role(&self) -> ::std::option::Option<&crate::types::ParticipantRole> {
         self.participant_role.as_ref()
     }
@@ -57,17 +61,23 @@ impl ContactConfigurationBuilder {
     pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.contact_id
     }
-    /// <p>The role of the participant in the chat conversation.</p>
+    /// <p>The role of the participant in the chat conversation.</p><note>
+    /// <p>Only <code>CUSTOMER</code> is currently supported. Any other values other than <code>CUSTOMER</code> will result in an exception (4xx error).</p>
+    /// </note>
     pub fn participant_role(mut self, input: crate::types::ParticipantRole) -> Self {
         self.participant_role = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The role of the participant in the chat conversation.</p>
+    /// <p>The role of the participant in the chat conversation.</p><note>
+    /// <p>Only <code>CUSTOMER</code> is currently supported. Any other values other than <code>CUSTOMER</code> will result in an exception (4xx error).</p>
+    /// </note>
     pub fn set_participant_role(mut self, input: ::std::option::Option<crate::types::ParticipantRole>) -> Self {
         self.participant_role = input;
         self
     }
-    /// <p>The role of the participant in the chat conversation.</p>
+    /// <p>The role of the participant in the chat conversation.</p><note>
+    /// <p>Only <code>CUSTOMER</code> is currently supported. Any other values other than <code>CUSTOMER</code> will result in an exception (4xx error).</p>
+    /// </note>
     pub fn get_participant_role(&self) -> &::std::option::Option<crate::types::ParticipantRole> {
         &self.participant_role
     }

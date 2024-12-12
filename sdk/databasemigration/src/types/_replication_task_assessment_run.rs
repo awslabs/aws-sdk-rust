@@ -32,6 +32,8 @@ pub struct ReplicationTaskAssessmentRun {
     /// <p><code>"running"</code> – Individual assessments are being run.</p></li>
     /// <li>
     /// <p><code>"starting"</code> – The assessment run is starting, but resources are not yet being provisioned for individual assessments.</p></li>
+    /// <li>
+    /// <p><code>"warning"</code> – At least one individual assessment completed with a <code>warning</code> status.</p></li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Date on which the assessment run was created using the <code>StartReplicationTaskAssessmentRun</code> operation.</p>
@@ -89,6 +91,8 @@ impl ReplicationTaskAssessmentRun {
     /// <p><code>"running"</code> – Individual assessments are being run.</p></li>
     /// <li>
     /// <p><code>"starting"</code> – The assessment run is starting, but resources are not yet being provisioned for individual assessments.</p></li>
+    /// <li>
+    /// <p><code>"warning"</code> – At least one individual assessment completed with a <code>warning</code> status.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -216,6 +220,8 @@ impl ReplicationTaskAssessmentRunBuilder {
     /// <p><code>"running"</code> – Individual assessments are being run.</p></li>
     /// <li>
     /// <p><code>"starting"</code> – The assessment run is starting, but resources are not yet being provisioned for individual assessments.</p></li>
+    /// <li>
+    /// <p><code>"warning"</code> – At least one individual assessment completed with a <code>warning</code> status.</p></li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -244,6 +250,8 @@ impl ReplicationTaskAssessmentRunBuilder {
     /// <p><code>"running"</code> – Individual assessments are being run.</p></li>
     /// <li>
     /// <p><code>"starting"</code> – The assessment run is starting, but resources are not yet being provisioned for individual assessments.</p></li>
+    /// <li>
+    /// <p><code>"warning"</code> – At least one individual assessment completed with a <code>warning</code> status.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -272,6 +280,8 @@ impl ReplicationTaskAssessmentRunBuilder {
     /// <p><code>"running"</code> – Individual assessments are being run.</p></li>
     /// <li>
     /// <p><code>"starting"</code> – The assessment run is starting, but resources are not yet being provisioned for individual assessments.</p></li>
+    /// <li>
+    /// <p><code>"warning"</code> – At least one individual assessment completed with a <code>warning</code> status.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status

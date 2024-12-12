@@ -173,6 +173,12 @@ pub use crate::types::_instance_storage_resource_type::InstanceStorageResourceTy
 
 pub use crate::types::_instance_attribute_type::InstanceAttributeType;
 
+pub use crate::types::_hours_of_operation_override_config::HoursOfOperationOverrideConfig;
+
+pub use crate::types::_override_time_slice::OverrideTimeSlice;
+
+pub use crate::types::_override_days::OverrideDays;
+
 pub use crate::types::_hours_of_operation_config::HoursOfOperationConfig;
 
 pub use crate::types::_hours_of_operation_time_slice::HoursOfOperationTimeSlice;
@@ -446,6 +452,14 @@ pub use crate::types::_hours_of_operation::HoursOfOperation;
 pub use crate::types::_hours_of_operation_search_criteria::HoursOfOperationSearchCriteria;
 
 pub use crate::types::_hours_of_operation_search_filter::HoursOfOperationSearchFilter;
+
+pub use crate::types::_hours_of_operation_override::HoursOfOperationOverride;
+
+pub use crate::types::_hours_of_operation_override_search_criteria::HoursOfOperationOverrideSearchCriteria;
+
+pub use crate::types::_date_condition::DateCondition;
+
+pub use crate::types::_date_comparison_type::DateComparisonType;
 
 pub use crate::types::_email_address_metadata::EmailAddressMetadata;
 
@@ -742,6 +756,10 @@ pub use crate::types::_filters::Filters;
 pub use crate::types::_flow_association_resource_type::FlowAssociationResourceType;
 
 pub use crate::types::_credentials::Credentials;
+
+pub use crate::types::_effective_hours_of_operations::EffectiveHoursOfOperations;
+
+pub use crate::types::_operational_hour::OperationalHour;
 
 pub use crate::types::_user_data::UserData;
 
@@ -1077,6 +1095,10 @@ mod _customer_quality_metrics;
 
 mod _customer_voice_activity;
 
+mod _date_comparison_type;
+
+mod _date_condition;
+
 mod _date_reference;
 
 mod _default_vocabulary;
@@ -1096,6 +1118,8 @@ mod _disconnect_reason;
 mod _distribution;
 
 mod _download_url_metadata;
+
+mod _effective_hours_of_operations;
 
 mod _email_address_info;
 
@@ -1259,6 +1283,12 @@ mod _hours_of_operation_config;
 
 mod _hours_of_operation_days;
 
+mod _hours_of_operation_override;
+
+mod _hours_of_operation_override_config;
+
+mod _hours_of_operation_override_search_criteria;
+
 mod _hours_of_operation_search_criteria;
 
 mod _hours_of_operation_search_filter;
@@ -1369,6 +1399,8 @@ mod _numeric_question_property_automation_label;
 
 mod _numeric_question_property_value_automation;
 
+mod _operational_hour;
+
 mod _outbound_additional_recipients;
 
 mod _outbound_caller_config;
@@ -1380,6 +1412,10 @@ mod _outbound_email_content;
 mod _outbound_message_source_type;
 
 mod _outbound_raw_message;
+
+mod _override_days;
+
+mod _override_time_slice;
 
 mod _participant_capabilities;
 

@@ -22,7 +22,6 @@ impl crate::operation::create_queue::builders::CreateQueueInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateQueue`.
 ///
-/// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
 /// <p>Creates a new queue for the specified Amazon Connect instance.</p><important>
 /// <ul>
 /// <li>

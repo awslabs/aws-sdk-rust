@@ -48,5 +48,11 @@ pub fn ser_modify_replication_instance_input_input(
     if let Some(var_14) = &input.network_type {
         object.key("NetworkType").string(var_14.as_str());
     }
+    if let Some(var_15) = &input.kerberos_authentication_settings {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("KerberosAuthenticationSettings").start_object();
+        crate::protocol_serde::shape_kerberos_authentication_settings::ser_kerberos_authentication_settings(&mut object_16, var_15)?;
+        object_16.finish();
+    }
     Ok(())
 }

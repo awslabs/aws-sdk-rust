@@ -60,6 +60,9 @@ pub fn ser_microsoft_sql_server_settings(
     if let Some(var_17) = &input.force_lob_lookup {
         object.key("ForceLobLookup").boolean(*var_17);
     }
+    if let Some(var_18) = &input.authentication_method {
+        object.key("AuthenticationMethod").string(var_18.as_str());
+    }
     Ok(())
 }
 
@@ -174,6 +177,13 @@ where
                         }
                         "ForceLobLookup" => {
                             builder = builder.set_force_lob_lookup(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "AuthenticationMethod" => {
+                            builder = builder.set_authentication_method(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::SqlServerAuthenticationMethod::from(u.as_ref())))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

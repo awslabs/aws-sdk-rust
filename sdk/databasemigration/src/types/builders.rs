@@ -35,6 +35,8 @@ pub use crate::types::_refresh_schemas_status::RefreshSchemasStatusBuilder;
 
 pub use crate::types::_replication_instance::ReplicationInstanceBuilder;
 
+pub use crate::types::_kerberos_authentication_settings::KerberosAuthenticationSettingsBuilder;
+
 pub use crate::types::_replication_pending_modified_values::ReplicationPendingModifiedValuesBuilder;
 
 pub use crate::types::_replication_subnet_group::ReplicationSubnetGroupBuilder;

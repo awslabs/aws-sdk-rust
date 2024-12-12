@@ -737,6 +737,10 @@ pub use crate::types::_security_configuration::SecurityConfiguration;
 
 pub use crate::types::_encryption_configuration::EncryptionConfiguration;
 
+pub use crate::types::_data_quality_encryption::DataQualityEncryption;
+
+pub use crate::types::_data_quality_encryption_mode::DataQualityEncryptionMode;
+
 pub use crate::types::_job_bookmarks_encryption::JobBookmarksEncryption;
 
 pub use crate::types::_job_bookmarks_encryption_mode::JobBookmarksEncryptionMode;
@@ -1214,6 +1218,10 @@ mod _data_lake_principal;
 mod _data_operation;
 
 mod _data_quality_analyzer_result;
+
+mod _data_quality_encryption;
+
+mod _data_quality_encryption_mode;
 
 mod _data_quality_evaluation_run_additional_run_options;
 

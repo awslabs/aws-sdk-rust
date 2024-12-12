@@ -55,6 +55,8 @@ pub struct CreateReplicationInstanceInput {
     pub resource_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The type of IP address protocol used by a replication instance, such as IPv4 only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.</p>
     pub network_type: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the ID of the secret that stores the key cache file required for kerberos authentication, when creating a replication instance.</p>
+    pub kerberos_authentication_settings: ::std::option::Option<crate::types::KerberosAuthenticationSettings>,
 }
 impl CreateReplicationInstanceInput {
     /// <p>The replication instance identifier. This parameter is stored as a lowercase string.</p>
@@ -144,6 +146,10 @@ impl CreateReplicationInstanceInput {
     pub fn network_type(&self) -> ::std::option::Option<&str> {
         self.network_type.as_deref()
     }
+    /// <p>Specifies the ID of the secret that stores the key cache file required for kerberos authentication, when creating a replication instance.</p>
+    pub fn kerberos_authentication_settings(&self) -> ::std::option::Option<&crate::types::KerberosAuthenticationSettings> {
+        self.kerberos_authentication_settings.as_ref()
+    }
 }
 impl CreateReplicationInstanceInput {
     /// Creates a new builder-style object to manufacture [`CreateReplicationInstanceInput`](crate::operation::create_replication_instance::CreateReplicationInstanceInput).
@@ -172,6 +178,7 @@ pub struct CreateReplicationInstanceInputBuilder {
     pub(crate) dns_name_servers: ::std::option::Option<::std::string::String>,
     pub(crate) resource_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) network_type: ::std::option::Option<::std::string::String>,
+    pub(crate) kerberos_authentication_settings: ::std::option::Option<crate::types::KerberosAuthenticationSettings>,
 }
 impl CreateReplicationInstanceInputBuilder {
     /// <p>The replication instance identifier. This parameter is stored as a lowercase string.</p>
@@ -469,6 +476,20 @@ impl CreateReplicationInstanceInputBuilder {
     pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_type
     }
+    /// <p>Specifies the ID of the secret that stores the key cache file required for kerberos authentication, when creating a replication instance.</p>
+    pub fn kerberos_authentication_settings(mut self, input: crate::types::KerberosAuthenticationSettings) -> Self {
+        self.kerberos_authentication_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the ID of the secret that stores the key cache file required for kerberos authentication, when creating a replication instance.</p>
+    pub fn set_kerberos_authentication_settings(mut self, input: ::std::option::Option<crate::types::KerberosAuthenticationSettings>) -> Self {
+        self.kerberos_authentication_settings = input;
+        self
+    }
+    /// <p>Specifies the ID of the secret that stores the key cache file required for kerberos authentication, when creating a replication instance.</p>
+    pub fn get_kerberos_authentication_settings(&self) -> &::std::option::Option<crate::types::KerberosAuthenticationSettings> {
+        &self.kerberos_authentication_settings
+    }
     /// Consumes the builder and constructs a [`CreateReplicationInstanceInput`](crate::operation::create_replication_instance::CreateReplicationInstanceInput).
     pub fn build(
         self,
@@ -493,6 +514,7 @@ impl CreateReplicationInstanceInputBuilder {
             dns_name_servers: self.dns_name_servers,
             resource_identifier: self.resource_identifier,
             network_type: self.network_type,
+            kerberos_authentication_settings: self.kerberos_authentication_settings,
         })
     }
 }

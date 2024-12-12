@@ -120,16 +120,43 @@ impl DescribeMigrationProjectsFluentBuilder {
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
     /// <p>Filters applied to the migration projects described in the form of key-value pairs.</p>
+    /// <p>Valid filter names and values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>instance-profile-identifier, instance profile arn or name</p></li>
+    /// <li>
+    /// <p>data-provider-identifier, data provider arn or name</p></li>
+    /// <li>
+    /// <p>migration-project-identifier, migration project arn or name</p></li>
+    /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
     /// <p>Filters applied to the migration projects described in the form of key-value pairs.</p>
+    /// <p>Valid filter names and values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>instance-profile-identifier, instance profile arn or name</p></li>
+    /// <li>
+    /// <p>data-provider-identifier, data provider arn or name</p></li>
+    /// <li>
+    /// <p>migration-project-identifier, migration project arn or name</p></li>
+    /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>Filters applied to the migration projects described in the form of key-value pairs.</p>
+    /// <p>Valid filter names and values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>instance-profile-identifier, instance profile arn or name</p></li>
+    /// <li>
+    /// <p>data-provider-identifier, data provider arn or name</p></li>
+    /// <li>
+    /// <p>migration-project-identifier, migration project arn or name</p></li>
+    /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()
     }

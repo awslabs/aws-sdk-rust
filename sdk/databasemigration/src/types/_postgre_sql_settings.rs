@@ -8,27 +8,34 @@ pub struct PostgreSqlSettings {
     /// <p>Example: <code>afterConnectScript=SET session_replication_role='replica'</code></p>
     pub after_connect_script: ::std::option::Option<::std::string::String>,
     /// <p>To capture DDL events, DMS creates various artifacts in the PostgreSQL database when the task starts. You can later remove these artifacts.</p>
+    /// <p>The default value is <code>true</code>.</p>
     /// <p>If this value is set to <code>N</code>, you don't have to create tables or triggers on the source database.</p>
     pub capture_ddls: ::std::option::Option<bool>,
     /// <p>Specifies the maximum size (in KB) of any .csv file used to transfer data to PostgreSQL.</p>
+    /// <p>The default value is 32,768 KB (32 MB).</p>
     /// <p>Example: <code>maxFileSize=512</code></p>
     pub max_file_size: ::std::option::Option<i32>,
     /// <p>Database name for the endpoint.</p>
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The schema in which the operational DDL database artifacts are created.</p>
+    /// <p>The default value is <code>public</code>.</p>
     /// <p>Example: <code>ddlArtifactsSchema=xyzddlschema;</code></p>
     pub ddl_artifacts_schema: ::std::option::Option<::std::string::String>,
     /// <p>Sets the client statement timeout for the PostgreSQL instance, in seconds. The default value is 60 seconds.</p>
     /// <p>Example: <code>executeTimeout=100;</code></p>
     pub execute_timeout: ::std::option::Option<i32>,
     /// <p>When set to <code>true</code>, this value causes a task to fail if the actual size of a LOB column is greater than the specified <code>LobMaxSize</code>.</p>
+    /// <p>The default value is <code>false</code>.</p>
     /// <p>If task is set to Limited LOB mode and this option is set to true, the task fails instead of truncating the LOB data.</p>
     pub fail_tasks_on_lob_truncation: ::std::option::Option<bool>,
     /// <p>The write-ahead log (WAL) heartbeat feature mimics a dummy transaction. By doing this, it prevents idle logical replication slots from holding onto old WAL logs, which can result in storage full situations on the source. This heartbeat keeps <code>restart_lsn</code> moving and prevents storage full scenarios.</p>
+    /// <p>The default value is <code>false</code>.</p>
     pub heartbeat_enable: ::std::option::Option<bool>,
     /// <p>Sets the schema in which the heartbeat artifacts are created.</p>
+    /// <p>The default value is <code>public</code>.</p>
     pub heartbeat_schema: ::std::option::Option<::std::string::String>,
     /// <p>Sets the WAL heartbeat frequency (in minutes).</p>
+    /// <p>The default value is 5 minutes.</p>
     pub heartbeat_frequency: ::std::option::Option<i32>,
     /// <p>Endpoint connection password.</p>
     pub password: ::std::option::Option<::std::string::String>,
@@ -45,6 +52,7 @@ pub struct PostgreSqlSettings {
     /// <p>For more information about setting the <code>CdcStartPosition</code> request parameter, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining a CDC native start point</a> in the <i>Database Migration Service User Guide</i>. For more information about using <code>CdcStartPosition</code>, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html">CreateReplicationTask</a>, <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">StartReplicationTask</a>, and <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html">ModifyReplicationTask</a>.</p>
     pub slot_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the plugin to use to create a replication slot.</p>
+    /// <p>The default value is <code>pglogical</code>.</p>
     pub plugin_name: ::std::option::Option<crate::types::PluginNameValue>,
     /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the PostgreSQL endpoint.</p><note>
     /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
@@ -55,15 +63,21 @@ pub struct PostgreSqlSettings {
     /// <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during migration. The default value is <code>true</code>.</p>
     pub trim_space_in_char: ::std::option::Option<bool>,
     /// <p>When true, lets PostgreSQL migrate the boolean type as boolean. By default, PostgreSQL migrates booleans as <code>varchar(5)</code>. You must set this setting on both the source and target endpoints for it to take effect.</p>
+    /// <p>The default value is <code>false</code>.</p>
     pub map_boolean_as_boolean: ::std::option::Option<bool>,
     /// <p>When true, DMS migrates JSONB values as CLOB.</p>
+    /// <p>The default value is <code>false</code>.</p>
     pub map_jsonb_as_clob: ::std::option::Option<bool>,
-    /// <p>When true, DMS migrates LONG values as VARCHAR.</p>
+    /// <p>Sets what datatype to map LONG values as.</p>
+    /// <p>The default value is <code>wstring</code>.</p>
     pub map_long_varchar_as: ::std::option::Option<crate::types::LongVarcharMappingType>,
     /// <p>Specifies the default behavior of the replication's handling of PostgreSQL- compatible endpoints that require some additional configuration, such as Babelfish endpoints.</p>
     pub database_mode: ::std::option::Option<crate::types::DatabaseMode>,
     /// <p>The Babelfish for Aurora PostgreSQL database name for the endpoint.</p>
     pub babelfish_database_name: ::std::option::Option<::std::string::String>,
+    /// <p>Disables the Unicode source filter with PostgreSQL, for values passed into the Selection rule filter on Source Endpoint column values. By default DMS performs source filter comparisons using a Unicode string which can cause look ups to ignore the indexes in the text columns and slow down migrations.</p>
+    /// <p>Unicode support should only be disabled when using a selection rule filter is on a text column in the Source database that is indexed.</p>
+    pub disable_unicode_source_filter: ::std::option::Option<bool>,
 }
 impl PostgreSqlSettings {
     /// <p>For use with change data capture (CDC) only, this attribute has DMS bypass foreign keys and user triggers to reduce the time it takes to bulk load data.</p>
@@ -72,11 +86,13 @@ impl PostgreSqlSettings {
         self.after_connect_script.as_deref()
     }
     /// <p>To capture DDL events, DMS creates various artifacts in the PostgreSQL database when the task starts. You can later remove these artifacts.</p>
+    /// <p>The default value is <code>true</code>.</p>
     /// <p>If this value is set to <code>N</code>, you don't have to create tables or triggers on the source database.</p>
     pub fn capture_ddls(&self) -> ::std::option::Option<bool> {
         self.capture_ddls
     }
     /// <p>Specifies the maximum size (in KB) of any .csv file used to transfer data to PostgreSQL.</p>
+    /// <p>The default value is 32,768 KB (32 MB).</p>
     /// <p>Example: <code>maxFileSize=512</code></p>
     pub fn max_file_size(&self) -> ::std::option::Option<i32> {
         self.max_file_size
@@ -86,6 +102,7 @@ impl PostgreSqlSettings {
         self.database_name.as_deref()
     }
     /// <p>The schema in which the operational DDL database artifacts are created.</p>
+    /// <p>The default value is <code>public</code>.</p>
     /// <p>Example: <code>ddlArtifactsSchema=xyzddlschema;</code></p>
     pub fn ddl_artifacts_schema(&self) -> ::std::option::Option<&str> {
         self.ddl_artifacts_schema.as_deref()
@@ -96,19 +113,23 @@ impl PostgreSqlSettings {
         self.execute_timeout
     }
     /// <p>When set to <code>true</code>, this value causes a task to fail if the actual size of a LOB column is greater than the specified <code>LobMaxSize</code>.</p>
+    /// <p>The default value is <code>false</code>.</p>
     /// <p>If task is set to Limited LOB mode and this option is set to true, the task fails instead of truncating the LOB data.</p>
     pub fn fail_tasks_on_lob_truncation(&self) -> ::std::option::Option<bool> {
         self.fail_tasks_on_lob_truncation
     }
     /// <p>The write-ahead log (WAL) heartbeat feature mimics a dummy transaction. By doing this, it prevents idle logical replication slots from holding onto old WAL logs, which can result in storage full situations on the source. This heartbeat keeps <code>restart_lsn</code> moving and prevents storage full scenarios.</p>
+    /// <p>The default value is <code>false</code>.</p>
     pub fn heartbeat_enable(&self) -> ::std::option::Option<bool> {
         self.heartbeat_enable
     }
     /// <p>Sets the schema in which the heartbeat artifacts are created.</p>
+    /// <p>The default value is <code>public</code>.</p>
     pub fn heartbeat_schema(&self) -> ::std::option::Option<&str> {
         self.heartbeat_schema.as_deref()
     }
     /// <p>Sets the WAL heartbeat frequency (in minutes).</p>
+    /// <p>The default value is 5 minutes.</p>
     pub fn heartbeat_frequency(&self) -> ::std::option::Option<i32> {
         self.heartbeat_frequency
     }
@@ -137,6 +158,7 @@ impl PostgreSqlSettings {
         self.slot_name.as_deref()
     }
     /// <p>Specifies the plugin to use to create a replication slot.</p>
+    /// <p>The default value is <code>pglogical</code>.</p>
     pub fn plugin_name(&self) -> ::std::option::Option<&crate::types::PluginNameValue> {
         self.plugin_name.as_ref()
     }
@@ -155,14 +177,17 @@ impl PostgreSqlSettings {
         self.trim_space_in_char
     }
     /// <p>When true, lets PostgreSQL migrate the boolean type as boolean. By default, PostgreSQL migrates booleans as <code>varchar(5)</code>. You must set this setting on both the source and target endpoints for it to take effect.</p>
+    /// <p>The default value is <code>false</code>.</p>
     pub fn map_boolean_as_boolean(&self) -> ::std::option::Option<bool> {
         self.map_boolean_as_boolean
     }
     /// <p>When true, DMS migrates JSONB values as CLOB.</p>
+    /// <p>The default value is <code>false</code>.</p>
     pub fn map_jsonb_as_clob(&self) -> ::std::option::Option<bool> {
         self.map_jsonb_as_clob
     }
-    /// <p>When true, DMS migrates LONG values as VARCHAR.</p>
+    /// <p>Sets what datatype to map LONG values as.</p>
+    /// <p>The default value is <code>wstring</code>.</p>
     pub fn map_long_varchar_as(&self) -> ::std::option::Option<&crate::types::LongVarcharMappingType> {
         self.map_long_varchar_as.as_ref()
     }
@@ -173,6 +198,11 @@ impl PostgreSqlSettings {
     /// <p>The Babelfish for Aurora PostgreSQL database name for the endpoint.</p>
     pub fn babelfish_database_name(&self) -> ::std::option::Option<&str> {
         self.babelfish_database_name.as_deref()
+    }
+    /// <p>Disables the Unicode source filter with PostgreSQL, for values passed into the Selection rule filter on Source Endpoint column values. By default DMS performs source filter comparisons using a Unicode string which can cause look ups to ignore the indexes in the text columns and slow down migrations.</p>
+    /// <p>Unicode support should only be disabled when using a selection rule filter is on a text column in the Source database that is indexed.</p>
+    pub fn disable_unicode_source_filter(&self) -> ::std::option::Option<bool> {
+        self.disable_unicode_source_filter
     }
 }
 impl ::std::fmt::Debug for PostgreSqlSettings {
@@ -202,6 +232,7 @@ impl ::std::fmt::Debug for PostgreSqlSettings {
         formatter.field("map_long_varchar_as", &self.map_long_varchar_as);
         formatter.field("database_mode", &self.database_mode);
         formatter.field("babelfish_database_name", &self.babelfish_database_name);
+        formatter.field("disable_unicode_source_filter", &self.disable_unicode_source_filter);
         formatter.finish()
     }
 }
@@ -240,6 +271,7 @@ pub struct PostgreSqlSettingsBuilder {
     pub(crate) map_long_varchar_as: ::std::option::Option<crate::types::LongVarcharMappingType>,
     pub(crate) database_mode: ::std::option::Option<crate::types::DatabaseMode>,
     pub(crate) babelfish_database_name: ::std::option::Option<::std::string::String>,
+    pub(crate) disable_unicode_source_filter: ::std::option::Option<bool>,
 }
 impl PostgreSqlSettingsBuilder {
     /// <p>For use with change data capture (CDC) only, this attribute has DMS bypass foreign keys and user triggers to reduce the time it takes to bulk load data.</p>
@@ -260,35 +292,41 @@ impl PostgreSqlSettingsBuilder {
         &self.after_connect_script
     }
     /// <p>To capture DDL events, DMS creates various artifacts in the PostgreSQL database when the task starts. You can later remove these artifacts.</p>
+    /// <p>The default value is <code>true</code>.</p>
     /// <p>If this value is set to <code>N</code>, you don't have to create tables or triggers on the source database.</p>
     pub fn capture_ddls(mut self, input: bool) -> Self {
         self.capture_ddls = ::std::option::Option::Some(input);
         self
     }
     /// <p>To capture DDL events, DMS creates various artifacts in the PostgreSQL database when the task starts. You can later remove these artifacts.</p>
+    /// <p>The default value is <code>true</code>.</p>
     /// <p>If this value is set to <code>N</code>, you don't have to create tables or triggers on the source database.</p>
     pub fn set_capture_ddls(mut self, input: ::std::option::Option<bool>) -> Self {
         self.capture_ddls = input;
         self
     }
     /// <p>To capture DDL events, DMS creates various artifacts in the PostgreSQL database when the task starts. You can later remove these artifacts.</p>
+    /// <p>The default value is <code>true</code>.</p>
     /// <p>If this value is set to <code>N</code>, you don't have to create tables or triggers on the source database.</p>
     pub fn get_capture_ddls(&self) -> &::std::option::Option<bool> {
         &self.capture_ddls
     }
     /// <p>Specifies the maximum size (in KB) of any .csv file used to transfer data to PostgreSQL.</p>
+    /// <p>The default value is 32,768 KB (32 MB).</p>
     /// <p>Example: <code>maxFileSize=512</code></p>
     pub fn max_file_size(mut self, input: i32) -> Self {
         self.max_file_size = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the maximum size (in KB) of any .csv file used to transfer data to PostgreSQL.</p>
+    /// <p>The default value is 32,768 KB (32 MB).</p>
     /// <p>Example: <code>maxFileSize=512</code></p>
     pub fn set_max_file_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_file_size = input;
         self
     }
     /// <p>Specifies the maximum size (in KB) of any .csv file used to transfer data to PostgreSQL.</p>
+    /// <p>The default value is 32,768 KB (32 MB).</p>
     /// <p>Example: <code>maxFileSize=512</code></p>
     pub fn get_max_file_size(&self) -> &::std::option::Option<i32> {
         &self.max_file_size
@@ -308,18 +346,21 @@ impl PostgreSqlSettingsBuilder {
         &self.database_name
     }
     /// <p>The schema in which the operational DDL database artifacts are created.</p>
+    /// <p>The default value is <code>public</code>.</p>
     /// <p>Example: <code>ddlArtifactsSchema=xyzddlschema;</code></p>
     pub fn ddl_artifacts_schema(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ddl_artifacts_schema = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The schema in which the operational DDL database artifacts are created.</p>
+    /// <p>The default value is <code>public</code>.</p>
     /// <p>Example: <code>ddlArtifactsSchema=xyzddlschema;</code></p>
     pub fn set_ddl_artifacts_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ddl_artifacts_schema = input;
         self
     }
     /// <p>The schema in which the operational DDL database artifacts are created.</p>
+    /// <p>The default value is <code>public</code>.</p>
     /// <p>Example: <code>ddlArtifactsSchema=xyzddlschema;</code></p>
     pub fn get_ddl_artifacts_schema(&self) -> &::std::option::Option<::std::string::String> {
         &self.ddl_artifacts_schema
@@ -342,61 +383,73 @@ impl PostgreSqlSettingsBuilder {
         &self.execute_timeout
     }
     /// <p>When set to <code>true</code>, this value causes a task to fail if the actual size of a LOB column is greater than the specified <code>LobMaxSize</code>.</p>
+    /// <p>The default value is <code>false</code>.</p>
     /// <p>If task is set to Limited LOB mode and this option is set to true, the task fails instead of truncating the LOB data.</p>
     pub fn fail_tasks_on_lob_truncation(mut self, input: bool) -> Self {
         self.fail_tasks_on_lob_truncation = ::std::option::Option::Some(input);
         self
     }
     /// <p>When set to <code>true</code>, this value causes a task to fail if the actual size of a LOB column is greater than the specified <code>LobMaxSize</code>.</p>
+    /// <p>The default value is <code>false</code>.</p>
     /// <p>If task is set to Limited LOB mode and this option is set to true, the task fails instead of truncating the LOB data.</p>
     pub fn set_fail_tasks_on_lob_truncation(mut self, input: ::std::option::Option<bool>) -> Self {
         self.fail_tasks_on_lob_truncation = input;
         self
     }
     /// <p>When set to <code>true</code>, this value causes a task to fail if the actual size of a LOB column is greater than the specified <code>LobMaxSize</code>.</p>
+    /// <p>The default value is <code>false</code>.</p>
     /// <p>If task is set to Limited LOB mode and this option is set to true, the task fails instead of truncating the LOB data.</p>
     pub fn get_fail_tasks_on_lob_truncation(&self) -> &::std::option::Option<bool> {
         &self.fail_tasks_on_lob_truncation
     }
     /// <p>The write-ahead log (WAL) heartbeat feature mimics a dummy transaction. By doing this, it prevents idle logical replication slots from holding onto old WAL logs, which can result in storage full situations on the source. This heartbeat keeps <code>restart_lsn</code> moving and prevents storage full scenarios.</p>
+    /// <p>The default value is <code>false</code>.</p>
     pub fn heartbeat_enable(mut self, input: bool) -> Self {
         self.heartbeat_enable = ::std::option::Option::Some(input);
         self
     }
     /// <p>The write-ahead log (WAL) heartbeat feature mimics a dummy transaction. By doing this, it prevents idle logical replication slots from holding onto old WAL logs, which can result in storage full situations on the source. This heartbeat keeps <code>restart_lsn</code> moving and prevents storage full scenarios.</p>
+    /// <p>The default value is <code>false</code>.</p>
     pub fn set_heartbeat_enable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.heartbeat_enable = input;
         self
     }
     /// <p>The write-ahead log (WAL) heartbeat feature mimics a dummy transaction. By doing this, it prevents idle logical replication slots from holding onto old WAL logs, which can result in storage full situations on the source. This heartbeat keeps <code>restart_lsn</code> moving and prevents storage full scenarios.</p>
+    /// <p>The default value is <code>false</code>.</p>
     pub fn get_heartbeat_enable(&self) -> &::std::option::Option<bool> {
         &self.heartbeat_enable
     }
     /// <p>Sets the schema in which the heartbeat artifacts are created.</p>
+    /// <p>The default value is <code>public</code>.</p>
     pub fn heartbeat_schema(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.heartbeat_schema = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Sets the schema in which the heartbeat artifacts are created.</p>
+    /// <p>The default value is <code>public</code>.</p>
     pub fn set_heartbeat_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.heartbeat_schema = input;
         self
     }
     /// <p>Sets the schema in which the heartbeat artifacts are created.</p>
+    /// <p>The default value is <code>public</code>.</p>
     pub fn get_heartbeat_schema(&self) -> &::std::option::Option<::std::string::String> {
         &self.heartbeat_schema
     }
     /// <p>Sets the WAL heartbeat frequency (in minutes).</p>
+    /// <p>The default value is 5 minutes.</p>
     pub fn heartbeat_frequency(mut self, input: i32) -> Self {
         self.heartbeat_frequency = ::std::option::Option::Some(input);
         self
     }
     /// <p>Sets the WAL heartbeat frequency (in minutes).</p>
+    /// <p>The default value is 5 minutes.</p>
     pub fn set_heartbeat_frequency(mut self, input: ::std::option::Option<i32>) -> Self {
         self.heartbeat_frequency = input;
         self
     }
     /// <p>Sets the WAL heartbeat frequency (in minutes).</p>
+    /// <p>The default value is 5 minutes.</p>
     pub fn get_heartbeat_frequency(&self) -> &::std::option::Option<i32> {
         &self.heartbeat_frequency
     }
@@ -483,16 +536,19 @@ impl PostgreSqlSettingsBuilder {
         &self.slot_name
     }
     /// <p>Specifies the plugin to use to create a replication slot.</p>
+    /// <p>The default value is <code>pglogical</code>.</p>
     pub fn plugin_name(mut self, input: crate::types::PluginNameValue) -> Self {
         self.plugin_name = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the plugin to use to create a replication slot.</p>
+    /// <p>The default value is <code>pglogical</code>.</p>
     pub fn set_plugin_name(mut self, input: ::std::option::Option<crate::types::PluginNameValue>) -> Self {
         self.plugin_name = input;
         self
     }
     /// <p>Specifies the plugin to use to create a replication slot.</p>
+    /// <p>The default value is <code>pglogical</code>.</p>
     pub fn get_plugin_name(&self) -> &::std::option::Option<crate::types::PluginNameValue> {
         &self.plugin_name
     }
@@ -545,44 +601,53 @@ impl PostgreSqlSettingsBuilder {
         &self.trim_space_in_char
     }
     /// <p>When true, lets PostgreSQL migrate the boolean type as boolean. By default, PostgreSQL migrates booleans as <code>varchar(5)</code>. You must set this setting on both the source and target endpoints for it to take effect.</p>
+    /// <p>The default value is <code>false</code>.</p>
     pub fn map_boolean_as_boolean(mut self, input: bool) -> Self {
         self.map_boolean_as_boolean = ::std::option::Option::Some(input);
         self
     }
     /// <p>When true, lets PostgreSQL migrate the boolean type as boolean. By default, PostgreSQL migrates booleans as <code>varchar(5)</code>. You must set this setting on both the source and target endpoints for it to take effect.</p>
+    /// <p>The default value is <code>false</code>.</p>
     pub fn set_map_boolean_as_boolean(mut self, input: ::std::option::Option<bool>) -> Self {
         self.map_boolean_as_boolean = input;
         self
     }
     /// <p>When true, lets PostgreSQL migrate the boolean type as boolean. By default, PostgreSQL migrates booleans as <code>varchar(5)</code>. You must set this setting on both the source and target endpoints for it to take effect.</p>
+    /// <p>The default value is <code>false</code>.</p>
     pub fn get_map_boolean_as_boolean(&self) -> &::std::option::Option<bool> {
         &self.map_boolean_as_boolean
     }
     /// <p>When true, DMS migrates JSONB values as CLOB.</p>
+    /// <p>The default value is <code>false</code>.</p>
     pub fn map_jsonb_as_clob(mut self, input: bool) -> Self {
         self.map_jsonb_as_clob = ::std::option::Option::Some(input);
         self
     }
     /// <p>When true, DMS migrates JSONB values as CLOB.</p>
+    /// <p>The default value is <code>false</code>.</p>
     pub fn set_map_jsonb_as_clob(mut self, input: ::std::option::Option<bool>) -> Self {
         self.map_jsonb_as_clob = input;
         self
     }
     /// <p>When true, DMS migrates JSONB values as CLOB.</p>
+    /// <p>The default value is <code>false</code>.</p>
     pub fn get_map_jsonb_as_clob(&self) -> &::std::option::Option<bool> {
         &self.map_jsonb_as_clob
     }
-    /// <p>When true, DMS migrates LONG values as VARCHAR.</p>
+    /// <p>Sets what datatype to map LONG values as.</p>
+    /// <p>The default value is <code>wstring</code>.</p>
     pub fn map_long_varchar_as(mut self, input: crate::types::LongVarcharMappingType) -> Self {
         self.map_long_varchar_as = ::std::option::Option::Some(input);
         self
     }
-    /// <p>When true, DMS migrates LONG values as VARCHAR.</p>
+    /// <p>Sets what datatype to map LONG values as.</p>
+    /// <p>The default value is <code>wstring</code>.</p>
     pub fn set_map_long_varchar_as(mut self, input: ::std::option::Option<crate::types::LongVarcharMappingType>) -> Self {
         self.map_long_varchar_as = input;
         self
     }
-    /// <p>When true, DMS migrates LONG values as VARCHAR.</p>
+    /// <p>Sets what datatype to map LONG values as.</p>
+    /// <p>The default value is <code>wstring</code>.</p>
     pub fn get_map_long_varchar_as(&self) -> &::std::option::Option<crate::types::LongVarcharMappingType> {
         &self.map_long_varchar_as
     }
@@ -614,6 +679,23 @@ impl PostgreSqlSettingsBuilder {
     pub fn get_babelfish_database_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.babelfish_database_name
     }
+    /// <p>Disables the Unicode source filter with PostgreSQL, for values passed into the Selection rule filter on Source Endpoint column values. By default DMS performs source filter comparisons using a Unicode string which can cause look ups to ignore the indexes in the text columns and slow down migrations.</p>
+    /// <p>Unicode support should only be disabled when using a selection rule filter is on a text column in the Source database that is indexed.</p>
+    pub fn disable_unicode_source_filter(mut self, input: bool) -> Self {
+        self.disable_unicode_source_filter = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Disables the Unicode source filter with PostgreSQL, for values passed into the Selection rule filter on Source Endpoint column values. By default DMS performs source filter comparisons using a Unicode string which can cause look ups to ignore the indexes in the text columns and slow down migrations.</p>
+    /// <p>Unicode support should only be disabled when using a selection rule filter is on a text column in the Source database that is indexed.</p>
+    pub fn set_disable_unicode_source_filter(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.disable_unicode_source_filter = input;
+        self
+    }
+    /// <p>Disables the Unicode source filter with PostgreSQL, for values passed into the Selection rule filter on Source Endpoint column values. By default DMS performs source filter comparisons using a Unicode string which can cause look ups to ignore the indexes in the text columns and slow down migrations.</p>
+    /// <p>Unicode support should only be disabled when using a selection rule filter is on a text column in the Source database that is indexed.</p>
+    pub fn get_disable_unicode_source_filter(&self) -> &::std::option::Option<bool> {
+        &self.disable_unicode_source_filter
+    }
     /// Consumes the builder and constructs a [`PostgreSqlSettings`](crate::types::PostgreSqlSettings).
     pub fn build(self) -> crate::types::PostgreSqlSettings {
         crate::types::PostgreSqlSettings {
@@ -641,6 +723,7 @@ impl PostgreSqlSettingsBuilder {
             map_long_varchar_as: self.map_long_varchar_as,
             database_mode: self.database_mode,
             babelfish_database_name: self.babelfish_database_name,
+            disable_unicode_source_filter: self.disable_unicode_source_filter,
         }
     }
 }
@@ -671,6 +754,7 @@ impl ::std::fmt::Debug for PostgreSqlSettingsBuilder {
         formatter.field("map_long_varchar_as", &self.map_long_varchar_as);
         formatter.field("database_mode", &self.database_mode);
         formatter.field("babelfish_database_name", &self.babelfish_database_name);
+        formatter.field("disable_unicode_source_filter", &self.disable_unicode_source_filter);
         formatter.finish()
     }
 }

@@ -32,9 +32,11 @@ pub struct CreateFilterInput {
     /// <li>
     /// <p><b>Medium</b>: <code>\["4", "5", "6"\]</code></p></li>
     /// <li>
-    /// <p><b>High</b>: <code>\["7", "8", "9"\]</code></p></li>
+    /// <p><b>High</b>: <code>\["7", "8"\]</code></p></li>
+    /// <li>
+    /// <p><b>Critical</b>: <code>\["9", "10"\]</code></p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html#guardduty_findings-severity">Severity levels for GuardDuty findings</a>.</p></li>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Findings severity levels</a> in the <i>Amazon GuardDuty User Guide</i>.</p></li>
     /// <li>
     /// <p>type</p></li>
     /// <li>
@@ -265,9 +267,11 @@ impl CreateFilterInput {
     /// <li>
     /// <p><b>Medium</b>: <code>\["4", "5", "6"\]</code></p></li>
     /// <li>
-    /// <p><b>High</b>: <code>\["7", "8", "9"\]</code></p></li>
+    /// <p><b>High</b>: <code>\["7", "8"\]</code></p></li>
+    /// <li>
+    /// <p><b>Critical</b>: <code>\["9", "10"\]</code></p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html#guardduty_findings-severity">Severity levels for GuardDuty findings</a>.</p></li>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Findings severity levels</a> in the <i>Amazon GuardDuty User Guide</i>.</p></li>
     /// <li>
     /// <p>type</p></li>
     /// <li>
@@ -578,9 +582,11 @@ impl CreateFilterInputBuilder {
     /// <li>
     /// <p><b>Medium</b>: <code>\["4", "5", "6"\]</code></p></li>
     /// <li>
-    /// <p><b>High</b>: <code>\["7", "8", "9"\]</code></p></li>
+    /// <p><b>High</b>: <code>\["7", "8"\]</code></p></li>
+    /// <li>
+    /// <p><b>Critical</b>: <code>\["9", "10"\]</code></p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html#guardduty_findings-severity">Severity levels for GuardDuty findings</a>.</p></li>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Findings severity levels</a> in the <i>Amazon GuardDuty User Guide</i>.</p></li>
     /// <li>
     /// <p>type</p></li>
     /// <li>
@@ -788,9 +794,11 @@ impl CreateFilterInputBuilder {
     /// <li>
     /// <p><b>Medium</b>: <code>\["4", "5", "6"\]</code></p></li>
     /// <li>
-    /// <p><b>High</b>: <code>\["7", "8", "9"\]</code></p></li>
+    /// <p><b>High</b>: <code>\["7", "8"\]</code></p></li>
+    /// <li>
+    /// <p><b>Critical</b>: <code>\["9", "10"\]</code></p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html#guardduty_findings-severity">Severity levels for GuardDuty findings</a>.</p></li>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Findings severity levels</a> in the <i>Amazon GuardDuty User Guide</i>.</p></li>
     /// <li>
     /// <p>type</p></li>
     /// <li>
@@ -997,9 +1005,11 @@ impl CreateFilterInputBuilder {
     /// <li>
     /// <p><b>Medium</b>: <code>\["4", "5", "6"\]</code></p></li>
     /// <li>
-    /// <p><b>High</b>: <code>\["7", "8", "9"\]</code></p></li>
+    /// <p><b>High</b>: <code>\["7", "8"\]</code></p></li>
+    /// <li>
+    /// <p><b>Critical</b>: <code>\["9", "10"\]</code></p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html#guardduty_findings-severity">Severity levels for GuardDuty findings</a>.</p></li>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Findings severity levels</a> in the <i>Amazon GuardDuty User Guide</i>.</p></li>
     /// <li>
     /// <p>type</p></li>
     /// <li>

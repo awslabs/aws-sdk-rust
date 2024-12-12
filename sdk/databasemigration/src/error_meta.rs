@@ -863,6 +863,7 @@ where
 impl From<crate::operation::delete_event_subscription::DeleteEventSubscriptionError> for Error {
     fn from(err: crate::operation::delete_event_subscription::DeleteEventSubscriptionError) -> Self {
         match err {
+            crate::operation::delete_event_subscription::DeleteEventSubscriptionError::AccessDeniedFault(inner) => Error::AccessDeniedFault(inner),
             crate::operation::delete_event_subscription::DeleteEventSubscriptionError::InvalidResourceStateFault(inner) => {
                 Error::InvalidResourceStateFault(inner)
             }
@@ -1098,6 +1099,9 @@ where
 impl From<crate::operation::delete_replication_subnet_group::DeleteReplicationSubnetGroupError> for Error {
     fn from(err: crate::operation::delete_replication_subnet_group::DeleteReplicationSubnetGroupError) -> Self {
         match err {
+            crate::operation::delete_replication_subnet_group::DeleteReplicationSubnetGroupError::AccessDeniedFault(inner) => {
+                Error::AccessDeniedFault(inner)
+            }
             crate::operation::delete_replication_subnet_group::DeleteReplicationSubnetGroupError::InvalidResourceStateFault(inner) => {
                 Error::InvalidResourceStateFault(inner)
             }
@@ -2536,6 +2540,7 @@ where
 impl From<crate::operation::describe_table_statistics::DescribeTableStatisticsError> for Error {
     fn from(err: crate::operation::describe_table_statistics::DescribeTableStatisticsError) -> Self {
         match err {
+            crate::operation::describe_table_statistics::DescribeTableStatisticsError::AccessDeniedFault(inner) => Error::AccessDeniedFault(inner),
             crate::operation::describe_table_statistics::DescribeTableStatisticsError::InvalidResourceStateFault(inner) => {
                 Error::InvalidResourceStateFault(inner)
             }
@@ -2764,6 +2769,7 @@ where
 impl From<crate::operation::modify_event_subscription::ModifyEventSubscriptionError> for Error {
     fn from(err: crate::operation::modify_event_subscription::ModifyEventSubscriptionError) -> Self {
         match err {
+            crate::operation::modify_event_subscription::ModifyEventSubscriptionError::AccessDeniedFault(inner) => Error::AccessDeniedFault(inner),
             crate::operation::modify_event_subscription::ModifyEventSubscriptionError::KmsAccessDeniedFault(inner) => {
                 Error::KmsAccessDeniedFault(inner)
             }

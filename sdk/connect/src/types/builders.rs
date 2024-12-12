@@ -109,6 +109,10 @@ pub use crate::types::_encryption_config::EncryptionConfigBuilder;
 
 pub use crate::types::_s3_config::S3ConfigBuilder;
 
+pub use crate::types::_hours_of_operation_override_config::HoursOfOperationOverrideConfigBuilder;
+
+pub use crate::types::_override_time_slice::OverrideTimeSliceBuilder;
+
 pub use crate::types::_hours_of_operation_config::HoursOfOperationConfigBuilder;
 
 pub use crate::types::_hours_of_operation_time_slice::HoursOfOperationTimeSliceBuilder;
@@ -306,6 +310,12 @@ pub use crate::types::_hours_of_operation::HoursOfOperationBuilder;
 pub use crate::types::_hours_of_operation_search_criteria::HoursOfOperationSearchCriteriaBuilder;
 
 pub use crate::types::_hours_of_operation_search_filter::HoursOfOperationSearchFilterBuilder;
+
+pub use crate::types::_hours_of_operation_override::HoursOfOperationOverrideBuilder;
+
+pub use crate::types::_hours_of_operation_override_search_criteria::HoursOfOperationOverrideSearchCriteriaBuilder;
+
+pub use crate::types::_date_condition::DateConditionBuilder;
 
 pub use crate::types::_email_address_metadata::EmailAddressMetadataBuilder;
 
@@ -516,6 +526,10 @@ pub use crate::types::_queue_reference::QueueReferenceBuilder;
 pub use crate::types::_filters::FiltersBuilder;
 
 pub use crate::types::_credentials::CredentialsBuilder;
+
+pub use crate::types::_effective_hours_of_operations::EffectiveHoursOfOperationsBuilder;
+
+pub use crate::types::_operational_hour::OperationalHourBuilder;
 
 pub use crate::types::_user_data::UserDataBuilder;
 

@@ -7,6 +7,10 @@ pub struct StartReplicationInput {
     /// <p>The Amazon Resource Name of the replication for which to start replication.</p>
     pub replication_config_arn: ::std::option::Option<::std::string::String>,
     /// <p>The replication type.</p>
+    /// <p>When the replication type is <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value for the first run of the replication is <code>start-replication</code>. This option will start the replication.</p>
+    /// <p>You can also use <code>ReloadTables</code> to reload specific tables that failed during replication instead of restarting the replication.</p>
+    /// <p>The <code>resume-processing</code> option isn't applicable for a full-load replication, because you can't resume partially loaded tables during the full load phase.</p>
+    /// <p>For a <code>full-load-and-cdc</code> replication, DMS migrates table data, and then applies data changes that occur on the source. To load all the tables again, and start capturing source changes, use <code>reload-target</code>. Otherwise use <code>resume-processing</code>, to replicate the changes from the last stop position.</p>
     pub start_replication_type: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the start time for a change data capture (CDC) operation. Use either <code>CdcStartTime</code> or <code>CdcStartPosition</code> to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
     pub cdc_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -22,6 +26,10 @@ impl StartReplicationInput {
         self.replication_config_arn.as_deref()
     }
     /// <p>The replication type.</p>
+    /// <p>When the replication type is <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value for the first run of the replication is <code>start-replication</code>. This option will start the replication.</p>
+    /// <p>You can also use <code>ReloadTables</code> to reload specific tables that failed during replication instead of restarting the replication.</p>
+    /// <p>The <code>resume-processing</code> option isn't applicable for a full-load replication, because you can't resume partially loaded tables during the full load phase.</p>
+    /// <p>For a <code>full-load-and-cdc</code> replication, DMS migrates table data, and then applies data changes that occur on the source. To load all the tables again, and start capturing source changes, use <code>reload-target</code>. Otherwise use <code>resume-processing</code>, to replicate the changes from the last stop position.</p>
     pub fn start_replication_type(&self) -> ::std::option::Option<&str> {
         self.start_replication_type.as_deref()
     }
@@ -73,17 +81,29 @@ impl StartReplicationInputBuilder {
         &self.replication_config_arn
     }
     /// <p>The replication type.</p>
+    /// <p>When the replication type is <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value for the first run of the replication is <code>start-replication</code>. This option will start the replication.</p>
+    /// <p>You can also use <code>ReloadTables</code> to reload specific tables that failed during replication instead of restarting the replication.</p>
+    /// <p>The <code>resume-processing</code> option isn't applicable for a full-load replication, because you can't resume partially loaded tables during the full load phase.</p>
+    /// <p>For a <code>full-load-and-cdc</code> replication, DMS migrates table data, and then applies data changes that occur on the source. To load all the tables again, and start capturing source changes, use <code>reload-target</code>. Otherwise use <code>resume-processing</code>, to replicate the changes from the last stop position.</p>
     /// This field is required.
     pub fn start_replication_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_replication_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The replication type.</p>
+    /// <p>When the replication type is <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value for the first run of the replication is <code>start-replication</code>. This option will start the replication.</p>
+    /// <p>You can also use <code>ReloadTables</code> to reload specific tables that failed during replication instead of restarting the replication.</p>
+    /// <p>The <code>resume-processing</code> option isn't applicable for a full-load replication, because you can't resume partially loaded tables during the full load phase.</p>
+    /// <p>For a <code>full-load-and-cdc</code> replication, DMS migrates table data, and then applies data changes that occur on the source. To load all the tables again, and start capturing source changes, use <code>reload-target</code>. Otherwise use <code>resume-processing</code>, to replicate the changes from the last stop position.</p>
     pub fn set_start_replication_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start_replication_type = input;
         self
     }
     /// <p>The replication type.</p>
+    /// <p>When the replication type is <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value for the first run of the replication is <code>start-replication</code>. This option will start the replication.</p>
+    /// <p>You can also use <code>ReloadTables</code> to reload specific tables that failed during replication instead of restarting the replication.</p>
+    /// <p>The <code>resume-processing</code> option isn't applicable for a full-load replication, because you can't resume partially loaded tables during the full load phase.</p>
+    /// <p>For a <code>full-load-and-cdc</code> replication, DMS migrates table data, and then applies data changes that occur on the source. To load all the tables again, and start capturing source changes, use <code>reload-target</code>. Otherwise use <code>resume-processing</code>, to replicate the changes from the last stop position.</p>
     pub fn get_start_replication_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.start_replication_type
     }

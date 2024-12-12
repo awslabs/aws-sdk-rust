@@ -402,4 +402,18 @@ impl CreateReplicationInstanceFluentBuilder {
     pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_network_type()
     }
+    /// <p>Specifies the ID of the secret that stores the key cache file required for kerberos authentication, when creating a replication instance.</p>
+    pub fn kerberos_authentication_settings(mut self, input: crate::types::KerberosAuthenticationSettings) -> Self {
+        self.inner = self.inner.kerberos_authentication_settings(input);
+        self
+    }
+    /// <p>Specifies the ID of the secret that stores the key cache file required for kerberos authentication, when creating a replication instance.</p>
+    pub fn set_kerberos_authentication_settings(mut self, input: ::std::option::Option<crate::types::KerberosAuthenticationSettings>) -> Self {
+        self.inner = self.inner.set_kerberos_authentication_settings(input);
+        self
+    }
+    /// <p>Specifies the ID of the secret that stores the key cache file required for kerberos authentication, when creating a replication instance.</p>
+    pub fn get_kerberos_authentication_settings(&self) -> &::std::option::Option<crate::types::KerberosAuthenticationSettings> {
+        self.inner.get_kerberos_authentication_settings()
+    }
 }

@@ -27,6 +27,12 @@ pub fn ser_encryption_configuration(
         crate::protocol_serde::shape_job_bookmarks_encryption::ser_job_bookmarks_encryption(&mut object_8, var_7)?;
         object_8.finish();
     }
+    if let Some(var_9) = &input.data_quality_encryption {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("DataQualityEncryption").start_object();
+        crate::protocol_serde::shape_data_quality_encryption::ser_data_quality_encryption(&mut object_10, var_9)?;
+        object_10.finish();
+    }
     Ok(())
 }
 
@@ -55,6 +61,11 @@ where
                         "JobBookmarksEncryption" => {
                             builder = builder.set_job_bookmarks_encryption(
                                 crate::protocol_serde::shape_job_bookmarks_encryption::de_job_bookmarks_encryption(tokens)?,
+                            );
+                        }
+                        "DataQualityEncryption" => {
+                            builder = builder.set_data_quality_encryption(
+                                crate::protocol_serde::shape_data_quality_encryption::de_data_quality_encryption(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

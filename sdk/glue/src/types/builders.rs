@@ -561,6 +561,8 @@ pub use crate::types::_security_configuration::SecurityConfigurationBuilder;
 
 pub use crate::types::_encryption_configuration::EncryptionConfigurationBuilder;
 
+pub use crate::types::_data_quality_encryption::DataQualityEncryptionBuilder;
+
 pub use crate::types::_job_bookmarks_encryption::JobBookmarksEncryptionBuilder;
 
 pub use crate::types::_cloud_watch_encryption::CloudWatchEncryptionBuilder;

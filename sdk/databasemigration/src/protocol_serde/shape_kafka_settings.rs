@@ -66,6 +66,9 @@ pub fn ser_kafka_settings(
     if let Some(var_20) = &input.ssl_endpoint_identification_algorithm {
         object.key("SslEndpointIdentificationAlgorithm").string(var_20.as_str());
     }
+    if let Some(var_21) = &input.use_large_integer_value {
+        object.key("UseLargeIntegerValue").boolean(*var_21);
+    }
     Ok(())
 }
 
@@ -201,6 +204,9 @@ where
                                     })
                                     .transpose()?,
                             );
+                        }
+                        "UseLargeIntegerValue" => {
+                            builder = builder.set_use_large_integer_value(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

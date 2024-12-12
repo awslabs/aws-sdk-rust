@@ -169,6 +169,16 @@ pub(crate) fn reflens_list_flow_associations_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_hours_of_operation_overrides_output_output_next_token(
+    input: &crate::operation::list_hours_of_operation_overrides::ListHoursOfOperationOverridesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_hours_of_operations_output_output_next_token(
     input: &crate::operation::list_hours_of_operations::ListHoursOfOperationsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -529,6 +539,16 @@ pub(crate) fn reflens_search_contacts_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_search_hours_of_operation_overrides_output_output_next_token(
+    input: &crate::operation::search_hours_of_operation_overrides::SearchHoursOfOperationOverridesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_search_hours_of_operations_output_output_next_token(
     input: &crate::operation::search_hours_of_operations::SearchHoursOfOperationsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -751,6 +771,16 @@ pub(crate) fn lens_list_flow_associations_output_output_flow_association_summary
     input: crate::operation::list_flow_associations::ListFlowAssociationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::FlowAssociationSummary>> {
     let input = match input.flow_association_summary_list {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_hours_of_operation_overrides_output_output_hours_of_operation_override_list(
+    input: crate::operation::list_hours_of_operation_overrides::ListHoursOfOperationOverridesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationOverride>> {
+    let input = match input.hours_of_operation_override_list {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };
@@ -1098,6 +1128,16 @@ pub(crate) fn lens_search_contacts_output_output_contacts(
     input: crate::operation::search_contacts::SearchContactsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ContactSearchSummary>> {
     let input = input.contacts;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_search_hours_of_operation_overrides_output_output_hours_of_operation_overrides(
+    input: crate::operation::search_hours_of_operation_overrides::SearchHoursOfOperationOverridesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationOverride>> {
+    let input = match input.hours_of_operation_overrides {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
     ::std::option::Option::Some(input)
 }
 

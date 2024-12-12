@@ -4,6 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeMigrationProjectsInput {
     /// <p>Filters applied to the migration projects described in the form of key-value pairs.</p>
+    /// <p>Valid filter names and values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>instance-profile-identifier, instance profile arn or name</p></li>
+    /// <li>
+    /// <p>data-provider-identifier, data provider arn or name</p></li>
+    /// <li>
+    /// <p>migration-project-identifier, migration project arn or name</p></li>
+    /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, DMS includes a pagination token in the response so that you can retrieve the remaining results.</p>
     pub max_records: ::std::option::Option<i32>,
@@ -13,6 +22,15 @@ pub struct DescribeMigrationProjectsInput {
 }
 impl DescribeMigrationProjectsInput {
     /// <p>Filters applied to the migration projects described in the form of key-value pairs.</p>
+    /// <p>Valid filter names and values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>instance-profile-identifier, instance profile arn or name</p></li>
+    /// <li>
+    /// <p>data-provider-identifier, data provider arn or name</p></li>
+    /// <li>
+    /// <p>migration-project-identifier, migration project arn or name</p></li>
+    /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
     pub fn filters(&self) -> &[crate::types::Filter] {
@@ -49,6 +67,15 @@ impl DescribeMigrationProjectsInputBuilder {
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
     /// <p>Filters applied to the migration projects described in the form of key-value pairs.</p>
+    /// <p>Valid filter names and values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>instance-profile-identifier, instance profile arn or name</p></li>
+    /// <li>
+    /// <p>data-provider-identifier, data provider arn or name</p></li>
+    /// <li>
+    /// <p>migration-project-identifier, migration project arn or name</p></li>
+    /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
@@ -56,11 +83,29 @@ impl DescribeMigrationProjectsInputBuilder {
         self
     }
     /// <p>Filters applied to the migration projects described in the form of key-value pairs.</p>
+    /// <p>Valid filter names and values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>instance-profile-identifier, instance profile arn or name</p></li>
+    /// <li>
+    /// <p>data-provider-identifier, data provider arn or name</p></li>
+    /// <li>
+    /// <p>migration-project-identifier, migration project arn or name</p></li>
+    /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>Filters applied to the migration projects described in the form of key-value pairs.</p>
+    /// <p>Valid filter names and values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>instance-profile-identifier, instance profile arn or name</p></li>
+    /// <li>
+    /// <p>data-provider-identifier, data provider arn or name</p></li>
+    /// <li>
+    /// <p>migration-project-identifier, migration project arn or name</p></li>
+    /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters
     }

@@ -10,6 +10,10 @@ pub struct ContactFlowModuleSearchCriteria {
     pub and_conditions: ::std::option::Option<::std::vec::Vec<crate::types::ContactFlowModuleSearchCriteria>>,
     /// <p>A leaf node condition which can be used to specify a string condition.</p>
     pub string_condition: ::std::option::Option<crate::types::StringCondition>,
+    /// <p>The state of the flow.</p>
+    pub state_condition: ::std::option::Option<crate::types::ContactFlowModuleState>,
+    /// <p>The status of the flow.</p>
+    pub status_condition: ::std::option::Option<crate::types::ContactFlowModuleStatus>,
 }
 impl ContactFlowModuleSearchCriteria {
     /// <p>A list of conditions which would be applied together with an <code>OR</code> condition.</p>
@@ -28,6 +32,14 @@ impl ContactFlowModuleSearchCriteria {
     pub fn string_condition(&self) -> ::std::option::Option<&crate::types::StringCondition> {
         self.string_condition.as_ref()
     }
+    /// <p>The state of the flow.</p>
+    pub fn state_condition(&self) -> ::std::option::Option<&crate::types::ContactFlowModuleState> {
+        self.state_condition.as_ref()
+    }
+    /// <p>The status of the flow.</p>
+    pub fn status_condition(&self) -> ::std::option::Option<&crate::types::ContactFlowModuleStatus> {
+        self.status_condition.as_ref()
+    }
 }
 impl ContactFlowModuleSearchCriteria {
     /// Creates a new builder-style object to manufacture [`ContactFlowModuleSearchCriteria`](crate::types::ContactFlowModuleSearchCriteria).
@@ -43,6 +55,8 @@ pub struct ContactFlowModuleSearchCriteriaBuilder {
     pub(crate) or_conditions: ::std::option::Option<::std::vec::Vec<crate::types::ContactFlowModuleSearchCriteria>>,
     pub(crate) and_conditions: ::std::option::Option<::std::vec::Vec<crate::types::ContactFlowModuleSearchCriteria>>,
     pub(crate) string_condition: ::std::option::Option<crate::types::StringCondition>,
+    pub(crate) state_condition: ::std::option::Option<crate::types::ContactFlowModuleState>,
+    pub(crate) status_condition: ::std::option::Option<crate::types::ContactFlowModuleStatus>,
 }
 impl ContactFlowModuleSearchCriteriaBuilder {
     /// Appends an item to `or_conditions`.
@@ -99,12 +113,42 @@ impl ContactFlowModuleSearchCriteriaBuilder {
     pub fn get_string_condition(&self) -> &::std::option::Option<crate::types::StringCondition> {
         &self.string_condition
     }
+    /// <p>The state of the flow.</p>
+    pub fn state_condition(mut self, input: crate::types::ContactFlowModuleState) -> Self {
+        self.state_condition = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The state of the flow.</p>
+    pub fn set_state_condition(mut self, input: ::std::option::Option<crate::types::ContactFlowModuleState>) -> Self {
+        self.state_condition = input;
+        self
+    }
+    /// <p>The state of the flow.</p>
+    pub fn get_state_condition(&self) -> &::std::option::Option<crate::types::ContactFlowModuleState> {
+        &self.state_condition
+    }
+    /// <p>The status of the flow.</p>
+    pub fn status_condition(mut self, input: crate::types::ContactFlowModuleStatus) -> Self {
+        self.status_condition = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The status of the flow.</p>
+    pub fn set_status_condition(mut self, input: ::std::option::Option<crate::types::ContactFlowModuleStatus>) -> Self {
+        self.status_condition = input;
+        self
+    }
+    /// <p>The status of the flow.</p>
+    pub fn get_status_condition(&self) -> &::std::option::Option<crate::types::ContactFlowModuleStatus> {
+        &self.status_condition
+    }
     /// Consumes the builder and constructs a [`ContactFlowModuleSearchCriteria`](crate::types::ContactFlowModuleSearchCriteria).
     pub fn build(self) -> crate::types::ContactFlowModuleSearchCriteria {
         crate::types::ContactFlowModuleSearchCriteria {
             or_conditions: self.or_conditions,
             and_conditions: self.and_conditions,
             string_condition: self.string_condition,
+            state_condition: self.state_condition,
+            status_condition: self.status_condition,
         }
     }
 }

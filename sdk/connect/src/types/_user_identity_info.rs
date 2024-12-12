@@ -8,9 +8,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UserIdentityInfo {
-    /// <p>The first name. This is required if you are using Amazon Connect or SAML for identity management.</p>
+    /// <p>The first name. This is required if you are using Amazon Connect or SAML for identity management. Inputs must be in Unicode Normalization Form C (NFC). Text containing characters in a non-NFC form (for example, decomposed characters or combining marks) are not accepted.</p>
     pub first_name: ::std::option::Option<::std::string::String>,
-    /// <p>The last name. This is required if you are using Amazon Connect or SAML for identity management.</p>
+    /// <p>The last name. This is required if you are using Amazon Connect or SAML for identity management. Inputs must be in Unicode Normalization Form C (NFC). Text containing characters in a non-NFC form (for example, decomposed characters or combining marks) are not accepted.</p>
     pub last_name: ::std::option::Option<::std::string::String>,
     /// <p>The email address. If you are using SAML for identity management and include this parameter, an error is returned.</p>
     pub email: ::std::option::Option<::std::string::String>,
@@ -21,11 +21,11 @@ pub struct UserIdentityInfo {
     pub mobile: ::std::option::Option<::std::string::String>,
 }
 impl UserIdentityInfo {
-    /// <p>The first name. This is required if you are using Amazon Connect or SAML for identity management.</p>
+    /// <p>The first name. This is required if you are using Amazon Connect or SAML for identity management. Inputs must be in Unicode Normalization Form C (NFC). Text containing characters in a non-NFC form (for example, decomposed characters or combining marks) are not accepted.</p>
     pub fn first_name(&self) -> ::std::option::Option<&str> {
         self.first_name.as_deref()
     }
-    /// <p>The last name. This is required if you are using Amazon Connect or SAML for identity management.</p>
+    /// <p>The last name. This is required if you are using Amazon Connect or SAML for identity management. Inputs must be in Unicode Normalization Form C (NFC). Text containing characters in a non-NFC form (for example, decomposed characters or combining marks) are not accepted.</p>
     pub fn last_name(&self) -> ::std::option::Option<&str> {
         self.last_name.as_deref()
     }
@@ -72,31 +72,31 @@ pub struct UserIdentityInfoBuilder {
     pub(crate) mobile: ::std::option::Option<::std::string::String>,
 }
 impl UserIdentityInfoBuilder {
-    /// <p>The first name. This is required if you are using Amazon Connect or SAML for identity management.</p>
+    /// <p>The first name. This is required if you are using Amazon Connect or SAML for identity management. Inputs must be in Unicode Normalization Form C (NFC). Text containing characters in a non-NFC form (for example, decomposed characters or combining marks) are not accepted.</p>
     pub fn first_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.first_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The first name. This is required if you are using Amazon Connect or SAML for identity management.</p>
+    /// <p>The first name. This is required if you are using Amazon Connect or SAML for identity management. Inputs must be in Unicode Normalization Form C (NFC). Text containing characters in a non-NFC form (for example, decomposed characters or combining marks) are not accepted.</p>
     pub fn set_first_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.first_name = input;
         self
     }
-    /// <p>The first name. This is required if you are using Amazon Connect or SAML for identity management.</p>
+    /// <p>The first name. This is required if you are using Amazon Connect or SAML for identity management. Inputs must be in Unicode Normalization Form C (NFC). Text containing characters in a non-NFC form (for example, decomposed characters or combining marks) are not accepted.</p>
     pub fn get_first_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.first_name
     }
-    /// <p>The last name. This is required if you are using Amazon Connect or SAML for identity management.</p>
+    /// <p>The last name. This is required if you are using Amazon Connect or SAML for identity management. Inputs must be in Unicode Normalization Form C (NFC). Text containing characters in a non-NFC form (for example, decomposed characters or combining marks) are not accepted.</p>
     pub fn last_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The last name. This is required if you are using Amazon Connect or SAML for identity management.</p>
+    /// <p>The last name. This is required if you are using Amazon Connect or SAML for identity management. Inputs must be in Unicode Normalization Form C (NFC). Text containing characters in a non-NFC form (for example, decomposed characters or combining marks) are not accepted.</p>
     pub fn set_last_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_name = input;
         self
     }
-    /// <p>The last name. This is required if you are using Amazon Connect or SAML for identity management.</p>
+    /// <p>The last name. This is required if you are using Amazon Connect or SAML for identity management. Inputs must be in Unicode Normalization Form C (NFC). Text containing characters in a non-NFC form (for example, decomposed characters or combining marks) are not accepted.</p>
     pub fn get_last_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_name
     }

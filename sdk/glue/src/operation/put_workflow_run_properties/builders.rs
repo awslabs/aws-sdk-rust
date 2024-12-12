@@ -142,6 +142,7 @@ impl PutWorkflowRunPropertiesFluentBuilder {
     /// To override the contents of this collection use [`set_run_properties`](Self::set_run_properties).
     ///
     /// <p>The properties to put for the specified run.</p>
+    /// <p>Run properties may be logged. Do not pass plaintext secrets as properties. Retrieve secrets from a Glue Connection, Amazon Web Services Secrets Manager or other secret management mechanism if you intend to use them within the workflow run.</p>
     pub fn run_properties(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -151,6 +152,7 @@ impl PutWorkflowRunPropertiesFluentBuilder {
         self
     }
     /// <p>The properties to put for the specified run.</p>
+    /// <p>Run properties may be logged. Do not pass plaintext secrets as properties. Retrieve secrets from a Glue Connection, Amazon Web Services Secrets Manager or other secret management mechanism if you intend to use them within the workflow run.</p>
     pub fn set_run_properties(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -159,6 +161,7 @@ impl PutWorkflowRunPropertiesFluentBuilder {
         self
     }
     /// <p>The properties to put for the specified run.</p>
+    /// <p>Run properties may be logged. Do not pass plaintext secrets as properties. Retrieve secrets from a Glue Connection, Amazon Web Services Secrets Manager or other secret management mechanism if you intend to use them within the workflow run.</p>
     pub fn get_run_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_run_properties()
     }

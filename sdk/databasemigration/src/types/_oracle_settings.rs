@@ -39,7 +39,7 @@ pub struct OracleSettings {
     pub enable_homogenous_tablespace: ::std::option::Option<bool>,
     /// <p>When set to <code>true</code>, this attribute helps to increase the commit rate on the Oracle target database by writing directly to tables and not writing a trail to database logs.</p>
     pub direct_path_no_log: ::std::option::Option<bool>,
-    /// <p>When this field is set to <code>Y</code>, DMS only accesses the archived redo logs. If the archived redo logs are stored on Automatic Storage Management (ASM) only, the DMS user account needs to be granted ASM privileges.</p>
+    /// <p>When this field is set to <code>True</code>, DMS only accesses the archived redo logs. If the archived redo logs are stored on Automatic Storage Management (ASM) only, the DMS user account needs to be granted ASM privileges.</p>
     pub archived_logs_only: ::std::option::Option<bool>,
     /// <p>For an Oracle source endpoint, your Oracle Automatic Storage Management (ASM) password. You can set this value from the <code> <i>asm_user_password</i> </code> value. You set this value as part of the comma-separated value that you set to the <code>Password</code> request parameter when you create the endpoint to access transaction logs using Binary Reader. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC.Configuration">Configuration for change data capture (CDC) on an Oracle source database</a>.</p>
     pub asm_password: ::std::option::Option<::std::string::String>,
@@ -83,11 +83,11 @@ pub struct OracleSettings {
     pub standby_delay_time: ::std::option::Option<i32>,
     /// <p>Endpoint connection user name.</p>
     pub username: ::std::option::Option<::std::string::String>,
-    /// <p>Set this attribute to Y to capture change data using the Binary Reader utility. Set <code>UseLogminerReader</code> to N to set this attribute to Y. To use Binary Reader with Amazon RDS for Oracle as the source, you set additional attributes. For more information about using this setting with Oracle Automatic Storage Management (ASM), see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC"> Using Oracle LogMiner or DMS Binary Reader for CDC</a>.</p>
+    /// <p>Set this attribute to True to capture change data using the Binary Reader utility. Set <code>UseLogminerReader</code> to False to set this attribute to True. To use Binary Reader with Amazon RDS for Oracle as the source, you set additional attributes. For more information about using this setting with Oracle Automatic Storage Management (ASM), see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC"> Using Oracle LogMiner or DMS Binary Reader for CDC</a>.</p>
     pub use_b_file: ::std::option::Option<bool>,
-    /// <p>Set this attribute to Y to have DMS use a direct path full load. Specify this value to use the direct path protocol in the Oracle Call Interface (OCI). By using this OCI protocol, you can bulk-load Oracle target tables during a full load.</p>
+    /// <p>Set this attribute to True to have DMS use a direct path full load. Specify this value to use the direct path protocol in the Oracle Call Interface (OCI). By using this OCI protocol, you can bulk-load Oracle target tables during a full load.</p>
     pub use_direct_path_full_load: ::std::option::Option<bool>,
-    /// <p>Set this attribute to Y to capture change data using the Oracle LogMiner utility (the default). Set this attribute to N if you want to access the redo logs as a binary file. When you set <code>UseLogminerReader</code> to N, also set <code>UseBfile</code> to Y. For more information on this setting and using Oracle ASM, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC"> Using Oracle LogMiner or DMS Binary Reader for CDC</a> in the <i>DMS User Guide</i>.</p>
+    /// <p>Set this attribute to True to capture change data using the Oracle LogMiner utility (the default). Set this attribute to False if you want to access the redo logs as a binary file. When you set <code>UseLogminerReader</code> to False, also set <code>UseBfile</code> to True. For more information on this setting and using Oracle ASM, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC"> Using Oracle LogMiner or DMS Binary Reader for CDC</a> in the <i>DMS User Guide</i>.</p>
     pub use_logminer_reader: ::std::option::Option<bool>,
     /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the Oracle endpoint.</p><note>
     /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
@@ -107,9 +107,11 @@ pub struct OracleSettings {
     pub convert_timestamp_with_zone_to_utc: ::std::option::Option<bool>,
     /// <p>The timeframe in minutes to check for open transactions for a CDC-only task.</p>
     /// <p>You can specify an integer value between 0 (the default) and 240 (the maximum).</p><note>
-    /// <p>This parameter is only valid in DMS version 3.5.0 and later. DMS supports a window of up to 9.5 hours including the value for <code>OpenTransactionWindow</code>.</p>
+    /// <p>This parameter is only valid in DMS version 3.5.0 and later.</p>
     /// </note>
     pub open_transaction_window: ::std::option::Option<i32>,
+    /// <p>Specifies using Kerberos authentication with Oracle.</p>
+    pub authentication_method: ::std::option::Option<crate::types::OracleAuthenticationMethod>,
 }
 impl OracleSettings {
     /// <p>Set this attribute to set up table-level supplemental logging for the Oracle database. This attribute enables PRIMARY KEY supplemental logging on all tables selected for a migration task.</p>
@@ -177,7 +179,7 @@ impl OracleSettings {
     pub fn direct_path_no_log(&self) -> ::std::option::Option<bool> {
         self.direct_path_no_log
     }
-    /// <p>When this field is set to <code>Y</code>, DMS only accesses the archived redo logs. If the archived redo logs are stored on Automatic Storage Management (ASM) only, the DMS user account needs to be granted ASM privileges.</p>
+    /// <p>When this field is set to <code>True</code>, DMS only accesses the archived redo logs. If the archived redo logs are stored on Automatic Storage Management (ASM) only, the DMS user account needs to be granted ASM privileges.</p>
     pub fn archived_logs_only(&self) -> ::std::option::Option<bool> {
         self.archived_logs_only
     }
@@ -259,15 +261,15 @@ impl OracleSettings {
     pub fn username(&self) -> ::std::option::Option<&str> {
         self.username.as_deref()
     }
-    /// <p>Set this attribute to Y to capture change data using the Binary Reader utility. Set <code>UseLogminerReader</code> to N to set this attribute to Y. To use Binary Reader with Amazon RDS for Oracle as the source, you set additional attributes. For more information about using this setting with Oracle Automatic Storage Management (ASM), see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC"> Using Oracle LogMiner or DMS Binary Reader for CDC</a>.</p>
+    /// <p>Set this attribute to True to capture change data using the Binary Reader utility. Set <code>UseLogminerReader</code> to False to set this attribute to True. To use Binary Reader with Amazon RDS for Oracle as the source, you set additional attributes. For more information about using this setting with Oracle Automatic Storage Management (ASM), see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC"> Using Oracle LogMiner or DMS Binary Reader for CDC</a>.</p>
     pub fn use_b_file(&self) -> ::std::option::Option<bool> {
         self.use_b_file
     }
-    /// <p>Set this attribute to Y to have DMS use a direct path full load. Specify this value to use the direct path protocol in the Oracle Call Interface (OCI). By using this OCI protocol, you can bulk-load Oracle target tables during a full load.</p>
+    /// <p>Set this attribute to True to have DMS use a direct path full load. Specify this value to use the direct path protocol in the Oracle Call Interface (OCI). By using this OCI protocol, you can bulk-load Oracle target tables during a full load.</p>
     pub fn use_direct_path_full_load(&self) -> ::std::option::Option<bool> {
         self.use_direct_path_full_load
     }
-    /// <p>Set this attribute to Y to capture change data using the Oracle LogMiner utility (the default). Set this attribute to N if you want to access the redo logs as a binary file. When you set <code>UseLogminerReader</code> to N, also set <code>UseBfile</code> to Y. For more information on this setting and using Oracle ASM, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC"> Using Oracle LogMiner or DMS Binary Reader for CDC</a> in the <i>DMS User Guide</i>.</p>
+    /// <p>Set this attribute to True to capture change data using the Oracle LogMiner utility (the default). Set this attribute to False if you want to access the redo logs as a binary file. When you set <code>UseLogminerReader</code> to False, also set <code>UseBfile</code> to True. For more information on this setting and using Oracle ASM, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC"> Using Oracle LogMiner or DMS Binary Reader for CDC</a> in the <i>DMS User Guide</i>.</p>
     pub fn use_logminer_reader(&self) -> ::std::option::Option<bool> {
         self.use_logminer_reader
     }
@@ -301,10 +303,14 @@ impl OracleSettings {
     }
     /// <p>The timeframe in minutes to check for open transactions for a CDC-only task.</p>
     /// <p>You can specify an integer value between 0 (the default) and 240 (the maximum).</p><note>
-    /// <p>This parameter is only valid in DMS version 3.5.0 and later. DMS supports a window of up to 9.5 hours including the value for <code>OpenTransactionWindow</code>.</p>
+    /// <p>This parameter is only valid in DMS version 3.5.0 and later.</p>
     /// </note>
     pub fn open_transaction_window(&self) -> ::std::option::Option<i32> {
         self.open_transaction_window
+    }
+    /// <p>Specifies using Kerberos authentication with Oracle.</p>
+    pub fn authentication_method(&self) -> ::std::option::Option<&crate::types::OracleAuthenticationMethod> {
+        self.authentication_method.as_ref()
     }
 }
 impl ::std::fmt::Debug for OracleSettings {
@@ -359,6 +365,7 @@ impl ::std::fmt::Debug for OracleSettings {
         formatter.field("trim_space_in_char", &self.trim_space_in_char);
         formatter.field("convert_timestamp_with_zone_to_utc", &self.convert_timestamp_with_zone_to_utc);
         formatter.field("open_transaction_window", &self.open_transaction_window);
+        formatter.field("authentication_method", &self.authentication_method);
         formatter.finish()
     }
 }
@@ -416,6 +423,7 @@ pub struct OracleSettingsBuilder {
     pub(crate) trim_space_in_char: ::std::option::Option<bool>,
     pub(crate) convert_timestamp_with_zone_to_utc: ::std::option::Option<bool>,
     pub(crate) open_transaction_window: ::std::option::Option<i32>,
+    pub(crate) authentication_method: ::std::option::Option<crate::types::OracleAuthenticationMethod>,
 }
 impl OracleSettingsBuilder {
     /// <p>Set this attribute to set up table-level supplemental logging for the Oracle database. This attribute enables PRIMARY KEY supplemental logging on all tables selected for a migration task.</p>
@@ -641,17 +649,17 @@ impl OracleSettingsBuilder {
     pub fn get_direct_path_no_log(&self) -> &::std::option::Option<bool> {
         &self.direct_path_no_log
     }
-    /// <p>When this field is set to <code>Y</code>, DMS only accesses the archived redo logs. If the archived redo logs are stored on Automatic Storage Management (ASM) only, the DMS user account needs to be granted ASM privileges.</p>
+    /// <p>When this field is set to <code>True</code>, DMS only accesses the archived redo logs. If the archived redo logs are stored on Automatic Storage Management (ASM) only, the DMS user account needs to be granted ASM privileges.</p>
     pub fn archived_logs_only(mut self, input: bool) -> Self {
         self.archived_logs_only = ::std::option::Option::Some(input);
         self
     }
-    /// <p>When this field is set to <code>Y</code>, DMS only accesses the archived redo logs. If the archived redo logs are stored on Automatic Storage Management (ASM) only, the DMS user account needs to be granted ASM privileges.</p>
+    /// <p>When this field is set to <code>True</code>, DMS only accesses the archived redo logs. If the archived redo logs are stored on Automatic Storage Management (ASM) only, the DMS user account needs to be granted ASM privileges.</p>
     pub fn set_archived_logs_only(mut self, input: ::std::option::Option<bool>) -> Self {
         self.archived_logs_only = input;
         self
     }
-    /// <p>When this field is set to <code>Y</code>, DMS only accesses the archived redo logs. If the archived redo logs are stored on Automatic Storage Management (ASM) only, the DMS user account needs to be granted ASM privileges.</p>
+    /// <p>When this field is set to <code>True</code>, DMS only accesses the archived redo logs. If the archived redo logs are stored on Automatic Storage Management (ASM) only, the DMS user account needs to be granted ASM privileges.</p>
     pub fn get_archived_logs_only(&self) -> &::std::option::Option<bool> {
         &self.archived_logs_only
     }
@@ -925,45 +933,45 @@ impl OracleSettingsBuilder {
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
         &self.username
     }
-    /// <p>Set this attribute to Y to capture change data using the Binary Reader utility. Set <code>UseLogminerReader</code> to N to set this attribute to Y. To use Binary Reader with Amazon RDS for Oracle as the source, you set additional attributes. For more information about using this setting with Oracle Automatic Storage Management (ASM), see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC"> Using Oracle LogMiner or DMS Binary Reader for CDC</a>.</p>
+    /// <p>Set this attribute to True to capture change data using the Binary Reader utility. Set <code>UseLogminerReader</code> to False to set this attribute to True. To use Binary Reader with Amazon RDS for Oracle as the source, you set additional attributes. For more information about using this setting with Oracle Automatic Storage Management (ASM), see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC"> Using Oracle LogMiner or DMS Binary Reader for CDC</a>.</p>
     pub fn use_b_file(mut self, input: bool) -> Self {
         self.use_b_file = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Set this attribute to Y to capture change data using the Binary Reader utility. Set <code>UseLogminerReader</code> to N to set this attribute to Y. To use Binary Reader with Amazon RDS for Oracle as the source, you set additional attributes. For more information about using this setting with Oracle Automatic Storage Management (ASM), see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC"> Using Oracle LogMiner or DMS Binary Reader for CDC</a>.</p>
+    /// <p>Set this attribute to True to capture change data using the Binary Reader utility. Set <code>UseLogminerReader</code> to False to set this attribute to True. To use Binary Reader with Amazon RDS for Oracle as the source, you set additional attributes. For more information about using this setting with Oracle Automatic Storage Management (ASM), see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC"> Using Oracle LogMiner or DMS Binary Reader for CDC</a>.</p>
     pub fn set_use_b_file(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_b_file = input;
         self
     }
-    /// <p>Set this attribute to Y to capture change data using the Binary Reader utility. Set <code>UseLogminerReader</code> to N to set this attribute to Y. To use Binary Reader with Amazon RDS for Oracle as the source, you set additional attributes. For more information about using this setting with Oracle Automatic Storage Management (ASM), see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC"> Using Oracle LogMiner or DMS Binary Reader for CDC</a>.</p>
+    /// <p>Set this attribute to True to capture change data using the Binary Reader utility. Set <code>UseLogminerReader</code> to False to set this attribute to True. To use Binary Reader with Amazon RDS for Oracle as the source, you set additional attributes. For more information about using this setting with Oracle Automatic Storage Management (ASM), see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC"> Using Oracle LogMiner or DMS Binary Reader for CDC</a>.</p>
     pub fn get_use_b_file(&self) -> &::std::option::Option<bool> {
         &self.use_b_file
     }
-    /// <p>Set this attribute to Y to have DMS use a direct path full load. Specify this value to use the direct path protocol in the Oracle Call Interface (OCI). By using this OCI protocol, you can bulk-load Oracle target tables during a full load.</p>
+    /// <p>Set this attribute to True to have DMS use a direct path full load. Specify this value to use the direct path protocol in the Oracle Call Interface (OCI). By using this OCI protocol, you can bulk-load Oracle target tables during a full load.</p>
     pub fn use_direct_path_full_load(mut self, input: bool) -> Self {
         self.use_direct_path_full_load = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Set this attribute to Y to have DMS use a direct path full load. Specify this value to use the direct path protocol in the Oracle Call Interface (OCI). By using this OCI protocol, you can bulk-load Oracle target tables during a full load.</p>
+    /// <p>Set this attribute to True to have DMS use a direct path full load. Specify this value to use the direct path protocol in the Oracle Call Interface (OCI). By using this OCI protocol, you can bulk-load Oracle target tables during a full load.</p>
     pub fn set_use_direct_path_full_load(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_direct_path_full_load = input;
         self
     }
-    /// <p>Set this attribute to Y to have DMS use a direct path full load. Specify this value to use the direct path protocol in the Oracle Call Interface (OCI). By using this OCI protocol, you can bulk-load Oracle target tables during a full load.</p>
+    /// <p>Set this attribute to True to have DMS use a direct path full load. Specify this value to use the direct path protocol in the Oracle Call Interface (OCI). By using this OCI protocol, you can bulk-load Oracle target tables during a full load.</p>
     pub fn get_use_direct_path_full_load(&self) -> &::std::option::Option<bool> {
         &self.use_direct_path_full_load
     }
-    /// <p>Set this attribute to Y to capture change data using the Oracle LogMiner utility (the default). Set this attribute to N if you want to access the redo logs as a binary file. When you set <code>UseLogminerReader</code> to N, also set <code>UseBfile</code> to Y. For more information on this setting and using Oracle ASM, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC"> Using Oracle LogMiner or DMS Binary Reader for CDC</a> in the <i>DMS User Guide</i>.</p>
+    /// <p>Set this attribute to True to capture change data using the Oracle LogMiner utility (the default). Set this attribute to False if you want to access the redo logs as a binary file. When you set <code>UseLogminerReader</code> to False, also set <code>UseBfile</code> to True. For more information on this setting and using Oracle ASM, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC"> Using Oracle LogMiner or DMS Binary Reader for CDC</a> in the <i>DMS User Guide</i>.</p>
     pub fn use_logminer_reader(mut self, input: bool) -> Self {
         self.use_logminer_reader = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Set this attribute to Y to capture change data using the Oracle LogMiner utility (the default). Set this attribute to N if you want to access the redo logs as a binary file. When you set <code>UseLogminerReader</code> to N, also set <code>UseBfile</code> to Y. For more information on this setting and using Oracle ASM, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC"> Using Oracle LogMiner or DMS Binary Reader for CDC</a> in the <i>DMS User Guide</i>.</p>
+    /// <p>Set this attribute to True to capture change data using the Oracle LogMiner utility (the default). Set this attribute to False if you want to access the redo logs as a binary file. When you set <code>UseLogminerReader</code> to False, also set <code>UseBfile</code> to True. For more information on this setting and using Oracle ASM, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC"> Using Oracle LogMiner or DMS Binary Reader for CDC</a> in the <i>DMS User Guide</i>.</p>
     pub fn set_use_logminer_reader(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_logminer_reader = input;
         self
     }
-    /// <p>Set this attribute to Y to capture change data using the Oracle LogMiner utility (the default). Set this attribute to N if you want to access the redo logs as a binary file. When you set <code>UseLogminerReader</code> to N, also set <code>UseBfile</code> to Y. For more information on this setting and using Oracle ASM, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC"> Using Oracle LogMiner or DMS Binary Reader for CDC</a> in the <i>DMS User Guide</i>.</p>
+    /// <p>Set this attribute to True to capture change data using the Oracle LogMiner utility (the default). Set this attribute to False if you want to access the redo logs as a binary file. When you set <code>UseLogminerReader</code> to False, also set <code>UseBfile</code> to True. For more information on this setting and using Oracle ASM, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC"> Using Oracle LogMiner or DMS Binary Reader for CDC</a> in the <i>DMS User Guide</i>.</p>
     pub fn get_use_logminer_reader(&self) -> &::std::option::Option<bool> {
         &self.use_logminer_reader
     }
@@ -1065,7 +1073,7 @@ impl OracleSettingsBuilder {
     }
     /// <p>The timeframe in minutes to check for open transactions for a CDC-only task.</p>
     /// <p>You can specify an integer value between 0 (the default) and 240 (the maximum).</p><note>
-    /// <p>This parameter is only valid in DMS version 3.5.0 and later. DMS supports a window of up to 9.5 hours including the value for <code>OpenTransactionWindow</code>.</p>
+    /// <p>This parameter is only valid in DMS version 3.5.0 and later.</p>
     /// </note>
     pub fn open_transaction_window(mut self, input: i32) -> Self {
         self.open_transaction_window = ::std::option::Option::Some(input);
@@ -1073,7 +1081,7 @@ impl OracleSettingsBuilder {
     }
     /// <p>The timeframe in minutes to check for open transactions for a CDC-only task.</p>
     /// <p>You can specify an integer value between 0 (the default) and 240 (the maximum).</p><note>
-    /// <p>This parameter is only valid in DMS version 3.5.0 and later. DMS supports a window of up to 9.5 hours including the value for <code>OpenTransactionWindow</code>.</p>
+    /// <p>This parameter is only valid in DMS version 3.5.0 and later.</p>
     /// </note>
     pub fn set_open_transaction_window(mut self, input: ::std::option::Option<i32>) -> Self {
         self.open_transaction_window = input;
@@ -1081,10 +1089,24 @@ impl OracleSettingsBuilder {
     }
     /// <p>The timeframe in minutes to check for open transactions for a CDC-only task.</p>
     /// <p>You can specify an integer value between 0 (the default) and 240 (the maximum).</p><note>
-    /// <p>This parameter is only valid in DMS version 3.5.0 and later. DMS supports a window of up to 9.5 hours including the value for <code>OpenTransactionWindow</code>.</p>
+    /// <p>This parameter is only valid in DMS version 3.5.0 and later.</p>
     /// </note>
     pub fn get_open_transaction_window(&self) -> &::std::option::Option<i32> {
         &self.open_transaction_window
+    }
+    /// <p>Specifies using Kerberos authentication with Oracle.</p>
+    pub fn authentication_method(mut self, input: crate::types::OracleAuthenticationMethod) -> Self {
+        self.authentication_method = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies using Kerberos authentication with Oracle.</p>
+    pub fn set_authentication_method(mut self, input: ::std::option::Option<crate::types::OracleAuthenticationMethod>) -> Self {
+        self.authentication_method = input;
+        self
+    }
+    /// <p>Specifies using Kerberos authentication with Oracle.</p>
+    pub fn get_authentication_method(&self) -> &::std::option::Option<crate::types::OracleAuthenticationMethod> {
+        &self.authentication_method
     }
     /// Consumes the builder and constructs a [`OracleSettings`](crate::types::OracleSettings).
     pub fn build(self) -> crate::types::OracleSettings {
@@ -1132,6 +1154,7 @@ impl OracleSettingsBuilder {
             trim_space_in_char: self.trim_space_in_char,
             convert_timestamp_with_zone_to_utc: self.convert_timestamp_with_zone_to_utc,
             open_transaction_window: self.open_transaction_window,
+            authentication_method: self.authentication_method,
         }
     }
 }
@@ -1187,6 +1210,7 @@ impl ::std::fmt::Debug for OracleSettingsBuilder {
         formatter.field("trim_space_in_char", &self.trim_space_in_char);
         formatter.field("convert_timestamp_with_zone_to_utc", &self.convert_timestamp_with_zone_to_utc);
         formatter.field("open_transaction_window", &self.open_transaction_window);
+        formatter.field("authentication_method", &self.authentication_method);
         formatter.finish()
     }
 }

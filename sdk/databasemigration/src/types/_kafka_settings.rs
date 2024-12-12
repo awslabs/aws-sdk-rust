@@ -44,6 +44,8 @@ pub struct KafkaSettings {
     pub sasl_mechanism: ::std::option::Option<crate::types::KafkaSaslMechanism>,
     /// <p>Sets hostname verification for the certificate. This setting is supported in DMS version 3.5.1 and later.</p>
     pub ssl_endpoint_identification_algorithm: ::std::option::Option<crate::types::KafkaSslEndpointIdentificationAlgorithm>,
+    /// <p>Specifies using the large integer value with Kafka.</p>
+    pub use_large_integer_value: ::std::option::Option<bool>,
 }
 impl KafkaSettings {
     /// <p>A comma-separated list of one or more broker locations in your Kafka cluster that host your Kafka instance. Specify each broker location in the form <code> <i>broker-hostname-or-ip</i>:<i>port</i> </code>. For example, <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more information and examples of specifying a list of broker locations, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using Apache Kafka as a target for Database Migration Service</a> in the <i>Database Migration Service User Guide</i>.</p>
@@ -126,6 +128,10 @@ impl KafkaSettings {
     pub fn ssl_endpoint_identification_algorithm(&self) -> ::std::option::Option<&crate::types::KafkaSslEndpointIdentificationAlgorithm> {
         self.ssl_endpoint_identification_algorithm.as_ref()
     }
+    /// <p>Specifies using the large integer value with Kafka.</p>
+    pub fn use_large_integer_value(&self) -> ::std::option::Option<bool> {
+        self.use_large_integer_value
+    }
 }
 impl ::std::fmt::Debug for KafkaSettings {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -150,6 +156,7 @@ impl ::std::fmt::Debug for KafkaSettings {
         formatter.field("no_hex_prefix", &self.no_hex_prefix);
         formatter.field("sasl_mechanism", &self.sasl_mechanism);
         formatter.field("ssl_endpoint_identification_algorithm", &self.ssl_endpoint_identification_algorithm);
+        formatter.field("use_large_integer_value", &self.use_large_integer_value);
         formatter.finish()
     }
 }
@@ -184,6 +191,7 @@ pub struct KafkaSettingsBuilder {
     pub(crate) no_hex_prefix: ::std::option::Option<bool>,
     pub(crate) sasl_mechanism: ::std::option::Option<crate::types::KafkaSaslMechanism>,
     pub(crate) ssl_endpoint_identification_algorithm: ::std::option::Option<crate::types::KafkaSslEndpointIdentificationAlgorithm>,
+    pub(crate) use_large_integer_value: ::std::option::Option<bool>,
 }
 impl KafkaSettingsBuilder {
     /// <p>A comma-separated list of one or more broker locations in your Kafka cluster that host your Kafka instance. Specify each broker location in the form <code> <i>broker-hostname-or-ip</i>:<i>port</i> </code>. For example, <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more information and examples of specifying a list of broker locations, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using Apache Kafka as a target for Database Migration Service</a> in the <i>Database Migration Service User Guide</i>.</p>
@@ -469,6 +477,20 @@ impl KafkaSettingsBuilder {
     pub fn get_ssl_endpoint_identification_algorithm(&self) -> &::std::option::Option<crate::types::KafkaSslEndpointIdentificationAlgorithm> {
         &self.ssl_endpoint_identification_algorithm
     }
+    /// <p>Specifies using the large integer value with Kafka.</p>
+    pub fn use_large_integer_value(mut self, input: bool) -> Self {
+        self.use_large_integer_value = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies using the large integer value with Kafka.</p>
+    pub fn set_use_large_integer_value(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.use_large_integer_value = input;
+        self
+    }
+    /// <p>Specifies using the large integer value with Kafka.</p>
+    pub fn get_use_large_integer_value(&self) -> &::std::option::Option<bool> {
+        &self.use_large_integer_value
+    }
     /// Consumes the builder and constructs a [`KafkaSettings`](crate::types::KafkaSettings).
     pub fn build(self) -> crate::types::KafkaSettings {
         crate::types::KafkaSettings {
@@ -492,6 +514,7 @@ impl KafkaSettingsBuilder {
             no_hex_prefix: self.no_hex_prefix,
             sasl_mechanism: self.sasl_mechanism,
             ssl_endpoint_identification_algorithm: self.ssl_endpoint_identification_algorithm,
+            use_large_integer_value: self.use_large_integer_value,
         }
     }
 }
@@ -518,6 +541,7 @@ impl ::std::fmt::Debug for KafkaSettingsBuilder {
         formatter.field("no_hex_prefix", &self.no_hex_prefix);
         formatter.field("sasl_mechanism", &self.sasl_mechanism);
         formatter.field("ssl_endpoint_identification_algorithm", &self.ssl_endpoint_identification_algorithm);
+        formatter.field("use_large_integer_value", &self.use_large_integer_value);
         formatter.finish()
     }
 }

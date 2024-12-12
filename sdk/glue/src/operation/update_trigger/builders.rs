@@ -23,6 +23,7 @@ impl crate::operation::update_trigger::builders::UpdateTriggerInputBuilder {
 /// Fluent builder constructing a request to `UpdateTrigger`.
 ///
 /// <p>Updates a trigger definition.</p>
+/// <p>Job arguments may be logged. Do not pass plaintext secrets as arguments. Retrieve secrets from a Glue Connection, Amazon Web Services Secrets Manager or other secret management mechanism if you intend to keep them within the Job.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateTriggerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

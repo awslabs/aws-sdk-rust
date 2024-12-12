@@ -42,6 +42,8 @@ pub struct MicrosoftSqlServerSettings {
     pub tlog_access_mode: ::std::option::Option<crate::types::TlogAccessMode>,
     /// <p>Forces LOB lookup on inline LOB.</p>
     pub force_lob_lookup: ::std::option::Option<bool>,
+    /// <p>Specifies using Kerberos authentication with Microsoft SQL Server.</p>
+    pub authentication_method: ::std::option::Option<crate::types::SqlServerAuthenticationMethod>,
 }
 impl MicrosoftSqlServerSettings {
     /// <p>Endpoint TCP port.</p>
@@ -116,6 +118,10 @@ impl MicrosoftSqlServerSettings {
     pub fn force_lob_lookup(&self) -> ::std::option::Option<bool> {
         self.force_lob_lookup
     }
+    /// <p>Specifies using Kerberos authentication with Microsoft SQL Server.</p>
+    pub fn authentication_method(&self) -> ::std::option::Option<&crate::types::SqlServerAuthenticationMethod> {
+        self.authentication_method.as_ref()
+    }
 }
 impl ::std::fmt::Debug for MicrosoftSqlServerSettings {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -137,6 +143,7 @@ impl ::std::fmt::Debug for MicrosoftSqlServerSettings {
         formatter.field("trim_space_in_char", &self.trim_space_in_char);
         formatter.field("tlog_access_mode", &self.tlog_access_mode);
         formatter.field("force_lob_lookup", &self.force_lob_lookup);
+        formatter.field("authentication_method", &self.authentication_method);
         formatter.finish()
     }
 }
@@ -168,6 +175,7 @@ pub struct MicrosoftSqlServerSettingsBuilder {
     pub(crate) trim_space_in_char: ::std::option::Option<bool>,
     pub(crate) tlog_access_mode: ::std::option::Option<crate::types::TlogAccessMode>,
     pub(crate) force_lob_lookup: ::std::option::Option<bool>,
+    pub(crate) authentication_method: ::std::option::Option<crate::types::SqlServerAuthenticationMethod>,
 }
 impl MicrosoftSqlServerSettingsBuilder {
     /// <p>Endpoint TCP port.</p>
@@ -420,6 +428,20 @@ impl MicrosoftSqlServerSettingsBuilder {
     pub fn get_force_lob_lookup(&self) -> &::std::option::Option<bool> {
         &self.force_lob_lookup
     }
+    /// <p>Specifies using Kerberos authentication with Microsoft SQL Server.</p>
+    pub fn authentication_method(mut self, input: crate::types::SqlServerAuthenticationMethod) -> Self {
+        self.authentication_method = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies using Kerberos authentication with Microsoft SQL Server.</p>
+    pub fn set_authentication_method(mut self, input: ::std::option::Option<crate::types::SqlServerAuthenticationMethod>) -> Self {
+        self.authentication_method = input;
+        self
+    }
+    /// <p>Specifies using Kerberos authentication with Microsoft SQL Server.</p>
+    pub fn get_authentication_method(&self) -> &::std::option::Option<crate::types::SqlServerAuthenticationMethod> {
+        &self.authentication_method
+    }
     /// Consumes the builder and constructs a [`MicrosoftSqlServerSettings`](crate::types::MicrosoftSqlServerSettings).
     pub fn build(self) -> crate::types::MicrosoftSqlServerSettings {
         crate::types::MicrosoftSqlServerSettings {
@@ -440,6 +462,7 @@ impl MicrosoftSqlServerSettingsBuilder {
             trim_space_in_char: self.trim_space_in_char,
             tlog_access_mode: self.tlog_access_mode,
             force_lob_lookup: self.force_lob_lookup,
+            authentication_method: self.authentication_method,
         }
     }
 }
@@ -463,6 +486,7 @@ impl ::std::fmt::Debug for MicrosoftSqlServerSettingsBuilder {
         formatter.field("trim_space_in_char", &self.trim_space_in_char);
         formatter.field("tlog_access_mode", &self.tlog_access_mode);
         formatter.field("force_lob_lookup", &self.force_lob_lookup);
+        formatter.field("authentication_method", &self.authentication_method);
         formatter.finish()
     }
 }

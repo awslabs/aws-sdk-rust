@@ -91,6 +91,9 @@ pub mod create_evaluation_form;
 /// Types for the `CreateHoursOfOperation` operation.
 pub mod create_hours_of_operation;
 
+/// Types for the `CreateHoursOfOperationOverride` operation.
+pub mod create_hours_of_operation_override;
+
 /// Types for the `CreateInstance` operation.
 pub mod create_instance;
 
@@ -175,6 +178,9 @@ pub mod delete_evaluation_form;
 /// Types for the `DeleteHoursOfOperation` operation.
 pub mod delete_hours_of_operation;
 
+/// Types for the `DeleteHoursOfOperationOverride` operation.
+pub mod delete_hours_of_operation_override;
+
 /// Types for the `DeleteInstance` operation.
 pub mod delete_instance;
 
@@ -255,6 +261,9 @@ pub mod describe_evaluation_form;
 
 /// Types for the `DescribeHoursOfOperation` operation.
 pub mod describe_hours_of_operation;
+
+/// Types for the `DescribeHoursOfOperationOverride` operation.
+pub mod describe_hours_of_operation_override;
 
 /// Types for the `DescribeInstance` operation.
 pub mod describe_instance;
@@ -361,6 +370,9 @@ pub mod get_current_metric_data;
 /// Types for the `GetCurrentUserData` operation.
 pub mod get_current_user_data;
 
+/// Types for the `GetEffectiveHoursOfOperations` operation.
+pub mod get_effective_hours_of_operations;
+
 /// Types for the `GetFederationToken` operation.
 pub mod get_federation_token;
 
@@ -429,6 +441,9 @@ pub mod list_evaluation_forms;
 
 /// Types for the `ListFlowAssociations` operation.
 pub mod list_flow_associations;
+
+/// Types for the `ListHoursOfOperationOverrides` operation.
+pub mod list_hours_of_operation_overrides;
 
 /// Types for the `ListHoursOfOperations` operation.
 pub mod list_hours_of_operations;
@@ -564,6 +579,9 @@ pub mod search_contacts;
 
 /// Types for the `SearchEmailAddresses` operation.
 pub mod search_email_addresses;
+
+/// Types for the `SearchHoursOfOperationOverrides` operation.
+pub mod search_hours_of_operation_overrides;
 
 /// Types for the `SearchHoursOfOperations` operation.
 pub mod search_hours_of_operations;
@@ -714,6 +732,9 @@ pub mod update_evaluation_form;
 
 /// Types for the `UpdateHoursOfOperation` operation.
 pub mod update_hours_of_operation;
+
+/// Types for the `UpdateHoursOfOperationOverride` operation.
+pub mod update_hours_of_operation_override;
 
 /// Types for the `UpdateInstanceAttribute` operation.
 pub mod update_instance_attribute;

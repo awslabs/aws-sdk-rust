@@ -24,6 +24,8 @@ pub struct KinesisSettings {
     pub include_null_and_empty: ::std::option::Option<bool>,
     /// <p>Set this optional parameter to <code>true</code> to avoid adding a '0x' prefix to raw data in hexadecimal format. For example, by default, DMS adds a '0x' prefix to the LOB column type in hexadecimal format moving from an Oracle source to an Amazon Kinesis target. Use the <code>NoHexPrefix</code> endpoint setting to enable migration of RAW data type columns without adding the '0x' prefix.</p>
     pub no_hex_prefix: ::std::option::Option<bool>,
+    /// <p>Specifies using the large integer value with Kinesis.</p>
+    pub use_large_integer_value: ::std::option::Option<bool>,
 }
 impl KinesisSettings {
     /// <p>The Amazon Resource Name (ARN) for the Amazon Kinesis Data Streams endpoint.</p>
@@ -66,6 +68,10 @@ impl KinesisSettings {
     pub fn no_hex_prefix(&self) -> ::std::option::Option<bool> {
         self.no_hex_prefix
     }
+    /// <p>Specifies using the large integer value with Kinesis.</p>
+    pub fn use_large_integer_value(&self) -> ::std::option::Option<bool> {
+        self.use_large_integer_value
+    }
 }
 impl KinesisSettings {
     /// Creates a new builder-style object to manufacture [`KinesisSettings`](crate::types::KinesisSettings).
@@ -88,6 +94,7 @@ pub struct KinesisSettingsBuilder {
     pub(crate) include_control_details: ::std::option::Option<bool>,
     pub(crate) include_null_and_empty: ::std::option::Option<bool>,
     pub(crate) no_hex_prefix: ::std::option::Option<bool>,
+    pub(crate) use_large_integer_value: ::std::option::Option<bool>,
 }
 impl KinesisSettingsBuilder {
     /// <p>The Amazon Resource Name (ARN) for the Amazon Kinesis Data Streams endpoint.</p>
@@ -230,6 +237,20 @@ impl KinesisSettingsBuilder {
     pub fn get_no_hex_prefix(&self) -> &::std::option::Option<bool> {
         &self.no_hex_prefix
     }
+    /// <p>Specifies using the large integer value with Kinesis.</p>
+    pub fn use_large_integer_value(mut self, input: bool) -> Self {
+        self.use_large_integer_value = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies using the large integer value with Kinesis.</p>
+    pub fn set_use_large_integer_value(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.use_large_integer_value = input;
+        self
+    }
+    /// <p>Specifies using the large integer value with Kinesis.</p>
+    pub fn get_use_large_integer_value(&self) -> &::std::option::Option<bool> {
+        &self.use_large_integer_value
+    }
     /// Consumes the builder and constructs a [`KinesisSettings`](crate::types::KinesisSettings).
     pub fn build(self) -> crate::types::KinesisSettings {
         crate::types::KinesisSettings {
@@ -243,6 +264,7 @@ impl KinesisSettingsBuilder {
             include_control_details: self.include_control_details,
             include_null_and_empty: self.include_null_and_empty,
             no_hex_prefix: self.no_hex_prefix,
+            use_large_integer_value: self.use_large_integer_value,
         }
     }
 }

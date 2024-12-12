@@ -27,6 +27,7 @@
 ///     OperationType::ReleaseToGandi => { /* ... */ },
 ///     OperationType::RemoveDnssec => { /* ... */ },
 ///     OperationType::RenewDomain => { /* ... */ },
+///     OperationType::RestoreDomain => { /* ... */ },
 ///     OperationType::TransferInDomain => { /* ... */ },
 ///     OperationType::TransferOnRenew => { /* ... */ },
 ///     OperationType::TransferOutDomain => { /* ... */ },
@@ -90,6 +91,8 @@ pub enum OperationType {
     #[allow(missing_docs)] // documentation missing in model
     RenewDomain,
     #[allow(missing_docs)] // documentation missing in model
+    RestoreDomain,
+    #[allow(missing_docs)] // documentation missing in model
     TransferInDomain,
     #[allow(missing_docs)] // documentation missing in model
     TransferOnRenew,
@@ -121,6 +124,7 @@ impl ::std::convert::From<&str> for OperationType {
             "RELEASE_TO_GANDI" => OperationType::ReleaseToGandi,
             "REMOVE_DNSSEC" => OperationType::RemoveDnssec,
             "RENEW_DOMAIN" => OperationType::RenewDomain,
+            "RESTORE_DOMAIN" => OperationType::RestoreDomain,
             "TRANSFER_IN_DOMAIN" => OperationType::TransferInDomain,
             "TRANSFER_ON_RENEW" => OperationType::TransferOnRenew,
             "TRANSFER_OUT_DOMAIN" => OperationType::TransferOutDomain,
@@ -156,6 +160,7 @@ impl OperationType {
             OperationType::ReleaseToGandi => "RELEASE_TO_GANDI",
             OperationType::RemoveDnssec => "REMOVE_DNSSEC",
             OperationType::RenewDomain => "RENEW_DOMAIN",
+            OperationType::RestoreDomain => "RESTORE_DOMAIN",
             OperationType::TransferInDomain => "TRANSFER_IN_DOMAIN",
             OperationType::TransferOnRenew => "TRANSFER_ON_RENEW",
             OperationType::TransferOutDomain => "TRANSFER_OUT_DOMAIN",
@@ -182,6 +187,7 @@ impl OperationType {
             "RELEASE_TO_GANDI",
             "REMOVE_DNSSEC",
             "RENEW_DOMAIN",
+            "RESTORE_DOMAIN",
             "TRANSFER_IN_DOMAIN",
             "TRANSFER_ON_RENEW",
             "TRANSFER_OUT_DOMAIN",
@@ -225,6 +231,7 @@ impl ::std::fmt::Display for OperationType {
             OperationType::ReleaseToGandi => write!(f, "RELEASE_TO_GANDI"),
             OperationType::RemoveDnssec => write!(f, "REMOVE_DNSSEC"),
             OperationType::RenewDomain => write!(f, "RENEW_DOMAIN"),
+            OperationType::RestoreDomain => write!(f, "RESTORE_DOMAIN"),
             OperationType::TransferInDomain => write!(f, "TRANSFER_IN_DOMAIN"),
             OperationType::TransferOnRenew => write!(f, "TRANSFER_ON_RENEW"),
             OperationType::TransferOutDomain => write!(f, "TRANSFER_OUT_DOMAIN"),

@@ -62,13 +62,13 @@ pub struct ReplicationTask {
     /// <p>The reason the replication task was stopped. This response parameter can return one of the following values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>"Stop Reason NORMAL"</code></p></li>
+    /// <p><code>"Stop Reason NORMAL"</code> – The task completed successfully with no additional information returned.</p></li>
     /// <li>
     /// <p><code>"Stop Reason RECOVERABLE_ERROR"</code></p></li>
     /// <li>
     /// <p><code>"Stop Reason FATAL_ERROR"</code></p></li>
     /// <li>
-    /// <p><code>"Stop Reason FULL_LOAD_ONLY_FINISHED"</code></p></li>
+    /// <p><code>"Stop Reason FULL_LOAD_ONLY_FINISHED"</code> – The task completed the full load phase. DMS applied cached changes if you set <code>StopTaskCachedChangesApplied</code> to <code>true</code>.</p></li>
     /// <li>
     /// <p><code>"Stop Reason STOPPED_AFTER_FULL_LOAD"</code> – Full load completed, with cached changes not applied</p></li>
     /// <li>
@@ -193,13 +193,13 @@ impl ReplicationTask {
     /// <p>The reason the replication task was stopped. This response parameter can return one of the following values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>"Stop Reason NORMAL"</code></p></li>
+    /// <p><code>"Stop Reason NORMAL"</code> – The task completed successfully with no additional information returned.</p></li>
     /// <li>
     /// <p><code>"Stop Reason RECOVERABLE_ERROR"</code></p></li>
     /// <li>
     /// <p><code>"Stop Reason FATAL_ERROR"</code></p></li>
     /// <li>
-    /// <p><code>"Stop Reason FULL_LOAD_ONLY_FINISHED"</code></p></li>
+    /// <p><code>"Stop Reason FULL_LOAD_ONLY_FINISHED"</code> – The task completed the full load phase. DMS applied cached changes if you set <code>StopTaskCachedChangesApplied</code> to <code>true</code>.</p></li>
     /// <li>
     /// <p><code>"Stop Reason STOPPED_AFTER_FULL_LOAD"</code> – Full load completed, with cached changes not applied</p></li>
     /// <li>
@@ -539,13 +539,13 @@ impl ReplicationTaskBuilder {
     /// <p>The reason the replication task was stopped. This response parameter can return one of the following values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>"Stop Reason NORMAL"</code></p></li>
+    /// <p><code>"Stop Reason NORMAL"</code> – The task completed successfully with no additional information returned.</p></li>
     /// <li>
     /// <p><code>"Stop Reason RECOVERABLE_ERROR"</code></p></li>
     /// <li>
     /// <p><code>"Stop Reason FATAL_ERROR"</code></p></li>
     /// <li>
-    /// <p><code>"Stop Reason FULL_LOAD_ONLY_FINISHED"</code></p></li>
+    /// <p><code>"Stop Reason FULL_LOAD_ONLY_FINISHED"</code> – The task completed the full load phase. DMS applied cached changes if you set <code>StopTaskCachedChangesApplied</code> to <code>true</code>.</p></li>
     /// <li>
     /// <p><code>"Stop Reason STOPPED_AFTER_FULL_LOAD"</code> – Full load completed, with cached changes not applied</p></li>
     /// <li>
@@ -574,13 +574,13 @@ impl ReplicationTaskBuilder {
     /// <p>The reason the replication task was stopped. This response parameter can return one of the following values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>"Stop Reason NORMAL"</code></p></li>
+    /// <p><code>"Stop Reason NORMAL"</code> – The task completed successfully with no additional information returned.</p></li>
     /// <li>
     /// <p><code>"Stop Reason RECOVERABLE_ERROR"</code></p></li>
     /// <li>
     /// <p><code>"Stop Reason FATAL_ERROR"</code></p></li>
     /// <li>
-    /// <p><code>"Stop Reason FULL_LOAD_ONLY_FINISHED"</code></p></li>
+    /// <p><code>"Stop Reason FULL_LOAD_ONLY_FINISHED"</code> – The task completed the full load phase. DMS applied cached changes if you set <code>StopTaskCachedChangesApplied</code> to <code>true</code>.</p></li>
     /// <li>
     /// <p><code>"Stop Reason STOPPED_AFTER_FULL_LOAD"</code> – Full load completed, with cached changes not applied</p></li>
     /// <li>
@@ -609,13 +609,13 @@ impl ReplicationTaskBuilder {
     /// <p>The reason the replication task was stopped. This response parameter can return one of the following values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>"Stop Reason NORMAL"</code></p></li>
+    /// <p><code>"Stop Reason NORMAL"</code> – The task completed successfully with no additional information returned.</p></li>
     /// <li>
     /// <p><code>"Stop Reason RECOVERABLE_ERROR"</code></p></li>
     /// <li>
     /// <p><code>"Stop Reason FATAL_ERROR"</code></p></li>
     /// <li>
-    /// <p><code>"Stop Reason FULL_LOAD_ONLY_FINISHED"</code></p></li>
+    /// <p><code>"Stop Reason FULL_LOAD_ONLY_FINISHED"</code> – The task completed the full load phase. DMS applied cached changes if you set <code>StopTaskCachedChangesApplied</code> to <code>true</code>.</p></li>
     /// <li>
     /// <p><code>"Stop Reason STOPPED_AFTER_FULL_LOAD"</code> – Full load completed, with cached changes not applied</p></li>
     /// <li>

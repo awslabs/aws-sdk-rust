@@ -23,6 +23,7 @@ impl crate::operation::get_job_runs::builders::GetJobRunsInputBuilder {
 /// Fluent builder constructing a request to `GetJobRuns`.
 ///
 /// <p>Retrieves metadata for all runs of a given job definition.</p>
+/// <p><code>GetJobRuns</code> returns the job runs in chronological order, with the newest jobs returned first.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetJobRunsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

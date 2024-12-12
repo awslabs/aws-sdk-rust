@@ -24,6 +24,21 @@ pub fn de_describe_table_statistics_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "AccessDeniedFault" => crate::operation::describe_table_statistics::DescribeTableStatisticsError::AccessDeniedFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::AccessDeniedFaultBuilder::default();
+                output = crate::protocol_serde::shape_access_denied_fault::de_access_denied_fault_json_err(_response_body, output)
+                    .map_err(crate::operation::describe_table_statistics::DescribeTableStatisticsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InvalidResourceStateFault" => crate::operation::describe_table_statistics::DescribeTableStatisticsError::InvalidResourceStateFault({
             #[allow(unused_mut)]
             let mut tmp = {

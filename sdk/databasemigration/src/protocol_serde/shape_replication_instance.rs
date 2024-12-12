@@ -166,6 +166,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "KerberosAuthenticationSettings" => {
+                            builder = builder.set_kerberos_authentication_settings(
+                                crate::protocol_serde::shape_kerberos_authentication_settings::de_kerberos_authentication_settings(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

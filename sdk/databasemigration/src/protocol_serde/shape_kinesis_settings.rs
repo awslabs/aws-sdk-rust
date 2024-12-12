@@ -33,6 +33,9 @@ pub fn ser_kinesis_settings(
     if let Some(var_10) = &input.no_hex_prefix {
         object.key("NoHexPrefix").boolean(*var_10);
     }
+    if let Some(var_11) = &input.use_large_integer_value {
+        object.key("UseLargeIntegerValue").boolean(*var_11);
+    }
     Ok(())
 }
 
@@ -95,6 +98,9 @@ where
                         }
                         "NoHexPrefix" => {
                             builder = builder.set_no_hex_prefix(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "UseLargeIntegerValue" => {
+                            builder = builder.set_use_large_integer_value(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

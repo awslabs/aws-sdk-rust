@@ -168,6 +168,9 @@ pub fn ser_oracle_settings(
             ::aws_smithy_types::Number::NegInt((*var_45).into()),
         );
     }
+    if let Some(var_46) = &input.authentication_method {
+        object.key("AuthenticationMethod").string(var_46.as_str());
+    }
     Ok(())
 }
 
@@ -425,6 +428,13 @@ where
                             builder = builder.set_open_transaction_window(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "AuthenticationMethod" => {
+                            builder = builder.set_authentication_method(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::OracleAuthenticationMethod::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

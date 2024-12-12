@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrganizationAdditionalConfigurationResult {
-    /// <p>The name of the additional configuration that is configured for the member accounts within the organization.</p>
+    /// <p>The name of the additional configuration that is configured for the member accounts within the organization. These values are applicable to only Runtime Monitoring protection plan.</p>
     pub name: ::std::option::Option<crate::types::OrgFeatureAdditionalConfiguration>,
     /// <p>Describes the status of the additional configuration that is configured for the member accounts within the organization. One of the following values is the status for the entire organization:</p>
     /// <ul>
@@ -19,7 +19,7 @@ pub struct OrganizationAdditionalConfigurationResult {
     pub auto_enable: ::std::option::Option<crate::types::OrgFeatureStatus>,
 }
 impl OrganizationAdditionalConfigurationResult {
-    /// <p>The name of the additional configuration that is configured for the member accounts within the organization.</p>
+    /// <p>The name of the additional configuration that is configured for the member accounts within the organization. These values are applicable to only Runtime Monitoring protection plan.</p>
     pub fn name(&self) -> ::std::option::Option<&crate::types::OrgFeatureAdditionalConfiguration> {
         self.name.as_ref()
     }
@@ -52,17 +52,17 @@ pub struct OrganizationAdditionalConfigurationResultBuilder {
     pub(crate) auto_enable: ::std::option::Option<crate::types::OrgFeatureStatus>,
 }
 impl OrganizationAdditionalConfigurationResultBuilder {
-    /// <p>The name of the additional configuration that is configured for the member accounts within the organization.</p>
+    /// <p>The name of the additional configuration that is configured for the member accounts within the organization. These values are applicable to only Runtime Monitoring protection plan.</p>
     pub fn name(mut self, input: crate::types::OrgFeatureAdditionalConfiguration) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The name of the additional configuration that is configured for the member accounts within the organization.</p>
+    /// <p>The name of the additional configuration that is configured for the member accounts within the organization. These values are applicable to only Runtime Monitoring protection plan.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::OrgFeatureAdditionalConfiguration>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the additional configuration that is configured for the member accounts within the organization.</p>
+    /// <p>The name of the additional configuration that is configured for the member accounts within the organization. These values are applicable to only Runtime Monitoring protection plan.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::OrgFeatureAdditionalConfiguration> {
         &self.name
     }
