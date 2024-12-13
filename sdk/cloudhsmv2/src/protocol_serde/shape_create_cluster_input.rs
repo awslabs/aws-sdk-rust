@@ -24,20 +24,23 @@ pub fn ser_create_cluster_input_input(
         }
         array_6.finish();
     }
-    if let Some(var_8) = &input.tag_list {
-        let mut array_9 = object.key("TagList").start_array();
-        for item_10 in var_8 {
+    if let Some(var_8) = &input.network_type {
+        object.key("NetworkType").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.tag_list {
+        let mut array_10 = object.key("TagList").start_array();
+        for item_11 in var_9 {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_11, item_10)?;
-                object_11.finish();
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_12, item_11)?;
+                object_12.finish();
             }
         }
-        array_9.finish();
+        array_10.finish();
     }
-    if let Some(var_12) = &input.mode {
-        object.key("Mode").string(var_12.as_str());
+    if let Some(var_13) = &input.mode {
+        object.key("Mode").string(var_13.as_str());
     }
     Ok(())
 }

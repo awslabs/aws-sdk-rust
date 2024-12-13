@@ -271,6 +271,8 @@ pub(crate) mod shape_launch_template_specification;
 
 pub(crate) mod shape_logging;
 
+pub(crate) mod shape_node_repair_config;
+
 pub(crate) mod shape_nodegroup;
 
 pub(crate) mod shape_nodegroup_scaling_config;

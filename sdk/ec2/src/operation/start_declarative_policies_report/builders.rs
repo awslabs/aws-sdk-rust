@@ -31,7 +31,7 @@ impl crate::operation::start_declarative_policies_report::builders::StartDeclara
 /// <li>
 /// <p>The <code>StartDeclarativePoliciesReport</code> API can only be called by the management account or delegated administrators for the organization.</p></li>
 /// <li>
-/// <p>An S3 bucket must be available before generating the report (you can create a new one or use an existing one), and it must have an appropriate bucket policy. For a sample S3 policy, see <i>Sample Amazon S3 policy</i> under .</p></li>
+/// <p>An S3 bucket must be available before generating the report (you can create a new one or use an existing one), it must be in the same Region where the report generation request is made, and it must have an appropriate bucket policy. For a sample S3 policy, see <i>Sample Amazon S3 policy</i> under .</p></li>
 /// <li>
 /// <p>Trusted access must be enabled for the service for which the declarative policy will enforce a baseline configuration. If you use the Amazon Web Services Organizations console, this is done automatically when you enable declarative policies. The API uses the following service principal to identify the EC2 service: <code>ec2.amazonaws.com</code>. For more information on how to enable trusted access with the Amazon Web Services CLI and Amazon Web Services SDKs, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Using Organizations with other Amazon Web Services services</a> in the <i>Amazon Web Services Organizations User Guide</i>.</p></li>
 /// <li>
@@ -137,17 +137,17 @@ impl StartDeclarativePoliciesReportFluentBuilder {
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         self.inner.get_dry_run()
     }
-    /// <p>The name of the S3 bucket where the report will be saved.</p>
+    /// <p>The name of the S3 bucket where the report will be saved. The bucket must be in the same Region where the report generation request is made.</p>
     pub fn s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.s3_bucket(input.into());
         self
     }
-    /// <p>The name of the S3 bucket where the report will be saved.</p>
+    /// <p>The name of the S3 bucket where the report will be saved. The bucket must be in the same Region where the report generation request is made.</p>
     pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_s3_bucket(input);
         self
     }
-    /// <p>The name of the S3 bucket where the report will be saved.</p>
+    /// <p>The name of the S3 bucket where the report will be saved. The bucket must be in the same Region where the report generation request is made.</p>
     pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_s3_bucket()
     }

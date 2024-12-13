@@ -9,6 +9,8 @@ pub enum Error {
     CloudHsmInternalFailureException(crate::types::error::CloudHsmInternalFailureException),
     /// <p>The request was rejected because it is not a valid request.</p>
     CloudHsmInvalidRequestException(crate::types::error::CloudHsmInvalidRequestException),
+    /// <p>The request was rejected because it exceeds an CloudHSM limit.</p>
+    CloudHsmResourceLimitExceededException(crate::types::error::CloudHsmResourceLimitExceededException),
     /// <p>The request was rejected because it refers to a resource that cannot be found.</p>
     CloudHsmResourceNotFoundException(crate::types::error::CloudHsmResourceNotFoundException),
     /// <p>The request was rejected because an error occurred.</p>
@@ -30,6 +32,7 @@ impl ::std::fmt::Display for Error {
             Error::CloudHsmAccessDeniedException(inner) => inner.fmt(f),
             Error::CloudHsmInternalFailureException(inner) => inner.fmt(f),
             Error::CloudHsmInvalidRequestException(inner) => inner.fmt(f),
+            Error::CloudHsmResourceLimitExceededException(inner) => inner.fmt(f),
             Error::CloudHsmResourceNotFoundException(inner) => inner.fmt(f),
             Error::CloudHsmServiceException(inner) => inner.fmt(f),
             Error::CloudHsmTagException(inner) => inner.fmt(f),
@@ -57,6 +60,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::CloudHsmAccessDeniedException(inner) => inner.meta(),
             Self::CloudHsmInternalFailureException(inner) => inner.meta(),
             Self::CloudHsmInvalidRequestException(inner) => inner.meta(),
+            Self::CloudHsmResourceLimitExceededException(inner) => inner.meta(),
             Self::CloudHsmResourceNotFoundException(inner) => inner.meta(),
             Self::CloudHsmServiceException(inner) => inner.meta(),
             Self::CloudHsmTagException(inner) => inner.meta(),
@@ -607,6 +611,9 @@ impl From<crate::operation::tag_resource::TagResourceError> for Error {
                 Error::CloudHsmInternalFailureException(inner)
             }
             crate::operation::tag_resource::TagResourceError::CloudHsmInvalidRequestException(inner) => Error::CloudHsmInvalidRequestException(inner),
+            crate::operation::tag_resource::TagResourceError::CloudHsmResourceLimitExceededException(inner) => {
+                Error::CloudHsmResourceLimitExceededException(inner)
+            }
             crate::operation::tag_resource::TagResourceError::CloudHsmResourceNotFoundException(inner) => {
                 Error::CloudHsmResourceNotFoundException(inner)
             }
@@ -655,6 +662,7 @@ impl ::std::error::Error for Error {
             Error::CloudHsmAccessDeniedException(inner) => inner.source(),
             Error::CloudHsmInternalFailureException(inner) => inner.source(),
             Error::CloudHsmInvalidRequestException(inner) => inner.source(),
+            Error::CloudHsmResourceLimitExceededException(inner) => inner.source(),
             Error::CloudHsmResourceNotFoundException(inner) => inner.source(),
             Error::CloudHsmServiceException(inner) => inner.source(),
             Error::CloudHsmTagException(inner) => inner.source(),
@@ -668,6 +676,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::CloudHsmAccessDeniedException(e) => e.request_id(),
             Self::CloudHsmInternalFailureException(e) => e.request_id(),
             Self::CloudHsmInvalidRequestException(e) => e.request_id(),
+            Self::CloudHsmResourceLimitExceededException(e) => e.request_id(),
             Self::CloudHsmResourceNotFoundException(e) => e.request_id(),
             Self::CloudHsmServiceException(e) => e.request_id(),
             Self::CloudHsmTagException(e) => e.request_id(),

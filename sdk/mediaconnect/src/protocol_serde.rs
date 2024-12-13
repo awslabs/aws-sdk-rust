@@ -375,6 +375,8 @@ pub(crate) mod shape_media_stream_attributes;
 
 pub(crate) mod shape_message_detail;
 
+pub(crate) mod shape_multicast_source_settings;
+
 pub(crate) mod shape_resource_specification;
 
 pub(crate) mod shape_set_gateway_bridge_source_request;

@@ -51,6 +51,8 @@ pub use crate::types::_namespace_filter::NamespaceFilterBuilder;
 
 pub use crate::types::_instance_summary::InstanceSummaryBuilder;
 
+pub use crate::types::_service_attributes::ServiceAttributesBuilder;
+
 pub use crate::types::_service::ServiceBuilder;
 
 pub use crate::types::_operation::OperationBuilder;

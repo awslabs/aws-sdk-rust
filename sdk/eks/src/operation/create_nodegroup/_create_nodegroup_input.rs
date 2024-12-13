@@ -33,6 +33,8 @@ pub struct CreateNodegroupInput {
     pub launch_template: ::std::option::Option<crate::types::LaunchTemplateSpecification>,
     /// <p>The node group update configuration.</p>
     pub update_config: ::std::option::Option<crate::types::NodegroupUpdateConfig>,
+    /// <p>The node auto repair configuration for the node group.</p>
+    pub node_repair_config: ::std::option::Option<crate::types::NodeRepairConfig>,
     /// <p>The capacity type for your node group.</p>
     pub capacity_type: ::std::option::Option<crate::types::CapacityTypes>,
     /// <p>The Kubernetes version to use for your managed nodes. By default, the Kubernetes version of the cluster is used, and this is the only accepted specified value. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>version</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing managed nodes with launch templates</a> in the <i>Amazon EKS User Guide</i>.</p>
@@ -108,6 +110,10 @@ impl CreateNodegroupInput {
     pub fn update_config(&self) -> ::std::option::Option<&crate::types::NodegroupUpdateConfig> {
         self.update_config.as_ref()
     }
+    /// <p>The node auto repair configuration for the node group.</p>
+    pub fn node_repair_config(&self) -> ::std::option::Option<&crate::types::NodeRepairConfig> {
+        self.node_repair_config.as_ref()
+    }
     /// <p>The capacity type for your node group.</p>
     pub fn capacity_type(&self) -> ::std::option::Option<&crate::types::CapacityTypes> {
         self.capacity_type.as_ref()
@@ -148,6 +154,7 @@ pub struct CreateNodegroupInputBuilder {
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) launch_template: ::std::option::Option<crate::types::LaunchTemplateSpecification>,
     pub(crate) update_config: ::std::option::Option<crate::types::NodegroupUpdateConfig>,
+    pub(crate) node_repair_config: ::std::option::Option<crate::types::NodeRepairConfig>,
     pub(crate) capacity_type: ::std::option::Option<crate::types::CapacityTypes>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
     pub(crate) release_version: ::std::option::Option<::std::string::String>,
@@ -396,6 +403,20 @@ impl CreateNodegroupInputBuilder {
     pub fn get_update_config(&self) -> &::std::option::Option<crate::types::NodegroupUpdateConfig> {
         &self.update_config
     }
+    /// <p>The node auto repair configuration for the node group.</p>
+    pub fn node_repair_config(mut self, input: crate::types::NodeRepairConfig) -> Self {
+        self.node_repair_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The node auto repair configuration for the node group.</p>
+    pub fn set_node_repair_config(mut self, input: ::std::option::Option<crate::types::NodeRepairConfig>) -> Self {
+        self.node_repair_config = input;
+        self
+    }
+    /// <p>The node auto repair configuration for the node group.</p>
+    pub fn get_node_repair_config(&self) -> &::std::option::Option<crate::types::NodeRepairConfig> {
+        &self.node_repair_config
+    }
     /// <p>The capacity type for your node group.</p>
     pub fn capacity_type(mut self, input: crate::types::CapacityTypes) -> Self {
         self.capacity_type = ::std::option::Option::Some(input);
@@ -461,6 +482,7 @@ impl CreateNodegroupInputBuilder {
             client_request_token: self.client_request_token,
             launch_template: self.launch_template,
             update_config: self.update_config,
+            node_repair_config: self.node_repair_config,
             capacity_type: self.capacity_type,
             version: self.version,
             release_version: self.release_version,

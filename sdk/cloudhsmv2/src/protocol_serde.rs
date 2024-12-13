@@ -73,6 +73,8 @@ pub(crate) mod shape_cloud_hsm_internal_failure_exception;
 
 pub(crate) mod shape_cloud_hsm_invalid_request_exception;
 
+pub(crate) mod shape_cloud_hsm_resource_limit_exceeded_exception;
+
 pub(crate) mod shape_cloud_hsm_resource_not_found_exception;
 
 pub(crate) mod shape_cloud_hsm_service_exception;

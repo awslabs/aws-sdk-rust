@@ -49,6 +49,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "EniIpV6" => {
+                            builder = builder.set_eni_ipv6(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "HsmId" => {
                             builder = builder.set_hsm_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

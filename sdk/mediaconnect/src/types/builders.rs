@@ -71,6 +71,8 @@ pub use crate::types::_bridge_source::BridgeSourceBuilder;
 
 pub use crate::types::_bridge_network_source::BridgeNetworkSourceBuilder;
 
+pub use crate::types::_multicast_source_settings::MulticastSourceSettingsBuilder;
+
 pub use crate::types::_bridge_flow_source::BridgeFlowSourceBuilder;
 
 pub use crate::types::_update_bridge_network_source_request::UpdateBridgeNetworkSourceRequestBuilder;

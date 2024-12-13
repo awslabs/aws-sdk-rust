@@ -17,6 +17,8 @@ pub use crate::types::_update_status::UpdateStatus;
 
 pub use crate::types::_launch_template_specification::LaunchTemplateSpecification;
 
+pub use crate::types::_node_repair_config::NodeRepairConfig;
+
 pub use crate::types::_nodegroup_update_config::NodegroupUpdateConfig;
 
 pub use crate::types::_nodegroup_scaling_config::NodegroupScalingConfig;
@@ -370,6 +372,8 @@ mod _log_type;
 mod _logging;
 
 mod _marketplace_information;
+
+mod _node_repair_config;
 
 mod _nodegroup;
 

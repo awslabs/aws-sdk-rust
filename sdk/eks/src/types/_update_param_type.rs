@@ -31,6 +31,7 @@
 ///     UpdateParamType::MaxUnavailable => { /* ... */ },
 ///     UpdateParamType::MaxUnavailablePercentage => { /* ... */ },
 ///     UpdateParamType::MinSize => { /* ... */ },
+///     UpdateParamType::NodeRepairEnabled => { /* ... */ },
 ///     UpdateParamType::PlatformVersion => { /* ... */ },
 ///     UpdateParamType::PodIdentityAssociations => { /* ... */ },
 ///     UpdateParamType::PublicAccessCidrs => { /* ... */ },
@@ -111,6 +112,8 @@ pub enum UpdateParamType {
     #[allow(missing_docs)] // documentation missing in model
     MinSize,
     #[allow(missing_docs)] // documentation missing in model
+    NodeRepairEnabled,
+    #[allow(missing_docs)] // documentation missing in model
     PlatformVersion,
     #[allow(missing_docs)] // documentation missing in model
     PodIdentityAssociations,
@@ -164,6 +167,7 @@ impl ::std::convert::From<&str> for UpdateParamType {
             "MaxUnavailable" => UpdateParamType::MaxUnavailable,
             "MaxUnavailablePercentage" => UpdateParamType::MaxUnavailablePercentage,
             "MinSize" => UpdateParamType::MinSize,
+            "NodeRepairEnabled" => UpdateParamType::NodeRepairEnabled,
             "PlatformVersion" => UpdateParamType::PlatformVersion,
             "PodIdentityAssociations" => UpdateParamType::PodIdentityAssociations,
             "PublicAccessCidrs" => UpdateParamType::PublicAccessCidrs,
@@ -212,6 +216,7 @@ impl UpdateParamType {
             UpdateParamType::MaxUnavailable => "MaxUnavailable",
             UpdateParamType::MaxUnavailablePercentage => "MaxUnavailablePercentage",
             UpdateParamType::MinSize => "MinSize",
+            UpdateParamType::NodeRepairEnabled => "NodeRepairEnabled",
             UpdateParamType::PlatformVersion => "PlatformVersion",
             UpdateParamType::PodIdentityAssociations => "PodIdentityAssociations",
             UpdateParamType::PublicAccessCidrs => "PublicAccessCidrs",
@@ -251,6 +256,7 @@ impl UpdateParamType {
             "MaxUnavailable",
             "MaxUnavailablePercentage",
             "MinSize",
+            "NodeRepairEnabled",
             "PlatformVersion",
             "PodIdentityAssociations",
             "PublicAccessCidrs",
@@ -307,6 +313,7 @@ impl ::std::fmt::Display for UpdateParamType {
             UpdateParamType::MaxUnavailable => write!(f, "MaxUnavailable"),
             UpdateParamType::MaxUnavailablePercentage => write!(f, "MaxUnavailablePercentage"),
             UpdateParamType::MinSize => write!(f, "MinSize"),
+            UpdateParamType::NodeRepairEnabled => write!(f, "NodeRepairEnabled"),
             UpdateParamType::PlatformVersion => write!(f, "PlatformVersion"),
             UpdateParamType::PodIdentityAssociations => write!(f, "PodIdentityAssociations"),
             UpdateParamType::PublicAccessCidrs => write!(f, "PublicAccessCidrs"),

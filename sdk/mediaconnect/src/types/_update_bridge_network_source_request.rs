@@ -6,6 +6,8 @@
 pub struct UpdateBridgeNetworkSourceRequest {
     /// The network source multicast IP.
     pub multicast_ip: ::std::option::Option<::std::string::String>,
+    /// The settings related to the multicast source.
+    pub multicast_source_settings: ::std::option::Option<crate::types::MulticastSourceSettings>,
     /// The network source's gateway network name.
     pub network_name: ::std::option::Option<::std::string::String>,
     /// The network source port.
@@ -17,6 +19,10 @@ impl UpdateBridgeNetworkSourceRequest {
     /// The network source multicast IP.
     pub fn multicast_ip(&self) -> ::std::option::Option<&str> {
         self.multicast_ip.as_deref()
+    }
+    /// The settings related to the multicast source.
+    pub fn multicast_source_settings(&self) -> ::std::option::Option<&crate::types::MulticastSourceSettings> {
+        self.multicast_source_settings.as_ref()
     }
     /// The network source's gateway network name.
     pub fn network_name(&self) -> ::std::option::Option<&str> {
@@ -43,6 +49,7 @@ impl UpdateBridgeNetworkSourceRequest {
 #[non_exhaustive]
 pub struct UpdateBridgeNetworkSourceRequestBuilder {
     pub(crate) multicast_ip: ::std::option::Option<::std::string::String>,
+    pub(crate) multicast_source_settings: ::std::option::Option<crate::types::MulticastSourceSettings>,
     pub(crate) network_name: ::std::option::Option<::std::string::String>,
     pub(crate) port: ::std::option::Option<i32>,
     pub(crate) protocol: ::std::option::Option<crate::types::Protocol>,
@@ -61,6 +68,20 @@ impl UpdateBridgeNetworkSourceRequestBuilder {
     /// The network source multicast IP.
     pub fn get_multicast_ip(&self) -> &::std::option::Option<::std::string::String> {
         &self.multicast_ip
+    }
+    /// The settings related to the multicast source.
+    pub fn multicast_source_settings(mut self, input: crate::types::MulticastSourceSettings) -> Self {
+        self.multicast_source_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// The settings related to the multicast source.
+    pub fn set_multicast_source_settings(mut self, input: ::std::option::Option<crate::types::MulticastSourceSettings>) -> Self {
+        self.multicast_source_settings = input;
+        self
+    }
+    /// The settings related to the multicast source.
+    pub fn get_multicast_source_settings(&self) -> &::std::option::Option<crate::types::MulticastSourceSettings> {
+        &self.multicast_source_settings
     }
     /// The network source's gateway network name.
     pub fn network_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -108,6 +129,7 @@ impl UpdateBridgeNetworkSourceRequestBuilder {
     pub fn build(self) -> crate::types::UpdateBridgeNetworkSourceRequest {
         crate::types::UpdateBridgeNetworkSourceRequest {
             multicast_ip: self.multicast_ip,
+            multicast_source_settings: self.multicast_source_settings,
             network_name: self.network_name,
             port: self.port,
             protocol: self.protocol,

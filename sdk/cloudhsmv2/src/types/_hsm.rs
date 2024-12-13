@@ -14,6 +14,8 @@ pub struct Hsm {
     pub eni_id: ::std::option::Option<::std::string::String>,
     /// <p>The IP address of the HSM's elastic network interface (ENI).</p>
     pub eni_ip: ::std::option::Option<::std::string::String>,
+    /// <p>The IPv6 address (if any) of the HSM's elastic network interface (ENI).</p>
+    pub eni_ipv6: ::std::option::Option<::std::string::String>,
     /// <p>The HSM's identifier (ID).</p>
     pub hsm_id: ::std::string::String,
     /// <p>The HSM's state.</p>
@@ -41,6 +43,10 @@ impl Hsm {
     /// <p>The IP address of the HSM's elastic network interface (ENI).</p>
     pub fn eni_ip(&self) -> ::std::option::Option<&str> {
         self.eni_ip.as_deref()
+    }
+    /// <p>The IPv6 address (if any) of the HSM's elastic network interface (ENI).</p>
+    pub fn eni_ipv6(&self) -> ::std::option::Option<&str> {
+        self.eni_ipv6.as_deref()
     }
     /// <p>The HSM's identifier (ID).</p>
     pub fn hsm_id(&self) -> &str {
@@ -72,6 +78,7 @@ pub struct HsmBuilder {
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) eni_id: ::std::option::Option<::std::string::String>,
     pub(crate) eni_ip: ::std::option::Option<::std::string::String>,
+    pub(crate) eni_ipv6: ::std::option::Option<::std::string::String>,
     pub(crate) hsm_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::HsmState>,
     pub(crate) state_message: ::std::option::Option<::std::string::String>,
@@ -147,6 +154,20 @@ impl HsmBuilder {
     pub fn get_eni_ip(&self) -> &::std::option::Option<::std::string::String> {
         &self.eni_ip
     }
+    /// <p>The IPv6 address (if any) of the HSM's elastic network interface (ENI).</p>
+    pub fn eni_ipv6(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.eni_ipv6 = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The IPv6 address (if any) of the HSM's elastic network interface (ENI).</p>
+    pub fn set_eni_ipv6(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.eni_ipv6 = input;
+        self
+    }
+    /// <p>The IPv6 address (if any) of the HSM's elastic network interface (ENI).</p>
+    pub fn get_eni_ipv6(&self) -> &::std::option::Option<::std::string::String> {
+        &self.eni_ipv6
+    }
     /// <p>The HSM's identifier (ID).</p>
     /// This field is required.
     pub fn hsm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -200,6 +221,7 @@ impl HsmBuilder {
             subnet_id: self.subnet_id,
             eni_id: self.eni_id,
             eni_ip: self.eni_ip,
+            eni_ipv6: self.eni_ipv6,
             hsm_id: self.hsm_id.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "hsm_id",

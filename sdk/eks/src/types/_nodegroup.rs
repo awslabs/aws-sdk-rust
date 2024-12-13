@@ -48,6 +48,8 @@ pub struct Nodegroup {
     pub health: ::std::option::Option<crate::types::NodegroupHealth>,
     /// <p>The node group update configuration.</p>
     pub update_config: ::std::option::Option<crate::types::NodegroupUpdateConfig>,
+    /// <p>The node auto repair configuration for the node group.</p>
+    pub node_repair_config: ::std::option::Option<crate::types::NodeRepairConfig>,
     /// <p>If a launch template was used to create the node group, then this is the launch template that was used.</p>
     pub launch_template: ::std::option::Option<crate::types::LaunchTemplateSpecification>,
     /// <p>Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.</p>
@@ -146,6 +148,10 @@ impl Nodegroup {
     pub fn update_config(&self) -> ::std::option::Option<&crate::types::NodegroupUpdateConfig> {
         self.update_config.as_ref()
     }
+    /// <p>The node auto repair configuration for the node group.</p>
+    pub fn node_repair_config(&self) -> ::std::option::Option<&crate::types::NodeRepairConfig> {
+        self.node_repair_config.as_ref()
+    }
     /// <p>If a launch template was used to create the node group, then this is the launch template that was used.</p>
     pub fn launch_template(&self) -> ::std::option::Option<&crate::types::LaunchTemplateSpecification> {
         self.launch_template.as_ref()
@@ -187,6 +193,7 @@ pub struct NodegroupBuilder {
     pub(crate) disk_size: ::std::option::Option<i32>,
     pub(crate) health: ::std::option::Option<crate::types::NodegroupHealth>,
     pub(crate) update_config: ::std::option::Option<crate::types::NodegroupUpdateConfig>,
+    pub(crate) node_repair_config: ::std::option::Option<crate::types::NodeRepairConfig>,
     pub(crate) launch_template: ::std::option::Option<crate::types::LaunchTemplateSpecification>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -515,6 +522,20 @@ impl NodegroupBuilder {
     pub fn get_update_config(&self) -> &::std::option::Option<crate::types::NodegroupUpdateConfig> {
         &self.update_config
     }
+    /// <p>The node auto repair configuration for the node group.</p>
+    pub fn node_repair_config(mut self, input: crate::types::NodeRepairConfig) -> Self {
+        self.node_repair_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The node auto repair configuration for the node group.</p>
+    pub fn set_node_repair_config(mut self, input: ::std::option::Option<crate::types::NodeRepairConfig>) -> Self {
+        self.node_repair_config = input;
+        self
+    }
+    /// <p>The node auto repair configuration for the node group.</p>
+    pub fn get_node_repair_config(&self) -> &::std::option::Option<crate::types::NodeRepairConfig> {
+        &self.node_repair_config
+    }
     /// <p>If a launch template was used to create the node group, then this is the launch template that was used.</p>
     pub fn launch_template(mut self, input: crate::types::LaunchTemplateSpecification) -> Self {
         self.launch_template = ::std::option::Option::Some(input);
@@ -573,6 +594,7 @@ impl NodegroupBuilder {
             disk_size: self.disk_size,
             health: self.health,
             update_config: self.update_config,
+            node_repair_config: self.node_repair_config,
             launch_template: self.launch_template,
             tags: self.tags,
         }

@@ -35,6 +35,8 @@ pub(crate) mod shape_delete_namespace;
 
 pub(crate) mod shape_delete_service;
 
+pub(crate) mod shape_delete_service_attributes;
+
 pub(crate) mod shape_deregister_instance;
 
 pub(crate) mod shape_discover_instances;
@@ -50,6 +52,8 @@ pub(crate) mod shape_get_namespace;
 pub(crate) mod shape_get_operation;
 
 pub(crate) mod shape_get_service;
+
+pub(crate) mod shape_get_service_attributes;
 
 pub(crate) mod shape_list_instances;
 
@@ -77,6 +81,8 @@ pub(crate) mod shape_update_public_dns_namespace;
 
 pub(crate) mod shape_update_service;
 
+pub(crate) mod shape_update_service_attributes;
+
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
@@ -97,6 +103,8 @@ pub(crate) mod shape_custom_health_not_found;
 
 pub(crate) mod shape_delete_namespace_input;
 
+pub(crate) mod shape_delete_service_attributes_input;
+
 pub(crate) mod shape_delete_service_input;
 
 pub(crate) mod shape_deregister_instance_input;
@@ -114,6 +122,8 @@ pub(crate) mod shape_get_instances_health_status_input;
 pub(crate) mod shape_get_namespace_input;
 
 pub(crate) mod shape_get_operation_input;
+
+pub(crate) mod shape_get_service_attributes_input;
 
 pub(crate) mod shape_get_service_input;
 
@@ -149,6 +159,8 @@ pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_service_already_exists;
 
+pub(crate) mod shape_service_attributes_limit_exceeded_exception;
+
 pub(crate) mod shape_service_not_found;
 
 pub(crate) mod shape_tag_resource_input;
@@ -164,6 +176,8 @@ pub(crate) mod shape_update_instance_custom_health_status_input;
 pub(crate) mod shape_update_private_dns_namespace_input;
 
 pub(crate) mod shape_update_public_dns_namespace_input;
+
+pub(crate) mod shape_update_service_attributes_input;
 
 pub(crate) mod shape_update_service_input;
 
@@ -205,6 +219,8 @@ pub(crate) mod shape_public_dns_namespace_properties;
 
 pub(crate) mod shape_service;
 
+pub(crate) mod shape_service_attributes;
+
 pub(crate) mod shape_service_change;
 
 pub(crate) mod shape_service_filter;
@@ -240,6 +256,8 @@ pub(crate) mod shape_private_dns_properties_mutable;
 pub(crate) mod shape_public_dns_namespace_properties_change;
 
 pub(crate) mod shape_public_dns_properties_mutable;
+
+pub(crate) mod shape_service_attributes_map;
 
 pub(crate) mod shape_service_summary;
 

@@ -5,7 +5,7 @@
 pub struct StartDeclarativePoliciesReportInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
-    /// <p>The name of the S3 bucket where the report will be saved.</p>
+    /// <p>The name of the S3 bucket where the report will be saved. The bucket must be in the same Region where the report generation request is made.</p>
     pub s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The prefix for your S3 object.</p>
     pub s3_prefix: ::std::option::Option<::std::string::String>,
@@ -28,7 +28,7 @@ impl StartDeclarativePoliciesReportInput {
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
-    /// <p>The name of the S3 bucket where the report will be saved.</p>
+    /// <p>The name of the S3 bucket where the report will be saved. The bucket must be in the same Region where the report generation request is made.</p>
     pub fn s3_bucket(&self) -> ::std::option::Option<&str> {
         self.s3_bucket.as_deref()
     }
@@ -88,18 +88,18 @@ impl StartDeclarativePoliciesReportInputBuilder {
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
-    /// <p>The name of the S3 bucket where the report will be saved.</p>
+    /// <p>The name of the S3 bucket where the report will be saved. The bucket must be in the same Region where the report generation request is made.</p>
     /// This field is required.
     pub fn s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the S3 bucket where the report will be saved.</p>
+    /// <p>The name of the S3 bucket where the report will be saved. The bucket must be in the same Region where the report generation request is made.</p>
     pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket = input;
         self
     }
-    /// <p>The name of the S3 bucket where the report will be saved.</p>
+    /// <p>The name of the S3 bucket where the report will be saved. The bucket must be in the same Region where the report generation request is made.</p>
     pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_bucket
     }

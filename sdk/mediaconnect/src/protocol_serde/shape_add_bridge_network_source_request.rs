@@ -6,20 +6,26 @@ pub fn ser_add_bridge_network_source_request(
     if let Some(var_1) = &input.multicast_ip {
         object.key("multicastIp").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.name {
-        object.key("name").string(var_2.as_str());
+    if let Some(var_2) = &input.multicast_source_settings {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("multicastSourceSettings").start_object();
+        crate::protocol_serde::shape_multicast_source_settings::ser_multicast_source_settings(&mut object_3, var_2)?;
+        object_3.finish();
     }
-    if let Some(var_3) = &input.network_name {
-        object.key("networkName").string(var_3.as_str());
+    if let Some(var_4) = &input.name {
+        object.key("name").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.port {
+    if let Some(var_5) = &input.network_name {
+        object.key("networkName").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.port {
         object.key("port").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if let Some(var_5) = &input.protocol {
-        object.key("protocol").string(var_5.as_str());
+    if let Some(var_7) = &input.protocol {
+        object.key("protocol").string(var_7.as_str());
     }
     Ok(())
 }

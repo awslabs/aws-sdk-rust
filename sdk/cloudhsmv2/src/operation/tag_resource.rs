@@ -250,6 +250,8 @@ pub enum TagResourceError {
     CloudHsmInternalFailureException(crate::types::error::CloudHsmInternalFailureException),
     /// <p>The request was rejected because it is not a valid request.</p>
     CloudHsmInvalidRequestException(crate::types::error::CloudHsmInvalidRequestException),
+    /// <p>The request was rejected because it exceeds an CloudHSM limit.</p>
+    CloudHsmResourceLimitExceededException(crate::types::error::CloudHsmResourceLimitExceededException),
     /// <p>The request was rejected because it refers to a resource that cannot be found.</p>
     CloudHsmResourceNotFoundException(crate::types::error::CloudHsmResourceNotFoundException),
     /// <p>The request was rejected because an error occurred.</p>
@@ -292,6 +294,7 @@ impl TagResourceError {
             Self::CloudHsmAccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::CloudHsmInternalFailureException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::CloudHsmInvalidRequestException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::CloudHsmResourceLimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::CloudHsmResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::CloudHsmServiceException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::CloudHsmTagException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -309,6 +312,10 @@ impl TagResourceError {
     /// Returns `true` if the error kind is `TagResourceError::CloudHsmInvalidRequestException`.
     pub fn is_cloud_hsm_invalid_request_exception(&self) -> bool {
         matches!(self, Self::CloudHsmInvalidRequestException(_))
+    }
+    /// Returns `true` if the error kind is `TagResourceError::CloudHsmResourceLimitExceededException`.
+    pub fn is_cloud_hsm_resource_limit_exceeded_exception(&self) -> bool {
+        matches!(self, Self::CloudHsmResourceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `TagResourceError::CloudHsmResourceNotFoundException`.
     pub fn is_cloud_hsm_resource_not_found_exception(&self) -> bool {
@@ -329,6 +336,7 @@ impl ::std::error::Error for TagResourceError {
             Self::CloudHsmAccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::CloudHsmInternalFailureException(_inner) => ::std::option::Option::Some(_inner),
             Self::CloudHsmInvalidRequestException(_inner) => ::std::option::Option::Some(_inner),
+            Self::CloudHsmResourceLimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::CloudHsmResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::CloudHsmServiceException(_inner) => ::std::option::Option::Some(_inner),
             Self::CloudHsmTagException(_inner) => ::std::option::Option::Some(_inner),
@@ -342,6 +350,7 @@ impl ::std::fmt::Display for TagResourceError {
             Self::CloudHsmAccessDeniedException(_inner) => _inner.fmt(f),
             Self::CloudHsmInternalFailureException(_inner) => _inner.fmt(f),
             Self::CloudHsmInvalidRequestException(_inner) => _inner.fmt(f),
+            Self::CloudHsmResourceLimitExceededException(_inner) => _inner.fmt(f),
             Self::CloudHsmResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::CloudHsmServiceException(_inner) => _inner.fmt(f),
             Self::CloudHsmTagException(_inner) => _inner.fmt(f),
@@ -369,6 +378,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for TagResourceEr
             Self::CloudHsmAccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::CloudHsmInternalFailureException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::CloudHsmInvalidRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::CloudHsmResourceLimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::CloudHsmResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::CloudHsmServiceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::CloudHsmTagException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

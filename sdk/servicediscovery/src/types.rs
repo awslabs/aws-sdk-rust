@@ -73,6 +73,8 @@ pub use crate::types::_namespace_filter_name::NamespaceFilterName;
 
 pub use crate::types::_instance_summary::InstanceSummary;
 
+pub use crate::types::_service_attributes::ServiceAttributes;
+
 pub use crate::types::_service::Service;
 
 pub use crate::types::_operation::Operation;
@@ -184,6 +186,8 @@ mod _record_type;
 mod _routing_policy;
 
 mod _service;
+
+mod _service_attributes;
 
 mod _service_change;
 

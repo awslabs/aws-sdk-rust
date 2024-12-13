@@ -6,6 +6,8 @@
 pub struct BridgeNetworkSource {
     /// The network source multicast IP.
     pub multicast_ip: ::std::option::Option<::std::string::String>,
+    /// The settings related to the multicast source.
+    pub multicast_source_settings: ::std::option::Option<crate::types::MulticastSourceSettings>,
     /// The name of the network source.
     pub name: ::std::option::Option<::std::string::String>,
     /// The network source's gateway network name.
@@ -19,6 +21,10 @@ impl BridgeNetworkSource {
     /// The network source multicast IP.
     pub fn multicast_ip(&self) -> ::std::option::Option<&str> {
         self.multicast_ip.as_deref()
+    }
+    /// The settings related to the multicast source.
+    pub fn multicast_source_settings(&self) -> ::std::option::Option<&crate::types::MulticastSourceSettings> {
+        self.multicast_source_settings.as_ref()
     }
     /// The name of the network source.
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -49,6 +55,7 @@ impl BridgeNetworkSource {
 #[non_exhaustive]
 pub struct BridgeNetworkSourceBuilder {
     pub(crate) multicast_ip: ::std::option::Option<::std::string::String>,
+    pub(crate) multicast_source_settings: ::std::option::Option<crate::types::MulticastSourceSettings>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) network_name: ::std::option::Option<::std::string::String>,
     pub(crate) port: ::std::option::Option<i32>,
@@ -69,6 +76,20 @@ impl BridgeNetworkSourceBuilder {
     /// The network source multicast IP.
     pub fn get_multicast_ip(&self) -> &::std::option::Option<::std::string::String> {
         &self.multicast_ip
+    }
+    /// The settings related to the multicast source.
+    pub fn multicast_source_settings(mut self, input: crate::types::MulticastSourceSettings) -> Self {
+        self.multicast_source_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// The settings related to the multicast source.
+    pub fn set_multicast_source_settings(mut self, input: ::std::option::Option<crate::types::MulticastSourceSettings>) -> Self {
+        self.multicast_source_settings = input;
+        self
+    }
+    /// The settings related to the multicast source.
+    pub fn get_multicast_source_settings(&self) -> &::std::option::Option<crate::types::MulticastSourceSettings> {
+        &self.multicast_source_settings
     }
     /// The name of the network source.
     /// This field is required.
@@ -134,6 +155,7 @@ impl BridgeNetworkSourceBuilder {
     pub fn build(self) -> crate::types::BridgeNetworkSource {
         crate::types::BridgeNetworkSource {
             multicast_ip: self.multicast_ip,
+            multicast_source_settings: self.multicast_source_settings,
             name: self.name,
             network_name: self.network_name,
             port: self.port,

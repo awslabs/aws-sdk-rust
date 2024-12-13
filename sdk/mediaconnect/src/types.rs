@@ -111,6 +111,8 @@ pub use crate::types::_bridge_source::BridgeSource;
 
 pub use crate::types::_bridge_network_source::BridgeNetworkSource;
 
+pub use crate::types::_multicast_source_settings::MulticastSourceSettings;
+
 pub use crate::types::_bridge_flow_source::BridgeFlowSource;
 
 pub use crate::types::_update_bridge_network_source_request::UpdateBridgeNetworkSourceRequest;
@@ -358,6 +360,8 @@ mod _message_detail;
 mod _messages;
 
 mod _monitoring_config;
+
+mod _multicast_source_settings;
 
 mod _network_interface_type;
 

@@ -5,18 +5,70 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoteNetworkConfigRequest {
     /// <p>The list of network CIDRs that can contain hybrid nodes.</p>
+    /// <p>These CIDR blocks define the expected IP address range of the hybrid nodes that join the cluster. These blocks are typically determined by your network administrator.</p>
+    /// <p>Enter one or more IPv4 CIDR blocks in decimal dotted-quad notation (for example, <code> 10.2.0.0/16</code>).</p>
+    /// <p>It must satisfy the following requirements:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Each block must be within an <code>IPv4</code> RFC-1918 network range. Minimum allowed size is /24, maximum allowed size is /8. Publicly-routable addresses aren't supported.</p></li>
+    /// <li>
+    /// <p>Each block cannot overlap with the range of the VPC CIDR blocks for your EKS resources, or the block of the Kubernetes service IP range.</p></li>
+    /// <li>
+    /// <p>Each block must have a route to the VPC that uses the VPC CIDR blocks, not public IPs or Elastic IPs. There are many options including Transit Gateway, Site-to-Site VPN, or Direct Connect.</p></li>
+    /// <li>
+    /// <p>Each host must allow outbound connection to the EKS cluster control plane on TCP ports <code>443</code> and <code>10250</code>.</p></li>
+    /// <li>
+    /// <p>Each host must allow inbound connection from the EKS cluster control plane on TCP port 10250 for logs, exec and port-forward operations.</p></li>
+    /// <li>
+    /// <p>Each host must allow TCP and UDP network connectivity to and from other hosts that are running <code>CoreDNS</code> on UDP port <code>53</code> for service and pod DNS names.</p></li>
+    /// </ul>
     pub remote_node_networks: ::std::option::Option<::std::vec::Vec<crate::types::RemoteNodeNetwork>>,
     /// <p>The list of network CIDRs that can contain pods that run Kubernetes webhooks on hybrid nodes.</p>
+    /// <p>These CIDR blocks are determined by configuring your Container Network Interface (CNI) plugin. We recommend the Calico CNI or Cilium CNI. Note that the Amazon VPC CNI plugin for Kubernetes isn't available for on-premises and edge locations.</p>
+    /// <p>Enter one or more IPv4 CIDR blocks in decimal dotted-quad notation (for example, <code> 10.2.0.0/16</code>).</p>
+    /// <p>It must satisfy the following requirements:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Each block must be within an <code>IPv4</code> RFC-1918 network range. Minimum allowed size is /24, maximum allowed size is /8. Publicly-routable addresses aren't supported.</p></li>
+    /// <li>
+    /// <p>Each block cannot overlap with the range of the VPC CIDR blocks for your EKS resources, or the block of the Kubernetes service IP range.</p></li>
+    /// </ul>
     pub remote_pod_networks: ::std::option::Option<::std::vec::Vec<crate::types::RemotePodNetwork>>,
 }
 impl RemoteNetworkConfigRequest {
     /// <p>The list of network CIDRs that can contain hybrid nodes.</p>
+    /// <p>These CIDR blocks define the expected IP address range of the hybrid nodes that join the cluster. These blocks are typically determined by your network administrator.</p>
+    /// <p>Enter one or more IPv4 CIDR blocks in decimal dotted-quad notation (for example, <code> 10.2.0.0/16</code>).</p>
+    /// <p>It must satisfy the following requirements:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Each block must be within an <code>IPv4</code> RFC-1918 network range. Minimum allowed size is /24, maximum allowed size is /8. Publicly-routable addresses aren't supported.</p></li>
+    /// <li>
+    /// <p>Each block cannot overlap with the range of the VPC CIDR blocks for your EKS resources, or the block of the Kubernetes service IP range.</p></li>
+    /// <li>
+    /// <p>Each block must have a route to the VPC that uses the VPC CIDR blocks, not public IPs or Elastic IPs. There are many options including Transit Gateway, Site-to-Site VPN, or Direct Connect.</p></li>
+    /// <li>
+    /// <p>Each host must allow outbound connection to the EKS cluster control plane on TCP ports <code>443</code> and <code>10250</code>.</p></li>
+    /// <li>
+    /// <p>Each host must allow inbound connection from the EKS cluster control plane on TCP port 10250 for logs, exec and port-forward operations.</p></li>
+    /// <li>
+    /// <p>Each host must allow TCP and UDP network connectivity to and from other hosts that are running <code>CoreDNS</code> on UDP port <code>53</code> for service and pod DNS names.</p></li>
+    /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remote_node_networks.is_none()`.
     pub fn remote_node_networks(&self) -> &[crate::types::RemoteNodeNetwork] {
         self.remote_node_networks.as_deref().unwrap_or_default()
     }
     /// <p>The list of network CIDRs that can contain pods that run Kubernetes webhooks on hybrid nodes.</p>
+    /// <p>These CIDR blocks are determined by configuring your Container Network Interface (CNI) plugin. We recommend the Calico CNI or Cilium CNI. Note that the Amazon VPC CNI plugin for Kubernetes isn't available for on-premises and edge locations.</p>
+    /// <p>Enter one or more IPv4 CIDR blocks in decimal dotted-quad notation (for example, <code> 10.2.0.0/16</code>).</p>
+    /// <p>It must satisfy the following requirements:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Each block must be within an <code>IPv4</code> RFC-1918 network range. Minimum allowed size is /24, maximum allowed size is /8. Publicly-routable addresses aren't supported.</p></li>
+    /// <li>
+    /// <p>Each block cannot overlap with the range of the VPC CIDR blocks for your EKS resources, or the block of the Kubernetes service IP range.</p></li>
+    /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remote_pod_networks.is_none()`.
     pub fn remote_pod_networks(&self) -> &[crate::types::RemotePodNetwork] {
@@ -43,6 +95,23 @@ impl RemoteNetworkConfigRequestBuilder {
     /// To override the contents of this collection use [`set_remote_node_networks`](Self::set_remote_node_networks).
     ///
     /// <p>The list of network CIDRs that can contain hybrid nodes.</p>
+    /// <p>These CIDR blocks define the expected IP address range of the hybrid nodes that join the cluster. These blocks are typically determined by your network administrator.</p>
+    /// <p>Enter one or more IPv4 CIDR blocks in decimal dotted-quad notation (for example, <code> 10.2.0.0/16</code>).</p>
+    /// <p>It must satisfy the following requirements:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Each block must be within an <code>IPv4</code> RFC-1918 network range. Minimum allowed size is /24, maximum allowed size is /8. Publicly-routable addresses aren't supported.</p></li>
+    /// <li>
+    /// <p>Each block cannot overlap with the range of the VPC CIDR blocks for your EKS resources, or the block of the Kubernetes service IP range.</p></li>
+    /// <li>
+    /// <p>Each block must have a route to the VPC that uses the VPC CIDR blocks, not public IPs or Elastic IPs. There are many options including Transit Gateway, Site-to-Site VPN, or Direct Connect.</p></li>
+    /// <li>
+    /// <p>Each host must allow outbound connection to the EKS cluster control plane on TCP ports <code>443</code> and <code>10250</code>.</p></li>
+    /// <li>
+    /// <p>Each host must allow inbound connection from the EKS cluster control plane on TCP port 10250 for logs, exec and port-forward operations.</p></li>
+    /// <li>
+    /// <p>Each host must allow TCP and UDP network connectivity to and from other hosts that are running <code>CoreDNS</code> on UDP port <code>53</code> for service and pod DNS names.</p></li>
+    /// </ul>
     pub fn remote_node_networks(mut self, input: crate::types::RemoteNodeNetwork) -> Self {
         let mut v = self.remote_node_networks.unwrap_or_default();
         v.push(input);
@@ -50,11 +119,45 @@ impl RemoteNetworkConfigRequestBuilder {
         self
     }
     /// <p>The list of network CIDRs that can contain hybrid nodes.</p>
+    /// <p>These CIDR blocks define the expected IP address range of the hybrid nodes that join the cluster. These blocks are typically determined by your network administrator.</p>
+    /// <p>Enter one or more IPv4 CIDR blocks in decimal dotted-quad notation (for example, <code> 10.2.0.0/16</code>).</p>
+    /// <p>It must satisfy the following requirements:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Each block must be within an <code>IPv4</code> RFC-1918 network range. Minimum allowed size is /24, maximum allowed size is /8. Publicly-routable addresses aren't supported.</p></li>
+    /// <li>
+    /// <p>Each block cannot overlap with the range of the VPC CIDR blocks for your EKS resources, or the block of the Kubernetes service IP range.</p></li>
+    /// <li>
+    /// <p>Each block must have a route to the VPC that uses the VPC CIDR blocks, not public IPs or Elastic IPs. There are many options including Transit Gateway, Site-to-Site VPN, or Direct Connect.</p></li>
+    /// <li>
+    /// <p>Each host must allow outbound connection to the EKS cluster control plane on TCP ports <code>443</code> and <code>10250</code>.</p></li>
+    /// <li>
+    /// <p>Each host must allow inbound connection from the EKS cluster control plane on TCP port 10250 for logs, exec and port-forward operations.</p></li>
+    /// <li>
+    /// <p>Each host must allow TCP and UDP network connectivity to and from other hosts that are running <code>CoreDNS</code> on UDP port <code>53</code> for service and pod DNS names.</p></li>
+    /// </ul>
     pub fn set_remote_node_networks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RemoteNodeNetwork>>) -> Self {
         self.remote_node_networks = input;
         self
     }
     /// <p>The list of network CIDRs that can contain hybrid nodes.</p>
+    /// <p>These CIDR blocks define the expected IP address range of the hybrid nodes that join the cluster. These blocks are typically determined by your network administrator.</p>
+    /// <p>Enter one or more IPv4 CIDR blocks in decimal dotted-quad notation (for example, <code> 10.2.0.0/16</code>).</p>
+    /// <p>It must satisfy the following requirements:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Each block must be within an <code>IPv4</code> RFC-1918 network range. Minimum allowed size is /24, maximum allowed size is /8. Publicly-routable addresses aren't supported.</p></li>
+    /// <li>
+    /// <p>Each block cannot overlap with the range of the VPC CIDR blocks for your EKS resources, or the block of the Kubernetes service IP range.</p></li>
+    /// <li>
+    /// <p>Each block must have a route to the VPC that uses the VPC CIDR blocks, not public IPs or Elastic IPs. There are many options including Transit Gateway, Site-to-Site VPN, or Direct Connect.</p></li>
+    /// <li>
+    /// <p>Each host must allow outbound connection to the EKS cluster control plane on TCP ports <code>443</code> and <code>10250</code>.</p></li>
+    /// <li>
+    /// <p>Each host must allow inbound connection from the EKS cluster control plane on TCP port 10250 for logs, exec and port-forward operations.</p></li>
+    /// <li>
+    /// <p>Each host must allow TCP and UDP network connectivity to and from other hosts that are running <code>CoreDNS</code> on UDP port <code>53</code> for service and pod DNS names.</p></li>
+    /// </ul>
     pub fn get_remote_node_networks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RemoteNodeNetwork>> {
         &self.remote_node_networks
     }
@@ -63,6 +166,15 @@ impl RemoteNetworkConfigRequestBuilder {
     /// To override the contents of this collection use [`set_remote_pod_networks`](Self::set_remote_pod_networks).
     ///
     /// <p>The list of network CIDRs that can contain pods that run Kubernetes webhooks on hybrid nodes.</p>
+    /// <p>These CIDR blocks are determined by configuring your Container Network Interface (CNI) plugin. We recommend the Calico CNI or Cilium CNI. Note that the Amazon VPC CNI plugin for Kubernetes isn't available for on-premises and edge locations.</p>
+    /// <p>Enter one or more IPv4 CIDR blocks in decimal dotted-quad notation (for example, <code> 10.2.0.0/16</code>).</p>
+    /// <p>It must satisfy the following requirements:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Each block must be within an <code>IPv4</code> RFC-1918 network range. Minimum allowed size is /24, maximum allowed size is /8. Publicly-routable addresses aren't supported.</p></li>
+    /// <li>
+    /// <p>Each block cannot overlap with the range of the VPC CIDR blocks for your EKS resources, or the block of the Kubernetes service IP range.</p></li>
+    /// </ul>
     pub fn remote_pod_networks(mut self, input: crate::types::RemotePodNetwork) -> Self {
         let mut v = self.remote_pod_networks.unwrap_or_default();
         v.push(input);
@@ -70,11 +182,29 @@ impl RemoteNetworkConfigRequestBuilder {
         self
     }
     /// <p>The list of network CIDRs that can contain pods that run Kubernetes webhooks on hybrid nodes.</p>
+    /// <p>These CIDR blocks are determined by configuring your Container Network Interface (CNI) plugin. We recommend the Calico CNI or Cilium CNI. Note that the Amazon VPC CNI plugin for Kubernetes isn't available for on-premises and edge locations.</p>
+    /// <p>Enter one or more IPv4 CIDR blocks in decimal dotted-quad notation (for example, <code> 10.2.0.0/16</code>).</p>
+    /// <p>It must satisfy the following requirements:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Each block must be within an <code>IPv4</code> RFC-1918 network range. Minimum allowed size is /24, maximum allowed size is /8. Publicly-routable addresses aren't supported.</p></li>
+    /// <li>
+    /// <p>Each block cannot overlap with the range of the VPC CIDR blocks for your EKS resources, or the block of the Kubernetes service IP range.</p></li>
+    /// </ul>
     pub fn set_remote_pod_networks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RemotePodNetwork>>) -> Self {
         self.remote_pod_networks = input;
         self
     }
     /// <p>The list of network CIDRs that can contain pods that run Kubernetes webhooks on hybrid nodes.</p>
+    /// <p>These CIDR blocks are determined by configuring your Container Network Interface (CNI) plugin. We recommend the Calico CNI or Cilium CNI. Note that the Amazon VPC CNI plugin for Kubernetes isn't available for on-premises and edge locations.</p>
+    /// <p>Enter one or more IPv4 CIDR blocks in decimal dotted-quad notation (for example, <code> 10.2.0.0/16</code>).</p>
+    /// <p>It must satisfy the following requirements:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Each block must be within an <code>IPv4</code> RFC-1918 network range. Minimum allowed size is /24, maximum allowed size is /8. Publicly-routable addresses aren't supported.</p></li>
+    /// <li>
+    /// <p>Each block cannot overlap with the range of the VPC CIDR blocks for your EKS resources, or the block of the Kubernetes service IP range.</p></li>
+    /// </ul>
     pub fn get_remote_pod_networks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RemotePodNetwork>> {
         &self.remote_pod_networks
     }

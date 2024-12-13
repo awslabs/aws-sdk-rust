@@ -175,6 +175,8 @@ mod delete_namespace;
 
 mod delete_service;
 
+mod delete_service_attributes;
+
 mod deregister_instance;
 
 mod discover_instances;
@@ -190,6 +192,8 @@ mod get_namespace;
 mod get_operation;
 
 mod get_service;
+
+mod get_service_attributes;
 
 mod list_instances;
 
@@ -216,3 +220,5 @@ mod update_private_dns_namespace;
 mod update_public_dns_namespace;
 
 mod update_service;
+
+mod update_service_attributes;

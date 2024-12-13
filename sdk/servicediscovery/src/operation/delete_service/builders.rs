@@ -22,7 +22,7 @@ impl crate::operation::delete_service::builders::DeleteServiceInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteService`.
 ///
-/// <p>Deletes a specified service. If the service still contains one or more registered instances, the request fails.</p>
+/// <p>Deletes a specified service and all associated service attributes. If the service still contains one or more registered instances, the request fails.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteServiceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

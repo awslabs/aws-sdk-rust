@@ -130,17 +130,17 @@ impl UpdateDirectConnectGatewayAttachmentFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_edge_locations`](Self::set_edge_locations).
     ///
-    /// <p>One or more edge locations to update for the Direct Connect gateway attachment. The updated array of edge locations overwrites the previous array of locations. <code>EdgeLocations</code> is only used for Direct Connect gateway attachments. Do</p>
+    /// <p>One or more edge locations to update for the Direct Connect gateway attachment. The updated array of edge locations overwrites the previous array of locations. <code>EdgeLocations</code> is only used for Direct Connect gateway attachments.</p>
     pub fn edge_locations(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.edge_locations(input.into());
         self
     }
-    /// <p>One or more edge locations to update for the Direct Connect gateway attachment. The updated array of edge locations overwrites the previous array of locations. <code>EdgeLocations</code> is only used for Direct Connect gateway attachments. Do</p>
+    /// <p>One or more edge locations to update for the Direct Connect gateway attachment. The updated array of edge locations overwrites the previous array of locations. <code>EdgeLocations</code> is only used for Direct Connect gateway attachments.</p>
     pub fn set_edge_locations(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_edge_locations(input);
         self
     }
-    /// <p>One or more edge locations to update for the Direct Connect gateway attachment. The updated array of edge locations overwrites the previous array of locations. <code>EdgeLocations</code> is only used for Direct Connect gateway attachments. Do</p>
+    /// <p>One or more edge locations to update for the Direct Connect gateway attachment. The updated array of edge locations overwrites the previous array of locations. <code>EdgeLocations</code> is only used for Direct Connect gateway attachments.</p>
     pub fn get_edge_locations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_edge_locations()
     }

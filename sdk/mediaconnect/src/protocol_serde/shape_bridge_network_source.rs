@@ -21,6 +21,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "multicastSourceSettings" => {
+                            builder = builder.set_multicast_source_settings(
+                                crate::protocol_serde::shape_multicast_source_settings::de_multicast_source_settings(tokens)?,
+                            );
+                        }
                         "name" => {
                             builder = builder.set_name(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -5,7 +5,7 @@
 pub struct UpdateDirectConnectGatewayAttachmentInput {
     /// <p>The ID of the Direct Connect gateway attachment for the updated edge locations.</p>
     pub attachment_id: ::std::option::Option<::std::string::String>,
-    /// <p>One or more edge locations to update for the Direct Connect gateway attachment. The updated array of edge locations overwrites the previous array of locations. <code>EdgeLocations</code> is only used for Direct Connect gateway attachments. Do</p>
+    /// <p>One or more edge locations to update for the Direct Connect gateway attachment. The updated array of edge locations overwrites the previous array of locations. <code>EdgeLocations</code> is only used for Direct Connect gateway attachments.</p>
     pub edge_locations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateDirectConnectGatewayAttachmentInput {
@@ -13,7 +13,7 @@ impl UpdateDirectConnectGatewayAttachmentInput {
     pub fn attachment_id(&self) -> ::std::option::Option<&str> {
         self.attachment_id.as_deref()
     }
-    /// <p>One or more edge locations to update for the Direct Connect gateway attachment. The updated array of edge locations overwrites the previous array of locations. <code>EdgeLocations</code> is only used for Direct Connect gateway attachments. Do</p>
+    /// <p>One or more edge locations to update for the Direct Connect gateway attachment. The updated array of edge locations overwrites the previous array of locations. <code>EdgeLocations</code> is only used for Direct Connect gateway attachments.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.edge_locations.is_none()`.
     pub fn edge_locations(&self) -> &[::std::string::String] {
@@ -54,19 +54,19 @@ impl UpdateDirectConnectGatewayAttachmentInputBuilder {
     ///
     /// To override the contents of this collection use [`set_edge_locations`](Self::set_edge_locations).
     ///
-    /// <p>One or more edge locations to update for the Direct Connect gateway attachment. The updated array of edge locations overwrites the previous array of locations. <code>EdgeLocations</code> is only used for Direct Connect gateway attachments. Do</p>
+    /// <p>One or more edge locations to update for the Direct Connect gateway attachment. The updated array of edge locations overwrites the previous array of locations. <code>EdgeLocations</code> is only used for Direct Connect gateway attachments.</p>
     pub fn edge_locations(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.edge_locations.unwrap_or_default();
         v.push(input.into());
         self.edge_locations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>One or more edge locations to update for the Direct Connect gateway attachment. The updated array of edge locations overwrites the previous array of locations. <code>EdgeLocations</code> is only used for Direct Connect gateway attachments. Do</p>
+    /// <p>One or more edge locations to update for the Direct Connect gateway attachment. The updated array of edge locations overwrites the previous array of locations. <code>EdgeLocations</code> is only used for Direct Connect gateway attachments.</p>
     pub fn set_edge_locations(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.edge_locations = input;
         self
     }
-    /// <p>One or more edge locations to update for the Direct Connect gateway attachment. The updated array of edge locations overwrites the previous array of locations. <code>EdgeLocations</code> is only used for Direct Connect gateway attachments. Do</p>
+    /// <p>One or more edge locations to update for the Direct Connect gateway attachment. The updated array of edge locations overwrites the previous array of locations. <code>EdgeLocations</code> is only used for Direct Connect gateway attachments.</p>
     pub fn get_edge_locations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.edge_locations
     }

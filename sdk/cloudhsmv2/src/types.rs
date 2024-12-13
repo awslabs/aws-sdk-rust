@@ -11,6 +11,8 @@ pub use crate::types::_cluster::Cluster;
 
 pub use crate::types::_certificates::Certificates;
 
+pub use crate::types::_network_type::NetworkType;
+
 pub use crate::types::_cluster_state::ClusterState;
 
 pub use crate::types::_hsm::Hsm;
@@ -48,6 +50,8 @@ mod _destination_backup;
 mod _hsm;
 
 mod _hsm_state;
+
+mod _network_type;
 
 mod _tag;
 

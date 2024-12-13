@@ -347,6 +347,20 @@ impl CreateNodegroupFluentBuilder {
     pub fn get_update_config(&self) -> &::std::option::Option<crate::types::NodegroupUpdateConfig> {
         self.inner.get_update_config()
     }
+    /// <p>The node auto repair configuration for the node group.</p>
+    pub fn node_repair_config(mut self, input: crate::types::NodeRepairConfig) -> Self {
+        self.inner = self.inner.node_repair_config(input);
+        self
+    }
+    /// <p>The node auto repair configuration for the node group.</p>
+    pub fn set_node_repair_config(mut self, input: ::std::option::Option<crate::types::NodeRepairConfig>) -> Self {
+        self.inner = self.inner.set_node_repair_config(input);
+        self
+    }
+    /// <p>The node auto repair configuration for the node group.</p>
+    pub fn get_node_repair_config(&self) -> &::std::option::Option<crate::types::NodeRepairConfig> {
+        self.inner.get_node_repair_config()
+    }
     /// <p>The capacity type for your node group.</p>
     pub fn capacity_type(mut self, input: crate::types::CapacityTypes) -> Self {
         self.inner = self.inner.capacity_type(input);

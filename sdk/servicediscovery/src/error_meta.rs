@@ -27,6 +27,8 @@ pub enum Error {
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The service can't be created because a service with the same name already exists.</p>
     ServiceAlreadyExists(crate::types::error::ServiceAlreadyExists),
+    /// <p>The attribute can't be added to the service because you've exceeded the quota for the number of attributes you can add to a service.</p>
+    ServiceAttributesLimitExceededException(crate::types::error::ServiceAttributesLimitExceededException),
     /// <p>No service exists with the specified ID.</p>
     ServiceNotFound(crate::types::error::ServiceNotFound),
     /// <p>The list of tags on the resource is over the quota. The maximum number of tags that can be applied to a resource is 50.</p>
@@ -55,6 +57,7 @@ impl ::std::fmt::Display for Error {
             Error::ResourceLimitExceeded(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ServiceAlreadyExists(inner) => inner.fmt(f),
+            Error::ServiceAttributesLimitExceededException(inner) => inner.fmt(f),
             Error::ServiceNotFound(inner) => inner.fmt(f),
             Error::TooManyTagsException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
@@ -90,6 +93,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ResourceLimitExceeded(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::ServiceAlreadyExists(inner) => inner.meta(),
+            Self::ServiceAttributesLimitExceededException(inner) => inner.meta(),
             Self::ServiceNotFound(inner) => inner.meta(),
             Self::TooManyTagsException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
@@ -264,6 +268,32 @@ impl From<crate::operation::delete_service::DeleteServiceError> for Error {
             crate::operation::delete_service::DeleteServiceError::ResourceInUse(inner) => Error::ResourceInUse(inner),
             crate::operation::delete_service::DeleteServiceError::ServiceNotFound(inner) => Error::ServiceNotFound(inner),
             crate::operation::delete_service::DeleteServiceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_service_attributes::DeleteServiceAttributesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_service_attributes::DeleteServiceAttributesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_service_attributes::DeleteServiceAttributesError> for Error {
+    fn from(err: crate::operation::delete_service_attributes::DeleteServiceAttributesError) -> Self {
+        match err {
+            crate::operation::delete_service_attributes::DeleteServiceAttributesError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::operation::delete_service_attributes::DeleteServiceAttributesError::ServiceNotFound(inner) => Error::ServiceNotFound(inner),
+            crate::operation::delete_service_attributes::DeleteServiceAttributesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -467,6 +497,29 @@ impl From<crate::operation::get_service::GetServiceError> for Error {
             crate::operation::get_service::GetServiceError::InvalidInput(inner) => Error::InvalidInput(inner),
             crate::operation::get_service::GetServiceError::ServiceNotFound(inner) => Error::ServiceNotFound(inner),
             crate::operation::get_service::GetServiceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_service_attributes::GetServiceAttributesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_service_attributes::GetServiceAttributesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_service_attributes::GetServiceAttributesError> for Error {
+    fn from(err: crate::operation::get_service_attributes::GetServiceAttributesError) -> Self {
+        match err {
+            crate::operation::get_service_attributes::GetServiceAttributesError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::operation::get_service_attributes::GetServiceAttributesError::ServiceNotFound(inner) => Error::ServiceNotFound(inner),
+            crate::operation::get_service_attributes::GetServiceAttributesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -810,6 +863,35 @@ impl From<crate::operation::update_service::UpdateServiceError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_service_attributes::UpdateServiceAttributesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_service_attributes::UpdateServiceAttributesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_service_attributes::UpdateServiceAttributesError> for Error {
+    fn from(err: crate::operation::update_service_attributes::UpdateServiceAttributesError) -> Self {
+        match err {
+            crate::operation::update_service_attributes::UpdateServiceAttributesError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::operation::update_service_attributes::UpdateServiceAttributesError::ServiceAttributesLimitExceededException(inner) => {
+                Error::ServiceAttributesLimitExceededException(inner)
+            }
+            crate::operation::update_service_attributes::UpdateServiceAttributesError::ServiceNotFound(inner) => Error::ServiceNotFound(inner),
+            crate::operation::update_service_attributes::UpdateServiceAttributesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
@@ -825,6 +907,7 @@ impl ::std::error::Error for Error {
             Error::ResourceLimitExceeded(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ServiceAlreadyExists(inner) => inner.source(),
+            Error::ServiceAttributesLimitExceededException(inner) => inner.source(),
             Error::ServiceNotFound(inner) => inner.source(),
             Error::TooManyTagsException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
@@ -846,6 +929,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ResourceLimitExceeded(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ServiceAlreadyExists(e) => e.request_id(),
+            Self::ServiceAttributesLimitExceededException(e) => e.request_id(),
             Self::ServiceNotFound(e) => e.request_id(),
             Self::TooManyTagsException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),

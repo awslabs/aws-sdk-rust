@@ -28,7 +28,62 @@ pub fn de_delete_security_group_http_response(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::delete_security_group::builders::DeleteSecurityGroupOutputBuilder::default();
+        output = crate::protocol_serde::shape_delete_security_group::de_delete_security_group(_response_body, output)
+            .map_err(crate::operation::delete_security_group::DeleteSecurityGroupError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
+}
+
+#[allow(unused_mut)]
+pub fn de_delete_security_group(
+    inp: &[u8],
+    mut builder: crate::operation::delete_security_group::builders::DeleteSecurityGroupOutputBuilder,
+) -> Result<crate::operation::delete_security_group::builders::DeleteSecurityGroupOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
+
+    #[allow(unused_mut)]
+    let mut decoder = doc.root_element()?;
+    #[allow(unused_variables)]
+    let start_el = decoder.start_el();
+    if !(start_el.matches("DeleteSecurityGroupResponse")) {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+            "invalid root, expected DeleteSecurityGroupResponse got {:?}",
+            start_el
+        )));
+    }
+    while let Some(mut tag) = decoder.next_tag() {
+        match tag.start_el() {
+            s if s.matches("return") /* Return com.amazonaws.ec2.synthetic#DeleteSecurityGroupOutput$Return */ =>  {
+                let var_1 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_return(var_1);
+            }
+            ,
+            s if s.matches("groupId") /* GroupId com.amazonaws.ec2.synthetic#DeleteSecurityGroupOutput$GroupId */ =>  {
+                let var_2 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_group_id(var_2);
+            }
+            ,
+            _ => {}
+        }
+    }
+    Ok(builder)
 }

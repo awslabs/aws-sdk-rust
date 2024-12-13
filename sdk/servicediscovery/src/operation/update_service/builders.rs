@@ -138,17 +138,17 @@ impl UpdateServiceFluentBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_id()
     }
-    /// <p>A complex type that contains the new settings for the service.</p>
+    /// <p>A complex type that contains the new settings for the service. You can specify a maximum of 30 attributes (key-value pairs).</p>
     pub fn service(mut self, input: crate::types::ServiceChange) -> Self {
         self.inner = self.inner.service(input);
         self
     }
-    /// <p>A complex type that contains the new settings for the service.</p>
+    /// <p>A complex type that contains the new settings for the service. You can specify a maximum of 30 attributes (key-value pairs).</p>
     pub fn set_service(mut self, input: ::std::option::Option<crate::types::ServiceChange>) -> Self {
         self.inner = self.inner.set_service(input);
         self
     }
-    /// <p>A complex type that contains the new settings for the service.</p>
+    /// <p>A complex type that contains the new settings for the service. You can specify a maximum of 30 attributes (key-value pairs).</p>
     pub fn get_service(&self) -> &::std::option::Option<crate::types::ServiceChange> {
         self.inner.get_service()
     }

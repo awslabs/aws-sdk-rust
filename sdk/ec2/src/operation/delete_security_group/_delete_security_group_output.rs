@@ -3,7 +3,21 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSecurityGroupOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
+    pub r#return: ::std::option::Option<bool>,
+    /// <p>The ID of the deleted security group.</p>
+    pub group_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
+}
+impl DeleteSecurityGroupOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
+    pub fn r#return(&self) -> ::std::option::Option<bool> {
+        self.r#return
+    }
+    /// <p>The ID of the deleted security group.</p>
+    pub fn group_id(&self) -> ::std::option::Option<&str> {
+        self.group_id.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DeleteSecurityGroupOutput {
     fn request_id(&self) -> Option<&str> {
@@ -21,9 +35,39 @@ impl DeleteSecurityGroupOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct DeleteSecurityGroupOutputBuilder {
+    pub(crate) r#return: ::std::option::Option<bool>,
+    pub(crate) group_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteSecurityGroupOutputBuilder {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
+    pub fn r#return(mut self, input: bool) -> Self {
+        self.r#return = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
+    pub fn set_return(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.r#return = input;
+        self
+    }
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
+    pub fn get_return(&self) -> &::std::option::Option<bool> {
+        &self.r#return
+    }
+    /// <p>The ID of the deleted security group.</p>
+    pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.group_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the deleted security group.</p>
+    pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.group_id = input;
+        self
+    }
+    /// <p>The ID of the deleted security group.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -36,6 +80,8 @@ impl DeleteSecurityGroupOutputBuilder {
     /// Consumes the builder and constructs a [`DeleteSecurityGroupOutput`](crate::operation::delete_security_group::DeleteSecurityGroupOutput).
     pub fn build(self) -> crate::operation::delete_security_group::DeleteSecurityGroupOutput {
         crate::operation::delete_security_group::DeleteSecurityGroupOutput {
+            r#return: self.r#return,
+            group_id: self.group_id,
             _request_id: self._request_id,
         }
     }

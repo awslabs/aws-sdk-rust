@@ -95,6 +95,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "NetworkType" => {
+                            builder = builder.set_network_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::NetworkType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "Certificates" => {
                             builder = builder.set_certificates(crate::protocol_serde::shape_certificates::de_certificates(tokens)?);
                         }

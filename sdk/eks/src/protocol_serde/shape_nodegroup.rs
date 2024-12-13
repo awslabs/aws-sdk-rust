@@ -126,6 +126,9 @@ where
                             builder =
                                 builder.set_update_config(crate::protocol_serde::shape_nodegroup_update_config::de_nodegroup_update_config(tokens)?);
                         }
+                        "nodeRepairConfig" => {
+                            builder = builder.set_node_repair_config(crate::protocol_serde::shape_node_repair_config::de_node_repair_config(tokens)?);
+                        }
                         "launchTemplate" => {
                             builder = builder.set_launch_template(
                                 crate::protocol_serde::shape_launch_template_specification::de_launch_template_specification(tokens)?,

@@ -17,6 +17,8 @@ pub struct CreateClusterInput {
     /// <p>You can specify only one subnet per Availability Zone.</p></li>
     /// </ul>
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The NetworkType to create a cluster with. The allowed values are <code>IPV4</code> and <code>DUALSTACK</code>.</p>
+    pub network_type: ::std::option::Option<crate::types::NetworkType>,
     /// <p>Tags to apply to the CloudHSM cluster during creation.</p>
     pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The mode to use in the cluster. The allowed values are <code>FIPS</code> and <code>NON_FIPS</code>.</p>
@@ -47,6 +49,10 @@ impl CreateClusterInput {
     pub fn subnet_ids(&self) -> &[::std::string::String] {
         self.subnet_ids.as_deref().unwrap_or_default()
     }
+    /// <p>The NetworkType to create a cluster with. The allowed values are <code>IPV4</code> and <code>DUALSTACK</code>.</p>
+    pub fn network_type(&self) -> ::std::option::Option<&crate::types::NetworkType> {
+        self.network_type.as_ref()
+    }
     /// <p>Tags to apply to the CloudHSM cluster during creation.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_list.is_none()`.
@@ -73,6 +79,7 @@ pub struct CreateClusterInputBuilder {
     pub(crate) hsm_type: ::std::option::Option<::std::string::String>,
     pub(crate) source_backup_id: ::std::option::Option<::std::string::String>,
     pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) network_type: ::std::option::Option<crate::types::NetworkType>,
     pub(crate) tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) mode: ::std::option::Option<crate::types::ClusterMode>,
 }
@@ -158,6 +165,20 @@ impl CreateClusterInputBuilder {
     pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.subnet_ids
     }
+    /// <p>The NetworkType to create a cluster with. The allowed values are <code>IPV4</code> and <code>DUALSTACK</code>.</p>
+    pub fn network_type(mut self, input: crate::types::NetworkType) -> Self {
+        self.network_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The NetworkType to create a cluster with. The allowed values are <code>IPV4</code> and <code>DUALSTACK</code>.</p>
+    pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::NetworkType>) -> Self {
+        self.network_type = input;
+        self
+    }
+    /// <p>The NetworkType to create a cluster with. The allowed values are <code>IPV4</code> and <code>DUALSTACK</code>.</p>
+    pub fn get_network_type(&self) -> &::std::option::Option<crate::types::NetworkType> {
+        &self.network_type
+    }
     /// Appends an item to `tag_list`.
     ///
     /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
@@ -201,6 +222,7 @@ impl CreateClusterInputBuilder {
             hsm_type: self.hsm_type,
             source_backup_id: self.source_backup_id,
             subnet_ids: self.subnet_ids,
+            network_type: self.network_type,
             tag_list: self.tag_list,
             mode: self.mode,
         })

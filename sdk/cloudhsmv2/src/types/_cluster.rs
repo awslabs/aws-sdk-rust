@@ -30,6 +30,8 @@ pub struct Cluster {
     pub subnet_mapping: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The identifier (ID) of the virtual private cloud (VPC) that contains the cluster.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
+    /// <p>The cluster's NetworkType can be set to either IPV4 (which is the default) or DUALSTACK. When set to IPV4, communication between your application and the Hardware Security Modules (HSMs) is restricted to the IPv4 protocol only. In contrast, the DUALSTACK network type enables communication over both the IPv4 and IPv6 protocols. To use the DUALSTACK option, you'll need to configure your Virtual Private Cloud (VPC) and subnets to support both IPv4 and IPv6. This involves adding IPv6 Classless Inter-Domain Routing (CIDR) blocks to the existing IPv4 CIDR blocks in your subnets. The choice between IPV4 and DUALSTACK network types determines the flexibility of the network addressing setup for your cluster. The DUALSTACK option provides more flexibility by allowing both IPv4 and IPv6 communication.</p>
+    pub network_type: ::std::option::Option<crate::types::NetworkType>,
     /// <p>Contains one or more certificates or a certificate signing request (CSR).</p>
     pub certificates: ::std::option::Option<crate::types::Certificates>,
     /// <p>The list of tags for the cluster.</p>
@@ -92,6 +94,10 @@ impl Cluster {
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
+    /// <p>The cluster's NetworkType can be set to either IPV4 (which is the default) or DUALSTACK. When set to IPV4, communication between your application and the Hardware Security Modules (HSMs) is restricted to the IPv4 protocol only. In contrast, the DUALSTACK network type enables communication over both the IPv4 and IPv6 protocols. To use the DUALSTACK option, you'll need to configure your Virtual Private Cloud (VPC) and subnets to support both IPv4 and IPv6. This involves adding IPv6 Classless Inter-Domain Routing (CIDR) blocks to the existing IPv4 CIDR blocks in your subnets. The choice between IPV4 and DUALSTACK network types determines the flexibility of the network addressing setup for your cluster. The DUALSTACK option provides more flexibility by allowing both IPv4 and IPv6 communication.</p>
+    pub fn network_type(&self) -> ::std::option::Option<&crate::types::NetworkType> {
+        self.network_type.as_ref()
+    }
     /// <p>Contains one or more certificates or a certificate signing request (CSR).</p>
     pub fn certificates(&self) -> ::std::option::Option<&crate::types::Certificates> {
         self.certificates.as_ref()
@@ -131,6 +137,7 @@ pub struct ClusterBuilder {
     pub(crate) state_message: ::std::option::Option<::std::string::String>,
     pub(crate) subnet_mapping: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
+    pub(crate) network_type: ::std::option::Option<crate::types::NetworkType>,
     pub(crate) certificates: ::std::option::Option<crate::types::Certificates>,
     pub(crate) tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) mode: ::std::option::Option<crate::types::ClusterMode>,
@@ -337,6 +344,20 @@ impl ClusterBuilder {
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_id
     }
+    /// <p>The cluster's NetworkType can be set to either IPV4 (which is the default) or DUALSTACK. When set to IPV4, communication between your application and the Hardware Security Modules (HSMs) is restricted to the IPv4 protocol only. In contrast, the DUALSTACK network type enables communication over both the IPv4 and IPv6 protocols. To use the DUALSTACK option, you'll need to configure your Virtual Private Cloud (VPC) and subnets to support both IPv4 and IPv6. This involves adding IPv6 Classless Inter-Domain Routing (CIDR) blocks to the existing IPv4 CIDR blocks in your subnets. The choice between IPV4 and DUALSTACK network types determines the flexibility of the network addressing setup for your cluster. The DUALSTACK option provides more flexibility by allowing both IPv4 and IPv6 communication.</p>
+    pub fn network_type(mut self, input: crate::types::NetworkType) -> Self {
+        self.network_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The cluster's NetworkType can be set to either IPV4 (which is the default) or DUALSTACK. When set to IPV4, communication between your application and the Hardware Security Modules (HSMs) is restricted to the IPv4 protocol only. In contrast, the DUALSTACK network type enables communication over both the IPv4 and IPv6 protocols. To use the DUALSTACK option, you'll need to configure your Virtual Private Cloud (VPC) and subnets to support both IPv4 and IPv6. This involves adding IPv6 Classless Inter-Domain Routing (CIDR) blocks to the existing IPv4 CIDR blocks in your subnets. The choice between IPV4 and DUALSTACK network types determines the flexibility of the network addressing setup for your cluster. The DUALSTACK option provides more flexibility by allowing both IPv4 and IPv6 communication.</p>
+    pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::NetworkType>) -> Self {
+        self.network_type = input;
+        self
+    }
+    /// <p>The cluster's NetworkType can be set to either IPV4 (which is the default) or DUALSTACK. When set to IPV4, communication between your application and the Hardware Security Modules (HSMs) is restricted to the IPv4 protocol only. In contrast, the DUALSTACK network type enables communication over both the IPv4 and IPv6 protocols. To use the DUALSTACK option, you'll need to configure your Virtual Private Cloud (VPC) and subnets to support both IPv4 and IPv6. This involves adding IPv6 Classless Inter-Domain Routing (CIDR) blocks to the existing IPv4 CIDR blocks in your subnets. The choice between IPV4 and DUALSTACK network types determines the flexibility of the network addressing setup for your cluster. The DUALSTACK option provides more flexibility by allowing both IPv4 and IPv6 communication.</p>
+    pub fn get_network_type(&self) -> &::std::option::Option<crate::types::NetworkType> {
+        &self.network_type
+    }
     /// <p>Contains one or more certificates or a certificate signing request (CSR).</p>
     pub fn certificates(mut self, input: crate::types::Certificates) -> Self {
         self.certificates = ::std::option::Option::Some(input);
@@ -401,6 +422,7 @@ impl ClusterBuilder {
             state_message: self.state_message,
             subnet_mapping: self.subnet_mapping,
             vpc_id: self.vpc_id,
+            network_type: self.network_type,
             certificates: self.certificates,
             tag_list: self.tag_list,
             mode: self.mode,

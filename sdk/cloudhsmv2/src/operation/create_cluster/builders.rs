@@ -188,6 +188,20 @@ impl CreateClusterFluentBuilder {
     pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_subnet_ids()
     }
+    /// <p>The NetworkType to create a cluster with. The allowed values are <code>IPV4</code> and <code>DUALSTACK</code>.</p>
+    pub fn network_type(mut self, input: crate::types::NetworkType) -> Self {
+        self.inner = self.inner.network_type(input);
+        self
+    }
+    /// <p>The NetworkType to create a cluster with. The allowed values are <code>IPV4</code> and <code>DUALSTACK</code>.</p>
+    pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::NetworkType>) -> Self {
+        self.inner = self.inner.set_network_type(input);
+        self
+    }
+    /// <p>The NetworkType to create a cluster with. The allowed values are <code>IPV4</code> and <code>DUALSTACK</code>.</p>
+    pub fn get_network_type(&self) -> &::std::option::Option<crate::types::NetworkType> {
+        self.inner.get_network_type()
+    }
     ///
     /// Appends an item to `TagList`.
     ///

@@ -15,6 +15,8 @@ pub struct UpdateNodegroupConfigInput {
     pub scaling_config: ::std::option::Option<crate::types::NodegroupScalingConfig>,
     /// <p>The node group update configuration.</p>
     pub update_config: ::std::option::Option<crate::types::NodegroupUpdateConfig>,
+    /// <p>The node auto repair configuration for the node group.</p>
+    pub node_repair_config: ::std::option::Option<crate::types::NodeRepairConfig>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
@@ -43,6 +45,10 @@ impl UpdateNodegroupConfigInput {
     pub fn update_config(&self) -> ::std::option::Option<&crate::types::NodegroupUpdateConfig> {
         self.update_config.as_ref()
     }
+    /// <p>The node auto repair configuration for the node group.</p>
+    pub fn node_repair_config(&self) -> ::std::option::Option<&crate::types::NodeRepairConfig> {
+        self.node_repair_config.as_ref()
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
         self.client_request_token.as_deref()
@@ -65,6 +71,7 @@ pub struct UpdateNodegroupConfigInputBuilder {
     pub(crate) taints: ::std::option::Option<crate::types::UpdateTaintsPayload>,
     pub(crate) scaling_config: ::std::option::Option<crate::types::NodegroupScalingConfig>,
     pub(crate) update_config: ::std::option::Option<crate::types::NodegroupUpdateConfig>,
+    pub(crate) node_repair_config: ::std::option::Option<crate::types::NodeRepairConfig>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateNodegroupConfigInputBuilder {
@@ -154,6 +161,20 @@ impl UpdateNodegroupConfigInputBuilder {
     pub fn get_update_config(&self) -> &::std::option::Option<crate::types::NodegroupUpdateConfig> {
         &self.update_config
     }
+    /// <p>The node auto repair configuration for the node group.</p>
+    pub fn node_repair_config(mut self, input: crate::types::NodeRepairConfig) -> Self {
+        self.node_repair_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The node auto repair configuration for the node group.</p>
+    pub fn set_node_repair_config(mut self, input: ::std::option::Option<crate::types::NodeRepairConfig>) -> Self {
+        self.node_repair_config = input;
+        self
+    }
+    /// <p>The node auto repair configuration for the node group.</p>
+    pub fn get_node_repair_config(&self) -> &::std::option::Option<crate::types::NodeRepairConfig> {
+        &self.node_repair_config
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
@@ -180,6 +201,7 @@ impl UpdateNodegroupConfigInputBuilder {
             taints: self.taints,
             scaling_config: self.scaling_config,
             update_config: self.update_config,
+            node_repair_config: self.node_repair_config,
             client_request_token: self.client_request_token,
         })
     }

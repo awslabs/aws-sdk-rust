@@ -9,6 +9,8 @@ pub use crate::types::_update_param::UpdateParamBuilder;
 
 pub use crate::types::_launch_template_specification::LaunchTemplateSpecificationBuilder;
 
+pub use crate::types::_node_repair_config::NodeRepairConfigBuilder;
+
 pub use crate::types::_nodegroup_update_config::NodegroupUpdateConfigBuilder;
 
 pub use crate::types::_nodegroup_scaling_config::NodegroupScalingConfigBuilder;

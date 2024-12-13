@@ -43,66 +43,72 @@ pub fn ser_create_nodegroup_input_input(
         crate::protocol_serde::shape_launch_template_specification::ser_launch_template_specification(&mut object_13, var_12)?;
         object_13.finish();
     }
-    if let Some(var_14) = &input.node_role {
-        object.key("nodeRole").string(var_14.as_str());
-    }
-    if let Some(var_15) = &input.nodegroup_name {
-        object.key("nodegroupName").string(var_15.as_str());
-    }
-    if let Some(var_16) = &input.release_version {
-        object.key("releaseVersion").string(var_16.as_str());
-    }
-    if let Some(var_17) = &input.remote_access {
+    if let Some(var_14) = &input.node_repair_config {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("remoteAccess").start_object();
-        crate::protocol_serde::shape_remote_access_config::ser_remote_access_config(&mut object_18, var_17)?;
-        object_18.finish();
+        let mut object_15 = object.key("nodeRepairConfig").start_object();
+        crate::protocol_serde::shape_node_repair_config::ser_node_repair_config(&mut object_15, var_14)?;
+        object_15.finish();
     }
-    if let Some(var_19) = &input.scaling_config {
+    if let Some(var_16) = &input.node_role {
+        object.key("nodeRole").string(var_16.as_str());
+    }
+    if let Some(var_17) = &input.nodegroup_name {
+        object.key("nodegroupName").string(var_17.as_str());
+    }
+    if let Some(var_18) = &input.release_version {
+        object.key("releaseVersion").string(var_18.as_str());
+    }
+    if let Some(var_19) = &input.remote_access {
         #[allow(unused_mut)]
-        let mut object_20 = object.key("scalingConfig").start_object();
-        crate::protocol_serde::shape_nodegroup_scaling_config::ser_nodegroup_scaling_config(&mut object_20, var_19)?;
+        let mut object_20 = object.key("remoteAccess").start_object();
+        crate::protocol_serde::shape_remote_access_config::ser_remote_access_config(&mut object_20, var_19)?;
         object_20.finish();
     }
-    if let Some(var_21) = &input.subnets {
-        let mut array_22 = object.key("subnets").start_array();
-        for item_23 in var_21 {
-            {
-                array_22.value().string(item_23.as_str());
-            }
-        }
-        array_22.finish();
-    }
-    if let Some(var_24) = &input.tags {
+    if let Some(var_21) = &input.scaling_config {
         #[allow(unused_mut)]
-        let mut object_25 = object.key("tags").start_object();
-        for (key_26, value_27) in var_24 {
+        let mut object_22 = object.key("scalingConfig").start_object();
+        crate::protocol_serde::shape_nodegroup_scaling_config::ser_nodegroup_scaling_config(&mut object_22, var_21)?;
+        object_22.finish();
+    }
+    if let Some(var_23) = &input.subnets {
+        let mut array_24 = object.key("subnets").start_array();
+        for item_25 in var_23 {
             {
-                object_25.key(key_26.as_str()).string(value_27.as_str());
+                array_24.value().string(item_25.as_str());
             }
         }
-        object_25.finish();
+        array_24.finish();
     }
-    if let Some(var_28) = &input.taints {
-        let mut array_29 = object.key("taints").start_array();
-        for item_30 in var_28 {
+    if let Some(var_26) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_27 = object.key("tags").start_object();
+        for (key_28, value_29) in var_26 {
+            {
+                object_27.key(key_28.as_str()).string(value_29.as_str());
+            }
+        }
+        object_27.finish();
+    }
+    if let Some(var_30) = &input.taints {
+        let mut array_31 = object.key("taints").start_array();
+        for item_32 in var_30 {
             {
                 #[allow(unused_mut)]
-                let mut object_31 = array_29.value().start_object();
-                crate::protocol_serde::shape_taint::ser_taint(&mut object_31, item_30)?;
-                object_31.finish();
+                let mut object_33 = array_31.value().start_object();
+                crate::protocol_serde::shape_taint::ser_taint(&mut object_33, item_32)?;
+                object_33.finish();
             }
         }
-        array_29.finish();
+        array_31.finish();
     }
-    if let Some(var_32) = &input.update_config {
+    if let Some(var_34) = &input.update_config {
         #[allow(unused_mut)]
-        let mut object_33 = object.key("updateConfig").start_object();
-        crate::protocol_serde::shape_nodegroup_update_config::ser_nodegroup_update_config(&mut object_33, var_32)?;
-        object_33.finish();
+        let mut object_35 = object.key("updateConfig").start_object();
+        crate::protocol_serde::shape_nodegroup_update_config::ser_nodegroup_update_config(&mut object_35, var_34)?;
+        object_35.finish();
     }
-    if let Some(var_34) = &input.version {
-        object.key("version").string(var_34.as_str());
+    if let Some(var_36) = &input.version {
+        object.key("version").string(var_36.as_str());
     }
     Ok(())
 }

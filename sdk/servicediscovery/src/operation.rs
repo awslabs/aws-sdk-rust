@@ -19,6 +19,9 @@ pub mod delete_namespace;
 /// Types for the `DeleteService` operation.
 pub mod delete_service;
 
+/// Types for the `DeleteServiceAttributes` operation.
+pub mod delete_service_attributes;
+
 /// Types for the `DeregisterInstance` operation.
 pub mod deregister_instance;
 
@@ -42,6 +45,9 @@ pub mod get_operation;
 
 /// Types for the `GetService` operation.
 pub mod get_service;
+
+/// Types for the `GetServiceAttributes` operation.
+pub mod get_service_attributes;
 
 /// Types for the `ListInstances` operation.
 pub mod list_instances;
@@ -81,3 +87,6 @@ pub mod update_public_dns_namespace;
 
 /// Types for the `UpdateService` operation.
 pub mod update_service;
+
+/// Types for the `UpdateServiceAttributes` operation.
+pub mod update_service_attributes;

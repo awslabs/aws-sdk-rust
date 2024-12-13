@@ -5,7 +5,7 @@
 pub struct UpdateServiceInput {
     /// <p>The ID of the service that you want to update.</p>
     pub id: ::std::option::Option<::std::string::String>,
-    /// <p>A complex type that contains the new settings for the service.</p>
+    /// <p>A complex type that contains the new settings for the service. You can specify a maximum of 30 attributes (key-value pairs).</p>
     pub service: ::std::option::Option<crate::types::ServiceChange>,
 }
 impl UpdateServiceInput {
@@ -13,7 +13,7 @@ impl UpdateServiceInput {
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>A complex type that contains the new settings for the service.</p>
+    /// <p>A complex type that contains the new settings for the service. You can specify a maximum of 30 attributes (key-value pairs).</p>
     pub fn service(&self) -> ::std::option::Option<&crate::types::ServiceChange> {
         self.service.as_ref()
     }
@@ -48,18 +48,18 @@ impl UpdateServiceInputBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p>A complex type that contains the new settings for the service.</p>
+    /// <p>A complex type that contains the new settings for the service. You can specify a maximum of 30 attributes (key-value pairs).</p>
     /// This field is required.
     pub fn service(mut self, input: crate::types::ServiceChange) -> Self {
         self.service = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A complex type that contains the new settings for the service.</p>
+    /// <p>A complex type that contains the new settings for the service. You can specify a maximum of 30 attributes (key-value pairs).</p>
     pub fn set_service(mut self, input: ::std::option::Option<crate::types::ServiceChange>) -> Self {
         self.service = input;
         self
     }
-    /// <p>A complex type that contains the new settings for the service.</p>
+    /// <p>A complex type that contains the new settings for the service. You can specify a maximum of 30 attributes (key-value pairs).</p>
     pub fn get_service(&self) -> &::std::option::Option<crate::types::ServiceChange> {
         &self.service
     }

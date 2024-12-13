@@ -11,11 +11,15 @@ pub use crate::types::error::_cloud_hsm_internal_failure_exception::CloudHsmInte
 
 pub use crate::types::error::_cloud_hsm_access_denied_exception::CloudHsmAccessDeniedException;
 
+pub use crate::types::error::_cloud_hsm_resource_limit_exceeded_exception::CloudHsmResourceLimitExceededException;
+
 mod _cloud_hsm_access_denied_exception;
 
 mod _cloud_hsm_internal_failure_exception;
 
 mod _cloud_hsm_invalid_request_exception;
+
+mod _cloud_hsm_resource_limit_exceeded_exception;
 
 mod _cloud_hsm_resource_not_found_exception;
 

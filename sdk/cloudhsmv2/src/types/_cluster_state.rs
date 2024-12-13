@@ -19,6 +19,8 @@
 ///     ClusterState::DeleteInProgress => { /* ... */ },
 ///     ClusterState::Initialized => { /* ... */ },
 ///     ClusterState::InitializeInProgress => { /* ... */ },
+///     ClusterState::ModifyInProgress => { /* ... */ },
+///     ClusterState::RollbackInProgress => { /* ... */ },
 ///     ClusterState::Uninitialized => { /* ... */ },
 ///     ClusterState::UpdateInProgress => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -63,6 +65,10 @@ pub enum ClusterState {
     #[allow(missing_docs)] // documentation missing in model
     InitializeInProgress,
     #[allow(missing_docs)] // documentation missing in model
+    ModifyInProgress,
+    #[allow(missing_docs)] // documentation missing in model
+    RollbackInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Uninitialized,
     #[allow(missing_docs)] // documentation missing in model
     UpdateInProgress,
@@ -80,6 +86,8 @@ impl ::std::convert::From<&str> for ClusterState {
             "DELETE_IN_PROGRESS" => ClusterState::DeleteInProgress,
             "INITIALIZED" => ClusterState::Initialized,
             "INITIALIZE_IN_PROGRESS" => ClusterState::InitializeInProgress,
+            "MODIFY_IN_PROGRESS" => ClusterState::ModifyInProgress,
+            "ROLLBACK_IN_PROGRESS" => ClusterState::RollbackInProgress,
             "UNINITIALIZED" => ClusterState::Uninitialized,
             "UPDATE_IN_PROGRESS" => ClusterState::UpdateInProgress,
             other => ClusterState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -104,6 +112,8 @@ impl ClusterState {
             ClusterState::DeleteInProgress => "DELETE_IN_PROGRESS",
             ClusterState::Initialized => "INITIALIZED",
             ClusterState::InitializeInProgress => "INITIALIZE_IN_PROGRESS",
+            ClusterState::ModifyInProgress => "MODIFY_IN_PROGRESS",
+            ClusterState::RollbackInProgress => "ROLLBACK_IN_PROGRESS",
             ClusterState::Uninitialized => "UNINITIALIZED",
             ClusterState::UpdateInProgress => "UPDATE_IN_PROGRESS",
             ClusterState::Unknown(value) => value.as_str(),
@@ -119,6 +129,8 @@ impl ClusterState {
             "DELETE_IN_PROGRESS",
             "INITIALIZED",
             "INITIALIZE_IN_PROGRESS",
+            "MODIFY_IN_PROGRESS",
+            "ROLLBACK_IN_PROGRESS",
             "UNINITIALIZED",
             "UPDATE_IN_PROGRESS",
         ]
@@ -151,6 +163,8 @@ impl ::std::fmt::Display for ClusterState {
             ClusterState::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
             ClusterState::Initialized => write!(f, "INITIALIZED"),
             ClusterState::InitializeInProgress => write!(f, "INITIALIZE_IN_PROGRESS"),
+            ClusterState::ModifyInProgress => write!(f, "MODIFY_IN_PROGRESS"),
+            ClusterState::RollbackInProgress => write!(f, "ROLLBACK_IN_PROGRESS"),
             ClusterState::Uninitialized => write!(f, "UNINITIALIZED"),
             ClusterState::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
             ClusterState::Unknown(value) => write!(f, "{}", value),
