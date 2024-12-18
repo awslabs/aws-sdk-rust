@@ -1436,6 +1436,13 @@ pub(crate) fn string_parameter_declaration_correct_errors(
     builder
 }
 
+pub(crate) fn unique_key_correct_errors(mut builder: crate::types::builders::UniqueKeyBuilder) -> crate::types::builders::UniqueKeyBuilder {
+    if builder.column_names.is_none() {
+        builder.column_names = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn asset_bundle_import_job_data_source_credential_pair_correct_errors(
     mut builder: crate::types::builders::AssetBundleImportJobDataSourceCredentialPairBuilder,
 ) -> crate::types::builders::AssetBundleImportJobDataSourceCredentialPairBuilder {

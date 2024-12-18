@@ -22,8 +22,8 @@ impl crate::operation::update_location_nfs::builders::UpdateLocationNfsInputBuil
 }
 /// Fluent builder constructing a request to `UpdateLocationNfs`.
 ///
-/// <p>Modifies some configurations of the Network File System (NFS) transfer location that you're using with DataSync.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html">Configuring transfers to or from an NFS file server</a>.</p>
+/// <p>Modifies the following configuration parameters of the Network File System (NFS) transfer location that you're using with DataSync.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html">Configuring transfers with an NFS file server</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateLocationNfsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

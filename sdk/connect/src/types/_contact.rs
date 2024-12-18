@@ -46,6 +46,8 @@ pub struct Contact {
     pub related_contact_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about Amazon Connect Wisdom.</p>
     pub wisdom_info: ::std::option::Option<crate::types::WisdomInfo>,
+    /// <p>The customer's identification number. For example, the <code>CustomerId</code> may be a customer number from your CRM. You can create a Lambda function to pull the unique customer ID of the caller from your CRM system. If you enable Amazon Connect Voice ID capability, this attribute is populated with the <code>CustomerSpeakerId</code> of the caller.</p>
+    pub customer_id: ::std::option::Option<::std::string::String>,
     /// <p>The customer or external third party participant endpoint.</p>
     pub customer_endpoint: ::std::option::Option<crate::types::EndpointInfo>,
     /// <p>The system endpoint. For <code>INBOUND</code>, this is the phone number or email address that the customer dialed. For <code>OUTBOUND</code> and <code>EXTERNAL_OUTBOUND</code>, this is the outbound caller ID number assigned to the outbound queue that is used to dial the customer. For callback, this shows up as Softphone for calls handled by agents with softphone.</p>
@@ -162,6 +164,10 @@ impl Contact {
     pub fn wisdom_info(&self) -> ::std::option::Option<&crate::types::WisdomInfo> {
         self.wisdom_info.as_ref()
     }
+    /// <p>The customer's identification number. For example, the <code>CustomerId</code> may be a customer number from your CRM. You can create a Lambda function to pull the unique customer ID of the caller from your CRM system. If you enable Amazon Connect Voice ID capability, this attribute is populated with the <code>CustomerSpeakerId</code> of the caller.</p>
+    pub fn customer_id(&self) -> ::std::option::Option<&str> {
+        self.customer_id.as_deref()
+    }
     /// <p>The customer or external third party participant endpoint.</p>
     pub fn customer_endpoint(&self) -> ::std::option::Option<&crate::types::EndpointInfo> {
         self.customer_endpoint.as_ref()
@@ -249,6 +255,7 @@ impl ::std::fmt::Debug for Contact {
         formatter.field("scheduled_timestamp", &self.scheduled_timestamp);
         formatter.field("related_contact_id", &self.related_contact_id);
         formatter.field("wisdom_info", &self.wisdom_info);
+        formatter.field("customer_id", &self.customer_id);
         formatter.field("customer_endpoint", &self.customer_endpoint);
         formatter.field("system_endpoint", &self.system_endpoint);
         formatter.field("queue_time_adjustment_seconds", &self.queue_time_adjustment_seconds);
@@ -299,6 +306,7 @@ pub struct ContactBuilder {
     pub(crate) scheduled_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) related_contact_id: ::std::option::Option<::std::string::String>,
     pub(crate) wisdom_info: ::std::option::Option<crate::types::WisdomInfo>,
+    pub(crate) customer_id: ::std::option::Option<::std::string::String>,
     pub(crate) customer_endpoint: ::std::option::Option<crate::types::EndpointInfo>,
     pub(crate) system_endpoint: ::std::option::Option<crate::types::EndpointInfo>,
     pub(crate) queue_time_adjustment_seconds: ::std::option::Option<i32>,
@@ -610,6 +618,20 @@ impl ContactBuilder {
     pub fn get_wisdom_info(&self) -> &::std::option::Option<crate::types::WisdomInfo> {
         &self.wisdom_info
     }
+    /// <p>The customer's identification number. For example, the <code>CustomerId</code> may be a customer number from your CRM. You can create a Lambda function to pull the unique customer ID of the caller from your CRM system. If you enable Amazon Connect Voice ID capability, this attribute is populated with the <code>CustomerSpeakerId</code> of the caller.</p>
+    pub fn customer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.customer_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The customer's identification number. For example, the <code>CustomerId</code> may be a customer number from your CRM. You can create a Lambda function to pull the unique customer ID of the caller from your CRM system. If you enable Amazon Connect Voice ID capability, this attribute is populated with the <code>CustomerSpeakerId</code> of the caller.</p>
+    pub fn set_customer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.customer_id = input;
+        self
+    }
+    /// <p>The customer's identification number. For example, the <code>CustomerId</code> may be a customer number from your CRM. You can create a Lambda function to pull the unique customer ID of the caller from your CRM system. If you enable Amazon Connect Voice ID capability, this attribute is populated with the <code>CustomerSpeakerId</code> of the caller.</p>
+    pub fn get_customer_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.customer_id
+    }
     /// <p>The customer or external third party participant endpoint.</p>
     pub fn customer_endpoint(mut self, input: crate::types::EndpointInfo) -> Self {
         self.customer_endpoint = ::std::option::Option::Some(input);
@@ -861,6 +883,7 @@ impl ContactBuilder {
             scheduled_timestamp: self.scheduled_timestamp,
             related_contact_id: self.related_contact_id,
             wisdom_info: self.wisdom_info,
+            customer_id: self.customer_id,
             customer_endpoint: self.customer_endpoint,
             system_endpoint: self.system_endpoint,
             queue_time_adjustment_seconds: self.queue_time_adjustment_seconds,
@@ -903,6 +926,7 @@ impl ::std::fmt::Debug for ContactBuilder {
         formatter.field("scheduled_timestamp", &self.scheduled_timestamp);
         formatter.field("related_contact_id", &self.related_contact_id);
         formatter.field("wisdom_info", &self.wisdom_info);
+        formatter.field("customer_id", &self.customer_id);
         formatter.field("customer_endpoint", &self.customer_endpoint);
         formatter.field("system_endpoint", &self.system_endpoint);
         formatter.field("queue_time_adjustment_seconds", &self.queue_time_adjustment_seconds);

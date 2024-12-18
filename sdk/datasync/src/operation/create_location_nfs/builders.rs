@@ -23,9 +23,7 @@ impl crate::operation::create_location_nfs::builders::CreateLocationNfsInputBuil
 /// Fluent builder constructing a request to `CreateLocationNfs`.
 ///
 /// <p>Creates a transfer <i>location</i> for a Network File System (NFS) file server. DataSync can use this location as a source or destination for transferring data.</p>
-/// <p>Before you begin, make sure that you understand how DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#accessing-nfs">accesses NFS file servers</a>.</p><note>
-/// <p>If you're copying data to or from an Snowcone device, you can also use <code>CreateLocationNfs</code> to create your transfer location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/nfs-on-snowcone.html">Configuring transfers with Snowcone</a>.</p>
-/// </note>
+/// <p>Before you begin, make sure that you understand how DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#accessing-nfs">accesses NFS file servers</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLocationNfsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

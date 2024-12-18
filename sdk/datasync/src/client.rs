@@ -269,11 +269,23 @@ mod update_discovery_job;
 
 mod update_location_azure_blob;
 
+mod update_location_efs;
+
+mod update_location_fsx_lustre;
+
+mod update_location_fsx_ontap;
+
+mod update_location_fsx_open_zfs;
+
+mod update_location_fsx_windows;
+
 mod update_location_hdfs;
 
 mod update_location_nfs;
 
 mod update_location_object_storage;
+
+mod update_location_s3;
 
 mod update_location_smb;
 

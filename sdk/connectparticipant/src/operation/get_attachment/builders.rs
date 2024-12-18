@@ -22,7 +22,8 @@ impl crate::operation::get_attachment::builders::GetAttachmentInputBuilder {
 }
 /// Fluent builder constructing a request to `GetAttachment`.
 ///
-/// <p>Provides a pre-signed URL for download of a completed attachment. This is an asynchronous API for use with active contacts.</p><note>
+/// <p>Provides a pre-signed URL for download of a completed attachment. This is an asynchronous API for use with active contacts.</p>
+/// <p>For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon Connect Chat security best practices</a>.</p><note>
 /// <p><code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.</p>
 /// </note>
 /// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 authentication</a>.</p>
@@ -138,5 +139,19 @@ impl GetAttachmentFluentBuilder {
     /// <p>The authentication token associated with the participant's connection.</p>
     pub fn get_connection_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_connection_token()
+    }
+    /// <p>The expiration time of the URL in ISO timestamp. It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
+    pub fn url_expiry_in_seconds(mut self, input: i32) -> Self {
+        self.inner = self.inner.url_expiry_in_seconds(input);
+        self
+    }
+    /// <p>The expiration time of the URL in ISO timestamp. It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
+    pub fn set_url_expiry_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_url_expiry_in_seconds(input);
+        self
+    }
+    /// <p>The expiration time of the URL in ISO timestamp. It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
+    pub fn get_url_expiry_in_seconds(&self) -> &::std::option::Option<i32> {
+        self.inner.get_url_expiry_in_seconds()
     }
 }

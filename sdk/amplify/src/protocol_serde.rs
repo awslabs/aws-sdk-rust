@@ -213,6 +213,8 @@ pub(crate) mod shape_steps;
 
 pub(crate) mod shape_sub_domains;
 
+pub(crate) mod shape_waf_configuration;
+
 pub(crate) mod shape_step;
 
 pub(crate) mod shape_sub_domain;

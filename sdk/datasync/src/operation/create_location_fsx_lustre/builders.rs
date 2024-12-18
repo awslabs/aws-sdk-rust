@@ -109,17 +109,17 @@ impl CreateLocationFsxLustreFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the FSx for Lustre file system.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the FSx for Lustre file system.</p>
     pub fn fsx_filesystem_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fsx_filesystem_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the FSx for Lustre file system.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the FSx for Lustre file system.</p>
     pub fn set_fsx_filesystem_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fsx_filesystem_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the FSx for Lustre file system.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the FSx for Lustre file system.</p>
     pub fn get_fsx_filesystem_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_fsx_filesystem_arn()
     }
@@ -128,31 +128,37 @@ impl CreateLocationFsxLustreFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_security_group_arns`](Self::set_security_group_arns).
     ///
-    /// <p>The Amazon Resource Names (ARNs) of the security groups that are used to configure the FSx for Lustre file system.</p>
+    /// <p>Specifies the Amazon Resource Names (ARNs) of up to five security groups that provide access to your FSx for Lustre file system.</p>
+    /// <p>The security groups must be able to access the file system's ports. The file system must also allow access from the security groups. For information about file system access, see the <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/limit-access-security-groups.html"> <i>Amazon FSx for Lustre User Guide</i> </a>.</p>
     pub fn security_group_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_group_arns(input.into());
         self
     }
-    /// <p>The Amazon Resource Names (ARNs) of the security groups that are used to configure the FSx for Lustre file system.</p>
+    /// <p>Specifies the Amazon Resource Names (ARNs) of up to five security groups that provide access to your FSx for Lustre file system.</p>
+    /// <p>The security groups must be able to access the file system's ports. The file system must also allow access from the security groups. For information about file system access, see the <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/limit-access-security-groups.html"> <i>Amazon FSx for Lustre User Guide</i> </a>.</p>
     pub fn set_security_group_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_security_group_arns(input);
         self
     }
-    /// <p>The Amazon Resource Names (ARNs) of the security groups that are used to configure the FSx for Lustre file system.</p>
+    /// <p>Specifies the Amazon Resource Names (ARNs) of up to five security groups that provide access to your FSx for Lustre file system.</p>
+    /// <p>The security groups must be able to access the file system's ports. The file system must also allow access from the security groups. For information about file system access, see the <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/limit-access-security-groups.html"> <i>Amazon FSx for Lustre User Guide</i> </a>.</p>
     pub fn get_security_group_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_security_group_arns()
     }
-    /// <p>A subdirectory in the location's path. This subdirectory in the FSx for Lustre file system is used to read data from the FSx for Lustre source location or write data to the FSx for Lustre destination.</p>
+    /// <p>Specifies a mount path for your FSx for Lustre file system. The path can include subdirectories.</p>
+    /// <p>When the location is used as a source, DataSync reads data from the mount path. When the location is used as a destination, DataSync writes data to the mount path. If you don't include this parameter, DataSync uses the file system's root directory (<code>/</code>).</p>
     pub fn subdirectory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subdirectory(input.into());
         self
     }
-    /// <p>A subdirectory in the location's path. This subdirectory in the FSx for Lustre file system is used to read data from the FSx for Lustre source location or write data to the FSx for Lustre destination.</p>
+    /// <p>Specifies a mount path for your FSx for Lustre file system. The path can include subdirectories.</p>
+    /// <p>When the location is used as a source, DataSync reads data from the mount path. When the location is used as a destination, DataSync writes data to the mount path. If you don't include this parameter, DataSync uses the file system's root directory (<code>/</code>).</p>
     pub fn set_subdirectory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subdirectory(input);
         self
     }
-    /// <p>A subdirectory in the location's path. This subdirectory in the FSx for Lustre file system is used to read data from the FSx for Lustre source location or write data to the FSx for Lustre destination.</p>
+    /// <p>Specifies a mount path for your FSx for Lustre file system. The path can include subdirectories.</p>
+    /// <p>When the location is used as a source, DataSync reads data from the mount path. When the location is used as a destination, DataSync writes data to the mount path. If you don't include this parameter, DataSync uses the file system's root directory (<code>/</code>).</p>
     pub fn get_subdirectory(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_subdirectory()
     }
@@ -161,17 +167,17 @@ impl CreateLocationFsxLustreFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
+    /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
     pub fn tags(mut self, input: crate::types::TagListEntry) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>The key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
+    /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>The key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
+    /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>> {
         self.inner.get_tags()
     }

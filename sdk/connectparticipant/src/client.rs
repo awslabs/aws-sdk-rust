@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CompleteAttachmentUpload`](crate::operation::complete_attachment_upload) operation has
-/// a [`Client::complete_attachment_upload`], function which returns a builder for that operation.
+/// For example, the [`CancelParticipantAuthentication`](crate::operation::cancel_participant_authentication) operation has
+/// a [`Client::cancel_participant_authentication`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.complete_attachment_upload()
-///     .client_token("example")
+/// let result = client.cancel_participant_authentication()
+///     .session_id("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -136,6 +136,8 @@ impl Client {
     }
 }
 
+mod cancel_participant_authentication;
+
 mod complete_attachment_upload;
 
 mod create_participant_connection;
@@ -151,7 +153,7 @@ mod create_participant_connection;
 /// # let client: aws_sdk_connectparticipant::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.complete_attachment_upload()
+/// let result = client.cancel_participant_authentication()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -172,6 +174,8 @@ mod describe_view;
 mod disconnect_participant;
 
 mod get_attachment;
+
+mod get_authentication_url;
 
 mod get_transcript;
 

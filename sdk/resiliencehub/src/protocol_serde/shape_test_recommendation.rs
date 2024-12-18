@@ -28,6 +28,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "appComponentId" => {
+                            builder = builder.set_app_component_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "appComponentName" => {
                             builder = builder.set_app_component_name(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

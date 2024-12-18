@@ -19,7 +19,7 @@ impl super::Client {
     ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::get_command_execution::GetCommandExecutionOutput::last_updated_at): <p>The timestamp, when the command execution was last updated.</p>
     ///   - [`started_at(Option<DateTime>)`](crate::operation::get_command_execution::GetCommandExecutionOutput::started_at): <p>The timestamp, when the command execution was started.</p>
     ///   - [`completed_at(Option<DateTime>)`](crate::operation::get_command_execution::GetCommandExecutionOutput::completed_at): <p>The timestamp, when the command execution was completed.</p>
-    ///   - [`time_to_live(Option<DateTime>)`](crate::operation::get_command_execution::GetCommandExecutionOutput::time_to_live): <p>The time to live (TTL) parameter for the <code>GetCommandExecution</code> API.</p>
+    ///   - [`time_to_live(Option<DateTime>)`](crate::operation::get_command_execution::GetCommandExecutionOutput::time_to_live): <p>The time to live (TTL) parameter that indicates the duration for which executions will be retained in your account. The default value is six months.</p>
     /// - On failure, responds with [`SdkError<GetCommandExecutionError>`](crate::operation::get_command_execution::GetCommandExecutionError)
     pub fn get_command_execution(&self) -> crate::operation::get_command_execution::builders::GetCommandExecutionFluentBuilder {
         crate::operation::get_command_execution::builders::GetCommandExecutionFluentBuilder::new(self.handle.clone())

@@ -35,7 +35,7 @@ pub struct GetCommandExecutionOutput {
     pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp, when the command execution was completed.</p>
     pub completed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The time to live (TTL) parameter for the <code>GetCommandExecution</code> API.</p>
+    /// <p>The time to live (TTL) parameter that indicates the duration for which executions will be retained in your account. The default value is six months.</p>
     pub time_to_live: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
@@ -96,7 +96,7 @@ impl GetCommandExecutionOutput {
     pub fn completed_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.completed_at.as_ref()
     }
-    /// <p>The time to live (TTL) parameter for the <code>GetCommandExecution</code> API.</p>
+    /// <p>The time to live (TTL) parameter that indicates the duration for which executions will be retained in your account. The default value is six months.</p>
     pub fn time_to_live(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.time_to_live.as_ref()
     }
@@ -343,17 +343,17 @@ impl GetCommandExecutionOutputBuilder {
     pub fn get_completed_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.completed_at
     }
-    /// <p>The time to live (TTL) parameter for the <code>GetCommandExecution</code> API.</p>
+    /// <p>The time to live (TTL) parameter that indicates the duration for which executions will be retained in your account. The default value is six months.</p>
     pub fn time_to_live(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.time_to_live = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time to live (TTL) parameter for the <code>GetCommandExecution</code> API.</p>
+    /// <p>The time to live (TTL) parameter that indicates the duration for which executions will be retained in your account. The default value is six months.</p>
     pub fn set_time_to_live(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.time_to_live = input;
         self
     }
-    /// <p>The time to live (TTL) parameter for the <code>GetCommandExecution</code> API.</p>
+    /// <p>The time to live (TTL) parameter that indicates the duration for which executions will be retained in your account. The default value is six months.</p>
     pub fn get_time_to_live(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.time_to_live
     }

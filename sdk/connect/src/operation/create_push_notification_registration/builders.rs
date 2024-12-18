@@ -22,7 +22,7 @@ impl crate::operation::create_push_notification_registration::builders::CreatePu
 }
 /// Fluent builder constructing a request to `CreatePushNotificationRegistration`.
 ///
-/// <p>Creates registration for a device token and a chat contact to receive real-time push notifications. For more information about push notifications, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/set-up-push-notifications-for-mobile-chat.html">Set up push notifications in Amazon Connect for mobile chat</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+/// <p>Creates registration for a device token and a chat contact to receive real-time push notifications. For more information about push notifications, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-push-notifications-for-mobile-chat.html">Set up push notifications in Amazon Connect for mobile chat</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreatePushNotificationRegistrationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

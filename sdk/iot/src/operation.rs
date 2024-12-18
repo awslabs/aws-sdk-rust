@@ -436,6 +436,9 @@ pub mod get_registration_code;
 /// Types for the `GetStatistics` operation.
 pub mod get_statistics;
 
+/// Types for the `GetThingConnectivityData` operation.
+pub mod get_thing_connectivity_data;
+
 /// Types for the `GetTopicRule` operation.
 pub mod get_topic_rule;
 

@@ -14,6 +14,7 @@
 /// match jobstatus {
 ///     JobStatus::Cancelled => { /* ... */ },
 ///     JobStatus::Cancelling => { /* ... */ },
+///     JobStatus::Created => { /* ... */ },
 ///     JobStatus::Failed => { /* ... */ },
 ///     JobStatus::Pending => { /* ... */ },
 ///     JobStatus::Provisioning => { /* ... */ },
@@ -52,6 +53,8 @@ pub enum JobStatus {
     #[allow(missing_docs)] // documentation missing in model
     Cancelling,
     #[allow(missing_docs)] // documentation missing in model
+    Created,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
     #[allow(missing_docs)] // documentation missing in model
     Pending,
@@ -70,6 +73,7 @@ impl ::std::convert::From<&str> for JobStatus {
         match s {
             "CANCELLED" => JobStatus::Cancelled,
             "CANCELLING" => JobStatus::Cancelling,
+            "CREATED" => JobStatus::Created,
             "FAILED" => JobStatus::Failed,
             "PENDING" => JobStatus::Pending,
             "PROVISIONING" => JobStatus::Provisioning,
@@ -92,6 +96,7 @@ impl JobStatus {
         match self {
             JobStatus::Cancelled => "CANCELLED",
             JobStatus::Cancelling => "CANCELLING",
+            JobStatus::Created => "CREATED",
             JobStatus::Failed => "FAILED",
             JobStatus::Pending => "PENDING",
             JobStatus::Provisioning => "PROVISIONING",
@@ -102,7 +107,16 @@ impl JobStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CANCELLED", "CANCELLING", "FAILED", "PENDING", "PROVISIONING", "RUNNING", "SUCCEED"]
+        &[
+            "CANCELLED",
+            "CANCELLING",
+            "CREATED",
+            "FAILED",
+            "PENDING",
+            "PROVISIONING",
+            "RUNNING",
+            "SUCCEED",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for JobStatus {
@@ -127,6 +141,7 @@ impl ::std::fmt::Display for JobStatus {
         match self {
             JobStatus::Cancelled => write!(f, "CANCELLED"),
             JobStatus::Cancelling => write!(f, "CANCELLING"),
+            JobStatus::Created => write!(f, "CREATED"),
             JobStatus::Failed => write!(f, "FAILED"),
             JobStatus::Pending => write!(f, "PENDING"),
             JobStatus::Provisioning => write!(f, "PROVISIONING"),

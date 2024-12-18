@@ -48,6 +48,12 @@ where
                                     .transpose()?,
                             );
                         }
+                        "latestDiscoveredExperiment" => {
+                            builder = builder.set_latest_discovered_experiment(crate::protocol_serde::shape_experiment::de_experiment(tokens)?);
+                        }
+                        "discoveredAlarm" => {
+                            builder = builder.set_discovered_alarm(crate::protocol_serde::shape_alarm::de_alarm(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -23,7 +23,7 @@ pub struct CreateLocationFsxWindowsInput {
     /// <p>Specifies the user with the permissions to mount and access the files, folders, and file metadata in your FSx for Windows File Server file system.</p>
     /// <p>For information about choosing a user with the right level of access for your transfer, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">required permissions</a> for FSx for Windows File Server locations.</p>
     pub user: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the name of the Microsoft Active Directory domain that the FSx for Windows File Server file system belongs to.</p>
+    /// <p>Specifies the name of the Windows domain that the FSx for Windows File Server file system belongs to.</p>
     /// <p>If you have multiple Active Directory domains in your environment, configuring this parameter makes sure that DataSync connects to the right file system.</p>
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the password of the user with the permissions to mount and access the files, folders, and file metadata in your FSx for Windows File Server file system.</p>
@@ -64,7 +64,7 @@ impl CreateLocationFsxWindowsInput {
     pub fn user(&self) -> ::std::option::Option<&str> {
         self.user.as_deref()
     }
-    /// <p>Specifies the name of the Microsoft Active Directory domain that the FSx for Windows File Server file system belongs to.</p>
+    /// <p>Specifies the name of the Windows domain that the FSx for Windows File Server file system belongs to.</p>
     /// <p>If you have multiple Active Directory domains in your environment, configuring this parameter makes sure that DataSync connects to the right file system.</p>
     pub fn domain(&self) -> ::std::option::Option<&str> {
         self.domain.as_deref()
@@ -221,19 +221,19 @@ impl CreateLocationFsxWindowsInputBuilder {
     pub fn get_user(&self) -> &::std::option::Option<::std::string::String> {
         &self.user
     }
-    /// <p>Specifies the name of the Microsoft Active Directory domain that the FSx for Windows File Server file system belongs to.</p>
+    /// <p>Specifies the name of the Windows domain that the FSx for Windows File Server file system belongs to.</p>
     /// <p>If you have multiple Active Directory domains in your environment, configuring this parameter makes sure that DataSync connects to the right file system.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the name of the Microsoft Active Directory domain that the FSx for Windows File Server file system belongs to.</p>
+    /// <p>Specifies the name of the Windows domain that the FSx for Windows File Server file system belongs to.</p>
     /// <p>If you have multiple Active Directory domains in your environment, configuring this parameter makes sure that DataSync connects to the right file system.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain = input;
         self
     }
-    /// <p>Specifies the name of the Microsoft Active Directory domain that the FSx for Windows File Server file system belongs to.</p>
+    /// <p>Specifies the name of the Windows domain that the FSx for Windows File Server file system belongs to.</p>
     /// <p>If you have multiple Active Directory domains in your environment, configuring this parameter makes sure that DataSync connects to the right file system.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain

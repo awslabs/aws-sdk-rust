@@ -50,6 +50,8 @@ pub struct As2ConnectorConfig {
     /// <p>If you have previously enabled Basic authentication for a connector, you can disable it by using the <code>UpdateConnector</code> API call. For example, if you are using the CLI, you can run the following command to remove Basic authentication:</p>
     /// <p><code>update-connector --connector-id my-connector-id --as2-config 'BasicAuthSecretId=""'</code></p>
     pub basic_auth_secret_id: ::std::option::Option<::std::string::String>,
+    /// <p>Allows you to use the Amazon S3 <code>Content-Type</code> that is associated with objects in S3 instead of having the content type mapped based on the file extension. This parameter is enabled by default when you create an AS2 connector from the console, but disabled by default when you create an AS2 connector by calling the API directly.</p>
+    pub preserve_content_type: ::std::option::Option<crate::types::PreserveContentType>,
 }
 impl As2ConnectorConfig {
     /// <p>A unique identifier for the AS2 local profile.</p>
@@ -116,6 +118,10 @@ impl As2ConnectorConfig {
     pub fn basic_auth_secret_id(&self) -> ::std::option::Option<&str> {
         self.basic_auth_secret_id.as_deref()
     }
+    /// <p>Allows you to use the Amazon S3 <code>Content-Type</code> that is associated with objects in S3 instead of having the content type mapped based on the file extension. This parameter is enabled by default when you create an AS2 connector from the console, but disabled by default when you create an AS2 connector by calling the API directly.</p>
+    pub fn preserve_content_type(&self) -> ::std::option::Option<&crate::types::PreserveContentType> {
+        self.preserve_content_type.as_ref()
+    }
 }
 impl As2ConnectorConfig {
     /// Creates a new builder-style object to manufacture [`As2ConnectorConfig`](crate::types::As2ConnectorConfig).
@@ -137,6 +143,7 @@ pub struct As2ConnectorConfigBuilder {
     pub(crate) mdn_signing_algorithm: ::std::option::Option<crate::types::MdnSigningAlg>,
     pub(crate) mdn_response: ::std::option::Option<crate::types::MdnResponse>,
     pub(crate) basic_auth_secret_id: ::std::option::Option<::std::string::String>,
+    pub(crate) preserve_content_type: ::std::option::Option<crate::types::PreserveContentType>,
 }
 impl As2ConnectorConfigBuilder {
     /// <p>A unique identifier for the AS2 local profile.</p>
@@ -349,6 +356,20 @@ impl As2ConnectorConfigBuilder {
     pub fn get_basic_auth_secret_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.basic_auth_secret_id
     }
+    /// <p>Allows you to use the Amazon S3 <code>Content-Type</code> that is associated with objects in S3 instead of having the content type mapped based on the file extension. This parameter is enabled by default when you create an AS2 connector from the console, but disabled by default when you create an AS2 connector by calling the API directly.</p>
+    pub fn preserve_content_type(mut self, input: crate::types::PreserveContentType) -> Self {
+        self.preserve_content_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Allows you to use the Amazon S3 <code>Content-Type</code> that is associated with objects in S3 instead of having the content type mapped based on the file extension. This parameter is enabled by default when you create an AS2 connector from the console, but disabled by default when you create an AS2 connector by calling the API directly.</p>
+    pub fn set_preserve_content_type(mut self, input: ::std::option::Option<crate::types::PreserveContentType>) -> Self {
+        self.preserve_content_type = input;
+        self
+    }
+    /// <p>Allows you to use the Amazon S3 <code>Content-Type</code> that is associated with objects in S3 instead of having the content type mapped based on the file extension. This parameter is enabled by default when you create an AS2 connector from the console, but disabled by default when you create an AS2 connector by calling the API directly.</p>
+    pub fn get_preserve_content_type(&self) -> &::std::option::Option<crate::types::PreserveContentType> {
+        &self.preserve_content_type
+    }
     /// Consumes the builder and constructs a [`As2ConnectorConfig`](crate::types::As2ConnectorConfig).
     pub fn build(self) -> crate::types::As2ConnectorConfig {
         crate::types::As2ConnectorConfig {
@@ -361,6 +382,7 @@ impl As2ConnectorConfigBuilder {
             mdn_signing_algorithm: self.mdn_signing_algorithm,
             mdn_response: self.mdn_response,
             basic_auth_secret_id: self.basic_auth_secret_id,
+            preserve_content_type: self.preserve_content_type,
         }
     }
 }

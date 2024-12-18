@@ -71,6 +71,10 @@ pub use crate::types::_smb_mount_options::SmbMountOptions;
 
 pub use crate::types::_smb_version::SmbVersion;
 
+pub use crate::types::_s3_config::S3Config;
+
+pub use crate::types::_s3_storage_class::S3StorageClass;
+
 pub use crate::types::_object_storage_server_protocol::ObjectStorageServerProtocol;
 
 pub use crate::types::_nfs_mount_options::NfsMountOptions;
@@ -88,6 +92,18 @@ pub use crate::types::_hdfs_data_transfer_protection::HdfsDataTransferProtection
 pub use crate::types::_hdfs_rpc_protection::HdfsRpcProtection;
 
 pub use crate::types::_hdfs_name_node::HdfsNameNode;
+
+pub use crate::types::_fsx_protocol::FsxProtocol;
+
+pub use crate::types::_fsx_protocol_smb::FsxProtocolSmb;
+
+pub use crate::types::_fsx_protocol_nfs::FsxProtocolNfs;
+
+pub use crate::types::_fsx_update_protocol::FsxUpdateProtocol;
+
+pub use crate::types::_fsx_update_protocol_smb::FsxUpdateProtocolSmb;
+
+pub use crate::types::_efs_in_transit_encryption::EfsInTransitEncryption;
 
 pub use crate::types::_azure_access_tier::AzureAccessTier;
 
@@ -181,18 +197,6 @@ pub use crate::types::_storage_system_connectivity_status::StorageSystemConnecti
 
 pub use crate::types::_discovery_system_type::DiscoverySystemType;
 
-pub use crate::types::_s3_config::S3Config;
-
-pub use crate::types::_s3_storage_class::S3StorageClass;
-
-pub use crate::types::_fsx_protocol::FsxProtocol;
-
-pub use crate::types::_fsx_protocol_smb::FsxProtocolSmb;
-
-pub use crate::types::_fsx_protocol_nfs::FsxProtocolNfs;
-
-pub use crate::types::_efs_in_transit_encryption::EfsInTransitEncryption;
-
 pub use crate::types::_ec2_config::Ec2Config;
 
 pub use crate::types::_private_link_config::PrivateLinkConfig;
@@ -244,6 +248,10 @@ mod _fsx_protocol;
 mod _fsx_protocol_nfs;
 
 mod _fsx_protocol_smb;
+
+mod _fsx_update_protocol;
+
+mod _fsx_update_protocol_smb;
 
 mod _gid;
 

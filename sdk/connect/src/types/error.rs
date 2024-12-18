@@ -27,13 +27,13 @@ pub use crate::types::error::_conditional_operation_failed_exception::Conditiona
 
 pub use crate::types::error::_idempotency_exception::IdempotencyException;
 
+pub use crate::types::error::_conflict_exception::ConflictException;
+
 pub use crate::types::error::_limit_exceeded_exception::LimitExceededException;
 
 pub use crate::types::error::_invalid_contact_flow_module_exception::InvalidContactFlowModuleException;
 
 pub use crate::types::error::_invalid_contact_flow_exception::InvalidContactFlowException;
-
-pub use crate::types::error::_conflict_exception::ConflictException;
 
 pub use crate::types::error::_contact_not_found_exception::ContactNotFoundException;
 

@@ -1597,6 +1597,10 @@ pub use crate::types::_athena_parameters::AthenaParameters;
 
 pub use crate::types::_amazon_elasticsearch_parameters::AmazonElasticsearchParameters;
 
+pub use crate::types::_performance_configuration::PerformanceConfiguration;
+
+pub use crate::types::_unique_key::UniqueKey;
+
 pub use crate::types::_dataset_parameter::DatasetParameter;
 
 pub use crate::types::_date_time_dataset_parameter::DateTimeDatasetParameter;
@@ -3709,6 +3713,8 @@ mod _percentage_display_format_configuration;
 
 mod _percentile_aggregation;
 
+mod _performance_configuration;
+
 mod _period_over_period_computation;
 
 mod _period_to_date_computation;
@@ -4470,6 +4476,8 @@ mod _ui_color_palette;
 mod _unaggregated_field;
 
 mod _undefined_specified_value_type;
+
+mod _unique_key;
 
 mod _unique_values_computation;
 

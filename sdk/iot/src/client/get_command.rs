@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::get_command::GetCommandOutput::description): <p>A short text description of the command.</p>
     ///   - [`mandatory_parameters(Option<Vec::<CommandParameter>>)`](crate::operation::get_command::GetCommandOutput::mandatory_parameters): <p>A list of parameters for the command created.</p>
     ///   - [`payload(Option<CommandPayload>)`](crate::operation::get_command::GetCommandOutput::payload): <p>The payload object that you provided for the command.</p>
-    ///   - [`role_arn(Option<String>)`](crate::operation::get_command::GetCommandOutput::role_arn): <p>The IAM role that allows access to retrieve information about the command.</p>
+    ///   - [`role_arn(Option<String>)`](crate::operation::get_command::GetCommandOutput::role_arn): <p>The IAM role that you provided when creating the command with <code>AWS-IoT-FleetWise</code> as the namespace.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_command::GetCommandOutput::created_at): <p>The timestamp, when the command was created.</p>
     ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::get_command::GetCommandOutput::last_updated_at): <p>The timestamp, when the command was last updated.</p>
     ///   - [`deprecated(Option<bool>)`](crate::operation::get_command::GetCommandOutput::deprecated): <p>Indicates whether the command has been deprecated.</p>

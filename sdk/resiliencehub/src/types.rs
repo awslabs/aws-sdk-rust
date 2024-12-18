@@ -91,6 +91,10 @@ pub use crate::types::_recommendation_status::RecommendationStatus;
 
 pub use crate::types::_recommendation_item::RecommendationItem;
 
+pub use crate::types::_alarm::Alarm;
+
+pub use crate::types::_experiment::Experiment;
+
 pub use crate::types::_exclude_recommendation_reason::ExcludeRecommendationReason;
 
 pub use crate::types::_test_type::TestType;
@@ -195,6 +199,8 @@ pub use crate::types::_accept_grouping_recommendation_entry::AcceptGroupingRecom
 
 mod _accept_grouping_recommendation_entry;
 
+mod _alarm;
+
 mod _alarm_recommendation;
 
 mod _alarm_type;
@@ -278,6 +284,8 @@ mod _event_subscription;
 mod _event_type;
 
 mod _exclude_recommendation_reason;
+
+mod _experiment;
 
 mod _failed_grouping_recommendation_entry;
 

@@ -23,6 +23,7 @@ impl crate::operation::describe_view::builders::DescribeViewInputBuilder {
 /// Fluent builder constructing a request to `DescribeView`.
 ///
 /// <p>Retrieves the view for the specified view token.</p>
+/// <p>For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon Connect Chat security best practices</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeViewFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

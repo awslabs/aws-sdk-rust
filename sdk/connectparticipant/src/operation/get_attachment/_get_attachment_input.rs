@@ -7,6 +7,8 @@ pub struct GetAttachmentInput {
     pub attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>The authentication token associated with the participant's connection.</p>
     pub connection_token: ::std::option::Option<::std::string::String>,
+    /// <p>The expiration time of the URL in ISO timestamp. It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
+    pub url_expiry_in_seconds: ::std::option::Option<i32>,
 }
 impl GetAttachmentInput {
     /// <p>A unique identifier for the attachment.</p>
@@ -16,6 +18,10 @@ impl GetAttachmentInput {
     /// <p>The authentication token associated with the participant's connection.</p>
     pub fn connection_token(&self) -> ::std::option::Option<&str> {
         self.connection_token.as_deref()
+    }
+    /// <p>The expiration time of the URL in ISO timestamp. It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
+    pub fn url_expiry_in_seconds(&self) -> ::std::option::Option<i32> {
+        self.url_expiry_in_seconds
     }
 }
 impl GetAttachmentInput {
@@ -31,6 +37,7 @@ impl GetAttachmentInput {
 pub struct GetAttachmentInputBuilder {
     pub(crate) attachment_id: ::std::option::Option<::std::string::String>,
     pub(crate) connection_token: ::std::option::Option<::std::string::String>,
+    pub(crate) url_expiry_in_seconds: ::std::option::Option<i32>,
 }
 impl GetAttachmentInputBuilder {
     /// <p>A unique identifier for the attachment.</p>
@@ -63,6 +70,20 @@ impl GetAttachmentInputBuilder {
     pub fn get_connection_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.connection_token
     }
+    /// <p>The expiration time of the URL in ISO timestamp. It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
+    pub fn url_expiry_in_seconds(mut self, input: i32) -> Self {
+        self.url_expiry_in_seconds = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The expiration time of the URL in ISO timestamp. It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
+    pub fn set_url_expiry_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.url_expiry_in_seconds = input;
+        self
+    }
+    /// <p>The expiration time of the URL in ISO timestamp. It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
+    pub fn get_url_expiry_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.url_expiry_in_seconds
+    }
     /// Consumes the builder and constructs a [`GetAttachmentInput`](crate::operation::get_attachment::GetAttachmentInput).
     pub fn build(
         self,
@@ -70,6 +91,7 @@ impl GetAttachmentInputBuilder {
         ::std::result::Result::Ok(crate::operation::get_attachment::GetAttachmentInput {
             attachment_id: self.attachment_id,
             connection_token: self.connection_token,
+            url_expiry_in_seconds: self.url_expiry_in_seconds,
         })
     }
 }

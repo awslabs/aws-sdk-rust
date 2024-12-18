@@ -45,6 +45,10 @@ pub use crate::types::_test_recommendation::TestRecommendationBuilder;
 
 pub use crate::types::_recommendation_item::RecommendationItemBuilder;
 
+pub use crate::types::_alarm::AlarmBuilder;
+
+pub use crate::types::_experiment::ExperimentBuilder;
+
 pub use crate::types::_sop_recommendation::SopRecommendationBuilder;
 
 pub use crate::types::_grouping_recommendation::GroupingRecommendationBuilder;

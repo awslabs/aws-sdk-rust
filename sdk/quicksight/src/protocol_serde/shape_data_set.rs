@@ -102,6 +102,11 @@ where
                             builder = builder
                                 .set_dataset_parameters(crate::protocol_serde::shape_dataset_parameter_list::de_dataset_parameter_list(tokens)?);
                         }
+                        "PerformanceConfiguration" => {
+                            builder = builder.set_performance_configuration(
+                                crate::protocol_serde::shape_performance_configuration::de_performance_configuration(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

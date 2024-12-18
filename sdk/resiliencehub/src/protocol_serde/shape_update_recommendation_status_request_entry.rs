@@ -18,8 +18,11 @@ pub fn ser_update_recommendation_status_request_entry(
     {
         object.key("excluded").boolean(input.excluded);
     }
-    if let Some(var_3) = &input.exclude_reason {
-        object.key("excludeReason").string(var_3.as_str());
+    if let Some(var_3) = &input.app_component_id {
+        object.key("appComponentId").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.exclude_reason {
+        object.key("excludeReason").string(var_4.as_str());
     }
     Ok(())
 }

@@ -18,7 +18,7 @@ pub struct DescribedCertificate {
     /// <p><code>TLS</code>: For securing AS2 communications sent over HTTPS</p></li>
     /// </ul>
     pub usage: ::std::option::Option<crate::types::CertificateUsageType>,
-    /// <p>The certificate can be either <code>ACTIVE</code>, <code>PENDING_ROTATION</code>, or <code>INACTIVE</code>. <code>PENDING_ROTATION</code> means that this certificate will replace the current certificate when it expires.</p>
+    /// <p>Currently, the only available status is <code>ACTIVE</code>: all other values are reserved for future use.</p>
     pub status: ::std::option::Option<crate::types::CertificateStatusType>,
     /// <p>The file name for the certificate.</p>
     pub certificate: ::std::option::Option<::std::string::String>,
@@ -63,7 +63,7 @@ impl DescribedCertificate {
     pub fn usage(&self) -> ::std::option::Option<&crate::types::CertificateUsageType> {
         self.usage.as_ref()
     }
-    /// <p>The certificate can be either <code>ACTIVE</code>, <code>PENDING_ROTATION</code>, or <code>INACTIVE</code>. <code>PENDING_ROTATION</code> means that this certificate will replace the current certificate when it expires.</p>
+    /// <p>Currently, the only available status is <code>ACTIVE</code>: all other values are reserved for future use.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::CertificateStatusType> {
         self.status.as_ref()
     }
@@ -224,17 +224,17 @@ impl DescribedCertificateBuilder {
     pub fn get_usage(&self) -> &::std::option::Option<crate::types::CertificateUsageType> {
         &self.usage
     }
-    /// <p>The certificate can be either <code>ACTIVE</code>, <code>PENDING_ROTATION</code>, or <code>INACTIVE</code>. <code>PENDING_ROTATION</code> means that this certificate will replace the current certificate when it expires.</p>
+    /// <p>Currently, the only available status is <code>ACTIVE</code>: all other values are reserved for future use.</p>
     pub fn status(mut self, input: crate::types::CertificateStatusType) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The certificate can be either <code>ACTIVE</code>, <code>PENDING_ROTATION</code>, or <code>INACTIVE</code>. <code>PENDING_ROTATION</code> means that this certificate will replace the current certificate when it expires.</p>
+    /// <p>Currently, the only available status is <code>ACTIVE</code>: all other values are reserved for future use.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::CertificateStatusType>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The certificate can be either <code>ACTIVE</code>, <code>PENDING_ROTATION</code>, or <code>INACTIVE</code>. <code>PENDING_ROTATION</code> means that this certificate will replace the current certificate when it expires.</p>
+    /// <p>Currently, the only available status is <code>ACTIVE</code>: all other values are reserved for future use.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::CertificateStatusType> {
         &self.status
     }

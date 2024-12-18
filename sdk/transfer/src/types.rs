@@ -111,6 +111,8 @@ pub use crate::types::_sftp_connector_config::SftpConnectorConfig;
 
 pub use crate::types::_as2_connector_config::As2ConnectorConfig;
 
+pub use crate::types::_preserve_content_type::PreserveContentType;
+
 pub use crate::types::_mdn_response::MdnResponse;
 
 pub use crate::types::_mdn_signing_alg::MdnSigningAlg;
@@ -134,6 +136,10 @@ pub use crate::types::_certificate_status_type::CertificateStatusType;
 pub use crate::types::_certificate_usage_type::CertificateUsageType;
 
 pub use crate::types::_listed_certificate::ListedCertificate;
+
+pub use crate::types::_enforce_message_signing_type::EnforceMessageSigningType;
+
+pub use crate::types::_preserve_filename_type::PreserveFilenameType;
 
 pub use crate::types::_agreement_status_type::AgreementStatusType;
 
@@ -255,6 +261,8 @@ mod _endpoint_details;
 
 mod _endpoint_type;
 
+mod _enforce_message_signing_type;
+
 mod _execution_error;
 
 mod _execution_error_type;
@@ -312,6 +320,10 @@ mod _mdn_signing_alg;
 mod _overwrite_existing;
 
 mod _posix_profile;
+
+mod _preserve_content_type;
+
+mod _preserve_filename_type;
 
 mod _profile_type;
 

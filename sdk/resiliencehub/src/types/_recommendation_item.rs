@@ -16,6 +16,10 @@ pub struct RecommendationItem {
     pub excluded: ::std::option::Option<bool>,
     /// <p>Indicates the reason for excluding an operational recommendation.</p>
     pub exclude_reason: ::std::option::Option<crate::types::ExcludeRecommendationReason>,
+    /// <p>Indicates the experiment created in FIS that was discovered by Resilience Hub, which matches the recommendation.</p>
+    pub latest_discovered_experiment: ::std::option::Option<crate::types::Experiment>,
+    /// <p>Indicates the previously implemented Amazon CloudWatch alarm discovered by Resilience Hub.</p>
+    pub discovered_alarm: ::std::option::Option<crate::types::Alarm>,
 }
 impl RecommendationItem {
     /// <p>Identifier of the resource.</p>
@@ -42,6 +46,14 @@ impl RecommendationItem {
     pub fn exclude_reason(&self) -> ::std::option::Option<&crate::types::ExcludeRecommendationReason> {
         self.exclude_reason.as_ref()
     }
+    /// <p>Indicates the experiment created in FIS that was discovered by Resilience Hub, which matches the recommendation.</p>
+    pub fn latest_discovered_experiment(&self) -> ::std::option::Option<&crate::types::Experiment> {
+        self.latest_discovered_experiment.as_ref()
+    }
+    /// <p>Indicates the previously implemented Amazon CloudWatch alarm discovered by Resilience Hub.</p>
+    pub fn discovered_alarm(&self) -> ::std::option::Option<&crate::types::Alarm> {
+        self.discovered_alarm.as_ref()
+    }
 }
 impl RecommendationItem {
     /// Creates a new builder-style object to manufacture [`RecommendationItem`](crate::types::RecommendationItem).
@@ -60,6 +72,8 @@ pub struct RecommendationItemBuilder {
     pub(crate) already_implemented: ::std::option::Option<bool>,
     pub(crate) excluded: ::std::option::Option<bool>,
     pub(crate) exclude_reason: ::std::option::Option<crate::types::ExcludeRecommendationReason>,
+    pub(crate) latest_discovered_experiment: ::std::option::Option<crate::types::Experiment>,
+    pub(crate) discovered_alarm: ::std::option::Option<crate::types::Alarm>,
 }
 impl RecommendationItemBuilder {
     /// <p>Identifier of the resource.</p>
@@ -146,6 +160,34 @@ impl RecommendationItemBuilder {
     pub fn get_exclude_reason(&self) -> &::std::option::Option<crate::types::ExcludeRecommendationReason> {
         &self.exclude_reason
     }
+    /// <p>Indicates the experiment created in FIS that was discovered by Resilience Hub, which matches the recommendation.</p>
+    pub fn latest_discovered_experiment(mut self, input: crate::types::Experiment) -> Self {
+        self.latest_discovered_experiment = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates the experiment created in FIS that was discovered by Resilience Hub, which matches the recommendation.</p>
+    pub fn set_latest_discovered_experiment(mut self, input: ::std::option::Option<crate::types::Experiment>) -> Self {
+        self.latest_discovered_experiment = input;
+        self
+    }
+    /// <p>Indicates the experiment created in FIS that was discovered by Resilience Hub, which matches the recommendation.</p>
+    pub fn get_latest_discovered_experiment(&self) -> &::std::option::Option<crate::types::Experiment> {
+        &self.latest_discovered_experiment
+    }
+    /// <p>Indicates the previously implemented Amazon CloudWatch alarm discovered by Resilience Hub.</p>
+    pub fn discovered_alarm(mut self, input: crate::types::Alarm) -> Self {
+        self.discovered_alarm = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates the previously implemented Amazon CloudWatch alarm discovered by Resilience Hub.</p>
+    pub fn set_discovered_alarm(mut self, input: ::std::option::Option<crate::types::Alarm>) -> Self {
+        self.discovered_alarm = input;
+        self
+    }
+    /// <p>Indicates the previously implemented Amazon CloudWatch alarm discovered by Resilience Hub.</p>
+    pub fn get_discovered_alarm(&self) -> &::std::option::Option<crate::types::Alarm> {
+        &self.discovered_alarm
+    }
     /// Consumes the builder and constructs a [`RecommendationItem`](crate::types::RecommendationItem).
     pub fn build(self) -> crate::types::RecommendationItem {
         crate::types::RecommendationItem {
@@ -155,6 +197,8 @@ impl RecommendationItemBuilder {
             already_implemented: self.already_implemented,
             excluded: self.excluded,
             exclude_reason: self.exclude_reason,
+            latest_discovered_experiment: self.latest_discovered_experiment,
+            discovered_alarm: self.discovered_alarm,
         }
     }
 }

@@ -129,11 +129,23 @@ pub(crate) mod shape_update_discovery_job;
 
 pub(crate) mod shape_update_location_azure_blob;
 
+pub(crate) mod shape_update_location_efs;
+
+pub(crate) mod shape_update_location_fsx_lustre;
+
+pub(crate) mod shape_update_location_fsx_ontap;
+
+pub(crate) mod shape_update_location_fsx_open_zfs;
+
+pub(crate) mod shape_update_location_fsx_windows;
+
 pub(crate) mod shape_update_location_hdfs;
 
 pub(crate) mod shape_update_location_nfs;
 
 pub(crate) mod shape_update_location_object_storage;
+
+pub(crate) mod shape_update_location_s3;
 
 pub(crate) mod shape_update_location_smb;
 
@@ -261,11 +273,23 @@ pub(crate) mod shape_update_discovery_job_input;
 
 pub(crate) mod shape_update_location_azure_blob_input;
 
+pub(crate) mod shape_update_location_efs_input;
+
+pub(crate) mod shape_update_location_fsx_lustre_input;
+
+pub(crate) mod shape_update_location_fsx_ontap_input;
+
+pub(crate) mod shape_update_location_fsx_open_zfs_input;
+
+pub(crate) mod shape_update_location_fsx_windows_input;
+
 pub(crate) mod shape_update_location_hdfs_input;
 
 pub(crate) mod shape_update_location_nfs_input;
 
 pub(crate) mod shape_update_location_object_storage_input;
+
+pub(crate) mod shape_update_location_s3_input;
 
 pub(crate) mod shape_update_location_smb_input;
 
@@ -300,6 +324,8 @@ pub(crate) mod shape_filter_list;
 pub(crate) mod shape_filter_rule;
 
 pub(crate) mod shape_fsx_protocol;
+
+pub(crate) mod shape_fsx_update_protocol;
 
 pub(crate) mod shape_hdfs_name_node;
 
@@ -366,6 +392,8 @@ pub(crate) mod shape_discovery_job_list_entry;
 pub(crate) mod shape_fsx_protocol_nfs;
 
 pub(crate) mod shape_fsx_protocol_smb;
+
+pub(crate) mod shape_fsx_update_protocol_smb;
 
 pub(crate) mod shape_location_list_entry;
 

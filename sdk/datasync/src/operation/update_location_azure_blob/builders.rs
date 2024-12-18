@@ -22,7 +22,8 @@ impl crate::operation::update_location_azure_blob::builders::UpdateLocationAzure
 }
 /// Fluent builder constructing a request to `UpdateLocationAzureBlob`.
 ///
-/// <p>Modifies some configurations of the Microsoft Azure Blob Storage transfer location that you're using with DataSync.</p>
+/// <p>Modifies the following configurations of the Microsoft Azure Blob Storage transfer location that you're using with DataSync.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html">Configuring DataSync transfers with Azure Blob Storage</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateLocationAzureBlobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -392,4 +392,18 @@ impl CreateDataSetFluentBuilder {
     pub fn get_folder_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_folder_arns()
     }
+    /// <p>The configuration for the performance optimization of the dataset that contains a <code>UniqueKey</code> configuration.</p>
+    pub fn performance_configuration(mut self, input: crate::types::PerformanceConfiguration) -> Self {
+        self.inner = self.inner.performance_configuration(input);
+        self
+    }
+    /// <p>The configuration for the performance optimization of the dataset that contains a <code>UniqueKey</code> configuration.</p>
+    pub fn set_performance_configuration(mut self, input: ::std::option::Option<crate::types::PerformanceConfiguration>) -> Self {
+        self.inner = self.inner.set_performance_configuration(input);
+        self
+    }
+    /// <p>The configuration for the performance optimization of the dataset that contains a <code>UniqueKey</code> configuration.</p>
+    pub fn get_performance_configuration(&self) -> &::std::option::Option<crate::types::PerformanceConfiguration> {
+        self.inner.get_performance_configuration()
+    }
 }

@@ -1416,6 +1416,143 @@ impl From<crate::operation::update_location_azure_blob::UpdateLocationAzureBlobE
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_location_efs::UpdateLocationEfsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_location_efs::UpdateLocationEfsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_location_efs::UpdateLocationEfsError> for Error {
+    fn from(err: crate::operation::update_location_efs::UpdateLocationEfsError) -> Self {
+        match err {
+            crate::operation::update_location_efs::UpdateLocationEfsError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::update_location_efs::UpdateLocationEfsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::update_location_efs::UpdateLocationEfsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_location_fsx_lustre::UpdateLocationFsxLustreError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_location_fsx_lustre::UpdateLocationFsxLustreError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_location_fsx_lustre::UpdateLocationFsxLustreError> for Error {
+    fn from(err: crate::operation::update_location_fsx_lustre::UpdateLocationFsxLustreError) -> Self {
+        match err {
+            crate::operation::update_location_fsx_lustre::UpdateLocationFsxLustreError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::update_location_fsx_lustre::UpdateLocationFsxLustreError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::update_location_fsx_lustre::UpdateLocationFsxLustreError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_location_fsx_ontap::UpdateLocationFsxOntapError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_location_fsx_ontap::UpdateLocationFsxOntapError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_location_fsx_ontap::UpdateLocationFsxOntapError> for Error {
+    fn from(err: crate::operation::update_location_fsx_ontap::UpdateLocationFsxOntapError) -> Self {
+        match err {
+            crate::operation::update_location_fsx_ontap::UpdateLocationFsxOntapError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::update_location_fsx_ontap::UpdateLocationFsxOntapError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::update_location_fsx_ontap::UpdateLocationFsxOntapError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_location_fsx_open_zfs::UpdateLocationFsxOpenZfsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_location_fsx_open_zfs::UpdateLocationFsxOpenZfsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_location_fsx_open_zfs::UpdateLocationFsxOpenZfsError> for Error {
+    fn from(err: crate::operation::update_location_fsx_open_zfs::UpdateLocationFsxOpenZfsError) -> Self {
+        match err {
+            crate::operation::update_location_fsx_open_zfs::UpdateLocationFsxOpenZfsError::InternalException(inner) => {
+                Error::InternalException(inner)
+            }
+            crate::operation::update_location_fsx_open_zfs::UpdateLocationFsxOpenZfsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::update_location_fsx_open_zfs::UpdateLocationFsxOpenZfsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_location_fsx_windows::UpdateLocationFsxWindowsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_location_fsx_windows::UpdateLocationFsxWindowsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_location_fsx_windows::UpdateLocationFsxWindowsError> for Error {
+    fn from(err: crate::operation::update_location_fsx_windows::UpdateLocationFsxWindowsError) -> Self {
+        match err {
+            crate::operation::update_location_fsx_windows::UpdateLocationFsxWindowsError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::update_location_fsx_windows::UpdateLocationFsxWindowsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::update_location_fsx_windows::UpdateLocationFsxWindowsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_location_hdfs::UpdateLocationHdfsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1493,6 +1630,29 @@ impl From<crate::operation::update_location_object_storage::UpdateLocationObject
                 Error::InvalidRequestException(inner)
             }
             crate::operation::update_location_object_storage::UpdateLocationObjectStorageError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_location_s3::UpdateLocationS3Error, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_location_s3::UpdateLocationS3Error, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_location_s3::UpdateLocationS3Error> for Error {
+    fn from(err: crate::operation::update_location_s3::UpdateLocationS3Error) -> Self {
+        match err {
+            crate::operation::update_location_s3::UpdateLocationS3Error::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::update_location_s3::UpdateLocationS3Error::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::update_location_s3::UpdateLocationS3Error::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

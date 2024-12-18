@@ -16,7 +16,7 @@ pub struct CreateCommandInput {
     pub payload: ::std::option::Option<crate::types::CommandPayload>,
     /// <p>A list of parameters that are required by the <code>StartCommandExecution</code> API. These parameters need to be specified only when using the <code>AWS-IoT-FleetWise</code> namespace. You can either specify them here or when running the command using the <code>StartCommandExecution</code> API.</p>
     pub mandatory_parameters: ::std::option::Option<::std::vec::Vec<crate::types::CommandParameter>>,
-    /// <p>The IAM role that allows access to create the command.</p>
+    /// <p>The IAM role that you must provide when using the <code>AWS-IoT-FleetWise</code> namespace. The role grants IoT Device Management the permission to access IoT FleetWise resources for generating the payload for the command. This field is not required when you use the <code>AWS-IoT</code> namespace.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Name-value pairs that are used as metadata to manage a command.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -49,7 +49,7 @@ impl CreateCommandInput {
     pub fn mandatory_parameters(&self) -> &[crate::types::CommandParameter] {
         self.mandatory_parameters.as_deref().unwrap_or_default()
     }
-    /// <p>The IAM role that allows access to create the command.</p>
+    /// <p>The IAM role that you must provide when using the <code>AWS-IoT-FleetWise</code> namespace. The role grants IoT Device Management the permission to access IoT FleetWise resources for generating the payload for the command. This field is not required when you use the <code>AWS-IoT</code> namespace.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -175,17 +175,17 @@ impl CreateCommandInputBuilder {
     pub fn get_mandatory_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CommandParameter>> {
         &self.mandatory_parameters
     }
-    /// <p>The IAM role that allows access to create the command.</p>
+    /// <p>The IAM role that you must provide when using the <code>AWS-IoT-FleetWise</code> namespace. The role grants IoT Device Management the permission to access IoT FleetWise resources for generating the payload for the command. This field is not required when you use the <code>AWS-IoT</code> namespace.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The IAM role that allows access to create the command.</p>
+    /// <p>The IAM role that you must provide when using the <code>AWS-IoT-FleetWise</code> namespace. The role grants IoT Device Management the permission to access IoT FleetWise resources for generating the payload for the command. This field is not required when you use the <code>AWS-IoT</code> namespace.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The IAM role that allows access to create the command.</p>
+    /// <p>The IAM role that you must provide when using the <code>AWS-IoT-FleetWise</code> namespace. The role grants IoT Device Management the permission to access IoT FleetWise resources for generating the payload for the command. This field is not required when you use the <code>AWS-IoT</code> namespace.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }

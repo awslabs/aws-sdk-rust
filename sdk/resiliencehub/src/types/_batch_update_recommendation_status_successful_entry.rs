@@ -14,6 +14,8 @@ pub struct BatchUpdateRecommendationStatusSuccessfulEntry {
     pub item: ::std::option::Option<crate::types::UpdateRecommendationStatusItem>,
     /// <p>Indicates if the operational recommendation was successfully excluded.</p>
     pub excluded: bool,
+    /// <p>Indicates the identifier of an AppComponent.</p>
+    pub app_component_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the reason for excluding an operational recommendation.</p>
     pub exclude_reason: ::std::option::Option<crate::types::ExcludeRecommendationReason>,
 }
@@ -38,6 +40,10 @@ impl BatchUpdateRecommendationStatusSuccessfulEntry {
     pub fn excluded(&self) -> bool {
         self.excluded
     }
+    /// <p>Indicates the identifier of an AppComponent.</p>
+    pub fn app_component_id(&self) -> ::std::option::Option<&str> {
+        self.app_component_id.as_deref()
+    }
     /// <p>Indicates the reason for excluding an operational recommendation.</p>
     pub fn exclude_reason(&self) -> ::std::option::Option<&crate::types::ExcludeRecommendationReason> {
         self.exclude_reason.as_ref()
@@ -58,6 +64,7 @@ pub struct BatchUpdateRecommendationStatusSuccessfulEntryBuilder {
     pub(crate) reference_id: ::std::option::Option<::std::string::String>,
     pub(crate) item: ::std::option::Option<crate::types::UpdateRecommendationStatusItem>,
     pub(crate) excluded: ::std::option::Option<bool>,
+    pub(crate) app_component_id: ::std::option::Option<::std::string::String>,
     pub(crate) exclude_reason: ::std::option::Option<crate::types::ExcludeRecommendationReason>,
 }
 impl BatchUpdateRecommendationStatusSuccessfulEntryBuilder {
@@ -126,6 +133,20 @@ impl BatchUpdateRecommendationStatusSuccessfulEntryBuilder {
     pub fn get_excluded(&self) -> &::std::option::Option<bool> {
         &self.excluded
     }
+    /// <p>Indicates the identifier of an AppComponent.</p>
+    pub fn app_component_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.app_component_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Indicates the identifier of an AppComponent.</p>
+    pub fn set_app_component_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.app_component_id = input;
+        self
+    }
+    /// <p>Indicates the identifier of an AppComponent.</p>
+    pub fn get_app_component_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_component_id
+    }
     /// <p>Indicates the reason for excluding an operational recommendation.</p>
     pub fn exclude_reason(mut self, input: crate::types::ExcludeRecommendationReason) -> Self {
         self.exclude_reason = ::std::option::Option::Some(input);
@@ -168,6 +189,7 @@ impl BatchUpdateRecommendationStatusSuccessfulEntryBuilder {
                     "excluded was not specified but it is required when building BatchUpdateRecommendationStatusSuccessfulEntry",
                 )
             })?,
+            app_component_id: self.app_component_id,
             exclude_reason: self.exclude_reason,
         })
     }

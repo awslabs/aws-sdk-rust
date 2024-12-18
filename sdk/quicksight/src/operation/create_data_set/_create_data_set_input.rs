@@ -35,6 +35,8 @@ pub struct CreateDataSetInput {
     pub dataset_parameters: ::std::option::Option<::std::vec::Vec<crate::types::DatasetParameter>>,
     /// <p>When you create the dataset, Amazon QuickSight adds the dataset to these folders.</p>
     pub folder_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The configuration for the performance optimization of the dataset that contains a <code>UniqueKey</code> configuration.</p>
+    pub performance_configuration: ::std::option::Option<crate::types::PerformanceConfiguration>,
 }
 impl CreateDataSetInput {
     /// <p>The Amazon Web Services account ID.</p>
@@ -113,6 +115,10 @@ impl CreateDataSetInput {
     pub fn folder_arns(&self) -> &[::std::string::String] {
         self.folder_arns.as_deref().unwrap_or_default()
     }
+    /// <p>The configuration for the performance optimization of the dataset that contains a <code>UniqueKey</code> configuration.</p>
+    pub fn performance_configuration(&self) -> ::std::option::Option<&crate::types::PerformanceConfiguration> {
+        self.performance_configuration.as_ref()
+    }
 }
 impl CreateDataSetInput {
     /// Creates a new builder-style object to manufacture [`CreateDataSetInput`](crate::operation::create_data_set::CreateDataSetInput).
@@ -141,6 +147,7 @@ pub struct CreateDataSetInputBuilder {
     pub(crate) data_set_usage_configuration: ::std::option::Option<crate::types::DataSetUsageConfiguration>,
     pub(crate) dataset_parameters: ::std::option::Option<::std::vec::Vec<crate::types::DatasetParameter>>,
     pub(crate) folder_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) performance_configuration: ::std::option::Option<crate::types::PerformanceConfiguration>,
 }
 impl CreateDataSetInputBuilder {
     /// <p>The Amazon Web Services account ID.</p>
@@ -440,6 +447,20 @@ impl CreateDataSetInputBuilder {
     pub fn get_folder_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.folder_arns
     }
+    /// <p>The configuration for the performance optimization of the dataset that contains a <code>UniqueKey</code> configuration.</p>
+    pub fn performance_configuration(mut self, input: crate::types::PerformanceConfiguration) -> Self {
+        self.performance_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for the performance optimization of the dataset that contains a <code>UniqueKey</code> configuration.</p>
+    pub fn set_performance_configuration(mut self, input: ::std::option::Option<crate::types::PerformanceConfiguration>) -> Self {
+        self.performance_configuration = input;
+        self
+    }
+    /// <p>The configuration for the performance optimization of the dataset that contains a <code>UniqueKey</code> configuration.</p>
+    pub fn get_performance_configuration(&self) -> &::std::option::Option<crate::types::PerformanceConfiguration> {
+        &self.performance_configuration
+    }
     /// Consumes the builder and constructs a [`CreateDataSetInput`](crate::operation::create_data_set::CreateDataSetInput).
     pub fn build(
         self,
@@ -461,6 +482,7 @@ impl CreateDataSetInputBuilder {
             data_set_usage_configuration: self.data_set_usage_configuration,
             dataset_parameters: self.dataset_parameters,
             folder_arns: self.folder_arns,
+            performance_configuration: self.performance_configuration,
         })
     }
 }

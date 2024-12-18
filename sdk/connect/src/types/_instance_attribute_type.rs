@@ -20,6 +20,7 @@
 ///     InstanceAttributeType::EnhancedContactMonitoring => { /* ... */ },
 ///     InstanceAttributeType::HighVolumeOutbound => { /* ... */ },
 ///     InstanceAttributeType::InboundCalls => { /* ... */ },
+///     InstanceAttributeType::MultiPartyChatConference => { /* ... */ },
 ///     InstanceAttributeType::MultiPartyConference => { /* ... */ },
 ///     InstanceAttributeType::OutboundCalls => { /* ... */ },
 ///     InstanceAttributeType::UseCustomTtsVoices => { /* ... */ },
@@ -68,6 +69,8 @@ pub enum InstanceAttributeType {
     #[allow(missing_docs)] // documentation missing in model
     InboundCalls,
     #[allow(missing_docs)] // documentation missing in model
+    MultiPartyChatConference,
+    #[allow(missing_docs)] // documentation missing in model
     MultiPartyConference,
     #[allow(missing_docs)] // documentation missing in model
     OutboundCalls,
@@ -88,6 +91,7 @@ impl ::std::convert::From<&str> for InstanceAttributeType {
             "ENHANCED_CONTACT_MONITORING" => InstanceAttributeType::EnhancedContactMonitoring,
             "HIGH_VOLUME_OUTBOUND" => InstanceAttributeType::HighVolumeOutbound,
             "INBOUND_CALLS" => InstanceAttributeType::InboundCalls,
+            "MULTI_PARTY_CHAT_CONFERENCE" => InstanceAttributeType::MultiPartyChatConference,
             "MULTI_PARTY_CONFERENCE" => InstanceAttributeType::MultiPartyConference,
             "OUTBOUND_CALLS" => InstanceAttributeType::OutboundCalls,
             "USE_CUSTOM_TTS_VOICES" => InstanceAttributeType::UseCustomTtsVoices,
@@ -114,6 +118,7 @@ impl InstanceAttributeType {
             InstanceAttributeType::EnhancedContactMonitoring => "ENHANCED_CONTACT_MONITORING",
             InstanceAttributeType::HighVolumeOutbound => "HIGH_VOLUME_OUTBOUND",
             InstanceAttributeType::InboundCalls => "INBOUND_CALLS",
+            InstanceAttributeType::MultiPartyChatConference => "MULTI_PARTY_CHAT_CONFERENCE",
             InstanceAttributeType::MultiPartyConference => "MULTI_PARTY_CONFERENCE",
             InstanceAttributeType::OutboundCalls => "OUTBOUND_CALLS",
             InstanceAttributeType::UseCustomTtsVoices => "USE_CUSTOM_TTS_VOICES",
@@ -131,6 +136,7 @@ impl InstanceAttributeType {
             "ENHANCED_CONTACT_MONITORING",
             "HIGH_VOLUME_OUTBOUND",
             "INBOUND_CALLS",
+            "MULTI_PARTY_CHAT_CONFERENCE",
             "MULTI_PARTY_CONFERENCE",
             "OUTBOUND_CALLS",
             "USE_CUSTOM_TTS_VOICES",
@@ -165,6 +171,7 @@ impl ::std::fmt::Display for InstanceAttributeType {
             InstanceAttributeType::EnhancedContactMonitoring => write!(f, "ENHANCED_CONTACT_MONITORING"),
             InstanceAttributeType::HighVolumeOutbound => write!(f, "HIGH_VOLUME_OUTBOUND"),
             InstanceAttributeType::InboundCalls => write!(f, "INBOUND_CALLS"),
+            InstanceAttributeType::MultiPartyChatConference => write!(f, "MULTI_PARTY_CHAT_CONFERENCE"),
             InstanceAttributeType::MultiPartyConference => write!(f, "MULTI_PARTY_CONFERENCE"),
             InstanceAttributeType::OutboundCalls => write!(f, "OUTBOUND_CALLS"),
             InstanceAttributeType::UseCustomTtsVoices => write!(f, "USE_CUSTOM_TTS_VOICES"),

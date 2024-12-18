@@ -68,6 +68,50 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::cancel_participant_authentication::CancelParticipantAuthenticationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::cancel_participant_authentication::CancelParticipantAuthenticationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::cancel_participant_authentication::CancelParticipantAuthenticationError> for Error {
+    fn from(err: crate::operation::cancel_participant_authentication::CancelParticipantAuthenticationError) -> Self {
+        match err {
+            crate::operation::cancel_participant_authentication::CancelParticipantAuthenticationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::cancel_participant_authentication::CancelParticipantAuthenticationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::cancel_participant_authentication::CancelParticipantAuthenticationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::cancel_participant_authentication::CancelParticipantAuthenticationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::cancel_participant_authentication::CancelParticipantAuthenticationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::complete_attachment_upload::CompleteAttachmentUploadError, R>>
     for Error
 where
@@ -221,6 +265,33 @@ impl From<crate::operation::get_attachment::GetAttachmentError> for Error {
             crate::operation::get_attachment::GetAttachmentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_attachment::GetAttachmentError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_attachment::GetAttachmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_authentication_url::GetAuthenticationUrlError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_authentication_url::GetAuthenticationUrlError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_authentication_url::GetAuthenticationUrlError> for Error {
+    fn from(err: crate::operation::get_authentication_url::GetAuthenticationUrlError) -> Self {
+        match err {
+            crate::operation::get_authentication_url::GetAuthenticationUrlError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_authentication_url::GetAuthenticationUrlError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_authentication_url::GetAuthenticationUrlError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_authentication_url::GetAuthenticationUrlError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_authentication_url::GetAuthenticationUrlError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

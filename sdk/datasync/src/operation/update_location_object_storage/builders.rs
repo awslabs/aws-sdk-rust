@@ -22,7 +22,8 @@ impl crate::operation::update_location_object_storage::builders::UpdateLocationO
 }
 /// Fluent builder constructing a request to `UpdateLocationObjectStorage`.
 ///
-/// <p>Updates some parameters of an existing DataSync location for an object storage system.</p>
+/// <p>Modifies the following configuration parameters of the object storage transfer location that you're using with DataSync.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Configuring DataSync transfers with an object storage system</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateLocationObjectStorageFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

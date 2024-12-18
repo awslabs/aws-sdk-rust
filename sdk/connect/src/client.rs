@@ -657,6 +657,8 @@ mod update_instance_attribute;
 
 mod update_instance_storage_config;
 
+mod update_participant_authentication;
+
 mod update_participant_role_config;
 
 mod update_phone_number;

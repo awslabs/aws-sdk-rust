@@ -25,6 +25,10 @@ pub use crate::types::_stage::Stage;
 
 pub use crate::types::_app::App;
 
+pub use crate::types::_waf_configuration::WafConfiguration;
+
+pub use crate::types::_waf_status::WafStatus;
+
 pub use crate::types::_cache_config::CacheConfig;
 
 pub use crate::types::_cache_config_type::CacheConfigType;
@@ -108,6 +112,10 @@ mod _sub_domain;
 mod _sub_domain_setting;
 
 mod _update_status;
+
+mod _waf_configuration;
+
+mod _waf_status;
 
 mod _webhook;
 

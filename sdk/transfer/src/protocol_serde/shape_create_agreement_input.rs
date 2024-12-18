@@ -36,5 +36,11 @@ pub fn ser_create_agreement_input_input(
         }
         array_9.finish();
     }
+    if let Some(var_12) = &input.preserve_filename {
+        object.key("PreserveFilename").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.enforce_message_signing {
+        object.key("EnforceMessageSigning").string(var_13.as_str());
+    }
     Ok(())
 }

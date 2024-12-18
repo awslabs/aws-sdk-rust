@@ -17,6 +17,9 @@
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
 #![cfg_attr(docsrs, feature(doc_auto_cfg))]
+//!   - [Participant Service actions](https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Participant_Service.html)
+//!   - [Participant Service data types](https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_Connect_Participant_Service.html)
+//!
 //! Amazon Connect is an easy-to-use omnichannel cloud contact center service that enables companies of any size to deliver superior customer service at a lower cost. Amazon Connect communications capabilities make it easy for companies to deliver personalized interactions across communication channels, including chat.
 //!
 //! Use the Amazon Connect Participant Service to manage participants (for example, agents, customers, and managers listening in), and to send messages and events within a chat contact. The APIs in the service enable the following: sending chat messages, attachment sharing, managing a participant's connection state and message events, and retrieving chat transcripts.
@@ -33,7 +36,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-connectparticipant = "1.52.0"
+//! aws-sdk-connectparticipant = "1.53.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -150,14 +153,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CompleteAttachmentUpload`](crate::operation::complete_attachment_upload) operation has
-/// a [`Client::complete_attachment_upload`], function which returns a builder for that operation.
+/// For example, the [`CancelParticipantAuthentication`](crate::operation::cancel_participant_authentication) operation has
+/// a [`Client::cancel_participant_authentication`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.complete_attachment_upload()
-///     .client_token("example")
+/// let result = client.cancel_participant_authentication()
+///     .session_id("example")
 ///     .send()
 ///     .await;
 /// ```

@@ -27,6 +27,8 @@ pub use crate::types::_discovery_server_configuration::DiscoveryServerConfigurat
 
 pub use crate::types::_smb_mount_options::SmbMountOptionsBuilder;
 
+pub use crate::types::_s3_config::S3ConfigBuilder;
+
 pub use crate::types::_nfs_mount_options::NfsMountOptionsBuilder;
 
 pub use crate::types::_on_prem_config::OnPremConfigBuilder;
@@ -34,6 +36,16 @@ pub use crate::types::_on_prem_config::OnPremConfigBuilder;
 pub use crate::types::_qop_configuration::QopConfigurationBuilder;
 
 pub use crate::types::_hdfs_name_node::HdfsNameNodeBuilder;
+
+pub use crate::types::_fsx_protocol::FsxProtocolBuilder;
+
+pub use crate::types::_fsx_protocol_smb::FsxProtocolSmbBuilder;
+
+pub use crate::types::_fsx_protocol_nfs::FsxProtocolNfsBuilder;
+
+pub use crate::types::_fsx_update_protocol::FsxUpdateProtocolBuilder;
+
+pub use crate::types::_fsx_update_protocol_smb::FsxUpdateProtocolSmbBuilder;
 
 pub use crate::types::_azure_blob_sas_configuration::AzureBlobSasConfigurationBuilder;
 
@@ -90,14 +102,6 @@ pub use crate::types::_latency::LatencyBuilder;
 pub use crate::types::_throughput::ThroughputBuilder;
 
 pub use crate::types::_iops::IopsBuilder;
-
-pub use crate::types::_s3_config::S3ConfigBuilder;
-
-pub use crate::types::_fsx_protocol::FsxProtocolBuilder;
-
-pub use crate::types::_fsx_protocol_smb::FsxProtocolSmbBuilder;
-
-pub use crate::types::_fsx_protocol_nfs::FsxProtocolNfsBuilder;
 
 pub use crate::types::_ec2_config::Ec2ConfigBuilder;
 

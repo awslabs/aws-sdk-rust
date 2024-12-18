@@ -517,6 +517,8 @@ pub(crate) mod shape_update_instance_attribute;
 
 pub(crate) mod shape_update_instance_storage_config;
 
+pub(crate) mod shape_update_participant_authentication;
+
 pub(crate) mod shape_update_participant_role_config;
 
 pub(crate) mod shape_update_phone_number;
@@ -896,6 +898,8 @@ pub(crate) mod shape_update_hours_of_operation_override_input;
 pub(crate) mod shape_update_instance_attribute_input;
 
 pub(crate) mod shape_update_instance_storage_config_input;
+
+pub(crate) mod shape_update_participant_authentication_input;
 
 pub(crate) mod shape_update_participant_role_config_input;
 

@@ -23,6 +23,8 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_cancel_participant_authentication;
+
 pub(crate) mod shape_complete_attachment_upload;
 
 pub(crate) mod shape_create_participant_connection;
@@ -32,6 +34,8 @@ pub(crate) mod shape_describe_view;
 pub(crate) mod shape_disconnect_participant;
 
 pub(crate) mod shape_get_attachment;
+
+pub(crate) mod shape_get_authentication_url;
 
 pub(crate) mod shape_get_transcript;
 
@@ -51,6 +55,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 
 pub(crate) mod shape_access_denied_exception;
 
+pub(crate) mod shape_cancel_participant_authentication_input;
+
 pub(crate) mod shape_complete_attachment_upload_input;
 
 pub(crate) mod shape_conflict_exception;
@@ -60,6 +66,8 @@ pub(crate) mod shape_create_participant_connection_input;
 pub(crate) mod shape_disconnect_participant_input;
 
 pub(crate) mod shape_get_attachment_input;
+
+pub(crate) mod shape_get_authentication_url_input;
 
 pub(crate) mod shape_get_transcript_input;
 

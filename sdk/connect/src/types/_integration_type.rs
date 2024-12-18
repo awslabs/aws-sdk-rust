@@ -16,6 +16,7 @@
 ///     IntegrationType::Application => { /* ... */ },
 ///     IntegrationType::CallTransferConnector => { /* ... */ },
 ///     IntegrationType::CasesDomain => { /* ... */ },
+///     IntegrationType::CognitoUserPool => { /* ... */ },
 ///     IntegrationType::Event => { /* ... */ },
 ///     IntegrationType::FileScanner => { /* ... */ },
 ///     IntegrationType::PinpointApp => { /* ... */ },
@@ -62,6 +63,8 @@ pub enum IntegrationType {
     #[allow(missing_docs)] // documentation missing in model
     CasesDomain,
     #[allow(missing_docs)] // documentation missing in model
+    CognitoUserPool,
+    #[allow(missing_docs)] // documentation missing in model
     Event,
     #[allow(missing_docs)] // documentation missing in model
     FileScanner,
@@ -90,6 +93,7 @@ impl ::std::convert::From<&str> for IntegrationType {
             "APPLICATION" => IntegrationType::Application,
             "CALL_TRANSFER_CONNECTOR" => IntegrationType::CallTransferConnector,
             "CASES_DOMAIN" => IntegrationType::CasesDomain,
+            "COGNITO_USER_POOL" => IntegrationType::CognitoUserPool,
             "EVENT" => IntegrationType::Event,
             "FILE_SCANNER" => IntegrationType::FileScanner,
             "PINPOINT_APP" => IntegrationType::PinpointApp,
@@ -118,6 +122,7 @@ impl IntegrationType {
             IntegrationType::Application => "APPLICATION",
             IntegrationType::CallTransferConnector => "CALL_TRANSFER_CONNECTOR",
             IntegrationType::CasesDomain => "CASES_DOMAIN",
+            IntegrationType::CognitoUserPool => "COGNITO_USER_POOL",
             IntegrationType::Event => "EVENT",
             IntegrationType::FileScanner => "FILE_SCANNER",
             IntegrationType::PinpointApp => "PINPOINT_APP",
@@ -137,6 +142,7 @@ impl IntegrationType {
             "APPLICATION",
             "CALL_TRANSFER_CONNECTOR",
             "CASES_DOMAIN",
+            "COGNITO_USER_POOL",
             "EVENT",
             "FILE_SCANNER",
             "PINPOINT_APP",
@@ -173,6 +179,7 @@ impl ::std::fmt::Display for IntegrationType {
             IntegrationType::Application => write!(f, "APPLICATION"),
             IntegrationType::CallTransferConnector => write!(f, "CALL_TRANSFER_CONNECTOR"),
             IntegrationType::CasesDomain => write!(f, "CASES_DOMAIN"),
+            IntegrationType::CognitoUserPool => write!(f, "COGNITO_USER_POOL"),
             IntegrationType::Event => write!(f, "EVENT"),
             IntegrationType::FileScanner => write!(f, "FILE_SCANNER"),
             IntegrationType::PinpointApp => write!(f, "PINPOINT_APP"),

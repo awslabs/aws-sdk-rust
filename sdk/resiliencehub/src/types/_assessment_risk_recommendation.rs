@@ -16,7 +16,7 @@ pub struct AssessmentRiskRecommendation {
     /// <p>This property is available only in the US East (N. Virginia) Region.</p>
     /// </note>
     pub recommendation: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates the Application Components (AppComponents) that were assessed as part of the assessnent and are associated with the identified risk and recommendation.</p><note>
+    /// <p>Indicates the Application Components (AppComponents) that were assessed as part of the assessment and are associated with the identified risk and recommendation.</p><note>
     /// <p>This property is available only in the US East (N. Virginia) Region.</p>
     /// </note>
     pub app_components: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -34,7 +34,7 @@ impl AssessmentRiskRecommendation {
     pub fn recommendation(&self) -> ::std::option::Option<&str> {
         self.recommendation.as_deref()
     }
-    /// <p>Indicates the Application Components (AppComponents) that were assessed as part of the assessnent and are associated with the identified risk and recommendation.</p><note>
+    /// <p>Indicates the Application Components (AppComponents) that were assessed as part of the assessment and are associated with the identified risk and recommendation.</p><note>
     /// <p>This property is available only in the US East (N. Virginia) Region.</p>
     /// </note>
     ///
@@ -103,7 +103,7 @@ impl AssessmentRiskRecommendationBuilder {
     ///
     /// To override the contents of this collection use [`set_app_components`](Self::set_app_components).
     ///
-    /// <p>Indicates the Application Components (AppComponents) that were assessed as part of the assessnent and are associated with the identified risk and recommendation.</p><note>
+    /// <p>Indicates the Application Components (AppComponents) that were assessed as part of the assessment and are associated with the identified risk and recommendation.</p><note>
     /// <p>This property is available only in the US East (N. Virginia) Region.</p>
     /// </note>
     pub fn app_components(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -112,14 +112,14 @@ impl AssessmentRiskRecommendationBuilder {
         self.app_components = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Indicates the Application Components (AppComponents) that were assessed as part of the assessnent and are associated with the identified risk and recommendation.</p><note>
+    /// <p>Indicates the Application Components (AppComponents) that were assessed as part of the assessment and are associated with the identified risk and recommendation.</p><note>
     /// <p>This property is available only in the US East (N. Virginia) Region.</p>
     /// </note>
     pub fn set_app_components(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.app_components = input;
         self
     }
-    /// <p>Indicates the Application Components (AppComponents) that were assessed as part of the assessnent and are associated with the identified risk and recommendation.</p><note>
+    /// <p>Indicates the Application Components (AppComponents) that were assessed as part of the assessment and are associated with the identified risk and recommendation.</p><note>
     /// <p>This property is available only in the US East (N. Virginia) Region.</p>
     /// </note>
     pub fn get_app_components(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {

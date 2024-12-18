@@ -19,9 +19,9 @@ pub struct App {
     /// <p>The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.</p>
     /// <p>If you are deploying an SSG only app with Next.js 14 or later, you must use the platform type <code>WEB_COMPUTE</code>.</p>
     pub platform: crate::types::Platform,
-    /// <p>Creates a date and time for the Amplify app.</p>
+    /// <p>A timestamp of when Amplify created the application.</p>
     pub create_time: ::aws_smithy_types::DateTime,
-    /// <p>Updates the date and time for the Amplify app.</p>
+    /// <p>A timestamp of when Amplify updated the application.</p>
     pub update_time: ::aws_smithy_types::DateTime,
     /// <p>The AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) of the Amplify app.</p>
     pub iam_service_role_arn: ::std::option::Option<::std::string::String>,
@@ -59,6 +59,10 @@ pub struct App {
     pub repository_clone_method: ::std::option::Option<crate::types::RepositoryCloneMethod>,
     /// <p>The cache configuration for the Amplify app. If you don't specify the cache configuration <code>type</code>, Amplify uses the default <code>AMPLIFY_MANAGED</code> setting.</p>
     pub cache_config: ::std::option::Option<crate::types::CacheConfig>,
+    /// <p>A timestamp of when Amplify created the webhook in your Git repository.</p>
+    pub webhook_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Describes the Firewall configuration for the Amplify app. Firewall support enables you to protect your hosted applications with a direct integration with WAF.</p>
+    pub waf_configuration: ::std::option::Option<crate::types::WafConfiguration>,
 }
 impl App {
     /// <p>The unique ID of the Amplify app.</p>
@@ -95,11 +99,11 @@ impl App {
     pub fn platform(&self) -> &crate::types::Platform {
         &self.platform
     }
-    /// <p>Creates a date and time for the Amplify app.</p>
+    /// <p>A timestamp of when Amplify created the application.</p>
     pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
         &self.create_time
     }
-    /// <p>Updates the date and time for the Amplify app.</p>
+    /// <p>A timestamp of when Amplify updated the application.</p>
     pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
         &self.update_time
     }
@@ -176,6 +180,14 @@ impl App {
     pub fn cache_config(&self) -> ::std::option::Option<&crate::types::CacheConfig> {
         self.cache_config.as_ref()
     }
+    /// <p>A timestamp of when Amplify created the webhook in your Git repository.</p>
+    pub fn webhook_create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.webhook_create_time.as_ref()
+    }
+    /// <p>Describes the Firewall configuration for the Amplify app. Firewall support enables you to protect your hosted applications with a direct integration with WAF.</p>
+    pub fn waf_configuration(&self) -> ::std::option::Option<&crate::types::WafConfiguration> {
+        self.waf_configuration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for App {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -205,6 +217,8 @@ impl ::std::fmt::Debug for App {
         formatter.field("auto_branch_creation_config", &self.auto_branch_creation_config);
         formatter.field("repository_clone_method", &self.repository_clone_method);
         formatter.field("cache_config", &self.cache_config);
+        formatter.field("webhook_create_time", &self.webhook_create_time);
+        formatter.field("waf_configuration", &self.waf_configuration);
         formatter.finish()
     }
 }
@@ -244,6 +258,8 @@ pub struct AppBuilder {
     pub(crate) auto_branch_creation_config: ::std::option::Option<crate::types::AutoBranchCreationConfig>,
     pub(crate) repository_clone_method: ::std::option::Option<crate::types::RepositoryCloneMethod>,
     pub(crate) cache_config: ::std::option::Option<crate::types::CacheConfig>,
+    pub(crate) webhook_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) waf_configuration: ::std::option::Option<crate::types::WafConfiguration>,
 }
 impl AppBuilder {
     /// <p>The unique ID of the Amplify app.</p>
@@ -359,33 +375,33 @@ impl AppBuilder {
     pub fn get_platform(&self) -> &::std::option::Option<crate::types::Platform> {
         &self.platform
     }
-    /// <p>Creates a date and time for the Amplify app.</p>
+    /// <p>A timestamp of when Amplify created the application.</p>
     /// This field is required.
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Creates a date and time for the Amplify app.</p>
+    /// <p>A timestamp of when Amplify created the application.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_time = input;
         self
     }
-    /// <p>Creates a date and time for the Amplify app.</p>
+    /// <p>A timestamp of when Amplify created the application.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.create_time
     }
-    /// <p>Updates the date and time for the Amplify app.</p>
+    /// <p>A timestamp of when Amplify updated the application.</p>
     /// This field is required.
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Updates the date and time for the Amplify app.</p>
+    /// <p>A timestamp of when Amplify updated the application.</p>
     pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_time = input;
         self
     }
-    /// <p>Updates the date and time for the Amplify app.</p>
+    /// <p>A timestamp of when Amplify updated the application.</p>
     pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.update_time
     }
@@ -653,6 +669,34 @@ impl AppBuilder {
     pub fn get_cache_config(&self) -> &::std::option::Option<crate::types::CacheConfig> {
         &self.cache_config
     }
+    /// <p>A timestamp of when Amplify created the webhook in your Git repository.</p>
+    pub fn webhook_create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.webhook_create_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A timestamp of when Amplify created the webhook in your Git repository.</p>
+    pub fn set_webhook_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.webhook_create_time = input;
+        self
+    }
+    /// <p>A timestamp of when Amplify created the webhook in your Git repository.</p>
+    pub fn get_webhook_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.webhook_create_time
+    }
+    /// <p>Describes the Firewall configuration for the Amplify app. Firewall support enables you to protect your hosted applications with a direct integration with WAF.</p>
+    pub fn waf_configuration(mut self, input: crate::types::WafConfiguration) -> Self {
+        self.waf_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes the Firewall configuration for the Amplify app. Firewall support enables you to protect your hosted applications with a direct integration with WAF.</p>
+    pub fn set_waf_configuration(mut self, input: ::std::option::Option<crate::types::WafConfiguration>) -> Self {
+        self.waf_configuration = input;
+        self
+    }
+    /// <p>Describes the Firewall configuration for the Amplify app. Firewall support enables you to protect your hosted applications with a direct integration with WAF.</p>
+    pub fn get_waf_configuration(&self) -> &::std::option::Option<crate::types::WafConfiguration> {
+        &self.waf_configuration
+    }
     /// Consumes the builder and constructs a [`App`](crate::types::App).
     /// This method will fail if any of the following fields are not set:
     /// - [`app_id`](crate::types::builders::AppBuilder::app_id)
@@ -751,6 +795,8 @@ impl AppBuilder {
             auto_branch_creation_config: self.auto_branch_creation_config,
             repository_clone_method: self.repository_clone_method,
             cache_config: self.cache_config,
+            webhook_create_time: self.webhook_create_time,
+            waf_configuration: self.waf_configuration,
         })
     }
 }
@@ -782,6 +828,8 @@ impl ::std::fmt::Debug for AppBuilder {
         formatter.field("auto_branch_creation_config", &self.auto_branch_creation_config);
         formatter.field("repository_clone_method", &self.repository_clone_method);
         formatter.field("cache_config", &self.cache_config);
+        formatter.field("webhook_create_time", &self.webhook_create_time);
+        formatter.field("waf_configuration", &self.waf_configuration);
         formatter.finish()
     }
 }

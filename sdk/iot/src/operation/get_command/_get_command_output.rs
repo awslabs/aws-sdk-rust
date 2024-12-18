@@ -23,7 +23,7 @@ pub struct GetCommandOutput {
     pub mandatory_parameters: ::std::option::Option<::std::vec::Vec<crate::types::CommandParameter>>,
     /// <p>The payload object that you provided for the command.</p>
     pub payload: ::std::option::Option<crate::types::CommandPayload>,
-    /// <p>The IAM role that allows access to retrieve information about the command.</p>
+    /// <p>The IAM role that you provided when creating the command with <code>AWS-IoT-FleetWise</code> as the namespace.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp, when the command was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -72,7 +72,7 @@ impl GetCommandOutput {
     pub fn payload(&self) -> ::std::option::Option<&crate::types::CommandPayload> {
         self.payload.as_ref()
     }
-    /// <p>The IAM role that allows access to retrieve information about the command.</p>
+    /// <p>The IAM role that you provided when creating the command with <code>AWS-IoT-FleetWise</code> as the namespace.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -246,17 +246,17 @@ impl GetCommandOutputBuilder {
     pub fn get_payload(&self) -> &::std::option::Option<crate::types::CommandPayload> {
         &self.payload
     }
-    /// <p>The IAM role that allows access to retrieve information about the command.</p>
+    /// <p>The IAM role that you provided when creating the command with <code>AWS-IoT-FleetWise</code> as the namespace.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The IAM role that allows access to retrieve information about the command.</p>
+    /// <p>The IAM role that you provided when creating the command with <code>AWS-IoT-FleetWise</code> as the namespace.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The IAM role that allows access to retrieve information about the command.</p>
+    /// <p>The IAM role that you provided when creating the command with <code>AWS-IoT-FleetWise</code> as the namespace.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }

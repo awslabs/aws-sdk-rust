@@ -14,9 +14,9 @@ pub struct Webhook {
     pub branch_name: ::std::string::String,
     /// <p>The description for a webhook.</p>
     pub description: ::std::string::String,
-    /// <p>The create date and time for a webhook.</p>
+    /// <p>A timestamp of when Amplify created the webhook in your Git repository.</p>
     pub create_time: ::aws_smithy_types::DateTime,
-    /// <p>Updates the date and time for a webhook.</p>
+    /// <p>A timestamp of when Amplify updated the webhook in your Git repository.</p>
     pub update_time: ::aws_smithy_types::DateTime,
 }
 impl Webhook {
@@ -45,11 +45,11 @@ impl Webhook {
         use std::ops::Deref;
         self.description.deref()
     }
-    /// <p>The create date and time for a webhook.</p>
+    /// <p>A timestamp of when Amplify created the webhook in your Git repository.</p>
     pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
         &self.create_time
     }
-    /// <p>Updates the date and time for a webhook.</p>
+    /// <p>A timestamp of when Amplify updated the webhook in your Git repository.</p>
     pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
         &self.update_time
     }
@@ -149,33 +149,33 @@ impl WebhookBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The create date and time for a webhook.</p>
+    /// <p>A timestamp of when Amplify created the webhook in your Git repository.</p>
     /// This field is required.
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The create date and time for a webhook.</p>
+    /// <p>A timestamp of when Amplify created the webhook in your Git repository.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_time = input;
         self
     }
-    /// <p>The create date and time for a webhook.</p>
+    /// <p>A timestamp of when Amplify created the webhook in your Git repository.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.create_time
     }
-    /// <p>Updates the date and time for a webhook.</p>
+    /// <p>A timestamp of when Amplify updated the webhook in your Git repository.</p>
     /// This field is required.
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Updates the date and time for a webhook.</p>
+    /// <p>A timestamp of when Amplify updated the webhook in your Git repository.</p>
     pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_time = input;
         self
     }
-    /// <p>Updates the date and time for a webhook.</p>
+    /// <p>A timestamp of when Amplify updated the webhook in your Git repository.</p>
     pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.update_time
     }

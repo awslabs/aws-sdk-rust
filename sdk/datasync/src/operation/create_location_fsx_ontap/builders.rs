@@ -180,7 +180,7 @@ impl CreateLocationFsxOntapFluentBuilder {
     pub fn get_storage_virtual_machine_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_storage_virtual_machine_arn()
     }
-    /// <p>Specifies a path to the file share in the SVM where you'll copy your data.</p>
+    /// <p>Specifies a path to the file share in the SVM where you want to transfer data to or from.</p>
     /// <p>You can specify a junction path (also known as a mount point), qtree path (for NFS file shares), or share name (for SMB file shares). For example, your mount path might be <code>/vol1</code>, <code>/vol1/tree1</code>, or <code>/share1</code>.</p><note>
     /// <p>Don't specify a junction path in the SVM's root volume. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing FSx for ONTAP storage virtual machines</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
     /// </note>
@@ -188,7 +188,7 @@ impl CreateLocationFsxOntapFluentBuilder {
         self.inner = self.inner.subdirectory(input.into());
         self
     }
-    /// <p>Specifies a path to the file share in the SVM where you'll copy your data.</p>
+    /// <p>Specifies a path to the file share in the SVM where you want to transfer data to or from.</p>
     /// <p>You can specify a junction path (also known as a mount point), qtree path (for NFS file shares), or share name (for SMB file shares). For example, your mount path might be <code>/vol1</code>, <code>/vol1/tree1</code>, or <code>/share1</code>.</p><note>
     /// <p>Don't specify a junction path in the SVM's root volume. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing FSx for ONTAP storage virtual machines</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
     /// </note>
@@ -196,7 +196,7 @@ impl CreateLocationFsxOntapFluentBuilder {
         self.inner = self.inner.set_subdirectory(input);
         self
     }
-    /// <p>Specifies a path to the file share in the SVM where you'll copy your data.</p>
+    /// <p>Specifies a path to the file share in the SVM where you want to transfer data to or from.</p>
     /// <p>You can specify a junction path (also known as a mount point), qtree path (for NFS file shares), or share name (for SMB file shares). For example, your mount path might be <code>/vol1</code>, <code>/vol1/tree1</code>, or <code>/share1</code>.</p><note>
     /// <p>Don't specify a junction path in the SVM's root volume. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing FSx for ONTAP storage virtual machines</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
     /// </note>

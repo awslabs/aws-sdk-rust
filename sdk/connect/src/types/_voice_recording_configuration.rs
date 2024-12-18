@@ -7,6 +7,7 @@ pub struct VoiceRecordingConfiguration {
     /// <p>Identifies which track is being recorded.</p>
     pub voice_recording_track: ::std::option::Option<crate::types::VoiceRecordingTrack>,
     /// <p>Identifies which IVR track is being recorded.</p>
+    /// <p>One and only one of the track configurations should be presented in the request.</p>
     pub ivr_recording_track: ::std::option::Option<crate::types::IvrRecordingTrack>,
 }
 impl VoiceRecordingConfiguration {
@@ -15,6 +16,7 @@ impl VoiceRecordingConfiguration {
         self.voice_recording_track.as_ref()
     }
     /// <p>Identifies which IVR track is being recorded.</p>
+    /// <p>One and only one of the track configurations should be presented in the request.</p>
     pub fn ivr_recording_track(&self) -> ::std::option::Option<&crate::types::IvrRecordingTrack> {
         self.ivr_recording_track.as_ref()
     }
@@ -49,16 +51,19 @@ impl VoiceRecordingConfigurationBuilder {
         &self.voice_recording_track
     }
     /// <p>Identifies which IVR track is being recorded.</p>
+    /// <p>One and only one of the track configurations should be presented in the request.</p>
     pub fn ivr_recording_track(mut self, input: crate::types::IvrRecordingTrack) -> Self {
         self.ivr_recording_track = ::std::option::Option::Some(input);
         self
     }
     /// <p>Identifies which IVR track is being recorded.</p>
+    /// <p>One and only one of the track configurations should be presented in the request.</p>
     pub fn set_ivr_recording_track(mut self, input: ::std::option::Option<crate::types::IvrRecordingTrack>) -> Self {
         self.ivr_recording_track = input;
         self
     }
     /// <p>Identifies which IVR track is being recorded.</p>
+    /// <p>One and only one of the track configurations should be presented in the request.</p>
     pub fn get_ivr_recording_track(&self) -> &::std::option::Option<crate::types::IvrRecordingTrack> {
         &self.ivr_recording_track
     }

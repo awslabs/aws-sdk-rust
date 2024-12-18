@@ -38,6 +38,8 @@ pub struct DataSet {
     pub data_set_usage_configuration: ::std::option::Option<crate::types::DataSetUsageConfiguration>,
     /// <p>The parameters that are declared in a dataset.</p>
     pub dataset_parameters: ::std::option::Option<::std::vec::Vec<crate::types::DatasetParameter>>,
+    /// <p>The performance optimization configuration of a dataset.</p>
+    pub performance_configuration: ::std::option::Option<crate::types::PerformanceConfiguration>,
 }
 impl DataSet {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -116,6 +118,10 @@ impl DataSet {
     pub fn dataset_parameters(&self) -> &[crate::types::DatasetParameter] {
         self.dataset_parameters.as_deref().unwrap_or_default()
     }
+    /// <p>The performance optimization configuration of a dataset.</p>
+    pub fn performance_configuration(&self) -> ::std::option::Option<&crate::types::PerformanceConfiguration> {
+        self.performance_configuration.as_ref()
+    }
 }
 impl DataSet {
     /// Creates a new builder-style object to manufacture [`DataSet`](crate::types::DataSet).
@@ -145,6 +151,7 @@ pub struct DataSetBuilder {
     pub(crate) column_level_permission_rules: ::std::option::Option<::std::vec::Vec<crate::types::ColumnLevelPermissionRule>>,
     pub(crate) data_set_usage_configuration: ::std::option::Option<crate::types::DataSetUsageConfiguration>,
     pub(crate) dataset_parameters: ::std::option::Option<::std::vec::Vec<crate::types::DatasetParameter>>,
+    pub(crate) performance_configuration: ::std::option::Option<crate::types::PerformanceConfiguration>,
 }
 impl DataSetBuilder {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -442,6 +449,20 @@ impl DataSetBuilder {
     pub fn get_dataset_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetParameter>> {
         &self.dataset_parameters
     }
+    /// <p>The performance optimization configuration of a dataset.</p>
+    pub fn performance_configuration(mut self, input: crate::types::PerformanceConfiguration) -> Self {
+        self.performance_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The performance optimization configuration of a dataset.</p>
+    pub fn set_performance_configuration(mut self, input: ::std::option::Option<crate::types::PerformanceConfiguration>) -> Self {
+        self.performance_configuration = input;
+        self
+    }
+    /// <p>The performance optimization configuration of a dataset.</p>
+    pub fn get_performance_configuration(&self) -> &::std::option::Option<crate::types::PerformanceConfiguration> {
+        &self.performance_configuration
+    }
     /// Consumes the builder and constructs a [`DataSet`](crate::types::DataSet).
     pub fn build(self) -> crate::types::DataSet {
         crate::types::DataSet {
@@ -462,6 +483,7 @@ impl DataSetBuilder {
             column_level_permission_rules: self.column_level_permission_rules,
             data_set_usage_configuration: self.data_set_usage_configuration,
             dataset_parameters: self.dataset_parameters,
+            performance_configuration: self.performance_configuration,
         }
     }
 }

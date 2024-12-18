@@ -453,6 +453,8 @@ mod get_registration_code;
 
 mod get_statistics;
 
+mod get_thing_connectivity_data;
+
 mod get_topic_rule;
 
 mod get_topic_rule_destination;

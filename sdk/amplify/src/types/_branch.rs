@@ -18,9 +18,9 @@ pub struct Branch {
     pub display_name: ::std::string::String,
     /// <p>Enables notifications for a branch that is part of an Amplify app.</p>
     pub enable_notification: bool,
-    /// <p>The creation date and time for a branch that is part of an Amplify app.</p>
+    /// <p>A timestamp of when Amplify created the branch.</p>
     pub create_time: ::aws_smithy_types::DateTime,
-    /// <p>The last updated date and time for a branch that is part of an Amplify app.</p>
+    /// <p>A timestamp for the last updated time for a branch.</p>
     pub update_time: ::aws_smithy_types::DateTime,
     /// <p>The environment variables specific to a branch of an Amplify app.</p>
     pub environment_variables: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
@@ -97,11 +97,11 @@ impl Branch {
     pub fn enable_notification(&self) -> bool {
         self.enable_notification
     }
-    /// <p>The creation date and time for a branch that is part of an Amplify app.</p>
+    /// <p>A timestamp of when Amplify created the branch.</p>
     pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
         &self.create_time
     }
-    /// <p>The last updated date and time for a branch that is part of an Amplify app.</p>
+    /// <p>A timestamp for the last updated time for a branch.</p>
     pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
         &self.update_time
     }
@@ -377,33 +377,33 @@ impl BranchBuilder {
     pub fn get_enable_notification(&self) -> &::std::option::Option<bool> {
         &self.enable_notification
     }
-    /// <p>The creation date and time for a branch that is part of an Amplify app.</p>
+    /// <p>A timestamp of when Amplify created the branch.</p>
     /// This field is required.
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The creation date and time for a branch that is part of an Amplify app.</p>
+    /// <p>A timestamp of when Amplify created the branch.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_time = input;
         self
     }
-    /// <p>The creation date and time for a branch that is part of an Amplify app.</p>
+    /// <p>A timestamp of when Amplify created the branch.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.create_time
     }
-    /// <p>The last updated date and time for a branch that is part of an Amplify app.</p>
+    /// <p>A timestamp for the last updated time for a branch.</p>
     /// This field is required.
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The last updated date and time for a branch that is part of an Amplify app.</p>
+    /// <p>A timestamp for the last updated time for a branch.</p>
     pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_time = input;
         self
     }
-    /// <p>The last updated date and time for a branch that is part of an Amplify app.</p>
+    /// <p>A timestamp for the last updated time for a branch.</p>
     pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.update_time
     }

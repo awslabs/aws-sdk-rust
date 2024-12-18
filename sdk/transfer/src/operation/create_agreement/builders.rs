@@ -244,4 +244,68 @@ impl CreateAgreementFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
+    /// <p>Determines whether or not Transfer Family appends a unique string of characters to the end of the AS2 message payload filename when saving it.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code>: the filename provided by your trading parter is preserved when the file is saved.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> (default value): when Transfer Family saves the file, the filename is adjusted, as described in <a href="https://docs.aws.amazon.com/transfer/latest/userguide/send-as2-messages.html#file-names-as2">File names and locations</a>.</p></li>
+    /// </ul>
+    pub fn preserve_filename(mut self, input: crate::types::PreserveFilenameType) -> Self {
+        self.inner = self.inner.preserve_filename(input);
+        self
+    }
+    /// <p>Determines whether or not Transfer Family appends a unique string of characters to the end of the AS2 message payload filename when saving it.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code>: the filename provided by your trading parter is preserved when the file is saved.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> (default value): when Transfer Family saves the file, the filename is adjusted, as described in <a href="https://docs.aws.amazon.com/transfer/latest/userguide/send-as2-messages.html#file-names-as2">File names and locations</a>.</p></li>
+    /// </ul>
+    pub fn set_preserve_filename(mut self, input: ::std::option::Option<crate::types::PreserveFilenameType>) -> Self {
+        self.inner = self.inner.set_preserve_filename(input);
+        self
+    }
+    /// <p>Determines whether or not Transfer Family appends a unique string of characters to the end of the AS2 message payload filename when saving it.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code>: the filename provided by your trading parter is preserved when the file is saved.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> (default value): when Transfer Family saves the file, the filename is adjusted, as described in <a href="https://docs.aws.amazon.com/transfer/latest/userguide/send-as2-messages.html#file-names-as2">File names and locations</a>.</p></li>
+    /// </ul>
+    pub fn get_preserve_filename(&self) -> &::std::option::Option<crate::types::PreserveFilenameType> {
+        self.inner.get_preserve_filename()
+    }
+    /// <p>Determines whether or not unsigned messages from your trading partners will be accepted.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code>: Transfer Family rejects unsigned messages from your trading partner.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> (default value): Transfer Family accepts unsigned messages from your trading partner.</p></li>
+    /// </ul>
+    pub fn enforce_message_signing(mut self, input: crate::types::EnforceMessageSigningType) -> Self {
+        self.inner = self.inner.enforce_message_signing(input);
+        self
+    }
+    /// <p>Determines whether or not unsigned messages from your trading partners will be accepted.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code>: Transfer Family rejects unsigned messages from your trading partner.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> (default value): Transfer Family accepts unsigned messages from your trading partner.</p></li>
+    /// </ul>
+    pub fn set_enforce_message_signing(mut self, input: ::std::option::Option<crate::types::EnforceMessageSigningType>) -> Self {
+        self.inner = self.inner.set_enforce_message_signing(input);
+        self
+    }
+    /// <p>Determines whether or not unsigned messages from your trading partners will be accepted.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code>: Transfer Family rejects unsigned messages from your trading partner.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> (default value): Transfer Family accepts unsigned messages from your trading partner.</p></li>
+    /// </ul>
+    pub fn get_enforce_message_signing(&self) -> &::std::option::Option<crate::types::EnforceMessageSigningType> {
+        self.inner.get_enforce_message_signing()
+    }
 }

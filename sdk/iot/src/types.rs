@@ -481,6 +481,8 @@ pub use crate::types::_http_url_destination_properties::HttpUrlDestinationProper
 
 pub use crate::types::_topic_rule::TopicRule;
 
+pub use crate::types::_disconnect_reason_value::DisconnectReasonValue;
+
 pub use crate::types::_statistics::Statistics;
 
 pub use crate::types::_percent_pair::PercentPair;
@@ -828,6 +830,8 @@ mod _device_defender_indexing_mode;
 mod _dimension_type;
 
 mod _dimension_value_operator;
+
+mod _disconnect_reason_value;
 
 mod _document_parameter;
 

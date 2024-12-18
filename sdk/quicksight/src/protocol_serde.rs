@@ -825,6 +825,8 @@ pub(crate) mod shape_namespaces;
 
 pub(crate) mod shape_parameters;
 
+pub(crate) mod shape_performance_configuration;
+
 pub(crate) mod shape_physical_table;
 
 pub(crate) mod shape_qa_result;
@@ -1373,6 +1375,8 @@ pub(crate) mod shape_typography;
 
 pub(crate) mod shape_ui_color_palette;
 
+pub(crate) mod shape_unique_key;
+
 pub(crate) mod shape_visual_axis_sort_option;
 
 pub(crate) mod shape_visual_menu_option;
@@ -1546,6 +1550,8 @@ pub(crate) mod shape_topic_ir_metric;
 pub(crate) mod shape_topic_named_entity;
 
 pub(crate) mod shape_topic_sort_clause;
+
+pub(crate) mod shape_unique_key_list;
 
 pub(crate) mod shape_untag_column_operation;
 
@@ -2038,6 +2044,8 @@ pub(crate) mod shape_topic_range_filter_constant;
 pub(crate) mod shape_topic_singular_filter_constant;
 
 pub(crate) mod shape_tree_map_configuration;
+
+pub(crate) mod shape_unique_key_column_name_list;
 
 pub(crate) mod shape_visual_custom_action;
 

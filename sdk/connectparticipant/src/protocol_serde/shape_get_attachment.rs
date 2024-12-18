@@ -89,7 +89,9 @@ pub fn de_get_attachment_http_response(
         output = crate::protocol_serde::shape_get_attachment::de_get_attachment(_response_body, output)
             .map_err(crate::operation::get_attachment::GetAttachmentError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::get_attachment_output_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::get_attachment::GetAttachmentError::unhandled)?
     })
 }
 
@@ -132,6 +134,13 @@ pub(crate) fn de_get_attachment(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "AttachmentSizeInBytes" => {
+                    builder = builder.set_attachment_size_in_bytes(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i64::try_from)
+                            .transpose()?,
+                    );
+                }
                 "Url" => {
                     builder = builder.set_url(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

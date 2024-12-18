@@ -143,6 +143,13 @@ where
                         "WisdomInfo" => {
                             builder = builder.set_wisdom_info(crate::protocol_serde::shape_wisdom_info::de_wisdom_info(tokens)?);
                         }
+                        "CustomerId" => {
+                            builder = builder.set_customer_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "CustomerEndpoint" => {
                             builder = builder.set_customer_endpoint(crate::protocol_serde::shape_endpoint_info::de_endpoint_info(tokens)?);
                         }

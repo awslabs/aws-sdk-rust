@@ -331,4 +331,18 @@ impl StartChatContactFluentBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>> {
         self.inner.get_segment_attributes()
     }
+    /// <p>The customer's identification number. For example, the <code>CustomerId</code> may be a customer number from your CRM.</p>
+    pub fn customer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.customer_id(input.into());
+        self
+    }
+    /// <p>The customer's identification number. For example, the <code>CustomerId</code> may be a customer number from your CRM.</p>
+    pub fn set_customer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_customer_id(input);
+        self
+    }
+    /// <p>The customer's identification number. For example, the <code>CustomerId</code> may be a customer number from your CRM.</p>
+    pub fn get_customer_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_customer_id()
+    }
 }

@@ -1271,6 +1271,10 @@ pub use crate::types::_athena_parameters::AthenaParametersBuilder;
 
 pub use crate::types::_amazon_elasticsearch_parameters::AmazonElasticsearchParametersBuilder;
 
+pub use crate::types::_performance_configuration::PerformanceConfigurationBuilder;
+
+pub use crate::types::_unique_key::UniqueKeyBuilder;
+
 pub use crate::types::_dataset_parameter::DatasetParameterBuilder;
 
 pub use crate::types::_date_time_dataset_parameter::DateTimeDatasetParameterBuilder;

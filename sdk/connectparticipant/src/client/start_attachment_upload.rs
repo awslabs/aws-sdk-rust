@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`connection_token(impl Into<String>)`](crate::operation::start_attachment_upload::builders::StartAttachmentUploadFluentBuilder::connection_token) / [`set_connection_token(Option<String>)`](crate::operation::start_attachment_upload::builders::StartAttachmentUploadFluentBuilder::set_connection_token):<br>required: **true**<br><p>The authentication token associated with the participant's connection.</p><br>
     /// - On success, responds with [`StartAttachmentUploadOutput`](crate::operation::start_attachment_upload::StartAttachmentUploadOutput) with field(s):
     ///   - [`attachment_id(Option<String>)`](crate::operation::start_attachment_upload::StartAttachmentUploadOutput::attachment_id): <p>A unique identifier for the attachment.</p>
-    ///   - [`upload_metadata(Option<UploadMetadata>)`](crate::operation::start_attachment_upload::StartAttachmentUploadOutput::upload_metadata): <p>Fields to be used while uploading the attachment.</p>
+    ///   - [`upload_metadata(Option<UploadMetadata>)`](crate::operation::start_attachment_upload::StartAttachmentUploadOutput::upload_metadata): <p>The headers to be provided while uploading the file to the URL.</p>
     /// - On failure, responds with [`SdkError<StartAttachmentUploadError>`](crate::operation::start_attachment_upload::StartAttachmentUploadError)
     pub fn start_attachment_upload(&self) -> crate::operation::start_attachment_upload::builders::StartAttachmentUploadFluentBuilder {
         crate::operation::start_attachment_upload::builders::StartAttachmentUploadFluentBuilder::new(self.handle.clone())

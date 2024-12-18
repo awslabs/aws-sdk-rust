@@ -22,7 +22,8 @@ impl crate::operation::create_participant_connection::builders::CreateParticipan
 }
 /// Fluent builder constructing a request to `CreateParticipantConnection`.
 ///
-/// <p>Creates the participant's connection.</p><note>
+/// <p>Creates the participant's connection.</p>
+/// <p>For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon Connect Chat security best practices</a>.</p><note>
 /// <p><code>ParticipantToken</code> is used for invoking this API instead of <code>ConnectionToken</code>.</p>
 /// </note>
 /// <p>The participant token is valid for the lifetime of the participant – until they are part of a contact.</p>

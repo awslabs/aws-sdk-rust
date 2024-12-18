@@ -742,6 +742,9 @@ pub mod update_instance_attribute;
 /// Types for the `UpdateInstanceStorageConfig` operation.
 pub mod update_instance_storage_config;
 
+/// Types for the `UpdateParticipantAuthentication` operation.
+pub mod update_participant_authentication;
+
 /// Types for the `UpdateParticipantRoleConfig` operation.
 pub mod update_participant_role_config;
 

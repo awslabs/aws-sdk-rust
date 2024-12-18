@@ -22,7 +22,8 @@ impl crate::operation::update_location_hdfs::builders::UpdateLocationHdfsInputBu
 }
 /// Fluent builder constructing a request to `UpdateLocationHdfs`.
 ///
-/// <p>Updates some parameters of a previously created location for a Hadoop Distributed File System cluster.</p>
+/// <p>Modifies the following configuration parameters of the Hadoop Distributed File System (HDFS) transfer location that you're using with DataSync.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-hdfs-location.html">Configuring DataSync transfers with an HDFS cluster</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateLocationHdfsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

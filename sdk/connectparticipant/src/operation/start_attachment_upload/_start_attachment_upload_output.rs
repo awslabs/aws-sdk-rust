@@ -5,7 +5,7 @@
 pub struct StartAttachmentUploadOutput {
     /// <p>A unique identifier for the attachment.</p>
     pub attachment_id: ::std::option::Option<::std::string::String>,
-    /// <p>Fields to be used while uploading the attachment.</p>
+    /// <p>The headers to be provided while uploading the file to the URL.</p>
     pub upload_metadata: ::std::option::Option<crate::types::UploadMetadata>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl StartAttachmentUploadOutput {
     pub fn attachment_id(&self) -> ::std::option::Option<&str> {
         self.attachment_id.as_deref()
     }
-    /// <p>Fields to be used while uploading the attachment.</p>
+    /// <p>The headers to be provided while uploading the file to the URL.</p>
     pub fn upload_metadata(&self) -> ::std::option::Option<&crate::types::UploadMetadata> {
         self.upload_metadata.as_ref()
     }
@@ -54,17 +54,17 @@ impl StartAttachmentUploadOutputBuilder {
     pub fn get_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.attachment_id
     }
-    /// <p>Fields to be used while uploading the attachment.</p>
+    /// <p>The headers to be provided while uploading the file to the URL.</p>
     pub fn upload_metadata(mut self, input: crate::types::UploadMetadata) -> Self {
         self.upload_metadata = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Fields to be used while uploading the attachment.</p>
+    /// <p>The headers to be provided while uploading the file to the URL.</p>
     pub fn set_upload_metadata(mut self, input: ::std::option::Option<crate::types::UploadMetadata>) -> Self {
         self.upload_metadata = input;
         self
     }
-    /// <p>Fields to be used while uploading the attachment.</p>
+    /// <p>The headers to be provided while uploading the file to the URL.</p>
     pub fn get_upload_metadata(&self) -> &::std::option::Option<crate::types::UploadMetadata> {
         &self.upload_metadata
     }

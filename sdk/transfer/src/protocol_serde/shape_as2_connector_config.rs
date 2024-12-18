@@ -30,6 +30,9 @@ pub fn ser_as2_connector_config(
     if let Some(var_9) = &input.basic_auth_secret_id {
         object.key("BasicAuthSecretId").string(var_9.as_str());
     }
+    if let Some(var_10) = &input.preserve_content_type {
+        object.key("PreserveContentType").string(var_10.as_str());
+    }
     Ok(())
 }
 
@@ -108,6 +111,13 @@ where
                             builder = builder.set_basic_auth_secret_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "PreserveContentType" => {
+                            builder = builder.set_preserve_content_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::PreserveContentType::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

@@ -481,6 +481,10 @@ pub(crate) mod shape_resource_error;
 
 pub(crate) mod shape_scoring_component_resiliency_score;
 
+pub(crate) mod shape_alarm;
+
+pub(crate) mod shape_experiment;
+
 pub(crate) mod shape_recommendation_compliance;
 
 pub(crate) mod shape_suggested_changes_list;

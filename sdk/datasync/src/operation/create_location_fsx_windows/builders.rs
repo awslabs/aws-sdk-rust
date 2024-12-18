@@ -219,19 +219,19 @@ impl CreateLocationFsxWindowsFluentBuilder {
     pub fn get_user(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user()
     }
-    /// <p>Specifies the name of the Microsoft Active Directory domain that the FSx for Windows File Server file system belongs to.</p>
+    /// <p>Specifies the name of the Windows domain that the FSx for Windows File Server file system belongs to.</p>
     /// <p>If you have multiple Active Directory domains in your environment, configuring this parameter makes sure that DataSync connects to the right file system.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain(input.into());
         self
     }
-    /// <p>Specifies the name of the Microsoft Active Directory domain that the FSx for Windows File Server file system belongs to.</p>
+    /// <p>Specifies the name of the Windows domain that the FSx for Windows File Server file system belongs to.</p>
     /// <p>If you have multiple Active Directory domains in your environment, configuring this parameter makes sure that DataSync connects to the right file system.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain(input);
         self
     }
-    /// <p>Specifies the name of the Microsoft Active Directory domain that the FSx for Windows File Server file system belongs to.</p>
+    /// <p>Specifies the name of the Windows domain that the FSx for Windows File Server file system belongs to.</p>
     /// <p>If you have multiple Active Directory domains in your environment, configuring this parameter makes sure that DataSync connects to the right file system.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain()

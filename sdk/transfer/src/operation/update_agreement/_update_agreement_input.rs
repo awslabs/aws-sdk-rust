@@ -25,6 +25,22 @@ pub struct UpdateAgreementInput {
     /// <p><b>For SFTP connectors</b></p>
     /// <p>Make sure that the access role provides read and write access to the parent directory of the file location that's used in the <code>StartFileTransfer</code> request. Additionally, make sure that the role provides <code>secretsmanager:GetSecretValue</code> permission to Secrets Manager.</p>
     pub access_role: ::std::option::Option<::std::string::String>,
+    /// <p>Determines whether or not Transfer Family appends a unique string of characters to the end of the AS2 message payload filename when saving it.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code>: the filename provided by your trading parter is preserved when the file is saved.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> (default value): when Transfer Family saves the file, the filename is adjusted, as described in <a href="https://docs.aws.amazon.com/transfer/latest/userguide/send-as2-messages.html#file-names-as2">File names and locations</a>.</p></li>
+    /// </ul>
+    pub preserve_filename: ::std::option::Option<crate::types::PreserveFilenameType>,
+    /// <p>Determines whether or not unsigned messages from your trading partners will be accepted.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code>: Transfer Family rejects unsigned messages from your trading partner.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> (default value): Transfer Family accepts unsigned messages from your trading partner.</p></li>
+    /// </ul>
+    pub enforce_message_signing: ::std::option::Option<crate::types::EnforceMessageSigningType>,
 }
 impl UpdateAgreementInput {
     /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
@@ -65,6 +81,26 @@ impl UpdateAgreementInput {
     pub fn access_role(&self) -> ::std::option::Option<&str> {
         self.access_role.as_deref()
     }
+    /// <p>Determines whether or not Transfer Family appends a unique string of characters to the end of the AS2 message payload filename when saving it.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code>: the filename provided by your trading parter is preserved when the file is saved.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> (default value): when Transfer Family saves the file, the filename is adjusted, as described in <a href="https://docs.aws.amazon.com/transfer/latest/userguide/send-as2-messages.html#file-names-as2">File names and locations</a>.</p></li>
+    /// </ul>
+    pub fn preserve_filename(&self) -> ::std::option::Option<&crate::types::PreserveFilenameType> {
+        self.preserve_filename.as_ref()
+    }
+    /// <p>Determines whether or not unsigned messages from your trading partners will be accepted.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code>: Transfer Family rejects unsigned messages from your trading partner.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> (default value): Transfer Family accepts unsigned messages from your trading partner.</p></li>
+    /// </ul>
+    pub fn enforce_message_signing(&self) -> ::std::option::Option<&crate::types::EnforceMessageSigningType> {
+        self.enforce_message_signing.as_ref()
+    }
 }
 impl UpdateAgreementInput {
     /// Creates a new builder-style object to manufacture [`UpdateAgreementInput`](crate::operation::update_agreement::UpdateAgreementInput).
@@ -85,6 +121,8 @@ pub struct UpdateAgreementInputBuilder {
     pub(crate) partner_profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) base_directory: ::std::option::Option<::std::string::String>,
     pub(crate) access_role: ::std::option::Option<::std::string::String>,
+    pub(crate) preserve_filename: ::std::option::Option<crate::types::PreserveFilenameType>,
+    pub(crate) enforce_message_signing: ::std::option::Option<crate::types::EnforceMessageSigningType>,
 }
 impl UpdateAgreementInputBuilder {
     /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
@@ -219,6 +257,70 @@ impl UpdateAgreementInputBuilder {
     pub fn get_access_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.access_role
     }
+    /// <p>Determines whether or not Transfer Family appends a unique string of characters to the end of the AS2 message payload filename when saving it.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code>: the filename provided by your trading parter is preserved when the file is saved.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> (default value): when Transfer Family saves the file, the filename is adjusted, as described in <a href="https://docs.aws.amazon.com/transfer/latest/userguide/send-as2-messages.html#file-names-as2">File names and locations</a>.</p></li>
+    /// </ul>
+    pub fn preserve_filename(mut self, input: crate::types::PreserveFilenameType) -> Self {
+        self.preserve_filename = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Determines whether or not Transfer Family appends a unique string of characters to the end of the AS2 message payload filename when saving it.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code>: the filename provided by your trading parter is preserved when the file is saved.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> (default value): when Transfer Family saves the file, the filename is adjusted, as described in <a href="https://docs.aws.amazon.com/transfer/latest/userguide/send-as2-messages.html#file-names-as2">File names and locations</a>.</p></li>
+    /// </ul>
+    pub fn set_preserve_filename(mut self, input: ::std::option::Option<crate::types::PreserveFilenameType>) -> Self {
+        self.preserve_filename = input;
+        self
+    }
+    /// <p>Determines whether or not Transfer Family appends a unique string of characters to the end of the AS2 message payload filename when saving it.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code>: the filename provided by your trading parter is preserved when the file is saved.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> (default value): when Transfer Family saves the file, the filename is adjusted, as described in <a href="https://docs.aws.amazon.com/transfer/latest/userguide/send-as2-messages.html#file-names-as2">File names and locations</a>.</p></li>
+    /// </ul>
+    pub fn get_preserve_filename(&self) -> &::std::option::Option<crate::types::PreserveFilenameType> {
+        &self.preserve_filename
+    }
+    /// <p>Determines whether or not unsigned messages from your trading partners will be accepted.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code>: Transfer Family rejects unsigned messages from your trading partner.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> (default value): Transfer Family accepts unsigned messages from your trading partner.</p></li>
+    /// </ul>
+    pub fn enforce_message_signing(mut self, input: crate::types::EnforceMessageSigningType) -> Self {
+        self.enforce_message_signing = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Determines whether or not unsigned messages from your trading partners will be accepted.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code>: Transfer Family rejects unsigned messages from your trading partner.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> (default value): Transfer Family accepts unsigned messages from your trading partner.</p></li>
+    /// </ul>
+    pub fn set_enforce_message_signing(mut self, input: ::std::option::Option<crate::types::EnforceMessageSigningType>) -> Self {
+        self.enforce_message_signing = input;
+        self
+    }
+    /// <p>Determines whether or not unsigned messages from your trading partners will be accepted.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code>: Transfer Family rejects unsigned messages from your trading partner.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> (default value): Transfer Family accepts unsigned messages from your trading partner.</p></li>
+    /// </ul>
+    pub fn get_enforce_message_signing(&self) -> &::std::option::Option<crate::types::EnforceMessageSigningType> {
+        &self.enforce_message_signing
+    }
     /// Consumes the builder and constructs a [`UpdateAgreementInput`](crate::operation::update_agreement::UpdateAgreementInput).
     pub fn build(
         self,
@@ -232,6 +334,8 @@ impl UpdateAgreementInputBuilder {
             partner_profile_id: self.partner_profile_id,
             base_directory: self.base_directory,
             access_role: self.access_role,
+            preserve_filename: self.preserve_filename,
+            enforce_message_signing: self.enforce_message_signing,
         })
     }
 }

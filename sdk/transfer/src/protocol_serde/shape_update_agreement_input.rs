@@ -27,5 +27,11 @@ pub fn ser_update_agreement_input_input(
     if let Some(var_8) = &input.access_role {
         object.key("AccessRole").string(var_8.as_str());
     }
+    if let Some(var_9) = &input.preserve_filename {
+        object.key("PreserveFilename").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.enforce_message_signing {
+        object.key("EnforceMessageSigning").string(var_10.as_str());
+    }
     Ok(())
 }

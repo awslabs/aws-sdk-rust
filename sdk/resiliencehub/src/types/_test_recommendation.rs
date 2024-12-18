@@ -8,6 +8,8 @@ pub struct TestRecommendation {
     pub recommendation_id: ::std::option::Option<::std::string::String>,
     /// <p>Reference identifier for the test recommendation.</p>
     pub reference_id: ::std::string::String,
+    /// <p>Indicates the identifier of the AppComponent.</p>
+    pub app_component_id: ::std::option::Option<::std::string::String>,
     /// <p>Name of the Application Component.</p>
     pub app_component_name: ::std::option::Option<::std::string::String>,
     /// <p>Name of the test recommendation.</p>
@@ -38,6 +40,10 @@ impl TestRecommendation {
     pub fn reference_id(&self) -> &str {
         use std::ops::Deref;
         self.reference_id.deref()
+    }
+    /// <p>Indicates the identifier of the AppComponent.</p>
+    pub fn app_component_id(&self) -> ::std::option::Option<&str> {
+        self.app_component_id.as_deref()
     }
     /// <p>Name of the Application Component.</p>
     pub fn app_component_name(&self) -> ::std::option::Option<&str> {
@@ -97,6 +103,7 @@ impl TestRecommendation {
 pub struct TestRecommendationBuilder {
     pub(crate) recommendation_id: ::std::option::Option<::std::string::String>,
     pub(crate) reference_id: ::std::option::Option<::std::string::String>,
+    pub(crate) app_component_id: ::std::option::Option<::std::string::String>,
     pub(crate) app_component_name: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) intent: ::std::option::Option<::std::string::String>,
@@ -137,6 +144,20 @@ impl TestRecommendationBuilder {
     /// <p>Reference identifier for the test recommendation.</p>
     pub fn get_reference_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.reference_id
+    }
+    /// <p>Indicates the identifier of the AppComponent.</p>
+    pub fn app_component_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.app_component_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Indicates the identifier of the AppComponent.</p>
+    pub fn set_app_component_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.app_component_id = input;
+        self
+    }
+    /// <p>Indicates the identifier of the AppComponent.</p>
+    pub fn get_app_component_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_component_id
     }
     /// <p>Name of the Application Component.</p>
     pub fn app_component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -302,6 +323,7 @@ impl TestRecommendationBuilder {
                     "reference_id was not specified but it is required when building TestRecommendation",
                 )
             })?,
+            app_component_id: self.app_component_id,
             app_component_name: self.app_component_name,
             name: self.name,
             intent: self.intent,

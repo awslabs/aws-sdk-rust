@@ -7,6 +7,8 @@ pub struct GetAttachmentOutput {
     pub url: ::std::option::Option<::std::string::String>,
     /// <p>The expiration time of the URL in ISO timestamp. It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
     pub url_expiry: ::std::option::Option<::std::string::String>,
+    /// <p>The size of the attachment in bytes.</p>
+    pub attachment_size_in_bytes: i64,
     _request_id: Option<String>,
 }
 impl GetAttachmentOutput {
@@ -17,6 +19,10 @@ impl GetAttachmentOutput {
     /// <p>The expiration time of the URL in ISO timestamp. It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
     pub fn url_expiry(&self) -> ::std::option::Option<&str> {
         self.url_expiry.as_deref()
+    }
+    /// <p>The size of the attachment in bytes.</p>
+    pub fn attachment_size_in_bytes(&self) -> i64 {
+        self.attachment_size_in_bytes
     }
 }
 impl ::aws_types::request_id::RequestId for GetAttachmentOutput {
@@ -37,6 +43,7 @@ impl GetAttachmentOutput {
 pub struct GetAttachmentOutputBuilder {
     pub(crate) url: ::std::option::Option<::std::string::String>,
     pub(crate) url_expiry: ::std::option::Option<::std::string::String>,
+    pub(crate) attachment_size_in_bytes: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
 impl GetAttachmentOutputBuilder {
@@ -68,6 +75,21 @@ impl GetAttachmentOutputBuilder {
     pub fn get_url_expiry(&self) -> &::std::option::Option<::std::string::String> {
         &self.url_expiry
     }
+    /// <p>The size of the attachment in bytes.</p>
+    /// This field is required.
+    pub fn attachment_size_in_bytes(mut self, input: i64) -> Self {
+        self.attachment_size_in_bytes = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The size of the attachment in bytes.</p>
+    pub fn set_attachment_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.attachment_size_in_bytes = input;
+        self
+    }
+    /// <p>The size of the attachment in bytes.</p>
+    pub fn get_attachment_size_in_bytes(&self) -> &::std::option::Option<i64> {
+        &self.attachment_size_in_bytes
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -78,11 +100,21 @@ impl GetAttachmentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetAttachmentOutput`](crate::operation::get_attachment::GetAttachmentOutput).
-    pub fn build(self) -> crate::operation::get_attachment::GetAttachmentOutput {
-        crate::operation::get_attachment::GetAttachmentOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`attachment_size_in_bytes`](crate::operation::get_attachment::builders::GetAttachmentOutputBuilder::attachment_size_in_bytes)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_attachment::GetAttachmentOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_attachment::GetAttachmentOutput {
             url: self.url,
             url_expiry: self.url_expiry,
+            attachment_size_in_bytes: self.attachment_size_in_bytes.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "attachment_size_in_bytes",
+                    "attachment_size_in_bytes was not specified but it is required when building GetAttachmentOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

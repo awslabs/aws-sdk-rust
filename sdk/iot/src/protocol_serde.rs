@@ -319,6 +319,8 @@ pub(crate) mod shape_get_registration_code;
 
 pub(crate) mod shape_get_statistics;
 
+pub(crate) mod shape_get_thing_connectivity_data;
+
 pub(crate) mod shape_get_topic_rule;
 
 pub(crate) mod shape_get_topic_rule_destination;

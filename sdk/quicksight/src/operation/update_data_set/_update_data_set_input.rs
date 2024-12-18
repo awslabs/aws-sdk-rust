@@ -29,6 +29,8 @@ pub struct UpdateDataSetInput {
     pub data_set_usage_configuration: ::std::option::Option<crate::types::DataSetUsageConfiguration>,
     /// <p>The parameter declarations of the dataset.</p>
     pub dataset_parameters: ::std::option::Option<::std::vec::Vec<crate::types::DatasetParameter>>,
+    /// <p>The configuration for the performance optimization of the dataset that contains a <code>UniqueKey</code> configuration.</p>
+    pub performance_configuration: ::std::option::Option<crate::types::PerformanceConfiguration>,
 }
 impl UpdateDataSetInput {
     /// <p>The Amazon Web Services account ID.</p>
@@ -89,6 +91,10 @@ impl UpdateDataSetInput {
     pub fn dataset_parameters(&self) -> &[crate::types::DatasetParameter] {
         self.dataset_parameters.as_deref().unwrap_or_default()
     }
+    /// <p>The configuration for the performance optimization of the dataset that contains a <code>UniqueKey</code> configuration.</p>
+    pub fn performance_configuration(&self) -> ::std::option::Option<&crate::types::PerformanceConfiguration> {
+        self.performance_configuration.as_ref()
+    }
 }
 impl UpdateDataSetInput {
     /// Creates a new builder-style object to manufacture [`UpdateDataSetInput`](crate::operation::update_data_set::UpdateDataSetInput).
@@ -114,6 +120,7 @@ pub struct UpdateDataSetInputBuilder {
     pub(crate) column_level_permission_rules: ::std::option::Option<::std::vec::Vec<crate::types::ColumnLevelPermissionRule>>,
     pub(crate) data_set_usage_configuration: ::std::option::Option<crate::types::DataSetUsageConfiguration>,
     pub(crate) dataset_parameters: ::std::option::Option<::std::vec::Vec<crate::types::DatasetParameter>>,
+    pub(crate) performance_configuration: ::std::option::Option<crate::types::PerformanceConfiguration>,
 }
 impl UpdateDataSetInputBuilder {
     /// <p>The Amazon Web Services account ID.</p>
@@ -353,6 +360,20 @@ impl UpdateDataSetInputBuilder {
     pub fn get_dataset_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetParameter>> {
         &self.dataset_parameters
     }
+    /// <p>The configuration for the performance optimization of the dataset that contains a <code>UniqueKey</code> configuration.</p>
+    pub fn performance_configuration(mut self, input: crate::types::PerformanceConfiguration) -> Self {
+        self.performance_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for the performance optimization of the dataset that contains a <code>UniqueKey</code> configuration.</p>
+    pub fn set_performance_configuration(mut self, input: ::std::option::Option<crate::types::PerformanceConfiguration>) -> Self {
+        self.performance_configuration = input;
+        self
+    }
+    /// <p>The configuration for the performance optimization of the dataset that contains a <code>UniqueKey</code> configuration.</p>
+    pub fn get_performance_configuration(&self) -> &::std::option::Option<crate::types::PerformanceConfiguration> {
+        &self.performance_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateDataSetInput`](crate::operation::update_data_set::UpdateDataSetInput).
     pub fn build(
         self,
@@ -371,6 +392,7 @@ impl UpdateDataSetInputBuilder {
             column_level_permission_rules: self.column_level_permission_rules,
             data_set_usage_configuration: self.data_set_usage_configuration,
             dataset_parameters: self.dataset_parameters,
+            performance_configuration: self.performance_configuration,
         })
     }
 }

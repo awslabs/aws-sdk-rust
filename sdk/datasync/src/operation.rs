@@ -160,6 +160,21 @@ pub mod update_discovery_job;
 /// Types for the `UpdateLocationAzureBlob` operation.
 pub mod update_location_azure_blob;
 
+/// Types for the `UpdateLocationEfs` operation.
+pub mod update_location_efs;
+
+/// Types for the `UpdateLocationFsxLustre` operation.
+pub mod update_location_fsx_lustre;
+
+/// Types for the `UpdateLocationFsxOntap` operation.
+pub mod update_location_fsx_ontap;
+
+/// Types for the `UpdateLocationFsxOpenZfs` operation.
+pub mod update_location_fsx_open_zfs;
+
+/// Types for the `UpdateLocationFsxWindows` operation.
+pub mod update_location_fsx_windows;
+
 /// Types for the `UpdateLocationHdfs` operation.
 pub mod update_location_hdfs;
 
@@ -168,6 +183,9 @@ pub mod update_location_nfs;
 
 /// Types for the `UpdateLocationObjectStorage` operation.
 pub mod update_location_object_storage;
+
+/// Types for the `UpdateLocationS3` operation.
+pub mod update_location_s3;
 
 /// Types for the `UpdateLocationSmb` operation.
 pub mod update_location_smb;

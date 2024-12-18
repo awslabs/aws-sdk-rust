@@ -151,6 +151,15 @@ where
                         "cacheConfig" => {
                             builder = builder.set_cache_config(crate::protocol_serde::shape_cache_config::de_cache_config(tokens)?);
                         }
+                        "webhookCreateTime" => {
+                            builder = builder.set_webhook_create_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?);
+                        }
+                        "wafConfiguration" => {
+                            builder = builder.set_waf_configuration(crate::protocol_serde::shape_waf_configuration::de_waf_configuration(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
