@@ -2601,6 +2601,10 @@ source_hash = '296a471b189f14535e95c799b1748c38bfae91febeac58b5bf0365f011d77a67'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '939e0cadde03612879ddff985f14af5bed503bfee939828ff0f8110898c98fbc'
+
+[release]
+tag = 'release-2024-12-18.2'
+
 [release.crates]
 aws-sdk-account = '1.53.0'
 aws-sdk-backup = '1.55.0'
