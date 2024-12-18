@@ -407,6 +407,12 @@ pub(crate) mod rfc3339 {
             )
             .into());
         }
+        if s.len() > 10 && !matches!(s.as_bytes()[10], b'T' | b't') {
+            return Err(DateTimeParseErrorKind::Invalid(
+                "RFC-3339 only allows `T` as a separator for date-time values".into(),
+            )
+            .into());
+        }
         let date_time = OffsetDateTime::parse(s, &Rfc3339).map_err(|err| {
             DateTimeParseErrorKind::Invalid(format!("invalid RFC-3339 date-time: {}", err).into())
         })?;
@@ -771,6 +777,43 @@ mod tests {
 
         http_date_check_roundtrip(1576540098, 0);
         http_date_check_roundtrip(9999999999, 0);
+    }
+
+    #[test]
+    fn parse_rfc3339_invalid_separator() {
+        let test_cases = [
+            ("1985-04-12 23:20:50Z", AllowOffsets::OffsetsForbidden),
+            ("1985-04-12x23:20:50Z", AllowOffsets::OffsetsForbidden),
+            ("1985-04-12 23:20:50-02:00", AllowOffsets::OffsetsAllowed),
+            ("1985-04-12a23:20:50-02:00", AllowOffsets::OffsetsAllowed),
+        ];
+        for (date, offset) in test_cases.into_iter() {
+            let dt = rfc3339::parse(date, offset);
+            assert!(matches!(
+                dt.unwrap_err(),
+                DateTimeParseError {
+                    kind: DateTimeParseErrorKind::Invalid(_)
+                }
+            ));
+        }
+    }
+    #[test]
+    fn parse_rfc3339_t_separator() {
+        let test_cases = [
+            ("1985-04-12t23:20:50Z", AllowOffsets::OffsetsForbidden),
+            ("1985-04-12T23:20:50Z", AllowOffsets::OffsetsForbidden),
+            ("1985-04-12t23:20:50-02:00", AllowOffsets::OffsetsAllowed),
+            ("1985-04-12T23:20:50-02:00", AllowOffsets::OffsetsAllowed),
+        ];
+        for (date, offset) in test_cases.into_iter() {
+            let dt = rfc3339::parse(date, offset);
+            assert!(
+                dt.is_ok(),
+                "failed to parse date: '{}' with error: {:?}",
+                date,
+                dt.err().unwrap()
+            );
+        }
     }
 
     proptest! {

@@ -33,7 +33,7 @@ aws-config= { version = "1.5.10", path = "../../../sdk/aws-config" }
 aws-sdk-cloudwatchlogs= { version = "1.62.0", path = "../../../sdk/cloudwatchlogs" }
 aws-sdk-rdsdata= { version = "1.52.0", path = "../../../sdk/rdsdata" }
 aws-sdk-ses= { version = "1.54.0", path = "../../../sdk/ses" }
-aws-smithy-types= { version = "1.2.9", path = "../../../sdk/aws-smithy-types" }
+aws-smithy-types= { version = "1.2.10", path = "../../../sdk/aws-smithy-types" }
 aws-smithy-runtime= { version = "1.7.4", path = "../../../sdk/aws-smithy-runtime" }
 
 [dependencies.chrono]

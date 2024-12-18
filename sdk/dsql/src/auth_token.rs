@@ -37,7 +37,7 @@ const SERVICE: &str = "dsql";
 ///            .build()
 ///            .expect("cfg is valid"),
 ///    );
-///    let token = generator.auth_token(&cfg).await.unwrap();
+///    let token = generator.db_connect_admin_auth_token(&cfg).await.unwrap();
 ///    println!("{token}");
 /// }
 /// ```
