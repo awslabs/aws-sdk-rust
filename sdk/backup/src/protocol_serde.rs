@@ -107,6 +107,8 @@ pub(crate) mod shape_get_backup_vault_notifications;
 
 pub(crate) mod shape_get_legal_hold;
 
+pub(crate) mod shape_get_recovery_point_index_details;
+
 pub(crate) mod shape_get_recovery_point_restore_metadata;
 
 pub(crate) mod shape_get_restore_job_metadata;
@@ -138,6 +140,8 @@ pub(crate) mod shape_list_copy_job_summaries;
 pub(crate) mod shape_list_copy_jobs;
 
 pub(crate) mod shape_list_frameworks;
+
+pub(crate) mod shape_list_indexed_recovery_points;
 
 pub(crate) mod shape_list_legal_holds;
 
@@ -194,6 +198,8 @@ pub(crate) mod shape_update_backup_plan;
 pub(crate) mod shape_update_framework;
 
 pub(crate) mod shape_update_global_settings;
+
+pub(crate) mod shape_update_recovery_point_index_settings;
 
 pub(crate) mod shape_update_recovery_point_lifecycle;
 
@@ -279,6 +285,8 @@ pub(crate) mod shape_update_framework_input;
 
 pub(crate) mod shape_update_global_settings_input;
 
+pub(crate) mod shape_update_recovery_point_index_settings_input;
+
 pub(crate) mod shape_update_recovery_point_lifecycle_input;
 
 pub(crate) mod shape_update_region_settings_input;
@@ -332,6 +340,8 @@ pub(crate) mod shape_framework_controls;
 pub(crate) mod shape_framework_list;
 
 pub(crate) mod shape_global_settings;
+
+pub(crate) mod shape_indexed_recovery_point_list;
 
 pub(crate) mod shape_legal_holds_list;
 
@@ -429,6 +439,8 @@ pub(crate) mod shape_date_range;
 
 pub(crate) mod shape_framework;
 
+pub(crate) mod shape_indexed_recovery_point;
+
 pub(crate) mod shape_legal_hold;
 
 pub(crate) mod shape_list_of_tags;
@@ -477,6 +489,8 @@ pub(crate) mod shape_copy_action;
 
 pub(crate) mod shape_format_list;
 
+pub(crate) mod shape_index_action;
+
 pub(crate) mod shape_key_value;
 
 pub(crate) mod shape_key_value_list;
@@ -486,5 +500,7 @@ pub(crate) mod shape_restore_testing_recovery_point_type_list;
 pub(crate) mod shape_compliance_resource_id_list;
 
 pub(crate) mod shape_copy_actions;
+
+pub(crate) mod shape_index_actions;
 
 pub(crate) mod shape_resource_type_list;

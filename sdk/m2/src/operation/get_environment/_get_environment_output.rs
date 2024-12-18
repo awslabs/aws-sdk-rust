@@ -47,6 +47,8 @@ pub struct GetEnvironmentOutput {
     pub pending_maintenance: ::std::option::Option<crate::types::PendingMaintenance>,
     /// <p>The identifier of a customer managed key.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
+    /// <p>The network type supported by the runtime environment.</p>
+    pub network_type: ::std::option::Option<crate::types::NetworkType>,
     _request_id: Option<String>,
 }
 impl GetEnvironmentOutput {
@@ -148,6 +150,10 @@ impl GetEnvironmentOutput {
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
+    /// <p>The network type supported by the runtime environment.</p>
+    pub fn network_type(&self) -> ::std::option::Option<&crate::types::NetworkType> {
+        self.network_type.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetEnvironmentOutput {
     fn request_id(&self) -> Option<&str> {
@@ -187,6 +193,7 @@ pub struct GetEnvironmentOutputBuilder {
     pub(crate) preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     pub(crate) pending_maintenance: ::std::option::Option<crate::types::PendingMaintenance>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) network_type: ::std::option::Option<crate::types::NetworkType>,
     _request_id: Option<String>,
 }
 impl GetEnvironmentOutputBuilder {
@@ -531,6 +538,20 @@ impl GetEnvironmentOutputBuilder {
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }
+    /// <p>The network type supported by the runtime environment.</p>
+    pub fn network_type(mut self, input: crate::types::NetworkType) -> Self {
+        self.network_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The network type supported by the runtime environment.</p>
+    pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::NetworkType>) -> Self {
+        self.network_type = input;
+        self
+    }
+    /// <p>The network type supported by the runtime environment.</p>
+    pub fn get_network_type(&self) -> &::std::option::Option<crate::types::NetworkType> {
+        &self.network_type
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -634,6 +655,7 @@ impl GetEnvironmentOutputBuilder {
             preferred_maintenance_window: self.preferred_maintenance_window,
             pending_maintenance: self.pending_maintenance,
             kms_key_id: self.kms_key_id,
+            network_type: self.network_type,
             _request_id: self._request_id,
         })
     }

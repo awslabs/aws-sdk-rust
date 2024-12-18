@@ -192,17 +192,17 @@ impl StartTrainedModelInferenceJobFluentBuilder {
     pub fn get_output_configuration(&self) -> &::std::option::Option<crate::types::InferenceOutputConfiguration> {
         self.inner.get_output_configuration()
     }
-    /// <p>Defines he data source that is used for the trained model inference job.</p>
+    /// <p>Defines the data source that is used for the trained model inference job.</p>
     pub fn data_source(mut self, input: crate::types::ModelInferenceDataSource) -> Self {
         self.inner = self.inner.data_source(input);
         self
     }
-    /// <p>Defines he data source that is used for the trained model inference job.</p>
+    /// <p>Defines the data source that is used for the trained model inference job.</p>
     pub fn set_data_source(mut self, input: ::std::option::Option<crate::types::ModelInferenceDataSource>) -> Self {
         self.inner = self.inner.set_data_source(input);
         self
     }
-    /// <p>Defines he data source that is used for the trained model inference job.</p>
+    /// <p>Defines the data source that is used for the trained model inference job.</p>
     pub fn get_data_source(&self) -> &::std::option::Option<crate::types::ModelInferenceDataSource> {
         self.inner.get_data_source()
     }

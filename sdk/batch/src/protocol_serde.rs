@@ -329,6 +329,8 @@ pub(crate) mod shape_eks_empty_dir;
 
 pub(crate) mod shape_eks_host_path;
 
+pub(crate) mod shape_eks_persistent_volume_claim;
+
 pub(crate) mod shape_eks_pod_properties_detail;
 
 pub(crate) mod shape_eks_secret;
@@ -390,6 +392,8 @@ pub(crate) mod shape_network_interface;
 pub(crate) mod shape_tmpfs_list;
 
 pub(crate) mod shape_attempt_ecs_task_details;
+
+pub(crate) mod shape_eks_annotations_map;
 
 pub(crate) mod shape_eks_attempt_container_detail;
 

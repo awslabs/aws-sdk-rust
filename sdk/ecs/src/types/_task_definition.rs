@@ -125,6 +125,8 @@ pub struct TaskDefinition {
     pub registered_by: ::std::option::Option<::std::string::String>,
     /// <p>The ephemeral storage settings to use for tasks run with the task definition.</p>
     pub ephemeral_storage: ::std::option::Option<crate::types::EphemeralStorage>,
+    /// <p>Enables fault injection and allows for fault injection requests to be accepted from the task's containers. The default value is <code>false</code>.</p>
+    pub enable_fault_injection: ::std::option::Option<bool>,
 }
 impl TaskDefinition {
     /// <p>The full Amazon Resource Name (ARN) of the task definition.</p>
@@ -310,6 +312,10 @@ impl TaskDefinition {
     pub fn ephemeral_storage(&self) -> ::std::option::Option<&crate::types::EphemeralStorage> {
         self.ephemeral_storage.as_ref()
     }
+    /// <p>Enables fault injection and allows for fault injection requests to be accepted from the task's containers. The default value is <code>false</code>.</p>
+    pub fn enable_fault_injection(&self) -> ::std::option::Option<bool> {
+        self.enable_fault_injection
+    }
 }
 impl TaskDefinition {
     /// Creates a new builder-style object to manufacture [`TaskDefinition`](crate::types::TaskDefinition).
@@ -346,6 +352,7 @@ pub struct TaskDefinitionBuilder {
     pub(crate) deregistered_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) registered_by: ::std::option::Option<::std::string::String>,
     pub(crate) ephemeral_storage: ::std::option::Option<crate::types::EphemeralStorage>,
+    pub(crate) enable_fault_injection: ::std::option::Option<bool>,
 }
 impl TaskDefinitionBuilder {
     /// <p>The full Amazon Resource Name (ARN) of the task definition.</p>
@@ -948,6 +955,20 @@ impl TaskDefinitionBuilder {
     pub fn get_ephemeral_storage(&self) -> &::std::option::Option<crate::types::EphemeralStorage> {
         &self.ephemeral_storage
     }
+    /// <p>Enables fault injection and allows for fault injection requests to be accepted from the task's containers. The default value is <code>false</code>.</p>
+    pub fn enable_fault_injection(mut self, input: bool) -> Self {
+        self.enable_fault_injection = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Enables fault injection and allows for fault injection requests to be accepted from the task's containers. The default value is <code>false</code>.</p>
+    pub fn set_enable_fault_injection(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.enable_fault_injection = input;
+        self
+    }
+    /// <p>Enables fault injection and allows for fault injection requests to be accepted from the task's containers. The default value is <code>false</code>.</p>
+    pub fn get_enable_fault_injection(&self) -> &::std::option::Option<bool> {
+        &self.enable_fault_injection
+    }
     /// Consumes the builder and constructs a [`TaskDefinition`](crate::types::TaskDefinition).
     pub fn build(self) -> crate::types::TaskDefinition {
         crate::types::TaskDefinition {
@@ -975,6 +996,7 @@ impl TaskDefinitionBuilder {
             deregistered_at: self.deregistered_at,
             registered_by: self.registered_by,
             ephemeral_storage: self.ephemeral_storage,
+            enable_fault_injection: self.enable_fault_injection,
         }
     }
 }

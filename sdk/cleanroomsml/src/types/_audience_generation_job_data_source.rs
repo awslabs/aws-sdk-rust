@@ -13,6 +13,8 @@ pub struct AudienceGenerationJobDataSource {
     pub role_arn: ::std::string::String,
     /// <p>The protected SQL query parameters.</p>
     pub sql_parameters: ::std::option::Option<crate::types::ProtectedQuerySqlParameters>,
+    /// <p>Provides configuration information for the instances that will perform the compute work.</p>
+    pub sql_compute_configuration: ::std::option::Option<crate::types::ComputeConfiguration>,
 }
 impl AudienceGenerationJobDataSource {
     /// <p>Defines the Amazon S3 bucket where the seed audience for the generating audience is stored. A valid data source is a JSON line file in the following format:</p>
@@ -31,6 +33,10 @@ impl AudienceGenerationJobDataSource {
     pub fn sql_parameters(&self) -> ::std::option::Option<&crate::types::ProtectedQuerySqlParameters> {
         self.sql_parameters.as_ref()
     }
+    /// <p>Provides configuration information for the instances that will perform the compute work.</p>
+    pub fn sql_compute_configuration(&self) -> ::std::option::Option<&crate::types::ComputeConfiguration> {
+        self.sql_compute_configuration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for AudienceGenerationJobDataSource {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -38,6 +44,7 @@ impl ::std::fmt::Debug for AudienceGenerationJobDataSource {
         formatter.field("data_source", &self.data_source);
         formatter.field("role_arn", &self.role_arn);
         formatter.field("sql_parameters", &"*** Sensitive Data Redacted ***");
+        formatter.field("sql_compute_configuration", &self.sql_compute_configuration);
         formatter.finish()
     }
 }
@@ -55,6 +62,7 @@ pub struct AudienceGenerationJobDataSourceBuilder {
     pub(crate) data_source: ::std::option::Option<crate::types::S3ConfigMap>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) sql_parameters: ::std::option::Option<crate::types::ProtectedQuerySqlParameters>,
+    pub(crate) sql_compute_configuration: ::std::option::Option<crate::types::ComputeConfiguration>,
 }
 impl AudienceGenerationJobDataSourceBuilder {
     /// <p>Defines the Amazon S3 bucket where the seed audience for the generating audience is stored. A valid data source is a JSON line file in the following format:</p>
@@ -109,6 +117,20 @@ impl AudienceGenerationJobDataSourceBuilder {
     pub fn get_sql_parameters(&self) -> &::std::option::Option<crate::types::ProtectedQuerySqlParameters> {
         &self.sql_parameters
     }
+    /// <p>Provides configuration information for the instances that will perform the compute work.</p>
+    pub fn sql_compute_configuration(mut self, input: crate::types::ComputeConfiguration) -> Self {
+        self.sql_compute_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Provides configuration information for the instances that will perform the compute work.</p>
+    pub fn set_sql_compute_configuration(mut self, input: ::std::option::Option<crate::types::ComputeConfiguration>) -> Self {
+        self.sql_compute_configuration = input;
+        self
+    }
+    /// <p>Provides configuration information for the instances that will perform the compute work.</p>
+    pub fn get_sql_compute_configuration(&self) -> &::std::option::Option<crate::types::ComputeConfiguration> {
+        &self.sql_compute_configuration
+    }
     /// Consumes the builder and constructs a [`AudienceGenerationJobDataSource`](crate::types::AudienceGenerationJobDataSource).
     /// This method will fail if any of the following fields are not set:
     /// - [`role_arn`](crate::types::builders::AudienceGenerationJobDataSourceBuilder::role_arn)
@@ -122,6 +144,7 @@ impl AudienceGenerationJobDataSourceBuilder {
                 )
             })?,
             sql_parameters: self.sql_parameters,
+            sql_compute_configuration: self.sql_compute_configuration,
         })
     }
 }
@@ -131,6 +154,7 @@ impl ::std::fmt::Debug for AudienceGenerationJobDataSourceBuilder {
         formatter.field("data_source", &self.data_source);
         formatter.field("role_arn", &self.role_arn);
         formatter.field("sql_parameters", &"*** Sensitive Data Redacted ***");
+        formatter.field("sql_compute_configuration", &self.sql_compute_configuration);
         formatter.finish()
     }
 }

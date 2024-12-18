@@ -28,6 +28,18 @@ pub struct StartBackupJobInput {
     /// <p>The backup option for a selected resource. This option is only available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
     /// <p>Valid values: Set to <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to <code>"WindowsVSS""disabled"</code> to create a regular backup. The <code>WindowsVSS</code> option is not enabled by default.</p>
     pub backup_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>Include this parameter to enable index creation if your backup job has a resource type that supports backup indexes.</p>
+    /// <p>Resource types that support backup indexes include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EBS</code> for Amazon Elastic Block Store</p></li>
+    /// <li>
+    /// <p><code>S3</code> for Amazon Simple Storage Service (Amazon S3)</p></li>
+    /// </ul>
+    /// <p>Index can have 1 of 2 possible values, either <code>ENABLED</code> or <code>DISABLED</code>.</p>
+    /// <p>To create a backup index for an eligible <code>ACTIVE</code> recovery point that does not yet have a backup index, set value to <code>ENABLED</code>.</p>
+    /// <p>To delete a backup index, set value to <code>DISABLED</code>.</p>
+    pub index: ::std::option::Option<crate::types::Index>,
 }
 impl StartBackupJobInput {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created.</p>
@@ -73,6 +85,20 @@ impl StartBackupJobInput {
     pub fn backup_options(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.backup_options.as_ref()
     }
+    /// <p>Include this parameter to enable index creation if your backup job has a resource type that supports backup indexes.</p>
+    /// <p>Resource types that support backup indexes include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EBS</code> for Amazon Elastic Block Store</p></li>
+    /// <li>
+    /// <p><code>S3</code> for Amazon Simple Storage Service (Amazon S3)</p></li>
+    /// </ul>
+    /// <p>Index can have 1 of 2 possible values, either <code>ENABLED</code> or <code>DISABLED</code>.</p>
+    /// <p>To create a backup index for an eligible <code>ACTIVE</code> recovery point that does not yet have a backup index, set value to <code>ENABLED</code>.</p>
+    /// <p>To delete a backup index, set value to <code>DISABLED</code>.</p>
+    pub fn index(&self) -> ::std::option::Option<&crate::types::Index> {
+        self.index.as_ref()
+    }
 }
 impl ::std::fmt::Debug for StartBackupJobInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -86,6 +112,7 @@ impl ::std::fmt::Debug for StartBackupJobInput {
         formatter.field("lifecycle", &self.lifecycle);
         formatter.field("recovery_point_tags", &"*** Sensitive Data Redacted ***");
         formatter.field("backup_options", &self.backup_options);
+        formatter.field("index", &self.index);
         formatter.finish()
     }
 }
@@ -109,6 +136,7 @@ pub struct StartBackupJobInputBuilder {
     pub(crate) lifecycle: ::std::option::Option<crate::types::Lifecycle>,
     pub(crate) recovery_point_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) backup_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) index: ::std::option::Option<crate::types::Index>,
 }
 impl StartBackupJobInputBuilder {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created.</p>
@@ -287,6 +315,50 @@ impl StartBackupJobInputBuilder {
     pub fn get_backup_options(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.backup_options
     }
+    /// <p>Include this parameter to enable index creation if your backup job has a resource type that supports backup indexes.</p>
+    /// <p>Resource types that support backup indexes include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EBS</code> for Amazon Elastic Block Store</p></li>
+    /// <li>
+    /// <p><code>S3</code> for Amazon Simple Storage Service (Amazon S3)</p></li>
+    /// </ul>
+    /// <p>Index can have 1 of 2 possible values, either <code>ENABLED</code> or <code>DISABLED</code>.</p>
+    /// <p>To create a backup index for an eligible <code>ACTIVE</code> recovery point that does not yet have a backup index, set value to <code>ENABLED</code>.</p>
+    /// <p>To delete a backup index, set value to <code>DISABLED</code>.</p>
+    pub fn index(mut self, input: crate::types::Index) -> Self {
+        self.index = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Include this parameter to enable index creation if your backup job has a resource type that supports backup indexes.</p>
+    /// <p>Resource types that support backup indexes include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EBS</code> for Amazon Elastic Block Store</p></li>
+    /// <li>
+    /// <p><code>S3</code> for Amazon Simple Storage Service (Amazon S3)</p></li>
+    /// </ul>
+    /// <p>Index can have 1 of 2 possible values, either <code>ENABLED</code> or <code>DISABLED</code>.</p>
+    /// <p>To create a backup index for an eligible <code>ACTIVE</code> recovery point that does not yet have a backup index, set value to <code>ENABLED</code>.</p>
+    /// <p>To delete a backup index, set value to <code>DISABLED</code>.</p>
+    pub fn set_index(mut self, input: ::std::option::Option<crate::types::Index>) -> Self {
+        self.index = input;
+        self
+    }
+    /// <p>Include this parameter to enable index creation if your backup job has a resource type that supports backup indexes.</p>
+    /// <p>Resource types that support backup indexes include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EBS</code> for Amazon Elastic Block Store</p></li>
+    /// <li>
+    /// <p><code>S3</code> for Amazon Simple Storage Service (Amazon S3)</p></li>
+    /// </ul>
+    /// <p>Index can have 1 of 2 possible values, either <code>ENABLED</code> or <code>DISABLED</code>.</p>
+    /// <p>To create a backup index for an eligible <code>ACTIVE</code> recovery point that does not yet have a backup index, set value to <code>ENABLED</code>.</p>
+    /// <p>To delete a backup index, set value to <code>DISABLED</code>.</p>
+    pub fn get_index(&self) -> &::std::option::Option<crate::types::Index> {
+        &self.index
+    }
     /// Consumes the builder and constructs a [`StartBackupJobInput`](crate::operation::start_backup_job::StartBackupJobInput).
     pub fn build(
         self,
@@ -301,6 +373,7 @@ impl StartBackupJobInputBuilder {
             lifecycle: self.lifecycle,
             recovery_point_tags: self.recovery_point_tags,
             backup_options: self.backup_options,
+            index: self.index,
         })
     }
 }
@@ -316,6 +389,7 @@ impl ::std::fmt::Debug for StartBackupJobInputBuilder {
         formatter.field("lifecycle", &self.lifecycle);
         formatter.field("recovery_point_tags", &"*** Sensitive Data Redacted ***");
         formatter.field("backup_options", &self.backup_options);
+        formatter.field("index", &self.index);
         formatter.finish()
     }
 }

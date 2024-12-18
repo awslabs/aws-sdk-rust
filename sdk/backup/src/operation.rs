@@ -127,6 +127,9 @@ pub mod get_backup_vault_notifications;
 /// Types for the `GetLegalHold` operation.
 pub mod get_legal_hold;
 
+/// Types for the `GetRecoveryPointIndexDetails` operation.
+pub mod get_recovery_point_index_details;
+
 /// Types for the `GetRecoveryPointRestoreMetadata` operation.
 pub mod get_recovery_point_restore_metadata;
 
@@ -174,6 +177,9 @@ pub mod list_copy_jobs;
 
 /// Types for the `ListFrameworks` operation.
 pub mod list_frameworks;
+
+/// Types for the `ListIndexedRecoveryPoints` operation.
+pub mod list_indexed_recovery_points;
 
 /// Types for the `ListLegalHolds` operation.
 pub mod list_legal_holds;
@@ -258,6 +264,9 @@ pub mod update_framework;
 
 /// Types for the `UpdateGlobalSettings` operation.
 pub mod update_global_settings;
+
+/// Types for the `UpdateRecoveryPointIndexSettings` operation.
+pub mod update_recovery_point_index_settings;
 
 /// Types for the `UpdateRecoveryPointLifecycle` operation.
 pub mod update_recovery_point_lifecycle;

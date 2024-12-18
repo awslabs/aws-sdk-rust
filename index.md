@@ -20,6 +20,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS B2B Data Interchange | [aws-sdk-b2bi](https://crates.io/crates/aws-sdk-b2bi) ([docs](https://docs.rs/aws-sdk-b2bi)) |
 | AWS Backup | [aws-sdk-backup](https://crates.io/crates/aws-sdk-backup) ([docs](https://docs.rs/aws-sdk-backup)) |
 | AWS Backup Gateway | [aws-sdk-backupgateway](https://crates.io/crates/aws-sdk-backupgateway) ([docs](https://docs.rs/aws-sdk-backupgateway)) |
+| AWS Backup Search | [aws-sdk-backupsearch](https://crates.io/crates/aws-sdk-backupsearch) ([docs](https://docs.rs/aws-sdk-backupsearch)) |
 | AWS Batch | [aws-sdk-batch](https://crates.io/crates/aws-sdk-batch) ([docs](https://docs.rs/aws-sdk-batch)) |
 | AWS Billing | [aws-sdk-billing](https://crates.io/crates/aws-sdk-billing) ([docs](https://docs.rs/aws-sdk-billing)) |
 | AWS Billing and Cost Management Data Exports | [aws-sdk-bcmdataexports](https://crates.io/crates/aws-sdk-bcmdataexports) ([docs](https://docs.rs/aws-sdk-bcmdataexports)) |

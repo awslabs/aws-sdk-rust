@@ -21,6 +21,10 @@ pub use crate::types::_calculated_lifecycle::CalculatedLifecycle;
 
 pub use crate::types::_lifecycle::Lifecycle;
 
+pub use crate::types::_index::Index;
+
+pub use crate::types::_index_status::IndexStatus;
+
 pub use crate::types::_framework_control::FrameworkControl;
 
 pub use crate::types::_control_scope::ControlScope;
@@ -32,6 +36,8 @@ pub use crate::types::_advanced_backup_setting::AdvancedBackupSetting;
 pub use crate::types::_backup_plan_input::BackupPlanInput;
 
 pub use crate::types::_backup_rule_input::BackupRuleInput;
+
+pub use crate::types::_index_action::IndexAction;
 
 pub use crate::types::_copy_action::CopyAction;
 
@@ -80,6 +86,8 @@ pub use crate::types::_protected_resource::ProtectedResource;
 pub use crate::types::_legal_hold::LegalHold;
 
 pub use crate::types::_legal_hold_status::LegalHoldStatus;
+
+pub use crate::types::_indexed_recovery_point::IndexedRecoveryPoint;
 
 pub use crate::types::_framework::Framework;
 
@@ -198,6 +206,14 @@ mod _date_range;
 mod _framework;
 
 mod _framework_control;
+
+mod _index;
+
+mod _index_action;
+
+mod _index_status;
+
+mod _indexed_recovery_point;
 
 mod _key_value;
 

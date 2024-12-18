@@ -400,6 +400,15 @@ pub(crate) fn tmpfs_correct_errors(mut builder: crate::types::builders::TmpfsBui
     builder
 }
 
+pub(crate) fn eks_persistent_volume_claim_correct_errors(
+    mut builder: crate::types::builders::EksPersistentVolumeClaimBuilder,
+) -> crate::types::builders::EksPersistentVolumeClaimBuilder {
+    if builder.claim_name.is_none() {
+        builder.claim_name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn eks_secret_correct_errors(mut builder: crate::types::builders::EksSecretBuilder) -> crate::types::builders::EksSecretBuilder {
     if builder.secret_name.is_none() {
         builder.secret_name = Some(Default::default())

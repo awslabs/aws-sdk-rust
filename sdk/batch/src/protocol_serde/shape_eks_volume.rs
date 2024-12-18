@@ -24,6 +24,12 @@ pub fn ser_eks_volume(
         crate::protocol_serde::shape_eks_secret::ser_eks_secret(&mut object_7, var_6)?;
         object_7.finish();
     }
+    if let Some(var_8) = &input.persistent_volume_claim {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("persistentVolumeClaim").start_object();
+        crate::protocol_serde::shape_eks_persistent_volume_claim::ser_eks_persistent_volume_claim(&mut object_9, var_8)?;
+        object_9.finish();
+    }
     Ok(())
 }
 
@@ -57,6 +63,11 @@ where
                         }
                         "secret" => {
                             builder = builder.set_secret(crate::protocol_serde::shape_eks_secret::de_eks_secret(tokens)?);
+                        }
+                        "persistentVolumeClaim" => {
+                            builder = builder.set_persistent_volume_claim(
+                                crate::protocol_serde::shape_eks_persistent_volume_claim::de_eks_persistent_volume_claim(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

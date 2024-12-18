@@ -30,51 +30,54 @@ pub fn ser_create_environment_input_input(
     if let Some(var_9) = &input.name {
         object.key("name").string(var_9.as_str());
     }
-    if let Some(var_10) = &input.preferred_maintenance_window {
-        object.key("preferredMaintenanceWindow").string(var_10.as_str());
+    if let Some(var_10) = &input.network_type {
+        object.key("networkType").string(var_10.as_str());
     }
-    if let Some(var_11) = &input.publicly_accessible {
-        object.key("publiclyAccessible").boolean(*var_11);
+    if let Some(var_11) = &input.preferred_maintenance_window {
+        object.key("preferredMaintenanceWindow").string(var_11.as_str());
     }
-    if let Some(var_12) = &input.security_group_ids {
-        let mut array_13 = object.key("securityGroupIds").start_array();
-        for item_14 in var_12 {
+    if let Some(var_12) = &input.publicly_accessible {
+        object.key("publiclyAccessible").boolean(*var_12);
+    }
+    if let Some(var_13) = &input.security_group_ids {
+        let mut array_14 = object.key("securityGroupIds").start_array();
+        for item_15 in var_13 {
             {
-                array_13.value().string(item_14.as_str());
+                array_14.value().string(item_15.as_str());
             }
         }
-        array_13.finish();
+        array_14.finish();
     }
-    if let Some(var_15) = &input.storage_configurations {
-        let mut array_16 = object.key("storageConfigurations").start_array();
-        for item_17 in var_15 {
+    if let Some(var_16) = &input.storage_configurations {
+        let mut array_17 = object.key("storageConfigurations").start_array();
+        for item_18 in var_16 {
             {
                 #[allow(unused_mut)]
-                let mut object_18 = array_16.value().start_object();
-                crate::protocol_serde::shape_storage_configuration::ser_storage_configuration(&mut object_18, item_17)?;
-                object_18.finish();
+                let mut object_19 = array_17.value().start_object();
+                crate::protocol_serde::shape_storage_configuration::ser_storage_configuration(&mut object_19, item_18)?;
+                object_19.finish();
             }
         }
-        array_16.finish();
+        array_17.finish();
     }
-    if let Some(var_19) = &input.subnet_ids {
-        let mut array_20 = object.key("subnetIds").start_array();
-        for item_21 in var_19 {
+    if let Some(var_20) = &input.subnet_ids {
+        let mut array_21 = object.key("subnetIds").start_array();
+        for item_22 in var_20 {
             {
-                array_20.value().string(item_21.as_str());
+                array_21.value().string(item_22.as_str());
             }
         }
-        array_20.finish();
+        array_21.finish();
     }
-    if let Some(var_22) = &input.tags {
+    if let Some(var_23) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_23 = object.key("tags").start_object();
-        for (key_24, value_25) in var_22 {
+        let mut object_24 = object.key("tags").start_object();
+        for (key_25, value_26) in var_23 {
             {
-                object_23.key(key_24.as_str()).string(value_25.as_str());
+                object_24.key(key_25.as_str()).string(value_26.as_str());
             }
         }
-        object_23.finish();
+        object_24.finish();
     }
     Ok(())
 }

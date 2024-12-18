@@ -9,6 +9,14 @@ pub fn ser_vpc_origin_config(
         let mut inner_writer = scope.start_el("VpcOriginId").finish();
         inner_writer.data(input.vpc_origin_id.as_str());
     }
+    if let Some(var_1) = &input.origin_read_timeout {
+        let mut inner_writer = scope.start_el("OriginReadTimeout").finish();
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_1).encode());
+    }
+    if let Some(var_2) = &input.origin_keepalive_timeout {
+        let mut inner_writer = scope.start_el("OriginKeepaliveTimeout").finish();
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_2).encode());
+    }
     scope.finish();
     Ok(())
 }
@@ -22,7 +30,7 @@ pub fn de_vpc_origin_config(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("VpcOriginId") /* VpcOriginId com.amazonaws.cloudfront#VpcOriginConfig$VpcOriginId */ =>  {
-                let var_1 =
+                let var_3 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -31,7 +39,37 @@ pub fn de_vpc_origin_config(
                         ?
                     )
                 ;
-                builder = builder.set_vpc_origin_id(var_1);
+                builder = builder.set_vpc_origin_id(var_3);
+            }
+            ,
+            s if s.matches("OriginReadTimeout") /* OriginReadTimeout com.amazonaws.cloudfront#VpcOriginConfig$OriginReadTimeout */ =>  {
+                let var_4 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.cloudfront#integer`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_origin_read_timeout(var_4);
+            }
+            ,
+            s if s.matches("OriginKeepaliveTimeout") /* OriginKeepaliveTimeout com.amazonaws.cloudfront#VpcOriginConfig$OriginKeepaliveTimeout */ =>  {
+                let var_5 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.cloudfront#integer`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_origin_keepalive_timeout(var_5);
             }
             ,
             _ => {}

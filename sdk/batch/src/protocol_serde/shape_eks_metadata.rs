@@ -13,6 +13,19 @@ pub fn ser_eks_metadata(
         }
         object_2.finish();
     }
+    if let Some(var_5) = &input.annotations {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("annotations").start_object();
+        for (key_7, value_8) in var_5 {
+            {
+                object_6.key(key_7.as_str()).string(value_8.as_str());
+            }
+        }
+        object_6.finish();
+    }
+    if let Some(var_9) = &input.namespace {
+        object.key("namespace").string(var_9.as_str());
+    }
     Ok(())
 }
 
@@ -33,6 +46,16 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "labels" => {
                             builder = builder.set_labels(crate::protocol_serde::shape_eks_labels_map::de_eks_labels_map(tokens)?);
+                        }
+                        "annotations" => {
+                            builder = builder.set_annotations(crate::protocol_serde::shape_eks_annotations_map::de_eks_annotations_map(tokens)?);
+                        }
+                        "namespace" => {
+                            builder = builder.set_namespace(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

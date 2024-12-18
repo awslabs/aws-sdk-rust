@@ -58,5 +58,17 @@ pub fn ser_backup_rule_input(
     if let Some(var_15) = &input.schedule_expression_timezone {
         object.key("ScheduleExpressionTimezone").string(var_15.as_str());
     }
+    if let Some(var_16) = &input.index_actions {
+        let mut array_17 = object.key("IndexActions").start_array();
+        for item_18 in var_16 {
+            {
+                #[allow(unused_mut)]
+                let mut object_19 = array_17.value().start_object();
+                crate::protocol_serde::shape_index_action::ser_index_action(&mut object_19, item_18)?;
+                object_19.finish();
+            }
+        }
+        array_17.finish();
+    }
     Ok(())
 }

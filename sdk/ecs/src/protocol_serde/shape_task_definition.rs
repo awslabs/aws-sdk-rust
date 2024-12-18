@@ -147,6 +147,9 @@ where
                         "ephemeralStorage" => {
                             builder = builder.set_ephemeral_storage(crate::protocol_serde::shape_ephemeral_storage::de_ephemeral_storage(tokens)?);
                         }
+                        "enableFaultInjection" => {
+                            builder = builder.set_enable_fault_injection(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

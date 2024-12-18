@@ -9,8 +9,11 @@ pub fn ser_eks_container_volume_mount(
     if let Some(var_2) = &input.mount_path {
         object.key("mountPath").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.read_only {
-        object.key("readOnly").boolean(*var_3);
+    if let Some(var_3) = &input.sub_path {
+        object.key("subPath").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.read_only {
+        object.key("readOnly").boolean(*var_4);
     }
     Ok(())
 }
@@ -39,6 +42,13 @@ where
                         }
                         "mountPath" => {
                             builder = builder.set_mount_path(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "subPath" => {
+                            builder = builder.set_sub_path(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

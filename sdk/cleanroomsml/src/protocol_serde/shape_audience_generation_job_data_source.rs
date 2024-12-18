@@ -29,6 +29,10 @@ where
                                 crate::protocol_serde::shape_protected_query_sql_parameters::de_protected_query_sql_parameters(tokens)?,
                             );
                         }
+                        "sqlComputeConfiguration" => {
+                            builder = builder
+                                .set_sql_compute_configuration(crate::protocol_serde::shape_compute_configuration::de_compute_configuration(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -69,6 +73,12 @@ pub fn ser_audience_generation_job_data_source(
         let mut object_4 = object.key("sqlParameters").start_object();
         crate::protocol_serde::shape_protected_query_sql_parameters::ser_protected_query_sql_parameters(&mut object_4, var_3)?;
         object_4.finish();
+    }
+    if let Some(var_5) = &input.sql_compute_configuration {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("sqlComputeConfiguration").start_object();
+        crate::protocol_serde::shape_compute_configuration::ser_compute_configuration(&mut object_6, var_5)?;
+        object_6.finish();
     }
     Ok(())
 }

@@ -29,6 +29,8 @@ pub use crate::types::_backup_plan_input::BackupPlanInputBuilder;
 
 pub use crate::types::_backup_rule_input::BackupRuleInputBuilder;
 
+pub use crate::types::_index_action::IndexActionBuilder;
+
 pub use crate::types::_copy_action::CopyActionBuilder;
 
 pub use crate::types::_restore_testing_selection_for_list::RestoreTestingSelectionForListBuilder;
@@ -58,6 +60,8 @@ pub use crate::types::_recovery_point_creator::RecoveryPointCreatorBuilder;
 pub use crate::types::_protected_resource::ProtectedResourceBuilder;
 
 pub use crate::types::_legal_hold::LegalHoldBuilder;
+
+pub use crate::types::_indexed_recovery_point::IndexedRecoveryPointBuilder;
 
 pub use crate::types::_framework::FrameworkBuilder;
 

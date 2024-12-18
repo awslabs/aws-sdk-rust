@@ -27,6 +27,10 @@ where
                         "SecurityGroupIds" => {
                             builder = builder.set_security_group_ids(crate::protocol_serde::shape_security_group_ids::de_security_group_ids(tokens)?);
                         }
+                        "Ipv6AllowedForDualStack" => {
+                            builder =
+                                builder.set_ipv6_allowed_for_dual_stack(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

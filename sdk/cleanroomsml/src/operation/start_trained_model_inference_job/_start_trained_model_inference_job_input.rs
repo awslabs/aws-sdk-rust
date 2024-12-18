@@ -15,7 +15,7 @@ pub struct StartTrainedModelInferenceJobInput {
     pub resource_config: ::std::option::Option<crate::types::InferenceResourceConfig>,
     /// <p>Defines the output configuration information for the trained model inference job.</p>
     pub output_configuration: ::std::option::Option<crate::types::InferenceOutputConfiguration>,
-    /// <p>Defines he data source that is used for the trained model inference job.</p>
+    /// <p>Defines the data source that is used for the trained model inference job.</p>
     pub data_source: ::std::option::Option<crate::types::ModelInferenceDataSource>,
     /// <p>The description of the trained model inference job.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -70,7 +70,7 @@ impl StartTrainedModelInferenceJobInput {
     pub fn output_configuration(&self) -> ::std::option::Option<&crate::types::InferenceOutputConfiguration> {
         self.output_configuration.as_ref()
     }
-    /// <p>Defines he data source that is used for the trained model inference job.</p>
+    /// <p>Defines the data source that is used for the trained model inference job.</p>
     pub fn data_source(&self) -> ::std::option::Option<&crate::types::ModelInferenceDataSource> {
         self.data_source.as_ref()
     }
@@ -226,18 +226,18 @@ impl StartTrainedModelInferenceJobInputBuilder {
     pub fn get_output_configuration(&self) -> &::std::option::Option<crate::types::InferenceOutputConfiguration> {
         &self.output_configuration
     }
-    /// <p>Defines he data source that is used for the trained model inference job.</p>
+    /// <p>Defines the data source that is used for the trained model inference job.</p>
     /// This field is required.
     pub fn data_source(mut self, input: crate::types::ModelInferenceDataSource) -> Self {
         self.data_source = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Defines he data source that is used for the trained model inference job.</p>
+    /// <p>Defines the data source that is used for the trained model inference job.</p>
     pub fn set_data_source(mut self, input: ::std::option::Option<crate::types::ModelInferenceDataSource>) -> Self {
         self.data_source = input;
         self
     }
-    /// <p>Defines he data source that is used for the trained model inference job.</p>
+    /// <p>Defines the data source that is used for the trained model inference job.</p>
     pub fn get_data_source(&self) -> &::std::option::Option<crate::types::ModelInferenceDataSource> {
         &self.data_source
     }

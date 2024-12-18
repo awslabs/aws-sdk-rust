@@ -1577,6 +1577,46 @@ impl From<crate::operation::get_legal_hold::GetLegalHoldError> for Error {
     }
 }
 impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_recovery_point_index_details::GetRecoveryPointIndexDetailsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_recovery_point_index_details::GetRecoveryPointIndexDetailsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_recovery_point_index_details::GetRecoveryPointIndexDetailsError> for Error {
+    fn from(err: crate::operation::get_recovery_point_index_details::GetRecoveryPointIndexDetailsError) -> Self {
+        match err {
+            crate::operation::get_recovery_point_index_details::GetRecoveryPointIndexDetailsError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::get_recovery_point_index_details::GetRecoveryPointIndexDetailsError::MissingParameterValueException(inner) => {
+                Error::MissingParameterValueException(inner)
+            }
+            crate::operation::get_recovery_point_index_details::GetRecoveryPointIndexDetailsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_recovery_point_index_details::GetRecoveryPointIndexDetailsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::get_recovery_point_index_details::GetRecoveryPointIndexDetailsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::get_recovery_point_restore_metadata::GetRecoveryPointRestoreMetadataError,
@@ -2085,6 +2125,39 @@ impl From<crate::operation::list_frameworks::ListFrameworksError> for Error {
             }
             crate::operation::list_frameworks::ListFrameworksError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::list_frameworks::ListFrameworksError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_indexed_recovery_points::ListIndexedRecoveryPointsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_indexed_recovery_points::ListIndexedRecoveryPointsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_indexed_recovery_points::ListIndexedRecoveryPointsError> for Error {
+    fn from(err: crate::operation::list_indexed_recovery_points::ListIndexedRecoveryPointsError) -> Self {
+        match err {
+            crate::operation::list_indexed_recovery_points::ListIndexedRecoveryPointsError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::list_indexed_recovery_points::ListIndexedRecoveryPointsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_indexed_recovery_points::ListIndexedRecoveryPointsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::list_indexed_recovery_points::ListIndexedRecoveryPointsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3025,6 +3098,55 @@ impl From<crate::operation::update_global_settings::UpdateGlobalSettingsError> f
                 Error::ServiceUnavailableException(inner)
             }
             crate::operation::update_global_settings::UpdateGlobalSettingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_recovery_point_index_settings::UpdateRecoveryPointIndexSettingsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_recovery_point_index_settings::UpdateRecoveryPointIndexSettingsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_recovery_point_index_settings::UpdateRecoveryPointIndexSettingsError> for Error {
+    fn from(err: crate::operation::update_recovery_point_index_settings::UpdateRecoveryPointIndexSettingsError) -> Self {
+        match err {
+            crate::operation::update_recovery_point_index_settings::UpdateRecoveryPointIndexSettingsError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::update_recovery_point_index_settings::UpdateRecoveryPointIndexSettingsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::update_recovery_point_index_settings::UpdateRecoveryPointIndexSettingsError::MissingParameterValueException(inner) => {
+                Error::MissingParameterValueException(inner)
+            }
+            crate::operation::update_recovery_point_index_settings::UpdateRecoveryPointIndexSettingsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_recovery_point_index_settings::UpdateRecoveryPointIndexSettingsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::update_recovery_point_index_settings::UpdateRecoveryPointIndexSettingsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

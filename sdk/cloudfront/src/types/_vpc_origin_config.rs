@@ -6,12 +6,28 @@
 pub struct VpcOriginConfig {
     /// <p>The VPC origin ID.</p>
     pub vpc_origin_id: ::std::string::String,
+    /// <p>Specifies how long, in seconds, CloudFront waits for a response from the origin. This is also known as the <i>origin response timeout</i>. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if you don't specify otherwise) is 30 seconds.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Response timeout (custom origins only)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub origin_read_timeout: ::std::option::Option<i32>,
+    /// <p>Specifies how long, in seconds, CloudFront persists its connection to the origin. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if you don't specify otherwise) is 5 seconds.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginKeepaliveTimeout">Keep-alive timeout (custom origins only)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub origin_keepalive_timeout: ::std::option::Option<i32>,
 }
 impl VpcOriginConfig {
     /// <p>The VPC origin ID.</p>
     pub fn vpc_origin_id(&self) -> &str {
         use std::ops::Deref;
         self.vpc_origin_id.deref()
+    }
+    /// <p>Specifies how long, in seconds, CloudFront waits for a response from the origin. This is also known as the <i>origin response timeout</i>. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if you don't specify otherwise) is 30 seconds.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Response timeout (custom origins only)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub fn origin_read_timeout(&self) -> ::std::option::Option<i32> {
+        self.origin_read_timeout
+    }
+    /// <p>Specifies how long, in seconds, CloudFront persists its connection to the origin. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if you don't specify otherwise) is 5 seconds.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginKeepaliveTimeout">Keep-alive timeout (custom origins only)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub fn origin_keepalive_timeout(&self) -> ::std::option::Option<i32> {
+        self.origin_keepalive_timeout
     }
 }
 impl VpcOriginConfig {
@@ -26,6 +42,8 @@ impl VpcOriginConfig {
 #[non_exhaustive]
 pub struct VpcOriginConfigBuilder {
     pub(crate) vpc_origin_id: ::std::option::Option<::std::string::String>,
+    pub(crate) origin_read_timeout: ::std::option::Option<i32>,
+    pub(crate) origin_keepalive_timeout: ::std::option::Option<i32>,
 }
 impl VpcOriginConfigBuilder {
     /// <p>The VPC origin ID.</p>
@@ -43,6 +61,40 @@ impl VpcOriginConfigBuilder {
     pub fn get_vpc_origin_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_origin_id
     }
+    /// <p>Specifies how long, in seconds, CloudFront waits for a response from the origin. This is also known as the <i>origin response timeout</i>. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if you don't specify otherwise) is 30 seconds.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Response timeout (custom origins only)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub fn origin_read_timeout(mut self, input: i32) -> Self {
+        self.origin_read_timeout = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies how long, in seconds, CloudFront waits for a response from the origin. This is also known as the <i>origin response timeout</i>. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if you don't specify otherwise) is 30 seconds.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Response timeout (custom origins only)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub fn set_origin_read_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.origin_read_timeout = input;
+        self
+    }
+    /// <p>Specifies how long, in seconds, CloudFront waits for a response from the origin. This is also known as the <i>origin response timeout</i>. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if you don't specify otherwise) is 30 seconds.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Response timeout (custom origins only)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub fn get_origin_read_timeout(&self) -> &::std::option::Option<i32> {
+        &self.origin_read_timeout
+    }
+    /// <p>Specifies how long, in seconds, CloudFront persists its connection to the origin. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if you don't specify otherwise) is 5 seconds.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginKeepaliveTimeout">Keep-alive timeout (custom origins only)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub fn origin_keepalive_timeout(mut self, input: i32) -> Self {
+        self.origin_keepalive_timeout = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies how long, in seconds, CloudFront persists its connection to the origin. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if you don't specify otherwise) is 5 seconds.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginKeepaliveTimeout">Keep-alive timeout (custom origins only)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub fn set_origin_keepalive_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.origin_keepalive_timeout = input;
+        self
+    }
+    /// <p>Specifies how long, in seconds, CloudFront persists its connection to the origin. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if you don't specify otherwise) is 5 seconds.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginKeepaliveTimeout">Keep-alive timeout (custom origins only)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub fn get_origin_keepalive_timeout(&self) -> &::std::option::Option<i32> {
+        &self.origin_keepalive_timeout
+    }
     /// Consumes the builder and constructs a [`VpcOriginConfig`](crate::types::VpcOriginConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`vpc_origin_id`](crate::types::builders::VpcOriginConfigBuilder::vpc_origin_id)
@@ -54,6 +106,8 @@ impl VpcOriginConfigBuilder {
                     "vpc_origin_id was not specified but it is required when building VpcOriginConfig",
                 )
             })?,
+            origin_read_timeout: self.origin_read_timeout,
+            origin_keepalive_timeout: self.origin_keepalive_timeout,
         })
     }
 }

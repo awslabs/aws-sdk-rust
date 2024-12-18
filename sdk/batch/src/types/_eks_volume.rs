@@ -12,6 +12,8 @@ pub struct EksVolume {
     pub empty_dir: ::std::option::Option<crate::types::EksEmptyDir>,
     /// <p>Specifies the configuration of a Kubernetes <code>secret</code> volume. For more information, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/#secret">secret</a> in the <i>Kubernetes documentation</i>.</p>
     pub secret: ::std::option::Option<crate::types::EksSecret>,
+    /// <p>Specifies the configuration of a Kubernetes <code>persistentVolumeClaim</code> bounded to a <code>persistentVolume</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims"> Persistent Volume Claims</a> in the <i>Kubernetes documentation</i>.</p>
+    pub persistent_volume_claim: ::std::option::Option<crate::types::EksPersistentVolumeClaim>,
 }
 impl EksVolume {
     /// <p>The name of the volume. The name must be allowed as a DNS subdomain name. For more information, see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#dns-subdomain-names">DNS subdomain names</a> in the <i>Kubernetes documentation</i>.</p>
@@ -30,6 +32,10 @@ impl EksVolume {
     pub fn secret(&self) -> ::std::option::Option<&crate::types::EksSecret> {
         self.secret.as_ref()
     }
+    /// <p>Specifies the configuration of a Kubernetes <code>persistentVolumeClaim</code> bounded to a <code>persistentVolume</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims"> Persistent Volume Claims</a> in the <i>Kubernetes documentation</i>.</p>
+    pub fn persistent_volume_claim(&self) -> ::std::option::Option<&crate::types::EksPersistentVolumeClaim> {
+        self.persistent_volume_claim.as_ref()
+    }
 }
 impl EksVolume {
     /// Creates a new builder-style object to manufacture [`EksVolume`](crate::types::EksVolume).
@@ -46,6 +52,7 @@ pub struct EksVolumeBuilder {
     pub(crate) host_path: ::std::option::Option<crate::types::EksHostPath>,
     pub(crate) empty_dir: ::std::option::Option<crate::types::EksEmptyDir>,
     pub(crate) secret: ::std::option::Option<crate::types::EksSecret>,
+    pub(crate) persistent_volume_claim: ::std::option::Option<crate::types::EksPersistentVolumeClaim>,
 }
 impl EksVolumeBuilder {
     /// <p>The name of the volume. The name must be allowed as a DNS subdomain name. For more information, see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#dns-subdomain-names">DNS subdomain names</a> in the <i>Kubernetes documentation</i>.</p>
@@ -105,6 +112,20 @@ impl EksVolumeBuilder {
     pub fn get_secret(&self) -> &::std::option::Option<crate::types::EksSecret> {
         &self.secret
     }
+    /// <p>Specifies the configuration of a Kubernetes <code>persistentVolumeClaim</code> bounded to a <code>persistentVolume</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims"> Persistent Volume Claims</a> in the <i>Kubernetes documentation</i>.</p>
+    pub fn persistent_volume_claim(mut self, input: crate::types::EksPersistentVolumeClaim) -> Self {
+        self.persistent_volume_claim = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the configuration of a Kubernetes <code>persistentVolumeClaim</code> bounded to a <code>persistentVolume</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims"> Persistent Volume Claims</a> in the <i>Kubernetes documentation</i>.</p>
+    pub fn set_persistent_volume_claim(mut self, input: ::std::option::Option<crate::types::EksPersistentVolumeClaim>) -> Self {
+        self.persistent_volume_claim = input;
+        self
+    }
+    /// <p>Specifies the configuration of a Kubernetes <code>persistentVolumeClaim</code> bounded to a <code>persistentVolume</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims"> Persistent Volume Claims</a> in the <i>Kubernetes documentation</i>.</p>
+    pub fn get_persistent_volume_claim(&self) -> &::std::option::Option<crate::types::EksPersistentVolumeClaim> {
+        &self.persistent_volume_claim
+    }
     /// Consumes the builder and constructs a [`EksVolume`](crate::types::EksVolume).
     pub fn build(self) -> crate::types::EksVolume {
         crate::types::EksVolume {
@@ -112,6 +133,7 @@ impl EksVolumeBuilder {
             host_path: self.host_path,
             empty_dir: self.empty_dir,
             secret: self.secret,
+            persistent_volume_claim: self.persistent_volume_claim,
         }
     }
 }

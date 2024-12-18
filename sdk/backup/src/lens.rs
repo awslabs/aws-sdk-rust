@@ -99,6 +99,16 @@ pub(crate) fn reflens_list_frameworks_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_indexed_recovery_points_output_output_next_token(
+    input: &crate::operation::list_indexed_recovery_points::ListIndexedRecoveryPointsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_legal_holds_output_output_next_token(
     input: &crate::operation::list_legal_holds::ListLegalHoldsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -303,6 +313,16 @@ pub(crate) fn lens_list_copy_jobs_output_output_copy_jobs(
     input: crate::operation::list_copy_jobs::ListCopyJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CopyJob>> {
     let input = match input.copy_jobs {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_indexed_recovery_points_output_output_indexed_recovery_points(
+    input: crate::operation::list_indexed_recovery_points::ListIndexedRecoveryPointsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::IndexedRecoveryPoint>> {
+    let input = match input.indexed_recovery_points {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

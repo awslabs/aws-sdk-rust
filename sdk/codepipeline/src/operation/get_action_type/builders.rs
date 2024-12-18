@@ -122,6 +122,8 @@ impl GetActionTypeFluentBuilder {
     /// <p><code>Approval</code></p></li>
     /// <li>
     /// <p><code>Invoke</code></p></li>
+    /// <li>
+    /// <p><code>Compute</code></p></li>
     /// </ul>
     pub fn category(mut self, input: crate::types::ActionCategory) -> Self {
         self.inner = self.inner.category(input);
@@ -141,6 +143,8 @@ impl GetActionTypeFluentBuilder {
     /// <p><code>Approval</code></p></li>
     /// <li>
     /// <p><code>Invoke</code></p></li>
+    /// <li>
+    /// <p><code>Compute</code></p></li>
     /// </ul>
     pub fn set_category(mut self, input: ::std::option::Option<crate::types::ActionCategory>) -> Self {
         self.inner = self.inner.set_category(input);
@@ -160,6 +164,8 @@ impl GetActionTypeFluentBuilder {
     /// <p><code>Approval</code></p></li>
     /// <li>
     /// <p><code>Invoke</code></p></li>
+    /// <li>
+    /// <p><code>Compute</code></p></li>
     /// </ul>
     pub fn get_category(&self) -> &::std::option::Option<crate::types::ActionCategory> {
         self.inner.get_category()

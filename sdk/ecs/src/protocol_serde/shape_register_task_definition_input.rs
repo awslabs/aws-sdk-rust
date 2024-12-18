@@ -114,5 +114,8 @@ pub fn ser_register_task_definition_input_input(
         crate::protocol_serde::shape_runtime_platform::ser_runtime_platform(&mut object_37, var_36)?;
         object_37.finish();
     }
+    if let Some(var_38) = &input.enable_fault_injection {
+        object.key("enableFaultInjection").boolean(*var_38);
+    }
     Ok(())
 }

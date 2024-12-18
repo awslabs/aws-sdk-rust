@@ -29,6 +29,15 @@ pub struct BackupRuleInput {
     pub enable_continuous_backup: ::std::option::Option<bool>,
     /// <p>The timezone in which the schedule expression is set. By default, ScheduleExpressions are in UTC. You can modify this to a specified timezone.</p>
     pub schedule_expression_timezone: ::std::option::Option<::std::string::String>,
+    /// <p>There can up to one IndexAction in each BackupRule, as each backup can have 0 or 1 backup index associated with it.</p>
+    /// <p>Within the array is ResourceTypes. Only 1 resource type will be accepted for each BackupRule. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EBS</code> for Amazon Elastic Block Store</p></li>
+    /// <li>
+    /// <p><code>S3</code> for Amazon Simple Storage Service (Amazon S3)</p></li>
+    /// </ul>
+    pub index_actions: ::std::option::Option<::std::vec::Vec<crate::types::IndexAction>>,
 }
 impl BackupRuleInput {
     /// <p>A display name for a backup rule. Must contain 1 to 50 alphanumeric or '-_.' characters.</p>
@@ -80,6 +89,19 @@ impl BackupRuleInput {
     pub fn schedule_expression_timezone(&self) -> ::std::option::Option<&str> {
         self.schedule_expression_timezone.as_deref()
     }
+    /// <p>There can up to one IndexAction in each BackupRule, as each backup can have 0 or 1 backup index associated with it.</p>
+    /// <p>Within the array is ResourceTypes. Only 1 resource type will be accepted for each BackupRule. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EBS</code> for Amazon Elastic Block Store</p></li>
+    /// <li>
+    /// <p><code>S3</code> for Amazon Simple Storage Service (Amazon S3)</p></li>
+    /// </ul>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.index_actions.is_none()`.
+    pub fn index_actions(&self) -> &[crate::types::IndexAction] {
+        self.index_actions.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for BackupRuleInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -94,6 +116,7 @@ impl ::std::fmt::Debug for BackupRuleInput {
         formatter.field("copy_actions", &self.copy_actions);
         formatter.field("enable_continuous_backup", &self.enable_continuous_backup);
         formatter.field("schedule_expression_timezone", &self.schedule_expression_timezone);
+        formatter.field("index_actions", &self.index_actions);
         formatter.finish()
     }
 }
@@ -118,6 +141,7 @@ pub struct BackupRuleInputBuilder {
     pub(crate) copy_actions: ::std::option::Option<::std::vec::Vec<crate::types::CopyAction>>,
     pub(crate) enable_continuous_backup: ::std::option::Option<bool>,
     pub(crate) schedule_expression_timezone: ::std::option::Option<::std::string::String>,
+    pub(crate) index_actions: ::std::option::Option<::std::vec::Vec<crate::types::IndexAction>>,
 }
 impl BackupRuleInputBuilder {
     /// <p>A display name for a backup rule. Must contain 1 to 50 alphanumeric or '-_.' characters.</p>
@@ -296,6 +320,47 @@ impl BackupRuleInputBuilder {
     pub fn get_schedule_expression_timezone(&self) -> &::std::option::Option<::std::string::String> {
         &self.schedule_expression_timezone
     }
+    /// Appends an item to `index_actions`.
+    ///
+    /// To override the contents of this collection use [`set_index_actions`](Self::set_index_actions).
+    ///
+    /// <p>There can up to one IndexAction in each BackupRule, as each backup can have 0 or 1 backup index associated with it.</p>
+    /// <p>Within the array is ResourceTypes. Only 1 resource type will be accepted for each BackupRule. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EBS</code> for Amazon Elastic Block Store</p></li>
+    /// <li>
+    /// <p><code>S3</code> for Amazon Simple Storage Service (Amazon S3)</p></li>
+    /// </ul>
+    pub fn index_actions(mut self, input: crate::types::IndexAction) -> Self {
+        let mut v = self.index_actions.unwrap_or_default();
+        v.push(input);
+        self.index_actions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>There can up to one IndexAction in each BackupRule, as each backup can have 0 or 1 backup index associated with it.</p>
+    /// <p>Within the array is ResourceTypes. Only 1 resource type will be accepted for each BackupRule. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EBS</code> for Amazon Elastic Block Store</p></li>
+    /// <li>
+    /// <p><code>S3</code> for Amazon Simple Storage Service (Amazon S3)</p></li>
+    /// </ul>
+    pub fn set_index_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IndexAction>>) -> Self {
+        self.index_actions = input;
+        self
+    }
+    /// <p>There can up to one IndexAction in each BackupRule, as each backup can have 0 or 1 backup index associated with it.</p>
+    /// <p>Within the array is ResourceTypes. Only 1 resource type will be accepted for each BackupRule. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EBS</code> for Amazon Elastic Block Store</p></li>
+    /// <li>
+    /// <p><code>S3</code> for Amazon Simple Storage Service (Amazon S3)</p></li>
+    /// </ul>
+    pub fn get_index_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IndexAction>> {
+        &self.index_actions
+    }
     /// Consumes the builder and constructs a [`BackupRuleInput`](crate::types::BackupRuleInput).
     /// This method will fail if any of the following fields are not set:
     /// - [`rule_name`](crate::types::builders::BackupRuleInputBuilder::rule_name)
@@ -322,6 +387,7 @@ impl BackupRuleInputBuilder {
             copy_actions: self.copy_actions,
             enable_continuous_backup: self.enable_continuous_backup,
             schedule_expression_timezone: self.schedule_expression_timezone,
+            index_actions: self.index_actions,
         })
     }
 }
@@ -338,6 +404,7 @@ impl ::std::fmt::Debug for BackupRuleInputBuilder {
         formatter.field("copy_actions", &self.copy_actions);
         formatter.field("enable_continuous_backup", &self.enable_continuous_backup);
         formatter.field("schedule_expression_timezone", &self.schedule_expression_timezone);
+        formatter.field("index_actions", &self.index_actions);
         formatter.finish()
     }
 }

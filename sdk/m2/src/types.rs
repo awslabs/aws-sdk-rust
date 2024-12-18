@@ -3,6 +3,8 @@ pub use crate::types::_validation_exception_field::ValidationExceptionField;
 
 pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
+pub use crate::types::_network_type::NetworkType;
+
 pub use crate::types::_pending_maintenance::PendingMaintenance;
 
 pub use crate::types::_maintenance_schedule::MaintenanceSchedule;
@@ -194,6 +196,8 @@ mod _job_step_restart_marker;
 mod _log_group_summary;
 
 mod _maintenance_schedule;
+
+mod _network_type;
 
 mod _pending_maintenance;
 

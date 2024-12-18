@@ -58,6 +58,12 @@ pub struct DescribeRecoveryPointOutput {
     pub resource_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of vault in which the described recovery point is stored.</p>
     pub vault_type: ::std::option::Option<crate::types::VaultType>,
+    /// <p>This is the current status for the backup index associated with the specified recovery point.</p>
+    /// <p>Statuses are: <code>PENDING</code> | <code>ACTIVE</code> | <code>FAILED</code> | <code>DELETING</code></p>
+    /// <p>A recovery point with an index that has the status of <code>ACTIVE</code> can be included in a search.</p>
+    pub index_status: ::std::option::Option<crate::types::IndexStatus>,
+    /// <p>A string in the form of a detailed message explaining the status of a backup index associated with the recovery point.</p>
+    pub index_status_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeRecoveryPointOutput {
@@ -164,6 +170,16 @@ impl DescribeRecoveryPointOutput {
     pub fn vault_type(&self) -> ::std::option::Option<&crate::types::VaultType> {
         self.vault_type.as_ref()
     }
+    /// <p>This is the current status for the backup index associated with the specified recovery point.</p>
+    /// <p>Statuses are: <code>PENDING</code> | <code>ACTIVE</code> | <code>FAILED</code> | <code>DELETING</code></p>
+    /// <p>A recovery point with an index that has the status of <code>ACTIVE</code> can be included in a search.</p>
+    pub fn index_status(&self) -> ::std::option::Option<&crate::types::IndexStatus> {
+        self.index_status.as_ref()
+    }
+    /// <p>A string in the form of a detailed message explaining the status of a backup index associated with the recovery point.</p>
+    pub fn index_status_message(&self) -> ::std::option::Option<&str> {
+        self.index_status_message.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeRecoveryPointOutput {
     fn request_id(&self) -> Option<&str> {
@@ -205,6 +221,8 @@ pub struct DescribeRecoveryPointOutputBuilder {
     pub(crate) is_parent: ::std::option::Option<bool>,
     pub(crate) resource_name: ::std::option::Option<::std::string::String>,
     pub(crate) vault_type: ::std::option::Option<crate::types::VaultType>,
+    pub(crate) index_status: ::std::option::Option<crate::types::IndexStatus>,
+    pub(crate) index_status_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeRecoveryPointOutputBuilder {
@@ -565,6 +583,40 @@ impl DescribeRecoveryPointOutputBuilder {
     pub fn get_vault_type(&self) -> &::std::option::Option<crate::types::VaultType> {
         &self.vault_type
     }
+    /// <p>This is the current status for the backup index associated with the specified recovery point.</p>
+    /// <p>Statuses are: <code>PENDING</code> | <code>ACTIVE</code> | <code>FAILED</code> | <code>DELETING</code></p>
+    /// <p>A recovery point with an index that has the status of <code>ACTIVE</code> can be included in a search.</p>
+    pub fn index_status(mut self, input: crate::types::IndexStatus) -> Self {
+        self.index_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>This is the current status for the backup index associated with the specified recovery point.</p>
+    /// <p>Statuses are: <code>PENDING</code> | <code>ACTIVE</code> | <code>FAILED</code> | <code>DELETING</code></p>
+    /// <p>A recovery point with an index that has the status of <code>ACTIVE</code> can be included in a search.</p>
+    pub fn set_index_status(mut self, input: ::std::option::Option<crate::types::IndexStatus>) -> Self {
+        self.index_status = input;
+        self
+    }
+    /// <p>This is the current status for the backup index associated with the specified recovery point.</p>
+    /// <p>Statuses are: <code>PENDING</code> | <code>ACTIVE</code> | <code>FAILED</code> | <code>DELETING</code></p>
+    /// <p>A recovery point with an index that has the status of <code>ACTIVE</code> can be included in a search.</p>
+    pub fn get_index_status(&self) -> &::std::option::Option<crate::types::IndexStatus> {
+        &self.index_status
+    }
+    /// <p>A string in the form of a detailed message explaining the status of a backup index associated with the recovery point.</p>
+    pub fn index_status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.index_status_message = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A string in the form of a detailed message explaining the status of a backup index associated with the recovery point.</p>
+    pub fn set_index_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.index_status_message = input;
+        self
+    }
+    /// <p>A string in the form of a detailed message explaining the status of a backup index associated with the recovery point.</p>
+    pub fn get_index_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_status_message
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -601,6 +653,8 @@ impl DescribeRecoveryPointOutputBuilder {
             is_parent: self.is_parent.unwrap_or_default(),
             resource_name: self.resource_name,
             vault_type: self.vault_type,
+            index_status: self.index_status,
+            index_status_message: self.index_status_message,
             _request_id: self._request_id,
         }
     }

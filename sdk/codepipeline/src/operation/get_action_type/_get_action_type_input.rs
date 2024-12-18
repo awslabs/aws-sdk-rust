@@ -17,6 +17,8 @@ pub struct GetActionTypeInput {
     /// <p><code>Approval</code></p></li>
     /// <li>
     /// <p><code>Invoke</code></p></li>
+    /// <li>
+    /// <p><code>Compute</code></p></li>
     /// </ul>
     pub category: ::std::option::Option<crate::types::ActionCategory>,
     /// <p>The creator of an action type that was created with any supported integration model. There are two valid values: <code>AWS</code> and <code>ThirdParty</code>.</p>
@@ -41,6 +43,8 @@ impl GetActionTypeInput {
     /// <p><code>Approval</code></p></li>
     /// <li>
     /// <p><code>Invoke</code></p></li>
+    /// <li>
+    /// <p><code>Compute</code></p></li>
     /// </ul>
     pub fn category(&self) -> ::std::option::Option<&crate::types::ActionCategory> {
         self.category.as_ref()
@@ -89,6 +93,8 @@ impl GetActionTypeInputBuilder {
     /// <p><code>Approval</code></p></li>
     /// <li>
     /// <p><code>Invoke</code></p></li>
+    /// <li>
+    /// <p><code>Compute</code></p></li>
     /// </ul>
     /// This field is required.
     pub fn category(mut self, input: crate::types::ActionCategory) -> Self {
@@ -109,6 +115,8 @@ impl GetActionTypeInputBuilder {
     /// <p><code>Approval</code></p></li>
     /// <li>
     /// <p><code>Invoke</code></p></li>
+    /// <li>
+    /// <p><code>Compute</code></p></li>
     /// </ul>
     pub fn set_category(mut self, input: ::std::option::Option<crate::types::ActionCategory>) -> Self {
         self.category = input;
@@ -128,6 +136,8 @@ impl GetActionTypeInputBuilder {
     /// <p><code>Approval</code></p></li>
     /// <li>
     /// <p><code>Invoke</code></p></li>
+    /// <li>
+    /// <p><code>Compute</code></p></li>
     /// </ul>
     pub fn get_category(&self) -> &::std::option::Option<crate::types::ActionCategory> {
         &self.category

@@ -669,4 +669,18 @@ impl RegisterTaskDefinitionFluentBuilder {
     pub fn get_runtime_platform(&self) -> &::std::option::Option<crate::types::RuntimePlatform> {
         self.inner.get_runtime_platform()
     }
+    /// <p>Enables fault injection when you register your task definition and allows for fault injection requests to be accepted from the task's containers. The default value is <code>false</code>.</p>
+    pub fn enable_fault_injection(mut self, input: bool) -> Self {
+        self.inner = self.inner.enable_fault_injection(input);
+        self
+    }
+    /// <p>Enables fault injection when you register your task definition and allows for fault injection requests to be accepted from the task's containers. The default value is <code>false</code>.</p>
+    pub fn set_enable_fault_injection(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_enable_fault_injection(input);
+        self
+    }
+    /// <p>Enables fault injection when you register your task definition and allows for fault injection requests to be accepted from the task's containers. The default value is <code>false</code>.</p>
+    pub fn get_enable_fault_injection(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_fault_injection()
+    }
 }

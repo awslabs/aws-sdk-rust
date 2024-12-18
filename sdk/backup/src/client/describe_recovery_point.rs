@@ -31,6 +31,8 @@ impl super::Client {
     ///   - [`is_parent(bool)`](crate::operation::describe_recovery_point::DescribeRecoveryPointOutput::is_parent): <p>This returns the boolean value that a recovery point is a parent (composite) job.</p>
     ///   - [`resource_name(Option<String>)`](crate::operation::describe_recovery_point::DescribeRecoveryPointOutput::resource_name): <p>The name of the resource that belongs to the specified backup.</p>
     ///   - [`vault_type(Option<VaultType>)`](crate::operation::describe_recovery_point::DescribeRecoveryPointOutput::vault_type): <p>The type of vault in which the described recovery point is stored.</p>
+    ///   - [`index_status(Option<IndexStatus>)`](crate::operation::describe_recovery_point::DescribeRecoveryPointOutput::index_status): <p>This is the current status for the backup index associated with the specified recovery point.</p> <p>Statuses are: <code>PENDING</code> | <code>ACTIVE</code> | <code>FAILED</code> | <code>DELETING</code></p> <p>A recovery point with an index that has the status of <code>ACTIVE</code> can be included in a search.</p>
+    ///   - [`index_status_message(Option<String>)`](crate::operation::describe_recovery_point::DescribeRecoveryPointOutput::index_status_message): <p>A string in the form of a detailed message explaining the status of a backup index associated with the recovery point.</p>
     /// - On failure, responds with [`SdkError<DescribeRecoveryPointError>`](crate::operation::describe_recovery_point::DescribeRecoveryPointError)
     pub fn describe_recovery_point(&self) -> crate::operation::describe_recovery_point::builders::DescribeRecoveryPointFluentBuilder {
         crate::operation::describe_recovery_point::builders::DescribeRecoveryPointFluentBuilder::new(self.handle.clone())

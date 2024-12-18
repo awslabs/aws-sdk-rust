@@ -99,6 +99,8 @@ pub use crate::types::_eks_pod_properties::EksPodPropertiesBuilder;
 
 pub use crate::types::_eks_volume::EksVolumeBuilder;
 
+pub use crate::types::_eks_persistent_volume_claim::EksPersistentVolumeClaimBuilder;
+
 pub use crate::types::_eks_secret::EksSecretBuilder;
 
 pub use crate::types::_eks_empty_dir::EksEmptyDirBuilder;

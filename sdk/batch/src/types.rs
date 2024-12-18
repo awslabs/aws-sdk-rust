@@ -127,6 +127,8 @@ pub use crate::types::_eks_pod_properties::EksPodProperties;
 
 pub use crate::types::_eks_volume::EksVolume;
 
+pub use crate::types::_eks_persistent_volume_claim::EksPersistentVolumeClaim;
+
 pub use crate::types::_eks_secret::EksSecret;
 
 pub use crate::types::_eks_empty_dir::EksEmptyDir;
@@ -322,6 +324,8 @@ mod _eks_empty_dir;
 mod _eks_host_path;
 
 mod _eks_metadata;
+
+mod _eks_persistent_volume_claim;
 
 mod _eks_pod_properties;
 

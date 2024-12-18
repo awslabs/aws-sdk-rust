@@ -14,7 +14,7 @@ pub struct DeploymentConfiguration {
     /// <p>If a service is using either the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types, and tasks in the service use the EC2 launch type, the <b>maximum percent</b> value is set to the default value. The <b>maximum percent</b> value is used to define the upper limit on the number of the tasks in the service that remain in the <code>RUNNING</code> state while the container instances are in the <code>DRAINING</code> state.</p><note>
     /// <p>You can't specify a custom <code>maximumPercent</code> value for a service that uses either the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types and has tasks that use the EC2 launch type.</p>
     /// </note>
-    /// <p>If the tasks in the service use the Fargate launch type, the maximum percent value is not used, although it is returned when describing your service.</p>
+    /// <p>If the service uses either the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types, and the tasks in the service use the Fargate launch type, the maximum percent value is not used. The value is still returned when describing your service.</p>
     pub maximum_percent: ::std::option::Option<i32>,
     /// <p>If a service is using the rolling update (<code>ECS</code>) deployment type, the <code>minimumHealthyPercent</code> represents a lower limit on the number of your service's tasks that must remain in the <code>RUNNING</code> state during a deployment, as a percentage of the <code>desiredCount</code> (rounded up to the nearest integer). This parameter enables you to deploy without using additional cluster capacity. For example, if your service has a <code>desiredCount</code> of four tasks and a <code>minimumHealthyPercent</code> of 50%, the service scheduler may stop two existing tasks to free up cluster capacity before starting two new tasks.</p>
     /// <p>If any tasks are unhealthy and if <code>maximumPercent</code> doesn't allow the Amazon ECS scheduler to start replacement tasks, the scheduler stops the unhealthy tasks one-by-one — using the <code>minimumHealthyPercent</code> as a constraint — to clear up capacity to launch replacement tasks. For more information about how the scheduler replaces unhealthy tasks, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Amazon ECS services</a> .</p>
@@ -57,7 +57,7 @@ impl DeploymentConfiguration {
     /// <p>If a service is using either the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types, and tasks in the service use the EC2 launch type, the <b>maximum percent</b> value is set to the default value. The <b>maximum percent</b> value is used to define the upper limit on the number of the tasks in the service that remain in the <code>RUNNING</code> state while the container instances are in the <code>DRAINING</code> state.</p><note>
     /// <p>You can't specify a custom <code>maximumPercent</code> value for a service that uses either the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types and has tasks that use the EC2 launch type.</p>
     /// </note>
-    /// <p>If the tasks in the service use the Fargate launch type, the maximum percent value is not used, although it is returned when describing your service.</p>
+    /// <p>If the service uses either the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types, and the tasks in the service use the Fargate launch type, the maximum percent value is not used. The value is still returned when describing your service.</p>
     pub fn maximum_percent(&self) -> ::std::option::Option<i32> {
         self.maximum_percent
     }
@@ -138,7 +138,7 @@ impl DeploymentConfigurationBuilder {
     /// <p>If a service is using either the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types, and tasks in the service use the EC2 launch type, the <b>maximum percent</b> value is set to the default value. The <b>maximum percent</b> value is used to define the upper limit on the number of the tasks in the service that remain in the <code>RUNNING</code> state while the container instances are in the <code>DRAINING</code> state.</p><note>
     /// <p>You can't specify a custom <code>maximumPercent</code> value for a service that uses either the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types and has tasks that use the EC2 launch type.</p>
     /// </note>
-    /// <p>If the tasks in the service use the Fargate launch type, the maximum percent value is not used, although it is returned when describing your service.</p>
+    /// <p>If the service uses either the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types, and the tasks in the service use the Fargate launch type, the maximum percent value is not used. The value is still returned when describing your service.</p>
     pub fn maximum_percent(mut self, input: i32) -> Self {
         self.maximum_percent = ::std::option::Option::Some(input);
         self
@@ -148,7 +148,7 @@ impl DeploymentConfigurationBuilder {
     /// <p>If a service is using either the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types, and tasks in the service use the EC2 launch type, the <b>maximum percent</b> value is set to the default value. The <b>maximum percent</b> value is used to define the upper limit on the number of the tasks in the service that remain in the <code>RUNNING</code> state while the container instances are in the <code>DRAINING</code> state.</p><note>
     /// <p>You can't specify a custom <code>maximumPercent</code> value for a service that uses either the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types and has tasks that use the EC2 launch type.</p>
     /// </note>
-    /// <p>If the tasks in the service use the Fargate launch type, the maximum percent value is not used, although it is returned when describing your service.</p>
+    /// <p>If the service uses either the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types, and the tasks in the service use the Fargate launch type, the maximum percent value is not used. The value is still returned when describing your service.</p>
     pub fn set_maximum_percent(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum_percent = input;
         self
@@ -158,7 +158,7 @@ impl DeploymentConfigurationBuilder {
     /// <p>If a service is using either the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types, and tasks in the service use the EC2 launch type, the <b>maximum percent</b> value is set to the default value. The <b>maximum percent</b> value is used to define the upper limit on the number of the tasks in the service that remain in the <code>RUNNING</code> state while the container instances are in the <code>DRAINING</code> state.</p><note>
     /// <p>You can't specify a custom <code>maximumPercent</code> value for a service that uses either the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types and has tasks that use the EC2 launch type.</p>
     /// </note>
-    /// <p>If the tasks in the service use the Fargate launch type, the maximum percent value is not used, although it is returned when describing your service.</p>
+    /// <p>If the service uses either the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types, and the tasks in the service use the Fargate launch type, the maximum percent value is not used. The value is still returned when describing your service.</p>
     pub fn get_maximum_percent(&self) -> &::std::option::Option<i32> {
         &self.maximum_percent
     }

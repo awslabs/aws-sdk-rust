@@ -247,6 +247,8 @@ mod get_backup_vault_notifications;
 
 mod get_legal_hold;
 
+mod get_recovery_point_index_details;
+
 mod get_recovery_point_restore_metadata;
 
 mod get_restore_job_metadata;
@@ -278,6 +280,8 @@ mod list_copy_job_summaries;
 mod list_copy_jobs;
 
 mod list_frameworks;
+
+mod list_indexed_recovery_points;
 
 mod list_legal_holds;
 
@@ -334,6 +338,8 @@ mod update_backup_plan;
 mod update_framework;
 
 mod update_global_settings;
+
+mod update_recovery_point_index_settings;
 
 mod update_recovery_point_lifecycle;
 

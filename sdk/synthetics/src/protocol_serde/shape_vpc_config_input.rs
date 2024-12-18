@@ -21,5 +21,8 @@ pub fn ser_vpc_config_input(
         }
         array_5.finish();
     }
+    if let Some(var_7) = &input.ipv6_allowed_for_dual_stack {
+        object.key("Ipv6AllowedForDualStack").boolean(*var_7);
+    }
     Ok(())
 }

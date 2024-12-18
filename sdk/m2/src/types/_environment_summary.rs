@@ -20,6 +20,8 @@ pub struct EnvironmentSummary {
     pub engine_version: ::std::string::String,
     /// <p>The timestamp when the runtime environment was created.</p>
     pub creation_time: ::aws_smithy_types::DateTime,
+    /// <p>The network type supported by the runtime environment.</p>
+    pub network_type: ::std::option::Option<crate::types::NetworkType>,
 }
 impl EnvironmentSummary {
     /// <p>The name of the runtime environment.</p>
@@ -59,6 +61,10 @@ impl EnvironmentSummary {
     pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
         &self.creation_time
     }
+    /// <p>The network type supported by the runtime environment.</p>
+    pub fn network_type(&self) -> ::std::option::Option<&crate::types::NetworkType> {
+        self.network_type.as_ref()
+    }
 }
 impl EnvironmentSummary {
     /// Creates a new builder-style object to manufacture [`EnvironmentSummary`](crate::types::EnvironmentSummary).
@@ -79,6 +85,7 @@ pub struct EnvironmentSummaryBuilder {
     pub(crate) engine_type: ::std::option::Option<crate::types::EngineType>,
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) network_type: ::std::option::Option<crate::types::NetworkType>,
 }
 impl EnvironmentSummaryBuilder {
     /// <p>The name of the runtime environment.</p>
@@ -201,6 +208,20 @@ impl EnvironmentSummaryBuilder {
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
+    /// <p>The network type supported by the runtime environment.</p>
+    pub fn network_type(mut self, input: crate::types::NetworkType) -> Self {
+        self.network_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The network type supported by the runtime environment.</p>
+    pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::NetworkType>) -> Self {
+        self.network_type = input;
+        self
+    }
+    /// <p>The network type supported by the runtime environment.</p>
+    pub fn get_network_type(&self) -> &::std::option::Option<crate::types::NetworkType> {
+        &self.network_type
+    }
     /// Consumes the builder and constructs a [`EnvironmentSummary`](crate::types::EnvironmentSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::EnvironmentSummaryBuilder::name)
@@ -261,6 +282,7 @@ impl EnvironmentSummaryBuilder {
                     "creation_time was not specified but it is required when building EnvironmentSummary",
                 )
             })?,
+            network_type: self.network_type,
         })
     }
 }

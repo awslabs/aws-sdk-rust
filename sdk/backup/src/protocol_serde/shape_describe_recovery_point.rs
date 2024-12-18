@@ -184,6 +184,20 @@ pub(crate) fn de_describe_recovery_point(
                             .transpose()?,
                     );
                 }
+                "IndexStatus" => {
+                    builder = builder.set_index_status(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::IndexStatus::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
+                "IndexStatusMessage" => {
+                    builder = builder.set_index_status_message(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "IsEncrypted" => {
                     builder = builder.set_is_encrypted(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }

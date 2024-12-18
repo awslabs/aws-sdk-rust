@@ -76,6 +76,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "IndexActions" => {
+                            builder = builder.set_index_actions(crate::protocol_serde::shape_index_actions::de_index_actions(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

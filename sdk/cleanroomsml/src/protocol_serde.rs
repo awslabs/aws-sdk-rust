@@ -293,6 +293,8 @@ pub(crate) mod shape_collaboration_trained_model_inference_job_summary;
 
 pub(crate) mod shape_collaboration_trained_model_summary;
 
+pub(crate) mod shape_compute_configuration;
+
 pub(crate) mod shape_configured_audience_model_summary;
 
 pub(crate) mod shape_configured_model_algorithm_association_summary;
@@ -351,7 +353,7 @@ pub(crate) mod shape_trained_model_inference_jobs_configuration_policy;
 
 pub(crate) mod shape_trained_models_configuration_policy;
 
-pub(crate) mod shape_compute_configuration;
+pub(crate) mod shape_worker_compute_configuration;
 
 pub(crate) mod shape_dataset_schema_list;
 
@@ -370,8 +372,6 @@ pub(crate) mod shape_trained_model_export_receiver_members;
 pub(crate) mod shape_trained_model_exports_max_size;
 
 pub(crate) mod shape_trained_model_inference_max_output_size;
-
-pub(crate) mod shape_worker_compute_configuration;
 
 pub(crate) mod shape_account_id_list;
 

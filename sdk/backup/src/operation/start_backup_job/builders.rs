@@ -279,4 +279,48 @@ impl StartBackupJobFluentBuilder {
     pub fn get_backup_options(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_backup_options()
     }
+    /// <p>Include this parameter to enable index creation if your backup job has a resource type that supports backup indexes.</p>
+    /// <p>Resource types that support backup indexes include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EBS</code> for Amazon Elastic Block Store</p></li>
+    /// <li>
+    /// <p><code>S3</code> for Amazon Simple Storage Service (Amazon S3)</p></li>
+    /// </ul>
+    /// <p>Index can have 1 of 2 possible values, either <code>ENABLED</code> or <code>DISABLED</code>.</p>
+    /// <p>To create a backup index for an eligible <code>ACTIVE</code> recovery point that does not yet have a backup index, set value to <code>ENABLED</code>.</p>
+    /// <p>To delete a backup index, set value to <code>DISABLED</code>.</p>
+    pub fn index(mut self, input: crate::types::Index) -> Self {
+        self.inner = self.inner.index(input);
+        self
+    }
+    /// <p>Include this parameter to enable index creation if your backup job has a resource type that supports backup indexes.</p>
+    /// <p>Resource types that support backup indexes include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EBS</code> for Amazon Elastic Block Store</p></li>
+    /// <li>
+    /// <p><code>S3</code> for Amazon Simple Storage Service (Amazon S3)</p></li>
+    /// </ul>
+    /// <p>Index can have 1 of 2 possible values, either <code>ENABLED</code> or <code>DISABLED</code>.</p>
+    /// <p>To create a backup index for an eligible <code>ACTIVE</code> recovery point that does not yet have a backup index, set value to <code>ENABLED</code>.</p>
+    /// <p>To delete a backup index, set value to <code>DISABLED</code>.</p>
+    pub fn set_index(mut self, input: ::std::option::Option<crate::types::Index>) -> Self {
+        self.inner = self.inner.set_index(input);
+        self
+    }
+    /// <p>Include this parameter to enable index creation if your backup job has a resource type that supports backup indexes.</p>
+    /// <p>Resource types that support backup indexes include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EBS</code> for Amazon Elastic Block Store</p></li>
+    /// <li>
+    /// <p><code>S3</code> for Amazon Simple Storage Service (Amazon S3)</p></li>
+    /// </ul>
+    /// <p>Index can have 1 of 2 possible values, either <code>ENABLED</code> or <code>DISABLED</code>.</p>
+    /// <p>To create a backup index for an eligible <code>ACTIVE</code> recovery point that does not yet have a backup index, set value to <code>ENABLED</code>.</p>
+    /// <p>To delete a backup index, set value to <code>DISABLED</code>.</p>
+    pub fn get_index(&self) -> &::std::option::Option<crate::types::Index> {
+        self.inner.get_index()
+    }
 }

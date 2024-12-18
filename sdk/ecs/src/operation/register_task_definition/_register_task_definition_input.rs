@@ -133,6 +133,8 @@ pub struct RegisterTaskDefinitionInput {
     pub ephemeral_storage: ::std::option::Option<crate::types::EphemeralStorage>,
     /// <p>The operating system that your tasks definitions run on. A platform family is specified only for tasks using the Fargate launch type.</p>
     pub runtime_platform: ::std::option::Option<crate::types::RuntimePlatform>,
+    /// <p>Enables fault injection when you register your task definition and allows for fault injection requests to be accepted from the task's containers. The default value is <code>false</code>.</p>
+    pub enable_fault_injection: ::std::option::Option<bool>,
 }
 impl RegisterTaskDefinitionInput {
     /// <p>You must specify a <code>family</code> for a task definition. You can use it track multiple versions of the same task definition. The <code>family</code> is used as a name for your task definition. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed.</p>
@@ -311,6 +313,10 @@ impl RegisterTaskDefinitionInput {
     pub fn runtime_platform(&self) -> ::std::option::Option<&crate::types::RuntimePlatform> {
         self.runtime_platform.as_ref()
     }
+    /// <p>Enables fault injection when you register your task definition and allows for fault injection requests to be accepted from the task's containers. The default value is <code>false</code>.</p>
+    pub fn enable_fault_injection(&self) -> ::std::option::Option<bool> {
+        self.enable_fault_injection
+    }
 }
 impl RegisterTaskDefinitionInput {
     /// Creates a new builder-style object to manufacture [`RegisterTaskDefinitionInput`](crate::operation::register_task_definition::RegisterTaskDefinitionInput).
@@ -340,6 +346,7 @@ pub struct RegisterTaskDefinitionInputBuilder {
     pub(crate) inference_accelerators: ::std::option::Option<::std::vec::Vec<crate::types::InferenceAccelerator>>,
     pub(crate) ephemeral_storage: ::std::option::Option<crate::types::EphemeralStorage>,
     pub(crate) runtime_platform: ::std::option::Option<crate::types::RuntimePlatform>,
+    pub(crate) enable_fault_injection: ::std::option::Option<bool>,
 }
 impl RegisterTaskDefinitionInputBuilder {
     /// <p>You must specify a <code>family</code> for a task definition. You can use it track multiple versions of the same task definition. The <code>family</code> is used as a name for your task definition. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed.</p>
@@ -908,6 +915,20 @@ impl RegisterTaskDefinitionInputBuilder {
     pub fn get_runtime_platform(&self) -> &::std::option::Option<crate::types::RuntimePlatform> {
         &self.runtime_platform
     }
+    /// <p>Enables fault injection when you register your task definition and allows for fault injection requests to be accepted from the task's containers. The default value is <code>false</code>.</p>
+    pub fn enable_fault_injection(mut self, input: bool) -> Self {
+        self.enable_fault_injection = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Enables fault injection when you register your task definition and allows for fault injection requests to be accepted from the task's containers. The default value is <code>false</code>.</p>
+    pub fn set_enable_fault_injection(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.enable_fault_injection = input;
+        self
+    }
+    /// <p>Enables fault injection when you register your task definition and allows for fault injection requests to be accepted from the task's containers. The default value is <code>false</code>.</p>
+    pub fn get_enable_fault_injection(&self) -> &::std::option::Option<bool> {
+        &self.enable_fault_injection
+    }
     /// Consumes the builder and constructs a [`RegisterTaskDefinitionInput`](crate::operation::register_task_definition::RegisterTaskDefinitionInput).
     pub fn build(
         self,
@@ -933,6 +954,7 @@ impl RegisterTaskDefinitionInputBuilder {
             inference_accelerators: self.inference_accelerators,
             ephemeral_storage: self.ephemeral_storage,
             runtime_platform: self.runtime_platform,
+            enable_fault_injection: self.enable_fault_injection,
         })
     }
 }

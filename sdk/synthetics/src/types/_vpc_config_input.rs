@@ -8,6 +8,8 @@ pub struct VpcConfigInput {
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IDs of the security groups for this canary.</p>
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Set this to <code>true</code> to allow outbound IPv6 traffic on VPC canaries that are connected to dual-stack subnets. The default is <code>false</code></p>
+    pub ipv6_allowed_for_dual_stack: ::std::option::Option<bool>,
 }
 impl VpcConfigInput {
     /// <p>The IDs of the subnets where this canary is to run.</p>
@@ -21,6 +23,10 @@ impl VpcConfigInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
     pub fn security_group_ids(&self) -> &[::std::string::String] {
         self.security_group_ids.as_deref().unwrap_or_default()
+    }
+    /// <p>Set this to <code>true</code> to allow outbound IPv6 traffic on VPC canaries that are connected to dual-stack subnets. The default is <code>false</code></p>
+    pub fn ipv6_allowed_for_dual_stack(&self) -> ::std::option::Option<bool> {
+        self.ipv6_allowed_for_dual_stack
     }
 }
 impl VpcConfigInput {
@@ -36,6 +42,7 @@ impl VpcConfigInput {
 pub struct VpcConfigInputBuilder {
     pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) ipv6_allowed_for_dual_stack: ::std::option::Option<bool>,
 }
 impl VpcConfigInputBuilder {
     /// Appends an item to `subnet_ids`.
@@ -78,11 +85,26 @@ impl VpcConfigInputBuilder {
     pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
+    /// <p>Set this to <code>true</code> to allow outbound IPv6 traffic on VPC canaries that are connected to dual-stack subnets. The default is <code>false</code></p>
+    pub fn ipv6_allowed_for_dual_stack(mut self, input: bool) -> Self {
+        self.ipv6_allowed_for_dual_stack = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Set this to <code>true</code> to allow outbound IPv6 traffic on VPC canaries that are connected to dual-stack subnets. The default is <code>false</code></p>
+    pub fn set_ipv6_allowed_for_dual_stack(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.ipv6_allowed_for_dual_stack = input;
+        self
+    }
+    /// <p>Set this to <code>true</code> to allow outbound IPv6 traffic on VPC canaries that are connected to dual-stack subnets. The default is <code>false</code></p>
+    pub fn get_ipv6_allowed_for_dual_stack(&self) -> &::std::option::Option<bool> {
+        &self.ipv6_allowed_for_dual_stack
+    }
     /// Consumes the builder and constructs a [`VpcConfigInput`](crate::types::VpcConfigInput).
     pub fn build(self) -> crate::types::VpcConfigInput {
         crate::types::VpcConfigInput {
             subnet_ids: self.subnet_ids,
             security_group_ids: self.security_group_ids,
+            ipv6_allowed_for_dual_stack: self.ipv6_allowed_for_dual_stack,
         }
     }
 }

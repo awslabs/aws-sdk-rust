@@ -28,29 +28,32 @@ pub fn ser_start_backup_job_input_input(
     if let Some(var_8) = &input.idempotency_token {
         object.key("IdempotencyToken").string(var_8.as_str());
     }
-    if let Some(var_9) = &input.lifecycle {
-        #[allow(unused_mut)]
-        let mut object_10 = object.key("Lifecycle").start_object();
-        crate::protocol_serde::shape_lifecycle::ser_lifecycle(&mut object_10, var_9)?;
-        object_10.finish();
+    if let Some(var_9) = &input.index {
+        object.key("Index").string(var_9.as_str());
     }
-    if let Some(var_11) = &input.recovery_point_tags {
+    if let Some(var_10) = &input.lifecycle {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("RecoveryPointTags").start_object();
-        for (key_13, value_14) in var_11 {
+        let mut object_11 = object.key("Lifecycle").start_object();
+        crate::protocol_serde::shape_lifecycle::ser_lifecycle(&mut object_11, var_10)?;
+        object_11.finish();
+    }
+    if let Some(var_12) = &input.recovery_point_tags {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("RecoveryPointTags").start_object();
+        for (key_14, value_15) in var_12 {
             {
-                object_12.key(key_13.as_str()).string(value_14.as_str());
+                object_13.key(key_14.as_str()).string(value_15.as_str());
             }
         }
-        object_12.finish();
+        object_13.finish();
     }
-    if let Some(var_15) = &input.resource_arn {
-        object.key("ResourceArn").string(var_15.as_str());
+    if let Some(var_16) = &input.resource_arn {
+        object.key("ResourceArn").string(var_16.as_str());
     }
-    if let Some(var_16) = &input.start_window_minutes {
+    if let Some(var_17) = &input.start_window_minutes {
         object.key("StartWindowMinutes").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_16).into()),
+            ::aws_smithy_types::Number::NegInt((*var_17).into()),
         );
     }
     Ok(())

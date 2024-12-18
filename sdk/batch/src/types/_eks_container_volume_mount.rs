@@ -8,6 +8,8 @@ pub struct EksContainerVolumeMount {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The path on the container where the volume is mounted.</p>
     pub mount_path: ::std::option::Option<::std::string::String>,
+    /// <p>A sub-path inside the referenced volume instead of its root.</p>
+    pub sub_path: ::std::option::Option<::std::string::String>,
     /// <p>If this value is <code>true</code>, the container has read-only access to the volume. Otherwise, the container can write to the volume. The default value is <code>false</code>.</p>
     pub read_only: ::std::option::Option<bool>,
 }
@@ -19,6 +21,10 @@ impl EksContainerVolumeMount {
     /// <p>The path on the container where the volume is mounted.</p>
     pub fn mount_path(&self) -> ::std::option::Option<&str> {
         self.mount_path.as_deref()
+    }
+    /// <p>A sub-path inside the referenced volume instead of its root.</p>
+    pub fn sub_path(&self) -> ::std::option::Option<&str> {
+        self.sub_path.as_deref()
     }
     /// <p>If this value is <code>true</code>, the container has read-only access to the volume. Otherwise, the container can write to the volume. The default value is <code>false</code>.</p>
     pub fn read_only(&self) -> ::std::option::Option<bool> {
@@ -38,6 +44,7 @@ impl EksContainerVolumeMount {
 pub struct EksContainerVolumeMountBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) mount_path: ::std::option::Option<::std::string::String>,
+    pub(crate) sub_path: ::std::option::Option<::std::string::String>,
     pub(crate) read_only: ::std::option::Option<bool>,
 }
 impl EksContainerVolumeMountBuilder {
@@ -69,6 +76,20 @@ impl EksContainerVolumeMountBuilder {
     pub fn get_mount_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.mount_path
     }
+    /// <p>A sub-path inside the referenced volume instead of its root.</p>
+    pub fn sub_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.sub_path = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A sub-path inside the referenced volume instead of its root.</p>
+    pub fn set_sub_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.sub_path = input;
+        self
+    }
+    /// <p>A sub-path inside the referenced volume instead of its root.</p>
+    pub fn get_sub_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sub_path
+    }
     /// <p>If this value is <code>true</code>, the container has read-only access to the volume. Otherwise, the container can write to the volume. The default value is <code>false</code>.</p>
     pub fn read_only(mut self, input: bool) -> Self {
         self.read_only = ::std::option::Option::Some(input);
@@ -88,6 +109,7 @@ impl EksContainerVolumeMountBuilder {
         crate::types::EksContainerVolumeMount {
             name: self.name,
             mount_path: self.mount_path,
+            sub_path: self.sub_path,
             read_only: self.read_only,
         }
     }
