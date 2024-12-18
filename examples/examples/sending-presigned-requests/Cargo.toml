@@ -10,7 +10,7 @@ publish = false
 hyper-tls = "0.6.0"
 reqwest = "0.12.9"
 aws-config= { version = "1.5.10", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
-aws-sdk-s3= { version = "1.65.0", path = "../../../sdk/s3", features = ["http-1x"] }
+aws-sdk-s3= { version = "1.66.0", path = "../../../sdk/s3", features = ["http-1x"] }
 
 [dependencies.clap]
 version = "4.5.20"

@@ -6,7 +6,8 @@
 use crate::auth;
 use crate::auth::{
     extract_endpoint_auth_scheme_signing_name, extract_endpoint_auth_scheme_signing_region,
-    SigV4OperationSigningConfig, SigV4SessionTokenNameOverride, SigV4SigningError,
+    PayloadSigningOverride, SigV4OperationSigningConfig, SigV4SessionTokenNameOverride,
+    SigV4SigningError,
 };
 use aws_credential_types::Credentials;
 use aws_sigv4::http_request::{
@@ -177,7 +178,7 @@ impl Sign for SigV4Signer {
         let (signing_instructions, _signature) = {
             // A body that is already in memory can be signed directly. A body that is not in memory
             // (any sort of streaming body or presigned request) will be signed via UNSIGNED-PAYLOAD.
-            let signable_body = operation_config
+            let mut signable_body = operation_config
                 .signing_options
                 .payload_override
                 .as_ref()
@@ -191,6 +192,15 @@ impl Sign for SigV4Signer {
                         .map(SignableBody::Bytes)
                         .unwrap_or(SignableBody::UnsignedPayload)
                 });
+
+            // Sometimes it's necessary to override the payload signing scheme.
+            // If an override exists then fetch and apply it.
+            if let Some(payload_signing_override) = config_bag.load::<PayloadSigningOverride>() {
+                tracing::trace!(
+                    "payload signing was overridden, now set to {payload_signing_override:?}"
+                );
+                signable_body = payload_signing_override.clone().to_signable_body();
+            }
 
             let signable_request = SignableRequest::new(
                 request.method(),

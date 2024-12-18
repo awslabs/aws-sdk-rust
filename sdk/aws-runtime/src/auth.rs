@@ -11,7 +11,8 @@ use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::auth::AuthSchemeEndpointConfig;
 use aws_smithy_runtime_api::client::identity::Identity;
 use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
-use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreReplace};
+use aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin;
+use aws_smithy_types::config_bag::{ConfigBag, FrozenLayer, Layer, Storable, StoreReplace};
 use aws_smithy_types::Document;
 use aws_types::region::{Region, SigningRegion, SigningRegionSet};
 use aws_types::SigningName;
@@ -264,4 +265,71 @@ fn apply_signing_instructions(
         request.set_uri(query.build_uri())?;
     }
     Ok(())
+}
+
+/// When present in the config bag, this type will signal that the default
+/// payload signing should be overridden.
+#[non_exhaustive]
+#[derive(Clone, Debug)]
+pub enum PayloadSigningOverride {
+    /// An unsigned payload
+    ///
+    /// UnsignedPayload is used for streaming requests where the contents of the body cannot be
+    /// known prior to signing
+    UnsignedPayload,
+
+    /// A precomputed body checksum. The checksum should be a SHA256 checksum of the body,
+    /// lowercase hex encoded. Eg:
+    /// `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`
+    Precomputed(String),
+
+    /// Set when a streaming body has checksum trailers.
+    StreamingUnsignedPayloadTrailer,
+}
+
+impl PayloadSigningOverride {
+    /// Create a payload signing override that will prevent the payload from
+    /// being signed.
+    pub fn unsigned_payload() -> Self {
+        Self::UnsignedPayload
+    }
+
+    /// Convert this type into the type used by the signer to determine how a
+    /// request body should be signed.
+    pub fn to_signable_body(self) -> SignableBody<'static> {
+        match self {
+            Self::UnsignedPayload => SignableBody::UnsignedPayload,
+            Self::Precomputed(checksum) => SignableBody::Precomputed(checksum),
+            Self::StreamingUnsignedPayloadTrailer => SignableBody::StreamingUnsignedPayloadTrailer,
+        }
+    }
+}
+
+impl Storable for PayloadSigningOverride {
+    type Storer = StoreReplace<Self>;
+}
+
+/// A runtime plugin that, when set, will override how the signer signs request payloads.
+#[derive(Debug)]
+pub struct PayloadSigningOverrideRuntimePlugin {
+    inner: FrozenLayer,
+}
+
+impl PayloadSigningOverrideRuntimePlugin {
+    /// Create a new runtime plugin that will force the signer to skip signing
+    /// the request payload when signing an HTTP request.
+    pub fn unsigned() -> Self {
+        let mut layer = Layer::new("PayloadSigningOverrideRuntimePlugin");
+        layer.store_put(PayloadSigningOverride::UnsignedPayload);
+
+        Self {
+            inner: layer.freeze(),
+        }
+    }
+}
+
+impl RuntimePlugin for PayloadSigningOverrideRuntimePlugin {
+    fn config(&self) -> Option<FrozenLayer> {
+        Some(self.inner.clone())
+    }
 }

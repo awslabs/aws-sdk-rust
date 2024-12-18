@@ -11,6 +11,7 @@ async fn assume_role_signed() {
     let creds = Credentials::for_tests();
     let (http_client, request) = capture_request(None);
     let conf = aws_sdk_sts::Config::builder()
+        .behavior_version_latest()
         .credentials_provider(creds)
         .region(Region::new("us-east-1"))
         .http_client(http_client)
@@ -28,6 +29,7 @@ async fn assume_role_signed() {
 async fn web_identity_unsigned() {
     let (http_client, request) = capture_request(None);
     let conf = aws_sdk_sts::Config::builder()
+        .behavior_version_latest()
         .region(Region::new("us-east-1"))
         .http_client(http_client)
         .build();
@@ -44,6 +46,7 @@ async fn web_identity_unsigned() {
 async fn assume_role_saml_unsigned() {
     let (http_client, request) = capture_request(None);
     let conf = aws_sdk_sts::Config::builder()
+        .behavior_version_latest()
         .region(Region::new("us-east-1"))
         .http_client(http_client)
         .build();
@@ -60,6 +63,7 @@ async fn assume_role_saml_unsigned() {
 async fn web_identity_no_creds() {
     let (http_client, request) = capture_request(None);
     let conf = aws_sdk_sts::Config::builder()
+        .behavior_version_latest()
         .region(Region::new("us-east-1"))
         .http_client(http_client)
         .build();

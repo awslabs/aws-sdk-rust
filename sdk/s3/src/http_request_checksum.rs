@@ -8,9 +8,9 @@
 
 //! Interceptor for handling Smithy `@httpChecksum` request checksumming with AWS SigV4
 
+use aws_runtime::auth::PayloadSigningOverride;
+use aws_runtime::content_encoding::header_value::AWS_CHUNKED;
 use aws_runtime::content_encoding::{AwsChunkedBody, AwsChunkedBodyOptions};
-use aws_runtime::{auth::SigV4OperationSigningConfig, content_encoding::header_value::AWS_CHUNKED};
-use aws_sigv4::http_request::SignableBody;
 use aws_smithy_checksums::ChecksumAlgorithm;
 use aws_smithy_checksums::{body::calculate, http::HttpChecksum};
 use aws_smithy_runtime_api::box_error::BoxError;
@@ -163,10 +163,7 @@ fn add_checksum_for_request_body(request: &mut HttpRequest, checksum_algorithm: 
         // Body is streaming: wrap the body so it will emit a checksum as a trailer.
         None => {
             tracing::debug!("applying {checksum_algorithm:?} of the request body as a trailer");
-            if let Some(mut signing_config) = cfg.load::<SigV4OperationSigningConfig>().cloned() {
-                signing_config.signing_options.payload_override = Some(SignableBody::StreamingUnsignedPayloadTrailer);
-                cfg.interceptor_state().store_put(signing_config);
-            }
+            cfg.interceptor_state().store_put(PayloadSigningOverride::StreamingUnsignedPayloadTrailer);
             wrap_streaming_request_body_in_checksum_calculating_body(request, checksum_algorithm)?;
         }
     }
