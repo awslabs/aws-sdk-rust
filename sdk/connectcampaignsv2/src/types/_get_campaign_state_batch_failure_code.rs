@@ -35,6 +35,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// A predefined code indicating the error that caused the failure in getting state of campaigns
 #[non_exhaustive]
 #[derive(

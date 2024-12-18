@@ -36,6 +36,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// <p>The https policy to use for tracking open and click events. If the value is OPTIONAL or HttpsPolicy is not
 /// specified, the open trackers use HTTP and click tracker use the original protocol of the link.
 /// If the value is REQUIRE, both open and click tracker uses HTTPS and if the value is REQUIRE_OPEN_ONLY

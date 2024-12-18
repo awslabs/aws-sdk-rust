@@ -37,6 +37,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// <p>The type of error relating to Microsoft Active Directory. NOT_FOUND means that no
 /// directory was found by specifying the given directory. INCOMPATIBLE_MODE means that the
 /// directory specified is not a Microsoft AD directory. WRONG_VPC means that the specified

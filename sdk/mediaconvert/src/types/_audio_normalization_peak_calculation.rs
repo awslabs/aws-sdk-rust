@@ -35,6 +35,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// If set to TRUE_PEAK, calculate and log the TruePeak for each output's audio track loudness.
 #[non_exhaustive]
 #[derive(

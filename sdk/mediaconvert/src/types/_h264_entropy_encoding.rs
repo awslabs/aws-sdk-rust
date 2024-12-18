@@ -35,6 +35,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// Entropy encoding mode. Use CABAC (must be in Main or High profile) or CAVLC.
 #[non_exhaustive]
 #[derive(

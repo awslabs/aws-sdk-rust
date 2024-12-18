@@ -47,6 +47,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// Use Source to identify the format of your input captions. The service cannot auto-detect caption format.
 #[non_exhaustive]
 #[derive(

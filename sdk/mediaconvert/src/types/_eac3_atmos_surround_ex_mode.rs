@@ -36,6 +36,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// Specify whether your input audio has an additional center rear surround channel matrix encoded into your left and right surround channels.
 #[non_exhaustive]
 #[derive(

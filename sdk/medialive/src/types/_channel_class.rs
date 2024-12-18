@@ -35,6 +35,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// A standard channel has two encoding pipelines and a single pipeline channel only has one.
 #[non_exhaustive]
 #[derive(

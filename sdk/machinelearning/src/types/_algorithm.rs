@@ -34,6 +34,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// <p>The function used to train an <code>MLModel</code>. Training choices supported by Amazon ML include the following:</p>
 /// <ul>
 /// <li>

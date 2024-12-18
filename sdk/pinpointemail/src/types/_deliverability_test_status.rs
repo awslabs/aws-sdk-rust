@@ -35,6 +35,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// <p>The status of a predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test is
 /// currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the test.
 /// If the status is <code>COMPLETE</code>, then the test is finished, and you can use the

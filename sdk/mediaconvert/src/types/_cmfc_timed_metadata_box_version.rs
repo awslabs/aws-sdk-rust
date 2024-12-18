@@ -35,6 +35,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// Specify the event message box (eMSG) version for ID3 timed metadata in your output.
 /// For more information, see ISO/IEC 23009-1:2022 section 5.10.3.3.3 Syntax.
 /// Leave blank to use the default value Version 0.

@@ -36,6 +36,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// Maximum input bitrate in megabits per second. Bitrates up to 50 Mbps are supported currently.
 #[non_exhaustive]
 #[derive(

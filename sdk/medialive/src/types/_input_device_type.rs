@@ -35,6 +35,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// The type of the input device. For an AWS Elemental Link device that outputs resolutions up to 1080, choose "HD".
 #[non_exhaustive]
 #[derive(

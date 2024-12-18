@@ -35,6 +35,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
 #[non_exhaustive]
 #[derive(

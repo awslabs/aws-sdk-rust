@@ -36,6 +36,8 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
+///
 /// _Note: `SimulationAppTargetStatus::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
@@ -46,6 +48,7 @@ pub enum SimulationAppTargetStatus {
     Started,
     #[allow(missing_docs)] // documentation missing in model
     Stopped,
+    ///
     /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
     /// `Unknown` contains new variants that have been added since this code was generated.

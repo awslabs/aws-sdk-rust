@@ -186,7 +186,7 @@ impl AsyncSleep for ControlledSleep {
 /// Returns a trio of tools to test interactions with time
 ///
 /// 1. [`ManualTimeSource`] which starts at a specific time and only advances when `sleep` is called.
-/// It MUST be paired with [`ControlledSleep`] in order to function.
+///    It MUST be paired with [`ControlledSleep`] in order to function.
 pub fn controlled_time_and_sleep(
     start_time: SystemTime,
 ) -> (ManualTimeSource, ControlledSleep, SleepGate) {

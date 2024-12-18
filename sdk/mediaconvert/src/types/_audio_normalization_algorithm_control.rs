@@ -35,6 +35,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// When enabled the output audio is corrected using the chosen algorithm. If disabled, the audio will be measured but not adjusted.
 #[non_exhaustive]
 #[derive(

@@ -36,6 +36,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// <p>The location where Amazon Pinpoint finds the value of a dimension to publish to Amazon CloudWatch. If you
 /// want Amazon Pinpoint to use the message tags that you specify using an X-SES-MESSAGE-TAGS header
 /// or a parameter to the SendEmail/SendRawEmail API, choose <code>messageTag</code>. If you

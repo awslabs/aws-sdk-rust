@@ -39,6 +39,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// <p>Whether the domain name can be transferred to Route 53.</p>
 /// <note>
 /// <p>You can transfer only domains that have a value of <code>TRANSFERABLE</code> or

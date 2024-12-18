@@ -35,6 +35,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// Produces a bitstream compliant with SMPTE RP-2027.
 #[non_exhaustive]
 #[derive(

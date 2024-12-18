@@ -95,7 +95,7 @@ fn user_agent() -> AwsUserAgent {
 /// ```
 ///
 /// 2. The `AWS_EC2_METADATA_SERVICE_ENDPOINT` environment variable. Note: If this environment variable
-/// is set, it MUST contain to a valid URI or client construction will fail.
+///    is set, it MUST contain to a valid URI or client construction will fail.
 ///
 /// 3. The `ec2_metadata_service_endpoint` field in `~/.aws/config`:
 /// ```ini
@@ -113,10 +113,10 @@ fn user_agent() -> AwsUserAgent {
 /// ```
 ///
 /// 5. An [endpoint mode](EndpointMode) loaded from the `AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE` environment
-/// variable. Valid values: `IPv4`, `IPv6`
+///    variable. Valid values: `IPv4`, `IPv6`
 ///
 /// 6. An [endpoint mode](EndpointMode) loaded from the `ec2_metadata_service_endpoint_mode` field in
-/// `~/.aws/config`:
+///    `~/.aws/config`:
 /// ```ini
 /// [default]
 /// # ... other configuration

@@ -35,6 +35,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// Enum listing out all supported destination phone number verification statuses. The following enum values are
 /// supported.
 /// 1. PENDING : The destination phone number is pending verification.

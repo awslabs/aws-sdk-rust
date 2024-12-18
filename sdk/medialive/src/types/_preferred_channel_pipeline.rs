@@ -36,6 +36,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// Indicates which pipeline is preferred by the multiplex for program ingest.
 /// If set to \"PIPELINE_0\" or \"PIPELINE_1\" and an unhealthy ingest causes the multiplex to switch to the non-preferred pipeline,
 /// it will switch back once that ingest is healthy again. If set to \"CURRENTLY_ACTIVE\",

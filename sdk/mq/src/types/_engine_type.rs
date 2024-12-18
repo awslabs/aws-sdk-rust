@@ -35,6 +35,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// <p>The type of broker engine. Amazon MQ supports ActiveMQ and RabbitMQ.</p>
 #[non_exhaustive]
 #[derive(

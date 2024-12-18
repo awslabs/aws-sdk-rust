@@ -35,6 +35,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// <p>The action to take if the required MX record can't be found when you send an email.
 /// When you set this value to <code>UseDefaultValue</code>, the mail is sent using
 /// <i>amazonses.com</i> as the MAIL FROM domain. When you set this value

@@ -37,6 +37,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// This defines the type of ingestion request. This is returned as part of create ingestion response.
 #[non_exhaustive]
 #[derive(

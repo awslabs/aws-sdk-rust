@@ -35,6 +35,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// Specify whether your motion graphic overlay repeats on a loop or plays only once.
 #[non_exhaustive]
 #[derive(

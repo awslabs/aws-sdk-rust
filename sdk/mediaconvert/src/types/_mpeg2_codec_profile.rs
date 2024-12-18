@@ -35,6 +35,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// Use Profile to set the MPEG-2 profile for the video output.
 #[non_exhaustive]
 #[derive(

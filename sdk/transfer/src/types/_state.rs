@@ -39,6 +39,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// <p>Describes the condition of a file transfer protocol-enabled server with respect to its
 /// ability to perform file operations. There are six possible states: <code>OFFLINE</code>,
 /// <code>ONLINE</code>, <code>STARTING</code>, <code>STOPPING</code>,

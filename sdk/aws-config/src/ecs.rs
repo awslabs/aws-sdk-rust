@@ -21,8 +21,8 @@
 //! URL to load credentials. The URL MUST satisfy one of the following three properties:
 //! 1. The URL begins with `https`
 //! 2. The URL refers to an allowed IP address. If a URL contains a domain name instead of an IP address,
-//! a DNS lookup will be performed. ALL resolved IP addresses MUST refer to an allowed IP address, or
-//! the credentials provider will return `CredentialsError::InvalidConfiguration`. Valid IP addresses are:
+//!    a DNS lookup will be performed. ALL resolved IP addresses MUST refer to an allowed IP address, or
+//!    the credentials provider will return `CredentialsError::InvalidConfiguration`. Valid IP addresses are:
 //!     a) Loopback interfaces
 //!     b) The [ECS Task Metadata V2](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-metadata-endpoint-v2.html)
 //!        address ie 169.254.170.2.
@@ -416,9 +416,9 @@ impl From<InvalidFullUriErrorKind> for InvalidFullUriError {
 /// Either:
 /// 1. The URL is uses `https`
 /// 2. The URL refers to an allowed IP. If a URL contains a domain name instead of an IP address,
-/// a DNS lookup will be performed. ALL resolved IP addresses MUST refer to an allowed IP, or
-/// the credentials provider will return `CredentialsError::InvalidConfiguration`. Allowed IPs
-/// are the loopback interfaces, and the known ECS/EKS container IPs.
+///    a DNS lookup will be performed. ALL resolved IP addresses MUST refer to an allowed IP, or
+///    the credentials provider will return `CredentialsError::InvalidConfiguration`. Allowed IPs
+///    are the loopback interfaces, and the known ECS/EKS container IPs.
 async fn validate_full_uri(
     uri: &str,
     dns: Option<SharedDnsResolver>,

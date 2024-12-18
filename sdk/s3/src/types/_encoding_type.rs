@@ -34,6 +34,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// <p>Encoding type used by Amazon S3 to encode the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html">object keys</a> in the response.
 /// Responses are encoded only in UTF-8. An object key can contain any Unicode character.
 /// However, the XML 1.0 parser can't parse certain characters, such as characters with an

@@ -168,7 +168,7 @@ impl ReplayingClient {
                 .await;
             body_comparer(expected.body().as_ref(), actual.body().as_ref())?;
             let actual: HttpRequest = actual.map(SdkBody::from).try_into()?;
-            aws_smithy_protocol_test::assert_uris_match(&expected.uri().to_string(), actual.uri());
+            aws_smithy_protocol_test::assert_uris_match(expected.uri().to_string(), actual.uri());
             let expected_headers = expected
                 .headers()
                 .keys()

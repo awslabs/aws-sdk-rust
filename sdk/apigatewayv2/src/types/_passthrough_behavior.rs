@@ -36,6 +36,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// <p>Represents passthrough behavior for an integration response. Supported only for WebSocket APIs.</p>
 #[non_exhaustive]
 #[derive(

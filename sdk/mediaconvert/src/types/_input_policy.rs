@@ -35,6 +35,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// An input policy allows or disallows a job you submit to run based on the conditions that you specify.
 #[non_exhaustive]
 #[derive(

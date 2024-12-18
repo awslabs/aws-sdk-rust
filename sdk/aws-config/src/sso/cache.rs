@@ -140,7 +140,7 @@ fn cached_token_path(identifier: &str, home: &str) -> PathBuf {
     let mut out = PathBuf::with_capacity(home.len() + "/.aws/sso/cache".len() + ".json".len() + 40);
     out.push(home);
     out.push(".aws/sso/cache");
-    out.push(&hex::encode(digest::digest(
+    out.push(hex::encode(digest::digest(
         &digest::SHA1_FOR_LEGACY_USE_ONLY,
         identifier.as_bytes(),
     )));

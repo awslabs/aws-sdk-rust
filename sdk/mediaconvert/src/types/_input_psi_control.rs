@@ -35,6 +35,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// Set PSI control for transport stream inputs to specify which data the demux process to scans.
 /// * Ignore PSI - Scan all PIDs for audio and video.
 /// * Use PSI - Scan only PSI data.

@@ -34,6 +34,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// <p>Provides context for the cause of the bad request. The only supported value is
 /// <code>CODE_ERROR</code>.</p>
 #[non_exhaustive]

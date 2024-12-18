@@ -36,6 +36,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// <p>Specifies the bucket owner's access for objects that another account uploads to their
 /// Amazon S3 bucket. By default, only the account that uploads the objects to the bucket has
 /// access to these objects. This property allows you to give the bucket owner access to

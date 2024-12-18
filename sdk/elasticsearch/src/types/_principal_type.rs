@@ -35,6 +35,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// <p>Specifies the type of AWS account permitted to manage VPC endpoints.:
 /// <ul>
 /// <li>AWS_ACCOUNT: Indicates that the account is owned by an AWS user.</li>

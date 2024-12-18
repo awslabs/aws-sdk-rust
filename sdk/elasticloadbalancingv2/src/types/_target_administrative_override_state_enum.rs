@@ -37,6 +37,8 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
+///
 /// _Note: `TargetAdministrativeOverrideStateEnum::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
@@ -45,6 +47,7 @@
 pub enum TargetAdministrativeOverrideStateEnum {
     #[allow(missing_docs)] // documentation missing in model
     NoOverride,
+    ///
     /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
     #[allow(missing_docs)] // documentation missing in model

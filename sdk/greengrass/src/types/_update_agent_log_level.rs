@@ -41,6 +41,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// The minimum level of log statements that should be logged by the OTA Agent during an update.
 #[non_exhaustive]
 #[derive(

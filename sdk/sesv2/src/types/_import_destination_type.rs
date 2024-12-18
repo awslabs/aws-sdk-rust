@@ -35,6 +35,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// <p>The destination of the import job, which can be used to list import jobs that have a
 /// certain <code>ImportDestinationType</code>.</p>
 #[non_exhaustive]

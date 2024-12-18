@@ -35,6 +35,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// Input preference when deciding which input to make active when a previously failed input has recovered.
 /// If \"EQUAL_INPUT_PREFERENCE\", then the active input will stay active as long as it is healthy.
 /// If \"PRIMARY_INPUT_PREFERRED\", then always switch back to the primary input when it is healthy.

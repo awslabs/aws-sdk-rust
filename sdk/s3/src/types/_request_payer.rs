@@ -34,6 +34,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
 /// owners need not specify this parameter in their requests. If either the source or
 /// destination S3 bucket has Requester Pays enabled, the requester will pay for corresponding

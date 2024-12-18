@@ -41,6 +41,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// Property of InputDeviceUhdAudioChannelPairConfig, which describes one audio channel that the device is configured to produce.
 #[non_exhaustive]
 #[derive(

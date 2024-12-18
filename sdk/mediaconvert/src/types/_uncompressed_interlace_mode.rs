@@ -35,6 +35,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// Optional. Choose the scan line type for this output. If you don't specify a value, MediaConvert will create a progressive output.
 #[non_exhaustive]
 #[derive(

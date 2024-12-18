@@ -35,6 +35,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// <p>The method used to distribute log data to the destination, which can be either
 /// random or grouped by log stream.</p>
 #[non_exhaustive]

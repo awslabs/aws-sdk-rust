@@ -34,6 +34,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// <p>The type of currency that the data for an Amazon Macie usage metric is reported in. Possible values are:</p>
 #[non_exhaustive]
 #[derive(

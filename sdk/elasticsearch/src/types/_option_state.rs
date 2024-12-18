@@ -36,6 +36,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// <p>The state of a requested change. One of the following:</p>
 /// <ul>
 /// <li>Processing: The request change is still in-process.</li>

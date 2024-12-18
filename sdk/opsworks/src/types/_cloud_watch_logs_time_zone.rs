@@ -35,6 +35,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// <p>The preferred time zone for logs streamed to CloudWatch Logs.
 /// Valid values are <code>LOCAL</code> and <code>UTC</code>, for Coordinated Universal Time.</p>
 #[non_exhaustive]

@@ -316,7 +316,7 @@ mod test {
     #[cfg(all(feature = "sso", not(windows)))]
     make_test!(sso_no_token_file);
 
-    #[cfg(feature = "credentials-sso")]
+    #[cfg(feature = "sso")]
     make_test!(e2e_fips_and_dual_stack_sso);
 
     #[tokio::test]

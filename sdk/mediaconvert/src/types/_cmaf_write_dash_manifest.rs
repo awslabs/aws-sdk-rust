@@ -35,6 +35,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// When set to ENABLED, a DASH MPD manifest will be generated for this output.
 #[non_exhaustive]
 #[derive(

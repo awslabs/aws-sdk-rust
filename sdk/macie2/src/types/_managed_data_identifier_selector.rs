@@ -38,6 +38,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// <p>The selection type that determines which managed data identifiers a classification job uses to analyze data. Valid values are:</p>
 #[non_exhaustive]
 #[derive(

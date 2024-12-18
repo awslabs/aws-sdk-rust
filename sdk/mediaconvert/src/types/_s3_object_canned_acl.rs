@@ -37,6 +37,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// Choose an Amazon S3 canned ACL for MediaConvert to apply to this output.
 #[non_exhaustive]
 #[derive(

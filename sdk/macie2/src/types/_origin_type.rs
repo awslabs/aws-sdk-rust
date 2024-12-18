@@ -35,6 +35,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// <p>Specifies how Amazon Macie found the sensitive data that produced a finding. Possible values are:</p>
 #[non_exhaustive]
 #[derive(

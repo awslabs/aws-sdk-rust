@@ -175,7 +175,7 @@ impl EnvConfigSections {
     /// Create a new Profile set directly from a HashMap
     ///
     /// This method creates a ProfileSet directly from a hashmap with no normalization for test purposes.
-    #[cfg(test)]
+    #[cfg(any(test, feature = "test-util"))]
     pub fn new(
         profiles: HashMap<String, HashMap<String, String>>,
         selected_profile: impl Into<Cow<'static, str>>,

@@ -36,6 +36,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// Dolby Digital Plus coding mode. Determines number of channels.
 #[non_exhaustive]
 #[derive(

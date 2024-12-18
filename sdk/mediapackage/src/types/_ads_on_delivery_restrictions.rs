@@ -37,6 +37,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// This setting allows the delivery restriction flags on SCTE-35 segmentation descriptors to
 /// determine whether a message signals an ad.  Choosing "NONE" means no SCTE-35 messages become
 /// ads.  Choosing "RESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that

@@ -36,6 +36,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// When encoding 2/0 audio, sets whether Dolby Surround is matrix encoded into the two channels.
 #[non_exhaustive]
 #[derive(

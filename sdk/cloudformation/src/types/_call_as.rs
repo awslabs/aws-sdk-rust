@@ -35,6 +35,8 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
+///
 /// _Note: `CallAs::Self` has been renamed to `::SelfValue`._
 #[non_exhaustive]
 #[derive(
@@ -43,6 +45,7 @@
 pub enum CallAs {
     #[allow(missing_docs)] // documentation missing in model
     DelegatedAdmin,
+    ///
     /// _Note: `::Self` has been renamed to `::SelfValue`._
     SelfValue,
     /// `Unknown` contains new variants that have been added since this code was generated.

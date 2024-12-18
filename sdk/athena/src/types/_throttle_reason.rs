@@ -34,6 +34,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// <p>The reason for the query throttling, for example, when it exceeds the concurrent query
 /// limit.</p>
 #[non_exhaustive]

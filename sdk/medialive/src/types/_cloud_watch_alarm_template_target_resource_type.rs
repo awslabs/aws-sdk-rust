@@ -41,6 +41,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// The resource type this template should dynamically generate cloudwatch metric alarms for.
 #[non_exhaustive]
 #[derive(

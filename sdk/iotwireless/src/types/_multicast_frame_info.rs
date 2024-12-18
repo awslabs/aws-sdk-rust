@@ -35,6 +35,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// <p>
 /// <code>FrameInfo</code> of your multicast group resources for the trace content. Use
 /// FrameInfo to debug the multicast communication between your multicast groups and the

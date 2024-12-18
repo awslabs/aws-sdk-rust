@@ -50,6 +50,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// Specify an H.264 level that is consistent with your output video settings. If you aren't sure what level to specify, choose Auto.
 #[non_exhaustive]
 #[derive(

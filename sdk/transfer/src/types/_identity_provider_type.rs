@@ -37,6 +37,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// <p>The mode of authentication for a server. The default value is
 /// <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within
 /// the Transfer Family service.</p>

@@ -39,6 +39,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// H.264 Profile. High 4:2:2 and 10-bit profiles are only available with the AVC-I License.
 #[non_exhaustive]
 #[derive(

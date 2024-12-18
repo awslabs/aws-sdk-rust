@@ -46,6 +46,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// Container for this output. Some containers require a container settings object. If not specified, the default object will be created.
 #[non_exhaustive]
 #[derive(

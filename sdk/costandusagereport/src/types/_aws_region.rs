@@ -61,6 +61,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// <p>The region of the S3 bucket that Amazon Web Services delivers the report into.</p>
 #[non_exhaustive]
 #[derive(

@@ -15,4 +15,4 @@ rustdoc-args = ["--cfg", "docsrs"]
 [dependencies.aws-runtime]
 path = "../aws-runtime"
 features = ["http-02x"]
-version = "1.5.0"
+version = "1.5.1"

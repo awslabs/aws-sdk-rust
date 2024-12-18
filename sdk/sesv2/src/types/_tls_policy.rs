@@ -35,6 +35,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// <p>Specifies whether messages that use the configuration set are required to use
 /// Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only
 /// delivered if a TLS connection can be established. If the value is <code>Optional</code>,

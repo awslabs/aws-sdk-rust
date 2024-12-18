@@ -36,6 +36,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// <p>The location where the Amazon SES API v2 finds the value of a dimension to publish to Amazon CloudWatch. To
 /// use the message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or
 /// a parameter to the <code>SendEmail</code> or <code>SendRawEmail</code> API, choose

@@ -37,6 +37,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// Property of colorCorrections. When you are using 3D LUT files to perform color conversion on video, these are the supported color spaces.
 #[non_exhaustive]
 #[derive(

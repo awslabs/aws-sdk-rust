@@ -35,6 +35,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// With the introduction of MediaLive Anywhere, a MediaLive input can now exist in two different places: AWS or
 /// inside an on-premises datacenter. By default all inputs will continue to be AWS inputs.
 #[non_exhaustive]

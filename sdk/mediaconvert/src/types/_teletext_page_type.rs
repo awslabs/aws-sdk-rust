@@ -38,6 +38,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// A page type as defined in the standard ETSI EN 300 468, Table 94
 #[non_exhaustive]
 #[derive(

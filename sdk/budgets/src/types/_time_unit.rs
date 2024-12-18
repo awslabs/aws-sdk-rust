@@ -37,6 +37,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// <p> The time unit of the budget, such as MONTHLY or QUARTERLY.</p>
 #[non_exhaustive]
 #[derive(

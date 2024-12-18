@@ -43,6 +43,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// <p>The current status of the relationship between an account and an associated Amazon Macie administrator account. Possible values are:</p>
 #[non_exhaustive]
 #[derive(

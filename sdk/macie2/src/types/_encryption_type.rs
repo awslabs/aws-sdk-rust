@@ -38,6 +38,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// <p>The server-side encryption algorithm that was used to encrypt an S3 object or is used by default to encrypt objects that are added to an S3 bucket. Possible values are:</p>
 ///
 /// _Note: `EncryptionType::Unknown` has been renamed to `::UnknownValue`._
@@ -50,6 +51,7 @@ pub enum EncryptionType {
     Aes256,
     #[allow(missing_docs)] // documentation missing in model
     None,
+    ///
     /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
     #[allow(missing_docs)] // documentation missing in model

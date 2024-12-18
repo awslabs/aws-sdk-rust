@@ -35,6 +35,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// Specify the units for GOP size. If you don't specify a value here, by default the encoder measures GOP size in frames.
 #[non_exhaustive]
 #[derive(

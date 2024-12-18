@@ -40,6 +40,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// <p>A value that sets the access control list (ACL) permission for objects in the S3 bucket
 /// that an S3 File Gateway puts objects into. The default value is
 /// <code>private</code>.</p>

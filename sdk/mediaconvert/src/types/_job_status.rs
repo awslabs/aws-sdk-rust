@@ -38,6 +38,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
 #[non_exhaustive]
 #[derive(

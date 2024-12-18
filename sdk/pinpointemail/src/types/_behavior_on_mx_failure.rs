@@ -35,6 +35,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// <p>The action that you want Amazon Pinpoint to take if it can't read the required MX record for a
 /// custom MAIL FROM domain. When you set this value to <code>UseDefaultValue</code>, Amazon Pinpoint
 /// uses <i>amazonses.com</i> as the MAIL FROM domain. When you set this value

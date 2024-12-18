@@ -18,9 +18,9 @@
 //!
 //! This module contains two sub modules:
 //! - `repr` which contains an abstract representation of a provider chain and the logic to
-//! build it from `~/.aws/credentials` and `~/.aws/config`.
+//!   build it from `~/.aws/credentials` and `~/.aws/config`.
 //! - `exec` which contains a chain representation of providers to implement passing bootstrapped credentials
-//! through a series of providers.
+//!   through a series of providers.
 
 use crate::profile::cell::ErrorTakingOnceCell;
 #[allow(deprecated)]

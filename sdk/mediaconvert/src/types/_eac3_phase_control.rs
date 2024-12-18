@@ -35,6 +35,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// Controls the amount of phase-shift applied to the surround channels. Only used for 3/2 coding mode.
 #[non_exhaustive]
 #[derive(

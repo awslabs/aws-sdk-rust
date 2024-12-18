@@ -35,6 +35,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// Always keep the default value (SELF_CONTAINED) for this setting.
 #[non_exhaustive]
 #[derive(

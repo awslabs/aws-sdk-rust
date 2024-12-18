@@ -40,6 +40,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// <p>Specifies the current status of the VPC endpoint:
 /// <ul>
 /// <li>CREATING: Indicates that the VPC endpoint is currently being created.</li>

@@ -35,6 +35,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// <p>The reason that the address was added to the suppression list for your account. The
 /// value can be one of the following:</p>
 /// <ul>

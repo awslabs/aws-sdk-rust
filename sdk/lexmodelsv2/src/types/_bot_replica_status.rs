@@ -37,6 +37,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// <p>The status of the operation to replicate the bot. Values: Enabling, Enabled, Deleting, Failed.</p>
 #[non_exhaustive]
 #[derive(

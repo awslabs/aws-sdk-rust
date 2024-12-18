@@ -469,11 +469,16 @@ fn credential_process_from_profile(
 
 #[cfg(test)]
 mod tests {
+
+    #[cfg(feature = "test-util")]
+    use super::ProfileChain;
     use crate::profile::credentials::repr::BaseProvider;
     use crate::sensitive_command::CommandWithSensitiveArgs;
     use serde::Deserialize;
+    #[cfg(feature = "test-util")]
+    use std::collections::HashMap;
 
-    #[cfg(feature = "test-utils")]
+    #[cfg(feature = "test-util")]
     #[test]
     fn run_test_cases() -> Result<(), Box<dyn std::error::Error>> {
         let test_cases: Vec<TestCase> = serde_json::from_str(&std::fs::read_to_string(
@@ -487,14 +492,16 @@ mod tests {
         Ok(())
     }
 
-    #[cfg(feature = "test-utils")]
+    #[cfg(feature = "test-util")]
     fn check(test_case: TestCase) {
-        use aws_runtime::profile::profile_set::ProfileSet;
-        crate::profile::credentials::repr::resolve_chain;
-        let source = ProfileSet::new(
+        use super::resolve_chain;
+        use aws_runtime::env_config::property::Properties;
+        use aws_runtime::env_config::section::EnvConfigSections;
+        let source = EnvConfigSections::new(
             test_case.input.profiles,
             test_case.input.selected_profile,
             test_case.input.sso_sessions,
+            Properties::new(),
         );
         let actual = resolve_chain(&source);
         let expected = test_case.output;
@@ -515,16 +522,16 @@ mod tests {
         }
     }
 
-    #[cfg(feature = "test-utils")]
     #[derive(Deserialize)]
+    #[cfg(feature = "test-util")]
     struct TestCase {
         docs: String,
         input: TestInput,
         output: TestOutput,
     }
 
-    #[cfg(feature = "test-utils")]
     #[derive(Deserialize)]
+    #[cfg(feature = "test-util")]
     struct TestInput {
         profiles: HashMap<String, HashMap<String, String>>,
         selected_profile: String,
@@ -532,7 +539,7 @@ mod tests {
         sso_sessions: HashMap<String, HashMap<String, String>>,
     }
 
-    #[cfg(feature = "test-utils")]
+    #[cfg(feature = "test-util")]
     fn to_test_output(profile_chain: ProfileChain<'_>) -> Vec<Provider> {
         let mut output = vec![];
         match profile_chain.base {

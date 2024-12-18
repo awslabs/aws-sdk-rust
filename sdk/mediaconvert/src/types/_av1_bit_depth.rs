@@ -35,6 +35,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// Specify the Bit depth. You can choose 8-bit or 10-bit.
 #[non_exhaustive]
 #[derive(

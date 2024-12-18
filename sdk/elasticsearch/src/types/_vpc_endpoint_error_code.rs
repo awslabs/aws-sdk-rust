@@ -35,6 +35,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// <p>Specifies the error code of the failure encountered while describing the VPC endpoint:
 /// <ul>
 /// <li>ENDPOINT_NOT_FOUND: Indicates that the requested VPC endpoint does not exist.</li>

@@ -35,12 +35,15 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
+///
 /// _Note: `Owner::Self` has been renamed to `::SelfValue`._
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Owner {
+    ///
     /// _Note: `::Self` has been renamed to `::SelfValue`._
     SelfValue,
     #[allow(missing_docs)] // documentation missing in model

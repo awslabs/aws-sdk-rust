@@ -35,6 +35,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// <p>Insertion Mode controls whether players can use stitched or guided ad insertion.</p>
 #[non_exhaustive]
 #[derive(

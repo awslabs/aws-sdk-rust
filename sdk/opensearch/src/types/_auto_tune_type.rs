@@ -34,6 +34,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// <p>Specifies the Auto-Tune type. Valid value is SCHEDULED_ACTION.</p>
 #[non_exhaustive]
 #[derive(

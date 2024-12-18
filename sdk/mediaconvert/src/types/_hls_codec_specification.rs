@@ -35,6 +35,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation.
 #[non_exhaustive]
 #[derive(

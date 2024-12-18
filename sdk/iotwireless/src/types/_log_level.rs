@@ -36,6 +36,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// <p>The log level for a log message. The log levels can be disabled, or set to
 /// <code>ERROR</code> to display less verbose logs containing only error information,
 /// or to <code>INFO</code> for more detailed logs.</p>

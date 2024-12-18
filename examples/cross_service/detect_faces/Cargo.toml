@@ -6,7 +6,7 @@ edition = "2021"
 publish = false
 
 [dependencies]
-aws-config= { version = "1.5.10", path = "../../../sdk/aws-config" }
+aws-config= { version = "1.5.11", path = "../../../sdk/aws-config" }
 aws-sdk-rekognition= { version = "1.54.0", path = "../../../sdk/rekognition" }
 aws-sdk-s3= { version = "1.66.0", path = "../../../sdk/s3" }
 aws-smithy-types= { version = "1.2.10", path = "../../../sdk/aws-smithy-types", features = ["rt-tokio"] }

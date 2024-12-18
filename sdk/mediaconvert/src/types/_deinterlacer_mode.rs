@@ -36,6 +36,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// Use Deinterlacer to choose how the service will do deinterlacing. Default is Deinterlace.
 /// - Deinterlace converts interlaced to progressive.
 /// - Inverse telecine converts Hard Telecine 29.97i to progressive 23.976p.

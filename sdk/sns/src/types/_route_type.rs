@@ -36,6 +36,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// Enum listing out all supported route types. The following enum values are supported.
 /// 1. Transactional : Non-marketing traffic
 /// 2. Promotional : Marketing

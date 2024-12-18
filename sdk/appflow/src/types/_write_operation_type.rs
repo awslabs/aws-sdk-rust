@@ -37,6 +37,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
+///
 /// <p> The possible write operations in the destination connector. When this value is not
 /// provided, this defaults to the <code>INSERT</code> operation. </p>
 #[non_exhaustive]
