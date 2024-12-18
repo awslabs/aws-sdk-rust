@@ -2177,6 +2177,8 @@ pub use crate::types::_s3_object_tag::S3ObjectTag;
 
 pub use crate::types::_snapshot_info::SnapshotInfo;
 
+pub use crate::types::_snapshot_location_enum::SnapshotLocationEnum;
+
 pub use crate::types::_copy_tags_from_source::CopyTagsFromSource;
 
 pub use crate::types::_instance_specification::InstanceSpecification;
@@ -4086,6 +4088,8 @@ mod _snapshot_detail;
 mod _snapshot_disk_container;
 
 mod _snapshot_info;
+
+mod _snapshot_location_enum;
 
 mod _snapshot_recycle_bin_info;
 

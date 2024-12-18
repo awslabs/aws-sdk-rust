@@ -13,6 +13,7 @@
 /// # let resourcelocationvalues = unimplemented!();
 /// match resourcelocationvalues {
 ///     ResourceLocationValues::Cloud => { /* ... */ },
+///     ResourceLocationValues::LocalZone => { /* ... */ },
 ///     ResourceLocationValues::Outpost => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -45,6 +46,8 @@ pub enum ResourceLocationValues {
     #[allow(missing_docs)] // documentation missing in model
     Cloud,
     #[allow(missing_docs)] // documentation missing in model
+    LocalZone,
+    #[allow(missing_docs)] // documentation missing in model
     Outpost,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for ResourceLocationValues {
     fn from(s: &str) -> Self {
         match s {
             "CLOUD" => ResourceLocationValues::Cloud,
+            "LOCAL_ZONE" => ResourceLocationValues::LocalZone,
             "OUTPOST" => ResourceLocationValues::Outpost,
             other => ResourceLocationValues::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -71,13 +75,14 @@ impl ResourceLocationValues {
     pub fn as_str(&self) -> &str {
         match self {
             ResourceLocationValues::Cloud => "CLOUD",
+            ResourceLocationValues::LocalZone => "LOCAL_ZONE",
             ResourceLocationValues::Outpost => "OUTPOST",
             ResourceLocationValues::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CLOUD", "OUTPOST"]
+        &["CLOUD", "LOCAL_ZONE", "OUTPOST"]
     }
 }
 impl ::std::convert::AsRef<str> for ResourceLocationValues {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for ResourceLocationValues {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ResourceLocationValues::Cloud => write!(f, "CLOUD"),
+            ResourceLocationValues::LocalZone => write!(f, "LOCAL_ZONE"),
             ResourceLocationValues::Outpost => write!(f, "OUTPOST"),
             ResourceLocationValues::Unknown(value) => write!(f, "{}", value),
         }

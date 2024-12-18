@@ -4,9 +4,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduleActionSettings {
-    /// Action to insert HLS ID3 segment tagging
+    /// Action to insert ID3 metadata in every segment, in HLS output groups
     pub hls_id3_segment_tagging_settings: ::std::option::Option<crate::types::HlsId3SegmentTaggingScheduleActionSettings>,
-    /// Action to insert HLS metadata
+    /// Action to insert ID3 metadata once, in HLS output groups
     pub hls_timed_metadata_settings: ::std::option::Option<crate::types::HlsTimedMetadataScheduleActionSettings>,
     /// Action to prepare an input for a future immediate input switch
     pub input_prepare_settings: ::std::option::Option<crate::types::InputPrepareScheduleActionSettings>,
@@ -36,11 +36,11 @@ pub struct ScheduleActionSettings {
     pub static_image_output_deactivate_settings: ::std::option::Option<crate::types::StaticImageOutputDeactivateScheduleActionSettings>,
 }
 impl ScheduleActionSettings {
-    /// Action to insert HLS ID3 segment tagging
+    /// Action to insert ID3 metadata in every segment, in HLS output groups
     pub fn hls_id3_segment_tagging_settings(&self) -> ::std::option::Option<&crate::types::HlsId3SegmentTaggingScheduleActionSettings> {
         self.hls_id3_segment_tagging_settings.as_ref()
     }
-    /// Action to insert HLS metadata
+    /// Action to insert ID3 metadata once, in HLS output groups
     pub fn hls_timed_metadata_settings(&self) -> ::std::option::Option<&crate::types::HlsTimedMetadataScheduleActionSettings> {
         self.hls_timed_metadata_settings.as_ref()
     }
@@ -125,12 +125,12 @@ pub struct ScheduleActionSettingsBuilder {
     pub(crate) static_image_output_deactivate_settings: ::std::option::Option<crate::types::StaticImageOutputDeactivateScheduleActionSettings>,
 }
 impl ScheduleActionSettingsBuilder {
-    /// Action to insert HLS ID3 segment tagging
+    /// Action to insert ID3 metadata in every segment, in HLS output groups
     pub fn hls_id3_segment_tagging_settings(mut self, input: crate::types::HlsId3SegmentTaggingScheduleActionSettings) -> Self {
         self.hls_id3_segment_tagging_settings = ::std::option::Option::Some(input);
         self
     }
-    /// Action to insert HLS ID3 segment tagging
+    /// Action to insert ID3 metadata in every segment, in HLS output groups
     pub fn set_hls_id3_segment_tagging_settings(
         mut self,
         input: ::std::option::Option<crate::types::HlsId3SegmentTaggingScheduleActionSettings>,
@@ -138,21 +138,21 @@ impl ScheduleActionSettingsBuilder {
         self.hls_id3_segment_tagging_settings = input;
         self
     }
-    /// Action to insert HLS ID3 segment tagging
+    /// Action to insert ID3 metadata in every segment, in HLS output groups
     pub fn get_hls_id3_segment_tagging_settings(&self) -> &::std::option::Option<crate::types::HlsId3SegmentTaggingScheduleActionSettings> {
         &self.hls_id3_segment_tagging_settings
     }
-    /// Action to insert HLS metadata
+    /// Action to insert ID3 metadata once, in HLS output groups
     pub fn hls_timed_metadata_settings(mut self, input: crate::types::HlsTimedMetadataScheduleActionSettings) -> Self {
         self.hls_timed_metadata_settings = ::std::option::Option::Some(input);
         self
     }
-    /// Action to insert HLS metadata
+    /// Action to insert ID3 metadata once, in HLS output groups
     pub fn set_hls_timed_metadata_settings(mut self, input: ::std::option::Option<crate::types::HlsTimedMetadataScheduleActionSettings>) -> Self {
         self.hls_timed_metadata_settings = input;
         self
     }
-    /// Action to insert HLS metadata
+    /// Action to insert ID3 metadata once, in HLS output groups
     pub fn get_hls_timed_metadata_settings(&self) -> &::std::option::Option<crate::types::HlsTimedMetadataScheduleActionSettings> {
         &self.hls_timed_metadata_settings
     }

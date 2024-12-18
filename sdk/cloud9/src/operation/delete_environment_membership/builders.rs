@@ -22,7 +22,9 @@ impl crate::operation::delete_environment_membership::builders::DeleteEnvironmen
 }
 /// Fluent builder constructing a request to `DeleteEnvironmentMembership`.
 ///
-/// <p>Deletes an environment member from a development environment.</p>
+/// <p>Deletes an environment member from a development environment.</p><important>
+/// <p>Cloud9 is no longer available to new customers. Existing customers of Cloud9 can continue to use the service as normal. <a href="http://aws.amazon.com/blogs/devops/how-to-migrate-from-aws-cloud9-to-aws-ide-toolkits-or-aws-cloudshell/">Learn more"</a></p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteEnvironmentMembershipFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

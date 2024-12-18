@@ -16,6 +16,14 @@ pub struct CmafIngestGroupSettings {
     pub segment_length_units: ::std::option::Option<crate::types::CmafIngestSegmentLengthUnits>,
     /// Number of milliseconds to delay the output from the second pipeline.
     pub send_delay_ms: ::std::option::Option<i32>,
+    /// If set to passthrough, passes any KLV data from the input source to this output.
+    pub klv_behavior: ::std::option::Option<crate::types::CmafKlvBehavior>,
+    /// Change the modifier that MediaLive automatically adds to the Streams() name that identifies a KLV track. The default is "klv", which means the default name will be Streams(klv.cmfm). Any string you enter here will replace the "klv" string.\nThe modifier can only contain: numbers, letters, plus (+), minus (-), underscore (_) and period (.) and has a maximum length of 100 characters.
+    pub klv_name_modifier: ::std::option::Option<::std::string::String>,
+    /// Change the modifier that MediaLive automatically adds to the Streams() name that identifies a Nielsen ID3 track. The default is "nid3", which means the default name will be Streams(nid3.cmfm). Any string you enter here will replace the "nid3" string.\nThe modifier can only contain: numbers, letters, plus (+), minus (-), underscore (_) and period (.) and has a maximum length of 100 characters.
+    pub nielsen_id3_name_modifier: ::std::option::Option<::std::string::String>,
+    /// Change the modifier that MediaLive automatically adds to the Streams() name for a SCTE 35 track. The default is "scte", which means the default name will be Streams(scte.cmfm). Any string you enter here will replace the "scte" string.\nThe modifier can only contain: numbers, letters, plus (+), minus (-), underscore (_) and period (.) and has a maximum length of 100 characters.
+    pub scte35_name_modifier: ::std::option::Option<::std::string::String>,
 }
 impl CmafIngestGroupSettings {
     /// A HTTP destination for the tracks
@@ -42,6 +50,22 @@ impl CmafIngestGroupSettings {
     pub fn send_delay_ms(&self) -> ::std::option::Option<i32> {
         self.send_delay_ms
     }
+    /// If set to passthrough, passes any KLV data from the input source to this output.
+    pub fn klv_behavior(&self) -> ::std::option::Option<&crate::types::CmafKlvBehavior> {
+        self.klv_behavior.as_ref()
+    }
+    /// Change the modifier that MediaLive automatically adds to the Streams() name that identifies a KLV track. The default is "klv", which means the default name will be Streams(klv.cmfm). Any string you enter here will replace the "klv" string.\nThe modifier can only contain: numbers, letters, plus (+), minus (-), underscore (_) and period (.) and has a maximum length of 100 characters.
+    pub fn klv_name_modifier(&self) -> ::std::option::Option<&str> {
+        self.klv_name_modifier.as_deref()
+    }
+    /// Change the modifier that MediaLive automatically adds to the Streams() name that identifies a Nielsen ID3 track. The default is "nid3", which means the default name will be Streams(nid3.cmfm). Any string you enter here will replace the "nid3" string.\nThe modifier can only contain: numbers, letters, plus (+), minus (-), underscore (_) and period (.) and has a maximum length of 100 characters.
+    pub fn nielsen_id3_name_modifier(&self) -> ::std::option::Option<&str> {
+        self.nielsen_id3_name_modifier.as_deref()
+    }
+    /// Change the modifier that MediaLive automatically adds to the Streams() name for a SCTE 35 track. The default is "scte", which means the default name will be Streams(scte.cmfm). Any string you enter here will replace the "scte" string.\nThe modifier can only contain: numbers, letters, plus (+), minus (-), underscore (_) and period (.) and has a maximum length of 100 characters.
+    pub fn scte35_name_modifier(&self) -> ::std::option::Option<&str> {
+        self.scte35_name_modifier.as_deref()
+    }
 }
 impl CmafIngestGroupSettings {
     /// Creates a new builder-style object to manufacture [`CmafIngestGroupSettings`](crate::types::CmafIngestGroupSettings).
@@ -60,6 +84,10 @@ pub struct CmafIngestGroupSettingsBuilder {
     pub(crate) segment_length: ::std::option::Option<i32>,
     pub(crate) segment_length_units: ::std::option::Option<crate::types::CmafIngestSegmentLengthUnits>,
     pub(crate) send_delay_ms: ::std::option::Option<i32>,
+    pub(crate) klv_behavior: ::std::option::Option<crate::types::CmafKlvBehavior>,
+    pub(crate) klv_name_modifier: ::std::option::Option<::std::string::String>,
+    pub(crate) nielsen_id3_name_modifier: ::std::option::Option<::std::string::String>,
+    pub(crate) scte35_name_modifier: ::std::option::Option<::std::string::String>,
 }
 impl CmafIngestGroupSettingsBuilder {
     /// A HTTP destination for the tracks
@@ -147,6 +175,62 @@ impl CmafIngestGroupSettingsBuilder {
     pub fn get_send_delay_ms(&self) -> &::std::option::Option<i32> {
         &self.send_delay_ms
     }
+    /// If set to passthrough, passes any KLV data from the input source to this output.
+    pub fn klv_behavior(mut self, input: crate::types::CmafKlvBehavior) -> Self {
+        self.klv_behavior = ::std::option::Option::Some(input);
+        self
+    }
+    /// If set to passthrough, passes any KLV data from the input source to this output.
+    pub fn set_klv_behavior(mut self, input: ::std::option::Option<crate::types::CmafKlvBehavior>) -> Self {
+        self.klv_behavior = input;
+        self
+    }
+    /// If set to passthrough, passes any KLV data from the input source to this output.
+    pub fn get_klv_behavior(&self) -> &::std::option::Option<crate::types::CmafKlvBehavior> {
+        &self.klv_behavior
+    }
+    /// Change the modifier that MediaLive automatically adds to the Streams() name that identifies a KLV track. The default is "klv", which means the default name will be Streams(klv.cmfm). Any string you enter here will replace the "klv" string.\nThe modifier can only contain: numbers, letters, plus (+), minus (-), underscore (_) and period (.) and has a maximum length of 100 characters.
+    pub fn klv_name_modifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.klv_name_modifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// Change the modifier that MediaLive automatically adds to the Streams() name that identifies a KLV track. The default is "klv", which means the default name will be Streams(klv.cmfm). Any string you enter here will replace the "klv" string.\nThe modifier can only contain: numbers, letters, plus (+), minus (-), underscore (_) and period (.) and has a maximum length of 100 characters.
+    pub fn set_klv_name_modifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.klv_name_modifier = input;
+        self
+    }
+    /// Change the modifier that MediaLive automatically adds to the Streams() name that identifies a KLV track. The default is "klv", which means the default name will be Streams(klv.cmfm). Any string you enter here will replace the "klv" string.\nThe modifier can only contain: numbers, letters, plus (+), minus (-), underscore (_) and period (.) and has a maximum length of 100 characters.
+    pub fn get_klv_name_modifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.klv_name_modifier
+    }
+    /// Change the modifier that MediaLive automatically adds to the Streams() name that identifies a Nielsen ID3 track. The default is "nid3", which means the default name will be Streams(nid3.cmfm). Any string you enter here will replace the "nid3" string.\nThe modifier can only contain: numbers, letters, plus (+), minus (-), underscore (_) and period (.) and has a maximum length of 100 characters.
+    pub fn nielsen_id3_name_modifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.nielsen_id3_name_modifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// Change the modifier that MediaLive automatically adds to the Streams() name that identifies a Nielsen ID3 track. The default is "nid3", which means the default name will be Streams(nid3.cmfm). Any string you enter here will replace the "nid3" string.\nThe modifier can only contain: numbers, letters, plus (+), minus (-), underscore (_) and period (.) and has a maximum length of 100 characters.
+    pub fn set_nielsen_id3_name_modifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.nielsen_id3_name_modifier = input;
+        self
+    }
+    /// Change the modifier that MediaLive automatically adds to the Streams() name that identifies a Nielsen ID3 track. The default is "nid3", which means the default name will be Streams(nid3.cmfm). Any string you enter here will replace the "nid3" string.\nThe modifier can only contain: numbers, letters, plus (+), minus (-), underscore (_) and period (.) and has a maximum length of 100 characters.
+    pub fn get_nielsen_id3_name_modifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nielsen_id3_name_modifier
+    }
+    /// Change the modifier that MediaLive automatically adds to the Streams() name for a SCTE 35 track. The default is "scte", which means the default name will be Streams(scte.cmfm). Any string you enter here will replace the "scte" string.\nThe modifier can only contain: numbers, letters, plus (+), minus (-), underscore (_) and period (.) and has a maximum length of 100 characters.
+    pub fn scte35_name_modifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.scte35_name_modifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// Change the modifier that MediaLive automatically adds to the Streams() name for a SCTE 35 track. The default is "scte", which means the default name will be Streams(scte.cmfm). Any string you enter here will replace the "scte" string.\nThe modifier can only contain: numbers, letters, plus (+), minus (-), underscore (_) and period (.) and has a maximum length of 100 characters.
+    pub fn set_scte35_name_modifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.scte35_name_modifier = input;
+        self
+    }
+    /// Change the modifier that MediaLive automatically adds to the Streams() name for a SCTE 35 track. The default is "scte", which means the default name will be Streams(scte.cmfm). Any string you enter here will replace the "scte" string.\nThe modifier can only contain: numbers, letters, plus (+), minus (-), underscore (_) and period (.) and has a maximum length of 100 characters.
+    pub fn get_scte35_name_modifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scte35_name_modifier
+    }
     /// Consumes the builder and constructs a [`CmafIngestGroupSettings`](crate::types::CmafIngestGroupSettings).
     pub fn build(self) -> crate::types::CmafIngestGroupSettings {
         crate::types::CmafIngestGroupSettings {
@@ -156,6 +240,10 @@ impl CmafIngestGroupSettingsBuilder {
             segment_length: self.segment_length,
             segment_length_units: self.segment_length_units,
             send_delay_ms: self.send_delay_ms,
+            klv_behavior: self.klv_behavior,
+            klv_name_modifier: self.klv_name_modifier,
+            nielsen_id3_name_modifier: self.nielsen_id3_name_modifier,
+            scte35_name_modifier: self.scte35_name_modifier,
         }
     }
 }

@@ -6,6 +6,12 @@ pub fn ser_media_package_output_destination_settings(
     if let Some(var_1) = &input.channel_id {
         object.key("channelId").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.channel_group {
+        object.key("channelGroup").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.channel_name {
+        object.key("channelName").string(var_3.as_str());
+    }
     Ok(())
 }
 
@@ -26,6 +32,20 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "channelId" => {
                             builder = builder.set_channel_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "channelGroup" => {
+                            builder = builder.set_channel_group(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "channelName" => {
+                            builder = builder.set_channel_name(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

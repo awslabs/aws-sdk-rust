@@ -22,7 +22,9 @@ impl crate::operation::create_environment_ec2::builders::CreateEnvironmentEc2Inp
 }
 /// Fluent builder constructing a request to `CreateEnvironmentEC2`.
 ///
-/// <p>Creates an Cloud9 development environment, launches an Amazon Elastic Compute Cloud (Amazon EC2) instance, and then connects from the instance to the environment.</p>
+/// <p>Creates an Cloud9 development environment, launches an Amazon Elastic Compute Cloud (Amazon EC2) instance, and then connects from the instance to the environment.</p><important>
+/// <p>Cloud9 is no longer available to new customers. Existing customers of Cloud9 can continue to use the service as normal. <a href="http://aws.amazon.com/blogs/devops/how-to-migrate-from-aws-cloud9-to-aws-ide-toolkits-or-aws-cloudshell/">Learn more"</a></p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateEnvironmentEC2FluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -185,8 +187,9 @@ impl CreateEnvironmentEC2FluentBuilder {
         self.inner.get_subnet_id()
     }
     /// <p>The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. To choose an AMI for the instance, you must specify a valid AMI alias or a valid Amazon EC2 Systems Manager (SSM) path.</p>
-    /// <p>From December 04, 2023, you will be required to include the <code>imageId</code> parameter for the <code>CreateEnvironmentEC2</code> action. This change will be reflected across all direct methods of communicating with the API, such as Amazon Web Services SDK, Amazon Web Services CLI and Amazon Web Services CloudFormation. This change will only affect direct API consumers, and not Cloud9 console users.</p>
+    /// <p></p>
     /// <p>We recommend using Amazon Linux 2023 as the AMI to create your environment as it is fully supported.</p>
+    /// <p>From December 16, 2024, Ubuntu 18.04 will be removed from the list of available <code>imageIds</code> for Cloud9. This change is necessary as Ubuntu 18.04 has ended standard support on May 31, 2023. This change will only affect direct API consumers, and not Cloud9 console users.</p>
     /// <p>Since Ubuntu 18.04 has ended standard support as of May 31, 2023, we recommend you choose Ubuntu 22.04.</p>
     /// <p><b>AMI aliases </b></p>
     /// <ul>
@@ -215,8 +218,9 @@ impl CreateEnvironmentEC2FluentBuilder {
         self
     }
     /// <p>The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. To choose an AMI for the instance, you must specify a valid AMI alias or a valid Amazon EC2 Systems Manager (SSM) path.</p>
-    /// <p>From December 04, 2023, you will be required to include the <code>imageId</code> parameter for the <code>CreateEnvironmentEC2</code> action. This change will be reflected across all direct methods of communicating with the API, such as Amazon Web Services SDK, Amazon Web Services CLI and Amazon Web Services CloudFormation. This change will only affect direct API consumers, and not Cloud9 console users.</p>
+    /// <p></p>
     /// <p>We recommend using Amazon Linux 2023 as the AMI to create your environment as it is fully supported.</p>
+    /// <p>From December 16, 2024, Ubuntu 18.04 will be removed from the list of available <code>imageIds</code> for Cloud9. This change is necessary as Ubuntu 18.04 has ended standard support on May 31, 2023. This change will only affect direct API consumers, and not Cloud9 console users.</p>
     /// <p>Since Ubuntu 18.04 has ended standard support as of May 31, 2023, we recommend you choose Ubuntu 22.04.</p>
     /// <p><b>AMI aliases </b></p>
     /// <ul>
@@ -245,8 +249,9 @@ impl CreateEnvironmentEC2FluentBuilder {
         self
     }
     /// <p>The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. To choose an AMI for the instance, you must specify a valid AMI alias or a valid Amazon EC2 Systems Manager (SSM) path.</p>
-    /// <p>From December 04, 2023, you will be required to include the <code>imageId</code> parameter for the <code>CreateEnvironmentEC2</code> action. This change will be reflected across all direct methods of communicating with the API, such as Amazon Web Services SDK, Amazon Web Services CLI and Amazon Web Services CloudFormation. This change will only affect direct API consumers, and not Cloud9 console users.</p>
+    /// <p></p>
     /// <p>We recommend using Amazon Linux 2023 as the AMI to create your environment as it is fully supported.</p>
+    /// <p>From December 16, 2024, Ubuntu 18.04 will be removed from the list of available <code>imageIds</code> for Cloud9. This change is necessary as Ubuntu 18.04 has ended standard support on May 31, 2023. This change will only affect direct API consumers, and not Cloud9 console users.</p>
     /// <p>Since Ubuntu 18.04 has ended standard support as of May 31, 2023, we recommend you choose Ubuntu 22.04.</p>
     /// <p><b>AMI aliases </b></p>
     /// <ul>

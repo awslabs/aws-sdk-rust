@@ -5,14 +5,14 @@
 pub struct CreateSnapshotInput {
     /// <p>A description for the snapshot.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Outpost on which to create a local snapshot.</p>
+    /// <note>
+    /// <p>Only supported for volumes on Outposts. If the source volume is not on an Outpost, omit this parameter.</p>
+    /// </note>
     /// <ul>
     /// <li>
-    /// <p>To create a snapshot of a volume in a Region, omit this parameter. The snapshot is created in the same Region as the volume.</p></li>
+    /// <p>To create the snapshot on the same Outpost as the source volume, specify the ARN of that Outpost. The snapshot must be created on the same Outpost as the volume.</p></li>
     /// <li>
-    /// <p>To create a snapshot of a volume on an Outpost and store the snapshot in the Region, omit this parameter. The snapshot is created in the Region for the Outpost.</p></li>
-    /// <li>
-    /// <p>To create a snapshot of a volume on an Outpost and store the snapshot on an Outpost, specify the ARN of the destination Outpost. The snapshot must be created on the same Outpost as the volume.</p></li>
+    /// <p>To create the snapshot in the parent Region of the Outpost, omit this parameter.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#create-snapshot">Create local snapshots from volumes on an Outpost</a> in the <i>Amazon EBS User Guide</i>.</p>
     pub outpost_arn: ::std::option::Option<::std::string::String>,
@@ -20,6 +20,17 @@ pub struct CreateSnapshotInput {
     pub volume_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags to apply to the snapshot during creation.</p>
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    /// <note>
+    /// <p>Only supported for volumes in Local Zones. If the source volume is not in a Local Zone, omit this parameter.</p>
+    /// </note>
+    /// <ul>
+    /// <li>
+    /// <p>To create a local snapshot in the same Local Zone as the source volume, specify <code>local</code>.</p></li>
+    /// <li>
+    /// <p>To create a regional snapshot in the parent Region of the Local Zone, specify <code>regional</code> or omit this parameter.</p></li>
+    /// </ul>
+    /// <p>Default value: <code>regional</code></p>
+    pub location: ::std::option::Option<crate::types::SnapshotLocationEnum>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
@@ -28,14 +39,14 @@ impl CreateSnapshotInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Outpost on which to create a local snapshot.</p>
+    /// <note>
+    /// <p>Only supported for volumes on Outposts. If the source volume is not on an Outpost, omit this parameter.</p>
+    /// </note>
     /// <ul>
     /// <li>
-    /// <p>To create a snapshot of a volume in a Region, omit this parameter. The snapshot is created in the same Region as the volume.</p></li>
+    /// <p>To create the snapshot on the same Outpost as the source volume, specify the ARN of that Outpost. The snapshot must be created on the same Outpost as the volume.</p></li>
     /// <li>
-    /// <p>To create a snapshot of a volume on an Outpost and store the snapshot in the Region, omit this parameter. The snapshot is created in the Region for the Outpost.</p></li>
-    /// <li>
-    /// <p>To create a snapshot of a volume on an Outpost and store the snapshot on an Outpost, specify the ARN of the destination Outpost. The snapshot must be created on the same Outpost as the volume.</p></li>
+    /// <p>To create the snapshot in the parent Region of the Outpost, omit this parameter.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#create-snapshot">Create local snapshots from volumes on an Outpost</a> in the <i>Amazon EBS User Guide</i>.</p>
     pub fn outpost_arn(&self) -> ::std::option::Option<&str> {
@@ -50,6 +61,19 @@ impl CreateSnapshotInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
     pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
         self.tag_specifications.as_deref().unwrap_or_default()
+    }
+    /// <note>
+    /// <p>Only supported for volumes in Local Zones. If the source volume is not in a Local Zone, omit this parameter.</p>
+    /// </note>
+    /// <ul>
+    /// <li>
+    /// <p>To create a local snapshot in the same Local Zone as the source volume, specify <code>local</code>.</p></li>
+    /// <li>
+    /// <p>To create a regional snapshot in the parent Region of the Local Zone, specify <code>regional</code> or omit this parameter.</p></li>
+    /// </ul>
+    /// <p>Default value: <code>regional</code></p>
+    pub fn location(&self) -> ::std::option::Option<&crate::types::SnapshotLocationEnum> {
+        self.location.as_ref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -71,6 +95,7 @@ pub struct CreateSnapshotInputBuilder {
     pub(crate) outpost_arn: ::std::option::Option<::std::string::String>,
     pub(crate) volume_id: ::std::option::Option<::std::string::String>,
     pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) location: ::std::option::Option<crate::types::SnapshotLocationEnum>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl CreateSnapshotInputBuilder {
@@ -88,42 +113,42 @@ impl CreateSnapshotInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The Amazon Resource Name (ARN) of the Outpost on which to create a local snapshot.</p>
+    /// <note>
+    /// <p>Only supported for volumes on Outposts. If the source volume is not on an Outpost, omit this parameter.</p>
+    /// </note>
     /// <ul>
     /// <li>
-    /// <p>To create a snapshot of a volume in a Region, omit this parameter. The snapshot is created in the same Region as the volume.</p></li>
+    /// <p>To create the snapshot on the same Outpost as the source volume, specify the ARN of that Outpost. The snapshot must be created on the same Outpost as the volume.</p></li>
     /// <li>
-    /// <p>To create a snapshot of a volume on an Outpost and store the snapshot in the Region, omit this parameter. The snapshot is created in the Region for the Outpost.</p></li>
-    /// <li>
-    /// <p>To create a snapshot of a volume on an Outpost and store the snapshot on an Outpost, specify the ARN of the destination Outpost. The snapshot must be created on the same Outpost as the volume.</p></li>
+    /// <p>To create the snapshot in the parent Region of the Outpost, omit this parameter.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#create-snapshot">Create local snapshots from volumes on an Outpost</a> in the <i>Amazon EBS User Guide</i>.</p>
     pub fn outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outpost_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Outpost on which to create a local snapshot.</p>
+    /// <note>
+    /// <p>Only supported for volumes on Outposts. If the source volume is not on an Outpost, omit this parameter.</p>
+    /// </note>
     /// <ul>
     /// <li>
-    /// <p>To create a snapshot of a volume in a Region, omit this parameter. The snapshot is created in the same Region as the volume.</p></li>
+    /// <p>To create the snapshot on the same Outpost as the source volume, specify the ARN of that Outpost. The snapshot must be created on the same Outpost as the volume.</p></li>
     /// <li>
-    /// <p>To create a snapshot of a volume on an Outpost and store the snapshot in the Region, omit this parameter. The snapshot is created in the Region for the Outpost.</p></li>
-    /// <li>
-    /// <p>To create a snapshot of a volume on an Outpost and store the snapshot on an Outpost, specify the ARN of the destination Outpost. The snapshot must be created on the same Outpost as the volume.</p></li>
+    /// <p>To create the snapshot in the parent Region of the Outpost, omit this parameter.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#create-snapshot">Create local snapshots from volumes on an Outpost</a> in the <i>Amazon EBS User Guide</i>.</p>
     pub fn set_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outpost_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Outpost on which to create a local snapshot.</p>
+    /// <note>
+    /// <p>Only supported for volumes on Outposts. If the source volume is not on an Outpost, omit this parameter.</p>
+    /// </note>
     /// <ul>
     /// <li>
-    /// <p>To create a snapshot of a volume in a Region, omit this parameter. The snapshot is created in the same Region as the volume.</p></li>
+    /// <p>To create the snapshot on the same Outpost as the source volume, specify the ARN of that Outpost. The snapshot must be created on the same Outpost as the volume.</p></li>
     /// <li>
-    /// <p>To create a snapshot of a volume on an Outpost and store the snapshot in the Region, omit this parameter. The snapshot is created in the Region for the Outpost.</p></li>
-    /// <li>
-    /// <p>To create a snapshot of a volume on an Outpost and store the snapshot on an Outpost, specify the ARN of the destination Outpost. The snapshot must be created on the same Outpost as the volume.</p></li>
+    /// <p>To create the snapshot in the parent Region of the Outpost, omit this parameter.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#create-snapshot">Create local snapshots from volumes on an Outpost</a> in the <i>Amazon EBS User Guide</i>.</p>
     pub fn get_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -164,6 +189,47 @@ impl CreateSnapshotInputBuilder {
     pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
+    /// <note>
+    /// <p>Only supported for volumes in Local Zones. If the source volume is not in a Local Zone, omit this parameter.</p>
+    /// </note>
+    /// <ul>
+    /// <li>
+    /// <p>To create a local snapshot in the same Local Zone as the source volume, specify <code>local</code>.</p></li>
+    /// <li>
+    /// <p>To create a regional snapshot in the parent Region of the Local Zone, specify <code>regional</code> or omit this parameter.</p></li>
+    /// </ul>
+    /// <p>Default value: <code>regional</code></p>
+    pub fn location(mut self, input: crate::types::SnapshotLocationEnum) -> Self {
+        self.location = ::std::option::Option::Some(input);
+        self
+    }
+    /// <note>
+    /// <p>Only supported for volumes in Local Zones. If the source volume is not in a Local Zone, omit this parameter.</p>
+    /// </note>
+    /// <ul>
+    /// <li>
+    /// <p>To create a local snapshot in the same Local Zone as the source volume, specify <code>local</code>.</p></li>
+    /// <li>
+    /// <p>To create a regional snapshot in the parent Region of the Local Zone, specify <code>regional</code> or omit this parameter.</p></li>
+    /// </ul>
+    /// <p>Default value: <code>regional</code></p>
+    pub fn set_location(mut self, input: ::std::option::Option<crate::types::SnapshotLocationEnum>) -> Self {
+        self.location = input;
+        self
+    }
+    /// <note>
+    /// <p>Only supported for volumes in Local Zones. If the source volume is not in a Local Zone, omit this parameter.</p>
+    /// </note>
+    /// <ul>
+    /// <li>
+    /// <p>To create a local snapshot in the same Local Zone as the source volume, specify <code>local</code>.</p></li>
+    /// <li>
+    /// <p>To create a regional snapshot in the parent Region of the Local Zone, specify <code>regional</code> or omit this parameter.</p></li>
+    /// </ul>
+    /// <p>Default value: <code>regional</code></p>
+    pub fn get_location(&self) -> &::std::option::Option<crate::types::SnapshotLocationEnum> {
+        &self.location
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -187,6 +253,7 @@ impl CreateSnapshotInputBuilder {
             outpost_arn: self.outpost_arn,
             volume_id: self.volume_id,
             tag_specifications: self.tag_specifications,
+            location: self.location,
             dry_run: self.dry_run,
         })
     }

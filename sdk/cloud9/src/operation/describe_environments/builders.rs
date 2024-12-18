@@ -22,7 +22,9 @@ impl crate::operation::describe_environments::builders::DescribeEnvironmentsInpu
 }
 /// Fluent builder constructing a request to `DescribeEnvironments`.
 ///
-/// <p>Gets information about Cloud9 development environments.</p>
+/// <p>Gets information about Cloud9 development environments.</p><important>
+/// <p>Cloud9 is no longer available to new customers. Existing customers of Cloud9 can continue to use the service as normal. <a href="http://aws.amazon.com/blogs/devops/how-to-migrate-from-aws-cloud9-to-aws-ide-toolkits-or-aws-cloudshell/">Learn more"</a></p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeEnvironmentsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

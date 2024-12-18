@@ -31,7 +31,9 @@ impl crate::operation::list_core_devices::builders::ListCoreDevicesInputBuilder 
 /// <li>
 /// <p>When the core device receives a deployment from the Amazon Web Services Cloud</p></li>
 /// <li>
-/// <p>When the status of any component on the core device becomes <code>BROKEN</code></p></li>
+/// <p>For Greengrass nucleus 2.12.2 and earlier, the core device sends status updates when the status of any component on the core device becomes <code>ERRORED</code> or <code>BROKEN</code>.</p></li>
+/// <li>
+/// <p>For Greengrass nucleus 2.12.3 and later, the core device sends status updates when the status of any component on the core device becomes <code>ERRORED</code>, <code>BROKEN</code>, <code>RUNNING</code>, or <code>FINISHED</code>.</p></li>
 /// <li>
 /// <p>At a <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html#greengrass-nucleus-component-configuration-fss">regular interval that you can configure</a>, which defaults to 24 hours</p></li>
 /// <li>
@@ -202,5 +204,37 @@ impl ListCoreDevicesFluentBuilder {
     /// <p>The token to be used for the next set of paginated results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
+    }
+    /// <p>The runtime to be used by the core device. The runtime can be:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>aws_nucleus_classic</code></p></li>
+    /// <li>
+    /// <p><code>aws_nucleus_lite</code></p></li>
+    /// </ul>
+    pub fn runtime(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.runtime(input.into());
+        self
+    }
+    /// <p>The runtime to be used by the core device. The runtime can be:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>aws_nucleus_classic</code></p></li>
+    /// <li>
+    /// <p><code>aws_nucleus_lite</code></p></li>
+    /// </ul>
+    pub fn set_runtime(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_runtime(input);
+        self
+    }
+    /// <p>The runtime to be used by the core device. The runtime can be:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>aws_nucleus_classic</code></p></li>
+    /// <li>
+    /// <p><code>aws_nucleus_lite</code></p></li>
+    /// </ul>
+    pub fn get_runtime(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_runtime()
     }
 }

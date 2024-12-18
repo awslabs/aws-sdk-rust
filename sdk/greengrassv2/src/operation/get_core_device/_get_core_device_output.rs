@@ -11,6 +11,14 @@ pub struct GetCoreDeviceOutput {
     pub platform: ::std::option::Option<::std::string::String>,
     /// <p>The computer architecture of the core device.</p>
     pub architecture: ::std::option::Option<::std::string::String>,
+    /// <p>The runtime for the core device. The runtime can be:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>aws_nucleus_classic</code></p></li>
+    /// <li>
+    /// <p><code>aws_nucleus_lite</code></p></li>
+    /// </ul>
+    pub runtime: ::std::option::Option<::std::string::String>,
     /// <p>The status of the core device. The core device status can be:</p>
     /// <ul>
     /// <li>
@@ -41,6 +49,16 @@ impl GetCoreDeviceOutput {
     /// <p>The computer architecture of the core device.</p>
     pub fn architecture(&self) -> ::std::option::Option<&str> {
         self.architecture.as_deref()
+    }
+    /// <p>The runtime for the core device. The runtime can be:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>aws_nucleus_classic</code></p></li>
+    /// <li>
+    /// <p><code>aws_nucleus_lite</code></p></li>
+    /// </ul>
+    pub fn runtime(&self) -> ::std::option::Option<&str> {
+        self.runtime.as_deref()
     }
     /// <p>The status of the core device. The core device status can be:</p>
     /// <ul>
@@ -81,6 +99,7 @@ pub struct GetCoreDeviceOutputBuilder {
     pub(crate) core_version: ::std::option::Option<::std::string::String>,
     pub(crate) platform: ::std::option::Option<::std::string::String>,
     pub(crate) architecture: ::std::option::Option<::std::string::String>,
+    pub(crate) runtime: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::CoreDeviceStatus>,
     pub(crate) last_status_update_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -142,6 +161,38 @@ impl GetCoreDeviceOutputBuilder {
     /// <p>The computer architecture of the core device.</p>
     pub fn get_architecture(&self) -> &::std::option::Option<::std::string::String> {
         &self.architecture
+    }
+    /// <p>The runtime for the core device. The runtime can be:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>aws_nucleus_classic</code></p></li>
+    /// <li>
+    /// <p><code>aws_nucleus_lite</code></p></li>
+    /// </ul>
+    pub fn runtime(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.runtime = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The runtime for the core device. The runtime can be:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>aws_nucleus_classic</code></p></li>
+    /// <li>
+    /// <p><code>aws_nucleus_lite</code></p></li>
+    /// </ul>
+    pub fn set_runtime(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.runtime = input;
+        self
+    }
+    /// <p>The runtime for the core device. The runtime can be:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>aws_nucleus_classic</code></p></li>
+    /// <li>
+    /// <p><code>aws_nucleus_lite</code></p></li>
+    /// </ul>
+    pub fn get_runtime(&self) -> &::std::option::Option<::std::string::String> {
+        &self.runtime
     }
     /// <p>The status of the core device. The core device status can be:</p>
     /// <ul>
@@ -225,6 +276,7 @@ impl GetCoreDeviceOutputBuilder {
             core_version: self.core_version,
             platform: self.platform,
             architecture: self.architecture,
+            runtime: self.runtime,
             status: self.status,
             last_status_update_timestamp: self.last_status_update_timestamp,
             tags: self.tags,

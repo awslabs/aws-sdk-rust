@@ -30,6 +30,18 @@ pub fn ser_cmaf_ingest_group_settings(
             ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
+    if let Some(var_8) = &input.klv_behavior {
+        object.key("klvBehavior").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.klv_name_modifier {
+        object.key("klvNameModifier").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.nielsen_id3_name_modifier {
+        object.key("nielsenId3NameModifier").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.scte35_name_modifier {
+        object.key("scte35NameModifier").string(var_11.as_str());
+    }
     Ok(())
 }
 
@@ -83,6 +95,34 @@ where
                             builder = builder.set_send_delay_ms(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "klvBehavior" => {
+                            builder = builder.set_klv_behavior(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CmafKlvBehavior::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "klvNameModifier" => {
+                            builder = builder.set_klv_name_modifier(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "nielsenId3NameModifier" => {
+                            builder = builder.set_nielsen_id3_name_modifier(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "scte35NameModifier" => {
+                            builder = builder.set_scte35_name_modifier(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }

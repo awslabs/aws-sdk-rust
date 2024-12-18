@@ -8,7 +8,7 @@ pub struct Fmp4HlsSettings {
     pub audio_rendition_sets: ::std::option::Option<::std::string::String>,
     /// If set to passthrough, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
     pub nielsen_id3_behavior: ::std::option::Option<crate::types::Fmp4NielsenId3Behavior>,
-    /// When set to passthrough, timed metadata is passed through from input to output.
+    /// Set to PASSTHROUGH to enable ID3 metadata insertion. To include metadata, you configure other parameters in the output group or individual outputs, or you add an ID3 action to the channel schedule.
     pub timed_metadata_behavior: ::std::option::Option<crate::types::Fmp4TimedMetadataBehavior>,
 }
 impl Fmp4HlsSettings {
@@ -20,7 +20,7 @@ impl Fmp4HlsSettings {
     pub fn nielsen_id3_behavior(&self) -> ::std::option::Option<&crate::types::Fmp4NielsenId3Behavior> {
         self.nielsen_id3_behavior.as_ref()
     }
-    /// When set to passthrough, timed metadata is passed through from input to output.
+    /// Set to PASSTHROUGH to enable ID3 metadata insertion. To include metadata, you configure other parameters in the output group or individual outputs, or you add an ID3 action to the channel schedule.
     pub fn timed_metadata_behavior(&self) -> ::std::option::Option<&crate::types::Fmp4TimedMetadataBehavior> {
         self.timed_metadata_behavior.as_ref()
     }
@@ -69,17 +69,17 @@ impl Fmp4HlsSettingsBuilder {
     pub fn get_nielsen_id3_behavior(&self) -> &::std::option::Option<crate::types::Fmp4NielsenId3Behavior> {
         &self.nielsen_id3_behavior
     }
-    /// When set to passthrough, timed metadata is passed through from input to output.
+    /// Set to PASSTHROUGH to enable ID3 metadata insertion. To include metadata, you configure other parameters in the output group or individual outputs, or you add an ID3 action to the channel schedule.
     pub fn timed_metadata_behavior(mut self, input: crate::types::Fmp4TimedMetadataBehavior) -> Self {
         self.timed_metadata_behavior = ::std::option::Option::Some(input);
         self
     }
-    /// When set to passthrough, timed metadata is passed through from input to output.
+    /// Set to PASSTHROUGH to enable ID3 metadata insertion. To include metadata, you configure other parameters in the output group or individual outputs, or you add an ID3 action to the channel schedule.
     pub fn set_timed_metadata_behavior(mut self, input: ::std::option::Option<crate::types::Fmp4TimedMetadataBehavior>) -> Self {
         self.timed_metadata_behavior = input;
         self
     }
-    /// When set to passthrough, timed metadata is passed through from input to output.
+    /// Set to PASSTHROUGH to enable ID3 metadata insertion. To include metadata, you configure other parameters in the output group or individual outputs, or you add an ID3 action to the channel schedule.
     pub fn get_timed_metadata_behavior(&self) -> &::std::option::Option<crate::types::Fmp4TimedMetadataBehavior> {
         &self.timed_metadata_behavior
     }

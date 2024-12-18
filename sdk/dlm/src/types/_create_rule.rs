@@ -11,8 +11,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRule {
-    /// <p><b>\[Custom snapshot policies only\]</b> Specifies the destination for snapshots created by the policy. To create snapshots in the same Region as the source resource, specify <code>CLOUD</code>. To create snapshots on the same Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this parameter, <code>CLOUD</code> is used by default.</p>
-    /// <p>If the policy targets resources in an Amazon Web Services Region, then you must create snapshots in the same Region as the source resource. If the policy targets resources on an Outpost, then you can create snapshots on the same Outpost as the source resource, or in the Region of that Outpost.</p>
+    /// <p><b>\[Custom snapshot policies only\]</b> Specifies the destination for snapshots created by the policy. The allowed destinations depend on the location of the targeted resources.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the policy targets resources in a Region, then you must create snapshots in the same Region as the source resource.</p></li>
+    /// <li>
+    /// <p>If the policy targets resources in a Local Zone, you can create snapshots in the same Local Zone or in its parent Region.</p></li>
+    /// <li>
+    /// <p>If the policy targets resources on an Outpost, then you can create snapshots on the same Outpost or in its parent Region.</p></li>
+    /// </ul>
+    /// <p>Specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>To create snapshots in the same Region as the source resource, specify <code>CLOUD</code>.</p></li>
+    /// <li>
+    /// <p>To create snapshots in the same Local Zone as the source resource, specify <code>LOCAL_ZONE</code>.</p></li>
+    /// <li>
+    /// <p>To create snapshots on the same Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>.</p></li>
+    /// </ul>
+    /// <p>Default: <code>CLOUD</code></p>
     pub location: ::std::option::Option<crate::types::LocationValues>,
     /// <p>The interval between snapshots. The supported values are 1, 2, 3, 4, 6, 8, 12, and 24.</p>
     pub interval: ::std::option::Option<i32>,
@@ -21,15 +38,32 @@ pub struct CreateRule {
     /// <p>The time, in UTC, to start the operation. The supported format is hh:mm.</p>
     /// <p>The operation occurs within a one-hour window following the specified time. If you do not specify a time, Amazon Data Lifecycle Manager selects a time within the next 24 hours.</p>
     pub times: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The schedule, as a Cron expression. The schedule interval must be between 1 hour and 1 year. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron expressions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    /// <p>The schedule, as a Cron expression. The schedule interval must be between 1 hour and 1 year. For more information, see the <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-cron-expressions.html">Cron expressions reference</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub cron_expression: ::std::option::Option<::std::string::String>,
     /// <p><b>\[Custom snapshot policies that target instances only\]</b> Specifies pre and/or post scripts for a snapshot lifecycle policy that targets instances. This is useful for creating application-consistent snapshots, or for performing specific administrative tasks before or after Amazon Data Lifecycle Manager initiates snapshot creation.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/automate-app-consistent-backups.html">Automating application-consistent snapshots with pre and post scripts</a>.</p>
     pub scripts: ::std::option::Option<::std::vec::Vec<crate::types::Script>>,
 }
 impl CreateRule {
-    /// <p><b>\[Custom snapshot policies only\]</b> Specifies the destination for snapshots created by the policy. To create snapshots in the same Region as the source resource, specify <code>CLOUD</code>. To create snapshots on the same Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this parameter, <code>CLOUD</code> is used by default.</p>
-    /// <p>If the policy targets resources in an Amazon Web Services Region, then you must create snapshots in the same Region as the source resource. If the policy targets resources on an Outpost, then you can create snapshots on the same Outpost as the source resource, or in the Region of that Outpost.</p>
+    /// <p><b>\[Custom snapshot policies only\]</b> Specifies the destination for snapshots created by the policy. The allowed destinations depend on the location of the targeted resources.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the policy targets resources in a Region, then you must create snapshots in the same Region as the source resource.</p></li>
+    /// <li>
+    /// <p>If the policy targets resources in a Local Zone, you can create snapshots in the same Local Zone or in its parent Region.</p></li>
+    /// <li>
+    /// <p>If the policy targets resources on an Outpost, then you can create snapshots on the same Outpost or in its parent Region.</p></li>
+    /// </ul>
+    /// <p>Specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>To create snapshots in the same Region as the source resource, specify <code>CLOUD</code>.</p></li>
+    /// <li>
+    /// <p>To create snapshots in the same Local Zone as the source resource, specify <code>LOCAL_ZONE</code>.</p></li>
+    /// <li>
+    /// <p>To create snapshots on the same Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>.</p></li>
+    /// </ul>
+    /// <p>Default: <code>CLOUD</code></p>
     pub fn location(&self) -> ::std::option::Option<&crate::types::LocationValues> {
         self.location.as_ref()
     }
@@ -48,7 +82,7 @@ impl CreateRule {
     pub fn times(&self) -> &[::std::string::String] {
         self.times.as_deref().unwrap_or_default()
     }
-    /// <p>The schedule, as a Cron expression. The schedule interval must be between 1 hour and 1 year. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron expressions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    /// <p>The schedule, as a Cron expression. The schedule interval must be between 1 hour and 1 year. For more information, see the <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-cron-expressions.html">Cron expressions reference</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn cron_expression(&self) -> ::std::option::Option<&str> {
         self.cron_expression.as_deref()
     }
@@ -79,20 +113,71 @@ pub struct CreateRuleBuilder {
     pub(crate) scripts: ::std::option::Option<::std::vec::Vec<crate::types::Script>>,
 }
 impl CreateRuleBuilder {
-    /// <p><b>\[Custom snapshot policies only\]</b> Specifies the destination for snapshots created by the policy. To create snapshots in the same Region as the source resource, specify <code>CLOUD</code>. To create snapshots on the same Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this parameter, <code>CLOUD</code> is used by default.</p>
-    /// <p>If the policy targets resources in an Amazon Web Services Region, then you must create snapshots in the same Region as the source resource. If the policy targets resources on an Outpost, then you can create snapshots on the same Outpost as the source resource, or in the Region of that Outpost.</p>
+    /// <p><b>\[Custom snapshot policies only\]</b> Specifies the destination for snapshots created by the policy. The allowed destinations depend on the location of the targeted resources.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the policy targets resources in a Region, then you must create snapshots in the same Region as the source resource.</p></li>
+    /// <li>
+    /// <p>If the policy targets resources in a Local Zone, you can create snapshots in the same Local Zone or in its parent Region.</p></li>
+    /// <li>
+    /// <p>If the policy targets resources on an Outpost, then you can create snapshots on the same Outpost or in its parent Region.</p></li>
+    /// </ul>
+    /// <p>Specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>To create snapshots in the same Region as the source resource, specify <code>CLOUD</code>.</p></li>
+    /// <li>
+    /// <p>To create snapshots in the same Local Zone as the source resource, specify <code>LOCAL_ZONE</code>.</p></li>
+    /// <li>
+    /// <p>To create snapshots on the same Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>.</p></li>
+    /// </ul>
+    /// <p>Default: <code>CLOUD</code></p>
     pub fn location(mut self, input: crate::types::LocationValues) -> Self {
         self.location = ::std::option::Option::Some(input);
         self
     }
-    /// <p><b>\[Custom snapshot policies only\]</b> Specifies the destination for snapshots created by the policy. To create snapshots in the same Region as the source resource, specify <code>CLOUD</code>. To create snapshots on the same Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this parameter, <code>CLOUD</code> is used by default.</p>
-    /// <p>If the policy targets resources in an Amazon Web Services Region, then you must create snapshots in the same Region as the source resource. If the policy targets resources on an Outpost, then you can create snapshots on the same Outpost as the source resource, or in the Region of that Outpost.</p>
+    /// <p><b>\[Custom snapshot policies only\]</b> Specifies the destination for snapshots created by the policy. The allowed destinations depend on the location of the targeted resources.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the policy targets resources in a Region, then you must create snapshots in the same Region as the source resource.</p></li>
+    /// <li>
+    /// <p>If the policy targets resources in a Local Zone, you can create snapshots in the same Local Zone or in its parent Region.</p></li>
+    /// <li>
+    /// <p>If the policy targets resources on an Outpost, then you can create snapshots on the same Outpost or in its parent Region.</p></li>
+    /// </ul>
+    /// <p>Specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>To create snapshots in the same Region as the source resource, specify <code>CLOUD</code>.</p></li>
+    /// <li>
+    /// <p>To create snapshots in the same Local Zone as the source resource, specify <code>LOCAL_ZONE</code>.</p></li>
+    /// <li>
+    /// <p>To create snapshots on the same Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>.</p></li>
+    /// </ul>
+    /// <p>Default: <code>CLOUD</code></p>
     pub fn set_location(mut self, input: ::std::option::Option<crate::types::LocationValues>) -> Self {
         self.location = input;
         self
     }
-    /// <p><b>\[Custom snapshot policies only\]</b> Specifies the destination for snapshots created by the policy. To create snapshots in the same Region as the source resource, specify <code>CLOUD</code>. To create snapshots on the same Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this parameter, <code>CLOUD</code> is used by default.</p>
-    /// <p>If the policy targets resources in an Amazon Web Services Region, then you must create snapshots in the same Region as the source resource. If the policy targets resources on an Outpost, then you can create snapshots on the same Outpost as the source resource, or in the Region of that Outpost.</p>
+    /// <p><b>\[Custom snapshot policies only\]</b> Specifies the destination for snapshots created by the policy. The allowed destinations depend on the location of the targeted resources.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the policy targets resources in a Region, then you must create snapshots in the same Region as the source resource.</p></li>
+    /// <li>
+    /// <p>If the policy targets resources in a Local Zone, you can create snapshots in the same Local Zone or in its parent Region.</p></li>
+    /// <li>
+    /// <p>If the policy targets resources on an Outpost, then you can create snapshots on the same Outpost or in its parent Region.</p></li>
+    /// </ul>
+    /// <p>Specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>To create snapshots in the same Region as the source resource, specify <code>CLOUD</code>.</p></li>
+    /// <li>
+    /// <p>To create snapshots in the same Local Zone as the source resource, specify <code>LOCAL_ZONE</code>.</p></li>
+    /// <li>
+    /// <p>To create snapshots on the same Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>.</p></li>
+    /// </ul>
+    /// <p>Default: <code>CLOUD</code></p>
     pub fn get_location(&self) -> &::std::option::Option<crate::types::LocationValues> {
         &self.location
     }
@@ -147,17 +232,17 @@ impl CreateRuleBuilder {
     pub fn get_times(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.times
     }
-    /// <p>The schedule, as a Cron expression. The schedule interval must be between 1 hour and 1 year. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron expressions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    /// <p>The schedule, as a Cron expression. The schedule interval must be between 1 hour and 1 year. For more information, see the <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-cron-expressions.html">Cron expressions reference</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn cron_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cron_expression = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The schedule, as a Cron expression. The schedule interval must be between 1 hour and 1 year. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron expressions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    /// <p>The schedule, as a Cron expression. The schedule interval must be between 1 hour and 1 year. For more information, see the <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-cron-expressions.html">Cron expressions reference</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn set_cron_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cron_expression = input;
         self
     }
-    /// <p>The schedule, as a Cron expression. The schedule interval must be between 1 hour and 1 year. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron expressions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    /// <p>The schedule, as a Cron expression. The schedule interval must be between 1 hour and 1 year. For more information, see the <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-cron-expressions.html">Cron expressions reference</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn get_cron_expression(&self) -> &::std::option::Option<::std::string::String> {
         &self.cron_expression
     }

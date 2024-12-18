@@ -657,6 +657,8 @@ pub use crate::types::_input_loss_action_for_udp_out::InputLossActionForUdpOut;
 
 pub use crate::types::_cmaf_ingest_group_settings::CmafIngestGroupSettings;
 
+pub use crate::types::_cmaf_klv_behavior::CmafKlvBehavior;
+
 pub use crate::types::_cmaf_ingest_segment_length_units::CmafIngestSegmentLengthUnits;
 
 pub use crate::types::_scte35_type::Scte35Type;
@@ -1460,6 +1462,8 @@ mod _cmaf_ingest_group_settings;
 mod _cmaf_ingest_output_settings;
 
 mod _cmaf_ingest_segment_length_units;
+
+mod _cmaf_klv_behavior;
 
 mod _cmaf_nielsen_id3_behavior;
 

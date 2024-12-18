@@ -34,9 +34,14 @@ pub fn ser_create_snapshot_input_input_input(
         }
     }
     #[allow(unused_mut)]
-    let mut scope_12 = writer.prefix("DryRun");
-    if let Some(var_13) = &input.dry_run {
-        scope_12.boolean(*var_13);
+    let mut scope_12 = writer.prefix("Location");
+    if let Some(var_13) = &input.location {
+        scope_12.string(var_13.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_14 = writer.prefix("DryRun");
+    if let Some(var_15) = &input.dry_run {
+        scope_14.boolean(*var_15);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

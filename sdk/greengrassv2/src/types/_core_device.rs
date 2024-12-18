@@ -16,6 +16,18 @@ pub struct CoreDevice {
     pub status: ::std::option::Option<crate::types::CoreDeviceStatus>,
     /// <p>The time at which the core device's status last updated, expressed in ISO 8601 format.</p>
     pub last_status_update_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The operating system platform that the core device runs.</p>
+    pub platform: ::std::option::Option<::std::string::String>,
+    /// <p>The computer architecture of the core device.</p>
+    pub architecture: ::std::option::Option<::std::string::String>,
+    /// <p>The runtime for the core device. The runtime can be:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>aws_nucleus_classic</code></p></li>
+    /// <li>
+    /// <p><code>aws_nucleus_lite</code></p></li>
+    /// </ul>
+    pub runtime: ::std::option::Option<::std::string::String>,
 }
 impl CoreDevice {
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
@@ -36,6 +48,24 @@ impl CoreDevice {
     pub fn last_status_update_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_status_update_timestamp.as_ref()
     }
+    /// <p>The operating system platform that the core device runs.</p>
+    pub fn platform(&self) -> ::std::option::Option<&str> {
+        self.platform.as_deref()
+    }
+    /// <p>The computer architecture of the core device.</p>
+    pub fn architecture(&self) -> ::std::option::Option<&str> {
+        self.architecture.as_deref()
+    }
+    /// <p>The runtime for the core device. The runtime can be:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>aws_nucleus_classic</code></p></li>
+    /// <li>
+    /// <p><code>aws_nucleus_lite</code></p></li>
+    /// </ul>
+    pub fn runtime(&self) -> ::std::option::Option<&str> {
+        self.runtime.as_deref()
+    }
 }
 impl CoreDevice {
     /// Creates a new builder-style object to manufacture [`CoreDevice`](crate::types::CoreDevice).
@@ -51,6 +81,9 @@ pub struct CoreDeviceBuilder {
     pub(crate) core_device_thing_name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::CoreDeviceStatus>,
     pub(crate) last_status_update_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) platform: ::std::option::Option<::std::string::String>,
+    pub(crate) architecture: ::std::option::Option<::std::string::String>,
+    pub(crate) runtime: ::std::option::Option<::std::string::String>,
 }
 impl CoreDeviceBuilder {
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
@@ -113,12 +146,75 @@ impl CoreDeviceBuilder {
     pub fn get_last_status_update_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_status_update_timestamp
     }
+    /// <p>The operating system platform that the core device runs.</p>
+    pub fn platform(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.platform = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The operating system platform that the core device runs.</p>
+    pub fn set_platform(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.platform = input;
+        self
+    }
+    /// <p>The operating system platform that the core device runs.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform
+    }
+    /// <p>The computer architecture of the core device.</p>
+    pub fn architecture(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.architecture = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The computer architecture of the core device.</p>
+    pub fn set_architecture(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.architecture = input;
+        self
+    }
+    /// <p>The computer architecture of the core device.</p>
+    pub fn get_architecture(&self) -> &::std::option::Option<::std::string::String> {
+        &self.architecture
+    }
+    /// <p>The runtime for the core device. The runtime can be:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>aws_nucleus_classic</code></p></li>
+    /// <li>
+    /// <p><code>aws_nucleus_lite</code></p></li>
+    /// </ul>
+    pub fn runtime(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.runtime = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The runtime for the core device. The runtime can be:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>aws_nucleus_classic</code></p></li>
+    /// <li>
+    /// <p><code>aws_nucleus_lite</code></p></li>
+    /// </ul>
+    pub fn set_runtime(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.runtime = input;
+        self
+    }
+    /// <p>The runtime for the core device. The runtime can be:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>aws_nucleus_classic</code></p></li>
+    /// <li>
+    /// <p><code>aws_nucleus_lite</code></p></li>
+    /// </ul>
+    pub fn get_runtime(&self) -> &::std::option::Option<::std::string::String> {
+        &self.runtime
+    }
     /// Consumes the builder and constructs a [`CoreDevice`](crate::types::CoreDevice).
     pub fn build(self) -> crate::types::CoreDevice {
         crate::types::CoreDevice {
             core_device_thing_name: self.core_device_thing_name,
             status: self.status,
             last_status_update_timestamp: self.last_status_update_timestamp,
+            platform: self.platform,
+            architecture: self.architecture,
+            runtime: self.runtime,
         }
     }
 }

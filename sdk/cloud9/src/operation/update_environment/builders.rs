@@ -22,7 +22,9 @@ impl crate::operation::update_environment::builders::UpdateEnvironmentInputBuild
 }
 /// Fluent builder constructing a request to `UpdateEnvironment`.
 ///
-/// <p>Changes the settings of an existing Cloud9 development environment.</p>
+/// <p>Changes the settings of an existing Cloud9 development environment.</p><important>
+/// <p>Cloud9 is no longer available to new customers. Existing customers of Cloud9 can continue to use the service as normal. <a href="http://aws.amazon.com/blogs/devops/how-to-migrate-from-aws-cloud9-to-aws-ide-toolkits-or-aws-cloudshell/">Learn more"</a></p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateEnvironmentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

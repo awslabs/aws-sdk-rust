@@ -16,6 +16,8 @@ pub struct CreateSnapshotOutput {
     pub restore_expiry_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Reserved for future use.</p>
     pub sse_type: ::std::option::Option<crate::types::SseType>,
+    /// <p>The Availability Zone or Local Zone of the snapshot. For example, <code>us-west-1a</code> (Availability Zone) or <code>us-west-2-lax-1a</code> (Local Zone).</p>
+    pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <note>
     /// <p>Only for snapshot copies.</p>
     /// </note>
@@ -86,6 +88,10 @@ impl CreateSnapshotOutput {
     /// <p>Reserved for future use.</p>
     pub fn sse_type(&self) -> ::std::option::Option<&crate::types::SseType> {
         self.sse_type.as_ref()
+    }
+    /// <p>The Availability Zone or Local Zone of the snapshot. For example, <code>us-west-1a</code> (Availability Zone) or <code>us-west-2-lax-1a</code> (Local Zone).</p>
+    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+        self.availability_zone.as_deref()
     }
     /// <note>
     /// <p>Only for snapshot copies.</p>
@@ -182,6 +188,7 @@ pub struct CreateSnapshotOutputBuilder {
     pub(crate) storage_tier: ::std::option::Option<crate::types::StorageTier>,
     pub(crate) restore_expiry_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) sse_type: ::std::option::Option<crate::types::SseType>,
+    pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) transfer_type: ::std::option::Option<crate::types::TransferType>,
     pub(crate) completion_duration_minutes: ::std::option::Option<i32>,
     pub(crate) completion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -289,6 +296,20 @@ impl CreateSnapshotOutputBuilder {
     /// <p>Reserved for future use.</p>
     pub fn get_sse_type(&self) -> &::std::option::Option<crate::types::SseType> {
         &self.sse_type
+    }
+    /// <p>The Availability Zone or Local Zone of the snapshot. For example, <code>us-west-1a</code> (Availability Zone) or <code>us-west-2-lax-1a</code> (Local Zone).</p>
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.availability_zone = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Availability Zone or Local Zone of the snapshot. For example, <code>us-west-1a</code> (Availability Zone) or <code>us-west-2-lax-1a</code> (Local Zone).</p>
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone = input;
+        self
+    }
+    /// <p>The Availability Zone or Local Zone of the snapshot. For example, <code>us-west-1a</code> (Availability Zone) or <code>us-west-2-lax-1a</code> (Local Zone).</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
     }
     /// <note>
     /// <p>Only for snapshot copies.</p>
@@ -554,6 +575,7 @@ impl CreateSnapshotOutputBuilder {
             storage_tier: self.storage_tier,
             restore_expiry_time: self.restore_expiry_time,
             sse_type: self.sse_type,
+            availability_zone: self.availability_zone,
             transfer_type: self.transfer_type,
             completion_duration_minutes: self.completion_duration_minutes,
             completion_time: self.completion_time,

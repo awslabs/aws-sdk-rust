@@ -6,11 +6,23 @@
 pub struct MediaPackageOutputDestinationSettings {
     /// ID of the channel in MediaPackage that is the destination for this output group. You do not need to specify the individual inputs in MediaPackage; MediaLive will handle the connection of the two MediaLive pipelines to the two MediaPackage inputs. The MediaPackage channel and MediaLive channel must be in the same region.
     pub channel_id: ::std::option::Option<::std::string::String>,
+    /// Name of the channel group in MediaPackageV2. Only use if you are sending CMAF Ingest output to a CMAF ingest endpoint on a MediaPackage channel that uses MediaPackage v2.
+    pub channel_group: ::std::option::Option<::std::string::String>,
+    /// Name of the channel in MediaPackageV2. Only use if you are sending CMAF Ingest output to a CMAF ingest endpoint on a MediaPackage channel that uses MediaPackage v2.
+    pub channel_name: ::std::option::Option<::std::string::String>,
 }
 impl MediaPackageOutputDestinationSettings {
     /// ID of the channel in MediaPackage that is the destination for this output group. You do not need to specify the individual inputs in MediaPackage; MediaLive will handle the connection of the two MediaLive pipelines to the two MediaPackage inputs. The MediaPackage channel and MediaLive channel must be in the same region.
     pub fn channel_id(&self) -> ::std::option::Option<&str> {
         self.channel_id.as_deref()
+    }
+    /// Name of the channel group in MediaPackageV2. Only use if you are sending CMAF Ingest output to a CMAF ingest endpoint on a MediaPackage channel that uses MediaPackage v2.
+    pub fn channel_group(&self) -> ::std::option::Option<&str> {
+        self.channel_group.as_deref()
+    }
+    /// Name of the channel in MediaPackageV2. Only use if you are sending CMAF Ingest output to a CMAF ingest endpoint on a MediaPackage channel that uses MediaPackage v2.
+    pub fn channel_name(&self) -> ::std::option::Option<&str> {
+        self.channel_name.as_deref()
     }
 }
 impl MediaPackageOutputDestinationSettings {
@@ -25,6 +37,8 @@ impl MediaPackageOutputDestinationSettings {
 #[non_exhaustive]
 pub struct MediaPackageOutputDestinationSettingsBuilder {
     pub(crate) channel_id: ::std::option::Option<::std::string::String>,
+    pub(crate) channel_group: ::std::option::Option<::std::string::String>,
+    pub(crate) channel_name: ::std::option::Option<::std::string::String>,
 }
 impl MediaPackageOutputDestinationSettingsBuilder {
     /// ID of the channel in MediaPackage that is the destination for this output group. You do not need to specify the individual inputs in MediaPackage; MediaLive will handle the connection of the two MediaLive pipelines to the two MediaPackage inputs. The MediaPackage channel and MediaLive channel must be in the same region.
@@ -41,8 +55,40 @@ impl MediaPackageOutputDestinationSettingsBuilder {
     pub fn get_channel_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.channel_id
     }
+    /// Name of the channel group in MediaPackageV2. Only use if you are sending CMAF Ingest output to a CMAF ingest endpoint on a MediaPackage channel that uses MediaPackage v2.
+    pub fn channel_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.channel_group = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// Name of the channel group in MediaPackageV2. Only use if you are sending CMAF Ingest output to a CMAF ingest endpoint on a MediaPackage channel that uses MediaPackage v2.
+    pub fn set_channel_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.channel_group = input;
+        self
+    }
+    /// Name of the channel group in MediaPackageV2. Only use if you are sending CMAF Ingest output to a CMAF ingest endpoint on a MediaPackage channel that uses MediaPackage v2.
+    pub fn get_channel_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_group
+    }
+    /// Name of the channel in MediaPackageV2. Only use if you are sending CMAF Ingest output to a CMAF ingest endpoint on a MediaPackage channel that uses MediaPackage v2.
+    pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.channel_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// Name of the channel in MediaPackageV2. Only use if you are sending CMAF Ingest output to a CMAF ingest endpoint on a MediaPackage channel that uses MediaPackage v2.
+    pub fn set_channel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.channel_name = input;
+        self
+    }
+    /// Name of the channel in MediaPackageV2. Only use if you are sending CMAF Ingest output to a CMAF ingest endpoint on a MediaPackage channel that uses MediaPackage v2.
+    pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_name
+    }
     /// Consumes the builder and constructs a [`MediaPackageOutputDestinationSettings`](crate::types::MediaPackageOutputDestinationSettings).
     pub fn build(self) -> crate::types::MediaPackageOutputDestinationSettings {
-        crate::types::MediaPackageOutputDestinationSettings { channel_id: self.channel_id }
+        crate::types::MediaPackageOutputDestinationSettings {
+            channel_id: self.channel_id,
+            channel_group: self.channel_group,
+            channel_name: self.channel_name,
+        }
     }
 }

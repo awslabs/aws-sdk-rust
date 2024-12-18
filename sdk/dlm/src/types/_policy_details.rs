@@ -4,13 +4,21 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PolicyDetails {
-    /// <p><b>\[Custom policies only\]</b> The valid target resource types and actions a policy can manage. Specify <code>EBS_SNAPSHOT_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of Amazon EBS snapshots. Specify <code>IMAGE_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. Specify <code>EVENT_BASED_POLICY </code> to create an event-based policy that performs specific actions when a defined event occurs in your Amazon Web Services account.</p>
+    /// <p>The type of policy. Specify <code>EBS_SNAPSHOT_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of Amazon EBS snapshots. Specify <code>IMAGE_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. Specify <code>EVENT_BASED_POLICY </code> to create an event-based policy that performs specific actions when a defined event occurs in your Amazon Web Services account.</p>
     /// <p>The default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.</p>
     pub policy_type: ::std::option::Option<crate::types::PolicyTypeValues>,
     /// <p><b>\[Custom snapshot policies only\]</b> The target resource type for snapshot and AMI lifecycle policies. Use <code>VOLUME </code>to create snapshots of individual volumes or use <code>INSTANCE</code> to create multi-volume snapshots from the volumes for an instance.</p>
     pub resource_types: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTypeValues>>,
-    /// <p><b>\[Custom snapshot and AMI policies only\]</b> The location of the resources to backup. If the source resources are located in an Amazon Web Services Region, specify <code>CLOUD</code>. If the source resources are located on an Outpost in your account, specify <code>OUTPOST</code>.</p>
-    /// <p>If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up all resources of the specified type with matching target tags across all of the Outposts in your account.</p>
+    /// <p><b>\[Custom snapshot and AMI policies only\]</b> The location of the resources to backup.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the source resources are located in a Region, specify <code>CLOUD</code>. In this case, the policy targets all resources of the specified type with matching target tags across all Availability Zones in the Region.</p></li>
+    /// <li>
+    /// <p><b>\[Custom snapshot policies only\]</b> If the source resources are located in a Local Zone, specify <code>LOCAL_ZONE</code>. In this case, the policy targets all resources of the specified type with matching target tags across all Local Zones in the Region.</p></li>
+    /// <li>
+    /// <p>If the source resources are located on an Outpost in your account, specify <code>OUTPOST</code>. In this case, the policy targets all resources of the specified type with matching target tags across all of the Outposts in your account.</p></li>
+    /// </ul>
+    /// <p></p>
     pub resource_locations: ::std::option::Option<::std::vec::Vec<crate::types::ResourceLocationValues>>,
     /// <p><b>\[Custom snapshot and AMI policies only\]</b> The single tag that identifies targeted resources for this policy.</p>
     pub target_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -67,7 +75,7 @@ pub struct PolicyDetails {
     pub exclusions: ::std::option::Option<crate::types::Exclusions>,
 }
 impl PolicyDetails {
-    /// <p><b>\[Custom policies only\]</b> The valid target resource types and actions a policy can manage. Specify <code>EBS_SNAPSHOT_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of Amazon EBS snapshots. Specify <code>IMAGE_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. Specify <code>EVENT_BASED_POLICY </code> to create an event-based policy that performs specific actions when a defined event occurs in your Amazon Web Services account.</p>
+    /// <p>The type of policy. Specify <code>EBS_SNAPSHOT_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of Amazon EBS snapshots. Specify <code>IMAGE_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. Specify <code>EVENT_BASED_POLICY </code> to create an event-based policy that performs specific actions when a defined event occurs in your Amazon Web Services account.</p>
     /// <p>The default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.</p>
     pub fn policy_type(&self) -> ::std::option::Option<&crate::types::PolicyTypeValues> {
         self.policy_type.as_ref()
@@ -78,8 +86,16 @@ impl PolicyDetails {
     pub fn resource_types(&self) -> &[crate::types::ResourceTypeValues] {
         self.resource_types.as_deref().unwrap_or_default()
     }
-    /// <p><b>\[Custom snapshot and AMI policies only\]</b> The location of the resources to backup. If the source resources are located in an Amazon Web Services Region, specify <code>CLOUD</code>. If the source resources are located on an Outpost in your account, specify <code>OUTPOST</code>.</p>
-    /// <p>If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up all resources of the specified type with matching target tags across all of the Outposts in your account.</p>
+    /// <p><b>\[Custom snapshot and AMI policies only\]</b> The location of the resources to backup.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the source resources are located in a Region, specify <code>CLOUD</code>. In this case, the policy targets all resources of the specified type with matching target tags across all Availability Zones in the Region.</p></li>
+    /// <li>
+    /// <p><b>\[Custom snapshot policies only\]</b> If the source resources are located in a Local Zone, specify <code>LOCAL_ZONE</code>. In this case, the policy targets all resources of the specified type with matching target tags across all Local Zones in the Region.</p></li>
+    /// <li>
+    /// <p>If the source resources are located on an Outpost in your account, specify <code>OUTPOST</code>. In this case, the policy targets all resources of the specified type with matching target tags across all of the Outposts in your account.</p></li>
+    /// </ul>
+    /// <p></p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_locations.is_none()`.
     pub fn resource_locations(&self) -> &[crate::types::ResourceLocationValues] {
@@ -202,19 +218,19 @@ pub struct PolicyDetailsBuilder {
     pub(crate) exclusions: ::std::option::Option<crate::types::Exclusions>,
 }
 impl PolicyDetailsBuilder {
-    /// <p><b>\[Custom policies only\]</b> The valid target resource types and actions a policy can manage. Specify <code>EBS_SNAPSHOT_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of Amazon EBS snapshots. Specify <code>IMAGE_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. Specify <code>EVENT_BASED_POLICY </code> to create an event-based policy that performs specific actions when a defined event occurs in your Amazon Web Services account.</p>
+    /// <p>The type of policy. Specify <code>EBS_SNAPSHOT_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of Amazon EBS snapshots. Specify <code>IMAGE_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. Specify <code>EVENT_BASED_POLICY </code> to create an event-based policy that performs specific actions when a defined event occurs in your Amazon Web Services account.</p>
     /// <p>The default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.</p>
     pub fn policy_type(mut self, input: crate::types::PolicyTypeValues) -> Self {
         self.policy_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p><b>\[Custom policies only\]</b> The valid target resource types and actions a policy can manage. Specify <code>EBS_SNAPSHOT_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of Amazon EBS snapshots. Specify <code>IMAGE_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. Specify <code>EVENT_BASED_POLICY </code> to create an event-based policy that performs specific actions when a defined event occurs in your Amazon Web Services account.</p>
+    /// <p>The type of policy. Specify <code>EBS_SNAPSHOT_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of Amazon EBS snapshots. Specify <code>IMAGE_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. Specify <code>EVENT_BASED_POLICY </code> to create an event-based policy that performs specific actions when a defined event occurs in your Amazon Web Services account.</p>
     /// <p>The default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.</p>
     pub fn set_policy_type(mut self, input: ::std::option::Option<crate::types::PolicyTypeValues>) -> Self {
         self.policy_type = input;
         self
     }
-    /// <p><b>\[Custom policies only\]</b> The valid target resource types and actions a policy can manage. Specify <code>EBS_SNAPSHOT_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of Amazon EBS snapshots. Specify <code>IMAGE_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. Specify <code>EVENT_BASED_POLICY </code> to create an event-based policy that performs specific actions when a defined event occurs in your Amazon Web Services account.</p>
+    /// <p>The type of policy. Specify <code>EBS_SNAPSHOT_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of Amazon EBS snapshots. Specify <code>IMAGE_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. Specify <code>EVENT_BASED_POLICY </code> to create an event-based policy that performs specific actions when a defined event occurs in your Amazon Web Services account.</p>
     /// <p>The default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.</p>
     pub fn get_policy_type(&self) -> &::std::option::Option<crate::types::PolicyTypeValues> {
         &self.policy_type
@@ -243,22 +259,46 @@ impl PolicyDetailsBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_locations`](Self::set_resource_locations).
     ///
-    /// <p><b>\[Custom snapshot and AMI policies only\]</b> The location of the resources to backup. If the source resources are located in an Amazon Web Services Region, specify <code>CLOUD</code>. If the source resources are located on an Outpost in your account, specify <code>OUTPOST</code>.</p>
-    /// <p>If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up all resources of the specified type with matching target tags across all of the Outposts in your account.</p>
+    /// <p><b>\[Custom snapshot and AMI policies only\]</b> The location of the resources to backup.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the source resources are located in a Region, specify <code>CLOUD</code>. In this case, the policy targets all resources of the specified type with matching target tags across all Availability Zones in the Region.</p></li>
+    /// <li>
+    /// <p><b>\[Custom snapshot policies only\]</b> If the source resources are located in a Local Zone, specify <code>LOCAL_ZONE</code>. In this case, the policy targets all resources of the specified type with matching target tags across all Local Zones in the Region.</p></li>
+    /// <li>
+    /// <p>If the source resources are located on an Outpost in your account, specify <code>OUTPOST</code>. In this case, the policy targets all resources of the specified type with matching target tags across all of the Outposts in your account.</p></li>
+    /// </ul>
+    /// <p></p>
     pub fn resource_locations(mut self, input: crate::types::ResourceLocationValues) -> Self {
         let mut v = self.resource_locations.unwrap_or_default();
         v.push(input);
         self.resource_locations = ::std::option::Option::Some(v);
         self
     }
-    /// <p><b>\[Custom snapshot and AMI policies only\]</b> The location of the resources to backup. If the source resources are located in an Amazon Web Services Region, specify <code>CLOUD</code>. If the source resources are located on an Outpost in your account, specify <code>OUTPOST</code>.</p>
-    /// <p>If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up all resources of the specified type with matching target tags across all of the Outposts in your account.</p>
+    /// <p><b>\[Custom snapshot and AMI policies only\]</b> The location of the resources to backup.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the source resources are located in a Region, specify <code>CLOUD</code>. In this case, the policy targets all resources of the specified type with matching target tags across all Availability Zones in the Region.</p></li>
+    /// <li>
+    /// <p><b>\[Custom snapshot policies only\]</b> If the source resources are located in a Local Zone, specify <code>LOCAL_ZONE</code>. In this case, the policy targets all resources of the specified type with matching target tags across all Local Zones in the Region.</p></li>
+    /// <li>
+    /// <p>If the source resources are located on an Outpost in your account, specify <code>OUTPOST</code>. In this case, the policy targets all resources of the specified type with matching target tags across all of the Outposts in your account.</p></li>
+    /// </ul>
+    /// <p></p>
     pub fn set_resource_locations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceLocationValues>>) -> Self {
         self.resource_locations = input;
         self
     }
-    /// <p><b>\[Custom snapshot and AMI policies only\]</b> The location of the resources to backup. If the source resources are located in an Amazon Web Services Region, specify <code>CLOUD</code>. If the source resources are located on an Outpost in your account, specify <code>OUTPOST</code>.</p>
-    /// <p>If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up all resources of the specified type with matching target tags across all of the Outposts in your account.</p>
+    /// <p><b>\[Custom snapshot and AMI policies only\]</b> The location of the resources to backup.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the source resources are located in a Region, specify <code>CLOUD</code>. In this case, the policy targets all resources of the specified type with matching target tags across all Availability Zones in the Region.</p></li>
+    /// <li>
+    /// <p><b>\[Custom snapshot policies only\]</b> If the source resources are located in a Local Zone, specify <code>LOCAL_ZONE</code>. In this case, the policy targets all resources of the specified type with matching target tags across all Local Zones in the Region.</p></li>
+    /// <li>
+    /// <p>If the source resources are located on an Outpost in your account, specify <code>OUTPOST</code>. In this case, the policy targets all resources of the specified type with matching target tags across all of the Outposts in your account.</p></li>
+    /// </ul>
+    /// <p></p>
     pub fn get_resource_locations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceLocationValues>> {
         &self.resource_locations
     }

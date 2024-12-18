@@ -17,6 +17,14 @@ pub struct ListCoreDevicesInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token to be used for the next set of paginated results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>The runtime to be used by the core device. The runtime can be:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>aws_nucleus_classic</code></p></li>
+    /// <li>
+    /// <p><code>aws_nucleus_lite</code></p></li>
+    /// </ul>
+    pub runtime: ::std::option::Option<::std::string::String>,
 }
 impl ListCoreDevicesInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT thing group by which to filter. If you specify this parameter, the list includes only core devices that have successfully deployed a deployment that targets the thing group. When you remove a core device from a thing group, the list continues to include that core device.</p>
@@ -41,6 +49,16 @@ impl ListCoreDevicesInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
+    /// <p>The runtime to be used by the core device. The runtime can be:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>aws_nucleus_classic</code></p></li>
+    /// <li>
+    /// <p><code>aws_nucleus_lite</code></p></li>
+    /// </ul>
+    pub fn runtime(&self) -> ::std::option::Option<&str> {
+        self.runtime.as_deref()
+    }
 }
 impl ListCoreDevicesInput {
     /// Creates a new builder-style object to manufacture [`ListCoreDevicesInput`](crate::operation::list_core_devices::ListCoreDevicesInput).
@@ -57,6 +75,7 @@ pub struct ListCoreDevicesInputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::CoreDeviceStatus>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) runtime: ::std::option::Option<::std::string::String>,
 }
 impl ListCoreDevicesInputBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT thing group by which to filter. If you specify this parameter, the list includes only core devices that have successfully deployed a deployment that targets the thing group. When you remove a core device from a thing group, the list continues to include that core device.</p>
@@ -133,6 +152,38 @@ impl ListCoreDevicesInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
+    /// <p>The runtime to be used by the core device. The runtime can be:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>aws_nucleus_classic</code></p></li>
+    /// <li>
+    /// <p><code>aws_nucleus_lite</code></p></li>
+    /// </ul>
+    pub fn runtime(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.runtime = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The runtime to be used by the core device. The runtime can be:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>aws_nucleus_classic</code></p></li>
+    /// <li>
+    /// <p><code>aws_nucleus_lite</code></p></li>
+    /// </ul>
+    pub fn set_runtime(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.runtime = input;
+        self
+    }
+    /// <p>The runtime to be used by the core device. The runtime can be:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>aws_nucleus_classic</code></p></li>
+    /// <li>
+    /// <p><code>aws_nucleus_lite</code></p></li>
+    /// </ul>
+    pub fn get_runtime(&self) -> &::std::option::Option<::std::string::String> {
+        &self.runtime
+    }
     /// Consumes the builder and constructs a [`ListCoreDevicesInput`](crate::operation::list_core_devices::ListCoreDevicesInput).
     pub fn build(
         self,
@@ -142,6 +193,7 @@ impl ListCoreDevicesInputBuilder {
             status: self.status,
             max_results: self.max_results,
             next_token: self.next_token,
+            runtime: self.runtime,
         })
     }
 }

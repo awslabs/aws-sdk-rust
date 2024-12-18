@@ -43,6 +43,11 @@ pub fn ser_create_snapshots_input_input_input(
     if let Some(var_15) = &input.copy_tags_from_source {
         scope_14.string(var_15.as_str());
     }
+    #[allow(unused_mut)]
+    let mut scope_16 = writer.prefix("Location");
+    if let Some(var_17) = &input.location {
+        scope_16.string(var_17.as_str());
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

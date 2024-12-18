@@ -30,7 +30,7 @@ pub struct M3u8Settings {
     pub scte35_behavior: ::std::option::Option<crate::types::M3u8Scte35Behavior>,
     /// Packet Identifier (PID) of the SCTE-35 stream in the transport stream. Can be entered as a decimal or hexadecimal value.
     pub scte35_pid: ::std::option::Option<::std::string::String>,
-    /// When set to passthrough, timed metadata is passed through from input to output.
+    /// Set to PASSTHROUGH to enable ID3 metadata insertion. To include metadata, you configure other parameters in the output group or individual outputs, or you add an ID3 action to the channel schedule.
     pub timed_metadata_behavior: ::std::option::Option<crate::types::M3u8TimedMetadataBehavior>,
     /// Packet Identifier (PID) of the timed metadata stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
     pub timed_metadata_pid: ::std::option::Option<::std::string::String>,
@@ -96,7 +96,7 @@ impl M3u8Settings {
     pub fn scte35_pid(&self) -> ::std::option::Option<&str> {
         self.scte35_pid.as_deref()
     }
-    /// When set to passthrough, timed metadata is passed through from input to output.
+    /// Set to PASSTHROUGH to enable ID3 metadata insertion. To include metadata, you configure other parameters in the output group or individual outputs, or you add an ID3 action to the channel schedule.
     pub fn timed_metadata_behavior(&self) -> ::std::option::Option<&crate::types::M3u8TimedMetadataBehavior> {
         self.timed_metadata_behavior.as_ref()
     }
@@ -335,17 +335,17 @@ impl M3u8SettingsBuilder {
     pub fn get_scte35_pid(&self) -> &::std::option::Option<::std::string::String> {
         &self.scte35_pid
     }
-    /// When set to passthrough, timed metadata is passed through from input to output.
+    /// Set to PASSTHROUGH to enable ID3 metadata insertion. To include metadata, you configure other parameters in the output group or individual outputs, or you add an ID3 action to the channel schedule.
     pub fn timed_metadata_behavior(mut self, input: crate::types::M3u8TimedMetadataBehavior) -> Self {
         self.timed_metadata_behavior = ::std::option::Option::Some(input);
         self
     }
-    /// When set to passthrough, timed metadata is passed through from input to output.
+    /// Set to PASSTHROUGH to enable ID3 metadata insertion. To include metadata, you configure other parameters in the output group or individual outputs, or you add an ID3 action to the channel schedule.
     pub fn set_timed_metadata_behavior(mut self, input: ::std::option::Option<crate::types::M3u8TimedMetadataBehavior>) -> Self {
         self.timed_metadata_behavior = input;
         self
     }
-    /// When set to passthrough, timed metadata is passed through from input to output.
+    /// Set to PASSTHROUGH to enable ID3 metadata insertion. To include metadata, you configure other parameters in the output group or individual outputs, or you add an ID3 action to the channel schedule.
     pub fn get_timed_metadata_behavior(&self) -> &::std::option::Option<crate::types::M3u8TimedMetadataBehavior> {
         &self.timed_metadata_behavior
     }

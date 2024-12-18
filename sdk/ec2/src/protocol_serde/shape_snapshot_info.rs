@@ -167,6 +167,19 @@ pub fn de_snapshot_info(
                 builder = builder.set_sse_type(var_12);
             }
             ,
+            s if s.matches("availabilityZone") /* AvailabilityZone com.amazonaws.ec2#SnapshotInfo$AvailabilityZone */ =>  {
+                let var_13 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_availability_zone(var_13);
+            }
+            ,
             _ => {}
         }
     }

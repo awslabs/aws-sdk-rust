@@ -12,6 +12,7 @@
 /// ```text
 /// # let clientpasswordauthtype = unimplemented!();
 /// match clientpasswordauthtype {
+///     ClientPasswordAuthType::MysqlCachingSha2Password => { /* ... */ },
 ///     ClientPasswordAuthType::MysqlNativePassword => { /* ... */ },
 ///     ClientPasswordAuthType::PostgresMd5 => { /* ... */ },
 ///     ClientPasswordAuthType::PostgresScramSha256 => { /* ... */ },
@@ -45,6 +46,8 @@
 )]
 pub enum ClientPasswordAuthType {
     #[allow(missing_docs)] // documentation missing in model
+    MysqlCachingSha2Password,
+    #[allow(missing_docs)] // documentation missing in model
     MysqlNativePassword,
     #[allow(missing_docs)] // documentation missing in model
     PostgresMd5,
@@ -59,6 +62,7 @@ pub enum ClientPasswordAuthType {
 impl ::std::convert::From<&str> for ClientPasswordAuthType {
     fn from(s: &str) -> Self {
         match s {
+            "MYSQL_CACHING_SHA2_PASSWORD" => ClientPasswordAuthType::MysqlCachingSha2Password,
             "MYSQL_NATIVE_PASSWORD" => ClientPasswordAuthType::MysqlNativePassword,
             "POSTGRES_MD5" => ClientPasswordAuthType::PostgresMd5,
             "POSTGRES_SCRAM_SHA_256" => ClientPasswordAuthType::PostgresScramSha256,
@@ -78,6 +82,7 @@ impl ClientPasswordAuthType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ClientPasswordAuthType::MysqlCachingSha2Password => "MYSQL_CACHING_SHA2_PASSWORD",
             ClientPasswordAuthType::MysqlNativePassword => "MYSQL_NATIVE_PASSWORD",
             ClientPasswordAuthType::PostgresMd5 => "POSTGRES_MD5",
             ClientPasswordAuthType::PostgresScramSha256 => "POSTGRES_SCRAM_SHA_256",
@@ -88,6 +93,7 @@ impl ClientPasswordAuthType {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "MYSQL_CACHING_SHA2_PASSWORD",
             "MYSQL_NATIVE_PASSWORD",
             "POSTGRES_MD5",
             "POSTGRES_SCRAM_SHA_256",
@@ -115,6 +121,7 @@ impl ClientPasswordAuthType {
 impl ::std::fmt::Display for ClientPasswordAuthType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ClientPasswordAuthType::MysqlCachingSha2Password => write!(f, "MYSQL_CACHING_SHA2_PASSWORD"),
             ClientPasswordAuthType::MysqlNativePassword => write!(f, "MYSQL_NATIVE_PASSWORD"),
             ClientPasswordAuthType::PostgresMd5 => write!(f, "POSTGRES_MD5"),
             ClientPasswordAuthType::PostgresScramSha256 => write!(f, "POSTGRES_SCRAM_SHA_256"),
