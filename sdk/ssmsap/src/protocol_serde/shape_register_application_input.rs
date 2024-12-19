@@ -9,45 +9,57 @@ pub fn ser_register_application_input_input(
     if let Some(var_2) = &input.application_type {
         object.key("ApplicationType").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.credentials {
-        let mut array_4 = object.key("Credentials").start_array();
+    if let Some(var_3) = &input.components_info {
+        let mut array_4 = object.key("ComponentsInfo").start_array();
         for item_5 in var_3 {
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_application_credential::ser_application_credential(&mut object_6, item_5)?;
+                crate::protocol_serde::shape_component_info::ser_component_info(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }
         array_4.finish();
     }
-    if let Some(var_7) = &input.database_arn {
-        object.key("DatabaseArn").string(var_7.as_str());
-    }
-    if let Some(var_8) = &input.instances {
-        let mut array_9 = object.key("Instances").start_array();
-        for item_10 in var_8 {
+    if let Some(var_7) = &input.credentials {
+        let mut array_8 = object.key("Credentials").start_array();
+        for item_9 in var_7 {
             {
-                array_9.value().string(item_10.as_str());
+                #[allow(unused_mut)]
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_application_credential::ser_application_credential(&mut object_10, item_9)?;
+                object_10.finish();
             }
         }
-        array_9.finish();
+        array_8.finish();
     }
-    if let Some(var_11) = &input.sap_instance_number {
-        object.key("SapInstanceNumber").string(var_11.as_str());
+    if let Some(var_11) = &input.database_arn {
+        object.key("DatabaseArn").string(var_11.as_str());
     }
-    if let Some(var_12) = &input.sid {
-        object.key("Sid").string(var_12.as_str());
+    if let Some(var_12) = &input.instances {
+        let mut array_13 = object.key("Instances").start_array();
+        for item_14 in var_12 {
+            {
+                array_13.value().string(item_14.as_str());
+            }
+        }
+        array_13.finish();
     }
-    if let Some(var_13) = &input.tags {
+    if let Some(var_15) = &input.sap_instance_number {
+        object.key("SapInstanceNumber").string(var_15.as_str());
+    }
+    if let Some(var_16) = &input.sid {
+        object.key("Sid").string(var_16.as_str());
+    }
+    if let Some(var_17) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("Tags").start_object();
-        for (key_15, value_16) in var_13 {
+        let mut object_18 = object.key("Tags").start_object();
+        for (key_19, value_20) in var_17 {
             {
-                object_14.key(key_15.as_str()).string(value_16.as_str());
+                object_18.key(key_19.as_str()).string(value_20.as_str());
             }
         }
-        object_14.finish();
+        object_18.finish();
     }
     Ok(())
 }

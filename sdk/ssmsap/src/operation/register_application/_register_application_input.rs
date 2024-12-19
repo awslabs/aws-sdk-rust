@@ -19,6 +19,9 @@ pub struct RegisterApplicationInput {
     pub credentials: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>,
     /// <p>The Amazon Resource Name of the SAP HANA database.</p>
     pub database_arn: ::std::option::Option<::std::string::String>,
+    /// <p>This is an optional parameter for component details to which the SAP ABAP application is attached, such as Web Dispatcher.</p>
+    /// <p>This is an array of ApplicationComponent objects. You may input 0 to 5 items.</p>
+    pub components_info: ::std::option::Option<::std::vec::Vec<crate::types::ComponentInfo>>,
 }
 impl RegisterApplicationInput {
     /// <p>The ID of the application.</p>
@@ -57,6 +60,13 @@ impl RegisterApplicationInput {
     pub fn database_arn(&self) -> ::std::option::Option<&str> {
         self.database_arn.as_deref()
     }
+    /// <p>This is an optional parameter for component details to which the SAP ABAP application is attached, such as Web Dispatcher.</p>
+    /// <p>This is an array of ApplicationComponent objects. You may input 0 to 5 items.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.components_info.is_none()`.
+    pub fn components_info(&self) -> &[crate::types::ComponentInfo] {
+        self.components_info.as_deref().unwrap_or_default()
+    }
 }
 impl RegisterApplicationInput {
     /// Creates a new builder-style object to manufacture [`RegisterApplicationInput`](crate::operation::register_application::RegisterApplicationInput).
@@ -77,6 +87,7 @@ pub struct RegisterApplicationInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) credentials: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>,
     pub(crate) database_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) components_info: ::std::option::Option<::std::vec::Vec<crate::types::ComponentInfo>>,
 }
 impl RegisterApplicationInputBuilder {
     /// <p>The ID of the application.</p>
@@ -211,6 +222,29 @@ impl RegisterApplicationInputBuilder {
     pub fn get_database_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.database_arn
     }
+    /// Appends an item to `components_info`.
+    ///
+    /// To override the contents of this collection use [`set_components_info`](Self::set_components_info).
+    ///
+    /// <p>This is an optional parameter for component details to which the SAP ABAP application is attached, such as Web Dispatcher.</p>
+    /// <p>This is an array of ApplicationComponent objects. You may input 0 to 5 items.</p>
+    pub fn components_info(mut self, input: crate::types::ComponentInfo) -> Self {
+        let mut v = self.components_info.unwrap_or_default();
+        v.push(input);
+        self.components_info = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>This is an optional parameter for component details to which the SAP ABAP application is attached, such as Web Dispatcher.</p>
+    /// <p>This is an array of ApplicationComponent objects. You may input 0 to 5 items.</p>
+    pub fn set_components_info(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentInfo>>) -> Self {
+        self.components_info = input;
+        self
+    }
+    /// <p>This is an optional parameter for component details to which the SAP ABAP application is attached, such as Web Dispatcher.</p>
+    /// <p>This is an array of ApplicationComponent objects. You may input 0 to 5 items.</p>
+    pub fn get_components_info(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentInfo>> {
+        &self.components_info
+    }
     /// Consumes the builder and constructs a [`RegisterApplicationInput`](crate::operation::register_application::RegisterApplicationInput).
     pub fn build(
         self,
@@ -225,6 +259,7 @@ impl RegisterApplicationInputBuilder {
             tags: self.tags,
             credentials: self.credentials,
             database_arn: self.database_arn,
+            components_info: self.components_info,
         })
     }
 }

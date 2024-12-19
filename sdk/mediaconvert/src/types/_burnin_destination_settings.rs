@@ -38,6 +38,8 @@ pub struct BurninDestinationSettings {
     pub outline_color: ::std::option::Option<crate::types::BurninSubtitleOutlineColor>,
     /// Specify the Outline size of the caption text, in pixels. Leave Outline size blank and set Style passthrough to enabled to use the outline size data from your input captions, if present.
     pub outline_size: ::std::option::Option<i32>,
+    /// Optionally remove any tts:rubyReserve attributes present in your input, that do not have a tts:ruby attribute in the same element, from your output. Use if your vertical Japanese output captions have alignment issues. To remove ruby reserve attributes when present: Choose Enabled. To not remove any ruby reserve attributes: Keep the default value, Disabled.
+    pub remove_ruby_reserve_attributes: ::std::option::Option<crate::types::RemoveRubyReserveAttributes>,
     /// Specify the color of the shadow cast by the captions. Leave Shadow color blank and set Style passthrough to enabled to use the shadow color data from your input captions, if present.
     pub shadow_color: ::std::option::Option<crate::types::BurninSubtitleShadowColor>,
     /// Specify the opacity of the shadow. Enter a value from 0 to 255, where 0 is transparent and 255 is opaque. If Style passthrough is set to Enabled, leave Shadow opacity blank to pass through the shadow style information in your input captions to your output captions. If Style passthrough is set to disabled, leave blank to use a value of 0 and remove all shadows from your output captions.
@@ -124,6 +126,10 @@ impl BurninDestinationSettings {
     pub fn outline_size(&self) -> ::std::option::Option<i32> {
         self.outline_size
     }
+    /// Optionally remove any tts:rubyReserve attributes present in your input, that do not have a tts:ruby attribute in the same element, from your output. Use if your vertical Japanese output captions have alignment issues. To remove ruby reserve attributes when present: Choose Enabled. To not remove any ruby reserve attributes: Keep the default value, Disabled.
+    pub fn remove_ruby_reserve_attributes(&self) -> ::std::option::Option<&crate::types::RemoveRubyReserveAttributes> {
+        self.remove_ruby_reserve_attributes.as_ref()
+    }
     /// Specify the color of the shadow cast by the captions. Leave Shadow color blank and set Style passthrough to enabled to use the shadow color data from your input captions, if present.
     pub fn shadow_color(&self) -> ::std::option::Option<&crate::types::BurninSubtitleShadowColor> {
         self.shadow_color.as_ref()
@@ -185,6 +191,7 @@ pub struct BurninDestinationSettingsBuilder {
     pub(crate) hex_font_color: ::std::option::Option<::std::string::String>,
     pub(crate) outline_color: ::std::option::Option<crate::types::BurninSubtitleOutlineColor>,
     pub(crate) outline_size: ::std::option::Option<i32>,
+    pub(crate) remove_ruby_reserve_attributes: ::std::option::Option<crate::types::RemoveRubyReserveAttributes>,
     pub(crate) shadow_color: ::std::option::Option<crate::types::BurninSubtitleShadowColor>,
     pub(crate) shadow_opacity: ::std::option::Option<i32>,
     pub(crate) shadow_x_offset: ::std::option::Option<i32>,
@@ -433,6 +440,20 @@ impl BurninDestinationSettingsBuilder {
     pub fn get_outline_size(&self) -> &::std::option::Option<i32> {
         &self.outline_size
     }
+    /// Optionally remove any tts:rubyReserve attributes present in your input, that do not have a tts:ruby attribute in the same element, from your output. Use if your vertical Japanese output captions have alignment issues. To remove ruby reserve attributes when present: Choose Enabled. To not remove any ruby reserve attributes: Keep the default value, Disabled.
+    pub fn remove_ruby_reserve_attributes(mut self, input: crate::types::RemoveRubyReserveAttributes) -> Self {
+        self.remove_ruby_reserve_attributes = ::std::option::Option::Some(input);
+        self
+    }
+    /// Optionally remove any tts:rubyReserve attributes present in your input, that do not have a tts:ruby attribute in the same element, from your output. Use if your vertical Japanese output captions have alignment issues. To remove ruby reserve attributes when present: Choose Enabled. To not remove any ruby reserve attributes: Keep the default value, Disabled.
+    pub fn set_remove_ruby_reserve_attributes(mut self, input: ::std::option::Option<crate::types::RemoveRubyReserveAttributes>) -> Self {
+        self.remove_ruby_reserve_attributes = input;
+        self
+    }
+    /// Optionally remove any tts:rubyReserve attributes present in your input, that do not have a tts:ruby attribute in the same element, from your output. Use if your vertical Japanese output captions have alignment issues. To remove ruby reserve attributes when present: Choose Enabled. To not remove any ruby reserve attributes: Keep the default value, Disabled.
+    pub fn get_remove_ruby_reserve_attributes(&self) -> &::std::option::Option<crate::types::RemoveRubyReserveAttributes> {
+        &self.remove_ruby_reserve_attributes
+    }
     /// Specify the color of the shadow cast by the captions. Leave Shadow color blank and set Style passthrough to enabled to use the shadow color data from your input captions, if present.
     pub fn shadow_color(mut self, input: crate::types::BurninSubtitleShadowColor) -> Self {
         self.shadow_color = ::std::option::Option::Some(input);
@@ -565,6 +586,7 @@ impl BurninDestinationSettingsBuilder {
             hex_font_color: self.hex_font_color,
             outline_color: self.outline_color,
             outline_size: self.outline_size,
+            remove_ruby_reserve_attributes: self.remove_ruby_reserve_attributes,
             shadow_color: self.shadow_color,
             shadow_opacity: self.shadow_opacity,
             shadow_x_offset: self.shadow_x_offset,

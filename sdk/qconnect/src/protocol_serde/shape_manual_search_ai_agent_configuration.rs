@@ -21,6 +21,9 @@ pub fn ser_manual_search_ai_agent_configuration(
         }
         array_4.finish();
     }
+    if let Some(var_7) = &input.locale {
+        object.key("locale").string(var_7.as_str());
+    }
     Ok(())
 }
 
@@ -56,6 +59,13 @@ where
                         "associationConfigurations" => {
                             builder = builder.set_association_configurations(
                                 crate::protocol_serde::shape_association_configuration_list::de_association_configuration_list(tokens)?,
+                            );
+                        }
+                        "locale" => {
+                            builder = builder.set_locale(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -10,6 +10,8 @@ pub struct StreamingProperties {
     pub user_settings: ::std::option::Option<::std::vec::Vec<crate::types::UserSetting>>,
     /// <p>Indicates the storage connector used</p>
     pub storage_connectors: ::std::option::Option<::std::vec::Vec<crate::types::StorageConnector>>,
+    /// <p>Indicates the Global Accelerator properties.</p>
+    pub global_accelerator: ::std::option::Option<crate::types::GlobalAcceleratorForDirectory>,
 }
 impl StreamingProperties {
     /// <p>Indicates the type of preferred protocol for the streaming experience.</p>
@@ -28,6 +30,10 @@ impl StreamingProperties {
     pub fn storage_connectors(&self) -> &[crate::types::StorageConnector] {
         self.storage_connectors.as_deref().unwrap_or_default()
     }
+    /// <p>Indicates the Global Accelerator properties.</p>
+    pub fn global_accelerator(&self) -> ::std::option::Option<&crate::types::GlobalAcceleratorForDirectory> {
+        self.global_accelerator.as_ref()
+    }
 }
 impl StreamingProperties {
     /// Creates a new builder-style object to manufacture [`StreamingProperties`](crate::types::StreamingProperties).
@@ -43,6 +49,7 @@ pub struct StreamingPropertiesBuilder {
     pub(crate) streaming_experience_preferred_protocol: ::std::option::Option<crate::types::StreamingExperiencePreferredProtocolEnum>,
     pub(crate) user_settings: ::std::option::Option<::std::vec::Vec<crate::types::UserSetting>>,
     pub(crate) storage_connectors: ::std::option::Option<::std::vec::Vec<crate::types::StorageConnector>>,
+    pub(crate) global_accelerator: ::std::option::Option<crate::types::GlobalAcceleratorForDirectory>,
 }
 impl StreamingPropertiesBuilder {
     /// <p>Indicates the type of preferred protocol for the streaming experience.</p>
@@ -102,12 +109,27 @@ impl StreamingPropertiesBuilder {
     pub fn get_storage_connectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StorageConnector>> {
         &self.storage_connectors
     }
+    /// <p>Indicates the Global Accelerator properties.</p>
+    pub fn global_accelerator(mut self, input: crate::types::GlobalAcceleratorForDirectory) -> Self {
+        self.global_accelerator = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates the Global Accelerator properties.</p>
+    pub fn set_global_accelerator(mut self, input: ::std::option::Option<crate::types::GlobalAcceleratorForDirectory>) -> Self {
+        self.global_accelerator = input;
+        self
+    }
+    /// <p>Indicates the Global Accelerator properties.</p>
+    pub fn get_global_accelerator(&self) -> &::std::option::Option<crate::types::GlobalAcceleratorForDirectory> {
+        &self.global_accelerator
+    }
     /// Consumes the builder and constructs a [`StreamingProperties`](crate::types::StreamingProperties).
     pub fn build(self) -> crate::types::StreamingProperties {
         crate::types::StreamingProperties {
             streaming_experience_preferred_protocol: self.streaming_experience_preferred_protocol,
             user_settings: self.user_settings,
             storage_connectors: self.storage_connectors,
+            global_accelerator: self.global_accelerator,
         }
     }
 }

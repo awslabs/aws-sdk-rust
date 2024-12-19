@@ -24,6 +24,10 @@ pub struct UpdateChannelInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// An optional Amazon Resource Name (ARN) of the role to assume when running the Channel. If you do not specify this on an update call but the role was previously set that role will be removed.
     pub role_arn: ::std::option::Option<::std::string::String>,
+    /// Channel engine version for this channel
+    pub channel_engine_version: ::std::option::Option<crate::types::ChannelEngineVersionRequest>,
+    /// Placeholder documentation for __boolean
+    pub dry_run: ::std::option::Option<bool>,
 }
 impl UpdateChannelInput {
     /// Specification of CDI inputs for this channel
@@ -70,6 +74,14 @@ impl UpdateChannelInput {
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
+    /// Channel engine version for this channel
+    pub fn channel_engine_version(&self) -> ::std::option::Option<&crate::types::ChannelEngineVersionRequest> {
+        self.channel_engine_version.as_ref()
+    }
+    /// Placeholder documentation for __boolean
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
+        self.dry_run
+    }
 }
 impl UpdateChannelInput {
     /// Creates a new builder-style object to manufacture [`UpdateChannelInput`](crate::operation::update_channel::UpdateChannelInput).
@@ -92,6 +104,8 @@ pub struct UpdateChannelInputBuilder {
     pub(crate) maintenance: ::std::option::Option<crate::types::MaintenanceUpdateSettings>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) channel_engine_version: ::std::option::Option<crate::types::ChannelEngineVersionRequest>,
+    pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl UpdateChannelInputBuilder {
     /// Specification of CDI inputs for this channel
@@ -247,6 +261,34 @@ impl UpdateChannelInputBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
+    /// Channel engine version for this channel
+    pub fn channel_engine_version(mut self, input: crate::types::ChannelEngineVersionRequest) -> Self {
+        self.channel_engine_version = ::std::option::Option::Some(input);
+        self
+    }
+    /// Channel engine version for this channel
+    pub fn set_channel_engine_version(mut self, input: ::std::option::Option<crate::types::ChannelEngineVersionRequest>) -> Self {
+        self.channel_engine_version = input;
+        self
+    }
+    /// Channel engine version for this channel
+    pub fn get_channel_engine_version(&self) -> &::std::option::Option<crate::types::ChannelEngineVersionRequest> {
+        &self.channel_engine_version
+    }
+    /// Placeholder documentation for __boolean
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.dry_run = ::std::option::Option::Some(input);
+        self
+    }
+    /// Placeholder documentation for __boolean
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dry_run = input;
+        self
+    }
+    /// Placeholder documentation for __boolean
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// Consumes the builder and constructs a [`UpdateChannelInput`](crate::operation::update_channel::UpdateChannelInput).
     pub fn build(
         self,
@@ -262,6 +304,8 @@ impl UpdateChannelInputBuilder {
             maintenance: self.maintenance,
             name: self.name,
             role_arn: self.role_arn,
+            channel_engine_version: self.channel_engine_version,
+            dry_run: self.dry_run,
         })
     }
 }

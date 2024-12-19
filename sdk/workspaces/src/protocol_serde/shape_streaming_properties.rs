@@ -30,6 +30,12 @@ pub fn ser_streaming_properties(
         }
         array_7.finish();
     }
+    if let Some(var_10) = &input.global_accelerator {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("GlobalAccelerator").start_object();
+        crate::protocol_serde::shape_global_accelerator_for_directory::ser_global_accelerator_for_directory(&mut object_11, var_10)?;
+        object_11.finish();
+    }
     Ok(())
 }
 
@@ -63,6 +69,11 @@ where
                         }
                         "StorageConnectors" => {
                             builder = builder.set_storage_connectors(crate::protocol_serde::shape_storage_connectors::de_storage_connectors(tokens)?);
+                        }
+                        "GlobalAccelerator" => {
+                            builder = builder.set_global_accelerator(
+                                crate::protocol_serde::shape_global_accelerator_for_directory::de_global_accelerator_for_directory(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

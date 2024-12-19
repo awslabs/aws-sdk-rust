@@ -60,16 +60,19 @@ pub fn ser_video_description(
     if let Some(var_16) = &input.timecode_insertion {
         object.key("timecodeInsertion").string(var_16.as_str());
     }
-    if let Some(var_17) = &input.video_preprocessors {
-        #[allow(unused_mut)]
-        let mut object_18 = object.key("videoPreprocessors").start_object();
-        crate::protocol_serde::shape_video_preprocessor::ser_video_preprocessor(&mut object_18, var_17)?;
-        object_18.finish();
+    if let Some(var_17) = &input.timecode_track {
+        object.key("timecodeTrack").string(var_17.as_str());
     }
-    if let Some(var_19) = &input.width {
+    if let Some(var_18) = &input.video_preprocessors {
+        #[allow(unused_mut)]
+        let mut object_19 = object.key("videoPreprocessors").start_object();
+        crate::protocol_serde::shape_video_preprocessor::ser_video_preprocessor(&mut object_19, var_18)?;
+        object_19.finish();
+    }
+    if let Some(var_20) = &input.width {
         object.key("width").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_19).into()),
+            ::aws_smithy_types::Number::NegInt((*var_20).into()),
         );
     }
     Ok(())
@@ -166,6 +169,13 @@ where
                             builder = builder.set_timecode_insertion(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::VideoTimecodeInsertion::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "timecodeTrack" => {
+                            builder = builder.set_timecode_track(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::TimecodeTrack::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

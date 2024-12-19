@@ -44,6 +44,8 @@ pub struct RestartChannelPipelinesOutput {
     pub vpc: ::std::option::Option<crate::types::VpcOutputSettingsDescription>,
     /// Anywhere settings for this channel.
     pub anywhere_settings: ::std::option::Option<crate::types::DescribeAnywhereSettings>,
+    /// Requested engine version for this channel.
+    pub channel_engine_version: ::std::option::Option<crate::types::ChannelEngineVersionResponse>,
     _request_id: Option<String>,
 }
 impl RestartChannelPipelinesOutput {
@@ -135,6 +137,10 @@ impl RestartChannelPipelinesOutput {
     pub fn anywhere_settings(&self) -> ::std::option::Option<&crate::types::DescribeAnywhereSettings> {
         self.anywhere_settings.as_ref()
     }
+    /// Requested engine version for this channel.
+    pub fn channel_engine_version(&self) -> ::std::option::Option<&crate::types::ChannelEngineVersionResponse> {
+        self.channel_engine_version.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for RestartChannelPipelinesOutput {
     fn request_id(&self) -> Option<&str> {
@@ -172,6 +178,7 @@ pub struct RestartChannelPipelinesOutputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) vpc: ::std::option::Option<crate::types::VpcOutputSettingsDescription>,
     pub(crate) anywhere_settings: ::std::option::Option<crate::types::DescribeAnywhereSettings>,
+    pub(crate) channel_engine_version: ::std::option::Option<crate::types::ChannelEngineVersionResponse>,
     _request_id: Option<String>,
 }
 impl RestartChannelPipelinesOutputBuilder {
@@ -485,6 +492,20 @@ impl RestartChannelPipelinesOutputBuilder {
     pub fn get_anywhere_settings(&self) -> &::std::option::Option<crate::types::DescribeAnywhereSettings> {
         &self.anywhere_settings
     }
+    /// Requested engine version for this channel.
+    pub fn channel_engine_version(mut self, input: crate::types::ChannelEngineVersionResponse) -> Self {
+        self.channel_engine_version = ::std::option::Option::Some(input);
+        self
+    }
+    /// Requested engine version for this channel.
+    pub fn set_channel_engine_version(mut self, input: ::std::option::Option<crate::types::ChannelEngineVersionResponse>) -> Self {
+        self.channel_engine_version = input;
+        self
+    }
+    /// Requested engine version for this channel.
+    pub fn get_channel_engine_version(&self) -> &::std::option::Option<crate::types::ChannelEngineVersionResponse> {
+        &self.channel_engine_version
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -517,6 +538,7 @@ impl RestartChannelPipelinesOutputBuilder {
             tags: self.tags,
             vpc: self.vpc,
             anywhere_settings: self.anywhere_settings,
+            channel_engine_version: self.channel_engine_version,
             _request_id: self._request_id,
         }
     }

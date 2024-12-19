@@ -3012,6 +3012,35 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_versions::ListVersionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_versions::ListVersionsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_versions::ListVersionsError> for Error {
+    fn from(err: crate::operation::list_versions::ListVersionsError) -> Self {
+        match err {
+            crate::operation::list_versions::ListVersionsError::BadGatewayException(inner) => Error::BadGatewayException(inner),
+            crate::operation::list_versions::ListVersionsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_versions::ListVersionsError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::list_versions::ListVersionsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::list_versions::ListVersionsError::GatewayTimeoutException(inner) => Error::GatewayTimeoutException(inner),
+            crate::operation::list_versions::ListVersionsError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::list_versions::ListVersionsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::list_versions::ListVersionsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_versions::ListVersionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::purchase_offering::PurchaseOfferingError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

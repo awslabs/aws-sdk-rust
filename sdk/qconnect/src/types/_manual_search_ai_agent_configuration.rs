@@ -10,6 +10,8 @@ pub struct ManualSearchAiAgentConfiguration {
     pub answer_generation_ai_guardrail_id: ::std::option::Option<::std::string::String>,
     /// <p>The association configurations for overriding behavior on this AI Agent.</p>
     pub association_configurations: ::std::option::Option<::std::vec::Vec<crate::types::AssociationConfiguration>>,
+    /// <p>The locale to which specifies the language and region settings that determine the response language for <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_QueryAssistant.html">QueryAssistant</a>.</p>
+    pub locale: ::std::option::Option<::std::string::String>,
 }
 impl ManualSearchAiAgentConfiguration {
     /// <p>The AI Prompt identifier for the Answer Generation prompt used by the MANUAL_SEARCH AI Agent.</p>
@@ -26,6 +28,10 @@ impl ManualSearchAiAgentConfiguration {
     pub fn association_configurations(&self) -> &[crate::types::AssociationConfiguration] {
         self.association_configurations.as_deref().unwrap_or_default()
     }
+    /// <p>The locale to which specifies the language and region settings that determine the response language for <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_QueryAssistant.html">QueryAssistant</a>.</p>
+    pub fn locale(&self) -> ::std::option::Option<&str> {
+        self.locale.as_deref()
+    }
 }
 impl ManualSearchAiAgentConfiguration {
     /// Creates a new builder-style object to manufacture [`ManualSearchAiAgentConfiguration`](crate::types::ManualSearchAiAgentConfiguration).
@@ -41,6 +47,7 @@ pub struct ManualSearchAiAgentConfigurationBuilder {
     pub(crate) answer_generation_ai_prompt_id: ::std::option::Option<::std::string::String>,
     pub(crate) answer_generation_ai_guardrail_id: ::std::option::Option<::std::string::String>,
     pub(crate) association_configurations: ::std::option::Option<::std::vec::Vec<crate::types::AssociationConfiguration>>,
+    pub(crate) locale: ::std::option::Option<::std::string::String>,
 }
 impl ManualSearchAiAgentConfigurationBuilder {
     /// <p>The AI Prompt identifier for the Answer Generation prompt used by the MANUAL_SEARCH AI Agent.</p>
@@ -91,12 +98,27 @@ impl ManualSearchAiAgentConfigurationBuilder {
     pub fn get_association_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociationConfiguration>> {
         &self.association_configurations
     }
+    /// <p>The locale to which specifies the language and region settings that determine the response language for <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_QueryAssistant.html">QueryAssistant</a>.</p>
+    pub fn locale(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.locale = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The locale to which specifies the language and region settings that determine the response language for <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_QueryAssistant.html">QueryAssistant</a>.</p>
+    pub fn set_locale(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.locale = input;
+        self
+    }
+    /// <p>The locale to which specifies the language and region settings that determine the response language for <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_QueryAssistant.html">QueryAssistant</a>.</p>
+    pub fn get_locale(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale
+    }
     /// Consumes the builder and constructs a [`ManualSearchAiAgentConfiguration`](crate::types::ManualSearchAiAgentConfiguration).
     pub fn build(self) -> crate::types::ManualSearchAiAgentConfiguration {
         crate::types::ManualSearchAiAgentConfiguration {
             answer_generation_ai_prompt_id: self.answer_generation_ai_prompt_id,
             answer_generation_ai_guardrail_id: self.answer_generation_ai_guardrail_id,
             association_configurations: self.association_configurations,
+            locale: self.locale,
         }
     }
 }

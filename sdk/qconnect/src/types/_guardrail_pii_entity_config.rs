@@ -45,7 +45,7 @@ pub struct GuardrailPiiEntityConfig {
     /// <p><b>Finance</b></p>
     /// <ul>
     /// <li>
-    /// <p><b>REDIT_DEBIT_CARD_CVV</b></p>
+    /// <p><b>CREDIT_DEBIT_CARD_CVV</b></p>
     /// <p>A three-digit card verification code (CVV) that is present on VISA, MasterCard, and Discover credit and debit cards. For American Express credit or debit cards, the CVV is a four-digit numeric code.</p></li>
     /// <li>
     /// <p><b>CREDIT_DEBIT_CARD_EXPIRY</b></p>
@@ -180,7 +180,7 @@ impl GuardrailPiiEntityConfig {
     /// <p><b>Finance</b></p>
     /// <ul>
     /// <li>
-    /// <p><b>REDIT_DEBIT_CARD_CVV</b></p>
+    /// <p><b>CREDIT_DEBIT_CARD_CVV</b></p>
     /// <p>A three-digit card verification code (CVV) that is present on VISA, MasterCard, and Discover credit and debit cards. For American Express credit or debit cards, the CVV is a four-digit numeric code.</p></li>
     /// <li>
     /// <p><b>CREDIT_DEBIT_CARD_EXPIRY</b></p>
@@ -341,7 +341,7 @@ impl GuardrailPiiEntityConfigBuilder {
     /// <p><b>Finance</b></p>
     /// <ul>
     /// <li>
-    /// <p><b>REDIT_DEBIT_CARD_CVV</b></p>
+    /// <p><b>CREDIT_DEBIT_CARD_CVV</b></p>
     /// <p>A three-digit card verification code (CVV) that is present on VISA, MasterCard, and Discover credit and debit cards. For American Express credit or debit cards, the CVV is a four-digit numeric code.</p></li>
     /// <li>
     /// <p><b>CREDIT_DEBIT_CARD_EXPIRY</b></p>
@@ -476,7 +476,7 @@ impl GuardrailPiiEntityConfigBuilder {
     /// <p><b>Finance</b></p>
     /// <ul>
     /// <li>
-    /// <p><b>REDIT_DEBIT_CARD_CVV</b></p>
+    /// <p><b>CREDIT_DEBIT_CARD_CVV</b></p>
     /// <p>A three-digit card verification code (CVV) that is present on VISA, MasterCard, and Discover credit and debit cards. For American Express credit or debit cards, the CVV is a four-digit numeric code.</p></li>
     /// <li>
     /// <p><b>CREDIT_DEBIT_CARD_EXPIRY</b></p>
@@ -610,7 +610,7 @@ impl GuardrailPiiEntityConfigBuilder {
     /// <p><b>Finance</b></p>
     /// <ul>
     /// <li>
-    /// <p><b>REDIT_DEBIT_CARD_CVV</b></p>
+    /// <p><b>CREDIT_DEBIT_CARD_CVV</b></p>
     /// <p>A three-digit card verification code (CVV) that is present on VISA, MasterCard, and Discover credit and debit cards. For American Express credit or debit cards, the CVV is a four-digit numeric code.</p></li>
     /// <li>
     /// <p><b>CREDIT_DEBIT_CARD_EXPIRY</b></p>

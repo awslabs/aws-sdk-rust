@@ -59,6 +59,12 @@ pub use crate::types::_data_replication::DataReplication;
 
 pub use crate::types::_workspace_properties::WorkspaceProperties;
 
+pub use crate::types::_global_accelerator_for_work_space::GlobalAcceleratorForWorkSpace;
+
+pub use crate::types::_aga_preferred_protocol_for_work_space::AgaPreferredProtocolForWorkSpace;
+
+pub use crate::types::_aga_mode_for_work_space_enum::AgaModeForWorkSpaceEnum;
+
 pub use crate::types::_operating_system_name::OperatingSystemName;
 
 pub use crate::types::_protocol::Protocol;
@@ -74,6 +80,12 @@ pub use crate::types::_workspace_access_properties::WorkspaceAccessProperties;
 pub use crate::types::_access_property_value::AccessPropertyValue;
 
 pub use crate::types::_streaming_properties::StreamingProperties;
+
+pub use crate::types::_global_accelerator_for_directory::GlobalAcceleratorForDirectory;
+
+pub use crate::types::_aga_preferred_protocol_for_directory::AgaPreferredProtocolForDirectory;
+
+pub use crate::types::_aga_mode_for_directory_enum::AgaModeForDirectoryEnum;
 
 pub use crate::types::_storage_connector::StorageConnector;
 
@@ -279,6 +291,14 @@ mod _account_modification;
 
 mod _active_directory_config;
 
+mod _aga_mode_for_directory_enum;
+
+mod _aga_mode_for_work_space_enum;
+
+mod _aga_preferred_protocol_for_directory;
+
+mod _aga_preferred_protocol_for_work_space;
+
 mod _application;
 
 mod _application_associated_resource_type;
@@ -376,6 +396,10 @@ mod _failed_create_standby_workspaces_request;
 mod _failed_create_workspace_request;
 
 mod _failed_workspace_change_request;
+
+mod _global_accelerator_for_directory;
+
+mod _global_accelerator_for_work_space;
 
 mod _idc_config;
 

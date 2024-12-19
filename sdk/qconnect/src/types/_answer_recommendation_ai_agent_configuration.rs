@@ -14,6 +14,10 @@ pub struct AnswerRecommendationAiAgentConfiguration {
     pub answer_generation_ai_guardrail_id: ::std::option::Option<::std::string::String>,
     /// <p>The association configurations for overriding behavior on this AI Agent.</p>
     pub association_configurations: ::std::option::Option<::std::vec::Vec<crate::types::AssociationConfiguration>>,
+    /// <p>The locale to which specifies the language and region settings that determine the response language for <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_QueryAssistant.html">QueryAssistant</a>.</p><note>
+    /// <p>Changing this locale to anything other than <code>en_US</code> will turn off recommendations triggered by contact transcripts for agent assistance, as this feature is not supported in multiple languages.</p>
+    /// </note>
+    pub locale: ::std::option::Option<::std::string::String>,
 }
 impl AnswerRecommendationAiAgentConfiguration {
     /// <p>The AI Prompt identifier for the Intent Labeling prompt used by the <code>ANSWER_RECOMMENDATION</code> AI Agent.</p>
@@ -38,6 +42,12 @@ impl AnswerRecommendationAiAgentConfiguration {
     pub fn association_configurations(&self) -> &[crate::types::AssociationConfiguration] {
         self.association_configurations.as_deref().unwrap_or_default()
     }
+    /// <p>The locale to which specifies the language and region settings that determine the response language for <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_QueryAssistant.html">QueryAssistant</a>.</p><note>
+    /// <p>Changing this locale to anything other than <code>en_US</code> will turn off recommendations triggered by contact transcripts for agent assistance, as this feature is not supported in multiple languages.</p>
+    /// </note>
+    pub fn locale(&self) -> ::std::option::Option<&str> {
+        self.locale.as_deref()
+    }
 }
 impl AnswerRecommendationAiAgentConfiguration {
     /// Creates a new builder-style object to manufacture [`AnswerRecommendationAiAgentConfiguration`](crate::types::AnswerRecommendationAiAgentConfiguration).
@@ -55,6 +65,7 @@ pub struct AnswerRecommendationAiAgentConfigurationBuilder {
     pub(crate) answer_generation_ai_prompt_id: ::std::option::Option<::std::string::String>,
     pub(crate) answer_generation_ai_guardrail_id: ::std::option::Option<::std::string::String>,
     pub(crate) association_configurations: ::std::option::Option<::std::vec::Vec<crate::types::AssociationConfiguration>>,
+    pub(crate) locale: ::std::option::Option<::std::string::String>,
 }
 impl AnswerRecommendationAiAgentConfigurationBuilder {
     /// <p>The AI Prompt identifier for the Intent Labeling prompt used by the <code>ANSWER_RECOMMENDATION</code> AI Agent.</p>
@@ -133,6 +144,26 @@ impl AnswerRecommendationAiAgentConfigurationBuilder {
     pub fn get_association_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociationConfiguration>> {
         &self.association_configurations
     }
+    /// <p>The locale to which specifies the language and region settings that determine the response language for <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_QueryAssistant.html">QueryAssistant</a>.</p><note>
+    /// <p>Changing this locale to anything other than <code>en_US</code> will turn off recommendations triggered by contact transcripts for agent assistance, as this feature is not supported in multiple languages.</p>
+    /// </note>
+    pub fn locale(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.locale = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The locale to which specifies the language and region settings that determine the response language for <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_QueryAssistant.html">QueryAssistant</a>.</p><note>
+    /// <p>Changing this locale to anything other than <code>en_US</code> will turn off recommendations triggered by contact transcripts for agent assistance, as this feature is not supported in multiple languages.</p>
+    /// </note>
+    pub fn set_locale(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.locale = input;
+        self
+    }
+    /// <p>The locale to which specifies the language and region settings that determine the response language for <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_QueryAssistant.html">QueryAssistant</a>.</p><note>
+    /// <p>Changing this locale to anything other than <code>en_US</code> will turn off recommendations triggered by contact transcripts for agent assistance, as this feature is not supported in multiple languages.</p>
+    /// </note>
+    pub fn get_locale(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale
+    }
     /// Consumes the builder and constructs a [`AnswerRecommendationAiAgentConfiguration`](crate::types::AnswerRecommendationAiAgentConfiguration).
     pub fn build(self) -> crate::types::AnswerRecommendationAiAgentConfiguration {
         crate::types::AnswerRecommendationAiAgentConfiguration {
@@ -141,6 +172,7 @@ impl AnswerRecommendationAiAgentConfigurationBuilder {
             answer_generation_ai_prompt_id: self.answer_generation_ai_prompt_id,
             answer_generation_ai_guardrail_id: self.answer_generation_ai_guardrail_id,
             association_configurations: self.association_configurations,
+            locale: self.locale,
         }
     }
 }

@@ -87,6 +87,8 @@ pub use crate::types::_color_space_conversion::ColorSpaceConversion;
 
 pub use crate::types::_clip_limits::ClipLimits;
 
+pub use crate::types::_timecode_track::TimecodeTrack;
+
 pub use crate::types::_video_timecode_insertion::VideoTimecodeInsertion;
 
 pub use crate::types::_scaling_behavior::ScalingBehavior;
@@ -644,6 +646,8 @@ pub use crate::types::_burnin_subtitle_teletext_spacing::BurninSubtitleTeletextS
 pub use crate::types::_burn_in_subtitle_style_passthrough::BurnInSubtitleStylePassthrough;
 
 pub use crate::types::_burnin_subtitle_shadow_color::BurninSubtitleShadowColor;
+
+pub use crate::types::_remove_ruby_reserve_attributes::RemoveRubyReserveAttributes;
 
 pub use crate::types::_burnin_subtitle_outline_color::BurninSubtitleOutlineColor;
 
@@ -2213,6 +2217,8 @@ mod _rectangle;
 
 mod _remix_settings;
 
+mod _remove_ruby_reserve_attributes;
+
 mod _renewal_type;
 
 mod _required_flag;
@@ -2278,6 +2284,8 @@ mod _timecode_burnin_position;
 mod _timecode_config;
 
 mod _timecode_source;
+
+mod _timecode_track;
 
 mod _timed_metadata;
 

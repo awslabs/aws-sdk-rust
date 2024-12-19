@@ -177,6 +177,11 @@ pub(crate) fn de_describe_channel(
                             .transpose()?,
                     );
                 }
+                "channelEngineVersion" => {
+                    builder = builder.set_channel_engine_version(
+                        crate::protocol_serde::shape_channel_engine_version_response::de_channel_engine_version_response(tokens)?,
+                    );
+                }
                 "destinations" => {
                     builder = builder.set_destinations(crate::protocol_serde::shape_list_of_output_destination::de_list_of_output_destination(
                         tokens,

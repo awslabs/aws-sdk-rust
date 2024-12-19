@@ -213,6 +213,8 @@ pub use crate::types::_channel_placement_group_state::ChannelPlacementGroupState
 
 pub use crate::types::_channel::Channel;
 
+pub use crate::types::_channel_engine_version_response::ChannelEngineVersionResponse;
+
 pub use crate::types::_describe_anywhere_settings::DescribeAnywhereSettings;
 
 pub use crate::types::_vpc_output_settings_description::VpcOutputSettingsDescription;
@@ -1063,6 +1065,8 @@ pub use crate::types::_cdi_input_specification::CdiInputSpecification;
 
 pub use crate::types::_cdi_input_resolution::CdiInputResolution;
 
+pub use crate::types::_channel_engine_version_request::ChannelEngineVersionRequest;
+
 pub use crate::types::_maintenance_update_settings::MaintenanceUpdateSettings;
 
 pub use crate::types::_account_configuration::AccountConfiguration;
@@ -1426,6 +1430,10 @@ mod _channel;
 mod _channel_class;
 
 mod _channel_egress_endpoint;
+
+mod _channel_engine_version_request;
+
+mod _channel_engine_version_response;
 
 mod _channel_pipeline_id_to_restart;
 

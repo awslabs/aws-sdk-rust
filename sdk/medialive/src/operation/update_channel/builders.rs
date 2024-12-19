@@ -258,4 +258,32 @@ impl UpdateChannelFluentBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role_arn()
     }
+    /// Channel engine version for this channel
+    pub fn channel_engine_version(mut self, input: crate::types::ChannelEngineVersionRequest) -> Self {
+        self.inner = self.inner.channel_engine_version(input);
+        self
+    }
+    /// Channel engine version for this channel
+    pub fn set_channel_engine_version(mut self, input: ::std::option::Option<crate::types::ChannelEngineVersionRequest>) -> Self {
+        self.inner = self.inner.set_channel_engine_version(input);
+        self
+    }
+    /// Channel engine version for this channel
+    pub fn get_channel_engine_version(&self) -> &::std::option::Option<crate::types::ChannelEngineVersionRequest> {
+        self.inner.get_channel_engine_version()
+    }
+    /// Placeholder documentation for __boolean
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.inner = self.inner.dry_run(input);
+        self
+    }
+    /// Placeholder documentation for __boolean
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_dry_run(input);
+        self
+    }
+    /// Placeholder documentation for __boolean
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
 }

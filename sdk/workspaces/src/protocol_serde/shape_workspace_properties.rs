@@ -39,6 +39,12 @@ pub fn ser_workspace_properties(
     if let Some(var_9) = &input.operating_system_name {
         object.key("OperatingSystemName").string(var_9.as_str());
     }
+    if let Some(var_10) = &input.global_accelerator {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("GlobalAccelerator").start_object();
+        crate::protocol_serde::shape_global_accelerator_for_work_space::ser_global_accelerator_for_work_space(&mut object_11, var_10)?;
+        object_11.finish();
+    }
     Ok(())
 }
 
@@ -100,6 +106,11 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::OperatingSystemName::from(u.as_ref())))
                                     .transpose()?,
+                            );
+                        }
+                        "GlobalAccelerator" => {
+                            builder = builder.set_global_accelerator(
+                                crate::protocol_serde::shape_global_accelerator_for_work_space::de_global_accelerator_for_work_space(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -117,6 +117,8 @@ pub use crate::types::_interface_mapping_update_request::InterfaceMappingUpdateR
 
 pub use crate::types::_channel::ChannelBuilder;
 
+pub use crate::types::_channel_engine_version_response::ChannelEngineVersionResponseBuilder;
+
 pub use crate::types::_describe_anywhere_settings::DescribeAnywhereSettingsBuilder;
 
 pub use crate::types::_vpc_output_settings_description::VpcOutputSettingsDescriptionBuilder;
@@ -468,6 +470,8 @@ pub use crate::types::_multiplex_program_channel_destination_settings::Multiplex
 pub use crate::types::_media_package_output_destination_settings::MediaPackageOutputDestinationSettingsBuilder;
 
 pub use crate::types::_cdi_input_specification::CdiInputSpecificationBuilder;
+
+pub use crate::types::_channel_engine_version_request::ChannelEngineVersionRequestBuilder;
 
 pub use crate::types::_maintenance_update_settings::MaintenanceUpdateSettingsBuilder;
 

@@ -35,6 +35,10 @@ pub struct CreateChannelInput {
     pub vpc: ::std::option::Option<crate::types::VpcOutputSettings>,
     /// The Elemental Anywhere settings for this channel.
     pub anywhere_settings: ::std::option::Option<crate::types::AnywhereSettings>,
+    /// The desired engine version for this channel.
+    pub channel_engine_version: ::std::option::Option<crate::types::ChannelEngineVersionRequest>,
+    /// Placeholder documentation for __boolean
+    pub dry_run: ::std::option::Option<bool>,
 }
 impl CreateChannelInput {
     /// Specification of CDI inputs for this channel
@@ -102,6 +106,14 @@ impl CreateChannelInput {
     pub fn anywhere_settings(&self) -> ::std::option::Option<&crate::types::AnywhereSettings> {
         self.anywhere_settings.as_ref()
     }
+    /// The desired engine version for this channel.
+    pub fn channel_engine_version(&self) -> ::std::option::Option<&crate::types::ChannelEngineVersionRequest> {
+        self.channel_engine_version.as_ref()
+    }
+    /// Placeholder documentation for __boolean
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
+        self.dry_run
+    }
 }
 impl CreateChannelInput {
     /// Creates a new builder-style object to manufacture [`CreateChannelInput`](crate::operation::create_channel::CreateChannelInput).
@@ -129,6 +141,8 @@ pub struct CreateChannelInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) vpc: ::std::option::Option<crate::types::VpcOutputSettings>,
     pub(crate) anywhere_settings: ::std::option::Option<crate::types::AnywhereSettings>,
+    pub(crate) channel_engine_version: ::std::option::Option<crate::types::ChannelEngineVersionRequest>,
+    pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl CreateChannelInputBuilder {
     /// Specification of CDI inputs for this channel
@@ -362,6 +376,34 @@ impl CreateChannelInputBuilder {
     pub fn get_anywhere_settings(&self) -> &::std::option::Option<crate::types::AnywhereSettings> {
         &self.anywhere_settings
     }
+    /// The desired engine version for this channel.
+    pub fn channel_engine_version(mut self, input: crate::types::ChannelEngineVersionRequest) -> Self {
+        self.channel_engine_version = ::std::option::Option::Some(input);
+        self
+    }
+    /// The desired engine version for this channel.
+    pub fn set_channel_engine_version(mut self, input: ::std::option::Option<crate::types::ChannelEngineVersionRequest>) -> Self {
+        self.channel_engine_version = input;
+        self
+    }
+    /// The desired engine version for this channel.
+    pub fn get_channel_engine_version(&self) -> &::std::option::Option<crate::types::ChannelEngineVersionRequest> {
+        &self.channel_engine_version
+    }
+    /// Placeholder documentation for __boolean
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.dry_run = ::std::option::Option::Some(input);
+        self
+    }
+    /// Placeholder documentation for __boolean
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dry_run = input;
+        self
+    }
+    /// Placeholder documentation for __boolean
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// Consumes the builder and constructs a [`CreateChannelInput`](crate::operation::create_channel::CreateChannelInput).
     pub fn build(
         self,
@@ -382,6 +424,8 @@ impl CreateChannelInputBuilder {
             tags: self.tags,
             vpc: self.vpc,
             anywhere_settings: self.anywhere_settings,
+            channel_engine_version: self.channel_engine_version,
+            dry_run: self.dry_run,
         })
     }
 }

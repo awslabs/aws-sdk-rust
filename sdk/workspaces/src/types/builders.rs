@@ -39,11 +39,15 @@ pub use crate::types::_reboot_request::RebootRequestBuilder;
 
 pub use crate::types::_workspace_properties::WorkspacePropertiesBuilder;
 
+pub use crate::types::_global_accelerator_for_work_space::GlobalAcceleratorForWorkSpaceBuilder;
+
 pub use crate::types::_workspace_creation_properties::WorkspaceCreationPropertiesBuilder;
 
 pub use crate::types::_workspace_access_properties::WorkspaceAccessPropertiesBuilder;
 
 pub use crate::types::_streaming_properties::StreamingPropertiesBuilder;
+
+pub use crate::types::_global_accelerator_for_directory::GlobalAcceleratorForDirectoryBuilder;
 
 pub use crate::types::_storage_connector::StorageConnectorBuilder;
 

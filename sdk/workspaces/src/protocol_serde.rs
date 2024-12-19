@@ -587,6 +587,10 @@ pub(crate) mod shape_failed_create_workspace_request;
 
 pub(crate) mod shape_failed_workspace_change_request;
 
+pub(crate) mod shape_global_accelerator_for_directory;
+
+pub(crate) mod shape_global_accelerator_for_work_space;
+
 pub(crate) mod shape_image_permission;
 
 pub(crate) mod shape_image_resource_association;

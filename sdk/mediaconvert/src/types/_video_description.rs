@@ -14,7 +14,7 @@ pub struct VideoDescription {
     pub color_metadata: ::std::option::Option<crate::types::ColorMetadata>,
     /// Use Cropping selection to specify the video area that the service will include in the output video frame.
     pub crop: ::std::option::Option<crate::types::Rectangle>,
-    /// Applies only to 29.97 fps outputs. When this feature is enabled, the service will use drop-frame timecode on outputs. If it is not possible to use drop-frame timecode, the system will fall back to non-drop-frame. This setting is enabled by default when Timecode insertion is enabled.
+    /// Applies only to 29.97 fps outputs. When this feature is enabled, the service will use drop-frame timecode on outputs. If it is not possible to use drop-frame timecode, the system will fall back to non-drop-frame. This setting is enabled by default when Timecode insertion or Timecode track is enabled.
     pub drop_frame_timecode: ::std::option::Option<crate::types::DropFrameTimecode>,
     /// Applies only if you set AFD Signaling to Fixed. Use Fixed to specify a four-bit AFD value which the service will write on all frames of this video output.
     pub fixed_afd: ::std::option::Option<i32>,
@@ -30,6 +30,8 @@ pub struct VideoDescription {
     pub sharpness: ::std::option::Option<i32>,
     /// Applies only to H.264, H.265, MPEG2, and ProRes outputs. Only enable Timecode insertion when the input frame rate is identical to the output frame rate. To include timecodes in this output, set Timecode insertion to PIC_TIMING_SEI. To leave them out, set it to DISABLED. Default is DISABLED. When the service inserts timecodes in an output, by default, it uses any embedded timecodes from the input. If none are present, the service will set the timecode for the first output frame to zero. To change this default behavior, adjust the settings under Timecode configuration. In the console, these settings are located under Job &gt; Job settings &gt; Timecode configuration. Note - Timecode source under input settings does not affect the timecodes that are inserted in the output. Source under Job settings &gt; Timecode configuration does.
     pub timecode_insertion: ::std::option::Option<crate::types::VideoTimecodeInsertion>,
+    /// To include a timecode track in your MP4 output: Choose Enabled. MediaConvert writes the timecode track in the Null Media Header box (NMHD), without any timecode text formatting information. You can also specify dropframe or non-dropframe timecode under the Drop Frame Timecode setting. To not include a timecode track: Keep the default value, Disabled.
+    pub timecode_track: ::std::option::Option<crate::types::TimecodeTrack>,
     /// Find additional transcoding features under Preprocessors. Enable the features at each output individually. These features are disabled by default.
     pub video_preprocessors: ::std::option::Option<crate::types::VideoPreprocessor>,
     /// Use Width to define the video resolution width, in pixels, for this output. To use the same resolution as your input: Leave both Width and Height blank. To evenly scale from your input resolution: Leave Width blank and enter a value for Height. For example, if your input is 1920x1080 and you set Height to 720, your output will be 1280x720.
@@ -56,7 +58,7 @@ impl VideoDescription {
     pub fn crop(&self) -> ::std::option::Option<&crate::types::Rectangle> {
         self.crop.as_ref()
     }
-    /// Applies only to 29.97 fps outputs. When this feature is enabled, the service will use drop-frame timecode on outputs. If it is not possible to use drop-frame timecode, the system will fall back to non-drop-frame. This setting is enabled by default when Timecode insertion is enabled.
+    /// Applies only to 29.97 fps outputs. When this feature is enabled, the service will use drop-frame timecode on outputs. If it is not possible to use drop-frame timecode, the system will fall back to non-drop-frame. This setting is enabled by default when Timecode insertion or Timecode track is enabled.
     pub fn drop_frame_timecode(&self) -> ::std::option::Option<&crate::types::DropFrameTimecode> {
         self.drop_frame_timecode.as_ref()
     }
@@ -87,6 +89,10 @@ impl VideoDescription {
     /// Applies only to H.264, H.265, MPEG2, and ProRes outputs. Only enable Timecode insertion when the input frame rate is identical to the output frame rate. To include timecodes in this output, set Timecode insertion to PIC_TIMING_SEI. To leave them out, set it to DISABLED. Default is DISABLED. When the service inserts timecodes in an output, by default, it uses any embedded timecodes from the input. If none are present, the service will set the timecode for the first output frame to zero. To change this default behavior, adjust the settings under Timecode configuration. In the console, these settings are located under Job &gt; Job settings &gt; Timecode configuration. Note - Timecode source under input settings does not affect the timecodes that are inserted in the output. Source under Job settings &gt; Timecode configuration does.
     pub fn timecode_insertion(&self) -> ::std::option::Option<&crate::types::VideoTimecodeInsertion> {
         self.timecode_insertion.as_ref()
+    }
+    /// To include a timecode track in your MP4 output: Choose Enabled. MediaConvert writes the timecode track in the Null Media Header box (NMHD), without any timecode text formatting information. You can also specify dropframe or non-dropframe timecode under the Drop Frame Timecode setting. To not include a timecode track: Keep the default value, Disabled.
+    pub fn timecode_track(&self) -> ::std::option::Option<&crate::types::TimecodeTrack> {
+        self.timecode_track.as_ref()
     }
     /// Find additional transcoding features under Preprocessors. Enable the features at each output individually. These features are disabled by default.
     pub fn video_preprocessors(&self) -> ::std::option::Option<&crate::types::VideoPreprocessor> {
@@ -121,6 +127,7 @@ pub struct VideoDescriptionBuilder {
     pub(crate) scaling_behavior: ::std::option::Option<crate::types::ScalingBehavior>,
     pub(crate) sharpness: ::std::option::Option<i32>,
     pub(crate) timecode_insertion: ::std::option::Option<crate::types::VideoTimecodeInsertion>,
+    pub(crate) timecode_track: ::std::option::Option<crate::types::TimecodeTrack>,
     pub(crate) video_preprocessors: ::std::option::Option<crate::types::VideoPreprocessor>,
     pub(crate) width: ::std::option::Option<i32>,
 }
@@ -195,17 +202,17 @@ impl VideoDescriptionBuilder {
     pub fn get_crop(&self) -> &::std::option::Option<crate::types::Rectangle> {
         &self.crop
     }
-    /// Applies only to 29.97 fps outputs. When this feature is enabled, the service will use drop-frame timecode on outputs. If it is not possible to use drop-frame timecode, the system will fall back to non-drop-frame. This setting is enabled by default when Timecode insertion is enabled.
+    /// Applies only to 29.97 fps outputs. When this feature is enabled, the service will use drop-frame timecode on outputs. If it is not possible to use drop-frame timecode, the system will fall back to non-drop-frame. This setting is enabled by default when Timecode insertion or Timecode track is enabled.
     pub fn drop_frame_timecode(mut self, input: crate::types::DropFrameTimecode) -> Self {
         self.drop_frame_timecode = ::std::option::Option::Some(input);
         self
     }
-    /// Applies only to 29.97 fps outputs. When this feature is enabled, the service will use drop-frame timecode on outputs. If it is not possible to use drop-frame timecode, the system will fall back to non-drop-frame. This setting is enabled by default when Timecode insertion is enabled.
+    /// Applies only to 29.97 fps outputs. When this feature is enabled, the service will use drop-frame timecode on outputs. If it is not possible to use drop-frame timecode, the system will fall back to non-drop-frame. This setting is enabled by default when Timecode insertion or Timecode track is enabled.
     pub fn set_drop_frame_timecode(mut self, input: ::std::option::Option<crate::types::DropFrameTimecode>) -> Self {
         self.drop_frame_timecode = input;
         self
     }
-    /// Applies only to 29.97 fps outputs. When this feature is enabled, the service will use drop-frame timecode on outputs. If it is not possible to use drop-frame timecode, the system will fall back to non-drop-frame. This setting is enabled by default when Timecode insertion is enabled.
+    /// Applies only to 29.97 fps outputs. When this feature is enabled, the service will use drop-frame timecode on outputs. If it is not possible to use drop-frame timecode, the system will fall back to non-drop-frame. This setting is enabled by default when Timecode insertion or Timecode track is enabled.
     pub fn get_drop_frame_timecode(&self) -> &::std::option::Option<crate::types::DropFrameTimecode> {
         &self.drop_frame_timecode
     }
@@ -307,6 +314,20 @@ impl VideoDescriptionBuilder {
     pub fn get_timecode_insertion(&self) -> &::std::option::Option<crate::types::VideoTimecodeInsertion> {
         &self.timecode_insertion
     }
+    /// To include a timecode track in your MP4 output: Choose Enabled. MediaConvert writes the timecode track in the Null Media Header box (NMHD), without any timecode text formatting information. You can also specify dropframe or non-dropframe timecode under the Drop Frame Timecode setting. To not include a timecode track: Keep the default value, Disabled.
+    pub fn timecode_track(mut self, input: crate::types::TimecodeTrack) -> Self {
+        self.timecode_track = ::std::option::Option::Some(input);
+        self
+    }
+    /// To include a timecode track in your MP4 output: Choose Enabled. MediaConvert writes the timecode track in the Null Media Header box (NMHD), without any timecode text formatting information. You can also specify dropframe or non-dropframe timecode under the Drop Frame Timecode setting. To not include a timecode track: Keep the default value, Disabled.
+    pub fn set_timecode_track(mut self, input: ::std::option::Option<crate::types::TimecodeTrack>) -> Self {
+        self.timecode_track = input;
+        self
+    }
+    /// To include a timecode track in your MP4 output: Choose Enabled. MediaConvert writes the timecode track in the Null Media Header box (NMHD), without any timecode text formatting information. You can also specify dropframe or non-dropframe timecode under the Drop Frame Timecode setting. To not include a timecode track: Keep the default value, Disabled.
+    pub fn get_timecode_track(&self) -> &::std::option::Option<crate::types::TimecodeTrack> {
+        &self.timecode_track
+    }
     /// Find additional transcoding features under Preprocessors. Enable the features at each output individually. These features are disabled by default.
     pub fn video_preprocessors(mut self, input: crate::types::VideoPreprocessor) -> Self {
         self.video_preprocessors = ::std::option::Option::Some(input);
@@ -351,6 +372,7 @@ impl VideoDescriptionBuilder {
             scaling_behavior: self.scaling_behavior,
             sharpness: self.sharpness,
             timecode_insertion: self.timecode_insertion,
+            timecode_track: self.timecode_track,
             video_preprocessors: self.video_preprocessors,
             width: self.width,
         }

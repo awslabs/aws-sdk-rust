@@ -42,6 +42,8 @@ pub struct Channel {
     pub vpc: ::std::option::Option<crate::types::VpcOutputSettingsDescription>,
     /// Anywhere settings for this channel.
     pub anywhere_settings: ::std::option::Option<crate::types::DescribeAnywhereSettings>,
+    /// Requested engine version for this channel.
+    pub channel_engine_version: ::std::option::Option<crate::types::ChannelEngineVersionResponse>,
 }
 impl Channel {
     /// The unique arn of the channel.
@@ -128,6 +130,10 @@ impl Channel {
     pub fn anywhere_settings(&self) -> ::std::option::Option<&crate::types::DescribeAnywhereSettings> {
         self.anywhere_settings.as_ref()
     }
+    /// Requested engine version for this channel.
+    pub fn channel_engine_version(&self) -> ::std::option::Option<&crate::types::ChannelEngineVersionResponse> {
+        self.channel_engine_version.as_ref()
+    }
 }
 impl Channel {
     /// Creates a new builder-style object to manufacture [`Channel`](crate::types::Channel).
@@ -159,6 +165,7 @@ pub struct ChannelBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) vpc: ::std::option::Option<crate::types::VpcOutputSettingsDescription>,
     pub(crate) anywhere_settings: ::std::option::Option<crate::types::DescribeAnywhereSettings>,
+    pub(crate) channel_engine_version: ::std::option::Option<crate::types::ChannelEngineVersionResponse>,
 }
 impl ChannelBuilder {
     /// The unique arn of the channel.
@@ -457,6 +464,20 @@ impl ChannelBuilder {
     pub fn get_anywhere_settings(&self) -> &::std::option::Option<crate::types::DescribeAnywhereSettings> {
         &self.anywhere_settings
     }
+    /// Requested engine version for this channel.
+    pub fn channel_engine_version(mut self, input: crate::types::ChannelEngineVersionResponse) -> Self {
+        self.channel_engine_version = ::std::option::Option::Some(input);
+        self
+    }
+    /// Requested engine version for this channel.
+    pub fn set_channel_engine_version(mut self, input: ::std::option::Option<crate::types::ChannelEngineVersionResponse>) -> Self {
+        self.channel_engine_version = input;
+        self
+    }
+    /// Requested engine version for this channel.
+    pub fn get_channel_engine_version(&self) -> &::std::option::Option<crate::types::ChannelEngineVersionResponse> {
+        &self.channel_engine_version
+    }
     /// Consumes the builder and constructs a [`Channel`](crate::types::Channel).
     pub fn build(self) -> crate::types::Channel {
         crate::types::Channel {
@@ -479,6 +500,7 @@ impl ChannelBuilder {
             tags: self.tags,
             vpc: self.vpc,
             anywhere_settings: self.anywhere_settings,
+            channel_engine_version: self.channel_engine_version,
         }
     }
 }

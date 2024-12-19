@@ -146,6 +146,24 @@ pub(crate) fn workspace_request_correct_errors(
     builder
 }
 
+pub(crate) fn global_accelerator_for_directory_correct_errors(
+    mut builder: crate::types::builders::GlobalAcceleratorForDirectoryBuilder,
+) -> crate::types::builders::GlobalAcceleratorForDirectoryBuilder {
+    if builder.mode.is_none() {
+        builder.mode = "no value was set".parse::<crate::types::AgaModeForDirectoryEnum>().ok()
+    }
+    builder
+}
+
+pub(crate) fn global_accelerator_for_work_space_correct_errors(
+    mut builder: crate::types::builders::GlobalAcceleratorForWorkSpaceBuilder,
+) -> crate::types::builders::GlobalAcceleratorForWorkSpaceBuilder {
+    if builder.mode.is_none() {
+        builder.mode = "no value was set".parse::<crate::types::AgaModeForWorkSpaceEnum>().ok()
+    }
+    builder
+}
+
 pub(crate) fn storage_connector_correct_errors(
     mut builder: crate::types::builders::StorageConnectorBuilder,
 ) -> crate::types::builders::StorageConnectorBuilder {

@@ -30,6 +30,8 @@ pub struct WorkspaceProperties {
     pub protocols: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>,
     /// <p>The name of the operating system.</p>
     pub operating_system_name: ::std::option::Option<crate::types::OperatingSystemName>,
+    /// <p>Indicates the Global Accelerator properties.</p>
+    pub global_accelerator: ::std::option::Option<crate::types::GlobalAcceleratorForWorkSpace>,
 }
 impl WorkspaceProperties {
     /// <p>The running mode. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running Mode</a>.</p><note>
@@ -74,6 +76,10 @@ impl WorkspaceProperties {
     pub fn operating_system_name(&self) -> ::std::option::Option<&crate::types::OperatingSystemName> {
         self.operating_system_name.as_ref()
     }
+    /// <p>Indicates the Global Accelerator properties.</p>
+    pub fn global_accelerator(&self) -> ::std::option::Option<&crate::types::GlobalAcceleratorForWorkSpace> {
+        self.global_accelerator.as_ref()
+    }
 }
 impl WorkspaceProperties {
     /// Creates a new builder-style object to manufacture [`WorkspaceProperties`](crate::types::WorkspaceProperties).
@@ -93,6 +99,7 @@ pub struct WorkspacePropertiesBuilder {
     pub(crate) compute_type_name: ::std::option::Option<crate::types::Compute>,
     pub(crate) protocols: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>,
     pub(crate) operating_system_name: ::std::option::Option<crate::types::OperatingSystemName>,
+    pub(crate) global_accelerator: ::std::option::Option<crate::types::GlobalAcceleratorForWorkSpace>,
 }
 impl WorkspacePropertiesBuilder {
     /// <p>The running mode. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running Mode</a>.</p><note>
@@ -235,6 +242,20 @@ impl WorkspacePropertiesBuilder {
     pub fn get_operating_system_name(&self) -> &::std::option::Option<crate::types::OperatingSystemName> {
         &self.operating_system_name
     }
+    /// <p>Indicates the Global Accelerator properties.</p>
+    pub fn global_accelerator(mut self, input: crate::types::GlobalAcceleratorForWorkSpace) -> Self {
+        self.global_accelerator = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates the Global Accelerator properties.</p>
+    pub fn set_global_accelerator(mut self, input: ::std::option::Option<crate::types::GlobalAcceleratorForWorkSpace>) -> Self {
+        self.global_accelerator = input;
+        self
+    }
+    /// <p>Indicates the Global Accelerator properties.</p>
+    pub fn get_global_accelerator(&self) -> &::std::option::Option<crate::types::GlobalAcceleratorForWorkSpace> {
+        &self.global_accelerator
+    }
     /// Consumes the builder and constructs a [`WorkspaceProperties`](crate::types::WorkspaceProperties).
     pub fn build(self) -> crate::types::WorkspaceProperties {
         crate::types::WorkspaceProperties {
@@ -245,6 +266,7 @@ impl WorkspacePropertiesBuilder {
             compute_type_name: self.compute_type_name,
             protocols: self.protocols,
             operating_system_name: self.operating_system_name,
+            global_accelerator: self.global_accelerator,
         }
     }
 }

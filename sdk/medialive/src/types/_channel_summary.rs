@@ -38,6 +38,10 @@ pub struct ChannelSummary {
     pub vpc: ::std::option::Option<crate::types::VpcOutputSettingsDescription>,
     /// AnywhereSettings settings for this channel.
     pub anywhere_settings: ::std::option::Option<crate::types::DescribeAnywhereSettings>,
+    /// The engine version that you requested for this channel.
+    pub channel_engine_version: ::std::option::Option<crate::types::ChannelEngineVersionResponse>,
+    /// The engine version that the running pipelines are using.
+    pub used_channel_engine_versions: ::std::option::Option<::std::vec::Vec<crate::types::ChannelEngineVersionResponse>>,
 }
 impl ChannelSummary {
     /// The unique arn of the channel.
@@ -114,6 +118,16 @@ impl ChannelSummary {
     pub fn anywhere_settings(&self) -> ::std::option::Option<&crate::types::DescribeAnywhereSettings> {
         self.anywhere_settings.as_ref()
     }
+    /// The engine version that you requested for this channel.
+    pub fn channel_engine_version(&self) -> ::std::option::Option<&crate::types::ChannelEngineVersionResponse> {
+        self.channel_engine_version.as_ref()
+    }
+    /// The engine version that the running pipelines are using.
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.used_channel_engine_versions.is_none()`.
+    pub fn used_channel_engine_versions(&self) -> &[crate::types::ChannelEngineVersionResponse] {
+        self.used_channel_engine_versions.as_deref().unwrap_or_default()
+    }
 }
 impl ChannelSummary {
     /// Creates a new builder-style object to manufacture [`ChannelSummary`](crate::types::ChannelSummary).
@@ -143,6 +157,8 @@ pub struct ChannelSummaryBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) vpc: ::std::option::Option<crate::types::VpcOutputSettingsDescription>,
     pub(crate) anywhere_settings: ::std::option::Option<crate::types::DescribeAnywhereSettings>,
+    pub(crate) channel_engine_version: ::std::option::Option<crate::types::ChannelEngineVersionResponse>,
+    pub(crate) used_channel_engine_versions: ::std::option::Option<::std::vec::Vec<crate::types::ChannelEngineVersionResponse>>,
 }
 impl ChannelSummaryBuilder {
     /// The unique arn of the channel.
@@ -407,6 +423,43 @@ impl ChannelSummaryBuilder {
     pub fn get_anywhere_settings(&self) -> &::std::option::Option<crate::types::DescribeAnywhereSettings> {
         &self.anywhere_settings
     }
+    /// The engine version that you requested for this channel.
+    pub fn channel_engine_version(mut self, input: crate::types::ChannelEngineVersionResponse) -> Self {
+        self.channel_engine_version = ::std::option::Option::Some(input);
+        self
+    }
+    /// The engine version that you requested for this channel.
+    pub fn set_channel_engine_version(mut self, input: ::std::option::Option<crate::types::ChannelEngineVersionResponse>) -> Self {
+        self.channel_engine_version = input;
+        self
+    }
+    /// The engine version that you requested for this channel.
+    pub fn get_channel_engine_version(&self) -> &::std::option::Option<crate::types::ChannelEngineVersionResponse> {
+        &self.channel_engine_version
+    }
+    /// Appends an item to `used_channel_engine_versions`.
+    ///
+    /// To override the contents of this collection use [`set_used_channel_engine_versions`](Self::set_used_channel_engine_versions).
+    ///
+    /// The engine version that the running pipelines are using.
+    pub fn used_channel_engine_versions(mut self, input: crate::types::ChannelEngineVersionResponse) -> Self {
+        let mut v = self.used_channel_engine_versions.unwrap_or_default();
+        v.push(input);
+        self.used_channel_engine_versions = ::std::option::Option::Some(v);
+        self
+    }
+    /// The engine version that the running pipelines are using.
+    pub fn set_used_channel_engine_versions(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ChannelEngineVersionResponse>>,
+    ) -> Self {
+        self.used_channel_engine_versions = input;
+        self
+    }
+    /// The engine version that the running pipelines are using.
+    pub fn get_used_channel_engine_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelEngineVersionResponse>> {
+        &self.used_channel_engine_versions
+    }
     /// Consumes the builder and constructs a [`ChannelSummary`](crate::types::ChannelSummary).
     pub fn build(self) -> crate::types::ChannelSummary {
         crate::types::ChannelSummary {
@@ -427,6 +480,8 @@ impl ChannelSummaryBuilder {
             tags: self.tags,
             vpc: self.vpc,
             anywhere_settings: self.anywhere_settings,
+            channel_engine_version: self.channel_engine_version,
+            used_channel_engine_versions: self.used_channel_engine_versions,
         }
     }
 }

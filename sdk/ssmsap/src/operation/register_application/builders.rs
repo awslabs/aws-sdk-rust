@@ -238,4 +238,26 @@ impl RegisterApplicationFluentBuilder {
     pub fn get_database_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_database_arn()
     }
+    ///
+    /// Appends an item to `ComponentsInfo`.
+    ///
+    /// To override the contents of this collection use [`set_components_info`](Self::set_components_info).
+    ///
+    /// <p>This is an optional parameter for component details to which the SAP ABAP application is attached, such as Web Dispatcher.</p>
+    /// <p>This is an array of ApplicationComponent objects. You may input 0 to 5 items.</p>
+    pub fn components_info(mut self, input: crate::types::ComponentInfo) -> Self {
+        self.inner = self.inner.components_info(input);
+        self
+    }
+    /// <p>This is an optional parameter for component details to which the SAP ABAP application is attached, such as Web Dispatcher.</p>
+    /// <p>This is an array of ApplicationComponent objects. You may input 0 to 5 items.</p>
+    pub fn set_components_info(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentInfo>>) -> Self {
+        self.inner = self.inner.set_components_info(input);
+        self
+    }
+    /// <p>This is an optional parameter for component details to which the SAP ABAP application is attached, such as Web Dispatcher.</p>
+    /// <p>This is an array of ApplicationComponent objects. You may input 0 to 5 items.</p>
+    pub fn get_components_info(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentInfo>> {
+        self.inner.get_components_info()
+    }
 }

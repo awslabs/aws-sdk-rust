@@ -14,6 +14,7 @@
 /// match platformtype {
 ///     PlatformType::AmazonLinux2 => { /* ... */ },
 ///     PlatformType::Rhel8 => { /* ... */ },
+///     PlatformType::RockyLinux8 => { /* ... */ },
 ///     PlatformType::Windows => { /* ... */ },
 ///     PlatformType::WindowsServer2016 => { /* ... */ },
 ///     PlatformType::WindowsServer2019 => { /* ... */ },
@@ -51,6 +52,8 @@ pub enum PlatformType {
     #[allow(missing_docs)] // documentation missing in model
     Rhel8,
     #[allow(missing_docs)] // documentation missing in model
+    RockyLinux8,
+    #[allow(missing_docs)] // documentation missing in model
     Windows,
     #[allow(missing_docs)] // documentation missing in model
     WindowsServer2016,
@@ -67,6 +70,7 @@ impl ::std::convert::From<&str> for PlatformType {
         match s {
             "AMAZON_LINUX2" => PlatformType::AmazonLinux2,
             "RHEL8" => PlatformType::Rhel8,
+            "ROCKY_LINUX8" => PlatformType::RockyLinux8,
             "WINDOWS" => PlatformType::Windows,
             "WINDOWS_SERVER_2016" => PlatformType::WindowsServer2016,
             "WINDOWS_SERVER_2019" => PlatformType::WindowsServer2019,
@@ -88,6 +92,7 @@ impl PlatformType {
         match self {
             PlatformType::AmazonLinux2 => "AMAZON_LINUX2",
             PlatformType::Rhel8 => "RHEL8",
+            PlatformType::RockyLinux8 => "ROCKY_LINUX8",
             PlatformType::Windows => "WINDOWS",
             PlatformType::WindowsServer2016 => "WINDOWS_SERVER_2016",
             PlatformType::WindowsServer2019 => "WINDOWS_SERVER_2019",
@@ -100,6 +105,7 @@ impl PlatformType {
         &[
             "AMAZON_LINUX2",
             "RHEL8",
+            "ROCKY_LINUX8",
             "WINDOWS",
             "WINDOWS_SERVER_2016",
             "WINDOWS_SERVER_2019",
@@ -129,6 +135,7 @@ impl ::std::fmt::Display for PlatformType {
         match self {
             PlatformType::AmazonLinux2 => write!(f, "AMAZON_LINUX2"),
             PlatformType::Rhel8 => write!(f, "RHEL8"),
+            PlatformType::RockyLinux8 => write!(f, "ROCKY_LINUX8"),
             PlatformType::Windows => write!(f, "WINDOWS"),
             PlatformType::WindowsServer2016 => write!(f, "WINDOWS_SERVER_2016"),
             PlatformType::WindowsServer2019 => write!(f, "WINDOWS_SERVER_2019"),

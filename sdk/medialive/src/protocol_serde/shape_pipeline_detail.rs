@@ -49,6 +49,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "channelEngineVersion" => {
+                            builder = builder.set_channel_engine_version(
+                                crate::protocol_serde::shape_channel_engine_version_response::de_channel_engine_version_response(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

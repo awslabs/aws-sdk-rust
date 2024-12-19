@@ -471,6 +471,8 @@ mod list_signal_maps;
 
 mod list_tags_for_resource;
 
+mod list_versions;
+
 mod purchase_offering;
 
 mod reboot_input_device;

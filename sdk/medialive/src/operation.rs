@@ -244,6 +244,9 @@ pub mod list_signal_maps;
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 
+/// Types for the `ListVersions` operation.
+pub mod list_versions;
+
 /// Types for the `PurchaseOffering` operation.
 pub mod purchase_offering;
 

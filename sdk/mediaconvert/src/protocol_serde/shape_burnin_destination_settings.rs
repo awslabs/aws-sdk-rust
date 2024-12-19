@@ -69,43 +69,46 @@ pub fn ser_burnin_destination_settings(
             ::aws_smithy_types::Number::NegInt((*var_17).into()),
         );
     }
-    if let Some(var_18) = &input.shadow_color {
-        object.key("shadowColor").string(var_18.as_str());
+    if let Some(var_18) = &input.remove_ruby_reserve_attributes {
+        object.key("removeRubyReserveAttributes").string(var_18.as_str());
     }
-    if let Some(var_19) = &input.shadow_opacity {
+    if let Some(var_19) = &input.shadow_color {
+        object.key("shadowColor").string(var_19.as_str());
+    }
+    if let Some(var_20) = &input.shadow_opacity {
         object.key("shadowOpacity").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_19).into()),
-        );
-    }
-    if let Some(var_20) = &input.shadow_x_offset {
-        object.key("shadowXOffset").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_20).into()),
         );
     }
-    if let Some(var_21) = &input.shadow_y_offset {
-        object.key("shadowYOffset").number(
+    if let Some(var_21) = &input.shadow_x_offset {
+        object.key("shadowXOffset").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_21).into()),
         );
     }
-    if let Some(var_22) = &input.style_passthrough {
-        object.key("stylePassthrough").string(var_22.as_str());
-    }
-    if let Some(var_23) = &input.teletext_spacing {
-        object.key("teletextSpacing").string(var_23.as_str());
-    }
-    if let Some(var_24) = &input.x_position {
-        object.key("xPosition").number(
+    if let Some(var_22) = &input.shadow_y_offset {
+        object.key("shadowYOffset").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_24).into()),
+            ::aws_smithy_types::Number::NegInt((*var_22).into()),
         );
     }
-    if let Some(var_25) = &input.y_position {
-        object.key("yPosition").number(
+    if let Some(var_23) = &input.style_passthrough {
+        object.key("stylePassthrough").string(var_23.as_str());
+    }
+    if let Some(var_24) = &input.teletext_spacing {
+        object.key("teletextSpacing").string(var_24.as_str());
+    }
+    if let Some(var_25) = &input.x_position {
+        object.key("xPosition").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_25).into()),
+        );
+    }
+    if let Some(var_26) = &input.y_position {
+        object.key("yPosition").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_26).into()),
         );
     }
     Ok(())
@@ -242,6 +245,13 @@ where
                             builder = builder.set_outline_size(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "removeRubyReserveAttributes" => {
+                            builder = builder.set_remove_ruby_reserve_attributes(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::RemoveRubyReserveAttributes::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

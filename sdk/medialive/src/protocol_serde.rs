@@ -185,6 +185,8 @@ pub(crate) mod shape_list_signal_maps;
 
 pub(crate) mod shape_list_tags_for_resource;
 
+pub(crate) mod shape_list_versions;
+
 pub(crate) mod shape_purchase_offering;
 
 pub(crate) mod shape_reboot_input_device;
@@ -387,6 +389,10 @@ pub(crate) mod shape_cdi_input_specification;
 
 pub(crate) mod shape_channel;
 
+pub(crate) mod shape_channel_engine_version_request;
+
+pub(crate) mod shape_channel_engine_version_response;
+
 pub(crate) mod shape_cluster_network_settings;
 
 pub(crate) mod shape_cluster_network_settings_create_request;
@@ -438,6 +444,8 @@ pub(crate) mod shape_list_of_batch_failed_result_model;
 pub(crate) mod shape_list_of_batch_successful_result_model;
 
 pub(crate) mod shape_list_of_channel_egress_endpoint;
+
+pub(crate) mod shape_list_of_channel_engine_version_response;
 
 pub(crate) mod shape_list_of_channel_summary;
 

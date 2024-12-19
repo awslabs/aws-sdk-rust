@@ -5,6 +5,8 @@ pub use crate::types::_application_credential::ApplicationCredentialBuilder;
 
 pub use crate::types::_application::ApplicationBuilder;
 
+pub use crate::types::_component_info::ComponentInfoBuilder;
+
 pub use crate::types::_operation::OperationBuilder;
 
 pub use crate::types::_filter::FilterBuilder;

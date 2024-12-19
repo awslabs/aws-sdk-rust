@@ -17,6 +17,10 @@ pub use crate::types::_application_status::ApplicationStatus;
 
 pub use crate::types::_application_type::ApplicationType;
 
+pub use crate::types::_component_info::ComponentInfo;
+
+pub use crate::types::_component_type::ComponentType;
+
 pub use crate::types::_permission_action_type::PermissionActionType;
 
 pub use crate::types::_operation::Operation;
@@ -38,8 +42,6 @@ pub use crate::types::_database_summary::DatabaseSummary;
 pub use crate::types::_database_type::DatabaseType;
 
 pub use crate::types::_component_summary::ComponentSummary;
-
-pub use crate::types::_component_type::ComponentType;
 
 pub use crate::types::_application_summary::ApplicationSummary;
 
@@ -96,6 +98,8 @@ mod _backint_mode;
 mod _cluster_status;
 
 mod _component;
+
+mod _component_info;
 
 mod _component_status;
 

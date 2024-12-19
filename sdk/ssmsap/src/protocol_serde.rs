@@ -131,6 +131,8 @@ pub(crate) mod shape_backint_config;
 
 pub(crate) mod shape_component;
 
+pub(crate) mod shape_component_info;
+
 pub(crate) mod shape_component_summary_list;
 
 pub(crate) mod shape_database;
