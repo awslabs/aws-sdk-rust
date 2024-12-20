@@ -22,7 +22,7 @@ impl crate::operation::delete_studio_lifecycle_config::builders::DeleteStudioLif
 }
 /// Fluent builder constructing a request to `DeleteStudioLifecycleConfig`.
 ///
-/// <p>Deletes the Amazon SageMaker Studio Lifecycle Configuration. In order to delete the Lifecycle Configuration, there must be no running apps using the Lifecycle Configuration. You must also remove the Lifecycle Configuration from UserSettings in all Domains and UserProfiles.</p>
+/// <p>Deletes the Amazon SageMaker AI Studio Lifecycle Configuration. In order to delete the Lifecycle Configuration, there must be no running apps using the Lifecycle Configuration. You must also remove the Lifecycle Configuration from UserSettings in all Domains and UserProfiles.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteStudioLifecycleConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteStudioLifecycleConfigFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the Amazon SageMaker Studio Lifecycle Configuration to delete.</p>
+    /// <p>The name of the Amazon SageMaker AI Studio Lifecycle Configuration to delete.</p>
     pub fn studio_lifecycle_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.studio_lifecycle_config_name(input.into());
         self
     }
-    /// <p>The name of the Amazon SageMaker Studio Lifecycle Configuration to delete.</p>
+    /// <p>The name of the Amazon SageMaker AI Studio Lifecycle Configuration to delete.</p>
     pub fn set_studio_lifecycle_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_studio_lifecycle_config_name(input);
         self
     }
-    /// <p>The name of the Amazon SageMaker Studio Lifecycle Configuration to delete.</p>
+    /// <p>The name of the Amazon SageMaker AI Studio Lifecycle Configuration to delete.</p>
     pub fn get_studio_lifecycle_config_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_studio_lifecycle_config_name()
     }

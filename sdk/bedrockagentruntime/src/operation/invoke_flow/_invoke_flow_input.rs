@@ -11,6 +11,8 @@ pub struct InvokeFlowInput {
     pub inputs: ::std::option::Option<::std::vec::Vec<crate::types::FlowInput>>,
     /// <p>Specifies whether to return the trace for the flow or not. Traces track inputs and outputs for nodes in the flow. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-trace.html">Track each step in your prompt flow by viewing its trace in Amazon Bedrock</a>.</p>
     pub enable_trace: ::std::option::Option<bool>,
+    /// <p>Model performance settings for the request.</p>
+    pub model_performance_configuration: ::std::option::Option<crate::types::ModelPerformanceConfiguration>,
 }
 impl InvokeFlowInput {
     /// <p>The unique identifier of the flow.</p>
@@ -31,6 +33,10 @@ impl InvokeFlowInput {
     pub fn enable_trace(&self) -> ::std::option::Option<bool> {
         self.enable_trace
     }
+    /// <p>Model performance settings for the request.</p>
+    pub fn model_performance_configuration(&self) -> ::std::option::Option<&crate::types::ModelPerformanceConfiguration> {
+        self.model_performance_configuration.as_ref()
+    }
 }
 impl InvokeFlowInput {
     /// Creates a new builder-style object to manufacture [`InvokeFlowInput`](crate::operation::invoke_flow::InvokeFlowInput).
@@ -47,6 +53,7 @@ pub struct InvokeFlowInputBuilder {
     pub(crate) flow_alias_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) inputs: ::std::option::Option<::std::vec::Vec<crate::types::FlowInput>>,
     pub(crate) enable_trace: ::std::option::Option<bool>,
+    pub(crate) model_performance_configuration: ::std::option::Option<crate::types::ModelPerformanceConfiguration>,
 }
 impl InvokeFlowInputBuilder {
     /// <p>The unique identifier of the flow.</p>
@@ -113,6 +120,20 @@ impl InvokeFlowInputBuilder {
     pub fn get_enable_trace(&self) -> &::std::option::Option<bool> {
         &self.enable_trace
     }
+    /// <p>Model performance settings for the request.</p>
+    pub fn model_performance_configuration(mut self, input: crate::types::ModelPerformanceConfiguration) -> Self {
+        self.model_performance_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Model performance settings for the request.</p>
+    pub fn set_model_performance_configuration(mut self, input: ::std::option::Option<crate::types::ModelPerformanceConfiguration>) -> Self {
+        self.model_performance_configuration = input;
+        self
+    }
+    /// <p>Model performance settings for the request.</p>
+    pub fn get_model_performance_configuration(&self) -> &::std::option::Option<crate::types::ModelPerformanceConfiguration> {
+        &self.model_performance_configuration
+    }
     /// Consumes the builder and constructs a [`InvokeFlowInput`](crate::operation::invoke_flow::InvokeFlowInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::invoke_flow::InvokeFlowInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::invoke_flow::InvokeFlowInput {
@@ -120,6 +141,7 @@ impl InvokeFlowInputBuilder {
             flow_alias_identifier: self.flow_alias_identifier,
             inputs: self.inputs,
             enable_trace: self.enable_trace,
+            model_performance_configuration: self.model_performance_configuration,
         })
     }
 }

@@ -6,7 +6,7 @@
 pub struct MonitoringJobDefinition {
     /// <p>Baseline configuration used to validate that the data conforms to the specified constraints and statistics</p>
     pub baseline_config: ::std::option::Option<crate::types::MonitoringBaselineConfig>,
-    /// <p>The array of inputs for the monitoring job. Currently we support monitoring an Amazon SageMaker Endpoint.</p>
+    /// <p>The array of inputs for the monitoring job. Currently we support monitoring an Amazon SageMaker AI Endpoint.</p>
     pub monitoring_inputs: ::std::option::Option<::std::vec::Vec<crate::types::MonitoringInput>>,
     /// <p>The array of outputs from the monitoring job to be uploaded to Amazon S3.</p>
     pub monitoring_output_config: ::std::option::Option<crate::types::MonitoringOutputConfig>,
@@ -20,7 +20,7 @@ pub struct MonitoringJobDefinition {
     pub environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Specifies networking options for an monitoring job.</p>
     pub network_config: ::std::option::Option<crate::types::NetworkConfig>,
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker AI can assume to perform tasks on your behalf.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl MonitoringJobDefinition {
@@ -28,7 +28,7 @@ impl MonitoringJobDefinition {
     pub fn baseline_config(&self) -> ::std::option::Option<&crate::types::MonitoringBaselineConfig> {
         self.baseline_config.as_ref()
     }
-    /// <p>The array of inputs for the monitoring job. Currently we support monitoring an Amazon SageMaker Endpoint.</p>
+    /// <p>The array of inputs for the monitoring job. Currently we support monitoring an Amazon SageMaker AI Endpoint.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.monitoring_inputs.is_none()`.
     pub fn monitoring_inputs(&self) -> &[crate::types::MonitoringInput] {
@@ -58,7 +58,7 @@ impl MonitoringJobDefinition {
     pub fn network_config(&self) -> ::std::option::Option<&crate::types::NetworkConfig> {
         self.network_config.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker AI can assume to perform tasks on your behalf.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -103,19 +103,19 @@ impl MonitoringJobDefinitionBuilder {
     ///
     /// To override the contents of this collection use [`set_monitoring_inputs`](Self::set_monitoring_inputs).
     ///
-    /// <p>The array of inputs for the monitoring job. Currently we support monitoring an Amazon SageMaker Endpoint.</p>
+    /// <p>The array of inputs for the monitoring job. Currently we support monitoring an Amazon SageMaker AI Endpoint.</p>
     pub fn monitoring_inputs(mut self, input: crate::types::MonitoringInput) -> Self {
         let mut v = self.monitoring_inputs.unwrap_or_default();
         v.push(input);
         self.monitoring_inputs = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The array of inputs for the monitoring job. Currently we support monitoring an Amazon SageMaker Endpoint.</p>
+    /// <p>The array of inputs for the monitoring job. Currently we support monitoring an Amazon SageMaker AI Endpoint.</p>
     pub fn set_monitoring_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MonitoringInput>>) -> Self {
         self.monitoring_inputs = input;
         self
     }
-    /// <p>The array of inputs for the monitoring job. Currently we support monitoring an Amazon SageMaker Endpoint.</p>
+    /// <p>The array of inputs for the monitoring job. Currently we support monitoring an Amazon SageMaker AI Endpoint.</p>
     pub fn get_monitoring_inputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MonitoringInput>> {
         &self.monitoring_inputs
     }
@@ -215,18 +215,18 @@ impl MonitoringJobDefinitionBuilder {
     pub fn get_network_config(&self) -> &::std::option::Option<crate::types::NetworkConfig> {
         &self.network_config
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker AI can assume to perform tasks on your behalf.</p>
     /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker AI can assume to perform tasks on your behalf.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker AI can assume to perform tasks on your behalf.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }

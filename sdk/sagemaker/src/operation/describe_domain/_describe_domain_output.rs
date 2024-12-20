@@ -13,7 +13,7 @@ pub struct DescribeDomainOutput {
     pub home_efs_file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>The IAM Identity Center managed application instance ID.</p>
     pub single_sign_on_managed_application_instance_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of the application managed by SageMaker in IAM Identity Center. This value is only returned for domains created after October 1, 2023.</p>
+    /// <p>The ARN of the application managed by SageMaker AI in IAM Identity Center. This value is only returned for domains created after October 1, 2023.</p>
     pub single_sign_on_application_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status.</p>
     pub status: ::std::option::Option<crate::types::DomainStatus>,
@@ -34,7 +34,7 @@ pub struct DescribeDomainOutput {
     /// <p>Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
     /// <ul>
     /// <li>
-    /// <p><code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p></li>
+    /// <p><code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker AI, which allows direct internet access</p></li>
     /// <li>
     /// <p><code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p></li>
     /// </ul>
@@ -79,7 +79,7 @@ impl DescribeDomainOutput {
     pub fn single_sign_on_managed_application_instance_id(&self) -> ::std::option::Option<&str> {
         self.single_sign_on_managed_application_instance_id.as_deref()
     }
-    /// <p>The ARN of the application managed by SageMaker in IAM Identity Center. This value is only returned for domains created after October 1, 2023.</p>
+    /// <p>The ARN of the application managed by SageMaker AI in IAM Identity Center. This value is only returned for domains created after October 1, 2023.</p>
     pub fn single_sign_on_application_arn(&self) -> ::std::option::Option<&str> {
         self.single_sign_on_application_arn.as_deref()
     }
@@ -118,7 +118,7 @@ impl DescribeDomainOutput {
     /// <p>Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
     /// <ul>
     /// <li>
-    /// <p><code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p></li>
+    /// <p><code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker AI, which allows direct internet access</p></li>
     /// <li>
     /// <p><code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p></li>
     /// </ul>
@@ -273,17 +273,17 @@ impl DescribeDomainOutputBuilder {
     pub fn get_single_sign_on_managed_application_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.single_sign_on_managed_application_instance_id
     }
-    /// <p>The ARN of the application managed by SageMaker in IAM Identity Center. This value is only returned for domains created after October 1, 2023.</p>
+    /// <p>The ARN of the application managed by SageMaker AI in IAM Identity Center. This value is only returned for domains created after October 1, 2023.</p>
     pub fn single_sign_on_application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.single_sign_on_application_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the application managed by SageMaker in IAM Identity Center. This value is only returned for domains created after October 1, 2023.</p>
+    /// <p>The ARN of the application managed by SageMaker AI in IAM Identity Center. This value is only returned for domains created after October 1, 2023.</p>
     pub fn set_single_sign_on_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.single_sign_on_application_arn = input;
         self
     }
-    /// <p>The ARN of the application managed by SageMaker in IAM Identity Center. This value is only returned for domains created after October 1, 2023.</p>
+    /// <p>The ARN of the application managed by SageMaker AI in IAM Identity Center. This value is only returned for domains created after October 1, 2023.</p>
     pub fn get_single_sign_on_application_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.single_sign_on_application_arn
     }
@@ -402,7 +402,7 @@ impl DescribeDomainOutputBuilder {
     /// <p>Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
     /// <ul>
     /// <li>
-    /// <p><code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p></li>
+    /// <p><code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker AI, which allows direct internet access</p></li>
     /// <li>
     /// <p><code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p></li>
     /// </ul>
@@ -413,7 +413,7 @@ impl DescribeDomainOutputBuilder {
     /// <p>Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
     /// <ul>
     /// <li>
-    /// <p><code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p></li>
+    /// <p><code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker AI, which allows direct internet access</p></li>
     /// <li>
     /// <p><code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p></li>
     /// </ul>
@@ -424,7 +424,7 @@ impl DescribeDomainOutputBuilder {
     /// <p>Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
     /// <ul>
     /// <li>
-    /// <p><code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p></li>
+    /// <p><code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker AI, which allows direct internet access</p></li>
     /// <li>
     /// <p><code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p></li>
     /// </ul>

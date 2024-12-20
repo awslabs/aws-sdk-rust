@@ -22,7 +22,7 @@ impl crate::operation::update_image_version::builders::UpdateImageVersionInputBu
 }
 /// Fluent builder constructing a request to `UpdateImageVersion`.
 ///
-/// <p>Updates the properties of a SageMaker image version.</p>
+/// <p>Updates the properties of a SageMaker AI image version.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateImageVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -232,40 +232,40 @@ impl UpdateImageVersionFluentBuilder {
     pub fn get_vendor_guidance(&self) -> &::std::option::Option<crate::types::VendorGuidance> {
         self.inner.get_vendor_guidance()
     }
-    /// <p>Indicates SageMaker job type compatibility.</p>
+    /// <p>Indicates SageMaker AI job type compatibility.</p>
     /// <ul>
     /// <li>
-    /// <p><code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p></li>
+    /// <p><code>TRAINING</code>: The image version is compatible with SageMaker AI training jobs.</p></li>
     /// <li>
-    /// <p><code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p></li>
+    /// <p><code>INFERENCE</code>: The image version is compatible with SageMaker AI inference jobs.</p></li>
     /// <li>
-    /// <p><code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p></li>
+    /// <p><code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker AI notebook kernels.</p></li>
     /// </ul>
     pub fn job_type(mut self, input: crate::types::JobType) -> Self {
         self.inner = self.inner.job_type(input);
         self
     }
-    /// <p>Indicates SageMaker job type compatibility.</p>
+    /// <p>Indicates SageMaker AI job type compatibility.</p>
     /// <ul>
     /// <li>
-    /// <p><code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p></li>
+    /// <p><code>TRAINING</code>: The image version is compatible with SageMaker AI training jobs.</p></li>
     /// <li>
-    /// <p><code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p></li>
+    /// <p><code>INFERENCE</code>: The image version is compatible with SageMaker AI inference jobs.</p></li>
     /// <li>
-    /// <p><code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p></li>
+    /// <p><code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker AI notebook kernels.</p></li>
     /// </ul>
     pub fn set_job_type(mut self, input: ::std::option::Option<crate::types::JobType>) -> Self {
         self.inner = self.inner.set_job_type(input);
         self
     }
-    /// <p>Indicates SageMaker job type compatibility.</p>
+    /// <p>Indicates SageMaker AI job type compatibility.</p>
     /// <ul>
     /// <li>
-    /// <p><code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p></li>
+    /// <p><code>TRAINING</code>: The image version is compatible with SageMaker AI training jobs.</p></li>
     /// <li>
-    /// <p><code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p></li>
+    /// <p><code>INFERENCE</code>: The image version is compatible with SageMaker AI inference jobs.</p></li>
     /// <li>
-    /// <p><code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p></li>
+    /// <p><code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker AI notebook kernels.</p></li>
     /// </ul>
     pub fn get_job_type(&self) -> &::std::option::Option<crate::types::JobType> {
         self.inner.get_job_type()

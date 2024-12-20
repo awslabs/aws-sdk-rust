@@ -14,6 +14,7 @@
 /// match powerconnector {
 ///     PowerConnector::Ah530P7W => { /* ... */ },
 ///     PowerConnector::Ah532P6W => { /* ... */ },
+///     PowerConnector::Cs8365C => { /* ... */ },
 ///     PowerConnector::Iec309 => { /* ... */ },
 ///     PowerConnector::L630P => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -49,6 +50,8 @@ pub enum PowerConnector {
     #[allow(missing_docs)] // documentation missing in model
     Ah532P6W,
     #[allow(missing_docs)] // documentation missing in model
+    Cs8365C,
+    #[allow(missing_docs)] // documentation missing in model
     Iec309,
     #[allow(missing_docs)] // documentation missing in model
     L630P,
@@ -61,6 +64,7 @@ impl ::std::convert::From<&str> for PowerConnector {
         match s {
             "AH530P7W" => PowerConnector::Ah530P7W,
             "AH532P6W" => PowerConnector::Ah532P6W,
+            "CS8365C" => PowerConnector::Cs8365C,
             "IEC309" => PowerConnector::Iec309,
             "L6_30P" => PowerConnector::L630P,
             other => PowerConnector::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -80,6 +84,7 @@ impl PowerConnector {
         match self {
             PowerConnector::Ah530P7W => "AH530P7W",
             PowerConnector::Ah532P6W => "AH532P6W",
+            PowerConnector::Cs8365C => "CS8365C",
             PowerConnector::Iec309 => "IEC309",
             PowerConnector::L630P => "L6_30P",
             PowerConnector::Unknown(value) => value.as_str(),
@@ -87,7 +92,7 @@ impl PowerConnector {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AH530P7W", "AH532P6W", "IEC309", "L6_30P"]
+        &["AH530P7W", "AH532P6W", "CS8365C", "IEC309", "L6_30P"]
     }
 }
 impl ::std::convert::AsRef<str> for PowerConnector {
@@ -112,6 +117,7 @@ impl ::std::fmt::Display for PowerConnector {
         match self {
             PowerConnector::Ah530P7W => write!(f, "AH530P7W"),
             PowerConnector::Ah532P6W => write!(f, "AH532P6W"),
+            PowerConnector::Cs8365C => write!(f, "CS8365C"),
             PowerConnector::Iec309 => write!(f, "IEC309"),
             PowerConnector::L630P => write!(f, "L6_30P"),
             PowerConnector::Unknown(value) => write!(f, "{}", value),

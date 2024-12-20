@@ -10,7 +10,7 @@ pub struct BucketCountByEffectivePermission {
     pub publicly_readable: ::std::option::Option<i64>,
     /// <p>The total number of buckets that allow the general public to have write access to the bucket.</p>
     pub publicly_writable: ::std::option::Option<i64>,
-    /// <p>The total number of buckets that Amazon Macie wasn't able to evaluate permissions settings for. Macie can't determine whether these buckets are publicly accessible.</p>
+    /// <p>The total number of buckets that Amazon Macie wasn't able to evaluate permissions settings for. For example, the buckets' policies or a quota prevented Macie from retrieving the requisite data. Macie can't determine whether the buckets are publicly accessible.</p>
     pub unknown: ::std::option::Option<i64>,
 }
 impl BucketCountByEffectivePermission {
@@ -26,7 +26,7 @@ impl BucketCountByEffectivePermission {
     pub fn publicly_writable(&self) -> ::std::option::Option<i64> {
         self.publicly_writable
     }
-    /// <p>The total number of buckets that Amazon Macie wasn't able to evaluate permissions settings for. Macie can't determine whether these buckets are publicly accessible.</p>
+    /// <p>The total number of buckets that Amazon Macie wasn't able to evaluate permissions settings for. For example, the buckets' policies or a quota prevented Macie from retrieving the requisite data. Macie can't determine whether the buckets are publicly accessible.</p>
     pub fn unknown(&self) -> ::std::option::Option<i64> {
         self.unknown
     }
@@ -90,17 +90,17 @@ impl BucketCountByEffectivePermissionBuilder {
     pub fn get_publicly_writable(&self) -> &::std::option::Option<i64> {
         &self.publicly_writable
     }
-    /// <p>The total number of buckets that Amazon Macie wasn't able to evaluate permissions settings for. Macie can't determine whether these buckets are publicly accessible.</p>
+    /// <p>The total number of buckets that Amazon Macie wasn't able to evaluate permissions settings for. For example, the buckets' policies or a quota prevented Macie from retrieving the requisite data. Macie can't determine whether the buckets are publicly accessible.</p>
     pub fn unknown(mut self, input: i64) -> Self {
         self.unknown = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The total number of buckets that Amazon Macie wasn't able to evaluate permissions settings for. Macie can't determine whether these buckets are publicly accessible.</p>
+    /// <p>The total number of buckets that Amazon Macie wasn't able to evaluate permissions settings for. For example, the buckets' policies or a quota prevented Macie from retrieving the requisite data. Macie can't determine whether the buckets are publicly accessible.</p>
     pub fn set_unknown(mut self, input: ::std::option::Option<i64>) -> Self {
         self.unknown = input;
         self
     }
-    /// <p>The total number of buckets that Amazon Macie wasn't able to evaluate permissions settings for. Macie can't determine whether these buckets are publicly accessible.</p>
+    /// <p>The total number of buckets that Amazon Macie wasn't able to evaluate permissions settings for. For example, the buckets' policies or a quota prevented Macie from retrieving the requisite data. Macie can't determine whether the buckets are publicly accessible.</p>
     pub fn get_unknown(&self) -> &::std::option::Option<i64> {
         &self.unknown
     }

@@ -5,7 +5,7 @@
 pub struct UpdateResourceProfileDetectionsInput {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
-    /// <p>An array of objects, one for each custom data identifier or managed data identifier that detected the type of sensitive data to start excluding or including in the bucket's score. To start including all sensitive data types in the score, don't specify any values for this array.</p>
+    /// <p>An array of objects, one for each custom data identifier or managed data identifier that detected a type of sensitive data to exclude from the bucket's score. To include all sensitive data types in the score, don't specify any values for this array.</p>
     pub suppress_data_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::SuppressDataIdentifier>>,
 }
 impl UpdateResourceProfileDetectionsInput {
@@ -13,7 +13,7 @@ impl UpdateResourceProfileDetectionsInput {
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>An array of objects, one for each custom data identifier or managed data identifier that detected the type of sensitive data to start excluding or including in the bucket's score. To start including all sensitive data types in the score, don't specify any values for this array.</p>
+    /// <p>An array of objects, one for each custom data identifier or managed data identifier that detected a type of sensitive data to exclude from the bucket's score. To include all sensitive data types in the score, don't specify any values for this array.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.suppress_data_identifiers.is_none()`.
     pub fn suppress_data_identifiers(&self) -> &[crate::types::SuppressDataIdentifier] {
@@ -54,19 +54,19 @@ impl UpdateResourceProfileDetectionsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_suppress_data_identifiers`](Self::set_suppress_data_identifiers).
     ///
-    /// <p>An array of objects, one for each custom data identifier or managed data identifier that detected the type of sensitive data to start excluding or including in the bucket's score. To start including all sensitive data types in the score, don't specify any values for this array.</p>
+    /// <p>An array of objects, one for each custom data identifier or managed data identifier that detected a type of sensitive data to exclude from the bucket's score. To include all sensitive data types in the score, don't specify any values for this array.</p>
     pub fn suppress_data_identifiers(mut self, input: crate::types::SuppressDataIdentifier) -> Self {
         let mut v = self.suppress_data_identifiers.unwrap_or_default();
         v.push(input);
         self.suppress_data_identifiers = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of objects, one for each custom data identifier or managed data identifier that detected the type of sensitive data to start excluding or including in the bucket's score. To start including all sensitive data types in the score, don't specify any values for this array.</p>
+    /// <p>An array of objects, one for each custom data identifier or managed data identifier that detected a type of sensitive data to exclude from the bucket's score. To include all sensitive data types in the score, don't specify any values for this array.</p>
     pub fn set_suppress_data_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SuppressDataIdentifier>>) -> Self {
         self.suppress_data_identifiers = input;
         self
     }
-    /// <p>An array of objects, one for each custom data identifier or managed data identifier that detected the type of sensitive data to start excluding or including in the bucket's score. To start including all sensitive data types in the score, don't specify any values for this array.</p>
+    /// <p>An array of objects, one for each custom data identifier or managed data identifier that detected a type of sensitive data to exclude from the bucket's score. To include all sensitive data types in the score, don't specify any values for this array.</p>
     pub fn get_suppress_data_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SuppressDataIdentifier>> {
         &self.suppress_data_identifiers
     }

@@ -22,7 +22,7 @@ impl crate::operation::update_image::builders::UpdateImageInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateImage`.
 ///
-/// <p>Updates the properties of a SageMaker image. To change the image's tags, use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AddTags.html">AddTags</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteTags.html">DeleteTags</a> APIs.</p>
+/// <p>Updates the properties of a SageMaker AI image. To change the image's tags, use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AddTags.html">AddTags</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteTags.html">DeleteTags</a> APIs.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateImageFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -169,17 +169,17 @@ impl UpdateImageFluentBuilder {
     pub fn get_image_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_image_name()
     }
-    /// <p>The new ARN for the IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+    /// <p>The new ARN for the IAM role that enables Amazon SageMaker AI to perform tasks on your behalf.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
         self
     }
-    /// <p>The new ARN for the IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+    /// <p>The new ARN for the IAM role that enables Amazon SageMaker AI to perform tasks on your behalf.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
     }
-    /// <p>The new ARN for the IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+    /// <p>The new ARN for the IAM role that enables Amazon SageMaker AI to perform tasks on your behalf.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role_arn()
     }

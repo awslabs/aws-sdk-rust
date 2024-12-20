@@ -19,7 +19,7 @@ pub struct DefaultSpaceSettings {
     pub space_storage_settings: ::std::option::Option<crate::types::DefaultSpaceStorageSettings>,
     /// <p>Details about the POSIX identity that is used for file system operations.</p>
     pub custom_posix_user_config: ::std::option::Option<crate::types::CustomPosixUserConfig>,
-    /// <p>The settings for assigning a custom file system to a domain. Permitted users can access this file system in Amazon SageMaker Studio.</p>
+    /// <p>The settings for assigning a custom file system to a domain. Permitted users can access this file system in Amazon SageMaker AI Studio.</p>
     pub custom_file_system_configs: ::std::option::Option<::std::vec::Vec<crate::types::CustomFileSystemConfig>>,
 }
 impl DefaultSpaceSettings {
@@ -53,7 +53,7 @@ impl DefaultSpaceSettings {
     pub fn custom_posix_user_config(&self) -> ::std::option::Option<&crate::types::CustomPosixUserConfig> {
         self.custom_posix_user_config.as_ref()
     }
-    /// <p>The settings for assigning a custom file system to a domain. Permitted users can access this file system in Amazon SageMaker Studio.</p>
+    /// <p>The settings for assigning a custom file system to a domain. Permitted users can access this file system in Amazon SageMaker AI Studio.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_file_system_configs.is_none()`.
     pub fn custom_file_system_configs(&self) -> &[crate::types::CustomFileSystemConfig] {
@@ -189,19 +189,19 @@ impl DefaultSpaceSettingsBuilder {
     ///
     /// To override the contents of this collection use [`set_custom_file_system_configs`](Self::set_custom_file_system_configs).
     ///
-    /// <p>The settings for assigning a custom file system to a domain. Permitted users can access this file system in Amazon SageMaker Studio.</p>
+    /// <p>The settings for assigning a custom file system to a domain. Permitted users can access this file system in Amazon SageMaker AI Studio.</p>
     pub fn custom_file_system_configs(mut self, input: crate::types::CustomFileSystemConfig) -> Self {
         let mut v = self.custom_file_system_configs.unwrap_or_default();
         v.push(input);
         self.custom_file_system_configs = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The settings for assigning a custom file system to a domain. Permitted users can access this file system in Amazon SageMaker Studio.</p>
+    /// <p>The settings for assigning a custom file system to a domain. Permitted users can access this file system in Amazon SageMaker AI Studio.</p>
     pub fn set_custom_file_system_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomFileSystemConfig>>) -> Self {
         self.custom_file_system_configs = input;
         self
     }
-    /// <p>The settings for assigning a custom file system to a domain. Permitted users can access this file system in Amazon SageMaker Studio.</p>
+    /// <p>The settings for assigning a custom file system to a domain. Permitted users can access this file system in Amazon SageMaker AI Studio.</p>
     pub fn get_custom_file_system_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomFileSystemConfig>> {
         &self.custom_file_system_configs
     }

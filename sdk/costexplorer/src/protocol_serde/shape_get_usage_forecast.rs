@@ -47,6 +47,21 @@ pub fn de_get_usage_forecast_http_error(
             }
             tmp
         }),
+        "ResourceNotFoundException" => crate::operation::get_usage_forecast::GetUsageForecastError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_usage_forecast::GetUsageForecastError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "UnresolvableUsageUnitException" => crate::operation::get_usage_forecast::GetUsageForecastError::UnresolvableUsageUnitException({
             #[allow(unused_mut)]
             let mut tmp = {

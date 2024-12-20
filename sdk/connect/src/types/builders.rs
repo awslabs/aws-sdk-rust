@@ -149,6 +149,8 @@ pub use crate::types::_match_criteria::MatchCriteriaBuilder;
 
 pub use crate::types::_agents_criteria::AgentsCriteriaBuilder;
 
+pub use crate::types::_range::RangeBuilder;
+
 pub use crate::types::_routing_criteria_input_step_expiry::RoutingCriteriaInputStepExpiryBuilder;
 
 pub use crate::types::_problem_detail::ProblemDetailBuilder;

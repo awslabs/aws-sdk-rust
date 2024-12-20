@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_aliases::builders::ListAliasesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_aliases::builders::ListAliasesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of aliases to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_aliases::builders::ListAliasesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_aliases::builders::ListAliasesFluentBuilder::set_next_token):<br>required: **false**<br><p>If the previous call to <code>ListAliases</code> didn't return the full set of aliases, the call returns a token for retrieving the next set of aliases.</p><br>
     /// - On success, responds with [`ListAliasesOutput`](crate::operation::list_aliases::ListAliasesOutput) with field(s):
-    ///   - [`sage_maker_image_version_aliases(Option<Vec::<String>>)`](crate::operation::list_aliases::ListAliasesOutput::sage_maker_image_version_aliases): <p>A list of SageMaker image version aliases.</p>
+    ///   - [`sage_maker_image_version_aliases(Option<Vec::<String>>)`](crate::operation::list_aliases::ListAliasesOutput::sage_maker_image_version_aliases): <p>A list of SageMaker AI image version aliases.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_aliases::ListAliasesOutput::next_token): <p>A token for getting the next set of aliases, if more aliases exist.</p>
     /// - On failure, responds with [`SdkError<ListAliasesError>`](crate::operation::list_aliases::ListAliasesError)
     pub fn list_aliases(&self) -> crate::operation::list_aliases::builders::ListAliasesFluentBuilder {

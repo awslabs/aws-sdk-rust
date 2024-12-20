@@ -10,6 +10,8 @@ pub struct Expression {
     pub and_expression: ::std::option::Option<::std::vec::Vec<crate::types::Expression>>,
     /// <p>List of routing expressions which will be OR-ed together.</p>
     pub or_expression: ::std::option::Option<::std::vec::Vec<crate::types::Expression>>,
+    /// <p>An object to specify the predefined attribute condition.</p>
+    pub not_attribute_condition: ::std::option::Option<crate::types::AttributeCondition>,
 }
 impl Expression {
     /// <p>An object to specify the predefined attribute condition.</p>
@@ -28,6 +30,10 @@ impl Expression {
     pub fn or_expression(&self) -> &[crate::types::Expression] {
         self.or_expression.as_deref().unwrap_or_default()
     }
+    /// <p>An object to specify the predefined attribute condition.</p>
+    pub fn not_attribute_condition(&self) -> ::std::option::Option<&crate::types::AttributeCondition> {
+        self.not_attribute_condition.as_ref()
+    }
 }
 impl Expression {
     /// Creates a new builder-style object to manufacture [`Expression`](crate::types::Expression).
@@ -43,6 +49,7 @@ pub struct ExpressionBuilder {
     pub(crate) attribute_condition: ::std::option::Option<crate::types::AttributeCondition>,
     pub(crate) and_expression: ::std::option::Option<::std::vec::Vec<crate::types::Expression>>,
     pub(crate) or_expression: ::std::option::Option<::std::vec::Vec<crate::types::Expression>>,
+    pub(crate) not_attribute_condition: ::std::option::Option<crate::types::AttributeCondition>,
 }
 impl ExpressionBuilder {
     /// <p>An object to specify the predefined attribute condition.</p>
@@ -99,12 +106,27 @@ impl ExpressionBuilder {
     pub fn get_or_expression(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Expression>> {
         &self.or_expression
     }
+    /// <p>An object to specify the predefined attribute condition.</p>
+    pub fn not_attribute_condition(mut self, input: crate::types::AttributeCondition) -> Self {
+        self.not_attribute_condition = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object to specify the predefined attribute condition.</p>
+    pub fn set_not_attribute_condition(mut self, input: ::std::option::Option<crate::types::AttributeCondition>) -> Self {
+        self.not_attribute_condition = input;
+        self
+    }
+    /// <p>An object to specify the predefined attribute condition.</p>
+    pub fn get_not_attribute_condition(&self) -> &::std::option::Option<crate::types::AttributeCondition> {
+        &self.not_attribute_condition
+    }
     /// Consumes the builder and constructs a [`Expression`](crate::types::Expression).
     pub fn build(self) -> crate::types::Expression {
         crate::types::Expression {
             attribute_condition: self.attribute_condition,
             and_expression: self.and_expression,
             or_expression: self.or_expression,
+            not_attribute_condition: self.not_attribute_condition,
         }
     }
 }

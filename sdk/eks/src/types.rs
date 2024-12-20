@@ -173,6 +173,8 @@ pub use crate::types::_insight::Insight;
 
 pub use crate::types::_insight_category_specific_summary::InsightCategorySpecificSummary;
 
+pub use crate::types::_addon_compatibility_detail::AddonCompatibilityDetail;
+
 pub use crate::types::_deprecation_detail::DeprecationDetail;
 
 pub use crate::types::_client_stat::ClientStat;
@@ -238,6 +240,8 @@ mod _access_scope;
 mod _access_scope_type;
 
 mod _addon;
+
+mod _addon_compatibility_detail;
 
 mod _addon_health;
 

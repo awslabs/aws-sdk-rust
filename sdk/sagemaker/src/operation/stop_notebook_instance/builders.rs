@@ -22,7 +22,7 @@ impl crate::operation::stop_notebook_instance::builders::StopNotebookInstanceInp
 }
 /// Fluent builder constructing a request to `StopNotebookInstance`.
 ///
-/// <p>Terminates the ML compute instance. Before terminating the instance, SageMaker disconnects the ML storage volume from it. SageMaker preserves the ML storage volume. SageMaker stops charging you for the ML compute instance when you call <code>StopNotebookInstance</code>.</p>
+/// <p>Terminates the ML compute instance. Before terminating the instance, SageMaker AI disconnects the ML storage volume from it. SageMaker AI preserves the ML storage volume. SageMaker AI stops charging you for the ML compute instance when you call <code>StopNotebookInstance</code>.</p>
 /// <p>To access data on the ML storage volume for a notebook instance that has been terminated, call the <code>StartNotebookInstance</code> API. <code>StartNotebookInstance</code> launches another ML compute instance, configures it, and attaches the preserved ML storage volume so you can continue your work.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopNotebookInstanceFluentBuilder {

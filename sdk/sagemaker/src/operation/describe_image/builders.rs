@@ -22,7 +22,7 @@ impl crate::operation::describe_image::builders::DescribeImageInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeImage`.
 ///
-/// <p>Describes a SageMaker image.</p>
+/// <p>Describes a SageMaker AI image.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeImageFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

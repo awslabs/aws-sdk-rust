@@ -31,5 +31,11 @@ pub fn ser_generation_configuration(
         }
         object_8.finish();
     }
+    if let Some(var_11) = &input.performance_config {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("performanceConfig").start_object();
+        crate::protocol_serde::shape_performance_configuration::ser_performance_configuration(&mut object_12, var_11)?;
+        object_12.finish();
+    }
     Ok(())
 }

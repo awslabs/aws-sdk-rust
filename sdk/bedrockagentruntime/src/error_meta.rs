@@ -13,6 +13,8 @@ pub enum Error {
     DependencyFailedException(crate::types::error::DependencyFailedException),
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::types::error::InternalServerException),
+    /// <p>The model specified in the request is not ready to serve inference requests. The AWS SDK will automatically retry the operation up to 5 times. For information about configuring automatic retries, see <a href="https://docs.aws.amazon.com/sdkref/latest/guide/feature-retry-behavior.html">Retry behavior</a> in the <i>AWS SDKs and Tools</i> reference guide.</p>
+    ModelNotReadyException(crate::types::error::ModelNotReadyException),
     /// <p>The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon Resource Name (ARN) and try your request again.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The number of requests exceeds the service quota. Resubmit your request later.</p>
@@ -38,6 +40,7 @@ impl ::std::fmt::Display for Error {
             Error::ConflictException(inner) => inner.fmt(f),
             Error::DependencyFailedException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
+            Error::ModelNotReadyException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
@@ -68,6 +71,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ConflictException(inner) => inner.meta(),
             Self::DependencyFailedException(inner) => inner.meta(),
             Self::InternalServerException(inner) => inner.meta(),
+            Self::ModelNotReadyException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::ServiceQuotaExceededException(inner) => inner.meta(),
             Self::ThrottlingException(inner) => inner.meta(),
@@ -191,6 +195,7 @@ where
 impl From<crate::operation::invoke_agent::InvokeAgentError> for Error {
     fn from(err: crate::operation::invoke_agent::InvokeAgentError) -> Self {
         match err {
+            crate::operation::invoke_agent::InvokeAgentError::ModelNotReadyException(inner) => Error::ModelNotReadyException(inner),
             crate::operation::invoke_agent::InvokeAgentError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::invoke_agent::InvokeAgentError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::invoke_agent::InvokeAgentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
@@ -472,6 +477,7 @@ impl From<crate::types::error::ResponseStreamError> for Error {
             crate::types::error::ResponseStreamError::ConflictException(inner) => Error::ConflictException(inner),
             crate::types::error::ResponseStreamError::DependencyFailedException(inner) => Error::DependencyFailedException(inner),
             crate::types::error::ResponseStreamError::BadGatewayException(inner) => Error::BadGatewayException(inner),
+            crate::types::error::ResponseStreamError::ModelNotReadyException(inner) => Error::ModelNotReadyException(inner),
             crate::types::error::ResponseStreamError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -609,6 +615,7 @@ impl ::std::error::Error for Error {
             Error::ConflictException(inner) => inner.source(),
             Error::DependencyFailedException(inner) => inner.source(),
             Error::InternalServerException(inner) => inner.source(),
+            Error::ModelNotReadyException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ServiceQuotaExceededException(inner) => inner.source(),
             Error::ThrottlingException(inner) => inner.source(),
@@ -625,6 +632,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ConflictException(e) => e.request_id(),
             Self::DependencyFailedException(e) => e.request_id(),
             Self::InternalServerException(e) => e.request_id(),
+            Self::ModelNotReadyException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ServiceQuotaExceededException(e) => e.request_id(),
             Self::ThrottlingException(e) => e.request_id(),

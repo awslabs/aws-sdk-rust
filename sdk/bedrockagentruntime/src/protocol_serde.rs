@@ -77,6 +77,8 @@ pub(crate) mod shape_invoke_inline_agent_input;
 
 pub(crate) mod shape_invoke_inline_agent_output;
 
+pub(crate) mod shape_model_not_ready_exception;
+
 pub(crate) mod shape_optimize_prompt_input;
 
 pub(crate) mod shape_optimize_prompt_output;
@@ -107,6 +109,8 @@ pub fn parse_event_stream_error_metadata(
 
 pub(crate) mod shape_agent_action_group;
 
+pub(crate) mod shape_bedrock_model_configurations;
+
 pub(crate) mod shape_citations;
 
 pub(crate) mod shape_flow_input;
@@ -116,6 +120,8 @@ pub(crate) mod shape_generated_queries;
 pub(crate) mod shape_guardrail_configuration;
 
 pub(crate) mod shape_guardrail_configuration_with_arn;
+
+pub(crate) mod shape_inline_bedrock_model_configurations;
 
 pub(crate) mod shape_inline_session_state;
 
@@ -130,6 +136,8 @@ pub(crate) mod shape_knowledge_base_retrieval_configuration;
 pub(crate) mod shape_knowledge_base_retrieval_results;
 
 pub(crate) mod shape_memories;
+
+pub(crate) mod shape_model_performance_configuration;
 
 pub(crate) mod shape_prompt_override_configuration;
 
@@ -212,6 +220,8 @@ pub(crate) mod shape_memory;
 pub(crate) mod shape_optimized_prompt_event;
 
 pub(crate) mod shape_payload_part;
+
+pub(crate) mod shape_performance_configuration;
 
 pub(crate) mod shape_prompt_configuration;
 

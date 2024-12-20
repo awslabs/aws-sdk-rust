@@ -36,14 +36,17 @@ pub fn ser_get_dimension_values_input_input(
         }
         array_9.finish();
     }
-    if let Some(var_12) = &input.max_results {
+    if let Some(var_12) = &input.billing_view_arn {
+        object.key("BillingViewArn").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_12).into()),
+            ::aws_smithy_types::Number::NegInt((*var_13).into()),
         );
     }
-    if let Some(var_13) = &input.next_page_token {
-        object.key("NextPageToken").string(var_13.as_str());
+    if let Some(var_14) = &input.next_page_token {
+        object.key("NextPageToken").string(var_14.as_str());
     }
     Ok(())
 }

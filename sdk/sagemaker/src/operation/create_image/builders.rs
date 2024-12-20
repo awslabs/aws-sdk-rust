@@ -22,7 +22,7 @@ impl crate::operation::create_image::builders::CreateImageInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateImage`.
 ///
-/// <p>Creates a custom SageMaker image. A SageMaker image is a set of image versions. Each image version represents a container image stored in Amazon ECR. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-byoi.html">Bring your own SageMaker image</a>.</p>
+/// <p>Creates a custom SageMaker AI image. A SageMaker AI image is a set of image versions. Each image version represents a container image stored in Amazon ECR. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-byoi.html">Bring your own SageMaker AI image</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateImageFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -150,17 +150,17 @@ impl CreateImageFluentBuilder {
     pub fn get_image_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_image_name()
     }
-    /// <p>The ARN of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+    /// <p>The ARN of an IAM role that enables Amazon SageMaker AI to perform tasks on your behalf.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
         self
     }
-    /// <p>The ARN of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+    /// <p>The ARN of an IAM role that enables Amazon SageMaker AI to perform tasks on your behalf.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
     }
-    /// <p>The ARN of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+    /// <p>The ARN of an IAM role that enables Amazon SageMaker AI to perform tasks on your behalf.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role_arn()
     }

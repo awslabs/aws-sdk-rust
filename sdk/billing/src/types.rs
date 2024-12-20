@@ -3,17 +3,41 @@ pub use crate::types::_validation_exception_field::ValidationExceptionField;
 
 pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
+pub use crate::types::_expression::Expression;
+
+pub use crate::types::_tag_values::TagValues;
+
+pub use crate::types::_dimension_values::DimensionValues;
+
+pub use crate::types::_dimension::Dimension;
+
+pub use crate::types::_resource_tag::ResourceTag;
+
 pub use crate::types::_billing_view_list_element::BillingViewListElement;
 
 pub use crate::types::_billing_view_type::BillingViewType;
 
 pub use crate::types::_active_time_range::ActiveTimeRange;
 
+pub use crate::types::_billing_view_element::BillingViewElement;
+
 mod _active_time_range;
+
+mod _billing_view_element;
 
 mod _billing_view_list_element;
 
 mod _billing_view_type;
+
+mod _dimension;
+
+mod _dimension_values;
+
+mod _expression;
+
+mod _resource_tag;
+
+mod _tag_values;
 
 mod _validation_exception_field;
 

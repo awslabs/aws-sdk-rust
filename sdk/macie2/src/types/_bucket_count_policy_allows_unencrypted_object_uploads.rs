@@ -8,7 +8,7 @@ pub struct BucketCountPolicyAllowsUnencryptedObjectUploads {
     pub allows_unencrypted_object_uploads: ::std::option::Option<i64>,
     /// <p>The total number of buckets whose bucket policies require server-side encryption of new objects. PutObject requests for these buckets must include a valid server-side encryption header: the x-amz-server-side-encryption header with a value of AES256 or aws:kms, or the x-amz-server-side-encryption-customer-algorithm header with a value of AES256.</p>
     pub denies_unencrypted_object_uploads: ::std::option::Option<i64>,
-    /// <p>The total number of buckets that Amazon Macie wasn't able to evaluate server-side encryption requirements for. Macie can't determine whether the bucket policies for these buckets require server-side encryption of new objects.</p>
+    /// <p>The total number of buckets that Amazon Macie wasn't able to evaluate server-side encryption requirements for. For example, the buckets' permissions settings or a quota prevented Macie from retrieving the requisite data. Macie can't determine whether bucket policies for the buckets require server-side encryption of new objects.</p>
     pub unknown: ::std::option::Option<i64>,
 }
 impl BucketCountPolicyAllowsUnencryptedObjectUploads {
@@ -20,7 +20,7 @@ impl BucketCountPolicyAllowsUnencryptedObjectUploads {
     pub fn denies_unencrypted_object_uploads(&self) -> ::std::option::Option<i64> {
         self.denies_unencrypted_object_uploads
     }
-    /// <p>The total number of buckets that Amazon Macie wasn't able to evaluate server-side encryption requirements for. Macie can't determine whether the bucket policies for these buckets require server-side encryption of new objects.</p>
+    /// <p>The total number of buckets that Amazon Macie wasn't able to evaluate server-side encryption requirements for. For example, the buckets' permissions settings or a quota prevented Macie from retrieving the requisite data. Macie can't determine whether bucket policies for the buckets require server-side encryption of new objects.</p>
     pub fn unknown(&self) -> ::std::option::Option<i64> {
         self.unknown
     }
@@ -69,17 +69,17 @@ impl BucketCountPolicyAllowsUnencryptedObjectUploadsBuilder {
     pub fn get_denies_unencrypted_object_uploads(&self) -> &::std::option::Option<i64> {
         &self.denies_unencrypted_object_uploads
     }
-    /// <p>The total number of buckets that Amazon Macie wasn't able to evaluate server-side encryption requirements for. Macie can't determine whether the bucket policies for these buckets require server-side encryption of new objects.</p>
+    /// <p>The total number of buckets that Amazon Macie wasn't able to evaluate server-side encryption requirements for. For example, the buckets' permissions settings or a quota prevented Macie from retrieving the requisite data. Macie can't determine whether bucket policies for the buckets require server-side encryption of new objects.</p>
     pub fn unknown(mut self, input: i64) -> Self {
         self.unknown = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The total number of buckets that Amazon Macie wasn't able to evaluate server-side encryption requirements for. Macie can't determine whether the bucket policies for these buckets require server-side encryption of new objects.</p>
+    /// <p>The total number of buckets that Amazon Macie wasn't able to evaluate server-side encryption requirements for. For example, the buckets' permissions settings or a quota prevented Macie from retrieving the requisite data. Macie can't determine whether bucket policies for the buckets require server-side encryption of new objects.</p>
     pub fn set_unknown(mut self, input: ::std::option::Option<i64>) -> Self {
         self.unknown = input;
         self
     }
-    /// <p>The total number of buckets that Amazon Macie wasn't able to evaluate server-side encryption requirements for. Macie can't determine whether the bucket policies for these buckets require server-side encryption of new objects.</p>
+    /// <p>The total number of buckets that Amazon Macie wasn't able to evaluate server-side encryption requirements for. For example, the buckets' permissions settings or a quota prevented Macie from retrieving the requisite data. Macie can't determine whether bucket policies for the buckets require server-side encryption of new objects.</p>
     pub fn get_unknown(&self) -> &::std::option::Option<i64> {
         &self.unknown
     }

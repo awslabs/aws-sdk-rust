@@ -485,6 +485,7 @@ impl From<crate::operation::get_cost_and_usage::GetCostAndUsageError> for Error 
             crate::operation::get_cost_and_usage::GetCostAndUsageError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
             crate::operation::get_cost_and_usage::GetCostAndUsageError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::get_cost_and_usage::GetCostAndUsageError::RequestChangedException(inner) => Error::RequestChangedException(inner),
+            crate::operation::get_cost_and_usage::GetCostAndUsageError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_cost_and_usage::GetCostAndUsageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -529,6 +530,9 @@ impl From<crate::operation::get_cost_and_usage_with_resources::GetCostAndUsageWi
             crate::operation::get_cost_and_usage_with_resources::GetCostAndUsageWithResourcesError::RequestChangedException(inner) => {
                 Error::RequestChangedException(inner)
             }
+            crate::operation::get_cost_and_usage_with_resources::GetCostAndUsageWithResourcesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::get_cost_and_usage_with_resources::GetCostAndUsageWithResourcesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -557,6 +561,9 @@ impl From<crate::operation::get_cost_categories::GetCostCategoriesError> for Err
             }
             crate::operation::get_cost_categories::GetCostCategoriesError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::get_cost_categories::GetCostCategoriesError::RequestChangedException(inner) => Error::RequestChangedException(inner),
+            crate::operation::get_cost_categories::GetCostCategoriesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::get_cost_categories::GetCostCategoriesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -580,6 +587,7 @@ impl From<crate::operation::get_cost_forecast::GetCostForecastError> for Error {
         match err {
             crate::operation::get_cost_forecast::GetCostForecastError::DataUnavailableException(inner) => Error::DataUnavailableException(inner),
             crate::operation::get_cost_forecast::GetCostForecastError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::get_cost_forecast::GetCostForecastError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_cost_forecast::GetCostForecastError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -610,6 +618,9 @@ impl From<crate::operation::get_dimension_values::GetDimensionValuesError> for E
             }
             crate::operation::get_dimension_values::GetDimensionValuesError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::get_dimension_values::GetDimensionValuesError::RequestChangedException(inner) => Error::RequestChangedException(inner),
+            crate::operation::get_dimension_values::GetDimensionValuesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::get_dimension_values::GetDimensionValuesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -958,6 +969,7 @@ impl From<crate::operation::get_tags::GetTagsError> for Error {
             crate::operation::get_tags::GetTagsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
             crate::operation::get_tags::GetTagsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::get_tags::GetTagsError::RequestChangedException(inner) => Error::RequestChangedException(inner),
+            crate::operation::get_tags::GetTagsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_tags::GetTagsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -981,6 +993,7 @@ impl From<crate::operation::get_usage_forecast::GetUsageForecastError> for Error
         match err {
             crate::operation::get_usage_forecast::GetUsageForecastError::DataUnavailableException(inner) => Error::DataUnavailableException(inner),
             crate::operation::get_usage_forecast::GetUsageForecastError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::get_usage_forecast::GetUsageForecastError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_usage_forecast::GetUsageForecastError::UnresolvableUsageUnitException(inner) => {
                 Error::UnresolvableUsageUnitException(inner)
             }

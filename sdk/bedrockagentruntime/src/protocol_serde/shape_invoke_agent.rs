@@ -57,6 +57,21 @@ pub fn de_invoke_agent_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "ModelNotReadyException" => crate::operation::invoke_agent::InvokeAgentError::ModelNotReadyException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ModelNotReadyExceptionBuilder::default();
+                output = crate::protocol_serde::shape_model_not_ready_exception::de_model_not_ready_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::invoke_agent::InvokeAgentError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ValidationException" => crate::operation::invoke_agent::InvokeAgentError::ValidationException({
             #[allow(unused_mut)]
             let mut tmp = {

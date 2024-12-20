@@ -93,6 +93,10 @@ pub use crate::types::_external_sources_retrieve_and_generate_configuration::Ext
 
 pub use crate::types::_external_sources_generation_configuration::ExternalSourcesGenerationConfiguration;
 
+pub use crate::types::_performance_configuration::PerformanceConfiguration;
+
+pub use crate::types::_performance_config_latency::PerformanceConfigLatency;
+
 pub use crate::types::_inference_config::InferenceConfig;
 
 pub use crate::types::_text_inference_config::TextInferenceConfig;
@@ -341,6 +345,8 @@ pub use crate::types::_inline_agent_payload_part::InlineAgentPayloadPart;
 
 pub use crate::types::_attribution::Attribution;
 
+pub use crate::types::_inline_bedrock_model_configurations::InlineBedrockModelConfigurations;
+
 pub use crate::types::_prompt_override_configuration::PromptOverrideConfiguration;
 
 pub use crate::types::_prompt_configuration::PromptConfiguration;
@@ -398,6 +404,8 @@ pub use crate::types::_caller::Caller;
 pub use crate::types::_payload_part::PayloadPart;
 
 pub use crate::types::_streaming_configurations::StreamingConfigurations;
+
+pub use crate::types::_bedrock_model_configurations::BedrockModelConfigurations;
 
 pub use crate::types::_session_state::SessionState;
 
@@ -461,6 +469,8 @@ pub use crate::types::_flow_output_content::FlowOutputContent;
 
 pub use crate::types::_node_type::NodeType;
 
+pub use crate::types::_model_performance_configuration::ModelPerformanceConfiguration;
+
 pub use crate::types::_flow_input::FlowInput;
 
 pub use crate::types::_flow_input_content::FlowInputContent;
@@ -500,6 +510,8 @@ mod _api_schema;
 mod _attribute_type;
 
 mod _attribution;
+
+mod _bedrock_model_configurations;
 
 mod _bedrock_reranking_configuration;
 
@@ -683,6 +695,8 @@ mod _inline_agent_return_control_payload;
 
 mod _inline_agent_trace_part;
 
+mod _inline_bedrock_model_configurations;
+
 mod _inline_session_state;
 
 mod _input_file;
@@ -733,6 +747,8 @@ mod _metadata_configuration_for_reranking;
 
 mod _model_invocation_input;
 
+mod _model_performance_configuration;
+
 mod _node_type;
 
 mod _observation;
@@ -760,6 +776,10 @@ mod _parameter_type;
 mod _payload_part;
 
 mod _payload_type;
+
+mod _performance_config_latency;
+
+mod _performance_configuration;
 
 mod _post_processing_model_invocation_output;
 

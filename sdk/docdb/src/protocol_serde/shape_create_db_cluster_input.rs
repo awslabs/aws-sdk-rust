@@ -140,6 +140,16 @@ pub fn ser_create_db_cluster_input_input_input(
     if let Some(var_54) = &input.storage_type {
         scope_53.string(var_54);
     }
+    #[allow(unused_mut)]
+    let mut scope_55 = writer.prefix("ManageMasterUserPassword");
+    if let Some(var_56) = &input.manage_master_user_password {
+        scope_55.boolean(*var_56);
+    }
+    #[allow(unused_mut)]
+    let mut scope_57 = writer.prefix("MasterUserSecretKmsKeyId");
+    if let Some(var_58) = &input.master_user_secret_kms_key_id {
+        scope_57.string(var_58);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

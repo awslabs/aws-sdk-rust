@@ -32,6 +32,8 @@ pub struct UpdateSiteRackPhysicalPropertiesInput {
     /// <p><b>AH530P7W (red)</b> – 3P+N+E, 7hr; 30A; three phase</p></li>
     /// <li>
     /// <p><b>AH532P6W (red)</b> – 3P+N+E, 6hr; 32A; three phase</p></li>
+    /// <li>
+    /// <p><b>CS8365C</b> – (common in US); 3P+E, 50A; three phase</p></li>
     /// </ul></li>
     /// </ul>
     pub power_connector: ::std::option::Option<crate::types::PowerConnector>,
@@ -120,6 +122,8 @@ impl UpdateSiteRackPhysicalPropertiesInput {
     /// <p><b>AH530P7W (red)</b> – 3P+N+E, 7hr; 30A; three phase</p></li>
     /// <li>
     /// <p><b>AH532P6W (red)</b> – 3P+N+E, 6hr; 32A; three phase</p></li>
+    /// <li>
+    /// <p><b>CS8365C</b> – (common in US); 3P+E, 50A; three phase</p></li>
     /// </ul></li>
     /// </ul>
     pub fn power_connector(&self) -> ::std::option::Option<&crate::types::PowerConnector> {
@@ -287,6 +291,8 @@ impl UpdateSiteRackPhysicalPropertiesInputBuilder {
     /// <p><b>AH530P7W (red)</b> – 3P+N+E, 7hr; 30A; three phase</p></li>
     /// <li>
     /// <p><b>AH532P6W (red)</b> – 3P+N+E, 6hr; 32A; three phase</p></li>
+    /// <li>
+    /// <p><b>CS8365C</b> – (common in US); 3P+E, 50A; three phase</p></li>
     /// </ul></li>
     /// </ul>
     pub fn power_connector(mut self, input: crate::types::PowerConnector) -> Self {
@@ -310,6 +316,8 @@ impl UpdateSiteRackPhysicalPropertiesInputBuilder {
     /// <p><b>AH530P7W (red)</b> – 3P+N+E, 7hr; 30A; three phase</p></li>
     /// <li>
     /// <p><b>AH532P6W (red)</b> – 3P+N+E, 6hr; 32A; three phase</p></li>
+    /// <li>
+    /// <p><b>CS8365C</b> – (common in US); 3P+E, 50A; three phase</p></li>
     /// </ul></li>
     /// </ul>
     pub fn set_power_connector(mut self, input: ::std::option::Option<crate::types::PowerConnector>) -> Self {
@@ -333,6 +341,8 @@ impl UpdateSiteRackPhysicalPropertiesInputBuilder {
     /// <p><b>AH530P7W (red)</b> – 3P+N+E, 7hr; 30A; three phase</p></li>
     /// <li>
     /// <p><b>AH532P6W (red)</b> – 3P+N+E, 6hr; 32A; three phase</p></li>
+    /// <li>
+    /// <p><b>CS8365C</b> – (common in US); 3P+E, 50A; three phase</p></li>
     /// </ul></li>
     /// </ul>
     pub fn get_power_connector(&self) -> &::std::option::Option<crate::types::PowerConnector> {

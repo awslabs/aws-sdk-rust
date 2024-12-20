@@ -29,7 +29,7 @@ pub struct DescribeAutoMlJobOutput {
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>Returns a list of reasons for partial failures within an AutoML job.</p>
     pub partial_failure_reasons: ::std::option::Option<::std::vec::Vec<crate::types::AutoMlPartialFailureReason>>,
-    /// <p>The best model candidate selected by SageMaker Autopilot using both the best objective metric and lowest <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">InferenceLatency</a> for an experiment.</p>
+    /// <p>The best model candidate selected by SageMaker AI Autopilot using both the best objective metric and lowest <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">InferenceLatency</a> for an experiment.</p>
     pub best_candidate: ::std::option::Option<crate::types::AutoMlCandidate>,
     /// <p>Returns the status of the AutoML job.</p>
     pub auto_ml_job_status: ::std::option::Option<crate::types::AutoMlJobStatus>,
@@ -104,7 +104,7 @@ impl DescribeAutoMlJobOutput {
     pub fn partial_failure_reasons(&self) -> &[crate::types::AutoMlPartialFailureReason] {
         self.partial_failure_reasons.as_deref().unwrap_or_default()
     }
-    /// <p>The best model candidate selected by SageMaker Autopilot using both the best objective metric and lowest <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">InferenceLatency</a> for an experiment.</p>
+    /// <p>The best model candidate selected by SageMaker AI Autopilot using both the best objective metric and lowest <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">InferenceLatency</a> for an experiment.</p>
     pub fn best_candidate(&self) -> ::std::option::Option<&crate::types::AutoMlCandidate> {
         self.best_candidate.as_ref()
     }
@@ -377,17 +377,17 @@ impl DescribeAutoMlJobOutputBuilder {
     pub fn get_partial_failure_reasons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoMlPartialFailureReason>> {
         &self.partial_failure_reasons
     }
-    /// <p>The best model candidate selected by SageMaker Autopilot using both the best objective metric and lowest <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">InferenceLatency</a> for an experiment.</p>
+    /// <p>The best model candidate selected by SageMaker AI Autopilot using both the best objective metric and lowest <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">InferenceLatency</a> for an experiment.</p>
     pub fn best_candidate(mut self, input: crate::types::AutoMlCandidate) -> Self {
         self.best_candidate = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The best model candidate selected by SageMaker Autopilot using both the best objective metric and lowest <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">InferenceLatency</a> for an experiment.</p>
+    /// <p>The best model candidate selected by SageMaker AI Autopilot using both the best objective metric and lowest <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">InferenceLatency</a> for an experiment.</p>
     pub fn set_best_candidate(mut self, input: ::std::option::Option<crate::types::AutoMlCandidate>) -> Self {
         self.best_candidate = input;
         self
     }
-    /// <p>The best model candidate selected by SageMaker Autopilot using both the best objective metric and lowest <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">InferenceLatency</a> for an experiment.</p>
+    /// <p>The best model candidate selected by SageMaker AI Autopilot using both the best objective metric and lowest <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">InferenceLatency</a> for an experiment.</p>
     pub fn get_best_candidate(&self) -> &::std::option::Option<crate::types::AutoMlCandidate> {
         &self.best_candidate
     }

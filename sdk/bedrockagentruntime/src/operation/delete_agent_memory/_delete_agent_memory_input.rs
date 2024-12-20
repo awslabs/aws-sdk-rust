@@ -9,6 +9,8 @@ pub struct DeleteAgentMemoryInput {
     pub agent_alias_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the memory.</p>
     pub memory_id: ::std::option::Option<::std::string::String>,
+    /// <p>The unique session identifier of the memory.</p>
+    pub session_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAgentMemoryInput {
     /// <p>The unique identifier of the agent to which the alias belongs.</p>
@@ -22,6 +24,10 @@ impl DeleteAgentMemoryInput {
     /// <p>The unique identifier of the memory.</p>
     pub fn memory_id(&self) -> ::std::option::Option<&str> {
         self.memory_id.as_deref()
+    }
+    /// <p>The unique session identifier of the memory.</p>
+    pub fn session_id(&self) -> ::std::option::Option<&str> {
+        self.session_id.as_deref()
     }
 }
 impl DeleteAgentMemoryInput {
@@ -38,6 +44,7 @@ pub struct DeleteAgentMemoryInputBuilder {
     pub(crate) agent_id: ::std::option::Option<::std::string::String>,
     pub(crate) agent_alias_id: ::std::option::Option<::std::string::String>,
     pub(crate) memory_id: ::std::option::Option<::std::string::String>,
+    pub(crate) session_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAgentMemoryInputBuilder {
     /// <p>The unique identifier of the agent to which the alias belongs.</p>
@@ -84,6 +91,20 @@ impl DeleteAgentMemoryInputBuilder {
     pub fn get_memory_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.memory_id
     }
+    /// <p>The unique session identifier of the memory.</p>
+    pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.session_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique session identifier of the memory.</p>
+    pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.session_id = input;
+        self
+    }
+    /// <p>The unique session identifier of the memory.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
+    }
     /// Consumes the builder and constructs a [`DeleteAgentMemoryInput`](crate::operation::delete_agent_memory::DeleteAgentMemoryInput).
     pub fn build(
         self,
@@ -92,6 +113,7 @@ impl DeleteAgentMemoryInputBuilder {
             agent_id: self.agent_id,
             agent_alias_id: self.agent_alias_id,
             memory_id: self.memory_id,
+            session_id: self.session_id,
         })
     }
 }

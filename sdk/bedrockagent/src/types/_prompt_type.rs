@@ -13,6 +13,7 @@
 /// # let prompttype = unimplemented!();
 /// match prompttype {
 ///     PromptType::KnowledgeBaseResponseGeneration => { /* ... */ },
+///     PromptType::MemorySummarization => { /* ... */ },
 ///     PromptType::Orchestration => { /* ... */ },
 ///     PromptType::PostProcessing => { /* ... */ },
 ///     PromptType::PreProcessing => { /* ... */ },
@@ -47,6 +48,8 @@ pub enum PromptType {
     #[allow(missing_docs)] // documentation missing in model
     KnowledgeBaseResponseGeneration,
     #[allow(missing_docs)] // documentation missing in model
+    MemorySummarization,
+    #[allow(missing_docs)] // documentation missing in model
     Orchestration,
     #[allow(missing_docs)] // documentation missing in model
     PostProcessing,
@@ -60,6 +63,7 @@ impl ::std::convert::From<&str> for PromptType {
     fn from(s: &str) -> Self {
         match s {
             "KNOWLEDGE_BASE_RESPONSE_GENERATION" => PromptType::KnowledgeBaseResponseGeneration,
+            "MEMORY_SUMMARIZATION" => PromptType::MemorySummarization,
             "ORCHESTRATION" => PromptType::Orchestration,
             "POST_PROCESSING" => PromptType::PostProcessing,
             "PRE_PROCESSING" => PromptType::PreProcessing,
@@ -79,6 +83,7 @@ impl PromptType {
     pub fn as_str(&self) -> &str {
         match self {
             PromptType::KnowledgeBaseResponseGeneration => "KNOWLEDGE_BASE_RESPONSE_GENERATION",
+            PromptType::MemorySummarization => "MEMORY_SUMMARIZATION",
             PromptType::Orchestration => "ORCHESTRATION",
             PromptType::PostProcessing => "POST_PROCESSING",
             PromptType::PreProcessing => "PRE_PROCESSING",
@@ -87,7 +92,13 @@ impl PromptType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["KNOWLEDGE_BASE_RESPONSE_GENERATION", "ORCHESTRATION", "POST_PROCESSING", "PRE_PROCESSING"]
+        &[
+            "KNOWLEDGE_BASE_RESPONSE_GENERATION",
+            "MEMORY_SUMMARIZATION",
+            "ORCHESTRATION",
+            "POST_PROCESSING",
+            "PRE_PROCESSING",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for PromptType {
@@ -111,6 +122,7 @@ impl ::std::fmt::Display for PromptType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             PromptType::KnowledgeBaseResponseGeneration => write!(f, "KNOWLEDGE_BASE_RESPONSE_GENERATION"),
+            PromptType::MemorySummarization => write!(f, "MEMORY_SUMMARIZATION"),
             PromptType::Orchestration => write!(f, "ORCHESTRATION"),
             PromptType::PostProcessing => write!(f, "POST_PROCESSING"),
             PromptType::PreProcessing => write!(f, "PRE_PROCESSING"),

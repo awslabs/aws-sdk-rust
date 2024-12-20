@@ -5,6 +5,12 @@
 pub struct ListBillingViewsInput {
     /// <p>The time range for the billing views listed. <code>PRIMARY</code> billing view is always listed. <code>BILLING_GROUP</code> billing views are listed for time ranges when the associated billing group resource in Billing Conductor is active. The time range must be within one calendar month.</p>
     pub active_time_range: ::std::option::Option<crate::types::ActiveTimeRange>,
+    /// <p>The Amazon Resource Name (ARN) that can be used to uniquely identify the billing view.</p>
+    pub arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The type of billing view.</p>
+    pub billing_view_types: ::std::option::Option<::std::vec::Vec<crate::types::BillingViewType>>,
+    /// <p>The list of owners of the billing view.</p>
+    pub owner_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of billing views to retrieve. Default is 100.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The pagination token that is used on subsequent calls to list billing views.</p>
@@ -14,6 +20,22 @@ impl ListBillingViewsInput {
     /// <p>The time range for the billing views listed. <code>PRIMARY</code> billing view is always listed. <code>BILLING_GROUP</code> billing views are listed for time ranges when the associated billing group resource in Billing Conductor is active. The time range must be within one calendar month.</p>
     pub fn active_time_range(&self) -> ::std::option::Option<&crate::types::ActiveTimeRange> {
         self.active_time_range.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) that can be used to uniquely identify the billing view.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.arns.is_none()`.
+    pub fn arns(&self) -> &[::std::string::String] {
+        self.arns.as_deref().unwrap_or_default()
+    }
+    /// <p>The type of billing view.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.billing_view_types.is_none()`.
+    pub fn billing_view_types(&self) -> &[crate::types::BillingViewType] {
+        self.billing_view_types.as_deref().unwrap_or_default()
+    }
+    /// <p>The list of owners of the billing view.</p>
+    pub fn owner_account_id(&self) -> ::std::option::Option<&str> {
+        self.owner_account_id.as_deref()
     }
     /// <p>The maximum number of billing views to retrieve. Default is 100.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -36,12 +58,14 @@ impl ListBillingViewsInput {
 #[non_exhaustive]
 pub struct ListBillingViewsInputBuilder {
     pub(crate) active_time_range: ::std::option::Option<crate::types::ActiveTimeRange>,
+    pub(crate) arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) billing_view_types: ::std::option::Option<::std::vec::Vec<crate::types::BillingViewType>>,
+    pub(crate) owner_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListBillingViewsInputBuilder {
     /// <p>The time range for the billing views listed. <code>PRIMARY</code> billing view is always listed. <code>BILLING_GROUP</code> billing views are listed for time ranges when the associated billing group resource in Billing Conductor is active. The time range must be within one calendar month.</p>
-    /// This field is required.
     pub fn active_time_range(mut self, input: crate::types::ActiveTimeRange) -> Self {
         self.active_time_range = ::std::option::Option::Some(input);
         self
@@ -54,6 +78,60 @@ impl ListBillingViewsInputBuilder {
     /// <p>The time range for the billing views listed. <code>PRIMARY</code> billing view is always listed. <code>BILLING_GROUP</code> billing views are listed for time ranges when the associated billing group resource in Billing Conductor is active. The time range must be within one calendar month.</p>
     pub fn get_active_time_range(&self) -> &::std::option::Option<crate::types::ActiveTimeRange> {
         &self.active_time_range
+    }
+    /// Appends an item to `arns`.
+    ///
+    /// To override the contents of this collection use [`set_arns`](Self::set_arns).
+    ///
+    /// <p>The Amazon Resource Name (ARN) that can be used to uniquely identify the billing view.</p>
+    pub fn arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.arns.unwrap_or_default();
+        v.push(input.into());
+        self.arns = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) that can be used to uniquely identify the billing view.</p>
+    pub fn set_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.arns = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) that can be used to uniquely identify the billing view.</p>
+    pub fn get_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.arns
+    }
+    /// Appends an item to `billing_view_types`.
+    ///
+    /// To override the contents of this collection use [`set_billing_view_types`](Self::set_billing_view_types).
+    ///
+    /// <p>The type of billing view.</p>
+    pub fn billing_view_types(mut self, input: crate::types::BillingViewType) -> Self {
+        let mut v = self.billing_view_types.unwrap_or_default();
+        v.push(input);
+        self.billing_view_types = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The type of billing view.</p>
+    pub fn set_billing_view_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BillingViewType>>) -> Self {
+        self.billing_view_types = input;
+        self
+    }
+    /// <p>The type of billing view.</p>
+    pub fn get_billing_view_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BillingViewType>> {
+        &self.billing_view_types
+    }
+    /// <p>The list of owners of the billing view.</p>
+    pub fn owner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.owner_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The list of owners of the billing view.</p>
+    pub fn set_owner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.owner_account_id = input;
+        self
+    }
+    /// <p>The list of owners of the billing view.</p>
+    pub fn get_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_account_id
     }
     /// <p>The maximum number of billing views to retrieve. Default is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -89,6 +167,9 @@ impl ListBillingViewsInputBuilder {
     ) -> ::std::result::Result<crate::operation::list_billing_views::ListBillingViewsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_billing_views::ListBillingViewsInput {
             active_time_range: self.active_time_range,
+            arns: self.arns,
+            billing_view_types: self.billing_view_types,
+            owner_account_id: self.owner_account_id,
             max_results: self.max_results,
             next_token: self.next_token,
         })

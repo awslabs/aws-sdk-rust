@@ -12,7 +12,7 @@ pub struct Detection {
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the custom data identifier or managed data identifier that detected the sensitive data. For a managed data identifier, this value is the same as the unique identifier (id).</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies whether occurrences of this type of sensitive data are excluded (true) or included (false) in the bucket's sensitivity score.</p>
+    /// <p>Specifies whether occurrences of this type of sensitive data are excluded (true) or included (false) in the bucket's sensitivity score, if the score is calculated by Amazon Macie.</p>
     pub suppressed: ::std::option::Option<bool>,
     /// <p>The type of data identifier that detected the sensitive data. Possible values are: CUSTOM, for a custom data identifier; and, MANAGED, for a managed data identifier.</p>
     pub r#type: ::std::option::Option<crate::types::DataIdentifierType>,
@@ -34,7 +34,7 @@ impl Detection {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Specifies whether occurrences of this type of sensitive data are excluded (true) or included (false) in the bucket's sensitivity score.</p>
+    /// <p>Specifies whether occurrences of this type of sensitive data are excluded (true) or included (false) in the bucket's sensitivity score, if the score is calculated by Amazon Macie.</p>
     pub fn suppressed(&self) -> ::std::option::Option<bool> {
         self.suppressed
     }
@@ -118,17 +118,17 @@ impl DetectionBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>Specifies whether occurrences of this type of sensitive data are excluded (true) or included (false) in the bucket's sensitivity score.</p>
+    /// <p>Specifies whether occurrences of this type of sensitive data are excluded (true) or included (false) in the bucket's sensitivity score, if the score is calculated by Amazon Macie.</p>
     pub fn suppressed(mut self, input: bool) -> Self {
         self.suppressed = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether occurrences of this type of sensitive data are excluded (true) or included (false) in the bucket's sensitivity score.</p>
+    /// <p>Specifies whether occurrences of this type of sensitive data are excluded (true) or included (false) in the bucket's sensitivity score, if the score is calculated by Amazon Macie.</p>
     pub fn set_suppressed(mut self, input: ::std::option::Option<bool>) -> Self {
         self.suppressed = input;
         self
     }
-    /// <p>Specifies whether occurrences of this type of sensitive data are excluded (true) or included (false) in the bucket's sensitivity score.</p>
+    /// <p>Specifies whether occurrences of this type of sensitive data are excluded (true) or included (false) in the bucket's sensitivity score, if the score is calculated by Amazon Macie.</p>
     pub fn get_suppressed(&self) -> &::std::option::Option<bool> {
         &self.suppressed
     }

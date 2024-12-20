@@ -12,6 +12,8 @@ pub struct ExternalSourcesGenerationConfiguration {
     pub inference_config: ::std::option::Option<crate::types::InferenceConfig>,
     /// <p>Additional model parameters and their corresponding values not included in the textInferenceConfig structure for an external source. Takes in custom model parameters specific to the language model being used.</p>
     pub additional_model_request_fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>>,
+    /// <p>The latency configuration for the model.</p>
+    pub performance_config: ::std::option::Option<crate::types::PerformanceConfiguration>,
 }
 impl ExternalSourcesGenerationConfiguration {
     /// <p>Contain the textPromptTemplate string for the external source wrapper object.</p>
@@ -32,6 +34,10 @@ impl ExternalSourcesGenerationConfiguration {
     ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>> {
         self.additional_model_request_fields.as_ref()
     }
+    /// <p>The latency configuration for the model.</p>
+    pub fn performance_config(&self) -> ::std::option::Option<&crate::types::PerformanceConfiguration> {
+        self.performance_config.as_ref()
+    }
 }
 impl ExternalSourcesGenerationConfiguration {
     /// Creates a new builder-style object to manufacture [`ExternalSourcesGenerationConfiguration`](crate::types::ExternalSourcesGenerationConfiguration).
@@ -49,6 +55,7 @@ pub struct ExternalSourcesGenerationConfigurationBuilder {
     pub(crate) inference_config: ::std::option::Option<crate::types::InferenceConfig>,
     pub(crate) additional_model_request_fields:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>>,
+    pub(crate) performance_config: ::std::option::Option<crate::types::PerformanceConfiguration>,
 }
 impl ExternalSourcesGenerationConfigurationBuilder {
     /// <p>Contain the textPromptTemplate string for the external source wrapper object.</p>
@@ -118,6 +125,20 @@ impl ExternalSourcesGenerationConfigurationBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>> {
         &self.additional_model_request_fields
     }
+    /// <p>The latency configuration for the model.</p>
+    pub fn performance_config(mut self, input: crate::types::PerformanceConfiguration) -> Self {
+        self.performance_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The latency configuration for the model.</p>
+    pub fn set_performance_config(mut self, input: ::std::option::Option<crate::types::PerformanceConfiguration>) -> Self {
+        self.performance_config = input;
+        self
+    }
+    /// <p>The latency configuration for the model.</p>
+    pub fn get_performance_config(&self) -> &::std::option::Option<crate::types::PerformanceConfiguration> {
+        &self.performance_config
+    }
     /// Consumes the builder and constructs a [`ExternalSourcesGenerationConfiguration`](crate::types::ExternalSourcesGenerationConfiguration).
     pub fn build(self) -> crate::types::ExternalSourcesGenerationConfiguration {
         crate::types::ExternalSourcesGenerationConfiguration {
@@ -125,6 +146,7 @@ impl ExternalSourcesGenerationConfigurationBuilder {
             guardrail_configuration: self.guardrail_configuration,
             inference_config: self.inference_config,
             additional_model_request_fields: self.additional_model_request_fields,
+            performance_config: self.performance_config,
         }
     }
 }

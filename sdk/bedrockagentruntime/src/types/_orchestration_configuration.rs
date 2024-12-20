@@ -12,6 +12,8 @@ pub struct OrchestrationConfiguration {
     pub additional_model_request_fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>>,
     /// <p>To split up the prompt and retrieve multiple sources, set the transformation type to <code>QUERY_DECOMPOSITION</code>.</p>
     pub query_transformation_configuration: ::std::option::Option<crate::types::QueryTransformationConfiguration>,
+    /// <p>The latency configuration for the model.</p>
+    pub performance_config: ::std::option::Option<crate::types::PerformanceConfiguration>,
 }
 impl OrchestrationConfiguration {
     /// <p>Contains the template for the prompt that's sent to the model. Orchestration prompts must include the <code>$conversation_history$</code> and <code>$output_format_instructions$</code> variables. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-placeholders.html">Use placeholder variables</a> in the user guide.</p>
@@ -32,6 +34,10 @@ impl OrchestrationConfiguration {
     pub fn query_transformation_configuration(&self) -> ::std::option::Option<&crate::types::QueryTransformationConfiguration> {
         self.query_transformation_configuration.as_ref()
     }
+    /// <p>The latency configuration for the model.</p>
+    pub fn performance_config(&self) -> ::std::option::Option<&crate::types::PerformanceConfiguration> {
+        self.performance_config.as_ref()
+    }
 }
 impl OrchestrationConfiguration {
     /// Creates a new builder-style object to manufacture [`OrchestrationConfiguration`](crate::types::OrchestrationConfiguration).
@@ -49,6 +55,7 @@ pub struct OrchestrationConfigurationBuilder {
     pub(crate) additional_model_request_fields:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>>,
     pub(crate) query_transformation_configuration: ::std::option::Option<crate::types::QueryTransformationConfiguration>,
+    pub(crate) performance_config: ::std::option::Option<crate::types::PerformanceConfiguration>,
 }
 impl OrchestrationConfigurationBuilder {
     /// <p>Contains the template for the prompt that's sent to the model. Orchestration prompts must include the <code>$conversation_history$</code> and <code>$output_format_instructions$</code> variables. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-placeholders.html">Use placeholder variables</a> in the user guide.</p>
@@ -118,6 +125,20 @@ impl OrchestrationConfigurationBuilder {
     pub fn get_query_transformation_configuration(&self) -> &::std::option::Option<crate::types::QueryTransformationConfiguration> {
         &self.query_transformation_configuration
     }
+    /// <p>The latency configuration for the model.</p>
+    pub fn performance_config(mut self, input: crate::types::PerformanceConfiguration) -> Self {
+        self.performance_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The latency configuration for the model.</p>
+    pub fn set_performance_config(mut self, input: ::std::option::Option<crate::types::PerformanceConfiguration>) -> Self {
+        self.performance_config = input;
+        self
+    }
+    /// <p>The latency configuration for the model.</p>
+    pub fn get_performance_config(&self) -> &::std::option::Option<crate::types::PerformanceConfiguration> {
+        &self.performance_config
+    }
     /// Consumes the builder and constructs a [`OrchestrationConfiguration`](crate::types::OrchestrationConfiguration).
     pub fn build(self) -> crate::types::OrchestrationConfiguration {
         crate::types::OrchestrationConfiguration {
@@ -125,6 +146,7 @@ impl OrchestrationConfigurationBuilder {
             inference_config: self.inference_config,
             additional_model_request_fields: self.additional_model_request_fields,
             query_transformation_configuration: self.query_transformation_configuration,
+            performance_config: self.performance_config,
         }
     }
 }

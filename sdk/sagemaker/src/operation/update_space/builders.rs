@@ -22,7 +22,9 @@ impl crate::operation::update_space::builders::UpdateSpaceInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateSpace`.
 ///
-/// <p>Updates the settings of a space.</p>
+/// <p>Updates the settings of a space.</p><note>
+/// <p>You can't edit the app type of a space in the <code>SpaceSettings</code>.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateSpaceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

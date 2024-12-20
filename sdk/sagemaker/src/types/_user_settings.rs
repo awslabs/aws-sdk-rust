@@ -11,10 +11,10 @@ pub struct UserSettings {
     /// <p>The security groups for the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.</p>
     /// <p>Optional when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>PublicInternetOnly</code>.</p>
     /// <p>Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>, unless specified as part of the <code>DefaultUserSettings</code> for the domain.</p>
-    /// <p>Amazon SageMaker adds a security group to allow NFS traffic from Amazon SageMaker Studio. Therefore, the number of security groups that you can specify is one less than the maximum number shown.</p>
+    /// <p>Amazon SageMaker AI adds a security group to allow NFS traffic from Amazon SageMaker AI Studio. Therefore, the number of security groups that you can specify is one less than the maximum number shown.</p>
     /// <p>SageMaker applies these settings only to private spaces that the user creates in the domain. SageMaker doesn't apply these settings to shared spaces.</p>
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Specifies options for sharing Amazon SageMaker Studio notebooks.</p>
+    /// <p>Specifies options for sharing Amazon SageMaker AI Studio notebooks.</p>
     pub sharing_settings: ::std::option::Option<crate::types::SharingSettings>,
     /// <p>The Jupyter server's app settings.</p>
     pub jupyter_server_app_settings: ::std::option::Option<crate::types::JupyterServerAppSettings>,
@@ -51,7 +51,7 @@ pub struct UserSettings {
     /// <p>Details about the POSIX identity that is used for file system operations.</p>
     /// <p>SageMaker applies these settings only to private spaces that the user creates in the domain. SageMaker doesn't apply these settings to shared spaces.</p>
     pub custom_posix_user_config: ::std::option::Option<crate::types::CustomPosixUserConfig>,
-    /// <p>The settings for assigning a custom file system to a user profile. Permitted users can access this file system in Amazon SageMaker Studio.</p>
+    /// <p>The settings for assigning a custom file system to a user profile. Permitted users can access this file system in Amazon SageMaker AI Studio.</p>
     /// <p>SageMaker applies these settings only to private spaces that the user creates in the domain. SageMaker doesn't apply these settings to shared spaces.</p>
     pub custom_file_system_configs: ::std::option::Option<::std::vec::Vec<crate::types::CustomFileSystemConfig>>,
     /// <p>Studio settings. If these settings are applied on a user level, they take priority over the settings applied on a domain level.</p>
@@ -69,14 +69,14 @@ impl UserSettings {
     /// <p>The security groups for the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.</p>
     /// <p>Optional when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>PublicInternetOnly</code>.</p>
     /// <p>Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>, unless specified as part of the <code>DefaultUserSettings</code> for the domain.</p>
-    /// <p>Amazon SageMaker adds a security group to allow NFS traffic from Amazon SageMaker Studio. Therefore, the number of security groups that you can specify is one less than the maximum number shown.</p>
+    /// <p>Amazon SageMaker AI adds a security group to allow NFS traffic from Amazon SageMaker AI Studio. Therefore, the number of security groups that you can specify is one less than the maximum number shown.</p>
     /// <p>SageMaker applies these settings only to private spaces that the user creates in the domain. SageMaker doesn't apply these settings to shared spaces.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
     pub fn security_groups(&self) -> &[::std::string::String] {
         self.security_groups.as_deref().unwrap_or_default()
     }
-    /// <p>Specifies options for sharing Amazon SageMaker Studio notebooks.</p>
+    /// <p>Specifies options for sharing Amazon SageMaker AI Studio notebooks.</p>
     pub fn sharing_settings(&self) -> ::std::option::Option<&crate::types::SharingSettings> {
         self.sharing_settings.as_ref()
     }
@@ -139,7 +139,7 @@ impl UserSettings {
     pub fn custom_posix_user_config(&self) -> ::std::option::Option<&crate::types::CustomPosixUserConfig> {
         self.custom_posix_user_config.as_ref()
     }
-    /// <p>The settings for assigning a custom file system to a user profile. Permitted users can access this file system in Amazon SageMaker Studio.</p>
+    /// <p>The settings for assigning a custom file system to a user profile. Permitted users can access this file system in Amazon SageMaker AI Studio.</p>
     /// <p>SageMaker applies these settings only to private spaces that the user creates in the domain. SageMaker doesn't apply these settings to shared spaces.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_file_system_configs.is_none()`.
@@ -211,7 +211,7 @@ impl UserSettingsBuilder {
     /// <p>The security groups for the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.</p>
     /// <p>Optional when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>PublicInternetOnly</code>.</p>
     /// <p>Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>, unless specified as part of the <code>DefaultUserSettings</code> for the domain.</p>
-    /// <p>Amazon SageMaker adds a security group to allow NFS traffic from Amazon SageMaker Studio. Therefore, the number of security groups that you can specify is one less than the maximum number shown.</p>
+    /// <p>Amazon SageMaker AI adds a security group to allow NFS traffic from Amazon SageMaker AI Studio. Therefore, the number of security groups that you can specify is one less than the maximum number shown.</p>
     /// <p>SageMaker applies these settings only to private spaces that the user creates in the domain. SageMaker doesn't apply these settings to shared spaces.</p>
     pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
@@ -222,7 +222,7 @@ impl UserSettingsBuilder {
     /// <p>The security groups for the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.</p>
     /// <p>Optional when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>PublicInternetOnly</code>.</p>
     /// <p>Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>, unless specified as part of the <code>DefaultUserSettings</code> for the domain.</p>
-    /// <p>Amazon SageMaker adds a security group to allow NFS traffic from Amazon SageMaker Studio. Therefore, the number of security groups that you can specify is one less than the maximum number shown.</p>
+    /// <p>Amazon SageMaker AI adds a security group to allow NFS traffic from Amazon SageMaker AI Studio. Therefore, the number of security groups that you can specify is one less than the maximum number shown.</p>
     /// <p>SageMaker applies these settings only to private spaces that the user creates in the domain. SageMaker doesn't apply these settings to shared spaces.</p>
     pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_groups = input;
@@ -231,22 +231,22 @@ impl UserSettingsBuilder {
     /// <p>The security groups for the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.</p>
     /// <p>Optional when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>PublicInternetOnly</code>.</p>
     /// <p>Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>, unless specified as part of the <code>DefaultUserSettings</code> for the domain.</p>
-    /// <p>Amazon SageMaker adds a security group to allow NFS traffic from Amazon SageMaker Studio. Therefore, the number of security groups that you can specify is one less than the maximum number shown.</p>
+    /// <p>Amazon SageMaker AI adds a security group to allow NFS traffic from Amazon SageMaker AI Studio. Therefore, the number of security groups that you can specify is one less than the maximum number shown.</p>
     /// <p>SageMaker applies these settings only to private spaces that the user creates in the domain. SageMaker doesn't apply these settings to shared spaces.</p>
     pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_groups
     }
-    /// <p>Specifies options for sharing Amazon SageMaker Studio notebooks.</p>
+    /// <p>Specifies options for sharing Amazon SageMaker AI Studio notebooks.</p>
     pub fn sharing_settings(mut self, input: crate::types::SharingSettings) -> Self {
         self.sharing_settings = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies options for sharing Amazon SageMaker Studio notebooks.</p>
+    /// <p>Specifies options for sharing Amazon SageMaker AI Studio notebooks.</p>
     pub fn set_sharing_settings(mut self, input: ::std::option::Option<crate::types::SharingSettings>) -> Self {
         self.sharing_settings = input;
         self
     }
-    /// <p>Specifies options for sharing Amazon SageMaker Studio notebooks.</p>
+    /// <p>Specifies options for sharing Amazon SageMaker AI Studio notebooks.</p>
     pub fn get_sharing_settings(&self) -> &::std::option::Option<crate::types::SharingSettings> {
         &self.sharing_settings
     }
@@ -455,7 +455,7 @@ impl UserSettingsBuilder {
     ///
     /// To override the contents of this collection use [`set_custom_file_system_configs`](Self::set_custom_file_system_configs).
     ///
-    /// <p>The settings for assigning a custom file system to a user profile. Permitted users can access this file system in Amazon SageMaker Studio.</p>
+    /// <p>The settings for assigning a custom file system to a user profile. Permitted users can access this file system in Amazon SageMaker AI Studio.</p>
     /// <p>SageMaker applies these settings only to private spaces that the user creates in the domain. SageMaker doesn't apply these settings to shared spaces.</p>
     pub fn custom_file_system_configs(mut self, input: crate::types::CustomFileSystemConfig) -> Self {
         let mut v = self.custom_file_system_configs.unwrap_or_default();
@@ -463,13 +463,13 @@ impl UserSettingsBuilder {
         self.custom_file_system_configs = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The settings for assigning a custom file system to a user profile. Permitted users can access this file system in Amazon SageMaker Studio.</p>
+    /// <p>The settings for assigning a custom file system to a user profile. Permitted users can access this file system in Amazon SageMaker AI Studio.</p>
     /// <p>SageMaker applies these settings only to private spaces that the user creates in the domain. SageMaker doesn't apply these settings to shared spaces.</p>
     pub fn set_custom_file_system_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomFileSystemConfig>>) -> Self {
         self.custom_file_system_configs = input;
         self
     }
-    /// <p>The settings for assigning a custom file system to a user profile. Permitted users can access this file system in Amazon SageMaker Studio.</p>
+    /// <p>The settings for assigning a custom file system to a user profile. Permitted users can access this file system in Amazon SageMaker AI Studio.</p>
     /// <p>SageMaker applies these settings only to private spaces that the user creates in the domain. SageMaker doesn't apply these settings to shared spaces.</p>
     pub fn get_custom_file_system_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomFileSystemConfig>> {
         &self.custom_file_system_configs

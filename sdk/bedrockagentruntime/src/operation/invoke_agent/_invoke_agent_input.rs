@@ -23,7 +23,11 @@ pub struct InvokeAgentInput {
     pub input_text: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the agent memory.</p>
     pub memory_id: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the configurations for streaming.</p>
+    /// <p>Model performance settings for the request.</p>
+    pub bedrock_model_configurations: ::std::option::Option<crate::types::BedrockModelConfigurations>,
+    /// <p>Specifies the configurations for streaming.</p><note>
+    /// <p>To use agent streaming, you need permissions to perform the <code>bedrock:InvokeModelWithResponseStream</code> action.</p>
+    /// </note>
     pub streaming_configurations: ::std::option::Option<crate::types::StreamingConfigurations>,
     /// <p>The ARN of the resource making the request.</p>
     pub source_arn: ::std::option::Option<::std::string::String>,
@@ -65,7 +69,13 @@ impl InvokeAgentInput {
     pub fn memory_id(&self) -> ::std::option::Option<&str> {
         self.memory_id.as_deref()
     }
-    /// <p>Specifies the configurations for streaming.</p>
+    /// <p>Model performance settings for the request.</p>
+    pub fn bedrock_model_configurations(&self) -> ::std::option::Option<&crate::types::BedrockModelConfigurations> {
+        self.bedrock_model_configurations.as_ref()
+    }
+    /// <p>Specifies the configurations for streaming.</p><note>
+    /// <p>To use agent streaming, you need permissions to perform the <code>bedrock:InvokeModelWithResponseStream</code> action.</p>
+    /// </note>
     pub fn streaming_configurations(&self) -> ::std::option::Option<&crate::types::StreamingConfigurations> {
         self.streaming_configurations.as_ref()
     }
@@ -85,6 +95,7 @@ impl ::std::fmt::Debug for InvokeAgentInput {
         formatter.field("enable_trace", &self.enable_trace);
         formatter.field("input_text", &"*** Sensitive Data Redacted ***");
         formatter.field("memory_id", &self.memory_id);
+        formatter.field("bedrock_model_configurations", &self.bedrock_model_configurations);
         formatter.field("streaming_configurations", &self.streaming_configurations);
         formatter.field("source_arn", &self.source_arn);
         formatter.finish()
@@ -109,6 +120,7 @@ pub struct InvokeAgentInputBuilder {
     pub(crate) enable_trace: ::std::option::Option<bool>,
     pub(crate) input_text: ::std::option::Option<::std::string::String>,
     pub(crate) memory_id: ::std::option::Option<::std::string::String>,
+    pub(crate) bedrock_model_configurations: ::std::option::Option<crate::types::BedrockModelConfigurations>,
     pub(crate) streaming_configurations: ::std::option::Option<crate::types::StreamingConfigurations>,
     pub(crate) source_arn: ::std::option::Option<::std::string::String>,
 }
@@ -240,17 +252,37 @@ impl InvokeAgentInputBuilder {
     pub fn get_memory_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.memory_id
     }
-    /// <p>Specifies the configurations for streaming.</p>
+    /// <p>Model performance settings for the request.</p>
+    pub fn bedrock_model_configurations(mut self, input: crate::types::BedrockModelConfigurations) -> Self {
+        self.bedrock_model_configurations = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Model performance settings for the request.</p>
+    pub fn set_bedrock_model_configurations(mut self, input: ::std::option::Option<crate::types::BedrockModelConfigurations>) -> Self {
+        self.bedrock_model_configurations = input;
+        self
+    }
+    /// <p>Model performance settings for the request.</p>
+    pub fn get_bedrock_model_configurations(&self) -> &::std::option::Option<crate::types::BedrockModelConfigurations> {
+        &self.bedrock_model_configurations
+    }
+    /// <p>Specifies the configurations for streaming.</p><note>
+    /// <p>To use agent streaming, you need permissions to perform the <code>bedrock:InvokeModelWithResponseStream</code> action.</p>
+    /// </note>
     pub fn streaming_configurations(mut self, input: crate::types::StreamingConfigurations) -> Self {
         self.streaming_configurations = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the configurations for streaming.</p>
+    /// <p>Specifies the configurations for streaming.</p><note>
+    /// <p>To use agent streaming, you need permissions to perform the <code>bedrock:InvokeModelWithResponseStream</code> action.</p>
+    /// </note>
     pub fn set_streaming_configurations(mut self, input: ::std::option::Option<crate::types::StreamingConfigurations>) -> Self {
         self.streaming_configurations = input;
         self
     }
-    /// <p>Specifies the configurations for streaming.</p>
+    /// <p>Specifies the configurations for streaming.</p><note>
+    /// <p>To use agent streaming, you need permissions to perform the <code>bedrock:InvokeModelWithResponseStream</code> action.</p>
+    /// </note>
     pub fn get_streaming_configurations(&self) -> &::std::option::Option<crate::types::StreamingConfigurations> {
         &self.streaming_configurations
     }
@@ -279,6 +311,7 @@ impl InvokeAgentInputBuilder {
             enable_trace: self.enable_trace,
             input_text: self.input_text,
             memory_id: self.memory_id,
+            bedrock_model_configurations: self.bedrock_model_configurations,
             streaming_configurations: self.streaming_configurations,
             source_arn: self.source_arn,
         })
@@ -295,6 +328,7 @@ impl ::std::fmt::Debug for InvokeAgentInputBuilder {
         formatter.field("enable_trace", &self.enable_trace);
         formatter.field("input_text", &"*** Sensitive Data Redacted ***");
         formatter.field("memory_id", &self.memory_id);
+        formatter.field("bedrock_model_configurations", &self.bedrock_model_configurations);
         formatter.field("streaming_configurations", &self.streaming_configurations);
         formatter.field("source_arn", &self.source_arn);
         formatter.finish()

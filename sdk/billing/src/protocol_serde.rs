@@ -23,7 +23,25 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_create_billing_view;
+
+pub(crate) mod shape_delete_billing_view;
+
+pub(crate) mod shape_get_billing_view;
+
+pub(crate) mod shape_get_resource_policy;
+
 pub(crate) mod shape_list_billing_views;
+
+pub(crate) mod shape_list_source_views_for_billing_view;
+
+pub(crate) mod shape_list_tags_for_resource;
+
+pub(crate) mod shape_tag_resource;
+
+pub(crate) mod shape_untag_resource;
+
+pub(crate) mod shape_update_billing_view;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -35,20 +53,60 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 
 pub(crate) mod shape_access_denied_exception;
 
+pub(crate) mod shape_conflict_exception;
+
+pub(crate) mod shape_create_billing_view_input;
+
+pub(crate) mod shape_delete_billing_view_input;
+
+pub(crate) mod shape_get_billing_view_input;
+
+pub(crate) mod shape_get_resource_policy_input;
+
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_list_billing_views_input;
 
+pub(crate) mod shape_list_source_views_for_billing_view_input;
+
+pub(crate) mod shape_list_tags_for_resource_input;
+
+pub(crate) mod shape_resource_not_found_exception;
+
+pub(crate) mod shape_service_quota_exceeded_exception;
+
+pub(crate) mod shape_tag_resource_input;
+
 pub(crate) mod shape_throttling_exception;
+
+pub(crate) mod shape_untag_resource_input;
+
+pub(crate) mod shape_update_billing_view_input;
 
 pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_active_time_range;
 
+pub(crate) mod shape_billing_view_element;
+
 pub(crate) mod shape_billing_view_list;
+
+pub(crate) mod shape_billing_view_source_views_list;
+
+pub(crate) mod shape_expression;
+
+pub(crate) mod shape_resource_tag;
+
+pub(crate) mod shape_resource_tag_list;
 
 pub(crate) mod shape_validation_exception_field_list;
 
 pub(crate) mod shape_billing_view_list_element;
 
+pub(crate) mod shape_dimension_values;
+
+pub(crate) mod shape_tag_values;
+
 pub(crate) mod shape_validation_exception_field;
+
+pub(crate) mod shape_values;

@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeEditorAppImageConfig {
-    /// <p>The Amazon Elastic File System storage configuration for a SageMaker image.</p>
+    /// <p>The Amazon Elastic File System storage configuration for a SageMaker AI image.</p>
     pub file_system_config: ::std::option::Option<crate::types::FileSystemConfig>,
     /// <p>The configuration used to run the application image container.</p>
     pub container_config: ::std::option::Option<crate::types::ContainerConfig>,
 }
 impl CodeEditorAppImageConfig {
-    /// <p>The Amazon Elastic File System storage configuration for a SageMaker image.</p>
+    /// <p>The Amazon Elastic File System storage configuration for a SageMaker AI image.</p>
     pub fn file_system_config(&self) -> ::std::option::Option<&crate::types::FileSystemConfig> {
         self.file_system_config.as_ref()
     }
@@ -34,17 +34,17 @@ pub struct CodeEditorAppImageConfigBuilder {
     pub(crate) container_config: ::std::option::Option<crate::types::ContainerConfig>,
 }
 impl CodeEditorAppImageConfigBuilder {
-    /// <p>The Amazon Elastic File System storage configuration for a SageMaker image.</p>
+    /// <p>The Amazon Elastic File System storage configuration for a SageMaker AI image.</p>
     pub fn file_system_config(mut self, input: crate::types::FileSystemConfig) -> Self {
         self.file_system_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Amazon Elastic File System storage configuration for a SageMaker image.</p>
+    /// <p>The Amazon Elastic File System storage configuration for a SageMaker AI image.</p>
     pub fn set_file_system_config(mut self, input: ::std::option::Option<crate::types::FileSystemConfig>) -> Self {
         self.file_system_config = input;
         self
     }
-    /// <p>The Amazon Elastic File System storage configuration for a SageMaker image.</p>
+    /// <p>The Amazon Elastic File System storage configuration for a SageMaker AI image.</p>
     pub fn get_file_system_config(&self) -> &::std::option::Option<crate::types::FileSystemConfig> {
         &self.file_system_config
     }

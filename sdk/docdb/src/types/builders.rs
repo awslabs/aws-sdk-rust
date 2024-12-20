@@ -5,6 +5,8 @@ pub use crate::types::_global_cluster_member::GlobalClusterMemberBuilder;
 
 pub use crate::types::_db_cluster::DbClusterBuilder;
 
+pub use crate::types::_cluster_master_user_secret::ClusterMasterUserSecretBuilder;
+
 pub use crate::types::_db_cluster_role::DbClusterRoleBuilder;
 
 pub use crate::types::_vpc_security_group_membership::VpcSecurityGroupMembershipBuilder;

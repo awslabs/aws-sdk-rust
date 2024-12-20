@@ -3,29 +3,35 @@ pub fn ser_invoke_agent_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::invoke_agent::InvokeAgentInput,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.enable_trace {
-        object.key("enableTrace").boolean(*var_1);
-    }
-    if let Some(var_2) = &input.end_session {
-        object.key("endSession").boolean(*var_2);
-    }
-    if let Some(var_3) = &input.input_text {
-        object.key("inputText").string(var_3.as_str());
-    }
-    if let Some(var_4) = &input.memory_id {
-        object.key("memoryId").string(var_4.as_str());
-    }
-    if let Some(var_5) = &input.session_state {
+    if let Some(var_1) = &input.bedrock_model_configurations {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("sessionState").start_object();
-        crate::protocol_serde::shape_session_state::ser_session_state(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_2 = object.key("bedrockModelConfigurations").start_object();
+        crate::protocol_serde::shape_bedrock_model_configurations::ser_bedrock_model_configurations(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_7) = &input.streaming_configurations {
+    if let Some(var_3) = &input.enable_trace {
+        object.key("enableTrace").boolean(*var_3);
+    }
+    if let Some(var_4) = &input.end_session {
+        object.key("endSession").boolean(*var_4);
+    }
+    if let Some(var_5) = &input.input_text {
+        object.key("inputText").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.memory_id {
+        object.key("memoryId").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.session_state {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("streamingConfigurations").start_object();
-        crate::protocol_serde::shape_streaming_configurations::ser_streaming_configurations(&mut object_8, var_7)?;
+        let mut object_8 = object.key("sessionState").start_object();
+        crate::protocol_serde::shape_session_state::ser_session_state(&mut object_8, var_7)?;
         object_8.finish();
+    }
+    if let Some(var_9) = &input.streaming_configurations {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("streamingConfigurations").start_object();
+        crate::protocol_serde::shape_streaming_configurations::ser_streaming_configurations(&mut object_10, var_9)?;
+        object_10.finish();
     }
     Ok(())
 }

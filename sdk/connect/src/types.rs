@@ -237,6 +237,8 @@ pub use crate::types::_match_criteria::MatchCriteria;
 
 pub use crate::types::_agents_criteria::AgentsCriteria;
 
+pub use crate::types::_range::Range;
+
 pub use crate::types::_routing_criteria_input_step_expiry::RoutingCriteriaInputStepExpiry;
 
 pub use crate::types::_contact_flow_module_state::ContactFlowModuleState;
@@ -1506,6 +1508,8 @@ mod _quick_connect_search_filter;
 mod _quick_connect_summary;
 
 mod _quick_connect_type;
+
+mod _range;
 
 mod _read_only_field_info;
 

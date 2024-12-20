@@ -10,7 +10,7 @@ pub struct RStudioServerProDomainSettings {
     pub r_studio_connect_url: ::std::option::Option<::std::string::String>,
     /// <p>A URL pointing to an RStudio Package Manager server.</p>
     pub r_studio_package_manager_url: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
+    /// <p>Specifies the ARN's of a SageMaker AI image and SageMaker AI image version, and the instance type that the version runs on.</p>
     pub default_resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
 }
 impl RStudioServerProDomainSettings {
@@ -26,7 +26,7 @@ impl RStudioServerProDomainSettings {
     pub fn r_studio_package_manager_url(&self) -> ::std::option::Option<&str> {
         self.r_studio_package_manager_url.as_deref()
     }
-    /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
+    /// <p>Specifies the ARN's of a SageMaker AI image and SageMaker AI image version, and the instance type that the version runs on.</p>
     pub fn default_resource_spec(&self) -> ::std::option::Option<&crate::types::ResourceSpec> {
         self.default_resource_spec.as_ref()
     }
@@ -91,17 +91,17 @@ impl RStudioServerProDomainSettingsBuilder {
     pub fn get_r_studio_package_manager_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.r_studio_package_manager_url
     }
-    /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
+    /// <p>Specifies the ARN's of a SageMaker AI image and SageMaker AI image version, and the instance type that the version runs on.</p>
     pub fn default_resource_spec(mut self, input: crate::types::ResourceSpec) -> Self {
         self.default_resource_spec = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
+    /// <p>Specifies the ARN's of a SageMaker AI image and SageMaker AI image version, and the instance type that the version runs on.</p>
     pub fn set_default_resource_spec(mut self, input: ::std::option::Option<crate::types::ResourceSpec>) -> Self {
         self.default_resource_spec = input;
         self
     }
-    /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
+    /// <p>Specifies the ARN's of a SageMaker AI image and SageMaker AI image version, and the instance type that the version runs on.</p>
     pub fn get_default_resource_spec(&self) -> &::std::option::Option<crate::types::ResourceSpec> {
         &self.default_resource_spec
     }

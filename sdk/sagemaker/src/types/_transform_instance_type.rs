@@ -110,6 +110,8 @@
 ///     TransformInstanceType::MlR7I8Xlarge => { /* ... */ },
 ///     TransformInstanceType::MlR7ILarge => { /* ... */ },
 ///     TransformInstanceType::MlR7IXlarge => { /* ... */ },
+///     TransformInstanceType::MlTrn12Xlarge => { /* ... */ },
+///     TransformInstanceType::MlTrn132Xlarge => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -334,6 +336,10 @@ pub enum TransformInstanceType {
     MlR7ILarge,
     #[allow(missing_docs)] // documentation missing in model
     MlR7IXlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlTrn12Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlTrn132Xlarge,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -439,6 +445,8 @@ impl ::std::convert::From<&str> for TransformInstanceType {
             "ml.r7i.8xlarge" => TransformInstanceType::MlR7I8Xlarge,
             "ml.r7i.large" => TransformInstanceType::MlR7ILarge,
             "ml.r7i.xlarge" => TransformInstanceType::MlR7IXlarge,
+            "ml.trn1.2xlarge" => TransformInstanceType::MlTrn12Xlarge,
+            "ml.trn1.32xlarge" => TransformInstanceType::MlTrn132Xlarge,
             other => TransformInstanceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -552,6 +560,8 @@ impl TransformInstanceType {
             TransformInstanceType::MlR7I8Xlarge => "ml.r7i.8xlarge",
             TransformInstanceType::MlR7ILarge => "ml.r7i.large",
             TransformInstanceType::MlR7IXlarge => "ml.r7i.xlarge",
+            TransformInstanceType::MlTrn12Xlarge => "ml.trn1.2xlarge",
+            TransformInstanceType::MlTrn132Xlarge => "ml.trn1.32xlarge",
             TransformInstanceType::Unknown(value) => value.as_str(),
         }
     }
@@ -656,6 +666,8 @@ impl TransformInstanceType {
             "ml.r7i.8xlarge",
             "ml.r7i.large",
             "ml.r7i.xlarge",
+            "ml.trn1.2xlarge",
+            "ml.trn1.32xlarge",
         ]
     }
 }
@@ -777,6 +789,8 @@ impl ::std::fmt::Display for TransformInstanceType {
             TransformInstanceType::MlR7I8Xlarge => write!(f, "ml.r7i.8xlarge"),
             TransformInstanceType::MlR7ILarge => write!(f, "ml.r7i.large"),
             TransformInstanceType::MlR7IXlarge => write!(f, "ml.r7i.xlarge"),
+            TransformInstanceType::MlTrn12Xlarge => write!(f, "ml.trn1.2xlarge"),
+            TransformInstanceType::MlTrn132Xlarge => write!(f, "ml.trn1.32xlarge"),
             TransformInstanceType::Unknown(value) => write!(f, "{}", value),
         }
     }

@@ -22,7 +22,7 @@ impl crate::operation::create_code_repository::builders::CreateCodeRepositoryInp
 }
 /// Fluent builder constructing a request to `CreateCodeRepository`.
 ///
-/// <p>Creates a Git repository as a resource in your SageMaker account. You can associate the repository with notebook instances so that you can use Git source control for the notebooks you create. The Git repository is a resource in your SageMaker account, so it can be associated with more than one notebook instance, and it persists independently from the lifecycle of any notebook instances it is associated with.</p>
+/// <p>Creates a Git repository as a resource in your SageMaker AI account. You can associate the repository with notebook instances so that you can use Git source control for the notebooks you create. The Git repository is a resource in your SageMaker AI account, so it can be associated with more than one notebook instance, and it persists independently from the lifecycle of any notebook instances it is associated with.</p>
 /// <p>The repository can be hosted either in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateCodeRepositoryFluentBuilder {

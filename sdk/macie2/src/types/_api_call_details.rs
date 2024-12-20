@@ -6,7 +6,7 @@
 pub struct ApiCallDetails {
     /// <p>The name of the operation that was invoked most recently and produced the finding.</p>
     pub api: ::std::option::Option<::std::string::String>,
-    /// <p>The URL of the Amazon Web Service that provides the operation, for example: s3.amazonaws.com.</p>
+    /// <p>The URL of the Amazon Web Services service that provides the operation, for example: s3.amazonaws.com.</p>
     pub api_service_name: ::std::option::Option<::std::string::String>,
     /// <p>The first date and time, in UTC and extended ISO 8601 format, when any operation was invoked and produced the finding.</p>
     pub first_seen: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -18,7 +18,7 @@ impl ApiCallDetails {
     pub fn api(&self) -> ::std::option::Option<&str> {
         self.api.as_deref()
     }
-    /// <p>The URL of the Amazon Web Service that provides the operation, for example: s3.amazonaws.com.</p>
+    /// <p>The URL of the Amazon Web Services service that provides the operation, for example: s3.amazonaws.com.</p>
     pub fn api_service_name(&self) -> ::std::option::Option<&str> {
         self.api_service_name.as_deref()
     }
@@ -62,17 +62,17 @@ impl ApiCallDetailsBuilder {
     pub fn get_api(&self) -> &::std::option::Option<::std::string::String> {
         &self.api
     }
-    /// <p>The URL of the Amazon Web Service that provides the operation, for example: s3.amazonaws.com.</p>
+    /// <p>The URL of the Amazon Web Services service that provides the operation, for example: s3.amazonaws.com.</p>
     pub fn api_service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_service_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The URL of the Amazon Web Service that provides the operation, for example: s3.amazonaws.com.</p>
+    /// <p>The URL of the Amazon Web Services service that provides the operation, for example: s3.amazonaws.com.</p>
     pub fn set_api_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_service_name = input;
         self
     }
-    /// <p>The URL of the Amazon Web Service that provides the operation, for example: s3.amazonaws.com.</p>
+    /// <p>The URL of the Amazon Web Services service that provides the operation, for example: s3.amazonaws.com.</p>
     pub fn get_api_service_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.api_service_name
     }

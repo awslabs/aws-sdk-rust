@@ -22,7 +22,7 @@ impl crate::operation::list_blueprints::builders::ListBlueprintsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListBlueprints`.
 ///
-/// Lists all existing Amazon Bedrock Keystone Blueprints
+/// Lists all existing Amazon Bedrock Data Automation Blueprints
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListBlueprintsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

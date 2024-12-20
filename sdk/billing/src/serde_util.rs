@@ -8,11 +8,47 @@ pub(crate) fn access_denied_exception_correct_errors(
     builder
 }
 
+pub(crate) fn conflict_exception_correct_errors(
+    mut builder: crate::types::error::builders::ConflictExceptionBuilder,
+) -> crate::types::error::builders::ConflictExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    if builder.resource_id.is_none() {
+        builder.resource_id = Some(Default::default())
+    }
+    if builder.resource_type.is_none() {
+        builder.resource_type = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn internal_server_exception_correct_errors(
     mut builder: crate::types::error::builders::InternalServerExceptionBuilder,
 ) -> crate::types::error::builders::InternalServerExceptionBuilder {
     if builder.message.is_none() {
         builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn service_quota_exceeded_exception_correct_errors(
+    mut builder: crate::types::error::builders::ServiceQuotaExceededExceptionBuilder,
+) -> crate::types::error::builders::ServiceQuotaExceededExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    if builder.resource_id.is_none() {
+        builder.resource_id = Some(Default::default())
+    }
+    if builder.resource_type.is_none() {
+        builder.resource_type = Some(Default::default())
+    }
+    if builder.service_code.is_none() {
+        builder.service_code = Some(Default::default())
+    }
+    if builder.quota_code.is_none() {
+        builder.quota_code = Some(Default::default())
     }
     builder
 }
@@ -38,11 +74,90 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
+pub(crate) fn create_billing_view_output_output_correct_errors(
+    mut builder: crate::operation::create_billing_view::builders::CreateBillingViewOutputBuilder,
+) -> crate::operation::create_billing_view::builders::CreateBillingViewOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn delete_billing_view_output_output_correct_errors(
+    mut builder: crate::operation::delete_billing_view::builders::DeleteBillingViewOutputBuilder,
+) -> crate::operation::delete_billing_view::builders::DeleteBillingViewOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn resource_not_found_exception_correct_errors(
+    mut builder: crate::types::error::builders::ResourceNotFoundExceptionBuilder,
+) -> crate::types::error::builders::ResourceNotFoundExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    if builder.resource_id.is_none() {
+        builder.resource_id = Some(Default::default())
+    }
+    if builder.resource_type.is_none() {
+        builder.resource_type = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_billing_view_output_output_correct_errors(
+    mut builder: crate::operation::get_billing_view::builders::GetBillingViewOutputBuilder,
+) -> crate::operation::get_billing_view::builders::GetBillingViewOutputBuilder {
+    if builder.billing_view.is_none() {
+        builder.billing_view = {
+            let builder = crate::types::builders::BillingViewElementBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn get_resource_policy_output_output_correct_errors(
+    mut builder: crate::operation::get_resource_policy::builders::GetResourcePolicyOutputBuilder,
+) -> crate::operation::get_resource_policy::builders::GetResourcePolicyOutputBuilder {
+    if builder.resource_arn.is_none() {
+        builder.resource_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_billing_views_output_output_correct_errors(
     mut builder: crate::operation::list_billing_views::builders::ListBillingViewsOutputBuilder,
 ) -> crate::operation::list_billing_views::builders::ListBillingViewsOutputBuilder {
     if builder.billing_views.is_none() {
         builder.billing_views = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_source_views_for_billing_view_output_output_correct_errors(
+    mut builder: crate::operation::list_source_views_for_billing_view::builders::ListSourceViewsForBillingViewOutputBuilder,
+) -> crate::operation::list_source_views_for_billing_view::builders::ListSourceViewsForBillingViewOutputBuilder {
+    if builder.source_views.is_none() {
+        builder.source_views = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn update_billing_view_output_output_correct_errors(
+    mut builder: crate::operation::update_billing_view::builders::UpdateBillingViewOutputBuilder,
+) -> crate::operation::update_billing_view::builders::UpdateBillingViewOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn resource_tag_correct_errors(mut builder: crate::types::builders::ResourceTagBuilder) -> crate::types::builders::ResourceTagBuilder {
+    if builder.key.is_none() {
+        builder.key = Some(Default::default())
     }
     builder
 }
@@ -55,6 +170,28 @@ pub(crate) fn validation_exception_field_correct_errors(
     }
     if builder.message.is_none() {
         builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn dimension_values_correct_errors(
+    mut builder: crate::types::builders::DimensionValuesBuilder,
+) -> crate::types::builders::DimensionValuesBuilder {
+    if builder.key.is_none() {
+        builder.key = "no value was set".parse::<crate::types::Dimension>().ok()
+    }
+    if builder.values.is_none() {
+        builder.values = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn tag_values_correct_errors(mut builder: crate::types::builders::TagValuesBuilder) -> crate::types::builders::TagValuesBuilder {
+    if builder.key.is_none() {
+        builder.key = Some(Default::default())
+    }
+    if builder.values.is_none() {
+        builder.values = Some(Default::default())
     }
     builder
 }

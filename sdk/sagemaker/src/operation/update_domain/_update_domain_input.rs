@@ -19,7 +19,7 @@ pub struct UpdateDomainInput {
     /// <p>Specifies the VPC used for non-EFS traffic.</p>
     /// <ul>
     /// <li>
-    /// <p><code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access.</p></li>
+    /// <p><code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker AI, which allows direct internet access.</p></li>
     /// <li>
     /// <p><code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets.</p></li>
     /// </ul>
@@ -59,7 +59,7 @@ impl UpdateDomainInput {
     /// <p>Specifies the VPC used for non-EFS traffic.</p>
     /// <ul>
     /// <li>
-    /// <p><code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access.</p></li>
+    /// <p><code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker AI, which allows direct internet access.</p></li>
     /// <li>
     /// <p><code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets.</p></li>
     /// </ul>
@@ -190,7 +190,7 @@ impl UpdateDomainInputBuilder {
     /// <p>Specifies the VPC used for non-EFS traffic.</p>
     /// <ul>
     /// <li>
-    /// <p><code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access.</p></li>
+    /// <p><code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker AI, which allows direct internet access.</p></li>
     /// <li>
     /// <p><code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets.</p></li>
     /// </ul>
@@ -202,7 +202,7 @@ impl UpdateDomainInputBuilder {
     /// <p>Specifies the VPC used for non-EFS traffic.</p>
     /// <ul>
     /// <li>
-    /// <p><code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access.</p></li>
+    /// <p><code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker AI, which allows direct internet access.</p></li>
     /// <li>
     /// <p><code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets.</p></li>
     /// </ul>
@@ -214,7 +214,7 @@ impl UpdateDomainInputBuilder {
     /// <p>Specifies the VPC used for non-EFS traffic.</p>
     /// <ul>
     /// <li>
-    /// <p><code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access.</p></li>
+    /// <p><code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker AI, which allows direct internet access.</p></li>
     /// <li>
     /// <p><code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets.</p></li>
     /// </ul>

@@ -18,7 +18,7 @@ impl super::Client {
     ///   - [`creation_time(Option<String>)`](crate::operation::start_attached_file_upload::StartAttachedFileUploadOutput::creation_time): <p>The time of Creation of the file resource as an ISO timestamp. It's specified in ISO 8601 format: <code>yyyy-MM-ddThh:mm:ss.SSSZ</code>. For example, <code>2024-05-03T02:41:28.172Z</code>.</p>
     ///   - [`file_status(Option<FileStatusType>)`](crate::operation::start_attached_file_upload::StartAttachedFileUploadOutput::file_status): <p>The current status of the attached file.</p>
     ///   - [`created_by(Option<CreatedByInfo>)`](crate::operation::start_attached_file_upload::StartAttachedFileUploadOutput::created_by): <p>Represents the identity that created the file.</p>
-    ///   - [`upload_url_metadata(Option<UploadUrlMetadata>)`](crate::operation::start_attached_file_upload::StartAttachedFileUploadOutput::upload_url_metadata): <p>Information to be used while uploading the attached file.</p>
+    ///   - [`upload_url_metadata(Option<UploadUrlMetadata>)`](crate::operation::start_attached_file_upload::StartAttachedFileUploadOutput::upload_url_metadata): <p>The headers to be provided while uploading the file to the URL.</p>
     /// - On failure, responds with [`SdkError<StartAttachedFileUploadError>`](crate::operation::start_attached_file_upload::StartAttachedFileUploadError)
     pub fn start_attached_file_upload(&self) -> crate::operation::start_attached_file_upload::builders::StartAttachedFileUploadFluentBuilder {
         crate::operation::start_attached_file_upload::builders::StartAttachedFileUploadFluentBuilder::new(self.handle.clone())

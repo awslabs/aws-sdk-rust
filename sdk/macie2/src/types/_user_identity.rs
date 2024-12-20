@@ -8,7 +8,7 @@ pub struct UserIdentity {
     pub assumed_role: ::std::option::Option<crate::types::AssumedRole>,
     /// <p>If the action was performed using the credentials for another Amazon Web Services account, the details of that account.</p>
     pub aws_account: ::std::option::Option<crate::types::AwsAccount>,
-    /// <p>If the action was performed by an Amazon Web Services account that belongs to an Amazon Web Service, the name of the service.</p>
+    /// <p>If the action was performed by an Amazon Web Services account that belongs to an Amazon Web Services service, the name of the service.</p>
     pub aws_service: ::std::option::Option<crate::types::AwsService>,
     /// <p>If the action was performed with temporary security credentials that were obtained using the GetFederationToken operation of the Security Token Service (STS) API, the identifiers, session context, and other details about the identity.</p>
     pub federated_user: ::std::option::Option<crate::types::FederatedUser>,
@@ -28,7 +28,7 @@ impl UserIdentity {
     pub fn aws_account(&self) -> ::std::option::Option<&crate::types::AwsAccount> {
         self.aws_account.as_ref()
     }
-    /// <p>If the action was performed by an Amazon Web Services account that belongs to an Amazon Web Service, the name of the service.</p>
+    /// <p>If the action was performed by an Amazon Web Services account that belongs to an Amazon Web Services service, the name of the service.</p>
     pub fn aws_service(&self) -> ::std::option::Option<&crate::types::AwsService> {
         self.aws_service.as_ref()
     }
@@ -97,17 +97,17 @@ impl UserIdentityBuilder {
     pub fn get_aws_account(&self) -> &::std::option::Option<crate::types::AwsAccount> {
         &self.aws_account
     }
-    /// <p>If the action was performed by an Amazon Web Services account that belongs to an Amazon Web Service, the name of the service.</p>
+    /// <p>If the action was performed by an Amazon Web Services account that belongs to an Amazon Web Services service, the name of the service.</p>
     pub fn aws_service(mut self, input: crate::types::AwsService) -> Self {
         self.aws_service = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If the action was performed by an Amazon Web Services account that belongs to an Amazon Web Service, the name of the service.</p>
+    /// <p>If the action was performed by an Amazon Web Services account that belongs to an Amazon Web Services service, the name of the service.</p>
     pub fn set_aws_service(mut self, input: ::std::option::Option<crate::types::AwsService>) -> Self {
         self.aws_service = input;
         self
     }
-    /// <p>If the action was performed by an Amazon Web Services account that belongs to an Amazon Web Service, the name of the service.</p>
+    /// <p>If the action was performed by an Amazon Web Services account that belongs to an Amazon Web Services service, the name of the service.</p>
     pub fn get_aws_service(&self) -> &::std::option::Option<crate::types::AwsService> {
         &self.aws_service
     }

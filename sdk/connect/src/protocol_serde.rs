@@ -1883,6 +1883,8 @@ pub(crate) mod shape_match_criteria;
 
 pub(crate) mod shape_potential_audio_quality_issues;
 
+pub(crate) mod shape_range;
+
 pub(crate) mod shape_real_time_contact_analysis_attachment;
 
 pub(crate) mod shape_real_time_contact_analysis_category_details;

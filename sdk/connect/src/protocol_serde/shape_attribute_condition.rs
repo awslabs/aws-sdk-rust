@@ -15,14 +15,20 @@ pub fn ser_attribute_condition(
             ::aws_smithy_types::Number::Float((*var_3).into()),
         );
     }
-    if let Some(var_4) = &input.match_criteria {
+    if let Some(var_4) = &input.range {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("MatchCriteria").start_object();
-        crate::protocol_serde::shape_match_criteria::ser_match_criteria(&mut object_5, var_4)?;
+        let mut object_5 = object.key("Range").start_object();
+        crate::protocol_serde::shape_range::ser_range(&mut object_5, var_4)?;
         object_5.finish();
     }
-    if let Some(var_6) = &input.comparison_operator {
-        object.key("ComparisonOperator").string(var_6.as_str());
+    if let Some(var_6) = &input.match_criteria {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("MatchCriteria").start_object();
+        crate::protocol_serde::shape_match_criteria::ser_match_criteria(&mut object_7, var_6)?;
+        object_7.finish();
+    }
+    if let Some(var_8) = &input.comparison_operator {
+        object.key("ComparisonOperator").string(var_8.as_str());
     }
     Ok(())
 }
@@ -60,6 +66,9 @@ where
                             builder = builder.set_proficiency_level(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f32_lossy()),
                             );
+                        }
+                        "Range" => {
+                            builder = builder.set_range(crate::protocol_serde::shape_range::de_range(tokens)?);
                         }
                         "MatchCriteria" => {
                             builder = builder.set_match_criteria(crate::protocol_serde::shape_match_criteria::de_match_criteria(tokens)?);

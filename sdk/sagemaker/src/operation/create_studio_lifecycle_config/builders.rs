@@ -22,7 +22,7 @@ impl crate::operation::create_studio_lifecycle_config::builders::CreateStudioLif
 }
 /// Fluent builder constructing a request to `CreateStudioLifecycleConfig`.
 ///
-/// <p>Creates a new Amazon SageMaker Studio Lifecycle Configuration.</p>
+/// <p>Creates a new Amazon SageMaker AI Studio Lifecycle Configuration.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateStudioLifecycleConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl CreateStudioLifecycleConfigFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the Amazon SageMaker Studio Lifecycle Configuration to create.</p>
+    /// <p>The name of the Amazon SageMaker AI Studio Lifecycle Configuration to create.</p>
     pub fn studio_lifecycle_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.studio_lifecycle_config_name(input.into());
         self
     }
-    /// <p>The name of the Amazon SageMaker Studio Lifecycle Configuration to create.</p>
+    /// <p>The name of the Amazon SageMaker AI Studio Lifecycle Configuration to create.</p>
     pub fn set_studio_lifecycle_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_studio_lifecycle_config_name(input);
         self
     }
-    /// <p>The name of the Amazon SageMaker Studio Lifecycle Configuration to create.</p>
+    /// <p>The name of the Amazon SageMaker AI Studio Lifecycle Configuration to create.</p>
     pub fn get_studio_lifecycle_config_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_studio_lifecycle_config_name()
     }
-    /// <p>The content of your Amazon SageMaker Studio Lifecycle Configuration script. This content must be base64 encoded.</p>
+    /// <p>The content of your Amazon SageMaker AI Studio Lifecycle Configuration script. This content must be base64 encoded.</p>
     pub fn studio_lifecycle_config_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.studio_lifecycle_config_content(input.into());
         self
     }
-    /// <p>The content of your Amazon SageMaker Studio Lifecycle Configuration script. This content must be base64 encoded.</p>
+    /// <p>The content of your Amazon SageMaker AI Studio Lifecycle Configuration script. This content must be base64 encoded.</p>
     pub fn set_studio_lifecycle_config_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_studio_lifecycle_config_content(input);
         self
     }
-    /// <p>The content of your Amazon SageMaker Studio Lifecycle Configuration script. This content must be base64 encoded.</p>
+    /// <p>The content of your Amazon SageMaker AI Studio Lifecycle Configuration script. This content must be base64 encoded.</p>
     pub fn get_studio_lifecycle_config_content(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_studio_lifecycle_config_content()
     }

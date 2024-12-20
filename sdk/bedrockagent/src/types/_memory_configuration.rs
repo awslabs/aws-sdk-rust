@@ -8,6 +8,8 @@ pub struct MemoryConfiguration {
     pub enabled_memory_types: ::std::vec::Vec<crate::types::MemoryType>,
     /// <p>The number of days the agent is configured to retain the conversational context.</p>
     pub storage_days: i32,
+    /// <p>Contains the configuration for SESSION_SUMMARY memory type enabled for the agent.</p>
+    pub session_summary_configuration: ::std::option::Option<crate::types::SessionSummaryConfiguration>,
 }
 impl MemoryConfiguration {
     /// <p>The type of memory that is stored.</p>
@@ -18,6 +20,10 @@ impl MemoryConfiguration {
     /// <p>The number of days the agent is configured to retain the conversational context.</p>
     pub fn storage_days(&self) -> i32 {
         self.storage_days
+    }
+    /// <p>Contains the configuration for SESSION_SUMMARY memory type enabled for the agent.</p>
+    pub fn session_summary_configuration(&self) -> ::std::option::Option<&crate::types::SessionSummaryConfiguration> {
+        self.session_summary_configuration.as_ref()
     }
 }
 impl MemoryConfiguration {
@@ -33,6 +39,7 @@ impl MemoryConfiguration {
 pub struct MemoryConfigurationBuilder {
     pub(crate) enabled_memory_types: ::std::option::Option<::std::vec::Vec<crate::types::MemoryType>>,
     pub(crate) storage_days: ::std::option::Option<i32>,
+    pub(crate) session_summary_configuration: ::std::option::Option<crate::types::SessionSummaryConfiguration>,
 }
 impl MemoryConfigurationBuilder {
     /// Appends an item to `enabled_memory_types`.
@@ -69,6 +76,20 @@ impl MemoryConfigurationBuilder {
     pub fn get_storage_days(&self) -> &::std::option::Option<i32> {
         &self.storage_days
     }
+    /// <p>Contains the configuration for SESSION_SUMMARY memory type enabled for the agent.</p>
+    pub fn session_summary_configuration(mut self, input: crate::types::SessionSummaryConfiguration) -> Self {
+        self.session_summary_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains the configuration for SESSION_SUMMARY memory type enabled for the agent.</p>
+    pub fn set_session_summary_configuration(mut self, input: ::std::option::Option<crate::types::SessionSummaryConfiguration>) -> Self {
+        self.session_summary_configuration = input;
+        self
+    }
+    /// <p>Contains the configuration for SESSION_SUMMARY memory type enabled for the agent.</p>
+    pub fn get_session_summary_configuration(&self) -> &::std::option::Option<crate::types::SessionSummaryConfiguration> {
+        &self.session_summary_configuration
+    }
     /// Consumes the builder and constructs a [`MemoryConfiguration`](crate::types::MemoryConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`enabled_memory_types`](crate::types::builders::MemoryConfigurationBuilder::enabled_memory_types)
@@ -81,6 +102,7 @@ impl MemoryConfigurationBuilder {
                 )
             })?,
             storage_days: self.storage_days.unwrap_or(30),
+            session_summary_configuration: self.session_summary_configuration,
         })
     }
 }

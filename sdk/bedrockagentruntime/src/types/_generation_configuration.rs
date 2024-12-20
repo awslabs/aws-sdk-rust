@@ -17,6 +17,8 @@ pub struct GenerationConfiguration {
     pub inference_config: ::std::option::Option<crate::types::InferenceConfig>,
     /// <p>Additional model parameters and corresponding values not included in the textInferenceConfig structure for a knowledge base. This allows users to provide custom model parameters specific to the language model being used.</p>
     pub additional_model_request_fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>>,
+    /// <p>The latency configuration for the model.</p>
+    pub performance_config: ::std::option::Option<crate::types::PerformanceConfiguration>,
 }
 impl GenerationConfiguration {
     /// <p>Contains the template for the prompt that's sent to the model for response generation. Generation prompts must include the <code>$search_results$</code> variable. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-placeholders.html">Use placeholder variables</a> in the user guide.</p>
@@ -37,6 +39,10 @@ impl GenerationConfiguration {
     ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>> {
         self.additional_model_request_fields.as_ref()
     }
+    /// <p>The latency configuration for the model.</p>
+    pub fn performance_config(&self) -> ::std::option::Option<&crate::types::PerformanceConfiguration> {
+        self.performance_config.as_ref()
+    }
 }
 impl GenerationConfiguration {
     /// Creates a new builder-style object to manufacture [`GenerationConfiguration`](crate::types::GenerationConfiguration).
@@ -54,6 +60,7 @@ pub struct GenerationConfigurationBuilder {
     pub(crate) inference_config: ::std::option::Option<crate::types::InferenceConfig>,
     pub(crate) additional_model_request_fields:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>>,
+    pub(crate) performance_config: ::std::option::Option<crate::types::PerformanceConfiguration>,
 }
 impl GenerationConfigurationBuilder {
     /// <p>Contains the template for the prompt that's sent to the model for response generation. Generation prompts must include the <code>$search_results$</code> variable. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-placeholders.html">Use placeholder variables</a> in the user guide.</p>
@@ -123,6 +130,20 @@ impl GenerationConfigurationBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>> {
         &self.additional_model_request_fields
     }
+    /// <p>The latency configuration for the model.</p>
+    pub fn performance_config(mut self, input: crate::types::PerformanceConfiguration) -> Self {
+        self.performance_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The latency configuration for the model.</p>
+    pub fn set_performance_config(mut self, input: ::std::option::Option<crate::types::PerformanceConfiguration>) -> Self {
+        self.performance_config = input;
+        self
+    }
+    /// <p>The latency configuration for the model.</p>
+    pub fn get_performance_config(&self) -> &::std::option::Option<crate::types::PerformanceConfiguration> {
+        &self.performance_config
+    }
     /// Consumes the builder and constructs a [`GenerationConfiguration`](crate::types::GenerationConfiguration).
     pub fn build(self) -> crate::types::GenerationConfiguration {
         crate::types::GenerationConfiguration {
@@ -130,6 +151,7 @@ impl GenerationConfigurationBuilder {
             guardrail_configuration: self.guardrail_configuration,
             inference_config: self.inference_config,
             additional_model_request_fields: self.additional_model_request_fields,
+            performance_config: self.performance_config,
         }
     }
 }

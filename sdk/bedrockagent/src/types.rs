@@ -13,6 +13,8 @@ pub use crate::types::_agent_collaboration::AgentCollaboration;
 
 pub use crate::types::_memory_configuration::MemoryConfiguration;
 
+pub use crate::types::_session_summary_configuration::SessionSummaryConfiguration;
+
 pub use crate::types::_memory_type::MemoryType;
 
 pub use crate::types::_prompt_override_configuration::PromptOverrideConfiguration;
@@ -958,6 +960,8 @@ mod _seed_url;
 mod _semantic_chunking_configuration;
 
 mod _server_side_encryption_configuration;
+
+mod _session_summary_configuration;
 
 mod _share_point_auth_type;
 

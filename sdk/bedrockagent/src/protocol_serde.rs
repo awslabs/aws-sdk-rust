@@ -459,6 +459,8 @@ pub(crate) mod shape_s3_location;
 
 pub(crate) mod shape_salesforce_data_source_configuration;
 
+pub(crate) mod shape_session_summary_configuration;
+
 pub(crate) mod shape_share_point_data_source_configuration;
 
 pub(crate) mod shape_sql_knowledge_base_configuration;

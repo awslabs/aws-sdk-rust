@@ -95,6 +95,21 @@ pub fn de_get_dimension_values_http_error(
             }
             tmp
         }),
+        "ResourceNotFoundException" => crate::operation::get_dimension_values::GetDimensionValuesError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_dimension_values::GetDimensionValuesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::get_dimension_values::GetDimensionValuesError::generic(generic),
     })
 }

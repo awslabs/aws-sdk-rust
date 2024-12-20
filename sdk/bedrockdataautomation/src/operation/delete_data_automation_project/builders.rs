@@ -22,7 +22,7 @@ impl crate::operation::delete_data_automation_project::builders::DeleteDataAutom
 }
 /// Fluent builder constructing a request to `DeleteDataAutomationProject`.
 ///
-/// Deletes an existing Amazon Bedrock Keystone DataAutomationProject
+/// Deletes an existing Amazon Bedrock Data Automation Project
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDataAutomationProjectFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

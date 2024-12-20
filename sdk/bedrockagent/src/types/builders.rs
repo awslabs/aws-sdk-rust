@@ -9,6 +9,8 @@ pub use crate::types::_agent_version::AgentVersionBuilder;
 
 pub use crate::types::_memory_configuration::MemoryConfigurationBuilder;
 
+pub use crate::types::_session_summary_configuration::SessionSummaryConfigurationBuilder;
+
 pub use crate::types::_prompt_override_configuration::PromptOverrideConfigurationBuilder;
 
 pub use crate::types::_prompt_configuration::PromptConfigurationBuilder;

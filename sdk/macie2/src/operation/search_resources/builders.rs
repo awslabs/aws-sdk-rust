@@ -22,7 +22,7 @@ impl crate::operation::search_resources::builders::SearchResourcesInputBuilder {
 }
 /// Fluent builder constructing a request to `SearchResources`.
 ///
-/// <p>Retrieves (queries) statistical data and other information about Amazon Web Services resources that Amazon Macie monitors and analyzes.</p>
+/// <p>Retrieves (queries) statistical data and other information about Amazon Web Services resources that Amazon Macie monitors and analyzes for an account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchResourcesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

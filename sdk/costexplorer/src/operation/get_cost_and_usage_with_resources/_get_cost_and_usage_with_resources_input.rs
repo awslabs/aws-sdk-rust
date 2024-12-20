@@ -20,6 +20,8 @@ pub struct GetCostAndUsageWithResourcesInput {
     pub metrics: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>You can group Amazon Web Services costs using up to two different groups: <code>DIMENSION</code>, <code>TAG</code>, <code>COST_CATEGORY</code>.</p>
     pub group_by: ::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>>,
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies a specific billing view. The ARN is used to specify which particular billing view you want to interact with or retrieve information from when making API calls related to Amazon Web Services Billing and Cost Management features. The BillingViewArn can be retrieved by calling the ListBillingViews API.</p>
+    pub billing_view_arn: ::std::option::Option<::std::string::String>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub next_page_token: ::std::option::Option<::std::string::String>,
 }
@@ -55,6 +57,10 @@ impl GetCostAndUsageWithResourcesInput {
     pub fn group_by(&self) -> &[crate::types::GroupDefinition] {
         self.group_by.as_deref().unwrap_or_default()
     }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies a specific billing view. The ARN is used to specify which particular billing view you want to interact with or retrieve information from when making API calls related to Amazon Web Services Billing and Cost Management features. The BillingViewArn can be retrieved by calling the ListBillingViews API.</p>
+    pub fn billing_view_arn(&self) -> ::std::option::Option<&str> {
+        self.billing_view_arn.as_deref()
+    }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub fn next_page_token(&self) -> ::std::option::Option<&str> {
         self.next_page_token.as_deref()
@@ -76,6 +82,7 @@ pub struct GetCostAndUsageWithResourcesInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::Expression>,
     pub(crate) metrics: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) group_by: ::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>>,
+    pub(crate) billing_view_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
 }
 impl GetCostAndUsageWithResourcesInputBuilder {
@@ -185,6 +192,20 @@ impl GetCostAndUsageWithResourcesInputBuilder {
     pub fn get_group_by(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>> {
         &self.group_by
     }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies a specific billing view. The ARN is used to specify which particular billing view you want to interact with or retrieve information from when making API calls related to Amazon Web Services Billing and Cost Management features. The BillingViewArn can be retrieved by calling the ListBillingViews API.</p>
+    pub fn billing_view_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.billing_view_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies a specific billing view. The ARN is used to specify which particular billing view you want to interact with or retrieve information from when making API calls related to Amazon Web Services Billing and Cost Management features. The BillingViewArn can be retrieved by calling the ListBillingViews API.</p>
+    pub fn set_billing_view_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.billing_view_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies a specific billing view. The ARN is used to specify which particular billing view you want to interact with or retrieve information from when making API calls related to Amazon Web Services Billing and Cost Management features. The BillingViewArn can be retrieved by calling the ListBillingViews API.</p>
+    pub fn get_billing_view_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.billing_view_arn
+    }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
@@ -212,6 +233,7 @@ impl GetCostAndUsageWithResourcesInputBuilder {
             filter: self.filter,
             metrics: self.metrics,
             group_by: self.group_by,
+            billing_view_arn: self.billing_view_arn,
             next_page_token: self.next_page_token,
         })
     }

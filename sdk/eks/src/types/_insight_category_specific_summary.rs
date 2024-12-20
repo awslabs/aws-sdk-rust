@@ -6,6 +6,8 @@
 pub struct InsightCategorySpecificSummary {
     /// <p>The summary information about deprecated resource usage for an insight check in the <code>UPGRADE_READINESS</code> category.</p>
     pub deprecation_details: ::std::option::Option<::std::vec::Vec<crate::types::DeprecationDetail>>,
+    /// <p>A list of <code>AddonCompatibilityDetail</code> objects for Amazon EKS add-ons.</p>
+    pub addon_compatibility_details: ::std::option::Option<::std::vec::Vec<crate::types::AddonCompatibilityDetail>>,
 }
 impl InsightCategorySpecificSummary {
     /// <p>The summary information about deprecated resource usage for an insight check in the <code>UPGRADE_READINESS</code> category.</p>
@@ -13,6 +15,12 @@ impl InsightCategorySpecificSummary {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.deprecation_details.is_none()`.
     pub fn deprecation_details(&self) -> &[crate::types::DeprecationDetail] {
         self.deprecation_details.as_deref().unwrap_or_default()
+    }
+    /// <p>A list of <code>AddonCompatibilityDetail</code> objects for Amazon EKS add-ons.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.addon_compatibility_details.is_none()`.
+    pub fn addon_compatibility_details(&self) -> &[crate::types::AddonCompatibilityDetail] {
+        self.addon_compatibility_details.as_deref().unwrap_or_default()
     }
 }
 impl InsightCategorySpecificSummary {
@@ -27,6 +35,7 @@ impl InsightCategorySpecificSummary {
 #[non_exhaustive]
 pub struct InsightCategorySpecificSummaryBuilder {
     pub(crate) deprecation_details: ::std::option::Option<::std::vec::Vec<crate::types::DeprecationDetail>>,
+    pub(crate) addon_compatibility_details: ::std::option::Option<::std::vec::Vec<crate::types::AddonCompatibilityDetail>>,
 }
 impl InsightCategorySpecificSummaryBuilder {
     /// Appends an item to `deprecation_details`.
@@ -49,10 +58,31 @@ impl InsightCategorySpecificSummaryBuilder {
     pub fn get_deprecation_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeprecationDetail>> {
         &self.deprecation_details
     }
+    /// Appends an item to `addon_compatibility_details`.
+    ///
+    /// To override the contents of this collection use [`set_addon_compatibility_details`](Self::set_addon_compatibility_details).
+    ///
+    /// <p>A list of <code>AddonCompatibilityDetail</code> objects for Amazon EKS add-ons.</p>
+    pub fn addon_compatibility_details(mut self, input: crate::types::AddonCompatibilityDetail) -> Self {
+        let mut v = self.addon_compatibility_details.unwrap_or_default();
+        v.push(input);
+        self.addon_compatibility_details = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of <code>AddonCompatibilityDetail</code> objects for Amazon EKS add-ons.</p>
+    pub fn set_addon_compatibility_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddonCompatibilityDetail>>) -> Self {
+        self.addon_compatibility_details = input;
+        self
+    }
+    /// <p>A list of <code>AddonCompatibilityDetail</code> objects for Amazon EKS add-ons.</p>
+    pub fn get_addon_compatibility_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddonCompatibilityDetail>> {
+        &self.addon_compatibility_details
+    }
     /// Consumes the builder and constructs a [`InsightCategorySpecificSummary`](crate::types::InsightCategorySpecificSummary).
     pub fn build(self) -> crate::types::InsightCategorySpecificSummary {
         crate::types::InsightCategorySpecificSummary {
             deprecation_details: self.deprecation_details,
+            addon_compatibility_details: self.addon_compatibility_details,
         }
     }
 }

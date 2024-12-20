@@ -10,7 +10,7 @@ pub struct BucketCountByEncryptionType {
     pub s3_managed: ::std::option::Option<i64>,
     /// <p>The total number of buckets that don't specify default server-side encryption behavior for new objects. Default encryption settings aren't configured for these buckets.</p>
     pub unencrypted: ::std::option::Option<i64>,
-    /// <p>The total number of buckets that Amazon Macie doesn't have current encryption metadata for. Macie can't provide current data about the default encryption settings for these buckets.</p>
+    /// <p>The total number of buckets that Amazon Macie doesn't have current encryption metadata for. For example, the buckets' permissions settings or a quota prevented Macie from retrieving the default encryption settings for the buckets.</p>
     pub unknown: ::std::option::Option<i64>,
 }
 impl BucketCountByEncryptionType {
@@ -26,7 +26,7 @@ impl BucketCountByEncryptionType {
     pub fn unencrypted(&self) -> ::std::option::Option<i64> {
         self.unencrypted
     }
-    /// <p>The total number of buckets that Amazon Macie doesn't have current encryption metadata for. Macie can't provide current data about the default encryption settings for these buckets.</p>
+    /// <p>The total number of buckets that Amazon Macie doesn't have current encryption metadata for. For example, the buckets' permissions settings or a quota prevented Macie from retrieving the default encryption settings for the buckets.</p>
     pub fn unknown(&self) -> ::std::option::Option<i64> {
         self.unknown
     }
@@ -90,17 +90,17 @@ impl BucketCountByEncryptionTypeBuilder {
     pub fn get_unencrypted(&self) -> &::std::option::Option<i64> {
         &self.unencrypted
     }
-    /// <p>The total number of buckets that Amazon Macie doesn't have current encryption metadata for. Macie can't provide current data about the default encryption settings for these buckets.</p>
+    /// <p>The total number of buckets that Amazon Macie doesn't have current encryption metadata for. For example, the buckets' permissions settings or a quota prevented Macie from retrieving the default encryption settings for the buckets.</p>
     pub fn unknown(mut self, input: i64) -> Self {
         self.unknown = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The total number of buckets that Amazon Macie doesn't have current encryption metadata for. Macie can't provide current data about the default encryption settings for these buckets.</p>
+    /// <p>The total number of buckets that Amazon Macie doesn't have current encryption metadata for. For example, the buckets' permissions settings or a quota prevented Macie from retrieving the default encryption settings for the buckets.</p>
     pub fn set_unknown(mut self, input: ::std::option::Option<i64>) -> Self {
         self.unknown = input;
         self
     }
-    /// <p>The total number of buckets that Amazon Macie doesn't have current encryption metadata for. Macie can't provide current data about the default encryption settings for these buckets.</p>
+    /// <p>The total number of buckets that Amazon Macie doesn't have current encryption metadata for. For example, the buckets' permissions settings or a quota prevented Macie from retrieving the default encryption settings for the buckets.</p>
     pub fn get_unknown(&self) -> &::std::option::Option<i64> {
         &self.unknown
     }

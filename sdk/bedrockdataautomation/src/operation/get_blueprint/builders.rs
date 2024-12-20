@@ -22,7 +22,7 @@ impl crate::operation::get_blueprint::builders::GetBlueprintInputBuilder {
 }
 /// Fluent builder constructing a request to `GetBlueprint`.
 ///
-/// Gets an existing Amazon Bedrock Keystone Blueprint
+/// Gets an existing Amazon Bedrock Data Automation Blueprint
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetBlueprintFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

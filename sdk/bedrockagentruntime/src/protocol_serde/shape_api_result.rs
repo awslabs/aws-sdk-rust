@@ -15,27 +15,27 @@ pub fn ser_api_result(
     if let Some(var_3) = &input.confirmation_state {
         object.key("confirmationState").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.response_body {
-        #[allow(unused_mut)]
-        let mut object_5 = object.key("responseBody").start_object();
-        for (key_6, value_7) in var_4 {
-            {
-                #[allow(unused_mut)]
-                let mut object_8 = object_5.key(key_6.as_str()).start_object();
-                crate::protocol_serde::shape_content_body::ser_content_body(&mut object_8, value_7)?;
-                object_8.finish();
-            }
-        }
-        object_5.finish();
+    if let Some(var_4) = &input.response_state {
+        object.key("responseState").string(var_4.as_str());
     }
-    if let Some(var_9) = &input.http_status_code {
+    if let Some(var_5) = &input.http_status_code {
         object.key("httpStatusCode").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_9).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_10) = &input.response_state {
-        object.key("responseState").string(var_10.as_str());
+    if let Some(var_6) = &input.response_body {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("responseBody").start_object();
+        for (key_8, value_9) in var_6 {
+            {
+                #[allow(unused_mut)]
+                let mut object_10 = object_7.key(key_8.as_str()).start_object();
+                crate::protocol_serde::shape_content_body::ser_content_body(&mut object_10, value_9)?;
+                object_10.finish();
+            }
+        }
+        object_7.finish();
     }
     if let Some(var_11) = &input.agent_id {
         object.key("agentId").string(var_11.as_str());
@@ -86,8 +86,12 @@ where
                                     .transpose()?,
                             );
                         }
-                        "responseBody" => {
-                            builder = builder.set_response_body(crate::protocol_serde::shape_response_body::de_response_body(tokens)?);
+                        "responseState" => {
+                            builder = builder.set_response_state(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ResponseState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
                         }
                         "httpStatusCode" => {
                             builder = builder.set_http_status_code(
@@ -96,12 +100,8 @@ where
                                     .transpose()?,
                             );
                         }
-                        "responseState" => {
-                            builder = builder.set_response_state(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::ResponseState::from(u.as_ref())))
-                                    .transpose()?,
-                            );
+                        "responseBody" => {
+                            builder = builder.set_response_body(crate::protocol_serde::shape_response_body::de_response_body(tokens)?);
                         }
                         "agentId" => {
                             builder = builder.set_agent_id(

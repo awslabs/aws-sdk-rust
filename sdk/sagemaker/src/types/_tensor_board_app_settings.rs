@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TensorBoardAppSettings {
-    /// <p>The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
+    /// <p>The default instance type and the Amazon Resource Name (ARN) of the SageMaker AI image created on the instance.</p>
     pub default_resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
 }
 impl TensorBoardAppSettings {
-    /// <p>The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
+    /// <p>The default instance type and the Amazon Resource Name (ARN) of the SageMaker AI image created on the instance.</p>
     pub fn default_resource_spec(&self) -> ::std::option::Option<&crate::types::ResourceSpec> {
         self.default_resource_spec.as_ref()
     }
@@ -27,17 +27,17 @@ pub struct TensorBoardAppSettingsBuilder {
     pub(crate) default_resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
 }
 impl TensorBoardAppSettingsBuilder {
-    /// <p>The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
+    /// <p>The default instance type and the Amazon Resource Name (ARN) of the SageMaker AI image created on the instance.</p>
     pub fn default_resource_spec(mut self, input: crate::types::ResourceSpec) -> Self {
         self.default_resource_spec = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
+    /// <p>The default instance type and the Amazon Resource Name (ARN) of the SageMaker AI image created on the instance.</p>
     pub fn set_default_resource_spec(mut self, input: ::std::option::Option<crate::types::ResourceSpec>) -> Self {
         self.default_resource_spec = input;
         self
     }
-    /// <p>The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
+    /// <p>The default instance type and the Amazon Resource Name (ARN) of the SageMaker AI image created on the instance.</p>
     pub fn get_default_resource_spec(&self) -> &::std::option::Option<crate::types::ResourceSpec> {
         &self.default_resource_spec
     }

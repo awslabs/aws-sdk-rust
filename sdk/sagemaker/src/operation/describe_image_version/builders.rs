@@ -22,7 +22,7 @@ impl crate::operation::describe_image_version::builders::DescribeImageVersionInp
 }
 /// Fluent builder constructing a request to `DescribeImageVersion`.
 ///
-/// <p>Describes a version of a SageMaker image.</p>
+/// <p>Describes a version of a SageMaker AI image.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeImageVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

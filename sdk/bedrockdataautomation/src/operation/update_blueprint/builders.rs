@@ -22,7 +22,7 @@ impl crate::operation::update_blueprint::builders::UpdateBlueprintInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateBlueprint`.
 ///
-/// Updates an existing Amazon Bedrock Blueprint
+/// Updates an existing Amazon Bedrock Data Automation Blueprint
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateBlueprintFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

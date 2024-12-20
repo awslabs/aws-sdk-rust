@@ -8,6 +8,8 @@ pub struct BillingViewListElement {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of names of the Billing view.</p>
     pub name: ::std::option::Option<::std::string::String>,
+    /// <p>The description of the billing view.</p>
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The list of owners of the Billing view.</p>
     pub owner_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of billing view.</p>
@@ -21,6 +23,10 @@ impl BillingViewListElement {
     /// <p>A list of names of the Billing view.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
+    }
+    /// <p>The description of the billing view.</p>
+    pub fn description(&self) -> ::std::option::Option<&str> {
+        self.description.as_deref()
     }
     /// <p>The list of owners of the Billing view.</p>
     pub fn owner_account_id(&self) -> ::std::option::Option<&str> {
@@ -36,6 +42,7 @@ impl ::std::fmt::Debug for BillingViewListElement {
         let mut formatter = f.debug_struct("BillingViewListElement");
         formatter.field("arn", &self.arn);
         formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("owner_account_id", &self.owner_account_id);
         formatter.field("billing_view_type", &self.billing_view_type);
         formatter.finish()
@@ -54,6 +61,7 @@ impl BillingViewListElement {
 pub struct BillingViewListElementBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) owner_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) billing_view_type: ::std::option::Option<crate::types::BillingViewType>,
 }
@@ -85,6 +93,20 @@ impl BillingViewListElementBuilder {
     /// <p>A list of names of the Billing view.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
+    }
+    /// <p>The description of the billing view.</p>
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The description of the billing view.</p>
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.description = input;
+        self
+    }
+    /// <p>The description of the billing view.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The list of owners of the Billing view.</p>
     pub fn owner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -119,6 +141,7 @@ impl BillingViewListElementBuilder {
         crate::types::BillingViewListElement {
             arn: self.arn,
             name: self.name,
+            description: self.description,
             owner_account_id: self.owner_account_id,
             billing_view_type: self.billing_view_type,
         }
@@ -129,6 +152,7 @@ impl ::std::fmt::Debug for BillingViewListElementBuilder {
         let mut formatter = f.debug_struct("BillingViewListElementBuilder");
         formatter.field("arn", &self.arn);
         formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("owner_account_id", &self.owner_account_id);
         formatter.field("billing_view_type", &self.billing_view_type);
         formatter.finish()

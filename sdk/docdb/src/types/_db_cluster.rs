@@ -75,6 +75,8 @@ pub struct DbCluster {
     /// <p>Valid values for storage type - <code>standard | iopt1</code></p>
     /// <p>Default value is <code>standard </code></p>
     pub storage_type: ::std::option::Option<::std::string::String>,
+    /// <p>The secret managed by Amazon DocumentDB in Amazon Web Services Secrets Manager for the master user password.</p>
+    pub master_user_secret: ::std::option::Option<crate::types::ClusterMasterUserSecret>,
 }
 impl DbCluster {
     /// <p>Provides the list of Amazon EC2 Availability Zones that instances in the cluster can be created in.</p>
@@ -226,6 +228,10 @@ impl DbCluster {
     pub fn storage_type(&self) -> ::std::option::Option<&str> {
         self.storage_type.as_deref()
     }
+    /// <p>The secret managed by Amazon DocumentDB in Amazon Web Services Secrets Manager for the master user password.</p>
+    pub fn master_user_secret(&self) -> ::std::option::Option<&crate::types::ClusterMasterUserSecret> {
+        self.master_user_secret.as_ref()
+    }
 }
 impl DbCluster {
     /// Creates a new builder-style object to manufacture [`DbCluster`](crate::types::DbCluster).
@@ -271,6 +277,7 @@ pub struct DbClusterBuilder {
     pub(crate) enabled_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) deletion_protection: ::std::option::Option<bool>,
     pub(crate) storage_type: ::std::option::Option<::std::string::String>,
+    pub(crate) master_user_secret: ::std::option::Option<crate::types::ClusterMasterUserSecret>,
 }
 impl DbClusterBuilder {
     /// Appends an item to `availability_zones`.
@@ -786,6 +793,20 @@ impl DbClusterBuilder {
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_type
     }
+    /// <p>The secret managed by Amazon DocumentDB in Amazon Web Services Secrets Manager for the master user password.</p>
+    pub fn master_user_secret(mut self, input: crate::types::ClusterMasterUserSecret) -> Self {
+        self.master_user_secret = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The secret managed by Amazon DocumentDB in Amazon Web Services Secrets Manager for the master user password.</p>
+    pub fn set_master_user_secret(mut self, input: ::std::option::Option<crate::types::ClusterMasterUserSecret>) -> Self {
+        self.master_user_secret = input;
+        self
+    }
+    /// <p>The secret managed by Amazon DocumentDB in Amazon Web Services Secrets Manager for the master user password.</p>
+    pub fn get_master_user_secret(&self) -> &::std::option::Option<crate::types::ClusterMasterUserSecret> {
+        &self.master_user_secret
+    }
     /// Consumes the builder and constructs a [`DbCluster`](crate::types::DbCluster).
     pub fn build(self) -> crate::types::DbCluster {
         crate::types::DbCluster {
@@ -822,6 +843,7 @@ impl DbClusterBuilder {
             enabled_cloudwatch_logs_exports: self.enabled_cloudwatch_logs_exports,
             deletion_protection: self.deletion_protection,
             storage_type: self.storage_type,
+            master_user_secret: self.master_user_secret,
         }
     }
 }

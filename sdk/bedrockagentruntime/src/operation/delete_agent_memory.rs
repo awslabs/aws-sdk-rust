@@ -221,6 +221,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteAgentM
                         query.push_kv("memoryId", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
+                if let ::std::option::Option::Some(inner_4) = &_input.session_id {
+                    {
+                        query.push_kv("sessionId", &::aws_smithy_http::query::fmt_string(inner_4));
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

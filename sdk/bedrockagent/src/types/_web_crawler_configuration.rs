@@ -13,6 +13,8 @@ pub struct WebCrawlerConfiguration {
     /// <p>The scope of what is crawled for your URLs.</p>
     /// <p>You can choose to crawl only web pages that belong to the same host or primary domain. For example, only web pages that contain the seed URL "https://docs.aws.amazon.com/bedrock/latest/userguide/" and no other domains. You can choose to include sub domains in addition to the host or primary domain. For example, web pages that contain "aws.amazon.com" can also include sub domain "docs.aws.amazon.com".</p>
     pub scope: ::std::option::Option<crate::types::WebScopeType>,
+    /// <p>A string used for identifying the crawler or a bot when it accesses a web server. By default, this is set to <code>bedrockbot_UUID</code> for your crawler. You can optionally append a custom string to <code>bedrockbot_UUID</code> to allowlist a specific user agent permitted to access your source URLs.</p>
+    pub user_agent: ::std::option::Option<::std::string::String>,
 }
 impl WebCrawlerConfiguration {
     /// <p>The configuration of crawl limits for the web URLs.</p>
@@ -36,6 +38,10 @@ impl WebCrawlerConfiguration {
     pub fn scope(&self) -> ::std::option::Option<&crate::types::WebScopeType> {
         self.scope.as_ref()
     }
+    /// <p>A string used for identifying the crawler or a bot when it accesses a web server. By default, this is set to <code>bedrockbot_UUID</code> for your crawler. You can optionally append a custom string to <code>bedrockbot_UUID</code> to allowlist a specific user agent permitted to access your source URLs.</p>
+    pub fn user_agent(&self) -> ::std::option::Option<&str> {
+        self.user_agent.as_deref()
+    }
 }
 impl ::std::fmt::Debug for WebCrawlerConfiguration {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -44,6 +50,7 @@ impl ::std::fmt::Debug for WebCrawlerConfiguration {
         formatter.field("inclusion_filters", &"*** Sensitive Data Redacted ***");
         formatter.field("exclusion_filters", &"*** Sensitive Data Redacted ***");
         formatter.field("scope", &self.scope);
+        formatter.field("user_agent", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -62,6 +69,7 @@ pub struct WebCrawlerConfigurationBuilder {
     pub(crate) inclusion_filters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) exclusion_filters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) scope: ::std::option::Option<crate::types::WebScopeType>,
+    pub(crate) user_agent: ::std::option::Option<::std::string::String>,
 }
 impl WebCrawlerConfigurationBuilder {
     /// <p>The configuration of crawl limits for the web URLs.</p>
@@ -135,6 +143,20 @@ impl WebCrawlerConfigurationBuilder {
     pub fn get_scope(&self) -> &::std::option::Option<crate::types::WebScopeType> {
         &self.scope
     }
+    /// <p>A string used for identifying the crawler or a bot when it accesses a web server. By default, this is set to <code>bedrockbot_UUID</code> for your crawler. You can optionally append a custom string to <code>bedrockbot_UUID</code> to allowlist a specific user agent permitted to access your source URLs.</p>
+    pub fn user_agent(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.user_agent = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A string used for identifying the crawler or a bot when it accesses a web server. By default, this is set to <code>bedrockbot_UUID</code> for your crawler. You can optionally append a custom string to <code>bedrockbot_UUID</code> to allowlist a specific user agent permitted to access your source URLs.</p>
+    pub fn set_user_agent(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.user_agent = input;
+        self
+    }
+    /// <p>A string used for identifying the crawler or a bot when it accesses a web server. By default, this is set to <code>bedrockbot_UUID</code> for your crawler. You can optionally append a custom string to <code>bedrockbot_UUID</code> to allowlist a specific user agent permitted to access your source URLs.</p>
+    pub fn get_user_agent(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_agent
+    }
     /// Consumes the builder and constructs a [`WebCrawlerConfiguration`](crate::types::WebCrawlerConfiguration).
     pub fn build(self) -> crate::types::WebCrawlerConfiguration {
         crate::types::WebCrawlerConfiguration {
@@ -142,6 +164,7 @@ impl WebCrawlerConfigurationBuilder {
             inclusion_filters: self.inclusion_filters,
             exclusion_filters: self.exclusion_filters,
             scope: self.scope,
+            user_agent: self.user_agent,
         }
     }
 }
@@ -152,6 +175,7 @@ impl ::std::fmt::Debug for WebCrawlerConfigurationBuilder {
         formatter.field("inclusion_filters", &"*** Sensitive Data Redacted ***");
         formatter.field("exclusion_filters", &"*** Sensitive Data Redacted ***");
         formatter.field("scope", &self.scope);
+        formatter.field("user_agent", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

@@ -14,7 +14,7 @@ pub struct StartAttachedFileUploadOutput {
     pub file_status: ::std::option::Option<crate::types::FileStatusType>,
     /// <p>Represents the identity that created the file.</p>
     pub created_by: ::std::option::Option<crate::types::CreatedByInfo>,
-    /// <p>Information to be used while uploading the attached file.</p>
+    /// <p>The headers to be provided while uploading the file to the URL.</p>
     pub upload_url_metadata: ::std::option::Option<crate::types::UploadUrlMetadata>,
     _request_id: Option<String>,
 }
@@ -39,7 +39,7 @@ impl StartAttachedFileUploadOutput {
     pub fn created_by(&self) -> ::std::option::Option<&crate::types::CreatedByInfo> {
         self.created_by.as_ref()
     }
-    /// <p>Information to be used while uploading the attached file.</p>
+    /// <p>The headers to be provided while uploading the file to the URL.</p>
     pub fn upload_url_metadata(&self) -> ::std::option::Option<&crate::types::UploadUrlMetadata> {
         self.upload_url_metadata.as_ref()
     }
@@ -139,17 +139,17 @@ impl StartAttachedFileUploadOutputBuilder {
     pub fn get_created_by(&self) -> &::std::option::Option<crate::types::CreatedByInfo> {
         &self.created_by
     }
-    /// <p>Information to be used while uploading the attached file.</p>
+    /// <p>The headers to be provided while uploading the file to the URL.</p>
     pub fn upload_url_metadata(mut self, input: crate::types::UploadUrlMetadata) -> Self {
         self.upload_url_metadata = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information to be used while uploading the attached file.</p>
+    /// <p>The headers to be provided while uploading the file to the URL.</p>
     pub fn set_upload_url_metadata(mut self, input: ::std::option::Option<crate::types::UploadUrlMetadata>) -> Self {
         self.upload_url_metadata = input;
         self
     }
-    /// <p>Information to be used while uploading the attached file.</p>
+    /// <p>The headers to be provided while uploading the file to the URL.</p>
     pub fn get_upload_url_metadata(&self) -> &::std::option::Option<crate::types::UploadUrlMetadata> {
         &self.upload_url_metadata
     }

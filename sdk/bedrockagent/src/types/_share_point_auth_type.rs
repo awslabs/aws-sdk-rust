@@ -13,6 +13,7 @@
 /// # let sharepointauthtype = unimplemented!();
 /// match sharepointauthtype {
 ///     SharePointAuthType::Oauth2ClientCredentials => { /* ... */ },
+///     SharePointAuthType::Oauth2SharepointAppOnlyClientCredentials => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -43,6 +44,8 @@
 pub enum SharePointAuthType {
     #[allow(missing_docs)] // documentation missing in model
     Oauth2ClientCredentials,
+    #[allow(missing_docs)] // documentation missing in model
+    Oauth2SharepointAppOnlyClientCredentials,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -51,6 +54,7 @@ impl ::std::convert::From<&str> for SharePointAuthType {
     fn from(s: &str) -> Self {
         match s {
             "OAUTH2_CLIENT_CREDENTIALS" => SharePointAuthType::Oauth2ClientCredentials,
+            "OAUTH2_SHAREPOINT_APP_ONLY_CLIENT_CREDENTIALS" => SharePointAuthType::Oauth2SharepointAppOnlyClientCredentials,
             other => SharePointAuthType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -67,12 +71,13 @@ impl SharePointAuthType {
     pub fn as_str(&self) -> &str {
         match self {
             SharePointAuthType::Oauth2ClientCredentials => "OAUTH2_CLIENT_CREDENTIALS",
+            SharePointAuthType::Oauth2SharepointAppOnlyClientCredentials => "OAUTH2_SHAREPOINT_APP_ONLY_CLIENT_CREDENTIALS",
             SharePointAuthType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["OAUTH2_CLIENT_CREDENTIALS"]
+        &["OAUTH2_CLIENT_CREDENTIALS", "OAUTH2_SHAREPOINT_APP_ONLY_CLIENT_CREDENTIALS"]
     }
 }
 impl ::std::convert::AsRef<str> for SharePointAuthType {
@@ -96,6 +101,7 @@ impl ::std::fmt::Display for SharePointAuthType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             SharePointAuthType::Oauth2ClientCredentials => write!(f, "OAUTH2_CLIENT_CREDENTIALS"),
+            SharePointAuthType::Oauth2SharepointAppOnlyClientCredentials => write!(f, "OAUTH2_SHAREPOINT_APP_ONLY_CLIENT_CREDENTIALS"),
             SharePointAuthType::Unknown(value) => write!(f, "{}", value),
         }
     }

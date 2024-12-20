@@ -7,7 +7,7 @@ pub struct CreateEndpointConfigInput {
     pub endpoint_config_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint.</p>
     pub production_variants: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariant>>,
-    /// <p>Configuration to control how SageMaker captures inference data.</p>
+    /// <p>Configuration to control how SageMaker AI captures inference data.</p>
     pub data_capture_config: ::std::option::Option<crate::types::DataCaptureConfig>,
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -35,8 +35,8 @@ pub struct CreateEndpointConfigInput {
     pub explainer_config: ::std::option::Option<crate::types::ExplainerConfig>,
     /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>. If you use this field, you can only specify one variant for <code>ProductionVariants</code> and one variant for <code>ShadowProductionVariants</code>.</p>
     pub shadow_production_variants: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariant>>,
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform actions on your behalf. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>.</p><note>
-    /// <p>To be able to pass this role to Amazon SageMaker, the caller of this action must have the <code>iam:PassRole</code> permission.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker AI can assume to perform actions on your behalf. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker AI Roles</a>.</p><note>
+    /// <p>To be able to pass this role to Amazon SageMaker AI, the caller of this action must have the <code>iam:PassRole</code> permission.</p>
     /// </note>
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker Access to Resources in your Amazon VPC</a>.</p>
@@ -55,7 +55,7 @@ impl CreateEndpointConfigInput {
     pub fn production_variants(&self) -> &[crate::types::ProductionVariant] {
         self.production_variants.as_deref().unwrap_or_default()
     }
-    /// <p>Configuration to control how SageMaker captures inference data.</p>
+    /// <p>Configuration to control how SageMaker AI captures inference data.</p>
     pub fn data_capture_config(&self) -> ::std::option::Option<&crate::types::DataCaptureConfig> {
         self.data_capture_config.as_ref()
     }
@@ -99,8 +99,8 @@ impl CreateEndpointConfigInput {
     pub fn shadow_production_variants(&self) -> &[crate::types::ProductionVariant] {
         self.shadow_production_variants.as_deref().unwrap_or_default()
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform actions on your behalf. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>.</p><note>
-    /// <p>To be able to pass this role to Amazon SageMaker, the caller of this action must have the <code>iam:PassRole</code> permission.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker AI can assume to perform actions on your behalf. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker AI Roles</a>.</p><note>
+    /// <p>To be able to pass this role to Amazon SageMaker AI, the caller of this action must have the <code>iam:PassRole</code> permission.</p>
     /// </note>
     pub fn execution_role_arn(&self) -> ::std::option::Option<&str> {
         self.execution_role_arn.as_deref()
@@ -173,17 +173,17 @@ impl CreateEndpointConfigInputBuilder {
     pub fn get_production_variants(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductionVariant>> {
         &self.production_variants
     }
-    /// <p>Configuration to control how SageMaker captures inference data.</p>
+    /// <p>Configuration to control how SageMaker AI captures inference data.</p>
     pub fn data_capture_config(mut self, input: crate::types::DataCaptureConfig) -> Self {
         self.data_capture_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Configuration to control how SageMaker captures inference data.</p>
+    /// <p>Configuration to control how SageMaker AI captures inference data.</p>
     pub fn set_data_capture_config(mut self, input: ::std::option::Option<crate::types::DataCaptureConfig>) -> Self {
         self.data_capture_config = input;
         self
     }
-    /// <p>Configuration to control how SageMaker captures inference data.</p>
+    /// <p>Configuration to control how SageMaker AI captures inference data.</p>
     pub fn get_data_capture_config(&self) -> &::std::option::Option<crate::types::DataCaptureConfig> {
         &self.data_capture_config
     }
@@ -317,22 +317,22 @@ impl CreateEndpointConfigInputBuilder {
     pub fn get_shadow_production_variants(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductionVariant>> {
         &self.shadow_production_variants
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform actions on your behalf. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>.</p><note>
-    /// <p>To be able to pass this role to Amazon SageMaker, the caller of this action must have the <code>iam:PassRole</code> permission.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker AI can assume to perform actions on your behalf. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker AI Roles</a>.</p><note>
+    /// <p>To be able to pass this role to Amazon SageMaker AI, the caller of this action must have the <code>iam:PassRole</code> permission.</p>
     /// </note>
     pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform actions on your behalf. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>.</p><note>
-    /// <p>To be able to pass this role to Amazon SageMaker, the caller of this action must have the <code>iam:PassRole</code> permission.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker AI can assume to perform actions on your behalf. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker AI Roles</a>.</p><note>
+    /// <p>To be able to pass this role to Amazon SageMaker AI, the caller of this action must have the <code>iam:PassRole</code> permission.</p>
     /// </note>
     pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_role_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform actions on your behalf. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>.</p><note>
-    /// <p>To be able to pass this role to Amazon SageMaker, the caller of this action must have the <code>iam:PassRole</code> permission.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker AI can assume to perform actions on your behalf. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker AI Roles</a>.</p><note>
+    /// <p>To be able to pass this role to Amazon SageMaker AI, the caller of this action must have the <code>iam:PassRole</code> permission.</p>
     /// </note>
     pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_role_arn

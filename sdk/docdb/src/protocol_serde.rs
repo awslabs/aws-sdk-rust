@@ -421,6 +421,8 @@ pub(crate) mod shape_certificate;
 
 pub(crate) mod shape_certificate_details;
 
+pub(crate) mod shape_cluster_master_user_secret;
+
 pub(crate) mod shape_db_cluster_member_list;
 
 pub(crate) mod shape_db_cluster_roles;

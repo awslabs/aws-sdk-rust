@@ -19,15 +19,15 @@ pub struct DescribeAppOutput {
     pub status: ::std::option::Option<crate::types::AppStatus>,
     /// <p>The timestamp of the last health check.</p>
     pub last_health_check_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The timestamp of the last user's activity. <code>LastUserActivityTimestamp</code> is also updated when SageMaker performs health checks without user activity. As a result, this value is set to the same value as <code>LastHealthCheckTimestamp</code>.</p>
+    /// <p>The timestamp of the last user's activity. <code>LastUserActivityTimestamp</code> is also updated when SageMaker AI performs health checks without user activity. As a result, this value is set to the same value as <code>LastHealthCheckTimestamp</code>.</p>
     pub last_user_activity_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The creation time of the application.</p><note>
-    /// <p>After an application has been shut down for 24 hours, SageMaker deletes all metadata for the application. To be considered an update and retain application metadata, applications must be restarted within 24 hours after the previous application has been shut down. After this time window, creation of an application is considered a new application rather than an update of the previous application.</p>
+    /// <p>After an application has been shut down for 24 hours, SageMaker AI deletes all metadata for the application. To be considered an update and retain application metadata, applications must be restarted within 24 hours after the previous application has been shut down. After this time window, creation of an application is considered a new application rather than an update of the previous application.</p>
     /// </note>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The failure reason.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
-    /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
+    /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker AI image created on the instance.</p>
     pub resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
     /// <p>The lifecycle configuration that runs before the default lifecycle configuration</p>
     pub built_in_lifecycle_config_arn: ::std::option::Option<::std::string::String>,
@@ -66,12 +66,12 @@ impl DescribeAppOutput {
     pub fn last_health_check_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_health_check_timestamp.as_ref()
     }
-    /// <p>The timestamp of the last user's activity. <code>LastUserActivityTimestamp</code> is also updated when SageMaker performs health checks without user activity. As a result, this value is set to the same value as <code>LastHealthCheckTimestamp</code>.</p>
+    /// <p>The timestamp of the last user's activity. <code>LastUserActivityTimestamp</code> is also updated when SageMaker AI performs health checks without user activity. As a result, this value is set to the same value as <code>LastHealthCheckTimestamp</code>.</p>
     pub fn last_user_activity_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_user_activity_timestamp.as_ref()
     }
     /// <p>The creation time of the application.</p><note>
-    /// <p>After an application has been shut down for 24 hours, SageMaker deletes all metadata for the application. To be considered an update and retain application metadata, applications must be restarted within 24 hours after the previous application has been shut down. After this time window, creation of an application is considered a new application rather than an update of the previous application.</p>
+    /// <p>After an application has been shut down for 24 hours, SageMaker AI deletes all metadata for the application. To be considered an update and retain application metadata, applications must be restarted within 24 hours after the previous application has been shut down. After this time window, creation of an application is considered a new application rather than an update of the previous application.</p>
     /// </note>
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
@@ -80,7 +80,7 @@ impl DescribeAppOutput {
     pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
-    /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
+    /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker AI image created on the instance.</p>
     pub fn resource_spec(&self) -> ::std::option::Option<&crate::types::ResourceSpec> {
         self.resource_spec.as_ref()
     }
@@ -233,36 +233,36 @@ impl DescribeAppOutputBuilder {
     pub fn get_last_health_check_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_health_check_timestamp
     }
-    /// <p>The timestamp of the last user's activity. <code>LastUserActivityTimestamp</code> is also updated when SageMaker performs health checks without user activity. As a result, this value is set to the same value as <code>LastHealthCheckTimestamp</code>.</p>
+    /// <p>The timestamp of the last user's activity. <code>LastUserActivityTimestamp</code> is also updated when SageMaker AI performs health checks without user activity. As a result, this value is set to the same value as <code>LastHealthCheckTimestamp</code>.</p>
     pub fn last_user_activity_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_user_activity_timestamp = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp of the last user's activity. <code>LastUserActivityTimestamp</code> is also updated when SageMaker performs health checks without user activity. As a result, this value is set to the same value as <code>LastHealthCheckTimestamp</code>.</p>
+    /// <p>The timestamp of the last user's activity. <code>LastUserActivityTimestamp</code> is also updated when SageMaker AI performs health checks without user activity. As a result, this value is set to the same value as <code>LastHealthCheckTimestamp</code>.</p>
     pub fn set_last_user_activity_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_user_activity_timestamp = input;
         self
     }
-    /// <p>The timestamp of the last user's activity. <code>LastUserActivityTimestamp</code> is also updated when SageMaker performs health checks without user activity. As a result, this value is set to the same value as <code>LastHealthCheckTimestamp</code>.</p>
+    /// <p>The timestamp of the last user's activity. <code>LastUserActivityTimestamp</code> is also updated when SageMaker AI performs health checks without user activity. As a result, this value is set to the same value as <code>LastHealthCheckTimestamp</code>.</p>
     pub fn get_last_user_activity_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_user_activity_timestamp
     }
     /// <p>The creation time of the application.</p><note>
-    /// <p>After an application has been shut down for 24 hours, SageMaker deletes all metadata for the application. To be considered an update and retain application metadata, applications must be restarted within 24 hours after the previous application has been shut down. After this time window, creation of an application is considered a new application rather than an update of the previous application.</p>
+    /// <p>After an application has been shut down for 24 hours, SageMaker AI deletes all metadata for the application. To be considered an update and retain application metadata, applications must be restarted within 24 hours after the previous application has been shut down. After this time window, creation of an application is considered a new application rather than an update of the previous application.</p>
     /// </note>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The creation time of the application.</p><note>
-    /// <p>After an application has been shut down for 24 hours, SageMaker deletes all metadata for the application. To be considered an update and retain application metadata, applications must be restarted within 24 hours after the previous application has been shut down. After this time window, creation of an application is considered a new application rather than an update of the previous application.</p>
+    /// <p>After an application has been shut down for 24 hours, SageMaker AI deletes all metadata for the application. To be considered an update and retain application metadata, applications must be restarted within 24 hours after the previous application has been shut down. After this time window, creation of an application is considered a new application rather than an update of the previous application.</p>
     /// </note>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
     /// <p>The creation time of the application.</p><note>
-    /// <p>After an application has been shut down for 24 hours, SageMaker deletes all metadata for the application. To be considered an update and retain application metadata, applications must be restarted within 24 hours after the previous application has been shut down. After this time window, creation of an application is considered a new application rather than an update of the previous application.</p>
+    /// <p>After an application has been shut down for 24 hours, SageMaker AI deletes all metadata for the application. To be considered an update and retain application metadata, applications must be restarted within 24 hours after the previous application has been shut down. After this time window, creation of an application is considered a new application rather than an update of the previous application.</p>
     /// </note>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
@@ -281,17 +281,17 @@ impl DescribeAppOutputBuilder {
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.failure_reason
     }
-    /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
+    /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker AI image created on the instance.</p>
     pub fn resource_spec(mut self, input: crate::types::ResourceSpec) -> Self {
         self.resource_spec = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
+    /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker AI image created on the instance.</p>
     pub fn set_resource_spec(mut self, input: ::std::option::Option<crate::types::ResourceSpec>) -> Self {
         self.resource_spec = input;
         self
     }
-    /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
+    /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker AI image created on the instance.</p>
     pub fn get_resource_spec(&self) -> &::std::option::Option<crate::types::ResourceSpec> {
         &self.resource_spec
     }

@@ -92,6 +92,21 @@ pub fn ser_modify_db_cluster_input_input_input(
     if let Some(var_33) = &input.storage_type {
         scope_32.string(var_33);
     }
+    #[allow(unused_mut)]
+    let mut scope_34 = writer.prefix("ManageMasterUserPassword");
+    if let Some(var_35) = &input.manage_master_user_password {
+        scope_34.boolean(*var_35);
+    }
+    #[allow(unused_mut)]
+    let mut scope_36 = writer.prefix("MasterUserSecretKmsKeyId");
+    if let Some(var_37) = &input.master_user_secret_kms_key_id {
+        scope_36.string(var_37);
+    }
+    #[allow(unused_mut)]
+    let mut scope_38 = writer.prefix("RotateMasterUserPassword");
+    if let Some(var_39) = &input.rotate_master_user_password {
+        scope_38.boolean(*var_39);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

@@ -192,6 +192,20 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for ResponseStreamUnmars
                             crate::types::error::ResponseStreamError::BadGatewayException(builder.build()),
                         ));
                     }
+                    "modelNotReadyException" => {
+                        let mut builder = crate::types::error::builders::ModelNotReadyExceptionBuilder::default();
+                        builder = crate::protocol_serde::shape_model_not_ready_exception::de_model_not_ready_exception_json_err(
+                            &message.payload()[..],
+                            builder,
+                        )
+                        .map_err(|err| {
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall modelNotReadyException: {}", err))
+                        })?;
+                        builder.set_meta(Some(generic));
+                        return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
+                            crate::types::error::ResponseStreamError::ModelNotReadyException(builder.build()),
+                        ));
+                    }
                     _ => {}
                 }
                 Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(

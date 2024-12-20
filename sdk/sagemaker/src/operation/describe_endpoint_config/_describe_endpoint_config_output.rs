@@ -9,7 +9,7 @@ pub struct DescribeEndpointConfigOutput {
     pub endpoint_config_arn: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint.</p>
     pub production_variants: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariant>>,
-    /// <p>Configuration to control how SageMaker captures inference data.</p>
+    /// <p>Configuration to control how SageMaker AI captures inference data.</p>
     pub data_capture_config: ::std::option::Option<crate::types::DataCaptureConfig>,
     /// <p>Amazon Web Services KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage volume attached to the instance.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
@@ -44,7 +44,7 @@ impl DescribeEndpointConfigOutput {
     pub fn production_variants(&self) -> &[crate::types::ProductionVariant] {
         self.production_variants.as_deref().unwrap_or_default()
     }
-    /// <p>Configuration to control how SageMaker captures inference data.</p>
+    /// <p>Configuration to control how SageMaker AI captures inference data.</p>
     pub fn data_capture_config(&self) -> ::std::option::Option<&crate::types::DataCaptureConfig> {
         self.data_capture_config.as_ref()
     }
@@ -164,17 +164,17 @@ impl DescribeEndpointConfigOutputBuilder {
     pub fn get_production_variants(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductionVariant>> {
         &self.production_variants
     }
-    /// <p>Configuration to control how SageMaker captures inference data.</p>
+    /// <p>Configuration to control how SageMaker AI captures inference data.</p>
     pub fn data_capture_config(mut self, input: crate::types::DataCaptureConfig) -> Self {
         self.data_capture_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Configuration to control how SageMaker captures inference data.</p>
+    /// <p>Configuration to control how SageMaker AI captures inference data.</p>
     pub fn set_data_capture_config(mut self, input: ::std::option::Option<crate::types::DataCaptureConfig>) -> Self {
         self.data_capture_config = input;
         self
     }
-    /// <p>Configuration to control how SageMaker captures inference data.</p>
+    /// <p>Configuration to control how SageMaker AI captures inference data.</p>
     pub fn get_data_capture_config(&self) -> &::std::option::Option<crate::types::DataCaptureConfig> {
         &self.data_capture_config
     }

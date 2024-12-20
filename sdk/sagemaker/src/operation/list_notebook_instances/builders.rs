@@ -22,7 +22,7 @@ impl crate::operation::list_notebook_instances::builders::ListNotebookInstancesI
 }
 /// Fluent builder constructing a request to `ListNotebookInstances`.
 ///
-/// <p>Returns a list of the SageMaker notebook instances in the requester's account in an Amazon Web Services Region.</p>
+/// <p>Returns a list of the SageMaker AI notebook instances in the requester's account in an Amazon Web Services Region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListNotebookInstancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

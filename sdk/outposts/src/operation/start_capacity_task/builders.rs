@@ -22,7 +22,7 @@ impl crate::operation::start_capacity_task::builders::StartCapacityTaskInputBuil
 }
 /// Fluent builder constructing a request to `StartCapacityTask`.
 ///
-/// <p>Starts the specified capacity task. You can have one active capacity task per order or Outpost.</p>
+/// <p>Starts the specified capacity task. You can have one active capacity task for each order and each Outpost.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartCapacityTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

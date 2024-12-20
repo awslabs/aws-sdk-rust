@@ -22,7 +22,7 @@ impl crate::operation::describe_studio_lifecycle_config::builders::DescribeStudi
 }
 /// Fluent builder constructing a request to `DescribeStudioLifecycleConfig`.
 ///
-/// <p>Describes the Amazon SageMaker Studio Lifecycle Configuration.</p>
+/// <p>Describes the Amazon SageMaker AI Studio Lifecycle Configuration.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeStudioLifecycleConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DescribeStudioLifecycleConfigFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the Amazon SageMaker Studio Lifecycle Configuration to describe.</p>
+    /// <p>The name of the Amazon SageMaker AI Studio Lifecycle Configuration to describe.</p>
     pub fn studio_lifecycle_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.studio_lifecycle_config_name(input.into());
         self
     }
-    /// <p>The name of the Amazon SageMaker Studio Lifecycle Configuration to describe.</p>
+    /// <p>The name of the Amazon SageMaker AI Studio Lifecycle Configuration to describe.</p>
     pub fn set_studio_lifecycle_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_studio_lifecycle_config_name(input);
         self
     }
-    /// <p>The name of the Amazon SageMaker Studio Lifecycle Configuration to describe.</p>
+    /// <p>The name of the Amazon SageMaker AI Studio Lifecycle Configuration to describe.</p>
     pub fn get_studio_lifecycle_config_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_studio_lifecycle_config_name()
     }

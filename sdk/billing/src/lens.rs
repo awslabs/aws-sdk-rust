@@ -9,9 +9,26 @@ pub(crate) fn reflens_list_billing_views_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_source_views_for_billing_view_output_output_next_token(
+    input: &crate::operation::list_source_views_for_billing_view::ListSourceViewsForBillingViewOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_billing_views_output_output_billing_views(
     input: crate::operation::list_billing_views::ListBillingViewsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::BillingViewListElement>> {
     let input = input.billing_views;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_source_views_for_billing_view_output_output_source_views(
+    input: crate::operation::list_source_views_for_billing_view::ListSourceViewsForBillingViewOutput,
+) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    let input = input.source_views;
     ::std::option::Option::Some(input)
 }

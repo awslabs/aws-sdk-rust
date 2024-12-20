@@ -22,7 +22,7 @@ impl crate::operation::update_data_automation_project::builders::UpdateDataAutom
 }
 /// Fluent builder constructing a request to `UpdateDataAutomationProject`.
 ///
-/// Updates an existing Amazon Bedrock DataAutomationProject
+/// Updates an existing Amazon Bedrock Data Automation Project
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDataAutomationProjectFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

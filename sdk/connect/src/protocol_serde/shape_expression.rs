@@ -33,6 +33,12 @@ pub fn ser_expression(
         }
         array_8.finish();
     }
+    if let Some(var_11) = &input.not_attribute_condition {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("NotAttributeCondition").start_object();
+        crate::protocol_serde::shape_attribute_condition::ser_attribute_condition(&mut object_12, var_11)?;
+        object_12.finish();
+    }
     Ok(())
 }
 
@@ -60,6 +66,10 @@ where
                         }
                         "OrExpression" => {
                             builder = builder.set_or_expression(crate::protocol_serde::shape_expressions::de_expressions(tokens)?);
+                        }
+                        "NotAttributeCondition" => {
+                            builder = builder
+                                .set_not_attribute_condition(crate::protocol_serde::shape_attribute_condition::de_attribute_condition(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

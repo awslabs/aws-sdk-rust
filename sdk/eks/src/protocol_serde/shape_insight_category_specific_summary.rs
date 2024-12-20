@@ -18,6 +18,11 @@ where
                             builder =
                                 builder.set_deprecation_details(crate::protocol_serde::shape_deprecation_details::de_deprecation_details(tokens)?);
                         }
+                        "addonCompatibilityDetails" => {
+                            builder = builder.set_addon_compatibility_details(
+                                crate::protocol_serde::shape_addon_compatibility_details::de_addon_compatibility_details(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

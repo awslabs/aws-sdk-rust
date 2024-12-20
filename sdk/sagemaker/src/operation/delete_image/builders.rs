@@ -22,7 +22,7 @@ impl crate::operation::delete_image::builders::DeleteImageInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteImage`.
 ///
-/// <p>Deletes a SageMaker image and all versions of the image. The container images aren't deleted.</p>
+/// <p>Deletes a SageMaker AI image and all versions of the image. The container images aren't deleted.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteImageFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

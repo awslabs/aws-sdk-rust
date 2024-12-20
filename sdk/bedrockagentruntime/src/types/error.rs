@@ -536,6 +536,8 @@ impl ::aws_types::request_id::RequestId for crate::types::error::InlineAgentResp
     }
 }
 
+pub use crate::types::error::_model_not_ready_exception::ModelNotReadyException;
+
 /// Error type for the `ResponseStreamError` operation.
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
@@ -558,6 +560,8 @@ pub enum ResponseStreamError {
     DependencyFailedException(crate::types::error::DependencyFailedException),
     /// <p>There was an issue with a dependency due to a server issue. Retry your request.</p>
     BadGatewayException(crate::types::error::BadGatewayException),
+    /// <p>The model specified in the request is not ready to serve inference requests. The AWS SDK will automatically retry the operation up to 5 times. For information about configuring automatic retries, see <a href="https://docs.aws.amazon.com/sdkref/latest/guide/feature-retry-behavior.html">Retry behavior</a> in the <i>AWS SDKs and Tools</i> reference guide.</p>
+    ModelNotReadyException(crate::types::error::ModelNotReadyException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -600,6 +604,7 @@ impl ResponseStreamError {
             Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DependencyFailedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::BadGatewayException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ModelNotReadyException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -639,6 +644,10 @@ impl ResponseStreamError {
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(self, Self::BadGatewayException(_))
     }
+    /// Returns `true` if the error kind is `ResponseStreamError::ModelNotReadyException`.
+    pub fn is_model_not_ready_exception(&self) -> bool {
+        matches!(self, Self::ModelNotReadyException(_))
+    }
 }
 impl ::std::error::Error for ResponseStreamError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
@@ -652,6 +661,7 @@ impl ::std::error::Error for ResponseStreamError {
             Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::DependencyFailedException(_inner) => ::std::option::Option::Some(_inner),
             Self::BadGatewayException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ModelNotReadyException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -668,6 +678,7 @@ impl ::std::fmt::Display for ResponseStreamError {
             Self::ConflictException(_inner) => _inner.fmt(f),
             Self::DependencyFailedException(_inner) => _inner.fmt(f),
             Self::BadGatewayException(_inner) => _inner.fmt(f),
+            Self::ModelNotReadyException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -698,6 +709,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ResponseStrea
             Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DependencyFailedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::BadGatewayException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ModelNotReadyException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }
@@ -911,6 +923,8 @@ mod _conflict_exception;
 mod _dependency_failed_exception;
 
 mod _internal_server_exception;
+
+mod _model_not_ready_exception;
 
 mod _resource_not_found_exception;
 

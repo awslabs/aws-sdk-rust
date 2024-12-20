@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCompilationJobOutput {
-    /// <p>If the action is successful, the service sends back an HTTP 200 response. Amazon SageMaker returns the following data in JSON format:</p>
+    /// <p>If the action is successful, the service sends back an HTTP 200 response. Amazon SageMaker AI returns the following data in JSON format:</p>
     /// <ul>
     /// <li>
     /// <p><code>CompilationJobArn</code>: The Amazon Resource Name (ARN) of the compiled job.</p></li>
@@ -12,7 +12,7 @@ pub struct CreateCompilationJobOutput {
     _request_id: Option<String>,
 }
 impl CreateCompilationJobOutput {
-    /// <p>If the action is successful, the service sends back an HTTP 200 response. Amazon SageMaker returns the following data in JSON format:</p>
+    /// <p>If the action is successful, the service sends back an HTTP 200 response. Amazon SageMaker AI returns the following data in JSON format:</p>
     /// <ul>
     /// <li>
     /// <p><code>CompilationJobArn</code>: The Amazon Resource Name (ARN) of the compiled job.</p></li>
@@ -41,7 +41,7 @@ pub struct CreateCompilationJobOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateCompilationJobOutputBuilder {
-    /// <p>If the action is successful, the service sends back an HTTP 200 response. Amazon SageMaker returns the following data in JSON format:</p>
+    /// <p>If the action is successful, the service sends back an HTTP 200 response. Amazon SageMaker AI returns the following data in JSON format:</p>
     /// <ul>
     /// <li>
     /// <p><code>CompilationJobArn</code>: The Amazon Resource Name (ARN) of the compiled job.</p></li>
@@ -51,7 +51,7 @@ impl CreateCompilationJobOutputBuilder {
         self.compilation_job_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If the action is successful, the service sends back an HTTP 200 response. Amazon SageMaker returns the following data in JSON format:</p>
+    /// <p>If the action is successful, the service sends back an HTTP 200 response. Amazon SageMaker AI returns the following data in JSON format:</p>
     /// <ul>
     /// <li>
     /// <p><code>CompilationJobArn</code>: The Amazon Resource Name (ARN) of the compiled job.</p></li>
@@ -60,7 +60,7 @@ impl CreateCompilationJobOutputBuilder {
         self.compilation_job_arn = input;
         self
     }
-    /// <p>If the action is successful, the service sends back an HTTP 200 response. Amazon SageMaker returns the following data in JSON format:</p>
+    /// <p>If the action is successful, the service sends back an HTTP 200 response. Amazon SageMaker AI returns the following data in JSON format:</p>
     /// <ul>
     /// <li>
     /// <p><code>CompilationJobArn</code>: The Amazon Resource Name (ARN) of the compiled job.</p></li>

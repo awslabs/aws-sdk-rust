@@ -17,7 +17,7 @@
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
 #![cfg_attr(docsrs, feature(doc_auto_cfg))]
-//! Amazon Bedrock Keystone Build
+//! Amazon Bedrock Data Automation BuildTime
 //!
 //! ## Getting Started
 //!
@@ -31,7 +31,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-bedrockdataautomation = "1.1.0"
+//! aws-sdk-bedrockdataautomation = "1.1.1"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

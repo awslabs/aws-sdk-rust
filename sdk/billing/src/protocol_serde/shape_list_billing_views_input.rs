@@ -9,14 +9,35 @@ pub fn ser_list_billing_views_input_input(
         crate::protocol_serde::shape_active_time_range::ser_active_time_range(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.max_results {
+    if let Some(var_3) = &input.arns {
+        let mut array_4 = object.key("arns").start_array();
+        for item_5 in var_3 {
+            {
+                array_4.value().string(item_5.as_str());
+            }
+        }
+        array_4.finish();
+    }
+    if let Some(var_6) = &input.billing_view_types {
+        let mut array_7 = object.key("billingViewTypes").start_array();
+        for item_8 in var_6 {
+            {
+                array_7.value().string(item_8.as_str());
+            }
+        }
+        array_7.finish();
+    }
+    if let Some(var_9) = &input.owner_account_id {
+        object.key("ownerAccountId").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if let Some(var_4) = &input.next_token {
-        object.key("nextToken").string(var_4.as_str());
+    if let Some(var_11) = &input.next_token {
+        object.key("nextToken").string(var_11.as_str());
     }
     Ok(())
 }

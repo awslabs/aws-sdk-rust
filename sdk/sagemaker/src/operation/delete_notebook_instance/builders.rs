@@ -22,8 +22,8 @@ impl crate::operation::delete_notebook_instance::builders::DeleteNotebookInstanc
 }
 /// Fluent builder constructing a request to `DeleteNotebookInstance`.
 ///
-/// <p>Deletes an SageMaker notebook instance. Before you can delete a notebook instance, you must call the <code>StopNotebookInstance</code> API.</p><important>
-/// <p>When you delete a notebook instance, you lose all of your data. SageMaker removes the ML compute instance, and deletes the ML storage volume and the network interface associated with the notebook instance.</p>
+/// <p>Deletes an SageMaker AI notebook instance. Before you can delete a notebook instance, you must call the <code>StopNotebookInstance</code> API.</p><important>
+/// <p>When you delete a notebook instance, you lose all of your data. SageMaker AI removes the ML compute instance, and deletes the ML storage volume and the network interface associated with the notebook instance.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteNotebookInstanceFluentBuilder {
@@ -110,17 +110,17 @@ impl DeleteNotebookInstanceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the SageMaker notebook instance to delete.</p>
+    /// <p>The name of the SageMaker AI notebook instance to delete.</p>
     pub fn notebook_instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.notebook_instance_name(input.into());
         self
     }
-    /// <p>The name of the SageMaker notebook instance to delete.</p>
+    /// <p>The name of the SageMaker AI notebook instance to delete.</p>
     pub fn set_notebook_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_notebook_instance_name(input);
         self
     }
-    /// <p>The name of the SageMaker notebook instance to delete.</p>
+    /// <p>The name of the SageMaker AI notebook instance to delete.</p>
     pub fn get_notebook_instance_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_notebook_instance_name()
     }

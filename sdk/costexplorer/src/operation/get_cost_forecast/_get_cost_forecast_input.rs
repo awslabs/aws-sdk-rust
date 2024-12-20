@@ -73,6 +73,8 @@ pub struct GetCostForecastInput {
     /// <p><code>SAVINGS_PLAN_ARN</code></p></li>
     /// </ul>
     pub filter: ::std::option::Option<crate::types::Expression>,
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies a specific billing view. The ARN is used to specify which particular billing view you want to interact with or retrieve information from when making API calls related to Amazon Web Services Billing and Cost Management features. The BillingViewArn can be retrieved by calling the ListBillingViews API.</p>
+    pub billing_view_arn: ::std::option::Option<::std::string::String>,
     /// <p>Cost Explorer always returns the mean forecast as a single point. You can request a prediction interval around the mean by specifying a confidence level. The higher the confidence level, the more confident Cost Explorer is about the actual value falling in the prediction interval. Higher confidence levels result in wider prediction intervals.</p>
     pub prediction_interval_level: ::std::option::Option<i32>,
 }
@@ -155,6 +157,10 @@ impl GetCostForecastInput {
     pub fn filter(&self) -> ::std::option::Option<&crate::types::Expression> {
         self.filter.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies a specific billing view. The ARN is used to specify which particular billing view you want to interact with or retrieve information from when making API calls related to Amazon Web Services Billing and Cost Management features. The BillingViewArn can be retrieved by calling the ListBillingViews API.</p>
+    pub fn billing_view_arn(&self) -> ::std::option::Option<&str> {
+        self.billing_view_arn.as_deref()
+    }
     /// <p>Cost Explorer always returns the mean forecast as a single point. You can request a prediction interval around the mean by specifying a confidence level. The higher the confidence level, the more confident Cost Explorer is about the actual value falling in the prediction interval. Higher confidence levels result in wider prediction intervals.</p>
     pub fn prediction_interval_level(&self) -> ::std::option::Option<i32> {
         self.prediction_interval_level
@@ -175,6 +181,7 @@ pub struct GetCostForecastInputBuilder {
     pub(crate) metric: ::std::option::Option<crate::types::Metric>,
     pub(crate) granularity: ::std::option::Option<crate::types::Granularity>,
     pub(crate) filter: ::std::option::Option<crate::types::Expression>,
+    pub(crate) billing_view_arn: ::std::option::Option<::std::string::String>,
     pub(crate) prediction_interval_level: ::std::option::Option<i32>,
 }
 impl GetCostForecastInputBuilder {
@@ -423,6 +430,20 @@ impl GetCostForecastInputBuilder {
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::Expression> {
         &self.filter
     }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies a specific billing view. The ARN is used to specify which particular billing view you want to interact with or retrieve information from when making API calls related to Amazon Web Services Billing and Cost Management features. The BillingViewArn can be retrieved by calling the ListBillingViews API.</p>
+    pub fn billing_view_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.billing_view_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies a specific billing view. The ARN is used to specify which particular billing view you want to interact with or retrieve information from when making API calls related to Amazon Web Services Billing and Cost Management features. The BillingViewArn can be retrieved by calling the ListBillingViews API.</p>
+    pub fn set_billing_view_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.billing_view_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies a specific billing view. The ARN is used to specify which particular billing view you want to interact with or retrieve information from when making API calls related to Amazon Web Services Billing and Cost Management features. The BillingViewArn can be retrieved by calling the ListBillingViews API.</p>
+    pub fn get_billing_view_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.billing_view_arn
+    }
     /// <p>Cost Explorer always returns the mean forecast as a single point. You can request a prediction interval around the mean by specifying a confidence level. The higher the confidence level, the more confident Cost Explorer is about the actual value falling in the prediction interval. Higher confidence levels result in wider prediction intervals.</p>
     pub fn prediction_interval_level(mut self, input: i32) -> Self {
         self.prediction_interval_level = ::std::option::Option::Some(input);
@@ -446,6 +467,7 @@ impl GetCostForecastInputBuilder {
             metric: self.metric,
             granularity: self.granularity,
             filter: self.filter,
+            billing_view_arn: self.billing_view_arn,
             prediction_interval_level: self.prediction_interval_level,
         })
     }

@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MatchingResource {
-    /// <p>The details of an S3 bucket that Amazon Macie monitors and analyzes.</p>
+    /// <p>The details of an S3 bucket that Amazon Macie monitors and analyzes for your account.</p>
     pub matching_bucket: ::std::option::Option<crate::types::MatchingBucket>,
 }
 impl MatchingResource {
-    /// <p>The details of an S3 bucket that Amazon Macie monitors and analyzes.</p>
+    /// <p>The details of an S3 bucket that Amazon Macie monitors and analyzes for your account.</p>
     pub fn matching_bucket(&self) -> ::std::option::Option<&crate::types::MatchingBucket> {
         self.matching_bucket.as_ref()
     }
@@ -27,17 +27,17 @@ pub struct MatchingResourceBuilder {
     pub(crate) matching_bucket: ::std::option::Option<crate::types::MatchingBucket>,
 }
 impl MatchingResourceBuilder {
-    /// <p>The details of an S3 bucket that Amazon Macie monitors and analyzes.</p>
+    /// <p>The details of an S3 bucket that Amazon Macie monitors and analyzes for your account.</p>
     pub fn matching_bucket(mut self, input: crate::types::MatchingBucket) -> Self {
         self.matching_bucket = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The details of an S3 bucket that Amazon Macie monitors and analyzes.</p>
+    /// <p>The details of an S3 bucket that Amazon Macie monitors and analyzes for your account.</p>
     pub fn set_matching_bucket(mut self, input: ::std::option::Option<crate::types::MatchingBucket>) -> Self {
         self.matching_bucket = input;
         self
     }
-    /// <p>The details of an S3 bucket that Amazon Macie monitors and analyzes.</p>
+    /// <p>The details of an S3 bucket that Amazon Macie monitors and analyzes for your account.</p>
     pub fn get_matching_bucket(&self) -> &::std::option::Option<crate::types::MatchingBucket> {
         &self.matching_bucket
     }

@@ -331,4 +331,18 @@ impl InvokeInlineAgentFluentBuilder {
     pub fn get_prompt_override_configuration(&self) -> &::std::option::Option<crate::types::PromptOverrideConfiguration> {
         self.inner.get_prompt_override_configuration()
     }
+    /// <p>Model settings for the request.</p>
+    pub fn bedrock_model_configurations(mut self, input: crate::types::InlineBedrockModelConfigurations) -> Self {
+        self.inner = self.inner.bedrock_model_configurations(input);
+        self
+    }
+    /// <p>Model settings for the request.</p>
+    pub fn set_bedrock_model_configurations(mut self, input: ::std::option::Option<crate::types::InlineBedrockModelConfigurations>) -> Self {
+        self.inner = self.inner.set_bedrock_model_configurations(input);
+        self
+    }
+    /// <p>Model settings for the request.</p>
+    pub fn get_bedrock_model_configurations(&self) -> &::std::option::Option<crate::types::InlineBedrockModelConfigurations> {
+        self.inner.get_bedrock_model_configurations()
+    }
 }

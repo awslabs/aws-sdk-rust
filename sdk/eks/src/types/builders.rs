@@ -127,6 +127,8 @@ pub use crate::types::_insight::InsightBuilder;
 
 pub use crate::types::_insight_category_specific_summary::InsightCategorySpecificSummaryBuilder;
 
+pub use crate::types::_addon_compatibility_detail::AddonCompatibilityDetailBuilder;
+
 pub use crate::types::_deprecation_detail::DeprecationDetailBuilder;
 
 pub use crate::types::_client_stat::ClientStatBuilder;

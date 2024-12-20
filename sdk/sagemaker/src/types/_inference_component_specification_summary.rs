@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InferenceComponentSpecificationSummary {
-    /// <p>The name of the SageMaker model object that is deployed with the inference component.</p>
+    /// <p>The name of the SageMaker AI model object that is deployed with the inference component.</p>
     pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>Details about the container that provides the runtime environment for the model that is deployed with the inference component.</p>
     pub container: ::std::option::Option<crate::types::InferenceComponentContainerSpecificationSummary>,
@@ -16,7 +16,7 @@ pub struct InferenceComponentSpecificationSummary {
     pub base_inference_component_name: ::std::option::Option<::std::string::String>,
 }
 impl InferenceComponentSpecificationSummary {
-    /// <p>The name of the SageMaker model object that is deployed with the inference component.</p>
+    /// <p>The name of the SageMaker AI model object that is deployed with the inference component.</p>
     pub fn model_name(&self) -> ::std::option::Option<&str> {
         self.model_name.as_deref()
     }
@@ -55,17 +55,17 @@ pub struct InferenceComponentSpecificationSummaryBuilder {
     pub(crate) base_inference_component_name: ::std::option::Option<::std::string::String>,
 }
 impl InferenceComponentSpecificationSummaryBuilder {
-    /// <p>The name of the SageMaker model object that is deployed with the inference component.</p>
+    /// <p>The name of the SageMaker AI model object that is deployed with the inference component.</p>
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the SageMaker model object that is deployed with the inference component.</p>
+    /// <p>The name of the SageMaker AI model object that is deployed with the inference component.</p>
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_name = input;
         self
     }
-    /// <p>The name of the SageMaker model object that is deployed with the inference component.</p>
+    /// <p>The name of the SageMaker AI model object that is deployed with the inference component.</p>
     pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_name
     }

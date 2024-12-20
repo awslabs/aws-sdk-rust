@@ -4,17 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RSessionAppSettings {
-    /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
+    /// <p>Specifies the ARN's of a SageMaker AI image and SageMaker AI image version, and the instance type that the version runs on.</p>
     pub default_resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
-    /// <p>A list of custom SageMaker images that are configured to run as a RSession app.</p>
+    /// <p>A list of custom SageMaker AI images that are configured to run as a RSession app.</p>
     pub custom_images: ::std::option::Option<::std::vec::Vec<crate::types::CustomImage>>,
 }
 impl RSessionAppSettings {
-    /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
+    /// <p>Specifies the ARN's of a SageMaker AI image and SageMaker AI image version, and the instance type that the version runs on.</p>
     pub fn default_resource_spec(&self) -> ::std::option::Option<&crate::types::ResourceSpec> {
         self.default_resource_spec.as_ref()
     }
-    /// <p>A list of custom SageMaker images that are configured to run as a RSession app.</p>
+    /// <p>A list of custom SageMaker AI images that are configured to run as a RSession app.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_images.is_none()`.
     pub fn custom_images(&self) -> &[crate::types::CustomImage] {
@@ -36,17 +36,17 @@ pub struct RSessionAppSettingsBuilder {
     pub(crate) custom_images: ::std::option::Option<::std::vec::Vec<crate::types::CustomImage>>,
 }
 impl RSessionAppSettingsBuilder {
-    /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
+    /// <p>Specifies the ARN's of a SageMaker AI image and SageMaker AI image version, and the instance type that the version runs on.</p>
     pub fn default_resource_spec(mut self, input: crate::types::ResourceSpec) -> Self {
         self.default_resource_spec = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
+    /// <p>Specifies the ARN's of a SageMaker AI image and SageMaker AI image version, and the instance type that the version runs on.</p>
     pub fn set_default_resource_spec(mut self, input: ::std::option::Option<crate::types::ResourceSpec>) -> Self {
         self.default_resource_spec = input;
         self
     }
-    /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
+    /// <p>Specifies the ARN's of a SageMaker AI image and SageMaker AI image version, and the instance type that the version runs on.</p>
     pub fn get_default_resource_spec(&self) -> &::std::option::Option<crate::types::ResourceSpec> {
         &self.default_resource_spec
     }
@@ -54,19 +54,19 @@ impl RSessionAppSettingsBuilder {
     ///
     /// To override the contents of this collection use [`set_custom_images`](Self::set_custom_images).
     ///
-    /// <p>A list of custom SageMaker images that are configured to run as a RSession app.</p>
+    /// <p>A list of custom SageMaker AI images that are configured to run as a RSession app.</p>
     pub fn custom_images(mut self, input: crate::types::CustomImage) -> Self {
         let mut v = self.custom_images.unwrap_or_default();
         v.push(input);
         self.custom_images = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of custom SageMaker images that are configured to run as a RSession app.</p>
+    /// <p>A list of custom SageMaker AI images that are configured to run as a RSession app.</p>
     pub fn set_custom_images(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomImage>>) -> Self {
         self.custom_images = input;
         self
     }
-    /// <p>A list of custom SageMaker images that are configured to run as a RSession app.</p>
+    /// <p>A list of custom SageMaker AI images that are configured to run as a RSession app.</p>
     pub fn get_custom_images(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomImage>> {
         &self.custom_images
     }

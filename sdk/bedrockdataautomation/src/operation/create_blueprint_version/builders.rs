@@ -22,7 +22,7 @@ impl crate::operation::create_blueprint_version::builders::CreateBlueprintVersio
 }
 /// Fluent builder constructing a request to `CreateBlueprintVersion`.
 ///
-/// Creates a new version of an existing Amazon Bedrock Keystone Blueprint
+/// Creates a new version of an existing Amazon Bedrock Data Automation Blueprint
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateBlueprintVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -297,6 +297,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for InvokeAgentEn
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum InvokeAgentError {
+    /// <p>The model specified in the request is not ready to serve inference requests. The AWS SDK will automatically retry the operation up to 5 times. For information about configuring automatic retries, see <a href="https://docs.aws.amazon.com/sdkref/latest/guide/feature-retry-behavior.html">Retry behavior</a> in the <i>AWS SDKs and Tools</i> reference guide.</p>
+    ModelNotReadyException(crate::types::error::ModelNotReadyException),
     /// <p>Input validation failed. Check your request parameters and retry the request.</p>
     ValidationException(crate::types::error::ValidationException),
     /// <p>An internal server error occurred. Retry your request.</p>
@@ -348,6 +350,7 @@ impl InvokeAgentError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ModelNotReadyException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -359,6 +362,10 @@ impl InvokeAgentError {
             Self::ServiceQuotaExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `InvokeAgentError::ModelNotReadyException`.
+    pub fn is_model_not_ready_exception(&self) -> bool {
+        matches!(self, Self::ModelNotReadyException(_))
     }
     /// Returns `true` if the error kind is `InvokeAgentError::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
@@ -400,6 +407,7 @@ impl InvokeAgentError {
 impl ::std::error::Error for InvokeAgentError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::ModelNotReadyException(_inner) => ::std::option::Option::Some(_inner),
             Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
@@ -416,6 +424,7 @@ impl ::std::error::Error for InvokeAgentError {
 impl ::std::fmt::Display for InvokeAgentError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::ModelNotReadyException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
             Self::InternalServerException(_inner) => _inner.fmt(f),
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
@@ -446,6 +455,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for InvokeAgentError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvokeAgentError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ModelNotReadyException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

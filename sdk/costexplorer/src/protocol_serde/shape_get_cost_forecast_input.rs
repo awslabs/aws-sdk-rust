@@ -21,10 +21,13 @@ pub fn ser_get_cost_forecast_input_input(
         crate::protocol_serde::shape_expression::ser_expression(&mut object_6, var_5)?;
         object_6.finish();
     }
-    if let Some(var_7) = &input.prediction_interval_level {
+    if let Some(var_7) = &input.billing_view_arn {
+        object.key("BillingViewArn").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.prediction_interval_level {
         object.key("PredictionIntervalLevel").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_7).into()),
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
     Ok(())

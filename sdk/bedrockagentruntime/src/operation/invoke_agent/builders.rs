@@ -32,6 +32,16 @@ impl crate::operation::invoke_agent::builders::InvokeAgentInputBuilder {
 /// <li>
 /// <p>To activate trace enablement, turn <code>enableTrace</code> to <code>true</code>. Trace enablement helps you follow the agent's reasoning process that led it to the information it processed, the actions it took, and the final result it yielded. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-test.html#trace-events">Trace enablement</a>.</p></li>
 /// <li>
+/// <p>To stream agent responses, make sure that only orchestration prompt is enabled. Agent streaming is not supported for the following steps:</p>
+/// <ul>
+/// <li>
+/// <p><code>Pre-processing</code></p></li>
+/// <li>
+/// <p><code>Post-processing</code></p></li>
+/// <li>
+/// <p>Agent with 1 Knowledge base and <code>User Input</code> not enabled</p></li>
+/// </ul></li>
+/// <li>
 /// <p>End a conversation by setting <code>endSession</code> to <code>true</code>.</p></li>
 /// <li>
 /// <p>In the <code>sessionState</code> object, you can include attributes for the session or prompt or, if you configured an action group to return control, results from invocation of the action group.</p></li>
@@ -256,17 +266,37 @@ impl InvokeAgentFluentBuilder {
     pub fn get_memory_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_memory_id()
     }
-    /// <p>Specifies the configurations for streaming.</p>
+    /// <p>Model performance settings for the request.</p>
+    pub fn bedrock_model_configurations(mut self, input: crate::types::BedrockModelConfigurations) -> Self {
+        self.inner = self.inner.bedrock_model_configurations(input);
+        self
+    }
+    /// <p>Model performance settings for the request.</p>
+    pub fn set_bedrock_model_configurations(mut self, input: ::std::option::Option<crate::types::BedrockModelConfigurations>) -> Self {
+        self.inner = self.inner.set_bedrock_model_configurations(input);
+        self
+    }
+    /// <p>Model performance settings for the request.</p>
+    pub fn get_bedrock_model_configurations(&self) -> &::std::option::Option<crate::types::BedrockModelConfigurations> {
+        self.inner.get_bedrock_model_configurations()
+    }
+    /// <p>Specifies the configurations for streaming.</p><note>
+    /// <p>To use agent streaming, you need permissions to perform the <code>bedrock:InvokeModelWithResponseStream</code> action.</p>
+    /// </note>
     pub fn streaming_configurations(mut self, input: crate::types::StreamingConfigurations) -> Self {
         self.inner = self.inner.streaming_configurations(input);
         self
     }
-    /// <p>Specifies the configurations for streaming.</p>
+    /// <p>Specifies the configurations for streaming.</p><note>
+    /// <p>To use agent streaming, you need permissions to perform the <code>bedrock:InvokeModelWithResponseStream</code> action.</p>
+    /// </note>
     pub fn set_streaming_configurations(mut self, input: ::std::option::Option<crate::types::StreamingConfigurations>) -> Self {
         self.inner = self.inner.set_streaming_configurations(input);
         self
     }
-    /// <p>Specifies the configurations for streaming.</p>
+    /// <p>Specifies the configurations for streaming.</p><note>
+    /// <p>To use agent streaming, you need permissions to perform the <code>bedrock:InvokeModelWithResponseStream</code> action.</p>
+    /// </note>
     pub fn get_streaming_configurations(&self) -> &::std::option::Option<crate::types::StreamingConfigurations> {
         self.inner.get_streaming_configurations()
     }

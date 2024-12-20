@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAliasesOutput {
-    /// <p>A list of SageMaker image version aliases.</p>
+    /// <p>A list of SageMaker AI image version aliases.</p>
     pub sage_maker_image_version_aliases: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A token for getting the next set of aliases, if more aliases exist.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAliasesOutput {
-    /// <p>A list of SageMaker image version aliases.</p>
+    /// <p>A list of SageMaker AI image version aliases.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sage_maker_image_version_aliases.is_none()`.
     pub fn sage_maker_image_version_aliases(&self) -> &[::std::string::String] {
@@ -46,19 +46,19 @@ impl ListAliasesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_sage_maker_image_version_aliases`](Self::set_sage_maker_image_version_aliases).
     ///
-    /// <p>A list of SageMaker image version aliases.</p>
+    /// <p>A list of SageMaker AI image version aliases.</p>
     pub fn sage_maker_image_version_aliases(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.sage_maker_image_version_aliases.unwrap_or_default();
         v.push(input.into());
         self.sage_maker_image_version_aliases = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of SageMaker image version aliases.</p>
+    /// <p>A list of SageMaker AI image version aliases.</p>
     pub fn set_sage_maker_image_version_aliases(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.sage_maker_image_version_aliases = input;
         self
     }
-    /// <p>A list of SageMaker image version aliases.</p>
+    /// <p>A list of SageMaker AI image version aliases.</p>
     pub fn get_sage_maker_image_version_aliases(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.sage_maker_image_version_aliases
     }

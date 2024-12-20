@@ -129,6 +129,58 @@ impl ListBillingViewsFluentBuilder {
     pub fn get_active_time_range(&self) -> &::std::option::Option<crate::types::ActiveTimeRange> {
         self.inner.get_active_time_range()
     }
+    ///
+    /// Appends an item to `arns`.
+    ///
+    /// To override the contents of this collection use [`set_arns`](Self::set_arns).
+    ///
+    /// <p>The Amazon Resource Name (ARN) that can be used to uniquely identify the billing view.</p>
+    pub fn arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.arns(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) that can be used to uniquely identify the billing view.</p>
+    pub fn set_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_arns(input);
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) that can be used to uniquely identify the billing view.</p>
+    pub fn get_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_arns()
+    }
+    ///
+    /// Appends an item to `billingViewTypes`.
+    ///
+    /// To override the contents of this collection use [`set_billing_view_types`](Self::set_billing_view_types).
+    ///
+    /// <p>The type of billing view.</p>
+    pub fn billing_view_types(mut self, input: crate::types::BillingViewType) -> Self {
+        self.inner = self.inner.billing_view_types(input);
+        self
+    }
+    /// <p>The type of billing view.</p>
+    pub fn set_billing_view_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BillingViewType>>) -> Self {
+        self.inner = self.inner.set_billing_view_types(input);
+        self
+    }
+    /// <p>The type of billing view.</p>
+    pub fn get_billing_view_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BillingViewType>> {
+        self.inner.get_billing_view_types()
+    }
+    /// <p>The list of owners of the billing view.</p>
+    pub fn owner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.owner_account_id(input.into());
+        self
+    }
+    /// <p>The list of owners of the billing view.</p>
+    pub fn set_owner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_owner_account_id(input);
+        self
+    }
+    /// <p>The list of owners of the billing view.</p>
+    pub fn get_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_owner_account_id()
+    }
     /// <p>The maximum number of billing views to retrieve. Default is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KernelGatewayAppSettings {
-    /// <p>The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the KernelGateway app.</p><note>
-    /// <p>The Amazon SageMaker Studio UI does not use the default instance type value set here. The default instance type set here is used when Apps are created using the CLI or CloudFormation and the instance type parameter value is not passed.</p>
+    /// <p>The default instance type and the Amazon Resource Name (ARN) of the default SageMaker AI image used by the KernelGateway app.</p><note>
+    /// <p>The Amazon SageMaker AI Studio UI does not use the default instance type value set here. The default instance type set here is used when Apps are created using the CLI or CloudFormation and the instance type parameter value is not passed.</p>
     /// </note>
     pub default_resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
-    /// <p>A list of custom SageMaker images that are configured to run as a KernelGateway app.</p>
+    /// <p>A list of custom SageMaker AI images that are configured to run as a KernelGateway app.</p>
     pub custom_images: ::std::option::Option<::std::vec::Vec<crate::types::CustomImage>>,
     /// <p>The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the the user profile or domain.</p><note>
     /// <p>To remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an empty list.</p>
@@ -16,13 +16,13 @@ pub struct KernelGatewayAppSettings {
     pub lifecycle_config_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl KernelGatewayAppSettings {
-    /// <p>The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the KernelGateway app.</p><note>
-    /// <p>The Amazon SageMaker Studio UI does not use the default instance type value set here. The default instance type set here is used when Apps are created using the CLI or CloudFormation and the instance type parameter value is not passed.</p>
+    /// <p>The default instance type and the Amazon Resource Name (ARN) of the default SageMaker AI image used by the KernelGateway app.</p><note>
+    /// <p>The Amazon SageMaker AI Studio UI does not use the default instance type value set here. The default instance type set here is used when Apps are created using the CLI or CloudFormation and the instance type parameter value is not passed.</p>
     /// </note>
     pub fn default_resource_spec(&self) -> ::std::option::Option<&crate::types::ResourceSpec> {
         self.default_resource_spec.as_ref()
     }
-    /// <p>A list of custom SageMaker images that are configured to run as a KernelGateway app.</p>
+    /// <p>A list of custom SageMaker AI images that are configured to run as a KernelGateway app.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_images.is_none()`.
     pub fn custom_images(&self) -> &[crate::types::CustomImage] {
@@ -53,22 +53,22 @@ pub struct KernelGatewayAppSettingsBuilder {
     pub(crate) lifecycle_config_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl KernelGatewayAppSettingsBuilder {
-    /// <p>The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the KernelGateway app.</p><note>
-    /// <p>The Amazon SageMaker Studio UI does not use the default instance type value set here. The default instance type set here is used when Apps are created using the CLI or CloudFormation and the instance type parameter value is not passed.</p>
+    /// <p>The default instance type and the Amazon Resource Name (ARN) of the default SageMaker AI image used by the KernelGateway app.</p><note>
+    /// <p>The Amazon SageMaker AI Studio UI does not use the default instance type value set here. The default instance type set here is used when Apps are created using the CLI or CloudFormation and the instance type parameter value is not passed.</p>
     /// </note>
     pub fn default_resource_spec(mut self, input: crate::types::ResourceSpec) -> Self {
         self.default_resource_spec = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the KernelGateway app.</p><note>
-    /// <p>The Amazon SageMaker Studio UI does not use the default instance type value set here. The default instance type set here is used when Apps are created using the CLI or CloudFormation and the instance type parameter value is not passed.</p>
+    /// <p>The default instance type and the Amazon Resource Name (ARN) of the default SageMaker AI image used by the KernelGateway app.</p><note>
+    /// <p>The Amazon SageMaker AI Studio UI does not use the default instance type value set here. The default instance type set here is used when Apps are created using the CLI or CloudFormation and the instance type parameter value is not passed.</p>
     /// </note>
     pub fn set_default_resource_spec(mut self, input: ::std::option::Option<crate::types::ResourceSpec>) -> Self {
         self.default_resource_spec = input;
         self
     }
-    /// <p>The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the KernelGateway app.</p><note>
-    /// <p>The Amazon SageMaker Studio UI does not use the default instance type value set here. The default instance type set here is used when Apps are created using the CLI or CloudFormation and the instance type parameter value is not passed.</p>
+    /// <p>The default instance type and the Amazon Resource Name (ARN) of the default SageMaker AI image used by the KernelGateway app.</p><note>
+    /// <p>The Amazon SageMaker AI Studio UI does not use the default instance type value set here. The default instance type set here is used when Apps are created using the CLI or CloudFormation and the instance type parameter value is not passed.</p>
     /// </note>
     pub fn get_default_resource_spec(&self) -> &::std::option::Option<crate::types::ResourceSpec> {
         &self.default_resource_spec
@@ -77,19 +77,19 @@ impl KernelGatewayAppSettingsBuilder {
     ///
     /// To override the contents of this collection use [`set_custom_images`](Self::set_custom_images).
     ///
-    /// <p>A list of custom SageMaker images that are configured to run as a KernelGateway app.</p>
+    /// <p>A list of custom SageMaker AI images that are configured to run as a KernelGateway app.</p>
     pub fn custom_images(mut self, input: crate::types::CustomImage) -> Self {
         let mut v = self.custom_images.unwrap_or_default();
         v.push(input);
         self.custom_images = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of custom SageMaker images that are configured to run as a KernelGateway app.</p>
+    /// <p>A list of custom SageMaker AI images that are configured to run as a KernelGateway app.</p>
     pub fn set_custom_images(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomImage>>) -> Self {
         self.custom_images = input;
         self
     }
-    /// <p>A list of custom SageMaker images that are configured to run as a KernelGateway app.</p>
+    /// <p>A list of custom SageMaker AI images that are configured to run as a KernelGateway app.</p>
     pub fn get_custom_images(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomImage>> {
         &self.custom_images
     }

@@ -123,8 +123,8 @@ impl CreateOptimizationJobFluentBuilder {
     pub fn get_optimization_job_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_optimization_job_name()
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
-    /// <p>During model optimization, Amazon SageMaker needs your permission to:</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker AI to perform tasks on your behalf.</p>
+    /// <p>During model optimization, Amazon SageMaker AI needs your permission to:</p>
     /// <ul>
     /// <li>
     /// <p>Read input data from an S3 bucket</p></li>
@@ -135,13 +135,13 @@ impl CreateOptimizationJobFluentBuilder {
     /// <li>
     /// <p>Publish metrics to Amazon CloudWatch</p></li>
     /// </ul>
-    /// <p>You grant permissions for all of these tasks to an IAM role. To pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles.</a></p>
+    /// <p>You grant permissions for all of these tasks to an IAM role. To pass this role to Amazon SageMaker AI, the caller of this API must have the <code>iam:PassRole</code> permission. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker AI Roles.</a></p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
-    /// <p>During model optimization, Amazon SageMaker needs your permission to:</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker AI to perform tasks on your behalf.</p>
+    /// <p>During model optimization, Amazon SageMaker AI needs your permission to:</p>
     /// <ul>
     /// <li>
     /// <p>Read input data from an S3 bucket</p></li>
@@ -152,13 +152,13 @@ impl CreateOptimizationJobFluentBuilder {
     /// <li>
     /// <p>Publish metrics to Amazon CloudWatch</p></li>
     /// </ul>
-    /// <p>You grant permissions for all of these tasks to an IAM role. To pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles.</a></p>
+    /// <p>You grant permissions for all of these tasks to an IAM role. To pass this role to Amazon SageMaker AI, the caller of this API must have the <code>iam:PassRole</code> permission. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker AI Roles.</a></p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
-    /// <p>During model optimization, Amazon SageMaker needs your permission to:</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker AI to perform tasks on your behalf.</p>
+    /// <p>During model optimization, Amazon SageMaker AI needs your permission to:</p>
     /// <ul>
     /// <li>
     /// <p>Read input data from an S3 bucket</p></li>
@@ -169,7 +169,7 @@ impl CreateOptimizationJobFluentBuilder {
     /// <li>
     /// <p>Publish metrics to Amazon CloudWatch</p></li>
     /// </ul>
-    /// <p>You grant permissions for all of these tasks to an IAM role. To pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles.</a></p>
+    /// <p>You grant permissions for all of these tasks to an IAM role. To pass this role to Amazon SageMaker AI, the caller of this API must have the <code>iam:PassRole</code> permission. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker AI Roles.</a></p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role_arn()
     }

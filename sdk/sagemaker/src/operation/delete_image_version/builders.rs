@@ -22,7 +22,7 @@ impl crate::operation::delete_image_version::builders::DeleteImageVersionInputBu
 }
 /// Fluent builder constructing a request to `DeleteImageVersion`.
 ///
-/// <p>Deletes a version of a SageMaker image. The container image the version represents isn't deleted.</p>
+/// <p>Deletes a version of a SageMaker AI image. The container image the version represents isn't deleted.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteImageVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -22,7 +22,7 @@ impl crate::operation::delete_blueprint::builders::DeleteBlueprintInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteBlueprint`.
 ///
-/// Deletes an existing Amazon Bedrock Keystone Blueprint
+/// Deletes an existing Amazon Bedrock Data Automation Blueprint
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteBlueprintFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

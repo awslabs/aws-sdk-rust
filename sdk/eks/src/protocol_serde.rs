@@ -395,6 +395,8 @@ pub(crate) mod shape_vpc_config_response;
 
 pub(crate) mod shape_zonal_shift_config_response;
 
+pub(crate) mod shape_addon_compatibility_details;
+
 pub(crate) mod shape_addon_issue_list;
 
 pub(crate) mod shape_addon_version_info_list;
@@ -426,6 +428,8 @@ pub(crate) mod shape_remote_pod_network_list;
 pub(crate) mod shape_required_claims_map;
 
 pub(crate) mod shape_update_param;
+
+pub(crate) mod shape_addon_compatibility_detail;
 
 pub(crate) mod shape_addon_issue;
 

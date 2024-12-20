@@ -6,11 +6,17 @@
 pub struct WebCrawlerLimits {
     /// <p>The max rate at which pages are crawled, up to 300 per minute per host.</p>
     pub rate_limit: ::std::option::Option<i32>,
+    /// <p>The max number of web pages crawled from your source URLs, up to 25,000 pages. If the web pages exceed this limit, the data source sync will fail and no web pages will be ingested.</p>
+    pub max_pages: ::std::option::Option<i32>,
 }
 impl WebCrawlerLimits {
     /// <p>The max rate at which pages are crawled, up to 300 per minute per host.</p>
     pub fn rate_limit(&self) -> ::std::option::Option<i32> {
         self.rate_limit
+    }
+    /// <p>The max number of web pages crawled from your source URLs, up to 25,000 pages. If the web pages exceed this limit, the data source sync will fail and no web pages will be ingested.</p>
+    pub fn max_pages(&self) -> ::std::option::Option<i32> {
+        self.max_pages
     }
 }
 impl WebCrawlerLimits {
@@ -25,6 +31,7 @@ impl WebCrawlerLimits {
 #[non_exhaustive]
 pub struct WebCrawlerLimitsBuilder {
     pub(crate) rate_limit: ::std::option::Option<i32>,
+    pub(crate) max_pages: ::std::option::Option<i32>,
 }
 impl WebCrawlerLimitsBuilder {
     /// <p>The max rate at which pages are crawled, up to 300 per minute per host.</p>
@@ -41,8 +48,25 @@ impl WebCrawlerLimitsBuilder {
     pub fn get_rate_limit(&self) -> &::std::option::Option<i32> {
         &self.rate_limit
     }
+    /// <p>The max number of web pages crawled from your source URLs, up to 25,000 pages. If the web pages exceed this limit, the data source sync will fail and no web pages will be ingested.</p>
+    pub fn max_pages(mut self, input: i32) -> Self {
+        self.max_pages = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The max number of web pages crawled from your source URLs, up to 25,000 pages. If the web pages exceed this limit, the data source sync will fail and no web pages will be ingested.</p>
+    pub fn set_max_pages(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_pages = input;
+        self
+    }
+    /// <p>The max number of web pages crawled from your source URLs, up to 25,000 pages. If the web pages exceed this limit, the data source sync will fail and no web pages will be ingested.</p>
+    pub fn get_max_pages(&self) -> &::std::option::Option<i32> {
+        &self.max_pages
+    }
     /// Consumes the builder and constructs a [`WebCrawlerLimits`](crate::types::WebCrawlerLimits).
     pub fn build(self) -> crate::types::WebCrawlerLimits {
-        crate::types::WebCrawlerLimits { rate_limit: self.rate_limit }
+        crate::types::WebCrawlerLimits {
+            rate_limit: self.rate_limit,
+            max_pages: self.max_pages,
+        }
     }
 }

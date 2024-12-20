@@ -18,5 +18,11 @@ pub fn ser_invoke_flow_input_input(
         }
         array_3.finish();
     }
+    if let Some(var_6) = &input.model_performance_configuration {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("modelPerformanceConfiguration").start_object();
+        crate::protocol_serde::shape_model_performance_configuration::ser_model_performance_configuration(&mut object_7, var_6)?;
+        object_7.finish();
+    }
     Ok(())
 }

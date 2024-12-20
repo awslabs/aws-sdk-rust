@@ -5,6 +5,8 @@ pub use crate::types::_global_cluster_member::GlobalClusterMember;
 
 pub use crate::types::_db_cluster::DbCluster;
 
+pub use crate::types::_cluster_master_user_secret::ClusterMasterUserSecret;
+
 pub use crate::types::_db_cluster_role::DbClusterRole;
 
 pub use crate::types::_vpc_security_group_membership::VpcSecurityGroupMembership;
@@ -78,6 +80,8 @@ mod _certificate;
 mod _certificate_details;
 
 mod _cloudwatch_logs_export_configuration;
+
+mod _cluster_master_user_secret;
 
 mod _db_cluster;
 

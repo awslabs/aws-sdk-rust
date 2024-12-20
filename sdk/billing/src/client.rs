@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`ListBillingViews`](crate::operation::list_billing_views) operation has
-/// a [`Client::list_billing_views`], function which returns a builder for that operation.
+/// For example, the [`CreateBillingView`](crate::operation::create_billing_view) operation has
+/// a [`Client::create_billing_view`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.list_billing_views()
-///     .next_token("example")
+/// let result = client.create_billing_view()
+///     .name("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -136,6 +136,8 @@ impl Client {
     }
 }
 
+mod create_billing_view;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -147,7 +149,7 @@ impl Client {
 /// # let client: aws_sdk_billing::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.list_billing_views()
+/// let result = client.create_billing_view()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -163,4 +165,20 @@ impl Client {
 /// ```
 pub mod customize;
 
+mod delete_billing_view;
+
+mod get_billing_view;
+
+mod get_resource_policy;
+
 mod list_billing_views;
+
+mod list_source_views_for_billing_view;
+
+mod list_tags_for_resource;
+
+mod tag_resource;
+
+mod untag_resource;
+
+mod update_billing_view;

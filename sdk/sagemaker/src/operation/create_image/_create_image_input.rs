@@ -9,7 +9,7 @@ pub struct CreateImageInput {
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the image. Must be unique to your account.</p>
     pub image_name: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+    /// <p>The ARN of an IAM role that enables Amazon SageMaker AI to perform tasks on your behalf.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags to apply to the image.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -27,7 +27,7 @@ impl CreateImageInput {
     pub fn image_name(&self) -> ::std::option::Option<&str> {
         self.image_name.as_deref()
     }
-    /// <p>The ARN of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+    /// <p>The ARN of an IAM role that enables Amazon SageMaker AI to perform tasks on your behalf.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -99,18 +99,18 @@ impl CreateImageInputBuilder {
     pub fn get_image_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_name
     }
-    /// <p>The ARN of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+    /// <p>The ARN of an IAM role that enables Amazon SageMaker AI to perform tasks on your behalf.</p>
     /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+    /// <p>The ARN of an IAM role that enables Amazon SageMaker AI to perform tasks on your behalf.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The ARN of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+    /// <p>The ARN of an IAM role that enables Amazon SageMaker AI to perform tasks on your behalf.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }

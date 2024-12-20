@@ -31,5 +31,11 @@ pub fn ser_orchestration_configuration(
         crate::protocol_serde::shape_query_transformation_configuration::ser_query_transformation_configuration(&mut object_10, var_9)?;
         object_10.finish();
     }
+    if let Some(var_11) = &input.performance_config {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("performanceConfig").start_object();
+        crate::protocol_serde::shape_performance_configuration::ser_performance_configuration(&mut object_12, var_11)?;
+        object_12.finish();
+    }
     Ok(())
 }

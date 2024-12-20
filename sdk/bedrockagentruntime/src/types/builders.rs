@@ -71,6 +71,8 @@ pub use crate::types::_external_sources_retrieve_and_generate_configuration::Ext
 
 pub use crate::types::_external_sources_generation_configuration::ExternalSourcesGenerationConfigurationBuilder;
 
+pub use crate::types::_performance_configuration::PerformanceConfigurationBuilder;
+
 pub use crate::types::_inference_config::InferenceConfigBuilder;
 
 pub use crate::types::_text_inference_config::TextInferenceConfigBuilder;
@@ -239,6 +241,8 @@ pub use crate::types::_inline_agent_payload_part::InlineAgentPayloadPartBuilder;
 
 pub use crate::types::_attribution::AttributionBuilder;
 
+pub use crate::types::_inline_bedrock_model_configurations::InlineBedrockModelConfigurationsBuilder;
+
 pub use crate::types::_prompt_override_configuration::PromptOverrideConfigurationBuilder;
 
 pub use crate::types::_prompt_configuration::PromptConfigurationBuilder;
@@ -272,6 +276,8 @@ pub use crate::types::_trace_part::TracePartBuilder;
 pub use crate::types::_payload_part::PayloadPartBuilder;
 
 pub use crate::types::_streaming_configurations::StreamingConfigurationsBuilder;
+
+pub use crate::types::_bedrock_model_configurations::BedrockModelConfigurationsBuilder;
 
 pub use crate::types::_session_state::SessionStateBuilder;
 
@@ -308,5 +314,7 @@ pub use crate::types::_flow_trace_node_input_field::FlowTraceNodeInputFieldBuild
 pub use crate::types::_flow_completion_event::FlowCompletionEventBuilder;
 
 pub use crate::types::_flow_output_event::FlowOutputEventBuilder;
+
+pub use crate::types::_model_performance_configuration::ModelPerformanceConfigurationBuilder;
 
 pub use crate::types::_flow_input::FlowInputBuilder;

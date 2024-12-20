@@ -18,6 +18,12 @@ pub fn ser_memory_configuration(
             ::aws_smithy_types::Number::NegInt((input.storage_days).into()),
         );
     }
+    if let Some(var_3) = &input.session_summary_configuration {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("sessionSummaryConfiguration").start_object();
+        crate::protocol_serde::shape_session_summary_configuration::ser_session_summary_configuration(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }
 
@@ -45,6 +51,11 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
+                            );
+                        }
+                        "sessionSummaryConfiguration" => {
+                            builder = builder.set_session_summary_configuration(
+                                crate::protocol_serde::shape_session_summary_configuration::de_session_summary_configuration(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -1,6 +1,6 @@
 # aws-sdk-bedrockdataautomationruntime
 
-Amazon Bedrock Keystone Runtime
+Amazon Bedrock Data Automation Runtime
 
 ## Getting Started
 
@@ -14,7 +14,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-bedrockdataautomationruntime = "1.1.0"
+aws-sdk-bedrockdataautomationruntime = "1.1.1"
 tokio = { version = "1", features = ["full"] }
 ```
 

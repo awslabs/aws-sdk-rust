@@ -22,7 +22,7 @@ impl crate::operation::create_app::builders::CreateAppInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateApp`.
 ///
-/// <p>Creates a running app for the specified UserProfile. This operation is automatically invoked by Amazon SageMaker upon access to the associated Domain, and when new kernel configurations are selected by the user. A user may have multiple Apps active simultaneously.</p>
+/// <p>Creates a running app for the specified UserProfile. This operation is automatically invoked by Amazon SageMaker AI upon access to the associated Domain, and when new kernel configurations are selected by the user. A user may have multiple Apps active simultaneously.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateAppFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -191,21 +191,21 @@ impl CreateAppFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
-    /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p><note>
+    /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker AI image created on the instance.</p><note>
     /// <p>The value of <code>InstanceType</code> passed as part of the <code>ResourceSpec</code> in the <code>CreateApp</code> call overrides the value passed as part of the <code>ResourceSpec</code> configured for the user profile or the domain. If <code>InstanceType</code> is not specified in any of those three <code>ResourceSpec</code> values for a <code>KernelGateway</code> app, the <code>CreateApp</code> call fails with a request validation error.</p>
     /// </note>
     pub fn resource_spec(mut self, input: crate::types::ResourceSpec) -> Self {
         self.inner = self.inner.resource_spec(input);
         self
     }
-    /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p><note>
+    /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker AI image created on the instance.</p><note>
     /// <p>The value of <code>InstanceType</code> passed as part of the <code>ResourceSpec</code> in the <code>CreateApp</code> call overrides the value passed as part of the <code>ResourceSpec</code> configured for the user profile or the domain. If <code>InstanceType</code> is not specified in any of those three <code>ResourceSpec</code> values for a <code>KernelGateway</code> app, the <code>CreateApp</code> call fails with a request validation error.</p>
     /// </note>
     pub fn set_resource_spec(mut self, input: ::std::option::Option<crate::types::ResourceSpec>) -> Self {
         self.inner = self.inner.set_resource_spec(input);
         self
     }
-    /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p><note>
+    /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker AI image created on the instance.</p><note>
     /// <p>The value of <code>InstanceType</code> passed as part of the <code>ResourceSpec</code> in the <code>CreateApp</code> call overrides the value passed as part of the <code>ResourceSpec</code> configured for the user profile or the domain. If <code>InstanceType</code> is not specified in any of those three <code>ResourceSpec</code> values for a <code>KernelGateway</code> app, the <code>CreateApp</code> call fails with a request validation error.</p>
     /// </note>
     pub fn get_resource_spec(&self) -> &::std::option::Option<crate::types::ResourceSpec> {

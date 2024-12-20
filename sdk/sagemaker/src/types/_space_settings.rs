@@ -13,10 +13,11 @@ pub struct SpaceSettings {
     /// <p>The settings for the JupyterLab application.</p>
     pub jupyter_lab_app_settings: ::std::option::Option<crate::types::SpaceJupyterLabAppSettings>,
     /// <p>The type of app created within the space.</p>
+    /// <p>If using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateSpace.html"> UpdateSpace</a> API, you can't change the app type of your space by specifying a different value for this field.</p>
     pub app_type: ::std::option::Option<crate::types::AppType>,
     /// <p>The storage settings for a space.</p>
     pub space_storage_settings: ::std::option::Option<crate::types::SpaceStorageSettings>,
-    /// <p>A file system, created by you, that you assign to a space for an Amazon SageMaker Domain. Permitted users can access this file system in Amazon SageMaker Studio.</p>
+    /// <p>A file system, created by you, that you assign to a space for an Amazon SageMaker AI Domain. Permitted users can access this file system in Amazon SageMaker AI Studio.</p>
     pub custom_file_systems: ::std::option::Option<::std::vec::Vec<crate::types::CustomFileSystem>>,
 }
 impl SpaceSettings {
@@ -37,6 +38,7 @@ impl SpaceSettings {
         self.jupyter_lab_app_settings.as_ref()
     }
     /// <p>The type of app created within the space.</p>
+    /// <p>If using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateSpace.html"> UpdateSpace</a> API, you can't change the app type of your space by specifying a different value for this field.</p>
     pub fn app_type(&self) -> ::std::option::Option<&crate::types::AppType> {
         self.app_type.as_ref()
     }
@@ -44,7 +46,7 @@ impl SpaceSettings {
     pub fn space_storage_settings(&self) -> ::std::option::Option<&crate::types::SpaceStorageSettings> {
         self.space_storage_settings.as_ref()
     }
-    /// <p>A file system, created by you, that you assign to a space for an Amazon SageMaker Domain. Permitted users can access this file system in Amazon SageMaker Studio.</p>
+    /// <p>A file system, created by you, that you assign to a space for an Amazon SageMaker AI Domain. Permitted users can access this file system in Amazon SageMaker AI Studio.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_file_systems.is_none()`.
     pub fn custom_file_systems(&self) -> &[crate::types::CustomFileSystem] {
@@ -128,16 +130,19 @@ impl SpaceSettingsBuilder {
         &self.jupyter_lab_app_settings
     }
     /// <p>The type of app created within the space.</p>
+    /// <p>If using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateSpace.html"> UpdateSpace</a> API, you can't change the app type of your space by specifying a different value for this field.</p>
     pub fn app_type(mut self, input: crate::types::AppType) -> Self {
         self.app_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of app created within the space.</p>
+    /// <p>If using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateSpace.html"> UpdateSpace</a> API, you can't change the app type of your space by specifying a different value for this field.</p>
     pub fn set_app_type(mut self, input: ::std::option::Option<crate::types::AppType>) -> Self {
         self.app_type = input;
         self
     }
     /// <p>The type of app created within the space.</p>
+    /// <p>If using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateSpace.html"> UpdateSpace</a> API, you can't change the app type of your space by specifying a different value for this field.</p>
     pub fn get_app_type(&self) -> &::std::option::Option<crate::types::AppType> {
         &self.app_type
     }
@@ -159,19 +164,19 @@ impl SpaceSettingsBuilder {
     ///
     /// To override the contents of this collection use [`set_custom_file_systems`](Self::set_custom_file_systems).
     ///
-    /// <p>A file system, created by you, that you assign to a space for an Amazon SageMaker Domain. Permitted users can access this file system in Amazon SageMaker Studio.</p>
+    /// <p>A file system, created by you, that you assign to a space for an Amazon SageMaker AI Domain. Permitted users can access this file system in Amazon SageMaker AI Studio.</p>
     pub fn custom_file_systems(mut self, input: crate::types::CustomFileSystem) -> Self {
         let mut v = self.custom_file_systems.unwrap_or_default();
         v.push(input);
         self.custom_file_systems = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A file system, created by you, that you assign to a space for an Amazon SageMaker Domain. Permitted users can access this file system in Amazon SageMaker Studio.</p>
+    /// <p>A file system, created by you, that you assign to a space for an Amazon SageMaker AI Domain. Permitted users can access this file system in Amazon SageMaker AI Studio.</p>
     pub fn set_custom_file_systems(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomFileSystem>>) -> Self {
         self.custom_file_systems = input;
         self
     }
-    /// <p>A file system, created by you, that you assign to a space for an Amazon SageMaker Domain. Permitted users can access this file system in Amazon SageMaker Studio.</p>
+    /// <p>A file system, created by you, that you assign to a space for an Amazon SageMaker AI Domain. Permitted users can access this file system in Amazon SageMaker AI Studio.</p>
     pub fn get_custom_file_systems(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomFileSystem>> {
         &self.custom_file_systems
     }

@@ -22,7 +22,7 @@ impl crate::operation::delete_model_explainability_job_definition::builders::Del
 }
 /// Fluent builder constructing a request to `DeleteModelExplainabilityJobDefinition`.
 ///
-/// <p>Deletes an Amazon SageMaker model explainability job definition.</p>
+/// <p>Deletes an Amazon SageMaker AI model explainability job definition.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteModelExplainabilityJobDefinitionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

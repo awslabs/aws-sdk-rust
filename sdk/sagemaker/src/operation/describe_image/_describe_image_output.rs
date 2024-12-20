@@ -19,7 +19,7 @@ pub struct DescribeImageOutput {
     pub image_status: ::std::option::Option<crate::types::ImageStatus>,
     /// <p>When the image was last modified.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The ARN of the IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+    /// <p>The ARN of the IAM role that enables Amazon SageMaker AI to perform tasks on your behalf.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -56,7 +56,7 @@ impl DescribeImageOutput {
     pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
-    /// <p>The ARN of the IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+    /// <p>The ARN of the IAM role that enables Amazon SageMaker AI to perform tasks on your behalf.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -201,17 +201,17 @@ impl DescribeImageOutputBuilder {
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time
     }
-    /// <p>The ARN of the IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+    /// <p>The ARN of the IAM role that enables Amazon SageMaker AI to perform tasks on your behalf.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+    /// <p>The ARN of the IAM role that enables Amazon SageMaker AI to perform tasks on your behalf.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The ARN of the IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+    /// <p>The ARN of the IAM role that enables Amazon SageMaker AI to perform tasks on your behalf.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }

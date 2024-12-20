@@ -22,7 +22,7 @@ impl crate::operation::list_custom_data_identifiers::builders::ListCustomDataIde
 }
 /// Fluent builder constructing a request to `ListCustomDataIdentifiers`.
 ///
-/// <p>Retrieves a subset of information about all the custom data identifiers for an account.</p>
+/// <p>Retrieves a subset of information about the custom data identifiers for an account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListCustomDataIdentifiersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -171,4 +171,18 @@ impl InvokeFlowFluentBuilder {
     pub fn get_enable_trace(&self) -> &::std::option::Option<bool> {
         self.inner.get_enable_trace()
     }
+    /// <p>Model performance settings for the request.</p>
+    pub fn model_performance_configuration(mut self, input: crate::types::ModelPerformanceConfiguration) -> Self {
+        self.inner = self.inner.model_performance_configuration(input);
+        self
+    }
+    /// <p>Model performance settings for the request.</p>
+    pub fn set_model_performance_configuration(mut self, input: ::std::option::Option<crate::types::ModelPerformanceConfiguration>) -> Self {
+        self.inner = self.inner.set_model_performance_configuration(input);
+        self
+    }
+    /// <p>Model performance settings for the request.</p>
+    pub fn get_model_performance_configuration(&self) -> &::std::option::Option<crate::types::ModelPerformanceConfiguration> {
+        self.inner.get_model_performance_configuration()
+    }
 }

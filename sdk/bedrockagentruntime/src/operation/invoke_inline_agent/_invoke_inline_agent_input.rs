@@ -34,6 +34,8 @@ pub struct InvokeInlineAgentInput {
     pub guardrail_configuration: ::std::option::Option<crate::types::GuardrailConfigurationWithArn>,
     /// <p>Configurations for advanced prompts used to override the default prompts to enhance the accuracy of the inline agent.</p>
     pub prompt_override_configuration: ::std::option::Option<crate::types::PromptOverrideConfiguration>,
+    /// <p>Model settings for the request.</p>
+    pub bedrock_model_configurations: ::std::option::Option<crate::types::InlineBedrockModelConfigurations>,
 }
 impl InvokeInlineAgentInput {
     /// <p>The unique identifier of the session. Use the same value across requests to continue the same conversation.</p>
@@ -97,6 +99,10 @@ impl InvokeInlineAgentInput {
     pub fn prompt_override_configuration(&self) -> ::std::option::Option<&crate::types::PromptOverrideConfiguration> {
         self.prompt_override_configuration.as_ref()
     }
+    /// <p>Model settings for the request.</p>
+    pub fn bedrock_model_configurations(&self) -> ::std::option::Option<&crate::types::InlineBedrockModelConfigurations> {
+        self.bedrock_model_configurations.as_ref()
+    }
 }
 impl ::std::fmt::Debug for InvokeInlineAgentInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -114,6 +120,7 @@ impl ::std::fmt::Debug for InvokeInlineAgentInput {
         formatter.field("knowledge_bases", &self.knowledge_bases);
         formatter.field("guardrail_configuration", &self.guardrail_configuration);
         formatter.field("prompt_override_configuration", &"*** Sensitive Data Redacted ***");
+        formatter.field("bedrock_model_configurations", &self.bedrock_model_configurations);
         formatter.finish()
     }
 }
@@ -141,6 +148,7 @@ pub struct InvokeInlineAgentInputBuilder {
     pub(crate) knowledge_bases: ::std::option::Option<::std::vec::Vec<crate::types::KnowledgeBase>>,
     pub(crate) guardrail_configuration: ::std::option::Option<crate::types::GuardrailConfigurationWithArn>,
     pub(crate) prompt_override_configuration: ::std::option::Option<crate::types::PromptOverrideConfiguration>,
+    pub(crate) bedrock_model_configurations: ::std::option::Option<crate::types::InlineBedrockModelConfigurations>,
 }
 impl InvokeInlineAgentInputBuilder {
     /// <p>The unique identifier of the session. Use the same value across requests to continue the same conversation.</p>
@@ -355,6 +363,20 @@ impl InvokeInlineAgentInputBuilder {
     pub fn get_prompt_override_configuration(&self) -> &::std::option::Option<crate::types::PromptOverrideConfiguration> {
         &self.prompt_override_configuration
     }
+    /// <p>Model settings for the request.</p>
+    pub fn bedrock_model_configurations(mut self, input: crate::types::InlineBedrockModelConfigurations) -> Self {
+        self.bedrock_model_configurations = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Model settings for the request.</p>
+    pub fn set_bedrock_model_configurations(mut self, input: ::std::option::Option<crate::types::InlineBedrockModelConfigurations>) -> Self {
+        self.bedrock_model_configurations = input;
+        self
+    }
+    /// <p>Model settings for the request.</p>
+    pub fn get_bedrock_model_configurations(&self) -> &::std::option::Option<crate::types::InlineBedrockModelConfigurations> {
+        &self.bedrock_model_configurations
+    }
     /// Consumes the builder and constructs a [`InvokeInlineAgentInput`](crate::operation::invoke_inline_agent::InvokeInlineAgentInput).
     pub fn build(
         self,
@@ -373,6 +395,7 @@ impl InvokeInlineAgentInputBuilder {
             knowledge_bases: self.knowledge_bases,
             guardrail_configuration: self.guardrail_configuration,
             prompt_override_configuration: self.prompt_override_configuration,
+            bedrock_model_configurations: self.bedrock_model_configurations,
         })
     }
 }
@@ -392,6 +415,7 @@ impl ::std::fmt::Debug for InvokeInlineAgentInputBuilder {
         formatter.field("knowledge_bases", &self.knowledge_bases);
         formatter.field("guardrail_configuration", &self.guardrail_configuration);
         formatter.field("prompt_override_configuration", &"*** Sensitive Data Redacted ***");
+        formatter.field("bedrock_model_configurations", &self.bedrock_model_configurations);
         formatter.finish()
     }
 }

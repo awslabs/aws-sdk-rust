@@ -33,14 +33,17 @@ pub fn ser_get_tags_input_input(
         }
         array_8.finish();
     }
-    if let Some(var_11) = &input.max_results {
+    if let Some(var_11) = &input.billing_view_arn {
+        object.key("BillingViewArn").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_11).into()),
+            ::aws_smithy_types::Number::NegInt((*var_12).into()),
         );
     }
-    if let Some(var_12) = &input.next_page_token {
-        object.key("NextPageToken").string(var_12.as_str());
+    if let Some(var_13) = &input.next_page_token {
+        object.key("NextPageToken").string(var_13.as_str());
     }
     Ok(())
 }

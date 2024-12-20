@@ -22,7 +22,7 @@ impl crate::operation::get_data_automation_project::builders::GetDataAutomationP
 }
 /// Fluent builder constructing a request to `GetDataAutomationProject`.
 ///
-/// Gets an existing Amazon Bedrock Keystone DataAutomationProject
+/// Gets an existing Amazon Bedrock Data Automation Project
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDataAutomationProjectFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -13,7 +13,7 @@ pub struct GetBucketStatisticsOutput {
     pub bucket_count_by_object_encryption_requirement: ::std::option::Option<crate::types::BucketCountPolicyAllowsUnencryptedObjectUploads>,
     /// <p>The total number of buckets that are or aren't shared with other Amazon Web Services accounts, Amazon CloudFront origin access identities (OAIs), or CloudFront origin access controls (OACs).</p>
     pub bucket_count_by_shared_access_type: ::std::option::Option<crate::types::BucketCountBySharedAccessType>,
-    /// <p>The aggregated sensitive data discovery statistics for the buckets. If automated sensitive data discovery is currently disabled for your account, the value for each statistic is 0.</p>
+    /// <p>The aggregated sensitive data discovery statistics for the buckets. If automated sensitive data discovery is currently disabled for your account, the value for most statistics is 0.</p>
     pub bucket_statistics_by_sensitivity: ::std::option::Option<crate::types::BucketStatisticsBySensitivity>,
     /// <p>The total number of objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
     pub classifiable_object_count: ::std::option::Option<i64>,
@@ -59,7 +59,7 @@ impl GetBucketStatisticsOutput {
     pub fn bucket_count_by_shared_access_type(&self) -> ::std::option::Option<&crate::types::BucketCountBySharedAccessType> {
         self.bucket_count_by_shared_access_type.as_ref()
     }
-    /// <p>The aggregated sensitive data discovery statistics for the buckets. If automated sensitive data discovery is currently disabled for your account, the value for each statistic is 0.</p>
+    /// <p>The aggregated sensitive data discovery statistics for the buckets. If automated sensitive data discovery is currently disabled for your account, the value for most statistics is 0.</p>
     pub fn bucket_statistics_by_sensitivity(&self) -> ::std::option::Option<&crate::types::BucketStatisticsBySensitivity> {
         self.bucket_statistics_by_sensitivity.as_ref()
     }
@@ -207,17 +207,17 @@ impl GetBucketStatisticsOutputBuilder {
     pub fn get_bucket_count_by_shared_access_type(&self) -> &::std::option::Option<crate::types::BucketCountBySharedAccessType> {
         &self.bucket_count_by_shared_access_type
     }
-    /// <p>The aggregated sensitive data discovery statistics for the buckets. If automated sensitive data discovery is currently disabled for your account, the value for each statistic is 0.</p>
+    /// <p>The aggregated sensitive data discovery statistics for the buckets. If automated sensitive data discovery is currently disabled for your account, the value for most statistics is 0.</p>
     pub fn bucket_statistics_by_sensitivity(mut self, input: crate::types::BucketStatisticsBySensitivity) -> Self {
         self.bucket_statistics_by_sensitivity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The aggregated sensitive data discovery statistics for the buckets. If automated sensitive data discovery is currently disabled for your account, the value for each statistic is 0.</p>
+    /// <p>The aggregated sensitive data discovery statistics for the buckets. If automated sensitive data discovery is currently disabled for your account, the value for most statistics is 0.</p>
     pub fn set_bucket_statistics_by_sensitivity(mut self, input: ::std::option::Option<crate::types::BucketStatisticsBySensitivity>) -> Self {
         self.bucket_statistics_by_sensitivity = input;
         self
     }
-    /// <p>The aggregated sensitive data discovery statistics for the buckets. If automated sensitive data discovery is currently disabled for your account, the value for each statistic is 0.</p>
+    /// <p>The aggregated sensitive data discovery statistics for the buckets. If automated sensitive data discovery is currently disabled for your account, the value for most statistics is 0.</p>
     pub fn get_bucket_statistics_by_sensitivity(&self) -> &::std::option::Option<crate::types::BucketStatisticsBySensitivity> {
         &self.bucket_statistics_by_sensitivity
     }

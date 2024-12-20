@@ -39,8 +39,11 @@ pub fn ser_get_cost_and_usage_with_resources_input_input(
         }
         array_10.finish();
     }
-    if let Some(var_13) = &input.next_page_token {
-        object.key("NextPageToken").string(var_13.as_str());
+    if let Some(var_13) = &input.billing_view_arn {
+        object.key("BillingViewArn").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.next_page_token {
+        object.key("NextPageToken").string(var_14.as_str());
     }
     Ok(())
 }

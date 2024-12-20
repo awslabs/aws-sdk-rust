@@ -30,6 +30,9 @@ pub fn ser_web_crawler_configuration(
     if let Some(var_9) = &input.scope {
         object.key("scope").string(var_9.as_str());
     }
+    if let Some(var_10) = &input.user_agent {
+        object.key("userAgent").string(var_10.as_str());
+    }
     Ok(())
 }
 
@@ -61,6 +64,13 @@ where
                             builder = builder.set_scope(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::WebScopeType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "userAgent" => {
+                            builder = builder.set_user_agent(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }
