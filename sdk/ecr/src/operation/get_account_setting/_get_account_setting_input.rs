@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAccountSettingInput {
-    /// <p>Basic scan type version name.</p>
+    /// <p>The name of the account setting, such as <code>BASIC_SCAN_TYPE_VERSION</code> or <code>REGISTRY_POLICY_SCOPE</code>.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl GetAccountSettingInput {
-    /// <p>Basic scan type version name.</p>
+    /// <p>The name of the account setting, such as <code>BASIC_SCAN_TYPE_VERSION</code> or <code>REGISTRY_POLICY_SCOPE</code>.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct GetAccountSettingInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
 impl GetAccountSettingInputBuilder {
-    /// <p>Basic scan type version name.</p>
+    /// <p>The name of the account setting, such as <code>BASIC_SCAN_TYPE_VERSION</code> or <code>REGISTRY_POLICY_SCOPE</code>.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Basic scan type version name.</p>
+    /// <p>The name of the account setting, such as <code>BASIC_SCAN_TYPE_VERSION</code> or <code>REGISTRY_POLICY_SCOPE</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>Basic scan type version name.</p>
+    /// <p>The name of the account setting, such as <code>BASIC_SCAN_TYPE_VERSION</code> or <code>REGISTRY_POLICY_SCOPE</code>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

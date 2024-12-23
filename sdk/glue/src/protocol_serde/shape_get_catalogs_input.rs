@@ -18,5 +18,8 @@ pub fn ser_get_catalogs_input_input(
     if let Some(var_4) = &input.recursive {
         object.key("Recursive").boolean(*var_4);
     }
+    if let Some(var_5) = &input.include_root {
+        object.key("IncludeRoot").boolean(*var_5);
+    }
     Ok(())
 }

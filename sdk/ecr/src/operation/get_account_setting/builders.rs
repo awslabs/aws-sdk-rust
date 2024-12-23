@@ -22,7 +22,7 @@ impl crate::operation::get_account_setting::builders::GetAccountSettingInputBuil
 }
 /// Fluent builder constructing a request to `GetAccountSetting`.
 ///
-/// <p>Retrieves the basic scan type version name.</p>
+/// <p>Retrieves the account setting value for the specified setting name.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAccountSettingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl GetAccountSettingFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Basic scan type version name.</p>
+    /// <p>The name of the account setting, such as <code>BASIC_SCAN_TYPE_VERSION</code> or <code>REGISTRY_POLICY_SCOPE</code>.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>Basic scan type version name.</p>
+    /// <p>The name of the account setting, such as <code>BASIC_SCAN_TYPE_VERSION</code> or <code>REGISTRY_POLICY_SCOPE</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>Basic scan type version name.</p>
+    /// <p>The name of the account setting, such as <code>BASIC_SCAN_TYPE_VERSION</code> or <code>REGISTRY_POLICY_SCOPE</code>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }

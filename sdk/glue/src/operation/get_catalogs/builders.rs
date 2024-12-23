@@ -150,18 +150,35 @@ impl GetCatalogsFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>When specified as true, iterates through the account and returns all catalog resources (including top-level resources and child resources)</p>
+    /// <p>Whether to list all catalogs across the catalog hierarchy, starting from the <code>ParentCatalogId</code>. Defaults to <code>false</code> . When <code>true</code>, all catalog objects in the <code>ParentCatalogID</code> hierarchy are enumerated in the response.</p>
     pub fn recursive(mut self, input: bool) -> Self {
         self.inner = self.inner.recursive(input);
         self
     }
-    /// <p>When specified as true, iterates through the account and returns all catalog resources (including top-level resources and child resources)</p>
+    /// <p>Whether to list all catalogs across the catalog hierarchy, starting from the <code>ParentCatalogId</code>. Defaults to <code>false</code> . When <code>true</code>, all catalog objects in the <code>ParentCatalogID</code> hierarchy are enumerated in the response.</p>
     pub fn set_recursive(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_recursive(input);
         self
     }
-    /// <p>When specified as true, iterates through the account and returns all catalog resources (including top-level resources and child resources)</p>
+    /// <p>Whether to list all catalogs across the catalog hierarchy, starting from the <code>ParentCatalogId</code>. Defaults to <code>false</code> . When <code>true</code>, all catalog objects in the <code>ParentCatalogID</code> hierarchy are enumerated in the response.</p>
     pub fn get_recursive(&self) -> &::std::option::Option<bool> {
         self.inner.get_recursive()
+    }
+    /// <p>Whether to list the default catalog in the account and region in the response. Defaults to <code>false</code>. When <code>true</code> and <code>ParentCatalogId = NULL | Amazon Web Services Account ID</code>, all catalogs and the default catalog are enumerated in the response.</p>
+    /// <p>When the <code>ParentCatalogId</code> is not equal to null, and this attribute is passed as <code>false</code> or <code>true</code>, an <code>InvalidInputException</code> is thrown.</p>
+    pub fn include_root(mut self, input: bool) -> Self {
+        self.inner = self.inner.include_root(input);
+        self
+    }
+    /// <p>Whether to list the default catalog in the account and region in the response. Defaults to <code>false</code>. When <code>true</code> and <code>ParentCatalogId = NULL | Amazon Web Services Account ID</code>, all catalogs and the default catalog are enumerated in the response.</p>
+    /// <p>When the <code>ParentCatalogId</code> is not equal to null, and this attribute is passed as <code>false</code> or <code>true</code>, an <code>InvalidInputException</code> is thrown.</p>
+    pub fn set_include_root(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_include_root(input);
+        self
+    }
+    /// <p>Whether to list the default catalog in the account and region in the response. Defaults to <code>false</code>. When <code>true</code> and <code>ParentCatalogId = NULL | Amazon Web Services Account ID</code>, all catalogs and the default catalog are enumerated in the response.</p>
+    /// <p>When the <code>ParentCatalogId</code> is not equal to null, and this attribute is passed as <code>false</code> or <code>true</code>, an <code>InvalidInputException</code> is thrown.</p>
+    pub fn get_include_root(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_root()
     }
 }

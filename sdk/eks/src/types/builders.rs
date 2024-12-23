@@ -147,6 +147,8 @@ pub use crate::types::_fargate_profile_issue::FargateProfileIssueBuilder;
 
 pub use crate::types::_fargate_profile_selector::FargateProfileSelectorBuilder;
 
+pub use crate::types::_cluster_version_information::ClusterVersionInformationBuilder;
+
 pub use crate::types::_addon_info::AddonInfoBuilder;
 
 pub use crate::types::_marketplace_information::MarketplaceInformationBuilder;

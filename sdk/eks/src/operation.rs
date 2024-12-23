@@ -70,6 +70,9 @@ pub mod describe_addon_versions;
 /// Types for the `DescribeCluster` operation.
 pub mod describe_cluster;
 
+/// Types for the `DescribeClusterVersions` operation.
+pub mod describe_cluster_versions;
+
 /// Types for the `DescribeEksAnywhereSubscription` operation.
 pub mod describe_eks_anywhere_subscription;
 

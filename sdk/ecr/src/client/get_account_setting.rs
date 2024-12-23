@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetAccountSetting`](crate::operation::get_account_setting::builders::GetAccountSettingFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::get_account_setting::builders::GetAccountSettingFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_account_setting::builders::GetAccountSettingFluentBuilder::set_name):<br>required: **true**<br><p>Basic scan type version name.</p><br>
+    ///   - [`name(impl Into<String>)`](crate::operation::get_account_setting::builders::GetAccountSettingFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_account_setting::builders::GetAccountSettingFluentBuilder::set_name):<br>required: **true**<br><p>The name of the account setting, such as <code>BASIC_SCAN_TYPE_VERSION</code> or <code>REGISTRY_POLICY_SCOPE</code>.</p><br>
     /// - On success, responds with [`GetAccountSettingOutput`](crate::operation::get_account_setting::GetAccountSettingOutput) with field(s):
-    ///   - [`name(Option<String>)`](crate::operation::get_account_setting::GetAccountSettingOutput::name): <p>Retrieves the basic scan type version name.</p>
-    ///   - [`value(Option<String>)`](crate::operation::get_account_setting::GetAccountSettingOutput::value): <p>Retrieves the value that specifies what basic scan type is being used: <code>AWS_NATIVE</code> or <code>CLAIR</code>.</p>
+    ///   - [`name(Option<String>)`](crate::operation::get_account_setting::GetAccountSettingOutput::name): <p>Retrieves the name of the account setting.</p>
+    ///   - [`value(Option<String>)`](crate::operation::get_account_setting::GetAccountSettingOutput::value): <p>The setting value for the setting name. The following are valid values for the basic scan type being used: <code>AWS_NATIVE</code> or <code>CLAIR</code>. The following are valid values for the registry policy scope being used: <code>V1</code> or <code>V2</code>.</p>
     /// - On failure, responds with [`SdkError<GetAccountSettingError>`](crate::operation::get_account_setting::GetAccountSettingError)
     pub fn get_account_setting(&self) -> crate::operation::get_account_setting::builders::GetAccountSettingFluentBuilder {
         crate::operation::get_account_setting::builders::GetAccountSettingFluentBuilder::new(self.handle.clone())

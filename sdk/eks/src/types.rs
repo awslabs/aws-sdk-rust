@@ -199,6 +199,10 @@ pub use crate::types::_fargate_profile_status::FargateProfileStatus;
 
 pub use crate::types::_fargate_profile_selector::FargateProfileSelector;
 
+pub use crate::types::_cluster_version_information::ClusterVersionInformation;
+
+pub use crate::types::_cluster_version_status::ClusterVersionStatus;
+
 pub use crate::types::_addon_info::AddonInfo;
 
 pub use crate::types::_marketplace_information::MarketplaceInformation;
@@ -286,6 +290,10 @@ mod _cluster_issue;
 mod _cluster_issue_code;
 
 mod _cluster_status;
+
+mod _cluster_version_information;
+
+mod _cluster_version_status;
 
 mod _compatibility;
 

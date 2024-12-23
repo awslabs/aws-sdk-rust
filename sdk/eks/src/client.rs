@@ -273,6 +273,8 @@ mod describe_addon_versions;
 
 mod describe_cluster;
 
+mod describe_cluster_versions;
+
 mod describe_eks_anywhere_subscription;
 
 mod describe_fargate_profile;

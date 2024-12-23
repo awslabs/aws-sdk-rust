@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAccountSettingOutput {
-    /// <p>Retrieves the basic scan type version name.</p>
+    /// <p>Retrieves the name of the account setting.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>Retrieves the value that specifies what basic scan type is being used: <code>AWS_NATIVE</code> or <code>CLAIR</code>.</p>
+    /// <p>The setting value for the setting name. The following are valid values for the basic scan type being used: <code>AWS_NATIVE</code> or <code>CLAIR</code>. The following are valid values for the registry policy scope being used: <code>V1</code> or <code>V2</code>.</p>
     pub value: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetAccountSettingOutput {
-    /// <p>Retrieves the basic scan type version name.</p>
+    /// <p>Retrieves the name of the account setting.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Retrieves the value that specifies what basic scan type is being used: <code>AWS_NATIVE</code> or <code>CLAIR</code>.</p>
+    /// <p>The setting value for the setting name. The following are valid values for the basic scan type being used: <code>AWS_NATIVE</code> or <code>CLAIR</code>. The following are valid values for the registry policy scope being used: <code>V1</code> or <code>V2</code>.</p>
     pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -40,31 +40,31 @@ pub struct GetAccountSettingOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetAccountSettingOutputBuilder {
-    /// <p>Retrieves the basic scan type version name.</p>
+    /// <p>Retrieves the name of the account setting.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Retrieves the basic scan type version name.</p>
+    /// <p>Retrieves the name of the account setting.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>Retrieves the basic scan type version name.</p>
+    /// <p>Retrieves the name of the account setting.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>Retrieves the value that specifies what basic scan type is being used: <code>AWS_NATIVE</code> or <code>CLAIR</code>.</p>
+    /// <p>The setting value for the setting name. The following are valid values for the basic scan type being used: <code>AWS_NATIVE</code> or <code>CLAIR</code>. The following are valid values for the registry policy scope being used: <code>V1</code> or <code>V2</code>.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Retrieves the value that specifies what basic scan type is being used: <code>AWS_NATIVE</code> or <code>CLAIR</code>.</p>
+    /// <p>The setting value for the setting name. The following are valid values for the basic scan type being used: <code>AWS_NATIVE</code> or <code>CLAIR</code>. The following are valid values for the registry policy scope being used: <code>V1</code> or <code>V2</code>.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }
-    /// <p>Retrieves the value that specifies what basic scan type is being used: <code>AWS_NATIVE</code> or <code>CLAIR</code>.</p>
+    /// <p>The setting value for the setting name. The following are valid values for the basic scan type being used: <code>AWS_NATIVE</code> or <code>CLAIR</code>. The following are valid values for the registry policy scope being used: <code>V1</code> or <code>V2</code>.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.value
     }

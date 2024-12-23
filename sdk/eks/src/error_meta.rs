@@ -844,6 +844,37 @@ impl From<crate::operation::describe_cluster::DescribeClusterError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_cluster_versions::DescribeClusterVersionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_cluster_versions::DescribeClusterVersionsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_cluster_versions::DescribeClusterVersionsError> for Error {
+    fn from(err: crate::operation::describe_cluster_versions::DescribeClusterVersionsError) -> Self {
+        match err {
+            crate::operation::describe_cluster_versions::DescribeClusterVersionsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::describe_cluster_versions::DescribeClusterVersionsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::describe_cluster_versions::DescribeClusterVersionsError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::describe_cluster_versions::DescribeClusterVersionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<

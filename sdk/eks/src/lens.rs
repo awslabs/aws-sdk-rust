@@ -9,6 +9,16 @@ pub(crate) fn reflens_describe_addon_versions_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_cluster_versions_output_output_next_token(
+    input: &crate::operation::describe_cluster_versions::DescribeClusterVersionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_access_entries_output_output_next_token(
     input: &crate::operation::list_access_entries::ListAccessEntriesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -133,6 +143,16 @@ pub(crate) fn lens_describe_addon_versions_output_output_addons(
     input: crate::operation::describe_addon_versions::DescribeAddonVersionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AddonInfo>> {
     let input = match input.addons {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_cluster_versions_output_output_cluster_versions(
+    input: crate::operation::describe_cluster_versions::DescribeClusterVersionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ClusterVersionInformation>> {
+    let input = match input.cluster_versions {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

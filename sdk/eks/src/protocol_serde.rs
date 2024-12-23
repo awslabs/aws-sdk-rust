@@ -69,6 +69,8 @@ pub(crate) mod shape_describe_addon_versions;
 
 pub(crate) mod shape_describe_cluster;
 
+pub(crate) mod shape_describe_cluster_versions;
+
 pub(crate) mod shape_describe_eks_anywhere_subscription;
 
 pub(crate) mod shape_describe_fargate_profile;
@@ -235,6 +237,8 @@ pub(crate) mod shape_associated_access_policy;
 
 pub(crate) mod shape_cluster;
 
+pub(crate) mod shape_cluster_version_list;
+
 pub(crate) mod shape_compute_config_request;
 
 pub(crate) mod shape_connector_config_request;
@@ -330,6 +334,8 @@ pub(crate) mod shape_block_storage;
 pub(crate) mod shape_certificate;
 
 pub(crate) mod shape_cluster_health;
+
+pub(crate) mod shape_cluster_version_information;
 
 pub(crate) mod shape_compute_config_response;
 

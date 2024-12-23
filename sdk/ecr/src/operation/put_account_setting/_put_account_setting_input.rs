@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutAccountSettingInput {
-    /// <p>Basic scan type version name.</p>
+    /// <p>The name of the account setting, such as <code>BASIC_SCAN_TYPE_VERSION</code> or <code>REGISTRY_POLICY_SCOPE</code>.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>Setting value that determines what basic scan type is being used: <code>AWS_NATIVE</code> or <code>CLAIR</code>.</p>
+    /// <p>Setting value that is specified. The following are valid values for the basic scan type being used: <code>AWS_NATIVE</code> or <code>CLAIR</code>. The following are valid values for the registry policy scope being used: <code>V1</code> or <code>V2</code>.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl PutAccountSettingInput {
-    /// <p>Basic scan type version name.</p>
+    /// <p>The name of the account setting, such as <code>BASIC_SCAN_TYPE_VERSION</code> or <code>REGISTRY_POLICY_SCOPE</code>.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Setting value that determines what basic scan type is being used: <code>AWS_NATIVE</code> or <code>CLAIR</code>.</p>
+    /// <p>Setting value that is specified. The following are valid values for the basic scan type being used: <code>AWS_NATIVE</code> or <code>CLAIR</code>. The following are valid values for the registry policy scope being used: <code>V1</code> or <code>V2</code>.</p>
     pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -33,33 +33,33 @@ pub struct PutAccountSettingInputBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
 }
 impl PutAccountSettingInputBuilder {
-    /// <p>Basic scan type version name.</p>
+    /// <p>The name of the account setting, such as <code>BASIC_SCAN_TYPE_VERSION</code> or <code>REGISTRY_POLICY_SCOPE</code>.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Basic scan type version name.</p>
+    /// <p>The name of the account setting, such as <code>BASIC_SCAN_TYPE_VERSION</code> or <code>REGISTRY_POLICY_SCOPE</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>Basic scan type version name.</p>
+    /// <p>The name of the account setting, such as <code>BASIC_SCAN_TYPE_VERSION</code> or <code>REGISTRY_POLICY_SCOPE</code>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>Setting value that determines what basic scan type is being used: <code>AWS_NATIVE</code> or <code>CLAIR</code>.</p>
+    /// <p>Setting value that is specified. The following are valid values for the basic scan type being used: <code>AWS_NATIVE</code> or <code>CLAIR</code>. The following are valid values for the registry policy scope being used: <code>V1</code> or <code>V2</code>.</p>
     /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Setting value that determines what basic scan type is being used: <code>AWS_NATIVE</code> or <code>CLAIR</code>.</p>
+    /// <p>Setting value that is specified. The following are valid values for the basic scan type being used: <code>AWS_NATIVE</code> or <code>CLAIR</code>. The following are valid values for the registry policy scope being used: <code>V1</code> or <code>V2</code>.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }
-    /// <p>Setting value that determines what basic scan type is being used: <code>AWS_NATIVE</code> or <code>CLAIR</code>.</p>
+    /// <p>Setting value that is specified. The following are valid values for the basic scan type being used: <code>AWS_NATIVE</code> or <code>CLAIR</code>. The following are valid values for the registry policy scope being used: <code>V1</code> or <code>V2</code>.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.value
     }
