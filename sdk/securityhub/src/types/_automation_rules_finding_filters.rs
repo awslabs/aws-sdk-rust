@@ -20,67 +20,19 @@ pub struct AutomationRulesFindingFilters {
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub r#type: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>A timestamp that indicates when the potential security issue captured by a finding was first observed by the security findings product.</p>
-    /// <p>This field accepts only the specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour \[":" time-minute\]</code>. The time-secfrac after seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)</p></li>
-    /// </ul>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub first_observed_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
-    /// <p>A timestamp that indicates when the potential security issue captured by a finding was most recently observed by the security findings product.</p>
-    /// <p>This field accepts only the specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour \[":" time-minute\]</code>. The time-secfrac after seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)</p></li>
-    /// </ul>
+    /// <p>A timestamp that indicates when the security findings provider most recently observed a change in the resource that is involved in the finding.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub last_observed_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
     /// <p>A timestamp that indicates when this finding record was created.</p>
-    /// <p>This field accepts only the specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour \[":" time-minute\]</code>. The time-secfrac after seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)</p></li>
-    /// </ul>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub created_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
     /// <p>A timestamp that indicates when the finding record was most recently updated.</p>
-    /// <p>This field accepts only the specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour \[":" time-minute\]</code>. The time-secfrac after seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)</p></li>
-    /// </ul>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub updated_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
     /// <p>The likelihood that a finding accurately identifies the behavior or issue that it was intended to identify. <code>Confidence</code> is scored on a 0–100 basis using a ratio scale. A value of <code>0</code> means 0 percent confidence, and a value of <code>100</code> means 100 percent confidence. For example, a data exfiltration detection based on a statistical deviation of network traffic has low confidence because an actual exfiltration hasn't been verified. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-confidence">Confidence</a> in the <i>Security Hub User Guide</i>.</p>
@@ -153,19 +105,7 @@ pub struct AutomationRulesFindingFilters {
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub note_text: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The timestamp of when the note was updated.</p>
-    /// <p>This field accepts only the specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour \[":" time-minute\]</code>. The time-secfrac after seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)</p></li>
-    /// </ul>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub note_updated_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
     /// <p>The principal that created a note.</p>
@@ -221,39 +161,15 @@ impl AutomationRulesFindingFilters {
         self.r#type.as_deref().unwrap_or_default()
     }
     /// <p>A timestamp that indicates when the potential security issue captured by a finding was first observed by the security findings product.</p>
-    /// <p>This field accepts only the specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour \[":" time-minute\]</code>. The time-secfrac after seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)</p></li>
-    /// </ul>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.first_observed_at.is_none()`.
     pub fn first_observed_at(&self) -> &[crate::types::DateFilter] {
         self.first_observed_at.as_deref().unwrap_or_default()
     }
-    /// <p>A timestamp that indicates when the potential security issue captured by a finding was most recently observed by the security findings product.</p>
-    /// <p>This field accepts only the specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour \[":" time-minute\]</code>. The time-secfrac after seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)</p></li>
-    /// </ul>
+    /// <p>A timestamp that indicates when the security findings provider most recently observed a change in the resource that is involved in the finding.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.last_observed_at.is_none()`.
@@ -261,19 +177,7 @@ impl AutomationRulesFindingFilters {
         self.last_observed_at.as_deref().unwrap_or_default()
     }
     /// <p>A timestamp that indicates when this finding record was created.</p>
-    /// <p>This field accepts only the specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour \[":" time-minute\]</code>. The time-secfrac after seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)</p></li>
-    /// </ul>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.created_at.is_none()`.
@@ -281,19 +185,7 @@ impl AutomationRulesFindingFilters {
         self.created_at.as_deref().unwrap_or_default()
     }
     /// <p>A timestamp that indicates when the finding record was most recently updated.</p>
-    /// <p>This field accepts only the specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour \[":" time-minute\]</code>. The time-secfrac after seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)</p></li>
-    /// </ul>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.updated_at.is_none()`.
@@ -462,19 +354,7 @@ impl AutomationRulesFindingFilters {
         self.note_text.as_deref().unwrap_or_default()
     }
     /// <p>The timestamp of when the note was updated.</p>
-    /// <p>This field accepts only the specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour \[":" time-minute\]</code>. The time-secfrac after seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)</p></li>
-    /// </ul>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.note_updated_at.is_none()`.
@@ -688,19 +568,7 @@ impl AutomationRulesFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_first_observed_at`](Self::set_first_observed_at).
     ///
     /// <p>A timestamp that indicates when the potential security issue captured by a finding was first observed by the security findings product.</p>
-    /// <p>This field accepts only the specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour \[":" time-minute\]</code>. The time-secfrac after seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)</p></li>
-    /// </ul>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub fn first_observed_at(mut self, input: crate::types::DateFilter) -> Self {
         let mut v = self.first_observed_at.unwrap_or_default();
@@ -709,38 +577,14 @@ impl AutomationRulesFindingFiltersBuilder {
         self
     }
     /// <p>A timestamp that indicates when the potential security issue captured by a finding was first observed by the security findings product.</p>
-    /// <p>This field accepts only the specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour \[":" time-minute\]</code>. The time-secfrac after seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)</p></li>
-    /// </ul>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub fn set_first_observed_at(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>) -> Self {
         self.first_observed_at = input;
         self
     }
     /// <p>A timestamp that indicates when the potential security issue captured by a finding was first observed by the security findings product.</p>
-    /// <p>This field accepts only the specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour \[":" time-minute\]</code>. The time-secfrac after seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)</p></li>
-    /// </ul>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub fn get_first_observed_at(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
         &self.first_observed_at
@@ -749,20 +593,8 @@ impl AutomationRulesFindingFiltersBuilder {
     ///
     /// To override the contents of this collection use [`set_last_observed_at`](Self::set_last_observed_at).
     ///
-    /// <p>A timestamp that indicates when the potential security issue captured by a finding was most recently observed by the security findings product.</p>
-    /// <p>This field accepts only the specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour \[":" time-minute\]</code>. The time-secfrac after seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)</p></li>
-    /// </ul>
+    /// <p>A timestamp that indicates when the security findings provider most recently observed a change in the resource that is involved in the finding.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub fn last_observed_at(mut self, input: crate::types::DateFilter) -> Self {
         let mut v = self.last_observed_at.unwrap_or_default();
@@ -770,39 +602,15 @@ impl AutomationRulesFindingFiltersBuilder {
         self.last_observed_at = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A timestamp that indicates when the potential security issue captured by a finding was most recently observed by the security findings product.</p>
-    /// <p>This field accepts only the specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour \[":" time-minute\]</code>. The time-secfrac after seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)</p></li>
-    /// </ul>
+    /// <p>A timestamp that indicates when the security findings provider most recently observed a change in the resource that is involved in the finding.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub fn set_last_observed_at(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>) -> Self {
         self.last_observed_at = input;
         self
     }
-    /// <p>A timestamp that indicates when the potential security issue captured by a finding was most recently observed by the security findings product.</p>
-    /// <p>This field accepts only the specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour \[":" time-minute\]</code>. The time-secfrac after seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)</p></li>
-    /// </ul>
+    /// <p>A timestamp that indicates when the security findings provider most recently observed a change in the resource that is involved in the finding.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub fn get_last_observed_at(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
         &self.last_observed_at
@@ -812,19 +620,7 @@ impl AutomationRulesFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_created_at`](Self::set_created_at).
     ///
     /// <p>A timestamp that indicates when this finding record was created.</p>
-    /// <p>This field accepts only the specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour \[":" time-minute\]</code>. The time-secfrac after seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)</p></li>
-    /// </ul>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub fn created_at(mut self, input: crate::types::DateFilter) -> Self {
         let mut v = self.created_at.unwrap_or_default();
@@ -833,38 +629,14 @@ impl AutomationRulesFindingFiltersBuilder {
         self
     }
     /// <p>A timestamp that indicates when this finding record was created.</p>
-    /// <p>This field accepts only the specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour \[":" time-minute\]</code>. The time-secfrac after seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)</p></li>
-    /// </ul>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>) -> Self {
         self.created_at = input;
         self
     }
     /// <p>A timestamp that indicates when this finding record was created.</p>
-    /// <p>This field accepts only the specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour \[":" time-minute\]</code>. The time-secfrac after seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)</p></li>
-    /// </ul>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
         &self.created_at
@@ -874,19 +646,7 @@ impl AutomationRulesFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_updated_at`](Self::set_updated_at).
     ///
     /// <p>A timestamp that indicates when the finding record was most recently updated.</p>
-    /// <p>This field accepts only the specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour \[":" time-minute\]</code>. The time-secfrac after seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)</p></li>
-    /// </ul>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub fn updated_at(mut self, input: crate::types::DateFilter) -> Self {
         let mut v = self.updated_at.unwrap_or_default();
@@ -895,38 +655,14 @@ impl AutomationRulesFindingFiltersBuilder {
         self
     }
     /// <p>A timestamp that indicates when the finding record was most recently updated.</p>
-    /// <p>This field accepts only the specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour \[":" time-minute\]</code>. The time-secfrac after seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)</p></li>
-    /// </ul>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>) -> Self {
         self.updated_at = input;
         self
     }
     /// <p>A timestamp that indicates when the finding record was most recently updated.</p>
-    /// <p>This field accepts only the specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour \[":" time-minute\]</code>. The time-secfrac after seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)</p></li>
-    /// </ul>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
         &self.updated_at
@@ -1465,19 +1201,7 @@ impl AutomationRulesFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_note_updated_at`](Self::set_note_updated_at).
     ///
     /// <p>The timestamp of when the note was updated.</p>
-    /// <p>This field accepts only the specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour \[":" time-minute\]</code>. The time-secfrac after seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)</p></li>
-    /// </ul>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub fn note_updated_at(mut self, input: crate::types::DateFilter) -> Self {
         let mut v = self.note_updated_at.unwrap_or_default();
@@ -1486,38 +1210,14 @@ impl AutomationRulesFindingFiltersBuilder {
         self
     }
     /// <p>The timestamp of when the note was updated.</p>
-    /// <p>This field accepts only the specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour \[":" time-minute\]</code>. The time-secfrac after seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)</p></li>
-    /// </ul>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub fn set_note_updated_at(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>) -> Self {
         self.note_updated_at = input;
         self
     }
     /// <p>The timestamp of when the note was updated.</p>
-    /// <p>This field accepts only the specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour \[":" time-minute\]</code>. The time-secfrac after seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)</p></li>
-    /// <li>
-    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)</p></li>
-    /// </ul>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub fn get_note_updated_at(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
         &self.note_updated_at

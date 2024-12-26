@@ -173,7 +173,7 @@ pub struct ResourceDetails {
     pub aws_backup_recovery_point: ::std::option::Option<crate::types::AwsBackupRecoveryPointDetails>,
     /// <p>Specifies the properties for creating an Amazon Elastic Compute Cloud (Amazon EC2) launch template.</p>
     pub aws_ec2_launch_template: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDetails>,
-    /// <p>Provides details about an Amazon SageMaker notebook instance.</p>
+    /// <p>Provides details about an Amazon SageMaker AI notebook instance.</p>
     pub aws_sage_maker_notebook_instance: ::std::option::Option<crate::types::AwsSageMakerNotebookInstanceDetails>,
     /// <p>Details about an WAFv2 web Access Control List (ACL).</p>
     pub aws_wafv2_web_acl: ::std::option::Option<crate::types::AwsWafv2WebAclDetails>,
@@ -539,7 +539,7 @@ impl ResourceDetails {
     pub fn aws_ec2_launch_template(&self) -> ::std::option::Option<&crate::types::AwsEc2LaunchTemplateDetails> {
         self.aws_ec2_launch_template.as_ref()
     }
-    /// <p>Provides details about an Amazon SageMaker notebook instance.</p>
+    /// <p>Provides details about an Amazon SageMaker AI notebook instance.</p>
     pub fn aws_sage_maker_notebook_instance(&self) -> ::std::option::Option<&crate::types::AwsSageMakerNotebookInstanceDetails> {
         self.aws_sage_maker_notebook_instance.as_ref()
     }
@@ -1890,17 +1890,17 @@ impl ResourceDetailsBuilder {
     pub fn get_aws_ec2_launch_template(&self) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDetails> {
         &self.aws_ec2_launch_template
     }
-    /// <p>Provides details about an Amazon SageMaker notebook instance.</p>
+    /// <p>Provides details about an Amazon SageMaker AI notebook instance.</p>
     pub fn aws_sage_maker_notebook_instance(mut self, input: crate::types::AwsSageMakerNotebookInstanceDetails) -> Self {
         self.aws_sage_maker_notebook_instance = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides details about an Amazon SageMaker notebook instance.</p>
+    /// <p>Provides details about an Amazon SageMaker AI notebook instance.</p>
     pub fn set_aws_sage_maker_notebook_instance(mut self, input: ::std::option::Option<crate::types::AwsSageMakerNotebookInstanceDetails>) -> Self {
         self.aws_sage_maker_notebook_instance = input;
         self
     }
-    /// <p>Provides details about an Amazon SageMaker notebook instance.</p>
+    /// <p>Provides details about an Amazon SageMaker AI notebook instance.</p>
     pub fn get_aws_sage_maker_notebook_instance(&self) -> &::std::option::Option<crate::types::AwsSageMakerNotebookInstanceDetails> {
         &self.aws_sage_maker_notebook_instance
     }

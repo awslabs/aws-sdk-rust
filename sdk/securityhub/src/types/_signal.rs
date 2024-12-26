@@ -37,7 +37,7 @@ pub struct Signal {
     pub first_seen_at: ::std::option::Option<i64>,
     /// <p>The timestamp when the last finding or activity related to this signal was observed.</p>
     pub last_seen_at: ::std::option::Option<i64>,
-    /// <p>The severity associated with the signal. For more information about severity, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Findings severity levels</a> in the <i>Amazon GuardDuty User Guide</i>.</p>
+    /// <p>The severity associated with the signal. For more information about severity, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Severity levels for GuardDuty findings</a> in the <i>Amazon GuardDuty User Guide</i>.</p>
     pub severity: ::std::option::Option<f64>,
     /// <p>The number of times this signal was observed.</p>
     pub count: ::std::option::Option<i32>,
@@ -105,7 +105,7 @@ impl Signal {
     pub fn last_seen_at(&self) -> ::std::option::Option<i64> {
         self.last_seen_at
     }
-    /// <p>The severity associated with the signal. For more information about severity, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Findings severity levels</a> in the <i>Amazon GuardDuty User Guide</i>.</p>
+    /// <p>The severity associated with the signal. For more information about severity, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Severity levels for GuardDuty findings</a> in the <i>Amazon GuardDuty User Guide</i>.</p>
     pub fn severity(&self) -> ::std::option::Option<f64> {
         self.severity
     }
@@ -350,17 +350,17 @@ impl SignalBuilder {
     pub fn get_last_seen_at(&self) -> &::std::option::Option<i64> {
         &self.last_seen_at
     }
-    /// <p>The severity associated with the signal. For more information about severity, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Findings severity levels</a> in the <i>Amazon GuardDuty User Guide</i>.</p>
+    /// <p>The severity associated with the signal. For more information about severity, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Severity levels for GuardDuty findings</a> in the <i>Amazon GuardDuty User Guide</i>.</p>
     pub fn severity(mut self, input: f64) -> Self {
         self.severity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The severity associated with the signal. For more information about severity, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Findings severity levels</a> in the <i>Amazon GuardDuty User Guide</i>.</p>
+    /// <p>The severity associated with the signal. For more information about severity, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Severity levels for GuardDuty findings</a> in the <i>Amazon GuardDuty User Guide</i>.</p>
     pub fn set_severity(mut self, input: ::std::option::Option<f64>) -> Self {
         self.severity = input;
         self
     }
-    /// <p>The severity associated with the signal. For more information about severity, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Findings severity levels</a> in the <i>Amazon GuardDuty User Guide</i>.</p>
+    /// <p>The severity associated with the signal. For more information about severity, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Severity levels for GuardDuty findings</a> in the <i>Amazon GuardDuty User Guide</i>.</p>
     pub fn get_severity(&self) -> &::std::option::Option<f64> {
         &self.severity
     }

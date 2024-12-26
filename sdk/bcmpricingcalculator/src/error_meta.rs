@@ -592,6 +592,7 @@ where
 impl From<crate::operation::delete_bill_estimate::DeleteBillEstimateError> for Error {
     fn from(err: crate::operation::delete_bill_estimate::DeleteBillEstimateError) -> Self {
         match err {
+            crate::operation::delete_bill_estimate::DeleteBillEstimateError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::delete_bill_estimate::DeleteBillEstimateError::DataUnavailableException(inner) => {
                 Error::DataUnavailableException(inner)
             }

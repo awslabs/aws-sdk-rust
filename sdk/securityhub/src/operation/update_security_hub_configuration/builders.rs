@@ -110,18 +110,21 @@ impl UpdateSecurityHubConfigurationFluentBuilder {
     }
     /// <p>Whether to automatically enable new controls when they are added to standards that are enabled.</p>
     /// <p>By default, this is set to <code>true</code>, and new controls are enabled automatically. To not automatically enable new controls, set this to <code>false</code>.</p>
+    /// <p>When you automatically enable new controls, you can interact with the controls in the console and programmatically immediately after release. However, automatically enabled controls have a temporary default status of <code>DISABLED</code>. It can take up to several days for Security Hub to process the control release and designate the control as <code>ENABLED</code> in your account. During the processing period, you can manually enable or disable a control, and Security Hub will maintain that designation regardless of whether you have <code>AutoEnableControls</code> set to <code>true</code>.</p>
     pub fn auto_enable_controls(mut self, input: bool) -> Self {
         self.inner = self.inner.auto_enable_controls(input);
         self
     }
     /// <p>Whether to automatically enable new controls when they are added to standards that are enabled.</p>
     /// <p>By default, this is set to <code>true</code>, and new controls are enabled automatically. To not automatically enable new controls, set this to <code>false</code>.</p>
+    /// <p>When you automatically enable new controls, you can interact with the controls in the console and programmatically immediately after release. However, automatically enabled controls have a temporary default status of <code>DISABLED</code>. It can take up to several days for Security Hub to process the control release and designate the control as <code>ENABLED</code> in your account. During the processing period, you can manually enable or disable a control, and Security Hub will maintain that designation regardless of whether you have <code>AutoEnableControls</code> set to <code>true</code>.</p>
     pub fn set_auto_enable_controls(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_auto_enable_controls(input);
         self
     }
     /// <p>Whether to automatically enable new controls when they are added to standards that are enabled.</p>
     /// <p>By default, this is set to <code>true</code>, and new controls are enabled automatically. To not automatically enable new controls, set this to <code>false</code>.</p>
+    /// <p>When you automatically enable new controls, you can interact with the controls in the console and programmatically immediately after release. However, automatically enabled controls have a temporary default status of <code>DISABLED</code>. It can take up to several days for Security Hub to process the control release and designate the control as <code>ENABLED</code> in your account. During the processing period, you can manually enable or disable a control, and Security Hub will maintain that designation regardless of whether you have <code>AutoEnableControls</code> set to <code>true</code>.</p>
     pub fn get_auto_enable_controls(&self) -> &::std::option::Option<bool> {
         self.inner.get_auto_enable_controls()
     }
