@@ -1882,9 +1882,9 @@ model_hash = '89b66df6ed8dd9dd5b9b7ce463ebf12ea437a2fc24a36a001c23fd2db6877a6d'
 
 [crates.aws-sdk-rds]
 category = 'AwsSdk'
-version = '1.70.0'
-source_hash = 'e7b5943ee75c3bc9d9fc000033298dbba448f3f026ec63df95ef1a24443c1378'
-model_hash = '6070c0a51e22e74e87a28539e91f74ce2c973d9a2e6efc0e7742921fce2be570'
+version = '1.70.1'
+source_hash = 'ec28ddc39c28aaa5d1a7f6440dfec6ce07010b8478fa1913384ff83fd64f9d55'
+model_hash = 'f09ec0716ca589f9256f9a9de8b337a57b569642b73d10449a1669fe59bd7b64'
 
 [crates.aws-sdk-rdsdata]
 category = 'AwsSdk'
@@ -2601,12 +2601,5 @@ source_hash = '296a471b189f14535e95c799b1748c38bfae91febeac58b5bf0365f011d77a67'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '939e0cadde03612879ddff985f14af5bed503bfee939828ff0f8110898c98fbc'
-
-[release]
-tag = 'release-2024-12-26'
-
 [release.crates]
-aws-sdk-bcmpricingcalculator = '1.4.0'
-aws-sdk-ecr = '1.55.0'
-aws-sdk-networkfirewall = '1.53.1'
-aws-sdk-securityhub = '1.55.1'
+aws-sdk-rds = '1.70.1'

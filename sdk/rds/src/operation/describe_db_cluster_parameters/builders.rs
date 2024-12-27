@@ -149,11 +149,11 @@ impl DescribeDBClusterParametersFluentBuilder {
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>customer</code></p></li>
+    /// <p><code>engine-default</code></p></li>
     /// <li>
-    /// <p><code>engine</code></p></li>
+    /// <p><code>system</code></p></li>
     /// <li>
-    /// <p><code>service</code></p></li>
+    /// <p><code>user</code></p></li>
     /// </ul>
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source(input.into());
@@ -163,11 +163,11 @@ impl DescribeDBClusterParametersFluentBuilder {
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>customer</code></p></li>
+    /// <p><code>engine-default</code></p></li>
     /// <li>
-    /// <p><code>engine</code></p></li>
+    /// <p><code>system</code></p></li>
     /// <li>
-    /// <p><code>service</code></p></li>
+    /// <p><code>user</code></p></li>
     /// </ul>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source(input);
@@ -177,11 +177,11 @@ impl DescribeDBClusterParametersFluentBuilder {
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>customer</code></p></li>
+    /// <p><code>engine-default</code></p></li>
     /// <li>
-    /// <p><code>engine</code></p></li>
+    /// <p><code>system</code></p></li>
     /// <li>
-    /// <p><code>service</code></p></li>
+    /// <p><code>user</code></p></li>
     /// </ul>
     pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source()
@@ -191,17 +191,20 @@ impl DescribeDBClusterParametersFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>This parameter isn't currently supported.</p>
+    /// <p>A filter that specifies one or more DB cluster parameters to describe.</p>
+    /// <p>The only supported filter is <code>parameter-name</code>. The results list only includes information about the DB cluster parameters with these names.</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>This parameter isn't currently supported.</p>
+    /// <p>A filter that specifies one or more DB cluster parameters to describe.</p>
+    /// <p>The only supported filter is <code>parameter-name</code>. The results list only includes information about the DB cluster parameters with these names.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p>This parameter isn't currently supported.</p>
+    /// <p>A filter that specifies one or more DB cluster parameters to describe.</p>
+    /// <p>The only supported filter is <code>parameter-name</code>. The results list only includes information about the DB cluster parameters with these names.</p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()
     }

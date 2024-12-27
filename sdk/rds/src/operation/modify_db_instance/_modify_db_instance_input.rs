@@ -350,7 +350,10 @@ pub struct ModifyDbInstanceInput {
     /// <p>For more information about IAM database authentication, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     pub enable_iam_database_authentication: ::std::option::Option<bool>,
-    /// <p>Specifies the mode of Database Insights to enable for the instance.</p>
+    /// <p>Specifies the mode of Database Insights to enable for the DB instance.</p>
+    /// <p>This setting only applies to Amazon Aurora DB instances.</p><note>
+    /// <p>Currently, this value is inherited from the DB cluster and can't be changed.</p>
+    /// </note>
     pub database_insights_mode: ::std::option::Option<crate::types::DatabaseInsightsMode>,
     /// <p>Specifies whether to enable Performance Insights for the DB instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
@@ -378,6 +381,19 @@ pub struct ModifyDbInstanceInput {
     /// <p>The log types to be enabled for export to CloudWatch Logs for a specific DB instance.</p>
     /// <p>A change to the <code>CloudwatchLogsExportConfiguration</code> parameter is always applied to the DB instance immediately. Therefore, the <code>ApplyImmediately</code> parameter has no effect.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
+    /// <p>The following values are valid for each DB engine:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Aurora MySQL - <code>audit | error | general | slowquery</code></p></li>
+    /// <li>
+    /// <p>Aurora PostgreSQL - <code>postgresql</code></p></li>
+    /// <li>
+    /// <p>RDS for MySQL - <code>error | general | slowquery</code></p></li>
+    /// <li>
+    /// <p>RDS for PostgreSQL - <code>postgresql | upgrade</code></p></li>
+    /// </ul>
+    /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"> Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub cloudwatch_logs_export_configuration: ::std::option::Option<crate::types::CloudwatchLogsExportConfiguration>,
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
@@ -929,7 +945,10 @@ impl ModifyDbInstanceInput {
     pub fn enable_iam_database_authentication(&self) -> ::std::option::Option<bool> {
         self.enable_iam_database_authentication
     }
-    /// <p>Specifies the mode of Database Insights to enable for the instance.</p>
+    /// <p>Specifies the mode of Database Insights to enable for the DB instance.</p>
+    /// <p>This setting only applies to Amazon Aurora DB instances.</p><note>
+    /// <p>Currently, this value is inherited from the DB cluster and can't be changed.</p>
+    /// </note>
     pub fn database_insights_mode(&self) -> ::std::option::Option<&crate::types::DatabaseInsightsMode> {
         self.database_insights_mode.as_ref()
     }
@@ -965,6 +984,19 @@ impl ModifyDbInstanceInput {
     /// <p>The log types to be enabled for export to CloudWatch Logs for a specific DB instance.</p>
     /// <p>A change to the <code>CloudwatchLogsExportConfiguration</code> parameter is always applied to the DB instance immediately. Therefore, the <code>ApplyImmediately</code> parameter has no effect.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
+    /// <p>The following values are valid for each DB engine:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Aurora MySQL - <code>audit | error | general | slowquery</code></p></li>
+    /// <li>
+    /// <p>Aurora PostgreSQL - <code>postgresql</code></p></li>
+    /// <li>
+    /// <p>RDS for MySQL - <code>error | general | slowquery</code></p></li>
+    /// <li>
+    /// <p>RDS for PostgreSQL - <code>postgresql | upgrade</code></p></li>
+    /// </ul>
+    /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"> Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn cloudwatch_logs_export_configuration(&self) -> ::std::option::Option<&crate::types::CloudwatchLogsExportConfiguration> {
         self.cloudwatch_logs_export_configuration.as_ref()
     }
@@ -2562,17 +2594,26 @@ impl ModifyDbInstanceInputBuilder {
     pub fn get_enable_iam_database_authentication(&self) -> &::std::option::Option<bool> {
         &self.enable_iam_database_authentication
     }
-    /// <p>Specifies the mode of Database Insights to enable for the instance.</p>
+    /// <p>Specifies the mode of Database Insights to enable for the DB instance.</p>
+    /// <p>This setting only applies to Amazon Aurora DB instances.</p><note>
+    /// <p>Currently, this value is inherited from the DB cluster and can't be changed.</p>
+    /// </note>
     pub fn database_insights_mode(mut self, input: crate::types::DatabaseInsightsMode) -> Self {
         self.database_insights_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the mode of Database Insights to enable for the instance.</p>
+    /// <p>Specifies the mode of Database Insights to enable for the DB instance.</p>
+    /// <p>This setting only applies to Amazon Aurora DB instances.</p><note>
+    /// <p>Currently, this value is inherited from the DB cluster and can't be changed.</p>
+    /// </note>
     pub fn set_database_insights_mode(mut self, input: ::std::option::Option<crate::types::DatabaseInsightsMode>) -> Self {
         self.database_insights_mode = input;
         self
     }
-    /// <p>Specifies the mode of Database Insights to enable for the instance.</p>
+    /// <p>Specifies the mode of Database Insights to enable for the DB instance.</p>
+    /// <p>This setting only applies to Amazon Aurora DB instances.</p><note>
+    /// <p>Currently, this value is inherited from the DB cluster and can't be changed.</p>
+    /// </note>
     pub fn get_database_insights_mode(&self) -> &::std::option::Option<crate::types::DatabaseInsightsMode> {
         &self.database_insights_mode
     }
@@ -2672,6 +2713,19 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>The log types to be enabled for export to CloudWatch Logs for a specific DB instance.</p>
     /// <p>A change to the <code>CloudwatchLogsExportConfiguration</code> parameter is always applied to the DB instance immediately. Therefore, the <code>ApplyImmediately</code> parameter has no effect.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
+    /// <p>The following values are valid for each DB engine:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Aurora MySQL - <code>audit | error | general | slowquery</code></p></li>
+    /// <li>
+    /// <p>Aurora PostgreSQL - <code>postgresql</code></p></li>
+    /// <li>
+    /// <p>RDS for MySQL - <code>error | general | slowquery</code></p></li>
+    /// <li>
+    /// <p>RDS for PostgreSQL - <code>postgresql | upgrade</code></p></li>
+    /// </ul>
+    /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"> Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn cloudwatch_logs_export_configuration(mut self, input: crate::types::CloudwatchLogsExportConfiguration) -> Self {
         self.cloudwatch_logs_export_configuration = ::std::option::Option::Some(input);
         self
@@ -2679,6 +2733,19 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>The log types to be enabled for export to CloudWatch Logs for a specific DB instance.</p>
     /// <p>A change to the <code>CloudwatchLogsExportConfiguration</code> parameter is always applied to the DB instance immediately. Therefore, the <code>ApplyImmediately</code> parameter has no effect.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
+    /// <p>The following values are valid for each DB engine:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Aurora MySQL - <code>audit | error | general | slowquery</code></p></li>
+    /// <li>
+    /// <p>Aurora PostgreSQL - <code>postgresql</code></p></li>
+    /// <li>
+    /// <p>RDS for MySQL - <code>error | general | slowquery</code></p></li>
+    /// <li>
+    /// <p>RDS for PostgreSQL - <code>postgresql | upgrade</code></p></li>
+    /// </ul>
+    /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"> Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn set_cloudwatch_logs_export_configuration(mut self, input: ::std::option::Option<crate::types::CloudwatchLogsExportConfiguration>) -> Self {
         self.cloudwatch_logs_export_configuration = input;
         self
@@ -2686,6 +2753,19 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>The log types to be enabled for export to CloudWatch Logs for a specific DB instance.</p>
     /// <p>A change to the <code>CloudwatchLogsExportConfiguration</code> parameter is always applied to the DB instance immediately. Therefore, the <code>ApplyImmediately</code> parameter has no effect.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
+    /// <p>The following values are valid for each DB engine:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Aurora MySQL - <code>audit | error | general | slowquery</code></p></li>
+    /// <li>
+    /// <p>Aurora PostgreSQL - <code>postgresql</code></p></li>
+    /// <li>
+    /// <p>RDS for MySQL - <code>error | general | slowquery</code></p></li>
+    /// <li>
+    /// <p>RDS for PostgreSQL - <code>postgresql | upgrade</code></p></li>
+    /// </ul>
+    /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"> Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn get_cloudwatch_logs_export_configuration(&self) -> &::std::option::Option<crate::types::CloudwatchLogsExportConfiguration> {
         &self.cloudwatch_logs_export_configuration
     }

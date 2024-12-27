@@ -8,18 +8,62 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudwatchLogsExportConfiguration {
     /// <p>The list of log types to enable.</p>
+    /// <p>The following values are valid for each DB engine:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Aurora MySQL - <code>audit | error | general | slowquery</code></p></li>
+    /// <li>
+    /// <p>Aurora PostgreSQL - <code>postgresql</code></p></li>
+    /// <li>
+    /// <p>RDS for MySQL - <code>error | general | slowquery</code></p></li>
+    /// <li>
+    /// <p>RDS for PostgreSQL - <code>postgresql | upgrade</code></p></li>
+    /// </ul>
     pub enable_log_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The list of log types to disable.</p>
+    /// <p>The following values are valid for each DB engine:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Aurora MySQL - <code>audit | error | general | slowquery</code></p></li>
+    /// <li>
+    /// <p>Aurora PostgreSQL - <code>postgresql</code></p></li>
+    /// <li>
+    /// <p>RDS for MySQL - <code>error | general | slowquery</code></p></li>
+    /// <li>
+    /// <p>RDS for PostgreSQL - <code>postgresql | upgrade</code></p></li>
+    /// </ul>
     pub disable_log_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CloudwatchLogsExportConfiguration {
     /// <p>The list of log types to enable.</p>
+    /// <p>The following values are valid for each DB engine:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Aurora MySQL - <code>audit | error | general | slowquery</code></p></li>
+    /// <li>
+    /// <p>Aurora PostgreSQL - <code>postgresql</code></p></li>
+    /// <li>
+    /// <p>RDS for MySQL - <code>error | general | slowquery</code></p></li>
+    /// <li>
+    /// <p>RDS for PostgreSQL - <code>postgresql | upgrade</code></p></li>
+    /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enable_log_types.is_none()`.
     pub fn enable_log_types(&self) -> &[::std::string::String] {
         self.enable_log_types.as_deref().unwrap_or_default()
     }
     /// <p>The list of log types to disable.</p>
+    /// <p>The following values are valid for each DB engine:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Aurora MySQL - <code>audit | error | general | slowquery</code></p></li>
+    /// <li>
+    /// <p>Aurora PostgreSQL - <code>postgresql</code></p></li>
+    /// <li>
+    /// <p>RDS for MySQL - <code>error | general | slowquery</code></p></li>
+    /// <li>
+    /// <p>RDS for PostgreSQL - <code>postgresql | upgrade</code></p></li>
+    /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.disable_log_types.is_none()`.
     pub fn disable_log_types(&self) -> &[::std::string::String] {
@@ -46,6 +90,17 @@ impl CloudwatchLogsExportConfigurationBuilder {
     /// To override the contents of this collection use [`set_enable_log_types`](Self::set_enable_log_types).
     ///
     /// <p>The list of log types to enable.</p>
+    /// <p>The following values are valid for each DB engine:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Aurora MySQL - <code>audit | error | general | slowquery</code></p></li>
+    /// <li>
+    /// <p>Aurora PostgreSQL - <code>postgresql</code></p></li>
+    /// <li>
+    /// <p>RDS for MySQL - <code>error | general | slowquery</code></p></li>
+    /// <li>
+    /// <p>RDS for PostgreSQL - <code>postgresql | upgrade</code></p></li>
+    /// </ul>
     pub fn enable_log_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.enable_log_types.unwrap_or_default();
         v.push(input.into());
@@ -53,11 +108,33 @@ impl CloudwatchLogsExportConfigurationBuilder {
         self
     }
     /// <p>The list of log types to enable.</p>
+    /// <p>The following values are valid for each DB engine:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Aurora MySQL - <code>audit | error | general | slowquery</code></p></li>
+    /// <li>
+    /// <p>Aurora PostgreSQL - <code>postgresql</code></p></li>
+    /// <li>
+    /// <p>RDS for MySQL - <code>error | general | slowquery</code></p></li>
+    /// <li>
+    /// <p>RDS for PostgreSQL - <code>postgresql | upgrade</code></p></li>
+    /// </ul>
     pub fn set_enable_log_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.enable_log_types = input;
         self
     }
     /// <p>The list of log types to enable.</p>
+    /// <p>The following values are valid for each DB engine:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Aurora MySQL - <code>audit | error | general | slowquery</code></p></li>
+    /// <li>
+    /// <p>Aurora PostgreSQL - <code>postgresql</code></p></li>
+    /// <li>
+    /// <p>RDS for MySQL - <code>error | general | slowquery</code></p></li>
+    /// <li>
+    /// <p>RDS for PostgreSQL - <code>postgresql | upgrade</code></p></li>
+    /// </ul>
     pub fn get_enable_log_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.enable_log_types
     }
@@ -66,6 +143,17 @@ impl CloudwatchLogsExportConfigurationBuilder {
     /// To override the contents of this collection use [`set_disable_log_types`](Self::set_disable_log_types).
     ///
     /// <p>The list of log types to disable.</p>
+    /// <p>The following values are valid for each DB engine:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Aurora MySQL - <code>audit | error | general | slowquery</code></p></li>
+    /// <li>
+    /// <p>Aurora PostgreSQL - <code>postgresql</code></p></li>
+    /// <li>
+    /// <p>RDS for MySQL - <code>error | general | slowquery</code></p></li>
+    /// <li>
+    /// <p>RDS for PostgreSQL - <code>postgresql | upgrade</code></p></li>
+    /// </ul>
     pub fn disable_log_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.disable_log_types.unwrap_or_default();
         v.push(input.into());
@@ -73,11 +161,33 @@ impl CloudwatchLogsExportConfigurationBuilder {
         self
     }
     /// <p>The list of log types to disable.</p>
+    /// <p>The following values are valid for each DB engine:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Aurora MySQL - <code>audit | error | general | slowquery</code></p></li>
+    /// <li>
+    /// <p>Aurora PostgreSQL - <code>postgresql</code></p></li>
+    /// <li>
+    /// <p>RDS for MySQL - <code>error | general | slowquery</code></p></li>
+    /// <li>
+    /// <p>RDS for PostgreSQL - <code>postgresql | upgrade</code></p></li>
+    /// </ul>
     pub fn set_disable_log_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.disable_log_types = input;
         self
     }
     /// <p>The list of log types to disable.</p>
+    /// <p>The following values are valid for each DB engine:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Aurora MySQL - <code>audit | error | general | slowquery</code></p></li>
+    /// <li>
+    /// <p>Aurora PostgreSQL - <code>postgresql</code></p></li>
+    /// <li>
+    /// <p>RDS for MySQL - <code>error | general | slowquery</code></p></li>
+    /// <li>
+    /// <p>RDS for PostgreSQL - <code>postgresql | upgrade</code></p></li>
+    /// </ul>
     pub fn get_disable_log_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.disable_log_types
     }

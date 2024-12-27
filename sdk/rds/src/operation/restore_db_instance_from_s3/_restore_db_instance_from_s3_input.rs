@@ -17,7 +17,8 @@ pub struct RestoreDbInstanceFromS3Input {
     /// </ul>
     /// <p>Example: <code>mydbinstance</code></p>
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p><note>
+    /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p>
+    /// <p>This setting isn't valid for RDS for SQL Server.</p><note>
     /// <p>Be sure to allocate enough storage for your new DB instance so that the restore operation can succeed. You can also allocate additional storage for future growth.</p>
     /// </note>
     pub allocated_storage: ::std::option::Option<i32>,
@@ -170,7 +171,10 @@ pub struct RestoreDbInstanceFromS3Input {
     pub s3_prefix: ::std::option::Option<::std::string::String>,
     /// <p>An Amazon Web Services Identity and Access Management (IAM) role with a trust policy and a permissions policy that allows Amazon RDS to access your Amazon S3 bucket. For information about this role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html#MySQL.Procedural.Importing.Enabling.IAM"> Creating an IAM role manually</a> in the <i>Amazon RDS User Guide.</i></p>
     pub s3_ingestion_role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the mode of Database Insights to enable for the instance.</p>
+    /// <p>Specifies the mode of Database Insights to enable for the DB instance.</p>
+    /// <p>This setting only applies to Amazon Aurora DB instances.</p><note>
+    /// <p>Currently, this value is inherited from the DB cluster and can't be changed.</p>
+    /// </note>
     pub database_insights_mode: ::std::option::Option<crate::types::DatabaseInsightsMode>,
     /// <p>Specifies whether to enable Performance Insights for the DB instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
@@ -274,7 +278,8 @@ impl RestoreDbInstanceFromS3Input {
     pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
         self.db_instance_identifier.as_deref()
     }
-    /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p><note>
+    /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p>
+    /// <p>This setting isn't valid for RDS for SQL Server.</p><note>
     /// <p>Be sure to allocate enough storage for your new DB instance so that the restore operation can succeed. You can also allocate additional storage for future growth.</p>
     /// </note>
     pub fn allocated_storage(&self) -> ::std::option::Option<i32> {
@@ -501,7 +506,10 @@ impl RestoreDbInstanceFromS3Input {
     pub fn s3_ingestion_role_arn(&self) -> ::std::option::Option<&str> {
         self.s3_ingestion_role_arn.as_deref()
     }
-    /// <p>Specifies the mode of Database Insights to enable for the instance.</p>
+    /// <p>Specifies the mode of Database Insights to enable for the DB instance.</p>
+    /// <p>This setting only applies to Amazon Aurora DB instances.</p><note>
+    /// <p>Currently, this value is inherited from the DB cluster and can't be changed.</p>
+    /// </note>
     pub fn database_insights_mode(&self) -> ::std::option::Option<&crate::types::DatabaseInsightsMode> {
         self.database_insights_mode.as_ref()
     }
@@ -746,21 +754,24 @@ impl RestoreDbInstanceFromS3InputBuilder {
     pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_instance_identifier
     }
-    /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p><note>
+    /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p>
+    /// <p>This setting isn't valid for RDS for SQL Server.</p><note>
     /// <p>Be sure to allocate enough storage for your new DB instance so that the restore operation can succeed. You can also allocate additional storage for future growth.</p>
     /// </note>
     pub fn allocated_storage(mut self, input: i32) -> Self {
         self.allocated_storage = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p><note>
+    /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p>
+    /// <p>This setting isn't valid for RDS for SQL Server.</p><note>
     /// <p>Be sure to allocate enough storage for your new DB instance so that the restore operation can succeed. You can also allocate additional storage for future growth.</p>
     /// </note>
     pub fn set_allocated_storage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.allocated_storage = input;
         self
     }
-    /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p><note>
+    /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p>
+    /// <p>This setting isn't valid for RDS for SQL Server.</p><note>
     /// <p>Be sure to allocate enough storage for your new DB instance so that the restore operation can succeed. You can also allocate additional storage for future growth.</p>
     /// </note>
     pub fn get_allocated_storage(&self) -> &::std::option::Option<i32> {
@@ -1501,17 +1512,26 @@ impl RestoreDbInstanceFromS3InputBuilder {
     pub fn get_s3_ingestion_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_ingestion_role_arn
     }
-    /// <p>Specifies the mode of Database Insights to enable for the instance.</p>
+    /// <p>Specifies the mode of Database Insights to enable for the DB instance.</p>
+    /// <p>This setting only applies to Amazon Aurora DB instances.</p><note>
+    /// <p>Currently, this value is inherited from the DB cluster and can't be changed.</p>
+    /// </note>
     pub fn database_insights_mode(mut self, input: crate::types::DatabaseInsightsMode) -> Self {
         self.database_insights_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the mode of Database Insights to enable for the instance.</p>
+    /// <p>Specifies the mode of Database Insights to enable for the DB instance.</p>
+    /// <p>This setting only applies to Amazon Aurora DB instances.</p><note>
+    /// <p>Currently, this value is inherited from the DB cluster and can't be changed.</p>
+    /// </note>
     pub fn set_database_insights_mode(mut self, input: ::std::option::Option<crate::types::DatabaseInsightsMode>) -> Self {
         self.database_insights_mode = input;
         self
     }
-    /// <p>Specifies the mode of Database Insights to enable for the instance.</p>
+    /// <p>Specifies the mode of Database Insights to enable for the DB instance.</p>
+    /// <p>This setting only applies to Amazon Aurora DB instances.</p><note>
+    /// <p>Currently, this value is inherited from the DB cluster and can't be changed.</p>
+    /// </note>
     pub fn get_database_insights_mode(&self) -> &::std::option::Option<crate::types::DatabaseInsightsMode> {
         &self.database_insights_mode
     }

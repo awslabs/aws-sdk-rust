@@ -151,25 +151,25 @@ pub struct DbCluster {
     /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
     pub publicly_accessible: ::std::option::Option<bool>,
     /// <p>Indicates whether minor version patches are applied automatically.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    /// <p>This setting is for Aurora DB clusters and Multi-AZ DB clusters.</p>
     pub auto_minor_version_upgrade: ::std::option::Option<bool>,
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB cluster.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    /// <p>This setting is only for -Aurora DB clusters and Multi-AZ DB clusters.</p>
     pub monitoring_interval: ::std::option::Option<i32>,
     /// <p>The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics to Amazon CloudWatch Logs.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    /// <p>This setting is only for Aurora DB clusters and Multi-AZ DB clusters.</p>
     pub monitoring_role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The mode of Database Insights that is enabled for the cluster.</p>
+    /// <p>The mode of Database Insights that is enabled for the DB cluster.</p>
     pub database_insights_mode: ::std::option::Option<crate::types::DatabaseInsightsMode>,
     /// <p>Indicates whether Performance Insights is enabled for the DB cluster.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    /// <p>This setting is only for Aurora DB clusters and Multi-AZ DB clusters.</p>
     pub performance_insights_enabled: ::std::option::Option<bool>,
     /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    /// <p>This setting is only for Aurora DB clusters and Multi-AZ DB clusters.</p>
     pub performance_insights_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of days to retain Performance Insights data.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    /// <p>This setting is only for Aurora DB clusters and Multi-AZ DB clusters.</p>
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
@@ -508,37 +508,37 @@ impl DbCluster {
         self.publicly_accessible
     }
     /// <p>Indicates whether minor version patches are applied automatically.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    /// <p>This setting is for Aurora DB clusters and Multi-AZ DB clusters.</p>
     pub fn auto_minor_version_upgrade(&self) -> ::std::option::Option<bool> {
         self.auto_minor_version_upgrade
     }
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB cluster.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    /// <p>This setting is only for -Aurora DB clusters and Multi-AZ DB clusters.</p>
     pub fn monitoring_interval(&self) -> ::std::option::Option<i32> {
         self.monitoring_interval
     }
     /// <p>The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics to Amazon CloudWatch Logs.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    /// <p>This setting is only for Aurora DB clusters and Multi-AZ DB clusters.</p>
     pub fn monitoring_role_arn(&self) -> ::std::option::Option<&str> {
         self.monitoring_role_arn.as_deref()
     }
-    /// <p>The mode of Database Insights that is enabled for the cluster.</p>
+    /// <p>The mode of Database Insights that is enabled for the DB cluster.</p>
     pub fn database_insights_mode(&self) -> ::std::option::Option<&crate::types::DatabaseInsightsMode> {
         self.database_insights_mode.as_ref()
     }
     /// <p>Indicates whether Performance Insights is enabled for the DB cluster.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    /// <p>This setting is only for Aurora DB clusters and Multi-AZ DB clusters.</p>
     pub fn performance_insights_enabled(&self) -> ::std::option::Option<bool> {
         self.performance_insights_enabled
     }
     /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    /// <p>This setting is only for Aurora DB clusters and Multi-AZ DB clusters.</p>
     pub fn performance_insights_kms_key_id(&self) -> ::std::option::Option<&str> {
         self.performance_insights_kms_key_id.as_deref()
     }
     /// <p>The number of days to retain Performance Insights data.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    /// <p>This setting is only for Aurora DB clusters and Multi-AZ DB clusters.</p>
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
@@ -1706,109 +1706,109 @@ impl DbClusterBuilder {
         &self.publicly_accessible
     }
     /// <p>Indicates whether minor version patches are applied automatically.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    /// <p>This setting is for Aurora DB clusters and Multi-AZ DB clusters.</p>
     pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
         self.auto_minor_version_upgrade = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether minor version patches are applied automatically.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    /// <p>This setting is for Aurora DB clusters and Multi-AZ DB clusters.</p>
     pub fn set_auto_minor_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_minor_version_upgrade = input;
         self
     }
     /// <p>Indicates whether minor version patches are applied automatically.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    /// <p>This setting is for Aurora DB clusters and Multi-AZ DB clusters.</p>
     pub fn get_auto_minor_version_upgrade(&self) -> &::std::option::Option<bool> {
         &self.auto_minor_version_upgrade
     }
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB cluster.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    /// <p>This setting is only for -Aurora DB clusters and Multi-AZ DB clusters.</p>
     pub fn monitoring_interval(mut self, input: i32) -> Self {
         self.monitoring_interval = ::std::option::Option::Some(input);
         self
     }
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB cluster.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    /// <p>This setting is only for -Aurora DB clusters and Multi-AZ DB clusters.</p>
     pub fn set_monitoring_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.monitoring_interval = input;
         self
     }
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB cluster.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    /// <p>This setting is only for -Aurora DB clusters and Multi-AZ DB clusters.</p>
     pub fn get_monitoring_interval(&self) -> &::std::option::Option<i32> {
         &self.monitoring_interval
     }
     /// <p>The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics to Amazon CloudWatch Logs.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    /// <p>This setting is only for Aurora DB clusters and Multi-AZ DB clusters.</p>
     pub fn monitoring_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitoring_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics to Amazon CloudWatch Logs.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    /// <p>This setting is only for Aurora DB clusters and Multi-AZ DB clusters.</p>
     pub fn set_monitoring_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.monitoring_role_arn = input;
         self
     }
     /// <p>The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics to Amazon CloudWatch Logs.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    /// <p>This setting is only for Aurora DB clusters and Multi-AZ DB clusters.</p>
     pub fn get_monitoring_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.monitoring_role_arn
     }
-    /// <p>The mode of Database Insights that is enabled for the cluster.</p>
+    /// <p>The mode of Database Insights that is enabled for the DB cluster.</p>
     pub fn database_insights_mode(mut self, input: crate::types::DatabaseInsightsMode) -> Self {
         self.database_insights_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The mode of Database Insights that is enabled for the cluster.</p>
+    /// <p>The mode of Database Insights that is enabled for the DB cluster.</p>
     pub fn set_database_insights_mode(mut self, input: ::std::option::Option<crate::types::DatabaseInsightsMode>) -> Self {
         self.database_insights_mode = input;
         self
     }
-    /// <p>The mode of Database Insights that is enabled for the cluster.</p>
+    /// <p>The mode of Database Insights that is enabled for the DB cluster.</p>
     pub fn get_database_insights_mode(&self) -> &::std::option::Option<crate::types::DatabaseInsightsMode> {
         &self.database_insights_mode
     }
     /// <p>Indicates whether Performance Insights is enabled for the DB cluster.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    /// <p>This setting is only for Aurora DB clusters and Multi-AZ DB clusters.</p>
     pub fn performance_insights_enabled(mut self, input: bool) -> Self {
         self.performance_insights_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether Performance Insights is enabled for the DB cluster.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    /// <p>This setting is only for Aurora DB clusters and Multi-AZ DB clusters.</p>
     pub fn set_performance_insights_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.performance_insights_enabled = input;
         self
     }
     /// <p>Indicates whether Performance Insights is enabled for the DB cluster.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    /// <p>This setting is only for Aurora DB clusters and Multi-AZ DB clusters.</p>
     pub fn get_performance_insights_enabled(&self) -> &::std::option::Option<bool> {
         &self.performance_insights_enabled
     }
     /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    /// <p>This setting is only for Aurora DB clusters and Multi-AZ DB clusters.</p>
     pub fn performance_insights_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.performance_insights_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    /// <p>This setting is only for Aurora DB clusters and Multi-AZ DB clusters.</p>
     pub fn set_performance_insights_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.performance_insights_kms_key_id = input;
         self
     }
     /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    /// <p>This setting is only for Aurora DB clusters and Multi-AZ DB clusters.</p>
     pub fn get_performance_insights_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.performance_insights_kms_key_id
     }
     /// <p>The number of days to retain Performance Insights data.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    /// <p>This setting is only for Aurora DB clusters and Multi-AZ DB clusters.</p>
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
@@ -1824,7 +1824,7 @@ impl DbClusterBuilder {
         self
     }
     /// <p>The number of days to retain Performance Insights data.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    /// <p>This setting is only for Aurora DB clusters and Multi-AZ DB clusters.</p>
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
@@ -1840,7 +1840,7 @@ impl DbClusterBuilder {
         self
     }
     /// <p>The number of days to retain Performance Insights data.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    /// <p>This setting is only for Aurora DB clusters and Multi-AZ DB clusters.</p>
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>

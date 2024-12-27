@@ -704,17 +704,23 @@ impl CreateDBInstanceReadReplicaFluentBuilder {
     pub fn get_enable_iam_database_authentication(&self) -> &::std::option::Option<bool> {
         self.inner.get_enable_iam_database_authentication()
     }
-    /// <p>Specifies the mode of Database Insights.</p>
+    /// <p>The mode of Database Insights to enable for the read replica.</p><note>
+    /// <p>Currently, this setting is not supported.</p>
+    /// </note>
     pub fn database_insights_mode(mut self, input: crate::types::DatabaseInsightsMode) -> Self {
         self.inner = self.inner.database_insights_mode(input);
         self
     }
-    /// <p>Specifies the mode of Database Insights.</p>
+    /// <p>The mode of Database Insights to enable for the read replica.</p><note>
+    /// <p>Currently, this setting is not supported.</p>
+    /// </note>
     pub fn set_database_insights_mode(mut self, input: ::std::option::Option<crate::types::DatabaseInsightsMode>) -> Self {
         self.inner = self.inner.set_database_insights_mode(input);
         self
     }
-    /// <p>Specifies the mode of Database Insights.</p>
+    /// <p>The mode of Database Insights to enable for the read replica.</p><note>
+    /// <p>Currently, this setting is not supported.</p>
+    /// </note>
     pub fn get_database_insights_mode(&self) -> &::std::option::Option<crate::types::DatabaseInsightsMode> {
         self.inner.get_database_insights_mode()
     }
@@ -1218,21 +1224,24 @@ impl CreateDBInstanceReadReplicaFluentBuilder {
     pub fn get_enable_customer_owned_ip(&self) -> &::std::option::Option<bool> {
         self.inner.get_enable_customer_owned_ip()
     }
-    /// <p>The amount of storage (in gibibytes) to allocate initially for the read replica. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p><note>
+    /// <p>The amount of storage (in gibibytes) to allocate initially for the read replica. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p>
+    /// <p>This setting isn't valid for RDS for SQL Server.</p><note>
     /// <p>Be sure to allocate enough storage for your read replica so that the create operation can succeed. You can also allocate additional storage for future growth.</p>
     /// </note>
     pub fn allocated_storage(mut self, input: i32) -> Self {
         self.inner = self.inner.allocated_storage(input);
         self
     }
-    /// <p>The amount of storage (in gibibytes) to allocate initially for the read replica. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p><note>
+    /// <p>The amount of storage (in gibibytes) to allocate initially for the read replica. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p>
+    /// <p>This setting isn't valid for RDS for SQL Server.</p><note>
     /// <p>Be sure to allocate enough storage for your read replica so that the create operation can succeed. You can also allocate additional storage for future growth.</p>
     /// </note>
     pub fn set_allocated_storage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_allocated_storage(input);
         self
     }
-    /// <p>The amount of storage (in gibibytes) to allocate initially for the read replica. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p><note>
+    /// <p>The amount of storage (in gibibytes) to allocate initially for the read replica. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p>
+    /// <p>This setting isn't valid for RDS for SQL Server.</p><note>
     /// <p>Be sure to allocate enough storage for your read replica so that the create operation can succeed. You can also allocate additional storage for future growth.</p>
     /// </note>
     pub fn get_allocated_storage(&self) -> &::std::option::Option<i32> {

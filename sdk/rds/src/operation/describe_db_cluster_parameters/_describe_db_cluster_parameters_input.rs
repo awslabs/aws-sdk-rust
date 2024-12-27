@@ -15,14 +15,15 @@ pub struct DescribeDbClusterParametersInput {
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>customer</code></p></li>
+    /// <p><code>engine-default</code></p></li>
     /// <li>
-    /// <p><code>engine</code></p></li>
+    /// <p><code>system</code></p></li>
     /// <li>
-    /// <p><code>service</code></p></li>
+    /// <p><code>user</code></p></li>
     /// </ul>
     pub source: ::std::option::Option<::std::string::String>,
-    /// <p>This parameter isn't currently supported.</p>
+    /// <p>A filter that specifies one or more DB cluster parameters to describe.</p>
+    /// <p>The only supported filter is <code>parameter-name</code>. The results list only includes information about the DB cluster parameters with these names.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
@@ -45,16 +46,17 @@ impl DescribeDbClusterParametersInput {
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>customer</code></p></li>
+    /// <p><code>engine-default</code></p></li>
     /// <li>
-    /// <p><code>engine</code></p></li>
+    /// <p><code>system</code></p></li>
     /// <li>
-    /// <p><code>service</code></p></li>
+    /// <p><code>user</code></p></li>
     /// </ul>
     pub fn source(&self) -> ::std::option::Option<&str> {
         self.source.as_deref()
     }
-    /// <p>This parameter isn't currently supported.</p>
+    /// <p>A filter that specifies one or more DB cluster parameters to describe.</p>
+    /// <p>The only supported filter is <code>parameter-name</code>. The results list only includes information about the DB cluster parameters with these names.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
     pub fn filters(&self) -> &[crate::types::Filter] {
@@ -123,11 +125,11 @@ impl DescribeDbClusterParametersInputBuilder {
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>customer</code></p></li>
+    /// <p><code>engine-default</code></p></li>
     /// <li>
-    /// <p><code>engine</code></p></li>
+    /// <p><code>system</code></p></li>
     /// <li>
-    /// <p><code>service</code></p></li>
+    /// <p><code>user</code></p></li>
     /// </ul>
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source = ::std::option::Option::Some(input.into());
@@ -137,11 +139,11 @@ impl DescribeDbClusterParametersInputBuilder {
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>customer</code></p></li>
+    /// <p><code>engine-default</code></p></li>
     /// <li>
-    /// <p><code>engine</code></p></li>
+    /// <p><code>system</code></p></li>
     /// <li>
-    /// <p><code>service</code></p></li>
+    /// <p><code>user</code></p></li>
     /// </ul>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source = input;
@@ -151,11 +153,11 @@ impl DescribeDbClusterParametersInputBuilder {
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>customer</code></p></li>
+    /// <p><code>engine-default</code></p></li>
     /// <li>
-    /// <p><code>engine</code></p></li>
+    /// <p><code>system</code></p></li>
     /// <li>
-    /// <p><code>service</code></p></li>
+    /// <p><code>user</code></p></li>
     /// </ul>
     pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
         &self.source
@@ -164,19 +166,22 @@ impl DescribeDbClusterParametersInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>This parameter isn't currently supported.</p>
+    /// <p>A filter that specifies one or more DB cluster parameters to describe.</p>
+    /// <p>The only supported filter is <code>parameter-name</code>. The results list only includes information about the DB cluster parameters with these names.</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
         self.filters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>This parameter isn't currently supported.</p>
+    /// <p>A filter that specifies one or more DB cluster parameters to describe.</p>
+    /// <p>The only supported filter is <code>parameter-name</code>. The results list only includes information about the DB cluster parameters with these names.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
-    /// <p>This parameter isn't currently supported.</p>
+    /// <p>A filter that specifies one or more DB cluster parameters to describe.</p>
+    /// <p>The only supported filter is <code>parameter-name</code>. The results list only includes information about the DB cluster parameters with these names.</p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters
     }

@@ -703,7 +703,10 @@ pub struct CreateDbInstanceInput {
     /// <p>RDS Custom</p></li>
     /// </ul>
     pub enable_iam_database_authentication: ::std::option::Option<bool>,
-    /// <p>Specifies the mode of Database Insights to enable for the instance.</p>
+    /// <p>The mode of Database Insights to enable for the DB instance.</p>
+    /// <p>This setting only applies to Amazon Aurora DB instances.</p><note>
+    /// <p>Currently, this value is inherited from the DB cluster and can't be changed.</p>
+    /// </note>
     pub database_insights_mode: ::std::option::Option<crate::types::DatabaseInsightsMode>,
     /// <p>Specifies whether to enable Performance Insights for the DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
@@ -1641,7 +1644,10 @@ impl CreateDbInstanceInput {
     pub fn enable_iam_database_authentication(&self) -> ::std::option::Option<bool> {
         self.enable_iam_database_authentication
     }
-    /// <p>Specifies the mode of Database Insights to enable for the instance.</p>
+    /// <p>The mode of Database Insights to enable for the DB instance.</p>
+    /// <p>This setting only applies to Amazon Aurora DB instances.</p><note>
+    /// <p>Currently, this value is inherited from the DB cluster and can't be changed.</p>
+    /// </note>
     pub fn database_insights_mode(&self) -> ::std::option::Option<&crate::types::DatabaseInsightsMode> {
         self.database_insights_mode.as_ref()
     }
@@ -4380,17 +4386,26 @@ impl CreateDbInstanceInputBuilder {
     pub fn get_enable_iam_database_authentication(&self) -> &::std::option::Option<bool> {
         &self.enable_iam_database_authentication
     }
-    /// <p>Specifies the mode of Database Insights to enable for the instance.</p>
+    /// <p>The mode of Database Insights to enable for the DB instance.</p>
+    /// <p>This setting only applies to Amazon Aurora DB instances.</p><note>
+    /// <p>Currently, this value is inherited from the DB cluster and can't be changed.</p>
+    /// </note>
     pub fn database_insights_mode(mut self, input: crate::types::DatabaseInsightsMode) -> Self {
         self.database_insights_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the mode of Database Insights to enable for the instance.</p>
+    /// <p>The mode of Database Insights to enable for the DB instance.</p>
+    /// <p>This setting only applies to Amazon Aurora DB instances.</p><note>
+    /// <p>Currently, this value is inherited from the DB cluster and can't be changed.</p>
+    /// </note>
     pub fn set_database_insights_mode(mut self, input: ::std::option::Option<crate::types::DatabaseInsightsMode>) -> Self {
         self.database_insights_mode = input;
         self
     }
-    /// <p>Specifies the mode of Database Insights to enable for the instance.</p>
+    /// <p>The mode of Database Insights to enable for the DB instance.</p>
+    /// <p>This setting only applies to Amazon Aurora DB instances.</p><note>
+    /// <p>Currently, this value is inherited from the DB cluster and can't be changed.</p>
+    /// </note>
     pub fn get_database_insights_mode(&self) -> &::std::option::Option<crate::types::DatabaseInsightsMode> {
         &self.database_insights_mode
     }

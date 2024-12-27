@@ -2,10 +2,10 @@
 resolver = "2"
 exclude = [
     "examples/examples",
-    "examples/cross_service",
-    "examples/webassembly",
     "examples/lambda",
     "examples/test-utils",
+    "examples/webassembly",
+    "examples/cross_service",
     "tests/no-default-features",
     "tests/webassembly"
 ]
