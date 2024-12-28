@@ -80,7 +80,7 @@ version = "0.1"
 version = "2.3.1"
 [dev-dependencies.aws-config]
 path = "../aws-config"
-version = "1.5.11"
+version = "1.5.12"
 
 [dev-dependencies.aws-credential-types]
 path = "../aws-credential-types"

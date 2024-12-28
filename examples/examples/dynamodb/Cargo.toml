@@ -16,7 +16,7 @@ serde_json = "1"
 thiserror = "1.0"
 tokio-stream = "0.1.8"
 tracing = "0.1"
-aws-config= { version = "1.5.11", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
+aws-config= { version = "1.5.12", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
 aws-http= { version = "0.60.6", path = "../../../sdk/aws-http" }
 aws-sdk-dynamodb= { version = "1.57.0", path = "../../../sdk/dynamodb" }
 aws-smithy-runtime= { version = "1.7.6", path = "../../../sdk/aws-smithy-runtime", features = ["test-util"] }
