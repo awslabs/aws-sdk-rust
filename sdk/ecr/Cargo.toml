@@ -75,11 +75,6 @@ path = "../aws-credential-types"
 features = ["test-util"]
 version = "1.2.1"
 
-[dev-dependencies.aws-smithy-runtime]
-path = "../aws-smithy-runtime"
-features = ["client", "test-util"]
-version = "1.7.6"
-
 [dev-dependencies.tokio]
 version = "1.23.1"
 features = ["macros", "test-util", "rt-multi-thread"]

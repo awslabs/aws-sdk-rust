@@ -160,6 +160,7 @@ impl Builder {
         builder.set_timeout_config(config_bag.load::<::aws_smithy_types::timeout::TimeoutConfig>().cloned());
         builder.set_retry_partition(config_bag.load::<::aws_smithy_runtime::client::retries::RetryPartition>().cloned());
         builder.set_app_name(config_bag.load::<::aws_types::app_name::AppName>().cloned());
+        builder.set_endpoint_url(config_bag.load::<::aws_types::endpoint_config::EndpointUrl>().map(|ty| ty.0.clone()));
         builder.set_use_dual_stack(config_bag.load::<::aws_types::endpoint_config::UseDualStack>().map(|ty| ty.0));
         builder.set_use_fips(config_bag.load::<::aws_types::endpoint_config::UseFips>().map(|ty| ty.0));
         builder.set_region(config_bag.load::<crate::config::Region>().cloned());
@@ -887,6 +888,24 @@ impl Builder {
         self.config.store_or_unset(gen);
         self
     }
+    /// Sets the endpoint URL used to communicate with this service
+
+    /// Note: this is used in combination with other endpoint rules, e.g. an API that applies a host-label prefix
+    /// will be prefixed onto this URL. To fully override the endpoint resolver, use
+    /// [`Builder::endpoint_resolver`].
+    pub fn endpoint_url(mut self, endpoint_url: impl Into<::std::string::String>) -> Self {
+        self.set_endpoint_url(Some(endpoint_url.into()));
+        self
+    }
+    /// Sets the endpoint URL used to communicate with this service
+
+    /// Note: this is used in combination with other endpoint rules, e.g. an API that applies a host-label prefix
+    /// will be prefixed onto this URL. To fully override the endpoint resolver, use
+    /// [`Builder::endpoint_resolver`].
+    pub fn set_endpoint_url(&mut self, endpoint_url: Option<::std::string::String>) -> &mut Self {
+        self.config.store_or_unset(endpoint_url.map(::aws_types::endpoint_config::EndpointUrl));
+        self
+    }
     /// When true, use the dual-stack endpoint. If the configured endpoint does not support dual-stack, dispatching the request MAY return an error.
     pub fn use_dual_stack(mut self, use_dual_stack: impl Into<bool>) -> Self {
         self.set_use_dual_stack(Some(use_dual_stack.into()));
@@ -1190,6 +1209,19 @@ impl From<&::aws_types::sdk_config::SdkConfig> for Builder {
         builder = builder.region(input.region().cloned());
         builder.set_use_fips(input.use_fips());
         builder.set_use_dual_stack(input.use_dual_stack());
+        if input.get_origin("endpoint_url").is_client_config() {
+            builder.set_endpoint_url(input.endpoint_url().map(|s| s.to_string()));
+        } else {
+            builder.set_endpoint_url(
+                input
+                    .service_config()
+                    .and_then(|conf| {
+                        conf.load_config(service_config_key("AWS_ENDPOINT_URL", "endpoint_url"))
+                            .map(|it| it.parse().unwrap())
+                    })
+                    .or_else(|| input.endpoint_url().map(|s| s.to_string())),
+            );
+        }
         // resiliency
         builder.set_retry_config(input.retry_config().cloned());
         builder.set_timeout_config(input.timeout_config().cloned());
