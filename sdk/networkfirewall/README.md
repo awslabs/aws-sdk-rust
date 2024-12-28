@@ -44,7 +44,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-networkfirewall = "1.53.1"
+aws-sdk-networkfirewall = "1.54.0"
 tokio = { version = "1", features = ["full"] }
 ```
 
