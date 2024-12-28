@@ -20,11 +20,11 @@ version = "1.2.1"
 
 [dependencies.aws-runtime]
 path = "../aws-runtime"
-version = "1.5.1"
+version = "1.5.2"
 
 [dependencies.aws-smithy-async]
 path = "../aws-smithy-async"
-version = "1.2.2"
+version = "1.2.3"
 
 [dependencies.aws-smithy-compression]
 path = "../aws-smithy-compression"
@@ -46,7 +46,7 @@ version = "0.60.7"
 [dependencies.aws-smithy-runtime]
 path = "../aws-smithy-runtime"
 features = ["client"]
-version = "1.7.5"
+version = "1.7.6"
 
 [dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
@@ -56,7 +56,7 @@ version = "1.7.3"
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
 features = ["http-body-0-4-x"]
-version = "1.2.10"
+version = "1.2.11"
 
 [dependencies.aws-smithy-xml]
 path = "../aws-smithy-xml"
@@ -94,7 +94,7 @@ version = "1.2.1"
 
 [dev-dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
-version = "1.2.10"
+version = "1.2.11"
 
 [dev-dependencies.tokio]
 version = "1.23.1"

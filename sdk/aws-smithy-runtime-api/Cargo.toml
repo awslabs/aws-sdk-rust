@@ -31,11 +31,11 @@ tracing = "0.1"
 
 [dependencies.aws-smithy-async]
 path = "../aws-smithy-async"
-version = "1.2.2"
+version = "1.2.3"
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
-version = "1.2.10"
+version = "1.2.11"
 
 [dependencies.http-02x]
 package = "http"

@@ -219,13 +219,13 @@ mod s3_express;
 
 mod s3_request_id;
 
+mod sdk_feature_tracker;
+
 mod serialization_settings;
 
 mod endpoint_lib;
 
 mod lens;
-
-mod sdk_feature_tracker;
 
 mod serde_util;
 

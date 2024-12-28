@@ -209,13 +209,13 @@ mod auth_plugin;
 
 pub(crate) mod protocol_serde;
 
+mod sdk_feature_tracker;
+
 mod serialization_settings;
 
 mod endpoint_lib;
 
 mod lens;
-
-mod sdk_feature_tracker;
 
 mod serde_util;
 

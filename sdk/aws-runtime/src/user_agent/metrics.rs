@@ -127,7 +127,16 @@ iterable_enum!(
     AccountIdModeDisabled,
     AccountIdModeRequired,
     Sigv4aSigning,
-    ResolvedAccountId
+    ResolvedAccountId,
+    FlexibleChecksumsReqCrc32,
+    FlexibleChecksumsReqCrc32c,
+    FlexibleChecksumsReqCrc64,
+    FlexibleChecksumsReqSha1,
+    FlexibleChecksumsReqSha256,
+    FlexibleChecksumsReqWhenSupported,
+    FlexibleChecksumsReqWhenRequired,
+    FlexibleChecksumsResWhenSupported,
+    FlexibleChecksumsResWhenRequired
 );
 
 pub(crate) trait ProvideBusinessMetric {
@@ -142,6 +151,25 @@ impl ProvideBusinessMetric for SmithySdkFeature {
             Paginator => Some(BusinessMetric::Paginator),
             GzipRequestCompression => Some(BusinessMetric::GzipRequestCompression),
             ProtocolRpcV2Cbor => Some(BusinessMetric::ProtocolRpcV2Cbor),
+            RetryModeStandard => Some(BusinessMetric::RetryModeStandard),
+            RetryModeAdaptive => Some(BusinessMetric::RetryModeAdaptive),
+            FlexibleChecksumsReqCrc32 => Some(BusinessMetric::FlexibleChecksumsReqCrc32),
+            FlexibleChecksumsReqCrc32c => Some(BusinessMetric::FlexibleChecksumsReqCrc32c),
+            FlexibleChecksumsReqCrc64 => Some(BusinessMetric::FlexibleChecksumsReqCrc64),
+            FlexibleChecksumsReqSha1 => Some(BusinessMetric::FlexibleChecksumsReqSha1),
+            FlexibleChecksumsReqSha256 => Some(BusinessMetric::FlexibleChecksumsReqSha256),
+            FlexibleChecksumsReqWhenSupported => {
+                Some(BusinessMetric::FlexibleChecksumsReqWhenSupported)
+            }
+            FlexibleChecksumsReqWhenRequired => {
+                Some(BusinessMetric::FlexibleChecksumsReqWhenRequired)
+            }
+            FlexibleChecksumsResWhenSupported => {
+                Some(BusinessMetric::FlexibleChecksumsResWhenSupported)
+            }
+            FlexibleChecksumsResWhenRequired => {
+                Some(BusinessMetric::FlexibleChecksumsResWhenRequired)
+            }
             otherwise => {
                 // This may occur if a customer upgrades only the `aws-smithy-runtime-api` crate
                 // while continuing to use an outdated version of an SDK crate or the `aws-runtime`
@@ -260,7 +288,16 @@ mod tests {
   "ACCOUNT_ID_MODE_DISABLED": "Q",
   "ACCOUNT_ID_MODE_REQUIRED": "R",
   "SIGV4A_SIGNING": "S",
-  "RESOLVED_ACCOUNT_ID": "T"
+  "RESOLVED_ACCOUNT_ID": "T",
+  "FLEXIBLE_CHECKSUMS_REQ_CRC32" : "U",
+  "FLEXIBLE_CHECKSUMS_REQ_CRC32C" : "V",
+  "FLEXIBLE_CHECKSUMS_REQ_CRC64" : "W",
+  "FLEXIBLE_CHECKSUMS_REQ_SHA1" : "X",
+  "FLEXIBLE_CHECKSUMS_REQ_SHA256" : "Y",
+  "FLEXIBLE_CHECKSUMS_REQ_WHEN_SUPPORTED" : "Z",
+  "FLEXIBLE_CHECKSUMS_REQ_WHEN_REQUIRED" : "a",
+  "FLEXIBLE_CHECKSUMS_RES_WHEN_SUPPORTED" : "b",
+  "FLEXIBLE_CHECKSUMS_RES_WHEN_REQUIRED" : "c"
 }
         "#;
 
@@ -268,8 +305,9 @@ mod tests {
         assert_eq!(expected.len(), FEATURE_ID_TO_METRIC_VALUE.len());
 
         for (feature_id, metric_value) in &*FEATURE_ID_TO_METRIC_VALUE {
+            let expected = expected.get(format!("{feature_id}").as_str());
             assert_eq!(
-                expected.get(format!("{feature_id}").as_str()).unwrap(),
+                expected.expect(&format!("Expected {feature_id} to have value `{metric_value}` but it was `{expected:?}` instead.")),
                 metric_value,
             );
         }

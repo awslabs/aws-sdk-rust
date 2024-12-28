@@ -207,13 +207,13 @@ mod idempotency_token;
 
 pub(crate) mod protocol_serde;
 
+mod sdk_feature_tracker;
+
 mod serialization_settings;
 
 mod endpoint_lib;
 
 mod lens;
-
-mod sdk_feature_tracker;
 
 /// Supporting types for waiters.
 ///

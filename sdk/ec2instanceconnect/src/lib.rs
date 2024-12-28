@@ -190,6 +190,8 @@ mod auth_plugin;
 
 pub(crate) mod protocol_serde;
 
+mod sdk_feature_tracker;
+
 mod serialization_settings;
 
 /// Data structures used by operation inputs/outputs.

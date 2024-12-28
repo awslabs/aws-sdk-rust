@@ -153,3 +153,46 @@ pub(crate) mod waiter {
         }
     }
 }
+
+#[allow(dead_code)]
+pub(crate) mod retry_mode {
+    use aws_smithy_runtime::client::sdk_feature::SmithySdkFeature;
+    use aws_smithy_runtime_api::box_error::BoxError;
+    use aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef;
+    use aws_smithy_runtime_api::client::interceptors::Intercept;
+    use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
+    use aws_smithy_types::config_bag::ConfigBag;
+    use aws_smithy_types::retry::{RetryConfig, RetryMode};
+
+    #[derive(Debug)]
+    pub(crate) struct RetryModeFeatureTrackerInterceptor;
+
+    impl RetryModeFeatureTrackerInterceptor {
+        pub(crate) fn new() -> Self {
+            Self
+        }
+    }
+
+    impl Intercept for RetryModeFeatureTrackerInterceptor {
+        fn name(&self) -> &'static str {
+            "RetryModeFeatureTrackerInterceptor"
+        }
+
+        fn read_before_serialization(
+            &self,
+            _context: &BeforeSerializationInterceptorContextRef<'_>,
+            _runtime_components: &RuntimeComponents,
+            cfg: &mut ConfigBag,
+        ) -> Result<(), BoxError> {
+            cfg.load::<RetryConfig>()
+                .map(|retry_config| match retry_config.mode() {
+                    RetryMode::Standard => SmithySdkFeature::RetryModeStandard,
+                    RetryMode::Adaptive => SmithySdkFeature::RetryModeAdaptive,
+                    _ => unreachable!("retry mode must be standard or adaptive"),
+                })
+                .map(|feature| cfg.interceptor_state().store_append::<SmithySdkFeature>(feature));
+
+            Ok(())
+        }
+    }
+}

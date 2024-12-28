@@ -15,7 +15,7 @@ aws-config= { version = "1.5.11", path = "../../../sdk/aws-config" }
 aws-sdk-polly= { version = "1.54.0", path = "../../../sdk/polly" }
 aws-sdk-s3= { version = "1.67.0", path = "../../../sdk/s3" }
 aws-sdk-transcribe= { version = "1.53.0", path = "../../../sdk/transcribe" }
-aws-smithy-types= { version = "1.2.10", path = "../../../sdk/aws-smithy-types", features = ["rt-tokio"] }
+aws-smithy-types= { version = "1.2.11", path = "../../../sdk/aws-smithy-types", features = ["rt-tokio"] }
 
 [dependencies.tokio]
 version = "1.20.1"
