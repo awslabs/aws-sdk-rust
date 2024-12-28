@@ -89,13 +89,13 @@ fn user_agent() -> AwsUserAgent {
 /// use aws_config::imds::client::Client;
 /// # async fn docs() {
 /// let client = Client::builder()
-///   .endpoint("http://customidms:456/").expect("valid URI")
+///   .endpoint("http://customimds:456/").expect("valid URI")
 ///   .build();
 /// # }
 /// ```
 ///
 /// 2. The `AWS_EC2_METADATA_SERVICE_ENDPOINT` environment variable. Note: If this environment variable
-///    is set, it MUST contain to a valid URI or client construction will fail.
+///    is set, it MUST contain a valid URI or client construction will fail.
 ///
 /// 3. The `ec2_metadata_service_endpoint` field in `~/.aws/config`:
 /// ```ini
