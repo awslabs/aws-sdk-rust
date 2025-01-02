@@ -39,7 +39,7 @@ impl crate::operation::update_container_group_definition::builders::UpdateContai
 /// </ul>
 /// <p><b>Results:</b></p>
 /// <p>If successful, this operation returns the complete properties of the new container group definition version.</p>
-/// <p>If the container group definition version is used in an active fleets, the update automatically initiates a new fleet deployment of the new version. You can track a fleet's deployments using <code>ListFleetDeployments</code>.</p>
+/// <p>If the container group definition version is used in an active fleets, the update automatically initiates a new fleet deployment of the new version. You can track a fleet's deployments using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListFleetDeployments.html">ListFleetDeployments</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateContainerGroupDefinitionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

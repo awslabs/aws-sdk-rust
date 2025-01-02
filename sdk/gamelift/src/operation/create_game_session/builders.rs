@@ -22,7 +22,7 @@ impl crate::operation::create_game_session::builders::CreateGameSessionInputBuil
 }
 /// Fluent builder constructing a request to `CreateGameSession`.
 ///
-/// <p>Creates a multiplayer game session for players in a specific fleet location. This operation prompts an available server process to start a game session and retrieves connection information for the new game session. As an alternative, consider using the Amazon GameLift game session placement feature with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartGameSessionPlacement.html">StartGameSessionPlacement</a> , which uses the FleetIQ algorithm and queues to optimize the placement process.</p>
+/// <p>Creates a multiplayer game session for players in a specific fleet location. This operation prompts an available server process to start a game session and retrieves connection information for the new game session. As an alternative, consider using the Amazon GameLift game session placement feature with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartGameSessionPlacement.html">StartGameSessionPlacement</a>, which uses the FleetIQ algorithm and queues to optimize the placement process.</p>
 /// <p>When creating a game session, you specify exactly where you want to place it and provide a set of game session configuration settings. The target fleet must be in <code>ACTIVE</code> status.</p>
 /// <p>You can use this operation in the following ways:</p>
 /// <ul>

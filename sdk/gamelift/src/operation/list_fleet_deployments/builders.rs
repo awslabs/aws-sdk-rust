@@ -22,20 +22,17 @@ impl crate::operation::list_fleet_deployments::builders::ListFleetDeploymentsInp
 }
 /// Fluent builder constructing a request to `ListFleetDeployments`.
 ///
-/// <p>Retrieves a collection of container fleet deployments in an Amazon Web Services Region.</p>
+/// <p>Retrieves a collection of container fleet deployments in an Amazon Web Services Region. Use the pagination parameters to retrieve results as a set of sequential pages.</p>
 /// <p><b>Request options</b></p>
 /// <ul>
 /// <li>
 /// <p>Get a list of all deployments. Call this operation without specifying a fleet ID.</p></li>
 /// <li>
 /// <p>Get a list of all deployments for a fleet. Specify the container fleet ID or ARN value.</p></li>
-/// <li>
-/// <p>To get a list of all Realtime Servers fleets with a specific configuration script, provide the script ID.</p></li>
 /// </ul>
-/// <p>Use the pagination parameters to retrieve results as a set of sequential pages.</p>
 /// <p><b>Results</b></p>
 /// <p>If successful, this operation returns a list of deployments that match the request parameters. A NextToken value is also returned if there are more result pages to retrieve.</p><note>
-/// <p>Fleet IDs are returned in no particular order.</p>
+/// <p>Deployments are returned starting with the latest.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListFleetDeploymentsFluentBuilder {

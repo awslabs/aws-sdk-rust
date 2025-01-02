@@ -5,7 +5,7 @@
 pub struct GetComputeAccessInput {
     /// <p>A unique identifier for the fleet that holds the compute resource that you want to connect to. You can use either the fleet ID or ARN value.</p>
     pub fleet_id: ::std::option::Option<::std::string::String>,
-    /// <p>A unique identifier for the compute resource that you want to connect to. For an EC2 fleet compute, use the instance ID. Use <code>ListCompute</code> to retrieve compute identifiers.</p>
+    /// <p>A unique identifier for the compute resource that you want to connect to. For an EC2 fleet compute, use the instance ID. Use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html</a> to retrieve compute identifiers.</p>
     pub compute_name: ::std::option::Option<::std::string::String>,
 }
 impl GetComputeAccessInput {
@@ -13,7 +13,7 @@ impl GetComputeAccessInput {
     pub fn fleet_id(&self) -> ::std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
-    /// <p>A unique identifier for the compute resource that you want to connect to. For an EC2 fleet compute, use the instance ID. Use <code>ListCompute</code> to retrieve compute identifiers.</p>
+    /// <p>A unique identifier for the compute resource that you want to connect to. For an EC2 fleet compute, use the instance ID. Use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html</a> to retrieve compute identifiers.</p>
     pub fn compute_name(&self) -> ::std::option::Option<&str> {
         self.compute_name.as_deref()
     }
@@ -48,18 +48,18 @@ impl GetComputeAccessInputBuilder {
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.fleet_id
     }
-    /// <p>A unique identifier for the compute resource that you want to connect to. For an EC2 fleet compute, use the instance ID. Use <code>ListCompute</code> to retrieve compute identifiers.</p>
+    /// <p>A unique identifier for the compute resource that you want to connect to. For an EC2 fleet compute, use the instance ID. Use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html</a> to retrieve compute identifiers.</p>
     /// This field is required.
     pub fn compute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compute_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique identifier for the compute resource that you want to connect to. For an EC2 fleet compute, use the instance ID. Use <code>ListCompute</code> to retrieve compute identifiers.</p>
+    /// <p>A unique identifier for the compute resource that you want to connect to. For an EC2 fleet compute, use the instance ID. Use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html</a> to retrieve compute identifiers.</p>
     pub fn set_compute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.compute_name = input;
         self
     }
-    /// <p>A unique identifier for the compute resource that you want to connect to. For an EC2 fleet compute, use the instance ID. Use <code>ListCompute</code> to retrieve compute identifiers.</p>
+    /// <p>A unique identifier for the compute resource that you want to connect to. For an EC2 fleet compute, use the instance ID. Use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html</a> to retrieve compute identifiers.</p>
     pub fn get_compute_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.compute_name
     }

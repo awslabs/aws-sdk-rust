@@ -6,6 +6,33 @@ pub fn ser_monitoring_config(
     if let Some(var_1) = &input.thumbnail_state {
         object.key("thumbnailState").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.audio_monitoring_settings {
+        let mut array_3 = object.key("audioMonitoringSettings").start_array();
+        for item_4 in var_2 {
+            {
+                #[allow(unused_mut)]
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_audio_monitoring_setting::ser_audio_monitoring_setting(&mut object_5, item_4)?;
+                object_5.finish();
+            }
+        }
+        array_3.finish();
+    }
+    if let Some(var_6) = &input.content_quality_analysis_state {
+        object.key("contentQualityAnalysisState").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.video_monitoring_settings {
+        let mut array_8 = object.key("videoMonitoringSettings").start_array();
+        for item_9 in var_7 {
+            {
+                #[allow(unused_mut)]
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_video_monitoring_setting::ser_video_monitoring_setting(&mut object_10, item_9)?;
+                object_10.finish();
+            }
+        }
+        array_8.finish();
+    }
     Ok(())
 }
 
@@ -29,6 +56,23 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::ThumbnailState::from(u.as_ref())))
                                     .transpose()?,
+                            );
+                        }
+                        "audioMonitoringSettings" => {
+                            builder = builder.set_audio_monitoring_settings(
+                                crate::protocol_serde::shape_list_of_audio_monitoring_setting::de_list_of_audio_monitoring_setting(tokens)?,
+                            );
+                        }
+                        "contentQualityAnalysisState" => {
+                            builder = builder.set_content_quality_analysis_state(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ContentQualityAnalysisState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "videoMonitoringSettings" => {
+                            builder = builder.set_video_monitoring_settings(
+                                crate::protocol_serde::shape_list_of_video_monitoring_setting::de_list_of_video_monitoring_setting(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

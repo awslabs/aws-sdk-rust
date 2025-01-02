@@ -69,6 +69,22 @@ pub fn de_enable_all_features_http_error(
             }
             tmp
         }),
+        "ConstraintViolationException" => crate::operation::enable_all_features::EnableAllFeaturesError::ConstraintViolationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConstraintViolationExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_constraint_violation_exception::de_constraint_violation_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::enable_all_features::EnableAllFeaturesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "HandshakeConstraintViolationException" => {
             crate::operation::enable_all_features::EnableAllFeaturesError::HandshakeConstraintViolationException({
                 #[allow(unused_mut)]

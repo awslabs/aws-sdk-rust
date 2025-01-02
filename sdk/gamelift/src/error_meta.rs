@@ -3482,6 +3482,39 @@ impl From<crate::operation::tag_resource::TagResourceError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::terminate_game_session::TerminateGameSessionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::terminate_game_session::TerminateGameSessionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::terminate_game_session::TerminateGameSessionError> for Error {
+    fn from(err: crate::operation::terminate_game_session::TerminateGameSessionError) -> Self {
+        match err {
+            crate::operation::terminate_game_session::TerminateGameSessionError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::terminate_game_session::TerminateGameSessionError::InvalidGameSessionStatusException(inner) => {
+                Error::InvalidGameSessionStatusException(inner)
+            }
+            crate::operation::terminate_game_session::TerminateGameSessionError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::terminate_game_session::TerminateGameSessionError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::terminate_game_session::TerminateGameSessionError::NotReadyException(inner) => Error::NotReadyException(inner),
+            crate::operation::terminate_game_session::TerminateGameSessionError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::terminate_game_session::TerminateGameSessionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

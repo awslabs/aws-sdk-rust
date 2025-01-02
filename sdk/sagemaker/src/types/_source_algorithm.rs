@@ -10,6 +10,8 @@ pub struct SourceAlgorithm {
     pub model_data_url: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the location of ML model data to deploy during endpoint creation.</p>
     pub model_data_source: ::std::option::Option<crate::types::ModelDataSource>,
+    /// <p>The ETag associated with Model Data URL.</p>
+    pub model_data_e_tag: ::std::option::Option<::std::string::String>,
     /// <p>The name of an algorithm that was used to create the model package. The algorithm must be either an algorithm resource in your SageMaker account or an algorithm in Amazon Web Services Marketplace that you are subscribed to.</p>
     pub algorithm_name: ::std::option::Option<::std::string::String>,
 }
@@ -23,6 +25,10 @@ impl SourceAlgorithm {
     /// <p>Specifies the location of ML model data to deploy during endpoint creation.</p>
     pub fn model_data_source(&self) -> ::std::option::Option<&crate::types::ModelDataSource> {
         self.model_data_source.as_ref()
+    }
+    /// <p>The ETag associated with Model Data URL.</p>
+    pub fn model_data_e_tag(&self) -> ::std::option::Option<&str> {
+        self.model_data_e_tag.as_deref()
     }
     /// <p>The name of an algorithm that was used to create the model package. The algorithm must be either an algorithm resource in your SageMaker account or an algorithm in Amazon Web Services Marketplace that you are subscribed to.</p>
     pub fn algorithm_name(&self) -> ::std::option::Option<&str> {
@@ -42,6 +48,7 @@ impl SourceAlgorithm {
 pub struct SourceAlgorithmBuilder {
     pub(crate) model_data_url: ::std::option::Option<::std::string::String>,
     pub(crate) model_data_source: ::std::option::Option<crate::types::ModelDataSource>,
+    pub(crate) model_data_e_tag: ::std::option::Option<::std::string::String>,
     pub(crate) algorithm_name: ::std::option::Option<::std::string::String>,
 }
 impl SourceAlgorithmBuilder {
@@ -79,6 +86,20 @@ impl SourceAlgorithmBuilder {
     pub fn get_model_data_source(&self) -> &::std::option::Option<crate::types::ModelDataSource> {
         &self.model_data_source
     }
+    /// <p>The ETag associated with Model Data URL.</p>
+    pub fn model_data_e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.model_data_e_tag = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ETag associated with Model Data URL.</p>
+    pub fn set_model_data_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.model_data_e_tag = input;
+        self
+    }
+    /// <p>The ETag associated with Model Data URL.</p>
+    pub fn get_model_data_e_tag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_data_e_tag
+    }
     /// <p>The name of an algorithm that was used to create the model package. The algorithm must be either an algorithm resource in your SageMaker account or an algorithm in Amazon Web Services Marketplace that you are subscribed to.</p>
     /// This field is required.
     pub fn algorithm_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -99,6 +120,7 @@ impl SourceAlgorithmBuilder {
         crate::types::SourceAlgorithm {
             model_data_url: self.model_data_url,
             model_data_source: self.model_data_source,
+            model_data_e_tag: self.model_data_e_tag,
             algorithm_name: self.algorithm_name,
         }
     }

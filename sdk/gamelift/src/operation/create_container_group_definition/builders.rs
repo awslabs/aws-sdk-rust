@@ -22,7 +22,7 @@ impl crate::operation::create_container_group_definition::builders::CreateContai
 }
 /// Fluent builder constructing a request to `CreateContainerGroupDefinition`.
 ///
-/// <p>Creates a <code>ContainerGroupDefinition</code> that describes a set of containers for hosting your game server with Amazon GameLift managed containers hosting. An Amazon GameLift container group is similar to a container task or pod. Use container group definitions when you create a container fleet with <code>CreateContainerFleet</code>.</p>
+/// <p>Creates a <code>ContainerGroupDefinition</code> that describes a set of containers for hosting your game server with Amazon GameLift managed containers hosting. An Amazon GameLift container group is similar to a container task or pod. Use container group definitions when you create a container fleet with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerFleet.html">CreateContainerFleet</a>.</p>
 /// <p>A container group definition determines how Amazon GameLift deploys your containers to each instance in a container fleet. You can maintain multiple versions of a container group definition.</p>
 /// <p>There are two types of container groups:</p>
 /// <ul>
@@ -94,7 +94,7 @@ impl crate::operation::create_container_group_definition::builders::CreateContai
 /// </ul></li>
 /// </ul>
 /// <p><b>Results</b></p>
-/// <p>If successful, this request creates a <code>ContainerGroupDefinition</code> resource and assigns a unique ARN value. You can update most properties of a container group definition by calling <code>UpdateContainerGroupDefinition</code>, and optionally save the update as a new version.</p>
+/// <p>If successful, this request creates a <code>ContainerGroupDefinition</code> resource and assigns a unique ARN value. You can update most properties of a container group definition by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateContainerGroupDefinition.html">UpdateContainerGroupDefinition</a>, and optionally save the update as a new version.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateContainerGroupDefinitionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

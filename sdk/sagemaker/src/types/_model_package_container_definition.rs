@@ -31,6 +31,8 @@ pub struct ModelPackageContainerDefinition {
     pub nearest_model_name: ::std::option::Option<::std::string::String>,
     /// <p>The additional data source that is used during inference in the Docker container for your model package.</p>
     pub additional_s3_data_source: ::std::option::Option<crate::types::AdditionalS3DataSource>,
+    /// <p>The ETag associated with Model Data URL.</p>
+    pub model_data_e_tag: ::std::option::Option<::std::string::String>,
 }
 impl ModelPackageContainerDefinition {
     /// <p>The DNS host name for the Docker container.</p>
@@ -84,6 +86,10 @@ impl ModelPackageContainerDefinition {
     pub fn additional_s3_data_source(&self) -> ::std::option::Option<&crate::types::AdditionalS3DataSource> {
         self.additional_s3_data_source.as_ref()
     }
+    /// <p>The ETag associated with Model Data URL.</p>
+    pub fn model_data_e_tag(&self) -> ::std::option::Option<&str> {
+        self.model_data_e_tag.as_deref()
+    }
 }
 impl ModelPackageContainerDefinition {
     /// Creates a new builder-style object to manufacture [`ModelPackageContainerDefinition`](crate::types::ModelPackageContainerDefinition).
@@ -108,6 +114,7 @@ pub struct ModelPackageContainerDefinitionBuilder {
     pub(crate) framework_version: ::std::option::Option<::std::string::String>,
     pub(crate) nearest_model_name: ::std::option::Option<::std::string::String>,
     pub(crate) additional_s3_data_source: ::std::option::Option<crate::types::AdditionalS3DataSource>,
+    pub(crate) model_data_e_tag: ::std::option::Option<::std::string::String>,
 }
 impl ModelPackageContainerDefinitionBuilder {
     /// <p>The DNS host name for the Docker container.</p>
@@ -297,6 +304,20 @@ impl ModelPackageContainerDefinitionBuilder {
     pub fn get_additional_s3_data_source(&self) -> &::std::option::Option<crate::types::AdditionalS3DataSource> {
         &self.additional_s3_data_source
     }
+    /// <p>The ETag associated with Model Data URL.</p>
+    pub fn model_data_e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.model_data_e_tag = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ETag associated with Model Data URL.</p>
+    pub fn set_model_data_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.model_data_e_tag = input;
+        self
+    }
+    /// <p>The ETag associated with Model Data URL.</p>
+    pub fn get_model_data_e_tag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_data_e_tag
+    }
     /// Consumes the builder and constructs a [`ModelPackageContainerDefinition`](crate::types::ModelPackageContainerDefinition).
     pub fn build(self) -> crate::types::ModelPackageContainerDefinition {
         crate::types::ModelPackageContainerDefinition {
@@ -312,6 +333,7 @@ impl ModelPackageContainerDefinitionBuilder {
             framework_version: self.framework_version,
             nearest_model_name: self.nearest_model_name,
             additional_s3_data_source: self.additional_s3_data_source,
+            model_data_e_tag: self.model_data_e_tag,
         }
     }
 }

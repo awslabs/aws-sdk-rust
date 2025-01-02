@@ -46,6 +46,10 @@ pub struct S3ModelDataSource {
     pub hub_access_config: ::std::option::Option<crate::types::InferenceHubAccessConfig>,
     /// <p>The Amazon S3 URI of the manifest file. The manifest file is a CSV file that stores the artifact locations.</p>
     pub manifest_s3_uri: ::std::option::Option<::std::string::String>,
+    /// <p>The ETag associated with S3 URI.</p>
+    pub e_tag: ::std::option::Option<::std::string::String>,
+    /// <p>The ETag associated with Manifest S3URI.</p>
+    pub manifest_etag: ::std::option::Option<::std::string::String>,
 }
 impl S3ModelDataSource {
     /// <p>Specifies the S3 path of ML model data to deploy.</p>
@@ -102,6 +106,14 @@ impl S3ModelDataSource {
     pub fn manifest_s3_uri(&self) -> ::std::option::Option<&str> {
         self.manifest_s3_uri.as_deref()
     }
+    /// <p>The ETag associated with S3 URI.</p>
+    pub fn e_tag(&self) -> ::std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
+    /// <p>The ETag associated with Manifest S3URI.</p>
+    pub fn manifest_etag(&self) -> ::std::option::Option<&str> {
+        self.manifest_etag.as_deref()
+    }
 }
 impl S3ModelDataSource {
     /// Creates a new builder-style object to manufacture [`S3ModelDataSource`](crate::types::S3ModelDataSource).
@@ -120,6 +132,8 @@ pub struct S3ModelDataSourceBuilder {
     pub(crate) model_access_config: ::std::option::Option<crate::types::ModelAccessConfig>,
     pub(crate) hub_access_config: ::std::option::Option<crate::types::InferenceHubAccessConfig>,
     pub(crate) manifest_s3_uri: ::std::option::Option<::std::string::String>,
+    pub(crate) e_tag: ::std::option::Option<::std::string::String>,
+    pub(crate) manifest_etag: ::std::option::Option<::std::string::String>,
 }
 impl S3ModelDataSourceBuilder {
     /// <p>Specifies the S3 path of ML model data to deploy.</p>
@@ -299,6 +313,34 @@ impl S3ModelDataSourceBuilder {
     pub fn get_manifest_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.manifest_s3_uri
     }
+    /// <p>The ETag associated with S3 URI.</p>
+    pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.e_tag = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ETag associated with S3 URI.</p>
+    pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.e_tag = input;
+        self
+    }
+    /// <p>The ETag associated with S3 URI.</p>
+    pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.e_tag
+    }
+    /// <p>The ETag associated with Manifest S3URI.</p>
+    pub fn manifest_etag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.manifest_etag = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ETag associated with Manifest S3URI.</p>
+    pub fn set_manifest_etag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.manifest_etag = input;
+        self
+    }
+    /// <p>The ETag associated with Manifest S3URI.</p>
+    pub fn get_manifest_etag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.manifest_etag
+    }
     /// Consumes the builder and constructs a [`S3ModelDataSource`](crate::types::S3ModelDataSource).
     pub fn build(self) -> crate::types::S3ModelDataSource {
         crate::types::S3ModelDataSource {
@@ -308,6 +350,8 @@ impl S3ModelDataSourceBuilder {
             model_access_config: self.model_access_config,
             hub_access_config: self.hub_access_config,
             manifest_s3_uri: self.manifest_s3_uri,
+            e_tag: self.e_tag,
+            manifest_etag: self.manifest_etag,
         }
     }
 }

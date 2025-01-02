@@ -139,6 +139,8 @@ pub use crate::types::_routing_strategy::RoutingStrategy;
 
 pub use crate::types::_routing_strategy_type::RoutingStrategyType;
 
+pub use crate::types::_termination_mode::TerminationMode;
+
 pub use crate::types::_tag::Tag;
 
 pub use crate::types::_game_session_placement::GameSessionPlacement;
@@ -556,6 +558,8 @@ mod _tag;
 mod _target_configuration;
 
 mod _target_tracking_configuration;
+
+mod _termination_mode;
 
 mod _vpc_peering_authorization;
 

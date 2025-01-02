@@ -7,7 +7,7 @@
 pub struct RuntimeConfiguration {
     /// <p>A collection of server process configurations that identify what server processes to run on fleet computes.</p>
     pub server_processes: ::std::option::Option<::std::vec::Vec<crate::types::ServerProcess>>,
-    /// <p>The number of game sessions in status <code>ACTIVATING</code> to allow on an instance. This setting limits the instance resources that can be used for new game activations at any one time.</p>
+    /// <p>The number of game sessions in status <code>ACTIVATING</code> to allow on an instance or compute. This setting limits the instance resources that can be used for new game activations at any one time.</p>
     pub max_concurrent_game_session_activations: ::std::option::Option<i32>,
     /// <p>The maximum amount of time (in seconds) allowed to launch a new game session and have it report ready to host players. During this time, the game session is in status <code>ACTIVATING</code>. If the game session does not become active before the timeout, it is ended and the game session status is changed to <code>TERMINATED</code>.</p>
     pub game_session_activation_timeout_seconds: ::std::option::Option<i32>,
@@ -19,7 +19,7 @@ impl RuntimeConfiguration {
     pub fn server_processes(&self) -> &[crate::types::ServerProcess] {
         self.server_processes.as_deref().unwrap_or_default()
     }
-    /// <p>The number of game sessions in status <code>ACTIVATING</code> to allow on an instance. This setting limits the instance resources that can be used for new game activations at any one time.</p>
+    /// <p>The number of game sessions in status <code>ACTIVATING</code> to allow on an instance or compute. This setting limits the instance resources that can be used for new game activations at any one time.</p>
     pub fn max_concurrent_game_session_activations(&self) -> ::std::option::Option<i32> {
         self.max_concurrent_game_session_activations
     }
@@ -64,17 +64,17 @@ impl RuntimeConfigurationBuilder {
     pub fn get_server_processes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerProcess>> {
         &self.server_processes
     }
-    /// <p>The number of game sessions in status <code>ACTIVATING</code> to allow on an instance. This setting limits the instance resources that can be used for new game activations at any one time.</p>
+    /// <p>The number of game sessions in status <code>ACTIVATING</code> to allow on an instance or compute. This setting limits the instance resources that can be used for new game activations at any one time.</p>
     pub fn max_concurrent_game_session_activations(mut self, input: i32) -> Self {
         self.max_concurrent_game_session_activations = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of game sessions in status <code>ACTIVATING</code> to allow on an instance. This setting limits the instance resources that can be used for new game activations at any one time.</p>
+    /// <p>The number of game sessions in status <code>ACTIVATING</code> to allow on an instance or compute. This setting limits the instance resources that can be used for new game activations at any one time.</p>
     pub fn set_max_concurrent_game_session_activations(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_concurrent_game_session_activations = input;
         self
     }
-    /// <p>The number of game sessions in status <code>ACTIVATING</code> to allow on an instance. This setting limits the instance resources that can be used for new game activations at any one time.</p>
+    /// <p>The number of game sessions in status <code>ACTIVATING</code> to allow on an instance or compute. This setting limits the instance resources that can be used for new game activations at any one time.</p>
     pub fn get_max_concurrent_game_session_activations(&self) -> &::std::option::Option<i32> {
         &self.max_concurrent_game_session_activations
     }

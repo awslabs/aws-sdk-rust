@@ -267,17 +267,17 @@ impl CreateFleetFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_ec2_inbound_permissions`](Self::set_ec2_inbound_permissions).
     ///
-    /// <p>The IP address ranges and port settings that allow inbound traffic to access game server processes and other processes on this fleet. Set this parameter for managed EC2 fleets. You can leave this parameter empty when creating the fleet, but you must call <code>UpdateFleetPortSettings</code> to set it before players can connect to game sessions. As a best practice, we recommend opening ports for remote access only when you need them and closing them when you're finished. For Realtime Servers fleets, Amazon GameLift automatically sets TCP and UDP ranges.</p>
+    /// <p>The IP address ranges and port settings that allow inbound traffic to access game server processes and other processes on this fleet. Set this parameter for managed EC2 fleets. You can leave this parameter empty when creating the fleet, but you must call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateFleetPortSettings">https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateFleetPortSettings</a> to set it before players can connect to game sessions. As a best practice, we recommend opening ports for remote access only when you need them and closing them when you're finished. For Realtime Servers fleets, Amazon GameLift automatically sets TCP and UDP ranges.</p>
     pub fn ec2_inbound_permissions(mut self, input: crate::types::IpPermission) -> Self {
         self.inner = self.inner.ec2_inbound_permissions(input);
         self
     }
-    /// <p>The IP address ranges and port settings that allow inbound traffic to access game server processes and other processes on this fleet. Set this parameter for managed EC2 fleets. You can leave this parameter empty when creating the fleet, but you must call <code>UpdateFleetPortSettings</code> to set it before players can connect to game sessions. As a best practice, we recommend opening ports for remote access only when you need them and closing them when you're finished. For Realtime Servers fleets, Amazon GameLift automatically sets TCP and UDP ranges.</p>
+    /// <p>The IP address ranges and port settings that allow inbound traffic to access game server processes and other processes on this fleet. Set this parameter for managed EC2 fleets. You can leave this parameter empty when creating the fleet, but you must call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateFleetPortSettings">https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateFleetPortSettings</a> to set it before players can connect to game sessions. As a best practice, we recommend opening ports for remote access only when you need them and closing them when you're finished. For Realtime Servers fleets, Amazon GameLift automatically sets TCP and UDP ranges.</p>
     pub fn set_ec2_inbound_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>) -> Self {
         self.inner = self.inner.set_ec2_inbound_permissions(input);
         self
     }
-    /// <p>The IP address ranges and port settings that allow inbound traffic to access game server processes and other processes on this fleet. Set this parameter for managed EC2 fleets. You can leave this parameter empty when creating the fleet, but you must call <code>UpdateFleetPortSettings</code> to set it before players can connect to game sessions. As a best practice, we recommend opening ports for remote access only when you need them and closing them when you're finished. For Realtime Servers fleets, Amazon GameLift automatically sets TCP and UDP ranges.</p>
+    /// <p>The IP address ranges and port settings that allow inbound traffic to access game server processes and other processes on this fleet. Set this parameter for managed EC2 fleets. You can leave this parameter empty when creating the fleet, but you must call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateFleetPortSettings">https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateFleetPortSettings</a> to set it before players can connect to game sessions. As a best practice, we recommend opening ports for remote access only when you need them and closing them when you're finished. For Realtime Servers fleets, Amazon GameLift automatically sets TCP and UDP ranges.</p>
     pub fn get_ec2_inbound_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpPermission>> {
         self.inner.get_ec2_inbound_permissions()
     }
@@ -488,7 +488,7 @@ impl CreateFleetFluentBuilder {
     /// <li>
     /// <p><code>EC2</code> – The game server build is deployed to Amazon EC2 instances for cloud hosting. This is the default setting.</p></li>
     /// <li>
-    /// <p><code>ANYWHERE</code> – Your game server and supporting software is deployed to compute resources that are provided and managed by you. With this compute type, you can also set the <code>AnywhereConfiguration</code> parameter.</p></li>
+    /// <p><code>ANYWHERE</code> – Game servers and supporting software are deployed to compute resources that you provide and manage. With this compute type, you can also set the <code>AnywhereConfiguration</code> parameter.</p></li>
     /// </ul>
     pub fn compute_type(mut self, input: crate::types::ComputeType) -> Self {
         self.inner = self.inner.compute_type(input);
@@ -499,7 +499,7 @@ impl CreateFleetFluentBuilder {
     /// <li>
     /// <p><code>EC2</code> – The game server build is deployed to Amazon EC2 instances for cloud hosting. This is the default setting.</p></li>
     /// <li>
-    /// <p><code>ANYWHERE</code> – Your game server and supporting software is deployed to compute resources that are provided and managed by you. With this compute type, you can also set the <code>AnywhereConfiguration</code> parameter.</p></li>
+    /// <p><code>ANYWHERE</code> – Game servers and supporting software are deployed to compute resources that you provide and manage. With this compute type, you can also set the <code>AnywhereConfiguration</code> parameter.</p></li>
     /// </ul>
     pub fn set_compute_type(mut self, input: ::std::option::Option<crate::types::ComputeType>) -> Self {
         self.inner = self.inner.set_compute_type(input);
@@ -510,7 +510,7 @@ impl CreateFleetFluentBuilder {
     /// <li>
     /// <p><code>EC2</code> – The game server build is deployed to Amazon EC2 instances for cloud hosting. This is the default setting.</p></li>
     /// <li>
-    /// <p><code>ANYWHERE</code> – Your game server and supporting software is deployed to compute resources that are provided and managed by you. With this compute type, you can also set the <code>AnywhereConfiguration</code> parameter.</p></li>
+    /// <p><code>ANYWHERE</code> – Game servers and supporting software are deployed to compute resources that you provide and manage. With this compute type, you can also set the <code>AnywhereConfiguration</code> parameter.</p></li>
     /// </ul>
     pub fn get_compute_type(&self) -> &::std::option::Option<crate::types::ComputeType> {
         self.inner.get_compute_type()

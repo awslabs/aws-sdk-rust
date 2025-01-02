@@ -365,6 +365,8 @@ mod suspend_game_server_group;
 
 mod tag_resource;
 
+mod terminate_game_session;
+
 mod untag_resource;
 
 mod update_alias;

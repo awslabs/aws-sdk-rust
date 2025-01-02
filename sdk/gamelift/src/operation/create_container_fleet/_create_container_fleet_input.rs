@@ -9,10 +9,10 @@ pub struct CreateContainerFleetInput {
     /// <p>A meaningful description of the container fleet.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A container group definition resource that describes how to deploy containers with your game server build and support software onto each fleet instance. You can specify the container group definition's name to use the latest version. Alternatively, provide an ARN value with a specific version number.</p>
-    /// <p>Create a container group definition by calling <code>CreateContainerGroupDefinition</code>. This operation creates a <code>ContainerGroupDefinition</code> resource.</p>
+    /// <p>Create a container group definition by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html">CreateContainerGroupDefinition</a>. This operation creates a <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a> resource.</p>
     pub game_server_container_group_definition_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of a container group definition resource that describes a set of axillary software. A fleet instance has one process for executables in this container group. A per-instance container group is optional. You can update the fleet to add or remove a per-instance container group at any time. You can specify the container group definition's name to use the latest version. Alternatively, provide an ARN value with a specific version number.</p>
-    /// <p>Create a container group definition by calling <code>CreateContainerGroupDefinition</code>. This operation creates a <code>ContainerGroupDefinition</code> resource.</p>
+    /// <p>Create a container group definition by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html</a>. This operation creates a <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html</a> resource.</p>
     pub per_instance_container_group_definition_name: ::std::option::Option<::std::string::String>,
     /// <p>The set of port numbers to open on each fleet instance. A fleet's connection ports map to container ports that are configured in the fleet's container group definitions.</p>
     /// <p>By default, Amazon GameLift calculates an optimal port range based on your fleet configuration. To use the calculated range, don't set this parameter. The values are:</p>
@@ -88,12 +88,12 @@ impl CreateContainerFleetInput {
         self.description.as_deref()
     }
     /// <p>A container group definition resource that describes how to deploy containers with your game server build and support software onto each fleet instance. You can specify the container group definition's name to use the latest version. Alternatively, provide an ARN value with a specific version number.</p>
-    /// <p>Create a container group definition by calling <code>CreateContainerGroupDefinition</code>. This operation creates a <code>ContainerGroupDefinition</code> resource.</p>
+    /// <p>Create a container group definition by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html">CreateContainerGroupDefinition</a>. This operation creates a <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a> resource.</p>
     pub fn game_server_container_group_definition_name(&self) -> ::std::option::Option<&str> {
         self.game_server_container_group_definition_name.as_deref()
     }
     /// <p>The name of a container group definition resource that describes a set of axillary software. A fleet instance has one process for executables in this container group. A per-instance container group is optional. You can update the fleet to add or remove a per-instance container group at any time. You can specify the container group definition's name to use the latest version. Alternatively, provide an ARN value with a specific version number.</p>
-    /// <p>Create a container group definition by calling <code>CreateContainerGroupDefinition</code>. This operation creates a <code>ContainerGroupDefinition</code> resource.</p>
+    /// <p>Create a container group definition by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html</a>. This operation creates a <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html</a> resource.</p>
     pub fn per_instance_container_group_definition_name(&self) -> ::std::option::Option<&str> {
         self.per_instance_container_group_definition_name.as_deref()
     }
@@ -251,36 +251,36 @@ impl CreateContainerFleetInputBuilder {
         &self.description
     }
     /// <p>A container group definition resource that describes how to deploy containers with your game server build and support software onto each fleet instance. You can specify the container group definition's name to use the latest version. Alternatively, provide an ARN value with a specific version number.</p>
-    /// <p>Create a container group definition by calling <code>CreateContainerGroupDefinition</code>. This operation creates a <code>ContainerGroupDefinition</code> resource.</p>
+    /// <p>Create a container group definition by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html">CreateContainerGroupDefinition</a>. This operation creates a <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a> resource.</p>
     pub fn game_server_container_group_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_server_container_group_definition_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A container group definition resource that describes how to deploy containers with your game server build and support software onto each fleet instance. You can specify the container group definition's name to use the latest version. Alternatively, provide an ARN value with a specific version number.</p>
-    /// <p>Create a container group definition by calling <code>CreateContainerGroupDefinition</code>. This operation creates a <code>ContainerGroupDefinition</code> resource.</p>
+    /// <p>Create a container group definition by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html">CreateContainerGroupDefinition</a>. This operation creates a <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a> resource.</p>
     pub fn set_game_server_container_group_definition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_server_container_group_definition_name = input;
         self
     }
     /// <p>A container group definition resource that describes how to deploy containers with your game server build and support software onto each fleet instance. You can specify the container group definition's name to use the latest version. Alternatively, provide an ARN value with a specific version number.</p>
-    /// <p>Create a container group definition by calling <code>CreateContainerGroupDefinition</code>. This operation creates a <code>ContainerGroupDefinition</code> resource.</p>
+    /// <p>Create a container group definition by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html">CreateContainerGroupDefinition</a>. This operation creates a <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a> resource.</p>
     pub fn get_game_server_container_group_definition_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.game_server_container_group_definition_name
     }
     /// <p>The name of a container group definition resource that describes a set of axillary software. A fleet instance has one process for executables in this container group. A per-instance container group is optional. You can update the fleet to add or remove a per-instance container group at any time. You can specify the container group definition's name to use the latest version. Alternatively, provide an ARN value with a specific version number.</p>
-    /// <p>Create a container group definition by calling <code>CreateContainerGroupDefinition</code>. This operation creates a <code>ContainerGroupDefinition</code> resource.</p>
+    /// <p>Create a container group definition by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html</a>. This operation creates a <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html</a> resource.</p>
     pub fn per_instance_container_group_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.per_instance_container_group_definition_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a container group definition resource that describes a set of axillary software. A fleet instance has one process for executables in this container group. A per-instance container group is optional. You can update the fleet to add or remove a per-instance container group at any time. You can specify the container group definition's name to use the latest version. Alternatively, provide an ARN value with a specific version number.</p>
-    /// <p>Create a container group definition by calling <code>CreateContainerGroupDefinition</code>. This operation creates a <code>ContainerGroupDefinition</code> resource.</p>
+    /// <p>Create a container group definition by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html</a>. This operation creates a <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html</a> resource.</p>
     pub fn set_per_instance_container_group_definition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.per_instance_container_group_definition_name = input;
         self
     }
     /// <p>The name of a container group definition resource that describes a set of axillary software. A fleet instance has one process for executables in this container group. A per-instance container group is optional. You can update the fleet to add or remove a per-instance container group at any time. You can specify the container group definition's name to use the latest version. Alternatively, provide an ARN value with a specific version number.</p>
-    /// <p>Create a container group definition by calling <code>CreateContainerGroupDefinition</code>. This operation creates a <code>ContainerGroupDefinition</code> resource.</p>
+    /// <p>Create a container group definition by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html</a>. This operation creates a <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html</a> resource.</p>
     pub fn get_per_instance_container_group_definition_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.per_instance_container_group_definition_name
     }

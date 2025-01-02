@@ -38,7 +38,7 @@ impl crate::operation::start_game_session_placement::builders::StartGameSessionP
 /// <p>Latency data for all players (if you want to optimize game play for the players)</p></li>
 /// </ul>
 /// <p>If successful, a new game session placement is created.</p>
-/// <p>To track the status of a placement request, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessionPlacement.html">DescribeGameSessionPlacement</a> and check the request's status. If the status is <code>FULFILLED</code>, a new game session has been created and a game session ARN and Region are referenced. If the placement request times out, submit a new request to the same queue or a different queue.</p>
+/// <p>To track the status of a placement request, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessionPlacement.html">DescribeGameSessionPlacement</a> and check the request's status. If the status is <code>FULFILLED</code>, a new game session has been created and a game session ARN and Region are referenced. If the placement request times out, you can resubmit the request or retry it with a different queue.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartGameSessionPlacementFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

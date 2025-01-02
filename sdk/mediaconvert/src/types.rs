@@ -335,6 +335,8 @@ pub use crate::types::_h265_adaptive_quantization::H265AdaptiveQuantization;
 
 pub use crate::types::_h264_settings::H264Settings;
 
+pub use crate::types::_h264_write_mp4_packaging_type::H264WriteMp4PackagingType;
+
 pub use crate::types::_h264_unregistered_sei_timecode::H264UnregisteredSeiTimecode;
 
 pub use crate::types::_h264_temporal_adaptive_quantization::H264TemporalAdaptiveQuantization;
@@ -1754,6 +1756,8 @@ mod _h264_telecine;
 mod _h264_temporal_adaptive_quantization;
 
 mod _h264_unregistered_sei_timecode;
+
+mod _h264_write_mp4_packaging_type;
 
 mod _h265_adaptive_quantization;
 

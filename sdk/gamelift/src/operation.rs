@@ -304,6 +304,9 @@ pub mod suspend_game_server_group;
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
 
+/// Types for the `TerminateGameSession` operation.
+pub mod terminate_game_session;
+
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
 

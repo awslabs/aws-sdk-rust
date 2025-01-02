@@ -81,6 +81,20 @@ pub use crate::types::_flow::Flow;
 
 pub use crate::types::_monitoring_config::MonitoringConfig;
 
+pub use crate::types::_video_monitoring_setting::VideoMonitoringSetting;
+
+pub use crate::types::_frozen_frames::FrozenFrames;
+
+pub use crate::types::_state::State;
+
+pub use crate::types::_black_frames::BlackFrames;
+
+pub use crate::types::_content_quality_analysis_state::ContentQualityAnalysisState;
+
+pub use crate::types::_audio_monitoring_setting::AudioMonitoringSetting;
+
+pub use crate::types::_silent_audio::SilentAudio;
+
 pub use crate::types::_thumbnail_state::ThumbnailState;
 
 pub use crate::types::_maintenance::Maintenance;
@@ -94,8 +108,6 @@ pub use crate::types::_network_interface_type::NetworkInterfaceType;
 pub use crate::types::_status::Status;
 
 pub use crate::types::_failover_config::FailoverConfig;
-
-pub use crate::types::_state::State;
 
 pub use crate::types::_source_priority::SourcePriority;
 
@@ -241,6 +253,10 @@ mod _add_output_request;
 
 mod _algorithm;
 
+mod _audio_monitoring_setting;
+
+mod _black_frames;
+
 mod _bridge;
 
 mod _bridge_flow_output;
@@ -262,6 +278,8 @@ mod _bridge_state;
 mod _colorimetry;
 
 mod _connection_status;
+
+mod _content_quality_analysis_state;
 
 mod _desired_state;
 
@@ -298,6 +316,8 @@ mod _fmtp;
 mod _fmtp_request;
 
 mod _frame_resolution;
+
+mod _frozen_frames;
 
 mod _gateway;
 
@@ -391,6 +411,8 @@ mod _set_gateway_bridge_source_request;
 
 mod _set_source_request;
 
+mod _silent_audio;
+
 mod _source;
 
 mod _source_priority;
@@ -432,6 +454,8 @@ mod _update_gateway_bridge_source_request;
 mod _update_ingress_gateway_bridge_request;
 
 mod _update_maintenance;
+
+mod _video_monitoring_setting;
 
 mod _vpc_interface;
 

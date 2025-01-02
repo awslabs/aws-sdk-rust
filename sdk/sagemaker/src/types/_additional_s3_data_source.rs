@@ -10,6 +10,8 @@ pub struct AdditionalS3DataSource {
     pub s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The type of compression used for an additional data source used in inference or training. Specify <code>None</code> if your additional data source is not compressed.</p>
     pub compression_type: ::std::option::Option<crate::types::CompressionType>,
+    /// <p>The ETag associated with S3 URI.</p>
+    pub e_tag: ::std::option::Option<::std::string::String>,
 }
 impl AdditionalS3DataSource {
     /// <p>The data type of the additional data source that you specify for use in inference or training.</p>
@@ -23,6 +25,10 @@ impl AdditionalS3DataSource {
     /// <p>The type of compression used for an additional data source used in inference or training. Specify <code>None</code> if your additional data source is not compressed.</p>
     pub fn compression_type(&self) -> ::std::option::Option<&crate::types::CompressionType> {
         self.compression_type.as_ref()
+    }
+    /// <p>The ETag associated with S3 URI.</p>
+    pub fn e_tag(&self) -> ::std::option::Option<&str> {
+        self.e_tag.as_deref()
     }
 }
 impl AdditionalS3DataSource {
@@ -39,6 +45,7 @@ pub struct AdditionalS3DataSourceBuilder {
     pub(crate) s3_data_type: ::std::option::Option<crate::types::AdditionalS3DataSourceDataType>,
     pub(crate) s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) compression_type: ::std::option::Option<crate::types::CompressionType>,
+    pub(crate) e_tag: ::std::option::Option<::std::string::String>,
 }
 impl AdditionalS3DataSourceBuilder {
     /// <p>The data type of the additional data source that you specify for use in inference or training.</p>
@@ -85,12 +92,27 @@ impl AdditionalS3DataSourceBuilder {
     pub fn get_compression_type(&self) -> &::std::option::Option<crate::types::CompressionType> {
         &self.compression_type
     }
+    /// <p>The ETag associated with S3 URI.</p>
+    pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.e_tag = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ETag associated with S3 URI.</p>
+    pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.e_tag = input;
+        self
+    }
+    /// <p>The ETag associated with S3 URI.</p>
+    pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.e_tag
+    }
     /// Consumes the builder and constructs a [`AdditionalS3DataSource`](crate::types::AdditionalS3DataSource).
     pub fn build(self) -> crate::types::AdditionalS3DataSource {
         crate::types::AdditionalS3DataSource {
             s3_data_type: self.s3_data_type,
             s3_uri: self.s3_uri,
             compression_type: self.compression_type,
+            e_tag: self.e_tag,
         }
     }
 }

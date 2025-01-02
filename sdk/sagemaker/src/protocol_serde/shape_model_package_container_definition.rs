@@ -55,6 +55,9 @@ pub fn ser_model_package_container_definition(
         crate::protocol_serde::shape_additional_s3_data_source::ser_additional_s3_data_source(&mut object_18, var_17)?;
         object_18.finish();
     }
+    if let Some(var_19) = &input.model_data_e_tag {
+        object.key("ModelDataETag").string(var_19.as_str());
+    }
     Ok(())
 }
 
@@ -141,6 +144,13 @@ where
                         "AdditionalS3DataSource" => {
                             builder = builder.set_additional_s3_data_source(
                                 crate::protocol_serde::shape_additional_s3_data_source::de_additional_s3_data_source(tokens)?,
+                            );
+                        }
+                        "ModelDataETag" => {
+                            builder = builder.set_model_data_e_tag(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

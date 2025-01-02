@@ -12,8 +12,11 @@ pub fn ser_source_algorithm(
         crate::protocol_serde::shape_model_data_source::ser_model_data_source(&mut object_3, var_2)?;
         object_3.finish();
     }
-    if let Some(var_4) = &input.algorithm_name {
-        object.key("AlgorithmName").string(var_4.as_str());
+    if let Some(var_4) = &input.model_data_e_tag {
+        object.key("ModelDataETag").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.algorithm_name {
+        object.key("AlgorithmName").string(var_5.as_str());
     }
     Ok(())
 }
@@ -42,6 +45,13 @@ where
                         }
                         "ModelDataSource" => {
                             builder = builder.set_model_data_source(crate::protocol_serde::shape_model_data_source::de_model_data_source(tokens)?);
+                        }
+                        "ModelDataETag" => {
+                            builder = builder.set_model_data_e_tag(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
                         }
                         "AlgorithmName" => {
                             builder = builder.set_algorithm_name(

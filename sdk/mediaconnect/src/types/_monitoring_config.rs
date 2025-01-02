@@ -6,11 +6,33 @@
 pub struct MonitoringConfig {
     /// The state of thumbnail monitoring.
     pub thumbnail_state: ::std::option::Option<crate::types::ThumbnailState>,
+    /// Contains the settings for audio stream metrics monitoring.
+    pub audio_monitoring_settings: ::std::option::Option<::std::vec::Vec<crate::types::AudioMonitoringSetting>>,
+    /// Indicates whether content quality analysis is enabled or disabled.
+    pub content_quality_analysis_state: ::std::option::Option<crate::types::ContentQualityAnalysisState>,
+    /// Contains the settings for video stream metrics monitoring.
+    pub video_monitoring_settings: ::std::option::Option<::std::vec::Vec<crate::types::VideoMonitoringSetting>>,
 }
 impl MonitoringConfig {
     /// The state of thumbnail monitoring.
     pub fn thumbnail_state(&self) -> ::std::option::Option<&crate::types::ThumbnailState> {
         self.thumbnail_state.as_ref()
+    }
+    /// Contains the settings for audio stream metrics monitoring.
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.audio_monitoring_settings.is_none()`.
+    pub fn audio_monitoring_settings(&self) -> &[crate::types::AudioMonitoringSetting] {
+        self.audio_monitoring_settings.as_deref().unwrap_or_default()
+    }
+    /// Indicates whether content quality analysis is enabled or disabled.
+    pub fn content_quality_analysis_state(&self) -> ::std::option::Option<&crate::types::ContentQualityAnalysisState> {
+        self.content_quality_analysis_state.as_ref()
+    }
+    /// Contains the settings for video stream metrics monitoring.
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.video_monitoring_settings.is_none()`.
+    pub fn video_monitoring_settings(&self) -> &[crate::types::VideoMonitoringSetting] {
+        self.video_monitoring_settings.as_deref().unwrap_or_default()
     }
 }
 impl MonitoringConfig {
@@ -25,6 +47,9 @@ impl MonitoringConfig {
 #[non_exhaustive]
 pub struct MonitoringConfigBuilder {
     pub(crate) thumbnail_state: ::std::option::Option<crate::types::ThumbnailState>,
+    pub(crate) audio_monitoring_settings: ::std::option::Option<::std::vec::Vec<crate::types::AudioMonitoringSetting>>,
+    pub(crate) content_quality_analysis_state: ::std::option::Option<crate::types::ContentQualityAnalysisState>,
+    pub(crate) video_monitoring_settings: ::std::option::Option<::std::vec::Vec<crate::types::VideoMonitoringSetting>>,
 }
 impl MonitoringConfigBuilder {
     /// The state of thumbnail monitoring.
@@ -41,10 +66,67 @@ impl MonitoringConfigBuilder {
     pub fn get_thumbnail_state(&self) -> &::std::option::Option<crate::types::ThumbnailState> {
         &self.thumbnail_state
     }
+    /// Appends an item to `audio_monitoring_settings`.
+    ///
+    /// To override the contents of this collection use [`set_audio_monitoring_settings`](Self::set_audio_monitoring_settings).
+    ///
+    /// Contains the settings for audio stream metrics monitoring.
+    pub fn audio_monitoring_settings(mut self, input: crate::types::AudioMonitoringSetting) -> Self {
+        let mut v = self.audio_monitoring_settings.unwrap_or_default();
+        v.push(input);
+        self.audio_monitoring_settings = ::std::option::Option::Some(v);
+        self
+    }
+    /// Contains the settings for audio stream metrics monitoring.
+    pub fn set_audio_monitoring_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AudioMonitoringSetting>>) -> Self {
+        self.audio_monitoring_settings = input;
+        self
+    }
+    /// Contains the settings for audio stream metrics monitoring.
+    pub fn get_audio_monitoring_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AudioMonitoringSetting>> {
+        &self.audio_monitoring_settings
+    }
+    /// Indicates whether content quality analysis is enabled or disabled.
+    pub fn content_quality_analysis_state(mut self, input: crate::types::ContentQualityAnalysisState) -> Self {
+        self.content_quality_analysis_state = ::std::option::Option::Some(input);
+        self
+    }
+    /// Indicates whether content quality analysis is enabled or disabled.
+    pub fn set_content_quality_analysis_state(mut self, input: ::std::option::Option<crate::types::ContentQualityAnalysisState>) -> Self {
+        self.content_quality_analysis_state = input;
+        self
+    }
+    /// Indicates whether content quality analysis is enabled or disabled.
+    pub fn get_content_quality_analysis_state(&self) -> &::std::option::Option<crate::types::ContentQualityAnalysisState> {
+        &self.content_quality_analysis_state
+    }
+    /// Appends an item to `video_monitoring_settings`.
+    ///
+    /// To override the contents of this collection use [`set_video_monitoring_settings`](Self::set_video_monitoring_settings).
+    ///
+    /// Contains the settings for video stream metrics monitoring.
+    pub fn video_monitoring_settings(mut self, input: crate::types::VideoMonitoringSetting) -> Self {
+        let mut v = self.video_monitoring_settings.unwrap_or_default();
+        v.push(input);
+        self.video_monitoring_settings = ::std::option::Option::Some(v);
+        self
+    }
+    /// Contains the settings for video stream metrics monitoring.
+    pub fn set_video_monitoring_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VideoMonitoringSetting>>) -> Self {
+        self.video_monitoring_settings = input;
+        self
+    }
+    /// Contains the settings for video stream metrics monitoring.
+    pub fn get_video_monitoring_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VideoMonitoringSetting>> {
+        &self.video_monitoring_settings
+    }
     /// Consumes the builder and constructs a [`MonitoringConfig`](crate::types::MonitoringConfig).
     pub fn build(self) -> crate::types::MonitoringConfig {
         crate::types::MonitoringConfig {
             thumbnail_state: self.thumbnail_state,
+            audio_monitoring_settings: self.audio_monitoring_settings,
+            content_quality_analysis_state: self.content_quality_analysis_state,
+            video_monitoring_settings: self.video_monitoring_settings,
         }
     }
 }

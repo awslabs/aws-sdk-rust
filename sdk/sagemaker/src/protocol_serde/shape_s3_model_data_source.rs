@@ -27,6 +27,12 @@ pub fn ser_s3_model_data_source(
     if let Some(var_8) = &input.manifest_s3_uri {
         object.key("ManifestS3Uri").string(var_8.as_str());
     }
+    if let Some(var_9) = &input.e_tag {
+        object.key("ETag").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.manifest_etag {
+        object.key("ManifestEtag").string(var_10.as_str());
+    }
     Ok(())
 }
 
@@ -77,6 +83,20 @@ where
                         }
                         "ManifestS3Uri" => {
                             builder = builder.set_manifest_s3_uri(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "ETag" => {
+                            builder = builder.set_e_tag(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "ManifestEtag" => {
+                            builder = builder.set_manifest_etag(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

@@ -325,6 +325,8 @@ pub(crate) mod shape_add_bridge_network_output_request;
 
 pub(crate) mod shape_add_bridge_network_source_request;
 
+pub(crate) mod shape_audio_monitoring_setting;
+
 pub(crate) mod shape_bridge_flow_output;
 
 pub(crate) mod shape_bridge_flow_source;
@@ -385,15 +387,27 @@ pub(crate) mod shape_source_priority;
 
 pub(crate) mod shape_transport;
 
+pub(crate) mod shape_video_monitoring_setting;
+
 pub(crate) mod shape_vpc_interface;
+
+pub(crate) mod shape_black_frames;
 
 pub(crate) mod shape_fmtp;
 
+pub(crate) mod shape_frozen_frames;
+
 pub(crate) mod shape_interface_request;
+
+pub(crate) mod shape_list_of_audio_monitoring_setting;
+
+pub(crate) mod shape_list_of_video_monitoring_setting;
 
 pub(crate) mod shape_media_stream_output_configuration;
 
 pub(crate) mod shape_media_stream_source_configuration;
+
+pub(crate) mod shape_silent_audio;
 
 pub(crate) mod shape_transport_stream_program;
 

@@ -12,6 +12,9 @@ pub fn ser_additional_s3_data_source(
     if let Some(var_3) = &input.compression_type {
         object.key("CompressionType").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.e_tag {
+        object.key("ETag").string(var_4.as_str());
+    }
     Ok(())
 }
 
@@ -48,6 +51,13 @@ where
                             builder = builder.set_compression_type(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::CompressionType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ETag" => {
+                            builder = builder.set_e_tag(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }

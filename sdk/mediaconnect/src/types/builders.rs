@@ -55,6 +55,16 @@ pub use crate::types::_flow::FlowBuilder;
 
 pub use crate::types::_monitoring_config::MonitoringConfigBuilder;
 
+pub use crate::types::_video_monitoring_setting::VideoMonitoringSettingBuilder;
+
+pub use crate::types::_frozen_frames::FrozenFramesBuilder;
+
+pub use crate::types::_black_frames::BlackFramesBuilder;
+
+pub use crate::types::_audio_monitoring_setting::AudioMonitoringSettingBuilder;
+
+pub use crate::types::_silent_audio::SilentAudioBuilder;
+
 pub use crate::types::_maintenance::MaintenanceBuilder;
 
 pub use crate::types::_vpc_interface::VpcInterfaceBuilder;

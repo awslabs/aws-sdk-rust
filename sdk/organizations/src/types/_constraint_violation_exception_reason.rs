@@ -18,6 +18,7 @@
 ///     ConstraintViolationExceptionReason::AccountCreationNotComplete => { /* ... */ },
 ///     ConstraintViolationExceptionReason::AccountCreationRateLimitExceeded => { /* ... */ },
 ///     ConstraintViolationExceptionReason::AccountNumberLimitExceeded => { /* ... */ },
+///     ConstraintViolationExceptionReason::AllFeaturesMigrationOrganizationSizeLimitExceeded => { /* ... */ },
 ///     ConstraintViolationExceptionReason::CannotCloseManagementAccount => { /* ... */ },
 ///     ConstraintViolationExceptionReason::CannotRegisterMasterAsDelegatedAdministrator => { /* ... */ },
 ///     ConstraintViolationExceptionReason::CannotRegisterSuspendedAccountAsDelegatedAdministrator => { /* ... */ },
@@ -87,6 +88,8 @@ pub enum ConstraintViolationExceptionReason {
     AccountCreationRateLimitExceeded,
     #[allow(missing_docs)] // documentation missing in model
     AccountNumberLimitExceeded,
+    #[allow(missing_docs)] // documentation missing in model
+    AllFeaturesMigrationOrganizationSizeLimitExceeded,
     #[allow(missing_docs)] // documentation missing in model
     CannotCloseManagementAccount,
     #[allow(missing_docs)] // documentation missing in model
@@ -158,6 +161,9 @@ impl ::std::convert::From<&str> for ConstraintViolationExceptionReason {
             "ACCOUNT_CREATION_NOT_COMPLETE" => ConstraintViolationExceptionReason::AccountCreationNotComplete,
             "ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::AccountCreationRateLimitExceeded,
             "ACCOUNT_NUMBER_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::AccountNumberLimitExceeded,
+            "ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED" => {
+                ConstraintViolationExceptionReason::AllFeaturesMigrationOrganizationSizeLimitExceeded
+            }
             "CANNOT_CLOSE_MANAGEMENT_ACCOUNT" => ConstraintViolationExceptionReason::CannotCloseManagementAccount,
             "CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR" => ConstraintViolationExceptionReason::CannotRegisterMasterAsDelegatedAdministrator,
             "CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR" => {
@@ -214,6 +220,9 @@ impl ConstraintViolationExceptionReason {
             ConstraintViolationExceptionReason::AccountCreationNotComplete => "ACCOUNT_CREATION_NOT_COMPLETE",
             ConstraintViolationExceptionReason::AccountCreationRateLimitExceeded => "ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED",
             ConstraintViolationExceptionReason::AccountNumberLimitExceeded => "ACCOUNT_NUMBER_LIMIT_EXCEEDED",
+            ConstraintViolationExceptionReason::AllFeaturesMigrationOrganizationSizeLimitExceeded => {
+                "ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED"
+            }
             ConstraintViolationExceptionReason::CannotCloseManagementAccount => "CANNOT_CLOSE_MANAGEMENT_ACCOUNT",
             ConstraintViolationExceptionReason::CannotRegisterMasterAsDelegatedAdministrator => "CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR",
             ConstraintViolationExceptionReason::CannotRegisterSuspendedAccountAsDelegatedAdministrator => {
@@ -261,6 +270,7 @@ impl ConstraintViolationExceptionReason {
             "ACCOUNT_CREATION_NOT_COMPLETE",
             "ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED",
             "ACCOUNT_NUMBER_LIMIT_EXCEEDED",
+            "ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED",
             "CANNOT_CLOSE_MANAGEMENT_ACCOUNT",
             "CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR",
             "CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR",
@@ -321,6 +331,9 @@ impl ::std::fmt::Display for ConstraintViolationExceptionReason {
             ConstraintViolationExceptionReason::AccountCreationNotComplete => write!(f, "ACCOUNT_CREATION_NOT_COMPLETE"),
             ConstraintViolationExceptionReason::AccountCreationRateLimitExceeded => write!(f, "ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED"),
             ConstraintViolationExceptionReason::AccountNumberLimitExceeded => write!(f, "ACCOUNT_NUMBER_LIMIT_EXCEEDED"),
+            ConstraintViolationExceptionReason::AllFeaturesMigrationOrganizationSizeLimitExceeded => {
+                write!(f, "ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED")
+            }
             ConstraintViolationExceptionReason::CannotCloseManagementAccount => write!(f, "CANNOT_CLOSE_MANAGEMENT_ACCOUNT"),
             ConstraintViolationExceptionReason::CannotRegisterMasterAsDelegatedAdministrator => {
                 write!(f, "CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR")

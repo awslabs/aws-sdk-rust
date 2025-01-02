@@ -6,10 +6,10 @@ pub struct UpdateContainerFleetInput {
     /// <p>A unique identifier for the container fleet to update. You can use either the fleet ID or ARN value.</p>
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>The name or ARN value of a new game server container group definition to deploy on the fleet. If you're updating the fleet to a specific version of a container group definition, use the ARN value and include the version number. If you're updating the fleet to the latest version of a container group definition, you can use the name value. You can't remove a fleet's game server container group definition, you can only update or replace it with another definition.</p>
-    /// <p>Update a container group definition by calling <code>UpdateContainerGroupDefinition</code>. This operation creates a <code>ContainerGroupDefinition</code> resource with an incremented version.</p>
+    /// <p>Update a container group definition by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateContainerGroupDefinition.html">UpdateContainerGroupDefinition</a>. This operation creates a <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a> resource with an incremented version.</p>
     pub game_server_container_group_definition_name: ::std::option::Option<::std::string::String>,
     /// <p>The name or ARN value of a new per-instance container group definition to deploy on the fleet. If you're updating the fleet to a specific version of a container group definition, use the ARN value and include the version number. If you're updating the fleet to the latest version of a container group definition, you can use the name value.</p>
-    /// <p>Update a container group definition by calling <code>UpdateContainerGroupDefinition</code>. This operation creates a <code>ContainerGroupDefinition</code> resource with an incremented version.</p>
+    /// <p>Update a container group definition by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateContainerGroupDefinition.html">UpdateContainerGroupDefinition</a>. This operation creates a <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a> resource with an incremented version.</p>
     /// <p>To remove a fleet's per-instance container group definition, leave this parameter empty and use the parameter <code>RemoveAttributes</code>.</p>
     pub per_instance_container_group_definition_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of times to replicate the game server container group on each fleet instance. By default, Amazon GameLift calculates the maximum number of game server container groups that can fit on each instance. You can remove this property value to use the calculated value, or set it manually. If you set this number manually, Amazon GameLift uses your value as long as it's less than the calculated maximum.</p>
@@ -41,12 +41,12 @@ impl UpdateContainerFleetInput {
         self.fleet_id.as_deref()
     }
     /// <p>The name or ARN value of a new game server container group definition to deploy on the fleet. If you're updating the fleet to a specific version of a container group definition, use the ARN value and include the version number. If you're updating the fleet to the latest version of a container group definition, you can use the name value. You can't remove a fleet's game server container group definition, you can only update or replace it with another definition.</p>
-    /// <p>Update a container group definition by calling <code>UpdateContainerGroupDefinition</code>. This operation creates a <code>ContainerGroupDefinition</code> resource with an incremented version.</p>
+    /// <p>Update a container group definition by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateContainerGroupDefinition.html">UpdateContainerGroupDefinition</a>. This operation creates a <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a> resource with an incremented version.</p>
     pub fn game_server_container_group_definition_name(&self) -> ::std::option::Option<&str> {
         self.game_server_container_group_definition_name.as_deref()
     }
     /// <p>The name or ARN value of a new per-instance container group definition to deploy on the fleet. If you're updating the fleet to a specific version of a container group definition, use the ARN value and include the version number. If you're updating the fleet to the latest version of a container group definition, you can use the name value.</p>
-    /// <p>Update a container group definition by calling <code>UpdateContainerGroupDefinition</code>. This operation creates a <code>ContainerGroupDefinition</code> resource with an incremented version.</p>
+    /// <p>Update a container group definition by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateContainerGroupDefinition.html">UpdateContainerGroupDefinition</a>. This operation creates a <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a> resource with an incremented version.</p>
     /// <p>To remove a fleet's per-instance container group definition, leave this parameter empty and use the parameter <code>RemoveAttributes</code>.</p>
     pub fn per_instance_container_group_definition_name(&self) -> ::std::option::Option<&str> {
         self.per_instance_container_group_definition_name.as_deref()
@@ -147,38 +147,38 @@ impl UpdateContainerFleetInputBuilder {
         &self.fleet_id
     }
     /// <p>The name or ARN value of a new game server container group definition to deploy on the fleet. If you're updating the fleet to a specific version of a container group definition, use the ARN value and include the version number. If you're updating the fleet to the latest version of a container group definition, you can use the name value. You can't remove a fleet's game server container group definition, you can only update or replace it with another definition.</p>
-    /// <p>Update a container group definition by calling <code>UpdateContainerGroupDefinition</code>. This operation creates a <code>ContainerGroupDefinition</code> resource with an incremented version.</p>
+    /// <p>Update a container group definition by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateContainerGroupDefinition.html">UpdateContainerGroupDefinition</a>. This operation creates a <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a> resource with an incremented version.</p>
     pub fn game_server_container_group_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_server_container_group_definition_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or ARN value of a new game server container group definition to deploy on the fleet. If you're updating the fleet to a specific version of a container group definition, use the ARN value and include the version number. If you're updating the fleet to the latest version of a container group definition, you can use the name value. You can't remove a fleet's game server container group definition, you can only update or replace it with another definition.</p>
-    /// <p>Update a container group definition by calling <code>UpdateContainerGroupDefinition</code>. This operation creates a <code>ContainerGroupDefinition</code> resource with an incremented version.</p>
+    /// <p>Update a container group definition by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateContainerGroupDefinition.html">UpdateContainerGroupDefinition</a>. This operation creates a <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a> resource with an incremented version.</p>
     pub fn set_game_server_container_group_definition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_server_container_group_definition_name = input;
         self
     }
     /// <p>The name or ARN value of a new game server container group definition to deploy on the fleet. If you're updating the fleet to a specific version of a container group definition, use the ARN value and include the version number. If you're updating the fleet to the latest version of a container group definition, you can use the name value. You can't remove a fleet's game server container group definition, you can only update or replace it with another definition.</p>
-    /// <p>Update a container group definition by calling <code>UpdateContainerGroupDefinition</code>. This operation creates a <code>ContainerGroupDefinition</code> resource with an incremented version.</p>
+    /// <p>Update a container group definition by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateContainerGroupDefinition.html">UpdateContainerGroupDefinition</a>. This operation creates a <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a> resource with an incremented version.</p>
     pub fn get_game_server_container_group_definition_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.game_server_container_group_definition_name
     }
     /// <p>The name or ARN value of a new per-instance container group definition to deploy on the fleet. If you're updating the fleet to a specific version of a container group definition, use the ARN value and include the version number. If you're updating the fleet to the latest version of a container group definition, you can use the name value.</p>
-    /// <p>Update a container group definition by calling <code>UpdateContainerGroupDefinition</code>. This operation creates a <code>ContainerGroupDefinition</code> resource with an incremented version.</p>
+    /// <p>Update a container group definition by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateContainerGroupDefinition.html">UpdateContainerGroupDefinition</a>. This operation creates a <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a> resource with an incremented version.</p>
     /// <p>To remove a fleet's per-instance container group definition, leave this parameter empty and use the parameter <code>RemoveAttributes</code>.</p>
     pub fn per_instance_container_group_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.per_instance_container_group_definition_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or ARN value of a new per-instance container group definition to deploy on the fleet. If you're updating the fleet to a specific version of a container group definition, use the ARN value and include the version number. If you're updating the fleet to the latest version of a container group definition, you can use the name value.</p>
-    /// <p>Update a container group definition by calling <code>UpdateContainerGroupDefinition</code>. This operation creates a <code>ContainerGroupDefinition</code> resource with an incremented version.</p>
+    /// <p>Update a container group definition by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateContainerGroupDefinition.html">UpdateContainerGroupDefinition</a>. This operation creates a <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a> resource with an incremented version.</p>
     /// <p>To remove a fleet's per-instance container group definition, leave this parameter empty and use the parameter <code>RemoveAttributes</code>.</p>
     pub fn set_per_instance_container_group_definition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.per_instance_container_group_definition_name = input;
         self
     }
     /// <p>The name or ARN value of a new per-instance container group definition to deploy on the fleet. If you're updating the fleet to a specific version of a container group definition, use the ARN value and include the version number. If you're updating the fleet to the latest version of a container group definition, you can use the name value.</p>
-    /// <p>Update a container group definition by calling <code>UpdateContainerGroupDefinition</code>. This operation creates a <code>ContainerGroupDefinition</code> resource with an incremented version.</p>
+    /// <p>Update a container group definition by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateContainerGroupDefinition.html">UpdateContainerGroupDefinition</a>. This operation creates a <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a> resource with an incremented version.</p>
     /// <p>To remove a fleet's per-instance container group definition, leave this parameter empty and use the parameter <code>RemoveAttributes</code>.</p>
     pub fn get_per_instance_container_group_definition_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.per_instance_container_group_definition_name

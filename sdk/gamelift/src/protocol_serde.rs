@@ -225,6 +225,8 @@ pub(crate) mod shape_suspend_game_server_group;
 
 pub(crate) mod shape_tag_resource;
 
+pub(crate) mod shape_terminate_game_session;
+
 pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_alias;
@@ -492,6 +494,8 @@ pub(crate) mod shape_tag_resource_input;
 pub(crate) mod shape_tagging_failed_exception;
 
 pub(crate) mod shape_terminal_routing_strategy_exception;
+
+pub(crate) mod shape_terminate_game_session_input;
 
 pub(crate) mod shape_unauthorized_exception;
 

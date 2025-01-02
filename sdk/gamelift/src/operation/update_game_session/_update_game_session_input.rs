@@ -14,9 +14,9 @@ pub struct UpdateGameSessionInput {
     /// <p>Game session protection policy to apply to this game session only.</p>
     /// <ul>
     /// <li>
-    /// <p><b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p></li>
+    /// <p><code>NoProtection</code> -- The game session can be terminated during a scale-down event.</p></li>
     /// <li>
-    /// <p><b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p></li>
+    /// <p><code>FullProtection</code> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p></li>
     /// </ul>
     pub protection_policy: ::std::option::Option<crate::types::ProtectionPolicy>,
     /// <p>A set of key-value pairs that can store custom data in a game session. For example: <code>{"Key": "difficulty", "Value": "novice"}</code>. You can use this parameter to modify game properties in an active game session. This action adds new properties and modifies existing properties. There is no way to delete properties. For an example, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-update">Update the value of a game property</a>.</p>
@@ -42,9 +42,9 @@ impl UpdateGameSessionInput {
     /// <p>Game session protection policy to apply to this game session only.</p>
     /// <ul>
     /// <li>
-    /// <p><b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p></li>
+    /// <p><code>NoProtection</code> -- The game session can be terminated during a scale-down event.</p></li>
     /// <li>
-    /// <p><b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p></li>
+    /// <p><code>FullProtection</code> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p></li>
     /// </ul>
     pub fn protection_policy(&self) -> ::std::option::Option<&crate::types::ProtectionPolicy> {
         self.protection_policy.as_ref()
@@ -135,9 +135,9 @@ impl UpdateGameSessionInputBuilder {
     /// <p>Game session protection policy to apply to this game session only.</p>
     /// <ul>
     /// <li>
-    /// <p><b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p></li>
+    /// <p><code>NoProtection</code> -- The game session can be terminated during a scale-down event.</p></li>
     /// <li>
-    /// <p><b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p></li>
+    /// <p><code>FullProtection</code> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p></li>
     /// </ul>
     pub fn protection_policy(mut self, input: crate::types::ProtectionPolicy) -> Self {
         self.protection_policy = ::std::option::Option::Some(input);
@@ -146,9 +146,9 @@ impl UpdateGameSessionInputBuilder {
     /// <p>Game session protection policy to apply to this game session only.</p>
     /// <ul>
     /// <li>
-    /// <p><b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p></li>
+    /// <p><code>NoProtection</code> -- The game session can be terminated during a scale-down event.</p></li>
     /// <li>
-    /// <p><b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p></li>
+    /// <p><code>FullProtection</code> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p></li>
     /// </ul>
     pub fn set_protection_policy(mut self, input: ::std::option::Option<crate::types::ProtectionPolicy>) -> Self {
         self.protection_policy = input;
@@ -157,9 +157,9 @@ impl UpdateGameSessionInputBuilder {
     /// <p>Game session protection policy to apply to this game session only.</p>
     /// <ul>
     /// <li>
-    /// <p><b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p></li>
+    /// <p><code>NoProtection</code> -- The game session can be terminated during a scale-down event.</p></li>
     /// <li>
-    /// <p><b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p></li>
+    /// <p><code>FullProtection</code> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p></li>
     /// </ul>
     pub fn get_protection_policy(&self) -> &::std::option::Option<crate::types::ProtectionPolicy> {
         &self.protection_policy

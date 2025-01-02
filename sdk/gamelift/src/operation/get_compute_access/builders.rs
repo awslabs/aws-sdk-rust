@@ -130,17 +130,17 @@ impl GetComputeAccessFluentBuilder {
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_fleet_id()
     }
-    /// <p>A unique identifier for the compute resource that you want to connect to. For an EC2 fleet compute, use the instance ID. Use <code>ListCompute</code> to retrieve compute identifiers.</p>
+    /// <p>A unique identifier for the compute resource that you want to connect to. For an EC2 fleet compute, use the instance ID. Use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html</a> to retrieve compute identifiers.</p>
     pub fn compute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.compute_name(input.into());
         self
     }
-    /// <p>A unique identifier for the compute resource that you want to connect to. For an EC2 fleet compute, use the instance ID. Use <code>ListCompute</code> to retrieve compute identifiers.</p>
+    /// <p>A unique identifier for the compute resource that you want to connect to. For an EC2 fleet compute, use the instance ID. Use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html</a> to retrieve compute identifiers.</p>
     pub fn set_compute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_compute_name(input);
         self
     }
-    /// <p>A unique identifier for the compute resource that you want to connect to. For an EC2 fleet compute, use the instance ID. Use <code>ListCompute</code> to retrieve compute identifiers.</p>
+    /// <p>A unique identifier for the compute resource that you want to connect to. For an EC2 fleet compute, use the instance ID. Use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html</a> to retrieve compute identifiers.</p>
     pub fn get_compute_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_compute_name()
     }

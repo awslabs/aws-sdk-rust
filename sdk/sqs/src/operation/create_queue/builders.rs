@@ -36,12 +36,13 @@ impl crate::operation::create_queue::builders::CreateQueueInputBuilder {
 /// <p>To successfully create a new queue, you must provide a queue name that adheres to the <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/limits-queues.html">limits related to queues</a> and is unique within the scope of your queues.</p><note>
 /// <p>After you create a queue, you must wait at least one second after the queue is created to be able to use the queue.</p>
 /// </note>
-/// <p>To get the queue URL, use the <code> <code>GetQueueUrl</code> </code> action. <code> <code>GetQueueUrl</code> </code> requires only the <code>QueueName</code> parameter. be aware of existing queue names:</p>
+/// <p>To retrieve the URL of a queue, use the <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_GetQueueUrl.html"> <code>GetQueueUrl</code> </a> action. This action only requires the <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_CreateQueue.html#API_CreateQueue_RequestSyntax"> <code>QueueName</code> </a> parameter.</p>
+/// <p>When creating queues, keep the following points in mind:</p>
 /// <ul>
 /// <li>
-/// <p>If you provide the name of an existing queue along with the exact names and values of all the queue's attributes, <code>CreateQueue</code> returns the queue URL for the existing queue.</p></li>
+/// <p>If you specify the name of an existing queue and provide the exact same names and values for all its attributes, the <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_CreateQueue.html"> <code>CreateQueue</code> </a> action will return the URL of the existing queue instead of creating a new one.</p></li>
 /// <li>
-/// <p>If the queue name, attribute names, or attribute values don't match an existing queue, <code>CreateQueue</code> returns an error.</p></li>
+/// <p>If you attempt to create a queue with a name that already exists but with different attribute names or values, the <code>CreateQueue</code> action will return an error. This ensures that existing queues are not inadvertently altered.</p></li>
 /// </ul><note>
 /// <p>Cross-account permissions don't apply to this action. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer Guide</i>.</p>
 /// </note>

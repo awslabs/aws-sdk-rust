@@ -22,7 +22,7 @@ impl crate::operation::describe_compute::builders::DescribeComputeInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeCompute`.
 ///
-/// <p>Retrieves properties for a compute resource in an Amazon GameLift fleet. To get a list of all computes in a fleet, call <code>ListCompute</code>.</p>
+/// <p>Retrieves properties for a compute resource in an Amazon GameLift fleet. To get a list of all computes in a fleet, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html</a>.</p>
 /// <p>To request information on a specific compute, provide the fleet ID and compute name.</p>
 /// <p>If successful, this operation returns details for the requested compute resource. Depending on the fleet's compute type, the result includes the following information:</p>
 /// <ul>

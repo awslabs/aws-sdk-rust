@@ -189,6 +189,9 @@ pub fn ser_h264_settings(
     if let Some(var_46) = &input.unregistered_sei_timecode {
         object.key("unregisteredSeiTimecode").string(var_46.as_str());
     }
+    if let Some(var_47) = &input.write_mp4_packaging_type {
+        object.key("writeMp4PackagingType").string(var_47.as_str());
+    }
     Ok(())
 }
 
@@ -503,6 +506,13 @@ where
                             builder = builder.set_unregistered_sei_timecode(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::H264UnregisteredSeiTimecode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "writeMp4PackagingType" => {
+                            builder = builder.set_write_mp4_packaging_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::H264WriteMp4PackagingType::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

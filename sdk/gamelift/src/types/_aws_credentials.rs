@@ -5,9 +5,9 @@
 /// <p>You need Amazon Web Services credentials for the following tasks:</p>
 /// <ul>
 /// <li>
-/// <p>To upload a game server build directly to Amazon GameLift S3 storage using <code>CreateBuild</code>. To get access for this task, call <code>RequestUploadCredentials</code>.</p></li>
+/// <p>To upload a game server build directly to Amazon GameLift S3 storage using <code>CreateBuild</code>. To get access for this task, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html</a>.</p></li>
 /// <li>
-/// <p>To remotely connect to an active Amazon GameLift fleet instances. To get remote access, call <code>GetComputeAccess</code>.</p></li>
+/// <p>To remotely connect to an active Amazon GameLift fleet instances. To get remote access, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetComputeAccess.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetComputeAccess.html</a>.</p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]

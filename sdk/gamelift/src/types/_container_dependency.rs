@@ -2,7 +2,7 @@
 
 /// <p>A container's dependency on another container in the same container group. The dependency impacts how the dependent container is able to start or shut down based the status of the other container.</p>
 /// <p>For example, <i>ContainerA</i> is configured with the following dependency: a <code>START</code> dependency on <i>ContainerB</i>. This means that <i>ContainerA</i> can't start until <i>ContainerB</i> has started. It also means that <i>ContainerA</i> must shut down before <i>ContainerB</i>.</p>
-/// <p>eiifcbfhgrdurhnucnufkgbnbnnerrvbtjvljdetkehc<b>Part of:</b> <code>GameServerContainerDefinition</code>, <code>GameServerContainerDefinitionInput</code>, <code>SupportContainerDefinition</code>, <code>SupportContainerDefinitionInput</code></p>
+/// <p><b>Part of:</b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameServerContainerDefinition.html">GameServerContainerDefinition</a>, <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameServerContainerDefinitionInput.html">GameServerContainerDefinitionInput</a>, <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_SupportContainerDefinition.html">SupportContainerDefinition</a>, <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_SupportContainerDefinitionInput.html">SupportContainerDefinitionInput</a></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContainerDependency {

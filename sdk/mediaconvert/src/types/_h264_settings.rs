@@ -92,6 +92,8 @@ pub struct H264Settings {
     pub temporal_adaptive_quantization: ::std::option::Option<crate::types::H264TemporalAdaptiveQuantization>,
     /// Inserts timecode for each frame as 4 bytes of an unregistered SEI message.
     pub unregistered_sei_timecode: ::std::option::Option<crate::types::H264UnregisteredSeiTimecode>,
+    /// Specify how SPS and PPS NAL units are written in your output MP4 container, according to ISO/IEC 14496-15. If the location of these parameters doesn't matter in your workflow: Keep the default value, AVC1. MediaConvert writes SPS and PPS NAL units in the sample description ('stsd') box (but not into samples directly). To write SPS and PPS NAL units directly into samples (but not in the 'stsd' box): Choose AVC3. When you do, note that your output might not play properly with some downstream systems or players.
+    pub write_mp4_packaging_type: ::std::option::Option<crate::types::H264WriteMp4PackagingType>,
 }
 impl H264Settings {
     /// Keep the default value, Auto, for this setting to have MediaConvert automatically apply the best types of quantization for your video content. When you want to apply your quantization settings manually, you must set H264AdaptiveQuantization to a value other than Auto. Use this setting to specify the strength of any adaptive quantization filters that you enable. If you don't want MediaConvert to do any adaptive quantization in this transcode, set Adaptive quantization to Off. Related settings: The value that you choose here applies to the following settings: H264FlickerAdaptiveQuantization, H264SpatialAdaptiveQuantization, and H264TemporalAdaptiveQuantization.
@@ -270,6 +272,10 @@ impl H264Settings {
     pub fn unregistered_sei_timecode(&self) -> ::std::option::Option<&crate::types::H264UnregisteredSeiTimecode> {
         self.unregistered_sei_timecode.as_ref()
     }
+    /// Specify how SPS and PPS NAL units are written in your output MP4 container, according to ISO/IEC 14496-15. If the location of these parameters doesn't matter in your workflow: Keep the default value, AVC1. MediaConvert writes SPS and PPS NAL units in the sample description ('stsd') box (but not into samples directly). To write SPS and PPS NAL units directly into samples (but not in the 'stsd' box): Choose AVC3. When you do, note that your output might not play properly with some downstream systems or players.
+    pub fn write_mp4_packaging_type(&self) -> ::std::option::Option<&crate::types::H264WriteMp4PackagingType> {
+        self.write_mp4_packaging_type.as_ref()
+    }
 }
 impl H264Settings {
     /// Creates a new builder-style object to manufacture [`H264Settings`](crate::types::H264Settings).
@@ -326,6 +332,7 @@ pub struct H264SettingsBuilder {
     pub(crate) telecine: ::std::option::Option<crate::types::H264Telecine>,
     pub(crate) temporal_adaptive_quantization: ::std::option::Option<crate::types::H264TemporalAdaptiveQuantization>,
     pub(crate) unregistered_sei_timecode: ::std::option::Option<crate::types::H264UnregisteredSeiTimecode>,
+    pub(crate) write_mp4_packaging_type: ::std::option::Option<crate::types::H264WriteMp4PackagingType>,
 }
 impl H264SettingsBuilder {
     /// Keep the default value, Auto, for this setting to have MediaConvert automatically apply the best types of quantization for your video content. When you want to apply your quantization settings manually, you must set H264AdaptiveQuantization to a value other than Auto. Use this setting to specify the strength of any adaptive quantization filters that you enable. If you don't want MediaConvert to do any adaptive quantization in this transcode, set Adaptive quantization to Off. Related settings: The value that you choose here applies to the following settings: H264FlickerAdaptiveQuantization, H264SpatialAdaptiveQuantization, and H264TemporalAdaptiveQuantization.
@@ -944,6 +951,20 @@ impl H264SettingsBuilder {
     pub fn get_unregistered_sei_timecode(&self) -> &::std::option::Option<crate::types::H264UnregisteredSeiTimecode> {
         &self.unregistered_sei_timecode
     }
+    /// Specify how SPS and PPS NAL units are written in your output MP4 container, according to ISO/IEC 14496-15. If the location of these parameters doesn't matter in your workflow: Keep the default value, AVC1. MediaConvert writes SPS and PPS NAL units in the sample description ('stsd') box (but not into samples directly). To write SPS and PPS NAL units directly into samples (but not in the 'stsd' box): Choose AVC3. When you do, note that your output might not play properly with some downstream systems or players.
+    pub fn write_mp4_packaging_type(mut self, input: crate::types::H264WriteMp4PackagingType) -> Self {
+        self.write_mp4_packaging_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// Specify how SPS and PPS NAL units are written in your output MP4 container, according to ISO/IEC 14496-15. If the location of these parameters doesn't matter in your workflow: Keep the default value, AVC1. MediaConvert writes SPS and PPS NAL units in the sample description ('stsd') box (but not into samples directly). To write SPS and PPS NAL units directly into samples (but not in the 'stsd' box): Choose AVC3. When you do, note that your output might not play properly with some downstream systems or players.
+    pub fn set_write_mp4_packaging_type(mut self, input: ::std::option::Option<crate::types::H264WriteMp4PackagingType>) -> Self {
+        self.write_mp4_packaging_type = input;
+        self
+    }
+    /// Specify how SPS and PPS NAL units are written in your output MP4 container, according to ISO/IEC 14496-15. If the location of these parameters doesn't matter in your workflow: Keep the default value, AVC1. MediaConvert writes SPS and PPS NAL units in the sample description ('stsd') box (but not into samples directly). To write SPS and PPS NAL units directly into samples (but not in the 'stsd' box): Choose AVC3. When you do, note that your output might not play properly with some downstream systems or players.
+    pub fn get_write_mp4_packaging_type(&self) -> &::std::option::Option<crate::types::H264WriteMp4PackagingType> {
+        &self.write_mp4_packaging_type
+    }
     /// Consumes the builder and constructs a [`H264Settings`](crate::types::H264Settings).
     pub fn build(self) -> crate::types::H264Settings {
         crate::types::H264Settings {
@@ -991,6 +1012,7 @@ impl H264SettingsBuilder {
             telecine: self.telecine,
             temporal_adaptive_quantization: self.temporal_adaptive_quantization,
             unregistered_sei_timecode: self.unregistered_sei_timecode,
+            write_mp4_packaging_type: self.write_mp4_packaging_type,
         }
     }
 }

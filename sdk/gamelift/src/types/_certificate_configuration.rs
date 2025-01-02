@@ -8,9 +8,9 @@ pub struct CertificateConfiguration {
     /// <p>Valid values include:</p>
     /// <ul>
     /// <li>
-    /// <p><b>GENERATED</b> -- Generate a TLS/SSL certificate for this fleet.</p></li>
+    /// <p><b>GENERATED</b> - Generate a TLS/SSL certificate for this fleet.</p></li>
     /// <li>
-    /// <p><b>DISABLED</b> -- (default) Do not generate a TLS/SSL certificate for this fleet.</p></li>
+    /// <p><b>DISABLED</b> - (default) Do not generate a TLS/SSL certificate for this fleet.</p></li>
     /// </ul>
     pub certificate_type: ::std::option::Option<crate::types::CertificateType>,
 }
@@ -19,9 +19,9 @@ impl CertificateConfiguration {
     /// <p>Valid values include:</p>
     /// <ul>
     /// <li>
-    /// <p><b>GENERATED</b> -- Generate a TLS/SSL certificate for this fleet.</p></li>
+    /// <p><b>GENERATED</b> - Generate a TLS/SSL certificate for this fleet.</p></li>
     /// <li>
-    /// <p><b>DISABLED</b> -- (default) Do not generate a TLS/SSL certificate for this fleet.</p></li>
+    /// <p><b>DISABLED</b> - (default) Do not generate a TLS/SSL certificate for this fleet.</p></li>
     /// </ul>
     pub fn certificate_type(&self) -> ::std::option::Option<&crate::types::CertificateType> {
         self.certificate_type.as_ref()
@@ -45,9 +45,9 @@ impl CertificateConfigurationBuilder {
     /// <p>Valid values include:</p>
     /// <ul>
     /// <li>
-    /// <p><b>GENERATED</b> -- Generate a TLS/SSL certificate for this fleet.</p></li>
+    /// <p><b>GENERATED</b> - Generate a TLS/SSL certificate for this fleet.</p></li>
     /// <li>
-    /// <p><b>DISABLED</b> -- (default) Do not generate a TLS/SSL certificate for this fleet.</p></li>
+    /// <p><b>DISABLED</b> - (default) Do not generate a TLS/SSL certificate for this fleet.</p></li>
     /// </ul>
     /// This field is required.
     pub fn certificate_type(mut self, input: crate::types::CertificateType) -> Self {
@@ -58,9 +58,9 @@ impl CertificateConfigurationBuilder {
     /// <p>Valid values include:</p>
     /// <ul>
     /// <li>
-    /// <p><b>GENERATED</b> -- Generate a TLS/SSL certificate for this fleet.</p></li>
+    /// <p><b>GENERATED</b> - Generate a TLS/SSL certificate for this fleet.</p></li>
     /// <li>
-    /// <p><b>DISABLED</b> -- (default) Do not generate a TLS/SSL certificate for this fleet.</p></li>
+    /// <p><b>DISABLED</b> - (default) Do not generate a TLS/SSL certificate for this fleet.</p></li>
     /// </ul>
     pub fn set_certificate_type(mut self, input: ::std::option::Option<crate::types::CertificateType>) -> Self {
         self.certificate_type = input;
@@ -70,9 +70,9 @@ impl CertificateConfigurationBuilder {
     /// <p>Valid values include:</p>
     /// <ul>
     /// <li>
-    /// <p><b>GENERATED</b> -- Generate a TLS/SSL certificate for this fleet.</p></li>
+    /// <p><b>GENERATED</b> - Generate a TLS/SSL certificate for this fleet.</p></li>
     /// <li>
-    /// <p><b>DISABLED</b> -- (default) Do not generate a TLS/SSL certificate for this fleet.</p></li>
+    /// <p><b>DISABLED</b> - (default) Do not generate a TLS/SSL certificate for this fleet.</p></li>
     /// </ul>
     pub fn get_certificate_type(&self) -> &::std::option::Option<crate::types::CertificateType> {
         &self.certificate_type

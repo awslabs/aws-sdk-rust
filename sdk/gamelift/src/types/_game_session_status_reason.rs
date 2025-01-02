@@ -12,7 +12,9 @@
 /// ```text
 /// # let gamesessionstatusreason = unimplemented!();
 /// match gamesessionstatusreason {
+///     GameSessionStatusReason::ForceTerminated => { /* ... */ },
 ///     GameSessionStatusReason::Interrupted => { /* ... */ },
+///     GameSessionStatusReason::TriggeredOnProcessTerminate => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -42,7 +44,11 @@
 )]
 pub enum GameSessionStatusReason {
     #[allow(missing_docs)] // documentation missing in model
+    ForceTerminated,
+    #[allow(missing_docs)] // documentation missing in model
     Interrupted,
+    #[allow(missing_docs)] // documentation missing in model
+    TriggeredOnProcessTerminate,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -50,7 +56,9 @@ pub enum GameSessionStatusReason {
 impl ::std::convert::From<&str> for GameSessionStatusReason {
     fn from(s: &str) -> Self {
         match s {
+            "FORCE_TERMINATED" => GameSessionStatusReason::ForceTerminated,
             "INTERRUPTED" => GameSessionStatusReason::Interrupted,
+            "TRIGGERED_ON_PROCESS_TERMINATE" => GameSessionStatusReason::TriggeredOnProcessTerminate,
             other => GameSessionStatusReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -66,13 +74,15 @@ impl GameSessionStatusReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            GameSessionStatusReason::ForceTerminated => "FORCE_TERMINATED",
             GameSessionStatusReason::Interrupted => "INTERRUPTED",
+            GameSessionStatusReason::TriggeredOnProcessTerminate => "TRIGGERED_ON_PROCESS_TERMINATE",
             GameSessionStatusReason::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["INTERRUPTED"]
+        &["FORCE_TERMINATED", "INTERRUPTED", "TRIGGERED_ON_PROCESS_TERMINATE"]
     }
 }
 impl ::std::convert::AsRef<str> for GameSessionStatusReason {
@@ -95,7 +105,9 @@ impl GameSessionStatusReason {
 impl ::std::fmt::Display for GameSessionStatusReason {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            GameSessionStatusReason::ForceTerminated => write!(f, "FORCE_TERMINATED"),
             GameSessionStatusReason::Interrupted => write!(f, "INTERRUPTED"),
+            GameSessionStatusReason::TriggeredOnProcessTerminate => write!(f, "TRIGGERED_ON_PROCESS_TERMINATE"),
             GameSessionStatusReason::Unknown(value) => write!(f, "{}", value),
         }
     }

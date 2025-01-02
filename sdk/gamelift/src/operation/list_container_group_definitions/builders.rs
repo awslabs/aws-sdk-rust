@@ -23,7 +23,7 @@ impl crate::operation::list_container_group_definitions::builders::ListContainer
 /// Fluent builder constructing a request to `ListContainerGroupDefinitions`.
 ///
 /// <p>Retrieves container group definitions for the Amazon Web Services account and Amazon Web Services Region. Use the pagination parameters to retrieve results in a set of sequential pages.</p>
-/// <p>This operation returns only the latest version of each definition. To retrieve all versions of a container group definition, use <code>ListContainerGroupDefinitionVersions</code>.</p>
+/// <p>This operation returns only the latest version of each definition. To retrieve all versions of a container group definition, use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListContainerGroupDefinitionVersions.html">ListContainerGroupDefinitionVersions</a>.</p>
 /// <p><b>Request options:</b></p>
 /// <ul>
 /// <li>
@@ -35,11 +35,6 @@ impl crate::operation::list_container_group_definitions::builders::ListContainer
 /// <p>If successful, this operation returns the complete properties of a set of container group definition versions that match the request.</p><note>
 /// <p>This operation returns the list of container group definitions in no particular order.</p>
 /// </note>
-/// <p><b>Learn more</b></p>
-/// <ul>
-/// <li>
-/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/containers-create-groups.html">Manage a container group definition</a></p></li>
-/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListContainerGroupDefinitionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

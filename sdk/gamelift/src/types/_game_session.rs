@@ -31,7 +31,16 @@ pub struct GameSession {
     pub maximum_player_session_count: ::std::option::Option<i32>,
     /// <p>Current status of the game session. A game session must have an <code>ACTIVE</code> status to have player sessions.</p>
     pub status: ::std::option::Option<crate::types::GameSessionStatus>,
-    /// <p>Provides additional information about game session status. <code>INTERRUPTED</code> indicates that the game session was hosted on a spot instance that was reclaimed, causing the active game session to be terminated.</p>
+    /// <p>Provides additional information about game session status.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>INTERRUPTED</code> -- The game session was hosted on an EC2 Spot instance that was reclaimed, causing the active game session to be stopped.</p></li>
+    /// <li>
+    /// <p><code>TRIGGERED_ON_PROCESS_TERMINATE</code> – The game session was stopped by calling <code>TerminateGameSession</code> with the termination mode <code>TRIGGER_ON_PROCESS_TERMINATE</code>.</p></li>
+    /// <li>
+    /// <p><code>FORCE_TERMINATED</code> – The game session was stopped by calling <code>TerminateGameSession</code> with the termination mode <code>FORCE_TERMINATE</code>.</p></li>
+    /// </ul>
+    /// <p></p>
     pub status_reason: ::std::option::Option<crate::types::GameSessionStatusReason>,
     /// <p>A set of key-value pairs that can store custom data in a game session. For example: <code>{"Key": "difficulty", "Value": "novice"}</code>.</p>
     pub game_properties: ::std::option::Option<::std::vec::Vec<crate::types::GameProperty>>,
@@ -55,7 +64,7 @@ pub struct GameSession {
     pub dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The port number for the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and port number.</p>
     pub port: ::std::option::Option<i32>,
-    /// <p>Indicates whether or not the game session is accepting new players.</p>
+    /// <p>Indicates whether the game session is accepting new players.</p>
     pub player_session_creation_policy: ::std::option::Option<crate::types::PlayerSessionCreationPolicy>,
     /// <p>A unique identifier for a player. This ID is used to enforce a resource protection policy (if one exists), that limits the number of game sessions a player can create.</p>
     pub creator_id: ::std::option::Option<::std::string::String>,
@@ -109,7 +118,16 @@ impl GameSession {
     pub fn status(&self) -> ::std::option::Option<&crate::types::GameSessionStatus> {
         self.status.as_ref()
     }
-    /// <p>Provides additional information about game session status. <code>INTERRUPTED</code> indicates that the game session was hosted on a spot instance that was reclaimed, causing the active game session to be terminated.</p>
+    /// <p>Provides additional information about game session status.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>INTERRUPTED</code> -- The game session was hosted on an EC2 Spot instance that was reclaimed, causing the active game session to be stopped.</p></li>
+    /// <li>
+    /// <p><code>TRIGGERED_ON_PROCESS_TERMINATE</code> – The game session was stopped by calling <code>TerminateGameSession</code> with the termination mode <code>TRIGGER_ON_PROCESS_TERMINATE</code>.</p></li>
+    /// <li>
+    /// <p><code>FORCE_TERMINATED</code> – The game session was stopped by calling <code>TerminateGameSession</code> with the termination mode <code>FORCE_TERMINATE</code>.</p></li>
+    /// </ul>
+    /// <p></p>
     pub fn status_reason(&self) -> ::std::option::Option<&crate::types::GameSessionStatusReason> {
         self.status_reason.as_ref()
     }
@@ -145,7 +163,7 @@ impl GameSession {
     pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
-    /// <p>Indicates whether or not the game session is accepting new players.</p>
+    /// <p>Indicates whether the game session is accepting new players.</p>
     pub fn player_session_creation_policy(&self) -> ::std::option::Option<&crate::types::PlayerSessionCreationPolicy> {
         self.player_session_creation_policy.as_ref()
     }
@@ -367,17 +385,44 @@ impl GameSessionBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::GameSessionStatus> {
         &self.status
     }
-    /// <p>Provides additional information about game session status. <code>INTERRUPTED</code> indicates that the game session was hosted on a spot instance that was reclaimed, causing the active game session to be terminated.</p>
+    /// <p>Provides additional information about game session status.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>INTERRUPTED</code> -- The game session was hosted on an EC2 Spot instance that was reclaimed, causing the active game session to be stopped.</p></li>
+    /// <li>
+    /// <p><code>TRIGGERED_ON_PROCESS_TERMINATE</code> – The game session was stopped by calling <code>TerminateGameSession</code> with the termination mode <code>TRIGGER_ON_PROCESS_TERMINATE</code>.</p></li>
+    /// <li>
+    /// <p><code>FORCE_TERMINATED</code> – The game session was stopped by calling <code>TerminateGameSession</code> with the termination mode <code>FORCE_TERMINATE</code>.</p></li>
+    /// </ul>
+    /// <p></p>
     pub fn status_reason(mut self, input: crate::types::GameSessionStatusReason) -> Self {
         self.status_reason = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides additional information about game session status. <code>INTERRUPTED</code> indicates that the game session was hosted on a spot instance that was reclaimed, causing the active game session to be terminated.</p>
+    /// <p>Provides additional information about game session status.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>INTERRUPTED</code> -- The game session was hosted on an EC2 Spot instance that was reclaimed, causing the active game session to be stopped.</p></li>
+    /// <li>
+    /// <p><code>TRIGGERED_ON_PROCESS_TERMINATE</code> – The game session was stopped by calling <code>TerminateGameSession</code> with the termination mode <code>TRIGGER_ON_PROCESS_TERMINATE</code>.</p></li>
+    /// <li>
+    /// <p><code>FORCE_TERMINATED</code> – The game session was stopped by calling <code>TerminateGameSession</code> with the termination mode <code>FORCE_TERMINATE</code>.</p></li>
+    /// </ul>
+    /// <p></p>
     pub fn set_status_reason(mut self, input: ::std::option::Option<crate::types::GameSessionStatusReason>) -> Self {
         self.status_reason = input;
         self
     }
-    /// <p>Provides additional information about game session status. <code>INTERRUPTED</code> indicates that the game session was hosted on a spot instance that was reclaimed, causing the active game session to be terminated.</p>
+    /// <p>Provides additional information about game session status.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>INTERRUPTED</code> -- The game session was hosted on an EC2 Spot instance that was reclaimed, causing the active game session to be stopped.</p></li>
+    /// <li>
+    /// <p><code>TRIGGERED_ON_PROCESS_TERMINATE</code> – The game session was stopped by calling <code>TerminateGameSession</code> with the termination mode <code>TRIGGER_ON_PROCESS_TERMINATE</code>.</p></li>
+    /// <li>
+    /// <p><code>FORCE_TERMINATED</code> – The game session was stopped by calling <code>TerminateGameSession</code> with the termination mode <code>FORCE_TERMINATE</code>.</p></li>
+    /// </ul>
+    /// <p></p>
     pub fn get_status_reason(&self) -> &::std::option::Option<crate::types::GameSessionStatusReason> {
         &self.status_reason
     }
@@ -485,17 +530,17 @@ impl GameSessionBuilder {
     pub fn get_port(&self) -> &::std::option::Option<i32> {
         &self.port
     }
-    /// <p>Indicates whether or not the game session is accepting new players.</p>
+    /// <p>Indicates whether the game session is accepting new players.</p>
     pub fn player_session_creation_policy(mut self, input: crate::types::PlayerSessionCreationPolicy) -> Self {
         self.player_session_creation_policy = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether or not the game session is accepting new players.</p>
+    /// <p>Indicates whether the game session is accepting new players.</p>
     pub fn set_player_session_creation_policy(mut self, input: ::std::option::Option<crate::types::PlayerSessionCreationPolicy>) -> Self {
         self.player_session_creation_policy = input;
         self
     }
-    /// <p>Indicates whether or not the game session is accepting new players.</p>
+    /// <p>Indicates whether the game session is accepting new players.</p>
     pub fn get_player_session_creation_policy(&self) -> &::std::option::Option<crate::types::PlayerSessionCreationPolicy> {
         &self.player_session_creation_policy
     }
