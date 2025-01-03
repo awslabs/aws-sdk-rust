@@ -21,7 +21,7 @@ version = "1.2.1"
 [dependencies.aws-runtime]
 path = "../aws-runtime"
 features = ["event-stream", "http-02x"]
-version = "1.5.2"
+version = "1.5.3"
 
 [dependencies.aws-sigv4]
 path = "../aws-sigv4"
@@ -124,7 +124,7 @@ version = "1.12.0"
 [dev-dependencies.aws-config]
 path = "../aws-config"
 features = ["behavior-version-latest"]
-version = "1.5.12"
+version = "1.5.13"
 
 [dev-dependencies.aws-credential-types]
 path = "../aws-credential-types"
@@ -134,7 +134,7 @@ version = "1.2.1"
 [dev-dependencies.aws-runtime]
 path = "../aws-runtime"
 features = ["test-util"]
-version = "1.5.2"
+version = "1.5.3"
 
 [dev-dependencies.aws-smithy-async]
 path = "../aws-smithy-async"

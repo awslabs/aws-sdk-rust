@@ -204,7 +204,7 @@ impl<'a> Parser<'a> {
         let line = prepare_line(line, false);
         let profile_name = line
             .strip_prefix('[')
-            .ok_or_else(|| self.make_error("Profile definition must start with ]"))?
+            .ok_or_else(|| self.make_error("Profile definition must start with '['"))?
             .strip_suffix(']')
             .ok_or_else(|| self.make_error("Profile definition must end with ']'"))?;
         if !self.data.contains_key(profile_name) {

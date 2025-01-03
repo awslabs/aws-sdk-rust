@@ -105,7 +105,7 @@ impl TokenProviderChain {
 }
 
 impl ProvideToken for TokenProviderChain {
-    fn provide_token<'a>(&'a self) -> future::ProvideToken<'_>
+    fn provide_token<'a>(&'a self) -> future::ProvideToken<'a>
     where
         Self: 'a,
     {

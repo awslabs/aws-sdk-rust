@@ -314,7 +314,7 @@ impl Inner {
 }
 
 impl ProvideCredentials for AssumeRoleProvider {
-    fn provide_credentials<'a>(&'a self) -> future::ProvideCredentials<'_>
+    fn provide_credentials<'a>(&'a self) -> future::ProvideCredentials<'a>
     where
         Self: 'a,
     {

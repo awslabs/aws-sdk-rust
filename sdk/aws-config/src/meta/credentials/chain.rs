@@ -114,7 +114,7 @@ impl CredentialsProviderChain {
 }
 
 impl ProvideCredentials for CredentialsProviderChain {
-    fn provide_credentials<'a>(&'a self) -> future::ProvideCredentials<'_>
+    fn provide_credentials<'a>(&'a self) -> future::ProvideCredentials<'a>
     where
         Self: 'a,
     {
