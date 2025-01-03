@@ -2601,6 +2601,10 @@ source_hash = '8fda8b946a2401fe6cbf145dc3ab8e680535b4f84b151678165f9c0e39b5db02'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '0f3fb1d32b4ecfb0fb367f90d43fbd791068180a9d343827ad5caaf7e31c00d2'
+
+[release]
+tag = 'release-2025-01-03'
+
 [release.crates]
 aws-config = '1.5.13'
 aws-runtime = '1.5.3'
