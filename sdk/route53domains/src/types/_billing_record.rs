@@ -8,7 +8,7 @@ pub struct BillingRecord {
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The operation that you were charged for.</p>
     pub operation: ::std::option::Option<crate::types::OperationType>,
-    /// <p>The ID of the invoice that is associated with the billing record.</p>
+    /// <p>Deprecated property. This field is retained in report structure for backwards compatibility, but will appear blank.</p>
     pub invoice_id: ::std::option::Option<::std::string::String>,
     /// <p>The date that the operation was billed, in Unix format.</p>
     pub bill_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -25,7 +25,7 @@ impl BillingRecord {
     pub fn operation(&self) -> ::std::option::Option<&crate::types::OperationType> {
         self.operation.as_ref()
     }
-    /// <p>The ID of the invoice that is associated with the billing record.</p>
+    /// <p>Deprecated property. This field is retained in report structure for backwards compatibility, but will appear blank.</p>
     pub fn invoice_id(&self) -> ::std::option::Option<&str> {
         self.invoice_id.as_deref()
     }
@@ -85,17 +85,17 @@ impl BillingRecordBuilder {
     pub fn get_operation(&self) -> &::std::option::Option<crate::types::OperationType> {
         &self.operation
     }
-    /// <p>The ID of the invoice that is associated with the billing record.</p>
+    /// <p>Deprecated property. This field is retained in report structure for backwards compatibility, but will appear blank.</p>
     pub fn invoice_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.invoice_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the invoice that is associated with the billing record.</p>
+    /// <p>Deprecated property. This field is retained in report structure for backwards compatibility, but will appear blank.</p>
     pub fn set_invoice_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.invoice_id = input;
         self
     }
-    /// <p>The ID of the invoice that is associated with the billing record.</p>
+    /// <p>Deprecated property. This field is retained in report structure for backwards compatibility, but will appear blank.</p>
     pub fn get_invoice_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.invoice_id
     }
