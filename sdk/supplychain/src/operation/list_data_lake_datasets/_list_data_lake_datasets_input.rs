@@ -6,12 +6,12 @@
 pub struct ListDataLakeDatasetsInput {
     /// <p>The Amazon Web Services Supply Chain instance identifier.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
-    /// <p>The namespace of the dataset. The available values are:</p>
+    /// <p>The name space of the dataset. The available values are:</p>
     /// <ul>
     /// <li>
-    /// <p>asc: for <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html"> AWS Supply Chain supported datasets </a>.</p></li>
+    /// <p><b>asc</b> - For information on the Amazon Web Services Supply Chain supported datasets see <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html</a>.</p></li>
     /// <li>
-    /// <p>default: for datasets with custom user-defined schemas.</p></li>
+    /// <p><b>default</b> - For datasets with custom user-defined schemas.</p></li>
     /// </ul>
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The pagination token to fetch next page of datasets.</p>
@@ -24,12 +24,12 @@ impl ListDataLakeDatasetsInput {
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The namespace of the dataset. The available values are:</p>
+    /// <p>The name space of the dataset. The available values are:</p>
     /// <ul>
     /// <li>
-    /// <p>asc: for <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html"> AWS Supply Chain supported datasets </a>.</p></li>
+    /// <p><b>asc</b> - For information on the Amazon Web Services Supply Chain supported datasets see <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html</a>.</p></li>
     /// <li>
-    /// <p>default: for datasets with custom user-defined schemas.</p></li>
+    /// <p><b>default</b> - For datasets with custom user-defined schemas.</p></li>
     /// </ul>
     pub fn namespace(&self) -> ::std::option::Option<&str> {
         self.namespace.as_deref()
@@ -75,35 +75,35 @@ impl ListDataLakeDatasetsInputBuilder {
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }
-    /// <p>The namespace of the dataset. The available values are:</p>
+    /// <p>The name space of the dataset. The available values are:</p>
     /// <ul>
     /// <li>
-    /// <p>asc: for <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html"> AWS Supply Chain supported datasets </a>.</p></li>
+    /// <p><b>asc</b> - For information on the Amazon Web Services Supply Chain supported datasets see <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html</a>.</p></li>
     /// <li>
-    /// <p>default: for datasets with custom user-defined schemas.</p></li>
+    /// <p><b>default</b> - For datasets with custom user-defined schemas.</p></li>
     /// </ul>
     /// This field is required.
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The namespace of the dataset. The available values are:</p>
+    /// <p>The name space of the dataset. The available values are:</p>
     /// <ul>
     /// <li>
-    /// <p>asc: for <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html"> AWS Supply Chain supported datasets </a>.</p></li>
+    /// <p><b>asc</b> - For information on the Amazon Web Services Supply Chain supported datasets see <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html</a>.</p></li>
     /// <li>
-    /// <p>default: for datasets with custom user-defined schemas.</p></li>
+    /// <p><b>default</b> - For datasets with custom user-defined schemas.</p></li>
     /// </ul>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace = input;
         self
     }
-    /// <p>The namespace of the dataset. The available values are:</p>
+    /// <p>The name space of the dataset. The available values are:</p>
     /// <ul>
     /// <li>
-    /// <p>asc: for <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html"> AWS Supply Chain supported datasets </a>.</p></li>
+    /// <p><b>asc</b> - For information on the Amazon Web Services Supply Chain supported datasets see <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html</a>.</p></li>
     /// <li>
-    /// <p>default: for datasets with custom user-defined schemas.</p></li>
+    /// <p><b>default</b> - For datasets with custom user-defined schemas.</p></li>
     /// </ul>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         &self.namespace

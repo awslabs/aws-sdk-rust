@@ -136,17 +136,17 @@ impl SendDataIntegrationEventFluentBuilder {
     pub fn get_event_type(&self) -> &::std::option::Option<crate::types::DataIntegrationEventType> {
         self.inner.get_event_type()
     }
-    /// <p>The data payload of the event. For more information on the data schema to use, see <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">Data entities supported in AWS Supply Chain </a>.</p>
+    /// <p>The data payload of the event. For more information on the data schema to use, see <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">Data entities supported in AWS Supply Chain</a>.</p>
     pub fn data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data(input.into());
         self
     }
-    /// <p>The data payload of the event. For more information on the data schema to use, see <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">Data entities supported in AWS Supply Chain </a>.</p>
+    /// <p>The data payload of the event. For more information on the data schema to use, see <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">Data entities supported in AWS Supply Chain</a>.</p>
     pub fn set_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data(input);
         self
     }
-    /// <p>The data payload of the event. For more information on the data schema to use, see <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">Data entities supported in AWS Supply Chain </a>.</p>
+    /// <p>The data payload of the event. For more information on the data schema to use, see <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">Data entities supported in AWS Supply Chain</a>.</p>
     pub fn get_data(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_data()
     }

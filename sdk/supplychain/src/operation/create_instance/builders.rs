@@ -151,6 +151,20 @@ impl CreateInstanceFluentBuilder {
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kms_key_arn()
     }
+    /// <p>The DNS subdomain of the web app. This would be "example" in the URL "example.scn.global.on.aws". You can set this to a custom value, as long as the domain isn't already being used by someone else. The name may only include alphanumeric characters and hyphens.</p>
+    pub fn web_app_dns_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.web_app_dns_domain(input.into());
+        self
+    }
+    /// <p>The DNS subdomain of the web app. This would be "example" in the URL "example.scn.global.on.aws". You can set this to a custom value, as long as the domain isn't already being used by someone else. The name may only include alphanumeric characters and hyphens.</p>
+    pub fn set_web_app_dns_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_web_app_dns_domain(input);
+        self
+    }
+    /// <p>The DNS subdomain of the web app. This would be "example" in the URL "example.scn.global.on.aws". You can set this to a custom value, as long as the domain isn't already being used by someone else. The name may only include alphanumeric characters and hyphens.</p>
+    pub fn get_web_app_dns_domain(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_web_app_dns_domain()
+    }
     ///
     /// Adds a key-value pair to `tags`.
     ///

@@ -168,17 +168,17 @@ impl CreateDataLakeDatasetFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The custom schema of the data lake dataset and is only required when the name space is <i>default</i>.</p>
+    /// <p>The custom schema of the data lake dataset and is only required when the name space is <b>default</b>.</p>
     pub fn schema(mut self, input: crate::types::DataLakeDatasetSchema) -> Self {
         self.inner = self.inner.schema(input);
         self
     }
-    /// <p>The custom schema of the data lake dataset and is only required when the name space is <i>default</i>.</p>
+    /// <p>The custom schema of the data lake dataset and is only required when the name space is <b>default</b>.</p>
     pub fn set_schema(mut self, input: ::std::option::Option<crate::types::DataLakeDatasetSchema>) -> Self {
         self.inner = self.inner.set_schema(input);
         self
     }
-    /// <p>The custom schema of the data lake dataset and is only required when the name space is <i>default</i>.</p>
+    /// <p>The custom schema of the data lake dataset and is only required when the name space is <b>default</b>.</p>
     pub fn get_schema(&self) -> &::std::option::Option<crate::types::DataLakeDatasetSchema> {
         self.inner.get_schema()
     }

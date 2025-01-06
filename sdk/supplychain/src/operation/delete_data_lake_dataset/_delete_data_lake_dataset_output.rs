@@ -6,7 +6,7 @@
 pub struct DeleteDataLakeDatasetOutput {
     /// <p>The AWS Supply Chain instance identifier.</p>
     pub instance_id: ::std::string::String,
-    /// <p>The namespace of deleted dataset.</p>
+    /// <p>The name space of deleted dataset.</p>
     pub namespace: ::std::string::String,
     /// <p>The name of deleted dataset.</p>
     pub name: ::std::string::String,
@@ -18,7 +18,7 @@ impl DeleteDataLakeDatasetOutput {
         use std::ops::Deref;
         self.instance_id.deref()
     }
-    /// <p>The namespace of deleted dataset.</p>
+    /// <p>The name space of deleted dataset.</p>
     pub fn namespace(&self) -> &str {
         use std::ops::Deref;
         self.namespace.deref()
@@ -66,18 +66,18 @@ impl DeleteDataLakeDatasetOutputBuilder {
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }
-    /// <p>The namespace of deleted dataset.</p>
+    /// <p>The name space of deleted dataset.</p>
     /// This field is required.
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The namespace of deleted dataset.</p>
+    /// <p>The name space of deleted dataset.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace = input;
         self
     }
-    /// <p>The namespace of deleted dataset.</p>
+    /// <p>The name space of deleted dataset.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         &self.namespace
     }

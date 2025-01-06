@@ -16,7 +16,7 @@ pub struct CreateDataLakeDatasetInput {
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The name of the dataset. For <b>asc</b> name space, the name must be one of the supported data entities under <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html</a>.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The custom schema of the data lake dataset and is only required when the name space is <i>default</i>.</p>
+    /// <p>The custom schema of the data lake dataset and is only required when the name space is <b>default</b>.</p>
     pub schema: ::std::option::Option<crate::types::DataLakeDatasetSchema>,
     /// <p>The description of the dataset.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -42,7 +42,7 @@ impl CreateDataLakeDatasetInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The custom schema of the data lake dataset and is only required when the name space is <i>default</i>.</p>
+    /// <p>The custom schema of the data lake dataset and is only required when the name space is <b>default</b>.</p>
     pub fn schema(&self) -> ::std::option::Option<&crate::types::DataLakeDatasetSchema> {
         self.schema.as_ref()
     }
@@ -137,17 +137,17 @@ impl CreateDataLakeDatasetInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The custom schema of the data lake dataset and is only required when the name space is <i>default</i>.</p>
+    /// <p>The custom schema of the data lake dataset and is only required when the name space is <b>default</b>.</p>
     pub fn schema(mut self, input: crate::types::DataLakeDatasetSchema) -> Self {
         self.schema = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The custom schema of the data lake dataset and is only required when the name space is <i>default</i>.</p>
+    /// <p>The custom schema of the data lake dataset and is only required when the name space is <b>default</b>.</p>
     pub fn set_schema(mut self, input: ::std::option::Option<crate::types::DataLakeDatasetSchema>) -> Self {
         self.schema = input;
         self
     }
-    /// <p>The custom schema of the data lake dataset and is only required when the name space is <i>default</i>.</p>
+    /// <p>The custom schema of the data lake dataset and is only required when the name space is <b>default</b>.</p>
     pub fn get_schema(&self) -> &::std::option::Option<crate::types::DataLakeDatasetSchema> {
         &self.schema
     }

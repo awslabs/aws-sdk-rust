@@ -8,7 +8,7 @@ pub struct SendDataIntegrationEventInput {
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The data event type.</p>
     pub event_type: ::std::option::Option<crate::types::DataIntegrationEventType>,
-    /// <p>The data payload of the event. For more information on the data schema to use, see <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">Data entities supported in AWS Supply Chain </a>.</p>
+    /// <p>The data payload of the event. For more information on the data schema to use, see <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">Data entities supported in AWS Supply Chain</a>.</p>
     pub data: ::std::option::Option<::std::string::String>,
     /// <p>Event identifier (for example, orderId for InboundOrder) used for data sharing or partitioning.</p>
     pub event_group_id: ::std::option::Option<::std::string::String>,
@@ -26,7 +26,7 @@ impl SendDataIntegrationEventInput {
     pub fn event_type(&self) -> ::std::option::Option<&crate::types::DataIntegrationEventType> {
         self.event_type.as_ref()
     }
-    /// <p>The data payload of the event. For more information on the data schema to use, see <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">Data entities supported in AWS Supply Chain </a>.</p>
+    /// <p>The data payload of the event. For more information on the data schema to use, see <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">Data entities supported in AWS Supply Chain</a>.</p>
     pub fn data(&self) -> ::std::option::Option<&str> {
         self.data.as_deref()
     }
@@ -104,18 +104,18 @@ impl SendDataIntegrationEventInputBuilder {
     pub fn get_event_type(&self) -> &::std::option::Option<crate::types::DataIntegrationEventType> {
         &self.event_type
     }
-    /// <p>The data payload of the event. For more information on the data schema to use, see <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">Data entities supported in AWS Supply Chain </a>.</p>
+    /// <p>The data payload of the event. For more information on the data schema to use, see <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">Data entities supported in AWS Supply Chain</a>.</p>
     /// This field is required.
     pub fn data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The data payload of the event. For more information on the data schema to use, see <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">Data entities supported in AWS Supply Chain </a>.</p>
+    /// <p>The data payload of the event. For more information on the data schema to use, see <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">Data entities supported in AWS Supply Chain</a>.</p>
     pub fn set_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data = input;
         self
     }
-    /// <p>The data payload of the event. For more information on the data schema to use, see <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">Data entities supported in AWS Supply Chain </a>.</p>
+    /// <p>The data payload of the event. For more information on the data schema to use, see <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">Data entities supported in AWS Supply Chain</a>.</p>
     pub fn get_data(&self) -> &::std::option::Option<::std::string::String> {
         &self.data
     }

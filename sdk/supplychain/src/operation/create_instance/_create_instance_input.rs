@@ -10,6 +10,8 @@ pub struct CreateInstanceInput {
     pub instance_description: ::std::option::Option<::std::string::String>,
     /// <p>The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon Web Services owned KMS key. If you don't provide anything here, AWS Supply Chain uses the Amazon Web Services owned KMS key.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The DNS subdomain of the web app. This would be "example" in the URL "example.scn.global.on.aws". You can set this to a custom value, as long as the domain isn't already being used by someone else. The name may only include alphanumeric characters and hyphens.</p>
+    pub web_app_dns_domain: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services tags of an instance to be created.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The client token for idempotency.</p>
@@ -27,6 +29,10 @@ impl CreateInstanceInput {
     /// <p>The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon Web Services owned KMS key. If you don't provide anything here, AWS Supply Chain uses the Amazon Web Services owned KMS key.</p>
     pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.kms_key_arn.as_deref()
+    }
+    /// <p>The DNS subdomain of the web app. This would be "example" in the URL "example.scn.global.on.aws". You can set this to a custom value, as long as the domain isn't already being used by someone else. The name may only include alphanumeric characters and hyphens.</p>
+    pub fn web_app_dns_domain(&self) -> ::std::option::Option<&str> {
+        self.web_app_dns_domain.as_deref()
     }
     /// <p>The Amazon Web Services tags of an instance to be created.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -51,6 +57,7 @@ pub struct CreateInstanceInputBuilder {
     pub(crate) instance_name: ::std::option::Option<::std::string::String>,
     pub(crate) instance_description: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) web_app_dns_domain: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
@@ -97,6 +104,20 @@ impl CreateInstanceInputBuilder {
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_arn
     }
+    /// <p>The DNS subdomain of the web app. This would be "example" in the URL "example.scn.global.on.aws". You can set this to a custom value, as long as the domain isn't already being used by someone else. The name may only include alphanumeric characters and hyphens.</p>
+    pub fn web_app_dns_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.web_app_dns_domain = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The DNS subdomain of the web app. This would be "example" in the URL "example.scn.global.on.aws". You can set this to a custom value, as long as the domain isn't already being used by someone else. The name may only include alphanumeric characters and hyphens.</p>
+    pub fn set_web_app_dns_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.web_app_dns_domain = input;
+        self
+    }
+    /// <p>The DNS subdomain of the web app. This would be "example" in the URL "example.scn.global.on.aws". You can set this to a custom value, as long as the domain isn't already being used by someone else. The name may only include alphanumeric characters and hyphens.</p>
+    pub fn get_web_app_dns_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.web_app_dns_domain
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -139,6 +160,7 @@ impl CreateInstanceInputBuilder {
             instance_name: self.instance_name,
             instance_description: self.instance_description,
             kms_key_arn: self.kms_key_arn,
+            web_app_dns_domain: self.web_app_dns_domain,
             tags: self.tags,
             client_token: self.client_token,
         })

@@ -25,5 +25,8 @@ pub fn ser_create_instance_input_input(
         }
         object_6.finish();
     }
+    if let Some(var_9) = &input.web_app_dns_domain {
+        object.key("webAppDnsDomain").string(var_9.as_str());
+    }
     Ok(())
 }
