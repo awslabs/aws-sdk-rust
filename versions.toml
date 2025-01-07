@@ -2,7 +2,7 @@ smithy_rs_revision = '019bffeb263d99f82340c2e8e390ee57735cb32f'
 aws_doc_sdk_examples_revision = 'a88cc766fcfcd6a333fdacaf524367c21ee23bf4'
 
 [manual_interventions]
-crates_to_remove = []
+crates_to_remove = ["aws-sdk-iot1clickdevices", "aws-sdk-iot1clickprojects"]
 [crates.aws-config]
 category = 'AwsRuntime'
 version = '1.5.13'
