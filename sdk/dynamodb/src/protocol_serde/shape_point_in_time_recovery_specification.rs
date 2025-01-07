@@ -6,5 +6,11 @@ pub fn ser_point_in_time_recovery_specification(
     {
         object.key("PointInTimeRecoveryEnabled").boolean(input.point_in_time_recovery_enabled);
     }
+    if let Some(var_1) = &input.recovery_period_in_days {
+        object.key("RecoveryPeriodInDays").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+        );
+    }
     Ok(())
 }

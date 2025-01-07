@@ -13,6 +13,7 @@
 /// # let buildtype = unimplemented!();
 /// match buildtype {
 ///     BuildType::Import => { /* ... */ },
+///     BuildType::ImportIso => { /* ... */ },
 ///     BuildType::Scheduled => { /* ... */ },
 ///     BuildType::UserInitiated => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -46,6 +47,8 @@ pub enum BuildType {
     #[allow(missing_docs)] // documentation missing in model
     Import,
     #[allow(missing_docs)] // documentation missing in model
+    ImportIso,
+    #[allow(missing_docs)] // documentation missing in model
     Scheduled,
     #[allow(missing_docs)] // documentation missing in model
     UserInitiated,
@@ -57,6 +60,7 @@ impl ::std::convert::From<&str> for BuildType {
     fn from(s: &str) -> Self {
         match s {
             "IMPORT" => BuildType::Import,
+            "IMPORT_ISO" => BuildType::ImportIso,
             "SCHEDULED" => BuildType::Scheduled,
             "USER_INITIATED" => BuildType::UserInitiated,
             other => BuildType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -75,6 +79,7 @@ impl BuildType {
     pub fn as_str(&self) -> &str {
         match self {
             BuildType::Import => "IMPORT",
+            BuildType::ImportIso => "IMPORT_ISO",
             BuildType::Scheduled => "SCHEDULED",
             BuildType::UserInitiated => "USER_INITIATED",
             BuildType::Unknown(value) => value.as_str(),
@@ -82,7 +87,7 @@ impl BuildType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["IMPORT", "SCHEDULED", "USER_INITIATED"]
+        &["IMPORT", "IMPORT_ISO", "SCHEDULED", "USER_INITIATED"]
     }
 }
 impl ::std::convert::AsRef<str> for BuildType {
@@ -106,6 +111,7 @@ impl ::std::fmt::Display for BuildType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             BuildType::Import => write!(f, "IMPORT"),
+            BuildType::ImportIso => write!(f, "IMPORT_ISO"),
             BuildType::Scheduled => write!(f, "SCHEDULED"),
             BuildType::UserInitiated => write!(f, "USER_INITIATED"),
             BuildType::Unknown(value) => write!(f, "{}", value),

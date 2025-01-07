@@ -49,6 +49,12 @@ where
                                     .transpose()?,
                             );
                         }
+                        "HsmTypeRollbackExpiration" => {
+                            builder = builder.set_hsm_type_rollback_expiration(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?);
+                        }
                         "PreCoPassword" => {
                             builder = builder.set_pre_co_password(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

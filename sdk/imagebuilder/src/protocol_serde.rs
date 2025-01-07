@@ -99,6 +99,8 @@ pub(crate) mod shape_get_workflow_step_execution;
 
 pub(crate) mod shape_import_component;
 
+pub(crate) mod shape_import_disk_image;
+
 pub(crate) mod shape_import_vm_image;
 
 pub(crate) mod shape_list_component_build_versions;
@@ -212,6 +214,8 @@ pub(crate) mod shape_get_marketplace_resource_input;
 pub(crate) mod shape_idempotent_parameter_mismatch_exception;
 
 pub(crate) mod shape_import_component_input;
+
+pub(crate) mod shape_import_disk_image_input;
 
 pub(crate) mod shape_import_vm_image_input;
 

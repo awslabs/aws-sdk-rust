@@ -6,11 +6,17 @@
 pub struct PointInTimeRecoverySpecification {
     /// <p>Indicates whether point in time recovery is enabled (true) or disabled (false) on the table.</p>
     pub point_in_time_recovery_enabled: bool,
+    /// <p>The number of preceding days for which continuous backups are taken and maintained. Your table data is only recoverable to any point-in-time from within the configured recovery period. This parameter is optional. If no value is provided, the value will default to 35.</p>
+    pub recovery_period_in_days: ::std::option::Option<i32>,
 }
 impl PointInTimeRecoverySpecification {
     /// <p>Indicates whether point in time recovery is enabled (true) or disabled (false) on the table.</p>
     pub fn point_in_time_recovery_enabled(&self) -> bool {
         self.point_in_time_recovery_enabled
+    }
+    /// <p>The number of preceding days for which continuous backups are taken and maintained. Your table data is only recoverable to any point-in-time from within the configured recovery period. This parameter is optional. If no value is provided, the value will default to 35.</p>
+    pub fn recovery_period_in_days(&self) -> ::std::option::Option<i32> {
+        self.recovery_period_in_days
     }
 }
 impl PointInTimeRecoverySpecification {
@@ -25,6 +31,7 @@ impl PointInTimeRecoverySpecification {
 #[non_exhaustive]
 pub struct PointInTimeRecoverySpecificationBuilder {
     pub(crate) point_in_time_recovery_enabled: ::std::option::Option<bool>,
+    pub(crate) recovery_period_in_days: ::std::option::Option<i32>,
 }
 impl PointInTimeRecoverySpecificationBuilder {
     /// <p>Indicates whether point in time recovery is enabled (true) or disabled (false) on the table.</p>
@@ -42,6 +49,20 @@ impl PointInTimeRecoverySpecificationBuilder {
     pub fn get_point_in_time_recovery_enabled(&self) -> &::std::option::Option<bool> {
         &self.point_in_time_recovery_enabled
     }
+    /// <p>The number of preceding days for which continuous backups are taken and maintained. Your table data is only recoverable to any point-in-time from within the configured recovery period. This parameter is optional. If no value is provided, the value will default to 35.</p>
+    pub fn recovery_period_in_days(mut self, input: i32) -> Self {
+        self.recovery_period_in_days = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of preceding days for which continuous backups are taken and maintained. Your table data is only recoverable to any point-in-time from within the configured recovery period. This parameter is optional. If no value is provided, the value will default to 35.</p>
+    pub fn set_recovery_period_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.recovery_period_in_days = input;
+        self
+    }
+    /// <p>The number of preceding days for which continuous backups are taken and maintained. Your table data is only recoverable to any point-in-time from within the configured recovery period. This parameter is optional. If no value is provided, the value will default to 35.</p>
+    pub fn get_recovery_period_in_days(&self) -> &::std::option::Option<i32> {
+        &self.recovery_period_in_days
+    }
     /// Consumes the builder and constructs a [`PointInTimeRecoverySpecification`](crate::types::PointInTimeRecoverySpecification).
     /// This method will fail if any of the following fields are not set:
     /// - [`point_in_time_recovery_enabled`](crate::types::builders::PointInTimeRecoverySpecificationBuilder::point_in_time_recovery_enabled)
@@ -53,6 +74,7 @@ impl PointInTimeRecoverySpecificationBuilder {
                     "point_in_time_recovery_enabled was not specified but it is required when building PointInTimeRecoverySpecification",
                 )
             })?,
+            recovery_period_in_days: self.recovery_period_in_days,
         })
     }
 }

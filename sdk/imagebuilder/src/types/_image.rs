@@ -80,6 +80,8 @@ pub struct Image {
     /// <p><b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p></li>
     /// <li>
     /// <p><b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p></li>
+    /// <li>
+    /// <p><b>IMPORT_ISO</b> – An ISO disk import created the image.</p></li>
     /// </ul>
     pub build_type: ::std::option::Option<crate::types::BuildType>,
     /// <p>The origin of the base image that Image Builder used to build this image.</p>
@@ -210,6 +212,8 @@ impl Image {
     /// <p><b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p></li>
     /// <li>
     /// <p><b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p></li>
+    /// <li>
+    /// <p><b>IMPORT_ISO</b> – An ISO disk import created the image.</p></li>
     /// </ul>
     pub fn build_type(&self) -> ::std::option::Option<&crate::types::BuildType> {
         self.build_type.as_ref()
@@ -646,6 +650,8 @@ impl ImageBuilder {
     /// <p><b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p></li>
     /// <li>
     /// <p><b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p></li>
+    /// <li>
+    /// <p><b>IMPORT_ISO</b> – An ISO disk import created the image.</p></li>
     /// </ul>
     pub fn build_type(mut self, input: crate::types::BuildType) -> Self {
         self.build_type = ::std::option::Option::Some(input);
@@ -659,6 +665,8 @@ impl ImageBuilder {
     /// <p><b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p></li>
     /// <li>
     /// <p><b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p></li>
+    /// <li>
+    /// <p><b>IMPORT_ISO</b> – An ISO disk import created the image.</p></li>
     /// </ul>
     pub fn set_build_type(mut self, input: ::std::option::Option<crate::types::BuildType>) -> Self {
         self.build_type = input;
@@ -672,6 +680,8 @@ impl ImageBuilder {
     /// <p><b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p></li>
     /// <li>
     /// <p><b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p></li>
+    /// <li>
+    /// <p><b>IMPORT_ISO</b> – An ISO disk import created the image.</p></li>
     /// </ul>
     pub fn get_build_type(&self) -> &::std::option::Option<crate::types::BuildType> {
         &self.build_type

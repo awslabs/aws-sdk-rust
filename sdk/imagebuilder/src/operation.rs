@@ -115,6 +115,9 @@ pub mod get_workflow_step_execution;
 /// Types for the `ImportComponent` operation.
 pub mod import_component;
 
+/// Types for the `ImportDiskImage` operation.
+pub mod import_disk_image;
+
 /// Types for the `ImportVmImage` operation.
 pub mod import_vm_image;
 

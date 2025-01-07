@@ -239,6 +239,8 @@ mod get_workflow_step_execution;
 
 mod import_component;
 
+mod import_disk_image;
+
 mod import_vm_image;
 
 mod list_component_build_versions;

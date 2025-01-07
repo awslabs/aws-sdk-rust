@@ -18,6 +18,8 @@ pub struct Hsm {
     pub eni_ipv6: ::std::option::Option<::std::string::String>,
     /// <p>The HSM's identifier (ID).</p>
     pub hsm_id: ::std::string::String,
+    /// <p>The type of HSM.</p>
+    pub hsm_type: ::std::option::Option<::std::string::String>,
     /// <p>The HSM's state.</p>
     pub state: ::std::option::Option<crate::types::HsmState>,
     /// <p>A description of the HSM's state.</p>
@@ -53,6 +55,10 @@ impl Hsm {
         use std::ops::Deref;
         self.hsm_id.deref()
     }
+    /// <p>The type of HSM.</p>
+    pub fn hsm_type(&self) -> ::std::option::Option<&str> {
+        self.hsm_type.as_deref()
+    }
     /// <p>The HSM's state.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::HsmState> {
         self.state.as_ref()
@@ -80,6 +86,7 @@ pub struct HsmBuilder {
     pub(crate) eni_ip: ::std::option::Option<::std::string::String>,
     pub(crate) eni_ipv6: ::std::option::Option<::std::string::String>,
     pub(crate) hsm_id: ::std::option::Option<::std::string::String>,
+    pub(crate) hsm_type: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::HsmState>,
     pub(crate) state_message: ::std::option::Option<::std::string::String>,
 }
@@ -183,6 +190,20 @@ impl HsmBuilder {
     pub fn get_hsm_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.hsm_id
     }
+    /// <p>The type of HSM.</p>
+    pub fn hsm_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.hsm_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The type of HSM.</p>
+    pub fn set_hsm_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.hsm_type = input;
+        self
+    }
+    /// <p>The type of HSM.</p>
+    pub fn get_hsm_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hsm_type
+    }
     /// <p>The HSM's state.</p>
     pub fn state(mut self, input: crate::types::HsmState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -228,6 +249,7 @@ impl HsmBuilder {
                     "hsm_id was not specified but it is required when building Hsm",
                 )
             })?,
+            hsm_type: self.hsm_type,
             state: self.state,
             state_message: self.state_message,
         })

@@ -430,9 +430,9 @@ model_hash = 'b65bf64ffb06d0d3e137a01014909833b0b4bc6ea9be28676d96e189387419ad'
 
 [crates.aws-sdk-cloudhsmv2]
 category = 'AwsSdk'
-version = '1.55.0'
-source_hash = '0063e02db7ed754a591dc41aa391d6c1ed8676ce0c17f0b981a9b81c5d9768d7'
-model_hash = '3cb7fef9c060a6a53a35d72df1190a7f4347daa0fa1e7c123722b5ba2e3473d0'
+version = '1.56.0'
+source_hash = '138a3b1e8c0d92edd9370efaca41ed8414164f16118c11d7392b6bf208630831'
+model_hash = '4e091ccb9d71e775ae250b231f4c6c0bdbad945d7f0540064d3d8484b8e9e791'
 
 [crates.aws-sdk-cloudsearch]
 category = 'AwsSdk'
@@ -778,9 +778,9 @@ model_hash = '7a381fa88ca7b27bc89a9ccc9829841c745f98706c6b7c73aed8432dfe9ccee0'
 
 [crates.aws-sdk-dynamodb]
 category = 'AwsSdk'
-version = '1.58.0'
-source_hash = '69a51fc9e75427e74b64d48f7edc8ae51cc36f0f480ab28e85f03b9d2227200a'
-model_hash = '5bd7693e3f558ba1ddcf1158d6fe75cde283773433e345ef48024f0e709f1ae9'
+version = '1.59.0'
+source_hash = '4df5b03f5c5eabab11e0d6445ac910852e07b75b571ec6eba7369e9205b93261'
+model_hash = '706a2c6fd965a2838b8a58a9de623459b0f6f2c7033661dc206112730f6c8831'
 
 [crates.aws-sdk-dynamodbstreams]
 category = 'AwsSdk'
@@ -1078,9 +1078,9 @@ model_hash = 'abd0728cd0c7060cf5e676f42e09b2a177eea6729e727c62b19b84e35304f7b2'
 
 [crates.aws-sdk-imagebuilder]
 category = 'AwsSdk'
-version = '1.56.0'
-source_hash = 'd25deeb8e0ab5d6b651b6b6d1ee16d5ea93626a3bc905668087cc54db5801804'
-model_hash = 'c9e475e5f48bed2951a77bdeb0b39cb95f1659acfd622d025575254448164914'
+version = '1.57.0'
+source_hash = '9ea6bc2924f48019047dfab6580d0448a2e44fd7f42b99316903b3db3590c853'
+model_hash = 'd6632ec73c4a3ff8cbfce5f66b0743b362ce86cada98e3ff234e2bf096e840d4'
 
 [crates.aws-sdk-inspector]
 category = 'AwsSdk'
@@ -2601,10 +2601,7 @@ source_hash = '8fda8b946a2401fe6cbf145dc3ab8e680535b4f84b151678165f9c0e39b5db02'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '0f3fb1d32b4ecfb0fb367f90d43fbd791068180a9d343827ad5caaf7e31c00d2'
-
-[release]
-tag = 'release-2025-01-06'
-
 [release.crates]
-aws-sdk-iotsecuretunneling = '1.54.0'
-aws-sdk-supplychain = '1.47.0'
+aws-sdk-cloudhsmv2 = '1.56.0'
+aws-sdk-dynamodb = '1.59.0'
+aws-sdk-imagebuilder = '1.57.0'

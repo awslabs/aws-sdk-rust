@@ -3,14 +3,17 @@ pub fn ser_modify_cluster_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::modify_cluster::ModifyClusterInput,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.backup_retention_policy {
-        #[allow(unused_mut)]
-        let mut object_2 = object.key("BackupRetentionPolicy").start_object();
-        crate::protocol_serde::shape_backup_retention_policy::ser_backup_retention_policy(&mut object_2, var_1)?;
-        object_2.finish();
+    if let Some(var_1) = &input.hsm_type {
+        object.key("HsmType").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.cluster_id {
-        object.key("ClusterId").string(var_3.as_str());
+    if let Some(var_2) = &input.backup_retention_policy {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("BackupRetentionPolicy").start_object();
+        crate::protocol_serde::shape_backup_retention_policy::ser_backup_retention_policy(&mut object_3, var_2)?;
+        object_3.finish();
+    }
+    if let Some(var_4) = &input.cluster_id {
+        object.key("ClusterId").string(var_4.as_str());
     }
     Ok(())
 }

@@ -7,7 +7,7 @@ pub struct ImageTestsConfiguration {
     /// <p>Determines if tests should run after building the image. Image Builder defaults to enable tests to run following the image build, before image distribution.</p>
     pub image_tests_enabled: ::std::option::Option<bool>,
     /// <p>The maximum time in minutes that tests are permitted to run.</p><note>
-    /// <p>The timeout attribute is not currently active. This value is ignored.</p>
+    /// <p>The timeout property is not currently active. This value is ignored.</p>
     /// </note>
     pub timeout_minutes: ::std::option::Option<i32>,
 }
@@ -17,7 +17,7 @@ impl ImageTestsConfiguration {
         self.image_tests_enabled
     }
     /// <p>The maximum time in minutes that tests are permitted to run.</p><note>
-    /// <p>The timeout attribute is not currently active. This value is ignored.</p>
+    /// <p>The timeout property is not currently active. This value is ignored.</p>
     /// </note>
     pub fn timeout_minutes(&self) -> ::std::option::Option<i32> {
         self.timeout_minutes
@@ -53,21 +53,21 @@ impl ImageTestsConfigurationBuilder {
         &self.image_tests_enabled
     }
     /// <p>The maximum time in minutes that tests are permitted to run.</p><note>
-    /// <p>The timeout attribute is not currently active. This value is ignored.</p>
+    /// <p>The timeout property is not currently active. This value is ignored.</p>
     /// </note>
     pub fn timeout_minutes(mut self, input: i32) -> Self {
         self.timeout_minutes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum time in minutes that tests are permitted to run.</p><note>
-    /// <p>The timeout attribute is not currently active. This value is ignored.</p>
+    /// <p>The timeout property is not currently active. This value is ignored.</p>
     /// </note>
     pub fn set_timeout_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.timeout_minutes = input;
         self
     }
     /// <p>The maximum time in minutes that tests are permitted to run.</p><note>
-    /// <p>The timeout attribute is not currently active. This value is ignored.</p>
+    /// <p>The timeout property is not currently active. This value is ignored.</p>
     /// </note>
     pub fn get_timeout_minutes(&self) -> &::std::option::Option<i32> {
         &self.timeout_minutes

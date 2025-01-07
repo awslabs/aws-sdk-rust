@@ -16,6 +16,8 @@ pub struct Cluster {
     pub hsms: ::std::option::Option<::std::vec::Vec<crate::types::Hsm>>,
     /// <p>The type of HSM that the cluster contains.</p>
     pub hsm_type: ::std::option::Option<::std::string::String>,
+    /// <p>The timestamp until when the cluster can be rolled back to its original HSM type.</p>
+    pub hsm_type_rollback_expiration: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The default password for the cluster's Pre-Crypto Officer (PRECO) user.</p>
     pub pre_co_password: ::std::option::Option<::std::string::String>,
     /// <p>The identifier (ID) of the cluster's security group.</p>
@@ -30,7 +32,7 @@ pub struct Cluster {
     pub subnet_mapping: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The identifier (ID) of the virtual private cloud (VPC) that contains the cluster.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
-    /// <p>The cluster's NetworkType can be set to either IPV4 (which is the default) or DUALSTACK. When set to IPV4, communication between your application and the Hardware Security Modules (HSMs) is restricted to the IPv4 protocol only. In contrast, the DUALSTACK network type enables communication over both the IPv4 and IPv6 protocols. To use the DUALSTACK option, you'll need to configure your Virtual Private Cloud (VPC) and subnets to support both IPv4 and IPv6. This involves adding IPv6 Classless Inter-Domain Routing (CIDR) blocks to the existing IPv4 CIDR blocks in your subnets. The choice between IPV4 and DUALSTACK network types determines the flexibility of the network addressing setup for your cluster. The DUALSTACK option provides more flexibility by allowing both IPv4 and IPv6 communication.</p>
+    /// <p>The cluster's NetworkType can be IPv4 (the default) or DUALSTACK. The IPv4 NetworkType restricts communication between your application and the hardware security modules (HSMs) to the IPv4 protocol only. The DUALSTACK NetworkType enables communication over both IPv4 and IPv6 protocols. To use DUALSTACK, configure your virtual private cloud (VPC) and subnets to support both IPv4 and IPv6. This configuration involves adding IPv6 Classless Inter-Domain Routing (CIDR) blocks to the existing IPv4 CIDR blocks in your subnets. The NetworkType you choose affects the network addressing options for your cluster. DUALSTACK provides more flexibility by supporting both IPv4 and IPv6 communication.</p>
     pub network_type: ::std::option::Option<crate::types::NetworkType>,
     /// <p>Contains one or more certificates or a certificate signing request (CSR).</p>
     pub certificates: ::std::option::Option<crate::types::Certificates>,
@@ -66,6 +68,10 @@ impl Cluster {
     pub fn hsm_type(&self) -> ::std::option::Option<&str> {
         self.hsm_type.as_deref()
     }
+    /// <p>The timestamp until when the cluster can be rolled back to its original HSM type.</p>
+    pub fn hsm_type_rollback_expiration(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.hsm_type_rollback_expiration.as_ref()
+    }
     /// <p>The default password for the cluster's Pre-Crypto Officer (PRECO) user.</p>
     pub fn pre_co_password(&self) -> ::std::option::Option<&str> {
         self.pre_co_password.as_deref()
@@ -94,7 +100,7 @@ impl Cluster {
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
-    /// <p>The cluster's NetworkType can be set to either IPV4 (which is the default) or DUALSTACK. When set to IPV4, communication between your application and the Hardware Security Modules (HSMs) is restricted to the IPv4 protocol only. In contrast, the DUALSTACK network type enables communication over both the IPv4 and IPv6 protocols. To use the DUALSTACK option, you'll need to configure your Virtual Private Cloud (VPC) and subnets to support both IPv4 and IPv6. This involves adding IPv6 Classless Inter-Domain Routing (CIDR) blocks to the existing IPv4 CIDR blocks in your subnets. The choice between IPV4 and DUALSTACK network types determines the flexibility of the network addressing setup for your cluster. The DUALSTACK option provides more flexibility by allowing both IPv4 and IPv6 communication.</p>
+    /// <p>The cluster's NetworkType can be IPv4 (the default) or DUALSTACK. The IPv4 NetworkType restricts communication between your application and the hardware security modules (HSMs) to the IPv4 protocol only. The DUALSTACK NetworkType enables communication over both IPv4 and IPv6 protocols. To use DUALSTACK, configure your virtual private cloud (VPC) and subnets to support both IPv4 and IPv6. This configuration involves adding IPv6 Classless Inter-Domain Routing (CIDR) blocks to the existing IPv4 CIDR blocks in your subnets. The NetworkType you choose affects the network addressing options for your cluster. DUALSTACK provides more flexibility by supporting both IPv4 and IPv6 communication.</p>
     pub fn network_type(&self) -> ::std::option::Option<&crate::types::NetworkType> {
         self.network_type.as_ref()
     }
@@ -130,6 +136,7 @@ pub struct ClusterBuilder {
     pub(crate) create_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) hsms: ::std::option::Option<::std::vec::Vec<crate::types::Hsm>>,
     pub(crate) hsm_type: ::std::option::Option<::std::string::String>,
+    pub(crate) hsm_type_rollback_expiration: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) pre_co_password: ::std::option::Option<::std::string::String>,
     pub(crate) security_group: ::std::option::Option<::std::string::String>,
     pub(crate) source_backup_id: ::std::option::Option<::std::string::String>,
@@ -232,6 +239,20 @@ impl ClusterBuilder {
     /// <p>The type of HSM that the cluster contains.</p>
     pub fn get_hsm_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.hsm_type
+    }
+    /// <p>The timestamp until when the cluster can be rolled back to its original HSM type.</p>
+    pub fn hsm_type_rollback_expiration(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.hsm_type_rollback_expiration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp until when the cluster can be rolled back to its original HSM type.</p>
+    pub fn set_hsm_type_rollback_expiration(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.hsm_type_rollback_expiration = input;
+        self
+    }
+    /// <p>The timestamp until when the cluster can be rolled back to its original HSM type.</p>
+    pub fn get_hsm_type_rollback_expiration(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.hsm_type_rollback_expiration
     }
     /// <p>The default password for the cluster's Pre-Crypto Officer (PRECO) user.</p>
     pub fn pre_co_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -344,17 +365,17 @@ impl ClusterBuilder {
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_id
     }
-    /// <p>The cluster's NetworkType can be set to either IPV4 (which is the default) or DUALSTACK. When set to IPV4, communication between your application and the Hardware Security Modules (HSMs) is restricted to the IPv4 protocol only. In contrast, the DUALSTACK network type enables communication over both the IPv4 and IPv6 protocols. To use the DUALSTACK option, you'll need to configure your Virtual Private Cloud (VPC) and subnets to support both IPv4 and IPv6. This involves adding IPv6 Classless Inter-Domain Routing (CIDR) blocks to the existing IPv4 CIDR blocks in your subnets. The choice between IPV4 and DUALSTACK network types determines the flexibility of the network addressing setup for your cluster. The DUALSTACK option provides more flexibility by allowing both IPv4 and IPv6 communication.</p>
+    /// <p>The cluster's NetworkType can be IPv4 (the default) or DUALSTACK. The IPv4 NetworkType restricts communication between your application and the hardware security modules (HSMs) to the IPv4 protocol only. The DUALSTACK NetworkType enables communication over both IPv4 and IPv6 protocols. To use DUALSTACK, configure your virtual private cloud (VPC) and subnets to support both IPv4 and IPv6. This configuration involves adding IPv6 Classless Inter-Domain Routing (CIDR) blocks to the existing IPv4 CIDR blocks in your subnets. The NetworkType you choose affects the network addressing options for your cluster. DUALSTACK provides more flexibility by supporting both IPv4 and IPv6 communication.</p>
     pub fn network_type(mut self, input: crate::types::NetworkType) -> Self {
         self.network_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The cluster's NetworkType can be set to either IPV4 (which is the default) or DUALSTACK. When set to IPV4, communication between your application and the Hardware Security Modules (HSMs) is restricted to the IPv4 protocol only. In contrast, the DUALSTACK network type enables communication over both the IPv4 and IPv6 protocols. To use the DUALSTACK option, you'll need to configure your Virtual Private Cloud (VPC) and subnets to support both IPv4 and IPv6. This involves adding IPv6 Classless Inter-Domain Routing (CIDR) blocks to the existing IPv4 CIDR blocks in your subnets. The choice between IPV4 and DUALSTACK network types determines the flexibility of the network addressing setup for your cluster. The DUALSTACK option provides more flexibility by allowing both IPv4 and IPv6 communication.</p>
+    /// <p>The cluster's NetworkType can be IPv4 (the default) or DUALSTACK. The IPv4 NetworkType restricts communication between your application and the hardware security modules (HSMs) to the IPv4 protocol only. The DUALSTACK NetworkType enables communication over both IPv4 and IPv6 protocols. To use DUALSTACK, configure your virtual private cloud (VPC) and subnets to support both IPv4 and IPv6. This configuration involves adding IPv6 Classless Inter-Domain Routing (CIDR) blocks to the existing IPv4 CIDR blocks in your subnets. The NetworkType you choose affects the network addressing options for your cluster. DUALSTACK provides more flexibility by supporting both IPv4 and IPv6 communication.</p>
     pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::NetworkType>) -> Self {
         self.network_type = input;
         self
     }
-    /// <p>The cluster's NetworkType can be set to either IPV4 (which is the default) or DUALSTACK. When set to IPV4, communication between your application and the Hardware Security Modules (HSMs) is restricted to the IPv4 protocol only. In contrast, the DUALSTACK network type enables communication over both the IPv4 and IPv6 protocols. To use the DUALSTACK option, you'll need to configure your Virtual Private Cloud (VPC) and subnets to support both IPv4 and IPv6. This involves adding IPv6 Classless Inter-Domain Routing (CIDR) blocks to the existing IPv4 CIDR blocks in your subnets. The choice between IPV4 and DUALSTACK network types determines the flexibility of the network addressing setup for your cluster. The DUALSTACK option provides more flexibility by allowing both IPv4 and IPv6 communication.</p>
+    /// <p>The cluster's NetworkType can be IPv4 (the default) or DUALSTACK. The IPv4 NetworkType restricts communication between your application and the hardware security modules (HSMs) to the IPv4 protocol only. The DUALSTACK NetworkType enables communication over both IPv4 and IPv6 protocols. To use DUALSTACK, configure your virtual private cloud (VPC) and subnets to support both IPv4 and IPv6. This configuration involves adding IPv6 Classless Inter-Domain Routing (CIDR) blocks to the existing IPv4 CIDR blocks in your subnets. The NetworkType you choose affects the network addressing options for your cluster. DUALSTACK provides more flexibility by supporting both IPv4 and IPv6 communication.</p>
     pub fn get_network_type(&self) -> &::std::option::Option<crate::types::NetworkType> {
         &self.network_type
     }
@@ -415,6 +436,7 @@ impl ClusterBuilder {
             create_timestamp: self.create_timestamp,
             hsms: self.hsms,
             hsm_type: self.hsm_type,
+            hsm_type_rollback_expiration: self.hsm_type_rollback_expiration,
             pre_co_password: self.pre_co_password,
             security_group: self.security_group,
             source_backup_id: self.source_backup_id,

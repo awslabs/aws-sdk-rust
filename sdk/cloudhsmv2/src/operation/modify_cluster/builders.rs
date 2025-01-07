@@ -109,6 +109,20 @@ impl ModifyClusterFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// <p>The desired HSM type of the cluster.</p>
+    pub fn hsm_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.hsm_type(input.into());
+        self
+    }
+    /// <p>The desired HSM type of the cluster.</p>
+    pub fn set_hsm_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_hsm_type(input);
+        self
+    }
+    /// <p>The desired HSM type of the cluster.</p>
+    pub fn get_hsm_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_hsm_type()
+    }
     /// <p>A policy that defines how the service retains backups.</p>
     pub fn backup_retention_policy(mut self, input: crate::types::BackupRetentionPolicy) -> Self {
         self.inner = self.inner.backup_retention_policy(input);

@@ -21,6 +21,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "RecoveryPeriodInDays" => {
+                            builder = builder.set_recovery_period_in_days(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         "EarliestRestorableDateTime" => {
                             builder = builder.set_earliest_restorable_date_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),

@@ -3,12 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyClusterInput {
+    /// <p>The desired HSM type of the cluster.</p>
+    pub hsm_type: ::std::option::Option<::std::string::String>,
     /// <p>A policy that defines how the service retains backups.</p>
     pub backup_retention_policy: ::std::option::Option<crate::types::BackupRetentionPolicy>,
     /// <p>The identifier (ID) of the cluster that you want to modify. To find the cluster ID, use <code>DescribeClusters</code>.</p>
     pub cluster_id: ::std::option::Option<::std::string::String>,
 }
 impl ModifyClusterInput {
+    /// <p>The desired HSM type of the cluster.</p>
+    pub fn hsm_type(&self) -> ::std::option::Option<&str> {
+        self.hsm_type.as_deref()
+    }
     /// <p>A policy that defines how the service retains backups.</p>
     pub fn backup_retention_policy(&self) -> ::std::option::Option<&crate::types::BackupRetentionPolicy> {
         self.backup_retention_policy.as_ref()
@@ -29,12 +35,26 @@ impl ModifyClusterInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct ModifyClusterInputBuilder {
+    pub(crate) hsm_type: ::std::option::Option<::std::string::String>,
     pub(crate) backup_retention_policy: ::std::option::Option<crate::types::BackupRetentionPolicy>,
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
 }
 impl ModifyClusterInputBuilder {
+    /// <p>The desired HSM type of the cluster.</p>
+    pub fn hsm_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.hsm_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The desired HSM type of the cluster.</p>
+    pub fn set_hsm_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.hsm_type = input;
+        self
+    }
+    /// <p>The desired HSM type of the cluster.</p>
+    pub fn get_hsm_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hsm_type
+    }
     /// <p>A policy that defines how the service retains backups.</p>
-    /// This field is required.
     pub fn backup_retention_policy(mut self, input: crate::types::BackupRetentionPolicy) -> Self {
         self.backup_retention_policy = ::std::option::Option::Some(input);
         self
@@ -68,6 +88,7 @@ impl ModifyClusterInputBuilder {
         self,
     ) -> ::std::result::Result<crate::operation::modify_cluster::ModifyClusterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_cluster::ModifyClusterInput {
+            hsm_type: self.hsm_type,
             backup_retention_policy: self.backup_retention_policy,
             cluster_id: self.cluster_id,
         })
