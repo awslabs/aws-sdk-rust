@@ -24,6 +24,8 @@ pub struct ClusterNodeDetails {
     pub instance_storage_configs: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceStorageConfig>>,
     /// <p>The private primary IP address of the SageMaker HyperPod cluster node.</p>
     pub private_primary_ip: ::std::option::Option<::std::string::String>,
+    /// <p>The private primary IPv6 address of the SageMaker HyperPod cluster node.</p>
+    pub private_primary_ipv6: ::std::option::Option<::std::string::String>,
     /// <p>The private DNS hostname of the SageMaker HyperPod cluster node.</p>
     pub private_dns_hostname: ::std::option::Option<::std::string::String>,
     /// <p>The placement details of the SageMaker HyperPod cluster node.</p>
@@ -72,6 +74,10 @@ impl ClusterNodeDetails {
     pub fn private_primary_ip(&self) -> ::std::option::Option<&str> {
         self.private_primary_ip.as_deref()
     }
+    /// <p>The private primary IPv6 address of the SageMaker HyperPod cluster node.</p>
+    pub fn private_primary_ipv6(&self) -> ::std::option::Option<&str> {
+        self.private_primary_ipv6.as_deref()
+    }
     /// <p>The private DNS hostname of the SageMaker HyperPod cluster node.</p>
     pub fn private_dns_hostname(&self) -> ::std::option::Option<&str> {
         self.private_dns_hostname.as_deref()
@@ -102,6 +108,7 @@ pub struct ClusterNodeDetailsBuilder {
     pub(crate) threads_per_core: ::std::option::Option<i32>,
     pub(crate) instance_storage_configs: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceStorageConfig>>,
     pub(crate) private_primary_ip: ::std::option::Option<::std::string::String>,
+    pub(crate) private_primary_ipv6: ::std::option::Option<::std::string::String>,
     pub(crate) private_dns_hostname: ::std::option::Option<::std::string::String>,
     pub(crate) placement: ::std::option::Option<crate::types::ClusterInstancePlacement>,
 }
@@ -252,6 +259,20 @@ impl ClusterNodeDetailsBuilder {
     pub fn get_private_primary_ip(&self) -> &::std::option::Option<::std::string::String> {
         &self.private_primary_ip
     }
+    /// <p>The private primary IPv6 address of the SageMaker HyperPod cluster node.</p>
+    pub fn private_primary_ipv6(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.private_primary_ipv6 = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The private primary IPv6 address of the SageMaker HyperPod cluster node.</p>
+    pub fn set_private_primary_ipv6(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.private_primary_ipv6 = input;
+        self
+    }
+    /// <p>The private primary IPv6 address of the SageMaker HyperPod cluster node.</p>
+    pub fn get_private_primary_ipv6(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_primary_ipv6
+    }
     /// <p>The private DNS hostname of the SageMaker HyperPod cluster node.</p>
     pub fn private_dns_hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.private_dns_hostname = ::std::option::Option::Some(input.into());
@@ -293,6 +314,7 @@ impl ClusterNodeDetailsBuilder {
             threads_per_core: self.threads_per_core,
             instance_storage_configs: self.instance_storage_configs,
             private_primary_ip: self.private_primary_ip,
+            private_primary_ipv6: self.private_primary_ipv6,
             private_dns_hostname: self.private_dns_hostname,
             placement: self.placement,
         }

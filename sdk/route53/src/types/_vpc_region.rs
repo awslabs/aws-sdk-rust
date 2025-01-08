@@ -24,6 +24,7 @@
 ///     VpcRegion::ApSoutheast3 => { /* ... */ },
 ///     VpcRegion::ApSoutheast4 => { /* ... */ },
 ///     VpcRegion::ApSoutheast5 => { /* ... */ },
+///     VpcRegion::ApSoutheast7 => { /* ... */ },
 ///     VpcRegion::CaCentral1 => { /* ... */ },
 ///     VpcRegion::CaWest1 => { /* ... */ },
 ///     VpcRegion::CnNorth1 => { /* ... */ },
@@ -102,6 +103,8 @@ pub enum VpcRegion {
     #[allow(missing_docs)] // documentation missing in model
     ApSoutheast5,
     #[allow(missing_docs)] // documentation missing in model
+    ApSoutheast7,
+    #[allow(missing_docs)] // documentation missing in model
     CaCentral1,
     #[allow(missing_docs)] // documentation missing in model
     CaWest1,
@@ -170,6 +173,7 @@ impl ::std::convert::From<&str> for VpcRegion {
             "ap-southeast-3" => VpcRegion::ApSoutheast3,
             "ap-southeast-4" => VpcRegion::ApSoutheast4,
             "ap-southeast-5" => VpcRegion::ApSoutheast5,
+            "ap-southeast-7" => VpcRegion::ApSoutheast7,
             "ca-central-1" => VpcRegion::CaCentral1,
             "ca-west-1" => VpcRegion::CaWest1,
             "cn-north-1" => VpcRegion::CnNorth1,
@@ -222,6 +226,7 @@ impl VpcRegion {
             VpcRegion::ApSoutheast3 => "ap-southeast-3",
             VpcRegion::ApSoutheast4 => "ap-southeast-4",
             VpcRegion::ApSoutheast5 => "ap-southeast-5",
+            VpcRegion::ApSoutheast7 => "ap-southeast-7",
             VpcRegion::CaCentral1 => "ca-central-1",
             VpcRegion::CaWest1 => "ca-west-1",
             VpcRegion::CnNorth1 => "cn-north-1",
@@ -265,6 +270,7 @@ impl VpcRegion {
             "ap-southeast-3",
             "ap-southeast-4",
             "ap-southeast-5",
+            "ap-southeast-7",
             "ca-central-1",
             "ca-west-1",
             "cn-north-1",
@@ -325,6 +331,7 @@ impl ::std::fmt::Display for VpcRegion {
             VpcRegion::ApSoutheast3 => write!(f, "ap-southeast-3"),
             VpcRegion::ApSoutheast4 => write!(f, "ap-southeast-4"),
             VpcRegion::ApSoutheast5 => write!(f, "ap-southeast-5"),
+            VpcRegion::ApSoutheast7 => write!(f, "ap-southeast-7"),
             VpcRegion::CaCentral1 => write!(f, "ca-central-1"),
             VpcRegion::CaWest1 => write!(f, "ca-west-1"),
             VpcRegion::CnNorth1 => write!(f, "cn-north-1"),

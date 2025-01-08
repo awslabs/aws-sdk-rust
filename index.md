@@ -83,8 +83,6 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS Identity and Access Management | [aws-sdk-iam](https://crates.io/crates/aws-sdk-iam) ([docs](https://docs.rs/aws-sdk-iam)) |
 | AWS Invoicing | [aws-sdk-invoicing](https://crates.io/crates/aws-sdk-invoicing) ([docs](https://docs.rs/aws-sdk-invoicing)) |
 | AWS IoT | [aws-sdk-iot](https://crates.io/crates/aws-sdk-iot) ([docs](https://docs.rs/aws-sdk-iot)) |
-| AWS IoT 1-Click Devices Service | [aws-sdk-iot1clickdevices](https://crates.io/crates/aws-sdk-iot1clickdevices) ([docs](https://docs.rs/aws-sdk-iot1clickdevices)) |
-| AWS IoT 1-Click Projects Service | [aws-sdk-iot1clickprojects](https://crates.io/crates/aws-sdk-iot1clickprojects) ([docs](https://docs.rs/aws-sdk-iot1clickprojects)) |
 | AWS IoT Analytics | [aws-sdk-iotanalytics](https://crates.io/crates/aws-sdk-iotanalytics) ([docs](https://docs.rs/aws-sdk-iotanalytics)) |
 | AWS IoT Core Device Advisor | [aws-sdk-iotdeviceadvisor](https://crates.io/crates/aws-sdk-iotdeviceadvisor) ([docs](https://docs.rs/aws-sdk-iotdeviceadvisor)) |
 | AWS IoT Data Plane | [aws-sdk-iotdataplane](https://crates.io/crates/aws-sdk-iotdataplane) ([docs](https://docs.rs/aws-sdk-iotdataplane)) |

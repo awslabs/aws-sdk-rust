@@ -73,6 +73,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "PrivatePrimaryIpv6" => {
+                            builder = builder.set_private_primary_ipv6(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "PrivateDnsHostname" => {
                             builder = builder.set_private_dns_hostname(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -1,13 +1,13 @@
 [workspace]
 resolver = "2"
 exclude = [
+    "examples/test-utils",
+    "examples/lambda",
     "examples/examples",
     "examples/cross_service",
     "examples/webassembly",
-    "examples/test-utils",
-    "examples/lambda",
-    "tests/no-default-features",
-    "tests/webassembly"
+    "tests/webassembly",
+    "tests/no-default-features"
 ]
 members = [
     "sdk/accessanalyzer",
@@ -220,8 +220,6 @@ members = [
     "sdk/internetmonitor",
     "sdk/invoicing",
     "sdk/iot",
-    "sdk/iot1clickdevices",
-    "sdk/iot1clickprojects",
     "sdk/iotanalytics",
     "sdk/iotdataplane",
     "sdk/iotdeviceadvisor",

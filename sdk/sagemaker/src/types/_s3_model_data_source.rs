@@ -48,7 +48,7 @@ pub struct S3ModelDataSource {
     pub manifest_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The ETag associated with S3 URI.</p>
     pub e_tag: ::std::option::Option<::std::string::String>,
-    /// <p>The ETag associated with Manifest S3URI.</p>
+    /// <p>The ETag associated with Manifest S3 URI.</p>
     pub manifest_etag: ::std::option::Option<::std::string::String>,
 }
 impl S3ModelDataSource {
@@ -110,7 +110,7 @@ impl S3ModelDataSource {
     pub fn e_tag(&self) -> ::std::option::Option<&str> {
         self.e_tag.as_deref()
     }
-    /// <p>The ETag associated with Manifest S3URI.</p>
+    /// <p>The ETag associated with Manifest S3 URI.</p>
     pub fn manifest_etag(&self) -> ::std::option::Option<&str> {
         self.manifest_etag.as_deref()
     }
@@ -327,17 +327,17 @@ impl S3ModelDataSourceBuilder {
     pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
         &self.e_tag
     }
-    /// <p>The ETag associated with Manifest S3URI.</p>
+    /// <p>The ETag associated with Manifest S3 URI.</p>
     pub fn manifest_etag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.manifest_etag = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ETag associated with Manifest S3URI.</p>
+    /// <p>The ETag associated with Manifest S3 URI.</p>
     pub fn set_manifest_etag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.manifest_etag = input;
         self
     }
-    /// <p>The ETag associated with Manifest S3URI.</p>
+    /// <p>The ETag associated with Manifest S3 URI.</p>
     pub fn get_manifest_etag(&self) -> &::std::option::Option<::std::string::String> {
         &self.manifest_etag
     }
