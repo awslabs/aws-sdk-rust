@@ -90,6 +90,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ResourceTagLogicalOperator" => {
+                            builder = builder.set_resource_tag_logical_operator(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ResourceTagLogicalOperator::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -210,6 +217,9 @@ pub fn ser_policy(
     }
     if let Some(var_28) = &input.policy_status {
         object.key("PolicyStatus").string(var_28.as_str());
+    }
+    if let Some(var_29) = &input.resource_tag_logical_operator {
+        object.key("ResourceTagLogicalOperator").string(var_29.as_str());
     }
     Ok(())
 }

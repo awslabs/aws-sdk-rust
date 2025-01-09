@@ -443,6 +443,8 @@ pub(crate) mod shape_compute_types_allowed;
 
 pub(crate) mod shape_environment_language;
 
+pub(crate) mod shape_fleets_allowed;
+
 pub(crate) mod shape_identifiers;
 
 pub(crate) mod shape_phase_contexts;

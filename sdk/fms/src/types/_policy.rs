@@ -81,6 +81,9 @@ pub struct Policy {
     /// <p><code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the policy, but they can't edit or delete the policy. Existing policy protections stay in place. Any new resources that come into scope of the policy won't be protected.</p></li>
     /// </ul>
     pub policy_status: ::std::option::Option<crate::types::CustomerPolicyStatus>,
+    /// <p>Specifies whether to combine multiple resource tags with AND, so that a resource must have all tags to be included or excluded, or OR, so that a resource must have at least one tag.</p>
+    /// <p>Default: <code>AND</code></p>
+    pub resource_tag_logical_operator: ::std::option::Option<crate::types::ResourceTagLogicalOperator>,
 }
 impl Policy {
     /// <p>The ID of the Firewall Manager policy.</p>
@@ -200,6 +203,11 @@ impl Policy {
     pub fn policy_status(&self) -> ::std::option::Option<&crate::types::CustomerPolicyStatus> {
         self.policy_status.as_ref()
     }
+    /// <p>Specifies whether to combine multiple resource tags with AND, so that a resource must have all tags to be included or excluded, or OR, so that a resource must have at least one tag.</p>
+    /// <p>Default: <code>AND</code></p>
+    pub fn resource_tag_logical_operator(&self) -> ::std::option::Option<&crate::types::ResourceTagLogicalOperator> {
+        self.resource_tag_logical_operator.as_ref()
+    }
 }
 impl Policy {
     /// Creates a new builder-style object to manufacture [`Policy`](crate::types::Policy).
@@ -229,6 +237,7 @@ pub struct PolicyBuilder {
     pub(crate) resource_set_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) policy_description: ::std::option::Option<::std::string::String>,
     pub(crate) policy_status: ::std::option::Option<crate::types::CustomerPolicyStatus>,
+    pub(crate) resource_tag_logical_operator: ::std::option::Option<crate::types::ResourceTagLogicalOperator>,
 }
 impl PolicyBuilder {
     /// <p>The ID of the Firewall Manager policy.</p>
@@ -621,6 +630,23 @@ impl PolicyBuilder {
     pub fn get_policy_status(&self) -> &::std::option::Option<crate::types::CustomerPolicyStatus> {
         &self.policy_status
     }
+    /// <p>Specifies whether to combine multiple resource tags with AND, so that a resource must have all tags to be included or excluded, or OR, so that a resource must have at least one tag.</p>
+    /// <p>Default: <code>AND</code></p>
+    pub fn resource_tag_logical_operator(mut self, input: crate::types::ResourceTagLogicalOperator) -> Self {
+        self.resource_tag_logical_operator = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to combine multiple resource tags with AND, so that a resource must have all tags to be included or excluded, or OR, so that a resource must have at least one tag.</p>
+    /// <p>Default: <code>AND</code></p>
+    pub fn set_resource_tag_logical_operator(mut self, input: ::std::option::Option<crate::types::ResourceTagLogicalOperator>) -> Self {
+        self.resource_tag_logical_operator = input;
+        self
+    }
+    /// <p>Specifies whether to combine multiple resource tags with AND, so that a resource must have all tags to be included or excluded, or OR, so that a resource must have at least one tag.</p>
+    /// <p>Default: <code>AND</code></p>
+    pub fn get_resource_tag_logical_operator(&self) -> &::std::option::Option<crate::types::ResourceTagLogicalOperator> {
+        &self.resource_tag_logical_operator
+    }
     /// Consumes the builder and constructs a [`Policy`](crate::types::Policy).
     /// This method will fail if any of the following fields are not set:
     /// - [`policy_name`](crate::types::builders::PolicyBuilder::policy_name)
@@ -652,6 +678,7 @@ impl PolicyBuilder {
             resource_set_ids: self.resource_set_ids,
             policy_description: self.policy_description,
             policy_status: self.policy_status,
+            resource_tag_logical_operator: self.resource_tag_logical_operator,
         })
     }
 }

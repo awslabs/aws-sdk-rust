@@ -42,6 +42,29 @@ where
                                     .transpose()?,
                             );
                         }
+                        "allocationStrategy" => {
+                            builder = builder.set_allocation_strategy(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::AllocationStrategy::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "estimatedInstanceHourReductionPercentage" => {
+                            builder = builder.set_estimated_instance_hour_reduction_percentage(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()),
+                            );
+                        }
+                        "type" => {
+                            builder = builder.set_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::AsgType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "mixedInstanceTypes" => {
+                            builder =
+                                builder.set_mixed_instance_types(crate::protocol_serde::shape_mixed_instance_types::de_mixed_instance_types(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

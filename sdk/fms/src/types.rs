@@ -9,6 +9,8 @@ pub use crate::types::_protocols_list_data::ProtocolsListData;
 
 pub use crate::types::_policy::Policy;
 
+pub use crate::types::_resource_tag_logical_operator::ResourceTagLogicalOperator;
+
 pub use crate::types::_customer_policy_status::CustomerPolicyStatus;
 
 pub use crate::types::_customer_policy_scope_id_type::CustomerPolicyScopeIdType;
@@ -400,6 +402,8 @@ mod _resource_set_status;
 mod _resource_set_summary;
 
 mod _resource_tag;
+
+mod _resource_tag_logical_operator;
 
 mod _resource_violation;
 

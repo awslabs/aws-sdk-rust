@@ -18,6 +18,15 @@ pub fn ser_batch_restrictions(
         }
         array_3.finish();
     }
+    if let Some(var_5) = &input.fleets_allowed {
+        let mut array_6 = object.key("fleetsAllowed").start_array();
+        for item_7 in var_5 {
+            {
+                array_6.value().string(item_7.as_str());
+            }
+        }
+        array_6.finish();
+    }
     Ok(())
 }
 
@@ -46,6 +55,9 @@ where
                         "computeTypesAllowed" => {
                             builder = builder
                                 .set_compute_types_allowed(crate::protocol_serde::shape_compute_types_allowed::de_compute_types_allowed(tokens)?);
+                        }
+                        "fleetsAllowed" => {
+                            builder = builder.set_fleets_allowed(crate::protocol_serde::shape_fleets_allowed::de_fleets_allowed(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

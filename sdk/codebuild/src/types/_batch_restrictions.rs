@@ -8,6 +8,8 @@ pub struct BatchRestrictions {
     pub maximum_builds_allowed: ::std::option::Option<i32>,
     /// <p>An array of strings that specify the compute types that are allowed for the batch build. See <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build environment compute types</a> in the <i>CodeBuild User Guide</i> for these values.</p>
     pub compute_types_allowed: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>An array of strings that specify the fleets that are allowed for the batch build. See <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/fleets.html">Run builds on reserved capacity fleets</a> in the <i>CodeBuild User Guide</i> for more information.</p>
+    pub fleets_allowed: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchRestrictions {
     /// <p>Specifies the maximum number of builds allowed.</p>
@@ -19,6 +21,12 @@ impl BatchRestrictions {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compute_types_allowed.is_none()`.
     pub fn compute_types_allowed(&self) -> &[::std::string::String] {
         self.compute_types_allowed.as_deref().unwrap_or_default()
+    }
+    /// <p>An array of strings that specify the fleets that are allowed for the batch build. See <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/fleets.html">Run builds on reserved capacity fleets</a> in the <i>CodeBuild User Guide</i> for more information.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fleets_allowed.is_none()`.
+    pub fn fleets_allowed(&self) -> &[::std::string::String] {
+        self.fleets_allowed.as_deref().unwrap_or_default()
     }
 }
 impl BatchRestrictions {
@@ -34,6 +42,7 @@ impl BatchRestrictions {
 pub struct BatchRestrictionsBuilder {
     pub(crate) maximum_builds_allowed: ::std::option::Option<i32>,
     pub(crate) compute_types_allowed: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) fleets_allowed: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchRestrictionsBuilder {
     /// <p>Specifies the maximum number of builds allowed.</p>
@@ -70,11 +79,32 @@ impl BatchRestrictionsBuilder {
     pub fn get_compute_types_allowed(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.compute_types_allowed
     }
+    /// Appends an item to `fleets_allowed`.
+    ///
+    /// To override the contents of this collection use [`set_fleets_allowed`](Self::set_fleets_allowed).
+    ///
+    /// <p>An array of strings that specify the fleets that are allowed for the batch build. See <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/fleets.html">Run builds on reserved capacity fleets</a> in the <i>CodeBuild User Guide</i> for more information.</p>
+    pub fn fleets_allowed(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.fleets_allowed.unwrap_or_default();
+        v.push(input.into());
+        self.fleets_allowed = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>An array of strings that specify the fleets that are allowed for the batch build. See <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/fleets.html">Run builds on reserved capacity fleets</a> in the <i>CodeBuild User Guide</i> for more information.</p>
+    pub fn set_fleets_allowed(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.fleets_allowed = input;
+        self
+    }
+    /// <p>An array of strings that specify the fleets that are allowed for the batch build. See <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/fleets.html">Run builds on reserved capacity fleets</a> in the <i>CodeBuild User Guide</i> for more information.</p>
+    pub fn get_fleets_allowed(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.fleets_allowed
+    }
     /// Consumes the builder and constructs a [`BatchRestrictions`](crate::types::BatchRestrictions).
     pub fn build(self) -> crate::types::BatchRestrictions {
         crate::types::BatchRestrictions {
             maximum_builds_allowed: self.maximum_builds_allowed,
             compute_types_allowed: self.compute_types_allowed,
+            fleets_allowed: self.fleets_allowed,
         }
     }
 }

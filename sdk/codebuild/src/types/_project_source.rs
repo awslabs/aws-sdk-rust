@@ -77,7 +77,7 @@ pub struct ProjectSource {
     pub buildspec: ::std::option::Option<::std::string::String>,
     /// <p>Information about the authorization settings for CodeBuild to access the source code to be built.</p>
     pub auth: ::std::option::Option<crate::types::SourceAuth>,
-    /// <p>Set to true to report the status of a build's start and finish to your source provider. This option is valid only when your source provider is GitHub, GitHub Enterprise, GitLab, GitLab Self Managed, or Bitbucket. If this is set and you use a different source provider, an <code>invalidInputException</code> is thrown.</p>
+    /// <p>Set to true to report the status of a build's start and finish to your source provider. This option is valid only when your source provider is GitHub, GitHub Enterprise, GitLab, GitLab Self Managed, GitLab, GitLab Self Managed, or Bitbucket. If this is set and you use a different source provider, an <code>invalidInputException</code> is thrown.</p>
     /// <p>To be able to report the build status to the source provider, the user associated with the source provider must have write access to the repo. If the user does not have write access, the build status cannot be updated. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider access</a> in the <i>CodeBuild User Guide</i>.</p>
     /// <p>The status of a build triggered by a webhook is always reported to your source provider.</p>
     /// <p>If your project's builds are triggered by a webhook, you must push a new commit to the repo for a change to this property to take effect.</p>
@@ -175,7 +175,7 @@ impl ProjectSource {
     pub fn auth(&self) -> ::std::option::Option<&crate::types::SourceAuth> {
         self.auth.as_ref()
     }
-    /// <p>Set to true to report the status of a build's start and finish to your source provider. This option is valid only when your source provider is GitHub, GitHub Enterprise, GitLab, GitLab Self Managed, or Bitbucket. If this is set and you use a different source provider, an <code>invalidInputException</code> is thrown.</p>
+    /// <p>Set to true to report the status of a build's start and finish to your source provider. This option is valid only when your source provider is GitHub, GitHub Enterprise, GitLab, GitLab Self Managed, GitLab, GitLab Self Managed, or Bitbucket. If this is set and you use a different source provider, an <code>invalidInputException</code> is thrown.</p>
     /// <p>To be able to report the build status to the source provider, the user associated with the source provider must have write access to the repo. If the user does not have write access, the build status cannot be updated. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider access</a> in the <i>CodeBuild User Guide</i>.</p>
     /// <p>The status of a build triggered by a webhook is always reported to your source provider.</p>
     /// <p>If your project's builds are triggered by a webhook, you must push a new commit to the repo for a change to this property to take effect.</p>
@@ -486,7 +486,7 @@ impl ProjectSourceBuilder {
     pub fn get_auth(&self) -> &::std::option::Option<crate::types::SourceAuth> {
         &self.auth
     }
-    /// <p>Set to true to report the status of a build's start and finish to your source provider. This option is valid only when your source provider is GitHub, GitHub Enterprise, GitLab, GitLab Self Managed, or Bitbucket. If this is set and you use a different source provider, an <code>invalidInputException</code> is thrown.</p>
+    /// <p>Set to true to report the status of a build's start and finish to your source provider. This option is valid only when your source provider is GitHub, GitHub Enterprise, GitLab, GitLab Self Managed, GitLab, GitLab Self Managed, or Bitbucket. If this is set and you use a different source provider, an <code>invalidInputException</code> is thrown.</p>
     /// <p>To be able to report the build status to the source provider, the user associated with the source provider must have write access to the repo. If the user does not have write access, the build status cannot be updated. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider access</a> in the <i>CodeBuild User Guide</i>.</p>
     /// <p>The status of a build triggered by a webhook is always reported to your source provider.</p>
     /// <p>If your project's builds are triggered by a webhook, you must push a new commit to the repo for a change to this property to take effect.</p>
@@ -494,7 +494,7 @@ impl ProjectSourceBuilder {
         self.report_build_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Set to true to report the status of a build's start and finish to your source provider. This option is valid only when your source provider is GitHub, GitHub Enterprise, GitLab, GitLab Self Managed, or Bitbucket. If this is set and you use a different source provider, an <code>invalidInputException</code> is thrown.</p>
+    /// <p>Set to true to report the status of a build's start and finish to your source provider. This option is valid only when your source provider is GitHub, GitHub Enterprise, GitLab, GitLab Self Managed, GitLab, GitLab Self Managed, or Bitbucket. If this is set and you use a different source provider, an <code>invalidInputException</code> is thrown.</p>
     /// <p>To be able to report the build status to the source provider, the user associated with the source provider must have write access to the repo. If the user does not have write access, the build status cannot be updated. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider access</a> in the <i>CodeBuild User Guide</i>.</p>
     /// <p>The status of a build triggered by a webhook is always reported to your source provider.</p>
     /// <p>If your project's builds are triggered by a webhook, you must push a new commit to the repo for a change to this property to take effect.</p>
@@ -502,7 +502,7 @@ impl ProjectSourceBuilder {
         self.report_build_status = input;
         self
     }
-    /// <p>Set to true to report the status of a build's start and finish to your source provider. This option is valid only when your source provider is GitHub, GitHub Enterprise, GitLab, GitLab Self Managed, or Bitbucket. If this is set and you use a different source provider, an <code>invalidInputException</code> is thrown.</p>
+    /// <p>Set to true to report the status of a build's start and finish to your source provider. This option is valid only when your source provider is GitHub, GitHub Enterprise, GitLab, GitLab Self Managed, GitLab, GitLab Self Managed, or Bitbucket. If this is set and you use a different source provider, an <code>invalidInputException</code> is thrown.</p>
     /// <p>To be able to report the build status to the source provider, the user associated with the source provider must have write access to the repo. If the user does not have write access, the build status cannot be updated. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider access</a> in the <i>CodeBuild User Guide</i>.</p>
     /// <p>The status of a build triggered by a webhook is always reported to your source provider.</p>
     /// <p>If your project's builds are triggered by a webhook, you must push a new commit to the repo for a change to this property to take effect.</p>

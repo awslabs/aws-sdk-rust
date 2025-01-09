@@ -68,7 +68,7 @@ pub struct StartBuildInput {
     pub buildspec_override: ::std::option::Option<::std::string::String>,
     /// <p>Enable this flag to override the insecure SSL setting that is specified in the build project. The insecure SSL setting determines whether to ignore SSL warnings while connecting to the project source code. This override applies only if the build's source is GitHub Enterprise.</p>
     pub insecure_ssl_override: ::std::option::Option<bool>,
-    /// <p>Set to true to report to your source provider the status of a build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown.</p>
+    /// <p>Set to true to report to your source provider the status of a build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, GitLab, GitLab Self Managed, or Bitbucket, an <code>invalidInputException</code> is thrown.</p>
     /// <p>To be able to report the build status to the source provider, the user associated with the source provider must have write access to the repo. If the user does not have write access, the build status cannot be updated. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider access</a> in the <i>CodeBuild User Guide</i>.</p><note>
     /// <p>The status of a build triggered by a webhook is always reported to your source provider.</p>
     /// </note>
@@ -230,7 +230,7 @@ impl StartBuildInput {
     pub fn insecure_ssl_override(&self) -> ::std::option::Option<bool> {
         self.insecure_ssl_override
     }
-    /// <p>Set to true to report to your source provider the status of a build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown.</p>
+    /// <p>Set to true to report to your source provider the status of a build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, GitLab, GitLab Self Managed, or Bitbucket, an <code>invalidInputException</code> is thrown.</p>
     /// <p>To be able to report the build status to the source provider, the user associated with the source provider must have write access to the repo. If the user does not have write access, the build status cannot be updated. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider access</a> in the <i>CodeBuild User Guide</i>.</p><note>
     /// <p>The status of a build triggered by a webhook is always reported to your source provider.</p>
     /// </note>
@@ -709,7 +709,7 @@ impl StartBuildInputBuilder {
     pub fn get_insecure_ssl_override(&self) -> &::std::option::Option<bool> {
         &self.insecure_ssl_override
     }
-    /// <p>Set to true to report to your source provider the status of a build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown.</p>
+    /// <p>Set to true to report to your source provider the status of a build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, GitLab, GitLab Self Managed, or Bitbucket, an <code>invalidInputException</code> is thrown.</p>
     /// <p>To be able to report the build status to the source provider, the user associated with the source provider must have write access to the repo. If the user does not have write access, the build status cannot be updated. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider access</a> in the <i>CodeBuild User Guide</i>.</p><note>
     /// <p>The status of a build triggered by a webhook is always reported to your source provider.</p>
     /// </note>
@@ -717,7 +717,7 @@ impl StartBuildInputBuilder {
         self.report_build_status_override = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Set to true to report to your source provider the status of a build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown.</p>
+    /// <p>Set to true to report to your source provider the status of a build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, GitLab, GitLab Self Managed, or Bitbucket, an <code>invalidInputException</code> is thrown.</p>
     /// <p>To be able to report the build status to the source provider, the user associated with the source provider must have write access to the repo. If the user does not have write access, the build status cannot be updated. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider access</a> in the <i>CodeBuild User Guide</i>.</p><note>
     /// <p>The status of a build triggered by a webhook is always reported to your source provider.</p>
     /// </note>
@@ -725,7 +725,7 @@ impl StartBuildInputBuilder {
         self.report_build_status_override = input;
         self
     }
-    /// <p>Set to true to report to your source provider the status of a build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown.</p>
+    /// <p>Set to true to report to your source provider the status of a build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, GitLab, GitLab Self Managed, or Bitbucket, an <code>invalidInputException</code> is thrown.</p>
     /// <p>To be able to report the build status to the source provider, the user associated with the source provider must have write access to the repo. If the user does not have write access, the build status cannot be updated. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider access</a> in the <i>CodeBuild User Guide</i>.</p><note>
     /// <p>The status of a build triggered by a webhook is always reported to your source provider.</p>
     /// </note>

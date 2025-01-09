@@ -407,6 +407,8 @@ pub(crate) mod shape_license_recommendation_option;
 
 pub(crate) mod shape_metrics_source;
 
+pub(crate) mod shape_mixed_instance_types;
+
 pub(crate) mod shape_projected_metric;
 
 pub(crate) mod shape_rds_database_projected_metric;

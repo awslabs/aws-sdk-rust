@@ -15,10 +15,13 @@
 ///     ExportableAutoScalingGroupField::AccountId => { /* ... */ },
 ///     ExportableAutoScalingGroupField::AutoScalingGroupArn => { /* ... */ },
 ///     ExportableAutoScalingGroupField::AutoScalingGroupName => { /* ... */ },
+///     ExportableAutoScalingGroupField::CurrentConfigurationAllocationStrategy => { /* ... */ },
 ///     ExportableAutoScalingGroupField::CurrentConfigurationDesiredCapacity => { /* ... */ },
 ///     ExportableAutoScalingGroupField::CurrentConfigurationInstanceType => { /* ... */ },
 ///     ExportableAutoScalingGroupField::CurrentConfigurationMaxSize => { /* ... */ },
 ///     ExportableAutoScalingGroupField::CurrentConfigurationMinSize => { /* ... */ },
+///     ExportableAutoScalingGroupField::CurrentConfigurationMixedInstanceTypes => { /* ... */ },
+///     ExportableAutoScalingGroupField::CurrentConfigurationType => { /* ... */ },
 ///     ExportableAutoScalingGroupField::CurrentInstanceGpuInfo => { /* ... */ },
 ///     ExportableAutoScalingGroupField::CurrentMemory => { /* ... */ },
 ///     ExportableAutoScalingGroupField::CurrentNetwork => { /* ... */ },
@@ -38,10 +41,14 @@
 ///     ExportableAutoScalingGroupField::InferredWorkloadTypes => { /* ... */ },
 ///     ExportableAutoScalingGroupField::LastRefreshTimestamp => { /* ... */ },
 ///     ExportableAutoScalingGroupField::LookbackPeriodInDays => { /* ... */ },
+///     ExportableAutoScalingGroupField::RecommendationOptionsConfigurationAllocationStrategy => { /* ... */ },
 ///     ExportableAutoScalingGroupField::RecommendationOptionsConfigurationDesiredCapacity => { /* ... */ },
+///     ExportableAutoScalingGroupField::RecommendationOptionsConfigurationEstimatedInstanceHourReductionPercentage => { /* ... */ },
 ///     ExportableAutoScalingGroupField::RecommendationOptionsConfigurationInstanceType => { /* ... */ },
 ///     ExportableAutoScalingGroupField::RecommendationOptionsConfigurationMaxSize => { /* ... */ },
 ///     ExportableAutoScalingGroupField::RecommendationOptionsConfigurationMinSize => { /* ... */ },
+///     ExportableAutoScalingGroupField::RecommendationOptionsConfigurationMixedInstanceTypes => { /* ... */ },
+///     ExportableAutoScalingGroupField::RecommendationOptionsConfigurationType => { /* ... */ },
 ///     ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsCurrency => { /* ... */ },
 ///     ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts => { /* ... */ },
 ///     ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsValue => { /* ... */ },
@@ -113,6 +120,8 @@ pub enum ExportableAutoScalingGroupField {
     #[allow(missing_docs)] // documentation missing in model
     AutoScalingGroupName,
     #[allow(missing_docs)] // documentation missing in model
+    CurrentConfigurationAllocationStrategy,
+    #[allow(missing_docs)] // documentation missing in model
     CurrentConfigurationDesiredCapacity,
     #[allow(missing_docs)] // documentation missing in model
     CurrentConfigurationInstanceType,
@@ -120,6 +129,10 @@ pub enum ExportableAutoScalingGroupField {
     CurrentConfigurationMaxSize,
     #[allow(missing_docs)] // documentation missing in model
     CurrentConfigurationMinSize,
+    #[allow(missing_docs)] // documentation missing in model
+    CurrentConfigurationMixedInstanceTypes,
+    #[allow(missing_docs)] // documentation missing in model
+    CurrentConfigurationType,
     #[allow(missing_docs)] // documentation missing in model
     CurrentInstanceGpuInfo,
     #[allow(missing_docs)] // documentation missing in model
@@ -159,13 +172,21 @@ pub enum ExportableAutoScalingGroupField {
     #[allow(missing_docs)] // documentation missing in model
     LookbackPeriodInDays,
     #[allow(missing_docs)] // documentation missing in model
+    RecommendationOptionsConfigurationAllocationStrategy,
+    #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsConfigurationDesiredCapacity,
+    #[allow(missing_docs)] // documentation missing in model
+    RecommendationOptionsConfigurationEstimatedInstanceHourReductionPercentage,
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsConfigurationInstanceType,
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsConfigurationMaxSize,
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsConfigurationMinSize,
+    #[allow(missing_docs)] // documentation missing in model
+    RecommendationOptionsConfigurationMixedInstanceTypes,
+    #[allow(missing_docs)] // documentation missing in model
+    RecommendationOptionsConfigurationType,
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsEstimatedMonthlySavingsCurrency,
     #[allow(missing_docs)] // documentation missing in model
@@ -248,10 +269,13 @@ impl ::std::convert::From<&str> for ExportableAutoScalingGroupField {
             "AccountId" => ExportableAutoScalingGroupField::AccountId,
             "AutoScalingGroupArn" => ExportableAutoScalingGroupField::AutoScalingGroupArn,
             "AutoScalingGroupName" => ExportableAutoScalingGroupField::AutoScalingGroupName,
+            "CurrentConfigurationAllocationStrategy" => ExportableAutoScalingGroupField::CurrentConfigurationAllocationStrategy,
             "CurrentConfigurationDesiredCapacity" => ExportableAutoScalingGroupField::CurrentConfigurationDesiredCapacity,
             "CurrentConfigurationInstanceType" => ExportableAutoScalingGroupField::CurrentConfigurationInstanceType,
             "CurrentConfigurationMaxSize" => ExportableAutoScalingGroupField::CurrentConfigurationMaxSize,
             "CurrentConfigurationMinSize" => ExportableAutoScalingGroupField::CurrentConfigurationMinSize,
+            "CurrentConfigurationMixedInstanceTypes" => ExportableAutoScalingGroupField::CurrentConfigurationMixedInstanceTypes,
+            "CurrentConfigurationType" => ExportableAutoScalingGroupField::CurrentConfigurationType,
             "CurrentInstanceGpuInfo" => ExportableAutoScalingGroupField::CurrentInstanceGpuInfo,
             "CurrentMemory" => ExportableAutoScalingGroupField::CurrentMemory,
             "CurrentNetwork" => ExportableAutoScalingGroupField::CurrentNetwork,
@@ -281,10 +305,20 @@ impl ::std::convert::From<&str> for ExportableAutoScalingGroupField {
             "InferredWorkloadTypes" => ExportableAutoScalingGroupField::InferredWorkloadTypes,
             "LastRefreshTimestamp" => ExportableAutoScalingGroupField::LastRefreshTimestamp,
             "LookbackPeriodInDays" => ExportableAutoScalingGroupField::LookbackPeriodInDays,
+            "RecommendationOptionsConfigurationAllocationStrategy" => {
+                ExportableAutoScalingGroupField::RecommendationOptionsConfigurationAllocationStrategy
+            }
             "RecommendationOptionsConfigurationDesiredCapacity" => ExportableAutoScalingGroupField::RecommendationOptionsConfigurationDesiredCapacity,
+            "RecommendationOptionsConfigurationEstimatedInstanceHourReductionPercentage" => {
+                ExportableAutoScalingGroupField::RecommendationOptionsConfigurationEstimatedInstanceHourReductionPercentage
+            }
             "RecommendationOptionsConfigurationInstanceType" => ExportableAutoScalingGroupField::RecommendationOptionsConfigurationInstanceType,
             "RecommendationOptionsConfigurationMaxSize" => ExportableAutoScalingGroupField::RecommendationOptionsConfigurationMaxSize,
             "RecommendationOptionsConfigurationMinSize" => ExportableAutoScalingGroupField::RecommendationOptionsConfigurationMinSize,
+            "RecommendationOptionsConfigurationMixedInstanceTypes" => {
+                ExportableAutoScalingGroupField::RecommendationOptionsConfigurationMixedInstanceTypes
+            }
+            "RecommendationOptionsConfigurationType" => ExportableAutoScalingGroupField::RecommendationOptionsConfigurationType,
             "RecommendationOptionsEstimatedMonthlySavingsCurrency" => {
                 ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsCurrency
             }
@@ -363,10 +397,13 @@ impl ExportableAutoScalingGroupField {
             ExportableAutoScalingGroupField::AccountId => "AccountId",
             ExportableAutoScalingGroupField::AutoScalingGroupArn => "AutoScalingGroupArn",
             ExportableAutoScalingGroupField::AutoScalingGroupName => "AutoScalingGroupName",
+            ExportableAutoScalingGroupField::CurrentConfigurationAllocationStrategy => "CurrentConfigurationAllocationStrategy",
             ExportableAutoScalingGroupField::CurrentConfigurationDesiredCapacity => "CurrentConfigurationDesiredCapacity",
             ExportableAutoScalingGroupField::CurrentConfigurationInstanceType => "CurrentConfigurationInstanceType",
             ExportableAutoScalingGroupField::CurrentConfigurationMaxSize => "CurrentConfigurationMaxSize",
             ExportableAutoScalingGroupField::CurrentConfigurationMinSize => "CurrentConfigurationMinSize",
+            ExportableAutoScalingGroupField::CurrentConfigurationMixedInstanceTypes => "CurrentConfigurationMixedInstanceTypes",
+            ExportableAutoScalingGroupField::CurrentConfigurationType => "CurrentConfigurationType",
             ExportableAutoScalingGroupField::CurrentInstanceGpuInfo => "CurrentInstanceGpuInfo",
             ExportableAutoScalingGroupField::CurrentMemory => "CurrentMemory",
             ExportableAutoScalingGroupField::CurrentNetwork => "CurrentNetwork",
@@ -396,10 +433,20 @@ impl ExportableAutoScalingGroupField {
             ExportableAutoScalingGroupField::InferredWorkloadTypes => "InferredWorkloadTypes",
             ExportableAutoScalingGroupField::LastRefreshTimestamp => "LastRefreshTimestamp",
             ExportableAutoScalingGroupField::LookbackPeriodInDays => "LookbackPeriodInDays",
+            ExportableAutoScalingGroupField::RecommendationOptionsConfigurationAllocationStrategy => {
+                "RecommendationOptionsConfigurationAllocationStrategy"
+            }
             ExportableAutoScalingGroupField::RecommendationOptionsConfigurationDesiredCapacity => "RecommendationOptionsConfigurationDesiredCapacity",
+            ExportableAutoScalingGroupField::RecommendationOptionsConfigurationEstimatedInstanceHourReductionPercentage => {
+                "RecommendationOptionsConfigurationEstimatedInstanceHourReductionPercentage"
+            }
             ExportableAutoScalingGroupField::RecommendationOptionsConfigurationInstanceType => "RecommendationOptionsConfigurationInstanceType",
             ExportableAutoScalingGroupField::RecommendationOptionsConfigurationMaxSize => "RecommendationOptionsConfigurationMaxSize",
             ExportableAutoScalingGroupField::RecommendationOptionsConfigurationMinSize => "RecommendationOptionsConfigurationMinSize",
+            ExportableAutoScalingGroupField::RecommendationOptionsConfigurationMixedInstanceTypes => {
+                "RecommendationOptionsConfigurationMixedInstanceTypes"
+            }
+            ExportableAutoScalingGroupField::RecommendationOptionsConfigurationType => "RecommendationOptionsConfigurationType",
             ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsCurrency => {
                 "RecommendationOptionsEstimatedMonthlySavingsCurrency"
             }
@@ -469,10 +516,13 @@ impl ExportableAutoScalingGroupField {
             "AccountId",
             "AutoScalingGroupArn",
             "AutoScalingGroupName",
+            "CurrentConfigurationAllocationStrategy",
             "CurrentConfigurationDesiredCapacity",
             "CurrentConfigurationInstanceType",
             "CurrentConfigurationMaxSize",
             "CurrentConfigurationMinSize",
+            "CurrentConfigurationMixedInstanceTypes",
+            "CurrentConfigurationType",
             "CurrentInstanceGpuInfo",
             "CurrentMemory",
             "CurrentNetwork",
@@ -492,10 +542,14 @@ impl ExportableAutoScalingGroupField {
             "InferredWorkloadTypes",
             "LastRefreshTimestamp",
             "LookbackPeriodInDays",
+            "RecommendationOptionsConfigurationAllocationStrategy",
             "RecommendationOptionsConfigurationDesiredCapacity",
+            "RecommendationOptionsConfigurationEstimatedInstanceHourReductionPercentage",
             "RecommendationOptionsConfigurationInstanceType",
             "RecommendationOptionsConfigurationMaxSize",
             "RecommendationOptionsConfigurationMinSize",
+            "RecommendationOptionsConfigurationMixedInstanceTypes",
+            "RecommendationOptionsConfigurationType",
             "RecommendationOptionsEstimatedMonthlySavingsCurrency",
             "RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts",
             "RecommendationOptionsEstimatedMonthlySavingsValue",
@@ -558,10 +612,13 @@ impl ::std::fmt::Display for ExportableAutoScalingGroupField {
             ExportableAutoScalingGroupField::AccountId => write!(f, "AccountId"),
             ExportableAutoScalingGroupField::AutoScalingGroupArn => write!(f, "AutoScalingGroupArn"),
             ExportableAutoScalingGroupField::AutoScalingGroupName => write!(f, "AutoScalingGroupName"),
+            ExportableAutoScalingGroupField::CurrentConfigurationAllocationStrategy => write!(f, "CurrentConfigurationAllocationStrategy"),
             ExportableAutoScalingGroupField::CurrentConfigurationDesiredCapacity => write!(f, "CurrentConfigurationDesiredCapacity"),
             ExportableAutoScalingGroupField::CurrentConfigurationInstanceType => write!(f, "CurrentConfigurationInstanceType"),
             ExportableAutoScalingGroupField::CurrentConfigurationMaxSize => write!(f, "CurrentConfigurationMaxSize"),
             ExportableAutoScalingGroupField::CurrentConfigurationMinSize => write!(f, "CurrentConfigurationMinSize"),
+            ExportableAutoScalingGroupField::CurrentConfigurationMixedInstanceTypes => write!(f, "CurrentConfigurationMixedInstanceTypes"),
+            ExportableAutoScalingGroupField::CurrentConfigurationType => write!(f, "CurrentConfigurationType"),
             ExportableAutoScalingGroupField::CurrentInstanceGpuInfo => write!(f, "CurrentInstanceGpuInfo"),
             ExportableAutoScalingGroupField::CurrentMemory => write!(f, "CurrentMemory"),
             ExportableAutoScalingGroupField::CurrentNetwork => write!(f, "CurrentNetwork"),
@@ -597,14 +654,24 @@ impl ::std::fmt::Display for ExportableAutoScalingGroupField {
             ExportableAutoScalingGroupField::InferredWorkloadTypes => write!(f, "InferredWorkloadTypes"),
             ExportableAutoScalingGroupField::LastRefreshTimestamp => write!(f, "LastRefreshTimestamp"),
             ExportableAutoScalingGroupField::LookbackPeriodInDays => write!(f, "LookbackPeriodInDays"),
+            ExportableAutoScalingGroupField::RecommendationOptionsConfigurationAllocationStrategy => {
+                write!(f, "RecommendationOptionsConfigurationAllocationStrategy")
+            }
             ExportableAutoScalingGroupField::RecommendationOptionsConfigurationDesiredCapacity => {
                 write!(f, "RecommendationOptionsConfigurationDesiredCapacity")
+            }
+            ExportableAutoScalingGroupField::RecommendationOptionsConfigurationEstimatedInstanceHourReductionPercentage => {
+                write!(f, "RecommendationOptionsConfigurationEstimatedInstanceHourReductionPercentage")
             }
             ExportableAutoScalingGroupField::RecommendationOptionsConfigurationInstanceType => {
                 write!(f, "RecommendationOptionsConfigurationInstanceType")
             }
             ExportableAutoScalingGroupField::RecommendationOptionsConfigurationMaxSize => write!(f, "RecommendationOptionsConfigurationMaxSize"),
             ExportableAutoScalingGroupField::RecommendationOptionsConfigurationMinSize => write!(f, "RecommendationOptionsConfigurationMinSize"),
+            ExportableAutoScalingGroupField::RecommendationOptionsConfigurationMixedInstanceTypes => {
+                write!(f, "RecommendationOptionsConfigurationMixedInstanceTypes")
+            }
+            ExportableAutoScalingGroupField::RecommendationOptionsConfigurationType => write!(f, "RecommendationOptionsConfigurationType"),
             ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsCurrency => {
                 write!(f, "RecommendationOptionsEstimatedMonthlySavingsCurrency")
             }

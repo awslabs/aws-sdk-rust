@@ -343,6 +343,10 @@ pub use crate::types::_auto_scaling_group_estimated_monthly_savings::AutoScaling
 
 pub use crate::types::_auto_scaling_group_configuration::AutoScalingGroupConfiguration;
 
+pub use crate::types::_asg_type::AsgType;
+
+pub use crate::types::_allocation_strategy::AllocationStrategy;
+
 pub use crate::types::_s3_destination::S3Destination;
 
 pub use crate::types::_file_format::FileFormat;
@@ -378,6 +382,10 @@ pub use crate::types::_job_filter_name::JobFilterName;
 pub use crate::types::_recommendation_preference_name::RecommendationPreferenceName;
 
 mod _account_enrollment_status;
+
+mod _allocation_strategy;
+
+mod _asg_type;
 
 mod _auto_scaling_configuration;
 
