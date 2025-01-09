@@ -2589,6 +2589,10 @@ source_hash = '8fda8b946a2401fe6cbf145dc3ab8e680535b4f84b151678165f9c0e39b5db02'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '0f3fb1d32b4ecfb0fb367f90d43fbd791068180a9d343827ad5caaf7e31c00d2'
+
+[release]
+tag = 'release-2025-01-09'
+
 [release.crates]
 aws-sdk-codebuild = '1.67.0'
 aws-sdk-computeoptimizer = '1.56.0'
