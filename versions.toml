@@ -6,7 +6,7 @@ crates_to_remove = []
 [crates.aws-config]
 category = 'AwsRuntime'
 version = '1.5.13'
-source_hash = '30a9a394e0cc51e8abf71147b751f825b12ac26500085c71b8450c702a512bc2'
+source_hash = 'eed3f9ebecb6e805878821da41caaa7bac3471208420a7c4de77c5f04ffbaf34'
 
 [crates.aws-credential-types]
 category = 'AwsRuntime'
@@ -1882,9 +1882,9 @@ model_hash = 'dd87109612beacd833d65adb61355169618adb5ab5285f5d146620d1db23b28e'
 
 [crates.aws-sdk-redshift]
 category = 'AwsSdk'
-version = '1.58.0'
-source_hash = '04fae927dc98a5bc33d473ac9b3c237f4451f444478a6026c90fa236998feffe'
-model_hash = 'd3da6d36a0586b0ecc9b9bc62d76af257a23c1c0367cdd06663a3405cae31371'
+version = '1.58.1'
+source_hash = '4bd498c4ea52d89057bedcfd4bab613f0a26301567de49c29262500cb375f4f7'
+model_hash = '9546af96b09b5aa8515ae4acc77f3738abfd7099ce5524b67e3e24c386766da0'
 
 [crates.aws-sdk-redshiftdata]
 category = 'AwsSdk'
@@ -2098,9 +2098,9 @@ model_hash = 'f0bd142c2d190f5a557b4db33d2b110b92d4d4246cee55be7e573dc86190a840'
 
 [crates.aws-sdk-securitylake]
 category = 'AwsSdk'
-version = '1.56.0'
-source_hash = '9ff6a40c03cb48a2c79d7dd87548d8bdbaa9d9b937164492ab5a72a5b4142c53'
-model_hash = 'aa16fcc53eb708f75588b5530b59c3b7a3e88f44f349a76b3b918d61efc8f94a'
+version = '1.56.1'
+source_hash = '5f81262a87bf18f4f1659f78d2b394b6d54ea44f22d1b203dfcf2216d84fa4b1'
+model_hash = '43b12e35530a95b6a32a44aace9863f58fdd47b629bf7ca7f56b135b42baa006'
 
 [crates.aws-sdk-serverlessapplicationrepository]
 category = 'AwsSdk'
@@ -2260,9 +2260,9 @@ model_hash = '3d769ee530e6527e17baa6490c5003a59a84560d0d7af553dbb921808e6ea8a5'
 
 [crates.aws-sdk-sts]
 category = 'AwsSdk'
-version = '1.54.0'
-source_hash = '82c1de1fa3ebcfcfd86cfd8f33ef304f972ac3e7016d11b4d87d7cfeb22b890a'
-model_hash = 'dcb242f20b60c511fd65ed93352775ab67913245d036303ebca7dc6656205fa0'
+version = '1.54.1'
+source_hash = 'eb7b2daa330fa7a2dd196129b008c80ad67718ccb2f27035ce82051faa92201f'
+model_hash = '6889055418cd2aadc4da8cf04e48ae196d9ec62cc2af9297e8d8ad220563038f'
 
 [crates.aws-sdk-supplychain]
 category = 'AwsSdk'
@@ -2589,11 +2589,7 @@ source_hash = '8fda8b946a2401fe6cbf145dc3ab8e680535b4f84b151678165f9c0e39b5db02'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '0f3fb1d32b4ecfb0fb367f90d43fbd791068180a9d343827ad5caaf7e31c00d2'
-
-[release]
-tag = 'release-2025-01-09'
-
 [release.crates]
-aws-sdk-codebuild = '1.67.0'
-aws-sdk-computeoptimizer = '1.56.0'
-aws-sdk-fms = '1.58.0'
+aws-sdk-redshift = '1.58.1'
+aws-sdk-securitylake = '1.56.1'
+aws-sdk-sts = '1.54.1'

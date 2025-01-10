@@ -105,6 +105,7 @@ pub struct Cluster {
     /// <p>The number of compute nodes in the cluster.</p>
     pub number_of_nodes: ::std::option::Option<i32>,
     /// <p>A boolean value that, if <code>true</code>, indicates that the cluster can be accessed from a public network.</p>
+    /// <p>Default: false</p>
     pub publicly_accessible: ::std::option::Option<bool>,
     /// <p>A boolean value that, if <code>true</code>, indicates that data in the cluster is encrypted at rest.</p>
     pub encrypted: ::std::option::Option<bool>,
@@ -348,6 +349,7 @@ impl Cluster {
         self.number_of_nodes
     }
     /// <p>A boolean value that, if <code>true</code>, indicates that the cluster can be accessed from a public network.</p>
+    /// <p>Default: false</p>
     pub fn publicly_accessible(&self) -> ::std::option::Option<bool> {
         self.publicly_accessible
     }
@@ -1096,16 +1098,19 @@ impl ClusterBuilder {
         &self.number_of_nodes
     }
     /// <p>A boolean value that, if <code>true</code>, indicates that the cluster can be accessed from a public network.</p>
+    /// <p>Default: false</p>
     pub fn publicly_accessible(mut self, input: bool) -> Self {
         self.publicly_accessible = ::std::option::Option::Some(input);
         self
     }
     /// <p>A boolean value that, if <code>true</code>, indicates that the cluster can be accessed from a public network.</p>
+    /// <p>Default: false</p>
     pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
         self.publicly_accessible = input;
         self
     }
     /// <p>A boolean value that, if <code>true</code>, indicates that the cluster can be accessed from a public network.</p>
+    /// <p>Default: false</p>
     pub fn get_publicly_accessible(&self) -> &::std::option::Option<bool> {
         &self.publicly_accessible
     }

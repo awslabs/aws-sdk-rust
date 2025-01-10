@@ -693,33 +693,36 @@ impl CreateClusterFluentBuilder {
         self.inner.get_number_of_nodes()
     }
     /// <p>If <code>true</code>, the cluster can be accessed from a public network.</p>
+    /// <p>Default: false</p>
     pub fn publicly_accessible(mut self, input: bool) -> Self {
         self.inner = self.inner.publicly_accessible(input);
         self
     }
     /// <p>If <code>true</code>, the cluster can be accessed from a public network.</p>
+    /// <p>Default: false</p>
     pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_publicly_accessible(input);
         self
     }
     /// <p>If <code>true</code>, the cluster can be accessed from a public network.</p>
+    /// <p>Default: false</p>
     pub fn get_publicly_accessible(&self) -> &::std::option::Option<bool> {
         self.inner.get_publicly_accessible()
     }
-    /// <p>If <code>true</code>, the data in the cluster is encrypted at rest.</p>
-    /// <p>Default: false</p>
+    /// <p>If <code>true</code>, the data in the cluster is encrypted at rest. If you set the value on this parameter to <code>false</code>, the request will fail.</p>
+    /// <p>Default: true</p>
     pub fn encrypted(mut self, input: bool) -> Self {
         self.inner = self.inner.encrypted(input);
         self
     }
-    /// <p>If <code>true</code>, the data in the cluster is encrypted at rest.</p>
-    /// <p>Default: false</p>
+    /// <p>If <code>true</code>, the data in the cluster is encrypted at rest. If you set the value on this parameter to <code>false</code>, the request will fail.</p>
+    /// <p>Default: true</p>
     pub fn set_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_encrypted(input);
         self
     }
-    /// <p>If <code>true</code>, the data in the cluster is encrypted at rest.</p>
-    /// <p>Default: false</p>
+    /// <p>If <code>true</code>, the data in the cluster is encrypted at rest. If you set the value on this parameter to <code>false</code>, the request will fail.</p>
+    /// <p>Default: true</p>
     pub fn get_encrypted(&self) -> &::std::option::Option<bool> {
         self.inner.get_encrypted()
     }

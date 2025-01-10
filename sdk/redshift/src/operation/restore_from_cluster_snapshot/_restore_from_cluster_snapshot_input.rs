@@ -41,6 +41,7 @@ pub struct RestoreFromClusterSnapshotInput {
     /// <p>A snapshot of cluster in VPC can be restored only in VPC. Therefore, you must provide subnet group name where you want the cluster restored.</p>
     pub cluster_subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>If <code>true</code>, the cluster can be accessed from a public network.</p>
+    /// <p>Default: false</p>
     pub publicly_accessible: ::std::option::Option<bool>,
     /// <p>The Amazon Web Services account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own, optional if you own the snapshot.</p>
     pub owner_account: ::std::option::Option<::std::string::String>,
@@ -179,6 +180,7 @@ impl RestoreFromClusterSnapshotInput {
         self.cluster_subnet_group_name.as_deref()
     }
     /// <p>If <code>true</code>, the cluster can be accessed from a public network.</p>
+    /// <p>Default: false</p>
     pub fn publicly_accessible(&self) -> ::std::option::Option<bool> {
         self.publicly_accessible
     }
@@ -551,16 +553,19 @@ impl RestoreFromClusterSnapshotInputBuilder {
         &self.cluster_subnet_group_name
     }
     /// <p>If <code>true</code>, the cluster can be accessed from a public network.</p>
+    /// <p>Default: false</p>
     pub fn publicly_accessible(mut self, input: bool) -> Self {
         self.publicly_accessible = ::std::option::Option::Some(input);
         self
     }
     /// <p>If <code>true</code>, the cluster can be accessed from a public network.</p>
+    /// <p>Default: false</p>
     pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
         self.publicly_accessible = input;
         self
     }
     /// <p>If <code>true</code>, the cluster can be accessed from a public network.</p>
+    /// <p>Default: false</p>
     pub fn get_publicly_accessible(&self) -> &::std::option::Option<bool> {
         &self.publicly_accessible
     }

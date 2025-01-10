@@ -144,9 +144,10 @@ pub struct CreateClusterInput {
     /// <p>Constraints: Value must be at least 1 and no more than 100.</p>
     pub number_of_nodes: ::std::option::Option<i32>,
     /// <p>If <code>true</code>, the cluster can be accessed from a public network.</p>
-    pub publicly_accessible: ::std::option::Option<bool>,
-    /// <p>If <code>true</code>, the data in the cluster is encrypted at rest.</p>
     /// <p>Default: false</p>
+    pub publicly_accessible: ::std::option::Option<bool>,
+    /// <p>If <code>true</code>, the data in the cluster is encrypted at rest. If you set the value on this parameter to <code>false</code>, the request will fail.</p>
+    /// <p>Default: true</p>
     pub encrypted: ::std::option::Option<bool>,
     /// <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.</p>
     pub hsm_client_certificate_identifier: ::std::option::Option<::std::string::String>,
@@ -372,11 +373,12 @@ impl CreateClusterInput {
         self.number_of_nodes
     }
     /// <p>If <code>true</code>, the cluster can be accessed from a public network.</p>
+    /// <p>Default: false</p>
     pub fn publicly_accessible(&self) -> ::std::option::Option<bool> {
         self.publicly_accessible
     }
-    /// <p>If <code>true</code>, the data in the cluster is encrypted at rest.</p>
-    /// <p>Default: false</p>
+    /// <p>If <code>true</code>, the data in the cluster is encrypted at rest. If you set the value on this parameter to <code>false</code>, the request will fail.</p>
+    /// <p>Default: true</p>
     pub fn encrypted(&self) -> ::std::option::Option<bool> {
         self.encrypted
     }
@@ -1139,33 +1141,36 @@ impl CreateClusterInputBuilder {
         &self.number_of_nodes
     }
     /// <p>If <code>true</code>, the cluster can be accessed from a public network.</p>
+    /// <p>Default: false</p>
     pub fn publicly_accessible(mut self, input: bool) -> Self {
         self.publicly_accessible = ::std::option::Option::Some(input);
         self
     }
     /// <p>If <code>true</code>, the cluster can be accessed from a public network.</p>
+    /// <p>Default: false</p>
     pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
         self.publicly_accessible = input;
         self
     }
     /// <p>If <code>true</code>, the cluster can be accessed from a public network.</p>
+    /// <p>Default: false</p>
     pub fn get_publicly_accessible(&self) -> &::std::option::Option<bool> {
         &self.publicly_accessible
     }
-    /// <p>If <code>true</code>, the data in the cluster is encrypted at rest.</p>
-    /// <p>Default: false</p>
+    /// <p>If <code>true</code>, the data in the cluster is encrypted at rest. If you set the value on this parameter to <code>false</code>, the request will fail.</p>
+    /// <p>Default: true</p>
     pub fn encrypted(mut self, input: bool) -> Self {
         self.encrypted = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If <code>true</code>, the data in the cluster is encrypted at rest.</p>
-    /// <p>Default: false</p>
+    /// <p>If <code>true</code>, the data in the cluster is encrypted at rest. If you set the value on this parameter to <code>false</code>, the request will fail.</p>
+    /// <p>Default: true</p>
     pub fn set_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.encrypted = input;
         self
     }
-    /// <p>If <code>true</code>, the data in the cluster is encrypted at rest.</p>
-    /// <p>Default: false</p>
+    /// <p>If <code>true</code>, the data in the cluster is encrypted at rest. If you set the value on this parameter to <code>false</code>, the request will fail.</p>
+    /// <p>Default: true</p>
     pub fn get_encrypted(&self) -> &::std::option::Option<bool> {
         &self.encrypted
     }
