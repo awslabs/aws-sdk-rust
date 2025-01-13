@@ -106,6 +106,9 @@ where
                             builder =
                                 builder.set_channel_definitions(crate::protocol_serde::shape_channel_definitions::de_channel_definitions(tokens)?);
                         }
+                        "Tags" => {
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

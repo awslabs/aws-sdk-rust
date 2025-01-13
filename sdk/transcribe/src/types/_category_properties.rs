@@ -14,6 +14,8 @@ pub struct CategoryProperties {
     /// <p>The date and time the specified Call Analytics category was last updated.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-05T12:45:32.691000-07:00</code> represents 12:45 PM UTC-7 on May 5, 2022.</p>
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The tags, each in the form of a key:value pair, assigned to the specified call analytics category.</p>
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The input type associated with the specified category. <code>POST_CALL</code> refers to a category that is applied to batch transcriptions; <code>REAL_TIME</code> refers to a category that is applied to streaming transcriptions.</p>
     pub input_type: ::std::option::Option<crate::types::InputType>,
 }
@@ -38,6 +40,12 @@ impl CategoryProperties {
     pub fn last_update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
+    /// <p>The tags, each in the form of a key:value pair, assigned to the specified call analytics category.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
+    }
     /// <p>The input type associated with the specified category. <code>POST_CALL</code> refers to a category that is applied to batch transcriptions; <code>REAL_TIME</code> refers to a category that is applied to streaming transcriptions.</p>
     pub fn input_type(&self) -> ::std::option::Option<&crate::types::InputType> {
         self.input_type.as_ref()
@@ -58,6 +66,7 @@ pub struct CategoryPropertiesBuilder {
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) input_type: ::std::option::Option<crate::types::InputType>,
 }
 impl CategoryPropertiesBuilder {
@@ -129,6 +138,26 @@ impl CategoryPropertiesBuilder {
     pub fn get_last_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_update_time
     }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>The tags, each in the form of a key:value pair, assigned to the specified call analytics category.</p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+        v.push(input);
+        self.tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The tags, each in the form of a key:value pair, assigned to the specified call analytics category.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>The tags, each in the form of a key:value pair, assigned to the specified call analytics category.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The input type associated with the specified category. <code>POST_CALL</code> refers to a category that is applied to batch transcriptions; <code>REAL_TIME</code> refers to a category that is applied to streaming transcriptions.</p>
     pub fn input_type(mut self, input: crate::types::InputType) -> Self {
         self.input_type = ::std::option::Option::Some(input);
@@ -150,6 +179,7 @@ impl CategoryPropertiesBuilder {
             rules: self.rules,
             create_time: self.create_time,
             last_update_time: self.last_update_time,
+            tags: self.tags,
             input_type: self.input_type,
         }
     }

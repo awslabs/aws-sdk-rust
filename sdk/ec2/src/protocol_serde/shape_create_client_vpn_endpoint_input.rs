@@ -133,6 +133,11 @@ pub fn ser_create_client_vpn_endpoint_input_input_input(
     if let Some(var_48) = &input.client_login_banner_options {
         crate::protocol_serde::shape_client_login_banner_options::ser_client_login_banner_options(scope_47, var_48)?;
     }
+    #[allow(unused_mut)]
+    let mut scope_49 = writer.prefix("DisconnectOnSessionTimeout");
+    if let Some(var_50) = &input.disconnect_on_session_timeout {
+        scope_49.boolean(*var_50);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

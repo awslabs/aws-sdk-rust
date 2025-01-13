@@ -149,6 +149,28 @@ impl CreateCallAnalyticsCategoryFluentBuilder {
     pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Rule>> {
         self.inner.get_rules()
     }
+    ///
+    /// Appends an item to `Tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>Adds one or more custom tags, each in the form of a key:value pair, to a new call analytics category at the time you start this new job.</p>
+    /// <p>To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        self.inner = self.inner.tags(input);
+        self
+    }
+    /// <p>Adds one or more custom tags, each in the form of a key:value pair, to a new call analytics category at the time you start this new job.</p>
+    /// <p>To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.inner = self.inner.set_tags(input);
+        self
+    }
+    /// <p>Adds one or more custom tags, each in the form of a key:value pair, to a new call analytics category at the time you start this new job.</p>
+    /// <p>To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>Choose whether you want to create a real-time or a post-call category for your Call Analytics transcription.</p>
     /// <p>Specifying <code>POST_CALL</code> assigns your category to post-call transcriptions; categories with this input type cannot be applied to streaming (real-time) transcriptions.</p>
     /// <p>Specifying <code>REAL_TIME</code> assigns your category to streaming transcriptions; categories with this input type cannot be applied to post-call transcriptions.</p>

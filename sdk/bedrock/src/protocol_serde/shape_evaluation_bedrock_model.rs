@@ -9,6 +9,12 @@ pub fn ser_evaluation_bedrock_model(
     {
         object.key("inferenceParams").string(input.inference_params.as_str());
     }
+    if let Some(var_1) = &input.performance_config {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("performanceConfig").start_object();
+        crate::protocol_serde::shape_performance_configuration::ser_performance_configuration(&mut object_2, var_1)?;
+        object_2.finish();
+    }
     Ok(())
 }
 
@@ -39,6 +45,11 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                            );
+                        }
+                        "performanceConfig" => {
+                            builder = builder.set_performance_config(
+                                crate::protocol_serde::shape_performance_configuration::de_performance_configuration(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

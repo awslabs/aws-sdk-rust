@@ -169,7 +169,7 @@ pub(crate) fn de_describe_connector(
                 }
                 "connectorConfiguration" => {
                     builder = builder
-                        .set_connector_configuration(crate::protocol_serde::shape_sensitive_map_of_string::de_sensitive_map_of_string(tokens)?);
+                        .set_connector_configuration(crate::protocol_serde::shape_connector_configuration::de_connector_configuration(tokens)?);
                 }
                 "connectorDescription" => {
                     builder = builder.set_connector_description(

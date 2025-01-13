@@ -9,6 +9,8 @@ pub struct EvaluationBedrockModel {
     pub model_identifier: ::std::string::String,
     /// <p>Each Amazon Bedrock support different inference parameters that change how the model behaves during inference.</p>
     pub inference_params: ::std::string::String,
+    /// <p>Specifies performance settings for the model or inference profile.</p>
+    pub performance_config: ::std::option::Option<crate::types::PerformanceConfiguration>,
 }
 impl EvaluationBedrockModel {
     /// <p>The ARN of the Amazon Bedrock model or inference profile specified.</p>
@@ -21,12 +23,17 @@ impl EvaluationBedrockModel {
         use std::ops::Deref;
         self.inference_params.deref()
     }
+    /// <p>Specifies performance settings for the model or inference profile.</p>
+    pub fn performance_config(&self) -> ::std::option::Option<&crate::types::PerformanceConfiguration> {
+        self.performance_config.as_ref()
+    }
 }
 impl ::std::fmt::Debug for EvaluationBedrockModel {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("EvaluationBedrockModel");
         formatter.field("model_identifier", &self.model_identifier);
         formatter.field("inference_params", &"*** Sensitive Data Redacted ***");
+        formatter.field("performance_config", &self.performance_config);
         formatter.finish()
     }
 }
@@ -43,6 +50,7 @@ impl EvaluationBedrockModel {
 pub struct EvaluationBedrockModelBuilder {
     pub(crate) model_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) inference_params: ::std::option::Option<::std::string::String>,
+    pub(crate) performance_config: ::std::option::Option<crate::types::PerformanceConfiguration>,
 }
 impl EvaluationBedrockModelBuilder {
     /// <p>The ARN of the Amazon Bedrock model or inference profile specified.</p>
@@ -74,6 +82,20 @@ impl EvaluationBedrockModelBuilder {
     pub fn get_inference_params(&self) -> &::std::option::Option<::std::string::String> {
         &self.inference_params
     }
+    /// <p>Specifies performance settings for the model or inference profile.</p>
+    pub fn performance_config(mut self, input: crate::types::PerformanceConfiguration) -> Self {
+        self.performance_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies performance settings for the model or inference profile.</p>
+    pub fn set_performance_config(mut self, input: ::std::option::Option<crate::types::PerformanceConfiguration>) -> Self {
+        self.performance_config = input;
+        self
+    }
+    /// <p>Specifies performance settings for the model or inference profile.</p>
+    pub fn get_performance_config(&self) -> &::std::option::Option<crate::types::PerformanceConfiguration> {
+        &self.performance_config
+    }
     /// Consumes the builder and constructs a [`EvaluationBedrockModel`](crate::types::EvaluationBedrockModel).
     /// This method will fail if any of the following fields are not set:
     /// - [`model_identifier`](crate::types::builders::EvaluationBedrockModelBuilder::model_identifier)
@@ -86,6 +108,7 @@ impl EvaluationBedrockModelBuilder {
                 )
             })?,
             inference_params: self.inference_params.unwrap_or_else(|| "{}".to_owned()),
+            performance_config: self.performance_config,
         })
     }
 }
@@ -94,6 +117,7 @@ impl ::std::fmt::Debug for EvaluationBedrockModelBuilder {
         let mut formatter = f.debug_struct("EvaluationBedrockModelBuilder");
         formatter.field("model_identifier", &self.model_identifier);
         formatter.field("inference_params", &"*** Sensitive Data Redacted ***");
+        formatter.field("performance_config", &self.performance_config);
         formatter.finish()
     }
 }

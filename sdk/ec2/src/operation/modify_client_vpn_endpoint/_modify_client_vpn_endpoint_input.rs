@@ -47,6 +47,8 @@ pub struct ModifyClientVpnEndpointInput {
     pub session_timeout_hours: ::std::option::Option<i32>,
     /// <p>Options for enabling a customizable text banner that will be displayed on Amazon Web Services provided clients when a VPN session is established.</p>
     pub client_login_banner_options: ::std::option::Option<crate::types::ClientLoginBannerOptions>,
+    /// <p>Indicates whether the client VPN session is disconnected after the maximum timeout specified in <code>sessionTimeoutHours</code> is reached. If <code>true</code>, users are prompted to reconnect client VPN. If <code>false</code>, client VPN attempts to reconnect automatically. The default value is <code>false</code>.</p>
+    pub disconnect_on_session_timeout: ::std::option::Option<bool>,
 }
 impl ModifyClientVpnEndpointInput {
     /// <p>The ID of the Client VPN endpoint to modify.</p>
@@ -123,6 +125,10 @@ impl ModifyClientVpnEndpointInput {
     pub fn client_login_banner_options(&self) -> ::std::option::Option<&crate::types::ClientLoginBannerOptions> {
         self.client_login_banner_options.as_ref()
     }
+    /// <p>Indicates whether the client VPN session is disconnected after the maximum timeout specified in <code>sessionTimeoutHours</code> is reached. If <code>true</code>, users are prompted to reconnect client VPN. If <code>false</code>, client VPN attempts to reconnect automatically. The default value is <code>false</code>.</p>
+    pub fn disconnect_on_session_timeout(&self) -> ::std::option::Option<bool> {
+        self.disconnect_on_session_timeout
+    }
 }
 impl ModifyClientVpnEndpointInput {
     /// Creates a new builder-style object to manufacture [`ModifyClientVpnEndpointInput`](crate::operation::modify_client_vpn_endpoint::ModifyClientVpnEndpointInput).
@@ -149,6 +155,7 @@ pub struct ModifyClientVpnEndpointInputBuilder {
     pub(crate) client_connect_options: ::std::option::Option<crate::types::ClientConnectOptions>,
     pub(crate) session_timeout_hours: ::std::option::Option<i32>,
     pub(crate) client_login_banner_options: ::std::option::Option<crate::types::ClientLoginBannerOptions>,
+    pub(crate) disconnect_on_session_timeout: ::std::option::Option<bool>,
 }
 impl ModifyClientVpnEndpointInputBuilder {
     /// <p>The ID of the Client VPN endpoint to modify.</p>
@@ -402,6 +409,20 @@ impl ModifyClientVpnEndpointInputBuilder {
     pub fn get_client_login_banner_options(&self) -> &::std::option::Option<crate::types::ClientLoginBannerOptions> {
         &self.client_login_banner_options
     }
+    /// <p>Indicates whether the client VPN session is disconnected after the maximum timeout specified in <code>sessionTimeoutHours</code> is reached. If <code>true</code>, users are prompted to reconnect client VPN. If <code>false</code>, client VPN attempts to reconnect automatically. The default value is <code>false</code>.</p>
+    pub fn disconnect_on_session_timeout(mut self, input: bool) -> Self {
+        self.disconnect_on_session_timeout = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the client VPN session is disconnected after the maximum timeout specified in <code>sessionTimeoutHours</code> is reached. If <code>true</code>, users are prompted to reconnect client VPN. If <code>false</code>, client VPN attempts to reconnect automatically. The default value is <code>false</code>.</p>
+    pub fn set_disconnect_on_session_timeout(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.disconnect_on_session_timeout = input;
+        self
+    }
+    /// <p>Indicates whether the client VPN session is disconnected after the maximum timeout specified in <code>sessionTimeoutHours</code> is reached. If <code>true</code>, users are prompted to reconnect client VPN. If <code>false</code>, client VPN attempts to reconnect automatically. The default value is <code>false</code>.</p>
+    pub fn get_disconnect_on_session_timeout(&self) -> &::std::option::Option<bool> {
+        &self.disconnect_on_session_timeout
+    }
     /// Consumes the builder and constructs a [`ModifyClientVpnEndpointInput`](crate::operation::modify_client_vpn_endpoint::ModifyClientVpnEndpointInput).
     pub fn build(
         self,
@@ -424,6 +445,7 @@ impl ModifyClientVpnEndpointInputBuilder {
             client_connect_options: self.client_connect_options,
             session_timeout_hours: self.session_timeout_hours,
             client_login_banner_options: self.client_login_banner_options,
+            disconnect_on_session_timeout: self.disconnect_on_session_timeout,
         })
     }
 }

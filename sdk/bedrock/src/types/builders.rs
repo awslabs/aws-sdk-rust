@@ -157,6 +157,8 @@ pub use crate::types::_retrieve_config::RetrieveConfigBuilder;
 
 pub use crate::types::_evaluation_bedrock_model::EvaluationBedrockModelBuilder;
 
+pub use crate::types::_performance_configuration::PerformanceConfigurationBuilder;
+
 pub use crate::types::_human_evaluation_config::HumanEvaluationConfigBuilder;
 
 pub use crate::types::_evaluation_dataset_metric_config::EvaluationDatasetMetricConfigBuilder;

@@ -177,9 +177,13 @@ mod delete_worker_configuration;
 
 mod describe_connector;
 
+mod describe_connector_operation;
+
 mod describe_custom_plugin;
 
 mod describe_worker_configuration;
+
+mod list_connector_operations;
 
 mod list_connectors;
 

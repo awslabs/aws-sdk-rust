@@ -257,6 +257,10 @@ pub use crate::types::_evaluation_model_config::EvaluationModelConfig;
 
 pub use crate::types::_evaluation_bedrock_model::EvaluationBedrockModel;
 
+pub use crate::types::_performance_configuration::PerformanceConfiguration;
+
+pub use crate::types::_performance_config_latency::PerformanceConfigLatency;
+
 pub use crate::types::_evaluation_config::EvaluationConfig;
 
 pub use crate::types::_human_evaluation_config::HumanEvaluationConfig;
@@ -508,6 +512,10 @@ mod _model_modality;
 mod _orchestration_configuration;
 
 mod _output_data_config;
+
+mod _performance_config_latency;
+
+mod _performance_configuration;
 
 mod _prompt_router_status;
 

@@ -122,6 +122,32 @@ impl UpdateConnectorFluentBuilder {
     pub fn get_capacity(&self) -> &::std::option::Option<crate::types::CapacityUpdate> {
         self.inner.get_capacity()
     }
+    ///
+    /// Adds a key-value pair to `connectorConfiguration`.
+    ///
+    /// To override the contents of this collection use [`set_connector_configuration`](Self::set_connector_configuration).
+    ///
+    /// <p>A map of keys to values that represent the configuration for the connector.</p>
+    pub fn connector_configuration(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.connector_configuration(k.into(), v.into());
+        self
+    }
+    /// <p>A map of keys to values that represent the configuration for the connector.</p>
+    pub fn set_connector_configuration(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.inner = self.inner.set_connector_configuration(input);
+        self
+    }
+    /// <p>A map of keys to values that represent the configuration for the connector.</p>
+    pub fn get_connector_configuration(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.inner.get_connector_configuration()
+    }
     /// <p>The Amazon Resource Name (ARN) of the connector that you want to update.</p>
     pub fn connector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connector_arn(input.into());

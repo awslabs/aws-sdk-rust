@@ -66,6 +66,8 @@ pub struct CallAnalyticsJob {
     pub settings: ::std::option::Option<crate::types::CallAnalyticsJobSettings>,
     /// <p>Indicates which speaker is on which channel.</p>
     pub channel_definitions: ::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>>,
+    /// <p>The tags, each in the form of a key:value pair, assigned to the specified call analytics job.</p>
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CallAnalyticsJob {
     /// <p>The name of the Call Analytics job. Job names are case sensitive and must be unique within an Amazon Web Services account.</p>
@@ -161,6 +163,12 @@ impl CallAnalyticsJob {
     pub fn channel_definitions(&self) -> &[crate::types::ChannelDefinition] {
         self.channel_definitions.as_deref().unwrap_or_default()
     }
+    /// <p>The tags, each in the form of a key:value pair, assigned to the specified call analytics job.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
+    }
 }
 impl CallAnalyticsJob {
     /// Creates a new builder-style object to manufacture [`CallAnalyticsJob`](crate::types::CallAnalyticsJob).
@@ -189,6 +197,7 @@ pub struct CallAnalyticsJobBuilder {
     pub(crate) identified_language_score: ::std::option::Option<f32>,
     pub(crate) settings: ::std::option::Option<crate::types::CallAnalyticsJobSettings>,
     pub(crate) channel_definitions: ::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CallAnalyticsJobBuilder {
     /// <p>The name of the Call Analytics job. Job names are case sensitive and must be unique within an Amazon Web Services account.</p>
@@ -502,6 +511,26 @@ impl CallAnalyticsJobBuilder {
     pub fn get_channel_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>> {
         &self.channel_definitions
     }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>The tags, each in the form of a key:value pair, assigned to the specified call analytics job.</p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+        v.push(input);
+        self.tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The tags, each in the form of a key:value pair, assigned to the specified call analytics job.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>The tags, each in the form of a key:value pair, assigned to the specified call analytics job.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`CallAnalyticsJob`](crate::types::CallAnalyticsJob).
     pub fn build(self) -> crate::types::CallAnalyticsJob {
         crate::types::CallAnalyticsJob {
@@ -521,6 +550,7 @@ impl CallAnalyticsJobBuilder {
             identified_language_score: self.identified_language_score,
             settings: self.settings,
             channel_definitions: self.channel_definitions,
+            tags: self.tags,
         }
     }
 }

@@ -22,11 +22,17 @@ pub mod delete_worker_configuration;
 /// Types for the `DescribeConnector` operation.
 pub mod describe_connector;
 
+/// Types for the `DescribeConnectorOperation` operation.
+pub mod describe_connector_operation;
+
 /// Types for the `DescribeCustomPlugin` operation.
 pub mod describe_custom_plugin;
 
 /// Types for the `DescribeWorkerConfiguration` operation.
 pub mod describe_worker_configuration;
+
+/// Types for the `ListConnectorOperations` operation.
+pub mod list_connector_operations;
 
 /// Types for the `ListConnectors` operation.
 pub mod list_connectors;

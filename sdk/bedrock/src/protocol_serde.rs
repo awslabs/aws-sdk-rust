@@ -467,6 +467,8 @@ pub(crate) mod shape_guardrail_modalities;
 
 pub(crate) mod shape_guardrail_topic_examples;
 
+pub(crate) mod shape_performance_configuration;
+
 pub(crate) mod shape_request_metadata_base_filters;
 
 pub(crate) mod shape_request_metadata_filters_list;

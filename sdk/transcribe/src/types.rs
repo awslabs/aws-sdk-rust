@@ -7,6 +7,8 @@ pub use crate::types::_category_properties::CategoryProperties;
 
 pub use crate::types::_input_type::InputType;
 
+pub use crate::types::_tag::Tag;
+
 pub use crate::types::_rule::Rule;
 
 pub use crate::types::_sentiment_filter::SentimentFilter;
@@ -26,8 +28,6 @@ pub use crate::types::_transcript_filter_type::TranscriptFilterType;
 pub use crate::types::_interruption_filter::InterruptionFilter;
 
 pub use crate::types::_non_talk_time_filter::NonTalkTimeFilter;
-
-pub use crate::types::_tag::Tag;
 
 pub use crate::types::_transcription_job::TranscriptionJob;
 

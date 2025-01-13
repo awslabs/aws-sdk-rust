@@ -287,6 +287,21 @@ pub fn de_client_vpn_endpoint(
                 builder = builder.set_client_login_banner_options(var_23);
             }
             ,
+            s if s.matches("disconnectOnSessionTimeout") /* DisconnectOnSessionTimeout com.amazonaws.ec2#ClientVpnEndpoint$DisconnectOnSessionTimeout */ =>  {
+                let var_24 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_disconnect_on_session_timeout(var_24);
+            }
+            ,
             _ => {}
         }
     }

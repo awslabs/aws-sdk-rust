@@ -7,6 +7,8 @@ pub struct UpdateConnectorOutput {
     pub connector_arn: ::std::option::Option<::std::string::String>,
     /// <p>The state of the connector.</p>
     pub connector_state: ::std::option::Option<crate::types::ConnectorState>,
+    /// <p>The Amazon Resource Name (ARN) of the connector operation.</p>
+    pub connector_operation_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateConnectorOutput {
@@ -17,6 +19,10 @@ impl UpdateConnectorOutput {
     /// <p>The state of the connector.</p>
     pub fn connector_state(&self) -> ::std::option::Option<&crate::types::ConnectorState> {
         self.connector_state.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the connector operation.</p>
+    pub fn connector_operation_arn(&self) -> ::std::option::Option<&str> {
+        self.connector_operation_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateConnectorOutput {
@@ -37,6 +43,7 @@ impl UpdateConnectorOutput {
 pub struct UpdateConnectorOutputBuilder {
     pub(crate) connector_arn: ::std::option::Option<::std::string::String>,
     pub(crate) connector_state: ::std::option::Option<crate::types::ConnectorState>,
+    pub(crate) connector_operation_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateConnectorOutputBuilder {
@@ -68,6 +75,20 @@ impl UpdateConnectorOutputBuilder {
     pub fn get_connector_state(&self) -> &::std::option::Option<crate::types::ConnectorState> {
         &self.connector_state
     }
+    /// <p>The Amazon Resource Name (ARN) of the connector operation.</p>
+    pub fn connector_operation_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.connector_operation_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the connector operation.</p>
+    pub fn set_connector_operation_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.connector_operation_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the connector operation.</p>
+    pub fn get_connector_operation_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connector_operation_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -82,6 +103,7 @@ impl UpdateConnectorOutputBuilder {
         crate::operation::update_connector::UpdateConnectorOutput {
             connector_arn: self.connector_arn,
             connector_state: self.connector_state,
+            connector_operation_arn: self.connector_operation_arn,
             _request_id: self._request_id,
         }
     }

@@ -36,6 +36,9 @@ where
                                 ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?);
                         }
+                        "Tags" => {
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens)?);
+                        }
                         "InputType" => {
                             builder = builder.set_input_type(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

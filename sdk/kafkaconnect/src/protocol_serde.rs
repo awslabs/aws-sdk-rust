@@ -37,9 +37,13 @@ pub(crate) mod shape_delete_worker_configuration;
 
 pub(crate) mod shape_describe_connector;
 
+pub(crate) mod shape_describe_connector_operation;
+
 pub(crate) mod shape_describe_custom_plugin;
 
 pub(crate) mod shape_describe_worker_configuration;
+
+pub(crate) mod shape_list_connector_operations;
 
 pub(crate) mod shape_list_connectors;
 
@@ -95,6 +99,8 @@ pub(crate) mod shape_capacity_description;
 
 pub(crate) mod shape_capacity_update;
 
+pub(crate) mod shape_connector_configuration;
+
 pub(crate) mod shape_custom_plugin_location;
 
 pub(crate) mod shape_custom_plugin_revision_summary;
@@ -111,6 +117,10 @@ pub(crate) mod shape_kafka_cluster_encryption_in_transit;
 
 pub(crate) mod shape_kafka_cluster_encryption_in_transit_description;
 
+pub(crate) mod shape_list_of_connector_operation_step;
+
+pub(crate) mod shape_list_of_connector_operation_summary;
+
 pub(crate) mod shape_list_of_connector_summary;
 
 pub(crate) mod shape_list_of_custom_plugin_summary;
@@ -125,8 +135,6 @@ pub(crate) mod shape_log_delivery_description;
 
 pub(crate) mod shape_plugin;
 
-pub(crate) mod shape_sensitive_map_of_string;
-
 pub(crate) mod shape_state_description;
 
 pub(crate) mod shape_tags;
@@ -139,6 +147,8 @@ pub(crate) mod shape_worker_configuration_revision_description;
 
 pub(crate) mod shape_worker_configuration_revision_summary;
 
+pub(crate) mod shape_worker_setting;
+
 pub(crate) mod shape_apache_kafka_cluster;
 
 pub(crate) mod shape_apache_kafka_cluster_description;
@@ -148,6 +158,10 @@ pub(crate) mod shape_auto_scaling;
 pub(crate) mod shape_auto_scaling_description;
 
 pub(crate) mod shape_auto_scaling_update;
+
+pub(crate) mod shape_connector_operation_step;
+
+pub(crate) mod shape_connector_operation_summary;
 
 pub(crate) mod shape_connector_summary;
 

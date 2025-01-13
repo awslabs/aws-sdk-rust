@@ -9,5 +9,15 @@ pub fn ser_update_connector_input_input(
         crate::protocol_serde::shape_capacity_update::ser_capacity_update(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.connector_configuration {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("connectorConfiguration").start_object();
+        for (key_5, value_6) in var_3 {
+            {
+                object_4.key(key_5.as_str()).string(value_6.as_str());
+            }
+        }
+        object_4.finish();
+    }
     Ok(())
 }

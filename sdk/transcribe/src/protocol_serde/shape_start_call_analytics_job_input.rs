@@ -27,17 +27,29 @@ pub fn ser_start_call_analytics_job_input_input(
         crate::protocol_serde::shape_call_analytics_job_settings::ser_call_analytics_job_settings(&mut object_8, var_7)?;
         object_8.finish();
     }
-    if let Some(var_9) = &input.channel_definitions {
-        let mut array_10 = object.key("ChannelDefinitions").start_array();
+    if let Some(var_9) = &input.tags {
+        let mut array_10 = object.key("Tags").start_array();
         for item_11 in var_9 {
             {
                 #[allow(unused_mut)]
                 let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_channel_definition::ser_channel_definition(&mut object_12, item_11)?;
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_12, item_11)?;
                 object_12.finish();
             }
         }
         array_10.finish();
+    }
+    if let Some(var_13) = &input.channel_definitions {
+        let mut array_14 = object.key("ChannelDefinitions").start_array();
+        for item_15 in var_13 {
+            {
+                #[allow(unused_mut)]
+                let mut object_16 = array_14.value().start_object();
+                crate::protocol_serde::shape_channel_definition::ser_channel_definition(&mut object_16, item_15)?;
+                object_16.finish();
+            }
+        }
+        array_14.finish();
     }
     Ok(())
 }

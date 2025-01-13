@@ -73,9 +73,23 @@ pub use crate::types::_scale_out_policy_description::ScaleOutPolicyDescription;
 
 pub use crate::types::_scale_in_policy_description::ScaleInPolicyDescription;
 
+pub use crate::types::_connector_operation_summary::ConnectorOperationSummary;
+
+pub use crate::types::_connector_operation_state::ConnectorOperationState;
+
+pub use crate::types::_connector_operation_type::ConnectorOperationType;
+
 pub use crate::types::_worker_configuration_revision_description::WorkerConfigurationRevisionDescription;
 
 pub use crate::types::_state_description::StateDescription;
+
+pub use crate::types::_worker_setting::WorkerSetting;
+
+pub use crate::types::_connector_operation_step::ConnectorOperationStep;
+
+pub use crate::types::_connector_operation_step_state::ConnectorOperationStepState;
+
+pub use crate::types::_connector_operation_step_type::ConnectorOperationStepType;
 
 pub use crate::types::_custom_plugin_location::CustomPluginLocation;
 
@@ -136,6 +150,18 @@ mod _capacity_update;
 mod _cloud_watch_logs_log_delivery;
 
 mod _cloud_watch_logs_log_delivery_description;
+
+mod _connector_operation_state;
+
+mod _connector_operation_step;
+
+mod _connector_operation_step_state;
+
+mod _connector_operation_step_type;
+
+mod _connector_operation_summary;
+
+mod _connector_operation_type;
 
 mod _connector_state;
 
@@ -234,6 +260,8 @@ mod _worker_configuration_summary;
 mod _worker_log_delivery;
 
 mod _worker_log_delivery_description;
+
+mod _worker_setting;
 
 /// Builders
 pub mod builders;

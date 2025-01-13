@@ -28,7 +28,7 @@ impl crate::operation::create_snapshots::builders::CreateSnapshotsInputBuilder {
 /// <li>
 /// <p>If the source instance is in a Region, you must create the snapshots in the same Region as the instance.</p></li>
 /// <li>
-/// <p>If the source instance is in a Local Zone, you can create the snapshots in the same Local Zone or in parent Amazon Web Services Region.</p></li>
+/// <p>If the source instance is in a Local Zone, you can create the snapshots in the same Local Zone or in its parent Amazon Web Services Region.</p></li>
 /// <li>
 /// <p>If the source instance is on an Outpost, you can create the snapshots on the same Outpost or in its parent Amazon Web Services Region.</p></li>
 /// </ul>

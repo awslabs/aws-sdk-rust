@@ -50,6 +50,9 @@ pub struct StartCallAnalyticsJobInput {
     pub data_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specify additional optional settings in your request, including content redaction; allows you to apply custom language models, vocabulary filters, and custom vocabularies to your Call Analytics job.</p>
     pub settings: ::std::option::Option<crate::types::CallAnalyticsJobSettings>,
+    /// <p>Adds one or more custom tags, each in the form of a key:value pair, to a new call analytics job at the time you start this new job.</p>
+    /// <p>To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Makes it possible to specify which speaker is on which channel. For example, if your agent is the first participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).</p>
     pub channel_definitions: ::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>>,
 }
@@ -113,6 +116,13 @@ impl StartCallAnalyticsJobInput {
     pub fn settings(&self) -> ::std::option::Option<&crate::types::CallAnalyticsJobSettings> {
         self.settings.as_ref()
     }
+    /// <p>Adds one or more custom tags, each in the form of a key:value pair, to a new call analytics job at the time you start this new job.</p>
+    /// <p>To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
+    }
     /// <p>Makes it possible to specify which speaker is on which channel. For example, if your agent is the first participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.channel_definitions.is_none()`.
@@ -137,6 +147,7 @@ pub struct StartCallAnalyticsJobInputBuilder {
     pub(crate) output_encryption_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_access_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) settings: ::std::option::Option<crate::types::CallAnalyticsJobSettings>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) channel_definitions: ::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>>,
 }
 impl StartCallAnalyticsJobInputBuilder {
@@ -331,6 +342,29 @@ impl StartCallAnalyticsJobInputBuilder {
     pub fn get_settings(&self) -> &::std::option::Option<crate::types::CallAnalyticsJobSettings> {
         &self.settings
     }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>Adds one or more custom tags, each in the form of a key:value pair, to a new call analytics job at the time you start this new job.</p>
+    /// <p>To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+        v.push(input);
+        self.tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Adds one or more custom tags, each in the form of a key:value pair, to a new call analytics job at the time you start this new job.</p>
+    /// <p>To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>Adds one or more custom tags, each in the form of a key:value pair, to a new call analytics job at the time you start this new job.</p>
+    /// <p>To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Appends an item to `channel_definitions`.
     ///
     /// To override the contents of this collection use [`set_channel_definitions`](Self::set_channel_definitions).
@@ -363,6 +397,7 @@ impl StartCallAnalyticsJobInputBuilder {
             output_encryption_kms_key_id: self.output_encryption_kms_key_id,
             data_access_role_arn: self.data_access_role_arn,
             settings: self.settings,
+            tags: self.tags,
             channel_definitions: self.channel_definitions,
         })
     }

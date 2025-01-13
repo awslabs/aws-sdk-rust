@@ -18,8 +18,20 @@ pub fn ser_create_call_analytics_category_input_input(
         }
         array_3.finish();
     }
-    if let Some(var_6) = &input.input_type {
-        object.key("InputType").string(var_6.as_str());
+    if let Some(var_6) = &input.tags {
+        let mut array_7 = object.key("Tags").start_array();
+        for item_8 in var_6 {
+            {
+                #[allow(unused_mut)]
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_9, item_8)?;
+                object_9.finish();
+            }
+        }
+        array_7.finish();
+    }
+    if let Some(var_10) = &input.input_type {
+        object.key("InputType").string(var_10.as_str());
     }
     Ok(())
 }

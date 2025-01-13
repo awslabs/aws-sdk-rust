@@ -3,12 +3,14 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateConnector`](crate::operation::update_connector::builders::UpdateConnectorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`capacity(CapacityUpdate)`](crate::operation::update_connector::builders::UpdateConnectorFluentBuilder::capacity) / [`set_capacity(Option<CapacityUpdate>)`](crate::operation::update_connector::builders::UpdateConnectorFluentBuilder::set_capacity):<br>required: **true**<br><p>The target capacity.</p><br>
+    ///   - [`capacity(CapacityUpdate)`](crate::operation::update_connector::builders::UpdateConnectorFluentBuilder::capacity) / [`set_capacity(Option<CapacityUpdate>)`](crate::operation::update_connector::builders::UpdateConnectorFluentBuilder::set_capacity):<br>required: **false**<br><p>The target capacity.</p><br>
+    ///   - [`connector_configuration(impl Into<String>, impl Into<String>)`](crate::operation::update_connector::builders::UpdateConnectorFluentBuilder::connector_configuration) / [`set_connector_configuration(Option<HashMap::<String, String>>)`](crate::operation::update_connector::builders::UpdateConnectorFluentBuilder::set_connector_configuration):<br>required: **false**<br><p>A map of keys to values that represent the configuration for the connector.</p><br>
     ///   - [`connector_arn(impl Into<String>)`](crate::operation::update_connector::builders::UpdateConnectorFluentBuilder::connector_arn) / [`set_connector_arn(Option<String>)`](crate::operation::update_connector::builders::UpdateConnectorFluentBuilder::set_connector_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the connector that you want to update.</p><br>
     ///   - [`current_version(impl Into<String>)`](crate::operation::update_connector::builders::UpdateConnectorFluentBuilder::current_version) / [`set_current_version(Option<String>)`](crate::operation::update_connector::builders::UpdateConnectorFluentBuilder::set_current_version):<br>required: **true**<br><p>The current version of the connector that you want to update.</p><br>
     /// - On success, responds with [`UpdateConnectorOutput`](crate::operation::update_connector::UpdateConnectorOutput) with field(s):
     ///   - [`connector_arn(Option<String>)`](crate::operation::update_connector::UpdateConnectorOutput::connector_arn): <p>The Amazon Resource Name (ARN) of the connector.</p>
     ///   - [`connector_state(Option<ConnectorState>)`](crate::operation::update_connector::UpdateConnectorOutput::connector_state): <p>The state of the connector.</p>
+    ///   - [`connector_operation_arn(Option<String>)`](crate::operation::update_connector::UpdateConnectorOutput::connector_operation_arn): <p>The Amazon Resource Name (ARN) of the connector operation.</p>
     /// - On failure, responds with [`SdkError<UpdateConnectorError>`](crate::operation::update_connector::UpdateConnectorError)
     pub fn update_connector(&self) -> crate::operation::update_connector::builders::UpdateConnectorFluentBuilder {
         crate::operation::update_connector::builders::UpdateConnectorFluentBuilder::new(self.handle.clone())

@@ -327,6 +327,51 @@ impl From<crate::operation::describe_connector::DescribeConnectorError> for Erro
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_connector_operation::DescribeConnectorOperationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_connector_operation::DescribeConnectorOperationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_connector_operation::DescribeConnectorOperationError> for Error {
+    fn from(err: crate::operation::describe_connector_operation::DescribeConnectorOperationError) -> Self {
+        match err {
+            crate::operation::describe_connector_operation::DescribeConnectorOperationError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::describe_connector_operation::DescribeConnectorOperationError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::describe_connector_operation::DescribeConnectorOperationError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::describe_connector_operation::DescribeConnectorOperationError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::describe_connector_operation::DescribeConnectorOperationError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::describe_connector_operation::DescribeConnectorOperationError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::describe_connector_operation::DescribeConnectorOperationError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::describe_connector_operation::DescribeConnectorOperationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_custom_plugin::DescribeCustomPluginError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -403,6 +448,47 @@ impl From<crate::operation::describe_worker_configuration::DescribeWorkerConfigu
                 Error::UnauthorizedException(inner)
             }
             crate::operation::describe_worker_configuration::DescribeWorkerConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_connector_operations::ListConnectorOperationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_connector_operations::ListConnectorOperationsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_connector_operations::ListConnectorOperationsError> for Error {
+    fn from(err: crate::operation::list_connector_operations::ListConnectorOperationsError) -> Self {
+        match err {
+            crate::operation::list_connector_operations::ListConnectorOperationsError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::list_connector_operations::ListConnectorOperationsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::list_connector_operations::ListConnectorOperationsError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::list_connector_operations::ListConnectorOperationsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::list_connector_operations::ListConnectorOperationsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::list_connector_operations::ListConnectorOperationsError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::list_connector_operations::ListConnectorOperationsError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::list_connector_operations::ListConnectorOperationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

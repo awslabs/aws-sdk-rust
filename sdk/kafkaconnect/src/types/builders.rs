@@ -61,9 +61,15 @@ pub use crate::types::_scale_out_policy_description::ScaleOutPolicyDescriptionBu
 
 pub use crate::types::_scale_in_policy_description::ScaleInPolicyDescriptionBuilder;
 
+pub use crate::types::_connector_operation_summary::ConnectorOperationSummaryBuilder;
+
 pub use crate::types::_worker_configuration_revision_description::WorkerConfigurationRevisionDescriptionBuilder;
 
 pub use crate::types::_state_description::StateDescriptionBuilder;
+
+pub use crate::types::_worker_setting::WorkerSettingBuilder;
+
+pub use crate::types::_connector_operation_step::ConnectorOperationStepBuilder;
 
 pub use crate::types::_custom_plugin_location::CustomPluginLocationBuilder;
 

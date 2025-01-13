@@ -172,6 +172,13 @@ pub(crate) fn de_update_connector(
                             .transpose()?,
                     );
                 }
+                "connectorOperationArn" => {
+                    builder = builder.set_connector_operation_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "connectorState" => {
                     builder = builder.set_connector_state(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
