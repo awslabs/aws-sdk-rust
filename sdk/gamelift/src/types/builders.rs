@@ -81,6 +81,8 @@ pub use crate::types::_tag::TagBuilder;
 
 pub use crate::types::_game_session_placement::GameSessionPlacementBuilder;
 
+pub use crate::types::_priority_configuration_override::PriorityConfigurationOverrideBuilder;
+
 pub use crate::types::_placed_player_session::PlacedPlayerSessionBuilder;
 
 pub use crate::types::_player_latency::PlayerLatencyBuilder;

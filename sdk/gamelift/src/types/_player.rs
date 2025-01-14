@@ -11,7 +11,7 @@ pub struct Player {
     pub player_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
     /// <p>Name of the team that the player is assigned to in a match. Team names are defined in a matchmaking rule set.</p>
     pub team: ::std::option::Option<::std::string::String>,
-    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to @aws; Regions. If this property is present, FlexMatch considers placing the match only in Regions for which latency is reported.</p>
+    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to Amazon Web Services Regions. If this property is present, FlexMatch considers placing the match only in Regions for which latency is reported.</p>
     /// <p>If a matchmaker has a rule that evaluates player latency, players must report latency in order to be matched. If no latency is reported in this scenario, FlexMatch assumes that no Regions are available to the player and the ticket is not matchable.</p>
     pub latency_in_ms: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
 }
@@ -29,7 +29,7 @@ impl Player {
     pub fn team(&self) -> ::std::option::Option<&str> {
         self.team.as_deref()
     }
-    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to @aws; Regions. If this property is present, FlexMatch considers placing the match only in Regions for which latency is reported.</p>
+    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to Amazon Web Services Regions. If this property is present, FlexMatch considers placing the match only in Regions for which latency is reported.</p>
     /// <p>If a matchmaker has a rule that evaluates player latency, players must report latency in order to be matched. If no latency is reported in this scenario, FlexMatch assumes that no Regions are available to the player and the ticket is not matchable.</p>
     pub fn latency_in_ms(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, i32>> {
         self.latency_in_ms.as_ref()
@@ -120,7 +120,7 @@ impl PlayerBuilder {
     ///
     /// To override the contents of this collection use [`set_latency_in_ms`](Self::set_latency_in_ms).
     ///
-    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to @aws; Regions. If this property is present, FlexMatch considers placing the match only in Regions for which latency is reported.</p>
+    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to Amazon Web Services Regions. If this property is present, FlexMatch considers placing the match only in Regions for which latency is reported.</p>
     /// <p>If a matchmaker has a rule that evaluates player latency, players must report latency in order to be matched. If no latency is reported in this scenario, FlexMatch assumes that no Regions are available to the player and the ticket is not matchable.</p>
     pub fn latency_in_ms(mut self, k: impl ::std::convert::Into<::std::string::String>, v: i32) -> Self {
         let mut hash_map = self.latency_in_ms.unwrap_or_default();
@@ -128,13 +128,13 @@ impl PlayerBuilder {
         self.latency_in_ms = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to @aws; Regions. If this property is present, FlexMatch considers placing the match only in Regions for which latency is reported.</p>
+    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to Amazon Web Services Regions. If this property is present, FlexMatch considers placing the match only in Regions for which latency is reported.</p>
     /// <p>If a matchmaker has a rule that evaluates player latency, players must report latency in order to be matched. If no latency is reported in this scenario, FlexMatch assumes that no Regions are available to the player and the ticket is not matchable.</p>
     pub fn set_latency_in_ms(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>) -> Self {
         self.latency_in_ms = input;
         self
     }
-    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to @aws; Regions. If this property is present, FlexMatch considers placing the match only in Regions for which latency is reported.</p>
+    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to Amazon Web Services Regions. If this property is present, FlexMatch considers placing the match only in Regions for which latency is reported.</p>
     /// <p>If a matchmaker has a rule that evaluates player latency, players must report latency in order to be matched. If no latency is reported in this scenario, FlexMatch assumes that no Regions are available to the player and the ticket is not matchable.</p>
     pub fn get_latency_in_ms(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, i32>> {
         &self.latency_in_ms

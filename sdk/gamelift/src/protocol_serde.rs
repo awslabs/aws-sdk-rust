@@ -675,6 +675,8 @@ pub(crate) mod shape_player_session_list;
 
 pub(crate) mod shape_priority_configuration;
 
+pub(crate) mod shape_priority_configuration_override;
+
 pub(crate) mod shape_resource_creation_limit_policy;
 
 pub(crate) mod shape_routing_strategy;
@@ -798,6 +800,8 @@ pub(crate) mod shape_container_mount_point_list;
 pub(crate) mod shape_container_port_range;
 
 pub(crate) mod shape_location_list;
+
+pub(crate) mod shape_location_order_override_list;
 
 pub(crate) mod shape_matched_player_session_list;
 

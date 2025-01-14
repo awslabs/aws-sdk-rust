@@ -128,6 +128,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "PriorityConfigurationOverride" => {
+                            builder = builder.set_priority_configuration_override(
+                                crate::protocol_serde::shape_priority_configuration_override::de_priority_configuration_override(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

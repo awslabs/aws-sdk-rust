@@ -57,5 +57,11 @@ pub fn ser_start_game_session_placement_input_input(
     if let Some(var_17) = &input.game_session_data {
         object.key("GameSessionData").string(var_17.as_str());
     }
+    if let Some(var_18) = &input.priority_configuration_override {
+        #[allow(unused_mut)]
+        let mut object_19 = object.key("PriorityConfigurationOverride").start_object();
+        crate::protocol_serde::shape_priority_configuration_override::ser_priority_configuration_override(&mut object_19, var_18)?;
+        object_19.finish();
+    }
     Ok(())
 }

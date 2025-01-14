@@ -145,6 +145,10 @@ pub use crate::types::_tag::Tag;
 
 pub use crate::types::_game_session_placement::GameSessionPlacement;
 
+pub use crate::types::_priority_configuration_override::PriorityConfigurationOverride;
+
+pub use crate::types::_placement_fallback_strategy::PlacementFallbackStrategy;
+
 pub use crate::types::_placed_player_session::PlacedPlayerSession;
 
 pub use crate::types::_player_latency::PlayerLatency;
@@ -507,6 +511,8 @@ mod _operating_system;
 
 mod _placed_player_session;
 
+mod _placement_fallback_strategy;
+
 mod _player;
 
 mod _player_latency;
@@ -522,6 +528,8 @@ mod _player_session_status;
 mod _policy_type;
 
 mod _priority_configuration;
+
+mod _priority_configuration_override;
 
 mod _priority_type;
 

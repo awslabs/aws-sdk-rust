@@ -265,6 +265,8 @@ pub enum StartGameSessionPlacementError {
     NotFoundException(crate::types::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::types::error::UnauthorizedException),
+    /// <p>The requested operation is not supported in the Region specified.</p>
+    UnsupportedRegionException(crate::types::error::UnsupportedRegionException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -302,6 +304,7 @@ impl StartGameSessionPlacementError {
             Self::InvalidRequestException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::NotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::UnauthorizedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::UnsupportedRegionException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -321,6 +324,10 @@ impl StartGameSessionPlacementError {
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(self, Self::UnauthorizedException(_))
     }
+    /// Returns `true` if the error kind is `StartGameSessionPlacementError::UnsupportedRegionException`.
+    pub fn is_unsupported_region_exception(&self) -> bool {
+        matches!(self, Self::UnsupportedRegionException(_))
+    }
 }
 impl ::std::error::Error for StartGameSessionPlacementError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
@@ -329,6 +336,7 @@ impl ::std::error::Error for StartGameSessionPlacementError {
             Self::InvalidRequestException(_inner) => ::std::option::Option::Some(_inner),
             Self::NotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::UnauthorizedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::UnsupportedRegionException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -340,6 +348,7 @@ impl ::std::fmt::Display for StartGameSessionPlacementError {
             Self::InvalidRequestException(_inner) => _inner.fmt(f),
             Self::NotFoundException(_inner) => _inner.fmt(f),
             Self::UnauthorizedException(_inner) => _inner.fmt(f),
+            Self::UnsupportedRegionException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -365,6 +374,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for StartGameSess
             Self::InvalidRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::NotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UnauthorizedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::UnsupportedRegionException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

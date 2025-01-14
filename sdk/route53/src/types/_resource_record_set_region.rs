@@ -40,6 +40,7 @@
 ///     ResourceRecordSetRegion::IlCentral1 => { /* ... */ },
 ///     ResourceRecordSetRegion::MeCentral1 => { /* ... */ },
 ///     ResourceRecordSetRegion::MeSouth1 => { /* ... */ },
+///     ResourceRecordSetRegion::MxCentral1 => { /* ... */ },
 ///     ResourceRecordSetRegion::SaEast1 => { /* ... */ },
 ///     ResourceRecordSetRegion::UsEast1 => { /* ... */ },
 ///     ResourceRecordSetRegion::UsEast2 => { /* ... */ },
@@ -130,6 +131,8 @@ pub enum ResourceRecordSetRegion {
     #[allow(missing_docs)] // documentation missing in model
     MeSouth1,
     #[allow(missing_docs)] // documentation missing in model
+    MxCentral1,
+    #[allow(missing_docs)] // documentation missing in model
     SaEast1,
     #[allow(missing_docs)] // documentation missing in model
     UsEast1,
@@ -174,6 +177,7 @@ impl ::std::convert::From<&str> for ResourceRecordSetRegion {
             "il-central-1" => ResourceRecordSetRegion::IlCentral1,
             "me-central-1" => ResourceRecordSetRegion::MeCentral1,
             "me-south-1" => ResourceRecordSetRegion::MeSouth1,
+            "mx-central-1" => ResourceRecordSetRegion::MxCentral1,
             "sa-east-1" => ResourceRecordSetRegion::SaEast1,
             "us-east-1" => ResourceRecordSetRegion::UsEast1,
             "us-east-2" => ResourceRecordSetRegion::UsEast2,
@@ -222,6 +226,7 @@ impl ResourceRecordSetRegion {
             ResourceRecordSetRegion::IlCentral1 => "il-central-1",
             ResourceRecordSetRegion::MeCentral1 => "me-central-1",
             ResourceRecordSetRegion::MeSouth1 => "me-south-1",
+            ResourceRecordSetRegion::MxCentral1 => "mx-central-1",
             ResourceRecordSetRegion::SaEast1 => "sa-east-1",
             ResourceRecordSetRegion::UsEast1 => "us-east-1",
             ResourceRecordSetRegion::UsEast2 => "us-east-2",
@@ -261,6 +266,7 @@ impl ResourceRecordSetRegion {
             "il-central-1",
             "me-central-1",
             "me-south-1",
+            "mx-central-1",
             "sa-east-1",
             "us-east-1",
             "us-east-2",
@@ -317,6 +323,7 @@ impl ::std::fmt::Display for ResourceRecordSetRegion {
             ResourceRecordSetRegion::IlCentral1 => write!(f, "il-central-1"),
             ResourceRecordSetRegion::MeCentral1 => write!(f, "me-central-1"),
             ResourceRecordSetRegion::MeSouth1 => write!(f, "me-south-1"),
+            ResourceRecordSetRegion::MxCentral1 => write!(f, "mx-central-1"),
             ResourceRecordSetRegion::SaEast1 => write!(f, "sa-east-1"),
             ResourceRecordSetRegion::UsEast1 => write!(f, "us-east-1"),
             ResourceRecordSetRegion::UsEast2 => write!(f, "us-east-2"),

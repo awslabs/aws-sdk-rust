@@ -3277,6 +3277,9 @@ impl From<crate::operation::start_game_session_placement::StartGameSessionPlacem
             crate::operation::start_game_session_placement::StartGameSessionPlacementError::UnauthorizedException(inner) => {
                 Error::UnauthorizedException(inner)
             }
+            crate::operation::start_game_session_placement::StartGameSessionPlacementError::UnsupportedRegionException(inner) => {
+                Error::UnsupportedRegionException(inner)
+            }
             crate::operation::start_game_session_placement::StartGameSessionPlacementError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }

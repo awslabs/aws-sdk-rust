@@ -40,6 +40,7 @@
 ///     CloudWatchRegion::IlCentral1 => { /* ... */ },
 ///     CloudWatchRegion::MeCentral1 => { /* ... */ },
 ///     CloudWatchRegion::MeSouth1 => { /* ... */ },
+///     CloudWatchRegion::MxCentral1 => { /* ... */ },
 ///     CloudWatchRegion::SaEast1 => { /* ... */ },
 ///     CloudWatchRegion::UsEast1 => { /* ... */ },
 ///     CloudWatchRegion::UsEast2 => { /* ... */ },
@@ -135,6 +136,8 @@ pub enum CloudWatchRegion {
     #[allow(missing_docs)] // documentation missing in model
     MeSouth1,
     #[allow(missing_docs)] // documentation missing in model
+    MxCentral1,
+    #[allow(missing_docs)] // documentation missing in model
     SaEast1,
     #[allow(missing_docs)] // documentation missing in model
     UsEast1,
@@ -189,6 +192,7 @@ impl ::std::convert::From<&str> for CloudWatchRegion {
             "il-central-1" => CloudWatchRegion::IlCentral1,
             "me-central-1" => CloudWatchRegion::MeCentral1,
             "me-south-1" => CloudWatchRegion::MeSouth1,
+            "mx-central-1" => CloudWatchRegion::MxCentral1,
             "sa-east-1" => CloudWatchRegion::SaEast1,
             "us-east-1" => CloudWatchRegion::UsEast1,
             "us-east-2" => CloudWatchRegion::UsEast2,
@@ -242,6 +246,7 @@ impl CloudWatchRegion {
             CloudWatchRegion::IlCentral1 => "il-central-1",
             CloudWatchRegion::MeCentral1 => "me-central-1",
             CloudWatchRegion::MeSouth1 => "me-south-1",
+            CloudWatchRegion::MxCentral1 => "mx-central-1",
             CloudWatchRegion::SaEast1 => "sa-east-1",
             CloudWatchRegion::UsEast1 => "us-east-1",
             CloudWatchRegion::UsEast2 => "us-east-2",
@@ -286,6 +291,7 @@ impl CloudWatchRegion {
             "il-central-1",
             "me-central-1",
             "me-south-1",
+            "mx-central-1",
             "sa-east-1",
             "us-east-1",
             "us-east-2",
@@ -347,6 +353,7 @@ impl ::std::fmt::Display for CloudWatchRegion {
             CloudWatchRegion::IlCentral1 => write!(f, "il-central-1"),
             CloudWatchRegion::MeCentral1 => write!(f, "me-central-1"),
             CloudWatchRegion::MeSouth1 => write!(f, "me-south-1"),
+            CloudWatchRegion::MxCentral1 => write!(f, "mx-central-1"),
             CloudWatchRegion::SaEast1 => write!(f, "sa-east-1"),
             CloudWatchRegion::UsEast1 => write!(f, "us-east-1"),
             CloudWatchRegion::UsEast2 => write!(f, "us-east-2"),

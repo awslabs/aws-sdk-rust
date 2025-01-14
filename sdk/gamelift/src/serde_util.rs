@@ -84,6 +84,15 @@ pub(crate) fn ip_permission_correct_errors(mut builder: crate::types::builders::
     builder
 }
 
+pub(crate) fn priority_configuration_override_correct_errors(
+    mut builder: crate::types::builders::PriorityConfigurationOverrideBuilder,
+) -> crate::types::builders::PriorityConfigurationOverrideBuilder {
+    if builder.location_order.is_none() {
+        builder.location_order = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder) -> crate::types::builders::TagBuilder {
     if builder.key.is_none() {
         builder.key = Some(Default::default())
