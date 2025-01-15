@@ -28,7 +28,13 @@ pub struct Config {
     behavior_version: ::std::option::Option<crate::config::BehaviorVersion>,
 }
 impl Config {
+    ///
     /// Constructs a config builder.
+    /// <div class="warning">
+    /// Note that a config created from this builder will not have the same safe defaults as one created by
+    /// the <a href="https://crates.io/crates/aws-config" target="_blank">aws-config</a> crate.
+    /// </div>
+    ///
     pub fn builder() -> Builder {
         Builder::default()
     }
@@ -132,7 +138,13 @@ impl ::std::default::Default for Builder {
     }
 }
 impl Builder {
+    ///
     /// Constructs a config builder.
+    /// <div class="warning">
+    /// Note that a config created from this builder will not have the same safe defaults as one created by
+    /// the <a href="https://crates.io/crates/aws-config" target="_blank">aws-config</a> crate.
+    /// </div>
+    ///
     pub fn new() -> Self {
         Self::default()
     }
