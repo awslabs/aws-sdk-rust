@@ -6,7 +6,7 @@ pub struct GetBucketLifecycleConfigurationOutput {
     /// <p>Container for a lifecycle rule.</p>
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleRule>>,
     /// <p>Indicates which default minimum object size behavior is applied to the lifecycle configuration.</p><note>
-    /// <p>This parameter applies to general purpose buckets only. It is not supported for directory bucket lifecycle configurations.</p>
+    /// <p>This parameter applies to general purpose buckets only. It isn't supported for directory bucket lifecycle configurations.</p>
     /// </note>
     /// <ul>
     /// <li>
@@ -27,7 +27,7 @@ impl GetBucketLifecycleConfigurationOutput {
         self.rules.as_deref().unwrap_or_default()
     }
     /// <p>Indicates which default minimum object size behavior is applied to the lifecycle configuration.</p><note>
-    /// <p>This parameter applies to general purpose buckets only. It is not supported for directory bucket lifecycle configurations.</p>
+    /// <p>This parameter applies to general purpose buckets only. It isn't supported for directory bucket lifecycle configurations.</p>
     /// </note>
     /// <ul>
     /// <li>
@@ -88,7 +88,7 @@ impl GetBucketLifecycleConfigurationOutputBuilder {
         &self.rules
     }
     /// <p>Indicates which default minimum object size behavior is applied to the lifecycle configuration.</p><note>
-    /// <p>This parameter applies to general purpose buckets only. It is not supported for directory bucket lifecycle configurations.</p>
+    /// <p>This parameter applies to general purpose buckets only. It isn't supported for directory bucket lifecycle configurations.</p>
     /// </note>
     /// <ul>
     /// <li>
@@ -102,7 +102,7 @@ impl GetBucketLifecycleConfigurationOutputBuilder {
         self
     }
     /// <p>Indicates which default minimum object size behavior is applied to the lifecycle configuration.</p><note>
-    /// <p>This parameter applies to general purpose buckets only. It is not supported for directory bucket lifecycle configurations.</p>
+    /// <p>This parameter applies to general purpose buckets only. It isn't supported for directory bucket lifecycle configurations.</p>
     /// </note>
     /// <ul>
     /// <li>
@@ -119,7 +119,7 @@ impl GetBucketLifecycleConfigurationOutputBuilder {
         self
     }
     /// <p>Indicates which default minimum object size behavior is applied to the lifecycle configuration.</p><note>
-    /// <p>This parameter applies to general purpose buckets only. It is not supported for directory bucket lifecycle configurations.</p>
+    /// <p>This parameter applies to general purpose buckets only. It isn't supported for directory bucket lifecycle configurations.</p>
     /// </note>
     /// <ul>
     /// <li>

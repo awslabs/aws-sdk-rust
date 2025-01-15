@@ -22,7 +22,7 @@ impl crate::operation::submit_opportunity::builders::SubmitOpportunityInputBuild
 }
 /// Fluent builder constructing a request to `SubmitOpportunity`.
 ///
-/// <p>Use this action to submit an opportunity that was previously created by partner for AWS review. After you perform this action, the opportunity becomes non-editable until it is reviewed by AWS and has <code> LifeCycle.ReviewStatus </code> as either <code>Approved</code> or <code>Action Required</code>.</p>
+/// <p>Use this action to submit an Opportunity that was previously created by partner for AWS review. After you perform this action, the Opportunity becomes non-editable until it is reviewed by AWS and has <code> LifeCycle.ReviewStatus </code> as either <code>Approved</code> or <code>Action Required</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SubmitOpportunityFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,59 +108,113 @@ impl SubmitOpportunityFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Specifies the catalog related to the request.</p>
+    /// <p>Specifies the catalog related to the request. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>AWS: Submits the opportunity request from the production AWS environment.</p></li>
+    /// <li>
+    /// <p>Sandbox: Submits the opportunity request from a sandbox environment used for testing or development purposes.</p></li>
+    /// </ul>
     pub fn catalog(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.catalog(input.into());
         self
     }
-    /// <p>Specifies the catalog related to the request.</p>
+    /// <p>Specifies the catalog related to the request. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>AWS: Submits the opportunity request from the production AWS environment.</p></li>
+    /// <li>
+    /// <p>Sandbox: Submits the opportunity request from a sandbox environment used for testing or development purposes.</p></li>
+    /// </ul>
     pub fn set_catalog(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_catalog(input);
         self
     }
-    /// <p>Specifies the catalog related to the request.</p>
+    /// <p>Specifies the catalog related to the request. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>AWS: Submits the opportunity request from the production AWS environment.</p></li>
+    /// <li>
+    /// <p>Sandbox: Submits the opportunity request from a sandbox environment used for testing or development purposes.</p></li>
+    /// </ul>
     pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_catalog()
     }
-    /// <p>The identifier of the opportunity previously created by partner and needs to be submitted.</p>
+    /// <p>The identifier of the Opportunity previously created by partner and needs to be submitted.</p>
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identifier(input.into());
         self
     }
-    /// <p>The identifier of the opportunity previously created by partner and needs to be submitted.</p>
+    /// <p>The identifier of the Opportunity previously created by partner and needs to be submitted.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identifier(input);
         self
     }
-    /// <p>The identifier of the opportunity previously created by partner and needs to be submitted.</p>
+    /// <p>The identifier of the Opportunity previously created by partner and needs to be submitted.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identifier()
     }
-    /// <p>Specifies the level of AWS sellers' involvement on the opportunity.</p>
+    /// <p>Specifies the level of AWS sellers' involvement on the opportunity. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Co-sell</code>: Indicates the user wants to co-sell with AWS. Share the opportunity with AWS to receive deal assistance and support.</p></li>
+    /// <li>
+    /// <p><code>For Visibility Only</code>: Indicates that the user does not need support from AWS Sales Rep. Share this opportunity with AWS for visibility only, you will not receive deal assistance and support.</p></li>
+    /// </ul>
     pub fn involvement_type(mut self, input: crate::types::SalesInvolvementType) -> Self {
         self.inner = self.inner.involvement_type(input);
         self
     }
-    /// <p>Specifies the level of AWS sellers' involvement on the opportunity.</p>
+    /// <p>Specifies the level of AWS sellers' involvement on the opportunity. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Co-sell</code>: Indicates the user wants to co-sell with AWS. Share the opportunity with AWS to receive deal assistance and support.</p></li>
+    /// <li>
+    /// <p><code>For Visibility Only</code>: Indicates that the user does not need support from AWS Sales Rep. Share this opportunity with AWS for visibility only, you will not receive deal assistance and support.</p></li>
+    /// </ul>
     pub fn set_involvement_type(mut self, input: ::std::option::Option<crate::types::SalesInvolvementType>) -> Self {
         self.inner = self.inner.set_involvement_type(input);
         self
     }
-    /// <p>Specifies the level of AWS sellers' involvement on the opportunity.</p>
+    /// <p>Specifies the level of AWS sellers' involvement on the opportunity. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Co-sell</code>: Indicates the user wants to co-sell with AWS. Share the opportunity with AWS to receive deal assistance and support.</p></li>
+    /// <li>
+    /// <p><code>For Visibility Only</code>: Indicates that the user does not need support from AWS Sales Rep. Share this opportunity with AWS for visibility only, you will not receive deal assistance and support.</p></li>
+    /// </ul>
     pub fn get_involvement_type(&self) -> &::std::option::Option<crate::types::SalesInvolvementType> {
         self.inner.get_involvement_type()
     }
-    /// <p>Determines whether to restrict visibility of the opportunity from AWS sales. Default value is Full.</p>
+    /// <p>Determines whether to restrict visibility of the opportunity from AWS sales. Default value is Full. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Full</code>: The opportunity is fully visible to AWS sales.</p></li>
+    /// <li>
+    /// <p><code>Limited</code>: The opportunity has restricted visibility to AWS sales.</p></li>
+    /// </ul>
     pub fn visibility(mut self, input: crate::types::Visibility) -> Self {
         self.inner = self.inner.visibility(input);
         self
     }
-    /// <p>Determines whether to restrict visibility of the opportunity from AWS sales. Default value is Full.</p>
+    /// <p>Determines whether to restrict visibility of the opportunity from AWS sales. Default value is Full. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Full</code>: The opportunity is fully visible to AWS sales.</p></li>
+    /// <li>
+    /// <p><code>Limited</code>: The opportunity has restricted visibility to AWS sales.</p></li>
+    /// </ul>
     pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
         self.inner = self.inner.set_visibility(input);
         self
     }
-    /// <p>Determines whether to restrict visibility of the opportunity from AWS sales. Default value is Full.</p>
+    /// <p>Determines whether to restrict visibility of the opportunity from AWS sales. Default value is Full. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Full</code>: The opportunity is fully visible to AWS sales.</p></li>
+    /// <li>
+    /// <p><code>Limited</code>: The opportunity has restricted visibility to AWS sales.</p></li>
+    /// </ul>
     pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
         self.inner.get_visibility()
     }

@@ -17,17 +17,21 @@ pub fn ser_completed_part(
         let mut inner_writer = scope.start_el("ChecksumCRC32C").finish();
         inner_writer.data(var_3.as_str());
     }
-    if let Some(var_4) = &input.checksum_sha1 {
-        let mut inner_writer = scope.start_el("ChecksumSHA1").finish();
+    if let Some(var_4) = &input.checksum_crc64_nvme {
+        let mut inner_writer = scope.start_el("ChecksumCRC64NVME").finish();
         inner_writer.data(var_4.as_str());
     }
-    if let Some(var_5) = &input.checksum_sha256 {
-        let mut inner_writer = scope.start_el("ChecksumSHA256").finish();
+    if let Some(var_5) = &input.checksum_sha1 {
+        let mut inner_writer = scope.start_el("ChecksumSHA1").finish();
         inner_writer.data(var_5.as_str());
     }
-    if let Some(var_6) = &input.part_number {
+    if let Some(var_6) = &input.checksum_sha256 {
+        let mut inner_writer = scope.start_el("ChecksumSHA256").finish();
+        inner_writer.data(var_6.as_str());
+    }
+    if let Some(var_7) = &input.part_number {
         let mut inner_writer = scope.start_el("PartNumber").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_6).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_7).encode());
     }
     scope.finish();
     Ok(())

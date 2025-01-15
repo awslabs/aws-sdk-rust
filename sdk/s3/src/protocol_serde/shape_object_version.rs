@@ -41,8 +41,22 @@ pub fn de_object_version(
                 builder = builder.set_checksum_algorithm(var_2);
             }
             ,
-            s if s.matches("Size") /* Size com.amazonaws.s3#ObjectVersion$Size */ =>  {
+            s if s.matches("ChecksumType") /* ChecksumType com.amazonaws.s3#ObjectVersion$ChecksumType */ =>  {
                 let var_4 =
+                    Some(
+                        Result::<crate::types::ChecksumType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::ChecksumType::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_checksum_type(var_4);
+            }
+            ,
+            s if s.matches("Size") /* Size com.amazonaws.s3#ObjectVersion$Size */ =>  {
+                let var_5 =
                     Some(
                          {
                             <i64 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -53,11 +67,11 @@ pub fn de_object_version(
                         ?
                     )
                 ;
-                builder = builder.set_size(var_4);
+                builder = builder.set_size(var_5);
             }
             ,
             s if s.matches("StorageClass") /* StorageClass com.amazonaws.s3#ObjectVersion$StorageClass */ =>  {
-                let var_5 =
+                let var_6 =
                     Some(
                         Result::<crate::types::ObjectVersionStorageClass, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::ObjectVersionStorageClass::from(
@@ -67,23 +81,10 @@ pub fn de_object_version(
                         ?
                     )
                 ;
-                builder = builder.set_storage_class(var_5);
+                builder = builder.set_storage_class(var_6);
             }
             ,
             s if s.matches("Key") /* Key com.amazonaws.s3#ObjectVersion$Key */ =>  {
-                let var_6 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_key(var_6);
-            }
-            ,
-            s if s.matches("VersionId") /* VersionId com.amazonaws.s3#ObjectVersion$VersionId */ =>  {
                 let var_7 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -93,11 +94,24 @@ pub fn de_object_version(
                         ?
                     )
                 ;
-                builder = builder.set_version_id(var_7);
+                builder = builder.set_key(var_7);
+            }
+            ,
+            s if s.matches("VersionId") /* VersionId com.amazonaws.s3#ObjectVersion$VersionId */ =>  {
+                let var_8 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_version_id(var_8);
             }
             ,
             s if s.matches("IsLatest") /* IsLatest com.amazonaws.s3#ObjectVersion$IsLatest */ =>  {
-                let var_8 =
+                let var_9 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -108,11 +122,11 @@ pub fn de_object_version(
                         ?
                     )
                 ;
-                builder = builder.set_is_latest(var_8);
+                builder = builder.set_is_latest(var_9);
             }
             ,
             s if s.matches("LastModified") /* LastModified com.amazonaws.s3#ObjectVersion$LastModified */ =>  {
-                let var_9 =
+                let var_10 =
                     Some(
                         ::aws_smithy_types::DateTime::from_str(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -122,27 +136,27 @@ pub fn de_object_version(
                         ?
                     )
                 ;
-                builder = builder.set_last_modified(var_9);
+                builder = builder.set_last_modified(var_10);
             }
             ,
             s if s.matches("Owner") /* Owner com.amazonaws.s3#ObjectVersion$Owner */ =>  {
-                let var_10 =
+                let var_11 =
                     Some(
                         crate::protocol_serde::shape_owner::de_owner(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_owner(var_10);
+                builder = builder.set_owner(var_11);
             }
             ,
             s if s.matches("RestoreStatus") /* RestoreStatus com.amazonaws.s3#ObjectVersion$RestoreStatus */ =>  {
-                let var_11 =
+                let var_12 =
                     Some(
                         crate::protocol_serde::shape_restore_status::de_restore_status(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_restore_status(var_11);
+                builder = builder.set_restore_status(var_12);
             }
             ,
             _ => {}

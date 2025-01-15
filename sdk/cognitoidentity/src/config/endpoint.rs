@@ -6,269 +6,9 @@ pub use ::aws_smithy_types::endpoint::Endpoint;
 #[cfg(test)]
 mod test {
 
-    /// For region ap-northeast-1 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_1() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("ap-northeast-1".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://cognito-identity.ap-northeast-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://cognito-identity.ap-northeast-1.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region ap-northeast-2 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_2() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("ap-northeast-2".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://cognito-identity.ap-northeast-2.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://cognito-identity.ap-northeast-2.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region ap-south-1 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_3() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("ap-south-1".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://cognito-identity.ap-south-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://cognito-identity.ap-south-1.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region ap-southeast-1 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_4() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("ap-southeast-1".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://cognito-identity.ap-southeast-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://cognito-identity.ap-southeast-1.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region ap-southeast-2 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_5() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("ap-southeast-2".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://cognito-identity.ap-southeast-2.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://cognito-identity.ap-southeast-2.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region ca-central-1 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_6() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("ca-central-1".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://cognito-identity.ca-central-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://cognito-identity.ca-central-1.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region eu-central-1 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_7() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("eu-central-1".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://cognito-identity.eu-central-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://cognito-identity.eu-central-1.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region eu-north-1 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_8() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("eu-north-1".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://cognito-identity.eu-north-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://cognito-identity.eu-north-1.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region eu-west-1 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_9() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("eu-west-1".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://cognito-identity.eu-west-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://cognito-identity.eu-west-1.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region eu-west-2 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_10() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("eu-west-2".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://cognito-identity.eu-west-2.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://cognito-identity.eu-west-2.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region eu-west-3 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_11() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("eu-west-3".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://cognito-identity.eu-west-3.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://cognito-identity.eu-west-3.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region me-south-1 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_12() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("me-south-1".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://cognito-identity.me-south-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://cognito-identity.me-south-1.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region sa-east-1 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_13() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("sa-east-1".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://cognito-identity.sa-east-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://cognito-identity.sa-east-1.amazonaws.com")
-                .build()
-        );
-    }
-
     /// For region us-east-1 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_14() {
+    fn test_1() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -288,7 +28,7 @@ mod test {
 
     /// For region us-east-1 with FIPS enabled and DualStack disabled
     #[test]
-    fn test_15() {
+    fn test_2() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(true)
@@ -306,9 +46,49 @@ mod test {
         );
     }
 
+    /// For region us-east-1 with FIPS disabled and DualStack enabled
+    #[test]
+    fn test_3() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://cognito-identity.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://cognito-identity.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// For region us-east-1 with FIPS enabled and DualStack enabled
+    #[test]
+    fn test_4() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://cognito-identity-fips.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://cognito-identity-fips.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
     /// For region us-east-2 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_16() {
+    fn test_5() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-2".to_string())
             .use_fips(false)
@@ -328,7 +108,7 @@ mod test {
 
     /// For region us-east-2 with FIPS enabled and DualStack disabled
     #[test]
-    fn test_17() {
+    fn test_6() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-2".to_string())
             .use_fips(true)
@@ -346,9 +126,49 @@ mod test {
         );
     }
 
+    /// For region us-east-2 with FIPS disabled and DualStack enabled
+    #[test]
+    fn test_7() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-2".to_string())
+            .use_fips(false)
+            .use_dual_stack(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://cognito-identity.us-east-2.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://cognito-identity.us-east-2.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// For region us-east-2 with FIPS enabled and DualStack enabled
+    #[test]
+    fn test_8() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-2".to_string())
+            .use_fips(true)
+            .use_dual_stack(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://cognito-identity-fips.us-east-2.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://cognito-identity-fips.us-east-2.amazonaws.com")
+                .build()
+        );
+    }
+
     /// For region us-west-1 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_18() {
+    fn test_9() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-1".to_string())
             .use_fips(false)
@@ -366,9 +186,69 @@ mod test {
         );
     }
 
+    /// For region us-west-1 with FIPS enabled and DualStack disabled
+    #[test]
+    fn test_10() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-west-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://cognito-identity-fips.us-west-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://cognito-identity-fips.us-west-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// For region us-west-1 with FIPS disabled and DualStack enabled
+    #[test]
+    fn test_11() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-west-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://cognito-identity.us-west-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://cognito-identity.us-west-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// For region us-west-1 with FIPS enabled and DualStack enabled
+    #[test]
+    fn test_12() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-west-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://cognito-identity-fips.us-west-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://cognito-identity-fips.us-west-1.amazonaws.com")
+                .build()
+        );
+    }
+
     /// For region us-west-2 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_19() {
+    fn test_13() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .use_fips(false)
@@ -388,7 +268,7 @@ mod test {
 
     /// For region us-west-2 with FIPS enabled and DualStack disabled
     #[test]
-    fn test_20() {
+    fn test_14() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .use_fips(true)
@@ -406,49 +286,49 @@ mod test {
         );
     }
 
-    /// For region us-east-1 with FIPS enabled and DualStack enabled
+    /// For region us-west-2 with FIPS disabled and DualStack enabled
     #[test]
-    fn test_21() {
+    fn test_15() {
         let params = crate::config::endpoint::Params::builder()
-            .region("us-east-1".to_string())
-            .use_fips(true)
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://cognito-identity-fips.us-east-1.api.aws");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://cognito-identity-fips.us-east-1.api.aws")
-                .build()
-        );
-    }
-
-    /// For region us-east-1 with FIPS disabled and DualStack enabled
-    #[test]
-    fn test_22() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-east-1".to_string())
+            .region("us-west-2".to_string())
             .use_fips(false)
             .use_dual_stack(true)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://cognito-identity.us-east-1.api.aws");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://cognito-identity.us-west-2.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://cognito-identity.us-east-1.api.aws")
+                .url("https://cognito-identity.us-west-2.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// For region us-west-2 with FIPS enabled and DualStack enabled
+    #[test]
+    fn test_16() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-west-2".to_string())
+            .use_fips(true)
+            .use_dual_stack(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://cognito-identity-fips.us-west-2.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://cognito-identity-fips.us-west-2.amazonaws.com")
                 .build()
         );
     }
 
     /// For region cn-north-1 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_23() {
+    fn test_17() {
         let params = crate::config::endpoint::Params::builder()
             .region("cn-north-1".to_string())
             .use_fips(false)
@@ -468,7 +348,7 @@ mod test {
 
     /// For region cn-north-1 with FIPS enabled and DualStack enabled
     #[test]
-    fn test_24() {
+    fn test_18() {
         let params = crate::config::endpoint::Params::builder()
             .region("cn-north-1".to_string())
             .use_fips(true)
@@ -488,7 +368,7 @@ mod test {
 
     /// For region cn-north-1 with FIPS enabled and DualStack disabled
     #[test]
-    fn test_25() {
+    fn test_19() {
         let params = crate::config::endpoint::Params::builder()
             .region("cn-north-1".to_string())
             .use_fips(true)
@@ -508,7 +388,7 @@ mod test {
 
     /// For region cn-north-1 with FIPS disabled and DualStack enabled
     #[test]
-    fn test_26() {
+    fn test_20() {
         let params = crate::config::endpoint::Params::builder()
             .region("cn-north-1".to_string())
             .use_fips(false)
@@ -528,7 +408,7 @@ mod test {
 
     /// For region us-gov-west-1 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_27() {
+    fn test_21() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-gov-west-1".to_string())
             .use_fips(false)
@@ -548,7 +428,7 @@ mod test {
 
     /// For region us-gov-west-1 with FIPS enabled and DualStack disabled
     #[test]
-    fn test_28() {
+    fn test_22() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-gov-west-1".to_string())
             .use_fips(true)
@@ -568,7 +448,7 @@ mod test {
 
     /// For region us-gov-east-1 with FIPS enabled and DualStack enabled
     #[test]
-    fn test_29() {
+    fn test_23() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-gov-east-1".to_string())
             .use_fips(true)
@@ -588,7 +468,7 @@ mod test {
 
     /// For region us-gov-east-1 with FIPS enabled and DualStack disabled
     #[test]
-    fn test_30() {
+    fn test_24() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-gov-east-1".to_string())
             .use_fips(true)
@@ -608,7 +488,7 @@ mod test {
 
     /// For region us-gov-east-1 with FIPS disabled and DualStack enabled
     #[test]
-    fn test_31() {
+    fn test_25() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-gov-east-1".to_string())
             .use_fips(false)
@@ -628,7 +508,7 @@ mod test {
 
     /// For region us-gov-east-1 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_32() {
+    fn test_26() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-gov-east-1".to_string())
             .use_fips(false)
@@ -648,7 +528,7 @@ mod test {
 
     /// For region us-iso-east-1 with FIPS enabled and DualStack enabled
     #[test]
-    fn test_33() {
+    fn test_27() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-iso-east-1".to_string())
             .use_fips(true)
@@ -666,7 +546,7 @@ mod test {
 
     /// For region us-iso-east-1 with FIPS enabled and DualStack disabled
     #[test]
-    fn test_34() {
+    fn test_28() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-iso-east-1".to_string())
             .use_fips(true)
@@ -686,7 +566,7 @@ mod test {
 
     /// For region us-iso-east-1 with FIPS disabled and DualStack enabled
     #[test]
-    fn test_35() {
+    fn test_29() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-iso-east-1".to_string())
             .use_fips(false)
@@ -701,7 +581,7 @@ mod test {
 
     /// For region us-iso-east-1 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_36() {
+    fn test_30() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-iso-east-1".to_string())
             .use_fips(false)
@@ -721,7 +601,7 @@ mod test {
 
     /// For region us-isob-east-1 with FIPS enabled and DualStack enabled
     #[test]
-    fn test_37() {
+    fn test_31() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-isob-east-1".to_string())
             .use_fips(true)
@@ -739,7 +619,7 @@ mod test {
 
     /// For region us-isob-east-1 with FIPS enabled and DualStack disabled
     #[test]
-    fn test_38() {
+    fn test_32() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-isob-east-1".to_string())
             .use_fips(true)
@@ -759,7 +639,7 @@ mod test {
 
     /// For region us-isob-east-1 with FIPS disabled and DualStack enabled
     #[test]
-    fn test_39() {
+    fn test_33() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-isob-east-1".to_string())
             .use_fips(false)
@@ -774,7 +654,7 @@ mod test {
 
     /// For region us-isob-east-1 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_40() {
+    fn test_34() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-isob-east-1".to_string())
             .use_fips(false)
@@ -794,7 +674,7 @@ mod test {
 
     /// For custom endpoint with region set and fips disabled and dualstack disabled
     #[test]
-    fn test_41() {
+    fn test_35() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -813,7 +693,7 @@ mod test {
 
     /// For custom endpoint with region not set and fips disabled and dualstack disabled
     #[test]
-    fn test_42() {
+    fn test_36() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -831,7 +711,7 @@ mod test {
 
     /// For custom endpoint with fips enabled and dualstack disabled
     #[test]
-    fn test_43() {
+    fn test_37() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(true)
@@ -847,7 +727,7 @@ mod test {
 
     /// For custom endpoint with fips disabled and dualstack enabled
     #[test]
-    fn test_44() {
+    fn test_38() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -866,7 +746,7 @@ mod test {
 
     /// Missing region
     #[test]
-    fn test_45() {
+    fn test_39() {
         let params = crate::config::endpoint::Params::builder().build().expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);

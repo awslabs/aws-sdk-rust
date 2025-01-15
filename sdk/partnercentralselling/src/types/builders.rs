@@ -5,6 +5,8 @@ pub use crate::types::_solution_base::SolutionBaseBuilder;
 
 pub use crate::types::_solution_sort::SolutionSortBuilder;
 
+pub use crate::types::_tag::TagBuilder;
+
 pub use crate::types::_resource_snapshot_job_summary::ResourceSnapshotJobSummaryBuilder;
 
 pub use crate::types::_sort_object::SortObjectBuilder;

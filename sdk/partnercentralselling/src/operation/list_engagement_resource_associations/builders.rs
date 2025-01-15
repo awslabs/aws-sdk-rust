@@ -114,17 +114,35 @@ impl ListEngagementResourceAssociationsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_engagement_resource_associations::paginator::ListEngagementResourceAssociationsPaginator {
         crate::operation::list_engagement_resource_associations::paginator::ListEngagementResourceAssociationsPaginator::new(self.handle, self.inner)
     }
-    /// <p>Specifies the catalog in which to search for engagement-resource associations.</p>
+    /// <p>Specifies the catalog in which to search for engagement-resource associations. Valid Values: "AWS" or "Sandbox"</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> for production environments.</p></li>
+    /// <li>
+    /// <p><code>Sandbox</code> for testing and development purposes.</p></li>
+    /// </ul>
     pub fn catalog(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.catalog(input.into());
         self
     }
-    /// <p>Specifies the catalog in which to search for engagement-resource associations.</p>
+    /// <p>Specifies the catalog in which to search for engagement-resource associations. Valid Values: "AWS" or "Sandbox"</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> for production environments.</p></li>
+    /// <li>
+    /// <p><code>Sandbox</code> for testing and development purposes.</p></li>
+    /// </ul>
     pub fn set_catalog(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_catalog(input);
         self
     }
-    /// <p>Specifies the catalog in which to search for engagement-resource associations.</p>
+    /// <p>Specifies the catalog in which to search for engagement-resource associations. Valid Values: "AWS" or "Sandbox"</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> for production environments.</p></li>
+    /// <li>
+    /// <p><code>Sandbox</code> for testing and development purposes.</p></li>
+    /// </ul>
     pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_catalog()
     }
@@ -198,17 +216,17 @@ impl ListEngagementResourceAssociationsFluentBuilder {
     pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_identifier()
     }
-    /// <p>Filters the results to include only associations with resources owned by the specified AWS account. Use this when you want to find associations related to resources owned by a particular account.</p>
+    /// <p>Filters the response to include only snapshots of resources owned by the specified AWS account ID. Use this when you want to find associations related to resources owned by a particular account.</p>
     pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.created_by(input.into());
         self
     }
-    /// <p>Filters the results to include only associations with resources owned by the specified AWS account. Use this when you want to find associations related to resources owned by a particular account.</p>
+    /// <p>Filters the response to include only snapshots of resources owned by the specified AWS account ID. Use this when you want to find associations related to resources owned by a particular account.</p>
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_created_by(input);
         self
     }
-    /// <p>Filters the results to include only associations with resources owned by the specified AWS account. Use this when you want to find associations related to resources owned by a particular account.</p>
+    /// <p>Filters the response to include only snapshots of resources owned by the specified AWS account ID. Use this when you want to find associations related to resources owned by a particular account.</p>
     pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_created_by()
     }

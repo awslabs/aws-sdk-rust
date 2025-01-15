@@ -59,6 +59,13 @@ pub fn de_create_multipart_upload_http_response(
                 )
             })?,
         );
+        output = output.set_checksum_type(
+            crate::protocol_serde::shape_create_multipart_upload_output::de_checksum_type_header(_response_headers).map_err(|_| {
+                crate::operation::create_multipart_upload::CreateMultipartUploadError::unhandled(
+                    "Failed to parse ChecksumType from header `x-amz-checksum-type",
+                )
+            })?,
+        );
         output = output.set_request_charged(
             crate::protocol_serde::shape_create_multipart_upload_output::de_request_charged_header(_response_headers).map_err(|_| {
                 crate::operation::create_multipart_upload::CreateMultipartUploadError::unhandled(
@@ -409,9 +416,20 @@ pub fn ser_create_multipart_upload_headers(
         })?;
         builder = builder.header("x-amz-checksum-algorithm", header_value);
     }
-    if let ::std::option::Option::Some(inner_55) = &input.metadata {
+    if let ::std::option::Option::Some(inner_55) = &input.checksum_type {
+        let formatted_56 = inner_55.as_str();
+        let header_value = formatted_56;
+        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+            ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                "checksum_type",
+                format!("`{}` cannot be used as a header value: {}", &header_value, err),
+            )
+        })?;
+        builder = builder.header("x-amz-checksum-type", header_value);
+    }
+    if let ::std::option::Option::Some(inner_57) = &input.metadata {
         {
-            for (k, v) in inner_55 {
+            for (k, v) in inner_57 {
                 use std::str::FromStr;
                 let header_name = http::header::HeaderName::from_str(&format!("{}{}", "x-amz-meta-", &k)).map_err(|err| {
                     ::aws_smithy_types::error::operation::BuildError::invalid_field(
@@ -453,32 +471,6 @@ pub fn de_create_multipart_upload(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("UploadId") /* UploadId com.amazonaws.s3.synthetic#CreateMultipartUploadOutput$UploadId */ =>  {
-                let var_56 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_upload_id(var_56);
-            }
-            ,
-            s if s.matches("Bucket") /* Bucket com.amazonaws.s3.synthetic#CreateMultipartUploadOutput$Bucket */ =>  {
-                let var_57 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_bucket(var_57);
-            }
-            ,
-            s if s.matches("Key") /* Key com.amazonaws.s3.synthetic#CreateMultipartUploadOutput$Key */ =>  {
                 let var_58 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -488,7 +480,33 @@ pub fn de_create_multipart_upload(
                         ?
                     )
                 ;
-                builder = builder.set_key(var_58);
+                builder = builder.set_upload_id(var_58);
+            }
+            ,
+            s if s.matches("Bucket") /* Bucket com.amazonaws.s3.synthetic#CreateMultipartUploadOutput$Bucket */ =>  {
+                let var_59 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_bucket(var_59);
+            }
+            ,
+            s if s.matches("Key") /* Key com.amazonaws.s3.synthetic#CreateMultipartUploadOutput$Key */ =>  {
+                let var_60 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_key(var_60);
             }
             ,
             _ => {}

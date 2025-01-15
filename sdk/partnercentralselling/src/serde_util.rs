@@ -167,6 +167,15 @@ pub(crate) fn list_solutions_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_tags_for_resource_output_output_correct_errors(
+    mut builder: crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder,
+) -> crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder {
+    if builder.tags.is_none() {
+        builder.tags = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn put_selling_system_settings_output_output_correct_errors(
     mut builder: crate::operation::put_selling_system_settings::builders::PutSellingSystemSettingsOutputBuilder,
 ) -> crate::operation::put_selling_system_settings::builders::PutSellingSystemSettingsOutputBuilder {
@@ -294,6 +303,16 @@ pub(crate) fn solution_base_correct_errors(mut builder: crate::types::builders::
     }
     if builder.created_date.is_none() {
         builder.created_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder) -> crate::types::builders::TagBuilder {
+    if builder.key.is_none() {
+        builder.key = Some(Default::default())
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
     }
     builder
 }

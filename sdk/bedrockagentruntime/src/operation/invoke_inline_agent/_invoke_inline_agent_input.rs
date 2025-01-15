@@ -36,6 +36,10 @@ pub struct InvokeInlineAgentInput {
     pub prompt_override_configuration: ::std::option::Option<crate::types::PromptOverrideConfiguration>,
     /// <p>Model settings for the request.</p>
     pub bedrock_model_configurations: ::std::option::Option<crate::types::InlineBedrockModelConfigurations>,
+    /// <p>Specifies the configurations for streaming.</p><note>
+    /// <p>To use agent streaming, you need permissions to perform the <code>bedrock:InvokeModelWithResponseStream</code> action.</p>
+    /// </note>
+    pub streaming_configurations: ::std::option::Option<crate::types::StreamingConfigurations>,
 }
 impl InvokeInlineAgentInput {
     /// <p>The unique identifier of the session. Use the same value across requests to continue the same conversation.</p>
@@ -103,6 +107,12 @@ impl InvokeInlineAgentInput {
     pub fn bedrock_model_configurations(&self) -> ::std::option::Option<&crate::types::InlineBedrockModelConfigurations> {
         self.bedrock_model_configurations.as_ref()
     }
+    /// <p>Specifies the configurations for streaming.</p><note>
+    /// <p>To use agent streaming, you need permissions to perform the <code>bedrock:InvokeModelWithResponseStream</code> action.</p>
+    /// </note>
+    pub fn streaming_configurations(&self) -> ::std::option::Option<&crate::types::StreamingConfigurations> {
+        self.streaming_configurations.as_ref()
+    }
 }
 impl ::std::fmt::Debug for InvokeInlineAgentInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -121,6 +131,7 @@ impl ::std::fmt::Debug for InvokeInlineAgentInput {
         formatter.field("guardrail_configuration", &self.guardrail_configuration);
         formatter.field("prompt_override_configuration", &"*** Sensitive Data Redacted ***");
         formatter.field("bedrock_model_configurations", &self.bedrock_model_configurations);
+        formatter.field("streaming_configurations", &self.streaming_configurations);
         formatter.finish()
     }
 }
@@ -149,6 +160,7 @@ pub struct InvokeInlineAgentInputBuilder {
     pub(crate) guardrail_configuration: ::std::option::Option<crate::types::GuardrailConfigurationWithArn>,
     pub(crate) prompt_override_configuration: ::std::option::Option<crate::types::PromptOverrideConfiguration>,
     pub(crate) bedrock_model_configurations: ::std::option::Option<crate::types::InlineBedrockModelConfigurations>,
+    pub(crate) streaming_configurations: ::std::option::Option<crate::types::StreamingConfigurations>,
 }
 impl InvokeInlineAgentInputBuilder {
     /// <p>The unique identifier of the session. Use the same value across requests to continue the same conversation.</p>
@@ -377,6 +389,26 @@ impl InvokeInlineAgentInputBuilder {
     pub fn get_bedrock_model_configurations(&self) -> &::std::option::Option<crate::types::InlineBedrockModelConfigurations> {
         &self.bedrock_model_configurations
     }
+    /// <p>Specifies the configurations for streaming.</p><note>
+    /// <p>To use agent streaming, you need permissions to perform the <code>bedrock:InvokeModelWithResponseStream</code> action.</p>
+    /// </note>
+    pub fn streaming_configurations(mut self, input: crate::types::StreamingConfigurations) -> Self {
+        self.streaming_configurations = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the configurations for streaming.</p><note>
+    /// <p>To use agent streaming, you need permissions to perform the <code>bedrock:InvokeModelWithResponseStream</code> action.</p>
+    /// </note>
+    pub fn set_streaming_configurations(mut self, input: ::std::option::Option<crate::types::StreamingConfigurations>) -> Self {
+        self.streaming_configurations = input;
+        self
+    }
+    /// <p>Specifies the configurations for streaming.</p><note>
+    /// <p>To use agent streaming, you need permissions to perform the <code>bedrock:InvokeModelWithResponseStream</code> action.</p>
+    /// </note>
+    pub fn get_streaming_configurations(&self) -> &::std::option::Option<crate::types::StreamingConfigurations> {
+        &self.streaming_configurations
+    }
     /// Consumes the builder and constructs a [`InvokeInlineAgentInput`](crate::operation::invoke_inline_agent::InvokeInlineAgentInput).
     pub fn build(
         self,
@@ -396,6 +428,7 @@ impl InvokeInlineAgentInputBuilder {
             guardrail_configuration: self.guardrail_configuration,
             prompt_override_configuration: self.prompt_override_configuration,
             bedrock_model_configurations: self.bedrock_model_configurations,
+            streaming_configurations: self.streaming_configurations,
         })
     }
 }
@@ -416,6 +449,7 @@ impl ::std::fmt::Debug for InvokeInlineAgentInputBuilder {
         formatter.field("guardrail_configuration", &self.guardrail_configuration);
         formatter.field("prompt_override_configuration", &"*** Sensitive Data Redacted ***");
         formatter.field("bedrock_model_configurations", &self.bedrock_model_configurations);
+        formatter.field("streaming_configurations", &self.streaming_configurations);
         formatter.finish()
     }
 }

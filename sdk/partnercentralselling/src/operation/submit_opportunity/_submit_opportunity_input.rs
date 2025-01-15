@@ -3,29 +3,65 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubmitOpportunityInput {
-    /// <p>Specifies the catalog related to the request.</p>
+    /// <p>Specifies the catalog related to the request. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>AWS: Submits the opportunity request from the production AWS environment.</p></li>
+    /// <li>
+    /// <p>Sandbox: Submits the opportunity request from a sandbox environment used for testing or development purposes.</p></li>
+    /// </ul>
     pub catalog: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the opportunity previously created by partner and needs to be submitted.</p>
+    /// <p>The identifier of the Opportunity previously created by partner and needs to be submitted.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the level of AWS sellers' involvement on the opportunity.</p>
+    /// <p>Specifies the level of AWS sellers' involvement on the opportunity. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Co-sell</code>: Indicates the user wants to co-sell with AWS. Share the opportunity with AWS to receive deal assistance and support.</p></li>
+    /// <li>
+    /// <p><code>For Visibility Only</code>: Indicates that the user does not need support from AWS Sales Rep. Share this opportunity with AWS for visibility only, you will not receive deal assistance and support.</p></li>
+    /// </ul>
     pub involvement_type: ::std::option::Option<crate::types::SalesInvolvementType>,
-    /// <p>Determines whether to restrict visibility of the opportunity from AWS sales. Default value is Full.</p>
+    /// <p>Determines whether to restrict visibility of the opportunity from AWS sales. Default value is Full. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Full</code>: The opportunity is fully visible to AWS sales.</p></li>
+    /// <li>
+    /// <p><code>Limited</code>: The opportunity has restricted visibility to AWS sales.</p></li>
+    /// </ul>
     pub visibility: ::std::option::Option<crate::types::Visibility>,
 }
 impl SubmitOpportunityInput {
-    /// <p>Specifies the catalog related to the request.</p>
+    /// <p>Specifies the catalog related to the request. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>AWS: Submits the opportunity request from the production AWS environment.</p></li>
+    /// <li>
+    /// <p>Sandbox: Submits the opportunity request from a sandbox environment used for testing or development purposes.</p></li>
+    /// </ul>
     pub fn catalog(&self) -> ::std::option::Option<&str> {
         self.catalog.as_deref()
     }
-    /// <p>The identifier of the opportunity previously created by partner and needs to be submitted.</p>
+    /// <p>The identifier of the Opportunity previously created by partner and needs to be submitted.</p>
     pub fn identifier(&self) -> ::std::option::Option<&str> {
         self.identifier.as_deref()
     }
-    /// <p>Specifies the level of AWS sellers' involvement on the opportunity.</p>
+    /// <p>Specifies the level of AWS sellers' involvement on the opportunity. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Co-sell</code>: Indicates the user wants to co-sell with AWS. Share the opportunity with AWS to receive deal assistance and support.</p></li>
+    /// <li>
+    /// <p><code>For Visibility Only</code>: Indicates that the user does not need support from AWS Sales Rep. Share this opportunity with AWS for visibility only, you will not receive deal assistance and support.</p></li>
+    /// </ul>
     pub fn involvement_type(&self) -> ::std::option::Option<&crate::types::SalesInvolvementType> {
         self.involvement_type.as_ref()
     }
-    /// <p>Determines whether to restrict visibility of the opportunity from AWS sales. Default value is Full.</p>
+    /// <p>Determines whether to restrict visibility of the opportunity from AWS sales. Default value is Full. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Full</code>: The opportunity is fully visible to AWS sales.</p></li>
+    /// <li>
+    /// <p><code>Limited</code>: The opportunity has restricted visibility to AWS sales.</p></li>
+    /// </ul>
     pub fn visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
         self.visibility.as_ref()
     }
@@ -47,62 +83,116 @@ pub struct SubmitOpportunityInputBuilder {
     pub(crate) visibility: ::std::option::Option<crate::types::Visibility>,
 }
 impl SubmitOpportunityInputBuilder {
-    /// <p>Specifies the catalog related to the request.</p>
+    /// <p>Specifies the catalog related to the request. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>AWS: Submits the opportunity request from the production AWS environment.</p></li>
+    /// <li>
+    /// <p>Sandbox: Submits the opportunity request from a sandbox environment used for testing or development purposes.</p></li>
+    /// </ul>
     /// This field is required.
     pub fn catalog(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.catalog = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the catalog related to the request.</p>
+    /// <p>Specifies the catalog related to the request. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>AWS: Submits the opportunity request from the production AWS environment.</p></li>
+    /// <li>
+    /// <p>Sandbox: Submits the opportunity request from a sandbox environment used for testing or development purposes.</p></li>
+    /// </ul>
     pub fn set_catalog(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.catalog = input;
         self
     }
-    /// <p>Specifies the catalog related to the request.</p>
+    /// <p>Specifies the catalog related to the request. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>AWS: Submits the opportunity request from the production AWS environment.</p></li>
+    /// <li>
+    /// <p>Sandbox: Submits the opportunity request from a sandbox environment used for testing or development purposes.</p></li>
+    /// </ul>
     pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
         &self.catalog
     }
-    /// <p>The identifier of the opportunity previously created by partner and needs to be submitted.</p>
+    /// <p>The identifier of the Opportunity previously created by partner and needs to be submitted.</p>
     /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the opportunity previously created by partner and needs to be submitted.</p>
+    /// <p>The identifier of the Opportunity previously created by partner and needs to be submitted.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identifier = input;
         self
     }
-    /// <p>The identifier of the opportunity previously created by partner and needs to be submitted.</p>
+    /// <p>The identifier of the Opportunity previously created by partner and needs to be submitted.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.identifier
     }
-    /// <p>Specifies the level of AWS sellers' involvement on the opportunity.</p>
+    /// <p>Specifies the level of AWS sellers' involvement on the opportunity. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Co-sell</code>: Indicates the user wants to co-sell with AWS. Share the opportunity with AWS to receive deal assistance and support.</p></li>
+    /// <li>
+    /// <p><code>For Visibility Only</code>: Indicates that the user does not need support from AWS Sales Rep. Share this opportunity with AWS for visibility only, you will not receive deal assistance and support.</p></li>
+    /// </ul>
     /// This field is required.
     pub fn involvement_type(mut self, input: crate::types::SalesInvolvementType) -> Self {
         self.involvement_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the level of AWS sellers' involvement on the opportunity.</p>
+    /// <p>Specifies the level of AWS sellers' involvement on the opportunity. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Co-sell</code>: Indicates the user wants to co-sell with AWS. Share the opportunity with AWS to receive deal assistance and support.</p></li>
+    /// <li>
+    /// <p><code>For Visibility Only</code>: Indicates that the user does not need support from AWS Sales Rep. Share this opportunity with AWS for visibility only, you will not receive deal assistance and support.</p></li>
+    /// </ul>
     pub fn set_involvement_type(mut self, input: ::std::option::Option<crate::types::SalesInvolvementType>) -> Self {
         self.involvement_type = input;
         self
     }
-    /// <p>Specifies the level of AWS sellers' involvement on the opportunity.</p>
+    /// <p>Specifies the level of AWS sellers' involvement on the opportunity. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Co-sell</code>: Indicates the user wants to co-sell with AWS. Share the opportunity with AWS to receive deal assistance and support.</p></li>
+    /// <li>
+    /// <p><code>For Visibility Only</code>: Indicates that the user does not need support from AWS Sales Rep. Share this opportunity with AWS for visibility only, you will not receive deal assistance and support.</p></li>
+    /// </ul>
     pub fn get_involvement_type(&self) -> &::std::option::Option<crate::types::SalesInvolvementType> {
         &self.involvement_type
     }
-    /// <p>Determines whether to restrict visibility of the opportunity from AWS sales. Default value is Full.</p>
+    /// <p>Determines whether to restrict visibility of the opportunity from AWS sales. Default value is Full. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Full</code>: The opportunity is fully visible to AWS sales.</p></li>
+    /// <li>
+    /// <p><code>Limited</code>: The opportunity has restricted visibility to AWS sales.</p></li>
+    /// </ul>
     pub fn visibility(mut self, input: crate::types::Visibility) -> Self {
         self.visibility = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Determines whether to restrict visibility of the opportunity from AWS sales. Default value is Full.</p>
+    /// <p>Determines whether to restrict visibility of the opportunity from AWS sales. Default value is Full. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Full</code>: The opportunity is fully visible to AWS sales.</p></li>
+    /// <li>
+    /// <p><code>Limited</code>: The opportunity has restricted visibility to AWS sales.</p></li>
+    /// </ul>
     pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
         self.visibility = input;
         self
     }
-    /// <p>Determines whether to restrict visibility of the opportunity from AWS sales. Default value is Full.</p>
+    /// <p>Determines whether to restrict visibility of the opportunity from AWS sales. Default value is Full. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Full</code>: The opportunity is fully visible to AWS sales.</p></li>
+    /// <li>
+    /// <p><code>Limited</code>: The opportunity has restricted visibility to AWS sales.</p></li>
+    /// </ul>
     pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
         &self.visibility
     }

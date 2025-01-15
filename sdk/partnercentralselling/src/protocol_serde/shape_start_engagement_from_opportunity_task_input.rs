@@ -18,5 +18,17 @@ pub fn ser_start_engagement_from_opportunity_task_input_input(
         crate::protocol_serde::shape_aws_submission::ser_aws_submission(&mut object_5, var_4)?;
         object_5.finish();
     }
+    if let Some(var_6) = &input.tags {
+        let mut array_7 = object.key("Tags").start_array();
+        for item_8 in var_6 {
+            {
+                #[allow(unused_mut)]
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_9, item_8)?;
+                object_9.finish();
+            }
+        }
+        array_7.finish();
+    }
     Ok(())
 }

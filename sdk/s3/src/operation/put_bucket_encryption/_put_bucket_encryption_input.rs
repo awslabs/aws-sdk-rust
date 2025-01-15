@@ -6,7 +6,7 @@ pub struct PutBucketEncryptionInput {
     /// <p>Specifies default encryption for a bucket using server-side encryption with different key options.</p>
     /// <p><b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <code>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i> </code>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must also follow the format <code> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</code> (for example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</code>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i></p>
     pub bucket: ::std::option::Option<::std::string::String>,
-    /// <p>The base64-encoded 128-bit MD5 digest of the server-side encryption configuration.</p>
+    /// <p>The Base64 encoded 128-bit <code>MD5</code> digest of the server-side encryption configuration.</p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
@@ -29,7 +29,7 @@ impl PutBucketEncryptionInput {
     pub fn bucket(&self) -> ::std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The base64-encoded 128-bit MD5 digest of the server-side encryption configuration.</p>
+    /// <p>The Base64 encoded 128-bit <code>MD5</code> digest of the server-side encryption configuration.</p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
@@ -90,7 +90,7 @@ impl PutBucketEncryptionInputBuilder {
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
         &self.bucket
     }
-    /// <p>The base64-encoded 128-bit MD5 digest of the server-side encryption configuration.</p>
+    /// <p>The Base64 encoded 128-bit <code>MD5</code> digest of the server-side encryption configuration.</p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
@@ -98,7 +98,7 @@ impl PutBucketEncryptionInputBuilder {
         self.content_md5 = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The base64-encoded 128-bit MD5 digest of the server-side encryption configuration.</p>
+    /// <p>The Base64 encoded 128-bit <code>MD5</code> digest of the server-side encryption configuration.</p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
@@ -106,7 +106,7 @@ impl PutBucketEncryptionInputBuilder {
         self.content_md5 = input;
         self
     }
-    /// <p>The base64-encoded 128-bit MD5 digest of the server-side encryption configuration.</p>
+    /// <p>The Base64 encoded 128-bit <code>MD5</code> digest of the server-side encryption configuration.</p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>

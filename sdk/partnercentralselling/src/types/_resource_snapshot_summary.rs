@@ -14,7 +14,7 @@ pub struct ResourceSnapshotSummary {
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the template used to create the snapshot.</p>
     pub resource_snapshot_template_name: ::std::option::Option<::std::string::String>,
-    /// <p>The AWS account ID of the principal (user or role) who created the snapshot. This helps in tracking the origin of the snapshot.</p>
+    /// <p>The AWS account ID of the entity that owns the resource from which the snapshot was created.</p>
     pub created_by: ::std::option::Option<::std::string::String>,
 }
 impl ResourceSnapshotSummary {
@@ -38,7 +38,7 @@ impl ResourceSnapshotSummary {
     pub fn resource_snapshot_template_name(&self) -> ::std::option::Option<&str> {
         self.resource_snapshot_template_name.as_deref()
     }
-    /// <p>The AWS account ID of the principal (user or role) who created the snapshot. This helps in tracking the origin of the snapshot.</p>
+    /// <p>The AWS account ID of the entity that owns the resource from which the snapshot was created.</p>
     pub fn created_by(&self) -> ::std::option::Option<&str> {
         self.created_by.as_deref()
     }
@@ -144,17 +144,17 @@ impl ResourceSnapshotSummaryBuilder {
     pub fn get_resource_snapshot_template_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_snapshot_template_name
     }
-    /// <p>The AWS account ID of the principal (user or role) who created the snapshot. This helps in tracking the origin of the snapshot.</p>
+    /// <p>The AWS account ID of the entity that owns the resource from which the snapshot was created.</p>
     pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS account ID of the principal (user or role) who created the snapshot. This helps in tracking the origin of the snapshot.</p>
+    /// <p>The AWS account ID of the entity that owns the resource from which the snapshot was created.</p>
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_by = input;
         self
     }
-    /// <p>The AWS account ID of the principal (user or role) who created the snapshot. This helps in tracking the origin of the snapshot.</p>
+    /// <p>The AWS account ID of the entity that owns the resource from which the snapshot was created.</p>
     pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.created_by
     }

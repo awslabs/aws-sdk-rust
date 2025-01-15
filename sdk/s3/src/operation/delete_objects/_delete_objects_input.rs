@@ -31,16 +31,18 @@ pub struct DeleteObjectsInput {
     /// <p>For the <code>x-amz-checksum-<i>algorithm</i> </code> header, replace <code> <i>algorithm</i> </code> with the supported algorithm from the following list:</p>
     /// <ul>
     /// <li>
-    /// <p><code>CRC32</code></p></li>
+    /// <p><code>CRC-32</code></p></li>
     /// <li>
-    /// <p><code>CRC32C</code></p></li>
+    /// <p><code>CRC-32C</code></p></li>
     /// <li>
-    /// <p><code>SHA1</code></p></li>
+    /// <p><code>CRC-64NVME</code></p></li>
     /// <li>
-    /// <p><code>SHA256</code></p></li>
+    /// <p><code>SHA-1</code></p></li>
+    /// <li>
+    /// <p><code>SHA-256</code></p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>If the individual checksum value you provide through <code>x-amz-checksum-<i>algorithm</i> </code> doesn't match the checksum algorithm you set through <code>x-amz-sdk-checksum-algorithm</code>, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter and uses the checksum algorithm that matches the provided value in <code>x-amz-checksum-<i>algorithm</i> </code>.</p>
+    /// <p>If the individual checksum value you provide through <code>x-amz-checksum-<i>algorithm</i> </code> doesn't match the checksum algorithm you set through <code>x-amz-sdk-checksum-algorithm</code>, Amazon S3 fails the request with a <code>BadDigest</code> error.</p>
     /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
     pub checksum_algorithm: ::std::option::Option<crate::types::ChecksumAlgorithm>,
 }
@@ -85,16 +87,18 @@ impl DeleteObjectsInput {
     /// <p>For the <code>x-amz-checksum-<i>algorithm</i> </code> header, replace <code> <i>algorithm</i> </code> with the supported algorithm from the following list:</p>
     /// <ul>
     /// <li>
-    /// <p><code>CRC32</code></p></li>
+    /// <p><code>CRC-32</code></p></li>
     /// <li>
-    /// <p><code>CRC32C</code></p></li>
+    /// <p><code>CRC-32C</code></p></li>
     /// <li>
-    /// <p><code>SHA1</code></p></li>
+    /// <p><code>CRC-64NVME</code></p></li>
     /// <li>
-    /// <p><code>SHA256</code></p></li>
+    /// <p><code>SHA-1</code></p></li>
+    /// <li>
+    /// <p><code>SHA-256</code></p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>If the individual checksum value you provide through <code>x-amz-checksum-<i>algorithm</i> </code> doesn't match the checksum algorithm you set through <code>x-amz-sdk-checksum-algorithm</code>, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter and uses the checksum algorithm that matches the provided value in <code>x-amz-checksum-<i>algorithm</i> </code>.</p>
+    /// <p>If the individual checksum value you provide through <code>x-amz-checksum-<i>algorithm</i> </code> doesn't match the checksum algorithm you set through <code>x-amz-sdk-checksum-algorithm</code>, Amazon S3 fails the request with a <code>BadDigest</code> error.</p>
     /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
     pub fn checksum_algorithm(&self) -> ::std::option::Option<&crate::types::ChecksumAlgorithm> {
         self.checksum_algorithm.as_ref()
@@ -246,16 +250,18 @@ impl DeleteObjectsInputBuilder {
     /// <p>For the <code>x-amz-checksum-<i>algorithm</i> </code> header, replace <code> <i>algorithm</i> </code> with the supported algorithm from the following list:</p>
     /// <ul>
     /// <li>
-    /// <p><code>CRC32</code></p></li>
+    /// <p><code>CRC-32</code></p></li>
     /// <li>
-    /// <p><code>CRC32C</code></p></li>
+    /// <p><code>CRC-32C</code></p></li>
     /// <li>
-    /// <p><code>SHA1</code></p></li>
+    /// <p><code>CRC-64NVME</code></p></li>
     /// <li>
-    /// <p><code>SHA256</code></p></li>
+    /// <p><code>SHA-1</code></p></li>
+    /// <li>
+    /// <p><code>SHA-256</code></p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>If the individual checksum value you provide through <code>x-amz-checksum-<i>algorithm</i> </code> doesn't match the checksum algorithm you set through <code>x-amz-sdk-checksum-algorithm</code>, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter and uses the checksum algorithm that matches the provided value in <code>x-amz-checksum-<i>algorithm</i> </code>.</p>
+    /// <p>If the individual checksum value you provide through <code>x-amz-checksum-<i>algorithm</i> </code> doesn't match the checksum algorithm you set through <code>x-amz-sdk-checksum-algorithm</code>, Amazon S3 fails the request with a <code>BadDigest</code> error.</p>
     /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
     pub fn checksum_algorithm(mut self, input: crate::types::ChecksumAlgorithm) -> Self {
         self.checksum_algorithm = ::std::option::Option::Some(input);
@@ -265,16 +271,18 @@ impl DeleteObjectsInputBuilder {
     /// <p>For the <code>x-amz-checksum-<i>algorithm</i> </code> header, replace <code> <i>algorithm</i> </code> with the supported algorithm from the following list:</p>
     /// <ul>
     /// <li>
-    /// <p><code>CRC32</code></p></li>
+    /// <p><code>CRC-32</code></p></li>
     /// <li>
-    /// <p><code>CRC32C</code></p></li>
+    /// <p><code>CRC-32C</code></p></li>
     /// <li>
-    /// <p><code>SHA1</code></p></li>
+    /// <p><code>CRC-64NVME</code></p></li>
     /// <li>
-    /// <p><code>SHA256</code></p></li>
+    /// <p><code>SHA-1</code></p></li>
+    /// <li>
+    /// <p><code>SHA-256</code></p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>If the individual checksum value you provide through <code>x-amz-checksum-<i>algorithm</i> </code> doesn't match the checksum algorithm you set through <code>x-amz-sdk-checksum-algorithm</code>, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter and uses the checksum algorithm that matches the provided value in <code>x-amz-checksum-<i>algorithm</i> </code>.</p>
+    /// <p>If the individual checksum value you provide through <code>x-amz-checksum-<i>algorithm</i> </code> doesn't match the checksum algorithm you set through <code>x-amz-sdk-checksum-algorithm</code>, Amazon S3 fails the request with a <code>BadDigest</code> error.</p>
     /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
     pub fn set_checksum_algorithm(mut self, input: ::std::option::Option<crate::types::ChecksumAlgorithm>) -> Self {
         self.checksum_algorithm = input;
@@ -284,16 +292,18 @@ impl DeleteObjectsInputBuilder {
     /// <p>For the <code>x-amz-checksum-<i>algorithm</i> </code> header, replace <code> <i>algorithm</i> </code> with the supported algorithm from the following list:</p>
     /// <ul>
     /// <li>
-    /// <p><code>CRC32</code></p></li>
+    /// <p><code>CRC-32</code></p></li>
     /// <li>
-    /// <p><code>CRC32C</code></p></li>
+    /// <p><code>CRC-32C</code></p></li>
     /// <li>
-    /// <p><code>SHA1</code></p></li>
+    /// <p><code>CRC-64NVME</code></p></li>
     /// <li>
-    /// <p><code>SHA256</code></p></li>
+    /// <p><code>SHA-1</code></p></li>
+    /// <li>
+    /// <p><code>SHA-256</code></p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>If the individual checksum value you provide through <code>x-amz-checksum-<i>algorithm</i> </code> doesn't match the checksum algorithm you set through <code>x-amz-sdk-checksum-algorithm</code>, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter and uses the checksum algorithm that matches the provided value in <code>x-amz-checksum-<i>algorithm</i> </code>.</p>
+    /// <p>If the individual checksum value you provide through <code>x-amz-checksum-<i>algorithm</i> </code> doesn't match the checksum algorithm you set through <code>x-amz-sdk-checksum-algorithm</code>, Amazon S3 fails the request with a <code>BadDigest</code> error.</p>
     /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
     pub fn get_checksum_algorithm(&self) -> &::std::option::Option<crate::types::ChecksumAlgorithm> {
         &self.checksum_algorithm

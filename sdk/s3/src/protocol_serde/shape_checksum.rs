@@ -33,7 +33,7 @@ pub fn de_checksum(
                 builder = builder.set_checksum_crc32_c(var_2);
             }
             ,
-            s if s.matches("ChecksumSHA1") /* ChecksumSHA1 com.amazonaws.s3#Checksum$ChecksumSHA1 */ =>  {
+            s if s.matches("ChecksumCRC64NVME") /* ChecksumCRC64NVME com.amazonaws.s3#Checksum$ChecksumCRC64NVME */ =>  {
                 let var_3 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -43,10 +43,10 @@ pub fn de_checksum(
                         ?
                     )
                 ;
-                builder = builder.set_checksum_sha1(var_3);
+                builder = builder.set_checksum_crc64_nvme(var_3);
             }
             ,
-            s if s.matches("ChecksumSHA256") /* ChecksumSHA256 com.amazonaws.s3#Checksum$ChecksumSHA256 */ =>  {
+            s if s.matches("ChecksumSHA1") /* ChecksumSHA1 com.amazonaws.s3#Checksum$ChecksumSHA1 */ =>  {
                 let var_4 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -56,7 +56,34 @@ pub fn de_checksum(
                         ?
                     )
                 ;
-                builder = builder.set_checksum_sha256(var_4);
+                builder = builder.set_checksum_sha1(var_4);
+            }
+            ,
+            s if s.matches("ChecksumSHA256") /* ChecksumSHA256 com.amazonaws.s3#Checksum$ChecksumSHA256 */ =>  {
+                let var_5 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_checksum_sha256(var_5);
+            }
+            ,
+            s if s.matches("ChecksumType") /* ChecksumType com.amazonaws.s3#Checksum$ChecksumType */ =>  {
+                let var_6 =
+                    Some(
+                        Result::<crate::types::ChecksumType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::ChecksumType::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_checksum_type(var_6);
             }
             ,
             _ => {}

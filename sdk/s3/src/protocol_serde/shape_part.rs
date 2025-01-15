@@ -88,7 +88,7 @@ pub fn de_part(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result<
                 builder = builder.set_checksum_crc32_c(var_6);
             }
             ,
-            s if s.matches("ChecksumSHA1") /* ChecksumSHA1 com.amazonaws.s3#Part$ChecksumSHA1 */ =>  {
+            s if s.matches("ChecksumCRC64NVME") /* ChecksumCRC64NVME com.amazonaws.s3#Part$ChecksumCRC64NVME */ =>  {
                 let var_7 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -98,10 +98,10 @@ pub fn de_part(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result<
                         ?
                     )
                 ;
-                builder = builder.set_checksum_sha1(var_7);
+                builder = builder.set_checksum_crc64_nvme(var_7);
             }
             ,
-            s if s.matches("ChecksumSHA256") /* ChecksumSHA256 com.amazonaws.s3#Part$ChecksumSHA256 */ =>  {
+            s if s.matches("ChecksumSHA1") /* ChecksumSHA1 com.amazonaws.s3#Part$ChecksumSHA1 */ =>  {
                 let var_8 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -111,7 +111,20 @@ pub fn de_part(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result<
                         ?
                     )
                 ;
-                builder = builder.set_checksum_sha256(var_8);
+                builder = builder.set_checksum_sha1(var_8);
+            }
+            ,
+            s if s.matches("ChecksumSHA256") /* ChecksumSHA256 com.amazonaws.s3#Part$ChecksumSHA256 */ =>  {
+                let var_9 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_checksum_sha256(var_9);
             }
             ,
             _ => {}

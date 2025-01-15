@@ -17,7 +17,7 @@ pub struct ListResourceSnapshotsInput {
     pub resource_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Filters the response to include only snapshots created using the specified template.</p>
     pub resource_snapshot_template_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>Filters the response to include only snapshots of resources created by the specified AWS account.</p>
+    /// <p>Filters the response to include only snapshots of resources owned by the specified AWS account.</p>
     pub created_by: ::std::option::Option<::std::string::String>,
 }
 impl ListResourceSnapshotsInput {
@@ -49,7 +49,7 @@ impl ListResourceSnapshotsInput {
     pub fn resource_snapshot_template_identifier(&self) -> ::std::option::Option<&str> {
         self.resource_snapshot_template_identifier.as_deref()
     }
-    /// <p>Filters the response to include only snapshots of resources created by the specified AWS account.</p>
+    /// <p>Filters the response to include only snapshots of resources owned by the specified AWS account.</p>
     pub fn created_by(&self) -> ::std::option::Option<&str> {
         self.created_by.as_deref()
     }
@@ -189,17 +189,17 @@ impl ListResourceSnapshotsInputBuilder {
     pub fn get_resource_snapshot_template_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_snapshot_template_identifier
     }
-    /// <p>Filters the response to include only snapshots of resources created by the specified AWS account.</p>
+    /// <p>Filters the response to include only snapshots of resources owned by the specified AWS account.</p>
     pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Filters the response to include only snapshots of resources created by the specified AWS account.</p>
+    /// <p>Filters the response to include only snapshots of resources owned by the specified AWS account.</p>
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_by = input;
         self
     }
-    /// <p>Filters the response to include only snapshots of resources created by the specified AWS account.</p>
+    /// <p>Filters the response to include only snapshots of resources owned by the specified AWS account.</p>
     pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.created_by
     }

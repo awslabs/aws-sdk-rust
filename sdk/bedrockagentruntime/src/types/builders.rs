@@ -241,6 +241,8 @@ pub use crate::types::_inline_agent_payload_part::InlineAgentPayloadPartBuilder;
 
 pub use crate::types::_attribution::AttributionBuilder;
 
+pub use crate::types::_streaming_configurations::StreamingConfigurationsBuilder;
+
 pub use crate::types::_inline_bedrock_model_configurations::InlineBedrockModelConfigurationsBuilder;
 
 pub use crate::types::_prompt_override_configuration::PromptOverrideConfigurationBuilder;
@@ -274,8 +276,6 @@ pub use crate::types::_file_part::FilePartBuilder;
 pub use crate::types::_trace_part::TracePartBuilder;
 
 pub use crate::types::_payload_part::PayloadPartBuilder;
-
-pub use crate::types::_streaming_configurations::StreamingConfigurationsBuilder;
 
 pub use crate::types::_bedrock_model_configurations::BedrockModelConfigurationsBuilder;
 

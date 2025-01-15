@@ -3,44 +3,44 @@ pub fn ser_maintenance_window(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MaintenanceWindow,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.r#type {
-        object.key("type").string(var_1.as_str());
+    {
+        object.key("type").string(input.r#type.as_str());
     }
-    if let Some(var_2) = &input.start_time_hour {
+    if let Some(var_1) = &input.start_time_hour {
         object.key("startTimeHour").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+        );
+    }
+    if let Some(var_2) = &input.start_time_minute {
+        object.key("startTimeMinute").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_3) = &input.start_time_minute {
-        object.key("startTimeMinute").number(
+    if let Some(var_3) = &input.end_time_hour {
+        object.key("endTimeHour").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_4) = &input.end_time_hour {
-        object.key("endTimeHour").number(
+    if let Some(var_4) = &input.end_time_minute {
+        object.key("endTimeMinute").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_5) = &input.end_time_minute {
-        object.key("endTimeMinute").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_5).into()),
-        );
-    }
-    if let Some(var_6) = &input.days_of_the_week {
-        let mut array_7 = object.key("daysOfTheWeek").start_array();
-        for item_8 in var_6 {
+    if let Some(var_5) = &input.days_of_the_week {
+        let mut array_6 = object.key("daysOfTheWeek").start_array();
+        for item_7 in var_5 {
             {
-                array_7.value().string(item_8.as_str());
+                array_6.value().string(item_7.as_str());
             }
         }
-        array_7.finish();
+        array_6.finish();
     }
-    if let Some(var_9) = &input.apply_time_of {
-        object.key("applyTimeOf").string(var_9.as_str());
+    if let Some(var_8) = &input.apply_time_of {
+        object.key("applyTimeOf").string(var_8.as_str());
     }
     Ok(())
 }
@@ -115,7 +115,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::maintenance_window_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

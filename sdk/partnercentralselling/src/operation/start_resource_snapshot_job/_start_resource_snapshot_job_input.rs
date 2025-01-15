@@ -3,13 +3,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartResourceSnapshotJobInput {
-    /// <p>Specifies the catalog related to the request.</p>
+    /// <p>Specifies the catalog related to the request. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>AWS: Starts the request from the production AWS environment.</p></li>
+    /// <li>
+    /// <p>Sandbox: Starts the request from a sandbox environment used for testing or development purposes.</p></li>
+    /// </ul>
     pub catalog: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the resource snapshot job to start.</p>
     pub resource_snapshot_job_identifier: ::std::option::Option<::std::string::String>,
 }
 impl StartResourceSnapshotJobInput {
-    /// <p>Specifies the catalog related to the request.</p>
+    /// <p>Specifies the catalog related to the request. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>AWS: Starts the request from the production AWS environment.</p></li>
+    /// <li>
+    /// <p>Sandbox: Starts the request from a sandbox environment used for testing or development purposes.</p></li>
+    /// </ul>
     pub fn catalog(&self) -> ::std::option::Option<&str> {
         self.catalog.as_deref()
     }
@@ -33,18 +45,36 @@ pub struct StartResourceSnapshotJobInputBuilder {
     pub(crate) resource_snapshot_job_identifier: ::std::option::Option<::std::string::String>,
 }
 impl StartResourceSnapshotJobInputBuilder {
-    /// <p>Specifies the catalog related to the request.</p>
+    /// <p>Specifies the catalog related to the request. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>AWS: Starts the request from the production AWS environment.</p></li>
+    /// <li>
+    /// <p>Sandbox: Starts the request from a sandbox environment used for testing or development purposes.</p></li>
+    /// </ul>
     /// This field is required.
     pub fn catalog(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.catalog = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the catalog related to the request.</p>
+    /// <p>Specifies the catalog related to the request. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>AWS: Starts the request from the production AWS environment.</p></li>
+    /// <li>
+    /// <p>Sandbox: Starts the request from a sandbox environment used for testing or development purposes.</p></li>
+    /// </ul>
     pub fn set_catalog(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.catalog = input;
         self
     }
-    /// <p>Specifies the catalog related to the request.</p>
+    /// <p>Specifies the catalog related to the request. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>AWS: Starts the request from the production AWS environment.</p></li>
+    /// <li>
+    /// <p>Sandbox: Starts the request from a sandbox environment used for testing or development purposes.</p></li>
+    /// </ul>
     pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
         &self.catalog
     }

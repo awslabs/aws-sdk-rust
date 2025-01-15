@@ -12,7 +12,7 @@ pub struct EngagementResourceAssociationSummary {
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>A unique identifier for the specific resource. Varies depending on the resource type.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
-    /// <p>The AWS account ID of the entity that created the association.</p>
+    /// <p>The AWS account ID of the entity that owns the resource. Identifies the account responsible for or having primary control over the resource.</p>
     pub created_by: ::std::option::Option<::std::string::String>,
 }
 impl EngagementResourceAssociationSummary {
@@ -33,7 +33,7 @@ impl EngagementResourceAssociationSummary {
     pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>The AWS account ID of the entity that created the association.</p>
+    /// <p>The AWS account ID of the entity that owns the resource. Identifies the account responsible for or having primary control over the resource.</p>
     pub fn created_by(&self) -> ::std::option::Option<&str> {
         self.created_by.as_deref()
     }
@@ -124,17 +124,17 @@ impl EngagementResourceAssociationSummaryBuilder {
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_id
     }
-    /// <p>The AWS account ID of the entity that created the association.</p>
+    /// <p>The AWS account ID of the entity that owns the resource. Identifies the account responsible for or having primary control over the resource.</p>
     pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS account ID of the entity that created the association.</p>
+    /// <p>The AWS account ID of the entity that owns the resource. Identifies the account responsible for or having primary control over the resource.</p>
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_by = input;
         self
     }
-    /// <p>The AWS account ID of the entity that created the association.</p>
+    /// <p>The AWS account ID of the entity that owns the resource. Identifies the account responsible for or having primary control over the resource.</p>
     pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.created_by
     }

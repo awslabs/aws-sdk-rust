@@ -12,6 +12,8 @@
 /// ```text
 /// # let compute = unimplemented!();
 /// match compute {
+///     Compute::Generalpurpose4Xlarge => { /* ... */ },
+///     Compute::Generalpurpose8Xlarge => { /* ... */ },
 ///     Compute::Graphics => { /* ... */ },
 ///     Compute::Graphicspro => { /* ... */ },
 ///     Compute::GraphicsproG4Dn => { /* ... */ },
@@ -50,6 +52,10 @@
 )]
 pub enum Compute {
     #[allow(missing_docs)] // documentation missing in model
+    Generalpurpose4Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    Generalpurpose8Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
     Graphics,
     #[allow(missing_docs)] // documentation missing in model
     Graphicspro,
@@ -74,6 +80,8 @@ pub enum Compute {
 impl ::std::convert::From<&str> for Compute {
     fn from(s: &str) -> Self {
         match s {
+            "GENERALPURPOSE_4XLARGE" => Compute::Generalpurpose4Xlarge,
+            "GENERALPURPOSE_8XLARGE" => Compute::Generalpurpose8Xlarge,
             "GRAPHICS" => Compute::Graphics,
             "GRAPHICSPRO" => Compute::Graphicspro,
             "GRAPHICSPRO_G4DN" => Compute::GraphicsproG4Dn,
@@ -98,6 +106,8 @@ impl Compute {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            Compute::Generalpurpose4Xlarge => "GENERALPURPOSE_4XLARGE",
+            Compute::Generalpurpose8Xlarge => "GENERALPURPOSE_8XLARGE",
             Compute::Graphics => "GRAPHICS",
             Compute::Graphicspro => "GRAPHICSPRO",
             Compute::GraphicsproG4Dn => "GRAPHICSPRO_G4DN",
@@ -113,6 +123,8 @@ impl Compute {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "GENERALPURPOSE_4XLARGE",
+            "GENERALPURPOSE_8XLARGE",
             "GRAPHICS",
             "GRAPHICSPRO",
             "GRAPHICSPRO_G4DN",
@@ -145,6 +157,8 @@ impl Compute {
 impl ::std::fmt::Display for Compute {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            Compute::Generalpurpose4Xlarge => write!(f, "GENERALPURPOSE_4XLARGE"),
+            Compute::Generalpurpose8Xlarge => write!(f, "GENERALPURPOSE_8XLARGE"),
             Compute::Graphics => write!(f, "GRAPHICS"),
             Compute::Graphicspro => write!(f, "GRAPHICSPRO"),
             Compute::GraphicsproG4Dn => write!(f, "GRAPHICSPRO_G4DN"),

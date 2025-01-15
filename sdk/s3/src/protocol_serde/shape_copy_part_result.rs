@@ -60,7 +60,7 @@ pub fn de_copy_part_result(
                 builder = builder.set_checksum_crc32_c(var_4);
             }
             ,
-            s if s.matches("ChecksumSHA1") /* ChecksumSHA1 com.amazonaws.s3#CopyPartResult$ChecksumSHA1 */ =>  {
+            s if s.matches("ChecksumCRC64NVME") /* ChecksumCRC64NVME com.amazonaws.s3#CopyPartResult$ChecksumCRC64NVME */ =>  {
                 let var_5 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -70,10 +70,10 @@ pub fn de_copy_part_result(
                         ?
                     )
                 ;
-                builder = builder.set_checksum_sha1(var_5);
+                builder = builder.set_checksum_crc64_nvme(var_5);
             }
             ,
-            s if s.matches("ChecksumSHA256") /* ChecksumSHA256 com.amazonaws.s3#CopyPartResult$ChecksumSHA256 */ =>  {
+            s if s.matches("ChecksumSHA1") /* ChecksumSHA1 com.amazonaws.s3#CopyPartResult$ChecksumSHA1 */ =>  {
                 let var_6 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -83,7 +83,20 @@ pub fn de_copy_part_result(
                         ?
                     )
                 ;
-                builder = builder.set_checksum_sha256(var_6);
+                builder = builder.set_checksum_sha1(var_6);
+            }
+            ,
+            s if s.matches("ChecksumSHA256") /* ChecksumSHA256 com.amazonaws.s3#CopyPartResult$ChecksumSHA256 */ =>  {
+                let var_7 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_checksum_sha256(var_7);
             }
             ,
             _ => {}

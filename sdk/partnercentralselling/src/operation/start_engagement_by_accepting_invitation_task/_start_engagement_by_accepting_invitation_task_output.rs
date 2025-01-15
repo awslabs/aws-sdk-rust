@@ -17,7 +17,7 @@ pub struct StartEngagementByAcceptingInvitationTaskOutput {
     pub reason_code: ::std::option::Option<crate::types::ReasonCode>,
     /// <p>Returns the original opportunity identifier passed in the request. This is the unique identifier for the opportunity.</p>
     pub opportunity_id: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the resource snapshot job created as part of this task.</p>
+    /// <p>The identifier of the Resource Snapshot Job created as part of this task.</p>
     pub resource_snapshot_job_id: ::std::option::Option<::std::string::String>,
     /// <p>Returns the identifier of the engagement invitation that was accepted and used to create the opportunity.</p>
     pub engagement_invitation_id: ::std::option::Option<::std::string::String>,
@@ -52,7 +52,7 @@ impl StartEngagementByAcceptingInvitationTaskOutput {
     pub fn opportunity_id(&self) -> ::std::option::Option<&str> {
         self.opportunity_id.as_deref()
     }
-    /// <p>The identifier of the resource snapshot job created as part of this task.</p>
+    /// <p>The identifier of the Resource Snapshot Job created as part of this task.</p>
     pub fn resource_snapshot_job_id(&self) -> ::std::option::Option<&str> {
         self.resource_snapshot_job_id.as_deref()
     }
@@ -188,17 +188,17 @@ impl StartEngagementByAcceptingInvitationTaskOutputBuilder {
     pub fn get_opportunity_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.opportunity_id
     }
-    /// <p>The identifier of the resource snapshot job created as part of this task.</p>
+    /// <p>The identifier of the Resource Snapshot Job created as part of this task.</p>
     pub fn resource_snapshot_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_snapshot_job_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the resource snapshot job created as part of this task.</p>
+    /// <p>The identifier of the Resource Snapshot Job created as part of this task.</p>
     pub fn set_resource_snapshot_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_snapshot_job_id = input;
         self
     }
-    /// <p>The identifier of the resource snapshot job created as part of this task.</p>
+    /// <p>The identifier of the Resource Snapshot Job created as part of this task.</p>
     pub fn get_resource_snapshot_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_snapshot_job_id
     }

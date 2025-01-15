@@ -113,6 +113,8 @@ pub use crate::types::_access_control_policy::AccessControlPolicy;
 
 pub use crate::types::_owner::Owner;
 
+pub use crate::types::_checksum_type::ChecksumType;
+
 pub use crate::types::_website_configuration::WebsiteConfiguration;
 
 pub use crate::types::_routing_rule::RoutingRule;
@@ -464,6 +466,8 @@ mod _checksum;
 mod _checksum_algorithm;
 
 mod _checksum_mode;
+
+mod _checksum_type;
 
 mod _common_prefix;
 

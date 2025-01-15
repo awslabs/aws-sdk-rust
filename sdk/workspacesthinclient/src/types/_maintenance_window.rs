@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MaintenanceWindow {
     /// <p>An option to select the default or custom maintenance window.</p>
-    pub r#type: ::std::option::Option<crate::types::MaintenanceWindowType>,
+    pub r#type: crate::types::MaintenanceWindowType,
     /// <p>The hour for the maintenance window start (<code>00</code>-<code>23</code>).</p>
     pub start_time_hour: ::std::option::Option<i32>,
     /// <p>The minutes past the hour for the maintenance window start (<code>00</code>-<code>59</code>).</p>
@@ -21,8 +21,8 @@ pub struct MaintenanceWindow {
 }
 impl MaintenanceWindow {
     /// <p>An option to select the default or custom maintenance window.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::MaintenanceWindowType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::MaintenanceWindowType {
+        &self.r#type
     }
     /// <p>The hour for the maintenance window start (<code>00</code>-<code>23</code>).</p>
     pub fn start_time_hour(&self) -> ::std::option::Option<i32> {
@@ -72,6 +72,7 @@ pub struct MaintenanceWindowBuilder {
 }
 impl MaintenanceWindowBuilder {
     /// <p>An option to select the default or custom maintenance window.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::MaintenanceWindowType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -176,15 +177,22 @@ impl MaintenanceWindowBuilder {
         &self.apply_time_of
     }
     /// Consumes the builder and constructs a [`MaintenanceWindow`](crate::types::MaintenanceWindow).
-    pub fn build(self) -> crate::types::MaintenanceWindow {
-        crate::types::MaintenanceWindow {
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::MaintenanceWindowBuilder::type)
+    pub fn build(self) -> ::std::result::Result<crate::types::MaintenanceWindow, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::MaintenanceWindow {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building MaintenanceWindow",
+                )
+            })?,
             start_time_hour: self.start_time_hour,
             start_time_minute: self.start_time_minute,
             end_time_hour: self.end_time_hour,
             end_time_minute: self.end_time_minute,
             days_of_the_week: self.days_of_the_week,
             apply_time_of: self.apply_time_of,
-        }
+        })
     }
 }

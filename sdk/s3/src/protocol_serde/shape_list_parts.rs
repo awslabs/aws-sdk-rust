@@ -207,20 +207,21 @@ pub fn de_list_parts(
                 builder = builder.set_max_parts(var_16);
             }
             ,
-            s if s.matches("UploadId") /* UploadId com.amazonaws.s3.synthetic#ListPartsOutput$UploadId */ =>  {
+            s if s.matches("ChecksumType") /* ChecksumType com.amazonaws.s3.synthetic#ListPartsOutput$ChecksumType */ =>  {
                 let var_17 =
                     Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
+                        Result::<crate::types::ChecksumType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::ChecksumType::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
                         )
                         ?
                     )
                 ;
-                builder = builder.set_upload_id(var_17);
+                builder = builder.set_checksum_type(var_17);
             }
             ,
-            s if s.matches("PartNumberMarker") /* PartNumberMarker com.amazonaws.s3.synthetic#ListPartsOutput$PartNumberMarker */ =>  {
+            s if s.matches("UploadId") /* UploadId com.amazonaws.s3.synthetic#ListPartsOutput$UploadId */ =>  {
                 let var_18 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -230,10 +231,10 @@ pub fn de_list_parts(
                         ?
                     )
                 ;
-                builder = builder.set_part_number_marker(var_18);
+                builder = builder.set_upload_id(var_18);
             }
             ,
-            s if s.matches("Bucket") /* Bucket com.amazonaws.s3.synthetic#ListPartsOutput$Bucket */ =>  {
+            s if s.matches("PartNumberMarker") /* PartNumberMarker com.amazonaws.s3.synthetic#ListPartsOutput$PartNumberMarker */ =>  {
                 let var_19 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -243,38 +244,11 @@ pub fn de_list_parts(
                         ?
                     )
                 ;
-                builder = builder.set_bucket(var_19);
+                builder = builder.set_part_number_marker(var_19);
             }
             ,
-            s if s.matches("Part") /* Parts com.amazonaws.s3.synthetic#ListPartsOutput$Parts */ =>  {
+            s if s.matches("Bucket") /* Bucket com.amazonaws.s3.synthetic#ListPartsOutput$Bucket */ =>  {
                 let var_20 =
-                    Some(
-                        Result::<::std::vec::Vec::<crate::types::Part>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
-                            let mut list_21 = builder.parts.take().unwrap_or_default();
-                            list_21.push(
-                                crate::protocol_serde::shape_part::de_part(&mut tag)
-                                ?
-                            );
-                            list_21
-                        })
-                        ?
-                    )
-                ;
-                builder = builder.set_parts(var_20);
-            }
-            ,
-            s if s.matches("Initiator") /* Initiator com.amazonaws.s3.synthetic#ListPartsOutput$Initiator */ =>  {
-                let var_22 =
-                    Some(
-                        crate::protocol_serde::shape_initiator::de_initiator(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_initiator(var_22);
-            }
-            ,
-            s if s.matches("Key") /* Key com.amazonaws.s3.synthetic#ListPartsOutput$Key */ =>  {
-                let var_23 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -283,7 +257,47 @@ pub fn de_list_parts(
                         ?
                     )
                 ;
-                builder = builder.set_key(var_23);
+                builder = builder.set_bucket(var_20);
+            }
+            ,
+            s if s.matches("Part") /* Parts com.amazonaws.s3.synthetic#ListPartsOutput$Parts */ =>  {
+                let var_21 =
+                    Some(
+                        Result::<::std::vec::Vec::<crate::types::Part>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                            let mut list_22 = builder.parts.take().unwrap_or_default();
+                            list_22.push(
+                                crate::protocol_serde::shape_part::de_part(&mut tag)
+                                ?
+                            );
+                            list_22
+                        })
+                        ?
+                    )
+                ;
+                builder = builder.set_parts(var_21);
+            }
+            ,
+            s if s.matches("Initiator") /* Initiator com.amazonaws.s3.synthetic#ListPartsOutput$Initiator */ =>  {
+                let var_23 =
+                    Some(
+                        crate::protocol_serde::shape_initiator::de_initiator(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_initiator(var_23);
+            }
+            ,
+            s if s.matches("Key") /* Key com.amazonaws.s3.synthetic#ListPartsOutput$Key */ =>  {
+                let var_24 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_key(var_24);
             }
             ,
             _ => {}

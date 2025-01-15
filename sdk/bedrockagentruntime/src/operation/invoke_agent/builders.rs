@@ -23,7 +23,6 @@ impl crate::operation::invoke_agent::builders::InvokeAgentInputBuilder {
 /// Fluent builder constructing a request to `InvokeAgent`.
 ///
 /// <note>
-/// <p>The CLI doesn't support streaming operations in Amazon Bedrock, including <code>InvokeAgent</code>.</p>
 /// </note>
 /// <p>Sends a prompt for the agent to process and respond to. Note the following fields for the request:</p>
 /// <ul>
@@ -46,7 +45,8 @@ impl crate::operation::invoke_agent::builders::InvokeAgentInputBuilder {
 /// <li>
 /// <p>In the <code>sessionState</code> object, you can include attributes for the session or prompt or, if you configured an action group to return control, results from invocation of the action group.</p></li>
 /// </ul>
-/// <p>The response is returned in the <code>bytes</code> field of the <code>chunk</code> object.</p>
+/// <p>The response contains both <b>chunk</b> and <b>trace</b> attributes.</p>
+/// <p>The final response is returned in the <code>bytes</code> field of the <code>chunk</code> object. The <code>InvokeAgent</code> returns one chunk for the entire interaction.</p>
 /// <ul>
 /// <li>
 /// <p>The <code>attribution</code> object contains citations for parts of the response.</p></li>

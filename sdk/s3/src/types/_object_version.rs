@@ -8,6 +8,8 @@ pub struct ObjectVersion {
     pub e_tag: ::std::option::Option<::std::string::String>,
     /// <p>The algorithm that was used to create a checksum of the object.</p>
     pub checksum_algorithm: ::std::option::Option<::std::vec::Vec<crate::types::ChecksumAlgorithm>>,
+    /// <p>The checksum type that is used to calculate the object’s checksum value. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_type: ::std::option::Option<crate::types::ChecksumType>,
     /// <p>Size in bytes of the object.</p>
     pub size: ::std::option::Option<i64>,
     /// <p>The class of storage used to store the object.</p>
@@ -35,6 +37,10 @@ impl ObjectVersion {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.checksum_algorithm.is_none()`.
     pub fn checksum_algorithm(&self) -> &[crate::types::ChecksumAlgorithm] {
         self.checksum_algorithm.as_deref().unwrap_or_default()
+    }
+    /// <p>The checksum type that is used to calculate the object’s checksum value. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_type(&self) -> ::std::option::Option<&crate::types::ChecksumType> {
+        self.checksum_type.as_ref()
     }
     /// <p>Size in bytes of the object.</p>
     pub fn size(&self) -> ::std::option::Option<i64> {
@@ -82,6 +88,7 @@ impl ObjectVersion {
 pub struct ObjectVersionBuilder {
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,
     pub(crate) checksum_algorithm: ::std::option::Option<::std::vec::Vec<crate::types::ChecksumAlgorithm>>,
+    pub(crate) checksum_type: ::std::option::Option<crate::types::ChecksumType>,
     pub(crate) size: ::std::option::Option<i64>,
     pub(crate) storage_class: ::std::option::Option<crate::types::ObjectVersionStorageClass>,
     pub(crate) key: ::std::option::Option<::std::string::String>,
@@ -125,6 +132,20 @@ impl ObjectVersionBuilder {
     /// <p>The algorithm that was used to create a checksum of the object.</p>
     pub fn get_checksum_algorithm(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChecksumAlgorithm>> {
         &self.checksum_algorithm
+    }
+    /// <p>The checksum type that is used to calculate the object’s checksum value. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_type(mut self, input: crate::types::ChecksumType) -> Self {
+        self.checksum_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The checksum type that is used to calculate the object’s checksum value. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn set_checksum_type(mut self, input: ::std::option::Option<crate::types::ChecksumType>) -> Self {
+        self.checksum_type = input;
+        self
+    }
+    /// <p>The checksum type that is used to calculate the object’s checksum value. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn get_checksum_type(&self) -> &::std::option::Option<crate::types::ChecksumType> {
+        &self.checksum_type
     }
     /// <p>Size in bytes of the object.</p>
     pub fn size(mut self, input: i64) -> Self {
@@ -243,6 +264,7 @@ impl ObjectVersionBuilder {
         crate::types::ObjectVersion {
             e_tag: self.e_tag,
             checksum_algorithm: self.checksum_algorithm,
+            checksum_type: self.checksum_type,
             size: self.size,
             storage_class: self.storage_class,
             key: self.key,

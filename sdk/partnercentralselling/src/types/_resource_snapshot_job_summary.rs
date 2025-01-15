@@ -8,9 +8,16 @@ pub struct ResourceSnapshotJobSummary {
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the resource snapshot job.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier for the engagement within the AWS Partner Central system. This ID is used for direct references to the engagement within the service.</p>
+    /// <p>The unique identifier of the Engagement.</p>
     pub engagement_id: ::std::option::Option<::std::string::String>,
-    /// <p>Represents the current status of the resource snapshot job.</p>
+    /// <p>The current status of the snapshot job.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>STOPPED: The job is not currently running.</p></li>
+    /// <li>
+    /// <p>RUNNING: The job is actively executing.</p></li>
+    /// </ul>
     pub status: ::std::option::Option<crate::types::ResourceSnapshotJobStatus>,
 }
 impl ResourceSnapshotJobSummary {
@@ -22,11 +29,18 @@ impl ResourceSnapshotJobSummary {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The unique identifier for the engagement within the AWS Partner Central system. This ID is used for direct references to the engagement within the service.</p>
+    /// <p>The unique identifier of the Engagement.</p>
     pub fn engagement_id(&self) -> ::std::option::Option<&str> {
         self.engagement_id.as_deref()
     }
-    /// <p>Represents the current status of the resource snapshot job.</p>
+    /// <p>The current status of the snapshot job.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>STOPPED: The job is not currently running.</p></li>
+    /// <li>
+    /// <p>RUNNING: The job is actively executing.</p></li>
+    /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ResourceSnapshotJobStatus> {
         self.status.as_ref()
     }
@@ -76,31 +90,52 @@ impl ResourceSnapshotJobSummaryBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>The unique identifier for the engagement within the AWS Partner Central system. This ID is used for direct references to the engagement within the service.</p>
+    /// <p>The unique identifier of the Engagement.</p>
     pub fn engagement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engagement_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier for the engagement within the AWS Partner Central system. This ID is used for direct references to the engagement within the service.</p>
+    /// <p>The unique identifier of the Engagement.</p>
     pub fn set_engagement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engagement_id = input;
         self
     }
-    /// <p>The unique identifier for the engagement within the AWS Partner Central system. This ID is used for direct references to the engagement within the service.</p>
+    /// <p>The unique identifier of the Engagement.</p>
     pub fn get_engagement_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.engagement_id
     }
-    /// <p>Represents the current status of the resource snapshot job.</p>
+    /// <p>The current status of the snapshot job.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>STOPPED: The job is not currently running.</p></li>
+    /// <li>
+    /// <p>RUNNING: The job is actively executing.</p></li>
+    /// </ul>
     pub fn status(mut self, input: crate::types::ResourceSnapshotJobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Represents the current status of the resource snapshot job.</p>
+    /// <p>The current status of the snapshot job.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>STOPPED: The job is not currently running.</p></li>
+    /// <li>
+    /// <p>RUNNING: The job is actively executing.</p></li>
+    /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ResourceSnapshotJobStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>Represents the current status of the resource snapshot job.</p>
+    /// <p>The current status of the snapshot job.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>STOPPED: The job is not currently running.</p></li>
+    /// <li>
+    /// <p>RUNNING: The job is actively executing.</p></li>
+    /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ResourceSnapshotJobStatus> {
         &self.status
     }

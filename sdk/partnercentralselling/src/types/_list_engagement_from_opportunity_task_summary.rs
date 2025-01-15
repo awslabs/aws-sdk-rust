@@ -22,7 +22,7 @@ pub struct ListEngagementFromOpportunityTaskSummary {
     pub resource_snapshot_job_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the engagement created as a result of the task. This field is populated when the task is completed successfully.</p>
     pub engagement_id: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier of the engagement identifier created as a result of the task. This field is populated when the task is completed successfully.</p>
+    /// <p>The unique identifier of the Engagement Invitation.</p>
     pub engagement_invitation_id: ::std::option::Option<::std::string::String>,
 }
 impl ListEngagementFromOpportunityTaskSummary {
@@ -62,7 +62,7 @@ impl ListEngagementFromOpportunityTaskSummary {
     pub fn engagement_id(&self) -> ::std::option::Option<&str> {
         self.engagement_id.as_deref()
     }
-    /// <p>The unique identifier of the engagement identifier created as a result of the task. This field is populated when the task is completed successfully.</p>
+    /// <p>The unique identifier of the Engagement Invitation.</p>
     pub fn engagement_invitation_id(&self) -> ::std::option::Option<&str> {
         self.engagement_invitation_id.as_deref()
     }
@@ -216,17 +216,17 @@ impl ListEngagementFromOpportunityTaskSummaryBuilder {
     pub fn get_engagement_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.engagement_id
     }
-    /// <p>The unique identifier of the engagement identifier created as a result of the task. This field is populated when the task is completed successfully.</p>
+    /// <p>The unique identifier of the Engagement Invitation.</p>
     pub fn engagement_invitation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engagement_invitation_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the engagement identifier created as a result of the task. This field is populated when the task is completed successfully.</p>
+    /// <p>The unique identifier of the Engagement Invitation.</p>
     pub fn set_engagement_invitation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engagement_invitation_id = input;
         self
     }
-    /// <p>The unique identifier of the engagement identifier created as a result of the task. This field is populated when the task is completed successfully.</p>
+    /// <p>The unique identifier of the Engagement Invitation.</p>
     pub fn get_engagement_invitation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.engagement_invitation_id
     }

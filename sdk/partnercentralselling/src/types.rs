@@ -19,6 +19,8 @@ pub use crate::types::_resource_snapshot_job_status::ResourceSnapshotJobStatus;
 
 pub use crate::types::_resource_type::ResourceType;
 
+pub use crate::types::_tag::Tag;
+
 pub use crate::types::_resource_snapshot_job_summary::ResourceSnapshotJobSummary;
 
 pub use crate::types::_sort_object::SortObject;
@@ -412,6 +414,8 @@ mod _sort_object;
 mod _sort_order;
 
 mod _stage;
+
+mod _tag;
 
 mod _task_status;
 

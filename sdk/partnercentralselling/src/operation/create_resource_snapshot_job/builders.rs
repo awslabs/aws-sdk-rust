@@ -122,17 +122,17 @@ impl CreateResourceSnapshotJobFluentBuilder {
     pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_catalog()
     }
-    /// <p>Specifies a unique, client-generated UUID to ensure that the request is handled exactly once. This token helps prevent duplicate snapshot job creations.</p>
+    /// <p>A client-generated UUID used for idempotency check. The token helps prevent duplicate job creations.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>Specifies a unique, client-generated UUID to ensure that the request is handled exactly once. This token helps prevent duplicate snapshot job creations.</p>
+    /// <p>A client-generated UUID used for idempotency check. The token helps prevent duplicate job creations.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>Specifies a unique, client-generated UUID to ensure that the request is handled exactly once. This token helps prevent duplicate snapshot job creations.</p>
+    /// <p>A client-generated UUID used for idempotency check. The token helps prevent duplicate job creations.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
@@ -150,31 +150,31 @@ impl CreateResourceSnapshotJobFluentBuilder {
     pub fn get_engagement_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_engagement_identifier()
     }
-    /// <p>The type of resource for which the snapshot job is being created. Must be one of the supported resource types <code>Opportunity</code>.</p>
+    /// <p>The type of resource for which the snapshot job is being created. Must be one of the supported resource types i.e. <code>Opportunity</code></p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.inner = self.inner.resource_type(input);
         self
     }
-    /// <p>The type of resource for which the snapshot job is being created. Must be one of the supported resource types <code>Opportunity</code>.</p>
+    /// <p>The type of resource for which the snapshot job is being created. Must be one of the supported resource types i.e. <code>Opportunity</code></p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
-    /// <p>The type of resource for which the snapshot job is being created. Must be one of the supported resource types <code>Opportunity</code>.</p>
+    /// <p>The type of resource for which the snapshot job is being created. Must be one of the supported resource types i.e. <code>Opportunity</code></p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
         self.inner.get_resource_type()
     }
-    /// <p>Specifies the identifier of the specific resource to be snapshotted. The format depends on the <code>ResourceType</code>.</p>
+    /// <p>Specifies the identifier of the specific resource to be snapshotted. The format depends on the <code> ResourceType</code>.</p>
     pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_identifier(input.into());
         self
     }
-    /// <p>Specifies the identifier of the specific resource to be snapshotted. The format depends on the <code>ResourceType</code>.</p>
+    /// <p>Specifies the identifier of the specific resource to be snapshotted. The format depends on the <code> ResourceType</code>.</p>
     pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_identifier(input);
         self
     }
-    /// <p>Specifies the identifier of the specific resource to be snapshotted. The format depends on the <code>ResourceType</code>.</p>
+    /// <p>Specifies the identifier of the specific resource to be snapshotted. The format depends on the <code> ResourceType</code>.</p>
     pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_identifier()
     }
@@ -191,5 +191,24 @@ impl CreateResourceSnapshotJobFluentBuilder {
     /// <p>Specifies the name of the template that defines the schema for the snapshot.</p>
     pub fn get_resource_snapshot_template_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_snapshot_template_identifier()
+    }
+    ///
+    /// Appends an item to `Tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// A list of objects specifying each tag name and value.
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        self.inner = self.inner.tags(input);
+        self
+    }
+    /// A list of objects specifying each tag name and value.
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.inner = self.inner.set_tags(input);
+        self
+    }
+    /// A list of objects specifying each tag name and value.
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

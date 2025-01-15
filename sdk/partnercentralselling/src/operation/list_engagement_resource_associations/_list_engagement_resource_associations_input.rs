@@ -3,7 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ListEngagementResourceAssociationsInput {
-    /// <p>Specifies the catalog in which to search for engagement-resource associations.</p>
+    /// <p>Specifies the catalog in which to search for engagement-resource associations. Valid Values: "AWS" or "Sandbox"</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> for production environments.</p></li>
+    /// <li>
+    /// <p><code>Sandbox</code> for testing and development purposes.</p></li>
+    /// </ul>
     pub catalog: ::std::option::Option<::std::string::String>,
     /// <p>Limits the number of results returned in a single call. Use this to control the number of results returned, especially useful for pagination.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -15,11 +21,17 @@ pub struct ListEngagementResourceAssociationsInput {
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>Filters the results to include only associations with the specified resource. Varies depending on the resource type. Use this when you want to find all engagements associated with a specific resource.</p>
     pub resource_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>Filters the results to include only associations with resources owned by the specified AWS account. Use this when you want to find associations related to resources owned by a particular account.</p>
+    /// <p>Filters the response to include only snapshots of resources owned by the specified AWS account ID. Use this when you want to find associations related to resources owned by a particular account.</p>
     pub created_by: ::std::option::Option<::std::string::String>,
 }
 impl ListEngagementResourceAssociationsInput {
-    /// <p>Specifies the catalog in which to search for engagement-resource associations.</p>
+    /// <p>Specifies the catalog in which to search for engagement-resource associations. Valid Values: "AWS" or "Sandbox"</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> for production environments.</p></li>
+    /// <li>
+    /// <p><code>Sandbox</code> for testing and development purposes.</p></li>
+    /// </ul>
     pub fn catalog(&self) -> ::std::option::Option<&str> {
         self.catalog.as_deref()
     }
@@ -43,7 +55,7 @@ impl ListEngagementResourceAssociationsInput {
     pub fn resource_identifier(&self) -> ::std::option::Option<&str> {
         self.resource_identifier.as_deref()
     }
-    /// <p>Filters the results to include only associations with resources owned by the specified AWS account. Use this when you want to find associations related to resources owned by a particular account.</p>
+    /// <p>Filters the response to include only snapshots of resources owned by the specified AWS account ID. Use this when you want to find associations related to resources owned by a particular account.</p>
     pub fn created_by(&self) -> ::std::option::Option<&str> {
         self.created_by.as_deref()
     }
@@ -81,18 +93,36 @@ pub struct ListEngagementResourceAssociationsInputBuilder {
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
 }
 impl ListEngagementResourceAssociationsInputBuilder {
-    /// <p>Specifies the catalog in which to search for engagement-resource associations.</p>
+    /// <p>Specifies the catalog in which to search for engagement-resource associations. Valid Values: "AWS" or "Sandbox"</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> for production environments.</p></li>
+    /// <li>
+    /// <p><code>Sandbox</code> for testing and development purposes.</p></li>
+    /// </ul>
     /// This field is required.
     pub fn catalog(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.catalog = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the catalog in which to search for engagement-resource associations.</p>
+    /// <p>Specifies the catalog in which to search for engagement-resource associations. Valid Values: "AWS" or "Sandbox"</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> for production environments.</p></li>
+    /// <li>
+    /// <p><code>Sandbox</code> for testing and development purposes.</p></li>
+    /// </ul>
     pub fn set_catalog(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.catalog = input;
         self
     }
-    /// <p>Specifies the catalog in which to search for engagement-resource associations.</p>
+    /// <p>Specifies the catalog in which to search for engagement-resource associations. Valid Values: "AWS" or "Sandbox"</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> for production environments.</p></li>
+    /// <li>
+    /// <p><code>Sandbox</code> for testing and development purposes.</p></li>
+    /// </ul>
     pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
         &self.catalog
     }
@@ -166,17 +196,17 @@ impl ListEngagementResourceAssociationsInputBuilder {
     pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_identifier
     }
-    /// <p>Filters the results to include only associations with resources owned by the specified AWS account. Use this when you want to find associations related to resources owned by a particular account.</p>
+    /// <p>Filters the response to include only snapshots of resources owned by the specified AWS account ID. Use this when you want to find associations related to resources owned by a particular account.</p>
     pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Filters the results to include only associations with resources owned by the specified AWS account. Use this when you want to find associations related to resources owned by a particular account.</p>
+    /// <p>Filters the response to include only snapshots of resources owned by the specified AWS account ID. Use this when you want to find associations related to resources owned by a particular account.</p>
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_by = input;
         self
     }
-    /// <p>Filters the results to include only associations with resources owned by the specified AWS account. Use this when you want to find associations related to resources owned by a particular account.</p>
+    /// <p>Filters the response to include only snapshots of resources owned by the specified AWS account ID. Use this when you want to find associations related to resources owned by a particular account.</p>
     pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.created_by
     }

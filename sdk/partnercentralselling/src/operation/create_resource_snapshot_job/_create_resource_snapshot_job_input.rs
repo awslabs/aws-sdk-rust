@@ -5,23 +5,25 @@
 pub struct CreateResourceSnapshotJobInput {
     /// <p>Specifies the catalog in which to create the snapshot job. Valid values are <code>AWS</code> and <code> Sandbox</code>.</p>
     pub catalog: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies a unique, client-generated UUID to ensure that the request is handled exactly once. This token helps prevent duplicate snapshot job creations.</p>
+    /// <p>A client-generated UUID used for idempotency check. The token helps prevent duplicate job creations.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the identifier of the engagement associated with the resource to be snapshotted.</p>
     pub engagement_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The type of resource for which the snapshot job is being created. Must be one of the supported resource types <code>Opportunity</code>.</p>
+    /// <p>The type of resource for which the snapshot job is being created. Must be one of the supported resource types i.e. <code>Opportunity</code></p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
-    /// <p>Specifies the identifier of the specific resource to be snapshotted. The format depends on the <code>ResourceType</code>.</p>
+    /// <p>Specifies the identifier of the specific resource to be snapshotted. The format depends on the <code> ResourceType</code>.</p>
     pub resource_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the name of the template that defines the schema for the snapshot.</p>
     pub resource_snapshot_template_identifier: ::std::option::Option<::std::string::String>,
+    /// A list of objects specifying each tag name and value.
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateResourceSnapshotJobInput {
     /// <p>Specifies the catalog in which to create the snapshot job. Valid values are <code>AWS</code> and <code> Sandbox</code>.</p>
     pub fn catalog(&self) -> ::std::option::Option<&str> {
         self.catalog.as_deref()
     }
-    /// <p>Specifies a unique, client-generated UUID to ensure that the request is handled exactly once. This token helps prevent duplicate snapshot job creations.</p>
+    /// <p>A client-generated UUID used for idempotency check. The token helps prevent duplicate job creations.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -29,17 +31,23 @@ impl CreateResourceSnapshotJobInput {
     pub fn engagement_identifier(&self) -> ::std::option::Option<&str> {
         self.engagement_identifier.as_deref()
     }
-    /// <p>The type of resource for which the snapshot job is being created. Must be one of the supported resource types <code>Opportunity</code>.</p>
+    /// <p>The type of resource for which the snapshot job is being created. Must be one of the supported resource types i.e. <code>Opportunity</code></p>
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
-    /// <p>Specifies the identifier of the specific resource to be snapshotted. The format depends on the <code>ResourceType</code>.</p>
+    /// <p>Specifies the identifier of the specific resource to be snapshotted. The format depends on the <code> ResourceType</code>.</p>
     pub fn resource_identifier(&self) -> ::std::option::Option<&str> {
         self.resource_identifier.as_deref()
     }
     /// <p>Specifies the name of the template that defines the schema for the snapshot.</p>
     pub fn resource_snapshot_template_identifier(&self) -> ::std::option::Option<&str> {
         self.resource_snapshot_template_identifier.as_deref()
+    }
+    /// A list of objects specifying each tag name and value.
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateResourceSnapshotJobInput {
@@ -59,6 +67,7 @@ pub struct CreateResourceSnapshotJobInputBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
     pub(crate) resource_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) resource_snapshot_template_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateResourceSnapshotJobInputBuilder {
     /// <p>Specifies the catalog in which to create the snapshot job. Valid values are <code>AWS</code> and <code> Sandbox</code>.</p>
@@ -76,18 +85,18 @@ impl CreateResourceSnapshotJobInputBuilder {
     pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
         &self.catalog
     }
-    /// <p>Specifies a unique, client-generated UUID to ensure that the request is handled exactly once. This token helps prevent duplicate snapshot job creations.</p>
+    /// <p>A client-generated UUID used for idempotency check. The token helps prevent duplicate job creations.</p>
     /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies a unique, client-generated UUID to ensure that the request is handled exactly once. This token helps prevent duplicate snapshot job creations.</p>
+    /// <p>A client-generated UUID used for idempotency check. The token helps prevent duplicate job creations.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>Specifies a unique, client-generated UUID to ensure that the request is handled exactly once. This token helps prevent duplicate snapshot job creations.</p>
+    /// <p>A client-generated UUID used for idempotency check. The token helps prevent duplicate job creations.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
@@ -106,33 +115,33 @@ impl CreateResourceSnapshotJobInputBuilder {
     pub fn get_engagement_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.engagement_identifier
     }
-    /// <p>The type of resource for which the snapshot job is being created. Must be one of the supported resource types <code>Opportunity</code>.</p>
+    /// <p>The type of resource for which the snapshot job is being created. Must be one of the supported resource types i.e. <code>Opportunity</code></p>
     /// This field is required.
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of resource for which the snapshot job is being created. Must be one of the supported resource types <code>Opportunity</code>.</p>
+    /// <p>The type of resource for which the snapshot job is being created. Must be one of the supported resource types i.e. <code>Opportunity</code></p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
-    /// <p>The type of resource for which the snapshot job is being created. Must be one of the supported resource types <code>Opportunity</code>.</p>
+    /// <p>The type of resource for which the snapshot job is being created. Must be one of the supported resource types i.e. <code>Opportunity</code></p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
         &self.resource_type
     }
-    /// <p>Specifies the identifier of the specific resource to be snapshotted. The format depends on the <code>ResourceType</code>.</p>
+    /// <p>Specifies the identifier of the specific resource to be snapshotted. The format depends on the <code> ResourceType</code>.</p>
     /// This field is required.
     pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the identifier of the specific resource to be snapshotted. The format depends on the <code>ResourceType</code>.</p>
+    /// <p>Specifies the identifier of the specific resource to be snapshotted. The format depends on the <code> ResourceType</code>.</p>
     pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_identifier = input;
         self
     }
-    /// <p>Specifies the identifier of the specific resource to be snapshotted. The format depends on the <code>ResourceType</code>.</p>
+    /// <p>Specifies the identifier of the specific resource to be snapshotted. The format depends on the <code> ResourceType</code>.</p>
     pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_identifier
     }
@@ -151,6 +160,26 @@ impl CreateResourceSnapshotJobInputBuilder {
     pub fn get_resource_snapshot_template_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_snapshot_template_identifier
     }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// A list of objects specifying each tag name and value.
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+        v.push(input);
+        self.tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// A list of objects specifying each tag name and value.
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// A list of objects specifying each tag name and value.
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`CreateResourceSnapshotJobInput`](crate::operation::create_resource_snapshot_job::CreateResourceSnapshotJobInput).
     pub fn build(
         self,
@@ -165,6 +194,7 @@ impl CreateResourceSnapshotJobInputBuilder {
             resource_type: self.resource_type,
             resource_identifier: self.resource_identifier,
             resource_snapshot_template_identifier: self.resource_snapshot_template_identifier,
+            tags: self.tags,
         })
     }
 }

@@ -76,6 +76,11 @@ pub fn de_head_object_http_response(
                 crate::operation::head_object::HeadObjectError::unhandled("Failed to parse ChecksumCRC32C from header `x-amz-checksum-crc32c")
             })?,
         );
+        output = output.set_checksum_crc64_nvme(
+            crate::protocol_serde::shape_head_object_output::de_checksum_crc64_nvme_header(_response_headers).map_err(|_| {
+                crate::operation::head_object::HeadObjectError::unhandled("Failed to parse ChecksumCRC64NVME from header `x-amz-checksum-crc64nvme")
+            })?,
+        );
         output = output.set_checksum_sha1(
             crate::protocol_serde::shape_head_object_output::de_checksum_sha1_header(_response_headers).map_err(|_| {
                 crate::operation::head_object::HeadObjectError::unhandled("Failed to parse ChecksumSHA1 from header `x-amz-checksum-sha1")
@@ -84,6 +89,11 @@ pub fn de_head_object_http_response(
         output = output.set_checksum_sha256(
             crate::protocol_serde::shape_head_object_output::de_checksum_sha256_header(_response_headers).map_err(|_| {
                 crate::operation::head_object::HeadObjectError::unhandled("Failed to parse ChecksumSHA256 from header `x-amz-checksum-sha256")
+            })?,
+        );
+        output = output.set_checksum_type(
+            crate::protocol_serde::shape_head_object_output::de_checksum_type_header(_response_headers).map_err(|_| {
+                crate::operation::head_object::HeadObjectError::unhandled("Failed to parse ChecksumType from header `x-amz-checksum-type")
             })?,
         );
         output = output.set_content_disposition(

@@ -35,6 +35,21 @@ pub fn de_accept_engagement_invitation_http_error(
             }
             tmp
         }),
+        "ConflictException" => crate::operation::accept_engagement_invitation::AcceptEngagementInvitationError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::accept_engagement_invitation::AcceptEngagementInvitationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InternalServerException" => crate::operation::accept_engagement_invitation::AcceptEngagementInvitationError::InternalServerException({
             #[allow(unused_mut)]
             let mut tmp = {

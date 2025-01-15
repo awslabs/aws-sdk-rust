@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`domain_name(impl Into<String>)`](crate::operation::get_domain_name::builders::GetDomainNameFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::get_domain_name::builders::GetDomainNameFluentBuilder::set_domain_name):<br>required: **true**<br><p>The name of the DomainName resource.</p><br>
-    ///   - [`domain_name_id(impl Into<String>)`](crate::operation::get_domain_name::builders::GetDomainNameFluentBuilder::domain_name_id) / [`set_domain_name_id(Option<String>)`](crate::operation::get_domain_name::builders::GetDomainNameFluentBuilder::set_domain_name_id):<br>required: **false**<br><p>The identifier for the domain name resource. Supported only for private custom domain names.</p><br>
+    ///   - [`domain_name_id(impl Into<String>)`](crate::operation::get_domain_name::builders::GetDomainNameFluentBuilder::domain_name_id) / [`set_domain_name_id(Option<String>)`](crate::operation::get_domain_name::builders::GetDomainNameFluentBuilder::set_domain_name_id):<br>required: **false**<br><p>The identifier for the domain name resource. Required for private custom domain names.</p><br>
     /// - On success, responds with [`GetDomainNameOutput`](crate::operation::get_domain_name::GetDomainNameOutput) with field(s):
     ///   - [`domain_name(Option<String>)`](crate::operation::get_domain_name::GetDomainNameOutput::domain_name): <p>The custom domain name as an API host name, for example, <code>my-api.example.com</code>.</p>
     ///   - [`domain_name_id(Option<String>)`](crate::operation::get_domain_name::GetDomainNameOutput::domain_name_id): <p>The identifier for the domain name resource. Supported only for private custom domain names.</p>

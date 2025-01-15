@@ -77,6 +77,8 @@ pub(crate) mod shape_list_resource_snapshots;
 
 pub(crate) mod shape_list_solutions;
 
+pub(crate) mod shape_list_tags_for_resource;
+
 pub(crate) mod shape_put_selling_system_settings;
 
 pub(crate) mod shape_reject_engagement_invitation;
@@ -90,6 +92,10 @@ pub(crate) mod shape_start_resource_snapshot_job;
 pub(crate) mod shape_stop_resource_snapshot_job;
 
 pub(crate) mod shape_submit_opportunity;
+
+pub(crate) mod shape_tag_resource;
+
+pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_opportunity;
 
@@ -161,6 +167,8 @@ pub(crate) mod shape_list_resource_snapshots_input;
 
 pub(crate) mod shape_list_solutions_input;
 
+pub(crate) mod shape_list_tags_for_resource_input;
+
 pub(crate) mod shape_put_selling_system_settings_input;
 
 pub(crate) mod shape_reject_engagement_invitation_input;
@@ -179,7 +187,11 @@ pub(crate) mod shape_stop_resource_snapshot_job_input;
 
 pub(crate) mod shape_submit_opportunity_input;
 
+pub(crate) mod shape_tag_resource_input;
+
 pub(crate) mod shape_throttling_exception;
+
+pub(crate) mod shape_untag_resource_input;
 
 pub(crate) mod shape_update_opportunity_input;
 
@@ -266,6 +278,10 @@ pub(crate) mod shape_solution_list;
 pub(crate) mod shape_solution_sort;
 
 pub(crate) mod shape_sort_object;
+
+pub(crate) mod shape_tag;
+
+pub(crate) mod shape_tag_list;
 
 pub(crate) mod shape_validation_exception_error_list;
 

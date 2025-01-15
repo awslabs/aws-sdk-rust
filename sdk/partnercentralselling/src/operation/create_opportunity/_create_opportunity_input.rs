@@ -24,8 +24,6 @@ pub struct CreateOpportunityInput {
     /// <p>Cosell—Deal Support: Request Amazon Web Services seller's support to progress the opportunity (for example: joint customer call, strategic positioning).</p></li>
     /// <li>
     /// <p>Cosell—Support for Public Tender/RFx: Opportunity related to the public sector where the partner needs Amazon Web Services RFx support.</p></li>
-    /// <li>
-    /// <p>Do Not Need Support from AWS Sales Rep: Indicates that a partner doesn't need support from an Amazon Web Services sales representative, and the partner solely manages the opportunity. It's possible to request coselling support on these opportunities at any stage during their lifecycles. This is also known as a for-visibility-only (FVO) opportunity.</p></li>
     /// </ul>
     pub primary_needs_from_aws: ::std::option::Option<::std::vec::Vec<crate::types::PrimaryNeedFromAws>>,
     /// <p>Indicates whether the <code>Opportunity</code> pertains to a national security project. This field must be set to <code>true</code> only when the customer's industry is <i>Government</i>. Additional privacy and security measures apply during the review and management process for opportunities marked as <code>NationalSecurity</code>.</p>
@@ -87,8 +85,6 @@ impl CreateOpportunityInput {
     /// <p>Cosell—Deal Support: Request Amazon Web Services seller's support to progress the opportunity (for example: joint customer call, strategic positioning).</p></li>
     /// <li>
     /// <p>Cosell—Support for Public Tender/RFx: Opportunity related to the public sector where the partner needs Amazon Web Services RFx support.</p></li>
-    /// <li>
-    /// <p>Do Not Need Support from AWS Sales Rep: Indicates that a partner doesn't need support from an Amazon Web Services sales representative, and the partner solely manages the opportunity. It's possible to request coselling support on these opportunities at any stage during their lifecycles. This is also known as a for-visibility-only (FVO) opportunity.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.primary_needs_from_aws.is_none()`.
@@ -218,8 +214,6 @@ impl CreateOpportunityInputBuilder {
     /// <p>Cosell—Deal Support: Request Amazon Web Services seller's support to progress the opportunity (for example: joint customer call, strategic positioning).</p></li>
     /// <li>
     /// <p>Cosell—Support for Public Tender/RFx: Opportunity related to the public sector where the partner needs Amazon Web Services RFx support.</p></li>
-    /// <li>
-    /// <p>Do Not Need Support from AWS Sales Rep: Indicates that a partner doesn't need support from an Amazon Web Services sales representative, and the partner solely manages the opportunity. It's possible to request coselling support on these opportunities at any stage during their lifecycles. This is also known as a for-visibility-only (FVO) opportunity.</p></li>
     /// </ul>
     pub fn primary_needs_from_aws(mut self, input: crate::types::PrimaryNeedFromAws) -> Self {
         let mut v = self.primary_needs_from_aws.unwrap_or_default();
@@ -246,8 +240,6 @@ impl CreateOpportunityInputBuilder {
     /// <p>Cosell—Deal Support: Request Amazon Web Services seller's support to progress the opportunity (for example: joint customer call, strategic positioning).</p></li>
     /// <li>
     /// <p>Cosell—Support for Public Tender/RFx: Opportunity related to the public sector where the partner needs Amazon Web Services RFx support.</p></li>
-    /// <li>
-    /// <p>Do Not Need Support from AWS Sales Rep: Indicates that a partner doesn't need support from an Amazon Web Services sales representative, and the partner solely manages the opportunity. It's possible to request coselling support on these opportunities at any stage during their lifecycles. This is also known as a for-visibility-only (FVO) opportunity.</p></li>
     /// </ul>
     pub fn set_primary_needs_from_aws(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PrimaryNeedFromAws>>) -> Self {
         self.primary_needs_from_aws = input;
@@ -272,8 +264,6 @@ impl CreateOpportunityInputBuilder {
     /// <p>Cosell—Deal Support: Request Amazon Web Services seller's support to progress the opportunity (for example: joint customer call, strategic positioning).</p></li>
     /// <li>
     /// <p>Cosell—Support for Public Tender/RFx: Opportunity related to the public sector where the partner needs Amazon Web Services RFx support.</p></li>
-    /// <li>
-    /// <p>Do Not Need Support from AWS Sales Rep: Indicates that a partner doesn't need support from an Amazon Web Services sales representative, and the partner solely manages the opportunity. It's possible to request coselling support on these opportunities at any stage during their lifecycles. This is also known as a for-visibility-only (FVO) opportunity.</p></li>
     /// </ul>
     pub fn get_primary_needs_from_aws(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PrimaryNeedFromAws>> {
         &self.primary_needs_from_aws

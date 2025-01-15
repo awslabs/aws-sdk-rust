@@ -22,6 +22,8 @@ pub struct MultipartUpload {
     pub initiator: ::std::option::Option<crate::types::Initiator>,
     /// <p>The algorithm that was used to create a checksum of the object.</p>
     pub checksum_algorithm: ::std::option::Option<crate::types::ChecksumAlgorithm>,
+    /// <p>The checksum type that is used to calculate the object’s checksum value. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_type: ::std::option::Option<crate::types::ChecksumType>,
 }
 impl MultipartUpload {
     /// <p>Upload ID that identifies the multipart upload.</p>
@@ -56,6 +58,10 @@ impl MultipartUpload {
     pub fn checksum_algorithm(&self) -> ::std::option::Option<&crate::types::ChecksumAlgorithm> {
         self.checksum_algorithm.as_ref()
     }
+    /// <p>The checksum type that is used to calculate the object’s checksum value. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_type(&self) -> ::std::option::Option<&crate::types::ChecksumType> {
+        self.checksum_type.as_ref()
+    }
 }
 impl MultipartUpload {
     /// Creates a new builder-style object to manufacture [`MultipartUpload`](crate::types::MultipartUpload).
@@ -75,6 +81,7 @@ pub struct MultipartUploadBuilder {
     pub(crate) owner: ::std::option::Option<crate::types::Owner>,
     pub(crate) initiator: ::std::option::Option<crate::types::Initiator>,
     pub(crate) checksum_algorithm: ::std::option::Option<crate::types::ChecksumAlgorithm>,
+    pub(crate) checksum_type: ::std::option::Option<crate::types::ChecksumType>,
 }
 impl MultipartUploadBuilder {
     /// <p>Upload ID that identifies the multipart upload.</p>
@@ -187,6 +194,20 @@ impl MultipartUploadBuilder {
     pub fn get_checksum_algorithm(&self) -> &::std::option::Option<crate::types::ChecksumAlgorithm> {
         &self.checksum_algorithm
     }
+    /// <p>The checksum type that is used to calculate the object’s checksum value. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_type(mut self, input: crate::types::ChecksumType) -> Self {
+        self.checksum_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The checksum type that is used to calculate the object’s checksum value. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn set_checksum_type(mut self, input: ::std::option::Option<crate::types::ChecksumType>) -> Self {
+        self.checksum_type = input;
+        self
+    }
+    /// <p>The checksum type that is used to calculate the object’s checksum value. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn get_checksum_type(&self) -> &::std::option::Option<crate::types::ChecksumType> {
+        &self.checksum_type
+    }
     /// Consumes the builder and constructs a [`MultipartUpload`](crate::types::MultipartUpload).
     pub fn build(self) -> crate::types::MultipartUpload {
         crate::types::MultipartUpload {
@@ -197,6 +218,7 @@ impl MultipartUploadBuilder {
             owner: self.owner,
             initiator: self.initiator,
             checksum_algorithm: self.checksum_algorithm,
+            checksum_type: self.checksum_type,
         }
     }
 }

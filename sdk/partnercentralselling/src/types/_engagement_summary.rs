@@ -4,41 +4,41 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct EngagementSummary {
-    /// <p>The Amazon Resource Name (ARN) of the created engagement.</p>
+    /// <p>The Amazon Resource Name (ARN) of the created Engagement.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier for the engagement.</p>
+    /// <p>The unique identifier for the Engagement.</p>
     pub id: ::std::option::Option<::std::string::String>,
-    /// <p>The title of the engagement.</p>
+    /// <p>The title of the Engagement.</p>
     pub title: ::std::option::Option<::std::string::String>,
-    /// <p>The date and time when the engagement was created.</p>
+    /// <p>The date and time when the Engagement was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The AWS account ID of the engagement creator.</p>
+    /// <p>The AWS Account ID of the Engagement creator.</p>
     pub created_by: ::std::option::Option<::std::string::String>,
-    /// <p>The number of members in the engagement.</p>
+    /// <p>The number of members in the Engagement.</p>
     pub member_count: ::std::option::Option<i32>,
 }
 impl EngagementSummary {
-    /// <p>The Amazon Resource Name (ARN) of the created engagement.</p>
+    /// <p>The Amazon Resource Name (ARN) of the created Engagement.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The unique identifier for the engagement.</p>
+    /// <p>The unique identifier for the Engagement.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The title of the engagement.</p>
+    /// <p>The title of the Engagement.</p>
     pub fn title(&self) -> ::std::option::Option<&str> {
         self.title.as_deref()
     }
-    /// <p>The date and time when the engagement was created.</p>
+    /// <p>The date and time when the Engagement was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The AWS account ID of the engagement creator.</p>
+    /// <p>The AWS Account ID of the Engagement creator.</p>
     pub fn created_by(&self) -> ::std::option::Option<&str> {
         self.created_by.as_deref()
     }
-    /// <p>The number of members in the engagement.</p>
+    /// <p>The number of members in the Engagement.</p>
     pub fn member_count(&self) -> ::std::option::Option<i32> {
         self.member_count
     }
@@ -74,87 +74,87 @@ pub struct EngagementSummaryBuilder {
     pub(crate) member_count: ::std::option::Option<i32>,
 }
 impl EngagementSummaryBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the created engagement.</p>
+    /// <p>The Amazon Resource Name (ARN) of the created Engagement.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the created engagement.</p>
+    /// <p>The Amazon Resource Name (ARN) of the created Engagement.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the created engagement.</p>
+    /// <p>The Amazon Resource Name (ARN) of the created Engagement.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>The unique identifier for the engagement.</p>
+    /// <p>The unique identifier for the Engagement.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier for the engagement.</p>
+    /// <p>The unique identifier for the Engagement.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>The unique identifier for the engagement.</p>
+    /// <p>The unique identifier for the Engagement.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p>The title of the engagement.</p>
+    /// <p>The title of the Engagement.</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The title of the engagement.</p>
+    /// <p>The title of the Engagement.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
     }
-    /// <p>The title of the engagement.</p>
+    /// <p>The title of the Engagement.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
         &self.title
     }
-    /// <p>The date and time when the engagement was created.</p>
+    /// <p>The date and time when the Engagement was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time when the engagement was created.</p>
+    /// <p>The date and time when the Engagement was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
-    /// <p>The date and time when the engagement was created.</p>
+    /// <p>The date and time when the Engagement was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
-    /// <p>The AWS account ID of the engagement creator.</p>
+    /// <p>The AWS Account ID of the Engagement creator.</p>
     pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS account ID of the engagement creator.</p>
+    /// <p>The AWS Account ID of the Engagement creator.</p>
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_by = input;
         self
     }
-    /// <p>The AWS account ID of the engagement creator.</p>
+    /// <p>The AWS Account ID of the Engagement creator.</p>
     pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.created_by
     }
-    /// <p>The number of members in the engagement.</p>
+    /// <p>The number of members in the Engagement.</p>
     pub fn member_count(mut self, input: i32) -> Self {
         self.member_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of members in the engagement.</p>
+    /// <p>The number of members in the Engagement.</p>
     pub fn set_member_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.member_count = input;
         self
     }
-    /// <p>The number of members in the engagement.</p>
+    /// <p>The number of members in the Engagement.</p>
     pub fn get_member_count(&self) -> &::std::option::Option<i32> {
         &self.member_count
     }

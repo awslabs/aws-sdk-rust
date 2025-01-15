@@ -5,7 +5,7 @@
 pub struct GetResourceSnapshotOutput {
     /// <p>The catalog in which the snapshot was created. Matches the Catalog specified in the request.</p>
     pub catalog: ::std::string::String,
-    /// <p>The Amazon Resource Name (ARN) of the snapshot. This globally unique identifier can be used for resource-specific operations across AWS services.</p>
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the resource snapshot.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The AWS account ID of the principal (user or role) who created the snapshot. This helps in tracking the origin of the snapshot.</p>
     pub created_by: ::std::option::Option<::std::string::String>,
@@ -13,9 +13,9 @@ pub struct GetResourceSnapshotOutput {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The identifier of the engagement associated with this snapshot. Matches the EngagementIdentifier specified in the request.</p>
     pub engagement_id: ::std::option::Option<::std::string::String>,
-    /// <p>The type of the resource that was snapshotted. Matches the <code>ResourceType</code> specified in the request.</p>
+    /// <p>The type of the resource that was snapshotted. Matches the ResourceType specified in the request.</p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
-    /// <p>The identifier of the specific resource that was snapshotted. Matches the <code>ResourceIdentifier</code> specified in the request.</p>
+    /// <p>The identifier of the specific resource that was snapshotted. Matches the ResourceIdentifier specified in the request.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the view used for this snapshot. This is the same as the template name.</p>
     pub resource_snapshot_template_name: ::std::option::Option<::std::string::String>,
@@ -31,7 +31,7 @@ impl GetResourceSnapshotOutput {
         use std::ops::Deref;
         self.catalog.deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the snapshot. This globally unique identifier can be used for resource-specific operations across AWS services.</p>
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the resource snapshot.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -47,11 +47,11 @@ impl GetResourceSnapshotOutput {
     pub fn engagement_id(&self) -> ::std::option::Option<&str> {
         self.engagement_id.as_deref()
     }
-    /// <p>The type of the resource that was snapshotted. Matches the <code>ResourceType</code> specified in the request.</p>
+    /// <p>The type of the resource that was snapshotted. Matches the ResourceType specified in the request.</p>
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
-    /// <p>The identifier of the specific resource that was snapshotted. Matches the <code>ResourceIdentifier</code> specified in the request.</p>
+    /// <p>The identifier of the specific resource that was snapshotted. Matches the ResourceIdentifier specified in the request.</p>
     pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
     }
@@ -129,17 +129,17 @@ impl GetResourceSnapshotOutputBuilder {
     pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
         &self.catalog
     }
-    /// <p>The Amazon Resource Name (ARN) of the snapshot. This globally unique identifier can be used for resource-specific operations across AWS services.</p>
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the resource snapshot.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the snapshot. This globally unique identifier can be used for resource-specific operations across AWS services.</p>
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the resource snapshot.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the snapshot. This globally unique identifier can be used for resource-specific operations across AWS services.</p>
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the resource snapshot.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
@@ -185,31 +185,31 @@ impl GetResourceSnapshotOutputBuilder {
     pub fn get_engagement_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.engagement_id
     }
-    /// <p>The type of the resource that was snapshotted. Matches the <code>ResourceType</code> specified in the request.</p>
+    /// <p>The type of the resource that was snapshotted. Matches the ResourceType specified in the request.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of the resource that was snapshotted. Matches the <code>ResourceType</code> specified in the request.</p>
+    /// <p>The type of the resource that was snapshotted. Matches the ResourceType specified in the request.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
-    /// <p>The type of the resource that was snapshotted. Matches the <code>ResourceType</code> specified in the request.</p>
+    /// <p>The type of the resource that was snapshotted. Matches the ResourceType specified in the request.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
         &self.resource_type
     }
-    /// <p>The identifier of the specific resource that was snapshotted. Matches the <code>ResourceIdentifier</code> specified in the request.</p>
+    /// <p>The identifier of the specific resource that was snapshotted. Matches the ResourceIdentifier specified in the request.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the specific resource that was snapshotted. Matches the <code>ResourceIdentifier</code> specified in the request.</p>
+    /// <p>The identifier of the specific resource that was snapshotted. Matches the ResourceIdentifier specified in the request.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
     }
-    /// <p>The identifier of the specific resource that was snapshotted. Matches the <code>ResourceIdentifier</code> specified in the request.</p>
+    /// <p>The identifier of the specific resource that was snapshotted. Matches the ResourceIdentifier specified in the request.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_id
     }

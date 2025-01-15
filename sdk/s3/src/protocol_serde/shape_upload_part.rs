@@ -40,6 +40,11 @@ pub fn de_upload_part_http_response(
                 crate::operation::upload_part::UploadPartError::unhandled("Failed to parse ChecksumCRC32C from header `x-amz-checksum-crc32c")
             })?,
         );
+        output = output.set_checksum_crc64_nvme(
+            crate::protocol_serde::shape_upload_part_output::de_checksum_crc64_nvme_header(_response_headers).map_err(|_| {
+                crate::operation::upload_part::UploadPartError::unhandled("Failed to parse ChecksumCRC64NVME from header `x-amz-checksum-crc64nvme")
+            })?,
+        );
         output = output.set_checksum_sha1(
             crate::protocol_serde::shape_upload_part_output::de_checksum_sha1_header(_response_headers).map_err(|_| {
                 crate::operation::upload_part::UploadPartError::unhandled("Failed to parse ChecksumSHA1 from header `x-amz-checksum-sha1")
@@ -153,9 +158,20 @@ pub fn ser_upload_part_headers(
         })?;
         builder = builder.header("x-amz-checksum-crc32c", header_value);
     }
-    if let ::std::option::Option::Some(inner_11) = &input.checksum_sha1 {
+    if let ::std::option::Option::Some(inner_11) = &input.checksum_crc64_nvme {
         let formatted_12 = inner_11.as_str();
         let header_value = formatted_12;
+        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+            ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                "checksum_crc64_nvme",
+                format!("`{}` cannot be used as a header value: {}", &header_value, err),
+            )
+        })?;
+        builder = builder.header("x-amz-checksum-crc64nvme", header_value);
+    }
+    if let ::std::option::Option::Some(inner_13) = &input.checksum_sha1 {
+        let formatted_14 = inner_13.as_str();
+        let header_value = formatted_14;
         let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "checksum_sha1",
@@ -164,9 +180,9 @@ pub fn ser_upload_part_headers(
         })?;
         builder = builder.header("x-amz-checksum-sha1", header_value);
     }
-    if let ::std::option::Option::Some(inner_13) = &input.checksum_sha256 {
-        let formatted_14 = inner_13.as_str();
-        let header_value = formatted_14;
+    if let ::std::option::Option::Some(inner_15) = &input.checksum_sha256 {
+        let formatted_16 = inner_15.as_str();
+        let header_value = formatted_16;
         let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "checksum_sha256",
@@ -175,9 +191,9 @@ pub fn ser_upload_part_headers(
         })?;
         builder = builder.header("x-amz-checksum-sha256", header_value);
     }
-    if let ::std::option::Option::Some(inner_15) = &input.sse_customer_algorithm {
-        let formatted_16 = inner_15.as_str();
-        let header_value = formatted_16;
+    if let ::std::option::Option::Some(inner_17) = &input.sse_customer_algorithm {
+        let formatted_18 = inner_17.as_str();
+        let header_value = formatted_18;
         let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "sse_customer_algorithm",
@@ -186,9 +202,9 @@ pub fn ser_upload_part_headers(
         })?;
         builder = builder.header("x-amz-server-side-encryption-customer-algorithm", header_value);
     }
-    if let ::std::option::Option::Some(inner_17) = &input.sse_customer_key {
-        let formatted_18 = inner_17.as_str();
-        let header_value = formatted_18;
+    if let ::std::option::Option::Some(inner_19) = &input.sse_customer_key {
+        let formatted_20 = inner_19.as_str();
+        let header_value = formatted_20;
         let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "sse_customer_key",
@@ -197,9 +213,9 @@ pub fn ser_upload_part_headers(
         })?;
         builder = builder.header("x-amz-server-side-encryption-customer-key", header_value);
     }
-    if let ::std::option::Option::Some(inner_19) = &input.sse_customer_key_md5 {
-        let formatted_20 = inner_19.as_str();
-        let header_value = formatted_20;
+    if let ::std::option::Option::Some(inner_21) = &input.sse_customer_key_md5 {
+        let formatted_22 = inner_21.as_str();
+        let header_value = formatted_22;
         let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "sse_customer_key_md5",
@@ -208,9 +224,9 @@ pub fn ser_upload_part_headers(
         })?;
         builder = builder.header("x-amz-server-side-encryption-customer-key-MD5", header_value);
     }
-    if let ::std::option::Option::Some(inner_21) = &input.request_payer {
-        let formatted_22 = inner_21.as_str();
-        let header_value = formatted_22;
+    if let ::std::option::Option::Some(inner_23) = &input.request_payer {
+        let formatted_24 = inner_23.as_str();
+        let header_value = formatted_24;
         let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "request_payer",
@@ -219,9 +235,9 @@ pub fn ser_upload_part_headers(
         })?;
         builder = builder.header("x-amz-request-payer", header_value);
     }
-    if let ::std::option::Option::Some(inner_23) = &input.expected_bucket_owner {
-        let formatted_24 = inner_23.as_str();
-        let header_value = formatted_24;
+    if let ::std::option::Option::Some(inner_25) = &input.expected_bucket_owner {
+        let formatted_26 = inner_25.as_str();
+        let header_value = formatted_26;
         let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "expected_bucket_owner",

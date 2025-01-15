@@ -345,6 +345,8 @@ pub use crate::types::_inline_agent_payload_part::InlineAgentPayloadPart;
 
 pub use crate::types::_attribution::Attribution;
 
+pub use crate::types::_streaming_configurations::StreamingConfigurations;
+
 pub use crate::types::_inline_bedrock_model_configurations::InlineBedrockModelConfigurations;
 
 pub use crate::types::_prompt_override_configuration::PromptOverrideConfiguration;
@@ -402,8 +404,6 @@ pub use crate::types::_trace_part::TracePart;
 pub use crate::types::_caller::Caller;
 
 pub use crate::types::_payload_part::PayloadPart;
-
-pub use crate::types::_streaming_configurations::StreamingConfigurations;
 
 pub use crate::types::_bedrock_model_configurations::BedrockModelConfigurations;
 

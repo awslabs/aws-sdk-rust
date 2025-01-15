@@ -122,7 +122,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetObje
             .with_interceptor(GetObjectEndpointParamsInterceptor)
             .with_interceptor(crate::s3_expires_interceptor::S3ExpiresInterceptor)
             .with_interceptor(crate::http_response_checksum::ResponseChecksumInterceptor::new(
-                ["crc32", "crc32c", "sha256", "sha1"].as_slice(),
+                ["crc64nvme", "crc32", "crc32c", "sha256", "sha1"].as_slice(),
                 |input: &::aws_smithy_runtime_api::client::interceptors::context::Input| {
                     let input: &crate::operation::get_object::GetObjectInput = input.downcast_ref().expect("correct type");
                     matches!(input.checksum_mode(), ::std::option::Option::Some(crate::types::ChecksumMode::Enabled))

@@ -82,6 +82,9 @@ pub mod list_resource_snapshots;
 /// Types for the `ListSolutions` operation.
 pub mod list_solutions;
 
+/// Types for the `ListTagsForResource` operation.
+pub mod list_tags_for_resource;
+
 /// Types for the `PutSellingSystemSettings` operation.
 pub mod put_selling_system_settings;
 
@@ -102,6 +105,12 @@ pub mod stop_resource_snapshot_job;
 
 /// Types for the `SubmitOpportunity` operation.
 pub mod submit_opportunity;
+
+/// Types for the `TagResource` operation.
+pub mod tag_resource;
+
+/// Types for the `UntagResource` operation.
+pub mod untag_resource;
 
 /// Types for the `UpdateOpportunity` operation.
 pub mod update_opportunity;

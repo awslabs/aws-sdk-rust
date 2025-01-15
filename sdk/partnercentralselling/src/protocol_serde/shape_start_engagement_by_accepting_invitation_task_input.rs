@@ -12,5 +12,17 @@ pub fn ser_start_engagement_by_accepting_invitation_task_input_input(
     if let Some(var_3) = &input.identifier {
         object.key("Identifier").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.tags {
+        let mut array_5 = object.key("Tags").start_array();
+        for item_6 in var_4 {
+            {
+                #[allow(unused_mut)]
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_7, item_6)?;
+                object_7.finish();
+            }
+        }
+        array_5.finish();
+    }
     Ok(())
 }

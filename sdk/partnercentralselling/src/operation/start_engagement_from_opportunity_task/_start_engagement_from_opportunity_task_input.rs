@@ -11,6 +11,8 @@ pub struct StartEngagementFromOpportunityTaskInput {
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the level of AWS involvement in the opportunity. This field helps track AWS participation throughout the engagement, such as providing technical support, deal assistance, and sales support.</p>
     pub aws_submission: ::std::option::Option<crate::types::AwsSubmission>,
+    /// A list of objects specifying each tag name and value.
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl StartEngagementFromOpportunityTaskInput {
     /// <p>Specifies the catalog in which the engagement is tracked. Acceptable values include <code>AWS</code> for production and <code>Sandbox</code> for testing environments.</p>
@@ -29,6 +31,12 @@ impl StartEngagementFromOpportunityTaskInput {
     pub fn aws_submission(&self) -> ::std::option::Option<&crate::types::AwsSubmission> {
         self.aws_submission.as_ref()
     }
+    /// A list of objects specifying each tag name and value.
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
+    }
 }
 impl StartEngagementFromOpportunityTaskInput {
     /// Creates a new builder-style object to manufacture [`StartEngagementFromOpportunityTaskInput`](crate::operation::start_engagement_from_opportunity_task::StartEngagementFromOpportunityTaskInput).
@@ -45,6 +53,7 @@ pub struct StartEngagementFromOpportunityTaskInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) aws_submission: ::std::option::Option<crate::types::AwsSubmission>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl StartEngagementFromOpportunityTaskInputBuilder {
     /// <p>Specifies the catalog in which the engagement is tracked. Acceptable values include <code>AWS</code> for production and <code>Sandbox</code> for testing environments.</p>
@@ -107,6 +116,26 @@ impl StartEngagementFromOpportunityTaskInputBuilder {
     pub fn get_aws_submission(&self) -> &::std::option::Option<crate::types::AwsSubmission> {
         &self.aws_submission
     }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// A list of objects specifying each tag name and value.
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+        v.push(input);
+        self.tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// A list of objects specifying each tag name and value.
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// A list of objects specifying each tag name and value.
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`StartEngagementFromOpportunityTaskInput`](crate::operation::start_engagement_from_opportunity_task::StartEngagementFromOpportunityTaskInput).
     pub fn build(
         self,
@@ -120,6 +149,7 @@ impl StartEngagementFromOpportunityTaskInputBuilder {
                 client_token: self.client_token,
                 identifier: self.identifier,
                 aws_submission: self.aws_submission,
+                tags: self.tags,
             },
         )
     }

@@ -22,7 +22,7 @@ impl crate::operation::list_engagement_members::builders::ListEngagementMembersI
 }
 /// Fluent builder constructing a request to `ListEngagementMembers`.
 ///
-/// <p>Retrieves the details of member partners in an engagement. This operation can only be invoked by members of the engagement. The <code>ListEngagementMembers</code> operation allows you to fetch information about the members of a specific engagement. This action is restricted to members of the engagement being queried.</p>
+/// <p>Retrieves the details of member partners in an Engagement. This operation can only be invoked by members of the Engagement. The <code>ListEngagementMembers</code> operation allows you to fetch information about the members of a specific Engagement. This action is restricted to members of the Engagement being queried.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListEngagementMembersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -128,17 +128,17 @@ impl ListEngagementMembersFluentBuilder {
     pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_catalog()
     }
-    /// <p>Identifier of the engagement record to retrieve members from.</p>
+    /// <p>Identifier of the Engagement record to retrieve members from.</p>
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identifier(input.into());
         self
     }
-    /// <p>Identifier of the engagement record to retrieve members from.</p>
+    /// <p>Identifier of the Engagement record to retrieve members from.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identifier(input);
         self
     }
-    /// <p>Identifier of the engagement record to retrieve members from.</p>
+    /// <p>Identifier of the Engagement record to retrieve members from.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identifier()
     }

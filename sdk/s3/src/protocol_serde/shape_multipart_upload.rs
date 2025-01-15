@@ -95,6 +95,20 @@ pub fn de_multipart_upload(
                 builder = builder.set_checksum_algorithm(var_7);
             }
             ,
+            s if s.matches("ChecksumType") /* ChecksumType com.amazonaws.s3#MultipartUpload$ChecksumType */ =>  {
+                let var_8 =
+                    Some(
+                        Result::<crate::types::ChecksumType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::ChecksumType::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_checksum_type(var_8);
+            }
+            ,
             _ => {}
         }
     }

@@ -66,8 +66,22 @@ pub fn de_object(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Resul
                 builder = builder.set_checksum_algorithm(var_4);
             }
             ,
-            s if s.matches("Size") /* Size com.amazonaws.s3#Object$Size */ =>  {
+            s if s.matches("ChecksumType") /* ChecksumType com.amazonaws.s3#Object$ChecksumType */ =>  {
                 let var_6 =
+                    Some(
+                        Result::<crate::types::ChecksumType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::ChecksumType::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_checksum_type(var_6);
+            }
+            ,
+            s if s.matches("Size") /* Size com.amazonaws.s3#Object$Size */ =>  {
+                let var_7 =
                     Some(
                          {
                             <i64 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -78,11 +92,11 @@ pub fn de_object(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Resul
                         ?
                     )
                 ;
-                builder = builder.set_size(var_6);
+                builder = builder.set_size(var_7);
             }
             ,
             s if s.matches("StorageClass") /* StorageClass com.amazonaws.s3#Object$StorageClass */ =>  {
-                let var_7 =
+                let var_8 =
                     Some(
                         Result::<crate::types::ObjectStorageClass, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::ObjectStorageClass::from(
@@ -92,27 +106,27 @@ pub fn de_object(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Resul
                         ?
                     )
                 ;
-                builder = builder.set_storage_class(var_7);
+                builder = builder.set_storage_class(var_8);
             }
             ,
             s if s.matches("Owner") /* Owner com.amazonaws.s3#Object$Owner */ =>  {
-                let var_8 =
+                let var_9 =
                     Some(
                         crate::protocol_serde::shape_owner::de_owner(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_owner(var_8);
+                builder = builder.set_owner(var_9);
             }
             ,
             s if s.matches("RestoreStatus") /* RestoreStatus com.amazonaws.s3#Object$RestoreStatus */ =>  {
-                let var_9 =
+                let var_10 =
                     Some(
                         crate::protocol_serde::shape_restore_status::de_restore_status(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_restore_status(var_9);
+                builder = builder.set_restore_status(var_10);
             }
             ,
             _ => {}

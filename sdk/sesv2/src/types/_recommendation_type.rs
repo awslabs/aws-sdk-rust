@@ -13,6 +13,7 @@
 /// # let recommendationtype = unimplemented!();
 /// match recommendationtype {
 ///     RecommendationType::Bimi => { /* ... */ },
+///     RecommendationType::Complaint => { /* ... */ },
 ///     RecommendationType::Dkim => { /* ... */ },
 ///     RecommendationType::Dmarc => { /* ... */ },
 ///     RecommendationType::Spf => { /* ... */ },
@@ -47,6 +48,8 @@ pub enum RecommendationType {
     #[allow(missing_docs)] // documentation missing in model
     Bimi,
     #[allow(missing_docs)] // documentation missing in model
+    Complaint,
+    #[allow(missing_docs)] // documentation missing in model
     Dkim,
     #[allow(missing_docs)] // documentation missing in model
     Dmarc,
@@ -60,6 +63,7 @@ impl ::std::convert::From<&str> for RecommendationType {
     fn from(s: &str) -> Self {
         match s {
             "BIMI" => RecommendationType::Bimi,
+            "COMPLAINT" => RecommendationType::Complaint,
             "DKIM" => RecommendationType::Dkim,
             "DMARC" => RecommendationType::Dmarc,
             "SPF" => RecommendationType::Spf,
@@ -79,6 +83,7 @@ impl RecommendationType {
     pub fn as_str(&self) -> &str {
         match self {
             RecommendationType::Bimi => "BIMI",
+            RecommendationType::Complaint => "COMPLAINT",
             RecommendationType::Dkim => "DKIM",
             RecommendationType::Dmarc => "DMARC",
             RecommendationType::Spf => "SPF",
@@ -87,7 +92,7 @@ impl RecommendationType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BIMI", "DKIM", "DMARC", "SPF"]
+        &["BIMI", "COMPLAINT", "DKIM", "DMARC", "SPF"]
     }
 }
 impl ::std::convert::AsRef<str> for RecommendationType {
@@ -111,6 +116,7 @@ impl ::std::fmt::Display for RecommendationType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             RecommendationType::Bimi => write!(f, "BIMI"),
+            RecommendationType::Complaint => write!(f, "COMPLAINT"),
             RecommendationType::Dkim => write!(f, "DKIM"),
             RecommendationType::Dmarc => write!(f, "DMARC"),
             RecommendationType::Spf => write!(f, "SPF"),

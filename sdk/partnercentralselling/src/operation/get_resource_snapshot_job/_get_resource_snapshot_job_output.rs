@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResourceSnapshotJobOutput {
-    /// <p>The catalog in which the snapshot job was created. This will match the catalog specified in the request.</p>
+    /// <p>The catalog in which the snapshot job was created. This will match the Catalog specified in the request.</p>
     pub catalog: ::std::string::String,
-    /// <p>The unique identifier of the snapshot job. This matches the <code>ResourceSnapshotJobIdentifier</code> provided in the request.</p>
+    /// <p>The unique identifier of the snapshot job. This matches the ResourceSnapshotJobIdentifier provided in the request.</p>
     pub id: ::std::option::Option<::std::string::String>,
-    /// <p>he Amazon Resource Name (ARN) of the snapshot job. This globally unique identifier can be used for resource-specific operations across AWS services.</p>
+    /// <p>The Amazon Resource Name (ARN) of the snapshot job. This globally unique identifier can be used for resource-specific operations across AWS services.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the engagement associated with this snapshot job. This links the job to a specific engagement context.</p>
     pub engagement_id: ::std::option::Option<::std::string::String>,
-    /// <p>The type of resource being snapshotted. This would have <code>Opportunity</code> as a value as it is dependent on the supported resource type.</p>
+    /// <p>The type of resource being snapshotted. This would have "Opportunity" as a value as it is dependent on the supported resource type.</p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
-    /// <p>The identifier of the specific resource being snapshotted. The format may vary depending on the <code>ResourceType</code>.</p>
+    /// <p>The identifier of the specific resource being snapshotted. The format might vary depending on the ResourceType.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the resource being snapshotted. This provides a globally unique identifier for the resource across AWS.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the template used for creating the snapshot. This is the same as the template name. It defines the structure and content of the snapshot.</p>
     pub resource_snapshot_template_name: ::std::option::Option<::std::string::String>,
-    /// <p>The date and time when the snapshot job was created, in ISO 8601 format (UTC). Example: "2023-05-01T20:37:46Z"</p>
+    /// <p>The date and time when the snapshot job was created in ISO 8601 format (UTC). Example: "2023-05-01T20:37:46Z"</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current status of the snapshot job. Valid values:</p>
     /// <ul>
@@ -36,16 +36,16 @@ pub struct GetResourceSnapshotJobOutput {
     _request_id: Option<String>,
 }
 impl GetResourceSnapshotJobOutput {
-    /// <p>The catalog in which the snapshot job was created. This will match the catalog specified in the request.</p>
+    /// <p>The catalog in which the snapshot job was created. This will match the Catalog specified in the request.</p>
     pub fn catalog(&self) -> &str {
         use std::ops::Deref;
         self.catalog.deref()
     }
-    /// <p>The unique identifier of the snapshot job. This matches the <code>ResourceSnapshotJobIdentifier</code> provided in the request.</p>
+    /// <p>The unique identifier of the snapshot job. This matches the ResourceSnapshotJobIdentifier provided in the request.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>he Amazon Resource Name (ARN) of the snapshot job. This globally unique identifier can be used for resource-specific operations across AWS services.</p>
+    /// <p>The Amazon Resource Name (ARN) of the snapshot job. This globally unique identifier can be used for resource-specific operations across AWS services.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -53,11 +53,11 @@ impl GetResourceSnapshotJobOutput {
     pub fn engagement_id(&self) -> ::std::option::Option<&str> {
         self.engagement_id.as_deref()
     }
-    /// <p>The type of resource being snapshotted. This would have <code>Opportunity</code> as a value as it is dependent on the supported resource type.</p>
+    /// <p>The type of resource being snapshotted. This would have "Opportunity" as a value as it is dependent on the supported resource type.</p>
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
-    /// <p>The identifier of the specific resource being snapshotted. The format may vary depending on the <code>ResourceType</code>.</p>
+    /// <p>The identifier of the specific resource being snapshotted. The format might vary depending on the ResourceType.</p>
     pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
     }
@@ -69,7 +69,7 @@ impl GetResourceSnapshotJobOutput {
     pub fn resource_snapshot_template_name(&self) -> ::std::option::Option<&str> {
         self.resource_snapshot_template_name.as_deref()
     }
-    /// <p>The date and time when the snapshot job was created, in ISO 8601 format (UTC). Example: "2023-05-01T20:37:46Z"</p>
+    /// <p>The date and time when the snapshot job was created in ISO 8601 format (UTC). Example: "2023-05-01T20:37:46Z"</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
@@ -123,46 +123,46 @@ pub struct GetResourceSnapshotJobOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetResourceSnapshotJobOutputBuilder {
-    /// <p>The catalog in which the snapshot job was created. This will match the catalog specified in the request.</p>
+    /// <p>The catalog in which the snapshot job was created. This will match the Catalog specified in the request.</p>
     /// This field is required.
     pub fn catalog(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.catalog = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The catalog in which the snapshot job was created. This will match the catalog specified in the request.</p>
+    /// <p>The catalog in which the snapshot job was created. This will match the Catalog specified in the request.</p>
     pub fn set_catalog(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.catalog = input;
         self
     }
-    /// <p>The catalog in which the snapshot job was created. This will match the catalog specified in the request.</p>
+    /// <p>The catalog in which the snapshot job was created. This will match the Catalog specified in the request.</p>
     pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
         &self.catalog
     }
-    /// <p>The unique identifier of the snapshot job. This matches the <code>ResourceSnapshotJobIdentifier</code> provided in the request.</p>
+    /// <p>The unique identifier of the snapshot job. This matches the ResourceSnapshotJobIdentifier provided in the request.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the snapshot job. This matches the <code>ResourceSnapshotJobIdentifier</code> provided in the request.</p>
+    /// <p>The unique identifier of the snapshot job. This matches the ResourceSnapshotJobIdentifier provided in the request.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>The unique identifier of the snapshot job. This matches the <code>ResourceSnapshotJobIdentifier</code> provided in the request.</p>
+    /// <p>The unique identifier of the snapshot job. This matches the ResourceSnapshotJobIdentifier provided in the request.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p>he Amazon Resource Name (ARN) of the snapshot job. This globally unique identifier can be used for resource-specific operations across AWS services.</p>
+    /// <p>The Amazon Resource Name (ARN) of the snapshot job. This globally unique identifier can be used for resource-specific operations across AWS services.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>he Amazon Resource Name (ARN) of the snapshot job. This globally unique identifier can be used for resource-specific operations across AWS services.</p>
+    /// <p>The Amazon Resource Name (ARN) of the snapshot job. This globally unique identifier can be used for resource-specific operations across AWS services.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>he Amazon Resource Name (ARN) of the snapshot job. This globally unique identifier can be used for resource-specific operations across AWS services.</p>
+    /// <p>The Amazon Resource Name (ARN) of the snapshot job. This globally unique identifier can be used for resource-specific operations across AWS services.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
@@ -180,31 +180,31 @@ impl GetResourceSnapshotJobOutputBuilder {
     pub fn get_engagement_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.engagement_id
     }
-    /// <p>The type of resource being snapshotted. This would have <code>Opportunity</code> as a value as it is dependent on the supported resource type.</p>
+    /// <p>The type of resource being snapshotted. This would have "Opportunity" as a value as it is dependent on the supported resource type.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of resource being snapshotted. This would have <code>Opportunity</code> as a value as it is dependent on the supported resource type.</p>
+    /// <p>The type of resource being snapshotted. This would have "Opportunity" as a value as it is dependent on the supported resource type.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
-    /// <p>The type of resource being snapshotted. This would have <code>Opportunity</code> as a value as it is dependent on the supported resource type.</p>
+    /// <p>The type of resource being snapshotted. This would have "Opportunity" as a value as it is dependent on the supported resource type.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
         &self.resource_type
     }
-    /// <p>The identifier of the specific resource being snapshotted. The format may vary depending on the <code>ResourceType</code>.</p>
+    /// <p>The identifier of the specific resource being snapshotted. The format might vary depending on the ResourceType.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the specific resource being snapshotted. The format may vary depending on the <code>ResourceType</code>.</p>
+    /// <p>The identifier of the specific resource being snapshotted. The format might vary depending on the ResourceType.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
     }
-    /// <p>The identifier of the specific resource being snapshotted. The format may vary depending on the <code>ResourceType</code>.</p>
+    /// <p>The identifier of the specific resource being snapshotted. The format might vary depending on the ResourceType.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_id
     }
@@ -236,17 +236,17 @@ impl GetResourceSnapshotJobOutputBuilder {
     pub fn get_resource_snapshot_template_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_snapshot_template_name
     }
-    /// <p>The date and time when the snapshot job was created, in ISO 8601 format (UTC). Example: "2023-05-01T20:37:46Z"</p>
+    /// <p>The date and time when the snapshot job was created in ISO 8601 format (UTC). Example: "2023-05-01T20:37:46Z"</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time when the snapshot job was created, in ISO 8601 format (UTC). Example: "2023-05-01T20:37:46Z"</p>
+    /// <p>The date and time when the snapshot job was created in ISO 8601 format (UTC). Example: "2023-05-01T20:37:46Z"</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
-    /// <p>The date and time when the snapshot job was created, in ISO 8601 format (UTC). Example: "2023-05-01T20:37:46Z"</p>
+    /// <p>The date and time when the snapshot job was created in ISO 8601 format (UTC). Example: "2023-05-01T20:37:46Z"</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }

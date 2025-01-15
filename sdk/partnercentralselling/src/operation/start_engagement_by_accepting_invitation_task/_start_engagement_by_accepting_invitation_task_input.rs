@@ -9,6 +9,8 @@ pub struct StartEngagementByAcceptingInvitationTaskInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the unique identifier of the <code>EngagementInvitation</code> to be accepted. Providing the correct identifier helps ensure that the correct engagement is processed.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
+    /// A list of objects specifying each tag name and value.
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl StartEngagementByAcceptingInvitationTaskInput {
     /// <p>Specifies the catalog related to the task. Use <code>AWS</code> for production engagements and <code>Sandbox</code> for testing scenarios.</p>
@@ -22,6 +24,12 @@ impl StartEngagementByAcceptingInvitationTaskInput {
     /// <p>Specifies the unique identifier of the <code>EngagementInvitation</code> to be accepted. Providing the correct identifier helps ensure that the correct engagement is processed.</p>
     pub fn identifier(&self) -> ::std::option::Option<&str> {
         self.identifier.as_deref()
+    }
+    /// A list of objects specifying each tag name and value.
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl StartEngagementByAcceptingInvitationTaskInput {
@@ -39,6 +47,7 @@ pub struct StartEngagementByAcceptingInvitationTaskInputBuilder {
     pub(crate) catalog: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl StartEngagementByAcceptingInvitationTaskInputBuilder {
     /// <p>Specifies the catalog related to the task. Use <code>AWS</code> for production engagements and <code>Sandbox</code> for testing scenarios.</p>
@@ -86,6 +95,26 @@ impl StartEngagementByAcceptingInvitationTaskInputBuilder {
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.identifier
     }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// A list of objects specifying each tag name and value.
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+        v.push(input);
+        self.tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// A list of objects specifying each tag name and value.
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// A list of objects specifying each tag name and value.
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`StartEngagementByAcceptingInvitationTaskInput`](crate::operation::start_engagement_by_accepting_invitation_task::StartEngagementByAcceptingInvitationTaskInput).
     pub fn build(
         self,
@@ -98,6 +127,7 @@ impl StartEngagementByAcceptingInvitationTaskInputBuilder {
                 catalog: self.catalog,
                 client_token: self.client_token,
                 identifier: self.identifier,
+                tags: self.tags,
             },
         )
     }

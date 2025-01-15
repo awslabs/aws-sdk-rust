@@ -22,7 +22,7 @@ impl crate::operation::list_engagements::builders::ListEngagementsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListEngagements`.
 ///
-/// <p>This action allows users to retrieve a list of engagement records from Partner Central. This action can be used to manage and track various engagements across different stages of the partner selling process.</p>
+/// <p>This action allows users to retrieve a list of Engagement records from Partner Central. This action can be used to manage and track various engagements across different stages of the partner selling process.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListEngagementsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

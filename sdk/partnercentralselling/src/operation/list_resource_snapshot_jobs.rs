@@ -258,6 +258,9 @@ pub enum ListResourceSnapshotJobsError {
     /// <p>This error occurs when you don't have permission to perform the requested action.</p>
     /// <p>You don’t have access to this action or resource. Review IAM policies or contact your AWS administrator for assistance.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
+    /// <p>This error occurs when the specified resource can't be found. The resource might not exist, or isn't visible with the current credentials.</p>
+    /// <p>Suggested action: Verify that the resource ID is correct and the resource is in the expected AWS region. Check IAM permissions for accessing the resource.</p>
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>This error occurs when there are too many requests sent. Review the provided quotas and adapt your usage to avoid throttling.</p>
     /// <p>This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a> and retry after the provided delay.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
@@ -298,6 +301,7 @@ impl ListResourceSnapshotJobsError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
@@ -306,6 +310,10 @@ impl ListResourceSnapshotJobsError {
     /// Returns `true` if the error kind is `ListResourceSnapshotJobsError::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(self, Self::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `ListResourceSnapshotJobsError::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(self, Self::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `ListResourceSnapshotJobsError::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
@@ -320,6 +328,7 @@ impl ::std::error::Error for ListResourceSnapshotJobsError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
             Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -330,6 +339,7 @@ impl ::std::fmt::Display for ListResourceSnapshotJobsError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
+            Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -354,6 +364,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListResourceS
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

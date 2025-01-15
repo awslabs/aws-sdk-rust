@@ -75,5 +75,11 @@ pub fn ser_invoke_inline_agent_input_input(
         crate::protocol_serde::shape_prompt_override_configuration::ser_prompt_override_configuration(&mut object_23, var_22)?;
         object_23.finish();
     }
+    if let Some(var_24) = &input.streaming_configurations {
+        #[allow(unused_mut)]
+        let mut object_25 = object.key("streamingConfigurations").start_object();
+        crate::protocol_serde::shape_streaming_configurations::ser_streaming_configurations(&mut object_25, var_24)?;
+        object_25.finish();
+    }
     Ok(())
 }

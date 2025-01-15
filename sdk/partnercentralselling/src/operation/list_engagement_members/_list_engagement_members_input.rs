@@ -5,7 +5,7 @@
 pub struct ListEngagementMembersInput {
     /// <p>The catalog related to the request.</p>
     pub catalog: ::std::option::Option<::std::string::String>,
-    /// <p>Identifier of the engagement record to retrieve members from.</p>
+    /// <p>Identifier of the Engagement record to retrieve members from.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -17,7 +17,7 @@ impl ListEngagementMembersInput {
     pub fn catalog(&self) -> ::std::option::Option<&str> {
         self.catalog.as_deref()
     }
-    /// <p>Identifier of the engagement record to retrieve members from.</p>
+    /// <p>Identifier of the Engagement record to retrieve members from.</p>
     pub fn identifier(&self) -> ::std::option::Option<&str> {
         self.identifier.as_deref()
     }
@@ -62,18 +62,18 @@ impl ListEngagementMembersInputBuilder {
     pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
         &self.catalog
     }
-    /// <p>Identifier of the engagement record to retrieve members from.</p>
+    /// <p>Identifier of the Engagement record to retrieve members from.</p>
     /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Identifier of the engagement record to retrieve members from.</p>
+    /// <p>Identifier of the Engagement record to retrieve members from.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identifier = input;
         self
     }
-    /// <p>Identifier of the engagement record to retrieve members from.</p>
+    /// <p>Identifier of the Engagement record to retrieve members from.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.identifier
     }

@@ -37,7 +37,6 @@ impl crate::operation::invoke_inline_agent::builders::InvokeInlineAgentInputBuil
 /// <li>
 /// <p>The agent instructions will not be honored if your agent has only one knowledge base, uses default prompts, has no action group, and user input is disabled.</p></li>
 /// </ul><note>
-/// <p>The CLI doesn't support streaming operations in Amazon Bedrock, including <code>InvokeInlineAgent</code>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct InvokeInlineAgentFluentBuilder {
@@ -344,5 +343,25 @@ impl InvokeInlineAgentFluentBuilder {
     /// <p>Model settings for the request.</p>
     pub fn get_bedrock_model_configurations(&self) -> &::std::option::Option<crate::types::InlineBedrockModelConfigurations> {
         self.inner.get_bedrock_model_configurations()
+    }
+    /// <p>Specifies the configurations for streaming.</p><note>
+    /// <p>To use agent streaming, you need permissions to perform the <code>bedrock:InvokeModelWithResponseStream</code> action.</p>
+    /// </note>
+    pub fn streaming_configurations(mut self, input: crate::types::StreamingConfigurations) -> Self {
+        self.inner = self.inner.streaming_configurations(input);
+        self
+    }
+    /// <p>Specifies the configurations for streaming.</p><note>
+    /// <p>To use agent streaming, you need permissions to perform the <code>bedrock:InvokeModelWithResponseStream</code> action.</p>
+    /// </note>
+    pub fn set_streaming_configurations(mut self, input: ::std::option::Option<crate::types::StreamingConfigurations>) -> Self {
+        self.inner = self.inner.set_streaming_configurations(input);
+        self
+    }
+    /// <p>Specifies the configurations for streaming.</p><note>
+    /// <p>To use agent streaming, you need permissions to perform the <code>bedrock:InvokeModelWithResponseStream</code> action.</p>
+    /// </note>
+    pub fn get_streaming_configurations(&self) -> &::std::option::Option<crate::types::StreamingConfigurations> {
+        self.inner.get_streaming_configurations()
     }
 }
