@@ -48,7 +48,7 @@ tower = "0.4.1"
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
 features = ["http-body-1-x"]
-version = "1.2.11"
+version = "1.2.12"
 
 [dependencies.aws-smithy-runtime-api]
 features = ["client", "http-1x"]
@@ -58,11 +58,11 @@ version = "1.7.3"
 [dependencies.aws-smithy-runtime]
 features = ["client"]
 path = "../aws-smithy-runtime"
-version = "1.7.6"
+version = "1.7.7"
 
 [dependencies.aws-smithy-async]
 path = "../aws-smithy-async"
-version = "1.2.3"
+version = "1.2.4"
 
 [dependencies.hyper]
 version = "1"
@@ -79,12 +79,12 @@ default-features = false
 [dev-dependencies.aws-smithy-async]
 path = "../aws-smithy-async"
 features = ["rt-tokio", "test-util"]
-version = "1.2.3"
+version = "1.2.4"
 
 [dev-dependencies.aws-smithy-runtime]
 path = "../aws-smithy-runtime"
 features = ["client", "test-util", "connector-hyper-0-14-x"]
-version = "1.7.6"
+version = "1.7.7"
 
 [dev-dependencies.tokio]
 version = "1"

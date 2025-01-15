@@ -40,11 +40,11 @@ edition = "2021"
 cargo-fuzz = true
 
 [dependencies]
-libfuzzer-sys = "0.4"
+libfuzzer-sys = "=0.4.7"
 
 [dependencies.aws-smithy-types]
 path = ".."
-version = "1.2.11"
+version = "1.2.12"
 
 [workspace]
 members = ["."]

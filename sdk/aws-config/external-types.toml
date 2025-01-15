@@ -34,6 +34,8 @@ allowed_external_types = [
    "aws_smithy_runtime_api::client::result::SdkError",
    "aws_smithy_runtime_api::client::stalled_stream_protection::StalledStreamProtectionConfig",
    "aws_smithy_types::body::SdkBody",
+   "aws_smithy_types::checksum_config::RequestChecksumCalculation",
+   "aws_smithy_types::checksum_config::ResponseChecksumValidation",
    "aws_smithy_types::retry",
    "aws_smithy_types::retry::*",
    "aws_smithy_types::timeout",

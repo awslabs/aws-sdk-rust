@@ -7,5 +7,5 @@
 
 #[cfg(target_family = "wasm")]
 mod http_client;
-#[cfg(all(target_family = "wasm", target_os = "wasi"))]
+#[cfg(all(target_family = "wasm", target_env = "p1"))]
 mod wasi;

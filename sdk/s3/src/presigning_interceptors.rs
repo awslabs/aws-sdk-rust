@@ -6,7 +6,7 @@
 
 #![allow(dead_code)]
 
-use crate::presigning::PresigningConfig;
+use crate::presigning::{PresigningConfig, PresigningMarker};
 use crate::serialization_settings::HeaderSerializationSettings;
 use aws_runtime::auth::{HttpSignatureType, SigV4OperationSigningConfig};
 use aws_runtime::invocation_id::InvocationIdInterceptor;
@@ -54,6 +54,8 @@ impl Intercept for SigV4PresigningInterceptor {
                 .omit_default_content_length()
                 .omit_default_content_type(),
         );
+
+        cfg.interceptor_state().store_put(PresigningMarker);
         Ok(())
     }
 

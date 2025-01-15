@@ -22,15 +22,15 @@ edition = "2021"
 cargo-fuzz = true
 
 [dependencies]
-libfuzzer-sys = "0.4"
+libfuzzer-sys = "=0.4.7"
 
 [dependencies.aws-smithy-json]
 path = ".."
-version = "0.61.1"
+version = "0.61.2"
 
 [dependencies.aws-smithy-types]
 path = "../../aws-smithy-types"
-version = "1.2.11"
+version = "1.2.12"
 
 [dependencies.serde_json]
 version = "1"

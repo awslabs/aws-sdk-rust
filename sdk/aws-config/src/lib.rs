@@ -228,6 +228,9 @@ mod loader {
     use aws_smithy_runtime_api::client::identity::{ResolveCachedIdentity, SharedIdentityCache};
     use aws_smithy_runtime_api::client::stalled_stream_protection::StalledStreamProtectionConfig;
     use aws_smithy_runtime_api::shared::IntoShared;
+    use aws_smithy_types::checksum_config::{
+        RequestChecksumCalculation, ResponseChecksumValidation,
+    };
     use aws_smithy_types::retry::RetryConfig;
     use aws_smithy_types::timeout::TimeoutConfig;
     use aws_types::app_name::AppName;
@@ -238,7 +241,7 @@ mod loader {
     use aws_types::SdkConfig;
 
     use crate::default_provider::{
-        app_name, credentials, disable_request_compression, endpoint_url,
+        app_name, checksums, credentials, disable_request_compression, endpoint_url,
         ignore_configured_endpoint_urls as ignore_ep, region, request_min_compression_size_bytes,
         retry_config, timeout_config, use_dual_stack, use_fips,
     };
@@ -289,6 +292,8 @@ mod loader {
         env: Option<Env>,
         fs: Option<Fs>,
         behavior_version: Option<BehaviorVersion>,
+        request_checksum_calculation: Option<RequestChecksumCalculation>,
+        response_checksum_validation: Option<ResponseChecksumValidation>,
     }
 
     impl ConfigLoader {
@@ -919,6 +924,22 @@ mod loader {
                 Some(user_cache) => Some(user_cache),
             };
 
+            let request_checksum_calculation =
+                if let Some(request_checksum_calculation) = self.request_checksum_calculation {
+                    Some(request_checksum_calculation)
+                } else {
+                    checksums::request_checksum_calculation_provider(&conf).await
+                };
+
+            let response_checksum_validation =
+                if let Some(response_checksum_validation) = self.response_checksum_validation {
+                    Some(response_checksum_validation)
+                } else {
+                    checksums::response_checksum_validation_provider(&conf).await
+                };
+
+            builder.set_request_checksum_calculation(request_checksum_calculation);
+            builder.set_response_checksum_validation(response_checksum_validation);
             builder.set_identity_cache(identity_cache);
             builder.set_credentials_provider(credentials_provider);
             builder.set_token_provider(token_provider);

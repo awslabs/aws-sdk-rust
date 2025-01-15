@@ -127,6 +127,33 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetObje
                     let input: &crate::operation::get_object::GetObjectInput = input.downcast_ref().expect("correct type");
                     matches!(input.checksum_mode(), ::std::option::Option::Some(crate::types::ChecksumMode::Enabled))
                 },
+                |input: &mut ::aws_smithy_runtime_api::client::interceptors::context::Input, cfg: &::aws_smithy_types::config_bag::ConfigBag| {
+                    let input = input
+                        .downcast_mut::<crate::operation::get_object::GetObjectInput>()
+                        .ok_or("failed to downcast to crate::operation::get_object::GetObjectInput")?;
+
+                    let request_validation_enabled = matches!(input.checksum_mode(), Some(crate::types::ChecksumMode::Enabled));
+
+                    if !request_validation_enabled {
+                        // This value is set by the user on the SdkConfig to indicate their preference
+                        let response_checksum_validation = cfg
+                            .load::<::aws_smithy_types::checksum_config::ResponseChecksumValidation>()
+                            .unwrap_or(&::aws_smithy_types::checksum_config::ResponseChecksumValidation::WhenSupported);
+
+                        // If validation setting is WhenSupported (or unknown) we enable response checksum
+                        // validation. If it is WhenRequired we do not enable (since there is no way to
+                        // indicate that a response checksum is required).
+                        #[allow(clippy::wildcard_in_or_patterns)]
+                        match response_checksum_validation {
+                            ::aws_smithy_types::checksum_config::ResponseChecksumValidation::WhenRequired => {}
+                            ::aws_smithy_types::checksum_config::ResponseChecksumValidation::WhenSupported | _ => {
+                                input.checksum_mode = Some(crate::types::ChecksumMode::Enabled);
+                            }
+                        }
+                    }
+
+                    ::std::result::Result::Ok(())
+                },
             ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::get_object::GetObjectError,

@@ -7,7 +7,7 @@ authors = [
 ]
 description = """
 These tests ensure that things will fail (or not fail) as expected
-when target is set to wasm32-wasi for all SDK and runtime crates.
+when target is set to wasm32-wasip1 for all SDK and runtime crates.
 """
 edition = "2021"
 license = "Apache-2.0"
@@ -35,7 +35,7 @@ aws-smithy-wasm = { path = "../../sdk/aws-smithy-wasm" }
 http = "0.2.9"
 tokio = { version = "1.32.0", features = ["macros", "rt"] }
 
-[target.'cfg(all(target_family = "wasm", target_os = "wasi"))'.dependencies]
+[target.'cfg(all(target_family = "wasm", target_env = "p1"))'.dependencies]
 wit-bindgen = { version = "0.16.0", features = ["macros", "realloc"] }
 
 [lib]

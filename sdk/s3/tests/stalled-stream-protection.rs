@@ -96,6 +96,9 @@ async fn test_stalled_stream_protection_defaults_for_upload() {
         .credentials_provider(Credentials::for_tests())
         .region(Region::new("us-east-1"))
         .endpoint_url(format!("http://{server_addr}"))
+        // The Body used here is odd and fails the body.size_hint().exact() check in the streaming branch of
+        // the `RequestChecksumInterceptor`
+        .request_checksum_calculation(aws_sdk_s3::config::RequestChecksumCalculation::WhenRequired)
         .build();
     let client = Client::from_conf(conf);
 

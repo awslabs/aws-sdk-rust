@@ -17,13 +17,8 @@ static RE: Lazy<Regex> = Lazy::new(|| Regex::new(r"m/([A-Za-z0-9+/=_,-]+)").unwr
 /// Refer to the end of the parent module file `user_agent.rs` for the complete ABNF specification
 /// of `business-metrics`.
 pub fn assert_ua_contains_metric_values(user_agent: &str, values: &[&str]) {
-    match RE.find(user_agent) {
-        Some(matched) => {
-            let csv = matched
-                .as_str()
-                .strip_prefix("m/")
-                .expect("prefix `m/` is guaranteed to exist by regex match");
-            let metrics: Vec<&str> = csv.split(',').collect();
+    match extract_ua_values(user_agent) {
+        Some(metrics) => {
             let mut missed = vec![];
 
             for value in values.iter() {
@@ -41,6 +36,18 @@ pub fn assert_ua_contains_metric_values(user_agent: &str, values: &[&str]) {
             panic!("{}", format!("the pattern for business-metrics `m/(metric_id) *(comma metric_id)` not found in `{user_agent}`"))
         }
     }
+}
+
+/// Extract the metric values from the `user_agent` string
+pub fn extract_ua_values(user_agent: &str) -> Option<Vec<&str>> {
+    RE.find(user_agent).map(|matched| {
+        matched
+            .as_str()
+            .strip_prefix("m/")
+            .expect("prefix `m/` is guaranteed to exist by regex match")
+            .split(',')
+            .collect()
+    })
 }
 
 #[cfg(test)]

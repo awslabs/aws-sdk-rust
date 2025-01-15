@@ -8,15 +8,17 @@
 use aws_smithy_types::base64;
 use http::header::{HeaderMap, HeaderValue};
 
+use crate::Crc64Nvme;
 use crate::{
-    Checksum, Crc32, Crc32c, Md5, Sha1, Sha256, CRC_32_C_NAME, CRC_32_NAME, SHA_1_NAME,
-    SHA_256_NAME,
+    Checksum, Crc32, Crc32c, Md5, Sha1, Sha256, CRC_32_C_NAME, CRC_32_NAME, CRC_64_NVME_NAME,
+    SHA_1_NAME, SHA_256_NAME,
 };
 
-pub static CRC_32_HEADER_NAME: &str = "x-amz-checksum-crc32";
-pub static CRC_32_C_HEADER_NAME: &str = "x-amz-checksum-crc32c";
-pub static SHA_1_HEADER_NAME: &str = "x-amz-checksum-sha1";
-pub static SHA_256_HEADER_NAME: &str = "x-amz-checksum-sha256";
+pub const CRC_32_HEADER_NAME: &str = "x-amz-checksum-crc32";
+pub const CRC_32_C_HEADER_NAME: &str = "x-amz-checksum-crc32c";
+pub const SHA_1_HEADER_NAME: &str = "x-amz-checksum-sha1";
+pub const SHA_256_HEADER_NAME: &str = "x-amz-checksum-sha256";
+pub const CRC_64_NVME_HEADER_NAME: &str = "x-amz-checksum-crc64nvme";
 
 // Preserved for compatibility purposes. This should never be used by users, only within smithy-rs
 pub(crate) static MD5_HEADER_NAME: &str = "content-md5";
@@ -24,8 +26,13 @@ pub(crate) static MD5_HEADER_NAME: &str = "content-md5";
 /// When a response has to be checksum-verified, we have to check possible headers until we find the
 /// header with the precalculated checksum. Because a service may send back multiple headers, we have
 /// to check them in order based on how fast each checksum is to calculate.
-pub const CHECKSUM_ALGORITHMS_IN_PRIORITY_ORDER: [&str; 4] =
-    [CRC_32_C_NAME, CRC_32_NAME, SHA_1_NAME, SHA_256_NAME];
+pub const CHECKSUM_ALGORITHMS_IN_PRIORITY_ORDER: [&str; 5] = [
+    CRC_64_NVME_NAME,
+    CRC_32_C_NAME,
+    CRC_32_NAME,
+    SHA_1_NAME,
+    SHA_256_NAME,
+];
 
 /// Checksum algorithms are use to validate the integrity of data. Structs that implement this trait
 /// can be used as checksum calculators. This trait requires Send + Sync because these checksums are
@@ -81,6 +88,12 @@ impl HttpChecksum for Crc32c {
     }
 }
 
+impl HttpChecksum for Crc64Nvme {
+    fn header_name(&self) -> &'static str {
+        CRC_64_NVME_HEADER_NAME
+    }
+}
+
 impl HttpChecksum for Sha1 {
     fn header_name(&self) -> &'static str {
         SHA_1_HEADER_NAME
@@ -104,7 +117,9 @@ mod tests {
     use aws_smithy_types::base64;
     use bytes::Bytes;
 
-    use crate::{ChecksumAlgorithm, CRC_32_C_NAME, CRC_32_NAME, SHA_1_NAME, SHA_256_NAME};
+    use crate::{
+        ChecksumAlgorithm, CRC_32_C_NAME, CRC_32_NAME, CRC_64_NVME_NAME, SHA_1_NAME, SHA_256_NAME,
+    };
 
     use super::HttpChecksum;
 
@@ -151,6 +166,30 @@ mod tests {
             .into_impl();
         // The CRC32C of an empty string is all zeroes
         let expected_value = Bytes::from_static(b"\0\0\0\0");
+        let expected_value = base64::encode(&expected_value);
+        let actual_value = checksum.header_value();
+        assert_eq!(expected_value, actual_value)
+    }
+
+    #[test]
+    fn test_trailer_length_of_crc64nvme_checksum_body() {
+        let checksum = CRC_64_NVME_NAME
+            .parse::<ChecksumAlgorithm>()
+            .unwrap()
+            .into_impl();
+        let expected_size = 37;
+        let actual_size = HttpChecksum::size(&*checksum);
+        assert_eq!(expected_size, actual_size)
+    }
+
+    #[test]
+    fn test_trailer_value_of_crc64nvme_checksum_body() {
+        let checksum = CRC_64_NVME_NAME
+            .parse::<ChecksumAlgorithm>()
+            .unwrap()
+            .into_impl();
+        // The CRC64NVME of an empty string is all zeroes
+        let expected_value = Bytes::from_static(b"\0\0\0\0\0\0\0\0");
         let expected_value = base64::encode(&expected_value);
         let actual_value = checksum.header_value();
         assert_eq!(expected_value, actual_value)

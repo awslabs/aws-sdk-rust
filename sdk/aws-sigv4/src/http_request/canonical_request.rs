@@ -31,6 +31,7 @@ pub(crate) mod header {
     pub(crate) const X_AMZ_DATE: &str = "x-amz-date";
     pub(crate) const X_AMZ_SECURITY_TOKEN: &str = "x-amz-security-token";
     pub(crate) const X_AMZ_USER_AGENT: &str = "x-amz-user-agent";
+    pub(crate) const X_AMZ_CHECKSUM_MODE: &str = "x-amz-checksum-mode";
 }
 
 pub(crate) mod param {
@@ -293,8 +294,10 @@ impl<'a> CanonicalRequest<'a> {
             }
 
             if params.settings().signature_location == SignatureLocation::QueryParams {
-                // The X-Amz-User-Agent header should not be signed if this is for a presigned URL
-                if name == HeaderName::from_static(header::X_AMZ_USER_AGENT) {
+                // The X-Amz-User-Agent and x-amz-checksum-mode headers should not be signed if this is for a presigned URL
+                if name == HeaderName::from_static(header::X_AMZ_USER_AGENT)
+                    || name == HeaderName::from_static(header::X_AMZ_CHECKSUM_MODE)
+                {
                     continue;
                 }
             }

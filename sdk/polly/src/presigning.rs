@@ -16,6 +16,7 @@
 use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
 use aws_smithy_types::body::SdkBody;
+use aws_smithy_types::config_bag::{Storable, StoreReplace};
 use std::fmt;
 use std::time::{Duration, SystemTime};
 
@@ -260,4 +261,13 @@ impl fmt::Debug for PresignedRequest {
             .field("headers", self.http_request.headers())
             .finish()
     }
+}
+
+/// A marker struct to be stored in the ConfigBag allowing other interceptors to know that
+/// the current request is Presigned
+#[derive(Debug)]
+pub(crate) struct PresigningMarker;
+
+impl Storable for PresigningMarker {
+    type Storer = StoreReplace<Self>;
 }

@@ -13,17 +13,23 @@ use aws_runtime::content_encoding::header_value::AWS_CHUNKED;
 use aws_runtime::content_encoding::{AwsChunkedBody, AwsChunkedBodyOptions};
 use aws_smithy_checksums::ChecksumAlgorithm;
 use aws_smithy_checksums::{body::calculate, http::HttpChecksum};
+use aws_smithy_runtime::client::sdk_feature::SmithySdkFeature;
 use aws_smithy_runtime_api::box_error::BoxError;
-use aws_smithy_runtime_api::client::interceptors::context::{BeforeSerializationInterceptorContextRef, BeforeTransmitInterceptorContextMut, Input};
+use aws_smithy_runtime_api::client::interceptors::context::{BeforeSerializationInterceptorContextMut, BeforeTransmitInterceptorContextMut, Input};
 use aws_smithy_runtime_api::client::interceptors::Intercept;
 use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
+use aws_smithy_runtime_api::http::Request;
 use aws_smithy_types::body::SdkBody;
+use aws_smithy_types::checksum_config::RequestChecksumCalculation;
 use aws_smithy_types::config_bag::{ConfigBag, Layer, Storable, StoreReplace};
 use aws_smithy_types::error::operation::BuildError;
 use http::HeaderValue;
 use http_body::Body;
+use std::str::FromStr;
 use std::{fmt, mem};
+
+use crate::presigning::PresigningMarker;
 
 /// Errors related to constructing checksum-validated HTTP requests
 #[derive(Debug)]
@@ -48,9 +54,12 @@ impl fmt::Display for Error {
 
 impl std::error::Error for Error {}
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 struct RequestChecksumInterceptorState {
-    checksum_algorithm: Option<ChecksumAlgorithm>,
+    /// The checksum algorithm to calculate
+    checksum_algorithm: Option<String>,
+    /// This value is set in the model on the `httpChecksum` trait
+    request_checksum_required: bool,
 }
 impl Storable for RequestChecksumInterceptorState {
     type Storer = StoreReplace<Self>;
@@ -83,40 +92,48 @@ impl DefaultRequestChecksumOverride {
     }
 }
 
-pub(crate) struct RequestChecksumInterceptor<AP> {
+pub(crate) struct RequestChecksumInterceptor<AP, CM> {
     algorithm_provider: AP,
+    checksum_mutator: CM,
 }
 
-impl<AP> fmt::Debug for RequestChecksumInterceptor<AP> {
+impl<AP, CM> fmt::Debug for RequestChecksumInterceptor<AP, CM> {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.debug_struct("RequestChecksumInterceptor").finish()
     }
 }
 
-impl<AP> RequestChecksumInterceptor<AP> {
-    pub(crate) fn new(algorithm_provider: AP) -> Self {
-        Self { algorithm_provider }
+impl<AP, CM> RequestChecksumInterceptor<AP, CM> {
+    pub(crate) fn new(algorithm_provider: AP, checksum_mutator: CM) -> Self {
+        Self {
+            algorithm_provider,
+            checksum_mutator,
+        }
     }
 }
 
-impl<AP> Intercept for RequestChecksumInterceptor<AP>
+impl<AP, CM> Intercept for RequestChecksumInterceptor<AP, CM>
 where
-    AP: Fn(&Input) -> Result<Option<ChecksumAlgorithm>, BoxError> + Send + Sync,
+    AP: Fn(&Input) -> (Option<String>, bool) + Send + Sync,
+    CM: Fn(&mut Request, &ConfigBag) -> Result<bool, BoxError> + Send + Sync,
 {
     fn name(&self) -> &'static str {
         "RequestChecksumInterceptor"
     }
 
-    fn read_before_serialization(
+    fn modify_before_serialization(
         &self,
-        context: &BeforeSerializationInterceptorContextRef<'_>,
+        context: &mut BeforeSerializationInterceptorContextMut<'_>,
         _runtime_components: &RuntimeComponents,
         cfg: &mut ConfigBag,
     ) -> Result<(), BoxError> {
-        let checksum_algorithm = (self.algorithm_provider)(context.input())?;
+        let (checksum_algorithm, request_checksum_required) = (self.algorithm_provider)(context.input());
 
         let mut layer = Layer::new("RequestChecksumInterceptor");
-        layer.store_put(RequestChecksumInterceptorState { checksum_algorithm });
+        layer.store_put(RequestChecksumInterceptorState {
+            checksum_algorithm,
+            request_checksum_required,
+        });
         cfg.push_layer(layer);
 
         Ok(())
@@ -125,7 +142,7 @@ where
     /// Calculate a checksum and modify the request to include the checksum as a header
     /// (for in-memory request bodies) or a trailer (for streaming request bodies).
     /// Streaming bodies must be sized or this will return an error.
-    fn modify_before_signing(
+    fn modify_before_retry_loop(
         &self,
         context: &mut BeforeTransmitInterceptorContextMut<'_>,
         _runtime_components: &RuntimeComponents,
@@ -133,11 +150,107 @@ where
     ) -> Result<(), BoxError> {
         let state = cfg.load::<RequestChecksumInterceptorState>().expect("set in `read_before_serialization`");
 
-        let checksum_algorithm = incorporate_custom_default(state.checksum_algorithm, cfg);
-        if let Some(checksum_algorithm) = checksum_algorithm {
+        let user_set_checksum_value = (self.checksum_mutator)(context.request_mut(), cfg).expect("Checksum header mutation should not fail");
+
+        // If the user manually set a checksum header we short circuit
+        if user_set_checksum_value {
+            return Ok(());
+        }
+
+        // This value is from the trait, but is needed for runtime logic
+        let request_checksum_required = state.request_checksum_required;
+
+        // If the algorithm fails to parse it is not one we support and we error
+        let checksum_algorithm = state
+            .checksum_algorithm
+            .clone()
+            .map(|s| ChecksumAlgorithm::from_str(s.as_str()))
+            .transpose()?;
+
+        // This value is set by the user on the SdkConfig to indicate their preference
+        // We provide a default here for users that use a client config instead of the SdkConfig
+        let request_checksum_calculation = cfg
+            .load::<RequestChecksumCalculation>()
+            .unwrap_or(&RequestChecksumCalculation::WhenSupported);
+
+        // Determine if we actually calculate the checksum. If the user setting is WhenSupported (the default)
+        // we always calculate it (because this interceptor isn't added if it isn't supported). If it is
+        // WhenRequired we only calculate it if the checksum is marked required on the trait.
+        let calculate_checksum = match request_checksum_calculation {
+            RequestChecksumCalculation::WhenRequired => request_checksum_required,
+            RequestChecksumCalculation::WhenSupported => true,
+            _ => true,
+        };
+
+        // Calculate the checksum if necessary
+        if calculate_checksum {
+            let is_presigned_req = cfg.load::<PresigningMarker>().is_some();
+
+            // If this is a presigned request and the user has not set a checksum we short circuit
+            if is_presigned_req && checksum_algorithm.is_none() {
+                return Ok(());
+            }
+
+            // If a checksum override is set in the ConfigBag we use that instead (currently only used by S3Express)
+            // If we have made it this far without a checksum being set we set the default (currently Crc32)
+            let checksum_algorithm = incorporate_custom_default(checksum_algorithm, cfg).unwrap_or_default();
+
+            // Set the user-agent metric for the selected checksum algorithm
+            match checksum_algorithm {
+                ChecksumAlgorithm::Crc32 => {
+                    cfg.interceptor_state().store_append(SmithySdkFeature::FlexibleChecksumsReqCrc32);
+                }
+                ChecksumAlgorithm::Crc32c => {
+                    cfg.interceptor_state().store_append(SmithySdkFeature::FlexibleChecksumsReqCrc32c);
+                }
+                ChecksumAlgorithm::Crc64Nvme => {
+                    cfg.interceptor_state().store_append(SmithySdkFeature::FlexibleChecksumsReqCrc64);
+                }
+                #[allow(deprecated)]
+                ChecksumAlgorithm::Md5 => {
+                    tracing::warn!(more_info = "Unsupported ChecksumAlgorithm MD5 set");
+                }
+                ChecksumAlgorithm::Sha1 => {
+                    cfg.interceptor_state().store_append(SmithySdkFeature::FlexibleChecksumsReqSha1);
+                }
+                ChecksumAlgorithm::Sha256 => {
+                    cfg.interceptor_state().store_append(SmithySdkFeature::FlexibleChecksumsReqSha256);
+                }
+                unsupported => tracing::warn!(
+                    more_info = "Unsupported value of ChecksumAlgorithm detected when setting user-agent metrics",
+                    unsupported = ?unsupported),
+            }
+
             let request = context.request_mut();
             add_checksum_for_request_body(request, checksum_algorithm, cfg)?;
         }
+
+        Ok(())
+    }
+
+    /// Set the user-agent metrics for `RequestChecksumCalculation` here to avoid ownership issues
+    /// with the mutable borrow of cfg in `modify_before_signing`
+    fn read_after_serialization(
+        &self,
+        _context: &aws_smithy_runtime_api::client::interceptors::context::BeforeTransmitInterceptorContextRef<'_>,
+        _runtime_components: &RuntimeComponents,
+        cfg: &mut ConfigBag,
+    ) -> Result<(), BoxError> {
+        let request_checksum_calculation = cfg
+            .load::<RequestChecksumCalculation>()
+            .unwrap_or(&RequestChecksumCalculation::WhenSupported);
+
+        match request_checksum_calculation {
+            RequestChecksumCalculation::WhenSupported => {
+                cfg.interceptor_state().store_append(SmithySdkFeature::FlexibleChecksumsReqWhenSupported);
+            }
+            RequestChecksumCalculation::WhenRequired => {
+                cfg.interceptor_state().store_append(SmithySdkFeature::FlexibleChecksumsReqWhenRequired);
+            }
+            unsupported => tracing::warn!(
+                    more_info = "Unsupported value of RequestChecksumCalculation when setting user-agent metrics",
+                    unsupported = ?unsupported),
+        };
 
         Ok(())
     }
@@ -154,11 +267,16 @@ fn add_checksum_for_request_body(request: &mut HttpRequest, checksum_algorithm: 
     match request.body().bytes() {
         // Body is in-memory: read it and insert the checksum as a header.
         Some(data) => {
-            tracing::debug!("applying {checksum_algorithm:?} of the request body as a header");
             let mut checksum = checksum_algorithm.into_impl();
-            checksum.update(data);
 
-            request.headers_mut().insert(checksum.header_name(), checksum.header_value());
+            // If the header has not already been set we set it. If it was already set by the user
+            // we do nothing and maintain their set value.
+            if request.headers().get(checksum.header_name()).is_none() {
+                tracing::debug!("applying {checksum_algorithm:?} of the request body as a header");
+                checksum.update(data);
+
+                request.headers_mut().insert(checksum.header_name(), checksum.header_value());
+            }
         }
         // Body is streaming: wrap the body so it will emit a checksum as a trailer.
         None => {
@@ -174,6 +292,13 @@ fn wrap_streaming_request_body_in_checksum_calculating_body(
     request: &mut HttpRequest,
     checksum_algorithm: ChecksumAlgorithm,
 ) -> Result<(), BuildError> {
+    let checksum = checksum_algorithm.into_impl();
+
+    // If the user already set the header value then do nothing and return early
+    if request.headers().get(checksum.header_name()).is_some() {
+        return Ok(());
+    }
+
     let original_body_size = request
         .body()
         .size_hint()
@@ -199,10 +324,7 @@ fn wrap_streaming_request_body_in_checksum_calculating_body(
 
     let headers = request.headers_mut();
 
-    headers.insert(
-        http::header::HeaderName::from_static("x-amz-trailer"),
-        checksum_algorithm.into_impl().header_name(),
-    );
+    headers.insert(http::header::HeaderName::from_static("x-amz-trailer"), checksum.header_name());
 
     headers.insert(http::header::CONTENT_LENGTH, HeaderValue::from(encoded_content_length));
     headers.insert(

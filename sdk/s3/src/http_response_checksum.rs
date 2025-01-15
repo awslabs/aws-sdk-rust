@@ -9,14 +9,16 @@
 //! Interceptor for handling Smithy `@httpChecksum` response checksumming
 
 use aws_smithy_checksums::ChecksumAlgorithm;
+use aws_smithy_runtime::client::sdk_feature::SmithySdkFeature;
 use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::interceptors::context::{
-    BeforeDeserializationInterceptorContextMut, BeforeSerializationInterceptorContextRef, Input,
+    BeforeDeserializationInterceptorContextMut, BeforeSerializationInterceptorContextMut, Input,
 };
 use aws_smithy_runtime_api::client::interceptors::Intercept;
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 use aws_smithy_runtime_api::http::Headers;
 use aws_smithy_types::body::SdkBody;
+use aws_smithy_types::checksum_config::ResponseChecksumValidation;
 use aws_smithy_types::config_bag::{ConfigBag, Layer, Storable, StoreReplace};
 use std::{fmt, mem};
 
@@ -28,12 +30,13 @@ impl Storable for ResponseChecksumInterceptorState {
     type Storer = StoreReplace<Self>;
 }
 
-pub(crate) struct ResponseChecksumInterceptor<VE> {
+pub(crate) struct ResponseChecksumInterceptor<VE, CM> {
     response_algorithms: &'static [&'static str],
     validation_enabled: VE,
+    checksum_mutator: CM,
 }
 
-impl<VE> fmt::Debug for ResponseChecksumInterceptor<VE> {
+impl<VE, CM> fmt::Debug for ResponseChecksumInterceptor<VE, CM> {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.debug_struct("ResponseChecksumInterceptor")
             .field("response_algorithms", &self.response_algorithms)
@@ -41,34 +44,54 @@ impl<VE> fmt::Debug for ResponseChecksumInterceptor<VE> {
     }
 }
 
-impl<VE> ResponseChecksumInterceptor<VE> {
-    pub(crate) fn new(response_algorithms: &'static [&'static str], validation_enabled: VE) -> Self {
+impl<VE, CM> ResponseChecksumInterceptor<VE, CM> {
+    pub(crate) fn new(response_algorithms: &'static [&'static str], validation_enabled: VE, checksum_mutator: CM) -> Self {
         Self {
             response_algorithms,
             validation_enabled,
+            checksum_mutator,
         }
     }
 }
 
-impl<VE> Intercept for ResponseChecksumInterceptor<VE>
+impl<VE, CM> Intercept for ResponseChecksumInterceptor<VE, CM>
 where
     VE: Fn(&Input) -> bool + Send + Sync,
+    CM: Fn(&mut Input, &ConfigBag) -> Result<(), BoxError> + Send + Sync,
 {
     fn name(&self) -> &'static str {
         "ResponseChecksumInterceptor"
     }
 
-    fn read_before_serialization(
+    fn modify_before_serialization(
         &self,
-        context: &BeforeSerializationInterceptorContextRef<'_>,
+        context: &mut BeforeSerializationInterceptorContextMut<'_>,
         _runtime_components: &RuntimeComponents,
         cfg: &mut ConfigBag,
     ) -> Result<(), BoxError> {
+        (self.checksum_mutator)(context.input_mut(), cfg)?;
         let validation_enabled = (self.validation_enabled)(context.input());
 
         let mut layer = Layer::new("ResponseChecksumInterceptor");
         layer.store_put(ResponseChecksumInterceptorState { validation_enabled });
         cfg.push_layer(layer);
+
+        let response_checksum_validation = cfg
+            .load::<ResponseChecksumValidation>()
+            .unwrap_or(&ResponseChecksumValidation::WhenSupported);
+
+        // Set the user-agent feature metric for the response checksum config
+        match response_checksum_validation {
+            ResponseChecksumValidation::WhenSupported => {
+                cfg.interceptor_state().store_append(SmithySdkFeature::FlexibleChecksumsResWhenSupported);
+            }
+            ResponseChecksumValidation::WhenRequired => {
+                cfg.interceptor_state().store_append(SmithySdkFeature::FlexibleChecksumsResWhenRequired);
+            }
+            unsupported => tracing::warn!(
+                more_info = "Unsupported value of ResponseChecksumValidation when setting user-agent metrics",
+                unsupported = ?unsupported),
+        };
 
         Ok(())
     }
@@ -83,9 +106,30 @@ where
             .load::<ResponseChecksumInterceptorState>()
             .expect("set in `read_before_serialization`");
 
-        if state.validation_enabled {
+        // This value is set by the user on the SdkConfig to indicate their preference
+        // We provide a default here for users that use a client config instead of the SdkConfig
+        let response_checksum_validation = cfg
+            .load::<ResponseChecksumValidation>()
+            .unwrap_or(&ResponseChecksumValidation::WhenSupported);
+
+        // If validation has not been explicitly enabled we check the ResponseChecksumValidation
+        // from the SdkConfig. If it is WhenSupported (or unknown) we enable validation and if it
+        // is WhenRequired we leave it disabled since there is no way to indicate that a response
+        // checksum is required.
+        let validation_enabled = if !state.validation_enabled {
+            match response_checksum_validation {
+                ResponseChecksumValidation::WhenRequired => false,
+                ResponseChecksumValidation::WhenSupported => true,
+                _ => true,
+            }
+        } else {
+            true
+        };
+
+        if validation_enabled {
             let response = context.response_mut();
             let maybe_checksum_headers = check_headers_for_precalculated_checksum(response.headers(), self.response_algorithms);
+
             if let Some((checksum_algorithm, precalculated_checksum)) = maybe_checksum_headers {
                 let mut body = SdkBody::taken();
                 mem::swap(&mut body, response.body_mut());
@@ -178,8 +222,8 @@ fn is_part_level_checksum(checksum: &str) -> bool {
             continue;
         }
 
-        // Yup, it's a part-level checksum
-        if ch == '-' {
+        // We saw a number first followed by the dash, yup, it's a part-level checksum
+        if found_number && ch == '-' {
             if found_dash {
                 // Found a second dash?? This isn't a part-level checksum.
                 return false;
@@ -243,5 +287,17 @@ mod tests {
         assert!(!is_part_level_checksum("abcd==-"));
         assert!(!is_part_level_checksum("abcd==--11"));
         assert!(!is_part_level_checksum("abcd==-AA"));
+    }
+
+    #[test]
+    fn part_level_checksum_detection_works() {
+        let a_real_checksum = is_part_level_checksum("C9A5A6878D97B48CC965C1E41859F034-14");
+        assert!(a_real_checksum);
+        let close_but_not_quite = is_part_level_checksum("a4-");
+        assert!(!close_but_not_quite);
+        let backwards = is_part_level_checksum("14-C9A5A6878D97B48CC965C1E41859F034");
+        assert!(!backwards);
+        let double_dash = is_part_level_checksum("C9A5A6878D97B48CC965C1E41859F03-4-14");
+        assert!(!double_dash);
     }
 }

@@ -116,6 +116,14 @@ impl Config {
     pub fn new(config: &::aws_types::sdk_config::SdkConfig) -> Self {
         Builder::from(config).build()
     }
+    /// Return a reference to the response_checksum_validation value contained in this config, if any.
+    pub fn response_checksum_validation(&self) -> ::std::option::Option<&crate::config::ResponseChecksumValidation> {
+        self.config.load::<crate::config::ResponseChecksumValidation>()
+    }
+    /// Return a reference to the request_checksum_calculation value contained in this config, if any.
+    pub fn request_checksum_calculation(&self) -> ::std::option::Option<&crate::config::RequestChecksumCalculation> {
+        self.config.load::<crate::config::RequestChecksumCalculation>()
+    }
     /// The signature version 4 service signing name to use in the credential scope when signing requests.
     ///
     /// The signing service may be overridden by the `Endpoint`, or by specifying a custom
@@ -186,6 +194,8 @@ impl Builder {
         builder.set_endpoint_url(config_bag.load::<::aws_types::endpoint_config::EndpointUrl>().map(|ty| ty.0.clone()));
         builder.set_use_dual_stack(config_bag.load::<::aws_types::endpoint_config::UseDualStack>().map(|ty| ty.0));
         builder.set_use_fips(config_bag.load::<::aws_types::endpoint_config::UseFips>().map(|ty| ty.0));
+        builder.set_response_checksum_validation(config_bag.load::<crate::config::ResponseChecksumValidation>().cloned());
+        builder.set_request_checksum_calculation(config_bag.load::<crate::config::RequestChecksumCalculation>().cloned());
         builder.set_region(config_bag.load::<crate::config::Region>().cloned());
         builder
     }
@@ -1005,6 +1015,36 @@ impl Builder {
         self.config.store_or_unset(use_fips.map(::aws_types::endpoint_config::UseFips));
         self
     }
+    /// Set the [`ResponseChecksumValidation`](crate::config::ResponseChecksumValidation)
+    /// to determine when checksum validation will be performed on response payloads.
+    pub fn response_checksum_validation(mut self, response_checksum_validation: crate::config::ResponseChecksumValidation) -> Self {
+        self.set_response_checksum_validation(::std::option::Option::Some(response_checksum_validation));
+        self
+    }
+    /// Set the [`ResponseChecksumValidation`](crate::config::ResponseChecksumValidation)
+    /// to determine when checksum validation will be performed on response payloads.
+    pub fn set_response_checksum_validation(
+        &mut self,
+        response_checksum_validation: ::std::option::Option<crate::config::ResponseChecksumValidation>,
+    ) -> &mut Self {
+        self.config.store_or_unset(response_checksum_validation);
+        self
+    }
+    /// Set the [`RequestChecksumCalculation`](crate::config::RequestChecksumCalculation)
+    /// to determine when a checksum will be calculated for request payloads.
+    pub fn request_checksum_calculation(mut self, request_checksum_calculation: crate::config::RequestChecksumCalculation) -> Self {
+        self.set_request_checksum_calculation(::std::option::Option::Some(request_checksum_calculation));
+        self
+    }
+    /// Set the [`RequestChecksumCalculation`](crate::config::RequestChecksumCalculation)
+    /// to determine when a checksum will be calculated for request payloads.
+    pub fn set_request_checksum_calculation(
+        &mut self,
+        request_checksum_calculation: ::std::option::Option<crate::config::RequestChecksumCalculation>,
+    ) -> &mut Self {
+        self.config.store_or_unset(request_checksum_calculation);
+        self
+    }
     /// Sets the AWS region to use when making requests.
     ///
     /// # Examples
@@ -1328,6 +1368,8 @@ impl From<&::aws_types::sdk_config::SdkConfig> for Builder {
         }));
         builder.set_credentials_provider(input.credentials_provider());
         builder = builder.region(input.region().cloned());
+        builder.set_request_checksum_calculation(input.request_checksum_calculation());
+        builder.set_response_checksum_validation(input.response_checksum_validation());
         builder.set_use_fips(input.use_fips());
         builder.set_use_dual_stack(input.use_dual_stack());
         if input.get_origin("endpoint_url").is_client_config() {
@@ -1395,11 +1437,17 @@ pub(crate) fn base_client_runtime_plugins(mut config: crate::Config) -> ::aws_sm
         }
     }
 
+    let default_retry_partition = "s3";
+    let default_retry_partition = match config.region() {
+        Some(region) => ::std::borrow::Cow::from(format!("{default_retry_partition}-{}", region)),
+        None => ::std::borrow::Cow::from(default_retry_partition),
+    };
+
     let mut plugins = ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins::new()
                         // defaults
                         .with_client_plugins(::aws_smithy_runtime::client::defaults::default_plugins(
                             ::aws_smithy_runtime::client::defaults::DefaultPluginParams::new()
-                                .with_retry_partition_name("s3")
+                                .with_retry_partition_name(default_retry_partition)
                                 .with_behavior_version(config.behavior_version.expect("Invalid client configuration: A behavior major version must be set when sending a request or constructing a client. You must set it during client construction or by enabling the `behavior-version-latest` cargo feature."))
                         ))
                         // user config
@@ -1439,6 +1487,10 @@ pub use ::aws_smithy_async::rt::sleep::SharedAsyncSleep;
 pub use ::aws_smithy_runtime_api::client::identity::SharedIdentityCache;
 
 pub use ::aws_smithy_runtime_api::client::interceptors::SharedInterceptor;
+
+pub use ::aws_smithy_types::checksum_config::ResponseChecksumValidation;
+
+pub use ::aws_smithy_types::checksum_config::RequestChecksumCalculation;
 
 pub use ::aws_types::region::Region;
 

@@ -80,7 +80,7 @@ async fn multi_region_access_points() {
     let auth_header = captured_request.headers().get("AUTHORIZATION").unwrap();
     // Verifies that the sigv4a signing algorithm was used, that the signing scope doesn't include a region, and that the x-amz-region-set header was signed.
     let expected_start =
-        "AWS4-ECDSA-P256-SHA256 Credential=ANOTREAL/20090213/s3/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date;x-amz-region-set;x-amz-user-agent, Signature=";
+        "AWS4-ECDSA-P256-SHA256 Credential=ANOTREAL/20090213/s3/aws4_request, SignedHeaders=host;x-amz-checksum-mode;x-amz-content-sha256;x-amz-date;x-amz-region-set;x-amz-user-agent, Signature=";
 
     assert!(
         auth_header.starts_with(expected_start),

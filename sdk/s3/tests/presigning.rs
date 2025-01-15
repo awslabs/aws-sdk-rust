@@ -100,7 +100,9 @@ async fn test_presigning() {
         ][..],
         &query_params
     );
-    assert_eq!(presigned.headers().count(), 0);
+    assert_eq!(presigned.headers().count(), 1);
+    let headers = presigned.headers().collect::<HashMap<_, _>>();
+    assert_eq!(headers.get("x-amz-checksum-mode").unwrap(), &"ENABLED");
 }
 
 #[tokio::test]
@@ -135,8 +137,8 @@ async fn test_presigning_with_payload_headers() {
             "X-Amz-Date=20090213T233131Z",
             "X-Amz-Expires=30",
             "X-Amz-Security-Token=notarealsessiontoken",
-            "X-Amz-Signature=be1d41dc392f7019750e4f5e577234fb9059dd20d15f6a99734196becce55e52",
-            "X-Amz-SignedHeaders=content-length%3Bcontent-type%3Bhost",
+            "X-Amz-Signature=9403eb5961c8af066f2473f88cb9248b39fd61f8eedc33af14ec9c2d26c22974",
+            "X-Amz-SignedHeaders=content-length%3Bcontent-type%3Bhost%3Bx-amz-checksum-crc32%3Bx-amz-sdk-checksum-algorithm",
             "x-id=PutObject"
         ][..],
         &query_params
@@ -148,7 +150,9 @@ async fn test_presigning_with_payload_headers() {
         Some(&"application/x-test")
     );
     assert_eq!(headers.get(CONTENT_LENGTH.as_str()), Some(&"12345"));
-    assert_eq!(headers.len(), 2);
+    assert_eq!(headers.get("x-amz-sdk-checksum-algorithm"), Some(&"CRC32"));
+    assert_eq!(headers.get("x-amz-checksum-crc32"), Some(&"AAAAAA=="));
+    assert_eq!(headers.len(), 4);
 }
 
 #[tokio::test]
@@ -164,7 +168,7 @@ async fn test_presigned_upload_part() {
     })
     .await;
     pretty_assertions::assert_eq!(
-        "https://bucket.s3.us-east-1.amazonaws.com/key?x-id=UploadPart&partNumber=0&uploadId=upload-id&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ANOTREAL%2F20090213%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20090213T233131Z&X-Amz-Expires=30&X-Amz-SignedHeaders=content-length%3Bhost&X-Amz-Signature=a702867244f0bd1fb4d161e2a062520dcbefae3b9992d2e5366bcd61a60c6ddd&X-Amz-Security-Token=notarealsessiontoken",
+        "https://bucket.s3.us-east-1.amazonaws.com/key?x-id=UploadPart&partNumber=0&uploadId=upload-id&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ANOTREAL%2F20090213%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20090213T233131Z&X-Amz-Expires=30&X-Amz-SignedHeaders=content-length%3Bhost%3Bx-amz-checksum-crc32%3Bx-amz-sdk-checksum-algorithm&X-Amz-Signature=0b5835e056c463d6c0963326966f6cf42c75b7a218057836274d38288e055d36&X-Amz-Security-Token=notarealsessiontoken",
         presigned.uri().to_string(),
     );
 }
