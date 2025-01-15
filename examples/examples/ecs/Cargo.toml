@@ -8,7 +8,7 @@ publish = false
 
 [dependencies]
 aws-config= { version = "1.5.13", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
-aws-sdk-ecs= { version = "1.61.0", path = "../../../sdk/ecs" }
+aws-sdk-ecs= { version = "1.62.0", path = "../../../sdk/ecs" }
 
 [dependencies.tokio]
 version = "1.20.1"
