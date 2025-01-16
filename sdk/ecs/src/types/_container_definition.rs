@@ -99,7 +99,7 @@ pub struct ContainerDefinition {
     pub mount_points: ::std::option::Option<::std::vec::Vec<crate::types::MountPoint>>,
     /// <p>Data volumes to mount from another container. This parameter maps to <code>VolumesFrom</code> in the docker container create command and the <code>--volumes-from</code> option to docker run.</p>
     pub volumes_from: ::std::option::Option<::std::vec::Vec<crate::types::VolumeFrom>>,
-    /// <p>Linux-specific modifications that are applied to the container, such as Linux kernel capabilities. For more information see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_KernelCapabilities.html">KernelCapabilities</a>.</p><note>
+    /// <p>Linux-specific modifications that are applied to the default Docker container configuration, such as Linux kernel capabilities. For more information see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_KernelCapabilities.html">KernelCapabilities</a>.</p><note>
     /// <p>This parameter is not supported for Windows containers.</p>
     /// </note>
     pub linux_parameters: ::std::option::Option<crate::types::LinuxParameters>,
@@ -396,7 +396,7 @@ impl ContainerDefinition {
     pub fn volumes_from(&self) -> &[crate::types::VolumeFrom] {
         self.volumes_from.as_deref().unwrap_or_default()
     }
-    /// <p>Linux-specific modifications that are applied to the container, such as Linux kernel capabilities. For more information see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_KernelCapabilities.html">KernelCapabilities</a>.</p><note>
+    /// <p>Linux-specific modifications that are applied to the default Docker container configuration, such as Linux kernel capabilities. For more information see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_KernelCapabilities.html">KernelCapabilities</a>.</p><note>
     /// <p>This parameter is not supported for Windows containers.</p>
     /// </note>
     pub fn linux_parameters(&self) -> ::std::option::Option<&crate::types::LinuxParameters> {
@@ -1137,21 +1137,21 @@ impl ContainerDefinitionBuilder {
     pub fn get_volumes_from(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeFrom>> {
         &self.volumes_from
     }
-    /// <p>Linux-specific modifications that are applied to the container, such as Linux kernel capabilities. For more information see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_KernelCapabilities.html">KernelCapabilities</a>.</p><note>
+    /// <p>Linux-specific modifications that are applied to the default Docker container configuration, such as Linux kernel capabilities. For more information see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_KernelCapabilities.html">KernelCapabilities</a>.</p><note>
     /// <p>This parameter is not supported for Windows containers.</p>
     /// </note>
     pub fn linux_parameters(mut self, input: crate::types::LinuxParameters) -> Self {
         self.linux_parameters = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Linux-specific modifications that are applied to the container, such as Linux kernel capabilities. For more information see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_KernelCapabilities.html">KernelCapabilities</a>.</p><note>
+    /// <p>Linux-specific modifications that are applied to the default Docker container configuration, such as Linux kernel capabilities. For more information see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_KernelCapabilities.html">KernelCapabilities</a>.</p><note>
     /// <p>This parameter is not supported for Windows containers.</p>
     /// </note>
     pub fn set_linux_parameters(mut self, input: ::std::option::Option<crate::types::LinuxParameters>) -> Self {
         self.linux_parameters = input;
         self
     }
-    /// <p>Linux-specific modifications that are applied to the container, such as Linux kernel capabilities. For more information see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_KernelCapabilities.html">KernelCapabilities</a>.</p><note>
+    /// <p>Linux-specific modifications that are applied to the default Docker container configuration, such as Linux kernel capabilities. For more information see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_KernelCapabilities.html">KernelCapabilities</a>.</p><note>
     /// <p>This parameter is not supported for Windows containers.</p>
     /// </note>
     pub fn get_linux_parameters(&self) -> &::std::option::Option<crate::types::LinuxParameters> {
