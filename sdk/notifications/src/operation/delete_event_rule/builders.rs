@@ -22,7 +22,7 @@ impl crate::operation::delete_event_rule::builders::DeleteEventRuleInputBuilder 
 }
 /// Fluent builder constructing a request to `DeleteEventRule`.
 ///
-/// <p>Deletes an EventRule.</p>
+/// <p>Deletes an <code>EventRule</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteEventRuleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteEventRuleFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the EventRule to delete.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>EventRule</code> to delete.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the EventRule to delete.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>EventRule</code> to delete.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the EventRule to delete.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>EventRule</code> to delete.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_arn()
     }

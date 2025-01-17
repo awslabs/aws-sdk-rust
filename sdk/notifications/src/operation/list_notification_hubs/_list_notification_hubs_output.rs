@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListNotificationHubsOutput {
-    /// <p>The NotificationHubs in the account.</p>
+    /// <p>The <code>NotificationHubs</code> in the account.</p>
     pub notification_hubs: ::std::vec::Vec<crate::types::NotificationHubOverview>,
     /// <p>A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to retrieve more entries.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListNotificationHubsOutput {
-    /// <p>The NotificationHubs in the account.</p>
+    /// <p>The <code>NotificationHubs</code> in the account.</p>
     pub fn notification_hubs(&self) -> &[crate::types::NotificationHubOverview] {
         use std::ops::Deref;
         self.notification_hubs.deref()
@@ -45,19 +45,19 @@ impl ListNotificationHubsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_notification_hubs`](Self::set_notification_hubs).
     ///
-    /// <p>The NotificationHubs in the account.</p>
+    /// <p>The <code>NotificationHubs</code> in the account.</p>
     pub fn notification_hubs(mut self, input: crate::types::NotificationHubOverview) -> Self {
         let mut v = self.notification_hubs.unwrap_or_default();
         v.push(input);
         self.notification_hubs = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The NotificationHubs in the account.</p>
+    /// <p>The <code>NotificationHubs</code> in the account.</p>
     pub fn set_notification_hubs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NotificationHubOverview>>) -> Self {
         self.notification_hubs = input;
         self
     }
-    /// <p>The NotificationHubs in the account.</p>
+    /// <p>The <code>NotificationHubs</code> in the account.</p>
     pub fn get_notification_hubs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationHubOverview>> {
         &self.notification_hubs
     }

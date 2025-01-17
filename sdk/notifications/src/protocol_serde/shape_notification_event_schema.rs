@@ -77,6 +77,10 @@ where
                                     .transpose()?,
                             );
                         }
+                        "aggregationSummary" => {
+                            builder =
+                                builder.set_aggregation_summary(crate::protocol_serde::shape_aggregation_summary::de_aggregation_summary(tokens)?);
+                        }
                         "startTime" => {
                             builder = builder.set_start_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),

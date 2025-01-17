@@ -5,7 +5,7 @@
 pub struct ListEventRulesOutput {
     /// <p>A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to retrieve more entries.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>A list of EventRules.</p>
+    /// <p>A list of <code>EventRules</code>.</p>
     pub event_rules: ::std::vec::Vec<crate::types::EventRuleStructure>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl ListEventRulesOutput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>A list of EventRules.</p>
+    /// <p>A list of <code>EventRules</code>.</p>
     pub fn event_rules(&self) -> &[crate::types::EventRuleStructure] {
         use std::ops::Deref;
         self.event_rules.deref()
@@ -59,19 +59,19 @@ impl ListEventRulesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_event_rules`](Self::set_event_rules).
     ///
-    /// <p>A list of EventRules.</p>
+    /// <p>A list of <code>EventRules</code>.</p>
     pub fn event_rules(mut self, input: crate::types::EventRuleStructure) -> Self {
         let mut v = self.event_rules.unwrap_or_default();
         v.push(input);
         self.event_rules = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of EventRules.</p>
+    /// <p>A list of <code>EventRules</code>.</p>
     pub fn set_event_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventRuleStructure>>) -> Self {
         self.event_rules = input;
         self
     }
-    /// <p>A list of EventRules.</p>
+    /// <p>A list of <code>EventRules</code>.</p>
     pub fn get_event_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventRuleStructure>> {
         &self.event_rules
     }

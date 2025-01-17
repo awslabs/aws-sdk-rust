@@ -6,7 +6,7 @@
 pub struct TextPartValue {
     /// <p>The type of text part. Determines the usage of all other fields and whether or not they're required.</p>
     pub r#type: crate::types::TextPartType,
-    /// <p>A short single line description of the link. Must be hyperlinked with the URL itself.</p>
+    /// <p>A short single line description of the link. Must be hyper-linked with the URL itself.</p>
     /// <p>Used for text parts with the type <code>URL</code>.</p>
     pub display_text: ::std::option::Option<::std::string::String>,
     /// <p>A map of locales to the text in that locale.</p>
@@ -19,7 +19,7 @@ impl TextPartValue {
     pub fn r#type(&self) -> &crate::types::TextPartType {
         &self.r#type
     }
-    /// <p>A short single line description of the link. Must be hyperlinked with the URL itself.</p>
+    /// <p>A short single line description of the link. Must be hyper-linked with the URL itself.</p>
     /// <p>Used for text parts with the type <code>URL</code>.</p>
     pub fn display_text(&self) -> ::std::option::Option<&str> {
         self.display_text.as_deref()
@@ -65,19 +65,19 @@ impl TextPartValueBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::TextPartType> {
         &self.r#type
     }
-    /// <p>A short single line description of the link. Must be hyperlinked with the URL itself.</p>
+    /// <p>A short single line description of the link. Must be hyper-linked with the URL itself.</p>
     /// <p>Used for text parts with the type <code>URL</code>.</p>
     pub fn display_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_text = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A short single line description of the link. Must be hyperlinked with the URL itself.</p>
+    /// <p>A short single line description of the link. Must be hyper-linked with the URL itself.</p>
     /// <p>Used for text parts with the type <code>URL</code>.</p>
     pub fn set_display_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_text = input;
         self
     }
-    /// <p>A short single line description of the link. Must be hyperlinked with the URL itself.</p>
+    /// <p>A short single line description of the link. Must be hyper-linked with the URL itself.</p>
     /// <p>Used for text parts with the type <code>URL</code>.</p>
     pub fn get_display_text(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_text

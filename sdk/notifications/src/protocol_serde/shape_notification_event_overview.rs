@@ -60,6 +60,10 @@ where
                                     .transpose()?,
                             );
                         }
+                        "aggregationSummary" => {
+                            builder =
+                                builder.set_aggregation_summary(crate::protocol_serde::shape_aggregation_summary::de_aggregation_summary(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

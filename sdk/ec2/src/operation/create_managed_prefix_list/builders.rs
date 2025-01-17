@@ -22,7 +22,7 @@ impl crate::operation::create_managed_prefix_list::builders::CreateManagedPrefix
 }
 /// Fluent builder constructing a request to `CreateManagedPrefixList`.
 ///
-/// <p>Creates a managed prefix list. You can specify one or more entries for the prefix list. Each entry consists of a CIDR block and an optional description.</p>
+/// <p>Creates a managed prefix list. You can specify entries for the prefix list. Each entry consists of a CIDR block and an optional description.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateManagedPrefixListFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

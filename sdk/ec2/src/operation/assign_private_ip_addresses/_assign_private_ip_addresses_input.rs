@@ -4,9 +4,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssignPrivateIpAddressesInput {
-    /// <p>One or more IPv4 prefixes assigned to the network interface. You cannot use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
+    /// <p>One or more IPv4 prefixes assigned to the network interface. You can't use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
     pub ipv4_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The number of IPv4 prefixes that Amazon Web Services automatically assigns to the network interface. You cannot use this option if you use the <code>Ipv4 Prefixes</code> option.</p>
+    /// <p>The number of IPv4 prefixes that Amazon Web Services automatically assigns to the network interface. You can't use this option if you use the <code>Ipv4 Prefixes</code> option.</p>
     pub ipv4_prefix_count: ::std::option::Option<i32>,
     /// <p>The ID of the network interface.</p>
     pub network_interface_id: ::std::option::Option<::std::string::String>,
@@ -19,13 +19,13 @@ pub struct AssignPrivateIpAddressesInput {
     pub allow_reassignment: ::std::option::Option<bool>,
 }
 impl AssignPrivateIpAddressesInput {
-    /// <p>One or more IPv4 prefixes assigned to the network interface. You cannot use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
+    /// <p>One or more IPv4 prefixes assigned to the network interface. You can't use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv4_prefixes.is_none()`.
     pub fn ipv4_prefixes(&self) -> &[::std::string::String] {
         self.ipv4_prefixes.as_deref().unwrap_or_default()
     }
-    /// <p>The number of IPv4 prefixes that Amazon Web Services automatically assigns to the network interface. You cannot use this option if you use the <code>Ipv4 Prefixes</code> option.</p>
+    /// <p>The number of IPv4 prefixes that Amazon Web Services automatically assigns to the network interface. You can't use this option if you use the <code>Ipv4 Prefixes</code> option.</p>
     pub fn ipv4_prefix_count(&self) -> ::std::option::Option<i32> {
         self.ipv4_prefix_count
     }
@@ -72,33 +72,33 @@ impl AssignPrivateIpAddressesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_ipv4_prefixes`](Self::set_ipv4_prefixes).
     ///
-    /// <p>One or more IPv4 prefixes assigned to the network interface. You cannot use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
+    /// <p>One or more IPv4 prefixes assigned to the network interface. You can't use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
     pub fn ipv4_prefixes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ipv4_prefixes.unwrap_or_default();
         v.push(input.into());
         self.ipv4_prefixes = ::std::option::Option::Some(v);
         self
     }
-    /// <p>One or more IPv4 prefixes assigned to the network interface. You cannot use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
+    /// <p>One or more IPv4 prefixes assigned to the network interface. You can't use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
     pub fn set_ipv4_prefixes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ipv4_prefixes = input;
         self
     }
-    /// <p>One or more IPv4 prefixes assigned to the network interface. You cannot use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
+    /// <p>One or more IPv4 prefixes assigned to the network interface. You can't use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
     pub fn get_ipv4_prefixes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.ipv4_prefixes
     }
-    /// <p>The number of IPv4 prefixes that Amazon Web Services automatically assigns to the network interface. You cannot use this option if you use the <code>Ipv4 Prefixes</code> option.</p>
+    /// <p>The number of IPv4 prefixes that Amazon Web Services automatically assigns to the network interface. You can't use this option if you use the <code>Ipv4 Prefixes</code> option.</p>
     pub fn ipv4_prefix_count(mut self, input: i32) -> Self {
         self.ipv4_prefix_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of IPv4 prefixes that Amazon Web Services automatically assigns to the network interface. You cannot use this option if you use the <code>Ipv4 Prefixes</code> option.</p>
+    /// <p>The number of IPv4 prefixes that Amazon Web Services automatically assigns to the network interface. You can't use this option if you use the <code>Ipv4 Prefixes</code> option.</p>
     pub fn set_ipv4_prefix_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.ipv4_prefix_count = input;
         self
     }
-    /// <p>The number of IPv4 prefixes that Amazon Web Services automatically assigns to the network interface. You cannot use this option if you use the <code>Ipv4 Prefixes</code> option.</p>
+    /// <p>The number of IPv4 prefixes that Amazon Web Services automatically assigns to the network interface. You can't use this option if you use the <code>Ipv4 Prefixes</code> option.</p>
     pub fn get_ipv4_prefix_count(&self) -> &::std::option::Option<i32> {
         &self.ipv4_prefix_count
     }

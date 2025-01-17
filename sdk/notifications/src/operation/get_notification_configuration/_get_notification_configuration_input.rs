@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetNotificationConfigurationInput {
-    /// <p>The Amazon Resource Name (ARN) of the NotificationConfiguration to return.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>NotificationConfiguration</code> to return.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl GetNotificationConfigurationInput {
-    /// <p>The Amazon Resource Name (ARN) of the NotificationConfiguration to return.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>NotificationConfiguration</code> to return.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct GetNotificationConfigurationInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
 impl GetNotificationConfigurationInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the NotificationConfiguration to return.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>NotificationConfiguration</code> to return.</p>
     /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the NotificationConfiguration to return.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>NotificationConfiguration</code> to return.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the NotificationConfiguration to return.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>NotificationConfiguration</code> to return.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }

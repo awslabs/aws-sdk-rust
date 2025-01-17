@@ -5,26 +5,26 @@
 pub struct GetEventRuleOutput {
     /// <p>The ARN of the resource.</p>
     pub arn: ::std::string::String,
-    /// <p>The ARN of a NotificationConfiguration.</p>
+    /// <p>The ARN of a <code>NotificationConfiguration</code>.</p>
     pub notification_configuration_arn: ::std::string::String,
-    /// <p>The date when the EventRule was created.</p>
+    /// <p>The date when the <code>EventRule</code> was created.</p>
     pub creation_time: ::aws_smithy_types::DateTime,
     /// <p>The matched event source.</p>
-    /// <p>Must match one of the valid EventBridge sources. Only AWS service sourced events are supported. For example, <code>aws.ec2</code> and <code>aws.cloudwatch</code>. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event delivery from AWS services</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    /// <p>Must match one of the valid EventBridge sources. Only Amazon Web Services service sourced events are supported. For example, <code>aws.ec2</code> and <code>aws.cloudwatch</code>. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event delivery from Amazon Web Services services</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub source: ::std::string::String,
     /// <p>The event type to match.</p>
-    /// <p>Must match one of the valid Amazon EventBridge event types. For example, EC2 Instance State-change Notification and AWS CloudWatch Alarm State Change. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event delivery from AWS services</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    /// <p>Must match one of the valid Amazon EventBridge event types. For example, EC2 Instance State-change Notification and Amazon CloudWatch Alarm State Change. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event delivery from Amazon Web Services services</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub event_type: ::std::string::String,
-    /// <p>An additional event pattern used to further filter the events this EventRule receives.</p>
+    /// <p>An additional event pattern used to further filter the events this <code>EventRule</code> receives.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a> in the <i>Amazon EventBridge User Guide.</i></p>
     pub event_pattern: ::std::string::String,
-    /// <p>A list of AWS Regions that send events to this EventRule.</p>
+    /// <p>A list of Amazon Web Services Regions that send events to this <code>EventRule</code>.</p>
     pub regions: ::std::vec::Vec<::std::string::String>,
-    /// <p>A list of managed rules from EventBridge that are are associated with this EventRule.</p><note>
-    /// <p>These are created by AWS User Notifications within your account so this EventRule functions.</p>
+    /// <p>A list of managed rules from EventBridge that are associated with this <code>EventRule</code>.</p><note>
+    /// <p>These are created by User Notifications within your account so this <code>EventRule</code> functions.</p>
     /// </note>
     pub managed_rules: ::std::vec::Vec<::std::string::String>,
-    /// <p>A list of an EventRule's status by Region. Regions are mapped to EventRuleStatusSummary.</p>
+    /// <p>A list of an <code>EventRule</code>'s status by Region. Regions are mapped to <code>EventRuleStatusSummary</code>.</p>
     pub status_summary_by_region: ::std::collections::HashMap<::std::string::String, crate::types::EventRuleStatusSummary>,
     _request_id: Option<String>,
 }
@@ -34,46 +34,46 @@ impl GetEventRuleOutput {
         use std::ops::Deref;
         self.arn.deref()
     }
-    /// <p>The ARN of a NotificationConfiguration.</p>
+    /// <p>The ARN of a <code>NotificationConfiguration</code>.</p>
     pub fn notification_configuration_arn(&self) -> &str {
         use std::ops::Deref;
         self.notification_configuration_arn.deref()
     }
-    /// <p>The date when the EventRule was created.</p>
+    /// <p>The date when the <code>EventRule</code> was created.</p>
     pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
         &self.creation_time
     }
     /// <p>The matched event source.</p>
-    /// <p>Must match one of the valid EventBridge sources. Only AWS service sourced events are supported. For example, <code>aws.ec2</code> and <code>aws.cloudwatch</code>. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event delivery from AWS services</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    /// <p>Must match one of the valid EventBridge sources. Only Amazon Web Services service sourced events are supported. For example, <code>aws.ec2</code> and <code>aws.cloudwatch</code>. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event delivery from Amazon Web Services services</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn source(&self) -> &str {
         use std::ops::Deref;
         self.source.deref()
     }
     /// <p>The event type to match.</p>
-    /// <p>Must match one of the valid Amazon EventBridge event types. For example, EC2 Instance State-change Notification and AWS CloudWatch Alarm State Change. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event delivery from AWS services</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    /// <p>Must match one of the valid Amazon EventBridge event types. For example, EC2 Instance State-change Notification and Amazon CloudWatch Alarm State Change. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event delivery from Amazon Web Services services</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn event_type(&self) -> &str {
         use std::ops::Deref;
         self.event_type.deref()
     }
-    /// <p>An additional event pattern used to further filter the events this EventRule receives.</p>
+    /// <p>An additional event pattern used to further filter the events this <code>EventRule</code> receives.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a> in the <i>Amazon EventBridge User Guide.</i></p>
     pub fn event_pattern(&self) -> &str {
         use std::ops::Deref;
         self.event_pattern.deref()
     }
-    /// <p>A list of AWS Regions that send events to this EventRule.</p>
+    /// <p>A list of Amazon Web Services Regions that send events to this <code>EventRule</code>.</p>
     pub fn regions(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.regions.deref()
     }
-    /// <p>A list of managed rules from EventBridge that are are associated with this EventRule.</p><note>
-    /// <p>These are created by AWS User Notifications within your account so this EventRule functions.</p>
+    /// <p>A list of managed rules from EventBridge that are associated with this <code>EventRule</code>.</p><note>
+    /// <p>These are created by User Notifications within your account so this <code>EventRule</code> functions.</p>
     /// </note>
     pub fn managed_rules(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.managed_rules.deref()
     }
-    /// <p>A list of an EventRule's status by Region. Regions are mapped to EventRuleStatusSummary.</p>
+    /// <p>A list of an <code>EventRule</code>'s status by Region. Regions are mapped to <code>EventRuleStatusSummary</code>.</p>
     pub fn status_summary_by_region(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::EventRuleStatusSummary> {
         &self.status_summary_by_region
     }
@@ -122,86 +122,86 @@ impl GetEventRuleOutputBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>The ARN of a NotificationConfiguration.</p>
+    /// <p>The ARN of a <code>NotificationConfiguration</code>.</p>
     /// This field is required.
     pub fn notification_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notification_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of a NotificationConfiguration.</p>
+    /// <p>The ARN of a <code>NotificationConfiguration</code>.</p>
     pub fn set_notification_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notification_configuration_arn = input;
         self
     }
-    /// <p>The ARN of a NotificationConfiguration.</p>
+    /// <p>The ARN of a <code>NotificationConfiguration</code>.</p>
     pub fn get_notification_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.notification_configuration_arn
     }
-    /// <p>The date when the EventRule was created.</p>
+    /// <p>The date when the <code>EventRule</code> was created.</p>
     /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date when the EventRule was created.</p>
+    /// <p>The date when the <code>EventRule</code> was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
-    /// <p>The date when the EventRule was created.</p>
+    /// <p>The date when the <code>EventRule</code> was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
     /// <p>The matched event source.</p>
-    /// <p>Must match one of the valid EventBridge sources. Only AWS service sourced events are supported. For example, <code>aws.ec2</code> and <code>aws.cloudwatch</code>. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event delivery from AWS services</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    /// <p>Must match one of the valid EventBridge sources. Only Amazon Web Services service sourced events are supported. For example, <code>aws.ec2</code> and <code>aws.cloudwatch</code>. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event delivery from Amazon Web Services services</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     /// This field is required.
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The matched event source.</p>
-    /// <p>Must match one of the valid EventBridge sources. Only AWS service sourced events are supported. For example, <code>aws.ec2</code> and <code>aws.cloudwatch</code>. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event delivery from AWS services</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    /// <p>Must match one of the valid EventBridge sources. Only Amazon Web Services service sourced events are supported. For example, <code>aws.ec2</code> and <code>aws.cloudwatch</code>. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event delivery from Amazon Web Services services</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source = input;
         self
     }
     /// <p>The matched event source.</p>
-    /// <p>Must match one of the valid EventBridge sources. Only AWS service sourced events are supported. For example, <code>aws.ec2</code> and <code>aws.cloudwatch</code>. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event delivery from AWS services</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    /// <p>Must match one of the valid EventBridge sources. Only Amazon Web Services service sourced events are supported. For example, <code>aws.ec2</code> and <code>aws.cloudwatch</code>. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event delivery from Amazon Web Services services</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
         &self.source
     }
     /// <p>The event type to match.</p>
-    /// <p>Must match one of the valid Amazon EventBridge event types. For example, EC2 Instance State-change Notification and AWS CloudWatch Alarm State Change. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event delivery from AWS services</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    /// <p>Must match one of the valid Amazon EventBridge event types. For example, EC2 Instance State-change Notification and Amazon CloudWatch Alarm State Change. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event delivery from Amazon Web Services services</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     /// This field is required.
     pub fn event_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The event type to match.</p>
-    /// <p>Must match one of the valid Amazon EventBridge event types. For example, EC2 Instance State-change Notification and AWS CloudWatch Alarm State Change. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event delivery from AWS services</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    /// <p>Must match one of the valid Amazon EventBridge event types. For example, EC2 Instance State-change Notification and Amazon CloudWatch Alarm State Change. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event delivery from Amazon Web Services services</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn set_event_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_type = input;
         self
     }
     /// <p>The event type to match.</p>
-    /// <p>Must match one of the valid Amazon EventBridge event types. For example, EC2 Instance State-change Notification and AWS CloudWatch Alarm State Change. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event delivery from AWS services</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    /// <p>Must match one of the valid Amazon EventBridge event types. For example, EC2 Instance State-change Notification and Amazon CloudWatch Alarm State Change. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event delivery from Amazon Web Services services</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn get_event_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_type
     }
-    /// <p>An additional event pattern used to further filter the events this EventRule receives.</p>
+    /// <p>An additional event pattern used to further filter the events this <code>EventRule</code> receives.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a> in the <i>Amazon EventBridge User Guide.</i></p>
     /// This field is required.
     pub fn event_pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_pattern = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An additional event pattern used to further filter the events this EventRule receives.</p>
+    /// <p>An additional event pattern used to further filter the events this <code>EventRule</code> receives.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a> in the <i>Amazon EventBridge User Guide.</i></p>
     pub fn set_event_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_pattern = input;
         self
     }
-    /// <p>An additional event pattern used to further filter the events this EventRule receives.</p>
+    /// <p>An additional event pattern used to further filter the events this <code>EventRule</code> receives.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a> in the <i>Amazon EventBridge User Guide.</i></p>
     pub fn get_event_pattern(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_pattern
@@ -210,19 +210,19 @@ impl GetEventRuleOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_regions`](Self::set_regions).
     ///
-    /// <p>A list of AWS Regions that send events to this EventRule.</p>
+    /// <p>A list of Amazon Web Services Regions that send events to this <code>EventRule</code>.</p>
     pub fn regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.regions.unwrap_or_default();
         v.push(input.into());
         self.regions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of AWS Regions that send events to this EventRule.</p>
+    /// <p>A list of Amazon Web Services Regions that send events to this <code>EventRule</code>.</p>
     pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.regions = input;
         self
     }
-    /// <p>A list of AWS Regions that send events to this EventRule.</p>
+    /// <p>A list of Amazon Web Services Regions that send events to this <code>EventRule</code>.</p>
     pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.regions
     }
@@ -230,8 +230,8 @@ impl GetEventRuleOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_managed_rules`](Self::set_managed_rules).
     ///
-    /// <p>A list of managed rules from EventBridge that are are associated with this EventRule.</p><note>
-    /// <p>These are created by AWS User Notifications within your account so this EventRule functions.</p>
+    /// <p>A list of managed rules from EventBridge that are associated with this <code>EventRule</code>.</p><note>
+    /// <p>These are created by User Notifications within your account so this <code>EventRule</code> functions.</p>
     /// </note>
     pub fn managed_rules(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.managed_rules.unwrap_or_default();
@@ -239,15 +239,15 @@ impl GetEventRuleOutputBuilder {
         self.managed_rules = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of managed rules from EventBridge that are are associated with this EventRule.</p><note>
-    /// <p>These are created by AWS User Notifications within your account so this EventRule functions.</p>
+    /// <p>A list of managed rules from EventBridge that are associated with this <code>EventRule</code>.</p><note>
+    /// <p>These are created by User Notifications within your account so this <code>EventRule</code> functions.</p>
     /// </note>
     pub fn set_managed_rules(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.managed_rules = input;
         self
     }
-    /// <p>A list of managed rules from EventBridge that are are associated with this EventRule.</p><note>
-    /// <p>These are created by AWS User Notifications within your account so this EventRule functions.</p>
+    /// <p>A list of managed rules from EventBridge that are associated with this <code>EventRule</code>.</p><note>
+    /// <p>These are created by User Notifications within your account so this <code>EventRule</code> functions.</p>
     /// </note>
     pub fn get_managed_rules(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.managed_rules
@@ -256,14 +256,14 @@ impl GetEventRuleOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_status_summary_by_region`](Self::set_status_summary_by_region).
     ///
-    /// <p>A list of an EventRule's status by Region. Regions are mapped to EventRuleStatusSummary.</p>
+    /// <p>A list of an <code>EventRule</code>'s status by Region. Regions are mapped to <code>EventRuleStatusSummary</code>.</p>
     pub fn status_summary_by_region(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::EventRuleStatusSummary) -> Self {
         let mut hash_map = self.status_summary_by_region.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.status_summary_by_region = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A list of an EventRule's status by Region. Regions are mapped to EventRuleStatusSummary.</p>
+    /// <p>A list of an <code>EventRule</code>'s status by Region. Regions are mapped to <code>EventRuleStatusSummary</code>.</p>
     pub fn set_status_summary_by_region(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EventRuleStatusSummary>>,
@@ -271,7 +271,7 @@ impl GetEventRuleOutputBuilder {
         self.status_summary_by_region = input;
         self
     }
-    /// <p>A list of an EventRule's status by Region. Regions are mapped to EventRuleStatusSummary.</p>
+    /// <p>A list of an <code>EventRule</code>'s status by Region. Regions are mapped to <code>EventRuleStatusSummary</code>.</p>
     pub fn get_status_summary_by_region(
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EventRuleStatusSummary>> {

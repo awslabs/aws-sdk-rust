@@ -25,6 +25,10 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_associate_channel;
 
+pub(crate) mod shape_associate_managed_notification_account_contact;
+
+pub(crate) mod shape_associate_managed_notification_additional_channel;
+
 pub(crate) mod shape_create_event_rule;
 
 pub(crate) mod shape_create_notification_configuration;
@@ -35,17 +39,41 @@ pub(crate) mod shape_delete_notification_configuration;
 
 pub(crate) mod shape_deregister_notification_hub;
 
+pub(crate) mod shape_disable_notifications_access_for_organization;
+
 pub(crate) mod shape_disassociate_channel;
 
+pub(crate) mod shape_disassociate_managed_notification_account_contact;
+
+pub(crate) mod shape_disassociate_managed_notification_additional_channel;
+
+pub(crate) mod shape_enable_notifications_access_for_organization;
+
 pub(crate) mod shape_get_event_rule;
+
+pub(crate) mod shape_get_managed_notification_child_event;
+
+pub(crate) mod shape_get_managed_notification_configuration;
+
+pub(crate) mod shape_get_managed_notification_event;
 
 pub(crate) mod shape_get_notification_configuration;
 
 pub(crate) mod shape_get_notification_event;
 
+pub(crate) mod shape_get_notifications_access_for_organization;
+
 pub(crate) mod shape_list_channels;
 
 pub(crate) mod shape_list_event_rules;
+
+pub(crate) mod shape_list_managed_notification_channel_associations;
+
+pub(crate) mod shape_list_managed_notification_child_events;
+
+pub(crate) mod shape_list_managed_notification_configurations;
+
+pub(crate) mod shape_list_managed_notification_events;
 
 pub(crate) mod shape_list_notification_configurations;
 
@@ -77,6 +105,10 @@ pub(crate) mod shape_access_denied_exception;
 
 pub(crate) mod shape_associate_channel_input;
 
+pub(crate) mod shape_associate_managed_notification_account_contact_input;
+
+pub(crate) mod shape_associate_managed_notification_additional_channel_input;
+
 pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_event_rule_input;
@@ -84,6 +116,10 @@ pub(crate) mod shape_create_event_rule_input;
 pub(crate) mod shape_create_notification_configuration_input;
 
 pub(crate) mod shape_disassociate_channel_input;
+
+pub(crate) mod shape_disassociate_managed_notification_account_contact_input;
+
+pub(crate) mod shape_disassociate_managed_notification_additional_channel_input;
 
 pub(crate) mod shape_internal_server_exception;
 
@@ -107,6 +143,18 @@ pub(crate) mod shape_channels;
 
 pub(crate) mod shape_event_rules;
 
+pub(crate) mod shape_managed_notification_channel_associations;
+
+pub(crate) mod shape_managed_notification_child_event;
+
+pub(crate) mod shape_managed_notification_child_events;
+
+pub(crate) mod shape_managed_notification_configurations;
+
+pub(crate) mod shape_managed_notification_event;
+
+pub(crate) mod shape_managed_notification_events;
+
 pub(crate) mod shape_managed_rule_arns;
 
 pub(crate) mod shape_notification_configurations;
@@ -119,6 +167,8 @@ pub(crate) mod shape_notification_hub_status_summary;
 
 pub(crate) mod shape_notification_hubs;
 
+pub(crate) mod shape_notifications_access_for_organization;
+
 pub(crate) mod shape_regions;
 
 pub(crate) mod shape_status_summary_by_region;
@@ -127,9 +177,21 @@ pub(crate) mod shape_tag_map;
 
 pub(crate) mod shape_validation_exception_field_list;
 
+pub(crate) mod shape_aggregation_detail;
+
+pub(crate) mod shape_aggregation_summary;
+
 pub(crate) mod shape_event_rule_status_summary;
 
 pub(crate) mod shape_event_rule_structure;
+
+pub(crate) mod shape_managed_notification_channel_association_summary;
+
+pub(crate) mod shape_managed_notification_child_event_overview;
+
+pub(crate) mod shape_managed_notification_configuration_structure;
+
+pub(crate) mod shape_managed_notification_event_overview;
 
 pub(crate) mod shape_media;
 
@@ -147,7 +209,15 @@ pub(crate) mod shape_text_parts;
 
 pub(crate) mod shape_validation_exception_field;
 
+pub(crate) mod shape_aggregated_notification_regions;
+
+pub(crate) mod shape_aggregation_keys;
+
 pub(crate) mod shape_dimensions;
+
+pub(crate) mod shape_managed_notification_child_event_summary;
+
+pub(crate) mod shape_managed_notification_event_summary;
 
 pub(crate) mod shape_media_element;
 
@@ -155,15 +225,29 @@ pub(crate) mod shape_notification_event_summary;
 
 pub(crate) mod shape_resources;
 
+pub(crate) mod shape_summarization_dimension_details;
+
+pub(crate) mod shape_summarization_dimension_overview;
+
+pub(crate) mod shape_summarization_dimension_overviews;
+
 pub(crate) mod shape_text_part_value;
 
+pub(crate) mod shape_aggregation_key;
+
 pub(crate) mod shape_dimension;
+
+pub(crate) mod shape_managed_source_event_metadata_summary;
 
 pub(crate) mod shape_message_components_summary;
 
 pub(crate) mod shape_resource;
 
+pub(crate) mod shape_sample_aggregation_dimension_values;
+
 pub(crate) mod shape_source_event_metadata_summary;
+
+pub(crate) mod shape_summarization_dimension_detail;
 
 pub(crate) mod shape_text_by_locale;
 

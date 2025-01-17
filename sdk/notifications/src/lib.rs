@@ -17,13 +17,13 @@
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
 #![cfg_attr(docsrs, feature(doc_auto_cfg))]
-//! The _AWS User Notifications API Reference_ provides descriptions, API request parameters, and the JSON response for each of the User Notification API actions.
+//! The _Amazon Web Services User Notifications API Reference_ provides descriptions, API request parameters, and the JSON response for each of the User Notification API actions.
 //!
-//! User Notification control APIs are currently available in US East (Virginia) - us-east-1.
+//! User Notification control plane APIs are currently available in US East (Virginia) - us-east-1.
 //!
 //! [GetNotificationEvent](https://docs.aws.amazon.com/notifications/latest/APIReference/API_GetNotificationEvent.html) and [ListNotificationEvents](https://docs.aws.amazon.com/notifications/latest/APIReference/API_ListNotificationEvents.html) APIs are currently available in [commercial partition Regions](https://docs.aws.amazon.com/notifications/latest/userguide/supported-regions.html) and only return notifications stored in the same Region in which they're called.
 //!
-//! The User Notifications console can only be used in US East (Virginia). Your data however, is stored in each Region chosen as a [notification hub](https://docs.aws.amazon.com/notifications/latest/userguide/notification-hubs.html>) in addition to US East (Virginia).
+//! The User Notifications console can only be used in US East (Virginia). Your data however, is stored in each Region chosen as a [notification hub](https://docs.aws.amazon.com/notifications/latest/userguide/notification-hubs.html) in addition to US East (Virginia).
 //!
 //! ## Getting Started
 //!
@@ -37,7 +37,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-notifications = "1.5.0"
+//! aws-sdk-notifications = "1.6.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -154,14 +154,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`ListTagsForResource`](crate::operation::list_tags_for_resource) operation has
-/// a [`Client::list_tags_for_resource`], function which returns a builder for that operation.
+/// For example, the [`ListManagedNotificationChannelAssociations`](crate::operation::list_managed_notification_channel_associations) operation has
+/// a [`Client::list_managed_notification_channel_associations`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.list_tags_for_resource()
-///     .arn("example")
+/// let result = client.list_managed_notification_channel_associations()
+///     .managed_notification_configuration_arn("example")
 ///     .send()
 ///     .await;
 /// ```

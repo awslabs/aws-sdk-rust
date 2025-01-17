@@ -4,11 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListNotificationConfigurationsInput {
     /// <p>The matched event source.</p>
-    /// <p>Must match one of the valid EventBridge sources. Only AWS service sourced events are supported. For example, <code>aws.ec2</code> and <code>aws.cloudwatch</code>. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event delivery from AWS services</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    /// <p>Must match one of the valid EventBridge sources. Only Amazon Web Services service sourced events are supported. For example, <code>aws.ec2</code> and <code>aws.cloudwatch</code>. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event delivery from Amazon Web Services services</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub event_rule_source: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Channel to match.</p>
     pub channel_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The NotificationConfiguration status to match.</p>
+    /// <p>The <code>NotificationConfiguration</code> status to match.</p>
     /// <ul>
     /// <li>
     /// <p>Values:</p>
@@ -17,13 +17,13 @@ pub struct ListNotificationConfigurationsInput {
     /// <p><code>ACTIVE</code></p>
     /// <ul>
     /// <li>
-    /// <p>All EventRules are <code>ACTIVE</code> and any call can be run.</p></li>
+    /// <p>All <code>EventRules</code> are <code>ACTIVE</code> and any call can be run.</p></li>
     /// </ul></li>
     /// <li>
     /// <p><code>PARTIALLY_ACTIVE</code></p>
     /// <ul>
     /// <li>
-    /// <p>Some EventRules are <code>ACTIVE</code> and some are <code>INACTIVE</code>. Any call can be run.</p></li>
+    /// <p>Some <code>EventRules</code> are <code>ACTIVE</code> and some are <code>INACTIVE</code>. Any call can be run.</p></li>
     /// <li>
     /// <p>Any call can be run.</p></li>
     /// </ul></li>
@@ -31,13 +31,13 @@ pub struct ListNotificationConfigurationsInput {
     /// <p><code>INACTIVE</code></p>
     /// <ul>
     /// <li>
-    /// <p>All EventRules are <code>INACTIVE</code> and any call can be run.</p></li>
+    /// <p>All <code>EventRules</code> are <code>INACTIVE</code> and any call can be run.</p></li>
     /// </ul></li>
     /// <li>
     /// <p><code>DELETING</code></p>
     /// <ul>
     /// <li>
-    /// <p>This NotificationConfiguration is being deleted.</p></li>
+    /// <p>This <code>NotificationConfiguration</code> is being deleted.</p></li>
     /// <li>
     /// <p>Only <code>GET</code> and <code>LIST</code> calls can be run.</p></li>
     /// </ul></li>
@@ -46,12 +46,12 @@ pub struct ListNotificationConfigurationsInput {
     pub status: ::std::option::Option<crate::types::NotificationConfigurationStatus>,
     /// <p>The maximum number of results to be returned in this call. Defaults to 20.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>The start token for paginated calls. Retrieved from the response of a previous ListEventRules call. Next token uses Base64 encoding.</p>
+    /// <p>The start token for paginated calls. Retrieved from the response of a previous <code>ListEventRules</code> call. Next token uses Base64 encoding.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListNotificationConfigurationsInput {
     /// <p>The matched event source.</p>
-    /// <p>Must match one of the valid EventBridge sources. Only AWS service sourced events are supported. For example, <code>aws.ec2</code> and <code>aws.cloudwatch</code>. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event delivery from AWS services</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    /// <p>Must match one of the valid EventBridge sources. Only Amazon Web Services service sourced events are supported. For example, <code>aws.ec2</code> and <code>aws.cloudwatch</code>. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event delivery from Amazon Web Services services</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn event_rule_source(&self) -> ::std::option::Option<&str> {
         self.event_rule_source.as_deref()
     }
@@ -59,7 +59,7 @@ impl ListNotificationConfigurationsInput {
     pub fn channel_arn(&self) -> ::std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
-    /// <p>The NotificationConfiguration status to match.</p>
+    /// <p>The <code>NotificationConfiguration</code> status to match.</p>
     /// <ul>
     /// <li>
     /// <p>Values:</p>
@@ -68,13 +68,13 @@ impl ListNotificationConfigurationsInput {
     /// <p><code>ACTIVE</code></p>
     /// <ul>
     /// <li>
-    /// <p>All EventRules are <code>ACTIVE</code> and any call can be run.</p></li>
+    /// <p>All <code>EventRules</code> are <code>ACTIVE</code> and any call can be run.</p></li>
     /// </ul></li>
     /// <li>
     /// <p><code>PARTIALLY_ACTIVE</code></p>
     /// <ul>
     /// <li>
-    /// <p>Some EventRules are <code>ACTIVE</code> and some are <code>INACTIVE</code>. Any call can be run.</p></li>
+    /// <p>Some <code>EventRules</code> are <code>ACTIVE</code> and some are <code>INACTIVE</code>. Any call can be run.</p></li>
     /// <li>
     /// <p>Any call can be run.</p></li>
     /// </ul></li>
@@ -82,13 +82,13 @@ impl ListNotificationConfigurationsInput {
     /// <p><code>INACTIVE</code></p>
     /// <ul>
     /// <li>
-    /// <p>All EventRules are <code>INACTIVE</code> and any call can be run.</p></li>
+    /// <p>All <code>EventRules</code> are <code>INACTIVE</code> and any call can be run.</p></li>
     /// </ul></li>
     /// <li>
     /// <p><code>DELETING</code></p>
     /// <ul>
     /// <li>
-    /// <p>This NotificationConfiguration is being deleted.</p></li>
+    /// <p>This <code>NotificationConfiguration</code> is being deleted.</p></li>
     /// <li>
     /// <p>Only <code>GET</code> and <code>LIST</code> calls can be run.</p></li>
     /// </ul></li>
@@ -101,7 +101,7 @@ impl ListNotificationConfigurationsInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The start token for paginated calls. Retrieved from the response of a previous ListEventRules call. Next token uses Base64 encoding.</p>
+    /// <p>The start token for paginated calls. Retrieved from the response of a previous <code>ListEventRules</code> call. Next token uses Base64 encoding.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -125,19 +125,19 @@ pub struct ListNotificationConfigurationsInputBuilder {
 }
 impl ListNotificationConfigurationsInputBuilder {
     /// <p>The matched event source.</p>
-    /// <p>Must match one of the valid EventBridge sources. Only AWS service sourced events are supported. For example, <code>aws.ec2</code> and <code>aws.cloudwatch</code>. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event delivery from AWS services</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    /// <p>Must match one of the valid EventBridge sources. Only Amazon Web Services service sourced events are supported. For example, <code>aws.ec2</code> and <code>aws.cloudwatch</code>. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event delivery from Amazon Web Services services</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn event_rule_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_rule_source = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The matched event source.</p>
-    /// <p>Must match one of the valid EventBridge sources. Only AWS service sourced events are supported. For example, <code>aws.ec2</code> and <code>aws.cloudwatch</code>. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event delivery from AWS services</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    /// <p>Must match one of the valid EventBridge sources. Only Amazon Web Services service sourced events are supported. For example, <code>aws.ec2</code> and <code>aws.cloudwatch</code>. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event delivery from Amazon Web Services services</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn set_event_rule_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_rule_source = input;
         self
     }
     /// <p>The matched event source.</p>
-    /// <p>Must match one of the valid EventBridge sources. Only AWS service sourced events are supported. For example, <code>aws.ec2</code> and <code>aws.cloudwatch</code>. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event delivery from AWS services</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    /// <p>Must match one of the valid EventBridge sources. Only Amazon Web Services service sourced events are supported. For example, <code>aws.ec2</code> and <code>aws.cloudwatch</code>. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event delivery from Amazon Web Services services</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn get_event_rule_source(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_rule_source
     }
@@ -155,7 +155,7 @@ impl ListNotificationConfigurationsInputBuilder {
     pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.channel_arn
     }
-    /// <p>The NotificationConfiguration status to match.</p>
+    /// <p>The <code>NotificationConfiguration</code> status to match.</p>
     /// <ul>
     /// <li>
     /// <p>Values:</p>
@@ -164,13 +164,13 @@ impl ListNotificationConfigurationsInputBuilder {
     /// <p><code>ACTIVE</code></p>
     /// <ul>
     /// <li>
-    /// <p>All EventRules are <code>ACTIVE</code> and any call can be run.</p></li>
+    /// <p>All <code>EventRules</code> are <code>ACTIVE</code> and any call can be run.</p></li>
     /// </ul></li>
     /// <li>
     /// <p><code>PARTIALLY_ACTIVE</code></p>
     /// <ul>
     /// <li>
-    /// <p>Some EventRules are <code>ACTIVE</code> and some are <code>INACTIVE</code>. Any call can be run.</p></li>
+    /// <p>Some <code>EventRules</code> are <code>ACTIVE</code> and some are <code>INACTIVE</code>. Any call can be run.</p></li>
     /// <li>
     /// <p>Any call can be run.</p></li>
     /// </ul></li>
@@ -178,13 +178,13 @@ impl ListNotificationConfigurationsInputBuilder {
     /// <p><code>INACTIVE</code></p>
     /// <ul>
     /// <li>
-    /// <p>All EventRules are <code>INACTIVE</code> and any call can be run.</p></li>
+    /// <p>All <code>EventRules</code> are <code>INACTIVE</code> and any call can be run.</p></li>
     /// </ul></li>
     /// <li>
     /// <p><code>DELETING</code></p>
     /// <ul>
     /// <li>
-    /// <p>This NotificationConfiguration is being deleted.</p></li>
+    /// <p>This <code>NotificationConfiguration</code> is being deleted.</p></li>
     /// <li>
     /// <p>Only <code>GET</code> and <code>LIST</code> calls can be run.</p></li>
     /// </ul></li>
@@ -194,7 +194,7 @@ impl ListNotificationConfigurationsInputBuilder {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The NotificationConfiguration status to match.</p>
+    /// <p>The <code>NotificationConfiguration</code> status to match.</p>
     /// <ul>
     /// <li>
     /// <p>Values:</p>
@@ -203,13 +203,13 @@ impl ListNotificationConfigurationsInputBuilder {
     /// <p><code>ACTIVE</code></p>
     /// <ul>
     /// <li>
-    /// <p>All EventRules are <code>ACTIVE</code> and any call can be run.</p></li>
+    /// <p>All <code>EventRules</code> are <code>ACTIVE</code> and any call can be run.</p></li>
     /// </ul></li>
     /// <li>
     /// <p><code>PARTIALLY_ACTIVE</code></p>
     /// <ul>
     /// <li>
-    /// <p>Some EventRules are <code>ACTIVE</code> and some are <code>INACTIVE</code>. Any call can be run.</p></li>
+    /// <p>Some <code>EventRules</code> are <code>ACTIVE</code> and some are <code>INACTIVE</code>. Any call can be run.</p></li>
     /// <li>
     /// <p>Any call can be run.</p></li>
     /// </ul></li>
@@ -217,13 +217,13 @@ impl ListNotificationConfigurationsInputBuilder {
     /// <p><code>INACTIVE</code></p>
     /// <ul>
     /// <li>
-    /// <p>All EventRules are <code>INACTIVE</code> and any call can be run.</p></li>
+    /// <p>All <code>EventRules</code> are <code>INACTIVE</code> and any call can be run.</p></li>
     /// </ul></li>
     /// <li>
     /// <p><code>DELETING</code></p>
     /// <ul>
     /// <li>
-    /// <p>This NotificationConfiguration is being deleted.</p></li>
+    /// <p>This <code>NotificationConfiguration</code> is being deleted.</p></li>
     /// <li>
     /// <p>Only <code>GET</code> and <code>LIST</code> calls can be run.</p></li>
     /// </ul></li>
@@ -233,7 +233,7 @@ impl ListNotificationConfigurationsInputBuilder {
         self.status = input;
         self
     }
-    /// <p>The NotificationConfiguration status to match.</p>
+    /// <p>The <code>NotificationConfiguration</code> status to match.</p>
     /// <ul>
     /// <li>
     /// <p>Values:</p>
@@ -242,13 +242,13 @@ impl ListNotificationConfigurationsInputBuilder {
     /// <p><code>ACTIVE</code></p>
     /// <ul>
     /// <li>
-    /// <p>All EventRules are <code>ACTIVE</code> and any call can be run.</p></li>
+    /// <p>All <code>EventRules</code> are <code>ACTIVE</code> and any call can be run.</p></li>
     /// </ul></li>
     /// <li>
     /// <p><code>PARTIALLY_ACTIVE</code></p>
     /// <ul>
     /// <li>
-    /// <p>Some EventRules are <code>ACTIVE</code> and some are <code>INACTIVE</code>. Any call can be run.</p></li>
+    /// <p>Some <code>EventRules</code> are <code>ACTIVE</code> and some are <code>INACTIVE</code>. Any call can be run.</p></li>
     /// <li>
     /// <p>Any call can be run.</p></li>
     /// </ul></li>
@@ -256,13 +256,13 @@ impl ListNotificationConfigurationsInputBuilder {
     /// <p><code>INACTIVE</code></p>
     /// <ul>
     /// <li>
-    /// <p>All EventRules are <code>INACTIVE</code> and any call can be run.</p></li>
+    /// <p>All <code>EventRules</code> are <code>INACTIVE</code> and any call can be run.</p></li>
     /// </ul></li>
     /// <li>
     /// <p><code>DELETING</code></p>
     /// <ul>
     /// <li>
-    /// <p>This NotificationConfiguration is being deleted.</p></li>
+    /// <p>This <code>NotificationConfiguration</code> is being deleted.</p></li>
     /// <li>
     /// <p>Only <code>GET</code> and <code>LIST</code> calls can be run.</p></li>
     /// </ul></li>
@@ -285,17 +285,17 @@ impl ListNotificationConfigurationsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>The start token for paginated calls. Retrieved from the response of a previous ListEventRules call. Next token uses Base64 encoding.</p>
+    /// <p>The start token for paginated calls. Retrieved from the response of a previous <code>ListEventRules</code> call. Next token uses Base64 encoding.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The start token for paginated calls. Retrieved from the response of a previous ListEventRules call. Next token uses Base64 encoding.</p>
+    /// <p>The start token for paginated calls. Retrieved from the response of a previous <code>ListEventRules</code> call. Next token uses Base64 encoding.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The start token for paginated calls. Retrieved from the response of a previous ListEventRules call. Next token uses Base64 encoding.</p>
+    /// <p>The start token for paginated calls. Retrieved from the response of a previous <code>ListEventRules</code> call. Next token uses Base64 encoding.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

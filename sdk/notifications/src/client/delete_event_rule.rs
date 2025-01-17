@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteEventRule`](crate::operation::delete_event_rule::builders::DeleteEventRuleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::delete_event_rule::builders::DeleteEventRuleFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_event_rule::builders::DeleteEventRuleFluentBuilder::set_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the EventRule to delete.</p><br>
+    ///   - [`arn(impl Into<String>)`](crate::operation::delete_event_rule::builders::DeleteEventRuleFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_event_rule::builders::DeleteEventRuleFluentBuilder::set_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the <code>EventRule</code> to delete.</p><br>
     /// - On success, responds with [`DeleteEventRuleOutput`](crate::operation::delete_event_rule::DeleteEventRuleOutput)
     /// - On failure, responds with [`SdkError<DeleteEventRuleError>`](crate::operation::delete_event_rule::DeleteEventRuleError)
     pub fn delete_event_rule(&self) -> crate::operation::delete_event_rule::builders::DeleteEventRuleFluentBuilder {

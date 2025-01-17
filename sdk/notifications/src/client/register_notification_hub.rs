@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RegisterNotificationHub`](crate::operation::register_notification_hub::builders::RegisterNotificationHubFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`notification_hub_region(impl Into<String>)`](crate::operation::register_notification_hub::builders::RegisterNotificationHubFluentBuilder::notification_hub_region) / [`set_notification_hub_region(Option<String>)`](crate::operation::register_notification_hub::builders::RegisterNotificationHubFluentBuilder::set_notification_hub_region):<br>required: **true**<br><p>The Region of the NotificationHub.</p><br>
+    ///   - [`notification_hub_region(impl Into<String>)`](crate::operation::register_notification_hub::builders::RegisterNotificationHubFluentBuilder::notification_hub_region) / [`set_notification_hub_region(Option<String>)`](crate::operation::register_notification_hub::builders::RegisterNotificationHubFluentBuilder::set_notification_hub_region):<br>required: **true**<br><p>The Region of the <code>NotificationHub</code>.</p><br>
     /// - On success, responds with [`RegisterNotificationHubOutput`](crate::operation::register_notification_hub::RegisterNotificationHubOutput) with field(s):
-    ///   - [`notification_hub_region(String)`](crate::operation::register_notification_hub::RegisterNotificationHubOutput::notification_hub_region): <p>The Region of the NotificationHub.</p>
-    ///   - [`status_summary(Option<NotificationHubStatusSummary>)`](crate::operation::register_notification_hub::RegisterNotificationHubOutput::status_summary): <p>NotificationHub status information.</p>
+    ///   - [`notification_hub_region(String)`](crate::operation::register_notification_hub::RegisterNotificationHubOutput::notification_hub_region): <p>The Region of the <code>NotificationHub</code>.</p>
+    ///   - [`status_summary(Option<NotificationHubStatusSummary>)`](crate::operation::register_notification_hub::RegisterNotificationHubOutput::status_summary): <p>Provides additional information about the current <code>NotificationConfiguration</code> status information.</p>
     ///   - [`creation_time(DateTime)`](crate::operation::register_notification_hub::RegisterNotificationHubOutput::creation_time): <p>The date the resource was created.</p>
     ///   - [`last_activation_time(Option<DateTime>)`](crate::operation::register_notification_hub::RegisterNotificationHubOutput::last_activation_time): <p>The date the resource was last activated.</p>
     /// - On failure, responds with [`SdkError<RegisterNotificationHubError>`](crate::operation::register_notification_hub::RegisterNotificationHubError)

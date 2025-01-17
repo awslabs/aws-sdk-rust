@@ -22,7 +22,7 @@ impl crate::operation::assign_ipv6_addresses::builders::AssignIpv6AddressesInput
 }
 /// Fluent builder constructing a request to `AssignIpv6Addresses`.
 ///
-/// <p>Assigns one or more IPv6 addresses to the specified network interface. You can specify one or more specific IPv6 addresses, or you can specify the number of IPv6 addresses to be automatically assigned from within the subnet's IPv6 CIDR block range. You can assign as many IPv6 addresses to a network interface as you can assign private IPv4 addresses, and the limit varies per instance type.</p>
+/// <p>Assigns the specified IPv6 addresses to the specified network interface. You can specify specific IPv6 addresses, or you can specify the number of IPv6 addresses to be automatically assigned from the subnet's IPv6 CIDR block range. You can assign as many IPv6 addresses to a network interface as you can assign private IPv4 addresses, and the limit varies by instance type.</p>
 /// <p>You must specify either the IPv6 addresses or the IPv6 address count in the request.</p>
 /// <p>You can optionally use Prefix Delegation on the network interface. You must specify either the IPV6 Prefix Delegation prefixes, or the IPv6 Prefix Delegation count. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html"> Assigning prefixes to network interfaces</a> in the <i>Amazon EC2 User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -129,17 +129,17 @@ impl AssignIpv6AddressesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_ipv6_prefixes`](Self::set_ipv6_prefixes).
     ///
-    /// <p>One or more IPv6 prefixes assigned to the network interface. You cannot use this option if you use the <code>Ipv6PrefixCount</code> option.</p>
+    /// <p>One or more IPv6 prefixes assigned to the network interface. You can't use this option if you use the <code>Ipv6PrefixCount</code> option.</p>
     pub fn ipv6_prefixes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ipv6_prefixes(input.into());
         self
     }
-    /// <p>One or more IPv6 prefixes assigned to the network interface. You cannot use this option if you use the <code>Ipv6PrefixCount</code> option.</p>
+    /// <p>One or more IPv6 prefixes assigned to the network interface. You can't use this option if you use the <code>Ipv6PrefixCount</code> option.</p>
     pub fn set_ipv6_prefixes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_ipv6_prefixes(input);
         self
     }
-    /// <p>One or more IPv6 prefixes assigned to the network interface. You cannot use this option if you use the <code>Ipv6PrefixCount</code> option.</p>
+    /// <p>One or more IPv6 prefixes assigned to the network interface. You can't use this option if you use the <code>Ipv6PrefixCount</code> option.</p>
     pub fn get_ipv6_prefixes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_ipv6_prefixes()
     }

@@ -3,15 +3,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEventRulesInput {
-    /// <p>The Amazon Resource Name (ARN) of the NotificationConfiguration.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>NotificationConfiguration</code>.</p>
     pub notification_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to be returned in this call. The default value is 20.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>The start token for paginated calls. Retrieved from the response of a previous ListEventRules call. Next token uses Base64 encoding.</p>
+    /// <p>The start token for paginated calls. Retrieved from the response of a previous <code>ListEventRules</code> call. Next token uses Base64 encoding.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListEventRulesInput {
-    /// <p>The Amazon Resource Name (ARN) of the NotificationConfiguration.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>NotificationConfiguration</code>.</p>
     pub fn notification_configuration_arn(&self) -> ::std::option::Option<&str> {
         self.notification_configuration_arn.as_deref()
     }
@@ -19,7 +19,7 @@ impl ListEventRulesInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The start token for paginated calls. Retrieved from the response of a previous ListEventRules call. Next token uses Base64 encoding.</p>
+    /// <p>The start token for paginated calls. Retrieved from the response of a previous <code>ListEventRules</code> call. Next token uses Base64 encoding.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -40,18 +40,18 @@ pub struct ListEventRulesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListEventRulesInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the NotificationConfiguration.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>NotificationConfiguration</code>.</p>
     /// This field is required.
     pub fn notification_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notification_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the NotificationConfiguration.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>NotificationConfiguration</code>.</p>
     pub fn set_notification_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notification_configuration_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the NotificationConfiguration.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>NotificationConfiguration</code>.</p>
     pub fn get_notification_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.notification_configuration_arn
     }
@@ -69,17 +69,17 @@ impl ListEventRulesInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>The start token for paginated calls. Retrieved from the response of a previous ListEventRules call. Next token uses Base64 encoding.</p>
+    /// <p>The start token for paginated calls. Retrieved from the response of a previous <code>ListEventRules</code> call. Next token uses Base64 encoding.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The start token for paginated calls. Retrieved from the response of a previous ListEventRules call. Next token uses Base64 encoding.</p>
+    /// <p>The start token for paginated calls. Retrieved from the response of a previous <code>ListEventRules</code> call. Next token uses Base64 encoding.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The start token for paginated calls. Retrieved from the response of a previous ListEventRules call. Next token uses Base64 encoding.</p>
+    /// <p>The start token for paginated calls. Retrieved from the response of a previous <code>ListEventRules</code> call. Next token uses Base64 encoding.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

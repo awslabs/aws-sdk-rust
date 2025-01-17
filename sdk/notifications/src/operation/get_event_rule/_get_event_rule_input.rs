@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEventRuleInput {
-    /// <p>The Amazon Resource Name (ARN) of the EventRule to return.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>EventRule</code> to return.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl GetEventRuleInput {
-    /// <p>The Amazon Resource Name (ARN) of the EventRule to return.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>EventRule</code> to return.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct GetEventRuleInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
 impl GetEventRuleInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the EventRule to return.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>EventRule</code> to return.</p>
     /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the EventRule to return.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>EventRule</code> to return.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the EventRule to return.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>EventRule</code> to return.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }

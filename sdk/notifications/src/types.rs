@@ -3,6 +3,10 @@ pub use crate::types::_validation_exception_field::ValidationExceptionField;
 
 pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
+pub use crate::types::_notifications_access_for_organization::NotificationsAccessForOrganization;
+
+pub use crate::types::_access_status::AccessStatus;
+
 pub use crate::types::_notification_hub_status_summary::NotificationHubStatusSummary;
 
 pub use crate::types::_notification_hub_status::NotificationHubStatus;
@@ -20,6 +24,12 @@ pub use crate::types::_text_part_value::TextPartValue;
 pub use crate::types::_locale_code::LocaleCode;
 
 pub use crate::types::_text_part_type::TextPartType;
+
+pub use crate::types::_aggregation_summary::AggregationSummary;
+
+pub use crate::types::_summarization_dimension_overview::SummarizationDimensionOverview;
+
+pub use crate::types::_aggregation_key::AggregationKey;
 
 pub use crate::types::_aggregation_event_type::AggregationEventType;
 
@@ -51,15 +61,57 @@ pub use crate::types::_notification_configuration_status::NotificationConfigurat
 
 pub use crate::types::_notification_configuration_structure::NotificationConfigurationStructure;
 
+pub use crate::types::_managed_notification_event::ManagedNotificationEvent;
+
+pub use crate::types::_managed_notification_event_overview::ManagedNotificationEventOverview;
+
+pub use crate::types::_managed_notification_event_summary::ManagedNotificationEventSummary;
+
+pub use crate::types::_managed_source_event_metadata_summary::ManagedSourceEventMetadataSummary;
+
+pub use crate::types::_managed_notification_configuration_structure::ManagedNotificationConfigurationStructure;
+
+pub use crate::types::_managed_notification_child_event::ManagedNotificationChildEvent;
+
+pub use crate::types::_aggregation_detail::AggregationDetail;
+
+pub use crate::types::_summarization_dimension_detail::SummarizationDimensionDetail;
+
+pub use crate::types::_managed_notification_child_event_overview::ManagedNotificationChildEventOverview;
+
+pub use crate::types::_managed_notification_child_event_summary::ManagedNotificationChildEventSummary;
+
+pub use crate::types::_account_contact_type::AccountContactType;
+
 pub use crate::types::_event_rule_status_summary::EventRuleStatusSummary;
 
 pub use crate::types::_event_rule_status::EventRuleStatus;
 
 pub use crate::types::_event_rule_structure::EventRuleStructure;
 
+pub use crate::types::_managed_notification_channel_association_summary::ManagedNotificationChannelAssociationSummary;
+
+pub use crate::types::_channel_association_override_option::ChannelAssociationOverrideOption;
+
+pub use crate::types::_channel_type::ChannelType;
+
+mod _access_status;
+
+mod _account_contact_type;
+
+mod _aggregation_detail;
+
 mod _aggregation_duration;
 
 mod _aggregation_event_type;
+
+mod _aggregation_key;
+
+mod _aggregation_summary;
+
+mod _channel_association_override_option;
+
+mod _channel_type;
 
 mod _dimension;
 
@@ -72,6 +124,24 @@ mod _event_rule_structure;
 mod _event_status;
 
 mod _locale_code;
+
+mod _managed_notification_channel_association_summary;
+
+mod _managed_notification_child_event;
+
+mod _managed_notification_child_event_overview;
+
+mod _managed_notification_child_event_summary;
+
+mod _managed_notification_configuration_structure;
+
+mod _managed_notification_event;
+
+mod _managed_notification_event_overview;
+
+mod _managed_notification_event_summary;
+
+mod _managed_source_event_metadata_summary;
 
 mod _media_element;
 
@@ -99,6 +169,8 @@ mod _notification_hub_status_summary;
 
 mod _notification_type;
 
+mod _notifications_access_for_organization;
+
 mod _resource;
 
 mod _schema_version;
@@ -106,6 +178,10 @@ mod _schema_version;
 mod _source_event_metadata;
 
 mod _source_event_metadata_summary;
+
+mod _summarization_dimension_detail;
+
+mod _summarization_dimension_overview;
 
 mod _text_part_type;
 

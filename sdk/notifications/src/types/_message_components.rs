@@ -6,7 +6,7 @@
 pub struct MessageComponents {
     /// <p>A sentence long summary. For example, titles or an email subject line.</p>
     pub headline: ::std::option::Option<::std::string::String>,
-    /// <p>A paragraph long or multiple sentence summary. For example, AWS Chatbot notifications.</p>
+    /// <p>A paragraph long or multiple sentence summary. For example, Chatbot notifications.</p>
     pub paragraph_summary: ::std::option::Option<::std::string::String>,
     /// <p>A complete summary with all possible relevant information.</p>
     pub complete_description: ::std::option::Option<::std::string::String>,
@@ -20,7 +20,7 @@ impl MessageComponents {
     pub fn headline(&self) -> ::std::option::Option<&str> {
         self.headline.as_deref()
     }
-    /// <p>A paragraph long or multiple sentence summary. For example, AWS Chatbot notifications.</p>
+    /// <p>A paragraph long or multiple sentence summary. For example, Chatbot notifications.</p>
     pub fn paragraph_summary(&self) -> ::std::option::Option<&str> {
         self.paragraph_summary.as_deref()
     }
@@ -68,17 +68,17 @@ impl MessageComponentsBuilder {
     pub fn get_headline(&self) -> &::std::option::Option<::std::string::String> {
         &self.headline
     }
-    /// <p>A paragraph long or multiple sentence summary. For example, AWS Chatbot notifications.</p>
+    /// <p>A paragraph long or multiple sentence summary. For example, Chatbot notifications.</p>
     pub fn paragraph_summary(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.paragraph_summary = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A paragraph long or multiple sentence summary. For example, AWS Chatbot notifications.</p>
+    /// <p>A paragraph long or multiple sentence summary. For example, Chatbot notifications.</p>
     pub fn set_paragraph_summary(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.paragraph_summary = input;
         self
     }
-    /// <p>A paragraph long or multiple sentence summary. For example, AWS Chatbot notifications.</p>
+    /// <p>A paragraph long or multiple sentence summary. For example, Chatbot notifications.</p>
     pub fn get_paragraph_summary(&self) -> &::std::option::Option<::std::string::String> {
         &self.paragraph_summary
     }

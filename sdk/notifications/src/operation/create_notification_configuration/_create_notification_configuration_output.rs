@@ -3,89 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateNotificationConfigurationOutput {
-    /// <p>The Amazon Resource Name (ARN) of the the resource.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>NotificationConfiguration</code>.</p>
     pub arn: ::std::string::String,
-    /// <p>The status of this NotificationConfiguration.</p>
-    /// <p>The status should always be <code>INACTIVE</code> when part of the CreateNotificationConfiguration response.</p>
-    /// <ul>
-    /// <li>
-    /// <p>Values:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>ACTIVE</code></p>
-    /// <ul>
-    /// <li>
-    /// <p>All EventRules are <code>ACTIVE</code> and any call can be run.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><code>PARTIALLY_ACTIVE</code></p>
-    /// <ul>
-    /// <li>
-    /// <p>Some EventRules are <code>ACTIVE</code> and some are <code>INACTIVE</code>.</p></li>
-    /// <li>
-    /// <p>Any call can be run.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><code>INACTIVE</code></p>
-    /// <ul>
-    /// <li>
-    /// <p>All EventRules are <code>INACTIVE</code> and any call can be run.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><code>DELETING</code></p>
-    /// <ul>
-    /// <li>
-    /// <p>This NotificationConfiguration is being deleted.</p></li>
-    /// <li>
-    /// <p>Only <code>GET</code> and <code>LIST</code> calls can be run.</p></li>
-    /// </ul></li>
-    /// </ul></li>
-    /// </ul>
+    /// <p>The current status of this <code>NotificationConfiguration</code>.</p>
     pub status: crate::types::NotificationConfigurationStatus,
     _request_id: Option<String>,
 }
 impl CreateNotificationConfigurationOutput {
-    /// <p>The Amazon Resource Name (ARN) of the the resource.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>NotificationConfiguration</code>.</p>
     pub fn arn(&self) -> &str {
         use std::ops::Deref;
         self.arn.deref()
     }
-    /// <p>The status of this NotificationConfiguration.</p>
-    /// <p>The status should always be <code>INACTIVE</code> when part of the CreateNotificationConfiguration response.</p>
-    /// <ul>
-    /// <li>
-    /// <p>Values:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>ACTIVE</code></p>
-    /// <ul>
-    /// <li>
-    /// <p>All EventRules are <code>ACTIVE</code> and any call can be run.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><code>PARTIALLY_ACTIVE</code></p>
-    /// <ul>
-    /// <li>
-    /// <p>Some EventRules are <code>ACTIVE</code> and some are <code>INACTIVE</code>.</p></li>
-    /// <li>
-    /// <p>Any call can be run.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><code>INACTIVE</code></p>
-    /// <ul>
-    /// <li>
-    /// <p>All EventRules are <code>INACTIVE</code> and any call can be run.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><code>DELETING</code></p>
-    /// <ul>
-    /// <li>
-    /// <p>This NotificationConfiguration is being deleted.</p></li>
-    /// <li>
-    /// <p>Only <code>GET</code> and <code>LIST</code> calls can be run.</p></li>
-    /// </ul></li>
-    /// </ul></li>
-    /// </ul>
+    /// <p>The current status of this <code>NotificationConfiguration</code>.</p>
     pub fn status(&self) -> &crate::types::NotificationConfigurationStatus {
         &self.status
     }
@@ -111,138 +41,33 @@ pub struct CreateNotificationConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateNotificationConfigurationOutputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the the resource.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>NotificationConfiguration</code>.</p>
     /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the the resource.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>NotificationConfiguration</code>.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the the resource.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>NotificationConfiguration</code>.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>The status of this NotificationConfiguration.</p>
-    /// <p>The status should always be <code>INACTIVE</code> when part of the CreateNotificationConfiguration response.</p>
-    /// <ul>
-    /// <li>
-    /// <p>Values:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>ACTIVE</code></p>
-    /// <ul>
-    /// <li>
-    /// <p>All EventRules are <code>ACTIVE</code> and any call can be run.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><code>PARTIALLY_ACTIVE</code></p>
-    /// <ul>
-    /// <li>
-    /// <p>Some EventRules are <code>ACTIVE</code> and some are <code>INACTIVE</code>.</p></li>
-    /// <li>
-    /// <p>Any call can be run.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><code>INACTIVE</code></p>
-    /// <ul>
-    /// <li>
-    /// <p>All EventRules are <code>INACTIVE</code> and any call can be run.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><code>DELETING</code></p>
-    /// <ul>
-    /// <li>
-    /// <p>This NotificationConfiguration is being deleted.</p></li>
-    /// <li>
-    /// <p>Only <code>GET</code> and <code>LIST</code> calls can be run.</p></li>
-    /// </ul></li>
-    /// </ul></li>
-    /// </ul>
+    /// <p>The current status of this <code>NotificationConfiguration</code>.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::NotificationConfigurationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of this NotificationConfiguration.</p>
-    /// <p>The status should always be <code>INACTIVE</code> when part of the CreateNotificationConfiguration response.</p>
-    /// <ul>
-    /// <li>
-    /// <p>Values:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>ACTIVE</code></p>
-    /// <ul>
-    /// <li>
-    /// <p>All EventRules are <code>ACTIVE</code> and any call can be run.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><code>PARTIALLY_ACTIVE</code></p>
-    /// <ul>
-    /// <li>
-    /// <p>Some EventRules are <code>ACTIVE</code> and some are <code>INACTIVE</code>.</p></li>
-    /// <li>
-    /// <p>Any call can be run.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><code>INACTIVE</code></p>
-    /// <ul>
-    /// <li>
-    /// <p>All EventRules are <code>INACTIVE</code> and any call can be run.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><code>DELETING</code></p>
-    /// <ul>
-    /// <li>
-    /// <p>This NotificationConfiguration is being deleted.</p></li>
-    /// <li>
-    /// <p>Only <code>GET</code> and <code>LIST</code> calls can be run.</p></li>
-    /// </ul></li>
-    /// </ul></li>
-    /// </ul>
+    /// <p>The current status of this <code>NotificationConfiguration</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::NotificationConfigurationStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of this NotificationConfiguration.</p>
-    /// <p>The status should always be <code>INACTIVE</code> when part of the CreateNotificationConfiguration response.</p>
-    /// <ul>
-    /// <li>
-    /// <p>Values:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>ACTIVE</code></p>
-    /// <ul>
-    /// <li>
-    /// <p>All EventRules are <code>ACTIVE</code> and any call can be run.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><code>PARTIALLY_ACTIVE</code></p>
-    /// <ul>
-    /// <li>
-    /// <p>Some EventRules are <code>ACTIVE</code> and some are <code>INACTIVE</code>.</p></li>
-    /// <li>
-    /// <p>Any call can be run.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><code>INACTIVE</code></p>
-    /// <ul>
-    /// <li>
-    /// <p>All EventRules are <code>INACTIVE</code> and any call can be run.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><code>DELETING</code></p>
-    /// <ul>
-    /// <li>
-    /// <p>This NotificationConfiguration is being deleted.</p></li>
-    /// <li>
-    /// <p>Only <code>GET</code> and <code>LIST</code> calls can be run.</p></li>
-    /// </ul></li>
-    /// </ul></li>
-    /// </ul>
+    /// <p>The current status of this <code>NotificationConfiguration</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::NotificationConfigurationStatus> {
         &self.status
     }

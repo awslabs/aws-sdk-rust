@@ -22,7 +22,7 @@ impl crate::operation::list_notification_hubs::builders::ListNotificationHubsInp
 }
 /// Fluent builder constructing a request to `ListNotificationHubs`.
 ///
-/// <p>Returns a list of NotificationHubs.</p>
+/// <p>Returns a list of <code>NotificationHubs</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListNotificationHubsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

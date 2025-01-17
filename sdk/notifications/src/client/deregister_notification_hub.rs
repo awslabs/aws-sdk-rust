@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeregisterNotificationHub`](crate::operation::deregister_notification_hub::builders::DeregisterNotificationHubFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`notification_hub_region(impl Into<String>)`](crate::operation::deregister_notification_hub::builders::DeregisterNotificationHubFluentBuilder::notification_hub_region) / [`set_notification_hub_region(Option<String>)`](crate::operation::deregister_notification_hub::builders::DeregisterNotificationHubFluentBuilder::set_notification_hub_region):<br>required: **true**<br><p>The NotificationHub Region.</p><br>
+    ///   - [`notification_hub_region(impl Into<String>)`](crate::operation::deregister_notification_hub::builders::DeregisterNotificationHubFluentBuilder::notification_hub_region) / [`set_notification_hub_region(Option<String>)`](crate::operation::deregister_notification_hub::builders::DeregisterNotificationHubFluentBuilder::set_notification_hub_region):<br>required: **true**<br><p>The <code>NotificationConfiguration</code> Region.</p><br>
     /// - On success, responds with [`DeregisterNotificationHubOutput`](crate::operation::deregister_notification_hub::DeregisterNotificationHubOutput) with field(s):
-    ///   - [`notification_hub_region(String)`](crate::operation::deregister_notification_hub::DeregisterNotificationHubOutput::notification_hub_region): <p>The NotificationHub Region.</p>
-    ///   - [`status_summary(Option<NotificationHubStatusSummary>)`](crate::operation::deregister_notification_hub::DeregisterNotificationHubOutput::status_summary): <p>NotificationHub status information.</p>
+    ///   - [`notification_hub_region(String)`](crate::operation::deregister_notification_hub::DeregisterNotificationHubOutput::notification_hub_region): <p>The <code>NotificationConfiguration</code> Region.</p>
+    ///   - [`status_summary(Option<NotificationHubStatusSummary>)`](crate::operation::deregister_notification_hub::DeregisterNotificationHubOutput::status_summary): <p><code>NotificationConfiguration</code> status information.</p>
     /// - On failure, responds with [`SdkError<DeregisterNotificationHubError>`](crate::operation::deregister_notification_hub::DeregisterNotificationHubError)
     pub fn deregister_notification_hub(&self) -> crate::operation::deregister_notification_hub::builders::DeregisterNotificationHubFluentBuilder {
         crate::operation::deregister_notification_hub::builders::DeregisterNotificationHubFluentBuilder::new(self.handle.clone())

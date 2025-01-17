@@ -11,15 +11,15 @@ pub struct SourceEventMetadata {
     pub source_event_id: ::std::string::String,
     /// <p>The Region the event originated from.</p>
     pub event_origin_region: ::std::option::Option<::std::string::String>,
-    /// <p>The Primary AWS account of Source Event</p>
+    /// <p>The primary Amazon Web Services account of <code>SourceEvent</code>.</p>
     pub related_account: ::std::string::String,
-    /// <p>The AWS servvice the event originates from. For example <code>aws.cloudwatch</code>.</p>
+    /// <p>The Amazon Web Services service the event originates from. For example <code>aws.cloudwatch</code>.</p>
     pub source: ::std::string::String,
     /// <p>The date and time the source event occurred. This is based on the Source Event.</p>
     pub event_occurrence_time: ::aws_smithy_types::DateTime,
-    /// <p>The type of event. For example, an AWS CloudWatch state change.</p>
+    /// <p>The type of event. For example, an Amazon CloudWatch state change.</p>
     pub event_type: ::std::string::String,
-    /// <p>A list of resources related to this NotificationEvent.</p>
+    /// <p>A list of resources related to this <code>NotificationEvent</code>.</p>
     pub related_resources: ::std::vec::Vec<crate::types::Resource>,
 }
 impl SourceEventMetadata {
@@ -37,12 +37,12 @@ impl SourceEventMetadata {
     pub fn event_origin_region(&self) -> ::std::option::Option<&str> {
         self.event_origin_region.as_deref()
     }
-    /// <p>The Primary AWS account of Source Event</p>
+    /// <p>The primary Amazon Web Services account of <code>SourceEvent</code>.</p>
     pub fn related_account(&self) -> &str {
         use std::ops::Deref;
         self.related_account.deref()
     }
-    /// <p>The AWS servvice the event originates from. For example <code>aws.cloudwatch</code>.</p>
+    /// <p>The Amazon Web Services service the event originates from. For example <code>aws.cloudwatch</code>.</p>
     pub fn source(&self) -> &str {
         use std::ops::Deref;
         self.source.deref()
@@ -51,12 +51,12 @@ impl SourceEventMetadata {
     pub fn event_occurrence_time(&self) -> &::aws_smithy_types::DateTime {
         &self.event_occurrence_time
     }
-    /// <p>The type of event. For example, an AWS CloudWatch state change.</p>
+    /// <p>The type of event. For example, an Amazon CloudWatch state change.</p>
     pub fn event_type(&self) -> &str {
         use std::ops::Deref;
         self.event_type.deref()
     }
-    /// <p>A list of resources related to this NotificationEvent.</p>
+    /// <p>A list of resources related to this <code>NotificationEvent</code>.</p>
     pub fn related_resources(&self) -> &[crate::types::Resource] {
         use std::ops::Deref;
         self.related_resources.deref()
@@ -127,33 +127,33 @@ impl SourceEventMetadataBuilder {
     pub fn get_event_origin_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_origin_region
     }
-    /// <p>The Primary AWS account of Source Event</p>
+    /// <p>The primary Amazon Web Services account of <code>SourceEvent</code>.</p>
     /// This field is required.
     pub fn related_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.related_account = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Primary AWS account of Source Event</p>
+    /// <p>The primary Amazon Web Services account of <code>SourceEvent</code>.</p>
     pub fn set_related_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.related_account = input;
         self
     }
-    /// <p>The Primary AWS account of Source Event</p>
+    /// <p>The primary Amazon Web Services account of <code>SourceEvent</code>.</p>
     pub fn get_related_account(&self) -> &::std::option::Option<::std::string::String> {
         &self.related_account
     }
-    /// <p>The AWS servvice the event originates from. For example <code>aws.cloudwatch</code>.</p>
+    /// <p>The Amazon Web Services service the event originates from. For example <code>aws.cloudwatch</code>.</p>
     /// This field is required.
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS servvice the event originates from. For example <code>aws.cloudwatch</code>.</p>
+    /// <p>The Amazon Web Services service the event originates from. For example <code>aws.cloudwatch</code>.</p>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source = input;
         self
     }
-    /// <p>The AWS servvice the event originates from. For example <code>aws.cloudwatch</code>.</p>
+    /// <p>The Amazon Web Services service the event originates from. For example <code>aws.cloudwatch</code>.</p>
     pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
         &self.source
     }
@@ -172,18 +172,18 @@ impl SourceEventMetadataBuilder {
     pub fn get_event_occurrence_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.event_occurrence_time
     }
-    /// <p>The type of event. For example, an AWS CloudWatch state change.</p>
+    /// <p>The type of event. For example, an Amazon CloudWatch state change.</p>
     /// This field is required.
     pub fn event_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of event. For example, an AWS CloudWatch state change.</p>
+    /// <p>The type of event. For example, an Amazon CloudWatch state change.</p>
     pub fn set_event_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_type = input;
         self
     }
-    /// <p>The type of event. For example, an AWS CloudWatch state change.</p>
+    /// <p>The type of event. For example, an Amazon CloudWatch state change.</p>
     pub fn get_event_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_type
     }
@@ -191,19 +191,19 @@ impl SourceEventMetadataBuilder {
     ///
     /// To override the contents of this collection use [`set_related_resources`](Self::set_related_resources).
     ///
-    /// <p>A list of resources related to this NotificationEvent.</p>
+    /// <p>A list of resources related to this <code>NotificationEvent</code>.</p>
     pub fn related_resources(mut self, input: crate::types::Resource) -> Self {
         let mut v = self.related_resources.unwrap_or_default();
         v.push(input);
         self.related_resources = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of resources related to this NotificationEvent.</p>
+    /// <p>A list of resources related to this <code>NotificationEvent</code>.</p>
     pub fn set_related_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>) -> Self {
         self.related_resources = input;
         self
     }
-    /// <p>A list of resources related to this NotificationEvent.</p>
+    /// <p>A list of resources related to this <code>NotificationEvent</code>.</p>
     pub fn get_related_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Resource>> {
         &self.related_resources
     }

@@ -22,8 +22,8 @@ impl crate::operation::list_notification_events::builders::ListNotificationEvent
 }
 /// Fluent builder constructing a request to `ListNotificationEvents`.
 ///
-/// <p>Returns a list of NotificationEvents according to specified filters, in reverse chronological order (newest first).</p><important>
-/// <p>User Notifications stores notifications in the individual Regions you register as notification hubs and the Region of the source event rule. ListNotificationEvents only returns notifications stored in the same Region in which the action is called. User Notifications doesn't backfill notifications to new Regions selected as notification hubs. For this reason, we recommend that you make calls in your oldest registered notification hub. For more information, see <a href="https://docs.aws.amazon.com/notifications/latest/userguide/notification-hubs.html">Notification hubs</a> in the <i>AWS User Notifications User Guide</i>.</p>
+/// <p>Returns a list of <code>NotificationEvents</code> according to specified filters, in reverse chronological order (newest first).</p><important>
+/// <p>User Notifications stores notifications in the individual Regions you register as notification hubs and the Region of the source event rule. ListNotificationEvents only returns notifications stored in the same Region in which the action is called. User Notifications doesn't backfill notifications to new Regions selected as notification hubs. For this reason, we recommend that you make calls in your oldest registered notification hub. For more information, see <a href="https://docs.aws.amazon.com/notifications/latest/userguide/notification-hubs.html">Notification hubs</a> in the <i>Amazon Web Services User Notifications User Guide</i>.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListNotificationEventsFluentBuilder {
@@ -144,34 +144,34 @@ impl ListNotificationEventsFluentBuilder {
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_end_time()
     }
-    /// <p>The locale code of the language used for the retrieved NotificationEvent. The default locale is English <code>(en_US)</code>.</p>
+    /// <p>The locale code of the language used for the retrieved <code>NotificationEvent</code>. The default locale is English <code>(en_US)</code>.</p>
     pub fn locale(mut self, input: crate::types::LocaleCode) -> Self {
         self.inner = self.inner.locale(input);
         self
     }
-    /// <p>The locale code of the language used for the retrieved NotificationEvent. The default locale is English <code>(en_US)</code>.</p>
+    /// <p>The locale code of the language used for the retrieved <code>NotificationEvent</code>. The default locale is English <code>(en_US)</code>.</p>
     pub fn set_locale(mut self, input: ::std::option::Option<crate::types::LocaleCode>) -> Self {
         self.inner = self.inner.set_locale(input);
         self
     }
-    /// <p>The locale code of the language used for the retrieved NotificationEvent. The default locale is English <code>(en_US)</code>.</p>
+    /// <p>The locale code of the language used for the retrieved <code>NotificationEvent</code>. The default locale is English <code>(en_US)</code>.</p>
     pub fn get_locale(&self) -> &::std::option::Option<crate::types::LocaleCode> {
         self.inner.get_locale()
     }
     /// <p>The matched event source.</p>
-    /// <p>Must match one of the valid EventBridge sources. Only AWS service sourced events are supported. For example, <code>aws.ec2</code> and <code>aws.cloudwatch</code>. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event delivery from AWS services</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    /// <p>Must match one of the valid EventBridge sources. Only Amazon Web Services service sourced events are supported. For example, <code>aws.ec2</code> and <code>aws.cloudwatch</code>. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event delivery from Amazon Web Services services</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source(input.into());
         self
     }
     /// <p>The matched event source.</p>
-    /// <p>Must match one of the valid EventBridge sources. Only AWS service sourced events are supported. For example, <code>aws.ec2</code> and <code>aws.cloudwatch</code>. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event delivery from AWS services</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    /// <p>Must match one of the valid EventBridge sources. Only Amazon Web Services service sourced events are supported. For example, <code>aws.ec2</code> and <code>aws.cloudwatch</code>. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event delivery from Amazon Web Services services</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source(input);
         self
     }
     /// <p>The matched event source.</p>
-    /// <p>Must match one of the valid EventBridge sources. Only AWS service sourced events are supported. For example, <code>aws.ec2</code> and <code>aws.cloudwatch</code>. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event delivery from AWS services</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    /// <p>Must match one of the valid EventBridge sources. Only Amazon Web Services service sourced events are supported. For example, <code>aws.ec2</code> and <code>aws.cloudwatch</code>. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event delivery from Amazon Web Services services</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source()
     }
@@ -189,17 +189,17 @@ impl ListNotificationEventsFluentBuilder {
     pub fn get_include_child_events(&self) -> &::std::option::Option<bool> {
         self.inner.get_include_child_events()
     }
-    /// <p>The Amazon Resource Name (ARN) of the aggregatedNotificationEventArn to match.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>aggregatedNotificationEventArn</code> to match.</p>
     pub fn aggregate_notification_event_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aggregate_notification_event_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the aggregatedNotificationEventArn to match.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>aggregatedNotificationEventArn</code> to match.</p>
     pub fn set_aggregate_notification_event_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aggregate_notification_event_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the aggregatedNotificationEventArn to match.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>aggregatedNotificationEventArn</code> to match.</p>
     pub fn get_aggregate_notification_event_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_aggregate_notification_event_arn()
     }
@@ -217,17 +217,17 @@ impl ListNotificationEventsFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>The start token for paginated calls. Retrieved from the response of a previous ListEventRules call. Next token uses Base64 encoding.</p>
+    /// <p>The start token for paginated calls. Retrieved from the response of a previous <code>ListEventRules</code> call. Next token uses Base64 encoding.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>The start token for paginated calls. Retrieved from the response of a previous ListEventRules call. Next token uses Base64 encoding.</p>
+    /// <p>The start token for paginated calls. Retrieved from the response of a previous <code>ListEventRules</code> call. Next token uses Base64 encoding.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The start token for paginated calls. Retrieved from the response of a previous ListEventRules call. Next token uses Base64 encoding.</p>
+    /// <p>The start token for paginated calls. Retrieved from the response of a previous <code>ListEventRules</code> call. Next token uses Base64 encoding.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

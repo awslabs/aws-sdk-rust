@@ -5,7 +5,7 @@
 pub struct UpdateDatasourcePackagesInput {
     /// <p>The ARN of the behavior graph.</p>
     pub graph_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The data source package start for the behavior graph.</p>
+    /// <p>The data source package to start for the behavior graph.</p>
     pub datasource_packages: ::std::option::Option<::std::vec::Vec<crate::types::DatasourcePackage>>,
 }
 impl UpdateDatasourcePackagesInput {
@@ -13,7 +13,7 @@ impl UpdateDatasourcePackagesInput {
     pub fn graph_arn(&self) -> ::std::option::Option<&str> {
         self.graph_arn.as_deref()
     }
-    /// <p>The data source package start for the behavior graph.</p>
+    /// <p>The data source package to start for the behavior graph.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.datasource_packages.is_none()`.
     pub fn datasource_packages(&self) -> &[crate::types::DatasourcePackage] {
@@ -54,19 +54,19 @@ impl UpdateDatasourcePackagesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_datasource_packages`](Self::set_datasource_packages).
     ///
-    /// <p>The data source package start for the behavior graph.</p>
+    /// <p>The data source package to start for the behavior graph.</p>
     pub fn datasource_packages(mut self, input: crate::types::DatasourcePackage) -> Self {
         let mut v = self.datasource_packages.unwrap_or_default();
         v.push(input);
         self.datasource_packages = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The data source package start for the behavior graph.</p>
+    /// <p>The data source package to start for the behavior graph.</p>
     pub fn set_datasource_packages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatasourcePackage>>) -> Self {
         self.datasource_packages = input;
         self
     }
-    /// <p>The data source package start for the behavior graph.</p>
+    /// <p>The data source package to start for the behavior graph.</p>
     pub fn get_datasource_packages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasourcePackage>> {
         &self.datasource_packages
     }

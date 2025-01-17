@@ -48,7 +48,7 @@
 //!   - Decline an invitation to contribute to a behavior graph.
 //!   - Remove their account from a behavior graph.
 //!
-//! All API actions are logged as CloudTrail events. See [Logging Detective API Calls with CloudTrail](https://docs.aws.amazon.com/detective/latest/adminguide/logging-using-cloudtrail.html).
+//! All API actions are logged as CloudTrail events. See [Logging Detective API Calls with CloudTrail](https://docs.aws.amazon.com/detective/latest/userguide/logging-using-cloudtrail.html).
 //!
 //! ## Getting Started
 //!
@@ -62,7 +62,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-detective = "1.54.0"
+//! aws-sdk-detective = "1.54.1"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

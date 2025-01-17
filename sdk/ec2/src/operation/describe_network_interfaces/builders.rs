@@ -22,7 +22,7 @@ impl crate::operation::describe_network_interfaces::builders::DescribeNetworkInt
 }
 /// Fluent builder constructing a request to `DescribeNetworkInterfaces`.
 ///
-/// <p>Describes one or more of your network interfaces.</p>
+/// <p>Describes the specified network interfaces or all your network interfaces.</p>
 /// <p>If you have a large number of network interfaces, the operation fails unless you use pagination or one of the following filters: <code>group-id</code>, <code>mac-address</code>, <code>private-dns-name</code>, <code>private-ip-address</code>, <code>private-dns-name</code>, <code>subnet-id</code>, or <code>vpc-id</code>.</p><important>
 /// <p>We strongly recommend using only paginated requests. Unpaginated requests are susceptible to throttling and timeouts.</p>
 /// </important>

@@ -22,7 +22,7 @@ impl crate::operation::create_notification_configuration::builders::CreateNotifi
 }
 /// Fluent builder constructing a request to `CreateNotificationConfiguration`.
 ///
-/// <p>Creates a new NotificationConfiguration.</p>
+/// <p>Creates a new <code>NotificationConfiguration</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateNotificationConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,35 +108,35 @@ impl CreateNotificationConfigurationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the NotificationConfiguration. Supports RFC 3986's unreserved characters.</p>
+    /// <p>The name of the <code>NotificationConfiguration</code>. Supports RFC 3986's unreserved characters.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the NotificationConfiguration. Supports RFC 3986's unreserved characters.</p>
+    /// <p>The name of the <code>NotificationConfiguration</code>. Supports RFC 3986's unreserved characters.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the NotificationConfiguration. Supports RFC 3986's unreserved characters.</p>
+    /// <p>The name of the <code>NotificationConfiguration</code>. Supports RFC 3986's unreserved characters.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The description of the NotificationConfiguration.</p>
+    /// <p>The description of the <code>NotificationConfiguration</code>.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>The description of the NotificationConfiguration.</p>
+    /// <p>The description of the <code>NotificationConfiguration</code>.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>The description of the NotificationConfiguration.</p>
+    /// <p>The description of the <code>NotificationConfiguration</code>.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>The aggregation preference of the NotificationConfiguration.</p>
+    /// <p>The aggregation preference of the <code>NotificationConfiguration</code>.</p>
     /// <ul>
     /// <li>
     /// <p>Values:</p>
@@ -157,8 +157,7 @@ impl CreateNotificationConfigurationFluentBuilder {
     /// <p><code>NONE</code></p>
     /// <ul>
     /// <li>
-    /// <p>Don't aggregate notifications.</p>
-    /// <p>No delay in delivery.</p></li>
+    /// <p>Don't aggregate notifications.</p></li>
     /// </ul></li>
     /// </ul></li>
     /// </ul>
@@ -166,7 +165,7 @@ impl CreateNotificationConfigurationFluentBuilder {
         self.inner = self.inner.aggregation_duration(input);
         self
     }
-    /// <p>The aggregation preference of the NotificationConfiguration.</p>
+    /// <p>The aggregation preference of the <code>NotificationConfiguration</code>.</p>
     /// <ul>
     /// <li>
     /// <p>Values:</p>
@@ -187,8 +186,7 @@ impl CreateNotificationConfigurationFluentBuilder {
     /// <p><code>NONE</code></p>
     /// <ul>
     /// <li>
-    /// <p>Don't aggregate notifications.</p>
-    /// <p>No delay in delivery.</p></li>
+    /// <p>Don't aggregate notifications.</p></li>
     /// </ul></li>
     /// </ul></li>
     /// </ul>
@@ -196,7 +194,7 @@ impl CreateNotificationConfigurationFluentBuilder {
         self.inner = self.inner.set_aggregation_duration(input);
         self
     }
-    /// <p>The aggregation preference of the NotificationConfiguration.</p>
+    /// <p>The aggregation preference of the <code>NotificationConfiguration</code>.</p>
     /// <ul>
     /// <li>
     /// <p>Values:</p>
@@ -217,8 +215,7 @@ impl CreateNotificationConfigurationFluentBuilder {
     /// <p><code>NONE</code></p>
     /// <ul>
     /// <li>
-    /// <p>Don't aggregate notifications.</p>
-    /// <p>No delay in delivery.</p></li>
+    /// <p>Don't aggregate notifications.</p></li>
     /// </ul></li>
     /// </ul></li>
     /// </ul>

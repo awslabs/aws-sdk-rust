@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`arn(impl Into<String>)`](crate::operation::disassociate_channel::builders::DisassociateChannelFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::disassociate_channel::builders::DisassociateChannelFluentBuilder::set_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the Channel to disassociate.</p><br>
-    ///   - [`notification_configuration_arn(impl Into<String>)`](crate::operation::disassociate_channel::builders::DisassociateChannelFluentBuilder::notification_configuration_arn) / [`set_notification_configuration_arn(Option<String>)`](crate::operation::disassociate_channel::builders::DisassociateChannelFluentBuilder::set_notification_configuration_arn):<br>required: **true**<br><p>The ARN of the NotificationConfiguration to disassociate.</p><br>
+    ///   - [`notification_configuration_arn(impl Into<String>)`](crate::operation::disassociate_channel::builders::DisassociateChannelFluentBuilder::notification_configuration_arn) / [`set_notification_configuration_arn(Option<String>)`](crate::operation::disassociate_channel::builders::DisassociateChannelFluentBuilder::set_notification_configuration_arn):<br>required: **true**<br><p>The ARN of the <code>NotificationConfiguration</code> to disassociate.</p><br>
     /// - On success, responds with [`DisassociateChannelOutput`](crate::operation::disassociate_channel::DisassociateChannelOutput)
     /// - On failure, responds with [`SdkError<DisassociateChannelError>`](crate::operation::disassociate_channel::DisassociateChannelError)
     pub fn disassociate_channel(&self) -> crate::operation::disassociate_channel::builders::DisassociateChannelFluentBuilder {

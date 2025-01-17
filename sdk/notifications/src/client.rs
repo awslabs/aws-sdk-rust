@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`ListTagsForResource`](crate::operation::list_tags_for_resource) operation has
-/// a [`Client::list_tags_for_resource`], function which returns a builder for that operation.
+/// For example, the [`ListManagedNotificationChannelAssociations`](crate::operation::list_managed_notification_channel_associations) operation has
+/// a [`Client::list_managed_notification_channel_associations`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.list_tags_for_resource()
-///     .arn("example")
+/// let result = client.list_managed_notification_channel_associations()
+///     .managed_notification_configuration_arn("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -138,6 +138,10 @@ impl Client {
 
 mod associate_channel;
 
+mod associate_managed_notification_account_contact;
+
+mod associate_managed_notification_additional_channel;
+
 mod create_event_rule;
 
 mod create_notification_configuration;
@@ -153,7 +157,7 @@ mod create_notification_configuration;
 /// # let client: aws_sdk_notifications::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.list_tags_for_resource()
+/// let result = client.list_managed_notification_channel_associations()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -175,17 +179,41 @@ mod delete_notification_configuration;
 
 mod deregister_notification_hub;
 
+mod disable_notifications_access_for_organization;
+
 mod disassociate_channel;
 
+mod disassociate_managed_notification_account_contact;
+
+mod disassociate_managed_notification_additional_channel;
+
+mod enable_notifications_access_for_organization;
+
 mod get_event_rule;
+
+mod get_managed_notification_child_event;
+
+mod get_managed_notification_configuration;
+
+mod get_managed_notification_event;
 
 mod get_notification_configuration;
 
 mod get_notification_event;
 
+mod get_notifications_access_for_organization;
+
 mod list_channels;
 
 mod list_event_rules;
+
+mod list_managed_notification_channel_associations;
+
+mod list_managed_notification_child_events;
+
+mod list_managed_notification_configurations;
+
+mod list_managed_notification_events;
 
 mod list_notification_configurations;
 

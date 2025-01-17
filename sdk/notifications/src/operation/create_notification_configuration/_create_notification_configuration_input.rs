@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateNotificationConfigurationInput {
-    /// <p>The name of the NotificationConfiguration. Supports RFC 3986's unreserved characters.</p>
+    /// <p>The name of the <code>NotificationConfiguration</code>. Supports RFC 3986's unreserved characters.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The description of the NotificationConfiguration.</p>
+    /// <p>The description of the <code>NotificationConfiguration</code>.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The aggregation preference of the NotificationConfiguration.</p>
+    /// <p>The aggregation preference of the <code>NotificationConfiguration</code>.</p>
     /// <ul>
     /// <li>
     /// <p>Values:</p>
@@ -28,8 +28,7 @@ pub struct CreateNotificationConfigurationInput {
     /// <p><code>NONE</code></p>
     /// <ul>
     /// <li>
-    /// <p>Don't aggregate notifications.</p>
-    /// <p>No delay in delivery.</p></li>
+    /// <p>Don't aggregate notifications.</p></li>
     /// </ul></li>
     /// </ul></li>
     /// </ul>
@@ -38,15 +37,15 @@ pub struct CreateNotificationConfigurationInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateNotificationConfigurationInput {
-    /// <p>The name of the NotificationConfiguration. Supports RFC 3986's unreserved characters.</p>
+    /// <p>The name of the <code>NotificationConfiguration</code>. Supports RFC 3986's unreserved characters.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The description of the NotificationConfiguration.</p>
+    /// <p>The description of the <code>NotificationConfiguration</code>.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The aggregation preference of the NotificationConfiguration.</p>
+    /// <p>The aggregation preference of the <code>NotificationConfiguration</code>.</p>
     /// <ul>
     /// <li>
     /// <p>Values:</p>
@@ -67,8 +66,7 @@ impl CreateNotificationConfigurationInput {
     /// <p><code>NONE</code></p>
     /// <ul>
     /// <li>
-    /// <p>Don't aggregate notifications.</p>
-    /// <p>No delay in delivery.</p></li>
+    /// <p>Don't aggregate notifications.</p></li>
     /// </ul></li>
     /// </ul></li>
     /// </ul>
@@ -97,37 +95,37 @@ pub struct CreateNotificationConfigurationInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateNotificationConfigurationInputBuilder {
-    /// <p>The name of the NotificationConfiguration. Supports RFC 3986's unreserved characters.</p>
+    /// <p>The name of the <code>NotificationConfiguration</code>. Supports RFC 3986's unreserved characters.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the NotificationConfiguration. Supports RFC 3986's unreserved characters.</p>
+    /// <p>The name of the <code>NotificationConfiguration</code>. Supports RFC 3986's unreserved characters.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the NotificationConfiguration. Supports RFC 3986's unreserved characters.</p>
+    /// <p>The name of the <code>NotificationConfiguration</code>. Supports RFC 3986's unreserved characters.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The description of the NotificationConfiguration.</p>
+    /// <p>The description of the <code>NotificationConfiguration</code>.</p>
     /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The description of the NotificationConfiguration.</p>
+    /// <p>The description of the <code>NotificationConfiguration</code>.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>The description of the NotificationConfiguration.</p>
+    /// <p>The description of the <code>NotificationConfiguration</code>.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The aggregation preference of the NotificationConfiguration.</p>
+    /// <p>The aggregation preference of the <code>NotificationConfiguration</code>.</p>
     /// <ul>
     /// <li>
     /// <p>Values:</p>
@@ -148,8 +146,7 @@ impl CreateNotificationConfigurationInputBuilder {
     /// <p><code>NONE</code></p>
     /// <ul>
     /// <li>
-    /// <p>Don't aggregate notifications.</p>
-    /// <p>No delay in delivery.</p></li>
+    /// <p>Don't aggregate notifications.</p></li>
     /// </ul></li>
     /// </ul></li>
     /// </ul>
@@ -157,7 +154,7 @@ impl CreateNotificationConfigurationInputBuilder {
         self.aggregation_duration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The aggregation preference of the NotificationConfiguration.</p>
+    /// <p>The aggregation preference of the <code>NotificationConfiguration</code>.</p>
     /// <ul>
     /// <li>
     /// <p>Values:</p>
@@ -178,8 +175,7 @@ impl CreateNotificationConfigurationInputBuilder {
     /// <p><code>NONE</code></p>
     /// <ul>
     /// <li>
-    /// <p>Don't aggregate notifications.</p>
-    /// <p>No delay in delivery.</p></li>
+    /// <p>Don't aggregate notifications.</p></li>
     /// </ul></li>
     /// </ul></li>
     /// </ul>
@@ -187,7 +183,7 @@ impl CreateNotificationConfigurationInputBuilder {
         self.aggregation_duration = input;
         self
     }
-    /// <p>The aggregation preference of the NotificationConfiguration.</p>
+    /// <p>The aggregation preference of the <code>NotificationConfiguration</code>.</p>
     /// <ul>
     /// <li>
     /// <p>Values:</p>
@@ -208,8 +204,7 @@ impl CreateNotificationConfigurationInputBuilder {
     /// <p><code>NONE</code></p>
     /// <ul>
     /// <li>
-    /// <p>Don't aggregate notifications.</p>
-    /// <p>No delay in delivery.</p></li>
+    /// <p>Don't aggregate notifications.</p></li>
     /// </ul></li>
     /// </ul></li>
     /// </ul>

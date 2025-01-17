@@ -5,50 +5,15 @@
 pub struct GetNotificationConfigurationOutput {
     /// <p>The ARN of the resource.</p>
     pub arn: ::std::string::String,
-    /// <p>The name of the NotificationConfiguration.</p>
+    /// <p>The name of the <code>NotificationConfiguration</code>.</p>
     pub name: ::std::string::String,
-    /// <p>The description of the NotificationConfiguration.</p>
+    /// <p>The description of the <code>NotificationConfiguration</code>.</p>
     pub description: ::std::string::String,
-    /// <p>The status of this NotificationConfiguration.</p>
-    /// <p>The status should always be <code>INACTIVE</code> when part of the CreateNotificationConfiguration response.</p>
-    /// <ul>
-    /// <li>
-    /// <p>Values:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>ACTIVE</code></p>
-    /// <ul>
-    /// <li>
-    /// <p>All EventRules are <code>ACTIVE</code> and any call can be run.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><code>PARTIALLY_ACTIVE</code></p>
-    /// <ul>
-    /// <li>
-    /// <p>Some EventRules are <code>ACTIVE</code> and some are <code>INACTIVE</code>.</p></li>
-    /// <li>
-    /// <p>Any call can be run.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><code>INACTIVE</code></p>
-    /// <ul>
-    /// <li>
-    /// <p>All EventRules are <code>INACTIVE</code> and any call can be run.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><code>DELETING</code></p>
-    /// <ul>
-    /// <li>
-    /// <p>This NotificationConfiguration is being deleted. Only <code>GET</code> and <code>LIST</code> calls can be run.</p></li>
-    /// <li>
-    /// <p>Only <code>GET</code> and <code>LIST</code> calls can be run.</p></li>
-    /// </ul></li>
-    /// </ul></li>
-    /// </ul>
+    /// <p>The status of this <code>NotificationConfiguration</code>.</p>
     pub status: crate::types::NotificationConfigurationStatus,
-    /// <p>The creation time of the NotificationConfiguration.</p>
+    /// <p>The creation time of the <code>NotificationConfiguration</code>.</p>
     pub creation_time: ::aws_smithy_types::DateTime,
-    /// <p>The aggregation preference of the NotificationConfiguration.</p>
+    /// <p>The aggregation preference of the <code>NotificationConfiguration</code>.</p>
     /// <ul>
     /// <li>
     /// <p>Values:</p>
@@ -69,8 +34,7 @@ pub struct GetNotificationConfigurationOutput {
     /// <p><code>NONE</code></p>
     /// <ul>
     /// <li>
-    /// <p>Don't aggregate notifications.</p>
-    /// <p>No delay in delivery.</p></li>
+    /// <p>Don't aggregate notifications.</p></li>
     /// </ul></li>
     /// </ul></li>
     /// </ul>
@@ -83,60 +47,25 @@ impl GetNotificationConfigurationOutput {
         use std::ops::Deref;
         self.arn.deref()
     }
-    /// <p>The name of the NotificationConfiguration.</p>
+    /// <p>The name of the <code>NotificationConfiguration</code>.</p>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// <p>The description of the NotificationConfiguration.</p>
+    /// <p>The description of the <code>NotificationConfiguration</code>.</p>
     pub fn description(&self) -> &str {
         use std::ops::Deref;
         self.description.deref()
     }
-    /// <p>The status of this NotificationConfiguration.</p>
-    /// <p>The status should always be <code>INACTIVE</code> when part of the CreateNotificationConfiguration response.</p>
-    /// <ul>
-    /// <li>
-    /// <p>Values:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>ACTIVE</code></p>
-    /// <ul>
-    /// <li>
-    /// <p>All EventRules are <code>ACTIVE</code> and any call can be run.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><code>PARTIALLY_ACTIVE</code></p>
-    /// <ul>
-    /// <li>
-    /// <p>Some EventRules are <code>ACTIVE</code> and some are <code>INACTIVE</code>.</p></li>
-    /// <li>
-    /// <p>Any call can be run.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><code>INACTIVE</code></p>
-    /// <ul>
-    /// <li>
-    /// <p>All EventRules are <code>INACTIVE</code> and any call can be run.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><code>DELETING</code></p>
-    /// <ul>
-    /// <li>
-    /// <p>This NotificationConfiguration is being deleted. Only <code>GET</code> and <code>LIST</code> calls can be run.</p></li>
-    /// <li>
-    /// <p>Only <code>GET</code> and <code>LIST</code> calls can be run.</p></li>
-    /// </ul></li>
-    /// </ul></li>
-    /// </ul>
+    /// <p>The status of this <code>NotificationConfiguration</code>.</p>
     pub fn status(&self) -> &crate::types::NotificationConfigurationStatus {
         &self.status
     }
-    /// <p>The creation time of the NotificationConfiguration.</p>
+    /// <p>The creation time of the <code>NotificationConfiguration</code>.</p>
     pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
         &self.creation_time
     }
-    /// <p>The aggregation preference of the NotificationConfiguration.</p>
+    /// <p>The aggregation preference of the <code>NotificationConfiguration</code>.</p>
     /// <ul>
     /// <li>
     /// <p>Values:</p>
@@ -157,8 +86,7 @@ impl GetNotificationConfigurationOutput {
     /// <p><code>NONE</code></p>
     /// <ul>
     /// <li>
-    /// <p>Don't aggregate notifications.</p>
-    /// <p>No delay in delivery.</p></li>
+    /// <p>Don't aggregate notifications.</p></li>
     /// </ul></li>
     /// </ul></li>
     /// </ul>
@@ -206,172 +134,67 @@ impl GetNotificationConfigurationOutputBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>The name of the NotificationConfiguration.</p>
+    /// <p>The name of the <code>NotificationConfiguration</code>.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the NotificationConfiguration.</p>
+    /// <p>The name of the <code>NotificationConfiguration</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the NotificationConfiguration.</p>
+    /// <p>The name of the <code>NotificationConfiguration</code>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The description of the NotificationConfiguration.</p>
+    /// <p>The description of the <code>NotificationConfiguration</code>.</p>
     /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The description of the NotificationConfiguration.</p>
+    /// <p>The description of the <code>NotificationConfiguration</code>.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>The description of the NotificationConfiguration.</p>
+    /// <p>The description of the <code>NotificationConfiguration</code>.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The status of this NotificationConfiguration.</p>
-    /// <p>The status should always be <code>INACTIVE</code> when part of the CreateNotificationConfiguration response.</p>
-    /// <ul>
-    /// <li>
-    /// <p>Values:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>ACTIVE</code></p>
-    /// <ul>
-    /// <li>
-    /// <p>All EventRules are <code>ACTIVE</code> and any call can be run.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><code>PARTIALLY_ACTIVE</code></p>
-    /// <ul>
-    /// <li>
-    /// <p>Some EventRules are <code>ACTIVE</code> and some are <code>INACTIVE</code>.</p></li>
-    /// <li>
-    /// <p>Any call can be run.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><code>INACTIVE</code></p>
-    /// <ul>
-    /// <li>
-    /// <p>All EventRules are <code>INACTIVE</code> and any call can be run.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><code>DELETING</code></p>
-    /// <ul>
-    /// <li>
-    /// <p>This NotificationConfiguration is being deleted. Only <code>GET</code> and <code>LIST</code> calls can be run.</p></li>
-    /// <li>
-    /// <p>Only <code>GET</code> and <code>LIST</code> calls can be run.</p></li>
-    /// </ul></li>
-    /// </ul></li>
-    /// </ul>
+    /// <p>The status of this <code>NotificationConfiguration</code>.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::NotificationConfigurationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of this NotificationConfiguration.</p>
-    /// <p>The status should always be <code>INACTIVE</code> when part of the CreateNotificationConfiguration response.</p>
-    /// <ul>
-    /// <li>
-    /// <p>Values:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>ACTIVE</code></p>
-    /// <ul>
-    /// <li>
-    /// <p>All EventRules are <code>ACTIVE</code> and any call can be run.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><code>PARTIALLY_ACTIVE</code></p>
-    /// <ul>
-    /// <li>
-    /// <p>Some EventRules are <code>ACTIVE</code> and some are <code>INACTIVE</code>.</p></li>
-    /// <li>
-    /// <p>Any call can be run.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><code>INACTIVE</code></p>
-    /// <ul>
-    /// <li>
-    /// <p>All EventRules are <code>INACTIVE</code> and any call can be run.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><code>DELETING</code></p>
-    /// <ul>
-    /// <li>
-    /// <p>This NotificationConfiguration is being deleted. Only <code>GET</code> and <code>LIST</code> calls can be run.</p></li>
-    /// <li>
-    /// <p>Only <code>GET</code> and <code>LIST</code> calls can be run.</p></li>
-    /// </ul></li>
-    /// </ul></li>
-    /// </ul>
+    /// <p>The status of this <code>NotificationConfiguration</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::NotificationConfigurationStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of this NotificationConfiguration.</p>
-    /// <p>The status should always be <code>INACTIVE</code> when part of the CreateNotificationConfiguration response.</p>
-    /// <ul>
-    /// <li>
-    /// <p>Values:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>ACTIVE</code></p>
-    /// <ul>
-    /// <li>
-    /// <p>All EventRules are <code>ACTIVE</code> and any call can be run.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><code>PARTIALLY_ACTIVE</code></p>
-    /// <ul>
-    /// <li>
-    /// <p>Some EventRules are <code>ACTIVE</code> and some are <code>INACTIVE</code>.</p></li>
-    /// <li>
-    /// <p>Any call can be run.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><code>INACTIVE</code></p>
-    /// <ul>
-    /// <li>
-    /// <p>All EventRules are <code>INACTIVE</code> and any call can be run.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><code>DELETING</code></p>
-    /// <ul>
-    /// <li>
-    /// <p>This NotificationConfiguration is being deleted. Only <code>GET</code> and <code>LIST</code> calls can be run.</p></li>
-    /// <li>
-    /// <p>Only <code>GET</code> and <code>LIST</code> calls can be run.</p></li>
-    /// </ul></li>
-    /// </ul></li>
-    /// </ul>
+    /// <p>The status of this <code>NotificationConfiguration</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::NotificationConfigurationStatus> {
         &self.status
     }
-    /// <p>The creation time of the NotificationConfiguration.</p>
+    /// <p>The creation time of the <code>NotificationConfiguration</code>.</p>
     /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The creation time of the NotificationConfiguration.</p>
+    /// <p>The creation time of the <code>NotificationConfiguration</code>.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
-    /// <p>The creation time of the NotificationConfiguration.</p>
+    /// <p>The creation time of the <code>NotificationConfiguration</code>.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
-    /// <p>The aggregation preference of the NotificationConfiguration.</p>
+    /// <p>The aggregation preference of the <code>NotificationConfiguration</code>.</p>
     /// <ul>
     /// <li>
     /// <p>Values:</p>
@@ -392,8 +215,7 @@ impl GetNotificationConfigurationOutputBuilder {
     /// <p><code>NONE</code></p>
     /// <ul>
     /// <li>
-    /// <p>Don't aggregate notifications.</p>
-    /// <p>No delay in delivery.</p></li>
+    /// <p>Don't aggregate notifications.</p></li>
     /// </ul></li>
     /// </ul></li>
     /// </ul>
@@ -401,7 +223,7 @@ impl GetNotificationConfigurationOutputBuilder {
         self.aggregation_duration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The aggregation preference of the NotificationConfiguration.</p>
+    /// <p>The aggregation preference of the <code>NotificationConfiguration</code>.</p>
     /// <ul>
     /// <li>
     /// <p>Values:</p>
@@ -422,8 +244,7 @@ impl GetNotificationConfigurationOutputBuilder {
     /// <p><code>NONE</code></p>
     /// <ul>
     /// <li>
-    /// <p>Don't aggregate notifications.</p>
-    /// <p>No delay in delivery.</p></li>
+    /// <p>Don't aggregate notifications.</p></li>
     /// </ul></li>
     /// </ul></li>
     /// </ul>
@@ -431,7 +252,7 @@ impl GetNotificationConfigurationOutputBuilder {
         self.aggregation_duration = input;
         self
     }
-    /// <p>The aggregation preference of the NotificationConfiguration.</p>
+    /// <p>The aggregation preference of the <code>NotificationConfiguration</code>.</p>
     /// <ul>
     /// <li>
     /// <p>Values:</p>
@@ -452,8 +273,7 @@ impl GetNotificationConfigurationOutputBuilder {
     /// <p><code>NONE</code></p>
     /// <ul>
     /// <li>
-    /// <p>Don't aggregate notifications.</p>
-    /// <p>No delay in delivery.</p></li>
+    /// <p>Don't aggregate notifications.</p></li>
     /// </ul></li>
     /// </ul></li>
     /// </ul>

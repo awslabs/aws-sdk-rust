@@ -5,7 +5,7 @@
 pub struct DisassociateChannelInput {
     /// <p>The Amazon Resource Name (ARN) of the Channel to disassociate.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of the NotificationConfiguration to disassociate.</p>
+    /// <p>The ARN of the <code>NotificationConfiguration</code> to disassociate.</p>
     pub notification_configuration_arn: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateChannelInput {
@@ -13,7 +13,7 @@ impl DisassociateChannelInput {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The ARN of the NotificationConfiguration to disassociate.</p>
+    /// <p>The ARN of the <code>NotificationConfiguration</code> to disassociate.</p>
     pub fn notification_configuration_arn(&self) -> ::std::option::Option<&str> {
         self.notification_configuration_arn.as_deref()
     }
@@ -48,18 +48,18 @@ impl DisassociateChannelInputBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>The ARN of the NotificationConfiguration to disassociate.</p>
+    /// <p>The ARN of the <code>NotificationConfiguration</code> to disassociate.</p>
     /// This field is required.
     pub fn notification_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notification_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the NotificationConfiguration to disassociate.</p>
+    /// <p>The ARN of the <code>NotificationConfiguration</code> to disassociate.</p>
     pub fn set_notification_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notification_configuration_arn = input;
         self
     }
-    /// <p>The ARN of the NotificationConfiguration to disassociate.</p>
+    /// <p>The ARN of the <code>NotificationConfiguration</code> to disassociate.</p>
     pub fn get_notification_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.notification_configuration_arn
     }

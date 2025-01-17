@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteNotificationConfiguration`](crate::operation::delete_notification_configuration::builders::DeleteNotificationConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::delete_notification_configuration::builders::DeleteNotificationConfigurationFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_notification_configuration::builders::DeleteNotificationConfigurationFluentBuilder::set_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the NotificationConfiguration to delete.</p><br>
+    ///   - [`arn(impl Into<String>)`](crate::operation::delete_notification_configuration::builders::DeleteNotificationConfigurationFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_notification_configuration::builders::DeleteNotificationConfigurationFluentBuilder::set_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the <code>NotificationConfiguration</code> to delete.</p><br>
     /// - On success, responds with [`DeleteNotificationConfigurationOutput`](crate::operation::delete_notification_configuration::DeleteNotificationConfigurationOutput)
     /// - On failure, responds with [`SdkError<DeleteNotificationConfigurationError>`](crate::operation::delete_notification_configuration::DeleteNotificationConfigurationError)
     pub fn delete_notification_configuration(

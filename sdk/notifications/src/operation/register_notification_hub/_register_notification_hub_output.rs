@@ -3,9 +3,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterNotificationHubOutput {
-    /// <p>The Region of the NotificationHub.</p>
+    /// <p>The Region of the <code>NotificationHub</code>.</p>
     pub notification_hub_region: ::std::string::String,
-    /// <p>NotificationHub status information.</p>
+    /// <p>Provides additional information about the current <code>NotificationConfiguration</code> status information.</p>
     pub status_summary: ::std::option::Option<crate::types::NotificationHubStatusSummary>,
     /// <p>The date the resource was created.</p>
     pub creation_time: ::aws_smithy_types::DateTime,
@@ -14,12 +14,12 @@ pub struct RegisterNotificationHubOutput {
     _request_id: Option<String>,
 }
 impl RegisterNotificationHubOutput {
-    /// <p>The Region of the NotificationHub.</p>
+    /// <p>The Region of the <code>NotificationHub</code>.</p>
     pub fn notification_hub_region(&self) -> &str {
         use std::ops::Deref;
         self.notification_hub_region.deref()
     }
-    /// <p>NotificationHub status information.</p>
+    /// <p>Provides additional information about the current <code>NotificationConfiguration</code> status information.</p>
     pub fn status_summary(&self) -> ::std::option::Option<&crate::types::NotificationHubStatusSummary> {
         self.status_summary.as_ref()
     }
@@ -55,33 +55,33 @@ pub struct RegisterNotificationHubOutputBuilder {
     _request_id: Option<String>,
 }
 impl RegisterNotificationHubOutputBuilder {
-    /// <p>The Region of the NotificationHub.</p>
+    /// <p>The Region of the <code>NotificationHub</code>.</p>
     /// This field is required.
     pub fn notification_hub_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notification_hub_region = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Region of the NotificationHub.</p>
+    /// <p>The Region of the <code>NotificationHub</code>.</p>
     pub fn set_notification_hub_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notification_hub_region = input;
         self
     }
-    /// <p>The Region of the NotificationHub.</p>
+    /// <p>The Region of the <code>NotificationHub</code>.</p>
     pub fn get_notification_hub_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.notification_hub_region
     }
-    /// <p>NotificationHub status information.</p>
+    /// <p>Provides additional information about the current <code>NotificationConfiguration</code> status information.</p>
     /// This field is required.
     pub fn status_summary(mut self, input: crate::types::NotificationHubStatusSummary) -> Self {
         self.status_summary = ::std::option::Option::Some(input);
         self
     }
-    /// <p>NotificationHub status information.</p>
+    /// <p>Provides additional information about the current <code>NotificationConfiguration</code> status information.</p>
     pub fn set_status_summary(mut self, input: ::std::option::Option<crate::types::NotificationHubStatusSummary>) -> Self {
         self.status_summary = input;
         self
     }
-    /// <p>NotificationHub status information.</p>
+    /// <p>Provides additional information about the current <code>NotificationConfiguration</code> status information.</p>
     pub fn get_status_summary(&self) -> &::std::option::Option<crate::types::NotificationHubStatusSummary> {
         &self.status_summary
     }

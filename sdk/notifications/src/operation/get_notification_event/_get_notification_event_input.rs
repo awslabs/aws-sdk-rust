@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetNotificationEventInput {
-    /// <p>The Amazon Resource Name (ARN) of the NotificationEvent to return.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>NotificationEvent</code> to return.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>The locale code of the language used for the retrieved NotificationEvent. The default locale is English <code>en_US</code>.</p>
+    /// <p>The locale code of the language used for the retrieved <code>NotificationEvent</code>. The default locale is English <code>en_US</code>.</p>
     pub locale: ::std::option::Option<crate::types::LocaleCode>,
 }
 impl GetNotificationEventInput {
-    /// <p>The Amazon Resource Name (ARN) of the NotificationEvent to return.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>NotificationEvent</code> to return.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The locale code of the language used for the retrieved NotificationEvent. The default locale is English <code>en_US</code>.</p>
+    /// <p>The locale code of the language used for the retrieved <code>NotificationEvent</code>. The default locale is English <code>en_US</code>.</p>
     pub fn locale(&self) -> ::std::option::Option<&crate::types::LocaleCode> {
         self.locale.as_ref()
     }
@@ -33,32 +33,32 @@ pub struct GetNotificationEventInputBuilder {
     pub(crate) locale: ::std::option::Option<crate::types::LocaleCode>,
 }
 impl GetNotificationEventInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the NotificationEvent to return.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>NotificationEvent</code> to return.</p>
     /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the NotificationEvent to return.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>NotificationEvent</code> to return.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the NotificationEvent to return.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>NotificationEvent</code> to return.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>The locale code of the language used for the retrieved NotificationEvent. The default locale is English <code>en_US</code>.</p>
+    /// <p>The locale code of the language used for the retrieved <code>NotificationEvent</code>. The default locale is English <code>en_US</code>.</p>
     pub fn locale(mut self, input: crate::types::LocaleCode) -> Self {
         self.locale = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The locale code of the language used for the retrieved NotificationEvent. The default locale is English <code>en_US</code>.</p>
+    /// <p>The locale code of the language used for the retrieved <code>NotificationEvent</code>. The default locale is English <code>en_US</code>.</p>
     pub fn set_locale(mut self, input: ::std::option::Option<crate::types::LocaleCode>) -> Self {
         self.locale = input;
         self
     }
-    /// <p>The locale code of the language used for the retrieved NotificationEvent. The default locale is English <code>en_US</code>.</p>
+    /// <p>The locale code of the language used for the retrieved <code>NotificationEvent</code>. The default locale is English <code>en_US</code>.</p>
     pub fn get_locale(&self) -> &::std::option::Option<crate::types::LocaleCode> {
         &self.locale
     }

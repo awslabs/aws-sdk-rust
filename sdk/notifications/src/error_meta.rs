@@ -98,6 +98,84 @@ impl From<crate::operation::associate_channel::AssociateChannelError> for Error 
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::associate_managed_notification_account_contact::AssociateManagedNotificationAccountContactError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::associate_managed_notification_account_contact::AssociateManagedNotificationAccountContactError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::associate_managed_notification_account_contact::AssociateManagedNotificationAccountContactError> for Error {
+    fn from(err: crate::operation::associate_managed_notification_account_contact::AssociateManagedNotificationAccountContactError) -> Self {
+        match err {
+            crate::operation::associate_managed_notification_account_contact::AssociateManagedNotificationAccountContactError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::associate_managed_notification_account_contact::AssociateManagedNotificationAccountContactError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::associate_managed_notification_account_contact::AssociateManagedNotificationAccountContactError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::associate_managed_notification_account_contact::AssociateManagedNotificationAccountContactError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::associate_managed_notification_account_contact::AssociateManagedNotificationAccountContactError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::associate_managed_notification_account_contact::AssociateManagedNotificationAccountContactError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::associate_managed_notification_account_contact::AssociateManagedNotificationAccountContactError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::associate_managed_notification_account_contact::AssociateManagedNotificationAccountContactError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::associate_managed_notification_additional_channel::AssociateManagedNotificationAdditionalChannelError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::associate_managed_notification_additional_channel::AssociateManagedNotificationAdditionalChannelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::associate_managed_notification_additional_channel::AssociateManagedNotificationAdditionalChannelError> for Error {
+    fn from(err: crate::operation::associate_managed_notification_additional_channel::AssociateManagedNotificationAdditionalChannelError) -> Self {
+        match err {
+            crate::operation::associate_managed_notification_additional_channel::AssociateManagedNotificationAdditionalChannelError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::associate_managed_notification_additional_channel::AssociateManagedNotificationAdditionalChannelError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::associate_managed_notification_additional_channel::AssociateManagedNotificationAdditionalChannelError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::associate_managed_notification_additional_channel::AssociateManagedNotificationAdditionalChannelError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::associate_managed_notification_additional_channel::AssociateManagedNotificationAdditionalChannelError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::associate_managed_notification_additional_channel::AssociateManagedNotificationAdditionalChannelError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::associate_managed_notification_additional_channel::AssociateManagedNotificationAdditionalChannelError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::associate_managed_notification_additional_channel::AssociateManagedNotificationAdditionalChannelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_event_rule::CreateEventRuleError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -297,6 +375,45 @@ impl From<crate::operation::deregister_notification_hub::DeregisterNotificationH
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disable_notifications_access_for_organization::DisableNotificationsAccessForOrganizationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disable_notifications_access_for_organization::DisableNotificationsAccessForOrganizationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disable_notifications_access_for_organization::DisableNotificationsAccessForOrganizationError> for Error {
+    fn from(err: crate::operation::disable_notifications_access_for_organization::DisableNotificationsAccessForOrganizationError) -> Self {
+        match err {
+            crate::operation::disable_notifications_access_for_organization::DisableNotificationsAccessForOrganizationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::disable_notifications_access_for_organization::DisableNotificationsAccessForOrganizationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::disable_notifications_access_for_organization::DisableNotificationsAccessForOrganizationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::disable_notifications_access_for_organization::DisableNotificationsAccessForOrganizationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::disable_notifications_access_for_organization::DisableNotificationsAccessForOrganizationError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::disable_notifications_access_for_organization::DisableNotificationsAccessForOrganizationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::disable_notifications_access_for_organization::DisableNotificationsAccessForOrganizationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::disable_notifications_access_for_organization::DisableNotificationsAccessForOrganizationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_channel::DisassociateChannelError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -325,6 +442,122 @@ impl From<crate::operation::disassociate_channel::DisassociateChannelError> for 
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_managed_notification_account_contact::DisassociateManagedNotificationAccountContactError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_managed_notification_account_contact::DisassociateManagedNotificationAccountContactError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disassociate_managed_notification_account_contact::DisassociateManagedNotificationAccountContactError> for Error {
+    fn from(err: crate::operation::disassociate_managed_notification_account_contact::DisassociateManagedNotificationAccountContactError) -> Self {
+        match err {
+            crate::operation::disassociate_managed_notification_account_contact::DisassociateManagedNotificationAccountContactError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::disassociate_managed_notification_account_contact::DisassociateManagedNotificationAccountContactError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::disassociate_managed_notification_account_contact::DisassociateManagedNotificationAccountContactError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::disassociate_managed_notification_account_contact::DisassociateManagedNotificationAccountContactError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::disassociate_managed_notification_account_contact::DisassociateManagedNotificationAccountContactError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::disassociate_managed_notification_account_contact::DisassociateManagedNotificationAccountContactError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::disassociate_managed_notification_account_contact::DisassociateManagedNotificationAccountContactError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_managed_notification_additional_channel::DisassociateManagedNotificationAdditionalChannelError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_managed_notification_additional_channel::DisassociateManagedNotificationAdditionalChannelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disassociate_managed_notification_additional_channel::DisassociateManagedNotificationAdditionalChannelError> for Error {
+    fn from(
+        err: crate::operation::disassociate_managed_notification_additional_channel::DisassociateManagedNotificationAdditionalChannelError,
+    ) -> Self {
+        match err {
+            crate::operation::disassociate_managed_notification_additional_channel::DisassociateManagedNotificationAdditionalChannelError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::disassociate_managed_notification_additional_channel::DisassociateManagedNotificationAdditionalChannelError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::disassociate_managed_notification_additional_channel::DisassociateManagedNotificationAdditionalChannelError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::disassociate_managed_notification_additional_channel::DisassociateManagedNotificationAdditionalChannelError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::disassociate_managed_notification_additional_channel::DisassociateManagedNotificationAdditionalChannelError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::disassociate_managed_notification_additional_channel::DisassociateManagedNotificationAdditionalChannelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::enable_notifications_access_for_organization::EnableNotificationsAccessForOrganizationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::enable_notifications_access_for_organization::EnableNotificationsAccessForOrganizationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::enable_notifications_access_for_organization::EnableNotificationsAccessForOrganizationError> for Error {
+    fn from(err: crate::operation::enable_notifications_access_for_organization::EnableNotificationsAccessForOrganizationError) -> Self {
+        match err {
+            crate::operation::enable_notifications_access_for_organization::EnableNotificationsAccessForOrganizationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::enable_notifications_access_for_organization::EnableNotificationsAccessForOrganizationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::enable_notifications_access_for_organization::EnableNotificationsAccessForOrganizationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::enable_notifications_access_for_organization::EnableNotificationsAccessForOrganizationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::enable_notifications_access_for_organization::EnableNotificationsAccessForOrganizationError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::enable_notifications_access_for_organization::EnableNotificationsAccessForOrganizationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::enable_notifications_access_for_organization::EnableNotificationsAccessForOrganizationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::enable_notifications_access_for_organization::EnableNotificationsAccessForOrganizationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_event_rule::GetEventRuleError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -348,6 +581,147 @@ impl From<crate::operation::get_event_rule::GetEventRuleError> for Error {
             crate::operation::get_event_rule::GetEventRuleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_event_rule::GetEventRuleError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_event_rule::GetEventRuleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_managed_notification_child_event::GetManagedNotificationChildEventError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_managed_notification_child_event::GetManagedNotificationChildEventError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_managed_notification_child_event::GetManagedNotificationChildEventError> for Error {
+    fn from(err: crate::operation::get_managed_notification_child_event::GetManagedNotificationChildEventError) -> Self {
+        match err {
+            crate::operation::get_managed_notification_child_event::GetManagedNotificationChildEventError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_managed_notification_child_event::GetManagedNotificationChildEventError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_managed_notification_child_event::GetManagedNotificationChildEventError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_managed_notification_child_event::GetManagedNotificationChildEventError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_managed_notification_child_event::GetManagedNotificationChildEventError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_managed_notification_child_event::GetManagedNotificationChildEventError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_managed_notification_configuration::GetManagedNotificationConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_managed_notification_configuration::GetManagedNotificationConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_managed_notification_configuration::GetManagedNotificationConfigurationError> for Error {
+    fn from(err: crate::operation::get_managed_notification_configuration::GetManagedNotificationConfigurationError) -> Self {
+        match err {
+            crate::operation::get_managed_notification_configuration::GetManagedNotificationConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_managed_notification_configuration::GetManagedNotificationConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_managed_notification_configuration::GetManagedNotificationConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_managed_notification_configuration::GetManagedNotificationConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_managed_notification_configuration::GetManagedNotificationConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_managed_notification_configuration::GetManagedNotificationConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_managed_notification_event::GetManagedNotificationEventError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_managed_notification_event::GetManagedNotificationEventError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_managed_notification_event::GetManagedNotificationEventError> for Error {
+    fn from(err: crate::operation::get_managed_notification_event::GetManagedNotificationEventError) -> Self {
+        match err {
+            crate::operation::get_managed_notification_event::GetManagedNotificationEventError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_managed_notification_event::GetManagedNotificationEventError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_managed_notification_event::GetManagedNotificationEventError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_managed_notification_event::GetManagedNotificationEventError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_managed_notification_event::GetManagedNotificationEventError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_managed_notification_event::GetManagedNotificationEventError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -424,6 +798,52 @@ impl From<crate::operation::get_notification_event::GetNotificationEventError> f
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_notifications_access_for_organization::GetNotificationsAccessForOrganizationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_notifications_access_for_organization::GetNotificationsAccessForOrganizationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_notifications_access_for_organization::GetNotificationsAccessForOrganizationError> for Error {
+    fn from(err: crate::operation::get_notifications_access_for_organization::GetNotificationsAccessForOrganizationError) -> Self {
+        match err {
+            crate::operation::get_notifications_access_for_organization::GetNotificationsAccessForOrganizationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_notifications_access_for_organization::GetNotificationsAccessForOrganizationError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::get_notifications_access_for_organization::GetNotificationsAccessForOrganizationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_notifications_access_for_organization::GetNotificationsAccessForOrganizationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_notifications_access_for_organization::GetNotificationsAccessForOrganizationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_channels::ListChannelsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -473,6 +893,176 @@ impl From<crate::operation::list_event_rules::ListEventRulesError> for Error {
             crate::operation::list_event_rules::ListEventRulesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_event_rules::ListEventRulesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_event_rules::ListEventRulesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_managed_notification_channel_associations::ListManagedNotificationChannelAssociationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_managed_notification_channel_associations::ListManagedNotificationChannelAssociationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_managed_notification_channel_associations::ListManagedNotificationChannelAssociationsError> for Error {
+    fn from(err: crate::operation::list_managed_notification_channel_associations::ListManagedNotificationChannelAssociationsError) -> Self {
+        match err {
+            crate::operation::list_managed_notification_channel_associations::ListManagedNotificationChannelAssociationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_managed_notification_channel_associations::ListManagedNotificationChannelAssociationsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_managed_notification_channel_associations::ListManagedNotificationChannelAssociationsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_managed_notification_channel_associations::ListManagedNotificationChannelAssociationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_managed_notification_channel_associations::ListManagedNotificationChannelAssociationsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_managed_notification_channel_associations::ListManagedNotificationChannelAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_managed_notification_child_events::ListManagedNotificationChildEventsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_managed_notification_child_events::ListManagedNotificationChildEventsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_managed_notification_child_events::ListManagedNotificationChildEventsError> for Error {
+    fn from(err: crate::operation::list_managed_notification_child_events::ListManagedNotificationChildEventsError) -> Self {
+        match err {
+            crate::operation::list_managed_notification_child_events::ListManagedNotificationChildEventsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_managed_notification_child_events::ListManagedNotificationChildEventsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_managed_notification_child_events::ListManagedNotificationChildEventsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_managed_notification_child_events::ListManagedNotificationChildEventsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_managed_notification_child_events::ListManagedNotificationChildEventsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_managed_notification_configurations::ListManagedNotificationConfigurationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_managed_notification_configurations::ListManagedNotificationConfigurationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_managed_notification_configurations::ListManagedNotificationConfigurationsError> for Error {
+    fn from(err: crate::operation::list_managed_notification_configurations::ListManagedNotificationConfigurationsError) -> Self {
+        match err {
+            crate::operation::list_managed_notification_configurations::ListManagedNotificationConfigurationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_managed_notification_configurations::ListManagedNotificationConfigurationsError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::list_managed_notification_configurations::ListManagedNotificationConfigurationsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_managed_notification_configurations::ListManagedNotificationConfigurationsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_managed_notification_configurations::ListManagedNotificationConfigurationsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_managed_notification_events::ListManagedNotificationEventsError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_managed_notification_events::ListManagedNotificationEventsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_managed_notification_events::ListManagedNotificationEventsError> for Error {
+    fn from(err: crate::operation::list_managed_notification_events::ListManagedNotificationEventsError) -> Self {
+        match err {
+            crate::operation::list_managed_notification_events::ListManagedNotificationEventsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_managed_notification_events::ListManagedNotificationEventsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_managed_notification_events::ListManagedNotificationEventsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_managed_notification_events::ListManagedNotificationEventsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_managed_notification_events::ListManagedNotificationEventsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -19,6 +19,46 @@ pub(crate) fn reflens_list_event_rules_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_managed_notification_channel_associations_output_output_next_token(
+    input: &crate::operation::list_managed_notification_channel_associations::ListManagedNotificationChannelAssociationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_managed_notification_child_events_output_output_next_token(
+    input: &crate::operation::list_managed_notification_child_events::ListManagedNotificationChildEventsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_managed_notification_configurations_output_output_next_token(
+    input: &crate::operation::list_managed_notification_configurations::ListManagedNotificationConfigurationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_managed_notification_events_output_output_next_token(
+    input: &crate::operation::list_managed_notification_events::ListManagedNotificationEventsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_notification_configurations_output_output_next_token(
     input: &crate::operation::list_notification_configurations::ListNotificationConfigurationsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -60,6 +100,34 @@ pub(crate) fn lens_list_event_rules_output_output_event_rules(
     input: crate::operation::list_event_rules::ListEventRulesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::EventRuleStructure>> {
     let input = input.event_rules;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_managed_notification_channel_associations_output_output_channel_associations(
+    input: crate::operation::list_managed_notification_channel_associations::ListManagedNotificationChannelAssociationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ManagedNotificationChannelAssociationSummary>> {
+    let input = input.channel_associations;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_managed_notification_child_events_output_output_managed_notification_child_events(
+    input: crate::operation::list_managed_notification_child_events::ListManagedNotificationChildEventsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ManagedNotificationChildEventOverview>> {
+    let input = input.managed_notification_child_events;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_managed_notification_configurations_output_output_managed_notification_configurations(
+    input: crate::operation::list_managed_notification_configurations::ListManagedNotificationConfigurationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ManagedNotificationConfigurationStructure>> {
+    let input = input.managed_notification_configurations;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_managed_notification_events_output_output_managed_notification_events(
+    input: crate::operation::list_managed_notification_events::ListManagedNotificationEventsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ManagedNotificationEventOverview>> {
+    let input = input.managed_notification_events;
     ::std::option::Option::Some(input)
 }
 

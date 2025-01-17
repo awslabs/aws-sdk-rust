@@ -5,11 +5,11 @@
 pub struct GetNotificationEventOutput {
     /// <p>The ARN of the resource.</p>
     pub arn: ::std::string::String,
-    /// <p>The ARN of the NotificationConfiguration.</p>
+    /// <p>The ARN of the <code>NotificationConfiguration</code>.</p>
     pub notification_configuration_arn: ::std::string::String,
-    /// <p>The creation time of the NotificationEvent.</p>
+    /// <p>The creation time of the <code>NotificationEvent</code>.</p>
     pub creation_time: ::aws_smithy_types::DateTime,
-    /// <p>The content of the NotificationEvent.</p>
+    /// <p>The content of the <code>NotificationEvent</code>.</p>
     pub content: ::std::option::Option<crate::types::NotificationEventSchema>,
     _request_id: Option<String>,
 }
@@ -19,16 +19,16 @@ impl GetNotificationEventOutput {
         use std::ops::Deref;
         self.arn.deref()
     }
-    /// <p>The ARN of the NotificationConfiguration.</p>
+    /// <p>The ARN of the <code>NotificationConfiguration</code>.</p>
     pub fn notification_configuration_arn(&self) -> &str {
         use std::ops::Deref;
         self.notification_configuration_arn.deref()
     }
-    /// <p>The creation time of the NotificationEvent.</p>
+    /// <p>The creation time of the <code>NotificationEvent</code>.</p>
     pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
         &self.creation_time
     }
-    /// <p>The content of the NotificationEvent.</p>
+    /// <p>The content of the <code>NotificationEvent</code>.</p>
     pub fn content(&self) -> ::std::option::Option<&crate::types::NotificationEventSchema> {
         self.content.as_ref()
     }
@@ -71,48 +71,48 @@ impl GetNotificationEventOutputBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>The ARN of the NotificationConfiguration.</p>
+    /// <p>The ARN of the <code>NotificationConfiguration</code>.</p>
     /// This field is required.
     pub fn notification_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notification_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the NotificationConfiguration.</p>
+    /// <p>The ARN of the <code>NotificationConfiguration</code>.</p>
     pub fn set_notification_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notification_configuration_arn = input;
         self
     }
-    /// <p>The ARN of the NotificationConfiguration.</p>
+    /// <p>The ARN of the <code>NotificationConfiguration</code>.</p>
     pub fn get_notification_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.notification_configuration_arn
     }
-    /// <p>The creation time of the NotificationEvent.</p>
+    /// <p>The creation time of the <code>NotificationEvent</code>.</p>
     /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The creation time of the NotificationEvent.</p>
+    /// <p>The creation time of the <code>NotificationEvent</code>.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
-    /// <p>The creation time of the NotificationEvent.</p>
+    /// <p>The creation time of the <code>NotificationEvent</code>.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
-    /// <p>The content of the NotificationEvent.</p>
+    /// <p>The content of the <code>NotificationEvent</code>.</p>
     /// This field is required.
     pub fn content(mut self, input: crate::types::NotificationEventSchema) -> Self {
         self.content = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The content of the NotificationEvent.</p>
+    /// <p>The content of the <code>NotificationEvent</code>.</p>
     pub fn set_content(mut self, input: ::std::option::Option<crate::types::NotificationEventSchema>) -> Self {
         self.content = input;
         self
     }
-    /// <p>The content of the NotificationEvent.</p>
+    /// <p>The content of the <code>NotificationEvent</code>.</p>
     pub fn get_content(&self) -> &::std::option::Option<crate::types::NotificationEventSchema> {
         &self.content
     }

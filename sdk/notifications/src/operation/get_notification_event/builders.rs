@@ -22,8 +22,8 @@ impl crate::operation::get_notification_event::builders::GetNotificationEventInp
 }
 /// Fluent builder constructing a request to `GetNotificationEvent`.
 ///
-/// <p>Returns a specified NotificationEvent.</p><important>
-/// <p>User Notifications stores notifications in the individual Regions you register as notification hubs and the Region of the source event rule. GetNotificationEvent only returns notifications stored in the same Region in which the action is called. User Notifications doesn't backfill notifications to new Regions selected as notification hubs. For this reason, we recommend that you make calls in your oldest registered notification hub. For more information, see <a href="https://docs.aws.amazon.com/notifications/latest/userguide/notification-hubs.html">Notification hubs</a> in the <i>AWS User Notifications User Guide</i>.</p>
+/// <p>Returns a specified <code>NotificationEvent</code>.</p><important>
+/// <p>User Notifications stores notifications in the individual Regions you register as notification hubs and the Region of the source event rule. <code>GetNotificationEvent</code> only returns notifications stored in the same Region in which the action is called. User Notifications doesn't backfill notifications to new Regions selected as notification hubs. For this reason, we recommend that you make calls in your oldest registered notification hub. For more information, see <a href="https://docs.aws.amazon.com/notifications/latest/userguide/notification-hubs.html">Notification hubs</a> in the <i>Amazon Web Services User Notifications User Guide</i>.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetNotificationEventFluentBuilder {
@@ -110,31 +110,31 @@ impl GetNotificationEventFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the NotificationEvent to return.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>NotificationEvent</code> to return.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the NotificationEvent to return.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>NotificationEvent</code> to return.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the NotificationEvent to return.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>NotificationEvent</code> to return.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_arn()
     }
-    /// <p>The locale code of the language used for the retrieved NotificationEvent. The default locale is English <code>en_US</code>.</p>
+    /// <p>The locale code of the language used for the retrieved <code>NotificationEvent</code>. The default locale is English <code>en_US</code>.</p>
     pub fn locale(mut self, input: crate::types::LocaleCode) -> Self {
         self.inner = self.inner.locale(input);
         self
     }
-    /// <p>The locale code of the language used for the retrieved NotificationEvent. The default locale is English <code>en_US</code>.</p>
+    /// <p>The locale code of the language used for the retrieved <code>NotificationEvent</code>. The default locale is English <code>en_US</code>.</p>
     pub fn set_locale(mut self, input: ::std::option::Option<crate::types::LocaleCode>) -> Self {
         self.inner = self.inner.set_locale(input);
         self
     }
-    /// <p>The locale code of the language used for the retrieved NotificationEvent. The default locale is English <code>en_US</code>.</p>
+    /// <p>The locale code of the language used for the retrieved <code>NotificationEvent</code>. The default locale is English <code>en_US</code>.</p>
     pub fn get_locale(&self) -> &::std::option::Option<crate::types::LocaleCode> {
         self.inner.get_locale()
     }

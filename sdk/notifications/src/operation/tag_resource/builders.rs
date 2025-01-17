@@ -23,8 +23,8 @@ impl crate::operation::tag_resource::builders::TagResourceInputBuilder {
 /// Fluent builder constructing a request to `TagResource`.
 ///
 /// <p>Tags the resource with a tag key and value.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html">Tagging your AWS resources</a> in the <i>Tagging AWS Resources User Guide</i>.</p><note>
-/// <p>This is only supported for NotificationConfigurations.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html">Tagging your Amazon Web Services resources</a> in the <i>Tagging Amazon Web Services Resources User Guide</i>.</p><note>
+/// <p>This is only supported for <code>NotificationConfigurations</code>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TagResourceFluentBuilder {

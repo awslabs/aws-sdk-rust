@@ -22,7 +22,7 @@ impl crate::operation::delete_notification_configuration::builders::DeleteNotifi
 }
 /// Fluent builder constructing a request to `DeleteNotificationConfiguration`.
 ///
-/// <p>Deletes a NotificationConfiguration.</p>
+/// <p>Deletes a <code>NotificationConfiguration</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteNotificationConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteNotificationConfigurationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the NotificationConfiguration to delete.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>NotificationConfiguration</code> to delete.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the NotificationConfiguration to delete.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>NotificationConfiguration</code> to delete.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the NotificationConfiguration to delete.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>NotificationConfiguration</code> to delete.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_arn()
     }

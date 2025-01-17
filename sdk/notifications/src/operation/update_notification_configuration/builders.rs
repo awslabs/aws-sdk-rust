@@ -22,7 +22,7 @@ impl crate::operation::update_notification_configuration::builders::UpdateNotifi
 }
 /// Fluent builder constructing a request to `UpdateNotificationConfiguration`.
 ///
-/// <p>Updates a NotificationConfiguration.</p>
+/// <p>Updates a <code>NotificationConfiguration</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateNotificationConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,81 +108,70 @@ impl UpdateNotificationConfigurationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) used to update the NotificationConfiguration.</p>
+    /// <p>The Amazon Resource Name (ARN) used to update the <code>NotificationConfiguration</code>.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) used to update the NotificationConfiguration.</p>
+    /// <p>The Amazon Resource Name (ARN) used to update the <code>NotificationConfiguration</code>.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) used to update the NotificationConfiguration.</p>
+    /// <p>The Amazon Resource Name (ARN) used to update the <code>NotificationConfiguration</code>.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_arn()
     }
-    /// <p>The name of the NotificationConfiguration.</p>
+    /// <p>The name of the <code>NotificationConfiguration</code>.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the NotificationConfiguration.</p>
+    /// <p>The name of the <code>NotificationConfiguration</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the NotificationConfiguration.</p>
+    /// <p>The name of the <code>NotificationConfiguration</code>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The description of the NotificationConfiguration.</p>
+    /// <p>The description of the <code>NotificationConfiguration</code>.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>The description of the NotificationConfiguration.</p>
+    /// <p>The description of the <code>NotificationConfiguration</code>.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>The description of the NotificationConfiguration.</p>
+    /// <p>The description of the <code>NotificationConfiguration</code>.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>The status of this NotificationConfiguration.</p>
-    /// <p>The status should always be <code>INACTIVE</code> when part of the CreateNotificationConfiguration response.</p>
+    /// <p>The aggregation preference of the <code>NotificationConfiguration</code>.</p>
     /// <ul>
     /// <li>
     /// <p>Values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>ACTIVE</code></p>
+    /// <p><code>LONG</code></p>
     /// <ul>
     /// <li>
-    /// <p>All EventRules are <code>ACTIVE</code> and any call can be run.</p></li>
+    /// <p>Aggregate notifications for long periods of time (12 hours).</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><code>PARTIALLY_ACTIVE</code></p>
+    /// <p><code>SHORT</code></p>
     /// <ul>
     /// <li>
-    /// <p>Some EventRules are <code>ACTIVE</code> and some are <code>INACTIVE</code>. Any call can be run.</p></li>
-    /// <li>
-    /// <p>Any call can be run.</p></li>
+    /// <p>Aggregate notifications for short periods of time (5 minutes).</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><code>INACTIVE</code></p>
+    /// <p><code>NONE</code></p>
     /// <ul>
     /// <li>
-    /// <p>All EventRules are <code>INACTIVE</code> and any call can be run.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><code>DELETING</code></p>
-    /// <ul>
-    /// <li>
-    /// <p>This NotificationConfiguration is being deleted.</p></li>
-    /// <li>
-    /// <p>Only <code>GET</code> and <code>LIST</code> calls can be run.</p></li>
+    /// <p>Don't aggregate notifications.</p></li>
     /// </ul></li>
     /// </ul></li>
     /// </ul>
@@ -190,39 +179,28 @@ impl UpdateNotificationConfigurationFluentBuilder {
         self.inner = self.inner.aggregation_duration(input);
         self
     }
-    /// <p>The status of this NotificationConfiguration.</p>
-    /// <p>The status should always be <code>INACTIVE</code> when part of the CreateNotificationConfiguration response.</p>
+    /// <p>The aggregation preference of the <code>NotificationConfiguration</code>.</p>
     /// <ul>
     /// <li>
     /// <p>Values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>ACTIVE</code></p>
+    /// <p><code>LONG</code></p>
     /// <ul>
     /// <li>
-    /// <p>All EventRules are <code>ACTIVE</code> and any call can be run.</p></li>
+    /// <p>Aggregate notifications for long periods of time (12 hours).</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><code>PARTIALLY_ACTIVE</code></p>
+    /// <p><code>SHORT</code></p>
     /// <ul>
     /// <li>
-    /// <p>Some EventRules are <code>ACTIVE</code> and some are <code>INACTIVE</code>. Any call can be run.</p></li>
-    /// <li>
-    /// <p>Any call can be run.</p></li>
+    /// <p>Aggregate notifications for short periods of time (5 minutes).</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><code>INACTIVE</code></p>
+    /// <p><code>NONE</code></p>
     /// <ul>
     /// <li>
-    /// <p>All EventRules are <code>INACTIVE</code> and any call can be run.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><code>DELETING</code></p>
-    /// <ul>
-    /// <li>
-    /// <p>This NotificationConfiguration is being deleted.</p></li>
-    /// <li>
-    /// <p>Only <code>GET</code> and <code>LIST</code> calls can be run.</p></li>
+    /// <p>Don't aggregate notifications.</p></li>
     /// </ul></li>
     /// </ul></li>
     /// </ul>
@@ -230,39 +208,28 @@ impl UpdateNotificationConfigurationFluentBuilder {
         self.inner = self.inner.set_aggregation_duration(input);
         self
     }
-    /// <p>The status of this NotificationConfiguration.</p>
-    /// <p>The status should always be <code>INACTIVE</code> when part of the CreateNotificationConfiguration response.</p>
+    /// <p>The aggregation preference of the <code>NotificationConfiguration</code>.</p>
     /// <ul>
     /// <li>
     /// <p>Values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>ACTIVE</code></p>
+    /// <p><code>LONG</code></p>
     /// <ul>
     /// <li>
-    /// <p>All EventRules are <code>ACTIVE</code> and any call can be run.</p></li>
+    /// <p>Aggregate notifications for long periods of time (12 hours).</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><code>PARTIALLY_ACTIVE</code></p>
+    /// <p><code>SHORT</code></p>
     /// <ul>
     /// <li>
-    /// <p>Some EventRules are <code>ACTIVE</code> and some are <code>INACTIVE</code>. Any call can be run.</p></li>
-    /// <li>
-    /// <p>Any call can be run.</p></li>
+    /// <p>Aggregate notifications for short periods of time (5 minutes).</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><code>INACTIVE</code></p>
+    /// <p><code>NONE</code></p>
     /// <ul>
     /// <li>
-    /// <p>All EventRules are <code>INACTIVE</code> and any call can be run.</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p><code>DELETING</code></p>
-    /// <ul>
-    /// <li>
-    /// <p>This NotificationConfiguration is being deleted.</p></li>
-    /// <li>
-    /// <p>Only <code>GET</code> and <code>LIST</code> calls can be run.</p></li>
+    /// <p>Don't aggregate notifications.</p></li>
     /// </ul></li>
     /// </ul></li>
     /// </ul>

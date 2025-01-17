@@ -146,6 +146,69 @@ pub(crate) fn get_event_rule_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_managed_notification_child_event_output_output_correct_errors(
+    mut builder: crate::operation::get_managed_notification_child_event::builders::GetManagedNotificationChildEventOutputBuilder,
+) -> crate::operation::get_managed_notification_child_event::builders::GetManagedNotificationChildEventOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.managed_notification_configuration_arn.is_none() {
+        builder.managed_notification_configuration_arn = Some(Default::default())
+    }
+    if builder.creation_time.is_none() {
+        builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.content.is_none() {
+        builder.content = {
+            let builder = crate::types::builders::ManagedNotificationChildEventBuilder::default();
+            crate::serde_util::managed_notification_child_event_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn get_managed_notification_configuration_output_output_correct_errors(
+    mut builder: crate::operation::get_managed_notification_configuration::builders::GetManagedNotificationConfigurationOutputBuilder,
+) -> crate::operation::get_managed_notification_configuration::builders::GetManagedNotificationConfigurationOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.description.is_none() {
+        builder.description = Some(Default::default())
+    }
+    if builder.category.is_none() {
+        builder.category = Some(Default::default())
+    }
+    if builder.sub_category.is_none() {
+        builder.sub_category = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_managed_notification_event_output_output_correct_errors(
+    mut builder: crate::operation::get_managed_notification_event::builders::GetManagedNotificationEventOutputBuilder,
+) -> crate::operation::get_managed_notification_event::builders::GetManagedNotificationEventOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.managed_notification_configuration_arn.is_none() {
+        builder.managed_notification_configuration_arn = Some(Default::default())
+    }
+    if builder.creation_time.is_none() {
+        builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.content.is_none() {
+        builder.content = {
+            let builder = crate::types::builders::ManagedNotificationEventBuilder::default();
+            crate::serde_util::managed_notification_event_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn get_notification_configuration_output_output_correct_errors(
     mut builder: crate::operation::get_notification_configuration::builders::GetNotificationConfigurationOutputBuilder,
 ) -> crate::operation::get_notification_configuration::builders::GetNotificationConfigurationOutputBuilder {
@@ -188,6 +251,20 @@ pub(crate) fn get_notification_event_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_notifications_access_for_organization_output_output_correct_errors(
+    mut builder: crate::operation::get_notifications_access_for_organization::builders::GetNotificationsAccessForOrganizationOutputBuilder,
+) -> crate::operation::get_notifications_access_for_organization::builders::GetNotificationsAccessForOrganizationOutputBuilder {
+    if builder.notifications_access_for_organization.is_none() {
+        builder.notifications_access_for_organization = {
+            let builder = crate::types::builders::NotificationsAccessForOrganizationBuilder::default();
+            crate::serde_util::notifications_access_for_organization_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn list_channels_output_output_correct_errors(
     mut builder: crate::operation::list_channels::builders::ListChannelsOutputBuilder,
 ) -> crate::operation::list_channels::builders::ListChannelsOutputBuilder {
@@ -202,6 +279,42 @@ pub(crate) fn list_event_rules_output_output_correct_errors(
 ) -> crate::operation::list_event_rules::builders::ListEventRulesOutputBuilder {
     if builder.event_rules.is_none() {
         builder.event_rules = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_managed_notification_channel_associations_output_output_correct_errors(
+    mut builder: crate::operation::list_managed_notification_channel_associations::builders::ListManagedNotificationChannelAssociationsOutputBuilder,
+) -> crate::operation::list_managed_notification_channel_associations::builders::ListManagedNotificationChannelAssociationsOutputBuilder {
+    if builder.channel_associations.is_none() {
+        builder.channel_associations = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_managed_notification_child_events_output_output_correct_errors(
+    mut builder: crate::operation::list_managed_notification_child_events::builders::ListManagedNotificationChildEventsOutputBuilder,
+) -> crate::operation::list_managed_notification_child_events::builders::ListManagedNotificationChildEventsOutputBuilder {
+    if builder.managed_notification_child_events.is_none() {
+        builder.managed_notification_child_events = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_managed_notification_configurations_output_output_correct_errors(
+    mut builder: crate::operation::list_managed_notification_configurations::builders::ListManagedNotificationConfigurationsOutputBuilder,
+) -> crate::operation::list_managed_notification_configurations::builders::ListManagedNotificationConfigurationsOutputBuilder {
+    if builder.managed_notification_configurations.is_none() {
+        builder.managed_notification_configurations = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_managed_notification_events_output_output_correct_errors(
+    mut builder: crate::operation::list_managed_notification_events::builders::ListManagedNotificationEventsOutputBuilder,
+) -> crate::operation::list_managed_notification_events::builders::ListManagedNotificationEventsOutputBuilder {
+    if builder.managed_notification_events.is_none() {
+        builder.managed_notification_events = Some(Default::default())
     }
     builder
 }
@@ -287,6 +400,57 @@ pub(crate) fn notification_hub_status_summary_correct_errors(
     builder
 }
 
+pub(crate) fn managed_notification_child_event_correct_errors(
+    mut builder: crate::types::builders::ManagedNotificationChildEventBuilder,
+) -> crate::types::builders::ManagedNotificationChildEventBuilder {
+    if builder.schema_version.is_none() {
+        builder.schema_version = "no value was set".parse::<crate::types::SchemaVersion>().ok()
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.message_components.is_none() {
+        builder.message_components = {
+            let builder = crate::types::builders::MessageComponentsBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.notification_type.is_none() {
+        builder.notification_type = "no value was set".parse::<crate::types::NotificationType>().ok()
+    }
+    if builder.aggregate_managed_notification_event_arn.is_none() {
+        builder.aggregate_managed_notification_event_arn = Some(Default::default())
+    }
+    if builder.text_parts.is_none() {
+        builder.text_parts = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn managed_notification_event_correct_errors(
+    mut builder: crate::types::builders::ManagedNotificationEventBuilder,
+) -> crate::types::builders::ManagedNotificationEventBuilder {
+    if builder.schema_version.is_none() {
+        builder.schema_version = "no value was set".parse::<crate::types::SchemaVersion>().ok()
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.message_components.is_none() {
+        builder.message_components = {
+            let builder = crate::types::builders::MessageComponentsBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.notification_type.is_none() {
+        builder.notification_type = "no value was set".parse::<crate::types::NotificationType>().ok()
+    }
+    if builder.text_parts.is_none() {
+        builder.text_parts = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn notification_event_schema_correct_errors(
     mut builder: crate::types::builders::NotificationEventSchemaBuilder,
 ) -> crate::types::builders::NotificationEventSchemaBuilder {
@@ -320,6 +484,15 @@ pub(crate) fn notification_event_schema_correct_errors(
     builder
 }
 
+pub(crate) fn notifications_access_for_organization_correct_errors(
+    mut builder: crate::types::builders::NotificationsAccessForOrganizationBuilder,
+) -> crate::types::builders::NotificationsAccessForOrganizationBuilder {
+    if builder.access_status.is_none() {
+        builder.access_status = "no value was set".parse::<crate::types::AccessStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn source_event_metadata_correct_errors(
     mut builder: crate::types::builders::SourceEventMetadataBuilder,
 ) -> crate::types::builders::SourceEventMetadataBuilder {
@@ -343,6 +516,30 @@ pub(crate) fn source_event_metadata_correct_errors(
     }
     if builder.related_resources.is_none() {
         builder.related_resources = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn aggregation_summary_correct_errors(
+    mut builder: crate::types::builders::AggregationSummaryBuilder,
+) -> crate::types::builders::AggregationSummaryBuilder {
+    if builder.event_count.is_none() {
+        builder.event_count = Some(Default::default())
+    }
+    if builder.aggregated_by.is_none() {
+        builder.aggregated_by = Some(Default::default())
+    }
+    if builder.aggregated_accounts.is_none() {
+        builder.aggregated_accounts = {
+            let builder = crate::types::builders::SummarizationDimensionOverviewBuilder::default();
+            crate::serde_util::summarization_dimension_overview_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.aggregated_regions.is_none() {
+        builder.aggregated_regions = {
+            let builder = crate::types::builders::SummarizationDimensionOverviewBuilder::default();
+            crate::serde_util::summarization_dimension_overview_correct_errors(builder).build().ok()
+        }
     }
     builder
 }
@@ -388,6 +585,86 @@ pub(crate) fn event_rule_structure_correct_errors(
     }
     if builder.status_summary_by_region.is_none() {
         builder.status_summary_by_region = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn managed_notification_channel_association_summary_correct_errors(
+    mut builder: crate::types::builders::ManagedNotificationChannelAssociationSummaryBuilder,
+) -> crate::types::builders::ManagedNotificationChannelAssociationSummaryBuilder {
+    if builder.channel_identifier.is_none() {
+        builder.channel_identifier = Some(Default::default())
+    }
+    if builder.channel_type.is_none() {
+        builder.channel_type = "no value was set".parse::<crate::types::ChannelType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn managed_notification_child_event_overview_correct_errors(
+    mut builder: crate::types::builders::ManagedNotificationChildEventOverviewBuilder,
+) -> crate::types::builders::ManagedNotificationChildEventOverviewBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.managed_notification_configuration_arn.is_none() {
+        builder.managed_notification_configuration_arn = Some(Default::default())
+    }
+    if builder.related_account.is_none() {
+        builder.related_account = Some(Default::default())
+    }
+    if builder.creation_time.is_none() {
+        builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.child_event.is_none() {
+        builder.child_event = {
+            let builder = crate::types::builders::ManagedNotificationChildEventSummaryBuilder::default();
+            crate::serde_util::managed_notification_child_event_summary_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    if builder.aggregate_managed_notification_event_arn.is_none() {
+        builder.aggregate_managed_notification_event_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn managed_notification_configuration_structure_correct_errors(
+    mut builder: crate::types::builders::ManagedNotificationConfigurationStructureBuilder,
+) -> crate::types::builders::ManagedNotificationConfigurationStructureBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.description.is_none() {
+        builder.description = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn managed_notification_event_overview_correct_errors(
+    mut builder: crate::types::builders::ManagedNotificationEventOverviewBuilder,
+) -> crate::types::builders::ManagedNotificationEventOverviewBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.managed_notification_configuration_arn.is_none() {
+        builder.managed_notification_configuration_arn = Some(Default::default())
+    }
+    if builder.related_account.is_none() {
+        builder.related_account = Some(Default::default())
+    }
+    if builder.creation_time.is_none() {
+        builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.notification_event.is_none() {
+        builder.notification_event = {
+            let builder = crate::types::builders::ManagedNotificationEventSummaryBuilder::default();
+            crate::serde_util::managed_notification_event_summary_correct_errors(builder).build().ok()
+        }
     }
     builder
 }
@@ -467,6 +744,70 @@ pub(crate) fn validation_exception_field_correct_errors(
     builder
 }
 
+pub(crate) fn managed_notification_child_event_summary_correct_errors(
+    mut builder: crate::types::builders::ManagedNotificationChildEventSummaryBuilder,
+) -> crate::types::builders::ManagedNotificationChildEventSummaryBuilder {
+    if builder.schema_version.is_none() {
+        builder.schema_version = "no value was set".parse::<crate::types::SchemaVersion>().ok()
+    }
+    if builder.source_event_metadata.is_none() {
+        builder.source_event_metadata = {
+            let builder = crate::types::builders::ManagedSourceEventMetadataSummaryBuilder::default();
+            crate::serde_util::managed_source_event_metadata_summary_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    if builder.message_components.is_none() {
+        builder.message_components = {
+            let builder = crate::types::builders::MessageComponentsSummaryBuilder::default();
+            crate::serde_util::message_components_summary_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.aggregation_detail.is_none() {
+        builder.aggregation_detail = {
+            let builder = crate::types::builders::AggregationDetailBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.event_status.is_none() {
+        builder.event_status = "no value was set".parse::<crate::types::EventStatus>().ok()
+    }
+    if builder.notification_type.is_none() {
+        builder.notification_type = "no value was set".parse::<crate::types::NotificationType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn managed_notification_event_summary_correct_errors(
+    mut builder: crate::types::builders::ManagedNotificationEventSummaryBuilder,
+) -> crate::types::builders::ManagedNotificationEventSummaryBuilder {
+    if builder.schema_version.is_none() {
+        builder.schema_version = "no value was set".parse::<crate::types::SchemaVersion>().ok()
+    }
+    if builder.source_event_metadata.is_none() {
+        builder.source_event_metadata = {
+            let builder = crate::types::builders::ManagedSourceEventMetadataSummaryBuilder::default();
+            crate::serde_util::managed_source_event_metadata_summary_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    if builder.message_components.is_none() {
+        builder.message_components = {
+            let builder = crate::types::builders::MessageComponentsSummaryBuilder::default();
+            crate::serde_util::message_components_summary_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.event_status.is_none() {
+        builder.event_status = "no value was set".parse::<crate::types::EventStatus>().ok()
+    }
+    if builder.notification_type.is_none() {
+        builder.notification_type = "no value was set".parse::<crate::types::NotificationType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn media_element_correct_errors(mut builder: crate::types::builders::MediaElementBuilder) -> crate::types::builders::MediaElementBuilder {
     if builder.media_id.is_none() {
         builder.media_id = Some(Default::default())
@@ -510,11 +851,35 @@ pub(crate) fn notification_event_summary_correct_errors(
     builder
 }
 
+pub(crate) fn summarization_dimension_overview_correct_errors(
+    mut builder: crate::types::builders::SummarizationDimensionOverviewBuilder,
+) -> crate::types::builders::SummarizationDimensionOverviewBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.count.is_none() {
+        builder.count = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn text_part_value_correct_errors(
     mut builder: crate::types::builders::TextPartValueBuilder,
 ) -> crate::types::builders::TextPartValueBuilder {
     if builder.r#type.is_none() {
         builder.r#type = "no value was set".parse::<crate::types::TextPartType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn aggregation_key_correct_errors(
+    mut builder: crate::types::builders::AggregationKeyBuilder,
+) -> crate::types::builders::AggregationKeyBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
     }
     builder
 }
@@ -525,6 +890,18 @@ pub(crate) fn dimension_correct_errors(mut builder: crate::types::builders::Dime
     }
     if builder.value.is_none() {
         builder.value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn managed_source_event_metadata_summary_correct_errors(
+    mut builder: crate::types::builders::ManagedSourceEventMetadataSummaryBuilder,
+) -> crate::types::builders::ManagedSourceEventMetadataSummaryBuilder {
+    if builder.source.is_none() {
+        builder.source = Some(Default::default())
+    }
+    if builder.event_type.is_none() {
+        builder.event_type = Some(Default::default())
     }
     builder
 }
@@ -546,6 +923,18 @@ pub(crate) fn source_event_metadata_summary_correct_errors(
     }
     if builder.event_type.is_none() {
         builder.event_type = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn summarization_dimension_detail_correct_errors(
+    mut builder: crate::types::builders::SummarizationDimensionDetailBuilder,
+) -> crate::types::builders::SummarizationDimensionDetailBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
     }
     builder
 }

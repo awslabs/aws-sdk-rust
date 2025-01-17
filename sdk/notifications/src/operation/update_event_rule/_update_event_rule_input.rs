@@ -3,25 +3,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateEventRuleInput {
-    /// <p>The Amazon Resource Name (ARN) to use to update the EventRule.</p>
+    /// <p>The Amazon Resource Name (ARN) to use to update the <code>EventRule</code>.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>An additional event pattern used to further filter the events this EventRule receives.</p>
+    /// <p>An additional event pattern used to further filter the events this <code>EventRule</code> receives.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a> in the <i>Amazon EventBridge User Guide.</i></p>
     pub event_pattern: ::std::option::Option<::std::string::String>,
-    /// <p>A list of AWS Regions that sends events to this EventRule.</p>
+    /// <p>A list of Amazon Web Services Regions that sends events to this <code>EventRule</code>.</p>
     pub regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateEventRuleInput {
-    /// <p>The Amazon Resource Name (ARN) to use to update the EventRule.</p>
+    /// <p>The Amazon Resource Name (ARN) to use to update the <code>EventRule</code>.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>An additional event pattern used to further filter the events this EventRule receives.</p>
+    /// <p>An additional event pattern used to further filter the events this <code>EventRule</code> receives.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a> in the <i>Amazon EventBridge User Guide.</i></p>
     pub fn event_pattern(&self) -> ::std::option::Option<&str> {
         self.event_pattern.as_deref()
     }
-    /// <p>A list of AWS Regions that sends events to this EventRule.</p>
+    /// <p>A list of Amazon Web Services Regions that sends events to this <code>EventRule</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regions.is_none()`.
     pub fn regions(&self) -> &[::std::string::String] {
@@ -44,34 +44,34 @@ pub struct UpdateEventRuleInputBuilder {
     pub(crate) regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateEventRuleInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) to use to update the EventRule.</p>
+    /// <p>The Amazon Resource Name (ARN) to use to update the <code>EventRule</code>.</p>
     /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) to use to update the EventRule.</p>
+    /// <p>The Amazon Resource Name (ARN) to use to update the <code>EventRule</code>.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) to use to update the EventRule.</p>
+    /// <p>The Amazon Resource Name (ARN) to use to update the <code>EventRule</code>.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>An additional event pattern used to further filter the events this EventRule receives.</p>
+    /// <p>An additional event pattern used to further filter the events this <code>EventRule</code> receives.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a> in the <i>Amazon EventBridge User Guide.</i></p>
     pub fn event_pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_pattern = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An additional event pattern used to further filter the events this EventRule receives.</p>
+    /// <p>An additional event pattern used to further filter the events this <code>EventRule</code> receives.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a> in the <i>Amazon EventBridge User Guide.</i></p>
     pub fn set_event_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_pattern = input;
         self
     }
-    /// <p>An additional event pattern used to further filter the events this EventRule receives.</p>
+    /// <p>An additional event pattern used to further filter the events this <code>EventRule</code> receives.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a> in the <i>Amazon EventBridge User Guide.</i></p>
     pub fn get_event_pattern(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_pattern
@@ -80,19 +80,19 @@ impl UpdateEventRuleInputBuilder {
     ///
     /// To override the contents of this collection use [`set_regions`](Self::set_regions).
     ///
-    /// <p>A list of AWS Regions that sends events to this EventRule.</p>
+    /// <p>A list of Amazon Web Services Regions that sends events to this <code>EventRule</code>.</p>
     pub fn regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.regions.unwrap_or_default();
         v.push(input.into());
         self.regions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of AWS Regions that sends events to this EventRule.</p>
+    /// <p>A list of Amazon Web Services Regions that sends events to this <code>EventRule</code>.</p>
     pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.regions = input;
         self
     }
-    /// <p>A list of AWS Regions that sends events to this EventRule.</p>
+    /// <p>A list of Amazon Web Services Regions that sends events to this <code>EventRule</code>.</p>
     pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.regions
     }

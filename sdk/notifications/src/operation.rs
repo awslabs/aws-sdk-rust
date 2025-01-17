@@ -4,6 +4,12 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `AssociateChannel` operation.
 pub mod associate_channel;
 
+/// Types for the `AssociateManagedNotificationAccountContact` operation.
+pub mod associate_managed_notification_account_contact;
+
+/// Types for the `AssociateManagedNotificationAdditionalChannel` operation.
+pub mod associate_managed_notification_additional_channel;
+
 /// Types for the `CreateEventRule` operation.
 pub mod create_event_rule;
 
@@ -19,11 +25,32 @@ pub mod delete_notification_configuration;
 /// Types for the `DeregisterNotificationHub` operation.
 pub mod deregister_notification_hub;
 
+/// Types for the `DisableNotificationsAccessForOrganization` operation.
+pub mod disable_notifications_access_for_organization;
+
 /// Types for the `DisassociateChannel` operation.
 pub mod disassociate_channel;
 
+/// Types for the `DisassociateManagedNotificationAccountContact` operation.
+pub mod disassociate_managed_notification_account_contact;
+
+/// Types for the `DisassociateManagedNotificationAdditionalChannel` operation.
+pub mod disassociate_managed_notification_additional_channel;
+
+/// Types for the `EnableNotificationsAccessForOrganization` operation.
+pub mod enable_notifications_access_for_organization;
+
 /// Types for the `GetEventRule` operation.
 pub mod get_event_rule;
+
+/// Types for the `GetManagedNotificationChildEvent` operation.
+pub mod get_managed_notification_child_event;
+
+/// Types for the `GetManagedNotificationConfiguration` operation.
+pub mod get_managed_notification_configuration;
+
+/// Types for the `GetManagedNotificationEvent` operation.
+pub mod get_managed_notification_event;
 
 /// Types for the `GetNotificationConfiguration` operation.
 pub mod get_notification_configuration;
@@ -31,11 +58,26 @@ pub mod get_notification_configuration;
 /// Types for the `GetNotificationEvent` operation.
 pub mod get_notification_event;
 
+/// Types for the `GetNotificationsAccessForOrganization` operation.
+pub mod get_notifications_access_for_organization;
+
 /// Types for the `ListChannels` operation.
 pub mod list_channels;
 
 /// Types for the `ListEventRules` operation.
 pub mod list_event_rules;
+
+/// Types for the `ListManagedNotificationChannelAssociations` operation.
+pub mod list_managed_notification_channel_associations;
+
+/// Types for the `ListManagedNotificationChildEvents` operation.
+pub mod list_managed_notification_child_events;
+
+/// Types for the `ListManagedNotificationConfigurations` operation.
+pub mod list_managed_notification_configurations;
+
+/// Types for the `ListManagedNotificationEvents` operation.
+pub mod list_managed_notification_events;
 
 /// Types for the `ListNotificationConfigurations` operation.
 pub mod list_notification_configurations;

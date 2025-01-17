@@ -35,7 +35,7 @@ pub struct CreateNetworkInterfaceInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The primary private IPv4 address of the network interface. If you don't specify an IPv4 address, Amazon EC2 selects one for you from the subnet's IPv4 CIDR range. If you specify an IP address, you cannot indicate any IP addresses specified in <code>privateIpAddresses</code> as primary (only one IP address can be designated as primary).</p>
     pub private_ip_address: ::std::option::Option<::std::string::String>,
-    /// <p>The IDs of one or more security groups.</p>
+    /// <p>The IDs of the security groups.</p>
     pub groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The private IPv4 addresses.</p>
     /// <p>You can't specify private IPv4 addresses if you've specified one of the following: a count of private IPv4 addresses, specific IPv4 prefixes, or a count of IPv4 prefixes.</p>
@@ -118,7 +118,7 @@ impl CreateNetworkInterfaceInput {
     pub fn private_ip_address(&self) -> ::std::option::Option<&str> {
         self.private_ip_address.as_deref()
     }
-    /// <p>The IDs of one or more security groups.</p>
+    /// <p>The IDs of the security groups.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
     pub fn groups(&self) -> &[::std::string::String] {
@@ -412,19 +412,19 @@ impl CreateNetworkInterfaceInputBuilder {
     ///
     /// To override the contents of this collection use [`set_groups`](Self::set_groups).
     ///
-    /// <p>The IDs of one or more security groups.</p>
+    /// <p>The IDs of the security groups.</p>
     pub fn groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.groups.unwrap_or_default();
         v.push(input.into());
         self.groups = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The IDs of one or more security groups.</p>
+    /// <p>The IDs of the security groups.</p>
     pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.groups = input;
         self
     }
-    /// <p>The IDs of one or more security groups.</p>
+    /// <p>The IDs of the security groups.</p>
     pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.groups
     }

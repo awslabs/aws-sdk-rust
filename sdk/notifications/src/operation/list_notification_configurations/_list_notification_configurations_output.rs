@@ -5,7 +5,7 @@
 pub struct ListNotificationConfigurationsOutput {
     /// <p>A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to retrieve more entries.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The NotificationConfigurations in the account.</p>
+    /// <p>The <code>NotificationConfigurations</code> in the account.</p>
     pub notification_configurations: ::std::vec::Vec<crate::types::NotificationConfigurationStructure>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl ListNotificationConfigurationsOutput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The NotificationConfigurations in the account.</p>
+    /// <p>The <code>NotificationConfigurations</code> in the account.</p>
     pub fn notification_configurations(&self) -> &[crate::types::NotificationConfigurationStructure] {
         use std::ops::Deref;
         self.notification_configurations.deref()
@@ -59,14 +59,14 @@ impl ListNotificationConfigurationsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_notification_configurations`](Self::set_notification_configurations).
     ///
-    /// <p>The NotificationConfigurations in the account.</p>
+    /// <p>The <code>NotificationConfigurations</code> in the account.</p>
     pub fn notification_configurations(mut self, input: crate::types::NotificationConfigurationStructure) -> Self {
         let mut v = self.notification_configurations.unwrap_or_default();
         v.push(input);
         self.notification_configurations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The NotificationConfigurations in the account.</p>
+    /// <p>The <code>NotificationConfigurations</code> in the account.</p>
     pub fn set_notification_configurations(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::NotificationConfigurationStructure>>,
@@ -74,7 +74,7 @@ impl ListNotificationConfigurationsOutputBuilder {
         self.notification_configurations = input;
         self
     }
-    /// <p>The NotificationConfigurations in the account.</p>
+    /// <p>The <code>NotificationConfigurations</code> in the account.</p>
     pub fn get_notification_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationConfigurationStructure>> {
         &self.notification_configurations
     }

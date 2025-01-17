@@ -22,8 +22,8 @@ impl crate::operation::deregister_notification_hub::builders::DeregisterNotifica
 }
 /// Fluent builder constructing a request to `DeregisterNotificationHub`.
 ///
-/// <p>Deregisters a NotificationHub in the specified Region.</p><note>
-/// <p>You can't deregister the last NotificationHub in the account. NotificationEvents stored in the deregistered NotificationHub are no longer be visible. Recreating a new NotificationHub in the same Region restores access to those NotificationEvents.</p>
+/// <p>Deregisters a <code>NotificationConfiguration</code> in the specified Region.</p><note>
+/// <p>You can't deregister the last <code>NotificationHub</code> in the account. <code>NotificationEvents</code> stored in the deregistered <code>NotificationConfiguration</code> are no longer be visible. Recreating a new <code>NotificationConfiguration</code> in the same Region restores access to those <code>NotificationEvents</code>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeregisterNotificationHubFluentBuilder {
@@ -110,17 +110,17 @@ impl DeregisterNotificationHubFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The NotificationHub Region.</p>
+    /// <p>The <code>NotificationConfiguration</code> Region.</p>
     pub fn notification_hub_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.notification_hub_region(input.into());
         self
     }
-    /// <p>The NotificationHub Region.</p>
+    /// <p>The <code>NotificationConfiguration</code> Region.</p>
     pub fn set_notification_hub_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_notification_hub_region(input);
         self
     }
-    /// <p>The NotificationHub Region.</p>
+    /// <p>The <code>NotificationConfiguration</code> Region.</p>
     pub fn get_notification_hub_region(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_notification_hub_region()
     }

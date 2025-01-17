@@ -22,7 +22,7 @@ impl crate::operation::update_datasource_packages::builders::UpdateDatasourcePac
 }
 /// Fluent builder constructing a request to `UpdateDatasourcePackages`.
 ///
-/// <p>Starts a data source packages for the behavior graph.</p>
+/// <p>Starts a data source package for the Detective behavior graph.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDatasourcePackagesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -127,17 +127,17 @@ impl UpdateDatasourcePackagesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_datasource_packages`](Self::set_datasource_packages).
     ///
-    /// <p>The data source package start for the behavior graph.</p>
+    /// <p>The data source package to start for the behavior graph.</p>
     pub fn datasource_packages(mut self, input: crate::types::DatasourcePackage) -> Self {
         self.inner = self.inner.datasource_packages(input);
         self
     }
-    /// <p>The data source package start for the behavior graph.</p>
+    /// <p>The data source package to start for the behavior graph.</p>
     pub fn set_datasource_packages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatasourcePackage>>) -> Self {
         self.inner = self.inner.set_datasource_packages(input);
         self
     }
-    /// <p>The data source package start for the behavior graph.</p>
+    /// <p>The data source package to start for the behavior graph.</p>
     pub fn get_datasource_packages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasourcePackage>> {
         self.inner.get_datasource_packages()
     }

@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterNotificationHubInput {
-    /// <p>The Region of the NotificationHub.</p>
+    /// <p>The Region of the <code>NotificationHub</code>.</p>
     pub notification_hub_region: ::std::option::Option<::std::string::String>,
 }
 impl RegisterNotificationHubInput {
-    /// <p>The Region of the NotificationHub.</p>
+    /// <p>The Region of the <code>NotificationHub</code>.</p>
     pub fn notification_hub_region(&self) -> ::std::option::Option<&str> {
         self.notification_hub_region.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct RegisterNotificationHubInputBuilder {
     pub(crate) notification_hub_region: ::std::option::Option<::std::string::String>,
 }
 impl RegisterNotificationHubInputBuilder {
-    /// <p>The Region of the NotificationHub.</p>
+    /// <p>The Region of the <code>NotificationHub</code>.</p>
     /// This field is required.
     pub fn notification_hub_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notification_hub_region = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Region of the NotificationHub.</p>
+    /// <p>The Region of the <code>NotificationHub</code>.</p>
     pub fn set_notification_hub_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notification_hub_region = input;
         self
     }
-    /// <p>The Region of the NotificationHub.</p>
+    /// <p>The Region of the <code>NotificationHub</code>.</p>
     pub fn get_notification_hub_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.notification_hub_region
     }

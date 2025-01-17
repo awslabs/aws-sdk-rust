@@ -22,7 +22,7 @@ impl crate::operation::list_event_rules::builders::ListEventRulesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListEventRules`.
 ///
-/// <p>Returns a list of EventRules according to specified filters, in reverse chronological order (newest first).</p>
+/// <p>Returns a list of <code>EventRules</code> according to specified filters, in reverse chronological order (newest first).</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListEventRulesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,17 +114,17 @@ impl ListEventRulesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_event_rules::paginator::ListEventRulesPaginator {
         crate::operation::list_event_rules::paginator::ListEventRulesPaginator::new(self.handle, self.inner)
     }
-    /// <p>The Amazon Resource Name (ARN) of the NotificationConfiguration.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>NotificationConfiguration</code>.</p>
     pub fn notification_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.notification_configuration_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the NotificationConfiguration.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>NotificationConfiguration</code>.</p>
     pub fn set_notification_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_notification_configuration_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the NotificationConfiguration.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>NotificationConfiguration</code>.</p>
     pub fn get_notification_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_notification_configuration_arn()
     }
@@ -142,17 +142,17 @@ impl ListEventRulesFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>The start token for paginated calls. Retrieved from the response of a previous ListEventRules call. Next token uses Base64 encoding.</p>
+    /// <p>The start token for paginated calls. Retrieved from the response of a previous <code>ListEventRules</code> call. Next token uses Base64 encoding.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>The start token for paginated calls. Retrieved from the response of a previous ListEventRules call. Next token uses Base64 encoding.</p>
+    /// <p>The start token for paginated calls. Retrieved from the response of a previous <code>ListEventRules</code> call. Next token uses Base64 encoding.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The start token for paginated calls. Retrieved from the response of a previous ListEventRules call. Next token uses Base64 encoding.</p>
+    /// <p>The start token for paginated calls. Retrieved from the response of a previous <code>ListEventRules</code> call. Next token uses Base64 encoding.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

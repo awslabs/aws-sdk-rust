@@ -8,7 +8,7 @@ pub struct MediaElement {
     pub media_id: ::std::string::String,
     /// <p>The type of media.</p>
     pub r#type: crate::types::MediaElementType,
-    /// <p>The url of the media.</p>
+    /// <p>The URL of the media.</p>
     pub url: ::std::string::String,
     /// <p>The caption of the media.</p>
     pub caption: ::std::string::String,
@@ -23,7 +23,7 @@ impl MediaElement {
     pub fn r#type(&self) -> &crate::types::MediaElementType {
         &self.r#type
     }
-    /// <p>The url of the media.</p>
+    /// <p>The URL of the media.</p>
     pub fn url(&self) -> &str {
         use std::ops::Deref;
         self.url.deref()
@@ -81,18 +81,18 @@ impl MediaElementBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::MediaElementType> {
         &self.r#type
     }
-    /// <p>The url of the media.</p>
+    /// <p>The URL of the media.</p>
     /// This field is required.
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The url of the media.</p>
+    /// <p>The URL of the media.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
     }
-    /// <p>The url of the media.</p>
+    /// <p>The URL of the media.</p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.url
     }

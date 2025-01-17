@@ -5,7 +5,7 @@
 pub struct AssignIpv6AddressesInput {
     /// <p>The number of IPv6 prefixes that Amazon Web Services automatically assigns to the network interface. You cannot use this option if you use the <code>Ipv6Prefixes</code> option.</p>
     pub ipv6_prefix_count: ::std::option::Option<i32>,
-    /// <p>One or more IPv6 prefixes assigned to the network interface. You cannot use this option if you use the <code>Ipv6PrefixCount</code> option.</p>
+    /// <p>One or more IPv6 prefixes assigned to the network interface. You can't use this option if you use the <code>Ipv6PrefixCount</code> option.</p>
     pub ipv6_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the network interface.</p>
     pub network_interface_id: ::std::option::Option<::std::string::String>,
@@ -19,7 +19,7 @@ impl AssignIpv6AddressesInput {
     pub fn ipv6_prefix_count(&self) -> ::std::option::Option<i32> {
         self.ipv6_prefix_count
     }
-    /// <p>One or more IPv6 prefixes assigned to the network interface. You cannot use this option if you use the <code>Ipv6PrefixCount</code> option.</p>
+    /// <p>One or more IPv6 prefixes assigned to the network interface. You can't use this option if you use the <code>Ipv6PrefixCount</code> option.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv6_prefixes.is_none()`.
     pub fn ipv6_prefixes(&self) -> &[::std::string::String] {
@@ -76,19 +76,19 @@ impl AssignIpv6AddressesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_ipv6_prefixes`](Self::set_ipv6_prefixes).
     ///
-    /// <p>One or more IPv6 prefixes assigned to the network interface. You cannot use this option if you use the <code>Ipv6PrefixCount</code> option.</p>
+    /// <p>One or more IPv6 prefixes assigned to the network interface. You can't use this option if you use the <code>Ipv6PrefixCount</code> option.</p>
     pub fn ipv6_prefixes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ipv6_prefixes.unwrap_or_default();
         v.push(input.into());
         self.ipv6_prefixes = ::std::option::Option::Some(v);
         self
     }
-    /// <p>One or more IPv6 prefixes assigned to the network interface. You cannot use this option if you use the <code>Ipv6PrefixCount</code> option.</p>
+    /// <p>One or more IPv6 prefixes assigned to the network interface. You can't use this option if you use the <code>Ipv6PrefixCount</code> option.</p>
     pub fn set_ipv6_prefixes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ipv6_prefixes = input;
         self
     }
-    /// <p>One or more IPv6 prefixes assigned to the network interface. You cannot use this option if you use the <code>Ipv6PrefixCount</code> option.</p>
+    /// <p>One or more IPv6 prefixes assigned to the network interface. You can't use this option if you use the <code>Ipv6PrefixCount</code> option.</p>
     pub fn get_ipv6_prefixes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.ipv6_prefixes
     }

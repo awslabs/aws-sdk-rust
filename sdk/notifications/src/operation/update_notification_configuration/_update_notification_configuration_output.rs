@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateNotificationConfigurationOutput {
-    /// <p>The ARN used to update the NotificationConfiguration.</p>
+    /// <p>The ARN used to update the <code>NotificationConfiguration</code>.</p>
     pub arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl UpdateNotificationConfigurationOutput {
-    /// <p>The ARN used to update the NotificationConfiguration.</p>
+    /// <p>The ARN used to update the <code>NotificationConfiguration</code>.</p>
     pub fn arn(&self) -> &str {
         use std::ops::Deref;
         self.arn.deref()
@@ -34,18 +34,18 @@ pub struct UpdateNotificationConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateNotificationConfigurationOutputBuilder {
-    /// <p>The ARN used to update the NotificationConfiguration.</p>
+    /// <p>The ARN used to update the <code>NotificationConfiguration</code>.</p>
     /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN used to update the NotificationConfiguration.</p>
+    /// <p>The ARN used to update the <code>NotificationConfiguration</code>.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The ARN used to update the NotificationConfiguration.</p>
+    /// <p>The ARN used to update the <code>NotificationConfiguration</code>.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }

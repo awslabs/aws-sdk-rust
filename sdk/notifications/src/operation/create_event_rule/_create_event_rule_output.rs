@@ -5,9 +5,9 @@
 pub struct CreateEventRuleOutput {
     /// <p>The ARN of the resource.</p>
     pub arn: ::std::string::String,
-    /// <p>The ARN of a NotificationConfiguration.</p>
+    /// <p>The ARN of a <code>NotificationConfiguration</code>.</p>
     pub notification_configuration_arn: ::std::string::String,
-    /// <p>A list of an EventRule's status by Region. Regions are mapped to EventRuleStatusSummary.</p>
+    /// <p>A list of an <code>EventRule</code>'s status by Region. Regions are mapped to <code>EventRuleStatusSummary</code>.</p>
     pub status_summary_by_region: ::std::collections::HashMap<::std::string::String, crate::types::EventRuleStatusSummary>,
     _request_id: Option<String>,
 }
@@ -17,12 +17,12 @@ impl CreateEventRuleOutput {
         use std::ops::Deref;
         self.arn.deref()
     }
-    /// <p>The ARN of a NotificationConfiguration.</p>
+    /// <p>The ARN of a <code>NotificationConfiguration</code>.</p>
     pub fn notification_configuration_arn(&self) -> &str {
         use std::ops::Deref;
         self.notification_configuration_arn.deref()
     }
-    /// <p>A list of an EventRule's status by Region. Regions are mapped to EventRuleStatusSummary.</p>
+    /// <p>A list of an <code>EventRule</code>'s status by Region. Regions are mapped to <code>EventRuleStatusSummary</code>.</p>
     pub fn status_summary_by_region(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::EventRuleStatusSummary> {
         &self.status_summary_by_region
     }
@@ -65,18 +65,18 @@ impl CreateEventRuleOutputBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>The ARN of a NotificationConfiguration.</p>
+    /// <p>The ARN of a <code>NotificationConfiguration</code>.</p>
     /// This field is required.
     pub fn notification_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notification_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of a NotificationConfiguration.</p>
+    /// <p>The ARN of a <code>NotificationConfiguration</code>.</p>
     pub fn set_notification_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notification_configuration_arn = input;
         self
     }
-    /// <p>The ARN of a NotificationConfiguration.</p>
+    /// <p>The ARN of a <code>NotificationConfiguration</code>.</p>
     pub fn get_notification_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.notification_configuration_arn
     }
@@ -84,14 +84,14 @@ impl CreateEventRuleOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_status_summary_by_region`](Self::set_status_summary_by_region).
     ///
-    /// <p>A list of an EventRule's status by Region. Regions are mapped to EventRuleStatusSummary.</p>
+    /// <p>A list of an <code>EventRule</code>'s status by Region. Regions are mapped to <code>EventRuleStatusSummary</code>.</p>
     pub fn status_summary_by_region(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::EventRuleStatusSummary) -> Self {
         let mut hash_map = self.status_summary_by_region.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.status_summary_by_region = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A list of an EventRule's status by Region. Regions are mapped to EventRuleStatusSummary.</p>
+    /// <p>A list of an <code>EventRule</code>'s status by Region. Regions are mapped to <code>EventRuleStatusSummary</code>.</p>
     pub fn set_status_summary_by_region(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EventRuleStatusSummary>>,
@@ -99,7 +99,7 @@ impl CreateEventRuleOutputBuilder {
         self.status_summary_by_region = input;
         self
     }
-    /// <p>A list of an EventRule's status by Region. Regions are mapped to EventRuleStatusSummary.</p>
+    /// <p>A list of an <code>EventRule</code>'s status by Region. Regions are mapped to <code>EventRuleStatusSummary</code>.</p>
     pub fn get_status_summary_by_region(
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EventRuleStatusSummary>> {

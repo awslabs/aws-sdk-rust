@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateChannelInput {
-    /// <p>The Amazon Resource Name (ARN) of the Channel to associate with the NotificationConfiguration.</p>
-    /// <p>Supported ARNs include AWS Chatbot, the Console Mobile Application, and notifications-contacts.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Channel to associate with the <code>NotificationConfiguration</code>.</p>
+    /// <p>Supported ARNs include Chatbot, the Console Mobile Application, and notifications-contacts.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of the NotificationConfiguration to associate with the Channel.</p>
+    /// <p>The ARN of the <code>NotificationConfiguration</code> to associate with the Channel.</p>
     pub notification_configuration_arn: ::std::option::Option<::std::string::String>,
 }
 impl AssociateChannelInput {
-    /// <p>The Amazon Resource Name (ARN) of the Channel to associate with the NotificationConfiguration.</p>
-    /// <p>Supported ARNs include AWS Chatbot, the Console Mobile Application, and notifications-contacts.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Channel to associate with the <code>NotificationConfiguration</code>.</p>
+    /// <p>Supported ARNs include Chatbot, the Console Mobile Application, and notifications-contacts.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The ARN of the NotificationConfiguration to associate with the Channel.</p>
+    /// <p>The ARN of the <code>NotificationConfiguration</code> to associate with the Channel.</p>
     pub fn notification_configuration_arn(&self) -> ::std::option::Option<&str> {
         self.notification_configuration_arn.as_deref()
     }
@@ -35,36 +35,36 @@ pub struct AssociateChannelInputBuilder {
     pub(crate) notification_configuration_arn: ::std::option::Option<::std::string::String>,
 }
 impl AssociateChannelInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the Channel to associate with the NotificationConfiguration.</p>
-    /// <p>Supported ARNs include AWS Chatbot, the Console Mobile Application, and notifications-contacts.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Channel to associate with the <code>NotificationConfiguration</code>.</p>
+    /// <p>Supported ARNs include Chatbot, the Console Mobile Application, and notifications-contacts.</p>
     /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Channel to associate with the NotificationConfiguration.</p>
-    /// <p>Supported ARNs include AWS Chatbot, the Console Mobile Application, and notifications-contacts.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Channel to associate with the <code>NotificationConfiguration</code>.</p>
+    /// <p>Supported ARNs include Chatbot, the Console Mobile Application, and notifications-contacts.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Channel to associate with the NotificationConfiguration.</p>
-    /// <p>Supported ARNs include AWS Chatbot, the Console Mobile Application, and notifications-contacts.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Channel to associate with the <code>NotificationConfiguration</code>.</p>
+    /// <p>Supported ARNs include Chatbot, the Console Mobile Application, and notifications-contacts.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>The ARN of the NotificationConfiguration to associate with the Channel.</p>
+    /// <p>The ARN of the <code>NotificationConfiguration</code> to associate with the Channel.</p>
     /// This field is required.
     pub fn notification_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notification_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the NotificationConfiguration to associate with the Channel.</p>
+    /// <p>The ARN of the <code>NotificationConfiguration</code> to associate with the Channel.</p>
     pub fn set_notification_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notification_configuration_arn = input;
         self
     }
-    /// <p>The ARN of the NotificationConfiguration to associate with the Channel.</p>
+    /// <p>The ARN of the <code>NotificationConfiguration</code> to associate with the Channel.</p>
     pub fn get_notification_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.notification_configuration_arn
     }

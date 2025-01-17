@@ -3,21 +3,21 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateEventRuleOutput {
-    /// <p>The Amazon Resource Name (ARN) to use to update the EventRule.</p>
+    /// <p>The Amazon Resource Name (ARN) to use to update the <code>EventRule</code>.</p>
     pub arn: ::std::string::String,
-    /// <p>The ARN of the NotificationConfiguration.</p>
+    /// <p>The ARN of the <code>NotificationConfiguration</code>.</p>
     pub notification_configuration_arn: ::std::string::String,
     /// <p>The status of the action by Region.</p>
     pub status_summary_by_region: ::std::collections::HashMap<::std::string::String, crate::types::EventRuleStatusSummary>,
     _request_id: Option<String>,
 }
 impl UpdateEventRuleOutput {
-    /// <p>The Amazon Resource Name (ARN) to use to update the EventRule.</p>
+    /// <p>The Amazon Resource Name (ARN) to use to update the <code>EventRule</code>.</p>
     pub fn arn(&self) -> &str {
         use std::ops::Deref;
         self.arn.deref()
     }
-    /// <p>The ARN of the NotificationConfiguration.</p>
+    /// <p>The ARN of the <code>NotificationConfiguration</code>.</p>
     pub fn notification_configuration_arn(&self) -> &str {
         use std::ops::Deref;
         self.notification_configuration_arn.deref()
@@ -50,33 +50,33 @@ pub struct UpdateEventRuleOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateEventRuleOutputBuilder {
-    /// <p>The Amazon Resource Name (ARN) to use to update the EventRule.</p>
+    /// <p>The Amazon Resource Name (ARN) to use to update the <code>EventRule</code>.</p>
     /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) to use to update the EventRule.</p>
+    /// <p>The Amazon Resource Name (ARN) to use to update the <code>EventRule</code>.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) to use to update the EventRule.</p>
+    /// <p>The Amazon Resource Name (ARN) to use to update the <code>EventRule</code>.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>The ARN of the NotificationConfiguration.</p>
+    /// <p>The ARN of the <code>NotificationConfiguration</code>.</p>
     /// This field is required.
     pub fn notification_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notification_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the NotificationConfiguration.</p>
+    /// <p>The ARN of the <code>NotificationConfiguration</code>.</p>
     pub fn set_notification_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notification_configuration_arn = input;
         self
     }
-    /// <p>The ARN of the NotificationConfiguration.</p>
+    /// <p>The ARN of the <code>NotificationConfiguration</code>.</p>
     pub fn get_notification_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.notification_configuration_arn
     }

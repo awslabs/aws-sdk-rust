@@ -22,7 +22,7 @@ impl crate::operation::disassociate_channel::builders::DisassociateChannelInputB
 }
 /// Fluent builder constructing a request to `DisassociateChannel`.
 ///
-/// <p>Disassociates a Channel from a specified NotificationConfiguration. Supported Channels include AWS Chatbot, the AWS Console Mobile Application, and emails (notifications-contacts).</p>
+/// <p>Disassociates a Channel from a specified <code>NotificationConfiguration</code>. Supported Channels include Chatbot, the Console Mobile Application, and emails (notifications-contacts).</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateChannelFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,17 +122,17 @@ impl DisassociateChannelFluentBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_arn()
     }
-    /// <p>The ARN of the NotificationConfiguration to disassociate.</p>
+    /// <p>The ARN of the <code>NotificationConfiguration</code> to disassociate.</p>
     pub fn notification_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.notification_configuration_arn(input.into());
         self
     }
-    /// <p>The ARN of the NotificationConfiguration to disassociate.</p>
+    /// <p>The ARN of the <code>NotificationConfiguration</code> to disassociate.</p>
     pub fn set_notification_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_notification_configuration_arn(input);
         self
     }
-    /// <p>The ARN of the NotificationConfiguration to disassociate.</p>
+    /// <p>The ARN of the <code>NotificationConfiguration</code> to disassociate.</p>
     pub fn get_notification_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_notification_configuration_arn()
     }

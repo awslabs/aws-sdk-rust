@@ -22,8 +22,8 @@ impl crate::operation::register_notification_hub::builders::RegisterNotification
 }
 /// Fluent builder constructing a request to `RegisterNotificationHub`.
 ///
-/// <p>Registers a NotificationHub in the specified Region.</p>
-/// <p>There is a maximum of one NotificationHub per Region. You can have a maximum of 3 NotificationHubs at a time.</p>
+/// <p>Registers a <code>NotificationConfiguration</code> in the specified Region.</p>
+/// <p>There is a maximum of one <code>NotificationConfiguration</code> per Region. You can have a maximum of 3 <code>NotificationHub</code> resources at a time.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegisterNotificationHubFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -109,17 +109,17 @@ impl RegisterNotificationHubFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Region of the NotificationHub.</p>
+    /// <p>The Region of the <code>NotificationHub</code>.</p>
     pub fn notification_hub_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.notification_hub_region(input.into());
         self
     }
-    /// <p>The Region of the NotificationHub.</p>
+    /// <p>The Region of the <code>NotificationHub</code>.</p>
     pub fn set_notification_hub_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_notification_hub_region(input);
         self
     }
-    /// <p>The Region of the NotificationHub.</p>
+    /// <p>The Region of the <code>NotificationHub</code>.</p>
     pub fn get_notification_hub_region(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_notification_hub_region()
     }
