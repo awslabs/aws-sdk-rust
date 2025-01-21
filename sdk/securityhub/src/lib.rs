@@ -53,7 +53,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-securityhub = "1.58.0"
+//! aws-sdk-securityhub = "1.59.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
