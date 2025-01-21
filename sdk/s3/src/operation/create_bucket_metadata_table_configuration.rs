@@ -135,7 +135,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateB
                     let input: &crate::operation::create_bucket_metadata_table_configuration::CreateBucketMetadataTableConfigurationInput =
                         input.downcast_ref().expect("correct type");
                     let checksum_algorithm = input.checksum_algorithm();
-                    let checksum_algorithm = checksum_algorithm.map(|algorithm| algorithm.as_str()).or(Some("crc32"));
+                    let checksum_algorithm = checksum_algorithm.map(|algorithm| algorithm.as_str());
                     (checksum_algorithm.map(|s| s.to_string()), true)
                 },
                 |request: &mut ::aws_smithy_runtime_api::http::Request, cfg: &::aws_smithy_types::config_bag::ConfigBag| {
@@ -163,6 +163,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateB
                     // From the httpChecksum trait
                     let http_checksum_required = true;
 
+                    let is_presigned_req = cfg.load::<crate::presigning::PresigningMarker>().is_some();
+
+                    // If the request is presigned we do not set a default.
                     // If the RequestChecksumCalculation is WhenSupported and the user has not set a checksum value or algo
                     // we default to Crc32. If it is WhenRequired and a checksum is required by the trait and the user has not
                     // set a checksum value or algo we also set the default. In all other cases we do nothing.
@@ -171,9 +174,11 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateB
                         http_checksum_required,
                         user_set_checksum_value,
                         user_set_checksum_algo,
+                        is_presigned_req,
                     ) {
-                        (::aws_smithy_types::checksum_config::RequestChecksumCalculation::WhenSupported, _, false, false)
-                        | (::aws_smithy_types::checksum_config::RequestChecksumCalculation::WhenRequired, true, false, false) => {
+                        (_, _, _, _, true) => {}
+                        (::aws_smithy_types::checksum_config::RequestChecksumCalculation::WhenSupported, _, false, false, _)
+                        | (::aws_smithy_types::checksum_config::RequestChecksumCalculation::WhenRequired, true, false, false, _) => {
                             request.headers_mut().insert("x-amz-sdk-checksum-algorithm", "CRC32");
                         }
                         _ => {}

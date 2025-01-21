@@ -173,24 +173,22 @@ where
             .load::<RequestChecksumCalculation>()
             .unwrap_or(&RequestChecksumCalculation::WhenSupported);
 
-        // Determine if we actually calculate the checksum. If the user setting is WhenSupported (the default)
-        // we always calculate it (because this interceptor isn't added if it isn't supported). If it is
-        // WhenRequired we only calculate it if the checksum is marked required on the trait.
-        let calculate_checksum = match request_checksum_calculation {
-            RequestChecksumCalculation::WhenRequired => request_checksum_required,
-            RequestChecksumCalculation::WhenSupported => true,
+        // Need to know if this is a presigned req because we do not calculate checksums for those.
+        let is_presigned_req = cfg.load::<PresigningMarker>().is_some();
+
+        // Determine if we actually calculate the checksum. If this is a presigned request we do not
+        // If the user setting is WhenSupported (the default) we always calculate it (because this interceptor
+        // isn't added if it isn't supported). If it is WhenRequired we only calculate it if the checksum
+        // is marked required on the trait.
+        let calculate_checksum = match (request_checksum_calculation, is_presigned_req) {
+            (_, true) => false,
+            (RequestChecksumCalculation::WhenRequired, false) => request_checksum_required,
+            (RequestChecksumCalculation::WhenSupported, false) => true,
             _ => true,
         };
 
         // Calculate the checksum if necessary
         if calculate_checksum {
-            let is_presigned_req = cfg.load::<PresigningMarker>().is_some();
-
-            // If this is a presigned request and the user has not set a checksum we short circuit
-            if is_presigned_req && checksum_algorithm.is_none() {
-                return Ok(());
-            }
-
             // If a checksum override is set in the ConfigBag we use that instead (currently only used by S3Express)
             // If we have made it this far without a checksum being set we set the default (currently Crc32)
             let checksum_algorithm = incorporate_custom_default(checksum_algorithm, cfg).unwrap_or_default();
