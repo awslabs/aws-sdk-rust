@@ -155,11 +155,21 @@ impl PutDeliverySourceFluentBuilder {
     /// <li>
     /// <p>For Amazon Bedrock, the valid value is <code>APPLICATION_LOGS</code>.</p></li>
     /// <li>
+    /// <p>For CloudFront, the valid value is <code>ACCESS_LOGS</code>.</p></li>
+    /// <li>
     /// <p>For Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Elemental MediaPackage, the valid values are <code>EGRESS_ACCESS_LOGS</code> and <code>INGRESS_ACCESS_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Elemental MediaTailor, the valid values are <code>AD_DECISION_SERVER_LOGS</code>, <code>MANIFEST_SERVICE_LOGS</code>, and <code>TRANSCODE_LOGS</code>.</p></li>
     /// <li>
     /// <p>For IAM Identity Center, the valid value is <code>ERROR_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For Amazon WorkMail, the valid values are <code>ACCESS_CONTROL_LOGS</code>, <code>AUTHENTICATION_LOGS</code>, <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>, and <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>.</p></li>
+    /// <p>For Amazon Q, the valid value is <code>EVENT_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon SES mail manager, the valid value is <code>APPLICATION_LOG</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon WorkMail, the valid values are <code>ACCESS_CONTROL_LOGS</code>, <code>AUTHENTICATION_LOGS</code>, <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>, <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>, and <code>WORKMAIL_PERSONAL_ACCESS_TOKEN_LOGS</code>.</p></li>
     /// </ul>
     pub fn log_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.log_type(input.into());
@@ -170,11 +180,21 @@ impl PutDeliverySourceFluentBuilder {
     /// <li>
     /// <p>For Amazon Bedrock, the valid value is <code>APPLICATION_LOGS</code>.</p></li>
     /// <li>
+    /// <p>For CloudFront, the valid value is <code>ACCESS_LOGS</code>.</p></li>
+    /// <li>
     /// <p>For Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Elemental MediaPackage, the valid values are <code>EGRESS_ACCESS_LOGS</code> and <code>INGRESS_ACCESS_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Elemental MediaTailor, the valid values are <code>AD_DECISION_SERVER_LOGS</code>, <code>MANIFEST_SERVICE_LOGS</code>, and <code>TRANSCODE_LOGS</code>.</p></li>
     /// <li>
     /// <p>For IAM Identity Center, the valid value is <code>ERROR_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For Amazon WorkMail, the valid values are <code>ACCESS_CONTROL_LOGS</code>, <code>AUTHENTICATION_LOGS</code>, <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>, and <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>.</p></li>
+    /// <p>For Amazon Q, the valid value is <code>EVENT_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon SES mail manager, the valid value is <code>APPLICATION_LOG</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon WorkMail, the valid values are <code>ACCESS_CONTROL_LOGS</code>, <code>AUTHENTICATION_LOGS</code>, <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>, <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>, and <code>WORKMAIL_PERSONAL_ACCESS_TOKEN_LOGS</code>.</p></li>
     /// </ul>
     pub fn set_log_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_log_type(input);
@@ -185,11 +205,21 @@ impl PutDeliverySourceFluentBuilder {
     /// <li>
     /// <p>For Amazon Bedrock, the valid value is <code>APPLICATION_LOGS</code>.</p></li>
     /// <li>
+    /// <p>For CloudFront, the valid value is <code>ACCESS_LOGS</code>.</p></li>
+    /// <li>
     /// <p>For Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Elemental MediaPackage, the valid values are <code>EGRESS_ACCESS_LOGS</code> and <code>INGRESS_ACCESS_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Elemental MediaTailor, the valid values are <code>AD_DECISION_SERVER_LOGS</code>, <code>MANIFEST_SERVICE_LOGS</code>, and <code>TRANSCODE_LOGS</code>.</p></li>
     /// <li>
     /// <p>For IAM Identity Center, the valid value is <code>ERROR_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For Amazon WorkMail, the valid values are <code>ACCESS_CONTROL_LOGS</code>, <code>AUTHENTICATION_LOGS</code>, <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>, and <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>.</p></li>
+    /// <p>For Amazon Q, the valid value is <code>EVENT_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon SES mail manager, the valid value is <code>APPLICATION_LOG</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon WorkMail, the valid values are <code>ACCESS_CONTROL_LOGS</code>, <code>AUTHENTICATION_LOGS</code>, <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>, <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>, and <code>WORKMAIL_PERSONAL_ACCESS_TOKEN_LOGS</code>.</p></li>
     /// </ul>
     pub fn get_log_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_log_type()

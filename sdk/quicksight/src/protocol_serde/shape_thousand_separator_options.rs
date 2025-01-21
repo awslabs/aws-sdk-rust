@@ -9,6 +9,9 @@ pub fn ser_thousand_separator_options(
     if let Some(var_2) = &input.visibility {
         object.key("Visibility").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.grouping_style {
+        object.key("GroupingStyle").string(var_3.as_str());
+    }
     Ok(())
 }
 
@@ -38,6 +41,13 @@ where
                             builder = builder.set_visibility(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::Visibility::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "GroupingStyle" => {
+                            builder = builder.set_grouping_style(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::DigitGroupingStyle::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

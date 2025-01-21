@@ -30,6 +30,8 @@ pub struct PutStorageConfigurationInput {
     pub warm_tier: ::std::option::Option<crate::types::WarmTierState>,
     /// <p>Set this period to specify how long your data is stored in the warm tier before it is deleted. You can set this only if cold tier is enabled.</p>
     pub warm_tier_retention_period: ::std::option::Option<crate::types::WarmTierRetentionPeriod>,
+    /// <p>Describes the configuration for ingesting NULL and NaN data. By default the feature is allowed. The feature is disallowed if the value is <code>true</code>.</p>
+    pub disallow_ingest_null_na_n: ::std::option::Option<bool>,
 }
 impl PutStorageConfigurationInput {
     /// <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p>
@@ -71,6 +73,10 @@ impl PutStorageConfigurationInput {
     pub fn warm_tier_retention_period(&self) -> ::std::option::Option<&crate::types::WarmTierRetentionPeriod> {
         self.warm_tier_retention_period.as_ref()
     }
+    /// <p>Describes the configuration for ingesting NULL and NaN data. By default the feature is allowed. The feature is disallowed if the value is <code>true</code>.</p>
+    pub fn disallow_ingest_null_na_n(&self) -> ::std::option::Option<bool> {
+        self.disallow_ingest_null_na_n
+    }
 }
 impl PutStorageConfigurationInput {
     /// Creates a new builder-style object to manufacture [`PutStorageConfigurationInput`](crate::operation::put_storage_configuration::PutStorageConfigurationInput).
@@ -89,6 +95,7 @@ pub struct PutStorageConfigurationInputBuilder {
     pub(crate) retention_period: ::std::option::Option<crate::types::RetentionPeriod>,
     pub(crate) warm_tier: ::std::option::Option<crate::types::WarmTierState>,
     pub(crate) warm_tier_retention_period: ::std::option::Option<crate::types::WarmTierRetentionPeriod>,
+    pub(crate) disallow_ingest_null_na_n: ::std::option::Option<bool>,
 }
 impl PutStorageConfigurationInputBuilder {
     /// <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p>
@@ -221,6 +228,20 @@ impl PutStorageConfigurationInputBuilder {
     pub fn get_warm_tier_retention_period(&self) -> &::std::option::Option<crate::types::WarmTierRetentionPeriod> {
         &self.warm_tier_retention_period
     }
+    /// <p>Describes the configuration for ingesting NULL and NaN data. By default the feature is allowed. The feature is disallowed if the value is <code>true</code>.</p>
+    pub fn disallow_ingest_null_na_n(mut self, input: bool) -> Self {
+        self.disallow_ingest_null_na_n = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes the configuration for ingesting NULL and NaN data. By default the feature is allowed. The feature is disallowed if the value is <code>true</code>.</p>
+    pub fn set_disallow_ingest_null_na_n(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.disallow_ingest_null_na_n = input;
+        self
+    }
+    /// <p>Describes the configuration for ingesting NULL and NaN data. By default the feature is allowed. The feature is disallowed if the value is <code>true</code>.</p>
+    pub fn get_disallow_ingest_null_na_n(&self) -> &::std::option::Option<bool> {
+        &self.disallow_ingest_null_na_n
+    }
     /// Consumes the builder and constructs a [`PutStorageConfigurationInput`](crate::operation::put_storage_configuration::PutStorageConfigurationInput).
     pub fn build(
         self,
@@ -235,6 +256,7 @@ impl PutStorageConfigurationInputBuilder {
             retention_period: self.retention_period,
             warm_tier: self.warm_tier,
             warm_tier_retention_period: self.warm_tier_retention_period,
+            disallow_ingest_null_na_n: self.disallow_ingest_null_na_n,
         })
     }
 }

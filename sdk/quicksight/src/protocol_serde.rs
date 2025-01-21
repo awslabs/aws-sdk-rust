@@ -2981,6 +2981,8 @@ pub(crate) mod shape_table_field_order_list;
 
 pub(crate) mod shape_table_style_target_list;
 
+pub(crate) mod shape_table_unaggregated_field_list;
+
 pub(crate) mod shape_tooltip_item_list;
 
 pub(crate) mod shape_tree_map_dimension_field_list;

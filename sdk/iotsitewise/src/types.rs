@@ -243,6 +243,10 @@ pub use crate::types::_interpolated_asset_property_value::InterpolatedAssetPrope
 
 pub use crate::types::_variant::Variant;
 
+pub use crate::types::_property_value_null_value::PropertyValueNullValue;
+
+pub use crate::types::_raw_value_type::RawValueType;
+
 pub use crate::types::_time_in_nanos::TimeInNanos;
 
 pub use crate::types::_quality::Quality;
@@ -665,9 +669,13 @@ mod _property_notification_state;
 
 mod _property_type;
 
+mod _property_value_null_value;
+
 mod _put_asset_property_value_entry;
 
 mod _quality;
+
+mod _raw_value_type;
 
 mod _reference;
 

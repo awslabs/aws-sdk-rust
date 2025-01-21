@@ -32,6 +32,8 @@ pub struct PutStorageConfigurationOutput {
     pub warm_tier: ::std::option::Option<crate::types::WarmTierState>,
     /// <p>Set this period to specify how long your data is stored in the warm tier before it is deleted. You can set this only if cold tier is enabled.</p>
     pub warm_tier_retention_period: ::std::option::Option<crate::types::WarmTierRetentionPeriod>,
+    /// <p>Describes the configuration for ingesting NULL and NaN data. By default the feature is allowed. The feature is disallowed if the value is <code>true</code>.</p>
+    pub disallow_ingest_null_na_n: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl PutStorageConfigurationOutput {
@@ -78,6 +80,10 @@ impl PutStorageConfigurationOutput {
     pub fn warm_tier_retention_period(&self) -> ::std::option::Option<&crate::types::WarmTierRetentionPeriod> {
         self.warm_tier_retention_period.as_ref()
     }
+    /// <p>Describes the configuration for ingesting NULL and NaN data. By default the feature is allowed. The feature is disallowed if the value is <code>true</code>.</p>
+    pub fn disallow_ingest_null_na_n(&self) -> ::std::option::Option<bool> {
+        self.disallow_ingest_null_na_n
+    }
 }
 impl ::aws_types::request_id::RequestId for PutStorageConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
@@ -102,6 +108,7 @@ pub struct PutStorageConfigurationOutputBuilder {
     pub(crate) configuration_status: ::std::option::Option<crate::types::ConfigurationStatus>,
     pub(crate) warm_tier: ::std::option::Option<crate::types::WarmTierState>,
     pub(crate) warm_tier_retention_period: ::std::option::Option<crate::types::WarmTierRetentionPeriod>,
+    pub(crate) disallow_ingest_null_na_n: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl PutStorageConfigurationOutputBuilder {
@@ -250,6 +257,20 @@ impl PutStorageConfigurationOutputBuilder {
     pub fn get_warm_tier_retention_period(&self) -> &::std::option::Option<crate::types::WarmTierRetentionPeriod> {
         &self.warm_tier_retention_period
     }
+    /// <p>Describes the configuration for ingesting NULL and NaN data. By default the feature is allowed. The feature is disallowed if the value is <code>true</code>.</p>
+    pub fn disallow_ingest_null_na_n(mut self, input: bool) -> Self {
+        self.disallow_ingest_null_na_n = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes the configuration for ingesting NULL and NaN data. By default the feature is allowed. The feature is disallowed if the value is <code>true</code>.</p>
+    pub fn set_disallow_ingest_null_na_n(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.disallow_ingest_null_na_n = input;
+        self
+    }
+    /// <p>Describes the configuration for ingesting NULL and NaN data. By default the feature is allowed. The feature is disallowed if the value is <code>true</code>.</p>
+    pub fn get_disallow_ingest_null_na_n(&self) -> &::std::option::Option<bool> {
+        &self.disallow_ingest_null_na_n
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -281,6 +302,7 @@ impl PutStorageConfigurationOutputBuilder {
             configuration_status: self.configuration_status,
             warm_tier: self.warm_tier,
             warm_tier_retention_period: self.warm_tier_retention_period,
+            disallow_ingest_null_na_n: self.disallow_ingest_null_na_n,
             _request_id: self._request_id,
         })
     }

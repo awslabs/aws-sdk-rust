@@ -12,6 +12,7 @@ impl super::Client {
     ///   - [`last_update_date(Option<DateTime>)`](crate::operation::describe_storage_configuration::DescribeStorageConfigurationOutput::last_update_date): <p>The date the storage configuration was last updated, in Unix epoch time.</p>
     ///   - [`warm_tier(Option<WarmTierState>)`](crate::operation::describe_storage_configuration::DescribeStorageConfigurationOutput::warm_tier): <p>A service managed storage tier optimized for analytical queries. It stores periodically uploaded, buffered and historical data ingested with the CreaeBulkImportJob API.</p>
     ///   - [`warm_tier_retention_period(Option<WarmTierRetentionPeriod>)`](crate::operation::describe_storage_configuration::DescribeStorageConfigurationOutput::warm_tier_retention_period): <p>Set this period to specify how long your data is stored in the warm tier before it is deleted. You can set this only if cold tier is enabled.</p>
+    ///   - [`disallow_ingest_null_na_n(Option<bool>)`](crate::operation::describe_storage_configuration::DescribeStorageConfigurationOutput::disallow_ingest_null_na_n): <p>Describes the configuration for ingesting NULL and NaN data. By default the feature is allowed. The feature is disallowed if the value is <code>true</code>.</p>
     /// - On failure, responds with [`SdkError<DescribeStorageConfigurationError>`](crate::operation::describe_storage_configuration::DescribeStorageConfigurationError)
     pub fn describe_storage_configuration(
         &self,

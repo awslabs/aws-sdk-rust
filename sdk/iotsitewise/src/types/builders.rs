@@ -167,6 +167,8 @@ pub use crate::types::_interpolated_asset_property_value::InterpolatedAssetPrope
 
 pub use crate::types::_variant::VariantBuilder;
 
+pub use crate::types::_property_value_null_value::PropertyValueNullValueBuilder;
+
 pub use crate::types::_time_in_nanos::TimeInNanosBuilder;
 
 pub use crate::types::_asset_property_value::AssetPropertyValueBuilder;

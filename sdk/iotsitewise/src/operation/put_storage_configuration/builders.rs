@@ -237,4 +237,18 @@ impl PutStorageConfigurationFluentBuilder {
     pub fn get_warm_tier_retention_period(&self) -> &::std::option::Option<crate::types::WarmTierRetentionPeriod> {
         self.inner.get_warm_tier_retention_period()
     }
+    /// <p>Describes the configuration for ingesting NULL and NaN data. By default the feature is allowed. The feature is disallowed if the value is <code>true</code>.</p>
+    pub fn disallow_ingest_null_na_n(mut self, input: bool) -> Self {
+        self.inner = self.inner.disallow_ingest_null_na_n(input);
+        self
+    }
+    /// <p>Describes the configuration for ingesting NULL and NaN data. By default the feature is allowed. The feature is disallowed if the value is <code>true</code>.</p>
+    pub fn set_disallow_ingest_null_na_n(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_disallow_ingest_null_na_n(input);
+        self
+    }
+    /// <p>Describes the configuration for ingesting NULL and NaN data. By default the feature is allowed. The feature is disallowed if the value is <code>true</code>.</p>
+    pub fn get_disallow_ingest_null_na_n(&self) -> &::std::option::Option<bool> {
+        self.inner.get_disallow_ingest_null_na_n()
+    }
 }

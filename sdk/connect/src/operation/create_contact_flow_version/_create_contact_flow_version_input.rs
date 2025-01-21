@@ -11,6 +11,8 @@ pub struct CreateContactFlowVersionInput {
     pub contact_flow_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the checksum value of the flow content.</p>
     pub flow_content_sha256: ::std::option::Option<::std::string::String>,
+    /// <p>The identifier of the flow version.</p>
+    pub contact_flow_version: ::std::option::Option<i64>,
     /// <p>The Amazon Web Services Region where this resource was last modified.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Web Services Region where this resource was last modified.</p>
@@ -32,6 +34,10 @@ impl CreateContactFlowVersionInput {
     /// <p>Indicates the checksum value of the flow content.</p>
     pub fn flow_content_sha256(&self) -> ::std::option::Option<&str> {
         self.flow_content_sha256.as_deref()
+    }
+    /// <p>The identifier of the flow version.</p>
+    pub fn contact_flow_version(&self) -> ::std::option::Option<i64> {
+        self.contact_flow_version
     }
     /// <p>The Amazon Web Services Region where this resource was last modified.</p>
     pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -57,6 +63,7 @@ pub struct CreateContactFlowVersionInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) contact_flow_id: ::std::option::Option<::std::string::String>,
     pub(crate) flow_content_sha256: ::std::option::Option<::std::string::String>,
+    pub(crate) contact_flow_version: ::std::option::Option<i64>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_region: ::std::option::Option<::std::string::String>,
 }
@@ -119,6 +126,20 @@ impl CreateContactFlowVersionInputBuilder {
     pub fn get_flow_content_sha256(&self) -> &::std::option::Option<::std::string::String> {
         &self.flow_content_sha256
     }
+    /// <p>The identifier of the flow version.</p>
+    pub fn contact_flow_version(mut self, input: i64) -> Self {
+        self.contact_flow_version = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The identifier of the flow version.</p>
+    pub fn set_contact_flow_version(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.contact_flow_version = input;
+        self
+    }
+    /// <p>The identifier of the flow version.</p>
+    pub fn get_contact_flow_version(&self) -> &::std::option::Option<i64> {
+        &self.contact_flow_version
+    }
     /// <p>The Amazon Web Services Region where this resource was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -159,6 +180,7 @@ impl CreateContactFlowVersionInputBuilder {
             description: self.description,
             contact_flow_id: self.contact_flow_id,
             flow_content_sha256: self.flow_content_sha256,
+            contact_flow_version: self.contact_flow_version,
             last_modified_time: self.last_modified_time,
             last_modified_region: self.last_modified_region,
         })

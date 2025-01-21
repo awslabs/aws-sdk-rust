@@ -14,6 +14,8 @@
 /// match numberscale {
 ///     NumberScale::Auto => { /* ... */ },
 ///     NumberScale::Billions => { /* ... */ },
+///     NumberScale::Crores => { /* ... */ },
+///     NumberScale::Lakhs => { /* ... */ },
 ///     NumberScale::Millions => { /* ... */ },
 ///     NumberScale::None => { /* ... */ },
 ///     NumberScale::Thousands => { /* ... */ },
@@ -51,6 +53,10 @@ pub enum NumberScale {
     #[allow(missing_docs)] // documentation missing in model
     Billions,
     #[allow(missing_docs)] // documentation missing in model
+    Crores,
+    #[allow(missing_docs)] // documentation missing in model
+    Lakhs,
+    #[allow(missing_docs)] // documentation missing in model
     Millions,
     #[allow(missing_docs)] // documentation missing in model
     None,
@@ -67,6 +73,8 @@ impl ::std::convert::From<&str> for NumberScale {
         match s {
             "AUTO" => NumberScale::Auto,
             "BILLIONS" => NumberScale::Billions,
+            "CRORES" => NumberScale::Crores,
+            "LAKHS" => NumberScale::Lakhs,
             "MILLIONS" => NumberScale::Millions,
             "NONE" => NumberScale::None,
             "THOUSANDS" => NumberScale::Thousands,
@@ -88,6 +96,8 @@ impl NumberScale {
         match self {
             NumberScale::Auto => "AUTO",
             NumberScale::Billions => "BILLIONS",
+            NumberScale::Crores => "CRORES",
+            NumberScale::Lakhs => "LAKHS",
             NumberScale::Millions => "MILLIONS",
             NumberScale::None => "NONE",
             NumberScale::Thousands => "THOUSANDS",
@@ -97,7 +107,7 @@ impl NumberScale {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AUTO", "BILLIONS", "MILLIONS", "NONE", "THOUSANDS", "TRILLIONS"]
+        &["AUTO", "BILLIONS", "CRORES", "LAKHS", "MILLIONS", "NONE", "THOUSANDS", "TRILLIONS"]
     }
 }
 impl ::std::convert::AsRef<str> for NumberScale {
@@ -122,6 +132,8 @@ impl ::std::fmt::Display for NumberScale {
         match self {
             NumberScale::Auto => write!(f, "AUTO"),
             NumberScale::Billions => write!(f, "BILLIONS"),
+            NumberScale::Crores => write!(f, "CRORES"),
+            NumberScale::Lakhs => write!(f, "LAKHS"),
             NumberScale::Millions => write!(f, "MILLIONS"),
             NumberScale::None => write!(f, "NONE"),
             NumberScale::Thousands => write!(f, "THOUSANDS"),

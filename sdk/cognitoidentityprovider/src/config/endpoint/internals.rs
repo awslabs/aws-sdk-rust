@@ -41,6 +41,26 @@ pub(super) fn resolve_endpoint(
                 if (*use_dual_stack) == (true) {
                     if (true) == (partition_result.supports_fips()) {
                         if (true) == (partition_result.supports_dual_stack()) {
+                            if (region) == ("us-east-1") {
+                                return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url("https://cognito-idp-fips.us-east-1.amazonaws.com".to_string())
+                                    .build());
+                            }
+                            if (region) == ("us-east-2") {
+                                return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url("https://cognito-idp-fips.us-east-2.amazonaws.com".to_string())
+                                    .build());
+                            }
+                            if (region) == ("us-west-1") {
+                                return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url("https://cognito-idp-fips.us-west-1.amazonaws.com".to_string())
+                                    .build());
+                            }
+                            if (region) == ("us-west-2") {
+                                return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url("https://cognito-idp-fips.us-west-2.amazonaws.com".to_string())
+                                    .build());
+                            }
                             return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                 .url({
                                     let mut out = String::new();
@@ -81,6 +101,18 @@ pub(super) fn resolve_endpoint(
             }
             if (*use_dual_stack) == (true) {
                 if (true) == (partition_result.supports_dual_stack()) {
+                    if ("aws") == (partition_result.name()) {
+                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                            .url({
+                                let mut out = String::new();
+                                out.push_str("https://cognito-idp.");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&region);
+                                out.push_str(".amazonaws.com");
+                                out
+                            })
+                            .build());
+                    }
                     return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                         .url({
                             let mut out = String::new();

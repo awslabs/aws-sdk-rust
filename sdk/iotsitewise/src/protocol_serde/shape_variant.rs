@@ -36,6 +36,11 @@ where
                         "booleanValue" => {
                             builder = builder.set_boolean_value(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "nullValue" => {
+                            builder = builder.set_null_value(crate::protocol_serde::shape_property_value_null_value::de_property_value_null_value(
+                                tokens,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -75,6 +80,12 @@ pub fn ser_variant(
     }
     if let Some(var_4) = &input.boolean_value {
         object.key("booleanValue").boolean(*var_4);
+    }
+    if let Some(var_5) = &input.null_value {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("nullValue").start_object();
+        crate::protocol_serde::shape_property_value_null_value::ser_property_value_null_value(&mut object_6, var_5)?;
+        object_6.finish();
     }
     Ok(())
 }

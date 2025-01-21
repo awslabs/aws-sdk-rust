@@ -3,19 +3,25 @@ pub fn ser_create_contact_flow_version_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_contact_flow_version::CreateContactFlowVersionInput,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.description {
-        object.key("Description").string(var_1.as_str());
+    if let Some(var_1) = &input.contact_flow_version {
+        object.key("ContactFlowVersion").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+        );
     }
-    if let Some(var_2) = &input.flow_content_sha256 {
-        object.key("FlowContentSha256").string(var_2.as_str());
+    if let Some(var_2) = &input.description {
+        object.key("Description").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.last_modified_region {
-        object.key("LastModifiedRegion").string(var_3.as_str());
+    if let Some(var_3) = &input.flow_content_sha256 {
+        object.key("FlowContentSha256").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.last_modified_time {
+    if let Some(var_4) = &input.last_modified_region {
+        object.key("LastModifiedRegion").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.last_modified_time {
         object
             .key("LastModifiedTime")
-            .date_time(var_4, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_5, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }

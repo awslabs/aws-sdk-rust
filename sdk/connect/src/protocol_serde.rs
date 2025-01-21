@@ -135,6 +135,8 @@ pub(crate) mod shape_delete_contact_flow;
 
 pub(crate) mod shape_delete_contact_flow_module;
 
+pub(crate) mod shape_delete_contact_flow_version;
+
 pub(crate) mod shape_delete_email_address;
 
 pub(crate) mod shape_delete_evaluation_form;

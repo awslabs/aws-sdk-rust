@@ -23,6 +23,17 @@ impl crate::operation::describe_account_policies::builders::DescribeAccountPolic
 /// Fluent builder constructing a request to `DescribeAccountPolicies`.
 ///
 /// <p>Returns a list of all CloudWatch Logs account policies in the account.</p>
+/// <p>To use this operation, you must be signed on with the correct permissions depending on the type of policy that you are retrieving information for.</p>
+/// <ul>
+/// <li>
+/// <p>To see data protection policies, you must have the <code>logs:GetDataProtectionPolicy</code> and <code>logs:DescribeAccountPolicies</code> permissions.</p></li>
+/// <li>
+/// <p>To see subscription filter policies, you must have the <code>logs:DescrubeSubscriptionFilters</code> and <code>logs:DescribeAccountPolicies</code> permissions.</p></li>
+/// <li>
+/// <p>To see transformer policies, you must have the <code>logs:GetTransformer</code> and <code>logs:DescribeAccountPolicies</code> permissions.</p></li>
+/// <li>
+/// <p>To see field index policies, you must have the <code>logs:DescribeIndexPolicies</code> and <code>logs:DescribeAccountPolicies</code> permissions.</p></li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAccountPoliciesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -3,10 +3,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchPutAssetPropertyValueInput {
+    /// <p>This setting enables partial ingestion at entry-level. If set to <code>true</code>, we ingest all TQVs not resulting in an error. If set to <code>false</code>, an invalid TQV fails ingestion of the entire entry that contains it.</p>
+    pub enable_partial_entry_processing: ::std::option::Option<bool>,
     /// <p>The list of asset property value entries for the batch put request. You can specify up to 10 entries per request.</p>
     pub entries: ::std::option::Option<::std::vec::Vec<crate::types::PutAssetPropertyValueEntry>>,
 }
 impl BatchPutAssetPropertyValueInput {
+    /// <p>This setting enables partial ingestion at entry-level. If set to <code>true</code>, we ingest all TQVs not resulting in an error. If set to <code>false</code>, an invalid TQV fails ingestion of the entire entry that contains it.</p>
+    pub fn enable_partial_entry_processing(&self) -> ::std::option::Option<bool> {
+        self.enable_partial_entry_processing
+    }
     /// <p>The list of asset property value entries for the batch put request. You can specify up to 10 entries per request.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entries.is_none()`.
@@ -25,9 +31,24 @@ impl BatchPutAssetPropertyValueInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct BatchPutAssetPropertyValueInputBuilder {
+    pub(crate) enable_partial_entry_processing: ::std::option::Option<bool>,
     pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::PutAssetPropertyValueEntry>>,
 }
 impl BatchPutAssetPropertyValueInputBuilder {
+    /// <p>This setting enables partial ingestion at entry-level. If set to <code>true</code>, we ingest all TQVs not resulting in an error. If set to <code>false</code>, an invalid TQV fails ingestion of the entire entry that contains it.</p>
+    pub fn enable_partial_entry_processing(mut self, input: bool) -> Self {
+        self.enable_partial_entry_processing = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>This setting enables partial ingestion at entry-level. If set to <code>true</code>, we ingest all TQVs not resulting in an error. If set to <code>false</code>, an invalid TQV fails ingestion of the entire entry that contains it.</p>
+    pub fn set_enable_partial_entry_processing(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.enable_partial_entry_processing = input;
+        self
+    }
+    /// <p>This setting enables partial ingestion at entry-level. If set to <code>true</code>, we ingest all TQVs not resulting in an error. If set to <code>false</code>, an invalid TQV fails ingestion of the entire entry that contains it.</p>
+    pub fn get_enable_partial_entry_processing(&self) -> &::std::option::Option<bool> {
+        &self.enable_partial_entry_processing
+    }
     /// Appends an item to `entries`.
     ///
     /// To override the contents of this collection use [`set_entries`](Self::set_entries).
@@ -55,6 +76,9 @@ impl BatchPutAssetPropertyValueInputBuilder {
         crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueInput,
         ::aws_smithy_types::error::operation::BuildError,
     > {
-        ::std::result::Result::Ok(crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueInput { entries: self.entries })
+        ::std::result::Result::Ok(crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueInput {
+            enable_partial_entry_processing: self.enable_partial_entry_processing,
+            entries: self.entries,
+        })
     }
 }

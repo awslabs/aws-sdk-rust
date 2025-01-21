@@ -22,7 +22,7 @@ impl crate::operation::associate_user_proficiencies::builders::AssociateUserProf
 }
 /// Fluent builder constructing a request to `AssociateUserProficiencies`.
 ///
-/// <p>&gt;Associates a set of proficiencies with a user.</p>
+/// <p>Associates a set of proficiencies with a user.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateUserProficienciesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -275,6 +275,8 @@ mod delete_contact_flow;
 
 mod delete_contact_flow_module;
 
+mod delete_contact_flow_version;
+
 mod delete_email_address;
 
 mod delete_evaluation_form;

@@ -665,6 +665,8 @@ pub(crate) mod shape_parquet;
 
 pub(crate) mod shape_portal_tools;
 
+pub(crate) mod shape_property_value_null_value;
+
 pub(crate) mod shape_transform;
 
 pub(crate) mod shape_batch_put_asset_property_error;

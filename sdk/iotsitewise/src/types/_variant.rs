@@ -4,17 +4,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Variant {
-    /// <p>Asset property data of type string (sequence of characters).</p>
+    /// <p>Asset property data of type string (sequence of characters). The allowed pattern: "^$|\[^\u0000-\u001F\u007F\]+". The max length is 1024.</p>
     pub string_value: ::std::option::Option<::std::string::String>,
     /// <p>Asset property data of type integer (whole number).</p>
     pub integer_value: ::std::option::Option<i32>,
-    /// <p>Asset property data of type double (floating point number).</p>
+    /// <p>Asset property data of type double (floating point number). The min value is -10^10. The max value is 10^10. Double.NaN is allowed.</p>
     pub double_value: ::std::option::Option<f64>,
     /// <p>Asset property data of type Boolean (true or false).</p>
     pub boolean_value: ::std::option::Option<bool>,
+    /// <p>The type of null asset property data with BAD and UNCERTAIN qualities.</p>
+    pub null_value: ::std::option::Option<crate::types::PropertyValueNullValue>,
 }
 impl Variant {
-    /// <p>Asset property data of type string (sequence of characters).</p>
+    /// <p>Asset property data of type string (sequence of characters). The allowed pattern: "^$|\[^\u0000-\u001F\u007F\]+". The max length is 1024.</p>
     pub fn string_value(&self) -> ::std::option::Option<&str> {
         self.string_value.as_deref()
     }
@@ -22,13 +24,17 @@ impl Variant {
     pub fn integer_value(&self) -> ::std::option::Option<i32> {
         self.integer_value
     }
-    /// <p>Asset property data of type double (floating point number).</p>
+    /// <p>Asset property data of type double (floating point number). The min value is -10^10. The max value is 10^10. Double.NaN is allowed.</p>
     pub fn double_value(&self) -> ::std::option::Option<f64> {
         self.double_value
     }
     /// <p>Asset property data of type Boolean (true or false).</p>
     pub fn boolean_value(&self) -> ::std::option::Option<bool> {
         self.boolean_value
+    }
+    /// <p>The type of null asset property data with BAD and UNCERTAIN qualities.</p>
+    pub fn null_value(&self) -> ::std::option::Option<&crate::types::PropertyValueNullValue> {
+        self.null_value.as_ref()
     }
 }
 impl Variant {
@@ -46,19 +52,20 @@ pub struct VariantBuilder {
     pub(crate) integer_value: ::std::option::Option<i32>,
     pub(crate) double_value: ::std::option::Option<f64>,
     pub(crate) boolean_value: ::std::option::Option<bool>,
+    pub(crate) null_value: ::std::option::Option<crate::types::PropertyValueNullValue>,
 }
 impl VariantBuilder {
-    /// <p>Asset property data of type string (sequence of characters).</p>
+    /// <p>Asset property data of type string (sequence of characters). The allowed pattern: "^$|\[^\u0000-\u001F\u007F\]+". The max length is 1024.</p>
     pub fn string_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.string_value = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Asset property data of type string (sequence of characters).</p>
+    /// <p>Asset property data of type string (sequence of characters). The allowed pattern: "^$|\[^\u0000-\u001F\u007F\]+". The max length is 1024.</p>
     pub fn set_string_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.string_value = input;
         self
     }
-    /// <p>Asset property data of type string (sequence of characters).</p>
+    /// <p>Asset property data of type string (sequence of characters). The allowed pattern: "^$|\[^\u0000-\u001F\u007F\]+". The max length is 1024.</p>
     pub fn get_string_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.string_value
     }
@@ -76,17 +83,17 @@ impl VariantBuilder {
     pub fn get_integer_value(&self) -> &::std::option::Option<i32> {
         &self.integer_value
     }
-    /// <p>Asset property data of type double (floating point number).</p>
+    /// <p>Asset property data of type double (floating point number). The min value is -10^10. The max value is 10^10. Double.NaN is allowed.</p>
     pub fn double_value(mut self, input: f64) -> Self {
         self.double_value = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Asset property data of type double (floating point number).</p>
+    /// <p>Asset property data of type double (floating point number). The min value is -10^10. The max value is 10^10. Double.NaN is allowed.</p>
     pub fn set_double_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.double_value = input;
         self
     }
-    /// <p>Asset property data of type double (floating point number).</p>
+    /// <p>Asset property data of type double (floating point number). The min value is -10^10. The max value is 10^10. Double.NaN is allowed.</p>
     pub fn get_double_value(&self) -> &::std::option::Option<f64> {
         &self.double_value
     }
@@ -104,6 +111,20 @@ impl VariantBuilder {
     pub fn get_boolean_value(&self) -> &::std::option::Option<bool> {
         &self.boolean_value
     }
+    /// <p>The type of null asset property data with BAD and UNCERTAIN qualities.</p>
+    pub fn null_value(mut self, input: crate::types::PropertyValueNullValue) -> Self {
+        self.null_value = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of null asset property data with BAD and UNCERTAIN qualities.</p>
+    pub fn set_null_value(mut self, input: ::std::option::Option<crate::types::PropertyValueNullValue>) -> Self {
+        self.null_value = input;
+        self
+    }
+    /// <p>The type of null asset property data with BAD and UNCERTAIN qualities.</p>
+    pub fn get_null_value(&self) -> &::std::option::Option<crate::types::PropertyValueNullValue> {
+        &self.null_value
+    }
     /// Consumes the builder and constructs a [`Variant`](crate::types::Variant).
     pub fn build(self) -> crate::types::Variant {
         crate::types::Variant {
@@ -111,6 +132,7 @@ impl VariantBuilder {
             integer_value: self.integer_value,
             double_value: self.double_value,
             boolean_value: self.boolean_value,
+            null_value: self.null_value,
         }
     }
 }

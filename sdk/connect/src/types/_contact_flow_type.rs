@@ -15,6 +15,7 @@
 ///     ContactFlowType::AgentHold => { /* ... */ },
 ///     ContactFlowType::AgentTransfer => { /* ... */ },
 ///     ContactFlowType::AgentWhisper => { /* ... */ },
+///     ContactFlowType::Campaign => { /* ... */ },
 ///     ContactFlowType::ContactFlow => { /* ... */ },
 ///     ContactFlowType::CustomerHold => { /* ... */ },
 ///     ContactFlowType::CustomerQueue => { /* ... */ },
@@ -56,6 +57,8 @@ pub enum ContactFlowType {
     #[allow(missing_docs)] // documentation missing in model
     AgentWhisper,
     #[allow(missing_docs)] // documentation missing in model
+    Campaign,
+    #[allow(missing_docs)] // documentation missing in model
     ContactFlow,
     #[allow(missing_docs)] // documentation missing in model
     CustomerHold,
@@ -77,6 +80,7 @@ impl ::std::convert::From<&str> for ContactFlowType {
             "AGENT_HOLD" => ContactFlowType::AgentHold,
             "AGENT_TRANSFER" => ContactFlowType::AgentTransfer,
             "AGENT_WHISPER" => ContactFlowType::AgentWhisper,
+            "CAMPAIGN" => ContactFlowType::Campaign,
             "CONTACT_FLOW" => ContactFlowType::ContactFlow,
             "CUSTOMER_HOLD" => ContactFlowType::CustomerHold,
             "CUSTOMER_QUEUE" => ContactFlowType::CustomerQueue,
@@ -101,6 +105,7 @@ impl ContactFlowType {
             ContactFlowType::AgentHold => "AGENT_HOLD",
             ContactFlowType::AgentTransfer => "AGENT_TRANSFER",
             ContactFlowType::AgentWhisper => "AGENT_WHISPER",
+            ContactFlowType::Campaign => "CAMPAIGN",
             ContactFlowType::ContactFlow => "CONTACT_FLOW",
             ContactFlowType::CustomerHold => "CUSTOMER_HOLD",
             ContactFlowType::CustomerQueue => "CUSTOMER_QUEUE",
@@ -116,6 +121,7 @@ impl ContactFlowType {
             "AGENT_HOLD",
             "AGENT_TRANSFER",
             "AGENT_WHISPER",
+            "CAMPAIGN",
             "CONTACT_FLOW",
             "CUSTOMER_HOLD",
             "CUSTOMER_QUEUE",
@@ -148,6 +154,7 @@ impl ::std::fmt::Display for ContactFlowType {
             ContactFlowType::AgentHold => write!(f, "AGENT_HOLD"),
             ContactFlowType::AgentTransfer => write!(f, "AGENT_TRANSFER"),
             ContactFlowType::AgentWhisper => write!(f, "AGENT_WHISPER"),
+            ContactFlowType::Campaign => write!(f, "CAMPAIGN"),
             ContactFlowType::ContactFlow => write!(f, "CONTACT_FLOW"),
             ContactFlowType::CustomerHold => write!(f, "CUSTOMER_HOLD"),
             ContactFlowType::CustomerQueue => write!(f, "CUSTOMER_QUEUE"),

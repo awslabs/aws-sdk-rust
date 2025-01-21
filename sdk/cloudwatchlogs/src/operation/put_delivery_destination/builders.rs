@@ -28,7 +28,7 @@ impl crate::operation::put_delivery_destination::builders::PutDeliveryDestinatio
 /// <li>
 /// <p>Create a delivery source, which is a logical object that represents the resource that is actually sending the logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliverySource.html">PutDeliverySource</a>.</p></li>
 /// <li>
-/// <p>Use <code>PutDeliveryDestination</code> to create a <i>delivery destination</i>, which is a logical object that represents the actual delivery destination.</p></li>
+/// <p>Use <code>PutDeliveryDestination</code> to create a <i>delivery destination</i> in the same account of the actual delivery destination. The delivery destination that you create is a logical object that represents the actual delivery destination.</p></li>
 /// <li>
 /// <p>If you are delivering logs cross-account, you must use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestinationPolicy.html">PutDeliveryDestinationPolicy</a> in the destination account to assign an IAM policy to the destination. This policy allows delivery to that destination.</p></li>
 /// <li>

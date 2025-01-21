@@ -184,6 +184,9 @@ pub(crate) fn de_put_storage_configuration(
                 "configurationStatus" => {
                     builder = builder.set_configuration_status(crate::protocol_serde::shape_configuration_status::de_configuration_status(tokens)?);
                 }
+                "disallowIngestNullNaN" => {
+                    builder = builder.set_disallow_ingest_null_na_n(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
                 "disassociatedDataStorage" => {
                     builder = builder.set_disassociated_data_storage(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

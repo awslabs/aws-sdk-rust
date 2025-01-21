@@ -2164,6 +2164,15 @@ pub(crate) fn metric_correct_errors(mut builder: crate::types::builders::MetricB
     builder
 }
 
+pub(crate) fn property_value_null_value_correct_errors(
+    mut builder: crate::types::builders::PropertyValueNullValueBuilder,
+) -> crate::types::builders::PropertyValueNullValueBuilder {
+    if builder.value_type.is_none() {
+        builder.value_type = "no value was set".parse::<crate::types::RawValueType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn transform_correct_errors(mut builder: crate::types::builders::TransformBuilder) -> crate::types::builders::TransformBuilder {
     if builder.expression.is_none() {
         builder.expression = Some(Default::default())

@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3DeliveryConfiguration {
-    /// <p>This string allows re-configuring the S3 object prefix to contain either static or variable sections. The valid variables to use in the suffix path will vary by each log source. See ConfigurationTemplate$allowedSuffixPathFields for more info on what values are supported in the suffix path for each log source.</p>
+    /// <p>This string allows re-configuring the S3 object prefix to contain either static or variable sections. The valid variables to use in the suffix path will vary by each log source. To find the values supported for the suffix path for each log source, use the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeConfigurationTemplates.html">DescribeConfigurationTemplates</a> operation and check the <code>allowedSuffixPathFields</code> field in the response.</p>
     pub suffix_path: ::std::option::Option<::std::string::String>,
     /// <p>This parameter causes the S3 objects that contain delivered logs to use a prefix structure that allows for integration with Apache Hive.</p>
     pub enable_hive_compatible_path: ::std::option::Option<bool>,
 }
 impl S3DeliveryConfiguration {
-    /// <p>This string allows re-configuring the S3 object prefix to contain either static or variable sections. The valid variables to use in the suffix path will vary by each log source. See ConfigurationTemplate$allowedSuffixPathFields for more info on what values are supported in the suffix path for each log source.</p>
+    /// <p>This string allows re-configuring the S3 object prefix to contain either static or variable sections. The valid variables to use in the suffix path will vary by each log source. To find the values supported for the suffix path for each log source, use the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeConfigurationTemplates.html">DescribeConfigurationTemplates</a> operation and check the <code>allowedSuffixPathFields</code> field in the response.</p>
     pub fn suffix_path(&self) -> ::std::option::Option<&str> {
         self.suffix_path.as_deref()
     }
@@ -34,17 +34,17 @@ pub struct S3DeliveryConfigurationBuilder {
     pub(crate) enable_hive_compatible_path: ::std::option::Option<bool>,
 }
 impl S3DeliveryConfigurationBuilder {
-    /// <p>This string allows re-configuring the S3 object prefix to contain either static or variable sections. The valid variables to use in the suffix path will vary by each log source. See ConfigurationTemplate$allowedSuffixPathFields for more info on what values are supported in the suffix path for each log source.</p>
+    /// <p>This string allows re-configuring the S3 object prefix to contain either static or variable sections. The valid variables to use in the suffix path will vary by each log source. To find the values supported for the suffix path for each log source, use the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeConfigurationTemplates.html">DescribeConfigurationTemplates</a> operation and check the <code>allowedSuffixPathFields</code> field in the response.</p>
     pub fn suffix_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.suffix_path = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>This string allows re-configuring the S3 object prefix to contain either static or variable sections. The valid variables to use in the suffix path will vary by each log source. See ConfigurationTemplate$allowedSuffixPathFields for more info on what values are supported in the suffix path for each log source.</p>
+    /// <p>This string allows re-configuring the S3 object prefix to contain either static or variable sections. The valid variables to use in the suffix path will vary by each log source. To find the values supported for the suffix path for each log source, use the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeConfigurationTemplates.html">DescribeConfigurationTemplates</a> operation and check the <code>allowedSuffixPathFields</code> field in the response.</p>
     pub fn set_suffix_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.suffix_path = input;
         self
     }
-    /// <p>This string allows re-configuring the S3 object prefix to contain either static or variable sections. The valid variables to use in the suffix path will vary by each log source. See ConfigurationTemplate$allowedSuffixPathFields for more info on what values are supported in the suffix path for each log source.</p>
+    /// <p>This string allows re-configuring the S3 object prefix to contain either static or variable sections. The valid variables to use in the suffix path will vary by each log source. To find the values supported for the suffix path for each log source, use the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeConfigurationTemplates.html">DescribeConfigurationTemplates</a> operation and check the <code>allowedSuffixPathFields</code> field in the response.</p>
     pub fn get_suffix_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.suffix_path
     }

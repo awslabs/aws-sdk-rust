@@ -22,7 +22,7 @@ impl crate::operation::create_contact_flow_version::builders::CreateContactFlowV
 }
 /// Fluent builder constructing a request to `CreateContactFlowVersion`.
 ///
-/// <p>Publishes a new version of the flow provided. Versions are immutable and monotonically increasing. If a version of the same flow content already exists, no new version is created and instead the existing version number is returned. If the <code>FlowContentSha256</code> provided is different from the <code>FlowContentSha256</code> of the <code>$LATEST</code> published flow content, then an error is returned. This API only supports creating versions for flows of type <code>Campaign</code>.</p>
+/// <p>Publishes a new version of the flow provided. Versions are immutable and monotonically increasing. If the <code>FlowContentSha256</code> provided is different from the <code>FlowContentSha256</code> of the <code>$LATEST</code> published flow content, then an error is returned. This API only supports creating versions for flows of type <code>Campaign</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateContactFlowVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -163,6 +163,20 @@ impl CreateContactFlowVersionFluentBuilder {
     /// <p>Indicates the checksum value of the flow content.</p>
     pub fn get_flow_content_sha256(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_flow_content_sha256()
+    }
+    /// <p>The identifier of the flow version.</p>
+    pub fn contact_flow_version(mut self, input: i64) -> Self {
+        self.inner = self.inner.contact_flow_version(input);
+        self
+    }
+    /// <p>The identifier of the flow version.</p>
+    pub fn set_contact_flow_version(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.inner = self.inner.set_contact_flow_version(input);
+        self
+    }
+    /// <p>The identifier of the flow version.</p>
+    pub fn get_contact_flow_version(&self) -> &::std::option::Option<i64> {
+        self.inner.get_contact_flow_version()
     }
     /// <p>The Amazon Web Services Region where this resource was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {

@@ -6,10 +6,10 @@
 pub struct OpenSearchResourceConfig {
     /// <p>To have the vended dashboard data encrypted with KMS instead of the CloudWatch Logs default encryption method, specify the ARN of the KMS key that you want to use.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Specify the ARN of an IAM role that CloudWatch Logs will use to create the integration. This role must have the permissions necessary to access the OpenSearch Service collection to be able to create the dashboards. For more information about the permissions needed, see <a href="https://docs.aws.amazon.com/OpenSearch-Dashboards-CreateRole">Create an IAM role to access the OpenSearch Service collection</a> in the CloudWatch Logs User Guide.</p>
+    /// <p>Specify the ARN of an IAM role that CloudWatch Logs will use to create the integration. This role must have the permissions necessary to access the OpenSearch Service collection to be able to create the dashboards. For more information about the permissions needed, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/OpenSearch-Dashboards-CreateRole.html">Permissions that the integration needs</a> in the CloudWatch Logs User Guide.</p>
     pub data_source_role_arn: ::std::string::String,
     /// <p>Specify the ARNs of IAM roles and IAM users who you want to grant permission to for viewing the dashboards.</p><important>
-    /// <p>In addition to specifying these users here, you must also grant them the <b>CloudWatchOpenSearchDashboardsAccess</b> IAM policy. For more information, see</p>
+    /// <p>In addition to specifying these users here, you must also grant them the <b>CloudWatchOpenSearchDashboardAccess</b> IAM policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/OpenSearch-Dashboards-UserRoles.html">IAM policies for users</a>.</p>
     /// </important>
     pub dashboard_viewer_principals: ::std::vec::Vec<::std::string::String>,
     /// <p>If you want to use an existing OpenSearch Service application for your integration with OpenSearch Service, specify it here. If you omit this, a new application will be created.</p>
@@ -22,13 +22,13 @@ impl OpenSearchResourceConfig {
     pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
-    /// <p>Specify the ARN of an IAM role that CloudWatch Logs will use to create the integration. This role must have the permissions necessary to access the OpenSearch Service collection to be able to create the dashboards. For more information about the permissions needed, see <a href="https://docs.aws.amazon.com/OpenSearch-Dashboards-CreateRole">Create an IAM role to access the OpenSearch Service collection</a> in the CloudWatch Logs User Guide.</p>
+    /// <p>Specify the ARN of an IAM role that CloudWatch Logs will use to create the integration. This role must have the permissions necessary to access the OpenSearch Service collection to be able to create the dashboards. For more information about the permissions needed, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/OpenSearch-Dashboards-CreateRole.html">Permissions that the integration needs</a> in the CloudWatch Logs User Guide.</p>
     pub fn data_source_role_arn(&self) -> &str {
         use std::ops::Deref;
         self.data_source_role_arn.deref()
     }
     /// <p>Specify the ARNs of IAM roles and IAM users who you want to grant permission to for viewing the dashboards.</p><important>
-    /// <p>In addition to specifying these users here, you must also grant them the <b>CloudWatchOpenSearchDashboardsAccess</b> IAM policy. For more information, see</p>
+    /// <p>In addition to specifying these users here, you must also grant them the <b>CloudWatchOpenSearchDashboardAccess</b> IAM policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/OpenSearch-Dashboards-UserRoles.html">IAM policies for users</a>.</p>
     /// </important>
     pub fn dashboard_viewer_principals(&self) -> &[::std::string::String] {
         use std::ops::Deref;
@@ -75,18 +75,18 @@ impl OpenSearchResourceConfigBuilder {
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_arn
     }
-    /// <p>Specify the ARN of an IAM role that CloudWatch Logs will use to create the integration. This role must have the permissions necessary to access the OpenSearch Service collection to be able to create the dashboards. For more information about the permissions needed, see <a href="https://docs.aws.amazon.com/OpenSearch-Dashboards-CreateRole">Create an IAM role to access the OpenSearch Service collection</a> in the CloudWatch Logs User Guide.</p>
+    /// <p>Specify the ARN of an IAM role that CloudWatch Logs will use to create the integration. This role must have the permissions necessary to access the OpenSearch Service collection to be able to create the dashboards. For more information about the permissions needed, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/OpenSearch-Dashboards-CreateRole.html">Permissions that the integration needs</a> in the CloudWatch Logs User Guide.</p>
     /// This field is required.
     pub fn data_source_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specify the ARN of an IAM role that CloudWatch Logs will use to create the integration. This role must have the permissions necessary to access the OpenSearch Service collection to be able to create the dashboards. For more information about the permissions needed, see <a href="https://docs.aws.amazon.com/OpenSearch-Dashboards-CreateRole">Create an IAM role to access the OpenSearch Service collection</a> in the CloudWatch Logs User Guide.</p>
+    /// <p>Specify the ARN of an IAM role that CloudWatch Logs will use to create the integration. This role must have the permissions necessary to access the OpenSearch Service collection to be able to create the dashboards. For more information about the permissions needed, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/OpenSearch-Dashboards-CreateRole.html">Permissions that the integration needs</a> in the CloudWatch Logs User Guide.</p>
     pub fn set_data_source_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source_role_arn = input;
         self
     }
-    /// <p>Specify the ARN of an IAM role that CloudWatch Logs will use to create the integration. This role must have the permissions necessary to access the OpenSearch Service collection to be able to create the dashboards. For more information about the permissions needed, see <a href="https://docs.aws.amazon.com/OpenSearch-Dashboards-CreateRole">Create an IAM role to access the OpenSearch Service collection</a> in the CloudWatch Logs User Guide.</p>
+    /// <p>Specify the ARN of an IAM role that CloudWatch Logs will use to create the integration. This role must have the permissions necessary to access the OpenSearch Service collection to be able to create the dashboards. For more information about the permissions needed, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/OpenSearch-Dashboards-CreateRole.html">Permissions that the integration needs</a> in the CloudWatch Logs User Guide.</p>
     pub fn get_data_source_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_source_role_arn
     }
@@ -95,7 +95,7 @@ impl OpenSearchResourceConfigBuilder {
     /// To override the contents of this collection use [`set_dashboard_viewer_principals`](Self::set_dashboard_viewer_principals).
     ///
     /// <p>Specify the ARNs of IAM roles and IAM users who you want to grant permission to for viewing the dashboards.</p><important>
-    /// <p>In addition to specifying these users here, you must also grant them the <b>CloudWatchOpenSearchDashboardsAccess</b> IAM policy. For more information, see</p>
+    /// <p>In addition to specifying these users here, you must also grant them the <b>CloudWatchOpenSearchDashboardAccess</b> IAM policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/OpenSearch-Dashboards-UserRoles.html">IAM policies for users</a>.</p>
     /// </important>
     pub fn dashboard_viewer_principals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.dashboard_viewer_principals.unwrap_or_default();
@@ -104,14 +104,14 @@ impl OpenSearchResourceConfigBuilder {
         self
     }
     /// <p>Specify the ARNs of IAM roles and IAM users who you want to grant permission to for viewing the dashboards.</p><important>
-    /// <p>In addition to specifying these users here, you must also grant them the <b>CloudWatchOpenSearchDashboardsAccess</b> IAM policy. For more information, see</p>
+    /// <p>In addition to specifying these users here, you must also grant them the <b>CloudWatchOpenSearchDashboardAccess</b> IAM policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/OpenSearch-Dashboards-UserRoles.html">IAM policies for users</a>.</p>
     /// </important>
     pub fn set_dashboard_viewer_principals(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.dashboard_viewer_principals = input;
         self
     }
     /// <p>Specify the ARNs of IAM roles and IAM users who you want to grant permission to for viewing the dashboards.</p><important>
-    /// <p>In addition to specifying these users here, you must also grant them the <b>CloudWatchOpenSearchDashboardsAccess</b> IAM policy. For more information, see</p>
+    /// <p>In addition to specifying these users here, you must also grant them the <b>CloudWatchOpenSearchDashboardAccess</b> IAM policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/OpenSearch-Dashboards-UserRoles.html">IAM policies for users</a>.</p>
     /// </important>
     pub fn get_dashboard_viewer_principals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.dashboard_viewer_principals

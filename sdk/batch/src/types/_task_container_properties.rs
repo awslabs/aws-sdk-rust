@@ -8,7 +8,7 @@ pub struct TaskContainerProperties {
     pub command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of containers that this container depends on.</p>
     pub depends_on: ::std::option::Option<::std::vec::Vec<crate::types::TaskContainerDependency>>,
-    /// <p>The environment variables to pass to a container. This parameter maps to Env inthe <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--env</code> parameter to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p><important>
+    /// <p>The environment variables to pass to a container. This parameter maps to Env in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--env</code> parameter to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p><important>
     /// <p>We don't recommend using plaintext environment variables for sensitive information, such as credential data.</p>
     /// </important> <note>
     /// <p>Environment variables cannot start with <code>AWS_BATCH</code>. This naming convention is reserved for variables that Batch sets.</p>
@@ -91,7 +91,7 @@ impl TaskContainerProperties {
     pub fn depends_on(&self) -> &[crate::types::TaskContainerDependency] {
         self.depends_on.as_deref().unwrap_or_default()
     }
-    /// <p>The environment variables to pass to a container. This parameter maps to Env inthe <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--env</code> parameter to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p><important>
+    /// <p>The environment variables to pass to a container. This parameter maps to Env in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--env</code> parameter to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p><important>
     /// <p>We don't recommend using plaintext environment variables for sensitive information, such as credential data.</p>
     /// </important> <note>
     /// <p>Environment variables cannot start with <code>AWS_BATCH</code>. This naming convention is reserved for variables that Batch sets.</p>
@@ -272,7 +272,7 @@ impl TaskContainerPropertiesBuilder {
     ///
     /// To override the contents of this collection use [`set_environment`](Self::set_environment).
     ///
-    /// <p>The environment variables to pass to a container. This parameter maps to Env inthe <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--env</code> parameter to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p><important>
+    /// <p>The environment variables to pass to a container. This parameter maps to Env in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--env</code> parameter to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p><important>
     /// <p>We don't recommend using plaintext environment variables for sensitive information, such as credential data.</p>
     /// </important> <note>
     /// <p>Environment variables cannot start with <code>AWS_BATCH</code>. This naming convention is reserved for variables that Batch sets.</p>
@@ -283,7 +283,7 @@ impl TaskContainerPropertiesBuilder {
         self.environment = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The environment variables to pass to a container. This parameter maps to Env inthe <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--env</code> parameter to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p><important>
+    /// <p>The environment variables to pass to a container. This parameter maps to Env in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--env</code> parameter to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p><important>
     /// <p>We don't recommend using plaintext environment variables for sensitive information, such as credential data.</p>
     /// </important> <note>
     /// <p>Environment variables cannot start with <code>AWS_BATCH</code>. This naming convention is reserved for variables that Batch sets.</p>
@@ -292,7 +292,7 @@ impl TaskContainerPropertiesBuilder {
         self.environment = input;
         self
     }
-    /// <p>The environment variables to pass to a container. This parameter maps to Env inthe <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--env</code> parameter to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p><important>
+    /// <p>The environment variables to pass to a container. This parameter maps to Env in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--env</code> parameter to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p><important>
     /// <p>We don't recommend using plaintext environment variables for sensitive information, such as credential data.</p>
     /// </important> <note>
     /// <p>Environment variables cannot start with <code>AWS_BATCH</code>. This naming convention is reserved for variables that Batch sets.</p>

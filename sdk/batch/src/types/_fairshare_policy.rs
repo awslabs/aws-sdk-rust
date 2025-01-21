@@ -4,7 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FairsharePolicy {
-    /// <p>The amount of time (in seconds) to use to calculate a fair share percentage for each fair share identifier in use. A value of zero (0) indicates that only current usage is measured. The decay allows for more recently run jobs to have more weight than jobs that ran earlier. The maximum supported value is 604800 (1 week).</p>
+    /// <p>The amount of time (in seconds) to use to calculate a fair share percentage for each fair share identifier in use. A value of zero (0) indicates the default minimum time window (600 seconds). The maximum supported value is 604800 (1 week).</p>
+    /// <p>The decay allows for more recently run jobs to have more weight than jobs that ran earlier. Consider adjusting this number if you have jobs that (on average) run longer than ten minutes, or a large difference in job count or job run times between share identifiers, and the allocation of resources doesn’t meet your needs.</p>
     pub share_decay_seconds: ::std::option::Option<i32>,
     /// <p>A value used to reserve some of the available maximum vCPU for fair share identifiers that aren't already used.</p>
     /// <p>The reserved ratio is <code>(<i>computeReservation</i>/100)^<i>ActiveFairShares</i> </code> where <code> <i>ActiveFairShares</i> </code> is the number of active fair share identifiers.</p>
@@ -15,7 +16,8 @@ pub struct FairsharePolicy {
     pub share_distribution: ::std::option::Option<::std::vec::Vec<crate::types::ShareAttributes>>,
 }
 impl FairsharePolicy {
-    /// <p>The amount of time (in seconds) to use to calculate a fair share percentage for each fair share identifier in use. A value of zero (0) indicates that only current usage is measured. The decay allows for more recently run jobs to have more weight than jobs that ran earlier. The maximum supported value is 604800 (1 week).</p>
+    /// <p>The amount of time (in seconds) to use to calculate a fair share percentage for each fair share identifier in use. A value of zero (0) indicates the default minimum time window (600 seconds). The maximum supported value is 604800 (1 week).</p>
+    /// <p>The decay allows for more recently run jobs to have more weight than jobs that ran earlier. Consider adjusting this number if you have jobs that (on average) run longer than ten minutes, or a large difference in job count or job run times between share identifiers, and the allocation of resources doesn’t meet your needs.</p>
     pub fn share_decay_seconds(&self) -> ::std::option::Option<i32> {
         self.share_decay_seconds
     }
@@ -49,17 +51,20 @@ pub struct FairsharePolicyBuilder {
     pub(crate) share_distribution: ::std::option::Option<::std::vec::Vec<crate::types::ShareAttributes>>,
 }
 impl FairsharePolicyBuilder {
-    /// <p>The amount of time (in seconds) to use to calculate a fair share percentage for each fair share identifier in use. A value of zero (0) indicates that only current usage is measured. The decay allows for more recently run jobs to have more weight than jobs that ran earlier. The maximum supported value is 604800 (1 week).</p>
+    /// <p>The amount of time (in seconds) to use to calculate a fair share percentage for each fair share identifier in use. A value of zero (0) indicates the default minimum time window (600 seconds). The maximum supported value is 604800 (1 week).</p>
+    /// <p>The decay allows for more recently run jobs to have more weight than jobs that ran earlier. Consider adjusting this number if you have jobs that (on average) run longer than ten minutes, or a large difference in job count or job run times between share identifiers, and the allocation of resources doesn’t meet your needs.</p>
     pub fn share_decay_seconds(mut self, input: i32) -> Self {
         self.share_decay_seconds = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The amount of time (in seconds) to use to calculate a fair share percentage for each fair share identifier in use. A value of zero (0) indicates that only current usage is measured. The decay allows for more recently run jobs to have more weight than jobs that ran earlier. The maximum supported value is 604800 (1 week).</p>
+    /// <p>The amount of time (in seconds) to use to calculate a fair share percentage for each fair share identifier in use. A value of zero (0) indicates the default minimum time window (600 seconds). The maximum supported value is 604800 (1 week).</p>
+    /// <p>The decay allows for more recently run jobs to have more weight than jobs that ran earlier. Consider adjusting this number if you have jobs that (on average) run longer than ten minutes, or a large difference in job count or job run times between share identifiers, and the allocation of resources doesn’t meet your needs.</p>
     pub fn set_share_decay_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.share_decay_seconds = input;
         self
     }
-    /// <p>The amount of time (in seconds) to use to calculate a fair share percentage for each fair share identifier in use. A value of zero (0) indicates that only current usage is measured. The decay allows for more recently run jobs to have more weight than jobs that ran earlier. The maximum supported value is 604800 (1 week).</p>
+    /// <p>The amount of time (in seconds) to use to calculate a fair share percentage for each fair share identifier in use. A value of zero (0) indicates the default minimum time window (600 seconds). The maximum supported value is 604800 (1 week).</p>
+    /// <p>The decay allows for more recently run jobs to have more weight than jobs that ran earlier. Consider adjusting this number if you have jobs that (on average) run longer than ten minutes, or a large difference in job count or job run times between share identifiers, and the allocation of resources doesn’t meet your needs.</p>
     pub fn get_share_decay_seconds(&self) -> &::std::option::Option<i32> {
         &self.share_decay_seconds
     }

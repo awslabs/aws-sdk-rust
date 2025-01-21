@@ -169,6 +169,9 @@ pub mod delete_contact_flow;
 /// Types for the `DeleteContactFlowModule` operation.
 pub mod delete_contact_flow_module;
 
+/// Types for the `DeleteContactFlowVersion` operation.
+pub mod delete_contact_flow_version;
+
 /// Types for the `DeleteEmailAddress` operation.
 pub mod delete_email_address;
 

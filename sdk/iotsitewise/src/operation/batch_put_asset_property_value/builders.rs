@@ -119,6 +119,20 @@ impl BatchPutAssetPropertyValueFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// <p>This setting enables partial ingestion at entry-level. If set to <code>true</code>, we ingest all TQVs not resulting in an error. If set to <code>false</code>, an invalid TQV fails ingestion of the entire entry that contains it.</p>
+    pub fn enable_partial_entry_processing(mut self, input: bool) -> Self {
+        self.inner = self.inner.enable_partial_entry_processing(input);
+        self
+    }
+    /// <p>This setting enables partial ingestion at entry-level. If set to <code>true</code>, we ingest all TQVs not resulting in an error. If set to <code>false</code>, an invalid TQV fails ingestion of the entire entry that contains it.</p>
+    pub fn set_enable_partial_entry_processing(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_enable_partial_entry_processing(input);
+        self
+    }
+    /// <p>This setting enables partial ingestion at entry-level. If set to <code>true</code>, we ingest all TQVs not resulting in an error. If set to <code>false</code>, an invalid TQV fails ingestion of the entire entry that contains it.</p>
+    pub fn get_enable_partial_entry_processing(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_partial_entry_processing()
+    }
     ///
     /// Appends an item to `entries`.
     ///

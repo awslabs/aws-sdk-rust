@@ -23,7 +23,7 @@ pub struct LaunchTemplateSpecificationOverride {
     /// <p>Default: <code>$Default</code></p>
     /// <p>Latest: <code>$Latest</code></p>
     pub version: ::std::option::Option<::std::string::String>,
-    /// <p>The instance type or family that this this override launch template should be applied to.</p>
+    /// <p>The instance type or family that this override launch template should be applied to.</p>
     /// <p>This parameter is required when defining a launch template override.</p>
     /// <p>Information included in this parameter must meet the following requirements:</p>
     /// <ul>
@@ -58,7 +58,7 @@ impl LaunchTemplateSpecificationOverride {
     pub fn version(&self) -> ::std::option::Option<&str> {
         self.version.as_deref()
     }
-    /// <p>The instance type or family that this this override launch template should be applied to.</p>
+    /// <p>The instance type or family that this override launch template should be applied to.</p>
     /// <p>This parameter is required when defining a launch template override.</p>
     /// <p>Information included in this parameter must meet the following requirements:</p>
     /// <ul>
@@ -161,7 +161,7 @@ impl LaunchTemplateSpecificationOverrideBuilder {
     ///
     /// To override the contents of this collection use [`set_target_instance_types`](Self::set_target_instance_types).
     ///
-    /// <p>The instance type or family that this this override launch template should be applied to.</p>
+    /// <p>The instance type or family that this override launch template should be applied to.</p>
     /// <p>This parameter is required when defining a launch template override.</p>
     /// <p>Information included in this parameter must meet the following requirements:</p>
     /// <ul>
@@ -180,7 +180,7 @@ impl LaunchTemplateSpecificationOverrideBuilder {
         self.target_instance_types = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The instance type or family that this this override launch template should be applied to.</p>
+    /// <p>The instance type or family that this override launch template should be applied to.</p>
     /// <p>This parameter is required when defining a launch template override.</p>
     /// <p>Information included in this parameter must meet the following requirements:</p>
     /// <ul>
@@ -197,7 +197,7 @@ impl LaunchTemplateSpecificationOverrideBuilder {
         self.target_instance_types = input;
         self
     }
-    /// <p>The instance type or family that this this override launch template should be applied to.</p>
+    /// <p>The instance type or family that this override launch template should be applied to.</p>
     /// <p>This parameter is required when defining a launch template override.</p>
     /// <p>Information included in this parameter must meet the following requirements:</p>
     /// <ul>

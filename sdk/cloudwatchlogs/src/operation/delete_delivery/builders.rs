@@ -22,7 +22,7 @@ impl crate::operation::delete_delivery::builders::DeleteDeliveryInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteDelivery`.
 ///
-/// <p>Deletes s <i>delivery</i>. A delivery is a connection between a logical <i>delivery source</i> and a logical <i>delivery destination</i>. Deleting a delivery only deletes the connection between the delivery source and delivery destination. It does not delete the delivery destination or the delivery source.</p>
+/// <p>Deletes a <i>delivery</i>. A delivery is a connection between a logical <i>delivery source</i> and a logical <i>delivery destination</i>. Deleting a delivery only deletes the connection between the delivery source and delivery destination. It does not delete the delivery destination or the delivery source.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDeliveryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

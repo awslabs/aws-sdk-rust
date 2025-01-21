@@ -8,6 +8,8 @@ pub struct ThousandSeparatorOptions {
     pub symbol: ::std::option::Option<crate::types::NumericSeparatorSymbol>,
     /// <p>Determines the visibility of the thousands separator.</p>
     pub visibility: ::std::option::Option<crate::types::Visibility>,
+    /// <p>Determines the way numbers are styled to accommodate different readability standards. The <code>DEFAULT</code> value uses the standard international grouping system and groups numbers by the thousands. The <code>LAKHS</code> value uses the Indian numbering system and groups numbers by lakhs and crores.</p>
+    pub grouping_style: ::std::option::Option<crate::types::DigitGroupingStyle>,
 }
 impl ThousandSeparatorOptions {
     /// <p>Determines the thousands separator symbol.</p>
@@ -17,6 +19,10 @@ impl ThousandSeparatorOptions {
     /// <p>Determines the visibility of the thousands separator.</p>
     pub fn visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
         self.visibility.as_ref()
+    }
+    /// <p>Determines the way numbers are styled to accommodate different readability standards. The <code>DEFAULT</code> value uses the standard international grouping system and groups numbers by the thousands. The <code>LAKHS</code> value uses the Indian numbering system and groups numbers by lakhs and crores.</p>
+    pub fn grouping_style(&self) -> ::std::option::Option<&crate::types::DigitGroupingStyle> {
+        self.grouping_style.as_ref()
     }
 }
 impl ThousandSeparatorOptions {
@@ -32,6 +38,7 @@ impl ThousandSeparatorOptions {
 pub struct ThousandSeparatorOptionsBuilder {
     pub(crate) symbol: ::std::option::Option<crate::types::NumericSeparatorSymbol>,
     pub(crate) visibility: ::std::option::Option<crate::types::Visibility>,
+    pub(crate) grouping_style: ::std::option::Option<crate::types::DigitGroupingStyle>,
 }
 impl ThousandSeparatorOptionsBuilder {
     /// <p>Determines the thousands separator symbol.</p>
@@ -62,11 +69,26 @@ impl ThousandSeparatorOptionsBuilder {
     pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
         &self.visibility
     }
+    /// <p>Determines the way numbers are styled to accommodate different readability standards. The <code>DEFAULT</code> value uses the standard international grouping system and groups numbers by the thousands. The <code>LAKHS</code> value uses the Indian numbering system and groups numbers by lakhs and crores.</p>
+    pub fn grouping_style(mut self, input: crate::types::DigitGroupingStyle) -> Self {
+        self.grouping_style = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Determines the way numbers are styled to accommodate different readability standards. The <code>DEFAULT</code> value uses the standard international grouping system and groups numbers by the thousands. The <code>LAKHS</code> value uses the Indian numbering system and groups numbers by lakhs and crores.</p>
+    pub fn set_grouping_style(mut self, input: ::std::option::Option<crate::types::DigitGroupingStyle>) -> Self {
+        self.grouping_style = input;
+        self
+    }
+    /// <p>Determines the way numbers are styled to accommodate different readability standards. The <code>DEFAULT</code> value uses the standard international grouping system and groups numbers by the thousands. The <code>LAKHS</code> value uses the Indian numbering system and groups numbers by lakhs and crores.</p>
+    pub fn get_grouping_style(&self) -> &::std::option::Option<crate::types::DigitGroupingStyle> {
+        &self.grouping_style
+    }
     /// Consumes the builder and constructs a [`ThousandSeparatorOptions`](crate::types::ThousandSeparatorOptions).
     pub fn build(self) -> crate::types::ThousandSeparatorOptions {
         crate::types::ThousandSeparatorOptions {
             symbol: self.symbol,
             visibility: self.visibility,
+            grouping_style: self.grouping_style,
         }
     }
 }

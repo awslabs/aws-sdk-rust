@@ -231,6 +231,8 @@ pub use crate::types::_numeric_separator_configuration::NumericSeparatorConfigur
 
 pub use crate::types::_thousand_separator_options::ThousandSeparatorOptions;
 
+pub use crate::types::_digit_grouping_style::DigitGroupingStyle;
+
 pub use crate::types::_visibility::Visibility;
 
 pub use crate::types::_numeric_separator_symbol::NumericSeparatorSymbol;
@@ -3006,6 +3008,8 @@ mod _default_text_area_control_options;
 mod _default_text_field_control_options;
 
 mod _destination_parameter_value_configuration;
+
+mod _digit_grouping_style;
 
 mod _dimension_field;
 
