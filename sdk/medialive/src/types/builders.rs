@@ -533,6 +533,10 @@ pub use crate::types::_fixed_mode_schedule_action_start_settings::FixedModeSched
 
 pub use crate::types::_schedule_action_settings::ScheduleActionSettingsBuilder;
 
+pub use crate::types::_timed_metadata_schedule_action_settings::TimedMetadataScheduleActionSettingsBuilder;
+
+pub use crate::types::_id3_segment_tagging_schedule_action_settings::Id3SegmentTaggingScheduleActionSettingsBuilder;
+
 pub use crate::types::_static_image_output_deactivate_schedule_action_settings::StaticImageOutputDeactivateScheduleActionSettingsBuilder;
 
 pub use crate::types::_static_image_output_activate_schedule_action_settings::StaticImageOutputActivateScheduleActionSettingsBuilder;

@@ -5,7 +5,7 @@
 pub struct CreateEnvironmentInput {
     /// <p>The name for the environment.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the desktop to stream from Amazon WorkSpaces, WorkSpaces Web, or AppStream 2.0.</p>
+    /// <p>The Amazon Resource Name (ARN) of the desktop to stream from Amazon WorkSpaces, WorkSpaces Secure Browser, or AppStream 2.0.</p>
     pub desktop_arn: ::std::option::Option<::std::string::String>,
     /// <p>The URL for the identity provider login (only for environments that use AppStream 2.0).</p>
     pub desktop_endpoint: ::std::option::Option<::std::string::String>,
@@ -33,7 +33,7 @@ impl CreateEnvironmentInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the desktop to stream from Amazon WorkSpaces, WorkSpaces Web, or AppStream 2.0.</p>
+    /// <p>The Amazon Resource Name (ARN) of the desktop to stream from Amazon WorkSpaces, WorkSpaces Secure Browser, or AppStream 2.0.</p>
     pub fn desktop_arn(&self) -> ::std::option::Option<&str> {
         self.desktop_arn.as_deref()
     }
@@ -131,18 +131,18 @@ impl CreateEnvironmentInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The Amazon Resource Name (ARN) of the desktop to stream from Amazon WorkSpaces, WorkSpaces Web, or AppStream 2.0.</p>
+    /// <p>The Amazon Resource Name (ARN) of the desktop to stream from Amazon WorkSpaces, WorkSpaces Secure Browser, or AppStream 2.0.</p>
     /// This field is required.
     pub fn desktop_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.desktop_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the desktop to stream from Amazon WorkSpaces, WorkSpaces Web, or AppStream 2.0.</p>
+    /// <p>The Amazon Resource Name (ARN) of the desktop to stream from Amazon WorkSpaces, WorkSpaces Secure Browser, or AppStream 2.0.</p>
     pub fn set_desktop_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.desktop_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the desktop to stream from Amazon WorkSpaces, WorkSpaces Web, or AppStream 2.0.</p>
+    /// <p>The Amazon Resource Name (ARN) of the desktop to stream from Amazon WorkSpaces, WorkSpaces Secure Browser, or AppStream 2.0.</p>
     pub fn get_desktop_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.desktop_arn
     }

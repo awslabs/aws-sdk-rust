@@ -297,6 +297,8 @@ pub use crate::types::_text_to_sql_knowledge_base_configuration::TextToSqlKnowle
 
 pub use crate::types::_query_generation_input::QueryGenerationInputBuilder;
 
+pub use crate::types::_flow_multi_turn_input_request_event::FlowMultiTurnInputRequestEventBuilder;
+
 pub use crate::types::_flow_trace_event::FlowTraceEventBuilder;
 
 pub use crate::types::_flow_trace_condition_node_result_event::FlowTraceConditionNodeResultEventBuilder;

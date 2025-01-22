@@ -120,6 +120,21 @@ pub fn ser_schedule_action_settings(
         crate::protocol_serde::shape_static_image_output_deactivate_schedule_action_settings::ser_static_image_output_deactivate_schedule_action_settings(&mut object_30, var_29)?;
         object_30.finish();
     }
+    if let Some(var_31) = &input.id3_segment_tagging_settings {
+        #[allow(unused_mut)]
+        let mut object_32 = object.key("id3SegmentTaggingSettings").start_object();
+        crate::protocol_serde::shape_id3_segment_tagging_schedule_action_settings::ser_id3_segment_tagging_schedule_action_settings(
+            &mut object_32,
+            var_31,
+        )?;
+        object_32.finish();
+    }
+    if let Some(var_33) = &input.timed_metadata_settings {
+        #[allow(unused_mut)]
+        let mut object_34 = object.key("timedMetadataSettings").start_object();
+        crate::protocol_serde::shape_timed_metadata_schedule_action_settings::ser_timed_metadata_schedule_action_settings(&mut object_34, var_33)?;
+        object_34.finish();
+    }
     Ok(())
 }
 
@@ -214,6 +229,18 @@ where
                             builder = builder.set_static_image_output_deactivate_settings(
                                     crate::protocol_serde::shape_static_image_output_deactivate_schedule_action_settings::de_static_image_output_deactivate_schedule_action_settings(tokens)?
                                 );
+                        }
+                        "id3SegmentTaggingSettings" => {
+                            builder = builder.set_id3_segment_tagging_settings(
+                                    crate::protocol_serde::shape_id3_segment_tagging_schedule_action_settings::de_id3_segment_tagging_schedule_action_settings(tokens)?
+                                );
+                        }
+                        "timedMetadataSettings" => {
+                            builder = builder.set_timed_metadata_settings(
+                                crate::protocol_serde::shape_timed_metadata_schedule_action_settings::de_timed_metadata_schedule_action_settings(
+                                    tokens,
+                                )?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

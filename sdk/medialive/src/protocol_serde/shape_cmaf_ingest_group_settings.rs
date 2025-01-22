@@ -42,6 +42,12 @@ pub fn ser_cmaf_ingest_group_settings(
     if let Some(var_11) = &input.scte35_name_modifier {
         object.key("scte35NameModifier").string(var_11.as_str());
     }
+    if let Some(var_12) = &input.id3_behavior {
+        object.key("id3Behavior").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.id3_name_modifier {
+        object.key("id3NameModifier").string(var_13.as_str());
+    }
     Ok(())
 }
 
@@ -121,6 +127,20 @@ where
                         }
                         "scte35NameModifier" => {
                             builder = builder.set_scte35_name_modifier(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "id3Behavior" => {
+                            builder = builder.set_id3_behavior(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CmafId3Behavior::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "id3NameModifier" => {
+                            builder = builder.set_id3_name_modifier(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

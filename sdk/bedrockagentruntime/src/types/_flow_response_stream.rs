@@ -6,6 +6,8 @@
 pub enum FlowResponseStream {
     /// <p>Contains information about why the flow completed.</p>
     FlowCompletionEvent(crate::types::FlowCompletionEvent),
+    /// <p>The event stream containing the multi-turn input request information from the flow.</p>
+    FlowMultiTurnInputRequestEvent(crate::types::FlowMultiTurnInputRequestEvent),
     /// <p>Contains information about an output from flow invocation.</p>
     FlowOutputEvent(crate::types::FlowOutputEvent),
     /// <p>Contains information about a trace, which tracks an input or output for a node in the flow.</p>
@@ -33,6 +35,19 @@ impl FlowResponseStream {
     /// Returns true if this is a [`FlowCompletionEvent`](crate::types::FlowResponseStream::FlowCompletionEvent).
     pub fn is_flow_completion_event(&self) -> bool {
         self.as_flow_completion_event().is_ok()
+    }
+    /// Tries to convert the enum instance into [`FlowMultiTurnInputRequestEvent`](crate::types::FlowResponseStream::FlowMultiTurnInputRequestEvent), extracting the inner [`FlowMultiTurnInputRequestEvent`](crate::types::FlowMultiTurnInputRequestEvent).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_flow_multi_turn_input_request_event(&self) -> ::std::result::Result<&crate::types::FlowMultiTurnInputRequestEvent, &Self> {
+        if let FlowResponseStream::FlowMultiTurnInputRequestEvent(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`FlowMultiTurnInputRequestEvent`](crate::types::FlowResponseStream::FlowMultiTurnInputRequestEvent).
+    pub fn is_flow_multi_turn_input_request_event(&self) -> bool {
+        self.as_flow_multi_turn_input_request_event().is_ok()
     }
     /// Tries to convert the enum instance into [`FlowOutputEvent`](crate::types::FlowResponseStream::FlowOutputEvent), extracting the inner [`FlowOutputEvent`](crate::types::FlowOutputEvent).
     /// Returns `Err(&Self)` if it can't be converted.
@@ -69,6 +84,7 @@ impl ::std::fmt::Debug for FlowResponseStream {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             FlowResponseStream::FlowCompletionEvent(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
+            FlowResponseStream::FlowMultiTurnInputRequestEvent(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
             FlowResponseStream::FlowOutputEvent(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
             FlowResponseStream::FlowTraceEvent(val) => f.debug_tuple("FlowTraceEvent").field(&val).finish(),
             FlowResponseStream::Unknown => f.debug_tuple("Unknown").finish(),

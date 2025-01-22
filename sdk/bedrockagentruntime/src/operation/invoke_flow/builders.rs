@@ -185,4 +185,18 @@ impl InvokeFlowFluentBuilder {
     pub fn get_model_performance_configuration(&self) -> &::std::option::Option<crate::types::ModelPerformanceConfiguration> {
         self.inner.get_model_performance_configuration()
     }
+    /// <p>The unique identifier for the current flow execution. If you don't provide a value, Amazon Bedrock creates the identifier for you.</p>
+    pub fn execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.execution_id(input.into());
+        self
+    }
+    /// <p>The unique identifier for the current flow execution. If you don't provide a value, Amazon Bedrock creates the identifier for you.</p>
+    pub fn set_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_execution_id(input);
+        self
+    }
+    /// <p>The unique identifier for the current flow execution. If you don't provide a value, Amazon Bedrock creates the identifier for you.</p>
+    pub fn get_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_execution_id()
+    }
 }

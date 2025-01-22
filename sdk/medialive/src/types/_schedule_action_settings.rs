@@ -34,6 +34,10 @@ pub struct ScheduleActionSettings {
     pub static_image_output_activate_settings: ::std::option::Option<crate::types::StaticImageOutputActivateScheduleActionSettings>,
     /// Action to deactivate a static image overlay in one or more specified outputs
     pub static_image_output_deactivate_settings: ::std::option::Option<crate::types::StaticImageOutputDeactivateScheduleActionSettings>,
+    /// Action to insert ID3 metadata in every segment, in applicable output groups
+    pub id3_segment_tagging_settings: ::std::option::Option<crate::types::Id3SegmentTaggingScheduleActionSettings>,
+    /// Action to insert ID3 metadata once, in applicable output groups
+    pub timed_metadata_settings: ::std::option::Option<crate::types::TimedMetadataScheduleActionSettings>,
 }
 impl ScheduleActionSettings {
     /// Action to insert ID3 metadata in every segment, in HLS output groups
@@ -96,6 +100,14 @@ impl ScheduleActionSettings {
     pub fn static_image_output_deactivate_settings(&self) -> ::std::option::Option<&crate::types::StaticImageOutputDeactivateScheduleActionSettings> {
         self.static_image_output_deactivate_settings.as_ref()
     }
+    /// Action to insert ID3 metadata in every segment, in applicable output groups
+    pub fn id3_segment_tagging_settings(&self) -> ::std::option::Option<&crate::types::Id3SegmentTaggingScheduleActionSettings> {
+        self.id3_segment_tagging_settings.as_ref()
+    }
+    /// Action to insert ID3 metadata once, in applicable output groups
+    pub fn timed_metadata_settings(&self) -> ::std::option::Option<&crate::types::TimedMetadataScheduleActionSettings> {
+        self.timed_metadata_settings.as_ref()
+    }
 }
 impl ScheduleActionSettings {
     /// Creates a new builder-style object to manufacture [`ScheduleActionSettings`](crate::types::ScheduleActionSettings).
@@ -123,6 +135,8 @@ pub struct ScheduleActionSettingsBuilder {
     pub(crate) static_image_deactivate_settings: ::std::option::Option<crate::types::StaticImageDeactivateScheduleActionSettings>,
     pub(crate) static_image_output_activate_settings: ::std::option::Option<crate::types::StaticImageOutputActivateScheduleActionSettings>,
     pub(crate) static_image_output_deactivate_settings: ::std::option::Option<crate::types::StaticImageOutputDeactivateScheduleActionSettings>,
+    pub(crate) id3_segment_tagging_settings: ::std::option::Option<crate::types::Id3SegmentTaggingScheduleActionSettings>,
+    pub(crate) timed_metadata_settings: ::std::option::Option<crate::types::TimedMetadataScheduleActionSettings>,
 }
 impl ScheduleActionSettingsBuilder {
     /// Action to insert ID3 metadata in every segment, in HLS output groups
@@ -363,6 +377,34 @@ impl ScheduleActionSettingsBuilder {
     ) -> &::std::option::Option<crate::types::StaticImageOutputDeactivateScheduleActionSettings> {
         &self.static_image_output_deactivate_settings
     }
+    /// Action to insert ID3 metadata in every segment, in applicable output groups
+    pub fn id3_segment_tagging_settings(mut self, input: crate::types::Id3SegmentTaggingScheduleActionSettings) -> Self {
+        self.id3_segment_tagging_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// Action to insert ID3 metadata in every segment, in applicable output groups
+    pub fn set_id3_segment_tagging_settings(mut self, input: ::std::option::Option<crate::types::Id3SegmentTaggingScheduleActionSettings>) -> Self {
+        self.id3_segment_tagging_settings = input;
+        self
+    }
+    /// Action to insert ID3 metadata in every segment, in applicable output groups
+    pub fn get_id3_segment_tagging_settings(&self) -> &::std::option::Option<crate::types::Id3SegmentTaggingScheduleActionSettings> {
+        &self.id3_segment_tagging_settings
+    }
+    /// Action to insert ID3 metadata once, in applicable output groups
+    pub fn timed_metadata_settings(mut self, input: crate::types::TimedMetadataScheduleActionSettings) -> Self {
+        self.timed_metadata_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// Action to insert ID3 metadata once, in applicable output groups
+    pub fn set_timed_metadata_settings(mut self, input: ::std::option::Option<crate::types::TimedMetadataScheduleActionSettings>) -> Self {
+        self.timed_metadata_settings = input;
+        self
+    }
+    /// Action to insert ID3 metadata once, in applicable output groups
+    pub fn get_timed_metadata_settings(&self) -> &::std::option::Option<crate::types::TimedMetadataScheduleActionSettings> {
+        &self.timed_metadata_settings
+    }
     /// Consumes the builder and constructs a [`ScheduleActionSettings`](crate::types::ScheduleActionSettings).
     pub fn build(self) -> crate::types::ScheduleActionSettings {
         crate::types::ScheduleActionSettings {
@@ -381,6 +423,8 @@ impl ScheduleActionSettingsBuilder {
             static_image_deactivate_settings: self.static_image_deactivate_settings,
             static_image_output_activate_settings: self.static_image_output_activate_settings,
             static_image_output_deactivate_settings: self.static_image_output_deactivate_settings,
+            id3_segment_tagging_settings: self.id3_segment_tagging_settings,
+            timed_metadata_settings: self.timed_metadata_settings,
         }
     }
 }

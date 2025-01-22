@@ -659,6 +659,8 @@ pub use crate::types::_input_loss_action_for_udp_out::InputLossActionForUdpOut;
 
 pub use crate::types::_cmaf_ingest_group_settings::CmafIngestGroupSettings;
 
+pub use crate::types::_cmaf_id3_behavior::CmafId3Behavior;
+
 pub use crate::types::_cmaf_klv_behavior::CmafKlvBehavior;
 
 pub use crate::types::_cmaf_ingest_segment_length_units::CmafIngestSegmentLengthUnits;
@@ -1141,6 +1143,10 @@ pub use crate::types::_fixed_mode_schedule_action_start_settings::FixedModeSched
 
 pub use crate::types::_schedule_action_settings::ScheduleActionSettings;
 
+pub use crate::types::_timed_metadata_schedule_action_settings::TimedMetadataScheduleActionSettings;
+
+pub use crate::types::_id3_segment_tagging_schedule_action_settings::Id3SegmentTaggingScheduleActionSettings;
+
 pub use crate::types::_static_image_output_deactivate_schedule_action_settings::StaticImageOutputDeactivateScheduleActionSettings;
 
 pub use crate::types::_static_image_output_activate_schedule_action_settings::StaticImageOutputActivateScheduleActionSettings;
@@ -1464,6 +1470,8 @@ mod _cluster_network_settings_update_request;
 mod _cluster_state;
 
 mod _cluster_type;
+
+mod _cmaf_id3_behavior;
 
 mod _cmaf_ingest_group_settings;
 
@@ -1828,6 +1836,8 @@ mod _hls_webdav_settings;
 mod _html_motion_graphics_settings;
 
 mod _i_frame_only_playlist_type;
+
+mod _id3_segment_tagging_schedule_action_settings;
 
 mod _immediate_mode_schedule_action_start_settings;
 
@@ -2432,6 +2442,8 @@ mod _timecode_burnin_settings;
 mod _timecode_config;
 
 mod _timecode_config_source;
+
+mod _timed_metadata_schedule_action_settings;
 
 mod _transferring_input_device_summary;
 

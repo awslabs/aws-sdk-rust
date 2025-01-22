@@ -855,6 +855,8 @@ pub(crate) mod shape_hls_timed_metadata_schedule_action_settings;
 
 pub(crate) mod shape_html_motion_graphics_settings;
 
+pub(crate) mod shape_id3_segment_tagging_schedule_action_settings;
+
 pub(crate) mod shape_immediate_mode_schedule_action_start_settings;
 
 pub(crate) mod shape_input_destination_route;
@@ -940,6 +942,8 @@ pub(crate) mod shape_static_image_output_deactivate_schedule_action_settings;
 pub(crate) mod shape_teletext_destination_settings;
 
 pub(crate) mod shape_thumbnail;
+
+pub(crate) mod shape_timed_metadata_schedule_action_settings;
 
 pub(crate) mod shape_ttml_destination_settings;
 

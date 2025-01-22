@@ -5,6 +5,8 @@
 pub struct InvokeFlowOutput {
     /// <p>The output of the flow, returned as a stream. If there's an error, the error is returned.</p>
     pub response_stream: crate::event_receiver::EventReceiver<crate::types::FlowResponseStream, crate::types::error::FlowResponseStreamError>,
+    /// <p>The unique identifier for the current flow execution.</p>
+    pub execution_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl InvokeFlowOutput {
@@ -13,6 +15,10 @@ impl InvokeFlowOutput {
         &self,
     ) -> &crate::event_receiver::EventReceiver<crate::types::FlowResponseStream, crate::types::error::FlowResponseStreamError> {
         &self.response_stream
+    }
+    /// <p>The unique identifier for the current flow execution.</p>
+    pub fn execution_id(&self) -> ::std::option::Option<&str> {
+        self.execution_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for InvokeFlowOutput {
@@ -33,6 +39,7 @@ impl InvokeFlowOutput {
 pub struct InvokeFlowOutputBuilder {
     pub(crate) response_stream:
         ::std::option::Option<crate::event_receiver::EventReceiver<crate::types::FlowResponseStream, crate::types::error::FlowResponseStreamError>>,
+    pub(crate) execution_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl InvokeFlowOutputBuilder {
@@ -62,6 +69,20 @@ impl InvokeFlowOutputBuilder {
     {
         &self.response_stream
     }
+    /// <p>The unique identifier for the current flow execution.</p>
+    pub fn execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.execution_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier for the current flow execution.</p>
+    pub fn set_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.execution_id = input;
+        self
+    }
+    /// <p>The unique identifier for the current flow execution.</p>
+    pub fn get_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -82,6 +103,7 @@ impl InvokeFlowOutputBuilder {
                     "response_stream was not specified but it is required when building InvokeFlowOutput",
                 )
             })?,
+            execution_id: self.execution_id,
             _request_id: self._request_id,
         })
     }

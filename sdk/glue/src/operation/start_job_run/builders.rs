@@ -211,6 +211,7 @@ impl StartJobRunFluentBuilder {
     /// <p>Jobs must have timeout values less than 7 days or 10080 minutes. Otherwise, the jobs will throw an exception.</p>
     /// <p>When the value is left blank, the timeout is defaulted to 2880 minutes.</p>
     /// <p>Any existing Glue jobs that had a timeout value greater than 7 days will be defaulted to 7 days. For instance if you have specified a timeout of 20 days for a batch job, it will be stopped on the 7th day.</p>
+    /// <p>For streaming jobs, if you have set up a maintenance window, it will be restarted during the maintenance window after 7 days.</p>
     pub fn timeout(mut self, input: i32) -> Self {
         self.inner = self.inner.timeout(input);
         self
@@ -219,6 +220,7 @@ impl StartJobRunFluentBuilder {
     /// <p>Jobs must have timeout values less than 7 days or 10080 minutes. Otherwise, the jobs will throw an exception.</p>
     /// <p>When the value is left blank, the timeout is defaulted to 2880 minutes.</p>
     /// <p>Any existing Glue jobs that had a timeout value greater than 7 days will be defaulted to 7 days. For instance if you have specified a timeout of 20 days for a batch job, it will be stopped on the 7th day.</p>
+    /// <p>For streaming jobs, if you have set up a maintenance window, it will be restarted during the maintenance window after 7 days.</p>
     pub fn set_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_timeout(input);
         self
@@ -227,6 +229,7 @@ impl StartJobRunFluentBuilder {
     /// <p>Jobs must have timeout values less than 7 days or 10080 minutes. Otherwise, the jobs will throw an exception.</p>
     /// <p>When the value is left blank, the timeout is defaulted to 2880 minutes.</p>
     /// <p>Any existing Glue jobs that had a timeout value greater than 7 days will be defaulted to 7 days. For instance if you have specified a timeout of 20 days for a batch job, it will be stopped on the 7th day.</p>
+    /// <p>For streaming jobs, if you have set up a maintenance window, it will be restarted during the maintenance window after 7 days.</p>
     pub fn get_timeout(&self) -> &::std::option::Option<i32> {
         self.inner.get_timeout()
     }

@@ -185,6 +185,8 @@ pub(crate) mod shape_flow_completion_event;
 
 pub(crate) mod shape_flow_input_content;
 
+pub(crate) mod shape_flow_multi_turn_input_request_event;
+
 pub(crate) mod shape_flow_output_event;
 
 pub(crate) mod shape_flow_trace_event;
@@ -298,6 +300,8 @@ pub(crate) mod shape_content_block;
 pub(crate) mod shape_content_body;
 
 pub(crate) mod shape_filter_attribute;
+
+pub(crate) mod shape_flow_multi_turn_input_content;
 
 pub(crate) mod shape_flow_output_content;
 

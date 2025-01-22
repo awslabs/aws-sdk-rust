@@ -439,6 +439,12 @@ pub use crate::types::_input_query_type::InputQueryType;
 
 pub use crate::types::_flow_response_stream::FlowResponseStream;
 
+pub use crate::types::_flow_multi_turn_input_request_event::FlowMultiTurnInputRequestEvent;
+
+pub use crate::types::_flow_multi_turn_input_content::FlowMultiTurnInputContent;
+
+pub use crate::types::_node_type::NodeType;
+
 pub use crate::types::_flow_trace_event::FlowTraceEvent;
 
 pub use crate::types::_flow_trace::FlowTrace;
@@ -466,8 +472,6 @@ pub use crate::types::_flow_completion_reason::FlowCompletionReason;
 pub use crate::types::_flow_output_event::FlowOutputEvent;
 
 pub use crate::types::_flow_output_content::FlowOutputContent;
-
-pub use crate::types::_node_type::NodeType;
 
 pub use crate::types::_model_performance_configuration::ModelPerformanceConfiguration;
 
@@ -582,6 +586,10 @@ mod _flow_completion_reason;
 mod _flow_input;
 
 mod _flow_input_content;
+
+mod _flow_multi_turn_input_content;
+
+mod _flow_multi_turn_input_request_event;
 
 mod _flow_output_content;
 

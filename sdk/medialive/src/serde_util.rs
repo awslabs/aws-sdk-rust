@@ -526,6 +526,15 @@ pub(crate) fn static_image_output_deactivate_schedule_action_settings_correct_er
     builder
 }
 
+pub(crate) fn timed_metadata_schedule_action_settings_correct_errors(
+    mut builder: crate::types::builders::TimedMetadataScheduleActionSettingsBuilder,
+) -> crate::types::builders::TimedMetadataScheduleActionSettingsBuilder {
+    if builder.id3.is_none() {
+        builder.id3 = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn archive_group_settings_correct_errors(
     mut builder: crate::types::builders::ArchiveGroupSettingsBuilder,
 ) -> crate::types::builders::ArchiveGroupSettingsBuilder {

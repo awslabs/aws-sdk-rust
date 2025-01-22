@@ -105,6 +105,21 @@ pub(crate) fn flow_completion_event_correct_errors(
     builder
 }
 
+pub(crate) fn flow_multi_turn_input_request_event_correct_errors(
+    mut builder: crate::types::builders::FlowMultiTurnInputRequestEventBuilder,
+) -> crate::types::builders::FlowMultiTurnInputRequestEventBuilder {
+    if builder.node_name.is_none() {
+        builder.node_name = Some(Default::default())
+    }
+    if builder.node_type.is_none() {
+        builder.node_type = "no value was set".parse::<crate::types::NodeType>().ok()
+    }
+    if builder.content.is_none() {
+        builder.content = Some(crate::types::FlowMultiTurnInputContent::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn flow_output_event_correct_errors(
     mut builder: crate::types::builders::FlowOutputEventBuilder,
 ) -> crate::types::builders::FlowOutputEventBuilder {

@@ -6,23 +6,26 @@ pub fn ser_invoke_flow_input_input(
     if let Some(var_1) = &input.enable_trace {
         object.key("enableTrace").boolean(*var_1);
     }
-    if let Some(var_2) = &input.inputs {
-        let mut array_3 = object.key("inputs").start_array();
-        for item_4 in var_2 {
+    if let Some(var_2) = &input.execution_id {
+        object.key("executionId").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.inputs {
+        let mut array_4 = object.key("inputs").start_array();
+        for item_5 in var_3 {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_flow_input::ser_flow_input(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_flow_input::ser_flow_input(&mut object_6, item_5)?;
+                object_6.finish();
             }
         }
-        array_3.finish();
+        array_4.finish();
     }
-    if let Some(var_6) = &input.model_performance_configuration {
+    if let Some(var_7) = &input.model_performance_configuration {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("modelPerformanceConfiguration").start_object();
-        crate::protocol_serde::shape_model_performance_configuration::ser_model_performance_configuration(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_8 = object.key("modelPerformanceConfiguration").start_object();
+        crate::protocol_serde::shape_model_performance_configuration::ser_model_performance_configuration(&mut object_8, var_7)?;
+        object_8.finish();
     }
     Ok(())
 }

@@ -24,6 +24,10 @@ pub struct CmafIngestGroupSettings {
     pub nielsen_id3_name_modifier: ::std::option::Option<::std::string::String>,
     /// Change the modifier that MediaLive automatically adds to the Streams() name for a SCTE 35 track. The default is "scte", which means the default name will be Streams(scte.cmfm). Any string you enter here will replace the "scte" string.\nThe modifier can only contain: numbers, letters, plus (+), minus (-), underscore (_) and period (.) and has a maximum length of 100 characters.
     pub scte35_name_modifier: ::std::option::Option<::std::string::String>,
+    /// Set to ENABLED to enable ID3 metadata insertion. To include metadata, you configure other parameters in the output group, or you add an ID3 action to the channel schedule.
+    pub id3_behavior: ::std::option::Option<crate::types::CmafId3Behavior>,
+    /// Change the modifier that MediaLive automatically adds to the Streams() name that identifies an ID3 track. The default is "id3", which means the default name will be Streams(id3.cmfm). Any string you enter here will replace the "id3" string.\nThe modifier can only contain: numbers, letters, plus (+), minus (-), underscore (_) and period (.) and has a maximum length of 100 characters.
+    pub id3_name_modifier: ::std::option::Option<::std::string::String>,
 }
 impl CmafIngestGroupSettings {
     /// A HTTP destination for the tracks
@@ -66,6 +70,14 @@ impl CmafIngestGroupSettings {
     pub fn scte35_name_modifier(&self) -> ::std::option::Option<&str> {
         self.scte35_name_modifier.as_deref()
     }
+    /// Set to ENABLED to enable ID3 metadata insertion. To include metadata, you configure other parameters in the output group, or you add an ID3 action to the channel schedule.
+    pub fn id3_behavior(&self) -> ::std::option::Option<&crate::types::CmafId3Behavior> {
+        self.id3_behavior.as_ref()
+    }
+    /// Change the modifier that MediaLive automatically adds to the Streams() name that identifies an ID3 track. The default is "id3", which means the default name will be Streams(id3.cmfm). Any string you enter here will replace the "id3" string.\nThe modifier can only contain: numbers, letters, plus (+), minus (-), underscore (_) and period (.) and has a maximum length of 100 characters.
+    pub fn id3_name_modifier(&self) -> ::std::option::Option<&str> {
+        self.id3_name_modifier.as_deref()
+    }
 }
 impl CmafIngestGroupSettings {
     /// Creates a new builder-style object to manufacture [`CmafIngestGroupSettings`](crate::types::CmafIngestGroupSettings).
@@ -88,6 +100,8 @@ pub struct CmafIngestGroupSettingsBuilder {
     pub(crate) klv_name_modifier: ::std::option::Option<::std::string::String>,
     pub(crate) nielsen_id3_name_modifier: ::std::option::Option<::std::string::String>,
     pub(crate) scte35_name_modifier: ::std::option::Option<::std::string::String>,
+    pub(crate) id3_behavior: ::std::option::Option<crate::types::CmafId3Behavior>,
+    pub(crate) id3_name_modifier: ::std::option::Option<::std::string::String>,
 }
 impl CmafIngestGroupSettingsBuilder {
     /// A HTTP destination for the tracks
@@ -231,6 +245,34 @@ impl CmafIngestGroupSettingsBuilder {
     pub fn get_scte35_name_modifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.scte35_name_modifier
     }
+    /// Set to ENABLED to enable ID3 metadata insertion. To include metadata, you configure other parameters in the output group, or you add an ID3 action to the channel schedule.
+    pub fn id3_behavior(mut self, input: crate::types::CmafId3Behavior) -> Self {
+        self.id3_behavior = ::std::option::Option::Some(input);
+        self
+    }
+    /// Set to ENABLED to enable ID3 metadata insertion. To include metadata, you configure other parameters in the output group, or you add an ID3 action to the channel schedule.
+    pub fn set_id3_behavior(mut self, input: ::std::option::Option<crate::types::CmafId3Behavior>) -> Self {
+        self.id3_behavior = input;
+        self
+    }
+    /// Set to ENABLED to enable ID3 metadata insertion. To include metadata, you configure other parameters in the output group, or you add an ID3 action to the channel schedule.
+    pub fn get_id3_behavior(&self) -> &::std::option::Option<crate::types::CmafId3Behavior> {
+        &self.id3_behavior
+    }
+    /// Change the modifier that MediaLive automatically adds to the Streams() name that identifies an ID3 track. The default is "id3", which means the default name will be Streams(id3.cmfm). Any string you enter here will replace the "id3" string.\nThe modifier can only contain: numbers, letters, plus (+), minus (-), underscore (_) and period (.) and has a maximum length of 100 characters.
+    pub fn id3_name_modifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id3_name_modifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// Change the modifier that MediaLive automatically adds to the Streams() name that identifies an ID3 track. The default is "id3", which means the default name will be Streams(id3.cmfm). Any string you enter here will replace the "id3" string.\nThe modifier can only contain: numbers, letters, plus (+), minus (-), underscore (_) and period (.) and has a maximum length of 100 characters.
+    pub fn set_id3_name_modifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.id3_name_modifier = input;
+        self
+    }
+    /// Change the modifier that MediaLive automatically adds to the Streams() name that identifies an ID3 track. The default is "id3", which means the default name will be Streams(id3.cmfm). Any string you enter here will replace the "id3" string.\nThe modifier can only contain: numbers, letters, plus (+), minus (-), underscore (_) and period (.) and has a maximum length of 100 characters.
+    pub fn get_id3_name_modifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id3_name_modifier
+    }
     /// Consumes the builder and constructs a [`CmafIngestGroupSettings`](crate::types::CmafIngestGroupSettings).
     pub fn build(self) -> crate::types::CmafIngestGroupSettings {
         crate::types::CmafIngestGroupSettings {
@@ -244,6 +286,8 @@ impl CmafIngestGroupSettingsBuilder {
             klv_name_modifier: self.klv_name_modifier,
             nielsen_id3_name_modifier: self.nielsen_id3_name_modifier,
             scte35_name_modifier: self.scte35_name_modifier,
+            id3_behavior: self.id3_behavior,
+            id3_name_modifier: self.id3_name_modifier,
         }
     }
 }

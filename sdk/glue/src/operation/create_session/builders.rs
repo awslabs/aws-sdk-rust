@@ -164,17 +164,17 @@ impl CreateSessionFluentBuilder {
     pub fn get_command(&self) -> &::std::option::Option<crate::types::SessionCommand> {
         self.inner.get_command()
     }
-    /// <p>The number of minutes before session times out. Default for Spark ETL jobs is 48 hours (2880 minutes), the maximum session lifetime for this job type. Consult the documentation for other job types.</p>
+    /// <p>The number of minutes before session times out. Default for Spark ETL jobs is 48 hours (2880 minutes). Consult the documentation for other job types.</p>
     pub fn timeout(mut self, input: i32) -> Self {
         self.inner = self.inner.timeout(input);
         self
     }
-    /// <p>The number of minutes before session times out. Default for Spark ETL jobs is 48 hours (2880 minutes), the maximum session lifetime for this job type. Consult the documentation for other job types.</p>
+    /// <p>The number of minutes before session times out. Default for Spark ETL jobs is 48 hours (2880 minutes). Consult the documentation for other job types.</p>
     pub fn set_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_timeout(input);
         self
     }
-    /// <p>The number of minutes before session times out. Default for Spark ETL jobs is 48 hours (2880 minutes), the maximum session lifetime for this job type. Consult the documentation for other job types.</p>
+    /// <p>The number of minutes before session times out. Default for Spark ETL jobs is 48 hours (2880 minutes). Consult the documentation for other job types.</p>
     pub fn get_timeout(&self) -> &::std::option::Option<i32> {
         self.inner.get_timeout()
     }

@@ -6,14 +6,17 @@ pub fn ser_flow_input(
     {
         object.key("nodeName").string(input.node_name.as_str());
     }
-    {
-        object.key("nodeOutputName").string(input.node_output_name.as_str());
+    if let Some(var_1) = &input.node_output_name {
+        object.key("nodeOutputName").string(var_1.as_str());
     }
-    if let Some(var_1) = &input.content {
+    if let Some(var_2) = &input.content {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("content").start_object();
-        crate::protocol_serde::shape_flow_input_content::ser_flow_input_content(&mut object_2, var_1)?;
-        object_2.finish();
+        let mut object_3 = object.key("content").start_object();
+        crate::protocol_serde::shape_flow_input_content::ser_flow_input_content(&mut object_3, var_2)?;
+        object_3.finish();
+    }
+    if let Some(var_4) = &input.node_input_name {
+        object.key("nodeInputName").string(var_4.as_str());
     }
     Ok(())
 }

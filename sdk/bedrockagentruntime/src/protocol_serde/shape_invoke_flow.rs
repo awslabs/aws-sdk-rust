@@ -12,6 +12,11 @@ pub fn de_invoke_flow_http_response(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::invoke_flow::builders::InvokeFlowOutputBuilder::default();
+        output = output.set_execution_id(
+            crate::protocol_serde::shape_invoke_flow_output::de_execution_id_header(_response_headers).map_err(|_| {
+                crate::operation::invoke_flow::InvokeFlowError::unhandled("Failed to parse executionId from header `x-amz-bedrock-flow-execution-id")
+            })?,
+        );
         output = output.set_response_stream(Some(crate::protocol_serde::shape_invoke_flow_output::de_response_stream_payload(
             _response_body,
         )?));

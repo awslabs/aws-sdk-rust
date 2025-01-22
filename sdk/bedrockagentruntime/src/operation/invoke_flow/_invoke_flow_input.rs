@@ -13,6 +13,8 @@ pub struct InvokeFlowInput {
     pub enable_trace: ::std::option::Option<bool>,
     /// <p>Model performance settings for the request.</p>
     pub model_performance_configuration: ::std::option::Option<crate::types::ModelPerformanceConfiguration>,
+    /// <p>The unique identifier for the current flow execution. If you don't provide a value, Amazon Bedrock creates the identifier for you.</p>
+    pub execution_id: ::std::option::Option<::std::string::String>,
 }
 impl InvokeFlowInput {
     /// <p>The unique identifier of the flow.</p>
@@ -37,6 +39,10 @@ impl InvokeFlowInput {
     pub fn model_performance_configuration(&self) -> ::std::option::Option<&crate::types::ModelPerformanceConfiguration> {
         self.model_performance_configuration.as_ref()
     }
+    /// <p>The unique identifier for the current flow execution. If you don't provide a value, Amazon Bedrock creates the identifier for you.</p>
+    pub fn execution_id(&self) -> ::std::option::Option<&str> {
+        self.execution_id.as_deref()
+    }
 }
 impl InvokeFlowInput {
     /// Creates a new builder-style object to manufacture [`InvokeFlowInput`](crate::operation::invoke_flow::InvokeFlowInput).
@@ -54,6 +60,7 @@ pub struct InvokeFlowInputBuilder {
     pub(crate) inputs: ::std::option::Option<::std::vec::Vec<crate::types::FlowInput>>,
     pub(crate) enable_trace: ::std::option::Option<bool>,
     pub(crate) model_performance_configuration: ::std::option::Option<crate::types::ModelPerformanceConfiguration>,
+    pub(crate) execution_id: ::std::option::Option<::std::string::String>,
 }
 impl InvokeFlowInputBuilder {
     /// <p>The unique identifier of the flow.</p>
@@ -134,6 +141,20 @@ impl InvokeFlowInputBuilder {
     pub fn get_model_performance_configuration(&self) -> &::std::option::Option<crate::types::ModelPerformanceConfiguration> {
         &self.model_performance_configuration
     }
+    /// <p>The unique identifier for the current flow execution. If you don't provide a value, Amazon Bedrock creates the identifier for you.</p>
+    pub fn execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.execution_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier for the current flow execution. If you don't provide a value, Amazon Bedrock creates the identifier for you.</p>
+    pub fn set_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.execution_id = input;
+        self
+    }
+    /// <p>The unique identifier for the current flow execution. If you don't provide a value, Amazon Bedrock creates the identifier for you.</p>
+    pub fn get_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_id
+    }
     /// Consumes the builder and constructs a [`InvokeFlowInput`](crate::operation::invoke_flow::InvokeFlowInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::invoke_flow::InvokeFlowInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::invoke_flow::InvokeFlowInput {
@@ -142,6 +163,7 @@ impl InvokeFlowInputBuilder {
             inputs: self.inputs,
             enable_trace: self.enable_trace,
             model_performance_configuration: self.model_performance_configuration,
+            execution_id: self.execution_id,
         })
     }
 }

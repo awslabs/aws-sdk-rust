@@ -7,9 +7,11 @@ pub struct FlowInput {
     /// <p>The name of the flow input node that begins the prompt flow.</p>
     pub node_name: ::std::string::String,
     /// <p>The name of the output from the flow input node that begins the prompt flow.</p>
-    pub node_output_name: ::std::string::String,
+    pub node_output_name: ::std::option::Option<::std::string::String>,
     /// <p>Contains information about an input into the prompt flow.</p>
     pub content: ::std::option::Option<crate::types::FlowInputContent>,
+    /// <p>The name of the input from the flow input node.</p>
+    pub node_input_name: ::std::option::Option<::std::string::String>,
 }
 impl FlowInput {
     /// <p>The name of the flow input node that begins the prompt flow.</p>
@@ -18,13 +20,16 @@ impl FlowInput {
         self.node_name.deref()
     }
     /// <p>The name of the output from the flow input node that begins the prompt flow.</p>
-    pub fn node_output_name(&self) -> &str {
-        use std::ops::Deref;
-        self.node_output_name.deref()
+    pub fn node_output_name(&self) -> ::std::option::Option<&str> {
+        self.node_output_name.as_deref()
     }
     /// <p>Contains information about an input into the prompt flow.</p>
     pub fn content(&self) -> ::std::option::Option<&crate::types::FlowInputContent> {
         self.content.as_ref()
+    }
+    /// <p>The name of the input from the flow input node.</p>
+    pub fn node_input_name(&self) -> ::std::option::Option<&str> {
+        self.node_input_name.as_deref()
     }
 }
 impl ::std::fmt::Debug for FlowInput {
@@ -33,6 +38,7 @@ impl ::std::fmt::Debug for FlowInput {
         formatter.field("node_name", &self.node_name);
         formatter.field("node_output_name", &self.node_output_name);
         formatter.field("content", &"*** Sensitive Data Redacted ***");
+        formatter.field("node_input_name", &self.node_input_name);
         formatter.finish()
     }
 }
@@ -50,6 +56,7 @@ pub struct FlowInputBuilder {
     pub(crate) node_name: ::std::option::Option<::std::string::String>,
     pub(crate) node_output_name: ::std::option::Option<::std::string::String>,
     pub(crate) content: ::std::option::Option<crate::types::FlowInputContent>,
+    pub(crate) node_input_name: ::std::option::Option<::std::string::String>,
 }
 impl FlowInputBuilder {
     /// <p>The name of the flow input node that begins the prompt flow.</p>
@@ -68,7 +75,6 @@ impl FlowInputBuilder {
         &self.node_name
     }
     /// <p>The name of the output from the flow input node that begins the prompt flow.</p>
-    /// This field is required.
     pub fn node_output_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_output_name = ::std::option::Option::Some(input.into());
         self
@@ -97,10 +103,23 @@ impl FlowInputBuilder {
     pub fn get_content(&self) -> &::std::option::Option<crate::types::FlowInputContent> {
         &self.content
     }
+    /// <p>The name of the input from the flow input node.</p>
+    pub fn node_input_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.node_input_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the input from the flow input node.</p>
+    pub fn set_node_input_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.node_input_name = input;
+        self
+    }
+    /// <p>The name of the input from the flow input node.</p>
+    pub fn get_node_input_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_input_name
+    }
     /// Consumes the builder and constructs a [`FlowInput`](crate::types::FlowInput).
     /// This method will fail if any of the following fields are not set:
     /// - [`node_name`](crate::types::builders::FlowInputBuilder::node_name)
-    /// - [`node_output_name`](crate::types::builders::FlowInputBuilder::node_output_name)
     pub fn build(self) -> ::std::result::Result<crate::types::FlowInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FlowInput {
             node_name: self.node_name.ok_or_else(|| {
@@ -109,13 +128,9 @@ impl FlowInputBuilder {
                     "node_name was not specified but it is required when building FlowInput",
                 )
             })?,
-            node_output_name: self.node_output_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "node_output_name",
-                    "node_output_name was not specified but it is required when building FlowInput",
-                )
-            })?,
+            node_output_name: self.node_output_name,
             content: self.content,
+            node_input_name: self.node_input_name,
         })
     }
 }
@@ -125,6 +140,7 @@ impl ::std::fmt::Debug for FlowInputBuilder {
         formatter.field("node_name", &self.node_name);
         formatter.field("node_output_name", &self.node_output_name);
         formatter.field("content", &"*** Sensitive Data Redacted ***");
+        formatter.field("node_input_name", &self.node_input_name);
         formatter.finish()
     }
 }
