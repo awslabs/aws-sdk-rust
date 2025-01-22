@@ -74,7 +74,7 @@ jobs:
       - name: Install cargo component for wasm canary
         env:
           # Must be in sync with that specified in `smithy-rs`
-          CARGO_COMPONENT_VERSION: 0.13.2
+          CARGO_COMPONENT_VERSION: 0.20.0
         run: |
           rustup toolchain install ${{ env.rust_nightly_version }}
           rustup component add rustfmt
