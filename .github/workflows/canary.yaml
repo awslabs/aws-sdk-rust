@@ -8,7 +8,7 @@ on:
       - "canary*"
 env:
   tool_rust_version: 1.81.0
-  rust_nightly_version: nightly-2024-03-15
+  rust_nightly_version: nightly-2024-09-04
 
 jobs:
   generate-canary-matrix:
@@ -70,11 +70,11 @@ jobs:
           toolchain: ${{ matrix.rust_version }}
           targets: x86_64-unknown-linux-musl
       - name: Install dependencies
-        run: sudo apt-get update && sudo apt-get install -y awscli musl-dev musl-tools
+        run: sudo apt-get update && sudo apt-get install -y musl-dev musl-tools
       - name: Install cargo component for wasm canary
         env:
           # Must be in sync with that specified in `smithy-rs`
-          CARGO_COMPONENT_VERSION: 0.13.2
+          CARGO_COMPONENT_VERSION: 0.20.0
         run: |
           rustup toolchain install ${{ env.rust_nightly_version }}
           rustup component add rustfmt
