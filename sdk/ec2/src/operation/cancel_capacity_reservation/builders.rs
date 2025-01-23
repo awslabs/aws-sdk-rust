@@ -29,9 +29,7 @@ impl crate::operation::cancel_capacity_reservation::builders::CancelCapacityRese
 /// <p><code>assessing</code></p></li>
 /// <li>
 /// <p><code>active</code> and there is no commitment duration or the commitment duration has elapsed. You can't cancel a future-dated Capacity Reservation during the commitment duration.</p></li>
-/// </ul><note>
-/// <p>You can't modify or cancel a Capacity Block. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-blocks.html">Capacity Blocks for ML</a>.</p>
-/// </note>
+/// </ul>
 /// <p>If a future-dated Capacity Reservation enters the <code>delayed</code> state, the commitment duration is waived, and you can cancel it as soon as it enters the <code>active</code> state.</p>
 /// <p>Instances running in the reserved capacity continue running until you stop them. Stopped instances that target the Capacity Reservation can no longer launch. Modify these instances to either target a different Capacity Reservation, launch On-Demand Instance capacity, or run in any open Capacity Reservation that has matching attributes and sufficient capacity.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

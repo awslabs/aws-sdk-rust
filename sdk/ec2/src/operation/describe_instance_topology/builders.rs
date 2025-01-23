@@ -41,7 +41,7 @@ impl crate::operation::describe_instance_topology::builders::DescribeInstanceTop
 /// <li>
 /// <p><code>p3dn.24xlarge</code> | <code>p4d.24xlarge</code> | <code>p4de.24xlarge</code> | <code>p5.48xlarge</code> | <code>p5e.48xlarge</code> | <code>p5en.48xlarge</code></p></li>
 /// <li>
-/// <p><code>trn1.2xlarge</code> | <code>trn1.32xlarge</code> | <code>trn1n.32xlarge</code> | <code>trn2.48xlarge</code> | <code>trn2u.48xlarge</code></p></li>
+/// <p><code>trn1.2xlarge</code> | <code>trn1.32xlarge</code> | <code>trn1n.32xlarge</code></p></li>
 /// </ul></li>
 /// </ul>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-topology.html">Amazon EC2 instance topology</a> in the <i>Amazon EC2 User Guide</i>.</p>

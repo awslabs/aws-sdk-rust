@@ -27,7 +27,7 @@ pub struct InstanceNetworkInterfaceSpecification {
     pub private_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The private IPv4 addresses to assign to the network interface. Only one private IPv4 address can be designated as primary. You cannot specify this option if you're launching more than one instance in a <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a> request.</p>
     pub private_ip_addresses: ::std::option::Option<::std::vec::Vec<crate::types::PrivateIpAddressSpecification>>,
-    /// <p>The number of secondary private IPv4 addresses. You can’t specify this parameter and also specify a secondary private IP address using the <code>PrivateIpAddress</code> parameter.</p>
+    /// <p>The number of secondary private IPv4 addresses. You can't specify this option and specify more than one private IP address using the private IP addresses option. You cannot specify this option if you're launching more than one instance in a <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a> request.</p>
     pub secondary_private_ip_address_count: ::std::option::Option<i32>,
     /// <p>The ID of the subnet associated with the network interface. Applies only if creating a network interface when launching an instance.</p>
     pub subnet_id: ::std::option::Option<::std::string::String>,
@@ -106,7 +106,7 @@ impl InstanceNetworkInterfaceSpecification {
     pub fn private_ip_addresses(&self) -> &[crate::types::PrivateIpAddressSpecification] {
         self.private_ip_addresses.as_deref().unwrap_or_default()
     }
-    /// <p>The number of secondary private IPv4 addresses. You can’t specify this parameter and also specify a secondary private IP address using the <code>PrivateIpAddress</code> parameter.</p>
+    /// <p>The number of secondary private IPv4 addresses. You can't specify this option and specify more than one private IP address using the private IP addresses option. You cannot specify this option if you're launching more than one instance in a <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a> request.</p>
     pub fn secondary_private_ip_address_count(&self) -> ::std::option::Option<i32> {
         self.secondary_private_ip_address_count
     }
@@ -365,17 +365,17 @@ impl InstanceNetworkInterfaceSpecificationBuilder {
     pub fn get_private_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PrivateIpAddressSpecification>> {
         &self.private_ip_addresses
     }
-    /// <p>The number of secondary private IPv4 addresses. You can’t specify this parameter and also specify a secondary private IP address using the <code>PrivateIpAddress</code> parameter.</p>
+    /// <p>The number of secondary private IPv4 addresses. You can't specify this option and specify more than one private IP address using the private IP addresses option. You cannot specify this option if you're launching more than one instance in a <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a> request.</p>
     pub fn secondary_private_ip_address_count(mut self, input: i32) -> Self {
         self.secondary_private_ip_address_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of secondary private IPv4 addresses. You can’t specify this parameter and also specify a secondary private IP address using the <code>PrivateIpAddress</code> parameter.</p>
+    /// <p>The number of secondary private IPv4 addresses. You can't specify this option and specify more than one private IP address using the private IP addresses option. You cannot specify this option if you're launching more than one instance in a <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a> request.</p>
     pub fn set_secondary_private_ip_address_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.secondary_private_ip_address_count = input;
         self
     }
-    /// <p>The number of secondary private IPv4 addresses. You can’t specify this parameter and also specify a secondary private IP address using the <code>PrivateIpAddress</code> parameter.</p>
+    /// <p>The number of secondary private IPv4 addresses. You can't specify this option and specify more than one private IP address using the private IP addresses option. You cannot specify this option if you're launching more than one instance in a <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a> request.</p>
     pub fn get_secondary_private_ip_address_count(&self) -> &::std::option::Option<i32> {
         &self.secondary_private_ip_address_count
     }

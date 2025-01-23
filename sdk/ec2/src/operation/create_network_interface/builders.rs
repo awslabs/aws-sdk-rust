@@ -333,17 +333,17 @@ impl CreateNetworkInterfaceFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_groups`](Self::set_groups).
     ///
-    /// <p>The IDs of the security groups.</p>
+    /// <p>The IDs of one or more security groups.</p>
     pub fn groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.groups(input.into());
         self
     }
-    /// <p>The IDs of the security groups.</p>
+    /// <p>The IDs of one or more security groups.</p>
     pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_groups(input);
         self
     }
-    /// <p>The IDs of the security groups.</p>
+    /// <p>The IDs of one or more security groups.</p>
     pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_groups()
     }

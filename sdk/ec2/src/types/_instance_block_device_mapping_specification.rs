@@ -10,7 +10,7 @@ pub struct InstanceBlockDeviceMappingSpecification {
     pub ebs: ::std::option::Option<crate::types::EbsInstanceBlockDeviceSpecification>,
     /// <p>The virtual device name.</p>
     pub virtual_name: ::std::option::Option<::std::string::String>,
-    /// <p>Suppresses the specified device included in the block device mapping.</p>
+    /// <p>suppress the specified device included in the block device mapping.</p>
     pub no_device: ::std::option::Option<::std::string::String>,
 }
 impl InstanceBlockDeviceMappingSpecification {
@@ -26,7 +26,7 @@ impl InstanceBlockDeviceMappingSpecification {
     pub fn virtual_name(&self) -> ::std::option::Option<&str> {
         self.virtual_name.as_deref()
     }
-    /// <p>Suppresses the specified device included in the block device mapping.</p>
+    /// <p>suppress the specified device included in the block device mapping.</p>
     pub fn no_device(&self) -> ::std::option::Option<&str> {
         self.no_device.as_deref()
     }
@@ -90,17 +90,17 @@ impl InstanceBlockDeviceMappingSpecificationBuilder {
     pub fn get_virtual_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.virtual_name
     }
-    /// <p>Suppresses the specified device included in the block device mapping.</p>
+    /// <p>suppress the specified device included in the block device mapping.</p>
     pub fn no_device(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.no_device = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Suppresses the specified device included in the block device mapping.</p>
+    /// <p>suppress the specified device included in the block device mapping.</p>
     pub fn set_no_device(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.no_device = input;
         self
     }
-    /// <p>Suppresses the specified device included in the block device mapping.</p>
+    /// <p>suppress the specified device included in the block device mapping.</p>
     pub fn get_no_device(&self) -> &::std::option::Option<::std::string::String> {
         &self.no_device
     }

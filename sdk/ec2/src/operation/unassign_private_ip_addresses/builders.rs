@@ -22,7 +22,7 @@ impl crate::operation::unassign_private_ip_addresses::builders::UnassignPrivateI
 }
 /// Fluent builder constructing a request to `UnassignPrivateIpAddresses`.
 ///
-/// <p>Unassigns the specified secondary private IP addresses or IPv4 Prefix Delegation prefixes from a network interface.</p>
+/// <p>Unassigns one or more secondary private IP addresses, or IPv4 Prefix Delegation prefixes from a network interface.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UnassignPrivateIpAddressesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
