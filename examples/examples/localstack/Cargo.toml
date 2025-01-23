@@ -6,7 +6,7 @@ edition = "2021"
 publish = false
 
 [dependencies]
-aws-config= { version = "1.5.14", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
+aws-config= { version = "1.5.15", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
 aws-sdk-s3= { version = "1.71.0", path = "../../../sdk/s3" }
 
 [dependencies.tokio]

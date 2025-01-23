@@ -166,6 +166,11 @@ impl<'b> Decoder<'b> {
         self.decoder.position()
     }
 
+    /// Set the current decode position.
+    pub fn set_position(&mut self, pos: usize) {
+        self.decoder.set_position(pos)
+    }
+
     /// Returns a `Cow::Borrowed(&str)` if the element at the current position in the buffer is a definite
     /// length string. Otherwise, it returns a `Cow::Owned(String)` if the element at the current position is an
     /// indefinite-length string. An error is returned if the element is neither a definite length nor an

@@ -191,7 +191,10 @@ impl Provider {
             Err(EcsConfigurationError::NotConfigured) => return Provider::NotConfigured,
             Err(err) => return Provider::InvalidConfiguration(err),
         };
-        let path = uri.path().to_string();
+        let path_and_query = match uri.path_and_query() {
+            Some(path_and_query) => path_and_query.to_string(),
+            None => uri.path().to_string(),
+        };
         let endpoint = {
             let mut parts = uri.into_parts();
             parts.path_and_query = Some(PathAndQuery::from_static("/"));
@@ -208,7 +211,7 @@ impl Provider {
                     .read_timeout(DEFAULT_READ_TIMEOUT)
                     .build(),
             )
-            .build("EcsContainer", &endpoint, path);
+            .build("EcsContainer", &endpoint, path_and_query);
         Provider::Configured(http_provider)
     }
 
@@ -815,6 +818,42 @@ mod test {
         let http_client = StaticReplayClient::new(vec![ReplayEvent::new(
             creds_request(
                 "http://169.254.170.23/v1/credentials",
+                Some("Basic password"),
+            ),
+            ok_creds_response(),
+        )]);
+        let provider = provider(env, fs, http_client.clone());
+        let creds = provider
+            .provide_credentials()
+            .await
+            .expect("valid credentials");
+        assert_correct(creds);
+        http_client.assert_requests_match(&[]);
+    }
+
+    #[tokio::test]
+    async fn query_params_should_be_included_in_credentials_http_request() {
+        let env = Env::from_slice(&[
+            (
+                "AWS_CONTAINER_CREDENTIALS_RELATIVE_URI",
+                "/my-credentials/?applicationName=test2024",
+            ),
+            (
+                "AWS_CONTAINER_AUTHORIZATION_TOKEN_FILE",
+                "/var/run/secrets/pods.eks.amazonaws.com/serviceaccount/eks-pod-identity-token",
+            ),
+            ("AWS_CONTAINER_AUTHORIZATION_TOKEN", "unused"),
+        ]);
+        let fs = Fs::from_raw_map(HashMap::from([(
+            OsString::from(
+                "/var/run/secrets/pods.eks.amazonaws.com/serviceaccount/eks-pod-identity-token",
+            ),
+            "Basic password".into(),
+        )]));
+
+        let http_client = StaticReplayClient::new(vec![ReplayEvent::new(
+            creds_request(
+                "http://169.254.170.2/my-credentials/?applicationName=test2024",
                 Some("Basic password"),
             ),
             ok_creds_response(),
