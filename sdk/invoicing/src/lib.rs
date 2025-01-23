@@ -40,7 +40,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-invoicing = "1.6.0"
+//! aws-sdk-invoicing = "1.7.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

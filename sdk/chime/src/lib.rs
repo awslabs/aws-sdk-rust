@@ -52,7 +52,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-chime = "1.55.0"
+//! aws-sdk-chime = "1.56.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
