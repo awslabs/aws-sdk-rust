@@ -251,6 +251,8 @@ mod remove_tags;
 
 mod restore_event_data_store;
 
+mod search_sample_queries;
+
 mod start_dashboard_refresh;
 
 mod start_event_data_store_ingestion;

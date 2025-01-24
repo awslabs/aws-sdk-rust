@@ -133,6 +133,9 @@ pub mod remove_tags;
 /// Types for the `RestoreEventDataStore` operation.
 pub mod restore_event_data_store;
 
+/// Types for the `SearchSampleQueries` operation.
+pub mod search_sample_queries;
+
 /// Types for the `StartDashboardRefresh` operation.
 pub mod start_dashboard_refresh;
 

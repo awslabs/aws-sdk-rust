@@ -66,7 +66,7 @@ pub struct Command {
     pub error_count: i32,
     /// <p>The number of targets for which the status is Delivery Timed Out.</p>
     pub delivery_timed_out_count: i32,
-    /// <p>The Identity and Access Management (IAM) service role that Run Command, a capability of Amazon Web Services Systems Manager, uses to act on your behalf when sending notifications about command status changes.</p>
+    /// <p>The Identity and Access Management (IAM) service role that Run Command, a tool in Amazon Web Services Systems Manager, uses to act on your behalf when sending notifications about command status changes.</p>
     pub service_role: ::std::option::Option<::std::string::String>,
     /// <p>Configurations for sending notifications about command status changes.</p>
     pub notification_config: ::std::option::Option<crate::types::NotificationConfig>,
@@ -186,7 +186,7 @@ impl Command {
     pub fn delivery_timed_out_count(&self) -> i32 {
         self.delivery_timed_out_count
     }
-    /// <p>The Identity and Access Management (IAM) service role that Run Command, a capability of Amazon Web Services Systems Manager, uses to act on your behalf when sending notifications about command status changes.</p>
+    /// <p>The Identity and Access Management (IAM) service role that Run Command, a tool in Amazon Web Services Systems Manager, uses to act on your behalf when sending notifications about command status changes.</p>
     pub fn service_role(&self) -> ::std::option::Option<&str> {
         self.service_role.as_deref()
     }
@@ -653,17 +653,17 @@ impl CommandBuilder {
     pub fn get_delivery_timed_out_count(&self) -> &::std::option::Option<i32> {
         &self.delivery_timed_out_count
     }
-    /// <p>The Identity and Access Management (IAM) service role that Run Command, a capability of Amazon Web Services Systems Manager, uses to act on your behalf when sending notifications about command status changes.</p>
+    /// <p>The Identity and Access Management (IAM) service role that Run Command, a tool in Amazon Web Services Systems Manager, uses to act on your behalf when sending notifications about command status changes.</p>
     pub fn service_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_role = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Identity and Access Management (IAM) service role that Run Command, a capability of Amazon Web Services Systems Manager, uses to act on your behalf when sending notifications about command status changes.</p>
+    /// <p>The Identity and Access Management (IAM) service role that Run Command, a tool in Amazon Web Services Systems Manager, uses to act on your behalf when sending notifications about command status changes.</p>
     pub fn set_service_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_role = input;
         self
     }
-    /// <p>The Identity and Access Management (IAM) service role that Run Command, a capability of Amazon Web Services Systems Manager, uses to act on your behalf when sending notifications about command status changes.</p>
+    /// <p>The Identity and Access Management (IAM) service role that Run Command, a tool in Amazon Web Services Systems Manager, uses to act on your behalf when sending notifications about command status changes.</p>
     pub fn get_service_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_role
     }

@@ -2,7 +2,7 @@
 
 /// <p>A type of Pod Identity Association owned by an Amazon EKS Add-on.</p>
 /// <p>Each EKS Pod Identity Association maps a role to a service account in a namespace in the cluster.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/add-ons-iam.html">Attach an IAM Role to an Amazon EKS add-on using Pod Identity</a> in the EKS User Guide.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/add-ons-iam.html">Attach an IAM Role to an Amazon EKS add-on using Pod Identity</a> in the <i>Amazon EKS User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddonPodIdentityAssociations {

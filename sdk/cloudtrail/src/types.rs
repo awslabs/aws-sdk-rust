@@ -35,6 +35,8 @@ pub use crate::types::_import_source::ImportSource;
 
 pub use crate::types::_s3_import_source::S3ImportSource;
 
+pub use crate::types::_search_sample_queries_search_result::SearchSampleQueriesSearchResult;
+
 pub use crate::types::_tag::Tag;
 
 pub use crate::types::_insight_selector::InsightSelector;
@@ -184,6 +186,8 @@ mod _resource;
 mod _resource_tag;
 
 mod _s3_import_source;
+
+mod _search_sample_queries_search_result;
 
 mod _source_config;
 

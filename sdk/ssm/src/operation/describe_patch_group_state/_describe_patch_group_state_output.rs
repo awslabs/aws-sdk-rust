@@ -21,7 +21,7 @@ pub struct DescribePatchGroupStateOutput {
     pub instances_with_failed_patches: i32,
     /// <p>The number of managed nodes with patches that aren't applicable.</p>
     pub instances_with_not_applicable_patches: i32,
-    /// <p>The number of managed nodes with <code>NotApplicable</code> patches beyond the supported limit, which aren't reported by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.</p>
+    /// <p>The number of managed nodes with <code>NotApplicable</code> patches beyond the supported limit, which aren't reported by name to Inventory. Inventory is a tool in Amazon Web Services Systems Manager.</p>
     pub instances_with_unreported_not_applicable_patches: ::std::option::Option<i32>,
     /// <p>The number of managed nodes where patches that are specified as <code>Critical</code> for compliance reporting in the patch baseline aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
     pub instances_with_critical_non_compliant_patches: ::std::option::Option<i32>,
@@ -66,7 +66,7 @@ impl DescribePatchGroupStateOutput {
     pub fn instances_with_not_applicable_patches(&self) -> i32 {
         self.instances_with_not_applicable_patches
     }
-    /// <p>The number of managed nodes with <code>NotApplicable</code> patches beyond the supported limit, which aren't reported by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.</p>
+    /// <p>The number of managed nodes with <code>NotApplicable</code> patches beyond the supported limit, which aren't reported by name to Inventory. Inventory is a tool in Amazon Web Services Systems Manager.</p>
     pub fn instances_with_unreported_not_applicable_patches(&self) -> ::std::option::Option<i32> {
         self.instances_with_unreported_not_applicable_patches
     }
@@ -232,17 +232,17 @@ impl DescribePatchGroupStateOutputBuilder {
     pub fn get_instances_with_not_applicable_patches(&self) -> &::std::option::Option<i32> {
         &self.instances_with_not_applicable_patches
     }
-    /// <p>The number of managed nodes with <code>NotApplicable</code> patches beyond the supported limit, which aren't reported by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.</p>
+    /// <p>The number of managed nodes with <code>NotApplicable</code> patches beyond the supported limit, which aren't reported by name to Inventory. Inventory is a tool in Amazon Web Services Systems Manager.</p>
     pub fn instances_with_unreported_not_applicable_patches(mut self, input: i32) -> Self {
         self.instances_with_unreported_not_applicable_patches = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of managed nodes with <code>NotApplicable</code> patches beyond the supported limit, which aren't reported by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.</p>
+    /// <p>The number of managed nodes with <code>NotApplicable</code> patches beyond the supported limit, which aren't reported by name to Inventory. Inventory is a tool in Amazon Web Services Systems Manager.</p>
     pub fn set_instances_with_unreported_not_applicable_patches(mut self, input: ::std::option::Option<i32>) -> Self {
         self.instances_with_unreported_not_applicable_patches = input;
         self
     }
-    /// <p>The number of managed nodes with <code>NotApplicable</code> patches beyond the supported limit, which aren't reported by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.</p>
+    /// <p>The number of managed nodes with <code>NotApplicable</code> patches beyond the supported limit, which aren't reported by name to Inventory. Inventory is a tool in Amazon Web Services Systems Manager.</p>
     pub fn get_instances_with_unreported_not_applicable_patches(&self) -> &::std::option::Option<i32> {
         &self.instances_with_unreported_not_applicable_patches
     }

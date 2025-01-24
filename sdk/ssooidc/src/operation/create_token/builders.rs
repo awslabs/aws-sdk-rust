@@ -22,7 +22,7 @@ impl crate::operation::create_token::builders::CreateTokenInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateToken`.
 ///
-/// <p>Creates and returns access and refresh tokens for clients that are authenticated using client secrets. The access token can be used to fetch short-term credentials for the assigned AWS accounts or to access application APIs using <code>bearer</code> authentication.</p>
+/// <p>Creates and returns access and refresh tokens for clients that are authenticated using client secrets. The access token can be used to fetch short-lived credentials for the assigned AWS accounts or to access application APIs using <code>bearer</code> authentication.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateTokenFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -136,70 +136,70 @@ impl CreateTokenFluentBuilder {
     pub fn get_client_secret(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_secret()
     }
-    /// <p>Supports the following OAuth grant types: Device Code and Refresh Token. Specify either of the following values, depending on the grant type that you want:</p>
+    /// <p>Supports the following OAuth grant types: Authorization Code, Device Code, and Refresh Token. Specify one of the following values, depending on the grant type that you want:</p>
+    /// <p>* Authorization Code - <code>authorization_code</code></p>
     /// <p>* Device Code - <code>urn:ietf:params:oauth:grant-type:device_code</code></p>
     /// <p>* Refresh Token - <code>refresh_token</code></p>
-    /// <p>For information about how to obtain the device code, see the <code>StartDeviceAuthorization</code> topic.</p>
     pub fn grant_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.grant_type(input.into());
         self
     }
-    /// <p>Supports the following OAuth grant types: Device Code and Refresh Token. Specify either of the following values, depending on the grant type that you want:</p>
+    /// <p>Supports the following OAuth grant types: Authorization Code, Device Code, and Refresh Token. Specify one of the following values, depending on the grant type that you want:</p>
+    /// <p>* Authorization Code - <code>authorization_code</code></p>
     /// <p>* Device Code - <code>urn:ietf:params:oauth:grant-type:device_code</code></p>
     /// <p>* Refresh Token - <code>refresh_token</code></p>
-    /// <p>For information about how to obtain the device code, see the <code>StartDeviceAuthorization</code> topic.</p>
     pub fn set_grant_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_grant_type(input);
         self
     }
-    /// <p>Supports the following OAuth grant types: Device Code and Refresh Token. Specify either of the following values, depending on the grant type that you want:</p>
+    /// <p>Supports the following OAuth grant types: Authorization Code, Device Code, and Refresh Token. Specify one of the following values, depending on the grant type that you want:</p>
+    /// <p>* Authorization Code - <code>authorization_code</code></p>
     /// <p>* Device Code - <code>urn:ietf:params:oauth:grant-type:device_code</code></p>
     /// <p>* Refresh Token - <code>refresh_token</code></p>
-    /// <p>For information about how to obtain the device code, see the <code>StartDeviceAuthorization</code> topic.</p>
     pub fn get_grant_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_grant_type()
     }
-    /// <p>Used only when calling this API for the Device Code grant type. This short-term code is used to identify this authorization request. This comes from the result of the <code>StartDeviceAuthorization</code> API.</p>
+    /// <p>Used only when calling this API for the Device Code grant type. This short-lived code is used to identify this authorization request. This comes from the result of the <code>StartDeviceAuthorization</code> API.</p>
     pub fn device_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_code(input.into());
         self
     }
-    /// <p>Used only when calling this API for the Device Code grant type. This short-term code is used to identify this authorization request. This comes from the result of the <code>StartDeviceAuthorization</code> API.</p>
+    /// <p>Used only when calling this API for the Device Code grant type. This short-lived code is used to identify this authorization request. This comes from the result of the <code>StartDeviceAuthorization</code> API.</p>
     pub fn set_device_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_code(input);
         self
     }
-    /// <p>Used only when calling this API for the Device Code grant type. This short-term code is used to identify this authorization request. This comes from the result of the <code>StartDeviceAuthorization</code> API.</p>
+    /// <p>Used only when calling this API for the Device Code grant type. This short-lived code is used to identify this authorization request. This comes from the result of the <code>StartDeviceAuthorization</code> API.</p>
     pub fn get_device_code(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_device_code()
     }
-    /// <p>Used only when calling this API for the Authorization Code grant type. The short-term code is used to identify this authorization request. This grant type is currently unsupported for the <code>CreateToken</code> API.</p>
+    /// <p>Used only when calling this API for the Authorization Code grant type. The short-lived code is used to identify this authorization request.</p>
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.code(input.into());
         self
     }
-    /// <p>Used only when calling this API for the Authorization Code grant type. The short-term code is used to identify this authorization request. This grant type is currently unsupported for the <code>CreateToken</code> API.</p>
+    /// <p>Used only when calling this API for the Authorization Code grant type. The short-lived code is used to identify this authorization request.</p>
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_code(input);
         self
     }
-    /// <p>Used only when calling this API for the Authorization Code grant type. The short-term code is used to identify this authorization request. This grant type is currently unsupported for the <code>CreateToken</code> API.</p>
+    /// <p>Used only when calling this API for the Authorization Code grant type. The short-lived code is used to identify this authorization request.</p>
     pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_code()
     }
-    /// <p>Used only when calling this API for the Refresh Token grant type. This token is used to refresh short-term tokens, such as the access token, that might expire.</p>
+    /// <p>Used only when calling this API for the Refresh Token grant type. This token is used to refresh short-lived tokens, such as the access token, that might expire.</p>
     /// <p>For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
     pub fn refresh_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.refresh_token(input.into());
         self
     }
-    /// <p>Used only when calling this API for the Refresh Token grant type. This token is used to refresh short-term tokens, such as the access token, that might expire.</p>
+    /// <p>Used only when calling this API for the Refresh Token grant type. This token is used to refresh short-lived tokens, such as the access token, that might expire.</p>
     /// <p>For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
     pub fn set_refresh_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_refresh_token(input);
         self
     }
-    /// <p>Used only when calling this API for the Refresh Token grant type. This token is used to refresh short-term tokens, such as the access token, that might expire.</p>
+    /// <p>Used only when calling this API for the Refresh Token grant type. This token is used to refresh short-lived tokens, such as the access token, that might expire.</p>
     /// <p>For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
     pub fn get_refresh_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_refresh_token()

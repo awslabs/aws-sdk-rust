@@ -5,7 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdvancedFieldSelector {
     /// <p>A field in a CloudTrail event record on which to filter events to be logged. For event data stores for CloudTrail Insights events, Config configuration items, Audit Manager evidence, or events outside of Amazon Web Services, the field is used only for selecting events as filtering is not supported.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html">AdvancedFieldSelector</a> in the <i>CloudTrailUser Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html">AdvancedFieldSelector</a> in the <i>CloudTrail API Reference</i>.</p><note>
+    /// <p>Selectors don't support the use of wildcards like <code>*</code> . To match multiple values with a single condition, you may use <code>StartsWith</code>, <code>EndsWith</code>, <code>NotStartsWith</code>, or <code>NotEndsWith</code> to explicitly match the beginning or end of the event field.</p>
+    /// </note>
     pub field: ::std::string::String,
     /// <p>An operator that includes events that match the exact value of the event record field specified as the value of <code>Field</code>. This is the only valid operator that you can use with the <code>readOnly</code>, <code>eventCategory</code>, and <code>resources.type</code> fields.</p>
     pub equals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -22,7 +24,9 @@ pub struct AdvancedFieldSelector {
 }
 impl AdvancedFieldSelector {
     /// <p>A field in a CloudTrail event record on which to filter events to be logged. For event data stores for CloudTrail Insights events, Config configuration items, Audit Manager evidence, or events outside of Amazon Web Services, the field is used only for selecting events as filtering is not supported.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html">AdvancedFieldSelector</a> in the <i>CloudTrailUser Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html">AdvancedFieldSelector</a> in the <i>CloudTrail API Reference</i>.</p><note>
+    /// <p>Selectors don't support the use of wildcards like <code>*</code> . To match multiple values with a single condition, you may use <code>StartsWith</code>, <code>EndsWith</code>, <code>NotStartsWith</code>, or <code>NotEndsWith</code> to explicitly match the beginning or end of the event field.</p>
+    /// </note>
     pub fn field(&self) -> &str {
         use std::ops::Deref;
         self.field.deref()
@@ -85,20 +89,26 @@ pub struct AdvancedFieldSelectorBuilder {
 }
 impl AdvancedFieldSelectorBuilder {
     /// <p>A field in a CloudTrail event record on which to filter events to be logged. For event data stores for CloudTrail Insights events, Config configuration items, Audit Manager evidence, or events outside of Amazon Web Services, the field is used only for selecting events as filtering is not supported.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html">AdvancedFieldSelector</a> in the <i>CloudTrailUser Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html">AdvancedFieldSelector</a> in the <i>CloudTrail API Reference</i>.</p><note>
+    /// <p>Selectors don't support the use of wildcards like <code>*</code> . To match multiple values with a single condition, you may use <code>StartsWith</code>, <code>EndsWith</code>, <code>NotStartsWith</code>, or <code>NotEndsWith</code> to explicitly match the beginning or end of the event field.</p>
+    /// </note>
     /// This field is required.
     pub fn field(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.field = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A field in a CloudTrail event record on which to filter events to be logged. For event data stores for CloudTrail Insights events, Config configuration items, Audit Manager evidence, or events outside of Amazon Web Services, the field is used only for selecting events as filtering is not supported.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html">AdvancedFieldSelector</a> in the <i>CloudTrailUser Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html">AdvancedFieldSelector</a> in the <i>CloudTrail API Reference</i>.</p><note>
+    /// <p>Selectors don't support the use of wildcards like <code>*</code> . To match multiple values with a single condition, you may use <code>StartsWith</code>, <code>EndsWith</code>, <code>NotStartsWith</code>, or <code>NotEndsWith</code> to explicitly match the beginning or end of the event field.</p>
+    /// </note>
     pub fn set_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.field = input;
         self
     }
     /// <p>A field in a CloudTrail event record on which to filter events to be logged. For event data stores for CloudTrail Insights events, Config configuration items, Audit Manager evidence, or events outside of Amazon Web Services, the field is used only for selecting events as filtering is not supported.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html">AdvancedFieldSelector</a> in the <i>CloudTrailUser Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html">AdvancedFieldSelector</a> in the <i>CloudTrail API Reference</i>.</p><note>
+    /// <p>Selectors don't support the use of wildcards like <code>*</code> . To match multiple values with a single condition, you may use <code>StartsWith</code>, <code>EndsWith</code>, <code>NotStartsWith</code>, or <code>NotEndsWith</code> to explicitly match the beginning or end of the event field.</p>
+    /// </note>
     pub fn get_field(&self) -> &::std::option::Option<::std::string::String> {
         &self.field
     }

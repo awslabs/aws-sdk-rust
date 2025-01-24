@@ -111,7 +111,7 @@ optional = true
 path = "../ssooidc"
 default-features = false
 optional = true
-version = "1.57.0"
+version = "1.57.1"
 
 [dev-dependencies]
 tracing-test = "0.2.4"

@@ -21,6 +21,8 @@ pub use crate::types::_node_repair_config::NodeRepairConfig;
 
 pub use crate::types::_nodegroup_update_config::NodegroupUpdateConfig;
 
+pub use crate::types::_nodegroup_update_strategies::NodegroupUpdateStrategies;
+
 pub use crate::types::_nodegroup_scaling_config::NodegroupScalingConfig;
 
 pub use crate::types::_update_taints_payload::UpdateTaintsPayload;
@@ -400,6 +402,8 @@ mod _nodegroup_scaling_config;
 mod _nodegroup_status;
 
 mod _nodegroup_update_config;
+
+mod _nodegroup_update_strategies;
 
 mod _oidc;
 

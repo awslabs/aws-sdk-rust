@@ -41,6 +41,20 @@ pub struct CreateAgreementInput {
     /// <p><code>DISABLED</code> (default value): Transfer Family accepts unsigned messages from your trading partner.</p></li>
     /// </ul>
     pub enforce_message_signing: ::std::option::Option<crate::types::EnforceMessageSigningType>,
+    /// <p>A <code>CustomDirectoriesType</code> structure. This structure specifies custom directories for storing various AS2 message files. You can specify directories for the following types of files.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Failed files</p></li>
+    /// <li>
+    /// <p>MDN files</p></li>
+    /// <li>
+    /// <p>Payload files</p></li>
+    /// <li>
+    /// <p>Status files</p></li>
+    /// <li>
+    /// <p>Temporary files</p></li>
+    /// </ul>
+    pub custom_directories: ::std::option::Option<crate::types::CustomDirectoriesType>,
 }
 impl CreateAgreementInput {
     /// <p>A name or short description to identify the agreement.</p>
@@ -103,6 +117,22 @@ impl CreateAgreementInput {
     pub fn enforce_message_signing(&self) -> ::std::option::Option<&crate::types::EnforceMessageSigningType> {
         self.enforce_message_signing.as_ref()
     }
+    /// <p>A <code>CustomDirectoriesType</code> structure. This structure specifies custom directories for storing various AS2 message files. You can specify directories for the following types of files.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Failed files</p></li>
+    /// <li>
+    /// <p>MDN files</p></li>
+    /// <li>
+    /// <p>Payload files</p></li>
+    /// <li>
+    /// <p>Status files</p></li>
+    /// <li>
+    /// <p>Temporary files</p></li>
+    /// </ul>
+    pub fn custom_directories(&self) -> ::std::option::Option<&crate::types::CustomDirectoriesType> {
+        self.custom_directories.as_ref()
+    }
 }
 impl CreateAgreementInput {
     /// Creates a new builder-style object to manufacture [`CreateAgreementInput`](crate::operation::create_agreement::CreateAgreementInput).
@@ -125,6 +155,7 @@ pub struct CreateAgreementInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) preserve_filename: ::std::option::Option<crate::types::PreserveFilenameType>,
     pub(crate) enforce_message_signing: ::std::option::Option<crate::types::EnforceMessageSigningType>,
+    pub(crate) custom_directories: ::std::option::Option<crate::types::CustomDirectoriesType>,
 }
 impl CreateAgreementInputBuilder {
     /// <p>A name or short description to identify the agreement.</p>
@@ -188,7 +219,6 @@ impl CreateAgreementInputBuilder {
     }
     /// <p>The landing directory (folder) for files transferred by using the AS2 protocol.</p>
     /// <p>A <code>BaseDirectory</code> example is <code>/<i>amzn-s3-demo-bucket</i>/home/mydirectory</code>.</p>
-    /// This field is required.
     pub fn base_directory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.base_directory = ::std::option::Option::Some(input.into());
         self
@@ -332,6 +362,56 @@ impl CreateAgreementInputBuilder {
     pub fn get_enforce_message_signing(&self) -> &::std::option::Option<crate::types::EnforceMessageSigningType> {
         &self.enforce_message_signing
     }
+    /// <p>A <code>CustomDirectoriesType</code> structure. This structure specifies custom directories for storing various AS2 message files. You can specify directories for the following types of files.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Failed files</p></li>
+    /// <li>
+    /// <p>MDN files</p></li>
+    /// <li>
+    /// <p>Payload files</p></li>
+    /// <li>
+    /// <p>Status files</p></li>
+    /// <li>
+    /// <p>Temporary files</p></li>
+    /// </ul>
+    pub fn custom_directories(mut self, input: crate::types::CustomDirectoriesType) -> Self {
+        self.custom_directories = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A <code>CustomDirectoriesType</code> structure. This structure specifies custom directories for storing various AS2 message files. You can specify directories for the following types of files.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Failed files</p></li>
+    /// <li>
+    /// <p>MDN files</p></li>
+    /// <li>
+    /// <p>Payload files</p></li>
+    /// <li>
+    /// <p>Status files</p></li>
+    /// <li>
+    /// <p>Temporary files</p></li>
+    /// </ul>
+    pub fn set_custom_directories(mut self, input: ::std::option::Option<crate::types::CustomDirectoriesType>) -> Self {
+        self.custom_directories = input;
+        self
+    }
+    /// <p>A <code>CustomDirectoriesType</code> structure. This structure specifies custom directories for storing various AS2 message files. You can specify directories for the following types of files.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Failed files</p></li>
+    /// <li>
+    /// <p>MDN files</p></li>
+    /// <li>
+    /// <p>Payload files</p></li>
+    /// <li>
+    /// <p>Status files</p></li>
+    /// <li>
+    /// <p>Temporary files</p></li>
+    /// </ul>
+    pub fn get_custom_directories(&self) -> &::std::option::Option<crate::types::CustomDirectoriesType> {
+        &self.custom_directories
+    }
     /// Consumes the builder and constructs a [`CreateAgreementInput`](crate::operation::create_agreement::CreateAgreementInput).
     pub fn build(
         self,
@@ -347,6 +427,7 @@ impl CreateAgreementInputBuilder {
             tags: self.tags,
             preserve_filename: self.preserve_filename,
             enforce_message_signing: self.enforce_message_signing,
+            custom_directories: self.custom_directories,
         })
     }
 }

@@ -19,6 +19,8 @@ pub use crate::types::_import_source::ImportSourceBuilder;
 
 pub use crate::types::_s3_import_source::S3ImportSourceBuilder;
 
+pub use crate::types::_search_sample_queries_search_result::SearchSampleQueriesSearchResultBuilder;
+
 pub use crate::types::_tag::TagBuilder;
 
 pub use crate::types::_insight_selector::InsightSelectorBuilder;

@@ -20,7 +20,7 @@ pub struct AssociationDescription {
     pub overview: ::std::option::Option<crate::types::AssociationOverview>,
     /// <p>The document version.</p>
     pub document_version: ::std::option::Option<::std::string::String>,
-    /// <p>Choose the parameter that will define how your automation will branch out. This target is required for associations that use an Automation runbook and target resources by using rate controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
+    /// <p>Choose the parameter that will define how your automation will branch out. This target is required for associations that use an Automation runbook and target resources by using rate controls. Automation is a tool in Amazon Web Services Systems Manager.</p>
     pub automation_target_parameter_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the parameters for a document.</p>
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
@@ -47,7 +47,7 @@ pub struct AssociationDescription {
     /// <p>The severity level that is assigned to the association.</p>
     pub compliance_severity: ::std::option::Option<crate::types::AssociationComplianceSeverity>,
     /// <p>The mode for generating association compliance. You can specify <code>AUTO</code> or <code>MANUAL</code>. In <code>AUTO</code> mode, the system uses the status of the association execution to determine the compliance status. If the association execution runs successfully, then the association is <code>COMPLIANT</code>. If the association execution doesn't run successfully, the association is <code>NON-COMPLIANT</code>.</p>
-    /// <p>In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the <code>PutComplianceItems</code> API operation. In this case, compliance data isn't managed by State Manager, a capability of Amazon Web Services Systems Manager. It is managed by your direct call to the <code>PutComplianceItems</code> API operation.</p>
+    /// <p>In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the <code>PutComplianceItems</code> API operation. In this case, compliance data isn't managed by State Manager, a tool in Amazon Web Services Systems Manager. It is managed by your direct call to the <code>PutComplianceItems</code> API operation.</p>
     /// <p>By default, all associations use <code>AUTO</code> mode.</p>
     pub sync_compliance: ::std::option::Option<crate::types::AssociationSyncCompliance>,
     /// <p>By default, when you create a new associations, the system runs it immediately after it is created and then according to the schedule you specified. Specify this option if you don't want an association to run immediately after you create it. This parameter isn't supported for rate expressions.</p>
@@ -101,7 +101,7 @@ impl AssociationDescription {
     pub fn document_version(&self) -> ::std::option::Option<&str> {
         self.document_version.as_deref()
     }
-    /// <p>Choose the parameter that will define how your automation will branch out. This target is required for associations that use an Automation runbook and target resources by using rate controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
+    /// <p>Choose the parameter that will define how your automation will branch out. This target is required for associations that use an Automation runbook and target resources by using rate controls. Automation is a tool in Amazon Web Services Systems Manager.</p>
     pub fn automation_target_parameter_name(&self) -> ::std::option::Option<&str> {
         self.automation_target_parameter_name.as_deref()
     }
@@ -154,7 +154,7 @@ impl AssociationDescription {
         self.compliance_severity.as_ref()
     }
     /// <p>The mode for generating association compliance. You can specify <code>AUTO</code> or <code>MANUAL</code>. In <code>AUTO</code> mode, the system uses the status of the association execution to determine the compliance status. If the association execution runs successfully, then the association is <code>COMPLIANT</code>. If the association execution doesn't run successfully, the association is <code>NON-COMPLIANT</code>.</p>
-    /// <p>In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the <code>PutComplianceItems</code> API operation. In this case, compliance data isn't managed by State Manager, a capability of Amazon Web Services Systems Manager. It is managed by your direct call to the <code>PutComplianceItems</code> API operation.</p>
+    /// <p>In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the <code>PutComplianceItems</code> API operation. In this case, compliance data isn't managed by State Manager, a tool in Amazon Web Services Systems Manager. It is managed by your direct call to the <code>PutComplianceItems</code> API operation.</p>
     /// <p>By default, all associations use <code>AUTO</code> mode.</p>
     pub fn sync_compliance(&self) -> ::std::option::Option<&crate::types::AssociationSyncCompliance> {
         self.sync_compliance.as_ref()
@@ -390,17 +390,17 @@ impl AssociationDescriptionBuilder {
     pub fn get_document_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.document_version
     }
-    /// <p>Choose the parameter that will define how your automation will branch out. This target is required for associations that use an Automation runbook and target resources by using rate controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
+    /// <p>Choose the parameter that will define how your automation will branch out. This target is required for associations that use an Automation runbook and target resources by using rate controls. Automation is a tool in Amazon Web Services Systems Manager.</p>
     pub fn automation_target_parameter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.automation_target_parameter_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Choose the parameter that will define how your automation will branch out. This target is required for associations that use an Automation runbook and target resources by using rate controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
+    /// <p>Choose the parameter that will define how your automation will branch out. This target is required for associations that use an Automation runbook and target resources by using rate controls. Automation is a tool in Amazon Web Services Systems Manager.</p>
     pub fn set_automation_target_parameter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.automation_target_parameter_name = input;
         self
     }
-    /// <p>Choose the parameter that will define how your automation will branch out. This target is required for associations that use an Automation runbook and target resources by using rate controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
+    /// <p>Choose the parameter that will define how your automation will branch out. This target is required for associations that use an Automation runbook and target resources by using rate controls. Automation is a tool in Amazon Web Services Systems Manager.</p>
     pub fn get_automation_target_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.automation_target_parameter_name
     }
@@ -582,21 +582,21 @@ impl AssociationDescriptionBuilder {
         &self.compliance_severity
     }
     /// <p>The mode for generating association compliance. You can specify <code>AUTO</code> or <code>MANUAL</code>. In <code>AUTO</code> mode, the system uses the status of the association execution to determine the compliance status. If the association execution runs successfully, then the association is <code>COMPLIANT</code>. If the association execution doesn't run successfully, the association is <code>NON-COMPLIANT</code>.</p>
-    /// <p>In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the <code>PutComplianceItems</code> API operation. In this case, compliance data isn't managed by State Manager, a capability of Amazon Web Services Systems Manager. It is managed by your direct call to the <code>PutComplianceItems</code> API operation.</p>
+    /// <p>In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the <code>PutComplianceItems</code> API operation. In this case, compliance data isn't managed by State Manager, a tool in Amazon Web Services Systems Manager. It is managed by your direct call to the <code>PutComplianceItems</code> API operation.</p>
     /// <p>By default, all associations use <code>AUTO</code> mode.</p>
     pub fn sync_compliance(mut self, input: crate::types::AssociationSyncCompliance) -> Self {
         self.sync_compliance = ::std::option::Option::Some(input);
         self
     }
     /// <p>The mode for generating association compliance. You can specify <code>AUTO</code> or <code>MANUAL</code>. In <code>AUTO</code> mode, the system uses the status of the association execution to determine the compliance status. If the association execution runs successfully, then the association is <code>COMPLIANT</code>. If the association execution doesn't run successfully, the association is <code>NON-COMPLIANT</code>.</p>
-    /// <p>In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the <code>PutComplianceItems</code> API operation. In this case, compliance data isn't managed by State Manager, a capability of Amazon Web Services Systems Manager. It is managed by your direct call to the <code>PutComplianceItems</code> API operation.</p>
+    /// <p>In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the <code>PutComplianceItems</code> API operation. In this case, compliance data isn't managed by State Manager, a tool in Amazon Web Services Systems Manager. It is managed by your direct call to the <code>PutComplianceItems</code> API operation.</p>
     /// <p>By default, all associations use <code>AUTO</code> mode.</p>
     pub fn set_sync_compliance(mut self, input: ::std::option::Option<crate::types::AssociationSyncCompliance>) -> Self {
         self.sync_compliance = input;
         self
     }
     /// <p>The mode for generating association compliance. You can specify <code>AUTO</code> or <code>MANUAL</code>. In <code>AUTO</code> mode, the system uses the status of the association execution to determine the compliance status. If the association execution runs successfully, then the association is <code>COMPLIANT</code>. If the association execution doesn't run successfully, the association is <code>NON-COMPLIANT</code>.</p>
-    /// <p>In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the <code>PutComplianceItems</code> API operation. In this case, compliance data isn't managed by State Manager, a capability of Amazon Web Services Systems Manager. It is managed by your direct call to the <code>PutComplianceItems</code> API operation.</p>
+    /// <p>In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the <code>PutComplianceItems</code> API operation. In this case, compliance data isn't managed by State Manager, a tool in Amazon Web Services Systems Manager. It is managed by your direct call to the <code>PutComplianceItems</code> API operation.</p>
     /// <p>By default, all associations use <code>AUTO</code> mode.</p>
     pub fn get_sync_compliance(&self) -> &::std::option::Option<crate::types::AssociationSyncCompliance> {
         &self.sync_compliance

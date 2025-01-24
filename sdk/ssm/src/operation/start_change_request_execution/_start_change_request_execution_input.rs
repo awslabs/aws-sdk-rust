@@ -32,7 +32,9 @@ pub struct StartChangeRequestExecutionInput {
     /// <p><code>Key=Environment,Value=Production</code></p></li>
     /// <li>
     /// <p><code>Key=Region,Value=us-east-2</code></p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>The <code>Array Members</code> maximum value is reported as 1000. This number includes capacity reserved for internal operations. When calling the <code>StartChangeRequestExecution</code> action, you can specify a maximum of 5 tags. You can, however, use the <code>AddTagsToResource</code> action to add up to a total of 50 tags to an existing change request configuration.</p>
+    /// </note>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The time that the requester expects the runbook workflow related to the change request to complete. The time is an estimate only that the requester provides for reviewers.</p>
     pub scheduled_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -87,7 +89,9 @@ impl StartChangeRequestExecutionInput {
     /// <p><code>Key=Environment,Value=Production</code></p></li>
     /// <li>
     /// <p><code>Key=Region,Value=us-east-2</code></p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>The <code>Array Members</code> maximum value is reported as 1000. This number includes capacity reserved for internal operations. When calling the <code>StartChangeRequestExecution</code> action, you can specify a maximum of 5 tags. You can, however, use the <code>AddTagsToResource</code> action to add up to a total of 50 tags to an existing change request configuration.</p>
+    /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::Tag] {
@@ -287,7 +291,9 @@ impl StartChangeRequestExecutionInputBuilder {
     /// <p><code>Key=Environment,Value=Production</code></p></li>
     /// <li>
     /// <p><code>Key=Region,Value=us-east-2</code></p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>The <code>Array Members</code> maximum value is reported as 1000. This number includes capacity reserved for internal operations. When calling the <code>StartChangeRequestExecution</code> action, you can specify a maximum of 5 tags. You can, however, use the <code>AddTagsToResource</code> action to add up to a total of 50 tags to an existing change request configuration.</p>
+    /// </note>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
@@ -300,7 +306,9 @@ impl StartChangeRequestExecutionInputBuilder {
     /// <p><code>Key=Environment,Value=Production</code></p></li>
     /// <li>
     /// <p><code>Key=Region,Value=us-east-2</code></p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>The <code>Array Members</code> maximum value is reported as 1000. This number includes capacity reserved for internal operations. When calling the <code>StartChangeRequestExecution</code> action, you can specify a maximum of 5 tags. You can, however, use the <code>AddTagsToResource</code> action to add up to a total of 50 tags to an existing change request configuration.</p>
+    /// </note>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
@@ -311,7 +319,9 @@ impl StartChangeRequestExecutionInputBuilder {
     /// <p><code>Key=Environment,Value=Production</code></p></li>
     /// <li>
     /// <p><code>Key=Region,Value=us-east-2</code></p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>The <code>Array Members</code> maximum value is reported as 1000. This number includes capacity reserved for internal operations. When calling the <code>StartChangeRequestExecution</code> action, you can specify a maximum of 5 tags. You can, however, use the <code>AddTagsToResource</code> action to add up to a total of 50 tags to an existing change request configuration.</p>
+    /// </note>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }

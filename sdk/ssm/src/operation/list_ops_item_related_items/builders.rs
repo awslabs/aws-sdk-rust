@@ -22,7 +22,7 @@ impl crate::operation::list_ops_item_related_items::builders::ListOpsItemRelated
 }
 /// Fluent builder constructing a request to `ListOpsItemRelatedItems`.
 ///
-/// <p>Lists all related-item resources associated with a Systems Manager OpsCenter OpsItem. OpsCenter is a capability of Amazon Web Services Systems Manager.</p>
+/// <p>Lists all related-item resources associated with a Systems Manager OpsCenter OpsItem. OpsCenter is a tool in Amazon Web Services Systems Manager.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListOpsItemRelatedItemsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

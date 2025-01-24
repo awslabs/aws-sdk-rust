@@ -329,6 +329,8 @@ pub(crate) mod shape_as2_connector_config;
 
 pub(crate) mod shape_connector_file_transfer_results;
 
+pub(crate) mod shape_custom_directories_type;
+
 pub(crate) mod shape_described_access;
 
 pub(crate) mod shape_described_agreement;

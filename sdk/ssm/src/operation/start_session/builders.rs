@@ -158,12 +158,12 @@ impl StartSessionFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
-    /// <p>The values you want to specify for the parameters defined in the Session document.</p>
+    /// <p>The values you want to specify for the parameters defined in the Session document. For more information about these parameters, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/getting-started-create-preferences-cli.html">Create a Session Manager preferences document</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         self.inner = self.inner.parameters(k.into(), v);
         self
     }
-    /// <p>The values you want to specify for the parameters defined in the Session document.</p>
+    /// <p>The values you want to specify for the parameters defined in the Session document. For more information about these parameters, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/getting-started-create-preferences-cli.html">Create a Session Manager preferences document</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn set_parameters(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
@@ -171,7 +171,7 @@ impl StartSessionFluentBuilder {
         self.inner = self.inner.set_parameters(input);
         self
     }
-    /// <p>The values you want to specify for the parameters defined in the Session document.</p>
+    /// <p>The values you want to specify for the parameters defined in the Session document. For more information about these parameters, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/getting-started-create-preferences-cli.html">Create a Session Manager preferences document</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn get_parameters(
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {

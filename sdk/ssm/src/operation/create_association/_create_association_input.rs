@@ -29,7 +29,7 @@ pub struct CreateAssociationInput {
     pub output_location: ::std::option::Option<crate::types::InstanceAssociationOutputLocation>,
     /// <p>Specify a descriptive name for the association.</p>
     pub association_name: ::std::option::Option<::std::string::String>,
-    /// <p>Choose the parameter that will define how your automation will branch out. This target is required for associations that use an Automation runbook and target resources by using rate controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
+    /// <p>Choose the parameter that will define how your automation will branch out. This target is required for associations that use an Automation runbook and target resources by using rate controls. Automation is a tool in Amazon Web Services Systems Manager.</p>
     pub automation_target_parameter_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of errors that are allowed before the system stops sending requests to run the association on additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the target set, for example 10%. If you specify 3, for example, the system stops sending requests when the fourth error is received. If you specify 0, then the system stops sending requests after the first error is returned. If you run an association on 50 managed nodes and set <code>MaxError</code> to 10%, then the system stops sending the request when the sixth error is received.</p>
     /// <p>Executions that are already running an association when <code>MaxErrors</code> is reached are allowed to complete, but some of these executions may fail as well. If you need to ensure that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1 so that executions proceed one at a time.</p>
@@ -115,7 +115,7 @@ impl CreateAssociationInput {
     pub fn association_name(&self) -> ::std::option::Option<&str> {
         self.association_name.as_deref()
     }
-    /// <p>Choose the parameter that will define how your automation will branch out. This target is required for associations that use an Automation runbook and target resources by using rate controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
+    /// <p>Choose the parameter that will define how your automation will branch out. This target is required for associations that use an Automation runbook and target resources by using rate controls. Automation is a tool in Amazon Web Services Systems Manager.</p>
     pub fn automation_target_parameter_name(&self) -> ::std::option::Option<&str> {
         self.automation_target_parameter_name.as_deref()
     }
@@ -411,17 +411,17 @@ impl CreateAssociationInputBuilder {
     pub fn get_association_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.association_name
     }
-    /// <p>Choose the parameter that will define how your automation will branch out. This target is required for associations that use an Automation runbook and target resources by using rate controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
+    /// <p>Choose the parameter that will define how your automation will branch out. This target is required for associations that use an Automation runbook and target resources by using rate controls. Automation is a tool in Amazon Web Services Systems Manager.</p>
     pub fn automation_target_parameter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.automation_target_parameter_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Choose the parameter that will define how your automation will branch out. This target is required for associations that use an Automation runbook and target resources by using rate controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
+    /// <p>Choose the parameter that will define how your automation will branch out. This target is required for associations that use an Automation runbook and target resources by using rate controls. Automation is a tool in Amazon Web Services Systems Manager.</p>
     pub fn set_automation_target_parameter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.automation_target_parameter_name = input;
         self
     }
-    /// <p>Choose the parameter that will define how your automation will branch out. This target is required for associations that use an Automation runbook and target resources by using rate controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
+    /// <p>Choose the parameter that will define how your automation will branch out. This target is required for associations that use an Automation runbook and target resources by using rate controls. Automation is a tool in Amazon Web Services Systems Manager.</p>
     pub fn get_automation_target_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.automation_target_parameter_name
     }

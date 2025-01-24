@@ -43,6 +43,7 @@
 ///     UpdateParamType::Subnets => { /* ... */ },
 ///     UpdateParamType::TaintsToAdd => { /* ... */ },
 ///     UpdateParamType::TaintsToRemove => { /* ... */ },
+///     UpdateParamType::UpdateStrategy => { /* ... */ },
 ///     UpdateParamType::UpgradePolicy => { /* ... */ },
 ///     UpdateParamType::Version => { /* ... */ },
 ///     UpdateParamType::ZonalShiftConfig => { /* ... */ },
@@ -137,6 +138,8 @@ pub enum UpdateParamType {
     #[allow(missing_docs)] // documentation missing in model
     TaintsToRemove,
     #[allow(missing_docs)] // documentation missing in model
+    UpdateStrategy,
+    #[allow(missing_docs)] // documentation missing in model
     UpgradePolicy,
     #[allow(missing_docs)] // documentation missing in model
     Version,
@@ -180,6 +183,7 @@ impl ::std::convert::From<&str> for UpdateParamType {
             "Subnets" => UpdateParamType::Subnets,
             "TaintsToAdd" => UpdateParamType::TaintsToAdd,
             "TaintsToRemove" => UpdateParamType::TaintsToRemove,
+            "UpdateStrategy" => UpdateParamType::UpdateStrategy,
             "UpgradePolicy" => UpdateParamType::UpgradePolicy,
             "Version" => UpdateParamType::Version,
             "ZonalShiftConfig" => UpdateParamType::ZonalShiftConfig,
@@ -229,6 +233,7 @@ impl UpdateParamType {
             UpdateParamType::Subnets => "Subnets",
             UpdateParamType::TaintsToAdd => "TaintsToAdd",
             UpdateParamType::TaintsToRemove => "TaintsToRemove",
+            UpdateParamType::UpdateStrategy => "UpdateStrategy",
             UpdateParamType::UpgradePolicy => "UpgradePolicy",
             UpdateParamType::Version => "Version",
             UpdateParamType::ZonalShiftConfig => "ZonalShiftConfig",
@@ -269,6 +274,7 @@ impl UpdateParamType {
             "Subnets",
             "TaintsToAdd",
             "TaintsToRemove",
+            "UpdateStrategy",
             "UpgradePolicy",
             "Version",
             "ZonalShiftConfig",
@@ -326,6 +332,7 @@ impl ::std::fmt::Display for UpdateParamType {
             UpdateParamType::Subnets => write!(f, "Subnets"),
             UpdateParamType::TaintsToAdd => write!(f, "TaintsToAdd"),
             UpdateParamType::TaintsToRemove => write!(f, "TaintsToRemove"),
+            UpdateParamType::UpdateStrategy => write!(f, "UpdateStrategy"),
             UpdateParamType::UpgradePolicy => write!(f, "UpgradePolicy"),
             UpdateParamType::Version => write!(f, "Version"),
             UpdateParamType::ZonalShiftConfig => write!(f, "ZonalShiftConfig"),

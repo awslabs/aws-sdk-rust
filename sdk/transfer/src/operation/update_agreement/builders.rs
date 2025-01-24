@@ -22,7 +22,10 @@ impl crate::operation::update_agreement::builders::UpdateAgreementInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateAgreement`.
 ///
-/// <p>Updates some of the parameters for an existing agreement. Provide the <code>AgreementId</code> and the <code>ServerId</code> for the agreement that you want to update, along with the new values for the parameters to update.</p>
+/// <p>Updates some of the parameters for an existing agreement. Provide the <code>AgreementId</code> and the <code>ServerId</code> for the agreement that you want to update, along with the new values for the parameters to update.</p><note>
+/// <p>Specify <i>either</i> <code>BaseDirectory</code> or <code>CustomDirectories</code>, but not both. Specifying both causes the command to fail.</p>
+/// <p>If you update an agreement from using base directory to custom directories, the base directory is no longer used. Similarly, if you change from custom directories to a base directory, the custom directories are no longer used.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAgreementFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -301,5 +304,55 @@ impl UpdateAgreementFluentBuilder {
     /// </ul>
     pub fn get_enforce_message_signing(&self) -> &::std::option::Option<crate::types::EnforceMessageSigningType> {
         self.inner.get_enforce_message_signing()
+    }
+    /// <p>A <code>CustomDirectoriesType</code> structure. This structure specifies custom directories for storing various AS2 message files. You can specify directories for the following types of files.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Failed files</p></li>
+    /// <li>
+    /// <p>MDN files</p></li>
+    /// <li>
+    /// <p>Payload files</p></li>
+    /// <li>
+    /// <p>Status files</p></li>
+    /// <li>
+    /// <p>Temporary files</p></li>
+    /// </ul>
+    pub fn custom_directories(mut self, input: crate::types::CustomDirectoriesType) -> Self {
+        self.inner = self.inner.custom_directories(input);
+        self
+    }
+    /// <p>A <code>CustomDirectoriesType</code> structure. This structure specifies custom directories for storing various AS2 message files. You can specify directories for the following types of files.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Failed files</p></li>
+    /// <li>
+    /// <p>MDN files</p></li>
+    /// <li>
+    /// <p>Payload files</p></li>
+    /// <li>
+    /// <p>Status files</p></li>
+    /// <li>
+    /// <p>Temporary files</p></li>
+    /// </ul>
+    pub fn set_custom_directories(mut self, input: ::std::option::Option<crate::types::CustomDirectoriesType>) -> Self {
+        self.inner = self.inner.set_custom_directories(input);
+        self
+    }
+    /// <p>A <code>CustomDirectoriesType</code> structure. This structure specifies custom directories for storing various AS2 message files. You can specify directories for the following types of files.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Failed files</p></li>
+    /// <li>
+    /// <p>MDN files</p></li>
+    /// <li>
+    /// <p>Payload files</p></li>
+    /// <li>
+    /// <p>Status files</p></li>
+    /// <li>
+    /// <p>Temporary files</p></li>
+    /// </ul>
+    pub fn get_custom_directories(&self) -> &::std::option::Option<crate::types::CustomDirectoriesType> {
+        self.inner.get_custom_directories()
     }
 }

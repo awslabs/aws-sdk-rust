@@ -24,7 +24,7 @@ impl crate::operation::get_insight_selectors::builders::GetInsightSelectorsInput
 ///
 /// <p>Describes the settings for the Insights event selectors that you configured for your trail or event data store. <code>GetInsightSelectors</code> shows if CloudTrail Insights event logging is enabled on the trail or event data store, and if it is, which Insights types are enabled. If you run <code>GetInsightSelectors</code> on a trail or event data store that does not have Insights events enabled, the operation throws the exception <code>InsightNotEnabledException</code></p>
 /// <p>Specify either the <code>EventDataStore</code> parameter to get Insights event selectors for an event data store, or the <code>TrailName</code> parameter to the get Insights event selectors for a trail. You cannot specify these parameters together.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Logging CloudTrail Insights events</a> in the <i>CloudTrail User Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Working with CloudTrail Insights</a> in the <i>CloudTrail User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetInsightSelectorsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

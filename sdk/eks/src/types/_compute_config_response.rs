@@ -6,7 +6,7 @@
 pub struct ComputeConfigResponse {
     /// <p>Indicates if the compute capability is enabled on your EKS Auto Mode cluster. If the compute capability is enabled, EKS Auto Mode will create and delete EC2 Managed Instances in your Amazon Web Services account.</p>
     pub enabled: ::std::option::Option<bool>,
-    /// <p>Indicates the current configuration of node pools in your EKS Auto Mode cluster. For more information, see EKS Auto Mode Node Pools in the EKS User Guide.</p>
+    /// <p>Indicates the current configuration of node pools in your EKS Auto Mode cluster. For more information, see EKS Auto Mode Node Pools in the <i>Amazon EKS User Guide</i>.</p>
     pub node_pools: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ARN of the IAM Role EKS will assign to EC2 Managed Instances in your EKS Auto Mode cluster.</p>
     pub node_role_arn: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ impl ComputeConfigResponse {
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
-    /// <p>Indicates the current configuration of node pools in your EKS Auto Mode cluster. For more information, see EKS Auto Mode Node Pools in the EKS User Guide.</p>
+    /// <p>Indicates the current configuration of node pools in your EKS Auto Mode cluster. For more information, see EKS Auto Mode Node Pools in the <i>Amazon EKS User Guide</i>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.node_pools.is_none()`.
     pub fn node_pools(&self) -> &[::std::string::String] {
@@ -61,19 +61,19 @@ impl ComputeConfigResponseBuilder {
     ///
     /// To override the contents of this collection use [`set_node_pools`](Self::set_node_pools).
     ///
-    /// <p>Indicates the current configuration of node pools in your EKS Auto Mode cluster. For more information, see EKS Auto Mode Node Pools in the EKS User Guide.</p>
+    /// <p>Indicates the current configuration of node pools in your EKS Auto Mode cluster. For more information, see EKS Auto Mode Node Pools in the <i>Amazon EKS User Guide</i>.</p>
     pub fn node_pools(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.node_pools.unwrap_or_default();
         v.push(input.into());
         self.node_pools = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Indicates the current configuration of node pools in your EKS Auto Mode cluster. For more information, see EKS Auto Mode Node Pools in the EKS User Guide.</p>
+    /// <p>Indicates the current configuration of node pools in your EKS Auto Mode cluster. For more information, see EKS Auto Mode Node Pools in the <i>Amazon EKS User Guide</i>.</p>
     pub fn set_node_pools(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.node_pools = input;
         self
     }
-    /// <p>Indicates the current configuration of node pools in your EKS Auto Mode cluster. For more information, see EKS Auto Mode Node Pools in the EKS User Guide.</p>
+    /// <p>Indicates the current configuration of node pools in your EKS Auto Mode cluster. For more information, see EKS Auto Mode Node Pools in the <i>Amazon EKS User Guide</i>.</p>
     pub fn get_node_pools(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.node_pools
     }

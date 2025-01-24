@@ -4,7 +4,7 @@
 /// <p>One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task, targets are optional for other maintenance window task types (Automation, Lambda, and Step Functions). For more information about running tasks that don't specify targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering maintenance window tasks without targets</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
 /// </note>
 /// <p>Supported formats include the following.</p>
-/// <p><b>For all Systems Manager capabilities:</b></p>
+/// <p><b>For all Systems Manager tools:</b></p>
 /// <ul>
 /// <li>
 /// <p><code>Key=tag-key,Values=tag-value-1,tag-value-2</code></p></li>

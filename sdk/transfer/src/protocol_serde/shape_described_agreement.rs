@@ -94,6 +94,10 @@ where
                                     .transpose()?,
                             );
                         }
+                        "CustomDirectories" => {
+                            builder = builder
+                                .set_custom_directories(crate::protocol_serde::shape_custom_directories_type::de_custom_directories_type(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

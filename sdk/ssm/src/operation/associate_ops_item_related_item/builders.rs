@@ -22,7 +22,7 @@ impl crate::operation::associate_ops_item_related_item::builders::AssociateOpsIt
 }
 /// Fluent builder constructing a request to `AssociateOpsItemRelatedItem`.
 ///
-/// <p>Associates a related item to a Systems Manager OpsCenter OpsItem. For example, you can associate an Incident Manager incident or analysis with an OpsItem. Incident Manager and OpsCenter are capabilities of Amazon Web Services Systems Manager.</p>
+/// <p>Associates a related item to a Systems Manager OpsCenter OpsItem. For example, you can associate an Incident Manager incident or analysis with an OpsItem. Incident Manager and OpsCenter are tools in Amazon Web Services Systems Manager.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateOpsItemRelatedItemFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

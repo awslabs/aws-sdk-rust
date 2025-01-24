@@ -15,6 +15,9 @@ pub fn ser_nodegroup_update_config(
             ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
+    if let Some(var_3) = &input.update_strategy {
+        object.key("updateStrategy").string(var_3.as_str());
+    }
     Ok(())
 }
 
@@ -44,6 +47,13 @@ where
                             builder = builder.set_max_unavailable_percentage(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "updateStrategy" => {
+                            builder = builder.set_update_strategy(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::NodegroupUpdateStrategies::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

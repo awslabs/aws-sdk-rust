@@ -111,6 +111,8 @@ pub(crate) mod shape_remove_tags;
 
 pub(crate) mod shape_restore_event_data_store;
 
+pub(crate) mod shape_search_sample_queries;
+
 pub(crate) mod shape_start_dashboard_refresh;
 
 pub(crate) mod shape_start_event_data_store_ingestion;
@@ -387,6 +389,8 @@ pub(crate) mod shape_restore_event_data_store_input;
 
 pub(crate) mod shape_s3_bucket_does_not_exist_exception;
 
+pub(crate) mod shape_search_sample_queries_input;
+
 pub(crate) mod shape_service_quota_exceeded_exception;
 
 pub(crate) mod shape_start_dashboard_refresh_input;
@@ -483,6 +487,8 @@ pub(crate) mod shape_request_widget;
 
 pub(crate) mod shape_resource_tag_list;
 
+pub(crate) mod shape_search_sample_queries_search_results;
+
 pub(crate) mod shape_source_config;
 
 pub(crate) mod shape_tag;
@@ -528,6 +534,8 @@ pub(crate) mod shape_refresh_schedule_frequency;
 pub(crate) mod shape_resource_tag;
 
 pub(crate) mod shape_s3_import_source;
+
+pub(crate) mod shape_search_sample_queries_search_result;
 
 pub(crate) mod shape_trail_info;
 

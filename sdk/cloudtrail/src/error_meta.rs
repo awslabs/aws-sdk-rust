@@ -2177,6 +2177,36 @@ impl From<crate::operation::restore_event_data_store::RestoreEventDataStoreError
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_sample_queries::SearchSampleQueriesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_sample_queries::SearchSampleQueriesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::search_sample_queries::SearchSampleQueriesError> for Error {
+    fn from(err: crate::operation::search_sample_queries::SearchSampleQueriesError) -> Self {
+        match err {
+            crate::operation::search_sample_queries::SearchSampleQueriesError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::search_sample_queries::SearchSampleQueriesError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::search_sample_queries::SearchSampleQueriesError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::operation::search_sample_queries::SearchSampleQueriesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_dashboard_refresh::StartDashboardRefreshError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

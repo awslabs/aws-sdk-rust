@@ -13,6 +13,7 @@
 /// # let authorizationstrategy = unimplemented!();
 /// match authorizationstrategy {
 ///     AuthorizationStrategy::AwsAuth => { /* ... */ },
+///     AuthorizationStrategy::SmartOnFhir => { /* ... */ },
 ///     AuthorizationStrategy::Smartv1 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -45,6 +46,8 @@ pub enum AuthorizationStrategy {
     #[allow(missing_docs)] // documentation missing in model
     AwsAuth,
     #[allow(missing_docs)] // documentation missing in model
+    SmartOnFhir,
+    #[allow(missing_docs)] // documentation missing in model
     Smartv1,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for AuthorizationStrategy {
     fn from(s: &str) -> Self {
         match s {
             "AWS_AUTH" => AuthorizationStrategy::AwsAuth,
+            "SMART_ON_FHIR" => AuthorizationStrategy::SmartOnFhir,
             "SMART_ON_FHIR_V1" => AuthorizationStrategy::Smartv1,
             other => AuthorizationStrategy::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -71,13 +75,14 @@ impl AuthorizationStrategy {
     pub fn as_str(&self) -> &str {
         match self {
             AuthorizationStrategy::AwsAuth => "AWS_AUTH",
+            AuthorizationStrategy::SmartOnFhir => "SMART_ON_FHIR",
             AuthorizationStrategy::Smartv1 => "SMART_ON_FHIR_V1",
             AuthorizationStrategy::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AWS_AUTH", "SMART_ON_FHIR_V1"]
+        &["AWS_AUTH", "SMART_ON_FHIR", "SMART_ON_FHIR_V1"]
     }
 }
 impl ::std::convert::AsRef<str> for AuthorizationStrategy {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for AuthorizationStrategy {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AuthorizationStrategy::AwsAuth => write!(f, "AWS_AUTH"),
+            AuthorizationStrategy::SmartOnFhir => write!(f, "SMART_ON_FHIR"),
             AuthorizationStrategy::Smartv1 => write!(f, "SMART_ON_FHIR_V1"),
             AuthorizationStrategy::Unknown(value) => write!(f, "{}", value),
         }

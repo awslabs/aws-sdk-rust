@@ -9,7 +9,7 @@ pub struct StartSessionInput {
     pub document_name: ::std::option::Option<::std::string::String>,
     /// <p>The reason for connecting to the instance. This value is included in the details for the Amazon CloudWatch Events event created when you start the session.</p>
     pub reason: ::std::option::Option<::std::string::String>,
-    /// <p>The values you want to specify for the parameters defined in the Session document.</p>
+    /// <p>The values you want to specify for the parameters defined in the Session document. For more information about these parameters, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/getting-started-create-preferences-cli.html">Create a Session Manager preferences document</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl StartSessionInput {
@@ -25,7 +25,7 @@ impl StartSessionInput {
     pub fn reason(&self) -> ::std::option::Option<&str> {
         self.reason.as_deref()
     }
-    /// <p>The values you want to specify for the parameters defined in the Session document.</p>
+    /// <p>The values you want to specify for the parameters defined in the Session document. For more information about these parameters, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/getting-started-create-preferences-cli.html">Create a Session Manager preferences document</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.parameters.as_ref()
     }
@@ -94,14 +94,14 @@ impl StartSessionInputBuilder {
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
-    /// <p>The values you want to specify for the parameters defined in the Session document.</p>
+    /// <p>The values you want to specify for the parameters defined in the Session document. For more information about these parameters, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/getting-started-create-preferences-cli.html">Create a Session Manager preferences document</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.parameters = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The values you want to specify for the parameters defined in the Session document.</p>
+    /// <p>The values you want to specify for the parameters defined in the Session document. For more information about these parameters, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/getting-started-create-preferences-cli.html">Create a Session Manager preferences document</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn set_parameters(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
@@ -109,7 +109,7 @@ impl StartSessionInputBuilder {
         self.parameters = input;
         self
     }
-    /// <p>The values you want to specify for the parameters defined in the Session document.</p>
+    /// <p>The values you want to specify for the parameters defined in the Session document. For more information about these parameters, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/getting-started-create-preferences-cli.html">Create a Session Manager preferences document</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn get_parameters(
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {

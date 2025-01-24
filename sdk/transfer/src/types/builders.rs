@@ -79,6 +79,8 @@ pub use crate::types::_described_certificate::DescribedCertificateBuilder;
 
 pub use crate::types::_listed_certificate::ListedCertificateBuilder;
 
+pub use crate::types::_custom_directories_type::CustomDirectoriesTypeBuilder;
+
 pub use crate::types::_described_agreement::DescribedAgreementBuilder;
 
 pub use crate::types::_listed_agreement::ListedAgreementBuilder;

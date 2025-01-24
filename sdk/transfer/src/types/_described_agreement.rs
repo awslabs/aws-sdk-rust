@@ -45,6 +45,20 @@ pub struct DescribedAgreement {
     /// <p><code>DISABLED</code> (default value): Transfer Family accepts unsigned messages from your trading partner.</p></li>
     /// </ul>
     pub enforce_message_signing: ::std::option::Option<crate::types::EnforceMessageSigningType>,
+    /// <p>A <code>CustomDirectoriesType</code> structure. This structure specifies custom directories for storing various AS2 message files. You can specify directories for the following types of files.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Failed files</p></li>
+    /// <li>
+    /// <p>MDN files</p></li>
+    /// <li>
+    /// <p>Payload files</p></li>
+    /// <li>
+    /// <p>Status files</p></li>
+    /// <li>
+    /// <p>Temporary files</p></li>
+    /// </ul>
+    pub custom_directories: ::std::option::Option<crate::types::CustomDirectoriesType>,
 }
 impl DescribedAgreement {
     /// <p>The unique Amazon Resource Name (ARN) for the agreement.</p>
@@ -115,6 +129,22 @@ impl DescribedAgreement {
     pub fn enforce_message_signing(&self) -> ::std::option::Option<&crate::types::EnforceMessageSigningType> {
         self.enforce_message_signing.as_ref()
     }
+    /// <p>A <code>CustomDirectoriesType</code> structure. This structure specifies custom directories for storing various AS2 message files. You can specify directories for the following types of files.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Failed files</p></li>
+    /// <li>
+    /// <p>MDN files</p></li>
+    /// <li>
+    /// <p>Payload files</p></li>
+    /// <li>
+    /// <p>Status files</p></li>
+    /// <li>
+    /// <p>Temporary files</p></li>
+    /// </ul>
+    pub fn custom_directories(&self) -> ::std::option::Option<&crate::types::CustomDirectoriesType> {
+        self.custom_directories.as_ref()
+    }
 }
 impl DescribedAgreement {
     /// Creates a new builder-style object to manufacture [`DescribedAgreement`](crate::types::DescribedAgreement).
@@ -139,6 +169,7 @@ pub struct DescribedAgreementBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) preserve_filename: ::std::option::Option<crate::types::PreserveFilenameType>,
     pub(crate) enforce_message_signing: ::std::option::Option<crate::types::EnforceMessageSigningType>,
+    pub(crate) custom_directories: ::std::option::Option<crate::types::CustomDirectoriesType>,
 }
 impl DescribedAgreementBuilder {
     /// <p>The unique Amazon Resource Name (ARN) for the agreement.</p>
@@ -367,6 +398,56 @@ impl DescribedAgreementBuilder {
     pub fn get_enforce_message_signing(&self) -> &::std::option::Option<crate::types::EnforceMessageSigningType> {
         &self.enforce_message_signing
     }
+    /// <p>A <code>CustomDirectoriesType</code> structure. This structure specifies custom directories for storing various AS2 message files. You can specify directories for the following types of files.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Failed files</p></li>
+    /// <li>
+    /// <p>MDN files</p></li>
+    /// <li>
+    /// <p>Payload files</p></li>
+    /// <li>
+    /// <p>Status files</p></li>
+    /// <li>
+    /// <p>Temporary files</p></li>
+    /// </ul>
+    pub fn custom_directories(mut self, input: crate::types::CustomDirectoriesType) -> Self {
+        self.custom_directories = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A <code>CustomDirectoriesType</code> structure. This structure specifies custom directories for storing various AS2 message files. You can specify directories for the following types of files.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Failed files</p></li>
+    /// <li>
+    /// <p>MDN files</p></li>
+    /// <li>
+    /// <p>Payload files</p></li>
+    /// <li>
+    /// <p>Status files</p></li>
+    /// <li>
+    /// <p>Temporary files</p></li>
+    /// </ul>
+    pub fn set_custom_directories(mut self, input: ::std::option::Option<crate::types::CustomDirectoriesType>) -> Self {
+        self.custom_directories = input;
+        self
+    }
+    /// <p>A <code>CustomDirectoriesType</code> structure. This structure specifies custom directories for storing various AS2 message files. You can specify directories for the following types of files.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Failed files</p></li>
+    /// <li>
+    /// <p>MDN files</p></li>
+    /// <li>
+    /// <p>Payload files</p></li>
+    /// <li>
+    /// <p>Status files</p></li>
+    /// <li>
+    /// <p>Temporary files</p></li>
+    /// </ul>
+    pub fn get_custom_directories(&self) -> &::std::option::Option<crate::types::CustomDirectoriesType> {
+        &self.custom_directories
+    }
     /// Consumes the builder and constructs a [`DescribedAgreement`](crate::types::DescribedAgreement).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::DescribedAgreementBuilder::arn)
@@ -389,6 +470,7 @@ impl DescribedAgreementBuilder {
             tags: self.tags,
             preserve_filename: self.preserve_filename,
             enforce_message_signing: self.enforce_message_signing,
+            custom_directories: self.custom_directories,
         })
     }
 }

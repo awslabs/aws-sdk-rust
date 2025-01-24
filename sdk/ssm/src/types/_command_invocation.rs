@@ -52,7 +52,7 @@ pub struct CommandInvocation {
     pub standard_error_url: ::std::option::Option<::std::string::String>,
     /// <p>Plugins processed by the command.</p>
     pub command_plugins: ::std::option::Option<::std::vec::Vec<crate::types::CommandPlugin>>,
-    /// <p>The Identity and Access Management (IAM) service role that Run Command, a capability of Amazon Web Services Systems Manager, uses to act on your behalf when sending notifications about command status changes on a per managed node basis.</p>
+    /// <p>The Identity and Access Management (IAM) service role that Run Command, a tool in Amazon Web Services Systems Manager, uses to act on your behalf when sending notifications about command status changes on a per managed node basis.</p>
     pub service_role: ::std::option::Option<::std::string::String>,
     /// <p>Configurations for sending notifications about command status changes on a per managed node basis.</p>
     pub notification_config: ::std::option::Option<crate::types::NotificationConfig>,
@@ -136,7 +136,7 @@ impl CommandInvocation {
     pub fn command_plugins(&self) -> &[crate::types::CommandPlugin] {
         self.command_plugins.as_deref().unwrap_or_default()
     }
-    /// <p>The Identity and Access Management (IAM) service role that Run Command, a capability of Amazon Web Services Systems Manager, uses to act on your behalf when sending notifications about command status changes on a per managed node basis.</p>
+    /// <p>The Identity and Access Management (IAM) service role that Run Command, a tool in Amazon Web Services Systems Manager, uses to act on your behalf when sending notifications about command status changes on a per managed node basis.</p>
     pub fn service_role(&self) -> ::std::option::Option<&str> {
         self.service_role.as_deref()
     }
@@ -432,17 +432,17 @@ impl CommandInvocationBuilder {
     pub fn get_command_plugins(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CommandPlugin>> {
         &self.command_plugins
     }
-    /// <p>The Identity and Access Management (IAM) service role that Run Command, a capability of Amazon Web Services Systems Manager, uses to act on your behalf when sending notifications about command status changes on a per managed node basis.</p>
+    /// <p>The Identity and Access Management (IAM) service role that Run Command, a tool in Amazon Web Services Systems Manager, uses to act on your behalf when sending notifications about command status changes on a per managed node basis.</p>
     pub fn service_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_role = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Identity and Access Management (IAM) service role that Run Command, a capability of Amazon Web Services Systems Manager, uses to act on your behalf when sending notifications about command status changes on a per managed node basis.</p>
+    /// <p>The Identity and Access Management (IAM) service role that Run Command, a tool in Amazon Web Services Systems Manager, uses to act on your behalf when sending notifications about command status changes on a per managed node basis.</p>
     pub fn set_service_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_role = input;
         self
     }
-    /// <p>The Identity and Access Management (IAM) service role that Run Command, a capability of Amazon Web Services Systems Manager, uses to act on your behalf when sending notifications about command status changes on a per managed node basis.</p>
+    /// <p>The Identity and Access Management (IAM) service role that Run Command, a tool in Amazon Web Services Systems Manager, uses to act on your behalf when sending notifications about command status changes on a per managed node basis.</p>
     pub fn get_service_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_role
     }

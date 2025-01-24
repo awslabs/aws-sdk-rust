@@ -22,7 +22,7 @@ impl crate::operation::disassociate_ops_item_related_item::builders::Disassociat
 }
 /// Fluent builder constructing a request to `DisassociateOpsItemRelatedItem`.
 ///
-/// <p>Deletes the association between an OpsItem and a related item. For example, this API operation can delete an Incident Manager incident from an OpsItem. Incident Manager is a capability of Amazon Web Services Systems Manager.</p>
+/// <p>Deletes the association between an OpsItem and a related item. For example, this API operation can delete an Incident Manager incident from an OpsItem. Incident Manager is a tool in Amazon Web Services Systems Manager.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateOpsItemRelatedItemFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

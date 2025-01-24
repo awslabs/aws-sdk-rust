@@ -6,7 +6,7 @@
 pub struct InsightCategorySpecificSummary {
     /// <p>The summary information about deprecated resource usage for an insight check in the <code>UPGRADE_READINESS</code> category.</p>
     pub deprecation_details: ::std::option::Option<::std::vec::Vec<crate::types::DeprecationDetail>>,
-    /// <p>A list of AddonCompatibilityDetail objects for Amazon EKS add-ons.</p>
+    /// <p>A list of <code>AddonCompatibilityDetail</code> objects for Amazon EKS add-ons.</p>
     pub addon_compatibility_details: ::std::option::Option<::std::vec::Vec<crate::types::AddonCompatibilityDetail>>,
 }
 impl InsightCategorySpecificSummary {
@@ -16,7 +16,7 @@ impl InsightCategorySpecificSummary {
     pub fn deprecation_details(&self) -> &[crate::types::DeprecationDetail] {
         self.deprecation_details.as_deref().unwrap_or_default()
     }
-    /// <p>A list of AddonCompatibilityDetail objects for Amazon EKS add-ons.</p>
+    /// <p>A list of <code>AddonCompatibilityDetail</code> objects for Amazon EKS add-ons.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.addon_compatibility_details.is_none()`.
     pub fn addon_compatibility_details(&self) -> &[crate::types::AddonCompatibilityDetail] {
@@ -62,19 +62,19 @@ impl InsightCategorySpecificSummaryBuilder {
     ///
     /// To override the contents of this collection use [`set_addon_compatibility_details`](Self::set_addon_compatibility_details).
     ///
-    /// <p>A list of AddonCompatibilityDetail objects for Amazon EKS add-ons.</p>
+    /// <p>A list of <code>AddonCompatibilityDetail</code> objects for Amazon EKS add-ons.</p>
     pub fn addon_compatibility_details(mut self, input: crate::types::AddonCompatibilityDetail) -> Self {
         let mut v = self.addon_compatibility_details.unwrap_or_default();
         v.push(input);
         self.addon_compatibility_details = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of AddonCompatibilityDetail objects for Amazon EKS add-ons.</p>
+    /// <p>A list of <code>AddonCompatibilityDetail</code> objects for Amazon EKS add-ons.</p>
     pub fn set_addon_compatibility_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddonCompatibilityDetail>>) -> Self {
         self.addon_compatibility_details = input;
         self
     }
-    /// <p>A list of AddonCompatibilityDetail objects for Amazon EKS add-ons.</p>
+    /// <p>A list of <code>AddonCompatibilityDetail</code> objects for Amazon EKS add-ons.</p>
     pub fn get_addon_compatibility_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddonCompatibilityDetail>> {
         &self.addon_compatibility_details
     }

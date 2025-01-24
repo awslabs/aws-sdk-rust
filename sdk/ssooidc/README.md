@@ -2,7 +2,11 @@
 
 IAM Identity Center OpenID Connect (OIDC) is a web service that enables a client (such as CLI or a native application) to register with IAM Identity Center. The service also enables the client to fetch the user’s access token upon successful authentication and authorization with IAM Identity Center.
 
-__Considerations for Using This Guide__
+__API namespaces__
+
+IAM Identity Center uses the sso and identitystore API namespaces. IAM Identity Center OpenID Connect uses the sso-oidc namespace.
+
+__Considerations for using this guide__
 
 Before you begin using this guide, we recommend that you first review the following important information about how the IAM Identity Center OIDC service works.
   - The IAM Identity Center OIDC service currently implements only the portions of the OAuth 2.0 Device Authorization Grant standard ([https://tools.ietf.org/html/rfc8628](https://tools.ietf.org/html/rfc8628)) that are necessary to enable single sign-on authentication with the CLI.
@@ -24,7 +28,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-ssooidc = "1.57.0"
+aws-sdk-ssooidc = "1.57.1"
 tokio = { version = "1", features = ["full"] }
 ```
 

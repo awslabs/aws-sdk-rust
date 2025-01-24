@@ -137,6 +137,8 @@ pub use crate::types::_certificate_usage_type::CertificateUsageType;
 
 pub use crate::types::_listed_certificate::ListedCertificate;
 
+pub use crate::types::_custom_directories_type::CustomDirectoriesType;
+
 pub use crate::types::_enforce_message_signing_type::EnforceMessageSigningType;
 
 pub use crate::types::_preserve_filename_type::PreserveFilenameType;
@@ -208,6 +210,8 @@ mod _compression_enum;
 mod _connector_file_transfer_result;
 
 mod _copy_step_details;
+
+mod _custom_directories_type;
 
 mod _custom_step_details;
 

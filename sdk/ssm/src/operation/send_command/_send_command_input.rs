@@ -49,7 +49,7 @@ pub struct SendCommandInput {
     pub service_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Configurations for sending notifications.</p>
     pub notification_config: ::std::option::Option<crate::types::NotificationConfig>,
-    /// <p>Enables Amazon Web Services Systems Manager to send Run Command output to Amazon CloudWatch Logs. Run Command is a capability of Amazon Web Services Systems Manager.</p>
+    /// <p>Enables Amazon Web Services Systems Manager to send Run Command output to Amazon CloudWatch Logs. Run Command is a tool in Amazon Web Services Systems Manager.</p>
     pub cloud_watch_output_config: ::std::option::Option<crate::types::CloudWatchOutputConfig>,
     /// <p>The CloudWatch alarm you want to apply to your command.</p>
     pub alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
@@ -137,7 +137,7 @@ impl SendCommandInput {
     pub fn notification_config(&self) -> ::std::option::Option<&crate::types::NotificationConfig> {
         self.notification_config.as_ref()
     }
-    /// <p>Enables Amazon Web Services Systems Manager to send Run Command output to Amazon CloudWatch Logs. Run Command is a capability of Amazon Web Services Systems Manager.</p>
+    /// <p>Enables Amazon Web Services Systems Manager to send Run Command output to Amazon CloudWatch Logs. Run Command is a tool in Amazon Web Services Systems Manager.</p>
     pub fn cloud_watch_output_config(&self) -> ::std::option::Option<&crate::types::CloudWatchOutputConfig> {
         self.cloud_watch_output_config.as_ref()
     }
@@ -491,17 +491,17 @@ impl SendCommandInputBuilder {
     pub fn get_notification_config(&self) -> &::std::option::Option<crate::types::NotificationConfig> {
         &self.notification_config
     }
-    /// <p>Enables Amazon Web Services Systems Manager to send Run Command output to Amazon CloudWatch Logs. Run Command is a capability of Amazon Web Services Systems Manager.</p>
+    /// <p>Enables Amazon Web Services Systems Manager to send Run Command output to Amazon CloudWatch Logs. Run Command is a tool in Amazon Web Services Systems Manager.</p>
     pub fn cloud_watch_output_config(mut self, input: crate::types::CloudWatchOutputConfig) -> Self {
         self.cloud_watch_output_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Enables Amazon Web Services Systems Manager to send Run Command output to Amazon CloudWatch Logs. Run Command is a capability of Amazon Web Services Systems Manager.</p>
+    /// <p>Enables Amazon Web Services Systems Manager to send Run Command output to Amazon CloudWatch Logs. Run Command is a tool in Amazon Web Services Systems Manager.</p>
     pub fn set_cloud_watch_output_config(mut self, input: ::std::option::Option<crate::types::CloudWatchOutputConfig>) -> Self {
         self.cloud_watch_output_config = input;
         self
     }
-    /// <p>Enables Amazon Web Services Systems Manager to send Run Command output to Amazon CloudWatch Logs. Run Command is a capability of Amazon Web Services Systems Manager.</p>
+    /// <p>Enables Amazon Web Services Systems Manager to send Run Command output to Amazon CloudWatch Logs. Run Command is a tool in Amazon Web Services Systems Manager.</p>
     pub fn get_cloud_watch_output_config(&self) -> &::std::option::Option<crate::types::CloudWatchOutputConfig> {
         &self.cloud_watch_output_config
     }

@@ -316,7 +316,7 @@ impl StartAutomationExecutionFluentBuilder {
     /// <li>
     /// <p><code>Key=OS,Value=Windows</code></p></li>
     /// </ul><note>
-    /// <p>To add tags to an existing automation, use the <code>AddTagsToResource</code> operation.</p>
+    /// <p>The <code>Array Members</code> maximum value is reported as 1000. This number includes capacity reserved for internal operations. When calling the <code>StartAutomationExecution</code> action, you can specify a maximum of 5 tags. You can, however, use the <code>AddTagsToResource</code> action to add up to a total of 50 tags to an existing automation configuration.</p>
     /// </note>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
@@ -329,7 +329,7 @@ impl StartAutomationExecutionFluentBuilder {
     /// <li>
     /// <p><code>Key=OS,Value=Windows</code></p></li>
     /// </ul><note>
-    /// <p>To add tags to an existing automation, use the <code>AddTagsToResource</code> operation.</p>
+    /// <p>The <code>Array Members</code> maximum value is reported as 1000. This number includes capacity reserved for internal operations. When calling the <code>StartAutomationExecution</code> action, you can specify a maximum of 5 tags. You can, however, use the <code>AddTagsToResource</code> action to add up to a total of 50 tags to an existing automation configuration.</p>
     /// </note>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
@@ -342,7 +342,7 @@ impl StartAutomationExecutionFluentBuilder {
     /// <li>
     /// <p><code>Key=OS,Value=Windows</code></p></li>
     /// </ul><note>
-    /// <p>To add tags to an existing automation, use the <code>AddTagsToResource</code> operation.</p>
+    /// <p>The <code>Array Members</code> maximum value is reported as 1000. This number includes capacity reserved for internal operations. When calling the <code>StartAutomationExecution</code> action, you can specify a maximum of 5 tags. You can, however, use the <code>AddTagsToResource</code> action to add up to a total of 50 tags to an existing automation configuration.</p>
     /// </note>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()

@@ -267,7 +267,9 @@ impl StartChangeRequestExecutionFluentBuilder {
     /// <p><code>Key=Environment,Value=Production</code></p></li>
     /// <li>
     /// <p><code>Key=Region,Value=us-east-2</code></p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>The <code>Array Members</code> maximum value is reported as 1000. This number includes capacity reserved for internal operations. When calling the <code>StartChangeRequestExecution</code> action, you can specify a maximum of 5 tags. You can, however, use the <code>AddTagsToResource</code> action to add up to a total of 50 tags to an existing change request configuration.</p>
+    /// </note>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
@@ -278,7 +280,9 @@ impl StartChangeRequestExecutionFluentBuilder {
     /// <p><code>Key=Environment,Value=Production</code></p></li>
     /// <li>
     /// <p><code>Key=Region,Value=us-east-2</code></p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>The <code>Array Members</code> maximum value is reported as 1000. This number includes capacity reserved for internal operations. When calling the <code>StartChangeRequestExecution</code> action, you can specify a maximum of 5 tags. You can, however, use the <code>AddTagsToResource</code> action to add up to a total of 50 tags to an existing change request configuration.</p>
+    /// </note>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
@@ -289,7 +293,9 @@ impl StartChangeRequestExecutionFluentBuilder {
     /// <p><code>Key=Environment,Value=Production</code></p></li>
     /// <li>
     /// <p><code>Key=Region,Value=us-east-2</code></p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>The <code>Array Members</code> maximum value is reported as 1000. This number includes capacity reserved for internal operations. When calling the <code>StartChangeRequestExecution</code> action, you can specify a maximum of 5 tags. You can, however, use the <code>AddTagsToResource</code> action to add up to a total of 50 tags to an existing change request configuration.</p>
+    /// </note>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }

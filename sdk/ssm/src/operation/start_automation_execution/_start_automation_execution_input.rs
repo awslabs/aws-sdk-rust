@@ -37,7 +37,7 @@ pub struct StartAutomationExecutionInput {
     /// <li>
     /// <p><code>Key=OS,Value=Windows</code></p></li>
     /// </ul><note>
-    /// <p>To add tags to an existing automation, use the <code>AddTagsToResource</code> operation.</p>
+    /// <p>The <code>Array Members</code> maximum value is reported as 1000. This number includes capacity reserved for internal operations. When calling the <code>StartAutomationExecution</code> action, you can specify a maximum of 5 tags. You can, however, use the <code>AddTagsToResource</code> action to add up to a total of 50 tags to an existing automation configuration.</p>
     /// </note>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The CloudWatch alarm you want to apply to your automation.</p>
@@ -107,7 +107,7 @@ impl StartAutomationExecutionInput {
     /// <li>
     /// <p><code>Key=OS,Value=Windows</code></p></li>
     /// </ul><note>
-    /// <p>To add tags to an existing automation, use the <code>AddTagsToResource</code> operation.</p>
+    /// <p>The <code>Array Members</code> maximum value is reported as 1000. This number includes capacity reserved for internal operations. When calling the <code>StartAutomationExecution</code> action, you can specify a maximum of 5 tags. You can, however, use the <code>AddTagsToResource</code> action to add up to a total of 50 tags to an existing automation configuration.</p>
     /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
@@ -363,7 +363,7 @@ impl StartAutomationExecutionInputBuilder {
     /// <li>
     /// <p><code>Key=OS,Value=Windows</code></p></li>
     /// </ul><note>
-    /// <p>To add tags to an existing automation, use the <code>AddTagsToResource</code> operation.</p>
+    /// <p>The <code>Array Members</code> maximum value is reported as 1000. This number includes capacity reserved for internal operations. When calling the <code>StartAutomationExecution</code> action, you can specify a maximum of 5 tags. You can, however, use the <code>AddTagsToResource</code> action to add up to a total of 50 tags to an existing automation configuration.</p>
     /// </note>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
@@ -378,7 +378,7 @@ impl StartAutomationExecutionInputBuilder {
     /// <li>
     /// <p><code>Key=OS,Value=Windows</code></p></li>
     /// </ul><note>
-    /// <p>To add tags to an existing automation, use the <code>AddTagsToResource</code> operation.</p>
+    /// <p>The <code>Array Members</code> maximum value is reported as 1000. This number includes capacity reserved for internal operations. When calling the <code>StartAutomationExecution</code> action, you can specify a maximum of 5 tags. You can, however, use the <code>AddTagsToResource</code> action to add up to a total of 50 tags to an existing automation configuration.</p>
     /// </note>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
@@ -391,7 +391,7 @@ impl StartAutomationExecutionInputBuilder {
     /// <li>
     /// <p><code>Key=OS,Value=Windows</code></p></li>
     /// </ul><note>
-    /// <p>To add tags to an existing automation, use the <code>AddTagsToResource</code> operation.</p>
+    /// <p>The <code>Array Members</code> maximum value is reported as 1000. This number includes capacity reserved for internal operations. When calling the <code>StartAutomationExecution</code> action, you can specify a maximum of 5 tags. You can, however, use the <code>AddTagsToResource</code> action to add up to a total of 50 tags to an existing automation configuration.</p>
     /// </note>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags

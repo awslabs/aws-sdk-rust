@@ -11,7 +11,10 @@ pub struct RegisterClientInput {
     pub scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The list of redirect URI that are defined by the client. At completion of authorization, this list is used to restrict what locations the user agent can be redirected back to.</p>
     pub redirect_uris: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The list of OAuth 2.0 grant types that are defined by the client. This list is used to restrict the token granting flows available to the client.</p>
+    /// <p>The list of OAuth 2.0 grant types that are defined by the client. This list is used to restrict the token granting flows available to the client. Supports the following OAuth 2.0 grant types: Authorization Code, Device Code, and Refresh Token.</p>
+    /// <p>* Authorization Code - <code>authorization_code</code></p>
+    /// <p>* Device Code - <code>urn:ietf:params:oauth:grant-type:device_code</code></p>
+    /// <p>* Refresh Token - <code>refresh_token</code></p>
     pub grant_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IAM Identity Center Issuer URL associated with an instance of IAM Identity Center. This value is needed for user access to resources through the client.</p>
     pub issuer_url: ::std::option::Option<::std::string::String>,
@@ -39,7 +42,10 @@ impl RegisterClientInput {
     pub fn redirect_uris(&self) -> &[::std::string::String] {
         self.redirect_uris.as_deref().unwrap_or_default()
     }
-    /// <p>The list of OAuth 2.0 grant types that are defined by the client. This list is used to restrict the token granting flows available to the client.</p>
+    /// <p>The list of OAuth 2.0 grant types that are defined by the client. This list is used to restrict the token granting flows available to the client. Supports the following OAuth 2.0 grant types: Authorization Code, Device Code, and Refresh Token.</p>
+    /// <p>* Authorization Code - <code>authorization_code</code></p>
+    /// <p>* Device Code - <code>urn:ietf:params:oauth:grant-type:device_code</code></p>
+    /// <p>* Refresh Token - <code>refresh_token</code></p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.grant_types.is_none()`.
     pub fn grant_types(&self) -> &[::std::string::String] {
@@ -148,19 +154,28 @@ impl RegisterClientInputBuilder {
     ///
     /// To override the contents of this collection use [`set_grant_types`](Self::set_grant_types).
     ///
-    /// <p>The list of OAuth 2.0 grant types that are defined by the client. This list is used to restrict the token granting flows available to the client.</p>
+    /// <p>The list of OAuth 2.0 grant types that are defined by the client. This list is used to restrict the token granting flows available to the client. Supports the following OAuth 2.0 grant types: Authorization Code, Device Code, and Refresh Token.</p>
+    /// <p>* Authorization Code - <code>authorization_code</code></p>
+    /// <p>* Device Code - <code>urn:ietf:params:oauth:grant-type:device_code</code></p>
+    /// <p>* Refresh Token - <code>refresh_token</code></p>
     pub fn grant_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.grant_types.unwrap_or_default();
         v.push(input.into());
         self.grant_types = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of OAuth 2.0 grant types that are defined by the client. This list is used to restrict the token granting flows available to the client.</p>
+    /// <p>The list of OAuth 2.0 grant types that are defined by the client. This list is used to restrict the token granting flows available to the client. Supports the following OAuth 2.0 grant types: Authorization Code, Device Code, and Refresh Token.</p>
+    /// <p>* Authorization Code - <code>authorization_code</code></p>
+    /// <p>* Device Code - <code>urn:ietf:params:oauth:grant-type:device_code</code></p>
+    /// <p>* Refresh Token - <code>refresh_token</code></p>
     pub fn set_grant_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.grant_types = input;
         self
     }
-    /// <p>The list of OAuth 2.0 grant types that are defined by the client. This list is used to restrict the token granting flows available to the client.</p>
+    /// <p>The list of OAuth 2.0 grant types that are defined by the client. This list is used to restrict the token granting flows available to the client. Supports the following OAuth 2.0 grant types: Authorization Code, Device Code, and Refresh Token.</p>
+    /// <p>* Authorization Code - <code>authorization_code</code></p>
+    /// <p>* Device Code - <code>urn:ietf:params:oauth:grant-type:device_code</code></p>
+    /// <p>* Refresh Token - <code>refresh_token</code></p>
     pub fn get_grant_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.grant_types
     }

@@ -722,6 +722,27 @@ pub(crate) fn connector_file_transfer_result_correct_errors(
     builder
 }
 
+pub(crate) fn custom_directories_type_correct_errors(
+    mut builder: crate::types::builders::CustomDirectoriesTypeBuilder,
+) -> crate::types::builders::CustomDirectoriesTypeBuilder {
+    if builder.failed_files_directory.is_none() {
+        builder.failed_files_directory = Some(Default::default())
+    }
+    if builder.mdn_files_directory.is_none() {
+        builder.mdn_files_directory = Some(Default::default())
+    }
+    if builder.payload_files_directory.is_none() {
+        builder.payload_files_directory = Some(Default::default())
+    }
+    if builder.status_files_directory.is_none() {
+        builder.status_files_directory = Some(Default::default())
+    }
+    if builder.temporary_files_directory.is_none() {
+        builder.temporary_files_directory = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn listed_host_key_correct_errors(
     mut builder: crate::types::builders::ListedHostKeyBuilder,
 ) -> crate::types::builders::ListedHostKeyBuilder {

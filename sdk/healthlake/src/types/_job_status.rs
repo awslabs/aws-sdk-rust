@@ -20,6 +20,7 @@
 ///     JobStatus::CompletedWithErrors => { /* ... */ },
 ///     JobStatus::Failed => { /* ... */ },
 ///     JobStatus::InProgress => { /* ... */ },
+///     JobStatus::Queued => { /* ... */ },
 ///     JobStatus::Submitted => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -66,6 +67,8 @@ pub enum JobStatus {
     #[allow(missing_docs)] // documentation missing in model
     InProgress,
     #[allow(missing_docs)] // documentation missing in model
+    Queued,
+    #[allow(missing_docs)] // documentation missing in model
     Submitted,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -82,6 +85,7 @@ impl ::std::convert::From<&str> for JobStatus {
             "COMPLETED_WITH_ERRORS" => JobStatus::CompletedWithErrors,
             "FAILED" => JobStatus::Failed,
             "IN_PROGRESS" => JobStatus::InProgress,
+            "QUEUED" => JobStatus::Queued,
             "SUBMITTED" => JobStatus::Submitted,
             other => JobStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -106,6 +110,7 @@ impl JobStatus {
             JobStatus::CompletedWithErrors => "COMPLETED_WITH_ERRORS",
             JobStatus::Failed => "FAILED",
             JobStatus::InProgress => "IN_PROGRESS",
+            JobStatus::Queued => "QUEUED",
             JobStatus::Submitted => "SUBMITTED",
             JobStatus::Unknown(value) => value.as_str(),
         }
@@ -121,6 +126,7 @@ impl JobStatus {
             "COMPLETED_WITH_ERRORS",
             "FAILED",
             "IN_PROGRESS",
+            "QUEUED",
             "SUBMITTED",
         ]
     }
@@ -153,6 +159,7 @@ impl ::std::fmt::Display for JobStatus {
             JobStatus::CompletedWithErrors => write!(f, "COMPLETED_WITH_ERRORS"),
             JobStatus::Failed => write!(f, "FAILED"),
             JobStatus::InProgress => write!(f, "IN_PROGRESS"),
+            JobStatus::Queued => write!(f, "QUEUED"),
             JobStatus::Submitted => write!(f, "SUBMITTED"),
             JobStatus::Unknown(value) => write!(f, "{}", value),
         }

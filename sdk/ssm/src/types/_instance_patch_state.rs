@@ -31,7 +31,7 @@ pub struct InstancePatchState {
     pub missing_count: i32,
     /// <p>The number of patches from the patch baseline that were attempted to be installed during the last patching operation, but failed to install.</p>
     pub failed_count: i32,
-    /// <p>The number of patches beyond the supported limit of <code>NotApplicableCount</code> that aren't reported by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.</p>
+    /// <p>The number of patches beyond the supported limit of <code>NotApplicableCount</code> that aren't reported by name to Inventory. Inventory is a tool in Amazon Web Services Systems Manager.</p>
     pub unreported_not_applicable_count: ::std::option::Option<i32>,
     /// <p>The number of patches from the patch baseline that aren't applicable for the managed node and therefore aren't installed on the node. This number may be truncated if the list of patch names is very large. The number of patches beyond this limit are reported in <code>UnreportedNotApplicableCount</code>.</p>
     pub not_applicable_count: i32,
@@ -121,7 +121,7 @@ impl InstancePatchState {
     pub fn failed_count(&self) -> i32 {
         self.failed_count
     }
-    /// <p>The number of patches beyond the supported limit of <code>NotApplicableCount</code> that aren't reported by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.</p>
+    /// <p>The number of patches beyond the supported limit of <code>NotApplicableCount</code> that aren't reported by name to Inventory. Inventory is a tool in Amazon Web Services Systems Manager.</p>
     pub fn unreported_not_applicable_count(&self) -> ::std::option::Option<i32> {
         self.unreported_not_applicable_count
     }
@@ -419,17 +419,17 @@ impl InstancePatchStateBuilder {
     pub fn get_failed_count(&self) -> &::std::option::Option<i32> {
         &self.failed_count
     }
-    /// <p>The number of patches beyond the supported limit of <code>NotApplicableCount</code> that aren't reported by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.</p>
+    /// <p>The number of patches beyond the supported limit of <code>NotApplicableCount</code> that aren't reported by name to Inventory. Inventory is a tool in Amazon Web Services Systems Manager.</p>
     pub fn unreported_not_applicable_count(mut self, input: i32) -> Self {
         self.unreported_not_applicable_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of patches beyond the supported limit of <code>NotApplicableCount</code> that aren't reported by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.</p>
+    /// <p>The number of patches beyond the supported limit of <code>NotApplicableCount</code> that aren't reported by name to Inventory. Inventory is a tool in Amazon Web Services Systems Manager.</p>
     pub fn set_unreported_not_applicable_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.unreported_not_applicable_count = input;
         self
     }
-    /// <p>The number of patches beyond the supported limit of <code>NotApplicableCount</code> that aren't reported by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.</p>
+    /// <p>The number of patches beyond the supported limit of <code>NotApplicableCount</code> that aren't reported by name to Inventory. Inventory is a tool in Amazon Web Services Systems Manager.</p>
     pub fn get_unreported_not_applicable_count(&self) -> &::std::option::Option<i32> {
         &self.unreported_not_applicable_count
     }

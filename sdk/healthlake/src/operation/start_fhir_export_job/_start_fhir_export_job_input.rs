@@ -114,7 +114,6 @@ impl StartFhirExportJobInputBuilder {
         &self.data_access_role_arn
     }
     /// <p>An optional user provided token used for ensuring idempotency.</p>
-    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
