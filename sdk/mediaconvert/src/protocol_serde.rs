@@ -239,6 +239,8 @@ pub(crate) mod shape_caption_selector;
 
 pub(crate) mod shape_cmfc_settings;
 
+pub(crate) mod shape_dynamic_audio_selector;
+
 pub(crate) mod shape_esam_manifest_confirm_condition_notification;
 
 pub(crate) mod shape_esam_signal_processing_notification;
@@ -496,6 +498,8 @@ pub(crate) mod shape_map_of_audio_selector;
 pub(crate) mod shape_map_of_audio_selector_group;
 
 pub(crate) mod shape_map_of_caption_selector;
+
+pub(crate) mod shape_map_of_dynamic_audio_selector;
 
 pub(crate) mod shape_ms_smooth_additional_manifest;
 

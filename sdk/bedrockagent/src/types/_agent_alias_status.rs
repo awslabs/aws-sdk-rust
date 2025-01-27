@@ -14,6 +14,7 @@
 /// match agentaliasstatus {
 ///     AgentAliasStatus::Creating => { /* ... */ },
 ///     AgentAliasStatus::Deleting => { /* ... */ },
+///     AgentAliasStatus::Dissociated => { /* ... */ },
 ///     AgentAliasStatus::Failed => { /* ... */ },
 ///     AgentAliasStatus::Prepared => { /* ... */ },
 ///     AgentAliasStatus::Updating => { /* ... */ },
@@ -50,6 +51,8 @@ pub enum AgentAliasStatus {
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
     #[allow(missing_docs)] // documentation missing in model
+    Dissociated,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
     #[allow(missing_docs)] // documentation missing in model
     Prepared,
@@ -64,6 +67,7 @@ impl ::std::convert::From<&str> for AgentAliasStatus {
         match s {
             "CREATING" => AgentAliasStatus::Creating,
             "DELETING" => AgentAliasStatus::Deleting,
+            "DISSOCIATED" => AgentAliasStatus::Dissociated,
             "FAILED" => AgentAliasStatus::Failed,
             "PREPARED" => AgentAliasStatus::Prepared,
             "UPDATING" => AgentAliasStatus::Updating,
@@ -84,6 +88,7 @@ impl AgentAliasStatus {
         match self {
             AgentAliasStatus::Creating => "CREATING",
             AgentAliasStatus::Deleting => "DELETING",
+            AgentAliasStatus::Dissociated => "DISSOCIATED",
             AgentAliasStatus::Failed => "FAILED",
             AgentAliasStatus::Prepared => "PREPARED",
             AgentAliasStatus::Updating => "UPDATING",
@@ -92,7 +97,7 @@ impl AgentAliasStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CREATING", "DELETING", "FAILED", "PREPARED", "UPDATING"]
+        &["CREATING", "DELETING", "DISSOCIATED", "FAILED", "PREPARED", "UPDATING"]
     }
 }
 impl ::std::convert::AsRef<str> for AgentAliasStatus {
@@ -117,6 +122,7 @@ impl ::std::fmt::Display for AgentAliasStatus {
         match self {
             AgentAliasStatus::Creating => write!(f, "CREATING"),
             AgentAliasStatus::Deleting => write!(f, "DELETING"),
+            AgentAliasStatus::Dissociated => write!(f, "DISSOCIATED"),
             AgentAliasStatus::Failed => write!(f, "FAILED"),
             AgentAliasStatus::Prepared => write!(f, "PREPARED"),
             AgentAliasStatus::Updating => write!(f, "UPDATING"),

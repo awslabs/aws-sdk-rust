@@ -36,6 +36,8 @@ pub struct AgentAlias {
     /// <p>UPDATING – The agent alias is being updated.</p></li>
     /// <li>
     /// <p>DELETING – The agent alias is being deleted.</p></li>
+    /// <li>
+    /// <p>DISSOCIATED - The agent alias has no version associated with it.</p></li>
     /// </ul>
     pub agent_alias_status: crate::types::AgentAliasStatus,
     /// <p>Information on the failure of Provisioned Throughput assigned to an agent alias.</p>
@@ -101,6 +103,8 @@ impl AgentAlias {
     /// <p>UPDATING – The agent alias is being updated.</p></li>
     /// <li>
     /// <p>DELETING – The agent alias is being deleted.</p></li>
+    /// <li>
+    /// <p>DISSOCIATED - The agent alias has no version associated with it.</p></li>
     /// </ul>
     pub fn agent_alias_status(&self) -> &crate::types::AgentAliasStatus {
         &self.agent_alias_status
@@ -310,6 +314,8 @@ impl AgentAliasBuilder {
     /// <p>UPDATING – The agent alias is being updated.</p></li>
     /// <li>
     /// <p>DELETING – The agent alias is being deleted.</p></li>
+    /// <li>
+    /// <p>DISSOCIATED - The agent alias has no version associated with it.</p></li>
     /// </ul>
     /// This field is required.
     pub fn agent_alias_status(mut self, input: crate::types::AgentAliasStatus) -> Self {
@@ -328,6 +334,8 @@ impl AgentAliasBuilder {
     /// <p>UPDATING – The agent alias is being updated.</p></li>
     /// <li>
     /// <p>DELETING – The agent alias is being deleted.</p></li>
+    /// <li>
+    /// <p>DISSOCIATED - The agent alias has no version associated with it.</p></li>
     /// </ul>
     pub fn set_agent_alias_status(mut self, input: ::std::option::Option<crate::types::AgentAliasStatus>) -> Self {
         self.agent_alias_status = input;
@@ -345,6 +353,8 @@ impl AgentAliasBuilder {
     /// <p>UPDATING – The agent alias is being updated.</p></li>
     /// <li>
     /// <p>DELETING – The agent alias is being deleted.</p></li>
+    /// <li>
+    /// <p>DISSOCIATED - The agent alias has no version associated with it.</p></li>
     /// </ul>
     pub fn get_agent_alias_status(&self) -> &::std::option::Option<crate::types::AgentAliasStatus> {
         &self.agent_alias_status

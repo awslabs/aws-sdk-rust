@@ -66,74 +66,87 @@ pub fn ser_input_template(
     if let Some(var_23) = &input.dolby_vision_metadata_xml {
         object.key("dolbyVisionMetadataXml").string(var_23.as_str());
     }
-    if let Some(var_24) = &input.filter_enable {
-        object.key("filterEnable").string(var_24.as_str());
+    if let Some(var_24) = &input.dynamic_audio_selectors {
+        #[allow(unused_mut)]
+        let mut object_25 = object.key("dynamicAudioSelectors").start_object();
+        for (key_26, value_27) in var_24 {
+            {
+                #[allow(unused_mut)]
+                let mut object_28 = object_25.key(key_26.as_str()).start_object();
+                crate::protocol_serde::shape_dynamic_audio_selector::ser_dynamic_audio_selector(&mut object_28, value_27)?;
+                object_28.finish();
+            }
+        }
+        object_25.finish();
     }
-    if let Some(var_25) = &input.filter_strength {
+    if let Some(var_29) = &input.filter_enable {
+        object.key("filterEnable").string(var_29.as_str());
+    }
+    if let Some(var_30) = &input.filter_strength {
         object.key("filterStrength").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_25).into()),
+            ::aws_smithy_types::Number::NegInt((*var_30).into()),
         );
     }
-    if let Some(var_26) = &input.image_inserter {
+    if let Some(var_31) = &input.image_inserter {
         #[allow(unused_mut)]
-        let mut object_27 = object.key("imageInserter").start_object();
-        crate::protocol_serde::shape_image_inserter::ser_image_inserter(&mut object_27, var_26)?;
-        object_27.finish();
+        let mut object_32 = object.key("imageInserter").start_object();
+        crate::protocol_serde::shape_image_inserter::ser_image_inserter(&mut object_32, var_31)?;
+        object_32.finish();
     }
-    if let Some(var_28) = &input.input_clippings {
-        let mut array_29 = object.key("inputClippings").start_array();
-        for item_30 in var_28 {
+    if let Some(var_33) = &input.input_clippings {
+        let mut array_34 = object.key("inputClippings").start_array();
+        for item_35 in var_33 {
             {
                 #[allow(unused_mut)]
-                let mut object_31 = array_29.value().start_object();
-                crate::protocol_serde::shape_input_clipping::ser_input_clipping(&mut object_31, item_30)?;
-                object_31.finish();
+                let mut object_36 = array_34.value().start_object();
+                crate::protocol_serde::shape_input_clipping::ser_input_clipping(&mut object_36, item_35)?;
+                object_36.finish();
             }
         }
-        array_29.finish();
+        array_34.finish();
     }
-    if let Some(var_32) = &input.input_scan_type {
-        object.key("inputScanType").string(var_32.as_str());
+    if let Some(var_37) = &input.input_scan_type {
+        object.key("inputScanType").string(var_37.as_str());
     }
-    if let Some(var_33) = &input.position {
+    if let Some(var_38) = &input.position {
         #[allow(unused_mut)]
-        let mut object_34 = object.key("position").start_object();
-        crate::protocol_serde::shape_rectangle::ser_rectangle(&mut object_34, var_33)?;
-        object_34.finish();
+        let mut object_39 = object.key("position").start_object();
+        crate::protocol_serde::shape_rectangle::ser_rectangle(&mut object_39, var_38)?;
+        object_39.finish();
     }
-    if let Some(var_35) = &input.program_number {
+    if let Some(var_40) = &input.program_number {
         object.key("programNumber").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_35).into()),
+            ::aws_smithy_types::Number::NegInt((*var_40).into()),
         );
     }
-    if let Some(var_36) = &input.psi_control {
-        object.key("psiControl").string(var_36.as_str());
+    if let Some(var_41) = &input.psi_control {
+        object.key("psiControl").string(var_41.as_str());
     }
-    if let Some(var_37) = &input.timecode_source {
-        object.key("timecodeSource").string(var_37.as_str());
+    if let Some(var_42) = &input.timecode_source {
+        object.key("timecodeSource").string(var_42.as_str());
     }
-    if let Some(var_38) = &input.timecode_start {
-        object.key("timecodeStart").string(var_38.as_str());
+    if let Some(var_43) = &input.timecode_start {
+        object.key("timecodeStart").string(var_43.as_str());
     }
-    if let Some(var_39) = &input.video_overlays {
-        let mut array_40 = object.key("videoOverlays").start_array();
-        for item_41 in var_39 {
+    if let Some(var_44) = &input.video_overlays {
+        let mut array_45 = object.key("videoOverlays").start_array();
+        for item_46 in var_44 {
             {
                 #[allow(unused_mut)]
-                let mut object_42 = array_40.value().start_object();
-                crate::protocol_serde::shape_video_overlay::ser_video_overlay(&mut object_42, item_41)?;
-                object_42.finish();
+                let mut object_47 = array_45.value().start_object();
+                crate::protocol_serde::shape_video_overlay::ser_video_overlay(&mut object_47, item_46)?;
+                object_47.finish();
             }
         }
-        array_40.finish();
+        array_45.finish();
     }
-    if let Some(var_43) = &input.video_selector {
+    if let Some(var_48) = &input.video_selector {
         #[allow(unused_mut)]
-        let mut object_44 = object.key("videoSelector").start_object();
-        crate::protocol_serde::shape_video_selector::ser_video_selector(&mut object_44, var_43)?;
-        object_44.finish();
+        let mut object_49 = object.key("videoSelector").start_object();
+        crate::protocol_serde::shape_video_selector::ser_video_selector(&mut object_49, var_48)?;
+        object_49.finish();
     }
     Ok(())
 }
@@ -200,6 +213,11 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                            );
+                        }
+                        "dynamicAudioSelectors" => {
+                            builder = builder.set_dynamic_audio_selectors(
+                                crate::protocol_serde::shape_map_of_dynamic_audio_selector::de_map_of_dynamic_audio_selector(tokens)?,
                             );
                         }
                         "filterEnable" => {

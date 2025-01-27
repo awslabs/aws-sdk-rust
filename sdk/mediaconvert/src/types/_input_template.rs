@@ -22,6 +22,8 @@ pub struct InputTemplate {
     pub denoise_filter: ::std::option::Option<crate::types::InputDenoiseFilter>,
     /// Use this setting only when your video source has Dolby Vision studio mastering metadata that is carried in a separate XML file. Specify the Amazon S3 location for the metadata XML file. MediaConvert uses this file to provide global and frame-level metadata for Dolby Vision preprocessing. When you specify a file here and your input also has interleaved global and frame level metadata, MediaConvert ignores the interleaved metadata and uses only the the metadata from this external XML file. Note that your IAM service role must grant MediaConvert read permissions to this file. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
     pub dolby_vision_metadata_xml: ::std::option::Option<::std::string::String>,
+    /// Use Dynamic audio selectors when you do not know the track layout of your source when you submit your job, but want to select multiple audio tracks. When you include an audio track in your output and specify this Dynamic audio selector as the Audio source, MediaConvert creates an output audio track for each dynamically selected track. Note that when you include a Dynamic audio selector for two or more inputs, each input must have the same number of audio tracks and audio channels.
+    pub dynamic_audio_selectors: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::DynamicAudioSelector>>,
     /// Specify whether to apply input filtering to improve the video quality of your input. To apply filtering depending on your input type and quality: Choose Auto. To apply no filtering: Choose Disable. To apply filtering regardless of your input type and quality: Choose Force. When you do, you must also specify a value for Filter strength.
     pub filter_enable: ::std::option::Option<crate::types::InputFilterEnable>,
     /// Specify the strength of the input filter. To apply an automatic amount of filtering based the compression artifacts measured in your input: We recommend that you leave Filter strength blank and set Filter enable to Auto. To manually apply filtering: Enter a value from 1 to 5, where 1 is the least amount of filtering and 5 is the most. The value that you enter applies to the strength of the Deblock or Denoise filters, or to the strength of the Advanced input filter.
@@ -85,6 +87,12 @@ impl InputTemplate {
     /// Use this setting only when your video source has Dolby Vision studio mastering metadata that is carried in a separate XML file. Specify the Amazon S3 location for the metadata XML file. MediaConvert uses this file to provide global and frame-level metadata for Dolby Vision preprocessing. When you specify a file here and your input also has interleaved global and frame level metadata, MediaConvert ignores the interleaved metadata and uses only the the metadata from this external XML file. Note that your IAM service role must grant MediaConvert read permissions to this file. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
     pub fn dolby_vision_metadata_xml(&self) -> ::std::option::Option<&str> {
         self.dolby_vision_metadata_xml.as_deref()
+    }
+    /// Use Dynamic audio selectors when you do not know the track layout of your source when you submit your job, but want to select multiple audio tracks. When you include an audio track in your output and specify this Dynamic audio selector as the Audio source, MediaConvert creates an output audio track for each dynamically selected track. Note that when you include a Dynamic audio selector for two or more inputs, each input must have the same number of audio tracks and audio channels.
+    pub fn dynamic_audio_selectors(
+        &self,
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::DynamicAudioSelector>> {
+        self.dynamic_audio_selectors.as_ref()
     }
     /// Specify whether to apply input filtering to improve the video quality of your input. To apply filtering depending on your input type and quality: Choose Auto. To apply no filtering: Choose Disable. To apply filtering regardless of your input type and quality: Choose Force. When you do, you must also specify a value for Filter strength.
     pub fn filter_enable(&self) -> ::std::option::Option<&crate::types::InputFilterEnable> {
@@ -159,6 +167,7 @@ pub struct InputTemplateBuilder {
     pub(crate) deblock_filter: ::std::option::Option<crate::types::InputDeblockFilter>,
     pub(crate) denoise_filter: ::std::option::Option<crate::types::InputDenoiseFilter>,
     pub(crate) dolby_vision_metadata_xml: ::std::option::Option<::std::string::String>,
+    pub(crate) dynamic_audio_selectors: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::DynamicAudioSelector>>,
     pub(crate) filter_enable: ::std::option::Option<crate::types::InputFilterEnable>,
     pub(crate) filter_strength: ::std::option::Option<i32>,
     pub(crate) image_inserter: ::std::option::Option<crate::types::ImageInserter>,
@@ -327,6 +336,31 @@ impl InputTemplateBuilder {
     /// Use this setting only when your video source has Dolby Vision studio mastering metadata that is carried in a separate XML file. Specify the Amazon S3 location for the metadata XML file. MediaConvert uses this file to provide global and frame-level metadata for Dolby Vision preprocessing. When you specify a file here and your input also has interleaved global and frame level metadata, MediaConvert ignores the interleaved metadata and uses only the the metadata from this external XML file. Note that your IAM service role must grant MediaConvert read permissions to this file. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
     pub fn get_dolby_vision_metadata_xml(&self) -> &::std::option::Option<::std::string::String> {
         &self.dolby_vision_metadata_xml
+    }
+    /// Adds a key-value pair to `dynamic_audio_selectors`.
+    ///
+    /// To override the contents of this collection use [`set_dynamic_audio_selectors`](Self::set_dynamic_audio_selectors).
+    ///
+    /// Use Dynamic audio selectors when you do not know the track layout of your source when you submit your job, but want to select multiple audio tracks. When you include an audio track in your output and specify this Dynamic audio selector as the Audio source, MediaConvert creates an output audio track for each dynamically selected track. Note that when you include a Dynamic audio selector for two or more inputs, each input must have the same number of audio tracks and audio channels.
+    pub fn dynamic_audio_selectors(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::DynamicAudioSelector) -> Self {
+        let mut hash_map = self.dynamic_audio_selectors.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.dynamic_audio_selectors = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// Use Dynamic audio selectors when you do not know the track layout of your source when you submit your job, but want to select multiple audio tracks. When you include an audio track in your output and specify this Dynamic audio selector as the Audio source, MediaConvert creates an output audio track for each dynamically selected track. Note that when you include a Dynamic audio selector for two or more inputs, each input must have the same number of audio tracks and audio channels.
+    pub fn set_dynamic_audio_selectors(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::DynamicAudioSelector>>,
+    ) -> Self {
+        self.dynamic_audio_selectors = input;
+        self
+    }
+    /// Use Dynamic audio selectors when you do not know the track layout of your source when you submit your job, but want to select multiple audio tracks. When you include an audio track in your output and specify this Dynamic audio selector as the Audio source, MediaConvert creates an output audio track for each dynamically selected track. Note that when you include a Dynamic audio selector for two or more inputs, each input must have the same number of audio tracks and audio channels.
+    pub fn get_dynamic_audio_selectors(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::DynamicAudioSelector>> {
+        &self.dynamic_audio_selectors
     }
     /// Specify whether to apply input filtering to improve the video quality of your input. To apply filtering depending on your input type and quality: Choose Auto. To apply no filtering: Choose Disable. To apply filtering regardless of your input type and quality: Choose Force. When you do, you must also specify a value for Filter strength.
     pub fn filter_enable(mut self, input: crate::types::InputFilterEnable) -> Self {
@@ -520,6 +554,7 @@ impl InputTemplateBuilder {
             deblock_filter: self.deblock_filter,
             denoise_filter: self.denoise_filter,
             dolby_vision_metadata_xml: self.dolby_vision_metadata_xml,
+            dynamic_audio_selectors: self.dynamic_audio_selectors,
             filter_enable: self.filter_enable,
             filter_strength: self.filter_strength,
             image_inserter: self.image_inserter,

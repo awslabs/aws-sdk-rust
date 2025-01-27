@@ -10,6 +10,12 @@ pub fn ser_tool(
             crate::protocol_serde::shape_tool_specification::ser_tool_specification(&mut object_1, inner)?;
             object_1.finish();
         }
+        crate::types::Tool::CachePoint(inner) => {
+            #[allow(unused_mut)]
+            let mut object_2 = object_3.key("cachePoint").start_object();
+            crate::protocol_serde::shape_cache_point_block::ser_cache_point_block(&mut object_2, inner)?;
+            object_2.finish();
+        }
         crate::types::Tool::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("Tool")),
     }
     Ok(())
@@ -48,6 +54,11 @@ where
                         "toolSpec" => Some(crate::types::Tool::ToolSpec(
                             crate::protocol_serde::shape_tool_specification::de_tool_specification(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'toolSpec' cannot be null")
+                            })?,
+                        )),
+                        "cachePoint" => Some(crate::types::Tool::CachePoint(
+                            crate::protocol_serde::shape_cache_point_block::de_cache_point_block(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'cachePoint' cannot be null")
                             })?,
                         )),
                         _ => {

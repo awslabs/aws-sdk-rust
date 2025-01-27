@@ -6,6 +6,8 @@
 pub struct TextPromptTemplateConfiguration {
     /// <p>The message for the prompt.</p>
     pub text: ::std::string::String,
+    /// <p>A cache checkpoint within a template configuration.</p>
+    pub cache_point: ::std::option::Option<crate::types::CachePointBlock>,
     /// <p>An array of the variables in the prompt template.</p>
     pub input_variables: ::std::option::Option<::std::vec::Vec<crate::types::PromptInputVariable>>,
 }
@@ -14,6 +16,10 @@ impl TextPromptTemplateConfiguration {
     pub fn text(&self) -> &str {
         use std::ops::Deref;
         self.text.deref()
+    }
+    /// <p>A cache checkpoint within a template configuration.</p>
+    pub fn cache_point(&self) -> ::std::option::Option<&crate::types::CachePointBlock> {
+        self.cache_point.as_ref()
     }
     /// <p>An array of the variables in the prompt template.</p>
     ///
@@ -26,6 +32,7 @@ impl ::std::fmt::Debug for TextPromptTemplateConfiguration {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TextPromptTemplateConfiguration");
         formatter.field("text", &"*** Sensitive Data Redacted ***");
+        formatter.field("cache_point", &"*** Sensitive Data Redacted ***");
         formatter.field("input_variables", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
@@ -42,6 +49,7 @@ impl TextPromptTemplateConfiguration {
 #[non_exhaustive]
 pub struct TextPromptTemplateConfigurationBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
+    pub(crate) cache_point: ::std::option::Option<crate::types::CachePointBlock>,
     pub(crate) input_variables: ::std::option::Option<::std::vec::Vec<crate::types::PromptInputVariable>>,
 }
 impl TextPromptTemplateConfigurationBuilder {
@@ -59,6 +67,20 @@ impl TextPromptTemplateConfigurationBuilder {
     /// <p>The message for the prompt.</p>
     pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
         &self.text
+    }
+    /// <p>A cache checkpoint within a template configuration.</p>
+    pub fn cache_point(mut self, input: crate::types::CachePointBlock) -> Self {
+        self.cache_point = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A cache checkpoint within a template configuration.</p>
+    pub fn set_cache_point(mut self, input: ::std::option::Option<crate::types::CachePointBlock>) -> Self {
+        self.cache_point = input;
+        self
+    }
+    /// <p>A cache checkpoint within a template configuration.</p>
+    pub fn get_cache_point(&self) -> &::std::option::Option<crate::types::CachePointBlock> {
+        &self.cache_point
     }
     /// Appends an item to `input_variables`.
     ///
@@ -91,6 +113,7 @@ impl TextPromptTemplateConfigurationBuilder {
                     "text was not specified but it is required when building TextPromptTemplateConfiguration",
                 )
             })?,
+            cache_point: self.cache_point,
             input_variables: self.input_variables,
         })
     }
@@ -99,6 +122,7 @@ impl ::std::fmt::Debug for TextPromptTemplateConfigurationBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TextPromptTemplateConfigurationBuilder");
         formatter.field("text", &"*** Sensitive Data Redacted ***");
+        formatter.field("cache_point", &"*** Sensitive Data Redacted ***");
         formatter.field("input_variables", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }

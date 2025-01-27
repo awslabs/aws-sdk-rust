@@ -319,6 +319,8 @@ pub use crate::types::_h265_end_of_stream_markers::H265EndOfStreamMarkers;
 
 pub use crate::types::_h265_dynamic_sub_gop::H265DynamicSubGop;
 
+pub use crate::types::_h265_deblocking::H265Deblocking;
+
 pub use crate::types::_h265_codec_profile::H265CodecProfile;
 
 pub use crate::types::_h265_codec_level::H265CodecLevel;
@@ -1091,6 +1093,12 @@ pub use crate::types::_input_clipping::InputClipping;
 
 pub use crate::types::_input_filter_enable::InputFilterEnable;
 
+pub use crate::types::_dynamic_audio_selector::DynamicAudioSelector;
+
+pub use crate::types::_dynamic_audio_selector_type::DynamicAudioSelectorType;
+
+pub use crate::types::_audio_duration_correction::AudioDurationCorrection;
+
 pub use crate::types::_input_denoise_filter::InputDenoiseFilter;
 
 pub use crate::types::_input_deblock_filter::InputDeblockFilter;
@@ -1140,8 +1148,6 @@ pub use crate::types::_audio_selector_type::AudioSelectorType;
 pub use crate::types::_hls_rendition_group_settings::HlsRenditionGroupSettings;
 
 pub use crate::types::_audio_default_selection::AudioDefaultSelection;
-
-pub use crate::types::_audio_duration_correction::AudioDurationCorrection;
 
 pub use crate::types::_audio_selector_group::AudioSelectorGroup;
 
@@ -1607,6 +1613,10 @@ mod _dvb_tdt_settings;
 
 mod _dvbdds_handling;
 
+mod _dynamic_audio_selector;
+
+mod _dynamic_audio_selector_type;
+
 mod _eac3_atmos_bitstream_mode;
 
 mod _eac3_atmos_coding_mode;
@@ -1766,6 +1776,8 @@ mod _h265_alternate_transfer_function_sei;
 mod _h265_codec_level;
 
 mod _h265_codec_profile;
+
+mod _h265_deblocking;
 
 mod _h265_dynamic_sub_gop;
 

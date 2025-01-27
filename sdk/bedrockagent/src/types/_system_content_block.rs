@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub enum SystemContentBlock {
+    /// <p>Creates a cache checkpoint within a tool designation</p>
+    CachePoint(crate::types::CachePointBlock),
     /// <p>The text in the system prompt.</p>
     Text(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -17,7 +19,19 @@ pub enum SystemContentBlock {
     Unknown,
 }
 impl SystemContentBlock {
-    #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into [`CachePoint`](crate::types::SystemContentBlock::CachePoint), extracting the inner [`CachePointBlock`](crate::types::CachePointBlock).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_cache_point(&self) -> ::std::result::Result<&crate::types::CachePointBlock, &Self> {
+        if let SystemContentBlock::CachePoint(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`CachePoint`](crate::types::SystemContentBlock::CachePoint).
+    pub fn is_cache_point(&self) -> bool {
+        self.as_cache_point().is_ok()
+    }
     /// Tries to convert the enum instance into [`Text`](crate::types::SystemContentBlock::Text), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_text(&self) -> ::std::result::Result<&::std::string::String, &Self> {

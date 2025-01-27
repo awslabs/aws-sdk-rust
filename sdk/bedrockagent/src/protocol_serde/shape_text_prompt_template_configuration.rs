@@ -6,17 +6,23 @@ pub fn ser_text_prompt_template_configuration(
     {
         object.key("text").string(input.text.as_str());
     }
-    if let Some(var_1) = &input.input_variables {
-        let mut array_2 = object.key("inputVariables").start_array();
-        for item_3 in var_1 {
+    if let Some(var_1) = &input.cache_point {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("cachePoint").start_object();
+        crate::protocol_serde::shape_cache_point_block::ser_cache_point_block(&mut object_2, var_1)?;
+        object_2.finish();
+    }
+    if let Some(var_3) = &input.input_variables {
+        let mut array_4 = object.key("inputVariables").start_array();
+        for item_5 in var_3 {
             {
                 #[allow(unused_mut)]
-                let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_prompt_input_variable::ser_prompt_input_variable(&mut object_4, item_3)?;
-                object_4.finish();
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_prompt_input_variable::ser_prompt_input_variable(&mut object_6, item_5)?;
+                object_6.finish();
             }
         }
-        array_2.finish();
+        array_4.finish();
     }
     Ok(())
 }
@@ -42,6 +48,9 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "cachePoint" => {
+                            builder = builder.set_cache_point(crate::protocol_serde::shape_cache_point_block::de_cache_point_block(tokens)?);
                         }
                         "inputVariables" => {
                             builder = builder.set_input_variables(

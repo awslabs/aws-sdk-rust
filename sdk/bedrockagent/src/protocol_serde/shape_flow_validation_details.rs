@@ -179,6 +179,18 @@ where
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'unspecified' cannot be null"))?
                                 ))
                             }
+                            "unknownNodeInput" => {
+                                Some(crate::types::FlowValidationDetails::UnknownNodeInput(
+                                    crate::protocol_serde::shape_unknown_node_input_flow_validation_details::de_unknown_node_input_flow_validation_details(tokens)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'unknownNodeInput' cannot be null"))?
+                                ))
+                            }
+                            "unknownNodeOutput" => {
+                                Some(crate::types::FlowValidationDetails::UnknownNodeOutput(
+                                    crate::protocol_serde::shape_unknown_node_output_flow_validation_details::de_unknown_node_output_flow_validation_details(tokens)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'unknownNodeOutput' cannot be null"))?
+                                ))
+                            }
                             _ => {
                                                                               ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                                                                               Some(crate::types::FlowValidationDetails::Unknown)

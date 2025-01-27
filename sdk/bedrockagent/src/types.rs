@@ -57,6 +57,10 @@ pub use crate::types::_auto_tool_choice::AutoToolChoice;
 
 pub use crate::types::_tool::Tool;
 
+pub use crate::types::_cache_point_block::CachePointBlock;
+
+pub use crate::types::_cache_point_type::CachePointType;
+
 pub use crate::types::_tool_specification::ToolSpecification;
 
 pub use crate::types::_tool_input_schema::ToolInputSchema;
@@ -308,6 +312,10 @@ pub use crate::types::_flow_validation::FlowValidation;
 pub use crate::types::_flow_validation_type::FlowValidationType;
 
 pub use crate::types::_flow_validation_details::FlowValidationDetails;
+
+pub use crate::types::_unknown_node_output_flow_validation_details::UnknownNodeOutputFlowValidationDetails;
+
+pub use crate::types::_unknown_node_input_flow_validation_details::UnknownNodeInputFlowValidationDetails;
 
 pub use crate::types::_unspecified_flow_validation_details::UnspecifiedFlowValidationDetails;
 
@@ -584,6 +592,10 @@ mod _bedrock_embedding_model_configuration;
 mod _bedrock_foundation_model_configuration;
 
 mod _byte_content_doc;
+
+mod _cache_point_block;
+
+mod _cache_point_type;
 
 mod _chat_prompt_template_configuration;
 
@@ -1030,6 +1042,10 @@ mod _unknown_connection_source_output_flow_validation_details;
 mod _unknown_connection_target_flow_validation_details;
 
 mod _unknown_connection_target_input_flow_validation_details;
+
+mod _unknown_node_input_flow_validation_details;
+
+mod _unknown_node_output_flow_validation_details;
 
 mod _unreachable_node_flow_validation_details;
 

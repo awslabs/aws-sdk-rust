@@ -35,6 +35,8 @@ pub use crate::types::_any_tool_choice::AnyToolChoiceBuilder;
 
 pub use crate::types::_auto_tool_choice::AutoToolChoiceBuilder;
 
+pub use crate::types::_cache_point_block::CachePointBlockBuilder;
+
 pub use crate::types::_tool_specification::ToolSpecificationBuilder;
 
 pub use crate::types::_prompt_input_variable::PromptInputVariableBuilder;
@@ -208,6 +210,10 @@ pub use crate::types::_output_flow_node_configuration::OutputFlowNodeConfigurati
 pub use crate::types::_input_flow_node_configuration::InputFlowNodeConfigurationBuilder;
 
 pub use crate::types::_flow_validation::FlowValidationBuilder;
+
+pub use crate::types::_unknown_node_output_flow_validation_details::UnknownNodeOutputFlowValidationDetailsBuilder;
+
+pub use crate::types::_unknown_node_input_flow_validation_details::UnknownNodeInputFlowValidationDetailsBuilder;
 
 pub use crate::types::_unspecified_flow_validation_details::UnspecifiedFlowValidationDetailsBuilder;
 

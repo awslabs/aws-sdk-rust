@@ -48,6 +48,10 @@ pub enum FlowValidationDetails {
     UnknownConnectionTarget(crate::types::UnknownConnectionTargetFlowValidationDetails),
     /// <p>Details about an unknown target input for a connection.</p>
     UnknownConnectionTargetInput(crate::types::UnknownConnectionTargetInputFlowValidationDetails),
+    /// <p>Details about an unknown input for a node.</p>
+    UnknownNodeInput(crate::types::UnknownNodeInputFlowValidationDetails),
+    /// <p>Details about an unknown output for a node.</p>
+    UnknownNodeOutput(crate::types::UnknownNodeOutputFlowValidationDetails),
     /// <p>Details about an unreachable node in the flow.</p>
     UnreachableNode(crate::types::UnreachableNodeFlowValidationDetails),
     /// <p>Details about unsatisfied conditions for a connection.</p>
@@ -366,6 +370,32 @@ impl FlowValidationDetails {
     /// Returns true if this is a [`UnknownConnectionTargetInput`](crate::types::FlowValidationDetails::UnknownConnectionTargetInput).
     pub fn is_unknown_connection_target_input(&self) -> bool {
         self.as_unknown_connection_target_input().is_ok()
+    }
+    /// Tries to convert the enum instance into [`UnknownNodeInput`](crate::types::FlowValidationDetails::UnknownNodeInput), extracting the inner [`UnknownNodeInputFlowValidationDetails`](crate::types::UnknownNodeInputFlowValidationDetails).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_unknown_node_input(&self) -> ::std::result::Result<&crate::types::UnknownNodeInputFlowValidationDetails, &Self> {
+        if let FlowValidationDetails::UnknownNodeInput(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`UnknownNodeInput`](crate::types::FlowValidationDetails::UnknownNodeInput).
+    pub fn is_unknown_node_input(&self) -> bool {
+        self.as_unknown_node_input().is_ok()
+    }
+    /// Tries to convert the enum instance into [`UnknownNodeOutput`](crate::types::FlowValidationDetails::UnknownNodeOutput), extracting the inner [`UnknownNodeOutputFlowValidationDetails`](crate::types::UnknownNodeOutputFlowValidationDetails).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_unknown_node_output(&self) -> ::std::result::Result<&crate::types::UnknownNodeOutputFlowValidationDetails, &Self> {
+        if let FlowValidationDetails::UnknownNodeOutput(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`UnknownNodeOutput`](crate::types::FlowValidationDetails::UnknownNodeOutput).
+    pub fn is_unknown_node_output(&self) -> bool {
+        self.as_unknown_node_output().is_ok()
     }
     /// Tries to convert the enum instance into [`UnreachableNode`](crate::types::FlowValidationDetails::UnreachableNode), extracting the inner [`UnreachableNodeFlowValidationDetails`](crate::types::UnreachableNodeFlowValidationDetails).
     /// Returns `Err(&Self)` if it can't be converted.

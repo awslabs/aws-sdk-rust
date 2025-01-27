@@ -16,6 +16,8 @@ pub struct H265Settings {
     pub codec_level: ::std::option::Option<crate::types::H265CodecLevel>,
     /// Represents the Profile and Tier, per the HEVC (H.265) specification. Selections are grouped as \[Profile\] / \[Tier\], so "Main/High" represents Main Profile with High Tier. 4:2:2 profiles are only available with the HEVC 4:2:2 License.
     pub codec_profile: ::std::option::Option<crate::types::H265CodecProfile>,
+    /// Use Deblocking to improve the video quality of your output by smoothing the edges of macroblock artifacts created during video compression. To reduce blocking artifacts at block boundaries, and improve overall video quality: Keep the default value, Enabled. To not apply any deblocking: Choose Disabled. Visible block edge artifacts might appear in the output, especially at lower bitrates.
+    pub deblocking: ::std::option::Option<crate::types::H265Deblocking>,
     /// Specify whether to allow the number of B-frames in your output GOP structure to vary or not depending on your input video content. To improve the subjective video quality of your output that has high-motion content: Leave blank or keep the default value Adaptive. MediaConvert will use fewer B-frames for high-motion video content than low-motion content. The maximum number of B- frames is limited by the value that you choose for B-frames between reference frames. To use the same number B-frames for all types of content: Choose Static.
     pub dynamic_sub_gop: ::std::option::Option<crate::types::H265DynamicSubGop>,
     /// Optionally include or suppress markers at the end of your output that signal the end of the video stream. To include end of stream markers: Leave blank or keep the default value, Include. To not include end of stream markers: Choose Suppress. This is useful when your output will be inserted into another stream.
@@ -115,6 +117,10 @@ impl H265Settings {
     /// Represents the Profile and Tier, per the HEVC (H.265) specification. Selections are grouped as \[Profile\] / \[Tier\], so "Main/High" represents Main Profile with High Tier. 4:2:2 profiles are only available with the HEVC 4:2:2 License.
     pub fn codec_profile(&self) -> ::std::option::Option<&crate::types::H265CodecProfile> {
         self.codec_profile.as_ref()
+    }
+    /// Use Deblocking to improve the video quality of your output by smoothing the edges of macroblock artifacts created during video compression. To reduce blocking artifacts at block boundaries, and improve overall video quality: Keep the default value, Enabled. To not apply any deblocking: Choose Disabled. Visible block edge artifacts might appear in the output, especially at lower bitrates.
+    pub fn deblocking(&self) -> ::std::option::Option<&crate::types::H265Deblocking> {
+        self.deblocking.as_ref()
     }
     /// Specify whether to allow the number of B-frames in your output GOP structure to vary or not depending on your input video content. To improve the subjective video quality of your output that has high-motion content: Leave blank or keep the default value Adaptive. MediaConvert will use fewer B-frames for high-motion video content than low-motion content. The maximum number of B- frames is limited by the value that you choose for B-frames between reference frames. To use the same number B-frames for all types of content: Choose Static.
     pub fn dynamic_sub_gop(&self) -> ::std::option::Option<&crate::types::H265DynamicSubGop> {
@@ -282,6 +288,7 @@ pub struct H265SettingsBuilder {
     pub(crate) bitrate: ::std::option::Option<i32>,
     pub(crate) codec_level: ::std::option::Option<crate::types::H265CodecLevel>,
     pub(crate) codec_profile: ::std::option::Option<crate::types::H265CodecProfile>,
+    pub(crate) deblocking: ::std::option::Option<crate::types::H265Deblocking>,
     pub(crate) dynamic_sub_gop: ::std::option::Option<crate::types::H265DynamicSubGop>,
     pub(crate) end_of_stream_markers: ::std::option::Option<crate::types::H265EndOfStreamMarkers>,
     pub(crate) flicker_adaptive_quantization: ::std::option::Option<crate::types::H265FlickerAdaptiveQuantization>,
@@ -404,6 +411,20 @@ impl H265SettingsBuilder {
     /// Represents the Profile and Tier, per the HEVC (H.265) specification. Selections are grouped as \[Profile\] / \[Tier\], so "Main/High" represents Main Profile with High Tier. 4:2:2 profiles are only available with the HEVC 4:2:2 License.
     pub fn get_codec_profile(&self) -> &::std::option::Option<crate::types::H265CodecProfile> {
         &self.codec_profile
+    }
+    /// Use Deblocking to improve the video quality of your output by smoothing the edges of macroblock artifacts created during video compression. To reduce blocking artifacts at block boundaries, and improve overall video quality: Keep the default value, Enabled. To not apply any deblocking: Choose Disabled. Visible block edge artifacts might appear in the output, especially at lower bitrates.
+    pub fn deblocking(mut self, input: crate::types::H265Deblocking) -> Self {
+        self.deblocking = ::std::option::Option::Some(input);
+        self
+    }
+    /// Use Deblocking to improve the video quality of your output by smoothing the edges of macroblock artifacts created during video compression. To reduce blocking artifacts at block boundaries, and improve overall video quality: Keep the default value, Enabled. To not apply any deblocking: Choose Disabled. Visible block edge artifacts might appear in the output, especially at lower bitrates.
+    pub fn set_deblocking(mut self, input: ::std::option::Option<crate::types::H265Deblocking>) -> Self {
+        self.deblocking = input;
+        self
+    }
+    /// Use Deblocking to improve the video quality of your output by smoothing the edges of macroblock artifacts created during video compression. To reduce blocking artifacts at block boundaries, and improve overall video quality: Keep the default value, Enabled. To not apply any deblocking: Choose Disabled. Visible block edge artifacts might appear in the output, especially at lower bitrates.
+    pub fn get_deblocking(&self) -> &::std::option::Option<crate::types::H265Deblocking> {
+        &self.deblocking
     }
     /// Specify whether to allow the number of B-frames in your output GOP structure to vary or not depending on your input video content. To improve the subjective video quality of your output that has high-motion content: Leave blank or keep the default value Adaptive. MediaConvert will use fewer B-frames for high-motion video content than low-motion content. The maximum number of B- frames is limited by the value that you choose for B-frames between reference frames. To use the same number B-frames for all types of content: Choose Static.
     pub fn dynamic_sub_gop(mut self, input: crate::types::H265DynamicSubGop) -> Self {
@@ -932,6 +953,7 @@ impl H265SettingsBuilder {
             bitrate: self.bitrate,
             codec_level: self.codec_level,
             codec_profile: self.codec_profile,
+            deblocking: self.deblocking,
             dynamic_sub_gop: self.dynamic_sub_gop,
             end_of_stream_markers: self.end_of_stream_markers,
             flicker_adaptive_quantization: self.flicker_adaptive_quantization,

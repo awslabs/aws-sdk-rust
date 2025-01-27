@@ -34,6 +34,8 @@
 ///     FlowValidationType::UnknownConnectionSourceOutput => { /* ... */ },
 ///     FlowValidationType::UnknownConnectionTarget => { /* ... */ },
 ///     FlowValidationType::UnknownConnectionTargetInput => { /* ... */ },
+///     FlowValidationType::UnknownNodeInput => { /* ... */ },
+///     FlowValidationType::UnknownNodeOutput => { /* ... */ },
 ///     FlowValidationType::UnreachableNode => { /* ... */ },
 ///     FlowValidationType::UnsatisfiedConnectionConditions => { /* ... */ },
 ///     FlowValidationType::Unspecified => { /* ... */ },
@@ -110,6 +112,10 @@ pub enum FlowValidationType {
     #[allow(missing_docs)] // documentation missing in model
     UnknownConnectionTargetInput,
     #[allow(missing_docs)] // documentation missing in model
+    UnknownNodeInput,
+    #[allow(missing_docs)] // documentation missing in model
+    UnknownNodeOutput,
+    #[allow(missing_docs)] // documentation missing in model
     UnreachableNode,
     #[allow(missing_docs)] // documentation missing in model
     UnsatisfiedConnectionConditions,
@@ -144,6 +150,8 @@ impl ::std::convert::From<&str> for FlowValidationType {
             "UnknownConnectionSourceOutput" => FlowValidationType::UnknownConnectionSourceOutput,
             "UnknownConnectionTarget" => FlowValidationType::UnknownConnectionTarget,
             "UnknownConnectionTargetInput" => FlowValidationType::UnknownConnectionTargetInput,
+            "UnknownNodeInput" => FlowValidationType::UnknownNodeInput,
+            "UnknownNodeOutput" => FlowValidationType::UnknownNodeOutput,
             "UnreachableNode" => FlowValidationType::UnreachableNode,
             "UnsatisfiedConnectionConditions" => FlowValidationType::UnsatisfiedConnectionConditions,
             "Unspecified" => FlowValidationType::Unspecified,
@@ -184,6 +192,8 @@ impl FlowValidationType {
             FlowValidationType::UnknownConnectionSourceOutput => "UnknownConnectionSourceOutput",
             FlowValidationType::UnknownConnectionTarget => "UnknownConnectionTarget",
             FlowValidationType::UnknownConnectionTargetInput => "UnknownConnectionTargetInput",
+            FlowValidationType::UnknownNodeInput => "UnknownNodeInput",
+            FlowValidationType::UnknownNodeOutput => "UnknownNodeOutput",
             FlowValidationType::UnreachableNode => "UnreachableNode",
             FlowValidationType::UnsatisfiedConnectionConditions => "UnsatisfiedConnectionConditions",
             FlowValidationType::Unspecified => "Unspecified",
@@ -215,6 +225,8 @@ impl FlowValidationType {
             "UnknownConnectionSourceOutput",
             "UnknownConnectionTarget",
             "UnknownConnectionTargetInput",
+            "UnknownNodeInput",
+            "UnknownNodeOutput",
             "UnreachableNode",
             "UnsatisfiedConnectionConditions",
             "Unspecified",
@@ -263,6 +275,8 @@ impl ::std::fmt::Display for FlowValidationType {
             FlowValidationType::UnknownConnectionSourceOutput => write!(f, "UnknownConnectionSourceOutput"),
             FlowValidationType::UnknownConnectionTarget => write!(f, "UnknownConnectionTarget"),
             FlowValidationType::UnknownConnectionTargetInput => write!(f, "UnknownConnectionTargetInput"),
+            FlowValidationType::UnknownNodeInput => write!(f, "UnknownNodeInput"),
+            FlowValidationType::UnknownNodeOutput => write!(f, "UnknownNodeOutput"),
             FlowValidationType::UnreachableNode => write!(f, "UnreachableNode"),
             FlowValidationType::UnsatisfiedConnectionConditions => write!(f, "UnsatisfiedConnectionConditions"),
             FlowValidationType::Unspecified => write!(f, "Unspecified"),

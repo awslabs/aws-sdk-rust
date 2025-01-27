@@ -561,6 +561,8 @@ pub(crate) mod shape_agent_flow_node_configuration;
 
 pub(crate) mod shape_bedrock_embedding_model_configuration;
 
+pub(crate) mod shape_cache_point_block;
+
 pub(crate) mod shape_collector_flow_node_configuration;
 
 pub(crate) mod shape_condition_flow_node_configuration;
@@ -666,6 +668,10 @@ pub(crate) mod shape_unknown_connection_source_output_flow_validation_details;
 pub(crate) mod shape_unknown_connection_target_flow_validation_details;
 
 pub(crate) mod shape_unknown_connection_target_input_flow_validation_details;
+
+pub(crate) mod shape_unknown_node_input_flow_validation_details;
+
+pub(crate) mod shape_unknown_node_output_flow_validation_details;
 
 pub(crate) mod shape_unreachable_node_flow_validation_details;
 

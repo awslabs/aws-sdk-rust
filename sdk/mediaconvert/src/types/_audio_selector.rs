@@ -10,13 +10,13 @@ pub struct AudioSelector {
     pub custom_language_code: ::std::option::Option<::std::string::String>,
     /// Enable this setting on one audio selector to set it as the default for the job. The service uses this default for outputs where it can't find the specified input audio. If you don't set a default, those outputs have no audio.
     pub default_selection: ::std::option::Option<crate::types::AudioDefaultSelection>,
-    /// Specifies audio data from an external file source.
+    /// Specify the S3, HTTP, or HTTPS URL for your external audio file input.
     pub external_audio_file_input: ::std::option::Option<::std::string::String>,
     /// Settings specific to audio sources in an HLS alternate rendition group. Specify the properties (renditionGroupId, renditionName or renditionLanguageCode) to identify the unique audio track among the alternative rendition groups present in the HLS manifest. If no unique track is found, or multiple tracks match the properties provided, the job fails. If no properties in hlsRenditionGroupSettings are specified, the default audio track within the video segment is chosen. If there is no audio within video segment, the alternative audio with DEFAULT=YES is chosen instead.
     pub hls_rendition_group_settings: ::std::option::Option<crate::types::HlsRenditionGroupSettings>,
-    /// Selects a specific language code from within an audio source.
+    /// Specify the language to select from your audio input. In the MediaConvert console choose from a list of languages. In your JSON job settings choose from an ISO 639-2 three-letter code listed at https://www.loc.gov/standards/iso639-2/php/code_list.php
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
-    /// Specifies a time delta in milliseconds to offset the audio from the input video.
+    /// Specify a time delta, in milliseconds, to offset the audio from the input video. To specify no offset: Keep the default value, 0. To specify an offset: Enter an integer from -2147483648 to 2147483647
     pub offset: ::std::option::Option<i32>,
     /// Selects a specific PID from within an audio source (e.g. 257 selects PID 0x101).
     pub pids: ::std::option::Option<::std::vec::Vec<i32>>,
@@ -42,7 +42,7 @@ impl AudioSelector {
     pub fn default_selection(&self) -> ::std::option::Option<&crate::types::AudioDefaultSelection> {
         self.default_selection.as_ref()
     }
-    /// Specifies audio data from an external file source.
+    /// Specify the S3, HTTP, or HTTPS URL for your external audio file input.
     pub fn external_audio_file_input(&self) -> ::std::option::Option<&str> {
         self.external_audio_file_input.as_deref()
     }
@@ -50,11 +50,11 @@ impl AudioSelector {
     pub fn hls_rendition_group_settings(&self) -> ::std::option::Option<&crate::types::HlsRenditionGroupSettings> {
         self.hls_rendition_group_settings.as_ref()
     }
-    /// Selects a specific language code from within an audio source.
+    /// Specify the language to select from your audio input. In the MediaConvert console choose from a list of languages. In your JSON job settings choose from an ISO 639-2 three-letter code listed at https://www.loc.gov/standards/iso639-2/php/code_list.php
     pub fn language_code(&self) -> ::std::option::Option<&crate::types::LanguageCode> {
         self.language_code.as_ref()
     }
-    /// Specifies a time delta in milliseconds to offset the audio from the input video.
+    /// Specify a time delta, in milliseconds, to offset the audio from the input video. To specify no offset: Keep the default value, 0. To specify an offset: Enter an integer from -2147483648 to 2147483647
     pub fn offset(&self) -> ::std::option::Option<i32> {
         self.offset
     }
@@ -150,17 +150,17 @@ impl AudioSelectorBuilder {
     pub fn get_default_selection(&self) -> &::std::option::Option<crate::types::AudioDefaultSelection> {
         &self.default_selection
     }
-    /// Specifies audio data from an external file source.
+    /// Specify the S3, HTTP, or HTTPS URL for your external audio file input.
     pub fn external_audio_file_input(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.external_audio_file_input = ::std::option::Option::Some(input.into());
         self
     }
-    /// Specifies audio data from an external file source.
+    /// Specify the S3, HTTP, or HTTPS URL for your external audio file input.
     pub fn set_external_audio_file_input(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.external_audio_file_input = input;
         self
     }
-    /// Specifies audio data from an external file source.
+    /// Specify the S3, HTTP, or HTTPS URL for your external audio file input.
     pub fn get_external_audio_file_input(&self) -> &::std::option::Option<::std::string::String> {
         &self.external_audio_file_input
     }
@@ -178,31 +178,31 @@ impl AudioSelectorBuilder {
     pub fn get_hls_rendition_group_settings(&self) -> &::std::option::Option<crate::types::HlsRenditionGroupSettings> {
         &self.hls_rendition_group_settings
     }
-    /// Selects a specific language code from within an audio source.
+    /// Specify the language to select from your audio input. In the MediaConvert console choose from a list of languages. In your JSON job settings choose from an ISO 639-2 three-letter code listed at https://www.loc.gov/standards/iso639-2/php/code_list.php
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.language_code = ::std::option::Option::Some(input);
         self
     }
-    /// Selects a specific language code from within an audio source.
+    /// Specify the language to select from your audio input. In the MediaConvert console choose from a list of languages. In your JSON job settings choose from an ISO 639-2 three-letter code listed at https://www.loc.gov/standards/iso639-2/php/code_list.php
     pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.language_code = input;
         self
     }
-    /// Selects a specific language code from within an audio source.
+    /// Specify the language to select from your audio input. In the MediaConvert console choose from a list of languages. In your JSON job settings choose from an ISO 639-2 three-letter code listed at https://www.loc.gov/standards/iso639-2/php/code_list.php
     pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
         &self.language_code
     }
-    /// Specifies a time delta in milliseconds to offset the audio from the input video.
+    /// Specify a time delta, in milliseconds, to offset the audio from the input video. To specify no offset: Keep the default value, 0. To specify an offset: Enter an integer from -2147483648 to 2147483647
     pub fn offset(mut self, input: i32) -> Self {
         self.offset = ::std::option::Option::Some(input);
         self
     }
-    /// Specifies a time delta in milliseconds to offset the audio from the input video.
+    /// Specify a time delta, in milliseconds, to offset the audio from the input video. To specify no offset: Keep the default value, 0. To specify an offset: Enter an integer from -2147483648 to 2147483647
     pub fn set_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.offset = input;
         self
     }
-    /// Specifies a time delta in milliseconds to offset the audio from the input video.
+    /// Specify a time delta, in milliseconds, to offset the audio from the input video. To specify no offset: Keep the default value, 0. To specify an offset: Enter an integer from -2147483648 to 2147483647
     pub fn get_offset(&self) -> &::std::option::Option<i32> {
         &self.offset
     }

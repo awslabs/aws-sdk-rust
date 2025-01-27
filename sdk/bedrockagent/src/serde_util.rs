@@ -2313,6 +2313,30 @@ pub(crate) fn unknown_connection_target_input_flow_validation_details_correct_er
     builder
 }
 
+pub(crate) fn unknown_node_input_flow_validation_details_correct_errors(
+    mut builder: crate::types::builders::UnknownNodeInputFlowValidationDetailsBuilder,
+) -> crate::types::builders::UnknownNodeInputFlowValidationDetailsBuilder {
+    if builder.node.is_none() {
+        builder.node = Some(Default::default())
+    }
+    if builder.input.is_none() {
+        builder.input = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn unknown_node_output_flow_validation_details_correct_errors(
+    mut builder: crate::types::builders::UnknownNodeOutputFlowValidationDetailsBuilder,
+) -> crate::types::builders::UnknownNodeOutputFlowValidationDetailsBuilder {
+    if builder.node.is_none() {
+        builder.node = Some(Default::default())
+    }
+    if builder.output.is_none() {
+        builder.output = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn unreachable_node_flow_validation_details_correct_errors(
     mut builder: crate::types::builders::UnreachableNodeFlowValidationDetailsBuilder,
 ) -> crate::types::builders::UnreachableNodeFlowValidationDetailsBuilder {
@@ -2348,6 +2372,15 @@ pub(crate) fn agent_flow_node_configuration_correct_errors(
 ) -> crate::types::builders::AgentFlowNodeConfigurationBuilder {
     if builder.agent_alias_arn.is_none() {
         builder.agent_alias_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn cache_point_block_correct_errors(
+    mut builder: crate::types::builders::CachePointBlockBuilder,
+) -> crate::types::builders::CachePointBlockBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::CachePointType>().ok()
     }
     builder
 }
