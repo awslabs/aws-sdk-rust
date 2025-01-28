@@ -23,6 +23,13 @@ impl crate::operation::describe_capacity_block_offerings::builders::DescribeCapa
 /// Fluent builder constructing a request to `DescribeCapacityBlockOfferings`.
 ///
 /// <p>Describes Capacity Block offerings available for purchase in the Amazon Web Services Region that you're currently using. With Capacity Blocks, you purchase a specific instance type for a period of time.</p>
+/// <p>To search for an available Capacity Block offering, you specify a reservation duration and instance count. You must select one of the following options.</p>
+/// <ul>
+/// <li>
+/// <p>For reservation durations<b> 1-day increments up 14 days and 7-day increments up to 182 days total</b></p></li>
+/// <li>
+/// <p>For instance count<b> 1, 2, 4, 8, 16, 32, or 64 instances</b></p></li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeCapacityBlockOfferingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -9,107 +9,113 @@ pub fn ser_create_delivery_stream_input_input(
     if let Some(var_2) = &input.delivery_stream_type {
         object.key("DeliveryStreamType").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.kinesis_stream_source_configuration {
+    if let Some(var_3) = &input.direct_put_source_configuration {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("KinesisStreamSourceConfiguration").start_object();
-        crate::protocol_serde::shape_kinesis_stream_source_configuration::ser_kinesis_stream_source_configuration(&mut object_4, var_3)?;
+        let mut object_4 = object.key("DirectPutSourceConfiguration").start_object();
+        crate::protocol_serde::shape_direct_put_source_configuration::ser_direct_put_source_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.delivery_stream_encryption_configuration_input {
+    if let Some(var_5) = &input.kinesis_stream_source_configuration {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("DeliveryStreamEncryptionConfigurationInput").start_object();
-        crate::protocol_serde::shape_delivery_stream_encryption_configuration_input::ser_delivery_stream_encryption_configuration_input(
-            &mut object_6,
-            var_5,
-        )?;
+        let mut object_6 = object.key("KinesisStreamSourceConfiguration").start_object();
+        crate::protocol_serde::shape_kinesis_stream_source_configuration::ser_kinesis_stream_source_configuration(&mut object_6, var_5)?;
         object_6.finish();
     }
-    if let Some(var_7) = &input.s3_destination_configuration {
+    if let Some(var_7) = &input.delivery_stream_encryption_configuration_input {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("S3DestinationConfiguration").start_object();
-        crate::protocol_serde::shape_s3_destination_configuration::ser_s3_destination_configuration(&mut object_8, var_7)?;
+        let mut object_8 = object.key("DeliveryStreamEncryptionConfigurationInput").start_object();
+        crate::protocol_serde::shape_delivery_stream_encryption_configuration_input::ser_delivery_stream_encryption_configuration_input(
+            &mut object_8,
+            var_7,
+        )?;
         object_8.finish();
     }
-    if let Some(var_9) = &input.extended_s3_destination_configuration {
+    if let Some(var_9) = &input.s3_destination_configuration {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("ExtendedS3DestinationConfiguration").start_object();
-        crate::protocol_serde::shape_extended_s3_destination_configuration::ser_extended_s3_destination_configuration(&mut object_10, var_9)?;
+        let mut object_10 = object.key("S3DestinationConfiguration").start_object();
+        crate::protocol_serde::shape_s3_destination_configuration::ser_s3_destination_configuration(&mut object_10, var_9)?;
         object_10.finish();
     }
-    if let Some(var_11) = &input.redshift_destination_configuration {
+    if let Some(var_11) = &input.extended_s3_destination_configuration {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("RedshiftDestinationConfiguration").start_object();
-        crate::protocol_serde::shape_redshift_destination_configuration::ser_redshift_destination_configuration(&mut object_12, var_11)?;
+        let mut object_12 = object.key("ExtendedS3DestinationConfiguration").start_object();
+        crate::protocol_serde::shape_extended_s3_destination_configuration::ser_extended_s3_destination_configuration(&mut object_12, var_11)?;
         object_12.finish();
     }
-    if let Some(var_13) = &input.elasticsearch_destination_configuration {
+    if let Some(var_13) = &input.redshift_destination_configuration {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("ElasticsearchDestinationConfiguration").start_object();
-        crate::protocol_serde::shape_elasticsearch_destination_configuration::ser_elasticsearch_destination_configuration(&mut object_14, var_13)?;
+        let mut object_14 = object.key("RedshiftDestinationConfiguration").start_object();
+        crate::protocol_serde::shape_redshift_destination_configuration::ser_redshift_destination_configuration(&mut object_14, var_13)?;
         object_14.finish();
     }
-    if let Some(var_15) = &input.amazonopensearchservice_destination_configuration {
+    if let Some(var_15) = &input.elasticsearch_destination_configuration {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("AmazonopensearchserviceDestinationConfiguration").start_object();
-        crate::protocol_serde::shape_amazonopensearchservice_destination_configuration::ser_amazonopensearchservice_destination_configuration(
-            &mut object_16,
-            var_15,
-        )?;
+        let mut object_16 = object.key("ElasticsearchDestinationConfiguration").start_object();
+        crate::protocol_serde::shape_elasticsearch_destination_configuration::ser_elasticsearch_destination_configuration(&mut object_16, var_15)?;
         object_16.finish();
     }
-    if let Some(var_17) = &input.splunk_destination_configuration {
+    if let Some(var_17) = &input.amazonopensearchservice_destination_configuration {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("SplunkDestinationConfiguration").start_object();
-        crate::protocol_serde::shape_splunk_destination_configuration::ser_splunk_destination_configuration(&mut object_18, var_17)?;
+        let mut object_18 = object.key("AmazonopensearchserviceDestinationConfiguration").start_object();
+        crate::protocol_serde::shape_amazonopensearchservice_destination_configuration::ser_amazonopensearchservice_destination_configuration(
+            &mut object_18,
+            var_17,
+        )?;
         object_18.finish();
     }
-    if let Some(var_19) = &input.http_endpoint_destination_configuration {
+    if let Some(var_19) = &input.splunk_destination_configuration {
         #[allow(unused_mut)]
-        let mut object_20 = object.key("HttpEndpointDestinationConfiguration").start_object();
-        crate::protocol_serde::shape_http_endpoint_destination_configuration::ser_http_endpoint_destination_configuration(&mut object_20, var_19)?;
+        let mut object_20 = object.key("SplunkDestinationConfiguration").start_object();
+        crate::protocol_serde::shape_splunk_destination_configuration::ser_splunk_destination_configuration(&mut object_20, var_19)?;
         object_20.finish();
     }
-    if let Some(var_21) = &input.tags {
-        let mut array_22 = object.key("Tags").start_array();
-        for item_23 in var_21 {
+    if let Some(var_21) = &input.http_endpoint_destination_configuration {
+        #[allow(unused_mut)]
+        let mut object_22 = object.key("HttpEndpointDestinationConfiguration").start_object();
+        crate::protocol_serde::shape_http_endpoint_destination_configuration::ser_http_endpoint_destination_configuration(&mut object_22, var_21)?;
+        object_22.finish();
+    }
+    if let Some(var_23) = &input.tags {
+        let mut array_24 = object.key("Tags").start_array();
+        for item_25 in var_23 {
             {
                 #[allow(unused_mut)]
-                let mut object_24 = array_22.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_24, item_23)?;
-                object_24.finish();
+                let mut object_26 = array_24.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_26, item_25)?;
+                object_26.finish();
             }
         }
-        array_22.finish();
+        array_24.finish();
     }
-    if let Some(var_25) = &input.amazon_open_search_serverless_destination_configuration {
+    if let Some(var_27) = &input.amazon_open_search_serverless_destination_configuration {
         #[allow(unused_mut)]
-        let mut object_26 = object.key("AmazonOpenSearchServerlessDestinationConfiguration").start_object();
-        crate::protocol_serde::shape_amazon_open_search_serverless_destination_configuration::ser_amazon_open_search_serverless_destination_configuration(&mut object_26, var_25)?;
-        object_26.finish();
-    }
-    if let Some(var_27) = &input.msk_source_configuration {
-        #[allow(unused_mut)]
-        let mut object_28 = object.key("MSKSourceConfiguration").start_object();
-        crate::protocol_serde::shape_msk_source_configuration::ser_msk_source_configuration(&mut object_28, var_27)?;
+        let mut object_28 = object.key("AmazonOpenSearchServerlessDestinationConfiguration").start_object();
+        crate::protocol_serde::shape_amazon_open_search_serverless_destination_configuration::ser_amazon_open_search_serverless_destination_configuration(&mut object_28, var_27)?;
         object_28.finish();
     }
-    if let Some(var_29) = &input.snowflake_destination_configuration {
+    if let Some(var_29) = &input.msk_source_configuration {
         #[allow(unused_mut)]
-        let mut object_30 = object.key("SnowflakeDestinationConfiguration").start_object();
-        crate::protocol_serde::shape_snowflake_destination_configuration::ser_snowflake_destination_configuration(&mut object_30, var_29)?;
+        let mut object_30 = object.key("MSKSourceConfiguration").start_object();
+        crate::protocol_serde::shape_msk_source_configuration::ser_msk_source_configuration(&mut object_30, var_29)?;
         object_30.finish();
     }
-    if let Some(var_31) = &input.iceberg_destination_configuration {
+    if let Some(var_31) = &input.snowflake_destination_configuration {
         #[allow(unused_mut)]
-        let mut object_32 = object.key("IcebergDestinationConfiguration").start_object();
-        crate::protocol_serde::shape_iceberg_destination_configuration::ser_iceberg_destination_configuration(&mut object_32, var_31)?;
+        let mut object_32 = object.key("SnowflakeDestinationConfiguration").start_object();
+        crate::protocol_serde::shape_snowflake_destination_configuration::ser_snowflake_destination_configuration(&mut object_32, var_31)?;
         object_32.finish();
     }
-    if let Some(var_33) = &input.database_source_configuration {
+    if let Some(var_33) = &input.iceberg_destination_configuration {
         #[allow(unused_mut)]
-        let mut object_34 = object.key("DatabaseSourceConfiguration").start_object();
-        crate::protocol_serde::shape_database_source_configuration::ser_database_source_configuration(&mut object_34, var_33)?;
+        let mut object_34 = object.key("IcebergDestinationConfiguration").start_object();
+        crate::protocol_serde::shape_iceberg_destination_configuration::ser_iceberg_destination_configuration(&mut object_34, var_33)?;
         object_34.finish();
+    }
+    if let Some(var_35) = &input.database_source_configuration {
+        #[allow(unused_mut)]
+        let mut object_36 = object.key("DatabaseSourceConfiguration").start_object();
+        crate::protocol_serde::shape_database_source_configuration::ser_database_source_configuration(&mut object_36, var_35)?;
+        object_36.finish();
     }
     Ok(())
 }

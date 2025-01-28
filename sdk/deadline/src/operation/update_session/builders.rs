@@ -122,6 +122,20 @@ impl UpdateSessionFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
+    /// <p>The life cycle status to update in the session.</p>
+    pub fn target_lifecycle_status(mut self, input: crate::types::SessionLifecycleTargetStatus) -> Self {
+        self.inner = self.inner.target_lifecycle_status(input);
+        self
+    }
+    /// <p>The life cycle status to update in the session.</p>
+    pub fn set_target_lifecycle_status(mut self, input: ::std::option::Option<crate::types::SessionLifecycleTargetStatus>) -> Self {
+        self.inner = self.inner.set_target_lifecycle_status(input);
+        self
+    }
+    /// <p>The life cycle status to update in the session.</p>
+    pub fn get_target_lifecycle_status(&self) -> &::std::option::Option<crate::types::SessionLifecycleTargetStatus> {
+        self.inner.get_target_lifecycle_status()
+    }
     /// <p>The farm ID to update in the session.</p>
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
@@ -177,19 +191,5 @@ impl UpdateSessionFluentBuilder {
     /// <p>The session ID to update.</p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_session_id()
-    }
-    /// <p>The life cycle status to update in the session.</p>
-    pub fn target_lifecycle_status(mut self, input: crate::types::SessionLifecycleTargetStatus) -> Self {
-        self.inner = self.inner.target_lifecycle_status(input);
-        self
-    }
-    /// <p>The life cycle status to update in the session.</p>
-    pub fn set_target_lifecycle_status(mut self, input: ::std::option::Option<crate::types::SessionLifecycleTargetStatus>) -> Self {
-        self.inner = self.inner.set_target_lifecycle_status(input);
-        self
-    }
-    /// <p>The life cycle status to update in the session.</p>
-    pub fn get_target_lifecycle_status(&self) -> &::std::option::Option<crate::types::SessionLifecycleTargetStatus> {
-        self.inner.get_target_lifecycle_status()
     }
 }

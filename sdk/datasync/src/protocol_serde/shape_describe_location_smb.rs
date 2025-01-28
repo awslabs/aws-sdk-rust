@@ -137,6 +137,23 @@ pub(crate) fn de_describe_location_smb(
                         ::aws_smithy_types::date_time::Format::EpochSeconds,
                     )?);
                 }
+                "DnsIpAddresses" => {
+                    builder = builder.set_dns_ip_addresses(crate::protocol_serde::shape_dns_ip_list::de_dns_ip_list(tokens)?);
+                }
+                "KerberosPrincipal" => {
+                    builder = builder.set_kerberos_principal(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "AuthenticationType" => {
+                    builder = builder.set_authentication_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::SmbAuthenticationType::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

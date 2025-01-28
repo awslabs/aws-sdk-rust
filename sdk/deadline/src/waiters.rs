@@ -15,6 +15,9 @@ pub mod license_endpoint_valid;
 /// Supporting types for the `queue_fleet_association_stopped` waiter.
 pub mod queue_fleet_association_stopped;
 
+/// Supporting types for the `queue_limit_association_stopped` waiter.
+pub mod queue_limit_association_stopped;
+
 /// Supporting types for the `queue_scheduling` waiter.
 pub mod queue_scheduling;
 

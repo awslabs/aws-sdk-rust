@@ -109,6 +109,16 @@ pub(crate) fn reflens_list_license_endpoints_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_limits_output_output_next_token(
+    input: &crate::operation::list_limits::ListLimitsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_metered_products_output_output_next_token(
     input: &crate::operation::list_metered_products::ListMeteredProductsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -141,6 +151,16 @@ pub(crate) fn reflens_list_queue_environments_output_output_next_token(
 
 pub(crate) fn reflens_list_queue_fleet_associations_output_output_next_token(
     input: &crate::operation::list_queue_fleet_associations::ListQueueFleetAssociationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_queue_limit_associations_output_output_next_token(
+    input: &crate::operation::list_queue_limit_associations::ListQueueLimitAssociationsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -349,6 +369,13 @@ pub(crate) fn lens_list_license_endpoints_output_output_license_endpoints(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_limits_output_output_limits(
+    input: crate::operation::list_limits::ListLimitsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::LimitSummary>> {
+    let input = input.limits;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_metered_products_output_output_metered_products(
     input: crate::operation::list_metered_products::ListMeteredProductsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::MeteredProductSummary>> {
@@ -374,6 +401,13 @@ pub(crate) fn lens_list_queue_fleet_associations_output_output_queue_fleet_assoc
     input: crate::operation::list_queue_fleet_associations::ListQueueFleetAssociationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::QueueFleetAssociationSummary>> {
     let input = input.queue_fleet_associations;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_queue_limit_associations_output_output_queue_limit_associations(
+    input: crate::operation::list_queue_limit_associations::ListQueueLimitAssociationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::QueueLimitAssociationSummary>> {
+    let input = input.queue_limit_associations;
     ::std::option::Option::Some(input)
 }
 

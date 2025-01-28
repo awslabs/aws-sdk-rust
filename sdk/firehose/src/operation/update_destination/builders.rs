@@ -200,17 +200,17 @@ impl UpdateDestinationFluentBuilder {
     pub fn get_redshift_destination_update(&self) -> &::std::option::Option<crate::types::RedshiftDestinationUpdate> {
         self.inner.get_redshift_destination_update()
     }
-    /// <p>Describes an update for a destination in Amazon ES.</p>
+    /// <p>Describes an update for a destination in Amazon OpenSearch Service.</p>
     pub fn elasticsearch_destination_update(mut self, input: crate::types::ElasticsearchDestinationUpdate) -> Self {
         self.inner = self.inner.elasticsearch_destination_update(input);
         self
     }
-    /// <p>Describes an update for a destination in Amazon ES.</p>
+    /// <p>Describes an update for a destination in Amazon OpenSearch Service.</p>
     pub fn set_elasticsearch_destination_update(mut self, input: ::std::option::Option<crate::types::ElasticsearchDestinationUpdate>) -> Self {
         self.inner = self.inner.set_elasticsearch_destination_update(input);
         self
     }
-    /// <p>Describes an update for a destination in Amazon ES.</p>
+    /// <p>Describes an update for a destination in Amazon OpenSearch Service.</p>
     pub fn get_elasticsearch_destination_update(&self) -> &::std::option::Option<crate::types::ElasticsearchDestinationUpdate> {
         self.inner.get_elasticsearch_destination_update()
     }

@@ -27,6 +27,10 @@ pub struct CreateJobInput {
     pub max_failed_tasks_count: ::std::option::Option<i32>,
     /// <p>The maximum number of retries for each task.</p>
     pub max_retries_per_task: ::std::option::Option<i32>,
+    /// <p>The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers.</p>
+    /// <p>You can't set the <code>maxWorkerCount</code> to 0. If you set it to -1, there is no maximum number of workers.</p>
+    /// <p>If you don't specify the <code>maxWorkerCount</code>, Deadline Cloud won't throttle the number of workers used to process the job.</p>
+    pub max_worker_count: ::std::option::Option<i32>,
     /// <p>The job ID for the source job.</p>
     pub source_job_id: ::std::option::Option<::std::string::String>,
 }
@@ -79,6 +83,12 @@ impl CreateJobInput {
     pub fn max_retries_per_task(&self) -> ::std::option::Option<i32> {
         self.max_retries_per_task
     }
+    /// <p>The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers.</p>
+    /// <p>You can't set the <code>maxWorkerCount</code> to 0. If you set it to -1, there is no maximum number of workers.</p>
+    /// <p>If you don't specify the <code>maxWorkerCount</code>, Deadline Cloud won't throttle the number of workers used to process the job.</p>
+    pub fn max_worker_count(&self) -> ::std::option::Option<i32> {
+        self.max_worker_count
+    }
     /// <p>The job ID for the source job.</p>
     pub fn source_job_id(&self) -> ::std::option::Option<&str> {
         self.source_job_id.as_deref()
@@ -99,6 +109,7 @@ impl ::std::fmt::Debug for CreateJobInput {
         formatter.field("target_task_run_status", &self.target_task_run_status);
         formatter.field("max_failed_tasks_count", &self.max_failed_tasks_count);
         formatter.field("max_retries_per_task", &self.max_retries_per_task);
+        formatter.field("max_worker_count", &self.max_worker_count);
         formatter.field("source_job_id", &self.source_job_id);
         formatter.finish()
     }
@@ -126,6 +137,7 @@ pub struct CreateJobInputBuilder {
     pub(crate) target_task_run_status: ::std::option::Option<crate::types::CreateJobTargetTaskRunStatus>,
     pub(crate) max_failed_tasks_count: ::std::option::Option<i32>,
     pub(crate) max_retries_per_task: ::std::option::Option<i32>,
+    pub(crate) max_worker_count: ::std::option::Option<i32>,
     pub(crate) source_job_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateJobInputBuilder {
@@ -309,6 +321,26 @@ impl CreateJobInputBuilder {
     pub fn get_max_retries_per_task(&self) -> &::std::option::Option<i32> {
         &self.max_retries_per_task
     }
+    /// <p>The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers.</p>
+    /// <p>You can't set the <code>maxWorkerCount</code> to 0. If you set it to -1, there is no maximum number of workers.</p>
+    /// <p>If you don't specify the <code>maxWorkerCount</code>, Deadline Cloud won't throttle the number of workers used to process the job.</p>
+    pub fn max_worker_count(mut self, input: i32) -> Self {
+        self.max_worker_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers.</p>
+    /// <p>You can't set the <code>maxWorkerCount</code> to 0. If you set it to -1, there is no maximum number of workers.</p>
+    /// <p>If you don't specify the <code>maxWorkerCount</code>, Deadline Cloud won't throttle the number of workers used to process the job.</p>
+    pub fn set_max_worker_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_worker_count = input;
+        self
+    }
+    /// <p>The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers.</p>
+    /// <p>You can't set the <code>maxWorkerCount</code> to 0. If you set it to -1, there is no maximum number of workers.</p>
+    /// <p>If you don't specify the <code>maxWorkerCount</code>, Deadline Cloud won't throttle the number of workers used to process the job.</p>
+    pub fn get_max_worker_count(&self) -> &::std::option::Option<i32> {
+        &self.max_worker_count
+    }
     /// <p>The job ID for the source job.</p>
     pub fn source_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_job_id = ::std::option::Option::Some(input.into());
@@ -338,6 +370,7 @@ impl CreateJobInputBuilder {
             target_task_run_status: self.target_task_run_status,
             max_failed_tasks_count: self.max_failed_tasks_count,
             max_retries_per_task: self.max_retries_per_task,
+            max_worker_count: self.max_worker_count,
             source_job_id: self.source_job_id,
         })
     }
@@ -357,6 +390,7 @@ impl ::std::fmt::Debug for CreateJobInputBuilder {
         formatter.field("target_task_run_status", &self.target_task_run_status);
         formatter.field("max_failed_tasks_count", &self.max_failed_tasks_count);
         formatter.field("max_retries_per_task", &self.max_retries_per_task);
+        formatter.field("max_worker_count", &self.max_worker_count);
         formatter.field("source_job_id", &self.source_job_id);
         formatter.finish()
     }

@@ -14,7 +14,7 @@ pub struct ManifestProperties {
     pub output_relative_directories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The file path.</p>
     pub input_manifest_path: ::std::option::Option<::std::string::String>,
-    /// <p>The has value of the file.</p>
+    /// <p>The hash value of the file.</p>
     pub input_manifest_hash: ::std::option::Option<::std::string::String>,
 }
 impl ManifestProperties {
@@ -41,7 +41,7 @@ impl ManifestProperties {
     pub fn input_manifest_path(&self) -> ::std::option::Option<&str> {
         self.input_manifest_path.as_deref()
     }
-    /// <p>The has value of the file.</p>
+    /// <p>The hash value of the file.</p>
     pub fn input_manifest_hash(&self) -> ::std::option::Option<&str> {
         self.input_manifest_hash.as_deref()
     }
@@ -155,17 +155,17 @@ impl ManifestPropertiesBuilder {
     pub fn get_input_manifest_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.input_manifest_path
     }
-    /// <p>The has value of the file.</p>
+    /// <p>The hash value of the file.</p>
     pub fn input_manifest_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_manifest_hash = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The has value of the file.</p>
+    /// <p>The hash value of the file.</p>
     pub fn set_input_manifest_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_manifest_hash = input;
         self
     }
-    /// <p>The has value of the file.</p>
+    /// <p>The hash value of the file.</p>
     pub fn get_input_manifest_hash(&self) -> &::std::option::Option<::std::string::String> {
         &self.input_manifest_hash
     }

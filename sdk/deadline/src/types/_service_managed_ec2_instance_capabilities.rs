@@ -14,7 +14,7 @@ pub struct ServiceManagedEc2InstanceCapabilities {
     pub cpu_architecture_type: crate::types::CpuArchitectureType,
     /// <p>The root EBS volume.</p>
     pub root_ebs_volume: ::std::option::Option<crate::types::Ec2EbsVolume>,
-    /// <p>The GPU accelerator capabilities required for the Amazon EC2 instances. If you include the <code>acceleratorCapabilities</code> property in the <a href="https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ServiceManagedEc2InstanceCapabilities">ServiceManagedEc2InstanceCapabilities</a> object, all of the Amazon EC2 instances will have at least one accelerator.</p>
+    /// <p>Describes the GPU accelerator capabilities required for worker host instances in this fleet.</p>
     pub accelerator_capabilities: ::std::option::Option<crate::types::AcceleratorCapabilities>,
     /// <p>The allowable Amazon EC2 instance types.</p>
     pub allowed_instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -46,7 +46,7 @@ impl ServiceManagedEc2InstanceCapabilities {
     pub fn root_ebs_volume(&self) -> ::std::option::Option<&crate::types::Ec2EbsVolume> {
         self.root_ebs_volume.as_ref()
     }
-    /// <p>The GPU accelerator capabilities required for the Amazon EC2 instances. If you include the <code>acceleratorCapabilities</code> property in the <a href="https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ServiceManagedEc2InstanceCapabilities">ServiceManagedEc2InstanceCapabilities</a> object, all of the Amazon EC2 instances will have at least one accelerator.</p>
+    /// <p>Describes the GPU accelerator capabilities required for worker host instances in this fleet.</p>
     pub fn accelerator_capabilities(&self) -> ::std::option::Option<&crate::types::AcceleratorCapabilities> {
         self.accelerator_capabilities.as_ref()
     }
@@ -172,17 +172,17 @@ impl ServiceManagedEc2InstanceCapabilitiesBuilder {
     pub fn get_root_ebs_volume(&self) -> &::std::option::Option<crate::types::Ec2EbsVolume> {
         &self.root_ebs_volume
     }
-    /// <p>The GPU accelerator capabilities required for the Amazon EC2 instances. If you include the <code>acceleratorCapabilities</code> property in the <a href="https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ServiceManagedEc2InstanceCapabilities">ServiceManagedEc2InstanceCapabilities</a> object, all of the Amazon EC2 instances will have at least one accelerator.</p>
+    /// <p>Describes the GPU accelerator capabilities required for worker host instances in this fleet.</p>
     pub fn accelerator_capabilities(mut self, input: crate::types::AcceleratorCapabilities) -> Self {
         self.accelerator_capabilities = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The GPU accelerator capabilities required for the Amazon EC2 instances. If you include the <code>acceleratorCapabilities</code> property in the <a href="https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ServiceManagedEc2InstanceCapabilities">ServiceManagedEc2InstanceCapabilities</a> object, all of the Amazon EC2 instances will have at least one accelerator.</p>
+    /// <p>Describes the GPU accelerator capabilities required for worker host instances in this fleet.</p>
     pub fn set_accelerator_capabilities(mut self, input: ::std::option::Option<crate::types::AcceleratorCapabilities>) -> Self {
         self.accelerator_capabilities = input;
         self
     }
-    /// <p>The GPU accelerator capabilities required for the Amazon EC2 instances. If you include the <code>acceleratorCapabilities</code> property in the <a href="https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ServiceManagedEc2InstanceCapabilities">ServiceManagedEc2InstanceCapabilities</a> object, all of the Amazon EC2 instances will have at least one accelerator.</p>
+    /// <p>Describes the GPU accelerator capabilities required for worker host instances in this fleet.</p>
     pub fn get_accelerator_capabilities(&self) -> &::std::option::Option<crate::types::AcceleratorCapabilities> {
         &self.accelerator_capabilities
     }

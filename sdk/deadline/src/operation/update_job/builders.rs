@@ -119,48 +119,6 @@ impl UpdateJobFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p>The farm ID of the job to update.</p>
-    pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.farm_id(input.into());
-        self
-    }
-    /// <p>The farm ID of the job to update.</p>
-    pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_farm_id(input);
-        self
-    }
-    /// <p>The farm ID of the job to update.</p>
-    pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_farm_id()
-    }
-    /// <p>The queue ID of the job to update.</p>
-    pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.queue_id(input.into());
-        self
-    }
-    /// <p>The queue ID of the job to update.</p>
-    pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_queue_id(input);
-        self
-    }
-    /// <p>The queue ID of the job to update.</p>
-    pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_queue_id()
-    }
-    /// <p>The job ID to update.</p>
-    pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.job_id(input.into());
-        self
-    }
-    /// <p>The job ID to update.</p>
-    pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_job_id(input);
-        self
-    }
-    /// <p>The job ID to update.</p>
-    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_job_id()
-    }
     /// <p>The task status to update the job's tasks to.</p>
     pub fn target_task_run_status(mut self, input: crate::types::JobTargetTaskRunStatus) -> Self {
         self.inner = self.inner.target_task_run_status(input);
@@ -236,5 +194,70 @@ impl UpdateJobFluentBuilder {
     /// </important>
     pub fn get_lifecycle_status(&self) -> &::std::option::Option<crate::types::UpdateJobLifecycleStatus> {
         self.inner.get_lifecycle_status()
+    }
+    /// <p>The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers.</p>
+    /// <p>You can't set the <code>maxWorkerCount</code> to 0. If you set it to -1, there is no maximum number of workers.</p>
+    /// <p>If you don't specify the <code>maxWorkerCount</code>, the default is -1.</p>
+    /// <p>The maximum number of workers that can process tasks in the job.</p>
+    pub fn max_worker_count(mut self, input: i32) -> Self {
+        self.inner = self.inner.max_worker_count(input);
+        self
+    }
+    /// <p>The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers.</p>
+    /// <p>You can't set the <code>maxWorkerCount</code> to 0. If you set it to -1, there is no maximum number of workers.</p>
+    /// <p>If you don't specify the <code>maxWorkerCount</code>, the default is -1.</p>
+    /// <p>The maximum number of workers that can process tasks in the job.</p>
+    pub fn set_max_worker_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_max_worker_count(input);
+        self
+    }
+    /// <p>The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers.</p>
+    /// <p>You can't set the <code>maxWorkerCount</code> to 0. If you set it to -1, there is no maximum number of workers.</p>
+    /// <p>If you don't specify the <code>maxWorkerCount</code>, the default is -1.</p>
+    /// <p>The maximum number of workers that can process tasks in the job.</p>
+    pub fn get_max_worker_count(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_worker_count()
+    }
+    /// <p>The farm ID of the job to update.</p>
+    pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.farm_id(input.into());
+        self
+    }
+    /// <p>The farm ID of the job to update.</p>
+    pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_farm_id(input);
+        self
+    }
+    /// <p>The farm ID of the job to update.</p>
+    pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_farm_id()
+    }
+    /// <p>The queue ID of the job to update.</p>
+    pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.queue_id(input.into());
+        self
+    }
+    /// <p>The queue ID of the job to update.</p>
+    pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_queue_id(input);
+        self
+    }
+    /// <p>The queue ID of the job to update.</p>
+    pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_queue_id()
+    }
+    /// <p>The job ID to update.</p>
+    pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.job_id(input.into());
+        self
+    }
+    /// <p>The job ID to update.</p>
+    pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_job_id(input);
+        self
+    }
+    /// <p>The job ID to update.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_id()
     }
 }

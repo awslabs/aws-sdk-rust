@@ -49,6 +49,9 @@ pub mod create_job;
 /// Types for the `CreateLicenseEndpoint` operation.
 pub mod create_license_endpoint;
 
+/// Types for the `CreateLimit` operation.
+pub mod create_limit;
+
 /// Types for the `CreateMonitor` operation.
 pub mod create_monitor;
 
@@ -60,6 +63,9 @@ pub mod create_queue_environment;
 
 /// Types for the `CreateQueueFleetAssociation` operation.
 pub mod create_queue_fleet_association;
+
+/// Types for the `CreateQueueLimitAssociation` operation.
+pub mod create_queue_limit_association;
 
 /// Types for the `CreateStorageProfile` operation.
 pub mod create_storage_profile;
@@ -79,6 +85,9 @@ pub mod delete_fleet;
 /// Types for the `DeleteLicenseEndpoint` operation.
 pub mod delete_license_endpoint;
 
+/// Types for the `DeleteLimit` operation.
+pub mod delete_limit;
+
 /// Types for the `DeleteMeteredProduct` operation.
 pub mod delete_metered_product;
 
@@ -93,6 +102,9 @@ pub mod delete_queue_environment;
 
 /// Types for the `DeleteQueueFleetAssociation` operation.
 pub mod delete_queue_fleet_association;
+
+/// Types for the `DeleteQueueLimitAssociation` operation.
+pub mod delete_queue_limit_association;
 
 /// Types for the `DeleteStorageProfile` operation.
 pub mod delete_storage_profile;
@@ -127,6 +139,9 @@ pub mod get_job;
 /// Types for the `GetLicenseEndpoint` operation.
 pub mod get_license_endpoint;
 
+/// Types for the `GetLimit` operation.
+pub mod get_limit;
+
 /// Types for the `GetMonitor` operation.
 pub mod get_monitor;
 
@@ -138,6 +153,9 @@ pub mod get_queue_environment;
 
 /// Types for the `GetQueueFleetAssociation` operation.
 pub mod get_queue_fleet_association;
+
+/// Types for the `GetQueueLimitAssociation` operation.
+pub mod get_queue_limit_association;
 
 /// Types for the `GetSession` operation.
 pub mod get_session;
@@ -193,6 +211,9 @@ pub mod list_jobs;
 /// Types for the `ListLicenseEndpoints` operation.
 pub mod list_license_endpoints;
 
+/// Types for the `ListLimits` operation.
+pub mod list_limits;
+
 /// Types for the `ListMeteredProducts` operation.
 pub mod list_metered_products;
 
@@ -204,6 +225,9 @@ pub mod list_queue_environments;
 
 /// Types for the `ListQueueFleetAssociations` operation.
 pub mod list_queue_fleet_associations;
+
+/// Types for the `ListQueueLimitAssociations` operation.
+pub mod list_queue_limit_associations;
 
 /// Types for the `ListQueueMembers` operation.
 pub mod list_queue_members;
@@ -280,6 +304,9 @@ pub mod update_fleet;
 /// Types for the `UpdateJob` operation.
 pub mod update_job;
 
+/// Types for the `UpdateLimit` operation.
+pub mod update_limit;
+
 /// Types for the `UpdateMonitor` operation.
 pub mod update_monitor;
 
@@ -291,6 +318,9 @@ pub mod update_queue_environment;
 
 /// Types for the `UpdateQueueFleetAssociation` operation.
 pub mod update_queue_fleet_association;
+
+/// Types for the `UpdateQueueLimitAssociation` operation.
+pub mod update_queue_limit_association;
 
 /// Types for the `UpdateSession` operation.
 pub mod update_session;

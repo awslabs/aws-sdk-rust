@@ -16,7 +16,7 @@ pub struct UpdateDestinationInput {
     pub extended_s3_destination_update: ::std::option::Option<crate::types::ExtendedS3DestinationUpdate>,
     /// <p>Describes an update for a destination in Amazon Redshift.</p>
     pub redshift_destination_update: ::std::option::Option<crate::types::RedshiftDestinationUpdate>,
-    /// <p>Describes an update for a destination in Amazon ES.</p>
+    /// <p>Describes an update for a destination in Amazon OpenSearch Service.</p>
     pub elasticsearch_destination_update: ::std::option::Option<crate::types::ElasticsearchDestinationUpdate>,
     /// <p>Describes an update for a destination in Amazon OpenSearch Service.</p>
     pub amazonopensearchservice_destination_update: ::std::option::Option<crate::types::AmazonopensearchserviceDestinationUpdate>,
@@ -57,7 +57,7 @@ impl UpdateDestinationInput {
     pub fn redshift_destination_update(&self) -> ::std::option::Option<&crate::types::RedshiftDestinationUpdate> {
         self.redshift_destination_update.as_ref()
     }
-    /// <p>Describes an update for a destination in Amazon ES.</p>
+    /// <p>Describes an update for a destination in Amazon OpenSearch Service.</p>
     pub fn elasticsearch_destination_update(&self) -> ::std::option::Option<&crate::types::ElasticsearchDestinationUpdate> {
         self.elasticsearch_destination_update.as_ref()
     }
@@ -204,17 +204,17 @@ impl UpdateDestinationInputBuilder {
     pub fn get_redshift_destination_update(&self) -> &::std::option::Option<crate::types::RedshiftDestinationUpdate> {
         &self.redshift_destination_update
     }
-    /// <p>Describes an update for a destination in Amazon ES.</p>
+    /// <p>Describes an update for a destination in Amazon OpenSearch Service.</p>
     pub fn elasticsearch_destination_update(mut self, input: crate::types::ElasticsearchDestinationUpdate) -> Self {
         self.elasticsearch_destination_update = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes an update for a destination in Amazon ES.</p>
+    /// <p>Describes an update for a destination in Amazon OpenSearch Service.</p>
     pub fn set_elasticsearch_destination_update(mut self, input: ::std::option::Option<crate::types::ElasticsearchDestinationUpdate>) -> Self {
         self.elasticsearch_destination_update = input;
         self
     }
-    /// <p>Describes an update for a destination in Amazon ES.</p>
+    /// <p>Describes an update for a destination in Amazon OpenSearch Service.</p>
     pub fn get_elasticsearch_destination_update(&self) -> &::std::option::Option<crate::types::ElasticsearchDestinationUpdate> {
         &self.elasticsearch_destination_update
     }

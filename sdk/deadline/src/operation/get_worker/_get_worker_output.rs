@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWorkerOutput {
-    /// <p>The worker ID.</p>
-    pub worker_id: ::std::string::String,
     /// <p>The farm ID.</p>
     pub farm_id: ::std::string::String,
     /// <p>The fleet ID.</p>
     pub fleet_id: ::std::string::String,
+    /// <p>The worker ID.</p>
+    pub worker_id: ::std::string::String,
     /// <p>The host properties for the worker.</p>
     pub host_properties: ::std::option::Option<crate::types::HostPropertiesResponse>,
     /// <p>The status of the worker.</p>
@@ -26,11 +26,6 @@ pub struct GetWorkerOutput {
     _request_id: Option<String>,
 }
 impl GetWorkerOutput {
-    /// <p>The worker ID.</p>
-    pub fn worker_id(&self) -> &str {
-        use std::ops::Deref;
-        self.worker_id.deref()
-    }
     /// <p>The farm ID.</p>
     pub fn farm_id(&self) -> &str {
         use std::ops::Deref;
@@ -40,6 +35,11 @@ impl GetWorkerOutput {
     pub fn fleet_id(&self) -> &str {
         use std::ops::Deref;
         self.fleet_id.deref()
+    }
+    /// <p>The worker ID.</p>
+    pub fn worker_id(&self) -> &str {
+        use std::ops::Deref;
+        self.worker_id.deref()
     }
     /// <p>The host properties for the worker.</p>
     pub fn host_properties(&self) -> ::std::option::Option<&crate::types::HostPropertiesResponse> {
@@ -87,9 +87,9 @@ impl GetWorkerOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct GetWorkerOutputBuilder {
-    pub(crate) worker_id: ::std::option::Option<::std::string::String>,
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
+    pub(crate) worker_id: ::std::option::Option<::std::string::String>,
     pub(crate) host_properties: ::std::option::Option<crate::types::HostPropertiesResponse>,
     pub(crate) status: ::std::option::Option<crate::types::WorkerStatus>,
     pub(crate) log: ::std::option::Option<crate::types::LogConfiguration>,
@@ -100,21 +100,6 @@ pub struct GetWorkerOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetWorkerOutputBuilder {
-    /// <p>The worker ID.</p>
-    /// This field is required.
-    pub fn worker_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.worker_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The worker ID.</p>
-    pub fn set_worker_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.worker_id = input;
-        self
-    }
-    /// <p>The worker ID.</p>
-    pub fn get_worker_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.worker_id
-    }
     /// <p>The farm ID.</p>
     /// This field is required.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -144,6 +129,21 @@ impl GetWorkerOutputBuilder {
     /// <p>The fleet ID.</p>
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.fleet_id
+    }
+    /// <p>The worker ID.</p>
+    /// This field is required.
+    pub fn worker_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.worker_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The worker ID.</p>
+    pub fn set_worker_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.worker_id = input;
+        self
+    }
+    /// <p>The worker ID.</p>
+    pub fn get_worker_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.worker_id
     }
     /// <p>The host properties for the worker.</p>
     pub fn host_properties(mut self, input: crate::types::HostPropertiesResponse) -> Self {
@@ -257,20 +257,14 @@ impl GetWorkerOutputBuilder {
     }
     /// Consumes the builder and constructs a [`GetWorkerOutput`](crate::operation::get_worker::GetWorkerOutput).
     /// This method will fail if any of the following fields are not set:
-    /// - [`worker_id`](crate::operation::get_worker::builders::GetWorkerOutputBuilder::worker_id)
     /// - [`farm_id`](crate::operation::get_worker::builders::GetWorkerOutputBuilder::farm_id)
     /// - [`fleet_id`](crate::operation::get_worker::builders::GetWorkerOutputBuilder::fleet_id)
+    /// - [`worker_id`](crate::operation::get_worker::builders::GetWorkerOutputBuilder::worker_id)
     /// - [`status`](crate::operation::get_worker::builders::GetWorkerOutputBuilder::status)
     /// - [`created_at`](crate::operation::get_worker::builders::GetWorkerOutputBuilder::created_at)
     /// - [`created_by`](crate::operation::get_worker::builders::GetWorkerOutputBuilder::created_by)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_worker::GetWorkerOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_worker::GetWorkerOutput {
-            worker_id: self.worker_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "worker_id",
-                    "worker_id was not specified but it is required when building GetWorkerOutput",
-                )
-            })?,
             farm_id: self.farm_id.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "farm_id",
@@ -281,6 +275,12 @@ impl GetWorkerOutputBuilder {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "fleet_id",
                     "fleet_id was not specified but it is required when building GetWorkerOutput",
+                )
+            })?,
+            worker_id: self.worker_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "worker_id",
+                    "worker_id was not specified but it is required when building GetWorkerOutput",
                 )
             })?,
             host_properties: self.host_properties,

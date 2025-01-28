@@ -10,14 +10,20 @@ pub struct DescribeLocationSmbOutput {
     pub location_uri: ::std::option::Option<::std::string::String>,
     /// <p>The ARNs of the DataSync agents that can connect with your SMB file server.</p>
     pub agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The user that can mount and access the files, folders, and file metadata in your SMB file server.</p>
+    /// <p>The user that can mount and access the files, folders, and file metadata in your SMB file server. This element applies only if <code>AuthenticationType</code> is set to <code>NTLM</code>.</p>
     pub user: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the Microsoft Active Directory domain that the SMB file server belongs to.</p>
+    /// <p>The name of the Windows domain that the SMB file server belongs to. This element applies only if <code>AuthenticationType</code> is set to <code>NTLM</code>.</p>
     pub domain: ::std::option::Option<::std::string::String>,
-    /// <p>The protocol that DataSync use to access your SMB file.</p>
+    /// <p>The SMB protocol version that DataSync uses to access your SMB file server.</p>
     pub mount_options: ::std::option::Option<crate::types::SmbMountOptions>,
     /// <p>The time that the SMB location was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The IPv4 addresses for the DNS servers that your SMB file server belongs to. This element applies only if <code>AuthenticationType</code> is set to <code>KERBEROS</code>.</p>
+    pub dns_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The Kerberos service principal name (SPN) that has permission to access the files, folders, and file metadata in your SMB file server.</p>
+    pub kerberos_principal: ::std::option::Option<::std::string::String>,
+    /// <p>The authentication protocol that DataSync uses to connect to your SMB file server.</p>
+    pub authentication_type: ::std::option::Option<crate::types::SmbAuthenticationType>,
     _request_id: Option<String>,
 }
 impl DescribeLocationSmbOutput {
@@ -35,21 +41,35 @@ impl DescribeLocationSmbOutput {
     pub fn agent_arns(&self) -> &[::std::string::String] {
         self.agent_arns.as_deref().unwrap_or_default()
     }
-    /// <p>The user that can mount and access the files, folders, and file metadata in your SMB file server.</p>
+    /// <p>The user that can mount and access the files, folders, and file metadata in your SMB file server. This element applies only if <code>AuthenticationType</code> is set to <code>NTLM</code>.</p>
     pub fn user(&self) -> ::std::option::Option<&str> {
         self.user.as_deref()
     }
-    /// <p>The name of the Microsoft Active Directory domain that the SMB file server belongs to.</p>
+    /// <p>The name of the Windows domain that the SMB file server belongs to. This element applies only if <code>AuthenticationType</code> is set to <code>NTLM</code>.</p>
     pub fn domain(&self) -> ::std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p>The protocol that DataSync use to access your SMB file.</p>
+    /// <p>The SMB protocol version that DataSync uses to access your SMB file server.</p>
     pub fn mount_options(&self) -> ::std::option::Option<&crate::types::SmbMountOptions> {
         self.mount_options.as_ref()
     }
     /// <p>The time that the SMB location was created.</p>
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
+    }
+    /// <p>The IPv4 addresses for the DNS servers that your SMB file server belongs to. This element applies only if <code>AuthenticationType</code> is set to <code>KERBEROS</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dns_ip_addresses.is_none()`.
+    pub fn dns_ip_addresses(&self) -> &[::std::string::String] {
+        self.dns_ip_addresses.as_deref().unwrap_or_default()
+    }
+    /// <p>The Kerberos service principal name (SPN) that has permission to access the files, folders, and file metadata in your SMB file server.</p>
+    pub fn kerberos_principal(&self) -> ::std::option::Option<&str> {
+        self.kerberos_principal.as_deref()
+    }
+    /// <p>The authentication protocol that DataSync uses to connect to your SMB file server.</p>
+    pub fn authentication_type(&self) -> ::std::option::Option<&crate::types::SmbAuthenticationType> {
+        self.authentication_type.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeLocationSmbOutput {
@@ -75,6 +95,9 @@ pub struct DescribeLocationSmbOutputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) mount_options: ::std::option::Option<crate::types::SmbMountOptions>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) dns_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) kerberos_principal: ::std::option::Option<::std::string::String>,
+    pub(crate) authentication_type: ::std::option::Option<crate::types::SmbAuthenticationType>,
     _request_id: Option<String>,
 }
 impl DescribeLocationSmbOutputBuilder {
@@ -126,45 +149,45 @@ impl DescribeLocationSmbOutputBuilder {
     pub fn get_agent_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.agent_arns
     }
-    /// <p>The user that can mount and access the files, folders, and file metadata in your SMB file server.</p>
+    /// <p>The user that can mount and access the files, folders, and file metadata in your SMB file server. This element applies only if <code>AuthenticationType</code> is set to <code>NTLM</code>.</p>
     pub fn user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user that can mount and access the files, folders, and file metadata in your SMB file server.</p>
+    /// <p>The user that can mount and access the files, folders, and file metadata in your SMB file server. This element applies only if <code>AuthenticationType</code> is set to <code>NTLM</code>.</p>
     pub fn set_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user = input;
         self
     }
-    /// <p>The user that can mount and access the files, folders, and file metadata in your SMB file server.</p>
+    /// <p>The user that can mount and access the files, folders, and file metadata in your SMB file server. This element applies only if <code>AuthenticationType</code> is set to <code>NTLM</code>.</p>
     pub fn get_user(&self) -> &::std::option::Option<::std::string::String> {
         &self.user
     }
-    /// <p>The name of the Microsoft Active Directory domain that the SMB file server belongs to.</p>
+    /// <p>The name of the Windows domain that the SMB file server belongs to. This element applies only if <code>AuthenticationType</code> is set to <code>NTLM</code>.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the Microsoft Active Directory domain that the SMB file server belongs to.</p>
+    /// <p>The name of the Windows domain that the SMB file server belongs to. This element applies only if <code>AuthenticationType</code> is set to <code>NTLM</code>.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain = input;
         self
     }
-    /// <p>The name of the Microsoft Active Directory domain that the SMB file server belongs to.</p>
+    /// <p>The name of the Windows domain that the SMB file server belongs to. This element applies only if <code>AuthenticationType</code> is set to <code>NTLM</code>.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain
     }
-    /// <p>The protocol that DataSync use to access your SMB file.</p>
+    /// <p>The SMB protocol version that DataSync uses to access your SMB file server.</p>
     pub fn mount_options(mut self, input: crate::types::SmbMountOptions) -> Self {
         self.mount_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The protocol that DataSync use to access your SMB file.</p>
+    /// <p>The SMB protocol version that DataSync uses to access your SMB file server.</p>
     pub fn set_mount_options(mut self, input: ::std::option::Option<crate::types::SmbMountOptions>) -> Self {
         self.mount_options = input;
         self
     }
-    /// <p>The protocol that DataSync use to access your SMB file.</p>
+    /// <p>The SMB protocol version that DataSync uses to access your SMB file server.</p>
     pub fn get_mount_options(&self) -> &::std::option::Option<crate::types::SmbMountOptions> {
         &self.mount_options
     }
@@ -181,6 +204,54 @@ impl DescribeLocationSmbOutputBuilder {
     /// <p>The time that the SMB location was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
+    }
+    /// Appends an item to `dns_ip_addresses`.
+    ///
+    /// To override the contents of this collection use [`set_dns_ip_addresses`](Self::set_dns_ip_addresses).
+    ///
+    /// <p>The IPv4 addresses for the DNS servers that your SMB file server belongs to. This element applies only if <code>AuthenticationType</code> is set to <code>KERBEROS</code>.</p>
+    pub fn dns_ip_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.dns_ip_addresses.unwrap_or_default();
+        v.push(input.into());
+        self.dns_ip_addresses = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The IPv4 addresses for the DNS servers that your SMB file server belongs to. This element applies only if <code>AuthenticationType</code> is set to <code>KERBEROS</code>.</p>
+    pub fn set_dns_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.dns_ip_addresses = input;
+        self
+    }
+    /// <p>The IPv4 addresses for the DNS servers that your SMB file server belongs to. This element applies only if <code>AuthenticationType</code> is set to <code>KERBEROS</code>.</p>
+    pub fn get_dns_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.dns_ip_addresses
+    }
+    /// <p>The Kerberos service principal name (SPN) that has permission to access the files, folders, and file metadata in your SMB file server.</p>
+    pub fn kerberos_principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kerberos_principal = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Kerberos service principal name (SPN) that has permission to access the files, folders, and file metadata in your SMB file server.</p>
+    pub fn set_kerberos_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kerberos_principal = input;
+        self
+    }
+    /// <p>The Kerberos service principal name (SPN) that has permission to access the files, folders, and file metadata in your SMB file server.</p>
+    pub fn get_kerberos_principal(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kerberos_principal
+    }
+    /// <p>The authentication protocol that DataSync uses to connect to your SMB file server.</p>
+    pub fn authentication_type(mut self, input: crate::types::SmbAuthenticationType) -> Self {
+        self.authentication_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The authentication protocol that DataSync uses to connect to your SMB file server.</p>
+    pub fn set_authentication_type(mut self, input: ::std::option::Option<crate::types::SmbAuthenticationType>) -> Self {
+        self.authentication_type = input;
+        self
+    }
+    /// <p>The authentication protocol that DataSync uses to connect to your SMB file server.</p>
+    pub fn get_authentication_type(&self) -> &::std::option::Option<crate::types::SmbAuthenticationType> {
+        &self.authentication_type
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -201,6 +272,9 @@ impl DescribeLocationSmbOutputBuilder {
             domain: self.domain,
             mount_options: self.mount_options,
             creation_time: self.creation_time,
+            dns_ip_addresses: self.dns_ip_addresses,
+            kerberos_principal: self.kerberos_principal,
+            authentication_type: self.authentication_type,
             _request_id: self._request_id,
         }
     }

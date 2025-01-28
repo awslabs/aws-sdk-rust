@@ -22,7 +22,7 @@ impl crate::operation::create_job::builders::CreateJobInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateJob`.
 ///
-/// <p>Creates a job. A job is a set of instructions that AWS Deadline Cloud uses to schedule and run work on available workers. For more information, see <a href="https://docs.aws.amazon.com/deadline-cloud/latest/userguide/deadline-cloud-jobs.html">Deadline Cloud jobs</a>.</p>
+/// <p>Creates a job. A job is a set of instructions that Deadline Cloud uses to schedule and run work on available workers. For more information, see <a href="https://docs.aws.amazon.com/deadline-cloud/latest/userguide/deadline-cloud-jobs.html">Deadline Cloud jobs</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -277,6 +277,26 @@ impl CreateJobFluentBuilder {
     /// <p>The maximum number of retries for each task.</p>
     pub fn get_max_retries_per_task(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_retries_per_task()
+    }
+    /// <p>The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers.</p>
+    /// <p>You can't set the <code>maxWorkerCount</code> to 0. If you set it to -1, there is no maximum number of workers.</p>
+    /// <p>If you don't specify the <code>maxWorkerCount</code>, Deadline Cloud won't throttle the number of workers used to process the job.</p>
+    pub fn max_worker_count(mut self, input: i32) -> Self {
+        self.inner = self.inner.max_worker_count(input);
+        self
+    }
+    /// <p>The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers.</p>
+    /// <p>You can't set the <code>maxWorkerCount</code> to 0. If you set it to -1, there is no maximum number of workers.</p>
+    /// <p>If you don't specify the <code>maxWorkerCount</code>, Deadline Cloud won't throttle the number of workers used to process the job.</p>
+    pub fn set_max_worker_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_max_worker_count(input);
+        self
+    }
+    /// <p>The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers.</p>
+    /// <p>You can't set the <code>maxWorkerCount</code> to 0. If you set it to -1, there is no maximum number of workers.</p>
+    /// <p>If you don't specify the <code>maxWorkerCount</code>, Deadline Cloud won't throttle the number of workers used to process the job.</p>
+    pub fn get_max_worker_count(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_worker_count()
     }
     /// <p>The job ID for the source job.</p>
     pub fn source_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

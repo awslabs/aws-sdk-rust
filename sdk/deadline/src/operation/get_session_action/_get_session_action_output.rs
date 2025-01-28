@@ -23,6 +23,8 @@ pub struct GetSessionActionOutput {
     pub progress_message: ::std::option::Option<::std::string::String>,
     /// <p>The session action definition.</p>
     pub definition: ::std::option::Option<crate::types::SessionActionDefinition>,
+    /// <p>The limits and their amounts acquired during a session action. If no limits were acquired during the session, this field isn't returned.</p>
+    pub acquired_limits: ::std::option::Option<::std::vec::Vec<crate::types::AcquiredLimit>>,
     _request_id: Option<String>,
 }
 impl GetSessionActionOutput {
@@ -68,6 +70,12 @@ impl GetSessionActionOutput {
     pub fn definition(&self) -> ::std::option::Option<&crate::types::SessionActionDefinition> {
         self.definition.as_ref()
     }
+    /// <p>The limits and their amounts acquired during a session action. If no limits were acquired during the session, this field isn't returned.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.acquired_limits.is_none()`.
+    pub fn acquired_limits(&self) -> &[crate::types::AcquiredLimit] {
+        self.acquired_limits.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for GetSessionActionOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -82,6 +90,7 @@ impl ::std::fmt::Debug for GetSessionActionOutput {
         formatter.field("process_exit_code", &self.process_exit_code);
         formatter.field("progress_message", &"*** Sensitive Data Redacted ***");
         formatter.field("definition", &self.definition);
+        formatter.field("acquired_limits", &self.acquired_limits);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -112,6 +121,7 @@ pub struct GetSessionActionOutputBuilder {
     pub(crate) process_exit_code: ::std::option::Option<i32>,
     pub(crate) progress_message: ::std::option::Option<::std::string::String>,
     pub(crate) definition: ::std::option::Option<crate::types::SessionActionDefinition>,
+    pub(crate) acquired_limits: ::std::option::Option<::std::vec::Vec<crate::types::AcquiredLimit>>,
     _request_id: Option<String>,
 }
 impl GetSessionActionOutputBuilder {
@@ -259,6 +269,26 @@ impl GetSessionActionOutputBuilder {
     pub fn get_definition(&self) -> &::std::option::Option<crate::types::SessionActionDefinition> {
         &self.definition
     }
+    /// Appends an item to `acquired_limits`.
+    ///
+    /// To override the contents of this collection use [`set_acquired_limits`](Self::set_acquired_limits).
+    ///
+    /// <p>The limits and their amounts acquired during a session action. If no limits were acquired during the session, this field isn't returned.</p>
+    pub fn acquired_limits(mut self, input: crate::types::AcquiredLimit) -> Self {
+        let mut v = self.acquired_limits.unwrap_or_default();
+        v.push(input);
+        self.acquired_limits = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The limits and their amounts acquired during a session action. If no limits were acquired during the session, this field isn't returned.</p>
+    pub fn set_acquired_limits(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AcquiredLimit>>) -> Self {
+        self.acquired_limits = input;
+        self
+    }
+    /// <p>The limits and their amounts acquired during a session action. If no limits were acquired during the session, this field isn't returned.</p>
+    pub fn get_acquired_limits(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AcquiredLimit>> {
+        &self.acquired_limits
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -302,6 +332,7 @@ impl GetSessionActionOutputBuilder {
             process_exit_code: self.process_exit_code,
             progress_message: self.progress_message,
             definition: self.definition,
+            acquired_limits: self.acquired_limits,
             _request_id: self._request_id,
         })
     }
@@ -319,6 +350,7 @@ impl ::std::fmt::Debug for GetSessionActionOutputBuilder {
         formatter.field("process_exit_code", &self.process_exit_code);
         formatter.field("progress_message", &"*** Sensitive Data Redacted ***");
         formatter.field("definition", &self.definition);
+        formatter.field("acquired_limits", &self.acquired_limits);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

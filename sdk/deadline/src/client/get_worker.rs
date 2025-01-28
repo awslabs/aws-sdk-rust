@@ -7,9 +7,9 @@ impl super::Client {
     ///   - [`fleet_id(impl Into<String>)`](crate::operation::get_worker::builders::GetWorkerFluentBuilder::fleet_id) / [`set_fleet_id(Option<String>)`](crate::operation::get_worker::builders::GetWorkerFluentBuilder::set_fleet_id):<br>required: **true**<br><p>The fleet ID of the worker.</p><br>
     ///   - [`worker_id(impl Into<String>)`](crate::operation::get_worker::builders::GetWorkerFluentBuilder::worker_id) / [`set_worker_id(Option<String>)`](crate::operation::get_worker::builders::GetWorkerFluentBuilder::set_worker_id):<br>required: **true**<br><p>The worker ID.</p><br>
     /// - On success, responds with [`GetWorkerOutput`](crate::operation::get_worker::GetWorkerOutput) with field(s):
-    ///   - [`worker_id(String)`](crate::operation::get_worker::GetWorkerOutput::worker_id): <p>The worker ID.</p>
     ///   - [`farm_id(String)`](crate::operation::get_worker::GetWorkerOutput::farm_id): <p>The farm ID.</p>
     ///   - [`fleet_id(String)`](crate::operation::get_worker::GetWorkerOutput::fleet_id): <p>The fleet ID.</p>
+    ///   - [`worker_id(String)`](crate::operation::get_worker::GetWorkerOutput::worker_id): <p>The worker ID.</p>
     ///   - [`host_properties(Option<HostPropertiesResponse>)`](crate::operation::get_worker::GetWorkerOutput::host_properties): <p>The host properties for the worker.</p>
     ///   - [`status(WorkerStatus)`](crate::operation::get_worker::GetWorkerOutput::status): <p>The status of the worker.</p>
     ///   - [`log(Option<LogConfiguration>)`](crate::operation::get_worker::GetWorkerOutput::log): <p>The logs for the associated worker.</p>

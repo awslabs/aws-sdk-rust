@@ -22,9 +22,13 @@ pub struct SnowflakeDestinationConfiguration {
     pub snowflake_role_configuration: ::std::option::Option<crate::types::SnowflakeRoleConfiguration>,
     /// <p>Choose to load JSON keys mapped to table column names or choose to split the JSON payload where content is mapped to a record content column and source metadata is mapped to a record metadata column.</p>
     pub data_loading_option: ::std::option::Option<crate::types::SnowflakeDataLoadingOption>,
-    /// <p>The name of the record metadata column</p>
+    /// <p>Specify a column name in the table, where the metadata information has to be loaded. When you enable this field, you will see the following column in the snowflake table, which differs based on the source type.</p>
+    /// <p>For Direct PUT as source</p>
+    /// <p><code>{ "firehoseDeliveryStreamName" : "streamname", "IngestionTime" : "timestamp" }</code></p>
+    /// <p>For Kinesis Data Stream as source</p>
+    /// <p><code> "kinesisStreamName" : "streamname", "kinesisShardId" : "Id", "kinesisPartitionKey" : "key", "kinesisSequenceNumber" : "1234", "subsequenceNumber" : "2334", "IngestionTime" : "timestamp" }</code></p>
     pub meta_data_column_name: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the record content column</p>
+    /// <p>The name of the record content column.</p>
     pub content_column_name: ::std::option::Option<::std::string::String>,
     /// <p>The VPCE ID for Firehose to privately connect with Snowflake. The ID format is com.amazonaws.vpce.\[region\].vpce-svc-&lt;\[id\]&gt;. For more information, see Amazon PrivateLink &amp; Snowflake</p>
     pub snowflake_vpc_configuration: ::std::option::Option<crate::types::SnowflakeVpcConfiguration>,
@@ -86,11 +90,15 @@ impl SnowflakeDestinationConfiguration {
     pub fn data_loading_option(&self) -> ::std::option::Option<&crate::types::SnowflakeDataLoadingOption> {
         self.data_loading_option.as_ref()
     }
-    /// <p>The name of the record metadata column</p>
+    /// <p>Specify a column name in the table, where the metadata information has to be loaded. When you enable this field, you will see the following column in the snowflake table, which differs based on the source type.</p>
+    /// <p>For Direct PUT as source</p>
+    /// <p><code>{ "firehoseDeliveryStreamName" : "streamname", "IngestionTime" : "timestamp" }</code></p>
+    /// <p>For Kinesis Data Stream as source</p>
+    /// <p><code> "kinesisStreamName" : "streamname", "kinesisShardId" : "Id", "kinesisPartitionKey" : "key", "kinesisSequenceNumber" : "1234", "subsequenceNumber" : "2334", "IngestionTime" : "timestamp" }</code></p>
     pub fn meta_data_column_name(&self) -> ::std::option::Option<&str> {
         self.meta_data_column_name.as_deref()
     }
-    /// <p>The name of the record content column</p>
+    /// <p>The name of the record content column.</p>
     pub fn content_column_name(&self) -> ::std::option::Option<&str> {
         self.content_column_name.as_deref()
     }
@@ -321,31 +329,43 @@ impl SnowflakeDestinationConfigurationBuilder {
     pub fn get_data_loading_option(&self) -> &::std::option::Option<crate::types::SnowflakeDataLoadingOption> {
         &self.data_loading_option
     }
-    /// <p>The name of the record metadata column</p>
+    /// <p>Specify a column name in the table, where the metadata information has to be loaded. When you enable this field, you will see the following column in the snowflake table, which differs based on the source type.</p>
+    /// <p>For Direct PUT as source</p>
+    /// <p><code>{ "firehoseDeliveryStreamName" : "streamname", "IngestionTime" : "timestamp" }</code></p>
+    /// <p>For Kinesis Data Stream as source</p>
+    /// <p><code> "kinesisStreamName" : "streamname", "kinesisShardId" : "Id", "kinesisPartitionKey" : "key", "kinesisSequenceNumber" : "1234", "subsequenceNumber" : "2334", "IngestionTime" : "timestamp" }</code></p>
     pub fn meta_data_column_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.meta_data_column_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the record metadata column</p>
+    /// <p>Specify a column name in the table, where the metadata information has to be loaded. When you enable this field, you will see the following column in the snowflake table, which differs based on the source type.</p>
+    /// <p>For Direct PUT as source</p>
+    /// <p><code>{ "firehoseDeliveryStreamName" : "streamname", "IngestionTime" : "timestamp" }</code></p>
+    /// <p>For Kinesis Data Stream as source</p>
+    /// <p><code> "kinesisStreamName" : "streamname", "kinesisShardId" : "Id", "kinesisPartitionKey" : "key", "kinesisSequenceNumber" : "1234", "subsequenceNumber" : "2334", "IngestionTime" : "timestamp" }</code></p>
     pub fn set_meta_data_column_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.meta_data_column_name = input;
         self
     }
-    /// <p>The name of the record metadata column</p>
+    /// <p>Specify a column name in the table, where the metadata information has to be loaded. When you enable this field, you will see the following column in the snowflake table, which differs based on the source type.</p>
+    /// <p>For Direct PUT as source</p>
+    /// <p><code>{ "firehoseDeliveryStreamName" : "streamname", "IngestionTime" : "timestamp" }</code></p>
+    /// <p>For Kinesis Data Stream as source</p>
+    /// <p><code> "kinesisStreamName" : "streamname", "kinesisShardId" : "Id", "kinesisPartitionKey" : "key", "kinesisSequenceNumber" : "1234", "subsequenceNumber" : "2334", "IngestionTime" : "timestamp" }</code></p>
     pub fn get_meta_data_column_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.meta_data_column_name
     }
-    /// <p>The name of the record content column</p>
+    /// <p>The name of the record content column.</p>
     pub fn content_column_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_column_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the record content column</p>
+    /// <p>The name of the record content column.</p>
     pub fn set_content_column_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_column_name = input;
         self
     }
-    /// <p>The name of the record content column</p>
+    /// <p>The name of the record content column.</p>
     pub fn get_content_column_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.content_column_name
     }

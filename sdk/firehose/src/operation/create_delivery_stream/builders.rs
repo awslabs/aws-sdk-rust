@@ -171,6 +171,20 @@ impl CreateDeliveryStreamFluentBuilder {
     pub fn get_delivery_stream_type(&self) -> &::std::option::Option<crate::types::DeliveryStreamType> {
         self.inner.get_delivery_stream_type()
     }
+    /// <p>The structure that configures parameters such as <code>ThroughputHintInMBs</code> for a stream configured with Direct PUT as a source.</p>
+    pub fn direct_put_source_configuration(mut self, input: crate::types::DirectPutSourceConfiguration) -> Self {
+        self.inner = self.inner.direct_put_source_configuration(input);
+        self
+    }
+    /// <p>The structure that configures parameters such as <code>ThroughputHintInMBs</code> for a stream configured with Direct PUT as a source.</p>
+    pub fn set_direct_put_source_configuration(mut self, input: ::std::option::Option<crate::types::DirectPutSourceConfiguration>) -> Self {
+        self.inner = self.inner.set_direct_put_source_configuration(input);
+        self
+    }
+    /// <p>The structure that configures parameters such as <code>ThroughputHintInMBs</code> for a stream configured with Direct PUT as a source.</p>
+    pub fn get_direct_put_source_configuration(&self) -> &::std::option::Option<crate::types::DirectPutSourceConfiguration> {
+        self.inner.get_direct_put_source_configuration()
+    }
     /// <p>When a Kinesis data stream is used as the source for the Firehose stream, a <code>KinesisStreamSourceConfiguration</code> containing the Kinesis data stream Amazon Resource Name (ARN) and the role ARN for the source stream.</p>
     pub fn kinesis_stream_source_configuration(mut self, input: crate::types::KinesisStreamSourceConfiguration) -> Self {
         self.inner = self.inner.kinesis_stream_source_configuration(input);
@@ -252,12 +266,12 @@ impl CreateDeliveryStreamFluentBuilder {
     pub fn get_redshift_destination_configuration(&self) -> &::std::option::Option<crate::types::RedshiftDestinationConfiguration> {
         self.inner.get_redshift_destination_configuration()
     }
-    /// <p>The destination in Amazon ES. You can specify only one destination.</p>
+    /// <p>The destination in Amazon OpenSearch Service. You can specify only one destination.</p>
     pub fn elasticsearch_destination_configuration(mut self, input: crate::types::ElasticsearchDestinationConfiguration) -> Self {
         self.inner = self.inner.elasticsearch_destination_configuration(input);
         self
     }
-    /// <p>The destination in Amazon ES. You can specify only one destination.</p>
+    /// <p>The destination in Amazon OpenSearch Service. You can specify only one destination.</p>
     pub fn set_elasticsearch_destination_configuration(
         mut self,
         input: ::std::option::Option<crate::types::ElasticsearchDestinationConfiguration>,
@@ -265,7 +279,7 @@ impl CreateDeliveryStreamFluentBuilder {
         self.inner = self.inner.set_elasticsearch_destination_configuration(input);
         self
     }
-    /// <p>The destination in Amazon ES. You can specify only one destination.</p>
+    /// <p>The destination in Amazon OpenSearch Service. You can specify only one destination.</p>
     pub fn get_elasticsearch_destination_configuration(&self) -> &::std::option::Option<crate::types::ElasticsearchDestinationConfiguration> {
         self.inner.get_elasticsearch_destination_configuration()
     }
@@ -326,7 +340,7 @@ impl CreateDeliveryStreamFluentBuilder {
     ///
     /// <p>A set of tags to assign to the Firehose stream. A tag is a key-value pair that you can define and assign to Amazon Web Services resources. Tags are metadata. For example, you can add friendly names and descriptions or other types of information that can help you distinguish the Firehose stream. For more information about tags, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the Amazon Web Services Billing and Cost Management User Guide.</p>
     /// <p>You can specify up to 50 tags when creating a Firehose stream.</p>
-    /// <p>If you specify tags in the <code>CreateDeliveryStream</code> action, Amazon Data Firehose performs an additional authorization on the <code>firehose:TagDeliveryStream</code> action to verify if users have permissions to create tags. If you do not provide this permission, requests to create new Firehose Firehose streams with IAM resource tags will fail with an <code>AccessDeniedException</code> such as following.</p>
+    /// <p>If you specify tags in the <code>CreateDeliveryStream</code> action, Amazon Data Firehose performs an additional authorization on the <code>firehose:TagDeliveryStream</code> action to verify if users have permissions to create tags. If you do not provide this permission, requests to create new Firehose streams with IAM resource tags will fail with an <code>AccessDeniedException</code> such as following.</p>
     /// <p><b>AccessDeniedException</b></p>
     /// <p>User: arn:aws:sts::x:assumed-role/x/x is not authorized to perform: firehose:TagDeliveryStream on resource: arn:aws:firehose:us-east-1:x:deliverystream/x with an explicit deny in an identity-based policy.</p>
     /// <p>For an example IAM policy, see <a href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_CreateDeliveryStream.html#API_CreateDeliveryStream_Examples">Tag example.</a></p>
@@ -336,7 +350,7 @@ impl CreateDeliveryStreamFluentBuilder {
     }
     /// <p>A set of tags to assign to the Firehose stream. A tag is a key-value pair that you can define and assign to Amazon Web Services resources. Tags are metadata. For example, you can add friendly names and descriptions or other types of information that can help you distinguish the Firehose stream. For more information about tags, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the Amazon Web Services Billing and Cost Management User Guide.</p>
     /// <p>You can specify up to 50 tags when creating a Firehose stream.</p>
-    /// <p>If you specify tags in the <code>CreateDeliveryStream</code> action, Amazon Data Firehose performs an additional authorization on the <code>firehose:TagDeliveryStream</code> action to verify if users have permissions to create tags. If you do not provide this permission, requests to create new Firehose Firehose streams with IAM resource tags will fail with an <code>AccessDeniedException</code> such as following.</p>
+    /// <p>If you specify tags in the <code>CreateDeliveryStream</code> action, Amazon Data Firehose performs an additional authorization on the <code>firehose:TagDeliveryStream</code> action to verify if users have permissions to create tags. If you do not provide this permission, requests to create new Firehose streams with IAM resource tags will fail with an <code>AccessDeniedException</code> such as following.</p>
     /// <p><b>AccessDeniedException</b></p>
     /// <p>User: arn:aws:sts::x:assumed-role/x/x is not authorized to perform: firehose:TagDeliveryStream on resource: arn:aws:firehose:us-east-1:x:deliverystream/x with an explicit deny in an identity-based policy.</p>
     /// <p>For an example IAM policy, see <a href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_CreateDeliveryStream.html#API_CreateDeliveryStream_Examples">Tag example.</a></p>
@@ -346,7 +360,7 @@ impl CreateDeliveryStreamFluentBuilder {
     }
     /// <p>A set of tags to assign to the Firehose stream. A tag is a key-value pair that you can define and assign to Amazon Web Services resources. Tags are metadata. For example, you can add friendly names and descriptions or other types of information that can help you distinguish the Firehose stream. For more information about tags, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the Amazon Web Services Billing and Cost Management User Guide.</p>
     /// <p>You can specify up to 50 tags when creating a Firehose stream.</p>
-    /// <p>If you specify tags in the <code>CreateDeliveryStream</code> action, Amazon Data Firehose performs an additional authorization on the <code>firehose:TagDeliveryStream</code> action to verify if users have permissions to create tags. If you do not provide this permission, requests to create new Firehose Firehose streams with IAM resource tags will fail with an <code>AccessDeniedException</code> such as following.</p>
+    /// <p>If you specify tags in the <code>CreateDeliveryStream</code> action, Amazon Data Firehose performs an additional authorization on the <code>firehose:TagDeliveryStream</code> action to verify if users have permissions to create tags. If you do not provide this permission, requests to create new Firehose streams with IAM resource tags will fail with an <code>AccessDeniedException</code> such as following.</p>
     /// <p><b>AccessDeniedException</b></p>
     /// <p>User: arn:aws:sts::x:assumed-role/x/x is not authorized to perform: firehose:TagDeliveryStream on resource: arn:aws:firehose:us-east-1:x:deliverystream/x with an explicit deny in an identity-based policy.</p>
     /// <p>For an example IAM policy, see <a href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_CreateDeliveryStream.html#API_CreateDeliveryStream_Examples">Tag example.</a></p>
@@ -417,19 +431,19 @@ impl CreateDeliveryStreamFluentBuilder {
     pub fn get_iceberg_destination_configuration(&self) -> &::std::option::Option<crate::types::IcebergDestinationConfiguration> {
         self.inner.get_iceberg_destination_configuration()
     }
-    /// <p></p>
+    /// <p>The top level object for configuring streams with database as a source.</p>
     /// <p>Amazon Data Firehose is in preview release and is subject to change.</p>
     pub fn database_source_configuration(mut self, input: crate::types::DatabaseSourceConfiguration) -> Self {
         self.inner = self.inner.database_source_configuration(input);
         self
     }
-    /// <p></p>
+    /// <p>The top level object for configuring streams with database as a source.</p>
     /// <p>Amazon Data Firehose is in preview release and is subject to change.</p>
     pub fn set_database_source_configuration(mut self, input: ::std::option::Option<crate::types::DatabaseSourceConfiguration>) -> Self {
         self.inner = self.inner.set_database_source_configuration(input);
         self
     }
-    /// <p></p>
+    /// <p>The top level object for configuring streams with database as a source.</p>
     /// <p>Amazon Data Firehose is in preview release and is subject to change.</p>
     pub fn get_database_source_configuration(&self) -> &::std::option::Option<crate::types::DatabaseSourceConfiguration> {
         self.inner.get_database_source_configuration()

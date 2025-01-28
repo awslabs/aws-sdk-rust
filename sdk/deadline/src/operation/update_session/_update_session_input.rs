@@ -5,6 +5,8 @@
 pub struct UpdateSessionInput {
     /// <p>The unique token which the server uses to recognize retries of the same request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>The life cycle status to update in the session.</p>
+    pub target_lifecycle_status: ::std::option::Option<crate::types::SessionLifecycleTargetStatus>,
     /// <p>The farm ID to update in the session.</p>
     pub farm_id: ::std::option::Option<::std::string::String>,
     /// <p>The queue ID to update in the session.</p>
@@ -13,13 +15,15 @@ pub struct UpdateSessionInput {
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The session ID to update.</p>
     pub session_id: ::std::option::Option<::std::string::String>,
-    /// <p>The life cycle status to update in the session.</p>
-    pub target_lifecycle_status: ::std::option::Option<crate::types::SessionLifecycleTargetStatus>,
 }
 impl UpdateSessionInput {
     /// <p>The unique token which the server uses to recognize retries of the same request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
+    }
+    /// <p>The life cycle status to update in the session.</p>
+    pub fn target_lifecycle_status(&self) -> ::std::option::Option<&crate::types::SessionLifecycleTargetStatus> {
+        self.target_lifecycle_status.as_ref()
     }
     /// <p>The farm ID to update in the session.</p>
     pub fn farm_id(&self) -> ::std::option::Option<&str> {
@@ -37,10 +41,6 @@ impl UpdateSessionInput {
     pub fn session_id(&self) -> ::std::option::Option<&str> {
         self.session_id.as_deref()
     }
-    /// <p>The life cycle status to update in the session.</p>
-    pub fn target_lifecycle_status(&self) -> ::std::option::Option<&crate::types::SessionLifecycleTargetStatus> {
-        self.target_lifecycle_status.as_ref()
-    }
 }
 impl UpdateSessionInput {
     /// Creates a new builder-style object to manufacture [`UpdateSessionInput`](crate::operation::update_session::UpdateSessionInput).
@@ -54,11 +54,11 @@ impl UpdateSessionInput {
 #[non_exhaustive]
 pub struct UpdateSessionInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) target_lifecycle_status: ::std::option::Option<crate::types::SessionLifecycleTargetStatus>,
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,
     pub(crate) queue_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
-    pub(crate) target_lifecycle_status: ::std::option::Option<crate::types::SessionLifecycleTargetStatus>,
 }
 impl UpdateSessionInputBuilder {
     /// <p>The unique token which the server uses to recognize retries of the same request.</p>
@@ -74,6 +74,21 @@ impl UpdateSessionInputBuilder {
     /// <p>The unique token which the server uses to recognize retries of the same request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
+    }
+    /// <p>The life cycle status to update in the session.</p>
+    /// This field is required.
+    pub fn target_lifecycle_status(mut self, input: crate::types::SessionLifecycleTargetStatus) -> Self {
+        self.target_lifecycle_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The life cycle status to update in the session.</p>
+    pub fn set_target_lifecycle_status(mut self, input: ::std::option::Option<crate::types::SessionLifecycleTargetStatus>) -> Self {
+        self.target_lifecycle_status = input;
+        self
+    }
+    /// <p>The life cycle status to update in the session.</p>
+    pub fn get_target_lifecycle_status(&self) -> &::std::option::Option<crate::types::SessionLifecycleTargetStatus> {
+        &self.target_lifecycle_status
     }
     /// <p>The farm ID to update in the session.</p>
     /// This field is required.
@@ -135,32 +150,17 @@ impl UpdateSessionInputBuilder {
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_id
     }
-    /// <p>The life cycle status to update in the session.</p>
-    /// This field is required.
-    pub fn target_lifecycle_status(mut self, input: crate::types::SessionLifecycleTargetStatus) -> Self {
-        self.target_lifecycle_status = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The life cycle status to update in the session.</p>
-    pub fn set_target_lifecycle_status(mut self, input: ::std::option::Option<crate::types::SessionLifecycleTargetStatus>) -> Self {
-        self.target_lifecycle_status = input;
-        self
-    }
-    /// <p>The life cycle status to update in the session.</p>
-    pub fn get_target_lifecycle_status(&self) -> &::std::option::Option<crate::types::SessionLifecycleTargetStatus> {
-        &self.target_lifecycle_status
-    }
     /// Consumes the builder and constructs a [`UpdateSessionInput`](crate::operation::update_session::UpdateSessionInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_session::UpdateSessionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_session::UpdateSessionInput {
             client_token: self.client_token,
+            target_lifecycle_status: self.target_lifecycle_status,
             farm_id: self.farm_id,
             queue_id: self.queue_id,
             job_id: self.job_id,
             session_id: self.session_id,
-            target_lifecycle_status: self.target_lifecycle_status,
         })
     }
 }

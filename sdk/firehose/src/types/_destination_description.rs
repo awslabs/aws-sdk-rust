@@ -12,7 +12,7 @@ pub struct DestinationDescription {
     pub extended_s3_destination_description: ::std::option::Option<crate::types::ExtendedS3DestinationDescription>,
     /// <p>The destination in Amazon Redshift.</p>
     pub redshift_destination_description: ::std::option::Option<crate::types::RedshiftDestinationDescription>,
-    /// <p>The destination in Amazon ES.</p>
+    /// <p>The destination in Amazon OpenSearch Service.</p>
     pub elasticsearch_destination_description: ::std::option::Option<crate::types::ElasticsearchDestinationDescription>,
     /// <p>The destination in Amazon OpenSearch Service.</p>
     pub amazonopensearchservice_destination_description: ::std::option::Option<crate::types::AmazonopensearchserviceDestinationDescription>,
@@ -45,7 +45,7 @@ impl DestinationDescription {
     pub fn redshift_destination_description(&self) -> ::std::option::Option<&crate::types::RedshiftDestinationDescription> {
         self.redshift_destination_description.as_ref()
     }
-    /// <p>The destination in Amazon ES.</p>
+    /// <p>The destination in Amazon OpenSearch Service.</p>
     pub fn elasticsearch_destination_description(&self) -> ::std::option::Option<&crate::types::ElasticsearchDestinationDescription> {
         self.elasticsearch_destination_description.as_ref()
     }
@@ -160,12 +160,12 @@ impl DestinationDescriptionBuilder {
     pub fn get_redshift_destination_description(&self) -> &::std::option::Option<crate::types::RedshiftDestinationDescription> {
         &self.redshift_destination_description
     }
-    /// <p>The destination in Amazon ES.</p>
+    /// <p>The destination in Amazon OpenSearch Service.</p>
     pub fn elasticsearch_destination_description(mut self, input: crate::types::ElasticsearchDestinationDescription) -> Self {
         self.elasticsearch_destination_description = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The destination in Amazon ES.</p>
+    /// <p>The destination in Amazon OpenSearch Service.</p>
     pub fn set_elasticsearch_destination_description(
         mut self,
         input: ::std::option::Option<crate::types::ElasticsearchDestinationDescription>,
@@ -173,7 +173,7 @@ impl DestinationDescriptionBuilder {
         self.elasticsearch_destination_description = input;
         self
     }
-    /// <p>The destination in Amazon ES.</p>
+    /// <p>The destination in Amazon OpenSearch Service.</p>
     pub fn get_elasticsearch_destination_description(&self) -> &::std::option::Option<crate::types::ElasticsearchDestinationDescription> {
         &self.elasticsearch_destination_description
     }

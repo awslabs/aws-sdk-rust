@@ -315,6 +315,8 @@ pub(crate) mod shape_discovery_job_list;
 
 pub(crate) mod shape_discovery_server_configuration;
 
+pub(crate) mod shape_dns_ip_list;
+
 pub(crate) mod shape_ec2_config;
 
 pub(crate) mod shape_ec2_security_group_arn_list;

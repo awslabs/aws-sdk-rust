@@ -282,6 +282,32 @@ pub(crate) fn match_get_queue_fleet_association_752e7f99f3bc7dc47(
         .unwrap_or_default()
 }
 
+/// Matcher union: {"output":{"path":"status","expected":"STOPPED","comparator":"stringEquals"}}
+pub(crate) fn match_get_queue_limit_association_752e7f99f3bc7dc47(
+    _result: ::std::result::Result<
+        &crate::operation::get_queue_limit_association::GetQueueLimitAssociationOutput,
+        &crate::operation::get_queue_limit_association::GetQueueLimitAssociationError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::get_queue_limit_association::GetQueueLimitAssociationOutput,
+    ) -> ::std::option::Option<&'a crate::types::QueueLimitAssociationStatus> {
+        let _fld_1 = &_output.status;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "STOPPED";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
 /// Matcher union: {"output":{"path":"status","expected":"SCHEDULING","comparator":"stringEquals"}}
 pub(crate) fn match_get_queue_ddf7808bf46fc982c(
     _result: ::std::result::Result<&crate::operation::get_queue::GetQueueOutput, &crate::operation::get_queue::GetQueueError>,

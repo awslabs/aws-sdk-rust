@@ -57,17 +57,20 @@ pub fn ser_iceberg_destination_configuration(
     {
         object.key("RoleARN").string(input.role_arn.as_str());
     }
-    if let Some(var_18) = &input.catalog_configuration {
-        #[allow(unused_mut)]
-        let mut object_19 = object.key("CatalogConfiguration").start_object();
-        crate::protocol_serde::shape_catalog_configuration::ser_catalog_configuration(&mut object_19, var_18)?;
-        object_19.finish();
+    if let Some(var_18) = &input.append_only {
+        object.key("AppendOnly").boolean(*var_18);
     }
-    if let Some(var_20) = &input.s3_configuration {
+    if let Some(var_19) = &input.catalog_configuration {
         #[allow(unused_mut)]
-        let mut object_21 = object.key("S3Configuration").start_object();
-        crate::protocol_serde::shape_s3_destination_configuration::ser_s3_destination_configuration(&mut object_21, var_20)?;
-        object_21.finish();
+        let mut object_20 = object.key("CatalogConfiguration").start_object();
+        crate::protocol_serde::shape_catalog_configuration::ser_catalog_configuration(&mut object_20, var_19)?;
+        object_20.finish();
+    }
+    if let Some(var_21) = &input.s3_configuration {
+        #[allow(unused_mut)]
+        let mut object_22 = object.key("S3Configuration").start_object();
+        crate::protocol_serde::shape_s3_destination_configuration::ser_s3_destination_configuration(&mut object_22, var_21)?;
+        object_22.finish();
     }
     Ok(())
 }

@@ -5,23 +5,23 @@
 pub struct GetJobInput {
     /// <p>The farm ID of the farm in the job.</p>
     pub farm_id: ::std::option::Option<::std::string::String>,
-    /// <p>The job ID.</p>
-    pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The queue ID associated with the job.</p>
     pub queue_id: ::std::option::Option<::std::string::String>,
+    /// <p>The job ID.</p>
+    pub job_id: ::std::option::Option<::std::string::String>,
 }
 impl GetJobInput {
     /// <p>The farm ID of the farm in the job.</p>
     pub fn farm_id(&self) -> ::std::option::Option<&str> {
         self.farm_id.as_deref()
     }
-    /// <p>The job ID.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
-        self.job_id.as_deref()
-    }
     /// <p>The queue ID associated with the job.</p>
     pub fn queue_id(&self) -> ::std::option::Option<&str> {
         self.queue_id.as_deref()
+    }
+    /// <p>The job ID.</p>
+    pub fn job_id(&self) -> ::std::option::Option<&str> {
+        self.job_id.as_deref()
     }
 }
 impl GetJobInput {
@@ -36,8 +36,8 @@ impl GetJobInput {
 #[non_exhaustive]
 pub struct GetJobInputBuilder {
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,
-    pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) queue_id: ::std::option::Option<::std::string::String>,
+    pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }
 impl GetJobInputBuilder {
     /// <p>The farm ID of the farm in the job.</p>
@@ -55,21 +55,6 @@ impl GetJobInputBuilder {
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.farm_id
     }
-    /// <p>The job ID.</p>
-    /// This field is required.
-    pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.job_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The job ID.</p>
-    pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
-    }
-    /// <p>The job ID.</p>
-    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.job_id
-    }
     /// <p>The queue ID associated with the job.</p>
     /// This field is required.
     pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -85,12 +70,27 @@ impl GetJobInputBuilder {
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.queue_id
     }
+    /// <p>The job ID.</p>
+    /// This field is required.
+    pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.job_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The job ID.</p>
+    pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.job_id = input;
+        self
+    }
+    /// <p>The job ID.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// Consumes the builder and constructs a [`GetJobInput`](crate::operation::get_job::GetJobInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_job::GetJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_job::GetJobInput {
             farm_id: self.farm_id,
-            job_id: self.job_id,
             queue_id: self.queue_id,
+            job_id: self.job_id,
         })
     }
 }

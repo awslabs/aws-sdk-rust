@@ -14,6 +14,11 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "DirectPutSourceDescription" => {
+                            builder = builder.set_direct_put_source_description(
+                                crate::protocol_serde::shape_direct_put_source_description::de_direct_put_source_description(tokens)?,
+                            );
+                        }
                         "KinesisStreamSourceDescription" => {
                             builder = builder.set_kinesis_stream_source_description(
                                 crate::protocol_serde::shape_kinesis_stream_source_description::de_kinesis_stream_source_description(tokens)?,

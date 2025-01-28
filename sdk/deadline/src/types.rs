@@ -23,6 +23,8 @@ pub use crate::types::_storage_profile_operating_system_family::StorageProfileOp
 
 pub use crate::types::_storage_profile_summary::StorageProfileSummary;
 
+pub use crate::types::_limit_summary::LimitSummary;
+
 pub use crate::types::_farm_member::FarmMember;
 
 pub use crate::types::_membership_level::MembershipLevel;
@@ -112,6 +114,8 @@ pub use crate::types::_step_required_capabilities::StepRequiredCapabilities;
 pub use crate::types::_step_amount_capability::StepAmountCapability;
 
 pub use crate::types::_step_attribute_capability::StepAttributeCapability;
+
+pub use crate::types::_acquired_limit::AcquiredLimit;
 
 pub use crate::types::_session_action_definition::SessionActionDefinition;
 
@@ -297,6 +301,8 @@ pub use crate::types::_usage_tracking_resource::UsageTrackingResource;
 
 pub use crate::types::_budget_summary::BudgetSummary;
 
+pub use crate::types::_update_queue_limit_association_status::UpdateQueueLimitAssociationStatus;
+
 pub use crate::types::_update_queue_fleet_association_status::UpdateQueueFleetAssociationStatus;
 
 pub use crate::types::_usage_statistic::UsageStatistic;
@@ -341,6 +347,10 @@ pub use crate::types::_step_search_summary::StepSearchSummary;
 
 pub use crate::types::_job_search_summary::JobSearchSummary;
 
+pub use crate::types::_queue_limit_association_summary::QueueLimitAssociationSummary;
+
+pub use crate::types::_queue_limit_association_status::QueueLimitAssociationStatus;
+
 pub use crate::types::_queue_fleet_association_summary::QueueFleetAssociationSummary;
 
 pub use crate::types::_queue_fleet_association_status::QueueFleetAssociationStatus;
@@ -364,6 +374,8 @@ mod _accelerator_selection;
 mod _accelerator_total_memory_mib_range;
 
 mod _accelerator_type;
+
+mod _acquired_limit;
 
 mod _assigned_environment_enter_session_action_definition;
 
@@ -525,6 +537,8 @@ mod _license_endpoint_status;
 
 mod _license_endpoint_summary;
 
+mod _limit_summary;
+
 mod _log_configuration;
 
 mod _logical_operator;
@@ -560,6 +574,10 @@ mod _queue_environment_summary;
 mod _queue_fleet_association_status;
 
 mod _queue_fleet_association_summary;
+
+mod _queue_limit_association_status;
+
+mod _queue_limit_association_summary;
 
 mod _queue_member;
 
@@ -670,6 +688,8 @@ mod _task_target_run_status;
 mod _update_job_lifecycle_status;
 
 mod _update_queue_fleet_association_status;
+
+mod _update_queue_limit_association_status;
 
 mod _updated_session_action_info;
 

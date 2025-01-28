@@ -5,12 +5,6 @@
 pub struct UpdateJobInput {
     /// <p>The unique token which the server uses to recognize retries of the same request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>The farm ID of the job to update.</p>
-    pub farm_id: ::std::option::Option<::std::string::String>,
-    /// <p>The queue ID of the job to update.</p>
-    pub queue_id: ::std::option::Option<::std::string::String>,
-    /// <p>The job ID to update.</p>
-    pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The task status to update the job's tasks to.</p>
     pub target_task_run_status: ::std::option::Option<crate::types::JobTargetTaskRunStatus>,
     /// <p>The job priority to update.</p>
@@ -23,23 +17,22 @@ pub struct UpdateJobInput {
     /// <p>An archived jobs and its steps and tasks are deleted after 120 days. The job can't be recovered.</p>
     /// </important>
     pub lifecycle_status: ::std::option::Option<crate::types::UpdateJobLifecycleStatus>,
+    /// <p>The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers.</p>
+    /// <p>You can't set the <code>maxWorkerCount</code> to 0. If you set it to -1, there is no maximum number of workers.</p>
+    /// <p>If you don't specify the <code>maxWorkerCount</code>, the default is -1.</p>
+    /// <p>The maximum number of workers that can process tasks in the job.</p>
+    pub max_worker_count: ::std::option::Option<i32>,
+    /// <p>The farm ID of the job to update.</p>
+    pub farm_id: ::std::option::Option<::std::string::String>,
+    /// <p>The queue ID of the job to update.</p>
+    pub queue_id: ::std::option::Option<::std::string::String>,
+    /// <p>The job ID to update.</p>
+    pub job_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateJobInput {
     /// <p>The unique token which the server uses to recognize retries of the same request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
-    }
-    /// <p>The farm ID of the job to update.</p>
-    pub fn farm_id(&self) -> ::std::option::Option<&str> {
-        self.farm_id.as_deref()
-    }
-    /// <p>The queue ID of the job to update.</p>
-    pub fn queue_id(&self) -> ::std::option::Option<&str> {
-        self.queue_id.as_deref()
-    }
-    /// <p>The job ID to update.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
-        self.job_id.as_deref()
     }
     /// <p>The task status to update the job's tasks to.</p>
     pub fn target_task_run_status(&self) -> ::std::option::Option<&crate::types::JobTargetTaskRunStatus> {
@@ -63,6 +56,25 @@ impl UpdateJobInput {
     pub fn lifecycle_status(&self) -> ::std::option::Option<&crate::types::UpdateJobLifecycleStatus> {
         self.lifecycle_status.as_ref()
     }
+    /// <p>The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers.</p>
+    /// <p>You can't set the <code>maxWorkerCount</code> to 0. If you set it to -1, there is no maximum number of workers.</p>
+    /// <p>If you don't specify the <code>maxWorkerCount</code>, the default is -1.</p>
+    /// <p>The maximum number of workers that can process tasks in the job.</p>
+    pub fn max_worker_count(&self) -> ::std::option::Option<i32> {
+        self.max_worker_count
+    }
+    /// <p>The farm ID of the job to update.</p>
+    pub fn farm_id(&self) -> ::std::option::Option<&str> {
+        self.farm_id.as_deref()
+    }
+    /// <p>The queue ID of the job to update.</p>
+    pub fn queue_id(&self) -> ::std::option::Option<&str> {
+        self.queue_id.as_deref()
+    }
+    /// <p>The job ID to update.</p>
+    pub fn job_id(&self) -> ::std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
 }
 impl UpdateJobInput {
     /// Creates a new builder-style object to manufacture [`UpdateJobInput`](crate::operation::update_job::UpdateJobInput).
@@ -76,14 +88,15 @@ impl UpdateJobInput {
 #[non_exhaustive]
 pub struct UpdateJobInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) farm_id: ::std::option::Option<::std::string::String>,
-    pub(crate) queue_id: ::std::option::Option<::std::string::String>,
-    pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) target_task_run_status: ::std::option::Option<crate::types::JobTargetTaskRunStatus>,
     pub(crate) priority: ::std::option::Option<i32>,
     pub(crate) max_failed_tasks_count: ::std::option::Option<i32>,
     pub(crate) max_retries_per_task: ::std::option::Option<i32>,
     pub(crate) lifecycle_status: ::std::option::Option<crate::types::UpdateJobLifecycleStatus>,
+    pub(crate) max_worker_count: ::std::option::Option<i32>,
+    pub(crate) farm_id: ::std::option::Option<::std::string::String>,
+    pub(crate) queue_id: ::std::option::Option<::std::string::String>,
+    pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateJobInputBuilder {
     /// <p>The unique token which the server uses to recognize retries of the same request.</p>
@@ -99,51 +112,6 @@ impl UpdateJobInputBuilder {
     /// <p>The unique token which the server uses to recognize retries of the same request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
-    }
-    /// <p>The farm ID of the job to update.</p>
-    /// This field is required.
-    pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.farm_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The farm ID of the job to update.</p>
-    pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.farm_id = input;
-        self
-    }
-    /// <p>The farm ID of the job to update.</p>
-    pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.farm_id
-    }
-    /// <p>The queue ID of the job to update.</p>
-    /// This field is required.
-    pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.queue_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The queue ID of the job to update.</p>
-    pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.queue_id = input;
-        self
-    }
-    /// <p>The queue ID of the job to update.</p>
-    pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.queue_id
-    }
-    /// <p>The job ID to update.</p>
-    /// This field is required.
-    pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.job_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The job ID to update.</p>
-    pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
-    }
-    /// <p>The job ID to update.</p>
-    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.job_id
     }
     /// <p>The task status to update the job's tasks to.</p>
     pub fn target_task_run_status(mut self, input: crate::types::JobTargetTaskRunStatus) -> Self {
@@ -221,18 +189,87 @@ impl UpdateJobInputBuilder {
     pub fn get_lifecycle_status(&self) -> &::std::option::Option<crate::types::UpdateJobLifecycleStatus> {
         &self.lifecycle_status
     }
+    /// <p>The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers.</p>
+    /// <p>You can't set the <code>maxWorkerCount</code> to 0. If you set it to -1, there is no maximum number of workers.</p>
+    /// <p>If you don't specify the <code>maxWorkerCount</code>, the default is -1.</p>
+    /// <p>The maximum number of workers that can process tasks in the job.</p>
+    pub fn max_worker_count(mut self, input: i32) -> Self {
+        self.max_worker_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers.</p>
+    /// <p>You can't set the <code>maxWorkerCount</code> to 0. If you set it to -1, there is no maximum number of workers.</p>
+    /// <p>If you don't specify the <code>maxWorkerCount</code>, the default is -1.</p>
+    /// <p>The maximum number of workers that can process tasks in the job.</p>
+    pub fn set_max_worker_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_worker_count = input;
+        self
+    }
+    /// <p>The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers.</p>
+    /// <p>You can't set the <code>maxWorkerCount</code> to 0. If you set it to -1, there is no maximum number of workers.</p>
+    /// <p>If you don't specify the <code>maxWorkerCount</code>, the default is -1.</p>
+    /// <p>The maximum number of workers that can process tasks in the job.</p>
+    pub fn get_max_worker_count(&self) -> &::std::option::Option<i32> {
+        &self.max_worker_count
+    }
+    /// <p>The farm ID of the job to update.</p>
+    /// This field is required.
+    pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.farm_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The farm ID of the job to update.</p>
+    pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.farm_id = input;
+        self
+    }
+    /// <p>The farm ID of the job to update.</p>
+    pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.farm_id
+    }
+    /// <p>The queue ID of the job to update.</p>
+    /// This field is required.
+    pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.queue_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The queue ID of the job to update.</p>
+    pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.queue_id = input;
+        self
+    }
+    /// <p>The queue ID of the job to update.</p>
+    pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.queue_id
+    }
+    /// <p>The job ID to update.</p>
+    /// This field is required.
+    pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.job_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The job ID to update.</p>
+    pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.job_id = input;
+        self
+    }
+    /// <p>The job ID to update.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// Consumes the builder and constructs a [`UpdateJobInput`](crate::operation::update_job::UpdateJobInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_job::UpdateJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_job::UpdateJobInput {
             client_token: self.client_token,
-            farm_id: self.farm_id,
-            queue_id: self.queue_id,
-            job_id: self.job_id,
             target_task_run_status: self.target_task_run_status,
             priority: self.priority,
             max_failed_tasks_count: self.max_failed_tasks_count,
             max_retries_per_task: self.max_retries_per_task,
             lifecycle_status: self.lifecycle_status,
+            max_worker_count: self.max_worker_count,
+            farm_id: self.farm_id,
+            queue_id: self.queue_id,
+            job_id: self.job_id,
         })
     }
 }

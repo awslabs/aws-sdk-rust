@@ -108,6 +108,20 @@ impl UpdateStepFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// <p>The task status to update the step's tasks to.</p>
+    pub fn target_task_run_status(mut self, input: crate::types::StepTargetTaskRunStatus) -> Self {
+        self.inner = self.inner.target_task_run_status(input);
+        self
+    }
+    /// <p>The task status to update the step's tasks to.</p>
+    pub fn set_target_task_run_status(mut self, input: ::std::option::Option<crate::types::StepTargetTaskRunStatus>) -> Self {
+        self.inner = self.inner.set_target_task_run_status(input);
+        self
+    }
+    /// <p>The task status to update the step's tasks to.</p>
+    pub fn get_target_task_run_status(&self) -> &::std::option::Option<crate::types::StepTargetTaskRunStatus> {
+        self.inner.get_target_task_run_status()
+    }
     /// <p>The unique token which the server uses to recognize retries of the same request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -177,19 +191,5 @@ impl UpdateStepFluentBuilder {
     /// <p>The step ID to update.</p>
     pub fn get_step_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_step_id()
-    }
-    /// <p>The task status to update the step's tasks to.</p>
-    pub fn target_task_run_status(mut self, input: crate::types::StepTargetTaskRunStatus) -> Self {
-        self.inner = self.inner.target_task_run_status(input);
-        self
-    }
-    /// <p>The task status to update the step's tasks to.</p>
-    pub fn set_target_task_run_status(mut self, input: ::std::option::Option<crate::types::StepTargetTaskRunStatus>) -> Self {
-        self.inner = self.inner.set_target_task_run_status(input);
-        self
-    }
-    /// <p>The task status to update the step's tasks to.</p>
-    pub fn get_target_task_run_status(&self) -> &::std::option::Option<crate::types::StepTargetTaskRunStatus> {
-        self.inner.get_target_task_run_status()
     }
 }

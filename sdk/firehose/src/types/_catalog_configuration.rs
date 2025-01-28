@@ -6,7 +6,7 @@
 pub struct CatalogConfiguration {
     /// <p>Specifies the Glue catalog ARN identifier of the destination Apache Iceberg Tables. You must specify the ARN in the format <code>arn:aws:glue:region:account-id:catalog</code>.</p>
     pub catalog_arn: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>The warehouse location for Apache Iceberg tables. You must configure this when schema evolution and table creation is enabled.</p>
     /// <p>Amazon Data Firehose is in preview release and is subject to change.</p>
     pub warehouse_location: ::std::option::Option<::std::string::String>,
 }
@@ -15,7 +15,7 @@ impl CatalogConfiguration {
     pub fn catalog_arn(&self) -> ::std::option::Option<&str> {
         self.catalog_arn.as_deref()
     }
-    /// <p></p>
+    /// <p>The warehouse location for Apache Iceberg tables. You must configure this when schema evolution and table creation is enabled.</p>
     /// <p>Amazon Data Firehose is in preview release and is subject to change.</p>
     pub fn warehouse_location(&self) -> ::std::option::Option<&str> {
         self.warehouse_location.as_deref()
@@ -50,19 +50,19 @@ impl CatalogConfigurationBuilder {
     pub fn get_catalog_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.catalog_arn
     }
-    /// <p></p>
+    /// <p>The warehouse location for Apache Iceberg tables. You must configure this when schema evolution and table creation is enabled.</p>
     /// <p>Amazon Data Firehose is in preview release and is subject to change.</p>
     pub fn warehouse_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.warehouse_location = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The warehouse location for Apache Iceberg tables. You must configure this when schema evolution and table creation is enabled.</p>
     /// <p>Amazon Data Firehose is in preview release and is subject to change.</p>
     pub fn set_warehouse_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.warehouse_location = input;
         self
     }
-    /// <p></p>
+    /// <p>The warehouse location for Apache Iceberg tables. You must configure this when schema evolution and table creation is enabled.</p>
     /// <p>Amazon Data Firehose is in preview release and is subject to change.</p>
     pub fn get_warehouse_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.warehouse_location

@@ -33,5 +33,28 @@ pub fn ser_update_location_smb_input_input(
         crate::protocol_serde::shape_smb_mount_options::ser_smb_mount_options(&mut object_10, var_9)?;
         object_10.finish();
     }
+    if let Some(var_11) = &input.authentication_type {
+        object.key("AuthenticationType").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.dns_ip_addresses {
+        let mut array_13 = object.key("DnsIpAddresses").start_array();
+        for item_14 in var_12 {
+            {
+                array_13.value().string(item_14.as_str());
+            }
+        }
+        array_13.finish();
+    }
+    if let Some(var_15) = &input.kerberos_principal {
+        object.key("KerberosPrincipal").string(var_15.as_str());
+    }
+    if let Some(var_16) = &input.kerberos_keytab {
+        object.key("KerberosKeytab").string_unchecked(&::aws_smithy_types::base64::encode(var_16));
+    }
+    if let Some(var_17) = &input.kerberos_krb5_conf {
+        object
+            .key("KerberosKrb5Conf")
+            .string_unchecked(&::aws_smithy_types::base64::encode(var_17));
+    }
     Ok(())
 }

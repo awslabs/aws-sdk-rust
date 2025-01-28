@@ -173,6 +173,8 @@ pub use crate::types::_authentication_configuration::AuthenticationConfiguration
 
 pub use crate::types::_kinesis_stream_source_description::KinesisStreamSourceDescriptionBuilder;
 
+pub use crate::types::_direct_put_source_description::DirectPutSourceDescriptionBuilder;
+
 pub use crate::types::_delivery_stream_encryption_configuration::DeliveryStreamEncryptionConfigurationBuilder;
 
 pub use crate::types::_database_source_configuration::DatabaseSourceConfigurationBuilder;
@@ -200,3 +202,5 @@ pub use crate::types::_redshift_destination_configuration::RedshiftDestinationCo
 pub use crate::types::_extended_s3_destination_configuration::ExtendedS3DestinationConfigurationBuilder;
 
 pub use crate::types::_kinesis_stream_source_configuration::KinesisStreamSourceConfigurationBuilder;
+
+pub use crate::types::_direct_put_source_configuration::DirectPutSourceConfigurationBuilder;

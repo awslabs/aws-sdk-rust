@@ -6,10 +6,10 @@
 pub struct IcebergDestinationUpdate {
     /// <p>Provides a list of <code>DestinationTableConfigurations</code> which Firehose uses to deliver data to Apache Iceberg Tables. Firehose will write data with insert if table specific configuration is not provided here.</p>
     pub destination_table_configuration_list: ::std::option::Option<::std::vec::Vec<crate::types::DestinationTableConfiguration>>,
-    /// <p></p>
+    /// <p>The configuration to enable automatic schema evolution.</p>
     /// <p>Amazon Data Firehose is in preview release and is subject to change.</p>
     pub schema_evolution_configuration: ::std::option::Option<crate::types::SchemaEvolutionConfiguration>,
-    /// <p></p>
+    /// <p>The configuration to enable automatic table creation.</p>
     /// <p>Amazon Data Firehose is in preview release and is subject to change.</p>
     pub table_creation_configuration: ::std::option::Option<crate::types::TableCreationConfiguration>,
     /// <p>Describes hints for the buffering to perform before delivering data to the destination. These options are treated as hints, and therefore Firehose might choose to use different values when it is optimal. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for one of them, you must also provide a value for the other.</p>
@@ -24,6 +24,9 @@ pub struct IcebergDestinationUpdate {
     pub retry_options: ::std::option::Option<crate::types::RetryOptions>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling Apache Iceberg Tables.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Describes whether all incoming data for this delivery stream will be append only (inserts only and not for updates and deletes) for Iceberg delivery. This feature is only applicable for Apache Iceberg Tables.</p>
+    /// <p>The default value is false. If you set this value to true, Firehose automatically increases the throughput limit of a stream based on the throttling levels of the stream. If you set this parameter to true for a stream with updates and deletes, you will see out of order delivery.</p>
+    pub append_only: ::std::option::Option<bool>,
     /// <p>Configuration describing where the destination Iceberg tables are persisted.</p>
     pub catalog_configuration: ::std::option::Option<crate::types::CatalogConfiguration>,
     /// <p>Describes the configuration of a destination in Amazon S3.</p>
@@ -36,12 +39,12 @@ impl IcebergDestinationUpdate {
     pub fn destination_table_configuration_list(&self) -> &[crate::types::DestinationTableConfiguration] {
         self.destination_table_configuration_list.as_deref().unwrap_or_default()
     }
-    /// <p></p>
+    /// <p>The configuration to enable automatic schema evolution.</p>
     /// <p>Amazon Data Firehose is in preview release and is subject to change.</p>
     pub fn schema_evolution_configuration(&self) -> ::std::option::Option<&crate::types::SchemaEvolutionConfiguration> {
         self.schema_evolution_configuration.as_ref()
     }
-    /// <p></p>
+    /// <p>The configuration to enable automatic table creation.</p>
     /// <p>Amazon Data Firehose is in preview release and is subject to change.</p>
     pub fn table_creation_configuration(&self) -> ::std::option::Option<&crate::types::TableCreationConfiguration> {
         self.table_creation_configuration.as_ref()
@@ -69,6 +72,11 @@ impl IcebergDestinationUpdate {
     /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling Apache Iceberg Tables.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
+    }
+    /// <p>Describes whether all incoming data for this delivery stream will be append only (inserts only and not for updates and deletes) for Iceberg delivery. This feature is only applicable for Apache Iceberg Tables.</p>
+    /// <p>The default value is false. If you set this value to true, Firehose automatically increases the throughput limit of a stream based on the throttling levels of the stream. If you set this parameter to true for a stream with updates and deletes, you will see out of order delivery.</p>
+    pub fn append_only(&self) -> ::std::option::Option<bool> {
+        self.append_only
     }
     /// <p>Configuration describing where the destination Iceberg tables are persisted.</p>
     pub fn catalog_configuration(&self) -> ::std::option::Option<&crate::types::CatalogConfiguration> {
@@ -99,6 +107,7 @@ pub struct IcebergDestinationUpdateBuilder {
     pub(crate) s3_backup_mode: ::std::option::Option<crate::types::IcebergS3BackupMode>,
     pub(crate) retry_options: ::std::option::Option<crate::types::RetryOptions>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) append_only: ::std::option::Option<bool>,
     pub(crate) catalog_configuration: ::std::option::Option<crate::types::CatalogConfiguration>,
     pub(crate) s3_configuration: ::std::option::Option<crate::types::S3DestinationConfiguration>,
 }
@@ -126,36 +135,36 @@ impl IcebergDestinationUpdateBuilder {
     pub fn get_destination_table_configuration_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DestinationTableConfiguration>> {
         &self.destination_table_configuration_list
     }
-    /// <p></p>
+    /// <p>The configuration to enable automatic schema evolution.</p>
     /// <p>Amazon Data Firehose is in preview release and is subject to change.</p>
     pub fn schema_evolution_configuration(mut self, input: crate::types::SchemaEvolutionConfiguration) -> Self {
         self.schema_evolution_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p></p>
+    /// <p>The configuration to enable automatic schema evolution.</p>
     /// <p>Amazon Data Firehose is in preview release and is subject to change.</p>
     pub fn set_schema_evolution_configuration(mut self, input: ::std::option::Option<crate::types::SchemaEvolutionConfiguration>) -> Self {
         self.schema_evolution_configuration = input;
         self
     }
-    /// <p></p>
+    /// <p>The configuration to enable automatic schema evolution.</p>
     /// <p>Amazon Data Firehose is in preview release and is subject to change.</p>
     pub fn get_schema_evolution_configuration(&self) -> &::std::option::Option<crate::types::SchemaEvolutionConfiguration> {
         &self.schema_evolution_configuration
     }
-    /// <p></p>
+    /// <p>The configuration to enable automatic table creation.</p>
     /// <p>Amazon Data Firehose is in preview release and is subject to change.</p>
     pub fn table_creation_configuration(mut self, input: crate::types::TableCreationConfiguration) -> Self {
         self.table_creation_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p></p>
+    /// <p>The configuration to enable automatic table creation.</p>
     /// <p>Amazon Data Firehose is in preview release and is subject to change.</p>
     pub fn set_table_creation_configuration(mut self, input: ::std::option::Option<crate::types::TableCreationConfiguration>) -> Self {
         self.table_creation_configuration = input;
         self
     }
-    /// <p></p>
+    /// <p>The configuration to enable automatic table creation.</p>
     /// <p>Amazon Data Firehose is in preview release and is subject to change.</p>
     pub fn get_table_creation_configuration(&self) -> &::std::option::Option<crate::types::TableCreationConfiguration> {
         &self.table_creation_configuration
@@ -244,6 +253,23 @@ impl IcebergDestinationUpdateBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
+    /// <p>Describes whether all incoming data for this delivery stream will be append only (inserts only and not for updates and deletes) for Iceberg delivery. This feature is only applicable for Apache Iceberg Tables.</p>
+    /// <p>The default value is false. If you set this value to true, Firehose automatically increases the throughput limit of a stream based on the throttling levels of the stream. If you set this parameter to true for a stream with updates and deletes, you will see out of order delivery.</p>
+    pub fn append_only(mut self, input: bool) -> Self {
+        self.append_only = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes whether all incoming data for this delivery stream will be append only (inserts only and not for updates and deletes) for Iceberg delivery. This feature is only applicable for Apache Iceberg Tables.</p>
+    /// <p>The default value is false. If you set this value to true, Firehose automatically increases the throughput limit of a stream based on the throttling levels of the stream. If you set this parameter to true for a stream with updates and deletes, you will see out of order delivery.</p>
+    pub fn set_append_only(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.append_only = input;
+        self
+    }
+    /// <p>Describes whether all incoming data for this delivery stream will be append only (inserts only and not for updates and deletes) for Iceberg delivery. This feature is only applicable for Apache Iceberg Tables.</p>
+    /// <p>The default value is false. If you set this value to true, Firehose automatically increases the throughput limit of a stream based on the throttling levels of the stream. If you set this parameter to true for a stream with updates and deletes, you will see out of order delivery.</p>
+    pub fn get_append_only(&self) -> &::std::option::Option<bool> {
+        &self.append_only
+    }
     /// <p>Configuration describing where the destination Iceberg tables are persisted.</p>
     pub fn catalog_configuration(mut self, input: crate::types::CatalogConfiguration) -> Self {
         self.catalog_configuration = ::std::option::Option::Some(input);
@@ -284,6 +310,7 @@ impl IcebergDestinationUpdateBuilder {
             s3_backup_mode: self.s3_backup_mode,
             retry_options: self.retry_options,
             role_arn: self.role_arn,
+            append_only: self.append_only,
             catalog_configuration: self.catalog_configuration,
             s3_configuration: self.s3_configuration,
         }

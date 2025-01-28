@@ -5,6 +5,8 @@
 pub struct UpdateTaskInput {
     /// <p>The unique token which the server uses to recognize retries of the same request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>The run status with which to start the task.</p>
+    pub target_run_status: ::std::option::Option<crate::types::TaskTargetRunStatus>,
     /// <p>The farm ID to update.</p>
     pub farm_id: ::std::option::Option<::std::string::String>,
     /// <p>The queue ID to update.</p>
@@ -15,13 +17,15 @@ pub struct UpdateTaskInput {
     pub step_id: ::std::option::Option<::std::string::String>,
     /// <p>The task ID to update.</p>
     pub task_id: ::std::option::Option<::std::string::String>,
-    /// <p>The run status with which to start the task.</p>
-    pub target_run_status: ::std::option::Option<crate::types::TaskTargetRunStatus>,
 }
 impl UpdateTaskInput {
     /// <p>The unique token which the server uses to recognize retries of the same request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
+    }
+    /// <p>The run status with which to start the task.</p>
+    pub fn target_run_status(&self) -> ::std::option::Option<&crate::types::TaskTargetRunStatus> {
+        self.target_run_status.as_ref()
     }
     /// <p>The farm ID to update.</p>
     pub fn farm_id(&self) -> ::std::option::Option<&str> {
@@ -43,10 +47,6 @@ impl UpdateTaskInput {
     pub fn task_id(&self) -> ::std::option::Option<&str> {
         self.task_id.as_deref()
     }
-    /// <p>The run status with which to start the task.</p>
-    pub fn target_run_status(&self) -> ::std::option::Option<&crate::types::TaskTargetRunStatus> {
-        self.target_run_status.as_ref()
-    }
 }
 impl UpdateTaskInput {
     /// Creates a new builder-style object to manufacture [`UpdateTaskInput`](crate::operation::update_task::UpdateTaskInput).
@@ -60,12 +60,12 @@ impl UpdateTaskInput {
 #[non_exhaustive]
 pub struct UpdateTaskInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) target_run_status: ::std::option::Option<crate::types::TaskTargetRunStatus>,
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,
     pub(crate) queue_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) step_id: ::std::option::Option<::std::string::String>,
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
-    pub(crate) target_run_status: ::std::option::Option<crate::types::TaskTargetRunStatus>,
 }
 impl UpdateTaskInputBuilder {
     /// <p>The unique token which the server uses to recognize retries of the same request.</p>
@@ -81,6 +81,21 @@ impl UpdateTaskInputBuilder {
     /// <p>The unique token which the server uses to recognize retries of the same request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
+    }
+    /// <p>The run status with which to start the task.</p>
+    /// This field is required.
+    pub fn target_run_status(mut self, input: crate::types::TaskTargetRunStatus) -> Self {
+        self.target_run_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The run status with which to start the task.</p>
+    pub fn set_target_run_status(mut self, input: ::std::option::Option<crate::types::TaskTargetRunStatus>) -> Self {
+        self.target_run_status = input;
+        self
+    }
+    /// <p>The run status with which to start the task.</p>
+    pub fn get_target_run_status(&self) -> &::std::option::Option<crate::types::TaskTargetRunStatus> {
+        &self.target_run_status
     }
     /// <p>The farm ID to update.</p>
     /// This field is required.
@@ -157,31 +172,16 @@ impl UpdateTaskInputBuilder {
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.task_id
     }
-    /// <p>The run status with which to start the task.</p>
-    /// This field is required.
-    pub fn target_run_status(mut self, input: crate::types::TaskTargetRunStatus) -> Self {
-        self.target_run_status = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The run status with which to start the task.</p>
-    pub fn set_target_run_status(mut self, input: ::std::option::Option<crate::types::TaskTargetRunStatus>) -> Self {
-        self.target_run_status = input;
-        self
-    }
-    /// <p>The run status with which to start the task.</p>
-    pub fn get_target_run_status(&self) -> &::std::option::Option<crate::types::TaskTargetRunStatus> {
-        &self.target_run_status
-    }
     /// Consumes the builder and constructs a [`UpdateTaskInput`](crate::operation::update_task::UpdateTaskInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_task::UpdateTaskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_task::UpdateTaskInput {
             client_token: self.client_token,
+            target_run_status: self.target_run_status,
             farm_id: self.farm_id,
             queue_id: self.queue_id,
             job_id: self.job_id,
             step_id: self.step_id,
             task_id: self.task_id,
-            target_run_status: self.target_run_status,
         })
     }
 }

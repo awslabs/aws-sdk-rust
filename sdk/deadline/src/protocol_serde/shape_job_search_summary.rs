@@ -116,6 +116,13 @@ where
                         "jobParameters" => {
                             builder = builder.set_job_parameters(crate::protocol_serde::shape_job_parameters::de_job_parameters(tokens)?);
                         }
+                        "maxWorkerCount" => {
+                            builder = builder.set_max_worker_count(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         "sourceJobId" => {
                             builder = builder.set_source_job_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

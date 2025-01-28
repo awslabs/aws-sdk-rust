@@ -45,5 +45,28 @@ pub fn ser_create_location_smb_input_input(
         }
         array_12.finish();
     }
+    if let Some(var_15) = &input.authentication_type {
+        object.key("AuthenticationType").string(var_15.as_str());
+    }
+    if let Some(var_16) = &input.dns_ip_addresses {
+        let mut array_17 = object.key("DnsIpAddresses").start_array();
+        for item_18 in var_16 {
+            {
+                array_17.value().string(item_18.as_str());
+            }
+        }
+        array_17.finish();
+    }
+    if let Some(var_19) = &input.kerberos_principal {
+        object.key("KerberosPrincipal").string(var_19.as_str());
+    }
+    if let Some(var_20) = &input.kerberos_keytab {
+        object.key("KerberosKeytab").string_unchecked(&::aws_smithy_types::base64::encode(var_20));
+    }
+    if let Some(var_21) = &input.kerberos_krb5_conf {
+        object
+            .key("KerberosKrb5Conf")
+            .string_unchecked(&::aws_smithy_types::base64::encode(var_21));
+    }
     Ok(())
 }

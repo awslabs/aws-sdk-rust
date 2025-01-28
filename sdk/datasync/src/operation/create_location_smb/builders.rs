@@ -23,7 +23,7 @@ impl crate::operation::create_location_smb::builders::CreateLocationSmbInputBuil
 /// Fluent builder constructing a request to `CreateLocationSmb`.
 ///
 /// <p>Creates a transfer <i>location</i> for a Server Message Block (SMB) file server. DataSync can use this location as a source or destination for transferring data.</p>
-/// <p>Before you begin, make sure that you understand how DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb">accesses SMB file servers</a>.</p>
+/// <p>Before you begin, make sure that you understand how DataSync accesses SMB file servers. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">Providing DataSync access to SMB file servers</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLocationSmbFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -110,90 +110,102 @@ impl CreateLocationSmbFluentBuilder {
         self
     }
     /// <p>Specifies the name of the share exported by your SMB file server where DataSync will read or write data. You can include a subdirectory in the share path (for example, <code>/path/to/subdirectory</code>). Make sure that other SMB clients in your network can also mount this path.</p>
-    /// <p>To copy all data in the subdirectory, DataSync must be able to mount the SMB share and access all of its data. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
+    /// <p>To copy all data in the subdirectory, DataSync must be able to mount the SMB share and access all of its data. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">Providing DataSync access to SMB file servers</a>.</p>
     pub fn subdirectory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subdirectory(input.into());
         self
     }
     /// <p>Specifies the name of the share exported by your SMB file server where DataSync will read or write data. You can include a subdirectory in the share path (for example, <code>/path/to/subdirectory</code>). Make sure that other SMB clients in your network can also mount this path.</p>
-    /// <p>To copy all data in the subdirectory, DataSync must be able to mount the SMB share and access all of its data. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
+    /// <p>To copy all data in the subdirectory, DataSync must be able to mount the SMB share and access all of its data. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">Providing DataSync access to SMB file servers</a>.</p>
     pub fn set_subdirectory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subdirectory(input);
         self
     }
     /// <p>Specifies the name of the share exported by your SMB file server where DataSync will read or write data. You can include a subdirectory in the share path (for example, <code>/path/to/subdirectory</code>). Make sure that other SMB clients in your network can also mount this path.</p>
-    /// <p>To copy all data in the subdirectory, DataSync must be able to mount the SMB share and access all of its data. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
+    /// <p>To copy all data in the subdirectory, DataSync must be able to mount the SMB share and access all of its data. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">Providing DataSync access to SMB file servers</a>.</p>
     pub fn get_subdirectory(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_subdirectory()
     }
-    /// <p>Specifies the Domain Name Service (DNS) name or IP address of the SMB file server that your DataSync agent will mount.</p><note>
-    /// <p>You can't specify an IP version 6 (IPv6) address.</p>
-    /// </note>
+    /// <p>Specifies the domain name or IP address of the SMB file server that your DataSync agent will mount.</p>
+    /// <p>Remember the following when configuring this parameter:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You can't specify an IP version 6 (IPv6) address.</p></li>
+    /// <li>
+    /// <p>If you're using Kerberos authentication, you must specify a domain name.</p></li>
+    /// </ul>
     pub fn server_hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.server_hostname(input.into());
         self
     }
-    /// <p>Specifies the Domain Name Service (DNS) name or IP address of the SMB file server that your DataSync agent will mount.</p><note>
-    /// <p>You can't specify an IP version 6 (IPv6) address.</p>
-    /// </note>
+    /// <p>Specifies the domain name or IP address of the SMB file server that your DataSync agent will mount.</p>
+    /// <p>Remember the following when configuring this parameter:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You can't specify an IP version 6 (IPv6) address.</p></li>
+    /// <li>
+    /// <p>If you're using Kerberos authentication, you must specify a domain name.</p></li>
+    /// </ul>
     pub fn set_server_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_server_hostname(input);
         self
     }
-    /// <p>Specifies the Domain Name Service (DNS) name or IP address of the SMB file server that your DataSync agent will mount.</p><note>
-    /// <p>You can't specify an IP version 6 (IPv6) address.</p>
-    /// </note>
+    /// <p>Specifies the domain name or IP address of the SMB file server that your DataSync agent will mount.</p>
+    /// <p>Remember the following when configuring this parameter:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You can't specify an IP version 6 (IPv6) address.</p></li>
+    /// <li>
+    /// <p>If you're using Kerberos authentication, you must specify a domain name.</p></li>
+    /// </ul>
     pub fn get_server_hostname(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_server_hostname()
     }
-    /// <p>Specifies the user that can mount and access the files, folders, and file metadata in your SMB file server.</p>
-    /// <p>For information about choosing a user with the right level of access for your transfer, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
+    /// <p>Specifies the user that can mount and access the files, folders, and file metadata in your SMB file server. This parameter applies only if <code>AuthenticationType</code> is set to <code>NTLM</code>.</p>
+    /// <p>For information about choosing a user with the right level of access for your transfer, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">Providing DataSync access to SMB file servers</a>.</p>
     pub fn user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user(input.into());
         self
     }
-    /// <p>Specifies the user that can mount and access the files, folders, and file metadata in your SMB file server.</p>
-    /// <p>For information about choosing a user with the right level of access for your transfer, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
+    /// <p>Specifies the user that can mount and access the files, folders, and file metadata in your SMB file server. This parameter applies only if <code>AuthenticationType</code> is set to <code>NTLM</code>.</p>
+    /// <p>For information about choosing a user with the right level of access for your transfer, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">Providing DataSync access to SMB file servers</a>.</p>
     pub fn set_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user(input);
         self
     }
-    /// <p>Specifies the user that can mount and access the files, folders, and file metadata in your SMB file server.</p>
-    /// <p>For information about choosing a user with the right level of access for your transfer, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
+    /// <p>Specifies the user that can mount and access the files, folders, and file metadata in your SMB file server. This parameter applies only if <code>AuthenticationType</code> is set to <code>NTLM</code>.</p>
+    /// <p>For information about choosing a user with the right level of access for your transfer, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">Providing DataSync access to SMB file servers</a>.</p>
     pub fn get_user(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user()
     }
-    /// <p>Specifies the name of the Active Directory domain that your SMB file server belongs to.</p>
-    /// <p>If you have multiple Active Directory domains in your environment, configuring this parameter makes sure that DataSync connects to the right file server.</p>
+    /// <p>Specifies the Windows domain name that your SMB file server belongs to. This parameter applies only if <code>AuthenticationType</code> is set to <code>NTLM</code>.</p>
+    /// <p>If you have multiple domains in your environment, configuring this parameter makes sure that DataSync connects to the right file server.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain(input.into());
         self
     }
-    /// <p>Specifies the name of the Active Directory domain that your SMB file server belongs to.</p>
-    /// <p>If you have multiple Active Directory domains in your environment, configuring this parameter makes sure that DataSync connects to the right file server.</p>
+    /// <p>Specifies the Windows domain name that your SMB file server belongs to. This parameter applies only if <code>AuthenticationType</code> is set to <code>NTLM</code>.</p>
+    /// <p>If you have multiple domains in your environment, configuring this parameter makes sure that DataSync connects to the right file server.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain(input);
         self
     }
-    /// <p>Specifies the name of the Active Directory domain that your SMB file server belongs to.</p>
-    /// <p>If you have multiple Active Directory domains in your environment, configuring this parameter makes sure that DataSync connects to the right file server.</p>
+    /// <p>Specifies the Windows domain name that your SMB file server belongs to. This parameter applies only if <code>AuthenticationType</code> is set to <code>NTLM</code>.</p>
+    /// <p>If you have multiple domains in your environment, configuring this parameter makes sure that DataSync connects to the right file server.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain()
     }
-    /// <p>Specifies the password of the user who can mount your SMB file server and has permission to access the files and folders involved in your transfer.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
+    /// <p>Specifies the password of the user who can mount your SMB file server and has permission to access the files and folders involved in your transfer. This parameter applies only if <code>AuthenticationType</code> is set to <code>NTLM</code>.</p>
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.password(input.into());
         self
     }
-    /// <p>Specifies the password of the user who can mount your SMB file server and has permission to access the files and folders involved in your transfer.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
+    /// <p>Specifies the password of the user who can mount your SMB file server and has permission to access the files and folders involved in your transfer. This parameter applies only if <code>AuthenticationType</code> is set to <code>NTLM</code>.</p>
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_password(input);
         self
     }
-    /// <p>Specifies the password of the user who can mount your SMB file server and has permission to access the files and folders involved in your transfer.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
+    /// <p>Specifies the password of the user who can mount your SMB file server and has permission to access the files and folders involved in your transfer. This parameter applies only if <code>AuthenticationType</code> is set to <code>NTLM</code>.</p>
     pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_password()
     }
@@ -248,5 +260,101 @@ impl CreateLocationSmbFluentBuilder {
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>> {
         self.inner.get_tags()
+    }
+    /// <p>Specifies the authentication protocol that DataSync uses to connect to your SMB file server. DataSync supports <code>NTLM</code> (default) and <code>KERBEROS</code> authentication.</p>
+    pub fn authentication_type(mut self, input: crate::types::SmbAuthenticationType) -> Self {
+        self.inner = self.inner.authentication_type(input);
+        self
+    }
+    /// <p>Specifies the authentication protocol that DataSync uses to connect to your SMB file server. DataSync supports <code>NTLM</code> (default) and <code>KERBEROS</code> authentication.</p>
+    pub fn set_authentication_type(mut self, input: ::std::option::Option<crate::types::SmbAuthenticationType>) -> Self {
+        self.inner = self.inner.set_authentication_type(input);
+        self
+    }
+    /// <p>Specifies the authentication protocol that DataSync uses to connect to your SMB file server. DataSync supports <code>NTLM</code> (default) and <code>KERBEROS</code> authentication.</p>
+    pub fn get_authentication_type(&self) -> &::std::option::Option<crate::types::SmbAuthenticationType> {
+        self.inner.get_authentication_type()
+    }
+    ///
+    /// Appends an item to `DnsIpAddresses`.
+    ///
+    /// To override the contents of this collection use [`set_dns_ip_addresses`](Self::set_dns_ip_addresses).
+    ///
+    /// <p>Specifies the IPv4 addresses for the DNS servers that your SMB file server belongs to. This parameter applies only if <code>AuthenticationType</code> is set to <code>KERBEROS</code>.</p>
+    /// <p>If you have multiple domains in your environment, configuring this parameter makes sure that DataSync connects to the right SMB file server.</p>
+    pub fn dns_ip_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.dns_ip_addresses(input.into());
+        self
+    }
+    /// <p>Specifies the IPv4 addresses for the DNS servers that your SMB file server belongs to. This parameter applies only if <code>AuthenticationType</code> is set to <code>KERBEROS</code>.</p>
+    /// <p>If you have multiple domains in your environment, configuring this parameter makes sure that DataSync connects to the right SMB file server.</p>
+    pub fn set_dns_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_dns_ip_addresses(input);
+        self
+    }
+    /// <p>Specifies the IPv4 addresses for the DNS servers that your SMB file server belongs to. This parameter applies only if <code>AuthenticationType</code> is set to <code>KERBEROS</code>.</p>
+    /// <p>If you have multiple domains in your environment, configuring this parameter makes sure that DataSync connects to the right SMB file server.</p>
+    pub fn get_dns_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_dns_ip_addresses()
+    }
+    /// <p>Specifies a service principal name (SPN), which is an identity in your Kerberos realm that has permission to access the files, folders, and file metadata in your SMB file server.</p>
+    /// <p>SPNs are case sensitive and must include a prepended <code>cifs/</code>. For example, an SPN might look like <code>cifs/kerberosuser@EXAMPLE.COM</code>.</p>
+    /// <p>Your task execution will fail if the SPN that you provide for this parameter doesn’t match what’s exactly in your keytab or <code>krb5.conf</code> files.</p>
+    pub fn kerberos_principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.kerberos_principal(input.into());
+        self
+    }
+    /// <p>Specifies a service principal name (SPN), which is an identity in your Kerberos realm that has permission to access the files, folders, and file metadata in your SMB file server.</p>
+    /// <p>SPNs are case sensitive and must include a prepended <code>cifs/</code>. For example, an SPN might look like <code>cifs/kerberosuser@EXAMPLE.COM</code>.</p>
+    /// <p>Your task execution will fail if the SPN that you provide for this parameter doesn’t match what’s exactly in your keytab or <code>krb5.conf</code> files.</p>
+    pub fn set_kerberos_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_kerberos_principal(input);
+        self
+    }
+    /// <p>Specifies a service principal name (SPN), which is an identity in your Kerberos realm that has permission to access the files, folders, and file metadata in your SMB file server.</p>
+    /// <p>SPNs are case sensitive and must include a prepended <code>cifs/</code>. For example, an SPN might look like <code>cifs/kerberosuser@EXAMPLE.COM</code>.</p>
+    /// <p>Your task execution will fail if the SPN that you provide for this parameter doesn’t match what’s exactly in your keytab or <code>krb5.conf</code> files.</p>
+    pub fn get_kerberos_principal(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kerberos_principal()
+    }
+    /// <p>Specifies your Kerberos key table (keytab) file, which includes mappings between your service principal name (SPN) and encryption keys.</p>
+    /// <p>You can specify the keytab using a file path (for example, <code>file://path/to/file.keytab</code>). The file must be base64 encoded. If you're using the CLI, the encoding is done for you.</p>
+    /// <p>To avoid task execution errors, make sure that the SPN in the keytab file matches exactly what you specify for <code>KerberosPrincipal</code> and in your <code>krb5.conf</code> file.</p>
+    pub fn kerberos_keytab(mut self, input: ::aws_smithy_types::Blob) -> Self {
+        self.inner = self.inner.kerberos_keytab(input);
+        self
+    }
+    /// <p>Specifies your Kerberos key table (keytab) file, which includes mappings between your service principal name (SPN) and encryption keys.</p>
+    /// <p>You can specify the keytab using a file path (for example, <code>file://path/to/file.keytab</code>). The file must be base64 encoded. If you're using the CLI, the encoding is done for you.</p>
+    /// <p>To avoid task execution errors, make sure that the SPN in the keytab file matches exactly what you specify for <code>KerberosPrincipal</code> and in your <code>krb5.conf</code> file.</p>
+    pub fn set_kerberos_keytab(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
+        self.inner = self.inner.set_kerberos_keytab(input);
+        self
+    }
+    /// <p>Specifies your Kerberos key table (keytab) file, which includes mappings between your service principal name (SPN) and encryption keys.</p>
+    /// <p>You can specify the keytab using a file path (for example, <code>file://path/to/file.keytab</code>). The file must be base64 encoded. If you're using the CLI, the encoding is done for you.</p>
+    /// <p>To avoid task execution errors, make sure that the SPN in the keytab file matches exactly what you specify for <code>KerberosPrincipal</code> and in your <code>krb5.conf</code> file.</p>
+    pub fn get_kerberos_keytab(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        self.inner.get_kerberos_keytab()
+    }
+    /// <p>Specifies a Kerberos configuration file (<code>krb5.conf</code>) that defines your Kerberos realm configuration.</p>
+    /// <p>You can specify the <code>krb5.conf</code> using a file path (for example, <code>file://path/to/krb5.conf</code>). The file must be base64 encoded. If you're using the CLI, the encoding is done for you.</p>
+    /// <p>To avoid task execution errors, make sure that the service principal name (SPN) in the <code>krb5.conf</code> file matches exactly what you specify for <code>KerberosPrincipal</code> and in your keytab file.</p>
+    pub fn kerberos_krb5_conf(mut self, input: ::aws_smithy_types::Blob) -> Self {
+        self.inner = self.inner.kerberos_krb5_conf(input);
+        self
+    }
+    /// <p>Specifies a Kerberos configuration file (<code>krb5.conf</code>) that defines your Kerberos realm configuration.</p>
+    /// <p>You can specify the <code>krb5.conf</code> using a file path (for example, <code>file://path/to/krb5.conf</code>). The file must be base64 encoded. If you're using the CLI, the encoding is done for you.</p>
+    /// <p>To avoid task execution errors, make sure that the service principal name (SPN) in the <code>krb5.conf</code> file matches exactly what you specify for <code>KerberosPrincipal</code> and in your keytab file.</p>
+    pub fn set_kerberos_krb5_conf(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
+        self.inner = self.inner.set_kerberos_krb5_conf(input);
+        self
+    }
+    /// <p>Specifies a Kerberos configuration file (<code>krb5.conf</code>) that defines your Kerberos realm configuration.</p>
+    /// <p>You can specify the <code>krb5.conf</code> using a file path (for example, <code>file://path/to/krb5.conf</code>). The file must be base64 encoded. If you're using the CLI, the encoding is done for you.</p>
+    /// <p>To avoid task execution errors, make sure that the service principal name (SPN) in the <code>krb5.conf</code> file matches exactly what you specify for <code>KerberosPrincipal</code> and in your keytab file.</p>
+    pub fn get_kerberos_krb5_conf(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        self.inner.get_kerberos_krb5_conf()
     }
 }

@@ -55,7 +55,8 @@ pub struct EventInformation {
     /// <li>
     /// <p><code>launchSpecTemporarilyBlacklisted</code> - The configuration is not valid and several attempts to launch instances have failed. For more information, see the description of the event.</p></li>
     /// <li>
-    /// <p><code>launchSpecUnusable</code> - The price in a launch specification is not valid because it is below the Spot price.</p></li>
+    /// <p><code>launchSpecUnusable</code> - The price specified in a launch specification is not valid because it is below the Spot price for the requested Spot pools.</p>
+    /// <p>Note: Even if a fleet with the <code>maintain</code> request type is in the process of being canceled, it may still publish a <code>launchSpecUnusable</code> event. This does not mean that the canceled fleet is attempting to launch a new instance.</p></li>
     /// <li>
     /// <p><code>registerWithLoadBalancersFailed</code> - An attempt to register instances with load balancers failed. For more information, see the description of the event.</p></li>
     /// </ul>
@@ -117,7 +118,8 @@ impl EventInformation {
     /// <li>
     /// <p><code>launchSpecTemporarilyBlacklisted</code> - The configuration is not valid and several attempts to launch instances have failed. For more information, see the description of the event.</p></li>
     /// <li>
-    /// <p><code>launchSpecUnusable</code> - The price in a launch specification is not valid because it is below the Spot price.</p></li>
+    /// <p><code>launchSpecUnusable</code> - The price specified in a launch specification is not valid because it is below the Spot price for the requested Spot pools.</p>
+    /// <p>Note: Even if a fleet with the <code>maintain</code> request type is in the process of being canceled, it may still publish a <code>launchSpecUnusable</code> event. This does not mean that the canceled fleet is attempting to launch a new instance.</p></li>
     /// <li>
     /// <p><code>registerWithLoadBalancersFailed</code> - An attempt to register instances with load balancers failed. For more information, see the description of the event.</p></li>
     /// </ul>
@@ -208,7 +210,8 @@ impl EventInformationBuilder {
     /// <li>
     /// <p><code>launchSpecTemporarilyBlacklisted</code> - The configuration is not valid and several attempts to launch instances have failed. For more information, see the description of the event.</p></li>
     /// <li>
-    /// <p><code>launchSpecUnusable</code> - The price in a launch specification is not valid because it is below the Spot price.</p></li>
+    /// <p><code>launchSpecUnusable</code> - The price specified in a launch specification is not valid because it is below the Spot price for the requested Spot pools.</p>
+    /// <p>Note: Even if a fleet with the <code>maintain</code> request type is in the process of being canceled, it may still publish a <code>launchSpecUnusable</code> event. This does not mean that the canceled fleet is attempting to launch a new instance.</p></li>
     /// <li>
     /// <p><code>registerWithLoadBalancersFailed</code> - An attempt to register instances with load balancers failed. For more information, see the description of the event.</p></li>
     /// </ul>
@@ -265,7 +268,8 @@ impl EventInformationBuilder {
     /// <li>
     /// <p><code>launchSpecTemporarilyBlacklisted</code> - The configuration is not valid and several attempts to launch instances have failed. For more information, see the description of the event.</p></li>
     /// <li>
-    /// <p><code>launchSpecUnusable</code> - The price in a launch specification is not valid because it is below the Spot price.</p></li>
+    /// <p><code>launchSpecUnusable</code> - The price specified in a launch specification is not valid because it is below the Spot price for the requested Spot pools.</p>
+    /// <p>Note: Even if a fleet with the <code>maintain</code> request type is in the process of being canceled, it may still publish a <code>launchSpecUnusable</code> event. This does not mean that the canceled fleet is attempting to launch a new instance.</p></li>
     /// <li>
     /// <p><code>registerWithLoadBalancersFailed</code> - An attempt to register instances with load balancers failed. For more information, see the description of the event.</p></li>
     /// </ul>
@@ -322,7 +326,8 @@ impl EventInformationBuilder {
     /// <li>
     /// <p><code>launchSpecTemporarilyBlacklisted</code> - The configuration is not valid and several attempts to launch instances have failed. For more information, see the description of the event.</p></li>
     /// <li>
-    /// <p><code>launchSpecUnusable</code> - The price in a launch specification is not valid because it is below the Spot price.</p></li>
+    /// <p><code>launchSpecUnusable</code> - The price specified in a launch specification is not valid because it is below the Spot price for the requested Spot pools.</p>
+    /// <p>Note: Even if a fleet with the <code>maintain</code> request type is in the process of being canceled, it may still publish a <code>launchSpecUnusable</code> event. This does not mean that the canceled fleet is attempting to launch a new instance.</p></li>
     /// <li>
     /// <p><code>registerWithLoadBalancersFailed</code> - An attempt to register instances with load balancers failed. For more information, see the description of the event.</p></li>
     /// </ul>

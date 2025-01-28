@@ -11,6 +11,8 @@ pub use crate::types::_file_system_location::FileSystemLocationBuilder;
 
 pub use crate::types::_storage_profile_summary::StorageProfileSummaryBuilder;
 
+pub use crate::types::_limit_summary::LimitSummaryBuilder;
+
 pub use crate::types::_farm_member::FarmMemberBuilder;
 
 pub use crate::types::_farm_summary::FarmSummaryBuilder;
@@ -64,6 +66,8 @@ pub use crate::types::_step_required_capabilities::StepRequiredCapabilitiesBuild
 pub use crate::types::_step_amount_capability::StepAmountCapabilityBuilder;
 
 pub use crate::types::_step_attribute_capability::StepAttributeCapabilityBuilder;
+
+pub use crate::types::_acquired_limit::AcquiredLimitBuilder;
 
 pub use crate::types::_sync_input_job_attachments_session_action_definition::SyncInputJobAttachmentsSessionActionDefinitionBuilder;
 
@@ -208,6 +212,8 @@ pub use crate::types::_task_search_summary::TaskSearchSummaryBuilder;
 pub use crate::types::_step_search_summary::StepSearchSummaryBuilder;
 
 pub use crate::types::_job_search_summary::JobSearchSummaryBuilder;
+
+pub use crate::types::_queue_limit_association_summary::QueueLimitAssociationSummaryBuilder;
 
 pub use crate::types::_queue_fleet_association_summary::QueueFleetAssociationSummaryBuilder;
 

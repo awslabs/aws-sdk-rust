@@ -45,6 +45,9 @@ pub struct GetJobOutput {
     /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
     /// </important>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers.</p>
+    /// <p>If you don't set the <code>maxWorkerCount</code> when you create a job, this value is not returned in the response.</p>
+    pub max_worker_count: ::std::option::Option<i32>,
     /// <p>The job ID for the source job.</p>
     pub source_job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -136,6 +139,11 @@ impl GetJobOutput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
+    /// <p>The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers.</p>
+    /// <p>If you don't set the <code>maxWorkerCount</code> when you create a job, this value is not returned in the response.</p>
+    pub fn max_worker_count(&self) -> ::std::option::Option<i32> {
+        self.max_worker_count
+    }
     /// <p>The job ID for the source job.</p>
     pub fn source_job_id(&self) -> ::std::option::Option<&str> {
         self.source_job_id.as_deref()
@@ -164,6 +172,7 @@ impl ::std::fmt::Debug for GetJobOutput {
         formatter.field("parameters", &"*** Sensitive Data Redacted ***");
         formatter.field("attachments", &self.attachments);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("max_worker_count", &self.max_worker_count);
         formatter.field("source_job_id", &self.source_job_id);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
@@ -205,6 +214,7 @@ pub struct GetJobOutputBuilder {
     pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::JobParameter>>,
     pub(crate) attachments: ::std::option::Option<crate::types::Attachments>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) max_worker_count: ::std::option::Option<i32>,
     pub(crate) source_job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -517,6 +527,23 @@ impl GetJobOutputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// <p>The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers.</p>
+    /// <p>If you don't set the <code>maxWorkerCount</code> when you create a job, this value is not returned in the response.</p>
+    pub fn max_worker_count(mut self, input: i32) -> Self {
+        self.max_worker_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers.</p>
+    /// <p>If you don't set the <code>maxWorkerCount</code> when you create a job, this value is not returned in the response.</p>
+    pub fn set_max_worker_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_worker_count = input;
+        self
+    }
+    /// <p>The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers.</p>
+    /// <p>If you don't set the <code>maxWorkerCount</code> when you create a job, this value is not returned in the response.</p>
+    pub fn get_max_worker_count(&self) -> &::std::option::Option<i32> {
+        &self.max_worker_count
+    }
     /// <p>The job ID for the source job.</p>
     pub fn source_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_job_id = ::std::option::Option::Some(input.into());
@@ -606,6 +633,7 @@ impl GetJobOutputBuilder {
             parameters: self.parameters,
             attachments: self.attachments,
             description: self.description,
+            max_worker_count: self.max_worker_count,
             source_job_id: self.source_job_id,
             _request_id: self._request_id,
         })
@@ -634,6 +662,7 @@ impl ::std::fmt::Debug for GetJobOutputBuilder {
         formatter.field("parameters", &"*** Sensitive Data Redacted ***");
         formatter.field("attachments", &self.attachments);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("max_worker_count", &self.max_worker_count);
         formatter.field("source_job_id", &self.source_job_id);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()

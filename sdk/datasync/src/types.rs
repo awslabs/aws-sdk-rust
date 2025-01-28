@@ -67,6 +67,8 @@ pub use crate::types::_credentials::Credentials;
 
 pub use crate::types::_discovery_server_configuration::DiscoveryServerConfiguration;
 
+pub use crate::types::_smb_authentication_type::SmbAuthenticationType;
+
 pub use crate::types::_smb_mount_options::SmbMountOptions;
 
 pub use crate::types::_smb_version::SmbVersion;
@@ -356,6 +358,8 @@ mod _s3_storage_class;
 mod _schedule_disabled_by;
 
 mod _schedule_status;
+
+mod _smb_authentication_type;
 
 mod _smb_mount_options;
 

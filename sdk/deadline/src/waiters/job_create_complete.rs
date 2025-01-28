@@ -111,20 +111,6 @@ impl JobCreateCompleteFluentBuilder {
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    /// <p>The job ID.</p>
-    pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.job_id(input.into());
-        self
-    }
-    /// <p>The job ID.</p>
-    pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_job_id(input);
-        self
-    }
-    /// <p>The job ID.</p>
-    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_job_id()
-    }
     /// <p>The queue ID associated with the job.</p>
     pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.queue_id(input.into());
@@ -138,6 +124,20 @@ impl JobCreateCompleteFluentBuilder {
     /// <p>The queue ID associated with the job.</p>
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_queue_id()
+    }
+    /// <p>The job ID.</p>
+    pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.job_id(input.into());
+        self
+    }
+    /// <p>The job ID.</p>
+    pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_job_id(input);
+        self
+    }
+    /// <p>The job ID.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_id()
     }
 }
 

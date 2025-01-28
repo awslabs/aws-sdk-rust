@@ -19,6 +19,10 @@ pub struct UpdateDbInstanceInput {
     pub db_instance_type: ::std::option::Option<crate::types::DbInstanceType>,
     /// <p>Specifies whether the DB instance will be deployed as a standalone instance or with a Multi-AZ standby for high availability.</p>
     pub deployment_type: ::std::option::Option<crate::types::DeploymentType>,
+    /// <p>The Timestream for InfluxDB DB storage type that InfluxDB stores data on.</p>
+    pub db_storage_type: ::std::option::Option<crate::types::DbStorageType>,
+    /// <p>The amount of storage to allocate for your DB storage type (in gibibytes).</p>
+    pub allocated_storage: ::std::option::Option<i32>,
 }
 impl UpdateDbInstanceInput {
     /// <p>The id of the DB instance.</p>
@@ -49,6 +53,14 @@ impl UpdateDbInstanceInput {
     pub fn deployment_type(&self) -> ::std::option::Option<&crate::types::DeploymentType> {
         self.deployment_type.as_ref()
     }
+    /// <p>The Timestream for InfluxDB DB storage type that InfluxDB stores data on.</p>
+    pub fn db_storage_type(&self) -> ::std::option::Option<&crate::types::DbStorageType> {
+        self.db_storage_type.as_ref()
+    }
+    /// <p>The amount of storage to allocate for your DB storage type (in gibibytes).</p>
+    pub fn allocated_storage(&self) -> ::std::option::Option<i32> {
+        self.allocated_storage
+    }
 }
 impl UpdateDbInstanceInput {
     /// Creates a new builder-style object to manufacture [`UpdateDbInstanceInput`](crate::operation::update_db_instance::UpdateDbInstanceInput).
@@ -67,6 +79,8 @@ pub struct UpdateDbInstanceInputBuilder {
     pub(crate) port: ::std::option::Option<i32>,
     pub(crate) db_instance_type: ::std::option::Option<crate::types::DbInstanceType>,
     pub(crate) deployment_type: ::std::option::Option<crate::types::DeploymentType>,
+    pub(crate) db_storage_type: ::std::option::Option<crate::types::DbStorageType>,
+    pub(crate) allocated_storage: ::std::option::Option<i32>,
 }
 impl UpdateDbInstanceInputBuilder {
     /// <p>The id of the DB instance.</p>
@@ -166,6 +180,34 @@ impl UpdateDbInstanceInputBuilder {
     pub fn get_deployment_type(&self) -> &::std::option::Option<crate::types::DeploymentType> {
         &self.deployment_type
     }
+    /// <p>The Timestream for InfluxDB DB storage type that InfluxDB stores data on.</p>
+    pub fn db_storage_type(mut self, input: crate::types::DbStorageType) -> Self {
+        self.db_storage_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Timestream for InfluxDB DB storage type that InfluxDB stores data on.</p>
+    pub fn set_db_storage_type(mut self, input: ::std::option::Option<crate::types::DbStorageType>) -> Self {
+        self.db_storage_type = input;
+        self
+    }
+    /// <p>The Timestream for InfluxDB DB storage type that InfluxDB stores data on.</p>
+    pub fn get_db_storage_type(&self) -> &::std::option::Option<crate::types::DbStorageType> {
+        &self.db_storage_type
+    }
+    /// <p>The amount of storage to allocate for your DB storage type (in gibibytes).</p>
+    pub fn allocated_storage(mut self, input: i32) -> Self {
+        self.allocated_storage = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The amount of storage to allocate for your DB storage type (in gibibytes).</p>
+    pub fn set_allocated_storage(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.allocated_storage = input;
+        self
+    }
+    /// <p>The amount of storage to allocate for your DB storage type (in gibibytes).</p>
+    pub fn get_allocated_storage(&self) -> &::std::option::Option<i32> {
+        &self.allocated_storage
+    }
     /// Consumes the builder and constructs a [`UpdateDbInstanceInput`](crate::operation::update_db_instance::UpdateDbInstanceInput).
     pub fn build(
         self,
@@ -177,6 +219,8 @@ impl UpdateDbInstanceInputBuilder {
             port: self.port,
             db_instance_type: self.db_instance_type,
             deployment_type: self.deployment_type,
+            db_storage_type: self.db_storage_type,
+            allocated_storage: self.allocated_storage,
         })
     }
 }

@@ -235,6 +235,8 @@ pub use crate::types::_connectivity::Connectivity;
 
 pub use crate::types::_kinesis_stream_source_description::KinesisStreamSourceDescription;
 
+pub use crate::types::_direct_put_source_description::DirectPutSourceDescription;
+
 pub use crate::types::_delivery_stream_encryption_configuration::DeliveryStreamEncryptionConfiguration;
 
 pub use crate::types::_delivery_stream_encryption_status::DeliveryStreamEncryptionStatus;
@@ -266,6 +268,8 @@ pub use crate::types::_redshift_destination_configuration::RedshiftDestinationCo
 pub use crate::types::_extended_s3_destination_configuration::ExtendedS3DestinationConfiguration;
 
 pub use crate::types::_kinesis_stream_source_configuration::KinesisStreamSourceConfiguration;
+
+pub use crate::types::_direct_put_source_configuration::DirectPutSourceConfiguration;
 
 mod _amazon_open_search_serverless_buffering_hints;
 
@@ -350,6 +354,10 @@ mod _deserializer;
 mod _destination_description;
 
 mod _destination_table_configuration;
+
+mod _direct_put_source_configuration;
+
+mod _direct_put_source_description;
 
 mod _document_id_options;
 

@@ -618,6 +618,33 @@ impl From<crate::operation::create_license_endpoint::CreateLicenseEndpointError>
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_limit::CreateLimitError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_limit::CreateLimitError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_limit::CreateLimitError> for Error {
+    fn from(err: crate::operation::create_limit::CreateLimitError) -> Self {
+        match err {
+            crate::operation::create_limit::CreateLimitError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_limit::CreateLimitError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::create_limit::CreateLimitError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_limit::CreateLimitError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_limit::CreateLimitError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_limit::CreateLimitError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_limit::CreateLimitError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_monitor::CreateMonitorError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -748,6 +775,49 @@ impl From<crate::operation::create_queue_fleet_association::CreateQueueFleetAsso
                 Error::ValidationException(inner)
             }
             crate::operation::create_queue_fleet_association::CreateQueueFleetAssociationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_queue_limit_association::CreateQueueLimitAssociationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_queue_limit_association::CreateQueueLimitAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_queue_limit_association::CreateQueueLimitAssociationError> for Error {
+    fn from(err: crate::operation::create_queue_limit_association::CreateQueueLimitAssociationError) -> Self {
+        match err {
+            crate::operation::create_queue_limit_association::CreateQueueLimitAssociationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_queue_limit_association::CreateQueueLimitAssociationError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::create_queue_limit_association::CreateQueueLimitAssociationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_queue_limit_association::CreateQueueLimitAssociationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_queue_limit_association::CreateQueueLimitAssociationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_queue_limit_association::CreateQueueLimitAssociationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -925,6 +995,31 @@ impl From<crate::operation::delete_license_endpoint::DeleteLicenseEndpointError>
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_limit::DeleteLimitError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_limit::DeleteLimitError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_limit::DeleteLimitError> for Error {
+    fn from(err: crate::operation::delete_limit::DeleteLimitError) -> Self {
+        match err {
+            crate::operation::delete_limit::DeleteLimitError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_limit::DeleteLimitError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::delete_limit::DeleteLimitError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_limit::DeleteLimitError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_limit::DeleteLimitError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_metered_product::DeleteMeteredProductError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1082,6 +1177,52 @@ impl From<crate::operation::delete_queue_fleet_association::DeleteQueueFleetAsso
                 Error::ValidationException(inner)
             }
             crate::operation::delete_queue_fleet_association::DeleteQueueFleetAssociationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_queue_limit_association::DeleteQueueLimitAssociationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_queue_limit_association::DeleteQueueLimitAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_queue_limit_association::DeleteQueueLimitAssociationError> for Error {
+    fn from(err: crate::operation::delete_queue_limit_association::DeleteQueueLimitAssociationError) -> Self {
+        match err {
+            crate::operation::delete_queue_limit_association::DeleteQueueLimitAssociationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_queue_limit_association::DeleteQueueLimitAssociationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_queue_limit_association::DeleteQueueLimitAssociationError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::delete_queue_limit_association::DeleteQueueLimitAssociationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_queue_limit_association::DeleteQueueLimitAssociationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_queue_limit_association::DeleteQueueLimitAssociationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_queue_limit_association::DeleteQueueLimitAssociationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1443,6 +1584,32 @@ impl From<crate::operation::get_license_endpoint::GetLicenseEndpointError> for E
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_limit::GetLimitError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_limit::GetLimitError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_limit::GetLimitError> for Error {
+    fn from(err: crate::operation::get_limit::GetLimitError) -> Self {
+        match err {
+            crate::operation::get_limit::GetLimitError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_limit::GetLimitError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::get_limit::GetLimitError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_limit::GetLimitError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_limit::GetLimitError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_limit::GetLimitError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_monitor::GetMonitorError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1561,6 +1728,45 @@ impl From<crate::operation::get_queue_fleet_association::GetQueueFleetAssociatio
                 Error::ValidationException(inner)
             }
             crate::operation::get_queue_fleet_association::GetQueueFleetAssociationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_queue_limit_association::GetQueueLimitAssociationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_queue_limit_association::GetQueueLimitAssociationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_queue_limit_association::GetQueueLimitAssociationError> for Error {
+    fn from(err: crate::operation::get_queue_limit_association::GetQueueLimitAssociationError) -> Self {
+        match err {
+            crate::operation::get_queue_limit_association::GetQueueLimitAssociationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_queue_limit_association::GetQueueLimitAssociationError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::get_queue_limit_association::GetQueueLimitAssociationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_queue_limit_association::GetQueueLimitAssociationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_queue_limit_association::GetQueueLimitAssociationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_queue_limit_association::GetQueueLimitAssociationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2106,6 +2312,32 @@ impl From<crate::operation::list_license_endpoints::ListLicenseEndpointsError> f
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_limits::ListLimitsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_limits::ListLimitsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_limits::ListLimitsError> for Error {
+    fn from(err: crate::operation::list_limits::ListLimitsError) -> Self {
+        match err {
+            crate::operation::list_limits::ListLimitsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_limits::ListLimitsError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::list_limits::ListLimitsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_limits::ListLimitsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_limits::ListLimitsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_limits::ListLimitsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_metered_products::ListMeteredProductsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2228,6 +2460,42 @@ impl From<crate::operation::list_queue_fleet_associations::ListQueueFleetAssocia
                 Error::ThrottlingException(inner)
             }
             crate::operation::list_queue_fleet_associations::ListQueueFleetAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_queue_limit_associations::ListQueueLimitAssociationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_queue_limit_associations::ListQueueLimitAssociationsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_queue_limit_associations::ListQueueLimitAssociationsError> for Error {
+    fn from(err: crate::operation::list_queue_limit_associations::ListQueueLimitAssociationsError) -> Self {
+        match err {
+            crate::operation::list_queue_limit_associations::ListQueueLimitAssociationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_queue_limit_associations::ListQueueLimitAssociationsError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::list_queue_limit_associations::ListQueueLimitAssociationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_queue_limit_associations::ListQueueLimitAssociationsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_queue_limit_associations::ListQueueLimitAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2959,6 +3227,32 @@ impl From<crate::operation::update_job::UpdateJobError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_limit::UpdateLimitError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_limit::UpdateLimitError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_limit::UpdateLimitError> for Error {
+    fn from(err: crate::operation::update_limit::UpdateLimitError) -> Self {
+        match err {
+            crate::operation::update_limit::UpdateLimitError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_limit::UpdateLimitError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::update_limit::UpdateLimitError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_limit::UpdateLimitError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_limit::UpdateLimitError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_limit::UpdateLimitError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_monitor::UpdateMonitorError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3085,6 +3379,49 @@ impl From<crate::operation::update_queue_fleet_association::UpdateQueueFleetAsso
                 Error::ValidationException(inner)
             }
             crate::operation::update_queue_fleet_association::UpdateQueueFleetAssociationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_queue_limit_association::UpdateQueueLimitAssociationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_queue_limit_association::UpdateQueueLimitAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_queue_limit_association::UpdateQueueLimitAssociationError> for Error {
+    fn from(err: crate::operation::update_queue_limit_association::UpdateQueueLimitAssociationError) -> Self {
+        match err {
+            crate::operation::update_queue_limit_association::UpdateQueueLimitAssociationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_queue_limit_association::UpdateQueueLimitAssociationError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::update_queue_limit_association::UpdateQueueLimitAssociationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_queue_limit_association::UpdateQueueLimitAssociationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_queue_limit_association::UpdateQueueLimitAssociationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_queue_limit_association::UpdateQueueLimitAssociationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

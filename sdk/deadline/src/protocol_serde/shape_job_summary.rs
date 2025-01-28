@@ -119,6 +119,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "maxWorkerCount" => {
+                            builder = builder.set_max_worker_count(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         "sourceJobId" => {
                             builder = builder.set_source_job_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

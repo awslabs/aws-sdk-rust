@@ -206,6 +206,15 @@ pub(crate) fn create_license_endpoint_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_limit_output_output_correct_errors(
+    mut builder: crate::operation::create_limit::builders::CreateLimitOutputBuilder,
+) -> crate::operation::create_limit::builders::CreateLimitOutputBuilder {
+    if builder.limit_id.is_none() {
+        builder.limit_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_monitor_output_output_correct_errors(
     mut builder: crate::operation::create_monitor::builders::CreateMonitorOutputBuilder,
 ) -> crate::operation::create_monitor::builders::CreateMonitorOutputBuilder {
@@ -395,6 +404,36 @@ pub(crate) fn get_license_endpoint_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_limit_output_output_correct_errors(
+    mut builder: crate::operation::get_limit::builders::GetLimitOutputBuilder,
+) -> crate::operation::get_limit::builders::GetLimitOutputBuilder {
+    if builder.display_name.is_none() {
+        builder.display_name = Some(Default::default())
+    }
+    if builder.amount_requirement_name.is_none() {
+        builder.amount_requirement_name = Some(Default::default())
+    }
+    if builder.max_count.is_none() {
+        builder.max_count = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.created_by.is_none() {
+        builder.created_by = Some(Default::default())
+    }
+    if builder.farm_id.is_none() {
+        builder.farm_id = Some(Default::default())
+    }
+    if builder.limit_id.is_none() {
+        builder.limit_id = Some(Default::default())
+    }
+    if builder.current_count.is_none() {
+        builder.current_count = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_monitor_output_output_correct_errors(
     mut builder: crate::operation::get_monitor::builders::GetMonitorOutputBuilder,
 ) -> crate::operation::get_monitor::builders::GetMonitorOutputBuilder {
@@ -499,6 +538,27 @@ pub(crate) fn get_queue_fleet_association_output_output_correct_errors(
     }
     if builder.created_by.is_none() {
         builder.created_by = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_queue_limit_association_output_output_correct_errors(
+    mut builder: crate::operation::get_queue_limit_association::builders::GetQueueLimitAssociationOutputBuilder,
+) -> crate::operation::get_queue_limit_association::builders::GetQueueLimitAssociationOutputBuilder {
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.created_by.is_none() {
+        builder.created_by = Some(Default::default())
+    }
+    if builder.queue_id.is_none() {
+        builder.queue_id = Some(Default::default())
+    }
+    if builder.limit_id.is_none() {
+        builder.limit_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::QueueLimitAssociationStatus>().ok()
     }
     builder
 }
@@ -641,14 +701,14 @@ pub(crate) fn get_task_output_output_correct_errors(
 pub(crate) fn get_worker_output_output_correct_errors(
     mut builder: crate::operation::get_worker::builders::GetWorkerOutputBuilder,
 ) -> crate::operation::get_worker::builders::GetWorkerOutputBuilder {
-    if builder.worker_id.is_none() {
-        builder.worker_id = Some(Default::default())
-    }
     if builder.farm_id.is_none() {
         builder.farm_id = Some(Default::default())
     }
     if builder.fleet_id.is_none() {
         builder.fleet_id = Some(Default::default())
+    }
+    if builder.worker_id.is_none() {
+        builder.worker_id = Some(Default::default())
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::WorkerStatus>().ok()
@@ -752,6 +812,15 @@ pub(crate) fn list_license_endpoints_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_limits_output_output_correct_errors(
+    mut builder: crate::operation::list_limits::builders::ListLimitsOutputBuilder,
+) -> crate::operation::list_limits::builders::ListLimitsOutputBuilder {
+    if builder.limits.is_none() {
+        builder.limits = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_metered_products_output_output_correct_errors(
     mut builder: crate::operation::list_metered_products::builders::ListMeteredProductsOutputBuilder,
 ) -> crate::operation::list_metered_products::builders::ListMeteredProductsOutputBuilder {
@@ -784,6 +853,15 @@ pub(crate) fn list_queue_fleet_associations_output_output_correct_errors(
 ) -> crate::operation::list_queue_fleet_associations::builders::ListQueueFleetAssociationsOutputBuilder {
     if builder.queue_fleet_associations.is_none() {
         builder.queue_fleet_associations = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_queue_limit_associations_output_output_correct_errors(
+    mut builder: crate::operation::list_queue_limit_associations::builders::ListQueueLimitAssociationsOutputBuilder,
+) -> crate::operation::list_queue_limit_associations::builders::ListQueueLimitAssociationsOutputBuilder {
+    if builder.queue_limit_associations.is_none() {
+        builder.queue_limit_associations = Some(Default::default())
     }
     builder
 }
@@ -1071,6 +1149,18 @@ pub(crate) fn step_required_capabilities_correct_errors(
     builder
 }
 
+pub(crate) fn acquired_limit_correct_errors(
+    mut builder: crate::types::builders::AcquiredLimitBuilder,
+) -> crate::types::builders::AcquiredLimitBuilder {
+    if builder.limit_id.is_none() {
+        builder.limit_id = Some(Default::default())
+    }
+    if builder.count.is_none() {
+        builder.count = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn assigned_session_correct_errors(
     mut builder: crate::types::builders::AssignedSessionBuilder,
 ) -> crate::types::builders::AssignedSessionBuilder {
@@ -1328,6 +1418,34 @@ pub(crate) fn job_summary_correct_errors(mut builder: crate::types::builders::Jo
     builder
 }
 
+pub(crate) fn limit_summary_correct_errors(mut builder: crate::types::builders::LimitSummaryBuilder) -> crate::types::builders::LimitSummaryBuilder {
+    if builder.display_name.is_none() {
+        builder.display_name = Some(Default::default())
+    }
+    if builder.amount_requirement_name.is_none() {
+        builder.amount_requirement_name = Some(Default::default())
+    }
+    if builder.max_count.is_none() {
+        builder.max_count = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.created_by.is_none() {
+        builder.created_by = Some(Default::default())
+    }
+    if builder.farm_id.is_none() {
+        builder.farm_id = Some(Default::default())
+    }
+    if builder.limit_id.is_none() {
+        builder.limit_id = Some(Default::default())
+    }
+    if builder.current_count.is_none() {
+        builder.current_count = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn metered_product_summary_correct_errors(
     mut builder: crate::types::builders::MeteredProductSummaryBuilder,
 ) -> crate::types::builders::MeteredProductSummaryBuilder {
@@ -1421,6 +1539,27 @@ pub(crate) fn queue_fleet_association_summary_correct_errors(
     }
     if builder.created_by.is_none() {
         builder.created_by = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn queue_limit_association_summary_correct_errors(
+    mut builder: crate::types::builders::QueueLimitAssociationSummaryBuilder,
+) -> crate::types::builders::QueueLimitAssociationSummaryBuilder {
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.created_by.is_none() {
+        builder.created_by = Some(Default::default())
+    }
+    if builder.queue_id.is_none() {
+        builder.queue_id = Some(Default::default())
+    }
+    if builder.limit_id.is_none() {
+        builder.limit_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::QueueLimitAssociationStatus>().ok()
     }
     builder
 }

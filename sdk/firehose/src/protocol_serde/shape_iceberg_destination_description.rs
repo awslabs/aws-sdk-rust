@@ -59,6 +59,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "AppendOnly" => {
+                            builder = builder.set_append_only(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         "CatalogConfiguration" => {
                             builder = builder
                                 .set_catalog_configuration(crate::protocol_serde::shape_catalog_configuration::de_catalog_configuration(tokens)?);

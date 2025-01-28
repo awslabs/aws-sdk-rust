@@ -156,6 +156,10 @@ pub trait Waiters {
     fn wait_until_queue_fleet_association_stopped(
         &self,
     ) -> crate::waiters::queue_fleet_association_stopped::QueueFleetAssociationStoppedFluentBuilder;
+    /// Wait until a QueueLimitAssociation is stopped. Use this after setting the status to STOP_LIMIT_USAGE_AND_COMPLETE_TASKS or STOP_LIMIT_USAGE_AND_CANCEL_TASKS to wait for a QueueLimitAssociation to reach STOPPED
+    fn wait_until_queue_limit_association_stopped(
+        &self,
+    ) -> crate::waiters::queue_limit_association_stopped::QueueLimitAssociationStoppedFluentBuilder;
 }
 impl Waiters for Client {
     fn wait_until_fleet_active(&self) -> crate::waiters::fleet_active::FleetActiveFluentBuilder {
@@ -180,6 +184,11 @@ impl Waiters for Client {
         &self,
     ) -> crate::waiters::queue_fleet_association_stopped::QueueFleetAssociationStoppedFluentBuilder {
         crate::waiters::queue_fleet_association_stopped::QueueFleetAssociationStoppedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_queue_limit_association_stopped(
+        &self,
+    ) -> crate::waiters::queue_limit_association_stopped::QueueLimitAssociationStoppedFluentBuilder {
+        crate::waiters::queue_limit_association_stopped::QueueLimitAssociationStoppedFluentBuilder::new(self.handle.clone())
     }
 }
 
@@ -231,6 +240,8 @@ mod create_job;
 
 mod create_license_endpoint;
 
+mod create_limit;
+
 mod create_monitor;
 
 mod create_queue;
@@ -238,6 +249,8 @@ mod create_queue;
 mod create_queue_environment;
 
 mod create_queue_fleet_association;
+
+mod create_queue_limit_association;
 
 mod create_storage_profile;
 
@@ -278,6 +291,8 @@ mod delete_fleet;
 
 mod delete_license_endpoint;
 
+mod delete_limit;
+
 mod delete_metered_product;
 
 mod delete_monitor;
@@ -287,6 +302,8 @@ mod delete_queue;
 mod delete_queue_environment;
 
 mod delete_queue_fleet_association;
+
+mod delete_queue_limit_association;
 
 mod delete_storage_profile;
 
@@ -310,6 +327,8 @@ mod get_job;
 
 mod get_license_endpoint;
 
+mod get_limit;
+
 mod get_monitor;
 
 mod get_queue;
@@ -317,6 +336,8 @@ mod get_queue;
 mod get_queue_environment;
 
 mod get_queue_fleet_association;
+
+mod get_queue_limit_association;
 
 mod get_session;
 
@@ -354,6 +375,8 @@ mod list_jobs;
 
 mod list_license_endpoints;
 
+mod list_limits;
+
 mod list_metered_products;
 
 mod list_monitors;
@@ -361,6 +384,8 @@ mod list_monitors;
 mod list_queue_environments;
 
 mod list_queue_fleet_associations;
+
+mod list_queue_limit_associations;
 
 mod list_queue_members;
 
@@ -412,6 +437,8 @@ mod update_fleet;
 
 mod update_job;
 
+mod update_limit;
+
 mod update_monitor;
 
 mod update_queue;
@@ -419,6 +446,8 @@ mod update_queue;
 mod update_queue_environment;
 
 mod update_queue_fleet_association;
+
+mod update_queue_limit_association;
 
 mod update_session;
 

@@ -18,14 +18,20 @@ pub fn ser_update_job_input_input(
             ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_4) = &input.priority {
-        object.key("priority").number(
+    if let Some(var_4) = &input.max_worker_count {
+        object.key("maxWorkerCount").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_5) = &input.target_task_run_status {
-        object.key("targetTaskRunStatus").string(var_5.as_str());
+    if let Some(var_5) = &input.priority {
+        object.key("priority").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
+        );
+    }
+    if let Some(var_6) = &input.target_task_run_status {
+        object.key("targetTaskRunStatus").string(var_6.as_str());
     }
     Ok(())
 }

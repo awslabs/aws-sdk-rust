@@ -55,6 +55,8 @@ pub(crate) mod shape_create_job;
 
 pub(crate) mod shape_create_license_endpoint;
 
+pub(crate) mod shape_create_limit;
+
 pub(crate) mod shape_create_monitor;
 
 pub(crate) mod shape_create_queue;
@@ -62,6 +64,8 @@ pub(crate) mod shape_create_queue;
 pub(crate) mod shape_create_queue_environment;
 
 pub(crate) mod shape_create_queue_fleet_association;
+
+pub(crate) mod shape_create_queue_limit_association;
 
 pub(crate) mod shape_create_storage_profile;
 
@@ -75,6 +79,8 @@ pub(crate) mod shape_delete_fleet;
 
 pub(crate) mod shape_delete_license_endpoint;
 
+pub(crate) mod shape_delete_limit;
+
 pub(crate) mod shape_delete_metered_product;
 
 pub(crate) mod shape_delete_monitor;
@@ -84,6 +90,8 @@ pub(crate) mod shape_delete_queue;
 pub(crate) mod shape_delete_queue_environment;
 
 pub(crate) mod shape_delete_queue_fleet_association;
+
+pub(crate) mod shape_delete_queue_limit_association;
 
 pub(crate) mod shape_delete_storage_profile;
 
@@ -107,6 +115,8 @@ pub(crate) mod shape_get_job;
 
 pub(crate) mod shape_get_license_endpoint;
 
+pub(crate) mod shape_get_limit;
+
 pub(crate) mod shape_get_monitor;
 
 pub(crate) mod shape_get_queue;
@@ -114,6 +124,8 @@ pub(crate) mod shape_get_queue;
 pub(crate) mod shape_get_queue_environment;
 
 pub(crate) mod shape_get_queue_fleet_association;
+
+pub(crate) mod shape_get_queue_limit_association;
 
 pub(crate) mod shape_get_session;
 
@@ -151,6 +163,8 @@ pub(crate) mod shape_list_jobs;
 
 pub(crate) mod shape_list_license_endpoints;
 
+pub(crate) mod shape_list_limits;
+
 pub(crate) mod shape_list_metered_products;
 
 pub(crate) mod shape_list_monitors;
@@ -158,6 +172,8 @@ pub(crate) mod shape_list_monitors;
 pub(crate) mod shape_list_queue_environments;
 
 pub(crate) mod shape_list_queue_fleet_associations;
+
+pub(crate) mod shape_list_queue_limit_associations;
 
 pub(crate) mod shape_list_queue_members;
 
@@ -209,6 +225,8 @@ pub(crate) mod shape_update_fleet;
 
 pub(crate) mod shape_update_job;
 
+pub(crate) mod shape_update_limit;
+
 pub(crate) mod shape_update_monitor;
 
 pub(crate) mod shape_update_queue;
@@ -216,6 +234,8 @@ pub(crate) mod shape_update_queue;
 pub(crate) mod shape_update_queue_environment;
 
 pub(crate) mod shape_update_queue_fleet_association;
+
+pub(crate) mod shape_update_queue_limit_association;
 
 pub(crate) mod shape_update_session;
 
@@ -263,6 +283,8 @@ pub(crate) mod shape_create_job_input;
 
 pub(crate) mod shape_create_license_endpoint_input;
 
+pub(crate) mod shape_create_limit_input;
+
 pub(crate) mod shape_create_monitor_input;
 
 pub(crate) mod shape_create_queue_environment_input;
@@ -270,6 +292,8 @@ pub(crate) mod shape_create_queue_environment_input;
 pub(crate) mod shape_create_queue_fleet_association_input;
 
 pub(crate) mod shape_create_queue_input;
+
+pub(crate) mod shape_create_queue_limit_association_input;
 
 pub(crate) mod shape_create_storage_profile_input;
 
@@ -303,6 +327,8 @@ pub(crate) mod shape_update_fleet_input;
 
 pub(crate) mod shape_update_job_input;
 
+pub(crate) mod shape_update_limit_input;
+
 pub(crate) mod shape_update_monitor_input;
 
 pub(crate) mod shape_update_queue_environment_input;
@@ -310,6 +336,8 @@ pub(crate) mod shape_update_queue_environment_input;
 pub(crate) mod shape_update_queue_fleet_association_input;
 
 pub(crate) mod shape_update_queue_input;
+
+pub(crate) mod shape_update_queue_limit_association_input;
 
 pub(crate) mod shape_update_session_input;
 
@@ -324,6 +352,8 @@ pub(crate) mod shape_update_worker_input;
 pub(crate) mod shape_update_worker_schedule_input;
 
 pub(crate) mod shape_validation_exception;
+
+pub(crate) mod shape_acquired_limits;
 
 pub(crate) mod shape_allowed_storage_profile_ids;
 
@@ -393,6 +423,8 @@ pub(crate) mod shape_job_summaries;
 
 pub(crate) mod shape_license_endpoint_summaries;
 
+pub(crate) mod shape_limit_summaries;
+
 pub(crate) mod shape_list_sessions_for_worker_summaries;
 
 pub(crate) mod shape_log_configuration;
@@ -406,6 +438,8 @@ pub(crate) mod shape_parameter_space;
 pub(crate) mod shape_queue_environment_summaries;
 
 pub(crate) mod shape_queue_fleet_association_summaries;
+
+pub(crate) mod shape_queue_limit_association_summaries;
 
 pub(crate) mod shape_queue_member_list;
 
@@ -469,6 +503,8 @@ pub(crate) mod shape_worker_search_summaries;
 
 pub(crate) mod shape_worker_summaries;
 
+pub(crate) mod shape_acquired_limit;
+
 pub(crate) mod shape_assigned_session;
 
 pub(crate) mod shape_budget_summary;
@@ -515,6 +551,8 @@ pub(crate) mod shape_job_summary;
 
 pub(crate) mod shape_license_endpoint_summary;
 
+pub(crate) mod shape_limit_summary;
+
 pub(crate) mod shape_log_options;
 
 pub(crate) mod shape_log_parameters;
@@ -534,6 +572,8 @@ pub(crate) mod shape_posix_user;
 pub(crate) mod shape_queue_environment_summary;
 
 pub(crate) mod shape_queue_fleet_association_summary;
+
+pub(crate) mod shape_queue_limit_association_summary;
 
 pub(crate) mod shape_queue_member;
 

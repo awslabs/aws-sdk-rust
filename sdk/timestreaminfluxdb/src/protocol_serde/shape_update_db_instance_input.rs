@@ -27,5 +27,14 @@ pub fn ser_update_db_instance_input_input(
     if let Some(var_7) = &input.deployment_type {
         object.key("deploymentType").string(var_7.as_str());
     }
+    if let Some(var_8) = &input.db_storage_type {
+        object.key("dbStorageType").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.allocated_storage {
+        object.key("allocatedStorage").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_9).into()),
+        );
+    }
     Ok(())
 }

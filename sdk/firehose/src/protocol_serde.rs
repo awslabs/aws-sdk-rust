@@ -111,6 +111,8 @@ pub(crate) mod shape_delivery_stream_encryption_configuration_input;
 
 pub(crate) mod shape_delivery_stream_name_list;
 
+pub(crate) mod shape_direct_put_source_configuration;
+
 pub(crate) mod shape_elasticsearch_destination_configuration;
 
 pub(crate) mod shape_elasticsearch_destination_update;
@@ -244,6 +246,8 @@ pub(crate) mod shape_vpc_configuration;
 pub(crate) mod shape_database_source_description;
 
 pub(crate) mod shape_destination_description;
+
+pub(crate) mod shape_direct_put_source_description;
 
 pub(crate) mod shape_http_endpoint_common_attribute;
 

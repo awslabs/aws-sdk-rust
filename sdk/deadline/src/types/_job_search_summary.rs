@@ -58,6 +58,10 @@ pub struct JobSearchSummary {
     pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The job parameters.</p>
     pub job_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::JobParameter>>,
+    /// <p>The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers.</p>
+    /// <p>You can't set the <code>maxWorkerCount</code> to 0. If you set it to -1, there is no maximum number of workers.</p>
+    /// <p>If you don't specify the <code>maxWorkerCount</code>, the default is -1.</p>
+    pub max_worker_count: ::std::option::Option<i32>,
     /// <p>The job ID for the source job.</p>
     pub source_job_id: ::std::option::Option<::std::string::String>,
 }
@@ -148,6 +152,12 @@ impl JobSearchSummary {
     pub fn job_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::JobParameter>> {
         self.job_parameters.as_ref()
     }
+    /// <p>The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers.</p>
+    /// <p>You can't set the <code>maxWorkerCount</code> to 0. If you set it to -1, there is no maximum number of workers.</p>
+    /// <p>If you don't specify the <code>maxWorkerCount</code>, the default is -1.</p>
+    pub fn max_worker_count(&self) -> ::std::option::Option<i32> {
+        self.max_worker_count
+    }
     /// <p>The job ID for the source job.</p>
     pub fn source_job_id(&self) -> ::std::option::Option<&str> {
         self.source_job_id.as_deref()
@@ -172,6 +182,7 @@ impl ::std::fmt::Debug for JobSearchSummary {
         formatter.field("ended_at", &self.ended_at);
         formatter.field("started_at", &self.started_at);
         formatter.field("job_parameters", &"*** Sensitive Data Redacted ***");
+        formatter.field("max_worker_count", &self.max_worker_count);
         formatter.field("source_job_id", &self.source_job_id);
         formatter.finish()
     }
@@ -203,6 +214,7 @@ pub struct JobSearchSummaryBuilder {
     pub(crate) ended_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) job_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::JobParameter>>,
+    pub(crate) max_worker_count: ::std::option::Option<i32>,
     pub(crate) source_job_id: ::std::option::Option<::std::string::String>,
 }
 impl JobSearchSummaryBuilder {
@@ -511,6 +523,26 @@ impl JobSearchSummaryBuilder {
     pub fn get_job_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::JobParameter>> {
         &self.job_parameters
     }
+    /// <p>The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers.</p>
+    /// <p>You can't set the <code>maxWorkerCount</code> to 0. If you set it to -1, there is no maximum number of workers.</p>
+    /// <p>If you don't specify the <code>maxWorkerCount</code>, the default is -1.</p>
+    pub fn max_worker_count(mut self, input: i32) -> Self {
+        self.max_worker_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers.</p>
+    /// <p>You can't set the <code>maxWorkerCount</code> to 0. If you set it to -1, there is no maximum number of workers.</p>
+    /// <p>If you don't specify the <code>maxWorkerCount</code>, the default is -1.</p>
+    pub fn set_max_worker_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_worker_count = input;
+        self
+    }
+    /// <p>The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers.</p>
+    /// <p>You can't set the <code>maxWorkerCount</code> to 0. If you set it to -1, there is no maximum number of workers.</p>
+    /// <p>If you don't specify the <code>maxWorkerCount</code>, the default is -1.</p>
+    pub fn get_max_worker_count(&self) -> &::std::option::Option<i32> {
+        &self.max_worker_count
+    }
     /// <p>The job ID for the source job.</p>
     pub fn source_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_job_id = ::std::option::Option::Some(input.into());
@@ -544,6 +576,7 @@ impl JobSearchSummaryBuilder {
             ended_at: self.ended_at,
             started_at: self.started_at,
             job_parameters: self.job_parameters,
+            max_worker_count: self.max_worker_count,
             source_job_id: self.source_job_id,
         }
     }
@@ -567,6 +600,7 @@ impl ::std::fmt::Debug for JobSearchSummaryBuilder {
         formatter.field("ended_at", &self.ended_at);
         formatter.field("started_at", &self.started_at);
         formatter.field("job_parameters", &"*** Sensitive Data Redacted ***");
+        formatter.field("max_worker_count", &self.max_worker_count);
         formatter.field("source_job_id", &self.source_job_id);
         formatter.finish()
     }

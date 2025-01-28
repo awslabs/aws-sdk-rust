@@ -10,7 +10,7 @@ pub struct DestinationTableConfiguration {
     pub destination_database_name: ::std::string::String,
     /// <p>A list of unique keys for a given Apache Iceberg table. Firehose will use these for running Create, Update, or Delete operations on the given Iceberg table.</p>
     pub unique_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p></p>
+    /// <p>The partition spec configuration for a table that is used by automatic table creation.</p>
     /// <p>Amazon Data Firehose is in preview release and is subject to change.</p>
     pub partition_spec: ::std::option::Option<crate::types::PartitionSpec>,
     /// <p>The table specific S3 error output prefix. All the errors that occurred while delivering to this table will be prefixed with this value in S3 destination.</p>
@@ -33,7 +33,7 @@ impl DestinationTableConfiguration {
     pub fn unique_keys(&self) -> &[::std::string::String] {
         self.unique_keys.as_deref().unwrap_or_default()
     }
-    /// <p></p>
+    /// <p>The partition spec configuration for a table that is used by automatic table creation.</p>
     /// <p>Amazon Data Firehose is in preview release and is subject to change.</p>
     pub fn partition_spec(&self) -> ::std::option::Option<&crate::types::PartitionSpec> {
         self.partition_spec.as_ref()
@@ -111,19 +111,19 @@ impl DestinationTableConfigurationBuilder {
     pub fn get_unique_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.unique_keys
     }
-    /// <p></p>
+    /// <p>The partition spec configuration for a table that is used by automatic table creation.</p>
     /// <p>Amazon Data Firehose is in preview release and is subject to change.</p>
     pub fn partition_spec(mut self, input: crate::types::PartitionSpec) -> Self {
         self.partition_spec = ::std::option::Option::Some(input);
         self
     }
-    /// <p></p>
+    /// <p>The partition spec configuration for a table that is used by automatic table creation.</p>
     /// <p>Amazon Data Firehose is in preview release and is subject to change.</p>
     pub fn set_partition_spec(mut self, input: ::std::option::Option<crate::types::PartitionSpec>) -> Self {
         self.partition_spec = input;
         self
     }
-    /// <p></p>
+    /// <p>The partition spec configuration for a table that is used by automatic table creation.</p>
     /// <p>Amazon Data Firehose is in preview release and is subject to change.</p>
     pub fn get_partition_spec(&self) -> &::std::option::Option<crate::types::PartitionSpec> {
         &self.partition_spec

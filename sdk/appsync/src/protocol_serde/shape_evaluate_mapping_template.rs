@@ -129,6 +129,20 @@ pub(crate) fn de_evaluate_mapping_template(
                 "logs" => {
                     builder = builder.set_logs(crate::protocol_serde::shape_logs::de_logs(tokens)?);
                 }
+                "outErrors" => {
+                    builder = builder.set_out_errors(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "stash" => {
+                    builder = builder.set_stash(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

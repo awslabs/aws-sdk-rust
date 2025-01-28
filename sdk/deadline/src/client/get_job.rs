@@ -4,8 +4,8 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`farm_id(impl Into<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::farm_id) / [`set_farm_id(Option<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::set_farm_id):<br>required: **true**<br><p>The farm ID of the farm in the job.</p><br>
-    ///   - [`job_id(impl Into<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::set_job_id):<br>required: **true**<br><p>The job ID.</p><br>
     ///   - [`queue_id(impl Into<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::queue_id) / [`set_queue_id(Option<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::set_queue_id):<br>required: **true**<br><p>The queue ID associated with the job.</p><br>
+    ///   - [`job_id(impl Into<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::set_job_id):<br>required: **true**<br><p>The job ID.</p><br>
     /// - On success, responds with [`GetJobOutput`](crate::operation::get_job::GetJobOutput) with field(s):
     ///   - [`job_id(String)`](crate::operation::get_job::GetJobOutput::job_id): <p>The job ID.</p>
     ///   - [`name(String)`](crate::operation::get_job::GetJobOutput::name): <p>The name of the job.</p>
@@ -27,6 +27,7 @@ impl super::Client {
     ///   - [`parameters(Option<HashMap::<String, JobParameter>>)`](crate::operation::get_job::GetJobOutput::parameters): <p>The parameters for the job.</p>
     ///   - [`attachments(Option<Attachments>)`](crate::operation::get_job::GetJobOutput::attachments): <p>The attachments for the job.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_job::GetJobOutput::description): <p>The description of the job.</p><important>  <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p> </important>
+    ///   - [`max_worker_count(Option<i32>)`](crate::operation::get_job::GetJobOutput::max_worker_count): <p>The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers.</p> <p>If you don't set the <code>maxWorkerCount</code> when you create a job, this value is not returned in the response.</p>
     ///   - [`source_job_id(Option<String>)`](crate::operation::get_job::GetJobOutput::source_job_id): <p>The job ID for the source job.</p>
     /// - On failure, responds with [`SdkError<GetJobError>`](crate::operation::get_job::GetJobError)
     pub fn get_job(&self) -> crate::operation::get_job::builders::GetJobFluentBuilder {

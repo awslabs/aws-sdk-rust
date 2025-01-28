@@ -204,4 +204,32 @@ impl UpdateDbInstanceFluentBuilder {
     pub fn get_deployment_type(&self) -> &::std::option::Option<crate::types::DeploymentType> {
         self.inner.get_deployment_type()
     }
+    /// <p>The Timestream for InfluxDB DB storage type that InfluxDB stores data on.</p>
+    pub fn db_storage_type(mut self, input: crate::types::DbStorageType) -> Self {
+        self.inner = self.inner.db_storage_type(input);
+        self
+    }
+    /// <p>The Timestream for InfluxDB DB storage type that InfluxDB stores data on.</p>
+    pub fn set_db_storage_type(mut self, input: ::std::option::Option<crate::types::DbStorageType>) -> Self {
+        self.inner = self.inner.set_db_storage_type(input);
+        self
+    }
+    /// <p>The Timestream for InfluxDB DB storage type that InfluxDB stores data on.</p>
+    pub fn get_db_storage_type(&self) -> &::std::option::Option<crate::types::DbStorageType> {
+        self.inner.get_db_storage_type()
+    }
+    /// <p>The amount of storage to allocate for your DB storage type (in gibibytes).</p>
+    pub fn allocated_storage(mut self, input: i32) -> Self {
+        self.inner = self.inner.allocated_storage(input);
+        self
+    }
+    /// <p>The amount of storage to allocate for your DB storage type (in gibibytes).</p>
+    pub fn set_allocated_storage(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_allocated_storage(input);
+        self
+    }
+    /// <p>The amount of storage to allocate for your DB storage type (in gibibytes).</p>
+    pub fn get_allocated_storage(&self) -> &::std::option::Option<i32> {
+        self.inner.get_allocated_storage()
+    }
 }
